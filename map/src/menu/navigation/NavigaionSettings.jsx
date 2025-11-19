@@ -1,14 +1,5 @@
 import React, { useState, useEffect, useContext, useMemo } from 'react';
-import {
-    Box,
-    Collapse,
-    Drawer,
-    List,
-    ListItem,
-    ListItemText,
-    Switch,
-    Tooltip,
-} from '@mui/material';
+import { Box, Collapse, Drawer, List, ListItem, ListItemText, Switch, Tooltip } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AppContext from '../../context/AppContext';
@@ -391,13 +382,16 @@ export default function NavigationSettings({
         const logicalKey = getNormalizedOptionKey(opt);
         const disabled = isDisabled(logicalKey);
         const currentValue = opt.value ?? '';
-
         const getOptionSelectItem = (value) => translateOption(opt, { value, fallback: value ?? '-' });
 
-        const optionsList = (opt.values || []).map((value) => ({
-            value,
-            label: getOptionSelectItem(value),
-        }));
+        const optionsList = opt.values.map((value, index) => {
+            const description = opt.valueDescriptions[index];
+            const label =
+                description === '-' || description === '' || description === null
+                    ? t('shared_string_none')
+                    : getOptionSelectItem(description);
+            return { value, label };
+        });
 
         const handleSelect = (value) => {
             onSelect(stateKey)({ target: { value } });
