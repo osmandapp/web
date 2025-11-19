@@ -95,3 +95,8 @@
     gap: 8px !important;
     max-width: 55% !important;
 }
+.selectBooleanControl {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+}
