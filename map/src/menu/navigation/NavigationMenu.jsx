@@ -127,6 +127,7 @@ export default function NavigationMenu() {
         routeObject.setOption(ROUTE_POINTS_FINISH, null);
         routeObject.setOption(ROUTE_POINTS_VIA, []);
         routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
+        routeObject.resetRoute();
 
         setResetSettings(true);
         closeHeader({ ctx });
