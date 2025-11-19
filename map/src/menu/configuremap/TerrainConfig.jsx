@@ -2,7 +2,7 @@ import headerStyles from '../trackfavmenu.module.css';
 import { AppBar, Box, IconButton, Slider, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './configuremap.module.css';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { useTranslation } from 'react-i18next';
