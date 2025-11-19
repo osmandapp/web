@@ -368,7 +368,7 @@ export default function NavigationSettings({
     };
 
     // Select option component
-    const SelectOption = ({ opt }) => {
+    const SelectOption = ({ opt, showDivider }) => {
         const stateKey = getStateKey(opt);
         const logicalKey = getNormalizedOptionKey(opt);
         const disabled = isDisabled(logicalKey);
@@ -406,6 +406,7 @@ export default function NavigationSettings({
                 boldTitle={false}
                 getOptionLabel={(option) => option.label}
                 getOptionValue={(option) => option.value}
+                showDivider={showDivider}
             />
         );
     };
@@ -450,7 +451,7 @@ export default function NavigationSettings({
                                                 {opt.type === 'boolean' ? (
                                                     <BooleanOption opt={opt} showDivider={!isLast} />
                                                 ) : (
-                                                    <SelectOption opt={opt} />
+                                                    <SelectOption opt={opt} showDivider={!isLast} />
                                                 )}
                                             </Box>
                                         );
