@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useMemo } from 'react';
-import { Box, Collapse, Drawer, List, ListItem, ListItemText, Switch, Tooltip } from '@mui/material';
+import { Box, Collapse, Drawer, List, Tooltip } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AppContext from '../../context/AppContext';
@@ -12,6 +12,7 @@ import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import SelectItem from '../../frame/components/items/SelectItem';
 import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
+import SelectItemBoolean from '../../frame/components/items/SelectItemBoolean';
 
 const SECTION_KEYS = {
     GENERAL: 'general',
@@ -347,32 +348,22 @@ export default function NavigationSettings({
         });
 
     // Boolean option component
-    const BooleanOption = ({ opt }) => {
+    const BooleanOption = ({ opt, showDivider }) => {
         const stateKey = getStateKey(opt);
         const logicalKey = getNormalizedOptionKey(opt);
         const disabled = isDisabled(logicalKey);
-        const handleRowClick = () => {
-            if (!disabled) {
-                toggleBooleanValue(stateKey);
-            }
-        };
-        const handleSwitchChange = (event) => {
-            event.stopPropagation();
-            if (!disabled) {
-                toggleBooleanValue(stateKey, event.target.checked);
-            }
+        const handleToggle = (nextValue) => {
+            toggleBooleanValue(stateKey, nextValue);
         };
         return (
-            <ListItem
-                disableGutters
-                sx={{ pl: 2, pr: 0 }}
-                onClick={handleRowClick}
-                secondaryAction={
-                    <Switch edge="end" checked={!!opt.value} onChange={handleSwitchChange} disabled={disabled} />
-                }
-            >
-                <ListItemText primary={opt.displayLabel} primaryTypographyProps={{ sx: { mr: 2 } }} />
-            </ListItem>
+            <SelectItemBoolean
+                title={opt.displayLabel}
+                checked={!!opt.value}
+                disabled={disabled}
+                onToggle={handleToggle}
+                showDivider={showDivider}
+                boldTitle={false}
+            />
         );
     };
 
@@ -452,15 +443,18 @@ export default function NavigationSettings({
                             />
                             <Collapse in={!!expanded} timeout="auto" unmountOnExit>
                                 <List disablePadding>
-                                    {sectionOptions.map((opt) => (
-                                        <Box key={'opt_' + opt.key} sx={{ py: 0.5 }}>
-                                            {opt.type === 'boolean' ? (
-                                                <BooleanOption opt={opt} />
-                                            ) : (
-                                                <SelectOption opt={opt} />
-                                            )}
-                                        </Box>
-                                    ))}
+                                    {sectionOptions.map((opt, index) => {
+                                        const isLast = index === sectionOptions.length - 1;
+                                        return (
+                                            <Box key={'opt_' + opt.key}>
+                                                {opt.type === 'boolean' ? (
+                                                    <BooleanOption opt={opt} showDivider={!isLast} />
+                                                ) : (
+                                                    <SelectOption opt={opt} />
+                                                )}
+                                            </Box>
+                                        );
+                                    })}
                                 </List>
                             </Collapse>
                             <ThickDivider mt={0} mb={0} />
