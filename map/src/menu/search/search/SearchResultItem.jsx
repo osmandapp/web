@@ -66,10 +66,12 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
     let type, name, city;
     if (props[CATEGORY_TYPE] === searchTypeMap.POI || !props[CATEGORY_TYPE]) {
         name = props[POI_NAME];
-        type = props[POI_SUBTYPE] ?? props[POI_TYPE];
+        const poiSubType = getFirstSubstring(props[POI_SUBTYPE]);
+        const poiType = getFirstSubstring(props[POI_TYPE]);
+        type = poiSubType ?? poiType;
         if (name === '') {
             name = preparedType(type, t);
-            type = props[POI_TYPE];
+            type = poiType;
         }
         type = preparedType(type, t);
     } else {
