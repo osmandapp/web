@@ -113,6 +113,16 @@ const NavigationLayer = ({ geocodingData, region }) => {
             }
         };
 
+        // Don't register click handler when context menu is open
+        if (ctx.openContextMenu) {
+            updateCursor();
+            map.on('mousemove', updateCursor);
+            return () => {
+                map.off('mousemove', updateCursor);
+                container.style.cursor = '';
+            };
+        }
+
         updateCursor();
         map.on('click', handleMapClick);
         map.on('mousemove', updateCursor);
@@ -122,7 +132,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             map.off('mousemove', updateCursor);
             container.style.cursor = '';
         };
-    }, [routeObject]);
+    }, [routeObject, ctx.openContextMenu]);
 
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
