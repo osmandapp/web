@@ -67,6 +67,13 @@ export default function NavigationSettings({
 
     const [opts, setOpts] = useState(geoRouter.getParams());
 
+    const { type } = geoRouter.getProfile();
+
+    const devRouteOptions =
+        useDevelFeatures && type === 'osrm'
+            ? ['route.map.hidePoints', 'route.map.forceApproximation'] // OSRM-only option (forceApproximation)
+            : ['route.map.hidePoints']; // default
+
     const getStateKey = (opt) => opt?.optionId || opt?.key || '';
 
     // Update options when geoRouter params change
@@ -524,6 +531,18 @@ export default function NavigationSettings({
             />
             <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, minHeight: 0 }}>
                 <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>{renderSections()}</Box>
+                {useDevelFeatures &&
+                    geoRouter.getRoute() &&
+                    devRouteOptions.map((opt) => (
+                        <SelectItemBoolean
+                            key={opt}
+                            title={geoRouter.getOptionText(opt)}
+                            checked={geoRouter.getOption(opt)}
+                            onToggle={(checked) => geoRouter.setOption(opt, checked)}
+                            boldTitle={false}
+                            showDivider={false}
+                        />
+                    ))}
                 <ColorBlock color={'#f0f0f0'} />
             </Box>
         </Drawer>
