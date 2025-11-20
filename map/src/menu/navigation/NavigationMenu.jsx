@@ -41,6 +41,7 @@ import SelectedTrackRow from './SelectedTrackRow';
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import NavigationSettings from './NavigationSettings';
+import AvoidRoadsList from './AvoidRoadsList';
 
 export function pickNextRoutePoint(routeObject) {
     if (!routeObject) {
@@ -78,6 +79,8 @@ export default function NavigationMenu() {
 
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
+
+    const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
 
     useEffect(() => {
         ctx.setOpenNavigationSettings(openSettings);
@@ -313,6 +316,14 @@ export default function NavigationMenu() {
                         <ThickDivider />
                     </>
                 )}
+                <AvoidRoadsList
+                    avoidRoads={avoidRoads}
+                    onRemove={(ind) => {
+                        const newAvoidRoads = Object.assign([], avoidRoads);
+                        newAvoidRoads.splice(ind, 1);
+                        routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, newAvoidRoads);
+                    }}
+                />
                 {ctx.navigationRoutingInProgress && (
                     <>
                         <TextLeftIconBtn

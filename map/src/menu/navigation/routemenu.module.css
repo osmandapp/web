@@ -63,6 +63,11 @@
     letter-spacing: 0.16px !important;
 }
 
+.inputFieldLink {
+    composes: inputField;
+    color: var(--selected-color, #1976d2) !important;
+}
+
 .navigationInputRow {
     display: flex !important;
     align-items: center !important;
