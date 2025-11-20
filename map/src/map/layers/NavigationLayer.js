@@ -172,7 +172,9 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 }
             },
             click() {
-                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+                if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                    ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+                }
             },
         },
         [startPointRef]
@@ -198,7 +200,9 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 }
             },
             click() {
-                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+                if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                    ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+                }
             },
         },
         [finishPointRef]
@@ -276,8 +280,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
             });
             layer.bindPopup(desc);
         }
-        layer.on('click', (e) => {
-            ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+        layer.on('click', () => {
+            if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+            }
         });
     };
 
