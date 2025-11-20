@@ -6,20 +6,6 @@ import { useTranslation } from 'react-i18next';
 import ActionsMenu from '../../../menu/actions/ActionsMenu';
 import DividerWithMargin from '../dividers/DividerWithMargin';
 
-const defaultGetOptionValue = (option) => {
-    if (typeof option === 'string') {
-        return option;
-    }
-    return option?.value ?? option?.key ?? option?.id ?? option;
-};
-
-const defaultGetOptionLabel = (option) => {
-    if (typeof option === 'string') {
-        return option;
-    }
-    return option?.label ?? option?.name ?? option?.title ?? option?.value ?? option;
-};
-
 export default function SelectItem({
     title,
     value,
@@ -28,8 +14,8 @@ export default function SelectItem({
     disabled = false,
     loading = false,
     placeholder,
-    getOptionLabel = defaultGetOptionLabel,
-    getOptionValue = defaultGetOptionValue,
+    getOptionLabel,
+    getOptionValue,
     boldTitle = true,
     showDivider = true,
 }) {
