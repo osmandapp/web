@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useMemo } from 'react';
+import React, { useState, useEffect, useContext, useMemo, useRef } from 'react';
 import { Box, Collapse, Drawer, List, Tooltip } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -67,6 +67,9 @@ export default function NavigationSettings({
 
     const [opts, setOpts] = useState(geoRouter.getParams());
 
+    const ROUTING_PARAMS_DEBOUNCE_MS = 500;
+    const routingParamsTimer = useRef(null);
+
     const { type } = geoRouter.getProfile();
 
     const devRouteOptions =
@@ -91,6 +94,14 @@ export default function NavigationSettings({
         }
     }, [resetSettings]);
 
+    useEffect(() => {
+        return () => {
+            if (routingParamsTimer.current) {
+                clearTimeout(routingParamsTimer.current);
+            }
+        };
+    }, []);
+
     const handleCloseAccept = () => {
         if (setOpenSettings) {
             setOpenSettings(false);
@@ -107,7 +118,14 @@ export default function NavigationSettings({
     const saveParams = (params) => {
         const nextParams = params ?? opts;
         if (nextParams) {
-            geoRouter.onParamsChanged({ params: nextParams });
+            // Debounce routing parameters to reduce API requests
+            if (routingParamsTimer.current) {
+                clearTimeout(routingParamsTimer.current);
+            }
+            routingParamsTimer.current = setTimeout(() => {
+                routingParamsTimer.current = null;
+                geoRouter.onParamsChanged({ params: nextParams });
+            }, ROUTING_PARAMS_DEBOUNCE_MS);
         }
     };
 
