@@ -67,7 +67,7 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
     - Searching a business venue by brand name (such as Audi, Starbucks, or Aldi) is very similar to search different POIs by type the main difference is that brand list is provided inside the map and subject to changed during each updates. 
     - Brand is defined by OSM tag [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) and OsmAnd collects limited types of brands per map with a maximum 1000 brands per map, however it makes sure that list of brands is aligned across the neighbor maps.
 
-![Search POI Android](@site/static/img/search/brand_search_andr.png)
+![Search POI Android](@site/static/img/search/brand_search_andr.png) ![Search POI Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
