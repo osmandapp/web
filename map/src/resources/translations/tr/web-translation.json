@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Aylık abonelik",
   "purchase_type_annual_subscription": "Yıllık abonelik",
   "purchase_type_one_time_purchase": "Tek seferlik satın alma",
+  "purchase_current_plan": "Mevcut plan.",
+  "purchase_manage_purchases": "Satın Almalar",
+  "purchase_period_month": "ay",
+  "purchase_period_year": "yıl",
   "label_pricing": "Fiyatlandırma",
   "subtitle_choose_your_ideal_osmand_plan": "İdeal OsmAnd planınızı seçin: Ücretsiz başlayın, esnek bir abonelik seçin veya tek seferlik satın alma yapın",
   "notice_fastspring_purchase_info": "Çevrimiçi satın almalar, yetkili bir satıcı olan FastSpring tarafından sağlanmaktadır. Abonelikler, yenileme tarihinden önce iptal edilmediği sürece otomatik olarak yenilenir. Aboneliğinizi <portalLink>FastSpring hesap yönetim portalı</portalLink> üzerinden iptal edebilir veya yenileyebilirsiniz.",
@@ -203,7 +207,21 @@
   "download_track_desc": "Parkuru tam veriyle, navigasyon talimatları dahil indirebilirsiniz veya diğer uygulamalarla kullanım için uygun basitleştirilmiş bir sürüm.",
   "download_track_full": "Tam parkur verisi",
   "download_track_simplified": "Basitleştirilmiş parkur",
+  "navigation_menu_title": "Rota",
+  "waiting_for_route_calculation": "Rota hesaplanıyor",
+  "waiting_for_route_calculation_description": "Uzun bir rota hesaplamak biraz zaman alabilir.",
+  "router_error_title": "Yönlendirici hatası",
+  "router_error_description": "Lütfen ayarları açın ve başka bir sağlayıcı/profil seçin.",
+  "selected_track": "Seçili parkur",
+  "set_start_point": "Başlangıç noktasını ayarla",
+  "set_destination": "Hedef belirle",
+  "set_via_point": "Ara nokta",
+  "navigation_tips": "Haritaya tıklayarak <strong>Başlangıç</strong> ve <strong>Hedef</strong> noktalarını ayarlayın.",
+  "attach_gpx_title": "Yollara yapıştır",
+  "attach_gpx_desc": "OsmAnd, parkurunuzu yakındaki yollarla eşleştirerek gelişmiş dönüş dönüş rehberliği sağlayacaktır.",
+  "attach_gpx_button": "Parkur seç",
+  "upload_gpx_track": "OsmAnd Bulut'a yükle",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }

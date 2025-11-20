@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Assinatura mensal",
   "purchase_type_annual_subscription": "Assinatura anual",
   "purchase_type_one_time_purchase": "Compra única",
+  "purchase_current_plan": "Plano atual.",
+  "purchase_manage_purchases": "Compras",
+  "purchase_period_month": "mês",
+  "purchase_period_year": "ano",
   "label_pricing": "Preços",
   "subtitle_choose_your_ideal_osmand_plan": "Escolha seu plano OsmAnd ideal: Comece gratuitamente, selecione uma assinatura flexível ou faça uma compra única",
   "notice_fastspring_purchase_info": "As compras online são fornecidas pela FastSpring, um revendedor autorizado. As assinaturas são renovadas automaticamente, a menos que sejam canceladas antes da data de renovação. Você pode cancelar ou renovar sua assinatura no <portalLink>portal de gerenciamento de conta FastSpring</portalLink>.",
@@ -203,7 +207,21 @@
   "download_track_desc": "Você pode baixar a trilha com dados completos, incluindo instruções de navegação, ou uma versão simplificada adequada para uso com outros aplicativos.",
   "download_track_full": "Dados completos da trilha",
   "download_track_simplified": "Trilha simplificada",
+  "navigation_menu_title": "Rota",
+  "waiting_for_route_calculation": "Calculando rota",
+  "waiting_for_route_calculation_description": "Pode levar algum tempo para calcular uma rota longa.",
+  "router_error_title": "Erro de roteador",
+  "router_error_description": "Por favor, abra as configurações e escolha outro provedor/perfil.",
+  "selected_track": "Trilha selecionada",
+  "set_start_point": "Definir ponto de partida",
+  "set_destination": "Definir destino",
+  "set_via_point": "Intermediário",
+  "navigation_tips": "Clique no mapa para definir os pontos <strong>Início</strong> e <strong>Destino</strong>.",
+  "attach_gpx_title": "Anexar a estradas",
+  "attach_gpx_desc": "O OsmAnd corresponderá sua trilha a estradas próximas para orientação curva a curva aprimorada.",
+  "attach_gpx_button": "Selecionar trilha",
+  "upload_gpx_track": "Fazer upload para OsmAnd Cloud",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }

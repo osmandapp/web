@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Щомісячна підписка",
   "purchase_type_annual_subscription": "Річна підписка",
   "purchase_type_one_time_purchase": "Одноразова покупка",
+  "purchase_current_plan": "Поточний план.",
+  "purchase_manage_purchases": "Покупки",
+  "purchase_period_month": "місяць",
+  "purchase_period_year": "рік",
   "label_pricing": "Ціни",
   "subtitle_choose_your_ideal_osmand_plan": "Оберіть свій ідеальний план OsmAnd: почніть безкоштовно, виберіть гнучку підписку або зробіть одноразову покупку",
   "notice_fastspring_purchase_info": "Онлайн-покупки надаються FastSpring, авторизованим реселером. Підписки автоматично поновлюються, якщо їх не скасувати до дати поновлення. Ви можете скасувати або поновити свою підписку на <portalLink>порталі керування обліковим записом FastSpring</portalLink>.",
@@ -203,7 +207,21 @@
   "download_track_desc": "Ви можете завантажити трек з повними даними, включаючи інструкції навігації, або спрощену версію, придатну для використання з іншими додатками.",
   "download_track_full": "Повні дані треку",
   "download_track_simplified": "Спрощений трек",
+  "navigation_menu_title": "Маршрут",
+  "waiting_for_route_calculation": "Обчислення маршруту",
+  "waiting_for_route_calculation_description": "Обчислення довгого маршруту може зайняти деякий час.",
+  "router_error_title": "Помилка маршрутизатора",
+  "router_error_description": "Будь ласка, відкрийте налаштування та оберіть іншого постачальника/профіль.",
+  "selected_track": "Вибраний трек",
+  "set_start_point": "Встановити початкову точку",
+  "set_destination": "Встановити пункт призначення",
+  "set_via_point": "Проміжна",
+  "navigation_tips": "Натисніть на мапу, щоб встановити точки <strong>Початок</strong> та <strong>Пункт призначення</strong>.",
+  "attach_gpx_title": "Прив'язати до доріг",
+  "attach_gpx_desc": "OsmAnd співставить ваш трек з найближчими дорогами для покращеного керівництва поворот за поворотом.",
+  "attach_gpx_button": "Вибрати трек",
+  "upload_gpx_track": "Завантажити в Хмару OsmAnd",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }
