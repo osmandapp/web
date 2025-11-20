@@ -19,40 +19,39 @@ import { useTranslation } from 'react-i18next';
 export default function DownloadTrackDialog({
     dialogOpen,
     setDialogOpen,
-    track: externalTrack = null,
+    navTrack,
+    track,
     sharedFile,
     setOpenActions,
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const trackSource = externalTrack ?? ctx.selectedGpxFile;
+    const trackSource = track ?? ctx.selectedGpxFile;
     const routeTypes = trackSource?.routeTypes;
 
-    const isContextLocal = !externalTrack && isLocalTrack(ctx);
-    const isContextRoute = !externalTrack && isRouteTrack(ctx);
-    const isContextTravel = !externalTrack && isTravelTrack(ctx);
-
     const handleDownload = async (simplified) => {
-        if (!trackSource) {
+        if (!trackSource && !navTrack) {
             return;
         }
 
-        if (externalTrack) {
+        if (navTrack) {
+            await downloadCurrentLocalGpx({
+                selectedGpxFile: navTrack,
+                routeTypes: navTrack.routeTypes,
+                isLocal: true,
+                simplified,
+            });
+        } else if (track) {
+            await downloadOriginalGpxFromCloud({ track: trackSource, sharedFile, simplified });
+        } else if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
             await downloadCurrentLocalGpx({
                 selectedGpxFile: trackSource,
                 routeTypes,
-                isLocal: false,
+                isLocal: isLocalTrack(ctx),
                 simplified,
             });
-        } else if (isContextLocal || isContextRoute) {
-            await downloadCurrentLocalGpx({
-                selectedGpxFile: trackSource,
-                routeTypes,
-                isLocal: isContextLocal,
-                simplified,
-            });
-        } else if (isContextTravel) {
+        } else if (isTravelTrack(ctx)) {
             await downloadTravelGpx(trackSource);
         } else {
             await downloadOriginalGpxFromCloud({ track: trackSource, simplified });
