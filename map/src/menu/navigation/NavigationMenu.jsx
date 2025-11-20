@@ -130,6 +130,7 @@ export default function NavigationMenu() {
             if (isRouteTrack(ctx) === false) {
                 const { track } = routeObject.putRoute({ route: routeObject.getRoute() }); // get track instantly
                 ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
+                routeObject.setOption('route.map.zoom', true);
                 ctx.setSelectedGpxFile(track);
                 ctx.setUpdateInfoBlock(true);
             }

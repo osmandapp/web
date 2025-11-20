@@ -123,17 +123,21 @@ export function RouteService() {
 
     // parse query-string
     useEffect(() => {
-        const searchParams = new URLSearchParams(window.location.search);
+        const searchParams = new URLSearchParams(globalThis.location.search);
+
+        let shouldZoomToRoute = false;
 
         if (searchParams.get('start')) {
             const [lat, lng] = searchParams.get('start').split(',');
             routeObject.setOption(ROUTE_POINTS_START, { lat: parseFloat(lat), lng: parseFloat(lng) });
+            shouldZoomToRoute = true;
         }
 
         if (searchParams.get('finish') || searchParams.get('end')) {
             const finish = searchParams.get('finish') || searchParams.get('end');
             const [lat, lng] = finish.split(',');
             routeObject.setOption(ROUTE_POINTS_FINISH, { lat: parseFloat(lat), lng: parseFloat(lng) });
+            shouldZoomToRoute = true;
         }
 
         if (searchParams.get('via') || searchParams.get('inter')) {
@@ -155,6 +159,10 @@ export function RouteService() {
                     avoidRoads.push({ id, name: 'Way ' + Math.trunc(id / 64) });
                 });
             routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, avoidRoads);
+        }
+
+        if (shouldZoomToRoute && !globalThis.location?.hash) {
+            routeObject.setOption('route.map.zoom', true);
         }
     }, []);
 
