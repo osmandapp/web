@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Abonnement mensuel",
   "purchase_type_annual_subscription": "Abonnement annuel",
   "purchase_type_one_time_purchase": "Achat unique",
+  "purchase_current_plan": "Plan actuel.",
+  "purchase_manage_purchases": "Achats",
+  "purchase_period_month": "mois",
+  "purchase_period_year": "an",
   "label_pricing": "Tarifs",
   "subtitle_choose_your_ideal_osmand_plan": "Choisissez votre plan OsmAnd idéal : Commencez gratuitement, sélectionnez un abonnement flexible ou effectuez un achat unique",
   "notice_fastspring_purchase_info": "Les achats en ligne sont fournis par FastSpring, un revendeur agréé. Les abonnements sont automatiquement renouvelés sauf annulation avant la date de renouvellement. Vous pouvez annuler ou renouveler votre abonnement sur le <portalLink>portail de gestion de compte FastSpring</portalLink>.",
@@ -203,7 +207,21 @@
   "download_track_desc": "Vous pouvez télécharger la trace avec les données complètes, y compris les instructions de navigation, ou une version simplifiée adaptée à l'utilisation avec d'autres applications.",
   "download_track_full": "Données de trace complètes",
   "download_track_simplified": "Trace simplifiée",
+  "navigation_menu_title": "Itinéraire",
+  "waiting_for_route_calculation": "Calcul de l'itinéraire",
+  "waiting_for_route_calculation_description": "Il peut falloir du temps pour calculer un long itinéraire.",
+  "router_error_title": "Erreur de routeur",
+  "router_error_description": "Veuillez ouvrir les paramètres et choisir un autre fournisseur/profil.",
+  "selected_track": "Trace sélectionnée",
+  "set_start_point": "Définir le point de départ",
+  "set_destination": "Définir la destination",
+  "set_via_point": "Point intermédiaire",
+  "navigation_tips": "Cliquez sur la carte pour définir les points <strong>Départ</strong> et <strong>Destination</strong>.",
+  "attach_gpx_title": "Attacher aux routes",
+  "attach_gpx_desc": "OsmAnd associera votre trace aux routes proches pour un guidage virage par virage amélioré.",
+  "attach_gpx_button": "Sélectionner la trace",
+  "upload_gpx_track": "Téléverser vers OsmAnd Cloud",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }

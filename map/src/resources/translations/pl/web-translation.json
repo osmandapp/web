@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Subskrypcja miesięczna",
   "purchase_type_annual_subscription": "Subskrypcja roczna",
   "purchase_type_one_time_purchase": "Zakup jednorazowy",
+  "purchase_current_plan": "Aktualny plan.",
+  "purchase_manage_purchases": "Zakupy",
+  "purchase_period_month": "miesiąc",
+  "purchase_period_year": "rok",
   "label_pricing": "Cennik",
   "subtitle_choose_your_ideal_osmand_plan": "Wybierz swój idealny plan OsmAnd: zacznij za darmo, wybierz elastyczną subskrypcję lub dokonaj jednorazowego zakupu",
   "notice_fastspring_purchase_info": "Zakupy online są realizowane przez FastSpring, autoryzowanego sprzedawcę. Subskrypcje odnawiają się automatycznie, chyba że zostaną anulowane przed datą odnowienia. Możesz anulować lub odnowić subskrypcję na <portalLink>portalu zarządzania kontem FastSpring</portalLink>.",
@@ -203,7 +207,21 @@
   "download_track_desc": "Możesz pobrać ślad z pełnymi danymi, w tym instrukcjami nawigacji, lub uproszczoną wersję odpowiednią do użycia z innymi aplikacjami.",
   "download_track_full": "Pełne dane śladu",
   "download_track_simplified": "Uproszczony ślad",
+  "navigation_menu_title": "Trasa",
+  "waiting_for_route_calculation": "Obliczanie trasy",
+  "waiting_for_route_calculation_description": "Obliczenie długiej trasy może zająć trochę czasu.",
+  "router_error_title": "Błąd routera",
+  "router_error_description": "Otwórz ustawienia i wybierz innego dostawcę/profil.",
+  "selected_track": "Wybrany ślad",
+  "set_start_point": "Ustaw punkt startowy",
+  "set_destination": "Ustaw cel",
+  "set_via_point": "Punkt pośredni",
+  "navigation_tips": "Kliknij na mapie, aby ustawić punkty <strong>Start</strong> i <strong>Cel</strong>.",
+  "attach_gpx_title": "Dopasuj do dróg",
+  "attach_gpx_desc": "OsmAnd dopasuje Twój ślad do pobliskich dróg, aby uzyskać ulepszone wskazówki krok po kroku.",
+  "attach_gpx_button": "Wybierz ślad",
+  "upload_gpx_track": "Prześlij do OsmAnd Cloud",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }
