@@ -211,50 +211,68 @@ export default function NavigationSettings({
         return normalized;
     };
 
-    // Build section list with options
+    const getTargetSectionKey = (optKey, opt) => {
+        const isVehicleParam = vehicleKeys.some((vk) => optKey === vk);
+        if (isVehicleParam) {
+            return SECTION_KEYS.VEHICLE_PARAMETERS;
+        }
+        if (opt.section === DEVEL_SECTION_NAME || opt.section === APPROX_SECTION_NAME) {
+            return SECTION_KEYS.DEVELOPMENT;
+        }
+        return normalizeSectionKey(opt.section ?? SECTION_KEYS.GENERAL);
+    };
 
+    // Build section list with options
     const sectionList = useMemo(() => {
-        const sectionsMap = {
-            [SECTION_KEYS.GENERAL]: {
-                name: t('general_settings'),
-                opts: {},
-            },
-            [SECTION_KEYS.ALLOW]: {
-                name: t('shared_string_allow'),
-                opts: {},
-            },
-            [SECTION_KEYS.AVOID]: {
-                name: t('shared_string_avoid'),
-                opts: {},
-            },
-            [SECTION_KEYS.VEHICLE_PARAMETERS]: {
-                name: t('vehicle_parameters'),
-                opts: {},
-            },
-            [SECTION_KEYS.DEVELOPMENT]: {
-                name: t('development'),
-                opts: {},
-            },
+        const predefinedSections = {
+            [SECTION_KEYS.GENERAL]: t('general_settings'),
+            [SECTION_KEYS.ALLOW]: t('shared_string_allow'),
+            [SECTION_KEYS.AVOID]: t('shared_string_avoid'),
+            [SECTION_KEYS.VEHICLE_PARAMETERS]: t('vehicle_parameters'),
+            [SECTION_KEYS.DEVELOPMENT]: t('development'),
         };
+
+        const sectionsMap = {};
+
+        for (const [key, name] of Object.entries(predefinedSections)) {
+            sectionsMap[key] = {
+                name,
+                opts: {},
+            };
+        }
 
         if (!opts) {
             return sectionsMap;
         }
 
+        // First: collect all unique section keys
+        const allSectionKeys = new Set();
         for (const [optKey, opt] of Object.entries(opts)) {
             if (opt.section === 'Hidden' || !showDevSection(opt)) {
                 continue;
             }
 
-            const isVehicleParam = vehicleKeys.some((vk) => optKey === vk);
-            let targetSectionKey = normalizeSectionKey(opt.section ?? SECTION_KEYS.GENERAL);
+            const targetSectionKey = getTargetSectionKey(optKey, opt);
+            allSectionKeys.add(targetSectionKey);
+        }
 
-            if (isVehicleParam) {
-                targetSectionKey = SECTION_KEYS.VEHICLE_PARAMETERS;
-            } else if (opt.section === DEVEL_SECTION_NAME || opt.section === APPROX_SECTION_NAME) {
-                targetSectionKey = SECTION_KEYS.DEVELOPMENT;
+        for (const sectionKey of allSectionKeys) {
+            if (!(sectionKey in sectionsMap)) {
+                const translationKey = `routing_attr_${sectionKey}_name`;
+                sectionsMap[sectionKey] = {
+                    name: t(translationKey),
+                    opts: {},
+                };
+            }
+        }
+
+        // Second: add options to sections
+        for (const [optKey, opt] of Object.entries(opts)) {
+            if (opt.section === 'Hidden' || !showDevSection(opt)) {
+                continue;
             }
 
+            const targetSectionKey = getTargetSectionKey(optKey, opt);
             if (targetSectionKey in sectionsMap) {
                 const optionId = optKey;
                 const optKeyWithPrefix = opt.key || optKey;
@@ -271,9 +289,15 @@ export default function NavigationSettings({
     }, [opts]);
 
     const sections = useMemo(() => {
-        return Object.keys(sectionList).filter((key) => {
+        const filtered = Object.keys(sectionList).filter((key) => {
             const section = sectionList[key];
             return section.opts && Object.keys(section.opts).length > 0;
+        });
+        // Sort sections so DEVELOPMENT is last
+        return filtered.sort((a, b) => {
+            if (a === SECTION_KEYS.DEVELOPMENT) return 1;
+            if (b === SECTION_KEYS.DEVELOPMENT) return -1;
+            return 0;
         });
     }, [sectionList]);
 
