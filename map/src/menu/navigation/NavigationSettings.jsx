@@ -347,13 +347,13 @@ export default function NavigationSettings({
                 const next = { ...state };
                 for (const sectionName of sections) {
                     if (next[sectionName] === undefined) {
-                        next[sectionName] = false;
+                        next[sectionName] = sectionName === SECTION_KEYS.DEVELOPMENT && useDevelFeatures;
                     }
                 }
                 return next;
             });
         }
-    }, [sections]);
+    }, [sections, useDevelFeatures]);
 
     // Toggle section folding
     const switchFolding = (sectionName) =>
@@ -530,19 +530,21 @@ export default function NavigationSettings({
                 }
             />
             <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, minHeight: 0 }}>
-                <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>{renderSections()}</Box>
-                {useDevelFeatures &&
-                    geoRouter.getRoute() &&
-                    devRouteOptions.map((opt) => (
-                        <SelectItemBoolean
-                            key={opt}
-                            title={geoRouter.getOptionText(opt)}
-                            checked={geoRouter.getOption(opt)}
-                            onToggle={(checked) => geoRouter.setOption(opt, checked)}
-                            boldTitle={false}
-                            showDivider={false}
-                        />
-                    ))}
+                <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
+                    {renderSections()}
+                    {useDevelFeatures &&
+                        geoRouter.getRoute() &&
+                        devRouteOptions.map((opt) => (
+                            <SelectItemBoolean
+                                key={opt}
+                                title={geoRouter.getOptionText(opt)}
+                                checked={geoRouter.getOption(opt)}
+                                onToggle={(checked) => geoRouter.setOption(opt, checked)}
+                                boldTitle={false}
+                                showDivider={false}
+                            />
+                        ))}
+                </Box>
                 <ColorBlock color={'#f0f0f0'} />
             </Box>
         </Drawer>
