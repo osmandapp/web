@@ -38,8 +38,8 @@ export default function PurchaseTypeItem({
     };
 
     const periodMap = {
-        monthly: '/ month',
-        annual: '/ year',
+        monthly: `/ ${t('web:purchase_period_month')}`,
+        annual: `/ ${t('web:purchase_period_year')}`,
         'one-time': '',
     };
 
@@ -122,7 +122,9 @@ export default function PurchaseTypeItem({
                         mb: '-12px',
                     }}
                 >
-                    <Typography className={styles.purchaseTypeCardUnavailableText}>Current plan.</Typography>
+                    <Typography className={styles.purchaseTypeCardUnavailableText}>
+                        {t('web:purchase_current_plan')}
+                    </Typography>
                     <Link
                         sx={{ color: '#237BFF' }}
                         component="button"
@@ -130,7 +132,7 @@ export default function PurchaseTypeItem({
                         underline="hover"
                         className={styles.purchaseTypeCardUnavailableText}
                     >
-                        Purchases
+                        {t('web:purchase_manage_purchases')}
                     </Link>
                 </Box>
             )}
