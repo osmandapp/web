@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Abbonamento mensile",
   "purchase_type_annual_subscription": "Abbonamento annuale",
   "purchase_type_one_time_purchase": "Acquisto una tantum",
+  "purchase_current_plan": "Piano attuale.",
+  "purchase_manage_purchases": "Acquisti",
+  "purchase_period_month": "mese",
+  "purchase_period_year": "anno",
   "label_pricing": "Prezzi",
   "subtitle_choose_your_ideal_osmand_plan": "Scegli il tuo piano OsmAnd ideale: inizia gratuitamente, seleziona un abbonamento flessibile o effettua un acquisto una tantum",
   "notice_fastspring_purchase_info": "Gli acquisti online sono forniti da FastSpring, un rivenditore autorizzato. Gli abbonamenti si rinnovano automaticamente a meno che non vengano annullati prima della data di rinnovo. Puoi annullare o rinnovare il tuo abbonamento sul <portalLink>portale di gestione account FastSpring</portalLink>.",
@@ -203,7 +207,21 @@
   "download_track_desc": "Puoi scaricare il percorso con dati completi, incluse le istruzioni di navigazione, o una versione semplificata adatta per l'uso con altre app.",
   "download_track_full": "Dati percorso completi",
   "download_track_simplified": "Percorso semplificato",
+  "navigation_menu_title": "Percorso",
+  "waiting_for_route_calculation": "Calcolo del percorso in corso",
+  "waiting_for_route_calculation_description": "Potrebbe richiedere del tempo per calcolare un percorso lungo.",
+  "router_error_title": "Errore router",
+  "router_error_description": "Apri le impostazioni e scegli un altro provider/profilo.",
+  "selected_track": "Percorso selezionato",
+  "set_start_point": "Imposta punto di partenza",
+  "set_destination": "Imposta destinazione",
+  "set_via_point": "Intermedio",
+  "navigation_tips": "Clicca sulla mappa per impostare i punti <strong>Partenza</strong> e <strong>Destinazione</strong>.",
+  "attach_gpx_title": "Associa alle strade",
+  "attach_gpx_desc": "OsmAnd assocerà il tuo percorso alle strade vicine per una guida passo-passo migliorata.",
+  "attach_gpx_button": "Seleziona percorso",
+  "upload_gpx_track": "Carica su OsmAnd Cloud",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }

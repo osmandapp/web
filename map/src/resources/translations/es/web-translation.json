@@ -10,7 +10,7 @@
   "explore_menu": "Explorar",
   "weather_precip_mmh": "mm/h",
   "OsmAnd_account": "Cuenta OsmAnd",
-  "empty_login_desc": "Crea o inicia sesión en tu cuenta OsmAnd para gestionar tus rutas y favoritos en todos tus dispositivos.",
+  "empty_login_desc": "Crea o inicia sesión en tu cuenta OsmAnd para gestionar tus tracks y favoritos en todos tus dispositivos.",
   "login_btn": "Iniciar sesión",
   "login_desc": "Por favor, introduce el correo electrónico que utilizaste para crear tu cuenta.",
   "user_email": "Correo electrónico",
@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Suscripción mensual",
   "purchase_type_annual_subscription": "Suscripción anual",
   "purchase_type_one_time_purchase": "Compra única",
+  "purchase_current_plan": "Plan actual.",
+  "purchase_manage_purchases": "Compras",
+  "purchase_period_month": "mes",
+  "purchase_period_year": "año",
   "label_pricing": "Precios",
   "subtitle_choose_your_ideal_osmand_plan": "Elige tu plan OsmAnd ideal: empieza gratis, selecciona una suscripción flexible o realiza una compra única",
   "notice_fastspring_purchase_info": "Las compras en línea son proporcionadas por FastSpring, un revendedor autorizado. Las suscripciones se renuevan automáticamente a menos que se cancelen antes de la fecha de renovación. Puedes cancelar o renovar tu suscripción en el <portalLink>portal de gestión de cuentas de FastSpring</portalLink>.",
@@ -203,7 +207,21 @@
   "download_track_desc": "Puedes descargar la ruta con datos completos, incluyendo instrucciones de navegación, o una versión simplificada adecuada para usar con otras aplicaciones.",
   "download_track_full": "Datos completos de la ruta",
   "download_track_simplified": "Ruta simplificada",
+  "navigation_menu_title": "Ruta",
+  "waiting_for_route_calculation": "Calculando ruta",
+  "waiting_for_route_calculation_description": "Puede tomar algo de tiempo calcular una ruta larga.",
+  "router_error_title": "Error de enrutador",
+  "router_error_description": "Por favor, abre los ajustes y elige otro proveedor/perfil.",
+  "selected_track": "Ruta seleccionada",
+  "set_start_point": "Establecer punto de inicio",
+  "set_destination": "Establecer destino",
+  "set_via_point": "Intermedio",
+  "navigation_tips": "Haz clic en el mapa para establecer los puntos <strong>Inicio</strong> y <strong>Destino</strong>.",
+  "attach_gpx_title": "Adjuntar a carreteras",
+  "attach_gpx_desc": "OsmAnd coincidirá tu ruta con carreteras cercanas para una guía paso a paso mejorada.",
+  "attach_gpx_button": "Seleccionar ruta",
+  "upload_gpx_track": "Subir a OsmAnd Cloud",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }
