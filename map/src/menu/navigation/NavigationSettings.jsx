@@ -104,17 +104,17 @@ export default function NavigationSettings({
 
     // Translation helpers
 
-    const normalizeKey = (key) => {
+    const normalizeTranslationKey = (key) => {
         if (!key) return '';
         return key.startsWith('routing_attr_') ? key.substring('routing_attr_'.length) : key;
     };
 
     const getTranslationRule = (key) => {
         if (!key) return null;
-        return TRANSLATION_RULES[key] || TRANSLATION_RULES[normalizeKey(key)];
+        return TRANSLATION_RULES[key] || TRANSLATION_RULES[normalizeTranslationKey(key)];
     };
 
-    const getNormalizedOptionKey = (opt) => normalizeKey(opt?.key || opt?.optionId);
+    const getNormalizedOptionKey = (opt) => normalizeTranslationKey(opt?.key || opt?.optionId);
 
     const getTranslationKey = (opt, value = null) => {
         if (!opt?.key) {
@@ -122,7 +122,7 @@ export default function NavigationSettings({
         }
 
         const key = opt.key;
-        const normalizedKey = normalizeKey(key);
+        const normalizedKey = normalizeTranslationKey(key);
         const rule = getTranslationRule(key);
 
         const normalizeBaseKey = (baseKey) => {
@@ -145,7 +145,7 @@ export default function NavigationSettings({
 
         const buildDefaultKey = (suffix) => {
             const baseKey = normalizeBaseKey(normalizedKey);
-            return `routing_attr_${baseKey}${suffix ? `_${suffix}` : '_name'}`;
+            return `routing_attr_${baseKey}_${suffix || 'name'}`;
         };
 
         if (value !== null) {
