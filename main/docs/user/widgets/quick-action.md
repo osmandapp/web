@@ -216,6 +216,10 @@ The *Quick Action* widget appears at the bottom corner of the map screen when yo
 
 This layout helps keep buttons visually consistent and avoids overlapping. For example, on a landscape display, buttons in the right corner will line up horizontally at the bottom of the screen, while on a portrait display they will expand vertically upwards or downwards as needed.
 
+The grid adapts to the surrounding interface and repositions buttons when required, ensuring they remain visible and do not interfere with other on-screen elements. When widgets or panels are added, removed, or rearranged, the layout updates accordingly so that button order stays consistent and no element becomes hidden.
+
+[Profiles imported](https://osmand.net/docs/user/personal/import-export#export) from another device are adjusted to the grid layout, keeping button positions correct across different screen sizes and platforms.
+
 
 ## Action Types {#action-types}
 
@@ -280,7 +284,7 @@ This layout helps keep buttons visually consistent and avoids overlapping. For e
 | Add <br/> [**Parking place**](../plugins/parking.md) | Adds parking to a selected (center) map location. The old parking position is deleted. |
 | Add <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *POI Type* (optional). Preselects the OSM POI type. <br /> - *Tag/Value* (multiple). Adds [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
 | Add <br/> [**OSM Note**](../plugins/osm-editing.md#create--modify-osm-note) | Adds an [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
-| Add <br/> [**Media notes**](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording for a selected (center) map location. |
+| Add <br/> [**Media notes**](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording for a selected (center) map location; a repeated press stops the recording. |
 | Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creates a route for the selected (central) location on the map. |
 
 

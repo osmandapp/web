@@ -40,7 +40,29 @@ Sections **Routes and Map rendering**:
 
 <TabItem value="ios" label="iOS">
 
-![Configure map ios](@site/static/img/map/configure-map-ios.png)
+Section **Show on map**:  
+
+![Configure map android](@site/static/img/map/configure_map_show1_ios.png)  
+
+Section **Topography**:  
+
+![Configure map android](@site/static/img/map/configure_map_topography_ios.png)  
+
+Section **OpenStreetMap**:  
+
+![Configure map android](@site/static/img/map/configure_map_osm_ios.png)  
+
+Section **Routes**:  
+
+![Configure map android](@site/static/img/map/configure_map_routes_new_ios.png)
+
+Sections **Map type and Map style**:  
+
+![Configure map android](@site/static/img/map/configure_map_style_ios.png)
+
+Sections **Overlay/Underlay and Language**:  
+
+![Configure map android](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -77,6 +99,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
    - [Street level imagery](../plugins/mapillary.md#map-layer) - displays points with available street-level imagery.
    - [Travel guides](../plan-route/travel-guides.md) - displays travel guides on the map.
    - [Wikipedia](../plugins/wikipedia.md) - highlights Wikipedia articles linked to the map.
+   - [OSM editing](../plugins/osm-editing.md#osm-editing-layer) - displays OpenStreetMap edits, notes, and mapping-related helper layers.
    - [Other plugin layers](../plugins/index.md#configure-plugin) - many plugins add their layers with extra information.
 
 ## Map style parameters {#map-style-parameters}
