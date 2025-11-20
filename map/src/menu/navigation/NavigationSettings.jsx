@@ -237,7 +237,7 @@ export default function NavigationSettings({
                 continue;
             }
 
-            const isVehicleParam = vehicleKeys.some((vk) => optKey.includes(vk));
+            const isVehicleParam = vehicleKeys.some((vk) => optKey === vk);
             let targetSectionKey = normalizeSectionKey(opt.section ?? SECTION_KEYS.GENERAL);
 
             if (isVehicleParam) {
