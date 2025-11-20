@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Link, Typography } from '@mui/material';
-import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remove_outlined.svg';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +15,6 @@ export default function AvoidRoadsList({ avoidRoads, onRemove }) {
 
     return (
         <>
-            <ThickDivider />
             <SubTitleMenu text={t('shared_string_avoid')} />
             <Box sx={{ px: 2 }}>
                 {avoidRoads.map((item, ind) => (
