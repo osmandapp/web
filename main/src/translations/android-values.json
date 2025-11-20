@@ -1,7 +1,7 @@
 {
   "lang_ta_in": "Tamil (India)",
 
-  "shared_sting_all_colors": "All colors",
+  "shared_string_all_colors": "All colors",
   "routing_type_a_star_2_phase": "A* 2-phase",
   "routing_type_a_star_classic": "A* classic",
   "auto_zoom_smooth": "Smooth",
@@ -10642,7 +10642,7 @@
   "n_a": "N/A",
   "next_turn_information": "Next turn information",
   "manage_purchases": "Manage purchases",
-  "shared_sting_osm_link": "OSM link",
+  "shared_string_osm_link": "OSM link",
   "deleting": "Deleting…",
   "shared_string_threads": "Threads",
   "threads_allocated_for_rendering": "Threads allocated for rendering",
