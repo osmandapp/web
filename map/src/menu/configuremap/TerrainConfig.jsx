@@ -143,7 +143,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                 loading={ctx.processHeightmaps}
                 getOptionLabel={(option) => option.name}
                 getOptionValue={(option) => option.key}
-                onSelect={(selectedKey) => handleHeightmapSelect(selectedKey)}
+                onSelect={handleHeightmapSelect}
             />
             {ctx.heightmap?.key ? (
                 <Box>
