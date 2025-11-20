@@ -135,6 +135,7 @@ The **Object Info** panel provides additional details about the selected object.
 
 Available details include:
 
+- [Article Description](#article-description)
 - [Alternative names](#alternative-names)
 - [Coordinates](#coordinates)
 - [Within areas](#polygon-information)
@@ -155,6 +156,29 @@ Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstr
 - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height) 
 
 Beyond the fields listed above, OsmAnd may also show extra descriptive information taken from OpenStreetMap. These attributes help you better understand the characteristics of a place and can include details such as elevation, direction, year built, surface or covering type, indoor level, payment options, delivery or takeaway availability, and many others. OsmAnd displays these attributes with clear labels and, where possible, icons, making it easier to read and recognize the information. The exact set of attributes depends on what data is available in OpenStreetMap for the selected object.
+
+
+### Article Description {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Description list](@site/static/img/map/description_list_android.png)
+
+This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Description list](@site/static/img/map/description_list_new_ios.png)
+
+This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Alternative Names {#alternative-names}
@@ -297,29 +321,6 @@ Shown info about Public transport routes for chosen transport stop. Information 
 ![Favorite list](@site/static/img/map/favorite_list_android.png) ![Favorite list full](@site/static/img/map/favorite_list_full_android.png)
 
 This is a list of all points in one group for a Favorite or Waypoint. By tapping, the entire list of points of one group expands, when tapping a point from the list, the map moves to the selected point.
-
-
-
-
-### Article Description {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Description list](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Description list](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
 
 
 ### OpenStreetMap Link {#openstreetmap-link}
