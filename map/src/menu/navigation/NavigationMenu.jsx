@@ -424,7 +424,7 @@ export default function NavigationMenu() {
                             setDownloadTrack(null);
                         }
                     }}
-                    track={downloadTrack}
+                    navTrack={downloadTrack}
                 />
             )}
             {cloudTrack && <SaveTrackDialog track={cloudTrack} />}
