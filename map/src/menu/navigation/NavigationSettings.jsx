@@ -40,10 +40,12 @@ const TRANSLATION_RULES = {
 
 const vehicleKeys = ['weight', 'height', 'length', 'width', 'motor_type'];
 const OLD_VEHICLE_SECTION_KEY = 'vehicle_metrics';
+const DEVEL_SECTION_NAME = 'Routing (devel)';
+const APPROX_SECTION_NAME = 'Approximation (devel)';
 
 const AVOID_UNPAVED = 'avoid_unpaved';
 const PREFER_UNPAVED = 'prefer_unpaved';
-const APPROXIMATION = 'applyapproximation';
+const APPLY_APPROXIMATION = 'applyapproximation';
 
 export default function NavigationSettings({
     geoRouter,
@@ -242,7 +244,7 @@ export default function NavigationSettings({
 
             if (isVehicleParam) {
                 targetSectionKey = SECTION_KEYS.VEHICLE_PARAMETERS;
-            } else if (opt.section === 'Routing (devel)' || opt.section === 'Approximation (devel)') {
+            } else if (opt.section === DEVEL_SECTION_NAME || opt.section === APPROX_SECTION_NAME) {
                 targetSectionKey = SECTION_KEYS.DEVELOPMENT;
             }
 
@@ -316,10 +318,10 @@ export default function NavigationSettings({
     };
 
     function isDisabled(key) {
-        if (key === APPROXIMATION) {
+        if (key === APPLY_APPROXIMATION) {
             return false;
         }
-        if (opts[APPROXIMATION]?.value === false) {
+        if (opts[APPLY_APPROXIMATION]?.value === false) {
             return true;
         }
         if (key === AVOID_UNPAVED && opts[PREFER_UNPAVED]?.value === true) return true;
