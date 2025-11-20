@@ -80,14 +80,31 @@ For example, if you have a simple track that goes up and down, you have only 1 m
 More examples will be added.
 
 
-## Altitude SRTM correction {#altitude-srtm-correction}
+## Elevation Correction {#elevation-correction}
 
-There are 2 alternatives that's possible to use in OsmAnd to get altitude correction.
+Elevation Correction adjusts the altitude values in a GPX track using external elevation sources. Two elevation data sources are available:
 
-1. Open track in OsmAnd Android and find, *Edit Track → Options → Altiude Correction* 
-1.1 **Online**  will process track via OsmAnd server and data.
-1.2 **Offline**  will process track on device if 3D geotifs files are downloaded.
-2. Open website https://osmand.net/map and upload track and see SRTM elevation.
+1. Use terrain maps (DEM / SRTM / 3D elevation data)
+- Replaces altitude values with data from downloaded terrain maps (DEM/SRTM or 3D GeoTIFF files).
+- Works locally on the device if elevation tiles are installed.
+- This method keeps the original track geometry.
+
+2. Use nearby roads (Attach to roads)
+- Adjusts the track geometry to match the road network.
+- Uses road elevation data for altitude correction.
+- This method may modify the track shape due to road snapping.
+
+Data that may change after applying Elevation Correction:
+- Distance
+- Size
+- Ascent
+- Descent
+- Average speed
+- Maximum speed
+- Duration
+- Time in motion
+
+GPX timestamps (date/time) are preserved when using both elevation sources.
 
 
 ## Slope {#slope}

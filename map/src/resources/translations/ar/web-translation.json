@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "اشتراك شهري",
   "purchase_type_annual_subscription": "اشتراك سنوي",
   "purchase_type_one_time_purchase": "شراء لمرة واحدة",
+  "purchase_current_plan": "الخطة الحالية.",
+  "purchase_manage_purchases": "المشتريات",
+  "purchase_period_month": "شهر",
+  "purchase_period_year": "سنة",
   "label_pricing": "الأسعار",
   "subtitle_choose_your_ideal_osmand_plan": "اختر خطة OsmAnd المثالية لك: ابدأ مجانًا، اختر اشتراكًا مرنًا، أو قم بشراء لمرة واحدة",
   "notice_fastspring_purchase_info": "يتم توفير المشتريات عبر الإنترنت بواسطة FastSpring، بائع معتمد. تتجدد الاشتراكات تلقائيًا ما لم يتم إلغاؤها قبل تاريخ التجديد. يمكنك إلغاء أو تجديد اشتراكك في <portalLink>بوابة إدارة حساب FastSpring</portalLink>.",
@@ -155,7 +159,7 @@
   "feature_nautical_navigation": "الملاحة البحرية",
   "feature_nautical_navigation_desc": "دعم الملاحة للممرات المائية، القنوات، والمياه المفتوحة",
   "feature_nautical_depth": "العمق البحري",
-  "feature_nautical_depth_desc": "تصور الإغاثة تحت الماء مع خطوط العمق ونقاط العمق المرقمة التي تشير إلى أعمق المناطق",
+  "feature_nautical_depth_desc": "تصور الإغاثة تحت الماء مع خطوط العمق ونقاط العمق المرقمة التي تشير إلى المناطق الأقل عمقًا",
   "empty_login_prices_desc": "يجب ربط عملية الشراء أو الاشتراك الخاص بك بحساب. الرجاء تسجيل الدخول إذا كان لديك حساب بالفعل، أو إنشاء حساب جديد للمتابعة.",
   "shared_string_save": "حفظ",
   "order_management": "إدارة الطلبات",
@@ -203,7 +207,21 @@
   "download_track_desc": "يمكنك تنزيل المسار مع البيانات الكاملة، بما في ذلك تعليمات الملاحة، أو إصدار مبسط مناسب للاستخدام مع تطبيقات أخرى.",
   "download_track_full": "بيانات المسار الكاملة",
   "download_track_simplified": "مسار مبسط",
+  "navigation_menu_title": "الطريق",
+  "waiting_for_route_calculation": "حساب المسار",
+  "waiting_for_route_calculation_description": "قد يستغرق حساب مسار طويل بعض الوقت.",
+  "router_error_title": "خطأ التوجيه",
+  "router_error_description": "الرجاء فتح الإعدادات واختيار مزود/ملف تعريف آخر.",
+  "selected_track": "المسار المحدد",
+  "set_start_point": "تعيين نقطة البداية",
+  "set_destination": "تعيين الوجهة",
+  "set_via_point": "نقطة وسيطة",
+  "navigation_tips": "انقر على الخريطة لتعيين نقاط <strong>البداية</strong> و <strong>الوجهة</strong>.",
+  "attach_gpx_title": "ربط بالطرق",
+  "attach_gpx_desc": "سيطابق OsmAnd مسارك بالطرق القريبة لتوجيه خطوة بخطوة محسن.",
+  "attach_gpx_button": "تحديد المسار",
+  "upload_gpx_track": "رفع إلى سحابة OsmAnd",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }

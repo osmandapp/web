@@ -109,6 +109,10 @@
   "purchase_type_monthly_subscription": "Maandelijks abonnement",
   "purchase_type_annual_subscription": "Jaarlijks abonnement",
   "purchase_type_one_time_purchase": "Eenmalige aankoop",
+  "purchase_current_plan": "Huidig plan.",
+  "purchase_manage_purchases": "Aankopen",
+  "purchase_period_month": "maand",
+  "purchase_period_year": "jaar",
   "label_pricing": "Prijzen",
   "subtitle_choose_your_ideal_osmand_plan": "Kies uw ideale OsmAnd-plan: Begin gratis, kies een flexibel abonnement of doe een eenmalige aankoop",
   "notice_fastspring_purchase_info": "Online aankopen worden geleverd door FastSpring, een geautoriseerde wederverkoper. Abonnementen worden automatisch verlengd, tenzij ze vóór de verlengingsdatum worden opgezegd. U kunt uw abonnement opzeggen of verlengen op het <portalLink>FastSpring accountbeheerportaal</portalLink>.",
@@ -203,7 +207,21 @@
   "download_track_desc": "U kunt de track downloaden met volledige gegevens, inclusief navigatie-instructies, of een vereenvoudigde versie die geschikt is voor gebruik met andere apps.",
   "download_track_full": "Volledige trackgegevens",
   "download_track_simplified": "Vereenvoudigde track",
+  "navigation_menu_title": "Route",
+  "waiting_for_route_calculation": "Route berekenen",
+  "waiting_for_route_calculation_description": "Het kan enige tijd duren om een lange route te berekenen.",
+  "router_error_title": "Routerfout",
+  "router_error_description": "Open alstublieft de instellingen en kies een andere provider/profiel.",
+  "selected_track": "Geselecteerde track",
+  "set_start_point": "Startpunt instellen",
+  "set_destination": "Bestemming instellen",
+  "set_via_point": "Tussenstop",
+  "navigation_tips": "Klik op de kaart om <strong>Start</strong> en <strong>Bestemming</strong> punten in te stellen.",
+  "attach_gpx_title": "Bevestigen aan wegen",
+  "attach_gpx_desc": "OsmAnd zal uw track koppelen aan nabijgelegen wegen voor verbeterde turn-by-turn begeleiding.",
+  "attach_gpx_button": "Track selecteren",
+  "upload_gpx_track": "Uploaden naar OsmAnd Cloud",
   "sourceHash": {
-    "message": "1bf57646e6c82e001561d841b168c37351970e1c424d2ca78b1f6f4a35e12599"
+    "message": "99eb74f7b62e75c913d3db9a9b4a983c6a815c22f0321ca4a377e106f89303a4"
   }
 }
