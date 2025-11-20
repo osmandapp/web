@@ -38,10 +38,8 @@ export function onParamsChanged({ router = this.router, profile = this.profile, 
     });
 
     if (updated) {
-        const nextVersion = (this.paramsVersion || 0) + 1;
-        this.paramsVersion = nextVersion;
         this.flushState((o) => {
-            o.paramsVersion = nextVersion;
+            o.paramsUpdateCounter = ++this.paramsUpdateCounter;
         });
     }
 }
