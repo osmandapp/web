@@ -163,25 +163,31 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 
 ## Wikipedia Article {#wikipedia-article}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 To open the Wikipedia article:
 
 1. Enable [Wikipedia POI layer](../map/point-layers-on-map.md#-wikipedia) for a specified profile.
 2. Tap POI on the map.
-3. In the [context menu](../map/map-context-menu.md) of a POI tap *Details* (or simply pull the *context menu* up) to view an abstract of the chosen Wikipedia article.
+3. In the [context menu](../map/map-context-menu.md) of a POI tap [Details](../map/map-context-menu.md#details) (or simply pull the *context menu* up) to view an abstract of the chosen [Wikipedia article](../map/map-context-menu.md#article-description).
 4. If you tap that text (for iOS version), you will be redirected to the offline Wikipedia article.
 5. Use the *Read article* or *Read full article* button to open the full version of the Wikipedia article.
-
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
 
 ![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+To open the Wikipedia article:
+
+1. Enable [Wikipedia POI layer](../map/point-layers-on-map.md#-wikipedia) for a specified profile.
+2. Tap POI on the map.
+3. In the [context menu](../map/map-context-menu.md) of a POI tap [Details](../map/map-context-menu.md#details) (or simply pull the *context menu* up) to view an abstract of the chosen [Wikipedia article](../map/map-context-menu.md#article-description).
+4. If you tap that text, you will be redirected to the offline Wikipedia article.
+5. Use the *Read article* button to open the full version of the Wikipedia article.
 
 ![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
