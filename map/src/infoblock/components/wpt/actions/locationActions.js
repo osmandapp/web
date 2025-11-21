@@ -1,7 +1,7 @@
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../../store/geoRouter/profileConstants';
 
 export function directionFrom(lat, lon, ctx) {
-    if (lat && lon) {
+    if (lat != null && lon != null) {
         ctx.routeObject.setOption(ROUTE_POINTS_START, {
             lat: Number(lat),
             lng: Number(lon),
@@ -10,7 +10,7 @@ export function directionFrom(lat, lon, ctx) {
 }
 
 export function directionTo(lat, lon, ctx) {
-    if (lat && lon) {
+    if (lat != null && lon != null) {
         ctx.routeObject.setOption(ROUTE_POINTS_FINISH, {
             lat: Number(lat),
             lng: Number(lon),
@@ -22,6 +22,10 @@ export function createShareLocations(wpt) {
     const [zoom, lat, lon] = (window.location.hash ?? '').replace('#', '').split('/');
 
     if (!zoom || !lat || !lon) {
+        return null;
+    }
+
+    if (wpt.latlon?.lat == null || wpt.latlon?.lon == null) {
         return null;
     }
 
