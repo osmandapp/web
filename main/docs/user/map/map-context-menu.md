@@ -164,9 +164,11 @@ Beyond the fields listed above, OsmAnd may also show extra descriptive informati
 
 <TabItem value="android" label="Android">  
 
-![Description list](@site/static/img/map/description_list_android.png)
+![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
 
-This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
+This part contains a part of the description from [Wikipedia article](../plugins/wikipedia.md#wikipedia-article), [Favorite](../personal/favorites.md) or Waypoint description, by tapping you can open the full description.
+
+If the selected place has a Wikipedia article, a short preview is shown in this section. When the full article is not available offline, the *Read on Wikipedia* button appears. Tapping it opens a dialog with options depending on the user’s access: users with a purchased plan can download the regional Wikipedia data or open the article in a browser, while free users can open the article online or proceed to the screen that offers offline access.
 
 </TabItem>
 
