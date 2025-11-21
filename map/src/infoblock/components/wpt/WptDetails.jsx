@@ -411,8 +411,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             return { lat: wpt.latlng.lat, lon: wpt.latlng.lng };
         }
         return {
-            lat: wpt.lat ? parseFloat(wpt.lat) : null,
-            lon: wpt.lon ? parseFloat(wpt.lon) : null,
+            lat: wpt.lat != null ? parseFloat(wpt.lat) : null,
+            lon: wpt.lon != null ? parseFloat(wpt.lon) : null,
         };
     }
 
@@ -543,6 +543,9 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     async function getPoiAddress(wpt) {
+        if (wpt.latlon?.lat == null || wpt.latlon?.lon == null) {
+            return null;
+        }
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-address`, {
             apiCache: true,
             params: {
@@ -626,6 +629,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         const tagValue = tags[tagKey];
 
         if (!tagValue) return null;
+
+        if (wpt.latlon?.lat == null || wpt.latlon?.lon == null) {
+            return null;
+        }
 
         return {
             type: 'Feature',
@@ -721,39 +728,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
                     <Typography id={'se-wpt-address'} className={styles.wptCategoryText}>
                         {wpt.address}
-                    </Typography>
-                </ListItemText>
-            </Box>
-        );
-    };
-
-    const WptLoc = ({ wpt, location }) => {
-        const locDist = (wpt, location) => {
-            if (location && wpt.latlon) {
-                if (location === LOCATION_UNAVAILABLE) {
-                    location = getCenterMapLoc(delayedHash);
-                }
-                return (
-                    convertMeters(
-                        getDistance(location.lat, location.lng, wpt.latlon.lat, wpt.latlon.lon),
-                        ctx.unitsSettings.len,
-                        LARGE_UNIT
-                    ).toFixed(0) + ` ${t(getLargeLengthUnit(ctx))}`
-                );
-            }
-            return null;
-        };
-
-        const color = getColorLocation(location);
-
-        return (
-            <Box className={styles.wptCategory}>
-                <ListItemIcon sx={{ minWidth: 'auto', fill: color }}>
-                    <DirectionIcon />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography sx={{ color: color + '!important' }} className={styles.wptCategoryText} noWrap>
-                        {locDist(wpt, location) ?? 'No distance'}
                     </Typography>
                 </ListItemText>
             </Box>
@@ -977,7 +951,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                     }}
                                 />
                             )}
-                            {wpt.latlon && (
+                            {wpt.latlon?.lat != null && wpt.latlon?.lon != null && (
                                 <WptTagInfo
                                     key={'latlon'}
                                     copy={true}

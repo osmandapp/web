@@ -376,8 +376,8 @@ function getPointGeoProfile(point, points) {
 }
 
 export function getPointLatLon(point) {
-    let lat = point.lat ?? point.ext.lat;
-    let lon = point.lon ?? point.ext.lon;
+    const lat = point.lat ?? point.ext?.lat;
+    const lon = point.lon ?? point.ext?.lon;
     return lat != null && lon != null ? { lat: lat, lon: lon } : null;
 }
 
@@ -397,65 +397,70 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
               isFavorites: true,
           })
         : null;
-    points &&
-        points.forEach((point) => {
-            let opt;
-            let icon = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon });
-            let pInfo = point.ext;
-            let lat = point.lat ? point.lat : pInfo.lat;
-            let lon = point.lon ? point.lon : pInfo.lon;
-            let coords = new L.LatLng(lat, lon);
-            if (icon) {
-                opt = { clickable: true, icon: icon };
-                if (pInfo?.time) {
-                    opt.time = pInfo.time;
-                }
-                if (pInfo?.cmt) {
-                    opt.cmt = pInfo.cmt;
-                }
+    points?.forEach((point) => {
+        let opt;
+        const icon = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon });
+        const pInfo = point.ext;
+        const lat = point.lat != null ? point.lat : pInfo?.lat;
+        const lon = point.lon != null ? point.lon : pInfo?.lon;
+
+        // Skip waypoints with invalid coordinates
+        if (lat == null || lon == null || isNaN(lat) || isNaN(lon)) {
+            return;
+        }
+
+        let coords = new L.LatLng(lat, lon);
+        if (icon) {
+            opt = { clickable: true, icon: icon };
+            if (pInfo?.time) {
+                opt.time = pInfo.time;
             }
-            if (point.name) {
-                opt.name = point.name;
+            if (pInfo?.cmt) {
+                opt.cmt = pInfo.cmt;
             }
-            opt.category = point.category ? point.category : 'favorites';
-            opt.groupId = groupId;
-            if (point.desc) {
-                opt.desc = point.desc;
-            }
-            if (point.address) {
-                opt.address = point.address;
-            }
-            opt.draggable = false;
-            opt.wpt = true;
-            opt.color = point.color;
-            let markerLayer = new L.Marker(coords, opt);
-            const marker = simplify ? getMarkerFromCluster(point, clusters, coords, opt, markerLayer) : markerLayer;
-            if (!marker) {
-                return;
-            }
-            if (ctx && map && data) {
-                marker.on('click', (e) => {
-                    const wpt = {
-                        trackWpt: true,
-                        mapObj: true,
-                        trackData: data,
-                        ...e,
-                        ...point,
-                    };
-                    ctx.setSelectedWpt(wpt);
-                });
-                createHoverMarker({
-                    marker,
-                    mainStyle: true,
-                    text: marker.options['name'],
-                    latlng: marker._latlng,
-                    iconSize: DEFAULT_ICON_SIZE,
-                    map,
-                    ctx,
-                });
-            }
-            layers.push(marker);
-        });
+        }
+        if (point.name) {
+            opt.name = point.name;
+        }
+        opt.category = point.category ? point.category : 'favorites';
+        opt.groupId = groupId;
+        if (point.desc) {
+            opt.desc = point.desc;
+        }
+        if (point.address) {
+            opt.address = point.address;
+        }
+        opt.draggable = false;
+        opt.wpt = true;
+        opt.color = point.color;
+        let markerLayer = new L.Marker(coords, opt);
+        const marker = simplify ? getMarkerFromCluster(point, clusters, coords, opt, markerLayer) : markerLayer;
+        if (!marker) {
+            return;
+        }
+        if (ctx && map && data) {
+            marker.on('click', (e) => {
+                const wpt = {
+                    trackWpt: true,
+                    mapObj: true,
+                    trackData: data,
+                    ...e,
+                    ...point,
+                };
+                ctx.setSelectedWpt(wpt);
+            });
+            createHoverMarker({
+                marker,
+                mainStyle: true,
+                text: marker.options['name'],
+                latlng: marker._latlng,
+                iconSize: DEFAULT_ICON_SIZE,
+                map,
+                ctx,
+            });
+        }
+        layers.push(marker);
+    });
 }
 
 function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
