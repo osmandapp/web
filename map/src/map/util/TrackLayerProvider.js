@@ -398,7 +398,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
           })
         : null;
     points?.forEach((point) => {
-        let opt;
+        let opt = {};
         const icon = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon });
         const pInfo = point.ext;
         const lat = point.lat != null ? point.lat : pInfo?.lat;
