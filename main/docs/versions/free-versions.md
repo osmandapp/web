@@ -18,6 +18,27 @@ Direct links to free OsmAnd versions.
 
 ## Version 5 {#version-5}
 
+### Version 5.2 {#version-52}
+
+Release date 11/2025:
+
+- New "Marine" nautical map style with extensive customization options.
+- Added street and city details to search results.
+- New Trip Recording widgets: Max Speed, Average Slope, and improved Uphill/Downhill.
+- Improved map rendering speed.
+- Base automatic sync to OsmAnd Cloud.
+- Improved OBDII BLE connectivity.
+- Updates of "Analyze by Interval" feature.
+- Improved Plan a Route tool.
+- Added the ability to set altitude units separately from distance units.
+- Improved map orientation quick action with selectable compass modes.
+- Android Auto enhancements.
+- Inverted screen orientations.
+- Improved UI for adding truck metrics in Truck profile settings.
+- More parameters for route showing on the map.
+
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+
 ### Version 5.1 {#version-51}
 
 Release date 06/2025:
