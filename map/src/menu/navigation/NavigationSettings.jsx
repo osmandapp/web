@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useContext, useMemo, useRef, useCallback } from 'react';
 import { Box, Collapse, Drawer, List, Tooltip } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -38,14 +38,34 @@ const TRANSLATION_RULES = {
     },
 };
 
-const vehicleKeys = ['weight', 'height', 'length', 'width', 'motor_type'];
 const OLD_VEHICLE_SECTION_KEY = 'vehicle_metrics';
 const DEVEL_SECTION_NAME = 'Routing (devel)';
 const APPROX_SECTION_NAME = 'Approximation (devel)';
+const DEVEL_SECTION_NAMES = new Set([DEVEL_SECTION_NAME, APPROX_SECTION_NAME]);
 
 const AVOID_UNPAVED = 'avoid_unpaved';
 const PREFER_UNPAVED = 'prefer_unpaved';
 const APPLY_APPROXIMATION = 'applyapproximation';
+
+const PARAM_TO_SECTION_RULES = {
+    weight: SECTION_KEYS.VEHICLE_PARAMETERS,
+    height: SECTION_KEYS.VEHICLE_PARAMETERS,
+    length: SECTION_KEYS.VEHICLE_PARAMETERS,
+    width: SECTION_KEYS.VEHICLE_PARAMETERS,
+    motor_type: SECTION_KEYS.VEHICLE_PARAMETERS,
+    maxaxleload: SECTION_KEYS.VEHICLE_PARAMETERS,
+    weightrating: SECTION_KEYS.VEHICLE_PARAMETERS,
+    'avoid_%': SECTION_KEYS.AVOID,
+    'allow_%': SECTION_KEYS.ALLOW,
+    'prefer_%': SECTION_KEYS.ALLOW,
+    routing: SECTION_KEYS.DEVELOPMENT,
+    approximation: SECTION_KEYS.DEVELOPMENT,
+    minPointApproximation: SECTION_KEYS.DEVELOPMENT,
+    noconditionals: SECTION_KEYS.DEVELOPMENT,
+    noglobalfile: SECTION_KEYS.DEVELOPMENT,
+    gpxtimestamps: SECTION_KEYS.DEVELOPMENT,
+    '%': SECTION_KEYS.GENERAL, // Default fallback
+};
 
 export default function NavigationSettings({
     geoRouter,
@@ -222,6 +242,7 @@ export default function NavigationSettings({
 
     const getOptionName = (opt) => translateOption(opt, { fallback: opt.label });
 
+    // Only for sections without specific rules
     const normalizeSectionKey = (sectionName) => {
         if (!sectionName) return SECTION_KEYS.GENERAL;
         const normalized = sectionName.toLowerCase().replaceAll(/\s+/g, '_');
@@ -229,15 +250,39 @@ export default function NavigationSettings({
         return normalized;
     };
 
+    const matchParamRule = (paramKey) => {
+        if (PARAM_TO_SECTION_RULES[paramKey]) {
+            return PARAM_TO_SECTION_RULES[paramKey];
+        }
+        for (const [pattern, section] of Object.entries(PARAM_TO_SECTION_RULES)) {
+            if (pattern === '%') {
+                continue;
+            }
+            if (pattern.includes('%')) {
+                const regex = new RegExp(`^${pattern.replaceAll('%', '.*')}$`);
+                if (regex.test(paramKey)) {
+                    return section;
+                }
+            }
+        }
+        return SECTION_KEYS.GENERAL;
+    };
+
     const getTargetSectionKey = (optKey, opt) => {
-        const isVehicleParam = vehicleKeys.some((vk) => optKey === vk);
-        if (isVehicleParam) {
-            return SECTION_KEYS.VEHICLE_PARAMETERS;
+        const ruleSection = matchParamRule(optKey);
+
+        if (ruleSection !== SECTION_KEYS.GENERAL) {
+            return ruleSection;
         }
-        if (opt.section === DEVEL_SECTION_NAME || opt.section === APPROX_SECTION_NAME) {
-            return SECTION_KEYS.DEVELOPMENT;
+        // If no rule matched and opt.section is provided, normalize it
+        if (opt.section) {
+            if (DEVEL_SECTION_NAMES.has(opt.section)) {
+                return SECTION_KEYS.DEVELOPMENT;
+            }
+            return normalizeSectionKey(opt.section);
         }
-        return normalizeSectionKey(opt.section ?? SECTION_KEYS.GENERAL);
+
+        return SECTION_KEYS.GENERAL;
     };
 
     // Build section list with options
@@ -263,44 +308,32 @@ export default function NavigationSettings({
             return sectionsMap;
         }
 
-        // First: collect all unique section keys
-        const allSectionKeys = new Set();
+        // Collect section keys and add options
         for (const [optKey, opt] of Object.entries(opts)) {
             if (opt.section === 'Hidden' || !showDevSection(opt)) {
                 continue;
             }
 
             const targetSectionKey = getTargetSectionKey(optKey, opt);
-            allSectionKeys.add(targetSectionKey);
-        }
 
-        for (const sectionKey of allSectionKeys) {
-            if (!(sectionKey in sectionsMap)) {
-                const translationKey = `routing_attr_${sectionKey}_name`;
-                sectionsMap[sectionKey] = {
+            // Create section if it doesn't exist
+            if (!(targetSectionKey in sectionsMap)) {
+                const translationKey = `routing_attr_${targetSectionKey}_name`;
+                sectionsMap[targetSectionKey] = {
                     name: t(translationKey),
                     opts: {},
                 };
             }
-        }
 
-        // Second: add options to sections
-        for (const [optKey, opt] of Object.entries(opts)) {
-            if (opt.section === 'Hidden' || !showDevSection(opt)) {
-                continue;
-            }
+            // Add option to section
+            const optionId = optKey;
+            const optKeyWithPrefix = opt.key || optKey;
+            const optWithKey = { ...opt, key: optKeyWithPrefix, optionId };
 
-            const targetSectionKey = getTargetSectionKey(optKey, opt);
-            if (targetSectionKey in sectionsMap) {
-                const optionId = optKey;
-                const optKeyWithPrefix = opt.key || optKey;
-                const optWithKey = { ...opt, key: optKeyWithPrefix, optionId };
-
-                sectionsMap[targetSectionKey].opts[optionId] = {
-                    ...optWithKey,
-                    displayLabel: getOptionName(optWithKey),
-                };
-            }
+            sectionsMap[targetSectionKey].opts[optionId] = {
+                ...optWithKey,
+                displayLabel: getOptionName(optWithKey),
+            };
         }
 
         return sectionsMap;
