@@ -70,6 +70,7 @@ export function addClicksToMap(map, ctx) {
         clickTimer = setTimeout(() => {
             clickTimer = null;
             ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE + 'px');
+            ctx.setOpenNavigationSettings(false);
         }, CLICK_DELAY);
     };
 

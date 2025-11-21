@@ -1,25 +1,9 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
-import { RemoveCircle } from '@mui/icons-material';
-import {
-    MenuItem,
-    IconButton,
-    FormControl,
-    Typography,
-    Link,
-    Switch,
-    Box,
-    Grid,
-    AppBar,
-    Toolbar,
-    Tooltip,
-    CircularProgress,
-} from '@mui/material';
+import { Box, Tooltip, CircularProgress } from '@mui/material';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_TRACK } from '../../context/AppContext';
-import RouteProfileSettings from './RouteProfileSettings';
 import styles from './routemenu.module.css';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
@@ -27,7 +11,6 @@ import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attac
 import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
 import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_track_recordable.svg';
 import { ReactComponent as SaveCloudIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
-import headerStyles from '../trackfavmenu.module.css';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
@@ -56,6 +39,9 @@ import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import SelectedTrackRow from './SelectedTrackRow';
 import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
+import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
+import NavigationSettings from './NavigationSettings';
+import AvoidRoadsList from './AvoidRoadsList';
 
 export function pickNextRoutePoint(routeObject) {
     if (!routeObject) {
@@ -91,10 +77,20 @@ export default function NavigationMenu() {
 
     const routeObject = ctx.routeObject;
 
-    const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
-
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
+
+    const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
+
+    useEffect(() => {
+        ctx.setOpenNavigationSettings(openSettings);
+    }, [openSettings]);
+
+    useEffect(() => {
+        if (!ctx.openNavigationSettings) {
+            setOpenSettings(false);
+        }
+    }, [ctx.openNavigationSettings]);
 
     const [downloadDialogOpen, setDownloadDialogOpen] = useState(false);
     const [downloadTrack, setDownloadTrack] = useState(null);
@@ -106,23 +102,12 @@ export default function NavigationMenu() {
     const [visibleProfiles, setVisibleProfiles] = useState(ctx.routeVisibleProfiles || DEFAULT_VISIBLE_PROFILES);
 
     useEffect(() => {
-        openSettings ? routeObject.onOpenSettings() : routeObject.onCloseSettings();
-    }, [openSettings]);
-
-    useEffect(() => {
         if (!ctx.routeTrackFile) {
             if (btnFile.current) {
                 btnFile.current.value = '';
             }
         }
     }, [ctx.routeTrackFile]);
-
-    const { type } = routeObject.getProfile();
-
-    const routeOptions =
-        ctx.develFeatures && type === 'osrm'
-            ? ['route.map.hidePoints', 'route.map.forceApproximation'] // OSRM-only option (forceApproximation)
-            : ['route.map.hidePoints']; // default
 
     function openInfoBlock() {
         const route = routeObject.getRoute();
@@ -138,10 +123,14 @@ export default function NavigationMenu() {
     }
 
     function close() {
+        if (openSettings) {
+            setOpenSettings(false);
+        }
         routeObject.setOption(ROUTE_POINTS_START, null);
         routeObject.setOption(ROUTE_POINTS_FINISH, null);
         routeObject.setOption(ROUTE_POINTS_VIA, []);
         routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
+        routeObject.resetRoute();
 
         setResetSettings(true);
         closeHeader({ ctx });
@@ -208,19 +197,11 @@ export default function NavigationMenu() {
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
-            <AppBar
-                position="static"
-                className={headerStyles.appbar}
-                sx={{ boxShadow: 'none !important', borderBottom: 'none !important' }}
-            >
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" type="button" className={headerStyles.appBarIcon} onClick={close}>
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                        {t('web:navigation_menu_title')}
-                    </Typography>
-                    <Box sx={{ display: 'flex', gap: 1, marginLeft: 'auto' }}>
+            <HeaderNoUnderline
+                title={t('web:navigation_menu_title')}
+                onClose={close}
+                rightContent={
+                    <Box sx={{ display: 'flex', gap: 1, ml: 'auto' }}>
                         <Tooltip title={t('shared_string_download')} arrow>
                             <span>
                                 <ActionIconBtn
@@ -244,8 +225,8 @@ export default function NavigationMenu() {
                             </Tooltip>
                         )}
                     </Box>
-                </Toolbar>
-            </AppBar>
+                }
+            />
             <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box className={styles.profileButtonBox}>
                     {visibleProfiles.map((key) => {
@@ -283,25 +264,13 @@ export default function NavigationMenu() {
                                 size={'36px'}
                                 icon={<SettingsIcon />}
                                 onClick={() => {
-                                    setOpenSettings(true);
+                                    setOpenSettings((prev) => !prev);
                                 }}
                             />
                         </Box>
                     </Tooltip>
                 </Box>
                 <NavigationPointsManager routeObject={routeObject} />
-                {ctx.navigationRoutingInProgress && (
-                    <>
-                        <ThickDivider mt={0} mb={0} />
-                        <TextLeftIconBtn
-                            icon={<CircularProgress size={24} thickness={4} />}
-                            text={t('web:waiting_for_route_calculation')}
-                            desc={t('web:waiting_for_route_calculation_description')}
-                            btnText={t('shared_string_cancel')}
-                            onClick={handleCancelRouteCalculation}
-                        />
-                    </>
-                )}
                 {ctx.routingErrorMsg &&
                     routeObject.getOption(ROUTE_POINTS_START) &&
                     routeObject.getOption(ROUTE_POINTS_FINISH) && (
@@ -347,62 +316,29 @@ export default function NavigationMenu() {
                         <ThickDivider />
                     </>
                 )}
-                {avoidRoads.map((item, ind) => (
-                    <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
-                        <FormControl fullWidth>
-                            <Link
-                                target="_blank"
-                                rel="noopener"
-                                href={'https://openstreetmap.org/way/' + Math.floor(item.id / 64)}
-                            >
-                                Avoid {item.name}
-                            </Link>
-                        </FormControl>
-                        <IconButton
-                            sx={{ ml: 1 }}
-                            onClick={() => {
-                                const newAvoidRoads = Object.assign([], avoidRoads);
-                                newAvoidRoads.splice(ind, 1);
-                                routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, newAvoidRoads);
-                            }}
-                        >
-                            <RemoveCircle fontSize="small" />
-                        </IconButton>
-                    </MenuItem>
-                ))}
-                <Box sx={{ p: 2 }}>
-                    <RouteProfileSettings
-                        key="routesettingsembed"
-                        embed={true}
-                        resetSettings={resetSettings}
-                        setResetSettings={setResetSettings}
-                    />
-                    {routeObject.getRoute() &&
-                        routeOptions.map((opt) => (
-                            <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
-                                <Grid container alignItems="center">
-                                    <Grid
-                                        item
-                                        xs={10}
-                                        sx={{ mt: '4px' }}
-                                        onClick={() => routeObject.setOption(opt, (o) => !o)}
-                                    >
-                                        {routeObject.getOptionText(opt)}
-                                    </Grid>
-                                    <Grid item xs={2}>
-                                        <Switch
-                                            checked={routeObject.getOption(opt)}
-                                            onChange={(e) => routeObject.setOption(opt, e.target.checked)}
-                                        />
-                                    </Grid>
-                                </Grid>
-                            </MenuItem>
-                        ))}
-                </Box>
+                <AvoidRoadsList
+                    avoidRoads={avoidRoads}
+                    onRemove={(ind) => {
+                        const newAvoidRoads = Object.assign([], avoidRoads);
+                        newAvoidRoads.splice(ind, 1);
+                        routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, newAvoidRoads);
+                    }}
+                />
+                {ctx.navigationRoutingInProgress && (
+                    <>
+                        <TextLeftIconBtn
+                            icon={<CircularProgress size={24} thickness={4} />}
+                            text={t('web:waiting_for_route_calculation')}
+                            desc={t('web:waiting_for_route_calculation_description')}
+                            btnText={t('shared_string_cancel')}
+                            onClick={handleCancelRouteCalculation}
+                        />
+                    </>
+                )}
                 <SelectedTrackRow trackFile={ctx.routeTrackFile} onClear={handleClearSelectedTrack} />
                 <ColorBlock color={'#f0f0f0'} />
                 {openSettings && (
-                    <RouteProfileSettings
+                    <NavigationSettings
                         key="routesettingsdialog"
                         setOpenSettings={setOpenSettings}
                         resetSettings={resetSettings}

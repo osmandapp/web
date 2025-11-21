@@ -63,6 +63,11 @@
     letter-spacing: 0.16px !important;
 }
 
+.inputFieldLink {
+    composes: inputField;
+    color: var(--selected-color, #1976d2) !important;
+}
+
 .navigationInputRow {
     display: flex !important;
     align-items: center !important;
@@ -125,7 +130,7 @@
 .pointsContainer {
     display: flex !important;
     flex-direction: column !important;
-    padding: 4px 10px 16px 16px !important;
+    padding: 4px 10px 20px 16px !important;
     gap: 1px !important;
 }
 

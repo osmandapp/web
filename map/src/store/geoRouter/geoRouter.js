@@ -54,6 +54,7 @@ export class geoRouter {
     setter = null;
     loaded = false;
     preview = false;
+    paramsUpdateCounter = 0;
 
     // current
     type = osmand.type;

@@ -23,6 +23,7 @@ export function onDragEnd() {
  * Save changed params to current router/profile
  */
 export function onParamsChanged({ router = this.router, profile = this.profile, params }) {
+    let updated = false;
     this.providers.forEach((r, providerIdx) => {
         if (r.key === router) {
             r.profiles?.forEach((p, profileIdx) => {
@@ -30,10 +31,17 @@ export function onParamsChanged({ router = this.router, profile = this.profile, 
                     this.flushState((o) => {
                         o.providers[providerIdx].profiles[profileIdx].params = params;
                     });
+                    updated = true;
                 }
             });
         }
     });
+
+    if (updated) {
+        this.flushState((o) => {
+            o.paramsUpdateCounter = ++this.paramsUpdateCounter;
+        });
+    }
 }
 
 /**
