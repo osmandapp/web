@@ -250,10 +250,12 @@ export default function WaypointsTab() {
         if (ctx.selectedGpxFile.wpts) {
             const layers = getLayers();
             const wptsMap = Object.fromEntries(
-                ctx.selectedGpxFile.wpts.map((wpt, index) => [
-                    parseFloat(wpt.lat).toFixed(6) + ',' + parseFloat(wpt.lon).toFixed(6),
-                    { wpt, index },
-                ])
+                ctx.selectedGpxFile.wpts
+                    .filter((wpt) => wpt.lat != null && wpt.lon != null && !isNaN(wpt.lat) && !isNaN(wpt.lon))
+                    .map((wpt, index) => [
+                        parseFloat(wpt.lat).toFixed(6) + ',' + parseFloat(wpt.lon).toFixed(6),
+                        { wpt, index },
+                    ])
             );
 
             layers.forEach((layer) => {

@@ -177,7 +177,7 @@ export default function TrackAnalyzerLayer() {
         let nearestPoint = null;
 
         for (const point of points) {
-            if (!point.lat || !point.lon) {
+            if (point.lat == null || point.lon == null || isNaN(point.lat) || isNaN(point.lon)) {
                 continue;
             }
             if (point.lat === mouseLatLng.lat && point.lon === mouseLatLng.lng) {
