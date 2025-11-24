@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 3036a4367dec965dc2ce8a575aa5d332ed8bf23931798249cf1fc88b99ef5ae5
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -76,7 +76,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Suscripción | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 meses) | **Suscripción** (1 mes / 12 meses) |
+| **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
 | **Precio (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
 | **Precio (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
@@ -97,6 +97,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
+| [Rejilla de coordenadas — Personalización de color](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualización de tracks en 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guías de viaje (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

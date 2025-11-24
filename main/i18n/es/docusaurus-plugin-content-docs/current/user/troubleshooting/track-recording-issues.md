@@ -1,8 +1,9 @@
 ---
-source-hash: 7f2e85f7e22604bcf22bbc6bdb7faf78780ede4bd62e7cd5554ceedacb06dd7d
+source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
 sidebar_position: 6
 title:  Grabación de rutas
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Visión general {#overview}
@@ -28,7 +28,7 @@ Este artículo cubre los problemas de grabación de rutas GPX que se han observa
   - **Permitir todo el tiempo**, por otro lado, significa que la aplicación puede en principio obtener su ubicación 'sin que se note' sin que se aplique ninguna de estas condiciones. Pero *Android* limita la frecuencia de acceso a la ubicación en este modo (*segundo plano*) a algo así como una vez por hora, lo que ciertamente no es el modo correcto para una aplicación de navegación.
 
 
-## Las rutas grabadas tienen ruido {#recorded-tracks-are-noisy}
+## Las rutas grabadas son ruidosas {#recorded-tracks-are-noisy}
 
 Hay 2 problemas típicos de precisión que conducen a una ruta grabada *desordenada*.
 
@@ -38,7 +38,7 @@ Hay 2 problemas típicos de precisión que conducen a una ruta grabada *desorden
 Acciones de mitigación:
 
 - Pause sus grabaciones mientras está parado, o use el filtro *Desplazamiento mínimo* del plugin de Grabación de viaje.
-- Seleccione el espaciado de tiempo o desplazamiento de sus puntos grabados apropiado para capturar la sinuosidad de su viaje, pero sin crear muchos puntos extra (cuya dispersión creará ruido y exagerará la distancia y las fluctuaciones de elevación).
+- Seleccione el espaciado de tiempo o desplazamiento de sus puntos grabados apropiado para capturar la sinuosidad de su viaje, pero sin crear muchos puntos extra (cuya dispersión creará ruido y exagerará la distancia y las fluctuaciones de elevación). 
 - También es posible editar una ruta más tarde y eliminar los puntos *"ruidosos"*.
 - O puede usar los ajustes del *Plugin de Grabación de Viaje* para filtrar los puntos *"ruidosos"* ya durante la grabación, basándose en su **experiencia** y **dispositivo de grabación**. Puede filtrar puntos por varios criterios:
   - Puntos con velocidad baja o cero.
@@ -55,25 +55,17 @@ Acciones de mitigación:
 - **Evitar registro autónomo**. Asegúrese de que el ajuste *Evitar registro autónomo* en Plugins/Grabación de viaje esté desactivado para permitir que OsmAnd grabe rutas con la pantalla apagada.
 - **Actualizar OsmAnd**. Las versiones de Android utilizan diferentes estrategias para reducir el consumo de energía [matando aplicaciones que se ejecutan en segundo plano](https://dontkillmyapp.com/). La versión 3.9 o superior utiliza un servicio en primer plano, visible en la barra de notificaciones, [para mantener la aplicación funcionando en segundo plano](https://dontkillmyapp.com/) en la mayoría de las versiones de Android. Esto es particularmente efectivo en Android 8+ ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255), [Issue #5587](https://github.com/osmandapp/Osmand/issues/5587)).
 
-
 ### Optimización de Android para la grabación de rutas {#optimizing-android-for-track-recording}
 
 A partir de Android 4.4, las funciones de ahorro de energía pueden limitar el uso de la CPU, reducir el brillo de la pantalla y cerrar aplicaciones en segundo plano cuando la pantalla está apagada. Esto puede afectar el rendimiento de OsmAnd para uso en exteriores, la representación de mapas y la grabación de rutas. Versiones posteriores de Android han añadido comportamientos de ahorro de energía basados en IA como **Batería automática** y **Ahorro de energía automático**, introduciendo un comportamiento dinámico y aún menos predecible. Para evitar problemas de grabación, al menos inicialmente o para depuración, **considere desactivar por completo las funciones de ahorro de energía**. Los usuarios informan que el impacto en la duración de la batería para la mayoría de los dispositivos es tolerable.
 
-- **Excluir OsmAnd de la *Optimización de batería*.** En los *Ajustes* de su dispositivo Android, busque OsmAnd en *Aplicaciones*, *Gestor de aplicaciones* o similar. Localice la sección *Batería*, *Ahorro de energía* o *Consumo de energía*, y excluya a OsmAnd de la optimización de batería. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
+- **Excluir OsmAnd de la *Optimización de batería*.** En los *Ajustes* de su dispositivo Android, busque OsmAnd en *Aplicaciones*, *Aplicaciones* o *Gestor de aplicaciones*. Localice la sección *Batería*, *Ahorro de energía* o *Consumo de energía*, y excluya a OsmAnd de la optimización de batería. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
   
 - **Desactivar el modo *Ahorro de energía*.** Este modo tiene una alta probabilidad de impactar/cerrar incluso los servicios en primer plano, como la grabación de viajes de OsmAnd.
 
 - **Desactivar el *Ahorro de energía adaptable*.** Tener esto 'activado' aplicará políticas a nivel de sistema basadas en patrones de uso para desactivar/activar el modo de 'ahorro de energía' mencionado anteriormente.
 
 - **Desactivar la *Batería adaptable* a menos que use la aplicación OsmAnd regularmente.** La *Batería adaptable* funciona por aplicación, también basada en patrones de uso. Su efecto en una aplicación específica puede reducirse eximiendo esa aplicación de la *Optimización de batería* (como establecerla en *No optimizada*). Sin embargo, la *Batería adaptable* aún puede cerrar servicios en primer plano como la grabación de viajes de OsmAnd, si el dispositivo considera que OsmAnd está en su grupo de aplicaciones 'raramente usadas'.
-
-### Controlar el comportamiento de las aplicaciones en segundo plano de iOS {#control-the-behavior-of-ios-background-apps}
-
-iOS puede suspender o detener aplicaciones en segundo plano automáticamente cuando se reasignan los recursos del sistema. OsmAnd no puede anular este comportamiento. Si la grabación de la ruta se interrumpe cuando el dispositivo está bloqueado, esto puede dejar huecos en la grabación. Puede editar estos huecos utilizando la herramienta [Planificar una ruta](https://docs.osmand.net/docs/user/plan-route/create-route).
-
-Para más detalles sobre cómo iOS maneja el seguimiento de la ubicación, consulte la documentación de Apple [aquí](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
-
 
 ### Configuración de energía probada para Android 9, 10 y 11 (Hardy, 2020-08-25) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
 
@@ -85,7 +77,7 @@ La siguiente configuración de energía ha sido probada con éxito en Android 9,
 - (4) **Poner en suspensión apps no usadas** = ACTIVADO (¡Pero OsmAnd está exento de la optimización de la batería, ver (9) más abajo!)
 - (5) **Desactivar automáticamente apps no usadas** = DESACTIVADO (Parece que solo está presente en Android 9.)
 - (6) **Optimizar ajustes** = DESACTIVADO (En Android 10 en *Cuidado del dispositivo / Avanzado*, en Android 11 parece haber desaparecido.)
-- (7) **Optimización automática (diaria)** = ACTIVADO (No tiene efecto aquí.)
+- (7) **Optimizar automáticamente (diaria)** = ACTIVADO (No tiene efecto aquí.)
 - (8) **Reinicio automático (a horas programadas)** = DESACTIVADO (No tiene efecto aquí.)
 - (9) **Optimizar uso de batería** (En *Ajustes de Android / Aplicaciones / OsmAnd / Batería* o *Ajustes / Aplicaciones / 3 puntos / Acceso especial / Optimizar uso de batería / Todas / OsmAnd*) = Excluir a OsmAnd de la optimización de la batería (muy recomendable, aunque no es necesario si la aplicación es iniciada por el usuario con frecuencia).
 - (10) **Permitir actividad en segundo plano** = ACTIVADO para OsmAnd en *Aplicaciones / OsmAnd / Batería* para Android 11
@@ -100,17 +92,23 @@ Algunos de estos ajustes interactúan, así que sea preciso. La mejor manera es 
 - *Cuidado del dispositivo / Batería / Administración de energía de la aplicación*
 - *Cuidado del dispositivo / Batería / Más ajustes de batería*
 
+### Controlar el comportamiento de las aplicaciones en segundo plano de iOS {#control-the-behavior-of-ios-background-apps}
+
+iOS puede suspender o detener aplicaciones en segundo plano automáticamente cuando se reasignan los recursos del sistema. OsmAnd no puede anular este comportamiento. Si la grabación de la ruta se interrumpe cuando el dispositivo está bloqueado, esto puede dejar huecos en la grabación. Puede editar estos huecos utilizando la herramienta [Planificar una ruta](https://docs.osmand.net/docs/user/plan-route/create-route).
+
+Para más detalles sobre cómo iOS maneja el seguimiento de la ubicación, consulte la documentación de Apple [aquí](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
+
 
 ## Cómo registrar la distancia recorrida {#how-to-track-traveled-distance}
 
-OsmAnd no tiene un widget especial similar a un odómetro, puede usar el [plugin de Grabación de viaje](../plugins/trip-recording.md#new-track-recording) para registrar su distancia recorrida y restablecerla cuando sea necesario.
+OsmAnd no tiene un widget especial similar a un odómetro, puede usar el [plugin de Grabación de viaje](../plugins/trip-recording.md#new-track-recording) para registrar su distancia recorrida y restablecerla cuando sea necesario.  
 
 
 ## OsmAnd 3.9: Problemas de altitud al usar los Servicios de Google Play {#osmand-39-altitude-issues-when-using-google-play-services}
 
-Google Play ha cambiado su política y, para cumplirla, OsmAnd, a partir de la versión 3.9 (excluyendo las compilaciones Nightly, F-Droid y Huawei), debe usar los Servicios de Google Play para obtener la ubicación mientras se ejecuta en segundo plano (es decir, en la terminología de Android, como un servicio en primer plano con una notificación visible del sistema).
+Google Play ha cambiado su política y, para cumplirla, OsmAnd, a partir de la versión 3.9 (excluyendo las compilaciones Nightly, F-Droid y Huawei), debe usar los Servicios de Google Play para obtener las fijaciones de ubicación mientras se ejecuta en segundo plano (es decir, en la terminología de Android, como un servicio en primer plano con una notificación visible del sistema).
 
-Después de este cambio, parece haber un problema con el registro de la altitud: Aparentemente, los Servicios de Google Play interpolan la medición de la altitud de manera muy agresiva, ver [issue de GitHub #10864](https://github.com/osmandapp/OsmAnd/issues/10864). Este problema afecta a Android 10, posiblemente no a Android 11. El [problema](https://issuetracker.google.com/issues/180218747) ya ha sido reportado en el sitio web de Google, y probablemente se solucionará el 09-03-2021.
+Después de este cambio, parece haber un problema con el registro de la altitud: Aparentemente, los Servicios de Google Play interpolan la medición de la altitud de manera muy agresiva, ver [issue de GitHub #10864](https://github.com/osmandapp/OsmAnd/issues/10864). Este problema afecta a Android 10, posiblemente no a Android 11. El [problema](https://issuetracker.google.com/issues/180218747) ya ha sido reportado en el sitio web de Google, y probablemente se solucionará el 09-03-2021.  
 
 Como solución alternativa, en [*Ajustes de OsmAnd → Fuente de ubicación*](../personal/global-settings.md#location-source) puede cambiar la fuente de ubicación de **Servicios de Google Play** a **API de Android**.
 
@@ -125,7 +123,7 @@ La estrategia anterior de usar un modo de reposo (doze) y un Despertar del GPS p
 
 - (A1) Mientras se usa OsmAnd, por ejemplo, en Navegación. Mantenemos el módulo GPS del sistema encendido todo el tiempo, ya que la información de ubicación continua es clave aquí. El efecto en el uso de la batería (orden de magnitud) parece ser de aproximadamente un 5% por hora en sistemas antiguos hasta Android 4.4, y de un 2-3% en sistemas más nuevos.
 - (A2) Para la grabación de rutas en *segundo plano* sin navegación simultánea. Para la grabación con intervalos de hasta 15 segundos, también mantenemos el GPS encendido, otras estrategias no ahorrarán mucha energía de la batería.
-- (A3) Para intervalos >=30seg, encendemos el GPS solo para cada punto de muestreo. Esto tiene un efecto notable en la precisión de los puntos registrados, pero reduce el uso de la batería a un orden de magnitud de 1.2% por hora para la grabación de rutas de 30 segundos.
+- (A3) Para intervalos \>=30seg, encendemos el GPS solo para cada punto de muestreo. Esto tiene un efecto notable en la precisión de los puntos registrados, pero reduce el uso de la batería a un orden de magnitud de 1.2% por hora para la grabación de rutas de 30 segundos.
 
 **<del> (B) Problemas del Despertar del GPS</del>**
 

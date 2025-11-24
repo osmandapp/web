@@ -1,5 +1,5 @@
 ---
-source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -262,7 +262,7 @@ La función **Papelera** le permite ver y gestionar los archivos que han sido el
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Cambios en OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
+![Cambios en OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -339,6 +339,23 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osma
 La sección del menú **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) muestra información sobre cuánto de los 3.15 gigabytes de memoria en *Ajustes*, *Mis Lugares* y *Recursos* se está utilizando. Puede ver el tamaño de almacenamiento de cada tipo de datos y eliminarlo de OsmAnd Cloud si es necesario. 
 
 Eliminar datos de la Nube no afecta su estado de copia de seguridad ni las copias locales en su dispositivo. Todos los elementos eliminados permanecen disponibles en la Papelera durante 30 días y pueden restaurarse durante ese período.
+
+### Copia de seguridad automática {#auto--backup}
+
+<InfoAndroidOnly />
+
+Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Copia de seguridad automática Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+La copia de seguridad automática guarda automáticamente los datos seleccionados de OsmAnd en la Nube a intervalos regulares mientras la aplicación está activa. Esto ayuda a proteger sus datos y mantenerlos sincronizados entre dispositivos que usan la misma cuenta. La pantalla de copia de seguridad automática se divide en tres secciones expandibles: *Ajustes*, *Mis Lugares* y *Recursos*.
+
+Comportamiento de la copia de seguridad automática:
+
+- La copia de seguridad automática se ejecuta aproximadamente cada hora mientras OsmAnd funciona en primer plano.
+- La copia de seguridad también se inicia cuando regresa a la pantalla del mapa.
+- Puede activar/desactivar cada elemento o secciones completas de forma independiente.
+- Sus datos permanecen disponibles localmente incluso si la copia de seguridad automática está desactivada.
 
 
 ### Cuenta {#account}

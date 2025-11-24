@@ -1,5 +1,5 @@
 ---
-source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
+source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
 sidebar_position: 5
 title:  Mapas vectoriales (Estilos de mapa)
 ---
@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 Los mapas vectoriales están pensados para ser utilizados como la fuente de datos de mapa por defecto para OsmAnd, por lo que **necesitas descargarlos en tu dispositivo**. Los mapas vectoriales admiten un gran número de estilos de mapa para diferentes actividades como ciclismo, senderismo, conducción en coche o moto de nieve, y otras.  
 
-Cada estilo de mapa se puede personalizar para resaltar u ocultar objetos específicos, y para cambiar entre los modos diurno y nocturno. Los datos de los mapas vectoriales se pueden aumentar con datos vectoriales y mostrarse en el estilo de mapa por defecto, como la información de *Líneas de nivel*. Puedes *crear tu propio estilo de mapa de OsmAnd* para mostrar la información requerida.
+Cada estilo de mapa se puede personalizar para resaltar u ocultar objetos específicos, y para cambiar entre los modos diurno y nocturno. Los datos de los mapas vectoriales se pueden aumentar con datos vectoriales y mostrarse en el estilo de mapa por defecto, como la información de *Líneas de contorno*. Puedes *crear tu propio estilo de mapa de OsmAnd* para mostrar la información requerida.
 
 Los mapas vectoriales representan datos espaciales, como carreteras, edificios, puntos y polígonos, utilizando geometría matemática almacenada en formato binario. Cada elemento (nodo, línea o polígono) se define por coordenadas y se renderiza dinámicamente según el nivel de zoom y el estilo de mapa.
 
@@ -50,7 +50,7 @@ OsmAnd te ofrece muchos estilos de mapa y capas de datos que se ajustan por defe
 
 El estilo de renderizado de mapa estándar de OsmAnd equilibra el detalle y la simplicidad, lo que lo hace ideal para la exploración urbana y al aire libre. Detalla características de la ciudad como calles, edificios y paradas de transporte, mientras que simplifica el desorden visual haciendo los mapas más claros.  
 
-Los beneficios clave incluyen el mapeo de rutas, la calidad de la superficie, las restricciones de acceso, la señalización vial, las representaciones de senderos a escala SAC, las instalaciones deportivas y los detalles topográficos como las líneas de nivel.
+Los beneficios clave incluyen el mapeo de rutas, la calidad de la superficie, las restricciones de acceso, la señalización vial, las representaciones de senderos a escala SAC, las instalaciones deportivas y los detalles topográficos como las líneas de contorno.
 
 
 ### Vista de viaje {#touring-view}
@@ -69,7 +69,7 @@ Los estilos UniRS y LightRS son estilos de autor que representan la información
 
     ![Estilo de mapa LightRS](@site/static/img/map/map-style-lightrs.png)
 
-- **Estilo LightRS**. Este es un estilo de conducción simple que presenta un modo nocturno suave. Resalta las carreteras en un color naranja contrastante, atenúa los objetos secundarios del mapa y muestra características topográficas como las líneas de nivel.
+- **Estilo LightRS**. Este es un estilo de conducción simple que presenta un modo nocturno suave. Resalta las carreteras en un color naranja contrastante, atenúa los objetos secundarios del mapa y muestra características topográficas como las líneas de contorno.
 
     ![Estilo de mapa UniRS](@site/static/img/map/map-style-unirs.png)
 
@@ -97,7 +97,7 @@ Puedes ver las pistas de esquí y otros detalles como la dificultad de las pista
 
 ![Estilo de mapa Topo](@site/static/img/map/map-style-topo.png)
 
-Este estilo está diseñado para senderismo, acampada y ciclismo en la naturaleza. Presenta carreteras y características naturales contrastantes, diferentes tipos de senderos, opciones extendidas de líneas de nivel y detalles adicionales. Es legible al aire libre. El ajuste *Integridad de la superficie* permite distinguir la calidad de la carretera.
+Este estilo está diseñado para senderismo, acampada y ciclismo en la naturaleza. Presenta carreteras y características naturales contrastantes, diferentes tipos de senderos, opciones extendidas de líneas de contorno y detalles adicionales. Es legible al aire libre. El ajuste *Integridad de la superficie* permite distinguir la calidad de la carretera.
 
 ### OSM-carto {#osm-carto}
 
@@ -142,7 +142,7 @@ Para mapas en chino simplificado/tradicional, japonés y coreano, pueden aparece
 Algunos problemas de fuentes relacionados han sido documentados en GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
 
 
-## * Líneas de nivel {#-contour-lines}
+## * Líneas de contorno {#-contour-lines}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -160,11 +160,11 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_n
 
 </Tabs>
 
-![Estilo de mapa de líneas de nivel](@site/static/img/map/contour_lines.png)
+![Estilo de mapa de líneas de contorno](@site/static/img/map/contour_lines.png)
 
-Las líneas de nivel en OsmAnd se muestran como líneas de elevación en los mapas vectoriales. Para usarlas, primero debes habilitar el [complemento de Topografía](../plugins/topography.md), descargar los datos regionales necesarios y configurar la visualización. Esta función no está habilitada por defecto y requiere una [compra](../purchases/index.md).  
+Las líneas de contorno en OsmAnd se muestran como líneas de elevación en los mapas vectoriales. Para usarlas, primero debes habilitar el [complemento de Topografía](../plugins/topography.md), descargar los datos regionales necesarios y configurar la visualización. Esta función no está habilitada por defecto y requiere una [compra](../purchases/index.md).  
 
-Las líneas de nivel son compatibles con todos los estilos de mapa y se pueden personalizar a través del [menú de Líneas de nivel](../plugins/topography.md#contour-lines). Para más detalles, visita el artículo del [complemento de Topografía](../plugins/topography.md).
+Las líneas de contorno son compatibles con todos los estilos de mapa y se pueden personalizar a través del [menú de Líneas de contorno](../plugins/topography.md#contour-lines). Para más detalles, visita el artículo del [complemento de Topografía](../plugins/topography.md).
 
 
 ## * Profundidad náutica {#-nautical-depth}
@@ -255,7 +255,7 @@ La función **Cuadrícula de coordenadas** superpone una cuadrícula de referenc
 Puedes configurar las siguientes opciones:
 - **Niveles de zoom:** establece los niveles de zoom mínimo y máximo (2 - 22) en los que se muestra la cuadrícula.
 - **Posición de las etiquetas:** elige entre *Bordes* (predeterminado) o *Centro* para las etiquetas de la cuadrícula.
-- **Color de la cuadrícula:** disponible por separado para el modo Día/Noche. Personalizar el color de la cuadrícula es una función de pago.
+- **Color de la cuadrícula:** disponible por separado para el modo Día/Noche. Personalizar el color de la cuadrícula es una [función de pago](https://osmand.net/docs/user/purchases/) disponible en Maps+ (compra en la aplicación o suscripción) y OsmAnd+.
 - **Formato de coordenadas:** selecciona de varios formatos disponibles (ver lista a continuación).
 
 

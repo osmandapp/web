@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title: Registros de fallos
 ---
@@ -37,7 +37,7 @@ Tenga cuidado al enviar registros de logcat, ya que pueden contener información
 2. En el menú emergente, elija Gmail o su aplicación de correo electrónico preferida. El correo electrónico se generará automáticamente.
 3. Toque el botón *Enviar*.
 
-![Enviar registros de fallos desde Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Enviar registros de fallos desde Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Enviar registros de fallos desde Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Enviar registros de fallos desde Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Enviar registros desde dispositivos iOS {#send-logs-from-ios-devices}
@@ -46,7 +46,7 @@ Tenga cuidado al enviar registros de logcat, ya que pueden contener información
 
     - Automáticamente.
         - Navegue a la aplicación OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Luego, usando su aplicación de correo electrónico, le recomendamos enviar los registros a `crash@osmand.net`.
+        - Luego, usando su aplicación de correo electrónico, le recomendamos enviar los registros a `support@osmand.net`.
 
     - Manualmente.
         - Navegue a la aplicación del sistema iOS *Archivos → En mi iPhone (o En mi iPad) → Mapas de OsmAnd → Registros*.
@@ -56,7 +56,7 @@ Tenga cuidado al enviar registros de logcat, ya que pueden contener información
 2. Enviar [formato IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) de registros y datos de autorización:
     - En iOS 15 o anterior: *Ajustes → Análisis → Datos de análisis → Archivo en formato ips de Mapas de OsmAnd*.
     - En iOS 16 o posterior:  *Ajustes → Privacidad y seguridad → Análisis y mejoras → Datos de análisis → Archivo en formato ips de Mapas de OsmAnd*.
-    - Luego, usando su aplicación de correo electrónico, le recomendamos enviar los registros a `crash@osmand.net`.
+    - Luego, usando su aplicación de correo electrónico, le recomendamos enviar los registros a `support@osmand.net`.
 
     ![Enviar registros de fallos iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Enviar registros de fallos iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
@@ -82,7 +82,7 @@ Para exportar archivos tombstone, debe generar un informe de errores utilizando 
     - Toque la opción *Tomar informe de errores*.
     - Seleccione el tipo de informe de errores y toque *Informar*.
   
-Una vez que el informe de errores esté listo, recibirá una notificación. Toque el cuadro de notificación para descargar el informe a su dispositivo. Descomprima el archivo y envíe los archivos tombstone al equipo de desarrolladores de OsmAnd (correo electrónico: `crash@osmand.net`).
+Una vez que el informe de errores esté listo, recibirá una notificación. Toque el cuadro de notificación para descargar el informe a su dispositivo. Descomprima el archivo y envíe los archivos tombstone al equipo de desarrolladores de OsmAnd (correo electrónico: `support@osmand.net`).
 
 ![Enviar registros de fallos desde Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Enviar registros de fallos desde Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
@@ -114,7 +114,7 @@ Luego, conecte su dispositivo a su estación de trabajo a través de USB. Si es 
 4. Espere unos minutos para que se genere el informe. El archivo resultante se guardará en la carpeta de herramientas de la plataforma.
 5. Descomprima el archivo.
 6. Busque la carpeta *tombstones* con archivos como *tombstone_00*, *tombstone_01* y similares.
-7. Envíe los archivos tombstone a `crash@osmand.net`.
+7. Envíe los archivos tombstone a `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Con acceso root a su dispositivo, puede abrir directamente la carpeta */data/tombstones*.  
 
-- En Android Studio, use el emulador para navegar al *Explorador de archivos del dispositivo* y encontrar la carpeta /data/tombstones. Dentro, encontrará archivos con nombres como *tombstone_00*, *tombstone_01* y otros. Descargue estos archivos y envíelos a `crash@osmand.net`.
+- En Android Studio, use el emulador para navegar al *Explorador de archivos del dispositivo* y encontrar la carpeta /data/tombstones. Dentro, encontrará archivos con nombres como *tombstone_00*, *tombstone_01* y otros. Descargue estos archivos y envíelos a `support@osmand.net`.
 
 Para obtener más detalles sobre los informes de errores, consulte la [documentación de Android](https://developer.android.com/studio/debug/bug-report).

@@ -1,5 +1,5 @@
 ---
-source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -72,9 +72,10 @@ El panel de información también proporciona información sobre lo siguiente:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Muestra la suma total de ascensos y descensos durante el viaje.
 - *<Translate android="true" ids="altitude_range"/>*. Indica la altitud mínima y máxima en un track.  
 
-:::note
-En caso de que tu track haya sido creado en OsmAnd o en cualquier otra aplicación de seguimiento (por lo que sus puntos tienen etiquetas de [`time` y `speed`](../../plugins/trip-recording#recorded-gpx-file)), el panel de información también contendrá información sobre *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) o *<Translate ios="true" ids="total_time"/>* (*iOS*) (la duración del tiempo entre los puntos de inicio y fin del track), *<Translate android="true" ids="shared_string_time_moving"/>* (la suma del tiempo mientras se conduce).
-:::  
+En caso de que tu track haya sido creado en OsmAnd o en cualquier otra aplicación de seguimiento (por lo que sus puntos tienen etiquetas de [`time` y `speed`](../../plugins/trip-recording#recorded-gpx-file)), el panel de información también contendrá información sobre *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (la duración total entre los puntos de inicio y fin del track) y *<Translate android="true" ids="shared_string_time_moving"/>* (la suma del tiempo mientras se conduce).
+
+**Nota:** Para tracks grabados, la Duración muestra el tiempo de viaje real basado en las marcas de tiempo. Para tracks planificados, la Duración muestra el tiempo estimado calculado a partir de la longitud de la ruta y la velocidad media del perfil de navegación seleccionado, si toda la ruta utiliza un perfil y no contiene segmentos en línea recta.
+
 
 ### Acciones del track {#track-actions}
 
@@ -133,7 +134,7 @@ El menú **Opciones** te permite gestionar y modificar el track seleccionado con
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Exporta el track seleccionado en formato GPX.
+- **<Translate android="true" ids="shared_string_share"/>** – Exporta el track seleccionado en formato GPX a través del menú Compartir del sistema.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Sube](../../plugins/osm-editing.md#upload-gps-track) el track seleccionado a OpenStreetMap.
 
 <br/>
@@ -247,7 +248,7 @@ Esta sección de la pestaña *Vista general* muestra ***datos de etiquetas*** y 
 
 La función *Actividad* en OsmAnd te permite etiquetar los tracks GPX grabados con actividades específicas para su posterior análisis y organización en carpetas.
 
-- [Etiquetas de actividad para tracks GPX](../../plugins/trip-recording.md#recording-settings). Al grabar un track GPX, puedes asignar un tipo de actividad. Este etiquetado de actividad te ayuda a categorizar inicialmente los tracks.
+- [Etiquetas de actividad para tracks GPX](../../plugins/trip-recording.md#recording-settings). Los tracks grabados reciben automáticamente un tipo de actividad basado en el perfil seleccionado, lo que ayuda a categorizarlos y filtrarlos más tarde. Puedes cambiar la actividad manualmente si es necesario.
 - [Filtro de actividad](../../personal/tracks/smart-folder.md#search-filter). Puedes filtrar los tracks GPX grabados por actividad, lo que te permite centrarte en encontrar tipos específicos de grabaciones, como todos los tracks de ciclismo o senderismo.
 - [Gestionar tipos de actividad](../../personal/tracks/manage-tracks.md#selection-mode). Puedes cambiar el tipo de actividad para carpetas o tracks seleccionados utilizando el modo de selección en la pestaña Tracks del menú Mis Lugares.
 - **Lista de actividades**. Las categorías y grupos de actividades se definen en los recursos de OsmAnd. Para desarrolladores y colaboradores, la lista de actividades se mantiene en un formato estructurado en [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalla los grupos y tipos de actividades disponibles.
@@ -270,13 +271,13 @@ Interacción con el gráfico:
 
 <TabItem value="android" label="Android">
 
-![Menú contextual del track Gráficos en Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Menú contextual del track Gráficos en Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menú contextual del track Gráficos en iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Menú contextual del track Gráficos en iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ Interacción con el gráfico:
 En la pestaña **Vista general**, puedes ver parámetros como:
 
 - *<Translate android="true" ids="distance"/>*. La suma de la distancia total recorrida en el track, o la longitud del track en sí.
-- *<Translate android="true" ids="shared_string_time_span"/>*. El intervalo de tiempo entre los puntos de inicio y fin del track.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. El intervalo de tiempo entre los puntos de inicio y fin del track.
 - *<Translate android="true" ids="shared_string_start_time"/>* La hora exacta en que comienza la grabación del track.
 - *<Translate android="true" ids="shared_string_end_time"/>*. La hora de finalización de la grabación del track.
 
@@ -464,7 +465,7 @@ Toca el botón *Añadir Waypoint* para abrir la pantalla de creación de waypoin
 
 <TabItem value="android" label="Android">
 
-![Menú de Grupo del menú del track en Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Menú de Grupo del menú del track en Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -484,7 +485,7 @@ El *menú de tres puntos* ( &#8285; ) abre el *Menú de Grupo* de waypoints.
 - **<Translate android="true" ids="shared_string_rename"/>** - Cambia el nombre del grupo.
 - **<Translate android="true" ids="change_default_appearance"/>** - Cambia las opciones de visualización para un grupo de waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** o **Eliminar** (*Solo Android*) - Mueve los waypoints del grupo a la lista de [Marcadores de mapa](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Solo Android*) - Mueve los waypoints del grupo a [Favoritos](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_favorites"/>** (*Solo Android*) - Te permite copiar el grupo seleccionado de Waypoints en [Favoritos](../../personal/favorites.md). Puedes elegir una de dos opciones: ***<Translate android="true" ids="copy_as_new_folder"/>*** o ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Solo Android*) - Crea una ruta entre waypoints. El primer y último punto se convierten en el inicio y el final de la ruta, y el resto se convierten en puntos intermedios.
 - **<Translate android="true" ids="shared_string_delete"/>** - Elimina un grupo de waypoints.
 
@@ -643,13 +644,13 @@ Para abrir esta opción:
 
 ### Dividir por distancia {#split-by-distance}
 
-![Pestaña de división del track por distancia](@site/static/img/personal/tracks/split_by_2_tab.png) ![Mapa de división del track por distancia](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Pestaña de división del track por distancia](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Mapa de división del track por distancia](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Esta opción te permite dividir un track en intervalos de distancia fijos y analizar estadísticas detalladas para cada segmento. Los intervalos de distancia disponibles son ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** y ***10 km***. Después de elegir un intervalo de distancia, el track se muestra como una lista de segmentos. 
 
 Para cada segmento, puedes ver:
 - distancia recorrida.
-- intervalo de tiempo.
+- duración.
 - altitud promedio, mínima y máxima.
 - ascenso y descenso.
 - tiempo en movimiento.
@@ -660,14 +661,14 @@ Cuando tocas cualquier segmento en la lista, la vista del mapa muestra el track 
 
 ### Dividir por tiempo {#split-by-time}
 
-![Pestaña de división del track por tiempo](@site/static/img/personal/tracks/split_by_3_tab.png) ![Mapa de división del track por tiempo](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Pestaña de división del track por tiempo](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Mapa de división del track por tiempo](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 La opción **Dividir por tiempo** divide un track en intervalos de duración igual. Puedes elegir entre ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** y ***60 min***. La forma en que se muestran los intervalos, las estadísticas proporcionadas para cada segmento y cómo aparecen en el mapa son las mismas que en la sección [Dividir por distancia](#split-by-distance).
 
 
 ### Dividir por subida/bajada {#split-by-uphill-downhill}
 
-![Pestaña de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_tab.png) ![Mapa de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Pestaña de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 Esta opción divide un track en segmentos basados en cambios de elevación. Cada intervalo se clasifica como ***subida***, ***bajada*** o ***plano***. La forma en que se muestran los intervalos, las estadísticas proporcionadas para cada segmento y cómo aparecen en el mapa también son las mismas que en la sección [Dividir por distancia](#split-by-distance).
 
@@ -727,7 +728,7 @@ En este menú, puedes cambiar algunos parámetros de tu track como *Suavizado*, 
 
 ### Estadísticas {#statistics}
 
-![Gráfico del filtro GPS en Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![Gráfico del filtro GPS en Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 La pestaña Estadísticas muestra información sobre el track **modificado**, es decir, el track sin los valores filtrados. Se muestra en los bloques de estadísticas y en los datos del gráfico.
   

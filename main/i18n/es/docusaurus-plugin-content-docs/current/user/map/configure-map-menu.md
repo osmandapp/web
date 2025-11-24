@@ -1,8 +1,9 @@
 ---
-source-hash: cc4a39deaa5305aa029009f3f9baff5a545f3a163336fd6ca3c80b085166c351
+source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
 sidebar_position: 4
 title:  Configurar mapa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,28 +13,27 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Resumen {#overview}
 
-El menú **Configurar mapa** es un elemento importante en el *Menú principal* de OsmAnd, donde puedes personalizar la visualización del mapa para adaptarla a tus necesidades. Puedes resaltar puntos favoritos, marcadores de navegación o puntos de interés especiales en el mapa, mostrar rutas específicas o archivos GPX de terceros, superponer información del terreno, imágenes de satélite o cualquier otra imagen rasterizada disponible, mostrar información de transporte público y cambiar el estilo del mapa.
+El menú **Configurar mapa** es un elemento importante en el *Menú principal* de OsmAnd, donde puedes personalizar la visualización del mapa para adaptarla a tus necesidades. Puedes resaltar puntos favoritos, marcadores de navegación o puntos de interés especiales en el mapa, mostrar rutas específicas o archivos GPX de terceros, superponer información del terreno, imágenes de satélite o cualquier otra imagen rasterizada disponible, mostrar información de transporte público y cambiar el estilo del mapa.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Sección **Mostrar**:
+Sección **Mostrar**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_show1_andr.png)  ![Configurar mapa android](@site/static/img/map/configure_map_show2_andr.png)
+![Configurar mapa android](@site/static/img/map/configure_map_show1_andr.png)  ![Configurar mapa android](@site/static/img/map/configure_map_show2_andr.png)  
 
-Sección **Topografía**:
+Sección **Topografía**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_topography_andr.png)
+![Configurar mapa android](@site/static/img/map/configure_map_topography_andr.png)  
 
-Sección **OpenStreetMap**:
+Sección **OpenStreetMap**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_osm_andr.png)
+![Configurar mapa android](@site/static/img/map/configure_map_osm_andr.png)  
 
-Secciones **Rutas y Renderizado de mapa**:
+Secciones **Rutas y Renderizado de mapa**:  
 
 ![Configurar mapa android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
@@ -41,7 +41,29 @@ Secciones **Rutas y Renderizado de mapa**:
 
 <TabItem value="ios" label="iOS">
 
-![Configurar mapa ios](@site/static/img/map/configure-map-ios.png)
+Sección **Mostrar en el mapa**:  
+
+![Configurar mapa ios](@site/static/img/map/configure_map_show1_ios.png)  
+
+Sección **Topografía**:  
+
+![Configurar mapa ios](@site/static/img/map/configure_map_topography_ios.png)  
+
+Sección **OpenStreetMap**:  
+
+![Configurar mapa ios](@site/static/img/map/configure_map_osm_ios.png)  
+
+Sección **Rutas**:  
+
+![Configurar mapa ios](@site/static/img/map/configure_map_routes_new_ios.png)
+
+Secciones **Tipo de mapa y Estilo de mapa**:  
+
+![Configurar mapa ios](@site/static/img/map/configure_map_style_ios.png)
+
+Secciones **Superposición/Subcapa e Idioma**:  
+
+![Configurar mapa ios](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -50,8 +72,8 @@ Secciones **Rutas y Renderizado de mapa**:
 
 El menú **<Translate android="true" ids="configure_map"/>** se divide en dos categorías:
 
-- [Parámetros de estilo de mapa](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (o **<Translate ios="true" ids="map_widget_renderer"/>**) es un grupo de ajustes que te permiten cambiar la forma en que se muestra el mapa principal.
-- [Capas del mapa](#map-layers). Estas capas te permiten colocar información encima (o debajo) de la capa del mapa principal, pero no cambian la visualización del mapa en sí.
+- [Parámetros de estilo de mapa](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (o **<Translate ios="true" ids="map_widget_renderer"/>**) es un grupo de ajustes que te permiten cambiar la forma en que se muestra el mapa principal.  
+- [Capas del mapa](#map-layers). Estas capas te permiten colocar información encima (o debajo) de la capa del mapa principal, pero no cambian la visualización del mapa en sí.  
 
 **Notas:**
 
@@ -78,6 +100,7 @@ El menú **<Translate android="true" ids="configure_map"/>** se divide en dos ca
    - [Imágenes a nivel de calle](../plugins/mapillary.md#map-layer) - muestra puntos con imágenes a nivel de calle disponibles.
    - [Guías de viaje](../plan-route/travel-guides.md) - muestra guías de viaje en el mapa.
    - [Wikipedia](../plugins/wikipedia.md) - resalta artículos de Wikipedia vinculados al mapa.
+   - [Edición OSM](../plugins/osm-editing.md#osm-editing-layer) - muestra ediciones de OpenStreetMap, notas y capas auxiliares relacionadas con el mapeo.
    - [Otras capas de complementos](../plugins/index.md#configure-plugin) - muchos complementos añaden sus capas con información extra.
 
 ## Parámetros de estilo de mapa {#map-style-parameters}
@@ -91,13 +114,13 @@ Los ajustes de estilo de mapa dependen del estilo de mapa principal que se muest
    - [Idioma del mapa](../map/vector-maps.md#map-language) - permite seleccionar el idioma preferido que se muestra en el mapa.
    - [Detalles](../map/vector-maps.md#details) - muestra objetos específicos.
    - [Ocultar](../map/vector-maps.md#hide) - oculta objetos específicos.
-   - [Rutas](../map/vector-maps.md#routes) - permite resaltar rutas y sus símbolos.
+   - [Rutas](../map/vector-maps.md#routes) - permite resaltar rutas y sus símbolos.  
 
 
 ## Personalización de la interfaz de usuario (Android) {#ui-customization-android}
 
-Para cada perfil seleccionado en el sistema Android, puedes cambiar el orden de los elementos del menú <Translate android="true" ids="configure_map"/>, ocultar los elementos, restablecer los ajustes predeterminados o copiarlos desde otro perfil. Esto ayudará a mejorar tu interacción con la aplicación OsmAnd.
+Para cada perfil seleccionado en el sistema Android, puedes cambiar el orden de los elementos del menú <Translate android="true" ids="configure_map"/>, ocultar los elementos, restablecer los ajustes predeterminados o copiarlos desde otro perfil. Esto ayudará a mejorar tu interacción con la aplicación OsmAnd.  
 
-Ve a: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
+Ve a: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
 ![Elementos de Configurar mapa](@site/static/img/settings/configure-screen-ui-customization.png)

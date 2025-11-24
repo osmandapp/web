@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  Sensores Externos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -194,7 +194,7 @@ Después de grabar su viaje utilizando el [plugin de Grabación de viaje](../plu
 Para analizar los datos:
 
 1. Finalice la grabación de su viaje.
-2. Abra la ruta grabada desde *Mis Lugares → Rutas* o pulse la ruta en el mapa.
+2. Abra la ruta grabada desde *Mis lugares → Rutas* o pulse la ruta en el mapa.
 3. Seleccione *Opciones → Analizar en el mapa* en el menú contextual de la ruta.
 
 Esto mostrará gráficos para sus datos grabados: *Frecuencia cardíaca*, *Velocidad*, *Cadencia*, *Potencia de la bicicleta* y *Temperatura*
@@ -240,6 +240,8 @@ Tipos de widgets compatibles:
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – distancia total medida por el sensor.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – temperatura ambiente actual.
 7. **Nivel de batería** – porcentaje de batería restante en un sensor BLE conectado, actívelo en **Ajustes del sensor**.
+
+**Nota:** Si un sensor se desconecta temporalmente, pulse su widget en el mapa para intentar reconectarlo inmediatamente; no es necesario abrir el menú de Sensores Externos.
 
 
 ### Ajustes del widget {#widget-settings}

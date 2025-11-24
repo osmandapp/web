@@ -1,8 +1,9 @@
 ---
-source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  Grabación de viaje
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -143,13 +143,13 @@ Para *Detener / Guardar / Pausar*:
 
 <TabItem value="android" label="Android">
 
-![resumen](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![resumen](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![resumen](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![resumen](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Finalizar grabación en iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finalizar grabación en iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Finalizar grabación en iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finalizar grabación en iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -166,7 +166,7 @@ Esto es lo que puede encontrar en ellos:
     - ***Android***. Para el ***eje Y*** en el gráfico, puede seleccionar *hasta dos parámetros* de todos los datos disponibles como *Altitud*, *Pendiente*, *Velocidad* e [información de sensores externos](../plugins/external-sensors.md#trip-recording). Para el ***eje X***, seleccione mostrar *Distancia*, *Tiempo* o *Hora del día*.
     - ***iOS***. Los parámetros se organizan en pestañas *Resumen*, *Altitud* y *Velocidad* con los valores apropiados para el eje Y y *Distancia* para el eje X.
 
-- **Estadística**. Para Android, muestra un conjunto constante de datos estadísticos independientes de la configuración del gráfico: *Distancia*, *Intervalo de tiempo*, *Ascenso*, *Descenso*, *Velocidad promedio*. Para iOS, cada pestaña, Resumen, Altitud y Velocidad, tiene un conjunto de datos diferente.
+- **Estadística**. Para Android, muestra un conjunto constante de datos estadísticos independientes de la configuración del gráfico: *Distancia*, *Duración*, *Ascenso*, *Descenso*, *Velocidad promedio*. Para iOS, cada pestaña, Resumen, Altitud y Velocidad, tiene un conjunto de datos diferente.
 
 Para una vista más detallada, puede **escalar el gráfico**:
 
@@ -175,12 +175,12 @@ Para una vista más detallada, puede **escalar el gráfico**:
 
 | |  
 | ------------- |
-|**Pestaña Resumen** iOS (para Android, los parámetros del eje Y son *Altitud*, *Velocidad*, y el parámetro del eje X es *Distancia*). Esta pestaña muestra un gráfico que presenta los cambios de velocidad y altitud a lo largo de la ruta, y detalles clave de la misma. Datos de la ruta para iOS: *Distancia*, *Intervalo de tiempo*, *Hora de inicio* y *Hora de finalización*. Puede ver cómo se muestra esto en las versiones de Android e iOS a continuación. |
-| ![datos](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![datos](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+|**Pestaña Resumen** iOS (para Android, los parámetros del eje Y son *Altitud*, *Velocidad*, y el parámetro del eje X es *Distancia*). Esta pestaña muestra un gráfico que presenta los cambios de velocidad y altitud a lo largo de la ruta, y detalles clave de la misma. Datos de la ruta para iOS: *Distancia*, *Duración*, *Hora de inicio* y *Hora de finalización*. Puede ver cómo se muestra esto en las versiones de Android e iOS a continuación. |
+| ![datos](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![datos](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Pestaña Altitud** iOS (para Android, los parámetros del eje Y son *Altitud*, *Pendiente*, y el parámetro del eje X es *Distancia*). Esta pestaña se centra en el perfil de elevación de su ruta grabada, proporcionando información sobre los cambios de altitud y las pendientes del terreno. Las métricas clave para iOS incluyen: *Altitud promedio*, *Rango de altitud*, *Ascenso* y *Descenso*. Los gráficos a continuación ilustran las diferencias entre las interfaces de Android e iOS. |
-| ![datos](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![datos](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![datos](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![datos](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Pestaña Velocidad** iOS (para Android, el parámetro del eje Y es *Velocidad* y el parámetro del eje X es *Distancia*). La pestaña Velocidad destaca los datos relacionados con la velocidad a lo largo de la ruta. Para iOS, incluye información como *Velocidad promedio*, *Velocidad máxima*, *Tiempo en movimiento* y *Distancia corregida*. Las capturas de pantalla a continuación muestran cómo se muestran estos datos en ambas plataformas. |
-| ![datos](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![datos](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![datos](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![datos](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | Para **Android**, puede crear más combinaciones de datos disponibles del eje Y y valores del eje X. |
 | ![datos](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -356,7 +356,7 @@ La insignia del icono de la aplicación aparece junto al icono de OsmAnd cuando 
 
 ## Widgets {#widgets}
 
-Los widgets le permiten mostrar información clave sobre la grabación de la ruta directamente en la pantalla, como *Distancia*, *Duración*, *Ascenso* y *Descenso*.
+Los widgets le permiten mostrar información clave sobre la grabación de la ruta directamente en la pantalla, como *Distancia*, *Duración*, *Ascenso* y *Descenso*. En Android, también puede añadir widgets de *Velocidad máxima* y *Pendiente promedio*.
 
 Para comenzar a usar los *widgets de Grabación de viaje*, debe realizar todos los siguientes ajustes:
 
@@ -373,7 +373,7 @@ Para comenzar a usar los *widgets de Grabación de viaje*, debe realizar todos l
 
 Vaya a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elija un panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Añadiendo widget Distancia/Iniciar-Detener en Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Añadiendo widget Distancia/Iniciar-Detener en Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,map_widget_config,sha
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Elija un panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Añadiendo widget Distancia/Iniciar-Detener en iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![Añadiendo widget Distancia/Iniciar-Detener en iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -398,8 +398,8 @@ Para personalizar su interfaz, puede añadir o eliminar el widget de Grabación 
 
 <TabItem value="android" label="Android">  
 
-![Widget de grabación de viaje](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
-![Finalizar grabación en Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Finalizar grabación en Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Widget de grabación de viaje](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
@@ -417,13 +417,18 @@ El widget *Distancia* muestra la distancia total de su viaje grabado actual y ac
 - El widget se añade automáticamente cuando se activa el *complemento Grabación de viaje*, pero se puede ocultar a través del [menú Configurar pantalla](../widgets/configure-screen.md#overview).
 - Si la opción *Mostrar diálogo de inicio* está desactivada en los ajustes del complemento Grabación de viaje, al tocar el widget activo se abrirá igualmente el cuadro de diálogo *Grabación de viaje*, lo que le permitirá acceder a más opciones e información.
 
-Además del widget *Distancia/Iniciar-Detener*, el **complemento Grabación de viaje** incluye otros tres widgets: *Duración*, *Ascenso* y *Descenso*. Estos proporcionan información adicional sobre su viaje, ayudándole a seguir el progreso en tiempo real.
+Además del widget *Distancia/Iniciar-Detener*, el **complemento Grabación de viaje** incluye otros tres widgets: *Duración*, *Ascenso*, *Descenso*, *Velocidad máxima* y *Pendiente promedio* (los dos últimos están disponibles solo en Android). Estos proporcionan información adicional sobre su viaje, ayudándole a seguir el progreso en tiempo real.
 
 | |
 |-----------|
 | **Distancia/Iniciar-Detener**. Este widget muestra la distancia de su grabación de viaje en curso. Se añade automáticamente cuando se activa el complemento Grabación de viaje, pero puede ocultarlo a través del menú Configurar pantalla. El widget presenta tres estados distintos: *Grabando*, *Pausado* e *Inactivo*, cada uno indicando el estado actual de su grabación de viaje. |
 | ![Widget de grabación de viaje (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| Para abrir el [diálogo de Grabación de viaje](#start-a-dialog) al tocar un widget inactivo, active la opción *Mostrar diálogo de inicio* en los ajustes del complemento Grabación de viaje. Si la opción está desactivada, la grabación comenzará inmediatamente después de tocar el widget sin abrir el diálogo.|  
+| Para abrir el [diálogo de Grabación de viaje](#start-a-dialog) al tocar un widget inactivo, active la opción *Mostrar diálogo de inicio* en los ajustes del complemento Grabación de viaje. Si la opción está desactivada, la grabación comenzará inmediatamente después de tocar el widget sin abrir el diálogo.| 
+
+En Android, el widget Distancia admite varios modos de visualización:
+- **Distancia total** – distancia total de la grabación actual (predeterminado).
+- **Último ascenso** – distancia de la sección de ascenso más reciente.
+- **Último descenso** – distancia de la sección de descenso más reciente.
 
 
 ### Duración, Ascenso, Descenso {#duration-uphill-downhill}
@@ -432,13 +437,18 @@ Además del widget *Distancia/Iniciar-Detener*, el **complemento Grabación de v
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Duración**. Muestra el tiempo total de la grabación del viaje actual en horas y minutos. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Ascenso**. Muestra el ascenso total o la última sección de ascenso, dependiendo del modo seleccionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**Descenso**. Indica el descenso total o la última sección de descenso, dependiendo del modo seleccionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-</TabItem>
-
-</Tabs>
 
 | |
 |------------|
@@ -449,7 +459,21 @@ Además del widget *Distancia/Iniciar-Detener*, el **complemento Grabación de v
 |**Descenso**. Indica el descenso total acumulado durante la grabación del viaje actual. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 Si tiene varios widgets seleccionados — *Duración*, *Ascenso* o *Descenso* — puede acceder al mismo cuadro de diálogo para cada uno sin necesidad de cambiarlo o cerrarlo. Esta interfaz unificada facilita la visualización y gestión de toda la información relacionada sin problemas.
+
+### Velocidad máxima y Pendiente promedio {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Velocidad máxima en Android](@site/static/img/widgets/max_speed_android.png) ![Pendiente promedio en Android](@site/static/img/widgets/average_slope_android.png)  
+
+El widget **Velocidad máxima** muestra la velocidad máxima para el viaje grabado actualmente. Toque el widget para alternar entre la velocidad máxima general y la velocidad máxima de la última sección de ascenso o descenso.
+
+El widget **Pendiente promedio** muestra la pendiente promedio para la última sección de ascenso o descenso del viaje actual. Ayuda a estimar qué tan empinada fue la subida o bajada anterior, basada en la ganancia de elevación y la distancia.
 
 
 ## Artículos relacionados {#related-articles}

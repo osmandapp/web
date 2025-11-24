@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Planificar una ruta
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visión general {#overview}
@@ -142,6 +142,10 @@ El ajuste **Adjuntar a las carreteras** permite adjuntar un track grabado o impo
 - Nombres de calles e información de carriles.
 - Datos de elevación.
 - [Atributos de la carretera](../navigation/setup/route-details.md#road-attributes).
+- Perfil de elevación actualizado basado en la geometría de la carretera.
+- Posible recálculo de la geometría del track (simplificando o ajustando puntos a la red de carreteras).
+
+Cuando un track se adjunta a carreteras, los siguientes parámetros pueden cambiar porque se recalculan la geometría y la elevación del track: *Distancia, Ascenso / Descenso, Velocidad media (y el gráfico de velocidad), Velocidad máxima, Tiempo en movimiento* y *Duración*. Estos valores pueden diferir del track GPX original si la elevación o geometría basada en carreteras recalculada se desvía significativamente de los datos GPS registrados.
 
 Puede seleccionar un [valor umbral](../navigation/setup/gpx-navigation.md#attach-to-the-roads) para la distancia a la que los puntos simplificados del track pueden estar de los puntos originales del track.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Plan a route Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Para medir una distancia o planificar un viaje, añada puntos en la ubicación del *Puntero* uno por uno y pulse el botón *Añadir*. Accediendo a la **lista de puntos** de abajo, puede reordenar los puntos, eliminarlos o acceder a un [menú contextual de punto](#point-context-menu) específico.
+
+También puede añadir un punto intermedio directamente desde el mapa tocando un POI o Favorito para abrir su menú contextual y luego tocando *AÑADIR PUNTO*. En este modo, no se muestran los menús contextuales para objetos no puntos. Al añadir un POI/Favorito, su nombre se preserva como el nombre del punto de ruta; si mueve este punto en el mapa más tarde, el nombre se restablece.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Para medir una distancia o planificar un viaje, añada puntos en la ubicación del *Puntero* uno por uno y pulse el botón *Añadir punto*. Accediendo a la **lista de puntos** de abajo, puede reordenar los puntos, eliminarlos o acceder a un [menú contextual de punto](#point-context-menu) específico.
+
 </TabItem>
 
 </Tabs>  
-
-Para medir una distancia o planificar un viaje, añada puntos en la ubicación del *Puntero* uno por uno y pulse el botón *Añadir punto*. Accediendo a la **lista de puntos** de abajo, puede reordenar los puntos, eliminarlos o acceder a un [menú contextual de punto](#point-context-menu) específico.
 
 :::note
 También puede **Deshacer**/**Rehacer** cada acción que haya realizado en la planificación de la ruta.
@@ -364,7 +372,7 @@ Al guardar un nuevo track, puede seleccionar la opción de track ***Simplificado
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 

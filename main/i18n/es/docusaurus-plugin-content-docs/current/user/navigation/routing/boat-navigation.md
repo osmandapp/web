@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  Navegación en barco
 ---
@@ -89,7 +89,7 @@ El tipo de [enrutamiento en barco](#route-parameters---boat) es un algoritmo de 
  - [Enrutamiento directo a un punto para barco](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Enrutamiento en línea recta para barco](./boat-navigation.md#straight-line-routing-for-boat)
 
-Es importante tener en cuenta que los tipos de enrutamiento *Directo a un punto* y *Línea recta* solo deben usarse en aguas abiertas donde no haya obstáculos o peligros para la navegación. Si está navegando en una vía fluvial con un canal o ruta específica, debe usar el tipo de enrutamiento en barco en OsmAnd, que lo guiará a través de los canales de navegación correctos y evitará áreas poco profundas u otros peligros.  
+Es importante tener en cuenta que los tipos de enrutamiento *Directo a un punto* y *Línea recta* solo deben usarse en aguas abiertas donde no haya obstáculos o peligros para la navegación. Si está navegando en una vía fluvial con un canal o ruta específica, debe usar el tipo de enrutamiento en barco en OsmAnd, que lo guiará a través de los canales de navegación correctos y evitará áreas poco profundas u otros peligros. Algunos peligros mapeados basados en etiquetas OSM hazard=* pueden mostrarse en el mapa como iconos POI de peligro o etiquetas de texto. 
 
 Estos tipos de enrutamiento para el perfil de barco se pueden activar usando la siguiente ruta: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> u otro) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 

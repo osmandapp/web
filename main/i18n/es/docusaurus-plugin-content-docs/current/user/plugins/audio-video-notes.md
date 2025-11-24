@@ -1,8 +1,9 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
 title:  Notas de audio/vídeo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -83,7 +83,7 @@ Para cada perfil, puede configurar las *opciones de grabación de audio y vídeo
 Puede crear una nota de foto, vídeo y audio de cualquiera de las siguientes maneras:
 
 - Con el [Widget](../widgets/info-widgets.md#audiovideo-notes-widget). Si la nota debe estar vinculada a su posición geográfica actual.
-- Con el [menú contextual](../map/map-context-menu.md#overview) de un punto en el mapa. Si la nota debe estar vinculada al punto seleccionado en el mapa.
+- Con el [Menú contextual](../map/map-context-menu.md#overview) de un punto en el mapa. Si la nota debe estar vinculada al punto seleccionado en el mapa.
 
 
 ### Crear y anclar posición actual {#create-&-pin-current-position}
@@ -115,9 +115,9 @@ Las funciones que proporciona el widget <Translate android="true" ids="map_widge
 
 </Tabs>
 
-Para crear una nota vinculada a un punto seleccionado en el mapa, utilice el [menú contextual](../map/map-context-menu.md#-record-av-note) del punto:
+Para crear una nota vinculada a un punto seleccionado en el mapa, utilice el [Menú contextual](../map/map-context-menu.md#-record-av-note) del punto:
 
-1. Mantenga pulsado un punto en el mapa y se abrirá el [menú contextual](../map/map-context-menu.md).
+1. Mantenga pulsado un punto en el mapa y se abrirá el [Menú contextual](../map/map-context-menu.md).
 2. Pulse **Acciones** y seleccione una de las opciones disponibles en la lista:
 
     - **<Translate android="true" ids="recording_context_menu_arecord"/>** - para hacer una nota de audio y vincularla al punto seleccionado en el mapa;
@@ -161,7 +161,7 @@ Puede gestionar su información, pensamientos, ideas, etc. vinculados a un lugar
 - Renombrar una nota en Mis Lugares.
 - Mostrar todas las notas [en el mapa](../map/configure-map-menu.md#map-data-layers).
 - Reproducir la nota.
-- Crear waypoints en una [ruta](../plugins/trip-recording.md#new-track-recording).
+- Crear waypoints en una [pista](../plugins/trip-recording.md#new-track-recording).
 - Exportar a [JOSM](https://josm.openstreetmap.de/).
 
 
@@ -194,7 +194,7 @@ Puede gestionar su información, pensamientos, ideas, etc. vinculados a un lugar
 
 </Tabs>
 
-Para mostrar una nota específica en el mapa, utilice la lista de notas en Mis Lugares, busque la que necesite y púlsela. Como resultado, aparece el mapa, resalta la ubicación de la nota y abre el menú contextual. Es posible trabajar con la nota seleccionando las opciones del menú contextual.
+Para mostrar una nota específica en el mapa, utilice la lista de notas en Mis Lugares, busque la que necesite y púlsela. Como resultado, aparece el mapa, resalta la ubicación de la nota y abre el Menú contextual. Es posible trabajar con la nota seleccionando las opciones del menú contextual.
 
 
 ### Reproducir {#play}
@@ -203,14 +203,14 @@ Para mostrar una nota específica en el mapa, utilice la lista de notas en Mis L
 
 <TabItem value="android" label="Android">
 
-![Menú contextual del complemento de audio y vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
+![Menú contextual del complemento de audio y vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)  
 ![Acciones del menú Mis lugares del complemento de audio y vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
 </Tabs>
 
-Para reproducir una nota, utilice la opción correspondiente en el [menú contextual](../map/map-context-menu#overview) abierto para la nota:
+Para reproducir una nota, utilice la opción correspondiente en el [Menú contextual](../map/map-context-menu#overview) abierto para la nota:
 
 - en el mapa;
 - en Mis Lugares.
@@ -255,10 +255,10 @@ El [widget Notas de audio/vídeo](../widgets/info-widgets.md#audiovideo-notes-wi
 
 Es necesario añadir un widget a la pantalla si prefiere evitar la búsqueda de geolocalización en el mapa y vincular las notas a su ubicación actual por defecto. Para añadir o personalizar un widget, siga los pasos que se indican a continuación:
 
-1. Vaya a:
+1. Vaya a:  
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
-2. Seleccione **<Translate android="true" ids="map_widget_left"/>** o **<Translate android="true" ids="map_widget_right"/>**.
+2. Seleccione  **<Translate android="true" ids="map_widget_left"/>** o **<Translate android="true" ids="map_widget_right"/>**.
 
 3. Pulse **<Translate android="true" ids="map_widget_av_notes"/>**, y se abrirá el menú contextual del widget.
 
@@ -273,6 +273,15 @@ Es necesario añadir un widget a la pantalla si prefiere evitar la búsqueda de 
     - **<Translate android="true" ids="av_def_action_picture"/>** - empezar a tomar fotos.
 
     ![El widget](@site/static/img/plugins/audio-video-notes/widget.png)
+
+**Utilizar dispositivos de entrada externos (*Android*)**. Si utiliza un [dispositivo de entrada externo](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), puede iniciar y detener las Notas de audio/vídeo sin tocar la pantalla. Para ello, asigne la acción «Añadir nota de audio» o «Añadir nota de vídeo» a una tecla:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Una vez asignada, la tecla funciona como un alternador:
+- La primera pulsación inicia la grabación de una nota de audio o vídeo (dependiendo de la acción seleccionada).
+- La segunda pulsación de la misma tecla detiene la grabación.
+
+Cuando se detiene una grabación mediante un dispositivo de entrada externo, no se muestra el menú contextual, lo que facilita el uso de OsmAnd en escenarios completamente sin manos (por ejemplo, mientras conduce una motocicleta o un vehículo).
 
 
 ## Gestionar múltiples notas {#manage-multiple-notes}
@@ -308,7 +317,7 @@ Las opciones de la barra inferior se pueden utilizar para gestionar la lista de 
 
 Puede compartir todas las Notas, incluido el [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) que tiene las notas seleccionadas como waypoints en la pantalla [Mis Lugares](../personal/myplaces.md#audiovideo-notes) haciendo clic en el botón de compartir del menú inferior. Aparecerá una casilla de verificación junto a cada nota para seleccionar notas específicas. Hay dos casillas de verificación encima de las notas: *Notas A/V por fecha* para seleccionar todas las notas y la casilla *Ubicaciones*. La casilla *Ubicaciones* le permite añadir un archivo GPX independiente con coordenadas y datos.
 
-Cada nota contiene la hora en que fue creada, la cantidad de datos, y si es una grabación, la hora de la grabación, y los datos de localización, puede añadir datos GPX.
+Cada nota contiene la hora en que fue creada, la cantidad de datos, y si es una grabación, la hora de la grabación, y los datos de localización, puede añadir datos GPX.  
 Formatos de archivo compatibles: audio - **3gp**, vídeo - **mp4**, foto -**jpg**.
 
 
@@ -339,17 +348,17 @@ Utilice la capa de mapa [Grabación](../map/point-layers-on-map#-audio--video-po
 
 <TabItem value="android" label="Android">
 
-![Notas y waypoints en el mapa](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
-![Waypoints en la ruta](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
+![Notas y waypoints en el mapa](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)  
+![Waypoints en la pista](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>
 
 </Tabs>
 
-Se crea un waypoint cuando se añade una nota de audio, vídeo o foto a una ruta. Los waypoints existen dentro de una ruta. Si una ruta es visible, sus waypoints también lo son. Por lo tanto, estas notas pueden ser visibles en el mapa todas a la vez o sólo en una ruta visible específica. En este último caso, las notas se muestran como waypoints de la ruta.
+Se crea un waypoint cuando se añade una nota de audio, vídeo o foto a una pista. Los waypoints existen dentro de una pista. Si una pista es visible, sus waypoints también lo son. Por lo tanto, estas notas pueden ser visibles en el mapa todas a la vez o sólo en una pista visible específica. En este último caso, las notas se muestran como waypoints de la pista.
 
 :::note
-Si se exporta una ruta, los waypoints no se pueden ver ni reproducir, porque las notas de audio/vídeo/foto se almacenan únicamente en el dispositivo y solo están disponibles para usted en ese dispositivo.
+Si se exporta una pista, los waypoints no se pueden ver ni reproducir, porque las notas de audio/vídeo/foto se almacenan únicamente en el dispositivo y solo están disponibles para usted en ese dispositivo.
 :::
 
 
@@ -359,7 +368,7 @@ Si se exporta una ruta, los waypoints no se pueden ver ni reproducir, porque las
 
 <TabItem value="android" label="Android">
 
-![Añadir manualmente un waypoint a la ruta](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
+![Añadir manualmente un waypoint a la pista](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
 
 </TabItem>
 
@@ -367,16 +376,16 @@ Si se exporta una ruta, los waypoints no se pueden ver ni reproducir, porque las
 
 Hay dos formas de crear un waypoint: automática y manualmente.
 
-1. **Automáticamente**, se crea un waypoint, en caso de que tome una nota de audio/vídeo/foto cuando la [Grabación de viaje](../plugins/trip-recording) está en curso, independientemente de la geolocalización si está vinculada a la posición actual o a cualquier lugar, y por lo tanto, independientemente de los medios utilizados para ello: si es el [Widget](../widgets/info-widgets#audiovideo-notes-widget), o el [menú contextual](../map/map-context-menu#-audiovideo-note).
+1. **Automáticamente**, se crea un waypoint, en caso de que tome una nota de audio/vídeo/foto cuando la [Grabación de viaje](../plugins/trip-recording) está en curso, independientemente de la geolocalización si está vinculada a la posición actual o a cualquier lugar, y por lo tanto, independientemente de los medios utilizados para ello: si es el [Widget](../widgets/info-widgets#audiovideo-notes-widget), o el [Menú contextual](../map/map-context-menu#-audiovideo-note).
 
     A todos los waypoints añadidos automáticamente se les asigna un nombre de forma automática. El nombre se crea, de acuerdo con el formato especificado a continuación para un archivo de audio/vídeo/foto, y tiene un [enlace corto](https://wiki.openstreetmap.org/wiki/Shortlink). El ejemplo de los waypoints en la figura anterior muestra waypoints creados automática y manualmente, donde los cuatro primeros se crearon automáticamente, y el último - manualmente.
 
-2. **Manualmente**, se crea un waypoint a través del [menú contextual](../map/map-context-menu#-audiovideo-note), de la siguiente manera:
+2. **Manualmente**, se crea un waypoint a través del [Menú contextual](../map/map-context-menu#-audiovideo-note), de la siguiente manera:
 
     - Seleccione la nota de audio/vídeo/foto requerida en el mapa.
-    - Pulse **Acciones** y, a continuación, pulse **Añadir ruta**.
-    - Seleccione la ruta a la que desea añadir un waypoint.
-    - Se abre el diálogo *<Translate android="true" ids="quick_action_add_gpx"/>*, que le permite establecer algunas propiedades, como el nombre del waypoint, un icono, el color y otras. Una vez hecho esto, pulse **Guardar**.
+    - Pulse **Acciones** y, a continuación, pulse **Añadir pista**.
+    - Seleccione la pista a la que desea añadir un waypoint.
+    - Se abre el diálogo *<Translate android="true" ids="quick_action_add_gpx"/>* , que le permite establecer algunas propiedades, como el nombre del waypoint, un icono, el color y otras. Una vez hecho esto, pulse **Guardar**.
 
 :::info note
 Puede especificar nombres para cada waypoint creado manualmente.
@@ -385,27 +394,27 @@ Puede especificar nombres para cada waypoint creado manualmente.
 
 ### Ver waypoints {#view-waypoints}
 
-- Un waypoint está disponible para su visualización como un waypoint en el mapa y en la lista de [waypoints de una ruta específica](../map/tracks/track-context-menu.md#points--waypoints). La eliminación del waypoint no elimina la nota de audio/vídeo/foto correspondiente.
+- Un waypoint está disponible para su visualización como un waypoint en el mapa y en la lista de [waypoints de una pista específica](../map/tracks/track-context-menu.md#points--waypoints). La eliminación del waypoint no elimina la nota de audio/vídeo/foto correspondiente.
 
 - Una nota de audio, vídeo o foto está disponible para su visualización en el mapa y en la lista de notas A/V en [Mis Lugares](../plugins/audio-video-notes#view-in-my-places). La eliminación de la nota de audio, vídeo o foto no elimina el waypoint correspondiente.
 
 - En el mapa, un waypoint y una nota de audio, vídeo o foto pueden ser visibles o no. Depende de la capa que esté activada en ese momento para el perfil.
 
-- Cuando no está activada ni la capa de Rutas ni la de Grabación, tanto los waypoints como las notas pueden mostrarse pulsando sobre ellos en Mis Lugares. En este caso, el mapa muestra las ubicaciones de la nota pulsada o, respectivamente, las ubicaciones de todos los waypoints de la ruta pulsada.
+- Cuando no está activada ni la capa de Pistas ni la de Grabación, tanto los waypoints como las notas pueden mostrarse pulsando sobre ellos en Mis Lugares. En este caso, el mapa muestra las ubicaciones de la nota pulsada o, respectivamente, las ubicaciones de todos los waypoints de la pista pulsada.
 
 | Visible | Capa activada |
 | --- | --- |
-| Solo waypoints | Capa de Rutas |
-| Waypoints y notas | Capas de Rutas y Grabación |
+| Solo waypoints | Capa de Pistas |
+| Waypoints y notas | Capas de Pistas y Grabación |
 | Solo notas | Capa de Grabación |
-| Ninguno | Ni la capa de Rutas, ni la de Grabación. |
+| Ninguno | Ni la capa de Pistas, ni la de Grabación. |
 
 
 ### Archivo GPX con waypoints {#gpx-file-with-waypoints}
 
 ![Waypoint en un archivo GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
 
-Si visualiza el archivo GPX de la ruta añadida con un waypoint a partir de una nota de audio/vídeo/foto, el waypoint será como en el ejemplo siguiente, con las coordenadas, la marca de tiempo, el nombre de la nota respectiva y el enlace corto.
+Si visualiza el archivo GPX de la pista añadida con un waypoint a partir de una nota de audio/vídeo/foto, el waypoint será como en el ejemplo siguiente, con las coordenadas, la marca de tiempo, el nombre de la nota respectiva y el enlace corto.
 
 
 ## Varios {#miscellaneous}
@@ -423,7 +432,7 @@ donde `SHORTLINK_LOCATION` especifica la latitud y longitud de la ubicación a l
 
 ![Notas de audio y vídeo en Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
 
-Para verlo todo más tarde, puede exportar la ruta junto con todos los archivos multimedia y verlos en el [editor JOSM](https://josm.openstreetmap.de/). Tenga en cuenta que los archivos multimedia deben colocarse en la carpeta adecuada. Puede averiguar cuál es haciendo clic en el vídeo. Aparecerá una notificación indicando que no hay ningún archivo disponible, coloque el archivo correcto en la carpeta especificada.
+Para verlo todo más tarde, puede exportar la pista junto con todos los archivos multimedia y verlos en el [editor JOSM](https://josm.openstreetmap.de/). Tenga en cuenta que los archivos multimedia deben colocarse en la carpeta adecuada. Puede averiguar cuál es haciendo clic en el vídeo. Aparecerá una notificación indicando que no hay ningún archivo disponible, coloque el archivo correcto en la carpeta especificada.
 
 
 ## Artículos relacionados {#related-articles}

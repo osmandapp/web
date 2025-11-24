@@ -1,5 +1,5 @@
 ---
-source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
+source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -125,6 +125,7 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
+| [Personalización de color de la cuadrícula de coordenadas](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualización de tracks en 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lugares populares (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
@@ -222,7 +223,7 @@ Para restaurar la compra, por favor, comprueba qué plan de OsmAnd has comprado.
 | OsmAnd  | ✔  &nbsp;&nbsp;[Instalar](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[Instalar](https://appgallery.huawei.com/#/app/C101486545) |
 | OsmAnd+  | ✔  &nbsp;&nbsp;[Instalar](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
 
-### Restaurar suscripción / Compra en la aplicación {#restore-subscription--in-app}
+### Restaurar suscripción / En la aplicación {#restore-subscription--in-app}
 
 **Para restaurar tu *compra en la aplicación* o *suscripción* ([Maps+, Pro, Actualizaciones en vivo](#difference-between-purchases-android)).**
 
