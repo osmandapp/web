@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Rutas
 ---
@@ -181,7 +181,10 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,renderi
 - Para mostrar las rutas deseadas en el mapa, actívelas en la *Lista de rutas* del menú [Configurar mapa](../map/configure-map-menu.md).
 - OsmAnd puede resaltar [rutas presentes en OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Se pueden seleccionar tocando [el símbolo en la ruta](#save-as-a-track), y si el conjunto visible de rutas está configurado correctamente, puede seguir el color y los iconos.
 - Los tipos de ruta principales también se pueden filtrar por clases y subclases, lo que le permite mostrar solo grupos específicos dentro de cada tipo. Por ejemplo, puede mostrar rutas de senderismo por **símbolos OSMC** como clases, y por *redes internacionales, nacionales, regionales* o *locales* como subclases.
-- Puede crear una pista sobre las rutas utilizando la herramienta [Planificar una ruta](../plan-route/create-route.md).  
+- Puede crear una pista sobre las rutas utilizando la herramienta [Planificar una ruta](../plan-route/create-route.md). 
+- Cuando varias rutas discurren por la misma carretera, cada ruta se muestra como una línea semitransparente separada colocada sobre las demás. 
+- Al tocar una ubicación donde se superponen múltiples rutas, se muestra un menú contextual con todas las rutas que pasan por ese punto. 
+- Se requieren mapas vectoriales actualizados para mostrar todos los elementos del nuevo esquema de renderizado de rutas. 
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -195,7 +198,8 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_c
 
 - Para mostrar las rutas deseadas en el mapa, actívelas en la *Lista de rutas* del menú [Configurar mapa](../map/configure-map-menu.md).
 - OsmAnd puede resaltar [rutas presentes en OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Se pueden seleccionar tocando [el símbolo en la ruta](#save-as-a-track), y si el conjunto visible de rutas está configurado correctamente, puede seguir el color y los iconos.
-- Puede crear una pista sobre las rutas utilizando la herramienta [Planificar una ruta](../plan-route/create-route.md).  
+- Puede crear una pista sobre las rutas utilizando la herramienta [Planificar una ruta](../plan-route/create-route.md). 
+- Cuando varias rutas discurren por la misma carretera, cada ruta se muestra como una línea semitransparente separada colocada sobre las demás.   
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -208,7 +212,7 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_c
 
 ![Climbing details](@site/static/img/map/climbing_andr.png)
 
-Al seleccionar una [zona o peñasco de escalada](../map/routes.md#climbing-routes), OsmAnd proporciona un resumen detallado del lugar de escalada, que incluye: nombre y ubicación, clasificación de dificultad de escalada (UIAA, Francés, YDS, etc.), tipo de roca, altura y longitud de la vía, calidad de la escalada y condiciones de la superficie.
+Al seleccionar una [zona o peñasco de escalada](../map/routes.md#climbing-routes), OsmAnd proporciona un resumen detallado del lugar de escalada, que incluye: nombre y ubicación, clasificación de dificultad de escalada (UIAA, Francés, YDS, etc.), tipo de roca, altura y longitud de la ruta, calidad de la escalada y condiciones de la superficie.
 
 
 ## Acciones con Rutas {#actions-with-routes}
@@ -361,13 +365,13 @@ Para buscar, vaya al menú *<Translate android="true" ids="search_button"/>* o *
 
 </Tabs>  
 
-Navegue a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar las rutas deseadas. Las rutas incluyen nombre, tipo de actividad, longitud, ubicación y distancia al punto más cercano.
+Navegue a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar las rutas deseadas. Las rutas incluyen nombre, tipo de actividad, longitud, ubicación y distancia al punto más cercano. En Android, también se muestran métricas de elevación como subida y bajada donde estén disponibles. Los cambios de elevación menores (menos de 10 m) están ocultos para mantener la lista clara. Todos los valores respetan las unidades de distancia y altitud seleccionadas en la aplicación.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_1.png)
+![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -385,7 +389,7 @@ Use el botón de filtros (esquina superior derecha) para mostrar solo las rutas 
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
+source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -177,7 +177,9 @@ Lea más en el artículo [**Paquete personalizado**](../plugins/custom).
 
 </Tabs>
 
-Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar.
+Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar. La carga masiva admite varios tipos de mapa, incluidos Estándar, Curvas de nivel, Wikipedia y Terreno.
+
+Cuando se abre un elemento de país agrupado, se muestra una hoja inferior con la lista completa de mapas para ese país, lo que permite seleccionar mapas individuales o descargarlos todos a la vez.
 
 
 ## Menú local {#local-menu}
@@ -404,11 +406,21 @@ Use sorting options to organize map data:
 
 Ir a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Menú de mapas Actualizar mapas Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Menú de mapas Actualizar mapas Android](@site/static/img/personal/maps/maps_update_andr.png) ![Menú de mapas Pestaña Actualizar Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 La pestaña **Actualizaciones** le permite actualizar los mapas y recursos de OsmAnd. Los mapas estándar y de solo carreteras se publican una vez al mes, generalmente entre el segundo y el quinto día, e incluyen datos de OpenStreetMap hasta el último día del mes anterior (por ejemplo, la versión de octubre contiene datos hasta el 30 de septiembre). Otros datos como Wikipedia, terreno o mapas náuticos pueden seguir diferentes calendarios de actualización no regulares. El pronóstico del tiempo tiene su propio ciclo de actualización regular. Para más detalles, consulte [Descargar pronóstico](../plugins/weather.md#download-forecast). 
 
+Si varios mapas del mismo país requieren actualización, OsmAnd los agrupa en un solo elemento en la lista de Actualizaciones. El elemento agrupado muestra el nombre del país y el número de mapas incluidos. Al tocarlo, se abre una hoja inferior de *Actualizar mapas*, que muestra todos los mapas que necesitan ser actualizados. 
+
 Use el botón *Actualizar todo* para actualizar todos los mapas simultáneamente, o actualice mapas individuales según sea necesario. Para actualizaciones por hora, verifique el estado de su suscripción a [Actualizaciones en vivo](#live-updates). Si está habilitado, la sección **Actualizaciones en vivo** aparecerá en la parte superior de la pestaña, debajo del indicador de Memoria del dispositivo.
+
+También puede gestionar mapas directamente desde la pestaña Actualizaciones utilizando un gesto de presión prolongada en cualquier mapa de la lista. Esto abre un menú contextual que proporciona varias opciones:
+- **Información** — ver detalles sobre el mapa seleccionado
+- **Actualizar** — descargar la última versión disponible
+- **Desactivar** — deshabilitar temporalmente un mapa sin eliminar sus datos
+- **Eliminar** — eliminar completamente los datos del mapa del dispositivo
+
+Cuando un mapa está desactivado, puede desaparecer temporalmente de la pestaña Local. Si se dispone de una actualización para un mapa desactivado, aún aparecerá en la lista de Actualizaciones y se mostrará con un icono gris. Actualizar dicho mapa lo activará automáticamente de nuevo.
 
 </TabItem>
 
@@ -523,6 +535,6 @@ Mantenga al menos [**30 ediciones**](https://github.com/osmandapp/OsmAnd/blob/ma
 
 ### Problemas y soluciones comunes {#common-issues-and-solutions}
 
-- Navegación por voz. [(verificar)](../troubleshooting/navigation.md#voice-navigation)
-- Cómo eliminar el historial de búsqueda. [(verificar)](../troubleshooting/general.md#how-to-delete-search-history)
-- Para solución de problemas adicionales, visite: [Mapas y Datos](../troubleshooting/maps-data.md)
+- Navegación por voz. [(comprobar)](../troubleshooting/navigation.md#voice-navigation)
+- Cómo eliminar el historial de búsqueda. [(comprobar)](../troubleshooting/general.md#how-to-delete-search-history)
+- Para solución de problemas adicional, visite: [Mapas y Datos](../troubleshooting/maps-data.md)

@@ -1,8 +1,9 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Lugares populares
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -23,7 +23,7 @@ La función **Lugares populares** de OsmAnd destaca puntos de referencia y atrac
 
 Cada lugar incluido en esta función está vinculado a un **ID de Wikidata**, lo que permite a OsmAnd mostrar nombres verificados, imágenes de vista previa y enlaces a artículos de Wikipedia. Esta herramienta **no** muestra todos los puntos de OpenStreetMap (OSM). Se limita a los PDI con referencias de Wikidata.
 
-Actualmente, la base de datos seleccionada incluye aproximadamente de **50.000 a 150.000 lugares mejor valorados** en todo el mundo, seleccionados entre más de **1 millón** de objetos de Wikidata + OSM.
+Actualmente, la base de datos seleccionada incluye aproximadamente **50.000 a 150.000 lugares mejor valorados** en todo el mundo, seleccionados entre más de **1 millón** de objetos de Wikidata + OSM.
 
 :::note
 *Esta es la primera versión de la función Lugares populares. Los comentarios son bienvenidos en [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -169,6 +169,8 @@ Al tocar un PDI en el mapa se abre el [menú contextual de PDI](./map-context-me
 
 Esta es una sección dentro del [menú contextual de PDI](./map-context-menu.md) que muestra una vista previa de la foto del Lugar Popular (Wikipedia) seleccionado. Puede desplazarse horizontalmente para navegar por las fotos disponibles, o tocar cualquier imagen para abrirla en [modo de pantalla completa](#gallery).
 
+Las imágenes vistas en línea se almacenan en caché automáticamente para acceso sin conexión. Las fotos en caché muestran una pequeña insignia de modo sin conexión en la esquina. La cuadrícula de vista previa se adapta al tamaño de la pantalla en iPadOS y macOS, asegurando un diseño de imagen cómodo en pantallas más grandes. OsmAnd también evita activar solicitudes de red repetidas cuando se cierra la sección de Fotos en línea, y cancela solicitudes anteriores al cambiar rápidamente entre diferentes PDI.
+
 Obtenga más información sobre las opciones adicionales en las secciones [Acciones](#actions) y [Galería](#gallery).
 
 
@@ -192,6 +194,8 @@ En el menú contextual del mapa Cómo acceder:
 - Toque cualquier foto para verla en [pantalla completa](#gallery) y acceder a las acciones disponibles:  
   **Compartir**, **Detalles**, **Abrir en el navegador** y **Descargar**.
 
+**Nota:** Descargar guarda la imagen en el almacenamiento del dispositivo para uso sin conexión permanente, mientras que las fotos en caché se almacenan automáticamente y están disponibles sin conexión solo dentro de la aplicación.
+
 
 ### Galería {#gallery}
 
@@ -214,7 +218,9 @@ En el menú contextual del mapa Cómo acceder:
 </Tabs>
 
 
-El **Menú de la galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Puede deslizar a través de todas las fotos disponibles. Al tocar una foto se abre brevemente una vista detallada que muestra: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*  
+El **Menú de la galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Puede deslizar a través de todas las fotos disponibles. Al tocar una foto se abre brevemente una vista detallada que muestra: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*.  
+
+En iOS, iPadOS y macOS, puede navegar por las fotos utilizando las teclas del teclado (←/→ para moverse entre imágenes, Enter/Space para abrir).
 
 También puede realizar las siguientes acciones en cada foto:
 

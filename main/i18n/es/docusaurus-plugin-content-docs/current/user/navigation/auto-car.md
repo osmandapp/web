@@ -1,5 +1,5 @@
 ---
-source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
+source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -227,6 +227,27 @@ La información de la ruta consiste en:
 Cuando está activado, **[el ajuste del widget](#eta-next-stop)** (Información de la ruta) mostrará los detalles de la ruta para la siguiente parada ([el punto intermedio](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
+### Alertas de navegación {#navigation-alerts}
+
+![Alerta faltante](@site/static/img/navigation/auto-car/missing_alert.png) ![Alerta privada](@site/static/img/navigation/auto-car/private_alert.png)
+
+Las alertas útiles se muestran automáticamente antes de iniciar la navegación si la ruta no se puede construir de manera normal. Esto evita que la ruta se quede cargando y te permite elegir rápidamente cómo continuar.
+
+**Mapas faltantes u obsoletos**
+
+Si tu destino está ubicado fuera de las áreas de mapa descargadas, se muestra un mensaje y puedes elegir una de las siguientes acciones:
+- **Usar mapas descargados**. La ruta se construye utilizando solo los mapas ya almacenados en tu dispositivo. (La ruta puede ser incompleta si los datos de mapa requeridos no están disponibles.)
+- **Ver en el teléfono**. Se abre la pantalla de descarga de mapas en tu smartphone, donde se pueden descargar las regiones necesarias. Después de la descarga, el cálculo de la ruta se reinicia automáticamente.
+
+Esta alerta se muestra directamente en la pantalla del vehículo, de la misma manera que en la aplicación móvil.
+
+**Advertencia de acceso privado**
+
+Si tu destino está en un área privada o de acceso restringido, se muestra una advertencia y puedes elegir:
+- **Permitir**. La navegación continúa utilizando carreteras privadas si está permitido o si tienes acceso.
+- **Cancelar**. La solicitud de navegación se descarta y se restaura la pantalla anterior.
+
+
 ### Widget de alertas en pantalla {#screen-alert-widget}
 
 Este widget de información combina tipos de alerta como **Pasos de peatones** y **Límite de velocidad**.
@@ -258,6 +279,24 @@ La aplicación OsmAnd te permite usar la vista de mapa 3D en la pantalla de *And
 - Abre el *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* principal directamente en la aplicación OsmAnd.
 - Después de configurar los ajustes, el **botón 3D** se mostrará en la pantalla de *Android Auto* cuando la lista de categorías para destinos esté cerrada.
 - Puedes cambiar entre los modos de mapa 3D / 2D tocando este botón.
+
+### Finalizar navegación {#finish-navigation}
+
+![Finalizar navegación](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+Cuando la navegación se completa en Android Auto, aparece un diálogo especial de Finalizar Navegación en la pantalla del vehículo. Utiliza el mismo algoritmo de detección de llegada que la aplicación móvil y te ayuda a finalizar rápidamente tu viaje o encontrar un lugar de estacionamiento cercano.
+
+Opciones disponibles:
+- **Marcar como ubicación de estacionamiento**. Guarda tu posición actual como una ubicación de estacionamiento y coloca un marcador de estacionamiento en el mapa.
+- **Buscar estacionamiento**. Abre la pantalla de Búsqueda con la categoría de Estacionamiento preseleccionada, para que puedas localizar fácilmente áreas de estacionamiento cercanas.
+- **Recalcular ruta**. Construye una nueva ruta a tu destino original si te detuviste antes o deseas continuar conduciendo.
+- **Finalizar navegación**. Termina la navegación por completo y devuelve OsmAnd a la vista predeterminada del mapa.
+
+Comportamiento al desconectarse de Android Auto:
+- Si tu teléfono se desconecta cuando el vehículo ya está a menos de 100 m del destino, OsmAnd detiene automáticamente la navegación, cambia de vuelta al perfil predeterminado y no aparece ninguna notificación de llegada en la pantalla del teléfono.
+- Si la desconexión ocurre mientras estás parado o te mueves más lento que 1 m/s (por ejemplo, en una gasolinera), OsmAnd pausa temporalmente la navegación. Se reanuda automáticamente cuando el dispositivo se reconecta a Android Auto.
+
+Esta actualización también asegura que las sesiones de Android Auto ahora se cierren correctamente, evitando el uso innecesario de batería y deteniendo las notificaciones de “viaje en progreso” una vez que finaliza la navegación.
 
 
 ## Ajustes {#settings}

@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Mapas ráster (en línea / sin conexión)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -28,7 +28,7 @@ Los mapas ráster tienen una amplia gama de usos. Aquí están algunos de los m�
 - Imágenes de satélite como subcapa.
 - Información de tráfico en tiempo real.
 - Pronóstico de lluvia como superposición.
-- Mapas topográficos con sombreado de colinas y pendientes.
+- Mapas topográficos con el sombreado de colinas y pendientes.
 - Rutas activas de ciclismo y carrera como superposición.
 - Información de embarcaciones en tiempo real.
 - Teselas de OpenStreetMap en línea para la edición de OSM.
@@ -42,7 +42,7 @@ También puede cambiar la fuente principal de mapas de mapas vectoriales a tesel
 
 ## Mapas ráster {#raster-maps}
 
-Los mapas en línea en OsmAnd están compuestos por datos ráster, que consisten en píxeles (también conocidos como celdas de cuadrícula), esencialmente un conjunto de pequeñas imágenes conocidas como teselas. A diferencia de los mapas vectoriales, que representan datos como carreteras, puntos y polígonos utilizando información binaria, las teselas de mapas ráster están dispuestas en una cuadrícula y pueden aparecer pixeladas a niveles de zoom altos porque cada píxel tiene un valor o clase fija.
+Los mapas en línea en OsmAnd están compuestos por datos ráster, que consisten en píxeles (también conocidos como celdas de cuadrícula) - esencialmente un conjunto de pequeñas imágenes conocidas como teselas. A diferencia de los mapas vectoriales, que representan datos como carreteras, puntos y polígonos utilizando información binaria, las teselas de mapas ráster están dispuestas en una cuadrícula y pueden aparecer pixeladas a niveles de zoom altos porque cada píxel tiene un valor o clase fija.
 
 ### Comparación con los mapas vectoriales predeterminados {#comparison-to-default-vector-maps}
 
@@ -296,7 +296,7 @@ Aquí están los parámetros clave para configurar al establecer una nueva fuent
 | Parámetro | Descripción |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Proporcione un nombre para la nueva fuente de mapa en línea. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Ingrese o pegue la URL de la fuente de teselas en línea. Asegúrese de que siga el formato de URL de tesela. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Ingrese o pegue la URL de la fuente de teselas en línea. Asegúrese de que siga el formato de URL de tesela. La URL puede contener ciertos marcadores de posición, que OsmAnd reemplazará automáticamente según la tesela específica necesaria. Los marcadores de posición más comúnmente utilizados se basan en la [convención de nombres de teselas de mapa deslizante de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` o `{0}`: Nivel de zoom</li><li>`{x}` o `{1}`: Índice X de tesela</li><li>`{y}` o `{2}`: Índice Y de tesela</li></ul> Para ejemplos de marcadores de posición menos comúnmente utilizados, consulte las [fuentes de mapas ráster en línea predefinidas](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Este parámetro afecta cómo se muestra el mapa. <br/><ul><li>Como *tipo de mapa*, el mapa se limitará a los niveles de zoom seleccionados.</li><li>Como *superposición/subcapa*, el mapa aparecerá en los niveles de zoom seleccionados, con escalado hacia arriba o hacia abajo aplicado fuera de esos niveles.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Establezca la duración (en minutos) después de la cual las teselas en caché se actualizarán. Puede dejar este campo en blanco si no desea que las teselas se recarguen automáticamente. <br/><ul><li>1 día = 1440 minutos</li><li>1 semana = 10,080 minutos</li><li>30 días = 43,200 minutos</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Elija entre *Proyección Pseudo-Mercator* y *Proyección Elíptica de Mercator*, dependiendo de la fuente. |

@@ -1,5 +1,5 @@
 ---
-source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: Recursos y personalizaciones
 ---
@@ -35,7 +35,7 @@ Para conectar con otros usuarios de OsmAnd, hacer preguntas y compartir tu exper
 |  Google Groups | Osmand (*Inglés*)  | Un grupo donde los usuarios comparten consejos, responden preguntas y discuten las funcionalidades de OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discusión y soporte  | La comunidad de Reddit para usuarios de OsmAnd. Haz preguntas, comparte experiencias o presume de tus estilos de mapa personalizados. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 |  Telegram | Canal de noticias de OsmAnd (*Inglés*)  | El grupo oficial de OsmAnd para anuncios y actualizaciones directamente de los desarrolladores. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  Twitter | Canal de noticias de OsmAnd  | Grupo oficial de OsmAnd para discusiones en vivo, anuncios y actualizaciones. | [Twitter OsmAnd](https://x.com/osmandapp/) |
+|  X (Twitter) | Canal de noticias de OsmAnd  | Grupo oficial de OsmAnd para discusiones en vivo, anuncios y actualizaciones. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | Canal de noticias de OsmAnd | Una comunidad donde puedes chatear, compartir consejos y obtener ayuda con las funciones de OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
@@ -107,6 +107,7 @@ El archivo por defecto [render.xml](https://github.com/osmandapp/OsmAnd-resource
 | Mapa Open Fiets | [El Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) es un estilo de mapa centrado en el ciclismo, que resalta los carriles bici (en rojo), las rutas ciclistas (azul discontinuo), los caminos para bicicletas (rojo discontinuo) y las carreteras con tráfico de vehículos limitado, como las calles para bicicletas (bordes rojos continuos).  |[Estilo OpenFietsMap GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Estilo de mapa de selección | El [Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) es un estilo de mapa de Holder Tamm que te permite elegir si ocultar ciertos objetos o no.  |[Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [El estilo de renderizado ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) se basa principalmente en UniMap y routes.addon.render.xml  |[Estilo de mapa "ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [Este es un estilo de renderizado de OsmAnd optimizado para la caza de tormentas](https://github.com/pqo/stormchasing-rendering-style)  |[Estilo de renderizado Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 
 ### Mapas sin conexión {#offline-maps}

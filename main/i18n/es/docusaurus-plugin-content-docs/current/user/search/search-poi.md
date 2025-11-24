@@ -1,5 +1,5 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
 title:  Buscar PDI
 ---
@@ -68,7 +68,7 @@ OsmAnd proporciona varias formas de acceder a la herramienta de Búsqueda donde 
     - La búsqueda de un local comercial por nombre de marca (como Audi, Starbucks o Aldi) es muy similar a la búsqueda de diferentes PDI por tipo, la principal diferencia es que la lista de marcas se proporciona dentro del mapa y está sujeta a cambios en cada actualización. 
     - La marca se define por la etiqueta OSM [***marca*** *nombre*](https://wiki.openstreetmap.org/wiki/Key:brand) y OsmAnd recopila tipos limitados de marcas por mapa con un máximo de 1000 marcas por mapa, sin embargo se asegura de que la lista de marcas esté alineada a través de los mapas vecinos.
 
-![Buscar PDI Android](@site/static/img/search/brand_search_andr.png)
+![Buscar PDI Android](@site/static/img/search/brand_search_andr.png) ![Buscar PDI Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -149,7 +149,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
         Incluye *9* tipos de filtros: **Frigorífico** (tiene *2* valores), **Calefacción** (tiene *7* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Colchón** (tiene *2* valores), **Tipo de pago** (más de *10* valores), **Ducha** (tiene *1* valor), **Fumar** (tiene *6* valores), **Clasificación por estrellas** (tiene *10* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.
 
  2. **Cafetería y restaurante**. [Cafetería](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) y [restaurantes](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) representan lugares de servicio de comidas.  
-        Incluye *16* tipos de filtros: **Cambiador** (tiene *3* valores), **Café** (tiene *2* valores), **Cocina** (más de *10* valores), **A domicilio** (tiene *1* valor), **Dieta** (tiene *8* valores), **Plato** (más de *10* valores), **Recarga de agua potable** (tiene *1* valor), **Drive-in** (tiene *1* valor), **Tipo de acceso a Internet** (tiene *3* valores), **Microcervecería** (tiene *1* valor), **Productos ecológicos** (tiene *2* valores), **Terraza** (tiene *1* valor), **Tipo de pago** (más de *10* valores), **Fumar** (tiene *6* valores), **Para llevar** (tiene *1* valor), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.
+        Incluye *16* tipos de filtros: **Cambiador** (tiene *3* valores), **Café** (tiene *2* valores), **Cocina** (más de *10* valores), **A domicilio** (tiene *1* valor), **Dieta** (tiene *8* valores), **Plato** (más de *10* valores), **Recarga de agua potable** (tiene *1* valor), **Drive-in** (tiene *1* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Microcervecería** (tiene *1* valor), **Productos ecológicos** (tiene *2* valores), **Terraza** (tiene *1* valor), **Tipo de pago** (más de *10* valores), **Fumar** (tiene *6* valores), **Para llevar** (tiene *1* valor), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.
 
  3. **Estación de carga**. Una [estación de carga](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) es una instalación de infraestructura donde los propietarios de vehículos eléctricos pueden recargar sus coches, motocicletas u otros vehículos eléctricos. Estos puntos proporcionan cargadores y las conexiones adecuadas para suministrar energía a las baterías de los vehículos.
         Incluye *35* tipos de filtros: **Acceso para bicicletas** (tiene *1* valor), **Acceso para autobuses** (tiene *1* valor), **Acceso para vehículos pesados** (tiene *5* valores), **Acceso para automóviles** (tiene *1* valor), **Acceso para scooters** (tiene *1* valor), **Autenticación por aplicación** (tiene *1* valor), **Autenticación por tarjeta con chip** (tiene *1* valor), **Autenticación sin contacto** (tiene *1* valor), **Autenticación por llave** (tiene *1* valor), **Autenticación requerida** (tiene *1* valor), **Autenticación por llamada telefónica** (tiene *1* valor) **Autenticación por mensaje corto** (tiene *1* valor), **Tarifa** (tiene *2* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Tipo de acceso a Internet** (tiene *3* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7, y otros.  
@@ -161,7 +161,7 @@ Un filtro puede constar de un buen número de elementos, cuya presencia depende 
         No contiene ningún filtro.
 
  6. **Gasolinera**. Una [estación de combustible](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), también conocida como estación de servicio, estación de gasolina y garaje de gasolina. Es la instalación de tipo minorista donde los vehículos de motor pueden ser repostados.  
-        Incluye *13* tipos de filtros: **Lavado de coches** (tiene *2* valores), **Retirada de efectivo** (tiene *5* valores), **Aire comprimido** (tiene *1* valor), **Tipo de combustible (avia)** (tiene más de *20* valores), **Tarjetas de combustible** (tiene *5* valores), **Tipo de pago** (tiene más de *20* valores), **Autocaja** (tiene *2* valores), **Acceso para motos de nieve** (tiene *3* valores), **Aseo** (más de *1* valor), **Aspiradora** (tiene *1* valor), **Surtidor automático de combustible** (tiene *1* valor), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.  
+        Incluye *13* tipos de filtros: **Lavado de coches** (tiene *2* valores), **Retirada de efectivo** (tiene *5* valores), **Aire comprimido** (tiene *1* valores), **Tipo de combustible (avia)** (tiene más de *20* valores), **Tarjetas de combustible** (tiene *5* valor), **Tipo de pago** (tiene más de *20* valores), **Autocaja** (tiene *2* valor), **Acceso para motos de nieve** (tiene *3* valores), **Aseo** (más de *1* valores), **Aspiradora** (tiene *1* valores), **Surtidor automático de combustible** (tiene *1* valores), **Accesibilidad para sillas de ruedas** (tiene *4* valores), Abierto ahora / Abierto 24/7.  
 
  7. **Finanzas**. [Finanzas](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) se utiliza para las oficinas de las empresas del sector financiero.  
         Incluye *5* tipos de filtros.  
@@ -340,7 +340,7 @@ Para crear filtros personalizados para encontrar lugares en el mapa, seleccione 
 
 7. **Comida**. Incluye 12 tipos de filtros.  
 
-8. **Peligro**. Incluye 5 tipos: *Peligro de avalancha, Peligro de erosión, Peligro de inundación, Peligro nuclear, Carretera resbaladiza*.  
+8. **Peligro**. Incluye 5 tipos: *Peligro de avalancha, Peligro de erosión, Peligro de inundación, Peligro nuclear, Carretera resbaladiza*. La categoría Peligro incluye tanto PDI con etiquetas hazard=* en nodos como segmentos de carretera o sendero (ways) marcados con la misma etiqueta, si se exportan como objetos buscables. Para una visión general visual de todos los iconos de peligro utilizados en el mapa, consulte la sección [Peligro](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Incluye 31 tipos de filtros.
 

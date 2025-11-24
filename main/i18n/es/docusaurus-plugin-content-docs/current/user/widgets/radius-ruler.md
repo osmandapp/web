@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title:  Regla de radio y Regla
 ---
@@ -69,6 +69,8 @@ Esta herramienta es útil cuando se necesita una comprensión rápida del tamañ
 
 Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="radius_ruler_item"/>*
 
+Disponible en todos los paneles: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, y <Translate android="true" ids="shared_string_right"/>.
+
 ![Posición de visualización Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
@@ -76,7 +78,9 @@ Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,share
 
 Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elegir un panel → Añadir widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Posición de visualización Android](@site/static/img/widgets/radius_ruler_height_ios.png)
+Disponible en todos los paneles: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Izquierda, y Derecha.
+
+![Posición de visualización iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -167,7 +171,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,sh
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Otro → Posición de la ubicación en la pantalla*
 
-![Posición de visualización Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Regla de radio hacia abajo](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Posición de visualización iOS](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Regla de radio hacia abajo](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 

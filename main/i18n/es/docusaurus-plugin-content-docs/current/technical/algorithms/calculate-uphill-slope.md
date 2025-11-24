@@ -1,5 +1,5 @@
 ---
-source-hash: 6f725a1fadd0a2c5cd2626f8424f87e2e54b060d0b683fd33a90f9426413a826
+source-hash: d793188a0617dee4c181a2021483255f3e56c64b9e25db7249b0fb0d19923b4d
 sidebar_position: 5
 ---
 
@@ -7,10 +7,11 @@ sidebar_position: 5
 
 OsmAnd utiliza diferentes algoritmos para calcular la **pendiente** y la **subida** basándose en los datos de satélite SRTM incrustados en los mapas sin conexión y en las pistas GPX grabadas.
 
-El objetivo principal de calcular la **subida** es proporcionar información relevante sobre la cantidad de **energía extra** que se gasta al subir. Obviamente, esto depende de múltiples factores como el vehículo o el medio de transporte, la superficie, el peso de la persona y otros.
+El objetivo principal de calcular la **subida** es proporcionar información relevante sobre la cantidad de **energía extra** que se gasta al subir, obviamente depende de múltiples factores como el vehículo o el medio de transporte, la superficie, el peso de la persona y otros.
 Así, al final, la **subida** debería ser un parámetro a tener en cuenta por el enrutamiento basado en la elevación, para producir un enrutamiento energéticamente eficiente.
 
 El objetivo principal de calcular la **pendiente** es tener una indicación visual de qué carreteras empinadas deben evitarse.
+
 
 ## Subida / Bajada {#uphill--downhill}
 
@@ -18,24 +19,25 @@ Hay muchos problemas para calcular la **subida** porque no existe un estándar y
 
 OsmAnd utiliza un algoritmo de 3 pasos:
 
-- Filtrar datos ruidosos.
+- Filtrar datos ruidosos. 
 - Encontrar extremos locales (mínimos y máximos).
 - Calcular la suma de las diferencias entre el mínimo y el máximo.
 
-Algunas pistas contienen muchos datos ruidosos que deben filtrarse primero. Por ahora, aplicamos el filtrado a todas las pistas, pero las pistas preparadas, como las construidas con la herramienta Planificar Ruta, la herramienta de Navegación o después de la corrección SRTM, el filtrado no debería tener ningún efecto.
+Algunas pistas contienen muchos datos ruidosos que deben filtrarse primero. Por ahora, aplicamos el filtrado a todas las pistas pero las pistas preparadas, como las construidas con la herramienta Planificar Ruta, la herramienta de Navegación o después de la corrección SRTM, el filtrado no debería tener ningún efecto.
+
 
 ### Filtrar pendiente del 70% {#filter-70-slope}
 
-El filtrado se basa en la búsqueda de **puntos extremos** que son significativamente más altos o más bajos que 1 punto vecino a la izquierda y 1 punto vecino a la derecha en el gráfico.
-Esos **puntos extremos** se excluyen de cálculos posteriores. El ```umbral``` es una [pendiente del 70%](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) - [código](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
+El filtrado se basa en la búsqueda de **puntos extremos** que son significativamente más altos o más bajos que 1 punto vecino a la izquierda y 1 punto vecino a la derecha en el gráfico. 
+Esos **puntos extremos** se excluyen de cálculos posteriores. El ```threshold``` es [70% slope](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) -  [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
 
-**Ejemplo 1**. (todos los puntos distribuidos por 10m), elevación - [5, 3, 10, 3, 5]. 10 es un punto extremo: porque es 10 > 3 (pendiente del 70%).
+**Ejemplo 1**. (todos los puntos distribuidos por 10m), elevación - [5, 3, 10, 3, 5]. 10 es un punto extremo: porque es 10 > 3 (70% slope).
 
 **Ejemplo 2**. (todos los puntos distribuidos por 10m), elevación - [5, 3, 10, 13, 15]. 10 no es un punto extremo: porque 10 > 3 pero 10 < 13, por lo que es un pico local.
 
 ### Filtrar puntos de salto {#filter-jumping-points}
 
-Los puntos que representan colinas locales ```/\``` se filtran, lo que lleva a un problema: el punto más alto y el más bajo siempre se filtrarán, pero permite lidiar con pistas ruidosas donde la grabación no fue frecuente, por lo que la primera verificación con pendiente extrema no funciona. Referencia al [código](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L49).
+Los puntos que representan colinas locales ```/\``` se filtran, lo que lleva a un problema: el punto más alto y el más bajo siempre se filtrarán, pero permite lidiar con pistas ruidosas donde la grabación no fue frecuente, por lo que la primera verificación con pendiente extrema no funciona. Referencia al [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L49).
 
 **Ejemplo 1**. Elevación - [5, 3, 10, 3, 5] -> [5, 5].
 
@@ -43,11 +45,12 @@ Los puntos que representan colinas locales ```/\``` se filtran, lo que lleva a u
 
 **Ejemplo 3**. Elevación - [5, 2, 3, 4, 5] -> [5, 3, 4, 5].
 
+
 ### Encontrar extremos {#finding-extremums}
 
 Para encontrar extremos se utiliza el algoritmo [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm). No es absolutamente bueno para encontrar exactamente extremos en un gráfico aleatorio, pero en el cálculo de la altitud evita muchos picos pequeños aleatorios que podrían ocurrir durante una subida larga y algunas bajadas cortas imperceptibles en el medio.
 
-El propósito principal del algoritmo es encontrar el número mínimo de líneas rectas que puedan representar el gráfico de altitud. El ```umbral``` es **[7 metros](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. Así, todos los picos con una diferencia superior a 7 metros se detectarán en superficies planas y no se detectarán si son menores.
+El propósito principal del algoritmo es encontrar el número mínimo de líneas rectas que puedan representar el gráfico de altitud. El ```threshold``` es **[7 metros](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. Así, todos los picos con una diferencia superior a 7 metros se detectarán en superficies planas y no se detectarán si son menores.
 
 Los extremos se muestran en el gráfico como puntos azules con el complemento de desarrollo de OsmAnd activado.
 
@@ -55,32 +58,53 @@ Los extremos se muestran en el gráfico como puntos azules con el complemento de
 
 **Ejemplo 2**. Elevación - [0, 1, 5, 4, -3, -2, -1, 0]. **Ningún extremo** - todos con una diferencia inferior a 7 metros.
 
+
 ### Calcular subida / bajada entre extremos {#calculate-uphill--downhill-between-extremums}
 
-Por ejemplo, si tienes una pista simple que sube y baja, solo tienes 1 máximo en tu camino, por lo que la
-```
-  Diferencia de elevación inicial = <elevación inicial> - <elevación del extremo>    :
+Por ejemplo, si tienes una pista simple que sube y baja, solo tienes 1 máximo en tu camino, por lo que la 
+  ``` 
+  Diferencia de elevación inicial = <elevación inicial> - <elevación del extremo>    : 
   Diferencia de elevación final = <elevación del extremo> - <elevación final>      : si es positiva - **subida**, si es negativa - **bajada**
-```
+  ```
 
 1. Si *Diferencia de elevación inicial* > 0
-  - **subida** = *diferencia de elevación inicial*
-  - **bajada** = *diferencia de elevación final*
+  - **subida** = *diferencia de elevación inicial*  
+  - **bajada** = *diferencia de elevación final*  
 
 2. Si *Diferencia de elevación final* > 0
-  - **subida** = *diferencia de elevación final*
-  - **bajada** = *diferencia de elevación inicial*
+  - **subida** = *diferencia de elevación final*   
+  - **bajada** = *diferencia de elevación inicial*  
+
 
 Se añadirán más ejemplos.
 
-## Corrección de altitud SRTM {#altitude-srtm-correction}
 
-Hay 2 alternativas que se pueden usar en OsmAnd para obtener la corrección de altitud.
+## Corrección de elevación {#elevation-correction}
 
-1. Abrir pista en OsmAnd Android y buscar, *Editar pista → Opciones → Corrección de altitud*
-1.1 **En línea** procesará la pista a través del servidor y los datos de OsmAnd.
-1.2 **Sin conexión** procesará la pista en el dispositivo si se descargan los archivos geotiff 3D.
-2. Abrir el sitio web https://osmand.net/map y subir la pista para ver la elevación SRTM.
+La Corrección de elevación ajusta los valores de altitud en una pista GPX utilizando fuentes externas de elevación. Hay dos fuentes de datos de elevación disponibles:
+
+1. Usar mapas de terreno (DEM / SRTM / datos de elevación 3D)
+- Reemplaza los valores de altitud con datos de los mapas de terreno descargados (DEM/SRTM o archivos GeoTIFF 3D).
+- Funciona localmente en el dispositivo si las teselas de elevación están instaladas.
+- Este método mantiene la geometría original de la pista.
+
+2. Usar carreteras cercanas (Adjuntar a carreteras)
+- Ajusta la geometría de la pista para que coincida con la red de carreteras.
+- Utiliza datos de elevación de carreteras para la corrección de altitud.
+- Este método puede modificar la forma de la pista debido al ajuste a las carreteras.
+
+Datos que pueden cambiar después de aplicar la Corrección de elevación:
+- Distancia
+- Tamaño
+- Subida
+- Bajada
+- Velocidad promedio
+- Velocidad máxima
+- Duración
+- Tiempo en movimiento
+
+Las marcas de tiempo GPX (fecha/hora) se preservan al usar ambas fuentes de elevación.
+
 
 ## Pendiente {#slope}
 
