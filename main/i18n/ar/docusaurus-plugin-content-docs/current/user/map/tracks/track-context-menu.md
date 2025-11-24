@@ -1,5 +1,5 @@
 ---
-source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  قائمة سياق المسار
 ---
@@ -73,8 +73,10 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - *<Translate android="true" ids="altitude_range"/>*. يشير إلى الحد الأدنى والأقصى للارتفاع على المسار.  
 
 :::note
-في حال تم إنشاء مسارك في OsmAnd أو أي تطبيق تتبع آخر (بحيث تحتوي نقاطه على علامات [`time` و `speed`](../../plugins/trip-recording#recorded-gpx-file))، ستحتوي لوحة المعلومات أيضًا على معلومات حول *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*أندرويد*) أو *<Translate ios="true" ids="total_time"/>* (*iOS*) (المدة الزمنية بين نقطتي البداية والنهاية للمسار)، *<Translate android="true" ids="shared_string_time_moving"/>* (مجموع الوقت أثناء القيادة).
-:::  
+في حال تم إنشاء مسارك في OsmAnd أو أي تطبيق تتبع آخر (بحيث تحتوي نقاطه على علامات [`time` و `speed`](../../plugins/trip-recording#recorded-gpx-file))، ستحتوي لوحة المعلومات أيضًا على معلومات حول *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (المدة الزمنية بين نقطتي البداية والنهاية للمسار)، و*<Translate android="true" ids="shared_string_time_moving"/>* (مجموع الوقت أثناء الحركة).
+
+**ملاحظة:** بالنسبة للمسارات المسجلة، يعرض المدة الزمنية الفعلية للسفر بناءً على الطوابع الزمنية. أما بالنسبة للمسارات المخططة، فيعرض المدة الزمنية الوقت المقدر المحسوب من طول الطريق ومتوسط السرعة لملف الملاحة المحدد، إذا كان الطريق بأكمله يستخدم ملفًا واحدًا ولا يحتوي على أجزاء خطوط مستقيمة.
+:::
 
 ### إجراءات المسار {#track-actions}
 
@@ -133,7 +135,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – يصدر المسار المحدد بتنسيق GPX.
+- **<Translate android="true" ids="shared_string_share"/>** – يصدر المسار المحدد بتنسيق GPX عبر قائمة المشاركة في النظام.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [يرفع](../../plugins/osm-editing.md#upload-gps-track) المسار المحدد إلى OpenStreetMap.
 
 <br/>
@@ -247,7 +249,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 تتيح ميزة *النشاط* في OsmAnd وضع علامات على مسارات GPX المسجلة بأنشطة محددة لمزيد من التحليل والتنظيم في المجلدات.
 
-- [علامات النشاط لمسارات GPX](../../plugins/trip-recording.md#recording-settings). عند تسجيل مسار GPX، يمكنك تعيين نوع نشاط. يساعد وضع علامات النشاط هذا في تصنيف المسارات مبدئيًا.
+- [علامات النشاط لمسارات GPX](../../plugins/trip-recording.md#recording-settings). تتلقى المسارات المسجلة نوع نشاط تلقائيًا بناءً على الملف المحدد، مما يساعد في تصنيفها وترشيحها لاحقًا. يمكنك تغيير النشاط يدويًا إذا لزم الأمر.
 - [مرشح النشاط](../../personal/tracks/smart-folder.md#search-filter). يمكنك ترشيح مسارات GPX المسجلة حسب النشاط، مما يتيح لك التركيز على العثور على أنواع معينة من التسجيلات، مثل جميع مسارات ركوب الدراجات أو المشي لمسافات طويلة.
 - [إدارة أنواع الأنشطة](../../personal/tracks/manage-tracks.md#selection-mode). يمكنك تغيير نوع النشاط للمجلدات أو المسارات المحددة باستخدام وضع التحديد في علامة تبويب المسارات في قائمة أماكني.
 - **قائمة الأنشطة**. يتم تحديد فئات ومجموعات الأنشطة في موارد OsmAnd. للمطورين والمساهمين، يتم الاحتفاظ بقائمة الأنشطة بتنسيق منظم في [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json)، والذي يفصل مجموعات وأنواع الأنشطة المتاحة.
@@ -270,13 +272,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة سياق المسار الرسوم البيانية أندرويد](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![قائمة سياق المسار الرسوم البيانية أندرويد](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![قائمة سياق المسار الرسوم البيانية iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![قائمة سياق المسار الرسوم البيانية iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +287,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 في علامة التبويب **نظرة عامة**، يمكنك رؤية معلمات مثل:
 
 - *<Translate android="true" ids="distance"/>*. مجموع المسافة الإجمالية المقطوعة على المسار، أو طول المسار نفسه.
-- *<Translate android="true" ids="shared_string_time_span"/>*. الفاصل الزمني بين نقطتي البداية والنهاية للمسار.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. الفاصل الزمني بين نقطتي البداية والنهاية للمسار.
 - *<Translate android="true" ids="shared_string_start_time"/>* الوقت المحدد لبدء تسجيل المسار.
 - *<Translate android="true" ids="shared_string_end_time"/>*. وقت انتهاء تسجيل المسار.
 
@@ -464,7 +466,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة مجموعة قائمة المسار أندرويد](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![قائمة مجموعة قائمة المسار أندرويد](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -484,7 +486,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - **<Translate android="true" ids="shared_string_rename"/>** - تغيير اسم المجموعة.
 - **<Translate android="true" ids="change_default_appearance"/>** - تغيير خيارات العرض لمجموعة من نقاط الطريق.
 - **<Translate android="true" ids="add_group_to_markers"/>** أو **إزالة** (*أندرويد فقط*) - نقل نقاط طريق المجموعة إلى قائمة [علامات الخريطة](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*أندرويد فقط*) - نقل نقاط طريق المجموعة إلى [المفضلة](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_favorites"/>** (*أندرويد فقط*) - يسمح لك بنسخ المجموعة المحددة من نقاط الطريق إلى [المفضلة](../../personal/favorites.md). يمكنك اختيار إحدى خيارين: ***<Translate android="true" ids="copy_as_new_folder"/>*** أو ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*أندرويد فقط*) - ينشئ مسارًا بين نقاط الطريق. تصبح النقطتان الأولى والأخيرة بداية ونهاية المسار، ويتم تحويل الباقي إلى نقاط وسيطة.
 - **<Translate android="true" ids="shared_string_delete"/>** - حذف مجموعة من نقاط الطريق.
 
@@ -643,7 +645,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### التقسيم حسب المسافة {#split-by-distance}
 
-![علامة تبويب تقسيم المسار حسب المسافة](@site/static/img/personal/tracks/split_by_2_tab.png) ![خريطة تقسيم المسار حسب المسافة](@site/static/img/personal/tracks/split_by_2_map.png)  
+![علامة تبويب تقسيم المسار حسب المسافة](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![خريطة تقسيم المسار حسب المسافة](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 يسمح هذا الخيار بتقسيم مسار إلى فواصل مسافة ثابتة وتحليل إحصائيات مفصلة لكل قطعة. الفواصل المسافية المتاحة هي ***20 م***، ***50 م***، ***100 م***، ***200 م***، ***500 م***، ***1 كم***، ***2 كم***، ***5 كم***، و***10 كم***. بعد اختيار فاصل مسافة، يتم عرض المسار كقائمة من القطع. 
 
@@ -660,14 +662,14 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### التقسيم حسب الوقت {#split-by-time}
 
-![علامة تبويب تقسيم المسار حسب الوقت](@site/static/img/personal/tracks/split_by_3_tab.png) ![خريطة تقسيم المسار حسب الوقت](@site/static/img/personal/tracks/split_by_3_map.png) 
+![علامة تبويب تقسيم المسار حسب الوقت](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![خريطة تقسيم المسار حسب الوقت](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 يقسم خيار **التقسيم حسب الوقت** مسارًا إلى فواصل زمنية متساوية المدة. يمكنك الاختيار بين ***1 دقيقة***، ***2 دقيقة***، ***2.5 دقيقة***، ***5 دقائق***، ***10 دقائق***، ***15 دقيقة***، ***30 دقيقة***، و***60 دقيقة***. الطريقة التي يتم بها عرض الفواصل، والإحصائيات المقدمة لكل قطعة، وكيفية ظهورها على الخريطة هي نفسها كما في قسم [التقسيم حسب المسافة](#split-by-distance).
 
 
 ### التقسيم حسب الصعود/الهبوط {#split-by-uphill-downhill}
 
-![علامة تبويب تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/split_by_4_tab.png) ![خريطة تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/split_by_4_map.png) 
+![علامة تبويب تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![خريطة تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 يقسم هذا الخيار مسارًا إلى قطع بناءً على تغييرات الارتفاع. يتم تصنيف كل فاصل كـ ***صعود***، ***هبوط***، أو ***مسطح***. الطريقة التي يتم بها عرض الفواصل، والإحصائيات المقدمة لكل قطعة، وكيفية ظهورها على الخريطة هي أيضًا نفسها كما في قسم [التقسيم حسب المسافة](#split-by-distance).
 
@@ -727,7 +729,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### الإحصائيات {#statistics}
 
-![الرسم البياني لمرشح GPS في أندرويد](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![الرسم البياني لمرشح GPS في أندرويد](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 تعرض علامة تبويب الإحصائيات معلومات حول المسار **المعدل**، أي المسار بدون القيم المرشحة. يتم عرضه في كتل الإحصائيات وبيانات الرسم البياني.
   

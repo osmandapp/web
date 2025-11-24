@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  الخرائط النقطية (عبر الإنترنت / دون اتصال)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -33,7 +33,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - معلومات السفن في الوقت الفعلي.
 - مربعات OpenStreetMap عبر الإنترنت لتحرير OSM.
 
-![نظرة عامة على الخرائط عبر الإنترنت](@site/static/img/plugins/online-maps/online-maps-overview.png)
+![Online maps overview](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
 :::tip
 يمكنك أيضًا تغيير المصدر الرئيسي للخرائط من الخرائط المتجهية إلى المربعات عبر الإنترنت.
@@ -79,13 +79,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![عرض الخرائط](@site/static/img/plugins/online-maps/show-maps-andr.png)  
+![Show maps](@site/static/img/plugins/online-maps/show-maps-andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![عرض الخرائط](@site/static/img/plugins/online-maps/show-maps-ios.png)  
+![Show maps](@site/static/img/plugins/online-maps/show-maps-ios.png)  
 
 </TabItem>
 
@@ -106,7 +106,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
 
-![عرض الخرائط](@site/static/img/plugins/online-maps/map_source.png)
+![Show maps](@site/static/img/plugins/online-maps/map_source.png)
 
 </TabItem>
 
@@ -114,7 +114,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps"/>*  
 
-![عرض الخرائط](@site/static/img/plugins/online-maps/map_type.png)
+![Show maps](@site/static/img/plugins/online-maps/map_type.png)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
 
 </TabItem>
 
@@ -139,7 +139,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
 </TabItem>
 
@@ -162,7 +162,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
 
 </TabItem>
 
@@ -170,7 +170,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
 </TabItem>
 
@@ -187,7 +187,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## تظليل التلال / الانحدار {#hillshade--slope}
 
-![طبقات التضاريس](@site/static/img/plugins/online-maps/terrain_two_layers.png)
+![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
 **تظليل التلال (Hillshade)** و **الانحدار (Slope)** هما خرائط نقطية غير متصلة بالإنترنت تعرض تضاريس الأرض. يتم عرضهما كطبقة خريطة خاصة، وهي طبقة علوية ثانية على الخريطة الأساسية. تحتوي الخرائط على معلومات ارتفاع إضافية لمساعدتك على فهم انحدار وظلال المناظر الطبيعية بشكل أكثر دقة. تستند معلومات *تظليل التلال* و *الانحدار* إلى بيانات من مصدر واحد، وهو *ملف الكوكب العالمي*، وهي مقسمة إلى مناطق.  
 
@@ -208,7 +208,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 | تظليل التلال | التضاريس ثلاثية الأبعاد |
 |--------|---------|
-| ![طبقات التضاريس](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![طبقات التضاريس](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 تم وصف الفرق في عرض التضاريس على الخريطة عند تطبيق هذه الإعدادات في مقالة **الطبوغرافيا** في القسم المقابل [تظليل التلال والتضاريس ثلاثية الأبعاد](../plugins/topography.md#hillshade-and-3d-relief).
 
@@ -231,7 +231,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 </Tabs>
 
-![طبقات التضاريس](@site/static/img/plugins/online-maps/terrain_layers.png)
+![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
 يمكنك تخصيص مستوى التكبير للعرض والشفافية لتظليل التلال والانحدار. يمكنك قراءة المزيد في [مقالة الطبوغرافيا](../plugins/topography.md#hillshade-slope-and-altitude-layers).
 
@@ -242,7 +242,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 [التضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) هي ميزة مدفوعة في [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-![خرائط نقطية ثلاثية الأبعاد](@site/static/img/plugins/online-maps/raster_maps_3d.png)
+![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
 
 ميزة [**التضاريس ثلاثية الأبعاد**](../plugins/topography.md#3d-relief) هي تقنية رسم خرائط تتيح تصور التضاريس على الخريطة باستخدام نماذج ثلاثية الأبعاد. تضيف هذه الميزة معلومات الارتفاع إلى خريطة ثنائية الأبعاد عادية، مما يخلق تأثيرًا ثلاثي الأبعاد وعمقًا ويسمح لك بتصور التضاريس بشكل أفضل.  
 
@@ -287,7 +287,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 </Tabs>
 
-![إضافة مصدر عبر الإنترنت](@site/static/img/plugins/online-maps/add-online-source-2.png)
+![Add online source](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 لإنشاء مصدر خريطة نقطية، تحتاج إلى معرفة **عنوان URL للمربع**، وهو عنوان URL محدد يوزع مربعات الخرائط في إسقاط مركاتور. على سبيل المثال، قد يبدو عنوان URL للمربع كما يلي: `https://tile.osmand.net/hd/6/55/25.png`، حيث يكون `https://tile.osmand.net/hd/` هو عنوان URL الأساسي.
 
@@ -296,7 +296,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | المعلمة | الوصف |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | أدخل اسمًا لمصدر الخريطة الجديد عبر الإنترنت. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | أدخل أو الصق عنوان URL لمصدر المربعات عبر الإنترنت. تأكد من أنه يتبع تنسيق عنوان URL للمربعات. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | أدخل أو الصق عنوان URL لمصدر المربعات عبر الإنترنت. تأكد من أنه يتبع تنسيق عنوان URL للمربعات. يمكن أن يحتوي عنوان URL على بعض العناصر النائبة، والتي سيحل OsmAnd محلها تلقائيًا بناءً على المربع المحدد. العناصر النائبة الأكثر شيوعًا مستندة إلى [اتفاقية أسماء المربعات في خرائط OpenStreetMap الزلقة](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` أو `{0}`: مستوى التكبير</li><li>`{x}` أو `{1}`: فهرس X للمربع</li><li>`{y}` أو `{2}`: فهرس Y للمربع</li></ul> لأمثلة على العناصر النائبة الأقل شيوعًا، انظر [مصادر الخرائط النقطية عبر الإنترنت المحددة مسبقًا](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | تؤثر هذه المعلمة على كيفية عرض الخريطة. <br/><ul><li>*كنوع خريطة*، ستقتصر الخريطة على مستويات التكبير المحددة.</li><li>*كطبقة علوية/سفلية*، ستظهر الخريطة عند مستويات التكبير المحددة، مع تطبيق التكبير أو التصغير خارج تلك المستويات.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | حدد المدة (بالدقائق) التي سيتم بعدها تحديث المربعات المخزنة مؤقتًا. يمكنك ترك هذا الحقل فارغًا إذا كنت لا تريد إعادة تحميل المربعات تلقائيًا. <br/><ul><li>يوم واحد = ١٤٤٠ دقيقة</li><li>أسبوع واحد = ١٠٠٨٠ دقيقة</li><li>٣٠ يومًا = ٤٣٢٠٠ دقيقة</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | اختر بين *إسقاط مركاتور الزائف* و *إسقاط مركاتور الإهليلجي*، اعتمادًا على المصدر. |
@@ -336,7 +336,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### مسح ذاكرة التخزين المؤقت للخرائط النقطية {#clear-raster-map-cache}
 
-![قائمة المصادر عبر الإنترنت](@site/static/img/plugins/online-maps/online-sources-list.png)
+![Online sources list](@site/static/img/plugins/online-maps/online-sources-list.png)
 
 يتم تخزين المربعات في ذاكرة التخزين المؤقت عند استخدام الخرائط النقطية عبر الإنترنت كطبقة رئيسية / علوية / سفلية. يمكنك رؤية حجم ملف SQ Lite الخاص بك تحت اسم الخريطة عبر الإنترنت في القائمة. في بعض الأحيان، يكون التنظيف المنتظم مطلوبًا لتسريع عرض المربعات أو لتحديث البيانات.  
 
@@ -360,10 +360,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <table class="images">
     <tr>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-1.png').default} alt="خرائط-نقطية"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-2.png').default} alt="خرائط-نقطية"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-3.png').default} alt="خرائط-نقطية"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="خرائط-نقطية"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-1.png').default} alt="raster-maps"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-2.png').default} alt="raster-maps"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-3.png').default} alt="raster-maps"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="raster-maps"/></td>
     </tr>
 </table>  
 
@@ -378,7 +378,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <TabItem value="ios" label="iOS">  
 
-![تنزيل المربعات في iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
+![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
 
 </TabItem>
 

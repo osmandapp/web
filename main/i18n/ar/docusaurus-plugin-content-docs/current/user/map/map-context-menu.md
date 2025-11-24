@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -136,6 +136,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تشمل التفاصيل المتاحة:
 
+- [وصف المقال](#article-description)
 - [الأسماء البديلة](#alternative-names)
 - [الإحداثيات](#coordinates)
 - [ضمن مناطق](#polygon-information)
@@ -154,6 +155,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [الرسوم](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [إمكانية الوصول](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [العرض](https://wiki.openstreetmap.org/wiki/Key:width) / [الارتفاع](https://wiki.openstreetmap.org/wiki/Key:height)
+
+بالإضافة إلى الحقول المذكورة أعلاه، قد يعرض OsmAnd أيضًا معلومات وصفية إضافية مأخوذة من OpenStreetMap. تساعد هذه السمات في فهم خصائص المكان بشكل أفضل وقد تشمل تفاصيل مثل الارتفاع، والاتجاه، وسنة البناء، ونوع السطح أو الغطاء، ومستوى الداخل، وخيارات الدفع، وتوافر التوصيل أو الوجبات الخارجية، وغيرها الكثير. يعرض OsmAnd هذه السمات بتسميات واضحة، وأيقونات حيثما أمكن، مما يجعل القراءة والتعرف على المعلومات أسهل. يعتمد المجموعة الدقيقة من السمات على البيانات المتاحة في OpenStreetMap للكائن المحدد.
+
+
+### وصف المقال {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
+
+![قائمة الوصف](@site/static/img/map/description_list_new_android.png) ![قائمة الوصف](@site/static/img/map/description_list_dialog.png)
+
+يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md#wikipedia-article)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
+
+إذا كان المكان المحدد يحتوي على مقالة ويكيبيديا، يتم عرض معاينة قصيرة في هذا القسم. عندما لا تكون المقالة الكاملة متاحة دون اتصال، يظهر زر *قراءة على ويكيبيديا*. النقر عليه يفتح نافذة حوار مع خيارات تعتمد على وصول المستخدم: يمكن للمستخدمين ذوي الخطة المشتراة تنزيل بيانات ويكيبيديا الإقليمية أو فتح المقالة في المتصفح، بينما يمكن للمستخدمين المجانيين فتح المقالة عبر الإنترنت أو الانتقال إلى الشاشة التي تقدم الوصول دون اتصال.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![قائمة الوصف](@site/static/img/map/description_list_new_ios.png)
+
+يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
+
+</TabItem>
+
+</Tabs>
 
 
 ### الأسماء البديلة {#alternative-names}
@@ -298,27 +326,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 هذه قائمة بجميع النقاط في مجموعة واحدة لمفضلة أو نقطة طريق. بالنقر، تتوسع القائمة الكاملة لنقاط مجموعة واحدة، وعند النقر على نقطة من القائمة، تنتقل الخريطة إلى النقطة المحددة.
 
 
-
-
-### وصف المقال {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="أندرويد">  
-
-![قائمة الوصف](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![قائمة الوصف](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-يحتوي هذا الجزء على جزء من الوصف من [مقالة ويكيبيديا](../plugins/wikipedia.md)، أو وصف [المفضلة](../personal/favorites.md) أو نقطة الطريق، وبالنقر يمكنك فتح الوصف الكامل.
 
 
 ### رابط OpenStreetMap {#openstreetmap-link}

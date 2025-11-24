@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  المسارات
 ---
@@ -182,6 +182,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - يمكن لـ OsmAnd إبراز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها عن طريق النقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك اتباع اللون والأيقونات.
 - يمكن أيضًا تصفية الأنواع الرئيسية للمسارات حسب الفئات والفئات الفرعية، مما يسمح لك بعرض مجموعات محددة فقط داخل كل نوع. على سبيل المثال، يمكنك عرض مسارات المشي لمسافات طويلة حسب **رموز OSMC** كفئات، وحسب *الشبكات الدولية أو الوطنية أو الإقليمية*، أو *الشبكات المحلية* كفئات فرعية.
 - يمكنك إنشاء مسار فوق المسارات باستخدام أداة [تخطيط مسار](../plan-route/create-route.md).  
+- عندما يمر عدة مسارات على طول الطريق نفسها، يتم عرض كل مسار كخط شبه شفاف منفصل موضوع فوق الآخرين.  
+- عند النقر على موقع يتداخل فيه عدة مسارات، يتم عرض قائمة سياقية بجميع المسارات التي تمر عبر هذه النقطة.  
+- تتطلب الخرائط المتجهية المحدثة لعرض جميع عناصر مخطط عرض المسارات الجديد. 
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -196,6 +199,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* من قائمة [تكوين الخريطة](../map/configure-map-menu.md).
 - يمكن لـ OsmAnd إبراز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها عن طريق النقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك اتباع اللون والأيقونات.
 - يمكنك إنشاء مسار فوق المسارات باستخدام أداة [تخطيط مسار](../plan-route/create-route.md).  
+- عندما يمر عدة مسارات على طول الطريق نفسها، يتم عرض كل مسار كخط شبه شفاف منفصل موضوع فوق الآخرين.   
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -361,13 +365,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-انتقل إلى *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* للعثور على المسارات المطلوبة. تتضمن المسارات الاسم ونوع النشاط والطول والموقع والمسافة إلى أقرب نقطة.
+انتقل إلى *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* للعثور على المسارات المطلوبة. تتضمن نتائج بحث المسارات اسم المسار، ونوع النشاط، والطول، والموقع، والمسافة إلى أقرب نقطة. على أندرويد، يتم أيضًا عرض مقاييس الارتفاع مثل الصعود والنزول حيثما تتوفر. يتم إخفاء التغييرات الطفيفة في الارتفاع (أقل من 10 م) للحفاظ على وضوح القائمة. جميع القيم تحترم وحدات المسافة والارتفاع المحددة في التطبيق.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_1.png)
+![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -385,7 +389,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

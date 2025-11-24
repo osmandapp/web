@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  تخطيط مسار
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## نظرة عامة {#overview}
 
 أداة **تخطيط مسار** (*القائمة ← تخطيط مسار*) هي ميزة قوية في تطبيق OsmAnd تسمح لك بـ[إنشاء مسارات جديدة](#create-new-route) كمسارات GPX، و[تعديل وإضافة مقاطع جديدة](#segments) إلى المسارات المحفوظة بالفعل، و[قياس المسافات](#distance-measurement) على الخريطة، و[إرفاق مقاطع المسار](#attach-track-to-roads) بأقرب طريق متاح باستخدام ملفات تعريف ملاحة مختلفة. تم تصميم الميزة للعمل في *وضع عدم الاتصال بالإنترنت*.
 
-يتكون المسار من مجموعة من المقاطع بين نقاط محددة. يمكن أن تكون المقاطع خطوطًا مستقيمة أو مسارات متكيفة مع ملف التعريف المحدد. يمكن حفظ المسار كملف GPX لاستيراده وتعديله و[التنقل به](../navigation/setup/gpx-navigation.md) لاحقًا.
+يتكون المسار من مجموعة من المقاطع بين نقاط محددة. يمكن أن تكون المقاطع خطوطًا مستقيمة أو مسارات متكيفة مع الملف المحدد. يمكن حفظ المسار كملف GPX لاستيراده وتعديله و[التنقل به](../navigation/setup/gpx-navigation.md) لاحقًا.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -124,7 +124,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![تخطيط مسار إرفاق-طريق-آي أو إس](@site/static/img/plan-route/plan_route-snap_andr.png)
+![تخطيط مسار إرفاق-طريق-أندرويد](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
@@ -142,6 +142,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - أسماء الشوارع ومعلومات الحارات.
 - بيانات الارتفاع.
 - [سمات الطريق](../navigation/setup/route-details.md#road-attributes).
+- ملف تعريف ارتفاع محدث بناءً على هندسة الطريق.
+- إعادة حساب محتمل لهندسة المسار (تبسيط أو تعديل النقاط إلى شبكة الطرق).
+
+عند إرفاق مسار بالطرق، قد تتغير المعلمات التالية لأن هندسة المسار وارتفاعه يتم إعادة حسابهما: *المسافة، الصعود / الهبوط، السرعة المتوسطة (ورسم بياني السرعة)، السرعة القصوى، الوقت في الحركة*، و*المدة*. قد تختلف هذه القيم عن مسار GPX الأصلي إذا انحرف الارتفاع أو الهندسة المبنية على الطريق المعاد حسابها بشكل كبير عن بيانات GPS المسجلة.
 
 يمكنك تحديد [قيمة حدية](../navigation/setup/gpx-navigation.md#attach-to-the-roads) للمسافة التي يمكن أن تكون بها نقاط المسار المبسطة بعيدة عن نقاط المسار الأصلية.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="أندرويد">
 
-![تخطيط مسار أندرويد](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![تخطيط مسار أندرويد](@site/static/img/plan-route/plan_route_points_list_andr.png) ![تخطيط مسار المفضلات أندرويد](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+لقياس مسافة أو تخطيط رحلة، أضف النقاط في موقع *المؤشر* واحدة تلو الأخرى وانقر على زر *إضافة*. من خلال الوصول إلى **قائمة النقاط** أدناه، يمكنك إعادة ترتيب النقاط أو حذفها أو الوصول إلى [قائمة سياق نقطة](#point-context-menu) معينة.
+
+يمكنك أيضًا إضافة نقطة عبر مباشرة من الخريطة بالنقر على POI أو مفضل لفتح قائمة السياق الخاصة به ثم النقر على *إضافة نقطة*. في هذا الوضع، لا تظهر قوائم السياق للكائنات غير النقاط. عند إضافة POI/مفضل، يتم الحفاظ على اسمه كنوع نقطة المسار؛ إذا قمت لاحقًا بنقل هذه النقطة على الخريطة، يتم إعادة تعيين الاسم.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![تخطيط مسار آي أو إس](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+لقياس مسافة أو تخطيط رحلة، أضف النقاط في موقع *المؤشر* واحدة تلو الأخرى وانقر على زر *إضافة نقطة*. من خلال الوصول إلى **قائمة النقاط** أدناه، يمكنك إعادة ترتيب النقاط أو حذفها أو الوصول إلى [قائمة سياق نقطة](#point-context-menu) معينة.
+
 </TabItem>
 
 </Tabs>  
-
-لقياس مسافة أو تخطيط رحلة، أضف النقاط في موقع *المؤشر* واحدة تلو الأخرى وانقر على زر *إضافة نقطة*. من خلال الوصول إلى **قائمة النقاط** أدناه، يمكنك إعادة ترتيب النقاط أو حذفها أو الوصول إلى [قائمة سياق نقطة](#point-context-menu) معينة.
 
 :::note
 يمكنك أيضًا **التراجع**/**الإعادة** عن كل إجراء قمت به في تخطيط المسار.
@@ -364,7 +372,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="أندرويد">
 
-![تخطيط مسار أندرويد](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![تخطيط مسار أندرويد](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 

@@ -1,8 +1,9 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
 title:  الملاحظات الصوتية / المرئية
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -39,9 +39,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يتم توفير الملاحظات الصوتية/المرئية مع إضافة الملاحظات الصوتية/المرئية، وتتطلب الإعداد التالي:
 
-١. تمكين [إضافة الملاحظات الصوتية/المرئية](../plugins/index.md#enable--disable) في قسم الإضافات من *القائمة الرئيسية*.
-٢. إضافة [ويدجت](../widgets/info-widgets.md#audiovideo-notes-widget) إلى شاشة الخريطة للاستخدام الأكثر ملاءمة.
-٣. تخصيص [إعدادات التسجيل](#plugin-settings) لكل ملف شخصي، إذا لزم الأمر.
+1. تمكين [إضافة الملاحظات الصوتية/المرئية](../plugins/index.md#enable--disable) في قسم الإضافات من *القائمة الرئيسية*.
+2. إضافة [ويدجت](../widgets/info-widgets.md#audiovideo-notes-widget) إلى شاشة الخريطة للاستخدام الأكثر ملاءمة.
+3. تخصيص [إعدادات التسجيل](#plugin-settings) لكل ملف شخصي، إذا لزم الأمر.
 
 
 ## إعدادات الإضافة {#plugin-settings}
@@ -117,14 +117,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لإنشاء ملاحظة مرتبطة بنقطة محددة على الخريطة، استخدم [قائمة السياق](../map/map-context-menu.md#-record-av-note) للنقطة:
 
-١. انقر نقرًا طويلاً على نقطة على الخريطة، وستفتح [قائمة السياق](../map/map-context-menu.md).
-٢. انقر على **إجراءات**، واختر أحد الخيارات المتاحة من القائمة:
+1. انقر نقرًا طويلاً على نقطة على الخريطة، وستفتح [قائمة السياق](../map/map-context-menu.md).
+2. انقر على **إجراءات**، واختر أحد الخيارات المتاحة من القائمة:
 
     - **<Translate android="true" ids="recording_context_menu_arecord"/>** - لإنشاء ملاحظة صوتية وربطها بالنقطة المحددة على الخريطة؛
     - **<Translate android="true" ids="recording_context_menu_vrecord"/>** - لإنشاء ملاحظة فيديو وربطها بالنقطة المحددة على الخريطة؛
     - **<Translate android="true" ids="recording_context_menu_precord"/>** - لإنشاء ملاحظة صورة وربطها بالنقطة المحددة على الخريطة.
 
-٣. بناءً على التنسيق المحدد للملاحظة، يفتح مربع حوار المسجل المعني.
+3. بناءً على التنسيق المحدد للملاحظة، يفتح مربع حوار المسجل المعني.
 
 
 ### مربع حوار المسجل {#recorder-dialog}
@@ -255,14 +255,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 إضافة ويدجت إلى الشاشة ضروري إذا كنت تفضل تجنب البحث عن الموقع الجغرافي على الخريطة وربط الملاحظات بموقعك الافتراضي الحالي. لإضافة أو تخصيص ويدجت، اتبع الخطوات أدناه:
 
-١. اذهب إلى:
+1. اذهب إلى:
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
-٢. حدد **<Translate android="true" ids="map_widget_left"/>** أو **<Translate android="true" ids="map_widget_right"/>**.
+2. حدد **<Translate android="true" ids="map_widget_left"/>** أو **<Translate android="true" ids="map_widget_right"/>**.
 
-٣. انقر على **<Translate android="true" ids="map_widget_av_notes"/>**، وستفتح قائمة سياق الويدجت.
+3. انقر على **<Translate android="true" ids="map_widget_av_notes"/>**، وستفتح قائمة سياق الويدجت.
 
-٤. حدد الخيار الذي تفضل استخدامه افتراضيًا عن طريق النقر على الويدجت:
+4. حدد الخيار الذي تفضل استخدامه افتراضيًا عن طريق النقر على الويدجت:
 
     - **<Translate android="true" ids="av_def_action_choose"/>** - فتح مجموعة من الخيارات.
 
@@ -273,6 +273,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - **<Translate android="true" ids="av_def_action_picture"/>** - بدء التقاط الصور.
 
     ![الويدجت](@site/static/img/plugins/audio-video-notes/widget.png)
+
+**استخدام أجهزة الإدخال الخارجية (*أندرويد*)**. إذا كنت تستخدم [جهاز إدخال خارجي](https://osmand.net/docs/user/map/interact-with-map#external-input-devices)، يمكنك بدء وإيقاف الملاحظات الصوتية/المرئية دون لمس الشاشة. للقيام بذلك، قم بتعيين إجراء "إضافة ملاحظة صوتية" أو "إضافة ملاحظة فيديو" إلى مفتاح:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+بمجرد التعيين، يعمل المفتاح كمفتاح تبديل:
+- الضغطة الأولى تبدأ تسجيل ملاحظة صوتية أو فيديو (حسب الإجراء المحدد).
+- الضغطة الثانية لنفس المفتاح توقف التسجيل.
+
+عند إيقاف التسجيل عبر جهاز إدخال خارجي، لا يتم عرض قائمة السياق، مما يجعل استخدام OsmAnd في سيناريوهات خالية تمامًا من اليدين أسهل (على سبيل المثال، أثناء ركوب دراجة نارية أو القيادة).
 
 
 ## إدارة ملاحظات متعددة {#manage-multiple-notes}
@@ -367,11 +376,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 هناك طريقتان لإنشاء نقطة طريق: تلقائيًا ويدويًا.
 
-١. **تلقائيًا**، يتم إنشاء نقطة طريق، في حال قمت بتدوين ملاحظة صوتية/مرئية/صورة أثناء تقدم [تسجيل الرحلة](../plugins/trip-recording)، بغض النظر عن الموقع الجغرافي إذا كانت مرتبطة بالموقع الحالي أو أي مكان، وبالتالي، بغض النظر عن الوسيلة المستخدمة لذلك: سواء كانت [الويدجت](../widgets/info-widgets#audiovideo-notes-widget)، أو [قائمة السياق](../map/map-context-menu#-audiovideo-note).
+1. **تلقائيًا**، يتم إنشاء نقطة طريق، في حال قمت بتدوين ملاحظة صوتية/مرئية/صورة أثناء تقدم [تسجيل الرحلة](../plugins/trip-recording)، بغض النظر عن الموقع الجغرافي إذا كانت مرتبطة بالموقع الحالي أو أي مكان، وبالتالي، بغض النظر عن الوسيلة المستخدمة لذلك: سواء كانت [الويدجت](../widgets/info-widgets#audiovideo-notes-widget)، أو [قائمة السياق](../map/map-context-menu#-audiovideo-note).
 
     تحصل جميع نقاط الطريق المضافة تلقائيًا على اسم معين تلقائيًا. يتم إنشاء الاسم، وفقًا للتنسيق المحدد أدناه لملف صوت/فيديو/صورة، وله [رابط قصير](https://wiki.openstreetmap.org/wiki/Shortlink). يوضح مثال نقاط الطريق في الشكل أعلاه نقاط طريق تم إنشاؤها تلقائيًا ويدويًا، حيث تم إنشاء الأربعة الأولى تلقائيًا، والأخيرة - يدويًا.
 
-٢. **يدويًا**، يتم إنشاء نقطة طريق عبر [قائمة السياق](../map/map-context-menu#-audiovideo-note)، على النحو التالي:
+2. **يدويًا**، يتم إنشاء نقطة طريق عبر [قائمة السياق](../map/map-context-menu#-audiovideo-note)، على النحو التالي:
 
     - حدد الملاحظة الصوتية/المرئية/الصورة المطلوبة على الخريطة.
     - انقر على **إجراءات**، ثم انقر على **إضافة مسار**.

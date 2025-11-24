@@ -1,5 +1,5 @@
 ---
-source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  سحابة OsmAnd
 ---
@@ -261,7 +261,7 @@ To use this feature:
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![تغييرات سحابة OsmAnd](@site/static/img/personal/osmand-cloud/deletion_option.png)  
+![تغييرات سحابة OsmAnd](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -338,6 +338,23 @@ To use this feature:
 يعرض قسم قائمة **<Translate android="true" ids="backup_version_history"/>** (أندرويد) / **<Translate ios="true" ids="manage_storage"/>** (iOS) معلومات حول مقدار الذاكرة المستخدمة من ٣.١٥ جيجابايت في *الإعدادات* و*أماكني* و*الموارد*. يمكنك عرض حجم التخزين لكل نوع بيانات وحذفها من سحابة OsmAnd إذا لزم الأمر. 
 
 حذف البيانات من السحابة لا يؤثر على حالة النسخ الاحتياطي لها أو النسخ المحلية على جهازك. تبقى جميع العناصر المحذوفة متاحة في سلة المهملات لمدة ٣٠ يومًا ويمكن استعادتها خلال هذه الفترة.
+
+### النسخ الاحتياطي التلقائي {#auto--backup}
+
+<InfoAndroidOnly />
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![النسخ الاحتياطي التلقائي في أندرويد](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+يحفظ النسخ الاحتياطي التلقائي بيانات OsmAnd المحددة تلقائيًا في السحابة في فترات منتظمة أثناء نشاط التطبيق. يساعد ذلك في حماية بياناتك ويحافظ على مزامنتها عبر الأجهزة باستخدام نفس الحساب. ينقسم شاشة النسخ الاحتياطي التلقائي إلى ثلاثة أقسام قابلة للتوسع: *الإعدادات*، و*أماكني*، و*الموارد*.
+
+سلوك النسخ الاحتياطي التلقائي:
+
+- يعمل النسخ الاحتياطي التلقائي تقريبًا كل ساعة أثناء عمل OsmAnd في المقدمة.
+- يبدأ النسخ الاحتياطي أيضًا عند عودتك إلى شاشة الخريطة.
+- يمكنك تفعيل/تعطيل كل عنصر أو أقسام كاملة بشكل مستقل.
+- تبقى بياناتك متاحة محليًا حتى إذا تم إيقاف النسخ الاحتياطي التلقائي.
 
 
 ### الحساب {#account}

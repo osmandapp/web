@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  توجيه القوارب
 ---
@@ -89,7 +89,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
  - [التوجيه المباشر إلى نقطة للقارب](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [التوجيه في خط مستقيم للقارب](./boat-navigation.md#straight-line-routing-for-boat)
 
-من المهم ملاحظة أن أنواع التوجيه *المباشر إلى نقطة* و*الخط المستقيم* يجب استخدامها فقط في المياه المفتوحة حيث لا توجد عوائق أو مخاطر للملاحة. إذا كنت تبحر في ممر مائي بقناة أو مسار محدد، فيجب عليك استخدام نوع توجيه القوارب في OsmAnd، والذي سيرشدك عبر القنوات الملاحية الصحيحة ويتجنب المناطق الضحلة أو المخاطر الأخرى.  
+من المهم ملاحظة أن أنواع التوجيه *المباشر إلى نقطة* و*الخط المستقيم* يجب استخدامها فقط في المياه المفتوحة حيث لا توجد عوائق أو مخاطر للملاحة. إذا كنت تبحر في ممر مائي بقناة أو مسار محدد، فيجب عليك استخدام نوع توجيه القوارب في OsmAnd، والذي سيرشدك عبر القنوات الملاحية الصحيحة ويتجنب المناطق الضحلة أو المخاطر الأخرى. قد تُعرض بعض المخاطر المرسومة بناءً على علامات hazard=* في OSM على الخريطة كأيقونات POI للمخاطر أو تسميات نصية. 
 
 يمكن تفعيل أنواع التوجيه هذه لملف تعريف القارب باستخدام المسار التالي: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> أو ملف آخر) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
