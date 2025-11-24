@@ -1,5 +1,5 @@
 ---
-source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -72,9 +72,10 @@ Der Infobereich bietet auch Informationen über Folgendes:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Zeigt die Gesamtsumme der Auf- und Abstiege während der Tour an.
 - *<Translate android="true" ids="altitude_range"/>*. Gibt die minimale und maximale Höhe auf einem Track an.  
 
-:::note
-Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (sodass seine Punkte [`time`- und `speed`](../../plugins/trip-recording#recorded-gpx-file)-Tags haben), enthält der Infobereich auch Informationen über *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) oder *<Translate ios="true" ids="total_time"/>* (*iOS*) (die Zeitspanne zwischen dem Start- und Endpunkt des Tracks), *<Translate android="true" ids="shared_string_time_moving"/>* (die Gesamtzeit während der Fahrt).
-:::  
+Falls Ihr Track in OsmAnd oder einer anderen Tracking-App erstellt wurde (sodass seine Punkte [`time`- und `speed`](../../plugins/trip-recording#recorded-gpx-file)-Tags haben), enthält der Infobereich auch Informationen über *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (die Zeitspanne zwischen dem Start- und Endpunkt des Tracks) und *<Translate android="true" ids="shared_string_time_moving"/>* (die Gesamtzeit während der Fahrt).
+
+**Hinweis:** Bei aufgezeichneten Tracks zeigt die Dauer die tatsächliche Fahrzeit basierend auf den Zeitstempeln an. Bei geplanten Tracks zeigt die Dauer die geschätzte Zeit an, die aus der Routenlänge und der durchschnittlichen Geschwindigkeit des ausgewählten Navigationsprofils berechnet wird, sofern die gesamte Route ein Profil verwendet und keine Abschnitte mit gerader Linie enthält.
+
 
 ### Track-Aktionen {#track-actions}
 
@@ -133,7 +134,7 @@ Das Menü **Optionen** ermöglicht es Ihnen, den ausgewählten Track mit verschi
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Exportiert den ausgewählten Track im GPX-Format.
+- **<Translate android="true" ids="shared_string_share"/>** – Exportiert den ausgewählten Track im GPX-Format über das System-Freigabemenü.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Lädt](../../plugins/osm-editing.md#upload-gps-track) den ausgewählten Track auf OpenStreetMap hoch.
 
 <br/>
@@ -247,7 +248,7 @@ Dieser Abschnitt des *Übersicht*-Tabs zeigt ***Tag-Daten*** und ***alle allgeme
 
 Die *Aktivitäts*-Funktion in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks mit bestimmten Aktivitäten zu versehen, um sie später zu analysieren und in Ordnern zu organisieren.
 
-- [Aktivitäts-Tags für GPX-Tracks](../../plugins/trip-recording.md#recording-settings). Beim Aufzeichnen eines GPX-Tracks können Sie einen Aktivitätstyp zuweisen. Diese Aktivitätskennzeichnung hilft Ihnen, Tracks anfänglich zu kategorisieren.
+- [Aktivitäts-Tags für GPX-Tracks](../../plugins/trip-recording.md#recording-settings). Aufgezeichnete Tracks erhalten automatisch einen Aktivitätstyp basierend auf dem ausgewählten Profil, was die Kategorisierung und Filterung erleichtert. Sie können die Aktivität bei Bedarf manuell ändern.
 - [Aktivitätsfilter](../../personal/tracks/smart-folder.md#search-filter). Sie können die aufgezeichneten GPX-Tracks nach Aktivität filtern, was es Ihnen ermöglicht, sich auf die Suche nach bestimmten Arten von Aufzeichnungen zu konzentrieren, wie z. B. alle Rad- oder Wandertracks.
 - [Aktivitätstypen verwalten](../../personal/tracks/manage-tracks.md#selection-mode). Sie können den Aktivitätstyp für ausgewählte Ordner oder Tracks im Auswahlmodus auf dem Tab "Tracks" des Menüs "Meine Orte" ändern.
 - **Aktivitätsliste**. Die Aktivitätskategorien und -gruppen sind in den Ressourcen von OsmAnd definiert. Für Entwickler und Mitwirkende wird die Aktivitätsliste in einem strukturierten Format unter [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) gepflegt, das die verfügbaren Aktivitätsgruppen und -typen detailliert beschreibt.
@@ -270,13 +271,13 @@ Interaktion mit dem Diagramm:
 
 <TabItem value="android" label="Android">
 
-![Kontext Track-Menü Diagramme Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Kontext Track-Menü Diagramme Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kontext Track-Menü Diagramme iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Kontext Track-Menü Diagramme iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ Interaktion mit dem Diagramm:
 Auf dem Tab **Übersicht** können Sie Parameter wie die folgenden sehen:
 
 - *<Translate android="true" ids="distance"/>*. Die Summe der auf dem Track zurückgelegten Gesamtstrecke oder die Länge des Tracks selbst.
-- *<Translate android="true" ids="shared_string_time_span"/>*. Das Zeitintervall zwischen dem Start- und Endpunkt des Tracks.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. Das Zeitintervall zwischen dem Start- und Endpunkt des Tracks.
 - *<Translate android="true" ids="shared_string_start_time"/>* Die genaue Zeit, zu der die Aufzeichnung des Tracks beginnt.
 - *<Translate android="true" ids="shared_string_end_time"/>*. Die Endzeit der Track-Aufzeichnung.
 
@@ -302,7 +303,7 @@ Die aktiven **Schaltflächen** ermöglichen den Zugriff auf Aktionen wie:
 ### Geschwindigkeit {#speed}
 
 :::note Nur aufgezeichnete Tracks
-Dieser Tab ist nur bei aufgezeichnten Tracks sichtbar. Punkte auf dieser Art von Track haben **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**-Tags.
+Dieser Tab ist nur bei aufgezeichneten Tracks sichtbar. Punkte auf dieser Art von Track haben **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**-Tags.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -464,7 +465,7 @@ Tippen Sie auf die Schaltfläche *Wegpunkt hinzufügen*, um den Bildschirm zur E
 
 <TabItem value="android" label="Android">
 
-![Track-Menü Gruppenmenü Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Track-Menü Gruppenmenü Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -484,7 +485,7 @@ Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das *Gruppenmenü* des Wegpunkts.
 - **<Translate android="true" ids="shared_string_rename"/>** - Ändern Sie den Namen der Gruppe.
 - **<Translate android="true" ids="change_default_appearance"/>** - Ändern Sie die Anzeigeoptionen für eine Gruppe von Wegpunkten.
 - **<Translate android="true" ids="add_group_to_markers"/>** oder **Entfernen** (*Nur Android*) - Verschieben Sie Gruppenwegpunkte in die Liste der [Kartenmarkierungen](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Nur Android*) - Verschieben Sie Gruppenwegpunkte zu den [Favoriten](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_favorites"/>** (*Nur Android*) - Ermöglicht es Ihnen, die ausgewählte Gruppe von Wegpunkten in [Favoriten](../../personal/favorites.md) zu kopieren. Sie können eine von zwei Optionen wählen: ***<Translate android="true" ids="copy_as_new_folder"/>*** oder ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Nur Android*) - Erstellt eine Route zwischen Wegpunkten. Der erste und letzte Punkt werden zum Start und Ziel der Route, und die restlichen werden zu Zwischenpunkten.
 - **<Translate android="true" ids="shared_string_delete"/>** - Löschen Sie eine Gruppe von Wegpunkten.
 
@@ -643,13 +644,13 @@ Um diese Option zu öffnen:
 
 ### Nach Entfernung aufteilen {#split-by-distance}
 
-![Track-Aufteilung nach Entfernung Tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track-Aufteilung nach Entfernung Karte](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Track-Aufteilung nach Entfernung Tab](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Track-Aufteilung nach Entfernung Karte](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Diese Option ermöglicht es Ihnen, einen Track in feste Entfernungsintervalle zu unterteilen und detaillierte Statistiken für jedes Segment zu analysieren. Verfügbare Entfernungsintervalle sind ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** und ***10 km***. Nach der Auswahl eines Entfernungsintervalls wird der Track als Liste von Segmenten angezeigt. 
 
 Für jedes Segment können Sie anzeigen:
 - zurückgelegte Entfernung.
-- Zeitspanne.
+- Dauer.
 - durchschnittliche, minimale und maximale Höhe.
 - Auf- und Abstieg.
 - Zeit in Bewegung.
@@ -660,14 +661,14 @@ Wenn Sie auf ein beliebiges Segment in der Liste tippen, zeigt die Kartenansicht
 
 ### Nach Zeit aufteilen {#split-by-time}
 
-![Track-Aufteilung nach Zeit Tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track-Aufteilung nach Zeit Karte](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Track-Aufteilung nach Zeit Tab](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Track-Aufteilung nach Zeit Karte](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 Die Option **Nach Zeit aufteilen** teilt einen Track in Intervalle gleicher Dauer auf. Sie können zwischen ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** und ***60 min*** wählen. Die Art und Weise, wie die Intervalle angezeigt werden, die für jedes Segment bereitgestellten Statistiken und wie sie auf der Karte erscheinen, sind dieselben wie im Abschnitt [Nach Entfernung aufteilen](#split-by-distance).
 
 
 ### Nach Bergauf/-ab aufteilen {#split-by-uphill-downhill}
 
-![Track-Aufteilung nach Bergauf/-ab Tab](@site/static/img/personal/tracks/split_by_4_tab.png) ![Track-Aufteilung nach Bergauf/-ab Karte](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Track-Aufteilung nach Bergauf/-ab Tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track-Aufteilung nach Bergauf/-ab Karte](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 Diese Option teilt einen Track in Segmente basierend auf Höhenänderungen auf. Jedes Intervall wird als ***Bergauf***, ***Bergab*** oder ***Ebene*** klassifiziert. Die Art und Weise, wie die Intervalle angezeigt werden, die für jedes Segment bereitgestellten Statistiken und wie sie auf der Karte erscheinen, sind ebenfalls dieselben wie im Abschnitt [Nach Entfernung aufteilen](#split-by-distance).
 
@@ -727,7 +728,7 @@ In diesem Menü können Sie einige Parameter Ihres Tracks wie *Glättung*, *Gesc
 
 ### Statistik {#statistics}
 
-![GPS-Filter-Diagramm Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![GPS-Filter-Diagramm Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 Der Tab "Statistik" zeigt Informationen über den **geänderten** Track an, d. h. den Track ohne die gefilterten Werte. Er wird in den Statistikblöcken und Diagrammdaten angezeigt.
   

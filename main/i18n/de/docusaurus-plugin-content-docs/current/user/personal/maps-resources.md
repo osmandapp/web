@@ -1,5 +1,5 @@
 ---
-source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
+source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -177,7 +177,9 @@ Lesen Sie mehr im Artikel [**Benutzerdefiniertes Paket**](../plugins/custom).
 
 </Tabs>
 
-Für Länder, die aus **mehreren Regionalkarten** bestehen, können Sie das Massenladen mehrerer Karten verwenden. Karten, die für diese Art von Download verfügbar sind, werden mit einem doppelten Download-Pfeil-Symbol und einer Beschriftung mit der Anzahl der enthaltenen Regionen angezeigt (z. B. Höhenlinien / Alle Regionen: 10). Sie können wählen, wie viele Karten Sie herunterladen möchten.
+Für Länder, die aus **mehreren Regionalkarten** bestehen, können Sie das Massenladen mehrerer Karten verwenden. Karten, die für diese Art von Download verfügbar sind, werden mit einem doppelten Download-Pfeil-Symbol und einer Beschriftung mit der Anzahl der enthaltenen Regionen angezeigt (z. B. Höhenlinien / Alle Regionen: 10). Sie können wählen, wie viele Karten Sie herunterladen möchten. Das Massenladen unterstützt mehrere Kartentypen, einschließlich Standard, Höhenlinien, Wikipedia und Gelände.
+
+Wenn ein gruppiertes Landelement geöffnet wird, wird ein Bottom-Sheet mit der vollständigen Liste der Karten für dieses Land angezeigt, das es ermöglicht, einzelne Karten auszuwählen oder alle auf einmal herunterzuladen.
 
 
 ## Lokales Menü {#local-menu}
@@ -193,7 +195,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 Der Reiter 'Lokal' bietet eine Übersicht über die Speichernutzung aller OsmAnd-Daten auf Ihrem Gerät. Die Daten sind zur besseren Übersicht in drei farbcodierte Abschnitte unterteilt, wobei die Elemente nach Größe von groß nach klein sortiert sind. Jeder Abschnitt zeigt nur Elemente mit heruntergeladenen Daten an:
 
 - ***Ressourcen*** (*blau*).  
-    Umfasst Karten ([Standard](../map/vector-maps.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Wetter](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) und [Reiseführer](../plan-route/travel-guides.md), &nbsp;[Live-Updates](../personal/maps-resources.md#live-updates), &nbsp;**Nur Straßen**,  &nbsp;[Kartenquellen](../map/raster-maps.md), &nbsp;[Renderstile](../map/vector-maps.md#default-map-styles), &nbsp;**Kartenschriftarten, &nbsp;Sprachansagen (aufgezeichnet und TTS), &nbsp;Cache**.  
+    Umfasst Karten ([Standard](../map/vector-maps.md), &nbsp;[Nautische](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Wetter](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) und [Reiseführer](../plan-route/travel-guides.md), &nbsp;[Live-Updates](../personal/maps-resources.md#live-updates), &nbsp;**Nur Straßen**,  &nbsp;[Kartenquellen](../map/raster-maps.md), &nbsp;[Renderstile](../map/vector-maps.md#default-map-styles), &nbsp;**Kartenschriftarten, &nbsp;Sprachansagen (aufgezeichnet und TTS), &nbsp;Cache**.  
 
 - ***Meine Orte*** (*gelb*).  
     Umfasst [Favoriten](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM-Notizen](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM-Bearbeitungen](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V-Notizen](../plugins/audio-video-notes.md), &nbsp;[Kartenmarkierungen](../personal/markers.md), &nbsp;[Verlauf](../personal/global-settings.md#history), &nbsp;*Reiseroute*.  
@@ -404,11 +406,21 @@ Use sorting options to organize map data:
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Kartenmenü Karten aktualisieren Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Kartenmenü Karten aktualisieren Android](@site/static/img/personal/maps/maps_update_andr.png) ![Kartenmenü Aktualisierungsreiter Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 Der Reiter **Aktualisierungen** ermöglicht es Ihnen, OsmAnd-Karten und -Ressourcen zu aktualisieren. Standard- und Nur-Straßen-Karten werden einmal im Monat veröffentlicht, normalerweise zwischen dem 2. und 5. Tag, und enthalten OpenStreetMap-Daten bis zum letzten Tag des Vormonats (zum Beispiel enthält die Oktober-Version Daten bis zum 30. September). Andere Daten wie Wikipedia, Gelände- oder Seekarten können unterschiedlichen, unregelmäßigen Aktualisierungsplänen folgen. Die Wettervorhersage hat ihren eigenen regelmäßigen Aktualisierungszyklus. Details finden Sie unter [Vorhersage herunterladen](../plugins/weather.md#download-forecast). 
 
+Wenn mehrere Karten desselben Landes aktualisiert werden müssen, gruppiert OsmAnd sie zu einem einzigen Element in der Aktualisierungsliste. Das gruppierte Element zeigt den Ländernamen und die Anzahl der enthaltenen Karten an. Wenn Sie darauf tippen, öffnet sich ein *Karten aktualisieren*-Bottom-Sheet, der alle Karten anzeigt, die aktualisiert werden müssen. 
+
 Verwenden Sie die Schaltfläche *Alle aktualisieren*, um alle Karten gleichzeitig zu aktualisieren, oder aktualisieren Sie einzelne Karten nach Bedarf. Für stündliche Updates überprüfen Sie Ihren [Live-Updates](#live-updates)-Abonnementstatus. Wenn aktiviert, erscheint der Abschnitt **Live-Updates** oben im Reiter unter der Gerätespeicheranzeige.
+
+Sie können Karten auch direkt aus dem Aktualisierungsreiter über eine Langdruck-Geste auf einer beliebigen aufgelisteten Karte verwalten. Dies öffnet ein Kontextmenü, das mehrere Optionen bietet:
+- **Info** — Details zur ausgewählten Karte anzeigen
+- **Aktualisieren** — Die neueste verfügbare Version herunterladen
+- **Deaktivieren** — Eine Karte vorübergehend deaktivieren, ohne ihre Daten zu entfernen
+- **Entfernen** — Die Karten-Daten vollständig vom Gerät löschen
+
+Wenn eine Karte deaktiviert ist, kann sie vorübergehend aus dem Lokal-Reiter verschwinden. Wenn ein Update für eine deaktivierte Karte verfügbar wird, erscheint sie weiterhin in der Aktualisierungsliste und wird mit einem grauen Symbol angezeigt. Das Aktualisieren einer solchen Karte aktiviert sie automatisch wieder.
 
 </TabItem>
 

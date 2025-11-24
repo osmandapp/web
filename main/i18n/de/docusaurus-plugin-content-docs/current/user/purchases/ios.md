@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 3036a4367dec965dc2ce8a575aa5d332ed8bf23931798249cf1fc88b99ef5ae5
 sidebar_position: 2
 title:  iOS-Käufe
 ---
@@ -36,9 +36,9 @@ Sie können die App über diesen Link herunterladen - [OsmAnd Maps im Apple App 
 
 | Plan | Beschreibung | Verfügbarkeit | Anmerkungen |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | Ein **kostenloser Plan**, der Zugriff auf [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) für *Favoriten*, *Einstellungen* und *OSM-Bearbeitung/Notizen* bietet. | Verfügbar für alle Nutzer der kostenlosen Version von OsmAnd. | Beschränkt auf grundlegende Cloud-Funktionen und **5 MB** Speicherplatz. |
+| **OsmAnd Start** | Ein **kostenloser Plan**, der Zugriff auf [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) für *Favoriten*, *Einstellungen* und *OSM-Bearbeitung/Notizen* bietet. | Verfügbar für alle Nutzer der kostenlosen Version von OsmAnd. | Beschränkt auf grundlegende Cloud-Funktionen und **5MB** Speicherplatz. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Ein **In-App-Kauf** oder **Abonnement**, das erweiterte Funktionen für die kostenlose OsmAnd-App freischaltet. | Verfügbar im [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Kann zur [Apple-Familienfreigabe](https://support.apple.com/en-us/HT201088) hinzugefügt werden. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Ein **Abonnement**, das zusätzliche erweiterte und [Pro-Funktionen](#pro-features) freischaltet. | Verfügbar im [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Es bietet vollen Zugriff auf die Funktionen von OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Ein **Abonnementsplan**, der zusätzliche erweiterte und [Pro-Funktionen](#pro-features) freischaltet. | Verfügbar im [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Es bietet vollen Zugriff auf die Funktionen von OsmAnd Cloud. |
 
 ### Wichtige Hinweise {#important-notes}
 
@@ -84,7 +84,7 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 
 ### Kostenlose und kostenpflichtige Funktionen {#free-and-paid-features}
 
-|  | OsmAnd Kostenlos | [OsmAnd Maps+](#install-osmand-ios)<br/>(In-App & Abonnement) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Kostenlos | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & Abonnement) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -97,6 +97,7 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografiedaten](../plugins/topography.md#overview)<br/>(Höhenlinien und Gelände) | **-** | ✔ | ✔ |
+| [Koordinatenraster – Farbanpassung](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D-Track-Visualisierung](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Nautische Tiefen](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Reiseführer (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -164,7 +165,7 @@ or
 
 ## Alte Abonnements (vor 4.0) {#legacy-subscriptions-prior-40}
 
-Neue Abonnements wurden ab OsmAnd 4.3 (Dezember 2022) aktiv. Alle früheren Abonnements sind veraltet und technisch gleichwertig mit dem "Karten-Abonnement", obwohl alte Abonnements Anspruch auf stündliche Kartenupdates haben. Benutzer können keine alten Abonnements mehr kaufen, aber alte Abonnements werden automatisch verlängert, bis Sie sich abmelden (der Preis für sie könnte sich in Zukunft ändern).
+Neue Abonnements wurden ab OsmAnd 4.3 (Dezember 2022) aktiv. Alle früheren Abonnements sind veraltet und technisch gleichwertig mit dem „Maps-Abonnement“, obwohl alte Abonnements Anspruch auf stündliche Kartenupdates haben. Benutzer können keine alten Abonnements mehr kaufen, aber alte Abonnements werden automatisch verlängert, bis Sie sich abmelden (der Preis für sie könnte sich in Zukunft ändern).
 
 
 ## Käufe wiederherstellen {#restore-purchases}

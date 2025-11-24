@@ -1,8 +1,9 @@
 ---
-source-hash: cc4a39deaa5305aa029009f3f9baff5a545f3a163336fd6ca3c80b085166c351
+source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
 sidebar_position: 4
 title:  Karte konfigurieren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,28 +13,27 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Übersicht {#overview}
 
-Das Menü **Karte konfigurieren** ist ein wichtiger Punkt im OsmAnd *Hauptmenü*, in dem Sie die Kartenanzeige an Ihre Bedürfnisse anpassen können. Sie können Favoriten, Navigationsmarkierungen oder spezielle Sonderziele auf der Karte hervorheben, bestimmte Routen oder GPX-Dateien von Drittanbietern anzeigen, Geländeinformationen, Satellitenbilder oder andere verfügbare Rasterbilder überlagern, Informationen zum öffentlichen Nahverkehr anzeigen und den Kartenstil ändern.
+Das Menü **Karte konfigurieren** ist ein wichtiger Punkt im OsmAnd *Hauptmenü*, in dem Sie die Kartenanzeige an Ihre Bedürfnisse anpassen können. Sie können Favoriten, Navigationsmarkierungen oder spezielle Sonderziele auf der Karte hervorheben, bestimmte Routen oder GPX-Dateien von Drittanbietern anzeigen, Geländeinformationen, Satellitenbilder oder andere verfügbare Rasterbilder überlagern, Informationen zum öffentlichen Nahverkehr anzeigen und den Kartenstil ändern.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Abschnitt **Anzeigen**:
+Abschnitt **Anzeigen**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_show1_andr.png) ![Karte konfigurieren Android](@site/static/img/map/configure_map_show2_andr.png)
+![Karte konfigurieren Android](@site/static/img/map/configure_map_show1_andr.png)  ![Karte konfigurieren Android](@site/static/img/map/configure_map_show2_andr.png)  
 
-Abschnitt **Topografie**:
+Abschnitt **Topografie**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_andr.png)
+![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_andr.png)  
 
-Abschnitt **OpenStreetMap**:
+Abschnitt **OpenStreetMap**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_osm_andr.png)
+![Karte konfigurieren Android](@site/static/img/map/configure_map_osm_andr.png)  
 
-Abschnitte **Routen und Kartenrendering**:
+Abschnitte **Routen und Kartenrendering**:  
 
 ![Karte konfigurieren Android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
@@ -41,7 +41,29 @@ Abschnitte **Routen und Kartenrendering**:
 
 <TabItem value="ios" label="iOS">
 
-![Karte konfigurieren iOS](@site/static/img/map/configure-map-ios.png)
+Abschnitt **Auf der Karte anzeigen**:  
+
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_show1_ios.png)  
+
+Abschnitt **Topografie**:  
+
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_topography_ios.png)  
+
+Abschnitt **OpenStreetMap**:  
+
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_osm_ios.png)  
+
+Abschnitt **Routen**:  
+
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_routes_new_ios.png)
+
+Abschnitte **Kartentyp und Kartenstil**:  
+
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_style_ios.png)
+
+Abschnitte **Überlagerung/Unterlagerung und Sprache**:  
+
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -50,8 +72,8 @@ Abschnitte **Routen und Kartenrendering**:
 
 Das Menü **<Translate android="true" ids="configure_map"/>** ist in zwei Kategorien unterteilt:
 
-- [Kartenstil-Parameter](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (oder **<Translate ios="true" ids="map_widget_renderer"/>**) ist eine Gruppe von Einstellungen, mit denen Sie die Art und Weise, wie die Hauptkarte angezeigt wird, ändern können.
-- [Kartenebenen](#map-layers). Diese Ebenen ermöglichen es Ihnen, Informationen über (oder unter) der Hauptkartenebene zu platzieren, ändern aber nicht die Anzeige der Karte selbst.
+- [Kartenstil-Parameter](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (oder **<Translate ios="true" ids="map_widget_renderer"/>**) ist eine Gruppe von Einstellungen, mit denen Sie die Art und Weise, wie die Hauptkarte angezeigt wird, ändern können.  
+- [Kartenebenen](#map-layers). Diese Ebenen ermöglichen es Ihnen, Informationen über (oder unter) der Hauptkartenebene zu platzieren, ändern aber nicht die Anzeige der Karte selbst.  
 
 **Hinweise:**
 
@@ -78,6 +100,7 @@ Das Menü **<Translate android="true" ids="configure_map"/>** ist in zwei Katego
    - [Bilder auf Straßenebene](../plugins/mapillary.md#map-layer) - zeigt Punkte mit verfügbaren Bildern auf Straßenebene an.
    - [Reiseführer](../plan-route/travel-guides.md) - zeigt Reiseführer auf der Karte an.
    - [Wikipedia](../plugins/wikipedia.md) - hebt Wikipedia-Artikel hervor, die mit der Karte verknüpft sind.
+   - [OSM-Bearbeitung](../plugins/osm-editing.md#osm-editing-layer) - zeigt OpenStreetMap-Bearbeitungen, Notizen und zu Kartenerstellung gehörende Hilfsebenen an.
    - [Andere Plugin-Ebenen](../plugins/index.md#configure-plugin) - viele Plugins fügen ihre Ebenen mit zusätzlichen Informationen hinzu.
 
 ## Kartenstil-Parameter {#map-style-parameters}
@@ -91,13 +114,13 @@ Die Einstellungen für den Kartenstil hängen vom angezeigten Hauptkartenstil ab
    - [Kartensprache](../map/vector-maps.md#map-language) - ermöglicht die Auswahl der bevorzugten Sprache, die auf der Karte angezeigt wird.
    - [Details](../map/vector-maps.md#details) - zeigt bestimmte Objekte an.
    - [Ausblenden](../map/vector-maps.md#hide) - blendet bestimmte Objekte aus.
-   - [Routen](../map/vector-maps.md#routes) - ermöglicht das Hervorheben von Routen und deren Symbolen.
+   - [Routen](../map/vector-maps.md#routes) - ermöglicht das Hervorheben von Routen und deren Symbolen.  
 
 
 ## UI-Anpassung (Android) {#ui-customization-android}
 
-Für jedes ausgewählte Profil im Android-System können Sie die Reihenfolge der Menüpunkte von <Translate android="true" ids="configure_map"/> ändern, die Punkte ausblenden, die Standardeinstellungen zurücksetzen oder sie von einem anderen Profil kopieren. Dies hilft, Ihre Interaktion mit der OsmAnd-App zu verbessern.
+Für jedes ausgewählte Profil im Android-System können Sie die Reihenfolge der Menüpunkte von <Translate android="true" ids="configure_map"/> ändern, die Punkte ausblenden, die Standardeinstellungen zurücksetzen oder sie von einem anderen Profil kopieren. Dies hilft, Ihre Interaktion mit der OsmAnd-App zu verbessern.  
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
 ![Menüpunkte Karte konfigurieren](@site/static/img/settings/configure-screen-ui-customization.png)

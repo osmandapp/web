@@ -1,5 +1,5 @@
 ---
-source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
+source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
 sidebar_position: 2
 ---
 
@@ -9,7 +9,7 @@ import Download from '@site/src/components/buttons/Download.js';
 # Kostenlose Versionen — Android {#free-releases--android}
 
 
-Sie können die neueste Version von OsmAnd kostenlos in den aufgeführten App-Stores herunterladen.
+Sie können die neueste Version von OsmAnd kostenlos in den aufgeführten App-Stores erhalten.
 
 - Google Play — <a href="https://play.google.com/store/apps/details?id=net.osmand">**Herunterladen**</a>
 - Huawei AppGallery — <a href="https://appgallery.huawei.com/#/app/C101486545">**Herunterladen**</a>
@@ -19,6 +19,27 @@ Sie können die neueste Version von OsmAnd kostenlos in den aufgeführten App-St
 Direkte Links zu kostenlosen OsmAnd-Versionen.
 
 ## Version 5 {#version-5}
+
+### Version 5.2 {#version-52}
+
+Veröffentlichungsdatum 11/2025:
+
+- Neuer „Marine“-Kartenstil für nautische Karten mit umfangreichen Anpassungsoptionen.
+- Straßen- und Stadtinformationen zu Suchergebnissen hinzugefügt.
+- Neue Widgets für die Fahrtprotokollierung: Höchstgeschwindigkeit, Durchschnittliche Steigung und verbesserte Uphill/Downhill.
+- Verbesserte Kartenrendering-Geschwindigkeit.
+- Basisautomatische Synchronisation mit OsmAnd Cloud.
+- Verbesserte OBDII-BLE-Konnektivität.
+- Updates der Funktion „Nach Intervall analysieren“.
+- Verbessertes Werkzeug „Route planen“.
+- Möglichkeit hinzugefügt, Höhen-Einheiten getrennt von Entfernungs-Einheiten festzulegen.
+- Verbesserte Schnellaktion für Kartenorientierung mit wählbaren Kompassmodi.
+- Android Auto-Verbesserungen.
+- Umgekehrte Bildschirmorientierungen.
+- Verbesserte Benutzeroberfläche zum Hinzufügen von LKW-Metriken in den LKW-Profil-Einstellungen.
+- Mehr Parameter für die Routenanzeige auf der Karte.
+
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
 
 ### Version 5.1 {#version-51}
 
@@ -44,7 +65,7 @@ Veröffentlichungsdatum 04/2025:
 - Widget für aktuelle Routeninformationen: Zeigt ETA, Ankunftszeit und Entfernung an
 - Wählen Sie Skipisten und MTB-Strecken auf der Karte für detaillierte Informationen aus
 - Möglichkeit, die Widget-Größe für linke und rechte Panels auszuwählen
-- "Koordinatengitter" mit geografischen Koordinaten hinzugefügt
+- „Koordinatengitter“ mit geografischen Koordinaten hinzugefügt
 - Möglichkeit hinzugefügt, das Standardaussehen von Favoritengruppen anzupassen
 - Android Auto: ETA und Entfernung zum nächsten Wegpunkt anzeigen; Städtenamen erscheinen jetzt in den Suchergebnissen
 - Prominente Gipfel sind jetzt über Karte und Suche auffindbar
@@ -62,13 +83,13 @@ Veröffentlichungsdatum 04/2025:
 Veröffentlichungsdatum 11/2024:
 
 - Eine Vollbild-Galerieansicht für Wikimedia-Bilder hinzugefügt.
-- Ein neues Plugin "Fahrzeugmetriken" zur Überwachung der Fahrzeugleistung mithilfe des OBD-II-Protokolls eingeführt.
+- Ein neues Plugin „Fahrzeugmetriken“ zur Überwachung der Fahrzeugleistung mithilfe des OBD-II-Protokolls eingeführt.
 - Die Möglichkeit hinzugefügt, Aktivitäten Spuren zuzuweisen und diese entsprechend zu filtern.
 - Neue Schnellaktionen für die Aufzeichnung von Fahrten und die Sperrung des Touchscreens implementiert.
 - Anpassbares Aussehen der Kartenschaltflächen und ein präzises Raster eingeführt.
-- Ein Kontextmenü und eine Aktion "Durchschnittsgeschwindigkeit zurücksetzen" zu Widgets hinzugefügt.
-- Neue Routenebene "Dirt Bike Trails" hinzugefügt.
-- "Automatische Streckenaufzeichnung während der Navigation" behoben.
+- Ein Kontextmenü und eine Aktion „Durchschnittsgeschwindigkeit zurücksetzen“ zu Widgets hinzugefügt.
+- Neue Routenebene „Dirt Bike Trails“ hinzugefügt.
+- „Automatische Streckenaufzeichnung während der Navigation“ behoben.
 - Problem mit umgedrehten Koordinaten in RTL behoben.
 - Fehlende Sensordaten für die aktuell aufgenommene Strecke behoben.
 - Informationen zu umliegenden Gebieten für den ausgewählten Punkt hinzugefügt.
@@ -83,7 +104,7 @@ Veröffentlichungsdatum 11/2024:
 
 Veröffentlichungsdatum 08/2024:
 
-- Neue Geländefärbungsoption "Höhe".
+- Neue Geländefärbungsoption „Höhe“.
 - Benutzerdefinierte Farbpaletten für Gelände, Tracks und Routen.
 - 3D-Variante für Standortpositions-Symbole.
 - Schnellaktionen können jetzt externen Tastaturen zugewiesen werden.
@@ -101,13 +122,13 @@ Veröffentlichungsdatum 08/2024:
 
 Veröffentlichungsdatum 04/2024:
 
-- Neues "Tachometer"-Widget, kompatibel mit Android Auto.
-- Konfigurieren Sie den Kartenbildschirm, indem Sie mehrere "Schnellaktions"-Schaltflächen hinzufügen.
+- Neues „Tachometer“-Widget, kompatibel mit Android Auto.
+- Konfigurieren Sie den Kartenbildschirm, indem Sie mehrere „Schnellaktions“-Schaltflächen hinzufügen.
 - Verbesserte Lesbarkeit von Daten in Diagrammen.
 - Verbesserte Anpassung des Erscheinungsbilds für Gruppen von Tracks.
 - Filter nach Sensordaten für Tracks hinzugefügt.
 - Unterstützung für zusätzliche GPX-Tags hinzugefügt.
-- "Entfernung während der Navigation" anpassen: Wählen Sie zwischen präzisen oder gerundeten Zahlen.
+- „Entfernung während der Navigation“ anpassen: Wählen Sie zwischen präzisen oder gerundeten Zahlen.
 - Vereinheitlichte Benutzeroberfläche für die Track-Auswahl.
 - OpenStreetMap-Anmeldung auf OAuth 2.0 umgestellt.
 
@@ -122,12 +143,12 @@ Veröffentlichungsdatum 12/2023:
 - Obere und untere Widget-Panels erweitert, um alle Widgets aufzunehmen.
 - Verbessertes lokales Ressourcenmanagement.
 - Anpassbare Tastenbelegung für externe Controller.
-- Neue Widgets: "Gleitverhältnis" und "Sonnenposition".
+- Neue Widgets: „Gleitverhältnis“ und „Sonnenposition“.
 - OsmAnd Cloud: Jetzt Zugriff auf gelöschte Dateien.
 - Verbesserte Track-Färbung im Slope-Modus mit neuem symmetrischen Farbverlauf.
 - Probleme mit transparenter Statusleiste behoben.
 - Unterstützung für ANT+-Temperatur-Widget hinzugefügt.
-- "Verfügbarer RAM"-Widget eingeführt.
+- „Verfügbarer RAM“-Widget eingeführt.
 
 <DownloadRelease blog="osmand-android-4-6-released" release="net.osmand-4.6.13.apk" />
 
@@ -141,15 +162,15 @@ Veröffentlichungsdatum 08/2023:
 - Track-Verwaltung: Aktualisierte Benutzeroberfläche, Sortierung hinzugefügt, Unterstützung für verschachtelte Ordner.
 - Android Auto: Neues Startmenü für den Zugriff auf Favoriten, Tracks und POI-Kategorien.
 - Eine Liste von Widgets für das obere/untere Panel.
-- Neues "Zug"-Profil, ermöglicht die Berechnung von Eisenbahnrouten.
-- Höhenlinien funktionieren mit jeder "Kartenquelle".
+- Neues „Zug“-Profil, ermöglicht die Berechnung von Eisenbahnrouten.
+- Höhenlinien funktionieren mit jeder „Kartenquelle“.
 - Erweiterte Liste der Standardaktionen für externe Tastaturen.
 - Benutzerdefinierte Routing-Dateien, Optionen zum Löschen oder Überschreiben hinzugefügt.
-- Option "Abweichung von der Route ansagen" hinzugefügt.
+- Option „Abweichung von der Route ansagen“ hinzugefügt.
 - Startbildschirm: Option zum Wiederherstellen des OsmAnd-Zustands aus Datei hinzugefügt.
-- "Gefahrgut"-Klassen für LKW-Navigation in Nordamerika hinzugefügt.
-- Unterstützung für "Via Ferrata" für die Fußgänger-Navigation hinzugefügt.
-- "CAI"-Skala zur Schwierigkeitsklassifizierung der Routen hinzugefügt.
+- „Gefahrgut“-Klassen für LKW-Navigation in Nordamerika hinzugefügt.
+- Unterstützung für „Via Ferrata“ für die Fußgänger-Navigation hinzugefügt.
+- „CAI“-Skala zur Schwierigkeitsklassifizierung der Routen hinzugefügt.
 - Auswahl der sprachspezifischen App-Sprache behoben.
 - Unterstützung für thematische Symbole hinzugefügt.
 - OsmAnd Cloud: Option zum Löschen des Kontos hinzugefügt.
@@ -161,20 +182,20 @@ Veröffentlichungsdatum 08/2023:
 
 Veröffentlichungsdatum 03/2023:
 
-- Verbessertes "Tracks"-Menü in "Karte konfigurieren"
+- Verbessertes „Tracks“-Menü in „Karte konfigurieren“
 - Kontextmenü zeigt jetzt lokalisierte Namen für POI an
 - Option zum Teilen der Route per Link hinzugefügt
-- Längeneinheit "Nautische Meilen/Fuß" hinzugefügt
+- Längeneinheit „Nautische Meilen/Fuß“ hinzugefügt
 - Kartenausrichtung hat einen neuen festen Modus erhalten
 - Vereinfachter Startbildschirm
 - Feste Standortposition im Split-Screen-Modus in Android Auto
-- "Geschwindigkeit/Steigung"-Diagramm zur Track-Analyse hinzugefügt
+- „Geschwindigkeit/Steigung“-Diagramm zur Track-Analyse hinzugefügt
 - App-Sprachauswahl in Android 13 in die Systemeinstellungen verschoben
 - Probleme mit der Anzeige von veganen Orten behoben
-- Möglichkeit hinzugefügt, Online-Kacheln als "Overlay"- oder "Underlay"-Karten herunterzuladen
-- Unterstützung für imperiale Maßeinheiten für "Fahrzeugparameter" hinzugefügt
+- Möglichkeit hinzugefügt, Online-Kacheln als „Overlay“- oder „Underlay“-Karten herunterzuladen
+- Unterstützung für imperiale Maßeinheiten für „Fahrzeugparameter“ hinzugefügt
 - Neues Moped-Profil
-- "Anzeigeposition" hat eine neue Option "Automatisch" erhalten
+- „Anzeigeposition“ hat eine neue Option „Automatisch“ erhalten
 - Karten-Gesten für Neigung, Zoom und Rotation behoben
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
@@ -187,11 +208,11 @@ Veröffentlichungsdatum 12/2022:
 - Neue, schnellere Version 2 (OpenGL) Karten-Rendering-Engine mit 2,5D-Ansicht
 - Flüssige Animation von Standortänderungen während der Bewegung
 - Neue Widgets für Kartenmittelpunktkoordinaten und Höhe von Geostandorten
-- "Entfernung zum Tippen": Optionen für Textgröße hinzugefügt
-- "Kartenmarkierung"-Widget: Option zum Ändern des Klickverhaltens hinzugefügt
-- Option "Anzeigeposition" behoben
-- GPX: Unterstützung für "link", "cmt", "desc"-Tags und für benutzerdefinierte Erweiterungen hinzugefügt
-- "Nautische Karten"-Liste neu organisiert
+- „Entfernung zum Tippen“: Optionen für Textgröße hinzugefügt
+- „Kartenmarkierung“-Widget: Option zum Ändern des Klickverhaltens hinzugefügt
+- Option „Anzeigeposition“ behoben
+- GPX: Unterstützung für „link“, „cmt“, „desc“-Tags und für benutzerdefinierte Erweiterungen hinzugefügt
+- „Nautische Karten“-Liste neu organisiert
 - Unterstützung für ANT+-Sensoren hinzugefügt
 - Option zum Deaktivieren des Download-UUID hinzugefügt
 
@@ -233,10 +254,10 @@ Veröffentlichungsdatum 08/2021:
 - Cloud-Backup
 - Nachtmodus für Topo-Rendering-Stil hinzugefügt
 - Option zum Herunterladen von Höhenlinien in Fuß hinzugefügt
-- OsmAnd Live-Updates nach "Downloads > Updates" verschoben
+- OsmAnd Live-Updates nach „Downloads > Updates“ verschoben
 - Tracks können jetzt nach Höhe, Geschwindigkeit oder Steigung eingefärbt werden.
 - Option zum Ändern des Erscheinungsbilds der Routenlinie hinzugefügt.
-- Dialog "Fahrt aufzeichnen" aktualisiert
+- Dialog „Fahrt aufzeichnen“ aktualisiert
 - Entfernung per Tippen vom Radiuslineal in eine separate Option verschoben
 - Routenplanung Querformat: Tabs zum Wechseln zwischen Punkten oder Diagrammen hinzugefügt
 - Routenplanung: Möglichkeit hinzugefügt, Navigationsoptionen zu ändern, auf Kartenkonfiguration und Suche zuzugreifen, ohne die Routenplanung zu verlassen
@@ -273,12 +294,12 @@ Veröffentlichungsdatum 02/2021:
 
 Veröffentlichungsdatum 09/2020:
 
-- Aktualisierte Funktion "Route planen": Ermöglicht die Verwendung verschiedener Navigationstypen pro Segment und die Einbeziehung von Tracks
-- Neues "Erscheinungsbild"-Menü für Tracks: Farbe, Dicke, Anzeige von Richtungspfeilen, Start-/Zielsymbolen auswählen
+- Aktualisierte Funktion „Route planen“: Ermöglicht die Verwendung verschiedener Navigationstypen pro Segment und die Einbeziehung von Tracks
+- Neues „Erscheinungsbild“-Menü für Tracks: Farbe, Dicke, Anzeige von Richtungspfeilen, Start-/Zielsymbolen auswählen
 - Verbesserte Sichtbarkeit von Fahrradknoten.
 - Tracks sind jetzt antippbar, haben ein Kontextmenü mit grundlegenden Informationen.
-- Verbesserte "Such"-Algorithmen
-- Verbesserte "Track folgen"-Optionen in der Navigation
+- Verbesserte „Such“-Algorithmen
+- Verbesserte „Track folgen“-Optionen in der Navigation
 - Probleme mit dem Import/Export von Profileinstellungen behoben
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
@@ -348,7 +369,7 @@ Veröffentlichungsdatum: 07/2019
 - Ein Widget für die aktuellen Koordinaten hinzugefügt
 - Optionen zum Anzeigen des Kompasses und eines Radiuslineals auf der Karte hinzugefügt
 - Verbesserte Karten-Downloads im Hintergrund
-- Option "Bildschirm einschalten" zurückgegeben
+- Option „Bildschirm einschalten“ zurückgegeben
 - Wikipedia-Sprachauswahl behoben
 - Verhalten der Kompass-Schaltfläche während der Navigation behoben
 - Fehlerbehebungen
@@ -361,7 +382,7 @@ Veröffentlichungsdatum: 07/2019
 
 Veröffentlichungsdatum: 03/2019
 
-- Neuer Bildschirm "Wegbeschreibungen": Zeigt Schaltflächen für Heim- und Arbeitsziele, eine Verknüpfung zur vorherigen Route, eine Liste aktiver Tracks und den Suchverlauf an
+- Neuer Bildschirm „Wegbeschreibungen“: Zeigt Schaltflächen für Heim- und Arbeitsziele, eine Verknüpfung zur vorherigen Route, eine Liste aktiver Tracks und den Suchverlauf an
 - Zusätzliche Informationen in *Routendetails*: Straßentypen, Oberfläche, Steigung, Glätte
 - Navigation mit öffentlichen Verkehrsmitteln
 - Neue Schnellaktion zum Ein-/Ausblenden von Tracks und Tag-/Nachtmodi
@@ -381,7 +402,7 @@ Veröffentlichungsdatum 09/2018:
 - Absturz beim Start mit nicht-lateinischen Karten behoben
 - Probleme mit der Rendering-Geschwindigkeit auf Android 8.0-Geräten verbessern
 - Unterstützung für die Bearbeitung von Polygon- (Nicht-POI-) Objekten
-- Entfernung messen: Schaltfläche "Messen" zu den Aktionen im Kontextmenü hinzufügen
+- Entfernung messen: Schaltfläche „Messen“ zu den Aktionen im Kontextmenü hinzufügen
 
 
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
@@ -525,7 +546,7 @@ Veröffentlichungsdatum: 03/2016
 Veröffentlichungsdatum: 11/2015
 
 - Neue kontextsensitive Benutzeroberfläche zum Tippen auf Orte auf der Karte und auf anderen Bildschirmen
-- Der Kartenbildschirm wird jetzt direkt gestartet, es sei denn, "Dashboard beim App-Start anzeigen" ist ausgewählt
+- Der Kartenbildschirm wird jetzt direkt gestartet, es sei denn, „Dashboard beim App-Start anzeigen“ ist ausgewählt
 - Neue Wikipedia-Daten, jetzt pro Land herunterladbar und mit viel vollständigeren Daten
 - Bessere Routen-Neuberechnung (nach wiederholten Versuchen schlägt die Engine jetzt eine andere Route vor)
 - Die POI-Suche unterstützt jetzt spezifischere Abfragen
@@ -599,7 +620,7 @@ Benutzeroberfläche und Sonstiges:
 
 Vereinfachung der Hintergrund-Fahrtaufzeichnung und Hintergrund-Navigation:
 
-- OsmAnd aktiviert jetzt automatisch den GPS-Schlafmodusdienst, wenn die Navigation oder Fahrtaufzeichnung aktiviert wurde, damit dies auch bei ausgeschaltetem Bildschirm des Geräts weiterhin funktioniert. Nur wenn gewünscht, kann der GPS-Schlafmodusdienst weiterhin manuell unterbrochen oder über das Tippen auf das Widget "GPS-Status" konfiguriert werden.
+- OsmAnd aktiviert jetzt automatisch den GPS-Schlafmodusdienst, wenn die Navigation oder Fahrtaufzeichnung aktiviert wurde, damit dies auch bei ausgeschaltetem Bildschirm des Geräts weiterhin funktioniert. Nur wenn gewünscht, kann der GPS-Schlafmodusdienst weiterhin manuell unterbrochen oder über das Tippen auf das Widget „GPS-Status“ konfiguriert werden.
 
 - OsMo-Plugin
 - Anmelde-/Abmeldefunktion
@@ -648,7 +669,7 @@ Veröffentlichungsdatum 03/2014:
 - Komplett aktualisiertes Routing (schnell und präzise)
 - Neuer Bildschirm mit Routenplanung (intuitiver und leistungsfähiger)
 - Schaltflächen im Navigationsmodus automatisch ausblenden
-- Offline-Route zum ersten Punkt der GPX-Route berechnen (Option "gesamten Track passieren")
+- Offline-Route zum ersten Punkt der GPX-Route berechnen (Option „gesamten Track passieren“)
 - Aktive Simulation in Tunneln
 - Barrierefreiheitseinstellung für die Sprachgeschwindigkeit
 
@@ -742,7 +763,7 @@ Veröffentlichungsdatum 12/2012:
 - Audio-/Video-Notizen-Plugin
 - Höhenlinien-Plugin
 - Fehlerbehebungen
-- Kartenstiloption 'Touring view' mit mehr Kartendetails, neuen Straßenstilen, mehr Kontrast und Option für alpines Wandern (SAC-Skala)
+- Kartenstiloption „Touring view“ mit mehr Kartendetails, neuen Straßenstilen, mehr Kontrast und Option für alpines Wandern (SAC-Skala)
 - EGM96 Geoid-Offset-Korrektur für GPS-Höhenmessungen
 
 <Download link="net.osmand-1.1.4%20beta-120.apk" />
@@ -765,10 +786,10 @@ Veröffentlichungsdatum 09/2012:
 Veröffentlichungsdatum: 07/2012
 
 - Plugin-Unterstützung
-- Park-Plugin ("Wo ist mein Auto geparkt?")
+- Park-Plugin („Wo ist mein Auto geparkt?“)
 - Wegpunkte
 - Verbesserte Routenführung
-- Einstellung "Autobahnen während der Navigation vermeiden"
+- Einstellung „Autobahnen während der Navigation vermeiden“
 - Dynamische Karten-Widgets
 - Sperrbildschirm-Taste mit Protokollierungsdiensten
 - Unterstützung für arabische, Kannada-Schrift und RTL-Sprachen
@@ -787,7 +808,7 @@ Veröffentlichungsdatum 04/2012:
 - Offline-POI-Bearbeitung
 - Online-Tracking-Option – sendet Koordinaten regelmäßig an einen Webdienst
 - Zeigt den aktuell aufgezeichneten Track auf der Karte an
-- Richtungserkennung: "Wenden" wird angezeigt und angesagt, wenn man in die entgegengesetzte Richtung fährt oder eine Abbiegung verpasst hat
+- Richtungserkennung: „Wenden“ wird angezeigt und angesagt, wenn man in die entgegengesetzte Richtung fährt oder eine Abbiegung verpasst hat
 - Optische Anzeige einer bevorstehenden Abbiegung innerhalb von 100 m durch Farbwechsel des Richtungspfeils
 - Offline-Wikipedia-Daten mit Artikeln
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
 sidebar_position: 1
 title:  Barrierefreiheit
 ---
@@ -93,7 +93,7 @@ Um die Barrierefreiheitsfunktionen des Geräts in OsmAnd zu aktivieren, müssen 
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Barrierefreiheit](@site/static/img/plugins/Accessibility/access_.png)  
+![Barrierefreiheit](@site/static/img/plugins/accessibility/access_new.png)  
 
 Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen, um die Navigation und Interaktion für Benutzer mit Behinderungen zu personalisieren. Diese Einstellungen werden pro [Profil](../personal/profiles.md) in OsmAnd angewendet.
 
@@ -101,6 +101,7 @@ Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen, um die Navigatio
 |---------------------------|-------------|  
 | **Barrierefreiheitsmodus**    | Aktiviert *integrierte OsmAnd-Funktionen* oder verwendet **Systemeinstellungen**. |  
 | **Sprechgeschwindigkeit**           | Steuert die *Text-zu-Sprache-Geschwindigkeit* im Bereich von **50 % bis 200 %**. |  
+| **Pinch-Zoom-Vergrößerung**    | Vergrößert die Karte vorübergehend, während Sie pinch-zoomen und Ihre Finger auf dem Bildschirm belassen, vergrößert Text und Symbole, ohne das tatsächliche Zoom-Niveau zu ändern. |  
 | [Intelligente Auto-Ansage](#smart-autoannounce)    | Bietet *Sprachführung*, wenn von der Route abgewichen wird. |  
 | **Auto-Ansage-Periode**   | Legt die Mindestzeit zwischen den Ansagen fest, von **5 Sekunden bis 5 Minuten**. |  
 | [Richtungsstil](#direction-style)       | Wählen Sie zwischen *Seitwärts (8 Richtungen)* oder *Im Uhrzeigersinn (12 Richtungen)*. |  

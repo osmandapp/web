@@ -1,5 +1,5 @@
 ---
-source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title:  Schnellaktion (Benutzerdefinierte Schaltflächen)
 ---
@@ -197,13 +197,17 @@ Das *Schnellaktions*-Widget erscheint in der unteren Ecke des Kartenbildschirms,
 
 <TabItem value="android" label="Android">  
 
-![Raster für Schaltflächen_v_Android](@site/static/img/widgets/grid_buttons_v_and.png) ![Raster für Schaltflächen_h_Android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Raster für Schaltflächen_v_Android](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![Raster für Schaltflächen_h_Android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Raster für Schaltflächen_v_iOS](@site/static/img/widgets/grid_buttons_v_ios.png) ![Raster für Schaltflächen_h_iOS](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Raster für Schaltflächen_v_iOS](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![Raster für Schaltflächen_h_iOS](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ Das *Schnellaktions*-Widget erscheint in der unteren Ecke des Kartenbildschirms,
 [Karten-Schaltflächen](../widgets/map-buttons.md#overview) werden automatisch mit einem Gitterlayout angeordnet. Jede Schaltfläche wird einer der vier Ecken des Bildschirms zugewiesen (*oben-links*, *oben-rechts*, *unten-links*, *unten-rechts*). Wenn nicht genügend Platz in der zugewiesenen Ecke vorhanden ist, werden die Schaltflächen horizontal oder vertikal ausgerichtet, abhängig von der Bildschirmausrichtung.
 
 Dieses Layout hilft, die Schaltflächen visuell konsistent zu halten und Überlappungen zu vermeiden. Zum Beispiel werden auf einem Landschaftsdisplay die Schaltflächen in der rechten Ecke horizontal am unteren Bildschirmrand ausgerichtet, während sie auf einem Hochformatdisplay vertikal nach oben oder unten erweitert werden, je nach Bedarf.
+
+Das Gitter passt sich der umgebenden Oberfläche an und positioniert die Schaltflächen bei Bedarf neu, um sicherzustellen, dass sie sichtbar bleiben und nicht mit anderen Bildschirmelementen interferieren. Wenn Widgets oder Paneele hinzugefügt, entfernt oder umarrangiert werden, aktualisiert sich das Layout entsprechend, sodass die Reihenfolge der Schaltflächen konsistent bleibt und kein Element verborgen wird.
+
+[Aus einem anderen Gerät importierte Profile](https://osmand.net/docs/user/personal/import-export#export) werden an das Gitterlayout angepasst, um die Schaltflächenpositionen über verschiedene Bildschirmgrößen und Plattformen hinweg korrekt zu halten.
 
 
 ## Aktionstypen {#action-types}
@@ -223,8 +231,8 @@ Dieses Layout hilft, die Schaltflächen visuell konsistent zu halten und Überla
 | Ein-/Ausblenden <br/> [**Routen**](../map/vector-maps.md#routes) | Sie können Routentypen auswählen, um deren Anzeige zu aktivieren oder zu deaktivieren. <br/> Einige Routen haben zusätzliche Einstellungen. Standardmäßig wird, wenn Sie im Menü [Karte konfigurieren](../map/configure-map-menu.md) nichts ausgewählt haben, der erste Routentyp aus der Liste zugewiesen, andernfalls ein Typ Ihrer Wahl. Mehr dazu können Sie im Artikel [Routen](../map/routes.md) lesen. <br/> - ***Fahrradrouten***  &nbsp;(*Route*, *Knotenpunktnetze*) <br/> - ***Mountainbike-Routen***  &nbsp;(*MTB-Skala*, *IMBA*) <br/> - ***Wanderrouten***  &nbsp;(*OSMC*, *Netzwerkzugehörigkeit*, *Knotenpunktnetze*) <br/> - ***Schwierigkeitsgrad von Wanderwegen***  &nbsp;(*SAC-Skala*, *CAI-Skala*) <br/> - ***Skipisten*** <br/> - ***Reitrouten*** <br/> - ***Wildwassersport*** <br/> - ***Laufrouten*** <br/> - ***Fitnesspfade*** <br/> - ***Reiserouten***  &nbsp;(*Tracks*, *Reiseführer*, *Punkte*) <br/> |
 | Ein-/Ausblenden <br/> [**Topographie-Ebenen**](../plugins/topography.md#overview) | Alle Topographiedaten werden als separate Kartenebenen dargestellt. Mit der Schnellaktion können Sie die Sichtbarkeit dieser Ebenen schnell umschalten. <br/> - ***Höhenlinien*** <br/> - ***Gelände***  &nbsp;(*Abhängig von der im Menü [Karte konfigurieren](../map/configure-map-menu.md) ausgewählten Ebene wird *Schummerung*, *Neigung* oder *Höhe* angezeigt.*) |
 | Ändern <br/> [**Geländefarbschema**](../plugins/topography.md#modify-color-scheme) | Ermöglicht die Auswahl einer oder mehrerer Paletten aus einer Liste vorhandener Paletten, die sich ändern, wenn Sie auf die Schaltfläche tippen. |
-| Ein-/Ausblenden <br/> [**Wetter-Ebenen**](../plugins/weather.md#weather-layers) | Alle Wetterdaten werden als separate Kartenebenen dargestellt. Mit der Schnellaktion erhalten Sie schnellen Zugriff, um die Sichtbarkeit dieser Ebenen auf der Karte umzuschalten. <br/> - ***Niederschlagsebene*** <br/> - ***Wolkenebene*** <br/> - ***Druckebene*** <br/> - ***Windebene*** <br/> - ***Temperaturebene*** |
-| Öffnen <br/> [**Wetterbildschirm**](../plugins/weather.md) <br /> *Nur Android* | Öffnet den [*Wetter*-Vorhersagebildschirm](../plugins/weather.md#weather-forecast-screen) mit detaillierten Informationen. |
+| Ein-/Ausblenden <br/> [**Wetter-Ebenen**](../plugins/weather.md#weather-layers) | Alle Wetterdaten werden als separate Kartenebenen dargestellt. Mit der Schnellaktion erhalten Sie schnellen Zugriff, um die Sichtbarkeit dieser Ebenen auf der Karte umzuschalten. <br/> - ***Niederschlagsebene*** <br/> - ***Wolkenebene*** <br/> - ***Druckebene*** <br/> - ***Windebene*** <br/> - ***Wind-Animations-Ebene*** *(Nur Android)* <br/> - ***Temperaturebene*** <br/> Auf Android gibt es auch **Wetter-Ebenen** – einen Hauptschalter für alle aktiven Wetter-Ebenen. Schaltet alle derzeit aktivierten Wetter-Ebenen auf einmal aus. Wenn wieder eingeschaltet, stellt es genau denselben Satz von Ebenen wieder her, die zuvor aktiv waren. |
+| Öffnen <br/> [**Wetterbildschirm**](../plugins/weather.md) | Öffnet den [*Wetter*-Vorhersagebildschirm](../plugins/weather.md#weather-forecast-screen) mit detaillierten Informationen. |
 | Ein-/Ausblenden <br/> [**Favoriten**](../map/point-layers-on-map.md#favorites) | Zeigt die Favoritenpunkte auf der Karte an oder blendet sie aus. |
 | Ein-/Ausblenden <br/> [**Tracks**](../personal/tracks/manage-tracks.md#track-menu) | Zeigt die zuletzt sichtbaren Tracks auf der Karte an oder blendet sie aus. |
 | Ein-/Ausblenden <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Aktiviert oder deaktiviert die Anzeige von POI-Ebenen mit ausgewählten Kategorien auf der Karte.<br/>Sie können mehrere POI-Kategorien auswählen. Die Aktion ersetzt die POI-Kategorien, die in "Karte konfigurieren" ohne Verwendung von Schnellaktionen ausgewählt wurden.  |
@@ -247,6 +255,7 @@ Dieses Layout hilft, die Schaltflächen visuell konsistent zu halten und Überla
 | Ein-/Ausblenden <br/> [**Suchansicht**](../search/search-all.md) | Öffnet oder schließt die Suchansicht. |
 | Ein-/Ausblenden <br/> [**Seitenmenü**](../start-with/main-menu.md) | Schaltet die Sichtbarkeit des Hauptseitenmenüs für den Zugriff auf Kernfunktionen um. |
 | Ein-/Ausschalten <br/> [**Touchscreen-Sperre**](../map/interact-with-map.md#touch-screen-lock) | Aktiviert oder deaktiviert die Touchscreen-Sperre, um unbeabsichtigte Bildschirminteraktionen zu vermeiden. |
+| Öffnen <br/> **WunderLINQ Datagrid** | Öffnet die WunderLINQ-Datenoberfläche zum Anzeigen von Informationen des verbundenen Geräts; leitet zur App Store weiter, wenn die erforderliche WunderLINQ-App nicht installiert ist. |
 
 
 ### Karteninteraktionen {#map-interactions}
@@ -309,11 +318,25 @@ Dieses Layout hilft, die Schaltflächen visuell konsistent zu halten und Überla
 
 ## Tastatur für Aktionen verwenden {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![Externe Geräte](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Gerät → Hinzufügen*
+
+![Externe Geräte](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 Mit der Funktionalität des Schnellaktions-Werkzeugs können Sie den Tasten Ihres externen Eingabegeräts erforderliche Aktionen zuweisen. Eine Beschreibung finden Sie im Artikel [Mit der Karte interagieren](../map/interact-with-map.md#custom-input-device-type).
 
