@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title:  Crash Logs
 ---
@@ -37,7 +37,7 @@ Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Inform
 2. Wählen Sie im Pop-up-Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Die E-Mail wird automatisch generiert.
 3. Tippen Sie auf die Schaltfläche *Senden*.
 
-![Absturzprotokolle von Android senden 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Absturzprotokolle von Android senden 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Absturzprotokolle von Android senden 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Absturzprotokolle von Android senden 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Protokolle von iOS-Geräten senden {#send-logs-from-ios-devices}
@@ -46,7 +46,7 @@ Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Inform
 
     - Automatisch.
         - Navigieren Sie zur OsmAnd-App *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `crash@osmand.net` zu senden.
+        - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `support@osmand.net` zu senden.
 
     - Manuell.
         - Navigieren Sie zur iOS-System-App *Dateien → Auf meinem iPhone (oder Auf meinem iPad) → OsmAnd Maps → Protokolle*.
@@ -56,7 +56,7 @@ Seien Sie vorsichtig beim Senden von Logcat-Protokollen, da diese private Inform
 2. Senden Sie [IPS-Format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) von Protokollen und Autorisierungsdaten:
     - Auf iOS 15 oder älter: *Einstellungen → Analyse → Analysedaten → OsmAnd Maps ips-Format-Datei*.
     - Auf iOS 16 oder neuer:  *Einstellungen → Datenschutz & Sicherheit → Analyse & Verbesserungen → Analysedaten → OsmAnd Maps ips-Format-Datei*.
-    - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `crash@osmand.net` zu senden.
+    - Anschließend empfehlen wir, die Protokolle über Ihre E-Mail-App an `support@osmand.net` zu senden.
 
     ![Absturzprotokolle iOS senden 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Absturzprotokolle iOS senden 2](@site/static/img/troubleshooting/log_1_ios.png)
 
@@ -82,7 +82,7 @@ Um Tombstone-Dateien zu exportieren, müssen Sie einen Fehlerbericht über die A
     - Tippen Sie auf die Option *Fehlerbericht erstellen*.
     - Wählen Sie den Typ des Fehlerberichts aus und tippen Sie auf *Bericht*.
   
-Nachdem der Fehlerbericht fertig ist, erhalten Sie eine Benachrichtigung. Tippen Sie auf das Benachrichtigungsfeld, um den Bericht auf Ihr Gerät herunterzuladen. Entpacken Sie die Datei und senden Sie die Tombstone-Dateien an das OsmAnd-Entwicklerteam (E-Mail: `crash@osmand.net`).
+Nachdem der Fehlerbericht fertig ist, erhalten Sie eine Benachrichtigung. Tippen Sie auf das Benachrichtigungsfeld, um den Bericht auf Ihr Gerät herunterzuladen. Entpacken Sie die Datei und senden Sie die Tombstone-Dateien an das OsmAnd-Entwicklerteam (E-Mail: `support@osmand.net`).
 
 ![Absturzprotokolle von Android senden 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Absturzprotokolle von Android senden 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
@@ -114,7 +114,7 @@ Verbinden Sie dann Ihr Gerät über USB mit Ihrer Workstation. Wenn dies die ers
 4. Warten Sie einige Minuten, bis der Bericht generiert ist. Die resultierende Datei wird im Ordner platform tools gespeichert.
 5. Entpacken Sie die Datei.
 6. Suchen Sie den Ordner *tombstones* mit Dateien wie *tombstone_00*, *tombstone_01* und ähnlichen.
-7. Senden Sie die Tombstone-Dateien an `crash@osmand.net`.
+7. Senden Sie die Tombstone-Dateien an `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Mit Root-Zugriff auf Ihr Gerät können Sie den Ordner */data/tombstones* direkt öffnen.  
 
-- Verwenden Sie im Android Studio den Emulator, um zum *Geräte-Dateiexplorer* zu navigieren und den Ordner /data/tombstones zu finden. Darin finden Sie Dateien mit Namen wie *tombstone_00*, *tombstone_01* und andere. Laden Sie diese Dateien herunter und senden Sie sie an `crash@osmand.net`.
+- Verwenden Sie im Android Studio den Emulator, um zum *Geräte-Dateiexplorer* zu navigieren und den Ordner /data/tombstones zu finden. Darin finden Sie Dateien mit Namen wie *tombstone_00*, *tombstone_01* und andere. Laden Sie diese Dateien herunter und senden Sie sie an `support@osmand.net`.
 
 Weitere Informationen zu Fehlerberichten finden Sie in der [Android-Dokumentation](https://developer.android.com/studio/debug/bug-report).

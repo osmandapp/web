@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  Boots-Routing
 ---
@@ -89,7 +89,7 @@ Der [Boots-Routing](#route-parameters---boat)-Typ ist der Standard-Routing-Algor
  - [Direkt-zum-Punkt-Routing für Boote](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Luftlinien-Routing für Boote](./boat-navigation.md#straight-line-routing-for-boat)
 
-Es ist wichtig zu beachten, dass die Routing-Typen *Direkt-zum-Punkt* und *Luftlinie* nur auf offenem Wasser verwendet werden sollten, wo es keine Hindernisse oder Gefahren für die Navigation gibt. Wenn Sie in einem Wasserweg mit einem bestimmten Kanal oder einer bestimmten Route navigieren, sollten Sie den Boots-Routing-Typ in OsmAnd verwenden, der Sie durch die richtigen Navigationskanäle führt und flache Bereiche oder andere Gefahren vermeidet.  
+Es ist wichtig zu beachten, dass die Routing-Typen *Direkt-zum-Punkt* und *Luftlinie* nur auf offenem Wasser verwendet werden sollten, wo es keine Hindernisse oder Gefahren für die Navigation gibt. Wenn Sie in einem Wasserweg mit einem bestimmten Kanal oder einer bestimmten Route navigieren, sollten Sie den Boots-Routing-Typ in OsmAnd verwenden, der Sie durch die richtigen Navigationskanäle führt und flache Bereiche oder andere Gefahren vermeidet. Einige kartierte Gefahren basierend auf OSM-Tags hazard=* können auf der Karte als Gefahren-POI-Icons oder Textbeschriftungen angezeigt werden.  
 
 Diese Routing-Typen für das Bootsprofil können über folgenden Pfad aktiviert werden: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> oder ein anderes) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 

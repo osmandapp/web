@@ -1,5 +1,5 @@
 ---
-source-hash: 135ec49c254081b73e19f0be40cdfb7296889f8a4d91b09b4c6be58544461e26
+source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
@@ -32,7 +32,7 @@ Wir haben [Telegram](https://telegram.org/) als die offenste soziale Plattform g
 
 Wichtig ist, dass eine hohe Kompatibilität zwischen den Apps besteht. Sie können Ihren Standort problemlos mit Ihren Kontakten teilen, ohne die mobile Telegram-App zu besitzen (OsmAnd Online GPS Tracker ist ein unabhängiger Telegram-Client), und umgekehrt müssen Ihre Kontakte den [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) nicht haben, um Ihren Standort zu sehen.  
 
-Wir haben den [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) so konzipiert, dass Sie die Telegram-App und die OsmAnd-App wie gewohnt und ohne zusätzliche Einschränkungen weiter nutzen können.  
+Wir haben den [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) so konzipiert, dass Sie die Telegram-App und die OsmAnd-App so weiter nutzen können, wie Sie es gewohnt sind, ohne zusätzliche Einschränkungen.  
 
 Die Anwendung sendet Live-Standort-Nachrichten an ausgewählte Chats für die von Ihnen eingestellte Zeit, zeigt eine Liste Ihrer Kontakte und Gruppen an und prüft Chats auf Nachrichten mit Ihrem Standort, die dann auf der Karte in OsmAnd angezeigt werden.
 Die Anwendung sendet oder liest Ihre Textnachrichten nicht.  
@@ -90,7 +90,7 @@ oder
 
 ### Einheiten & Formate {#units--formats}
 
-Ermöglicht das Hinzufügen von Einstellungen für Einheiten und Formate. Jetzt können Sie Ihre bevorzugten Werte für Telegram-Nachrichten bei der Freigabe von Standortdaten wählen.  
+Ermöglicht das Hinzufügen von Einstellungen für Einheiten und Formate. Jetzt können Sie Ihre bequemen Werte für Telegram-Nachrichten bei der Freigabe von Standortdaten wählen.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/22.jpg)  ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
 

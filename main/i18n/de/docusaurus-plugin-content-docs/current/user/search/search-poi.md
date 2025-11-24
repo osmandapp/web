@@ -1,5 +1,5 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
 title:  POI-Suche
 ---
@@ -68,7 +68,7 @@ OsmAnd bietet mehrere Wege, um zum Suchwerkzeug zu gelangen, wo sich der Abschni
     - Die Suche nach einem Geschäftsort nach Markennamen (wie Audi, Starbucks oder Aldi) ist der Suche nach verschiedenen POIs nach Typ sehr ähnlich. Der Hauptunterschied besteht darin, dass die Markenliste innerhalb der Karte bereitgestellt wird und sich bei jedem Update ändern kann.
     - Eine Marke wird durch das OSM-Tag [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) definiert und OsmAnd sammelt eine begrenzte Anzahl von Markentypen pro Karte mit maximal 1000 Marken pro Karte, stellt jedoch sicher, dass die Liste der Marken über benachbarte Karten hinweg abgestimmt ist.
 
-![POI-Suche Android](@site/static/img/search/brand_search_andr.png)
+![POI-Suche Android](@site/static/img/search/brand_search_andr.png) ![POI-Suche Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -340,7 +340,7 @@ Um benutzerdefinierte Filter für die Suche nach Orten auf der Karte zu erstelle
 
 7. **Essen**. Enthält 12 Filtertypen.  
 
-8. **Gefahr**. Enthält 5 Typen: *Lawinengefahr, Erosionsgefahr, Hochwassergefahr, Nukleare Gefahr, Rutschige Straße*.  
+8. **Gefahr**. Enthält 5 Typen: *Lawinengefahr, Erosionsgefahr, Hochwassergefahr, Nukleare Gefahr, Rutschige Straße*. Die Gefahr-Kategorie umfasst sowohl POIs mit hazard=* -Tags an Knoten als auch Straßensegmente oder Pfadsegmente (Ways), die mit demselben Tag markiert sind, sofern sie als durchsuchbare Objekte exportiert werden. Für einen visuellen Überblick über alle auf der Karte verwendeten Gefahrsymbole siehe den Abschnitt [Gefahr](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Enthält 31 Filtertypen.
 

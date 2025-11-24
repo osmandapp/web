@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title:  Ski-Kartenansicht
 ---
@@ -168,7 +168,7 @@ Die OsmAnd Ski-Karte ist als einer der Darstellungsstile aufgebaut, der bestimmt
 Der Schwierigkeitsgrad von Spuren wird in der Regel durch bestimmte Farben angegeben. Die Farben können in verschiedenen Ländern und Skigebieten unterschiedlich sein. Nachfolgend finden Sie einige praktische Richtlinien.
 
 :::tip Anleitung
-Für spezifischere Anleitungen zu den einzelnen Pistenschwierigkeitsgraden siehe die [OSM-Referenz zur Pistenschwierigkeit](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) oder eine andere Quelle, die auch Hänge, Hindernisse und Gefahren berücksichtigt.  
+Für spezifischere Anleitungen zu den einzelnen Pistenschwierigkeitsgraden siehe die [OSM-Referenz zur Pistenschwierigkeit](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) oder eine andere Quelle, die auch Hänge, Hindernisse und Gefahren berücksichtigt. Im Winter- und Ski-Kartenstil können bestimmte kartierte Gefahren (z. B. lawinengefährdete Gebiete, die als hazard=avalanche markiert sind) als Gefahren-POI auf der Karte angezeigt werden und sollten zusammen mit dem Pistenschwierigkeitsgrad berücksichtigt werden.  
 :::
 
 
@@ -179,7 +179,7 @@ Pisten unterscheiden sich nach ihrem Typ. Ein Typ repräsentiert unterschiedlich
 - **Abfahrts-/Alpin-Skipiste.**  
 Wird für die Ski-Navigation verwendet. Dieser [Pistentyp](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) hat eine Richtung und einen Schwierigkeitsgrad und ist meist von den Grenzen des Skigebiets umgeben. Wenn eine Abfahrtspiste für die Ski-Navigation ausgewählt wird, wird die Richtung der Piste berücksichtigt. Wenn der Start- und der Zielpunkt entgegen der Pistenrichtung festgelegt werden, verläuft die Navigation entlang der nächstgelegenen Seilbahn.
 
-- **Nordische/Skitouren-Skipiste.**  
+- **Nordische/Hinter-dem-Skigebiet-Skipiste.**  
 Wird ebenfalls für die Ski-Navigation verwendet. Dieser [Pistentyp](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) hat keinen Schwierigkeitsgrad, kann eine Richtung haben oder auch nicht und verläuft meist außerhalb der Grenzen des Skigebiets. Bei der Navigation auf diesem Pistentyp können Start- und Zielpunkt oft vertauscht werden.
 
 - **Skitourenpiste.**  

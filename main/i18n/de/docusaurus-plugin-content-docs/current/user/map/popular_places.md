@@ -1,8 +1,9 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Beliebte Orte
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -23,7 +23,7 @@ Die Funktion **Beliebte Orte** in OsmAnd hebt bemerkenswerte Sehenswürdigkeiten
 
 Jeder Ort, der in dieser Funktion enthalten ist, ist mit einer **Wikidata-ID** verknüpft, die es OsmAnd ermöglicht, verifizierte Namen, Vorschaubilder und Links zu Wikipedia-Artikeln anzuzeigen. Dieses Werkzeug zeigt **nicht** alle OpenStreetMap (OSM)-Punkte an. Es ist auf POIs mit Wikidata-Referenzen beschränkt.
 
-Derzeit umfasst die kuratierte Datenbank weltweit etwa **50.000 bis 150.000 erstklassige Orte**, die aus über **1 Million** Wikidata + OSM-Objekten ausgewählt wurden.
+Derzeit umfasst die kuratierte Datenbank weltweit etwa **50.000 bis 150.000 am besten bewertete Orte**, die aus über **1 Million** Wikidata + OSM-Objekten ausgewählt wurden.
 
 :::note
 *Dies ist die erste Version der Funktion „Beliebte Orte“. Rückmeldungen sind auf [GitHub](https://github.com/osmandapp/OsmAnd) willkommen*.
@@ -169,6 +169,8 @@ Durch Tippen auf einen POI auf der Karte wird das [POI-Kontextmenü](./map-conte
 
 Dies ist ein Abschnitt im [POI-Kontextmenü](./map-context-menu.md), der eine Fotovorschau des ausgewählten beliebten Ortes (Wikipedia) anzeigt. Sie können horizontal scrollen, um die verfügbaren Fotos zu durchsuchen, oder auf ein beliebiges Bild tippen, um es im [Vollbildmodus](#gallery) zu öffnen.
 
+Online angesehene Bilder werden automatisch für den Offline-Zugriff zwischengespeichert. Zwischengespeicherte Fotos zeigen ein kleines Offline-Abzeichen in der Ecke an. Das Vorschauraster passt sich der Bildschirmgröße auf iPadOS und macOS an und gewährleistet eine bequeme Bildanordnung auf größeren Displays. OsmAnd vermeidet auch wiederholte Netzwerkanfragen, wenn der Abschnitt Online-Fotos geschlossen wird, und bricht vorherige Anfragen ab, wenn schnell zwischen verschiedenen POIs gewechselt wird.
+
 Erfahren Sie mehr über zusätzliche Optionen in den Abschnitten [Aktionen](#actions) und [Galerie](#gallery).
 
 
@@ -191,6 +193,8 @@ Im Kartenkontextmenü. So greifen Sie darauf zu:
 
 - Tippen Sie auf ein beliebiges Foto, um es im [Vollbildmodus](#gallery) anzuzeigen und auf die verfügbaren Aktionen zuzugreifen:  
   **Teilen**, **Details**, **Im Browser öffnen** und **Herunterladen**.
+
+**Hinweis:** Der Download speichert das Bild im Speicher des Geräts für dauerhaften Offline-Gebrauch, während zwischengespeicherte Fotos automatisch gespeichert werden und offline nur innerhalb der App verfügbar sind.
 
 
 ### Galerie {#gallery}
@@ -215,6 +219,8 @@ Im Kartenkontextmenü. So greifen Sie darauf zu:
 
 
 Das **Galerie-Menü** kann bis zu **100 Bilder** zum ausgewählten Point of Interest anzeigen. Sie können durch alle verfügbaren Fotos wischen. Ein kurzes Tippen auf ein Foto öffnet eine Detailansicht mit: *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*  
+
+Auf iOS, iPadOS und macOS können Sie Fotos mit Tastaturtasten navigieren (←/→ zum Bewegen zwischen Bildern, Enter/Leertaste zum Öffnen).
 
 Sie können auch die folgenden Aktionen für jedes Foto durchführen:
 

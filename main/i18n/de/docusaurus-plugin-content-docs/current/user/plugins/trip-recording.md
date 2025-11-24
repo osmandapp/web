@@ -1,8 +1,9 @@
 ---
-source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  Reiseaufzeichnung
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -143,13 +143,13 @@ Für *Stopp / Speichern / Pause*:
 
 <TabItem value="android" label="Android">
 
-![Übersicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![Übersicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![Übersicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![Übersicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Aufzeichnung in iOS beenden](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Aufzeichnung in iOS beenden](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Aufzeichnung in iOS beenden](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Aufzeichnung in iOS beenden](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -176,11 +176,11 @@ Für eine detailliertere Ansicht können Sie **das Diagramm skalieren**:
 | |  
 | ------------- |
 |**Übersicht**-Tab iOS (für Android sind die Y-Achsen-Parameter *Höhe*, *Geschwindigkeit* und der X-Achsen-Parameter ist *Distanz*). Dieser Tab zeigt ein Diagramm, das Änderungen von Geschwindigkeit und Höhe entlang der Tracklänge sowie wichtige Trackdetails darstellt. Trackdaten für iOS: *Distanz*, *Zeitspanne*, *Startzeit* und *Endzeit*. Sie können unten sehen, wie dies in den Android- und iOS-Versionen angezeigt wird. |
-| ![Daten](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![Daten](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+| ![Daten](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![Daten](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Höhe**-Tab iOS (für Android sind die Y-Achsen-Parameter *Höhe*, *Steigung* und der X-Achsen-Parameter ist *Distanz*). Dieser Tab konzentriert sich auf das Höhenprofil Ihres aufgezeichneten Tracks und bietet Einblicke in Höhenänderungen und Geländeneigungen. Wichtige Metriken für iOS sind: *Durchschnittliche Höhe*, *Höhenbereich*, *Bergauf* und *Bergab*. Die folgenden Diagramme veranschaulichen die Unterschiede zwischen den Android- und iOS-Schnittstellen. |
-| ![Daten](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![Daten](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![Daten](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![Daten](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Geschwindigkeit**-Tab iOS (für Android ist der Y-Achsen-Parameter *Geschwindigkeit* und der X-Achsen-Parameter ist *Distanz*). Der Geschwindigkeit-Tab hebt geschwindigkeitsbezogene Daten entlang des Tracks hervor. Für iOS enthält er Informationen wie *Durchschnittsgeschwindigkeit*, *Maximale Geschwindigkeit*, *Zeit in Bewegung* und *Korrigierte Distanz*. Die folgenden Screenshots zeigen, wie diese Daten auf beiden Plattformen angezeigt werden. |
-| ![Daten](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![Daten](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![Daten](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![Daten](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | Für **Android** können Sie mehr Kombinationen aus verfügbaren Y-Achsen-Daten und X-Achsen-Werten erstellen. |
 | ![Daten](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -356,7 +356,7 @@ Das App-Symbol-Badge erscheint neben dem OsmAnd-Symbol, wenn die Track-Aufzeichn
 
 ## Widgets {#widgets}
 
-Widgets ermöglichen es Ihnen, wichtige Informationen zur Track-Aufzeichnung direkt auf dem Bildschirm anzuzeigen, wie z. B. *Distanz*, *Dauer*, *Bergauf* und *Bergab*.
+Widgets ermöglichen es Ihnen, wichtige Informationen zur Track-Aufzeichnung direkt auf dem Bildschirm anzuzeigen, wie z. B. *Distanz*, *Dauer*, *Bergauf* und *Bergab*. Unter Android können Sie auch *Max. Geschwindigkeit* und *Durchschnittssteigung*-Widgets hinzufügen.
 
 Um die *Reiseaufzeichnungs-Widgets* zu verwenden, müssen Sie alle folgenden Einstellungen vornehmen:
 
@@ -373,7 +373,7 @@ Um die *Reiseaufzeichnungs-Widgets* zu verwenden, müssen Sie alle folgenden Ein
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Distanz/Start-Stopp-Widget in Android hinzufügen](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Distanz/Start-Stopp-Widget in Android hinzufügen](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_conf
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Distanz/Start-Stopp-Widget in iOS hinzufügen](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![Distanz/Start-Stopp-Widget in iOS hinzufügen](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -398,8 +398,8 @@ Um Ihre Benutzeroberfläche anzupassen, können Sie das Reiseaufzeichnungs-Widge
 
 <TabItem value="android" label="Android">  
 
-![Reiseaufzeichnungs-Widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
-![Aufzeichnung in Android beenden](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Aufzeichnung in Android beenden](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Reiseaufzeichnungs-Widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
@@ -417,13 +417,18 @@ Das *Distanz*-Widget zeigt die Gesamtdistanz Ihrer aktuell aufgezeichneten Reise
 - Das Widget wird automatisch hinzugefügt, wenn das *Reiseaufzeichnungs-Plugin* aktiviert ist, kann aber über das Menü [Bildschirm konfigurieren](../widgets/configure-screen.md#overview) ausgeblendet werden.
 - Wenn die Option *Startdialog anzeigen* in den Einstellungen des Reiseaufzeichnungs-Plugins deaktiviert ist, öffnet ein Tippen auf das aktive Widget dennoch das *Reiseaufzeichnungsdialogfeld*, sodass Sie auf weitere Optionen und Informationen zugreifen können.  
 
-Zusätzlich zum *Distanz/Start-Stopp*-Widget enthält das **Reiseaufzeichnungs-Plugin** drei weitere Widgets: *Dauer*, *Bergauf* und *Bergab*. Diese liefern zusätzliche Informationen über Ihre Reise und helfen Ihnen, den Fortschritt in Echtzeit zu verfolgen.
+Zusätzlich zum *Distanz/Start-Stopp*-Widget enthält das **Reiseaufzeichnungs-Plugin** drei weitere Widgets: *Dauer*, *Bergauf*, *Bergab*, *Max. Geschwindigkeit* und *Durchschnittssteigung* (die letzten beiden sind nur unter Android verfügbar). Diese liefern zusätzliche Informationen über Ihre Reise und helfen Ihnen, den Fortschritt in Echtzeit zu verfolgen.
 
 | |
 |-----------|
 | **Distanz/Start-Stopp**. Dieses Widget zeigt die Distanz Ihrer laufenden Reiseaufzeichnung an. Es wird automatisch hinzugefügt, wenn das Reiseaufzeichnungs-Plugin aktiviert ist, aber Sie können es über das Menü "Bildschirm konfigurieren" ausblenden. Das Widget hat drei verschiedene Zustände: *Aufzeichnung*, *Pausiert* und *Inaktiv*, die jeweils den aktuellen Status Ihrer Reiseaufzeichnung anzeigen. |
 | ![Reiseaufzeichnungs (REC) Widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| Um den [Reiseaufzeichnungsdialog](#start-a-dialog) zu öffnen, wenn Sie auf ein inaktives Widget tippen, aktivieren Sie die Option *Startdialog anzeigen* in den Einstellungen des Reiseaufzeichnungs-Plugins. Wenn die Option deaktiviert ist, startet die Aufzeichnung sofort nach dem Tippen auf das Widget, ohne den Dialog zu öffnen.|  
+| Um den [Reiseaufzeichnungsdialog](#start-a-dialog) zu öffnen, wenn Sie auf ein inaktives Widget tippen, aktivieren Sie die Option *Startdialog anzeigen* in den Einstellungen des Reiseaufzeichnungs-Plugins. Wenn die Option deaktiviert ist, startet die Aufzeichnung sofort nach dem Tippen auf das Widget, ohne den Dialog zu öffnen.| 
+
+Unter Android unterstützt das Distanz-Widget mehrere Anzeigemodi:
+- **Gesamtdistanz** – Gesamtdistanz der aktuellen Aufzeichnung (Standard).
+- **Letzter Bergauf** – Distanz des zuletzt aufgenommenen Anstiegsabschnitts.
+- **Letzter Bergab** – Distanz des zuletzt aufgenommenen Abstiegsabschnitts.
 
 
 ### Dauer, Bergauf, Bergab {#duration-uphill-downhill}
@@ -432,13 +437,18 @@ Zusätzlich zum *Distanz/Start-Stopp*-Widget enthält das **Reiseaufzeichnungs-P
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Dauer**. Zeigt die Gesamtzeit der aktuellen Reiseaufzeichnung in Stunden und Minuten an. |
+|![Widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Bergauf**. Zeigt den gesamten Anstieg oder den letzten Anstiegsabschnitt an, abhängig vom ausgewählten Modus. |
+|![Widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**Bergab**. Zeigt den gesamten Abstieg oder den letzten Abstiegsabschnitt an, abhängig vom ausgewählten Modus. |
+|![Widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-</TabItem>
-
-</Tabs>
 
 | |
 |------------|
@@ -449,7 +459,21 @@ Zusätzlich zum *Distanz/Start-Stopp*-Widget enthält das **Reiseaufzeichnungs-P
 |**Bergab**. Zeigt den gesamten Höhenverlust an, der während der aktuellen Reiseaufzeichnung angesammelt wurde. |
 |![Widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 Wenn Sie mehrere Widgets ausgewählt haben – *Dauer*, *Bergauf* oder *Bergab* – können Sie für jedes auf dasselbe Dialogfeld zugreifen, ohne es wechseln oder schließen zu müssen. Diese einheitliche Benutzeroberfläche erleichtert die nahtlose Anzeige und Verwaltung aller zugehörigen Informationen.
+
+### Max. Geschwindigkeit & Durchschnittssteigung {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Max. Geschwindigkeit Android](@site/static/img/widgets/max_speed_android.png) ![Durchschnittssteigung Android](@site/static/img/widgets/average_slope_android.png)  
+
+Das **Max. Geschwindigkeit**-Widget zeigt die maximale Geschwindigkeit für die aktuell aufgezeichnete Reise an. Tippen Sie auf das Widget, um zwischen der Gesamtmaximalgeschwindigkeit und der maximalen Geschwindigkeit aus dem letzten Bergauf- oder Bergababschnitt zu wechseln.
+
+Das **Durchschnittssteigung**-Widget zeigt die durchschnittliche Steigung für den letzten Bergauf- oder Bergababschnitt der aktuellen Reise an. Es hilft, abzuschätzen, wie steil der vorherige Anstieg oder Abstieg war, basierend auf Höhengewinn und Distanz.
 
 
 ## Verwandte Artikel {#related-articles}

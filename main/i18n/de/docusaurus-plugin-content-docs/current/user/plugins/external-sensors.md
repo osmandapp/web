@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  Externe Sensoren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -240,6 +240,8 @@ Unterstützte Widget-Typen:
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – vom Sensor gemessene Gesamtdistanz.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – aktuelle Umgebungstemperatur.
 7. **Batteriestand** – verbleibender Batterieprozentsatz eines verbundenen BLE-Sensors, schalten Sie ihn in den **Sensoreinstellungen** um.
+
+**Hinweis:** Wenn ein Sensor vorübergehend die Verbindung verliert, tippen Sie auf sein Widget auf der Karte, um sofort eine erneute Verbindung zu versuchen – Sie müssen das Menü für Externe Sensoren nicht öffnen.
 
 
 ### Widget-Einstellungen {#widget-settings}

@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Routen
 ---
@@ -182,6 +182,9 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,r
 - OsmAnd kann [in OpenStreetMap vorhandene Routen](https://wiki.openstreetmap.org/wiki/Relation:route) hervorheben. Sie können durch Tippen auf [das Symbol auf der Route](#save-as-a-track) ausgewählt werden, und wenn die sichtbare Menge an Routen korrekt konfiguriert ist, können Sie der Farbe und den Symbolen folgen.
 - Die Hauptroutentypen können auch nach Klassen und Unterklassen gefiltert werden, sodass Sie nur spezifische Gruppen innerhalb jedes Typs anzeigen können. Zum Beispiel können Sie Wanderrouten nach **OSMC-Symbolen** als Klassen und nach *internationalen, nationalen, regionalen* oder *lokalen Netzwerken* als Unterklassen anzeigen.
 - Sie können mit dem Werkzeug [Route planen](../plan-route/create-route.md) einen Track über den Routen erstellen.  
+- Wenn mehrere Routen entlang derselben Straße verlaufen, wird jede Route als separate halbtransparente Linie dargestellt, die über den anderen liegt. 
+- Wenn Sie auf einen Ort tippen, an dem mehrere Routen überlappen, wird ein Kontextmenü mit allen Routen angezeigt, die durch diesen Punkt verlaufen. 
+- Aktualisierte Vektorkarten sind erforderlich, um alle Elemente des neuen Routenrendering-Schemas anzuzeigen. 
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -195,7 +198,8 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,rende
 
 - Um die gewünschten Routen auf der Karte anzuzeigen, aktivieren Sie sie in der *Routenliste* des Menüs [Karte konfigurieren](../map/configure-map-menu.md).
 - OsmAnd kann [in OpenStreetMap vorhandene Routen](https://wiki.openstreetmap.org/wiki/Relation:route) hervorheben. Sie können durch Tippen auf [das Symbol auf der Route](#save-as-a-track) ausgewählt werden, und wenn die sichtbare Menge an Routen korrekt konfiguriert ist, können Sie der Farbe und den Symbolen folgen.
-- Sie können mit dem Werkzeug [Route planen](../plan-route/create-route.md) einen Track über den Routen erstellen.  
+- Sie können mit dem Werkzeug [Route planen](../plan-route/create-route.md) einen Track über den Routen erstellen. 
+- Wenn mehrere Routen entlang derselben Straße verlaufen, wird jede Route als separate halbtransparente Linie dargestellt, die über den anderen liegt.   
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -361,13 +365,13 @@ Um zu suchen, gehen Sie zum Menü *<Translate android="true" ids="search_button"
 
 </Tabs>  
 
-Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , um die gewünschten Routen zu finden. Routen enthalten Name, Aktivitätstyp, Länge, Ort und Entfernung zum nächstgelegenen Punkt.
+Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , um die gewünschten Routen zu finden. Die Suchergebnisse für Routen zeigen den Routennamen, den Aktivitätstyp, die Länge, den Ort und die Entfernung zum nächstgelegenen Punkt an. Auf Android werden auch Höhenmetriken wie Anstieg und Abstieg angezeigt, wo verfügbar. Geringe Höhenänderungen (weniger als 10 m) werden ausgeblendet, um die Liste übersichtlich zu halten. Alle Werte berücksichtigen die in der App ausgewählten Einheiten für Entfernung und Höhe.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_1.png)
+![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -385,7 +389,7 @@ Verwenden Sie die Filter-Schaltfläche (oben rechts), um nur die gewünschten Ro
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

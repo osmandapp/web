@@ -1,5 +1,5 @@
 ---
-source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -262,7 +262,7 @@ Die Funktion **Papierkorb** ermöglicht es Ihnen, Dateien anzuzeigen und zu verw
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Änderungen in OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
+![Änderungen in OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -339,6 +339,24 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 Der Menüabschnitt **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) zeigt Informationen darüber an, wie viel der 3,15 Gigabyte Speicher in *Einstellungen*, *Meine Orte* und *Ressourcen* belegt ist. Sie können die Speichergröße jedes Datentyps anzeigen und sie bei Bedarf aus OsmAnd Cloud löschen. 
 
 Das Löschen von Daten aus der Cloud beeinflusst nicht deren Backup-Status oder lokale Kopien auf Ihrem Gerät. Alle entfernten Elemente bleiben 30 Tage lang im Papierkorb verfügbar und können in diesem Zeitraum wiederhergestellt werden.  
+
+
+### Automatisches Backup {#auto--backup}
+
+<InfoAndroidOnly />
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Automatisches Backup Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+Das automatische Backup speichert ausgewählte OsmAnd-Daten automatisch in regelmäßigen Abständen in der Cloud, während die App aktiv ist. Dies hilft, Ihre Daten zu schützen und sie über Geräte mit demselben Konto synchronisiert zu halten. Der Bildschirm für das automatische Backup ist in drei erweiterbare Abschnitte unterteilt: *Einstellungen*, *Meine Orte* und *Ressourcen*.
+
+Verhalten des automatischen Backups:
+
+- Das automatische Backup läuft etwa alle Stunde, während OsmAnd im Vordergrund arbeitet.
+- Das Backup startet auch, wenn Sie zum Kartenbildschirm zurückkehren.
+- Sie können jeden Eintrag oder ganze Abschnitte unabhängig voneinander aktivieren oder deaktivieren.
+- Ihre Daten bleiben lokal verfügbar, auch wenn das automatische Backup deaktiviert ist.
 
 
 ### Konto {#account}
