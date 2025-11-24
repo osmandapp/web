@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 3036a4367dec965dc2ce8a575aa5d332ed8bf23931798249cf1fc88b99ef5ae5
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -38,7 +38,7 @@ import Translate from '@site/src/components/Translate.js';
 |------------|------------|------------|------------|
 | **OsmAnd Start** | **خطة مجانية** تتيح الوصول إلى [سحابة OsmAnd](../personal/osmand-cloud.md#osmand-start) من أجل *المفضلة*، و*الإعدادات*، و*تعديل/ملاحظات OSM*. | متاحة لجميع مستخدمي الإصدار المجاني من OsmAnd. | تقتصر على ميزات السحابة الأساسية ومساحة تخزين **5MB**. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **عملية شراء داخل التطبيق** أو **اشتراك** يفتح الميزات المتقدمة لتطبيق OsmAnd المجاني. | متاح على [متجر التطبيقات](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | يمكن إضافته إلى [المشاركة العائلية من Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح ميزات متقدمة و[احترافية إضافية](#pro-features). | متاح على [متجر التطبيقات](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | يوفر وصولاً كاملاً إلى ميزات سحابة OsmAnd. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح ميزات متقدمة إضافية و[ميزات احترافية](#pro-features). | متاح على [متجر التطبيقات](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | يوفر وصولاً كاملاً إلى ميزات سحابة OsmAnd. |
 
 ### ملاحظات هامة {#important-notes}
 
@@ -97,6 +97,7 @@ import Translate from '@site/src/components/Translate.js';
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
+| [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [أدلة السفر (ويكيبيديا)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -132,7 +133,7 @@ import Translate from '@site/src/components/Translate.js';
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يسمح لك بالحصول على نموذج مصغر لمحيطك أو قارة بأكملها ومراقبته. |
 | [ودجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر.  |
 | [Live](../personal/maps-resources.md#live-updates) | يتم تحديث خرائط OsmAnd كل ١٥ دقيقة بعد تحسينات [OpenStreetMap](https://www.openstreetmap.org/). |
-| [ملحق الطقس](../plugins/weather.md) | توقعات جوية كل ساعة لمدة ٢٤ ساعة قادمة على الخريطة لمدة ٧ أيام. |
+| [ملحق الطقس](../plugins/weather.md) | توقعات جوية كل ساعة لمدة ٢٤ ساعة، ٧ أيام مقدمًا على الخريطة. |
 | [ملحق مقاييس المركبة (OBD-II)](../plugins/vehicle-metrics.md) | يسمح لك بتوصيل ماسح OBD-II لعرض بيانات المركبة التفصيلية في تطبيق OsmAnd وتخزين المعلومات في سجلات المسارات. معلومات سرعة المركبة وسرعة المحرك متاحة في OsmAnd المجاني.  |
 | [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء الملاحة. |
 
@@ -173,7 +174,7 @@ import Translate from '@site/src/components/Translate.js';
 
 استخدم نفس معرف Apple ID لاستعادة مشترياتك.
 
-- قم بتسجيل الدخول إلى نفس حساب متجر تطبيقات Apple الذي استخدمته لشراء التطبيقات (الاشتراكات) داخل OsmAnd Maps.
+- قم بتسجيل الدخول إلى نفس حساب متجر تطبيقات Apple الذي استخدمته لشراء مشتريات داخل التطبيق (الاشتراكات) في OsmAnd Maps.
 - قم بتثبيت [خرائط OsmAnd على متجر تطبيقات Apple](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - افتح خرائط OsmAnd مع اتصال إنترنت نشط.
 - لاستعادة المشتريات، اتبع هذه الخطوات: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* وفي الجزء العلوي من الشاشة يجب أن يظهر أن Maps+(Pro, Live) قد تم تفعيله.

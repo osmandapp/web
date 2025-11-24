@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title:  سجلات الأعطال
 ---
@@ -13,9 +13,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## نظرة عامة {#overview}
 
 تُعد سجلات الأعطال أدوات تشخيصية قيّمة تساعد المطورين على تحديد وإصلاح المشكلات والأخطاء التي تتسبب في تعطل التطبيق أو سلوكه بشكل غير متوقع. من الممكن مشاركة السجلات من جهاز Android الخاص بك مع فريق تطوير OsmAnd. حاليًا، يتوفر لمستخدمي iOS خيار واحد فقط من نوع سجل الأعطال لإرساله.
+
 
 ## سجلات الأعطال وLogcat {#crash-and-logcat-logs}
 
@@ -28,13 +30,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 كن حذرًا عند إرسال سجلات Logcat، حيث قد تحتوي على معلومات خاصة مثل موقع الجهاز، واستعلامات البحث، ونتائج بناء المسار، وبيانات التنقل.
 :::
 
+
 ### إرسال السجلات من تطبيق OsmAnd (أندرويد) {#send-logs-from-osmand-app-android}
 
 1. انتقل إلى *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. بناءً على حالتك، حدد نوع السجل المناسب. يمكنك الرجوع إلى قسم [سجلات الأعطال وLogcat](#crash-and-logcat-logs) للحصول على تفاصيل حول الاختلافات بين أنواع السجلات.
 2. في القائمة المنبثقة، اختر Gmail أو تطبيق البريد الإلكتروني المفضل لديك. سيتم إنشاء البريد الإلكتروني تلقائيًا.
 3. اضغط على زر *إرسال*.
 
-![إرسال سجلات الأعطال من أندرويد 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![إرسال سجلات الأعطال من أندرويد 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![إرسال سجلات الأعطال من أندرويد 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![إرسال سجلات الأعطال من أندرويد 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
 
 ### إرسال السجلات من أجهزة iOS {#send-logs-from-ios-devices}
 
@@ -42,7 +46,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
     - تلقائيًا.
         - انتقل إلى تطبيق OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - ثم، باستخدام تطبيق البريد الإلكتروني الخاص بك، نوصي بإرسال السجلات إلى `crash@osmand.net`.
+        - ثم، باستخدام تطبيق البريد الإلكتروني الخاص بك، نوصي بإرسال السجلات إلى `support@osmand.net`.
 
     - يدويًا.
         - انتقل إلى تطبيق نظام iOS *الملفات → على جهاز iPhone الخاص بي (أو على جهاز iPad الخاص بي) → خرائط OsmAnd → السجلات*.
@@ -52,9 +56,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 2. أرسل سجلات بتنسيق [IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) وبيانات التفويض:
     - على iOS 15 أو أقدم: *الإعدادات → التحليلات → بيانات التحليلات → ملف OsmAnd Maps بتنسيق ips*.
     - على iOS 16 أو أحدث:  *الإعدادات → الخصوصية والأمان → التحليلات والتحسينات → بيانات التحليلات → ملف OsmAnd Maps بتنسيق ips*.
-    - ثم، باستخدام تطبيق البريد الإلكتروني الخاص بك، نوصي بإرسال السجلات إلى `crash@osmand.net`.
+    - ثم، باستخدام تطبيق البريد الإلكتروني الخاص بك، نوصي بإرسال السجلات إلى `support@osmand.net`.
 
     ![إرسال سجلات الأعطال iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![إرسال سجلات الأعطال iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+
 
 ## إرسال ملفات Tombstone (أندرويد) {#send-tombstone-files-android}
 
@@ -63,6 +68,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 :::
 
 في بعض الحالات المعقدة أو غير العادية، قد تكون *[ملفات Tombstone](https://source.android.com/docs/core/tests/debug)* مطلوبة. توفر هذه الملفات تتبعًا تفصيليًا للمكدس لجميع الخيوط في عملية متعطلة (وليس فقط الخيط الذي تسبب في الخطأ)، وخريطة ذاكرة كاملة، وقائمة بجميع واصفات الملفات المفتوحة. تعد ملفات Tombstone حيوية لتصحيح الأخطاء وتشخيص المشكلات المتعلقة بالرمز الأصلي على نظام Android الأساسي.
+
 
 ### استخدام جهازك {#using-your-device}
 
@@ -76,7 +82,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
     - اضغط على خيار *أخذ تقرير خطأ*.
     - حدد نوع تقرير الخطأ واضغط على *تقرير*.
   
-بعد أن يصبح تقرير الخطأ جاهزًا، ستتلقى إشعارًا. اضغط على مربع الإشعار لتنزيل التقرير على جهازك. قم بفك ضغط الملف وأرسل ملفات tombstone إلى فريق مطوري OsmAnd (البريد الإلكتروني: `crash@osmand.net`).
+بعد أن يصبح تقرير الخطأ جاهزًا، ستتلقى إشعارًا. اضغط على مربع الإشعار لتنزيل التقرير على جهازك. قم بفك ضغط الملف وأرسل ملفات tombstone إلى فريق مطوري OsmAnd (البريد الإلكتروني: `support@osmand.net`).
 
 ![إرسال سجلات الأعطال من أندرويد 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![إرسال سجلات الأعطال من أندرويد 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
@@ -94,7 +100,7 @@ Android Debugging Bridge (ADB) هي أداة سطر أوامر تتيح للمط
 
 - انتقل إلى *الإعدادات → حول الهاتف → معلومات البرنامج*.
 - اضغط على *رقم البناء* سبع مرات حتى يؤكد إشعار منبثق أن وضع المطور نشط.
-- في *خيارات المطور*، قم بتمكين *تصحيح أخطاء USB*.
+- في *خيارات المطور*، قم بتمكين  *تصحيح أخطاء USB*.
 
 ثم، قم بتوصيل جهازك بمحطة العمل الخاصة بك عبر USB. إذا كانت هذه هي المرة الأولى التي تقوم فيها بالاتصال، فستظهر نافذة منبثقة تطلب الإذن بالسماح بالتصحيح.
 
@@ -108,7 +114,7 @@ Android Debugging Bridge (ADB) هي أداة سطر أوامر تتيح للمط
 4. انتظر بضع دقائق حتى يتم إنشاء التقرير. سيتم حفظ الملف الناتج في مجلد أدوات النظام الأساسي.
 5. قم بفك ضغط الملف.
 6. ابحث عن مجلد *tombstones* الذي يحتوي على ملفات مثل *tombstone_00*، *tombstone_01*، وما شابه ذلك.
-7. أرسل ملفات tombstone إلى `crash@osmand.net`.
+7. أرسل ملفات tombstone إلى `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -126,6 +132,6 @@ Where you find files like  -->
 
 - مع صلاحيات الروت على جهازك، يمكنك فتح مجلد */data/tombstones* مباشرة.  
 
-- في Android Studio، استخدم المحاكي للانتقال إلى *مستكشف ملفات الجهاز* وابحث عن مجلد /data/tombstones. ستجد بالداخل ملفات بأسماء مثل *tombstone_00*، *tombstone_01*، وغيرها. قم بتنزيل هذه الملفات وأرسلها إلى `crash@osmand.net`.
+- في Android Studio، استخدم المحاكي للانتقال إلى *مستكشف ملفات الجهاز* وابحث عن مجلد /data/tombstones. ستجد بالداخل ملفات بأسماء مثل *tombstone_00*، *tombstone_01*، وغيرها. قم بتنزيل هذه الملفات وأرسلها إلى `support@osmand.net`.
 
 لمزيد من التفاصيل حول تقارير الأخطاء، ارجع إلى [وثائق Android](https://developer.android.com/studio/debug/bug-report).

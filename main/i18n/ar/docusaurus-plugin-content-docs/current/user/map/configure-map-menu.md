@@ -1,8 +1,9 @@
 ---
-source-hash: cc4a39deaa5305aa029009f3f9baff5a545f3a163336fd6ca3c80b085166c351
+source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
 sidebar_position: 4
 title:  تهيئة الخريطة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,28 +13,27 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## نظرة عامة {#overview}
 
-قائمة **تهيئة الخريطة** هي عنصر مهم في *القائمة الرئيسية* لـ OsmAnd، حيث يمكنك تخصيص عرض الخريطة ليناسب احتياجاتك. يمكنك إبراز النقاط المفضلة، أو علامات الملاحة، أو نقاط الاهتمام الخاصة على الخريطة، وعرض مسارات محددة أو ملفات GPX من جهات خارجية، وتراكب معلومات التضاريس، أو صور الأقمار الصناعية، أو أي صور نقطية أخرى متاحة، وعرض معلومات النقل العام، وتغيير نمط الخريطة.
+قائمة **تهيئة الخريطة** هي عنصر مهم في *القائمة الرئيسية* لـ OsmAnd، حيث يمكنك تخصيص عرض الخريطة ليناسب احتياجاتك. يمكنك إبراز النقاط المفضلة، أو علامات الملاحة، أو نقاط الاهتمام الخاصة على الخريطة، وعرض مسارات محددة أو ملفات GPX من جهات خارجية، وتراكب معلومات التضاريس، أو صور الأقمار الصناعية، أو أي صور نقطية أخرى متاحة، وعرض معلومات النقل العام، وتغيير نمط الخريطة.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-قسم **إظهار**:
+قسم **إظهار**:  
 
-![Configure map android](@site/static/img/map/configure_map_show1_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)
+![Configure map android](@site/static/img/map/configure_map_show1_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)  
 
-قسم **التضاريس**:
+قسم **التضاريس**:  
 
-![Configure map android](@site/static/img/map/configure_map_topography_andr.png)
+![Configure map android](@site/static/img/map/configure_map_topography_andr.png)  
 
-قسم **OpenStreetMap**:
+قسم **OpenStreetMap**:  
 
-![Configure map android](@site/static/img/map/configure_map_osm_andr.png)
+![Configure map android](@site/static/img/map/configure_map_osm_andr.png)  
 
-قسما **المسارات وتصيير الخريطة**:
+أقسام **المسارات وتصيير الخريطة**:  
 
 ![Configure map android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
@@ -41,7 +41,29 @@ import Translate from '@site/src/components/Translate.js';
 
 <TabItem value="ios" label="iOS">
 
-![Configure map ios](@site/static/img/map/configure-map-ios.png)
+قسم **عرض على الخريطة**:  
+
+![Configure map android](@site/static/img/map/configure_map_show1_ios.png)  
+
+قسم **التضاريس**:  
+
+![Configure map android](@site/static/img/map/configure_map_topography_ios.png)  
+
+قسم **OpenStreetMap**:  
+
+![Configure map android](@site/static/img/map/configure_map_osm_ios.png)  
+
+قسم **المسارات**:  
+
+![Configure map android](@site/static/img/map/configure_map_routes_new_ios.png)
+
+أقسام **نوع الخريطة ونمط الخريطة**:  
+
+![Configure map android](@site/static/img/map/configure_map_style_ios.png)
+
+أقسام **التراكب/التحتية ولغة**:  
+
+![Configure map android](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -50,8 +72,8 @@ import Translate from '@site/src/components/Translate.js';
 
 تنقسم قائمة **<Translate android="true" ids="configure_map"/>** إلى فئتين:
 
-- [معلمات نمط الخريطة](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (أو **<Translate ios="true" ids="map_widget_renderer"/>**) هي مجموعة من الإعدادات التي تسمح لك بتغيير طريقة عرض الخريطة الرئيسية.
-- [طبقات الخريطة](#map-layers). تسمح هذه الطبقات بوضع معلومات فوق (أو تحت) طبقة الخريطة الرئيسية ولكنها لا تغير عرض الخريطة نفسها.
+- [معلمات نمط الخريطة](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (أو **<Translate ios="true" ids="map_widget_renderer"/>**) هي مجموعة من الإعدادات التي تسمح لك بتغيير طريقة عرض الخريطة الرئيسية.  
+- [طبقات الخريطة](#map-layers). تسمح هذه الطبقات بوضع معلومات فوق (أو تحت) طبقة الخريطة الرئيسية ولكنها لا تغير عرض الخريطة نفسها.  
 
 **ملاحظات:**
 
@@ -78,6 +100,7 @@ import Translate from '@site/src/components/Translate.js';
    - [صور مستوى الشارع](../plugins/mapillary.md#map-layer) - تعرض النقاط التي تتوفر بها صور على مستوى الشارع.
    - [أدلة السفر](../plan-route/travel-guides.md) - تعرض أدلة السفر على الخريطة.
    - [ويكيبيديا](../plugins/wikipedia.md) - تبرز مقالات ويكيبيديا المرتبطة بالخريطة.
+   - [تحرير OSM](../plugins/osm-editing.md#osm-editing-layer) - يعرض تعديلات OpenStreetMap، والملاحظات، وطبقات المساعدة المتعلقة بالرسم على الخرائط.
    - [طبقات الإضافات الأخرى](../plugins/index.md#configure-plugin) - تضيف العديد من الإضافات طبقاتها الخاصة بمعلومات إضافية.
 
 ## معلمات نمط الخريطة {#map-style-parameters}
@@ -91,13 +114,13 @@ import Translate from '@site/src/components/Translate.js';
    - [لغة الخريطة](../map/vector-maps.md#map-language) - تسمح باختيار اللغة المفضلة المعروضة على الخريطة.
    - [التفاصيل](../map/vector-maps.md#details) - تظهر كائنات محددة.
    - [إخفاء](../map/vector-maps.md#hide) - يخفي كائنات محددة.
-   - [المسارات](../map/vector-maps.md#routes) - تسمح بإبراز المسارات ورموزها.
+   - [المسارات](../map/vector-maps.md#routes) - تسمح بإبراز المسارات ورموزها.  
 
 
 ## تخصيص واجهة المستخدم (Android) {#ui-customization-android}
 
-لكل ملف شخصي محدد في نظام Android، يمكنك تغيير ترتيب عناصر قائمة <Translate android="true" ids="configure_map"/>، أو إخفاء العناصر، أو إعادة تعيين الإعدادات الافتراضية، أو نسخها من ملف شخصي آخر. سيساعد هذا في تحسين تفاعلك مع تطبيق OsmAnd.
+لكل ملف شخصي محدد في نظام Android، يمكنك تغيير ترتيب عناصر قائمة <Translate android="true" ids="configure_map"/>، أو إخفاء العناصر، أو إعادة تعيين الإعدادات الافتراضية، أو نسخها من ملف شخصي آخر. سيساعد هذا في تحسين تفاعلك مع تطبيق OsmAnd.  
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
 ![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)

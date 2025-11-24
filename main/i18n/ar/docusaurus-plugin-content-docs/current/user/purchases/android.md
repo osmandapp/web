@@ -1,5 +1,5 @@
 ---
-source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
+source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -125,6 +125,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
+| [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [الأماكن المشهورة (ويكيبيديا)](../map/popular_places.md) | **-** | ✔ | ✔ |

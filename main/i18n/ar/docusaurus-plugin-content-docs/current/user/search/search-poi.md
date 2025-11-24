@@ -1,7 +1,7 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
-title:  البحث عن نقاط الاهتمام
+title: البحث عن نقاط الاهتمام
 ---
 
 import Tabs from '@theme/Tabs';
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - البحث عن مكان تجاري حسب اسم العلامة التجارية (مثل Audi أو Starbucks أو Aldi) مشابه جدًا للبحث عن POIs مختلفة حسب النوع، الفرق الرئيسي هو أن قائمة العلامات التجارية متوفرة داخل الخريطة وتخضع للتغيير أثناء كل تحديثات. 
     - يُعرف العلامة التجارية بواسطة علامة OSM [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) ويجمع OsmAnd أنواعًا محدودة من العلامات التجارية لكل خريطة بحد أقصى ١٠٠٠ علامة تجارية لكل خريطة، ومع ذلك يضمن أن قائمة العلامات التجارية متطابقة عبر الخرائط المجاورة.
 
-![البحث عن POI في أندرويد](@site/static/img/search/brand_search_andr.png)
+![البحث عن POI في أندرويد](@site/static/img/search/brand_search_andr.png) ![البحث عن POI في أندرويد](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -340,7 +340,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ٧. **الطعام**. تشمل ١٢ أنواع من الفلاتر.  
 
-٨. **المخاطر**. تشمل ٥ أنواع: *مخاطر الانهيار الثلجي، مخاطر التعرية، مخاطر الفيضان، مخاطر النووي، طريق زلق*.  
+٨. **المخاطر**. تشمل ٥ أنواع: *مخاطر الانهيار الثلجي، مخاطر التعرية، مخاطر الفيضان، مخاطر النووي، طريق زلق*. تشمل فئة المخاطر كلاً من POI مع علامات hazard=* على العقد وأجزاء الطرق أو المسارات (الطرق) المُعلمة بنفس العلامة، إذا تم تصديرها ككائنات قابلة للبحث. للحصول على نظرة عامة بصرية على جميع أيقونات المخاطر المستخدمة على الخريطة، انظر قسم [المخاطر](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 ٩. **<Translate android="true" ids="amenity_type_healthcare"/>**. تشمل ٣١ أنواع من الفلاتر.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  تسجيل الرحلة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -143,13 +143,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![نظرة عامة](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![نظرة عامة](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![نظرة عامة](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![نظرة عامة](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![إنهاء التسجيل في iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![إنهاء التسجيل في iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![إنهاء التسجيل في iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![إنهاء التسجيل في iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -176,11 +176,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | |  
 | ------------- |
 |**تبويب نظرة عامة** iOS (بالنسبة لأندرويد، معلمات المحور Y هي *الارتفاع*، *السرعة*، ومعلمة المحور X هي *المسافة*). يعرض هذا التبويب رسمًا بيانيًا يوضح التغيرات في السرعة والارتفاع على طول المسار، وتفاصيل المسار الرئيسية. بيانات المسار لنظام iOS: *المسافة*، *المدة الزمنية*، *وقت البدء*، و*وقت الانتهاء*. يمكنك رؤية كيفية عرض ذلك في إصدارات أندرويد و iOS أدناه. |
-| ![بيانات](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![بيانات](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+| ![بيانات](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![بيانات](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **تبويب الارتفاع** iOS (بالنسبة لأندرويد، معلمات المحور Y هي *الارتفاع*، *الميل*، ومعلمة المحور X هي *المسافة*). يركز هذا التبويب على ملف الارتفاع لمسارك المسجل، مما يوفر رؤى حول تغيرات الارتفاع ودرجات التضاريس. تشمل المقاييس الرئيسية لنظام iOS: *متوسط الارتفاع*، *نطاق الارتفاع*، *الصعود*، و*النزول*. توضح الرسوم البيانية أدناه الاختلافات بين واجهات أندرويد و iOS. |
-| ![بيانات](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![بيانات](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![بيانات](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![بيانات](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **تبويب السرعة** iOS (بالنسبة لأندرويد، معلمة المحور Y هي *السرعة* ومعلمة المحور X هي *المسافة*). يسلط تبويب السرعة الضوء على البيانات المتعلقة بالسرعة على طول المسار. بالنسبة لنظام iOS، يتضمن معلومات مثل *متوسط السرعة*، *السرعة القصوى*، *وقت الحركة*، و*المسافة المصححة*. تظهر لقطات الشاشة أدناه كيفية عرض هذه البيانات على كلا النظامين. |
-| ![بيانات](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![بيانات](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![بيانات](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![بيانات](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | بالنسبة **لأندرويد**، يمكنك إنشاء المزيد من المجموعات من بيانات المحور Y المتاحة وقيم المحور X. |
 | ![بيانات](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -236,19 +236,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | المعلمة | الوصف |
 |-----------------|----------------|
 | `trkpt` | **نقطة المسار** تمثل موقعًا جغرافيًا محددًا تم اكتشافه أثناء نشاطك. تتضمن كل نقطة مسار إحداثيات خط العرض وخط الطول، وتشكل أساس مسارك المسجل. |
-| `trkseg` | **مقطع المسار** يجمع نقاط المسار المتتالية، مفصولة بفواصل في النشاط، مثل التوقفات أو التوقفات. يساعد هذا في التمييز بين الحركة المستمرة وفترات الخمول ضمن تسجيل واحد. |
-| `lat` | **خط العرض** يشير إلى الموضع الشمالي-الجنوبي لنقطة على سطح الأرض. وهو نصف زوج الإحداثيات المستخدم لتحديد موقعك الدقيق. |
-| `lon` | **خط الطول** يحدد الموضع الشرقي-الغربي، مكملاً لخط العرض، لتحديد موقع نقطة على الكرة الأرضية بدقة. معًا، يحدد خط العرض وخط الطول موقعك الجغرافي الدقيق. |
-| `ele` | **الارتفاع** يقيس ارتفاع نقطة المسار فوق مستوى سطح البحر، مسجلاً بالأمتار. يمكن أن يكون هذا مفيدًا لتتبع تغيرات الارتفاع أثناء أنشطتك، مثل المشي لمسافات طويلة أو ركوب الدراجات. |
-| `time` | **الطابع الزمني** يسجل التاريخ والوقت الدقيقين عند تسجيل نقطة المسار. يتيح لك هذا تتبع مدة وتوقيت نشاطك بدقة. |
-| `hdop` | **التخفيف الأفقي للدقة (HDOP)** هو مقياس لدقة GPS، يعكس الخطأ المحتمل في الموقع بسبب مواقع الأقمار الصناعية. على عكس HDOP القياسي، تستخدم مسارات OsmAnd GPX هذه القيمة لتمثيل الدقة الأفقية بالأمتار. يرجى ملاحظة أن هذا التنفيذ يختلف عن معايير HDOP النموذجية. [تعلم المزيد](https://github.com/osmandapp/Osmand/issues/3445). |
-| `speed` | **السرعة** تسجل معدل حركتك بالأمتار في الثانية. يوفر نظرة ثاقبة على وتيرتك خلال أجزاء مختلفة من نشاطك. |
-| `heading` | **الاتجاه** يشير إلى الاتجاه الذي يشير إليه مقدمة مركبتك أو جهازك، مقاسًا بالدرجات. يختلف عن المسار، وهو المسار الفعلي للحركة. يمكن أن تحدث اختلافات بسبب عوامل خارجية مثل الرياح أو التيارات أو ظروف الطريق. [المزيد عن الاتجاه](https://en.wikipedia.org/wiki/Heading_(navigation)). |
-| `speed_sensor` | **السرعة** من [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md) تلتقط البيانات من أجهزة الاستشعار المتصلة، مما يوفر معلومات سرعة أكثر دقة، وهو أمر مفيد بشكل خاص عند ركوب الدراجات. لمزيد من التفاصيل، راجع [وثائق تنسيق ملف GPX](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `cadence` | **الإيقاع** يقيس عدد دورات الدواسة في الدقيقة، مسجلاً باستخدام [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). هذا مفيد بشكل خاص لراكبي الدراجات الذين يهدفون إلى مراقبة وتحسين كفاءة الدواسة. [اقرأ المزيد](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `power` | **قوة الدراجة** تحدد القوة المتولدة أثناء الدواسة، الملتقطة من [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). إنه مقياس أساسي لراكبي الدراجات الجادين الذين يرغبون في قياس أدائهم. [تعلم المزيد](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `atemp` | **درجة حرارة الهواء** تسجل درجة حرارة الهواء المحيط أثناء نشاطك، مقاسة باستخدام [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). لاحظ أن درجة حرارة الماء غير مدعومة. [التفاصيل هنا](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `hr` | **معدل ضربات القلب** يراقب نبضات قلبك في الدقيقة، باستخدام بيانات من [أجهزة الاستشعار](../plugins/external-sensors.md) المتصلة. يمكن أن تكون هذه المعلومات حيوية لتتبع أداء القلب والأوعية الدموية أثناء التدريبات. [اكتشف المزيد](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
+| `trkseg`  | **مقطع المسار** يجمع نقاط المسار المتتالية، مفصولة بفواصل في النشاط، مثل التوقفات أو التوقفات. يساعد هذا في التمييز بين الحركة المستمرة وفترات الخمول ضمن تسجيل واحد.  |
+| `lat` | **خط العرض** يشير إلى الموضع الشمالي-الجنوبي لنقطة على سطح الأرض. وهو نصف زوج الإحداثيات المستخدم لتحديد موقعك الدقيق.   |
+| `lon` | **خط الطول** يحدد الموضع الشرقي-الغربي، مكملاً لخط العرض، لتحديد موقع نقطة على الكرة الأرضية بدقة. معًا، يحدد خط العرض وخط الطول موقعك الجغرافي الدقيق.    |
+| `ele` | **الارتفاع** يقيس ارتفاع نقطة المسار فوق مستوى سطح البحر، مسجلاً بالأمتار. يمكن أن يكون هذا مفيدًا لتتبع تغيرات الارتفاع أثناء أنشطتك، مثل المشي لمسافات طويلة أو ركوب الدراجات.    |
+| `time` | **الطابع الزمني** يسجل التاريخ والوقت الدقيقين عند تسجيل نقطة المسار. يتيح لك هذا تتبع مدة وتوقيت نشاطك بدقة.    |
+| `hdop` | **التخفيف الأفقي للدقة (HDOP)** هو مقياس لدقة GPS، يعكس الخطأ المحتمل في الموقع بسبب مواقع الأقمار الصناعية. على عكس HDOP القياسي، تستخدم مسارات OsmAnd GPX هذه القيمة لتمثيل الدقة الأفقية بالأمتار. يرجى ملاحظة أن هذا التنفيذ يختلف عن معايير HDOP النموذجية. [تعلم المزيد](https://github.com/osmandapp/Osmand/issues/3445).   |
+| `speed` | **السرعة** تسجل معدل حركتك بالأمتار في الثانية. يوفر نظرة ثاقبة على وتيرتك خلال أجزاء مختلفة من نشاطك.  |
+| `heading`  | **الاتجاه** يشير إلى الاتجاه الذي يشير إليه مقدمة مركبتك أو جهازك، مقاسًا بالدرجات. يختلف عن المسار، وهو المسار الفعلي للحركة. يمكن أن تحدث اختلافات بسبب عوامل خارجية مثل الرياح أو التيارات أو ظروف الطريق. [المزيد عن الاتجاه](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
+| `speed_sensor` | **السرعة** من [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md) تلتقط البيانات من أجهزة الاستشعار المتصلة، مما يوفر معلومات سرعة أكثر دقة، وهو أمر مفيد بشكل خاص عند ركوب الدراجات. لمزيد من التفاصيل، راجع [وثائق تنسيق ملف GPX](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `cadence` | **الإيقاع** يقيس عدد دورات الدواسة في الدقيقة، مسجلاً باستخدام [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). هذا مفيد بشكل خاص لراكبي الدراجات الذين يهدفون إلى مراقبة وتحسين كفاءة الدواسة. [اقرأ المزيد](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `power` | **قوة الدراجة** تحدد القوة المتولدة أثناء الدواسة، الملتقطة من [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). إنه مقياس أساسي لراكبي الدراجات الجادين الذين يرغبون في قياس أدائهم. [تعلم المزيد](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `atemp` | **درجة حرارة الهواء** تسجل درجة حرارة الهواء المحيط أثناء نشاطك، مقاسة باستخدام [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). لاحظ أن درجة حرارة الماء غير مدعومة. [التفاصيل هنا](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `hr` | **معدل ضربات القلب** يراقب نبضات قلبك في الدقيقة، باستخدام بيانات من [أجهزة الاستشعار](../plugins/external-sensors.md) المتصلة. يمكن أن تكون هذه المعلومات حيوية لتتبع أداء القلب والأوعية الدموية أثناء التدريبات. [اكتشف المزيد](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 
 
 ## إعدادات التسجيل {#recording-settings}
@@ -292,7 +292,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | **تقسيم التسجيلات تلقائيًا بعد فجوة** | يقسم المسارات تلقائيًا بناءً على الفجوات الزمنية بين النقاط المسجلة. <ul><li>يبدأ مقطع جديد بعد فجوة مدتها 6 دقائق.</li><li>يبدأ مسار جديد بعد فجوة مدتها ساعتان.</li><li>يبدأ ملف جديد عند تغيير التاريخ.</li><li>يمكن أن تنتج الفجوات عن فقدان إشارة GPS أو انخفاض السرعة أو إعدادات التكوين.</li></ul><details><summary>*ملاحظة*</summary>يتم تحديد الفجوة عند عدم تسجيل أي نقاط. قد يحدث هذا إما لأن الموقع لم يتم اكتشافه أو لأنه تم اكتشافه ولكن لم يتم تسجيله. يمكن أن تسبب عدة عوامل هذا، بما في ذلك إشارات GPS الضعيفة بسبب سوء الأحوال الجوية، أو انخفاض سرعة الحركة عن العتبة المكونة. في مثل هذه الحالات، على الرغم من أن الجهاز قد يكتشف الموقع، إلا أنه لا يسجله.<br/><br/>يمكن أن تؤدي هذه الفجوات في البيانات المسجلة إلى إنشاء مقطع جديد داخل نفس المسار، أو مسار جديد في نفس الملف، أو ملف GPX جديد ضمن تسجيل واحد. تتم إدارة ذلك ضمن جلسة تسجيل بدء/إيقاف واحدة.</details> |
 | **منع التسجيل المستقل** (*أندرويد*) | يوقف تسجيل المسار مؤقتًا عند إغلاق تطبيق OsmAnd (عبر *التطبيقات الحديثة*). لا يتم عرض مؤشر الخلفية في لوحة إشعارات أندرويد. |
 | **تضمين الاتجاه** | يسجل الاتجاه (اتجاه الحركة) لكل نقطة في ملف GPX. الاتجاه هو الاتجاه الذي يواجهه الجهاز، والذي يمكن أن يختلف عن اتجاه الحركة بسبب عوامل خارجية مثل الرياح أو الانزلاق. |
-| **النشاط** | يتيح لك الخيار تحديد [نوع النشاط](../map/tracks/track-context-menu.md#ttrack-activity-type) مسبقًا لملف شخصي، والذي يتم تطبيقه بعد ذلك تلقائيًا على جميع المسارات المسجلة. |
+| **النشاط**  | يتيح لك الخيار تحديد [نوع النشاط](../map/tracks/track-context-menu.md#ttrack-activity-type) مسبقًا لملف شخصي، والذي يتم تطبيقه بعد ذلك تلقائيًا على جميع المسارات المسجلة. |
 | **أجهزة الاستشعار الخارجية** <br/> *تحتاج إلى تفعيل الملحق* | يتم تسجيل البيانات من [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md#trip-recording) مثل *<Translate android="true" ids="map_widget_ant_heart_rate"/>*، أو *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* في ملف GPX. لا يتم تسجيل بيانات *المسافة* على أندرويد أو iOS. يتم عرضه فقط عند تمكين [ملحق أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). |
 | **مقاييس المركبة** <br/> *تحتاج إلى تفعيل الملحق* | يتم تسجيل البيانات من [ماسح OBD-II](../plugins/vehicle-metrics.md#trip-recording) في ملف GPX. يتم عرضه فقط عند تمكين [ملحق مقاييس المركبة](../plugins/vehicle-metrics.md).<br />*ملاحظة*: يمكنك إضافة المقاييس التي سيتم تسجيلها في ملف GPX من القائمة: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **مجلد تخزين المسارات** (*أندرويد*) | يحدد مكان تخزين المسارات المسجلة في تبويب *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. تشمل الخيارات تخزين جميع المسارات في مجلد Rec أو تنظيمها حسب الشهر، مثل Rec/yyyyy-mm. |
@@ -356,7 +356,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## الودجات {#widgets}
 
-تتيح لك الودجات عرض المعلومات الرئيسية حول تسجيل المسار مباشرة على الشاشة، مثل *المسافة* و*المدة* و*الصعود* و*النزول*.
+تتيح لك الودجات عرض المعلومات الرئيسية حول تسجيل المسار مباشرة على الشاشة، مثل *المسافة* و*المدة* و*الصعود* و*النزول*. في أندرويد، يمكنك أيضًا إضافة ودجات *السرعة القصوى* و*متوسط الميل*.
 
 لبدء استخدام *ودجات تسجيل الرحلة*، تحتاج إلى إجراء جميع الإعدادات التالية:
 
@@ -373,7 +373,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← <Translate android="true" ids="map_widget_monitoring"/>*
 
-![إضافة ودجة المسافة/بدء-إيقاف في أندرويد](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![إضافة ودجة المسافة/بدء-إيقاف في أندرويد](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> ← اختر لوحة ← <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![إضافة ودجات التسجيل في iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![إضافة ودجة المسافة/بدء-إيقاف في iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -398,8 +398,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![ودجة تسجيل الرحلة](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
-![إنهاء التسجيل في أندرويد](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![إنهاء التسجيل في أندرويد](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![ودجة تسجيل الرحلة](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
@@ -417,13 +417,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تتم إضافة الودجة تلقائيًا عند تمكين *ملحق تسجيل الرحلة*، ولكن يمكن إخفاؤها عبر [قائمة تكوين الشاشة](../widgets/configure-screen.md#overview).
 - إذا تم تعطيل خيار *إظهار حوار البدء* في إعدادات ملحق تسجيل الرحلة، فإن النقر على الودجة النشطة سيظل يفتح مربع حوار *تسجيل الرحلة*، مما يتيح لك الوصول إلى مزيد من الخيارات والمعلومات.
 
-بالإضافة إلى ودجة *المسافة/بدء-إيقاف*، يتضمن **ملحق تسجيل الرحلة** ثلاث ودجات أخرى: *المدة* و*الصعود* و*النزول*. توفر هذه معلومات إضافية حول رحلتك، مما يساعدك على تتبع التقدم في الوقت الفعلي.
+بالإضافة إلى ودجة *المسافة/بدء-إيقاف*، يتضمن **ملحق تسجيل الرحلة** خمس ودجات أخرى: *المدة* و*الصعود* و*النزول* و*السرعة القصوى* و*متوسط الميل* (الاثنان الأخيران متاحان على أندرويد فقط). توفر هذه معلومات إضافية حول رحلتك، مما يساعدك على تتبع التقدم في الوقت الفعلي.
 
 | |
 |-----------|
 | **المسافة/بدء-إيقاف**. تعرض هذه الودجة مسافة تسجيل رحلتك المستمرة. تتم إضافتها تلقائيًا عند تمكين ملحق تسجيل الرحلة، ولكن يمكنك إخفاؤها من خلال قائمة تكوين الشاشة. تتميز الودجة بثلاث حالات مميزة: *تسجيل* و*متوقف مؤقتًا* و*غير نشط*، تشير كل منها إلى الحالة الحالية لتسجيل رحلتك. |
 | ![ودجة تسجيل الرحلة (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| لفتح [حوار تسجيل الرحلة](#start-a-dialog) عند النقر على ودجة غير نشطة، قم بتمكين خيار *إظهار حوار بدء التشغيل* في إعدادات ملحق تسجيل الرحلة. إذا تم تعطيل الخيار، سيبدأ التسجيل فورًا بعد النقر على الودجة دون فتح الحوار.|  
+| لفتح [حوار تسجيل الرحلة](#start-a-dialog) عند النقر على ودجة غير نشطة، قم بتمكين خيار *إظهار حوار بدء التشغيل* في إعدادات ملحق تسجيل الرحلة. إذا تم تعطيل الخيار، سيبدأ التسجيل فورًا بعد النقر على الودجة دون فتح الحوار.| 
+
+في أندرويد، تدعم ودجة المسافة أوضاع عرض متعددة:
+- **المسافة الإجمالية** – المسافة الإجمالية للتسجيل الحالي (افتراضي).
+- **آخر صعود** – مسافة القسم الصاعد الأخير.
+- **آخر نزول** – مسافة القسم النازل الأخير.
 
 
 ### المدة، الصعود، النزول {#duration-uphill-downhill}
@@ -432,13 +437,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**المدة**. تعرض الوقت الإجمالي لتسجيل الرحلة الحالي بالساعات والدقائق. |
+|![ودجات](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**الصعود**. يعرض الإجمالي الصاعد أو قسم الصعود الأخير، اعتمادًا على الوضع المحدد. |
+|![ودجات](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**النزول**. يشير إلى الإجمالي النازل أو قسم النزول الأخير، اعتمادًا على الوضع المحدد. |
+|![ودجات](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-</TabItem>
-
-</Tabs>
 
 | |
 |------------|
@@ -449,7 +459,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |**النزول**. يشير إلى إجمالي النزول المتراكم أثناء تسجيل الرحلة الحالي. |
 |![ودجات](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 إذا كان لديك عدة ودجات محددة — *المدة* أو *الصعود* أو *النزول* — يمكنك الوصول إلى نفس مربع الحوار لكل منها دون الحاجة إلى التبديل أو إغلاقه. تجعل هذه الواجهة الموحدة من السهل عرض وإدارة جميع المعلومات ذات الصلة بسلاسة.
+
+### السرعة القصوى ومتوسط الميل {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![السرعة القصوى أندرويد](@site/static/img/widgets/max_speed_android.png) ![متوسط الميل أندرويد](@site/static/img/widgets/average_slope_android.png)  
+
+تعرض ودجة **السرعة القصوى** السرعة القصوى لرحلة التسجيل الحالية. انقر على الودجة للتبديل بين السرعة القصوى الإجمالية والسرعة القصوى من آخر قسم صاعد أو نازل.
+
+تعرض ودجة **متوسط الميل** متوسط الميل لآخر قسم صاعد أو نازل في الرحلة الحالية. تساعد في تقدير مدى شدة الصعود أو النزول السابق، بناءً على الارتفاع المكتسب والمسافة.
 
 
 ## مقالات ذات صلة {#related-articles}

@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  الطقس
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *الإضافة الممكّنة ← <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![لوحة معلومات الطقس أندرويد 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)
+![لوحة معلومات الطقس أندرويد 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *الإضافة الممكّنة ← <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![لوحة معلومات الطقس في iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![لوحة معلومات الطقس في iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -78,6 +78,41 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 في أسفل الشاشة يوجد *شريط أدوات الطقس*. يمكنك استخدام أزرار الأيام وشريط تمرير الوقت لضبط الوقت المحدد الذي سيتم فيه عرض توقعات الطقس.
 
+### مصدر البيانات {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="أندرويد">
+
+![مصدر البيانات أندرويد](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![مصدر البيانات iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+يمكنك اختيار مصدر توقعات الطقس الذي يستخدمه OsmAnd لعرض البيانات على شاشة الطقس:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *اختيار مصدر البيانات*
+
+يتم دعم مصدري توقعات الطقس اثنين:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(نظام التنبؤ العالمي)** – المصدر الافتراضي الذي تديره NOAA/NWS. يوفر بيانات الطقس الكاملة، بما في ذلك درجة الحرارة، والضغط، والرطوبة، وطبقات الرياح والسحب.
+
+[**ECMWF**](https://www.ecmwf.int/) **(المركز الأوروبي للتنبؤات الجوية متوسطة المدى)** – مصدر توقعات بديل. يقدم بيانات عالية الجودة لدرجة الحرارة، وهطول الأمطار، والضغط، لكنه لا يوفر معلومات الرياح أو السحب. عند استخدام ECMWF، يتم عرض المعاملات غير المتاحة كـ “–”، وتظهر الطبقات الجوية المقابلة معطلة.
+
+كيفية تأثير مصدر البيانات على عرض الطقس:
+- يتم تحديث الخريطة، والرسوم البيانية، وخط الزمن، وقيم الطقس على الشاشة فورًا بعد تبديل المصدر.
+- يتم عرض المعاملات المتاحة فقط للمزود المحدد.
+- تقوم أدوات الطقس بالتحديث تلقائيًا لاستخدام المصدر المختار.
+- إذا قمت بتنزيل توقعات الطقس مسبقًا، يستخدم OsmAnd البيانات المقابلة للمزود المحدد.
+- يستخدم GFS وECMWF ذاكرات تخزين مؤقت منفصلة. يقوم تبديل المصدر بتحميل أو تحديث بلاطات الطقس ذات الصلة.
+
+
 ### تخصيص طبقات الطقس {#customize-weather-layers}
 
 <Tabs groupId="operating-systems" queryString="current-os">  
@@ -86,7 +121,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *الإضافة الممكّنة ← <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![لوحة معلومات الطقس أندرويد 2](@site/static/img/plugins/weather/weather_customize_andr.png)
+![لوحة معلومات الطقس أندرويد 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -166,7 +201,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![دمج طبقات الطقس على iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![دمج طبقات الطقس على iOS](@site/static/img/plugins/weather/weather_contours.png)
+![دمج طبقات الطقس على iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![دمج طبقات الطقس على iOS](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
@@ -193,7 +228,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::tip
 على أجهزة أندرويد، يمكنك التحقق من وقت تنزيل بيانات الطقس عن طريق النقر على *أداة الطقس*. يجب تمكين إضافة OsmAnd Development.
-![تاريخ تخزين الطقس المؤقت على أندرويد](@site/static/img/plugins/weather/weather_cash_andr.png)
+![تاريخ تخزين الطقس المؤقت أندرويد](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### تنزيل التوقعات {#download-forecast}
@@ -227,6 +262,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - زر **إزالة** *سلة المهملات* (*أندرويد*) / **إزالة التوقعات** (*iOS*). يسمح لك بحذف جميع بيانات التوقعات لهذه المنطقة.
 - زر **تعديل** *القلم الرصاص* (*أندرويد*). يسمح لك بإعادة تسمية ملف الطقس.
 
+**ملاحظة:** بعض البلدان، مثل الولايات المتحدة وكندا، تستخدم ملف توقعات دون اتصال واحد للبلد بأكمله. هذا يقلل من عدد التنزيلات ويبسط إدارة بيانات الطقس.
+
 :::info  
 يتم تحديث بيانات الطقس كل 6 ساعات (جميع التحديثات الأربعة من [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) و 3 من [ECMWF](https://www.ecmwf.int/)) وتصبح متاحة في OsmAnd مع تأخير قصير، حيث تستغرق عملية الحساب عدة ساعات قبل الإصدار (عادة حوالي 07:00 بالتوقيت العالمي المنسق).
 :::
@@ -240,7 +277,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← <Translate android="true" ids="shared_string_weather"/>*
 
-![أدوات الطقس على أندرويد](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![أدوات الطقس على أندرويد](@site/static/img/plugins/weather/weather_widgets_2_android.png)
+![أدوات الطقس على أندرويد](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![أدوات الطقس على أندرويد](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
@@ -248,7 +285,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> ← اختر لوحة ← <Translate ios="true" ids="shared_string_weather"/>*
 
-![أدوات الطقس على iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)
+![أدوات الطقس على iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 

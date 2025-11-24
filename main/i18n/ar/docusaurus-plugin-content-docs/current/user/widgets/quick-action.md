@@ -1,5 +1,5 @@
 ---
-source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title:  الإجراء السريع (الأزرار المخصصة)
 ---
@@ -197,13 +197,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![شبكة للأزرار_v_أندرويد](@site/static/img/widgets/grid_buttons_v_and.png) ![شبكة للأزرار_h_أندرويد](@site/static/img/widgets/grid_buttons_h_and.png)
+![شبكة للأزرار_v_أندرويد](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![شبكة للأزرار_h_أندرويد](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![شبكة للأزرار_v_iOS](@site/static/img/widgets/grid_buttons_v_ios.png) ![شبكة للأزرار_h_iOS](@site/static/img/widgets/grid_buttons_h_ios.png)
+![شبكة للأزرار_v_iOS](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![شبكة للأزرار_h_iOS](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 [أزرار الخريطة](../widgets/map-buttons.md#overview) يتم ترتيبها تلقائيًا باستخدام تخطيط شبكة. يتم تعيين كل زر إلى إحدى الزوايا الأربع للشاشة (*أعلى يسار*، *أعلى يمين*، *أسفل يسار*، *أسفل يمين*). إذا لم يكن هناك مساحة كافية في الزاوية المعينة، يتم محاذاة الأزرار أفقيًا أو رأسيًا، اعتمادًا على اتجاه الشاشة.
 
 يساعد هذا التخطيط في الحفاظ على اتساق الأزرار بصريًا وتجنب التداخل. على سبيل المثال، على شاشة أفقية، ستُرتب الأزرار في الزاوية اليمنى أفقيًا في أسفل الشاشة، بينما على شاشة رأسية ستمتد رأسيًا لأعلى أو لأسفل حسب الحاجة.
+
+تتكيف الشبكة مع الواجهة المحيطة وتعيد وضع الأزرار عند الحاجة، مما يضمن بقاءها مرئية ولا تتداخل مع العناصر الأخرى على الشاشة. عند إضافة أو إزالة أو إعادة ترتيب الأدوات أو اللوحات، يتم تحديث التخطيط وفقًا لذلك بحيث يبقى ترتيب الأزرار متسقًا ولا يختبئ أي عنصر.
+
+[الملفات الشخصية المستوردة](https://osmand.net/docs/user/personal/import-export#export) من جهاز آخر يتم تعديلها لتتناسب مع تخطيط الشبكة، مع الحفاظ على مواضع الأزرار الصحيحة عبر أحجام الشاشات والمنصات المختلفة.
 
 
 ## أنواع الإجراءات {#action-types}
@@ -223,8 +231,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | إظهار / إخفاء <br/> [**المسارات**](../map/vector-maps.md#routes) | يمكنك تحديد أنواع المسارات لتمكين أو تعطيل عرضها. <br/> بعض المسارات لها إعدادات إضافية. بشكل افتراضي، إذا لم تحدد أي شيء في قائمة [إعداد الخريطة](../map/configure-map-menu.md)، فسيتم تعيين نوع المسار الأول من القائمة، وإلا فسيتم تعيين نوع من اختيارك. يمكنك قراءة المزيد في مقال [المسارات](../map/routes.md). <br/> - ***مسارات الدراجات***  &nbsp;(*المسار*، *شبكات العقد*) <br/> - ***مسارات الدراجات الجبلية***  &nbsp;(*مقياس MTB*، *IMBA*) <br/> - ***مسارات المشي لمسافات طويلة***  &nbsp;(*OSMC*، *الانتماء للشبكة*، *شبكات العقد*) <br/> - ***درجة صعوبة مسارات المشي لمسافات طويلة***  &nbsp;(*مقياس SAC*، *مقياس CAI*) <br/> - ***منحدرات التزلج*** <br/> - ***مسارات الخيل*** <br/> - ***رياضات المياه البيضاء*** <br/> - ***مسارات الجري*** <br/> - ***مسارات اللياقة البدنية*** <br/> - ***مسارات السفر***  &nbsp;(*المسارات*، *كتب السفر*، *النقاط*) <br/> |
 | إظهار / إخفاء <br/> [**طبقات التضاريس**](../plugins/topography.md#overview) | يتم عرض جميع بيانات التضاريس كطبقات خريطة منفصلة. يمكنك تبديل رؤية هذه الطبقات بسرعة باستخدام الإجراء السريع. <br/> - ***خطوط الكنتور*** <br/> - ***التضاريس***  &nbsp;(*اعتمادًا على الطبقة المحددة في قائمة [إعداد الخريطة](../map/configure-map-menu.md)*، *سيتم عرض تظليل التلال*، *أو المنحدر*، *أو الارتفاع*.) |
 | تغيير <br/> [**نظام ألوان التضاريس**](../plugins/topography.md#modify-color-scheme) | يسمح لك بتحديد لوحة ألوان واحدة أو أكثر من قائمة اللوحات الموجودة، والتي ستتغير عند النقر على الزر. |
-| إظهار / إخفاء <br/> [**طبقات الطقس**](../plugins/weather.md#weather-layers) | يتم عرض جميع بيانات الطقس كطبقات خريطة منفصلة. باستخدام الإجراء السريع، يمكنك الوصول السريع لتبديل رؤية هذه الطبقات على الخريطة. <br/> - ***طبقة هطول الأمطار*** <br/> - ***طبقة السحب*** <br/> - ***طبقة الضغط الجوي*** <br/> - ***طبقة الرياح*** <br/> - ***طبقة درجة الحرارة*** |
-| فتح <br/> [**شاشة الطقس**](../plugins/weather.md) <br /> *أندرويد فقط* | يفتح شاشة توقعات [*الطقس*](../plugins/weather.md#weather-forecast-screen) مع المعلومات التفصيلية. |
+| إظهار / إخفاء <br/> [**طبقات الطقس**](../plugins/weather.md#weather-layers) | يتم عرض جميع بيانات الطقس كطبقات خريطة منفصلة. باستخدام الإجراء السريع، يمكنك الوصول السريع لتبديل رؤية هذه الطبقات على الخريطة. <br/> - ***طبقة هطول الأمطار*** <br/> - ***طبقة السحب*** <br/> - ***طبقة الضغط الجوي*** <br/> - ***طبقة الرياح*** <br/> - ***طبقة رسوم متحركة الرياح*** *(أندرويد فقط)* <br/> - ***طبقة درجة الحرارة*** <br/> على أندرويد، هناك أيضًا **طبقات الطقس** — مفتاح رئيسي لجميع طبقات الطقس النشطة. يقوم بإيقاف جميع طبقات الطقس المفعلة حاليًا دفعة واحدة. عند إعادة تشغيلها، يستعيد نفس مجموعة الطبقات التي كانت نشطة سابقًا. |
+| فتح <br/> [**شاشة الطقس**](../plugins/weather.md) | يفتح شاشة توقعات [*الطقس*](../plugins/weather.md#weather-forecast-screen) مع المعلومات التفصيلية. |
 | إظهار / إخفاء <br/> [**المفضلة**](../map/point-layers-on-map.md#favorites) | إظهار أو إخفاء النقاط المفضلة على الخريطة. |
 | إظهار / إخفاء <br/> [**المسارات**](../personal/tracks/manage-tracks.md#track-menu) | إظهار أو إخفاء آخر المسارات المرئية على الخريطة. |
 | إظهار / إخفاء <br/> [**النقاط المهمة (POI)**](../map/point-layers-on-map.md#points-of-interest-pois) | تمكين أو تعطيل عرض طبقات النقاط المهمة مع الفئات المحددة على الخريطة.<br/>يمكنك تحديد فئات متعددة من النقاط المهمة. يحل الإجراء محل فئات النقاط المهمة المحددة من إعداد الخريطة دون استخدام الإجراءات السريعة.  |
@@ -247,6 +255,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | إظهار / إخفاء <br/> [**عرض البحث**](../search/search-all.md) | يفتح أو يغلق عرض البحث. |
 | إظهار / إخفاء <br/> [**القائمة الجانبية**](../start-with/main-menu.md) | تبديل رؤية القائمة الجانبية الرئيسية للوصول إلى الميزات الأساسية. |
 | تشغيل / إيقاف <br/> [**قفل شاشة اللمس**](../map/interact-with-map.md#touch-screen-lock) | ينشط أو يعطل قفل شاشة اللمس لتجنب التفاعلات غير المقصودة مع الشاشة. |
+| فتح <br/> **WunderLINQ Datagrid** | يفتح واجهة بيانات WunderLINQ لعرض معلومات الجهاز المتصل؛ يعيد التوجيه إلى متجر التطبيقات إذا لم يتم تثبيت تطبيق WunderLINQ المطلوب. |
 
 
 ### تفاعلات الخريطة {#map-interactions}
@@ -276,7 +285,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | إضافة <br/> [**مكان وقوف**](../plugins/parking.md) | يضيف مكان وقوف إلى موقع خريطة محدد (مركزي). يتم حذف موضع الوقوف القديم. |
 | إضافة <br/> [**نقطة مهمة (POI)**](../map/point-layers-on-map.md#points-of-interest-pois) | يضيف نقطة مهمة إلى موقع خريطة محدد (مركزي) (نفس إجراء القائمة السياقية). <br /> - *إظهار مربع حوار مؤقت*. يعرض مربع حوار تأكيد. <br /> - *نوع النقطة المهمة* (اختياري). يحدد مسبقًا نوع نقطة OSM المهمة. <br /> - *علامة/قيمة* (متعددة). يضيف علامات / قيم [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) |
 | إضافة <br/> [**ملاحظة OSM**](../plugins/osm-editing.md#create--modify-osm-note) | يضيف [ملاحظة OSM](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *إظهار مربع حوار مؤقت*. يعرض مربع حوار تأكيد. <br /> - *الرسالة*. يضيف رسالة افتراضية إلى الملاحظة. |
-| إضافة <br/> [**ملاحظات وسائط**](../plugins/audio-video-notes.md) | يبدأ تسجيل ملاحظة صوتية / صورة / فيديو لموقع خريطة محدد (مركزي). |
+| إضافة <br/> [**ملاحظات وسائط**](../plugins/audio-video-notes.md) | يبدأ تسجيل ملاحظة صوتية / صورة / فيديو لموقع خريطة محدد (مركزي)؛ النقر المتكرر يوقف التسجيل. |
 | إنشاء <br/> [**مسار جديد**](../plan-route/create-route.md) <br /> *أندرويد فقط* | يفتح أداة [تخطيط مسار](../plan-route/create-route.md) وينشئ مسارًا للموقع المحدد (المركزي) على الخريطة. |
 
 
@@ -289,7 +298,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | تعيين <br/> [**نقطة البداية**](../navigation/setup/route-navigation.md#set-destinations) | تحديد موقع خريطة محدد (مركزي) كنقطة انطلاق. |
 | تعيين <br/> [**الوجهة**](../navigation/setup/route-navigation.md#set-destinations) | إضافة الموقع المحدد (المركزي) على الخريطة كوجهة. تصبح الوجهة السابقة آخر نقطة وسيطة.  |
 | استبدال <br/> [**الوجهة**](../navigation/setup/route-navigation.md#intermediate-destinations) | تعيين / استبدال موقع خريطة محدد (مركزي) كوجهة. يتم حذف الوجهة السابقة. |
-| تشغيل / إيقاف <br/> [**التكبير التلقائي للخريطة**](../map/interact-with-map.md) | تمكين أو تعطيل التكبير التلقائي للخريطة أثناء الملاحة. |
+| تشغيل /إيقاف <br/> [**التكبير التلقائي للخريطة**](../map/interact-with-map.md) | تمكين أو تعطيل التكبير التلقائي للخريطة أثناء الملاحة. |
 | بدء/إيقاف <br/> [**الملاحة**](../navigation/setup/route-navigation.md#start--stop-navigation) | بدء الملاحة (إذا كانت هناك نقطة وجهة موجودة) أو إيقاف الملاحة. |
 | إيقاف مؤقت / استئناف <br/> [**الملاحة**](../navigation/setup/route-navigation.md#pause--resume-navigation) | إيقاف مؤقت / استئناف الملاحة. |
 | إزالة <br/> [**نقطة الوجهة التالية**](../navigation/setup/route-navigation.md#intermediate-destinations) | يزيل النقطة الوسيطة التالية، إن وجدت، وإلا يزيل الوجهة ويعرض مربع حوار إنهاء الملاحة. يكون الإجراء غير نشط إذا لم يكن لديك أي وجهة. |
@@ -309,11 +318,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## استخدام لوحة المفاتيح للإجراءات {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> ← &#43;*
 
 ![الأجهزة الخارجية](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> ← الجهاز ← إضافة*
+
+![الأجهزة الخارجية](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 باستخدام وظائف أداة الإجراء السريع، يمكنك تعيين الإجراءات المطلوبة لمفاتيح جهاز الإدخال الخارجي الخاص بك. يمكن العثور على وصف في مقال [التفاعل مع الخريطة](../map/interact-with-map.md#custom-input-device-type).
 

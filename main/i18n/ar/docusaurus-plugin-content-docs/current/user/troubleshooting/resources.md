@@ -1,5 +1,5 @@
 ---
-source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: الموارد والتخصيصات
 ---
@@ -35,7 +35,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | مجموعات جوجل | Osmand (*إنجليزية*) | A group where users share tips, answer questions, and discuss OsmAnd's functionalities. | [مجموعات جوجل](https://groups.google.com/g/osmand) |
 | ريديت | OsmAnd - مناقشة ودعم | The Reddit community for OsmAnd users. Ask questions, share experiences, or show off your custom map styles. | [ريديت OsmAnd](https://www.reddit.com/r/osmand/) |
 | تيليجرام | قناة أخبار OsmAnd (*إنجليزية*) | The official OsmAnd group for announcements and updates directly from the developers. | [تيليجرام OsmAnd](https://t.me/OsmAnd_News) |
-| تويتر | قناة أخبار OsmAnd | Official OsmAnd group for live discussions, announcements, and updates. | [تويتر OsmAnd](https://x.com/osmandapp/) |
+| إكس (تويتر) | قناة أخبار OsmAnd | Official OsmAnd group for live discussions, announcements, and updates. | [إكس (تويتر) OsmAnd](https://x.com/osmandapp/) |
 | انستغرام | قناة أخبار OsmAnd | A community where you can chat, share tips, and get help with OsmAnd features. | [انستغرام OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
@@ -107,6 +107,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) هو نمط خريطة يركز على ركوب الدراجات، ويسلط الضوء على ممرات الدراجات (باللون الأحمر)، ومسارات الدراجات (خطوط زرقاء متقطعة)، ومسارات الدراجات (خطوط حمراء متقطعة)، والطرق ذات حركة مرور المركبات المحدودة، مثل شوارع الدراجات (حدود حمراء صلبة). |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) هو نمط خريطة من Holder Tamm يسمح لك باختيار إخفاء كائنات معينة أم لا. |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) is mainly based on UniMap and routes.addon.render.xml |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [هذا نمط عرض OsmAnd المحسّن لمطاردة العواصف](https://github.com/pqo/stormchasing-rendering-style) |[نمط عرض مطاردة العواصف](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 
 ### الخرائط غير المتصلة بالإنترنت {#offline-maps}

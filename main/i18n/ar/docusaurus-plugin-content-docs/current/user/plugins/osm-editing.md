@@ -1,8 +1,9 @@
 ---
-source-hash: 4924a1de13b954b832f4629a3e8dfc661ee5ce9339fd94fad9ab53e8ec18a4cc
+source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
 sidebar_position: 9
 title:  تعديل OpenStreetMap
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## نظرة عامة {#overview}
 
-[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) هي مجتمع عالمي يهدف إلى إنشاء خريطة جغرافية مجانية ومفصلة للعالم وتوفير بيانات مفتوحة المصدر ومحدثة لكل مستخدم. يسمح لك ملحق تعديل OpenStreetMap بالمساهمة في المجتمع.
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) هي مجتمع عالمي يهدف إلى إنشاء خريطة جغرافية مفصلة مجانية للعالم وتوفير بيانات مفتوحة المصدر محدثة لكل مستخدم. يسمح لك ملحق تعديل OpenStreetMap بالمساهمة في المجتمع.
 
 باستخدام OsmAnd وملحق تعديل OSM، يمكنك بسهولة المساهمة بمعلوماتك الخاصة في OpenStreetMap.org، مثل إنشاء أو تعديل [النقاط المهمة](#create--modify-poi)، وإضافة أو التعليق على [الملاحظات](#create--modify-osm-note)، وتحميل [مسارات GPX](#upload-gps-track) المسجلة.
 
@@ -47,11 +47,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![إعدادات ملحق تعديل OpenStreetMap أندرويد](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![إعدادات ملحق تعديل OpenStreetMap iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 :::note
 إعدادات الملحق عامة وتنطبق على جميع الملفات الشخصية.
@@ -117,9 +117,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![طبقة تعديل OSM أندرويد](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![طبقة تعديل OSM أندرويد ٢](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -127,7 +127,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![طبقة تعديل OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -135,7 +135,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-يمكنك تمكين أو تعطيل عرض تعديلات OSM كطبقة منفصلة مثل *ملاحظات OSM* (عبر الإنترنت)، *تعديلات OSM*، *علامات Fixme*، *علامات الملاحظات*، *الأيقونات عند مستويات التكبير المنخفضة*، في قسم [إعداد الخريطة](../map/configure-map-menu.md) من *القائمة الرئيسية*.
+يمكنك تمكين أو تعطيل عرض تعديلات OSM كطبقة منفصلة في قسم [إعداد الخريطة](../map/configure-map-menu.md) من *القائمة الرئيسية*. تشمل تعديلات OSM ما يلي:  
+- **ملاحظات OSM (عبر الإنترنت)**. تعرض ملاحظات OpenStreetMap العامة التي أنشأها المستخدمون لتسليط الضوء على مشكلات الرسم أو طلب التحديثات. تُعرض الملاحظات كعلامات تفاعلية يمكن للمساهمين مراجعتها وفتحها وحلها.  
+![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+- **تعديلات OSM**. تعرض تعديلات OSM المحلية الخاصة بك المخزنة على الجهاز قبل تحميلها إلى خادم OpenStreetMap. تساعد هذه الطبقة في مراجعة الهندسة والسمات للكائنات التي قمت بتعديلها أو إضافتها.  
+![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+- **علامات Fixme**. تسلط الضوء على الكائنات الموسومة بـ fixme=* في OSM. تحتوي هذه العناصر على تعليقات المساهمين التي تشير إلى أن المعلومات غير كاملة أو غير مؤكدة أو تحتاج إلى التحقق الميداني.  
+![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+- **علامات الملاحظات**. تعرض الكائنات التي تحتوي على علامات note=* — تعليقات المساهمين المضمنة مباشرة في بيانات OSM. عادةً ما تصف هذه العلامات الظروف المؤقتة أو السياق الإضافي للتعديل المستقبلي.  
+![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+- **الأيقونات عند مستويات التكبير المنخفضة**. يمكن تمكين تمثيلات أيقونية مبسطة لكائنات OSM باستخدام اختصارات قصيرة مستمدة من مفاتيح العلامات الأساسية. يُوصف معناها [هنا](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). تجعل هذه الميزة المزيد من الكائنات مرئية عند مستويات التكبير المنخفضة دون تحميل الخريطة أو التسبب في تداخل الأيقونات.  
+![طبقة تعديل OSM](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## إنشاء / تعديل نقطة مهمة {#create--modify-poi}
@@ -152,9 +162,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![إضافة علامة نقطة مهمة أندرويد](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![إضافة علامة نقطة مهمة أندرويد](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)
+![إضافة علامة نقطة مهمة أندرويد](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![إضافة علامة نقطة مهمة أندرويد](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
 
 </TabItem>
 
@@ -194,7 +204,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
 ![فتح ملاحظة OSM أندرويد](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![فتح ملاحظة OSM أندرويد](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
@@ -202,7 +212,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
 ![فتح ملاحظة OSM iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
@@ -253,7 +263,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-![ملحق تعديل OpenStreetMap GPX إلى OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)
+![ملحق تعديل OpenStreetMap GPX إلى OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
 
 </TabItem>
 
@@ -267,7 +277,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 **الإعدادات:**
 
 - **<Translate android="true" ids="shared_string_description"/>**. يسمح لك بإضافة وصف للمسار. ينطبق الوصف على جميع المسارات المحددة. إذا لم تدخل شيئًا في الحقل، فسيتم استخدام أسماء المسارات لكل مسار منفصل كأوصاف.
-- **<Translate android="true" ids="gpx_tags_txt"/>**. يسمح لك هذا العنصر في قسم الإعدادات بإضافة علامات لتعريف المسار. العلامة الافتراضية هي "osmand"، يمكنك إدخال علامات إضافية مفصولة بفواصل.
+- **<Translate android="true" ids="gpx_tags_txt"/>**. يسمح لك هذا العنصر في قسم الإعدادات بإضافة علامات لتعريف المسار. العلامة الافتراضية هي "osmand". إذا تم تسجيل المسار بنشاط محدد بناءً على الملف الشخصي المحدد، فسيتم إضافة هذا النشاط تلقائيًا كعلامة أثناء التحميل. بالنسبة لمجموعات المسارات المحملة، يتلقى كل مسار علامة نشاطه الخاصة. بالنسبة لبعض الملفات الشخصية (مثل النقل العام)، لا تُضاف علامة النشاط. يمكنك إدخال علامات إضافية يدويًا، مفصولة بفواصل.
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. رؤية المسار لمستخدمي OSM:
    - *عام* يعني أن المسار متاح للجمهور ويتم عرضه في شكل خام في مسارات GPS الخاصة بك، وقوائم مسارات GPS، وقوائم المسارات ذات الطابع الزمني. لا تتم الإشارة إلى البيانات المرسلة عبر واجهة برمجة التطبيقات (API) مع صفحة المسار الخاصة بك. لا تتوفر الطوابع الزمنية لنقاط التتبع من خلال واجهة برمجة تطبيقات GPS العامة ولا يتم ترتيب نقاط المسار ترتيبًا زمنيًا.
    - *قابل للتعريف* يعني أن المسار سيتم عرضه علنًا في نقاط مسار GPS الخاصة بك وقوائم مسارات GPS العامة، مما يعني أن المستخدمين الآخرين سيتمكنون من تنزيل المسار الخام وربطه باسم المستخدم الخاص بك. سترتبط بيانات نقاط المسار ذات الطابع الزمني العام من واجهة برمجة تطبيقات GPS التي يتم تمريرها عبر واجهة برمجة تطبيقات نقاط المسار بصفحة المسار الأصلية الخاصة بك.
