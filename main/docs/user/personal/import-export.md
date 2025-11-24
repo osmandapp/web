@@ -91,6 +91,15 @@ Opens and restores `.osf` files. Tap the file in the device's file manager or us
 - *Some items already exist*. You can use this feature to save both files or replace all of them.
 - *Restart*. After importing the files, the application must be restarted.
 
+Supported import file types:
+- [Tracks & routes](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/): `.gpx`, `.kml`, `.kmz`. KML and KMZ files are imported with conversion into GPX format.
+- [Maps & data files](https://www.osmand.net/docs/user/map/raster-maps/): `.obf`, `.sqlitedb`. 
+- [Backups & profiles](https://www.osmand.net/docs/user/plugins/custom/): `.osf`.
+- [Heightmaps / 3D data](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- Other: `.txt`.
+
+For a technical overview of all supported formats, see [OsmAnd File Formats](https://www.osmand.net/docs/technical/osmand-file-formats/).
+
 
 ### OsmAnd Cloud {#osmand-cloud}
 
