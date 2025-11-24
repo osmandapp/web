@@ -1,5 +1,5 @@
 ---
-source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
+source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
 
 sidebar_position: 3
 title:  Widgets informativos
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-Los widgets informativos le proporcionan un acceso rápido a datos importantes. Pueden ser datos sobre la velocidad, el tiempo, la posición de aparcamiento, datos de sensores externos, el tiempo y mucho más. Los widgets pueden configurarse según sus necesidades específicas, permitiendo su visibilidad en la pantalla de la aplicación o desactivándolos si es necesario.
+Los widgets informativos le proporcionan un acceso rápido a datos importantes. Pueden ser datos sobre la velocidad, el tiempo, la posición de aparcamiento, datos de sensores externos y mucho más. Los widgets pueden configurarse según sus necesidades específicas, permitiendo su visibilidad en la pantalla de la aplicación o desactivándolos si es necesario.
 
 ![Widgets informativos](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -302,7 +302,7 @@ El widget **Nivel de batería** muestra el porcentaje de batería de su disposit
 
 <TabItem value="ios" label="iOS">
 
-![Widget de coordenadas Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Widget de coordenadas iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -476,7 +476,7 @@ Puede leer una descripción más detallada aquí: **[complemento <Translate andr
 
 </Tabs>
 
-Los widgets de grabación de viaje se refieren al [complemento <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Puede utilizar los widgets para ver en la pantalla información breve sobre la grabación de la ruta. Como *Distancia*, *Duración*, *Ascenso* y *Descenso*.
+Los widgets de grabación de viaje se refieren al [complemento <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Puede utilizar los widgets para ver en la pantalla información breve sobre la grabación de la ruta. Como *Distancia*, *Duración*, *Ascenso*, *Descenso*, *Velocidad máxima* y *Pendiente media* (los dos últimos solo disponibles en Android).
 
 | | |
 |:------------|:------------|
@@ -502,7 +502,7 @@ Para añadir widgets de Sensores Externos a la pantalla del mapa, active el [com
 
 <TabItem value="ios" label="iOS">
 
-![widget_grabación_viaje](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Widgets de sensores externos iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -550,7 +550,7 @@ Para añadir Widgets de Métricas del Vehículo a la pantalla del mapa, active e
 
 <TabItem value="ios" label="iOS">
 
-![Widgets de métricas del vehículo Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Widgets de métricas del vehículo iOS](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
@@ -769,7 +769,7 @@ Los **widgets de cámara** le permiten supervisar la alineación entre el mapa d
 
 <InfoAndroidOnly />
 
-![Widgets de velocidad media](@site/static/img/widgets/available_RAM_2_andr.png)
+![Widget de RAM disponible](@site/static/img/widgets/available_RAM_2_andr.png)
 
 El widget **RAM disponible** es una herramienta para supervisar el uso de la memoria de su dispositivo en relación con OsmAnd. Proporciona datos detallados para ayudar a optimizar el rendimiento de la aplicación.
 

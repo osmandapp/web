@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title:  Vista de mapa de esquí
 ---
@@ -70,7 +70,7 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setting
 
 </Tabs>
 
-El estilo de mapa de invierno y esquí resalta senderos, rutas de travesía, pistas de trineo e información relacionada con el invierno y el esquí. Para mostrar el estilo en el mapa, debe realizar las siguientes configuraciones:
+El estilo de mapa de invierno y esquí resalta senderos, rutas de esquí de travesía, pistas de trineo e información relacionada con el invierno y el esquí. Para mostrar el estilo en el mapa, debe realizar las siguientes configuraciones:
 
 1. Seleccione el [perfil](../personal/profiles.md) requerido.  
 2. Abra [Configurar mapa](../map/configure-map-menu.md).  
@@ -160,7 +160,7 @@ El mapa de esquí de OsmAnd está construido como uno de los estilos de renderiz
 | Color | Descripción |
 | --- | --- |
 | ![Pista para principiantes](@site/static/img/plugins/ski-maps/1c_green_1.png) | Verde - Pista para principiantes |
-| ![ Colinas fáciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Azul - Colinas fáciles |
+| ![Colinas fáciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Azul - Colinas fáciles |
 | ![Pistas intermedias](@site/static/img/plugins/ski-maps/3c_red_1.png) | Rojo - Pistas intermedias |
 | ![Dificultad avanzada](@site/static/img/plugins/ski-maps/4c_black_1.png) | Gris - Pistas de dificultad avanzada |
 | ![Dificultad experta](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Amarillo - Pistas de dificultad experta |
@@ -168,7 +168,7 @@ El mapa de esquí de OsmAnd está construido como uno de los estilos de renderiz
 La dificultad de las pistas generalmente se indica con colores específicos. Los colores pueden ser diferentes en diferentes países y estaciones. A continuación se presentan algunas pautas prácticas.
 
 :::tip orientación
-Para una guía más específica para cada tipo de dificultad de sendero, consulte la [referencia de dificultad de pista de OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) o cualquier otra fuente que también considere pendientes, obstáculos y peligros.  
+Para una guía más específica para cada tipo de dificultad de sendero, consulte la [referencia de dificultad de pista de OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) o cualquier otra fuente que también considere pendientes, obstáculos y peligros. En el estilo de mapa de Invierno y Esquí, ciertos peligros mapeados (por ejemplo, áreas propensas a aludes etiquetadas como hazard=avalanche) pueden mostrarse como POI de peligro en el mapa y deben tenerse en cuenta junto con la dificultad de la pista. 
 :::
 
 

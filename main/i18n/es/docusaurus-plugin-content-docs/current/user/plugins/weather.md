@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  Tiempo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -60,7 +60,7 @@ El complemento del Tiempo solo está disponible con el motor de renderizado de m
 
 Ir a: *Complemento activado → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Panel de Tiempo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Panel de Tiempo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Ir a: *Complemento activado → <Translate android="true" ids="shared_string_men
 
 Ir a: *Complemento activado → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Panel de Tiempo en iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Panel de Tiempo en iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -77,6 +77,41 @@ Ir a: *Complemento activado → <Translate ios="true" ids="shared_string_menu,sh
 El menú lateral principal tiene un elemento de menú dedicado al **Tiempo** que proporciona acceso rápido a todas las herramientas meteorológicas. La *pantalla de pronóstico del tiempo* muestra información sobre *temperatura*, *presión atmosférica*, *velocidad del viento*, *cobertura de nubes* y *precipitación*.  
 
 En la parte inferior de la pantalla se encuentra la *barra de herramientas del tiempo*. Puede usar los botones de día y el control deslizante de tiempo para establecer la hora exacta en la que se mostrará el pronóstico del tiempo.
+
+### Fuente de datos {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Fuente de datos Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Fuente de datos iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+Puede elegir qué proveedor de pronósticos meteorológicos usa OsmAnd para mostrar datos en la pantalla del Tiempo:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Elegir Fuente de datos*
+
+Se admiten dos proveedores de pronósticos meteorológicos:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Sistema Global de Predicción)** – la fuente predeterminada operada por NOAA/NWS. Proporciona datos meteorológicos completos, incluidas las capas de temperatura, presión, humedad, viento y nubes.
+
+[**ECMWF**](https://www.ecmwf.int/) **(Centro Europeo de Previsiones Meteorológicas a Plazo Medio)** – una fuente alternativa de pronósticos. Ofrece datos de alta calidad de temperatura, precipitación y presión, pero no proporciona información sobre viento o nubes. Al usar ECMWF, los parámetros no disponibles se muestran como “–” y las capas meteorológicas correspondientes aparecen desactivadas.
+
+Cómo afecta la Fuente de datos a la visualización del Tiempo:
+- El mapa, los gráficos, la línea de tiempo y los valores meteorológicos en la pantalla se actualizan inmediatamente después de cambiar la fuente.
+- Solo se muestran los parámetros disponibles para el proveedor seleccionado.
+- Los widgets del tiempo se actualizan automáticamente para usar la fuente elegida.
+- Si previamente descargó un pronóstico meteorológico, OsmAnd usa los datos correspondientes al proveedor seleccionado.
+- GFS y ECMWF usan cachés separados. Cambiar la fuente carga o actualiza las teselas meteorológicas relevantes.
+
 
 ### Personalizar capas del tiempo {#customize-weather-layers}
 
@@ -226,6 +261,8 @@ En el menú de descarga de pronósticos, puede obtener información y establecer
 - *Actualizar solo por Wi-Fi* (*iOS*). Active esta opción si no desea utilizar datos móviles para las descargas.  
 - Botón **Eliminar** *papelera* (*Android*) / **Eliminar pronóstico** (*iOS*). Le permite eliminar todos los datos de pronóstico para esta región.
 - Botón **Editar** *lápiz* (*Android*). Le permite renombrar el archivo del tiempo.
+
+**Nota:** Algunos países, como EE. UU. y Canadá, usan un solo archivo de Pronóstico sin conexión para todo el país. Esto reduce el número de descargas y simplifica la gestión de datos meteorológicos.
 
 :::info  
 Los datos meteorológicos se actualizan cada 6 horas (las 4 actualizaciones de [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) y 3 de [ECMWF](https://www.ecmwf.int/)) y están disponibles en OsmAnd con un breve retraso, ya que el proceso de cálculo tarda varias horas antes de su publicación (generalmente alrededor de las 07:00 UTC).  

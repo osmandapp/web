@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title:  Gestionar Tracks
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Resumen {#overview}
 
-Todos los tracks en OsmAnd se almacenan en una pestaña en *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd procesa el archivo de track en [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), pero los formatos [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) y [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) pueden ser importados y convertidos a GPX. Lea más sobre los diferentes tipos de tracks en el artículo [Tracks en el mapa](../../map/tracks/index.md#types-of-tracks).
+Todos los tracks en OsmAnd se almacenan en una pestaña en *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd procesa el archivo de track en [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), pero [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) y [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) pueden ser importados y convertidos a GPX. Lea más sobre los diferentes tipos de tracks en el artículo [Tracks en el mapa](../../map/tracks/index.md#types-of-tracks).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -196,7 +196,7 @@ Una vez que haya hecho su elección, se proporcionan los siguientes pasos:
 
 - **Mostrar en el mapa** — Con esta función, puede mostrar los tracks seleccionados en el mapa para comprender mejor su ubicación y relación entre sí.
 
-- **Compartir** (*Android*) / **Exportar** (*iOS*) — Si desea compartir los datos seleccionados con otros usuarios o guardarlos en un servicio en la nube, la función *Compartir/Exportar* le permite enviar tracks y carpetas utilizando diferentes métodos para compartir.
+- **Compartir** (*Android*) / **Exportar** (*iOS*) — Abre el menú Compartir del sistema y envía los tracks seleccionados como archivos GPX (.gpx) o exporta carpetas seleccionadas usando la aplicación o servicio en la nube elegido.
 
 - **Subir a OpenStreetMap** — Puede enviar los tracks seleccionados a OpenStreetMap, contribuyendo al desarrollo y mejora de los datos.
 
@@ -309,7 +309,7 @@ El menú de la carpeta de tracks le permite ver, renombrar, exportar y gestionar
 
 Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
 
-![Panel de control en Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![Mis Lugares con tracks en Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
 </TabItem>
 
@@ -317,7 +317,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_plac
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
-![Panel de control en iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![Mis Lugares con tracks en iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -136,6 +136,7 @@ El panel **Información del objeto** proporciona detalles adicionales sobre el o
 
 Los detalles disponibles incluyen:
 
+- [Descripción del artículo](#article-description)
 - [Nombres alternativos](#alternative-names)
 - [Coordenadas](#coordinates)
 - [Dentro de áreas](#polygon-information)
@@ -153,7 +154,34 @@ Además, el panel puede incluir [Detalles de OpenStreetMap](https://wiki.openstr
 - [Horario de apertura](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Tarifa](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Accesibilidad](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Ancho](https://wiki.openstreetmap.org/wiki/Key:width) / [Alto](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Ancho](https://wiki.openstreetmap.org/wiki/Key:width) / [Alto](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Más allá de los campos enumerados anteriormente, OsmAnd también puede mostrar información descriptiva adicional extraída de OpenStreetMap. Estos atributos le ayudan a comprender mejor las características de un lugar e incluyen detalles como elevación, dirección, año de construcción, tipo de superficie o cobertura, nivel interior, opciones de pago, disponibilidad de entrega o para llevar, y muchos otros. OsmAnd muestra estos atributos con etiquetas claras y, cuando es posible, iconos, lo que facilita su lectura y reconocimiento. El conjunto exacto de atributos depende de los datos disponibles en OpenStreetMap para el objeto seleccionado.
+
+
+### Descripción del artículo {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Lista de descripción](@site/static/img/map/description_list_new_android.png) ![Lista de descripción](@site/static/img/map/description_list_dialog.png)
+
+Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](../plugins/wikipedia.md#wikipedia-article), una descripción de un [Favorito](../personal/favorites.md) o un Waypoint; al tocar puede abrir la descripción completa.
+
+Si el lugar seleccionado tiene un artículo de Wikipedia, se muestra una vista previa corta en esta sección. Cuando el artículo completo no está disponible sin conexión, aparece el botón *Leer en Wikipedia*. Al tocarlo, se abre un diálogo con opciones dependiendo del acceso del usuario: los usuarios con un plan comprado pueden descargar los datos regionales de Wikipedia o abrir el artículo en un navegador, mientras que los usuarios gratuitos pueden abrir el artículo en línea o proceder a la pantalla que ofrece acceso sin conexión.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Lista de descripción](@site/static/img/map/description_list_new_ios.png)
+
+Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](../plugins/wikipedia.md), una descripción de un [Favorito](../personal/favorites.md) o un Waypoint; al tocar puede abrir la descripción completa.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Nombres alternativos {#alternative-names}
@@ -168,7 +196,7 @@ Además, el panel puede incluir [Detalles de OpenStreetMap](https://wiki.openstr
 
 <TabItem value="ios" label="iOS">
 
-![Nombres alternativos iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Nombres alternativos iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Nombres alternativos Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Nombres alternativos Android](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -199,7 +227,7 @@ Características de la visualización de nombres alternativos:
 
 <TabItem value="ios" label="iOS">
 
-![Información de polígono iOS](@site/static/img/map/polygon_information_ios.png)
+![Información de polígono Android](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -211,7 +239,7 @@ La función **Dentro del área** enumera las **áreas** en las que se encuentra 
 
 |Formato de coordenadas| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Grados decimales)</li><li>DDD.DDDDD (N/S, E/W coma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Estándar UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Swiss Grid CH1903 y CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Enlace web de OsmAnd](https://osmand.net/map)</li><li>[Enlace web de OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordenadas](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Grados decimales simples)</li><li>DDD.DDDDD (N/S, E/W coma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Estándar UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Swiss Grid CH1903 y CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Enlace web de OsmAnd](https://osmand.net/map)</li><li>[Enlace web de OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordenadas](@site/static/img/map/map_context_menu_Coordinates.png) |
 
 En el menú contextual, puede encontrar [coordenadas geográficas](../search/search-coordinates.md#coordinate-format) de un punto en varios formatos y también enlaces compartibles de OsmAnd y [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (la última opción solo está disponible cuando el [plugin de edición de OpenStreetMap](../plugins/osm-editing.md) está habilitado). Si expande la sección de coordenadas y realiza una pulsación larga en cualquier línea de la lista, sus valores se copiarán automáticamente al portapapeles (**Android**) o la opción *Copiar* estará disponible en el mensaje emergente (**iOS**).  
 
@@ -230,7 +258,7 @@ El enlace web de OsmAnd puede ser reconocido automáticamente por OsmAnd (ejempl
 
 <TabItem value="ios" label="iOS">
 
-![PDI cercanos iOS](@site/static/img/map/nearby_poi_ios.png)
+![PDI cercano IOS](@site/static/img/map/nearby_poi_ios.png)
 
 </TabItem>
 
@@ -257,7 +285,7 @@ Al tocar *Lugares populares cercanos* ([Popular Places](https://osmand.net/docs/
 
 <TabItem value="ios" label="iOS">
 
-![Lugares cercanos iOS](@site/static/img/map/nearby_places_ios.png)
+![Lugares cercanos IOS](@site/static/img/map/nearby_places_ios.png)
 
 Esta sección resalta lugares populares que le ayudan a descubrir destinos interesantes y puntos de referencia alrededor de su ubicación actual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* y *<Translate android="true" ids="search_more"/>* para navegar y buscar todos los lugares populares. 
 
@@ -298,27 +326,6 @@ Muestra información sobre las rutas de transporte público para la parada de tr
 Esta es una lista de todos los puntos en un grupo para un Favorito o Waypoint. Al tocar, se expande la lista completa de puntos de un grupo; al tocar un punto de la lista, el mapa se mueve al punto seleccionado.
 
 
-
-
-### Descripción del artículo {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Lista de descripción](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Lista de descripción](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](../plugins/wikipedia.md), una descripción de un [Favorito](../personal/favorites.md) o un Waypoint; al tocar puede abrir la descripción completa.
 
 
 ### Enlace de OpenStreetMap {#openstreetmap-link}

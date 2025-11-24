@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Configurar pantalla
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -267,7 +267,23 @@ El modo le permite agregar **más de un widget en una sola fila** en los paneles
     - [Perfil de elevación (*Solo Android*)](../widgets/nav-widgets#elevation-widget)
     - [Maniobras de ruta](../widgets/nav-widgets.md#next-turn)
 
-- **Widgets simples**. Se pueden agregar varios widgets simples a una sola fila. Estos widgets pueden mostrar *Nombre*, *Unidades de medida*, *Valor* e *Icono*.
+- **Widgets simples**. Se pueden agregar varios widgets simples a una sola fila. Estos widgets pueden mostrar *Nombre*, *Unidades de medida*, *Valor* e *Icono*. El texto en los widgets simples se delineará automáticamente para garantizar una legibilidad clara contra diversos fondos de mapa en el modo de panel transparente.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Contorno de widget Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Contorno de widget iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Páginas {#pages}
@@ -317,12 +333,17 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
     - Mejora la claridad y maximiza el espacio para datos importantes.
     - Especialmente útil al mostrar muchos widgets en la misma **fila**.
 
-3. **Tamaño individual para diferentes filas** (*para todos los paneles*):
+3. **Ocultar etiquetas de texto de widgets**:
+
+    - Oculta automáticamente las etiquetas de texto para mantener la información numérica completamente visible en diseños compactos.
+    - Ayuda a mantener un arreglo de widgets limpio y legible cuando el espacio es limitado.   
+
+4. **Tamaño individual para diferentes filas** (*para todos los paneles*):
 
     - Los widgets se pueden dimensionar individualmente ajustando el tamaño de la fila y la columna.
     - **NOTA:** Cambiar el tamaño de un widget en una fila/columna cambiará el tamaño de todos los widgets en esa fila/columna.
 
-4. **Para cambiar el tamaño del widget y la visibilidad del icono:**
+5. **Para cambiar el tamaño del widget y la visibilidad del icono:**
 
     - Seleccione un widget que ya haya agregado al panel.  
     - Toque el icono de *Ajustes* en el lado derecho del campo del widget.

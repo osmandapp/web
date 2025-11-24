@@ -1,5 +1,5 @@
 ---
-source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title:  Acción rápida (Botones personalizados)
 ---
@@ -69,7 +69,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,cu
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tocar Editar (Icono de lápiz en la esquina superior derecha) → Seleccionar acciones*
 
-![Widget de acción rápida_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Botón personalizado Android](@site/static/img/widgets/add_action_screen_ios.png)
+![Widget de acción rápida_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Botón personalizado iOS](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
@@ -151,7 +151,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,sh
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
-![Botón personalizado Android](@site/static/img/widgets/custom_button_ios.png)  
+![Botón personalizado iOS](@site/static/img/widgets/custom_button_ios.png)  
 
 </TabItem>
 
@@ -197,13 +197,17 @@ El widget de *Acción Rápida* aparece en la esquina inferior de la pantalla del
 
 <TabItem value="android" label="Android">  
 
-![Cuadrícula para botones_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Cuadrícula para botones_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Cuadrícula para botones_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![Cuadrícula para botones_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Cuadrícula para botones_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Cuadrícula para botones_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Cuadrícula para botones_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![Cuadrícula para botones_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ El widget de *Acción Rápida* aparece en la esquina inferior de la pantalla del
 Los [botones del mapa](../widgets/map-buttons.md#overview) se organizan automáticamente utilizando un diseño de cuadrícula. Cada botón se asigna a una de las cuatro esquinas de la pantalla (*superior-izquierda*, *superior-derecha*, *inferior-izquierda*, *inferior-derecha*). Si no hay suficiente espacio en la esquina asignada, los botones se alinean horizontal o verticalmente, dependiendo de la orientación de la pantalla.
 
 Este diseño ayuda a mantener los botones visualmente consistentes y evita superposiciones. Por ejemplo, en una pantalla horizontal, los botones en la esquina derecha se alinearán horizontalmente en la parte inferior de la pantalla, mientras que en una pantalla vertical se expandirán verticalmente hacia arriba o hacia abajo según sea necesario.
+
+La cuadrícula se adapta a la interfaz circundante y reposiciona los botones cuando sea necesario, asegurando que permanezcan visibles y no interfieran con otros elementos en pantalla. Cuando se añaden, eliminan o reorganizan widgets o paneles, el diseño se actualiza en consecuencia para que el orden de los botones permanezca consistente y ningún elemento se oculte.
+
+Los [perfiles importados](https://osmand.net/docs/user/personal/import-export#export) desde otro dispositivo se ajustan al diseño de cuadrícula, manteniendo las posiciones de los botones correctas en diferentes tamaños de pantalla y plataformas.
 
 
 ## Tipos de acción {#action-types}
@@ -223,8 +231,8 @@ Este diseño ayuda a mantener los botones visualmente consistentes y evita super
 | Mostrar / Ocultar <br/> [**Rutas**](../map/vector-maps.md#routes) | Puede seleccionar tipos de ruta para activar o desactivar su visualización. <br/> Algunas rutas tienen configuraciones adicionales. Por defecto, si no ha seleccionado nada en el menú [Configurar mapa](../map/configure-map-menu.md), se asignará el primer tipo de ruta de la lista; de lo contrario, se asignará un tipo de su elección. Puede leer más en el artículo [Rutas](../map/routes.md). <br/> - ***Rutas ciclistas***  &nbsp;(*Ruta*, *Redes de nodos*) <br/> - ***Rutas de bicicleta de montaña***  &nbsp;(*Escala MTB*, *IMBA*) <br/> - ***Rutas de senderismo***  &nbsp;(*OSMC*, *Afiliación a la red*, *Redes de nodos*) <br/> - ***Grado de dificultad de las rutas de senderismo***  &nbsp;(*Escala SAC*, *Escala CAI*) <br/> - ***Pistas de esquí*** <br/> - ***Rutas a caballo*** <br/> - ***Deportes de aguas bravas*** <br/> - ***Rutas de carrera*** <br/> - ***Pistas de fitness*** <br/> - ***Rutas de viaje***  &nbsp;(*Pistas*, *Libros de viaje*, *Puntos*) <br/> |
 | Mostrar / Ocultar <br/> [**Capas de topografía**](../plugins/topography.md#overview) | Todos los datos de topografía se presentan como capas de mapa separadas. Puede cambiar rápidamente la visibilidad de estas capas con Acción Rápida. <br/> - ***Curvas de nivel*** <br/> - ***Terreno***  &nbsp;(*Dependiendo de la capa seleccionada en el menú [Configurar mapa](../map/configure-map-menu.md)*, *se mostrará Sombreado*, *Pendiente* o *Altitud*.) |
 | Cambiar <br/> [**Esquema de color del terreno**](../plugins/topography.md#modify-color-scheme) | Le permite seleccionar una o más paletas de una lista de las existentes, que cambiarán cuando toque el botón. |
-| Mostrar / Ocultar <br/> [**Capas meteorológicas**](../plugins/weather.md#weather-layers) | Todos los datos meteorológicos se presentan como capas de mapa separadas. Con Acción Rápida, puede obtener acceso rápido para cambiar la visibilidad de estas capas en el mapa. <br/> - ***Capa de precipitación*** <br/> - ***Capa de nubes*** <br/> - ***Capa de presión*** <br/> - ***Capa de viento*** <br/> - ***Capa de temperatura*** |
-| Abrir <br/> [**Pantalla del tiempo**](../plugins/weather.md) <br /> *Solo Android* | Abre la pantalla de pronóstico del [*Tiempo*](../plugins/weather.md#weather-forecast-screen) con la información detallada. |
+| Mostrar / Ocultar <br/> [**Capas meteorológicas**](../plugins/weather.md#weather-layers) | Todos los datos meteorológicos se presentan como capas de mapa separadas. Con Acción Rápida, puede obtener acceso rápido para cambiar la visibilidad de estas capas en el mapa. <br/> - ***Capa de precipitación*** <br/> - ***Capa de nubes*** <br/> - ***Capa de presión*** <br/> - ***Capa de viento*** <br/> - ***Capa de animación de viento*** *(Solo Android)* <br/> - ***Capa de temperatura*** <br/> En Android, también hay **Capas meteorológicas** — un interruptor maestro para todas las capas meteorológicas activas. Apaga todas las capas meteorológicas habilitadas actualmente de una vez. Cuando se enciende de nuevo, restaura exactamente el mismo conjunto de capas que estaban activas antes. |
+| Abrir <br/> [**Pantalla del tiempo**](../plugins/weather.md) | Abre la pantalla de pronóstico del [*Tiempo*](../plugins/weather.md#weather-forecast-screen) con la información detallada. |
 | Mostrar / Ocultar <br/> [**Favoritos**](../map/point-layers-on-map.md#favorites) | Mostrar u ocultar los puntos favoritos en el mapa. |
 | Mostrar / Ocultar <br/> [**Pistas**](../personal/tracks/manage-tracks.md#track-menu) | Mostrar u ocultar las últimas pistas visibles en el mapa. |
 | Mostrar / Ocultar <br/> [**PDI**](../map/point-layers-on-map.md#points-of-interest-pois) | Activar o desactivar la visualización de capas de PDI con categorías seleccionadas en el mapa.<br/>Puede seleccionar múltiples categorías de PDI. La acción reemplaza las categorías de PDI seleccionadas en Configurar mapa sin usar Acciones Rápidas.  |
@@ -247,6 +255,7 @@ Este diseño ayuda a mantener los botones visualmente consistentes y evita super
 | Mostrar / Ocultar <br/> [**Vista de búsqueda**](../search/search-all.md) | Abre o cierra la vista de búsqueda. |
 | Mostrar / Ocultar <br/> [**Menú lateral**](../start-with/main-menu.md) | Alterna la visibilidad del menú lateral principal para acceder a las funciones principales. |
 | Activar / Desactivar <br/> [**Bloqueo de pantalla táctil**](../map/interact-with-map.md#touch-screen-lock) | Activa o desactiva el bloqueo de la pantalla táctil para evitar interacciones no deseadas con la pantalla. |
+| Abrir <br/> **WunderLINQ Datagrid** | Abre la interfaz de datos WunderLINQ para ver la información del dispositivo conectado; redirige a la App Store si la aplicación WunderLINQ requerida no está instalada. |
 
 
 ### Interacciones del mapa {#map-interactions}
@@ -276,7 +285,7 @@ Este diseño ayuda a mantener los botones visualmente consistentes y evita super
 | Añadir <br/> [**Lugar de estacionamiento**](../plugins/parking.md) | Añade un estacionamiento a una ubicación seleccionada (central) del mapa. La posición de estacionamiento anterior se elimina. |
 | Añadir <br/> [**PDI**](../map/point-layers-on-map.md#points-of-interest-pois) | Añade un PDI a una ubicación seleccionada (central) del mapa (igual que la acción del menú contextual). <br /> - *Mostrar un diálogo intermedio*. Muestra un diálogo de confirmación. <br /> - *Tipo de PDI* (opcional). Preselecciona el tipo de PDI de OSM. <br /> - *Etiqueta/Valor* (múltiple). Añade etiquetas / valores de [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) |
 | Añadir <br/> [**Nota OSM**](../plugins/osm-editing.md#create--modify-osm-note) | Añade una [nota de OSM](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Mostrar un diálogo intermedio*. Muestra un diálogo de confirmación. <br /> - *Mensaje*. Añade un mensaje predeterminado a la nota. |
-| Añadir <br/> [**Notas multimedia**](../plugins/audio-video-notes.md) | Inicia la grabación de notas de audio / foto / video para una ubicación seleccionada (central) del mapa. |
+| Añadir <br/> [**Notas multimedia**](../plugins/audio-video-notes.md) | Inicia la grabación de notas de audio / foto / video para una ubicación seleccionada (central) del mapa; una presión repetida detiene la grabación. |
 | Crear <br/> [**Nueva ruta**](../plan-route/create-route.md) <br /> *Solo Android* | Abre la herramienta [Planificar una ruta](../plan-route/create-route.md) y crea una ruta para la ubicación seleccionada (central) en el mapa. |
 
 
@@ -309,11 +318,25 @@ Este diseño ayuda a mantener los botones visualmente consistentes y evita super
 
 ## Usar teclado para acciones {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![Dispositivos externos](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Dispositivo → Añadir*
+
+![Dispositivos externos](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 Utilizando la funcionalidad de la herramienta de Acción Rápida, puede asignar las acciones deseadas a las teclas de su dispositivo de entrada externo. Puede encontrar una descripción en el artículo [Interactuar con el mapa](../map/interact-with-map.md#custom-input-device-type).
 
@@ -324,5 +347,5 @@ Utilizando la funcionalidad de la herramienta de Acción Rápida, puede asignar 
 - [Botones del mapa](./map-buttons.md)
 - [Widgets de información](./info-widgets.md)
 - [Widgets de navegación](./nav-widgets.md)
-- [Regla y regla de radio](./radius-ruler.md)
+- [Regla de radio y regla](./radius-ruler.md)
 - [Widgets de marcadores](./markers.md)

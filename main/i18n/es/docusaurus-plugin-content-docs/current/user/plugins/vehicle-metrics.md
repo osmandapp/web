@@ -1,5 +1,5 @@
 ---
-source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title:  Métricas del vehículo
 ---
@@ -119,6 +119,8 @@ Elija su dispositivo OBD-II de la lista y establezca la conexión.
 - **Renombrar**. Le permite asignar un nombre personalizado al sensor para una identificación más fácil.
 - **Olvidar**. Elimina el sensor OBD-II previamente emparejado de la lista, requiriendo un nuevo emparejamiento si se necesita más tarde.
 
+**Comportamiento de reconexión** *(solo Android)***:** OsmAnd intenta automáticamente reconectarse al adaptador OBD-II cuando se inicia la aplicación, cuando se inicia la navegación o cuando se lanza Android Auto. Si no hay conexión disponible, los widgets de Métricas del vehículo muestran “–”. Un solo toque en cualquier widget de Métricas del vehículo intentará reconectarse al sensor. Si el sensor ya está conectado, el toque cambia los modos de visualización del widget como de costumbre.
+
 
 ## Lista de métricas {#metrics-list}
 
@@ -234,6 +236,13 @@ Algunos widgets ofrecen opciones de modo de visualización:
 
 - **Instantáneo**. Muestra datos en tiempo real para la métrica seleccionada.
 - **Promedio**. Muestra valores promediados durante un intervalo de tiempo configurable (de 15 segundos a 60 minutos).
+
+Varios widgets, incluido *Consumo de combustible*, adaptan sus unidades mostradas y formatos de métricas regionales en función de los [Ajustes del perfil](https://osmand.net/docs/user/personal/profiles#units--formats). Cuando se usan unidades de volumen distintas a los litros, el Consumo de combustible admite mostrar valores como Millas por galón (MPG). El tipo exacto de MPG depende de la unidad de volumen seleccionada:
+
+- Galones estadounidenses → MPG (EE. UU.)
+- Galones imperiales → MPG (Reino Unido)
+
+El widget selecciona automáticamente el formato adecuado según las unidades de <Translate android="true" ids="routing_attr_length_name"/> y <Translate android="true" ids="shared_string_volume"/> en el perfil activo, y su modo de visualización elegido se conserva al exportar e importar perfiles.
 
 
 ## Artículos relacionados {#related-articles}

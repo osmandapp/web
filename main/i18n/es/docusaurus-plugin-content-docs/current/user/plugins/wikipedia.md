@@ -1,5 +1,5 @@
 ---
-source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
+source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -117,7 +117,7 @@ Para mostrar/ocultar los PDI de Wikipedia, haz lo siguiente:
 
 Con los datos de Wikipedia cargados, independientemente del modo de visibilidad de los [PDI de Wikipedia](../map/point-layers-on-map.md#-wikipedia) en el mapa, es posible [buscar](../search/search-poi.md) cualquier información de Wikipedia.
 
-Cuando tocas el botón Buscar, aparece un panel adicional que te permite [buscar](../search/index.md) en todo el texto y/o en una categoría específica. En el primer caso, los resultados de la búsqueda mostrarán los PDI de Wikipedia con los artículos de Wikipedia correspondientes entre otros tipos de información. En el caso de una [búsqueda por categoría de Wikipedia](../search/search-poi.md#poi-search-by-categories), los resultados de la búsqueda solo mostrarán información de Wikipedia, ordenada por la ubicación más cercana al área del mapa que se muestra actualmente en la pantalla.  
+Cuando tocas el botón Buscar, aparece un panel adicional que te permite [buscar](../search/index.md) en todo el texto y/o en una categoría específica. En el caso anterior, los resultados de la búsqueda mostrarán los PDI de Wikipedia con los artículos de Wikipedia correspondientes entre otros tipos de información. En el caso de una [búsqueda por categoría de Wikipedia](../search/search-poi.md#poi-search-by-categories), los resultados de la búsqueda solo mostrarán información de Wikipedia, ordenada por la ubicación más cercana al área del mapa que se muestra actualmente en la pantalla.  
 
 - En la versión de **Android**, puedes abrir [Buscar](../search/index.md) tocando el *icono de búsqueda* en la esquina superior izquierda de la pantalla y/o tocando la *opción Buscar* en el menú.
 - En la versión de **iOS**, para abrir [Buscar](../search/index.md), el icono de búsqueda se encuentra en la esquina superior izquierda de la pantalla.
@@ -164,25 +164,34 @@ Cuando tocas el botón Buscar, aparece un panel adicional que te permite [buscar
 
 ## Artículo de Wikipedia {#wikipedia-article}
 
-Para abrir el artículo de Wikipedia:
-
-1. Activa la capa de [PDI de Wikipedia](../map/point-layers-on-map.md#-wikipedia) para un perfil específico.
-2. Toca un PDI en el mapa.
-3. En el [menú contextual](../map/map-context-menu.md) de un PDI, toca *Detalles* (o simplemente desliza el *menú contextual* hacia arriba) para ver un resumen del artículo de Wikipedia elegido.
-4. Si tocas ese texto (para la versión de iOS), serás redirigido al artículo de Wikipedia sin conexión.
-5. Usa el botón *Leer artículo* o *Leer artículo completo* para abrir la versión completa del artículo de Wikipedia.
-
-
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![PDI de Wikipedia en francés en inglés](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+Para abrir el artículo de Wikipedia:
+
+1. Activa la capa de [PDI de Wikipedia](../map/point-layers-on-map.md#-wikipedia) para un perfil especificado.
+2. Toca el PDI en el mapa.
+3. En el [menú contextual](../map/map-context-menu.md) de un PDI, toca [Detalles](../map/map-context-menu.md#details) (o simplemente desliza el *menú contextual* hacia arriba) para ver un resumen del [artículo de Wikipedia](../map/map-context-menu.md#article-description) elegido.
+4. Usa el botón *Leer artículo completo* para abrir la versión completa del artículo de Wikipedia.
+5. Si los datos de Wikipedia no están descargados, aparece el botón *Leer en Wikipedia*.
+6. Al tocar este botón, se abre un diálogo con las siguientes opciones: 
+- Descargar Wikipedia y Abrir en el Navegador (versión de pago).
+- Leer Wikipedia sin conexión y Abrir en el Navegador (versión gratuita).
+
+![PDI de Wikipedia en francés en inglés](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Para abrir el artículo de Wikipedia:
+
+1. Activa la capa de [PDI de Wikipedia](../map/point-layers-on-map.md#-wikipedia) para un perfil especificado.
+2. Toca el PDI en el mapa.
+3. En el [menú contextual](../map/map-context-menu.md) de un PDI, toca [Detalles](../map/map-context-menu.md#details) (o simplemente desliza el *menú contextual* hacia arriba) para ver un resumen del [artículo de Wikipedia](../map/map-context-menu.md#article-description) elegido.
+4. Si tocas ese texto, serás redirigido al artículo de Wikipedia sin conexión.
+5. Usa el botón *Leer artículo* para abrir la versión completa del artículo de Wikipedia.
 
 ![PDI de Wikipedia en francés en inglés en iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
