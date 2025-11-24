@@ -311,6 +311,70 @@ export function equalsPoints(arr1, arr2) {
     return arr1?.length === arr2?.length && JSON.stringify(arr1) === JSON.stringify(arr2);
 }
 
+/**
+ * Updates track routeTypes from routing result
+ * Processes geometry points and merges route types into track's global routeTypes array
+ *
+ * @param {Array} newGeo - Array of geometry points with segments
+ * @param {Array} routeTypes - Array of route types from routing result
+ * @param {Object} ctx - Application context
+ */
+export function updateTrackRouteTypes(newGeo, routeTypes, ctx) {
+    const updatedTypes = processGeometryPoints(newGeo, routeTypes ?? ctx.selectedGpxFile.routeTypes ?? []);
+    ctx.setSelectedGpxFile((prev) => {
+        return { ...prev, routeTypes: updatedTypes };
+    });
+}
+
+function processGeometryPoints(result, routeTypes) {
+    result.forEach((point) => {
+        if (point.segment) {
+            const segment = point.segment;
+
+            const segmentTypes = segment.ext.types ?? null;
+            const segmentPointTypes = segment.ext.pointTypes ?? null;
+            const segmentNames = segment.ext.names ?? null;
+
+            if (routeTypes && routeTypes.length > 0) {
+                let updatedSegmentRouteTypes = new Map();
+                routeTypes.map((type, oldIndex) => {
+                    let newIndex;
+                    const existingTypeIndex = routeTypes.findIndex(
+                        (globalType) => globalType.tag === type.tag && globalType.value === type.value
+                    );
+                    if (existingTypeIndex !== -1) {
+                        newIndex = existingTypeIndex;
+                    } else {
+                        routeTypes.push(type);
+                        newIndex = routeTypes.length - 1;
+                    }
+                    updatedSegmentRouteTypes.set(oldIndex, newIndex);
+                });
+
+                if (segmentTypes) {
+                    segment.ext.types = updateRouteTypeIndexes(segmentTypes, updatedSegmentRouteTypes);
+                }
+                if (segmentPointTypes) {
+                    segment.ext.pointTypes = updateRouteTypeIndexes(segmentPointTypes, updatedSegmentRouteTypes);
+                }
+                if (segmentNames) {
+                    segment.ext.names = updateRouteTypeIndexes(segmentNames, updatedSegmentRouteTypes);
+                }
+            }
+
+            delete segment.routeTypes;
+        }
+    });
+    return routeTypes;
+}
+
+function updateRouteTypeIndexes(value, updatedSegmentRouteTypes) {
+    return value.replace(/\d+/g, (match) => {
+        const index = parseInt(match, 10);
+        return updatedSegmentRouteTypes.has(index) ? updatedSegmentRouteTypes.get(index) : index;
+    });
+}
+
 export function addDistance(track) {
     if (track.points && track.points.length > 0) {
         addDistanceToPoints(track.points);
