@@ -1,6 +1,6 @@
 import { ClickAwayListener, Grid, IconButton, MenuItem, MenuList, Paper, Popper } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
-import TracksManager from '../../manager/track/TracksManager';
+import TracksManager, { updateTrackRouteTypes } from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import PointManager from '../../manager/PointManager';
 import { Close } from '@mui/icons-material';
@@ -125,10 +125,16 @@ export default function PointContextMenu({ anchorEl }) {
     }
 
     async function join(point1, point2) {
-        point2.geometry = await ctx.trackRouter.updateRouteBetweenPoints(ctx, point1, point2);
+        const result = await ctx.trackRouter.updateRouteBetweenPoints(ctx, point1, point2);
+        point2.geometry = result?.points || [];
+        if (result) {
+            updateTrackRouteTypes(result.points, result.routeTypes, ctx);
+        }
         point1.profile = point2.profile;
         point1.geoProfile = point2.geoProfile;
-        delete point1.geometry[point1.geometry.length - 1].profile;
+        if (point1.geometry?.length > 0) {
+            delete point1.geometry[point1.geometry.length - 1].profile;
+        }
         ctx.selectedGpxFile.updateLayers = true;
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.trackState.update = true;
