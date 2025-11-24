@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  Wetter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -60,7 +60,7 @@ Das Wetter-Plugin ist nur mit der Karten-Rendering-Engine [Version 2](../persona
 
 Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Wetter-Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Wetter-Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_me
 
 Gehe zu: *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Wetter-Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Wetter-Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -77,6 +77,40 @@ Gehe zu: *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,s
 Das Hauptseitenmenü hat einen eigenen Menüpunkt **Wetter**, der schnellen Zugriff auf alle Wetter-Werkzeuge bietet. Der *Wettervorhersage-Bildschirm* zeigt Informationen über *Temperatur*, *Luftdruck*, *Windgeschwindigkeit*, *Wolkenbedeckung* und *Niederschlag* an.  
 
 Am unteren Bildschirmrand befindet sich die *Wetter-Symbolleiste*. Mit den Tages-Schaltflächen und dem Zeitregler können Sie die genaue Zeit einstellen, zu der die Wettervorhersage angezeigt wird.
+
+### Datenquelle {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Datenquelle Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Datenquelle iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+Sie können auswählen, welchen Wettervorhersage-Anbieter OsmAnd verwendet, um Daten auf dem Wetter-Bildschirm anzuzeigen:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Datenquelle auswählen*
+
+Zwei Wettervorhersage-Anbieter werden unterstützt:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – die Standardquelle, betrieben von NOAA/NWS. Bietet vollständige Wetterdaten, einschließlich Temperatur-, Druck-, Feuchtigkeits-, Wind- und Wolken-Ebenen.
+
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – eine alternative Vorhersagequelle. Bietet hochwertige Daten zu Temperatur, Niederschlag und Druck, liefert jedoch keine Wind- oder Wolkeninformationen. Bei Verwendung von ECMWF werden nicht verfügbare Parameter als „–“ angezeigt, und die entsprechenden Wetter-Ebenen erscheinen deaktiviert.
+
+Auswirkungen der Datenquelle auf die Wetteranzeige:
+- Die Karte, Diagramme, Zeitleiste und Wetterwerte auf dem Bildschirm werden sofort nach dem Wechsel der Quelle aktualisiert.
+- Es werden nur die Parameter angezeigt, die für den ausgewählten Anbieter verfügbar sind.
+- Wetter-Widgets aktualisieren sich automatisch, um die gewählte Quelle zu verwenden.
+- Wenn Sie zuvor eine Wettervorhersage heruntergeladen haben, verwendet OsmAnd die Daten, die der ausgewählten Quelle entsprechen.
+- GFS und ECMWF verwenden separate Caches. Der Wechsel der Quelle lädt oder aktualisiert die relevanten Wetter-Tiles.
 
 ### Wetter-Ebenen anpassen {#customize-weather-layers}
 
@@ -226,6 +260,8 @@ Im Menü zum Herunterladen der Vorhersage können Sie Informationen abrufen und 
 - *Nur über WLAN aktualisieren* (*iOS*). Aktivieren Sie diese Option, wenn Sie keine mobilen Daten für Downloads verwenden möchten.  
 - **Entfernen** *Mülleimer*-Schaltfläche (*Android*) / **Vorhersage entfernen** (*iOS*). Ermöglicht das Löschen aller Vorhersagedaten für diese Region.
 - **Bearbeiten** *Bleistift*-Schaltfläche (*Android*). Ermöglicht das Umbenennen der Wetterdatei.
+
+**Hinweis:** Einige Länder, wie die USA und Kanada, verwenden eine einzige Offline-Vorhersagedatei für das gesamte Land. Dies reduziert die Anzahl der Downloads und vereinfacht das Management der Wetterdaten.
 
 :::info  
 Wetterdaten werden alle 6 Stunden aktualisiert (alle 4 Updates von [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) und 3 von [ECMWF](https://www.ecmwf.int/)) und werden in OsmAnd mit einer kurzen Verzögerung verfügbar, da der Berechnungsprozess vor der Veröffentlichung mehrere Stunden dauert (normalerweise gegen 07:00 UTC).  

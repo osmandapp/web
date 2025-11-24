@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
 Das Menü **Bildschirm konfigurieren** in OsmAnd ermöglicht es Ihnen, die Kartenoberfläche durch Hinzufügen und Anordnen von Widgets, Schaltflächen und Schnellaktionen auf mehreren Leisten anzupassen.
@@ -24,7 +24,7 @@ Sie können:
 
 - [Informations-](../widgets/info-widgets.md), [Navigations-](../widgets/nav-widgets.md) und [markierungsbezogene](../widgets/markers.md) Widgets hinzufügen.
 - [Schnellaktionen](../widgets/quick-action.md), [benutzerdefinierte Schaltflächen](../widgets/quick-action.md#custom-buttons) und [Standard-Schaltflächen](../widgets/map-buttons.md) hinzufügen oder bearbeiten.
-- Widgets in Leisten organisieren (oben, unten, links, rechts, zentriert).
+- Widgets in Leisten (oben, unten, links, rechts, zentriert) organisieren.
 - Mehrere **Seiten** innerhalb der Seitenleisten erstellen, die Größe der Widgets wählen.
 - Zeilenhöhe wählen und Widget-Symbole umschalten.
 
@@ -267,7 +267,23 @@ Der Modus ermöglicht es Ihnen, **mehr als ein Widget in einer einzigen Zeile** 
     - [Höhenprofil (*Nur Android*)](../widgets/nav-widgets#elevation-widget)
     - [Routenmanöver](../widgets/nav-widgets.md#next-turn)
 
-- **Einfache Widgets**. Mehrere einfache Widgets können zu einer einzigen Zeile hinzugefügt werden. Diese Widgets können *Name*, *Maßeinheiten*, *Wert* und *Symbol* anzeigen.
+- **Einfache Widgets**. Mehrere einfache Widgets können zu einer einzigen Zeile hinzugefügt werden. Diese Widgets können *Name*, *Maßeinheiten*, *Wert* und *Symbol* anzeigen. Der Text in einfachen Widgets wird automatisch umrandet, um eine klare Lesbarkeit auf verschiedenen Kartenhintergründen im transparenten Leistenmodus zu gewährleisten.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Widget-Umriss Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Widget-Umriss iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Seiten {#pages}
@@ -317,12 +333,17 @@ Widgets in der rechten und linken Leiste können in **Seiten** gruppiert werden.
     - Verbessert die Übersichtlichkeit und maximiert den Platz für wichtige Daten.
     - Besonders nützlich, wenn viele Widgets in derselben **Zeile** angezeigt werden.
 
-3. **Individuelle Größe für verschiedene Zeilen** (*für alle Leisten*):
+3. **Ausblenden von Widget-Textbeschriftungen**:
+
+    - Blendet Textbeschriftungen automatisch aus, um numerische Informationen in kompakten Layouts vollständig sichtbar zu halten.
+    - Hilft, eine saubere und lesbare Widget-Anordnung beizubehalten, wenn der Platz begrenzt ist.   
+
+4. **Individuelle Größe für verschiedene Zeilen** (*für alle Leisten*):
 
     - Widgets können individuell durch Anpassung der Zeilen- und Spaltengröße dimensioniert werden.
     - **HINWEIS:** Das Ändern der Größe eines Widgets in einer Zeile/Spalte ändert die Größe aller Widgets in dieser Zeile/Spalte.
 
-4. **So ändern Sie die Widget-Größe und die Sichtbarkeit des Symbols:**
+5. **So ändern Sie die Widget-Größe und die Sichtbarkeit des Symbols:**
 
     - Wählen Sie ein Widget aus, das Sie bereits zur Leiste hinzugefügt haben.  
     - Tippen Sie auf das *Einstellungen*-Symbol auf der rechten Seite des Widget-Feldes.

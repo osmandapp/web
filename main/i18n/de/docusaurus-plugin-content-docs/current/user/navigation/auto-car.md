@@ -1,5 +1,5 @@
 ---
-source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
+source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -177,7 +177,7 @@ Um Ihr endgültiges Ziel als Kartenmarkierung zu definieren, müssen Sie zunäch
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_tracks.png)  
 
-Um eine Route zu einem Ziel zu erstellen, können Sie einen vorhandenen Track auswählen, der in der OsmAnd-App verfügbar ist. Der Track kann im Voraus [heruntergeladen](../personal/tracks/manage-tracks.md#import), als [aufgezeichnet](../plugins/trip-recording.md) verwendet oder in [Route planen](../plan-route/create-route.md) erstellt werden.  
+Um eine Route zu einem Ziel zu erstellen, können Sie einen vorhanden Track auswählen, der in der OsmAnd-App verfügbar ist. Der Track kann im Voraus [heruntergeladen](../personal/tracks/manage-tracks.md#import), als [aufgezeichnet](../plugins/trip-recording.md) verwendet oder in [Route planen](../plan-route/create-route.md) erstellt werden.  
 
 Wählen Sie aus der Liste der Tracks unter *Menü → Meine Orte → [Tracks](../personal/tracks/manage-tracks.md)* den gewünschten aus, bevor Sie sich mit dem Multimediasystem des Fahrzeugs verbinden, und die Route wird entweder bis zum Start des Tracks aufgebaut oder die aktuelle Richtung entlang des Tracks angezeigt.
 
@@ -227,6 +227,27 @@ Routeninformationen bestehen aus:
 Wenn aktiviert, zeigt **[die Widget-Einstellung](#eta-next-stop)** (Routeninformationen) Routendetails für den nächsten Halt ([den Zwischenpunkt](../navigation/setup/route-navigation.md#intermediate-destinations)) an.
 
 
+### Navigationswarnungen {#navigation-alerts}
+
+![Fehlende Warnung](@site/static/img/navigation/auto-car/missing_alert.png) ![Private Warnung](@site/static/img/navigation/auto-car/private_alert.png)
+
+Hilfreiche Warnungen werden automatisch angezeigt, bevor die Navigation gestartet wird, wenn die Route nicht normal erstellt werden kann. Dies verhindert, dass die Route beim Laden hängen bleibt, und ermöglicht es Ihnen, schnell zu wählen, wie Sie fortfahren möchten.
+
+**Fehlende oder veraltete Karten**
+
+Wenn sich Ihr Ziel außerhalb der heruntergeladenen Kartenbereiche befindet, wird eine Meldung angezeigt und Sie können eine der folgenden Aktionen wählen:
+- **Heruntergeladene Karten verwenden**. Die Route wird nur mit den bereits auf Ihrem Gerät gespeicherten Karten erstellt. (Die Route kann unvollständig sein, wenn die erforderlichen Kartendaten nicht verfügbar sind.)
+- **Auf dem Telefon anzeigen**. Der Bildschirm zum Herunterladen von Karten wird auf Ihrem Smartphone geöffnet, wo die notwendigen Regionen heruntergeladen werden können. Nach dem Herunterladen wird die Routenberechnung automatisch neu gestartet.
+
+Diese Warnung wird direkt auf dem Fahrzeugbildschirm angezeigt, genau wie in der mobilen App.
+
+**Warnung vor privatem Zugang**
+
+Wenn sich Ihr Ziel in einem privaten oder eingeschränkt zugänglichen Bereich befindet, wird eine Warnung angezeigt und Sie können wählen:
+- **Erlauben**. Die Navigation wird fortgesetzt, unter Verwendung privater Straßen, wenn dies erlaubt ist oder Sie Zugang haben.
+- **Abbrechen**. Die Navigationsanfrage wird verworfen und der vorherige Bildschirm wiederhergestellt.
+
+
 ### Bildschirm-Warnhinweis-Widget {#screen-alert-widget}
 
 Dieses Informations-Widget kombiniert Warnungstypen wie **Fußgängerüberwege** und **Geschwindigkeitsbegrenzung**.
@@ -258,6 +279,24 @@ Die OsmAnd-App ermöglicht es Ihnen, die 3D-Kartenansicht auf dem *Android Auto*
 - Öffnen Sie das Hauptmenü *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* direkt in der OsmAnd-App.
 - Nach der Konfiguration der Einstellungen wird die **3D-Schaltfläche** auf dem *Android Auto*-Bildschirm angezeigt, wenn die Kategorienliste für Ziele geschlossen ist.
 - Sie können durch Tippen auf diese Schaltfläche zwischen den 3D- und 2D-Kartenmodi wechseln.
+
+### Navigation beenden {#finish-navigation}
+
+![Navigation beenden](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+Wenn die Navigation in Android Auto abgeschlossen ist, erscheint ein spezielles Dialogfeld „Navigation beenden“ auf dem Fahrzeugbildschirm. Es verwendet denselben Ankunftsdetektionsalgorithmus wie die mobile App und hilft Ihnen, Ihre Fahrt schnell abzuschließen oder einen Parkplatz in der Nähe zu finden.
+
+Verfügbare Optionen:
+- **Als Parkort markieren**. Speichert Ihre aktuelle Position als Parkort und platziert einen Parkmarker auf der Karte.
+- **Parken suchen**. Öffnet den Suchbildschirm mit der vorausgewählten Kategorie Parken, so können Sie leicht nahegelegene Parkbereiche finden.
+- **Route neu berechnen**. Erstellt eine neue Route zu Ihrem ursprünglichen Ziel, wenn Sie früher angehalten haben oder weiterfahren möchten.
+- **Navigation beenden**. Beendet die Navigation vollständig und kehrt zu der Standardkartenansicht von OsmAnd zurück.
+
+Verhalten beim Trennen von Android Auto:
+- Wenn Ihr Telefon sich trennt, wenn das Fahrzeug bereits innerhalb von 100 m vom Ziel ist, stoppt OsmAnd die Navigation automatisch, wechselt zum Standardprofil zurück und es erscheint keine Ankunftsbenachrichtigung auf dem Telefonsbildschirm.
+- Wenn die Trennung erfolgt, während Sie stillstehen oder sich langsamer als 1 m/s bewegen (z. B. an einer Tankstelle), pausiert OsmAnd die Navigation vorübergehend. Sie wird automatisch fortgesetzt, wenn das Gerät wieder mit Android Auto verbunden wird.
+
+Dieses Update stellt auch sicher, dass Android Auto-Sitzungen nun korrekt geschlossen werden, unnötigen Akkuverbrauch verhindern und „Fahrt im Gange“-Benachrichtigungen stoppen, sobald die Navigation endet.
 
 
 ## Einstellungen {#settings}

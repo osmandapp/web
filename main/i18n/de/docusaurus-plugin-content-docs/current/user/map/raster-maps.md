@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Rasterkarten (Online / Offline)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -296,7 +296,7 @@ Hier sind die wichtigsten Parameter, die beim Einrichten einer neuen Online-Kart
 | Parameter | Beschreibung |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Geben Sie einen Namen für die neue Online-Kartenquelle an. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Geben Sie die URL für die Online-Kachelquelle ein oder fügen Sie sie ein. Stellen Sie sicher, dass sie dem Kachel-URL-Format entspricht. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Geben Sie die URL für die Online-Kachelquelle ein oder fügen Sie sie ein. Stellen Sie sicher, dass sie dem Kachel-URL-Format entspricht. Die URL kann bestimmte Platzhalter enthalten, die OsmAnd automatisch basierend auf der spezifischen benötigten Kachel ersetzt. Die am häufigsten verwendeten Platzhalter basieren auf der [OpenStreetMap slippy map tilenames convention](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` oder `{0}`: Zoomstufe</li><li>`{x}` oder `{1}`: Kachel-X-Index</li><li>`{y}` oder `{2}`: Kachel-Y-Index</li></ul> Für Beispiele weniger häufig verwendeter Platzhalter siehe die [vordefinierten Online-Rasterkartenquellen](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Dieser Parameter beeinflusst, wie die Karte angezeigt wird. <br/><ul><li>Als *Kartentyp* wird die Karte auf die ausgewählten Zoomstufen beschränkt.</li><li>Als *Überlagerung/untere Ebene* erscheint die Karte auf den ausgewählten Zoomstufen, wobei außerhalb dieser Stufen eine Hoch- oder Herunterskalierung angewendet wird.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Legen Sie die Dauer (in Minuten) fest, nach der zwischengespeicherte Kacheln aktualisiert werden. Sie können dieses Feld leer lassen, wenn Sie nicht möchten, dass Kacheln automatisch neu geladen werden. <br/><ul><li>1 Tag = 1440 Minuten</li><li>1 Woche = 10.080 Minuten</li><li>30 Tage = 43.200 Minuten</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Wählen Sie je nach Quelle zwischen *Pseudo-Mercator-Projektion* und *Elliptischer Mercator-Projektion*. |

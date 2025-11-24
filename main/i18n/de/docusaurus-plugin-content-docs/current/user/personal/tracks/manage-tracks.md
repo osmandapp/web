@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title:  Tracks verwalten
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
-Alle Tracks in OsmAnd werden in einem Tab unter *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* gespeichert. OsmAnd verarbeitet die Track-Datei im [GPX-Format](https://de.wikipedia.org/wiki/GPS_Exchange_Format), aber [KML](https://de.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://de.wikipedia.org/wiki/Keyhole_Markup_Language) können importiert und in GPX konvertiert werden. Lesen Sie mehr über die verschiedenen Arten von Tracks im Artikel [Tracks auf der Karte](../../map/tracks/index.md#types-of-tracks).
+Alle Tracks in OsmAnd werden in einem Tab unter *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* gespeichert. OsmAnd verarbeitet die Track-Datei im [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), aber [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) können importiert und in GPX konvertiert werden. Lesen Sie mehr über die verschiedenen Arten von Tracks im Artikel [Tracks on map](../../map/tracks/index.md#types-of-tracks).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -57,7 +57,7 @@ Alle Tracks in OsmAnd werden in einem Tab unter *<Translate android="true" ids="
 
 Sie können Tracks in OsmAnd auf folgende Weisen hinzufügen:
 
-1. Einen Track aus einer externen Quelle **[importieren](./manage-tracks.md#import--export-track)**.
+1. **[Importieren](./manage-tracks.md#import--export-track)** einen Track aus einer externen Quelle.
 2. Einen neuen Track in der Anwendung mit dem Werkzeug **[Route planen](../../plan-route/create-route.md)** erstellen.
 3. Einen Track in der Anwendung mit dem Plugin **[Reiseaufzeichnung](../../plugins/trip-recording.md)** aufzeichnen.
 4. Mehrere Punkte über Koordinaten eingeben und als Track mit dem Werkzeug **[Koordinateneingabe](../../plan-route/coordinate-input.md)** speichern.
@@ -70,7 +70,7 @@ Sie können Tracks in OsmAnd auf folgende Weisen hinzufügen:
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
 
 ![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,7 +78,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![Meine Orte mit Tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
@@ -86,7 +86,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 
 </Tabs>
 
-Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automatisch im Ordner [Meine Orte](../../personal/myplaces.md) im Tab *Tracks* angezeigt. Sie sind nach Ordnern geordnet oder werden in einer Liste darunter angezeigt.
+Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automatisch im Ordner [My Places](../../personal/myplaces.md) im Tab *Tracks* angezeigt. Sie sind nach Ordnern geordnet oder werden in einer Liste darunter angezeigt.
 
 
 ### Track-Menü {#track-menu}
@@ -95,7 +95,7 @@ Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automati
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -103,7 +103,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![Kontextmenü eines Tracks in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -196,7 +196,7 @@ Sobald Sie Ihre Auswahl getroffen haben, stehen folgende Schritte zur Verfügung
 
 - **Auf Karte anzeigen** — Mit dieser Funktion können Sie die ausgewählten Tracks auf der Karte anzeigen, um deren Lage und Beziehung zueinander besser zu verstehen.
 
-- **Teilen** (*Android*) / **Exportieren** (*iOS*) — Wenn Sie ausgewählte Daten mit anderen Benutzern teilen oder in einem Cloud-Dienst speichern möchten, können Sie mit der Funktion *Teilen/Exportieren* Tracks und Ordner über verschiedene Freigabemethoden versenden.
+- **Teilen** (*Android*) / **Exportieren** (*iOS*) — Öffnet das System-Teilen-Menü und sendet die ausgewählten Tracks als GPX-Dateien (.gpx) oder exportiert ausgewählte Ordner mit der gewählten App oder Cloud-Diensten.
 
 - **Nach OpenStreetMap hochladen** — Sie können ausgewählte Tracks an OpenStreetMap übermitteln und so zur Entwicklung und Verbesserung der Daten beitragen.
 
@@ -273,7 +273,7 @@ Die ausgewählte Sortieroption wird nicht nur auf den aktuellen Unterordner ange
 
 Tippen Sie auf das *Drei-Punkte-Menü* im Ordnerfeld, um das Ordnermenü zu **öffnen**.
 
-![Multitrack importieren](@site/static/img/personal/tracks/tracks_folder_menu.png)
+![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
@@ -307,7 +307,7 @@ Das Track-Ordnermenü ermöglicht es Ihnen, Ordner anzuzeigen, umzubenennen, zu 
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
 
 ![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
@@ -315,7 +315,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![Meine Orte mit Tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
@@ -329,8 +329,8 @@ Am Ende der Liste im Tab *Tracks* und unter der Liste der Tracks **in jedem Ihre
 - *Gesamtsumme der* **Distanzen** — Die Gesamtlänge aller Tracks im ausgewählten Ordner, gemessen in den von Ihnen gewählten Einheiten, wird angezeigt.
 - *Summe der* **Anstiege** — Die Daten geben den gesamten Höhengewinn über alle Tracks im ausgewählten Ordner an.
 - *Summe der* **Abstiege** — Dieser Parameter ist die Summe der Höhenverluste auf allen Tracks im ausgewählten Ordner.
-- *Summe der* **Dauer** — Zeigt die Gesamtzeit an, die zum Absolvieren aller Tracks im ausgewählten Ordner benötigt wurde.
-- *Gesamt**größe** der heruntergeladenen Dateien in MB* — Die Gesamtgröße der heruntergeladenen Dateien in Megabyte zeigt an, wie viel Speicherplatz alle Tracks im ausgewählten Ordner auf Ihrem Gerät belegen.
+- *Summe der* **Dauer** *Zeit* — Zeigt die Gesamtzeit an, die zum Absolvieren aller Tracks im ausgewählten Ordner benötigt wurde.
+- *Gesamt**Größe** der heruntergeladenen Dateien in MB* — Die Gesamtgröße der heruntergeladenen Dateien in Megabyte zeigt an, wie viel Speicherplatz alle Tracks im ausgewählten Ordner auf Ihrem Gerät belegen.
 
 
 ### Ordneraktionen {#folder-actions}
@@ -378,7 +378,7 @@ So öffnen Sie die Ordneraktionen:
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
@@ -386,7 +386,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![Kontextmenü eines Tracks in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
 
@@ -411,12 +411,12 @@ Das Import-Werkzeug ermöglicht es Ihnen, Tracks aus externen Dateien für die O
 
     - Tippen Sie auf eine GPX-, KML- oder KMZ-Datei aus Messaging-Apps, E-Mail, Google Drive oder Dateimanagern.
     - Wählen Sie "In OsmAnd öffnen", wenn Sie dazu aufgefordert werden.
-    - Der importierte Track wird im Ordner **Import** in *Meine Orte* gespeichert.
+    - Der importierte Track wird im Ordner **Import** in *My Places* gespeichert.
     - Schritte: Tippen Sie auf die GPX-Datei → In OsmAnd öffnen.
 
-2. **Import über das Menü *Meine Orte*:**
+2. **Import über das Menü *My Places*:**
 
-    - Öffnen Sie das Menü *Meine Orte → Tracks*.
+    - Öffnen Sie das Menü *My Places → Tracks*.
     - Wählen Sie die zu importierende GPX-Datei aus.
 
     *Zusätzliche Optionen:*
@@ -433,15 +433,15 @@ Das Import-Werkzeug ermöglicht es Ihnen, Tracks aus externen Dateien für die O
 
 <TabItem value="android" label="Android">
 
-![Multitrack importieren](@site/static/img/personal/tracks/import_multitrack.png) ![Multitrack importieren](@site/static/img/personal/tracks/import_multitrack_1.png)
+![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-| Exportieren | Importieren |
+| Export | Import |
 |:------------|:---------------|
-| ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Exportieren </summary> ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Exportieren </summary> ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">
@@ -467,7 +467,7 @@ Es gibt mehrere Möglichkeiten, eine oder mehrere Track-Dateien in einen beliebi
 
 1. Über [*Track-Kontextmenü → Teilen*](../../map/tracks/track-context-menu.md#options).
 
-2. Über *Menü "Meine Orte" → Tracks → Ordner- / Track-Menü*:
+2. Über *My Places-Menü → Tracks → Ordner- / Track-Menü*:
 
     - Um einen [**einzelnen Track zu exportieren**](#track-menu), wählen Sie das Menü des Tracks.
     - Für den [**Export mehrerer Tracks**](#track-folder), wählen Sie das Menü des gewünschten Ordners.

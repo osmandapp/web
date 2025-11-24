@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Eine Route planen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -142,6 +142,10 @@ Die Einstellung **An die Straßen anheften** ermöglicht es, einen aufgezeichnet
 - Straßennamen und Fahrspurinformationen.
 - Höhendaten.
 - [Straßenattribute](../navigation/setup/route-details.md#road-attributes).
+- Aktualisiertes Höhenprofil basierend auf der Straßen-Geometrie.
+- Mögliche Neuberechnung der Track-Geometrie (Vereinfachung oder Anpassung der Punkte an das Straßennetz).
+
+Wenn ein Track an Straßen angehängt wird, können die folgenden Parameter aufgrund der Neuberechnung der Geometrie und Höhe des Tracks geändert werden: *Entfernung, Aufstieg / Abstieg, Durchschnittsgeschwindigkeit (und das Geschwindigkeitsdiagramm), Höchstgeschwindigkeit, Zeit in Bewegung* und *Dauer*. Diese Werte können vom ursprünglichen GPX-Track abweichen, wenn die neuberechnete straßenbasierte Höhe oder Geometrie erheblich vom aufgezeichneten GPS-Daten abweicht.
 
 Sie können einen [Schwellenwert](../navigation/setup/gpx-navigation.md#attach-to-the-roads) für die Entfernung festlegen, die vereinfachte Trackpunkte von den ursprünglichen Trackpunkten haben dürfen.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Route planen Android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Route planen Favoriten Android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Um eine Entfernung zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der *Zeiger*-Position hinzu und tippen Sie auf die Schaltfläche *Hinzufügen*. Über die **Punkteliste** unten können Sie Punkte neu anordnen, löschen oder auf ein spezifisches [Punkt-Kontextmenü](#point-context-menu) zugreifen.
+
+Sie können auch direkt von der Karte einen Zwischenpunkt hinzufügen, indem Sie auf einen POI oder Favoriten tippen, um sein Kontextmenü zu öffnen, und dann auf *PUNKT HINZUFÜGEN* tippen. In diesem Modus werden Kontextmenüs für Nicht-Punkt-Objekte nicht angezeigt. Beim Hinzufügen eines POI/Favoriten wird sein Name als Routenpunktname beibehalten; wenn Sie diesen Punkt später auf der Karte verschieben, wird der Name zurückgesetzt.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Route planen iOS](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Um eine Entfernung zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der *Zeiger*-Position hinzu und tippen Sie auf die Schaltfläche *Punkt hinzufügen*. Über die **Punkteliste** unten können Sie Punkte neu anordnen, löschen oder auf ein spezifisches [Punkt-Kontextmenü](#point-context-menu) zugreifen.
+
 </TabItem>
 
 </Tabs>  
-
-Um eine Entfernung zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der *Zeiger*-Position hinzu und tippen Sie auf die Schaltfläche *Punkt hinzufügen*. Über die **Punkteliste** unten können Sie Punkte neu anordnen, löschen oder auf ein spezifisches [Punkt-Kontextmenü](#point-context-menu) zugreifen.
 
 :::note
 Sie können auch jede Aktion, die Sie bei der Routenplanung durchgeführt haben, **rückgängig machen**/**wiederholen**.
@@ -364,7 +372,7 @@ Beim Speichern eines neuen Tracks können Sie die Option ***Vereinfachter*** Tra
 
 <TabItem value="android" label="Android">
 
-![Route planen Android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 

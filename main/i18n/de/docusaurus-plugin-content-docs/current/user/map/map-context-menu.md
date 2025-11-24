@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -136,6 +136,7 @@ Das Panel **Objektinformationen** bietet zusätzliche Details zum ausgewählten 
 
 Verfügbare Details umfassen:
 
+- [Artikelbeschreibung](#article-description)
 - [Alternative Namen](#alternative-names)
 - [Koordinaten](#coordinates)
 - [Innerhalb von Gebieten](#polygon-information)
@@ -153,7 +154,34 @@ Zusätzlich kann das Panel [OpenStreetMap-Details](https://wiki.openstreetmap.or
 - [Öffnungszeiten](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Gebühr](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Barrierefreiheit](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Breite](https://wiki.openstreetmap.org/wiki/Key:width) / [Höhe](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Breite](https://wiki.openstreetmap.org/wiki/Key:width) / [Höhe](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Über die oben genannten Felder hinaus kann OsmAnd auch zusätzliche beschreibende Informationen aus OpenStreetMap anzeigen. Diese Attribute helfen Ihnen, die Merkmale eines Ortes besser zu verstehen, und können Details wie Höhe, Richtung, Baujahr, Oberflächen- oder Bedeckungstyp, Innenraumebene, Zahlungsoptionen, Verfügbarkeit von Lieferung oder Abholung und viele andere enthalten. OsmAnd zeigt diese Attribute mit klaren Beschriftungen und, wo möglich, Symbolen an, um das Lesen und Erkennen der Informationen zu erleichtern. Der genaue Satz der Attribute hängt von den in OpenStreetMap für das ausgewählte Objekt verfügbaren Daten ab.
+
+
+### Artikelbeschreibung {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Beschreibungsliste](@site/static/img/map/description_list_new_android.png) ![Beschreibungsliste](@site/static/img/map/description_list_dialog.png)
+
+Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md#wikipedia-article), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
+
+Falls der ausgewählte Ort einen Wikipedia-Artikel hat, wird eine kurze Vorschau in diesem Abschnitt angezeigt. Wenn der vollständige Artikel offline nicht verfügbar ist, erscheint die Schaltfläche *Auf Wikipedia lesen*. Ein Antippen darauf öffnet einen Dialog mit Optionen je nach Benutzerzugriff: Nutzer mit einem gekauften Plan können die regionalen Wikipedia-Daten herunterladen oder den Artikel im Browser öffnen, während kostenlose Nutzer den Artikel online öffnen oder zum Bildschirm weitergeleitet werden, der Offline-Zugriff anbietet.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Beschreibungsliste](@site/static/img/map/description_list_new_ios.png)
+
+Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Alternative Namen {#alternative-names}
@@ -298,27 +326,6 @@ Zeigt Informationen über ÖPNV-Routen für die gewählte Haltestelle an. Inform
 Dies ist eine Liste aller Punkte in einer Gruppe für einen Favoriten oder Wegpunkt. Durch Antippen wird die gesamte Liste der Punkte einer Gruppe erweitert. Wenn Sie einen Punkt aus der Liste antippen, wird die Karte zum ausgewählten Punkt verschoben.
 
 
-
-
-### Artikelbeschreibung {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Beschreibungsliste](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Beschreibungsliste](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](../plugins/wikipedia.md), einem [Favoriten](../personal/favorites.md) oder einer Wegpunktbeschreibung. Durch Antippen können Sie die vollständige Beschreibung öffnen.
 
 
 ### OpenStreetMap-Link {#openstreetmap-link}

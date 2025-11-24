@@ -1,5 +1,5 @@
 ---
-source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
+source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -164,25 +164,34 @@ Wenn Sie auf die Schaltfläche "Suchen" tippen, erscheint ein zusätzliches Pane
 
 ## Wikipedia-Artikel {#wikipedia-article}
 
-So öffnen Sie den Wikipedia-Artikel:
-
-1. Aktivieren Sie die [Wikipedia-POI-Ebene](../map/point-layers-on-map.md#-wikipedia) für ein bestimmtes Profil.
-2. Tippen Sie auf einen POI auf der Karte.
-3. Tippen Sie im [Kontextmenü](../map/map-context-menu.md) eines POIs auf *Details* (oder ziehen Sie das *Kontextmenü* einfach nach oben), um einen Auszug des gewählten Wikipedia-Artikels anzuzeigen.
-4. Wenn Sie auf diesen Text tippen (für die iOS-Version), werden Sie zum Offline-Wikipedia-Artikel weitergeleitet.
-5. Verwenden Sie die Schaltfläche *Artikel lesen* oder *Vollständigen Artikel lesen*, um die Vollversion des Wikipedia-Artikels zu öffnen.
-
-
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+So öffnen Sie den Wikipedia-Artikel:
+
+1. Aktivieren Sie die [Wikipedia-POI-Ebene](../map/point-layers-on-map.md#-wikipedia) für ein bestimmtes Profil.
+2. Tippen Sie auf einen POI auf der Karte.
+3. Im [Kontextmenü](../map/map-context-menu.md) eines POIs tippen Sie auf [Details](../map/map-context-menu.md#details) (oder ziehen Sie das *Kontextmenü* einfach nach oben), um einen Auszug des gewählten [Wikipedia-Artikels](../map/map-context-menu.md#article-description) anzuzeigen.
+4. Verwenden Sie die Schaltfläche *Vollständigen Artikel lesen*, um die Vollversion des Wikipedia-Artikels zu öffnen.
+5. Wenn die Wikipedia-Daten nicht heruntergeladen wurden, erscheint die Schaltfläche *Auf Wikipedia lesen*.
+6. Wenn Sie auf diese Schaltfläche tippen, wird ein Dialog mit den folgenden Optionen geöffnet: 
+- Wikipedia herunterladen und im Browser öffnen (kostenpflichtige Version).
+- Wikipedia offline lesen und im Browser öffnen (kostenlose Version).
+
+![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+So öffnen Sie den Wikipedia-Artikel:
+
+1. Aktivieren Sie die [Wikipedia-POI-Ebene](../map/point-layers-on-map.md#-wikipedia) für ein bestimmtes Profil.
+2. Tippen Sie auf einen POI auf der Karte.
+3. Im [Kontextmenü](../map/map-context-menu.md) eines POIs tippen Sie auf [Details](../map/map-context-menu.md#details) (oder ziehen Sie das *Kontextmenü* einfach nach oben), um einen Auszug des gewählten [Wikipedia-Artikels](../map/map-context-menu.md#article-description) anzuzeigen.
+4. Wenn Sie auf diesen Text tippen, werden Sie zum Offline-Wikipedia-Artikel weitergeleitet.
+5. Verwenden Sie die Schaltfläche *Artikel lesen*, um die Vollversion des Wikipedia-Artikels zu öffnen.
 
 ![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 

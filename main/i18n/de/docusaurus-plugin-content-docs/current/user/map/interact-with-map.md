@@ -1,5 +1,5 @@
 ---
-source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title:  Mit der Karte interagieren
 ---
@@ -26,7 +26,7 @@ Gesten sind unerlässlich, um einfach und intuitiv auf der Karte zu navigieren.
 
 | Kartenaktion | Geste |
 |:------------|:-------------|
-| **Verschieben** | Tippen und halten Sie die Karte mit **einem** Finger und ziehen Sie sie dann, um sich zu bewegen. |
+| **Verschieben** | Tippen und halten Sie die Karte mit **einem** Finger, dann ziehen Sie, um sich zu bewegen. |
 | **Wischen** | Wischen Sie mit **einem** Finger über die Karte. |
 | **Vergrößern** | Doppeltippen Sie mit **einem** Finger auf die Karte. <br/> Doppeltippen Sie mit **einem** Finger und wischen Sie nach unten. <br/> Ziehen Sie mit **zwei** Fingern auf, um zu vergrößern. |
 | **Verkleinern**| Doppeltippen Sie mit **zwei** Fingern. <br/> Doppeltippen Sie mit **einem** Finger und wischen Sie nach oben. <br/> Ziehen Sie mit **zwei** Fingern zusammen, um zu verkleinern. |
@@ -216,12 +216,12 @@ Erzeugt einen sanften Schwenkeffekt der Karte im Vergleich zum Symbol *[Meine Po
 
 ## Externe Eingabegeräte {#external-input-devices}
 
-Tasten externer Eingabegeräte bieten eine bequeme und effiziente Möglichkeit, mit der Karte und der Benutzeroberfläche der OsmAnd-Anwendung zu interagieren. Sie befinden sich auf externen Geräten wie **Bluetooth- oder anderen Tastaturtypen**, **spezialisierten Tasten an Fahrzeugnavigationsgeräten** oder [WunderLINQ](https://blackboxembedded.com/)- und [Parrot](https://www.parrot.com/en)-Controllern.  
+Tasten externer Eingabegeräte bieten eine bequeme und effiziente Möglichkeit, mit der Karte und der Benutzeroberfläche der OsmAnd-Anwendung zu interagieren. Sie befinden sich auf externen Geräten wie **Bluetooth- oder anderen Tastaturtypen**, **spezialisierten Tasten an Fahrzeugnavigationsgeräten** oder [WunderLINQ](https://blackboxembedded.com/)- und [Parrot](https://www.parrot.com/en)-Controllern (*nur Android*).  
 
-Eine der Hauptfunktionen von Tasten auf externen Eingabegeräten ist das Vergrößern und Verkleinern der Karte. Sie ermöglichen es auch, auf der Karte zu navigieren und ihre Ausrichtung zu ändern, ohne auf den Bildschirm tippen und gestikulieren zu müssen. Tasten auf externen Eingabegeräten unterstützen viele weitere Funktionen, wie das Öffnen des *Hauptmenüs*.
+Eine der Hauptfunktionen von Tasten auf externen Eingabegeräten ist das Vergrößern und Verkleinern der Karte. Sie ermöglichen es auch, auf der Karte zu navigieren und ihre Ausrichtung zu ändern, ohne auf den Bildschirm tippen und gestikulieren zu müssen. Tasten auf externen Eingabegeräten unterstützen viele weitere Funktionen, wie das Öffnen des *Hauptmenüs* und das Auslösen von *Schnellaktionen*. Benutzer können auch Tastenzuweisungen für unterstützte Geräte (Tastatur, WunderLINQ und benutzerdefinierte externe Controller) anpassen.
 
 :::note
-Die Tastatur bleibt auch dann funktionsfähig, wenn die Option *Externe Eingabegeräte* ausgeschaltet und *Keine* ausgewählt ist.
+Die Tastatur bleibt auch dann funktionsfähig, wenn die Option *Externe Eingabegeräte* ausgeschaltet und *Keine* ausgewählt ist. Benutzerdefinierte Tastenzuweisungen funktionieren jedoch nur, wenn *Externe Eingabegeräte* aktiviert sind.
 :::
 
 ### Vorkonfiguriertes Eingabegerät {#preconfigured-input-device}
@@ -240,7 +240,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![External devices](@site/static/img/map/external_types_ios.png)
+![External devices](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -251,9 +251,9 @@ Um auf die Einstellungen eines externen Eingabegeräts zuzugreifen, müssen Sie 
 - Gehen Sie zum Hauptmenü *Menü → Einstellungen →* wählen Sie das *Profil → Allgemeine Einstellungen → Sonstiges → Externe Eingabegeräte* und schalten Sie auf *Aktiviert*.
 
 - Wählen Sie ein von OsmAnd unterstütztes Gerät aus, indem Sie auf den Punkt *Typ* in der Liste tippen:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*nur Android*) oder erstellen Sie [**Ihren eigenen Typ**](#custom-input-device-type) (*nur Android*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*nur Android*) oder erstellen Sie [**Ihren eigenen Typ**](#custom-input-device-type).
 
-- Für jeden Typ von externem Eingabegerät gibt es eine andere **definierte Zuweisung von Aktions-Tasten-Bündeln**. Tippen Sie auf *<Translate android="true" ids="key_assignments"/>*, um eine Liste von Aktionen und Tasten zu sehen. Die Tabelle der Tasten ist unten dargestellt.
+- Für jeden Typ von externem Eingabegerät gibt es eine andere **definierte Zuweisung von Aktions-Tasten-Bündeln**. Der Abschnitt *<Translate android="true" ids="key_assignments"/>* zeigt die Liste der Aktionen und ihrer zugewiesenen Tasten. Die Tabelle der Tasten ist unten dargestellt. Dies sind Standardzuweisungen – sie können nach Benutzerpräferenzen geändert oder erweitert werden.
 
 - Sie können mehr über die Aktionen externer Eingabegeräte auf GitHub im Paket [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) lesen.
 
@@ -265,26 +265,28 @@ Um auf die Einstellungen eines externen Eingabegeräts zuzugreifen, müssen Sie 
 |**S**| *Tastatur* | Anzeigen / Ausblenden - [Suchansicht](../search/index.md) |
 |**P**| *Tastatur* | Ändern - App-Profil zum nächsten |
 |**O**| *Tastatur* | Ändern - App-Profil zum vorherigen |
-|**&#8593;**| *Tastatur* | Verschieben - Karte nach oben |
-|**&#8595;**| *Tastatur* | Verschieben - Karte nach unten |
-|**&#8592;**| *Tastatur* | Verschieben - Karte nach links |
-|**&#8594;**| *Tastatur* | Verschieben - Karte nach rechts |
-|**&#43;** **=**| *Tastatur* | Karte - [Vergrößern](#my-location-and-zoom) |
-|**&#8722;**| *Tastatur* | Karte - [Verkleinern](#my-location-and-zoom) |
-|**Zurück drücken**| *Tastatur* | Navigieren – Vorheriger Bildschirm |
-|**&#8595;**| *Wunderlinq* | Karte - [Verkleinern](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq* | Karte - [Vergrößern](#my-location-and-zoom) |
-| **ESC** | *Wunderlinq* | WunderLINQ Datagrid öffnen |
-| **M** <br/> (*Legacy Android*) | *Tastatur* | Anzeigen / Ausblenden - [Seitenmenü](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick-Druck** <br/> (*Legacy Android*) | *Tastatur* | Verschieben - [Zu meinem Standort](#my-location-and-zoom) |
-| **Medientaste** <br/> (*nur Android*)| *Tastatur* | Anzeigen / Ausblenden - [AV-Notizen](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*nur Android*)| *Parrot* | Karte - [Verkleinern](#my-location-and-zoom) |
-| **&#8594;** <br/> (*nur Android*) | *Parrot* | Karte - [Vergrößern](#my-location-and-zoom) |
+|**&#8593;**| *Tastatur* | Verschieben - Karte nach oben  |
+|**&#8595;**| *Tastatur* | Verschieben - Karte nach unten  |
+|**&#8592;**| *Tastatur* | Verschieben - Karte nach links  |
+|**&#8594;**| *Tastatur* | Verschieben - Karte nach rechts  |
+|**&#43;** **=**| *Tastatur*  | Karte - [Vergrößern](#my-location-and-zoom) |
+|**&#8722;**| *Tastatur*  | Karte - [Verkleinern](#my-location-and-zoom) |
+|**Zurück drücken**| *Tastatur*   | Navigieren – Vorheriger Bildschirm  |
+|**&#8595;**| *Wunderlinq*  | Karte - [Verkleinern](#my-location-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Karte - [Vergrößern](#my-location-and-zoom) |
+| **ESC** | *Wunderlinq*  | WunderLINQ Datagrid öffnen |
+| **M** | *Tastatur*  | Anzeigen / Ausblenden - [Seitenmenü](../start-with/main-menu.md#main-menu-side-menu) |
+| **Joystick-Druck** <br/> (*Legacy Android*) | *Tastatur*  | Verschieben - [Zu meinem Standort](#my-location-and-zoom) |
+| **Medientaste** <br/> (*nur Android*)| *Tastatur*  | Anzeigen / Ausblenden - [AV-Notizen](../plugins/audio-video-notes.md#manage-a-single-note) |
+| **&#8592;** <br/> (*nur Android*)| *Parrot*  | Karte - [Verkleinern](#my-location-and-zoom) |
+| **&#8594;** <br/> (*nur Android*) | *Parrot*  | Karte - [Vergrößern](#my-location-and-zoom) |
 
 
 ### Benutzerdefinierter Eingabegerätetyp {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -292,18 +294,47 @@ Um auf die Einstellungen eines externen Eingabegeräts zuzugreifen, müssen Sie 
 
 Wenn Sie Tasten für ein externes Eingabegerät (wie eine Tastatur, einen Joystick oder einen Controller) zuweisen möchten, müssen Sie einen Gerätetyp erstellen: Gehen Sie zur Einstellung [Externe Eingabegeräte](#external-input-devices), wählen Sie **Typ** aus der Liste, tippen Sie auf das &nbsp; "**＋**" &nbsp; und geben Sie einen Namen ein. Jeder Typ hat ein Menü mit den folgenden Optionen: ***Umbenennen, Duplizieren*** und ***Entfernen***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![External devices](@site/static/img/map/external_mypilot_ios.png)  ![External devices](@site/static/img/map/external_mypilot2_ios.png)
+
+Wenn Sie Tasten für ein externes Eingabegerät (wie eine Tastatur, einen Joystick oder einen Controller) zuweisen möchten, müssen Sie einen Gerätetyp erstellen: Gehen Sie zur Einstellung [Externe Eingabegeräte](#external-input-devices), wählen Sie **Device** aus der Liste, tippen Sie auf &nbsp; "**Add**" &nbsp;und geben Sie einen Namen ein. Jeder Typ hat ein Menü mit den folgenden Optionen: ***Umbenennen, Duplizieren*** und ***Entfernen***.
+
+</TabItem>
+
+</Tabs>  
+
 ### Aktion & Tastenzuweisungen hinzufügen {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![External devices](@site/static/img/map/external_custom_4_ios.png)  ![External devices](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 Nachdem Sie einen benutzerdefinierten Eingabetyp erstellt haben, können Sie den Tasten die erforderlichen Aktionen zuweisen. Eine breite Palette von [Aktionstypen](../widgets/quick-action.md#action-types) aus dem Schnellaktions-Widget ist verfügbar.
 
 - Wählen Sie einen Gerätetyp aus und tippen Sie dann auf den Punkt **Tastenzuweisungen**.
-- Tippen Sie auf die Schaltfläche ***Hinzufügen*** (&nbsp;"**＋**"&nbsp;) in der unteren rechten Ecke des Bildschirms.
+- Tippen Sie auf die Schaltfläche ***Hinzufügen*** (&nbsp;"**＋**"&nbsp;).
 - Wählen Sie die gewünschte Aktion aus, tippen Sie dann auf das Feld ***Taste hinzufügen*** und tippen Sie auf die Taste an Ihrem Gerät, um sie der Aktion zuzuweisen.  
 
 :::note
 
+- Mehrere Tasten können einer Aktion zugewiesen werden.
 - Wenn die zugewiesene Taste bereits für eine andere Aktion verwendet wird, erhalten Sie eine Benachrichtigung mit der Option, die Taste neu zuzuweisen oder die Zuweisung abzubrechen.
 - Später können Sie Aktionen und Tastenzuweisungen ändern oder weitere für bereits erstellte Aktionen hinzufügen, wählen Sie einfach einen Eintrag in der Liste der Tastenzuweisungen aus.
 
@@ -311,12 +342,26 @@ Nachdem Sie einen benutzerdefinierten Eingabetyp erstellt haben, können Sie den
 
 ### Tastenzuweisung löschen {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![External devices](@site/static/img/map/external_custom_1_andr.png)
 
-Sie können mehrere unnötige Aktionen auf einmal löschen, indem Sie die **Bearbeiten-Schaltfläche** (*in Form eines Stifts*) in der oberen rechten Ecke des Bildschirms verwenden:
+</TabItem>
 
-- ***Eine Aktion entfernen*** pro Aktion, mit der &nbsp; "**−**" &nbsp;-Schaltfläche im Elementfeld.
-- ***Alle Tastenzuweisungen entfernen*** für den ausgewählten Typ, indem Sie auf die Schaltfläche in der oberen rechten Ecke des Bildschirms neben dem *Namen bearbeiten* tippen.
+<TabItem value="ios" label="iOS">
+
+![External devices](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Sie können mehrere unnötige Aktionen auf einmal löschen, indem Sie die **Bearbeiten-Schaltfläche** (*bleistiftförmig* auf Android) in der oberen rechten Ecke des Bildschirms verwenden:
+
+- ***Eine Aktion entfernen*** pro Aktion, mit der &nbsp; "**−**" &nbsp;-Schaltfläche im Elementfeld. Tastenzuweisung kann auch über das Kontextmenü (langes Tippen auf das Element) entfernt werden, indem Sie **Entfernen** tippen.
+- ***Alle Tastenzuweisungen entfernen*** für den ausgewählten Typ, indem Sie auf die Schaltfläche in der oberen rechten Ecke des Bildschirms neben dem *Namen bearbeiten* auf Android tippen; indem Sie auf die Schaltfläche **Alle löschen** auf iOS tippen.
 
 
 ## Verwandte Artikel {#related-articles}

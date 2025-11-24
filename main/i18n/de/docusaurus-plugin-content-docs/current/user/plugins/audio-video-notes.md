@@ -1,8 +1,9 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
 title:  Audio-/Videonotizen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,14 +14,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoAndroidOnly />
 
 ## Übersicht {#overview}
 
 Ihre Audio- und Videoaufnahmen können in Zukunft nützlich sein, zum Beispiel als Erinnerung an Orte, an denen Sie waren. Sie sind im Menü [Meine Orte](../personal/myplaces.md) verfügbar und sichtbar, wenn das Audio-/Videonotizen-Plugin aktiviert ist.
 
-Das Audio-/Videonotizen-Plugin erweitert die Funktionalität von OsmAnd, indem es Ihnen ermöglicht, eigene Notizen in verschiedenen Formaten wie Fotos, Videos oder Audio zu erstellen und sie mit ihrem geografischen Standort oder dem aktuellen Standort zu verknüpfen. Aufnahmen können nur bei eingeschaltetem Plugin über das [Audio-/Videonotizen-Widget](../widgets/info-widgets.md#audiovideo-notes-widget) und/oder das [Kartenkontextmenü](../map/map-context-menu.md#-audiovideo-note) gemacht werden. Die erfassten Daten werden automatisch in [Meine Orte](../personal/myplaces.md) gespeichert, von wo aus sie bequem verwaltet und geteilt werden können.
+Das Audio-/Videonotizen-Plugin erweitert die Funktionalität von OsmAnd, indem es Ihnen ermöglicht, eigene Notizen in verschiedenen Formaten wie Fotos, Videos oder Audio zu erstellen und sie mit ihrem geografischen Standort oder dem aktuellen Standort zu verknüpfen. Aufnahmen können nur bei eingeschaltetem Plugin über das [Audio-/Videonotizen-Widget](../widgets/info-widgets.md#audiovideo-notes-widget) und/oder das [Kartenkontextmenü](../map/map-context-menu.md#-audiovideo-note) gemacht werden. Die erfassten Daten werden automatisch in [Meine Orte](../personal/myplaces.md) gespeichert, von wo aus sie bequem verwaltet und geteilt werden können.  
 
 Alle erstellten Audio- und Videonotizen bilden die Aufnahmeebene. Wenn diese auf der Karte aktiviert ist, ändert sich die Ansicht der aufgezeichneten Daten und es gibt mehr Einstellungen zur Verwaltung der Aufnahmen. In der Aufnahmeebene werden Audio- und Videonotizen als POIs auf der Karte platziert, wodurch eine nur für den Gerätebesitzer sichtbare Benutzererzählung entsteht.
 
@@ -28,7 +28,7 @@ Alle erstellten Audio- und Videonotizen bilden die Aufnahmeebene. Wenn diese auf
 
 <TabItem value="android" label="Android">
 
-![Einführung Audio-Videonotizen](@site/static/img/plugins/audio-video-notes/widgets_view.png)
+![Audio video notes intro](@site/static/img/plugins/audio-video-notes/widgets_view.png)
 
 </TabItem>
 
@@ -39,9 +39,9 @@ Alle erstellten Audio- und Videonotizen bilden die Aufnahmeebene. Wenn diese auf
 
 Die Audio-/Videonotizen werden durch das Audio-/Videonotizen-Plugin bereitgestellt und erfordern die folgende Einrichtung:
 
-1. Aktivieren Sie das [Audio-/Videonotizen-Plugin](../plugins/index.md#enable--disable) im Bereich Plugins des *Hauptmenüs*.
+1. Aktivieren Sie das [Audio-/Videonotizen-Plugin](../plugins/index.md#enable--disable) im Bereich Plugins des *Hauptmenüs*.  
 2. Fügen Sie für eine möglichst bequeme Nutzung ein [Widget](../widgets/info-widgets.md#audiovideo-notes-widget) zum Kartenbildschirm hinzu.
-3. Passen Sie bei Bedarf die [Aufnahmeeinstellungen](#plugin-settings) für jedes Profil an.
+3. Passen Sie bei Bedarf die [Aufnahmeeinstellungen](#plugin-settings) für jedes Profil an.  
 
 
 ## Plugin-Einstellungen {#plugin-settings}
@@ -50,31 +50,31 @@ Die Audio-/Videonotizen werden durch das Audio-/Videonotizen-Plugin bereitgestel
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*  
 
-![Einstellungen Audio-Video-Plugin Foto Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
+![Audio video plugin settings Photo Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
 
 </TabItem>
 
 </Tabs>
 
-Für jedes Profil können Sie die *Audio- und Videoaufnahmeoptionen* konfigurieren.
+Für jedes Profil können Sie die *Audio- und Videoaufnahmeoptionen* konfigurieren.  
 
 | Parameter | Beschreibung |
 | --- | --- |
-| **<Translate android="true" ids="camera_app"/>** | Sie können wählen, ob Sie die System-App oder die OsmAnd-Kamera verwenden möchten, um <Translate android="true" ids="photo_notes"/> aufzunehmen.|
+| **<Translate android="true" ids="camera_app"/>**  | Sie können wählen, ob Sie die System-App oder die OsmAnd-Kamera verwenden möchten, um <Translate android="true" ids="photo_notes"/> aufzunehmen.|
 | **<Translate android="true" ids="av_camera_pic_size"/>** | Legt die Größe der aufzunehmenden Fotos fest. Die Kamerafunktionen des Geräts bestimmen die Anzahl der verfügbaren Optionen. Wenn keine Option ausgewählt ist, verwendet die App die Größe aus den Systemeinstellungen der Gerätekamera. |
 | **<Translate android="true" ids="av_camera_focus"/>** | Legt die Methode fest, wie der Kamerafokus eingestellt wird. Die Anzahl der verfügbaren Optionen wird durch die Fähigkeiten der Gerätekamera bestimmt. Grundsätzlich gibt es die folgenden drei Optionen: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; und *<Translate android="true" ids="av_camera_focus_infinity"/>*. **Autofokus** ist die beliebteste und stellt den automatischen Modus für die Kamera ein; **kontinuierlich** lässt die Kamera Bewegungen erkennen und entsprechend neu fokussieren; und die **Unendlich**-Option lässt das Objektiv auf eine Entfernung fokussieren und hält so Objekte im Fokus, egal wie weit sie entfernt sind. |
 | **<Translate android="true" ids="multimedia_photo_play_sound"/>** | Wenn aktiviert, wird ein Ton erzeugt, wenn die Kamera eine Aufnahme macht. Bitte beachten Sie, dass gemäß den Datenschutzgesetzen **in einigen Ländern Geräte keinen Stummschalter für den Kameraauslöser haben**. Wenn Sie die System-App verwenden, sollte der Ton in der Kamera-App deaktiviert werden. |
 | **<Translate android="true" ids="av_audio_format"/>** | Bietet eine Auswahl an Formaten für eine Audiodatei. Die Anzahl der verfügbaren Optionen und welche standardmäßig verwendet wird, wird durch die Parameter eines bestimmten Geräts bestimmt. |
 | **<Translate android="true" ids="av_audio_bitrate"/>** | Diese Option bietet eine Auswahl an Bitratenoptionen für eine zu erstellende Audiodatei. Die verfügbaren Bitratenoptionen reichen von 16 kbps bis 128 kbps oder die Standardoption. Der Standardparameter wird durch die "Standard"-Mikrofoneinstellungen Ihres Geräts bestimmt. |
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | Wenn aktiviert, verwendet OsmAnd die Systemanwendung, um Videos in <Translate android="true" ids="video_notes"/> aufzunehmen. |
-| **<Translate android="true" ids="av_video_quality"/>** | Dies bietet eine Auswahl an Optionen, die das Format des Ausgabebildes bestimmen. Der Bereich der verfügbaren Optionen wird durch die Parameter eines bestimmten Geräts bestimmt. Die Standardoption ist die Option *Höchste Qualität*. |
-| **<Translate android="true" ids="multimedia_rec_split_title"/>** | Wenn aktiviert, werden alte Videoaufnahmen automatisch neu geschrieben und durch neue Videoaufnahmen ersetzt, wenn die Speichergröße das Größenlimit erreicht. |
+| **<Translate android="true" ids="av_video_quality"/>** | Dies bietet eine Auswahl an Optionen, die das Format des Ausgabebildes bestimmen. Der Bereich der verfügbaren Optionen wird durch die Parameter eines bestimmten Geräts bestimmt. Die Standardoption ist die Option *Höchste Qualität*.  |
+| **<Translate android="true" ids="multimedia_rec_split_title"/>** | Wenn aktiviert, werden alte Videoaufnahmen automatisch neu geschrieben und durch neue Videoaufnahmen ersetzt, wenn die Speichergröße das Größenlimit erreicht.  |
 | **<Translate android="true" ids="rec_split_clip_length"/>** | Dies bestimmt die obere Zeitgrenze für aufgezeichnete Videoclips. Es gibt Optionen mit einem Bereich von 1 Minute bis 30 Minuten.|
 | **<Translate android="true" ids="rec_split_storage_size"/>** | Dies legt die Größe des für aufgezeichnete Videos vorgesehenen Speichers fest. Es gibt Optionen mit einem Bereich von 1024 MB bis 62 GB. Ein spezifischer Bereich von Optionen und die Standardoption werden mit den Parametern eines bestimmten Geräts bestimmt. Eine Systemmeldung erinnert Sie daran, wenn die Speichergröße das festgelegte Limit erreicht. |
 | **<Translate android="true" ids="notes"/>** | Diese Option leitet Sie zu den [Audio-/Videonotizen in Meine Orte](../personal/myplaces.md) weiter - dem zentralen Speicher aller jemals in der App erstellten Audio-/Videonotizen. |
-| **<Translate android="true" ids="reset_plugin_to_default"/>** | Sie können die Standardwerte für alle A/V-Notizeinstellungen festlegen. |
+| **<Translate android="true" ids="reset_plugin_to_default"/>** | Sie können die Standardwerte für alle A/V-Notizeinstellungen festlegen.  |
 | **<Translate android="true" ids="copy_from_other_profile"/>** | Öffnet einen Dialog zur Auswahl eines Profils, von dem die Konfiguration der Audio-/Videonotizaufnahme kopiert und für das aktuelle Profil übernommen werden soll. |
 
 
@@ -92,13 +92,13 @@ Sie können eine Foto-, Video- und Audionotiz auf eine der folgenden Arten erste
 
 <TabItem value="android" label="Android">
 
-![Audio-Video-Plugin-Widget Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
+![Audio video plugin widget Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
 </TabItem>
 
 </Tabs>
 
-Das <Translate android="true" ids="map_widget_av_notes"/>-Widget wird verwendet, um eine Notiz zu erstellen, die mit Ihrer aktuellen Position verknüpft ist, und so die Suche nach einem geeigneten Punkt für eine Notiz auf der Karte zu vermeiden. Tippen Sie einfach auf das Widget und machen Sie die Notiz.
+Das <Translate android="true" ids="map_widget_av_notes"/>-Widget wird verwendet, um eine Notiz zu erstellen, die mit Ihrer aktuellen Position verknüpft ist, und so die Suche nach einem geeigneten Punkt für eine Notiz auf der Karte zu vermeiden. Tippen Sie einfach auf das Widget und machen Sie die Notiz.  
 
 Die vom <Translate android="true" ids="map_widget_av_notes"/>-Widget bereitgestellten Funktionen hängen davon ab, wie es im Menü [Bildschirm konfigurieren](../widgets/info-widgets.md#audiovideo-notes-widget) konfiguriert ist. Das Widget öffnet entweder sofort die Kamera, um eine Notiz gemäß den festgelegten Einstellungen zu machen, oder fragt zuerst, in welchem Format eine Notiz erstellt werden soll, und öffnet dann den entsprechenden Aufnahmedialog.
 
@@ -109,7 +109,7 @@ Die vom <Translate android="true" ids="map_widget_av_notes"/>-Widget bereitgeste
 
 <TabItem value="android" label="Android">
 
-![Audio-Video-Plugin Kontextmenü Notiz aufnehmen](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
+![Audio video plugin  Context menu take a note](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
 
 </TabItem>
 
@@ -133,7 +133,7 @@ Um eine Notiz zu erstellen, die mit einem ausgewählten Punkt auf der Karte verk
 
 <TabItem value="android" label="Android">
 
-![Videonotiz-Rekorder](@site/static/img/plugins/audio-video-notes/take_a_video_note_widget.png)
+![Video note recorder](@site/static/img/plugins/audio-video-notes/take_a_video_note_widget.png)
 
 </TabItem>
 
@@ -173,7 +173,7 @@ Sie können Ihre Informationen, Gedanken, Ideen usw., die an einen geografischen
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio-Video-Plugin Menü Meine Orte](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
+![Audio video plugin My places menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
 </TabItem>
 
@@ -188,7 +188,7 @@ Sie können Ihre Informationen, Gedanken, Ideen usw., die an einen geografischen
 
 <TabItem value="android" label="Android">
 
-![Audio-Video-Plugin Menü Meine Orte Kontext](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
+![Audio video plugin My places menu Context](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 
 </TabItem>
 
@@ -203,8 +203,8 @@ Um eine bestimmte Notiz auf der Karte anzuzeigen, verwenden Sie die Liste der No
 
 <TabItem value="android" label="Android">
 
-![Audio-Video-Plugin Kontextmenü](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
-![Audio-Video-Plugin Menü Meine Orte Aktionen](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Audio video plugin Context menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)  
+![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
@@ -224,13 +224,13 @@ Der Abschnitt [Details](../map/map-context-menu#details) bietet weitere Daten zu
 
 <TabItem value="android" label="Android">
 
-![Audio-Video-Plugin Menü Meine Orte Aktionen](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
 </Tabs>
 
-Um eine Notiz in "Meine Orte" zu verwalten, tippen Sie auf die vertikalen drei Punkte der Notiz in der Liste, und die verfügbaren Optionen werden angezeigt:
+Um eine Notiz in "Meine Orte" zu verwalten, tippen Sie auf die vertikalen drei Punkte der Notiz in der Liste, und die verfügbaren Optionen werden angezeigt, wie folgt:
 
 - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Öffnen und betrachten Sie das ausgewählte Video oder spielen Sie die Audionotiz ab.
 - **<Translate android="true" ids="shared_string_share"/>**. Teilen Sie die ausgewählte Notiz einfach mit anderen über verschiedene Plattformen.
@@ -245,20 +245,20 @@ Um eine Notiz in "Meine Orte" zu verwalten, tippen Sie auf die vertikalen drei P
 
 <TabItem value="android" label="Android">
 
-![Das Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 </TabItem>
 
 </Tabs>
 
-Das [Audio-/Videonotizen-Widget](../widgets/info-widgets.md#audiovideo-notes-widget) erstellt Notizen, Fotos, Audio- und Videodateien und verknüpft sie mit Ihrer aktuellen Position. Das Widget hat mehrere Optionen, die als Standardaktion festgelegt werden können, die vom Widget ausgeführt wird, wenn der Bildschirm berührt wird.
+Das [Audio-/Videonotizen-Widget](../widgets/info-widgets.md#audiovideo-notes-widget) erstellt Notizen, Fotos, Audio- und Videodateien und verknüpft sie mit Ihrer aktuellen Position. Das Widget hat mehrere Optionen, die als Standardaktion festgelegt werden können, die vom Widget ausgeführt wird, wenn der Bildschirm berührt wird.  
 
-Das Hinzufügen eines Widgets zum Bildschirm ist notwendig, wenn Sie es vorziehen, die Suche nach einer Geolokalisierung auf der Karte zu vermeiden und Notizen mit Ihrem aktuellen Standardstandort zu verknüpfen. Um ein Widget hinzuzufügen oder anzupassen, folgen Sie den nachstehenden Schritten:
+Das Hinzufügen eines Widgets zum Bildschirm ist notwendig, wenn Sie es vorziehen, die Suche nach einer Geolokalisierung auf der Karte zu vermeiden und Notizen mit Ihrem aktuellen Standardstandort zu verknüpfen. Um ein Widget hinzuzufügen oder anzupassen, folgen Sie den nachstehenden Schritten:  
 
-1. Gehen Sie zu:
+1. Gehen Sie zu:  
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
-2. Wählen Sie **<Translate android="true" ids="map_widget_left"/>** oder **<Translate android="true" ids="map_widget_right"/>**.
+2. Wählen Sie  **<Translate android="true" ids="map_widget_left"/>** oder **<Translate android="true" ids="map_widget_right"/>**.
 
 3. Tippen Sie auf **<Translate android="true" ids="map_widget_av_notes"/>**, und das Kontextmenü des Widgets öffnet sich.
 
@@ -272,7 +272,16 @@ Das Hinzufügen eines Widgets zum Bildschirm ist notwendig, wenn Sie es vorziehe
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - mit dem Fotografieren beginnen.
 
-    ![Das Widget](@site/static/img/plugins/audio-video-notes/widget.png)
+    ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+
+**Externe Eingabegeräte verwenden (*Android*)**. Wenn Sie ein [externes Eingabegerät](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) verwenden, können Sie Audio-/Videonotizen starten und stoppen, ohne den Bildschirm zu berühren. Zu diesem Zweck weisen Sie die Aktion „Audio-Notiz hinzufügen“ oder „Video-Notiz hinzufügen“ einer Taste zu:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Sobald zugewiesen, funktioniert die Taste als Umschalter:
+- Der erste Druck startet die Aufnahme einer Audio- oder Videonotiz (je nach ausgewählter Aktion).
+- Der zweite Druck auf dieselbe Taste stoppt die Aufnahme.
+
+Wenn eine Aufnahme über ein externes Eingabegerät gestoppt wird, wird das Kontextmenü nicht angezeigt, was die Nutzung von OsmAnd in vollständig hands-free-Szenarien erleichtert (z. B. beim Motorradfahren oder Autofahren).
 
 
 ## Mehrere Notizen verwalten {#manage-multiple-notes}
@@ -283,7 +292,7 @@ Das Hinzufügen eines Widgets zum Bildschirm ist notwendig, wenn Sie es vorziehe
 
 <TabItem value="android" label="Android">
 
-![Audio-Video-Plugin Menü Meine Orte Drei Aktionen](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
 
 </TabItem>
 
@@ -300,16 +309,16 @@ Die Optionen in der unteren Leiste können verwendet werden, um die Liste der No
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Teilen](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
+![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
 </TabItem>
 
 </Tabs>
 
-Sie können alle Notizen, einschließlich [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes), die ausgewählte Notizen als Wegpunkte enthalten, auf dem Bildschirm [Meine Orte](../personal/myplaces.md#audiovideo-notes) teilen, indem Sie auf die Schaltfläche "Teilen" im unteren Menü klicken. Neben jeder Notiz erscheint ein Kontrollkästchen, um bestimmte Notizen auszuwählen. Über den Notizen gibt es zwei Kontrollkästchen: *A/V-Notizen nach Datum*, um alle Notizen auszuwählen, und das Kontrollkästchen *Standorte*. Das Kontrollkästchen *Standorte* ermöglicht es Ihnen, eine separate GPX-Datei mit Koordinaten und Daten hinzuzufügen.
+Sie können alle Notizen, einschließlich [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes), die ausgewählte Notizen als Wegpunkte enthalten, auf dem Bildschirm [Meine Orte](../personal/myplaces.md#audiovideo-notes) teilen, indem Sie auf die Schaltfläche "Teilen" im unteren Menü klicken. Neben jeder Notiz erscheint ein Kontrollkästchen, um bestimmte Notizen auszuwählen. Über den Notizen gibt es zwei Kontrollkästchen: *A/V-Notizen nach Datum*, um alle Notizen auszuwählen, und das Kontrollkästchen *Standorte*. Das Kontrollkästchen *Standorte* ermöglicht es Ihnen, eine separate GPX-Datei mit Koordinaten und Daten hinzuzufügen.  
 
-Jede Notiz enthält die Zeit ihrer Erstellung, die Datenmenge und, falls es sich um eine Aufnahme handelt, die Aufnahmezeit und Standortdaten. Sie können GPX-Daten hinzufügen.
-Unterstützte Dateiformate: Audio - **3gp**, Video - **mp4**, Foto - **jpg**.
+Jede Notiz enthält die Zeit ihrer Erstellung, die Datenmenge und, falls es sich um eine Aufnahme handelt, die Aufnahmezeit und Standortdaten. Sie können GPX-Daten hinzufügen.  
+Unterstützte Dateiformate: Audio - **3gp**, Video - **mp4**, Foto -**jpg**.
 
 
 ### Alle auf der Karte anzeigen {#show-all-on-the-map}
@@ -320,7 +329,7 @@ Unterstützte Dateiformate: Audio - **3gp**, Video - **mp4**, Foto - **jpg**.
 
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
-![Notizen auf der Karte anzeigen](@site/static/img/plugins/audio-video-notes/recording_layer.png)
+![Show notes on the map](@site/static/img/plugins/audio-video-notes/recording_layer.png)
 
 </TabItem>
 
@@ -330,7 +339,7 @@ Auf der Karte angezeigte Notizen können Ihre Geschichte erzählen, wo Sie Schil
 
 Verwenden Sie die Kartenebene [Aufnahme](../map/point-layers-on-map#-audio--video-points-android), um alle Notizen ein- oder auszublenden. Wenn Sie sie im Menü [Karte konfigurieren](../map/configure-map-menu) einschalten, zeigt die Aufnahmeebene alle Notizen auf der Karte an.
 
-![Keine Notizen auf der Karte](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notizen sind auf der Karte](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
+![No notes on the map](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notes are on the map](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
 ## Aus Notizen erstellte Wegpunkte {#waypoints-created-from-notes}
@@ -339,8 +348,8 @@ Verwenden Sie die Kartenebene [Aufnahme](../map/point-layers-on-map#-audio--vide
 
 <TabItem value="android" label="Android">
 
-![Notizen und Wegpunkte auf der Karte](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
-![Wegpunkte auf dem Track](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
+![Notes and waypoints on the map](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)  
+![Waypoints on the track](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>
 
@@ -359,7 +368,7 @@ Wenn ein Track exportiert wird, können die Wegpunkte nicht angezeigt oder abges
 
 <TabItem value="android" label="Android">
 
-![Manuelles Hinzufügen eines Wegpunkts zum Track](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
+![Manually adding a waypoint to track](@site/static/img/plugins/audio-video-notes/waypoint_manually_created.png)
 
 </TabItem>
 
@@ -403,7 +412,7 @@ Sie können für jeden manuell erstellten Wegpunkt Namen angeben.
 
 ### GPX-Datei mit Wegpunkten {#gpx-file-with-waypoints}
 
-![Wegpunkt in einer GPX-Datei](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
+![Waypoint in a GPX file](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)  
 
 Wenn Sie die GPX-Datei des Tracks mit einem Wegpunkt aus einer Audio-/Video-/Fotonotiz anzeigen, sieht der Wegpunkt wie im folgenden Beispiel aus und enthält die Koordinaten, den Zeitstempel, den Namen der entsprechenden Notiz und den Shortlink.
 
@@ -421,9 +430,9 @@ wobei `SHORTLINK_LOCATION` den Breiten- und Längengrad des Ortes angibt, an den
 
 ### Export nach JOSM {#export-to-josm}
 
-![Audio-Videonotizen in JOSM](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Audio video notes in Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
-Um alles später anzusehen, können Sie den Track zusammen mit allen Mediendateien exportieren und im [JOSM-Editor](https://josm.openstreetmap.de/) ansehen. Beachten Sie, dass die Mediendateien im entsprechenden Ordner abgelegt werden müssen. Welcher das ist, erfahren Sie, indem Sie auf das Video klicken. Es erscheint eine Benachrichtigung, die anzeigt, dass keine Datei verfügbar ist. Legen Sie die richtige Datei in dem angegebenen Ordner ab.
+Um alles später anzusehen, können Sie den Track zusammen mit allen Mediendateien exportieren und im [JOSM-Editor](https://josm.openstreetmap.de/) ansehen. Beachten Sie, dass die Mediendateien im entsprechenden Ordner abgelegt werden müssen. Welcher das ist, erfahren Sie, indem Sie auf das Video klicken. Es erscheint eine Benachrichtigung, die anzeigt, dass keine Datei verfügbar ist. Legen Sie die richtige Datei in dem angegebenen Ordner ab.  
 
 
 ## Verwandte Artikel {#related-articles}
