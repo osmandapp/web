@@ -1,5 +1,5 @@
 ---
-source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title:  مقاييس المركبة
 ---
@@ -15,10 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## نظرة عامة {#overview}
 
 :::info ميزة مدفوعة
-ملحق مقاييس المركبة هو [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd. تتوفر معلومات سرعة المركبة وسرعة المحرك مجانًا في OsmAnd.
+ملحق مقاييس المركبة هو [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd. معلومات سرعة المركبة وسرعة المحرك متاحة مجانًا في OsmAnd.
 :::
 
 يمكّن **ملحق مقاييس المركبة** من مراقبة بيانات المركبة في الوقت الفعلي عبر [بروتوكول OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). يمكن للمستخدمين تتبع المقاييس الأساسية مثل أداء المحرك، وكفاءة استهلاك الوقود، والسرعة، مما يسمح بالصيانة الاستباقية للمركبة واستكشاف الأخطاء وإصلاحها.  
@@ -117,6 +118,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **الإعدادات**. يفتح شاشة إعدادات OBD-II، مما يسمح بإدارة الاتصال والوصول إلى معلمات المركبة المتاحة.
 - **إعادة تسمية**. يتيح لك تعيين اسم مخصص للمستشعر لسهولة التعرف عليه.
 - **نسيان**. يزيل مستشعر OBD-II المقترن مسبقًا من القائمة، مما يتطلب إعادة الإقران إذا لزم الأمر لاحقًا.
+
+**سلوك إعادة الاتصال** *(أندرويد فقط)***:** يحاول OsmAnd تلقائيًا إعادة الاتصال بمحول OBD-II عند بدء تشغيل التطبيق، أو عند بدء الملاحة، أو عند إطلاق Android Auto. إذا كان الاتصال غير متاح، فإن ودجات مقاييس المركبة تعرض «–». نقرة واحدة على أي ودجت مقاييس المركبة ستحاول إعادة الاتصال بالمستشعر. إذا كان المستشعر متصلاً بالفعل، فإن النقرة تقوم بالتبديل بين أوضاع عرض الودجت كالمعتاد.
 
 
 ## قائمة المقاييس {#metrics-list}
@@ -233,6 +236,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **فوري**. يعرض البيانات في الوقت الفعلي للمقياس المحدد.
 - **المتوسط**. يعرض القيم المتوسطة على فترة زمنية قابلة للتكوين (من ١٥ ثانية إلى ٦٠ دقيقة).
+
+تتكيف بعض الودجات، بما في ذلك *استهلاك الوقود*، وحدات العرض الخاصة بها وصيغ المقاييس الإقليمية بناءً على [إعدادات الملف الشخصي](https://osmand.net/docs/user/personal/profiles#units--formats). عند استخدام وحدات حجم غير اللتر، يدعم استهلاك الوقود عرض القيم كـ Miles per Gallon (MPG). يعتمد نوع MPG الدقيق على وحدة الحجم المحددة:
+
+- US gallons → MPG (US)
+- Imperial gallons → MPG (UK)
+
+يقوم الودجت تلقائيًا باختيار الصيغة المناسبة وفقًا للوحدات <Translate android="true" ids="routing_attr_length_name"/> و <Translate android="true" ids="shared_string_volume"/> المختارة في الملف الشخصي النشط، ويتم الحفاظ على وضع العرض المختار عند تصدير واستيراد الملفات الشخصية.
 
 
 ## مقالات ذات صلة {#related-articles}

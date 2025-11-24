@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  المستشعرات الخارجية
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -101,7 +101,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → الجهاز المتاح → الإعدادات*
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → الجهاز المتاح → الإعدادات*
 
-![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)
+![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)  
 
 </TabItem>
 
@@ -112,7 +112,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,external_sensors_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,plugins_menu_group,external_sensors_plugin_name"/>*
 
-![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)
+![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)  
 
 </TabItem>
 
@@ -128,7 +128,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ***ملاحظات:***
 
 - على **iOS**، يمكنك عرض **مستوى البطارية** لمستشعرات BLE المتصلة مباشرة في [ودجت](#widgets) الخريطة. لتمكين ذلك، اذهب إلى: *القائمة → تهيئة الشاشة → اختر لوحة → إضافة ودجت → مستشعر خارجي → الإعدادات → عرض → مستوى البطارية*
-- يظهر إشعار منبثق عندما ينخفض **مستوى بطارية مستشعر مقترن إلى أقل من ١٥٪**.
+- يظهر إشعار منبثق عندما ينخفض **مستوى بطارية مستشعر مقترن إلى أقل من 15٪**.
 
 
 ## تسجيل الرحلة {#trip-recording}
@@ -139,7 +139,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
+![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
 
 </TabItem>
 
@@ -147,7 +147,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
+![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
 
 </TabItem>
 
@@ -210,7 +210,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → إضافة ودجت → <Translate android="true" ids="external_sensor_widgets"/>*
 
-![ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png)  ![ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
+![ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png)  ![ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
 </TabItem>
 
@@ -218,7 +218,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → اختر لوحة → إضافة ودجت → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
-![ودجات المستشعرات الخارجية لـ iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![ودجات المستشعرات الخارجية لـ iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
+![ودجات المستشعرات الخارجية لـ iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![ودجات المستشعرات الخارجية لـ iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)  
 
 </TabItem>
 
@@ -241,6 +241,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – درجة الحرارة المحيطة الحالية.
 7. **مستوى البطارية** – النسبة المئوية للبطارية المتبقية في مستشعر BLE متصل، قم بتبديله في **إعدادات المستشعر**.
 
+**ملاحظة:** إذا انقطع مستشعر مؤقتًا، انقر على ودجته على الخريطة لمحاولة إعادة الاتصال فورًا — لا حاجة لفتح قائمة المستشعرات الخارجية.
+
 
 ### إعدادات الودجت {#widget-settings}
 
@@ -258,7 +260,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → اختر لوحة → إضافة ودجت → مستشعر خارجي → اختر ودجت → الإعدادات*
 
-![إعدادات ودجات المستشعرات الخارجية لأندرويد](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![إعدادات ودجات المستشعرات الخارجية لـ iOS](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 

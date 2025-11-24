@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title:  مسطرة نصف القطر والمسطرة
 ---
@@ -69,6 +69,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
+متاحة على جميع اللوحات: <Translate android="true" ids="top"/>، <Translate android="true" ids="position_on_map_bottom"/>، <Translate android="true" ids="shared_string_left"/>، و<Translate android="true" ids="shared_string_right"/>.
+
 ![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
@@ -76,7 +78,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
-![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_height_ios.png)
+متاحة على جميع اللوحات: <Translate ios="true" ids="shared_string_top"/>، <Translate ios="true" ids="position_on_map_bottom"/>، اليسار، واليمين.
+
+![موضع العرض iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 

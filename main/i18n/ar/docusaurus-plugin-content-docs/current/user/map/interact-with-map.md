@@ -1,5 +1,5 @@
 ---
-source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title:  التفاعل مع الخريطة
 ---
@@ -218,10 +218,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 توفر أزرار أجهزة الإدخال الخارجية طريقة مريحة وفعالة للتفاعل مع الخريطة وواجهة تطبيق OsmAnd. وهي موجودة على أجهزة خارجية، مثل **لوحات المفاتيح التي تعمل بالبلوتوث أو أنواع أخرى**، أو **أزرار متخصصة على أجهزة الملاحة في المركبات**، أو وحدات تحكم [WunderLINQ](https://blackboxembedded.com/) و [Parrot](https://www.parrot.com/en).  
 
-إحدى الوظائف الرئيسية للأزرار على أجهزة الإدخال الخارجية هي تكبير وتصغير الخريطة. كما أنها تسمح لك بالتنقل في الخريطة وتغيير اتجاهها دون الحاجة إلى النقر والإيماء على الشاشة. تدعم الأزرار الموجودة على أجهزة الإدخال الخارجية العديد من الوظائف الأخرى، مثل فتح *القائمة الرئيسية*.
+إحدى الوظائف الرئيسية للأزرار على أجهزة الإدخال الخارجية هي تكبير وتصغير الخريطة. كما أنها تسمح لك بالتنقل في الخريطة وتغيير اتجاهها دون الحاجة إلى النقر والإيماء على الشاشة. تدعم الأزرار الموجودة على أجهزة الإدخال الخارجية العديد من الوظائف الأخرى، مثل فتح *القائمة الرئيسية*. يمكن للمستخدمين أيضًا تخصيص تعيينات الأزرار للأجهزة المدعومة (لوحة المفاتيح، WunderLINQ، ووحدات التحكم الخارجية المخصصة).
 
 :::note
-تظل لوحة المفاتيح تعمل حتى عند إيقاف تشغيل خيار *أجهزة الإدخال الخارجية* واختيار *لا شيء*.
+تظل لوحة المفاتيح تعمل حتى عند إيقاف تشغيل خيار *أجهزة الإدخال الخارجية* واختيار *لا شيء*. ومع ذلك، تعمل تعيينات المفاتيح المخصصة فقط عند تمكين *أجهزة الإدخال الخارجية*.
 :::
 
 ### جهاز إدخال مهيأ مسبقًا {#preconfigured-input-device}
@@ -240,7 +240,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![الأجهزة الخارجية](@site/static/img/map/external_types_ios.png)
+![الأجهزة الخارجية](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -251,9 +251,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - اذهب إلى *القائمة الرئيسية ← الإعدادات ←* حدد *الملف الشخصي ← الإعدادات العامة ← أخرى ← أجهزة الإدخال الخارجية*، وقم بالتبديل إلى *ممكّن*.
 
 - حدد جهازًا من الأجهزة التي يدعمها OsmAnd عن طريق النقر على عنصر *النوع* في القائمة:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*أندرويد فقط*)، أو أنشئ [**نوعك الخاص**](#custom-input-device-type) (*أندرويد فقط*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*أندرويد فقط*)، أو أنشئ [**نوعك الخاص**](#custom-input-device-type).
 
-- يوجد تعيين مختلف لـ **حزمة مفاتيح الإجراءات المحددة** لكل نوع من أجهزة الإدخال الخارجية. انقر على *<Translate android="true" ids="key_assignments"/>* لرؤية قائمة بالإجراءات والمفاتيح. يظهر جدول المفاتيح أدناه.
+- يوجد تعيين مختلف لـ **حزمة مفاتيح الإجراءات المحددة** لكل نوع من أجهزة الإدخال الخارجية. يعرض قسم *<Translate android="true" ids="key_assignments"/>* قائمة بالإجراءات ومفاتيحها المعينة. يظهر جدول المفاتيح أدناه. هذه تعيينات افتراضية — يمكن تغييرها أو توسيعها وفقًا لتفضيلات المستخدم.
 
 - يمكنك قراءة المزيد حول إجراءات أجهزة الإدخال الخارجية على GitHub في حزمة [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
@@ -275,7 +275,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |**&#8595;**| *Wunderlinq*  | الخريطة - [تصغير](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | الخريطة - [تكبير](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | فتح شبكة بيانات WunderLINQ |
-| **M** <br/> (*أندرويد قديم*) | *لوحة المفاتيح*  | إظهار / إخفاء - [القائمة الجانبية](../start-with/main-menu.md#main-menu-side-menu) |
+| **M** | *لوحة المفاتيح*  | إظهار / إخفاء - [القائمة الجانبية](../start-with/main-menu.md#main-menu-side-menu) |
 | **Joystick press** <br/> (*أندرويد قديم*) | *لوحة المفاتيح*  | تحريك - [إلى موقعي](#my-location-and-zoom) |
 | **Media button** <br/> (*أندرويد فقط*)| *لوحة المفاتيح*  | إظهار / إخفاء - [ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*أندرويد فقط*)| *Parrot*  | الخريطة - [تصغير](#my-location-and-zoom) |
@@ -284,7 +284,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### نوع جهاز إدخال مخصص {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -292,18 +294,47 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 إذا كنت ترغب في تعيين مفاتيح لجهاز إدخال خارجي (مثل لوحة مفاتيح أو عصا تحكم أو وحدة تحكم)، فأنت بحاجة إلى إنشاء نوع جهاز: اذهب إلى إعداد [جهاز الإدخال الخارجي](#external-input-devices)، حدد **النوع** من القائمة، انقر على &nbsp; "**＋**" &nbsp; وأدخل اسمًا. كل نوع له قائمة بالخيارات التالية: ***إعادة تسمية، تكرار***، و***إزالة***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![الأجهزة الخارجية](@site/static/img/map/external_mypilot_ios.png)  ![الأجهزة الخارجية](@site/static/img/map/external_mypilot2_ios.png)
+
+إذا كنت ترغب في تعيين مفاتيح لجهاز إدخال خارجي (مثل لوحة مفاتيح أو عصا تحكم أو وحدة تحكم)، فأنت بحاجة إلى إنشاء نوع جهاز: اذهب إلى إعداد [جهاز الإدخال الخارجي](#external-input-devices)، حدد **Device** من القائمة، انقر على &nbsp; "**Add**" &nbsp; وأدخل اسمًا. كل نوع له قائمة بالخيارات التالية: ***إعادة تسمية، تكرار***، و***إزالة***.
+
+</TabItem>
+
+</Tabs>  
+
 ### إضافة إجراء وتعيينات المفاتيح {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![الأجهزة الخارجية](@site/static/img/map/external_custom_4_andr.png)  ![الأجهزة الخارجية](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![الأجهزة الخارجية](@site/static/img/map/external_custom_4_ios.png)  ![الأجهزة الخارجية](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 بعد إنشاء نوع إدخال مخصص، يمكنك تعيين الإجراءات المطلوبة للمفاتيح. تتوفر مجموعة واسعة من [أنواع الإجراءات](../widgets/quick-action.md#action-types) من أداة الإجراء السريع.
 
 - حدد نوع الجهاز، ثم انقر على عنصر **تعيينات المفاتيح**.
-- انقر على زر ***إضافة*** (&nbsp;"**＋**"&nbsp;) في الزاوية اليمنى السفلية من الشاشة.
+- انقر على زر ***إضافة*** (&nbsp;"**＋**"&nbsp;).
 - حدد الإجراء المطلوب ثم انقر على حقل ***إضافة مفتاح*** وانقر على الزر الموجود على جهازك لتعيينه للإجراء.  
 
 :::note
 
+- يمكن تعيين مفاتيح متعددة لإجراء واحد.
 - إذا كان الزر الذي تقوم بتعيينه مستخدمًا بالفعل لإجراء آخر، فستتلقى إشعارًا بخيار إعادة تعيين الزر أو إلغاء التعيين.
 - لاحقًا يمكنك تغيير الإجراءات وتعيينات المفاتيح أو إضافة أخرى للإجراءات التي تم إنشاؤها بالفعل، ما عليك سوى تحديد عنصر في قائمة تعيينات المفاتيح.
 
@@ -311,12 +342,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### حذف تعيين المفتاح {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![الأجهزة الخارجية](@site/static/img/map/external_custom_1_andr.png)
 
-يمكنك حذف العديد من الإجراءات غير الضرورية باستخدام **زر التحرير** (*على شكل قلم رصاص*) في الزاوية اليمنى العليا من الشاشة دفعة واحدة:
+</TabItem>
 
-- ***إزالة إجراء واحد*** لكل إجراء، باستخدام زر &nbsp; "**−**" &nbsp; في حقل العنصر.
-- ***إزالة جميع تعيينات المفاتيح*** للنوع المحدد عن طريق النقر على الزر في الزاوية اليمنى العليا من الشاشة بجوار *تحرير الاسم*.
+<TabItem value="ios" label="iOS">
+
+![الأجهزة الخارجية](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+يمكنك حذف العديد من الإجراءات غير الضرورية باستخدام **زر التحرير** (*على شكل قلم رصاص* على أندرويد) في الزاوية اليمنى العليا من الشاشة دفعة واحدة:
+
+- ***إزالة إجراء واحد*** لكل إجراء، باستخدام زر &nbsp; "**−**" &nbsp; في حقل العنصر. يمكن أيضًا إزالة تعيين المفتاح عبر قائمة السياق (النقر المطول على العنصر) بالنقر على **إزالة**.
+- ***إزالة جميع تعيينات المفاتيح*** للنوع المحدد عن طريق النقر على الزر في الزاوية اليمنى العليا من الشاشة بجوار *تحرير الاسم* على أندرويد؛ بالنقر على زر **مسح الكل** على iOS.
 
 
 ## مقالات ذات صلة {#related-articles}

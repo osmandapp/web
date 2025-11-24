@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title:  إدارة المسارات
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -196,7 +196,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **إظهار على الخريطة** — باستخدام هذه الميزة، يمكنك عرض المسارات المحددة على الخريطة لفهم موقعها وعلاقتها ببعضها البعض بشكل أفضل.
 
-- **مشاركة** (*أندرويد*) / **تصدير** (*iOS*) — إذا كنت ترغب في مشاركة البيانات المحددة مع مستخدمين آخرين أو حفظها في خدمة سحابية، فإن ميزة *المشاركة/التصدير* تتيح لك إرسال المسارات والمجلدات باستخدام طرق مشاركة مختلفة.
+- **مشاركة** (*أندرويد*) / **تصدير** (*iOS*) — يفتح قائمة مشاركة النظام ويرسل المسارات المحددة كملفات GPX (.gpx) أو يصدر المجلدات المحددة باستخدام التطبيق أو خدمة السحابة المختارة.
 
 - **الرفع إلى OpenStreetMap** — يمكنك إرسال المسارات المحددة إلى OpenStreetMap، مما يساهم في تطوير وتحسين البيانات.
 

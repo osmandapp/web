@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  تهيئة الشاشة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -267,7 +267,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - [ملف الارتفاع (*أندرويد فقط*)](../widgets/nav-widgets#elevation-widget)
     - [مناورات المسار](../widgets/nav-widgets.md#next-turn)
 
-- **الأدوات البسيطة**. يمكن إضافة أدوات بسيطة متعددة إلى صف واحد. يمكن أن تعرض هذه الأدوات *الاسم*، *وحدات القياس*، *القيمة*، و*الأيقونة*.
+- **الأدوات البسيطة**. يمكن إضافة أدوات بسيطة متعددة إلى صف واحد. يمكن أن تعرض هذه الأدوات *الاسم*، *وحدات القياس*، *القيمة*، و*الأيقونة*. يتم تلخيط النص في الأدوات البسيطة تلقائيًا لضمان قابلية القراءة الواضحة مقابل خلفيات الخرائط المختلفة في وضع اللوحة الشفافة.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
+
+![تلخيط الأداة أندرويد](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![تلخيط الأداة iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### الصفحات {#pages}
@@ -294,7 +310,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكن تجميع الأدوات في اللوحتين اليمنى واليسرى في **صفحات**. تتيح لك ميزة **وضع الصفحات** إضافة ٥ صفحات إلى اللوحتين اليسرى واليمنى.
 
-***كيفية تهيئة الصفوف:***
+***كيفية تهيئة الصفحات:***
 
 - **إضافة صفحة**. انتقل إلى إعدادات اللوحة اليسرى/اليمنى وانقر على *تعديل → إضافة صفحة*.
 - **تنظيم الأدوات حسب الصفحة**. هذه الميزة مفيدة عندما تكون هناك حاجة لمجموعات مختلفة من الأدوات لمهام مختلفة، مثل الملاحة مقابل تصفح الخريطة.
@@ -317,12 +333,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - يحسن الوضوح ويزيد من المساحة المخصصة للبيانات المهمة.
     - مفيد بشكل خاص عند عرض العديد من الأدوات في نفس **الصف**.
 
-٣. **حجم فردي لصفوف مختلفة** (*لجميع اللوحات*):
+٣. **إخفاء تسميات نص الأداة**:
+
+    - يخفي تلقائيًا تسميات النص للحفاظ على رؤية المعلومات الرقمية بالكامل في التخطيطات المدمجة.
+    - يساعد في الحفاظ على ترتيب أداة نظيف وقابل للقراءة عندما تكون المساحة محدودة.   
+
+٤. **حجم فردي لصفوف مختلفة** (*لجميع اللوحات*):
 
     - يمكن تحديد حجم الأدوات بشكل فردي عن طريق ضبط حجم الصف والعمود.
     - **ملاحظة:** سيؤدي تغيير حجم أداة واحدة في صف/عمود إلى تغيير حجم جميع الأدوات في ذلك الصف/العمود.
 
-٤. **لتغيير حجم الأداة ورؤية الأيقونة:**
+٥. **لتغيير حجم الأداة ورؤية الأيقونة:**
 
     - حدد أداة قمت بإضافتها بالفعل إلى اللوحة.  
     - انقر على أيقونة *الإعدادات* على الجانب الأيمن من حقل الأداة.

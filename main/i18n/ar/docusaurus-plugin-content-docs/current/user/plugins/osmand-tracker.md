@@ -1,5 +1,5 @@
 ---
-source-hash: 135ec49c254081b73e19f0be40cdfb7296889f8a4d91b09b4c6be58544461e26
+source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
 sidebar_position: 11
 title:  متتبع OsmAnd
 ---
@@ -102,7 +102,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الخصوصية {#privacy}
 
-استخدام الوكيل (proxy) داخل متتبع OsmAnd. اذهب إلى الإعدادات واكتب بيانات الوكيل الخاص بك: *الإعدادات ← الخصوصية ← إعدادات الوكيل*
+استخدام الوكيل (proxy) داخل متتبع OsmAnd. اذهب إلى الإعدادات واكتب بيانات الوكيل الخاص بك: *الإعدادات → الخصوصية → إعدادات الوكيل*
 
 ![متتبع OsmAnd](@site/static/img/plugins/online-tracker/3-1.jpg)  ![متتبع OsmAnd](@site/static/img/plugins/online-tracker/4-1.jpg)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
+source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
 sidebar_position: 3
 title: الأدوات الإعلامية
 ---
@@ -108,7 +108,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → <Translate ios="true" ids="map_widget_plain_time"/>* |
 | بالنقر | لا تغييرات |
 | النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
-| تنسيق | إعدادات الجهاز تكونف الوقت والتنسيق. |
+| تنسيق | إعدادات الجهاز تكوّن الوقت والتنسيق. |
 
 
 ## السرعة الحالية {#current-speed}
@@ -475,7 +475,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تشير أدوات تسجيل الرحلة إلى [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). يمكنك استخدام الأدوات لعرض معلومات موجزة حول تسجيل المسار على الشاشة. مثل *المسافة*، *المدة*، *الصعود* و*الهبوط*.
+تشير أدوات تسجيل الرحلة إلى [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). يمكنك استخدام الأدوات لعرض معلومات موجزة حول تسجيل المسار على الشاشة. مثل *المسافة*، *المدة*، *الصعود*، *الهبوط*، *السرعة القصوى*، و*المنحدر المتوسط* (الاثنان الأخيران متاحان على أندرويد فقط).
 
 | | |
 |:------------|:------------|
@@ -598,7 +598,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **درجة الحرارة**. <Translate android="true" ids="temperature_widget_desc"/>
 - **ضغط الهواء**. <Translate android="true" ids="air_pressure_widget_desc"/>
 - **الرياح**. <Translate android="true" ids="wind_widget_desc"/>
-- **الغيوم**. <Translate android="true" ids="clouds_widget_desc"/>
+- **السحاب**. <Translate android="true" ids="clouds_widget_desc"/>
 - **الهطول**. <Translate android="true" ids="precipitation_widget_desc"/>
 
 | | |
@@ -613,7 +613,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### أداة الوقوف {#parking-widget}
 
 :::note
-لإضافة أدوات الوقوف إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [موقع الوقوف](../plugins/parking.md).
+لإضافة أدوات الوقوف إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [إضافة موقع الوقوف](../plugins/parking.md).
 :::  
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
