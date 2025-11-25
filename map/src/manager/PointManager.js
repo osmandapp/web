@@ -1,4 +1,4 @@
-import TracksManager, { isPointUnrouted } from './track/TracksManager';
+import TracksManager, { isPointUnrouted, updateTrackRouteTypes } from './track/TracksManager';
 import Utils from '../util/Utils';
 import TrackLayerProvider from '../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../context/TracksRoutingCache';
@@ -72,25 +72,29 @@ async function insertPoint(points, index, point, lengthSum, ctx) {
                 if (points[i + 1].geometry) {
                     let newGeometryFromNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, point, points[i + 1]);
                     if (newGeometryFromNewPoint) {
-                        points[i + 1].geometry = newGeometryFromNewPoint;
+                        points[i + 1].geometry = newGeometryFromNewPoint.points || [];
+                        updateTrackRouteTypes(newGeometryFromNewPoint.points, newGeometryFromNewPoint.routeTypes, ctx);
                     }
                 }
             } else if (lastPoint) {
                 if (points[i - 1].geometry) {
                     let newGeometryToNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, points[i - 1], point);
                     if (newGeometryToNewPoint) {
-                        point.geometry = newGeometryToNewPoint;
+                        point.geometry = newGeometryToNewPoint.points || [];
+                        updateTrackRouteTypes(newGeometryToNewPoint.points, newGeometryToNewPoint.routeTypes, ctx);
                     }
                 }
             } else {
                 if (points[i + 1].geometry) {
                     let newGeometryToNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, points[i - 1], point);
                     if (newGeometryToNewPoint) {
-                        point.geometry = newGeometryToNewPoint;
+                        point.geometry = newGeometryToNewPoint.points || [];
+                        updateTrackRouteTypes(newGeometryToNewPoint.points, newGeometryToNewPoint.routeTypes, ctx);
                     }
                     let newGeometryFromNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, point, points[i + 1]);
                     if (newGeometryFromNewPoint) {
-                        points[i + 1].geometry = newGeometryFromNewPoint;
+                        points[i + 1].geometry = newGeometryFromNewPoint.points || [];
+                        updateTrackRouteTypes(newGeometryFromNewPoint.points, newGeometryFromNewPoint.routeTypes, ctx);
                     }
                 }
             }

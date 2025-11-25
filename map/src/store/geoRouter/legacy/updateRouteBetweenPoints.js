@@ -6,6 +6,22 @@ import { showProcessingNotification } from '../../../manager/GlobalManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
+/**
+ * Calculates route between two points using selected router (OSRM, OsmAnd, or Line)
+ *
+ * @param {Object} ctx - Application context
+ * @param {Object} start - Start point with {lat, lng} coordinates
+ * @param {Object} end - End point with {lat, lng} coordinates
+ * @param {Object} geoProfile - Geo profile with routing settings (type, profile, etc.)
+ *
+ * @returns {Promise<Object>} Result object containing:
+ *   - points: Array<{lat, lng, ele, distance, ...}> - Array of route geometry points (coordinates)
+ *   - routeTypes: Array<{tag, value}> - Array of route segment types (road types, surfaces, etc.)
+ *
+ * @example
+ * const result = await updateRouteBetweenPoints(ctx, point1, point2, geoProfile);
+ * point2.geometry = result?.points || []; // IMPORTANT: use result.points, not result itself!
+ */
 export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = this?.getGeoProfile()) {
     const routers = {
         osrm: updateRouteBetweenPointsOSRM,

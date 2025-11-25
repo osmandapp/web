@@ -1,7 +1,6 @@
 import cloneDeep from 'lodash-es/cloneDeep';
-import TracksManager from '../manager/track/TracksManager';
+import TracksManager, { updateTrackRouteTypes } from '../manager/track/TracksManager';
 import EditablePolyline from '../map/util/creator/EditablePolyline';
-import { DEFAULT_TRACK_LINE_WEIGHT } from '../map/util/TrackLayerProvider';
 
 const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
@@ -57,62 +56,6 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
 
     ctx.setProcessRouting(false); // all done but a few Promises might still be active
     return false;
-}
-
-function updateTrackRouteTypes(newGeo, routeTypes, ctx) {
-    const updatedTypes = processGeometryPoints(newGeo, routeTypes ?? ctx.selectedGpxFile.routeTypes ?? []);
-    ctx.setSelectedGpxFile((prev) => {
-        return { ...prev, routeTypes: updatedTypes };
-    });
-}
-
-function processGeometryPoints(result, routeTypes) {
-    result.forEach((point) => {
-        if (point.segment) {
-            const segment = point.segment;
-
-            const segmentTypes = segment.ext.types ?? null;
-            const segmentPointTypes = segment.ext.pointTypes ?? null;
-            const segmentNames = segment.ext.names ?? null;
-
-            if (routeTypes && routeTypes.length > 0) {
-                let updatedSegmentRouteTypes = new Map();
-                routeTypes.map((type, oldIndex) => {
-                    let newIndex;
-                    const existingTypeIndex = routeTypes.findIndex(
-                        (globalType) => globalType.tag === type.tag && globalType.value === type.value
-                    );
-                    if (existingTypeIndex !== -1) {
-                        newIndex = existingTypeIndex;
-                    } else {
-                        routeTypes.push(type);
-                        newIndex = routeTypes.length - 1;
-                    }
-                    updatedSegmentRouteTypes.set(oldIndex, newIndex);
-                });
-
-                if (segmentTypes) {
-                    segment.ext.types = updateIndexes(segmentTypes, updatedSegmentRouteTypes);
-                }
-                if (segmentPointTypes) {
-                    segment.ext.pointTypes = updateIndexes(segmentPointTypes, updatedSegmentRouteTypes);
-                }
-                if (segmentNames) {
-                    segment.ext.names = updateIndexes(segmentNames, updatedSegmentRouteTypes);
-                }
-            }
-
-            delete segment.routeTypes;
-        }
-    });
-    return routeTypes;
-}
-
-function updateIndexes(value, updatedSegmentRouteTypes) {
-    return value.replace(/\d+/g, (match) => {
-        const index = parseInt(match, 10);
-        return updatedSegmentRouteTypes.has(index) ? updatedSegmentRouteTypes.get(index) : index;
-    });
 }
 
 export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer }) {
