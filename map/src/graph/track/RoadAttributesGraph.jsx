@@ -4,16 +4,16 @@ import { Bar } from 'react-chartjs-2';
 import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import AppContext from '../../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
-import { cap, formattingSteepnessLabel, prepareType, STEEPNESS } from '../../../manager/GraphManager';
+import { cap, formattingSteepnessLabel, prepareType, STEEPNESS } from '../GraphManager';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     convertMeters,
     getLargeLengthUnit,
     getSmallLengthUnit,
     LARGE_UNIT,
-} from '../../../menu/settings/units/UnitsConverter';
+} from '../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);

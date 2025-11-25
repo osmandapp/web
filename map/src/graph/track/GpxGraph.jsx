@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RoadAttributesGraph from './RoadAttributesGraph';
 import MainGraph from './MainGraph';
-import { cap, UNDEFINED_DATA } from '../../../manager/GraphManager';
+import { cap, UNDEFINED_DATA } from '../GraphManager';
 import { useTranslation } from 'react-i18next';
 
 export default function GpxGraph({ mainData, attrGraphData, showData, width }) {

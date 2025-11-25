@@ -22,7 +22,7 @@ import { addColorsToSegments } from './util/SegmentColorizer';
 import SortFilesButton, { TRACK_FILE_TYPE } from '../components/buttons/SortFilesButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import SegmentParamsFilter from './SegmentParamsFilter';
-import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
+import { TYPE_ANALYZER } from '../../graph/mapGraph/GlobalGraph';
 import ErrorBlock from './ErrorBlock';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import LoginContext from '../../context/LoginContext';
