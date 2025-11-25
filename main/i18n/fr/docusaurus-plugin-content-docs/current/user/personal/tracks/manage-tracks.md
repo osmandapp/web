@@ -1,5 +1,5 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title:  Gérer les traces
 ---
@@ -196,7 +196,7 @@ Une fois votre choix fait, les étapes suivantes sont proposées :
 
 - **Afficher sur la carte** — Avec cette fonctionnalité, vous pouvez afficher les traces sélectionnées sur la carte pour mieux comprendre leur emplacement et leur relation les unes par rapport aux autres.
 
-- **Partager** (*Android*) / **Exporter** (*iOS*) — Si vous souhaitez partager des données sélectionnées avec d'autres utilisateurs ou les enregistrer sur un service cloud, la fonctionnalité *Partager/Exporter* vous permet d'envoyer des traces et des dossiers en utilisant différentes méthodes de partage.
+- **Partager** (*Android*) / **Exporter** (*iOS*) — Ouvre le menu Partager du système et envoie les traces sélectionnées sous forme de fichiers GPX (.gpx) ou exporte les dossiers sélectionnés en utilisant l'application ou le service cloud choisi.
 
 - **Téléverser sur OpenStreetMap** — Vous pouvez soumettre les traces sélectionnées à OpenStreetMap, contribuant ainsi au développement et à l'amélioration des données.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -35,7 +35,7 @@ Pour vous connecter avec d'autres utilisateurs d'OsmAnd, poser des questions et 
 |  Google Groups | Osmand (*English*)  | Un groupe où les utilisateurs partagent des conseils, répondent aux questions et discutent des fonctionnalités d'OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discussion and support  | La communauté Reddit pour les utilisateurs d'OsmAnd. Posez des questions, partagez vos expériences ou présentez vos styles de carte personnalisés. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 |  Telegram | OsmAnd News channel (*English*)  | Le groupe officiel d'OsmAnd pour les annonces et les mises à jour directement des développeurs. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  Twitter | OsmAnd news channel  | Groupe officiel d'OsmAnd pour les discussions en direct, les annonces et les mises à jour. | [Twitter OsmAnd](https://x.com/osmandapp/) |
+|  X (Twitter) | OsmAnd news channel  | Groupe officiel d'OsmAnd pour les discussions en direct, les annonces et les mises à jour. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | OsmAnd news channel | Une communauté où vous pouvez discuter, partager des conseils et obtenir de l'aide sur les fonctionnalités d'OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
@@ -64,7 +64,7 @@ Ces manuels, disponibles en plusieurs langues, fournissent souvent des aperçus 
 | Langue | Description | Lien |
 | :-- | :-- | :-- |
 | Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtenir más herramientas pour la navigation virtuelle et que sirva comme outil pour les travaux géodésiques. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
@@ -82,7 +82,7 @@ Ce qui suit est une liste de [plugins personnalisés](../plugins/custom.md) dév
 
 | Nom | Description | Lien du plugin |
 |--|--|--|
-| OsmAnd Rendering  | Le plugin ajoute les styles de carte Enduro, CycloRoute et Randonnée (plus d'infos [ici](../map/vector-maps.md#default-map-styles)) et 5 nouveaux [profils](https://osmand.net/docs/user/personal/profiles) (Piéton, Vélo et trois profils Moto). Il fournit également des cartes en ligne pour l'Espagne, la France, la Norvège, la Suisse, l'Autriche, la Belgique et l'Argentine via le menu [Cartes et ressources](../personal/maps-resources.md#extra-maps) dans le dossier *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| OsmAnd Rendering  | Le plugin ajoute les styles de carte Enduro, CycloRoute et Randonnée (plus d'infos [ici](../map/vector-maps.md#default-map-styles)) et 5 nouveaux [profils](https://osmand.net/docs/user/personal/profiles) (Piéton, Vélo et trois profils Moto). Il fournit également des cartes en ligne pour l'Espagne, la France, la Norvège, Suisse, l'Autriche, la Belgique et l'Argentine via le menu [Cartes et ressources](../personal/maps-resources.md#extra-maps) dans le dossier *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Rahal Team map of Saudi Arabia  | Une carte hors ligne professionnelle du Royaume d'Arabie Saoudite, incluant les caractéristiques topographiques, les routes, les villes, les villages et les sources d'eau. Parfait pour les excursions dans le désert. Visitez [Rahal Maps](https://rahalteam.com) pour plus d'informations. | [🇸🇦 Saudi Arabia maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D model  | Ce paquet ajoute une option de modèle 3D pour les profils. Personnalisez l'apparence via le menu : [*Menu OsmAnd → Paramètres → Profil → Apparence du profil → choisissez les 4ème-5ème icônes de l'icône de position*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS online maps collection | Une collection de diverses sources de cartes en ligne, y compris des cartes satellites, touristiques et historiques, entre autres.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
@@ -107,6 +107,7 @@ Le fichier [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) est un style de carte axé sur le cyclisme, mettant en évidence les pistes cyclables (en rouge), les itinéraires cyclables (en tirets bleus), les chemins cyclables (en tirets rouges) et les routes à circulation automobile limitée, telles que les rues cyclables (bordures rouges pleines).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) est un style de carte de Holder Tamm qui vous permet de choisir de masquer ou non certains objets.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) est principalement basé sur UniMap et routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [Ceci est un style de rendu OsmAnd optimisé pour la chasse aux tempêtes](https://github.com/pqo/stormchasing-rendering-style)  |[Style de rendu Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 ### Cartes hors ligne {#offline-maps}
 
@@ -142,7 +143,7 @@ Le tableau suivant répertorie diverses sources de cartes en ligne préparées p
 
 ## Interagissez avec OsmAnd : Partagez, suggérez et connectez-vous {#engage-with-osmand-share-suggest-and-connect}
 
-Si vous avez des suggestions pour de nouveaux styles de carte, des plugins, ou si vous souhaitez contribuer avec vos propres créations pour enrichir les ressources de la communauté OsmAnd, n'hésitez pas à nous contacter. Nous apprécions et accueillons vos contributions pour continuer à développer la base de données d'OsmAnd.
+Si vous avez des suggestions pour de nouveaux styles de carte, des plugins, ou peut-être que vous aimeriez contribuer avec vos propres créations pour élargir les ressources de la communauté OsmAnd, veuillez nous contacter. Nous apprécions et accueillons vos contributions pour développer davantage la base de données d'OsmAnd.
 
 - **Follow**: <LinksSocial/>  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
+source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
 sidebar_position: 5
 title:  Cartes vectorielles (Styles de carte)
 ---
@@ -255,7 +255,7 @@ La fonctionnalité **Grille de coordonnées** superpose une grille de référenc
 Vous pouvez configurer les options suivantes :
 - **Niveaux de zoom :** définir les niveaux de zoom minimum et maximum (2 - 22) auxquels la grille est visible.
 - **Position des étiquettes :** choisir entre *Bords* (par défaut) ou *Centre* pour les étiquettes de grille.
-- **Couleur de la grille :** disponible séparément pour les modes Jour/Nuit. La personnalisation de la couleur de la grille est une fonctionnalité payante.
+- **Couleur de la grille :** disponible séparément pour les modes Jour/Nuit. La personnalisation de la couleur de la grille est une [fonctionnalité payante](https://osmand.net/docs/user/purchases/) disponible dans Maps+ (achat in-app ou abonnement) et OsmAnd+.
 - **Format de coordonnées :** sélectionner parmi plusieurs formats disponibles (voir liste ci-dessous).
 
 
@@ -493,7 +493,7 @@ Paramètres spéciaux pour les routes, où vous pouvez changer les couleurs pour
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Le contraste élevé des routes.  
 ![Style de route à contraste élevé](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pâle**. Couleurs moins contrastées des routes.  
-![Style de route à contour gras](@site/static/img/map/map-road-style-pale.png)
+![Style de route pâle](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contour gras pour les routes.  
 ![Style de route à contour gras](@site/static/img/map/map-road-style-bold-outline.png)

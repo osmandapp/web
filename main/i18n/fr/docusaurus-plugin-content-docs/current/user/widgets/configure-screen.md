@@ -1,5 +1,5 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Configurer l'écran
 ---
@@ -267,7 +267,23 @@ Le mode vous permet d'ajouter **plus d'un widget dans une seule ligne** sur les 
     - [Profil d'altitude (*Android uniquement*)](../widgets/nav-widgets#elevation-widget)
     - [Manœuvres d'itinéraire](../widgets/nav-widgets.md#next-turn)
 
-- **Widgets simples**. Plusieurs widgets simples peuvent être ajoutés à une seule ligne. Ces widgets peuvent afficher *Nom*, *Unités de mesure*, *Valeur* et *Icône*.
+- **Widgets simples**. Plusieurs widgets simples peuvent être ajoutés à une seule ligne. Ces widgets peuvent afficher *Nom*, *Unités de mesure*, *Valeur* et *Icône*. Le texte dans les widgets simples est automatiquement surligné pour assurer une lisibilité claire sur divers arrière-plans de carte en mode panneau transparent.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Contour de widget Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Contour de widget iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Pages {#pages}
@@ -317,12 +333,17 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
     - Améliore la clarté et maximise l'espace pour les données importantes.
     - Particulièrement utile lors de l'affichage de nombreux widgets sur la même **ligne**.
 
-3. **Taille individuelle pour différentes lignes** (*pour tous les panneaux*) :
+3. **Masquer les étiquettes de texte des widgets** :
+
+    - Masque automatiquement les étiquettes de texte pour garder les informations numériques entièrement visibles dans les mises en page compactes.
+    - Aide à maintenir un agencement de widgets propre et lisible lorsque l'espace est limité.   
+
+4. **Taille individuelle pour différentes lignes** (*pour tous les panneaux*) :
 
     - Les widgets peuvent être dimensionnés individuellement en ajustant la taille de la ligne et de la colonne.
     - **NOTE :** Changer la taille d'un widget dans une ligne/colonne redimensionnera tous les widgets de cette ligne/colonne.
 
-4. **Pour changer la taille du widget et la visibilité de l'icône :**
+5. **Pour changer la taille du widget et la visibilité de l'icône :**
 
     - Sélectionnez un widget que vous avez déjà ajouté au panneau.  
     - Appuyez sur l'icône *Paramètres* sur le côté droit du champ du widget.

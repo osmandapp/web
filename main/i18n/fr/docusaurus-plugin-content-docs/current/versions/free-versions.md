@@ -1,5 +1,5 @@
 ---
-source-hash: e32002b1e2ac76d0a8e5083fbdf2707bb26ad54eefed1940e9b3707d78dd3620
+source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
 sidebar_position: 2
 ---
 
@@ -19,6 +19,27 @@ Liens directs vers les versions gratuites d'OsmAnd.
 
 ## Version 5 {#version-5}
 
+### Version 5.2 {#version-52}
+
+Date de publication 11/2025 :
+
+- Nouveau style de carte nautique « Marine » avec de nombreuses options de personnalisation.
+- Ajout de détails sur les rues et les villes dans les résultats de recherche.
+- Nouveaux widgets d'enregistrement de trajet : Vitesse max, Pente moyenne, et montées/descentes améliorées.
+- Amélioration de la vitesse de rendu de la carte.
+- Synchronisation automatique de base vers OsmAnd Cloud.
+- Amélioration de la connectivité OBDII BLE.
+- Mises à jour de la fonctionnalité « Analyser par intervalle ».
+- Outil Planifier un itinéraire amélioré.
+- Ajout de la possibilité de définir les unités d'altitude séparément des unités de distance.
+- Action rapide d'orientation de la carte améliorée avec des modes de boussole sélectionnables.
+- Améliorations Android Auto.
+- Orientations d'écran inversées.
+- Interface utilisateur améliorée pour ajouter des métriques de camion dans les paramètres du profil Camion.
+- Plus de paramètres pour l'affichage de l'itinéraire sur la carte.
+
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+
 ### Version 5.1 {#version-51}
 
 Date de publication 06/2025 :
@@ -31,7 +52,7 @@ Date de publication 06/2025 :
 - Ajout d'un analyseur de montées/descentes.
 - Intégration étendue de Wikipedia et Wikivoyage pour plus de POI.
 
-<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.7-5107.apk" />
+<DownloadRelease blog="osmand-android-5-1-released" release="net.osmand-5.1.9-5109.apk" />
 
 ### Version 5.0 {#version-50}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 621169852e7cf1c482de73c1a7a6f8f94e0ec6854fd637bd85cfb1e349897ca0
+source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
 sidebar_position: 1
 title:  Premiers Pas
 ---
@@ -491,7 +491,7 @@ Appuyez sur une icône d'action pour démarrer immédiatement l'application avec
 </Tabs>
 
 Dans le *menu Aide*, vous pouvez trouver des articles de notre site [www.osmand.net/docs](https://osmand.net/docs/intro/). Après le téléchargement initial (connexion Internet requise), les articles d'aide sont disponibles hors ligne.  
-La première sous-section, *Aide hors ligne*, contient les articles les **plus consultés** (ou populaires) parmi nos utilisateurs. Les sections **Guide de l'utilisateur** et **Dépannage** ont la même structure que sur le site web.  
+La première sous-section, *Aide hors ligne*, contient les **articles les plus consultés** (ou populaires) parmi nos utilisateurs. Ces articles sont affichés dans la langue définie pour l'application, si cette langue est prise en charge sur notre site de documentation. Les langues prises en charge incluent actuellement : *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, et *<Translate android="true" ids="lang_uk"/>*. Si vous changez la langue de l'application, veuillez redémarrer OsmAnd pour que la documentation s'ouvre dans la langue sélectionnée. Lorsque une traduction n'est pas disponible, la version anglaise de la page sera affichée automatiquement. Les sections **Guide de l'utilisateur** et **Dépannage** ont la même structure que sur le site web.  
 Dans le *menu Aide*, vous pouvez également trouver des liens utiles vers les réseaux sociaux d'OsmAnd, des informations sur la version de votre application, les notes de version et les contacts du support. Via l'Aide, vous pouvez également envoyer des [journaux logcat et de crash](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
 
 ### Menu {#menu}

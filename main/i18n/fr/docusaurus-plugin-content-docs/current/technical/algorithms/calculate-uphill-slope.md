@@ -1,13 +1,13 @@
 ---
-source-hash: 6f725a1fadd0a2c5cd2626f8424f87e2e54b060d0b683fd33a90f9426413a826
+source-hash: d793188a0617dee4c181a2021483255f3e56c64b9e25db7249b0fb0d19923b4d
 sidebar_position: 5
 ---
 
 # Calcul de la montée / descente / pente {#calculation-of-uphill--downhill--slope}
 
-OsmAnd utilise différents algorithmes pour calculer la **pente** et la **montée** basés sur les données satellites SRTM qui sont intégrées dans les cartes hors ligne et basées sur les traces GPX enregistrées.
+OsmAnd utilise différents algorithmes pour calculer la **pente** et la **montée** basés sur les données satellites SRTM qui sont intégrées dans les cartes hors ligne et basés sur les traces GPX enregistrées.
 
-L'objectif principal du calcul de la **montée** est de fournir des informations pertinentes sur la quantité d'**énergie supplémentaire** dépensée en montant. Évidemment, cela dépend de multiples facteurs tels que le véhicule ou le mode de transport, la surface, le poids de la personne et d'autres.
+L'objectif principal du calcul de la **montée** est de fournir des informations pertinentes sur la quantité d'**énergie supplémentaire** dépensée en montant, évidemment cela dépend de multiples facteurs tels que le véhicule ou le mode de transport, la surface, le poids de la personne et d'autres.
 Ainsi, en fin de compte, la **montée** devrait être un paramètre pris en compte par le routage basé sur l'altitude, afin de produire un routage économe en énergie.
 
 L'objectif principal du calcul de la **pente** est d'avoir une indication visuelle des routes escarpées à éviter.
@@ -15,7 +15,7 @@ L'objectif principal du calcul de la **pente** est d'avoir une indication visuel
 
 ## Montée / Descente {#uphill--downhill}
 
-Il y a beaucoup de problèmes pour calculer la **montée** car il n'y a pas de norme et parce que cela dépend du mode de transport et de nombreux autres paramètres, il est difficile de fournir un contrôle raisonnable à l'utilisateur sans que ce soit trop compliqué. Habituellement, la montée est comparée à d'autres programmes, mais il n'y a aucun programme qui ait une norme d'or.
+Il y a beaucoup de problèmes pour calculer la **montée** car il n'y a pas de norme et parce que cela dépend du mode de transport et de nombreux autres paramètres, il est difficile de fournir un contrôle raisonnable à l'utilisateur sans que ce soit trop compliqué. Habituellement, la montée est comparée à d'autres programmes mais il n'y a aucun programme qui ait une norme d'or.
 
 OsmAnd utilise un algorithme en 3 étapes :
 
@@ -23,7 +23,7 @@ OsmAnd utilise un algorithme en 3 étapes :
 - Trouver les extremums locaux (minimums et maximums).
 - Calculer la somme des différences entre min et max.
 
-Certaines traces contiennent beaucoup de données bruitées qui doivent être filtrées en premier. Pour l'instant, nous appliquons le filtrage à toutes les traces, mais pour les traces préparées telles que celles construites par 
+Certaines traces contiennent beaucoup de données bruitées qui doivent être filtrées en premier. Pour l'instant, nous appliquons le filtrage à toutes les traces mais pour les traces préparées telles que celles construites par 
 l'outil Planifier un itinéraire, l'outil de navigation ou après correction SRTM, le filtrage ne devrait avoir aucun effet.
 
 
@@ -49,7 +49,7 @@ Les points qui représentent des collines locales ```/\``` sont filtrés, ce qui
 
 ### Recherche d'extremums {#finding-extremums}
 
-Pour trouver les extremums, l'algorithme [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) est utilisé. Il n'est pas absolument bon pour trouver exactement les extremums sur un graphique aléatoire, mais dans le calcul de l'altitude, il évite beaucoup de petits pics aléatoires qui pourraient se produire pendant une longue montée et quelques descentes courtes inaperçues entre les deux.
+Pour trouver les extremums, l'algorithme [Ramer-Douglas-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) est utilisé. Il n'est pas absolument bon pour trouver exactement les extremums sur un graphique aléatoire, mais dans le calcul de l'altitude, il évite beaucoup de petits pics aléatoires qui pourraient se produire pendant une longue montée et quelques descentes courtes inaperçues entre les deux.
 
 Le but principal de l'algorithme est de trouver le nombre minimum de lignes droites qui pourraient représenter le graphique d'altitude. Le ```seuil``` est de **[7 mètres](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. Ainsi, tous les pics supérieurs à 7 mètres de différence seront détectés sur des surfaces planes et ne seront pas détectés s'ils sont inférieurs.
 
@@ -80,14 +80,31 @@ Par exemple, si vous avez une trace simple qui monte et descend, vous n'avez qu'
 Plus d'exemples seront ajoutés.
 
 
-## Correction d'altitude SRTM {#altitude-srtm-correction}
+## Correction d'altitude {#elevation-correction}
 
-Il existe 2 alternatives possibles à utiliser dans OsmAnd pour obtenir une correction d'altitude.
+La Correction d'altitude ajuste les valeurs d'altitude dans une trace GPX en utilisant des sources d'altitude externes. Deux sources de données d'altitude sont disponibles :
 
-1. Ouvrez la trace dans OsmAnd Android et trouvez, *Modifier la trace → Options → Correction d'altitude* 
-1.1 **En ligne**  traitera la trace via le serveur OsmAnd et les données.
-1.2 **Hors ligne**  traitera la trace sur l'appareil si les fichiers geotifs 3D sont téléchargés.
-2. Ouvrez le site web https://osmand.net/map et téléchargez la trace pour voir l'altitude SRTM.
+1. Utiliser les cartes de terrain (DEM / SRTM / données d'altitude 3D)
+- Remplace les valeurs d'altitude par des données des cartes de terrain téléchargées (DEM/SRTM ou fichiers GeoTIFF 3D).
+- Fonctionne localement sur l'appareil si les tuiles d'altitude sont installées.
+- Cette méthode conserve la géométrie originale de la trace.
+
+2. Utiliser les routes proches (Attacher aux routes)
+- Ajuste la géométrie de la trace pour qu'elle corresponde au réseau routier.
+- Utilise les données d'altitude des routes pour la correction d'altitude.
+- Cette méthode peut modifier la forme de la trace en raison de l'ajustement aux routes.
+
+Données qui peuvent changer après l'application de la Correction d'altitude :
+- Distance
+- Taille
+- Montée
+- Descente
+- Vitesse moyenne
+- Vitesse maximale
+- Durée
+- Temps en mouvement
+
+Les horodatages GPX (date/heure) sont préservés lors de l'utilisation des deux sources d'altitude.
 
 
 ## Pente {#slope}

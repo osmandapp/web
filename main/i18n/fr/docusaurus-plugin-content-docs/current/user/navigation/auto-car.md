@@ -1,5 +1,5 @@
 ---
-source-hash: 445bb9b5f04a5bc8e6acdc450e68d71921749a8fa1566cea851d497d3c39b1d9
+source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -32,7 +32,7 @@ La fonction **Android Auto** n'est prise en charge que lors de l'utilisation de 
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
 
-Lorsque votre appareil est connecté à *Android Auto*, la carte sur l'écran de l'application est verrouillée. Il s'agit d'une fonction de sécurité intentionnelle pour garantir que la navigation est contrôlée exclusivement depuis l'écran de la voiture, minimisant ainsi les distractions au volant. Consultez les [questions fréquentes](#common-issues-and-solutions) concernant l'écran de connexion.
+Lorsque votre appareil est connecté à *Android Auto*, la carte sur l'écran de l'application est verrouillée. Il s'agit d'une fonction de sécurité intentionnelle pour garantir que la navigation est contrôlée exclusivement depuis l'écran de la voiture, minimisant ainsi les distractions au volant. Consultez les [questions courantes](#common-issues-and-solutions) concernant l'écran de connexion.
 
 
 ### Écran d'accueil {#landing-screen}
@@ -60,7 +60,7 @@ Lorsque vous ouvrez l'application, une liste de catégories s'affiche. Pour faci
 - [Paramètres](#voice-prompts). Ce bouton est responsable de : 1. l'accès pour activer/désactiver les *instructions vocales* lorsque vous naviguez sur l'itinéraire sélectionné ; 2. afficher les détails de l'itinéraire (temps et distance) pour le prochain arrêt.
 - [Recherche](#search). Appuyer sur le bouton ouvre un écran avec accès aux fonctions de recherche.
 - [Ma position](../widgets/map-buttons.md#my-location-and-zoom). Déplace la partie visible de la carte pour que votre position actuelle soit au centre de l'écran.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Permet de zoomer en avant et en arrière sur la partie visible de la carte.
+- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Permet de zoomer en avant et en arrière sur la partie visible de la carte. Le geste de pincement pour zoomer est disponible pour l'échelle de la carte. Si cela n'est pas pris en charge par l'unité principale, le réglage du zoom s'effectue par un double-tap et un geste de balayage.
 - [Boussole](../widgets/map-buttons.md#compass). Indique lequel des quatre modes d'orientation de la carte disponibles sur l'écran de votre appareil est sélectionné.
 
 
@@ -227,6 +227,27 @@ Les informations sur l'itinéraire comprennent :
 Lorsqu'il est activé, [le paramètre du widget](#eta-next-stop) (Informations sur l'itinéraire) affichera les détails de l'itinéraire pour le prochain arrêt ([le point intermédiaire](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
+### Alertes de navigation {#navigation-alerts}
+
+![Alerte manquante](@site/static/img/navigation/auto-car/missing_alert.png) ![Alerte privée](@site/static/img/navigation/auto-car/private_alert.png)
+
+Des alertes utiles sont affichées automatiquement avant le démarrage de la navigation si l'itinéraire ne peut pas être construit normalement. Cela empêche l'itinéraire de rester bloqué sur le chargement et vous permet de choisir rapidement comment continuer.
+
+**Cartes manquantes ou obsolètes**
+
+Si votre destination se trouve en dehors des zones de cartes téléchargées, un message s'affiche et vous pouvez choisir l'une des actions suivantes :
+- **Utiliser les cartes téléchargées**. L'itinéraire est construit en utilisant uniquement les cartes déjà stockées sur votre appareil. (L'itinéraire peut être incomplet si les données de carte requises ne sont pas disponibles.)
+- **Afficher sur le téléphone**. L'écran de téléchargement de carte s'ouvre sur votre smartphone, où les régions nécessaires peuvent être téléchargées. Après le téléchargement, le calcul d'itinéraire est redémarré automatiquement.
+
+Cette alerte est affichée directement sur l'écran du véhicule, de la même manière que dans l'application mobile.
+
+**Avertissement d'accès privé**
+
+Si votre destination se trouve dans une zone privée ou à accès restreint, un avertissement s'affiche et vous pouvez choisir :
+- **Autoriser**. La navigation se poursuit en utilisant les routes privées si cela est autorisé ou si vous avez accès.
+- **Annuler**. La demande de navigation est annulée et l'écran précédent est restauré.
+
+
 ### Widget d'alerte à l'écran {#screen-alert-widget}
 
 Ce widget d'information combine des types d'alertes tels que **Passages piétons** et **Limitation de vitesse**.
@@ -258,6 +279,24 @@ L'application OsmAnd vous permet d'utiliser la vue de la carte en 3D sur l'écra
 - Ouvrez le menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* directement dans l'application OsmAnd.
 - Après avoir configuré les paramètres, le **bouton 3D** s'affichera sur l'écran *Android Auto* lorsque la liste des catégories de destinations est fermée.
 - Vous pouvez basculer entre les modes de carte 3D / 2D en appuyant sur ce bouton.
+
+### Terminer la navigation {#finish-navigation}
+
+![Fin de navigation](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+Lorsque la navigation est terminée dans Android Auto, une boîte de dialogue spéciale Fin de navigation apparaît sur l'écran du véhicule. Elle utilise le même algorithme de détection d'arrivée que l'application mobile et vous aide à conclure rapidement votre trajet ou à trouver un parking à proximité.
+
+Options disponibles :
+- **Marquer comme emplacement de parking**. Enregistre votre position actuelle comme emplacement de parking et place un marqueur de parking sur la carte.
+- **Trouver un parking**. Ouvre l'écran de Recherche avec la catégorie Parking pré-sélectionnée, afin que vous puissiez facilement localiser les zones de parking à proximité.
+- **Recalculer l'itinéraire**. Construit un nouvel itinéraire vers votre destination d'origine si vous vous êtes arrêté plus tôt ou si vous souhaitez continuer à conduire.
+- **Terminer la navigation**. Met fin à la navigation complètement et ramène OsmAnd à la vue par défaut de la carte.
+
+Comportement lors de la déconnexion d'Android Auto :
+- Si votre téléphone se déconnecte lorsque le véhicule est déjà à moins de 100 m de la destination, OsmAnd arrête automatiquement la navigation, repasse au profil par défaut, et aucune notification d'arrivée n'apparaît sur l'écran du téléphone.
+- Si la déconnexion se produit lorsque vous êtes à l'arrêt ou que vous vous déplacez plus lentement que 1 m/s (par exemple, à une station-service), OsmAnd met temporairement en pause la navigation. Elle reprend automatiquement lorsque l'appareil se reconnecte à Android Auto.
+
+Cette mise à jour garantit également que les sessions Android Auto se ferment correctement, évitant une consommation inutile de batterie et arrêtant les notifications « trajet en cours » une fois la navigation terminée.
 
 
 ## Paramètres {#settings}
@@ -317,7 +356,7 @@ L'application OsmAnd peut être ouverte et utilisée pour naviguer dans *Android
 Dans les paramètres d'Android Auto, vous pouvez modifier la position de la barre des tâches et la disposition de l'écran d'accueil :
 
 - **Position de la barre des tâches :**  
-  Allez dans *Paramètres Android Auto → Afficher les contrôles rapides pour les applications* et désactivez l'interrupteur. Cela déplacera la barre des tâches du bas vers le côté de l'écran.
+  Allez dans *Paramètres Android Auto → Afficher les contrôles rapides pour les Apps* et désactivez l'interrupteur. Cela déplacera la barre des tâches du bas vers le côté de l'écran.
 
 - **Disposition de l'écran d'accueil :**  
   Allez dans *Paramètres Android Auto → Changer la disposition → Changer l'emplacement du siège du conducteur* pour ajuster la disposition en fonction de la position du siège du conducteur.
@@ -328,7 +367,7 @@ Dans les paramètres d'Android Auto, vous pouvez modifier la position de la barr
 1. [Problème d'orientation de la carte.](../troubleshooting/android_auto.md#map-orientation-issue)
 2. [Problème de contrôle du volume.](../troubleshooting/android_auto.md#volume-control-issue)
 3. [Retards de localisation (plantages ANR).](../troubleshooting/android_auto.md#location-delays-anr-crashes)
-4. Questions fréquentes sur l'écran de connexion :
+4. Questions courantes concernant l'écran de connexion :
     - *Pourquoi ne puis-je pas contrôler l'application depuis mon téléphone lorsqu'il est connecté à Android Auto ?*  
         Pour des raisons de sécurité, l'écran de l'application OsmAnd sur votre téléphone est verrouillé lorsqu'il est connecté à Android Auto. Vous ne pouvez interagir avec l'application que via l'écran de la voiture.
     - *Puis-je désactiver l'écran verrouillé et utiliser l'application sur mon téléphone ?*  

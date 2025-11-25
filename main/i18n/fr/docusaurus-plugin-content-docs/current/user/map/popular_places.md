@@ -1,5 +1,5 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Lieux populaires
 ---
@@ -169,6 +169,8 @@ Appuyer sur un POI sur la carte ouvre le [menu contextuel du POI](./map-context-
 
 Ceci est une section dans le [menu contextuel du POI](./map-context-menu.md) qui affiche un aperçu photo du Lieu populaire (Wikipedia) sélectionné. Vous pouvez faire défiler horizontalement pour parcourir les photos disponibles, ou appuyer sur n'importe quelle image pour l'ouvrir en [mode plein écran](#gallery).
 
+Les images consultées en ligne sont mises en cache automatiquement pour un accès hors ligne. Les photos mises en cache affichent un petit badge hors ligne dans le coin. La grille d'aperçu s'adapte à la taille de l'écran sur iPadOS et macOS, garantissant une mise en page confortable des images sur les écrans plus grands. OsmAnd évite également de déclencher des requêtes réseau répétées lorsque la section Photos en ligne est fermée, et annule les requêtes précédentes lors d'un basculement rapide entre différents POI.
+
 En savoir plus sur les options supplémentaires dans les sections [Actions](#actions) et [Galerie](#gallery).
 
 
@@ -192,6 +194,8 @@ Dans le menu contextuel de la carte Comment y accéder :
 - Appuyez sur n'importe quelle photo pour la voir en [plein écran](#gallery) et accéder aux actions disponibles :  
   **Partager**, **Détails**, **Ouvrir dans le navigateur**, et **Télécharger**.
 
+**Note :** Le téléchargement enregistre l'image dans le stockage de l'appareil pour une utilisation hors ligne permanente, tandis que les photos mises en cache sont stockées automatiquement et disponibles hors ligne uniquement dans l'application.
+
 
 ### Galerie {#gallery}
 
@@ -214,7 +218,9 @@ Dans le menu contextuel de la carte Comment y accéder :
 </Tabs>
 
 
-Le **Menu Galerie** peut afficher jusqu'à **100 images** relatives au point d'intérêt sélectionné. Vous pouvez faire défiler toutes les photos disponibles. Un appui bref sur une photo ouvre une vue détaillée affichant : *Nom*, *Date d'ajout*, *Auteur*, *Licence*  
+Le **Menu Galerie** peut afficher jusqu'à **100 images** relatives au point d'intérêt sélectionné. Vous pouvez faire défiler toutes les photos disponibles. Un appui bref sur une photo ouvre une vue détaillée affichant : *Nom*, *Date d'ajout*, *Auteur*, *Licence*.  
+
+Sur iOS, iPadOS et macOS, vous pouvez naviguer dans les photos à l'aide des touches du clavier (←/→ pour passer d'une image à l'autre, Entrée/Espace pour ouvrir).
 
 Vous pouvez également effectuer les actions suivantes sur chaque photo :
 

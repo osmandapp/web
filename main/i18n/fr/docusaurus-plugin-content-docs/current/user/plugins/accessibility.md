@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
 sidebar_position: 1
 title:  Accessibilité
 ---
@@ -93,7 +93,7 @@ Pour activer les fonctionnalités d'accessibilité de l'appareil dans OsmAnd, vo
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
+![Accessibility](@site/static/img/plugins/accessibility/access_new.png)  
 
 Le plugin Accessibilité offre divers paramètres pour personnaliser la navigation et l'interaction pour les utilisateurs en situation de handicap. Ces paramètres sont appliqués par [profil](../personal/profiles.md) dans OsmAnd.
 
@@ -101,6 +101,7 @@ Le plugin Accessibilité offre divers paramètres pour personnaliser la navigati
 |---------------------------|-------------|  
 | **Mode Accessibilité**    | Active les *fonctionnalités intégrées d'OsmAnd* ou utilise les **paramètres système**. |  
 | **Débit de la parole**           | Contrôle la *vitesse de la synthèse vocale*, allant de **50 % à 200 %**. |  
+| **Grossissement au zoom par pincement**    | Agrandit temporairement la carte pendant que vous effectuez un zoom par pincement et maintenez vos doigts sur l'écran, en agrandissant le texte et les icônes sans changer le niveau de zoom réel. |  
 | [Annonce automatique intelligente](#smart-autoannounce)    | Fournit un *guidage vocal* en cas d'écart par rapport à l'itinéraire. |  
 | **Période d'annonce automatique**   | Définit le temps minimum entre les annonces, de **5 secondes à 5 minutes**. |  
 | [Style de direction](#direction-style)       | Choisissez entre *Latéral (8 directions)* ou *Horaire (12 directions)*. |  

@@ -1,5 +1,5 @@
 ---
-source-hash: cc4a39deaa5305aa029009f3f9baff5a545f3a163336fd6ca3c80b085166c351
+source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
 sidebar_position: 4
 title:  Configurer la carte
 ---
@@ -41,7 +41,29 @@ Sections **Itinéraires et Rendu de la carte** :
 
 <TabItem value="ios" label="iOS">
 
-![Configurer la carte iOS](@site/static/img/map/configure-map-ios.png)
+Section **Afficher sur la carte** :  
+
+![Configurer la carte iOS](@site/static/img/map/configure_map_show1_ios.png)  
+
+Section **Topographie** :  
+
+![Configurer la carte iOS](@site/static/img/map/configure_map_topography_ios.png)  
+
+Section **OpenStreetMap** :  
+
+![Configurer la carte iOS](@site/static/img/map/configure_map_osm_ios.png)  
+
+Section **Itinéraires** :  
+
+![Configurer la carte iOS](@site/static/img/map/configure_map_routes_new_ios.png)
+
+Sections **Type de carte et Style de carte** :  
+
+![Configurer la carte iOS](@site/static/img/map/configure_map_style_ios.png)
+
+Sections **Superposition/Sous-couche et Langue** :  
+
+![Configurer la carte iOS](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -78,6 +100,7 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
    - [Images au niveau de la rue](../plugins/mapillary.md#map-layer) - affiche les points avec des images disponibles au niveau de la rue.
    - [Guides de voyage](../plan-route/travel-guides.md) - affiche les guides de voyage sur la carte.
    - [Wikipedia](../plugins/wikipedia.md) - met en évidence les articles Wikipedia liés à la carte.
+   - [Édition OSM](../plugins/osm-editing.md#osm-editing-layer) - affiche les modifications OpenStreetMap, les notes et les couches d'aide liées à la cartographie.
    - [Autres couches de plugins](../plugins/index.md#configure-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
 
 ## Paramètres de style de carte {#map-style-parameters}

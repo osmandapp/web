@@ -1,5 +1,5 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title:  Interagir avec la carte
 ---
@@ -33,7 +33,7 @@ Les gestes sont essentiels pour naviguer sur la carte facilement et intuitivemen
 | **Pivoter**  | Appuyez sur la carte avec **deux** doigts, puis faites pivoter vos doigts dans un mouvement circulaire. |
 | **Inclinaison (3D)** | Appuyez avec **deux** doigts et déplacez-les vers le haut ou vers le bas. <br/> Disponible uniquement avec la version 2 (OpenGL) du [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine). |
 
-Les animations de glissement peuvent être désactivées dans les paramètres avec une [option spéciale](#no-animations).
+Les animations de glissement peuvent être désactivées dans les paramètres avec une [option spéciale](#remove-animations).
 
 
 ## Ma position et Zoom {#my-location-and-zoom}
@@ -198,7 +198,7 @@ Des messages clairs à l'écran vous guideront lors du verrouillage ou du déver
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Lisse la rotation de la carte avec une animation de rotation plus lente, bien que cela introduise un léger retard, pas plus d'une seconde.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### Pas d'animations {#no-animations}
+### Supprimer les animations {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -216,12 +216,12 @@ Crée un effet de panoramique fluide de la carte par rapport à l'icône *[Ma Po
 
 ## Périphériques d'entrée externes {#external-input-devices}
 
-Les boutons des périphériques d'entrée externes offrent un moyen pratique et efficace d'interagir avec la carte et l'interface de l'application OsmAnd.  Ils sont situés sur des appareils externes, tels que des **claviers Bluetooth ou d'autres types de claviers**, des **boutons spécialisés sur les appareils de navigation de véhicule**, ou les contrôleurs [WunderLINQ](https://blackboxembedded.com/) et [Parrot](https://www.parrot.com/en).  
+Les boutons des périphériques d'entrée externes offrent un moyen pratique et efficace d'interagir avec la carte et l'interface de l'application OsmAnd.  Ils sont situés sur des appareils externes, tels que des **claviers Bluetooth ou d'autres types de claviers**, des **boutons spécialisés sur les appareils de navigation de véhicule**, ou les contrôleurs [WunderLINQ](https://blackboxembedded.com/) et [Parrot](https://www.parrot.com/en) (*Android uniquement*).  
 
-L'une des principales fonctions des boutons sur les périphériques d'entrée externes est de zoomer en avant et en arrière sur la carte. Ils permettent également de naviguer sur la carte et de changer son orientation sans avoir à toucher l'écran. Les boutons sur les périphériques d'entrée externes prennent en charge de nombreuses autres fonctions, comme l'ouverture du *Menu principal*.
+L'une des principales fonctions des boutons sur les périphériques d'entrée externes est de zoomer en avant et en arrière sur la carte. Ils permettent également de naviguer sur la carte et de changer son orientation sans avoir à toucher l'écran. Les boutons sur les périphériques d'entrée externes prennent en charge de nombreuses autres fonctions, comme l'ouverture du *Menu principal* et le déclenchement d'*Actions rapides*. Les utilisateurs peuvent également personnaliser les assignations de boutons pour les appareils pris en charge (Clavier, WunderLINQ et contrôleurs externes personnalisés).
 
 :::note
-Le clavier reste fonctionnel même lorsque l'option *Périphériques d'entrée externes* est désactivée et que *Aucun* est sélectionné.
+Le clavier reste fonctionnel même lorsque l'option *Périphériques d'entrée externes* est désactivée et que *Aucun* est sélectionné. Cependant, les assignations de touches personnalisées ne fonctionnent que lorsque les *Périphériques d'entrée externes* sont activés.
 :::
 
 ### Périphérique d'entrée préconfiguré {#preconfigured-input-device}
@@ -240,7 +240,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![Périphériques externes](@site/static/img/map/external_types_ios.png)
+![Périphériques externes](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -251,9 +251,9 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 - Allez dans le *Menu principal → Paramètres →* sélectionnez le *Profil → Paramètres généraux → Autre → Périphériques d'entrée externes*, et passez à *Activé*.
 
 - Sélectionnez un appareil parmi ceux pris en charge par OsmAnd en appuyant sur l'élément *Type* dans la liste :  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android uniquement*), ou créez [**votre propre type**](#custom-input-device-type) (*Android uniquement*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android uniquement*), ou créez [**votre propre type**](#custom-input-device-type).
 
-- Il existe une assignation **d'ensemble action-touche défini** différente pour chaque type de périphérique d'entrée externe. Appuyez sur *<Translate android="true" ids="key_assignments"/>* pour voir une liste d'actions et de touches. Le tableau des touches est présenté ci-dessous.
+- Il existe une assignation **d'ensemble action-touche défini** différente pour chaque type de périphérique d'entrée externe. La section *<Translate android="true" ids="key_assignments"/>* affiche la liste des actions et de leurs touches assignées. Le tableau des touches est présenté ci-dessous. Ce sont des assignations par défaut — elles peuvent être modifiées ou étendues selon les préférences de l'utilisateur.
 
 - Vous pouvez en savoir plus sur les actions des périphériques d'entrée externes sur GitHub dans le paquet [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
@@ -275,7 +275,7 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 |**&#8595;**| *Wunderlinq*  | Carte - [Zoom arrière](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Carte - [Zoom avant](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Ouvrir la grille de données WunderLINQ |
-| **M** <br/> (*Android hérité*) | *Clavier*  | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-side-menu) |
+| **M** | *Clavier*  | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-side-menu) |
 | **Appui sur le joystick** <br/> (*Android hérité*) | *Clavier*  | Déplacer - [Vers Ma position](#my-location-and-zoom) |
 | **Bouton Média** <br/> (*Android uniquement*)| *Clavier*  | Afficher / Masquer - [Notes AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*Android uniquement*)| *Parrot*  | Carte - [Zoom arrière](#my-location-and-zoom) |
@@ -284,7 +284,9 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 
 ### Type de périphérique d'entrée personnalisé {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -292,18 +294,47 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 
 Si vous souhaitez assigner des touches pour un périphérique d'entrée externe (tel qu'un clavier, un joystick ou un contrôleur), vous devez créer un type de périphérique : allez dans le paramètre [Périphérique d'entrée externe](#external-input-devices), sélectionnez **Type** dans la liste, appuyez sur le&nbsp; "**＋**" &nbsp; et entrez un nom. Chaque type a un menu avec les options suivantes : ***Renommer, Dupliquer*** et ***Supprimer***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Appareil → Ajouter*
+
+![Périphériques externes](@site/static/img/map/external_mypilot_ios.png)  ![Périphériques externes](@site/static/img/map/external_mypilot2_ios.png)
+
+Si vous souhaitez assigner des touches pour un périphérique d'entrée externe (tel qu'un clavier, un joystick ou un contrôleur), vous devez créer un type de périphérique : allez dans le paramètre [Périphérique d'entrée externe](#external-input-devices), sélectionnez **Appareil** dans la liste, appuyez sur le&nbsp; "**Ajouter**" &nbsp; et entrez un nom. Chaque type a un menu avec les options suivantes : ***Renommer, Dupliquer*** et ***Supprimer***.
+
+</TabItem>
+
+</Tabs>  
+
 ### Ajouter une action et des assignations de touches {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Périphériques externes](@site/static/img/map/external_custom_4_andr.png)  ![Périphériques externes](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Périphériques externes](@site/static/img/map/external_custom_4_ios.png)  ![Périphériques externes](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 Après avoir créé un type d'entrée personnalisé, vous pouvez assigner les actions requises aux touches. Une large gamme de [types d'actions](../widgets/quick-action.md#action-types) du widget Action rapide est disponible.
 
 - Sélectionnez un type de périphérique, puis appuyez sur l'élément **Assignations de touches**.
-- Appuyez sur le bouton ***Ajouter*** (&nbsp;"**＋**"&nbsp;) dans le coin inférieur droit de l'écran.
+- Appuyez sur le bouton ***Ajouter*** (&nbsp;"**＋**"&nbsp;).
 - Sélectionnez l'action requise, puis appuyez sur le champ ***Ajouter une touche*** et appuyez sur le bouton de votre appareil pour l'assigner à l'action.  
 
 :::note
 
+- Plusieurs touches peuvent être assignées à une action.
 - Si le bouton que vous assignez est déjà utilisé pour une autre action, vous recevrez une notification avec l'option de réassigner le bouton ou d'annuler l'assignation.
 - Plus tard, vous pourrez changer les actions et les assignations de touches ou en ajouter d'autres pour des actions déjà créées, il suffit de sélectionner un élément dans la liste des assignations de touches.
 
@@ -311,12 +342,26 @@ Après avoir créé un type d'entrée personnalisé, vous pouvez assigner les ac
 
 ### Supprimer l'assignation de touche {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Périphériques externes](@site/static/img/map/external_custom_1_andr.png)
 
-Vous pouvez supprimer plusieurs actions inutiles en utilisant le **bouton Éditer** (*en forme de crayon*) dans le coin supérieur droit de l'écran en une seule fois :
+</TabItem>
 
-- ***Supprimer une action*** par action, avec le bouton&nbsp; "**−**" &nbsp;dans le champ de l'élément.
-- ***Supprimer toutes les assignations de touches*** pour le type sélectionné en appuyant sur le bouton dans le coin supérieur droit de l'écran à côté du nom *Éditer*.
+<TabItem value="ios" label="iOS">
+
+![Périphériques externes](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Vous pouvez supprimer plusieurs actions inutiles en utilisant le **bouton Éditer** (*en forme de crayon* sur Android) dans le coin supérieur droit de l'écran en une seule fois :
+
+- ***Supprimer une action*** par action, avec le bouton&nbsp; "**−**" &nbsp;dans le champ de l'élément. L'assignation de touche peut également être supprimée via le menu contextuel (appui long sur l'élément) en appuyant sur **Supprimer**.
+- ***Supprimer toutes les assignations de touches*** pour le type sélectionné en appuyant sur le bouton dans le coin supérieur droit de l'écran à côté du *Nom d'édition* sur Android ; en appuyant sur le bouton **Effacer tout** sur iOS.
 
 
 ## Articles connexes {#related-articles}

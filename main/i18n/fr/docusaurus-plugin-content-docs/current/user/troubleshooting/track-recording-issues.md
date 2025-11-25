@@ -1,5 +1,5 @@
 ---
-source-hash: 7f2e85f7e22604bcf22bbc6bdb7faf78780ede4bd62e7cd5554ceedacb06dd7d
+source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
 sidebar_position: 6
 title:  Enregistrement de traces
 ---
@@ -45,7 +45,7 @@ Actions d'atténuation :
   - Points avec une mauvaise précision (GPS 'hdop').
   - Points plus proches qu'un seuil en mètres.
 
-- **API Google Services ou API Android**. Vous pouvez également modifier la manière dont OsmAnd reçoit les données de localisation sur les appareils Android. Dans [Paramètres OsmAnd → Source de localisation](../personal/global-settings.md#location-source), choisissez entre **Google Play Services** et **API Android**. Dans de nombreux cas, passer à l'**API Android** aide à améliorer les traces enregistrées et à les rendre moins bruitées.
+- **API Google Services ou API Android**. Vous pouvez également modifier la manière dont OsmAnd reçoit les données de localisation sur les appareils Android. Dans [Paramètres OsmAnd → Source de localisation](../personal/global-settings.md#location-source), choisissez entre **Google Play Services** et **Android API**. Dans de nombreux cas, passer à l'**API Android** aide à améliorer les traces enregistrées et à les rendre moins bruitées.
 
 
 ## Les traces enregistrées présentent des interruptions {#recorded-tracks-have-gaps}
@@ -68,13 +68,6 @@ Actions d'atténuation :
 
 - **Désactiver la *Batterie adaptative* sauf si vous utilisez régulièrement l'application OsmAnd.** La *Batterie adaptative* fonctionne par application, également en fonction des habitudes d'utilisation. Son effet sur une application spécifique peut être réduit en exemptant cette application de l'*Optimisation de la batterie* (par exemple en la réglant sur *Non optimisée*). Cependant, la *Batterie adaptative* peut toujours tuer les services de premier plan tels que l'enregistrement de trajet d'OsmAnd, si l'appareil juge qu'OsmAnd fait partie de votre groupe d'applications « rarement utilisées ».
 
-### Contrôler le comportement des applications en arrière-plan sur iOS {#control-the-behavior-of-ios-background-apps}
-
-iOS peut suspendre ou arrêter automatiquement les applications en arrière-plan lorsque les ressources système sont réallouées. OsmAnd ne peut pas outrepasser ce comportement. Si l'enregistrement de la trace est interrompu lorsque l'appareil est verrouillé, cela peut laisser des interruptions dans l'enregistrement. Vous pouvez modifier ces interruptions à l'aide de l'outil [Planifier un itinéraire](https://docs.osmand.net/docs/user/plan-route/create-route).
-
-Pour plus de détails sur la manière dont iOS gère le suivi de la localisation, consultez la documentation d'Apple [ici](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
-
-
 ### Paramètres d'alimentation testés pour Android 9, 10 et 11 (Hardy, 2020-08-25) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
 
 Les paramètres d'alimentation suivants ont été testés avec succès sous Android 9, 10, et plus tard 11 (sur des appareils Samsung) pour que OsmAnd enregistre des traces sans interruptions. Veuillez examiner ces **10 paramètres** et les régler en conséquence :
@@ -86,7 +79,7 @@ Les paramètres d'alimentation suivants ont été testés avec succès sous Andr
 - (5) **Désactivation auto applis inutilisées** = DÉSACTIVÉ (Semble n'être présent que dans Android 9.)
 - (6) **Optimiser les paramètres** = DÉSACTIVÉ (Sous Android 10 dans *Maintenance de l'appareil / Avancé*, semble avoir disparu dans Android 11.)
 - (7) **Optimisation auto (quotidienne)** = ACTIVÉ (N'a aucun effet ici.)
-- (8) **Redémarrage auto (heures déf.)** = DÉSACTIVÉ (N'a aucun effet ici.)
+- (8) **Redémarrage auto (aux heures définies)** = DÉSACTIVÉ (N'a aucun effet ici.)
 - (9) **Optimiser l'utilisation de la batterie** (Sous *Paramètres Android / Applis / OsmAnd / Batterie* ou *Paramètres / Applis / 3 points / Accès spécial / Optimiser l'utilisation de la batterie / Toutes / OsmAnd*) = Exempter OsmAnd de l'optimisation de la batterie (très conseillé, bien que non nécessaire si l'application est démarrée fréquemment par l'utilisateur).
 - (10) **Autoriser l'activité en arrière-plan** = ACTIVÉ pour OsmAnd sous *Applis / OsmAnd / Batterie* pour Android 11
 
@@ -101,6 +94,13 @@ Certains de ces paramètres interagissent, alors soyez précis. Le mieux est de 
 - *Maintenance de l'appareil / Batterie / Plus de paramètres de batterie*
 
 
+### Contrôler le comportement des applications en arrière-plan sur iOS {#control-the-behavior-of-ios-background-apps}
+
+iOS peut suspendre ou arrêter automatiquement les applications en arrière-plan lorsque les ressources système sont réallouées. OsmAnd ne peut pas outrepasser ce comportement. Si l'enregistrement de la trace est interrompu lorsque l'appareil est verrouillé, cela peut laisser des interruptions dans l'enregistrement. Vous pouvez modifier ces interruptions à l'aide de l'outil [Planifier un itinéraire](https://docs.osmand.net/docs/user/plan-route/create-route).
+
+Pour plus de détails sur la manière dont iOS gère le suivi de la localisation, consultez la documentation d'Apple [ici](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
+
+
 ## Comment suivre la distance parcourue {#how-to-track-traveled-distance}
 
 OsmAnd n'a pas de widget spécial similaire à un odomètre, vous pouvez utiliser le [plugin Enregistrement de trajet](../plugins/trip-recording.md#new-track-recording) pour suivre votre distance parcourue et la réinitialiser si nécessaire.  
@@ -112,7 +112,7 @@ Google Play a modifié sa politique et, pour s'y conformer, OsmAnd, à partir de
 
 Après ce changement, il semble y avoir un problème avec l'enregistrement de l'altitude : apparemment, les services Google Play interpolent la mesure de l'altitude de manière très agressive, voir le [problème GitHub #10864](https://github.com/osmandapp/OsmAnd/issues/10864). Ce problème affecte Android 10, et peut-être pas Android 11. Le [problème](https://issuetracker.google.com/issues/180218747) a déjà été signalé sur le site web de Google, et sera probablement corrigé le 09-03-2021.  
 
-Comme solution de contournement, dans [*Paramètres OsmAnd → Source de localisation*](../personal/global-settings.md#location-source), vous pouvez changer la source de localisation de **Google Play Services** à **API Android**.
+Comme solution de contournement, dans [*Paramètres OsmAnd → Source de localisation*](../personal/global-settings.md#location-source), vous pouvez changer la source de localisation de **Google Play Services** à **Android API**.
 
 
 ## OsmAnd 3.9 : Le réveil du GPS est remplacé par un service continu au premier plan (2020/12) {#osmand-39-gps-wake-up-now-replaced-by-continuous-foreground-service-202012}

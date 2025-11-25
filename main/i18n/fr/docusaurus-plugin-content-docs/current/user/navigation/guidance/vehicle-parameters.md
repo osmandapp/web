@@ -1,5 +1,5 @@
 ---
-source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
+source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
 sidebar_position: 4
 title:  Paramètres du véhicule
 ---
@@ -98,6 +98,14 @@ Les paramètres du véhicule affectent la navigation et la construction de l'iti
 ![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+**5.** [**Limite de charge maximale par essieu**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Indiquez la charge maximale par essieu de votre véhicule pour éviter les routes et les ponts avec des restrictions de poids par essieu. Ce paramètre n'est disponible que pour les types de navigation tels que [*Camion*](../../navigation/routing/car-based-routing.md).  
+
+![Paramètres de navigation Android](@site/static/img/navigation/max_axle_load.png)
+
+**6.** [**Poids maximal à pleine charge**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Indiquez le poids total maximal de votre véhicule lorsqu'il est complètement chargé pour éviter les routes et les ponts avec des restrictions de poids global. Ce paramètre n'est disponible que pour les types de navigation tels que [*Camion*](../../navigation/routing/car-based-routing.md).  
+
+![Paramètres de navigation Android](@site/static/img/navigation/max_weight_at_full_load.png)
+
 Les limites sur les paramètres du véhicule peuvent être importantes pour la navigation et la sécurité routière. Certaines de ces restrictions peuvent inclure :  
 
 1. Restrictions sur les véhicules circulant dans certaines zones urbaines.  
@@ -114,20 +122,20 @@ Les limites sur les paramètres du véhicule peuvent être importantes pour la n
 
 <TabItem value="android" label="Android">
 
-![Paramètres de navigation Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
+![Paramètres de navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres de navigation iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
+![Paramètres de navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 Si vous sélectionnez le type de moteur dans les paramètres du véhicule, les [***données sur l'empreinte CO2***](../../navigation/setup/route-details.md#elevation-info) seront affichées au-dessus du graphique dans les [Détails de l'itinéraire](../setup/route-details.md).
-Six types de carburant sont disponibles : ***Essence, Diesel, GPL, GNC, Électrique*** et ***Hybride***.  
+Six types de carburant sont disponibles : ***Essence, Diesel, GPL, GNC, Électrique,*** et ***Hybride***.  
 
 **Applicabilité :**
 

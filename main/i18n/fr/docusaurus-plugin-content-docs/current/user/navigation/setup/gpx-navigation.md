@@ -1,5 +1,5 @@
 ---
-source-hash: 41206f7aa105ab8fa59a5f824c1e0374750b7232835e5fadfb76637ff0469e77
+source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
 sidebar_position: 2
 title:  Naviguer par trace
 ---
@@ -128,6 +128,38 @@ vers le *<Translate android="true" ids="start_of_the_track"/>* ou vers le *<Tran
 - Choisissez le **Type de navigation** pour le premier et le dernier segment : soit construire une [*ligne droite*](../routing/straight-line-routing.md), soit utiliser le [*type d'itinéraire*](../routing/osmand-routing.md#routing-types) du profil actuel.
 
 
+### Inverser la direction de la trace {#reverse-track-direction}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Mode inverse](@site/static/img/navigation/gpx/reverse_mode_android.png) ![Naviguer vers](@site/static/img/navigation/gpx/navigate_to_android.png)
+
+L'option **Inverser la direction de la trace** vous permet de naviguer sur une trace GPX enregistrée dans la direction opposée — du point final vers le point de départ. Lorsque ce paramètre est activé, l'algorithme de navigation inverse automatiquement la géométrie GPX et recalcule les directions en conséquence. Une fois activé, le paramètre **Mode inverse** devient disponible :
+
+- **Calculer l'itinéraire**. Recommandé pour les profils voiture et vélo. Un nouvel itinéraire optimisé est recalculé le long de la trace GPX inversée selon le profil de navigation sélectionné. Les règles routières telles que les sens uniques et les restrictions de virage sont respectées pour assurer une navigation sûre.
+- **Trace originale**. La ligne GPX est suivie strictement en sens inverse sans recalculer l'itinéraire. Ce mode est utile pour la marche, la randonnée ou la navigation tout-terrain où les règles routières ne s'appliquent pas.
+
+Lorsque la direction inverse est activée, les points de départ et d'arrivée de la trace sont automatiquement échangés, et la navigation est construite à partir de la position actuelle ou la plus proche sur la trace inversée. L'option *Point de la trace à naviguer = Point le plus proche* fait référence au point le plus proche sur la ligne GPX inversée, et à la fois le guidage vocal et la fonctionnalité Attacher aux routes fonctionnent de la même manière que pendant la navigation en avant.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Naviguer vers iOS](@site/static/img/navigation/gpx/navigate_to_ios.png)
+
+L'option **Inverser la direction de la trace** permet de naviguer sur une trace GPX enregistrée dans la direction opposée — de son point final vers le point de départ. Lorsque ce paramètre est activé, la géométrie de la trace est automatiquement inversée et l'itinéraire est recalculé selon le profil de navigation sélectionné.
+
+Les points de départ et d'arrivée de la trace sont échangés, et la navigation est construite à partir de la position actuelle ou la plus proche sur la ligne inversée. L'option *Naviguer vers = Point le plus proche* fait référence au point le plus proche sur la trace GPX inversée.
+
+Un nouvel itinéraire optimisé est recalculé le long de la trace inversée en tenant pleinement compte des règles routières telles que les sens uniques et les restrictions de virage. Le guidage vocal, les instructions visuelles et la fonctionnalité Attacher aux routes fonctionnent comme dans la navigation standard en avant, assurant un routage précis et sûr.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Attacher aux routes {#attach-to-the-roads}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -198,6 +230,6 @@ Pendant la navigation, vous pouvez utiliser diverses options telles que le zoom 
 - [Navigation par marqueurs](./markers-navigation.md)
 - [Paramètres de navigation](../guidance/navigation-settings.md)
 - [Écran de la carte pendant la navigation](../guidance/map-during-navigation.md)
-- [Instructions vocales / Notifications](../guidance/voice-navigation.md)
+- [Annonces vocales / Notifications](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
