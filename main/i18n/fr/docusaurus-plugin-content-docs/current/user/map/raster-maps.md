@@ -1,5 +1,5 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Cartes raster (en ligne / hors ligne)
 ---
@@ -296,7 +296,7 @@ Voici les paramètres clés à configurer lors de la mise en place d'une nouvell
 | Paramètre | Description |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Fournissez un nom pour la nouvelle source de carte en ligne. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Entrez ou collez l'URL de la source de tuiles en ligne. Assurez-vous qu'elle suit le format de l'URL de tuile. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Entrez ou collez l'URL de la source de tuiles en ligne. Assurez-vous qu'elle suit le format de l'URL de tuile. L'URL peut contenir certains espaces réservés, que OsmAnd remplacera automatiquement en fonction de la tuile spécifique nécessaire. Les espaces réservés les plus couramment utilisés sont basés sur la [convention de noms de tuiles de carte glissante OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames) : <ul><li>`{z}` ou `{0}` : Niveau de zoom</li><li>`{x}` ou `{1}` : Index de tuile X</li><li>`{y}` ou `{2}` : Index de tuile Y</li></ul> Pour des exemples d'espaces réservés moins couramment utilisés, consultez les [sources de cartes raster en ligne prédéfinies](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Ce paramètre affecte l'affichage de la carte. <br/><ul><li>En tant que *type de carte*, la carte sera limitée aux niveaux de zoom sélectionnés.</li><li>En tant que *sur-couche/sous-couche*, la carte apparaîtra aux niveaux de zoom sélectionnés, avec une mise à l'échelle supérieure ou inférieure appliquée en dehors de ces niveaux.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Définissez la durée (en minutes) après laquelle les tuiles mises en cache seront rafraîchies. Vous pouvez laisser ce champ vide si vous ne voulez pas que les tuiles se rechargent automatiquement. <br/><ul><li>1 jour = 1440 minutes</li><li>1 semaine = 10 080 minutes</li><li>30 jours = 43 200 minutes</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Choisissez entre la *projection Pseudo-Mercator* et la *projection Mercator elliptique*, en fonction de la source. |

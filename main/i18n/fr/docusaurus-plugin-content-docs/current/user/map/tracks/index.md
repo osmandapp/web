@@ -1,5 +1,5 @@
 ---
-source-hash: a2c574750d2fad3f5b86fe34399e253d3561dee9bc81b7ec97490f6574b7c609
+source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
 title:  Traces
 sidebar_position: 2
 ---
@@ -83,7 +83,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 Dans l'onglet [Mes lieux *→* Traces](../../personal/tracks/manage-tracks.md#manage-tracks) pour afficher la trace sur la carte, vous devez :
 
-- *Android* - appuyez sur le *menu à trois points* dans le champ de la trace requise.
+- *Android* - touchez le *menu à trois points* dans le champ de la trace requise.
 - *iOS* - appuyez longuement sur la trace requise dans la liste.
 
 
@@ -114,7 +114,7 @@ Lorsque vous sélectionnez une trace sur la carte ou ouvrez le [menu contextuel 
 
 <TabItem value="android" label="Android">
 
-Aller à : *Appuyez sur la trace → Onglet Trace → <Translate android="true" ids="analyze_on_map"/>*  
+Aller à : *Touchez la trace → Onglet Trace → <Translate android="true" ids="analyze_on_map"/>*  
 
 ![Menu de la trace analyser sur la carte Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Menu de la trace analyser sur la carte distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
@@ -122,7 +122,7 @@ Aller à : *Appuyez sur la trace → Onglet Trace → <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *Appuyez sur la trace → Onglet Trace → <Translate ios="true" ids="analyze_on_map"/>*  
+Aller à : *Touchez la trace → Onglet Trace → <Translate ios="true" ids="analyze_on_map"/>*  
 
 ![Menu de la trace analyser sur la carte](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Menu de la trace analyser sur la carte ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
@@ -135,6 +135,7 @@ Cet outil fournit une analyse détaillée des données de la [trace](../../map/t
 - **Données du graphique (axe Y)** affiche : *Altitude*, *Pente*, *Vitesse*, [*Données de capteurs externes*](../../plugins/external-sensors.md), et des combinaisons de jusqu'à deux options si elles sont contenues dans les données de la trace.
 - **Dimension du graphique (axe X)** représente : *Distance*, *Temps*, et *Heure de la journée*.
 - **Interaction par appui/glissement**. Appuyez sur un graphique pour afficher des informations sur un point spécifique de la trace. Glisser sur le graphique met en évidence l'emplacement approprié sur la carte et affiche les détails dans la barre d'informations.
+- **Étiquette de distance**. Lors d'un appui ou d'un glissement le long du graphique, l'infobulle affiche également la distance exacte le long de la trace. La valeur suit les paramètres d'unité du profil actuel (<Translate android="true" ids="km"/> ou <Translate android="true" ids="mile"/>). Utilisez-la pour estimer rapidement la distance d'un point par rapport au début de la trace, ou pour calculer la distance entre deux positions en comparant leurs valeurs.
 - **Mise à l'échelle**. Utilisez un [geste à deux doigts](../../map/interact-with-map.md#gestures) pour mettre le graphique à l'échelle pour une visualisation plus détaillée.
 
 

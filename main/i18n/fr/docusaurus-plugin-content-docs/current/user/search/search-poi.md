@@ -1,5 +1,5 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
 title:  Recherche de POI
 ---
@@ -68,7 +68,7 @@ OsmAnd offre plusieurs moyens d'accéder à l'outil de recherche où se trouve l
     - La recherche d'un lieu commercial par nom de marque (comme Audi, Starbucks ou Aldi) est très similaire à la recherche de différents POI par type, la principale différence étant que la liste des marques est fournie à l'intérieur de la carte et sujette à des modifications à chaque mise à jour. 
     - La marque est définie par l'étiquette OSM [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) et OsmAnd collecte des types limités de marques par carte avec un maximum de 1000 marques par carte, mais s'assure que la liste des marques est alignée sur les cartes voisines.
 
-![Recherche POI Android](@site/static/img/search/brand_search_andr.png)
+![Recherche POI Android](@site/static/img/search/brand_search_andr.png) ![Recherche POI Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -340,7 +340,7 @@ Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sél
 
 7. **Alimentation**. Comprend 12 types de filtres.  
 
-8. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondation, Risque nucléaire, Route glissante*.  
+8. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondation, Risque nucléaire, Route glissante*. La catégorie Danger inclut à la fois les POI avec des étiquettes hazard=* sur les nœuds et les segments de route ou de chemin (ways) marqués avec la même étiquette, s'ils sont exportés en tant qu'objets recherchables. Pour un aperçu visuel de toutes les icônes de danger utilisées sur la carte, consultez la section [Danger](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Comprend 31 types de filtres.
 

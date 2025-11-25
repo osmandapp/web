@@ -1,5 +1,5 @@
 ---
-source-hash: 1a33a1b4a2dedfaff07a0bf3e3e748f9060a255db1a4b2b9c0fb3d363a38cdf0
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title:  Journaux de plantage
 ---
@@ -37,7 +37,7 @@ Soyez prudent lorsque vous envoyez des journaux Logcat, car ils peuvent contenir
 2. Dans le menu contextuel, choisissez Gmail ou votre application de messagerie préférée. L'e-mail sera généré automatiquement.
 3. Appuyez sur le bouton *Envoyer*.
 
-![Envoyer les journaux de plantage depuis Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Envoyer les journaux de plantage depuis Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Envoyer les journaux de plantage depuis Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Envoyer les journaux de plantage depuis Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Envoyer des journaux depuis les appareils iOS {#send-logs-from-ios-devices}
@@ -46,7 +46,7 @@ Soyez prudent lorsque vous envoyez des journaux Logcat, car ils peuvent contenir
 
     - Automatiquement.
         - Naviguez dans l'application OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `crash@osmand.net`.
+        - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
 
     - Manuellement.
         - Naviguez dans l'application système iOS *Fichiers → Sur mon iPhone (ou Sur mon iPad) → OsmAnd Maps → Journaux*.
@@ -54,9 +54,9 @@ Soyez prudent lorsque vous envoyez des journaux Logcat, car ils peuvent contenir
     ![Envoyer les journaux de plantage iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Envoyer les journaux de plantage iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
 2. Envoyez les journaux et les données d'autorisation au [format IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) :
-    - Allez dans *Réglages iOS → Analyse → Données d'analyse → Fichier au format ips OsmAnd Maps* (jusqu'à iOS 17).
-    - *Réglages iOS → Confidentialité et sécurité → Analyse et améliorations → Données d'analyse → Fichier au format ips OsmAnd Maps* (à partir d'iOS 18).
-    - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `crash@osmand.net`.
+    - Sur iOS 15 ou antérieur : *Réglages → Analyse → Données d'analyse → Fichier au format ips OsmAnd Maps*.
+    - Sur iOS 16 ou ultérieur : *Réglages → Confidentialité et sécurité → Analyse et améliorations → Données d'analyse → Fichier au format ips OsmAnd Maps*.
+    - Ensuite, en utilisant votre application de messagerie, nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
 
     ![Envoyer les journaux de plantage iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Envoyer les journaux de plantage iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
@@ -82,7 +82,7 @@ Pour exporter les fichiers tombstone, vous devez générer un rapport de bogue �
     - Appuyez sur l'option *Prendre un rapport de bogue*.
     - Sélectionnez le type de rapport de bogue et appuyez sur *Rapport*.
   
-Une fois le rapport de bogue prêt, vous recevrez une notification. Appuyez sur la zone de notification pour télécharger le rapport sur votre appareil. Décompressez le fichier et envoyez les fichiers tombstone à l'équipe de développeurs OsmAnd (e-mail : `crash@osmand.net`).
+Une fois le rapport de bogue prêt, vous recevrez une notification. Appuyez sur la zone de notification pour télécharger le rapport sur votre appareil. Décompressez le fichier et envoyez les fichiers tombstone à l'équipe de développeurs OsmAnd (e-mail : `support@osmand.net`).
 
 ![Envoyer les journaux de plantage depuis Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Envoyer les journaux de plantage depuis Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
@@ -114,7 +114,7 @@ Ensuite, connectez votre appareil à votre poste de travail via USB. S'il s'agit
 4. Attendez quelques minutes que le rapport soit généré. Le fichier résultant sera enregistré dans le dossier platform-tools.
 5. Décompressez le fichier.
 6. Trouvez le dossier *tombstones* avec des fichiers comme *tombstone_00*, *tombstone_01*, et similaires.
-7. Envoyez les fichiers tombstone à `crash@osmand.net`.
+7. Envoyez les fichiers tombstone à `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Avec un accès root à votre appareil, vous pouvez ouvrir directement le dossier */data/tombstones*.  
 
-- Dans Android Studio, utilisez l'émulateur pour naviguer vers *Explorateur de fichiers de l'appareil* et trouver le dossier /data/tombstones. À l'intérieur, vous trouverez des fichiers nommés comme *tombstone_00*, *tombstone_01*, et d'autres. Téléchargez ces fichiers et envoyez-les à `crash@osmand.net`.
+- Dans Android Studio, utilisez l'émulateur pour naviguer vers *Explorateur de fichiers de l'appareil* et trouver le dossier /data/tombstones. À l'intérieur, vous trouverez des fichiers nommés comme *tombstone_00*, *tombstone_01*, et d'autres. Téléchargez ces fichiers et envoyez-les à `support@osmand.net`.
 
 Pour plus de détails sur les rapports de bogue, consultez la [documentation Android](https://developer.android.com/studio/debug/bug-report).

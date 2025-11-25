@@ -1,5 +1,5 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  Météo
 ---
@@ -14,6 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 ## Aperçu {#overview}
 
@@ -59,7 +60,7 @@ Le plugin Météo n'est disponible qu'avec le moteur de rendu de carte [Version 
 
 Aller à : *Plugin activé → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Tableau de bord Météo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Tableau de bord Météo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -67,7 +68,7 @@ Aller à : *Plugin activé → <Translate android="true" ids="shared_string_menu
 
 Aller à : *Plugin activé → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Tableau de bord Météo sur iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Tableau de bord Météo sur iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -76,6 +77,41 @@ Aller à : *Plugin activé → <Translate ios="true" ids="shared_string_menu,sha
 Le menu latéral principal dispose d'un élément de menu **Météo** dédié qui offre un accès rapide à tous les outils météorologiques. L'écran *Prévisions météo* affiche des informations sur la *température*, la *pression atmosphérique*, la *vitesse du vent*, la *couverture nuageuse* et les *précipitations*.  
 
 En bas de l'écran se trouve la *barre d'outils météo*. Vous pouvez utiliser les boutons de jour et le curseur de temps pour définir l'heure exacte à laquelle les prévisions météorologiques seront affichées.
+
+### Source de données {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Source de données Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Source de données iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+Vous pouvez choisir quel fournisseur de prévisions météorologiques OsmAnd utilise pour afficher les données sur l'écran Météo :<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Choisir la source de données*
+
+Deux fournisseurs de prévisions météorologiques sont pris en charge :
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – la source par défaut gérée par NOAA/NWS. Fournit des données météorologiques complètes, y compris les couches de température, de pression, d'humidité, de vent et de nuages.
+
+[**ECMWF**](https://www.ecmwf.int/) **(Centre européen pour les prévisions météorologiques à moyen terme)** – une source de prévisions alternative. Offre des données de haute qualité sur la température, les précipitations et la pression, mais ne fournit pas d'informations sur le vent ou les nuages. Lorsque ECMWF est utilisé, les paramètres non disponibles sont affichés sous la forme « – », et les couches météorologiques correspondantes apparaissent désactivées.
+
+Comment la source de données affecte l'affichage de la météo :
+- La carte, les graphiques, la chronologie et les valeurs météorologiques à l'écran se mettent à jour immédiatement après le changement de source.
+- Seuls les paramètres disponibles pour le fournisseur sélectionné sont affichés.
+- Les widgets météo se rafraîchissent automatiquement pour utiliser la source choisie.
+- Si vous avez précédemment téléchargé une prévision météo, OsmAnd utilise les données correspondant au fournisseur sélectionné.
+- GFS et ECMWF utilisent des caches séparés. Le changement de source charge ou met à jour les tuiles météorologiques pertinentes.
+
 
 ### Personnaliser les couches météo {#customize-weather-layers}
 
@@ -139,7 +175,7 @@ Toutes les données météorologiques sont présentées sous forme de couches de
 
 | |  
 |------------|  
-| La **couche Précipitations** affiche des informations sur les événements météorologiques lorsque l'eau sous différents états tombe du ciel sur le sol. Les précipitations sont la pluie, la neige, le grésil ou la grêle. L'échelle des précipitations est graduée en millimètres (ou pouces) d'eau qui tombe sur 1 mètre carré en 24 heures. 1 mm de pluie correspond à 1 litre d'eau par mètre carré. |  
+| La **couche Précipitations** affiche des informations sur les événements météorologiques lorsque l'eau sous différents états tombe du ciel sur le sol. Les précipitations sont la pluie, la neige, le grésil ou la grêle. L'échelle des précipitations est graduée en millimètres (ou pouces) d'eau qui tombe sur 1 mètre carré en 24 heures. 1 mm de pluie correspond à 1 litre d'eau par 1 mètre carré. |  
 |![Schéma des précipitations](@site/static/img/plugins/weather/precipitation.png)|  
 | La **Température** exprime la perception quantitative du chaud et du froid. Elle se mesure en degrés. Dans OsmAnd, vous pouvez choisir entre l'échelle Celsius et Fahrenheit. |  
 |![Schéma de la température](@site/static/img/plugins/weather/temperature.png)|  
@@ -147,7 +183,7 @@ Toutes les données météorologiques sont présentées sous forme de couches de
 |![Schéma du vent](@site/static/img/plugins/weather/wind.png)|  
 | La **Couverture nuageuse** est la fraction moyenne du ciel couverte par les nuages lorsqu'on l'observe depuis un endroit particulier. Elle se mesure en %. |  
 |![Schéma des nuages](@site/static/img/plugins/weather/clouds.png)|  
-| La **Pression atmosphérique** est causée par le poids de l'air au-dessus du point de mesure. Elle diminue avec l'augmentation de l'altitude. La pression atmosphérique peut être affichée en hectopascals (hPa), millimètres de mercure (mmHg) et pouces de mercure (inHg). |  
+| La **Pression atmosphérique** est causée par le poids de l'air au-dessus du point de mesure. Elle diminue avec l'augmentation de l'altitude. La pression atmosphérique peut être affichée en hectopascals (hPa), millimètres de mercure (mmHg), et pouces de mercure (inHg). |  
 | ![Schéma de la pression](@site/static/img/plugins/weather/pressure.png) |  
 | L'**Animation du vent** inclut des représentations dynamiques montrant la direction et la vitesse du vent dans la région. |  
 | ![Animation du vent](@site/static/img/plugins/weather/wind_annimation.gif) |  
@@ -225,6 +261,8 @@ Dans le menu de téléchargement des prévisions, vous pouvez obtenir des inform
 - *Mettre à jour uniquement via Wi-Fi* (*iOS*). Activez cette option si vous ne souhaitez pas utiliser les données mobiles pour les téléchargements.  
 - Bouton **Supprimer** *corbeille* (*Android*) / **Supprimer les prévisions** (*iOS*). Permet de supprimer toutes les données de prévisions pour cette région.
 - Bouton **Modifier** *crayon* (*Android*). Permet de renommer le fichier météo.
+
+**Note :** Certains pays, comme les États-Unis et le Canada, utilisent un seul fichier de prévisions hors ligne pour l'ensemble du pays. Cela réduit le nombre de téléchargements et simplifie la gestion des données météorologiques.
 
 :::info  
 Les données météorologiques sont mises à jour toutes les 6 heures (les 4 mises à jour de [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) et 3 de [ECMWF](https://www.ecmwf.int/)) et deviennent disponibles dans OsmAnd avec un court délai, car le processus de calcul prend plusieurs heures avant la publication (généralement vers 07:00 UTC).  

@@ -1,5 +1,5 @@
 ---
-source-hash: 0d7665854851018fefbbb639e2a5b87de47b125ce7259ddf6e6564c1d959eecf
+source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
 sidebar_position: 10
 title:  Importer / Exporter
 ---
@@ -29,11 +29,11 @@ Les fonctions *Importer* et *Exporter* vous permettent de sauvegarder des donné
 **Types de données** disponibles pour l'importation/exportation :
 
 - **Paramètres :**  
-        [Profils](../personal/profiles.md#actions), &nbsp;[Paramètres généraux d'OsmAnd](../personal/global-settings.md), &nbsp;[Couleurs](../personal/color-palette-schemes.md), &nbsp;[Action rapide](../widgets/quick-action.md), &nbsp;[Type de POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Éviter la route](../map/map-context-menu.md#avoid-road).
+        [Profils](../personal/profiles.md#actions), &nbsp;[OsmAnd/Paramètres généraux](../personal/global-settings.md), &nbsp;[Couleurs](../personal/color-palette-schemes.md), &nbsp;[Action rapide](../widgets/quick-action.md), &nbsp;[Type de POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Éviter la route](../map/map-context-menu.md#avoid-road).
 - **Mes lieux :**  
-        [Favoris](../personal/favorites.md#export--import), &nbsp;[Traces](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;*Notes OSM*, *Modifications OSM*](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notes A/V](../plugins/audio-video-notes.md), &nbsp;[Marqueurs de carte](../personal/markers.md), &nbsp;*Historique des marqueurs*, *Historique des recherches*, *Historique de navigation*](../personal/global-settings.md#history), &nbsp;*Itinéraire*.
+        [Favoris](../personal/favorites.md#export--import), &nbsp;[Traces](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notes OSM*, *Modifications OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notes A/V](../plugins/audio-video-notes.md), &nbsp;[Marqueurs de carte](../personal/markers.md), &nbsp;[Historique des marqueurs*, *Historique des recherches*, *Historique de navigation](../personal/global-settings.md#history), &nbsp;*Itinéraire*.
 - **Ressources :**  
-        [Style de rendu](../map/vector-maps.md#custom-map-style), &nbsp;[Calcul d'itinéraire](../navigation/routing/osmand-routing.md), &nbsp;[Moteurs de calcul d'itinéraire en ligne](../navigation/routing/online-routing.md), &nbsp;*Sources de carte*, *Cartes standard/hors ligne*](../map/raster-maps.md), &nbsp;[Cartes Wikipedia et Voyage](../plan-route/travel-guides.md), &nbsp;[Cartes marines](../plugins/nautical-charts.md), &nbsp;[Cartes routières](../map/vector-maps.md#road-style), &nbsp;[Cartes topographiques](../plugins/topography.md), &nbsp;[Instructions vocales (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Instructions vocales (enregistrées)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Sauvegarde des favoris](../personal/favorites.md#automatic-favorites-backup).
+        [Style de rendu](../map/vector-maps.md#custom-map-style), &nbsp;[Calcul d'itinéraire](../navigation/routing/osmand-routing.md), &nbsp;[Moteurs de calcul d'itinéraire en ligne](../navigation/routing/online-routing.md), &nbsp;[Sources de carte*, *Cartes standard/hors ligne](../map/raster-maps.md), &nbsp;[Cartes Wikipedia et Voyage](../plan-route/travel-guides.md), &nbsp;[Cartes marines](../plugins/nautical-charts.md), &nbsp;[Cartes routières](../map/vector-maps.md#road-style), &nbsp;[Cartes topographiques](../plugins/topography.md), &nbsp;[Instructions vocales (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Instructions vocales (enregistrées)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Sauvegarde des favoris](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Exporter {#export}
@@ -58,7 +58,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-Toutes les données que vous avez configurées et créées peuvent être exportées à l'aide du ***menu Exporter***. Le menu se compose de trois groupes : **Paramètres**, **Mes lieux** et **Ressources**, qui contiennent tous les dossiers de fichiers disponibles. Vous pouvez sélectionner les fichiers que vous souhaitez exporter dans chaque dossier, un par un ou tous en même temps. **Tous les fichiers exportés sont enregistrés au format `.osf`**.  
+Toutes les données que vous avez configurées et créées peuvent être exportées à l'aide du ***menu Exporter***. Le menu se compose de trois groupes : **Paramètres**, **Mes lieux** et **Ressources**, qui contiennent tous les dossiers de fichiers disponibles. Par exemple, dans la section Ressources, les cartes sont regroupées par type en *<Translate android="true" ids="standard_maps"/>, <Translate android="true" ids="wikipedia_and_travel_maps"/>, <Translate android="true" ids="nautical_maps"/>*, et *<Translate android="true" ids="topography_maps"/>* pour une navigation plus facile et un export sélectif. Vous pouvez sélectionner les fichiers que vous souhaitez exporter dans chaque dossier, un par un ou tous en même temps. **Tous les fichiers exportés sont enregistrés au format `.osf`**.  
 
 
 ### Importer {#import}

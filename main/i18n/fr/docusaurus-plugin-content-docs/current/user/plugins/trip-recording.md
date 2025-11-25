@@ -1,5 +1,5 @@
 ---
-source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  Enregistrement de trajet
 ---
@@ -143,13 +143,13 @@ Pour *Arrêter / Enregistrer / Mettre en pause* :
 
 <TabItem value="android" label="Android">
 
-![aperçu](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![aperçu](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![aperçu](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![aperçu](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Terminer l'enregistrement sur iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Terminer l'enregistrement sur iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Terminer l'enregistrement sur iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Terminer l'enregistrement sur iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -176,11 +176,11 @@ Pour une vue plus détaillée, vous pouvez **mettre le graphique à l'échelle**
 | |  
 | ------------- |
 |**Onglet Aperçu** iOS (pour Android, les paramètres de l'axe Y sont *Altitude*, *Vitesse*, et le paramètre de l'axe X est *Distance*). Cet onglet affiche un graphique montrant les changements de vitesse et d'altitude sur la longueur de la trace, ainsi que les détails clés de la trace. Données de la trace pour iOS : *Distance*, *Durée*, *Heure de début* et *Heure de fin*. Vous pouvez voir comment cela est affiché dans les versions Android et iOS ci-dessous. |
-| ![données](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![données](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+| ![données](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![données](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Onglet Altitude** iOS (pour Android, les paramètres de l'axe Y sont *Altitude*, *Pente*, et le paramètre de l'axe X est *Distance*). Cet onglet se concentre sur le profil d'élévation de votre trace enregistrée, fournissant des informations sur les changements d'altitude et les pentes du terrain. Les métriques clés pour iOS incluent : *Altitude moyenne*, *Plage d'altitude*, *Dénivelé positif* et *Dénivelé négatif*. Les graphiques ci-dessous illustrent les différences entre les interfaces Android et iOS. |
-| ![données](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![données](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![données](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![données](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Onglet Vitesse** iOS (pour Android, le paramètre de l'axe Y est *Vitesse* et le paramètre de l'axe X est *Distance*). L'onglet Vitesse met en évidence les données relatives à la vitesse tout au long de la trace. Pour iOS, il inclut des informations telles que la *Vitesse moyenne*, la *Vitesse maximale*, le *Temps en mouvement* et la *Distance corrigée*. Les captures d'écran ci-dessous montrent comment ces données sont affichées sur les deux plateformes. |
-| ![données](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![données](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![données](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![données](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | Pour **Android**, vous pouvez créer plus de combinaisons de données disponibles pour l'axe Y et de valeurs pour l'axe X. |
 | ![données](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -356,7 +356,7 @@ Le badge de l'icône de l'application apparaît à côté de l'icône OsmAnd lor
 
 ## Widgets {#widgets}
 
-Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Distance*, la *Durée*, le *Dénivelé positif* et le *Dénivelé négatif*.
+Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Distance*, la *Durée*, le *Dénivelé positif* et le *Dénivelé négatif*. Sur Android, vous pouvez également ajouter des widgets *Vitesse max.* et *Pente moyenne*.
 
 Pour commencer à utiliser les *widgets d'enregistrement de trajet*, vous devez effectuer tous les réglages suivants :
 
@@ -373,7 +373,7 @@ Pour commencer à utiliser les *widgets d'enregistrement de trajet*, vous devez 
 
 Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Choisissez un panneau → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Ajout du widget Distance/Démarrer-Arrêter sur Android](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Ajout du widget Distance/Démarrer-Arrêter sur Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisissez un panneau → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Ajout de widgets d'enregistrement sur iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![Ajout de widgets d'enregistrement sur iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -398,8 +398,8 @@ Pour personnaliser votre interface, vous pouvez ajouter ou supprimer le widget d
 
 <TabItem value="android" label="Android">  
 
-![Widget d'enregistrement de trajet](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
-![Terminer l'enregistrement sur Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Terminer l'enregistrement sur Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Widget d'enregistrement de trajet](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
@@ -417,13 +417,18 @@ Le widget *Distance* affiche la distance totale de votre trajet enregistré actu
 - Le widget est ajouté automatiquement lorsque le *plugin d'enregistrement de trajet* est activé, mais il peut être masqué via le [menu Configurer l'écran](../widgets/configure-screen.md#overview).
 - Si l'option *Afficher la boîte de dialogue de démarrage* est désactivée dans les paramètres du plugin d'enregistrement de trajet, appuyer sur le widget actif ouvrira quand même la boîte de dialogue *Enregistrement de trajet*, vous permettant d'accéder à d'autres options et informations.  
 
-En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de trajet** inclut trois autres widgets : *Durée*, *Dénivelé positif* et *Dénivelé négatif*. Ceux-ci fournissent des informations supplémentaires sur votre trajet, vous aidant à suivre la progression en temps réel.
+En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de trajet** inclut trois autres widgets : *Durée*, *Dénivelé positif*, *Dénivelé négatif*, *Vitesse max.* et *Pente moyenne* (les deux derniers sont disponibles uniquement sur Android). Ceux-ci fournissent des informations supplémentaires sur votre trajet, vous aidant à suivre la progression en temps réel.
 
 | |
 |-----------|
 | **Distance/Démarrer-Arrêter**. Ce widget affiche la distance de votre enregistrement de trajet en cours. Il est automatiquement ajouté lorsque le plugin d'enregistrement de trajet est activé, mais vous pouvez le masquer via le menu Configurer l'écran. Le widget présente trois états distincts : *Enregistrement*, *En pause* et *Inactif*, chacun indiquant l'état actuel de votre enregistrement de trajet. |
 | ![Widget d'enregistrement de trajet (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| Pour ouvrir la [boîte de dialogue d'enregistrement de trajet](#start-a-dialog) en appuyant sur un widget inactif, activez l'option *Afficher la boîte de dialogue de démarrage* dans les paramètres du plugin d'enregistrement de trajet. Si l'option est désactivée, l'enregistrement commencera immédiatement après avoir appuyé sur le widget sans ouvrir la boîte de dialogue.|  
+| Pour ouvrir la [boîte de dialogue d'enregistrement de trajet](#start-a-dialog) en appuyant sur un widget inactif, activez l'option *Afficher la boîte de dialogue de démarrage* dans les paramètres du plugin d'enregistrement de trajet. Si l'option est désactivée, l'enregistrement commencera immédiatement après avoir appuyé sur le widget sans ouvrir la boîte de dialogue.| 
+
+Sur Android, le widget Distance prend en charge plusieurs modes d'affichage :
+- **Distance totale** – distance totale de l'enregistrement actuel (par défaut).
+- **Dernière montée** – distance de la section de montée la plus récente.
+- **Dernière descente** – distance de la section de descente la plus récente.
 
 
 ### Durée, Dénivelé positif, Dénivelé négatif {#duration-uphill-downhill}
@@ -432,13 +437,18 @@ En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Durée**. Affiche la durée totale de l'enregistrement du trajet en cours en heures et minutes. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Dénivelé positif**. Affiche le gain d'altitude total ou la section de montée la plus récente, en fonction du mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**Dénivelé négatif**. Indique la descente totale ou la section de descente la plus récente, en fonction du mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
-
-</TabItem>
-
-</Tabs>
 
 | |
 |------------|
@@ -449,7 +459,21 @@ En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de
 |**Dénivelé négatif**. Indique la descente totale accumulée pendant l'enregistrement du trajet en cours. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 Si vous avez sélectionné plusieurs widgets — *Durée*, *Dénivelé positif* ou *Dénivelé négatif* — vous pouvez accéder à la même boîte de dialogue pour chacun sans avoir besoin de changer ou de la fermer. Cette interface unifiée facilite la visualisation et la gestion de toutes les informations connexes de manière transparente.
+
+### Vitesse max. et Pente moyenne {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Vitesse max. Android](@site/static/img/widgets/max_speed_android.png) ![Pente moyenne Android](@site/static/img/widgets/average_slope_android.png)  
+
+Le widget **Vitesse max.** affiche la vitesse maximale pour le trajet enregistré actuellement. Appuyez sur le widget pour basculer entre la vitesse maximale globale et la vitesse maximale de la dernière section de montée ou de descente.
+
+Le widget **Pente moyenne** affiche la pente moyenne pour la dernière section de montée ou de descente du trajet actuel. Il aide à estimer à quel point la montée ou la descente précédente était raide, en se basant sur le gain d'altitude et la distance.
 
 
 ## Articles connexes {#related-articles}

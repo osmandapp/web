@@ -1,5 +1,5 @@
 ---
-source-hash: f3cf0ead71b0f41a189bc744f46669b62911117c225598bf57a98dd7d9c20d89
+source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -217,7 +217,7 @@ Après la réinitialisation, la vitesse moyenne est recalculée à partir des no
 
 </Tabs>  
 
-Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse* fournissent des informations précieuses sur la finesse pour aider à prendre des décisions éclairées lors de la planification de routes aériennes. Le widget *Finesse* dans OsmAnd vous aide à évaluer l'efficacité de votre descente ou de votre montée lors de la navigation vers un emplacement spécifique (position d'un [marqueur](../personal/markers.md) sur la carte). Il calcule la finesse comme le rapport de la distance à la différence d'altitude entre votre position actuelle et votre destination prévue. Vous pouvez en savoir plus à ce sujet [ici](https://fr.wikipedia.org/wiki/Finesse_(a%C3%A9rodynamique)).
+Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse* fournissent des informations précieuses sur la finesse pour aider à prendre des décisions éclairées lors de la planification de routes aériennes. Le widget *Finesse* dans OsmAnd vous aide à évaluer l'efficacité de votre descente ou de votre montée lors de la navigation vers un emplacement spécifique (position d'un [marqueur](../personal/markers.md) sur la carte). Il calcule la finesse comme le rapport de la distance à la différence d'altitude entre votre position actuelle et votre destination prévue. Vous pouvez en savoir plus à ce sujet [ici](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 
 **Utilisation des widgets :**
@@ -475,7 +475,7 @@ Vous pouvez lire une description plus détaillée ici : **[Extension <Translate 
 
 </Tabs>
 
-Les widgets d'enregistrement de trajet se réfèrent à l'[extension <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Vous pouvez utiliser les widgets pour afficher de brèves informations sur l'enregistrement de la trace à l'écran. Telles que *Distance*, *Durée*, *Montée* et *Descente*.
+Les widgets d'enregistrement de trajet se réfèrent à l'[extension <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Vous pouvez utiliser les widgets pour afficher de brèves informations sur l'enregistrement de la trace à l'écran. Telles que *Distance*, *Durée*, *Montée*, *Descente*, *Vitesse max.* et *Pente moyenne* (les deux dernières sont disponibles uniquement sur Android).
 
 | | |
 |:------------|:------------|
@@ -556,7 +556,7 @@ Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, act
 </Tabs>
 
 
-Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/vehicle-metrics.md#widgets). Vous pouvez les utiliser pour afficher des informations provenant d'un scanner OBD-II connecté, telles que (*13 métriques*) : **Température d'admission**,&nbsp; **Température ambiante**,&nbsp; **Température du liquide de refroidissement**,&nbsp; **Température de l'huile moteur**,&nbsp; **Régime moteur** (*gratuit*),&nbsp; **Durée de fonctionnement du moteur**,&nbsp; **Charge calculée du moteur**,&nbsp; **Pression du carburant**,&nbsp; **Consommation de carburant**,&nbsp; **Carburant restant**,&nbsp; **Niveau de la batterie**,&nbsp; **Vitesse du véhicule** (*gratuit*), et **Position de l'accélérateur**.  
+Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/vehicle-metrics.md#widgets). Vous pouvez les utiliser pour afficher des informations provenant d'un scanner OBD-II connecté, telles que (*14 métriques*) : **Température d'admission**,&nbsp; **Température ambiante**,&nbsp; **Température du liquide de refroidissement**,&nbsp; **Température de l'huile moteur**,&nbsp; **Régime moteur** (*gratuit*),&nbsp; **Durée de fonctionnement du moteur**,&nbsp; **Charge calculée du moteur**,&nbsp; **Pression du carburant**,&nbsp; **Consommation de carburant**,&nbsp; **Carburant restant**,&nbsp; **Niveau de la batterie**,&nbsp; **Tension de l'adaptateur**,&nbsp; **Vitesse du véhicule** (*gratuit*), et **Position de l'accélérateur**.  
 
 - Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, [activez](../plugins/index.md#enable--disable) l'**extension Métriques du véhicule**.
 - Vous pouvez ajouter des widgets même si aucun scanner OBD-II n'est connecté.

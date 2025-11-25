@@ -1,5 +1,5 @@
 ---
-source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
+source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
 sidebar_position: 18
 title:  Wikipédia
 ---
@@ -164,25 +164,34 @@ Lorsque vous appuyez sur le bouton Rechercher, un panneau supplémentaire appara
 
 ## Article Wikipédia {#wikipedia-article}
 
-Pour ouvrir l'article Wikipédia :
-
-1. Activez la [couche de POI Wikipédia](../map/point-layers-on-map.md#-wikipedia) pour un profil spécifié.
-2. Appuyez sur un POI sur la carte.
-3. Dans le [menu contextuel](../map/map-context-menu.md) d'un POI, appuyez sur *Détails* (ou faites simplement glisser le *menu contextuel* vers le haut) pour afficher un résumé de l'article Wikipédia choisi.
-4. Si vous appuyez sur ce texte (pour la version iOS), vous serez redirigé vers l'article Wikipédia hors ligne.
-5. Utilisez le bouton *Lire l'article* ou *Lire l'article complet* pour ouvrir la version complète de l'article Wikipédia.
-
-
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![POI Wikipédia français en anglais](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+Pour ouvrir l'article Wikipédia :
+
+1. Activez la [couche de POI Wikipédia](../map/point-layers-on-map.md#-wikipedia) pour un profil spécifié.
+2. Appuyez sur un POI sur la carte.
+3. Dans le [menu contextuel](../map/map-context-menu.md) d'un POI, appuyez sur [Détails](../map/map-context-menu.md#details) (ou faites simplement glisser le *menu contextuel* vers le haut) pour afficher un résumé de l'article [Wikipédia choisi](../map/map-context-menu.md#article-description).
+4. Utilisez le bouton *Lire l'article complet* pour ouvrir la version complète de l'article Wikipédia.
+5. Si les données Wikipédia ne sont pas téléchargées, le bouton *Lire sur Wikipédia* apparaît.
+6. Appuyez sur ce bouton pour ouvrir une boîte de dialogue avec les options suivantes : 
+- Télécharger Wikipédia et Ouvrir dans le navigateur (version payante).
+- Lire Wikipédia hors ligne et Ouvrir dans le navigateur (version gratuite).
+
+![POI Wikipédia français en anglais](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Pour ouvrir l'article Wikipédia :
+
+1. Activez la [couche de POI Wikipédia](../map/point-layers-on-map.md#-wikipedia) pour un profil spécifié.
+2. Appuyez sur un POI sur la carte.
+3. Dans le [menu contextuel](../map/map-context-menu.md) d'un POI, appuyez sur [Détails](../map/map-context-menu.md#details) (ou faites simplement glisser le *menu contextuel* vers le haut) pour afficher un résumé de l'article [Wikipédia choisi](../map/map-context-menu.md#article-description).
+4. Si vous appuyez sur ce texte, vous serez redirigé vers l'article Wikipédia hors ligne.
+5. Utilisez le bouton *Lire l'article* pour ouvrir la version complète de l'article Wikipédia.
 
 ![POI Wikipédia français en anglais sur iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title:  Vue Carte des pistes de ski
 ---
@@ -18,9 +18,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Le plugin Vue Carte des pistes de ski d'OsmAnd affiche les pistes célèbres et populaires, les domaines skiables officiellement approuvés et les plans des pistes de la plupart des stations de ski. Les cartes des pistes d'[OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) sont la source de données pour les cartes de ski d'OsmAnd. Combinant des cartes vectorielles avec des cartes raster, la carte de ski d'OsmAnd est très précise et sera utile pour les moniteurs, les alpinistes et les amateurs de sports d'hiver.
 
-La carte de ski d'OsmAnd fait partie des cartes vectorielles et ne nécessite aucun téléchargement supplémentaire. Elle est désactivée par défaut. La carte de ski d'OsmAnd est l'un des [Styles de carte](../map/vector-maps.md) qui offre des fonctionnalités supplémentaires en mettant en évidence certains objets et en rendant d'autres moins visibles.  
+La carte de ski d'OsmAnd fait partie des cartes vectorielles et ne nécessite aucun téléchargement supplémentaire. Elle est désactivée par défaut. La Vue Carte des pistes de ski d'OsmAnd est l'un des [Styles de carte](../map/vector-maps.md) qui offre des fonctionnalités supplémentaires en mettant en évidence certains objets et en rendant d'autres moins visibles.  
 
-Deux profils sont présentés ci-dessous : celui de gauche est pour le ski et celui de droite pour la conduite. Le profil Ski met en évidence les pistes, les remontées mécaniques, les couleurs d'hiver et tous les objets cartographiques utiles pour naviguer dans le domaine skiable.
+Deux profils sont présentés ci-dessous : celui de gauche est pour le ski et celui de droite pour la conduite. Le profil Ski met en évidence les pistes, les voies aériennes, les couleurs d'hiver et tous les objets cartographiques utiles pour naviguer dans le domaine skiable.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -112,7 +112,7 @@ Si vous préférez supprimer les pistes et les couleurs d'hiver de la carte, ou 
 
 
 :::info uninstall plugin
-Le plugin Vue Carte des pistes de ski est une application distincte, et la désactivation de son affichage ne le supprime pas. Si vous devez le désinstaller, allez dans les paramètres d'Android en utilisant *Ouvrir les paramètres* dans le menu du plugin.  
+Le plugin Vueur de carte des pistes de ski est une application distincte, et la désactivation de son affichage ne le supprime pas. Si vous devez le désinstaller, allez dans les paramètres d'Android en utilisant *Ouvrir les paramètres* dans le menu du plugin.  
 :::
 
 
@@ -124,7 +124,7 @@ Le plugin Vue Carte des pistes de ski est une application distincte, et la désa
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Profil Ski sous Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
+![Contours de profondeur nautique sur Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
-![Profil Ski sous iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
+![Contours de profondeur sur iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
 </TabItem>
 
@@ -143,7 +143,7 @@ Les styles de carte Hiver et ski peuvent être activés dans n'importe quel prof
 
 ## Style de carte de ski {#ski-map-style}
 
-Utilisez la [légende de la carte de ski](../../user/map-legend/ski-map.md) pour toute référence. Elle aide à identifier les types de pistes sur la carte, ainsi que les types de remontées mécaniques et d'autres caractéristiques qui peuvent être lues sur la carte.
+Utilisez la [légende de la carte de ski](../../user/map-legend/ski-map.md) pour toute référence. Elle aide à identifier les types de pistes sur la carte, ainsi que les types de voies aériennes et d'autres caractéristiques qui peuvent être lues sur la carte.
 
 En lisant la carte, vous pouvez découvrir les détails qui sont importants pour vous, tels que la difficulté d'une piste particulière, le type de piste, si le damage est effectué, et si la piste est éclairée la nuit.
 
@@ -160,33 +160,33 @@ La carte de ski d'OsmAnd est construite comme l'un des styles de rendu, qui dét
 | Couleur | Description |
 | --- | --- |
 | ![Piste débutant](@site/static/img/plugins/ski-maps/1c_green_1.png) | Vert - Piste débutant |
-| ![Pistes faciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Bleu - Pistes faciles |
+| ![ Pentes faciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Bleu - Pentes faciles |
 | ![Pentes intermédiaires](@site/static/img/plugins/ski-maps/3c_red_1.png) | Rouge - Pentes intermédiaires |
-| ![Difficulté avancée](@site/static/img/plugins/ski-maps/4c_black_1.png) | Gris - Pistes de difficulté avancée |
-| ![Difficulté expert](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Jaune - Pistes de difficulté expert |
+| ![Difficulté avancée](@site/static/img/plugins/ski-maps/4c_black_1.png) | Gris - Pentes de difficulté avancée |
+| ![Difficulté expert](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Jaune - Pentes de difficulté expert |
 
-La difficulté des pistes est généralement indiquée par des couleurs spécifiques. Les couleurs peuvent être différentes selon les pays et les stations. Vous trouverez ci-dessous quelques indications pratiques.
+La difficulté des traces est généralement indiquée par des couleurs spécifiques. Les couleurs peuvent être différentes selon les pays et les stations. Vous trouverez ci-dessous quelques indications pratiques.
 
 :::tip guidance
-Pour des indications plus spécifiques pour chaque type de difficulté de piste, consultez la [référence de difficulté des pistes OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) ou toute autre source qui prend également en compte les pentes, les obstacles et les dangers.  
+Pour des indications plus spécifiques pour chaque type de difficulté de piste, consultez la [référence de difficulté des pistes OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) ou toute autre source qui prend également en compte les pentes, les obstacles et les dangers. Dans le style de carte Hiver et ski, certains dangers cartographiés (par exemple, les zones sujettes aux avalanches étiquetées comme hazard=avalanche) peuvent être affichés comme POI de danger sur la carte et doivent être pris en compte avec la difficulté de la piste. 
 :::
 
 
-### Pistes par type {#piste-by-types}
+### Piste par types {#piste-by-types}
 
-Les pistes diffèrent par leur type. Un type représente différentes caractéristiques d'une piste pour répondre aux exigences de différentes activités liées à l'hiver : ski alpin, patinage classique, snowboard, luge, ski de randonnée, ski de randonnée, ski de bosses, ski de nuit, etc. Comprendre le [type de la piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) sur la carte aide à construire un itinéraire de navigation optimal.
+Les pistes diffèrent par leur type. Un type représente différentes caractéristiques d'une piste pour répondre aux exigences de différentes activités liées à l'hiver : ski alpin, patinage classique, snowboard, luge, ski en arrière-pays, ski de randonnée, ski de bosses, ski de nuit, etc. Comprendre le [type de la piste](https://wiki.openstreetmap.org/wiki/Key:piste:type) sur la carte aide à construire un itinéraire de navigation optimal.
 
 - **Piste de ski alpin/de descente.**  
-Utilisée pour la navigation à ski. Ce [type de piste](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) a une direction et une difficulté, et est le plus souvent entouré par les limites de la station de ski. Lorsqu'une piste de descente est sélectionnée pour la navigation à ski, la direction de la piste est prise en compte. Si les points de départ et de destination sont établis à l'opposé de la direction de la piste, la navigation se fait par la remontée mécanique la plus proche.
+Utilisée pour la navigation à ski. Ce [type de piste](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) a une direction et une difficulté, et est le plus souvent entouré par les limites de la station de ski. Lorsqu'une piste de descente est sélectionnée pour la navigation à ski, la direction de la piste est prise en compte. Si les points de départ et de destination sont établis à l'opposé de la direction de la piste, la navigation se fait par la voie aérienne la plus proche.
 
-- **Piste de ski nordique/de randonnée.**  
+- **Piste de ski nordique/en arrière-pays.**  
 Également utilisée pour la navigation à ski. Ce [type de piste](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) n'a pas de difficulté, peut avoir ou non une direction, et sort le plus souvent des limites de la station de ski. Lors de la navigation sur ce type de pistes, les points de départ et de destination peuvent souvent être inversés.
 
 - **Piste de ski de randonnée.**  
 Souvent utilisée par les skieurs pour une montée en ski nordique et une descente en ski alpin. La difficulté d'une piste de ski de randonnée est souvent indiquée par la couleur correspondante. La navigation à ski peut construire un itinéraire le long de ce type de piste, ce qui permet de combiner les types de pistes.
 
 - **Autre piste de ski.**  
-Les types de pistes tels que les *sentiers de randonnée* ou les *pistes de luge* peuvent être utilisés pour les profils de ski ou de randonnée.
+Les types de pistes tels que les *Sentiers de randonnée* ou les *Pistes de luge* peuvent être utilisés pour les profils de ski ou de randonnée.
 
 
 ### Damage des pistes {#grooming-trails}

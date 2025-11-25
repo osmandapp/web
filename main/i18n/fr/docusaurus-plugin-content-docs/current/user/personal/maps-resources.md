@@ -1,5 +1,5 @@
 ---
-source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
+source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -156,7 +156,7 @@ Pour importer un fichier :
 3. Le plugin apparaîtra dans la section **Liste des plugins**, où il pourra être activé.
 4. Un dossier correspondant apparaîtra alors dans la section **Cartes supplémentaires** de l'onglet [Téléchargements](#downloads-menu).
 
-Pour en savoir plus, consultez l'article [**Paquetage personnalisé**](../plugins/custom.md).
+Pour en savoir plus, consultez l'article [**Paquetage personnalisé**](../plugins/custom).
 
 
 ### Chargement de plusieurs cartes {#multiple-map-loading}
@@ -177,7 +177,9 @@ Pour en savoir plus, consultez l'article [**Paquetage personnalisé**](../plugin
 
 </Tabs>
 
-Pour les pays composés de **plusieurs cartes régionales**, vous pouvez utiliser le chargement en masse de plusieurs cartes. Les cartes disponibles pour ce type de téléchargement sont affichées avec des icônes de double flèche de téléchargement et une étiquette avec le nombre de régions à l'intérieur (par exemple, Lignes de contour / Toutes les régions : 10). Vous pouvez choisir le nombre de cartes à télécharger.
+Pour les pays composés de **plusieurs cartes régionales**, vous pouvez utiliser le chargement en masse de plusieurs cartes. Les cartes disponibles pour ce type de téléchargement sont affichées avec des icônes de double flèche de téléchargement et une étiquette avec le nombre de régions à l'intérieur (par exemple, Lignes de contour / Toutes les régions : 10). Vous pouvez choisir le nombre de cartes à télécharger. Le chargement en masse prend en charge plusieurs types de cartes, y compris Standard, Lignes de contour, Wikipédia et Relief.
+
+Lorsque l'élément de pays groupé est ouvert, une feuille inférieure s'affiche avec la liste complète des cartes pour ce pays, permettant de sélectionner des cartes individuelles ou de toutes les télécharger en une fois.
 
 
 ## Menu Local {#local-menu}
@@ -404,11 +406,21 @@ Use sorting options to organize map data:
 
 Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Menu Cartes Mettre à jour les cartes Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Menu Cartes Mettre à jour les cartes Android](@site/static/img/personal/maps/maps_update_andr.png) ![Onglet Mettre à jour les cartes Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 L'onglet **Mises à jour** vous permet de rafraîchir les cartes et les ressources d'OsmAnd. Les cartes standard et les cartes de routes seules sont publiées une fois par mois, généralement entre le 2 et le 5 du mois, et incluent les données OpenStreetMap jusqu'au dernier jour du mois précédent (par exemple, la version d'octobre contient les données jusqu'au 30 septembre). D'autres données telles que Wikipédia, le relief ou les cartes marines peuvent suivre des calendriers de mise à jour différents et non réguliers. Les prévisions météorologiques ont leur propre cycle de mise à jour régulier. Pour plus de détails, consultez la section [Télécharger les prévisions](../plugins/weather.md#download-forecast). 
 
+Si plusieurs cartes du même pays nécessitent une mise à jour, OsmAnd les regroupe en un seul élément dans la liste des Mises à jour. L'élément groupé affiche le nom du pays et le nombre de cartes incluses. Lorsque vous appuyez dessus, une feuille inférieure *Mettre à jour les cartes* s'ouvre, affichant toutes les cartes qui doivent être mises à jour. 
+
 Utilisez le bouton *Tout mettre à jour* pour mettre à jour toutes les cartes simultanément, ou mettez à jour les cartes individuelles selon vos besoins. Pour les mises à jour horaires, vérifiez l'état de votre abonnement aux [Mises à jour en direct](#live-updates). Si cette option est activée, la section **Mises à jour en direct** apparaîtra en haut de l'onglet, sous l'indicateur de mémoire de l'appareil.
+
+Vous pouvez également gérer les cartes directement depuis l'onglet Mises à jour en utilisant un geste d'appui long sur n'importe quelle carte listée. Cela ouvre un menu contextuel qui fournit plusieurs options :
+- **Info** — afficher les détails sur la carte sélectionnée
+- **Mettre à jour** — télécharger la dernière version disponible
+- **Désactiver** — désactiver temporairement une carte sans supprimer ses données
+- **Supprimer** — supprimer complètement les données de la carte de l'appareil
+
+Lorsque une carte est désactivée, elle peut disparaître temporairement de l'onglet Local. Si une mise à jour devient disponible pour une carte désactivée, elle apparaîtra toujours dans la liste des Mises à jour et sera affichée avec une icône grise. Mettre à jour une telle carte la réactivera automatiquement.
 
 </TabItem>
 
