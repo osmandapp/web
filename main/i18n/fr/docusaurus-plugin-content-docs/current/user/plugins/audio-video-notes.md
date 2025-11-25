@@ -1,5 +1,5 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
 title:  Notes audio/vidéo
 ---
@@ -273,6 +273,15 @@ L'ajout d'un widget à l'écran est nécessaire si vous préférez éviter de re
     - **<Translate android="true" ids="av_def_action_picture"/>** - commencer à prendre des photos.
 
     ![Le widget](@site/static/img/plugins/audio-video-notes/widget.png)
+
+**Utilisation d'appareils d'entrée externes (*Android*)**. Si vous utilisez un [appareil d'entrée externe](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), vous pouvez démarrer et arrêter les Notes audio/vidéo sans toucher l'écran. Pour ce faire, assignez l'action « Ajouter une note audio » ou « Ajouter une note vidéo » à une touche :<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Une fois assignée, la touche fonctionne comme un basculement :
+- La première pression démarre l'enregistrement d'une note audio ou vidéo (selon l'action sélectionnée).
+- La seconde pression de la même touche arrête l'enregistrement.
+
+Lorsqu'un enregistrement est arrêté via un appareil d'entrée externe, le menu contextuel n'est pas affiché, ce qui facilite l'utilisation d'OsmAnd dans des scénarios entièrement sans les mains (par exemple, en conduisant une moto ou une voiture).
 
 
 ## Gérer plusieurs notes {#manage-multiple-notes}

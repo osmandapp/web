@@ -1,5 +1,5 @@
 ---
-source-hash: 1bd20746ffeab531cb3d1ba5be872da020fbb3e3e511c4199d1144aff385a1dc
+source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
@@ -50,10 +50,10 @@ Connectez-vous en utilisant votre numéro de téléphone enregistré sur Telegra
 
 ## Paramètres de configuration requis {#required-setup-parameters}
 
-Installez l'APK d'OsmAnd Online GPS Tracker :
+Vous pouvez installer OsmAnd Online GPS Tracker :
 
-- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- [Serveur OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
+- depuis le [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- ou depuis le [Serveur OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (fichier APK)
 
 
 ## Paramètres du plugin {#plugin-settings}
@@ -224,6 +224,6 @@ Le widget a plusieurs affichages.
 
 L'application OsmAnd a son propre bot Telegram appelé "OsmAnd Assistant", qui vous aide à intégrer OsmAnd Telegram avec des traceurs ou des API tiers. Vous pourrez partager non seulement votre position, mais aussi la position de votre vélo ou d'un groupe de personnes en course disponible via l'API. OsmAnd Telegram vous offrira une belle présentation de vos positions sur la carte dans OsmAnd même.  
 
-Veuillez nous faire part de vos impressions sur cette nouvelle application sur [Twitter](https://twitter.com/osmandapp) et d'autres canaux sociaux.
+Veuillez nous faire part de vos impressions sur cette nouvelle application sur [Twitter](https://x.com/osmandapp) et d'autres canaux sociaux.
 
 Pour voir les positions GPS des contacts sur la carte, vous avez besoin de la dernière version d'[OsmAnd ou OsmAnd+](./../purchases/android.md). La version minimale prise en charge d'OsmAnd ou OsmAnd+ est la 3.0.4.

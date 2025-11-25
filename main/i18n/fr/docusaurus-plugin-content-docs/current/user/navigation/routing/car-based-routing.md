@@ -1,5 +1,5 @@
 ---
-source-hash: c8f39d23c520f3d8eb8713729cf8047052d90c32210529157c5a7347608706bb
+source-hash: 74a5b610d6f4eeafabe0fe3369b3c7c103d064d346a88aacce7696290df5bb64
 sidebar_position: 2
 title:  Itinéraire voiture (Camion, Moto)
 ---
@@ -64,7 +64,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 Par défaut, le *profil Camion* est désactivé. Pour utiliser ce profil pour le calcul d'itinéraire, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Le calcul d'itinéraire pour camion est similaire à celui pour voiture, mais il est spécifiquement conçu pour les conducteurs de grands véhicules commerciaux. Il prend en compte des facteurs supplémentaires tels que les restrictions de [hauteur, poids et largeur](../guidance/vehicle-parameters.md#size-parameters) du véhicule et la possibilité de transporter des matières dangereuses (voir le tableau ci-dessous). Tous les autres paramètres d'itinéraire sont identiques à ceux du [calcul d'itinéraire pour voiture](#route-parameters---car).  
+Le calcul d'itinéraire pour camion est similaire à celui pour voiture, mais il est spécifiquement conçu pour les conducteurs de grands véhicules commerciaux. Il prend en compte des facteurs supplémentaires tels que les restrictions de [hauteur, largeur, poids, charge maximale par essieu et poids maximal en charge complète](../guidance/vehicle-parameters.md#size-parameters) du véhicule et la possibilité de transporter des matières dangereuses (voir le tableau ci-dessous). Tous les autres paramètres d'itinéraire sont identiques à ceux du [calcul d'itinéraire pour voiture](#route-parameters---car).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

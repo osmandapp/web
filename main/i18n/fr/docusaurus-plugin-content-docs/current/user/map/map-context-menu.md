@@ -1,5 +1,5 @@
 ---
-source-hash: d29a320941c3d14727ce2b8aa4ee45ac1629acf1b80e72c0d29616d0617f46b5
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -136,6 +136,7 @@ Le panneau **Informations sur l'objet** fournit des détails supplémentaires su
 
 Les détails disponibles incluent :
 
+- [Description de l'article](#article-description)
 - [Noms alternatifs](#alternative-names)
 - [Coordonnées](#coordinates)
 - [Dans les zones](#polygon-information)
@@ -153,7 +154,34 @@ De plus, le panneau peut inclure des [Détails OpenStreetMap](https://wiki.opens
 - [Heures d'ouverture](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Frais](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Accessibilité](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Largeur](https://wiki.openstreetmap.org/wiki/Key:width) / [Hauteur](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Largeur](https://wiki.openstreetmap.org/wiki/Key:width) / [Hauteur](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Au-delà des champs listés ci-dessus, OsmAnd peut également afficher des informations descriptives supplémentaires provenant d'OpenStreetMap. Ces attributs vous aident à mieux comprendre les caractéristiques d'un lieu et peuvent inclure des détails tels que l'altitude, la direction, l'année de construction, le type de surface ou de revêtement, le niveau intérieur, les options de paiement, la disponibilité de la livraison ou de la prise en charge, et bien d'autres. OsmAnd affiche ces attributs avec des étiquettes claires et, lorsque c'est possible, des icônes, ce qui facilite la lecture et la reconnaissance des informations. L'ensemble exact des attributs dépend des données disponibles dans OpenStreetMap pour l'objet sélectionné.
+
+
+### Description de l'article {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Liste de description](@site/static/img/map/description_list_new_android.png) ![Liste de description](@site/static/img/map/description_list_dialog.png)
+
+Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md#wikipedia-article), d'un [Favori](../personal/favorites.md) ou d'un Point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
+
+Si le lieu sélectionné possède un article Wikipedia, un aperçu court est affiché dans cette section. Lorsque l'article complet n'est pas disponible hors ligne, le bouton *Lire sur Wikipedia* apparaît. En l'appuyant, une boîte de dialogue s'ouvre avec des options en fonction de l'accès de l'utilisateur : les utilisateurs avec un abonnement payant peuvent télécharger les données régionales Wikipedia ou ouvrir l'article dans un navigateur, tandis que les utilisateurs gratuits peuvent ouvrir l'article en ligne ou passer à l'écran qui propose un accès hors ligne.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Liste de description](@site/static/img/map/description_list_new_ios.png)
+
+Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md), d'un [Favori](../personal/favorites.md) ou d'un Point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Noms alternatifs {#alternative-names}
@@ -298,27 +326,6 @@ Affiche des informations sur les itinéraires de transport public pour l'arrêt 
 Ceci est une liste de tous les points d'un même groupe pour un Favori ou un Point de cheminement. En appuyant, la liste complète des points d'un groupe se déploie ; en appuyant sur un point de la liste, la carte se déplace vers le point sélectionné.
 
 
-
-
-### Description de l'article {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Liste de description](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Liste de description](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md), d'un [Favori](../personal/favorites.md) ou d'un Point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
 
 
 ### Lien OpenStreetMap {#openstreetmap-link}
@@ -725,9 +732,7 @@ Pour ajouter/modifier des points de trace, activez le [**plugin Enregistrement d
 
 <TabItem value="android" label="Android">  
 
-![Action Point de cheminement Android](@site/static/img/map/action_waypoint_android.png)
-
-![Sélectionner la trace pour ajouter un point de cheminement Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Sélectionner une trace pour ajouter un point de cheminement Android](@site/static/img/map/tracks_tab_android.png) ![Ajouter un point de cheminement de trace Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -735,7 +740,7 @@ Pour ajouter/modifier des points de trace, activez le [**plugin Enregistrement d
 
 ![Action Point de cheminement iOS](@site/static/img/map/action_waypoint_ios.png)
 
-![Sélectionner la trace pour ajouter un point de cheminement iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
+![Sélectionner une trace pour ajouter un point de cheminement iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
 
 </TabItem>
 
@@ -745,7 +750,7 @@ Vous pouvez ajouter des points de cheminement à une trace enregistrée ou à l'
 
 - Sélectionnez un emplacement sur la carte avec un [appui long](../map/map-context-menu.md#select-any-point-long-tap).
 - Dans le *menu contextuel de la carte* qui s'ouvre, choisissez *Actions → Ajouter un point de cheminement de trace*.
-- La liste affiche les [traces](../map/tracks/index.md#display-tracks-on-the-map) enregistrées et affichées sur la carte, ainsi que l'[enregistrement de trace en cours](../plugins/trip-recording.md), auxquels vous pouvez ajouter le point de cheminement sélectionné.
+- La liste affiche les [traces](../map/tracks/index.md#display-tracks-on-the-map) enregistrées et affichées sur la carte, ainsi que l'[enregistrement de trace en cours](../plugins/trip-recording.md), auxquels vous pouvez ajouter le point de cheminement sélectionné (*sur Android*, la liste est regroupée en onglets : <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Vous pouvez ajouter des points de cheminement à une trace qui n'est pas encore active pour l'enregistrement, auquel cas la trace inactive passe de l'état *Démarrer* à l'état *Reprendre*.
 - [Remplissez](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) les données requises et enregistrez le point de cheminement.
 - Vous pouvez configurer les [Actions rapides](../widgets/quick-action.md) en ajoutant un point de cheminement à *Ajouter un point de cheminement de trace*.

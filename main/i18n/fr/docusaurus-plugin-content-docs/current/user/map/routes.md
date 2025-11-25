@@ -1,5 +1,5 @@
 ---
-source-hash: a06bbf2034cb5296765dbd077f7016812aeaa6f17f62266378eb018c4afe5620
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Itinéraires
 ---
@@ -176,7 +176,17 @@ Vous pouvez personnaliser l'affichage de certains ***Carnets de voyage*** et typ
 
 Allez dans : *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Section Itinéraires de Configurer la carte](@site/static/img/map/configure_map_routes_android.png)
+![Section Itinéraires de Configurer la carte](@site/static/img/map/configure_map_routes_android.png) ![Classes d'itinéraires](@site/static/img/map/routes_classes_android.png)
+
+- Pour afficher les itinéraires requis sur la carte, activez-les dans la *liste des itinéraires* du menu [Configurer la carte](../map/configure-map-menu.md).
+- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#save-as-a-track), et si l'ensemble visible d'itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
+- Les principaux types d'itinéraires peuvent également être filtrés par classes et sous-classes, vous permettant d'afficher uniquement des groupes spécifiques au sein de chaque type. Par exemple, vous pouvez afficher les itinéraires de randonnée par **symboles OSMC** en tant que classes, et par *réseaux internationaux, nationaux, régionaux* ou *locaux* en tant que sous-classes.
+- Vous pouvez créer une trace par-dessus les itinéraires en utilisant l'outil [Planifier un itinéraire](../plan-route/create-route.md). 
+- Lorsque plusieurs itinéraires suivent la même route, chaque itinéraire est affiché comme une ligne semi-transparente séparée placée au-dessus des autres. 
+- Lorsque vous appuyez sur un emplacement où plusieurs itinéraires se chevauchent, un menu contextuel avec tous les itinéraires passant par ce point s'affiche. 
+- Des cartes vectorielles mises à jour sont nécessaires pour afficher tous les éléments du nouveau schéma de rendu des itinéraires. 
+
+![Itinéraires sur la carte - randonnée osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Itinéraires sur la carte - réseaux de nœuds cyclables](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -186,22 +196,23 @@ Allez dans : *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 ![Menu Trace iOS](@site/static/img/map/configure_map_routes_ios.png)
 
+- Pour afficher les itinéraires requis sur la carte, activez-les dans la *liste des itinéraires* du menu [Configurer la carte](../map/configure-map-menu.md).
+- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#save-as-a-track), et si l'ensemble visible d'itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
+- Vous pouvez créer une trace par-dessus les itinéraires en utilisant l'outil [Planifier un itinéraire](../plan-route/create-route.md). 
+- Lorsque plusieurs itinéraires suivent la même route, chaque itinéraire est affiché comme une ligne semi-transparente séparée placée au-dessus des autres.   
+
+![Itinéraires sur la carte - randonnée osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Itinéraires sur la carte - réseaux de nœuds cyclables](@site/static/img/map/map-routes-cycle-node-networks.png)
+
 </TabItem>
 
 </Tabs>
 
-- Pour afficher les itinéraires requis sur la carte, activez-les dans la *liste des itinéraires* du menu [Configurer la carte](../map/configure-map-menu.md).
-- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#save-as-a-track), et si l'ensemble visible d'itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
-- Vous pouvez créer une trace par-dessus les itinéraires en utilisant l'outil [Planifier un itinéraire](../plan-route/create-route.md).  
-
-![Itinéraires sur la carte - randonnée osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Itinéraires sur la carte - réseaux de nœuds cyclables](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 ## Détails de la zone et de la falaise d'escalade {#climbing-area-and-crag-details}
 
 ![Détails de l'escalade](@site/static/img/map/climbing_andr.png)
 
 Lors de la sélection d'une [zone ou d'une falaise d'escalade](../map/routes.md#climbing-routes), OsmAnd fournit un résumé détaillé du site d'escalade, incluant : le nom et l'emplacement, la cotation de difficulté d'escalade (UIAA, française, YDS, etc.), le type de roche, la hauteur et la longueur de la voie, la qualité de l'escalade et les conditions de surface.
-
 
 
 ## Actions avec les itinéraires {#actions-with-routes}
@@ -216,13 +227,13 @@ Lors de la sélection d'une [zone ou d'une falaise d'escalade](../map/routes.md#
 
 <TabItem value="ios" label="iOS">
 
-![Infos sur l'itinéraire](@site/static/img/map/routes_osm_ios.png) ![Infos sur l'itinéraire](@site/static/img/map/routes_osm_ios_1.png)
+![Infos sur l'itinéraire](@site/static/img/map/routes_osm_ios_new.png) ![Infos sur l'itinéraire](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Sur la carte, vous pouvez sélectionner des itinéraires pour la [randonnée, le vélo, les voyages, et plus encore](#type-of-routes), qui sont marqués avec des [symboles OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) le cas échéant.
+Sur la carte, vous pouvez sélectionner des itinéraires pour [la randonnée, le cyclisme, le ski, le VTT, la moto tout-terrain, les voyages, et plus encore](#type-of-routes). Lorsque disponible, les itinéraires de randonnée affichent leurs balises en utilisant les [symboles OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol) ; les autres types d'itinéraires utilisent leurs propres marquages.
 
 Lorsque vous appuyez sur un **symbole d'itinéraire** sur la carte :
 
@@ -354,13 +365,13 @@ Pour rechercher, allez dans le menu *<Translate android="true" ids="search_butto
 
 </Tabs>  
 
-Naviguez vers *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* pour trouver les itinéraires souhaités. Les itinéraires incluent le nom, le type d'activité, la longueur, l'emplacement et la distance jusqu'au point le plus proche.
+Naviguez vers *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* pour trouver les itinéraires souhaités. Les résultats de recherche d'itinéraires affichent le nom de l'itinéraire, le type d'activité, la longueur, l'emplacement et la distance jusqu'au point le plus proche. Sur Android, les métriques d'altitude telles que la montée et la descente sont également affichées lorsque disponibles. Les changements d'altitude mineurs (moins de 10 m) sont masqués pour garder la liste claire. Toutes les valeurs respectent les unités de distance et d'altitude sélectionnées dans l'application.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Itinéraires sur le terrain](@site/static/img/map/route_search_1.png)
+![Itinéraires sur le terrain](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -378,7 +389,7 @@ Utilisez le bouton de filtres (coin supérieur droit) pour n'afficher que les it
 
 <TabItem value="android" label="Android">
 
-![Itinéraires sur le terrain](@site/static/img/map/route_search_2.png) ![Itinéraires sur le terrain](@site/static/img/map/route_search_3.png)
+![Itinéraires sur le terrain](@site/static/img/map/route_search_2_new.png) ![Itinéraires sur le terrain](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

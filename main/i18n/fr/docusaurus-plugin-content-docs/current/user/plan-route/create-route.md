@@ -1,5 +1,5 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Planifier un itinéraire
 ---
@@ -13,6 +13,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 ## Aperçu {#overview}
 
@@ -36,6 +37,7 @@ Un itinéraire se compose d'un ensemble de segments entre des points spécifiés
 
 </Tabs>
 
+
 ## Principaux cas d'utilisation {#main-use-cases}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -58,6 +60,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 
 </Tabs>
 
+
 ### Créer un nouvel itinéraire {#create-new-route}
 
 Pour créer une nouvelle trace au format GPX, utilisez la fonction principale de l'outil *Planifier un itinéraire*. La pré-création d'un itinéraire présente de nombreux avantages, contrairement à l'enregistrement de la trace actuelle avec le *[plugin Enregistrement de trajet](../plugins/trip-recording.md)*. Vous pouvez [ajouter](#adding-points) autant de points que vous le souhaitez à l'itinéraire, les [supprimer et les déplacer](#point-context-menu), changer les types d'itinéraire par [segments](#route-between-points), et obtenir des [informations détaillées sur l'itinéraire](#graph).  
@@ -65,6 +68,7 @@ Pour créer une nouvelle trace au format GPX, utilisez la fonction principale de
 Par défaut, le type de routage correspondra au profil précédemment sélectionné. Appuyez sur l'icône de routage pour sélectionner comment l'application doit calculer le segment pour connecter les points. Le profil disponible doit être configuré [séparément](../navigation/routing/osmand-routing.md#routing-types).  
 
 Vous pouvez **zoomer et dézoomer** pour faciliter le placement des points lors de la création ou de la modification d'une trace. Lorsque vous **dézoomez**, les points de la trace deviennent invisibles pour une meilleure vue de toute la longueur de la trace et de la carte dans son ensemble. Seuls le dernier point ajouté et le pointeur pour l'ajout du point suivant restent visibles.
+
 
 ### Modifier une trace GPX existante {#modify-existing-gpx-track}
 
@@ -86,6 +90,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_
 
 L'outil *Planifier un itinéraire* permet de modifier une trace GPX existante ainsi qu'une [trace importée](../personal/tracks/manage-tracks.md#import). Cependant, si vous devez exclure un grand nombre de points sur la base de critères génériques, le [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) pourrait être un outil plus approprié.
 
+
 ### Mesure de distance {#distance-measurement}
 
 ![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_lines_andr.png)  
@@ -100,6 +105,7 @@ L'outil *Planifier un itinéraire* permet de modifier une trace GPX existante ai
 La *Ligne droite* est nécessaire et sera utilisée pour les zones non couvertes par les données de routage, telles que les zones hors route et hors piste.
 :::
 
+
 ### Obtenir les données d'altitude {#get-elevation-data}
 
 <InfoAndroidOnly />
@@ -110,6 +116,7 @@ Si les [données d'altitude](../map/tracks/track-context-menu.md#calculate-missi
 
 - [Utiliser les routes à proximité](#attach-track-to-roads). Ce mode utilise les cartes hors ligne pour trouver les routes les plus proches afin de construire une trace, de sorte que les données d'altitude seront récupérées à partir des routes attachées. La géométrie de la trace peut être ajustée.  
 - [Utiliser les cartes de terrain](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Ce mode calcule l'altitude en se basant sur les données des cartes de terrain (3D). La différence entre les altitudes enregistrées par votre appareil peut être utilisée pour la correction de l'altitude.  La géométrie de la trace reste inchangée.
+
 
 ### Attacher la trace aux routes {#attach-track-to-roads}
 
@@ -135,6 +142,10 @@ Le paramètre **Attacher aux routes** permet d'attacher une trace enregistrée o
 - Noms de rues et informations sur les voies.
 - Données d'altitude.
 - [Attributs de la route](../navigation/setup/route-details.md#road-attributes).
+- Profil d'altitude mis à jour basé sur la géométrie de la route.
+- Recalcul possible de la géométrie de la trace (simplification ou ajustement des points au réseau routier).
+
+Lorsque une trace est attachée aux routes, les paramètres suivants peuvent changer car la géométrie et l'altitude de la trace sont recalculées : *Distance, Montée / Descente, Vitesse moyenne (et le graphique de vitesse), Vitesse maximale, Temps en mouvement*, et *Durée*. Ces valeurs peuvent différer de la trace GPX originale si l'altitude ou la géométrie basée sur la route recalculée s'écarte significativement des données GPS enregistrées.
 
 Vous pouvez sélectionner une [valeur de seuil](../navigation/setup/gpx-navigation.md#attach-to-the-roads) pour la distance maximale entre les points de la trace simplifiée et les points de la trace originale.
 
@@ -157,6 +168,7 @@ To generate navigation instructions:
 > **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
 -->
 
+
 ## Points et segments {#points--segments}
 
 ### Ajout de points {#adding-points}
@@ -165,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Planifier un itinéraire Favoris Android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Pour mesurer une distance ou planifier un trajet, ajoutez des points à l'emplacement du *Pointeur* un par un et appuyez sur le bouton *Ajouter*. En accédant à la **liste des points** ci-dessous, vous pouvez réorganiser les points, les supprimer ou accéder à un [menu contextuel de point](#point-context-menu) spécifique.
+
+Vous pouvez également ajouter un point intermédiaire directement depuis la carte en appuyant sur un POI ou un Favori pour ouvrir son menu contextuel, puis en appuyant sur *AJOUTER UN POINT*. Dans ce mode, les menus contextuels pour les objets non-points ne sont pas affichés. Lorsque vous ajoutez un POI/Favori, son nom est conservé comme nom du point de l'itinéraire ; si vous déplacez ultérieurement ce point sur la carte, le nom est réinitialisé.
 
 </TabItem>
 
@@ -173,11 +189,11 @@ To generate navigation instructions:
 
 ![Planifier un itinéraire iOS](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Pour mesurer une distance ou planifier un trajet, ajoutez des points à l'emplacement du *Pointeur* un par un et appuyez sur le bouton *Ajouter un point*. En accédant à la **liste des points** ci-dessous, vous pouvez réorganiser les points, les supprimer ou accéder à un [menu contextuel de point](#point-context-menu) spécifique.
+
 </TabItem>
 
 </Tabs>  
-
-Pour mesurer une distance ou planifier un trajet, ajoutez des points à l'emplacement du *Pointeur* un par un et appuyez sur le bouton *Ajouter un point*. En accédant à la **liste des points** ci-dessous, vous pouvez réorganiser les points, les supprimer ou accéder à un [menu contextuel de point](#point-context-menu) spécifique.
 
 :::note
 Vous pouvez également **Annuler**/**Rétablir** chaque action que vous avez effectuée dans la planification d'itinéraire.
@@ -285,6 +301,7 @@ Chaque point de votre itinéraire a son propre menu contextuel. Il affiche le *n
 
 En utilisant l'outil *Planifier un itinéraire* et l'option [Itinéraire entre les points](#route-between-points), vous pouvez créer des itinéraires multimodaux où, par exemple, la première partie peut être un itinéraire à *vélo*, la deuxième partie une *ligne droite* et ensuite une partie *piétonne*. Notez que la navigation sur les itinéraires multimodaux n'est pas disponible, vous devez donc sélectionner l'un des profils les plus appropriés pour pouvoir suivre les instructions virage par virage.
 
+
 ## Éditeur {#editor}
 
 ### Enregistrer l'itinéraire {#save-route}
@@ -355,7 +372,7 @@ Lors de l'enregistrement d'une nouvelle trace, vous pouvez sélectionner l'optio
 
 <TabItem value="android" label="Android">
 
-![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Planifier un itinéraire Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 
@@ -373,6 +390,7 @@ Pendant la planification de l'itinéraire, le [graphique](../navigation/setup/ro
 - Pour **iOS**, le graphique n'est disponible que via le menu *[Options](#options) → Navigation*.
 
 Lors du calcul d'un itinéraire pour la navigation dans *Planifier un itinéraire*, vous pouvez trouver des informations supplémentaires sur la trace telles que les [informations sur l'altitude](../navigation/setup/route-details.md#elevation-info) et les [attributs de la route](../navigation/setup/route-details.md#road-attributes), et utiliser l'outil [Analyser sur la carte](../navigation/setup/route-details.md#analyze-on-map). Appuyez sur le bouton *Détails* sous le graphique.  
+
 
 ## Articles connexes {#related-articles}
 

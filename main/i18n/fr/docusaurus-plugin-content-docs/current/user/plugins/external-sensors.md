@@ -1,5 +1,5 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  Capteurs externes
 ---
@@ -240,6 +240,8 @@ Types de widgets pris en charge :
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – distance totale mesurée par le capteur.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – température ambiante actuelle.
 7. **Niveau de batterie** – pourcentage de batterie restante dans un capteur BLE connecté, activez-le dans les **Paramètres du capteur**.
+
+**Remarque :** Si un capteur se déconnecte temporairement, appuyez sur son widget sur la carte pour tenter immédiatement une reconnexion — pas besoin d'ouvrir le menu Capteurs externes.
 
 
 ### Paramètres du widget {#widget-settings}

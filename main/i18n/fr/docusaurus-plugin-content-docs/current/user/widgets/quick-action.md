@@ -1,5 +1,5 @@
 ---
-source-hash: cf0423dde10a7ca433bb7c3e8608756683a6e4cd33976dbe8b893d1b6e85cfed
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title:  Action rapide (Boutons personnalisés)
 ---
@@ -197,13 +197,17 @@ Le widget *Action rapide* apparaît dans le coin inférieur de l'écran de la ca
 
 <TabItem value="android" label="Android">  
 
-![Grille pour les boutons_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Grille pour les boutons_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Grille pour les boutons_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![Grille pour les boutons_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Grille pour les boutons_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Grille pour les boutons_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Grille pour les boutons_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![Grille pour les boutons_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ Le widget *Action rapide* apparaît dans le coin inférieur de l'écran de la ca
 [Les boutons de la carte](../widgets/map-buttons.md#overview) sont automatiquement disposés en utilisant une disposition en grille. Chaque bouton est assigné à l'un des quatre coins de l'écran (*haut-gauche*, *haut-droite*, *bas-gauche*, *bas-droite*). S'il n'y a pas assez d'espace dans le coin assigné, les boutons sont alignés horizontalement ou verticalement, en fonction de l'orientation de l'écran.
 
 Cette disposition aide à maintenir les boutons visuellement cohérents et évite les chevauchements. Par exemple, sur un affichage paysage, les boutons dans le coin droit s'aligneront horizontalement en bas de l'écran, tandis que sur un affichage portrait, ils s'étendront verticalement vers le haut ou le bas selon les besoins.
+
+La grille s'adapte à l'interface environnante et repositionne les boutons si nécessaire, garantissant qu'ils restent visibles et n'interfèrent pas avec d'autres éléments à l'écran. Lorsque des widgets ou des panneaux sont ajoutés, supprimés ou réorganisés, la disposition se met à jour en conséquence pour que l'ordre des boutons reste cohérent et qu'aucun élément ne soit masqué.
+
+[Les profils importés](https://osmand.net/docs/user/personal/import-export#export) depuis un autre appareil sont ajustés à la disposition en grille, en conservant les positions des boutons correctes sur différentes tailles d'écran et plateformes.
 
 
 ## Types d'action {#action-types}
@@ -223,8 +231,8 @@ Cette disposition aide à maintenir les boutons visuellement cohérents et évit
 | Afficher / Masquer <br/> [**Itinéraires**](../map/vector-maps.md#routes) | Vous pouvez sélectionner des types d'itinéraires pour activer ou désactiver leur affichage. <br/> Certains itinéraires ont des paramètres supplémentaires. Par défaut, si vous n'avez rien sélectionné dans le menu [Configurer la carte](../map/configure-map-menu.md), le premier type d'itinéraire de la liste sera assigné, sinon, un type de votre choix sera assigné. Vous pouvez en savoir plus dans l'article [Itinéraires](../map/routes.md). <br/> - ***Itinéraires cyclables***  &nbsp;(*Itinéraire*, *Réseaux de nœuds*) <br/> - ***Itinéraires VTT***  &nbsp;(*Échelle VTT*, *IMBA*) <br/> - ***Itinéraires de randonnée***  &nbsp;(*OSMC*, *Affiliation au réseau*, *Réseaux de nœuds*) <br/> - ***Niveau de difficulté des sentiers de randonnée***  &nbsp;(*Échelle SAC*, *Échelle CAI*) <br/> - ***Pistes de ski*** <br/> - ***Itinéraires équestres*** <br/> - ***Sports en eaux vives*** <br/> - ***Itinéraires de course à pied*** <br/> - ***Parcours de santé*** <br/> - ***Itinéraires de voyage***  &nbsp;(*Traces*, *Carnets de voyage*, *Points*) <br/> |
 | Afficher / Masquer <br/> [**Couches topographiques**](../plugins/topography.md#overview) | Toutes les données topographiques sont présentées sous forme de couches de carte distinctes. Vous pouvez rapidement basculer la visibilité de ces couches avec l'Action rapide. <br/> - ***Lignes de contour*** <br/> - ***Terrain***  &nbsp;(*En fonction de la couche sélectionnée dans le menu [Configurer la carte](../map/configure-map-menu.md)*, *Ombrage du relief*, *Pente*, ou *Altitude* *sera affiché.*) |
 | Changer <br/> [**Palette de couleurs du terrain**](../plugins/topography.md#modify-color-scheme) | Permet de sélectionner une ou plusieurs palettes dans une liste existante, qui changeront lorsque vous appuierez sur le bouton. |
-| Afficher / Masquer <br/> [**Couches météo**](../plugins/weather.md#weather-layers) | Toutes les données météorologiques sont présentées sous forme de couches de carte distinctes. Avec l'Action rapide, vous pouvez accéder rapidement pour basculer la visibilité de ces couches sur la carte. <br/> - ***Couche de précipitations*** <br/> - ***Couche nuageuse*** <br/> - ***Couche de pression*** <br/> - ***Couche de vent*** <br/> - ***Couche de température*** |
-| Ouvrir <br/> [**Écran météo**](../plugins/weather.md) <br /> *Android uniquement* | Ouvre l'écran de prévisions [*Météo*](../plugins/weather.md#weather-forecast-screen) avec les informations détaillées. |
+| Afficher / Masquer <br/> [**Couches météo**](../plugins/weather.md#weather-layers) | Toutes les données météorologiques sont présentées sous forme de couches de carte distinctes. Avec l'Action rapide, vous pouvez accéder rapidement pour basculer la visibilité de ces couches sur la carte. <br/> - ***Couche de précipitations*** <br/> - ***Couche nuageuse*** <br/> - ***Couche de pression*** <br/> - ***Couche de vent*** <br/> - ***Couche d'animation du vent*** *(Android uniquement)* <br/> - ***Couche de température*** <br/> Sur Android, il existe également **Couches météo** — un interrupteur principal pour toutes les couches météo actives. Désactive toutes les couches météo actuellement activées en une seule fois. Lorsque réactivé, restaure exactement le même ensemble de couches qui étaient actives auparavant. |
+| Ouvrir <br/> [**Écran météo**](../plugins/weather.md) | Ouvre l'écran de prévisions [*Météo*](../plugins/weather.md#weather-forecast-screen) avec les informations détaillées. |
 | Afficher / Masquer <br/> [**Favoris**](../map/point-layers-on-map.md#favorites) | Afficher ou masquer les points favoris sur la carte. |
 | Afficher / Masquer <br/> [**Traces**](../personal/tracks/manage-tracks.md#track-menu) | Afficher ou masquer les dernières traces visibles sur la carte. |
 | Afficher / Masquer <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Activer ou désactiver l'affichage des couches de POI avec les catégories sélectionnées sur la carte.<br/>Vous pouvez sélectionner plusieurs catégories de POI. L'action remplace les catégories de POI sélectionnées dans Configurer la carte sans utiliser les Actions rapides.  |
@@ -247,6 +255,7 @@ Cette disposition aide à maintenir les boutons visuellement cohérents et évit
 | Afficher / Masquer <br/> [**Vue de recherche**](../search/search-all.md) | Ouvre ou ferme la vue de recherche. |
 | Afficher / Masquer <br/> [**Menu latéral**](../start-with/main-menu.md) | Bascule la visibilité du menu latéral principal pour accéder aux fonctionnalités de base. |
 | Activer / Désactiver <br/> [**Verrouillage de l'écran tactile**](../map/interact-with-map.md#touch-screen-lock) | Active ou désactive le verrouillage de l'écran tactile pour éviter les interactions involontaires avec l'écran. |
+| Ouvrir <br/> **WunderLINQ Datagrid** | Ouvre l'interface de données WunderLINQ pour visualiser les informations du périphérique connecté ; redirige vers l'App Store si l'application WunderLINQ requise n'est pas installée. |
 
 
 ### Interactions avec la carte {#map-interactions}
@@ -276,7 +285,7 @@ Cette disposition aide à maintenir les boutons visuellement cohérents et évit
 | Ajouter <br/> [**Place de parking**](../plugins/parking.md) | Ajoute un parking à un emplacement sélectionné (central) de la carte. L'ancienne position de parking est supprimée. |
 | Ajouter <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Ajoute un POI à un emplacement sélectionné (central) de la carte (identique à l'action du menu contextuel). <br /> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue de confirmation. <br /> - *Type de POI* (optionnel). Présélectionne le type de POI OSM. <br /> - *Tag/Valeur* (multiple). Ajoute des tags / valeurs [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) |
 | Ajouter <br/> [**Note OSM**](../plugins/osm-editing.md#create--modify-osm-note) | Ajoute une [note OSM](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Afficher une boîte de dialogue intermédiaire*. Affiche une boîte de dialogue de confirmation. <br /> - *Message*. Ajoute un message par défaut à la note. |
-| Ajouter <br/> [**Notes multimédia**](../plugins/audio-video-notes.md) | Démarre l'enregistrement d'une note audio / photo / vidéo pour un emplacement sélectionné (central) de la carte. |
+| Ajouter <br/> [**Notes multimédia**](../plugins/audio-video-notes.md) | Démarre l'enregistrement d'une note audio / photo / vidéo pour un emplacement sélectionné (central) de la carte ; un appui répété arrête l'enregistrement. |
 | Créer <br/> [**Nouvel itinéraire**](../plan-route/create-route.md) <br /> *Android uniquement* | Ouvre l'outil [Planifier un itinéraire](../plan-route/create-route.md) et crée un itinéraire pour l'emplacement sélectionné (central) sur la carte. |
 
 
@@ -304,15 +313,30 @@ Cette disposition aide à maintenir les boutons visuellement cohérents et évit
 | Changer <br/> [**Profil de l'application au suivant**](../personal/profiles.md) | Passe au profil suivant dans la liste. |
 | Changer <br/> [**Profil de l'application au précédent**](../personal/profiles.md) | Passe au profil précédent dans la liste. |
 | Changer <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> (iOS **Position de l'emplacement sur l'écran**)  | Permet de définir le placement du curseur *Ma position* sur la carte. Active ou désactive le curseur pour qu'il soit toujours au centre de l'écran. |
+| Changer <br/> [**Orientation de la carte**](../map/interact-with-map#map-orientation-modes) | Permet de changer le mode de rotation de la carte et de basculer entre les types d'orientation sélectionnés. Vous pouvez choisir quels modes inclure dans le cycle. |
 
 
 ## Utiliser le clavier pour les actions {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![Périphériques externes](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Périphérique → Ajouter*
+
+![Périphériques externes](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 En utilisant la fonctionnalité de l'outil Action rapide, vous pouvez assigner les actions requises aux touches de votre périphérique d'entrée externe. Une description se trouve dans l'article [Interagir avec la carte](../map/interact-with-map.md#custom-input-device-type).
 

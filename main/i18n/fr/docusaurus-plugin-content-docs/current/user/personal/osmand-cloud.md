@@ -1,5 +1,5 @@
 ---
-source-hash: 3c0b6ca8ddb2b581b25ef1cae4552d4b20f3aa75e52cd6a5f2aec3dede5181e0
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-:::tip abonnez-vous
-&nbsp;<ProFeature/> Pour accéder à toutes les fonctionnalités d'OsmAnd Cloud, abonnez-vous à **OsmAnd Pro** pour [Android](../purchases/android.md#prices) ou [iOS](../purchases/ios.md#prices).
-:::
+:::tip abonnez-vous  
+&nbsp;<ProFeature/> Pour accéder à toutes les fonctionnalités d'OsmAnd Cloud, abonnez-vous à **OsmAnd Pro** pour [Android](../purchases/android.md#prices) ou [iOS](../purchases/ios.md#prices).  
+:::  
 
-:::note multiplateforme
-OsmAnd Cloud est un service de stockage en nuage indépendant et n'est *pas lié* à une version spécifique de la plateforme Android, iOS ou web.
-:::
+:::note multiplateforme  
+OsmAnd Cloud est un service de stockage en nuage indépendant et n'est *pas lié* à une version spécifique de la plateforme Android, iOS ou web.  
+:::  
 
 OsmAnd Cloud vous permet de **stocker et de synchroniser les paramètres personnels et les données de l'application** sur plusieurs appareils. Vous pouvez accéder à ces données sur n'importe quel appareil où OsmAnd est installé, y compris l'application de bureau. Toutes les modifications apportées dans l'application peuvent être **synchronisées entre les plateformes**, garantissant un accès transparent à vos données enregistrées.
 
@@ -262,7 +262,7 @@ La fonctionnalité **Corbeille** vous permet de visualiser et de gérer les fich
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
+![Modifications OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -311,6 +311,8 @@ Dans ce menu, vous pouvez sélectionner les données et les dossiers à téléve
 
 Toutes les [cartes](../start-with/download-maps.md) sont stockées sur l'appareil sur lequel elles ont été précédemment téléchargées. OsmAnd Cloud ne stocke que des informations sur les cartes que vous possédez et la date de leur dernière modification.
 
+Désactiver la sauvegarde pour un type de données spécifique arrête simplement sa synchronisation avec le Cloud. Vos données existantes restent stockées et peuvent être sauvegardées à nouveau plus tard si nécessaire.
+
 
 ### Gérer le stockage {#manage-storage}
 
@@ -334,7 +336,26 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>  
 
-La section de menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) affiche des informations sur la quantité de mémoire utilisée sur les 3,15 gigaoctets dans *Paramètres*, *Mes lieux* et *Ressources*. Vous pouvez supprimer les modifications de types de données distincts d'OsmAnd Cloud, mais dans ce cas, l'action ne peut pas être annulée.  
+La section de menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) affiche des informations sur la quantité de mémoire utilisée sur les 3,15 gigaoctets dans *Paramètres*, *Mes lieux* et *Ressources*. Vous pouvez visualiser la taille de stockage de chaque type de données et la supprimer d'OsmAnd Cloud si nécessaire. 
+
+Supprimer des données du Cloud n'affecte pas leur statut de sauvegarde ni les copies locales sur votre appareil. Tous les éléments supprimés restent disponibles dans la Corbeille pendant 30 jours et peuvent être restaurés pendant cette période.
+
+### Sauvegarde automatique {#auto--backup}
+
+<InfoAndroidOnly />
+
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Sauvegarde automatique Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+La sauvegarde automatique enregistre automatiquement les données OsmAnd sélectionnées dans le Cloud à intervalles réguliers pendant que l'application est active. Cela aide à protéger vos données et à les maintenir synchronisées entre les appareils utilisant le même compte. L'écran de sauvegarde automatique est divisé en trois sections extensibles : *Paramètres*, *Mes lieux* et *Ressources*.
+
+Comportement de la sauvegarde automatique :
+
+- La sauvegarde automatique s'exécute approximativement toutes les heures pendant que OsmAnd fonctionne au premier plan.
+- La sauvegarde démarre également lorsque vous revenez à l'écran de la carte.
+- Vous pouvez activer/désactiver chaque élément ou sections entières indépendamment.
+- Vos données restent disponibles localement même si la sauvegarde automatique est désactivée.
 
 
 ### Compte {#account}

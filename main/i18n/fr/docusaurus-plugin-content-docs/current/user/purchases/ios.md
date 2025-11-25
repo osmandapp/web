@@ -1,5 +1,5 @@
 ---
-source-hash: e93e4c890e82f08aa4bef7ac1e12b707b46b0fa978bbc2916760d9c9c9f00bdd
+source-hash: 3036a4367dec965dc2ce8a575aa5d332ed8bf23931798249cf1fc88b99ef5ae5
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -38,7 +38,7 @@ Vous pouvez télécharger l'application via ce lien - [OsmAnd Maps sur l'Apple A
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Une **formule gratuite** qui donne accès à [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) pour les *Favoris*, les *Paramètres* et l'*édition/notes OSM*. | Disponible pour tous les utilisateurs de la version gratuite d'OsmAnd. | Limité aux fonctionnalités de base du cloud et à **5MB** de stockage. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **achat intégré** ou un **abonnement** qui débloque des fonctionnalités avancées pour l'application gratuite OsmAnd. | Disponible sur l'[App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Peut être ajouté au [Partage familial Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Une **formule d'abonnement** qui débloque des [fonctionnalités pro](#pro-features) et avancées supplémentaires. | Disponible sur l'[App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Il offre un accès complet aux fonctionnalités d'OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Une **formule d'abonnement** qui débloque des fonctionnalités avancées supplémentaires et [fonctionnalités pro](#pro-features). | Disponible sur l'[App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Il offre un accès complet aux fonctionnalités d'OsmAnd Cloud. |
 
 ### Remarques importantes {#important-notes}
 
@@ -55,36 +55,18 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 
 
 
-:::danger Prix de la vente d'octobre
-
-*Pressons ! Cette offre n'est disponible que jusqu'au* **19 octobre (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Gratuit   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Achat intégré | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Gratuit   | [Maps+](#install-osmand-ios) Achat intégré | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Type d'achat** | **Gratuit** | **Achat unique** (À vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
-| **Prix (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Prix (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Prix (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Prix (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
 
-
-<!--
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
-
--->
 
 ### Fonctionnalités gratuites et payantes {#free-and-paid-features}
 
-|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(achat intégré&nbsp;&&nbsp;abonnement) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Gratuit | [OsmAnd Maps+](#install-osmand-ios)<br/>(achat&nbsp;intégré&nbsp;&&nbsp;abonnement) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -97,6 +79,7 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Données topographiques](../plugins/topography.md#overview)<br/>(Courbes de niveau et Terrain) | **-** | ✔ | ✔ |
+| [Grille de coordonnées — Personnalisation de la couleur](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualisation de trace 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guides de voyage (Wikipédia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

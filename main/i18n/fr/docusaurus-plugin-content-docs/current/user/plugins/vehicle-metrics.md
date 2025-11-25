@@ -1,5 +1,5 @@
 ---
-source-hash: 57927b3c43a20f50548e4b8bec88d2002f6b820f5bd6989ee75f742bb91ceb08
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title:  Métriques du véhicule
 ---
@@ -15,13 +15,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## Aperçu {#overview}
 
 :::info Fonctionnalité payante
 Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.
 :::
 
-Le **plugin Métriques du véhicule** permet de surveiller en temps réel les données du véhicule via le [protocole OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Les utilisateurs peuvent suivre des métriques essentielles telles que les performances du moteur, l'efficacité du carburant et la vitesse, ce qui permet une maintenance préventive et un dépannage proactifs du véhicule.
+Le **plugin Métriques du véhicule** permet de surveiller en temps réel les données du véhicule via le [protocole OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Les utilisateurs peuvent suivre des métriques essentielles telles que les performances du moteur, l'efficacité du carburant et la vitesse, ce qui permet une maintenance préventive et un dépannage proactifs du véhicule.  
 
 Les [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) font partie intégrante du diagnostic automobile moderne. Grâce à la diffusion de données en temps réel, les utilisateurs obtiennent des informations instantanées sur les systèmes du véhicule, ce qui facilite la maintenance préventive et réduit les coûts de réparation. Ces outils sont essentiels tant pour un usage personnel que pour les services automobiles professionnels.
 
@@ -41,6 +42,7 @@ Les [scanners OBD-II](https://en.wikipedia.org/wiki/ELM327) font partie intégra
 
 </Tabs>
 
+
 ## Paramètres de configuration requis {#required-setup-parameters}
 
 Pour utiliser les données d'un scanner OBD-II :
@@ -53,7 +55,9 @@ Pour utiliser les données d'un scanner OBD-II :
 6. [Ajoutez](#widgets) des **widgets Métriques du véhicule** pour afficher les données à l'écran (facultatif).
 7. [Utilisez](#trip-recording) le **plugin Enregistrement de trajet** pour enregistrer les données du véhicule.
 
+
 ### Appairer le scanner ODB-II {#pair-odb-ii-scanner}
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -82,6 +86,7 @@ Connectez le scanner au port de votre véhicule et appairez-le via l'application
 
 Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 
+
 ## Paramètres du scanner {#scanner-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +98,7 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 |  |  |
 |--|--|
 |![Paramètres OBD](@site/static/img/plugins/obd/obd_settings.png)|![Paramètres OBD](@site/static/img/plugins/obd/obd_settings_1.png)|
+
 
 </TabItem>
 
@@ -112,6 +118,9 @@ Choisissez votre appareil OBD-II dans la liste et établissez la connexion.
 - **Paramètres**. Ouvre l'écran des paramètres OBD-II, permettant la gestion de la connexion et l'accès aux paramètres disponibles du véhicule.
 - **Renommer**. Vous permet d'attribuer un nom personnalisé au capteur pour une identification plus facile.
 - **Oublier**. Supprime le capteur OBD-II précédemment appairé de la liste, nécessitant un nouvel appairage si nécessaire plus tard.
+
+**Comportement de reconnexion** *(Android uniquement)***:** OsmAnd tente automatiquement de se reconnecter à l'adaptateur OBD-II au démarrage de l'application, au démarrage de la navigation ou au lancement d'Android Auto. Si une connexion n'est pas disponible, les widgets Métriques du véhicule affichent « – ». Un simple appui sur n'importe quel widget Métriques du véhicule tentera de se reconnecter au capteur. Si le capteur est déjà connecté, l'appui bascule les modes d'affichage du widget comme d'habitude.
+
 
 ## Liste des métriques {#metrics-list}
 
@@ -139,11 +148,14 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 *Autres :*
 
 - **Niveau de la batterie**. Indique le niveau de tension de la batterie du véhicule.
+- **Tension de l'adaptateur**. Affiche la tension fournie à l'adaptateur OBD-II (commande AT RV).
 - **Vitesse du véhicule**. Affiche les données du capteur de vitesse du véhicule (VSS).
 - **Position de l'accélérateur**. Détermine l'admission d'air du moteur via l'angle du papillon des gaz.  
   **VIN**. Affiche le numéro d'identification à 17 caractères du véhicule.
 
+
 ## Enregistrement de trajet {#trip-recording}
+
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -154,6 +166,7 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 | | |
 |--|--|
 |![Enregistrement OBD](@site/static/img/plugins/obd/obd_recording.png)| ![Enregistrement OBD](@site/static/img/plugins/obd/obd_recording_1.png)|
+
 
 </TabItem>
 
@@ -169,17 +182,20 @@ Les métriques sont classées pour plus de clarté. Les outils de diagnostic ava
 
 </Tabs>
 
+
+
 Pour inclure les données OBD-II dans un fichier GPX, vous devez sélectionner les paramètres souhaités pour l'enregistrement à l'aide du [plugin Enregistrement de trajet](../plugins/trip-recording.md#recording-settings). Cela vous permet d'analyser les métriques du véhicule en même temps que vos données de trajet.
 
 ### Balises {#tags}
 
 OsmAnd applique des noms de balises personnalisés pour les métriques du véhicule dans le [fichier GPX](../plugins/trip-recording.md#recorded-gpx-file). Par exemple :
 
-- `vm_eotemp` : Température de l'huile moteur.
-- `vm_fpress` : Pression du carburant.
-- `vm_espeed` : Régime moteur.
+- `vm_eotemp`: Température de l'huile moteur.
+- `vm_fpress`: Pression du carburant.
+- `vm_espeed`: Régime moteur.
 
 Ces balises facilitent l'identification et l'utilisation de données spécifiques du véhicule lors de l'examen du fichier GPX enregistré.
+
 
 ## Widgets {#widgets}
 
@@ -192,6 +208,7 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 | | |
 |--|--|
 |![Paramètres OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Paramètres OBD](@site/static/img/plugins/obd/obd_widget.png)|
+
 
 </TabItem>
 
@@ -207,6 +224,8 @@ Ces balises facilitent l'identification et l'utilisation de données spécifique
 
 </Tabs>
 
+
+
 Les [widgets Métriques du véhicule](../widgets/info-widgets.md#vehicle-metrics-widgets) sont automatiquement inclus lorsque vous activez le plugin. S'ils ne sont pas visibles, vous pouvez les ajouter manuellement via le menu [Configurer l'écran](../widgets/configure-screen.md).
 
 ### Paramètres des widgets {#widget-settings}
@@ -217,6 +236,14 @@ Certains widgets offrent des options de mode d'affichage :
 
 - **Instantané**. Affiche les données en temps réel pour la métrique sélectionnée.
 - **Moyenne**. Affiche les valeurs moyennes sur un intervalle de temps configurable (de 15 secondes à 60 minutes).
+
+Plusieurs widgets, y compris *Consommation de carburant*, adaptent leurs unités affichées et leurs formats de métriques régionales en fonction des [Paramètres du profil](https://osmand.net/docs/user/personal/profiles#units--formats). Lorsque des unités de volume autres que les litres sont utilisées, la consommation de carburant prend en charge l'affichage des valeurs en Miles per Gallon (MPG). Le type exact de MPG dépend de l'unité de volume sélectionnée :
+
+- Gallons US → MPG (US)
+- Gallons impériaux → MPG (UK)
+
+Le widget sélectionne automatiquement le format approprié en fonction des unités <Translate android="true" ids="routing_attr_length_name"/> et <Translate android="true" ids="shared_string_volume"/> choisies dans le profil actif, et votre mode d'affichage choisi est préservé lors de l'exportation et de l'importation de profils.
+
 
 ## Articles connexes {#related-articles}
 

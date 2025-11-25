@@ -1,5 +1,5 @@
 ---
-source-hash: 4924a1de13b954b832f4629a3e8dfc661ee5ce9339fd94fad9ab53e8ec18a4cc
+source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
 sidebar_position: 9
 title:  Édition OpenStreetMap
 ---
@@ -119,7 +119,7 @@ Le paramètre <Translate android="true" ids="map_updates_for_mappers"/> vous per
 
 <TabItem value="android" label="Android">  
 
-Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Calque d'édition OSM Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![Calque d'édition OSM Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -127,7 +127,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,laye
 
 <TabItem value="ios" label="iOS">
 
-Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Calque d'édition OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -135,7 +135,17 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edit
 
 </Tabs>
 
-Vous pouvez activer ou désactiver en tant que calque séparé l'affichage des modifications OSM telles que les *Notes OSM* (en ligne), les *Éditions OSM*, les *Étiquettes Fixme*, les *Étiquettes Note*, les *Icônes à faible zoom*, dans la section [Configurer la carte](../map/configure-map-menu.md) du *Menu principal*.  
+Vous pouvez activer ou désactiver en tant que calque séparé l'affichage des modifications OSM dans la section [Configurer la carte](../map/configure-map-menu.md) du *Menu principal*. Les modifications OSM incluent les éléments suivants :  
+- **Notes OSM (en ligne)**. Affiche les notes OpenStreetMap publiques créées par les utilisateurs pour mettre en évidence les problèmes de cartographie ou demander des mises à jour. Les notes sont affichées sous forme de marqueurs interactifs qui peuvent être examinés, ouverts et résolus par les cartographes.  
+![Calque d'édition OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+- **Éditions OSM**. Affiche vos propres éditions OSM locales stockées sur l'appareil avant leur téléversement sur le serveur OpenStreetMap. Ce calque aide à examiner la géométrie et les attributs des objets que vous avez modifiés ou ajoutés.  
+![Calque d'édition OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+- **Étiquettes Fixme**. Met en évidence les objets étiquetés avec fixme=* dans OSM. Ces éléments contiennent des commentaires des cartographes indiquant que les informations sont incomplètes, incertaines ou nécessitent une vérification sur le terrain.  
+![Calque d'édition OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+- **Étiquettes Note**. Affiche les objets qui contiennent des étiquettes note=* — commentaires des cartographes intégrés directement dans les données OSM. Ces étiquettes décrivent généralement des conditions temporaires ou un contexte supplémentaire pour des éditions futures.  
+![Calque d'édition OSM](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+- **Icônes à faible zoom**. Active des représentations simplifiées de type icône des objets OSM en utilisant des abréviations courtes dérivées de leurs clés d'étiquettes principales. Leur signification est décrite [ici](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Cette fonctionnalité rend plus d'objets visibles aux niveaux de zoom faibles sans surcharger la carte ni causer de chevauchement d'icônes.  
+![Calque d'édition OSM](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## Créer / Modifier un POI {#create--modify-poi}
@@ -266,7 +276,7 @@ Pour [téléverser la trace GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_
 **Paramètres :**
 
 - **<Translate android="true" ids="shared_string_description"/>**. Permet d'ajouter une description à la trace. La description s'applique à toutes les traces sélectionnées. Si vous ne saisissez rien dans le champ, les noms des traces pour chaque trace distincte sont utilisés comme descriptions.  
-- **<Translate android="true" ids="gpx_tags_txt"/>**. Cet élément dans la section des paramètres vous permet d'ajouter des étiquettes pour identifier la trace. L'étiquette par défaut est "osmand", vous pouvez saisir des étiquettes supplémentaires séparées par des virgules.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. Cet élément dans la section des paramètres vous permet d'ajouter des étiquettes pour identifier la trace. L'étiquette par défaut est "osmand". Si la trace a été enregistrée avec une activité spécifique basée sur le profil sélectionné, cette activité est également ajoutée automatiquement en tant qu'étiquette lors du téléversement. Pour les groupes de traces téléversées, chaque trace reçoit sa propre étiquette d'activité. Pour certains profils (par exemple, Transport public), l'étiquette d'activité n'est pas ajoutée. Vous pouvez saisir manuellement des étiquettes supplémentaires, séparées par des virgules.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Visibilité de la trace pour les utilisateurs d'OSM :  
    - *Publique* signifie que la trace est publiquement disponible et affichée sous forme brute dans vos traces GPS, listes de traces GPS et listes de traces horodatées. Les données transmises via l'API ne sont pas référencées avec votre page de trace. Les horodatages des points de trace ne sont pas disponibles via l'API GPS publique et les points de trace ne sont pas ordonnés chronologiquement.
    - *Identifiable* signifie que la trace sera affichée publiquement dans vos points de trace GPS et vos listes de traces GPS publiques, ce qui signifie que d'autres utilisateurs pourront télécharger la trace brute et l'associer à votre nom d'utilisateur. Les données de points de trace horodatés publics de l'API GPS transmises via l'API des points de trace seront liées à votre page de trace d'origine.
@@ -280,7 +290,7 @@ Vous pouvez sélectionner plus d'une trace à téléverser sur OSM. Pour ce fair
 
 ### Générer un fichier OBF {#generate-obf-file}
 
-Vous pouvez créer un fichier OBF avec [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) si vous avez une grande base de données de traces GPX. Il peut s'agir d'une collection de traces de osmand.net avec l'étiquette 'gpsies', d'une collection de traces téléchargées depuis OpenStreetMap ou de votre propre collection.
+Vous pouvez créer un fichier OBF avec [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) si vous avez une grande base de données de traces GPX. Il s'agit d'une collection de traces de osmand.net avec l'étiquette 'gpsies', d'une collection de traces téléchargées depuis OpenStreetMap ou de votre propre collection.
 
 
 ## Articles connexes {#related-articles}

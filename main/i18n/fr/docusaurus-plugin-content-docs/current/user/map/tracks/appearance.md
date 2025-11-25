@@ -1,5 +1,5 @@
 ---
-source-hash: 16c8e6916747b677121ac42ecbb10355ea63ad5028b9e691a4fa962fa2006b74
+source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -61,10 +61,28 @@ Vous pouvez définir la couleur de la trace manuellement ou utiliser la **visual
 
 **Options de couleur disponibles :**
 
-- **Paramètres gratuits** : couleur *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si enregistrée) et *<Translate android="true" ids="altitude"/>* (si enregistrée).
+<Tabs groupId="operating-systems" queryString="current-os">
 
-    ![Menu de la trace Apparence Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Apparence Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+<TabItem value="android" label="Android"> 
 
+![Menu de la trace Apparence Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Apparence Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Menu contextuel Coloration iOS](@site/static/img/map/colorisation_ios.png)
+
+La liste **Coloration** s'ouvre sous forme de menu contextuel. Les éléments peuvent apparaître dans trois états : 
+1. <Translate ios="true" ids="shared_string_enabled"/>. Peut être appliqué à la trace actuelle.
+2. <Translate ios="true" ids="weather_update_disabled"/>. La trace manque des données requises.
+3. PRO. Disponible pour la trace actuelle mais nécessite un abonnement ; appuyer ouvre l'écran [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
+
+</TabItem>
+
+</Tabs>
+
+- **Paramètres gratuits** : couleur *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si enregistrée) et *<Translate android="true" ids="altitude"/>* (si enregistrée).   
 - [Fonctionnalité Pro](../../purchases/index.md)) : *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Pour plus de détails sur la personnalisation de l'apparence de la ligne d'itinéraire, consultez [Écran de la carte pendant la navigation](../../navigation/guidance/map-during-navigation.md#color) et sur la sélection et la création d'une couleur personnalisée, consultez [Schémas de couleurs](../../personal/color-palette-schemes.md#routes).
@@ -169,7 +187,7 @@ Vous pouvez visualiser une trace 3D par altitude et autres données disponibles 
 
 **<Translate android="true" ids="wall_color"/>**  
 Personnalise la **couleur de la trace 3D** en utilisant des dégradés ou une visualisation basée sur les données.  
-Les options incluent : *Aucune*, &nbsp;*Pleine*, &nbsp;*Dégradé descendant*, &nbsp;*Dégradé ascendant*, &nbsp;*Altitude*, &nbsp;*Pente*, &nbsp;*Vitesse*.
+Les options incluent : *Aucune*, &nbsp;*Solide*, &nbsp;*Dégradé descendant*, &nbsp;*Dégradé ascendant*, &nbsp;*Altitude*, &nbsp;*Pente*, &nbsp;*Vitesse*.
 
 **<Translate android="true" ids="track_line"/>**  
 Ajoute une [ligne mise en évidence](#color) en haut ou en bas de la trace 3D.  

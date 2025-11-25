@@ -1,5 +1,5 @@
 ---
-source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
+source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
 sidebar_position: 4
 title:  Profils (Paramètres)
 ---
@@ -19,9 +19,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd propose une variété de profils par défaut adaptés à différentes activités, notamment la conduite, le cyclisme, la marche et des activités plus spécialisées comme le ski et la navigation de plaisance. Ces profils sont conçus pour améliorer votre expérience de navigation en fonction de l'activité que vous pratiquez. Chaque profil comprend des options configurables, vous permettant d'ajuster les paramètres et d'intégrer des plugins supplémentaires pour correspondre à vos préférences.
 
-- Certains profils, tels que *Ski* et *Bateau*, disposent de **fonctionnalités supplémentaires** qui ne deviennent disponibles que lorsque les plugins correspondants sont activés.
+- Certains profils, tels que *Skiing* et *Bateau*, disposent de **fonctionnalités supplémentaires** qui ne deviennent disponibles que lorsque les plugins correspondants sont activés.
 
-     - Les plugins peuvent être activés en naviguant vers *Menu → Plugins → Vue carte de ski* ou *Vue carte marine*.
+     - Les plugins peuvent être activés en naviguant vers *Menu → Plugins → Ski map view* ou *Nautical map view*.
      - L'activation des plugins dote les profils des fonctionnalités essentielles pour répondre aux exigences spécifiques de ces activités.
 
 - Il est important de noter que certains profils, tels que **Camion**, **Moto**, **Cyclomoteur**, **Train**, **Avion**, **Bateau** et **Équitation**, ne sont pas activés par défaut.
@@ -142,7 +142,9 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. Définit et verrouille la position de l'écran dans l'application OsmAnd. Cette fonctionnalité n'est pas prise en charge sur iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android uniquement*). Ouvre le menu de contrôle de l'écran, où vous pouvez sélectionner des options pour l'écran de l'appareil pendant la navigation afin d'économiser la consommation de la batterie de l'appareil.  
@@ -154,13 +156,13 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 <TabItem value="android" label="Android">
 
-![Paramètres généraux des profils Unités et formats Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Paramètres généraux des profils Unités et formats Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Paramètres généraux des profils Unités et formats iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Paramètres généraux des profils Unités et formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -215,6 +217,8 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0,62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m |
 |  |  |  |
+| **Unités d'altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Exemple : 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Exemple : 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Exemple : 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
@@ -235,7 +239,7 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 |          | <Translate android="true" ids="si_min_km"/> | 0,667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48,59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Asie, Amérique latine, Canada, Japon, Inde, Australie |
+| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Aisa, Amérique latine, Canada, Japon, Inde, Australie |
 |  | <Translate android="true" ids="imperial_gallons"/> | Royaume-Uni et similaires |
 |  | <Translate android="true" ids="us_gallons"/> | États-Unis |
 |  |  |  |
@@ -255,7 +259,7 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 
 Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Autres paramètres généraux des profils Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
+![Autres paramètres généraux des profils Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -279,11 +283,11 @@ La section **Autre** fournit des paramètres de profil supplémentaires pour per
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Android uniquement*) – Lisse la rotation de la carte avec un [mouvement progressif](https://en.wikipedia.org/wiki/Kalman_filter), réduisant les changements de position brusques. Cela introduit un petit délai (*moins d'une seconde*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android uniquement*) – Utilise le [capteur magnétique](https://en.wikipedia.org/wiki/Kalman_filter) de votre appareil pour stabiliser la rotation de la carte, réduisant les changements brusques. Cela introduit également un léger délai.
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Android uniquement*) – Appuyez sur un espace vide de la carte pour masquer les boutons de contrôle et les widgets, maximisant la visibilité de la carte.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*Android uniquement*) – Désactivez les animations en mode navigation pour des transitions d'écran plus rapides.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*Android uniquement*) – Désactivez les animations en mode navigation pour des transitions d'écran plus rapides.
 
 
 

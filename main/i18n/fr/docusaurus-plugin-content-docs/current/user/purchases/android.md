@@ -1,5 +1,5 @@
 ---
-source-hash: 7361c81ea918766ab1c6adc8596dddba17489e9e93f81eed7c4c81ed08154e55
+source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
 sidebar_position: 1
 title:  Achats Android
 ---
@@ -78,32 +78,14 @@ La liste contient des informations sur les prix des produits OsmAnd pour les ré
 
 
 
-:::danger Prix de la vente d'octobre
-
-*Pressons ! Cette offre n'est disponible que jusqu'au* **19 octobre (23:00 CET)**.
-
-:::
-
-
-
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Type d'achat** | **Gratuit** | **Achat unique** (À vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
-| **Prix (EUR)** | 0 € | <s>39,99 €</s> **19,99 €** | <s>9,99 €</s> **4,99 €** | 2,99 € / <s>29,99 €</s> **14,99 €** |
-| **Prix (USD)** | 0 $ | <s>39,99 $</s> **19,99 $** | <s>9,99 $</s> **4,99 $** | 2,99 $ / <s>29,99 $</s> **14,99 $**|
+| **Prix (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
+| **Prix (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
 
-<!--
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
-
--->
 
 ### Fonctionnalités gratuites et payantes {#free-and-paid-features}
 
@@ -125,6 +107,7 @@ Le tableau ci-dessous détaille les fonctionnalités incluses dans les forfaits 
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Données topographiques](../plugins/topography.md#overview)<br/>(Lignes de contour et Terrain) | **-** | ✔ | ✔ |
+| [Personnalisation de la couleur de la grille de coordonnées](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualisation de trace 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lieux populaires (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
