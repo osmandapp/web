@@ -1,5 +1,5 @@
 ---
-source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -262,7 +262,7 @@ La funzione **Cestino** ti permette di visualizzare e gestire i file che sono st
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Modifiche OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)
+![Modifiche OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)
 
 </TabItem>
 
@@ -339,6 +339,23 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 La sezione del menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) mostra informazioni su quanti dei 3,15 gigabyte di memoria in *Impostazioni*, *I miei luoghi* e *Risorse* sono in uso. Puoi visualizzare la dimensione di archiviazione di ciascun tipo di dati ed eliminarlo da OsmAnd Cloud se necessario.
 
 Eliminare i dati dal Cloud non influisce sul loro stato di backup o sulle copie locali sul tuo dispositivo. Tutti gli elementi rimossi rimangono disponibili nel Cestino per 30 giorni e possono essere ripristinati durante quel periodo.
+
+### Backup automatico {#auto--backup}
+
+<InfoAndroidOnly />
+
+Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Backup automatico Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+Il backup automatico salva automaticamente i dati OsmAnd selezionati nel Cloud ad intervalli regolari mentre l'app è attiva. Questo aiuta a proteggere i tuoi dati e a mantenerli sincronizzati tra i dispositivi che utilizzano lo stesso account. Lo schermo del Backup automatico è diviso in tre sezioni espandibili: *Impostazioni*, *I miei luoghi* e *Risorse*.
+
+Comportamento del backup automatico:
+
+- Il backup automatico viene eseguito approssimativamente ogni ora mentre OsmAnd è in esecuzione in primo piano.
+- Il backup si avvia anche quando torni allo schermo della mappa.
+- Puoi abilitare/disabilitare ciascun elemento o intere sezioni in modo indipendente.
+- I tuoi dati rimangono disponibili localmente anche se il backup automatico è disattivato.
 
 
 ### Account {#account}

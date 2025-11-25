@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Configura Schermata
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,14 +16,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 Il menu **Configura schermata** in OsmAnd consente di personalizzare l'interfaccia della mappa aggiungendo e disponendo widget, pulsanti e azioni rapide su più pannelli.
 
 È possibile:
 
-- Aggiungere widget [informativi](../widgets/info-widgets.md), [di navigazione](../widgets/nav-widgets.md) e [relativi ai preferiti](../widgets/markers.md).
+- Aggiungere widget [informativi](../widgets/info-widgets.md), [di navigazione](../widgets/nav-widgets.md) e [relativi ai marker](../widgets/markers.md).
 - Aggiungere o modificare [Azioni Rapide](../widgets/quick-action.md), [Pulsanti personalizzati](../widgets/quick-action.md#custom-buttons) e [Pulsanti predefiniti](../widgets/map-buttons.md).
 - Organizzare i widget in pannelli (superiore, inferiore, sinistro, destro, centrale).
 - Creare più **pagine** all'interno dei pannelli laterali, scegliere la dimensione dei widget.
@@ -118,9 +118,9 @@ Ogni pannello supporta diversi comportamenti di layout:
 - [Corsie](../widgets/nav-widgets#lanes) (*Solo Superiore/Inferiore*).  
     Guida visiva alle corsie.
 
-- [Barra dei preferiti sulla mappa](../widgets/markers.md#configure-marker-widgets) (*Solo Superiore/Inferiore*).  
-    Mostra la distanza/direzione verso i preferiti salvati.  
-    Configurabile per 1 o 2 preferiti.
+- [Barra dei marker sulla mappa](../widgets/markers.md#configure-marker-widgets) (*Solo Superiore/Inferiore*).  
+    Mostra la distanza/direzione verso i marker salvati.  
+    Configurabile per 1 o 2 marker.
 
 - [Punto di navigazione](../widgets/nav-widgets.md#navigation-points).  
     Il set mostra la distanza rimanente fino a una destinazione, un punto intermedio, l'orario di arrivo a un punto intermedio o il tempo di percorrenza per un percorso calcolato.  
@@ -170,9 +170,9 @@ Ogni pannello supporta diversi comportamenti di layout:
 - [Info GPS](../widgets/info-widgets.md#gps-info) (*Solo Android*).  
     Mostra il numero di satelliti rilevati.
 
-- [Preferiti sulla mappa](../widgets/markers.md).  
-    Il set mostra la distanza o l'orario di arrivo previsto (ETA) per i primi due preferiti [nella lista](https://osmand.net/docs/user/personal/markers#itinerary-list).  
-    Sono inclusi 2 widget: *Primo preferito*, *Secondo preferito*.
+- [Marker sulla mappa](../widgets/markers.md).  
+    Il set mostra la distanza o l'orario di arrivo previsto (ETA) per i primi due marker [nella lista](https://osmand.net/docs/user/personal/markers#itinerary-list).  
+    Sono inclusi 2 widget: *Primo marker*, *Secondo marker*.
 
 - [Righello radiale](../widgets/info-widgets.md#radius-ruler).  
     Mostra la distanza tra la tua posizione e un punto sulla mappa, cerchiato dallo [strumento Righello radiale](../widgets/radius-ruler.md).
@@ -216,7 +216,7 @@ Ogni pannello supporta diversi comportamenti di layout:
 
 :::note Widget dipendenti dal pannello
 
-- Disponibili solo nei **pannelli Superiore e Inferiore** e devono essere posizionati in righe separate: *Widget Coordinate, Widget Profilo altimetrico, Widget Corsie, Barra dei preferiti sulla mappa, Widget Nome della via*.
+- Disponibili solo nei **pannelli Superiore e Inferiore** e devono essere posizionati in righe separate: *Widget Coordinate, Widget Profilo altimetrico, Widget Corsie, Barra dei marker sulla mappa, Widget Nome della via*.
 - Disponibili solo nei **pannelli Sinistro e Destro**: *Manovre del percorso*.
 
 :::
@@ -260,14 +260,30 @@ La funzione **Modalità riga** consente di aggiungere tutte le righe necessarie 
 La modalità consente di aggiungere **più di un widget in una singola riga** sui pannelli superiore e inferiore per visualizzare tutte le informazioni necessarie.  
 
 - **Widget complessi**. È possibile aggiungere un solo widget complesso per riga. Questi includono:
-    - [Barra dei preferiti sulla mappa (*Solo Android*)](../widgets/markers.md#configure-marker-widgets)
+    - [Barra dei marker sulla mappa (*Solo Android*)](../widgets/markers.md#configure-marker-widgets)
     - [Nome della via](../widgets/nav-widgets#street-name)
     - [Widget Coordinate](../widgets/info-widgets#coordinates-widget)
     - [Corsie](../widgets/nav-widgets#lanes)
     - [Profilo altimetrico (*Solo Android*)](../widgets/nav-widgets#elevation-widget)
     - [Manovre del percorso](../widgets/nav-widgets.md#next-turn)
 
-- **Widget semplici**. È possibile aggiungere più widget semplici in una singola riga. Questi widget possono visualizzare *Nome*, *Unità di misura*, *Valore* e *Icona*.
+- **Widget semplici**. È possibile aggiungere più widget semplici in una singola riga. Questi widget possono visualizzare *Nome*, *Unità di misura*, *Valore* e *Icona*. Il testo nei widget semplici è automaticamente delineato per garantire una leggibilità chiara contro vari sfondi mappa in modalità pannello trasparente.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Contorno widget Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Contorno widget iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Pagine {#pages}
@@ -317,12 +333,17 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
     - Migliora la chiarezza e massimizza lo spazio per i dati importanti.
     - Particolarmente utile quando si visualizzano molti widget sulla stessa **riga**.
 
-3. **Dimensione individuale per righe diverse** (*per tutti i pannelli*):
+3. **Nascondere le etichette di testo dei widget**:
+
+    - Nasconde automaticamente le etichette di testo per mantenere le informazioni numeriche completamente visibili in layout compatti.
+    - Aiuta a mantenere un arrangiamento di widget pulito e leggibile quando lo spazio è limitato.   
+
+4. **Dimensione individuale per righe diverse** (*per tutti i pannelli*):
 
     - I widget possono essere dimensionati individualmente regolando la dimensione della riga e della colonna.
     - **NOTA:** La modifica della dimensione di un widget in una riga/colonna ridimensionerà tutti i widget in quella riga/colonna.
 
-4. **Per modificare la dimensione del widget e la visibilità dell'icona:**
+5. **Per modificare la dimensione del widget e la visibilità dell'icona:**
 
     - Seleziona un widget che hai già aggiunto al pannello.  
     - Tocca l'icona *Impostazioni* sul lato destro del campo del widget.
@@ -488,7 +509,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
     - [Navigazione](../widgets/map-buttons.md#directions). Essenziale per la pianificazione del percorso e l'avvio della navigazione.
 
-    - [Cerca](../widgets/map-buttons.md#search). Apre lo strumento di ricerca per trovare posizioni.
+    - [Cerca](../widgets/map-buttons.md#search). Apre lo strumento di ricerca per trovare posizione.
 
     - [Zoom avanti / indietro](../widgets/map-buttons.md#my-location-and-zoom). Regola il livello di zoom della mappa per mostrare più o meno dettagli.
 
@@ -633,5 +654,5 @@ Azioni disponibili:
 - [Widget informativi](./info-widgets.md)
 - [Widget di navigazione](./nav-widgets.md)
 - [Righello radiale e Righello](./radius-ruler.md)
-- [Widget Preferiti](./markers.md)
+- [Widget Marker](./markers.md)
 - [Azione Rapida](./quick-action.md)

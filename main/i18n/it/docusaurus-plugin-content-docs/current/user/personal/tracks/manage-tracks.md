@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title:  Gestire le Tracce
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -61,7 +61,7 @@ Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android=
 2. Creare una nuova traccia nell'applicazione utilizzando lo strumento **[Pianifica un percorso](../../plan-route/create-route.md)**.
 3. Registrare una traccia nell'applicazione utilizzando il plugin **[Registrazione viaggio](../../plugins/trip-recording.md)**.
 4. Inserire più punti tramite coordinate e salvarli come traccia utilizzando lo strumento **[Inserimento coordinate](../../plan-route/coordinate-input.md)**.
-5. È anche possibile aggiungere **Punti intermedi** a una nuova traccia tramite il **[Menu contestuale](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
+5. È anche possibile aggiungere **Waypoints** a una nuova traccia tramite il **[Menu contestuale](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
 
 
 ## Gestire le Tracce {#manage-tracks}
@@ -196,7 +196,7 @@ Una volta effettuata la scelta, vengono forniti i seguenti passaggi:
 
 - **Mostra sulla mappa** — Con questa funzione, è possibile visualizzare le tracce selezionate sulla mappa per comprendere meglio la loro posizione e la relazione reciproca.
 
-- **Condividi** (*Android*) / **Esporta** (*iOS*) — Se si desidera condividere i dati selezionati con altri utenti o salvarli su un servizio cloud, la funzione *Condividi/Esporta* consente di inviare tracce e cartelle utilizzando diversi metodi di condivisione.
+- **Condividi** (*Android*) / **Esporta** (*iOS*) — Apre il menu di condivisione del sistema e invia le tracce selezionate come file GPX (.gpx) o esporta le cartelle selezionate utilizzando l'app o il servizio cloud scelto.
 
 - **Carica su OpenStreetMap** — È possibile inviare le tracce selezionate a OpenStreetMap, contribuendo allo sviluppo e al miglioramento dei dati.
 
@@ -470,7 +470,7 @@ Esistono diversi modi per esportare uno o più file di tracce su qualsiasi messe
 2. Tramite *Menu I miei luoghi → Tracce → Menu Cartella / Traccia*:
 
     - Per [**esportare una singola traccia**](#track-menu), selezionare il menu della traccia.
-    - Per [**esportare più tracce**](#track-folder), selezionare il menu della cartella richiesta.
+    - Per [**esportazione multi-traccia**](#track-folder), selezionare il menu della cartella richiesta.
 
 3. Tramite [File di backup locale](../../personal/import-export.md#export). Esportazione di tracce GPX come file `.osf`.
 

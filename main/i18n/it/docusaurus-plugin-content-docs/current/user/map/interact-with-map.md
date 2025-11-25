@@ -1,5 +1,5 @@
 ---
-source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title:  Interagire con la mappa
 ---
@@ -17,17 +17,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Questo articolo spiega come personalizzare e interagire con la mappa utilizzando vari pulsanti e gesti. Tratta come ruotare, zoomare, regolare l'angolo di visualizzazione e cambiare l'angolo di visualizzazione della mappa, ruotarla manualmente o automaticamente usando la bussola, o in base alla direzione.
+Questo articolo spiega come personalizzare e interagire con la mappa utilizzando vari pulsanti e gesti. Copre come ruotare, zoomare, regolare l'angolo di visualizzazione e cambiare l'angolo di visualizzazione della mappa, ruotarla manualmente o automaticamente usando la bussola, o in base all'azimut.
 
 
 ## Gesti {#gestures}
 
 I gesti sono essenziali per navigare sulla mappa in modo facile e intuitivo.
 
-| Azione sulla mappa | Gesto |
+| Azione sulla mappa  | Gesto  |
 |:------------|:-------------|
-| **Sposta** | Tocca e tieni premuta la mappa con **un** dito, poi trascina per spostarti. |
-| **Scorri** | Scorri la mappa con **un** dito. |
+| **Sposta**    | Tocca e tieni premuta la mappa con **un** dito, poi trascina per spostarti. |
+| **Scorri**   | Scorri la mappa con **un** dito. |
 | **Zoom avanti** | Tocca due volte la mappa con **un** dito. <br/> Tocca due volte con **un** dito e scorri verso il basso. <br/> Pizzica con **due** dita per ingrandire. |
 | **Zoom indietro**| Tocca due volte con **due** dita. <br/> Tocca due volte con **un** dito e scorri verso l'alto. <br/> Pizzica con **due** dita per rimpicciolire. |
 | **Ruota**  | Tocca la mappa con **due** dita, poi ruota le dita con un movimento circolare. |
@@ -122,11 +122,11 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 Il pulsante della bussola mostra come la [mappa è orientata](#map-orientation-modes). La *freccia rossa* sulle icone, o la direzione della freccia in modalità *Direzione del movimento*, indica il Nord. [L'icona sul pulsante della bussola](../widgets/map-buttons.md#compass) indica la modalità di orientamento della mappa corrente. Il widget del pulsante della bussola offre tre [opzioni di interazione](../widgets/map-buttons.md#compass-tapping-behavior): un *tocco singolo* ruota la mappa verso il Nord, un *doppio tocco* alterna tra tutte le modalità di orientamento della mappa e un *tocco lungo* apre l'elenco delle modalità.
 
 
-## Ruota mappa per direzione {#rotate-map-by-bearing}
+## Ruota mappa per azimut {#rotate-map-by-bearing}
 
-Nella modalità **ruota mappa per direzione** ([Direzione del movimento](../widgets/map-buttons.md#compass)), la mappa si allinea automaticamente con la tua direzione di movimento, in modo che l'area di fronte a te sia visualizzata nella parte superiore dello schermo. Questa modalità migliora la navigazione spostando leggermente il centro della mappa verso il basso, mostrando una porzione maggiore del percorso davanti a te. Se sei fermo, la mappa rimane fissa.  
+Nella modalità **ruota mappa per azimut** ([Direzione del movimento](../widgets/map-buttons.md#compass)), la mappa si allinea automaticamente con la tua direzione di movimento, in modo che l'area di fronte a te sia visualizzata nella parte superiore dello schermo. Questa modalità migliora la navigazione spostando leggermente il centro della mappa verso il basso, mostrando una porzione maggiore del percorso davanti a te. Se sei fermo, la mappa rimane fissa.  
 
-Puoi attivare questa funzione tramite *Menu → Impostazioni → Profili → Impostazioni generali → Aspetto → Orientamento mappa* o toccando due volte il [pulsante Bussola](../widgets/map-buttons.md#compass-tapping-behavior). Per maggiori dettagli sulla direzione, vedi [qui](../widgets/nav-widgets.md#bearing-widget).
+Puoi attivare questa funzione tramite *Menu → Impostazioni → Profili → Impostazioni generali → Aspetto → Orientamento mappa* o toccando due volte il [pulsante Bussola](../widgets/map-buttons.md#compass-tapping-behavior). Per maggiori dettagli sull'azimut, vedi [qui](../widgets/nav-widgets.md#bearing-widget).
 
 
 ## Inclinazione della mappa e orizzonte {#map-tilt-and-horizon}
@@ -152,7 +152,7 @@ Sotto l'orizzonte, si può vedere la cosiddetta *foschia* o *nebbia*. Quest'area
 L'uso della nebbia è necessario poiché la visualizzazione di oggetti remoti sulla mappa richiede notevoli risorse di calcolo e non è sempre giustificata a causa delle [distorsioni](../plugins/development.md#comparison-with-a-satellite-imagery) della mappa a piccoli angoli di visualizzazione. Quindi la distanza visibile sulla mappa di OsmAnd è attualmente limitata a 35 tasselli.  
 
 :::info
-L'inclinazione della mappa può essere modificata con un tocco lungo sullo schermo con due dita e muovendole su/giù. È anche possibile modificare l'inclinazione toccando l'icona [La mia posizione](#my-location-and-zoom) nell'angolo in basso a destra dello schermo (sono disponibili solo le posizioni a 45 e 90 gradi).  
+L'inclinazione della mappa può essere modificata con un tocco lungo sullo schermo con due dita e muovendole su/giù. È anche possibile modificare l'inclinazione toccando l'icona [La mia posizione](#my-location-and-zoom) nell'angolo in basso a destra dello schermo (sono disponibili solo le posizione a 45 e 90 gradi).  
 Non è possibile modificare l'inclinazione della telecamera quando è attivo il vecchio [motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) (versione 1).
 :::
 
@@ -216,12 +216,12 @@ Crea un effetto di scorrimento fluido della mappa rispetto all'icona *[La mia po
 
 ## Dispositivi di input esterni {#external-input-devices}
 
-I pulsanti dei dispositivi di input esterni forniscono un modo comodo ed efficiente per interagire con la mappa e l'interfaccia dell'applicazione OsmAnd.  Si trovano su dispositivi esterni, come **tastiere Bluetooth o di altro tipo**, **pulsanti specializzati su dispositivi di navigazione per veicoli**, o controller [WunderLINQ](https://blackboxembedded.com/) e [Parrot](https://www.parrot.com/en).  
+I pulsanti dei dispositivi di input esterni forniscono un modo comodo ed efficiente per interagire con la mappa e l'interfaccia dell'applicazione OsmAnd.  Si trovano su dispositivi esterni, come **tastiere Bluetooth o di altro tipo**, **pulsanti specializzati su dispositivi di navigazione per veicoli**, o controller [WunderLINQ](https://blackboxembedded.com/) e [Parrot](https://www.parrot.com/en) (*solo Android*).  
 
-Una delle funzioni principali dei pulsanti sui dispositivi di input esterni è quella di ingrandire e rimpicciolire la mappa. Permettono anche di navigare sulla mappa e di cambiarne l'orientamento senza dover toccare e gesticolare sullo schermo. I pulsanti sui dispositivi di input esterni supportano molte altre funzioni, come l'apertura del *Menu principale*.
+Una delle funzioni principali dei pulsanti sui dispositivi di input esterni è quella di ingrandire e rimpicciolire la mappa. Permettono anche di navigare sulla mappa e di cambiarne l'orientamento senza dover toccare e gesticolare sullo schermo. I pulsanti sui dispositivi di input esterni supportano molte altre funzioni, come l'apertura del *Menu principale* e l'attivazione di *Azioni rapide*. Gli utenti possono anche personalizzare le assegnazioni dei pulsanti per i dispositivi supportati (Tastiera, WunderLINQ e controller esterni personalizzati).
 
 :::note
-La tastiera rimane funzionante anche quando l'opzione *Dispositivi di input esterni* è disattivata e viene selezionato *Nessuno*.
+La tastiera rimane funzionante anche quando l'opzione *Dispositivi di input esterni* è disattivata e viene selezionato *Nessuno*. Tuttavia, le assegnazioni di tasti personalizzate funzionano solo quando i *Dispositivi di input esterni* sono abilitati.
 :::
 
 ### Dispositivo di input preconfigurato {#preconfigured-input-device}
@@ -240,7 +240,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![Dispositivi esterni](@site/static/img/map/external_types_ios.png)
+![Dispositivi esterni](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -251,15 +251,15 @@ Per accedere alle impostazioni di un dispositivo di input esterno, è necessario
 - Vai al *Menu principale → Impostazioni →* seleziona il *Profilo → Impostazioni generali → Altro → Dispositivi di input esterni*, e passa a *Abilitato*.
 
 - Seleziona un dispositivo tra quelli supportati da OsmAnd toccando la voce *Tipo* nell'elenco:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*solo Android*), o crea [**il tuo tipo**](#custom-input-device-type) (*solo Android*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*solo Android*), o crea [**il tuo tipo**](#custom-input-device-type).
 
-- Esiste un'assegnazione diversa del **pacchetto azione-tasto definito** per ogni tipo di dispositivo di input esterno. Tocca *<Translate android="true" ids="key_assignments"/>* per vedere un elenco di azioni e tasti. La tabella dei tasti è mostrata di seguito.
+- Esiste un'assegnazione diversa del **pacchetto azione-tasto definito** per ogni tipo di dispositivo di input esterno. La sezione *<Translate android="true" ids="key_assignments"/>* mostra l'elenco delle azioni e dei tasti assegnati. La tabella dei tasti è mostrata di seguito. Si tratta di assegnazioni predefinite — possono essere modificate o estese in base alle preferenze dell'utente.
 
 - Puoi leggere di più sulle azioni dei dispositivi di input esterni su GitHub nel pacchetto [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
 | Tasto | Dispositivo | Azione |
 |:---------|:---------------|:---------------|
-|**C**| *Tastiera*   | Sposta - [A La mia posizione](#my-location-and-zoom) |
+|**C**| *Tastiera*   | Sposta - [Alla mia posizione](#my-location-and-zoom) |
 |**D**| *Tastiera*   | Cambia - [Orientamento mappa](#map-orientation-modes) |
 |**N**| *Tastiera*   | Mostra / Nascondi - Vista di navigazione |
 |**S**| *Tastiera*   | Mostra / Nascondi - [Vista di ricerca](../search/index.md) |
@@ -275,8 +275,8 @@ Per accedere alle impostazioni di un dispositivo di input esterno, è necessario
 |**&#8595;**| *Wunderlinq*  | Mappa - [Zoom indietro](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Mappa - [Zoom avanti](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Apri WunderLINQ Datagrid |
-| **M** <br/> (*Android legacy*) | *Tastiera*  | Mostra / Nascondi - [Menu laterale](../start-with/main-menu.md#main-menu-side-menu) |
-| **Pressione joystick** <br/> (*Android legacy*) | *Tastiera*  | Sposta - [A La mia posizione](#my-location-and-zoom) |
+| **M** | *Tastiera*  | Mostra / Nascondi - [Menu laterale](../start-with/main-menu.md#main-menu-side-menu) |
+| **Pressione joystick** <br/> (*Android legacy*) | *Tastiera*  | Sposta - [Alla mia posizione](#my-location-and-zoom) |
 | **Pulsante Media** <br/> (*solo Android*)| *Tastiera*  | Mostra / Nascondi - [Note AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*solo Android*)| *Parrot*  | Mappa - [Zoom indietro](#my-location-and-zoom) |
 | **&#8594;** <br/> (*solo Android*) | *Parrot*  | Mappa - [Zoom avanti](#my-location-and-zoom) |
@@ -284,7 +284,9 @@ Per accedere alle impostazioni di un dispositivo di input esterno, è necessario
 
 ### Tipo di dispositivo di input personalizzato {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -292,18 +294,47 @@ Per accedere alle impostazioni di un dispositivo di input esterno, è necessario
 
 Se vuoi assegnare tasti per un dispositivo di input esterno (come una tastiera, un joystick o un controller), devi creare un tipo di dispositivo: vai all'impostazione [Dispositivo di input esterno](#external-input-devices), seleziona **Tipo** dall'elenco, tocca il pulsante&nbsp; "**＋**" &nbsp; e inserisci un nome. Ogni tipo ha un menu con le seguenti opzioni: ***Rinomina, Duplica*** e ***Rimuovi***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Dispositivo → Aggiungi*
+
+![Dispositivi esterni](@site/static/img/map/external_mypilot_ios.png)  ![Dispositivi esterni](@site/static/img/map/external_mypilot2_ios.png)
+
+Se vuoi assegnare tasti per un dispositivo di input esterno (come una tastiera, un joystick o un controller), devi creare un tipo di dispositivo: vai all'impostazione [Dispositivo di input esterno](#external-input-devices), seleziona **Dispositivo** dall'elenco, tocca il pulsante&nbsp; "**Aggiungi**" &nbsp; e inserisci un nome. Ogni tipo ha un menu con le seguenti opzioni: ***Rinomina, Duplica*** e ***Rimuovi***.
+
+</TabItem>
+
+</Tabs>  
+
 ### Aggiungi azione e assegnazioni tasti {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Dispositivi esterni](@site/static/img/map/external_custom_4_andr.png)  ![Dispositivi esterni](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dispositivi esterni](@site/static/img/map/external_custom_4_ios.png)  ![Dispositivi esterni](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 Dopo aver creato un tipo di input personalizzato, puoi assegnare le azioni richieste ai tasti. È disponibile una vasta gamma di [tipi di azione](../widgets/quick-action.md#action-types) dal widget Azione rapida.
 
 - Seleziona un tipo di dispositivo, quindi tocca la voce **Assegnazioni tasti**.
-- Tocca il pulsante ***Aggiungi*** (&nbsp;"**＋**"&nbsp;) nell'angolo in basso a destra dello schermo.
-- Seleziona l'azione richiesta, quindi tocca il campo ***Aggiungi tasto*** e tocca il pulsante sul tuo dispositivo per assegnarlo all'azione.  
+- Tocca il pulsante ***Aggiungi*** (&nbsp;"**＋**"&nbsp;).
+- Seleziona l'azione richiesta quindi tocca il campo ***Aggiungi tasto*** e tocca il pulsante sul tuo dispositivo per assegnarlo all'azione.  
 
 :::note
 
+- È possibile assegnare più tasti a una singola azione.
 - Se il pulsante che assegni è già utilizzato per un'altra azione, riceverai una notifica con l'opzione di riassegnare il pulsante o annullare l'assegnazione.
 - In seguito potrai modificare le azioni e le assegnazioni dei tasti o aggiungerne altre per le azioni già create, basta selezionare una voce nell'elenco Assegnazioni tasti.
 
@@ -311,12 +342,26 @@ Dopo aver creato un tipo di input personalizzato, puoi assegnare le azioni richi
 
 ### Elimina assegnazione tasto {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Dispositivi esterni](@site/static/img/map/external_custom_1_andr.png)
 
-Puoi eliminare più azioni non necessarie contemporaneamente utilizzando il **pulsante Modifica** (*a forma di matita*) nell'angolo in alto a destra dello schermo:
+</TabItem>
 
-- ***Rimuovi una singola azione*** per ogni azione, con il pulsante&nbsp; "**−**" &nbsp;nel campo dell'elemento.
-- ***Rimuovi tutte le assegnazioni di tasti*** per il tipo selezionato toccando il pulsante nell'angolo in alto a destra dello schermo accanto a *Modifica nome*.
+<TabItem value="ios" label="iOS">
+
+![Dispositivi esterni](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Puoi eliminare più azioni non necessarie contemporaneamente utilizzando il **pulsante Modifica** (*a forma di matita* su Android):
+
+- ***Rimuovi una singola azione*** per ogni azione, con il pulsante&nbsp; "**−**"  &nbsp;nel campo dell'elemento. L'assegnazione del tasto può anche essere rimossa tramite il menu contestuale (tocco lungo sull'elemento) toccando **Rimuovi**.
+- ***Rimuovi tutte le assegnazioni di tasti*** per il tipo selezionato toccando il pulsante nell'angolo in alto a destra dello schermo accanto a *Modifica nome* su Android; toccando il pulsante **Cancella tutto** su iOS.
 
 
 ## Articoli correlati {#related-articles}

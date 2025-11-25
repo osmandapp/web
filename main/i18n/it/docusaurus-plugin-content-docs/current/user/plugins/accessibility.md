@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
 sidebar_position: 1
 title:  Accessibilità
 ---
@@ -25,7 +25,7 @@ L'accessibilità migliora l'usabilità per gli utenti non vedenti e ipovedenti i
 
 ### Come usare (Android) {#how-to-use-android}
 
-![Accessibilità](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 ***Abilita il plugin Accessibilità:***  
 
@@ -93,7 +93,7 @@ Per attivare le funzioni di accessibilità del dispositivo in OsmAnd, è necessa
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accessibilità](@site/static/img/plugins/Accessibility/access_.png)  
+![Accessibility](@site/static/img/plugins/accessibility/access_new.png)  
 
 Il plugin Accessibilità offre varie impostazioni per personalizzare la navigazione e l'interazione per gli utenti con disabilità. Queste impostazioni vengono applicate per ogni [profilo](../personal/profiles.md) in OsmAnd.
 
@@ -101,6 +101,7 @@ Il plugin Accessibilità offre varie impostazioni per personalizzare la navigazi
 |---------------------------|-------------|  
 | **Modalità Accessibilità**    | Abilita le *funzioni integrate di OsmAnd* o utilizza le **impostazioni di sistema**. |  
 | **Velocità di sintesi vocale**           | Controlla la *velocità della sintesi vocale*, con un intervallo dal **50% al 200%**. |  
+| **Ingrandimento zoom a pizzico**    | Ingrandisce temporaneamente la mappa mentre effettui lo zoom a pizzico e mantieni le dita sullo schermo, ingrandendo testo e icone senza modificare il livello di zoom effettivo. |  
 | [Annuncio automatico intelligente](#smart-autoannounce)    | Fornisce una *guida vocale* quando si devia dal percorso. |  
 | **Periodo annuncio automatico**   | Imposta il tempo minimo tra gli annunci, da **5 secondi a 5 minuti**. |  
 | [Stile direzione](#direction-style)       | Scegli tra *Laterale (8 direzioni)* o *Orario (12 direzioni)*. |  

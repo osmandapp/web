@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  Meteo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -60,7 +60,7 @@ Il plugin Meteo è disponibile solo con il motore di rendering della mappa [Vers
 
 Andare su: *Plugin abilitato → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Andare su: *Plugin abilitato → <Translate android="true" ids="shared_string_me
 
 Andare su: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -77,6 +77,41 @@ Andare su: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,s
 Il menu laterale principale ha una voce di menu dedicata **Meteo** che fornisce un accesso rapido a tutti gli strumenti meteorologici. La *schermata delle previsioni meteo* visualizza informazioni su *temperatura*, *pressione atmosferica*, *velocità del vento*, *copertura nuvolosa* e *precipitazioni*.  
 
 Nella parte inferiore dello schermo si trova la *barra degli strumenti meteo*. È possibile utilizzare i pulsanti dei giorni e il cursore del tempo per impostare l'ora esatta in cui verranno visualizzate le previsioni del tempo.
+
+### Fonte dei dati {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+È possibile scegliere quale fornitore di previsioni meteorologiche OsmAnd utilizza per visualizzare i dati sulla schermata Meteo:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Scegli Fonte dei dati*
+
+Sono supportati due fornitori di previsioni meteorologiche:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – la fonte predefinita gestita da NOAA/NWS. Fornisce dati meteorologici completi, inclusi livelli di temperatura, pressione, umidità, vento e nuvole.
+
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – una fonte alternativa di previsioni. Offre dati di alta qualità su temperatura, precipitazioni e pressione, ma non fornisce informazioni su vento o nuvole. Quando si utilizza ECMWF, i parametri non disponibili vengono visualizzati come “–” e i relativi livelli meteo appaiono disabilitati.
+
+Come la Fonte dei dati influisce sulla visualizzazione del Meteo:
+- La mappa, i grafici, la timeline e i valori meteo sullo schermo si aggiornano immediatamente dopo aver cambiato la fonte.
+- Vengono mostrati solo i parametri disponibili per il fornitore selezionato.
+- I widget meteo si aggiornano automaticamente per utilizzare la fonte scelta.
+- Se in precedenza è stata scaricata una previsione meteo, OsmAnd utilizza i dati corrispondenti al fornitore selezionato.
+- GFS ed ECMWF utilizzano cache separate. Cambiare la fonte carica o aggiorna i relativi tile meteo.
+
 
 ### Personalizzare i livelli Meteo {#customize-weather-layers}
 
@@ -226,6 +261,8 @@ Nel menu di download delle previsioni, è possibile ottenere informazioni e impo
 - *Aggiorna solo tramite Wi-Fi* (*iOS*). Abilitare questa opzione se non si desidera utilizzare i dati mobili per i download.  
 - Pulsante **Rimuovi** *cestino* (*Android*) / **Rimuovi previsioni** (*iOS*). Consente di eliminare tutti i dati delle previsioni per questa regione.
 - Pulsante **Modifica** *matita* (*Android*). Consente di rinominare il file meteo.
+
+**Nota:** Alcuni paesi, come gli Stati Uniti e il Canada, utilizzano un unico file di Previsioni offline per l'intero paese. Questo riduce il numero di download e semplifica la gestione dei dati meteorologici.
 
 :::info  
 I dati meteorologici vengono aggiornati ogni 6 ore (tutti e 4 gli aggiornamenti da [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) e 3 da [ECMWF](https://www.ecmwf.int/)) e diventano disponibili in OsmAnd con un breve ritardo, poiché il processo di calcolo richiede diverse ore prima del rilascio (di solito intorno alle 07:00 UTC).  

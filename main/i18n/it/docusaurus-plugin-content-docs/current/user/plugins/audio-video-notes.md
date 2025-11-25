@@ -1,8 +1,9 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
 title:  Note audio/video
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoAndroidOnly />
 
@@ -83,7 +83,7 @@ Per ogni profilo, è possibile configurare le *opzioni di registrazione audio e 
 È possibile creare una nota fotografica, video e audio in uno dei seguenti modi:
 
 - Con il [Widget](../widgets/info-widgets.md#audiovideo-notes-widget). Se la nota deve essere legata alla tua posizione geografica attuale.
-- Con il [menu contestuale](../map/map-context-menu.md#overview) di un punto sulla mappa. Se la nota deve essere legata al punto selezionato sulla mappa.
+- Con il [Menu contestuale](../map/map-context-menu.md#overview) di un punto sulla mappa. Se la nota deve essere legata al punto selezionato sulla mappa.
 
 
 ### Creare e fissare la posizione corrente {#create-&-pin-current-position}
@@ -274,6 +274,15 @@ Aggiungere un widget allo schermo è necessario se si preferisce evitare di cerc
 
     ![Il widget](@site/static/img/plugins/audio-video-notes/widget.png)  
 
+**Utilizzo di dispositivi di input esterni (*Android*)**. Se utilizzi un [dispositivo di input esterno](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), puoi avviare e interrompere le Note audio/video senza toccare lo schermo. Per farlo, assegna l'azione “Aggiungi nota audio” o “Aggiungi nota video” a un tasto:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Una volta assegnato, il tasto funziona come un interruttore:
+- La prima pressione avvia la registrazione di una nota audio o video (a seconda dell'azione selezionata).
+- La seconda pressione dello stesso tasto interrompe la registrazione.
+
+Quando una registrazione viene interrotta tramite un dispositivo di input esterno, il menu contestuale non viene mostrato, il che rende più facile utilizzare OsmAnd in scenari completamente hands-free (ad esempio, durante la guida di una moto o di un'auto).
+
 
 ## Gestire più note {#manage-multiple-notes}
 
@@ -330,7 +339,7 @@ Le note visualizzate sulla mappa possono raccontare la tua storia, dove hai vist
 
 Utilizza il livello mappa [Registrazione](../map/point-layers-on-map#-audio--video-points-android) per mostrare o nascondere tutte le note. Se lo attivi nel menu [Configura mappa](../map/configure-map-menu), il livello Registrazione mostra tutte le note sulla mappa.
 
-![Nessuna nota sulla mappa](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Note sulla mappa](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
+![Nessuna nota sulla mappa](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Le note sono sulla mappa](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
 ## Waypoint creati da note {#waypoints-created-from-notes}
@@ -376,7 +385,7 @@ Ci sono due modi per creare un waypoint: automaticamente e manualmente.
     - Seleziona la nota audio/video/foto richiesta sulla mappa.
     - Tocca **Azioni**, quindi tocca **Aggiungi traccia**.
     - Seleziona la traccia a cui intendi aggiungere un waypoint.
-    - Si apre la finestra di dialogo *<Translate android="true" ids="quick_action_add_gpx"/>*, che consente di impostare alcune proprietà, come il nome del waypoint, un'icona, il colore e altro. Una volta terminato, tocca **Salva**.
+    - Si apre la finestra di dialogo *<Translate android="true" ids="quick_action_add_gpx"/>* , che consente di impostare alcune proprietà, come il nome del waypoint, un'icona, il colore e altro. Una volta terminato, tocca **Salva**.
 
 :::info nota
 È possibile specificare nomi per ogni waypoint creato manualmente.
@@ -391,7 +400,7 @@ Ci sono due modi per creare un waypoint: automaticamente e manualmente.
 
 - Sulla mappa, un waypoint e una nota audio, video o fotografica possono essere visibili o meno. Ciò è determinato da quale livello è attualmente attivato per il profilo.
 
-- Quando né il livello Tracce né il livello Registrazione sono attivati, sia i waypoint che le note possono essere mostrati toccandoli in I miei luoghi. In questo caso, la mappa mostra le posizioni della nota toccata o, rispettivamente, le posizioni di tutti i waypoint della traccia toccata.
+- Quando né il livello Tracce né il livello Registrazione sono attivati, sia i waypoint che le note possono essere mostrati toccandoli in I miei luoghi. In questo caso, la mappa mostra le posizione della nota toccata o, rispettivamente, le posizioni di tutti i waypoint della traccia toccata.
 
 | Visibile | Livello attivato |
 | --- | --- |

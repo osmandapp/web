@@ -1,8 +1,9 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Luoghi Popolari
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -23,7 +23,7 @@ La funzione **Luoghi Popolari** di OsmAnd evidenzia punti di riferimento e attra
 
 Ogni luogo incluso in questa funzione è collegato a un **ID Wikidata**, che consente a OsmAnd di visualizzare nomi verificati, immagini di anteprima e collegamenti ad articoli di Wikipedia. Questo strumento **non** mostra tutti i punti di OpenStreetMap (OSM). È limitato ai PDI con riferimenti a Wikidata.
 
-Attualmente, il database curato include circa da **50.000 a 150.000 luoghi tra i più votati** a livello globale, selezionati da oltre **1 milione** di oggetti Wikidata + OSM.
+Attualmente, il database curato include circa **50.000 a 150.000 luoghi tra i più votati** a livello globale, selezionati da oltre **1 milione** di oggetti Wikidata + OSM.
 
 :::note
 *Questa è la prima versione della funzione Luoghi Popolari. I feedback sono benvenuti su [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -48,7 +48,7 @@ Vengono visualizzati solo i PDI con un **ID Wikidata** collegato. Questi ID coll
 
 È possibile visualizzare il link di Wikidata direttamente nel [Menu Contestuale della Mappa](../map/map-context-menu.md). Toccando il tag Wikidata si apre la pagina completa dell'oggetto sul sito web di Wikidata.
 
-Scopri come trovare un ID Wikidata: [Wikipedia: Trovare un ID Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+Scopri come trovare un ID Wikidata: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
 ## Come si usa {#how-to-use}
@@ -136,7 +136,7 @@ Una volta abilitate, diventano disponibili le seguenti opzioni:
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – Attiva/disattiva i PDI di Wikipedia sulla mappa.
 
-- **Fonte PDI** – Passa da:
+- **Fonte POI** – Passa da:
   - *Modalità offline* (gli articoli di Wikipedia devono essere scaricati).
   - Modalità *Solo online* (utilizza dati e immagini in tempo reale).
 
@@ -169,6 +169,8 @@ Toccando un PDI sulla mappa si apre il [menu contestuale del PDI](./map-context-
 
 Questa è una sezione all'interno del [menu contestuale del PDI](./map-context-menu.md) che mostra un'anteprima fotografica del Luogo Popolare (Wikipedia) selezionato. È possibile scorrere orizzontalmente per sfogliare le foto disponibili, o toccare una qualsiasi immagine per aprirla in [modalità a schermo intero](#gallery).
 
+Le immagini visualizzate online vengono memorizzate automaticamente in cache per l'accesso offline. Le foto memorizzate in cache mostrano un piccolo badge offline nell'angolo. La griglia di anteprima si adatta alla dimensione dello schermo su iPadOS e macOS, garantendo un layout confortevole delle immagini su display più grandi. OsmAnd evita anche di attivare richieste di rete ripetute quando la sezione Foto Online viene chiusa e annulla le richieste precedenti quando si passa rapidamente tra diversi PDI.
+
 Scopri di più sulle opzioni aggiuntive nelle sezioni [Azioni](#actions) e [Galleria](#gallery).
 
 
@@ -189,7 +191,10 @@ Nel menu contestuale della mappa Come accedere:
 
 - Tocca il pulsante **Mostra tutto** (Android) / **Visualizza tutto** (iOS) per aprire la [galleria](#gallery) in modalità a schermo intero, dove puoi scorrere tutte le foto disponibili per la località selezionata.
 
-- Tocca una foto qualsiasi per visualizzarla a [schermo intero](#gallery) e accedere alle azioni disponibili: **Condividi**, **Dettagli**, **Apri nel browser** e **Scarica**.
+- Tocca una foto qualsiasi per visualizzarla a [schermo intero](#gallery) e accedere alle azioni disponibili:  
+  **Condividi**, **Dettagli**, **Apri nel browser** e **Scarica**.
+
+**Nota:** Il download salva l'immagine nello storage del dispositivo per un uso offline permanente, mentre le foto memorizzate in cache vengono salvate automaticamente e disponibili offline solo all'interno dell'app.
 
 
 ### Galleria {#gallery}
@@ -213,7 +218,9 @@ Nel menu contestuale della mappa Come accedere:
 </Tabs>
 
 
-Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. È possibile scorrere tutte le foto disponibili. Toccando brevemente una foto si apre una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*  
+Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. È possibile scorrere tutte le foto disponibili. Toccando brevemente una foto si apre una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*.  
+
+Su iOS, iPadOS e macOS, è possibile navigare tra le foto utilizzando i tasti della tastiera (←/→ per spostarsi tra le immagini, Enter/Spazio per aprire).
 
 È inoltre possibile eseguire le seguenti azioni su ogni foto:
 

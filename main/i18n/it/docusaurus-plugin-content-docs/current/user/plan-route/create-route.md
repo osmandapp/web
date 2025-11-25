@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Pianifica un percorso
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Panoramica {#overview}
 
 Lo strumento **Pianifica un percorso** (*Menu → Pianifica un percorso*) è una potente funzionalità dell'applicazione OsmAnd che consente di [creare nuovi percorsi](#create-new-route) come tracce GPX, [modificare e aggiungere nuovi segmenti](#segments) a tracce già salvate, [misurare le distanze](#distance-measurement) sulla mappa e [agganciare i segmenti della traccia](#attach-track-to-roads) alla strada disponibile più vicina utilizzando diversi profili di navigazione. La funzione è progettata per funzionare in *modalità offline*.
 
-Un percorso è costituito da un insieme di segmenti tra punti specificati. I segmenti possono essere linee rette o percorsi adattati al profilo selezionato. Il percorso può essere salvato come GPX per essere importato, modificato e utilizzato per la [navigazione](../navigation/setup/gpx-navigation.md) in un secondo momento.
+Un percorso è costituito da un insieme di segmenti tra punti specificati. I segmenti possono essere linee rette o percorsi adattati al profilo selezionato. Il percorso può essere salvato come GPX per essere importato in seguito, modificato e utilizzato per la [navigazione](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -115,7 +115,7 @@ La *Linea retta* è necessaria e verrà utilizzata per le aree non coperte dai d
 Se in una traccia esistente mancano i [dati di altitudine](../map/tracks/track-context-menu.md#calculate-missing-elevation), è possibile aggiungerli utilizzando i seguenti strumenti:
 
 - [Usa strade vicine](#attach-track-to-roads). Questa modalità utilizza le mappe offline per trovare le strade più vicine per costruire una traccia, in modo che i dati di altitudine vengano recuperati dalle strade collegate. La geometria della traccia può essere regolata.  
-- [Usa Mappe del terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) La modalità calcola l'altitudine in base ai dati della mappa del terreno (3D). La differenza tra le altitudini registrate dal dispositivo può essere utilizzata per la correzione dell'altitudine. La geometria della traccia rimane invariata.
+- [Usa Mappe del terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) La modalità calcola l'altitudine in base ai dati della mappa del terreno (3D). La differenza tra le altitudini registrate dal dispositivo può essere utilizzata per la correzione dell'altitudine.  La geometria della traccia rimane invariata.
 
 
 ### Agganciare la traccia alle strade {#attach-track-to-roads}
@@ -124,7 +124,7 @@ Se in una traccia esistente mancano i [dati di altitudine](../map/tracks/track-c
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso aggancia-strada-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Pianifica un percorso aggancia-strada-android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
@@ -142,6 +142,10 @@ L'impostazione **Aggancia alle strade** consente di agganciare una traccia regis
 - Nomi delle strade e informazioni sulle corsie.
 - Dati di altitudine.
 - [Attributi della strada](../navigation/setup/route-details.md#road-attributes).
+- Profilo di altitudine aggiornato basato sulla geometria della strada.
+- Ricalcolo possibile della geometria della traccia (semplificando o regolando i punti alla rete stradale).
+
+Quando una traccia viene agganciata alle strade, i seguenti parametri potrebbero cambiare perché la geometria e l'altitudine della traccia vengono ricalcolate: *Distanza, Salita / Discesa, Velocità media (e il grafico della velocità), Velocità massima, Tempo in movimento* e *Durata*. Questi valori potrebbero differire dalla traccia GPX originale se l'altitudine o la geometria ricalcolata basata sulla strada devia significativamente dai dati GPS registrati.
 
 È possibile selezionare un [valore di soglia](../navigation/setup/gpx-navigation.md#attach-to-the-roads) per la distanza che i punti della traccia semplificata possono avere rispetto ai punti della traccia originale.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Pianifica un percorso Preferiti Android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Aggiungi*. Accedendo all'**elenco dei punti** sottostante, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico.
+
+È anche possibile aggiungere un punto intermedio direttamente dalla mappa toccando un POI o un Preferito per aprire il suo menu contestuale e quindi toccando *AGGIUNGI PUNTO*. In questa modalità, i menu contestuali per oggetti non punti non vengono visualizzati. Quando si aggiunge un POI/Preferito, il suo nome viene preservato come nome del punto del percorso; se in seguito si sposta questo punto sulla mappa, il nome viene azzerato.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Aggiungi punto*. Accedendo all'**elenco dei punti** sottostante, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico.
+
 </TabItem>
 
 </Tabs>  
-
-Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Aggiungi punto*. Accedendo all'**elenco dei punti** sottostante, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico.
 
 :::note
 È anche possibile **Annullare**/**Ripristinare** ogni azione effettuata nella pianificazione del percorso.
@@ -219,7 +227,7 @@ I punti aggiunti nell'editor possono essere collegati come una linea retta o com
 
 - *Intera traccia*. L'intera traccia verrà ricalcolata utilizzando il profilo selezionato.
 - *Segmento successivo*. Solo il segmento successivo verrà ricalcolato utilizzando il profilo selezionato.  
-- *Cambia il tipo di percorso prima/dopo il punto*. Nel *menu contestuale del punto*, è possibile modificare il modo in cui viene calcolato il percorso per la sezione da questo punto al punto più vicino o al punto finale. L'impostazione fornisce informazioni sulla distanza da questo punto all'inizio o alla fine del percorso, o al punto successivo/precedente.
+- *Cambia il Tipo di Percorso Prima/Dopo il Punto*. Nel *menu contestuale del punto*, è possibile modificare il modo in cui viene calcolato il percorso per la sezione da questo punto al punto più vicino o al punto finale. L'impostazione fornisce informazioni sulla distanza da questo punto all'inizio o alla fine del percorso, o al punto successivo/precedente.
 - *Ricalcola percorsi*. È possibile utilizzare il ricalcolo del percorso senza modificare il tipo di profilo. L'icona del profilo mostrata sul percorso pianificato nello strumento non cambierà, ma il tipo di percorso corrisponderà a quello selezionato. Potrebbe essere necessario per trovare percorsi alternativi.  
 
 ### Segmenti {#segments}
@@ -356,7 +364,7 @@ Quando si salva una nuova traccia, è possibile selezionare l'opzione traccia **
 - [<Translate android="true" ids="attach_to_the_roads"/>](#attach-track-to-roads). Crea un percorso approssimativo. Ogni punto della traccia viene abbinato alla strada consentita più vicina sulla mappa in base al profilo selezionato e alla distanza di soglia.
 - [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) (solo Android). È possibile filtrare i punti del percorso che non corrispondono al tipo di percorso selezionato, eliminare i dati non necessari o correggere i dati imprecisi. Il filtro GPS funziona solo se il tipo di percorso è specificato come *Linea retta*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*solo Android*). Questa opzione viene visualizzata nel menu solo se non sono disponibili dati di altitudine. Con questa [opzione](#get-elevation-data), è possibile calcolare l'altitudine utilizzando i *dati della mappa del terreno* o utilizzare i dati delle mappe scaricate per trovare le *strade vicine*.
-- ***<Translate android="true" ids="shared_string_clear_all"/>***. Archivia completamente tutte le azioni. Sulla mappa rimane un "artefatto": le linee tratteggiate del percorso appena cancellato. Scompare alla successiva aggiunta di nuovi punti. È possibile annullare la funzione Cancella tutto con il pulsante Annulla azione. La funzione non influisce sulle parti non modificate dei percorsi aperti nello strumento.
+- ***<Translate android="true" ids="shared_string_clear_all"/>***. Elimina completamente tutte le azioni. Sulla mappa rimane un "artefatto": le linee tratteggiate del percorso appena cancellato. Scompare alla successiva aggiunta di nuovi punti. È possibile annullare la funzione Cancella tutto con il pulsante Annulla azione. La funzione non influisce sulle parti non modificate dei percorsi aperti nello strumento.
 
 ### Grafico {#graph}
 
@@ -364,7 +372,7 @@ Quando si salva una nuova traccia, è possibile selezionare l'opzione traccia **
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 
