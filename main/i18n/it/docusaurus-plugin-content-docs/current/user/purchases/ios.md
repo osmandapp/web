@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 3036a4367dec965dc2ce8a575aa5d332ed8bf23931798249cf1fc88b99ef5ae5
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -37,7 +37,7 @@ import Translate from '@site/src/components/Translate.js';
 | Piano | Descrizione | Disponibilità | Note |
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Un **piano gratuito** che fornisce l'accesso a [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) per *Preferiti*, *Impostazioni* e *Modifiche/note OSM*. | Disponibile per tutti gli utenti della versione gratuita di OsmAnd. | Limitato alle funzionalità cloud di base e a **5MB** di spazio di archiviazione. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **acquisto in-app** o un **abbonamento** che sblocca funzionalità avanzate e [pro](#pro-features) aggiuntive per l'app gratuita OsmAnd. | Disponibile su [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Può essere aggiunto a [In famiglia di Apple](https://support.apple.com/en-us/HT201088). |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **acquisto in-app** o un **abbonamento** che sblocca funzionalità avanzate per l'app gratuita OsmAnd. | Disponibile su [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Può essere aggiunto a [In famiglia di Apple](https://support.apple.com/en-us/HT201088). |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **piano di abbonamento** che sblocca funzionalità avanzate e [pro](#pro-features) aggiuntive. | Disponibile su [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Fornisce accesso completo alle funzionalità di OsmAnd Cloud. |
 
 ### Note importanti {#important-notes}
@@ -97,6 +97,7 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Rilievo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dati topografici](../plugins/topography.md#overview)<br/>(Curve di livello e Terreno) | **-** | ✔ | ✔ |
+| [Personalizzazione del colore della griglia delle coordinate](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualizzazione traccia 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profondità nautiche](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guide di viaggio (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

@@ -1,5 +1,5 @@
 ---
-source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title:  Azione Rapida (Pulsanti personalizzati)
 ---
@@ -197,13 +197,17 @@ Il widget *Azione Rapida* appare nell'angolo inferiore della schermata della map
 
 <TabItem value="android" label="Android">  
 
-![Griglia per pulsanti_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Griglia per pulsanti_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Griglia per pulsanti_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![Griglia per pulsanti_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Griglia per pulsanti_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Griglia per pulsanti_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Griglia per pulsanti_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![Griglia per pulsanti_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ Il widget *Azione Rapida* appare nell'angolo inferiore della schermata della map
 I [pulsanti della mappa](../widgets/map-buttons.md#overview) sono disposti automaticamente utilizzando un layout a griglia. Ogni pulsante è assegnato a uno dei quattro angoli dello schermo (*in alto a sinistra*, *in alto a destra*, *in basso a sinistra*, *in basso a destra*). Se non c'è abbastanza spazio nell'angolo assegnato, i pulsanti vengono allineati orizzontalmente o verticalmente, a seconda dell'orientamento dello schermo.
 
 Questo layout aiuta a mantenere i pulsanti visivamente coerenti ed evita sovrapposizioni. Ad esempio, su un display in paesaggio, i pulsanti nell'angolo destro si allineeranno orizzontalmente nella parte inferiore dello schermo, mentre su un display in ritratto si espanderanno verticalmente verso l'alto o il basso secondo necessità.
+
+La griglia si adatta all'interfaccia circostante e riposiziona i pulsanti quando necessario, garantendo che rimangano visibili e non interferiscano con altri elementi sullo schermo. Quando i widget o i pannelli vengono aggiunti, rimossi o riorganizzati, il layout si aggiorna di conseguenza in modo che l'ordine dei pulsanti rimanga coerente e nessun elemento venga nascosto.
+
+I [profili importati](https://osmand.net/docs/user/personal/import-export#export) da un altro dispositivo vengono adattati al layout a griglia, mantenendo le posizioni dei pulsanti corrette su diverse dimensioni di schermo e piattaforme.
 
 
 ## Tipi di Azione {#action-types}
@@ -223,8 +231,8 @@ Questo layout aiuta a mantenere i pulsanti visivamente coerenti ed evita sovrapp
 | Mostra / Nascondi <br/> [**Percorsi**](../map/vector-maps.md#routes) | È possibile selezionare i tipi di percorso per abilitare o disabilitare la loro visualizzazione. <br/> Alcuni percorsi hanno impostazioni aggiuntive. Per impostazione predefinita, se non è stato selezionato nulla nel menu [Configura Mappa](../map/configure-map-menu.md), verrà assegnato il primo tipo di percorso dall'elenco, altrimenti verrà assegnato un tipo a scelta. Per saperne di più, consultare l'articolo [Percorsi](../map/routes.md). <br/> - ***Percorsi ciclabili***  &nbsp;(*Percorso*, *Reti di nodi*) <br/> - ***Percorsi per mountain bike***  &nbsp;(*Scala MTB*, *IMBA*) <br/> - ***Percorsi escursionistici***  &nbsp;(*OSMC*, *Affiliazione alla rete*, *Reti di nodi*) <br/> - ***Grado di difficoltà dei sentieri escursionistici***  &nbsp;(*Scala SAC*, *Scala CAI*) <br/> - ***Piste da sci*** <br/> - ***Percorsi a cavallo*** <br/> - ***Sport di whitewater*** <br/> - ***Percorsi di corsa*** <br/> - ***Percorsi fitness*** <br/> - ***Itinerari di viaggio***  &nbsp;(*Tracce*, *Libri di viaggio*, *Punti*) <br/> |
 | Mostra / Nascondi <br/> [**Livelli topografici**](../plugins/topography.md#overview) | Tutti i dati topografici sono presentati come livelli di mappa separati. È possibile cambiare rapidamente la visibilità di questi livelli con l'Azione Rapida. <br/> - ***Linee di contorno*** <br/> - ***Terreno***  &nbsp;(*A seconda del livello selezionato nel menu [Configura Mappa](../map/configure-map-menu.md)*, *verrà visualizzato Ombreggiatura*, *Pendenza* o *Altitudine*.) |
 | Cambia <br/> [**Schema colori terreno**](../plugins/topography.md#modify-color-scheme) | Consente di selezionare una o più palette da un elenco di quelle esistenti, che cambieranno quando si tocca il pulsante. |
-| Mostra / Nascondi <br/> [**Livelli meteo**](../plugins/weather.md#weather-layers) | Tutti i dati meteorologici sono presentati come livelli di mappa separati. Con l'Azione Rapida, è possibile accedere rapidamente per attivare o disattivare la visibilità di questi livelli sulla mappa. <br/> - ***Livello precipitazioni*** <br/> - ***Livello nuvole*** <br/> - ***Livello pressione*** <br/> - ***Livello vento*** <br/> - ***Livello temperatura*** |
-| Apri <br/> [**Schermata Meteo**](../plugins/weather.md) <br /> *Solo Android* | Apre la schermata delle previsioni [*Meteo*](../plugins/weather.md#weather-forecast-screen) con le informazioni dettagliate. |
+| Mostra / Nascondi <br/> [**Livelli meteo**](../plugins/weather.md#weather-layers) | Tutti i dati meteorologici sono presentati come livelli di mappa separati. Con l'Azione Rapida, è possibile accedere rapidamente per attivare o disattivare la visibilità di questi livelli sulla mappa. <br/> - ***Livello precipitazioni*** <br/> - ***Livello nuvole*** <br/> - ***Livello pressione*** <br/> - ***Livello vento*** <br/> - ***Livello animazione vento*** *(Solo Android)* <br/> - ***Livello temperatura*** <br/> Su Android, c'è anche **Livelli meteo** — un interruttore principale per tutti i livelli meteo attivi. Disattiva tutti i livelli meteo attualmente abilitati contemporaneamente. Quando riattivato, ripristina esattamente lo stesso insieme di livelli che erano attivi prima. |
+| Apri <br/> [**Schermata Meteo**](../plugins/weather.md) | Apre la schermata delle previsioni [*Meteo*](../plugins/weather.md#weather-forecast-screen) con le informazioni dettagliate. |
 | Mostra / Nascondi <br/> [**Preferiti**](../map/point-layers-on-map.md#favorites) | Mostra o nasconde i punti preferiti sulla mappa. |
 | Mostra / Nascondi <br/> [**Tracce**](../personal/tracks/manage-tracks.md#track-menu) | Mostra o nasconde le ultime tracce visibili sulla mappa. |
 | Mostra / Nascondi <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Abilita o disabilita la visualizzazione dei livelli POI con le categorie selezionate sulla mappa.<br/>È possibile selezionare più categorie di POI. L'azione sostituisce le categorie di POI selezionate in Configura Mappa senza utilizzare le Azioni Rapide.  |
@@ -247,6 +255,7 @@ Questo layout aiuta a mantenere i pulsanti visivamente coerenti ed evita sovrapp
 | Mostra / Nascondi <br/> [**Vista di ricerca**](../search/search-all.md) | Apre o chiude la vista di ricerca. |
 | Mostra / Nascondi <br/> [**Menu laterale**](../start-with/main-menu.md) | Attiva/disattiva la visibilità del menu laterale principale per accedere alle funzioni principali. |
 | Attiva / Disattiva <br/> [**Blocco touchscreen**](../map/interact-with-map.md#touch-screen-lock) | Attiva o disattiva il blocco del touchscreen per evitare interazioni involontarie con lo schermo. |
+| Apri <br/> **WunderLINQ Datagrid** | Apre l'interfaccia dati WunderLINQ per visualizzare le informazioni del dispositivo connesso; reindirizza all'App Store se l'app WunderLINQ richiesta non è installata. |
 
 
 ### Interazioni Mappa {#map-interactions}
@@ -276,7 +285,7 @@ Questo layout aiuta a mantenere i pulsanti visivamente coerenti ed evita sovrapp
 | Aggiungi <br/> [**Posto auto**](../plugins/parking.md) | Aggiunge un parcheggio a una posizione selezionata (centrale) della mappa. La vecchia posizione del parcheggio viene eliminata. |
 | Aggiungi <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Aggiunge un POI a una posizione selezionata (centrale) della mappa (come l'azione del menu contestuale). <br /> - *Mostra una finestra di dialogo intermedia*. Visualizza una finestra di dialogo di conferma. <br /> - *Tipo di POI* (opzionale). Preseleziona il tipo di POI OSM. <br /> - *Tag/Valore* (multiplo). Aggiunge tag/valori di [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) |
 | Aggiungi <br/> [**Nota OSM**](../plugins/osm-editing.md#create--modify-osm-note) | Aggiunge una [nota OSM](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Mostra una finestra di dialogo intermedia*. Visualizza una finestra di dialogo di conferma. <br /> - *Messaggio*. Aggiunge un messaggio predefinito alla nota. |
-| Aggiungi <br/> [**Note multimediali**](../plugins/audio-video-notes.md) | Avvia la registrazione di note audio/foto/video per una posizione selezionata (centrale) della mappa. |
+| Aggiungi <br/> [**Note multimediali**](../plugins/audio-video-notes.md) | Avvia la registrazione di note audio/foto/video per una posizione selezionata (centrale) della mappa; una pressione ripetuta interrompe la registrazione. |
 | Crea <br/> [**Nuovo percorso**](../plan-route/create-route.md) <br /> *Solo Android* | Apre lo strumento [Pianifica un percorso](../plan-route/create-route.md) e crea un percorso per la posizione selezionata (centrale) sulla mappa. |
 
 
@@ -285,7 +294,7 @@ Questo layout aiuta a mantenere i pulsanti visivamente coerenti ed evita sovrapp
 | Azione | Descrizione |
 |:-------------|:-------------|
 | Aggiungi <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | È possibile selezionare il centro della schermata della mappa come primo punto intermedio. La destinazione precedente rimane la stessa. |
-| Attiva / Disattiva <br/> [**Istruzioni vocali**](../navigation/guidance/voice-navigation.md) | Disattiva o riattiva la guida vocale durante la navigazione. |
+| Attiva / Disattiva <br/> [**Avvisi vocali**](../navigation/guidance/voice-navigation.md) | Disattiva o riattiva la guida vocale durante la navigazione. |
 | Imposta <br/> [**Punto di partenza**](../navigation/setup/route-navigation.md#set-destinations) | Contrassegna una posizione selezionata (centrale) della mappa come punto di partenza. |
 | Imposta <br/> [**Destinazione**](../navigation/setup/route-navigation.md#set-destinations) | Aggiunge la posizione selezionata (centrale) sulla mappa come destinazione. La destinazione precedente diventa l'ultimo punto intermedio.  |
 | Sostituisci <br/> [**Destinazione**](../navigation/setup/route-navigation.md#intermediate-destinations) | Imposta/Sostituisce una posizione selezionata (centrale) della mappa come destinazione. La destinazione precedente viene eliminata. |
@@ -309,11 +318,25 @@ Questo layout aiuta a mantenere i pulsanti visivamente coerenti ed evita sovrapp
 
 ## Usare la Tastiera per le Azioni {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![Dispositivi esterni](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Dispositivo → Aggiungi*
+
+![Dispositivi esterni](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 Utilizzando la funzionalità dello strumento Azione Rapida, è possibile assegnare le azioni richieste ai tasti del dispositivo di input esterno. Una descrizione si trova nell'articolo [Interagire con la Mappa](../map/interact-with-map.md#custom-input-device-type).
 

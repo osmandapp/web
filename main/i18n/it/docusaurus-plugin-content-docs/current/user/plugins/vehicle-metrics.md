@@ -1,5 +1,5 @@
 ---
-source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title:  Metriche veicolo
 ---
@@ -119,6 +119,8 @@ Scegli il tuo dispositivo OBD-II dall'elenco e stabilisci la connessione.
 - **Rinomina**. Consente di assegnare un nome personalizzato al sensore per una più facile identificazione.
 - **Dimentica**. Rimuove il sensore OBD-II precedentemente associato dall'elenco, richiedendo una nuova associazione se necessario in seguito.
 
+**Comportamento di riconnessione** *(solo Android)***:** OsmAnd tenta automaticamente di riconnettersi all'adattatore OBD-II quando l'applicazione viene avviata, quando la navigazione viene avviata o quando Android Auto viene lanciato. Se una connessione non è disponibile, i widget Metriche veicolo mostrano “–”. Un singolo tocco su qualsiasi widget Metriche veicolo tenterà di riconnettersi al sensore. Se il sensore è già connesso, il tocco passa alle modalità di visualizzazione del widget come al solito.
+
 
 ## Elenco metriche {#metrics-list}
 
@@ -234,6 +236,13 @@ Alcuni widget offrono opzioni di modalità di visualizzazione:
 
 - **Istantaneo**. Mostra i dati in tempo reale per la metrica selezionata.
 - **Medio**. Mostra i valori medi su un intervallo di tempo configurabile (da 15 secondi a 60 minuti).
+
+Diversi widget, incluso *Consumo di carburante*, adattano le unità visualizzate e i formati metrici regionali in base alle [Impostazioni del profilo](https://osmand.net/docs/user/personal/profiles#units--formats). Quando si utilizzano unità di volume diverse dai litri, il Consumo di carburante supporta la visualizzazione dei valori come Miglia per gallone (MPG). Il tipo esatto di MPG dipende dall'unità di volume selezionata:
+
+- Galloni USA → MPG (USA)
+- Galloni imperiali → MPG (UK)
+
+Il widget seleziona automaticamente il formato appropriato in base alle unità <Translate android="true" ids="routing_attr_length_name"/> e <Translate android="true" ids="shared_string_volume"/> scelte nel profilo attivo, e la modalità di visualizzazione scelta viene preservata durante l'esportazione e l'importazione dei profili.
 
 
 ## Articoli correlati {#related-articles}

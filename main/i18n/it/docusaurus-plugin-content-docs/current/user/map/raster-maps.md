@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Mappe Raster (Online / Offline)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -67,7 +67,7 @@ Le mappe online in OsmAnd sono composte da dati raster, che consistono in pixel 
 
 **Abilita plugin**.
 
-- **iOS**. Per *iOS*, questa funzione è attiva per impostazione predefinita.
+- **iOS**. Per *iOS*, questa funzione funziona per impostazione predefinita.
 - **Android**. Per *Android*, per utilizzare le mappe raster in OsmAnd è necessario abilitare il [plugin Mappe online](../plugins/online-map.md). Seguire questi passaggi: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
 **Modifica i parametri del livello**. Per migliorare la visibilità e la combinazione dei livelli di mappe raster, è possibile regolare la trasparenza del livello utilizzando il cursore sullo schermo. Inoltre, è possibile modificare lo stile della mappa vettoriale nascondendo i poligoni, rendendo più visibili i livelli di underlay. Ciò è particolarmente utile quando si visualizzano immagini satellitari.
@@ -145,7 +145,7 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 </Tabs>
 
-1. *Attiva/disattiva* la mappa Overlay.
+1. *Attiva/disattiva* la mappa Underlay.
 2. *Trasparenza overlay* (*Android*)/ *Trasparenza* della mappa Overlay (*iOS*).
 3. *Mostra cursore trasparenza* (*Android*) / *Mostra cursore sulla mappa* (*iOS*). Accesso rapido all'impostazione della trasparenza.
 4. *Fonte mappa overlay* (*Android*) / *Livelli disponibili* (*iOS*). È possibile scegliere una mappa a tile da installare o aggiornare.
@@ -296,7 +296,7 @@ Ecco i parametri chiave da configurare quando si imposta una nuova fonte di mapp
 | Parametro | Descrizione |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Fornire un nome per la nuova fonte di mappa online. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Inserire o incollare l'URL per la fonte di tile online. Assicurarsi che segua il formato dell'URL delle tile. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Inserire o incollare l'URL per la fonte di tile online. Assicurarsi che segua il formato dell'URL delle tile. L'URL può contenere determinati segnaposto, che OsmAnd sostituirà automaticamente in base alla tile specifica necessaria. I segnaposto più comunemente utilizzati sono basati sulla [convenzione dei nomi delle tile della mappa slippy di OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` o `{0}`: Livello di zoom</li><li>`{x}` o `{1}`: Indice X della tile</li><li>`{y}` o `{2}`: Indice Y della tile</li></ul> Per esempi di segnaposto meno comuni, vedere le [fonti di mappe raster online predefinite](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Questo parametro influisce sulla visualizzazione della mappa. <br/><ul><li>Come *tipo di mappa*, la mappa sarà limitata ai livelli di zoom selezionati.</li><li>Come *overlay/underlay*, la mappa apparirà ai livelli di zoom selezionati, con upscaling o downscaling applicato al di fuori di tali livelli.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Impostare la durata (in minuti) dopo la quale le tile memorizzate nella cache verranno aggiornate. È possibile lasciare questo campo vuoto se non si desidera che le tile si ricarichino automaticamente. <br/><ul><li>1 giorno = 1440 minuti</li><li>1 settimana = 10.080 minuti</li><li>30 giorni = 43.200 minuti</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Scegliere tra *Proiezione Pseudo-Mercatore* e *Proiezione di Mercatore ellittica*, a seconda della fonte. |

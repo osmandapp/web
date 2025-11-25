@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title:  Visualizzazione Mappa Sci
 ---
@@ -168,7 +168,7 @@ La Mappa Sci di OsmAnd è costruita come uno degli stili di rendering, che deter
 La difficoltà delle tracce è solitamente indicata da colori specifici. I colori possono essere diversi in diversi paesi e resort. Di seguito sono riportate alcune linee guida pratiche.
 
 :::tip guida
-Per una guida più specifica per ogni tipo di difficoltà di pista, consultare il [riferimento difficoltà piste OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) o qualsiasi altra fonte che consideri anche pendenze, ostacoli e pericoli.  
+Per una guida più specifica per ogni tipo di difficoltà di pista, consultare il [riferimento difficoltà piste OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) o qualsiasi altra fonte che consideri anche pendenze, ostacoli e pericoli. Nello stile mappa Inverno e Sci, determinati pericoli mappati (ad esempio aree soggette a valanghe taggate come hazard=avalanche) possono essere mostrati come POI di pericolo sulla mappa e devono essere tenuti in considerazione insieme alla difficoltà della pista.  
 :::
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title:  Log dei crash
 ---
@@ -37,7 +37,7 @@ Fai attenzione quando invii i logcat log, poiché potrebbero contenere informazi
 2. Nel menu a comparsa, scegli Gmail o la tua app di posta elettronica preferita. L'email verrà generata automaticamente.
 3. Tocca il pulsante *Send*.
 
-![Invia log dei crash da Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Invia log dei crash da Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Invia log da dispositivi iOS {#send-logs-from-ios-devices}
@@ -46,19 +46,19 @@ Fai attenzione quando invii i logcat log, poiché potrebbero contenere informazi
 
     - Automaticamente.
         - Naviga nell'app OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Quindi, utilizzando la tua app di posta elettronica, ti consigliamo di inviare i log a `crash@osmand.net`.
+        - Quindi, utilizzando la tua app di posta elettronica, ti consigliamo di inviare i log a `support@osmand.net`.
 
     - Manualmente.
-        - Naviga nell'app di sistema iOS *File → Sul mio iPhone (o Sul mio iPad) → OsmAnd Maps → Log*.
+        - Naviga nell'app di sistema iOS *File → Sul mio iPhone (o Sul mio iPad) → OsmAnd Maps → Logs*.
 
-    ![Invia log dei crash iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Invia log dei crash iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-2. Invia il formato [IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) dei log e dei dati di autorizzazione:
+2. Invia il [formato IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) dei log e dei dati di autorizzazione:
     - Su iOS 15 o precedenti: *Impostazioni → Analisi → Dati di analisi → File in formato ips di OsmAnd Maps*.
     - Su iOS 16 o successive:  *Impostazioni → Privacy e sicurezza → Analisi e miglioramenti → Dati di analisi → File in formato ips di OsmAnd Maps*.
-    - Quindi, utilizzando la tua app di posta elettronica, ti consigliamo di inviare i log a `crash@osmand.net`.
+    - Quindi, utilizzando la tua app di posta elettronica, ti consigliamo di inviare i log a `support@osmand.net`.
 
-    ![Invia log dei crash iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Invia log dei crash iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
 
 ## Invia file Tombstone (Android) {#send-tombstone-files-android}
@@ -82,9 +82,9 @@ Per esportare i file tombstone, è necessario generare un report di bug utilizza
     - Tocca l'opzione *Acquisisci report bug*.
     - Seleziona il tipo di report bug e tocca *Report*.
   
-Dopo che il report bug è pronto, riceverai una notifica. Tocca la casella di notifica per scaricare il report sul tuo dispositivo. Decomprimi il file e invia i file tombstone al team di sviluppatori di OsmAnd (email: `crash@osmand.net`).
+Dopo che il report bug è pronto, riceverai una notifica. Tocca la casella di notifica per scaricare il report sul tuo dispositivo. Decomprimi il file e invia i file tombstone al team di sviluppatori di OsmAnd (email: `support@osmand.net`).
 
-![Invia log dei crash da Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Invia log dei crash da Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Si prega di notare che i report bug possono contenere dati privati, inclusi l'utilizzo dell'app o la posizione.
@@ -114,7 +114,7 @@ Quindi, collega il tuo dispositivo alla tua workstation tramite USB. Se è la pr
 4. Attendi qualche minuto per la generazione del report. Il file risultante verrà salvato nella cartella platform tools.
 5. Decomprimi il file.
 6. Trova la cartella *tombstones* con file come *tombstone_00*, *tombstone_01* e simili.
-7. Invia i file tombstone a `crash@osmand.net`.
+7. Invia i file tombstone a `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Con l'accesso root al tuo dispositivo, puoi aprire direttamente la cartella */data/tombstones*.  
 
-- In Android Studio, usa l'emulatore per navigare in *Device File Explorer* e trovare la cartella /data/tombstones. All'interno, troverai file denominati come *tombstone_00*, *tombstone_01* e altri. Scarica questi file e inviali a `crash@osmand.net`.
+- In Android Studio, usa l'emulatore per navigare in *Device File Explorer* e trovare la cartella /data/tombstones. All'interno, troverai file denominati come *tombstone_00*, *tombstone_01* e altri. Scarica questi file e inviali a `support@osmand.net`.
 
 Per maggiori dettagli sui report bug, fai riferimento alla [documentazione Android](https://developer.android.com/studio/debug/bug-report).

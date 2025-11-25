@@ -1,5 +1,5 @@
 ---
-source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
+source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
 sidebar_position: 5
 title:  Mappe Vettoriali (Stili Mappa)
 ---
@@ -48,7 +48,7 @@ OsmAnd offre di default molti stili di mappa e livelli di dati. Questa sezione d
 
 ![Stile mappa OsmAnd](@site/static/img/map/map-style-osmand-with-routes.png)  
 
-Lo stile di rendering standard della mappa di OsmAnd bilancia dettaglio e semplicità, rendendolo ideale per l'esplorazione urbana ed extraurbana. Dettaglia le caratteristiche della città come strade, edifici e fermate dei trasporti, semplificando al contempo il disordine visivo e rendendo le mappe più chiare.  
+Lo stile di rendering standard della mappa di OsmAnd bilancia dettaglio e semplicità, rendendolo ideale per l'esplorazione urbana e all'aperto. Dettaglia le caratteristiche della città come strade, edifici e fermate dei trasporti, semplificando al contempo il disordine visivo e rendendo le mappe più chiare.  
 
 I vantaggi principali includono la mappatura dei percorsi, la qualità della superficie, le restrizioni di accesso, la segnaletica stradale, la rappresentazione dei sentieri in scala SAC, gli impianti sportivi e i dettagli topografici come le curve di livello.
 
@@ -77,7 +77,7 @@ Gli stili UniRS e LightRS sono stili d'autore che rendono le informazioni di bas
 
 ![Stile mappa Nautico](@site/static/img/map/map-style-nautical.png)
 
-Questo è uno stile di navigazione nautica che presenta boe, fari, rotte fluviali, rotte marittime, segnali, porti, segnalamenti marittimi e curve di profondità. Per saperne di più, consultare la sezione [Stile Mappa Nautico](../plugins/nautical-charts.md#nautical-map-style).
+Questo è uno stile di navigazione nautica che presenta boe, fari, rotte fluviali, rotte marittime, segnali, porti e segnalamenti nautici. Per saperne di più, consultare la sezione [Stile Mappa Nautico](../plugins/nautical-charts.md#nautical-map-style).
 
 ### Marine {#marine}
 
@@ -255,7 +255,7 @@ La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla ma
 È possibile configurare le seguenti opzioni:
 - **Livelli di zoom:** impostare i livelli di zoom minimo e massimo (2 - 22) in cui la griglia è visibile.
 - **Posizione etichette:** scegliere tra *Bordi* (predefinito) o *Centro* per le etichette della griglia.
-- **Colore griglia:** disponibile separatamente per la modalità Giorno/Notte. La personalizzazione del colore della griglia è una funzione a pagamento.
+- **Colore griglia:** disponibile separatamente per la modalità Giorno/Notte. La personalizzazione del colore della griglia è una [funzione a pagamento](https://osmand.net/docs/user/purchases/) disponibile in Maps+ (acquisto in-app o abbonamento) e OsmAnd+.
 - **Formato coordinate:** selezionare da diversi formati disponibili (vedere elenco di seguito).
 
 
@@ -336,7 +336,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 - **<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. Indica la qualità della strada. Indica la scorrevolezza (pendenza) della strada. Quanto sono scorrevoli le vostre strade: buone, cattive, forse terribili, ecc. Guardate la [Legenda Mappa](../map-legend/index.md) per determinare la scorrevolezza della vostra strada.  
     ![Parametro mappa - Scabrosità strada](@site/static/img/map/map-parameter-road-smoothness.png)
 
-- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. Mostra l'accessibilità della strada: privata o consentita, solo per emergenze o a pedaggio. Visualizza la [Legenda Mappa](../map-legend/index.md) per trovare le strade disponibili.  
+- **<Translate ios="true" ids="rendering_attr_showAccess_name"/>**.  Mostra l'accessibilità della strada: privata o consentita, solo per emergenze o a pedaggio. Visualizza la [Legenda Mappa](../map-legend/index.md) per trovare le strade disponibili.  
     ![Parametro mappa - Accesso stradale](@site/static/img/map/map-parameter-road-access.png)
 
 - **<Translate ios="true" ids="rendering_attr_showLez_name"/>**. La funzione [Zone a Bassa Emissione (ZBE)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) visualizza bordi verdi ed etichette "LEZ" sulle mappe per le aree delle città in cui l'accesso è limitato per alcuni veicoli inquinanti. Le ZBE mirano a migliorare la qualità dell'aria limitando l'ingresso ai veicoli che soddisfano specifici standard di emissione. L'uso di questa funzione aiuta gli utenti a evitare sanzioni identificando e navigando intorno a queste zone verdi, garantendo la conformità con le normative ambientali locali durante gli spostamenti nei centri urbani.  
@@ -493,7 +493,7 @@ Impostazioni speciali per le strade, dove è possibile cambiare i colori per abb
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. L'alto contrasto delle strade.  
 ![Stile strada mappa alto contrasto](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pallido**. Colori meno contrastanti delle strade.  
-![Stile strada mappa pallido](@site/static/img/map/map-road-style-pale.png)
+![Stile strada mappa contorno spesso](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contorno spesso per le strade.  
 ![Stile strada mappa contorno spesso](@site/static/img/map/map-road-style-bold-outline.png)

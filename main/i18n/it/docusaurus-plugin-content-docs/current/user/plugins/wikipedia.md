@@ -1,5 +1,5 @@
 ---
-source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
+source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -93,7 +93,7 @@ Per mostrare/nascondere i POI di Wikipedia, procedere come segue:
 
    **<Translate ios="true" ids="ios_button_seq"/>**: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
-2. Selezionare un profilo e cercare la sezione delle impostazioni *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* nel menu.  
+2. Selezionare un Profilo e cercare la sezione *<Translate android="true" ids="shared_string_show"/>*/*<Translate ios="true" ids="shared_string_show_on_map"/>* delle impostazioni nel menu.  
 3. Attivare *<Translate android="true" ids="poi_osmwiki"/>* **per Android** / *<Translate ios="true" ids="download_wikipedia_maps"/>* **per iOS**.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -119,7 +119,7 @@ Con i dati di Wikipedia caricati, indipendentemente dalla modalità di visibilit
 
 Quando si tocca il pulsante Cerca, appare un pannello aggiuntivo che consente di [cercare](../search/index.md) nell'intero testo e/o in una categoria specifica. Nel primo caso, i risultati della ricerca mostreranno i POI di Wikipedia con i corrispondenti articoli di Wikipedia tra gli altri tipi di informazioni. Nel caso di una [ricerca per categoria di Wikipedia](../search/search-poi.md#poi-search-by-categories), i risultati della ricerca mostreranno solo le informazioni di Wikipedia, ordinate in base alla posizione più vicina all'area della mappa attualmente visualizzata sullo schermo.  
 
-- Nella versione **Android**, è possibile aprire la [Ricerca](../search/index.md) toccando l'icona *Cerca* nell'angolo in alto a sinistra dello schermo e/o toccando l'opzione *Cerca* nel menu.
+- Nella versione **Android**, è possibile aprire la [Ricerca](../search/index.md) toccando l'*icona Cerca* nell'angolo in alto a sinistra dello schermo e/o toccando l'opzione *Cerca* nel menu.
 - Nella versione **iOS**, per aprire la [Ricerca](../search/index.md), l'icona Cerca si trova nell'angolo in alto a sinistra dello schermo.
 
 <!--
@@ -164,25 +164,34 @@ Quando si tocca il pulsante Cerca, appare un pannello aggiuntivo che consente di
 
 ## Articolo di Wikipedia {#wikipedia-article}
 
-Per aprire l'articolo di Wikipedia:
-
-1. Abilitare il [livello POI di Wikipedia](../map/point-layers-on-map.md#-wikipedia) per un profilo specifico.
-2. Toccare un POI sulla mappa.
-3. Nel [menu contestuale](../map/map-context-menu.md) di un POI, toccare *Dettagli* (o semplicemente tirare su il *menu contestuale*) per visualizzare un riassunto dell'articolo di Wikipedia scelto.
-4. Se si tocca quel testo (per la versione iOS), si verrà reindirizzati all'articolo di Wikipedia offline.
-5. Utilizzare il pulsante *Leggi articolo* o *Leggi articolo completo* per aprire la versione completa dell'articolo di Wikipedia.
-
-
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![POI di Wikipedia francese in inglese](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+Per aprire l'articolo di Wikipedia:
+
+1. Abilitare il [livello POI di Wikipedia](../map/point-layers-on-map.md#-wikipedia) per un profilo specificato.
+2. Toccare un POI sulla mappa.
+3. Nel [menu contestuale](../map/map-context-menu.md) di un POI toccare [Dettagli](../map/map-context-menu.md#details) (o semplicemente tirare su il *menu contestuale*) per visualizzare un abstract dell'[articolo di Wikipedia](../map/map-context-menu.md#article-description) scelto.
+4. Utilizzare il pulsante *Leggi articolo completo* per aprire la versione completa dell'articolo di Wikipedia.
+5. Se i dati di Wikipedia non sono scaricati, appare il pulsante *Leggi su Wikipedia*.
+6. Toccando questo pulsante si apre una finestra di dialogo con le seguenti opzioni: 
+- Scarica Wikipedia e Apri nel Browser (versione a pagamento).
+- Leggi Wikipedia offline e Apri nel Browser (versione gratuita).
+
+![POI di Wikipedia francese in inglese](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Per aprire l'articolo di Wikipedia:
+
+1. Abilitare il [livello POI di Wikipedia](../map/point-layers-on-map.md#-wikipedia) per un profilo specificato.
+2. Toccare un POI sulla mappa.
+3. Nel [menu contestuale](../map/map-context-menu.md) di un POI toccare [Dettagli](../map/map-context-menu.md#details) (o semplicemente tirare su il *menu contestuale*) per visualizzare un abstract dell'[articolo di Wikipedia](../map/map-context-menu.md#article-description) scelto.
+4. Se si tocca quel testo, si verrà reindirizzati all'articolo di Wikipedia offline.
+5. Utilizzare il pulsante *Leggi articolo* per aprire la versione completa dell'articolo di Wikipedia.
 
 ![POI di Wikipedia francese in inglese su iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
@@ -236,13 +245,13 @@ Nel caso in cui l'*articolo di Wikipedia* sia disponibile in diverse lingue, è 
 
 <TabItem value="android" label="Android">
 
-![Cambiare lingua per un articolo specifico](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
+![Cambiare lingue per un articolo specifico](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Cambiare lingua per un articolo specifico](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
+![Cambiare lingue per un articolo specifico](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
 
 </TabItem>
 
