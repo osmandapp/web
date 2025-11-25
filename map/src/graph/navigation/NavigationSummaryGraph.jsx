@@ -1,0 +1,224 @@
+import React, { useContext, useMemo } from 'react';
+import { Chart } from 'react-chartjs-2';
+import { Chart as ChartJS, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
+import { useTranslation } from 'react-i18next';
+import AppContext from '../../context/AppContext';
+import {
+    convertMeters,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    LARGE_UNIT,
+    SMALL_UNIT,
+} from '../../menu/settings/units/UnitsConverter';
+import { getDistance } from '../../util/Utils';
+import styles from './../graph.module.css';
+import { calculateSlopes, ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from '../GraphManager';
+import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsPlugin';
+import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
+
+ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
+
+export default function NavigationSummaryGraph({ route }) {
+    const ctx = useContext(AppContext);
+    const { t } = useTranslation();
+    const unitsSettings = ctx.unitsSettings;
+
+    const graphData = useMemo(() => {
+        if (!route?.features?.length) {
+            return null;
+        }
+
+        const coordinates = [];
+        route.features.forEach((feature) => {
+            if (feature.geometry?.type === 'LineString' && Array.isArray(feature.geometry.coordinates)) {
+                coordinates.push(...feature.geometry.coordinates);
+            }
+        });
+
+        if (coordinates.length < 2) {
+            return null;
+        }
+
+        const points = [];
+        let totalDist = 0;
+        let prevLat = null;
+        let prevLng = null;
+
+        coordinates.forEach(([lng, lat, ele]) => {
+            if (prevLat !== null && prevLng !== null) {
+                totalDist += getDistance(prevLat, prevLng, lat, lng);
+            }
+            prevLat = lat;
+            prevLng = lng;
+
+            const elevation = Number(ele);
+            if (Number.isFinite(elevation)) {
+                const prepDistance = convertMeters(totalDist, unitsSettings.len, LARGE_UNIT);
+                const prepElevation = convertMeters(elevation, unitsSettings.len, SMALL_UNIT);
+                if (prepDistance != null && prepElevation != null) {
+                    points.push({ distance: prepDistance, elevation: prepElevation });
+                }
+            }
+        });
+
+        if (points.length < 2) {
+            return null;
+        }
+
+        const maxPoints = 100;
+        const step = Math.max(1, Math.floor(points.length / maxPoints));
+        const sampledPoints = points.filter((_, i) => i % step === 0);
+
+        const slopes = calculateSlopes(points, {
+            totalDistance: totalDist,
+            distanceKey: 'distance',
+            elevationKey: 'elevation',
+        });
+
+        return { points: sampledPoints, slopes, allPoints: points };
+    }, [route, unitsSettings.len]);
+
+    if (!graphData) {
+        return null;
+    }
+
+    const distanceUnit = t(getLargeLengthUnit({ unitsSettings }));
+    const elevationUnit = t(getSmallLengthUnit({ unitsSettings }));
+
+    const elevationData = graphData.points.map((p) => ({ x: p.distance, y: p.elevation }));
+
+    const slopeData = graphData.points.map((p) => {
+        const slope = graphData.slopes.find((s) => Math.abs(s.dist - p.distance) < 0.01);
+        return { x: p.distance, y: slope ? slope.slope : 0 };
+    });
+
+    const totalDistance = graphData.points[graphData.points.length - 1]?.distance || 0;
+
+    const data = {
+        datasets: [
+            {
+                label: 'Elevation',
+                data: elevationData,
+                borderColor: ELEVATION_COLOR,
+                backgroundColor: ELEVATION_FILL_COLOR,
+                borderWidth: 2,
+                pointRadius: 0,
+                tension: 0.4,
+                fill: true,
+                yAxisID: 'y',
+            },
+            {
+                label: 'Slope',
+                data: slopeData,
+                borderColor: SLOPE_COLOR,
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                pointRadius: 0,
+                tension: 0.3,
+                fill: false,
+                yAxisID: 'y1',
+            },
+        ],
+    };
+
+    const combinedLabelsPlugin = createCombinedYAxisLabelsPlugin([
+        { id: 'y', color: ELEVATION_COLOR, unit: elevationUnit },
+        { id: 'y1', color: SLOPE_COLOR, unit: '%' },
+    ]);
+
+    const distanceXAxisPlugin = createDistanceXAxisPlugin({
+        unitsSettings,
+        totalDistance,
+        t,
+    });
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+            padding: {
+                right: 60,
+                left: 0,
+                top: 10,
+                bottom: 0,
+            },
+        },
+        plugins: {
+            legend: {
+                display: false,
+            },
+            tooltip: {
+                mode: 'index',
+                intersect: false,
+                backgroundColor: '#424242',
+                callbacks: {
+                    title: (items) => {
+                        const dist = items[0].parsed.x;
+                        if (totalDistance < 1 || dist < 1) {
+                            return `${Math.round(dist * 1000)} ${t('m')}`;
+                        }
+                        return `${dist.toFixed(1)} ${distanceUnit}`;
+                    },
+                    label: (context) => {
+                        const label = context.dataset.label || '';
+                        const value = context.parsed.y.toFixed(1);
+                        const unit = context.datasetIndex === 0 ? elevationUnit : '%';
+                        return `${label}: ${value} ${unit}`;
+                    },
+                },
+            },
+        },
+        scales: {
+            x: {
+                type: 'linear',
+                display: true,
+                offset: false,
+                border: {
+                    display: true,
+                },
+                grid: {
+                    display: false,
+                },
+            },
+            y: {
+                type: 'linear',
+                position: 'right',
+                border: {
+                    display: false,
+                },
+                grid: {
+                    display: false,
+                },
+                ticks: {
+                    display: false,
+                },
+            },
+            y1: {
+                type: 'linear',
+                position: 'right',
+                border: {
+                    display: false,
+                },
+                grid: {
+                    display: false,
+                },
+                ticks: {
+                    display: false,
+                },
+            },
+        },
+    };
+
+    return (
+        <div className={styles.routeSummaryGraph}>
+            <div className={styles.routeSummaryGraphCanvas}>
+                <Chart
+                    type="line"
+                    data={data}
+                    options={options}
+                    plugins={[combinedLabelsPlugin, distanceXAxisPlugin]}
+                />
+            </div>
+        </div>
+    );
+}

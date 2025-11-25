@@ -13,9 +13,9 @@ import GraphManager, {
     SPEED,
     STEEPNESS,
     UNDEFINED_DATA,
-} from '../../../manager/GraphManager';
-import TracksManager from '../../../manager/track/TracksManager';
-import AppContext from '../../../context/AppContext';
+} from '../GraphManager';
+import TracksManager from '../../manager/track/TracksManager';
+import AppContext from '../../context/AppContext';
 import {
     BarElement,
     CategoryScale,
@@ -33,7 +33,7 @@ import clsx from 'clsx';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getRelativePosition } from 'chart.js/helpers';
-import { getLargeLengthUnit, getSmallLengthUnit, getSpeedUnit } from '../../../menu/settings/units/UnitsConverter';
+import { getLargeLengthUnit, getSmallLengthUnit, getSpeedUnit } from '../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 
 ChartJS.register(

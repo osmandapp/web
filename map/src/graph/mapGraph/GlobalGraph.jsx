@@ -1,7 +1,7 @@
-import { GLOBAL_GRAPH_HEIGHT_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
+import { GLOBAL_GRAPH_HEIGHT_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import { Box, Divider, Drawer, IconButton, Typography } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import AppContext from '../../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { Chart } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -14,17 +14,17 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { DISTANCE, ELEVATION, SLOPE, SPEED } from '../../../manager/GraphManager';
-import { getGraphData } from '../../../infoblock/components/graph/GpxGraphProvider';
-import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import styles from '../../frame.module.css';
-import SegmentSelector from './SegmentSelector';
+import { DISTANCE, ELEVATION, SLOPE, SPEED } from '../GraphManager';
+import { getGraphData } from '../track/GpxGraphProvider';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import styles from '../../frame/frame.module.css';
+import SegmentSelector from '../analyzer/SegmentSelector';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import YAxisSelector from './YAxisSelector';
 import debounce from 'lodash-es/debounce';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import { getLargeLengthUnit, getSmallLengthUnit } from '../../../menu/settings/units/UnitsConverter';
+import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
 
 const Z_INDEX_GRAPH = 1000;
 const MIN_GRAPH_HEIGHT = 34;

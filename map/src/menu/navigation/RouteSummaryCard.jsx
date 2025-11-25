@@ -7,6 +7,7 @@ import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHov
 import AppContext from '../../context/AppContext';
 import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_ascent_16.svg';
 import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_descent_16.svg';
+import NavigationSummaryGraph from '../../graph/navigation/NavigationSummaryGraph';
 
 function formatDistance(distanceMeters, ctx, locale, t) {
     if (!distanceMeters) {
@@ -73,6 +74,7 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
     const ctx = useContext(AppContext);
     const { t, i18n } = useTranslation();
     const previousSummary = useRef(null);
+    const route = ctx.routeObject.getRoute();
 
     const overall = routeProps?.overall ?? {};
     let summary;
@@ -138,6 +140,7 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
                     </>
                 )}
             </Box>
+            {route && <NavigationSummaryGraph route={route} />}
             <Box sx={{ mt: '20px' }}>
                 <GrayBtnWithBlueHover
                     id="se-route-more-information"

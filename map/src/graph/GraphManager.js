@@ -1,4 +1,4 @@
-import styles from '../../src/resources/mapStyles/styleRulesResult.json';
+import styles from '../resources/mapStyles/styleRulesResult.json';
 import mapKeys from 'lodash-es/mapKeys';
 import isEmpty from 'lodash-es/isEmpty';
 import i18n from '../i18n';
@@ -31,6 +31,10 @@ export const DISTANCE = 'Distance';
 export const SLOPE = 'Slope';
 export const DEFAULT_STYLE = 'default.render.xml';
 export const SKI_STYLE = 'skimap.render.xml';
+
+export const SLOPE_COLOR = '#14CC9E';
+export const ELEVATION_COLOR = '#2183F4';
+export const ELEVATION_FILL_COLOR = 'rgba(35, 123, 255, 0.10)';
 
 export const SLOPE_STEP = 10; //m
 
@@ -160,7 +164,51 @@ export function cap(s) {
     return s && s[0].toUpperCase() + s.slice(1);
 }
 
-export function getSlopes(result, ctx, sumDist) {
+/**
+ * Calculate slope data for a list of points.
+ *
+ * @param {Array} rawPoints - Array of points. Each point should contain either
+ *                            GraphManager's DISTANCE/ELEVATION keys or provide
+ *                            custom keys via options.
+ * @param {Object} options
+ * @param {Object|null} options.ctx - Optional context used by getSlopes to read selected GPX file.
+ * @param {number|null} options.totalDistance - Total distance in meters (used when ctx is not provided).
+ * @param {boolean} options.mutateOriginal - Whether original array can be mutated (default false).
+ * @param {string} options.distanceKey - Key name for distance if points don't contain GraphManager keys.
+ * @param {string} options.elevationKey - Key name for elevation if points don't contain GraphManager keys.
+ *
+ * @returns {Array|null} slopes array with additional min/max properties from getSlopes().
+ */
+export function calculateSlopes(
+    rawPoints,
+    {
+        ctx = null,
+        totalDistance = null,
+        mutateOriginal = false,
+        distanceKey = 'distance',
+        elevationKey = 'elevation',
+    } = {}
+) {
+    if (!rawPoints || rawPoints.length === 0) {
+        return null;
+    }
+
+    const hasGraphKeys = rawPoints[0][DISTANCE] !== undefined && rawPoints[0][ELEVATION] !== undefined;
+
+    let points;
+    if (hasGraphKeys) {
+        points = mutateOriginal ? rawPoints : rawPoints.map((point) => ({ ...point }));
+    } else {
+        points = rawPoints.map((point) => ({
+            [DISTANCE]: point[distanceKey],
+            [ELEVATION]: point[elevationKey],
+        }));
+    }
+
+    return getSlopes(points, ctx, totalDistance);
+}
+
+function getSlopes(result, ctx, sumDist) {
     const totalDistance = ctx?.selectedGpxFile?.analysis?.totalDistance || sumDist;
     let STEP = SLOPE_STEP;
     let l = 10;
@@ -508,7 +556,7 @@ const mouseLine = {
         const ctx = chart.ctx;
         const chartArea = chart.chartArea;
         const x = chart.options.mouseLine?.x;
-        if (!isNaN(x)) {
+        if (!Number.isNaN(x)) {
             ctx.save();
             ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
             ctx.lineTo(chart.options.mouseLine.x, chartArea.top);

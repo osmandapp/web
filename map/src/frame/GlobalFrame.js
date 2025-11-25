@@ -29,7 +29,7 @@ import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../menu/visiblet
 import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
 import { hideAllTracks } from '../manager/track/DeleteTrackManager';
-import GlobalGraph from './components/graph/GlobalGraph';
+import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 
