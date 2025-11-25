@@ -1,5 +1,5 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
 title:  Ricerca PDI
 ---
@@ -65,10 +65,10 @@ OsmAnd offre diversi modi per accedere allo strumento di Ricerca in cui si trova
     2. È possibile inserire prima una query di ricerca o iniziare a cercare PDI in *Menu → Cerca → Categorie* e poi fare clic su **Mostra sulla mappa**.
 
 - **Ricerca per marchio**:
-    - La ricerca di un'attività commerciale per nome del marchio (come Audi, Starbucks o Aldi) è molto simile alla ricerca di diversi PDI per tipo; la differenza principale è che l'elenco dei marchi è fornito all'interno della mappa e soggetto a modifiche ad ogni aggiornamento. 
+    - La ricerca di un'attività commerciale per nome del marchio (come Audi, Starbucks o Aldi) è molto simile alla ricerca di diversi PDI per tipo; la differenza principale è che l'elenco dei marchi è fornito all'interno della mappa ed è soggetto a modifiche ad ogni aggiornamento. 
     - Il marchio è definito dal tag OSM [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) e OsmAnd raccoglie un numero limitato di tipi di marchi per mappa, con un massimo di 1000 marchi per mappa, tuttavia si assicura che l'elenco dei marchi sia allineato tra le mappe vicine.
 
-![Ricerca PDI Android](@site/static/img/search/brand_search_andr.png)
+![Ricerca PDI Android](@site/static/img/search/brand_search_andr.png) ![Ricerca PDI Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -149,7 +149,7 @@ Un filtro può essere composto da un numero piuttosto elevato di elementi, la cu
         Include *9* tipi di filtri: **Frigorifero** (ha *2* valori), **Riscaldamento** (ha *7* valori), **Tipo di accesso a Internet** (ha *3* valori), **Materasso** (ha *2* valori), **Tipo di pagamento** (più di *10* valori), **Doccia** (ha *1* valore), **Fumatori** (ha *6* valori), **Classificazione a stelle** (ha *10* valori), **Accessibilità per sedie a rotelle** (ha *4* valori), Aperto ora / Aperto 24/7.
 
  2. **Bar e ristoranti**. [Bar](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) e [ristoranti](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) rappresentano luoghi di ristorazione.  
-        Include *16* tipi di filtri: **Fasciatoio** (ha *3* valori), **Caffè** (ha *2* valori), **Cucina** (più di *10* valori), **Consegna a domicilio** (ha *1* valore), **Dieta** (ha *8* valori), **Piatto** (più di *10* valori), **Ricarica acqua potabile** (ha *1* valore), **Drive-in** (ha *1* valore), **Tipo di accesso a Internet** (ha *3* valori), **Microbirrificio** (ha *1* valore), **Prodotti biologici** (ha *2* valori), **Posti a sedere all'aperto** (ha *1* valore), **Tipo di pagamento** (più di *10* valori), **Fumatori** (ha *6* valori), **Da asporto** (ha *1* valore), **Accessibilità per sedie a rotelle** (ha *4* valori), Aperto ora / Aperto 24/7.
+        Include *16* tipi di filtri: **Fasciatoio** (ha *3* valori), **Caffè** (ha *2* valori), **Cucina** (più di *10* valori), **Consegna a domicilio** (ha *1* valore), **Dieta** (ha *8* valori), **Piatto** (più di *10* valori), **Ricarica acqua potabile** (ha *1* valore), **Drive-in** (ha *1* valori), **Tipo di accesso a Internet** (ha *3* valori), **Microbirrificio** (ha *1* valore), **Prodotti biologici** (ha *2* valori), **Posti a sedere all'aperto** (ha *1* valore), **Tipo di pagamento** (più di *10* valori), **Fumatori** (ha *6* valori), **Da asporto** (ha *1* valore), **Accessibilità per sedie a rotelle** (ha *4* valori), Aperto ora / Aperto 24/7.
 
  3. **Stazione di ricarica**. Una [stazione di ricarica](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) è un'infrastruttura dove i proprietari di veicoli elettrici possono ricaricare le loro auto, moto o altri veicoli elettrici. Questi punti forniscono caricabatterie e connessioni appropriate per fornire energia alle batterie dei veicoli.
         Include *35* tipi di filtri: **Accesso biciclette** (ha *1* valore), **Accesso autobus** (ha *1* valore), **Accesso mezzi pesanti** (ha *5* valori), **Accesso auto** (ha *1* valore), **Accesso scooter** (ha *1* valore), **Autenticazione tramite app** (ha *1* valore), **Autenticazione tramite chip card** (ha *1* valore), **Autenticazione contactless** (ha *1* valore), **Autenticazione tramite chiave** (ha *1* valore), **Autenticazione richiesta** (ha *1* valore), **Autenticazione tramite telefonata** (ha *1* valore) **Autenticazione tramite messaggio breve** (ha *1* valore), **A pagamento** (ha *2* valori), **Tipo di accesso a Internet** (ha *3* valori), **Tipo di accesso a Internet** (ha *3* valori), **Accessibilità per sedie a rotelle** (ha *4* valori), Aperto ora / Aperto 24/7, e altri.  
@@ -161,7 +161,7 @@ Un filtro può essere composto da un numero piuttosto elevato di elementi, la cu
         Non contiene alcun filtro.
 
  6. **Stazione di servizio**. Una [stazione di carburante](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), nota anche come stazione di servizio, distributore di benzina o garage di benzina. È la struttura di tipo commerciale dove i veicoli a motore possono essere riforniti.  
-        Include *13* tipi di filtri: **Autolavaggio** (ha *2* valori), **Prelievo contanti** (ha *5* valori), **Aria compressa** (ha *1* valore), **Tipo di carburante (aviazione)** (ha più di *20* valori), **Carte carburante** (ha *5* valori), **Tipo di pagamento** (ha più di *20* valori), **Cassa automatica** (ha *2* valori), **Accesso motoslitte** (ha *3* valori), **Bagno** (più di *1* valore), **Aspirapolvere** (ha *1* valore), **Distributore automatico di carburante** (ha *1* valore), **Accessibilità per sedie a rotelle** (ha *4* valori), Aperto ora / Aperto 24/7.  
+        Include *13* tipi di filtri: **Autolavaggio** (ha *2* valori), **Prelievo contanti** (ha *5* valori), **Aria compressa** (ha *1* valori), **Tipo di carburante (avia)** (ha più di *20* valori), **Carte carburante** (ha *5* valori), **Tipo di pagamento** (ha più di *20* valori), **Cassa automatica** (ha *2* valori), **Accesso motoslitte** (ha *3* valori), **Bagno** (più di *1* valori), **Aspirapolvere** (ha *1* valori), **Distributore automatico di carburante** (ha *1* valori), **Accessibilità per sedie a rotelle** (ha *4* valori), Aperto ora / Aperto 24/7.  
 
  7. **Finanza**. [Finanza](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) utilizzato per uffici di aziende del settore finanziario.  
         Include *5* tipi di filtri.  
@@ -274,7 +274,7 @@ Uso della Ricerca Online:
 
 ![Ricerca PDI Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
 
-Per migliorare i risultati, prima di utilizzare lo strumento di Ricerca, ingrandire la mappa per avvicinarsi al punto in cui è necessario trovare una posizione specifica. E durante la ricerca, è possibile **aumentare il raggio di ricerca** per trovare luoghi più lontani dalla propria posizione. Durante la ricerca offline, se i risultati richiesti non sono disponibili, OsmAnd suggerisce di utilizzare la ricerca online.  
+Per migliorare i risultati, prima di utilizzare lo strumento di ricerca, ingrandire la mappa per avvicinarsi al punto in cui è necessario trovare una posizione specifica. E durante la ricerca, è possibile **aumentare il raggio di ricerca** per trovare luoghi più lontani dalla propria posizione. Durante la ricerca offline, se i risultati richiesti non sono disponibili, OsmAnd suggerisce di utilizzare la ricerca online.  
 
 È possibile trovare informazioni sulla Navigazione Online nell'articolo [Routing online](../navigation/routing/online-routing.md).
 
@@ -340,7 +340,7 @@ Per creare filtri personalizzati per la ricerca di luoghi sulla mappa, seleziona
 
 7. **Cibo**. Include 12 tipi di filtri.  
 
-8. **Pericolo**. Include 5 tipi: *Pericolo valanghe, Pericolo erosione, Pericolo inondazioni, Pericolo nucleare, Strada sdrucciolevole*.  
+8. **Pericolo**. Include 5 tipi: *Pericolo valanghe, Pericolo erosione, Pericolo inondazioni, Pericolo nucleare, Strada sdrucciolevole*. La categoria Pericolo include sia i PDI con tag hazard=* sui nodi sia i segmenti di strada o sentiero (ways) contrassegnati con lo stesso tag, se esportati come oggetti ricercabili. Per una panoramica visiva di tutte le icone di pericolo utilizzate sulla mappa, vedere la sezione [Pericolo](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Include 31 tipi di filtri.
 

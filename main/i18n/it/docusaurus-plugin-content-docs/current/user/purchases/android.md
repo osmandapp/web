@@ -1,5 +1,5 @@
 ---
-source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
+source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -125,6 +125,7 @@ La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Supporto sensori esterni](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dati topografici](../plugins/topography.md#overview)<br/>(Curve di livello e Terreno) | **-** | ✔ | ✔ |
+| [Griglia coordinate — Personalizzazione colore](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualizzazione traccia 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profondità nautiche](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Luoghi popolari (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |

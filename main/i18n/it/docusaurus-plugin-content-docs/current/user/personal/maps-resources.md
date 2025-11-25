@@ -1,5 +1,5 @@
 ---
-source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
+source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
 sidebar_position: 2
 title:  Mappe e Risorse
 ---
@@ -177,7 +177,9 @@ Leggi di più nell'articolo [**Pacchetto personalizzato**](../plugins/custom).
 
 </Tabs>
 
-Per i paesi composti da **mappe di più regioni**, è possibile utilizzare il caricamento in blocco di più mappe. Le mappe disponibili per questo tipo di download sono visualizzate con icone a doppia freccia di download e un'etichetta con il numero di regioni all'interno (ad es. Linee di contorno / Tutte le regioni: 10). È possibile scegliere quante mappe scaricare.
+Per i paesi composti da **mappe di più regioni**, è possibile utilizzare il caricamento in blocco di più mappe. Le mappe disponibili per questo tipo di download sono visualizzate con icone a doppia freccia di download e un'etichetta con il numero di regioni all'interno (ad es. Linee di contorno / Tutte le regioni: 10). È possibile scegliere quante mappe scaricare. Il caricamento in blocco supporta diversi tipi di mappa, inclusi Standard, Linee di contorno, Wikipedia e Terreno.
+
+Quando un elemento di paese raggruppato viene aperto, viene visualizzata una scheda inferiore con l'elenco completo delle mappe per quel paese, consentendo di selezionare mappe individuali o di scaricarle tutte in una volta.
 
 
 ## Menu Locale {#local-menu}
@@ -404,11 +406,21 @@ Use sorting options to organize map data:
 
 Vai a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Menu Mappe Aggiorna mappe Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Menu Mappe Aggiorna mappe Android](@site/static/img/personal/maps/maps_update_andr.png) ![Scheda Aggiorna mappe Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 La scheda **Aggiornamenti** consente di aggiornare le mappe e le risorse di OsmAnd. Le mappe standard e solo strade vengono rilasciate una volta al mese, di solito tra il 2° e il 5° giorno, e includono i dati di OpenStreetMap fino all'ultimo giorno del mese precedente (ad esempio, la versione di ottobre contiene i dati fino al 30 settembre). Altri dati come Wikipedia, mappe del terreno o nautiche possono seguire calendari di aggiornamento diversi e non regolari. Le previsioni meteo hanno un proprio ciclo di aggiornamento regolare. Per i dettagli, vedere [Scarica Previsioni](../plugins/weather.md#download-forecast). 
 
+Se diverse mappe dello stesso paese richiedono un aggiornamento, OsmAnd le raggruppa in un singolo elemento nell'elenco Aggiornamenti. L'elemento raggruppato mostra il nome del paese e il numero di mappe incluse. Toccalo per aprire una scheda inferiore *Aggiorna mappe*, che mostra tutte le mappe che devono essere aggiornate. 
+
 Usa il pulsante *Aggiorna tutto* per aggiornare tutte le mappe contemporaneamente, o aggiorna le singole mappe secondo necessità. Per aggiornamenti orari, controlla lo stato del tuo abbonamento a [Aggiornamenti Live](#live-updates). Se abilitato, la sezione **Aggiornamenti Live** apparirà in cima alla scheda, sotto l'indicatore della Memoria del Dispositivo.
+
+È inoltre possibile gestire le mappe direttamente dalla scheda Aggiornamenti utilizzando un gesto di pressione prolungata su qualsiasi mappa elencata. Questo apre un menu contestuale che fornisce diverse opzioni:
+- **Info** — visualizza dettagli sulla mappa selezionata
+- **Aggiorna** — scarica l'ultima versione disponibile
+- **Disattiva** — disabilita temporaneamente una mappa senza rimuoverne i dati
+- **Rimuovi** — elimina completamente i dati della mappa dal dispositivo
+
+Quando una mappa è disattivata, potrebbe scomparire temporaneamente dalla scheda Locale. Se un aggiornamento diventa disponibile per una mappa disattivata, apparirà comunque nell'elenco Aggiornamenti e sarà mostrata con un'icona grigia. L'aggiornamento di tale mappa la riattiverà automaticamente.
 
 </TabItem>
 
