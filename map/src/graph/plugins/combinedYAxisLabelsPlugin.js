@@ -41,7 +41,7 @@ export function createCombinedYAxisLabelsPlugin(axes) {
             ctx.setLineDash([]);
             ctx.restore();
         },
-        afterDraw: (chart) => {
+        afterDatasetsDraw: (chart) => {
             const firstScale = chart.scales[axes[0].id];
             if (!firstScale) return;
 

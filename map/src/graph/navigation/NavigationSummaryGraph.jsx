@@ -15,6 +15,8 @@ import styles from './../graph.module.css';
 import { calculateSlopes, ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from '../GraphManager';
 import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsPlugin';
 import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
+import { createTooltip } from '../plugins/tooltipPlugin';
+import { createMouseLinePlugin } from '../plugins/mouseLinePlugin';
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
@@ -83,7 +85,8 @@ export default function NavigationSummaryGraph({ route }) {
     }
 
     const distanceUnit = t(getLargeLengthUnit({ unitsSettings }));
-    const elevationUnit = t(getSmallLengthUnit({ unitsSettings }));
+    const smallDistanceUnit = t(getSmallLengthUnit({ unitsSettings }));
+    const elevationUnit = smallDistanceUnit;
 
     const elevationData = graphData.points.map((p) => ({ x: p.distance, y: p.elevation }));
 
@@ -132,6 +135,20 @@ export default function NavigationSummaryGraph({ route }) {
         t,
     });
 
+    const tooltipConfig = createTooltip({
+        t,
+        distanceUnit,
+        smallDistanceUnit,
+        totalDistance,
+        mainParams: [
+            { id: 'y', label: 'altitude', unit: elevationUnit },
+            { id: 'y1', label: 'shared_string_slope', unit: '%' },
+        ],
+        attributes: null,
+    });
+
+    const mouseLinePlugin = createMouseLinePlugin('#f8931d');
+
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -147,26 +164,7 @@ export default function NavigationSummaryGraph({ route }) {
             legend: {
                 display: false,
             },
-            tooltip: {
-                mode: 'index',
-                intersect: false,
-                backgroundColor: '#424242',
-                callbacks: {
-                    title: (items) => {
-                        const dist = items[0].parsed.x;
-                        if (totalDistance < 1 || dist < 1) {
-                            return `${Math.round(dist * 1000)} ${t('m')}`;
-                        }
-                        return `${dist.toFixed(1)} ${distanceUnit}`;
-                    },
-                    label: (context) => {
-                        const label = context.dataset.label || '';
-                        const value = context.parsed.y.toFixed(1);
-                        const unit = context.datasetIndex === 0 ? elevationUnit : '%';
-                        return `${label}: ${value} ${unit}`;
-                    },
-                },
-            },
+            tooltip: tooltipConfig,
         },
         scales: {
             x: {
@@ -216,7 +214,7 @@ export default function NavigationSummaryGraph({ route }) {
                     type="line"
                     data={data}
                     options={options}
-                    plugins={[combinedLabelsPlugin, distanceXAxisPlugin]}
+                    plugins={[combinedLabelsPlugin, distanceXAxisPlugin, mouseLinePlugin]}
                 />
             </div>
         </div>

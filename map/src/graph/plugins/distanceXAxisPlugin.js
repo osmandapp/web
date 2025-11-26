@@ -89,7 +89,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
 
             xScale.ticks = ticks;
         },
-        afterDraw: (chart) => {
+        afterDatasetsDraw: (chart) => {
             const xScale = chart.scales.x;
             if (!xScale) return;
 
@@ -101,14 +101,14 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             ctx.strokeStyle = '#BEBCC2';
             ctx.lineWidth = 1;
 
-            xScale.ticks.forEach((tick) => {
+            for (const tick of xScale.ticks) {
                 const x = xScale.getPixelForValue(tick.value);
 
                 ctx.beginPath();
                 ctx.moveTo(x, yPosition - 4);
                 ctx.lineTo(x, yPosition + 4);
                 ctx.stroke();
-            });
+            }
 
             ctx.restore();
         },
