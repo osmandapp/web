@@ -1,5 +1,5 @@
 ---
-source-hash: 36783a2d9726e20533612f6290c007ad9ed255d7b47c73b1d33a52dbd5388414
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: Risorse e personalizzazioni
 ---
@@ -107,6 +107,7 @@ Il file predefinito [render.xml](https://github.com/osmandapp/OsmAnd-resources/b
 | Mappa Open Fiets | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) è uno stile di mappa incentrato sul ciclismo, che evidenzia le corsie ciclabili (in rosso), i percorsi ciclabili (tratteggiati in blu), le piste ciclabili (tratteggiate in rosso) e le strade a traffico veicolare limitato, come le strade ciclabili (bordi rossi continui).  |[Stile OpenFietsMap GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Stile di mappa Selection | Lo ["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) è uno stile di mappa di Holder Tamm che consente di scegliere se nascondere o meno determinati oggetti.  |["Stile di mappa Selection"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Lo stile di rendering ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) si basa principalmente su UniMap e routes.addon.render.xml  |["Stile di mappa ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [Si tratta di uno stile di rendering OsmAnd ottimizzato per l'inseguimento di tempeste](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 
 ### Mappe offline {#offline-maps}

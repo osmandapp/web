@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  Navigazione per barca
 ---
@@ -65,7 +65,7 @@ Tipicamente, la *Navigazione per barca* viene utilizzata con il profilo barca (l
 
 | Parametro | Descrizione | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Consente di utilizzare corsi d'acqua e canali di scolo per la navigazione in barca. L'attivazione di questa opzione può essere utile per piccole imbarcazioni come canoe, kayak, zattere, barche a remi. |  I [corsi d'acqua (Streams)](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sono corsi d'acqua naturali troppo stretti per essere definiti fiumi. I [canali di scolo (Drains)](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sono corsi d'acqua artificiali, tipicamente rivestiti di cemento o materiale simile, utilizzati per trasportare l'acqua in eccesso, come l'acqua piovana o di scarico.|
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Consente di utilizzare corsi d'acqua e canali di scolo per la navigazione in barca. L'attivazione di questa opzione può essere utile per piccole imbarcazioni come canoe, kayak, zattere, barche a remi. |  [Corsi d'acqua](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sono corsi d'acqua naturali troppo stretti per essere definiti fiumi. [Canali di scolo](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sono corsi d'acqua artificiali, tipicamente rivestiti di cemento o materiale simile, utilizzati per trasportare l'acqua in eccesso, come l'acqua piovana o di scarico.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  L'attivazione di questa opzione consente di utilizzare corsi d'acqua intermittenti per la navigazione in barca.   | Il tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) viene utilizzato per indicare che un corso d'acqua non contiene acqua in modo permanente.  |
 | *Consenti traghetti* | Consente la navigazione tramite rotte dei traghetti. | Utilizza `route=ferry` dove presente in OSM. Non sono richieste nuove mappe. |
 
@@ -89,7 +89,7 @@ Il tipo di [Navigazione per barca](#route-parameters---boat) è l'algoritmo di n
  - [Navigazione diretta al punto per barca](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Navigazione in linea retta per barca](./boat-navigation.md#straight-line-routing-for-boat)
 
-È importante notare che i tipi di navigazione *Diretta al punto* e *In linea retta* dovrebbero essere utilizzati solo in acque aperte dove non ci sono ostacoli o pericoli per la navigazione. Se si naviga in un corso d'acqua con un canale o un percorso specifico, si dovrebbe utilizzare il tipo di navigazione per barca in OsmAnd, che guiderà attraverso i canali di navigazione corretti ed eviterà aree poco profonde o altri pericoli.  
+È importante notare che i tipi di navigazione *Diretta al punto* e *In linea retta* dovrebbero essere utilizzati solo in acque aperte dove non ci sono ostacoli o pericoli per la navigazione. Se si naviga in un corso d'acqua con un canale o un percorso specifico, si dovrebbe utilizzare il tipo di navigazione per barca in OsmAnd, che guiderà attraverso i canali di navigazione corretti ed eviterà aree poco profonde o altri pericoli. Alcuni pericoli mappati basati sui tag OSM hazard=* potrebbero essere mostrati sulla mappa come icone POI di pericoli o etichette di testo. 
 
 Questi tipi di navigazione per il profilo barca possono essere attivati tramite il seguente percorso: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> o un altro) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 

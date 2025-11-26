@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  Sensori esterni
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -241,6 +241,8 @@ Tipi di widget supportati:
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – temperatura ambiente attuale.
 7. **Livello batteria** – percentuale di batteria rimanente in un sensore BLE connesso, attivalo in **Impostazioni sensore**.
 
+**Nota:** Se un sensore si disconnette temporaneamente, tocca il suo widget sulla mappa per tentare immediatamente una riconnessione — non è necessario aprire il menu Sensori esterni.
+
 
 ### Impostazioni widget {#widget-settings}
 
@@ -258,7 +260,7 @@ Vai su: *<Translate android="true" ids="shared_string_menu,map_widget_config,sha
 
 Vai su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegli un pannello → Aggiungi widget → Sensore esterno → Scegli un widget → Impostazioni*
 
-![Impostazioni widget Sensori esterni Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![Impostazioni widget Sensori esterni iOS](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -136,6 +136,7 @@ Il pannello **Informazioni sull'oggetto** fornisce dettagli aggiuntivi sull'ogge
 
 I dettagli disponibili includono:
 
+- [Descrizione dell'articolo](#article-description)
 - [Nomi alternativi](#alternative-names)
 - [Coordinate](#coordinates)
 - [All'interno delle aree](#polygon-information)
@@ -153,7 +154,34 @@ Inoltre, il pannello può includere [Dettagli OpenStreetMap](https://wiki.openst
 - [Orari di apertura](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Tariffa](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Accessibilità](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Larghezza](https://wiki.openstreetmap.org/wiki/Key:width) / [Altezza](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Larghezza](https://wiki.openstreetmap.org/wiki/Key:width) / [Altezza](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Oltre ai campi elencati sopra, OsmAnd può mostrare anche informazioni descrittive extra prese da OpenStreetMap. Questi attributi aiutano a comprendere meglio le caratteristiche di un luogo e possono includere dettagli come elevazione, direzione, anno di costruzione, tipo di superficie o copertura, livello interno, opzioni di pagamento, disponibilità di consegna o asporto e molti altri. OsmAnd visualizza questi attributi con etichette chiare e, dove possibile, icone, rendendo più facile leggere e riconoscere le informazioni. L'insieme esatto di attributi dipende dai dati disponibili in OpenStreetMap per l'oggetto selezionato.
+
+
+### Descrizione dell'articolo {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Elenco descrizioni](@site/static/img/map/description_list_new_android.png) ![Elenco descrizioni](@site/static/img/map/description_list_dialog.png)
+
+Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md#wikipedia-article), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
+
+Se il luogo selezionato ha un articolo di Wikipedia, viene mostrato un'anteprima breve in questa sezione. Quando l'articolo completo non è disponibile offline, appare il pulsante *Leggi su Wikipedia*. Toccandolo si apre una finestra di dialogo con opzioni a seconda dell'accesso dell'utente: gli utenti con un piano acquistato possono scaricare i dati regionali di Wikipedia o aprire l'articolo in un browser, mentre gli utenti gratuiti possono aprire l'articolo online o procedere alla schermata che offre l'accesso offline.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Elenco descrizioni](@site/static/img/map/description_list_new_ios.png)
+
+Questa parte contiene una parte della descrizione dall'[articolo di Wikipedia](../plugins/wikipedia.md), dal [Preferito](../personal/favorites.md) o dalla descrizione del Waypoint; toccando è possibile aprire la descrizione completa.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Nomi alternativi {#alternative-names}
@@ -168,7 +196,7 @@ Inoltre, il pannello può includere [Dettagli OpenStreetMap](https://wiki.openst
 
 <TabItem value="ios" label="iOS">
 
-![Nomi alternativi iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Nomi alternativi iOS 2](@site/static/img/map/alternative_names_2_ios.png)
+![Nomi alternativi iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Nomi alternativi iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -298,27 +326,6 @@ Mostra informazioni sui percorsi del trasporto pubblico per la fermata scelta. P
 Questo è un elenco di tutti i punti di un gruppo per un Preferito o un Waypoint. Toccando, l'intero elenco di punti di un gruppo si espande; quando si tocca un punto dell'elenco, la mappa si sposta sul punto selezionato.
 
 
-
-
-### Descrizione dell'articolo {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Elenco descrizioni](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Elenco descrizioni](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Questa parte contiene una parte della descrizione dell'[articolo di Wikipedia](../plugins/wikipedia.md), del [Preferito](../personal/favorites.md) o del Waypoint; toccando è possibile aprire la descrizione completa.
 
 
 ### Link OpenStreetMap {#openstreetmap-link}

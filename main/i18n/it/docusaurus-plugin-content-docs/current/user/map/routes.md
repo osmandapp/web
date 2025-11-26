@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Percorsi
 ---
@@ -182,6 +182,9 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 - OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
 - I tipi principali di percorso possono essere filtrati anche per classi e sottoclassi, consentendo di visualizzare solo gruppi specifici all'interno di ciascun tipo. Ad esempio, è possibile mostrare i percorsi escursionistici per **simboli OSMC** come classi e per *reti internazionali, nazionali, regionali* o *locali* come sottoclassi.
 - È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md).  
+- Quando più percorsi corrono lungo la stessa strada, ogni percorso viene visualizzato come una linea semitrasparente separata posizionata sopra le altre. 
+- Quando si tocca una posizione in cui più percorsi si sovrappongono, viene mostrato un menu contestuale con tutti i percorsi che passano attraverso quel punto. 
+- Sono richieste mappe vettoriali aggiornate per visualizzare tutti gli elementi del nuovo schema di rendering dei percorsi. 
 
 ![Mappa percorsi - escursionismo osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Mappa percorsi - reti di nodi ciclabili](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -195,7 +198,8 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 - Per visualizzare i percorsi richiesti sulla mappa, abilitali nell'elenco *Percorsi* del menu [Configura mappa](../map/configure-map-menu.md).
 - OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
-- È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md).  
+- È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md). 
+- Quando più percorsi corrono lungo la stessa strada, ogni percorso viene visualizzato come una linea semitrasparente separata posizionata sopra le altre.   
 
 ![Mappa percorsi - escursionismo osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Mappa percorsi - reti di nodi ciclabili](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -361,13 +365,13 @@ Per cercare, vai al menu *<Translate android="true" ids="search_button"/>* o *<T
 
 </Tabs>  
 
-Vai a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* per trovare i percorsi desiderati. I percorsi includono nome, tipo di attività, lunghezza, posizione e distanza dal punto più vicino.
+Vai a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* per trovare i percorsi desiderati. I percorsi includono nome, tipo di attività, lunghezza, posizione e distanza dal punto più vicino. Su Android, vengono mostrate anche le metriche di altitudine come salita e discesa dove disponibili. Le variazioni di altitudine minori (meno di 10 m) sono nascoste per mantenere l'elenco chiaro. Tutti i valori rispettano le unità di distanza e altitudine selezionate nell'app.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Percorsi sul terreno](@site/static/img/map/route_search_1.png)
+![Percorsi sul terreno](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -385,7 +389,7 @@ Utilizza il pulsante dei filtri (angolo in alto a destra) per visualizzare solo 
 
 <TabItem value="android" label="Android">
 
-![Percorsi sul terreno](@site/static/img/map/route_search_2.png) ![Percorsi sul terreno](@site/static/img/map/route_search_3.png)
+![Percorsi sul terreno](@site/static/img/map/route_search_2_new.png) ![Percorsi sul terreno](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

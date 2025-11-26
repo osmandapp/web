@@ -47,7 +47,7 @@ function updateSelectedGroup({ favorites, selectedGroupName, result, id }) {
             updatetimems: result.updatetimems,
             clienttimems: result.clienttimems,
             file,
-            pointsGroups: result.data.pointsGroups,
+            pointsGroups: result.data.pointsGroups || {},
             hidden: false,
             id: getUniqFileId(file),
         };
@@ -122,7 +122,7 @@ function createNewGroup({ g, file, updatetimems, clienttimems, pointsGroups }) {
         updatetimems: updatetimems,
         clienttimems: clienttimems,
         file: file,
-        pointsGroups: pointsGroups,
+        pointsGroups: pointsGroups || {},
     };
     if (!isEmpty(file.wpts)) {
         newGroup.hidden = file.wpts[0].hidden;

@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title:  Righello del raggio e Righello
 ---
@@ -69,6 +69,8 @@ Questo strumento è utile quando si ha bisogno di una rapida comprensione delle 
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="radius_ruler_item"/>*
 
+Disponibile su tutti i pannelli: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, e <Translate android="true" ids="shared_string_right"/>.
+
 ![Mostra posizione Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
@@ -76,7 +78,9 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Mostra posizione Android](@site/static/img/widgets/radius_ruler_height_ios.png)
+Disponibile su tutti i pannelli: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Sinistra e Destra.
+
+![Mostra posizione iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -165,7 +169,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Altro → Posizione sulla schermata*
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Altro → Posizione della posizione sulla schermata*
 
 ![Mostra posizione Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Righello del raggio verso il basso](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
@@ -198,8 +202,8 @@ Per maggiori informazioni sulla *posizione sulla schermata*, consulta l'articolo
 
 Puoi passare alla **vista 3D** per visualizzare meglio le distanze e il terreno circostante quando usi il Righello del raggio. Questa vista inclina la mappa e fornisce un effetto prospettico che espande il raggio visibile.
 
-- Tocca [il pulsante della posizione](../map/interact-with-map.md#my-location-and-zoom) per centrare la tua posizione.
-- Usa un gesto di [scorrimento verso l'alto con due dita](../map/interact-with-map.md#gestures) per inclinare la mappa in modalità 3D.
+- Tocca [il pulsante della posizione](../map/interact-with-map.md#my-location-and-zoom) per focalizzare la tua posizione.
+- Usa un [gesto di scorrimento verso l'alto con due dita](../map/interact-with-map.md#gestures) per inclinare la mappa in modalità 3D.
 
 I cerchi del raggio appariranno con profondità, il che è particolarmente utile per la pianificazione di percorsi in aree collinari o ambienti urbani dove il contesto verticale è importante.
 
@@ -270,4 +274,4 @@ Guarda questi brevi tutorial per imparare a usare il Righello del raggio e gli s
 - [Widget informativi](./info-widgets.md)
 - [Widget di navigazione](./nav-widgets.md)
 - [Azione rapida](./quick-action.md)
-- [Widget dei preferiti](./markers.md)
+- [Widget marker](./markers.md)
