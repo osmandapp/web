@@ -93,13 +93,29 @@ Line gradient visualizations uses palette files (`route_<type_name>_<palette_nam
 - For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_<palette_name>.txt`), Slope (`route_slope_<palette_name>.txt`),* and *Elevation (Altitude) (`route_elevation_<palette_name>.txt`)*.
 - For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_<palette_name>.txt`)*, and *Elevation (Altitude)*, or info from *External sensors*.
 
+### Favorites & Waypoints {#favorites-waypoints}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color palette](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+The `user_palette_default.txt` palette is used for predefined colors assigned to [Favorites](./favorites.md#edit--replace--delete) and [Waypoints](https://osmand.net/docs/user/navigation/setup/gpx-navigation#waypoints).
+
 ### Weather {#weather}
 
 Weather palette files (`weather_<type_name>.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
-
-### Colors {#colors}
-
-Color palette (`user_palette_default.txt`) is simply used for predefined colors to assign to [Favorites](./favorites.md), [Tracks](./tracks/).
 
 
 ## Palette Legend {#palette-legend}
