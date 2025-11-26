@@ -57,14 +57,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
                 xScale.max = totalDistance;
 
                 if (xScale.ticks) {
-                    xScale.ticks.callback = formatDistance;
-                    xScale.ticks.font = {
-                        family: 'Roboto',
-                        size: 10,
-                        weight: 500,
-                        lineHeight: 'normal',
-                    };
-                    xScale.ticks.color = '#757575';
+                    xScale.ticks.display = false;
                 }
 
                 if (xScale.border) {
@@ -106,6 +99,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             ctx.strokeStyle = '#BEBCC2';
             ctx.lineWidth = 1;
 
+            // Draw ticks
             for (const tick of xScale.ticks) {
                 const x = xScale.getPixelForValue(tick.value);
 
@@ -113,6 +107,30 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
                 ctx.moveTo(x, yPosition - 4);
                 ctx.lineTo(x, yPosition + 4);
                 ctx.stroke();
+            }
+
+            // Draw labels
+            ctx.font = '500 10px Roboto, sans-serif';
+            ctx.fillStyle = '#757575';
+            ctx.letterSpacing = '0.1px';
+
+            for (let i = 0; i < xScale.ticks.length; i++) {
+                const tick = xScale.ticks[i];
+                const x = xScale.getPixelForValue(tick.value);
+                const label = formatDistance(tick.value);
+
+                if (i === 0) {
+                    // First label - align left
+                    ctx.textAlign = 'left';
+                } else if (i === xScale.ticks.length - 1) {
+                    // Last label - align right
+                    ctx.textAlign = 'right';
+                } else {
+                    // Middle labels - align center
+                    ctx.textAlign = 'center';
+                }
+
+                ctx.fillText(label, x, yPosition + 18);
             }
 
             ctx.restore();
