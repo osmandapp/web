@@ -21,17 +21,25 @@ import { createMouseLinePlugin } from '../plugins/mouseLinePlugin';
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend, zoomPlugin);
 
+/**
+ * Navigation route summary graph displaying elevation and slope.
+ * Supports zoom, pan, and shows marker on map on hover.
+ *
+ * @param {Object} route - GeoJSON route with features containing LineString geometry and elevation data
+ */
 export default function NavigationSummaryGraph({ route }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const unitsSettings = ctx.unitsSettings;
     const chartRef = useRef(null);
 
+    // Process route geometry and calculate distances, elevations, and slopes
     const graphData = useMemo(() => {
         if (!route?.features?.length) {
             return null;
         }
 
+        // Extract all coordinates from route features
         const coordinates = [];
         route.features.forEach((feature) => {
             if (feature.geometry?.type === 'LineString' && Array.isArray(feature.geometry.coordinates)) {
@@ -49,6 +57,7 @@ export default function NavigationSummaryGraph({ route }) {
         let prevLat = null;
         let prevLng = null;
 
+        // Calculate cumulative distance and elevation for each point
         coordinates.forEach(([lng, lat, ele]) => {
             if (prevLat !== null && prevLng !== null) {
                 totalDist += getDistance(prevLat, prevLng, lat, lng);
@@ -71,6 +80,7 @@ export default function NavigationSummaryGraph({ route }) {
             return null;
         }
 
+        // Sample points for graph performance (max 100 points displayed)
         const maxPoints = 100;
         const step = Math.max(1, Math.floor(points.length / maxPoints));
         const sampledPoints = points.filter((_, i) => i % step === 0);

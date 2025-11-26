@@ -39,6 +39,7 @@ export function createMouseLinePlugin(color = '#757575') {
             const x = chart.options.mouseLine?.x;
 
             if (!Number.isNaN(x)) {
+                // Draw vertical line from bottom to top
                 ctx.save();
                 ctx.beginPath();
                 ctx.moveTo(x, chartArea.bottom);

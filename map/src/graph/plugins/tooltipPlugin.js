@@ -27,6 +27,7 @@ export function createTooltip({
         backgroundColor: '#757575',
         displayColors: false,
         callbacks: {
+            // Display distance in tooltip title
             title: (items) => {
                 const dist = items[0]?.parsed?.x;
                 if (!Number.isFinite(dist)) {
@@ -35,12 +36,14 @@ export function createTooltip({
 
                 const distLabel = t('distance');
 
+                // Show in small units (m/ft) for short distances
                 if (totalDistance < 1 || dist < 1) {
                     return `${distLabel}: ${Math.round(dist * 1000)} ${smallDistanceUnit}`;
                 }
 
                 return `${distLabel}: ${dist.toFixed(1)} ${distanceUnit}`;
             },
+            // Display main parameters (elevation, slope, speed)
             label: (context) => {
                 const param = mainParams.find((p) => p.id === context.dataset.yAxisID);
                 if (!param) {
@@ -56,6 +59,7 @@ export function createTooltip({
 
                 return `${label}: ${value.toFixed(1)} ${param.unit}`;
             },
+            // Display optional attributes below separator line
             afterBody: (items) => {
                 if (!attributes || !items[0]) {
                     return [];
@@ -64,7 +68,7 @@ export function createTooltip({
                 const result = [];
                 const xValue = items[0].parsed.x;
 
-                // Find attributes at this distance
+                // Find road attributes at current distance
                 const foundAttributes = [];
                 for (const attrKey of Object.keys(attributes)) {
                     const attrData = attributes[attrKey];
