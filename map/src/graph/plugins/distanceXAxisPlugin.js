@@ -58,7 +58,12 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
 
                 if (xScale.ticks) {
                     xScale.ticks.callback = formatDistance;
-                    xScale.ticks.font = { size: 10 };
+                    xScale.ticks.font = {
+                        family: 'Roboto',
+                        size: 10,
+                        weight: 500,
+                        lineHeight: 'normal',
+                    };
                     xScale.ticks.color = '#757575';
                 }
 
