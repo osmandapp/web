@@ -15,6 +15,8 @@ export function createMouseLinePlugin(color = '#757575') {
                 chart.options.mouseLine = {};
             }
 
+            const oldX = chart.options.mouseLine.x;
+
             if (
                 e.event.x >= chartArea.left &&
                 e.event.y >= chartArea.top &&
@@ -24,6 +26,11 @@ export function createMouseLinePlugin(color = '#757575') {
                 chart.options.mouseLine.x = e.event.x;
             } else {
                 chart.options.mouseLine.x = Number.NaN;
+            }
+
+            // Trigger redraw if position changed
+            if (oldX !== chart.options.mouseLine.x) {
+                e.changed = true;
             }
         },
         beforeTooltipDraw: (chart) => {
