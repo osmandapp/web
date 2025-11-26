@@ -53,7 +53,8 @@ export function createCombinedYAxisLabelsPlugin(axes) {
             const chartArea = chart.chartArea;
 
             ctx.save();
-            ctx.font = 'bold 11px sans-serif';
+            ctx.font = '500 10px Roboto, sans-serif';
+            ctx.letterSpacing = '0.1px';
             ctx.textAlign = 'left';
 
             for (let i = 0; i < 3; i++) {

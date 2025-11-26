@@ -154,7 +154,7 @@ export default function NavigationSummaryGraph({ route }) {
         maintainAspectRatio: false,
         layout: {
             padding: {
-                right: 60,
+                right: 50,
                 left: 0,
                 top: 10,
                 bottom: 0,

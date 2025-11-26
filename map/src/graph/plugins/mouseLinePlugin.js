@@ -37,7 +37,7 @@ export function createMouseLinePlugin(color = '#737D8C') {
                 ctx.moveTo(x, chartArea.bottom);
                 ctx.lineTo(x, chartArea.top);
                 ctx.strokeStyle = color;
-                ctx.lineWidth = 2;
+                ctx.lineWidth = 1;
                 ctx.stroke();
                 ctx.restore();
             }
