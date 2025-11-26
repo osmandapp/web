@@ -243,8 +243,6 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 - *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually, altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme with a small range between min/max altitude.
 
-> *Please read the [Color Scheme](../personal/color-palette-schemes.md) article for more information.*
-
 
 ### Modify Color Scheme {#modify-color-scheme}
 
