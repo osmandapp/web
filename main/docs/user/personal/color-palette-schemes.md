@@ -90,8 +90,8 @@ Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.t
 
 Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
 
-- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_<palette_name>.txt`), Slope (`route_slope_<palette_name>.txt`),* and *Elevation (Altitude) (`route_elevation_<palette_name>.txt`)*.
-- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_<palette_name>.txt`)*, and *Elevation (Altitude)*, or info from *External sensors*.
+- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_default.txt`), Slope (`route_slope_default.txt`),* and *Elevation (Altitude) (`route_elevation_default.txt`)*.
+- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_default.txt`)*, and *Elevation (Altitude)*, or info from *External sensors*.
 
 ### Favorites & Waypoints {#favorites-waypoints}
 
@@ -124,7 +124,7 @@ Weather palette files (`weather_cloud.txt`, `weather_precip.txt`, `weather_press
 
 You can edit palettes to personalize the look for maps, and routes. Own color palette files can be added to OsmAnd using the [import/export tool](./import-export.md).
 
-- *Tracks and Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_maxspeed_<palette_name>.txt`, `route_elevation_<type_name>.txt`.
+- *Tracks and Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_maxspeed_default.txt`, `route_elevation_default.txt`.
 - *Terrain*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
 - *Weather*: `weather_<type_name>.txt`.
 - *Favorites and Waypoints*: `user_palette_default.txt`.
