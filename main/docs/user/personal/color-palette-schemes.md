@@ -23,7 +23,7 @@ Color schemes are used as part of paid [Maps+](../purchases/index.md) and Pro <P
 
 :::
 
-Color schemes are used in [route colorization](#routes), [map terrain](#terrain), and [weather map](#weather), and are represented as a separate part of the information that can be exported, imported, and edited to change the map color scheme and data visualization.
+Color schemes are used in [route colorization](#tracks-routes), [map terrain](#terrain), and [weather map](#weather), and are represented as a separate part of the information that can be exported, imported, and edited to change the map color scheme and data visualization.
 
 Color palette data is available in the [*Maps & Resources*](../personal/maps-resources.md#local-menu) menu.
 
@@ -50,65 +50,84 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 
 ## Scheme Types {#scheme-types}
 
+### Terrain {#terrain}
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Palettes](@site/static/img/personal/color-schemes/palette.png)
+![Palettes](@site/static/img/personal/color-schemes/palette_new.png) ![Palettes](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/static/img/personal/color-schemes/color_altitude.png)
+![Color palette](@site/static/img/personal/color-schemes/palette_ios.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
+Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example, *avalanche slope* is provided by default. See the [Topography](../plugins/topography.md#default-color-scheme) article for more details.
 
-### Terrain {#terrain}
+### Tracks & Routes {#tracks-routes}
 
-Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example, *avalanche slope* is provided by default.
+<Tabs groupId="operating-systems" queryString="current-os">
 
-### Routes {#routes}
+<TabItem value="android" label="Android">
+
+![Palettes](@site/static/img/personal/color-schemes/track_palette_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color palette](@site/static/img/personal/color-schemes/track_palette_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
 
-- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
+- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_default.txt`), Slope (`route_slope_default.txt`),* and *Elevation (Altitude) (`route_elevation_default.txt`)*.
+- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_default.txt`)*, and *Elevation (Altitude)*, or info from *External sensors*.
+
+### Favorites & Waypoints {#favorites-waypoints}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color palette](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+The `user_palette_default.txt` palette is used for predefined colors assigned to [Favorites](./favorites.md#edit--replace--delete) and [Waypoints](https://osmand.net/docs/user/navigation/setup/gpx-navigation#waypoints).
 
 ### Weather {#weather}
 
-Weather palette files (`weather_<type_name>.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
-
-### Colors {#colors}
-
-Color palette (`user_palette_default.txt`) is simply used for predefined colors to assign to [Favorites](./favorites.md), [Tracks](./tracks/).
+Weather palette files (`weather_cloud.txt`, `weather_precip.txt`, `weather_pressure.txt`, `weather_temperature.txt`, `weather_wind.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
 
 
-## Palette Legend {#palette-legend}
+## Settings {#settings}
 
-<table class="image">
-    <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
-    </tr>
-</table>
-
-
-The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
-
-
-## Edit Palette file {#edit-palette-file}
+### Palette Modify {#palette-modify}
 
 You can edit palettes to personalize the look for maps, and routes. Own color palette files can be added to OsmAnd using the [import/export tool](./import-export.md).
 
-- *Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
+- *Tracks and Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_maxspeed_default.txt`, `route_elevation_default.txt`.
 - *Terrain*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
 - *Weather*: `weather_<type_name>.txt`.
-- *Color*: `user_palette_default.txt`.
+- *Favorites and Waypoints*: `user_palette_default.txt`.
 
 Each line represents a numerical value (for the color palette, it's an index) and RGB color. For example:
 
@@ -125,37 +144,9 @@ Each line represents a numerical value (for the color palette, it's an index) an
 
 ```
 
-After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
+After moving this TXT file to *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
-
-## Read more {#read-more}
-
-### Quick actions {#quick-actions}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
-
-![Color Scheme](@site/static/img/widgets/color_scheme.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
-
-![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-**Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the [Quick Actions](../widgets/quick-action.md#configure-map) tool.  
-
-
-### Import / Export Colors {#import--export-colors}
+### Import / Export {#import--export}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -184,6 +175,47 @@ You can import and export all available default and custom color palettes using 
 - All exported files are saved in `.osf` format.
 - If the size of your selected data is significant, it will take some time for the application to prepare the `.osf` file.
 - View [*Import / Export*](../personal/import-export.md) article for more detailed information.
+
+### Legend {#palette}
+
+<table class="image">
+    <tr>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
+    </tr>
+</table>
+
+
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
+
+The legend is generated automatically based on the selected palette and shows gradient steps with appropriate units (for example, km/h for speed, % for slope, or meters for altitude).
+
+### Quick actions {#quick-actions}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
+
+![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Add action → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
+
+![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
+
+</TabItem>
+
+</Tabs>
+
+**Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the [Quick Actions](../widgets/quick-action.md#configure-map) tool.  
+
+When configuring this action, you can select one or multiple terrain color palettes. If several palettes are selected, each tap on the button will cycle through the chosen palettes. You can also enable or disable the interim dialog to either show the full list of palettes or switch between them silently in a predefined order.
 
 
 ## Related Articles {#related-articles}
