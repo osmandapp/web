@@ -22,11 +22,13 @@ export function createCombinedYAxisLabelsPlugin(axes) {
             const ctx = chart.ctx;
             const chartArea = chart.chartArea;
 
+            // Draw horizontal dashed grid lines
             ctx.save();
             ctx.strokeStyle = '#BBBBBB';
             ctx.lineWidth = 1;
             ctx.setLineDash([4, 4]);
 
+            // Draw 3 horizontal lines (top, middle, bottom)
             for (let i = 0; i < 3; i++) {
                 const ratio = i / 2;
                 const value = firstScale.min + (firstScale.max - firstScale.min) * ratio;
@@ -52,18 +54,20 @@ export function createCombinedYAxisLabelsPlugin(axes) {
             const ctx = chart.ctx;
             const chartArea = chart.chartArea;
 
+            // Draw combined colored labels on the right side
             ctx.save();
             ctx.font = '500 10px Roboto, sans-serif';
             ctx.letterSpacing = '0.1px';
             ctx.textAlign = 'left';
 
+            // Draw labels for 3 grid lines (top, middle, bottom)
             for (let i = 0; i < 3; i++) {
                 const ratio = i / 2;
                 const pixel = firstScale.getPixelForValue(firstScale.min + (firstScale.max - firstScale.min) * ratio);
 
-                let x = chartArea.right + 8;
+                let x = chartArea.right + 8; // Offset from right edge
 
-                // Draw values for all axes
+                // Draw values for all axes (e.g., "150 m, -10 %")
                 for (let index = 0; index < axes.length; index++) {
                     const axis = axes[index];
                     const scale = chart.scales[axis.id];
@@ -72,12 +76,12 @@ export function createCombinedYAxisLabelsPlugin(axes) {
                     const value = scale.min + (scale.max - scale.min) * ratio;
                     const text = `${Math.round(value)} ${axis.unit}`;
 
-                    // Draw axis value
+                    // Draw axis value in axis color
                     ctx.fillStyle = axis.color;
-                    ctx.fillText(text, x, pixel + 4);
+                    ctx.fillText(text, x, pixel + 4); // Vertical offset
                     x += ctx.measureText(text).width;
 
-                    // Draw separator if not last axis
+                    // Draw separator between values
                     if (index < axes.length - 1) {
                         ctx.fillStyle = '#757575';
                         ctx.fillText(', ', x, pixel + 4);

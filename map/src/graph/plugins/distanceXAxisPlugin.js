@@ -13,6 +13,9 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
     const largeUnit = t(getLargeLengthUnit({ unitsSettings }));
     const smallUnit = t(getSmallLengthUnit({ unitsSettings }));
 
+    /**
+     * Formats distance value with appropriate unit (large or small).
+     */
     function formatDistance(value) {
         if (!Number.isFinite(value)) {
             return '';
@@ -25,6 +28,9 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
         return `${value.toFixed(1)} ${largeUnit}`;
     }
 
+    /**
+     * Calculates nice interval for axis ticks (rounded to 1, 2, 5, or 10 * 10^n).
+     */
     function calculateNiceInterval(maxValue) {
         const distanceInMeters = maxValue * 1000;
         const targetTicks = 5;
@@ -67,7 +73,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             const xScale = chart.scales.x;
             if (!xScale) return;
 
-            // Determine current min and max
+            // Determine current min and max (changed by zoom)
             const currentMin = xScale.min ?? 0;
             const currentMax = xScale.max ?? totalDistance;
             const currentRange = currentMax - currentMin;
@@ -87,7 +93,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
 
             allTicks.push(currentMax);
 
-            // filter ticks to ensure minimum distance
+            // Filter ticks to prevent overlapping labels
             const ticks = [];
             for (let i = 0; i < allTicks.length; i++) {
                 const value = allTicks[i];
@@ -120,7 +126,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             ctx.strokeStyle = '#BEBCC2';
             ctx.lineWidth = 1;
 
-            // Draw ticks
+            // Draw tick marks crossing the X axis
             for (const tick of xScale.ticks) {
                 const x = xScale.getPixelForValue(tick.value);
 
@@ -130,7 +136,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
                 ctx.stroke();
             }
 
-            // Draw labels
+            // Draw distance labels with proper alignment
             ctx.font = '500 10px Roboto, sans-serif';
             ctx.fillStyle = '#757575';
             ctx.letterSpacing = '0.1px';
@@ -140,14 +146,12 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
                 const x = xScale.getPixelForValue(tick.value);
                 const label = formatDistance(tick.value);
 
+                // Align first label to left, last to right, others centered
                 if (i === 0) {
-                    // First label - align left
                     ctx.textAlign = 'left';
                 } else if (i === xScale.ticks.length - 1) {
-                    // Last label - align right
                     ctx.textAlign = 'right';
                 } else {
-                    // Middle labels - align center
                     ctx.textAlign = 'center';
                 }
 
