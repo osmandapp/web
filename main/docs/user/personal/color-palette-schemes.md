@@ -23,7 +23,7 @@ Color schemes are used as part of paid [Maps+](../purchases/index.md) and Pro <P
 
 :::
 
-Color schemes are used in [route colorization](#routes), [map terrain](#terrain), and [weather map](#weather), and are represented as a separate part of the information that can be exported, imported, and edited to change the map color scheme and data visualization.
+Color schemes are used in [route colorization](#tracks-routes), [map terrain](#terrain), and [weather map](#weather), and are represented as a separate part of the information that can be exported, imported, and edited to change the map color scheme and data visualization.
 
 Color palette data is available in the [*Maps & Resources*](../personal/maps-resources.md#local-menu) menu.
 
@@ -70,12 +70,28 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 
 Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example, *avalanche slope* is provided by default. See the [Topography](../plugins/topography.md#default-color-scheme) article for more details.
 
-### Routes {#routes}
+### Tracks & Routes {#tracks-routes}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Palettes](@site/static/img/personal/color-schemes/track_palette_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Color palette](@site/static/img/personal/color-schemes/track_palette_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
 
-- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
+- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_<palette_name>.txt`), Slope (`route_slope_<palette_name>.txt`),* and *Elevation (Altitude) (`route_elevation_<palette_name>.txt`)*.
+- For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_<palette_name>.txt`)*, and *Elevation (Altitude)*, or info from *External sensors*.
 
 ### Weather {#weather}
 
