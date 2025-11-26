@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useRef } from 'react';
 import { Chart } from 'react-chartjs-2';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ import {
 } from '../../menu/settings/units/UnitsConverter';
 import { getDistance } from '../../util/Utils';
 import styles from './../graph.module.css';
-import { calculateSlopes, ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from '../GraphManager';
+import GraphManager, { calculateSlopes, ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from '../GraphManager';
 import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsPlugin';
 import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
 import { createTooltip } from '../plugins/tooltipPlugin';
@@ -24,6 +24,7 @@ export default function NavigationSummaryGraph({ route }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const unitsSettings = ctx.unitsSettings;
+    const chartRef = useRef(null);
 
     const graphData = useMemo(() => {
         if (!route?.features?.length) {
@@ -42,6 +43,7 @@ export default function NavigationSummaryGraph({ route }) {
         }
 
         const points = [];
+        const coordsWithDistance = [];
         let totalDist = 0;
         let prevLat = null;
         let prevLng = null;
@@ -59,6 +61,7 @@ export default function NavigationSummaryGraph({ route }) {
                 const prepElevation = convertMeters(elevation, unitsSettings.len, SMALL_UNIT);
                 if (prepDistance != null && prepElevation != null) {
                     points.push({ distance: prepDistance, elevation: prepElevation });
+                    coordsWithDistance.push({ lat, lng, distance: prepDistance });
                 }
             }
         });
@@ -77,7 +80,7 @@ export default function NavigationSummaryGraph({ route }) {
             elevationKey: 'elevation',
         });
 
-        return { points: sampledPoints, slopes, allPoints: points };
+        return { points: sampledPoints, slopes, allPoints: points, coordinates: coordsWithDistance };
     }, [route, unitsSettings.len]);
 
     if (!graphData) {
@@ -211,10 +214,13 @@ export default function NavigationSummaryGraph({ route }) {
         <div className={styles.routeSummaryGraph}>
             <div className={styles.routeSummaryGraphCanvas}>
                 <Chart
+                    ref={chartRef}
                     type="line"
                     data={data}
                     options={options}
                     plugins={[combinedLabelsPlugin, distanceXAxisPlugin, mouseLinePlugin]}
+                    onMouseMove={(e) => GraphManager.handleGraphMouseMove(e, chartRef, ctx, graphData.coordinates)}
+                    onMouseLeave={() => GraphManager.hideGraphMarker(ctx)}
                 />
             </div>
         </div>

@@ -176,33 +176,17 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
         }
     }
 
-    function onMouseMoveGraph(e, chartRef) {
-        if (!chartRef) {
-            return;
+    const trackCoordinates = useMemo(() => {
+        if (!ctx.selectedGpxFile || !dataGraph) {
+            return [];
         }
-        if (ctx.mapMarkerListener && ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
-            //filter slope points
-            let selected = chartRef.current._active.find((data) => data.datasetIndex !== 2);
-            if (selected) {
-                let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-                const ind = selected.element.$context.raw.originalIndex;
-                // add marker to map
-                if (ind) {
-                    const lat = Object.values(pointList)[ind].lat;
-                    const lng = Object.values(pointList)[ind].lng;
-                    ctx.mapMarkerListener(lat, lng);
-                    setSelectedPoint({
-                        ind: ind,
-                        dist: dataGraph[ind][xAxis],
-                    });
-                } else {
-                    hideSelectedPoint();
-                }
-            }
-        } else {
-            hideSelectedPoint();
-        }
-    }
+        const pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+        return Object.values(pointList).map((point, i) => ({
+            lat: point.lat,
+            lng: point.lng,
+            distance: dataGraph[i] ? dataGraph[i][xAxis] : 0,
+        }));
+    }, [ctx.selectedGpxFile, dataGraph, xAxis]);
 
     function showMaxMin() {
         return !isEmpty(maxMinData);
@@ -583,8 +567,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
     }, [dataGraph, xAxis]);
 
     function hideSelectedPoint() {
-        ctx.mapMarkerListener(null);
-        setSelectedPoint(null);
+        GraphManager.hideGraphMarker(ctx, (point) => setSelectedPoint(point));
     }
     return (
         <>
@@ -595,7 +578,18 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                     data={graphData}
                     options={options}
                     plugins={[GraphManager.mouseLine]}
-                    onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
+                    onMouseMove={(e) =>
+                        GraphManager.handleGraphMouseMove(e, chartRef, ctx, trackCoordinates, (point) => {
+                            if (point) {
+                                setSelectedPoint({
+                                    ind: point.index,
+                                    dist: point.distance,
+                                });
+                            } else {
+                                setSelectedPoint(null);
+                            }
+                        })
+                    }
                     onMouseLeave={() => hideSelectedPoint()}
                 />
             </Box>
