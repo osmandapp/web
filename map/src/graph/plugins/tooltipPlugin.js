@@ -1,3 +1,7 @@
+const UNIT_SWITCH_THRESHOLD = 1; // Distance threshold (in km) to switch between large and small units
+const METERS_IN_KM = 1000; // Conversion factor from km to meters
+const DISTANCE_MATCH_TOLERANCE = 0.01; // Tolerance for matching attribute distances
+
 /**
  * Creates tooltip for graphs showing distance, main parameters, and optional attributes.
  *
@@ -37,8 +41,8 @@ export function createTooltip({
                 const distLabel = t('distance');
 
                 // Show in small units (m/ft) for short distances
-                if (totalDistance < 1 || dist < 1) {
-                    return `${distLabel}: ${Math.round(dist * 1000)} ${smallDistanceUnit}`;
+                if (totalDistance < UNIT_SWITCH_THRESHOLD || dist < UNIT_SWITCH_THRESHOLD) {
+                    return `${distLabel}: ${Math.round(dist * METERS_IN_KM)} ${smallDistanceUnit}`;
                 }
 
                 return `${distLabel}: ${dist.toFixed(1)} ${distanceUnit}`;
@@ -75,7 +79,7 @@ export function createTooltip({
                     if (attrData?.datasets) {
                         for (const dataset of attrData.datasets) {
                             if (dataset.data) {
-                                const point = dataset.data.find((p) => Math.abs(p.x - xValue) < 0.01);
+                                const point = dataset.data.find((p) => Math.abs(p.x - xValue) < DISTANCE_MATCH_TOLERANCE);
                                 if (point && dataset.label && dataset.label !== 'undefined') {
                                     foundAttributes.push(dataset.label);
                                 }
