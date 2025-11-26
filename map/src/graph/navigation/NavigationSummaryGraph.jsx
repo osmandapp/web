@@ -147,7 +147,7 @@ export default function NavigationSummaryGraph({ route }) {
         attributes: null,
     });
 
-    const mouseLinePlugin = createMouseLinePlugin('#f8931d');
+    const mouseLinePlugin = createMouseLinePlugin();
 
     const options = {
         responsive: true,
@@ -157,7 +157,7 @@ export default function NavigationSummaryGraph({ route }) {
                 right: 50,
                 left: 0,
                 top: 10,
-                bottom: 0,
+                bottom: 12,
             },
         },
         plugins: {

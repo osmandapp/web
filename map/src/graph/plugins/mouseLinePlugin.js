@@ -2,10 +2,10 @@
  * Plugin to draw vertical line following mouse cursor on graph.
  * Line appears on hover and moves with tooltip.
  *
- * @param {string} color - Line color (default: '#737D8C')
+ * @param {string} color - Line color (default: '#757575')
  * @returns {Object} Chart.js plugin
  */
-export function createMouseLinePlugin(color = '#737D8C') {
+export function createMouseLinePlugin(color = '#757575') {
     return {
         id: 'mouseLine',
         afterEvent: (chart, e) => {
