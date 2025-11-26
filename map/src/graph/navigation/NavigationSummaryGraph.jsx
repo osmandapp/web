@@ -1,6 +1,7 @@
 import React, { useContext, useMemo, useRef } from 'react';
 import { Chart } from 'react-chartjs-2';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
+import zoomPlugin from 'chartjs-plugin-zoom';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import {
@@ -18,7 +19,7 @@ import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
 import { createTooltip } from '../plugins/tooltipPlugin';
 import { createMouseLinePlugin } from '../plugins/mouseLinePlugin';
 
-ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
+ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend, zoomPlugin);
 
 export default function NavigationSummaryGraph({ route }) {
     const ctx = useContext(AppContext);
@@ -83,13 +84,115 @@ export default function NavigationSummaryGraph({ route }) {
         return { points: sampledPoints, slopes, allPoints: points, coordinates: coordsWithDistance };
     }, [route, unitsSettings.len]);
 
-    if (!graphData) {
-        return null;
-    }
-
     const distanceUnit = t(getLargeLengthUnit({ unitsSettings }));
     const smallDistanceUnit = t(getSmallLengthUnit({ unitsSettings }));
     const elevationUnit = smallDistanceUnit;
+
+    const totalDistance = graphData?.points[graphData.points.length - 1]?.distance || 0;
+
+    const mouseLinePlugin = useMemo(() => createMouseLinePlugin('#f8931d'), []);
+
+    const tooltipConfig = useMemo(
+        () =>
+            createTooltip({
+                t,
+                distanceUnit,
+                smallDistanceUnit,
+                totalDistance,
+                mainParams: [
+                    { id: 'y', label: 'altitude', unit: elevationUnit },
+                    { id: 'y1', label: 'shared_string_slope', unit: '%' },
+                ],
+                attributes: null,
+            }),
+        [distanceUnit, smallDistanceUnit, totalDistance, elevationUnit]
+    );
+
+    const options = useMemo(
+        () => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    right: 50,
+                    left: 0,
+                    top: 10,
+                    bottom: 12,
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                tooltip: tooltipConfig,
+                zoom: {
+                    limits: {
+                        x: {
+                            min: 0,
+                            max: totalDistance,
+                            minRange: 0.1,
+                        },
+                    },
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        mode: 'x',
+                    },
+                    pan: {
+                        enabled: true,
+                        mode: 'x',
+                    },
+                },
+            },
+            scales: {
+                x: {
+                    type: 'linear',
+                    display: true,
+                    offset: false,
+                    min: 0,
+                    max: totalDistance,
+                    border: {
+                        display: true,
+                    },
+                    grid: {
+                        display: false,
+                    },
+                },
+                y: {
+                    type: 'linear',
+                    position: 'right',
+                    border: {
+                        display: false,
+                    },
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        display: false,
+                    },
+                },
+                y1: {
+                    type: 'linear',
+                    position: 'right',
+                    border: {
+                        display: false,
+                    },
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        display: false,
+                    },
+                },
+            },
+        }),
+        [totalDistance, distanceUnit, smallDistanceUnit, elevationUnit]
+    );
+
+    if (!graphData) {
+        return null;
+    }
 
     const elevationData = graphData.points.map((p) => ({ x: p.distance, y: p.elevation }));
 
@@ -97,8 +200,6 @@ export default function NavigationSummaryGraph({ route }) {
         const slope = graphData.slopes.find((s) => Math.abs(s.dist - p.distance) < 0.01);
         return { x: p.distance, y: slope ? slope.slope : 0 };
     });
-
-    const totalDistance = graphData.points[graphData.points.length - 1]?.distance || 0;
 
     const data = {
         datasets: [
@@ -137,78 +238,6 @@ export default function NavigationSummaryGraph({ route }) {
         totalDistance,
         t,
     });
-
-    const tooltipConfig = createTooltip({
-        t,
-        distanceUnit,
-        smallDistanceUnit,
-        totalDistance,
-        mainParams: [
-            { id: 'y', label: 'altitude', unit: elevationUnit },
-            { id: 'y1', label: 'shared_string_slope', unit: '%' },
-        ],
-        attributes: null,
-    });
-
-    const mouseLinePlugin = createMouseLinePlugin();
-
-    const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        layout: {
-            padding: {
-                right: 50,
-                left: 0,
-                top: 10,
-                bottom: 12,
-            },
-        },
-        plugins: {
-            legend: {
-                display: false,
-            },
-            tooltip: tooltipConfig,
-        },
-        scales: {
-            x: {
-                type: 'linear',
-                display: true,
-                offset: false,
-                border: {
-                    display: true,
-                },
-                grid: {
-                    display: false,
-                },
-            },
-            y: {
-                type: 'linear',
-                position: 'right',
-                border: {
-                    display: false,
-                },
-                grid: {
-                    display: false,
-                },
-                ticks: {
-                    display: false,
-                },
-            },
-            y1: {
-                type: 'linear',
-                position: 'right',
-                border: {
-                    display: false,
-                },
-                grid: {
-                    display: false,
-                },
-                ticks: {
-                    display: false,
-                },
-            },
-        },
-    };
 
     return (
         <div className={styles.routeSummaryGraph}>

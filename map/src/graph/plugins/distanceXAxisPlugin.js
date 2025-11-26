@@ -53,9 +53,6 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             if (chart.options.scales?.x) {
                 const xScale = chart.options.scales.x;
 
-                xScale.min = 0;
-                xScale.max = totalDistance;
-
                 if (xScale.ticks) {
                     xScale.ticks.display = false;
                 }
@@ -70,20 +67,44 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             const xScale = chart.scales.x;
             if (!xScale) return;
 
-            const interval = calculateNiceInterval(totalDistance);
-            const ticks = [];
+            // Determine current min and max
+            const currentMin = xScale.min ?? 0;
+            const currentMax = xScale.max ?? totalDistance;
+            const currentRange = currentMax - currentMin;
 
-            ticks.push({ value: 0, label: formatDistance(0) });
+            const interval = calculateNiceInterval(currentRange);
+            const allTicks = [];
+            const minDistance = interval * 0.8; // Minimum distance between ticks
 
-            let current = interval;
-            while (current < totalDistance) {
-                if (totalDistance - current > interval * 0.3) {
-                    ticks.push({ value: current, label: formatDistance(current) });
-                }
+            // Generate all potential ticks
+            allTicks.push(currentMin);
+
+            let current = Math.ceil(currentMin / interval) * interval;
+            while (current <= currentMax) {
+                allTicks.push(current);
                 current += interval;
             }
 
-            ticks.push({ value: totalDistance, label: formatDistance(totalDistance) });
+            allTicks.push(currentMax);
+
+            // filter ticks to ensure minimum distance
+            const ticks = [];
+            for (let i = 0; i < allTicks.length; i++) {
+                const value = allTicks[i];
+                const isFirst = i === 0;
+                const isLast = i === allTicks.length - 1;
+
+                if (isFirst || isLast) {
+                    ticks.push({ value, label: formatDistance(value) });
+                } else {
+                    const prevValue = ticks[ticks.length - 1]?.value ?? currentMin;
+                    const nextValue = allTicks[i + 1] ?? currentMax;
+
+                    if (value - prevValue >= minDistance && nextValue - value >= minDistance) {
+                        ticks.push({ value, label: formatDistance(value) });
+                    }
+                }
+            }
 
             xScale.ticks = ticks;
         },
