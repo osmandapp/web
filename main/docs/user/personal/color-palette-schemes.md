@@ -115,7 +115,7 @@ The `user_palette_default.txt` palette is used for predefined colors assigned to
 
 ### Weather {#weather}
 
-Weather palette files (`weather_<type_name>.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
+Weather palette files (`weather_cloud.txt`, `weather_precip.txt`, `weather_pressure.txt`, `weather_temperature.txt`, `weather_wind.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
 
 
 ## Palette Legend {#palette-legend}
