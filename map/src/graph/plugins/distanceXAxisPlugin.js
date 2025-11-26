@@ -36,6 +36,11 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
         const targetTicks = 5;
         const roughInterval = distanceInMeters / targetTicks;
 
+        // Guard against zero or very small values
+        if (maxValue <= 0 || roughInterval <= 0) {
+            return 0.1;
+        }
+
         const magnitude = Math.pow(10, Math.floor(Math.log10(roughInterval)));
         const normalized = roughInterval / magnitude;
 
@@ -87,11 +92,17 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
 
             let current = Math.ceil(currentMin / interval) * interval;
             while (current <= currentMax) {
-                allTicks.push(current);
+                // Avoid duplicate if currentMin is already a multiple of interval
+                if (Math.abs(current - currentMin) > 0.0001) {
+                    allTicks.push(current);
+                }
                 current += interval;
             }
 
-            allTicks.push(currentMax);
+            // Avoid duplicate if currentMax is already in the list
+            if (Math.abs(currentMax - allTicks.at(-1)) > 0.0001) {
+                allTicks.push(currentMax);
+            }
 
             // Filter ticks to prevent overlapping labels
             const ticks = [];
@@ -103,7 +114,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
                 if (isFirst || isLast) {
                     ticks.push({ value, label: formatDistance(value) });
                 } else {
-                    const prevValue = ticks[ticks.length - 1]?.value ?? currentMin;
+                    const prevValue = ticks.at(-1)?.value ?? currentMin;
                     const nextValue = allTicks[i + 1] ?? currentMax;
 
                     if (value - prevValue >= minDistance && nextValue - value >= minDistance) {
