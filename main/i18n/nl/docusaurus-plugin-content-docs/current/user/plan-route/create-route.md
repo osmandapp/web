@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Een route plannen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -63,7 +63,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*
 
 ### Nieuwe route aanmaken {#create-new-route}
 
-Om een nieuwe track in GPX-formaat aan te maken, gebruikt u de hoofdfunctie van de tool *Een route plannen*. Het vooraf aanmaken van een route heeft veel voordelen, in tegenstelling tot het opnemen van de huidige track met de *[Plugin voor ritregistratie](../plugins/trip-recording.md)*. U kunt zoveel punten als u wilt [toevoegen](#adding-points) aan de route, [ze verwijderen en verplaatsen](#point-context-menu), routetypes per [segment](#route-between-points) wijzigen en [gedetailleerde informatie over de route](#graph) krijgen.  
+Om een nieuwe track in GPX-formaat aan te maken, gebruikt u de hoofdfunctie van de tool *Een route plannen*. Het vooraf aanmaken van een route heeft veel voordelen, in tegenstelling tot het opnemen van de huidige track met de *[Plugin voor ritregistratie](../plugins/trip-recording.md)*. U kunt [zoveel punten als u wilt toevoegen](#adding-points) aan de route, [ze verwijderen en verplaatsen](#point-context-menu), routetypes per [segment](#route-between-points) wijzigen en [gedetailleerde informatie over de route](#graph) krijgen.  
 
 Standaard komt het routeringstype overeen met het eerder geselecteerde profiel. Tik op het routeringspictogram om te selecteren hoe de applicatie het segment moet berekenen om punten te verbinden. Het beschikbare profiel moet [afzonderlijk](../navigation/routing/osmand-routing.md#routing-types) worden geconfigureerd.  
 
@@ -124,7 +124,7 @@ Als [Hoogtegegevens](../map/tracks/track-context-menu.md#calculate-missing-eleva
 
 <TabItem value="android" label="Android">
 
-![Een route plannen snap-road-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Een route plannen snap-road-android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
@@ -142,6 +142,10 @@ De instelling **Aan de wegen koppelen** maakt het mogelijk om een opgenomen of g
 - Straatnamen en rijstrookinformatie.
 - Hoogtegegevens.
 - [Wegkenmerken](../navigation/setup/route-details.md#road-attributes).
+- Bijgewerkte hoogteprofiel op basis van weggeometrie.
+- Mogelijke herberekening van trackgeometrie (vereenvoudigen of aanpassen van punten aan het wegennet).
+
+Wanneer een track aan wegen is gekoppeld, kunnen de volgende parameters veranderen omdat de geometrie en hoogte van de track worden herberekend: *Afstand, Stijging / Daling, Gemiddelde snelheid (en de snelheidsgrafiek), Maximale snelheid, Tijd in beweging*, en *Duur*. Deze waarden kunnen afwijken van de oorspronkelijke GPX-track als de herberekende hoogte of geometrie op basis van wegen aanzienlijk afwijkt van de geregistreerde GPS-gegevens.
 
 U kunt een [drempelwaarde](../navigation/setup/gpx-navigation.md#attach-to-the-roads) selecteren voor de afstand die vereenvoudigde trackpunten mogen hebben ten opzichte van de oorspronkelijke trackpunten.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Een route plannen android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Een route plannen Favorieten android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Toevoegen*. Via de **puntenlijst** hieronder kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen.
+
+U kunt ook een via-punt direct vanaf de kaart toevoegen door op een POI of Favoriet te tikken om het contextmenu te openen en vervolgens op *PUNT TOEVOEGEN* te tikken. In deze modus worden contextmenu's voor niet-puntobjecten niet weergegeven. Wanneer u een POI/Favoriet toevoegt, wordt de naam behouden als de naam van het routepunt; als u dit punt later op de kaart verplaatst, wordt de naam gereset.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Een route plannen ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Punt toevoegen*. Via de **puntenlijst** hieronder kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen.
+
 </TabItem>
 
 </Tabs>  
-
-Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Punt toevoegen*. Via de **puntenlijst** hieronder kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen.
 
 :::note
 U kunt ook elke actie die u in de routeplanner hebt uitgevoerd **Ongedaan maken**/**Opnieuw uitvoeren**.
@@ -285,7 +293,7 @@ Elk punt op uw route heeft een eigen contextmenu. Het toont het *volgnummer* van
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Een route plannen ios-scherm](@site/static/img/plan-route/plan-route-routeline-ios.png)
 
 </TabItem>
 
@@ -334,13 +342,13 @@ Bij het opslaan van een nieuwe track kunt u de optie ***Vereenvoudigde*** track 
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
+![Een route plannen android-opties](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een route plannen ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
+![Een route plannen ios-opties](@site/static/img/plan-route/plan_route_menu_options_ios.png)
 
 </TabItem>
 
@@ -356,7 +364,7 @@ Bij het opslaan van een nieuwe track kunt u de optie ***Vereenvoudigde*** track 
 - [<Translate android="true" ids="attach_to_the_roads"/>](#attach-track-to-roads). Creëert een geschatte route. Elk punt op de track wordt gekoppeld aan de dichtstbijzijnde toegestane weg op de kaart volgens het geselecteerde profiel en de drempelafstand.
 - [<Translate android="true" ids="shared_string_gps_filter"/>](../map/tracks/track-context-menu.md#gps-filter) (alleen Android). U kunt routepunten filteren die niet overeenkomen met het geselecteerde routeringstype, onnodige gegevens verwijderen of onnauwkeurige gegevens corrigeren. GPS-filter werkt alleen als het routeringstype is ingesteld op *Rechte lijn*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*alleen Android*). Deze optie wordt alleen in het menu weergegeven als er geen hoogtegegevens beschikbaar zijn. Met deze [optie](#get-elevation-data) kunt u de hoogte berekenen met behulp van *Terreinkaartgegevens* of gegevens van gedownloade kaarten gebruiken om de *nabijgelegen wegen* te vinden.
-- ***<Translate android="true" ids="shared_string_clear_all"/>***. Het archiveert volledig al uw acties. Er blijft een "artefact" op de kaart achter - de stippellijnen van de zojuist gewiste route. Het verdwijnt bij de volgende toevoeging van nieuwe punten. U kunt de functie Alles wissen annuleren met de knop Actie terugdraaien. De functie heeft geen invloed op de ongewijzigde delen van de routes die in de tool zijn geopend.
+- ***<Translate android="true" ids="shared_string_clear_all"/>***. Het wist volledig al uw acties. Er blijft een "artefact" op de kaart achter - de stippellijnen van de zojuist gewiste route. Het verdwijnt bij de volgende toevoeging van nieuwe punten. U kunt de functie Alles wissen annuleren met de knop Actie terugdraaien. De functie heeft geen invloed op de ongewijzigde delen van de routes die in de tool zijn geopend.
 
 ### Grafiek {#graph}
 
@@ -364,7 +372,7 @@ Bij het opslaan van een nieuwe track kunt u de optie ***Vereenvoudigde*** track 
 
 <TabItem value="android" label="Android">
 
-![Een route plannen android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Een route plannen android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 

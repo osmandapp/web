@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -53,25 +53,25 @@ U kunt de app downloaden via deze link - [OsmAnd Maps on Apple App Store](https:
 
 In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS en de Europese regio. Voor andere regio's zijn de prijzen equivalent in lokale valuta.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Black Friday prijzen
+
+*Haast je! Dit aanbod is alleen beschikbaar tot* **30 november (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |
+| **Prijs (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Prijs (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Gratis   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -80,7 +80,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | **Prijs (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
 | **Prijs (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
-
+-->
 
 ### Gratis en betaalde functies {#free-and-paid-features}
 
@@ -97,6 +97,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-reliëf](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografische gegevens](../plugins/topography.md#overview)<br/>(Hoogtelijnen en Terrein) | **-** | ✔ | ✔ |
+| [Coördinatenraster — Kleuraanpassing](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D-trackvisualisatie](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Reisgidsen (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -134,7 +135,7 @@ Op dit moment heeft het Pro-abonnement de volgende functies:
 | [Live](../personal/maps-resources.md#live-updates) | OsmAnd-kaarten worden elke 15 minuten bijgewerkt na een verbetering op [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Weer-plugin](../plugins/weather.md) | 24-uurs voorspelling per uur, 7 dagen vooruit op de kaart. |
 | [Plugin voor voertuigstatistieken (OBD-II)](../plugins/vehicle-metrics.md) | Hiermee kunt u een OBD-II-scanner aansluiten om gedetailleerde voertuiggegevens in de OsmAnd-app weer te geven en de informatie op te slaan in trackrecords. Informatie over voertuigsnelheid en motortoerental is beschikbaar voor OsmAnd gratis.  |
-| [Routeregel aanpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | De kleur en breedte van de routelijn tijdens de navigatie wijzigen. |
+| [Routelijn aanpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | De kleur en breedte van de routelijn tijdens de navigatie wijzigen. |
 
 
 ## Hoe te kopen {#how-to-buy}
@@ -164,7 +165,7 @@ of
 
 ## Oude abonnementen (vóór 4.0) {#legacy-subscriptions-prior-40}
 
-Nieuwe abonnementen werden actief vanaf OsmAnd 4.3 (december 2022). Alle eerdere abonnementen zijn verouderd en technisch gelijk aan het "Maps-abonnement", hoewel oude abonnementen recht hebben op kaartupdates per uur. Gebruikers kunnen geen oude abonnementen meer kopen, maar oude abonnementen worden automatisch verlengd totdat u zich afmeldt (de prijs ervan kan in de toekomst veranderen).
+Nieuwe abonnementen werden actief vanaf OsmAnd 4.3 (december 2022). Alle eerdere abonnementen zijn verouderd en technisch gelijk aan het "Maps-abonnement", hoewel oude abonnementen recht hebben op uurlijkse kaartupdates. Gebruikers kunnen geen oude abonnementen meer kopen, maar oude abonnementen worden automatisch verlengd totdat u zich afmeldt (de prijs ervan kan in de toekomst veranderen).
 
 
 ## Aankopen herstellen {#restore-purchases}

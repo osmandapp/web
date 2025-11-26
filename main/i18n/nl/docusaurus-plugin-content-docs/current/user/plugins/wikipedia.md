@@ -1,5 +1,5 @@
 ---
-source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
+source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -64,7 +64,7 @@ U kunt Wikipedia-gegevens als volgt per regio openen om te downloaden:
 
 Om te zien welke gegevens al zijn geüpload, gaat u naar *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
 
-![Wikipedia downloaden in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
+![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
 </TabItem>
 
@@ -72,7 +72,7 @@ Om te zien welke gegevens al zijn geüpload, gaat u naar *<Translate android="tr
 
 Om te zien welke gegevens al zijn geüpload, gaat u naar *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
 
-![Wikipedia downloaden in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
+![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
 </TabItem>
 
@@ -100,13 +100,13 @@ Om Wikipedia POI's te tonen/verbergen, doet u het volgende:
 
 <TabItem value="android" label="Android">
 
-![Wikipedia POI's op Android](@site/static/img/map/map-wikipedia-on-map.png)
+![Wikipedia POIs on Android](@site/static/img/map/map-wikipedia-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia POI op iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
+![Wikipedia POI on iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
 
 </TabItem>
 
@@ -147,13 +147,13 @@ Wanneer u op de Zoekknop tikt, verschijnt er een extra paneel waarmee u de volle
 
 <TabItem value="android" label="Android">
 
-![Wikipedia-categorie op Android](@site/static/img/map/map-wikipedia-search-on-map.png)
+![Wikipedia category on Android](@site/static/img/map/map-wikipedia-search-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia-categorie op iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
+![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
 </TabItem>
 
@@ -164,27 +164,36 @@ Wanneer u op de Zoekknop tikt, verschijnt er een extra paneel waarmee u de volle
 
 ## Wikipedia-artikel {#wikipedia-article}
 
-Om het Wikipedia-artikel te openen:
-
-1. Schakel de [Wikipedia POI-laag](../map/point-layers-on-map.md#-wikipedia) in voor een specifiek profiel.
-2. Tik op een POI op de kaart.
-3. Tik in het [contextmenu](../map/map-context-menu.md) van een POI op *Details* (of trek het *contextmenu* gewoon omhoog) om een samenvatting van het gekozen Wikipedia-artikel te bekijken.
-4. Als u op die tekst tikt (voor de iOS-versie), wordt u doorgestuurd naar het offline Wikipedia-artikel.
-5. Gebruik de knop *Lees artikel* of *Lees volledig artikel* om de volledige versie van het Wikipedia-artikel te openen.
-
-
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Franse Wikipedia POI in het Engels](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+Om het Wikipedia-artikel te openen:
+
+1. Schakel de [Wikipedia POI-laag](../map/point-layers-on-map.md#-wikipedia) in voor een specifiek profiel.
+2. Tik op een POI op de kaart.
+3. Tik in het [contextmenu](../map/map-context-menu.md) van een POI op [Details](../map/map-context-menu.md#details) (of trek het *contextmenu* gewoon omhoog) om een samenvatting van het gekozen [Wikipedia-artikel](../map/map-context-menu.md#article-description) te bekijken.
+4. Gebruik de knop *Lees volledig artikel* om de volledige versie van het Wikipedia-artikel te openen.
+5. Als de Wikipedia-gegevens niet zijn gedownload, verschijnt de knop *Lees op Wikipedia*.
+6. Tikken op deze knop opent een dialoog met de volgende opties: 
+- Download Wikipedia en Open in Browser (betaalde versie).
+- Lees Wikipedia offline en Open in Browser (gratis versie).
+
+![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Franse Wikipedia POI in het Engels in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
+Om het Wikipedia-artikel te openen:
+
+1. Schakel de [Wikipedia POI-laag](../map/point-layers-on-map.md#-wikipedia) in voor een specifiek profiel.
+2. Tik op een POI op de kaart.
+3. Tik in het [contextmenu](../map/map-context-menu.md) van een POI op [Details](../map/map-context-menu.md#details) (of trek het *contextmenu* gewoon omhoog) om een samenvatting van het gekozen [Wikipedia-artikel](../map/map-context-menu.md#article-description) te bekijken.
+4. Als u op die tekst tikt, wordt u doorgestuurd naar het offline Wikipedia-artikel.
+5. Gebruik de knop *Lees artikel* om de volledige versie van het Wikipedia-artikel te openen.
+
+![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
 </TabItem>
 
@@ -208,13 +217,13 @@ In de **Android**- en **iOS**-versies van de OsmAnd-app kunt u uw voorkeurstaal 
 
 <TabItem value="android" label="Android">
 
-![Een voorkeurstaal instellen op Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
+![Setting a preferred language on Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Een voorkeurstaal instellen op iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
+![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
 
 </TabItem>
 
@@ -236,13 +245,13 @@ Als het *Wikipedia-artikel* in verschillende talen beschikbaar is, kunt u tijden
 
 <TabItem value="android" label="Android">
 
-![Talen wisselen voor een specifiek artikel](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
+![Switching languages for a specific article](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Talen wisselen voor een specifiek artikel](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
+![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
 
 </TabItem>
 
@@ -260,13 +269,13 @@ U kunt kiezen of u afbeeldingen van Wikipedia op uw apparaat wilt downloaden of 
 
 <TabItem value="android" label="Android">
 
-![Afbeeldingen wisselen](@site/static/img/plugins/wikipedia/images_android.png)
+![Switching images](@site/static/img/plugins/wikipedia/images_android.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Afbeeldingen wisselen](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
+![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
 
 </TabItem>
 
@@ -277,7 +286,7 @@ In de **iOS**-versie van de app kunt u ook de opties voor het downloaden van afb
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
-![Afbeeldingen wisselen](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
 
 
 ## Gerelateerde Artikelen {#related-articles}

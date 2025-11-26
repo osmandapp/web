@@ -1,8 +1,9 @@
 ---
-source-hash: 4924a1de13b954b832f4629a3e8dfc661ee5ce9339fd94fad9ab53e8ec18a4cc
+source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
 sidebar_position: 9
 title:  OpenStreetMap Bewerken
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,18 +14,17 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Overzicht {#overview}
 
-[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) is een wereldwijde gemeenschap die als doel heeft een gedetailleerde, gratis geografische kaart van de wereld te maken en up-to-date open-source gegevens te verstrekken aan elke gebruiker. De OpenStreetMap bewerkingsplugin stelt u in staat om bij te dragen aan de gemeenschap.
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) is een wereldwijde gemeenschap die als doel heeft een gedetailleerde, gratis geografische kaart van de wereld te maken en up-to-date open-source gegevens te verstrekken aan elke gebruiker. De OpenStreetMap bewerkingsplugin stelt u in staat om bij te dragen aan de gemeenschap.  
 
-Met OsmAnd en de OSM bewerkingsplugin kunt u eenvoudig uw eigen informatie bijdragen aan OpenStreetMap.org, zoals het aanmaken of wijzigen van [POI's](#create--modify-poi), het toevoegen van of reageren op [notities](#create--modify-osm-note), en het uploaden van opgenomen GPX-[tracks](#upload-gps-track).
+Met OsmAnd en de OSM bewerkingsplugin kunt u eenvoudig uw eigen informatie bijdragen aan OpenStreetMap.org, zoals het aanmaken of wijzigen van [POI's](#create--modify-poi), het toevoegen of becommentariëren van [notities](#create--modify-osm-note), en het uploaden van opgenomen GPX-[tracks](#upload-gps-track).
 
 ## Vereiste Instellingen {#required-setup-parameters}
 
 Om de *OpenStreetMap bewerken* plugin te gebruiken, moet u de volgende instellingen doen:
 
-1. [Plugin](../plugins/index.md#enable--disable) inschakelen.
+1. [Plugin](../plugins/index.md#enable--disable) inschakelen.  
 2. OpenStreetMap bewerken instellen in een [profiel](../personal/profiles.md).
 3. De weergave van *OSM-notities (online)* of *OSM-bewerkingen* op de kaart inschakelen in het menu [Kaart configureren](../map/configure-map-menu).
 
@@ -35,10 +35,10 @@ Om de *OpenStreetMap bewerken* plugin te gebruiken, moet u de volgende instellin
 
 <TabItem value="android" label="Android">
 
-- *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*
+- *<Translate android="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name,shared_string_settings"/>*  
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,osm_editing_plugin_name"/>*
 
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
+![OpenStreetMap bewerkingsplugin Instellingen Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_android-2.png)
 
 </TabItem>
 
@@ -47,11 +47,11 @@ Om de *OpenStreetMap bewerken* plugin te gebruiken, moet u de volgende instellin
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![OpenStretMap editing plugin Settings Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![OpenStreetMap bewerkingsplugin Instellingen iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 :::note
 De plugin-instellingen zijn globaal en gelden voor alle profielen.
@@ -61,11 +61,11 @@ De plugin-instellingen zijn globaal en gelden voor alle profielen.
 - **<Translate android="true" ids="offline_edition"/>**. Als deze instelling is ingeschakeld, worden de wijzigingen eerst lokaal opgeslagen (*Opslaan*-knop) en op verzoek geüpload. Als de instelling is uitgeschakeld, worden de wijzigingen onmiddellijk geüpload (*Uploaden*-knop).
 - **<Translate android="true" ids="use_dev_url"/>** *(Alleen Android)*. Hiermee kunt u [dev.openstreetmap.org](https://dev.openstreetmap.org/) inschakelen in plaats van [openstreetmap.org](http://openstreetmap.org/) om het uploaden van OSM-notities, POI's of GPS-tracks te testen. Wanneer ingeschakeld, wordt u automatisch uitgelogd bij OpenStreetMap.org. Deze instelling is alleen beschikbaar in de lijst wanneer de *OsmAnd ontwikkelingsplugin* is ingeschakeld.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
-- **<Translate android="true" ids="layer_osm_edits"/>**. Tik hierop om [*Menu → Mijn Plaatsen → OSM-bewerkingen*](../personal/myplaces.md) te openen. Dit tabblad toont uw niet-geüploade OSM-bewerkingen. De volgende acties zijn beschikbaar voor de notitie: *Uploaden*, *Toon op kaart*, *Wijzig OSM-notitie*, *Verwijderen*. Geüploade of verwijderde notities worden niet langer in de lijst weergegeven.
+- **<Translate android="true" ids="layer_osm_edits"/>**. Tik hierop om [*Menu → Mijn Plaatsen → OSM-bewerkingen*](../personal/myplaces.md) te openen. Dit tabblad toont uw niet-geüploade OSM-bewerkingen. De volgende acties zijn beschikbaar voor de notitie: *Uploaden*, *Toon op kaart*, *Wijzig OSM-notitie*, *Verwijderen*. Geüploade of verwijderde notities worden niet langer in de lijst weergegeven.  
 
 :::note
 Als u een [OsmAnd Pro](../purchases/android.md#pro-features) abonnement heeft, verschijnen wijzigingen die in OSM zijn aangebracht binnen een uur op uw OsmAnd-kaart. Zorg ervoor dat [Live updates](../personal/maps-resources.md#live-updates) zijn ingeschakeld.
-:::
+:::  
 
 
 ### Autorisatie {#authorization}
@@ -86,10 +86,10 @@ Als u een [OsmAnd Pro](../purchases/android.md#pro-features) abonnement heeft, v
 
 </Tabs>
 
-Log in om wijzigingen en GPX-bestanden bij te dragen.
+Log in om wijzigingen en GPX-bestanden bij te dragen.  
 
 - Ga naar [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550) en *log in* of *registreer*.
-- Tik op het veld *Inloggen bij OpenStreetMap* in de OsmAnd-app en tik vervolgens op de knop *Aanmelden met OpenStreetMap*.
+- Tik op het veld *Inloggen bij OpenStreetMap* in de OsmAnd-app en tik vervolgens op de knop *Aanmelden met OpenStreetMap*.  
 
 
 ### Gratis kaartupdates voor mappers {#free-map-updates-for-mappers}
@@ -117,30 +117,40 @@ De instelling <Translate android="true" ids="map_updates_for_mappers"/> stelt u 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![OSM editing layer Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM editing layer Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
+![OSM bewerkingslaag Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![OSM bewerkingslaag Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
-![OSM editing layer iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
+![OSM bewerkingslaag iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-U kunt de weergave van OSM-wijzigingen zoals *OSM-notities* (online), *OSM-bewerkingen*, *Fixme-tags*, *Note-tags*, *Pictogrammen bij lage zoomniveaus*, als een afzonderlijke laag in- of uitschakelen in de sectie [Kaart configureren](../map/configure-map-menu.md) van het *Hoofdmenu*.
+U kunt de weergave van OSM-wijzigingen als een afzonderlijke laag in- of uitschakelen in de sectie [Kaart configureren](../map/configure-map-menu.md) van het *Hoofdmenu*.  OSM-wijzigingen omvatten het volgende:  
+- **OSM-notities (online)**. Toont openbare OpenStreetMap-notities gemaakt door gebruikers om mappingproblemen te markeren of updates aan te vragen. Notities worden weergegeven als interactieve markers die kunnen worden beoordeeld, geopend en opgelost door mappers.  
+![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+- **OSM-bewerkingen**. Toont uw eigen lokale OSM-bewerkingen die op het apparaat zijn opgeslagen voordat ze worden geüpload naar de OpenStreetMap-server. Deze laag helpt bij het beoordelen van de geometrie en attributen van objecten die u heeft gewijzigd of toegevoegd.  
+![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+- **Fixme-tags**. Markeert objecten die zijn getagd met fixme=* in OSM. Deze elementen bevatten opmerkingen van mappers die aangeven dat de informatie incompleet, onzeker is of veldverificatie nodig heeft.  
+![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+- **Note-tags**. Toont objecten die note=* tags bevatten — opmerkingen van mappers die direct in de OSM-gegevens zijn ingebed. Deze tags beschrijven meestal tijdelijke omstandigheden of aanvullende context voor toekomstige bewerkingen.  
+![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+- **Pictogrammen bij lage zoomniveaus**. Schakelt vereenvoudigde icoonachtige weergaven van OSM-objecten in met behulp van korte afkortingen afgeleid van hun primaire tag-sleutels. De betekenis wordt beschreven [hier](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Deze functie maakt meer objecten zichtbaar op lage zoomniveaus zonder de kaart te overbelasten of icoonoverlap te veroorzaken.  
+![OSM bewerkingslaag](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## POI aanmaken / wijzigen {#create--modify-poi}
 
-De OpenStreetMap bewerkingsplugin stelt u in staat om nieuwe objecten op de kaart aan te maken, genaamd [nuttige plaatsen of POI's](../map/point-layers-on-map.md#points-of-interest-pois). U kunt een nieuwe winkel, favoriet herkenningspunt, bankje of schuilplaats in kaart brengen zodat mensen ze kunnen vinden.
+De OpenStreetMap bewerkingsplugin stelt u in staat om nieuwe objecten op de kaart aan te maken, genaamd [nuttige plaatsen of POI's](../map/point-layers-on-map.md#points-of-interest-pois). U kunt een nieuwe winkel, favoriet herkenningspunt, bankje of schuilplaats in kaart brengen zodat mensen ze kunnen vinden.  
 
 1. Tik op de kaart om een nieuwe POI te plaatsen, of tik op een nog niet geladen POI.
 2. Tik op [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
@@ -152,28 +162,28 @@ De OpenStreetMap bewerkingsplugin stelt u in staat om nieuwe objecten op de kaar
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)
+![POI-tag toevoegen Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![POI-tag toevoegen Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Add POI tag ios](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
+![POI-tag toevoegen iOS](@site/static/img/plugins/osm-editing/add_poi_tags_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-U kunt eenvoudig OSM-[tags](https://wiki.openstreetmap.org/wiki/Tags) toevoegen aan de POI. Wanneer u meerdere tekens in de zoekbalk invoert, stelt het programma mogelijke tags voor.
+U kunt eenvoudig OSM-[tags](https://wiki.openstreetmap.org/wiki/Tags) toevoegen aan de POI. Wanneer u meerdere tekens in de zoekbalk invoert, stelt het programma mogelijke tags voor.  
 
-**Offline wijzigingen.**
-U kunt POI's bekijken, uploaden naar OSM of verwijderen in *Mijn Plaatsen → OSM-bewerkingen*. U kunt uw OSM POI-wijzigingen ook exporteren naar een [OSC-bestand](https://wiki.openstreetmap.org/wiki/OsmChange) en importeren in [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).
+**Offline wijzigingen.**  
+U kunt POI's bekijken, uploaden naar OSM of verwijderen in *Mijn Plaatsen → OSM-bewerkingen*. U kunt uw OSM POI-wijzigingen ook exporteren naar een [OSC-bestand](https://wiki.openstreetmap.org/wiki/OsmChange) en importeren in [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
 
 ### Niet-ondersteunde POI-types toevoegen {#add-unsupported-poi-types}
 
-Op het tabblad *Geavanceerd* kunt u niet-ondersteunde POI-types toevoegen die nuttig kunnen zijn voor uw specifieke taak. Met deze optie kunt u POI-gegevens handmatig invoeren, waardoor de functionaliteit van de applicatie wordt uitgebreid.
+Op het tabblad *Geavanceerd* kunt u niet-ondersteunde POI-types toevoegen die nuttig kunnen zijn voor uw specifieke taak. Met deze optie kunt u POI-gegevens handmatig invoeren, waardoor de functionaliteit van de applicatie wordt uitgebreid.  
 
 Een voorbeeld van niet-ondersteunde POI-types die u kunt toevoegen is *amenity=freeshops*. Dit type kan handig zijn als u gratis winkels of plaatsen die gratis producten aanbieden wilt markeren.
 
@@ -194,17 +204,17 @@ Onthoud dat bij het toevoegen van niet-ondersteunde POI-types het belangrijk is 
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
-![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
+![OSM-notitie openen Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![OSM-notitie openen Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
-![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
+![OSM-notitie openen iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
 
 </TabItem>
 
@@ -232,12 +242,12 @@ De geüploade OSM-notities zijn niet zichtbaar op OsmAnd-kaarten in de offline m
 De GPS-tracks die u heeft opgenomen zijn nuttig voor:
 
 - **Mappers**. Tracks kunnen worden gebruikt om allerlei soorten paden in kaart te brengen.
-- **Navigatie**. Op basis van de door u geüploade GPX-bestandsgegevens kunnen navigatietoepassingen en speciale apparaten tracks berekenen.
-- **Informatie delen** over de tracks en routes die u heeft opgenomen op [op OpenStreetMap gebaseerde kaarten](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).
+- **Navigatie**. Op basis van de GPX-bestandsgegevens die u heeft geüpload, kunnen navigatietoepassingen en speciale apparaten tracks berekenen.
+- **Informatie delen** over de tracks en routes die u heeft opgenomen op [op OpenStreetMap gebaseerde kaarten](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).  
 
 :::info OPMERKING
 Uw tracks worden binnen een uur toegevoegd aan [OSM-sporen](https://www.openstreetmap.org/traces), waar ze beschikbaar zijn voor u en anderen om te bekijken, te zoeken en te gebruiken.
-:::
+:::  
 
 
 ### GPS-track uploaden {#upload-gps-track}
@@ -247,28 +257,28 @@ Uw tracks worden binnen een uur toegevoegd aan [OSM-sporen](https://www.openstre
 
 <TabItem value="android" label="Android">
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStreetMap bewerkingsplugin GPX naar OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)
+![OpenStreetMap bewerkingsplugin GPX naar OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Volg de onderstaande stappen om de [GPS-track te uploaden](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):
+Volg de onderstaande stappen om de [GPS-track te uploaden](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
 
-- Zoek de vereiste track in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*](../personal/tracks/manage-tracks.md).
+- Zoek de vereiste track in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*](../personal/tracks/manage-tracks.md).  
 - Tik op het *menu met drie stippen* naast de tracknaam en selecteer *Exporteren*.
 
 **Instellingen:**
 
-- **<Translate android="true" ids="shared_string_description"/>**. Hiermee kunt u een beschrijving aan de track toevoegen. De beschrijving is van toepassing op alle geselecteerde tracks. Als u niets in het veld invoert, worden de tracknamen voor elke afzonderlijke track als beschrijving gebruikt.
-- **<Translate android="true" ids="gpx_tags_txt"/>**. Met dit item in de instellingensectie kunt u tags toevoegen om de track te identificeren. De standaardtag is "osmand", u kunt extra tags invoeren, gescheiden door komma's.
-- **<Translate android="true" ids="gpx_visibility_txt"/>**. Zichtbaarheid van de track voor OSM-gebruikers:
+- **<Translate android="true" ids="shared_string_description"/>**. Hiermee kunt u een beschrijving aan de track toevoegen. De beschrijving is van toepassing op alle geselecteerde tracks. Als u niets in het veld invoert, worden de tracknamen voor elke afzonderlijke track als beschrijving gebruikt.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. Met dit item in de instellingensectie kunt u tags toevoegen om de track te identificeren. De standaardtag is "osmand". Als de track is opgenomen met een specifieke activiteit op basis van het geselecteerde profiel, wordt deze activiteit ook automatisch toegevoegd als tag tijdens het uploaden. Voor geüploade groepen tracks ontvangt elke track zijn eigen activiteitstag. Voor sommige profielen (bijv. Openbaar vervoer) wordt de activiteitstag niet toegevoegd. U kunt extra tags handmatig invoeren, gescheiden door komma's.  
+- **<Translate android="true" ids="gpx_visibility_txt"/>**. Zichtbaarheid van de track voor OSM-gebruikers:  
    - *Openbaar* betekent dat de track openbaar beschikbaar is en in onbewerkte vorm wordt weergegeven in uw GPS-tracks, GPS-tracklijsten en tracklijsten met tijdstempel. De gegevens die via de API worden verzonden, worden niet gekoppeld aan uw trackpagina. Tijdstempels van spoorpunten zijn niet beschikbaar via de openbare GPS-API en spoorpunten zijn niet chronologisch geordend.
    - *Identificeerbaar* betekent dat de track openbaar wordt weergegeven in uw GPS-spoorpunten en openbare GPS-tracklijsten, wat betekent dat andere gebruikers de onbewerkte track kunnen downloaden en deze aan uw gebruikersnaam kunnen koppelen. Openbare gegevens van spoorpunten met tijdstempel van de GPS-API die via de spoorpunten-API worden doorgegeven, linken naar uw oorspronkelijke trackpagina.
    - *Traceerbaar* betekent dat de track niet wordt weergegeven in openbare lijsten, maar de verwerkte spoorpunten met tijdstempels ervan (die niet direct aan u kunnen worden gekoppeld) worden geladen vanuit de openbare GPS-API.
@@ -281,7 +291,7 @@ U kunt meer dan één track selecteren om naar OSM te uploaden. Tik hiervoor op 
 
 ### OBF-bestand genereren {#generate-obf-file}
 
-U kunt een OBF-bestand maken met [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) als u een grote GPX-trackdatabase heeft. Dit kan een verzameling tracks zijn van osmand.net met de tag 'gpsies', een verzameling gedownloade tracks van OpenStreetMap of uw eigen verzameling.
+U kunt een OBF-bestand maken met [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator) als u een grote GPX-trackdatabase heeft. Dit is een verzameling tracks van osmand.net met de tag 'gpsies', een verzameling gedownloade tracks van OpenStreetMap of uw eigen verzameling.
 
 
 ## Gerelateerde artikelen {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title:  Radiusliniaal en Liniaal
 ---
@@ -69,6 +69,8 @@ Deze tool is handig wanneer u snel inzicht wilt krijgen in de grootte van object
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="radius_ruler_item"/>*
 
+Beschikbaar op alle panelen: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, en <Translate android="true" ids="shared_string_right"/>.
+
 ![Weergavepositie Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
@@ -76,7 +78,9 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,sh
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Weergavepositie Android](@site/static/img/widgets/radius_ruler_height_ios.png)
+Beschikbaar op alle panelen: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Links, en Rechts.
+
+![Weergavepositie iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -167,7 +171,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Overig → Locatiepositie op scherm*
 
-![Weergavepositie Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Radiusliniaal naar beneden](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Weergavepositie iOS](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Radiusliniaal naar beneden](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 

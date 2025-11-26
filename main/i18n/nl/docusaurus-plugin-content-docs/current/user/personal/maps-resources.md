@@ -1,5 +1,5 @@
 ---
-source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
+source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -177,7 +177,9 @@ Lees meer in het artikel [**Aangepast pakket**](../plugins/custom).
 
 </Tabs>
 
-Voor landen die bestaan uit **meerdere regiokaarten**, kunt u bulksgewijs meerdere kaarten laden. Kaarten die beschikbaar zijn voor dit type download worden weergegeven met een dubbel downloadpijlicoon en een label met het aantal regio's erin (bijv. Hoogtelijnen / Alle regio's: 10). U kunt kiezen hoeveel kaarten u wilt downloaden.
+Voor landen die bestaan uit **meerdere regiokaarten**, kunt u bulksgewijs meerdere kaarten laden. Kaarten die beschikbaar zijn voor dit type download worden weergegeven met een dubbel downloadpijlicoon en een label met het aantal regio's erin (bijv. Hoogtelijnen / Alle regio's: 10). U kunt kiezen hoeveel kaarten u wilt downloaden. Bulkladen ondersteunt verschillende kaarttypes, waaronder Standaard, Hoogtelijnen, Wikipedia en Terrein.
+
+Wanneer een gegroepeerd landitem wordt geopend, wordt een bodemsheet weergegeven met de volledige lijst van kaarten voor dat land, waardoor individuele kaarten kunnen worden geselecteerd of ze allemaal tegelijk kunnen worden gedownload.
 
 
 ## Lokaal menu {#local-menu}
@@ -404,11 +406,21 @@ Use sorting options to organize map data:
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Kaartenmenu Kaarten bijwerken Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Kaartenmenu Kaarten bijwerken Android](@site/static/img/personal/maps/maps_update_andr.png) ![Kaartenmenu Update-tabblad Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernieuwen. Standaard- en 'alleen wegen'-kaarten worden één keer per maand uitgebracht, meestal tussen de 2e en 5e dag, en bevatten OpenStreetMap-gegevens tot de laatste dag van de voorgaande maand (bijvoorbeeld, de oktober-release bevat gegevens tot 30 september). Andere gegevens zoals Wikipedia, terrein- of nautische kaarten kunnen verschillende, niet-regelmatige updateschema's volgen. Weersvoorspellingen hebben hun eigen regelmatige updatecyclus. Voor details, zie [Voorspelling downloaden](../plugins/weather.md#download-forecast). 
 
+Als meerdere kaarten van hetzelfde land een update vereisen, groepeert OsmAnd ze in één item in de Updates-lijst. Het gegroepeerde item toont de landnaam en het aantal opgenomen kaarten. Wanneer u erop tikt, opent een *Kaarten bijwerken*-bodemsheet met alle kaarten die een update nodig hebben. 
+
 Gebruik de knop *Alles bijwerken* om alle kaarten tegelijk bij te werken, of werk individuele kaarten naar behoefte bij. Voor uurlijkse updates, controleer de status van uw [Live Updates](#live-updates)-abonnement. Indien ingeschakeld, verschijnt de sectie **Live Updates** bovenaan het tabblad, onder de indicator voor het apparaatgeheugen.
+
+U kunt ook kaarten rechtstreeks vanuit het Updates-tabblad beheren met een lang-drukgebaar op een willekeurige vermelde kaart. Dit opent een contextmenu met verschillende opties:
+- **Info** — bekijk details over de geselecteerde kaart
+- **Bijwerken** — download de nieuwste beschikbare versie
+- **Deactiveren** — schakel een kaart tijdelijk uit zonder de gegevens te verwijderen
+- **Verwijderen** — verwijder de kaartgegevens volledig van het apparaat
+
+Wanneer een kaart is gedeactiveerd, verdwijnt deze mogelijk tijdelijk uit het Lokaal-tabblad. Als een update beschikbaar wordt voor een gedeactiveerde kaart, verschijnt deze nog steeds in de Updates-lijst en wordt deze weergegeven met een grijs pictogram. Het bijwerken van een dergelijke kaart activeert deze automatisch weer.
 
 </TabItem>
 

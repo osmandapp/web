@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Routes
 ---
@@ -71,13 +71,13 @@ MTB-routes hebben een specifieke mapping in [OpenStreetMap](https://wiki.openstr
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
-### Crossmotorroutes {#dirt-bike-trails}
+### Dirt Bike-paden {#dirt-bike-trails}
 
 ![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-De functie **Crossmotorroutes** stelt u in staat om specifieke routes voor crossmotoren op de kaart weer te geven op basis van de `dirtbike:scale`-tag. Deze schaal markeert paden die geschikt zijn voor crossmotoren, met een gekleurde overlay die de moeilijkheidsgraden toont ([Kaartlegenda](../map-legend/osmand.md#routes)).  
+De functie **Dirt Bike-paden** stelt u in staat om specifieke routes voor dirt bikes op de kaart weer te geven op basis van de `dirtbike:scale`-tag. Deze schaal markeert paden die geschikt zijn voor dirt biking, met een gekleurde overlay die de moeilijkheidsgraden toont ([Kaartlegenda](../map-legend/osmand.md#routes)).  
 
-U kunt deze functie activeren in *Menu → Kaart configureren → Routes → Crossmotorroutes*. Het systeem werkt op dezelfde manier als de MTB-schaal en biedt een visuele weergave van routes die zijn afgestemd op crossmotoren — [meer over de `dirtbike`-tag vindt u hier](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+U kunt deze functie activeren in *Menu → Kaart configureren → Routes → Dirt bike-routes*. Het systeem werkt op dezelfde manier als de MTB-schaal en biedt een visuele weergave van routes die zijn afgestemd op dirt biking — [meer over de `dirtbike`-tag vindt u hier](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
 
 ### Klimroutes {#climbing-routes}
@@ -181,7 +181,10 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,render
 - Om de gewenste routes op de kaart weer te geven, schakelt u ze in de *Lijst met routes* van het menu [Kaart configureren](../map/configure-map-menu.md) in.
 - OsmAnd kan [routes op OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) markeren. Ze kunnen worden geselecteerd door op [het symbool op de route](#save-as-a-track) te tikken, en als de zichtbare set routes correct is geconfigureerd, kunt u de kleur en pictogrammen volgen.
 - De belangrijkste routetypes kunnen ook worden gefilterd op klassen en subklassen, waardoor u alleen specifieke groepen binnen elk type kunt weergeven. Bijvoorbeeld, u kunt wandelroutes weergeven op basis van **OSMC-symbolen** als klassen, en op basis van *internationale, nationale, regionale* of *lokale netwerken* als subklassen.
-- U kunt een track bovenop de routes maken met behulp van het hulpmiddel [Route plannen](../plan-route/create-route.md).  
+- U kunt een track bovenop de routes maken met behulp van het hulpmiddel [Route plannen](../plan-route/create-route.md). 
+- Wanneer meerdere routes langs dezelfde weg lopen, wordt elke route weergegeven als een aparte semi-transparante lijn die boven de anderen is geplaatst. 
+- Wanneer u tikt op een locatie waar meerdere routes overlappen, wordt een contextmenu weergegeven met alle routes die door dit punt lopen. 
+- Bijgewerkte vectorkaarten zijn vereist om alle elementen van het nieuwe routesrenderingschema weer te geven. 
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -195,7 +198,8 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 - Om de gewenste routes op de kaart weer te geven, schakelt u ze in de *Lijst met routes* van het menu [Kaart configureren](../map/configure-map-menu.md) in.
 - OsmAnd kan [routes op OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) markeren. Ze kunnen worden geselecteerd door op [het symbool op de route](#save-as-a-track) te tikken, en als de zichtbare set routes correct is geconfigureerd, kunt u de kleur en pictogrammen volgen.
-- U kunt een track bovenop de routes maken met behulp van het hulpmiddel [Route plannen](../plan-route/create-route.md).  
+- U kunt een track bovenop de routes maken met behulp van het hulpmiddel [Route plannen](../plan-route/create-route.md). 
+- Wanneer meerdere routes langs dezelfde weg lopen, wordt elke route weergegeven als een aparte semi-transparante lijn die boven de anderen is geplaatst.   
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -229,7 +233,7 @@ Bij het selecteren van een [klimgebied of -rotswand](../map/routes.md#climbing-r
 
 </Tabs>
 
-Op de kaart kunt u routes selecteren voor [wandelen, fietsen, ski, MTB, crossmotor, reizen en meer](#type-of-routes). Waar beschikbaar, tonen wandelroutes hun wegmarkeringen met behulp van [OSMC-symbolen](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); andere routetypes gebruiken hun eigen markeringen.
+Op de kaart kunt u routes selecteren voor [wandelen, fietsen, ski, MTB, dirt bike, reizen en meer](#type-of-routes). Waar beschikbaar, tonen wandelroutes hun wegmarkeringen met behulp van [OSMC-symbolen](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); andere routetypes gebruiken hun eigen markeringen.
 
 Wanneer u op een **routesymbool** op de kaart tikt:
 
@@ -361,13 +365,13 @@ Om te zoeken, ga naar het menu *<Translate android="true" ids="search_button"/>*
 
 </Tabs>  
 
-Navigeer naar *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* om de gewenste routes te vinden. Routes bevatten naam, activiteitstype, lengte, locatie en afstand tot het dichtstbijzijnde punt.
+Navigeer naar *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* om de gewenste routes te vinden. Routes bevatten naam, activiteitstype, lengte, locatie en afstand tot het dichtstbijzijnde punt. Op Android worden ook hoogtemetrics zoals stijging en daling weergegeven waar beschikbaar. Kleine hoogteveranderingen (minder dan 10 m) worden verborgen om de lijst overzichtelijk te houden. Alle waarden respecteren de geselecteerde afstands- en hoogte-eenheden van de app.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_1.png)
+![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -385,7 +389,7 @@ Gebruik de filterknop (rechterbovenhoek) om alleen de gewenste routes weer te ge
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 
