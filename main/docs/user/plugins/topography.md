@@ -271,7 +271,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 - From a [predefined list](#default-color-scheme).
 - From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
 
-You can [edit these palettes](../personal/color-palette-schemes.md#edit-palette-file) to personalize the appearance of maps and routes.
+You can [edit these palettes](../personal/color-palette-schemes.md#palette-modify) to personalize the appearance of maps and routes.
 
 
 ### Visibility {#visibility}

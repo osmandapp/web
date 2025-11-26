@@ -118,28 +118,16 @@ The `user_palette_default.txt` palette is used for predefined colors assigned to
 Weather palette files (`weather_cloud.txt`, `weather_precip.txt`, `weather_pressure.txt`, `weather_temperature.txt`, `weather_wind.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
 
 
-## Palette Legend {#palette-legend}
+## Settings {#settings}
 
-<table class="image">
-    <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
-    </tr>
-</table>
-
-
-The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
-
-
-## Edit Palette file {#edit-palette-file}
+## Palette Modify {#palette-modify}
 
 You can edit palettes to personalize the look for maps, and routes. Own color palette files can be added to OsmAnd using the [import/export tool](./import-export.md).
 
-- *Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
+- *Tracks and Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_maxspeed_<palette_name>.txt`, `route_elevation_<type_name>.txt`.
 - *Terrain*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
 - *Weather*: `weather_<type_name>.txt`.
-- *Color*: `user_palette_default.txt`.
+- *Favorites and Waypoints*: `user_palette_default.txt`.
 
 Each line represents a numerical value (for the color palette, it's an index) and RGB color. For example:
 
@@ -156,10 +144,24 @@ Each line represents a numerical value (for the color palette, it's an index) an
 
 ```
 
-After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
+After moving this TXT file to *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
+
+## Palette Legend {#palette-legend}
+
+<table class="image">
+    <tr>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
+    </tr>
+</table>
 
 
-## Read more {#read-more}
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
+
+
+
+
 
 ### Quick actions {#quick-actions}
 
