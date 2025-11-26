@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  Externe Sensoren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -241,6 +241,8 @@ Ondersteunde widgettypes:
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – huidige omgevingstemperatuur.
 7. **Batterijniveau** – percentage van de resterende batterij in een verbonden BLE-sensor, schakel dit in bij **Sensorinstellingen**.
 
+**Opmerking:** Als een sensor tijdelijk ontkoppelt, tik dan op de widget ervan op de kaart om onmiddellijk opnieuw verbinding te maken — u hoeft het Externe Sensoren-menu niet te openen.
+
 
 ### Widgetinstellingen {#widget-settings}
 
@@ -258,7 +260,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,sh
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Kies een paneel → Widget toevoegen → Externe sensor → Kies een widget → Instellingen*
 
-![Externe sensoren widgets Instellingen Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![Externe sensoren widgets Instellingen iOS](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 

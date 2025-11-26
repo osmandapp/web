@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -136,6 +136,7 @@ Het **Objectinfo**-paneel biedt aanvullende details over het geselecteerde objec
 
 Beschikbare details zijn onder andere:
 
+- [Artikelbeschrijving](#article-description)
 - [Alternatieve namen](#alternative-names)
 - [Coördinaten](#coordinates)
 - [Binnen gebieden](#polygon-information)
@@ -153,7 +154,34 @@ Daarnaast kan het paneel [OpenStreetMap Details](https://wiki.openstreetmap.org/
 - [Openingstijden](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Kosten](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Toegankelijkheid](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Breedte](https://wiki.openstreetmap.org/wiki/Key:width) / [Hoogte](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Breedte](https://wiki.openstreetmap.org/wiki/Key:width) / [Hoogte](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Naast de hierboven genoemde velden kan OsmAnd ook extra beschrijvende informatie tonen die is overgenomen van OpenStreetMap. Deze attributen helpen u de kenmerken van een plaats beter te begrijpen en kunnen details bevatten zoals hoogte, richting, bouwjaar, type oppervlak of bekleding, binnenniveau, betaalopties, beschikbaarheid van bezorging of afhalen, en vele andere. OsmAnd toont deze attributen met duidelijke labels en, waar mogelijk, iconen, waardoor het eenvoudiger is om de informatie te lezen en te herkennen. Het exacte aantal attributen hangt af van de beschikbare gegevens in OpenStreetMap voor het geselecteerde object.
+
+
+### Artikelbeschrijving {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Beschrijvingslijst](@site/static/img/map/description_list_new_android.png) ![Beschrijvingslijst](@site/static/img/map/description_list_dialog.png)
+
+Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md#wikipedia-article), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
+
+Als de geselecteerde plaats een Wikipedia-artikel heeft, wordt een korte preview weergegeven in deze sectie. Wanneer het volledige artikel niet offline beschikbaar is, verschijnt de knop *Lezen op Wikipedia*. Door erop te tikken, opent zich een dialoog met opties afhankelijk van de toegang van de gebruiker: gebruikers met een gekocht abonnement kunnen de regionale Wikipedia-gegevens downloaden of het artikel in een browser openen, terwijl gratis gebruikers het artikel online kunnen openen of naar het scherm kunnen gaan dat offline toegang aanbiedt.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Beschrijvingslijst](@site/static/img/map/description_list_new_ios.png)
+
+Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Alternatieve namen {#alternative-names}
@@ -168,7 +196,7 @@ Daarnaast kan het paneel [OpenStreetMap Details](https://wiki.openstreetmap.org/
 
 <TabItem value="ios" label="iOS">
 
-![Alternatieve namen iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatieve namen Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen Android](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -199,7 +227,7 @@ Kenmerken van de weergave van alternatieve namen:
 
 <TabItem value="ios" label="iOS">
 
-![Polygooninformatie iOS](@site/static/img/map/polygon_information_ios.png)
+![Polygooninformatie Android](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -255,7 +283,7 @@ Tik op *Nabije [Populaire plaatsen](https://osmand.net/docs/user/map/popular_pla
 
 </TabItem>
 
-<TabItem value="iOS" label="iOS">
+<TabItem value="ios" label="iOS">
 
 ![Nabije plaatsen iOS](@site/static/img/map/nearby_places_ios.png)
 
@@ -298,27 +326,6 @@ Toont informatie over openbaarvervoerroutes voor de gekozen vervoershalte. Infor
 Dit is een lijst van alle punten in één groep voor een Favoriet of Waypoint. Door te tikken, wordt de volledige lijst met punten van één groep uitgevouwen. Wanneer u op een punt uit de lijst tikt, wordt de kaart naar het geselecteerde punt verplaatst.
 
 
-
-
-### Artikelbeschrijving {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Beschrijvingslijst](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Beschrijvingslijst](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugins/wikipedia.md), [Favoriet](../personal/favorites.md) of Waypoint-beschrijving. Door te tikken kunt u de volledige beschrijving openen.
 
 
 ### OpenStreetMap-link {#openstreetmap-link}

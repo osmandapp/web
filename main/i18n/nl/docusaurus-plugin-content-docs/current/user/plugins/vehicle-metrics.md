@@ -1,5 +1,5 @@
 ---
-source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title:  Voertuigstatistieken
 ---
@@ -82,7 +82,7 @@ Om gegevens van een OBD-II-scanner te gebruiken:
 Sluit de scanner aan op de poort van uw voertuig en koppel deze via de app:
 
 - Navigeer naar *Menu → Plugins → Voertuigstatistieken → Instellingen → Verbinden* of **+**.
-- Als Voertuigstatistieken in het *Hoofdmenu* staat: *Menu → Voertuigstatistieken → Instellingen → Verbinden* of **+**.
+- Als Voertuigstatistieken in het *Hoofdmenu* staat:  *Menu → Voertuigstatistieken → Instellingen → Verbinden* of **+**.
 
 Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 
@@ -119,6 +119,8 @@ Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 - **Hernoemen**. Hiermee kunt u een aangepaste naam aan de sensor toewijzen voor eenvoudigere identificatie.
 - **Vergeten**. Verwijdert de eerder gekoppelde OBD-II-sensor uit de lijst, waardoor opnieuw koppelen later nodig is.
 
+**Herconnectiegedrag** *(Alleen Android)***:** OsmAnd probeert automatisch opnieuw verbinding te maken met de OBD-II-adapter wanneer de applicatie wordt gestart, wanneer navigatie wordt gestart, of wanneer Android Auto wordt gelanceerd. Als een verbinding niet beschikbaar is, tonen Voertuigstatistieken-widgets “–”. Een enkele tik op een willekeurige Voertuigstatistieken-widget zal proberen opnieuw verbinding te maken met de sensor. Als de sensor al verbonden is, schakelt de tik de weergavemodi van de widget zoals gewoonlijk.
+
 
 ## Lijst met statistieken {#metrics-list}
 
@@ -149,7 +151,7 @@ Statistieken zijn gecategoriseerd voor de duidelijkheid. Geavanceerde diagnostis
 - **Adapterspanning**. Toont de spanning die aan de OBD-II-adapter wordt geleverd (AT RV-opdracht).
 - **Voertuigsnelheid**. Toont gegevens van de voertuigsnelheidssensor (VSS).
 - **Gaskleppositie**. Bepaalt de luchtinlaat van de motor via de hoek van de gasklepplaat.  
-  **VIN**. Toont het 17-cijferige identificatienummer van het voertuig.
+  **VIN**. Toont het 17-karakterige identificatienummer van het voertuig.
 
 
 ## Ritregistratie {#trip-recording}
@@ -234,6 +236,13 @@ Sommige widgets bieden weergavemodusopties:
 
 - **Direct**. Toont realtime gegevens voor de geselecteerde statistiek.
 - **Gemiddeld**. Toont gemiddelde waarden over een configureerbaar tijdsinterval (15 seconden tot 60 minuten).
+
+Verschillende widgets, inclusief *Brandstofverbruik*, passen hun weergegeven eenheden en regionale metrische formaten aan op basis van de [Profielinstellingen](https://osmand.net/docs/user/personal/profiles#units--formats). Bij gebruik van volume-eenheden anders dan liters ondersteunt Brandstofverbruik het tonen van waarden als Miles per Gallon (MPG). Het exacte MPG-type hangt af van de geselecteerde volume-eenheid:
+
+- US gallons → MPG (US)
+- Imperial gallons → MPG (UK)
+
+De widget selecteert automatisch het juiste formaat op basis van de gekozen <Translate android="true" ids="routing_attr_length_name"/> en <Translate android="true" ids="shared_string_volume"/> eenheden in het actieve profiel, en uw gekozen weergavemodus wordt behouden bij het exporteren en importeren van profielen.
 
 
 ## Gerelateerde artikelen {#related-articles}

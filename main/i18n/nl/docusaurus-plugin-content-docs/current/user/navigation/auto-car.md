@@ -1,5 +1,5 @@
 ---
-source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
+source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -227,6 +227,27 @@ Route-informatie bestaat uit:
 Indien ingeschakeld, zal **[de widgetinstelling](#eta-next-stop)** (Route-informatie) routegegevens tonen voor de volgende stop ([het tussenliggende punt](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
+### Navigatie-waarschuwingen {#navigation-alerts}
+
+![Ontbrekende waarschuwing](@site/static/img/navigation/auto-car/missing_alert.png) ![Privé-waarschuwing](@site/static/img/navigation/auto-car/private_alert.png)
+
+Handige waarschuwingen worden automatisch weergegeven voordat de navigatie start als de route niet normaal kan worden opgebouwd. Dit voorkomt dat de route vastloopt op laden en stelt u in staat om snel te kiezen hoe u wilt doorgaan.
+
+**Ontbrekende of verouderde kaarten**
+
+Als uw bestemming zich buiten de gedownloade kaartgebieden bevindt, wordt een bericht weergegeven en kunt u een van de volgende acties kiezen:
+- **Gebruik gedownloade kaarten**. De route wordt opgebouwd met alleen de kaarten die al op uw apparaat zijn opgeslagen. (De route kan onvolledig zijn als de vereiste kaartgegevens niet beschikbaar zijn.)
+- **Bekijk op telefoon**. Het scherm voor het downloaden van kaarten wordt geopend op uw smartphone, waar de benodigde regio's kunnen worden gedownload. Na het downloaden wordt de routeberekening automatisch opnieuw gestart.
+
+Deze waarschuwing wordt rechtstreeks op het voertuigscherm weergegeven, op dezelfde manier als in de mobiele app.
+
+**Waarschuwing voor privétoegang**
+
+Als uw bestemming zich in een privé- of beperkingsgebied bevindt, wordt een waarschuwing weergegeven en kunt u kiezen:
+- **Toestaan**. De navigatie wordt voortgezet met gebruik van privéwegen als dat is toegestaan of als u toegang hebt.
+- **Annuleren**. Het navigatieverzoek wordt afgebroken en het vorige scherm wordt hersteld.
+
+
 ### Schermwaarschuwingswidget {#screen-alert-widget}
 
 Deze informatiewidget combineert waarschuwingstypes zoals **Zebrapaden** en **Snelheidslimiet**.
@@ -259,6 +280,24 @@ De OsmAnd-app stelt u in staat om de 3D-kaartweergave op het *Android Auto*-sche
 - Na het configureren van de instellingen, wordt de **3D-knop** weergegeven op het *Android Auto*-scherm wanneer de categorielijst voor bestemmingen is gesloten.
 - U kunt schakelen tussen 3D / 2D-kaartmodi door op deze knop te tikken.
 
+### Navigatie afronden {#finish-navigation}
+
+![Navigatie afronden](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+Wanneer de navigatie is voltooid in Android Auto, verschijnt er een speciaal dialoogvenster Navigatie afronden op het voertuigscherm. Het gebruikt hetzelfde algoritme voor detectie van aankomst als de mobiele app en helpt u om uw reis snel af te ronden of een parkeerplaats in de buurt te vinden.
+
+Beschikbare opties:
+- **Markeren als parkeerlocatie**. Slaat uw huidige positie op als parkeerlocatie en plaatst een parkeermarker op de kaart.
+- **Parkeerplaats zoeken**. Opent het Zoekscherm met de categorie Parkeren vooraf geselecteerd, zodat u gemakkelijk nabijgelegen parkeerplaatsen kunt vinden.
+- **Route herberekenen**. Bouwt een nieuwe route naar uw oorspronkelijke bestemming als u eerder bent gestopt of wilt doorgaan met rijden.
+- **Navigatie afsluiten**. Beëindigt de navigatie volledig en keert OsmAnd terug naar de standaardkaartweergave.
+
+Gedrag bij ontkoppelen van Android Auto:
+- Als uw telefoon ontkoppelt wanneer het voertuig zich al binnen 100 m van de bestemming bevindt, stopt OsmAnd de navigatie automatisch, schakelt terug naar het standaardprofiel en er verschijnt geen aankondigingsmelding op het scherm van de telefoon.
+- Als de ontkoppeling plaatsvindt terwijl u stilstaat of met een snelheid langzamer dan 1 m/s beweegt (bijvoorbeeld bij een benzinestation), pauzeert OsmAnd de navigatie tijdelijk. Het hervat automatisch wanneer het apparaat opnieuw verbinding maakt met Android Auto.
+
+Deze update zorgt er ook voor dat Android Auto-sessies nu correct worden afgesloten, waardoor onnodig batterijverbruik wordt voorkomen en "reis in uitvoering"-meldingen stoppen zodra de navigatie eindigt.
+
 
 ## Instellingen {#settings}
 
@@ -271,7 +310,7 @@ Gesproken aanwijzingen zijn een van de handigste functies van OsmAnd tijdens het
 Om [gesproken aanwijzingen](../navigation/guidance/voice-navigation.md) te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. In *Android Auto* is alleen de instelling beschikbaar om alle geselecteerde gesproken aanwijzingen tegelijkertijd uit of aan te zetten (*Instellingenknop → Gesproken aanwijzingen (aan/uit)*).  
 
 
-### Verwachte aankomsttijd volgende stop {#eta-next-stop}
+### ETA Volgende stop {#eta-next-stop}
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 

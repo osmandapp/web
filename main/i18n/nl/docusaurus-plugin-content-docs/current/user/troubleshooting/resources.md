@@ -1,5 +1,5 @@
 ---
-source-hash: 36783a2d9726e20533612f6290c007ad9ed255d7b47c73b1d33a52dbd5388414
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: Hulpbronnen en Aanpassingen
 ---
@@ -27,7 +27,7 @@ Om in contact te komen met andere OsmAnd-gebruikers, vragen te stellen en je erv
 
 | Platform | Groepsnaam | Beschrijving | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | OsmAnd users community (*English*)  |  Dit is een groep waar OsmAnd-gebruikers andere gebruikers kunnen helpen.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+| Facebook | OsmAnd users community (*Engels*)  |  Dit is een groep waar OsmAnd-gebruikers andere gebruikers kunnen helpen.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Nederlands*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*Frans*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
 |  Facebook | LC8 Rally OsmAnd user group (*Engels*)  |  Om ervaringen met het gebruik van OsmAnd uit te wisselen. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
@@ -68,7 +68,7 @@ Deze handleidingen, beschikbaar in meerdere talen, bieden vaak unieke inzichten,
 | Spaans  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Tsjechisch   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | Frans  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
-| Italiaans | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
+| Italiaans | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android en iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
 | Nederlands | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
 | Nederlands | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
 | Nederlands | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
@@ -107,6 +107,7 @@ Het standaard [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/ma
 | Open Fiets map | [De Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) is een op fietsen gerichte kaartstijl, die fietspaden (in rood), fietsroutes (blauw gestippeld), fietspaden (rood gestippeld) en wegen met beperkt autoverkeer, zoals fietsstraten (doorgetrokken rode randen), markeert.  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selectie Kaartstijl | ["Selectie" Kaartstijl](https://groups.google.com/g/osmand/c/DS7WywdgsDA) is een kaartstijl van Holder Tamm waarmee u kunt kiezen of u bepaalde objecten wilt verbergen of niet.  |["Selectie" Kaartstijl](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [De ExplorerRS-weergavestijl](https://github.com/sykoram/OsmAnd-ExplorerRS) is voornamelijk gebaseerd op UniMap en routes.addon.render.xml  |["ExplorerRS" Kaartstijl](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [Dit is een OsmAnd-weergavestijl geoptimaliseerd voor stormjagen](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing weergavestijl](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 ### Offline Kaarten {#offline-maps}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
+source-hash: 9f4eacf3ab926b0fc0d1086f0b2c0e8318d07b76b6b1173f2bfea26d1829863c
 sidebar_position: 3
 title:  Webaankopen
 ---
@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 
 U kunt OsmAnd-producten kopen op [onze officiële website](https://osmand.net/pricing):
 
-- [**Website**](https://osmand.net/pricing): Betalingen worden veilig verwerkt door onze geautoriseerde wederverkoper [FastSpring](https://fastspring.com/).
+- [**Website**](https://osmand.net/pricing): Betalingen worden veilig verwerkt door onze geautoriseerde wederverkoper [FastSpring](https://fastspring.com/).  
 
 Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cross-platform toegang**](./cross.md).
 
@@ -30,7 +30,7 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnementplan** dat alle [pro-functies](#free-and-paid-features) ontgrendelt, inclusief CarPlay en 3D-reliëf. | Ondersteunt **cross-platform** toegang |
 
 :::note  
-**Cross-platform toegang** betekent dat u OsmAnd kunt kopen op onze website of in een winkel (bijv. *App Store, Google Play of osmand.net*) en het op een ander platform kunt gebruiken door [uw aankoop te koppelen aan een OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
+**Cross-platform toegang** betekent dat u OsmAnd kunt kopen op onze website of in één winkel (bijv. *App Store, Google Play of osmand.net*) en het op een ander platform kunt gebruiken door [uw aankoop te koppelen aan een OsmAnd Cloud-account](../personal/osmand-cloud.md#cross-platform).
 :::
 
 ## Prijzen {#prices}
@@ -38,13 +38,30 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in andere regio's worden automatisch door het betalingsplatform omgerekend naar de lokale valuta.
 
 
-<!--
 
-:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Black Friday-prijzen
+
+*Snel zijn! Dit aanbod is alleen beschikbaar tot* **30 november (23:00 CET)**.
 
 :::
+
+
+
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
+| **Prijs (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
+| **Prijs (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
+
+:::note 
+Door een abonnement aan te schaffen via onze [website](https://osmand.net/pricing) tegen een kortingstarief,  
+krijgt u een 2-jarig kortingsplan.  
+Vanaf het derde jaar geldt de volledige prijs.
+:::
+
+<!--
 
 
 
@@ -52,26 +69,10 @@ Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in a
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
-
-:::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
-:::
+| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
+| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
 
 -->
-
-
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
-| **Prijs (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Prijs (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
-
-
 
 ### Gratis en betaalde functies {#free-and-paid-features}
 

@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
-title:  Tracks Beheren
+title:  Tracks beheren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Overzicht {#overview}
@@ -55,9 +55,9 @@ Alle tracks in OsmAnd worden opgeslagen in een tabblad in *<Translate android="t
 
 </Tabs>
 
-U kunt op de volgende manieren tracks toevoegen in OsmAnd:
+U kunt tracks toevoegen in OsmAnd op de volgende manieren:
 
-1. **[Importeer](./manage-tracks.md#import--export-track)** een track van een externe bron.
+1. **[Importeren](./manage-tracks.md#import--export-track)** een track van een externe bron.
 2. Maak een nieuwe track aan in de applicatie met de tool **[Route plannen](../../plan-route/create-route.md)**.
 3. Neem een track op in de applicatie met de plug-in **[Reisregistratie](../../plugins/trip-recording.md)**.
 4. Voer meerdere punten in via coördinaten en sla ze op als een track met de tool **[Coördinaten invoeren](../../plan-route/coordinate-input.md)**.
@@ -70,7 +70,7 @@ U kunt op de volgende manieren tracks toevoegen in OsmAnd:
 
 <TabItem value="android" label="Android">
 
-Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tabblad*
 
 ![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,7 +78,7 @@ Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *tabblad <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
 
 ![Mijn plaatsen met tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
@@ -95,7 +95,7 @@ Alle tracks die ooit zijn opgenomen, aangemaakt of geïmporteerd, worden automat
 
 <TabItem value="android" label="Android">
 
-Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
 
 ![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -103,7 +103,7 @@ Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *tabblad <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
 
 ![Contextmenu van een track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
@@ -196,7 +196,7 @@ Nadat u uw keuze heeft gemaakt, zijn de volgende stappen beschikbaar:
 
 - **Toon op kaart** — Met deze functie kunt u de geselecteerde tracks op de kaart weergeven om hun locatie en onderlinge relatie beter te begrijpen.
 
-- **Delen** (*Android*) / **Exporteren** (*iOS*) — Als u geselecteerde gegevens wilt delen met andere gebruikers of wilt opslaan in een cloudservice, kunt u met de functie *Delen/Exporteren* tracks en mappen verzenden via verschillende deelmethoden.
+- **Delen** (*Android*) / **Exporteren** (*iOS*) — Opent het systeemmenu Delen en verzendt de geselecteerde tracks als GPX-bestanden (.gpx) of exporteert geselecteerde mappen met de gekozen app of cloudservice.
 
 - **Uploaden naar OpenStreetMap** — U kunt geselecteerde tracks indienen bij OpenStreetMap en zo bijdragen aan de ontwikkeling en verbetering van de gegevens.
 
@@ -307,7 +307,7 @@ Met het trackmapmenu kunt u mappen bekijken, hernoemen, exporteren en beheren.
 
 <TabItem value="android" label="Android">
 
-Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tabblad*
 
 ![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
@@ -315,7 +315,7 @@ Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *tabblad <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
 
 ![Mijn plaatsen met tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
 
@@ -378,7 +378,7 @@ Hoe mapacties te openen:
 
 <TabItem value="android" label="Android">
 
-Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
 
 ![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
@@ -386,7 +386,7 @@ Ga naar: *tabblad <Translate android="true" ids="shared_string_menu,shared_strin
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *tabblad <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tabblad*
 
 ![Contextmenu van een track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
 

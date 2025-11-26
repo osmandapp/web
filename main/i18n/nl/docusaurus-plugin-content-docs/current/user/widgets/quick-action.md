@@ -1,5 +1,5 @@
 ---
-source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title:  Snelle Actie (Aangepaste knoppen)
 ---
@@ -69,7 +69,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tik op Bewerken (Potloodicoon in de rechterbovenhoek) → Selecteer acties*
 
-![Snelle actie widget_ios_toevoegen](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Aangepaste knop iOS](@site/static/img/widgets/add_action_screen_ios.png)
+![Snelle actie widget_ios_toevoegen](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Aangepaste knop Android](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
@@ -151,7 +151,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
-![Aangepaste knop iOS](@site/static/img/widgets/custom_button_ios.png)  
+![Aangepaste knop Android](@site/static/img/widgets/custom_button_ios.png)  
 
 </TabItem>
 
@@ -189,7 +189,7 @@ De *Snelle Actie* widget verschijnt in de onderste hoek van het kaartscherm wann
 
 - **Meerdere [Aangepaste knoppen](#custom-buttons)**. U kunt meerdere snelle actie knoppen toevoegen aan het kaartscherm. Deze knoppen kunnen ook individueel worden aangepast en verplaatst met dezelfde sleepmethode.
 
-    ![Snelle actie widget_meerdere](@site/static/img/widgets/quick_action_widget_multi.png)
+    ![Snelle actie widget_verplaatsen](@site/static/img/widgets/quick_action_widget_multi.png)
 
 ### Rasterindeling voor Knoppen {#grid-layout-for-buttons}
 
@@ -197,13 +197,17 @@ De *Snelle Actie* widget verschijnt in de onderste hoek van het kaartscherm wann
 
 <TabItem value="android" label="Android">  
 
-![Raster voor knoppen_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Raster voor knoppen_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Raster voor knoppen_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![Raster voor knoppen_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Raster voor knoppen_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Raster voor knoppen_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Raster voor knoppen_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![Raster voor knoppen_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ De *Snelle Actie* widget verschijnt in de onderste hoek van het kaartscherm wann
 [Kaartknoppen](../widgets/map-buttons.md#overview) worden automatisch gerangschikt met behulp van een rasterindeling. Elke knop wordt toegewezen aan een van de vier hoeken van het scherm (*boven-links*, *boven-rechts*, *onder-links*, *onder-rechts*). Als er niet genoeg ruimte is in de toegewezen hoek, worden de knoppen horizontaal of verticaal uitgelijnd, afhankelijk van de schermoriëntatie.
 
 Deze indeling helpt om knoppen visueel consistent te houden en overlappen te voorkomen. Bijvoorbeeld, op een ligscherm zullen knoppen in de rechterhoek horizontaal onderaan het scherm worden uitgelijnd, terwijl op een staandscherm ze verticaal omhoog of omlaag worden uitgebreid indien nodig.
+
+Het raster past zich aan aan de omliggende interface en herpositioneert knoppen wanneer nodig, waardoor ze zichtbaar blijven en niet interfereren met andere on-scherm elementen. Wanneer widgets of panelen worden toegevoegd, verwijderd of herschikt, wordt de indeling dienovereenkomstig bijgewerkt zodat de knopvolgorde consistent blijft en geen element verborgen raakt.
+
+[Profielen geïmporteerd](https://osmand.net/docs/user/personal/import-export#export) van een ander apparaat worden aangepast aan de rasterindeling, waardoor knopposities correct blijven over verschillende schermgroottes en platforms.
 
 
 ## Actietypes {#action-types}
@@ -223,8 +231,8 @@ Deze indeling helpt om knoppen visueel consistent te houden en overlappen te voo
 | Tonen / Verbergen <br/> [**Routes**](../map/vector-maps.md#routes) | U kunt routetypes selecteren om hun weergave in of uit te schakelen. <br/> Sommige routes hebben extra instellingen. Standaard, als u niets hebt geselecteerd in het [Kaart configureren](../map/configure-map-menu.md) menu, wordt het eerste routetype uit de lijst toegewezen, anders wordt een type naar keuze toegewezen. U kunt meer lezen in het [Routes](../map/routes.md) artikel. <br/> - ***Fietsroutes***  &nbsp;(*Route*, *Knooppuntennetwerken*) <br/> - ***Mountainbikeroutes***  &nbsp;(*MTB-schaal*, *IMBA*) <br/> - ***Wandelroutes***  &nbsp;(*OSMC*, *Netwerkaansluiting*, *Knooppuntennetwerken*) <br/> - ***Moeilijkheidsgraad wandelpaden***  &nbsp;(*SAC-schaal*, *CAI-schaal*) <br/> - ***Skipistes*** <br/> - ***Paardrijroutes*** <br/> - ***Wildwatersporten*** <br/> - ***Hardlooproutes*** <br/> - ***Fitnesstrails*** <br/> - ***Reisroutes***  &nbsp;(*Tracks*, *Reisboeken*, *Punten*) <br/> |
 | Tonen / Verbergen <br/> [**Topografielagen**](../plugins/topography.md#overview) | Alle topografische gegevens worden gepresenteerd als afzonderlijke kaartlagen. U kunt de zichtbaarheid van deze lagen snel wisselen met Snelle Actie. <br/> - ***Contourlijnen*** <br/> - ***Terrein***  &nbsp;(*Afhankelijk van de geselecteerde laag in het [Kaart configureren](../map/configure-map-menu.md) menu, wordt *Schaduwreliëf*, *Helling* of *Hoogte* *weergegeven.*) |
 | Wijzigen <br/> [**Terrein kleurenschema**](../plugins/topography.md#modify-color-scheme) | Hiermee kunt u een of meer paletten selecteren uit een lijst van bestaande, die veranderen wanneer u op de knop tikt. |
-| Tonen / Verbergen <br/> [**Weerlagen**](../plugins/weather.md#weather-layers) | Alle weergegevens worden gepresenteerd als afzonderlijke kaartlagen. Met Snelle Actie krijgt u snelle toegang om de zichtbaarheid van deze lagen op de kaart te wisselen. <br/> - ***Neerslaglaag*** <br/> - ***Wolkenlaag*** <br/> - ***Druklaag*** <br/> - ***Windlaag*** <br/> - ***Temperatuurlaag*** |
-| Openen <br/> [**Weerscherm**](../plugins/weather.md) <br /> *Alleen Android* | Opent het [*Weer* voorspellingsscherm](../plugins/weather.md#weather-forecast-screen) met gedetailleerde informatie. |
+| Tonen / Verbergen <br/> [**Weerlagen**](../plugins/weather.md#weather-layers) | Alle weergegevens worden gepresenteerd als afzonderlijke kaartlagen. Met Snelle Actie krijgt u snelle toegang om de zichtbaarheid van deze lagen op de kaart te wisselen. <br/> - ***Neerslaglaag*** <br/> - ***Wolkenlaag*** <br/> - ***Druklaag*** <br/> - ***Windlaag*** <br/> - ***Windanimatielaag*** *(Alleen Android)* <br/> - ***Temperatuurlaag*** <br/> Op Android is er ook **Weerlagen** — een hoofdschakelaar voor alle actieve weerlagen. Schakelt alle momenteel ingeschakelde weerlagen tegelijk uit. Wanneer weer ingeschakeld, herstelt het exact dezelfde set lagen die actief waren ervoor. |
+| Openen <br/> [**Weerscherm**](../plugins/weather.md) | Opent het [*Weer* voorspellingsscherm](../plugins/weather.md#weather-forecast-screen) met gedetailleerde informatie. |
 | Tonen / Verbergen <br/> [**Favorieten**](../map/point-layers-on-map.md#favorites) | Toon of verberg de favoriete punten op de kaart. |
 | Tonen / Verbergen <br/> [**Tracks**](../personal/tracks/manage-tracks.md#track-menu) | Toon of verberg de laatst zichtbare tracks op de kaart. |
 | Tonen / Verbergen <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Schakel de weergave van POI-lagen met geselecteerde categorieën op de kaart in of uit.<br/>U kunt meerdere POI-categorieën selecteren. De actie vervangt de POI-categorieën die zijn geselecteerd in Kaart configureren zonder Snelle Acties te gebruiken.  |
@@ -247,6 +255,7 @@ Deze indeling helpt om knoppen visueel consistent te houden en overlappen te voo
 | Tonen / Verbergen <br/> [**Zoekweergave**](../search/search-all.md) | Opent of sluit de zoekweergave. |
 | Tonen / Verbergen <br/> [**Zijmenu**](../start-with/main-menu.md) | Schakelt de zichtbaarheid van het hoofdmenu aan de zijkant voor toegang tot kernfuncties. |
 | Aan / Uit <br/> [**Aanraakschermvergrendeling**](../map/interact-with-map.md#touch-screen-lock) | Activeert of deactiveert de aanraakschermvergrendeling om onbedoelde scherminteracties te voorkomen. |
+| Openen <br/> **WunderLINQ Datagrid** | Opent de WunderLINQ-gegevensinterface voor het bekijken van informatie van verbonden apparaten; leidt door naar de App Store als de vereiste WunderLINQ-app niet is geïnstalleerd. |
 
 
 ### Kaartinteracties {#map-interactions}
@@ -276,7 +285,7 @@ Deze indeling helpt om knoppen visueel consistent te houden en overlappen te voo
 | Toevoegen <br/> [**Parkeerplaats**](../plugins/parking.md) | Voegt een parkeerplaats toe aan een geselecteerde (centrale) kaartlocatie. De oude parkeerpositie wordt verwijderd. |
 | Toevoegen <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Voegt POI toe aan een geselecteerde (centrale) kaartlocatie (zelfde als contextmenu-actie). <br /> - *Toon een tussentijds dialoogvenster*. Toont een bevestigingsdialoog. <br /> - *POI Type* (optioneel). Selecteert vooraf het OSM POI-type. <br /> - *Tag/Waarde* (meerdere). Voegt [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / waarden toe |
 | Toevoegen <br/> [**OSM Notitie**](../plugins/osm-editing.md#create--modify-osm-note) | Voegt een [OSM notitie](https://wiki.openstreetmap.org/wiki/Notes) toe <br /> - *Toon een tussentijds dialoogvenster*. Toont een bevestigingsdialoog. <br /> - *Bericht*. Voegt een standaardbericht toe aan de notitie. |
-| Toevoegen <br/> [**Media notities**](../plugins/audio-video-notes.md) | Start audio / foto / video notitie-opname voor een geselecteerde (centrale) kaartlocatie. |
+| Toevoegen <br/> [**Media notities**](../plugins/audio-video-notes.md) | Start audio / foto / video notitie-opname voor een geselecteerde (centrale) kaartlocatie; een herhaalde druk stopt de opname. |
 | Creëer <br/> [**Nieuwe route**](../plan-route/create-route.md) <br /> *Alleen Android* | Opent de [Plan een route](../plan-route/create-route.md) tool en creëert een route voor de geselecteerde (centrale) locatie op de kaart. |
 
 
@@ -309,11 +318,25 @@ Deze indeling helpt om knoppen visueel consistent te houden en overlappen te voo
 
 ## Toetsenbord Gebruiken voor Acties {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![Externe apparaten](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![Externe apparaten](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 Met de functionaliteit van de Snelle Actie tool kunt u de vereiste acties toewijzen aan de toetsen van uw externe invoerapparaat. Een beschrijving is te vinden in het artikel [Interactie met de Kaart](../map/interact-with-map.md#custom-input-device-type).
 

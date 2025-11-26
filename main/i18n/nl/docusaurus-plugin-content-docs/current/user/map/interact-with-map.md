@@ -1,5 +1,5 @@
 ---
-source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title:  Interactie met de kaart
 ---
@@ -216,12 +216,12 @@ Creëert een vloeiend kaart-pan-effect ten opzichte van het pictogram *[Mijn Pos
 
 ## Externe invoerapparaten {#external-input-devices}
 
-Knoppen op externe invoerapparaten bieden een handige en efficiënte manier om te interageren met de kaart en de OsmAnd-applicatie-interface. Ze bevinden zich op externe apparaten, zoals **Bluetooth- of andere soorten toetsenborden**, **gespecialiseerde knoppen op navigatieapparaten voor voertuigen**, of [WunderLINQ](https://blackboxembedded.com/) en [Parrot](https://www.parrot.com/en) controllers.  
+Knoppen op externe invoerapparaten bieden een handige en efficiënte manier om te interageren met de kaart en de OsmAnd-applicatie-interface. Ze bevinden zich op externe apparaten, zoals **Bluetooth- of andere soorten toetsenborden**, **gespecialiseerde knoppen op navigatieapparaten voor voertuigen**, of [WunderLINQ](https://blackboxembedded.com/) en [Parrot](https://www.parrot.com/en) (*alleen Android*) controllers.  
 
-Een van de hoofdfuncties van knoppen op externe invoerapparaten is het in- en uitzoomen van de kaart. Ze stellen u ook in staat om op de kaart te navigeren en de oriëntatie ervan te wijzigen zonder op het scherm te hoeven tikken en gebaren te maken. Knoppen op externe invoerapparaten ondersteunen vele andere functies, zoals het openen van het *Hoofdmenu*.
+Een van de hoofdfuncties van knoppen op externe invoerapparaten is het in- en uitzoomen van de kaart. Ze stellen u ook in staat om op de kaart te navigeren en de oriëntatie ervan te wijzigen zonder op het scherm te hoeven tikken en gebaren te maken. Knoppen op externe invoerapparaten ondersteunen vele andere functies, zoals het openen van het *Hoofdmenu* en het activeren van *Snelle acties*. Gebruikers kunnen ook knoptoewijzingen aanpassen voor ondersteunde apparaten (Toetsenbord, WunderLINQ en aangepaste externe controllers).
 
 :::note
-Het toetsenbord blijft functioneel, zelfs wanneer de optie *Externe invoerapparaten* is uitgeschakeld en *Geen* is geselecteerd.
+Het toetsenbord blijft functioneel, zelfs wanneer de optie *Externe invoerapparaten* is uitgeschakeld en *Geen* is geselecteerd. Aangepaste toetsentoewijzingen werken echter alleen wanneer *Externe invoerapparaten* zijn ingeschakeld.
 :::
 
 ### Voorgeconfigureerd invoerapparaat {#preconfigured-input-device}
@@ -240,7 +240,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![Externe apparaten](@site/static/img/map/external_types_ios.png)
+![Externe apparaten](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -251,9 +251,9 @@ Om toegang te krijgen tot de instellingen van een extern invoerapparaat, moet u 
 - Ga naar het hoofd-*Menu → Instellingen →* selecteer het *Profiel → Algemene instellingen → Overig → Externe invoerapparaten*, en schakel over naar *Ingeschakeld*.
 
 - Selecteer een apparaat uit de door OsmAnd ondersteunde apparaten door op het item *Type* in de lijst te tikken:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*alleen Android*), of maak [**uw eigen type**](#custom-input-device-type) (*alleen Android*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*alleen Android*), of maak [**uw eigen type**](#custom-input-device-type).
 
-- Er is een verschillende **gedefinieerde actie-toetsenbundel**-toewijzing voor elk type extern invoerapparaat. Tik op de *<Translate android="true" ids="key_assignments"/>* om een lijst met acties en toetsen te zien. De tabel met toetsen wordt hieronder weergegeven.
+- Er is een verschillende **gedefinieerde actie-toetsenbundel**-toewijzing voor elk type extern invoerapparaat. De sectie *<Translate android="true" ids="key_assignments"/>* toont de lijst met acties en hun toegewezen toetsen. De tabel met toetsen wordt hieronder weergegeven. Dit zijn standaardtoewijzingen – ze kunnen worden gewijzigd of uitgebreid volgens gebruikersvoorkeuren.
 
 - U kunt meer lezen over acties van externe invoerapparaten op GitHub in het [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) pakket.
 
@@ -275,7 +275,7 @@ Om toegang te krijgen tot de instellingen van een extern invoerapparaat, moet u 
 |**&#8595;**| *Wunderlinq*  | Kaart - [Uitzoomen](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Kaart - [Inzoomen](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | WunderLINQ Datagrid openen |
-| **M** <br/> (*legacy Android*) | *Toetsenbord*  | Tonen / Verbergen - [Zijmenu](../start-with/main-menu.md#main-menu-side-menu) |
+| **M** | *Toetsenbord*  | Tonen / Verbergen - [Zijmenu](../start-with/main-menu.md#main-menu-side-menu) |
 | **Joystick press** <br/> (*legacy Android*) | *Toetsenbord*  | Verplaatsen - [Naar Mijn locatie](#my-location-and-zoom) |
 | **Media button** <br/> (*alleen Android*)| *Toetsenbord*  | Tonen / Verbergen - [AV-notities](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*alleen Android*)| *Parrot*  | Kaart - [Uitzoomen](#my-location-and-zoom) |
@@ -284,7 +284,9 @@ Om toegang te krijgen tot de instellingen van een extern invoerapparaat, moet u 
 
 ### Aangepast type invoerapparaat {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -292,18 +294,47 @@ Om toegang te krijgen tot de instellingen van een extern invoerapparaat, moet u 
 
 Als u toetsen wilt toewijzen voor een extern invoerapparaat (zoals een toetsenbord, joystick of controller), moet u een apparaattype aanmaken: ga naar de instelling [Extern invoerapparaat](#external-input-devices), selecteer **Type** uit de lijst, tik op de&nbsp; "**＋**" &nbsp; en voer een naam in. Elk type heeft een menu met de volgende opties: ***Hernoemen, Dupliceren*** en ***Verwijderen***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![Externe apparaten](@site/static/img/map/external_mypilot_ios.png)  ![Externe apparaten](@site/static/img/map/external_mypilot2_ios.png)
+
+Als u toetsen wilt toewijzen voor een extern invoerapparaat (zoals een toetsenbord, joystick of controller), moet u een apparaattype aanmaken: ga naar de instelling [Extern invoerapparaat](#external-input-devices), selecteer **Device** uit de lijst, tik op de&nbsp; "**Add**" &nbsp;en voer een naam in. Elk type heeft een menu met de volgende opties: ***Hernoemen, Dupliceren*** en ***Verwijderen***.
+
+</TabItem>
+
+</Tabs>  
+
 ### Actie & toetsentoewijzingen toevoegen {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Externe apparaten](@site/static/img/map/external_custom_4_andr.png)  ![Externe apparaten](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Externe apparaten](@site/static/img/map/external_custom_4_ios.png)  ![Externe apparaten](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 Nadat u een aangepast invoertype hebt gemaakt, kunt u de vereiste acties aan de toetsen toewijzen. Een breed scala aan [actietypes](../widgets/quick-action.md#action-types) van de Snelle Actie-widget is beschikbaar.
 
 - Selecteer een apparaattype en tik vervolgens op het item **Toetsentoewijzingen**.
-- Tik op de knop ***Toevoegen*** (&nbsp;"**＋**"&nbsp;) in de rechterbenedenhoek van het scherm.
+- Tik op de knop ***Toevoegen*** (&nbsp;"**＋**"&nbsp;).
 - Selecteer de vereiste actie, tik vervolgens op het veld ***Toets toevoegen*** en tik op de knop op uw apparaat om deze aan de actie toe te wijzen.  
 
 :::note
 
+- Meerdere toetsen kunnen aan één actie worden toegewezen.
 - Als de knop die u toewijst al wordt gebruikt voor een andere actie, ontvangt u een melding met de optie om de knop opnieuw toe te wijzen of de toewijzing te annuleren.
 - Later kunt u acties en toetsentoewijzingen wijzigen of andere toevoegen voor reeds gemaakte acties, selecteer gewoon een item in de lijst Toetsentoewijzingen.
 
@@ -311,12 +342,26 @@ Nadat u een aangepast invoertype hebt gemaakt, kunt u de vereiste acties aan de 
 
 ### Toetsentoewijzing verwijderen {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Externe apparaten](@site/static/img/map/external_custom_1_andr.png)
 
-U kunt meerdere onnodige acties tegelijk verwijderen met de knop **Bewerken** (*potloodvormig*) in de rechterbovenhoek van het scherm:
+</TabItem>
 
-- ***Eén actie verwijderen*** per actie, met de&nbsp; "**−**" &nbsp;knop in het itemveld.
-- ***Alle toetsentoewijzingen verwijderen*** voor het geselecteerde type door op de knop in de rechterbovenhoek van het scherm naast de *Naam bewerken* te tikken.
+<TabItem value="ios" label="iOS">
+
+![Externe apparaten](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+U kunt meerdere onnodige acties tegelijk verwijderen met de knop **Bewerken** (*potloodvormig* op Android):
+
+- ***Eén actie verwijderen*** per actie, met de&nbsp; "**−**" &nbsp;knop in het itemveld. Toetsentoewijzing kan ook worden verwijderd via het contextmenu (lang indrukken op het item) door op **Verwijderen** te tikken.
+- ***Alle toetsentoewijzingen verwijderen*** voor het geselecteerde type door op de knop in de rechterbovenhoek van het scherm naast de *Naam bewerken* op Android te tikken; door op de knop **Alles wissen** op iOS te tikken.
 
 
 ## Gerelateerde artikelen {#related-articles}

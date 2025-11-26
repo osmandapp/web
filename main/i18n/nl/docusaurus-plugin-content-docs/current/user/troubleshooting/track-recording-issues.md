@@ -1,8 +1,9 @@
 ---
-source-hash: 7f2e85f7e22604bcf22bbc6bdb7faf78780ede4bd62e7cd5554ceedacb06dd7d
+source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
 sidebar_position: 6
 title:  Trackopname
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Overzicht {#overview}
 
-Dit artikel behandelt problemen met het opnemen van GPX-tracks die al lange tijd worden waargenomen in verschillende versies van Android en iOS. Met **Achtergrond** bedoelen we dat de OsmAnd-app niet op de voorgrond verschijnt, vooral wanneer het scherm van het apparaat uit is (wat verschilt van de interne *achtergrond*-definitie in apparaten).
+Dit artikel behandelt problemen met de opname van GPX-tracks die al lange tijd worden waargenomen in verschillende versies van Android en iOS. Met **Achtergrond** bedoelen we dat de OsmAnd-app niet op de voorgrond verschijnt, vooral wanneer het scherm van het apparaat uit is (wat verschilt van de interne *achtergrond*-definitie in apparaten).
 
 **Opmerkingen**:
 
@@ -25,10 +25,10 @@ Dit artikel behandelt problemen met het opnemen van GPX-tracks die al lange tijd
 
   - **Toestaan bij gebruik van de app** betekent dat de app continu locatiegegevens kan ontvangen zolang deze op het scherm wordt weergegeven of een zichtbare melding heeft in de *Android*-notificatiebalk, zoals OsmAnd heeft tijdens navigatie of het opnemen van een trip. (Technisch gezien wordt dit de *voorgrondmodus* genoemd).
 
-  - **Altijd toestaan** betekent daarentegen dat de app in principe 'ongemerkt' uw locatie kan verkrijgen zonder dat een van deze voorwaarden van toepassing is. Maar *Android* beperkt de frequentie van locatietoegang in deze (*achtergrond*) modus tot ongeveer eens per uur, wat zeker niet de juiste modus is voor een navigatie-app.
+  - **Altijd toestaan**, daarentegen, betekent dat de app in principe uw locatie 'ongemerkt' kan verkrijgen zonder dat een van deze voorwaarden van toepassing is. Maar *Android* beperkt de frequentie van locatietoegang in deze (*achtergrond*) modus tot ongeveer eens per uur, wat zeker niet de juiste modus is voor een navigatie-app.
 
 
-## Opgenomen tracks zijn onnauwkeurig {#recorded-tracks-are-noisy}
+## Opgenomen tracks zijn ruisig {#recorded-tracks-are-noisy}
 
 Er zijn 2 typische nauwkeurigheidsproblemen die leiden tot een *rommelige* opgenomen track.
 
@@ -38,29 +38,28 @@ Er zijn 2 typische nauwkeurigheidsproblemen die leiden tot een *rommelige* opgen
 Maatregelen om dit te verminderen:
 
 - Pauzeer uw opnames terwijl u stilstaat, of gebruik het *Minimale verplaatsing*-filter van de Tripopname-plugin.
-- Selecteer de tijd- of verplaatsingsinterval van uw opgenomen punten die geschikt is om de bochtigheid van uw reis vast te leggen, maar zonder veel extra punten te creëren (de spreiding hiervan zal ruis veroorzaken en de afstand en hoogtefluctuaties overdrijven).
+- Selecteer de tijd- of verplaatsingsinterval van uw opgenomen punten die geschikt is om de bochtigheid van uw reis vast te leggen, maar zonder veel extra punten te creëren (de spreiding hiervan zal ruis veroorzaken en de afstand en hoogtefluctuaties overdrijven). 
 - Het is ook mogelijk om een track later te bewerken en *"ruisige"* punten te verwijderen.
 - Of u kunt de instellingen van de *Tripopname-plugin* gebruiken om *"ruisige"* punten al tijdens het opnemen te filteren, op basis van uw **ervaring** en **opnameapparaat**. U kunt punten filteren op verschillende criteria:
   - Punten met lage of geen snelheid.
   - Punten met slechte precisie (GPS 'hdop').
   - Punten die dichterbij zijn dan een drempelwaarde in meters.
 
-- **Google Services API of Android API**. U kunt verder wijzigen hoe OsmAnd locatiegegevens ontvangt op Android-apparaten. In [OsmAnd Instellingen → Locatiebron](../personal/global-settings.md#location-source) kunt u kiezen tussen **Google Play Services** en **Android API**. In veel gevallen helpt het overschakelen naar **Android API** om de opgenomen tracks te verbeteren en ze minder onnauwkeurig te maken.
+- **Google Services API of Android API**. U kunt verder wijzigen hoe OsmAnd locatiegegevens ontvangt op Android-apparaten. In [OsmAnd Settings → Location Source](../personal/global-settings.md#location-source) kunt u kiezen tussen **Google Play Services** en **Android API**, in veel gevallen helpt het overschakelen naar **Android API** om de opgenomen tracks te verbeteren en ze minder ruisig te maken.
 
 
-## Opgenomen tracks hebben onderbrekingen {#recorded-tracks-have-gaps}
+## Opgenomen tracks hebben hiaten {#recorded-tracks-have-gaps}
 
 ### OsmAnd configureren voor trackopname {#configuring-osmand-for-track-recording}
 
-- **Voorkom zelfstandig loggen**. Zorg ervoor dat de instelling *Voorkom zelfstandig loggen* onder Plugins/Tripopname is gedeactiveerd, zodat OsmAnd tracks kan opnemen met het scherm uit.
+- **Voorkom zelfstandig loggen**. Zorg ervoor dat de instelling *Voorkom zelfstandig loggen* onder Plugins/Trip Recording is gedeactiveerd, zodat OsmAnd tracks kan opnemen met het scherm uit.
 - **Update OsmAnd**. Android-versies gebruiken verschillende strategieën om het stroomverbruik te verminderen door [applicaties die op de achtergrond draaien te beëindigen](https://dontkillmyapp.com/). Versie 3.9 of hoger gebruikt een Voorgrondservice, zichtbaar in de notificatiebalk, [om de app op de achtergrond te laten draaien](https://dontkillmyapp.com/) op de meeste Android-versies. Dit is met name effectief op Android 8+ ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255), [Issue #5587](https://github.com/osmandapp/Osmand/issues/5587)).
-
 
 ### Android optimaliseren voor trackopname {#optimizing-android-for-track-recording}
 
 Vanaf Android 4.4 kunnen energiebesparende functies het CPU-gebruik beperken, de schermhelderheid verlagen en achtergrondapps beëindigen wanneer het scherm uit is. Dit kan de prestaties van OsmAnd beïnvloeden voor buitengebruik, kaartweergave en trackopname. Latere versies van Android hebben op AI gebaseerd energiebesparend gedrag toegevoegd, zoals **Automatische batterij** en **Automatische energiebesparing**, wat dynamisch en nog minder voorspelbaar gedrag introduceert. Om opnameproblemen te voorkomen, is het aan te raden om, in ieder geval in het begin of voor foutopsporing, **energiebesparende functies volledig uit te schakelen**. Gebruikers melden dat de impact op de batterijduur voor de meeste apparaten acceptabel is.
 
-- **Sluit OsmAnd uit van *Batterij-optimalisatie*.** Zoek in de *Instellingen* van uw Android-apparaat naar OsmAnd onder *Apps*, *Applicaties* of *App-beheer*. Zoek de sectie *Batterij*, *Energiebesparing* of *Stroomverbruik* en sluit OsmAnd uit van batterij-optimalisatie. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
+- **Sluit OsmAnd uit van *Batterij-optimalisatie*.** In de *Instellingen* van uw Android-apparaat, zoek naar OsmAnd onder *Apps*, *Applicaties* of *App-beheer*. Zoek de sectie *Batterij*, *Energiebesparing* of *Stroomverbruik* en sluit OsmAnd uit van batterij-optimalisatie. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
   
 - **Schakel de *Energiebesparingsmodus* uit.** Deze modus heeft een grote kans om zelfs voorgrondservices, zoals de trip-opname van OsmAnd, te beïnvloeden/beëindigen.
 
@@ -68,16 +67,9 @@ Vanaf Android 4.4 kunnen energiebesparende functies het CPU-gebruik beperken, de
 
 - **Schakel *Adaptieve batterij* uit, tenzij u de OsmAnd-app regelmatig gebruikt.** *Adaptieve batterij* werkt per app, ook op basis van gebruikspatronen. Het effect op een specifieke app kan worden verminderd door die app vrij te stellen van *Batterij-optimalisatie* (zoals instellen op *Niet geoptimaliseerd*). *Adaptieve batterij* kan echter nog steeds voorgrondservices zoals de trip-opname van OsmAnd beëindigen als het apparaat oordeelt dat OsmAnd tot uw 'zelden gebruikte' apps behoort.
 
-### Het gedrag van achtergrondapps in iOS beheren {#control-the-behavior-of-ios-background-apps}
+### Geteste energie-instellingen voor Android 9, 10 en 11 (Hardy, 2020-08-25) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
 
-iOS kan achtergrondapps automatisch onderbreken of stoppen wanneer systeembronnen opnieuw worden toegewezen. OsmAnd kan dit gedrag niet overrulen. Als de trackopname wordt onderbroken wanneer het apparaat is vergrendeld, kan dit hiaten in de opname veroorzaken. U kunt deze hiaten bewerken met de [Route plannen](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
-
-Voor meer details over hoe iOS omgaat met locatietracking, bekijk de documentatie van Apple [hier](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
-
-
-### Geteste energie-instellingen voor Android 9, 10 en 11 (Hardy, 25-08-2020) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
-
-De volgende energie-instellingen zijn met succes getest onder Android 9, 10 en later 11 (op Samsung-apparaten) om ervoor te zorgen dat OsmAnd tracks zonder onderbrekingen registreert. Controleer deze **10 instellingen** en stel ze dienovereenkomstig in:
+De volgende energie-instellingen zijn met succes getest onder Android 9, 10 en later 11 (op Samsung-apparaten) om ervoor te zorgen dat OsmAnd tracks zonder hiaten registreert. Controleer deze **10 instellingen** en stel ze dienovereenkomstig in:
 
 - (1) **Energiebesparing (modus)** = UIT (of *Geoptimaliseerd* in Android 10)
 - (2) **Adaptieve energiebesparing** = UIT (Wanneer AAN, kan de energiebesparingsmodus soms worden geactiveerd, wat voorkomt dat OsmAnd logt.)
@@ -100,19 +92,25 @@ Sommige van deze instellingen werken op elkaar in, dus wees nauwkeurig. Zoek het
 - *Apparaatonderhoud / Batterij / App-energiebeheer*
 - *Apparaatonderhoud / Batterij / Meer batterij-instellingen*
 
+### Het gedrag van achtergrondapps in iOS beheren {#control-the-behavior-of-ios-background-apps}
+
+iOS kan achtergrondapps automatisch onderbreken of stoppen wanneer systeembronnen opnieuw worden toegewezen. OsmAnd kan dit gedrag niet overrulen. Als de trackopname wordt onderbroken wanneer het apparaat is vergrendeld, kan dit hiaten in de opname veroorzaken. U kunt deze hiaten bewerken met de [Route plannen](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
+
+Voor meer details over hoe iOS omgaat met locatietracking, bekijk de documentatie van Apple [hier](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
+
 
 ## Hoe de afgelegde afstand te volgen {#how-to-track-traveled-distance}
 
-OsmAnd heeft geen speciale widget vergelijkbaar met een odometer. U kunt de [Tripopname-plugin](../plugins/trip-recording.md#new-track-recording) gebruiken om uw afgelegde afstand te volgen en deze te resetten wanneer dat nodig is.
+OsmAnd heeft geen speciale widget vergelijkbaar met een odometer, u kunt de [Tripopname-plugin](../plugins/trip-recording.md#new-track-recording) gebruiken om uw afgelegde afstand te volgen en deze te resetten wanneer dat nodig is.  
 
 
 ## OsmAnd 3.9: Hoogteproblemen bij gebruik van Google Play Services {#osmand-39-altitude-issues-when-using-google-play-services}
 
 Google Play heeft zijn beleid gewijzigd en om hieraan te voldoen, is OsmAnd vanaf versie 3.9 (met uitzondering van Nightly-, F-Droid- en Huawei-builds) verplicht om Google Play Services te gebruiken om locatie-fixes te verkrijgen terwijl het op de achtergrond draait (dat wil zeggen, in Android-terminologie, als een voorgrondservice met een zichtbare systeemmelding).
 
-Na deze wijziging lijkt er een probleem te zijn met de hoogte-opname: blijkbaar interpoleert Google Play Services de hoogtemeting zeer agressief, zie [GitHub issue #10864](https://github.com/osmandapp/OsmAnd/issues/10864). Dit probleem treft Android 10, mogelijk niet Android 11. Het [probleem](https://issuetracker.google.com/issues/180218747) is al gemeld op de website van Google en zal waarschijnlijk op 09-03-2021 worden opgelost.
+Na deze wijziging lijkt er een probleem te zijn met de hoogte-opname: blijkbaar interpoleert Google Play Services de hoogtemeting zeer agressief, zie [GitHub issue #10864](https://github.com/osmandapp/OsmAnd/issues/10864). Dit probleem treft Android 10, mogelijk niet Android 11. Het [probleem](https://issuetracker.google.com/issues/180218747) is al gemeld op de website van Google en zal waarschijnlijk op 09-03-2021 worden opgelost.  
 
-Als tijdelijke oplossing kunt u in [*OsmAnd Instellingen → Locatiebron*](../personal/global-settings.md#location-source) de locatiebron overschakelen van **Google Play Services** naar **Android API**.
+Als tijdelijke oplossing kunt u in [*OsmAnd Settings → Location Source*](../personal/global-settings.md#location-source) de locatiebron overschakelen van **Google Play Services** naar **Android API**.
 
 
 ## OsmAnd 3.9: GPS Wake-up nu vervangen door continue voorgrondservice (2020/12) {#osmand-39-gps-wake-up-now-replaced-by-continuous-foreground-service-202012}
@@ -132,6 +130,6 @@ De eerdere strategie van het gebruik van een sluimermodus en periodieke GPS Wake
 Om de GPS wake-up te realiseren, gebruiken we tot nu toe de Android Alarm Manager om het apparaat periodiek te activeren (ook vanuit de Doze-modus, die in Android 6 werd geïntroduceerd). Nieuwe Android-versies introduceerden de volgende problemen:
 
 - **(B1) Alarm Manager's setRepeating() werd onnauwkeurig vanaf Android 4.4:**  
-Oplossing: We gebruiken nu *setRepeating()* alleen tot Android 4.2, de nieuwe *setExact()* methode vanaf Android 4.4, en *setExactAndAllowWhileIdle()* voor Android 8+. ([Issue \#5632](https://github.com/osmandapp/Osmand/issues/5632))
+Verzachting: We gebruiken nu *setRepeating()* alleen tot Android 4.2, de nieuwe *setExact()* methode vanaf Android 4.4, en *setExactAndAllowWhileIdle()* voor Android 8+. ([Issue \#5632](https://github.com/osmandapp/Osmand/issues/5632))
 - **(B2) Vanaf Android 4.4 beperken systemen het aantal keren dat *setExact()* herhaaldelijk wordt uitgevoerd** tot bijv. eens per 5 of zelfs 15 minuten. (De werkelijke waarde lijkt sterk apparaat-specifiek.)  
-Geen goede oplossing gevonden voor nu. De huidige oplossing is dat we geen Alarm Manager wake-up gebruiken, maar in plaats daarvan de GPS altijd aanhouden voor achtergrond track-logging op apparaten met Android 5+ voor alle opname-intervallen korter dan 5 minuten. Dit produceert betrouwbare en precieze tracks ten koste van een hoger batterijgebruik. ([Issue \#5632](https://github.com/osmandapp/Osmand/issues/5632))
+Geen goede oplossing gevonden voor nu. De huidige verzachting is dat we geen Alarm Manager wake-up gebruiken, maar in plaats daarvan de GPS altijd aanhouden voor achtergrond track-logging op apparaten met Android 5+ voor alle opname-intervallen korter dan 5 minuten. Dit produceert betrouwbare en precieze tracks ten koste van een hoger batterijgebruik. ([Issue \#5632](https://github.com/osmandapp/Osmand/issues/5632))

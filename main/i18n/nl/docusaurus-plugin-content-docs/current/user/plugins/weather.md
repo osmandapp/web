@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  Weer
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
 :::info Betaalde functie
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Met de interactieve weerkaartlagen in de OsmAnd-app kunt u de temperatuur, atmosferische druk, bewolking, windsnelheid en neerslag in uw stad of op een andere locatie op een interactieve wereldkaart volgen. De Weer-plugin biedt uurlijkse weersvoorspellingen voor 7 dagen vooruit, rechtstreeks op de OsmAnd-kaart. Weersinformatie kan ook worden gedownload voor offline gebruik.  
 
-De gegevensbron voor de Weer-plugin is het [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast), beheerd door de National Weather Service (NWS) van de Verenigde Staten en het Europees Centrum voor Weersvoorspellingen op Middellange Termijn ([ECMWF](https://www.ecmwf.int/)).  
+De gegevensbron voor de Weer-plugin is het [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast), bediend door de National Weather Service (NWS) van de Verenigde Staten en het Europees Centrum voor Weersvoorspellingen op Middellange Termijn ([ECMWF](https://www.ecmwf.int/)).  
 
 
 ## Vereiste Instelparameters {#required-setup-parameters}
@@ -60,7 +60,7 @@ De Weer-plugin is alleen beschikbaar met Kaart-renderingengine [Versie 2](../per
 
 Ga naar: *Ingeschakelde plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Ga naar: *Ingeschakelde plugin → <Translate android="true" ids="shared_string_
 
 Ga naar: *Ingeschakelde plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -77,6 +77,41 @@ Ga naar: *Ingeschakelde plugin → <Translate ios="true" ids="shared_string_menu
 Het hoofdmenu aan de zijkant heeft een speciaal menu-item **Weer** dat snelle toegang biedt tot alle weertools. Het *Weersvoorspellingsscherm* toont informatie over *temperatuur*, *atmosferische druk*, *windsnelheid*, *bewolking* en *neerslag*.  
 
 Onderaan het scherm bevindt zich de *weer-werkbalk*. U kunt de dagknoppen en de tijdschuifregelaar gebruiken om de exacte tijd in te stellen waarop de weersvoorspelling wordt weergegeven.
+
+### Gegevensbron {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+U kunt kiezen welke weersvoorspellingsprovider OsmAnd gebruikt om gegevens weer te geven op het Weerscherm:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Gegevensbron kiezen*
+
+Twee weersvoorspellingsproviders worden ondersteund:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – de standaardbron, bediend door NOAA/NWS. Biedt volledige weergegevens, inclusief temperatuur-, druk-, vochtigheid-, wind- en bewolkinglagen.
+
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – een alternatieve voorspellingsbron. Biedt hoogwaardige temperatuur-, neerslag- en drukgegevens, maar biedt geen wind- of bewolkinginformatie. Bij gebruik van ECMWF worden niet-beschikbare parameters weergegeven als “–”, en verschijnen de bijbehorende weerlagen als uitgeschakeld.
+
+Hoe de Gegevensbron de Weergave van het Weer beïnvloedt:
+- De kaart, grafieken, tijdlijn en weergewaarden op het scherm worden onmiddellijk bijgewerkt na het wisselen van de bron.
+- Alleen de parameters die beschikbaar zijn voor de geselecteerde provider worden weergegeven.
+- Weer-widgets worden automatisch bijgewerkt om de gekozen bron te gebruiken.
+- Als u eerder een weersvoorspelling hebt gedownload, gebruikt OsmAnd de gegevens die overeenkomen met de geselecteerde provider.
+- GFS en ECMWF gebruiken afzonderlijke caches. Het wisselen van de bron laadt of werkt de relevante weertiles bij.
+
 
 ### Weerlagen Aanpassen {#customize-weather-layers}
 
@@ -144,7 +179,7 @@ Alle weergegevens worden gepresenteerd als afzonderlijke kaartlagen. Om de weerl
 |![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
 | **Temperatuur** drukt de kwantitatieve perceptie van warm en koud uit. Het wordt gemeten in graden. In OsmAnd kunt u kiezen tussen de schaal van Celsius en Fahrenheit. |  
 |![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
-| **Wind** is de beweging van lucht veroorzaakt door de ongelijkmatige opwarming van de aarde door de zon en haar eigen rotatie. Winden kunnen variëren van een lichte bries tot natuurrampen zoals orkanen en tornado's. In OsmAnd kan de windsnelheid worden weergegeven in meters per seconde (m/s), kilometers per uur (km/u), mijlen per uur (mph) en knopen (kt). |  
+| **Wind** is de beweging van lucht veroorzaakt door de ongelijkmatige opwarming van de aarde door de zon en haar eigen rotatie. Winden kunnen variëren van lichte briesjes tot natuurrampen zoals orkanen en tornado's. In OsmAnd kan de windsnelheid worden weergegeven in meters per seconde (m/s), kilometers per uur (km/h), mijlen per uur (mph) en knopen (kt). |  
 |![Wind sheme](@site/static/img/plugins/weather/wind.png)|  
 | **Bewolking** is de gemiddelde fractie van de hemel die bedekt is met wolken wanneer waargenomen vanaf een bepaalde locatie. Het wordt gemeten in %. |  
 |![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
@@ -227,6 +262,8 @@ In het menu voor het downloaden van voorspellingen kunt u informatie verkrijgen 
 - **Verwijder** *prullenbak*-knop (*Android*) / **Verwijder voorspelling** (*iOS*). Hiermee kunt u alle voorspellingsgegevens voor deze regio verwijderen.
 - **Bewerk** *potlood*-knop (*Android*). Hiermee kunt u de naam van het weerbestand wijzigen.
 
+**Opmerking:** Sommige landen, zoals de VS en Canada, gebruiken één Offline Voorspelling-bestand voor het hele land. Dit vermindert het aantal downloads en vereenvoudigt het beheer van weergegevens.
+
 :::info  
 Weergegevens worden elke 6 uur bijgewerkt (alle 4 updates van [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) en 3 van [ECMWF](https://www.ecmwf.int/)) en worden met een korte vertraging beschikbaar in OsmAnd, aangezien het rekenproces enkele uren duurt voordat het wordt vrijgegeven (meestal rond 07:00 UTC).  
 :::
@@ -262,6 +299,6 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 ## Gerelateerde Artikelen {#related-articles}
 
-- [Interactie met de Kaart](../../user/map/interact-with-map.md)
-- [Algemene Instellingen](../../user/personal/global-settings.md)
+- [Interactie met de kaart](../../user/map/interact-with-map.md)
+- [Algemene instellingen](../../user/personal/global-settings.md)
 - [Vectorkaarten (Kaartstijlen)](../../user/map/vector-maps.md)

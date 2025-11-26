@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title:  Skikaartweergave
 ---
@@ -12,6 +12,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
 
 ## Overzicht {#overview}
 
@@ -103,7 +104,7 @@ De [Vectorkaart](../map/vector-maps.md) met de [Winter en Ski kaartstijl](../map
 
 ### Skikaartstijl uitschakelen {#disable-ski-map-style}
 
-Als u de pistes en winterkleuren van de kaart wilt verwijderen, of als het skiseizoen voorbij is, doe dan een van de volgende dingen:
+Als het verwijderen van pistes en winterkleuren van de kaart de voorkeur heeft, of als het skiseizoen voorbij is, doe dan een van de volgende dingen:
 
 - Vink de [Winter en Ski](#set-winter-and-ski-map-style) kaartstijl uit voor het gewenste profiel.  
 - Verander het [Skiprofiel](../personal/profiles.md) naar een ander profiel.
@@ -167,7 +168,7 @@ De OsmAnd Skikaart is gebouwd als een van de renderstijlen, die bepaalt welke ob
 De moeilijkheidsgraad van sporen wordt meestal aangegeven met specifieke kleuren. De kleuren kunnen verschillen per land en resort. Hieronder volgen enkele praktische richtlijnen.
 
 :::tip richtlijnen
-Voor meer specifieke richtlijnen voor elk type pistemoeilijkheid, zie de [OSM piste moeilijkheidsgraad referentie](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) of een andere bron die ook rekening houdt met hellingen, obstakels en gevaren.  
+Voor meer specifieke richtlijnen voor elk type pistemoeilijkheid, zie de [OSM piste moeilijkheidsgraad referentie](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) of een andere bron die ook rekening houdt met hellingen, obstakels en gevaren. In de Winter en Ski kaartstijl kunnen bepaalde gemarkeerde gevaren (bijvoorbeeld lawinegevoelige gebieden getagd als hazard=avalanche) worden weergegeven als gevaren-POI op de kaart en moeten deze worden meegenomen bij de pistemoeilijkheidsgraad. 
 :::
 
 

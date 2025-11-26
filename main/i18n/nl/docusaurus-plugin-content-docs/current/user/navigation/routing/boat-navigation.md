@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  Bootnavigatie
 ---
@@ -13,9 +13,10 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Overzicht {#overview}
 
-Bootnavigatie kan een waardevol hulpmiddel zijn voor iedereen die van varen of zeilen op kanalen, rivieren of vaarwegen houdt. Vanwege het ontbreken van de meeste vaarwegen in OpenStreetMap-gegevens, wordt bootnavigatie *niet aanbevolen* voor **navigatie op open water**. Het wordt aangeraden om in plaats daarvan **[Direct naar punt](#direct-to-point-routing-for-boat)** te gebruiken. Met dieptecontourlijnen ingeschakeld, kan het u helpen veilig op het water te blijven door gevaren zoals ondiep water, rotsen of andere obstakels te vermijden.  
+Bootnavigatie kan een waardevol hulpmiddel zijn voor iedereen die van varen of zeilen op kanalen, rivieren of vaarwegen houdt. Vanwege het ontbreken van de meeste vaarwegen in OpenStreetMap-gegevens, wordt bootnavigatie *niet aanbevolen* voor **navigatie op open water**, het wordt aangeraden om in plaats daarvan **[Direct naar punt](#direct-to-point-routing-for-boat)** te gebruiken. Met dieptecontourlijnen ingeschakeld, kan het u helpen veilig op het water te blijven door gevaren zoals ondiep water, rotsen of andere obstakels te vermijden.  
 De OsmAnd-bootnavigatie-engine houdt ook rekening met de kenmerken van de waterwegen en de boten zelf.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -88,7 +89,7 @@ Het [Bootnavigatie](#route-parameters---boat)-type is een standaard navigatiealg
  - [Direct-naar-punt navigatie voor de boot](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Rechte lijn navigatie voor de boot](./boat-navigation.md#straight-line-routing-for-boat)
 
-Het is belangrijk op te merken dat de navigatietypes *Direct-naar-punt* en *Rechte lijn* alleen mogen worden gebruikt in open water waar geen obstakels of gevaren voor de navigatie zijn. Als u navigeert in een waterweg met een specifiek kanaal of route, moet u het bootnavigatietype in OsmAnd gebruiken, dat u door de juiste navigatiekanalen leidt en ondiepe gebieden of andere gevaren vermijdt.  
+Het is belangrijk op te merken dat de navigatietypes *Direct-naar-punt* en *Rechte lijn* alleen mogen worden gebruikt in open water waar geen obstakels of gevaren voor de navigatie zijn. Als u navigeert in een waterweg met een specifiek kanaal of route, moet u het bootnavigatietype in OsmAnd gebruiken, dat u door de juiste navigatiekanalen leidt en ondiepe gebieden of andere gevaren vermijdt. Sommige gemapte gevaren op basis van OSM hazard=* tags kunnen op de kaart worden weergegeven als hazard POI-iconen of tekstlabels. 
 
 Deze navigatietypes voor het bootprofiel kunnen worden geactiveerd via het volgende pad: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> of een ander) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
