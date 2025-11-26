@@ -1,5 +1,5 @@
 ---
-source-hash: 8e066016d6c34fa35ebb478f7394b2e1cb4a747adb7805a218402161c7be3f49
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  Ritten Registreren
 ---
@@ -134,7 +134,7 @@ Voor *Stoppen / Opslaan / Pauzeren*:
 
 - Om **Opslaan, Pauzeren, een nieuw segment Starten** of de opname **Voltooien**, gebruik de [Snelle Actie](../widgets/quick-action.md#add-and-delete-actions) knoppen. Ga naar *Menu → Scherm configureren → Aangepaste knoppen → Snelle actie → Actie toevoegen → [Mijn Plaatsen](../widgets/quick-action.md#my-places)* en voeg een of meer snelle actieknoppen toe.
 
-- (*Alleen Android*) Om een opnametrack te **Pauzeren** of **Opslaan**, gebruik de systeem[melding](#notifications) in het meldingengebied van uw apparaat.<br/><br/> ![stoppen-opslaan-pauzeren](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Alleen Android*) Om een opnametrack te **Pauzeren** of **Opslaan**, gebruik de systeem[melding](#notifications) in het meldingengebied van uw apparaat.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Overzichtsscherm {#overview-screen}
@@ -143,13 +143,13 @@ Voor *Stoppen / Opslaan / Pauzeren*:
 
 <TabItem value="android" label="Android">
 
-![overzicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![overzicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![overzicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![overzicht](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Opname voltooien in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Opname voltooien in iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Opname voltooien in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Opname voltooien in iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -176,11 +176,11 @@ Voor een meer gedetailleerde weergave kunt u **de grafiek schalen**:
 | |  
 | ------------- |
 |**Tabblad Overzicht** iOS (voor Android zijn de Y-as parameters *Hoogte*, *Snelheid* en de X-as parameter is *Afstand*). Dit tabblad toont een grafiek die veranderingen in snelheid en hoogte langs de lengte van de track weergeeft, en belangrijke trackdetails. Trackgegevens voor iOS: *Afstand*, *Tijdsduur*, *Starttijd* en *Eindtijd*. U kunt hieronder zien hoe dit wordt weergegeven in de Android- en iOS-versies. |
-| ![gegevens](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![gegevens](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+| ![gegevens](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![gegevens](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Tabblad Hoogte** iOS (voor Android zijn de Y-as parameters *Hoogte*, *Helling* en de X-as parameter is *Afstand*). Dit tabblad richt zich op het hoogteprofiel van uw opgenomen track en biedt inzicht in hoogteveranderingen en terreinhellingen. Belangrijke statistieken voor iOS zijn: *Gemiddelde Hoogte*, *Hoogtebereik*, *Stijgen* en *Dalen*. De onderstaande grafieken illustreren de verschillen tussen de Android- en iOS-interfaces. |
-| ![gegevens](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![gegevens](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![gegevens](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![gegevens](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Tabblad Snelheid** iOS (voor Android is de Y-as parameter *Snelheid* en de X-as parameter is *Afstand*). Het tabblad Snelheid benadrukt snelheidsgerelateerde gegevens gedurende de hele track. Voor iOS bevat het informatie zoals *Gemiddelde Snelheid*, *Maximale Snelheid*, *Tijd in Beweging* en *Gecorrigeerde Afstand*. De onderstaande schermafbeeldingen tonen hoe deze gegevens op beide platforms worden weergegeven. |
-| ![gegevens](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![gegevens](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![gegevens](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![gegevens](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | Voor **Android** kunt u meer combinaties maken van beschikbare Y-as gegevens en X-as waarden. |
 | ![gegevens](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -398,7 +398,7 @@ Om uw interface aan te passen, kunt u de widget Ritten Registreren en [andere wi
 
 <TabItem value="android" label="Android">  
 
-![Opname voltooien in Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Opname voltooien in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
 ![Ritten registreren widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>

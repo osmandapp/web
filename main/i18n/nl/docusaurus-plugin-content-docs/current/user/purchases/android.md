@@ -1,5 +1,5 @@
 ---
-source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
+source-hash: a4cce1f5b1b6bf6a375aec1d9807d689ffb13ab254ba342950f6b912e5149b1f
 sidebar_position: 1
 title:  Android Aankopen
 ---
@@ -25,7 +25,7 @@ Voor Android-apparaten kunt u de **Gratis** en **Betaalde** versies van de appli
 
 **Versies van de OsmAnd-applicatie:**
 
-|  App  | Google Play | Huawei AppGallery | Gratis / Betaald |
+|  App  | Google Play | Huawei AppGallery | Free / Paid |
 | :------------- | :------------- | :------------- | :------------- |
 | ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Installeren](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Installeren](https://appgallery.huawei.com/#/app/C101486545) | Gratis |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Installeren](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | Betaald |
@@ -76,34 +76,34 @@ Voor Android-apparaten kunt u de **Gratis** en **Betaalde** versies van de appli
 
 In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regio's VS en Europa. Voor andere regio's zijn de prijzen equivalent in lokale valuta.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Black Friday-prijzen
+
+*Schiet op! Dit aanbod is alleen beschikbaar tot* **30 november (23:00 CET)**.
 
 :::
 
+
+
+|    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 Maanden) | **Abonnement** (1 Maand / 12 Maanden) |
+| **Prijs (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Prijs (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+<!--
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
+| **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
+| **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
 -->
-
-|    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |
-| **Prijs (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Prijs (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
-
-
 
 ### Gratis en betaalde functies {#free-and-paid-features}
 
@@ -125,6 +125,7 @@ De onderstaande tabel geeft een overzicht van de functies in zowel de gratis als
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Ondersteuning voor externe sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografische gegevens](../plugins/topography.md#overview)<br/>(Contourlijnen en Terrein) | **-** | ✔ | ✔ |
+| [Coördinatenraster — Kleuraanpassing](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D-trackvisualisatie](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Populaire plaatsen (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |

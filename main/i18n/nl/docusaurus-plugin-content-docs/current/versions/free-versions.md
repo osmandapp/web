@@ -1,5 +1,5 @@
 ---
-source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
+source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
 sidebar_position: 2
 ---
 
@@ -19,6 +19,27 @@ Je kunt de nieuwste versie van OsmAnd gratis downloaden via de vermelde appstore
 Directe links naar gratis OsmAnd-versies.
 
 ## Versie 5 {#version-5}
+
+### Versie 5.2 {#version-52}
+
+Releasedatum 11/2025:
+
+- Nieuwe "Marine" nautische kaartstijl met uitgebreide aanpassingsopties.
+- Straat- en stadsinformatie toegevoegd aan zoekresultaten.
+- Nieuwe widgets voor Ritopname: Max Snelheid, Gemiddelde Helling, en verbeterde Uphill/Downhill.
+- Verbeterde snelheid van kaartweergave.
+- Basisautomatische synchronisatie naar OsmAnd Cloud.
+- Verbeterde OBDII BLE-connectiviteit.
+- Updates van de functie "Analyseren op Interval".
+- Verbeterde Route Plannen-tool.
+- Mogelijkheid toegevoegd om hoogte-eenheden apart in te stellen van afstandseenheden.
+- Verbeterde snelle actie voor kaartoriëntatie met selecteerbare kompasmodi.
+- Verbeteringen voor Android Auto.
+- Omgekeerde schermoriëntaties.
+- Verbeterde UI voor het toevoegen van vrachtwagenmetrics in Truck-profielinstellingen.
+- Meer parameters voor het tonen van routes op de kaart.
+
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
 
 ### Versie 5.1 {#version-51}
 

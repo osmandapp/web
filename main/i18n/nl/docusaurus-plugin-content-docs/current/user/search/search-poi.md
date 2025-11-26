@@ -1,5 +1,5 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
 title:  POI zoeken
 ---
@@ -68,7 +68,7 @@ OsmAnd biedt verschillende manieren om naar de zoekfunctie te gaan waar de secti
     - Het zoeken naar een bedrijfslocatie op merknaam (zoals Audi, Starbucks of Aldi) is zeer vergelijkbaar met het zoeken naar verschillende POI's op type. Het belangrijkste verschil is dat de merkenlijst in de kaart wordt aangeboden en bij elke update kan veranderen.
     - Merk wordt gedefinieerd door de OSM-tag [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) en OsmAnd verzamelt een beperkt aantal merken per kaart met een maximum van 1000 merken per kaart, maar zorgt er wel voor dat de lijst met merken is afgestemd op de naburige kaarten.
 
-![POI zoeken Android](@site/static/img/search/brand_search_andr.png)
+![POI zoeken Android](@site/static/img/search/brand_search_andr.png) ![POI zoeken Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -152,7 +152,7 @@ Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhan
         Bevat *16* soorten filters: **Verschoningstafel** (heeft *3* waarden), **Koffie** (heeft *2* waarden), **Keuken** (meer dan *10* waarden), **Bezorging** (heeft *1* waarde), **Dieet** (heeft *8* waarden), **Gerecht** (meer dan *10* waarden), **Drinkwater bijvullen** (heeft *1* waarde), **Drive-in** (heeft *1* waarden), **Type internettoegang** (heeft *3* waarden), **Microbrouwerij** (heeft *1* waarde), **Biologische producten** (heeft *2* waarden), **Buitenzitplaatsen** (heeft *1* waarde), **Betaalmethode** (meer dan *10* waarden), **Roken** (heeft *6* waarden), **Afhalen** (heeft *1* waarde), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
 
  3. **Laadstation**. Een [laadstation](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) is een infrastructuurfaciliteit waar eigenaren van elektrische voertuigen hun auto's, motorfietsen of andere elektrische voertuigen kunnen opladen. Deze punten bieden laders en geschikte aansluitingen om energie te leveren aan de accu's van voertuigen.
-        Bevat *35* soorten filters: **Toegang voor fietsen** (heeft *1* waarde), **Toegang voor bussen** (heeft *1* waarde), **Toegang voor vrachtwagens** (heeft *5* waarden), **Toegang voor auto's** (heeft *1* waarde), **Toegang voor scooters** (heeft *1* waarde), **Authenticatie via app** (heeft *1* waarde), **Authenticatie via chipkaart** (heeft *1* waarde), **Contactloze authenticatie** (heeft *1* waarde), **Authenticatie via sleutel** (heeft *1* waarde), **Authenticatie vereist** (heeft *1* waarde), **Authenticatie via telefoongesprek** (heeft *1* waarde), **Authenticatie via sms** (heeft *1* waarde), **Kosten** (heeft *2* waarden), **Type internettoegang** (heeft *3* waarden), **Type internettoegang** (heeft *3* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open, en andere.
+        Bevat *35* soorten filters: **Toegang voor fietsen** (heeft *1* waarde), **Toegang voor bussen** (heeft *1* waarde), **Toegang voor vrachtwagens** (heeft *5* waarden), **Toegang voor auto's** (heeft *1* waarde), **Toegang voor scooters** (heeft *1* waarde), **Authenticatie via app** (heeft *1* waarde), **Authenticatie via chipkaart** (heeft *1* waarde), **Contactloze authenticatie** (heeft *1* waarde), **Authenticatie via sleutel** (heeft *1* waarde), **Authenticatie vereist** (heeft *1* waarde), **Authenticatie via telefoongesprek** (heeft *1* waarde), **Authenticatie via kort bericht** (heeft *1* waarde), **Kosten** (heeft *2* waarden), **Type internettoegang** (heeft *3* waarden), **Type internettoegang** (heeft *3* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open, en andere.
 
  4. **Buurtwinkel en supermarkt**. [Buurtwinkel](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) en [supermarkt](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) vertegenwoordigen detailhandelsfaciliteiten.
         Bevat *13* soorten filters: **Bulkaankoop** (heeft *2* waarden), **Geldopname** (heeft *5* waarden), **Verschoningstafel** (heeft *3* waarden), **Koffie** (heeft *2* waarden), **Bezorging** (heeft *1* waarde), **Dieet** (heeft *8* waarden), **IJs** (heeft *1* waarde), **Biologische producten** (heeft *2* waarden), **Betaalmethode** (meer dan *10* waarden), **Tweedehandsfilter** (heeft *2* waarden), **Zelfscankassa** (heeft *2* waarden), **Rolstoeltoegankelijkheid** (heeft *4* waarden), Nu open / 24/7 open.
@@ -340,7 +340,7 @@ Om aangepaste filters te maken voor het vinden van plaatsen op de kaart, selecte
 
 7. **Eten**. Bevat 12 soorten filters.
 
-8. **Gevaar**. Bevat 5 types: *Lawinegevaar, Erosiegevaar, Overstromingsgevaar, Nucleair gevaar, Gladde weg*.
+8. **Gevaar**. Bevat 5 types: *Lawinegevaar, Erosiegevaar, Overstromingsgevaar, Nucleair gevaar, Gladde weg*. De Gevaar-categorie omvat zowel POI's met hazard=* tags op knooppunten als weg- of padsegmenten (ways) die met dezelfde tag zijn gemarkeerd, als ze worden geëxporteerd als doorzoekbare objecten. Voor een visueel overzicht van alle gevaar-pictogrammen die op de kaart worden gebruikt, zie de sectie [Gevaar](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Bevat 31 soorten filters.
 

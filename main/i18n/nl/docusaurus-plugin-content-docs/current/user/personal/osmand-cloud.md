@@ -1,5 +1,5 @@
 ---
-source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,35 +19,35 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-:::tip abonneren
-&nbsp;<ProFeature/> Om toegang te krijgen tot alle functies van OsmAnd Cloud, abonneer u op **OsmAnd Pro** voor [Android](../purchases/android.md#prices) of [iOS](../purchases/ios.md#prices).
-:::
+:::tip abonneren  
+&nbsp;<ProFeature/> Om toegang te krijgen tot alle functies van OsmAnd Cloud, abonneer u op **OsmAnd Pro** voor [Android](../purchases/android.md#prices) of [iOS](../purchases/ios.md#prices).  
+:::  
 
-:::note cross-platform
-OsmAnd Cloud is een onafhankelijke cloudopslagdienst en is *niet gebonden* aan een specifieke Android-, iOS- of webplatformversie.
-:::
+:::note cross-platform  
+OsmAnd Cloud is een onafhankelijke cloudopslagdienst en is *niet gebonden* aan een specifieke Android-, iOS- of webplatformversie.  
+:::  
 
 Met OsmAnd Cloud kunt u **persoonlijke instellingen en applicatiegegevens opslaan en synchroniseren** op meerdere apparaten. U kunt deze gegevens openen op elk apparaat waarop OsmAnd is geïnstalleerd, inclusief de desktop-app. Alle wijzigingen die in de app worden aangebracht, kunnen **gesynchroniseerd worden tussen platforms**, wat zorgt voor naadloze toegang tot uw opgeslagen gegevens.
 
 
 ## Cross-Platform {#cross-platform}
 
-Met OsmAnd Cloud kunt u uw gegevens back-uppen, herstellen en synchroniseren tussen Android, iOS en de [webversie](../web/index.md). Met cross-platformmogelijkheden kunt u **profielinstellingen**, **tracks**, **favorieten**, **OSM-bewerkingen/notities** en meer overzetten tussen apparaten. Bovendien stelt de **webversie** u in staat om routes te plannen en op te slaan voor later gebruik op verbonden apparaten.
+Met OsmAnd Cloud kunt u uw gegevens back-uppen, herstellen en synchroniseren tussen Android, iOS en de [webversie](../web/index.md). Met cross-platformmogelijkheden kunt u **profielinstellingen**, **tracks**, **favorieten**, **OSM-bewerkingen/notities** en meer overzetten tussen apparaten. Bovendien stelt de **webversie** u in staat om routes te plannen en op te slaan voor later gebruik op verbonden apparaten.  
 
 OsmAnd ondersteunt **cross-platformgebruik** tussen *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* met de volgende stappen:
 
 1. **Registreer een [account](#login) op de OsmAnd Cloud**:
-
-    1.1 **Abonneer u op OsmAnd Pro voor volledige Cloud-toegang.**
+ 
+    1.1 **Abonneer u op OsmAnd Pro voor volledige Cloud-toegang.**  
    Lees meer over aankopen voor [Android](../purchases/android.md#how-to-buy) of [iOS](../purchases/ios.md#how-to-buy).
 
-    2.1 **Gebruik het gratis OsmAnd Start-abonnement** voor cloudback-ups van favorieten, instellingen en OSM-bewerkingen/notities.
+    2.1 **Gebruik het gratis OsmAnd Start-abonnement** voor cloudback-ups van favorieten, instellingen en OSM-bewerkingen/notities.  
    De gratis opslaglimiet is **5 MB**.
 
 2. **Gebruik het geregistreerde e-mailadres** als uw login om [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) of OsmAnd Start op andere platforms te activeren.
 
-:::note
-**OsmAnd Pro** is een cross-platformabonnement dat alle OsmAnd-functies omvat. U kunt het in één winkel kopen (bijv. Google Play, Huawei AppGallery) en het ook op **iOS** gebruiken. Uw **[geregistreerde e-mailadres](#login)** is uw login voor het activeren van OsmAnd Pro [op verschillende platforms](../purchases/cross.md).
+:::note  
+**OsmAnd Pro** is een cross-platformabonnement dat alle OsmAnd-functies omvat. U kunt het in één winkel kopen (bijv. Google Play, Huawei AppGallery) en het ook op **iOS** gebruiken. Uw **[geregistreerde e-mailadres](#login)** is uw login voor het activeren van OsmAnd Pro [op verschillende platforms](../purchases/cross.md). 
 :::
 
 
@@ -55,43 +55,43 @@ OsmAnd ondersteunt **cross-platformgebruik** tussen *([Android](../purchases/and
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
 
-![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png) ![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
+![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="shared_string_get"/> / <Translate ios="true" ids="register_opr_have_account"/>*
 
-![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_first_screen_ios.png) ![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
+![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_first_screen_ios.png)  ![Inloggen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-Om gegevens te back-uppen en te herstellen, moet u ingelogd zijn op uw OsmAnd Cloud-account.
+Om gegevens te back-uppen en te herstellen, moet u ingelogd zijn op uw OsmAnd Cloud-account.  
 
-- Om te registreren of in te loggen, heeft u een actief [OsmAnd Pro](#cross-platform)- of [OsmAnd Start](#osmand-start)-abonnement nodig. U kunt uw abonnementsstatus controleren in de OsmAnd-app:
+- Om te registreren of in te loggen, heeft u een actief [OsmAnd Pro](#cross-platform)- of [OsmAnd Start](#osmand-start)-abonnement nodig. U kunt uw abonnementsstatus controleren in de OsmAnd-app:  
   *Menu → Instellingen → Aankopen*.
 
 - Uw Cloud-account **moet geregistreerd zijn op het apparaat waarop de aankoop oorspronkelijk is gedaan**.
 
-- *Inlogproces*:
-  - Voer uw e-mailadres in en tik op **Doorgaan**.
+- *Inlogproces*:  
+  - Voer uw e-mailadres in en tik op **Doorgaan**.  
   - Er wordt een verificatiecode naar uw e-mail gestuurd ter bevestiging.
-  - Lees [hier](../troubleshooting/purchases_payments.md#verification-code-for-osmand-cloud-not-received) wat u moet doen als u geen verificatiecode ontvangt.
+  - Lees [hier](../troubleshooting/purchases_payments.md#verification-code-for-osmand-cloud-not-received) wat u moet doen als u geen verificatiecode ontvangt.  
   - Gebruik dit account om in te loggen op OsmAnd Cloud op andere apparaten.
 
-- Als u een **OsmAnd Pro**-abonnement heeft, kunt u na het verlopen van uw abonnement nog **één extra jaar** toegang houden tot uw OsmAnd Cloud-account.
+- Als u een **OsmAnd Pro**-abonnement heeft, kunt u na het verlopen van uw abonnement nog **één extra jaar** toegang houden tot uw OsmAnd Cloud-account.  
 
 :::tip Problemen met inloggen oplossen
 Als u problemen ondervindt tijdens de registratie:
 
-- Zorg ervoor dat u zich registreert op **hetzelfde apparaat** waarop de aankoop is gedaan.
+- Zorg ervoor dat u zich registreert op **hetzelfde apparaat** waarop de aankoop is gedaan.  
 - Controleer uw **internetverbinding** voordat u het opnieuw probeert.
 
 :::
@@ -103,9 +103,9 @@ Als u problemen ondervindt tijdens de registratie:
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*  
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png) ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png)
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png)
 
 </TabItem>
 
@@ -113,18 +113,18 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_ios.png) ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_ios.png)
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_ios.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_ios.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Het **OsmAnd Start**-abonnement biedt gratis toegang tot **OsmAnd Cloud** met beperkte basisfuncties en 5 MB opslagruimte om uw **Favorieten, Instellingen en OpenStreetMap (OSM)-bewerkingen en -notities** op te slaan en te synchroniseren. Dit abonnement is beschikbaar voor gebruikers van [OsmAnd Free of Maps+](../purchases/index.md).
+Het **OsmAnd Start**-abonnement biedt gratis toegang tot **OsmAnd Cloud** met beperkte basisfuncties en 5 MB opslagruimte om uw **Favorieten, Instellingen en OpenStreetMap (OSM)-bewerkingen en -notities** op te slaan en te synchroniseren. Dit abonnement is beschikbaar voor gebruikers van [OsmAnd Free of Maps+](../purchases/index.md).  
 
 Functies inbegrepen in OsmAnd Start:
 
-- [Gratis back-up van favorieten](../personal/favorites.md#free-cloud-backup) – Sla belangrijke locaties en routes op in uw Favorieten en open ze vanaf elk apparaat dat is verbonden met OsmAnd Cloud.
-- [Gratis back-up van instellingen](../personal/profiles.md#free-cloud-backup) – Sla uw OsmAnd-appinstellingen op in OsmAnd Cloud en herstel ze op andere apparaten voor een naadloze ervaring.
+- [Gratis back-up van favorieten](../personal/favorites.md#free-cloud-backup) – Sla belangrijke locaties en routes op in uw Favorieten en open ze vanaf elk apparaat dat is verbonden met OsmAnd Cloud.  
+- [Gratis back-up van instellingen](../personal/profiles.md#free-cloud-backup) – Sla uw OsmAnd-appinstellingen op in OsmAnd Cloud en herstel ze op andere apparaten voor een naadloze ervaring.  
 - [OSM-bewerkingen/notities](../plugins/osm-editing.md) – Draag bij aan OpenStreetMap door kaartgegevens te maken en te bewerken, notities toe te voegen en wijzigingen rechtstreeks op te slaan in OsmAnd Cloud.
 
 ### Hoe OsmAnd Start te activeren {#how-to-activate-osmand-start}
@@ -153,7 +153,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 Volg deze stappen om OsmAnd Start te gebruiken:
 
-- **Registreer een OsmAnd Cloud-account** - Zie de sectie [Inloggen](#login) voor instructies.
+- **Registreer een OsmAnd Cloud-account** - Zie de sectie [Inloggen](#login) voor instructies..
 - Open *Menu → Instellingen → Aankopen*.
 - Selecteer **OsmAnd Start** uit de beschikbare opties.
 - **Maak een back-up** om te beginnen met het opslaan van uw gegevens in OsmAnd Cloud.
@@ -169,7 +169,7 @@ Als u al een **OsmAnd Pro**-abonnement of een **actief OsmAnd Cloud-account** he
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*  
 
 ![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png)
 
@@ -179,20 +179,20 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 **Laatste synchronisatie** is een uitklapmenu dat aangeeft hoe lang geleden de gegevens voor het laatst zijn gesynchroniseerd tussen dit apparaat en de cloud.
 
 - *Lokale wijzigingen*. Toont het totale aantal lokale wijzigingen dat niet naar de cloud is geüpload.
 - *Cloudwijzigingen*. Het totale aantal wijzigingen dat sinds de laatste synchronisatie vanaf andere apparaten naar de cloud is geüpload.
 - *Conflicten*. Het totale aantal inconsistenties tussen lokale en cloudwijzigingen.
-- *Nu synchroniseren*. Selecteer deze optie om alle geselecteerde gegevenssecties in het [instellingen](#settings)-menu te synchroniseren die u op dit apparaat en in de cloud hebt gewijzigd.
+- *Nu synchroniseren*. Selecteer deze optie om alle geselecteerde gegevenssecties in het [instellingen](#settings)-menu te synchroniseren die u op dit apparaat en in de cloud hebt gewijzigd.  
 
-**Nu synchroniseren** combineert de knoppen *Alles uploaden* en *Alles downloaden* in het menu Wijzigingen, in de secties [Lokaal en Cloud](#local-and-cloud). **Conflicten** worden op deze manier niet gesynchroniseerd.
+**Nu synchroniseren** combineert de knoppen *Alles uploaden* en *Alles downloaden* in het menu Wijzigingen, in de [Lokaal en Cloud](#local-and-cloud)-secties. **Conflicten** worden op deze manier niet gesynchroniseerd.
 
 <!--
 #### Syncing GPX Collections {#syncing-gpx-collections}
@@ -222,7 +222,7 @@ To use this feature:
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name,shared_string_trash"/>*
 
-![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png) ![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)
+![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
 
 </TabItem>
 
@@ -234,20 +234,20 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 De **Prullenbak**-functie stelt u in staat om bestanden te bekijken en te beheren die uit OsmAnd Cloud zijn verwijderd. Het is ontworpen om onbedoelde verwijdering van bestanden en onherstelbaar verlies van uw gegevens te voorkomen.
 
 - **Bestanden bekijken**. De *Prullenbak* toont alle eerder verwijderde bestanden uit de map *Cloudwijzigingen*. Alle bestanden bevatten informatie over de datum en tijd waarop ze zijn verwijderd. Ze zijn gegroepeerd per maand en gesorteerd van de meest recent verwijderde naar de oudste bestanden die in de Prullenbak staan.
-- **Prullenbak legen**.
+- **Prullenbak legen**.  
 
-    ![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)
+    ![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
 
     Om ruimte vrij te maken van alle bestanden die uit de Cloud zijn verwijderd, kunt u de functie *Prullenbak legen* gebruiken. Deze is beschikbaar via het *drie-puntjesmenu* in de rechterbovenhoek van het Prullenbak-scherm. De bestanden worden permanent verwijderd, zonder mogelijkheid tot herstel.
 
-- **Afzonderlijke bestanden beheren**.
+- **Afzonderlijke bestanden beheren**.  
 
-    ![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)
+    ![Prullenbak OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
 
     - *<Translate ios="true" ids="restore_from_trash"/>*. Met deze functie kunt u bestanden herstellen naar OsmAnd Cloud. Na het tikken wordt het geselecteerde bestand verplaatst van de Prullenbak in de sectie *Wijzigingen* naar de *Cloud*-map.
     - *<Translate ios="true" ids="download_to_device"/>*. Met deze functie kunt u een bestand naar het apparaat downloaden. Als het geselecteerde bestand met dezelfde naam al in de map aanwezig is, wordt het dialoogvenster *Bestand bestaat al* weergegeven, waarin u een actie kunt selecteren: *Vervangen* of *Beide behouden*.
@@ -262,7 +262,7 @@ De **Prullenbak**-functie stelt u in staat om bestanden te bekijken en te behere
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -270,20 +270,20 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)  
 
 </TabItem>
 
 </Tabs>
 
-Deze sectie is voor het bewerken en beheren van uw OsmAnd Cloud.
+Deze sectie is voor het bewerken en beheren van uw OsmAnd Cloud.  
 
 
 ### Selecteer gegevens voor back-up {#select-data-to-back-up}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
@@ -291,11 +291,11 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)  
 
 </TabItem>
 
@@ -322,7 +322,7 @@ Het uitschakelen van de back-up voor een specifiek gegevenstype stopt eenvoudigw
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_version_history"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19-1.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19-1.png)  
 
 </TabItem>
 
@@ -330,15 +330,32 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
-![Back-upgegevensscherm iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)
+![Back-upgegevensscherm iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-De menusectie **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) toont informatie over hoeveel van de 3,15 gigabyte aan geheugen in *Instellingen*, *Mijn Plaatsen* en *Bronnen* wordt gebruikt. U kunt de opslaggrootte van elk gegevenstype bekijken en deze verwijderen uit OsmAnd Cloud indien nodig.
+De **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menusectie toont informatie over hoeveel van de 3,15 gigabyte aan geheugen in *Instellingen*, *Mijn Plaatsen* en *Bronnen* wordt gebruikt. U kunt de opslaggrootte van elk gegevenstype bekijken en deze verwijderen uit OsmAnd Cloud indien nodig. 
 
 Het verwijderen van gegevens uit de Cloud heeft geen invloed op de back-upstatus ervan of op lokale kopieën op uw apparaat. Alle verwijderde items blijven 30 dagen beschikbaar in de Prullenbak en kunnen in die periode worden hersteld.
+
+### Automatische back-up {#auto--backup}
+
+<InfoAndroidOnly />
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Automatische back-up Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+Automatische back-up slaat geselecteerde OsmAnd-gegevens automatisch op in de Cloud op regelmatige intervallen terwijl de app actief is. Dit helpt uw gegevens te beschermen en houdt ze gesynchroniseerd over apparaten die hetzelfde account gebruiken. Het scherm voor Automatische back-up is verdeeld in drie uitklapbare secties: *Instellingen*, *Mijn Plaatsen* en *Bronnen*.
+
+Gedrag van automatische back-up:
+
+- Automatische back-up wordt ongeveer elk uur uitgevoerd terwijl OsmAnd op de voorgrond werkt.
+- Back-up start ook wanneer u terugkeert naar het kaartscherm.
+- U kunt elk item of hele secties onafhankelijk in- of uitschakelen.
+- Uw gegevens blijven lokaal beschikbaar, zelfs als automatische back-up is uitgeschakeld.
 
 
 ### Account {#account}
@@ -356,7 +373,7 @@ Deze sectie bevat informatie over welk van uw accounts is verbonden met OsmAnd C
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png) ![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
 
 </TabItem>
 
@@ -364,11 +381,11 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_11.png) ![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_11.png)   ![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 De acties die u kunt uitvoeren in de sectie **Gevarenzone** van het Instellingen-menu zijn onomkeerbaar en vereisen daarom speciale aandacht.
 
@@ -379,7 +396,7 @@ De acties die u kunt uitvoeren in de sectie **Gevarenzone** van het Instellingen
 3. **Account verwijderen**. Om een account te verwijderen, moet u een verificatieproces doorlopen. Er wordt een eenmalig wachtwoord ter bevestiging naar uw e-mailadres gestuurd dat is geregistreerd bij OsmAnd Cloud.
     - Alle gegevens van OsmAnd Cloud worden verwijderd. Gegevens op het apparaat blijven onaangetast.
     - Uw account en alle accountgegevens worden verwijderd.
-    - Secundaire apparaten worden uitgelogd bij OsmAnd Cloud en verliezen de toegang tot betaalde functies.
+    - Secundaire apparaten worden uitgelogd bij OsmAnd Cloud en verliezen de toegang tot betaalde functies.  
 
     ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_deletion_2_andr.png)
 
@@ -390,17 +407,17 @@ De acties die u kunt uitvoeren in de sectie **Gevarenzone** van het Instellingen
 
 <TabItem value="android" label="Android">
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Tik in de sectie [Laatste synchronisatie](#last-sync) van het uitklapmenu op een item om de sectie Wijzigingen te openen. Deze sectie bevat drie tabbladen met alle beschikbare wijzigingen voor bewerking. Als de lijst leeg is, zijn er geen wijzigingen opgetreden sinds de laatste synchronisatie.
 
@@ -419,7 +436,7 @@ Tik in de sectie [Laatste synchronisatie](#last-sync) van het uitklapmenu op een
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
 
 </TabItem>
 
@@ -427,17 +444,17 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_cloud"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
 
 </TabItem>
 
 </Tabs>
 
-- **Lokaal** - U kunt alle lokale wijzigingen die nog niet in de cloud staan synchroniseren door op **Alles uploaden** te tikken. U kunt ook specifieke wijzigingen uploaden door ze uit de lijst te selecteren en **Lokale versie uploaden** te kiezen.
+- **Lokaal** - U kunt alle lokale wijzigingen die nog niet in de cloud staan synchroniseren door op **Alles uploaden** te tikken. U kunt ook specifieke wijzigingen uploaden door ze uit de lijst te selecteren en **Lokale versie uploaden** te kiezen.  
 
-    Wijzigingen die succesvol naar de cloud zijn geüpload, worden na een ingestelde periode automatisch verwijderd uit het tabblad *Wijzigingen → Lokaal*.
+    Wijzigingen die succesvol naar de cloud zijn geüpload, worden na een ingestelde periode automatisch verwijderd uit het tabblad *Wijzigingen → Lokaal*.  
 
-- **Cloud** - Het tabblad **Cloud** toont een lijst met wijzigingen die beschikbaar zijn om te downloaden uit de cloudopslag. U kunt alle wijzigingen in één keer downloaden met de knop onderaan het scherm of ze afzonderlijk downloaden.
+- **Cloud** - Het tabblad **Cloud** toont een lijst met wijzigingen die beschikbaar zijn om te downloaden uit de cloudopslag. U kunt alle wijzigingen in één keer downloaden met de knop onderaan het scherm of ze afzonderlijk downloaden.  
 
 
 ### Conflicten {#conflicts}
@@ -448,7 +465,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
 
 </TabItem>
 
@@ -456,13 +473,13 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
-![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)
+![Wijzigingen OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
 
 </TabItem>
 
 </Tabs>
 
-Een **conflict** treedt op wanneer de **Lokale versie** en de **Cloudversie** van een bestand niet overeenkomen.
+Een **conflict** treedt op wanneer de **Lokale versie** en de **Cloudversie** van een bestand niet overeenkomen.  
 
 - U kunt ofwel **de Cloudversie vervangen** door lokale wijzigingen of **de Cloudversie downloaden** naar uw apparaat.
 
@@ -470,8 +487,8 @@ Een **conflict** treedt op wanneer de **Lokale versie** en de **Cloudversie** va
 
 - Door op een bestand in de map **Conflicten** te tikken, worden details over de **Lokale** en **Cloud**-versies weergegeven, inclusief de laatste wijzigings- en uploadtijden.
 
-- U kunt een van de volgende acties kiezen:
-  - **Lokale versie uploaden** – Vervangt de Cloudversie door het lokale bestand.
+- U kunt een van de volgende acties kiezen:  
+  - **Lokale versie uploaden** – Vervangt de Cloudversie door het lokale bestand.  
   - **Cloudversie downloaden** – Vervangt het lokale bestand door de Cloudversie.
 
 

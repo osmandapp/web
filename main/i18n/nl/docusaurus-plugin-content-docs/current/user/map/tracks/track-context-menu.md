@@ -1,5 +1,5 @@
 ---
-source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -73,8 +73,10 @@ Het infopaneel geeft ook informatie over het volgende:
 - *<Translate android="true" ids="altitude_range"/>*. Geeft de minimale en maximale hoogte op een spoor aan.  
 
 :::note
-Als uw spoor is gemaakt in OsmAnd of een andere tracking-app (dus de punten hebben [`time` en  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), zal het informatiepaneel ook informatie bevatten over *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) of *<Translate ios="true" ids="total_time"/>* (*iOS*) (de tijdsduur tussen het begin- en eindpunt van het spoor), *<Translate android="true" ids="shared_string_time_moving"/>* (de som van de tijd tijdens het rijden).
-:::  
+Als uw spoor is gemaakt in OsmAnd of een andere tracking-app (dus de punten hebben [`time` en  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), zal het informatiepaneel ook informatie bevatten over *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (de totale tijd tussen het begin- en eindpunt van het spoor), en *<Translate android="true" ids="shared_string_time_moving"/>* (de som van de tijd tijdens het rijden).
+
+**Opmerking:** Voor opgenomen sporen toont Duur de werkelijke reistijd op basis van tijdstempels. Voor geplande sporen toont Duur de geschatte tijd berekend uit de routelengte en de gemiddelde snelheid van het geselecteerde navigatieprofiel, als de gehele route één profiel gebruikt en geen rechte lijnsegmenten bevat.
+:::
 
 ### Spooracties {#track-actions}
 
@@ -133,7 +135,7 @@ Het menu **Opties** stelt u in staat om het geselecteerde spoor te beheren en aa
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Exporteert het geselecteerde spoor in een GPX-formaat.
+- **<Translate android="true" ids="shared_string_share"/>** – Exporteert het geselecteerde spoor in een GPX-formaat via het systeemmenu Delen.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Uploadt](../../plugins/osm-editing.md#upload-gps-track) het geselecteerde spoor naar OpenStreetMap.
 
 <br/>
@@ -247,7 +249,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
 
 De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
 
-- [Activiteitstags voor GPX-sporen](../../plugins/trip-recording.md#recording-settings). Bij het opnemen van een GPX-spoor kunt u een activiteitstype toewijzen. Deze activiteitstagging helpt u bij het initieel categoriseren van sporen.
+- [Activiteitstags voor GPX-sporen](../../plugins/trip-recording.md#recording-settings). Opgenomen sporen ontvangen automatisch een activiteitstype op basis van het geselecteerde profiel, wat helpt bij het categoriseren en filteren later. U kunt de activiteit handmatig wijzigen indien nodig.
 - [Activiteitenfilter](../../personal/tracks/smart-folder.md#search-filter). U kunt de opgenomen GPX-sporen filteren op activiteit, waardoor u zich kunt concentreren op het vinden van specifieke soorten opnames, zoals alle fiets- of wandelsporen.
 - [Activiteitstypes beheren](../../personal/tracks/manage-tracks.md#selection-mode). U kunt het activiteitstype voor geselecteerde mappen of sporen wijzigen met de selectiemodus in het tabblad Sporen van het menu Mijn Plaatsen.
 - **Activiteitenlijst**. De activiteitscategorieën en -groepen zijn gedefinieerd in de bronnen van OsmAnd. Voor ontwikkelaars en bijdragers wordt de activiteitenlijst bijgehouden in een gestructureerd formaat op [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), waarin de beschikbare activiteitengroepen en -types worden gedetailleerd.
@@ -270,13 +272,13 @@ Interactie met de grafiek:
 
 <TabItem value="android" label="Android">
 
-![Contextmenu spoor Grafieken Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Contextmenu spoor Grafieken Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Contextmenu spoor Grafieken iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Contextmenu spoor Grafieken iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +287,7 @@ Interactie met de grafiek:
 Op het tabblad **Overzicht** kunt u parameters zien zoals:
 
 - *<Translate android="true" ids="distance"/>*. De som van de totale afgelegde afstand op het spoor, of de lengte van het spoor zelf.
-- *<Translate android="true" ids="shared_string_time_span"/>*. Het tijdsinterval tussen het begin- en eindpunt van het spoor.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. Het tijdsinterval tussen het begin- en eindpunt van het spoor.
 - *<Translate android="true" ids="shared_string_start_time"/>* De exacte tijd waarop de opname van het spoor begint.
 - *<Translate android="true" ids="shared_string_end_time"/>*. De eindtijd van de spooropname.
 
@@ -464,7 +466,7 @@ Tik op de knop *Waypoint toevoegen* om het scherm voor het aanmaken van waypoint
 
 <TabItem value="android" label="Android">
 
-![Spoormenu Groepsmenu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Spoormenu Groepsmenu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -484,7 +486,7 @@ Het *drie-punten-menu* ( &#8285; ) opent het waypoint *Groepsmenu*.
 - **<Translate android="true" ids="shared_string_rename"/>** - Wijzig de naam van de groep.
 - **<Translate android="true" ids="change_default_appearance"/>** - Wijzig de weergaveopties voor een groep waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** of **Verwijderen** (*Alleen Android*) - Verplaats groepswaypoints naar de [Kaartmarkeringen](../../personal/markers.md) lijst.
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Alleen Android*) - Verplaats groepswaypoints naar [Favorieten](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_favorites"/>** (*Alleen Android*) - Hiermee kunt u de geselecteerde groep Waypoints kopiëren naar [Favorieten](../../personal/favorites.md). U kunt kiezen uit twee opties: ***<Translate android="true" ids="copy_as_new_folder"/>*** of ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Alleen Android*) - Creëert een route tussen waypoints. Het eerste en laatste punt worden het begin en einde van de route, en de rest wordt omgezet in tussenliggende punten.
 - **<Translate android="true" ids="shared_string_delete"/>** - Verwijder een groep waypoints.
 
@@ -643,7 +645,7 @@ Om deze optie te openen:
 
 ### Splitsen per Afstand {#split-by-distance}
 
-![Tabblad spoor splitsen per afstand](@site/static/img/personal/tracks/split_by_2_tab.png) ![Kaart spoor splitsen per afstand](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Tabblad spoor splitsen per afstand](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Kaart spoor splitsen per afstand](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Deze optie stelt u in staat om een spoor in vaste afstandsintervallen te verdelen en gedetailleerde statistieken voor elk segment te analyseren. Beschikbare afstandsintervallen zijn ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** en ***10 km***. Na het kiezen van een afstandsinterval wordt het spoor weergegeven als een lijst van segmenten. 
 
@@ -660,14 +662,14 @@ Wanneer u op een segment in de lijst tikt, toont de kaartweergave het volledige 
 
 ### Splitsen per Tijd {#split-by-time}
 
-![Tabblad spoor splitsen per tijd](@site/static/img/personal/tracks/split_by_3_tab.png) ![Kaart spoor splitsen per tijd](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Tabblad spoor splitsen per tijd](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Kaart spoor splitsen per tijd](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 De optie **Splitsen per tijd** verdeelt een spoor in intervallen van gelijke duur. U kunt kiezen tussen ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** en ***60 min***. De manier waarop de intervallen worden weergegeven, de statistieken die voor elk segment worden verstrekt en hoe ze op de kaart verschijnen, zijn hetzelfde als in de sectie [Splitsen per Afstand](#split-by-distance).
 
 
 ### Splitsen per Stijging/Daling {#split-by-uphill-downhill}
 
-![Tabblad spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_tab.png) ![Kaart spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Tabblad spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Kaart spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 Deze optie verdeelt een spoor in segmenten op basis van hoogteveranderingen. Elk interval wordt geclassificeerd als ***stijging***, ***daling*** of ***vlak***. De manier waarop de intervallen worden weergegeven, de statistieken die voor elk segment worden verstrekt en hoe ze op de kaart verschijnen, zijn ook hetzelfde als in de sectie [Splitsen per Afstand](#split-by-distance).
 
@@ -727,7 +729,7 @@ In dit menu kunt u enkele parameters van uw spoor wijzigen, zoals *Afvlakking*, 
 
 ### Statistieken {#statistics}
 
-![GPS-filter grafiek Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![GPS-filter grafiek Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 Het tabblad Statistieken toont informatie over het **gewijzigde** spoor, wat betekent dat het spoor zonder de gefilterde waarden wordt weergegeven. Dit wordt getoond in de statistiekenblokken en grafiekgegevens.
   

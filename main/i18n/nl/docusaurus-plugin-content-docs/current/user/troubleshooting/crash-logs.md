@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title: Crash Logs
 ---
@@ -33,11 +33,11 @@ Wees voorzichtig bij het verzenden van logcat-logs, aangezien deze privé-inform
 
 ### Logs verzenden vanuit de OsmAnd-app (Android) {#send-logs-from-osmand-app-android}
 
-1. Ga naar *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Afhankelijk van uw situatie, selecteert u het juiste type log. U kunt de sectie [Crash- en Logcat-logs](#crash-and-logcat-logs) raadplegen voor details over de verschillen tussen de logtypen.
+1. Ga naar *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Afhankelijk van uw situatie, selecteert u het juiste type log. U kunt de sectie [Crash and Logcat Logs](#crash-and-logcat-logs) raadplegen voor details over de verschillen tussen de logtypen.
 2. Kies in het pop-upmenu Gmail of uw favoriete e-mailapp. De e-mail wordt automatisch gegenereerd.
 3. Tik op de knop *Verzenden*.
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Stuur crash logs vanaf Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Stuur crash logs vanaf Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Logs verzenden vanaf iOS-apparaten {#send-logs-from-ios-devices}
@@ -46,19 +46,19 @@ Wees voorzichtig bij het verzenden van logcat-logs, aangezien deze privé-inform
 
     - Automatisch.
         - Navigeer naar de OsmAnd-app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Stuur vervolgens, met behulp van uw e-mailapp, de logs naar `crash@osmand.net`.
+        - Stuur vervolgens, met behulp van uw e-mailapp, raden we aan de logs naar `support@osmand.net` te verzenden.
 
     - Handmatig.
         - Navigeer naar de iOS-systeemapp *Bestanden → Op mijn iPhone (of Op mijn iPad) → OsmAnd Maps → Logs*.
 
-    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
+    ![Stuur crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Stuur crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
 2. Stuur [IPS-formaat](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) van logs en autorisatiegegevens:
     - Op iOS 15 of ouder: *Instellingen → Analyse → Analysedata → OsmAnd Maps ips-formaat bestand*.
     - Op iOS 16 of nieuwer:  *Instellingen → Privacy & Beveiliging → Analyse & Verbeteringen → Analysedata → OsmAnd Maps ips-formaat bestand*.
-    - Stuur vervolgens, met behulp van uw e-mailapp, de logs naar `crash@osmand.net`.
+    - Stuur vervolgens, met behulp van uw e-mailapp, raden we aan de logs naar `support@osmand.net` te verzenden.
 
-    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+    ![Stuur crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Stuur crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
 
 ## Tombstone-bestanden verzenden (Android) {#send-tombstone-files-android}
@@ -82,9 +82,9 @@ Om tombstone-bestanden te exporteren, moet u een bugrapport genereren met behulp
     - Tik op de optie *Bugrapport maken*.
     - Selecteer het type bugrapport en tik op *Rapporteren*.
   
-Nadat het bugrapport klaar is, ontvangt u een melding. Tik op het meldingsvak om het rapport naar uw apparaat te downloaden. Pak het bestand uit en stuur de tombstone-bestanden naar het OsmAnd-ontwikkelaarsteam (e-mail: `crash@osmand.net`).
+Nadat het bugrapport klaar is, ontvangt u een melding. Tik op het meldingsvak om het rapport naar uw apparaat te downloaden. Pak het bestand uit en stuur de tombstone-bestanden naar het OsmAnd-ontwikkelaarsteam (e-mail: `support@osmand.net`).
 
-![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Stuur crash logs vanaf Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Stuur crash logs vanaf Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Houd er rekening mee dat bugrapporten privé-gegevens kunnen bevatten, inclusief app-gebruik of locatie.
@@ -114,7 +114,7 @@ Verbind vervolgens uw apparaat via USB met uw werkstation. Als het de eerste kee
 4. Wacht een paar minuten totdat het rapport is gegenereerd. Het resulterende bestand wordt opgeslagen in de platform-tools-map.
 5. Pak het bestand uit.
 6. Zoek de map *tombstones* met bestanden zoals *tombstone_00*, *tombstone_01* en dergelijke.
-7. Stuur de tombstone-bestanden naar `crash@osmand.net`.
+7. Stuur de tombstone-bestanden naar `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Met roottoegang tot uw apparaat kunt u de map */data/tombstones* direct openen.  
 
-- Gebruik in Android Studio de emulator om naar *Device File Explorer* te navigeren en de map /data/tombstones te vinden. Binnenin vindt u bestanden met namen zoals *tombstone_00*, *tombstone_01* en andere. Download deze bestanden en stuur ze naar `crash@osmand.net`.
+- Gebruik in Android Studio de emulator om naar *Device File Explorer* te navigeren en de map /data/tombstones te vinden. Binnenin vindt u bestanden met namen zoals *tombstone_00*, *tombstone_01* en andere. Download deze bestanden en stuur ze naar `support@osmand.net`.
 
 Voor meer details over bugrapporten, raadpleeg de [Android-documentatie](https://developer.android.com/studio/debug/bug-report).

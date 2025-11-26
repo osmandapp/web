@@ -1,8 +1,9 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Populaire Plaatsen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -169,7 +169,9 @@ Door op een POI op de kaart te tikken, wordt het [POI-contextmenu](./map-context
 
 Dit is een sectie binnen het [POI-contextmenu](./map-context-menu.md) die een fotovoorbeeld van de geselecteerde Populaire Plaats (Wikipedia) weergeeft. U kunt horizontaal scrollen om door de beschikbare foto's te bladeren, of op een afbeelding tikken om deze in [volledig scherm](#gallery) te openen.
 
-Lees meer over extra opties in de secties [Acties](#actions) en [Galerij](#gallery).
+Online bekeken afbeeldingen worden automatisch gecachet voor offline toegang. Gecachte foto's tonen een klein offline badge in de hoek. Het voorbeeldrooster past zich aan aan de schermgrootte op iPadOS en macOS, voor een comfortabele afbeeldingslay-out op grotere schermen. OsmAnd voorkomt ook herhaalde netwerkverzoeken wanneer de sectie Online foto's wordt gesloten, en annuleert eerdere verzoeken bij snel schakelen tussen verschillende POI's.
+
+Lees meer over extra opties in de sectie [Acties](#actions) en [Galerij](#gallery).
 
 
 <!-- 
@@ -191,6 +193,8 @@ Hoe te openen in het Kaartcontextmenu:
 
 - Tik op een foto om deze in [volledig scherm](#gallery) te bekijken en toegang te krijgen tot de beschikbare acties:  
   **Delen**, **Details**, **Openen in browser** en **Downloaden**.
+
+**Opmerking:** Downloaden slaat de afbeelding permanent op in de opslag van het apparaat voor offline gebruik, terwijl gecachte foto's automatisch worden opgeslagen en alleen offline binnen de app beschikbaar zijn.
 
 
 ### Galerij {#gallery}
@@ -214,7 +218,9 @@ Hoe te openen in het Kaartcontextmenu:
 </Tabs>
 
 
-Het **Galerijmenu** kan tot **100 afbeeldingen** weergeven die gerelateerd zijn aan het geselecteerde nuttige punt. U kunt door alle beschikbare foto's vegen. Door kort op een foto te tikken, wordt een gedetailleerde weergave geopend met: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*  
+Het **Galerijmenu** kan tot **100 afbeeldingen** weergeven die gerelateerd zijn aan het geselecteerde nuttige punt. U kunt door alle beschikbare foto's vegen. Door kort op een foto te tikken, wordt een gedetailleerde weergave geopend met: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*.  
+
+Op iOS, iPadOS en macOS kunt u foto's navigeren met toetsenbordinstellingen (←/→ om tussen afbeeldingen te verplaatsen, Enter/Space om te openen).
 
 U kunt ook de volgende acties uitvoeren op elke foto:
 

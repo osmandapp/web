@@ -1,5 +1,5 @@
 ---
-source-hash: ecd378030be47cbd78cda02a9ad9227bd3ea55624ac430591012670a140cff42
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Scherm configureren
 ---
@@ -267,7 +267,23 @@ De modus stelt u in staat om **meer dan één widget in een enkele rij** toe te 
     - [Hoogteprofiel (*Alleen Android*)](../widgets/nav-widgets#elevation-widget)
     - [Route manoeuvres](../widgets/nav-widgets.md#next-turn)
 
-- **Eenvoudige widgets**. Meerdere eenvoudige widgets kunnen aan een enkele rij worden toegevoegd. Deze widgets kunnen *Naam*, *Meeteenheden*, *Waarde* en *Pictogram* weergeven.
+- **Eenvoudige widgets**. Meerdere eenvoudige widgets kunnen aan een enkele rij worden toegevoegd. Deze widgets kunnen *Naam*, *Meeteenheden*, *Waarde* en *Pictogram* weergeven. Tekst in eenvoudige widgets wordt automatisch omlijnd om een duidelijke leesbaarheid te garanderen tegen verschillende kaartachtergronden in transparante paneelmodus.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Eenvoudige widgets Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Eenvoudige widgets iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Pagina's {#pages}
@@ -629,7 +645,7 @@ Beschikbare acties:
 - Voor **Android**-apparaten kunt u profielen wijzigen bovenaan het startscherm van Scherm configureren met behulp van de beschikbare profielpictogrammen.  
 - Als u een **iOS**-apparaat gebruikt, tikt u op het profielpictogram in de bovenhoek van het startscherm van Scherm configureren en selecteert u het gewenste profiel uit de lijst om het te activeren.  
 
-**Let op**: De optie *Profiel wisselen* toont niet alle bestaande profielen, maar alleen degenen die zijn *ingeschakeld* in het menu Instellingen.
+**Opmerking**: De optie *Profiel wisselen* toont niet alle bestaande profielen, maar alleen degenen die zijn *ingeschakeld* in het menu Instellingen.
 
 
 ## Gerelateerde artikelen {#related-articles}

@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Rasterkaarten (Online / Offline)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -296,7 +296,7 @@ Hier zijn de belangrijkste parameters om te configureren bij het instellen van e
 | Parameter | Beschrijving |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Geef een naam op voor de nieuwe online kaartbron. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Voer de URL voor de online tegelbron in of plak deze. Zorg ervoor dat deze het tegel-URL-formaat volgt. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Voer de URL voor de online tegelbron in of plak deze. Zorg ervoor dat deze het tegel-URL-formaat volgt. De URL kan bepaalde placeholders bevatten, die OsmAnd automatisch zal vervangen op basis van de specifieke benodigde tegel. De meest gebruikte placeholders zijn gebaseerd op de [OpenStreetMap slippy map tilenames convention](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` of `{0}`: Zoomniveau</li><li>`{x}` of `{1}`: Tegel X-index</li><li>`{y}` of `{2}`: Tegel Y-index</li></ul> Voor voorbeelden van minder gebruikte placeholders, zie de [voordefinieerde online rasterkaartbronnen](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Deze parameter beïnvloedt hoe de kaart wordt weergegeven. <br/><ul><li>Als *kaarttype* wordt de kaart beperkt tot de geselecteerde zoomniveaus.</li><li>Als *overlay/onderlaag* verschijnt de kaart op de geselecteerde zoomniveaus, waarbij buiten die niveaus opschalen of neerschalen wordt toegepast.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Stel de duur (in minuten) in waarna gecachte tegels worden vernieuwd. U kunt dit veld leeg laten als u niet wilt dat tegels automatisch opnieuw worden geladen. <br/><ul><li>1 dag = 1440 minuten</li><li>1 week = 10.080 minuten</li><li>30 dagen = 43.200 minuten</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Kies tussen *Pseudo-Mercatorprojectie* en *Elliptische Mercatorprojectie*, afhankelijk van de bron. |

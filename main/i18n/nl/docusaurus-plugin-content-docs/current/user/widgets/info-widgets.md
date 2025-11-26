@@ -1,5 +1,5 @@
 ---
-source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
+source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -475,7 +475,7 @@ U kunt hier een meer gedetailleerde beschrijving lezen: **[<Translate android="t
 
 </Tabs>
 
-Ritregistratie-widgets verwijzen naar de [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). U kunt widgets gebruiken om korte informatie over de trackopname op het scherm te bekijken. Zoals *Afstand*, *Duur*, *Stijging* en *Daling*.
+Ritregistratie-widgets verwijzen naar de [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). U kunt widgets gebruiken om korte informatie over de trackopname op het scherm te bekijken. Zoals *Afstand*, *Duur*, *Stijging*, *Daling*, *Max Snelheid* en *Gemiddelde Helling* (de laatste twee zijn alleen beschikbaar op Android).
 
 | | |
 |:------------|:------------|

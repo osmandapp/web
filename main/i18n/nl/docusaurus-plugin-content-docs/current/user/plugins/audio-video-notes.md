@@ -1,8 +1,9 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
-title:  Audio- / Videonotities
+title:  Audio / Videonotities
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,14 +14,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoAndroidOnly />
 
 ## Overzicht {#overview}
 
 Uw audio- en video-opnames kunnen in de toekomst nuttig zijn, bijvoorbeeld als herinneringen aan waar u bent geweest. Ze zijn beschikbaar in het menu [Mijn Plaatsen](../personal/myplaces.md) en zijn zichtbaar wanneer de Audio-/Videonotities-plugin is ingeschakeld.
 
-De Audio-/Videonotities-plugin breidt de functionaliteit van OsmAnd uit door u in staat te stellen uw eigen notities te maken in verschillende formaten, zoals foto's, video of audio, en deze te koppelen aan hun geografische locatie of huidige locatie. U kunt alleen opnames maken wanneer de plugin is ingeschakeld, met behulp van de [Audio-/Videonotities-widget](../widgets/info-widgets.md#audiovideo-notes-widget) en/of het [contextmenu van de kaart](../map/map-context-menu.md#-audiovideo-note). De ontvangen gegevens worden automatisch opgeslagen in [Mijn Plaatsen](../personal/myplaces.md), van waaruit ze gemakkelijk kunnen worden beheerd en gedeeld.
+De Audio-/Videonotities-plugin breidt de functionaliteit van OsmAnd uit door u in staat te stellen uw eigen notities te maken in verschillende formaten, zoals foto's, video of audio, en deze te koppelen aan hun geografische locatie of huidige locatie. U kunt alleen opnames maken wanneer de plugin is ingeschakeld, met behulp van de [Audio-/Videonotities-widget](../widgets/info-widgets.md#audiovideo-notes-widget) en/of het [contextmenu van de kaart](../map/map-context-menu.md#-audiovideo-note). De ontvangen gegevens worden automatisch opgeslagen in [Mijn Plaatsen](../personal/myplaces.md), van waaruit ze gemakkelijk kunnen worden beheerd en gedeeld.  
 
 Alle gemaakte audio- en videonotities vormen de Opnamelaag. Wanneer deze op de kaart is ingeschakeld, verandert de weergave van de opgenomen gegevens en zijn er meer instellingen om de opnames te beheren. In de Opnamelaag worden audio- en videonotities als POI's op de kaart geplaatst, waardoor een gebruikersverhaal ontstaat dat alleen zichtbaar is voor de eigenaar van het apparaat.
 
@@ -39,9 +39,9 @@ Alle gemaakte audio- en videonotities vormen de Opnamelaag. Wanneer deze op de k
 
 De audio-/videonotities worden geleverd met de Audio-/videonotities-plugin en vereisen de volgende configuratie:
 
-1. Schakel de [Audio-/videonotities-plugin](../plugins/index.md#enable--disable) in in de sectie Plugins van het *Hoofdmenu*.
+1. Schakel de [Audio-/videonotities-plugin](../plugins/index.md#enable--disable) in in de sectie Plugins van het *Hoofdmenu*.  
 2. Voeg een [widget](../widgets/info-widgets.md#audiovideo-notes-widget) toe aan het kaartscherm voor het meest handige gebruik.
-3. Pas indien nodig de [opname-instellingen](#plugin-settings) voor elk profiel aan.
+3. Pas indien nodig de [opname-instellingen](#plugin-settings) voor elk profiel aan.  
 
 
 ## Plugin-instellingen {#plugin-settings}
@@ -50,7 +50,7 @@ De audio-/videonotities worden geleverd met de Audio-/videonotities-plugin en ve
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*  
 
 ![Instellingen audio-videoplugin Foto Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
 
@@ -58,7 +58,7 @@ De audio-/videonotities worden geleverd met de Audio-/videonotities-plugin en ve
 
 </Tabs>
 
-Voor elk profiel kunt u de *audio- en video-opnameopties* configureren.
+Voor elk profiel kunt u de *audio- en video-opnameopties* configureren.  
 
 | Parameter | Beschrijving |
 | --- | --- |
@@ -80,7 +80,7 @@ Voor elk profiel kunt u de *audio- en video-opnameopties* configureren.
 
 ## Een Enkele Notitie Maken {#create-a-single-note}
 
-U kunt op een van de volgende manieren een foto-, video- en audionotitie maken:
+U kunt een foto-, video- en audionotitie maken op een van de volgende manieren:
 
 - Met de [Widget](../widgets/info-widgets.md#audiovideo-notes-widget). Als de notitie gekoppeld moet worden aan uw huidige geografische positie.
 - Met het [Contextmenu](../map/map-context-menu.md#overview) van een punt op de kaart. Als de notitie gekoppeld moet worden aan het geselecteerde punt op de kaart.
@@ -98,7 +98,7 @@ U kunt op een van de volgende manieren een foto-, video- en audionotitie maken:
 
 </Tabs>
 
-De <Translate android="true" ids="map_widget_av_notes"/> widget wordt gebruikt om een notitie te maken die gekoppeld is aan uw huidige positie, en zo te voorkomen dat u op de kaart naar een geschikt punt voor een notitie moet zoeken. Tik gewoon op de widget en maak de notitie.
+De <Translate android="true" ids="map_widget_av_notes"/> widget wordt gebruikt om een notitie te maken die gekoppeld is aan uw huidige positie, en zo te voorkomen dat u op de kaart naar een geschikt punt voor een notitie moet zoeken. Tik gewoon op de widget en maak de notitie.  
 
 De functies die de <Translate android="true" ids="map_widget_av_notes"/> widget biedt, hangen af van hoe deze is geconfigureerd in het menu [Configureer scherm](../widgets/info-widgets.md#audiovideo-notes-widget). De widget opent ofwel onmiddellijk de camera om een notitie te maken, volgens de ingestelde instellingen, of vraagt eerst in welk formaat een notitie moet worden gemaakt en opent dan het respectievelijke opnamedialoogvenster.
 
@@ -203,7 +203,7 @@ Om een specifieke notitie op de kaart te tonen, gebruikt u de lijst met notities
 
 <TabItem value="android" label="Android">
 
-![Contextmenu audio-videoplugin](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
+![Contextmenu audio-videoplugin](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)  
 ![Acties menu Mijn Plaatsen audio-videoplugin](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
@@ -245,20 +245,20 @@ Om een notitie in Mijn Plaatsen te beheren, tikt u op de verticale drie puntjes 
 
 <TabItem value="android" label="Android">
 
-![De widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![De widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 </TabItem>
 
 </Tabs>
 
-De [Audio-/Videonotities-widget](../widgets/info-widgets.md#audiovideo-notes-widget) maakt notities, foto's, audio- en videobestanden en koppelt ze aan uw huidige positie. De widget heeft verschillende opties die kunnen worden ingesteld als de standaardactie die door de widget wordt uitgevoerd wanneer het scherm wordt aangeraakt.
+De [Audio-/Videonotities-widget](../widgets/info-widgets.md#audiovideo-notes-widget) maakt notities, foto's, audio- en videobestanden en koppelt ze aan uw huidige positie. De widget heeft verschillende opties die kunnen worden ingesteld als de standaardactie die door de widget wordt uitgevoerd wanneer het scherm wordt aangeraakt.  
 
-Het toevoegen van een widget aan het scherm is nodig als u liever niet naar geolocatie op de kaart zoekt en notities koppelt aan uw huidige standaardlocatie. Volg de onderstaande stappen om een widget toe te voegen of aan te passen:
+Het toevoegen van een widget aan het scherm is nodig als u liever niet naar geolocatie op de kaart zoekt en notities koppelt aan uw huidige standaardlocatie. Volg de onderstaande stappen om een widget toe te voegen of aan te passen:  
 
-1. Ga naar:
+1. Ga naar:  
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
-2. Selecteer **<Translate android="true" ids="map_widget_left"/>** of **<Translate android="true" ids="map_widget_right"/>**.
+2. Selecteer  **<Translate android="true" ids="map_widget_left"/>** of **<Translate android="true" ids="map_widget_right"/>**.
 
 3. Tik op **<Translate android="true" ids="map_widget_av_notes"/>**, en het contextmenu van de widget wordt geopend.
 
@@ -272,7 +272,16 @@ Het toevoegen van een widget aan het scherm is nodig als u liever niet naar geol
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - begin met het maken van foto's.
 
-    ![De widget](@site/static/img/plugins/audio-video-notes/widget.png)
+    ![De widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+
+**Externe invoerapparaten gebruiken (*Android*)**. Als u een [extern invoerapparaat](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) gebruikt, kunt u Audio-/Videonotities starten en stoppen zonder het scherm aan te raken. Om dit te doen, wijs de actie “Audiobestand toevoegen” of “Videobestand toevoegen” toe aan een toets:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Zodra toegewezen, fungeert de toets als een schakelaar:
+- De eerste druk start de opname van een audio- of videonotitie (afhankelijk van de geselecteerde actie).
+- De tweede druk op dezelfde toets stopt de opname.
+
+Wanneer een opname wordt gestopt via een extern invoerapparaat, wordt het Contextmenu niet weergegeven, wat het gebruik van OsmAnd in volledig handsfree-scenario's vergemakkelijkt (bijvoorbeeld tijdens het rijden op een motorfiets of autorijden).
 
 
 ## Meerdere Notities Beheren {#manage-multiple-notes}
@@ -306,9 +315,9 @@ De opties op de onderste balk kunnen worden gebruikt om de lijst met notities in
 
 </Tabs>
 
-U kunt alle Notities delen, inclusief [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) dat geselecteerde notities als waypoints heeft, op het scherm [Mijn Plaatsen](../personal/myplaces.md#audiovideo-notes) door op de deelknop in het onderste menu te klikken. Er verschijnt een selectievakje naast elke notitie om specifieke notities te selecteren. Er zijn twee selectievakjes boven de notities: *A/V-notities op datum* om alle notities te selecteren en het selectievakje *Locaties*. Met het selectievakje *Locaties* kunt u een apart GPX-bestand met coördinaten en gegevens toevoegen.
+U kunt alle Notities delen, inclusief [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) dat geselecteerde notities als waypoints heeft, op het scherm [Mijn Plaatsen](../personal/myplaces.md#audiovideo-notes) door op de deelknop in het onderste menu te klikken. Er verschijnt een selectievakje naast elke notitie om specifieke notities te selecteren. Er zijn twee selectievakjes boven de notities: *A/V-notities op datum* om alle notities te selecteren en het selectievakje *Locaties*. Met het selectievakje *Locaties* kunt u een apart GPX-bestand met coördinaten en gegevens toevoegen.  
 
-Elke notitie bevat de tijd waarop deze is gemaakt, de hoeveelheid gegevens, en als het een opname is, de opnametijd en locatiegegevens, kunt u GPX-gegevens toevoegen.
+Elke notitie bevat de tijd waarop deze is gemaakt, de hoeveelheid gegevens, en als het een opname is, de opnametijd en locatiegegevens, kunt u GPX-gegevens toevoegen.  
 Ondersteunde bestandsformaten: audio - **3gp**, video - **mp4**, foto -**jpg**.
 
 
@@ -339,7 +348,7 @@ Gebruik de kaartlaag [Opname](../map/point-layers-on-map#-audio--video-points-an
 
 <TabItem value="android" label="Android">
 
-![Notities en waypoints op de kaart](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
+![Notities en waypoints op de kaart](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)  
 ![Waypoints op de track](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>
@@ -403,7 +412,7 @@ U kunt namen specificeren voor elk handmatig gemaakt waypoint.
 
 ### GPX-bestand met Waypoints {#gpx-file-with-waypoints}
 
-![Waypoint in een GPX-bestand](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
+![Waypoint in een GPX-bestand](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)  
 
 Als u het GPX-bestand van de track bekijkt dat is toegevoegd met een waypoint van een audio-/video-/fotonotitie, zal het waypoint eruitzien als in het onderstaande voorbeeld, met de coördinaten, de tijdstempel, de naam van de respectievelijke notitie en de shortlink.
 
@@ -421,9 +430,9 @@ waarbij `SHORTLINK_LOCATIE` de breedte- en lengtegraad specificeert van de locat
 
 ### Exporteren naar JOSM {#export-to-josm}
 
-![Audio-videonotities in JOSM](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Audio-videonotities in JOSM](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
-Om alles later te bekijken, kunt u de track samen met alle mediabestanden exporteren en ze bekijken in de [JOSM-editor](https://josm.openstreetmap.de/). Merk op dat de mediabestanden in de juiste map moeten worden geplaatst. U kunt erachter komen welke dat is door op de video te klikken. Er verschijnt een melding die aangeeft dat er geen bestand beschikbaar is, plaats het juiste bestand in de opgegeven map.
+Om alles later te bekijken, kunt u de track samen met alle mediabestanden exporteren en ze bekijken in de [JOSM-editor](https://josm.openstreetmap.de/). Merk op dat de mediabestanden in de juiste map moeten worden geplaatst. U kunt erachter komen welke dat is door op de video te klikken. Er verschijnt een melding die aangeeft dat er geen bestand beschikbaar is, plaats het juiste bestand in de opgegeven map.  
 
 
 ## Gerelateerde Artikelen {#related-articles}
