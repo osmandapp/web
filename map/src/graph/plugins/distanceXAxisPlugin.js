@@ -1,5 +1,10 @@
 import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
 
+const TICK_TOLERANCE = 0.0001; // Tolerance for floating point comparison when checking duplicate ticks
+const DEFAULT_INTERVAL = 0.1; // Default interval when maxValue is too small (in km)
+const TARGET_TICKS_COUNT = 5; // Target number of ticks on X axis
+const MIN_TICK_DISTANCE_RATIO = 0.8; // Minimum distance between ticks as ratio of interval
+
 /**
  * Configures X axis for distance display with automatic unit selection.
  * Automatically switches between large units (km/mi) and small units (m/ft) based on distance.
@@ -33,12 +38,11 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
      */
     function calculateNiceInterval(maxValue) {
         const distanceInMeters = maxValue * 1000;
-        const targetTicks = 5;
-        const roughInterval = distanceInMeters / targetTicks;
+        const roughInterval = distanceInMeters / TARGET_TICKS_COUNT;
 
         // Guard against zero or very small values
         if (maxValue <= 0 || roughInterval <= 0) {
-            return 0.1;
+            return DEFAULT_INTERVAL;
         }
 
         const magnitude = Math.pow(10, Math.floor(Math.log10(roughInterval)));
@@ -85,7 +89,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
 
             const interval = calculateNiceInterval(currentRange);
             const allTicks = [];
-            const minDistance = interval * 0.8; // Minimum distance between ticks
+            const minDistance = interval * MIN_TICK_DISTANCE_RATIO;
 
             // Generate all potential ticks
             allTicks.push(currentMin);
@@ -93,14 +97,14 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             let current = Math.ceil(currentMin / interval) * interval;
             while (current <= currentMax) {
                 // Avoid duplicate if currentMin is already a multiple of interval
-                if (Math.abs(current - currentMin) > 0.0001) {
+                if (Math.abs(current - currentMin) > TICK_TOLERANCE) {
                     allTicks.push(current);
                 }
                 current += interval;
             }
 
             // Avoid duplicate if currentMax is already in the list
-            if (Math.abs(currentMax - allTicks.at(-1)) > 0.0001) {
+            if (Math.abs(currentMax - allTicks.at(-1)) > TICK_TOLERANCE) {
                 allTicks.push(currentMax);
             }
 

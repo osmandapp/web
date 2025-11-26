@@ -1,3 +1,5 @@
+const GRID_LINES_COUNT = 3; // Number of horizontal grid lines to draw (top, middle, bottom)
+
 /**
  * Plugin to draw dashed grid lines and combined labels on right Y axes
  *
@@ -28,9 +30,9 @@ export function createCombinedYAxisLabelsPlugin(axes) {
             ctx.lineWidth = 1;
             ctx.setLineDash([4, 4]);
 
-            // Draw 3 horizontal lines (top, middle, bottom)
-            for (let i = 0; i < 3; i++) {
-                const ratio = i / 2;
+            // Draw horizontal grid lines
+            for (let i = 0; i < GRID_LINES_COUNT; i++) {
+                const ratio = i / (GRID_LINES_COUNT - 1);
                 const value = firstScale.min + (firstScale.max - firstScale.min) * ratio;
                 const pixel = firstScale.getPixelForValue(value);
 
@@ -60,9 +62,9 @@ export function createCombinedYAxisLabelsPlugin(axes) {
             ctx.letterSpacing = '0.1px';
             ctx.textAlign = 'left';
 
-            // Draw labels for 3 grid lines (top, middle, bottom)
-            for (let i = 0; i < 3; i++) {
-                const ratio = i / 2;
+            // Draw labels for grid lines
+            for (let i = 0; i < GRID_LINES_COUNT; i++) {
+                const ratio = i / (GRID_LINES_COUNT - 1);
                 const pixel = firstScale.getPixelForValue(firstScale.min + (firstScale.max - firstScale.min) * ratio);
 
                 let x = chartArea.right + 8; // Offset from right edge
