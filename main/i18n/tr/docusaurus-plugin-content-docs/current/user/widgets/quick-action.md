@@ -1,5 +1,5 @@
 ---
-source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title:  Hızlı Eylem (Özel düğmeler)
 ---
@@ -197,13 +197,17 @@ Ayrıntılı özelleştirme ayarları için, her düğmenin görünümünü terc
 
 <TabItem value="android" label="Android">  
 
-![Düğmeler için ızgara_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Düğmeler için ızgara_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Düğmeler için ızgara_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![Düğmeler için ızgara_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Düğmeler için ızgara_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Düğmeler için ızgara_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Düğmeler için ızgara_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![Düğmeler için ızgara_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ Ayrıntılı özelleştirme ayarları için, her düğmenin görünümünü terc
 [Harita düğmeleri](../widgets/map-buttons.md#overview) otomatik olarak ızgara düzeni kullanılarak düzenlenir. Her düğme, ekranın dört köşesinden birine (*sol üst*, *sağ üst*, *sol alt*, *sağ alt*) atanır. Atanan köşede yeterli alan yoksa, düğmeler ekran yönüne bağlı olarak yatay veya dikey olarak hizalanır.
 
 Bu düzen, düğmelerin görsel olarak tutarlı kalmasına yardımcı olur ve örtüşmeyi önler. Örneğin, yatay ekranda, sağ köşedeki düğmeler ekranın alt kısmında yatay olarak sıralanır, dikey ekranda ise gerektiğinde yukarı veya aşağı doğru dikey olarak genişler.
+
+Izgara, çevre arayüze uyum sağlar ve gerektiğinde düğmeleri yeniden konumlandırır, böylece görünür kalırlar ve ekran üzerindeki diğer öğelerle etkileşime girmelerini engeller. Pencere öğeleri veya paneller eklendiğinde, kaldırıldığında veya yeniden düzenlendiğinde, düzen buna göre güncellenir, böylece düğme sırası tutarlı kalır ve hiçbir öğe gizlenmez.
+
+Başka bir cihazdan [içe aktarılan profiller](https://osmand.net/docs/user/personal/import-export#export), ızgara düzenine göre ayarlanır ve farklı ekran boyutlarında ve platformlarda düğme konumlarını doğru tutar.
 
 
 ## Eylem Türleri {#action-types}
@@ -223,8 +231,8 @@ Bu düzen, düğmelerin görsel olarak tutarlı kalmasına yardımcı olur ve ö
 | Göster / Gizle <br/> [**Rotalar**](../map/vector-maps.md#routes) | Görüntülenmelerini etkinleştirmek veya devre dışı bırakmak için rota türlerini seçebilirsiniz. <br/> Bazı rotaların ek ayarları vardır. Varsayılan olarak, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünde hiçbir şey seçmediyseniz, listeden ilk rota türü atanır, aksi takdirde seçtiğiniz bir tür atanır. Daha fazlasını [Rotalar](../map/routes.md) makalesinde okuyabilirsiniz. <br/> - ***Bisiklet rotaları***  &nbsp;(*Rota*, *Düğüm ağları*) <br/> - ***Dağ bisikleti rotaları***  &nbsp;(*MTB ölçeği*, *IMBA*) <br/> - ***Yürüyüş rotaları***  &nbsp;(*OSMC*, *Ağ bağlantısı*, *Düğüm ağları*) <br/> - ***Yürüyüş parkurları zorluk derecesi***  &nbsp;(*SAC ölçeği*, *CAI ölçeği*) <br/> - ***Kayak pistleri*** <br/> - ***At rotaları*** <br/> - ***Akarsu sporları*** <br/> - ***Koşu rotaları*** <br/> - ***Fitness parkurları*** <br/> - ***Seyahat rotaları***  &nbsp;(*Parkurlar*, *Seyahat kitapları*, *Noktalar*) <br/> |
 | Göster / Gizle <br/> [**Topografya katmanları**](../plugins/topography.md#overview) | Tüm topografya verileri ayrı harita katmanları olarak sunulur. Hızlı Eylem ile bu katmanların görünürlüğünü hızlıca değiştirebilirsiniz. <br/> - ***Kontur çizgileri*** <br/> - ***Arazi***  &nbsp;(*[Haritayı Yapılandır](../map/configure-map-menu.md) menüsünde seçilen katmana bağlı olarak*, *Tepe gölgesi*, *Eğim* veya *Rakım* *görüntülenecektir.*) |
 | Değiştir <br/> [**Arazi renk şeması**](../plugins/topography.md#modify-color-scheme) | Düğmeye dokunduğunuzda değişecek mevcut paletler listesinden bir veya daha fazla palet seçmenize olanak tanır. |
-| Göster / Gizle <br/> [**Hava durumu katmanları**](../plugins/weather.md#weather-layers) | Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Hızlı Eylem ile bu katmanların haritadaki görünürlüğünü değiştirmek için hızlı erişim sağlayabilirsiniz. <br/> - ***Yağış katmanı*** <br/> - ***Bulut katmanı*** <br/> - ***Basınç katmanı*** <br/> - ***Rüzgar katmanı*** <br/> - ***Sıcaklık katmanı*** |
-| Aç <br/> [**Hava durumu ekranı**](../plugins/weather.md) <br /> *Yalnızca Android* | Ayrıntılı bilgileri içeren [*Hava durumu* tahmin ekranını](../plugins/weather.md#weather-forecast-screen) açar. |
+| Göster / Gizle <br/> [**Hava durumu katmanları**](../plugins/weather.md#weather-layers) | Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Hızlı Eylem ile bu katmanların haritadaki görünürlüğünü değiştirmek için hızlı erişim sağlayabilirsiniz. <br/> - ***Yağış katmanı*** <br/> - ***Bulut katmanı*** <br/> - ***Basınç katmanı*** <br/> - ***Rüzgar katmanı*** <br/> - ***Rüzgar animasyon katmanı*** *(Yalnızca Android)* <br/> - ***Sıcaklık katmanı*** <br/> Android'de ayrıca **Hava durumu katmanları** — tüm etkin hava durumu katmanları için bir ana anahtar bulunur. Bir kerede tüm şu anda etkin hava durumu katmanlarını kapatır. Tekrar açıldığında, daha önce etkin olan tam aynı katman kümesini geri yükler. |
+| Aç <br/> [**Hava durumu ekranı**](../plugins/weather.md) | Ayrıntılı bilgileri içeren [*Hava durumu* tahmin ekranını](../plugins/weather.md#weather-forecast-screen) açar. |
 | Göster / Gizle <br/> [**Favoriler**](../map/point-layers-on-map.md#favorites) | Favori noktaları haritada gösterir veya gizler. |
 | Göster / Gizle <br/> [**Parkurlar**](../personal/tracks/manage-tracks.md#track-menu) | Haritadaki son görünür parkurları gösterir veya gizler. |
 | Göster / Gizle <br/> [**İÇN**](../map/point-layers-on-map.md#points-of-interest-pois) | Seçilen kategorilerle İÇN katmanlarının haritada görüntülenmesini etkinleştirir veya devre dışı bırakır.<br/>Birden çok İÇN kategorisi seçebilirsiniz. Eylem, Hızlı Eylemler kullanılmadan Haritayı Yapılandır'dan seçilen İÇN kategorilerini değiştirir.  |
@@ -247,6 +255,7 @@ Bu düzen, düğmelerin görsel olarak tutarlı kalmasına yardımcı olur ve ö
 | Göster / Gizle <br/> [**Arama görünümü**](../search/search-all.md) | Arama görünümünü açar veya kapatır. |
 | Göster / Gizle <br/> [**Yan menü**](../start-with/main-menu.md) | Temel özelliklere erişmek için ana yan menünün görünürlüğünü değiştirir. |
 | Aç / Kapat <br/> [**Dokunmatik ekran kilidi**](../map/interact-with-map.md#touch-screen-lock) | İstenmeyen ekran etkileşimlerini önlemek için dokunmatik ekran kilidini etkinleştirir veya devre dışı bırakır. |
+| Aç <br/> **WunderLINQ Datagrid** | Bağlı cihaz bilgilerini görüntülemek için WunderLINQ veri arayüzünü açar; gerekli WunderLINQ uygulaması yüklü değilse App Store'a yönlendirir. |
 
 
 ### Harita Etkileşimleri {#map-interactions}
@@ -276,7 +285,7 @@ Bu düzen, düğmelerin görsel olarak tutarlı kalmasına yardımcı olur ve ö
 | Ekle <br/> [**Park yeri**](../plugins/parking.md) | Seçilen (merkez) harita konumuna park yeri ekler. Eski park konumu silinir. |
 | Ekle <br/> [**İÇN**](../map/point-layers-on-map.md#points-of-interest-pois) | Seçilen (merkez) harita konumuna İÇN ekler (bağlam menüsü eylemiyle aynı). <br /> - *Geçici bir iletişim kutusu göster*. Bir onay iletişim kutusu görüntüler. <br /> - *İÇN Türü* (isteğe bağlı). OSM İÇN türünü önceden seçer. <br /> - *Etiket/Değer* (birden çok). [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) etiketleri / değerleri ekler |
 | Ekle <br/> [**OSM Notu**](../plugins/osm-editing.md#create--modify-osm-note) | Bir [OSM notu](https://wiki.openstreetmap.org/wiki/Notes) ekler  <br /> - *Geçici bir iletişim kutusu göster*. Bir onay iletişim kutusu görüntüler. <br /> - *Mesaj*. Nota varsayılan bir mesaj ekler. |
-| Ekle <br/> [**Medya notları**](../plugins/audio-video-notes.md) | Seçilen (merkez) harita konumu için ses / fotoğraf / video notu kaydını başlatır. |
+| Ekle <br/> [**Medya notları**](../plugins/audio-video-notes.md) | Seçilen (merkez) harita konumu için ses / fotoğraf / video notu kaydını başlatır; tekrarlanan bir basış kaydı durdurur. |
 | Oluştur <br/> [**Yeni rota**](../plan-route/create-route.md) <br /> *Yalnızca Android* | [Rota planla](../plan-route/create-route.md) aracını açar ve haritadaki seçilen (merkezi) konum için bir rota oluşturur. |
 
 
@@ -292,7 +301,7 @@ Bu düzen, düğmelerin görsel olarak tutarlı kalmasına yardımcı olur ve ö
 | Aç / Kapat <br/> [**Otomatik yakınlaştırma haritası**](../map/interact-with-map.md) | Navigasyon sırasında harita otomatik yakınlaştırmayı etkinleştirir veya devre dışı bırakır. |
 | Başlat/durdur <br/> [**Navigasyon**](../navigation/setup/route-navigation.md#start--stop-navigation) | Navigasyonu başlat (bir hedef noktası varsa) veya navigasyonu durdur. |
 | Duraklat / Devam Et <br/> [**Navigasyon**](../navigation/setup/route-navigation.md#pause--resume-navigation) | Navigasyonu duraklat / devam ettir. |
-| Uzaklaştır <br/> [**Sonraki hedef noktası**](../navigation/setup/route-navigation.md#intermediate-destinations) | Varsa sonraki ara noktayı kaldırır, aksi takdirde hedefi kaldırır ve navigasyonu bitirme iletişim kutusunu görüntüler. Herhangi bir hedefiniz yoksa eylem etkin değildir. |
+| Kaldır <br/> [**Sonraki hedef noktası**](../navigation/setup/route-navigation.md#intermediate-destinations) | Varsa sonraki ara noktayı kaldırır, aksi takdirde hedefi kaldırır ve navigasyonu bitirme iletişim kutusunu görüntüler. Herhangi bir hedefiniz yoksa eylem etkin değildir. |
 | Simüle Et <br/> [**GPX ile konum**](../plugins/development.md#gpx-track-simulation) | Cihazınızın konumunu ve hareketini bir GPX parkuru kullanarak simüle eder. |
 
 
@@ -309,11 +318,25 @@ Bu düzen, düğmelerin görsel olarak tutarlı kalmasına yardımcı olur ve ö
 
 ## Eylemler için Klavye Kullanımı {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![Harici cihazlar](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Cihaz → Ekle*
+
+![Harici cihazlar](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 Hızlı Eylem aracının işlevselliğini kullanarak, gerekli eylemleri harici giriş cihazınızın tuşlarına atayabilirsiniz. Bir açıklama [Harita ile Etkileşim](../map/interact-with-map.md#custom-input-device-type) makalesinde bulunabilir.
 

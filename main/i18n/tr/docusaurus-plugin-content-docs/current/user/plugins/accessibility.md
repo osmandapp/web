@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
 sidebar_position: 1
 title: Erişilebilirlik
 ---
@@ -14,7 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-:::caution Not
+:::caution Note
 Erişilebilirlik eklentisi yalnızca OsmAnd'ın **Android sürümünde** mevcuttur. [iOS Sürümü](#how-to-use-ios) sistemin varsayılan erişilebilirlik ayarlarına dayanır.
 :::
 
@@ -25,7 +25,7 @@ Erişilebilirlik, [Android Erişilebilirlik](https://www.android.com/accessibili
 
 ### Nasıl Kullanılır (Android) {#how-to-use-android}
 
-![Erişilebilirlik](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 ***Erişilebilirlik eklentisini etkinleştirin:***  
 
@@ -55,11 +55,11 @@ Erişilebilirlik, [Android Erişilebilirlik](https://www.android.com/accessibili
 
 - **Pusula düğmesi eylemleri**:
 
-| Hareket | Eylem | TalkBack eşdeğeri |
+| Gesture | Action | TalkBack equivalent |
 |-----|-----|-----|
-| **Tek dokunuş** | Haritayı **Kuzey**'e döndürür | **Çift dokunuş** |
-| **Uzun dokunuş** | [Harita yönlendirme modları](../map/interact-with-map.md#map-orientation-modes) listesini açar | **Çift dokunuş ve basılı tutma** |
-| **Çift dokunuş** | *Erişilebilirlik modunda mevcut değil* | *Desteklenmiyor* |
+| **Single tap** | Rotates map to **North** | **Double tap** |
+| **Long tap** | Opens the list of [map orientations](../map/interact-with-map.md#map-orientation-modes) | **Double tap and hold** |
+| **Double tap** | *Not available in Accessibility mode* | *Not supported* |
 
 
 ### Nasıl Kullanılır (iOS) {#how-to-use-ios}
@@ -93,14 +93,15 @@ OsmAnd'da cihazın erişilebilirlik özelliklerini etkinleştirmek için aşağ�
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Erişilebilirlik](@site/static/img/plugins/Accessibility/access_.png)  
+![Accessibility](@site/static/img/plugins/accessibility/access_new.png)  
 
 Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşimi kişiselleştirmek için çeşitli ayarlar sunar. Bu ayarlar OsmAnd'da [profil](../personal/profiles.md) göre uygulanır.
 
-| Ayar                   | Açıklama |  
+| Setting                   | Description |  
 |---------------------------|-------------|  
 | **Erişilebilirlik Modu**    | *Yerleşik OsmAnd özelliklerini* etkinleştirir veya **sistem ayarlarını** kullanır. |  
 | **Konuşma Hızı**           | *Metin okuma hızını* **%50 ila %200** arasında kontrol eder. |  
+| **Çimdik Yakınlaştırma Büyütmesi**    | Çimdikle yakınlaştırırken ve parmaklarınızı ekranda tutarken haritayı geçici olarak büyütür, metin ve simgeleri gerçek yakınlaştırma seviyesini değiştirmeden büyütür. |  
 | [Akıllı Otomatik Duyuru](#smart-autoannounce)    | Rotadan sapıldığında *sesli rehberlik* sağlar. |  
 | **Otomatik Duyuru Periyodu**   | Duyurular arasındaki minimum süreyi **5 saniyeden 5 dakikaya** ayarlar. |  
 | [Yön Stili](#direction-style)       | *Yana doğru (8 yön)* veya *Saat yönünde (12 yön)* arasında seçim yapın. |  
@@ -157,7 +158,7 @@ Bu özellik, özellikle saat tabanlı yönelim tercih eden görme engelli kullan
 Etkinleştirmek için:
 *Menü* → *Eklentiler* → *Erişilebilirlik* → *Ayarlar* → *Yön Stili* → **Yana doğru** veya **Saat yönünde** seçin.
 
-:::info Not
+:::info note
 Yön Stili bağımsız bir seçenektir. Akıllı Otomatik Duyuru'ya bağlı değildir ve Akıllı Otomatik Duyuru etkinleştirilmiş olsun veya olmasın çalışır.
 :::
 

@@ -1,8 +1,9 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
 title: POI Ara
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -68,7 +68,7 @@ OsmAnd, **Kategoriler arama** bölümünün bulunduğu Arama aracına ulaşmak i
     - Bir işletme mekanını marka adına göre aramak (Audi, Starbucks veya Aldi gibi) farklı POI'leri türe göre aramaya çok benzer, temel fark, marka listesinin harita içinde sağlanması ve her güncellemede değişime tabi olmasıdır.
     - Marka, OSM etiketi [***marka*** *adı*](https://wiki.openstreetmap.org/wiki/Key:brand) ile tanımlanır ve OsmAnd, harita başına maksimum 1000 marka ile sınırlı türde markaları toplar, ancak komşu haritalar arasında marka listesinin uyumlu olmasını sağlar.
 
-![POI Ara Android](@site/static/img/search/brand_search_andr.png)
+![POI Ara Android](@site/static/img/search/brand_search_andr.png) ![POI Ara Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -169,7 +169,7 @@ Bir filtre, seçilen kategoriye bağlı olarak oldukça fazla sayıda öğeden o
 8. **Yiyecek**. [Yiyecek](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages), yiyecek ve içecek sağlayan tüm yerleri içerir.
     *24* tür filtre içerir.
 
-9. **Sağlık hizmetleri**. [Sağlık hizmetleri](https://wiki.openstreetmap.org/wiki/Healthcare), farklı tesis türlerinde farklı profesyoneller tarafından sağlanan hizmetleri içerir.
+9. **Sağlık Hizmetleri**. [Sağlık Hizmetleri](https://wiki.openstreetmap.org/wiki/Healthcare), farklı tesis türlerinde farklı profesyoneller tarafından sağlanan hizmetleri içerir.
     *13* tür filtre içerir.
 
 10. **Eğlence**. [Eğlence](https://wiki.openstreetmap.org/wiki/Category:Leisure), çeşitli eğlence yerlerini ve tesislerini içerir.
@@ -289,7 +289,7 @@ Bu işlevsellik çeşitli durumlarda özellikle kullanışlıdır:
 
 - *Seyahat*. Seyahat ederken, özel arama kullanarak farklı ilgi çekici yerleri hızlı bir şekilde bulabilir ve bunları optimal bir rota oluşturmak için birleştirebilirsiniz.
 - *Acil durumlar*. Birkaç tür hizmeti hızlı bir şekilde bulmanız gerekiyorsa, ihtiyacınız olan tüm bilgileri almak için özel bir POI araması kullanabilirsiniz.
-- *Yakındaki hizmetleri ara*. Özel Arama, belirli bir mahallede veya rotanın belirli bir bölümünde birkaç tür hizmeti bulmanız gerekiyorsa, kolay arama için farklı POI kategorilerini birleştirmenize olanak tanır.
+- *Yakındaki Hizmetleri Ara*. Özel Arama, belirli bir mahallede veya rotanın belirli bir bölümünde birkaç tür hizmeti bulmanız gerekiyorsa, kolay arama için farklı POI kategorilerini birleştirmenize olanak tanır.
 
 ### Özel POI Filtresi {#custom-poi-filter}
 
@@ -339,7 +339,7 @@ Haritada yerleri bulmak için özel filtreler oluşturmak üzere, ilgili kategor
 
 7. **Yiyecek**. 12 tür filtre içerir.
 
-8. **Tehlike**. 5 tür içerir: *Çığ tehlikesi, Erozyon tehlikesi, Sel tehlikesi, Nükleer tehlike, Kaygan yol*.
+8. **Tehlike**. 5 tür içerir: *Çığ tehlikesi, Erozyon tehlikesi, Sel tehlikesi, Nükleer tehlike, Kaygan yol*. Tehlike kategorisi, düğümlerde hazard=* etiketli POI'leri ve aynı etiketle işaretlenmiş yol veya yol segmentlerini (ways) içerir, eğer bunlar aranabilir nesneler olarak dışa aktarılırsa. Haritada kullanılan tüm tehlike simgelerinin görsel bir genel bakışını görmek için [Tehlike](https://osmand.net/docs/user/map-legend/osmand/#hazard) bölümüne bakın.
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. 31 tür filtre içerir.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title:  İzleri Yönet
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
-OsmAnd'deki tüm izler *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* içindeki bir sekmede saklanır. OsmAnd, iz dosyasını [GPX formatında](https://en.wikipedia.org/wiki/GPS_Exchange_Format) işler, ancak [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) ve [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) içe aktarılabilir ve GPX'e dönüştürülebilir. [Haritadaki İzler](../../map/tracks/index.md#types-of-tracks) makalesinde farklı iz türleri hakkında daha fazla bilgi edinin.
+OsmAnd'deki tüm izler *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>* içindeki bir sekmede saklanır. OsmAnd, iz dosyasını [GPX formatında](https://en.wikipedia.org/wiki/GPS_Exchange_Format) işler, ancak [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) içe aktarılabilir ve GPX'e dönüştürülebilir. [Haritadaki İzler](../../map/tracks/index.md#types-of-tracks) makalesinde farklı iz türleri hakkında daha fazla bilgi edinin.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -196,7 +196,7 @@ Seçiminizi yaptıktan sonra aşağıdaki adımlar sağlanır:
 
 - **Haritada göster** — Bu özellik sayesinde, seçilen izleri haritada görüntüleyerek konumlarını ve birbirleriyle olan ilişkilerini daha iyi anlayabilirsiniz.
 
-- **Paylaş** (*Android*) / **Dışa Aktar** (*iOS*) — Seçilen verileri diğer kullanıcılarla paylaşmak veya bir bulut hizmetine kaydetmek isterseniz, *Paylaş/Dışa Aktar* özelliği, izleri ve klasörleri farklı paylaşım yöntemleri kullanarak göndermenizi sağlar.
+- **Paylaş** (*Android*) / **Dışa Aktar** (*iOS*) — Sistem Paylaş menüsünü açar ve seçilen izleri GPX dosyaları (.gpx) olarak gönderir veya seçilen klasörleri seçtiğiniz uygulama veya bulut servisi kullanarak dışa aktarır.
 
 - **OpenStreetMap'e yükle** — Seçilen izleri OpenStreetMap'e göndererek verilerin geliştirilmesine ve iyileştirilmesine katkıda bulunabilirsiniz.
 
@@ -271,7 +271,7 @@ Seçilen sıralama seçeneği yalnızca mevcut alt klasöre değil, aynı zamand
 
 <TabItem value="android" label="Android">
 
-Klasör menüsünü **açmak** için klasör alanındaki *üç nokta menüsüne* dokunun.
+Klasör alanındaki *üç nokta menüsüne* dokunarak klasör menüsünü **açın**.
 
 ![çoklu izi içe aktar](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
@@ -326,7 +326,7 @@ Klasör menüsünü **açmak** için klasör alanındaki *üç nokta menüsüne*
 *İzler* sekmesindeki listenin altında ve **her bir klasörünüzdeki** izler listesinin altında, seçilen klasördeki izler için genel özet istatistiklerini görüntülemenizi sağlayan bir bilgi bölümü bulunur. Tüm değerler seçtiğiniz [birimlerde](../../personal/profiles.md#units--formats) görüntülenir.
 
 - Klasördeki **İz** sayısı — Seçilen klasörde bulunan iz sayısını görüntüler.
-- Toplam **Mesafeler** toplamı — Seçilen klasördeki tüm izlerin toplam uzunluğu, seçtiğiniz birimlerde ölçülerek görüntülenir.
+- **Mesafeler** toplamı — Seçilen klasördeki tüm izlerin toplam uzunluğu, seçtiğiniz birimlerde ölçülerek görüntülenir.
 - **Yokuşlar** toplamı — Veriler, seçilen klasördeki tüm izlerdeki toplam dikey yükselişi gösterir.
 - **Yokuş aşağılar** toplamı — Bu parametre, seçilen klasördeki tüm izlerdeki dikey inişlerin toplamıdır.
 - **Süre** zamanı toplamı — Bu, seçilen klasördeki tüm izleri tamamlamak için geçen toplam süreyi görüntüler.

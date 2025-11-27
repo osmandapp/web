@@ -1,5 +1,5 @@
 ---
-source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -262,7 +262,7 @@ Bu özelliği kullanmak için:
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -339,6 +339,23 @@ Belirli bir veri türü için yedeklemeyi devre dışı bırakmak, yalnızca sen
 **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) menü bölümü, *Ayarlar*, *Yerlerim* ve *Kaynaklar*'daki 3.15 gigabayt belleğin ne kadarının kullanıldığını gösterir. Her veri türünün depolama boyutunu görüntüleyebilir ve gerekirse OsmAnd Cloud'dan silebilirsiniz. 
 
 Cloud'dan veri silmek, yedekleme durumunu veya cihazınızdaki yerel kopyaları etkilemez. Tüm kaldırılan öğeler 30 gün boyunca Çöp Kutusu'nda mevcut kalır ve bu süre içinde geri yüklenebilir.
+
+### Otomatik Yedekleme {#auto--backup}
+
+<InfoAndroidOnly />
+
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Auto Backup Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+Otomatik yedekleme, uygulama aktifken seçili OsmAnd verilerini düzenli aralıklarla Cloud'a otomatik olarak kaydeder. Bu, verilerinizi korumaya yardımcı olur ve aynı hesap kullanılarak cihazlar arasında senkronize kalmasını sağlar. Otomatik yedekleme ekranı, *Ayarlar*, *Yerlerim* ve *Kaynaklar* olmak üzere üç genişletilebilir bölüme ayrılmıştır.
+
+Otomatik yedekleme davranışı:
+
+- Otomatik yedekleme, OsmAnd ön planda çalışırken yaklaşık her saat çalışır.
+- Harita ekranına döndüğünüzde yedekleme de başlar.
+- Her öğeyi veya tüm bölümleri bağımsız olarak etkinleştirebilir/devre dışı bırakabilirsiniz.
+- Otomatik yedekleme kapalı olsa bile verileriniz yerel olarak kullanılabilir kalır.
 
 
 ### Hesap {#account}

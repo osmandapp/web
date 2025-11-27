@@ -1,5 +1,5 @@
 ---
-source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
+source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -177,7 +177,9 @@ Daha fazla bilgi için [**Özel paket**](../plugins/custom) makalesine bakın.
 
 </Tabs>
 
-**Birden çok bölge haritasından** oluşan ülkeler için, birden çok haritanın toplu yüklemesini kullanabilirsiniz. Bu tür indirme için mevcut haritalar, çift indirme oku simgeleri ve içinde bölge sayısını gösteren bir etiketle (örneğin Eşyükselti çizgileri / Tüm Bölgeler: 10) görüntülenir. Kaç harita indireceğinizi seçebilirsiniz.
+**Birden çok bölge haritasından** oluşan ülkeler için, birden çok haritanın toplu yüklemesini kullanabilirsiniz. Bu tür indirme için mevcut haritalar, çift indirme oku simgeleri ve içinde bölge sayısını gösteren bir etiketle (örneğin Eşyükselti çizgileri / Tüm Bölgeler: 10) görüntülenir. Kaç harita indireceğinizi seçebilirsiniz. Toplu yükleme, Standart, Eşyükselti çizgileri, Wikipedia ve Arazi dahil olmak üzere birkaç harita türünü destekler.
+
+Gruplanmış bir ülke öğesi açıldığında, o ülke için tam harita listesini içeren bir alt sayfa görüntülenir ve bireysel haritaların seçilmesine veya hepsinin bir kerede indirilmesine olanak tanır.
 
 
 ## Yerel Menü {#local-menu}
@@ -404,11 +406,21 @@ Use sorting options to organize map data:
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Haritalar menüsü Haritaları güncelle Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Haritalar menüsü Haritaları güncelle Android](@site/static/img/personal/maps/maps_update_andr.png) ![Haritalar menüsü Güncelleme sekmesi Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 **Güncellemeler** sekmesi, OsmAnd haritalarını ve kaynaklarını yenilemenizi sağlar. Standart ve yalnızca yol haritaları ayda bir kez, genellikle ayın 2'si ile 5'i arasında yayınlanır ve önceki ayın son gününe kadar olan OpenStreetMap verilerini içerir (örneğin, Ekim sürümü 30 Eylül'e kadar olan verileri içerir). Wikipedia, arazi veya deniz haritaları gibi diğer veriler farklı, düzensiz güncelleme programlarını takip edebilir. Hava durumu tahmini kendi düzenli güncelleme döngüsüne sahiptir. Ayrıntılar için [Tahmin İndir](../plugins/weather.md#download-forecast) bölümüne bakın. 
 
+Aynı ülkenin birkaç haritası güncelleme gerektiriyorsa, OsmAnd bunları Güncellemeler listesindeki tek bir öğeye gruplar. Gruplanmış öğe, ülke adını ve dahil edilen harita sayısını gösterir. Ona dokunduğunuzda, güncellenmesi gereken tüm haritaları gösteren bir *Haritaları güncelle* alt sayfası açılır. 
+
 Tüm haritaları aynı anda güncellemek için *Tümünü güncelle* düğmesini kullanın veya gerektiğinde tek tek haritaları güncelleyin. Saatlik güncellemeler için [Canlı Güncellemeler](#live-updates) abonelik durumunuzu kontrol edin. Etkinleştirilirse, **Canlı Güncellemeler** bölümü, Cihaz Belleği göstergesinin altında, sekmenin üst kısmında görünecektir.
+
+Güncellemeler sekmesinden herhangi bir listelenmiş harita üzerinde uzun basma hareketi kullanarak haritaları doğrudan yönetebilirsiniz. Bu, seçilen harita hakkında ayrıntıları görüntüleme, mevcut en son sürümü indirme, haritayı verilerini kaldırmadan geçici olarak devre dışı bırakma veya harita verilerini cihazdan tamamen silme gibi birkaç seçenek sağlayan bir bağlam menüsü açar:
+- **Bilgi** — seçilen harita hakkında ayrıntıları görüntüleyin
+- **Güncelle** — mevcut en son sürümü indirin
+- **Devre Dışı Bırak** — haritayı verilerini kaldırmadan geçici olarak devre dışı bırakın
+- **Kaldır** — harita verilerini cihazdan tamamen silin
+
+Bir harita devre dışı bırakıldığında, Yerel sekmesinden geçici olarak kaybolabilir. Devre dışı bırakılmış bir harita için bir güncelleme mevcut hale gelirse, yine de Güncellemeler listesinde görünecek ve gri bir simgeyle gösterilecektir. Bu tür bir haritayı güncellemek onu otomatik olarak yeniden etkinleştirecektir.
 
 </TabItem>
 
