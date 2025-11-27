@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title: Sensores Externos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -67,7 +67,7 @@ Para começar a usar dados de sensores externos, siga estas etapas:
 
 | | |
 | --- | --- |
-| ![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) | ![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
+| ![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) |  ![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) |
 
 </TabItem>
 
@@ -75,8 +75,8 @@ Para começar a usar dados de sensores externos, siga estas etapas:
 
 Para emparelhar um novo sensor, siga estas etapas:
 
-1. Certifique-se de que o **Bluetooth esteja ativado** em seu dispositivo.
-2. Vá para *Menu → Plugins → Sensores Externos → Configurações*.
+1. Certifique-se de que o **Bluetooth esteja ativado** em seu dispositivo.  
+2. Vá para *Menu → Plugins → Sensores Externos → Configurações*.  
 3. Toque em **Emparelhar novo sensor**.
 4. O OsmAnd procurará por sensores **Bluetooth LE** ou **ANT+** disponíveis (dependendo da sua plataforma).
 5. Toque no botão **+** ao lado do sensor que você deseja emparelhar.
@@ -101,7 +101,7 @@ Use um dos seguintes caminhos para abrir as configurações do sensor:
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Dispositivo disponível → Configurações*
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Dispositivo disponível → Configurações*
 
-![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)
+![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)  
 
 </TabItem>
 
@@ -112,7 +112,7 @@ Use um dos seguintes caminhos para abrir as configurações do sensor:
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,external_sensors_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,selected_profile,plugins_menu_group,external_sensors_plugin_name"/>*
 
-![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)
+![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)  
 
 </TabItem>
 
@@ -139,7 +139,7 @@ Cada sensor externo emparelhado listado no OsmAnd tem sua própria tela de confi
 
 Vá para: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![Sensores externos](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png) ![Sensores externos](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)
+![Sensores externos](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![Sensores externos](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
 
 </TabItem>
 
@@ -147,7 +147,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png) ![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)
+![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![Plugin de sensores externos](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
 
 </TabItem>
 
@@ -177,13 +177,13 @@ O OsmAnd usa [gravação de trilha](../plugins/trip-recording.md#recorded-gpx-fi
 
 <TabItem value="android" label="Android">
 
-![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png) ![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
+![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_andr.png)  ![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_5_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png) ![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
+![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png)  ![Sensores externos](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_3_ios.png)
 
 </TabItem>
 
@@ -197,7 +197,7 @@ Para analisar dados:
 2. Abra a trilha gravada em *Meus Lugares → Trilhas* ou toque na trilha no mapa.
 3. Selecione *Opções → Analisar no mapa* no menu de contexto da trilha.
 
-Isso exibirá gráficos para seus dados registrados: *Frequência cardíaca*, *Velocidade*, *Cadência*, *Potência da bicicleta* e *Temperatura*.
+Isso exibirá gráficos para seus dados registrados: *Frequência cardíaca*, *Velocidade*, *Cadência*, *Potência da bicicleta* e *Temperatura*
 
 > *O nível da bateria e a distância não estão disponíveis no recurso [Analisar trilha no mapa](../map/tracks/index.md#analyze-track-on-map).*
 
@@ -210,7 +210,7 @@ Isso exibirá gráficos para seus dados registrados: *Frequência cardíaca*, *V
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="external_sensor_widgets"/>*
 
-![Widgets de sensores externos Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png) ![Widgets de sensores externos Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)
+![Widgets de sensores externos Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1_andr.png)  ![Widgets de sensores externos Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
 </TabItem>
 
@@ -218,7 +218,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="external_sensors_plugin_name"/>*
 
-![Widgets de sensores externos iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png) ![Widgets de sensores externos iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)
+![Widgets de sensores externos iOS](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![Widgets de sensores externos iOS](@site/static/img/plugins/sensors/external_sens_widg_3_ios.png)  
 
 </TabItem>
 
@@ -241,6 +241,8 @@ Tipos de widget suportados:
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – temperatura ambiente atual.
 7. **Nível da Bateria** – porcentagem da bateria restante em um sensor BLE conectado, altere-o em **Configurações do sensor**.
 
+**Nota:** Se um sensor se desconectar temporariamente, toque em seu widget no mapa para tentar reconectar imediatamente — não é necessário abrir o menu Sensores Externos.
+
 
 ### Configurações do Widget {#widget-settings}
 
@@ -258,7 +260,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Escolha um painel → Adicionar widget → Sensor externo → Escolha um widget → Configurações*
 
-![Configurações de widgets de sensores externos Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![Configurações de widgets de sensores externos iOS](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 
@@ -266,7 +268,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
 Por padrão, o widget mostra o primeiro sensor conectado desse tipo. Se você quiser usar um sensor específico, toque em **Fonte de dados** e escolha na lista de sensores conectados.
 
-No **iOS**, você pode escolher qual valor exibir no widget:
+No **iOS**, você pode escolher qual valor exibir no widget:  
 
 - **Dados do sensor** (por exemplo, cadência, velocidade).
 - **Nível da bateria** – porcentagem da bateria em tempo real do sensor selecionado.

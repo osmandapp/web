@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -136,6 +136,7 @@ O painel **Informações do Objeto** fornece detalhes adicionais sobre o objeto 
 
 Os detalhes disponíveis incluem:
 
+- [Descrição do Artigo](#article-description)
 - [Nomes alternativos](#alternative-names)
 - [Coordenadas](#coordinates)
 - [Dentro de áreas](#polygon-information)
@@ -153,7 +154,34 @@ Além disso, o painel pode incluir [Detalhes do OpenStreetMap](https://wiki.open
 - [Horário de funcionamento](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Taxa](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Acessibilidade](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Largura](https://wiki.openstreetmap.org/wiki/Key:width) / [Altura](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Largura](https://wiki.openstreetmap.org/wiki/Key:width) / [Altura](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Além dos campos listados acima, o OsmAnd também pode exibir informações descritivas extras obtidas do OpenStreetMap. Esses atributos ajudam você a entender melhor as características de um lugar e podem incluir detalhes como elevação, direção, ano de construção, tipo de superfície ou cobertura, nível interno, opções de pagamento, disponibilidade de entrega ou para viagem, e muitos outros. O OsmAnd exibe esses atributos com rótulos claros e, quando possível, ícones, facilitando a leitura e o reconhecimento das informações. O conjunto exato de atributos depende dos dados disponíveis no OpenStreetMap para o objeto selecionado.
+
+
+### Descrição do Artigo {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Lista de descrição](@site/static/img/map/description_list_new_android.png) ![Lista de descrição](@site/static/img/map/description_list_dialog.png)
+
+Esta parte contém uma parte da descrição do [artigo da Wikipedia](../plugins/wikipedia.md#wikipedia-article), [Favorito](../personal/favorites.md) ou descrição do Ponto de Referência, ao tocar você pode abrir a descrição completa.
+
+Se o local selecionado tiver um artigo da Wikipedia, uma pré-visualização curta é exibida nesta seção. Quando o artigo completo não estiver disponível offline, o botão *Ler na Wikipedia* aparece. Ao tocá-lo, abre um diálogo com opções dependendo do acesso do usuário: usuários com plano comprado podem baixar os dados regionais da Wikipedia ou abrir o artigo no navegador, enquanto usuários gratuitos podem abrir o artigo online ou prosseguir para a tela que oferece acesso offline.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Lista de descrição](@site/static/img/map/description_list_new_ios.png)
+
+Esta parte contém uma parte da descrição do [artigo da Wikipedia](../plugins/wikipedia.md), [Favorito](../personal/favorites.md) ou descrição do Ponto de Referência, ao tocar você pode abrir a descrição completa.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Nomes Alternativos {#alternative-names}
@@ -298,27 +326,6 @@ Informações exibidas sobre rotas de transporte público para a parada de trans
 Esta é uma lista de todos os pontos em um grupo para um Favorito ou Ponto de Referência. Ao tocar, toda a lista de pontos de um grupo se expande, ao tocar em um ponto da lista, o mapa se move para o ponto selecionado.
 
 
-
-
-### Descrição do Artigo {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Lista de descrição](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Lista de descrição](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Esta parte contém uma parte da descrição do [artigo da Wikipedia](../plugins/wikipedia.md), [Favorito](../personal/favorites.md) ou descrição do Ponto de Referência, ao tocar você pode abrir a descrição completa.
 
 
 ### Link do OpenStreetMap {#openstreetmap-link}

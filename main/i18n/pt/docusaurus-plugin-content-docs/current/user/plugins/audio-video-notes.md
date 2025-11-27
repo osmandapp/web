@@ -1,8 +1,9 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
 title: Notas de Áudio / Vídeo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,14 +14,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoAndroidOnly />
 
 ## Visão Geral {#overview}
 
 Suas gravações de áudio e vídeo podem ser úteis no futuro, como lembranças de onde você esteve. Elas estão disponíveis no menu [Meus Locais](../personal/myplaces.md) e são visíveis quando o plugin Notas de Áudio/Vídeo está ativado.
 
-O plugin Notas de Áudio/Vídeo estende a funcionalidade do OsmAnd, permitindo que você crie suas próprias notas em vários formatos, como fotos, vídeo ou áudio, e as associe à sua localização geográfica ou localização atual. Você pode fazer gravações apenas quando o plugin estiver ativado, usando o [widget Notas de Áudio/Vídeo](../widgets/info-widgets.md#audiovideo-notes-widget) e/ou o [menu de contexto do mapa](../map/map-context-menu.md#-audiovideo-note). Os dados recebidos são salvos automaticamente em [Meus Locais](../personal/myplaces.md), de onde podem ser convenientemente gerenciados e compartilhados.
+O plugin Notas de Áudio/Vídeo estende a funcionalidade do OsmAnd, permitindo que você crie suas próprias notas em vários formatos, como fotos, vídeo ou áudio, e as associe à sua localização geográfica ou localização atual. Você pode fazer gravações apenas quando o plugin estiver ativado, usando o [widget Notas de Áudio/Vídeo](../widgets/info-widgets.md#audiovideo-notes-widget) e/ou o [menu de contexto do mapa](../map/map-context-menu.md#-audiovideo-note). Os dados recebidos são salvos automaticamente em [Meus Locais](../personal/myplaces.md), de onde podem ser convenientemente gerenciados e compartilhados.  
 
 Todas as notas de áudio e vídeo criadas compõem a camada de Gravação. Quando ativada no mapa, ela altera a visualização dos dados gravados e há mais configurações para gerenciar as gravações. Na camada de Gravação, as notas de áudio e vídeo são colocadas como POIs no mapa, criando assim uma narrativa do usuário visível apenas para o proprietário do dispositivo.
 
@@ -39,9 +39,9 @@ Todas as notas de áudio e vídeo criadas compõem a camada de Gravação. Quand
 
 As notas de áudio/vídeo são fornecidas com o plugin Notas de áudio/vídeo e exigem a seguinte configuração:
 
-1. Ative o [plugin Notas de áudio/vídeo](../plugins/index.md#enable--disable) na seção Plugins do *Menu Principal*.
+1. Ative o [plugin Notas de áudio/vídeo](../plugins/index.md#enable--disable) na seção Plugins do *Menu Principal*.  
 2. Adicione um [widget](../widgets/info-widgets.md#audiovideo-notes-widget) à tela do mapa para o uso mais conveniente.
-3. Personalize as [configurações de gravação](#plugin-settings) para cada perfil, se necessário.
+3. Personalize as [configurações de gravação](#plugin-settings) para cada perfil, se necessário.  
 
 
 ## Configurações do Plugin {#plugin-settings}
@@ -50,7 +50,7 @@ As notas de áudio/vídeo são fornecidas com o plugin Notas de áudio/vídeo e 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*  
 
 ![Configurações do plugin de áudio e vídeo Foto Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
 
@@ -58,23 +58,23 @@ As notas de áudio/vídeo são fornecidas com o plugin Notas de áudio/vídeo e 
 
 </Tabs>
 
-Para cada perfil, você pode configurar as *opções de gravação de áudio e vídeo*.
+Para cada perfil, você pode configurar as *opções de gravação de áudio e vídeo*.  
 
 | Parâmetro | Descrição |
 | --- | --- |
-| **<Translate android="true" ids="camera_app"/>** | Você pode escolher se deseja usar o aplicativo do sistema ou a câmera do OsmAnd para tirar <Translate android="true" ids="photo_notes"/>. |
+| **<Translate android="true" ids="camera_app"/>**  | Você pode escolher se deseja usar o aplicativo do sistema ou a câmera do OsmAnd para tirar <Translate android="true" ids="photo_notes"/>.|
 | **<Translate android="true" ids="av_camera_pic_size"/>** | Define o tamanho das fotos a serem tiradas. As capacidades da câmera do dispositivo determinam o número de opções disponíveis. Se nenhuma opção for selecionada, o aplicativo usa o tamanho das configurações do sistema da câmera do dispositivo. |
 | **<Translate android="true" ids="av_camera_focus"/>** | Estabelece o método de como o foco da câmera é definido. O número de opções disponíveis é determinado pelas capacidades da câmera do dispositivo. Basicamente, existem as três opções a seguir: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; e *<Translate android="true" ids="av_camera_focus_infinity"/>*. O **Autofoco** é o mais popular e estabelece o modo automático para a câmera; o **contínuo** faz com que a câmera detecte movimentos e refoque de acordo; e a opção **infinito** faz com que a lente foque em uma distância e, assim, mantenha os objetos em foco, não importa o quão longe estejam. |
 | **<Translate android="true" ids="multimedia_photo_play_sound"/>** | Se ativado, um som é produzido quando a câmera tira uma foto. Observe que, conforme exigido pela lei de privacidade, **em alguns países os dispositivos não terão um botão de mudo do obturador da câmera**. Se você usar o aplicativo do sistema, o som deve ser desativado no aplicativo da câmera. |
 | **<Translate android="true" ids="av_audio_format"/>** | Fornece uma escolha de formatos para um arquivo de áudio. O número de opções disponíveis, e qual é usada por padrão, é determinado pelos parâmetros de um dispositivo específico. |
 | **<Translate android="true" ids="av_audio_bitrate"/>** | Esta opção fornece uma escolha de opções de taxa de bits para um arquivo de áudio a ser criado. As opções de taxa de bits disponíveis variam de 16kbps a 128 kbps, ou a opção Padrão. O parâmetro Padrão é determinado pelas configurações de microfone "padrão" do seu dispositivo. |
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | Se ativado, o OsmAnd usa o aplicativo do sistema para gravar vídeo em <Translate android="true" ids="video_notes"/>. |
-| **<Translate android="true" ids="av_video_quality"/>** | Isso fornece uma escolha de opções que determinam o formato da imagem de saída. O intervalo de opções disponíveis é determinado pelos parâmetros de um dispositivo específico. A opção padrão é a opção *Qualidade mais alta*. |
-| **<Translate android="true" ids="multimedia_rec_split_title"/>** | Se ativado, as gravações de vídeo antigas serão automaticamente reescritas e substituídas por novas gravações de vídeo se o tamanho do armazenamento atingir o limite de tamanho. |
-| **<Translate android="true" ids="rec_split_clip_length"/>** | Isso determina o limite de tempo superior para clipes de vídeo gravados. Existem opções com um intervalo de 1 minuto a 30 minutos. |
+| **<Translate android="true" ids="av_video_quality"/>** | Isso fornece uma escolha de opções que determinam o formato da imagem de saída. O intervalo de opções disponíveis é determinado pelos parâmetros de um dispositivo específico. A opção padrão é a opção *Qualidade mais alta*.  |
+| **<Translate android="true" ids="multimedia_rec_split_title"/>** | Se ativado, as gravações de vídeo antigas serão automaticamente reescritas e substituídas por novas gravações de vídeo se o tamanho do armazenamento atingir o limite de tamanho.  |
+| **<Translate android="true" ids="rec_split_clip_length"/>** | Isso determina o limite de tempo superior para clipes de vídeo gravados. Existem opções com um intervalo de 1 minuto a 30 minutos.|
 | **<Translate android="true" ids="rec_split_storage_size"/>** | Isso estabelece o tamanho do armazenamento destinado a vídeos gravados. Existem opções com um intervalo de 1024 MB a 62 GB. Um intervalo específico de opções, e a opção padrão, é determinado pelos parâmetros de um dispositivo específico. Uma mensagem do sistema o lembrará de que o tamanho do armazenamento está atingindo o limite estabelecido. |
 | **<Translate android="true" ids="notes"/>** | Esta opção o redireciona para as [Notas de áudio/vídeo em Meus Locais](../personal/myplaces.md) - armazenamento central de todas as notas de áudio/vídeo já feitas no aplicativo. |
-| **<Translate android="true" ids="reset_plugin_to_default"/>** | Você pode estabelecer os valores padrão para todas as configurações de notas A/V. |
+| **<Translate android="true" ids="reset_plugin_to_default"/>** | Você pode estabelecer os valores padrão para todas as configurações de notas A/V.  |
 | **<Translate android="true" ids="copy_from_other_profile"/>** | Abre uma caixa de diálogo para selecionar um perfil para copiar a configuração de gravação de notas de áudio/vídeo e estabelecê-la para o perfil atual. |
 
 
@@ -98,7 +98,7 @@ Você pode criar uma nota de foto, vídeo e áudio de qualquer uma das seguintes
 
 </Tabs>
 
-O widget <Translate android="true" ids="map_widget_av_notes"/> é usado para criar uma nota vinculada à sua posição atual e, assim, evitar qualquer busca por um ponto adequado para uma nota no mapa. Basta tocar no widget e fazer a nota.
+O widget <Translate android="true" ids="map_widget_av_notes"/> é usado para criar uma nota vinculada à sua posição atual e, assim, evitar qualquer busca por um ponto adequado para uma nota no mapa. Basta tocar no widget e fazer a nota.  
 
 As funções fornecidas pelo widget <Translate android="true" ids="map_widget_av_notes"/> dependem de como ele está configurado no menu [Configurar tela](../widgets/info-widgets.md#audiovideo-notes-widget). O widget abre imediatamente a câmera para fazer uma nota, de acordo com as configurações estabelecidas, ou pergunta primeiro em qual formato criar uma nota e, em seguida, abre a caixa de diálogo do gravador respectivo.
 
@@ -203,7 +203,7 @@ Para mostrar uma nota específica no mapa, use a lista de notas em Meus Locais, 
 
 <TabItem value="android" label="Android">
 
-![Plugin de áudio e vídeo Menu de contexto](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
+![Plugin de áudio e vídeo Menu de contexto](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)  
 ![Plugin de áudio e vídeo Ações do menu Meus Locais](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
@@ -245,20 +245,20 @@ Para gerenciar uma nota em Meus Locais, toque nos três pontos verticais da nota
 
 <TabItem value="android" label="Android">
 
-![O widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![O widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 </TabItem>
 
 </Tabs>
 
-O [widget Notas de Áudio/Vídeo](../widgets/info-widgets.md#audiovideo-notes-widget) cria notas, fotos, arquivos de áudio e vídeo e os vincula à sua posição atual. O widget possui várias opções que podem ser definidas como a ação padrão executada pelo widget quando a tela é tocada.
+O [widget Notas de Áudio/Vídeo](../widgets/info-widgets.md#audiovideo-notes-widget) cria notas, fotos, arquivos de áudio e vídeo e os vincula à sua posição atual. O widget possui várias opções que podem ser definidas como a ação padrão executada pelo widget quando a tela é tocada.  
 
-Adicionar um widget à tela é necessário se você preferir evitar a busca por geolocalização no mapa e vincular notas à sua localização padrão atual. Para adicionar ou personalizar um widget, siga os passos abaixo:
+Adicionar um widget à tela é necessário se você preferir evitar a busca por geolocalização no mapa e vincular notas à sua localização padrão atual. Para adicionar ou personalizar um widget, siga os passos abaixo:  
 
-1. Vá para:
+1. Vá para:  
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
-2. Selecione **<Translate android="true" ids="map_widget_left"/>** ou **<Translate android="true" ids="map_widget_right"/>**.
+2. Selecione  **<Translate android="true" ids="map_widget_left"/>** ou **<Translate android="true" ids="map_widget_right"/>**.
 
 3. Toque em **<Translate android="true" ids="map_widget_av_notes"/>**, e o menu de contexto do widget será aberto.
 
@@ -272,7 +272,16 @@ Adicionar um widget à tela é necessário se você preferir evitar a busca por 
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - começar a tirar fotos.
 
-    ![O widget](@site/static/img/plugins/audio-video-notes/widget.png)
+    ![O widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+
+**Usando dispositivos de entrada externos (*Android*)**. Se você usar um [dispositivo de entrada externo](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), você pode iniciar e parar Notas de Áudio/Vídeo sem tocar na tela. Para fazer isso, atribua a ação “Adicionar nota de áudio” ou “Adicionar nota de vídeo” a uma tecla:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Uma vez atribuída, a tecla funciona como um alternador:
+- A primeira pressão inicia a gravação de uma nota de áudio ou vídeo (dependendo da ação selecionada).
+- A segunda pressão da mesma tecla para a gravação.
+
+Quando uma gravação é parada por meio de um dispositivo de entrada externo, o Menu de Contexto não é exibido, o que facilita o uso do OsmAnd em cenários totalmente livres de mãos (por exemplo, ao pilotar uma motocicleta ou dirigir).
 
 
 ## Gerenciar Múltiplas Notas {#manage-multiple-notes}
@@ -306,10 +315,10 @@ As opções na barra inferior podem ser usadas para gerenciar a lista de notas n
 
 </Tabs>
 
-Você pode compartilhar todas as Notas, incluindo [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) que possui notas selecionadas como pontos de passagem na tela [Meus Locais](../personal/myplaces.md#audiovideo-notes), clicando no botão de menu inferior de compartilhamento. Uma caixa de seleção aparecerá ao lado de cada nota para selecionar notas específicas. Existem duas caixas de seleção acima das notas: *Notas A/V por data* para selecionar todas as notas e a caixa de seleção *Locais*. A caixa de seleção *Locais* permite adicionar um arquivo GPX separado com coordenadas e dados.
+Você pode compartilhar todas as Notas, incluindo [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) que possui notas selecionadas como pontos de passagem na tela [Meus Locais](../personal/myplaces.md#audiovideo-notes), clicando no botão de menu inferior de compartilhamento. Uma caixa de seleção aparecerá ao lado de cada nota para selecionar notas específicas. Existem duas caixas de seleção acima das notas: *Notas A/V por data* para selecionar todas as notas e a caixa de seleção *Locais*. A caixa de seleção *Locais* permite adicionar um arquivo GPX separado com coordenadas e dados.  
 
-Cada nota contém a hora em que foi criada, a quantidade de dados e, se for um registro, a hora da gravação e os dados de localização, você pode adicionar dados GPX.
-Formatos de arquivo suportados: áudio - **3gp**, vídeo - **mp4**, foto - **jpg**.
+Cada nota contém a hora em que foi criada, a quantidade de dados e, se for um registro, a hora da gravação e os dados de localização, você pode adicionar dados GPX.  
+Formatos de arquivo suportados: áudio - **3gp**, vídeo - **mp4**, foto -**jpg**.
 
 
 ### Mostrar Tudo no Mapa {#show-all-on-the-map}
@@ -339,7 +348,7 @@ Use a camada de mapa [Gravação](../map/point-layers-on-map#-audio--video-point
 
 <TabItem value="android" label="Android">
 
-![Notas e pontos de passagem no mapa](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
+![Notas e pontos de passagem no mapa](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)  
 ![Pontos de passagem na trilha](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>
@@ -403,7 +412,7 @@ Você pode especificar nomes para cada ponto de passagem criado manualmente.
 
 ### Arquivo GPX com Pontos de Passagem {#gpx-file-with-waypoints}
 
-![Ponto de passagem em um arquivo GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
+![Ponto de passagem em um arquivo GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)  
 
 Se você visualizar o arquivo GPX da trilha adicionada com um ponto de passagem de uma nota de áudio/vídeo/foto, o ponto de passagem será como no exemplo abaixo, contendo as coordenadas, o carimbo de data/hora, o nome da nota respectiva e o link curto.
 
@@ -421,9 +430,9 @@ onde `SHORTLINK_LOCATION` especifica a latitude e longitude do local ao qual o a
 
 ### Exportar para JOSM {#export-to-josm}
 
-![Notas de áudio e vídeo no Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Notas de áudio e vídeo no Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
-Para visualizar tudo mais tarde, você pode exportar a trilha junto com todos os arquivos de mídia e visualizá-los no [editor JOSM](https://josm.openstreetmap.de/). Observe que os arquivos de mídia devem ser colocados na pasta apropriada. Você pode descobrir qual é clicando no vídeo. Uma notificação aparecerá mostrando que não há arquivo disponível, coloque o arquivo correto na pasta especificada.
+Para visualizar tudo mais tarde, você pode exportar a trilha junto com todos os arquivos de mídia e visualizá-los no [editor JOSM](https://josm.openstreetmap.de/). Observe que os arquivos de mídia devem ser colocados na pasta apropriada. Você pode descobrir qual é clicando no vídeo. Uma notificação aparecerá mostrando que não há arquivo disponível, coloque o arquivo correto na pasta especificada.  
 
 
 ## Artigos Relacionados {#related-articles}

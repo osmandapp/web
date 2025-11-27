@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
 sidebar_position: 1
 title: Acessibilidade
 ---
@@ -73,7 +73,7 @@ A versão iOS do OsmAnd usa as **ferramentas de acessibilidade integradas** do s
 2. **Recursos suportados**:
    - **Suporte a leitor de tela** para interações com o mapa.
    - **Gestos personalizáveis** através das configurações do iOS.
-   - Todos os [gestos padrão do OsmAnd](../map/interact-with-map.md#gestos) estão disponíveis.
+   - Todos os [gestos padrão do OsmAnd](../map/interact-with-map.md#gestures) estão disponíveis.
 
 3. **Saiba mais**:
    - Leia sobre os recursos de Acessibilidade Visual do iOS [aqui](https://www.apple.com/accessibility/vision/).
@@ -93,7 +93,7 @@ Para ativar os recursos de acessibilidade do dispositivo no OsmAnd, você precis
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Acessibilidade](@site/static/img/plugins/Accessibility/access_.png)  
+![Acessibilidade](@site/static/img/plugins/accessibility/access_new.png)  
 
 O plugin de Acessibilidade oferece várias configurações para personalizar a navegação e a interação para usuários com deficiência. Essas configurações são aplicadas por [perfil](../personal/profiles.md) no OsmAnd.
 
@@ -101,6 +101,7 @@ O plugin de Acessibilidade oferece várias configurações para personalizar a n
 |---------------------------|-------------|  
 | **Modo de Acessibilidade**    | Ativa *recursos integrados do OsmAnd* ou usa **configurações do sistema**. |  
 | **Taxa de Fala**           | Controla a *velocidade da conversão de texto em fala*, variando de **50% a 200%**. |  
+| **Magnificação de Zoom por Pinch**    | Amplia temporariamente o mapa enquanto você faz zoom por pinch e mantém os dedos na tela, ampliando texto e ícones sem alterar o nível de zoom real. |  
 | [Anúncio Automático Inteligente](#smart-autoannounce)    | Fornece *orientação por voz* ao desviar da rota. |  
 | **Período de Anúncio Automático**   | Define o tempo mínimo entre os anúncios, de **5 segundos a 5 minutos**. |  
 | [Estilo de Direção](#direction-style)       | Escolha entre *Lateral (8 direções)* ou *Sentido Horário (12 direções)*. |  

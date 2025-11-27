@@ -1,5 +1,5 @@
 ---
-source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
+source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
 sidebar_position: 2
 ---
 
@@ -19,6 +19,27 @@ Você pode obter a versão mais recente do OsmAnd gratuitamente nas lojas de apl
 Links diretos para versões gratuitas do OsmAnd.
 
 ## Versão 5 {#version-5}
+
+### Versão 5.2 {#version-52}
+
+Data de lançamento 11/2025:
+
+- Novo estilo de mapa náutico "Marine" com opções extensas de personalização.
+- Adicionados detalhes de rua e cidade aos resultados de pesquisa.
+- Novos widgets de Gravação de Viagem: Velocidade Máx., Inclinação Média e Subidas/Descidas aprimoradas.
+- Velocidade de renderização do mapa aprimorada.
+- Sincronização automática básica para OsmAnd Cloud.
+- Conectividade OBDII BLE aprimorada.
+- Atualizações do recurso "Analisar por Intervalo".
+- Ferramenta Planejar Rota aprimorada.
+- Adicionada a capacidade de definir unidades de altitude separadamente das unidades de distância.
+- Ação rápida de orientação do mapa aprimorada com modos de bússola selecionáveis.
+- Melhorias no Android Auto.
+- Orientações de tela invertidas.
+- Interface do usuário aprimorada para adicionar métricas de caminhão nas configurações do perfil Caminhão.
+- Mais parâmetros para exibição de rota no mapa.
+
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
 
 ### Versão 5.1 {#version-51}
 

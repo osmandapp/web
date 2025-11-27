@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title: Logs de Falhas
 ---
@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 Os logs de falhas são ferramentas de diagnóstico valiosas que ajudam os desenvolvedores a identificar e corrigir problemas e bugs que causam o aplicativo a falhar ou se comportar de forma inesperada. É possível compartilhar logs do seu dispositivo Android com a equipe de desenvolvimento do OsmAnd. Atualmente, os usuários de iOS têm apenas um tipo de opção de log de falha para enviar.
 
 
-## Logs de Falhas e Logcat {#crash-and-logcat-logs}
+## Logs de Falhas e Logs do Logcat {#crash-and-logcat-logs}
 
 O OsmAnd permite que você envie dois tipos de dados para os desenvolvedores:
 
@@ -33,11 +33,11 @@ Tenha cuidado ao enviar logs do Logcat, pois eles podem conter informações pri
 
 ### Enviar Logs do Aplicativo OsmAnd (Android) {#send-logs-from-osmand-app-android}
 
-1. Vá para *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Dependendo da sua situação, selecione o tipo de log apropriado. Você pode consultar a seção [Logs de Falhas e Logcat](#crash-and-logcat-logs) para obter detalhes sobre as diferenças entre os tipos de log.
+1. Vá para *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Dependendo da sua situação, selecione o tipo de log apropriado. Você pode consultar a seção [Logs de Falhas e Logs do Logcat](#crash-and-logcat-logs) para obter detalhes sobre as diferenças entre os tipos de log.
 2. No menu pop-up, escolha o Gmail ou seu aplicativo de e-mail preferido. O e-mail será gerado automaticamente.
 3. Toque no botão *Enviar*.
 
-![Enviar logs de falhas do Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Enviar logs de falhas do Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Enviar Logs de Dispositivos iOS {#send-logs-from-ios-devices}
@@ -46,19 +46,19 @@ Tenha cuidado ao enviar logs do Logcat, pois eles podem conter informações pri
 
     - Automaticamente.
         - Navegue até o aplicativo OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `crash@osmand.net`.
+        - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `support@osmand.net`.
 
     - Manualmente.
         - Navegue até o aplicativo do sistema iOS *Arquivos → No meu iPhone (ou No meu iPad) → OsmAnd Maps → Logs*.
 
-    ![Enviar logs de falhas iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Enviar logs de falhas iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
 2. Envie [formato IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) de logs e dados de autorização:
     - Em iOS 15 ou anterior: *Configurações → Análise → Dados de Análise → Arquivo OsmAnd Maps em formato ips*.
     - Em iOS 16 ou posterior:  *Configurações → Privacidade e Segurança → Análise e Melhorias → Dados de Análise → Arquivo OsmAnd Maps em formato ips*.
-    - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `crash@osmand.net`.
+    - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `support@osmand.net`.
 
-    ![Enviar logs de falhas iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Enviar logs de falhas iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+    ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
 
 ## Enviar Arquivos Tombstone (Android) {#send-tombstone-files-android}
@@ -82,9 +82,9 @@ Para exportar arquivos tombstone, você precisa gerar um relatório de bug usand
     - Toque na opção *Fazer relatório de bug*.
     - Selecione o tipo de relatório de bug e toque em *Relatar*.
   
-Depois que o relatório de bug estiver pronto, você receberá uma notificação. Toque na caixa de notificação para baixar o relatório para o seu dispositivo. Descompacte o arquivo e envie os arquivos tombstone para a equipe de desenvolvedores do OsmAnd (e-mail: `crash@osmand.net`).
+Depois que o relatório de bug estiver pronto, você receberá uma notificação. Toque na caixa de notificação para baixar o relatório para o seu dispositivo. Descompacte o arquivo e envie os arquivos tombstone para a equipe de desenvolvedores do OsmAnd (e-mail: `support@osmand.net`).
 
-![Enviar logs de falhas do Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Enviar logs de falhas do Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Observe que os relatórios de bug podem conter dados privados, incluindo uso de aplicativos ou localização.
@@ -100,7 +100,7 @@ Certifique-se de que as *Opções do desenvolvedor* estejam ativadas (esta tela 
 
 - Navegue até *Configurações → Sobre o telefone → Informações do software*.
 - Toque em *Número da compilação* sete vezes até que um pop-up confirme que o modo de desenvolvedor está ativo.
-- Nas *Opções do desenvolvedor*, ative  *Depuração USB*.
+- Nas *Opções do desenvolvedor*, ative *Depuração USB*.
 
 Em seguida, conecte seu dispositivo à sua estação de trabalho via USB. Se for a primeira vez que você se conecta, um pop-up aparecerá pedindo permissão para permitir a depuração.
 
@@ -114,7 +114,7 @@ Em seguida, conecte seu dispositivo à sua estação de trabalho via USB. Se for
 4. Aguarde alguns minutos para que o relatório seja gerado. O arquivo resultante será salvo na pasta platform-tools.
 5. Descompacte o arquivo.
 6. Encontre a pasta *tombstones* com arquivos como *tombstone_00*, *tombstone_01* e semelhantes.
-7. Envie os arquivos tombstone para `crash@osmand.net`.
+7. Envie os arquivos tombstone para `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Com acesso root ao seu dispositivo, você pode abrir diretamente a pasta */data/tombstones*.  
 
-- No Android Studio, use o emulador para navegar até o *Device File Explorer* e encontrar a pasta /data/tombstones. Dentro, você encontrará arquivos nomeados como *tombstone_00*, *tombstone_01* e outros. Baixe esses arquivos e envie-os para `crash@osmand.net`.
+- No Android Studio, use o emulador para navegar até o *Device File Explorer* e encontrar a pasta /data/tombstones. Dentro, você encontrará arquivos nomeados como *tombstone_00*, *tombstone_01* e outros. Baixe esses arquivos e envie-os para `support@osmand.net`.
 
 Para mais detalhes sobre relatórios de bug, consulte a [documentação do Android](https://developer.android.com/studio/debug/bug-report).

@@ -1,5 +1,5 @@
 ---
-source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
+source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
 sidebar_position: 9
 title: Android Auto
 ios: false
@@ -16,11 +16,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## Visão Geral {#overview}
 
-![Tela do Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)
+![Tela do Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
-[**Android Auto**](https://www.android.com/auto) é um software desenvolvido pelo Google que permite aos usuários conectar seus dispositivos Android a sistemas multimídia veiculares compatíveis. O *Android Auto* oferece uma versão adaptada e otimizada do aplicativo OsmAnd para uso seguro durante a condução, tornando mais fácil e seguro acessar as funções de navegação do aplicativo.
+[**Android Auto**](https://www.android.com/auto) é um software desenvolvido pelo Google que permite aos usuários conectar seus dispositivos Android a sistemas multimídia veiculares compatíveis. O *Android Auto* oferece uma versão adaptada e otimizada do aplicativo OsmAnd para uso seguro durante a condução, tornando mais fácil e seguro acessar as funções de navegação do aplicativo.  
 
 A função **Android Auto** é suportada apenas ao usar o aplicativo OsmAnd disponível na [Google Play Store](https://play.google.com/store/apps/dev?id=8483587772816822023).
 
@@ -29,7 +30,7 @@ A função **Android Auto** é suportada apenas ao usar o aplicativo OsmAnd disp
 
 ### Tela de Conexão {#connection-screen}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
 
 Enquanto seu dispositivo estiver conectado ao *Android Auto*, o mapa na tela do aplicativo estará bloqueado. Este é um recurso de segurança intencional para garantir que a navegação seja controlada exclusivamente a partir do display do carro, minimizando distrações durante a condução. Verifique as [perguntas comuns](#common-issues-and-solutions) sobre a tela de conexão.
 
@@ -43,7 +44,7 @@ Enquanto seu dispositivo estiver conectado ao *Android Auto*, o mapa na tela do 
     </tr>
 </table>
 
-Ao abrir o aplicativo, uma lista de categorias é exibida. Para facilitar a navegação, você pode ocultá-la tocando no botão no canto superior direito da tela.
+Ao abrir o aplicativo, uma lista de categorias é exibida. Para facilitar a navegação, você pode ocultá-la tocando no botão no canto superior direito da tela.  
 
 - Toque no botão de menu para ocultar a lista de categorias.
 - No canto superior direito da tela, toque no botão ao lado dos botões de função se quiser retornar à lista.
@@ -53,7 +54,7 @@ Ao abrir o aplicativo, uma lista de categorias é exibida. Para facilitar a nave
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
 
-O *Android Auto* exibe a interface do OsmAnd adaptada à tela do sistema multimídia do veículo. A interação com o mapa é limitada a botões como:
+O *Android Auto* exibe a interface do OsmAnd adaptada à tela do sistema multimídia do veículo. A interação com o mapa é limitada a botões como:  
 
 - [Menu OsmAnd](#destination-points). Contém uma lista de opções disponíveis para atribuir um ponto final de rota ou um passeio livre.
 - [Configurações](#voice-prompts). Este botão é responsável por: 1. acesso para ligar/desligar os *avisos de voz* ao navegar pela rota selecionada; 2. mostrar detalhes da rota (tempo e distância) para a próxima parada.
@@ -71,13 +72,13 @@ O *Android Auto* exibe a interface do OsmAnd adaptada à tela do sistema multim�
 
 Para que o OsmAnd funcione no *Android Auto*, você deve [conectar](#connection-screen) seu dispositivo Android ao sistema multimídia do seu veículo. O sistema operacional Android deve ser atualizado para a versão 6.0 ou superior.
 
-- Para saber como conectar e configurar seu dispositivo, visite os sites do [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en).
+- Para saber como conectar e configurar seu dispositivo, visite os sites do [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en).  
 
-- Nem todos os veículos suportam a capacidade de conexão de dispositivos. Verifique a [lista para *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).
+- Nem todos os veículos suportam a capacidade de conexão de dispositivos. Verifique a [lista para *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
-- Você precisa adquirir uma **versão paga** do aplicativo ou fazer uma [assinatura](../purchases/android.md#free-and-paid-features). Verifique sua assinatura atual aqui *Menu → Configurações → Compras*.
+- Você precisa adquirir uma **versão paga** do aplicativo ou fazer uma [assinatura](../purchases/android.md#free-and-paid-features). Verifique sua assinatura atual aqui *Menu → Configurações → Compras*.  
 
-- O *Android Auto* usa o primeiro [perfil de Condução do OsmAnd](#profile-first) na lista de Perfis para navegação. Defina o perfil preferido como o primeiro, exceto o perfil *Navegar no mapa*, ele não é lido pelo *Android Auto*. Para fazer isso, vá para OsmAnd *Menu → Configurações → Perfis de aplicativo → Editar lista de perfis* → mova seu perfil de [**Condução**](#profile-first) para o primeiro lugar ou depois do perfil *Navegar no mapa*.
+- O *Android Auto* usa o primeiro [perfil de Condução do OsmAnd](#profile-first) na lista de Perfis para navegação. Defina o perfil preferido como o primeiro, exceto o perfil *Navegar no mapa*, ele não é lido pelo *Android Auto*. Para fazer isso, vá para OsmAnd *Menu → Configurações → Perfis de aplicativo → Editar lista de perfis* → mova seu [**Condução**](#profile-first) perfil para o primeiro lugar ou depois do perfil *Navegar no mapa*.  
 
 - É importante lembrar que o *Android Auto* é um aplicativo que consome muitos dados, incluindo dados móveis, e a qualidade do sistema pode depender da qualidade da sua conexão e da velocidade do seu acesso à Internet.
 
@@ -103,7 +104,7 @@ Se você não tem nenhum perfil de *Condução* selecionado em seu dispositivo q
 
 Você pode selecionar POIs [previamente definidos e adicionados](../map/point-layers-on-map.md#points-of-interest-pois), ou [Favoritos](../personal/favorites.md), ou [Marcadores](../personal/markers.md) como ponto de destino. Também é possível selecionar uma [Trilha](../personal/tracks/manage-tracks.md) gravada ou baixada para a rota, usar a [Pesquisa](../search/index.md), ou selecionar um destino do [Histórico](../search/search-history.md) da rota ou fazer um *Passeio livre*.
 
-1. Se você deseja uma localização específica no mapa como ponto final, selecione a categoria apropriada de pontos na lista, [POIs](#poi-categories), [Favoritos](#favorites), ou [Marcadores de Mapa](#map-markers).
+1. Se você deseja uma localização específica no mapa como ponto final, selecione a categoria apropriada de pontos na lista, [POIs](#poi-categories), [Favoritos](#favorites), ou [Marcadores de Mapa](#map-markers).  
   
     - Todas as categorias podem conter no máximo o número de itens de lista fornecidos pelo sistema multimídia do seu veículo. Isso significa que a lista no *Android Auto* pode estar incompleta, e todas as outras pastas estão disponíveis apenas no aplicativo OsmAnd em seu dispositivo.
     - A pasta [Última modificação](#folder-last-modified) contém uma lista de destinos recentes, classificados por data de adição ou alteração.
@@ -123,7 +124,7 @@ Durante a condução, os pontos selecionados podem ser [anunciados](#voice-promp
 
 ### Histórico {#history}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
 
 Na categoria Histórico, você pode selecionar um destino de uma lista de pontos finais. Eles são classificados pelo uso mais recente, começando pelo mais novo. Isso pode ser conveniente para acesso rápido a rotas frequentemente usadas. Para saber como usar ou excluir um destino, leia o artigo [Histórico de Pesquisa](../search/search-history.md).  
 
@@ -226,6 +227,27 @@ As informações da rota consistem em:
 Quando ativada, **[a configuração do widget](#eta-next-stop)** (Informações da rota) mostrará os detalhes da rota para a próxima parada ([o ponto intermediário](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
+### Alertas de Navegação {#navigation-alerts}
+
+![Alerta Ausente](@site/static/img/navigation/auto-car/missing_alert.png) ![Alerta Privado](@site/static/img/navigation/auto-car/private_alert.png)
+
+Alertas úteis são exibidos automaticamente antes de iniciar a navegação se a rota não puder ser construída normalmente. Isso impede que a rota fique presa no carregamento e permite que você escolha rapidamente como continuar.
+
+**Mapas ausentes ou desatualizados**
+
+Se o seu destino estiver localizado fora das áreas de mapa baixadas, uma mensagem é exibida e você pode escolher uma das seguintes ações:
+- **Usar mapas baixados**. A rota é construída usando apenas os mapas já armazenados no seu dispositivo. (A rota pode estar incompleta se os dados de mapa necessários não estiverem disponíveis.)
+- **Visualizar no telefone**. A tela de download de mapa é aberta no seu smartphone, onde as regiões necessárias podem ser baixadas. Após o download, o cálculo da rota é reiniciado automaticamente.
+
+Este alerta é exibido diretamente na tela do veículo, da mesma forma que no aplicativo móvel.
+
+**Aviso de acesso privado**
+
+Se o seu destino estiver em uma área privada ou de acesso restrito, um aviso é exibido e você pode escolher:
+- **Permitir**. A navegação continua usando estradas privadas se permitido ou se você tiver acesso.
+- **Cancelar**. A solicitação de navegação é descartada e a tela anterior é restaurada.
+
+
 ### Widget de Alerta na Tela {#screen-alert-widget}
 
 Este widget de informação combina tipos de alerta como **Faixas de pedestres** e **Limite de velocidade**.
@@ -257,6 +279,24 @@ O aplicativo OsmAnd permite usar a visualização de mapa 3D na tela do *Android
 - Abra o *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* principal diretamente no aplicativo OsmAnd.
 - Após configurar as configurações, o **botão 3D** será exibido na tela do *Android Auto* quando a lista de categorias para destinos estiver fechada.
 - Você pode alternar entre os modos de mapa 3D / 2D tocando neste botão.
+
+### Finalizar Navegação {#finish-navigation}
+
+![Finalizar Navegação](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+Quando a navegação é concluída no Android Auto, um diálogo especial de Finalizar Navegação aparece na tela do veículo. Ele usa o mesmo algoritmo de detecção de chegada que o aplicativo móvel e ajuda você a encerrar rapidamente sua viagem ou encontrar um local de estacionamento próximo.
+
+Opções disponíveis:
+- **Marcar como local de estacionamento**. Salva sua posição atual como um local de estacionamento e coloca um marcador de estacionamento no mapa.
+- **Encontrar estacionamento**. Abre a tela de Pesquisa com a categoria Estacionamento pré-selecionada, para que você possa localizar facilmente áreas de estacionamento próximas.
+- **Recalcular rota**. Constrói uma nova rota para o seu destino original se você parou mais cedo ou deseja continuar dirigindo.
+- **Finalizar navegação**. Encerra a navegação completamente e retorna o OsmAnd para a visualização padrão do mapa.
+
+Comportamento ao desconectar do Android Auto:
+- Se o seu telefone se desconectar quando o veículo já estiver a 100 m do destino, o OsmAnd para automaticamente a navegação, alterna de volta para o perfil padrão e nenhuma notificação de chegada aparece na tela do telefone.
+- Se a desconexão ocorrer enquanto parado ou se movendo mais devagar que 1 m/s (por exemplo, em um posto de gasolina), o OsmAnd pausa temporariamente a navegação. Ela é retomada automaticamente quando o dispositivo se reconecta ao Android Auto.
+
+Esta atualização também garante que as sessões do Android Auto agora sejam fechadas corretamente, evitando o uso desnecessário de bateria e parando as notificações de “viagem em andamento” uma vez que a navegação termine.
 
 
 ## Configurações {#settings}

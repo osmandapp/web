@@ -1,5 +1,5 @@
 ---
-source-hash: 311eeb810fe2be43516fd853b18b9ca3893ce53bd5483c33188259c2bfdf1011
+source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
 sidebar_position: 7
 title: Ação Rápida (Botões personalizados)
 ---
@@ -128,7 +128,7 @@ As ações atribuídas a um botão de ação rápida são agrupadas em telas. Es
 - Navegue até *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - Toque em *Editar* (ícone de lápis) e, em seguida, *Pressionar e Arraste* no ícone de três linhas verticais para reorganizar as ações.
 
-:::info
+:::info note
 Algumas ações, como *Fonte do mapa*, *Estilo do mapa*, *Sobreposição*, *Subcamada*, *Esquema de cores do terreno* e *Adicionar perfil*, podem ser atribuídas como um loop. Cada toque no botão percorre as camadas selecionadas. Um diálogo intermediário pode ser exibido para selecionar da lista manualmente, ou oculto para alternar na ordem definida.
 :::
 
@@ -197,13 +197,17 @@ O widget *Ação Rápida* aparece no canto inferior da tela do mapa quando você
 
 <TabItem value="android" label="Android">  
 
-![Grade para botões_v_android](@site/static/img/widgets/grid_buttons_v_and.png) ![Grade para botões_h_android](@site/static/img/widgets/grid_buttons_h_and.png)
+![Grade para botões_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
+
+![Grade para botões_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Grade para botões_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) ![Grade para botões_h_ios](@site/static/img/widgets/grid_buttons_h_ios.png)
+![Grade para botões_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
+
+![Grade para botões_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -212,6 +216,10 @@ O widget *Ação Rápida* aparece no canto inferior da tela do mapa quando você
 [Botões do mapa](../widgets/map-buttons.md#overview) são organizados automaticamente usando um layout de grade. Cada botão é atribuído a um dos quatro cantos da tela (*superior-esquerda*, *superior-direita*, *inferior-esquerda*, *inferior-direita*). Se não houver espaço suficiente no canto atribuído, os botões são alinhados horizontalmente ou verticalmente, dependendo da orientação da tela.
 
 Este layout ajuda a manter os botões visualmente consistentes e evita sobreposições. Por exemplo, em uma exibição paisagem, os botões no canto direito se alinharão horizontalmente na parte inferior da tela, enquanto em uma exibição retrato eles se expandirão verticalmente para cima ou para baixo conforme necessário.
+
+A grade se adapta à interface circundante e reposiciona os botões quando necessário, garantindo que eles permaneçam visíveis e não interfiram com outros elementos na tela. Quando widgets ou painéis são adicionados, removidos ou reorganizados, o layout é atualizado de acordo, de modo que a ordem dos botões permaneça consistente e nenhum elemento fique oculto.
+
+[Perfis importados](https://osmand.net/docs/user/personal/import-export#export) de outro dispositivo são ajustados ao layout de grade, mantendo as posições dos botões corretas em diferentes tamanhos de tela e plataformas.
 
 
 ## Tipos de Ação {#action-types}
@@ -223,8 +231,8 @@ Este layout ajuda a manter os botões visualmente consistentes e evita sobreposi
 | Mostrar / Ocultar <br/> [**Rotas**](../map/vector-maps.md#routes) | Você pode selecionar tipos de rota para habilitar ou desabilitar sua exibição. <br/> Algumas rotas têm configurações adicionais. Por padrão, se você não selecionou nada no menu [Configurar Mapa](../map/configure-map-menu.md), o primeiro tipo de rota da lista será atribuído, caso contrário, um tipo de sua escolha será atribuído. Você pode ler mais no artigo [Rotas](../map/routes.md). <br/> - ***Rotas de bicicleta***  &nbsp;(*Rota*, *Redes de nós*) <br/> - ***Rotas de mountain bike***  &nbsp;(*Escala MTB*, *IMBA*) <br/> - ***Rotas de caminhada***  &nbsp;(*OSMC*, *Afiliação de rede*, *Redes de nós*) <br/> - ***Grau de dificuldade de trilhas de caminhada***  &nbsp;(*Escala SAC*, *Escala CAI*) <br/> - ***Pistas de esqui*** <br/> - ***Rotas de cavalo*** <br/> - ***Esportes aquáticos*** <br/> - ***Rotas de corrida*** <br/> - ***Trilhas de fitness*** <br/> - ***Rotas de viagem***  &nbsp;(*Trilhas*, *Livros de viagem*, *Pontos*) <br/> |
 | Mostrar / Ocultar <br/> [**Camadas de topografia**](../plugins/topography.md#overview) | Todos os dados de topografia são apresentados como camadas de mapa separadas. Você pode alternar rapidamente a visibilidade dessas camadas com Ação Rápida. <br/> - ***Linhas de contorno*** <br/> - ***Terreno***  &nbsp;(*Dependendo da camada selecionada no menu [Configurar Mapa](../map/configure-map-menu.md)*, *Relevo sombreado*, *Inclinação*, ou *Altitude* *será exibido.*) |
 | Alterar <br/> [**Esquema de cores do terreno**](../plugins/topography.md#modify-color-scheme) | Permite selecionar uma ou mais paletas de uma lista de existentes, que mudarão ao tocar no botão. |
-| Mostrar / Ocultar <br/> [**Camadas de clima**](../plugins/weather.md#weather-layers) | Todos os dados meteorológicos são apresentados como camadas de mapa separadas. Com Ação Rápida, você pode ter acesso rápido para alternar a visibilidade dessas camadas no mapa. <br/> - ***Camada de precipitação*** <br/> - ***Camada de nuvens*** <br/> - ***Camada de pressão*** <br/> - ***Camada de vento*** <br/> - ***Camada de temperatura*** |
-| Abrir <br/> [**Tela de clima**](../plugins/weather.md) <br /> *Somente Android* | Abre a [*tela de previsão do tempo*](../plugins/weather.md#weather-forecast-screen) com as informações detalhadas. |
+| Mostrar / Ocultar <br/> [**Camadas de clima**](../plugins/weather.md#weather-layers) | Todos os dados meteorológicos são apresentados como camadas de mapa separadas. Com Ação Rápida, você pode ter acesso rápido para alternar a visibilidade dessas camadas no mapa. <br/> - ***Camada de precipitação*** <br/> - ***Camada de nuvens*** <br/> - ***Camada de pressão*** <br/> - ***Camada de vento*** <br/> - ***Camada de animação de vento*** *(Somente Android)* <br/> - ***Camada de temperatura*** <br/> No Android, também há **Camadas de clima** — um alternador mestre para todas as camadas de clima ativas. Desliga todas as camadas de clima atualmente ativadas de uma vez. Quando ligado novamente, restaura exatamente o mesmo conjunto de camadas que estavam ativas antes. |
+| Abrir <br/> [**Tela de clima**](../plugins/weather.md) | Abre a [*tela de previsão do tempo*](../plugins/weather.md#weather-forecast-screen) com as informações detalhadas. |
 | Mostrar / Ocultar <br/> [**Favoritos**](../map/point-layers-on-map.md#favorites) | Mostrar ou ocultar os pontos favoritos no mapa. |
 | Mostrar / Ocultar <br/> [**Trilhas**](../personal/tracks/manage-tracks.md#track-menu) | Mostrar ou ocultar as últimas trilhas visíveis no mapa. |
 | Mostrar / Ocultar <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Habilita ou desabilita a exibição de camadas de POI com categorias selecionadas no mapa.<br/>Você pode selecionar várias categorias de POI. A ação substitui as categorias de POI da Configuração do Mapa selecionadas sem usar Ações Rápidas.  |
@@ -247,6 +255,7 @@ Este layout ajuda a manter os botões visualmente consistentes e evita sobreposi
 | Mostrar / Ocultar <br/> [**Visualização de pesquisa**](../search/search-all.md) | Abre ou fecha a visualização de pesquisa. |
 | Mostrar / Ocultar <br/> [**Menu lateral**](../start-with/main-menu.md) | Alterna a visibilidade do menu lateral principal para acessar as principais funcionalidades. |
 | Ativar / Desativar <br/> [**Bloqueio da tela de toque**](../map/interact-with-map.md#touch-screen-lock) | Ativa ou desativa o bloqueio da tela de toque para evitar interações não intencionais na tela. |
+| Abrir <br/> **WunderLINQ Datagrid** | Abre a interface de dados WunderLINQ para visualizar informações do dispositivo conectado; redireciona para a App Store se o aplicativo WunderLINQ necessário não estiver instalado. |
 
 
 ### Interações com o Mapa {#map-interactions}
@@ -276,7 +285,7 @@ Este layout ajuda a manter os botões visualmente consistentes e evita sobreposi
 | Adicionar <br/> [**Local de estacionamento**](../plugins/parking.md) | Adiciona estacionamento a um local selecionado (centro) do mapa. A posição antiga do estacionamento é excluída. |
 | Adicionar <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-pois) | Adiciona POI a um local selecionado (centro) do mapa (o mesmo que a ação do menu de contexto). <br /> - *Mostrar um diálogo intermediário*. Exibe um diálogo de confirmação. <br /> - *Tipo de POI* (opcional). Pré-seleciona o tipo de POI OSM. <br /> - *Tag/Valor* (múltiplos). Adiciona [tags / valores do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) |
 | Adicionar <br/> [**Nota OSM**](../plugins/osm-editing.md#create--modify-osm-note) | Adiciona uma [nota OSM](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Mostrar um diálogo intermediário*. Exibe um diálogo de confirmação. <br /> - *Mensagem*. Adiciona uma mensagem padrão à nota. |
-| Adicionar <br/> [**Notas de mídia**](../plugins/audio-video-notes.md) | Inicia a gravação de notas de áudio / foto / vídeo para um local selecionado (centro) do mapa. |
+| Adicionar <br/> [**Notas de mídia**](../plugins/audio-video-notes.md) | Inicia a gravação de notas de áudio / foto / vídeo para um local selecionado (centro) do mapa; uma pressão repetida para a gravação. |
 | Criar <br/> [**Nova rota**](../plan-route/create-route.md) <br /> *Somente Android* | Abre a ferramenta [Planejar uma rota](../plan-route/create-route.md) e cria uma rota para o local selecionado (central) no mapa. |
 
 
@@ -285,7 +294,7 @@ Este layout ajuda a manter os botões visualmente consistentes e evita sobreposi
 | Ação | Descrição |
 |:-------------|:-------------|
 | Adicionar <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | Você pode selecionar o centro da tela do mapa como o primeiro ponto intermediário. O destino anterior permanece o mesmo. |
-| Ativar / Desativar <br/> [**Comandos de voz**](../navigation/guidance/voice-navigation.md) | Silenciar ou ativar a orientação por voz durante a navegação. |
+| Ativar / Desativar <br/> [**Prompts de voz**](../navigation/guidance/voice-navigation.md) | Silenciar ou ativar a orientação por voz durante a navegação. |
 | Definir <br/> [**Ponto de partida**](../navigation/setup/route-navigation.md#set-destinations) | Marcar um local selecionado (centro) do mapa como ponto de partida. |
 | Definir <br/> [**Destino**](../navigation/setup/route-navigation.md#set-destinations) | Adicionar o local selecionado (central) no mapa como destino. O destino anterior torna-se o último ponto intermediário.  |
 | Substituir <br/> [**Destino**](../navigation/setup/route-navigation.md#intermediate-destinations) | Definir / Substituir um local selecionado (centro) do mapa como destino. O destino anterior é excluído. |
@@ -309,11 +318,25 @@ Este layout ajuda a manter os botões visualmente consistentes e evita sobreposi
 
 ## Usar Teclado para Ações {#use-keyboard-for-actions}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![Dispositivos externos](@site/static/img/map/external_custom_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![Dispositivos externos](@site/static/img/map/external_custom_2_ios.png)
+
+</TabItem>
+
+</Tabs> 
 
 Usando a funcionalidade da ferramenta Ação Rápida, você pode atribuir as ações necessárias às teclas do seu dispositivo de entrada externo. Uma descrição pode ser encontrada no artigo [Interagir com o Mapa](../map/interact-with-map.md#custom-input-device-type).
 

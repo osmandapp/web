@@ -1,8 +1,9 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Locais Populares
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -33,7 +33,7 @@ Atualmente, o banco de dados curado inclui aproximadamente **50.000 a 150.000 lo
 
 <TabItem value="android" label="Android">
 
-![Locais populares](@site/static/img/map/popular_places/popular_places.png) ![Locais populares](@site/static/img/map/popular_places/popular_places_1.png)
+![Locais Populares](@site/static/img/map/popular_places/popular_places.png) ![Locais Populares](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -169,6 +169,8 @@ Tocar em um POI no mapa abre o [menu de contexto do POI](./map-context-menu.md),
 
 Esta é uma seção dentro do [menu de contexto do POI](./map-context-menu.md) que exibe uma prévia da foto do Local Popular (Wikipedia) selecionado. Você pode rolar horizontalmente para navegar pelas fotos disponíveis ou tocar em qualquer imagem para abri-la no [modo de tela cheia](#gallery).
 
+As imagens visualizadas online são armazenadas em cache automaticamente para acesso offline. As fotos em cache exibem um pequeno selo offline no canto. A grade de visualização se adapta ao tamanho da tela no iPadOS e macOS, garantindo um layout confortável de imagens em telas maiores. O OsmAnd também evita acionar solicitações de rede repetidas quando a seção Fotos Online é fechada e cancela solicitações anteriores ao alternar rapidamente entre diferentes POIs.
+
 Saiba mais sobre opções adicionais na seção [Ações](#actions) e [Galeria](#gallery).
 
 
@@ -192,6 +194,8 @@ No menu de contexto do mapa Como acessar:
 - Toque em qualquer foto para visualizá-la em [tela cheia](#gallery) e acessar as ações disponíveis:  
   **Compartilhar**, **Detalhes**, **Abrir no navegador** e **Baixar**.
 
+**Nota:** O download salva a imagem no armazenamento do dispositivo para uso offline permanente, enquanto as fotos em cache são armazenadas automaticamente e disponíveis offline apenas dentro do aplicativo.
+
 
 ### Galeria {#gallery}
 
@@ -214,7 +218,9 @@ No menu de contexto do mapa Como acessar:
 </Tabs>
 
 
-O **Menu da Galeria** pode exibir até **100 imagens** relacionadas ao ponto de interesse selecionado. Você pode deslizar por todas as fotos disponíveis. Tocar brevemente em uma foto abre uma visualização detalhada mostrando: *Nome*, *Data de adição*, *Autor*, *Licença*  
+O **Menu da Galeria** pode exibir até **100 imagens** relacionadas ao ponto de interesse selecionado. Você pode deslizar por todas as fotos disponíveis. Tocar brevemente em uma foto abre uma visualização detalhada mostrando: *Nome*, *Data de adição*, *Autor*, *Licença*. 
+
+No iOS, iPadOS e macOS, você pode navegar pelas fotos usando teclas do teclado (←/→ para mover entre imagens, Enter/Espaço para abrir).
 
 Você também pode realizar as seguintes ações em cada foto:
 

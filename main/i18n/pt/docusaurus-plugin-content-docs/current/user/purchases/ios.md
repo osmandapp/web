@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
 sidebar_position: 2
 title: Compras iOS
 ---
@@ -53,25 +53,25 @@ Pode descarregar a aplicação através deste link - [OsmAnd Maps na Apple App S
 
 Na lista, há informações sobre os preços do produto OsmAnd para as regiões dos EUA e Europa. Para outras regiões, os preços são equivalentes nas moedas locais.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Preços Black Friday
+
+*Apresse-se! Esta oferta está disponível apenas até* **30 de novembro (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Na Aplicação | [Maps+](#install-osmand-ios) Subscrição | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Subscrição** (12 Meses) | **Subscrição** (1 Mês / 12 Meses) |
+| **Preço (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Preço (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) Na Aplicação | [Maps+](#install-osmand-ios) Subscrição | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -80,11 +80,11 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | **Preço (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
 | **Preço (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
-
+-->
 
 ### Funcionalidades Gratuitas e Pagas {#free-and-paid-features}
 
-|  | OsmAnd Gratuito | [OsmAnd Maps+](#install-osmand-ios)<br/>(na aplicação e subscrição) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Gratuito | [OsmAnd Maps+](#install-osmand-ios)<br/>(na&#8209;aplicação & subscrição) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -97,6 +97,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relevo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dados de topografia](../plugins/topography.md#overview)<br/>(Curvas de nível e Terreno) | **-** | ✔ | ✔ |
+| [Grelha de Coordenadas — Personalização de Cor](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualização de trilhos 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guias de viagem (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
