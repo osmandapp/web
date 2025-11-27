@@ -1,5 +1,5 @@
 ---
-source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
+source-hash: a4cce1f5b1b6bf6a375aec1d9807d689ffb13ab254ba342950f6b912e5149b1f
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -76,34 +76,34 @@ Na urządzenia z systemem Android można pobrać **darmową** i **płatną** wer
 
 Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. W innych regionach ceny są ekwiwalentne w lokalnych walutach.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Ceny Black Friday
+
+*Pośpiesz się! Ta oferta jest dostępna tylko do* **30 listopada (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
+| **Cena (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Cena (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
+| **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
 | **Cena (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Cena (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
-
+-->
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
@@ -125,6 +125,7 @@ Poniższa tabela szczegółowo opisuje funkcje zawarte zarówno w darmowych, jak
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Obsługa zewnętrznych czujników](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dane topograficzne](../plugins/topography.md#overview)<br/>(Poziomice i rzeźba terenu) | **-** | ✔ | ✔ |
+| [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Wizualizacja trasy 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popularne miejsca (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |

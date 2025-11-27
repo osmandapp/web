@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
 sidebar_position: 1
 title:  Ułatwienia dostępu
 ---
@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::caution Uwaga
-Wtyczka Ułatwienia dostępu jest dostępna tylko w wersji **OsmAnd na Androida**. [Wersja na iOS](#how-to-use-ios) opiera się na domyślnych ustawieniach ułatwień dostępu systemu.
+Wtyczka Ułatwienia dostępu jest dostępna tylko w **wersji na Androida** OsmAnd. [Wersja na iOS](#how-to-use-ios) opiera się na domyślnych ustawieniach ułatwień dostępu systemu.
 :::
 
 ## Przegląd {#overview}
@@ -93,7 +93,7 @@ Aby aktywować funkcje ułatwień dostępu urządzenia w OsmAnd, należy wprowad
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Ułatwienia dostępu](@site/static/img/plugins/Accessibility/access_.png)  
+![Ułatwienia dostępu](@site/static/img/plugins/accessibility/access_new.png)  
 
 Wtyczka Ułatwienia dostępu oferuje różne ustawienia personalizacji nawigacji i interakcji dla użytkowników z niepełnosprawnościami. Ustawienia te są stosowane dla każdego [profilu](../personal/profiles.md) w OsmAnd.
 
@@ -101,6 +101,7 @@ Wtyczka Ułatwienia dostępu oferuje różne ustawienia personalizacji nawigacji
 |---------------------------|-------------|  
 | **Tryb ułatwień dostępu**    | Włącza *wbudowane funkcje OsmAnd* lub używa **ustawień systemowych**. |  
 | **Szybkość mowy**           | Kontroluje *szybkość zamiany tekstu na mowę*, w zakresie od **50% do 200%**. |  
+| **Powiększenie przy szczypaniu**    | Tymczasowo powiększa mapę podczas szczypania i trzymania palców na ekranie, powiększając tekst i ikony bez zmiany rzeczywistego poziomu powiększenia. |  
 | [Inteligentne automatyczne komunikaty](#smart-autoannounce)    | Zapewnia *wskazówki głosowe* w przypadku zboczenia z trasy. |  
 | **Okres automatycznych komunikatów**   | Ustawia minimalny czas między komunikatami, od **5 sekund do 5 minut**. |  
 | [Styl kierunku](#direction-style)       | Wybierz pomiędzy *Na boki (8 kierunków)* lub *Zegarowe (12 kierunków)*. |  

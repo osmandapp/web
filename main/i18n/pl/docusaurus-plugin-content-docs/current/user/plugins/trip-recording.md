@@ -1,5 +1,5 @@
 ---
-source-hash: 8e066016d6c34fa35ebb478f7394b2e1cb4a747adb7805a218402161c7be3f49
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  Nagrywanie trasy
 ---
@@ -143,13 +143,13 @@ Dla *Zatrzymaj / Zapisz / Wstrzymaj*:
 
 <TabItem value="android" label="Android">
 
-![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Zakończ nagrywanie w iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Zakończ nagrywanie w iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Zakończ nagrywanie w iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Zakończ nagrywanie w iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -166,7 +166,7 @@ Oto, co można na nich znaleźć:
     - ***Android***. Dla ***osi Y*** na wykresie można wybrać *do dwóch parametrów* ze wszystkich dostępnych danych, takich jak *Wysokość*, *Nachylenie*, *Prędkość* i [informacje z czujników zewnętrznych](../plugins/external-sensors.md#trip-recording). Dla ***osi X*** wybierz wyświetlanie *Dystansu*, *Czasu* lub *Pory dnia*.
     - ***iOS***. Parametry są zorganizowane w zakładkach *Przegląd*, *Wysokość* i *Prędkość* z odpowiednimi wartościami dla osi Y i *Dystans* dla osi X.
 
-- **Statystyki**. W systemie Android wyświetlany jest stały zestaw danych statystycznych niezależnie od ustawień wykresu: *Dystans*, *Przedział czasu*, *W górę*, *W dół*, *Średnia prędkość*. W systemie iOS każda karta, Przegląd, Wysokość i Prędkość, ma inny zestaw danych.
+- **Statystyki**. W systemie Android wyświetlany jest stały zestaw danych statystycznych niezależnie od ustawień wykresu: *Dystans*, *Czas trwania*, *W górę*, *W dół*, *Średnia prędkość*. W systemie iOS każda karta, Przegląd, Wysokość i Prędkość, ma inny zestaw danych.
 
 Aby uzyskać bardziej szczegółowy widok, można **skalować wykres**:
 
@@ -175,12 +175,12 @@ Aby uzyskać bardziej szczegółowy widok, można **skalować wykres**:
 
 | |  
 | ------------- |
-|**Zakładka Przegląd** w iOS (dla Androida parametry osi Y to *Wysokość*, *Prędkość*, a parametr osi X to *Dystans*). Ta zakładka wyświetla wykres pokazujący zmiany prędkości i wysokości na całej długości trasy oraz kluczowe szczegóły trasy. Dane trasy dla iOS: *Dystans*, *Przedział czasu*, *Czas rozpoczęcia* i *Czas zakończenia*. Poniżej można zobaczyć, jak jest to wyświetlane w wersjach na Androida i iOS. |
-| ![dane](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+|**Zakładka Przegląd** w iOS (dla Androida parametry osi Y to *Wysokość*, *Prędkość*, a parametr osi X to *Dystans*). Ta zakładka wyświetla wykres pokazujący zmiany prędkości i wysokości na całej długości trasy oraz kluczowe szczegóły trasy. Dane trasy dla iOS: *Dystans*, *Czas trwania*, *Czas rozpoczęcia* i *Czas zakończenia*. Poniżej można zobaczyć, jak jest to wyświetlane w wersjach na Androida i iOS. |
+| ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Zakładka Wysokość** w iOS (dla Androida parametry osi Y to *Wysokość*, *Nachylenie*, a parametr osi X to *Dystans*). Ta zakładka koncentruje się na profilu wysokościowym zarejestrowanej trasy, dostarczając informacji o zmianach wysokości i nachyleniu terenu. Kluczowe wskaźniki dla systemu iOS obejmują: *Średnia wysokość*, *Zakres wysokości*, *W górę* i *W dół*. Poniższe wykresy ilustrują różnice między interfejsami Androida i iOS. |
-| ![dane](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Zakładka Prędkość** w iOS (dla Androida parametr osi Y to *Prędkość*, a parametr osi X to *Dystans*). Zakładka Prędkość podświetla dane związane z prędkością na całej trasie. W systemie iOS zawiera takie informacje, jak *Średnia prędkość*, *Maksymalna prędkość*, *Czas w ruchu* i *Skorygowany dystans*. Poniższe zrzuty ekranu pokazują, jak te dane są wyświetlane na obu platformach. |
-| ![dane](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![dane](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | W systemie **Android** można tworzyć więcej kombinacji dostępnych danych osi Y i wartości osi X. |
 | ![dane](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -398,7 +398,7 @@ Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i
 
 <TabItem value="android" label="Android">  
 
-![Zakończ nagrywanie w systemie Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Zakończ nagrywanie w systemie Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
 ![Widżet nagrywania trasy](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>

@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title:  Widok mapy narciarskiej
 ---
@@ -168,7 +168,7 @@ Mapa narciarska OsmAnd jest zbudowana jako jeden ze stylów renderowania, który
 Trudność tras jest zwykle oznaczona określonymi kolorami. Kolory mogą się różnić w różnych krajach i ośrodkach. Poniżej kilka praktycznych wskazówek.
 
 :::tip wskazówki
-Bardziej szczegółowe wskazówki dla każdego rodzaju trudności trasy można znaleźć w [referencji trudności tras OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) lub w innym źródle, które uwzględnia również nachylenie, przeszkody i zagrożenia.  
+Bardziej szczegółowe wskazówki dla każdego rodzaju trudności trasy można znaleźć w [referencji trudności tras OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) lub w innym źródle, które uwzględnia również nachylenie, przeszkody i zagrożenia. W stylu mapy Zimowy i narciarski niektóre mapowane zagrożenia (na przykład obszary zagrożone lawinami oznaczone jako hazard=avalanche) mogą być wyświetlane jako POI zagrożenia na mapie i powinny być brane pod uwagę razem z trudnością trasy.  
 :::
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
+source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -227,6 +227,27 @@ Informacje o trasie składają się z:
 Po włączeniu [ustawienie widżetu](#eta-next-stop) (Informacje o trasie) pokaże szczegóły trasy do następnego przystanku ([punkt pośredni](../navigation/setup/route-navigation.md#intermediate-destinations)).
 
 
+### Ostrzeżenia nawigacyjne {#navigation-alerts}
+
+![Brakujące ostrzeżenie](@site/static/img/navigation/auto-car/missing_alert.png) ![Prywatne ostrzeżenie](@site/static/img/navigation/auto-car/private_alert.png)
+
+Pomocne ostrzeżenia są automatycznie wyświetlane przed rozpoczęciem nawigacji, jeśli trasa nie może być zbudowana normalnie. Zapobiega to zawieszeniu się trasy na ładowaniu i pozwala szybko wybrać, jak kontynuować.
+
+**Brakujące lub nieaktualne mapy**
+
+Jeśli miejsce docelowe znajduje się poza obszarami pobranych map, wyświetlany jest komunikat, a możesz wybrać jedną z następujących czynności:
+- **Użyj pobranych map**. Trasa jest budowana tylko przy użyciu map już zapisanych na urządzeniu. (Trasa może być niekompletna, jeśli wymagane dane mapy nie są dostępne.)
+- **Wyświetl na telefonie**. Na smartfonie otwiera się ekran pobierania map, gdzie można pobrać niezbędne regiony. Po pobraniu obliczenia trasy są automatycznie restartowane.
+
+To ostrzeżenie jest wyświetlane bezpośrednio na ekranie pojazdu, w taki sam sposób jak w aplikacji mobilnej.
+
+**Ostrzeżenie o prywatnym dostępie**
+
+Jeśli miejsce docelowe znajduje się w prywatnym lub ograniczonym obszarze dostępu, wyświetlany jest komunikat ostrzegawczy, a możesz wybrać:
+- **Zezwól**. Nawigacja jest kontynuowana z użyciem prywatnych dróg, jeśli jest dozwolone lub jeśli masz dostęp.
+- **Anuluj**. Żądanie nawigacji jest anulowane, a przywracany jest poprzedni ekran.
+
+
 ### Widżet ostrzeżeń na ekranie {#screen-alert-widget}
 
 Ten widżet informacyjny łączy typy alertów, takie jak **Przejścia dla pieszych** i **Ograniczenie prędkości**.
@@ -258,6 +279,24 @@ Aplikacja OsmAnd umożliwia korzystanie z widoku mapy 3D na ekranie *Android Aut
 - Otwórz główne *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* bezpośrednio w aplikacji OsmAnd.
 - Po skonfigurowaniu ustawień przycisk **3D** będzie wyświetlany na ekranie *Android Auto*, gdy lista kategorii dla miejsc docelowych jest zamknięta.
 - Możesz przełączać się między trybami mapy 3D / 2D, dotykając tego przycisku.
+
+### Zakończ nawigację {#finish-navigation}
+
+![Zakończ nawigację](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+Po zakończeniu nawigacji w Android Auto na ekranie pojazdu pojawia się specjalny dialog Zakończ nawigację. Używa tego samego algorytmu wykrywania przybycia co aplikacja mobilna i pomaga szybko zakończyć podróż lub znaleźć pobliskie miejsce parkingowe.
+
+Dostępne opcje:
+- **Oznacz jako lokalizację parkingu**. Zapisuje bieżącą pozycję jako lokalizację parkingu i umieszcza znacznik parkingu na mapie.
+- **Znajdź parking**. Otwiera ekran Wyszukiwania z wstępnie wybraną kategorią Parking, aby łatwo zlokalizować pobliskie miejsca parkingowe.
+- **Przelicz trasę**. Buduje nową trasę do pierwotnego miejsca docelowego, jeśli zatrzymałeś się wcześniej lub chcesz kontynuować jazdę.
+- **Zakończ nawigację**. Całkowicie kończy nawigację i przywraca OsmAnd do domyślnego widoku mapy.
+
+Zachowanie podczas rozłączania z Android Auto:
+- Jeśli telefon rozłączy się, gdy pojazd jest już w odległości 100 m od miejsca docelowego, OsmAnd automatycznie zatrzymuje nawigację, przełącza z powrotem na domyślny profil i nie pojawia się powiadomienie o przybyciu na ekranie telefonu.
+- Jeśli rozłączenie nastąpi podczas stania w miejscu lub poruszania się wolniej niż 1 m/s (na przykład na stacji benzynowej), OsmAnd tymczasowo wstrzymuje nawigację. Automatycznie wznawia się po ponownym połączeniu urządzenia z Android Auto.
+
+Ta aktualizacja zapewnia również, że sesje Android Auto są teraz poprawnie zamykane, zapobiegając niepotrzebnemu zużyciu baterii i zatrzymując powiadomienia „podróż w toku” po zakończeniu nawigacji.
 
 
 ## Ustawienia {#settings}

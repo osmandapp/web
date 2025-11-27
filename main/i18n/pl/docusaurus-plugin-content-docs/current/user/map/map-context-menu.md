@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -136,6 +136,7 @@ Panel **Informacje o obiekcie** zawiera dodatkowe szczegóły dotyczące wybrane
 
 Dostępne szczegóły obejmują:
 
+- [Opis artykułu](#article-description)
 - [Alternatywne nazwy](#alternative-names)
 - [Współrzędne](#coordinates)
 - [W obszarach](#polygon-information)
@@ -153,7 +154,34 @@ Dodatkowo panel może zawierać [Szczegóły OpenStreetMap](https://wiki.openstr
 - [Godziny otwarcia](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Opłata](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Dostępność](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Szerokość](https://wiki.openstreetmap.org/wiki/Key:width) / [Wysokość](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Szerokość](https://wiki.openstreetmap.org/wiki/Key:width) / [Wysokość](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Poza polami wymienionymi powyżej, OsmAnd może również wyświetlać dodatkowe opisowe informacje pobrane z OpenStreetMap. Te atrybuty pomagają lepiej zrozumieć cechy miejsca i mogą obejmować szczegóły takie jak wysokość, kierunek, rok budowy, typ nawierzchni lub pokrycia, poziom wewnątrz budynku, opcje płatności, dostępność dostawy lub na wynos oraz wiele innych. OsmAnd wyświetla te atrybuty z wyraźnymi etykietami i, jeśli to możliwe, ikonami, co ułatwia ich odczytywanie i rozpoznawanie. Dokładny zestaw atrybutów zależy od danych dostępnych w OpenStreetMap dla wybranego obiektu.
+
+
+### Opis artykułu {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Lista opisów](@site/static/img/map/description_list_new_android.png) ![Lista opisów](@site/static/img/map/description_list_dialog.png)
+
+Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md#wikipedia-article), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
+
+Jeśli wybrane miejsce ma artykuł na Wikipedii, w tej sekcji wyświetlany jest krótki podgląd. Gdy pełny artykuł nie jest dostępny offline, pojawia się przycisk *Przeczytaj na Wikipedii*. Dotknięcie go otwiera okno dialogowe z opcjami w zależności od dostępu użytkownika: użytkownicy z zakupionym planem mogą pobrać regionalne dane Wikipedii lub otworzyć artykuł w przeglądarce, podczas gdy darmowi użytkownicy mogą otworzyć artykuł online lub przejść do ekranu oferującego dostęp offline.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Lista opisów](@site/static/img/map/description_list_new_ios.png)
+
+Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md), opisu [Ulubionego](../personal/favorites.md) lub punktu trasy, dotykając możesz otworzyć pełny opis.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Alternatywne nazwy {#alternative-names}
@@ -295,30 +323,9 @@ Wyświetla informacje o trasach transportu publicznego dla wybranego przystanku.
 
 ![Lista ulubionych](@site/static/img/map/favorite_list_android.png) ![Pełna lista ulubionych](@site/static/img/map/favorite_list_full_android.png)
 
-To jest lista wszystkich punktów w jednej grupie dla Ulubionego lub Punktu Trasy. Po dotknięciu cała lista punktów jednej grupy się rozwija, a po dotknięciu punktu z listy mapa przesuwa się do wybranego punktu.
+To jest lista wszystkich punktów w jednej grupie dla Ulubionego lub punktu trasy. Po dotknięciu cała lista punktów jednej grupy się rozwija, a po dotknięciu punktu z listy mapa przesuwa się do wybranego punktu.
 
 
-
-
-### Opis artykułu {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Lista opisów](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Lista opisów](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.md), opisu [Ulubionego](../personal/favorites.md) lub Punktu Trasy. Dotykając, można otworzyć pełny opis.
 
 
 ### Link OpenStreetMap {#openstreetmap-link}

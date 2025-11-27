@@ -1,5 +1,5 @@
 ---
-source-hash: ac3194a21a3b231918258736971364062a9787df521a063b26c3bdb2a177798a
+source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
 sidebar_position: 11
 title:  Chmura OsmAnd
 ---
@@ -262,7 +262,7 @@ Funkcja **Kosz** pozwala przeglądać i zarządzać plikami, które zostały usu
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Zmiany w Chmurze OsmAnd](@site/static/img/personal/osmand-cloud/deletion_option.png)  
+![Zmiany w Chmurze OsmAnd](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -339,6 +339,23 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 Sekcja menu **<Translate android="true" ids="backup_version_history"/>** (Android) / **<Translate ios="true" ids="manage_storage"/>** (iOS) wyświetla informacje o tym, ile z 3,15 gigabajtów pamięci w *Ustawieniach*, *Moich miejscach* i *Zasobach* jest używane. Możesz wyświetlić rozmiar przechowywanych danych dla każdego typu i usunąć je z Chmury OsmAnd, jeśli to potrzebne. 
 
 Usunięcie danych z Chmury nie wpływa na ich status kopii zapasowej ani na lokalne kopie na urządzeniu. Wszystkie usunięte elementy pozostają dostępne w Koszu przez 30 dni i mogą być przywrócone w tym okresie.
+
+### Automatyczna kopia zapasowa {#auto--backup}
+
+<InfoAndroidOnly />
+
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
+
+![Automatyczna kopia zapasowa na Androidzie](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+
+Automatyczna kopia zapasowa automatycznie zapisuje wybrane dane OsmAnd do Chmury w regularnych odstępach czasu, gdy aplikacja jest aktywna. Pomaga to chronić Twoje dane i utrzymywać ich synchronizację między urządzeniami korzystającymi z tego samego konta. Ekran automatycznej kopii zapasowej jest podzielony na trzy rozwijane sekcje: *Ustawienia*, *Moje miejsca* i *Zasoby*.
+
+Zachowanie automatycznej kopii zapasowej:
+
+- Automatyczna kopia zapasowa uruchamia się około co godzinę, gdy OsmAnd działa na pierwszym planie.
+- Kopia zapasowa uruchamia się również po powrocie do ekranu mapy.
+- Możesz włączać/wyłączać każdy element lub całe sekcje niezależnie.
+- Twoje dane pozostają dostępne lokalnie, nawet jeśli automatyczna kopia zapasowa jest wyłączona.
 
 
 ### Konto {#account}

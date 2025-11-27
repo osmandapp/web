@@ -1,5 +1,5 @@
 ---
-source-hash: db2ded33609f0ef8017b5258a1878156ee95899ee472c17da54d70d37f1b5789
+source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
 sidebar_position: 4
 title:  Wyszukiwanie POI
 ---
@@ -68,7 +68,7 @@ OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym z
     - Wyszukiwanie obiektu biznesowego według nazwy marki (takiej jak Audi, Starbucks czy Aldi) jest bardzo podobne do wyszukiwania różnych POI według typu, główną różnicą jest to, że lista marek jest dostarczana wewnątrz mapy i może ulec zmianie podczas każdej aktualizacji. 
     - Marka jest definiowana przez tag OSM [***brand*** *nazwa*](https://wiki.openstreetmap.org/wiki/Key:brand), a OsmAnd zbiera ograniczone typy marek na mapę, z maksymalnie 1000 marek na mapę, jednak zapewnia, że lista marek jest spójna na sąsiednich mapach.
 
-![Wyszukiwanie POI Android](@site/static/img/search/brand_search_andr.png)
+![Wyszukiwanie POI Android](@site/static/img/search/brand_search_andr.png) ![Wyszukiwanie POI Android](@site/static/img/search/brand_search_2_andr.png)
 
 
 :::note
@@ -152,7 +152,7 @@ Filtr może składać się z dość dużej liczby pozycji, których obecność z
         Obejmuje *16* typów filtrów: **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Kuchnia** (ponad *10* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Danie** (ponad *10* wartości), **Napełnianie wody pitnej** (ma *1* wartość), **Drive-in** (ma *1* wartość), **Typ dostępu do internetu** (ma *3* wartości), **Minibrowar** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Miejsca na zewnątrz** (ma *1* wartość), **Typ płatności** (ponad *10* wartości), **Palenie** (ma *6* wartości), **Na wynos** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
 
  3. **Stacja ładowania**. [Stacja ładowania](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) to obiekt infrastruktury, w którym właściciele pojazdów elektrycznych mogą ładować swoje samochody, motocykle lub inne pojazdy elektryczne. Punkty te zapewniają ładowarki i odpowiednie złącza do dostarczania energii do akumulatorów pojazdów.
-        Obejmuje *35* typów filtrów: **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *1* wartość), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Dostęp dla skuterów** (ma *1* wartość), **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Wymagana autoryzacja** (ma *1* wartość), **Autoryzacja przez telefon** (ma *1* wartość) **Autoryzacja przez SMS** (ma *1* wartość), **Opłata** (ma *2* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7 i inne.  
+        Obejmuje *35* typów filtrów: **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *1* wartość), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Dostęp dla skuterów** (ma *1* wartość), **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Wymagana autoryzacja** (ma *1* wartość), **Autoryzacja przez połączenie telefoniczne** (ma *1* wartość), **Autoryzacja przez SMS** (ma *1* wartość), **Opłata** (ma *2* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7 i inne.  
 
  4. **Sklep ogólnospożywczy i supermarket**. [Sklep ogólnospożywczy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) i [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) reprezentują obiekty handlu detalicznego.
         Obejmuje *13* typów filtrów: **Zakup hurtowy** (ma *2* wartości), **Wypłata gotówki** (ma *5* wartości), **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Lody** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Filtr rzeczy używanych** (ma *2* wartości), **Kasa samoobsługowa** (ma *2* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
@@ -197,7 +197,7 @@ Filtr może składać się z dość dużej liczby pozycji, których obecność z
         Obejmuje *9* typów filtrów.
 
  18. **Trasy**. Obejmuje [Trasy OSM](../map/routes.md) dla różnych rodzajów aktywności.  
-        Obejmuje *14* typów filtrów: **Punkt kontrolny**, **Węzeł sieci rowerowej**, **Węzeł sieci pieszej**, **Sieć tras (rowerowych)**, **Sieć tras (pieszych)**, **Kategoria punktu trasy**, **Sporty lotnicze**, **Kolarstwo**, **Jazda samochodem**, **Pieszo**, **Motocyklem**, **Inne trasy**, **Sporty wodne**, **Sporty zimowe**.
+        Obejmuje *15* typów filtrów: **Punkt kontrolny**, **Węzeł sieci rowerowej**, **Węzeł sieci pieszej**, **Sieć tras (rowerowych)**, **Sieć tras (pieszych)**, **Kategoria punktu trasy**, **Sporty lotnicze**, **Kolarstwo**, **Jazda samochodem**, **Pieszo**, **Motocyklem**, **Inne trasy**, **Sporty wodne**, **Sporty zimowe**.
 
  19. **Zwiedzanie**. Jest to działalność, w której ludzie odwiedzają interesujące miejsca, aby zapoznać się z nimi i cieszyć się ich pięknem, historią lub znaczeniem.  
         Obejmuje *8* typów filtrów.
@@ -276,7 +276,7 @@ Korzystanie z wyszukiwania online:
 
 Aby poprawić wyniki, przed użyciem narzędzia Wyszukaj, powiększ mapę, aby zbliżyć się do miejsca, w którym chcesz znaleźć określoną lokalizację. A podczas wyszukiwania możesz **zwiększyć promień wyszukiwania**, aby znaleźć miejsca, które są dalej od Twojej lokalizacji. Podczas wyszukiwania offline, jeśli wymagane wyniki nie są dostępne, OsmAnd sugeruje użycie wyszukiwania online.  
 
-Informacje na temat nawigacji online można znaleźć w artykule [Routing online](../navigation/routing/online-routing.md).
+Informacje na temat routingu online można znaleźć w artykule [Routing online](../navigation/routing/online-routing.md).
 
 
 
@@ -340,7 +340,7 @@ Aby utworzyć niestandardowe filtry do znajdowania miejsc na mapie, wybierz odpo
 
 7. **Żywność**. Obejmuje 12 typów filtrów.  
 
-8. **Zagrożenie**. Obejmuje 5 typów: *Zagrożenie lawinowe, Zagrożenie erozją, Zagrożenie powodziowe, Zagrożenie jądrowe, Śliska droga*.  
+8. **Zagrożenie**. Obejmuje 5 typów: *Zagrożenie lawinowe, Zagrożenie erozją, Zagrożenie powodziowe, Zagrożenie jądrowe, Śliska droga*. Kategoria Zagrożenie obejmuje zarówno POI z tagami hazard=*, jak i segmenty dróg lub ścieżek (ways) oznaczone tym samym tagiem, jeśli są eksportowane jako wyszukiwalne obiekty. Dla wizualnego przeglądu wszystkich ikon zagrożeń używanych na mapie, zobacz sekcję [Zagrożenie](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
 9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Obejmuje 31 typów filtrów.
 

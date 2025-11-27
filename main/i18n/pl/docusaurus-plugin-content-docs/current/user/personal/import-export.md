@@ -1,5 +1,5 @@
 ---
-source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
+source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
 sidebar_position: 10
 title:  Import / Eksport
 ---
@@ -91,6 +91,16 @@ Otwiera i przywraca pliki `.osf`. Stuknij plik w menedżerze plików urządzenia
 
 - *Niektóre elementy już istnieją*. Możesz użyć tej funkcji, aby zapisać oba pliki lub zastąpić wszystkie.
 - *Uruchom ponownie*. Po zaimportowaniu plików aplikacja musi zostać ponownie uruchomiona.
+
+Obsługiwane typy plików do importu:
+- [Trasy, trasy](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [ulubione](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Pliki KML i KMZ są importowane z konwersją do formatu GPX.
+- [Mapy wektorowe OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
+- [Kafelki map online](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Kopie zapasowe i profile](#export): `.osf`.
+- [Mapy wysokości / dane 3D](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Inne](color-palette-schemes.md): `.txt`.
+
+Dla technicznego przeglądu wszystkich obsługiwanych formatów, zobacz [Formaty plików OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

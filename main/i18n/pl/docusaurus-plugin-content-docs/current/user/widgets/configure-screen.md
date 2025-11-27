@@ -1,5 +1,5 @@
 ---
-source-hash: ecd378030be47cbd78cda02a9ad9227bd3ea55624ac430591012670a140cff42
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -267,7 +267,23 @@ Tryb ten pozwala na dodanie **więcej niż jednego widżetu w jednym wierszu** n
     - [Profil wysokości (*Tylko Android*)](../widgets/nav-widgets#elevation-widget)
     - [Manewry na trasie](../widgets/nav-widgets.md#next-turn)
 
-- **Widżety proste**. W jednym wierszu można dodać wiele prostych widżetów. Widżety te mogą wyświetlać *Nazwę*, *Jednostki miary*, *Wartość* i *Ikonę*.
+- **Widżety proste**. W jednym wierszu można dodać wiele prostych widżetów. Widżety te mogą wyświetlać *Nazwę*, *Jednostki miary*, *Wartość* i *Ikonę*. Tekst w prostych widżetach jest automatycznie obramowany, aby zapewnić czytelność na tle różnych map w trybie przezroczystego panelu.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Obramowanie widżetu Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Obramowanie widżetu iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Strony {#pages}

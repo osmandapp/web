@@ -1,8 +1,9 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Popularne miejsca
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -23,7 +23,7 @@ Funkcja **Popularne miejsca** w OsmAnd podświetla godne uwagi punkty orientacyj
 
 Każde miejsce uwzględnione w tej funkcji jest powiązane z **identyfikatorem Wikidata**, co umożliwia OsmAnd wyświetlanie zweryfikowanych nazw, podglądów obrazów i linków do artykułów w Wikipedii. To narzędzie **nie** pokazuje wszystkich punktów OpenStreetMap (OSM). Jest ograniczone do POI z odniesieniami do Wikidata.
 
-Obecnie wyselekcjonowana baza danych zawiera od **50 000 do 150 000 najwyżej ocenianych miejsc** na całym świecie, wybranych spośród ponad **1 miliona** obiektów Wikidata + OSM.
+Obecnie wyselekcjonowana baza danych zawiera około **50 000 do 150 000 najwyżej ocenianych miejsc** na całym świecie, wybranych spośród ponad **1 miliona** obiektów Wikidata + OSM.
 
 :::note
 *To pierwsza wersja funkcji Popularne miejsca. Opinie są mile widziane na [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -67,7 +67,7 @@ Istnieją dwa główne sposoby dostępu do tej funkcji:
   Włącz nakładkę wizualną w [Konfiguracji mapy](#enable-layer).  
   *<Translate android="true" ids="android_button_seq"/>*. Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
-  W tym trybie popularne POI pojawiają się bezpośrednio na mapie z miniaturami podglądu i treściami z Wikipedii.
+  W tym trybie popularne POI pojawiają się bezpośrednio na mapie z miniaturkami podglądu i treściami z Wikipedii.
 
   Możesz przełączać się między źródłami Wikipedii **online** i **offline** w ustawieniach nakładki. Dowiedz się więcej w sekcji [Włącz warstwę](#enable-layer).
 
@@ -169,6 +169,8 @@ Dotknięcie POI na mapie otwiera [menu kontekstowe POI](./map-context-menu.md), 
 
 Jest to sekcja w [menu kontekstowym POI](./map-context-menu.md), która wyświetla podgląd zdjęcia wybranego popularnego miejsca (Wikipedia). Możesz przewijać w poziomie, aby przeglądać dostępne zdjęcia, lub dotknąć dowolnego obrazu, aby otworzyć go w [trybie pełnoekranowym](#gallery).
 
+Obrazy przeglądane online są automatycznie buforowane dla dostępu offline. Buforowane zdjęcia wyświetlają mały znacznik offline w rogu. Siatka podglądu dostosowuje się do rozmiaru ekranu na iPadOS i macOS, zapewniając wygodne rozmieszczenie obrazów na większych wyświetlaczach. OsmAnd unika również wyzwalania powtarzających się żądań sieciowych po zamknięciu sekcji Zdjęcia online oraz anuluje poprzednie żądania podczas szybkiego przełączania między różnymi POI.
+
 Dowiedz się więcej o dodatkowych opcjach w sekcjach [Akcje](#actions) i [Galeria](#gallery).
 
 
@@ -192,6 +194,8 @@ W menu kontekstowym mapy Jak uzyskać dostęp:
 - Dotknij dowolnego zdjęcia, aby wyświetlić je w [trybie pełnoekranowym](#gallery) i uzyskać dostęp do dostępnych akcji:  
   **Udostępnij**, **Szczegóły**, **Otwórz w przeglądarce** i **Pobierz**.
 
+**Uwaga:** Pobieranie zapisuje obraz w pamięci urządzenia na stałe do użytku offline, podczas gdy buforowane zdjęcia są przechowywane automatycznie i dostępne offline tylko w aplikacji.
+
 
 ### Galeria {#gallery}
 
@@ -214,7 +218,9 @@ W menu kontekstowym mapy Jak uzyskać dostęp:
 </Tabs>
 
 
-**Menu Galerii** może wyświetlić do **100 obrazów** związanych z wybranym punktem POI. Możesz przesuwać palcem po wszystkich dostępnych zdjęciach. Krótkie dotknięcie zdjęcia otwiera szczegółowy widok pokazujący: *Nazwa*, *Data dodania*, *Autor*, *Licencja*  
+**Menu Galerii** może wyświetlić do **100 obrazów** związanych z wybranym punktem POI. Możesz przesuwać palcem po wszystkich dostępnych zdjęciach. Krótkie dotknięcie zdjęcia otwiera szczegółowy widok pokazujący: *Nazwa*, *Data dodania*, *Autor*, *Licencja*.  
+
+Na iOS, iPadOS i macOS możesz nawigować po zdjęciach za pomocą klawiszy klawiatury (←/→ do poruszania się między obrazami, Enter/Spacja do otwierania).
 
 Możesz także wykonać następujące czynności na każdym zdjęciu:
 

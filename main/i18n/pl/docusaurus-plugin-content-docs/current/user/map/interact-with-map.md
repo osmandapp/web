@@ -1,5 +1,5 @@
 ---
-source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title:  Interakcja z mapą
 ---
@@ -216,12 +216,12 @@ Tworzy płynny efekt przesuwania mapy w porównaniu z ikoną *[Moja pozycja](../
 
 ## Zewnętrzne urządzenia wejściowe {#external-input-devices}
 
-Przyciski zewnętrznych urządzeń wejściowych zapewniają wygodny i wydajny sposób interakcji z mapą i interfejsem aplikacji OsmAnd. Znajdują się one na urządzeniach zewnętrznych, takich jak **klawiatury Bluetooth lub innego typu**, **specjalistyczne przyciski na urządzeniach nawigacyjnych w pojazdach** lub kontrolery [WunderLINQ](https://blackboxembedded.com/) i [Parrot](https://www.parrot.com/en).  
+Przyciski zewnętrznych urządzeń wejściowych zapewniają wygodny i wydajny sposób interakcji z mapą i interfejsem aplikacji OsmAnd. Znajdują się one na urządzeniach zewnętrznych, takich jak **klawiatury Bluetooth lub innego typu**, **specjalistyczne przyciski na urządzeniach nawigacyjnych w pojazdach** lub kontrolery [WunderLINQ](https://blackboxembedded.com/) i [Parrot](https://www.parrot.com/en) (*tylko Android*).  
 
-Jedną z głównych funkcji przycisków na zewnętrznych urządzeniach wejściowych jest powiększanie i pomniejszanie mapy. Umożliwiają one również nawigację po mapie i zmianę jej orientacji bez konieczności stukania i wykonywania gestów na ekranie. Przyciski na zewnętrznych urządzeniach wejściowych obsługują wiele innych funkcji, takich jak otwieranie *Menu głównego*.
+Jedną z głównych funkcji przycisków na zewnętrznych urządzeniach wejściowych jest powiększanie i pomniejszanie mapy. Umożliwiają one również nawigację po mapie i zmianę jej orientacji bez konieczności stukania i wykonywania gestów na ekranie. Przyciski na zewnętrznych urządzeniach wejściowych obsługują wiele innych funkcji, takich jak otwieranie *Menu głównego* i uruchamianie *Szybkich akcji*. Użytkownicy mogą również dostosować przypisania przycisków dla obsługiwanych urządzeń (Klawiatura, WunderLINQ i niestandardowe kontrolery zewnętrzne).
 
 :::note
-Klawiatura pozostaje funkcjonalna nawet wtedy, gdy opcja *Zewnętrzne urządzenia wejściowe* jest wyłączona, a wybrano *Brak*.
+Klawiatura pozostaje funkcjonalna nawet wtedy, gdy opcja *Zewnętrzne urządzenia wejściowe* jest wyłączona, a wybrano *Brak*. Jednak niestandardowe przypisania klawiszy działają tylko wtedy, gdy *Zewnętrzne urządzenia wejściowe* są włączone.
 :::
 
 ### Skonfigurowane urządzenie wejściowe {#preconfigured-input-device}
@@ -240,7 +240,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![Urządzenia zewnętrzne](@site/static/img/map/external_types_ios.png)
+![Urządzenia zewnętrzne](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -251,9 +251,9 @@ Aby uzyskać dostęp do ustawień zewnętrznego urządzenia wejściowego, należ
 - Przejdź do *Menu główne → Ustawienia →* wybierz *Profil → Ustawienia ogólne → Inne → Zewnętrzne urządzenia wejściowe* i przełącz na *Włączone*.
 
 - Wybierz urządzenie z listy obsługiwanych przez OsmAnd, stukając pozycję *Typ* na liście:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*tylko Android*) lub utwórz [**własny typ**](#custom-input-device-type) (*tylko Android*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*tylko Android*) lub utwórz [**własny typ**](#custom-input-device-type).
 
-- Dla każdego typu zewnętrznego urządzenia wejściowego istnieje inny **zdefiniowany zestaw przypisań akcja-klawisz**. Stuknij *<Translate android="true" ids="key_assignments"/>*, aby zobaczyć listę akcji i klawiszy. Tabela klawiszy znajduje się poniżej.
+- Dla każdego typu zewnętrznego urządzenia wejściowego istnieje inny **zdefiniowany zestaw przypisań akcja-klawisz**. Sekcja *<Translate android="true" ids="key_assignments"/>* wyświetla listę akcji i przypisanych im klawiszy. Poniżej znajduje się tabela klawiszy. Są to domyślne przypisania — można je zmienić lub rozszerzyć zgodnie z preferencjami użytkownika.
 
 - Więcej informacji na temat akcji zewnętrznych urządzeń wejściowych można znaleźć na GitHub w pakiecie [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
@@ -275,7 +275,7 @@ Aby uzyskać dostęp do ustawień zewnętrznego urządzenia wejściowego, należ
 |**&#8595;**| *Wunderlinq*  | Mapa - [Pomniejsz](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Mapa - [Powiększ](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Otwórz siatkę danych WunderLINQ |
-| **M** <br/> (*starszy Android*) | *Klawiatura*  | Pokaż / Ukryj - [Menu boczne](../start-with/main-menu.md#main-menu-side-menu) |
+| **M** | *Klawiatura*  | Pokaż / Ukryj - [Menu boczne](../start-with/main-menu.md#main-menu-side-menu) |
 | **Naciśnięcie joysticka** <br/> (*starszy Android*) | *Klawiatura*  | Przesuń - [Do Mojej lokalizacji](#my-location-and-zoom) |
 | **Przycisk multimedialny** <br/> (*tylko Android*)| *Klawiatura*  | Pokaż / Ukryj - [Notatki AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*tylko Android*)| *Parrot*  | Mapa - [Pomniejsz](#my-location-and-zoom) |
@@ -284,7 +284,9 @@ Aby uzyskać dostęp do ustawień zewnętrznego urządzenia wejściowego, należ
 
 ### Niestandardowy typ urządzenia wejściowego {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -292,18 +294,47 @@ Aby uzyskać dostęp do ustawień zewnętrznego urządzenia wejściowego, należ
 
 Jeśli chcesz przypisać klawisze do zewnętrznego urządzenia wejściowego (takiego jak klawiatura, joystick lub kontroler), musisz utworzyć typ urządzenia: przejdź do ustawienia [Zewnętrzne urządzenie wejściowe](#external-input-devices), wybierz **Typ** z listy, stuknij&nbsp; "**＋**" &nbsp; i wprowadź nazwę. Każdy typ ma menu z następującymi opcjami: ***Zmień nazwę, Duplikuj*** i ***Usuń***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![Urządzenia zewnętrzne](@site/static/img/map/external_mypilot_ios.png)  ![Urządzenia zewnętrzne](@site/static/img/map/external_mypilot2_ios.png)
+
+Jeśli chcesz przypisać klawisze do zewnętrznego urządzenia wejściowego (takiego jak klawiatura, joystick lub kontroler), musisz utworzyć typ urządzenia: przejdź do ustawienia [Zewnętrzne urządzenie wejściowe](#external-input-devices), wybierz **Device** z listy, stuknij&nbsp; "**Add**" &nbsp; i wprowadź nazwę. Każdy typ ma menu z następującymi opcjami: ***Zmień nazwę, Duplikuj*** i ***Usuń***.
+
+</TabItem>
+
+</Tabs>  
+
 ### Dodaj akcję i przypisania klawiszy {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Urządzenia zewnętrzne](@site/static/img/map/external_custom_4_andr.png)  ![Urządzenia zewnętrzne](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Urządzenia zewnętrzne](@site/static/img/map/external_custom_4_ios.png)  ![Urządzenia zewnętrzne](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 Po utworzeniu niestandardowego typu wejścia można przypisać wymagane akcje do klawiszy. Dostępna jest szeroka gama [typów akcji](../widgets/quick-action.md#action-types) z widżetu Szybka akcja.
 
 - Wybierz typ urządzenia, a następnie stuknij pozycję **Przypisania klawiszy**.
-- Stuknij przycisk ***Dodaj*** (&nbsp;"**＋**"&nbsp;) w prawym dolnym rogu ekranu.
+- Stuknij przycisk ***Dodaj*** (&nbsp;"**＋**"&nbsp;).
 - Wybierz wymaganą akcję, a następnie stuknij pole ***Dodaj klawisz*** i stuknij przycisk na urządzeniu, aby przypisać go do akcji.  
 
 :::note
 
+- Jednej akcji można przypisać wiele klawiszy.
 - Jeśli przypisywany przycisk jest już używany do innej akcji, otrzymasz powiadomienie z opcją ponownego przypisania przycisku lub anulowania przypisania.
 - Później można zmienić akcje i przypisania klawiszy lub dodać inne dla już utworzonych akcji, wystarczy wybrać element na liście Przypisania klawiszy.
 
@@ -311,12 +342,26 @@ Po utworzeniu niestandardowego typu wejścia można przypisać wymagane akcje do
 
 ### Usuń przypisanie klawisza {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Urządzenia zewnętrzne](@site/static/img/map/external_custom_1_andr.png)
 
-Możesz usunąć wiele niepotrzebnych akcji jednocześnie za pomocą **przycisku Edytuj** (*w kształcie ołówka*) w prawym górnym rogu ekranu:
+</TabItem>
 
-- ***Usuń jedną akcję*** na akcję, za pomocą przycisku&nbsp; "**−**" &nbsp;w polu elementu.
-- ***Usuń wszystkie przypisania klawiszy*** dla wybranego typu, stukając przycisk w prawym górnym rogu ekranu obok *Edytuj nazwę*.
+<TabItem value="ios" label="iOS">
+
+![Urządzenia zewnętrzne](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Możesz usunąć wiele niepotrzebnych akcji jednocześnie za pomocą **przycisku Edytuj** (*w kształcie ołówka* na Androidzie):
+
+- ***Usuń jedną akcję*** na akcję, za pomocą przycisku&nbsp; "**−**" &nbsp;w polu elementu. Przypisanie klawisza można również usunąć za pomocą menu kontekstowego (długie naciśnięcie elementu) przez stuknięcie **Usuń**.
+- ***Usuń wszystkie przypisania klawiszy*** dla wybranego typu, stukając przycisk w prawym górnym rogu ekranu obok *Edytuj nazwę* na Androidzie; stukając przycisk **Wyczyść wszystko** na iOS.
 
 
 ## Powiązane artykuły {#related-articles}
