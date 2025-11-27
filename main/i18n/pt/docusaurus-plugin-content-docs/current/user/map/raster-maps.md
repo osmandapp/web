@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title: Mapas Raster (Online / Offline)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -28,7 +28,7 @@ Os mapas raster têm uma ampla gama de usos. Aqui estão alguns dos mais popular
 - Imagens de satélite como base.
 - Informações de tráfego em tempo real.
 - Previsão de chuva como sobreposição.
-- Mapas topográficos com sombreamento de colinas e encostas.
+- Mapas topográficos com o sombreamento de colinas e encostas.
 - Rotas ativas de ciclismo e corrida como sobreposição.
 - Informações de embarcações em tempo real.
 - Blocos OpenStreetMap online para edição OSM.
@@ -296,7 +296,7 @@ Aqui estão os principais parâmetros a serem configurados ao configurar uma nov
 | Parâmetro | Descrição |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Forneça um nome para a nova fonte de mapa online. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Insira ou cole a URL para a fonte de bloco online. Certifique-se de que ela siga o formato de URL de bloco. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Insira ou cole a URL para a fonte de bloco online. Certifique-se de que ela siga o formato de URL de bloco. A URL pode conter certos placeholders, que o OsmAnd substituirá automaticamente com base no bloco específico necessário. Os placeholders mais comumente usados são baseados na [convenção de nomes de blocos do mapa slippy do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` ou `{0}`: Nível de zoom</li><li>`{x}` ou `{1}`: Índice X do bloco</li><li>`{y}` ou `{2}`: Índice Y do bloco</li></ul> Para exemplos de placeholders menos comumente usados, consulte as [fontes de mapas raster online predefinidas](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Este parâmetro afeta como o mapa é exibido. <br/><ul><li>Como um *tipo de mapa*, o mapa será limitado aos níveis de zoom selecionados.</li><li>Como uma *sobreposição/base*, o mapa aparecerá nos níveis de zoom selecionados, com ampliação ou redução aplicada fora desses níveis.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Defina a duração (em minutos) após a qual os blocos em cache serão atualizados. Você pode deixar este campo em branco se não quiser que os blocos sejam recarregados automaticamente. <br/><ul><li>1 dia = 1440 minutos</li><li>1 semana = 10.080 minutos</li><li>30 dias = 43.200 minutos</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Escolha entre *projeção Pseudo-Mercator* e *projeção Mercator Elíptica*, dependendo da fonte. |
@@ -317,7 +317,7 @@ Mapas online podem ser adicionados com um link especial à lista de mapas Raster
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|
 |[Níveis de zoom]|min_zoom=9 / max_zoom=15|
 
-Você encontrará um mapa online adicionado na lista do menu [Camada Principal / Base / Sobreposição](#select-raster-maps).
+Você encontrará um mapa online adicionado na lista do menu [Principal / Base / Sobreposição](#select-raster-maps).
 
 
 ## Gerenciar Mapas Raster {#manage-raster-maps}

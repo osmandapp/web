@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title: Régua de Raio e Régua
 ---
@@ -69,12 +69,16 @@ Esta ferramenta é útil quando você precisa de uma compreensão rápida dos ta
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>*
 
+Disponível em todos os painéis: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, e <Translate android="true" ids="shared_string_right"/>.
+
 ![Posição de exibição Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>*
+
+Disponível em todos os painéis: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Esquerda, e Direita.
 
 ![Posição de exibição iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 

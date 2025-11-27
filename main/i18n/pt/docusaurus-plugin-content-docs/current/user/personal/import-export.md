@@ -1,5 +1,5 @@
 ---
-source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
+source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
 sidebar_position: 10
 title: Importar / Exportar
 ---
@@ -44,7 +44,7 @@ A *Importação* e *Exportação* permitem salvar dados de **arquivos** `.osf` g
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Perfis Ações Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
+![Ações de Perfis Exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
 </TabItem>
 
@@ -52,7 +52,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Perfis Ações Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Perfis Ações Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
+![Ações de Perfis Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Ações de Perfis Exportar iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ Todos os dados que você configurou e criou podem ser exportados usando o ***men
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
-![Perfis Ações Importar Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Perfis Ações Importar 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
+![Ações de Perfis Importar Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Ações de Perfis Importar 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
 
 <!-- ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
 
@@ -80,7 +80,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
 
-![Perfis Ações Importar iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Perfis Ações Importar 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
+![Ações de Perfis Importar iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Ações de Perfis Importar 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
 <!--  ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
 
 </TabItem>
@@ -91,6 +91,16 @@ Abre e restaura arquivos `.osf`. Toque no arquivo no gerenciador de arquivos do 
 
 - *Alguns itens já existem*. Você pode usar este recurso para salvar ambos os arquivos ou substituí-los todos.
 - *Reiniciar*. Após importar os arquivos, o aplicativo deve ser reiniciado.
+
+Tipos de arquivos de importação suportados:
+- [Trilhas, rotas](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoritos](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Arquivos KML e KMZ são importados com conversão para o formato GPX.
+- [Mapas vetoriais do OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
+- [Azulejos de mapas online](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Backups & perfis](#export): `.osf`.
+- [Mapas de altura / dados 3D](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Outros](color-palette-schemes.md): `.txt`.
+
+Para uma visão técnica geral de todos os formatos suportados, consulte [Formatos de Arquivos do OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

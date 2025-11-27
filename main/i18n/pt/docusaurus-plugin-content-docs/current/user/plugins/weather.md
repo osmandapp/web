@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title: Tempo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão geral {#overview}
@@ -60,7 +60,7 @@ O plugin Tempo está disponível apenas com o motor de renderização de mapa [V
 
 Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)
 
 </TabItem>
 
@@ -68,7 +68,7 @@ Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,
 
 Vá para: *Plugin ativado → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>
 
@@ -77,6 +77,41 @@ Vá para: *Plugin ativado → <Translate ios="true" ids="shared_string_menu,shar
 O menu lateral principal tem um item de menu dedicado **Tempo** que fornece acesso rápido a todas as ferramentas meteorológicas. A *tela de previsão do tempo* exibe informações sobre *temperatura*, *pressão atmosférica*, *velocidade do vento*, *cobertura de nuvens* e *precipitação*.
 
 Na parte inferior da tela está a *barra de ferramentas do tempo*. Você pode usar os botões de dia e o controle deslizante de tempo para definir a hora exata em que a previsão do tempo será exibida.
+
+### Fonte de Dados {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Você pode escolher qual provedor de previsão do tempo o OsmAnd usa para exibir dados na tela de Tempo:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Escolher Fonte de Dados*
+
+Dois provedores de previsão do tempo são suportados:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – a fonte padrão operada pela NOAA/NWS. Fornece dados meteorológicos completos, incluindo camadas de temperatura, pressão, umidade, vento e nuvens.
+
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – uma fonte de previsão alternativa. Oferece dados de alta qualidade de temperatura, precipitação e pressão, mas não fornece informações de vento ou nuvens. Ao usar ECMWF, parâmetros indisponíveis são exibidos como “–”, e as camadas meteorológicas correspondentes aparecem desativadas.
+
+Como a Fonte de Dados afeta a exibição do Tempo:
+- O mapa, gráficos, linha do tempo e valores meteorológicos na tela são atualizados imediatamente após a troca da fonte.
+- Apenas os parâmetros disponíveis para o provedor selecionado são exibidos.
+- Os widgets de tempo são atualizados automaticamente para usar a fonte escolhida.
+- Se você baixou anteriormente uma previsão do tempo, o OsmAnd usa os dados correspondentes ao provedor selecionado.
+- GFS e ECMWF usam caches separados. Trocar a fonte carrega ou atualiza os tiles meteorológicos relevantes.
+
 
 ### Personalizar Camadas de Tempo {#customize-weather-layers}
 
@@ -140,15 +175,15 @@ Todos os dados meteorológicos são apresentados como camadas de mapa separadas.
 
 | |
 |------------|
-| **Camada de precipitação** exibe informações sobre eventos meteorológicos quando a água em diferentes estados agregados cai do céu para o solo. Precipitação é chuva, neve, granizo ou saraiva. A escala de precipitação é graduada em milímetros (ou polegadas) de água que cai em 1 metro quadrado em 24 horas. 1 mm de chuva corresponde a 1 litro de água por 1 metro quadrado. |
+| A **camada de precipitação** exibe informações sobre eventos meteorológicos quando a água em diferentes estados agregados cai do céu para o solo. Precipitação é chuva, neve, neve derretida ou granizo. A escala de precipitação é graduada em milímetros (ou polegadas) de água que cai em 1 metro quadrado em 24 horas. 1 mm de chuva corresponde a 1 litro de água por 1 metro quadrado. |
 |![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|
 | A **Temperatura** expressa a percepção quantitativa de quente e frio. É medida em graus. No OsmAnd, você pode escolher entre a escala Celsius e Fahrenheit. |
 |![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|
 | O **Vento** é o movimento do ar causado pelo aquecimento desigual da Terra pelo sol e sua própria rotação. Os ventos podem variar de brisas leves a desastres naturais como furacões e tornados. No OsmAnd, a velocidade do vento pode ser exibida em metros por segundo (m/s), quilômetros por hora (km/h), milhas por hora (mph) e nós (kt). |
 |![Wind sheme](@site/static/img/plugins/weather/wind.png)|
-| A **Cobertura de nuvens** é a fração média do céu coberta por nuvens quando observada de um local específico. É medida em %. |
+| A **cobertura de nuvens** é a fração média do céu coberta por nuvens quando observada de um local específico. É medida em %. |
 |![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|
-| A **Pressão atmosférica** é causada pelo peso do ar acima do ponto de medição. Diminui com o aumento da elevação. A pressão atmosférica pode ser exibida em hectopascais (hPa), milímetros de mercúrio (mmHg) e polegadas de mercúrio (inHg). |
+| A **pressão atmosférica** é causada pelo peso do ar acima do ponto de medição. Diminui com o aumento da elevação. A pressão atmosférica pode ser exibida em hectopascais (hPa), milímetros de mercúrio (mmHg) e polegadas de mercúrio (inHg). |
 | ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |
 | A **Animação do vento** inclui representações dinâmicas mostrando a direção e a velocidade do vento na região. |
 | ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |
@@ -226,6 +261,8 @@ No menu de previsão de download, você pode obter informações e definir parâ
 - *Atualizar apenas via Wi-Fi* (*iOS*). Ative esta opção se não quiser usar dados móveis para downloads.
 - Botão **Remover** *lixeira* (*Android*) / **Remover previsão** (*iOS*). Permite excluir todos os dados de previsão para esta região.
 - Botão **Editar** *lápis* (*Android*). Permite renomear o arquivo meteorológico.
+
+**Nota:** Alguns países, como os EUA e o Canadá, usam um único arquivo de Previsão Offline para todo o país. Isso reduz o número de downloads e simplifica o gerenciamento de dados meteorológicos.
 
 :::info
 Os dados meteorológicos são atualizados a cada 6 horas (todas as 4 atualizações do [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) e 3 do [ECMWF](https://www.ecmwf.int/)) e ficam disponíveis no OsmAnd com um pequeno atraso, pois o processo de cálculo leva várias horas antes do lançamento (geralmente por volta das 07:00 UTC).

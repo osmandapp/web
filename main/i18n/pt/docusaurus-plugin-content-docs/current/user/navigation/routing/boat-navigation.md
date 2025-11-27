@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  Rotas de barco
 ---
@@ -89,7 +89,7 @@ O tipo de [roteamento de barco](#route-parameters---boat) é um algoritmo de rot
  - [Roteamento direto ao ponto para barco](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Roteamento em linha reta para barco](./boat-navigation.md#straight-line-routing-for-boat)
 
-É importante notar que os tipos de roteamento *Direto ao ponto* e *Linha reta* só devem ser usados em águas abertas onde não há obstáculos ou perigos para a navegação. Se você estiver navegando em uma via navegável com um canal ou rota específica, você deve usar o tipo de roteamento de barco no OsmAnd, que o guiará pelos canais de navegação corretos e evitará áreas rasas ou outros perigos.  
+É importante notar que os tipos de roteamento *Direto ao ponto* e *Linha reta* só devem ser usados em águas abertas onde não há obstáculos ou perigos para a navegação. Se você estiver navegando em uma via navegável com um canal ou rota específica, você deve usar o tipo de roteamento de barco no OsmAnd, que o guiará pelos canais de navegação corretos e evitará áreas rasas ou outros perigos. Alguns perigos mapeados baseados em tags OSM hazard=* podem ser exibidos no mapa como ícones de POI de perigo ou rótulos de texto.  
 
 Esses tipos de roteamento para o perfil de barco podem ser ativados usando o seguinte caminho: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> ou outro) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -72,9 +72,10 @@ O painel de informações também fornece informações sobre o seguinte:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Exibe a soma total de subidas e descidas durante a viagem.
 - *<Translate android="true" ids="altitude_range"/>*. Indica a altitude mínima e máxima em uma trilha.  
 
-:::note
-Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de rastreamento (portanto, seus pontos possuem tags de [`tempo` e `velocidade`](../../plugins/trip-recording#recorded-gpx-file)), o painel informativo também conterá informações sobre *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) ou *<Translate ios="true" ids="total_time"/>* (*iOS*) (o tempo entre os pontos inicial e final da trilha), *<Translate android="true" ids="shared_string_time_moving"/>* (a soma do tempo em movimento).
-:::  
+Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de rastreamento (portanto, seus pontos possuem tags de [`tempo` e `velocidade`](../../plugins/trip-recording#recorded-gpx-file)), o painel informativo também conterá informações sobre *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (o tempo total entre os pontos inicial e final da trilha) e *<Translate android="true" ids="shared_string_time_moving"/>* (a soma do tempo em movimento).
+
+**Nota:** Para trilhas gravadas, Duração mostra o tempo real de viagem com base nos carimbos de data/hora. Para trilhas planejadas, Duração mostra o tempo estimado calculado a partir do comprimento da rota e da velocidade média do perfil de navegação selecionado, se toda a rota usar um perfil e não contiver segmentos em linha reta.
+
 
 ### Ações da Trilha {#track-actions}
 
@@ -133,7 +134,7 @@ O menu **Opções** permite gerenciar e modificar a trilha selecionada com vári
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Exporta a trilha selecionada no formato GPX.
+- **<Translate android="true" ids="shared_string_share"/>** – Exporta a trilha selecionada no formato GPX via o menu Compartilhar do sistema.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Carrega](../../plugins/osm-editing.md#upload-gps-track) a trilha selecionada para o OpenStreetMap.
 
 <br/>
@@ -247,7 +248,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
 
 O recurso *Atividade* no OsmAnd permite que você marque trilhas GPX gravadas com atividades específicas para análise e organização futuras em pastas.
 
-- [Tags de atividade para trilhas GPX](../../plugins/trip-recording.md#recording-settings). Ao gravar uma trilha GPX, você pode atribuir um tipo de atividade. Essa marcação de atividade ajuda a categorizar inicialmente as trilhas.
+- [Tags de atividade para trilhas GPX](../../plugins/trip-recording.md#recording-settings). Trilhas gravadas recebem automaticamente um tipo de atividade com base no perfil selecionado, o que ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
 - [Filtro de atividade](../../personal/tracks/smart-folder.md#search-filter). Você pode filtrar as trilhas GPX gravadas por atividade, o que permite focar na localização de tipos específicos de gravações, como todas as trilhas de ciclismo ou caminhada.
 - [Gerenciar tipos de atividade](../../personal/tracks/manage-tracks.md#selection-mode). Você pode alterar o tipo de atividade para pastas ou trilhas selecionadas usando o modo de seleção na aba Trilhas do menu Meus Locais.
 - **Lista de atividades**. As categorias e grupos de atividades são definidos nos recursos do OsmAnd. Para desenvolvedores e colaboradores, a lista de atividades é mantida em um formato estruturado em [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalha os grupos e tipos de atividades disponíveis.
@@ -270,13 +271,13 @@ Interação com o gráfico:
 
 <TabItem value="android" label="Android">
 
-![Gráficos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Gráficos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gráficos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Gráficos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ Interação com o gráfico:
 Na aba **Visão Geral**, você pode ver parâmetros como:
 
 - *<Translate android="true" ids="distance"/>*. A soma da distância total percorrida na trilha, ou o comprimento da própria trilha.
-- *<Translate android="true" ids="shared_string_time_span"/>*. O intervalo de tempo entre os pontos inicial e final da trilha.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. O intervalo de tempo entre os pontos inicial e final da trilha.
 - *<Translate android="true" ids="shared_string_start_time"/>* O horário exato em que a gravação da trilha começa.
 - *<Translate android="true" ids="shared_string_end_time"/>*. O horário de término da gravação da trilha.
 
@@ -465,7 +466,7 @@ Toque no botão *Adicionar Waypoint* para abrir a tela de criação de waypoint 
 
 <TabItem value="android" label="Android">
 
-![Menu de grupo da trilha Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Menu de grupo da trilha Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -485,7 +486,7 @@ O *menu de três pontos* ( &#8285; ) abre o *menu de Grupo* de waypoints.
 - **<Translate android="true" ids="shared_string_rename"/>** - Altera o nome do grupo.
 - **<Translate android="true" ids="change_default_appearance"/>** - Altera as opções de exibição para um grupo de waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** ou **Remover** (*Somente Android*) - Move waypoints de grupo para a lista de [Marcadores de mapa](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Somente Android*) - Move waypoints de grupo para [Favoritos](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_favorites"/>** (*Somente Android*) - Permite copiar o grupo de Waypoints selecionado para [Favoritos](../../personal/favorites.md). Você pode escolher uma de duas opções: ***<Translate android="true" ids="copy_as_new_folder"/>*** ou ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Somente Android*) - Cria uma rota entre waypoints. Os pontos inicial e final se tornam o início e o fim da rota, e o restante é convertido em pontos intermediários.
 - **<Translate android="true" ids="shared_string_delete"/>** - Exclui um grupo de waypoints.
 
@@ -644,13 +645,13 @@ Para abrir esta opção:
 
 ### Dividir por Distância {#split-by-distance}
 
-![Aba de divisão de trilha por distância](@site/static/img/personal/tracks/split_by_2_tab.png) ![Mapa de divisão de trilha por distância](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Aba de divisão de trilha por distância](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Mapa de divisão de trilha por distância](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Esta opção permite dividir uma trilha em intervalos de distância fixa e analisar estatísticas detalhadas para cada segmento. Os intervalos de distância disponíveis são ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** e ***10 km***. Após escolher um intervalo de distância, a trilha é exibida como uma lista de segmentos. 
 
 Para cada segmento, você pode visualizar:
 - distância percorrida.
-- intervalo de tempo.
+- duração.
 - altitude média, mínima e máxima.
 - subida e descida.
 - tempo em movimento.
@@ -661,14 +662,14 @@ Ao tocar em qualquer segmento na lista, a visualização do mapa mostra a trilha
 
 ### Dividir por Tempo {#split-by-time}
 
-![Aba de divisão de trilha por tempo](@site/static/img/personal/tracks/split_by_3_tab.png) ![Mapa de divisão de trilha por tempo](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Aba de divisão de trilha por tempo](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Mapa de divisão de trilha por tempo](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 A opção **Dividir por Tempo** divide uma trilha em intervalos de duração igual. Você pode escolher entre ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** e ***60 min***. A forma como os intervalos são exibidos, as estatísticas fornecidas para cada segmento e como eles aparecem no mapa são as mesmas da seção [Dividir por Distância](#split-by-distance).
 
 
 ### Dividir por Subida/Descida {#split-by-uphill-downhill}
 
-![Aba de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_tab.png) ![Mapa de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Aba de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 Esta opção divide uma trilha em segmentos com base em mudanças de elevação. Cada intervalo é classificado como ***subida***, ***descida*** ou ***plano***. A forma como os intervalos são exibidos, as estatísticas fornecidas para cada segmento e como eles aparecem no mapa também são as mesmas da seção [Dividir por Distância](#split-by-distance).
 
@@ -728,7 +729,7 @@ Neste menu, você pode alterar alguns parâmetros da sua trilha, como *Suavizaç
 
 ### Estatísticas {#statistics}
 
-![Gráfico de filtro GPS Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![Gráfico de filtro GPS Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 A aba Estatísticas exibe informações sobre a trilha **modificada**, ou seja, a trilha sem valores filtrados. Ela é exibida nos blocos de estatísticas e nos dados do gráfico.
   

@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Planejar uma Rota
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -115,7 +115,7 @@ A *Linha Reta* é necessária e será usada para áreas não cobertas por dados 
 Se os [dados de elevação](../map/tracks/track-context-menu.md#calculate-missing-elevation) estiverem ausentes em uma trilha existente, é possível adicioná-los usando as seguintes ferramentas:
 
 - [Usar estradas próximas](#attach-track-to-roads). Este modo usa mapas offline para encontrar as estradas mais próximas para construir uma trilha, então os dados de elevação serão recuperados das estradas anexadas. A geometria da trilha pode ser ajustada.  
-- [Usar mapas de terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) O modo calcula a altitude com base nos dados do mapa de terreno (3D). A diferença entre as altitudes registradas pelo seu dispositivo pode ser usada para correção de elevação. A geometria da trilha permanece inalterada.
+- [Usar mapas de terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) O modo calcula a altitude com base nos dados do mapa de terreno (3D). A diferença entre as altitudes registradas pelo seu dispositivo pode ser usada para correção de elevação.  A geometria da trilha permanece inalterada.
 
 
 ### Anexar Trilha a Estradas {#attach-track-to-roads}
@@ -142,6 +142,10 @@ A configuração **Anexar às estradas** permite anexar uma trilha gravada ou im
 - Nomes de ruas e informações de faixa.
 - Dados de elevação.
 - [Atributos da estrada](../navigation/setup/route-details.md#road-attributes).
+- Perfil de elevação atualizado com base na geometria da estrada.
+- Recálculo possível da geometria da trilha (simplificando ou ajustando pontos à rede de estradas).
+
+Quando uma trilha é anexada a estradas, os seguintes parâmetros podem mudar porque a geometria e a elevação da trilha são recalculadas: *Distância, Subida / Descida, Velocidade média (e o gráfico de velocidade), Velocidade máxima, Tempo em movimento* e *Duração*. Esses valores podem diferir da trilha GPX original se a elevação ou geometria baseada em estradas recalculada se desviar significativamente dos dados GPS gravados.
 
 Você pode selecionar um [valor limite](../navigation/setup/gpx-navigation.md#attach-to-the-roads) para a distância que os pontos da trilha simplificada podem estar dos pontos da trilha original.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Planejar uma rota android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Planejar uma rota Favoritos android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Para medir uma distância ou planejar uma viagem, adicione pontos na localização do *Ponteiro* um por um e toque no botão *Adicionar*. Ao acessar a **lista de pontos** abaixo, você pode reordenar pontos, excluir ou acessar um [menu de contexto de ponto](#point-context-menu) específico.
+
+Você também pode adicionar um ponto via diretamente do mapa tocando em um POI ou Favorito para abrir seu menu de contexto e depois tocando em *ADICIONAR PONTO*. Nesse modo, menus de contexto para objetos não pontos não são exibidos. Ao adicionar um POI/Favorito, seu nome é preservado como o nome do ponto da rota; se você mover este ponto no mapa mais tarde, o nome é redefinido.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Planejar uma rota ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Para medir uma distância ou planejar uma viagem, adicione pontos na localização do *Ponteiro* um por um e toque no botão *Adicionar ponto*. Ao acessar a **lista de pontos** abaixo, você pode reordenar pontos, excluir ou acessar um [menu de contexto de ponto](#point-context-menu) específico.
+
 </TabItem>
 
 </Tabs>  
-
-Para medir uma distância ou planejar uma viagem, adicione pontos na localização do *Ponteiro* um por um e toque no botão *Adicionar Ponto*. Ao acessar a **lista de pontos** abaixo, você pode reordenar pontos, excluir ou acessar um [menu de contexto de ponto](#point-context-menu) específico.
 
 :::note
 Você também pode **Desfazer**/**Refazer** cada ação que você fez no planejamento da rota.
@@ -364,7 +372,7 @@ Ao salvar uma nova trilha, você pode selecionar a opção de trilha ***Simplifi
 
 <TabItem value="android" label="Android">
 
-![Planejar uma rota android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 
@@ -386,8 +394,8 @@ Ao calcular uma rota para navegação em *Planejar uma rota*, você pode encontr
 
 ## Artigos Relacionados {#related-articles}
 
-- [Mostrar trilha no mapa](../map/tracks/index.md)
-- [Analisar no mapa](../map/tracks/index.md#analyze-track-on-map)
+- [Mostrar trilha no Mapa](../map/tracks/index.md)
+- [Analisar no Mapa](../map/tracks/index.md#analyze-track-on-map)
 - [Menu de contexto da trilha](../map/tracks/track-context-menu.md)
 - [Navegação por trilha](../navigation/setup/gpx-navigation.md)
 - [Gravação de viagem](../plugins/trip-recording.md)

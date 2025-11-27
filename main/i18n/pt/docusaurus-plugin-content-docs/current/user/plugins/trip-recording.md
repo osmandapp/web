@@ -1,5 +1,5 @@
 ---
-source-hash: 8e066016d6c34fa35ebb478f7394b2e1cb4a747adb7805a218402161c7be3f49
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title: Gravação de Viagem
 ---
@@ -143,13 +143,13 @@ Para *Parar / Salvar / Pausar*:
 
 <TabItem value="android" label="Android">
 
-![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![visão geral](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finalizar gravação no iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -166,7 +166,7 @@ Aqui está o que você pode encontrar neles:
     - ***Android***. Para o ***eixo Y*** no gráfico, você pode selecionar *até dois parâmetros* de todos os dados disponíveis, como *Altitude*, *Inclinação*, *Velocidade* e [informações de sensores externos](../plugins/external-sensors.md#trip-recording). Para o ***eixo X***, selecione para exibir *Distância*, *Tempo* ou *Hora do Dia*.
     - ***iOS***. Os parâmetros são organizados em abas *Visão Geral*, *Altitude*, e *Velocidade* com os valores apropriados para o eixo Y e *Distância* para o eixo X.
 
-- **Estatística**. Para Android, exibe um conjunto constante de dados estatísticos independente das configurações do gráfico: *Distância*, *Período de tempo*, *Subida*, *Descida*, *Velocidade média*. Para iOS, cada aba, Visão Geral, Altitude, e Velocidade, tem um conjunto de dados diferente.
+- **Estatística**. Para Android, exibe um conjunto constante de dados estatísticos independente das configurações do gráfico: *Distância*, *Duração*, *Subida*, *Descida*, *Velocidade média*. Para iOS, cada aba, Visão Geral, Altitude, e Velocidade, tem um conjunto de dados diferente.
 
 Para uma visualização mais detalhada, você pode **escalar o gráfico**:
 
@@ -175,12 +175,12 @@ Para uma visualização mais detalhada, você pode **escalar o gráfico**:
 
 | |  
 | ------------- |
-|Aba **Visão Geral** iOS (para Android, os parâmetros do eixo Y são *Altitude*, *Velocidade*, e o parâmetro do eixo X é *Distância*). Esta aba exibe um gráfico mostrando as mudanças de velocidade e altitude ao longo da trilha, e detalhes chave da trilha. Dados da trilha para iOS: *Distância*, *Período de Tempo*, *Hora de Início* e *Hora de Término*. Você pode ver como isso é exibido nas versões Android e iOS abaixo. |
-| ![dados](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+|Aba **Visão Geral** iOS (para Android, os parâmetros do eixo Y são *Altitude*, *Velocidade*, e o parâmetro do eixo X é *Distância*). Esta aba exibe um gráfico mostrando as mudanças de velocidade e altitude ao longo da trilha, e detalhes chave da trilha. Dados da trilha para iOS: *Distância*, *Duração*, *Hora de Início* e *Hora de Término*. Você pode ver como isso é exibido nas versões Android e iOS abaixo. |
+| ![dados](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 |Aba **Altitude** iOS (para Android, os parâmetros do eixo Y são *Altitude*, *Inclinação*, e o parâmetro do eixo X é *Distância*). Esta aba foca no perfil de elevação da sua trilha gravada, fornecendo insights sobre as mudanças de altitude e os graus do terreno. As métricas chave para iOS incluem: *Altitude Média*, *Faixa de Altitude*, *Subida* e *Descida*. Os gráficos abaixo ilustram as diferenças entre as interfaces Android e iOS. |
-| ![dados](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![dados](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 |Aba **Velocidade** iOS (para Android, o parâmetro do eixo Y é *Velocidade* e o parâmetro do eixo X é *Distância*). A aba Velocidade destaca dados relacionados à velocidade ao longo da trilha. Para iOS, inclui informações como *Velocidade Média*, *Velocidade Máxima*, *Tempo em Movimento* e *Distância Corrigida*. As capturas de tela abaixo mostram como esses dados são exibidos em ambas as plataformas. |
-| ![dados](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![dados](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![dados](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | Para **Android**, você pode criar mais combinações de dados disponíveis no eixo Y e valores no eixo X. |
 | ![dados](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -297,7 +297,7 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 | **Métricas do Veículo** <br/> *Precisa de plugin ativado* | Dados do [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) são registrados no arquivo GPX. Exibido apenas quando o [plugin de Métricas do Veículo](../plugins/vehicle-metrics.md) está ativado.<br />*Nota*: Você pode adicionar quais métricas registrar no arquivo GPX da lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Pasta de armazenamento de trilhas** (*Android*) | Define onde, na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*, as trilhas gravadas são armazenadas. As opções incluem armazenar todas as trilhas na pasta Rec ou organizá-las por mês, como Rec/aaaa-mm. |
 | **Notificação** | Controla a exibição de uma [notificação de gravação de viagem](#notifications) do sistema na área de notificação do dispositivo que permite iniciar a gravação de viagens. |
-| **Rastreamento online** (*Android*) | Permite o rastreamento em tempo real de sua localização enviando pontos registrados para uma URL especificada. O intervalo de rastreamento determina a frequência com que os pontos são enviados, e o buffer de tempo armazena pontos quando não há conexão com a Internet.<details><summary>*Observação*</summary>Se esta opção estiver ativada e a gravação da trilha estiver em andamento, o widget Distância/Iniciar-Parar (REC) fica **verde** em vez de **vermelho**, indicando que cada ponto registrado está sendo transmitido para uma URL especificada. O campo **Endereço da Web** permite que você insira a URL usando o seguinte formato de parâmetro:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Carimbo de data/hora (tempo Unix)</li><li>`hdop={3}`: Diluição horizontal da precisão</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Velocidade</li><li>`bearing={6}`: Rumo (direção do movimento)</li><li>`eta={7}`: Tempo estimado de chegada (tempo Unix)</li><li>`etfa={8}`: Tempo estimado para o primeiro ponto intermediário ou ponto final (tempo Unix)</li><li>`eda={9}`: Distância estimada até a chegada ou um marcador (em metros)</li><li>`edfa={10}`: Distância estimada até o primeiro ponto intermediário ou ponto final (em metros)</li></ul>Você pode definir o **Intervalo de Rastreamento** para especificar a frequência com que os pontos de localização são enviados, com opções que variam de 0 segundos a 5 minutos. Além disso, o parâmetro **Buffer de Tempo** determina por quanto tempo os pontos de localização são armazenados se não houver conexão com a Internet, garantindo que os dados sejam salvos e transmitidos quando a conexão for restaurada.</details> |
+| **Rastreamento online** (*Android*) | Permite o rastreamento em tempo real de sua localização enviando pontos registrados para uma URL especificada. O intervalo de rastreamento determina a frequência com que os pontos são enviados, e o buffer de tempo armazena pontos quando não há conexão com a Internet.<details><summary>*Observação*</summary>Se esta opção estiver ativada e a gravação da trilha estiver em andamento, o widget Distância/Iniciar-Parar (REC) fica **verde** em vez de **vermelho**, indicando que cada ponto registrado está sendo transmitido para uma URL especificada. O campo **Endereço da Web** permite que você insira a URL usando o seguinte formato de parâmetro:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Carimbo de data/hora (tempo Unix)</li><li>`hdop={3}`: Diluição horizontal da precisão</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Velocidade</li><li>`bearing={6}`: Rumos (direção do movimento)</li><li>`eta={7}`: Tempo estimado de chegada (tempo Unix)</li><li>`etfa={8}`: Tempo estimado para o primeiro ponto intermediário ou ponto final (tempo Unix)</li><li>`eda={9}`: Distância estimada até a chegada ou um marcador (em metros)</li><li>`edfa={10}`: Distância estimada até o primeiro ponto intermediário ou ponto final (em metros)</li></ul>Você pode definir o **Intervalo de Rastreamento** para especificar a frequência com que os pontos de localização são enviados, com opções que variam de 0 segundos a 5 minutos. Além disso, o parâmetro **Buffer de Tempo** determina por quanto tempo os pontos de localização são armazenados se não houver conexão com a Internet, garantindo que os dados sejam salvos e transmitidos quando a conexão for restaurada.</details> |
 | **Trilhas** | Uma referência rápida à pasta onde as trilhas são salvas na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Redefinir configurações do plugin para o padrão** | Redefine todas as configurações de gravação de viagem para o perfil atual para seus padrões. |
 | **Copiar de outro perfil** (*Android*) | Copia as configurações de gravação de viagem de um perfil para outro. |
@@ -398,7 +398,7 @@ Para personalizar sua interface, você pode adicionar ou remover o widget de Gra
 
 <TabItem value="android" label="Android">  
 
-![Finalizar gravação no Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Finalizar gravação no Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
 ![Widget de gravação de viagem](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
