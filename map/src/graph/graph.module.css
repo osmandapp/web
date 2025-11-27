@@ -1,0 +1,26 @@
+.routeSummaryGraph {
+    margin-top: 16px !important;
+}
+.routeSummaryGraphCanvas {
+    height: 100px !important;
+}
+.routeSummaryGraphCanvas :global(canvas) {
+    width: 100% !important;
+    height: 100% !important;
+}
+.routeSummaryGraphLegend {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 6px !important;
+}
+.routeSummaryGraphLabel {
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+.routeSummaryGraphValue {
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}

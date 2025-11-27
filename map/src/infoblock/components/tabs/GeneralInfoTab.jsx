@@ -11,7 +11,7 @@ import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import DownloadTrackDialog from '../../../dialogs/tracks/DownloadTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
 import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
-import GpxGraphProvider from '../graph/GpxGraphProvider';
+import GpxGraphProvider from '../../../graph/track/GpxGraphProvider';
 import { useTranslation } from 'react-i18next';
 
 export default function GeneralInfoTab({ setShowInfoBlock }) {

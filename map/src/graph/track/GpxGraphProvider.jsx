@@ -1,24 +1,24 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import GpxGraph from './GpxGraph';
-import AppContext from '../../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import TracksManager, {
     addDistanceToPoints,
     equalsPoints,
     getAllPoints,
     getTrackPoints,
-} from '../../../manager/track/TracksManager';
+} from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
-import { seleniumUpdateActivity } from '../../../util/Utils';
+import { seleniumUpdateActivity } from '../../util/Utils';
 import {
+    calculateSlopes,
     checkShowData,
     DISTANCE,
     ELEVATION,
     ELEVATION_SRTM,
     generateDataSets,
-    getSlopes,
     HIGHWAY,
     HORSE_SCALE,
     ICE_ROAD,
@@ -33,8 +33,8 @@ import {
     TRACK_TYPE,
     UNDEFINED_DATA,
     WINTER_ROAD,
-} from '../../../manager/GraphManager';
-import { convertMeters, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
+} from '../GraphManager';
+import { convertMeters, LARGE_UNIT } from '../../menu/settings/units/UnitsConverter';
 
 export const getGraphData = ({
     trackData = null,
@@ -107,7 +107,7 @@ export const getGraphData = ({
             });
         });
 
-        const newSlopes = getSlopes(result, ctx, sumDist);
+        const newSlopes = calculateSlopes(result, { ctx, totalDistance: sumDist, mutateOriginal: true });
         return {
             res: result,
             minEle,

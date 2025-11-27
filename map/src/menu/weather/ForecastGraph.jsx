@@ -1,5 +1,5 @@
 import { Chart } from 'react-chartjs-2';
-import GraphManager from '../../manager/GraphManager';
+import GraphManager from '../../graph/GraphManager';
 import { Box } from '@mui/material';
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';

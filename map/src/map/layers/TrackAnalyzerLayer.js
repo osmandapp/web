@@ -5,7 +5,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import { LatLng } from 'leaflet';
 import { getDistance } from '../../util/Utils';
 import isEmpty from 'lodash-es/isEmpty';
-import { TYPE_ANALYZER } from '../../frame/components/graph/GlobalGraph';
+import { TYPE_ANALYZER } from '../../graph/mapGraph/GlobalGraph';
 
 const DEFAULT_SEGMENT_COLOR = '#227bff';
 
