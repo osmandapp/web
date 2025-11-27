@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title: Rota Planla
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -142,6 +142,10 @@ Mevcut bir izde [Yükseklik verileri](../map/tracks/track-context-menu.md#calcul
 - Sokak adları ve şerit bilgileri.
 - Yükseklik verileri.
 - [Yol özellikleri](../navigation/setup/route-details.md#road-attributes).
+- Yola dayalı geometriye göre güncellenmiş yükseklik profili.
+- İz geometrisinin yeniden hesaplanması mümkün (noktaları basitleştirme veya yol ağına ayarlama).
+
+Bir iz yollara bağlandığında, izin geometrisi ve yükseklisi yeniden hesaplandığı için aşağıdaki parametreler değişebilir: *Mesafe, Tırmanış / İniş, Ortalama hız (ve hız grafiği), Maksimum hız, Hareket süresi* ve *Süre*. Bu değerler, yeniden hesaplanan yola dayalı yükseklik veya geometrinin kaydedilen GPS verilerinden önemli ölçüde sapması durumunda orijinal GPX izinden farklı olabilir.
 
 Basitleştirilmiş iz noktalarının orijinal iz noktalarından olabileceği mesafe için bir [eşik değeri](../navigation/setup/gpx-navigation.md#attach-to-the-roads) seçebilirsiniz.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Rota planla android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Rota planla android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Rota planla Favoriler android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Bir mesafeyi ölçmek veya bir gezi planlamak için, *İşaretçi* konumuna tek tek noktalar ekleyin ve *Ekle* düğmesine dokunun. Aşağıdaki **noktalar listesine** erişerek noktaları yeniden sıralayabilir, silebilir veya belirli bir [nokta bağlam menüsüne](#point-context-menu) erişebilirsiniz.
+
+Ayrıca, bir POI veya Favoriye dokunarak bağlam menüsünü açıp ardından *NOKTA EKLE* düğmesine dokunarak haritadan doğrudan bir geçiş noktası ekleyebilirsiniz. Bu modda, nokta olmayan nesneler için bağlam menüleri gösterilmez. Bir POI/Favori eklediğinizde, adı rota noktası adı olarak korunur; daha sonra bu noktayı haritada taşırsanız, ad sıfırlanır.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Rota planla ios](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Bir mesafeyi ölçmek veya bir gezi planlamak için, *İşaretçi* konumuna tek tek noktalar ekleyin ve *Nokta Ekle* düğmesine dokunun. Aşağıdaki **noktalar listesine** erişerek noktaları yeniden sıralayabilir, silebilir veya belirli bir [nokta bağlam menüsüne](#point-context-menu) erişebilirsiniz.
+
 </TabItem>
 
 </Tabs>  
-
-Bir mesafeyi ölçmek veya bir gezi planlamak için, *İşaretçi* konumuna tek tek noktalar ekleyin ve *Nokta Ekle* düğmesine dokunun. Aşağıdaki **noktalar listesine** erişerek noktaları yeniden sıralayabilir, silebilir veya belirli bir [nokta bağlam menüsüne](#point-context-menu) erişebilirsiniz.
 
 :::note
 Rota planında yaptığınız her eylemi **Geri Al**/**Yinele** de yapabilirsiniz.
@@ -364,7 +372,7 @@ Yeni bir iz kaydederken, izi diğer üçüncü taraf uygulamalarla uyumlu hale g
 
 <TabItem value="android" label="Android">
 
-![Rota planla android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Rota planla android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 
@@ -386,7 +394,7 @@ Rota planlaması sırasında, [grafik](../navigation/setup/route-details.md#elev
 
 ## İlgili Makaleler {#related-articles}
 
-- [İzi Haritada Göster](../map/tracks/index.md)
+- [Haritada İz Göster](../map/tracks/index.md)
 - [Haritada Analiz Et](../map/tracks/index.md#analyze-track-on-map)
 - [İz Bağlam Menüsü](../map/tracks/track-context-menu.md)
 - [İze Göre Navigasyon](../navigation/setup/gpx-navigation.md)

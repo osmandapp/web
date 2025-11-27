@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -53,34 +53,34 @@ Uygulamayı bu bağlantıdan indirebilirsiniz - [Apple App Store'da OsmAnd Harit
 
 Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgiler bulunmaktadır. Diğer bölgeler için fiyatlar yerel para birimlerinde eşdeğerdir.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Black Friday fiyatları
+
+*Aceleye gerek yok! Bu teklif yalnızca* **30 Kasım (23:00 CET)**'e kadar geçerlidir.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-
--->
-
-|    | OsmAnd Ücretsiz   | [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Ücretsiz   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |
-| **Fiyat (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Fiyat (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Fiyat (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Fiyat (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+<!--
 
 
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+
+-->
 
 ### Ücretsiz ve Ücretli Özellikler {#free-and-paid-features}
 
@@ -97,6 +97,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D Rölyef](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografya verileri](../plugins/topography.md#overview)<br/>(Kontur çizgileri ve Arazi) | **-** | ✔ | ✔ |
+| [Koordinat Izgara — Renk Özelleştirme](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D iz görselleştirme](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Deniz derinlikleri](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Seyahat rehberleri (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

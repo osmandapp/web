@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title: Yarıçap Cetveli ve Cetvel
 ---
@@ -69,14 +69,18 @@ Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafele
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Pencere öğesi ekle → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_height_android.png)
+Tüm panellerde mevcut: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, ve <Translate android="true" ids="shared_string_right"/>.
+
+![Görüntüleme konumu Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → Pencere öğesi ekle → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_height_ios.png)
+Tüm panellerde mevcut: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Sol, ve Sağ.
+
+![Görüntüleme konumu iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -84,7 +88,7 @@ Bu araç, işaretleyici veya rota yerleştirmeden nesne boyutları veya mesafele
 
 [Yarıçap Cetveli Pencere Öğesi](../widgets/info-widgets.md#radius-ruler), mevcut konumunuz (*Konumum*) ile haritanın merkezi arasındaki mesafeyi gösterir. Ayrıca, herhangi bir özel merkez noktası ayarlamak için haritayı hareket ettirebilirsiniz. Özellikleri:
 
-- Seçilen noktaya merkezlenmiş eş merkezli daireler görüntüleyin.
+- Seçilen noktaya merkezlenmiş eş merkezli daireler görüntüler.
 - İlk daire, hızlı görsel referans için mevcut [harita ölçeğini](#ruler) yansıtır.
 - Doğru yarıçap değerlerini korumak için yakınlaştırma yaparken otomatik olarak ayarlanır.
 - Pencere öğesine dokunarak üç görüntüleme modu arasında geçiş yapın: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, ve <Translate android="true" ids="dark_theme"/>.
@@ -159,7 +163,7 @@ Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes)
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,display_position"/>*
 
-![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_display_position_2_andr.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_view_andr.png)
+![Görüntüleme konumu Android](@site/static/img/widgets/radius_ruler_display_position_2_andr.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_view_andr.png)
 
 </TabItem>
 
@@ -167,7 +171,7 @@ Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes)
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Diğer → Ekrandaki konum konumu*
 
-![Android konum görüntüsü](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Görüntüleme konumu Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 

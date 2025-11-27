@@ -1,5 +1,5 @@
 ---
-source-hash: 135ec49c254081b73e19f0be40cdfb7296889f8a4d91b09b4c6be58544461e26
+source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
@@ -222,8 +222,8 @@ Pencere öğesinin birkaç görünümü vardır.
 
 ## OsmAnd Asistanı {#osmand-assistant}
 
-OsmAnd uygulamasının, OsmAnd Telegram'ı üçüncü taraf takipçiler veya API'lerle entegre etmenize yardımcı olan "OsmAnd Asistanı" adlı kendi Telegram botu vardır. Yalnızca konumunuzu değil, aynı zamanda bisikletinizin veya API aracılığıyla erişilebilen bir grup insanın konumunu da paylaşabileceksiniz. OsmAnd Telegram, konumlarınızın OsmAnd'in kendisindeki haritada güzel bir sunumunu sağlayacaktır.  
+OsmAnd uygulamasının, OsmAnd Telegram'ı üçüncü taraf takipçiler veya API'lerle entegre etmenize yardımcı olan "OsmAnd Asistanı" adlı kendi Telegram botu vardır. Yalnızca konumunuzu değil, aynı zamanda bisikletinizin veya API aracılığıyla erişilebilen yarışan bir grup insanın konumunu da paylaşabileceksiniz. OsmAnd Telegram, konumlarınızın OsmAnd'in kendisindeki haritada güzel bir sunumunu sağlayacaktır.  
 
-Bu yeni uygulama hakkındaki düşüncelerinizi [Twitter](https://twitter.com/osmandapp) ve diğer sosyal kanallarda bizimle paylaşın.
+Bu yeni uygulama hakkındaki düşüncelerinizi [X](https://x.com/osmandapp) ve diğer sosyal kanallarda bizimle paylaşın.
 
 Kişilerin GPS konumlarını haritada görüntülemek için [OsmAnd veya OsmAnd+](./../purchases/android.md)'ın en son sürümüne ihtiyacınız vardır. Desteklenen minimum OsmAnd veya OsmAnd+ sürümü 3.0.4'tür.

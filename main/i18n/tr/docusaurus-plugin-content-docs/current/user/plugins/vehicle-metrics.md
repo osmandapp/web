@@ -1,5 +1,5 @@
 ---
-source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title: Araç Metrikleri
 ---
@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Araç Metrikleri eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md). Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümünde mevcuttur.
 :::
 
-**Araç Metrikleri eklentisi**, [OBD-II protokolü](https://en.wikipedia.org/wiki/OBD-II_PIDs) aracılığıyla gerçek zamanlı araç verilerini izlemeyi sağlar. Kullanıcılar, motor performansı, yakıt verimliliği ve hız gibi temel metrikleri takip ederek proaktif araç bakımı ve sorun giderme yapabilirler.
+**Araç Metrikleri eklentisi**, [OBD-II protokolü](https://en.wikipedia.org/wiki/OBD-II_PIDs) aracılığıyla gerçek zamanlı araç verilerini izlemeyi sağlar. Kullanıcılar, motor performansı, yakıt verimliliği ve hız gibi temel metrikleri takip ederek proaktif araç bakımı ve sorun giderme yapabilirler.  
 
 [OBD-II tarayıcıları](https://en.wikipedia.org/wiki/ELM327) modern otomotiv teşhislerinin ayrılmaz bir parçasıdır. Gerçek zamanlı veri akışı ile kullanıcılar, araç sistemleri hakkında anlık bilgiler edinerek önleyici bakımı kolaylaştırır ve onarım maliyetlerini düşürür. Bu araçlar hem kişisel kullanım hem de profesyonel otomotiv hizmetleri için hayati öneme sahiptir.
 
@@ -118,6 +118,8 @@ Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 - **Ayarlar**. OBD-II ayarları ekranını açar, bağlantı yönetimini ve mevcut araç parametrelerine erişimi sağlar.
 - **Yeniden Adlandır**. Sensöre daha kolay tanımlama için özel bir ad atamanızı sağlar.
 - **Unut**. Daha önce eşleştirilmiş OBD-II sensörünü listeden kaldırır, daha sonra gerekirse yeniden eşleştirme gerektirir.
+
+**Yeniden Bağlantı Davranışı** *(Yalnızca Android)***:** OsmAnd, uygulama başlatıldığında, navigasyon başlatıldığında veya Android Auto başlatıldığında OBD-II adaptörüne otomatik olarak yeniden bağlanmayı dener. Bağlantı kullanılamıyorsa, Araç Metrikleri widget'ları “–” görüntüler. Herhangi bir Araç Metrikleri widget'ına tek dokunma, sensöre yeniden bağlanmayı dener. Sensör zaten bağlıysa, dokunma widget görüntüleme modlarını normal şekilde değiştirir.
 
 
 ## Metrik Listesi {#metrics-list}
@@ -234,6 +236,13 @@ Bazı widget'lar görüntüleme modu seçenekleri sunar:
 
 - **Anlık**. Seçilen metrik için gerçek zamanlı verileri görüntüler.
 - **Ortalama**. Yapılandırılabilir bir zaman aralığında (15 saniye ila 60 dakika) ortalama değerleri görüntüler.
+
+Birkaç widget, *Yakıt tüketimi* dahil, görüntülenen birimleri ve bölgesel metrik formatlarını [Profil Ayarları](https://osmand.net/docs/user/personal/profiles#units--formats) temelinde uyarlar. Litre dışındaki hacim birimleri kullanıldığında, Yakıt tüketimi değerleri Mil Galon Başına (MPG) olarak gösterilmeyi destekler. Tam MPG türü, seçilen hacim birimine bağlıdır:
+
+- ABD galonları → MPG (ABD)
+- İmparatorluk galonları → MPG (BK)
+
+Widget, aktif profildeki seçilen <Translate android="true" ids="routing_attr_length_name"/> ve <Translate android="true" ids="shared_string_volume"/> birimlerine göre uygun formatı otomatik olarak seçer ve seçtiğiniz görüntüleme modu profilleri dışa aktarırken ve içe aktarırken korunur.
 
 
 ## İlgili makaleler {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 6f725a1fadd0a2c5cd2626f8424f87e2e54b060d0b683fd33a90f9426413a826
+source-hash: d793188a0617dee4c181a2021483255f3e56c64b9e25db7249b0fb0d19923b4d
 sidebar_position: 5
 ---
 
@@ -7,8 +7,8 @@ sidebar_position: 5
 
 OsmAnd, çevrimdışı haritalara gömülü olan SRTM uydu verilerine ve Kaydedilmiş GPX parkurlarına dayalı olarak **eğim** ve **yokuş yukarı** hesaplamak için farklı algoritmalar kullanır.
 
-**Yokuş yukarı** hesaplamanın temel amacı, yokuş yukarı çıkarken ne kadar **ekstra enerji** harcandığına dair ilgili bilgileri sağlamaktır; bu, açıkça araç veya taşıma şekli, yüzey, kişinin ağırlığı ve diğerleri gibi birçok faktöre bağlıdır.
-Dolayısıyla, sonunda **yokuş yukarı**, enerji verimli bir rota oluşturmak için Yüksekliğe dayalı rotalama tarafından dikkate alınması gereken bir parametre olmalıdır.
+**Yokuş yukarı** hesaplamanın temel amacı, yukarı çıkarken ne kadar **ekstra enerji** harcandığına dair ilgili bilgileri sağlamaktır; bu, açıkça araç veya taşıma şekli, yüzey, kişinin ağırlığı ve diğerleri gibi birçok faktöre bağlıdır.
+Dolayısıyla, sonunda **yokuş yukarı**, enerji verimli bir rota oluşturmak için Yükseklik temelli rotalama tarafından dikkate alınması gereken bir parametre olmalıdır.
 
 **Eğim** hesaplamanın temel amacı, hangi dik yolların kaçınılması gerektiğini görsel olarak belirtmektir.
 
@@ -19,7 +19,7 @@ Dolayısıyla, sonunda **yokuş yukarı**, enerji verimli bir rota oluşturmak i
 
 OsmAnd 3 adımlı bir algoritma kullanır:
 
-- Gürültülü verileri filtrele.
+- Gürültülü verileri filtrele. 
 - Yerel ekstremumları (minimumlar ve maksimumlar) bul.
 - Minimum ve maksimumlar arasındaki farkların toplamını hesapla.
 
@@ -28,8 +28,8 @@ Bazı parkurlar, önce filtrelenmesi gereken çok sayıda gürültülü veri iç
 
 ### %70 eğimi filtrele {#filter-70-slope}
 
-Filtreleme, grafikte soldaki 1 komşu noktadan ve sağdaki 1 komşu noktadan önemli ölçüde daha yüksek veya daha düşük olan **aşırı noktaları** bulmaya dayanır.
-Bu **aşırı noktalar** daha fazla hesaplamadan hariç tutulur. ```Eşik``` [ %70 eğimdir](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) - [kod](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
+Filtreleme, grafikte soldaki 1 komşu noktadan ve sağdaki 1 komşu noktadan önemli ölçüde daha yüksek veya daha düşük olan **aşırı noktaları** bulmaya dayanır. 
+Bu **aşırı noktalar** daha fazla hesaplama işleminden hariç tutulur. ```Eşik``` [ %70 eğimdir](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) - [kod](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
 
 **Örnek 1**. (tüm noktalar 10m aralıklarla dağıtılmıştır), yükseklik - [5, 3, 10, 3, 5]. 10 aşırı noktadır: çünkü 10 > 3 (%70 eğim).
 
@@ -79,14 +79,31 @@ Ekstremumlar, OsmAnd geliştirme eklentisi etkinleştirildiğinde grafikte mavi 
 Daha fazla örnek eklenecektir.
 
 
-## Yükseklik SRTM düzeltmesi {#altitude-srtm-correction}
+## Yükseklik Düzeltmesi {#elevation-correction}
 
-OsmAnd'da yükseklik düzeltmesi almak için kullanılabilecek 2 alternatif vardır.
+Yükseklik Düzeltmesi, GPX parkurundaki yükseklik değerlerini harici yükseklik kaynaklarını kullanarak ayarlar. İki yükseklik veri kaynağı mevcuttur:
 
-1. OsmAnd Android'de parkuru açın ve *Parkuru Düzenle → Seçenekler → Yükseklik Düzeltme* öğesini bulun
-1.1 **Çevrimiçi** parkuru OsmAnd sunucusu ve verileri aracılığıyla işleyecektir.
-1.2 **Çevrimdışı** 3D geotif dosyaları indirilirse parkuru cihazda işleyecektir.
-2. https://osmand.net/map web sitesini açın ve parkuru yükleyin ve SRTM yüksekliğini görün.
+1. Arazi haritalarını kullanın (DEM / SRTM / 3D yükseklik verileri)
+- Yükseklik değerlerini indirilen arazi haritalarından (DEM/SRTM veya 3D GeoTIFF dosyaları) gelen verilerle değiştirir.
+- Yükseklik karoları yüklüyse cihazda yerel olarak çalışır.
+- Bu yöntem orijinal parkur geometrisini korur.
+
+2. Yakındaki yolları kullanın (Yollara yapıştırma)
+- Parkur geometrisini yol ağına uydurmak için ayarlar.
+- Yükseklik düzeltmesi için yol yükseklik verilerini kullanır.
+- Bu yöntem yol yapıştırması nedeniyle parkur şeklini değiştirebilir.
+
+Yükseklik Düzeltmesi uygulandıktan sonra değişebilecek veriler:
+- Mesafe
+- Boyut
+- Tırmanış
+- İniş
+- Ortalama hız
+- Maksimum hız
+- Süre
+- Hareket süresi
+
+Her iki yükseklik kaynağı kullanıldığında GPX zaman damgaları (tarih/saat) korunur.
 
 
 ## Eğim {#slope}

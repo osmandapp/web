@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title:  Kayak Haritası Görünümü
 ---
@@ -168,7 +168,7 @@ OsmAnd Kayak Haritası, haritada hangi nesnelerin gösterileceğini ve nesneleri
 İzlerin zorluğu genellikle belirli renklerle belirtilir. Renkler farklı ülkelerde ve tatil köylerinde farklılık gösterebilir. Aşağıda bazı pratik yönergeler verilmiştir.
 
 :::tip rehberlik
-Her parkur zorluk türü için daha spesifik rehberlik için [OSM pist zorluk referansına](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) veya yamaçları, engelleri ve tehlikeleri de dikkate alan başka bir kaynağa bakın.  
+Her parkur zorluk türü için daha spesifik rehberlik için [OSM pist zorluk referansına](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) veya yamaçları, engelleri ve tehlikeleri de dikkate alan başka bir kaynağa bakın. Kış ve Kayak harita stili'nde, belirli haritalanmış tehlikeler (örneğin, hazard=avalanche olarak etiketlenmiş çığ riski olan alanlar) haritada tehlike POI'si olarak gösterilebilir ve pist zorluğu ile birlikte dikkate alınmalıdır.
 :::
 
 

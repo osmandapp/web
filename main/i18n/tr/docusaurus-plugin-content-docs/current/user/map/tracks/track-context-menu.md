@@ -1,5 +1,5 @@
 ---
-source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  Rota Bağlam Menüsü
 ---
@@ -72,9 +72,10 @@ Bilgi paneli ayrıca aşağıdakiler hakkında bilgi sağlar:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Yolculuk sırasındaki toplam tırmanış ve iniş toplamını gösterir.
 - *<Translate android="true" ids="altitude_range"/>*. Bir rotadaki minimum ve maksimum yüksekliği gösterir.  
 
-:::note
-Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani noktalarında [`zaman` ve `hız`](../../plugins/trip-recording#recorded-gpx-file) etiketleri varsa), bilgi paneli ayrıca *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) veya *<Translate ios="true" ids="total_time"/>* (*iOS*) (rotanın başlangıç ve bitiş noktaları arasındaki süre), *<Translate android="true" ids="shared_string_time_moving"/>* (sürüş sırasındaki toplam süre) hakkında bilgi içerecektir.
-:::  
+Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani noktalarında [`zaman` ve `hız`](../../plugins/trip-recording#recorded-gpx-file) etiketleri varsa), bilgi paneli ayrıca *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (rotanın başlangıç ve bitiş noktaları arasındaki toplam süre) ve *<Translate android="true" ids="shared_string_time_moving"/>* (hareket halindeyken toplam süre) hakkında bilgi içerecektir.
+
+**Not:** Kaydedilmiş rotalar için Süre, zaman damgalarına dayalı gerçek seyahat süresini gösterir. Planlanmış rotalar için Süre, rota uzunluğundan ve seçilen navigasyon profilinin ortalama hızından hesaplanan tahmini süreyi gösterir, eğer tüm rota bir profil kullanıyorsa ve düz çizgi segmentleri içermiyorsa.
+
 
 ### Rota Eylemleri {#track-actions}
 
@@ -133,7 +134,7 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Seçilen rotayı GPX formatında dışa aktarır.
+- **<Translate android="true" ids="shared_string_share"/>** – Seçilen rotayı GPX formatında sistem Paylaş menüsü aracılığıyla dışa aktarır.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - Seçilen rotayı OpenStreetMap'e [yükler](../../plugins/osm-editing.md#upload-gps-track).
 
 <br/>
@@ -247,7 +248,7 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
 
 OsmAnd'daki *Etkinlik* özelliği, daha fazla analiz ve klasörlerde düzenleme için kaydedilen GPX rotalarını belirli etkinliklerle etiketlemenize olanak tanır.
 
-- [GPX rotaları için etkinlik etiketleri](../../plugins/trip-recording.md#recording-settings). Bir GPX rotası kaydederken, bir etkinlik türü atayabilirsiniz. Bu etkinlik etiketleme, rotaları başlangıçta kategorize etmenize yardımcı olur.
+- [GPX rotaları için etkinlik etiketleri](../../plugins/trip-recording.md#recording-settings). Kaydedilen rotalar, seçilen profile dayalı olarak otomatik olarak bir etkinlik türü alır, bu da daha sonra kategorize etmenize ve filtrelemenize yardımcı olur. Gerekirse etkinliği manuel olarak değiştirebilirsiniz.
 - [Etkinlik filtresi](../../personal/tracks/smart-folder.md#search-filter). Kaydedilen GPX rotalarını etkinliğe göre filtreleyebilirsiniz, bu da bisiklet veya yürüyüş rotaları gibi belirli kayıt türlerini bulmaya odaklanmanızı sağlar.
 - [Etkinlik türlerini yönetin](../../personal/tracks/manage-tracks.md#selection-mode). Yerlerim menüsünün Rotalar sekmesindeki seçim modunu kullanarak seçilen klasörler veya rotalar için etkinlik türünü değiştirebilirsiniz.
 - **Etkinlik listesi**. Etkinlik kategorileri ve grupları OsmAnd'ın kaynaklarında tanımlanmıştır. Geliştiriciler ve katkıda bulunanlar için etkinlik listesi, mevcut etkinlik gruplarını ve türlerini detaylandıran [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json) adresinde yapılandırılmış bir formatta tutulur.
@@ -270,13 +271,13 @@ Grafikle etkileşim:
 
 <TabItem value="android" label="Android">
 
-![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ Grafikle etkileşim:
 **Genel Bakış** sekmesinde aşağıdaki parametreleri görebilirsiniz:
 
 - *<Translate android="true" ids="distance"/>*. Rotada kat edilen toplam mesafenin toplamı veya rotanın kendi uzunluğu.
-- *<Translate android="true" ids="shared_string_time_span"/>*. Rotanın başlangıç ve bitiş noktaları arasındaki zaman aralığı.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. Rotanın başlangıç ve bitiş noktaları arasındaki zaman aralığı.
 - *<Translate android="true" ids="shared_string_start_time"/>* Rotanın kaydının başladığı tam zaman.
 - *<Translate android="true" ids="shared_string_end_time"/>*. Rota kaydının bitiş zamanı.
 
@@ -464,7 +465,7 @@ Yol noktası oluşturma ekranını açmak için *Yol Noktası Ekle* düğmesine 
 
 <TabItem value="android" label="Android">
 
-![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -484,7 +485,7 @@ Yol noktası oluşturma ekranını açmak için *Yol Noktası Ekle* düğmesine 
 - **<Translate android="true" ids="shared_string_rename"/>** - Grubun adını değiştirin.
 - **<Translate android="true" ids="change_default_appearance"/>** - Bir yol noktası grubunun görüntüleme seçeneklerini değiştirin.
 - **<Translate android="true" ids="add_group_to_markers"/>** veya **Kaldır** (*Yalnızca Android*) - Grup yol noktalarını [Harita işaretçileri](../../personal/markers.md) listesine taşıyın.
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Yalnızca Android*) - Grup yol noktalarını [Favorilere](../../personal/favorites.md) taşıyın.
+- **<Translate android="true" ids="add_to_favorites"/>** (*Yalnızca Android*) – Seçilen Yol Noktası grubunu [Favorilere](../../personal/favorites.md) kopyalamanıza olanak tanır. İki seçenekten birini seçebilirsiniz: ***<Translate android="true" ids="copy_as_new_folder"/>*** veya ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Yalnızca Android*) - Yol noktaları arasında bir rota oluşturur. İlk ve son noktalar rotanın başlangıcı ve bitişi olur, diğerleri ara noktalara dönüştürülür.
 - **<Translate android="true" ids="shared_string_delete"/>** - Bir yol noktası grubunu silin.
 
@@ -643,13 +644,13 @@ Bu seçeneği açmak için:
 
 ### Mesafeye Göre Böl {#split-by-distance}
 
-![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Bu seçenek, bir rotayı sabit mesafe aralıklarına bölmenize ve her segment için ayrıntılı istatistikleri analiz etmenize olanak tanır. Mevcut mesafe aralıkları ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** ve ***10 km***'dir. Bir mesafe aralığı seçtikten sonra, rota segment listesi olarak görüntülenir. 
 
 Her segment için görüntüleyebilirsiniz:
 - kat edilen mesafe.
-- zaman aralığı.
+- süre.
 - ortalama, minimum ve maksimum yükseklik.
 - tırmanış ve iniş.
 - hareket süresi.
@@ -660,14 +661,14 @@ Listede herhangi bir segmente dokunduğunuzda, harita görünümü rotanın aral
 
 ### Zamana Göre Böl {#split-by-time}
 
-![Track split by time tab](@site/static/img/personal/tracks/split_by_3_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 **Zamana Göre Böl** seçeneği, bir rotayı eşit süre aralıklarına böler. ***1 dk***, ***2 dk***, ***2,5 dk***, ***5 dk***, ***10 dk***, ***15 dk***, ***30 dk*** ve ***60 dk*** arasında seçim yapabilirsiniz. Aralıkların görüntülenme şekli, her segment için sağlanan istatistikler ve haritada görünme şekli [Mesafeye Göre Böl](#split-by-distance) bölümündeki gibidir.
 
 
 ### Yokuş Yukarı/Yokuş Aşağıya Göre Böl {#split-by-uphill-downhill}
 
-![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 Bu seçenek, bir rotayı yükseklik değişikliklerine göre segmentlere böler. Her aralık ***yokuş yukarı***, ***yokuş aşağı*** veya ***düz*** olarak sınıflandırılır. Aralıkların görüntülenme şekli, her segment için sağlanan istatistikler ve haritada görünme şekli de [Mesafeye Göre Böl](#split-by-distance) bölümündeki gibidir.
 
@@ -727,7 +728,7 @@ Bu menüde, filtreleri kullanarak *Düzeltme*, *Hız*, *Yükseklik* veya *GPS ha
 
 ### İstatistikler {#statistics}
 
-![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 İstatistikler sekmesi, **değiştirilmiş** rota hakkındaki bilgileri, yani filtrelenmiş değerler olmadan rotayı görüntüler. İstatistik bloklarında ve grafik verilerinde görüntülenir.
   

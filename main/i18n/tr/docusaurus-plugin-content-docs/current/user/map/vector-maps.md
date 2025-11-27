@@ -1,5 +1,5 @@
 ---
-source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
+source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
 sidebar_position: 5
 title: Vektör Haritalar (Harita Stilleri)
 ---
@@ -19,6 +19,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 Vektör haritalar, OsmAnd için varsayılan harita veri kaynağı olarak kullanılmak üzere tasarlanmıştır, bu nedenle **bunları cihazınıza indirmeniz gerekir**. Vektör haritalar, bisiklet, yürüyüş, araba veya kar motosikleti ile sürüş ve diğerleri gibi farklı aktiviteler için çok sayıda harita stilini destekler.  
 
+Her harita stili, belirli nesneleri vurgulamak veya gizlemek ve gündüz ve gece modları arasında geçiş yapmak için özelleştirilebilir. Vektör harita verileri, vektör verileriyle artırılabilir ve varsayılan Harita stilinde, örneğin *Kontur çizgisi* bilgileri gibi görüntülenebilir. Gerekli bilgileri göstermek için *kendi OsmAnd harita stilinizi oluşturabilirsiniz*.
+
 Vektör haritalar, yollar, binalar, noktalar ve poligonlar gibi mekansal verileri, ikili formatta saklanan matematiksel geometri kullanarak temsil eder. Her öğe (düğüm, çizgi veya poligon), koordinatlarla tanımlanır ve yakınlaştırma seviyesine ve harita stiline göre dinamik olarak işlenir.
 
 Vektör verileri sabit görüntüler olarak saklanmadığından, rengi, çizgi genişliği, şeffaflığı veya deseni dahil görünümü kolayca değiştirilebilir. Bu yaklaşım, verimli işleme, düşük bellek kullanımı ve kalite kaybı olmadan herhangi bir yakınlaştırma seviyesinde yumuşak ölçeklendirme sağlar.
@@ -26,9 +28,6 @@ Vektör verileri sabit görüntüler olarak saklanmadığından, rengi, çizgi g
 :::info note
 Çok küçük poligonlar harita verisi oluşturulması sırasında basitleştirilebilir veya bozulabilir. Yaklaşık bir metrekareden küçük alana sahip nesneler görüntülenmeyebilir. Doğru görselleştirme için, küçük özellikler poligonlar yerine tek düğümler olarak haritalanmalıdır.
 :::
-
-
-Her harita stili, belirli nesneleri vurgulamak veya gizlemek ve gündüz ve gece modları arasında geçiş yapmak için özelleştirilebilir. Vektör harita verileri, vektör verileriyle artırılabilir ve varsayılan Harita stilinde, örneğin *Kontur çizgisi* bilgileri gibi görüntülenebilir. Gerekli bilgileri göstermek için *kendi OsmAnd harita stilinizi oluşturabilirsiniz*.
 
 
 ## Kullanım Durumları {#use-cases}
@@ -49,7 +48,7 @@ OsmAnd size varsayılan olarak uyan birçok harita stili ve veri katmanı sunar.
 
 ![OsmAnd harita stili](@site/static/img/map/map-style-osmand-with-routes.png)  
 
-OsmAnd'ın standart harita oluşturma stili, detay ve sadelik arasında bir denge kurarak şehir ve dış mekan keşifleri için idealdir. Haritaları daha net hale getirerek görsel karmaşayı basitleştirirken, sokaklar, binalar ve ulaşım durakları gibi şehir özelliklerini detaylandırır.  
+OsmAnd'ın standart harita oluşturma stili, detay ve sadelik arasında bir denge kurarak şehir ve dış mekan keşifleri için idealdir. Sokaklar, binalar ve ulaşım durakları gibi şehir özelliklerini detaylandırırken, haritaları daha net hale getirerek görsel karmaşayı basitleştirir.  
 
 Temel faydaları arasında rota haritalama, yüzey kalitesi, erişim kısıtlamaları, yol işaretleri, SAC ölçekli patika renderları, spor tesisleri ve kontur çizgileri gibi topografik detaylar bulunur.
 
@@ -58,7 +57,7 @@ Temel faydaları arasında rota haritalama, yüzey kalitesi, erişim kısıtlama
 
 ![Gezi görünümü harita stili](@site/static/img/map/map-style-touring.png)
 
-Yüksek kontrastlı ve maksimum detaylı gezi stili. Mümkün olduğunca fazla detay, özellikle yollar, patikalar ve diğer seyahat yolları gösterilirken, varsayılan OsmAnd stilinin tüm seçeneklerini içerir. Bir *gezi atlasında* yol türlerinin net ayrımı. Gündüz, gece ve dış mekan kullanımı için uygundur.
+Yüksek kontrastlı ve maksimum detaylı gezi stili. Varsayılan OsmAnd stilinin tüm seçeneklerini içerirken, mümkün olduğunca fazla detay, özellikle yollar, patikalar ve diğer seyahat yolları gösterir. Bir *gezi atlasında* yol türlerinin net ayrımı. Gündüz, gece ve dış mekan kullanımı için uygundur.
 
 ### UniRS ve LightRS {#unirs-and-lightrs}
 
@@ -256,7 +255,7 @@ Android'de arşivlenmiş haritalar **Turuncu** renkte gösterilir. iOS'ta günce
 Aşağıdaki seçenekleri yapılandırabilirsiniz:
 - **Yakınlaştırma seviyeleri:** ızgaranın görünür olduğu minimum ve maksimum yakınlaştırma seviyelerini (2 - 22) ayarlayın.
 - **Etiket konumu:** ızgara etiketleri için *Kenarlar* (varsayılan) veya *Merkez* arasında seçim yapın.
-- **Izgara rengi:** Gündüz/Gece modu için ayrı ayrı mevcuttur. Izgara rengini özelleştirmek ücretli bir özelliktir.
+- **Izgara rengi:** Gündüz/Gece modu için ayrı ayrı mevcuttur. Izgara rengini özelleştirmek [ücretli bir özelliktir](https://osmand.net/docs/user/purchases/) ve Maps+ (uygulama içi satın alma veya abonelik) ile OsmAnd+ 'ta kullanılabilir.
 - **Koordinat formatı:** mevcut birkaç formattan birini seçin (aşağıdaki listeye bakın).
 
 
@@ -556,7 +555,7 @@ Bu ayar, haritanın büyütmesini değiştirmeye yardımcı olur. Raster ve vekt
 
 ### Harita Dili {#map-language}
 
-**Harita dili** seçeneği, OsmAnd haritasındaki adların yazımını 7-20 arası yakınlaştırma seviyeleri için yapılandırır. 2-6 arası yakınlaştırma seviyeleri için adlar, sistem ayarları menüsünde OsmAnd için ayarlanan dilde görüntülenir (bkz. *[Uygulama dili nasıl değiştirilir](../start-with/first-steps.md#how-to-change-app-language)* bölümü).  
+**Harita dili** seçeneği, OsmAnd haritasındaki adların yazımını 7-20 arası yakınlaştırma seviyeleri dahil için yapılandırır. 2-6 arası yakınlaştırma seviyeleri için adlar, sistem ayarları menüsünde OsmAnd için ayarlanan dilde görüntülenir (bkz. *[Uygulama dili nasıl değiştirilir](../start-with/first-steps.md#how-to-change-app-language)* bölümü).  
 
 Haritadaki adlar OSM topluluğu tarafından gerekli dile çevrilmemişse, [transliterasyonlu adları](https://en.wikipedia.org/wiki/Transliteration) kullanabilirsiniz: *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) veya *<Translate ios="true" ids="translit_names"/>* (iOS) anahtarı.  
 
@@ -566,13 +565,13 @@ Haritadaki adlar OSM topluluğu tarafından gerekli dile çevrilmemişse, [trans
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
-- **Yerel adlar**  
+- **Yerel adlar**   
     ![Harita dili yerel adlar](@site/static/img/map/map-language-local-names_2.png)
 
-- **Tercih edilen dil** (ukraynaca)
+- **Tercih edilen dil** (ukraynaca)   
     ![Harita dili ukraynaca](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Eksikse Latin adını kullan**  
+- **Eksikse Latin adını kullan**   
     ![Harita dili transliterasyon](@site/static/img/map/map-language-transliterate_2.png)
 
 
@@ -582,16 +581,16 @@ Haritadaki adlar OSM topluluğu tarafından gerekli dile çevrilmemişse, [trans
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
-- **Yerel adlar**  
+- **Yerel adlar**    
     ![Harita dili yerel adlar](@site/static/img/map/map-language-local-names_2.png)
 
-- **Tercih edilen dil** (ukraynaca)
+- **Tercih edilen dil** (ukraynaca)  
     ![Harita dili ukraynaca](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Yerel adları göster**  (yerel ad farklıysa 2. etiketi ekler)
+- **Yerel adları göster**  (yerel ad farklıysa 2. etiketi ekler)  
     ![Harita dili yerel](@site/static/img/map/map-language-show-local_2.png)
 
-- **Adları translitere et**  
+- **Adları translitere et**    
     ![Harita dili transliterasyon](@site/static/img/map/map-language-transliterate_2.png)
 
 

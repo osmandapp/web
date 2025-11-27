@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title:  Kilitlenme Günlükleri
 ---
@@ -37,7 +37,7 @@ Cihaz konumu, arama sorguları, rota oluşturma sonuçları ve navigasyon verile
 2. Açılır menüde Gmail'i veya tercih ettiğiniz e-posta uygulamasını seçin. E-posta otomatik olarak oluşturulacaktır.
 3. *Gönder* düğmesine dokunun.
 
-![Android'den kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Android'den kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Android'den kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Android'den kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### iOS Cihazlardan Günlük Gönderme {#send-logs-from-ios-devices}
@@ -46,7 +46,7 @@ Cihaz konumu, arama sorguları, rota oluşturma sonuçları ve navigasyon verile
 
     - Otomatik olarak.
         - OsmAnd uygulaması *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)* bölümüne gidin.  
-        - Ardından, e-posta uygulamanızı kullanarak günlükleri `crash@osmand.net` adresine göndermenizi öneririz.
+        - Ardından, e-posta uygulamanızı kullanarak günlükleri `support@osmand.net` adresine göndermenizi öneririz.
 
     - Manuel olarak.
         - iOS sistem uygulaması *Dosyalar → iPhone'umda (veya iPad'imde) → OsmAnd Maps → Logs* bölümüne gidin.
@@ -56,7 +56,7 @@ Cihaz konumu, arama sorguları, rota oluşturma sonuçları ve navigasyon verile
 2. Günlüklerin ve yetkilendirme verilerinin [IPS formatını](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) gönderin:
     - iOS 15 veya daha eski sürümlerde: *Ayarlar → Analiz → Analiz Verileri → OsmAnd Maps ips-format dosyası*.
     - iOS 16 veya daha yeni sürümlerde:  *Ayarlar → Gizlilik ve Güvenlik → Analiz ve İyileştirmeler → Analiz Verileri → OsmAnd Maps ips-format dosyası*.
-    - Ardından, e-posta uygulamanızı kullanarak günlükleri `crash@osmand.net` adresine göndermenizi öneririz.
+    - Ardından, e-posta uygulamanızı kullanarak günlükleri `support@osmand.net` adresine göndermenizi öneririz.
 
     ![iOS kilitlenme günlükleri gönder 1](@site/static/img/troubleshooting/send_log_ios.png)  ![iOS kilitlenme günlükleri gönder 2](@site/static/img/troubleshooting/log_1_ios.png)
 
@@ -82,7 +82,7 @@ Tombstone dosyalarını dışa aktarmak için Android sistem ayarlarını kullan
     - *Hata raporu al* seçeneğine dokunun.
     - Hata raporunun türünü seçin ve *Rapor* öğesine dokunun.
   
-Hata raporu hazırlandıktan sonra bir bildirim alacaksınız. Raporu cihazınıza indirmek için bildirim kutusuna dokunun. Dosyayı açın ve tombstone dosyalarını OsmAnd geliştiriciler ekibine gönderin (e-posta: `crash@osmand.net`).
+Hata raporu hazırlandıktan sonra bir bildirim alacaksınız. Raporu cihazınıza indirmek için bildirim kutusuna dokunun. Dosyayı açın ve tombstone dosyalarını OsmAnd geliştiriciler ekibine gönderin (e-posta: `support@osmand.net`).
 
 ![Android'den kilitlenme günlükleri gönder 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Android'den kilitlenme günlükleri gönder 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
@@ -106,7 +106,7 @@ Ardından, cihazınızı USB aracılığıyla iş istasyonunuza bağlayın. İlk
 
 #### Hata Raporu Oluştur {#generate-bug-report}
 
-1. Bir komut satırı terminali açın. Mac veya Linux'ta *Terminal* uygulamasını, Windows'ta ise *Komut İstemi*'ni kullanın.
+1. Bir komut satırı terminali açın. Mac veya Linux'ta *Terminal* uygulamasını, Windows'ta ise *Komut Satırı*'nı kullanın.
 2. *cd* komutunu kullanarak ADB'nin bulunduğu platform-tools klasörüne gidin (örneğin, 'cd /Users/Kullanıcıadı/İndirilenler/Araçlar').
 3. Hata raporunu oluşturun:
    - Mac'te: ```adb bugreport```
@@ -114,7 +114,7 @@ Ardından, cihazınızı USB aracılığıyla iş istasyonunuza bağlayın. İlk
 4. Raporun oluşturulması için birkaç dakika bekleyin. Ortaya çıkan dosya platform araçları klasörüne kaydedilecektir.
 5. Dosyayı açın.
 6. *tombstone_00*, *tombstone_01* ve benzeri dosyaları içeren *tombstones* klasörünü bulun.
-7. Tombstone dosyalarını `crash@osmand.net` adresine gönderin.
+7. Tombstone dosyalarını `support@osmand.net` adresine gönderin.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Cihazınıza root erişimi ile doğrudan */data/tombstones* klasörünü açabilirsiniz.  
 
-- Android Studio'da, *Cihaz Dosya Gezgini*'ne gitmek için emülatörü kullanın ve /data/tombstones klasörünü bulun. İçinde *tombstone_00*, *tombstone_01* ve diğerleri gibi adlandırılmış dosyalar bulacaksınız. Bu dosyaları indirin ve `crash@osmand.net` adresine gönderin.
+- Android Studio'da, *Cihaz Dosya Gezgini*'ne gitmek için emülatörü kullanın ve /data/tombstones klasörünü bulun. İçinde *tombstone_00*, *tombstone_01* ve diğerleri gibi adlandırılmış dosyalar bulacaksınız. Bu dosyaları indirin ve `support@osmand.net` adresine gönderin.
 
 Hata raporları hakkında daha fazla ayrıntı için [Android belgelerine](https://developer.android.com/studio/debug/bug-report) bakın.

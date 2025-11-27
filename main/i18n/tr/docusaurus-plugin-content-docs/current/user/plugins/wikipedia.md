@@ -1,8 +1,9 @@
 ---
-source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
+source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
 sidebar_position: 18
 title: Wikipedia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -32,7 +32,7 @@ Kısa bilgiler Wikipedia İÇN'leri (İÇN, "[ilgi çekici nokta](../map/point-l
 
 [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia), wiki tabanlı bir düzenleme sistemi kullanan gönüllü editörlerden oluşan bir topluluk tarafından oluşturulan ve sürdürülen ücretsiz, çok dilli, açık işbirlikçi bir çevrimiçi ansiklopedidir.
 
-&nbsp;
+&nbsp;  
 ![Wikipedia](@site/static/img/map/map-wikipedia.png)
 
 
@@ -164,25 +164,34 @@ Arama düğmesine dokunduğunuzda, tüm metni ve/veya belirli bir kategoriyi [ar
 
 ## Wikipedia Makalesi {#wikipedia-article}
 
-Wikipedia makalesini açmak için:
-
-1. Belirtilen bir profil için [Wikipedia İÇN katmanını](../map/point-layers-on-map.md#-wikipedia) etkinleştirin.
-2. Haritadaki İÇN'ye dokunun.
-3. Bir İÇN'nin [bağlam menüsünde](../map/map-context-menu.md) *Ayrıntılar*'a dokunun (veya sadece *bağlam menüsünü* yukarı çekin) seçilen Wikipedia makalesinin özetini görüntülemek için.
-4. Bu metne dokunursanız (iOS sürümü için), çevrimdışı Wikipedia makalesine yönlendirileceksiniz.
-5. Wikipedia makalesinin tam sürümünü açmak için *Makaleyi oku* veya *Tam makaleyi oku* düğmesini kullanın.
-
-
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![İngilizce Fransızca Wikipedia İÇN'si](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+Wikipedia makalesini açmak için:
+
+1. Belirtilen bir profil için [Wikipedia İÇN katmanını](../map/point-layers-on-map.md#-wikipedia) etkinleştirin.
+2. Haritadaki İÇN'ye dokunun.
+3. Bir İÇN'nin [bağlam menüsünde](../map/map-context-menu.md) *Ayrıntılar*'a dokunun (veya sadece *bağlam menüsünü* yukarı çekin) seçilen [Wikipedia makalesinin](../map/map-context-menu.md#article-description) özetini görüntülemek için.
+4. Wikipedia makalesinin tam sürümünü açmak için *Tam makaleyi oku* düğmesini kullanın.
+5. Wikipedia verileri indirilmemişse, *Wikipedia'da oku* düğmesi görünür.
+6. Bu düğmeye dokunmak, aşağıdaki seçeneklerle bir iletişim kutusu açar:
+- Wikipedia'yı İndir ve Tarayıcıda Aç (ücretli sürüm).
+- Wikipedia'yı Çevrimdışı Oku ve Tarayıcıda Aç (ücretsiz sürüm).
+
+![İngilizce Fransızca Wikipedia İÇN'si](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Wikipedia makalesini açmak için:
+
+1. Belirtilen bir profil için [Wikipedia İÇN katmanını](../map/point-layers-on-map.md#-wikipedia) etkinleştirin.
+2. Haritadaki İÇN'ye dokunun.
+3. Bir İÇN'nin [bağlam menüsünde](../map/map-context-menu.md) *Ayrıntılar*'a dokunun (veya sadece *bağlam menüsünü* yukarı çekin) seçilen [Wikipedia makalesinin](../map/map-context-menu.md#article-description) özetini görüntülemek için.
+4. Bu metne dokunursanız, çevrimdışı Wikipedia makalesine yönlendirileceksiniz.
+5. Wikipedia makalesinin tam sürümünü açmak için *Makaleyi oku* düğmesini kullanın.
 
 ![iOS'ta İngilizce Fransızca Wikipedia İÇN'si](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
@@ -193,7 +202,7 @@ Wikipedia makalesini açmak için:
 
 ## Wikipedia Ayarları {#wikipedia-settings}
 
-[Makaleleri](#wikipedia-article) okumak için tercih ettiğiniz [dili(-lerini) ayarlayabilir](#set-preferred-language) ve ayrıca her [profil](../personal/profiles.md) için [görsel indirme seçeneklerini](#download-images) yapılandırabilirsiniz.
+[Makaleleri](#wikipedia-article) okumak için tercih ettiğiniz [dil(-dil)](#set-preferred-language)i ayarlayabilir ve ayrıca her [profil](../personal/profiles.md) için [görsel indirme seçeneklerini](#download-images) yapılandırabilirsiniz.
 
 ### Tercih Edilen Dili Ayarla {#set-preferred-language}
 
@@ -202,7 +211,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
 2. Gerekli profili seçin ve *<Translate android="true" ids="shared_string_show"/>* bölümünde Android için *<Translate android="true" ids="poi_osmwiki"/>* / iOS için *<Translate ios="true" ids="download_wikipedia_maps"/>* seçeneğini seçin.
 3. *<Translate android="true" ids="shared_string_all_languages"/>* seçeneğini devre dışı bırakın.
-4. Açılan listeden belirli dili(-leri) seçin.
+4. Açılan listeden belirli dil(-dil)leri seçin.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -223,7 +232,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 :::note
 **iOS** sürümünde, Wikipedia makaleleri için tercih edilen dili aşağıdaki yollarla da ayarlayabilirsiniz:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
 
 :::
@@ -238,7 +247,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 
 ![Belirli bir makale için dilleri değiştirme](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -262,7 +271,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 
 ![Görselleri değiştirme](@site/static/img/plugins/wikipedia/images_android.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -274,7 +283,7 @@ OsmAnd uygulamasının **Android** ve **iOS** sürümlerinde, *Haritayı Yapıla
 
 Uygulamanın **iOS** sürümünde, görsel indirme seçeneklerine *Wikipedia eklenti ayarları* aracılığıyla da erişebilirsiniz:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
+- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
 ![Görselleri değiştirme](@site/static/img/plugins/wikipedia/images_menu_ios.png)

@@ -1,5 +1,5 @@
 ---
-source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
+source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
 sidebar_position: 10
 title:  İçe / Dışa Aktar
 ---
@@ -91,6 +91,16 @@ Yapılandırdığınız ve oluşturduğunuz tüm veriler ***Dışa Aktar menüs�
 
 - *Bazı öğeler zaten mevcut*. Bu özelliği hem dosyaları kaydetmek hem de hepsini değiştirmek için kullanabilirsiniz.
 - *Yeniden başlatma*. Dosyaları içe aktardıktan sonra uygulamanın yeniden başlatılması gerekir.
+
+Desteklenen içe aktarma dosya türleri:
+- [Rotalar, güzergahlar](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoriler](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML ve KMZ dosyaları GPX formatına dönüştürülerek içe aktarılır.
+- [OsmAnd vektör haritaları](https://osmand.net/docs/user/map/vector-maps): `.obf`.
+- [Çevrimiçi harita karoları](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Yedeklemeler & profiller](#export): `.osf`.
+- [Yükseklik haritaları / 3D veriler](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Diğer](color-palette-schemes.md): `.txt`.
+
+Tüm desteklenen formatların teknik bir genel bakış için, [OsmAnd Dosya Formatları](https://www.osmand.net/docs/technical/osmand-file-formats/) adresine bakın.
 
 
 ### OsmAnd Cloud {#osmand-cloud}

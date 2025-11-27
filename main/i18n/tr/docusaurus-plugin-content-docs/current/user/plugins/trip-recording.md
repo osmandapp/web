@@ -1,8 +1,9 @@
 ---
-source-hash: 7576748af3fca36da2e3db2fe22a613cead6ff3a3cb42002f475c4e8a00cc8f1
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  Gezi Kaydı
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
-**Gezi Kaydı eklentisi**, rotalarınızı, hareketlerinizi ve antrenmanlarınızı kaydetmek için önemli bir araçtır. Bu özellik, yalnızca gezilerinizi kaydetmenize değil, aynı zamanda parkurlarınızı kolayca yeniden kullanmanıza, değiştirmenize, güncellemenize ve başkalarıyla paylaşmanıza da olanak tanır.
+**Gezi Kaydı eklentisi**, rotalarınızı, hareketlerinizi ve antrenmanlarınızı kaydetmek için önemli bir araçtır. Bu özellik, yalnızca gezilerinizi kaydetmenize değil, aynı zamanda parkurlarınızı kolayca yeniden kullanmanıza, değiştirmenize, güncellemenize ve başkalarıyla paylaşmanıza da olanak tanır.  
 
 *Gezi Kaydı eklentisi* ile yeni parkurlar oluşturabilir, kaydedilenleri doğrudan haritada görüntüleyebilir ve mevcut kayıtları yönetebilirsiniz. Hız, yükseklik değişiklikleri, arazi detayları ve harici sensörlerden gelen veriler gibi gezileriniz hakkında değerli bilgiler sunar. Eklenti, gezinizden sonra ayrıntılı analiz ve paylaşım için rotanızı kaydeder.
 
@@ -42,8 +42,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Parkurları kaydetmeye başlamak için aşağıdaki ayarları yapmanız gerekir:
 
-1. **Gezi kaydı eklentisini** [etkinleştirin](../plugins/index.md#enable--disable).
-2. Gerekli [profil](../personal/profiles.md) için **kayıt ayarlarını** [yapılandırın](#recording-settings).
+1. **Gezi kaydı eklentisini** [etkinleştirin](../plugins/index.md#enable--disable).  
+2. Gerekli [profil](../personal/profiles.md) için **kayıt ayarlarını** [yapılandırın](#recording-settings).  
 3. Ekrana **Gezi kaydı widget'ları** [ekleyin](#widgets) (isteğe bağlı).
 4. Haritadaki parkurları [yönetin](../map/tracks/appearance.md) (isteğe bağlı).
 
@@ -63,9 +63,9 @@ OsmAnd'daki Gezi Kaydı eklentisi ile çeşitli uygun seçenekleri kullanarak pa
 - *Yalnızca Android*:
     - *Ana <Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*'e gidin.
 
-    - [Sistem bildirimi](#notifications) — Cihazınızın bildirim alanında kullanın.
+    - [Sistem bildirimi](#notifications) — Cihazınızın bildirim alanında kullanın .
 
-    - [Uygulama başlatıcısı](#launcher-android) — Kaydı başlatmak için kullanın.
+    - [Uygulama başlatıcısı](#launcher-android) — Kaydı başlatmak için kullanın .  
 
 **Öneriler:**
 
@@ -84,7 +84,7 @@ OsmAnd'daki Gezi Kaydı eklentisi ile çeşitli uygun seçenekleri kullanarak pa
 
 Başlat iletişim kutusu, Başlat iletişim kutusunun ayarlar bölümünde **<Translate android="true" ids="show_start_dialog"/>** seçeneği etkinleştirilirse açılır.
 
-![Android'de kaydı başlat](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)
+![Android'de kaydı başlat](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
 </TabItem>
 
@@ -143,13 +143,13 @@ Parkur kaydı etkin durumdayken, kaydın devam ettiğini gösteren OsmAnd uygula
 
 <TabItem value="android" label="Android">
 
-![genel bakış](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png) ![genel bakış](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![genel bakış](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![genel bakış](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS'ta kaydı bitir](@site/static/img/plugins/trip-recording/start_rec_ios_3.png) ![iOS'ta kaydı bitir](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![iOS'ta kaydı bitir](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![iOS'ta kaydı bitir](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -157,7 +157,7 @@ Parkur kaydı etkin durumdayken, kaydın devam ettiğini gösteren OsmAnd uygula
 
 OsmAnd'da, **Android** ve **iOS** sürümleri parkur kayıt arayüzünü biraz farklı şekilde ele alır. Android'de, *Parkur kaydı* bağlamı için özel bir menü bulacaksınız, iOS'ta ise bu, *Şu anda kaydedilen parkur* bağlam menüsüne entegre edilmiştir.
 
-Bir parkuru kaydederken, yolculuğunuz hakkında gerçek zamanlı görsel veriler sağlayan dinamik grafikler oluşturulur. Bu grafikler, yakınlaştırma seviyenize bağlı olarak tüm rota veya yalnızca seçilen bir segment için bilgileri yansıtabilir.
+Bir parkuru kaydederken, yolculuğunuz hakkında gerçek zamanlı görsel veriler sağlayan dinamik grafikler oluşturulur. Bu grafikler, yakınlaştırma seviyenize bağlı olarak tüm rota veya yalnızca seçilen bir segment için bilgileri yansıtabilir.  
 Bunlarda bulabilecekleriniz:
 
 - **Veri değerleri**. Grafiğin sağ tarafında, parkurun görünür bölümü için ***en yüksek***, ***en düşük*** ve ***ortalama*** değerler bulunur.
@@ -166,7 +166,7 @@ Bunlarda bulabilecekleriniz:
     - ***Android***. Grafikteki ***Y ekseni*** için, *Rakım*, *Eğim*, *Hız* ve [harici sensör bilgileri](../plugins/external-sensors.md#trip-recording) gibi tüm mevcut verilerden *iki parametreye kadar* seçebilirsiniz. ***X ekseni*** için ise *Mesafe*, *Süre* veya *Günün Saati* görüntülemeyi seçin.
     - ***iOS***. Parametreler *Genel Bakış*, *Rakım* ve *Hız* sekmelerinde, Y ekseni için uygun değerler ve X ekseni için *Mesafe* ile düzenlenmiştir.
 
-- **İstatistik**. Android için, grafik ayarlarından bağımsız olarak sabit bir istatistik veri kümesi görüntüler: *Mesafe*, *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Ortalama hız*. iOS için, Genel Bakış, Tutum ve Hız sekmelerinin her birinde farklı bir veri kümesi bulunur.
+- **İstatistik**. Android için, grafik ayarlarından bağımsız olarak sabit bir istatistik veri kümesi görüntüler: *Mesafe*, *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Ortalama hız*. iOS için, Genel Bakış, Rakım ve Hız sekmelerinin her birinde farklı bir veri kümesi bulunur.
 
 Daha ayrıntılı bir görünüm için grafiği **ölçeklendirebilirsiniz**:
 
@@ -175,12 +175,12 @@ Daha ayrıntılı bir görünüm için grafiği **ölçeklendirebilirsiniz**:
 
 | |
 | ------------- |
-|**Genel Bakış** sekmesi iOS (Android için, Y ekseni parametreleri *Rakım*, *Hız* ve X ekseni parametresi *Mesafe*'dir). Bu sekme, parkur boyunca hız ve rakım değişikliklerini gösteren bir grafik ve anahtar parkur ayrıntılarını görüntüler. iOS için parkur verileri: *Mesafe*, *Süre*, *Başlangıç Saati* ve *Bitiş Saati*. Bunun Android ve iOS sürümlerinde nasıl görüntülendiğini aşağıda görebilirsiniz. |
-| ![veri](@site/static/img/plugins/trip-recording/graph_overview_andr.png) ![veri](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+|**Genel Bakış** sekmesi iOS (Android için, Y ekseni parametreleri *Rakım*, *Hız* ve X ekseni parametresi *Mesafe*'dir). Bu sekme, parkur boyunca hız ve rakım değişikliklerini gösteren bir grafik ve anahtar parkur ayrıntılarını görüntüler. iOS için parkur verileri: *Mesafe*, *Süre*, *Başlangıç Saati* ve *Bitiş Saati*. Bunu Android ve iOS sürümlerinde nasıl görüntülendiğini aşağıda görebilirsiniz. |
+| ![veri](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![veri](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Rakım** sekmesi iOS (Android için, Y ekseni parametreleri *Rakım*, *Eğim* ve X ekseni parametresi *Mesafe*'dir). Bu sekme, kaydedilen parkurunuzun yükseklik profiline odaklanarak rakım değişiklikleri ve arazi eğimleri hakkında bilgi sağlar. iOS için anahtar metrikler şunları içerir: *Ortalama Rakım*, *Rakım Aralığı*, *Yokuş yukarı* ve *Yokuş aşağı*. Aşağıdaki grafikler, Android ve iOS arayüzleri arasındaki farklılıkları göstermektedir. |
-| ![veri](@site/static/img/plugins/trip-recording/graph_altitude_andr.png) ![veri](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![veri](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![veri](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Hız** sekmesi iOS (Android için, Y ekseni parametresi *Hız* ve X ekseni parametresi *Mesafe*'dir). Hız sekmesi, parkur boyunca hızla ilgili verileri vurgular. iOS için, *Ortalama Hız*, *Maksimum Hız*, *Hareket Süresi* ve *Düzeltilmiş Mesafe* gibi bilgileri içerir. Aşağıdaki ekran görüntüleri, bu verilerin her iki platformda nasıl görüntülendiğini göstermektedir. |
-| ![veri](@site/static/img/plugins/trip-recording/graph_speed_andr.png) ![veri](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![veri](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![veri](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | **Android** için, mevcut Y ekseni verileri ve X ekseni değerlerinin daha fazla kombinasyonunu oluşturabilirsiniz. |
 | ![veri](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -233,22 +233,22 @@ OsmAnd, yolculuğunuzu yapılandırılmış bir [GPX dosyasına](https://en.wiki
 ![Kaydedilen bir parkurun GPX dosyası](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  -->
 
 
-| Parametre | Açıklama |
-|---|---|
+| Parametre  | Açıklama |
+|-----------------|----------------|
 | `trkpt` | **Parkur Noktası**, etkinliğiniz sırasında algılanan belirli bir coğrafi konumu temsil eder. Her parkur noktası, kaydedilen yolunuzun temelini oluşturan enlem ve boylam koordinatlarını içerir. |
-| `trkseg` | **Parkur Segmenti**, etkinlikteki duraklamalar veya duruşlar gibi kesintilerle ayrılmış ardışık parkur noktalarını bir araya getirir. Bu, tek bir kayıt içindeki sürekli hareketi boşta kalma sürelerinden ayırmaya yardımcı olur. |
-| `lat` | **Enlem**, bir noktanın Dünya yüzeyindeki kuzey-güney konumunu gösterir. Tam konumunuzu belirlemek için kullanılan koordinat çiftinin yarısıdır. |
-| `lon` | **Boylam**, bir noktanın küre üzerindeki konumunu doğru bir şekilde belirlemek için enlemi tamamlayarak doğu-batı konumunu belirtir. Enlem ve boylam birlikte, kesin coğrafi konumunuzu tanımlar. |
-| `ele` | **Yükseklik**, bir parkur noktasının deniz seviyesinden yüksekliğini metre cinsinden ölçer. Bu, yürüyüşler veya bisiklet gezileri gibi etkinlikleriniz sırasında yükseklik değişikliklerini izlemek için faydalı olabilir. |
-| `time` | **Zaman Damgası**, bir parkur noktasının kaydedildiği tam tarihi ve saati kaydeder. Bu, etkinliğinizin süresini ve zamanlamasını hassasiyetle izlemenizi sağlar. |
-| `hdop` | **Yatay Doğruluk Azaltma (HDOP)**, uyduların konumlarından kaynaklanan konumdaki potansiyel hatayı yansıtan bir GPS doğruluk ölçüsüdür. Standart HDOP'tan farklı olarak, OsmAnd GPX parkurları bu değeri metre cinsinden yatay doğruluğu temsil etmek için kullanır. Lütfen bu uygulamanın tipik HDOP standartlarından farklı olduğunu unutmayın. [Daha fazla bilgi edinin](https://github.com/osmandapp/Osmand/issues/3445). |
-| `speed` | **Hız**, hareket hızınızı saniyede metre cinsinden kaydeder. Etkinliğinizin çeşitli segmentlerindeki hızınız hakkında bilgi sağlar. |
-| `heading` | **Yön**, aracınızın veya cihazınızın önünün işaret ettiği yönü derece cinsinden gösterir. Rüzgar, akıntılar veya yol koşulları gibi dış etkenler nedeniyle farklılıklar oluşabilen hareketin gerçek yolundan farklıdır. [Yön hakkında daha fazla bilgi](https://en.wikipedia.org/wiki/Heading_(navigation)). |
-| `speed_sensor` | [Harici sensörlerden](../plugins/external-sensors.md) **Hız**, bağlı sensörlerden veri yakalar ve özellikle bisiklet sürerken daha hassas hız bilgisi sağlar. Daha fazla ayrıntı için [GPX dosya formatı belgelerine](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data) bakın. |
-| `cadence` | **Kadans**, [harici sensörler](../plugins/external-sensors.md) kullanılarak kaydedilen dakikadaki pedal devri sayısını ölçer. Bu, özellikle pedal çevirme verimliliklerini izlemeyi ve optimize etmeyi amaçlayan bisikletçiler için kullanışlıdır. [Daha fazlasını okuyun](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `power` | **Bisiklet Gücü**, pedal çevirirken üretilen gücü [harici sensörlerden](../plugins/external-sensors.md) yakalar. Performanslarını ölçmek isteyen ciddi bisikletçiler için önemli bir metriktir. [Daha fazla bilgi edinin](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `atemp` | **Hava Sıcaklığı**, etkinliğiniz sırasında ortam hava sıcaklığını [harici sensörler](../plugins/external-sensors.md) kullanılarak kaydeder. Su sıcaklığının desteklenmediğini unutmayın. [Ayrıntılar burada](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `hr` | **Kalp Atış Hızı**, bağlı [sensörlerden](../plugins/external-sensors.md) gelen verileri kullanarak dakikadaki kalp atışlarınızı izler. Bu bilgi, antrenmanlar sırasında kardiyovasküler performansınızı izlemek için hayati önem taşıyabilir. [Daha fazlasını öğrenin](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
+| `trkseg`  | **Parkur Segmenti**, etkinlikteki duraklamalar veya duruşlar gibi kesintilerle ayrılmış ardışık parkur noktalarını bir araya getirir. Bu, tek bir kayıt içindeki sürekli hareketi boşta kalma sürelerinden ayırmaya yardımcı olur.  |
+| `lat` | **Enlem**, bir noktanın Dünya yüzeyindeki kuzey-güney konumunu gösterir. Tam konumunuzu belirlemek için kullanılan koordinat çiftinin yarısıdır.   |
+| `lon` | **Boylam**, bir noktanın küre üzerindeki konumunu doğru bir şekilde belirlemek için enlemi tamamlayarak doğu-batı konumunu belirtir. Enlem ve boylam birlikte, kesin coğrafi konumunuzu tanımlar.    |
+| `ele` | **Yükseklik**, bir parkur noktasının deniz seviyesinden yüksekliğini metre cinsinden ölçer. Bu, yürüyüşler veya bisiklet gezileri gibi etkinlikleriniz sırasında yükseklik değişikliklerini izlemek için faydalı olabilir.    |
+| `time` | **Zaman Damgası**, bir parkur noktasının kaydedildiği tam tarihi ve saati kaydeder. Bu, etkinliğinizin süresini ve zamanlamasını hassasiyetle izlemenizi sağlar.    |
+| `hdop` | **Yatay Doğruluk Azaltma (HDOP)**, uyduların konumlarından kaynaklanan konumdaki potansiyel hatayı yansıtan bir GPS doğruluk ölçüsüdür. Standart HDOP'tan farklı olarak, OsmAnd GPX parkurları bu değeri metre cinsinden yatay doğruluğu temsil etmek için kullanır. Lütfen bu uygulamanın tipik HDOP standartlarından farklı olduğunu unutmayın. [Daha fazla bilgi edinin](https://github.com/osmandapp/Osmand/issues/3445).   |
+| `speed` | **Hız**, hareket hızınızı saniyede metre cinsinden kaydeder. Etkinliğinizin çeşitli segmentlerindeki hızınız hakkında bilgi sağlar.  |
+| `heading`  | **Yön**, aracınızın veya cihazınızın önünün işaret ettiği yönü derece cinsinden gösterir. Rüzgar, akıntılar veya yol koşulları gibi dış etkenler nedeniyle farklılıklar oluşabilen hareketin gerçek yolundan farklıdır. [Yön hakkında daha fazla bilgi](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
+| `speed_sensor` | [Harici sensörlerden](../plugins/external-sensors.md) **Hız**, bağlı sensörlerden veri yakalar ve özellikle bisiklet sürerken daha hassas hız bilgisi sağlar. Daha fazla ayrıntı için [GPX dosya formatı belgelerine](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data) bakın.  |
+| `cadence` | **Kadans**, [harici sensörler](../plugins/external-sensors.md) kullanılarak kaydedilen dakikadaki pedal devri sayısını ölçer. Bu, özellikle pedal çevirme verimliliklerini izlemeyi ve optimize etmeyi amaçlayan bisikletçiler için kullanışlıdır. [Daha fazlasını okuyun](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `power` | **Bisiklet Gücü**, pedal çevirirken üretilen gücü [harici sensörlerden](../plugins/external-sensors.md) yakalar. Performanslarını ölçmek isteyen ciddi bisikletçiler için önemli bir metriktir. [Daha fazla bilgi edinin](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `atemp` | **Hava Sıcaklığı**, etkinliğiniz sırasında ortam hava sıcaklığını [harici sensörler](../plugins/external-sensors.md) kullanılarak kaydeder. Su sıcaklığının desteklenmediğini unutmayın. [Ayrıntılar burada](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| `hr` | **Kalp Atış Hızı**, bağlı [sensörlerden](../plugins/external-sensors.md) gelen verileri kullanarak dakikadaki kalp atışlarınızı izler. Bu bilgi, antrenmanlar sırasında kardiyovasküler performansınızı izlemek için hayati önem taşıyabilir. [Daha fazlasını öğrenin](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 
 
 ## Kayıt Ayarları {#recording-settings}
@@ -266,15 +266,15 @@ Gezilerinizi izlemeye başlamadan önce, en iyi performans için **Gezi Kaydı e
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Android'de Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png) ![Android'de Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
+![Android'de Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Android'de Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![iOS'ta Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png) ![iOS'ta Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
+![iOS'ta Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![iOS'ta Gezi kaydını yapılandırma](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
 
 </TabItem>
 
@@ -292,7 +292,7 @@ Gezilerinizi izlemeye başlamadan önce, en iyi performans için **Gezi Kaydı e
 | **Boşluktan sonra kayıtları otomatik böl** | Kaydedilen noktalar arasındaki zaman boşluklarına göre parkurları otomatik olarak böler. <ul><li>6 dakikalık bir boşluktan sonra yeni bir segment başlar.</li><li>2 saatlik bir boşluktan sonra yeni bir parkur başlar.</li><li>Tarih değiştiğinde yeni bir dosya başlar.</li><li>Boşluklar GPS sinyal kaybı, düşük hız veya yapılandırma ayarlarından kaynaklanabilir.</li></ul><details><summary>*Açıklama*</summary>Hiçbir nokta kaydedilmediğinde bir boşluk belirlenir. Bu, konum algılanmadığı veya algılandığı ancak kaydedilmediği için olabilir. Zayıf GPS sinyalleri (kötü hava koşulları nedeniyle), veya hareket hızının yapılandırılan eşiğin altına düşmesi gibi çeşitli faktörler buna neden olabilir. Bu gibi durumlarda, cihaz konumu algılasa bile kaydetmez.<br/><br/>Kaydedilen verilerdeki bu boşluklar, aynı parkur içinde yeni bir segmentin, aynı dosya içinde yeni bir parkurun veya tek bir kayıt içinde yeni bir GPX dosyasının oluşturulmasını tetikleyebilir. Bu, tek bir başlatma/durdurma kayıt oturumu içinde yönetilir.</details> |
 | **Bağımsız günlük kaydını önle** (*Android*) | OsmAnd uygulaması kapatıldığında (son uygulamalar aracılığıyla) parkur kaydını duraklatır. Arka plan göstergesi Android bildirim panelinde görüntülenmez. |
 | **Yönü dahil et** | GPX dosyasındaki her nokta için yönü (hareket yönü) kaydeder. Yön, cihazın baktığı yöndür ve rüzgar veya kayma gibi dış etkenler nedeniyle hareket yönünden farklılık gösterebilir. |
-| **Etkinlik** | Seçenek, bir profil için bir [etkinlik türü](../map/tracks/track-context-menu.md#ttrack-activity-type) önceden seçmenize olanak tanır, bu da daha sonra tüm kaydedilen parkurlara otomatik olarak uygulanır. |
+| **Etkinlik**  | Seçenek, bir profil için bir [etkinlik türü](../map/tracks/track-context-menu.md#ttrack-activity-type) önceden seçmenize olanak tanır, bu da daha sonra tüm kaydedilen parkurlara otomatik olarak uygulanır. |
 | **Harici sensörler** <br/> *Eklentinin etkinleştirilmesi gerekir* | *<Translate android="true" ids="map_widget_ant_heart_rate"/>* veya *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* gibi [harici sensörlerden](../plugins/external-sensors.md#trip-recording) gelen veriler GPX dosyasına kaydedilir. *Mesafe* verileri Android veya iOS'ta kaydedilmez. Yalnızca [Harici Sensörler eklentisi](../plugins/external-sensors.md) etkinleştirildiğinde görüntülenir. |
 | **Araç Metrikleri** <br/> *Eklentinin etkinleştirilmesi gerekir* | [OBD-II tarayıcısından](../plugins/vehicle-metrics.md#trip-recording) gelen veriler GPX dosyasına kaydedilir. Yalnızca [Araç Metrikleri eklentisi](../plugins/vehicle-metrics.md) etkinleştirildiğinde görüntülenir.<br />*Not*: Listeden GPX dosyasına hangi metriklerin kaydedileceğini ekleyebilirsiniz: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Parkur depolama klasörü** (*Android*) | *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* sekmesinde kaydedilen parkurların nerede depolanacağını tanımlar. Seçenekler arasında tüm parkurları Rec klasöründe depolamak veya bunları Rec/yyyyy-mm gibi aylara göre düzenlemek bulunur. |
@@ -307,7 +307,7 @@ Gezilerinizi izlemeye başlamadan önce, en iyi performans için **Gezi Kaydı e
 
 <InfoAndroidOnly />
 
-![Haritadaki parkur iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png) ![Haritadaki parkur iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)
+![Haritadaki parkur iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Haritadaki parkur iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
 
 Bu özellik, OsmAnd için pil optimizasyon ayarlarını yönetmenize olanak tanır, böylece uygulama navigasyon veya parkur kaydı sırasında arka planda çalışırken bile konumunuza kesintisiz erişim sağlanır.
 
@@ -318,7 +318,7 @@ Bu özellik, OsmAnd için pil optimizasyon ayarlarını yönetmenize olanak tan�
 
 ### Bildirimler {#notifications}
 
-![Gezi Kaydı Bildirimi](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)
+![Gezi Kaydı Bildirimi](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
 Eklenti ayarlarında [Bildirim](#recording-settings) etkinleştirilirse, kayıt etkin olduğunda gezi kaydı bildirimleri her zaman sistem bildirim alanında görüntülenecektir. Bu bildirim, kayıt işleminin sistem tarafından kesintiye uğramamasını sağlar ve aktif bir kayıt sırasında devre dışı bırakılamaz.
 
@@ -349,14 +349,14 @@ Bu davranış, Android tarafından gezi kaydı gibi herhangi bir ön plan hizmet
 
 Uygulama simgesi rozeti, parkur kaydı etkin olduğunda OsmAnd simgesinin yanında görünür.
 
-- Bu simge, parkur kaydı tamamlandığında kaybolur. Bir kaydın etkin olup olmadığını kontrol etmek için *Menü → Yerlerim → Parkurlar sekmesi*'ne gidebilir veya kaydı yönetmek için widget'a dokunabilirsiniz.
-- Devam eden bir kayıt yoksa ve rozet hala görüntüleniyorsa, bu, OsmAnd'dan gelen bir mesajın cihaz bildirim panelinde kalmış olabileceği anlamına gelebilir.
+- Bu simge, parkur kaydı tamamlandığında kaybolur. Bir kaydın etkin olup olmadığını kontrol etmek için *Menü → Yerlerim → Parkurlar sekmesi*'ne gidebilir veya kaydı yönetmek için widget'a dokunabilirsiniz.  
+- Devam eden bir kayıt yoksa ve rozet hala görüntüleniyorsa, bu, OsmAnd'dan gelen bir mesajın cihaz bildirim panelinde kalmış olabileceği anlamına gelebilir.  
 - Android ayarlarında rozetleri devre dışı bırakmak için cihaz *Ayarları → Uygulamalar → OsmAnd → Bildirimler*'e gidin ve bu uygulama için rozet görüntüleme seçeneğini devre dışı bırakın.
 
 
 ## Widget'lar {#widgets}
 
-Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı* gibi parkur kaydıyla ilgili temel bilgileri doğrudan ekranda görüntülemenizi sağlar.
+Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı* gibi parkur kaydıyla ilgili temel bilgileri doğrudan ekranda görüntülemenizi sağlar. Android'de ayrıca *Maksimum Hız* ve *Ortalama Eğim* widget'larını ekleyebilirsiniz.
 
 *Gezi kaydı widget'larını* kullanmaya başlamak için aşağıdaki tüm ayarları yapmanız gerekir:
 
@@ -373,15 +373,15 @@ Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı* gibi parkur
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Android'de Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_widg_andr.png)
+![Android'de Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="map_widget_monitoring"/>*
+Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![iOS'ta Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_recording_widgets_ios.png)
+![iOS'ta Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
 
 </TabItem>
 
@@ -396,34 +396,39 @@ Arayüzünüzü özelleştirmek için Gezi Kaydı widget'ını ve [diğer widget
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
-![Gezi kaydı widget'ı](@site/static/img/plugins/trip-recording/trip_rec_widgets_andr.png)
-![Android'de kaydı bitir](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Android'de kaydı bitir](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Gezi kaydı widget'ı](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)
+![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Widget'lar haritada görüntülendiğinde, herhangi birine dokunmak ek parkur ayrıntılarını ortaya çıkarır ve kayıtla etkileşime geçmenizi sağlar.
 *Mesafe* widget'ı, mevcut kaydedilen gezinizin toplam mesafesini gösterir ve kayıtlarınızı yönetmek için ana arayüz görevi görür. Üzerine dokunmak, kaydı başlatabileceğiniz, durdurabileceğiniz ve parkurunuz hakkında ayrıntılı bilgi görüntüleyebileceğiniz [Gezi Kaydı iletişim kutusunu](#start-a-dialog) ortaya çıkarır.
 
 - Widget, *Gezi kaydı eklentisi* etkinleştirildiğinde otomatik olarak eklenir, ancak [Ekranı Yapılandır menüsü](../widgets/configure-screen.md#overview) aracılığıyla gizlenebilir.
-- Gezi Kaydı eklentisi ayarlarında *Başlangıç iletişim kutusunu göster* seçeneği devre dışı bırakılırsa, etkin widget'a dokunmak yine de *Gezi Kaydı iletişim kutusunu* açarak daha fazla seçeneğe ve bilgiye erişmenizi sağlar.
+- Gezi Kaydı eklentisi ayarlarında *Başlangıç iletişim kutusunu göster* seçeneği devre dışı bırakılırsa, etkin widget'a dokunmak yine de *Gezi Kaydı iletişim kutusunu* açarak daha fazla seçeneğe ve bilgiye erişmenizi sağlar.  
 
-*Mesafe/Başlat-Durdur* widget'ına ek olarak, **Gezi Kaydı eklentisi** üç başka widget içerir: *Süre*, *Yokuş yukarı* ve *Yokuş aşağı*. Bunlar, geziniz hakkında ek bilgi sağlayarak gerçek zamanlı ilerlemeyi izlemenize yardımcı olur.
+*Mesafe/Başlat-Durdur* widget'ına ek olarak, **Gezi Kaydı eklentisi** dört başka widget içerir: *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Maksimum Hız* ve *Ortalama Eğim* (son ikisi yalnızca Android'de mevcuttur). Bunlar, geziniz hakkında ek bilgi sağlayarak gerçek zamanlı ilerlemeyi izlemenize yardımcı olur.
 
 | |
 |-----------|
 | **Mesafe/Başlat-Durdur**. Bu widget, devam eden gezi kaydınızın mesafesini gösterir. Gezi Kaydı eklentisi etkinleştirildiğinde otomatik olarak eklenir, ancak Ekranı Yapılandır menüsü aracılığıyla gizleyebilirsiniz. Widget, *Kayıt*, *Duraklatıldı* ve *Etkin Değil* olmak üzere üç farklı duruma sahiptir ve her biri gezi kaydınızın mevcut durumunu gösterir. |
 | ![Gezi kaydı (REC) widget'ı](@site/static/img/widgets/tr_rec_wid_rec.png) |
-| Etkin olmayan bir widget'a dokunulduğunda [Gezi Kaydı iletişim kutusunu](#start-a-dialog) açmak için, Gezi Kaydı eklentisi ayarlarında *Başlangıç İletişim Kutusunu Göster* seçeneğini etkinleştirin. Seçenek devre dışı bırakılırsa, widget'a dokunulduktan hemen sonra iletişim kutusu açılmadan kayıt başlayacaktır.|
+| Etkin olmayan bir widget'a dokunulduğunda [Gezi Kaydı iletişim kutusunu](#start-a-dialog) açmak için, Gezi Kaydı eklentisi ayarlarında *Başlangıç İletişim Kutusunu Göster* seçeneğini etkinleştirin. Seçenek devre dışı bırakılırsa, widget'a dokunulduktan hemen sonra iletişim kutusu açılmadan kayıt başlayacaktır.| 
+
+Android'de Mesafe widget'ı birden fazla görüntüleme modunu destekler:
+- **Toplam mesafe** – mevcut kaydın toplam mesafesi (varsayılan).
+- **Son yokuş yukarı** – en son yokuş yukarı bölümünün mesafesi.
+- **Son yokuş aşağı** – en son yokuş aşağı bölümünün mesafesi.
 
 
 ### Süre, Yokuş Yukarı, Yokuş Aşağı {#duration-uphill-downhill}
@@ -432,24 +437,43 @@ Widget'lar haritada görüntülendiğinde, herhangi birine dokunmak ek parkur ay
 
 <TabItem value="android" label="Android">
 
+| |
+|------------|
+|**Süre**. Mevcut gezi kaydının toplam süresini saat ve dakika cinsinden gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|**Yokuş yukarı**. Seçilen moda bağlı olarak toplam yokuş yukarı veya son yokuş yukarı bölümünü gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_up.png)|
+|**Yokuş aşağı**. Seçilen moda bağlı olarak toplam yokuş aşağı veya son yokuş aşağı bölümünü gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_dow.png)|
+
 </TabItem>
 
-<TabItem value="ios" label="iOS">
-
-</TabItem>
-
-</Tabs>
+<TabItem value="ios" label="iOS">  
 
 | |
 |------------|
 |**Süre**. Mevcut gezi kaydının toplam süresini saat ve dakika cinsinden gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_dur.png)|
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Yokuş yukarı**. Mevcut gezi kaydı için kümülatif yükseklik kazanımını gösterir. |
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_up.png)|
 |**Yokuş aşağı**. Mevcut gezi kaydı sırasında biriken toplam inişi gösterir. |
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
+</TabItem>
+
+</Tabs>
+
 Birden fazla widget seçtiyseniz — *Süre*, *Yokuş yukarı* veya *Yokuş aşağı* — her biri için aynı iletişim kutusuna geçiş yapmanıza veya kapatmanıza gerek kalmadan erişebilirsiniz. Bu birleşik arayüz, ilgili tüm bilgileri sorunsuz bir şekilde görüntülemeyi ve yönetmeyi kolaylaştırır.
+
+### Maksimum Hız & Ortalama Eğim {#max-speed--average-slope}
+
+<InfoAndroidOnly />
+
+![Maksimum Hız Android](@site/static/img/widgets/max_speed_android.png) ![Ortalama Eğim Android](@site/static/img/widgets/average_slope_android.png)  
+
+**Maksimum Hız** widget'ı, şu anda kaydedilen gezi için maksimum hızı gösterir. Widget'a dokunarak genel maksimum hız ile son yokuş yukarı veya yokuş aşağı bölümünden maksimum hız arasında geçiş yapabilirsiniz.
+
+**Ortalama Eğim** widget'ı, mevcut gezinin son yokuş yukarı veya yokuş aşağı bölümünün ortalama eğimini görüntüler. Yükseklik kazancı ve mesafeye dayalı olarak önceki tırmanış veya inişin ne kadar dik olduğunu tahmin etmenize yardımcı olur.
 
 
 ## İlgili Makaleler {#related-articles}
@@ -471,7 +495,7 @@ Birden fazla widget seçtiyseniz — *Süre*, *Yokuş yukarı* veya *Yokuş aşa
     - Cihazınızın *pil optimizasyon ayarlarının* kaydı durdurup durdurmadığını kontrol edin. Bazı cihazlar güç tasarrufu yapmak için arka plan etkinliğini duraklatabilir. *Cihaz Ayarları → Pil*'e gidin.
 
 - Kaydedilen mesafe gerçek mesafeyle eşleşmiyor.
-    - GPS'in etkinleştirildiğinden ve aktif bir sinyali olduğundan emin olun.
+    - GPS'in etkinleştirildiğinden ve aktif bir sinyali olduğundan emin olun.  
     - GPS doğruluk eşiğini azaltın: *Menü → Profili Yapılandır → Gezi Kaydı → Minimum Doğruluk*.
 
 - Kaydedilen Parkurlar Gürültülü. [(kontrol edin)](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy).

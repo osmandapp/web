@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  Tekne rotası
 ---
@@ -89,7 +89,7 @@ Tipik olarak, *Tekne rotası* tekne profiliyle (Nautical eklentisiyle birlikte e
  - [Tekne İçin Noktadan Noktaya Rota](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Tekne İçin Düz Çizgi Rota](./boat-navigation.md#straight-line-routing-for-boat)
 
-*Noktadan Noktaya* ve *Düz Çizgi* rota türlerinin yalnızca navigasyon için engel veya tehlike bulunmayan açık sularda kullanılması gerektiğini unutmamak önemlidir. Belirli bir kanal veya rota bulunan bir su yolunda seyrediyorsanız, doğru navigasyon kanallarında size rehberlik edecek ve sığ alanlardan veya diğer tehlikelerden kaçınacak olan OsmAnd'deki tekne rota türünü kullanmalısınız.  
+*Noktadan Noktaya* ve *Düz Çizgi* rota türlerinin yalnızca navigasyon için engel veya tehlike bulunmayan açık sularda kullanılması gerektiğini unutmamak önemlidir. Belirli bir kanal veya rota bulunan bir su yolunda seyrediyorsanız, doğru navigasyon kanallarında size rehberlik edecek ve sığ alanlardan veya diğer tehlikelerden kaçınacak olan OsmAnd'deki tekne rota türünü kullanmalısınız. OSM hazard=* etiketlerine dayalı bazı haritalanmış tehlikeler, haritada tehlike POI simgeleri veya metin etiketleri olarak gösterilebilir. 
 
 Tekne profili için bu rota türleri aşağıdaki yolu kullanarak etkinleştirilebilir: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> veya başka bir tane) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
