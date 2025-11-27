@@ -1,8 +1,9 @@
 ---
-source-hash: 4924a1de13b954b832f4629a3e8dfc661ee5ce9339fd94fad9ab53e8ec18a4cc
+source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
 sidebar_position: 9
 title:  Edycja OpenStreetMap
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -57,7 +57,7 @@ Aby korzystać z wtyczki *Edycja OpenStreetMap*, należy dokonać następującyc
 Ustawienia wtyczki są globalne i dotyczą wszystkich profili.
 :::
 
-- [Zaloguj się do OpenStreetMap](#authorization). Zaloguj się, aby przesłać nowe lub zmodyfikowane zmiany. Użyj bezpiecznej metody *OAuth 2.0* lub [zaloguj się na stronie OSM](https://www.openstreetmap.org/login). W przypadku systemu iOS przycisk metody OAuth jest dostępny tylko dla użytkowników z obsługiwaną wersją systemu iOS 16.4
+- [Zaloguj się do OpenStreetMap](#authorization). Zaloguj się, aby przesłać nowe lub zmodyfikowane zmiany. Użyj bezpiecznej metody *OAuth 2.0* lub [zaloguj się na stronie OSM](https://www.openstreetmap.org/login). W przypadku iOS przycisk metody OAuth jest dostępny tylko dla użytkowników z obsługiwaną wersją iOS 16.4
 - **<Translate android="true" ids="offline_edition"/>**. Jeśli to ustawienie jest włączone, zmiany są najpierw zapisywane lokalnie (przycisk *Zapisz*) i przesyłane na żądanie. Jeśli ustawienie jest wyłączone, zmiany są przesyłane natychmiast (przycisk *Prześlij*).
 - **<Translate android="true" ids="use_dev_url"/>** *(tylko Android)*. Pozwala włączyć [dev.openstreetmap.org](https://dev.openstreetmap.org/) zamiast [openstreetmap.org](http://openstreetmap.org/) w celu przetestowania przesyłania notatek OSM, POI lub śladów GPS. Po włączeniu następuje automatyczne wylogowanie z OpenStreetMap.org. To ustawienie jest dostępne na liście tylko wtedy, gdy włączona jest *wtyczka deweloperska OsmAnd*.
 - [<Translate android="true" ids="map_updates_for_mappers"/>](#free-map-updates-for-mappers).
@@ -86,7 +86,7 @@ Jeśli masz subskrypcję [OsmAnd Pro](../purchases/android.md#pro-features), zmi
 
 </Tabs>
 
-Zaloguj się, aby przesyłać zmiany i pliki GPX.  
+Zaloguj się, aby wnosić zmiany i pliki GPX.  
 
 - Przejdź do [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550) i *zaloguj się* lub *zarejestruj*.
 - Dotknij pola *Zaloguj się do OpenStreetMap* w aplikacji OsmAnd, a następnie dotknij przycisku *Zaloguj się przez OpenStreetMap*.  
@@ -119,7 +119,7 @@ Ustawienie <Translate android="true" ids="map_updates_for_mappers"/> pozwala wł
 
 <TabItem value="android" label="Android">  
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Warstwa edycji OSM Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![Warstwa edycji OSM Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -127,7 +127,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,la
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Warstwa edycji OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -135,7 +135,17 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_ed
 
 </Tabs>
 
-Możesz włączyć lub wyłączyć jako osobną warstwę wyświetlanie modyfikacji OSM, takich jak *notatki OSM* (online), *edycje OSM*, *tagi Fixme*, *tagi Note*, *ikony przy niskim powiększeniu*, w sekcji [Konfiguracja mapy](../map/configure-map-menu.md) w *Menu głównym*.  
+Możesz włączyć lub wyłączyć jako osobną warstwę wyświetlanie modyfikacji OSM w sekcji [Konfiguracja mapy](../map/configure-map-menu.md) w *Menu głównym*. Modyfikacje OSM obejmują następujące elementy:  
+- **Notatki OSM (online)**. Wyświetla publiczne notatki OpenStreetMap utworzone przez użytkowników w celu podkreślenia problemów z mapowaniem lub zgłoszenia prośby o aktualizacje. Notatki są pokazywane jako interaktywne znaczniki, które można przeglądać, otwierać i rozwiązywać przez maperów.  
+![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+- **Edycje OSM**. Pokazuje Twoje własne lokalne edycje OSM przechowywane na urządzeniu przed przesłaniem ich na serwer OpenStreetMap. Ta warstwa pomaga w przeglądaniu geometrii i atrybutów obiektów, które zostały zmodyfikowane lub dodane.  
+![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+- **Tagi Fixme**. Podkreśla obiekty oznaczone tagiem fixme=* w OSM. Te elementy zawierają komentarze maperów wskazujące, że informacje są niekompletne, niepewne lub wymagają weryfikacji w terenie.  
+![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+- **Tagi Note**. Wyświetla obiekty zawierające tagi note=* — komentarze maperów osadzone bezpośrednio w danych OSM. Te tagi zazwyczaj opisują tymczasowe warunki lub dodatkowy kontekst dla przyszłych edycji.  
+![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+- **Ikony przy niskim powiększeniu**. Włącza uproszczone, ikona-podobne reprezentacje obiektów OSM za pomocą krótkich skrótów pochodzących z ich głównych kluczy tagów. Ich znaczenie jest opisane [tutaj](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Ta funkcja sprawia, że więcej obiektów jest widocznych przy niskim poziomie powiększenia bez przeciążania mapy lub nakładania się ikon.  
+![Warstwa edycji OSM](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## Tworzenie / Modyfikacja POI {#create--modify-poi}
@@ -232,7 +242,7 @@ Przesłane notatki OSM nie są widoczne na mapach OsmAnd w trybie offline.
 Zarejestrowane ślady GPS są przydatne dla:
 
 - **Maperów**. Ślady mogą być używane do mapowania wszelkiego rodzaju ścieżek.
-- **Nawigacji**. Na podstawie przesłanych danych z plików GPX, aplikacje nawigacyjne i specjalne urządzenia mogą obliczać trasy.
+- **Nawigacji**. Na podstawie przesłanych danych z plików GPX aplikacje nawigacyjne i specjalne urządzenia mogą obliczać ślady.
 - **Do udostępniania informacji** o zarejestrowanych śladach i trasach na [mapach opartych na OpenStreetMap](https://wiki.openstreetmap.org/wiki/Track_drawing_websites).  
 
 :::info NOTE
@@ -267,7 +277,7 @@ Aby [przesłać ślad GPS](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks
 **Ustawienia:**
 
 - **<Translate android="true" ids="shared_string_description"/>**. Umożliwia dodanie opisu do śladu. Opis dotyczy wszystkich wybranych śladów. Jeśli nic nie wpiszesz w tym polu, jako opisy zostaną użyte nazwy poszczególnych śladów.  
-- **<Translate android="true" ids="gpx_tags_txt"/>**. Ta pozycja w sekcji ustawień pozwala na dodanie tagów w celu identyfikacji śladu. Domyślnym tagiem jest "osmand", można wprowadzić dodatkowe tagi oddzielone przecinkami.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. Ta pozycja w sekcji ustawień pozwala na dodanie tagów w celu identyfikacji śladu. Domyślnym tagiem jest "osmand". Jeśli ślad został zarejestrowany z określoną aktywnością na podstawie wybranego profilu, ta aktywność jest również automatycznie dodawana jako tag podczas przesyłania. Dla przesyłanych grup śladów każdy ślad otrzymuje swój własny tag aktywności. Dla niektórych profili (np. Transport publiczny) tag aktywności nie jest dodawany. Możesz wprowadzić dodatkowe tagi ręcznie, oddzielone przecinkami.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Widoczność śladu dla użytkowników OSM:  
    - *Publiczny* oznacza, że ślad jest publicznie dostępny i wyświetlany w surowej formie w Twoich śladach GPS, listach śladów GPS i listach śladów ze znacznikami czasu. Dane przesyłane przez API nie są powiązane z Twoją stroną śladu. Znaczniki czasu punktów śladu są niedostępne przez publiczne API GPS, a punkty śladu nie są uporządkowane chronologicznie.
    - *Identyfikowalny* oznacza, że ślad będzie publicznie wyświetlany w Twoich punktach śladów GPS i publicznych listach śladów GPS, co oznacza, że inni użytkownicy będą mogli pobrać surowy ślad i powiązać go z Twoją nazwą użytkownika. Publiczne dane punktów śladu ze znacznikami czasu z API GPS przekazywane przez API punktów śladu będą prowadzić do Twojej oryginalnej strony śladu.

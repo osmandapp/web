@@ -1,5 +1,5 @@
 ---
-source-hash: 3f3910474dc310e83f4d1cc4df08088d8e2216a750483e10f61b5ba8685cc876
+source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
 sidebar_position: 5
 title:  Dzienniki awarii
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarie lub nieoczekiwane zachowanie aplikacji. Udostępnianie dzienników z urządzenia z systemem Android zespołowi programistów OsmAnd jest możliwe. Obecnie użytkownicy iOS mają tylko jeden typ opcji dziennika awarii do wysłania.
+Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarię aplikacji lub nieoczekiwane zachowanie. Udostępnianie dzienników z urządzenia z systemem Android zespołowi programistów OsmAnd jest możliwe. Obecnie użytkownicy iOS mają tylko jeden typ opcji dziennika awarii do wysłania.
 
 
 ## Dzienniki awarii i Logcat {#crash-and-logcat-logs}
@@ -37,7 +37,7 @@ Zachowaj ostrożność podczas wysyłania dzienników Logcat, ponieważ mogą on
 2. W wyskakującym menu wybierz Gmaila lub preferowaną aplikację pocztową. Wiadomość e-mail zostanie wygenerowana automatycznie.
 3. Stuknij przycisk *Wyślij*.
 
-![Wyślij dzienniki awarii z Androida 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Wyślij dzienniki awarii z Androida 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Wyślij dzienniki awarii z Androida 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Wyślij dzienniki awarii z Androida 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 
 ### Wysyłanie dzienników z urządzeń iOS {#send-logs-from-ios-devices}
@@ -46,7 +46,7 @@ Zachowaj ostrożność podczas wysyłania dzienników Logcat, ponieważ mogą on
 
     - Automatycznie.
         - Przejdź do aplikacji OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Następnie, korzystając z aplikacji pocztowej, zalecamy wysłanie dzienników na adres `crash@osmand.net`.
+        - Następnie, korzystając z aplikacji pocztowej, zalecamy wysłanie dzienników na adres `support@osmand.net`.
 
     - Ręcznie.
         - Przejdź do aplikacji systemowej iOS *Pliki → Na moim iPhonie (lub Na moim iPadzie) → OsmAnd Maps → Dzienniki*.
@@ -56,7 +56,7 @@ Zachowaj ostrożność podczas wysyłania dzienników Logcat, ponieważ mogą on
 2. Wyślij [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) dzienników i danych autoryzacyjnych:
     - Na iOS 15 lub starszym: *Ustawienia → Analizy → Dane analityczne → Plik w formacie ips OsmAnd Maps*.
     - Na iOS 16 lub nowszym:  *Ustawienia → Prywatność i bezpieczeństwo → Analizy i ulepszenia → Dane analityczne → Plik w formacie ips OsmAnd Maps*.
-    - Następnie, korzystając z aplikacji pocztowej, zalecamy wysłanie dzienników na adres `crash@osmand.net`.
+    - Następnie, korzystając z aplikacji pocztowej, zalecamy wysłanie dzienników na adres `support@osmand.net`.
 
     ![Wyślij dzienniki awarii iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Wyślij dzienniki awarii iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
@@ -82,7 +82,7 @@ Aby wyeksportować pliki tombstone, należy wygenerować raport o błędach za p
     - Stuknij opcję *Wykonaj raport o błędach*.
     - Wybierz typ raportu o błędach i stuknij *Raport*.
   
-Po przygotowaniu raportu o błędach otrzymasz powiadomienie. Stuknij pole powiadomienia, aby pobrać raport na swoje urządzenie. Rozpakuj plik i wyślij pliki tombstone do zespołu programistów OsmAnd (e-mail: `crash@osmand.net`).
+Po przygotowaniu raportu o błędach otrzymasz powiadomienie. Stuknij pole powiadomienia, aby pobrać raport na swoje urządzenie. Rozpakuj plik i wyślij pliki tombstone do zespołu programistów OsmAnd (e-mail: `support@osmand.net`).
 
 ![Wyślij dzienniki awarii z Androida 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Wyślij dzienniki awarii z Androida 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
@@ -114,7 +114,7 @@ Następnie podłącz urządzenie do stacji roboczej za pomocą kabla USB. Jeśli
 4. Poczekaj kilka minut na wygenerowanie raportu. Wynikowy plik zostanie zapisany w folderze narzędzi platformy.
 5. Rozpakuj plik.
 6. Znajdź folder *tombstones* z plikami takimi jak *tombstone_00*, *tombstone_01* i podobnymi.
-7. Wyślij pliki tombstone na adres `crash@osmand.net`.
+7. Wyślij pliki tombstone na adres `support@osmand.net`.
 
 <!--
 * Open the terminal and call the command:  
@@ -132,6 +132,6 @@ Where you find files like  -->
 
 - Z dostępem roota do urządzenia możesz bezpośrednio otworzyć folder */data/tombstones*.  
 
-- W Android Studio użyj emulatora, aby przejść do *Eksploratora plików urządzenia* i znaleźć folder /data/tombstones. Wewnątrz znajdziesz pliki o nazwach takich jak *tombstone_00*, *tombstone_01* i inne. Pobierz te pliki i wyślij je na adres `crash@osmand.net`.
+- W Android Studio użyj emulatora, aby przejść do *Eksploratora plików urządzenia* i znaleźć folder /data/tombstones. Wewnątrz znajdziesz pliki o nazwach takich jak *tombstone_00*, *tombstone_01* i inne. Pobierz te pliki i wyślij je na adres `support@osmand.net`.
 
 Więcej szczegółów na temat raportów o błędach można znaleźć w [dokumentacji Androida](https://developer.android.com/studio/debug/bug-report).

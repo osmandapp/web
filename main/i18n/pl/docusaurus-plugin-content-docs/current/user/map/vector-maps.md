@@ -1,5 +1,5 @@
 ---
-source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
+source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
 sidebar_position: 5
 title:  Mapy wektorowe (Style mapy)
 ---
@@ -37,7 +37,7 @@ Konfigurowalne style mapy to jedna z głównych zalet OsmAnd. Możesz dostosowa�
 
 ## Domyślne style mapy {#default-map-styles}
 
-OsmAnd oferuje domyślnie wiele stylów map i warstw danych. W tej sekcji opisano główne z nich dla trybów dziennego i nocnego.
+OsmAnd oferuje wiele stylów map i warstw danych, które pasują domyślnie. W tej sekcji opisano główne z nich dla trybów dziennego i nocnego.
 
 1. **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
 
@@ -48,7 +48,7 @@ OsmAnd oferuje domyślnie wiele stylów map i warstw danych. W tej sekcji opisan
 
 ![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)  
 
-Standardowy styl renderowania mapy OsmAnd równoważy szczegółowość i prostotę, co czyni go idealnym do eksploracji miejskiej i plenerowej. Szczegółowo przedstawia elementy miejskie, takie jak ulice, budynki i przystanki komunikacji, jednocześnie upraszczając wizualny bałagan, czyniąc mapy bardziej przejrzystymi.  
+Standardowy styl renderowania mapy OsmAnd równoważy szczegółowość i prostotę, co czyni go idealnym do eksploracji miejskiej i plenerowej. Szczegółowo przedstawia elementy miejskie, takie jak ulice, budynki i przystanki transportu, jednocześnie upraszczając wizualny bałagan, czyniąc mapy bardziej przejrzystymi.  
 
 Kluczowe korzyści obejmują mapowanie tras, jakość nawierzchni, ograniczenia dostępu, oznakowanie drogowe, renderowanie ścieżek w skali SAC, obiekty sportowe i szczegóły topograficzne, takie jak linie konturowe.
 
@@ -77,7 +77,7 @@ Style UniRS i LightRS to autorskie style, które renderują podstawowe informacj
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-Jest to styl nawigacji morskiej, zawierający boje, latarnie morskie, szlaki rzeczne, szlaki morskie, znaki, porty, znaki nautyczne i izobaty. Przeczytaj więcej w sekcji [Styl mapy morskiej](../plugins/nautical-charts.md#nautical-map-style).
+Jest to styl nawigacji morskiej, zawierający boje, latarnie morskie, szlaki rzeczne, szlaki morskie, znaki, porty i znaki nautyczne. Przeczytaj więcej w sekcji [Styl mapy morskiej](../plugins/nautical-charts.md#nautical-map-style).
 
 ### Morski (zaawansowany) {#marine}
 
@@ -97,7 +97,7 @@ Możesz zobaczyć stoki narciarskie i inne szczegóły, takie jak trudność sto
 
 ![Topo map style](@site/static/img/map/map-style-topo.png)
 
-Ten styl jest przeznaczony do pieszych wędrówek, biwakowania i jazdy na rowerze na łonie natury. Charakteryzuje się kontrastowymi drogami i cechami naturalnymi, różnymi typami szlaków, rozszerzonymi opcjami linii konturowych i dodatkowymi szczegółami. Jest czytelny na zewnątrz. Ustawienie *Jakość nawierzchni* pozwala rozróżnić jakość drogi.
+Ten styl jest przeznaczony do pieszych wędrówek, biwakowania i jazdy na rowerze na łonie natury. Charakteryzuje się kontrastowymi drogami i cechami naturalnymi, różnymi typami szlaków, rozszerzonymi opcjami linii konturowych i dodatkowymi szczegółami. Jest czytelny na zewnątrz. Ustawienie *Integralność nawierzchni* pozwala rozróżnić jakość drogi.
 
 ### OSM-carto {#osm-carto}
 
@@ -189,7 +189,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 </Tabs>
 
-Linie konturowe głębokości morskiej (izobaty) reprezentują obszary o równej głębokości, pomagając wizualizować zmiany topografii podwodnej. Ta funkcja jest dostępna we wszystkich stylach i trybach mapy i można ją dostosować z włączoną lub bez włączonej wtyczki Widok mapy morskiej.  
+Linie konturowe głębokości morskiej reprezentują obszary o równej głębokości, pomagając wizualizować zmiany topografii podwodnej. Ta funkcja jest dostępna we wszystkich stylach i trybach mapy i można ją dostosować z włączoną lub bez włączonej wtyczki Widok mapy morskiej.  
 
 Aby uzyskać więcej szczegółów na temat widoku mapy morskiej, odwiedź stronę [wtyczki Mapy morskie](../plugins/nautical-charts).
 
@@ -255,7 +255,7 @@ Funkcja **Siatka współrzędnych** nakłada na mapę siatkę odniesienia, umoż
 Możesz skonfigurować następujące opcje:
 - **Poziomy powiększenia:** ustaw minimalny i maksymalny poziom powiększenia (2 - 22), na którym siatka jest widoczna.
 - **Pozycja etykiet:** wybierz między *Krawędziami* (domyślnie) lub *Środkiem* dla etykiet siatki.
-- **Kolor siatki:** dostępny oddzielnie dla trybu Dzień/Noc. Dostosowywanie koloru siatki to funkcja płatna.
+- **Kolor siatki:** dostępny oddzielnie dla trybu Dzień/Noc. Dostosowywanie koloru siatki to [funkcja płatna](https://osmand.net/docs/user/purchases/) dostępna w Maps+ (zakup w aplikacji lub subskrypcja) i OsmAnd+.
 - **Format współrzędnych:** wybierz spośród kilku dostępnych formatów (patrz lista poniżej).
 
 
@@ -427,7 +427,7 @@ Podczas nawigacji po miastach potrzebny jest bardziej kontrastowy widok transpor
 - **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Pokazuje trasy tramwajowe i kolejowe.  
     ![Map transport tram](@site/static/img/map/map-transport-tram.png)
 
-- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Pokazuje trasy metra.  
+- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Pokazuje trasy podziemne.  
     ![Map transport subway](@site/static/img/map/map-transport-subway.png)
 
 ### Ukryj {#hide}
@@ -493,7 +493,7 @@ Specjalne ustawienia dla dróg, w których można zmienić kolory, aby pasowały
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Wysoki kontrast dróg.  
 ![Map road style high contrast](@site/static/img/map/map-road-style-high-contrast.png)
 - **Blady**. Mniej kontrastowe kolory dróg.  
-![Map road style pale](@site/static/img/map/map-road-style-pale.png)
+![Map road style bold outline](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Pogrubiony kontur dla dróg.  
 ![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)

@@ -1,5 +1,5 @@
 ---
-source-hash: 32ef17e9ab14ee378a3b47d0088c5f7a17b9d5af0af457980c95c99a7fa61a14
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  Menu Kontekstowe Śladu
 ---
@@ -72,9 +72,10 @@ Panel informacyjny zawiera również informacje o:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Wyświetla całkowitą sumę wzniesień i spadków podczas podróży.
 - *<Translate android="true" ids="altitude_range"/>*. Wskazuje minimalną i maksymalną wysokość na śladzie.  
 
-:::note
-W przypadku, gdy ślad został utworzony w OsmAnd lub innej aplikacji do śledzenia (więc jego punkty mają tagi [`time` i `speed`](../../plugins/trip-recording#recorded-gpx-file)), panel informacyjny będzie również zawierał informacje o *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) lub *<Translate ios="true" ids="total_time"/>* (*iOS*) (czas trwania między punktem początkowym a końcowym śladu), *<Translate android="true" ids="shared_string_time_moving"/>* (suma czasu podczas jazdy).
-:::  
+W przypadku, gdy ślad został utworzony w OsmAnd lub innej aplikacji do śledzenia (więc jego punkty mają tagi [`time` i `speed`](../../plugins/trip-recording#recorded-gpx-file)), panel informacyjny będzie również zawierał informacje o *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (czas trwania między punktem początkowym a końcowym śladu) i *<Translate android="true" ids="shared_string_time_moving"/>* (suma czasu podczas jazdy).
+
+**Uwaga:** Dla zarejestrowanych śladów Czas trwania pokazuje rzeczywisty czas podróży na podstawie znaczników czasu. Dla zaplanowanych śladów Czas trwania pokazuje szacowany czas obliczony na podstawie długości trasy i średniej prędkości wybranego profilu nawigacji, jeśli cała trasa korzysta z jednego profilu i nie zawiera segmentów w linii prostej.
+
 
 ### Akcje śladu {#track-actions}
 
@@ -133,7 +134,7 @@ Menu **Opcje** pozwala zarządzać i modyfikować wybrany ślad za pomocą róż
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Eksportuje wybrany ślad w formacie GPX.
+- **<Translate android="true" ids="shared_string_share"/>** – Eksportuje wybrany ślad w formacie GPX za pomocą menu Udostępnianie systemu.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Przesyła](../../plugins/osm-editing.md#upload-gps-track) wybrany ślad do OpenStreetMap.
 
 <br/>
@@ -247,7 +248,7 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 
 Funkcja *Aktywność* w OsmAnd pozwala na oznaczanie zarejestrowanych śladów GPX określonymi aktywnościami w celu dalszej analizy i organizacji w folderach.
 
-- [Tagi aktywności dla śladów GPX](../../plugins/trip-recording.md#recording-settings). Podczas nagrywania śladu GPX można przypisać typ aktywności. To tagowanie aktywności pomaga w początkowej kategoryzacji śladów.
+- [Tagi aktywności dla śladów GPX](../../plugins/trip-recording.md#recording-settings). Zarejestrowane ślady automatycznie otrzymują typ aktywności na podstawie wybranego profilu, co pomaga w ich późniejszej kategoryzacji i filtrowaniu. Można zmienić aktywność ręcznie, jeśli jest to potrzebne.
 - [Filtr aktywności](../../personal/tracks/smart-folder.md#search-filter). Możesz filtrować zarejestrowane ślady GPX według aktywności, co pozwala skupić się na wyszukiwaniu określonych typów nagrań, takich jak wszystkie ślady rowerowe lub piesze.
 - [Zarządzaj typami aktywności](../../personal/tracks/manage-tracks.md#selection-mode). Możesz zmienić typ aktywności dla wybranych folderów lub śladów za pomocą trybu wyboru w zakładce Ślady w menu Moje miejsca.
 - **Lista aktywności**. Kategorie i grupy aktywności są zdefiniowane w zasobach OsmAnd. Dla deweloperów i współtwórców lista aktywności jest utrzymywana w ustrukturyzowanym formacie w pliku [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), który szczegółowo opisuje dostępne grupy i typy aktywności.
@@ -270,13 +271,13 @@ Interakcja z wykresem:
 
 <TabItem value="android" label="Android">
 
-![Wykresy menu kontekstowego śladu Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Wykresy menu kontekstowego śladu Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wykresy menu kontekstowego śladu iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Wykresy menu kontekstowego śladu iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ Interakcja z wykresem:
 Na karcie **Przegląd** można zobaczyć takie parametry jak:
 
 - *<Translate android="true" ids="distance"/>*. Suma całkowitej odległości przebytej na śladzie lub długość samego śladu.
-- *<Translate android="true" ids="shared_string_time_span"/>*. Przedział czasowy między punktem początkowym a końcowym śladu.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. Przedział czasowy między punktem początkowym a końcowym śladu.
 - *<Translate android="true" ids="shared_string_start_time"/>* Dokładny czas rozpoczęcia nagrywania śladu.
 - *<Translate android="true" ids="shared_string_end_time"/>*. Czas zakończenia nagrywania śladu.
 
@@ -464,7 +465,7 @@ Dotknij przycisku *Dodaj waypoint*, aby otworzyć ekran tworzenia waypointu (ten
 
 <TabItem value="android" label="Android">
 
-![Menu grupy menu śladu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Menu grupy menu śladu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -484,7 +485,7 @@ Dotknij przycisku *Dodaj waypoint*, aby otworzyć ekran tworzenia waypointu (ten
 - **<Translate android="true" ids="shared_string_rename"/>** - Zmień nazwę grupy.
 - **<Translate android="true" ids="change_default_appearance"/>** - Zmień opcje wyświetlania dla grupy waypointów.
 - **<Translate android="true" ids="add_group_to_markers"/>** lub **Usuń** (*tylko Android*) - Przenieś waypointy grupy do listy [Znaczników mapy](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*tylko Android*) - Przenieś waypointy grupy do [Ulubionych](../../personal/favorites.md).
+- **<Translate android="true" ids="add_to_favorites"/>** (*tylko Android*) - Pozwala skopiować wybraną grupę Waypointów do [Ulubionych](../../personal/favorites.md). Można wybrać jedną z dwóch opcji: ***<Translate android="true" ids="copy_as_new_folder"/>*** lub ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*tylko Android*) - Tworzy trasę między waypointami. Pierwszy i ostatni punkt stają się początkiem i końcem trasy, a reszta jest konwertowana na punkty pośrednie.
 - **<Translate android="true" ids="shared_string_delete"/>** - Usuń grupę waypointów.
 
@@ -643,13 +644,13 @@ Aby otworzyć tę opcję:
 
 ### Podziel według odległości {#split-by-distance}
 
-![Zakładka podziału śladu według odległości](@site/static/img/personal/tracks/split_by_2_tab.png) ![Mapa podziału śladu według odległości](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Zakładka podziału śladu według odległości](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Mapa podziału śladu według odległości](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Ta opcja pozwala podzielić ślad na interwały o stałej odległości i analizować szczegółowe statystyki dla każdego segmentu. Dostępne interwały odległości to ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** i ***10 km***. Po wybraniu interwału odległości ślad jest wyświetlany jako lista segmentów. 
 
 Dla każdego segmentu możesz wyświetlić:
 - przebytą odległość.
-- przedział czasowy.
+- czas trwania.
 - średnią, minimalną i maksymalną wysokość.
 - wzniesienie i spadek.
 - czas w ruchu.
@@ -660,14 +661,14 @@ Po dotknięciu dowolnego segmentu na liście widok mapy pokazuje cały ślad z j
 
 ### Podziel według czasu {#split-by-time}
 
-![Zakładka podziału śladu według czasu](@site/static/img/personal/tracks/split_by_3_tab.png) ![Mapa podziału śladu według czasu](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Zakładka podziału śladu według czasu](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Mapa podziału śladu według czasu](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 Opcja **Podziel według czasu** dzieli ślad na interwały o równej długości. Możesz wybrać między ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** i ***60 min***. Sposób wyświetlania interwałów, statystyki podane dla każdego segmentu oraz sposób ich wyświetlania na mapie są takie same jak w sekcji [Podziel według odległości](#split-by-distance).
 
 
 ### Podziel według wzniesień/spadków {#split-by-uphill-downhill}
 
-![Zakładka podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_tab.png) ![Mapa podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Zakładka podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 Ta opcja dzieli ślad na segmenty na podstawie zmian wysokości. Każdy interwał jest klasyfikowany jako ***wzniesienie***, ***spadek*** lub ***płasko***. Sposób wyświetlania interwałów, statystyki podane dla każdego segmentu oraz sposób ich wyświetlania na mapie są również takie same jak w sekcji [Podziel według odległości](#split-by-distance).
 
@@ -727,7 +728,7 @@ W tym menu można zmienić niektóre parametry śladu, takie jak *Wygładzanie*,
 
 ### Statystyki {#statistics}
 
-![Wykres filtra GPS Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![Wykres filtra GPS Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 Zakładka Statystyki wyświetla informacje o **zmodyfikowanym** śladzie, czyli śladzie bez odfiltrowanych wartości. Jest to wyświetlane w blokach statystyk i danych wykresu.
   

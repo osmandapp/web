@@ -1,5 +1,5 @@
 ---
-source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
+source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
 sidebar_position: 3
 title:  Widżety informacyjne
 ---
@@ -475,7 +475,7 @@ Bardziej szczegółowy opis można przeczytać tutaj: **[<Translate android="tru
 
 </Tabs>
 
-Widżety nagrywania podróży odnoszą się do [wtyczki <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Możesz używać widżetów do przeglądania krótkich informacji o nagrywaniu trasy na ekranie. Takich jak *Dystans*, *Czas trwania*, *Pod górę* i *Z góry*.
+Widżety nagrywania podróży odnoszą się do [wtyczki <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Możesz używać widżetów do przeglądania krótkich informacji o nagrywaniu trasy na ekranie. Takich jak *Dystans*, *Czas trwania*, *Pod górę*, *Z góry*, *Maks. prędkość* i *Średnie nachylenie* (ostatnie dwie dostępne tylko na Androidzie).
 
 | | |
 |:------------|:------------|
@@ -495,13 +495,13 @@ Aby dodać widżety czujników zewnętrznych do ekranu mapy, włącz wtyczkę Os
 
 <TabItem value="android" label="Android">  
 
-![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png)
+![Widżety czujników zewnętrznych Android](@site/static/img/widgets/external-sensors-widgets_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Widżety czujników zewnętrznych iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 

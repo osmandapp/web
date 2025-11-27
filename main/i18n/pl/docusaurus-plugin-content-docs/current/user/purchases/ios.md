@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -53,11 +53,11 @@ Aplikację można pobrać, korzystając z tego linku - [OsmAnd Maps w Apple App 
 
 Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. W innych regionach ceny są ekwiwalentem w lokalnych walutach.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Black Friday prices
+
+*Hurry up! This offer is only available until* **November 30 (23:00 CET)**.
 
 :::
 
@@ -66,21 +66,21 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
+| **Cena (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Cena (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+<!--
 
 
--->
-
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) w aplikacji | Subskrypcja [Maps+](#install-osmand-ios) | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
-| **Cena (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Cena (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
-
+-->
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
@@ -97,6 +97,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Rzeźba terenu 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dane topograficzne](../plugins/topography.md#overview)<br/>(Poziomice i teren) | **-** | ✔ | ✔ |
+| [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Wizualizacja trasy 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Przewodniki turystyczne (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -122,7 +123,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 ### Funkcje Pro {#pro-features}
 
-![Pro](@site/static/img/svg/pro_icon.svg) *Funkcje Pro* są dostępne w ramach subskrypcji [OsmAnd Pro](#prices). Oznacza to, że musisz posiadać subskrypcję [OsmAnd Pro](#install-osmand-ios).
+![Pro](@site/static/img/svg/pro_icon.svg) *Funkcje Pro* są dostępne w ramach [subskrypcji OsmAnd Pro](#prices). Oznacza to, że musisz posiadać [subskrypcję OsmAnd Pro](#install-osmand-ios).
 
 Obecnie subskrypcja Pro obejmuje następujące funkcje:
 

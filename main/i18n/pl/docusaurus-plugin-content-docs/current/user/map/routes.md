@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Trasy
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-OsmAnd posiada wiele zaawansowanych funkcji do wyświetlania różnych [tras](#type-of-routes) na mapie. Domyślnie trasy te są częścią [map wektorowych](./vector-maps.md#routes) (dane OpenStreetMap), jednak podobną funkcjonalność zapewniają [ślady](./tracks/index.md), które można utworzyć za pomocą funkcji [Planowanie trasy](../plan-route/create-route.md), zaimportować jako [ślady GPX](#save-as-a-track) lub zarejestrować za pomocą [wtyczki Nagrywanie podróży](../plugins/trip-recording.md). Legenda mapy tras znajduje się [tutaj](../map-legend/osmand.md#routes).
+OsmAnd posiada wiele zaawansowanych funkcji do wyświetlania różnych [tras](#type-of-routes) na mapie. Domyślnie trasy te są częścią [map wektorowych](./vector-maps.md#routes) (dane OpenStreetMap), jednak podobną funkcjonalność zapewniają [ślady](./tracks/index.md), które można utworzyć za pomocą [Planowanie trasy](../plan-route/create-route.md), zaimportować jako [ślady GPX](#save-as-a-track) lub zarejestrować za pomocą [wtyczki Nagrywanie podróży](../plugins/trip-recording.md). Legenda mapy tras znajduje się [tutaj](../map-legend/osmand.md#routes).
 
 
 ## Typy tras {#type-of-routes}
@@ -181,7 +181,10 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,re
 - Aby wyświetlić wymagane trasy na mapie, włącz je na *liście tras* w menu [Konfiguracja mapy](../map/configure-map-menu.md).
 - OsmAnd może podświetlać [trasy obecne w OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Można je wybrać, dotykając [symbolu na trasie](#save-as-a-track), a jeśli widoczny zestaw tras jest poprawnie skonfigurowany, można podążać za kolorem i ikonami.
 - Główne typy tras można również filtrować według klas i podklas, co pozwala na wyświetlanie tylko określonych grup w ramach każdego typu. Na przykład, możesz wyświetlać szlaki piesze według **symboli OSMC** jako klasy, a według *międzynarodowych, krajowych, regionalnych* lub *lokalnych sieci* jako podklasy.
-- Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Planowanie trasy](../plan-route/create-route.md).  
+- Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Planowanie trasy](../plan-route/create-route.md). 
+- Gdy kilka tras przebiega wzdłuż tej samej drogi, każda trasa jest wyświetlana jako oddzielna półprzezroczysta linia umieszczona nad innymi. 
+- Po dotknięciu lokalizacji, w której nakładają się wiele tras, wyświetlane jest menu kontekstowe ze wszystkimi trasami przechodzącymi przez ten punkt. 
+- Aby wyświetlić wszystkie elementy nowego schematu renderowania tras, wymagane są zaktualizowane mapy wektorowe. 
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -195,7 +198,8 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 - Aby wyświetlić wymagane trasy na mapie, włącz je na *liście tras* w menu [Konfiguracja mapy](../map/configure-map-menu.md).
 - OsmAnd może podświetlać [trasy obecne w OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Można je wybrać, dotykając [symbolu na trasie](#save-as-a-track), a jeśli widoczny zestaw tras jest poprawnie skonfigurowany, można podążać za kolorem i ikonami.
-- Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Planowanie trasy](../plan-route/create-route.md).  
+- Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Planowanie trasy](../plan-route/create-route.md). 
+- Gdy kilka tras przebiega wzdłuż tej samej drogi, każda trasa jest wyświetlana jako oddzielna półprzezroczysta linia umieszczona nad innymi.   
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -361,13 +365,13 @@ Aby wyszukać, przejdź do menu *<Translate android="true" ids="search_button"/>
 
 </Tabs>  
 
-Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , aby znaleźć żądane trasy. Trasy zawierają nazwę, rodzaj aktywności, długość, lokalizację i odległość do najbliższego punktu.
+Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , aby znaleźć żądane trasy. Wyniki wyszukiwania tras wyświetlają nazwę trasy, rodzaj aktywności, długość, lokalizację i odległość do najbliższego punktu. Na Androidzie, tam gdzie dostępne, wyświetlane są również metryki wysokościowe, takie jak podjazd i zjazd. Mniejsze zmiany wysokości (mniej niż 10 m) są ukrywane, aby lista pozostała czytelna. Wszystkie wartości respektują wybrane w aplikacji jednostki odległości i wysokości.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_1.png)
+![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -385,7 +389,7 @@ Użyj przycisku filtrów (w prawym górnym rogu), aby wyświetlić tylko żądan
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

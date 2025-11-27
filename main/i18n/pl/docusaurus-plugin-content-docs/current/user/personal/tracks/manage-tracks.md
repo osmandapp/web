@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title:  Zarządzaj trasami
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
-Wszystkie trasy w OsmAnd są przechowywane w zakładce w *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd przetwarza pliki tras w [formacie GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ale pliki [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) i [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) mogą być importowane i konwertowane do formatu GPX. Przeczytaj więcej o różnych typach tras w artykule [Trasy na mapie](../../map/tracks/index.md#types-of-tracks).
+Wszystkie trasy w OsmAnd są przechowywane w zakładce w *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd przetwarza plik trasy w [formacie GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ale [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) i [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) mogą być importowane i konwertowane do GPX. Przeczytaj więcej o różnych typach tras w artykule [Trasy na mapie](../../map/tracks/index.md#types-of-tracks).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -196,13 +196,13 @@ Po dokonaniu wyboru dostępne są następujące kroki:
 
 - **Pokaż na mapie** — Dzięki tej funkcji możesz wyświetlić wybrane trasy na mapie, aby lepiej zrozumieć ich lokalizację i wzajemne relacje.
 
-- **Udostępnij** (*Android*) / **Eksportuj** (*iOS*) — Jeśli chcesz udostępnić wybrane dane innym użytkownikom lub zapisać je w usłudze chmurowej, funkcja *Udostępnij/Eksportuj* pozwala na wysyłanie tras i folderów za pomocą różnych metod udostępniania.
+- **Udostępnij** (*Android*) / **Eksportuj** (*iOS*) — Otwiera menu Udostępnianie systemowe i wysyła wybrane trasy jako pliki GPX (.gpx) lub eksportuje wybrane foldery za pomocą wybranej aplikacji lub usługi chmurowej.
 
 - **Prześlij do OpenStreetMap** — Możesz przesłać wybrane trasy do OpenStreetMap, przyczyniając się do rozwoju i ulepszania danych.
 
 - **Przenieś** — Możesz organizować swoje dane, przenosząc wybrane trasy i foldery do innych folderów.
 
-- [Zmień aktywność](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Ta akcja pozwala na zmianę typu aktywności, na przykład na *Samochód*, *Sporty motorowe*, *Wędrówki z plecakiem* lub inne, dla wybranej trasy.
+- [Zmień aktywność](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Ta akcja pozwala na zmianę typu aktywności, na przykład na *Samochód*, *Sporty motorowe przygodowe*, *Wędrówki z plecakiem* lub inne, dla wybranej trasy.
 
 - [Zmień wygląd](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Ta opcja pozwala na dostosowanie wyglądu wybranych tras, czyniąc je bardziej widocznymi i rozpoznawalnymi na mapie.
 
@@ -329,7 +329,7 @@ Na dole listy w zakładce *Trasy* oraz pod listą tras **w każdym z Twoich fold
 - *Całkowita suma* **Dystansów** — Wyświetlana jest całkowita długość wszystkich tras w wybranym folderze, mierzona w wybranych przez Ciebie jednostkach.
 - *Suma* **Wzniesień** — Dane wskazują całkowite przewyższenie na wszystkich trasach w wybranym folderze.
 - *Suma* **Spadków** — Ten parametr to suma spadków pionowych na wszystkich trasach w wybranym folderze.
-- *Suma* **Czasu trwania** — Wyświetla całkowity czas potrzebny na pokonanie wszystkich tras w wybranym folderze.
+- *Suma* **Czasu trwania** *czasu* — Wyświetla całkowity czas potrzebny na pokonanie wszystkich tras w wybranym folderze.
 - *Całkowity **Rozmiar** pobranych plików w MB* — Całkowity rozmiar pobranych plików w megabajtach pokazuje, ile miejsca zajmują wszystkie trasy w wybranym folderze na Twoim urządzeniu.
 
 
@@ -470,7 +470,7 @@ Istnieje kilka sposobów na wyeksportowanie jednego lub więcej plików tras do 
 2. Poprzez *Menu Moje miejsca → Trasy → Menu folderu / trasy*:
 
     - Aby [**wyeksportować pojedynczą trasę**](#track-menu), wybierz menu trasy.
-    - Aby [**wyeksportować wiele tras**](#track-folder), wybierz menu wymaganego folderu.
+    - Aby [**eksport wielu tras**](#track-folder), wybierz menu wymaganego folderu.
 
 3. Poprzez [Lokalny plik kopii zapasowej](../../personal/import-export.md#export). Eksportowanie tras GPX jako plików `.osf`.
 

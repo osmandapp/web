@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Mapy rastrowe (Online / Offline)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -296,7 +296,7 @@ Oto kluczowe parametry do skonfigurowania podczas ustawiania nowego źródła ma
 | Parametr | Opis |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Podaj nazwę dla nowego źródła map online. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Wprowadź lub wklej adres URL źródła kafelków online. Upewnij się, że jest zgodny z formatem adresu URL kafelka. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Wprowadź lub wklej adres URL źródła kafelków online. Upewnij się, że jest zgodny z formatem adresu URL kafelka. Adres URL może zawierać określone symbole zastępcze, które OsmAnd automatycznie zastąpi w zależności od konkretnego potrzebnego kafelka. Najczęściej używane symbole zastępcze opierają się na [konwencji nazw kafelków mapy slippy OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` lub `{0}`: Poziom powiększenia</li><li>`{x}` lub `{1}`: Indeks kafelka X</li><li>`{y}` lub `{2}`: Indeks kafelka Y</li></ul> Przykłady mniej powszechnie używanych symboli zastępczych znajdziesz w [predefiniowanych źródłach map rastrowych online](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Ten parametr wpływa na sposób wyświetlania mapy. <br/><ul><li>Jako *typ mapy*, mapa będzie ograniczona do wybranych poziomów powiększenia.</li><li>Jako *nakładka/podkład*, mapa pojawi się na wybranych poziomach powiększenia, z zastosowaniem skalowania w górę lub w dół poza tymi poziomami.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Ustaw czas (w minutach), po którym buforowane kafelki zostaną odświeżone. Możesz pozostawić to pole puste, jeśli nie chcesz, aby kafelki przeładowywały się automatycznie. <br/><ul><li>1 dzień = 1440 minut</li><li>1 tydzień = 10 080 minut</li><li>30 dni = 43 200 minut</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Wybierz między *odwzorowaniem Pseudo-Mercatora* a *odwzorowaniem eliptycznym Mercatora*, w zależności od źródła. |
