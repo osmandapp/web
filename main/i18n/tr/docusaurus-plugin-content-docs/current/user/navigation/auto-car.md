@@ -1,5 +1,5 @@
 ---
-source-hash: a7c6f8f7442c4b7f13e5c2dddf666b3c3746573001eeed8e01301d994f46a1d5
+source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -225,6 +225,25 @@ Rota bilgileri şunlardan oluşur:
 
 Etkinleştirildiğinde, **[widget ayarı](#eta-next-stop)** (Rota bilgileri) bir sonraki durak ([ara nokta](../navigation/setup/route-navigation.md#intermediate-destinations)) için rota ayrıntılarını gösterecektir.
 
+### Navigasyon Uyarıları {#navigation-alerts}
+
+![Eksik Uyarı](@site/static/img/navigation/auto-car/missing_alert.png) ![Özel Uyarı](@site/static/img/navigation/auto-car/private_alert.png)
+
+Yardımcı uyarılar, rota normal şekilde oluşturulamıyorsa navigasyonu başlatmadan önce otomatik olarak gösterilir. Bu, rotanın yüklemede takılı kalmasını önler ve devam etme yolunu hızlıca seçmenize olanak tanır.
+
+**Eksik veya güncel olmayan haritalar**
+
+Hedefiniz indirilen harita alanlarının dışında yer alıyorsa, bir mesaj görüntülenir ve aşağıdaki eylemlerden birini seçebilirsiniz:
+- **İndirilen haritaları kullan**. Rota, yalnızca cihazınızda zaten depolanan haritalar kullanılarak oluşturulur. (Gerekli harita verisi kullanılamıyorsa rota eksik olabilir.)
+- **Telefonda görüntüle**. Harita indirme ekranı akıllı telefonunuzda açılır, gerekli bölgeler indirilebilir. İndirdikten sonra rota hesaplaması otomatik olarak yeniden başlatılır.
+
+Bu uyarı, mobil uygulamadaki gibi doğrudan araç ekranında gösterilir.
+
+**Özel erişim uyarısı**
+
+Hedefiniz özel veya kısıtlı erişimli bir alanda yer alıyorsa, bir uyarı görüntülenir ve şunları seçebilirsiniz:
+- **İzin ver**. İzin verilmişse veya erişiminiz varsa özel yollar kullanılarak navigasyon devam eder.
+- **İptal et**. Navigasyon isteği reddedilir ve önceki ekran geri yüklenir.
 
 ### Ekran Uyarı Widget'ı {#screen-alert-widget}
 
@@ -257,6 +276,24 @@ OsmAnd uygulaması, rotanızı ve navigasyonunuzu görüntülemek için *Android
 - Ana *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* öğesini doğrudan OsmAnd uygulamasında açın.
 - Ayarları yapılandırdıktan sonra, hedefler için kategori listesi kapatıldığında **3D düğmesi** *Android Auto* ekranında görüntülenecektir.
 - Bu düğmeye dokunarak 3D / 2D harita modları arasında geçiş yapabilirsiniz.
+
+### Navigasyonu Bitir {#finish-navigation}
+
+![Navigasyonu Bitir](@site/static/img/navigation/auto-car/finish_navigation.png)
+
+Android Auto'da navigasyon tamamlandığında, araç ekranında özel bir Navigasyonu Bitir diyaloğu görünür. Mobil uygulamadaki gibi aynı varış algılama algoritmasını kullanır ve yolculuğunuzu hızlıca sonlandırmanıza veya yakındaki bir park yeri bulmanıza yardımcı olur.
+
+Mevcut seçenekler:
+- **Park yeri olarak işaretle**. Mevcut konumunuzu park yeri olarak kaydeder ve haritaya park işareti yerleştirir.
+- **Park yeri bul**. Park kategorisi önceden seçilmiş olarak Arama ekranını açar, böylece yakındaki park alanlarını kolayca bulabilirsiniz.
+- **Rota yeniden hesapla**. Daha önce durduysanız veya sürüşe devam etmek istiyorsanız orijinal hedefinize yeni bir rota oluşturur.
+- **Navigasyonu bitir**. Navigasyonu tamamen sonlandırır ve OsmAnd'ı varsayılan harita görünümüne döndürür.
+
+Android Auto'dan bağlantı kesildiğinde davranış:
+- Telefonunuz hedefe 100 m mesafede araç durduğunda bağlantı kesilirse, OsmAnd navigasyonu otomatik olarak durdurur, varsayılan profile geri döner ve telefon ekranında varış bildirimi görünmez.
+- Bağlantı kesilmesi hareketsiz dururken veya 1 m/s'den yavaş hareket ederken olursa (örneğin benzin istasyonunda), OsmAnd navigasyonu geçici olarak duraklatır. Cihaz Android Auto'ya yeniden bağlandığında otomatik olarak devam eder.
+
+Bu güncelleme ayrıca Android Auto oturumlarının artık doğru şekilde kapandığından emin olur, gereksiz pil kullanımı önler ve navigasyon sona erdiğinde "devam eden gezi" bildirimlerini durdurur.
 
 
 ## Ayarlar {#settings}

@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Raster Haritalar (Çevrimiçi / Çevrimdışı)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -33,9 +33,9 @@ Raster haritaların geniş bir kullanım alanı vardır. İşte en popüler olan
 - Gerçek zamanlı gemi bilgileri.
 - OSM düzenlemesi için çevrimiçi OpenStreetMap döşemeleri.
 
-![Çevrimiçi haritalara genel bakış](@site/static/img/plugins/online-maps/online-maps-overview.png)
+![Online maps overview](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
-:::ipucu
+:::tip
 Haritaların ana kaynağını vektör haritalardan çevrimiçi döşemelere de değiştirebilirsiniz.
 :::
 
@@ -44,7 +44,7 @@ Haritaların ana kaynağını vektör haritalardan çevrimiçi döşemelere de d
 
 OsmAnd'daki çevrimiçi haritalar, piksellerden (ızgara hücreleri olarak da adlandırılır) oluşan raster verilerden oluşur - esasen döşemeler olarak bilinen küçük görüntüler kümesidir. Yolları, noktaları ve poligonları ikili bilgiler kullanarak temsil eden vektör haritaların aksine, raster harita döşemeleri bir ızgarada düzenlenir ve her pikselin sabit bir değeri veya sınıfı olduğu için yüksek yakınlaştırma seviyelerinde pikselli görünebilir.
 
-### Varsayılan vektör haritalarla karşılaştırma {#comparison-to-default-vector-maps}
+### Comparison to default vector maps {#comparison-to-default-vector-maps}
 
 **Avantajlar:**
 
@@ -79,13 +79,13 @@ OsmAnd'daki çevrimiçi haritalar, piksellerden (ızgara hücreleri olarak da ad
 
 <TabItem value="android" label="Android">  
 
-![Haritaları göster](@site/static/img/plugins/online-maps/show-maps-andr.png)  
+![Show maps](@site/static/img/plugins/online-maps/show-maps-andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Haritaları göster](@site/static/img/plugins/online-maps/show-maps-ios.png)  
+![Show maps](@site/static/img/plugins/online-maps/show-maps-ios.png)  
 
 </TabItem>
 
@@ -106,7 +106,7 @@ Katmanlarınızla harmanlamak için temel haritanın şeffaflığını da ayarla
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
 
-![Haritaları göster](@site/static/img/plugins/online-maps/map_source.png)
+![Show maps](@site/static/img/plugins/online-maps/map_source.png)
 
 </TabItem>
 
@@ -114,7 +114,7 @@ Katmanlarınızla harmanlamak için temel haritanın şeffaflığını da ayarla
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps"/>*  
 
-![Haritaları göster](@site/static/img/plugins/online-maps/map_type.png)
+![Show maps](@site/static/img/plugins/online-maps/map_type.png)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ Listeden bir harita stili seçebilir veya kendi stilinizi [ekleyebilirsiniz](#ad
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Alt katman / Üst katman Android'i yapılandır](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
 
 </TabItem>
 
@@ -139,7 +139,7 @@ Listeden bir harita stili seçebilir veya kendi stilinizi [ekleyebilirsiniz](#ad
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Alt katman / Üst katman iOS'u yapılandır](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
 </TabItem>
 
@@ -162,7 +162,7 @@ Listeden bir harita stili seçebilir veya kendi stilinizi [ekleyebilirsiniz](#ad
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Alt katman / Üst katman Android'i yapılandır](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Listeden bir harita stili seçebilir veya kendi stilinizi [ekleyebilirsiniz](#ad
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Alt katman / Üst katman iOS'u yapılandır](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
 </TabItem>
 
@@ -187,7 +187,7 @@ Listeden bir harita stili seçebilir veya kendi stilinizi [ekleyebilirsiniz](#ad
 
 ## Tepe Gölgelendirme / Eğim {#hillshade--slope}
 
-![Arazi katmanları](@site/static/img/plugins/online-maps/terrain_two_layers.png)
+![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
 **Tepe Gölgelendirme** ve **Eğim**, arazi kabartmasını gösteren çevrimdışı raster haritalardır. Özel bir harita katmanı olarak, temel harita üzerinde ikinci bir katman olarak görüntülenirler. Haritalar, manzaranın eğimini ve gölgelerini daha doğru anlamanıza yardımcı olmak için ek yükseklik bilgileri içerir. *Tepe Gölgelendirme* ve *Eğim* bilgileri, tek bir kaynaktan, *Küresel gezegen dosyasından* alınan verilere dayanır ve bölgelere ayrılmıştır.  
 
@@ -208,7 +208,7 @@ Tepe Gölgelendirme ve Eğim ile başlamak için şunları yapmanız gerekir:
 
 | Tepe Gölgelendirme | 3D Kabartma |
 |--------|---------|
-| ![Arazi katmanları](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Arazi katmanları](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 Bu ayarlar uygulandığında harita üzerindeki kabartma gösteriminin farkı, **Topografya** makalesinde ilgili bölümde açıklanmıştır [Tepe Gölgelendirme ve 3D Kabartma](../plugins/topography.md#hillshade-and-3d-relief).
 
@@ -231,18 +231,18 @@ Bu ayarlar uygulandığında harita üzerindeki kabartma gösteriminin farkı, *
 
 </Tabs>
 
-![Arazi katmanları](@site/static/img/plugins/online-maps/terrain_layers.png)
+![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
 Tepe Gölgelendirme ve Eğim için yakınlaştırma seviyesini ve şeffaflığı özelleştirebilirsiniz. Daha fazla bilgiyi [Topografya makalesinde](../plugins/topography.md#hillshade-slope-and-altitude-layers) bulabilirsiniz.
 
 
 ## 3D Kabartma {#3d-relief}
 
-:::not
+:::note
 [3D Kabartma](../plugins/topography.md#3d-relief) bir [**OsmAnd Pro**](../purchases/index.md) ücretli özelliğidir <ProFeature />.
 :::
 
-![Arazi katmanları](@site/static/img/plugins/online-maps/raster_maps_3d.png)
+![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
 
 [**3D Kabartma** özelliği](../plugins/topography.md#3d-relief), bir harita üzerinde araziyi üç boyutlu modeller kullanarak görselleştirmeye olanak tanıyan bir haritalama teknolojisidir. Bu özellik, normal iki boyutlu bir haritaya yükseklik bilgisi ekleyerek 3D ve derinlik efekti oluşturur ve araziyi daha iyi görselleştirmenizi sağlar.  
 
@@ -287,7 +287,7 @@ OsmAnd'da henüz tanımlanmamış yeni bir raster harita kaynağı eklemek için
 
 </Tabs>
 
-![Çevrimiçi kaynak ekle](@site/static/img/plugins/online-maps/add-online-source-2.png)
+![Add online source](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 Bir raster harita kaynağı oluşturmak için, Mercator Projeksiyonunda harita döşemelerini dağıtan belirli bir URL olan bir **döşeme URL'sini** bilmeniz gerekir. Örneğin, bir döşeme URL'si şöyle görünebilir: `https://tile.osmand.net/hd/6/55/25.png`, burada `tile.osmand.net/hd/` temel URL'dir.
 
@@ -296,7 +296,7 @@ Yeni bir çevrimiçi harita kaynağı kurarken yapılandırılacak temel paramet
 | Parametre | Açıklama |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Yeni çevrimiçi harita kaynağı için bir ad sağlayın. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Çevrimiçi döşeme kaynağı için URL'yi girin veya yapıştırın. Döşeme URL biçimine uyduğundan emin olun. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Çevrimiçi döşeme kaynağı için URL'yi girin veya yapıştırın. Döşeme URL biçimine uyduğundan emin olun. URL, OsmAnd'ın belirli bir döşeme için otomatik olarak değiştireceği belirli yer tutucular içerebilir. En yaygın kullanılan yer tutucular, [OpenStreetMap slippy map tilenames convention](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames) temel alınarak: <ul><li>`{z}` veya `{0}`: Yakınlaştırma seviyesi</li><li>`{x}` veya `{1}`: Döşeme X indeksi</li><li>`{y}` veya `{2}`: Döşeme Y indeksi</li></ul> Daha az yaygın kullanılan yer tutucuların örnekleri için, [önceden tanımlanmış çevrimiçi raster harita kaynaklarını](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml) görün. |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Bu parametre, haritanın nasıl görüntülendiğini etkiler. <br/><ul><li>Bir *harita türü* olarak, harita seçilen yakınlaştırma seviyeleriyle sınırlı olacaktır.</li><li>Bir *katman üstü/alt katman* olarak, harita seçilen yakınlaştırma seviyelerinde görünecek ve bu seviyelerin dışında büyütme veya küçültme uygulanacaktır.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Önbelleğe alınmış döşemelerin yenilenme süresini (dakika cinsinden) ayarlayın. Döşemelerin otomatik olarak yeniden yüklenmesini istemiyorsanız bu alanı boş bırakabilirsiniz. <br/><ul><li>1 gün = 1440 dakika</li><li>1 hafta = 10.080 dakika</li><li>30 gün = 43.200 dakika</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Kaynağa bağlı olarak *Sözde-Mercator projeksiyonu* ve *Eliptik Mercator projeksiyonu* arasında seçim yapın. |
@@ -336,7 +336,7 @@ Döşeme formatını değiştirmek için, çevrimiçi haritaların düzenleme me
 
 ### Raster Harita Önbelleğini Temizle {#clear-raster-map-cache}
 
-![Çevrimiçi kaynaklar listesi](@site/static/img/plugins/online-maps/online-sources-list.png)
+![Online sources list](@site/static/img/plugins/online-maps/online-sources-list.png)
 
 Çevrimiçi raster haritaları Ana / Katman Üstü / Alt Katman olarak kullanırken döşemeler önbellekte depolanır. SQ Lite dosyanızın boyutunu çevrimiçi harita adınızın altında listede görebilirsiniz. Bazen döşemelerin görüntülenmesini hızlandırmak veya verileri güncellemek için düzenli temizlik gerekebilir.  
 
@@ -369,7 +369,7 @@ Haritaların bir süre sonra döşemeleri otomatik olarak güncellemesi için bi
 
 <!--
 
-![Döşemeleri indir Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Döşemeleri indir Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Döşemeleri indir Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Döşemeleri indir Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
+![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
 
 -->
 
@@ -378,7 +378,7 @@ Haritaların bir süre sonra döşemeleri otomatik olarak güncellemesi için bi
 
 <TabItem value="ios" label="iOS">  
 
-![Döşemeleri indir iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
+![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
 
 </TabItem>
 

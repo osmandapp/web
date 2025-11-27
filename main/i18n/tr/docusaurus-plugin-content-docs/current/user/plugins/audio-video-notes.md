@@ -1,8 +1,9 @@
 ---
-source-hash: df3ca4319c710ab10e6feac8e399bf55f9a54b6a048be004a30d279c36e39e60
+source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
 sidebar_position: 3
 title:  Sesli / Görüntülü Notlar
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,14 +14,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoAndroidOnly />
 
 ## Genel Bakış {#overview}
 
 Ses ve video kayıtlarınız, nerede bulunduğunuzun anıları gibi gelecekte faydalı olabilir. [Yerlerim](../personal/myplaces.md) menüsünde mevcutturlar ve Sesli/Görüntülü Notlar eklentisi etkinleştirildiğinde görünürler.
 
-Sesli/Görüntülü Notlar eklentisi, fotoğraf, video veya ses gibi çeşitli formatlarda kendi notlarınızı oluşturmanıza ve bunları coğrafi konumunuzla veya mevcut konumunuzla ilişkilendirmenize olanak tanıyarak OsmAnd'ın işlevselliğini genişletir. Kayıtları yalnızca eklenti açıkken, [Sesli/Görüntülü Notlar widget'ını](../widgets/info-widgets.md#audiovideo-notes-widget) ve/veya [harita bağlam menüsünü](../map/map-context-menu.md#-audiovideo-note) kullanarak yapabilirsiniz. Alınan veriler otomatik olarak [Yerlerim](../personal/myplaces.md) bölümüne kaydedilir ve buradan kolayca yönetilebilir ve paylaşılabilir.
+Sesli/Görüntülü Notlar eklentisi, fotoğraf, video veya ses gibi çeşitli formatlarda kendi notlarınızı oluşturmanıza ve bunları coğrafi konumunuzla veya mevcut konumunuzla ilişkilendirmenize olanak tanıyarak OsmAnd'ın işlevselliğini genişletir. Kayıtları yalnızca eklenti açıkken, [Sesli/Görüntülü Notlar widget'ını](../widgets/info-widgets.md#audiovideo-notes-widget) ve/veya [harita bağlam menüsünü](../map/map-context-menu.md#-audiovideo-note) kullanarak yapabilirsiniz. Alınan veriler otomatik olarak [Yerlerim](../personal/myplaces.md) bölümüne kaydedilir ve buradan kolayca yönetilebilir ve paylaşılabilir.  
 
 Oluşturulan tüm sesli ve görüntülü notlar Kayıt katmanını oluşturur. Haritada etkinleştirildiğinde, kaydedilen verilerin görünümünü değiştirir ve kayıtları yönetmek için daha fazla ayar bulunur. Kayıt katmanında, sesli ve görüntülü notlar haritada POI olarak yerleştirilir ve böylece yalnızca cihaz sahibine görünen bir kullanıcı anlatısı oluşturulur.
 
@@ -39,9 +39,9 @@ Oluşturulan tüm sesli ve görüntülü notlar Kayıt katmanını oluşturur. H
 
 Sesli/görüntülü notlar, Sesli/görüntülü notlar eklentisi ile sağlanır ve aşağıdaki kurulumu gerektirir:
 
-1. *Ana Menü*'nün Eklentiler bölümünde [Sesli/görüntülü notlar eklentisini](../plugins/index.md#enable--disable) etkinleştirin.
+1. *Ana Menü*'nün Eklentiler bölümünde [Sesli/görüntülü notlar eklentisini](../plugins/index.md#enable--disable) etkinleştirin.  
 2. En uygun kullanım için harita ekranına bir [widget](../widgets/info-widgets.md#audiovideo-notes-widget) ekleyin.
-3. Gerekirse, her profil için [kayıt ayarlarını](#plugin-settings) özelleştirin.
+3. Gerekirse, her profil için [kayıt ayarlarını](#plugin-settings) özelleştirin.  
 
 
 ## Eklenti Ayarları {#plugin-settings}
@@ -50,7 +50,7 @@ Sesli/görüntülü notlar, Sesli/görüntülü notlar eklentisi ile sağlanır 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*  
 
 ![Sesli video eklenti ayarları Fotoğraf Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
 
@@ -58,23 +58,23 @@ Sesli/görüntülü notlar, Sesli/görüntülü notlar eklentisi ile sağlanır 
 
 </Tabs>
 
-Her profil için *ses ve video kayıt seçeneklerini* yapılandırabilirsiniz.
+Her profil için *ses ve video kayıt seçeneklerini* yapılandırabilirsiniz.  
 
 | Parametre | Açıklama |
 | --- | --- |
-| **<Translate android="true" ids="camera_app"/>** | <Translate android="true" ids="photo_notes"/> çekmek için sistem uygulamasını mı yoksa OsmAnd kamerasını mı kullanacağınızı seçebilirsiniz. |
+| **<Translate android="true" ids="camera_app"/>**  | <Translate android="true" ids="photo_notes"/> çekmek için sistem uygulamasını mı yoksa OsmAnd kamerasını mı kullanacağınızı seçebilirsiniz.|
 | **<Translate android="true" ids="av_camera_pic_size"/>** | Çekilecek fotoğrafların boyutunu ayarlar. Cihazın kamera özellikleri, mevcut seçeneklerin sayısını belirler. Hiçbir seçenek seçilmezse, uygulama cihazın kamera sistem ayarlarındaki boyutu kullanır. |
 | **<Translate android="true" ids="av_camera_focus"/>** | Kamera odağının nasıl ayarlandığını belirler. Mevcut seçeneklerin sayısı, cihaz kamerasının yetenekleri tarafından belirlenir. Temel olarak, üç seçenek vardır: *<Translate android="true" ids="av_camera_focus_auto"/>*; *<Translate android="true" ids="av_camera_focus_continuous"/>*; ve *<Translate android="true" ids="av_camera_focus_infinity"/>*. **Otomatik odaklama** en popüler olanıdır ve kamera için otomatik modu belirler; **sürekli** kameranın hareketleri algılamasını ve buna göre yeniden odaklanmasını sağlar; ve **sonsuz** seçeneği, lensin bir mesafeye odaklanmasını ve böylece nesneleri ne kadar uzakta olursa olsun odakta tutmasını sağlar. |
 | **<Translate android="true" ids="multimedia_photo_play_sound"/>** | Etkinleştirilirse, kamera çekim yaptığında bir ses üretilir. Lütfen unutmayın ki, gizlilik yasası gereği, **bazı ülkelerde cihazlarda kamera deklanşör sessize alma anahtarı bulunmayacaktır**. Sistem uygulamasını kullanıyorsanız, sesin kamera uygulamasında devre dışı bırakılması gerekir. |
 | **<Translate android="true" ids="av_audio_format"/>** | Bir ses dosyası için format seçimi sunar. Mevcut seçeneklerin sayısı ve varsayılan olarak hangisinin kullanıldığı, belirli bir cihazın parametreleri tarafından belirlenir. |
 | **<Translate android="true" ids="av_audio_bitrate"/>** | Bu seçenek, oluşturulacak bir ses dosyası için bit hızı seçenekleri sunar. Mevcut bit hızı seçenekleri 16kbps'den 128 kbps'ye veya Varsayılan seçeneğe kadar değişir. Varsayılan parametre, cihazınızın "varsayılan" mikrofon ayarları tarafından belirlenir. |
 | **<Translate android="true" ids="multimedia_use_system_camera"/>** | Etkinleştirilirse, OsmAnd <Translate android="true" ids="video_notes"/> içinde video kaydetmek için sistem uygulamasını kullanır. |
-| **<Translate android="true" ids="av_video_quality"/>** | Bu, çıktı görüntüsünün formatını belirleyen seçenekler sunar. Mevcut seçeneklerin aralığı, belirli bir cihazın parametreleri tarafından belirlenir. Varsayılan seçenek *En yüksek kalite* seçeneğidir. |
-| **<Translate android="true" ids="multimedia_rec_split_title"/>** | Etkinleştirilirse, depolama boyutu limitine ulaşırsa eski video kayıtları otomatik olarak yeniden yazılır ve yeni video kayıtlarıyla değiştirilir. |
-| **<Translate android="true" ids="rec_split_clip_length"/>** | Bu, kaydedilen video klipler için üst zaman sınırını belirler. 1 dakikadan 30 dakikaya kadar seçenekler mevcuttur. |
+| **<Translate android="true" ids="av_video_quality"/>** | Bu, çıktı görüntüsünün formatını belirleyen seçenekler sunar. Mevcut seçeneklerin aralığı, belirli bir cihazın parametreleri tarafından belirlenir. Varsayılan seçenek *En yüksek kalite* seçeneğidir.  |
+| **<Translate android="true" ids="multimedia_rec_split_title"/>** | Etkinleştirilirse, depolama boyutu limitine ulaşırsa eski video kayıtları otomatik olarak yeniden yazılır ve yeni video kayıtlarıyla değiştirilir.  |
+| **<Translate android="true" ids="rec_split_clip_length"/>** | Bu, kaydedilen video klipler için üst zaman sınırını belirler. 1 dakikadan 30 dakikaya kadar seçenekler mevcuttur.|
 | **<Translate android="true" ids="rec_split_storage_size"/>** | Bu, kaydedilen video için ayrılan depolama boyutunu belirler. 1024 MB'tan 62 GB'a kadar seçenekler mevcuttur. Belirli bir seçenek aralığı ve varsayılan seçenek, belirli bir cihazın parametreleriyle belirlenir. Bir sistem mesajı, depolama boyutunun belirlenen sınıra ulaştığını size hatırlatacaktır. |
 | **<Translate android="true" ids="notes"/>** | Bu seçenek sizi [Yerlerim'deki Sesli/görüntülü notlara](../personal/myplaces.md) yönlendirir - uygulamada şimdiye kadar yapılmış tüm Sesli/görüntülü notların merkezi depolama alanı. |
-| **<Translate android="true" ids="reset_plugin_to_default"/>** | Tüm A/V notları ayarları için varsayılan değerleri belirleyebilirsiniz. |
+| **<Translate android="true" ids="reset_plugin_to_default"/>** | Tüm A/V notları ayarları için varsayılan değerleri belirleyebilirsiniz.  |
 | **<Translate android="true" ids="copy_from_other_profile"/>** | Sesli/görüntülü not kayıt yapılandırmasını kopyalamak ve mevcut profil için ayarlamak üzere bir profil seçmek için bir iletişim kutusu açar. |
 
 
@@ -98,7 +98,7 @@ Aşağıdaki yollardan herhangi biriyle bir fotoğraf, video ve sesli not oluşt
 
 </Tabs>
 
-<Translate android="true" ids="map_widget_av_notes"/> widget'ı, mevcut konumunuza bağlı bir not oluşturmak ve böylece haritada uygun bir not noktası arama zahmetinden kaçınmak için kullanılır. Sadece widget'a dokunun ve notu oluşturun.
+<Translate android="true" ids="map_widget_av_notes"/> widget'ı, mevcut konumunuza bağlı bir not oluşturmak ve böylece haritada uygun bir not noktası arama zahmetinden kaçınmak için kullanılır. Sadece widget'a dokunun ve notu oluşturun.  
 
 <Translate android="true" ids="map_widget_av_notes"/> widget'ı tarafından sağlanan işlevler, [Ekranı Yapılandır](../widgets/info-widgets.md#audiovideo-notes-widget) menüsünde nasıl yapılandırıldığına bağlıdır. Widget, belirlenen ayarlara göre hemen bir not oluşturmak için kamerayı açar veya önce hangi formatta bir not oluşturulacağını sorar ve ardından ilgili kaydedici iletişim kutusunu açar.
 
@@ -147,7 +147,7 @@ Haritada seçilen bir noktaya bağlı bir not oluşturmak için noktanın [Bağl
 
 Kaydı, Bağlam menüsü veya widget kaydı başlatmış olsun, <Translate android="true" ids="map_widget_av_notes"/> widget'ına dokunarak durdurmak mümkündür. *Bir fotoğraf notu* için kamera işlevselliği belirir ve bir fotoğraf çekebilir, sonucu görüntüleyebilir, kabul edip kaydedebilir veya yeni bir fotoğraf çekebilirsiniz.
 
-:::info not
+:::info note
 Otomatik olarak, tüm fotoğraf, ses ve video kayıtları şuraya kaydedilir: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> sekmesi.
 :::
 
@@ -203,7 +203,7 @@ Haritada belirli bir notu göstermek için Yerlerim'deki notlar listesini kullan
 
 <TabItem value="android" label="Android">
 
-![Sesli video eklentisi Bağlam menüsü](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)
+![Sesli video eklentisi Bağlam menüsü](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)  
 ![Sesli video eklentisi Yerlerim menüsü eylemleri](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
@@ -245,17 +245,17 @@ Yerlerim'de bir notu yönetmek için listedeki notun dikey üç noktasına dokun
 
 <TabItem value="android" label="Android">
 
-![Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 </TabItem>
 
 </Tabs>
 
-[Sesli/Görüntülü Notlar widget'ı](../widgets/info-widgets.md#audiovideo-notes-widget) notlar, fotoğraflar, ses ve video dosyaları oluşturur ve bunları mevcut konumunuza bağlar. Widget'ın, ekran dokunulduğunda widget tarafından gerçekleştirilen varsayılan eylem olarak ayarlanabilen birkaç seçeneği vardır.
+[Sesli/Görüntülü Notlar widget'ı](../widgets/info-widgets.md#audiovideo-notes-widget) notlar, fotoğraflar, ses ve video dosyaları oluşturur ve bunları mevcut konumunuza bağlar. Widget'ın, ekran dokunulduğunda widget tarafından gerçekleştirilen varsayılan eylem olarak ayarlanabilen birkaç seçeneği vardır.  
 
-Haritada coğrafi konum aramaktan kaçınmayı ve notları mevcut varsayılan konumunuza bağlamayı tercih ediyorsanız, ekrana bir widget eklemek gereklidir. Bir widget eklemek veya özelleştirmek için aşağıdaki adımları izleyin:
+Haritada coğrafi konum aramaktan kaçınmayı ve notları mevcut varsayılan konumunuza bağlamayı tercih ediyorsanız, ekrana bir widget eklemek gereklidir. Bir widget eklemek veya özelleştirmek için aşağıdaki adımları izleyin:  
 
-1. Şuraya gidin:
+1. Şuraya gidin:  
     *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 2. **<Translate android="true" ids="map_widget_left"/>** veya **<Translate android="true" ids="map_widget_right"/>** öğesini seçin.
@@ -272,7 +272,16 @@ Haritada coğrafi konum aramaktan kaçınmayı ve notları mevcut varsayılan ko
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - fotoğraf çekmeye başlayın.
 
-    ![Widget](@site/static/img/plugins/audio-video-notes/widget.png)
+    ![Widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+
+**Dış giriş cihazlarını kullanma (*Android*)**. Bir [dış giriş cihazı](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) kullanıyorsanız, ekrana dokunmadan Sesli/Görüntülü Notlar'ı başlatabilir ve durdurabilirsiniz. Bunu yapmak için, bir tuşa “Sesli not ekle” veya “Görüntülü not ekle” eylemini atayın:<br/>
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+
+Atandıktan sonra, tuş bir geçiş olarak çalışır:
+- İlk basış, sesli veya görüntülü not kaydını başlatır (seçilen eyleme bağlı olarak).
+- Aynı tuşun ikinci basışı kaydı durdurur.
+
+Bir kayıt dış giriş cihazı aracılığıyla durdurulduğunda, Bağlam menüsü gösterilmez; bu, OsmAnd'ı tamamen eller serbest senaryolarda kullanmayı kolaylaştırır (örneğin, motosiklet sürerken veya araç kullanırken).
 
 
 ## Birden Çok Notu Yönetme {#manage-multiple-notes}
@@ -306,9 +315,9 @@ Alt çubuktaki seçenekler, [Yerlerim](../personal/myplaces.md#audiovideo-notes)
 
 </Tabs>
 
-Tüm Notları, seçilen notları [Yerlerim](../personal/myplaces.md#audiovideo-notes) ekranında yol noktaları olarak içeren [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) dahil olmak üzere, alt menü düğmesine tıklayarak paylaşabilirsiniz. Belirli notları seçmek için her notun yanında bir onay kutusu görünecektir. Notların üzerinde iki onay kutusu vardır: tüm notları seçmek için *Tarihe göre A/V notları* ve *Konumlar* onay kutusu. *Konumlar* onay kutusu, koordinatlar ve verilerle ayrı bir GPX dosyası eklemenizi sağlar.
+[Yerlerim](../personal/myplaces.md#audiovideo-notes) ekranında alt menü düğmesine tıklayarak, seçilen notları yol noktaları olarak içeren [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) dahil tüm Notları paylaşabilirsiniz. Belirli notları seçmek için her notun yanında bir onay kutusu görünecektir. Notların üzerinde iki onay kutusu vardır: tüm notları seçmek için *Tarihe göre A/V notları* ve *Konumlar* onay kutusu. *Konumlar* onay kutusu, koordinatlar ve verilerle ayrı bir GPX dosyası eklemenizi sağlar.  
 
-Her not, oluşturulduğu zamanı, veri miktarını ve bir kayıt ise kayıt zamanını ve konum verilerini içerir, GPX verileri ekleyebilirsiniz.
+Her not, oluşturulduğu zamanı, veri miktarını ve bir kayıt ise kayıt zamanını ve konum verilerini içerir, GPX verileri ekleyebilirsiniz.  
 Desteklenen dosya formatları: ses - **3gp**, video - **mp4**, fotoğraf -**jpg**.
 
 
@@ -339,7 +348,7 @@ Tüm notları göstermek veya gizlemek için [Kayıt](../map/point-layers-on-map
 
 <TabItem value="android" label="Android">
 
-![Haritada notlar ve yol noktaları](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)
+![Haritada notlar ve yol noktaları](@site/static/img/plugins/audio-video-notes/note_waypoint_on_map.png)  
 ![İzdeki yol noktaları](@site/static/img/plugins/audio-video-notes/waypoint_auto_manual.png)
 
 </TabItem>
@@ -378,7 +387,7 @@ Bir yol noktası oluşturmanın iki yolu vardır: otomatik ve manuel.
     - Bir yol noktası eklemek istediğiniz izi seçin.
     - *<Translate android="true" ids="quick_action_add_gpx"/>* iletişim kutusu açılır ve yol noktasına ad, simge, renk ve diğer bazı özellikleri ayarlamanıza olanak tanır. Tamamlandığında, **Kaydet**'e dokunun.
 
-:::info not
+:::info note
 Manuel olarak oluşturulan her yol noktası için adlar belirleyebilirsiniz.
 :::
 
@@ -403,7 +412,7 @@ Manuel olarak oluşturulan her yol noktası için adlar belirleyebilirsiniz.
 
 ### Yol Noktaları İçeren GPX Dosyası {#gpx-file-with-waypoints}
 
-![GPX dosyasındaki yol noktası](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
+![GPX dosyasındaki yol noktası](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)  
 
 Bir ses/video/fotoğraf notundan bir yol noktası ile eklenen iz'in GPX dosyasını görüntülerseniz, yol noktası aşağıdaki örnekteki gibi olacaktır; koordinatlara, zaman damgasına, ilgili notun adına ve kısa bağlantıya sahip olacaktır.
 
@@ -421,9 +430,9 @@ burada `SHORTLINK_LOCATION`, dosyanın bağlı olduğu konumun enlem ve boylamı
 
 ### JOSM'ye Aktar {#export-to-josm}
 
-![Josm'deki sesli video notları](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Josm'deki sesli video notları](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
-Her şeyi daha sonra görüntülemek için, izi tüm medya dosyalarıyla birlikte dışa aktarabilir ve [JOSM düzenleyicisinde](https://josm.openstreetmap.de/) görüntüleyebilirsiniz. Medya dosyalarının uygun klasöre yerleştirilmesi gerektiğini unutmayın. Hangisi olduğunu videoya tıklayarak öğrenebilirsiniz. Dosyanın mevcut olmadığına dair bir bildirim görünecek, doğru dosyayı belirtilen klasöre yerleştirin.
+Her şeyi daha sonra görüntülemek için, izi tüm medya dosyalarıyla birlikte dışa aktarabilir ve [JOSM düzenleyicisinde](https://josm.openstreetmap.de/) görüntüleyebilirsiniz. Medya dosyalarının uygun klasöre yerleştirilmesi gerektiğini unutmayın. Hangisi olduğunu videoya tıklayarak öğrenebilirsiniz. Dosyanın mevcut olmadığına dair bir bildirim görünecek, doğru dosyayı belirtilen klasöre yerleştirin.  
 
 
 ## İlgili Makaleler {#related-articles}

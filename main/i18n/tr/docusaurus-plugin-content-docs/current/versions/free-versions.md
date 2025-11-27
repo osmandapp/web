@@ -1,5 +1,5 @@
 ---
-source-hash: 2aecbef11827d2e2babc174c5bfeefcd53e984558dd917b53b8cd460e6e6783e
+source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
 sidebar_position: 2
 ---
 
@@ -19,6 +19,27 @@ OsmAnd'ın en son sürümünü listelenen uygulama mağazalarından ücretsiz ol
 Ücretsiz OsmAnd sürümlerine doğrudan bağlantılar.
 
 ## Sürüm 5 {#version-5}
+
+### Sürüm 5.2 {#version-52}
+
+Yayın tarihi 11/2025:
+
+- Geniş özelleştirme seçenekleri sunan yeni "Deniz" deniz haritası stili.
+- Arama sonuçlarına sokak ve şehir detayları eklendi.
+- Yeni Seyahat Kaydı widget'ları: Maksimum Hız, Ortalama Eğim ve geliştirilmiş Yokuş Yukarı/Yokuş Aşağı.
+- Harita oluşturma hızı iyileştirildi.
+- OsmAnd Cloud'a temel otomatik senkronizasyon.
+- OBDII BLE bağlantısı iyileştirildi.
+- "Aralıkla Analiz Et" özelliğinin güncellemeleri.
+- Rota Planlama aracı iyileştirildi.
+- Yükseklik birimlerini mesafe birimlerinden ayrı olarak ayarlama yeteneği eklendi.
+- Seçilebilir pusula modları ile harita yönlendirme hızlı eylemi iyileştirildi.
+- Android Auto geliştirmeleri.
+- Ters çevrilmiş ekran yönleri.
+- Kamyon profili ayarlarında kamyon metrikleri ekleme için UI iyileştirildi.
+- Haritada rota gösterme için daha fazla parametre.
+
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
 
 ### Sürüm 5.1 {#version-51}
 

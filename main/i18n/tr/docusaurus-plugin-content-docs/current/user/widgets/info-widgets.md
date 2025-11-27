@@ -1,5 +1,5 @@
 ---
-source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
+source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
 sidebar_position: 3
 title:  Bilgi Widget'ları
 ---
@@ -475,7 +475,7 @@ Daha ayrıntılı bir açıklamayı burada okuyabilirsiniz: **[<Translate androi
 
 </Tabs>
 
-Yolculuk kayıt widget'ları [<Translate android="true" ids="record_plugin_name"/> eklentisine](../plugins/trip-recording.md#widgets) atıfta bulunur. Widget'ları kullanarak rota kaydı hakkında kısa bilgileri ekranda görüntüleyebilirsiniz. Örneğin *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı*.
+Yolculuk kayıt widget'ları [<Translate android="true" ids="record_plugin_name"/> eklentisine](../plugins/trip-recording.md#widgets) atıfta bulunur. Widget'ları kullanarak rota kaydı hakkında kısa bilgileri ekranda görüntüleyebilirsiniz. Örneğin *Mesafe*, *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Maksimum Hız* ve *Ortalama Eğim* (son ikisi yalnızca Android'de mevcuttur).
 
 | | |
 |:------------|:------------|

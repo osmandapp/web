@@ -1,8 +1,9 @@
 ---
-source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
+source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
 sidebar_position: 8
 title: Popüler Yerler
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,20 +14,19 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
 ## Genel Bakış {#overview}
 
-OsmAnd'daki **Popüler Yerler** özelliği, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) adresindeki açık yapılandırılmış verileri kullanarak önemli yer işaretlerini ve ilgi çekici yerleri vurgular. Çok dilli açıklamalar ve fotoğraflarla kullanıcıların iyi bilinen yerleri keşfetmelerine yardımcı olur.
+OsmAnd'daki **Popüler Yerler** özelliği, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) kaynaklarındaki açık yapılandırılmış verileri kullanarak önemli yer işaretlerini ve çekici noktaları vurgular. Çok dilli açıklamalar ve fotoğraflarla kullanıcıların iyi bilinen destinasyonları keşfetmelerine yardımcı olur.
 
 Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme görüntülerini ve Wikipedia makalelerine bağlantıları görüntülemesini sağlayan bir **Wikidata Kimliği** ile bağlantılıdır. Bu araç tüm OpenStreetMap (OSM) noktalarını göstermez. Wikidata referansları olan İÇN'lerle sınırlıdır.
 
-Şu anda, seçilmiş veritabanı, dünya genelinde yaklaşık **50.000 ila 150.000 en beğenilen yeri** içermektedir ve bu yerler, 1 milyondan fazla Wikidata + OSM nesnesinden seçilmiştir.
+Şu anda, seçilmiş veritabanı dünya genelinde yaklaşık **50.000 ila 150.000 en yüksek puanlı yer** içermektedir ve bu yerler, **1 milyondan fazla** Wikidata + OSM nesnesinden seçilmiştir.
 
 :::note
-*Bu, Popüler Yerler özelliğinin ilk sürümüdür. [GitHub](https://github.com/osmandapp/OsmAnd) üzerinden geri bildirimleriniz memnuniyetle karşılanır*.
+*Bu, Popüler Yerler özelliğinin ilk sürümüdür. [GitHub](https://github.com/osmandapp/OsmAnd) üzerinde geri bildirim hoş karşılanır*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -42,7 +42,7 @@ Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme
 
 ### Veri Kaynakları
 
-**Popüler Yerler**, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) adresindeki yapılandırılmış içeriğe dayanmaktadır.
+**Popüler Yerler**, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) kaynaklarındaki yapılandırılmış içeriğe dayanmaktadır.
 
 Yalnızca bağlantılı bir **Wikidata Kimliği** olan İÇN'ler görüntülenir. Bu kimlikler, harita nesnelerini doğrulanmış adlara, açıklamalara ve görüntülere bağlar.
 
@@ -55,7 +55,7 @@ Wikidata Kimliği nasıl bulunur öğrenin: [Wikipedia: Wikidata Kimliği Bulma]
 
 <InfoAndroidOnly/>
 
-**Popüler Yerler** özelliği, hem yakındaki önemli yerlerin seçilmiş bir listesini hem de harita üzerinde Wikipedia tabanlı İÇN'lerin bir katmanını içerir.
+**Popüler Yerler** özelliği, hem yakındaki önemli yer işaretlerinin seçilmiş bir listesini hem de harita üzerinde Wikipedia tabanlı İÇN'lerin bir katmanını içerir.
 
 Bu özelliğe erişmenin iki ana yolu vardır:
 
@@ -89,7 +89,7 @@ Bu özelliğe erişmenin iki ana yolu vardır:
 
 </Tabs>
 
-**<Translate android="true" ids="popular_places_nearby"/>** bölümü, bulunduğunuz yere yakın en beğenilen yer işaretlerinin kaydırılabilir bir listesini görüntüler. Her öğe şunları içerir:
+**<Translate android="true" ids="popular_places_nearby"/>** bölümü, bulunduğunuz yere yakın en yüksek puanlı yer işaretlerinin kaydırılabilir bir listesini görüntüler. Her öğe şunları içerir:
 
 - Yerin adı.
 - Kısa açıklama.
@@ -97,7 +97,7 @@ Bu özelliğe erişmenin iki ana yolu vardır:
 - Mesafe ve yön.
 - Küçük resim (varsa).
 
-Tüm listeyi görüntülemek için **Tümünü Göster**'e veya listelenen tüm İÇN'leri haritada görüntülemek için **Haritada Göster**'e dokunun.
+**Tümünü Göster**'e dokunarak tam listeyi görüntüleyin veya listelenen tüm İÇN'leri haritada görüntülemek için **Haritada Göster**'e dokunun.
 
 Herhangi bir yere dokunmak, [İÇN bağlam menüsünü](./map-context-menu.md) açar; burada fotoğrafları önizleyebilir ve ilgili [Wikipedia içeriğine](../plugins/wikipedia.md) erişebilirsiniz.
 
@@ -169,6 +169,8 @@ Haritadaki bir İÇN'ye dokunmak, [çevrimiçi fotoğrafları](#online-photos) g
 
 Bu, seçilen Popüler Yer'in (Wikipedia) bir fotoğraf önizlemesini görüntüleyen [İÇN bağlam menüsü](./map-context-menu.md) içindeki bir bölümdür. Mevcut fotoğraflar arasında gezinmek için yatay olarak kaydırabilir veya tam ekran modunda açmak için herhangi bir görüntüye dokunabilirsiniz.
 
+Çevrimiçi görüntülenen görüntüler, çevrimdışı erişim için otomatik olarak önbelleğe alınır. Önbelleğe alınmış fotoğraflar köşede küçük bir çevrimdışı rozet gösterir. Önizleme ızgarası iPadOS ve macOS'ta ekran boyutuna uyum sağlar ve büyük ekranlarda rahat bir görüntü düzeni sağlar. OsmAnd ayrıca Çevrimiçi Fotoğraflar bölümü kapatıldığında tekrarlanan ağ isteklerini tetiklemeyi önler ve farklı İÇN'ler arasında hızlı geçişlerde önceki istekleri iptal eder.
+
 [Eylemler](#actions) bölümündeki ve [Galeri](#gallery) bölümündeki ek seçenekler hakkında daha fazla bilgi edinin.
 
 
@@ -189,8 +191,10 @@ Harita Bağlam menüsünde nasıl erişilir:
 
 - [Galeriyi](#gallery) tam ekran modunda açmak için **Tümünü Göster** (Android) / **Tümünü Görüntüle** (iOS) düğmesine dokunun; burada seçilen konum için mevcut tüm fotoğraflar arasında gezinebilirsiniz.
 
-- Mevcut eylemlere erişmek için herhangi bir fotoğrafa dokunun:  
+- Mevcut eylemlere erişmek için herhangi bir fotoğrafa dokunun ve [tam ekranda](#gallery) görüntüleyin:  
   **Paylaş**, **Ayrıntılar**, **Tarayıcıda aç** ve **İndir**.
+
+**Not:** İndir, görüntüyü kalıcı çevrimdışı kullanım için cihazın depolama alanına kaydeder, önbelleğe alınmış fotoğraflar ise otomatik olarak saklanır ve yalnızca uygulama içinde çevrimdışı kullanılabilir.
 
 
 ### Galeri {#gallery}
@@ -214,7 +218,9 @@ Harita Bağlam menüsünde nasıl erişilir:
 </Tabs>
 
 
-**Galeri Menüsü**, seçilen ilgi çekici noktayla ilgili **100 adede kadar görüntü** görüntüleyebilir. Mevcut tüm fotoğraflar arasında gezinebilirsiniz. Bir fotoğrafa dokunmak, kısa bir süre için ayrıntılı bir görünüm açar ve şunları gösterir: *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans*  
+**Galeri Menüsü**, seçilen ilgi çekici noktayla ilgili **100 adede kadar görüntü** görüntüleyebilir. Mevcut tüm fotoğraflar arasında gezinebilirsiniz. Bir fotoğrafa dokunmak, kısa bir süre için ayrıntılı bir görünüm açar ve şunları gösterir: *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans*.  
+
+iOS, iPadOS ve macOS'ta, fotoğrafları klavye tuşlarıyla gezinebilirsiniz (←/→ resimler arasında hareket için, Enter/Boşluk açmak için).
 
 Her fotoğraf üzerinde aşağıdaki eylemleri de gerçekleştirebilirsiniz:
 

@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -267,7 +267,23 @@ Mod, gerektiği kadar bilgi görüntülemek için üst ve alt panellerde **tek b
     - [Yükseklik profili (*Yalnızca Android*)](../widgets/nav-widgets#elevation-widget)
     - [Rota manevraları](../widgets/nav-widgets.md#next-turn)
 
-- **Basit widget'lar**. Tek bir satıra birden çok basit widget eklenebilir. Bu widget'lar *Ad*, *Ölçü birimleri*, *Değer* ve *Simge* görüntüleyebilir.
+- **Basit widget'lar**. Tek bir satıra birden çok basit widget eklenebilir. Bu widget'lar *Ad*, *Ölçü birimleri*, *Değer* ve *Simge* görüntüleyebilir. Basit widget'larda metin, şeffaf panel modunda çeşitli harita arka planlarına karşı net okunabilirliği sağlamak için otomatik olarak çerçevelenir.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Android widget kenarlığı](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![iOS widget kenarlığı](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Sayfalar {#pages}
@@ -294,7 +310,7 @@ Mod, gerektiği kadar bilgi görüntülemek için üst ve alt panellerde **tek b
 
 Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. **Sayfalar modu** özelliği, sol ve sağ panellere 5 sayfa eklemenize olanak tanır.
 
-***Satırlar nasıl yapılandırılır:***
+***Sayfalar nasıl yapılandırılır:***
 
 - **Sayfa Ekle**. Sol/Sağ Panel ayarlarına gidin ve *Düzenle → Sayfa Ekle* öğesine dokunun.
 - **Widget'ları Sayfaya göre düzenle**. Bu özellik, navigasyon veya harita tarama gibi farklı görevler için farklı widget setleri gerektiğinde kullanışlıdır.
@@ -317,12 +333,17 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
     - Netliği artırır ve önemli veriler için alanı en üst düzeye çıkarır.
     - Özellikle aynı **satırda** birçok widget görüntülerken kullanışlıdır.
 
-3. **Farklı satırlar için bireysel boyut** (*tüm paneller için*):
+3. **Widget metin etiketlerini gizleme**:
+
+    - Kompakt düzenlerde sayısal bilgileri tamamen görünür tutmak için metin etiketlerini otomatik olarak gizler.
+    - Alan sınırlı olduğunda temiz ve okunabilir bir widget düzenini korumaya yardımcı olur.   
+
+4. **Farklı satırlar için bireysel boyut** (*tüm paneller için*):
 
     - Widget'lar, satır ve sütun boyutu ayarlanarak ayrı ayrı boyutlandırılabilir.
     - **NOT:** Bir satır/sütundaki bir widget'ın boyutunu değiştirmek, o satır/sütundaki tüm widget'ları yeniden boyutlandıracaktır.
 
-4. **Widget boyutunu ve simge görünürlüğünü değiştirmek için:**
+5. **Widget boyutunu ve simge görünürlüğünü değiştirmek için:**
 
     - Panele zaten eklediğiniz bir widget'ı seçin.  
     - Widget alanının sağ tarafındaki *Ayarlar* simgesine dokunun.
@@ -375,7 +396,7 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 
 ### Widget Kopyaları {#copies-of-widgets}
 
-*OsmAnd menüsü → Ekranı yapılandır → Widget'lar → Panel*  
+*OsmAnd menüsü → Ekranı Yapılandır → Widget'lar → Panel*  
 
 ![Widget kopyası](@site/static/img/widgets/widget_dublicate.png)  
 
@@ -383,14 +404,14 @@ OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara
 
 ***Widget'ları çoğaltma:***
 
-- **Widget'ı ekle**. Şuraya gidin: *OsmAnd menüsü → Ekranı yapılandır → Widget'lar → Panel →* **Widget** *ekle*.
+- **Widget'ı ekle**. Şuraya gidin: *OsmAnd menüsü → Ekranı Yapılandır → Widget'lar → Panel →* **Widget** *ekle*.
 - **Bağlam menüsünü kullanarak çoğaltın**. Widget'a dokunun ve eylemler listesinden **Çoğalt** öğesini seçin.
 - **Alternatif yöntem**. *Mevcut widget'lar* listesinden aynı widget'ı seçin ve *Ekle* öğesine dokunun.
 
 
 ### Taşı veya Sil {#move-or-delete}
 
-*OsmAnd menüsü → Ekranı yapılandır → Widget'lar → Panel*  
+*OsmAnd menüsü → Ekranı Yapılandır → Widget'lar → Panel*  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

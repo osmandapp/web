@@ -1,5 +1,5 @@
 ---
-source-hash: f48c83c7e5c4a2559025ef3d385107388a74632c31a6ea7b6e2171939a4057c9
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## OsmAnd'i Keşfedin {#explore-osmand}
 
-OsmAnd, geniş bir kullanıcı tabanına sahip güçlü bir uygulamadır ve resmi belgelerinin ötesinde, topluluk tarafından oluşturulmuş çok sayıda kaynak bulunmaktadır.
+OsmAnd, geniş bir kullanıcı tabanına sahip güçlü bir uygulamadır ve resmi belgelerinin ötesinde, topluluk tarafından oluşturulmuş çok sayıda kaynak bulunmaktadır.  
 
 Bu makale, özel kullanıcı kılavuzlarına, sosyal medya gruplarına, eklentilere, harita stillerine ve daha fazlasına bağlantılar toplamaktadır. Bilginizi genişletmek, OsmAnd deneyiminizi özelleştirmek ve diğer kullanıcılarla bağlantı kurmak için bu kaynakları keşfedin.
 
@@ -35,7 +35,7 @@ Diğer OsmAnd kullanıcılarıyla bağlantı kurmak, soru sormak ve deneyimlerin
 |  Google Groups | Osmand (*English*)  | Kullanıcıların ipuçlarını paylaştığı, soruları yanıtladığı ve OsmAnd'in işlevlerini tartıştığı bir grup. | [Google Grupları](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discussion and support  | OsmAnd kullanıcıları için Reddit topluluğu. Soru sorun, deneyimlerinizi paylaşın veya özel harita stillerinizi gösterin. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
 |  Telegram | OsmAnd News channel (*English*)  | Geliştiricilerden doğrudan duyurular ve güncellemeler için resmi OsmAnd grubu. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  Twitter | OsmAnd news channel  | Canlı tartışmalar, duyurular ve güncellemeler için resmi OsmAnd grubu. | [Twitter OsmAnd](https://x.com/osmandapp/) |
+|  X (Twitter) | OsmAnd news channel  | Canlı tartışmalar, duyurular ve güncellemeler için resmi OsmAnd grubu. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | OsmAnd news channel | OsmAnd özellikleriyle sohbet edebileceğiniz, ipuçlarını paylaşabileceğiniz ve yardım alabileceğiniz bir topluluk. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
@@ -57,9 +57,9 @@ Aşağıdaki liste, OsmAnd tarafından desteklenen çeşitli veri türleri için
 
 ### Kılavuzlar {#manuals}
 
-OsmAnd'in resmi belgeleri kapsamlıdır, ancak topluluk, belirli özellikler ve kullanım durumları için kullanıcılara yardımcı olmak amacıyla bir dizi özel kılavuz da üretmiştir.
+OsmAnd'in resmi belgeleri kapsamlıdır, ancak topluluk, belirli özellikler ve kullanım durumları için kullanıcılara yardımcı olmak amacıyla bir dizi özel kılavuz da üretmiştir.  
 
-Birden çok dilde mevcut olan bu kılavuzlar, genellikle resmi kılavuzlarda yer almayan benzersiz içgörüler, ipuçları ve püf noktaları sunar. Bu kaynaklar, uygulamanın özellikleri hakkında daha fazla bilgi sunarak resmi [OsmAnd Kullanıcı Kılavuzu](https://osmand.net/docs/user/) için uygun eklemelerdir.
+Birden çok dilde mevcut olan bu kılavuzlar, genellikle resmi kılavuzlarda yer almayan benzersiz içgörüler, ipuçları ve püf noktaları sunar. Bu kaynaklar, uygulamanın özellikleri hakkında daha fazla bilgi sunarak resmi [OsmAnd Kullanıcı Kılavuzu](https://osmand.net/docs/user/), için uygun eklemelerdir.
 
 | Dil | Açıklama | Bağlantı |
 | :-- | :-- | :-- |
@@ -107,6 +107,7 @@ Varsayılan [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 | Open Fiets map | [Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0), bisiklet odaklı bir harita stilidir ve bisiklet şeritlerini (kırmızı), bisiklet rotalarını (mavi kesikli), bisiklet yollarını (kırmızı kesikli) ve bisiklet caddeleri gibi sınırlı araç trafiğine sahip yolları (düz kırmızı kenarlıklar) vurgular.  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA), Holder Tamm tarafından belirli nesneleri gizleyip gizlemeyeceğinizi seçmenize olanak tanıyan bir harita stilidir.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [The ExplorerRS rendering style](https://github.com/sykoram/OsmAnd-ExplorerRS) esas olarak UniMap ve routes.addon.render.xml'e dayanmaktadır  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [Bu, fırtına avı için optimize edilmiş bir OsmAnd oluşturma stili](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 ### Çevrimdışı Haritalar {#offline-maps}
 

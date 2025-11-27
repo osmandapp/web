@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
@@ -136,6 +136,7 @@ Bir nesne hakkında daha ayrıntılı bilgi için, bağlam menüsündeki **Detay
 
 Mevcut ayrıntılar şunları içerir:
 
+- [Makale Açıklaması](#article-description)
 - [Alternatif adlar](#alternative-names)
 - [Koordinatlar](#coordinates)
 - [Alanlar içinde](#polygon-information)
@@ -154,6 +155,33 @@ Ek olarak, panel [OpenStreetMap Detaylarını](https://wiki.openstreetmap.org/wi
 - [Ücret](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Erişilebilirlik](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Genişlik](https://wiki.openstreetmap.org/wiki/Key:width) / [Yükseklik](https://wiki.openstreetmap.org/wiki/Key:height)
+
+Yukarıda listelenen alanların ötesinde, OsmAnd ayrıca OpenStreetMap'ten alınan ekstra tanımlayıcı bilgileri de gösterebilir. Bu öznitelikler, bir yerin özelliklerini daha iyi anlamanıza yardımcı olur ve yükseklik, yön, yapım yılı, yüzey veya kaplama türü, iç mekan seviyesi, ödeme seçenekleri, teslimat veya paket servis kullanılabilirliği ve daha birçok detayı içerebilir. OsmAnd bu öznitelikleri net etiketler ve mümkün olduğunda simgelerle görüntüler, böylece bilgileri okumak ve tanımak daha kolay hale gelir. Tam öznitelik kümesi, seçilen nesne için OpenStreetMap'te mevcut olan verilere bağlıdır.
+
+
+### Makale Açıklaması {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Açıklama listesi](@site/static/img/map/description_list_new_android.png) ![Açıklama listesi](@site/static/img/map/description_list_dialog.png)
+
+Bu bölüm, [Wikipedia makalesinden](../plugins/wikipedia.md#wikipedia-article), [Favori](../personal/favorites.md) veya Yol Noktası açıklamasından bir açıklama bölümü içerir, dokunarak tam açıklamayı açabilirsiniz.
+
+Seçilen yerin bir Wikipedia makalesi varsa, bu bölümde kısa bir önizleme gösterilir. Tam makale çevrimdışı olarak mevcut değilse, *Wikipedia'da Oku* düğmesi görünür. Buna dokunmak, kullanıcının erişimine bağlı olarak seçenekler içeren bir iletişim kutusunu açar: satın alınmış plana sahip kullanıcılar bölgesel Wikipedia verilerini indirebilir veya makaleyi tarayıcıda açabilir, ücretsiz kullanıcılar ise makaleyi çevrimiçi açabilir veya çevrimdışı erişim sunan ekrana geçebilir.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Açıklama listesi](@site/static/img/map/description_list_new_ios.png)
+
+Bu bölüm, [Wikipedia makalesinden](../plugins/wikipedia.md), [Favori](../personal/favorites.md) veya Yol Noktası açıklamasından bir açıklama bölümü içerir, dokunarak tam açıklamayı açabilirsiniz.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Alternatif Adlar {#alternative-names}
@@ -249,17 +277,17 @@ Bu bölüm, yakındaki [İlgi Çekici Noktaları](../map/point-layers-on-map.md#
 
 ![Yakındaki Yerler Android](@site/static/img/map/nearby_places_android.png)
 
-Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeleri keşfetmenize yardımcı olan popüler yerleri vurgular. Tüm popüler yerleri taramak ve aramak için *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* kullanın.
+Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeleri keşfetmenize yardımcı olan popüler yerleri vurgular. Tüm popüler yerleri taramak ve aramak için *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* kullanın. 
 
 *Yakındaki [Popüler Yerler](https://osmand.net/docs/user/map/popular_places)*'e dokunmak yakındaki konumların bir listesini açar. Herhangi bir öğeyi seçmek haritayı o yere merkezler ve bağlam menüsünü açar, burada kısa bir açıklama okuyabilir veya tam rehberi görüntülemek için ***Tam makaleyi oku***'ya dokunabilirsiniz.
 
 </TabItem>
 
-<TabItem value="iOS" label="iOS">
+<TabItem value="ios" label="iOS">
 
 ![Yakındaki Yerler iOS](@site/static/img/map/nearby_places_ios.png)
 
-Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeleri keşfetmenize yardımcı olan popüler yerleri vurgular. Tüm popüler yerleri taramak ve aramak için *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* kullanın.
+Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeleri keşfetmenize yardımcı olan popüler yerleri vurgular. Tüm popüler yerleri taramak ve aramak için *<Translate android="true" ids="shared_string_show_on_map"/>* ve *<Translate android="true" ids="search_more"/>* kullanın. 
 
 *Yakındaki [Popüler Yerler](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)*'e dokunmak yakındaki konumların bir listesini açar. Herhangi bir öğeyi seçmek haritayı o yere merkezler ve bağlam menüsünü açar, burada kısa bir açıklama okuyabilir veya tam rehberi görüntülemek için ***Tam makaleyi oku***'ya dokunabilirsiniz.
 
@@ -291,34 +319,13 @@ Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeler
 Seçilen ulaşım durağı için Toplu taşıma rotaları hakkında bilgi gösterilir. Toplu taşıma bağlam menüsü ve onunla yapılan işlemler hakkında bilgi için [makaleye](../map/public-transport.md#transport-routes-context-menu) bakın.
 
 
-### Favoriler / Gruptan İz Noktaları {#favorites--track-points-from-the-group}
+### Aynı Gruptan Favoriler / İz Noktaları {#favorites--track-points-from-the-group}
 
 ![Favori listesi](@site/static/img/map/favorite_list_android.png) ![Favori listesi tam](@site/static/img/map/favorite_list_full_android.png)
 
 Bu, bir Favori veya Yol Noktası için bir gruptaki tüm noktaların bir listesidir. Dokunulduğunda, bir grubun tüm noktalarının listesi genişler, listeden bir noktaya dokunulduğunda harita seçilen noktaya hareket eder.
 
 
-
-
-### Makale Açıklaması {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Açıklama listesi](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Açıklama listesi](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Bu bölüm, [Wikipedia makalesinden](../plugins/wikipedia.md), [Favori](../personal/favorites.md) veya Yol Noktası açıklamasından bir açıklama bölümü içerir, dokunarak tam açıklamayı açabilirsiniz.
 
 
 ### OpenStreetMap Bağlantısı {#openstreetmap-link}
@@ -336,14 +343,14 @@ OpenStreetMap bağlantısı, hakkında tam bilgi bulabileceğiniz OpenStreetMap 
 <TabItem value="android" label="Android">  
 
 ![Çevrimiçi Fotoğraflar bağlam menüsü Android](@site/static/img/map/images_nearby_1_andr.png)
-![Galeri menüsü Android](@site/static/img/map/gallery_menu_andr.png)
+![Çevrimiçi Fotoğraflar bağlam menüsü Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![Çevrimiçi Fotoğraflar bağlam menüsü iOS](@site/static/img/map/online_photo_ios.png)
-![Galeri menüsü iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Çevrimiçi Fotoğraflar bağlam menüsü iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
