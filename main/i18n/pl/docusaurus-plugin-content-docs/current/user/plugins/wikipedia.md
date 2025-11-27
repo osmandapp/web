@@ -1,5 +1,5 @@
 ---
-source-hash: 2f914f4ecf9df9f98177dd069c3c143806b2827059231c6238393af7c70a080d
+source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
 sidebar_position: 18
 title:  Wikipedia
 ---
@@ -40,7 +40,7 @@ Krótkie informacje są dostarczane przez punkty POI Wikipedii (skrót od "[punk
 
 Aby wyświetlić dane Wikipedii na mapie, należy dokonać następujących ustawień:
 
-1. [Kup](../plugins/index.md#purchase) i [włącz](../plugins/index.md#enable--disable) wtyczkę Wikipedia w sekcji Wtyczki w *Menu głównym*.
+1. [Kup](../plugins/index.md#purchase) i [Włącz](../plugins/index.md#enable--disable) wtyczkę Wikipedia w sekcji Wtyczki w *Menu głównym*.
 2. Pobierz [pakiety Wikipedii](#download-wikipedia-packages) dla wymaganych regionów.  
 3. Wyświetl [punkty POI Wikipedii](#display-wikipedia-on-the-map) na mapie dla wymaganego profilu.  
 4. Skonfiguruj preferowane [języki](#set-preferred-language) do czytania artykułów.
@@ -164,25 +164,34 @@ Po dotknięciu przycisku Wyszukaj pojawia się dodatkowy panel umożliwiający [
 
 ## Artykuł z Wikipedii {#wikipedia-article}
 
-Aby otworzyć artykuł z Wikipedii:
-
-1. Włącz [warstwę punktów POI Wikipedii](../map/point-layers-on-map.md#-wikipedia) dla określonego profilu.
-2. Dotknij punktu POI na mapie.
-3. W [menu kontekstowym](../map/map-context-menu.md) punktu POI dotknij *Szczegóły* (lub po prostu przeciągnij *menu kontekstowe* w górę), aby wyświetlić streszczenie wybranego artykułu z Wikipedii.
-4. Jeśli dotkniesz tego tekstu (w wersji na iOS), zostaniesz przekierowany do artykułu z Wikipedii w trybie offline.
-5. Użyj przycisku *Czytaj artykuł* lub *Czytaj pełny artykuł*, aby otworzyć pełną wersję artykułu z Wikipedii.
-
-
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Francuski punkt POI Wikipedii w języku angielskim](@site/static/img/plugins/wikipedia/Andr-french-wikipedia-in-eng1.png)
+Aby otworzyć artykuł z Wikipedii:
+
+1. Włącz [warstwę punktów POI Wikipedii](../map/point-layers-on-map.md#-wikipedia) dla określonego profilu.
+2. Dotknij punktu POI na mapie.
+3. W [menu kontekstowym](../map/map-context-menu.md) punktu POI dotknij [Szczegóły](../map/map-context-menu.md#details) (lub po prostu przeciągnij *menu kontekstowe* w górę), aby wyświetlić streszczenie wybranego [artykułu z Wikipedii](../map/map-context-menu.md#article-description).
+4. Użyj przycisku *Czytaj pełny artykuł*, aby otworzyć pełną wersję artykułu z Wikipedii.
+5. Jeśli dane Wikipedii nie zostały pobrane, pojawia się przycisk *Czytaj w Wikipedii*.
+6. Dotknięcie tego przycisku otwiera okno dialogowe z następującymi opcjami: 
+- Pobierz Wikipedię i otwórz w przeglądarce (wersja płatna).
+- Czytaj Wikipedię w trybie offline i otwórz w przeglądarce (wersja darmowa).
+
+![Francuski punkt POI Wikipedii w języku angielskim](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Aby otworzyć artykuł z Wikipedii:
+
+1. Włącz [warstwę punktów POI Wikipedii](../map/point-layers-on-map.md#-wikipedia) dla określonego profilu.
+2. Dotknij punktu POI na mapie.
+3. W [menu kontekstowym](../map/map-context-menu.md) punktu POI dotknij [Szczegóły](../map/map-context-menu.md#details) (lub po prostu przeciągnij *menu kontekstowe* w górę), aby wyświetlić streszczenie wybranego [artykułu z Wikipedii](../map/map-context-menu.md#article-description).
+4. Jeśli dotkniesz tego tekstu, zostaniesz przekierowany do artykułu z Wikipedii w trybie offline.
+5. Użyj przycisku *Czytaj artykuł*, aby otworzyć pełną wersję artykułu z Wikipedii.
 
 ![Francuski punkt POI Wikipedii w języku angielskim w systemie iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 

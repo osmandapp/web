@@ -1,5 +1,5 @@
 ---
-source-hash: 36783a2d9726e20533612f6290c007ad9ed255d7b47c73b1d33a52dbd5388414
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -27,14 +27,14 @@ Aby nawiązać kontakt z innymi użytkownikami OsmAnd, zadawać pytania i dzieli
 
 | Platforma | Nazwa grupy | Opis | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | Społeczność użytkowników OsmAnd (*angielski*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
-|  Facebook | Osmand-gebruikers (*holenderski*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
-|  Facebook | OSMAND+ Aide Partage et Astuces (*francuski*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | Grupa użytkowników LC8 Rally OsmAnd (*angielski*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*włoski*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*angielski*)  | Grupa, w której użytkownicy dzielą się wskazówkami, odpowiadają na pytania i omawiają funkcje OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
+| Facebook | Społeczność użytkowników OsmAnd (*English*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+|  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
+|  Facebook | Grupa użytkowników LC8 Rally OsmAnd (*English*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italian*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | Grupa, w której użytkownicy dzielą się wskazówkami, odpowiadają na pytania i omawiają funkcjonalności OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - dyskusja i wsparcie  | Społeczność Reddit dla użytkowników OsmAnd. Zadawaj pytania, dziel się doświadczeniami lub pochwal się niestandardowymi stylami map. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | Kanał informacyjny OsmAnd (*angielski*)  | Oficjalna grupa OsmAnd z ogłoszeniami i aktualizacjami bezpośrednio od deweloperów. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  Telegram | Kanał informacyjny OsmAnd (*English*)  | Oficjalna grupa OsmAnd z ogłoszeniami i aktualizacjami bezpośrednio od deweloperów. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
 |  X (Twitter) | Kanał informacyjny OsmAnd  | Oficjalna grupa OsmAnd do dyskusji na żywo, ogłoszeń i aktualizacji. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | Kanał informacyjny OsmAnd | Społeczność, w której można rozmawiać, dzielić się wskazówkami i uzyskać pomoc dotyczącą funkcji OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
@@ -51,7 +51,7 @@ Poniższa lista zawiera konwertery dla różnych typów danych obsługiwanych pr
 | GeoPDF/Tiff, ozi do OsmAnd | Konwersja formatów map geoPDF, geoTiff i ozi do OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX do KML | Narzędzie do konwersji plików *GPX* z OsmAnd do formatu *KML* z zachowaniem ikon. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX do OsmAnd | Skrypt Pythona do konwersji wyeksportowanych plików *GPX* iOverlander do OsmAnd z ikonami. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Mapa topo do druku| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania mapy topograficznej do druku przy użyciu zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| Mapa topo do druku| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania drukowalnej mapy topograficznej za pomocą zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
 ## Niestandardowe zasoby {#custom-resources}
 
@@ -98,7 +98,7 @@ Domyślny plik [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/m
 
 | Nazwa źródła | Opis | Link |
 | -- | -- | --|
-| Gravel Roads Seeker | Styl mapy oferujący lepszą wizualizację nawierzchni drogi, rozróżniający drogi utwardzone i nieutwardzone (strona internetowa w języku *francuskim*). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
+| Gravel Roads Seeker | Styl mapy oferujący lepszą wizualizację nawierzchni drogi, rozróżniający drogi utwardzone i nieutwardzone (*French* web page). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
 | Renderowanie OsmAnd | Zbiór dostępu do map online, map topograficznych, ortofotomap i innych zasobów geograficznych dostępnych w niektórych głównych instytucjach geograficznych w różnych krajach. Aktualizacje są w toku, ale jeśli jakieś pliki są nieaktualne, zachęcamy użytkowników do powiadomienia. | [Mapy online: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | Mapa topograficzna z opcją *Ukryj wszystkie wody*, udostępniona przez [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | Repozytorium ma na celu udostępnienie niestandardowych stylów map stworzonych przez użytkowników dla innych użytkowników. |[UniMap z GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
@@ -107,6 +107,7 @@ Domyślny plik [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/m
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) to styl mapy skoncentrowany na kolarstwie, podkreślający pasy rowerowe (na czerwono), trasy rowerowe (niebieska przerywana), ścieżki rowerowe (czerwona przerywana) i drogi o ograniczonym ruchu pojazdów, takie jak ulice rowerowe (ciągłe czerwone obramowania).  |[Styl OpenFietsMap na GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Styl mapy „Wybór” | [Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA) to styl mapy autorstwa Holdera Tamma, który pozwala wybrać, czy ukryć określone obiekty, czy nie.  |[Styl mapy „Wybór”](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [Styl renderowania ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) jest głównie oparty na UniMap i routes.addon.render.xml  |[Styl mapy „ExplorerRS”](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [To jest styl renderowania OsmAnd zoptymalizowany do polowań na burze](https://github.com/pqo/stormchasing-rendering-style)  |[Styl renderowania Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 ### Mapy offline {#offline-maps}
 
@@ -124,7 +125,7 @@ Poniższa tabela zawiera listę różnych źródeł map online przygotowanych pr
 
 | Nazwa | Opis | Link|
 | -- | -- | --|
-| Gravel Roads Seeker | Mapa dróg szutrowych (strona internetowa w języku *francuskim*). Mapa online generowana w czasie rzeczywistym z serwerów kafelkowych, takich jak WMTS (Web Map Tile Service) lub WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
+| Gravel Roads Seeker | Mapa dróg szutrowych (strona internetowa w języku *French*). Mapa online generowana w czasie rzeczywistym z serwerów kafelkowych, takich jak WMTS (Web Map Tile Service) lub WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
 | Renderowanie OsmAnd | Kolekcja map online, w tym topo, ortofotomap i innych, dostępnych w niektórych głównych instytutach geograficznych różnych krajów. | [Renderowanie OsmAnd na GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
 | RainViewer | Mapa [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) z różnymi [schematami kolorów](https://www.rainviewer.com/api/color-schemes.html) |[Dane RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | Zestaw map Austrii oparty na [basemap.at WMTS](https://basemap.at/en/) stworzony przez mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|

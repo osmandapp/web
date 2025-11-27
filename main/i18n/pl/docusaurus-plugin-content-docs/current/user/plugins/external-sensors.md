@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  Czujniki zewnętrzne
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -233,6 +234,8 @@ Obsługiwane typy widżetów:
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – aktualna temperatura otoczenia.
 7. **Poziom baterii** – procent pozostałej baterii w podłączonym czujniku BLE, przełącz go w **Ustawieniach czujnika**.
 
+**Uwaga:** Jeśli czujnik tymczasowo się rozłączy, stuknij jego widżet na mapie, aby natychmiast spróbować ponownego połączenia — nie trzeba otwierać menu Czujniki zewnętrzne.
+
 ### Ustawienia widżetu {#widget-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -249,7 +252,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → Czujnik zewnętrzny → Wybierz widżet → Ustawienia*
 
-![Ustawienia widżetów czujników zewnętrznych Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![Ustawienia widżetów czujników zewnętrznych iOS](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 

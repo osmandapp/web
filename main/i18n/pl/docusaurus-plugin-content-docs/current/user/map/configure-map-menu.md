@@ -1,8 +1,9 @@
 ---
-source-hash: cc4a39deaa5305aa029009f3f9baff5a545f3a163336fd6ca3c80b085166c351
+source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
 sidebar_position: 4
 title:  Konfiguruj mapę
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,28 +13,27 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Przegląd {#overview}
 
-Menu **Konfiguruj mapę** jest ważnym elementem *Menu głównego* OsmAnd, w którym można dostosować wyświetlanie mapy do własnych potrzeb. Można na niej wyróżnić ulubione punkty, znaczniki nawigacyjne lub specjalne punkty POI, wyświetlać określone trasy lub pliki GPX innych firm, nakładać informacje o rzeźbie terenu, obrazy satelitarne lub inne dostępne obrazy rastrowe, wyświetlać informacje o transporcie publicznym i zmieniać styl mapy.
+Menu **Konfiguruj mapę** jest ważnym elementem *Menu głównego* OsmAnd, w którym można dostosować wyświetlanie mapy do własnych potrzeb. Można na niej wyróżnić ulubione punkty, znaczniki nawigacyjne lub specjalne punkty zainteresowania, wyświetlać określone trasy lub pliki GPX innych firm, nakładać informacje o rzeźbie terenu, obrazy satelitarne lub inne dostępne obrazy rastrowe, wyświetlać informacje o transporcie publicznym i zmieniać styl mapy.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Sekcja **Pokaż**:
+Sekcja **Pokaż**:  
 
-![Konfiguruj mapę android](@site/static/img/map/configure_map_show1_andr.png)  ![Konfiguruj mapę android](@site/static/img/map/configure_map_show2_andr.png)
+![Konfiguruj mapę android](@site/static/img/map/configure_map_show1_andr.png)  ![Konfiguruj mapę android](@site/static/img/map/configure_map_show2_andr.png)  
 
-Sekcja **Topografia**:
+Sekcja **Topografia**:  
 
-![Konfiguruj mapę android](@site/static/img/map/configure_map_topography_andr.png)
+![Konfiguruj mapę android](@site/static/img/map/configure_map_topography_andr.png)  
 
-Sekcja **OpenStreetMap**:
+Sekcja **OpenStreetMap**:  
 
-![Konfiguruj mapę android](@site/static/img/map/configure_map_osm_andr.png)
+![Konfiguruj mapę android](@site/static/img/map/configure_map_osm_andr.png)  
 
-Sekcje **Trasy i renderowanie mapy**:
+Sekcje **Trasy i renderowanie mapy**:  
 
 ![Konfiguruj mapę android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
@@ -41,7 +41,29 @@ Sekcje **Trasy i renderowanie mapy**:
 
 <TabItem value="ios" label="iOS">
 
-![Konfiguruj mapę ios](@site/static/img/map/configure-map-ios.png)
+Sekcja **Pokaż na mapie**:  
+
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_show1_ios.png)  
+
+Sekcja **Topografia**:  
+
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_topography_ios.png)  
+
+Sekcja **OpenStreetMap**:  
+
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_osm_ios.png)  
+
+Sekcja **Trasy**:  
+
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_routes_new_ios.png)
+
+Sekcje **Typ mapy i styl mapy**:  
+
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_style_ios.png)
+
+Sekcje **Nakładka/podkładka i język**:  
+
+![Konfiguruj mapę iOS](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -50,8 +72,8 @@ Sekcje **Trasy i renderowanie mapy**:
 
 Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie kategorie:
 
-- [Parametry stylu mapy](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (lub **<Translate ios="true" ids="map_widget_renderer"/>**) to grupa ustawień, które pozwalają zmienić sposób wyświetlania mapy głównej.
-- [Warstwy mapy](#map-layers). Warstwy te pozwalają na umieszczenie informacji na wierzchu (lub pod spodem) głównej warstwy mapy, ale nie zmieniają sposobu jej wyświetlania.
+- [Parametry stylu mapy](#map-style-parameters). **<Translate android="true" ids="map_widget_map_rendering"/>** (lub **<Translate ios="true" ids="map_widget_renderer"/>**) to grupa ustawień, które pozwalają zmienić sposób wyświetlania mapy głównej.  
+- [Warstwy mapy](#map-layers). Warstwy te pozwalają na umieszczenie informacji na wierzchu (lub pod spodem) głównej warstwy mapy, ale nie zmieniają sposobu jej wyświetlania.  
 
 **Uwagi:**
 
@@ -70,7 +92,7 @@ Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie
 ## Warstwy danych mapy {#map-data-layers}
 
    - [Ulubione](../map/point-layers-on-map.md) - wyświetla ulubione punkty.
-   - [POI](../map/point-layers-on-map.md) - wyświetla punkty POI wybranych kategorii.
+   - [POI](../map/point-layers-on-map.md) - wyświetla punkty zainteresowania wybranych kategorii.
    - [Znaczniki mapy](../map/point-layers-on-map.md) - wyświetla znaczniki mapy.
    - [Etykiety nakładki](../map/point-layers-on-map.md) - pokazuje nazwy punktów i ulubionych na mapie.
    - [Transport](../map/vector-maps.md#transport) - pokazuje przystanki transportu publicznego.
@@ -78,6 +100,7 @@ Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie
    - [Zdjęcia na poziomie ulicy](../plugins/mapillary.md#map-layer) - wyświetla punkty z dostępnymi zdjęciami na poziomie ulicy.
    - [Przewodniki turystyczne](../plan-route/travel-guides.md) - wyświetla przewodniki turystyczne na mapie.
    - [Wikipedia](../plugins/wikipedia.md) - podświetla artykuły z Wikipedii powiązane z mapą.
+   - [Edycja OSM](../plugins/osm-editing.md#osm-editing-layer) - wyświetla edycje OpenStreetMap, notatki i warstwy pomocnicze związane z mapowaniem.
    - [Inne warstwy wtyczek](../plugins/index.md#configure-plugin) - wiele wtyczek dodaje swoje warstwy z dodatkowymi informacjami.
 
 ## Parametry stylu mapy {#map-style-parameters}
@@ -91,13 +114,13 @@ Ustawienia stylu mapy zależą od wyświetlanego głównego stylu mapy. Więcej 
    - [Język mapy](../map/vector-maps.md#map-language) - pozwala wybrać preferowany język wyświetlany na mapie.
    - [Szczegóły](../map/vector-maps.md#details) - pokazuje określone obiekty.
    - [Ukryj](../map/vector-maps.md#hide) - ukrywa określone obiekty.
-   - [Trasy](../map/vector-maps.md#routes) - pozwala na podświetlenie tras i ich symboli.
+   - [Trasy](../map/vector-maps.md#routes) - pozwala na podświetlenie tras i ich symboli.  
 
 
 ## Dostosowywanie interfejsu (Android) {#ui-customization-android}
 
-Dla każdego wybranego profilu w systemie Android można zmienić kolejność elementów menu <Translate android="true" ids="configure_map"/>, ukryć elementy, zresetować ustawienia domyślne lub skopiować je z innego profilu. Pomoże to poprawić interakcję z aplikacją OsmAnd.
+Dla każdego wybranego profilu w systemie Android można zmienić kolejność elementów menu <Translate android="true" ids="configure_map"/>, ukryć elementy, zresetować ustawienia domyślne lub skopiować je z innego profilu. Pomoże to poprawić interakcję z aplikacją OsmAnd.  
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
-![Elementy Konfiguruj mapę](@site/static/img/settings/configure-screen-ui-customization.png)
+![Elementy menu Konfiguruj mapę](@site/static/img/settings/configure-screen-ui-customization.png)

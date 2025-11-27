@@ -1,5 +1,5 @@
 ---
-source-hash: 69c9152b46bd602e4e14ecd9e4b32486e697cb14ccb9d69f550affbb8ed29cd6
+source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
 sidebar_position: 8
 title:  Boat routing
 ---
@@ -12,6 +12,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+
 
 ## Przegląd {#overview}
 
@@ -88,7 +89,7 @@ Typ trasy [Nawigacja dla łodzi](#route-parameters---boat) jest domyślnym algor
  - [Wyznaczanie tras bezpośrednio do punktu dla łodzi](./boat-navigation.md#direct-to-point-routing-for-boat)
  - [Wyznaczanie tras w linii prostej dla łodzi](./boat-navigation.md#straight-line-routing-for-boat)
 
-Należy pamiętać, że typy tras *Bezpośrednio do punktu* i *W linii prostej* powinny być używane tylko na wodach otwartych, gdzie nie ma przeszkód ani zagrożeń dla nawigacji. Jeśli nawigujesz po drodze wodnej z określonym kanałem lub trasą, powinieneś użyć typu nawigacji dla łodzi w OsmAnd, który poprowadzi Cię przez właściwe kanały nawigacyjne i pozwoli uniknąć płytkich obszarów lub innych zagrożeń.  
+Należy pamiętać, że typy tras *Bezpośrednio do punktu* i *W linii prostej* powinny być używane tylko na wodach otwartych, gdzie nie ma przeszkód ani zagrożeń dla nawigacji. Jeśli nawigujesz po drodze wodnej z określonym kanałem lub trasą, powinieneś użyć typu nawigacji dla łodzi w OsmAnd, który poprowadzi Cię przez właściwe kanały nawigacyjne i pozwoli uniknąć płytkich obszarów lub innych zagrożeń. Niektóre zmapowane zagrożenia oparte na tagach OSM hazard=* mogą być wyświetlane na mapie jako ikony POI zagrożeń lub etykiety tekstowe.  
 
 Te typy tras dla profilu łodzi można aktywować, korzystając z następującej ścieżki: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> lub inny) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 

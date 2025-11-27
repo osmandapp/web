@@ -1,5 +1,5 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: a45f8d3e0c7440482cc20c9fa56b987c3a3c65ecfc717d9d8abb99c630f8d16e
 sidebar_position: 14
 title: Topografia
 ---
@@ -23,7 +23,7 @@ Wtyczka Topografia jest [płatną funkcją](../purchases/index.md) aplikacji Osm
 :::
 
 Topografia jest ważną cechą kartografii, która dostarcza informacji do wizualnej oceny rzeźby terenu.
-Informacje topograficzne, takie jak [Linie konturowe](#contour-lines), [Teren](#terrain) (*Cieniowanie wzgórz* i *Nachylenie*) oraz [Rzeźba 3D](#3d-relief), pomagają w wizualnej ocenie ukształtowania terenu poprzez pokazanie wysokości, rzeźby, skrajności, stromości lub punktów o tej samej wysokości.
+Informacje topograficzne, takie jak [Linie konturowe](#contour-lines), [Teren](#terrain) (*Cieniowanie wzgórz* i *Nachylenie*), oraz [Rzeźba 3D](#3d-relief), pomagają w wizualnej ocenie ukształtowania terenu poprzez pokazanie wysokości, rzeźby, skrajności, stromości lub punktów o tej samej wysokości.
 
 Każda funkcja udostępniana przez tę wtyczkę jest niezależną warstwą mapy, która po włączeniu może być wyświetlana nad lub pod głównym źródłem mapy, w zależności od [ustawień](../map/raster-maps.md#overlay-layer).  
 
@@ -62,8 +62,8 @@ Pełne informacje można znaleźć w [Licencji](https://github.com/osmandapp/Osm
 
 
 <details>
-<summary>Dane DEM (DSM)</summary>
-   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Oryginalne dane użyte w tym produkcie zostały dostarczone przez AW3D firmy JAXA.<br/>
+<summary>DEM (DSM) data</summary>
+   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
 	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
@@ -215,7 +215,7 @@ Menu **Teren** zawiera wybór [schematu kolorów](#default-color-scheme) z opcj�
 
 | Cieniowanie wzgórz | Nachylenie | Wysokość |
 | ------ | ------- | ------- |
-| ![Cieniowanie wzgórz](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Cieniowanie wzgórz](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) | ![Wysokość](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Cieniowanie wzgórz** opiera się na symulacji oświetlenia powierzchni przy użyciu danych o terenie. Metoda ta polega na tworzeniu cieni i podświetleń w oparciu o kąt nachylenia powierzchni względem źródła światła. W rezultacie na mapie widoczne są naturalne wzgórza, doliny i inne szczegóły terenu.  
 
@@ -274,7 +274,7 @@ Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 - Z [predefiniowanej listy](#default-color-scheme).
 - Z plików palet kolorów utworzonych na komputerze. Niestandardowe pliki można dodać do OsmAnd za pomocą [narzędzia importu/eksportu](../personal/import-export.md).
 
-Możesz [edytować te palety](../personal/color-palette-schemes.md#edit-palette-file), aby spersonalizować wygląd map i tras.
+Możesz [edytować te palety](../personal/color-palette-schemes.md#palette-modify), aby spersonalizować wygląd map i tras.
 
 
 ### Widoczność {#visibility}
@@ -307,7 +307,7 @@ Funkcja *Poziomy skali* pozwala ustawić minimalne i maksymalne wartości poziom
 2. Jeśli używasz **Silnika renderowania mapy w wersji 2 (OpenGL)**:
     - Możesz nadal używać normalnego typu pobierania map rastrowych Cieniowania wzgórz i Nachylenia. Aby to zrobić, musisz jednak aktywować [wtyczkę deweloperską OsmAnd](../plugins/development.md) i włączyć ustawienie [Użyj formatu rastrowego SQLite dla cieniowania wzgórz i nachylenia](../plugins/development.md#terrain).
 
-    - Alternatywnie możesz użyć pobierania [Mapy terenu (3D)](../personal/maps-resources.md#paid-features-for-the-selected-location). Oszczędza to miejsce w pamięci urządzenia, a efekty Cieniowania wzgórz, Nachylenia i Rzeźby 3D będą generowane na podstawie tych danych przez Twoje urządzenie.
+    - Alternatywnie możesz użyć pobierania [Mapy terenu (3D)](../personal/maps-resources.md#paid-map-content). Oszczędza to miejsce w pamięci urządzenia, a efekty Cieniowania wzgórz, Nachylenia i Rzeźby 3D będą generowane na podstawie tych danych przez Twoje urządzenie.
 
 
 ### Szybkie akcje {#quick-actions}

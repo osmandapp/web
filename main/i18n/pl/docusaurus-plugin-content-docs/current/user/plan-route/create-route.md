@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Planowanie trasy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
-Narzędzie **Planowanie trasy** (*Menu → Planowanie trasy*) to zaawansowana funkcja aplikacji OsmAnd, która pozwala na [tworzenie nowych tras](#create-new-route) jako śladów GPX, [edycję i dodawanie nowych segmentów](#segments) do już zapisanych śladów, [mierzenie odległości](#distance-measurement) na mapie oraz [dołączanie segmentów trasy](#attach-track-to-roads) do najbliższej dostępnej drogi przy użyciu różnych profili nawigacyjnych. Funkcja ta została zaprojektowana do pracy w *trybie offline*.
+Narzędzie **Planowanie trasy** (*Menu → Planowanie trasy*) to zaawansowana funkcja aplikacji OsmAnd, która pozwala na [tworzenie nowych tras](#create-new-route) jako śladów GPX, [edycję i dodawanie nowych segmentów](#segments) do już zapisanych śladów, [mierzenie odległości](#distance-measurement) na mapie oraz [dołączanie śladu](#attach-track-to-roads) do najbliższej dostępnej drogi przy użyciu różnych profili nawigacyjnych. Funkcja ta została zaprojektowana do pracy w *trybie offline*.
 
 Trasa składa się z zestawu segmentów pomiędzy określonymi punktami. Segmenty mogą być liniami prostymi lub trasami dostosowanymi do wybranego profilu. Trasę można zapisać jako plik GPX w celu późniejszego importu, edycji i [nawigacji](../navigation/setup/gpx-navigation.md).
 
@@ -124,7 +124,7 @@ Jeśli w istniejącym śladzie brakuje [danych o wysokości](../map/tracks/track
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy przyciąganie do drogi iOS](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Planowanie trasy przyciąganie do drogi Android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
@@ -142,6 +142,10 @@ Ustawienie **Dołącz do dróg** pozwala na dołączenie zarejestrowanego lub za
 - Nazwy ulic i informacje o pasach ruchu.
 - Dane o wysokości.
 - [Atrybuty drogi](../navigation/setup/route-details.md#road-attributes).
+- Zaktualizowany profil wysokości na podstawie geometrii drogi.
+- Możliwe przeliczenie geometrii śladu (uproszczenie lub dostosowanie punktów do sieci dróg).
+
+Gdy ślad jest dołączany do dróg, następujące parametry mogą ulec zmianie, ponieważ geometria i wysokość śladu są przeliczane: *Odległość, Wzniesienie / Zejście, Średnia prędkość (i wykres prędkości), Maksymalna prędkość, Czas w ruchu* oraz *Czas trwania*. Te wartości mogą różnić się od oryginalnego śladu GPX, jeśli przeliczona wysokość oparta na drogach lub geometria znacznie odbiegają od zarejestrowanych danych GPS.
 
 Można wybrać [wartość progową](../navigation/setup/gpx-navigation.md#attach-to-the-roads) dla odległości, w jakiej uproszczone punkty śladu mogą znajdować się od oryginalnych punktów śladu.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Planowanie trasy Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Planowanie trasy Ulubione Android](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Aby zmierzyć odległość lub zaplanować podróż, dodawaj punkty w lokalizacji *Wskaźnika* jeden po drugim i dotykaj przycisku *Dodaj*. Uzyskując dostęp do **listy punktów** poniżej, możesz zmieniać kolejność punktów, usuwać je lub uzyskać dostęp do [menu kontekstowego](#point-context-menu) danego punktu.
+
+Możesz także dodać punkt pośredni bezpośrednio z mapy, dotykając POI lub Ulubionego, aby otworzyć jego menu kontekstowe, a następnie dotykając *DODAJ PUNKT*. W tym trybie menu kontekstowe dla obiektów niebędących punktami nie są wyświetlane. Podczas dodawania POI/Ulubionego jego nazwa jest zachowywana jako nazwa punktu trasy; jeśli później przesuniesz ten punkt na mapie, nazwa zostanie zresetowana.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Planowanie trasy iOS](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Aby zmierzyć odległość lub zaplanować podróż, dodawaj punkty w lokalizacji *Wskaźnika* jeden po drugim i dotykaj przycisku *Dodaj punkt*. Uzyskując dostęp do **listy punktów** poniżej, możesz zmieniać kolejność punktów, usuwać je lub uzyskać dostęp do [menu kontekstowego](#point-context-menu) danego punktu.
+
 </TabItem>
 
 </Tabs>  
-
-Aby zmierzyć odległość lub zaplanować podróż, dodawaj punkty w lokalizacji *Wskaźnika* jeden po drugim i dotykaj przycisku *Dodaj punkt*. Uzyskując dostęp do **listy punktów** poniżej, możesz zmieniać kolejność punktów, usuwać je lub uzyskać dostęp do [menu kontekstowego](#point-context-menu) danego punktu.
 
 :::note
 Możesz także **Cofnąć**/**Ponowić** każdą czynność wykonaną w planowaniu trasy.
@@ -315,7 +323,7 @@ Korzystając z narzędzia *Planowanie trasy* i opcji [Trasa między punktami](#r
 </Tabs>  
 
 
-Po [dodaniu](#adding-points) co najmniej jednego punktu na mapie, można użyć opcji zapisu. Wszystkie trasy zapisane w *Planowaniu trasy* można znaleźć w głównym menu *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
+Po [dodaniu](#adding-points) co najmniej jednego punktu na mapie, można użyć opcji zapisu. Wszystkie ślady zapisane w *Planowaniu trasy* można znaleźć w głównym menu *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
 Istnieją cztery sposoby zapisu:
 
@@ -364,7 +372,7 @@ Podczas zapisywania nowego śladu można wybrać opcję ***Uproszczony*** ślad,
 
 <TabItem value="android" label="Android">
 
-![Planowanie trasy Android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Planowanie trasy Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 

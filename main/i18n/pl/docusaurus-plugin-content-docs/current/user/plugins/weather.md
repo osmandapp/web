@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  Pogoda
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -58,7 +59,7 @@ Wtyczka Pogoda jest dostępna tylko z silnikiem renderowania mapy [Wersja 2](../
 
 Przejdź do: *Włączona wtyczka → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Panel pogody Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Panel pogody Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -66,7 +67,7 @@ Przejdź do: *Włączona wtyczka → <Translate android="true" ids="shared_strin
 
 Przejdź do: *Włączona wtyczka → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Panel pogody w iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Panel pogody w iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -76,6 +77,41 @@ Główne menu boczne ma dedykowaną pozycję **Pogoda**, która zapewnia szybki 
 
 Na dole ekranu znajduje się *pasek narzędzi pogody*. Możesz użyć przycisków dni i suwaka czasu, aby ustawić dokładny czas, w którym będzie wyświetlana prognoza pogody.
 
+### Źródło danych {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Źródło danych Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Źródło danych iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+Możesz wybrać, z którego dostawcy prognoz pogody OsmAnd korzysta do wyświetlania danych na ekranie Pogoda:<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Wybierz źródło danych*
+
+Obsługiwane są dwa dostawcy prognoz pogody:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – domyślne źródło obsługiwane przez NOAA/NWS. Zapewnia pełne dane pogodowe, w tym warstwy temperatury, ciśnienia, wilgotności, wiatru i zachmurzenia.
+
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – alternatywne źródło prognoz. Oferuje wysokiej jakości dane dotyczące temperatury, opadów i ciśnienia, ale nie dostarcza informacji o wietrze ani zachmurzeniu. Podczas korzystania z ECMWF niedostępne parametry są wyświetlane jako „–”, a odpowiadające im warstwy pogodowe pojawiają się jako wyłączone.
+
+Jak źródło danych wpływa na wyświetlanie pogody:
+- Mapa, wykresy, oś czasu i wartości pogody na ekranie są aktualizowane natychmiast po przełączeniu źródła.
+- Wyświetlane są tylko parametry dostępne dla wybranego dostawcy.
+- Widżety pogodowe automatycznie odświeżają się, aby korzystać z wybranego źródła.
+- Jeśli wcześniej pobrano prognozę pogody, OsmAnd używa danych odpowiadających wybranemu dostawcy.
+- GFS i ECMWF korzystają z oddzielnych pamięci podręcznych. Przełączanie źródła ładuje lub aktualizuje odpowiednie kafelki pogodowe.
+
+
 ### Dostosuj warstwy pogodowe {#customize-weather-layers}
 
 <Tabs groupId="operating-systems" queryString="current-os">  
@@ -84,7 +120,7 @@ Na dole ekranu znajduje się *pasek narzędzi pogody*. Możesz użyć przyciskó
 
 Przejdź do: *Włączona wtyczka → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Dostosowywanie pogody Android](@site/static/img/plugins/weather/weather_customize_andr.png)  
+![Panel pogody Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -92,7 +128,7 @@ Przejdź do: *Włączona wtyczka → <Translate android="true" ids="shared_strin
 
 Przejdź do: *Włączona wtyczka → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Dostosowywanie pogody iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![Panel pogody w iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
 </TabItem>  
 
@@ -224,6 +260,8 @@ W menu pobierania prognozy można uzyskać informacje i ustawić parametry, aby 
 - *Aktualizuj tylko przez Wi-Fi* (*iOS*). Włącz tę opcję, jeśli nie chcesz używać danych mobilnych do pobierania.  
 - Przycisk **Usuń** *ikona kosza* (*Android*) / **Usuń prognozę** (*iOS*). Umożliwia usunięcie wszystkich danych prognozy dla tego regionu.
 - Przycisk **Edytuj** *ikona ołówka* (*Android*). Umożliwia zmianę nazwy pliku pogodowego.
+
+**Uwaga:** Niektóre kraje, takie jak USA i Kanada, korzystają z jednego pliku prognozy offline dla całego kraju. Zmniejsza to liczbę pobrań i upraszcza zarządzanie danymi pogodowymi.
 
 :::info  
 Dane pogodowe są aktualizowane co 6 godzin (wszystkie 4 aktualizacje z [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) i 3 z [ECMWF](https://www.ecmwf.int/)) i stają się dostępne w OsmAnd z niewielkim opóźnieniem, ponieważ proces obliczeniowy trwa kilka godzin przed udostępnieniem (zwykle około 07:00 UTC).  

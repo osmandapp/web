@@ -1,5 +1,5 @@
 ---
-source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title:  Dane pojazdu
 ---
@@ -14,6 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 ## Przegląd {#overview}
 
@@ -117,6 +118,8 @@ Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 - **Ustawienia**. Otwiera ekran ustawień OBD-II, umożliwiając zarządzanie połączeniem i dostęp do dostępnych parametrów pojazdu.
 - **Zmień nazwę**. Pozwala przypisać niestandardową nazwę do czujnika w celu łatwiejszej identyfikacji.
 - **Zapomnij**. Usuwa wcześniej sparowany czujnik OBD-II z listy, co wymaga ponownego parowania w razie potrzeby.
+
+**Zachowanie ponownego połączenia** *(tylko Android)***:** OsmAnd automatycznie próbuje ponownie połączyć się z adapterem OBD-II po uruchomieniu aplikacji, rozpoczęciu nawigacji lub uruchomieniu Android Auto. Jeśli połączenie jest niedostępne, widżety Danych pojazdu wyświetlają „–”. Pojedyncze dotknięcie dowolnego widżetu Danych pojazdu spowoduje próbę ponownego połączenia z czujnikiem. Jeśli czujnik jest już podłączony, dotknięcie przełącza tryby wyświetlania widżetu jak zwykle.
 
 
 ## Lista metryk {#metrics-list}
@@ -233,6 +236,13 @@ Niektóre widżety oferują opcje trybu wyświetlania:
 
 - **Chwilowe**. Wyświetla dane w czasie rzeczywistym dla wybranej metryki.
 - **Średnie**. Wyświetla uśrednione wartości w konfigurowalnym przedziale czasowym (od 15 sekund do 60 minut).
+
+Kilka widżetów, w tym *Zużycie paliwa*, dostosowuje swoje wyświetlanie jednostek i formaty metryczne regionalne na podstawie [Ustawień profilu](https://osmand.net/docs/user/personal/profiles#units--formats). Podczas używania jednostek objętości innych niż litry, Zużycie paliwa obsługuje wyświetlanie wartości jako Mile na galon (MPG). Dokładny typ MPG zależy od wybranej jednostki objętości:
+
+- Galony US → MPG (US)
+- Galony imperialne → MPG (UK)
+
+Widżet automatycznie wybiera odpowiedni format zgodnie z wybranymi jednostkami <Translate android="true" ids="routing_attr_length_name"/> i <Translate android="true" ids="shared_string_volume"/> w aktywnym profilu, a wybrany tryb wyświetlania jest zachowywany podczas eksportu i importu profili.
 
 
 ## Powiązane artykuły {#related-articles}

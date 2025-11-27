@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title:  Linijka promienia i Linijka
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Narzędzia **Linijki** w OsmAnd zostały zaprojektowane, aby pomóc w precyzyjnym mierzeniu odległości i zrozumieniu [skali mapy](https://en.wikipedia.org/wiki/Scale_(map)).
+Narzędzia **Linijek** w OsmAnd zostały zaprojektowane, aby pomóc w precyzyjnym mierzeniu odległości i zrozumieniu [skali mapy](https://en.wikipedia.org/wiki/Scale_(map)).
 
 - Narzędzie **Linijka** wyświetla dynamiczną skalę mapy w jednostkach takich jak metry lub stopy, pomagając wizualnie ocenić odległości między obiektami na ekranie.
 - **Linijka promienia** pozwala ustawić promień z dowolnego punktu na mapie, pokazując koncentryczne okręgi reprezentujące interwały odległości.
@@ -69,6 +69,8 @@ To narzędzie jest pomocne, gdy potrzebujesz szybko zrozumieć rozmiary obiektó
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>*
 
+Dostępny na wszystkich panelach: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, i <Translate android="true" ids="shared_string_right"/>.
+
 ![Pozycja wyświetlania Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
@@ -76,7 +78,9 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Pozycja wyświetlania Android](@site/static/img/widgets/radius_ruler_height_ios.png)
+Dostępny na wszystkich panelach: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Lewy i Prawy.
+
+![Pozycja wyświetlania iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 

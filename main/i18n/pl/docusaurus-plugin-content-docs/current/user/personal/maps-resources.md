@@ -1,5 +1,5 @@
 ---
-source-hash: ab1e41d88d45cf90e8e97f0efc04df7c72257821a9279cc6ccbc4b8571774469
+source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
 sidebar_position: 2
 title:  Mapy i zasoby
 ---
@@ -177,7 +177,9 @@ Przeczytaj więcej w artykule [**Pakiet niestandardowy**](../plugins/custom).
 
 </Tabs>
 
-Dla krajów składających się z **wielu map regionalnych** można użyć masowego ładowania wielu map. Mapy dostępne do tego typu pobierania są wyświetlane z ikonami podwójnej strzałki pobierania i etykietą z liczbą regionów wewnątrz (np. Linie konturowe / Wszystkie regiony: 10). Możesz wybrać, ile map chcesz pobrać.
+Dla krajów składających się z **wielu map regionalnych** można użyć masowego ładowania wielu map. Mapy dostępne do tego typu pobierania są wyświetlane z ikonami podwójnej strzałki pobierania i etykietą z liczbą regionów wewnątrz (np. Linie konturowe / Wszystkie regiony: 10). Możesz wybrać, ile map chcesz pobrać. Masowe ładowanie obsługuje kilka typów map, w tym Standardowe, Linie konturowe, Wikipedia i Teren.
+
+Po otwarciu elementu zgrupowanego dla kraju wyświetlany jest arkusz dolny z pełną listą map dla tego kraju, co umożliwia wybranie pojedynczych map lub pobranie wszystkich naraz.
 
 
 ## Menu Lokalne {#local-menu}
@@ -209,7 +211,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download
 
 ![Menu zakładki Lokalne iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
-Zakładka Lokalne zapewnia przegląd wykorzystania pamięci dla danych map i zasobów na urządzeniu. Pasek pamięci na górze wyświetla trzy kategorie:
+Zakładka Lokalne zapewnia przegląd wykorzystania pamięci dla map i zasobów na urządzeniu. Pasek pamięci na górze wyświetla trzy kategorie:
 
 - ***Zielony***. Całkowita używana pamięć urządzenia.
 - ***Pomarańczowy***. Część używanej pamięci zajmowana przez pobrane pliki OsmAnd.
@@ -404,11 +406,21 @@ Use sorting options to organize map data:
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Menu map Aktualizuj mapy Android](@site/static/img/personal/maps/maps_update_andr.png)
+![Menu map Aktualizuj mapy Android](@site/static/img/personal/maps/maps_update_andr.png) ![Zakładka Aktualizuj mapy Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 Zakładka **Aktualizacje** umożliwia odświeżenie map i zasobów OsmAnd. Mapy standardowe i tylko z drogami są wydawane raz w miesiącu, zwykle między 2 a 5 dniem, i zawierają dane OpenStreetMap do ostatniego dnia poprzedniego miesiąca (na przykład wydanie październikowe zawiera dane do 30 września). Inne dane, takie jak Wikipedia, mapy terenu lub mapy morskie, mogą mieć inne, nieregularne harmonogramy aktualizacji. Prognoza pogody ma swój własny regularny cykl aktualizacji. Aby uzyskać szczegółowe informacje, zobacz [Pobierz prognozę](../plugins/weather.md#download-forecast). 
 
+Jeśli kilka map tego samego kraju wymaga aktualizacji, OsmAnd grupuje je w pojedynczy element na liście Aktualizacje. Zgrupowany element pokazuje nazwę kraju i liczbę zawartych map. Po dotknięciu otwiera się arkusz dolny *Aktualizuj mapy*, wyświetlający wszystkie mapy wymagające aktualizacji. 
+
 Użyj przycisku *Aktualizuj wszystko*, aby zaktualizować wszystkie mapy jednocześnie, lub aktualizuj poszczególne mapy w razie potrzeby. Aby uzyskać cogodzinne aktualizacje, sprawdź status subskrypcji [Aktualizacji na żywo](#live-updates). Jeśli jest włączona, sekcja **Aktualizacje na żywo** pojawi się na górze zakładki, pod wskaźnikiem pamięci urządzenia.
+
+Można również zarządzać mapami bezpośrednio z zakładki Aktualizacje za pomocą gestu długiego naciśnięcia na dowolną mapę z listy. Otwiera to menu kontekstowe z kilkoma opcjami:
+- **Informacje** — wyświetl szczegóły wybranej mapy
+- **Aktualizuj** — pobierz najnowszą dostępną wersję
+- **Dezaktywuj** — tymczasowo wyłącz mapę bez usuwania jej danych
+- **Usuń** — całkowicie usuń dane mapy z urządzenia
+
+Gdy mapa jest dezaktywowana, może tymczasowo zniknąć z zakładki Lokalne. Jeśli aktualizacja stanie się dostępna dla dezaktywowanej mapy, nadal pojawi się na liście Aktualizacje i będzie oznaczona szarą ikoną. Aktualizacja takiej mapy automatycznie ją ponownie aktywuje.
 
 </TabItem>
 
