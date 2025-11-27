@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-*Moped routing* allows drivers to build an optimal (fastest) route, taking into account the specifics of driving a vehicle such as a moped or scooter. The routing process considers various factors for safe, comfortable, and legal movement on roads or bicycle paths.
+*Moped routing* allows drivers to build an optimal (fastest) route, taking into account the specifics of driving a vehicle such as a moped or scooter. The routing process considers various factors for safe, comfortable, and legal movement on roads or bicycle paths. The Moped profile avoids high-speed roads: in particular, it does not use motorways and roads where the speed limit is higher than 80 km/h when calculating a route.
 
 :::note
 By default, *Moped profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -27,7 +27,7 @@ By default, *Moped profile* is deactivated. To use this profile for routing, you
 
 *Moped routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
-The moped's rooting settings are very simple and consist of just a few options.
+The moped's routing settings are very simple and consist of just a few options.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -39,7 +39,7 @@ The moped's rooting settings are very simple and consist of just a few options.
 
 <TabItem value="ios" label="iOS">
 
-![Moped routing settings iOS](@site/static/img/navigation/routing/moped_routing_ios.png)  
+![Moped routing settings iOS](@site/static/img/navigation/routing/moped_routing_new_ios.png)  
 
 </TabItem>
 
@@ -49,4 +49,5 @@ The moped's rooting settings are very simple and consist of just a few options.
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> Select roads you want to avoid during navigation.  </summary>![Avoid roads Android](@site/static/img/navigation/routing/avoid_moped_android.png) </details>  | You can either [select a road on the map](../../map/map-context-menu/#avoid-road) or choose road type(s) from the list:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (a type of water transportation, that carries  vehicles across bodies of water)</li></ul>|
 | *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  Private access restrictions will be ignored when route calculating.  | Tag *[private](https://wiki.openstreetmap.org/wiki/Key:access)* is used in OSM to describe restrictions on the use of highways and other transportation routes, as well as buildings, entrances, amenities, and leisure entities.   |
+| *<Translate android="true" ids="temporary_conditional_routing"/>* |  Takes into account temporary restrictions from OpenStreetMap when calculating the route (for example, seasonal closures or construction works).  | OSM data may be outdated, so some temporary restrictions may no longer be valid at the time of navigation.   |
 
