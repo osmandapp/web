@@ -1,8 +1,9 @@
 ---
-source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
+source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
 sidebar_position: 2
 title: Gerenciar Trilhas
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Visão Geral {#overview}
@@ -196,7 +196,7 @@ Depois de fazer sua escolha, as seguintes etapas são fornecidas:
 
 - **Mostrar no mapa** — Com este recurso, você pode exibir as trilhas selecionadas no mapa para entender melhor sua localização e relacionamento entre si.
 
-- **Compartilhar** (*Android*) / **Exportar** (*iOS*) — Se você deseja compartilhar dados selecionados com outros usuários ou salvá-los em um serviço de nuvem, o recurso *Compartilhar/Exportar* permite enviar trilhas e pastas usando diferentes métodos de compartilhamento.
+- **Compartilhar** (*Android*) / **Exportar** (*iOS*) — Abre o menu Compartilhar do sistema e envia as trilhas selecionadas como arquivos GPX (.gpx) ou exporta pastas selecionadas usando o aplicativo ou serviço de nuvem escolhido.
 
 - **Carregar para OpenStreetMap** — Você pode enviar trilhas selecionadas para o OpenStreetMap, contribuindo para o desenvolvimento e melhoria dos dados.
 
@@ -329,7 +329,7 @@ Na parte inferior da lista na aba *Trilhas*, e abaixo da lista de trilhas **em c
 - *Soma total de* **Distâncias** — O comprimento total de todas as trilhas na pasta selecionada, medido nas unidades que você selecionou, é exibido.
 - *Soma de* **Subidas** — Os dados indicam a elevação vertical total em todas as trilhas na pasta selecionada.
 - *Soma de* **Descidas** — Este parâmetro é a soma das descidas verticais em todas as trilhas na pasta selecionada.
-- *Soma do tempo de* **Duração** — Isso exibe o tempo total levado para completar todas as trilhas na pasta selecionada.
+- *Soma de* **Duração** *tempo* — Isso exibe o tempo total levado para completar todas as trilhas na pasta selecionada.
 - *Tamanho total dos arquivos baixados em MB* — O tamanho total dos arquivos baixados em megabytes mostra quanto espaço todas as trilhas na pasta selecionada ocupam em seu dispositivo.
 
 
@@ -433,7 +433,7 @@ A ferramenta de importação permite adicionar trilhas de arquivos externos para
 
 <TabItem value="android" label="Android">
 
-![importar multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![importar multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
+![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
@@ -441,7 +441,7 @@ A ferramenta de importação permite adicionar trilhas de arquivos externos para
 
 | Exportar | Importar |
 |:------------|:---------------|
-| ![importar multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Exportar </summary> ![importar multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![importar multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Exportar </summary> ![importar multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Exportar </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Exportar </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">

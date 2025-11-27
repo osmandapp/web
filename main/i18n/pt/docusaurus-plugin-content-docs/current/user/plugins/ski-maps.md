@@ -1,5 +1,5 @@
 ---
-source-hash: 070387cfa0ffdf7041e1fa0c171c5768610af393c8e26ba7fc28f5c7bce9f583
+source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
 sidebar_position: 13
 title: Vista de Mapa de Esqui
 ---
@@ -168,7 +168,7 @@ O Mapa de Esqui do OsmAnd é construído como um dos estilos de renderização, 
 A dificuldade das pistas é geralmente indicada por cores específicas. As cores podem ser diferentes em diferentes países e resorts. Abaixo estão algumas diretrizes práticas.
 
 :::tip orientação
-Para orientações mais específicas para cada tipo de dificuldade de trilha, consulte a [referência de dificuldade de pista do OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) ou qualquer outra fonte que também considere inclinações, obstáculos e perigos.  
+Para orientações mais específicas para cada tipo de dificuldade de trilha, consulte a [referência de dificuldade de pista do OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) ou qualquer outra fonte que também considere inclinações, obstáculos e perigos. No estilo de mapa Inverno e Esqui, certos perigos mapeados (por exemplo, áreas propensas a avalanches marcadas como hazard=avalanche) podem ser exibidos como POI de perigo no mapa e devem ser levados em consideração junto com a dificuldade da pista. 
 :::
 
 

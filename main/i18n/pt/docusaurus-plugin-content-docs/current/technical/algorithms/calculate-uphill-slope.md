@@ -1,5 +1,5 @@
 ---
-source-hash: 6f725a1fadd0a2c5cd2626f8424f87e2e54b060d0b683fd33a90f9426413a826
+source-hash: d793188a0617dee4c181a2021483255f3e56c64b9e25db7249b0fb0d19923b4d
 sidebar_position: 5
 ---
 
@@ -18,7 +18,7 @@ Existem muitos problemas para calcular a **subida** porque não há um padrão e
 
 O OsmAnd usa um algoritmo de 3 etapas:
 
-- Filtrar dados ruidosos.
+- Filtrar dados ruidosos. 
 - Encontrar extremos locais (mínimos e máximos).
 - Calcular a soma das diferenças entre mínimo e máximo.
 
@@ -26,8 +26,8 @@ Algumas trilhas contêm muitos dados ruidosos que precisam ser filtrados primeir
 
 ### Filtrar inclinação de 70% {#filter-70-slope}
 
-A filtragem é baseada na localização de **pontos extremos** que são significativamente mais altos ou mais baixos do que 1 ponto vizinho à esquerda e 1 ponto vizinho à direita no gráfico.
-Esses **pontos extremos** são excluídos de cálculos posteriores. O ```limiar``` é [inclinação de 70%](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) - [código](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
+A filtragem é baseada na localização de **pontos extremos** que são significativamente mais altos ou mais baixos do que 1 ponto vizinho à esquerda e 1 ponto vizinho à direita no gráfico. 
+Esses **pontos extremos** são excluídos de cálculos posteriores. O ```threshold``` é [inclinação de 70%](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) -  [código](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
 
 **Exemplo 1**. (todos os pontos distribuídos por 10m), elevação - [5, 3, 10, 3, 5]. 10 é um ponto extremo: porque é 10 > 3 (inclinação de 70%).
 
@@ -43,11 +43,12 @@ Pontos que representam colinas locais ```/\``` são filtrados, isso leva a um pr
 
 **Exemplo 3**. Elevação - [5, 2, 3, 4, 5] -> [5, 3, 4, 5].
 
+
 ### Encontrando extremos {#finding-extremums}
 
 Para encontrar extremos, o algoritmo [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) é usado. Não é absolutamente bom para encontrar exatamente extremos em um gráfico aleatório, mas no cálculo de altitude, evita muitos pequenos picos aleatórios que podem acontecer durante uma longa subida e algumas descidas curtas imperceptíveis entre elas.
 
-O principal objetivo do algoritmo é encontrar o número mínimo de linhas retas que poderiam representar o gráfico de altitude. O ```limiar``` é **[7 metros](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. Assim, todos os picos com mais de 7 metros de diferença serão detectados em superfícies planas e não serão detectados se forem menores.
+O principal objetivo do algoritmo é encontrar o número mínimo de linhas retas que poderiam representar o gráfico de altitude. O ```threshold``` é **[7 metros](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. Assim, todos os picos com mais de 7 metros de diferença serão detectados em superfícies planas e não serão detectados se forem menores.
 
 Os extremos são exibidos no gráfico como pontos azuis com o plugin de desenvolvimento OsmAnd ativado.
 
@@ -55,32 +56,53 @@ Os extremos são exibidos no gráfico como pontos azuis com o plugin de desenvol
 
 **Exemplo 2**. Elevação - [0, 1, 5, 4, -3, -2, -1, 0]. **Nenhum extremo** - todos com menos de 7 metros de diferença.
 
+
 ### Calcular subida / descida entre extremos {#calculate-uphill--downhill-between-extremums}
 
 Por exemplo, se você tem uma trilha simples que sobe e desce, você tem apenas 1 máximo em seu caminho, então a
-```
-Diferença de elevação inicial = <elevação inicial> - <elevação extrema> :
-Diferença de elevação final = <elevação extrema> - <elevação final> : se positivo - **subida**, se negativo - **descida**
-```
+  ``` 
+  Start ele diff = <start elevation> - <Extremum elevation>    : 
+  End   ele diff = <Extremum elevation> - <end elevation>      : if positive - **uphill**, if negative - **downhill**
+  ```
 
-1. Se *Diferença de elevação inicial* > 0
-  - **subida** = *diferença de elevação inicial*
-  - **descida** = *diferença de elevação final*
+1. Se *Start ele diff* > 0
+  - **uphill** = *start ele diff*  
+  - **downhill** = *end ele diff*  
 
-2. Se *Diferença de elevação final* > 0
-  - **subida** = *diferença de elevação final*
-  - **descida** = *diferença de elevação inicial*
+2. Se *End ele diff* > 0
+  - **uphill** = *end ele diff*   
+  - **downhill** = *start ele diff*  
+
 
 Mais exemplos serão adicionados.
 
-## Correção de altitude SRTM {#altitude-srtm-correction}
 
-Existem 2 alternativas que podem ser usadas no OsmAnd para obter correção de altitude.
+## Correção de Elevação {#elevation-correction}
 
-1. Abra a trilha no OsmAnd Android e encontre, *Editar Trilha → Opções → Correção de Altitude*
-1.1 **Online** processará a trilha via servidor e dados do OsmAnd.
-1.2 **Offline** processará a trilha no dispositivo se os arquivos geotifs 3D forem baixados.
-2. Abra o site https://osmand.net/map e carregue a trilha e veja a elevação SRTM.
+A Correção de Elevação ajusta os valores de altitude em uma trilha GPX usando fontes externas de elevação. Duas fontes de dados de elevação estão disponíveis:
+
+1. Usar mapas de terreno (DEM / SRTM / dados de elevação 3D)
+- Substitui os valores de altitude com dados de mapas de terreno baixados (DEM/SRTM ou arquivos GeoTIFF 3D).
+- Funciona localmente no dispositivo se os tiles de elevação estiverem instalados.
+- Este método mantém a geometria original da trilha.
+
+2. Usar estradas próximas (Anexar a estradas)
+- Ajusta a geometria da trilha para corresponder à rede de estradas.
+- Usa dados de elevação de estradas para a correção de altitude.
+- Este método pode modificar o formato da trilha devido ao snapping de estradas.
+
+Dados que podem mudar após aplicar a Correção de Elevação:
+- Distância
+- Tamanho
+- Subida
+- Descida
+- Velocidade média
+- Velocidade máxima
+- Duração
+- Tempo em movimento
+
+Os carimbos de data/hora do GPX são preservados ao usar ambas as fontes de elevação.
+
 
 ## Inclinação {#slope}
 

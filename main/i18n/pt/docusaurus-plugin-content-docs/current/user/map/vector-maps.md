@@ -1,7 +1,7 @@
 ---
-source-hash: 146224c5870d93bfcd77b9ac4622910a65040bc55c1e1ed39fa47c96b8650a04
+source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
 sidebar_position: 5
-title: Mapas Vetoriais (Estilos de Mapa)
+title:  Mapas Vetoriais (Estilos de Mapa)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -87,7 +87,7 @@ Este é um estilo de mapa náutico avançado com setores de luz, característica
 
 ### Inverno e Esqui {#winter-and-ski}
 
-![Estilo de mapa Inverno e Esqui](@site/static/img/map/map-style-winter-ski.png)
+![Estilo de mapa Inverno & Esqui](@site/static/img/map/map-style-winter-ski.png)
 
 Este é um estilo para desportos de esqui que descreve as pistas, elevadores e trilhos de esqui de fundo, bem como obscurece objetos de mapa secundários. O **estilo Inverno e Esqui** foi concebido para o ajudar na navegação em desportos de inverno.  
 
@@ -135,7 +135,7 @@ A legenda ajuda os utilizadores a interpretar o que veem no mapa. Pode aceder à
 
 *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
 
-![Fontes do mapa versão Android](@site/static/img/map/map_fonts.png) ![Fontes do mapa versão](@site/static/img/map/map_fonts_1.png)
+![Fontes do mapa versão Android](@site/static/img/map/map_fonts.png) ![Versão de fontes do mapa](@site/static/img/map/map_fonts_1.png)
 
 Para mapas em chinês simplificado/tradicional, japonês e coreano, podem aparecer caracteres ou símbolos incorretos (como quadrados) se o seu dispositivo não tiver as fontes necessárias. Este problema ocorre ao renderizar nomes locais e pode ser resolvido transferindo as fontes necessárias através do OsmAnd.  
 
@@ -255,7 +255,7 @@ A **Grelha de Coordenadas** sobrepõe uma grelha de referência no mapa, permiti
 Pode configurar as seguintes opções:
 - **Níveis de zoom:** defina os níveis de zoom mínimo e máximo (2 - 22) nos quais a grelha é visível.
 - **Posição das etiquetas:** escolha entre *Arestas* (predefinição) ou *Centro* para as etiquetas da grelha.
-- **Cor da grelha:** disponível separadamente para o modo Dia/Noite. A personalização da cor da grelha é uma funcionalidade paga.
+- **Cor da grelha:** disponível separadamente para o modo Dia/Noite. A personalização da cor da grelha é uma [funcionalidade paga](https://osmand.net/docs/user/purchases/) disponível em Maps+ (compra in-app ou subscrição) e OsmAnd+.
 - **Formato de coordenadas:** selecione entre vários formatos disponíveis (ver lista abaixo).
 
 
@@ -493,7 +493,7 @@ Definições especiais para estradas, onde pode alterar as cores para correspond
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. O alto contraste das estradas.  
 ![Estilo de estrada do mapa de alto contraste](@site/static/img/map/map-road-style-high-contrast.png)
 - **Pálido**. Cores menos contrastantes das estradas.  
-![Estilo de estrada do mapa pálido](@site/static/img/map/map-road-style-pale.png)
+![Estilo de estrada do mapa com contorno em negrito](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contorno em negrito para estradas.  
 ![Estilo de estrada do mapa com contorno em negrito](@site/static/img/map/map-road-style-bold-outline.png)

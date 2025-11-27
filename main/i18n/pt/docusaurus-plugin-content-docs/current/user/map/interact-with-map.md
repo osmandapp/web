@@ -1,5 +1,5 @@
 ---
-source-hash: f36e3e01ca52cfcf09244a5fdf758f11e6dc72be472882c610eecdadd2be4998
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title: Interagir com o Mapa
 ---
@@ -216,12 +216,12 @@ Cria um efeito de panorâmica suave do mapa em relação ao ícone *[Minha Posi�
 
 ## Dispositivos de Entrada Externos {#external-input-devices}
 
-Os botões de dispositivos de entrada externos fornecem uma maneira conveniente e eficiente de interagir com o mapa e a interface do aplicativo OsmAnd.  Eles estão localizados em dispositivos externos, como **teclados Bluetooth ou outros tipos**, **botões especializados em dispositivos de navegação veicular**, ou controladores [WunderLINQ](https://blackboxembedded.com/) e [Parrot](https://www.parrot.com/en).  
+Os botões de dispositivos de entrada externos fornecem uma maneira conveniente e eficiente de interagir com o mapa e a interface do aplicativo OsmAnd.  Eles estão localizados em dispositivos externos, como **teclados Bluetooth ou outros tipos**, **botões especializados em dispositivos de navegação veicular**, ou controladores [WunderLINQ](https://blackboxembedded.com/) e [Parrot](https://www.parrot.com/en) (*somente Android*).  
 
-Uma das principais funções dos botões em dispositivos de entrada externos é ampliar e reduzir o mapa. Eles também permitem navegar no mapa e alterar sua orientação sem precisar tocar e gesticular na tela. Os botões em dispositivos de entrada externos suportam muitas outras funções, como abrir o *Menu Principal*.
+Uma das principais funções dos botões em dispositivos de entrada externos é ampliar e reduzir o mapa. Eles também permitem navegar no mapa e alterar sua orientação sem precisar tocar e gesticular na tela. Os botões em dispositivos de entrada externos suportam muitas outras funções, como abrir o *Menu Principal* e acionar *Ações Rápidas*. Os usuários também podem personalizar as atribuições de botões para dispositivos suportados (Teclado, WunderLINQ e controladores externos personalizados).
 
 :::note
-O teclado permanece funcional mesmo quando a opção *Dispositivos de entrada externos* está desativada e *Nenhum* está selecionado.
+O teclado permanece funcional mesmo quando a opção *Dispositivos de entrada externos* está desativada e *Nenhum* está selecionado. No entanto, as atribuições de teclas personalizadas funcionam apenas quando os *Dispositivos de entrada externos* estão ativados.
 :::
 
 ### Dispositivo de Entrada Pré-configurado {#preconfigured-input-device}
@@ -240,7 +240,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![Dispositivos externos](@site/static/img/map/external_types_ios.png)
+![Dispositivos externos](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -251,9 +251,9 @@ Para acessar as configurações de um dispositivo de entrada externo, você prec
 - Vá para o *Menu Principal → Configurações →* selecione o *Perfil → Configurações gerais → Outros → Dispositivos de entrada externos*, e mude para *Ativado*.
 
 - Selecione um dispositivo entre os suportados pelo OsmAnd tocando no item *Tipo* na lista:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*somente Android*), ou crie [**seu próprio tipo**](#custom-input-device-type) (*somente Android*).
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*somente Android*), ou crie [**seu próprio tipo**](#custom-input-device-type).
 
-- Existe uma **atribuição de pacote de ação-chave definida** diferente para cada tipo de dispositivo de entrada externo. Toque em *<Translate android="true" ids="key_assignments"/>* para ver uma lista de ações e chaves. A tabela de chaves é mostrada abaixo.
+- Existe uma **atribuição de pacote de ação-chave definida** diferente para cada tipo de dispositivo de entrada externo. A seção *<Translate android="true" ids="key_assignments"/>* exibe a lista de ações e suas teclas atribuídas. A tabela de teclas é mostrada abaixo. Estas são atribuições padrão — elas podem ser alteradas ou estendidas de acordo com as preferências do usuário.
 
 - Você pode ler mais sobre as ações de dispositivos de entrada externos no GitHub no pacote [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
@@ -275,7 +275,7 @@ Para acessar as configurações de um dispositivo de entrada externo, você prec
 |**&#8595;**| *Wunderlinq*  | Mapa - [Afastar](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Mapa - [Aproximar](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Abrir WunderLINQ Datagrid |
-| **M** <br/> (*Android legado*) | *Teclado*  | Mostrar / Ocultar - [Menu lateral](../start-with/main-menu.md#main-menu-side-menu) |
+| **M** | *Teclado*  | Mostrar / Ocultar - [Menu lateral](../start-with/main-menu.md#main-menu-side-menu) |
 | **Pressionar Joystick** <br/> (*Android legado*) | *Teclado*  | Mover - [Para Minha localização](#my-location-and-zoom) |
 | **Botão de mídia** <br/> (*somente Android*)| *Teclado*  | Mostrar / Ocultar - [Notas AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*somente Android*)| *Parrot*  | Mapa - [Afastar](#my-location-and-zoom) |
@@ -284,7 +284,9 @@ Para acessar as configurações de um dispositivo de entrada externo, você prec
 
 ### Tipo de Dispositivo de Entrada Personalizado {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -292,18 +294,47 @@ Para acessar as configurações de um dispositivo de entrada externo, você prec
 
 Se você deseja atribuir teclas para um dispositivo de entrada externo (como um teclado, joystick ou controlador), você precisa criar um tipo de dispositivo: vá para a configuração [Dispositivo de Entrada Externo](#external-input-devices), selecione **Tipo** na lista, toque no &nbsp; "**＋**" &nbsp; e digite um nome. Cada tipo tem um menu com as seguintes opções: ***Renomear, Duplicar*** e ***Remover***.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![Dispositivos externos](@site/static/img/map/external_mypilot_ios.png)  ![Dispositivos externos](@site/static/img/map/external_mypilot2_ios.png)
+
+Se você deseja atribuir teclas para um dispositivo de entrada externo (como um teclado, joystick ou controlador), você precisa criar um tipo de dispositivo: vá para a configuração [Dispositivo de Entrada Externo](#external-input-devices), selecione **Device** na lista, toque no &nbsp; "**Add**" &nbsp; e digite um nome. Cada tipo tem um menu com as seguintes opções: ***Renomear, Duplicar*** e ***Remover***.
+
+</TabItem>
+
+</Tabs>  
+
 ### Adicionar Ação e Atribuições de Teclas {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Dispositivos externos](@site/static/img/map/external_custom_4_andr.png)  ![Dispositivos externos](@site/static/img/map/external_custom_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dispositivos externos](@site/static/img/map/external_custom_4_ios.png)  ![Dispositivos externos](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 Depois de criar um tipo de entrada personalizado, você pode atribuir as ações necessárias às teclas. Uma ampla gama de [tipos de ação](../widgets/quick-action.md#action-types) do widget Ação Rápida está disponível.
 
 - Selecione um tipo de dispositivo, depois toque no item **Atribuições de teclas**.
-- Toque no botão ***Adicionar*** (&nbsp;"**＋**"&nbsp;) no canto inferior direito da tela.
+- Toque no botão ***Adicionar*** (&nbsp;"**＋**"&nbsp;).
 - Selecione a ação necessária, depois toque no campo ***Adicionar tecla*** e toque no botão do seu dispositivo para atribuí-lo à ação.  
 
 :::note
 
+- Múltiplas teclas podem ser atribuídas a uma ação.
 - Se o botão que você atribui já estiver sendo usado para outra ação, você receberá uma notificação com a opção de reatribuir o botão ou cancelar a atribuição.
 - Mais tarde, você pode alterar ações e atribuições de teclas ou adicionar outras para ações já criadas, basta selecionar um item na lista de Atribuições de teclas.
 
@@ -311,12 +342,26 @@ Depois de criar um tipo de entrada personalizado, você pode atribuir as ações
 
 ### Excluir Atribuição de Tecla {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![Dispositivos externos](@site/static/img/map/external_custom_1_andr.png)
 
-Você pode excluir várias ações desnecessárias usando o **botão Editar** (*em forma de lápis*) no canto superior direito da tela de uma só vez:
+</TabItem>
 
-- ***Remover uma ação*** por ação, com o botão &nbsp;"**−**"&nbsp; no campo do item.
-- ***Remover todas as atribuições de teclas*** para o tipo selecionado tocando no botão no canto superior direito da tela ao lado de *Editar nome*.
+<TabItem value="ios" label="iOS">
+
+![Dispositivos externos](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Você pode excluir várias ações desnecessárias usando o **botão Editar** (*em forma de lápis* no Android) de uma só vez:
+
+- ***Remover uma ação*** por ação, com o botão &nbsp;"**−**"&nbsp; no campo do item. A atribuição de tecla também pode ser removida via o menu de contexto (toque longo no item) tocando em **Remover**.
+- ***Remover todas as atribuições de teclas*** para o tipo selecionado tocando no botão no canto superior direito da tela ao lado de *Editar nome* no Android; tocando no botão **Limpar tudo** no iOS.
 
 
 ## Artigos Relacionados {#related-articles}

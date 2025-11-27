@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title: Rotas
 ---
@@ -15,9 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## Visão geral {#overview}
 
 OsmAnd tem muitos recursos poderosos para exibir diferentes [rotas](#type-of-routes) no mapa. Por padrão, essas rotas fazem parte de [mapas vetoriais](./vector-maps.md#routes) (dados do OpenStreetMap), no entanto, funcionalidade semelhante é fornecida por [trilhas](./tracks/index.md) que podem ser criadas com [Planejar uma Rota](../plan-route/create-route.md), importadas como [trilhas GPX](#save-as-a-track), gravadas com o [plugin de Gravação de Viagem](../plugins/trip-recording.md). A Legenda do Mapa de Rotas está [aqui](../map-legend/osmand.md#routes).
+
 
 ## Tipo de Rotas {#type-of-routes}
 
@@ -36,6 +38,7 @@ Você pode configurar a filtragem de alguns tipos de rota no menu [Configurar Ma
 ![Rotas do mapa - redes de nós de bicicleta](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 Você pode encontrar mais informações no artigo [Legenda do Mapa](../map-legend/index.md).
+
 
 ### Rotas de mountain bike {#mountain-bike-routes}
 
@@ -67,6 +70,7 @@ As rotas de MTB têm um mapeamento específico no [OpenStreetMap](https://wiki.o
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***. Colore as rotas de acordo com o tipo de [rede de nós](https://wiki.openstreetmap.org/wiki/Node_Networks) (internacional, regional ou local).  
 ![Rotas do mapa - redes de nós de caminhada](@site/static/img/map/map-routes-hiking-node-networks.png)
 
+
 ### Trilhas de Moto de Trilha {#dirt-bike-trails}
 
 ![Rotas do mapa - Trilhas de Moto de Trilha](@site/static/img/map/map-routes-dirt-bike-trails.png)
@@ -74,6 +78,7 @@ As rotas de MTB têm um mapeamento específico no [OpenStreetMap](https://wiki.o
 O recurso **Trilhas de Moto de Trilha** permite exibir rotas específicas para motos de trilha no mapa com base na tag `dirtbike:scale`. Essa escala destaca trilhas adequadas para motos de trilha, com uma sobreposição colorida mostrando os níveis de dificuldade ([Legenda do Mapa](../map-legend/osmand.md#routes)).  
 
 Você pode ativar esse recurso em *Menu → Configurar mapa → Rotas → Rotas de moto de trilha*. O sistema funciona de forma semelhante à escala MTB, oferecendo uma representação visual de rotas adaptadas para motos de trilha — mais sobre a [tag `dirtbike` pode ser encontrado aqui](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+
 
 ### Rotas de Escalada {#climbing-routes}
 
@@ -95,6 +100,7 @@ OsmAnd suporta *áreas de escalada* (`climbing=area`) e *paredões de escalada* 
 
 Para ativar os locais de escalada no mapa, vá para: *Menu → Configurar Mapa → Rotas → Rotas de Escalada*.
 
+
 ### Grau de Dificuldade de Trilhas de Caminhada {#hiking-trails-difficulty-grade}
 
 ![Rotas do mapa - caminhada alpina](@site/static/img/map/map-routes-alpine-hiking.png)
@@ -103,6 +109,7 @@ Alguns segmentos de estrada podem fazer parte de muitas rotas, mas podem ser col
 
 1. [Escala SAC](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [Escala CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
+
 
 ### Pistas e rotas de esqui {#ski-slopes-and-routes}
 
@@ -114,11 +121,13 @@ Alguns segmentos de estrada podem fazer parte de muitas rotas, mas podem ser col
 
 Pistas e rotas de esqui são um grupo específico de [rotas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) no OpenStreetMap. Tipicamente, essas rotas podem ser usadas com o estilo de mapa [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) com todas as [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visíveis. Se outro estilo de mapa estiver ativo, uma faixa é exibida sugerindo a troca para [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) (*apenas Android*) e apenas as Pistas são exibidas. Toque em ***Trocar*** para alterar o estilo de mapa sem sair da tela atual, ou ***Mais tarde*** para ocultar a faixa.
 
+
 ### Trilhas de moto de neve {#snowmobile-trails}
 
 ![Rotas do mapa - moto de neve](@site/static/img/map/snowmobile_trail.png)
 
 Trilhas de moto de neve são mapeadas no [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) como `route=snowmobile`. Elas são usadas para recreação no inverno e para conectar áreas remotas durante a temporada de neve. No OsmAnd, as trilhas de moto de neve são clicáveis, veja a seção [Ações com Rotas](#actions-with-routes).
+
 
 ### Rotas de cavalo {#horse-routes}
 
@@ -126,11 +135,13 @@ Trilhas de moto de neve são mapeadas no [OpenStreetMap](https://wiki.openstreet
 
 [Rotas de cavalo](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) são exibidas como rotas indicadas por cor com símbolos para equitação.  
 
+
 ### Esportes aquáticos {#whitewater-sports}
 
 ![Rotas do mapa - esporte aquático](@site/static/img/map/map-routes-whitewater-sport.png)
 
 [Rotas de águas bravas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) são mostradas juntamente com ícones de acesso, zonas de perigo para [turismo de águas bravas](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+
 
 ### Rotas de corrida {#running-routes}
 
@@ -138,11 +149,13 @@ Trilhas de moto de neve são mapeadas no [OpenStreetMap](https://wiki.openstreet
 
 [Rotas de corrida](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) no OpenStreetMap são usadas para rotas de corrida nomeadas, numeradas ou marcadas de outra forma, principalmente para atletismo.
 
+
 ### Trilhas de fitness {#fitness-trails}
 
 ![Rotas de fitness](@site/static/img/map/fitness_route.png)
 
 Uma [trilha de fitness](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) é uma trilha ou caminho equipado com obstáculos ou estações ao longo de seu comprimento para exercitar o corpo humano para melhorar a saúde.  
+
 
 ### Rotas de viagem {#travel-routes}
 
@@ -153,6 +166,7 @@ Uma [trilha de fitness](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_
 As rotas de viagem fazem parte de arquivos personalizados de [Livro de Viagens](../plan-route/travel-guides.md) (`travel.obf`), que podem ser gerados a partir das [rotas do usuário](https://osmand.net/blog/routes#generated-travel-routes) ou fazer parte de [plugins](../plugins/index.md) adicionais.  
 
 Você pode personalizar a exibição de certos ***Livros de Viagens*** e tipos de ***trilhas***, exibir trilhas como pontos, ou ***Grupos de Pontos*** (por exemplo para livros de viagem do Wikivoyage). Saiba mais sobre [Guias de Viagem aqui](../plan-route/travel-guides.md).
+
 
 ## Exibir Rotas no Mapa {#display-routes-on-the-map}
 
@@ -167,7 +181,10 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,rende
 - Para exibir as rotas necessárias no mapa, habilite-as na *lista de Rotas* do menu [Configurar Mapa](../map/configure-map-menu.md).
 - O OsmAnd pode destacar [rotas presentes no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Elas podem ser selecionadas tocando [no símbolo da rota](#save-as-a-track), e se o conjunto visível de rotas estiver configurado corretamente, você pode seguir a cor e os ícones.
 - Os principais tipos de rota também podem ser filtrados por classes e subclasses, permitindo que você exiba apenas grupos específicos dentro de cada tipo. Por exemplo, você pode mostrar rotas de caminhada por **símbolos OSMC** como classes, e por *redes internacionais, nacionais, regionais* ou *locais* como subclasses.
-- Você pode criar uma trilha sobre as rotas usando a ferramenta [Planejar uma Rota](../plan-route/create-route.md).  
+- Você pode criar uma trilha sobre as rotas usando a ferramenta [Planejar uma Rota](../plan-route/create-route.md). 
+- Quando várias rotas correm ao longo da mesma estrada, cada rota é exibida como uma linha semi-transparente separada colocada acima das outras. 
+- Ao tocar em um local onde várias rotas se sobrepõem, um menu de contexto com todas as rotas passando por esse ponto é exibido. 
+- Mapas vetoriais atualizados são necessários para exibir todos os elementos do novo esquema de renderização de rotas. 
 
 ![Rotas do mapa - caminhada osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Rotas do mapa - redes de nós de bicicleta](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -181,7 +198,8 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 - Para exibir as rotas necessárias no mapa, habilite-as na *lista de Rotas* do menu [Configurar Mapa](../map/configure-map-menu.md).
 - O OsmAnd pode destacar [rotas presentes no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Elas podem ser selecionadas tocando [no símbolo da rota](#save-as-a-track), e se o conjunto visível de rotas estiver configurado corretamente, você pode seguir a cor e os ícones.
-- Você pode criar uma trilha sobre as rotas usando a ferramenta [Planejar uma Rota](../plan-route/create-route.md).  
+- Você pode criar uma trilha sobre as rotas usando a ferramenta [Planejar uma Rota](../plan-route/create-route.md). 
+- Quando várias rotas correm ao longo da mesma estrada, cada rota é exibida como uma linha semi-transparente separada colocada acima das outras.   
 
 ![Rotas do mapa - caminhada osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Rotas do mapa - redes de nós de bicicleta](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -189,11 +207,13 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 </Tabs>
 
+
 ## Detalhes da Área de Escalada e Paredão {#climbing-area-and-crag-details}
 
 ![Detalhes de escalada](@site/static/img/map/climbing_andr.png)
 
 Ao selecionar uma [área de escalada ou paredão](../map/routes.md#climbing-routes), o OsmAnd fornece um resumo detalhado do local de escalada, incluindo: nome e localização, classificação de dificuldade de escalada (UIAA, Francês, YDS, etc.), tipo de rocha, altura e comprimento da rota, qualidade da escalada e condições da superfície.
+
 
 ## Ações com Rotas {#actions-with-routes}
 
@@ -225,6 +245,7 @@ No **menu de contexto**, você pode:
 - Visualizar [informações adicionais](#route-info-and-elevation) sobre a rota selecionada.
 - [Salvar a rota](#save-as-a-track) como uma **trilha GPX**.
 - [Iniciar navegação](#start-navigation) ao longo da rota.
+
 
 ### Informações da Rota e Elevação {#route-info-and-elevation}
 
@@ -289,7 +310,9 @@ Para visualizar o gráfico de elevação, inclinação ou detalhes de altitude p
 
 </Tabs>  
 
+
 Para salvar a rota como um *arquivo GPX*, toque no botão **Salvar (Download)** abaixo do [painel de Informações](../map/tracks/track-context-menu.md#info-panel). Isso abrirá o painel de botões [Ações rápidas](../map/tracks/track-context-menu.md#track-actions) onde você terá acesso a ações de trilha, como alterar [Aparência](./tracks/appearance.md), [Navegação](../navigation/setup/route-navigation.md) ou editar [Planejar uma rota](../plan-route/create-route.md).
+
 
 ### Iniciar Navegação {#start-navigation}
 
@@ -313,9 +336,12 @@ Para iniciar a navegação ao longo da rota OSM selecionada, toque no botão **I
 
 Isso iniciará o modo [**Navegação por trilha**](../navigation/setup/gpx-navigation.md), permitindo que você siga a rota com orientação por voz e recursos de navegação.
 
+
+
 ### Ações Rápidas {#quick-actions}
 
 Você pode personalizar se as rotas são ativadas ou desativadas usando o widget [Ação Rápida](../widgets/quick-action.md#configure-map).
+
 
 ## Pesquisa de Rotas {#routes-search}
 
@@ -339,13 +365,13 @@ Para pesquisar, vá para o menu *<Translate android="true" ids="search_button"/>
 
 </Tabs>  
 
-Navegue até *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar as rotas desejadas. As rotas incluem nome, tipo de atividade, comprimento, localização e distância até o ponto mais próximo.
+Navegue até *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar as rotas desejadas. Os resultados da pesquisa de rotas exibem o nome da rota, tipo de atividade, comprimento, localização e distância até o ponto mais próximo. No Android, métricas de elevação como subida e descida também são exibidas quando disponíveis. Alterações menores de elevação (menos de 10 m) são ocultadas para manter a lista clara. Todos os valores respeitam as unidades de distância e altitude selecionadas no aplicativo.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Rotas no chão](@site/static/img/map/route_search_1.png)
+![Rotas no chão](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -363,7 +389,7 @@ Use o botão de filtros (canto superior direito) para exibir apenas as rotas des
 
 <TabItem value="android" label="Android">
 
-![Rotas no chão](@site/static/img/map/route_search_2.png) ![Rotas no chão](@site/static/img/map/route_search_3.png)
+![Rotas no chão](@site/static/img/map/route_search_2_new.png) ![Rotas no chão](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 
@@ -374,6 +400,7 @@ Use o botão de filtros (canto superior direito) para exibir apenas as rotas des
 </TabItem>
 
 </Tabs>
+
 
 ## Artigos Relacionados {#related-articles}
 

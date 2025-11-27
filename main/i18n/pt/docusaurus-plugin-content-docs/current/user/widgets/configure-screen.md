@@ -1,5 +1,5 @@
 ---
-source-hash: ecd378030be47cbd78cda02a9ad9227bd3ea55624ac430591012670a140cff42
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -267,7 +267,23 @@ O modo permite adicionar **mais de um widget em uma única linha** nos painéis 
     - [Perfil de elevação (*Apenas Android*)](../widgets/nav-widgets#elevation-widget)
     - [Manobras de rota](../widgets/nav-widgets.md#next-turn)
 
-- **Widgets simples**. Vários widgets simples podem ser adicionados a uma única linha. Esses widgets podem exibir *Nome*, *Unidades de medida*, *Valor* e *Ícone*.
+- **Widgets simples**. Vários widgets simples podem ser adicionados a uma única linha. Esses widgets podem exibir *Nome*, *Unidades de medida*, *Valor* e *Ícone*. O texto em widgets simples é automaticamente contornado para garantir legibilidade clara contra vários fundos de mapa no modo de painel transparente.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Contorno do widget Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Contorno do widget iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Páginas {#pages}

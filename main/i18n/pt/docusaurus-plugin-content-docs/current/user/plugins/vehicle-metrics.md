@@ -1,5 +1,5 @@
 ---
-source-hash: 838c0b13bf6e39494baa2e4cf5e8bfdb67c4eda45efa361b82e78a8946dcd35b
+source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
 sidebar_position: 16
 title: Métricas do Veículo
 ---
@@ -119,6 +119,8 @@ Escolha seu dispositivo OBD-II na lista e estabeleça a conexão.
 - **Renomear**. Permite atribuir um nome personalizado ao sensor para facilitar a identificação.
 - **Esquecer**. Remove o sensor OBD-II emparelhado anteriormente da lista, exigindo um novo emparelhamento, se necessário posteriormente.
 
+**Comportamento de reconexão** *(apenas Android)***:** O OsmAnd tenta automaticamente reconectar ao adaptador OBD-II quando o aplicativo é iniciado, quando a navegação é iniciada ou quando o Android Auto é lançado. Se uma conexão não estiver disponível, os widgets de Métricas do Veículo exibem “–”. Um toque único em qualquer widget de Métricas do Veículo tentará reconectar ao sensor. Se o sensor já estiver conectado, o toque alternará os modos de exibição do widget como de costume.
+
 
 ## Lista de Métricas {#metrics-list}
 
@@ -234,6 +236,13 @@ Alguns widgets oferecem opções de modo de exibição:
 
 - **Instantâneo**. Exibe dados em tempo real para a métrica selecionada.
 - **Média**. Exibe valores médios em um intervalo de tempo configurável (15 segundos a 60 minutos).
+
+Vários widgets, incluindo *Consumo de Combustível*, adaptam suas unidades exibidas e formatos de métricas regionais com base nas [Configurações do Perfil](https://osmand.net/docs/user/personal/profiles#units--formats). Ao usar unidades de volume diferentes de litros, o Consumo de Combustível suporta a exibição de valores como Milhas por Galão (MPG). O tipo exato de MPG depende da unidade de volume selecionada:
+
+- Galões americanos → MPG (EUA)
+- Galões imperiais → MPG (Reino Unido)
+
+O widget seleciona automaticamente o formato apropriado de acordo com as unidades de <Translate android="true" ids="routing_attr_length_name"/> e <Translate android="true" ids="shared_string_volume"/> no perfil ativo, e o modo de exibição escolhido é preservado ao exportar e importar perfis.
 
 
 ## Artigos Relacionados {#related-articles}

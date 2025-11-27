@@ -1,6 +1,5 @@
 ---
-source-hash: 70169cd2998df00b54377d1283470fc9f5a52a674c1e72f22616285dfb57880e
-
+source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
 sidebar_position: 3
 title:  Widgets Informativos
 ---
@@ -31,7 +30,7 @@ Os widgets de altitude exibem a altura acima do nível do mar da geolocalizaçã
 
 
 ### Altitude: Localização Atual {#altitude-current-location}
-
+  
 :::note Baixar correção de altitude mundial
 Em alguns dispositivos Android, a altitude pode ser exibida de forma imprecisa. Para resolver esse problema, baixe um mapa com correção de altitude.
 
@@ -43,38 +42,38 @@ Em alguns dispositivos Android, a altitude pode ser exibida de forma imprecisa. 
 
 <TabItem value="android" label="Android">
 
-![Widget de altitude Android](@site/static/img/widgets/altitude_widget_andr.png)
+![Widget de altitude Android](@site/static/img/widgets/altitude_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget de altitude iOS](@site/static/img/widgets/altitude_widget_ios.png)
+![Widget de altitude iOS](@site/static/img/widgets/altitude_widget_ios.png)  
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
+| Ativar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
 | Ao tocar | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
-| Formato | *Menu → Configurações → Perfis de aplicativo → Configurações gerais → Unidades e formatos → Unidades de comprimento* |
+| Formato | *Menu → Configurações → Perfis de aplicativo → Configurações gerais → Unidades e formatos → Unidades de comprimento* |  
 
 
 ### Elevação: Centro do Mapa {#elevation-map-center}
 
 :::info Recurso pago
-&nbsp;<ProFeature/> Para ter acesso ao widget *Elevação: centro do mapa*, assine o OsmAnd Pro para [Android](../purchases/android.md#pro-features) ou [iOS](../purchases/ios.md#pro-features).
+&nbsp;<ProFeature/> Para ter acesso ao widget *Elevação: centro do mapa*, assine o OsmAnd Pro para [Android](../purchases/android.md#pro-features) ou [iOS](../purchases/ios.md#pro-features).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Widget de elevação Android](@site/static/img/widgets/elevation_widget_andr.png)
+![Widget de elevação Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
 </TabItem>
 
@@ -86,12 +85,12 @@ Em alguns dispositivos Android, a altitude pode ser exibida de forma imprecisa. 
 
 </Tabs>
 
-Você pode usar o widget para descobrir a elevação do centro do mapa atual acima do nível do mar. Um [mapa de terreno (Hillshade e Inclinação)](../plugins/topography.md#download-maps) da área necessária é preciso para exibir informações no **widget Elevação: centro do mapa**.
+Você pode usar o widget para descobrir a elevação do centro do mapa atual acima do nível do mar. Um [mapa de terreno (Hillshade e Inclinação)](../plugins/topography.md#download-maps) da área necessária é preciso para exibir informações no **widget Elevação: centro do mapa**.  
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
+| Ativar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
 | Ao tocar | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 | Formato | *Menu → Configurações → Perfis de aplicativo → Configurações gerais → Unidades e formatos → Unidades de comprimento* |
@@ -101,12 +100,12 @@ Você pode usar o widget para descobrir a elevação do centro do mapa atual aci
 
 ![Widget de hora atual](@site/static/img/widgets/current_time_widget.png)
 
-Este widget exibe a hora atual retirada do seu dispositivo.
+Este widget exibe a hora atual retirada do seu dispositivo.  
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_plain_time"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_plain_time"/>* |
+| Ativar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_plain_time"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_plain_time"/>* |
 | Ao tocar | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 | Formato | As configurações do dispositivo configuram Hora e Formato. |
@@ -114,15 +113,15 @@ Este widget exibe a hora atual retirada do seu dispositivo.
 
 ## Velocidade Atual {#current-speed}
 
-![Widget de velocidade](@site/static/img/widgets/current_speed_widget.png)
+![Widget de velocidade](@site/static/img/widgets/current_speed_widget.png)  
 
-O widget mostra a velocidade atual detectada pelo sensor GPS.
+O widget mostra a velocidade atual detectada pelo sensor GPS.  
 
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_current_speed"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_current_speed"/>* |
-| Ao tocar | Nenhuma alteração |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_current_speed"/>* |
+| Ao tocar  | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
@@ -143,30 +142,30 @@ O widget mostra a velocidade atual detectada pelo sensor GPS.
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 O widget **Velocidade Média** calcula e exibe sua velocidade média em um intervalo de tempo selecionado sem exigir navegação ou gravação de trilha. É útil para monitorar a conformidade da velocidade em rodovias ou rastrear a velocidade média nos últimos minutos de ciclismo.
 
-1. ***Configurando o widget.***
+1. ***Configurando o widget.***  
    Para ajustar as configurações, toque no botão **Configurações** (*Android*) ou no **campo do widget** (*iOS*). As opções disponíveis incluem:
 
 2. ***Intervalo de tempo.***
 
-   - A velocidade média é calculada com base no intervalo de tempo selecionado, que pode variar de **15 segundos a 60 minutos**.
+   - A velocidade média é calculada com base no intervalo de tempo selecionado, que pode variar de **15 segundos a 60 minutos**.  
 
-   - O cálculo é baseado em dados de GPS usando a fórmula:
+   - O cálculo é baseado em dados de GPS usando a fórmula:  
    `Velocidade Média = MÉDIA(GPS_LOCATION.speed)`.
 
 3. ***Levar paradas em consideração.***
 
-   **Ativado** — Se a velocidade registrada for inferior a 1 unidade por hora, ela é ignorada, evitando quedas desnecessárias na velocidade média ao parar em semáforos ou fazer pequenas pausas.
+   **Ativado** — Se a velocidade registrada for inferior a 1 unidade por hora, ela é ignorada, evitando quedas desnecessárias na velocidade média ao parar em semáforos ou fazer pequenas pausas.  
 
    **Desativado** — As paradas são incluídas no cálculo, o que significa que longas pausas reduzirão a velocidade média geral.
 
 4. ***Redefinir velocidade média.***
    Você pode redefinir o cálculo da velocidade média de duas maneiras:
 
-   - Toque e segure o widget para abrir o [Menu de contexto](../widgets/configure-screen.md#widget-context-menu) e selecione *Redefinir velocidade média*.
+   - Toque e segure o widget para abrir o [Menu de contexto](../widgets/configure-screen.md#widget-context-menu), e selecione *Redefinir velocidade média*.
    - Abra as *configurações do widget* através do menu [Configurar Tela](../widgets/configure-screen.md#widget-settings) e selecione a opção de redefinição.
 
 Após a redefinição, a velocidade média é recalculada a partir dos novos dados de GPS. Este recurso é útil para monitoramento de velocidade em tempo real, como rastrear a velocidade em áreas com **câmeras de fiscalização de velocidade média**.
@@ -175,22 +174,22 @@ Após a redefinição, a velocidade média é recalculada a partir dos novos dad
 
 <TabItem value="android" label="Android">
 
-![Velocidade média](@site/static/img/widgets/average_speed_widget_4.png)
+![Velocidade média](@site/static/img/widgets/average_speed_widget_4.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widgets de velocidade média](@site/static/img/widgets/average_speed_widget_ios_1.png) ![Widgets de velocidade média](@site/static/img/widgets/average_speed_widget_ios_3.png)
+![Widgets de velocidade média](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Widgets de velocidade média](@site/static/img/widgets/average_speed_widget_ios_3.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_average_speed"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_average_speed"/>* |
+| Ativar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_average_speed"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_average_speed"/>* |
 | Ao tocar | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu). <br/> Pode ser usado para redefinir a velocidade média. |
 
@@ -216,7 +215,7 @@ Após a redefinição, a velocidade média é recalculada a partir dos novos dad
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 O widget [simples](../widgets/configure-screen.md#widget-panels) *Razão de Planeio* fornece informações valiosas sobre a razão de planeio para ajudar a tomar decisões informadas ao planejar rotas aéreas. O widget *Razão de Planeio* no OsmAnd ajuda você a avaliar a eficiência de sua descida ou subida ao navegar para um local específico (posição do [marcador](../personal/markers.md) no mapa). Ele calcula a razão de planeio como a razão da distância para a diferença de altitude entre sua posição atual e seu destino pretendido. Você pode ler mais sobre isso [aqui](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
@@ -238,43 +237,43 @@ O widget [simples](../widgets/configure-screen.md#widget-panels) *Razão de Plan
 
 **Arredondamento/Formatação:**
 
-- Valor **≤ 0.1**:
+- Valor **≤ 0.1**:  
   - "0.05" é exibido como "0".
-- Valor **> 0.1 e < 100**:
+- Valor **> 0.1 e < 100**:  
   - por exemplo, "50.7643" é exibido como "50.8:1".
-- Valor **> 100:**
+- Valor **> 100:**  
   - "102.35" é exibido como "102:1."
 
 
 ### Razão de Planeio para o Alvo {#glide-ratio-to-target}
 
 - A **Razão de planeio para o alvo** mostra a razão de planeio exata necessária para atingir o ponto alvo.
-- A **Elevação do alvo** mostra a elevação do ponto alvo. O [marcador do mapa](../personal/markers.md) deve ser usado como ponto alvo.
+- A **Elevação do alvo** mostra a elevação do ponto alvo. O [Marcador do mapa](../personal/markers.md) deve ser usado como ponto alvo.
 
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
-| Ao tocar | Altera *Razão de planeio para o alvo* ou *Elevação do alvo* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
+| Ao tocar | Altera *Razão de planeio para o alvo* ou *Elevação do alvo*  |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ### Razão de Planeio Média {#average-glide-ratio}
 
 - A **Razão de planeio média** mostra a razão de planeio média para um intervalo de tempo especificado.
-- A **Velocidade vertical média** indica a taxa na qual um objeto sobe ou desce ao longo do tempo. Apenas os pontos inicial e final do intervalo de tempo são considerados para avaliação. Você pode definir o intervalo de tempo para este widget de 15 segundos a 60 minutos. Você deve usar o [marcador do mapa](../personal/markers.md) como ponto alvo.
+- A **Velocidade vertical média** indica a taxa na qual um objeto sobe ou desce ao longo do tempo. Apenas os pontos inicial e final do intervalo de tempo são considerados para avaliação. Você pode definir o intervalo de tempo para este widget de 15 segundos a 60 minutos. Você deve usar o [Marcador do mapa](../personal/markers.md) como ponto alvo.
 
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
-| Ao tocar | Altera *Razão de planeio média* ou *Velocidade vertical média* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → Razão de planeio* |
+| Ao tocar | Altera *Razão de planeio média* ou *Velocidade vertical média*  |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ## Nível da Bateria {#battery-level}
 
-![Widget de nível da bateria](@site/static/img/widgets/battery_level_widget.png)
+![Widget de nível da bateria](@site/static/img/widgets/battery_level_widget.png)  
 
 O widget **Nível da Bateria** exibe a porcentagem da bateria do seu dispositivo diretamente na tela do mapa e atualiza automaticamente pelo menos uma vez por minuto.
 
@@ -285,7 +284,7 @@ O widget **Nível da Bateria** exibe a porcentagem da bateria do seu dispositivo
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_battery"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_battery"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_battery"/>* |
 | Ao tocar | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -296,13 +295,13 @@ O widget **Nível da Bateria** exibe a porcentagem da bateria do seu dispositivo
 
 <TabItem value="android" label="Android">
 
-![Widget de coordenadas Android](@site/static/img/widgets/coordinates_widget_1.png) ![Widget de coordenadas Android](@site/static/img/widgets/coordinates_widget_2.png)
+![Widget de coordenadas Android](@site/static/img/widgets/coordinates_widget_1.png) ![Widget de coordenadas Android](@site/static/img/widgets/coordinates_widget_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget de coordenadas iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)
+![Widget de coordenadas iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -318,7 +317,7 @@ Os widgets de coordenadas são exibidos na parte superior da tela. Ícones com f
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | Ao tocar | Copia as coordenadas para a área de transferência. |
 | Formato | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) ou <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
@@ -329,14 +328,14 @@ Os widgets de coordenadas são exibidos na parte superior da tela. Ícones com f
 
 ![Widget de informações do GPS Android](@site/static/img/widgets/gps_info_widget.png)
 
-O widget de informações do GPS (Sistema de Posicionamento Global) mostra o número de satélites que o dispositivo está detectando e usando atualmente. Você pode usá-lo para verificar o status do GPS em caso de sinal fraco.
+O widget de informações do GPS (Sistema de Posicionamento Global) mostra o número de satélites que o dispositivo está detectando e usando atualmente. Você pode usá-lo para verificar o status do GPS em caso de sinal fraco.  
 
 Você pode redefinir o cache GPS atual através de:
-*<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*.
+*<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*.  
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_gps_info"/>* |
+| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_gps_info"/>* |  
 | Ao tocar | Abre o menu de status do GPS com ferramentas de terceiros para configurar o dispositivo GPS integrado. |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -357,7 +356,7 @@ Você pode redefinir o cache GPS atual através de:
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Os widgets de posição do sol mostram os próximos horários de nascer e pôr do sol para o centro do mapa. Ao serem tocados, eles exibem o tempo restante até o pôr do sol ou nascer do sol esperado. Em ambos os casos, o tempo é baseado no horário configurado do seu dispositivo.
 
@@ -368,16 +367,16 @@ Os widgets de posição do sol mostram os próximos horários de nascer e pôr d
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
 | Ao tocar | Alterna entre o tempo restante e o horário do próximo nascer/pôr do sol. |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ## Régua de Raio {#radius-ruler}
 
-:::note
-Você pode ler uma descrição mais detalhada aqui: **[Régua de raio e Régua](../widgets/radius-ruler)**.
-:::
+:::note  
+Você pode ler uma descrição mais detalhada aqui: **[Régua de raio e Régua](../widgets/radius-ruler)**.  
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -406,10 +405,10 @@ O widget Régua de Raio mostra a distância entre sua localização e o ponto ce
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="radius_ruler_item"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_ruler_control"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_ruler_control"/>* |
 | Ao tocar | Altera o estado do widget entre os modos de escala preta, tons de cinza e invisível. |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
-| Formato | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>* |
+| Formato | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 ## Velocímetro {#speedometer}
@@ -418,19 +417,19 @@ O widget Régua de Raio mostra a distância entre sua localização e o ponto ce
 
 <TabItem value="android" label="Android">
 
-![Velocímetro](@site/static/img/widgets/speedometer_1_andr.png) ![Velocímetro](@site/static/img/widgets/speedometer_2_andr.png)
+![Velocímetro](@site/static/img/widgets/speedometer_1_andr.png)   ![Velocímetro](@site/static/img/widgets/speedometer_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Velocímetro](@site/static/img/widgets/speedometer_1_ios.png) ![Velocímetro](@site/static/img/widgets/speedometer_2_ios.png)
+![Velocímetro](@site/static/img/widgets/speedometer_1_ios.png)   ![Velocímetro](@site/static/img/widgets/speedometer_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-O **widget Velocímetro** é uma exibição gráfica da velocidade atual do veículo com base em *dados recebidos do GPS*. Ele permite monitorar em tempo real a conformidade entre sua velocidade e o limite de velocidade permitido. O limite de velocidade permitido é fornecido pelos [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) para um determinado trecho da estrada e pela configuração de [Tolerância de Limite de Velocidade](../navigation/guidance/voice-navigation.md#speed-limit) do OsmAnd.
+O **widget Velocímetro** é uma exibição gráfica da velocidade atual do veículo com base em *dados recebidos do GPS*. Ele permite monitorar em tempo real a conformidade entre sua velocidade e o limite de velocidade permitido. O limite de velocidade permitido é fornecido pelos [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) para um determinado trecho da estrada e pela configuração de [Tolerância de Limite de Velocidade](../navigation/guidance/voice-navigation.md#speed-limit) do OsmAnd.  
 
 - Nas *configurações do Velocímetro*, você pode selecionar o tamanho (**Altura**) do widget na tela do aplicativo como *Pequeno*, *Médio* ou *Grande*.
 - Você pode especificar quando receber um **Aviso de limite de velocidade**, selecionando *Sempre* ou *Quando excedido*.
@@ -445,8 +444,8 @@ O **widget Velocímetro** é uma exibição gráfica da velocidade atual do veí
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Velocímetro* |
-| Formato | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>* |
+|        | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Velocímetro* |
+| Formato | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 
 ## Widgets de Plugin {#plugin-widgets}
@@ -456,13 +455,13 @@ Esses widgets são ativados e funcionam em combinação com seus respectivos plu
 
 ### Widgets de Gravação de Viagem {#trip-recording-widgets}
 
-:::note
-Você pode ler uma descrição mais detalhada aqui: **[plugin <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.
-:::
+:::note  
+Você pode ler uma descrição mais detalhada aqui: **[plugin <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md)**.  
+:::  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![widget_gravação_de_viagem](@site/static/img/widgets/wid_trip_rec.png)
 
@@ -476,12 +475,12 @@ Você pode ler uma descrição mais detalhada aqui: **[plugin <Translate android
 
 </Tabs>
 
-Os widgets de gravação de viagem referem-se ao plugin [<Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Você pode usar os widgets para visualizar informações breves sobre a gravação da trilha na tela. Como *Distância*, *Duração*, *Subida* e *Descida*.
+Os widgets de gravação de viagem referem-se ao plugin [<Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Você pode usar os widgets para visualizar informações breves sobre a gravação da trilha na tela. Como *Distância*, *Duração*, *Subida*, *Descida*, *Velocidade Máxima* e *Inclinação Média* (os dois últimos estão disponíveis apenas no Android).
 
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_monitoring"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_monitoring"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_monitoring"/>* |
 | Ao tocar | Inicia/Para a gravação da trilha ou Visualiza o gráfico. |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -494,7 +493,7 @@ Para adicionar widgets de Sensores Externos à tela do mapa, ative o plugin OsmA
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Widgets de sensores externos Android](@site/static/img/widgets/external-sensors-widgets_1.png)
 
@@ -508,7 +507,7 @@ Para adicionar widgets de Sensores Externos à tela do mapa, ative o plugin OsmA
 
 </Tabs>
 
-Os widgets referem-se ao [plugin de Sensores Externos](../plugins/external-sensors.md#widgets). Você pode usá-los para visualizar informações breves de seus sensores externos, como: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*somente Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** e **<Translate android="true" ids="external_device_characteristic_temperature"/>**. Você também pode selecionar o **nível da bateria** dos sensores BLE conectados para ser exibido diretamente no widget.
+Os widgets referem-se ao [plugin de Sensores Externos](../plugins/external-sensors.md#widgets). Você pode usá-los para visualizar informações breves de seus sensores externos, como: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*somente Android*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** e **<Translate android="true" ids="external_device_characteristic_temperature"/>**. Você também pode selecionar o **nível da bateria** dos sensores BLE conectados para ser exibido diretamente no widget.  
 
 - Para adicionar o widget — [ative](../plugins/index.md#enable--disable) o plugin OsmAnd Sensores Externos.
 
@@ -542,7 +541,7 @@ Para adicionar Widgets de Métricas do Veículo à tela do mapa, ative o plugin 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Widgets de métricas do veículo Android](@site/static/img/widgets/vehicle_metrics_1.png)
 
@@ -557,7 +556,7 @@ Para adicionar Widgets de Métricas do Veículo à tela do mapa, ative o plugin 
 </Tabs>
 
 
-Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*14 métricas*): **Temperatura de Admissão**,&nbsp; **Temperatura Ambiente**,&nbsp; **Temperatura do Líquido de Arrefecimento**,&nbsp; **Temperatura do Óleo do Motor**,&nbsp; **Rotação do Motor** (*grátis*),&nbsp; **Tempo de Funcionamento do Motor**,&nbsp; **Carga Calculada do Motor**,&nbsp; **Pressão do Combustível**,&nbsp; **Consumo de Combustível**,&nbsp; **Combustível Restante**,&nbsp; **Nível da Bateria**,&nbsp; **Voltagem do Adaptador**,&nbsp; **Velocidade do Veículo** (*grátis*), e **Posição do Acelerador**.
+Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*14 métricas*): **Temperatura de Admissão**,&nbsp; **Temperatura Ambiente**,&nbsp; **Temperatura do Líquido de Arrefecimento**,&nbsp; **Temperatura do Óleo do Motor**,&nbsp; **Rotação do Motor** (*grátis*),&nbsp; **Tempo de Funcionamento do Motor**,&nbsp; **Carga Calculada do Motor**,&nbsp; **Pressão do Combustível**,&nbsp; **Consumo de Combustível**,&nbsp; **Combustível Restante**,&nbsp; **Nível da Bateria**,&nbsp; **Voltagem do Adaptador**,&nbsp; **Velocidade do Veículo** (*grátis*), e **Posição do Acelerador**.  
 
 - Para adicionar widgets de métricas do veículo à tela do mapa, [ative](../plugins/index.md#enable--disable) o **plugin Métricas do Veículo**.
 - Você pode adicionar widgets mesmo que nenhum scanner OBD-II esteja conectado.
@@ -566,8 +565,8 @@ Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metric
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="obd_widget_group"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="obd_plugin_name"/>* |
+| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget →  <Translate android="true" ids="obd_widget_group"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget →  <Translate ios="true" ids="obd_plugin_name"/>* |
 | Ao tocar | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -592,7 +591,7 @@ Para adicionar widgets de Clima à tela do mapa, ative o plugin OsmAnd [Clima](.
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Os widgets de clima exibem informações meteorológicas atuais para um ponto central no mapa. Eles são ativados automaticamente na tela quando visualizados com o plugin (*Menu → Clima*), e você pode escolher quais colocar na tela inicial para uso diário (*Menu → Personalizar Tela*). Você pode ler mais sobre isso no artigo [Plugin de Clima](../plugins/weather.md).
 
@@ -605,28 +604,28 @@ Os widgets de clima exibem informações meteorológicas atuais para um ponto ce
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="shared_string_weather"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="shared_string_weather"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="shared_string_weather"/>* |  
 | Ao tocar | Mostra em uma caixa de diálogo pop-up a data e hora em que as informações meteorológicas são relevantes. |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
-| Formato | *Menu → Plugins → Clima → Configurações* ou *Menu → Configurações → Perfil do Aplicativo → Clima* |
+| Formato | *Menu → Plugins → Clima → Configurações* ou *Menu → Configurações → Perfil do Aplicativo → Clima* |  
 
 
 ### Widget de Estacionamento {#parking-widget}
 
 :::note
 Para adicionar widgets de Estacionamento à tela do mapa, ative o plugin OsmAnd [Posição de estacionamento](../plugins/parking.md).
-:::
+:::  
 
-![Widget de estacionamento](@site/static/img/plugins/parking/parking_widget.png)
+![Widget de estacionamento](@site/static/img/plugins/parking/parking_widget.png)  
 
-O widget do plugin de Estacionamento mostra a distância do centro da tela até o local de estacionamento. Para definir um local de estacionamento no mapa, amplie até o nível desejado e, em seguida, toque e segure no local no mapa para abrir o menu de contexto. Siga [estas configurações](../plugins/parking.md#set-a-spot).
+O widget do plugin de Estacionamento mostra a distância do centro da tela até o local de estacionamento. Para definir um local de estacionamento no mapa, amplie até o nível desejado e, em seguida, toque e segure no local no mapa para abrir o menu de contexto. Siga [estas configurações](../plugins/parking.md#set-a-spot).  
 
 **Nota:** O Widget de Estacionamento só aparecerá se uma posição de estacionamento tiver sido adicionada ao mapa. Sem uma posição de estacionamento salva, o widget não será visível.
 
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_parking"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="parking_place"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="parking_place"/>* |
 | Ao tocar | Move a visualização do mapa para a posição de estacionamento. |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
@@ -634,9 +633,9 @@ O widget do plugin de Estacionamento mostra a distância do centro da tela até 
 
 ### Widget Mapillary {#mapillary-widget}
 
-:::note
-Para adicionar o widget Mapillary à tela do mapa, ative o plugin OsmAnd [Mapillary](../plugins/mapillary.md).
-:::
+:::note  
+Para adicionar o widget Mapillary à tela do mapa, ative o plugin OsmAnd [Mapillary](../plugins/mapillary.md).  
+:::  
 
 ![Widget Mapillary](@site/static/img/widgets/mapillary_widget.png)
 
@@ -645,7 +644,7 @@ Este é um widget do plugin Mapillary que fornece acesso rápido ao aplicativo M
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="mapillary"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="mapillary"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="mapillary"/>* |
 | Ao tocar | Abre o aplicativo [Mapillary](https://www.mapillary.com/). |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -658,21 +657,21 @@ Este é um widget do plugin Mapillary que fornece acesso rápido ao aplicativo M
 Para adicionar widgets de Notas de Áudio/Vídeo à tela do mapa, ative o plugin OsmAnd [Notas de Áudio/Vídeo](../plugins/audio-video-notes.md).
 :::
 
-![Widget de notas de áudio-vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![Widget de notas de áudio-vídeo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
-Estes são widgets do plugin de notas de áudio/vídeo que fornecem acesso rápido para iniciar/parar a gravação de notas de áudio, vídeo ou fotos.
+Estes são widgets do plugin de notas de áudio/vídeo que fornecem acesso rápido para iniciar/parar a gravação de notas de áudio, vídeo ou fotos.  
 
 Você pode configurar qual ação é selecionada por padrão:
 
 - *Sob demanda*. Estado padrão. A caixa de diálogo de seleção de ação é exibida sempre.
 - *Gravar áudio* - grava uma nota de áudio.
 - *Gravar vídeo* - permite gravar um vídeo.
-- *Tirar uma foto* - permite tirar uma foto.
+- *Tirar uma foto* - permite tirar uma foto.  
 
 | | |
 |:------------|:------------|
-| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_av_notes"/>* |
-| Ao tocar | Inicia/para a gravação de uma nota |
+| Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_av_notes"/>*  |
+| Ao tocar | Inicia/para a gravação de uma nota  |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -682,11 +681,11 @@ Você pode configurar qual ação é selecionada por padrão:
 
 :::note
 Para adicionar o widget Rastreador à tela do mapa, ative o plugin OsmAnd [Rastreador OsmAnd](../plugins/osmand-tracker.md).
-:::
+:::  
 
-Para que o plugin e o widget funcionem, você precisa instalar o [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) do Google Play ou de outras fontes.
+Para que o plugin e o widget funcionem, você precisa instalar o [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) do Google Play ou de outras fontes.  
 
-Este widget do plugin OsmAnd Tracker é usado para acessar rapidamente o aplicativo OsmAnd Tracker e compartilhar suas informações de localização com outros usuários. O aplicativo envia mensagens de *Localização ao Vivo* para chats selecionados dentro de um determinado tempo, exibe uma lista de contatos e grupos e verifica os chats em busca de mensagens com sua localização, que são então exibidas em um mapa no OsmAnd.
+Este widget do plugin OsmAnd Tracker é usado para acessar rapidamente o aplicativo OsmAnd Tracker e compartilhar suas informações de localização com outros usuários. O aplicativo envia mensagens de *Localização ao Vivo* para chats selecionados dentro de um determinado tempo, exibe uma lista de contatos e grupos e verifica os chats em busca de mensagens com sua localização, que são então exibidas em um mapa no OsmAnd.  
 
 ![Widget de rastreador](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
@@ -702,7 +701,7 @@ Este widget do plugin OsmAnd Tracker é usado para acessar rapidamente o aplicat
 Para adicionar widgets de Desenvolvedor à tela do mapa, ative o plugin OsmAnd [Desenvolvimento OsmAnd](../plugins/development.md).
 :::
 
-Os **widgets de desenvolvedor** fornecem informações sobre a [velocidade de renderização](../plugins/development.md#map-rendering-fps-widget) do mapa e os parâmetros de posição da câmera virtual, incluindo [nível de zoom](../plugins/development.md#zoom-level), [distância](../plugins/development.md#distance-to-target) ao centro do mapa, [elevação da câmera](../plugins/development.md#camera-elevation) e [ângulo de inclinação](../plugins/development.md#camera-tilt).
+Os **widgets de desenvolvedor** fornecem informações sobre a [velocidade de renderização](../plugins/development.md#map-rendering-fps-widget) do mapa e os parâmetros de posição da câmera virtual, incluindo [nível de zoom](../plugins/development.md#zoom-level), [distância](../plugins/development.md#distance-to-target) ao centro do mapa, [elevação da câmera](../plugins/development.md#camera-elevation) e [ângulo de inclinação](../plugins/development.md#camera-tilt).  
 
 #### FPS de Renderização do Mapa {#map-rendering-fps}
 
@@ -710,7 +709,7 @@ Os **widgets de desenvolvedor** fornecem informações sobre a [velocidade de re
 
 <TabItem value="android" label="Android">
 
-![Widget FPS Android](@site/static/img/widgets/fps_widgets_andr.png)
+![Widget FPS Android](@site/static/img/widgets/fps_widgets_andr.png)  
 
 </TabItem>
 
@@ -727,7 +726,7 @@ O [widget FPS de renderização do mapa](../plugins/development.md#map-rendering
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_rendering_fps"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
 | Ao tocar | Nenhuma alteração |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -760,8 +759,8 @@ Os **widgets da Câmera** permitem monitorar o alinhamento entre o mapa OsmAnd e
 | | |
 |:------------|:------------|
 | Ativar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="developer_widgets"/>* |
-| | **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="developer_widgets"/>* |
-| Ao tocar | Alterna entre os modos (*Nível de Zoom*) / Nenhuma alteração (*Outros*) |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="developer_widgets"/>* |
+| Ao tocar | Alterna entre os modos (*Nível de Zoom*)  / Nenhuma alteração (*Outros*) |
 | Toque longo | Abre o [Menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
 

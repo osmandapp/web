@@ -1,5 +1,5 @@
 ---
-source-hash: 36783a2d9726e20533612f6290c007ad9ed255d7b47c73b1d33a52dbd5388414
+source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -27,16 +27,16 @@ Para se conectar com outros utilizadores do OsmAnd, fazer perguntas e partilhar 
 
 | Plataforma | Nome do Grupo | Descrição | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | OsmAnd users community (*English*)  |  Este é um grupo onde os utilizadores do OsmAnd podem ajudar outros utilizadores.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+| Facebook | OsmAnd users community (*English*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Para trocar experiências com o uso do OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*Italian*)  |  Para trocar experiências com o uso do OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*English*)  | Um grupo onde os utilizadores partilham dicas, respondem a perguntas e discutem as funcionalidades do OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
-|  Reddit | OsmAnd - discussion and support  | A comunidade Reddit para utilizadores do OsmAnd. Faça perguntas, partilhe experiências ou mostre os seus estilos de mapa personalizados. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | OsmAnd News channel (*English*)  | O grupo oficial do OsmAnd para anúncios e atualizações diretamente dos desenvolvedores. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  X (Twitter) | OsmAnd news channel  | Grupo oficial do OsmAnd para discussões ao vivo, anúncios e atualizações. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
-|  Instagram | OsmAnd news channel | Uma comunidade onde pode conversar, partilhar dicas e obter ajuda com as funcionalidades do OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
+|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italian*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | A group where users share tips, answer questions, and discuss OsmAnd's functionalities. | [Google Groups](https://groups.google.com/g/osmand)  |
+|  Reddit | OsmAnd - discussion and support  | The Reddit community for OsmAnd users. Ask questions, share experiences, or show off your custom map styles. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
+|  Telegram | OsmAnd News channel (*English*)  | The official OsmAnd group for announcements and updates directly from the developers. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  X (Twitter) | OsmAnd news channel  | Official OsmAnd group for live discussions, announcements, and updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
+|  Instagram | OsmAnd news channel | A community where you can chat, share tips, and get help with OsmAnd features. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## Conversores {#converters}
@@ -66,14 +66,14 @@ Estes manuais, disponíveis em vários idiomas, muitas vezes fornecem informaç�
 | Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
 | Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
 | Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
-| Czech   | OsmAnd CZ é um site checo que suporta a navegação OsmAnd. Aqui encontrará guias, testes, dicas, notícias e críticas.   | [OsmAnd CZ](https://osmand.cz/) |
-| French  | Estes tutoriais estão agora disponíveis neste canal do YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
-| Italian | Guia não oficial do OsmAnd, a aplicação de cartografia e navegação para Android e iOS -- Em Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
+| Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
+| French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
+| Italian | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
 | Dutch | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
 | Dutch | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
 | Dutch | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
 | Deutsch | Osmand Anleitung: Kostenlose Karten- und Navigations App  |  [Rudis Smartphone Tipps](https://www.smartphone-tipp.de/apps/anleitung-osmand/) |
-| Русский  | Navegação para todo-o-terreno, expedições, água (e não só)! OsmAnd! – é hora de mudar o velho Ozi-k, sem perder o estado-maior, satélite, openstreetmap e outras delícias! Instruções, Guia e Truques!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
+| Русский  | Навигация для бездорожья, экспедиций, воды (и не только)! OsmAnd! – пора сменить олдскульный Ozi-к, не теряя генштаба, спутника, openstreetmap, и прочих прелестей! Инструкция, Руководство и Фишки!  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
 
 
 ### Plugins {#plugins}
@@ -107,6 +107,7 @@ O ficheiro [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) é um estilo de mapa focado em ciclismo, destacando ciclovias (em vermelho), rotas de ciclismo (tracejado azul), ciclovias (tracejado vermelho) e estradas com tráfego de veículos limitado, como ruas de bicicletas (bordas vermelhas sólidas).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) é um estilo de mapa de Holder Tamm que permite escolher se deseja ocultar certos objetos ou não.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [O estilo de renderização ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) é principalmente baseado no UniMap e routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [Este é um estilo de renderização OsmAnd otimizado para caça a tempestades](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 ### Mapas Offline {#offline-maps}
 

@@ -1,8 +1,9 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: a45f8d3e0c7440482cc20c9fa56b987c3a3c65ecfc717d9d8abb99c630f8d16e
 sidebar_position: 14
 title: Topografia
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Visão geral {#overview}
 
 :::info Recurso pago
@@ -25,9 +25,9 @@ O plugin Topografia é um [recurso pago](../purchases/index.md) do aplicativo Os
 A topografia é uma característica importante da cartografia que fornece informações para avaliar visualmente o relevo do terreno.
 Informações topográficas como [Curvas de nível](#contour-lines), [Terreno](#terrain) (*Hillshade* e *Declive*), e [Relevo 3D](#3d-relief) ajudam a fazer uma avaliação visual da configuração do terreno, observando elevação, relevo, extremos, inclinação ou pontos de igual altura.
 
-Cada recurso fornecido por este plugin é uma camada de mapa independente que, quando ativada, pode ser exibida acima ou abaixo da fonte principal do mapa, dependendo das [configurações](../map/raster-maps.md#overlay-layer).
+Cada recurso fornecido por este plugin é uma camada de mapa independente que, quando ativada, pode ser exibida acima ou abaixo da fonte principal do mapa, dependendo das [configurações](../map/raster-maps.md#overlay-layer).  
 
-O plugin Topografia fornece acesso aos seguintes tipos de mapa:
+O plugin Topografia fornece acesso aos seguintes tipos de mapa:  
 
 - [Curvas de nível](#contour-lines). Este é um [mapa vetorial](../map/vector-maps.md) representado em [**metros** ou **pés**](#contour-lines-meters-or-feet). As curvas de nível mostram os níveis de elevação e ajudam a visualizar o terreno.
 - [Hillshade](#hillshade-slope-and-altitude-layers). Tipos de mapas com sombreamento de colinas e declives tornam o relevo mais visível e ajudam a interpretar visualmente o terreno.
@@ -57,12 +57,12 @@ O plugin Topografia fornece acesso aos seguintes tipos de mapa:
 
 ### Licença para dados DEM usados pelo OsmAnd para detecção de terreno {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-Os dados de altitude no mapa (entre 70 graus de latitude norte e 70 graus de latitude sul) foram obtidos a partir de medições realizadas como parte da *Shuttle Radar Topography Mission (SRTM)*. Ela utilizou o *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, a principal ferramenta de imagem no *Earth Observation System da NASA*.
+Os dados de altitude no mapa (entre 70 graus de latitude norte e 70 graus de latitude sul) foram obtidos a partir de medições realizadas como parte da *Shuttle Radar Topography Mission (SRTM)*. Ela utilizou o *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, a principal ferramenta de imagem no *Earth Observation System da NASA*.  
 Para informações completas, consulte a [Licença](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
 <details>
-<summary>Dados DEM (DSM)</summary>
+<summary>DEM (DSM) data</summary>
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Os dados originais usados para este produto foram fornecidos pela AW3D da JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
@@ -76,10 +76,10 @@ Para informações completas, consulte a [Licença](https://github.com/osmandapp
 Para exibir dados de **Curvas de Nível** e **Terreno (Hillshade, Declive)** no mapa:
 
 1. **Compra**: [Plano de compra OsmAnd+, OsmAnd Maps+ ou OsmAnd Pro](../plugins/index.md#purchase)
-2. [Ative](../plugins/plugins.md#enable--disable) o plugin Topografia na seção Plugins do *Menu Principal*.
+2. [Ative](../plugins/index.md#enable--disable) o plugin Topografia na seção Plugins do *Menu Principal*.
 3. [Baixe](#download-maps): Curvas de nível, Hillshade, Declive ou mapa de Terreno (3D).
 4. **Ative e ajuste**: Curvas de nível, Hillshade ou Declive para a visualização do mapa.
-5. Você também pode assistir ao [tutorial do YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).
+5. Você também pode assistir ao [tutorial do YouTube](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 Para exibir [**Relevo 3D**](#3d-relief) você precisa adquirir o plano *OsmAnd Pro*, incluindo acesso ao plugin Topografia.
 
@@ -99,9 +99,9 @@ Para um trabalho estável e para economizar recursos, você pode baixar um mapa 
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png) ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -128,13 +128,13 @@ Se o mapa exibido na tela não for baixado, então em *Menu → Configurar mapa 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 Para [**Curvas de Nível**](#contour-lines), você precisa determinar em quais [unidades](../personal/profiles.md#units--formats) (metros ou pés) elas serão exibidas no mapa e baixar a versão apropriada do mapa para o seu dispositivo.
 
@@ -161,7 +161,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 [Curvas de nível](../map/vector-maps.md#-contour-lines) são uma representação gráfica de elevações em um mapa e estão disponíveis como mapas vetoriais. Elas formam linhas correspondentes a pontos com a mesma altitude, que formam contornos que permitem determinar em qual direção e quanto a superfície se inclina.
 
@@ -188,22 +188,22 @@ Ao usar o [motor de renderização de mapas](../personal/global-settings.md#map-
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png) ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png) ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
+![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-A opção **Terreno** ativa e permite personalizar três recursos, como *Hillshade*, *Declive* e *Altitude*.
-Recursos específicos:
+A opção **Terreno** ativa e permite personalizar três recursos, como *Hillshade*, *Declive* e *Altitude*.  
+Recursos específicos:  
 
 - Apenas uma opção pode ser ativada ao mesmo tempo, seja Hillshade, Declive ou Altitude.
 - Se você não vir nenhuma alteração após baixar e ativar o mapa correspondente, é recomendável reiniciar o aplicativo.
@@ -217,9 +217,9 @@ O menu **Terreno** inclui a seleção de [esquema de cores](#default-color-schem
 | ------ | ------- | ------- |
 | ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
-**Hillshade** é baseado na simulação da iluminação da superfície usando dados de terreno. Este método envolve a criação de sombras e realces com base no ângulo da superfície em relação à fonte de luz. Como resultado, você vê colinas, vales e outros detalhes naturais do terreno no mapa.
+**Hillshade** é baseado na simulação da iluminação da superfície usando dados de terreno. Este método envolve a criação de sombras e realces com base no ângulo da superfície em relação à fonte de luz. Como resultado, você vê colinas, vales e outros detalhes naturais do terreno no mapa.  
 
-**Declive** determina o ângulo de inclinação da superfície com base nos dados de elevação dos pontos no mapa. Os cálculos do ângulo de inclinação são realizados considerando as mudanças na elevação e as distâncias entre os pontos, e representando essa mudança como um ângulo de inclinação.
+**Declive** determina o ângulo de inclinação da superfície com base nos dados de elevação dos pontos no mapa. Os cálculos do ângulo de inclinação são realizados considerando as mudanças na elevação e as distâncias entre os pontos, e representando essa mudança como um ângulo de inclinação.  
 
 **Altitude** representa a elevação dos pontos no mapa em relação ao nível do mar. Ajuda a entender como o terreno muda em altura. Este recurso é particularmente útil para atividades como caminhadas ou ciclismo de montanha, onde conhecer a altitude pode ajudar no planejamento de rotas e no gerenciamento do esforço físico. Os dados de altitude são derivados de modelos de elevação e fornecem uma visão clara dos pontos altos e baixos, tornando mais fácil avaliar a dificuldade de uma rota ou identificar picos e vales ao longo de sua jornada.
 
@@ -244,8 +244,6 @@ Os mapas raster de **Hillshade**, **Declive** e **Altitude** são criados com ba
 
 - *Altitude*. O mapa de altitude colore cada pixel de acordo com a altura do mapa calculada usando o gradiente de um esquema de cores definido. Geralmente, os esquemas de altitude são muito dependentes da localização. Em áreas montanhosas, você preferiria distribuir as cores para uma faixa de altitude mais ampla e em áreas planas, você selecionaria um esquema de cores com uma pequena faixa entre a altitude mínima/máxima.
 
-> *Por favor, leia o artigo [Esquema de Cores](../personal/color-palette-schemes.md) para mais informações.*
-
 
 ### Modificar Esquema de Cores {#modify-color-scheme}
 
@@ -257,13 +255,13 @@ Os mapas raster de **Hillshade**, **Declive** e **Altitude** são criados com ba
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png) ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png) ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
 
 </TabItem>
 
@@ -274,7 +272,7 @@ O recurso *Modificar Esquema de Cores* permite selecionar um esquema de cores:
 - De uma [lista predefinida](#default-color-scheme).
 - De arquivos de paleta de cores que você criou em seu computador. Arquivos personalizados podem ser adicionados ao OsmAnd usando a [ferramenta de importação/exportação](../personal/import-export.md).
 
-Você pode [editar essas paletas](../personal/color-palette-schemes.md#edit-palette-file) para personalizar a aparência de mapas e rotas.
+Você pode [editar essas paletas](../personal/color-palette-schemes.md#palette-modify) para personalizar a aparência de mapas e rotas.
 
 
 ### Visibilidade {#visibility}
@@ -287,13 +285,13 @@ A função *Visibilidade* é usada para ajustar a transparência das sombras par
 
 ### Níveis de Zoom {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-A função *Níveis de Escala* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
+A função *Níveis de Zoom* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
 
 ### Tamanho do Cache {#cache-size}
 
-**Tamanho do cache** é uma seção informativa que exibe a quantidade de memória em seu dispositivo atualmente usada para dados de *Terreno*. Cada vez que você visualiza informações de *Hillshade* ou *Declive* em um mapa, todos esses dados são temporariamente armazenados em cache para acesso rápido e uso posterior, evitando carga adicional no processador do seu dispositivo.
+**Tamanho do cache** é uma seção informativa que exibe a quantidade de memória em seu dispositivo atualmente usada para dados de *Terreno*. Cada vez que você visualiza informações de *Hillshade* ou *Declive* em um mapa, todos esses dados são temporariamente armazenados em cache para acesso rápido e uso posterior, evitando carga adicional no processador do seu dispositivo.  
 
 **Limpar o cache** às vezes é necessário para liberar espaço em seu dispositivo ou para resolver possíveis problemas de desempenho. Para limpar o cache, você precisa ir para as *Configurações do Sistema* do dispositivo, então o caminho pode ser o seguinte: *Aplicativos → OsmAnd → Armazenamento → Limpar cache*.
 
@@ -314,7 +312,7 @@ A função *Níveis de Escala* permite definir os valores mínimo e máximo dos 
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Você pode usar os botões de *Ação Rápida* na tela do mapa para alternar a visibilidade das camadas de [Curvas de Nível](#contour-lines), [Terreno](#terrain) e o [esquema de cores do Terreno](#default-color-scheme). Dependendo da camada selecionada no menu Configurar mapa, atribuir uma ação de *Terreno* ao botão exibirá *Hillshade*, *Declive* ou *Altitude*.
+Você pode usar os botões de *Ação Rápida* na tela do mapa para alternar a visibilidade das camadas de [Curvas de Nível](#contour-lines), [Terreno](#terrain) e o [esquema de cores do Terreno](#default-color-scheme). Dependendo da camada selecionada no menu Configurar mapa, atribuir uma ação de *Terreno* ao botão exibirá *Hillshade*, *Declive* ou *Altitude*.  
 
 As principais configurações para *Mostrar ou Ocultar tipos de mapa* estão na seção Topografia do menu Configurar Mapa. No artigo [Ação Rápida](../widgets/quick-action.md#configure-map), você pode encontrar uma lista de camadas disponíveis para exibição. Se você precisar de acesso rápido a esta configuração de mapa, use a ferramenta *Botão Personalizado*.
 
@@ -338,7 +336,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
@@ -346,7 +344,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridimensional da paisagem. O Relevo 3D funciona offline e pode ser usado com [mapas vetoriais OsmAnd](../map/vector-maps.md) ou quaisquer [mapas raster](../map/raster-maps.md#select-raster-maps) como [Fonte do Mapa](../map/raster-maps.md#main) ou como [Camada de Sobreposição/Subjacência](../map/raster-maps.md#overlay-layer).
 
@@ -368,13 +366,13 @@ O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridi
 | ------ | ------- |
 | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
 | Camada de mapa vetorial | Camada de mapa raster |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -391,7 +389,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 ![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -412,10 +410,10 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 |--------|---------|
 | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-**Hillshade** é um tipo de mapa que exibe o terreno usando sombras, criando uma representação visual da inclinação e forma da superfície da terra.
-**Relevo 3D** é um recurso que adiciona efeitos tridimensionais ao mapa.
+**Hillshade** é um tipo de mapa que exibe o terreno usando sombras, criando uma representação visual da inclinação e forma da superfície da terra.  
+**Relevo 3D** é um recurso que adiciona efeitos tridimensionais ao mapa.  
 
-Se você **desativar** *Hillshade* e **ativar** *Relevo 3D*, as sombras do relevo ainda serão visíveis porque *Hillshade* e *Relevo 3D* são duas maneiras diferentes de visualizar um mapa. *Hillshade* cria sombras com base no terreno e as adiciona ao mapa, enquanto *Relevo 3D* modela elementos 3D para mostrar a profundidade e a forma do terreno, e as sombras fazem parte da visualização. Esses recursos podem funcionar em paralelo, e desativar *Hillshade* não afeta como os efeitos 3D são exibidos.
+Se você **desativar** *Hillshade* e **ativar** *Relevo 3D*, as sombras do relevo ainda serão visíveis porque *Hillshade* e *Relevo 3D* são duas maneiras diferentes de visualizar um mapa. *Hillshade* cria sombras com base no terreno e as adiciona ao mapa, enquanto *Relevo 3D* modela elementos 3D para mostrar a profundidade e a forma do terreno, e as sombras fazem parte da visualização. Esses recursos podem funcionar em paralelo, e desativar *Hillshade* não afeta como os efeitos 3D são exibidos.  
 
 Quando **Hillshade** está **ativado**, uma imagem com sombras de relevo aparece mais detalhada, escura e escalonada do que uma imagem de *Relevo 3D*. A explicação é que *Hillshade* enfatiza os gradientes e contrastes do terreno, criando uma imagem mais nítida e detalhada. O recurso *Relevo 3D* confere ao mapa uma aparência mais fluida e suavizada, suavizando o terreno e potencialmente reduzindo a visibilidade de alguns detalhes mais finos.
 
@@ -428,7 +426,7 @@ Quando **Hillshade** está **ativado**, uma imagem com sombras de relevo aparece
 
 ![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -457,6 +455,6 @@ O OsmAnd permite combinar vários tipos de camadas de mapa para uma exibição m
 
 1. Como restaurar a compra do plugin Topografia (anteriormente Curvas de Nível). [(verificar)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
 2. Curvas de Nível, dados de Elevação ou Relevo 3D não são exibidos. [(verificar)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-3. O mapa muda automaticamente para o modo 3D durante a navegação:
-    - Certifique-se de que o botão **Modo 3D** esteja desativado em **Menu → Configurar Tela → Botões → Botões Padrão**.
+3. O mapa muda automaticamente para o modo 3D durante a navegação:  
+    - Certifique-se de que o botão **Modo 3D** esteja desativado em **Menu → Configurar Tela → Botões → Botões Padrão**.  
     - Verifique se algum recurso de Terreno está ativado em **Menu → Configurar Mapa → Topografia** que possa acionar um efeito 3D.
