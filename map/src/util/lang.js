@@ -1,6 +1,17 @@
 const LANG_TRANSFORM_MAP = {
-    yue: 'zhyue',
+    zhyue: 'yue',
     'b+be+Latn': 'be-BY',
+    'sr-el': 'sr-Latn',
+    'sr-ec': 'sr',
+    in: 'id',
+    iw: 'he',
+    sh: 'sr',
+    cz: 'cs',
+    tw: 'zh-TW',
+    jp: 'ja',
+    sp: 'es',
+    mo: 'ro-MD',
+    ua: 'uk',
 };
 
 /**
