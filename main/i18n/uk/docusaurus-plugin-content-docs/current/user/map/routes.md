@@ -1,5 +1,5 @@
 ---
-source-hash: 433d6d08e49e6890daaaa46fc6b20c35ff2894dc6f351cae5e275a638a825736
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Маршрути
 ---
@@ -179,9 +179,12 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
 
 - Щоб відобразити потрібні маршрути на карті, увімкніть їх у *Списку маршрутів* меню [Налаштувати карту](../map/configure-map-menu.md).
-- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідувати за кольором та іконками.
+- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідкувати за кольором та іконками.
 - Основні типи маршрутів також можна фільтрувати за класами та підкласами, що дозволяє відображати лише конкретні групи в межах кожного типу. Наприклад, ви можете показувати пішохідні маршрути за **символами OSMC** як класи, і за *міжнародними, національними, регіональними* або *місцевими мережами* як підкласи.
 - Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md).  
+- Коли кілька маршрутів пролягають вздовж однієї дороги, кожен маршрут відображається як окрема напівпрозора лінія, розміщена над іншими. 
+- При натисканні на місце, де перетинаються кілька маршрутів, відображається контекстне меню з усіма маршрутами, що проходять через цю точку. 
+- Для відображення всіх елементів нової схеми рендерингу маршрутів потрібні оновлені векторні карти. 
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -194,8 +197,9 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - Щоб відобразити потрібні маршрути на карті, увімкніть їх у *Списку маршрутів* меню [Налаштувати карту](../map/configure-map-menu.md).
-- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідувати за кольором та іконками.
-- Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md).  
+- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідкувати за кольором та іконками.
+- Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md). 
+- Коли кілька маршрутів пролягають вздовж однієї дороги, кожен маршрут відображається як окрема напівпрозора лінія, розміщена над іншими.   
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
@@ -362,13 +366,13 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 </Tabs>  
 
-Перейдіть до *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, щоб знайти бажані маршрути. Маршрути включають назву, тип активності, довжину, місцезнаходження та відстань до найближчої точки.
+Перейдіть до *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, щоб знайти бажані маршрути. Результати пошуку маршрутів відображають назву маршруту, тип активності, довжину, місцезнаходження та відстань до найближчої точки. На Android також відображаються метрики висот, такі як підйом і спуск, де доступно. Невеликі зміни висоти (менше 10 м) приховані, щоб зберегти чіткість списку. Усі значення відповідають вибраним у додатку одиницям відстані та висоти.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_1.png)
+![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -386,7 +390,7 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

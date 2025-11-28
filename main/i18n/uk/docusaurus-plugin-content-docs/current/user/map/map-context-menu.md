@@ -1,5 +1,5 @@
 ---
-source-hash: b135d6ac31fa46429b660eb2f3ae6ef45da09abdde63b630471d719e780dd21e
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Контекстне меню карти
 ---
@@ -136,6 +136,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Доступні деталі включають:
 
+- [Опис статті](#article-description)
 - [Альтернативні назви](#alternative-names)
 - [Координати](#coordinates)
 - [В межах областей](#polygon-information)
@@ -154,6 +155,34 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Плата](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Доступність](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Ширина](https://wiki.openstreetmap.org/wiki/Key:width) / [Висота](https://wiki.openstreetmap.org/wiki/Key:height)
+
+
+Окрім полів, перелічених вище, OsmAnd також може показувати додаткову описову інформацію, взяту з OpenStreetMap. Ці атрибути допомагають краще зрозуміти характеристики місця і можуть включати деталі, такі як висота, напрямок, рік будівництва, тип поверхні або покриття, рівень всередині приміщення, опції оплати, доступність доставки або на винос, та багато інших. OsmAnd відображає ці атрибути з чіткими мітками та, де можливо, іконками, що полегшує читання та розпізнавання інформації. Точний набір атрибутів залежить від того, які дані доступні в OpenStreetMap для вибраного об'єкта.
+
+
+### Опис статті {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Список описів](@site/static/img/map/description_list_new_android.png) ![Список описів](@site/static/img/map/description_list_dialog.png)
+
+Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md#wikipedia-article), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
+
+Якщо вибране місце має статтю в Wikipedia, у цьому розділі відображається короткий попередній перегляд. Коли повна стаття недоступна офлайн, з'являється кнопка *Читати в Wikipedia*. Торкання її відкриває діалог з опціями залежно від доступу користувача: користувачі з купленим планом можуть завантажити регіональні дані Wikipedia або відкрити статтю в браузері, тоді як безкоштовні користувачі можуть відкрити статтю онлайн або перейти до екрана, який пропонує офлайн-доступ.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Список описів](@site/static/img/map/description_list_new_ios.png)
+
+Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Альтернативні назви {#alternative-names}
@@ -298,27 +327,6 @@ OsmAnd відображає **додаткові назви POI** у *конте
 Це список усіх точок в одній групі для Улюбленого або Шляхової точки. При дотику розгортається весь список точок однієї групи, при дотику до точки зі списку карта переміщується до вибраної точки.
 
 
-
-
-### Опис статті {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Список описів](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Список описів](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
 
 
 ### Посилання на OpenStreetMap {#openstreetmap-link}

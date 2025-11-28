@@ -1,5 +1,5 @@
 ---
-source-hash: 2e72966c25f729bafc89f9495c4b998dfa51359b24a2265ced5dd19823e61494
+source-hash: a4cce1f5b1b6bf6a375aec1d9807d689ffb13ab254ba342950f6b912e5149b1f
 sidebar_position: 1
 title:  Покупки в Android
 ---
@@ -76,11 +76,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 У списку наведено інформацію про ціни на продукти OsmAnd для регіонів США та Європи. Для інших регіонів ціни є еквівалентними в місцевих валютах.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Black Friday prices
+
+*Поспішайте! Ця пропозиція доступна лише до* **30 листопада (23:00 CET)**.
 
 :::
 
@@ -89,21 +89,21 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Тип покупки** | **Безкоштовно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
+| **Ціна (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Ціна (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Тип покупки** | **Безкоштовно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
-| **Ціна (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Ціна (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
+| **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
-
+-->
 
 ### Безкоштовні та платні функції {#free-and-paid-features}
 
@@ -125,6 +125,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Підтримка зовнішніх сенсорів](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Топографічні дані](../plugins/topography.md#overview)<br/>(Ізолінії та Рельєф) | **-** | ✔ | ✔ |
+| [Сітка координат — Налаштування кольору](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D-візуалізація треку](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Морські глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Популярні місця (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |

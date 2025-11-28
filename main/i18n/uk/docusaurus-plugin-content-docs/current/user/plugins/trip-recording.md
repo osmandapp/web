@@ -1,5 +1,5 @@
 ---
-source-hash: 8e066016d6c34fa35ebb478f7394b2e1cb4a747adb7805a218402161c7be3f49
+source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
 sidebar_position: 15
 title:  Запис поїздки
 ---
@@ -143,13 +143,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![огляд](@site/static/img/plugins/trip-recording/overview_screen_graphs_andr.png)  ![огляд](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![огляд](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![огляд](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Завершення запису на iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Завершення запису на iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_ios.png)
+![Завершення запису на iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Завершення запису на iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -166,7 +166,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - ***Android***. Для ***осі Y*** на графіку ви можете вибрати *до двох параметрів* з усіх доступних даних, таких як *Висота*, *Нахил*, *Швидкість* та [інформація із зовнішніх датчиків](../plugins/external-sensors.md#trip-recording). Для ***осі X*** виберіть відображення *Відстані*, *Часу* або *Часу доби*.
     - ***iOS***. Параметри організовані у вкладки *Огляд*, *Висота* та *Швидкість* з відповідними значеннями для осі Y та *Відстань* для осі X.
 
-- **Статистика**. Для Android відображається постійний набір статистичних даних, незалежно від налаштувань графіка: *Відстань*, *Проміжок часу*, *Набір висоти*, *Спуск*, *Середня швидкість*. Для iOS кожна вкладка, Огляд, Висота та Швидкість, має різний набір даних.
+- **Статистика**. Для Android відображається постійний набір статистичних даних, незалежно від налаштувань графіка: *Відстань*, *Тривалість*, *Набір висоти*, *Спуск*, *Середня швидкість*. Для iOS кожна вкладка, Огляд, Висота та Швидкість, має різний набір даних.
 
 Для більш детального перегляду ви можете **масштабувати графік**:
 
@@ -175,12 +175,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | |  
 | ------------- |
-|Вкладка **Огляд** для iOS (для Android параметри осі Y — *Висота*, *Швидкість*, а параметр осі X — *Відстань*). На цій вкладці відображається графік, що показує зміни швидкості та висоти вздовж треку, а також ключові деталі треку. Дані треку для iOS: *Відстань*, *Проміжок часу*, *Час початку* та *Час завершення*. Ви можете побачити, як це відображається у версіях для Android та iOS нижче. |
-| ![data](@site/static/img/plugins/trip-recording/graph_overview_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_overview_ios.png) |
+|Вкладка **Огляд** для iOS (для Android параметри осі Y — *Висота*, *Швидкість*, а параметр осі X — *Відстань*). На цій вкладці відображається графік, що показує зміни швидкості та висоти вздовж треку, а також ключові деталі треку. Дані треку для iOS: *Відстань*, *Тривалість*, *Час початку* та *Час завершення*. Ви можете побачити, як це відображається у версіях для Android та iOS нижче. |
+| ![data](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | Вкладка **Висота** для iOS (для Android параметри осі Y — *Висота*, *Нахил*, а параметр осі X — *Відстань*). Ця вкладка зосереджена на профілі висот вашого записаного треку, надаючи інформацію про зміни висоти та ухили рельєфу. Ключові показники для iOS включають: *Середня висота*, *Діапазон висот*, *Набір висоти* та *Спуск*. Графіки нижче ілюструють відмінності між інтерфейсами Android та iOS. |
-| ![data](@site/static/img/plugins/trip-recording/graph_altitude_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_altitude_ios.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | Вкладка **Швидкість** для iOS (для Android параметр осі Y — *Швидкість*, а параметр осі X — *Відстань*). Вкладка "Швидкість" висвітлює дані, пов'язані зі швидкістю, протягом усього треку. Для iOS вона включає таку інформацію, як *Середня швидкість*, *Максимальна швидкість*, *Час у русі* та *Скоригована відстань*. Скріншоти нижче показують, як ці дані відображаються на обох платформах. |
-| ![data](@site/static/img/plugins/trip-recording/graph_speed_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_speed_ios.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | Для **Android** ви можете створювати більше комбінацій доступних даних осі Y та значень осі X. |
 | ![data](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
@@ -398,7 +398,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 <TabItem value="android" label="Android">  
 
-![Завершення запису на Android](@site/static/img/plugins/trip-recording/distance_start_rec_andr.png)
+![Завершення запису на Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
 ![Віджет запису поїздки](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
 
 </TabItem>

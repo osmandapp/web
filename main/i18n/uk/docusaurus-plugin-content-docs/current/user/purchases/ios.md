@@ -1,5 +1,5 @@
 ---
-source-hash: 10843d6bb246f62718b10a6b853c3d1b8cfe21da3df9ece442d8322858efda92
+source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
 sidebar_position: 2
 title:  Покупки в iOS
 ---
@@ -53,11 +53,11 @@ import Translate from '@site/src/components/Translate.js';
 
 У списку наведено інформацію про ціни на продукти OsmAnd для регіонів США та Європи. Для інших регіонів ціни є еквівалентними в місцевих валютах.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Ціни Black Friday
+
+*Поспішайте! Ця пропозиція доступна лише до* **30 листопада (23:00 CET)**.
 
 :::
 
@@ -66,21 +66,21 @@ import Translate from '@site/src/components/Translate.js';
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
+| **Ціна (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Ціна (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+<!--
 
 
--->
-
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) Внутрішня покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
-| **Ціна (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Ціна (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
-
+-->
 
 ### Безплатні та платні функції {#free-and-paid-features}
 
@@ -97,6 +97,7 @@ import Translate from '@site/src/components/Translate.js';
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Топографічні дані](../plugins/topography.md#overview)<br/>(Ізолінії та Рельєф) | **-** | ✔ | ✔ |
+| [Координатна сітка — Налаштування кольору](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D-візуалізація треку](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Морські глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Путівники (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |

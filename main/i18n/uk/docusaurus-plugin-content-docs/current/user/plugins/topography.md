@@ -1,5 +1,5 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: a45f8d3e0c7440482cc20c9fa56b987c3a3c65ecfc717d9d8abb99c630f8d16e
 sidebar_position: 14
 title: Топографія
 ---
@@ -14,6 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 ## Огляд {#overview}
 
@@ -214,7 +215,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Відтінення пагорбів | Ухил | Висота |
 | ------ | ------- | ------- |
-| ![Відтінення пагорбів](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Ухил](../../../blog/2023-08-28-terrain/img/slope.png) | ![Ухил](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Відтінення пагорбів](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Ухил](../../../blog/2023-08-28-terrain/img/slope.png) | ![Висота](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Відтінення пагорбів** базується на симуляції освітлення поверхні з використанням даних про рельєф. Цей метод передбачає створення тіней та відблисків на основі кута нахилу поверхні відносно джерела світла. В результаті ви бачите на карті природні пагорби, долини та інші деталі рельєфу.  
 
@@ -242,8 +243,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *Ухил* використовує колір для візуалізації крутизни місцевості. Ви можете прочитати більше про це [тут](https://en.wikipedia.org/wiki/Grade_(slope)). Кожен колір відповідає куту відхилення від горизонталі. Додаткова колірна схема *Ухилу*, ***Лавина***, доступна в меню **Змінити**.
 
 - *Висота*. Карта висот забарвлює кожен піксель відповідно до розрахованої висоти карти, використовуючи градієнт із визначеної колірної схеми. Зазвичай схеми висот дуже залежать від місцевості. У гірських районах ви б віддали перевагу розподілу кольорів на ширший діапазон висот, а на рівнинних ділянках ви б обрали колірну схему з невеликим діапазоном між мінімальною/максимальною висотою.
-
-> *Будь ласка, прочитайте статтю [Колірна схема](../personal/color-palette-schemes.md) для отримання додаткової інформації.*
 
 
 ### Змінити колірну схему {#modify-color-scheme}

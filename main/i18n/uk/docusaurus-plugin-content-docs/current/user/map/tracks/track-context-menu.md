@@ -1,5 +1,5 @@
 ---
-source-hash: 0b7e892764b49efdf5fd65dc4de4b334a8002d427284a22a4041e5d598c1aa0b
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
@@ -25,13 +25,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Огляд контекстного меню треку Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
+![Overview track context menu Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Огляд контекстного меню треку iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
+![Overview track context menu iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
 
 </TabItem>
 
@@ -52,13 +52,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Огляд інформаційної панелі Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
+![Info panel overview Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Огляд інформаційної панелі iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
+![Info panel overview iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
 
 </TabItem>
 
@@ -72,9 +72,10 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Відображає загальну суму підйомів та спусків під час поїздки.
 - *<Translate android="true" ids="altitude_range"/>*. Вказує мінімальну та максимальну висоту на треку.  
 
-:::note
-Якщо ваш трек був створений в OsmAnd або будь-якому іншому додатку для відстеження (тобто його точки мають теги [`time` та `speed`](../../plugins/trip-recording#recorded-gpx-file)), інформаційна панель також міститиме інформацію про *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) або *<Translate ios="true" ids="total_time"/>* (*iOS*) (проміжок часу між початковою та кінцевою точками треку), *<Translate android="true" ids="shared_string_time_moving"/>* (сума часу під час руху).
-:::  
+Якщо ваш трек був створений в OsmAnd або будь-якому іншому додатку для відстеження (тобто його точки мають теги [`time` та `speed`](../../plugins/trip-recording#recorded-gpx-file)), інформаційна панель також міститиме інформацію про *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (загальний час між початковою та кінцевою точками треку) та *<Translate android="true" ids="shared_string_time_moving"/>* (сума часу під час руху).
+
+**Примітка:** Для записаних треків Тривалість показує фактичний час поїздки на основі міток часу. Для запланованих треків Тривалість показує оцінений час, розрахований з довжини маршруту та середньої швидкості вибраного профілю навігації, якщо весь маршрут використовує один профіль і не містить сегментів прямої лінії.
+
 
 ### Дії з треком {#track-actions}
 
@@ -82,13 +83,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Огляд контекстного меню треку Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Огляд контекстного меню треку iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
 
 </TabItem>
 
@@ -107,13 +108,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Опції меню треку Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Опції меню треку iOS](@site/static/img/personal/tracks/track_menu_options_ios.png)  
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 </TabItem>
 
@@ -133,7 +134,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Експортує вибраний трек у форматі GPX.
+- **<Translate android="true" ids="shared_string_share"/>** – Експортує вибраний трек у форматі GPX через системне меню Поділитися.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Завантажує](../../plugins/osm-editing.md#upload-gps-track) вибраний трек до OpenStreetMap.
 
 <br/>
@@ -160,13 +161,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Опис та інформація Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Опис та інформація Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
+![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Опис треку iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
+![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
 
 </TabItem>
 
@@ -174,7 +175,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 Цей розділ вкладки *Огляд* відображає ***дані тегів*** та ***всю загальну інформацію***.
 
-- **Опис**. Кнопка *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) використовується для редагування опису треку. Тег `desc`.
+- **Опис**.  Кнопка *<Translate android="true" ids="shared_string_edit"/>* (*Android*) / *<Translate ios="true" ids="context_menu_edit_descr"/>* (*iOS*) використовується для редагування опису треку. Тег `desc`.
 
 - **Загальне**. Містить інформацію про *розмір файлу GPX*, *папку файлу* та *дату створення* з тегом `time`.
 
@@ -189,7 +190,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <details>
 
-<summary>Приклад XML-коду файлу GPX</summary>
+<summary>Example XML code of GPX file</summary>
 
 ```xml
  <metadata>
@@ -232,13 +233,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Тип активності треку](@site/static/img/personal/tracks/track_info_activity_andr.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Тип активності треку](@site/static/img/personal/tracks/track_info_activity_ios.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_ios.png)
 
 </TabItem>
 
@@ -270,13 +271,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Графіки контекстного меню треку Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Графіки контекстного меню треку iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 На вкладці **Огляд** ви можете побачити такі параметри, як:
 
 - *<Translate android="true" ids="distance"/>*. Сума загальної пройденої відстані на треку або довжина самого треку.
-- *<Translate android="true" ids="shared_string_time_span"/>*. Проміжок часу між початковою та кінцевою точками треку.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. Проміжок часу між початковою та кінцевою точками треку.
 - *<Translate android="true" ids="shared_string_start_time"/>* Точний час початку запису треку.
 - *<Translate android="true" ids="shared_string_end_time"/>*. Час закінчення запису треку.
 
@@ -309,13 +310,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Графік швидкості треку Android](@site/static/img/personal/tracks/track_graph_speed_andr.png)
+![Track graph Speed Android](@site/static/img/personal/tracks/track_graph_speed_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Графік швидкості треку iOS](@site/static/img/personal/tracks/track_graph_speed_3_ios.png)
+![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_3_ios.png)
 
 </TabItem>
 
@@ -335,13 +336,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Графік висоти треку Android](@site/static/img/personal/tracks/track_graph_altitude_andr.png)
+![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Графік висоти треку iOS](@site/static/img/personal/tracks/track_graph_altitude_2_ios.png)
+![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_2_ios.png)
 
 </TabItem>
 
@@ -374,13 +375,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 1. Завантажте [Карти рельєфу (3D)](../../plugins/topography.md#download-maps) для потрібного регіону.
 2. Якщо трек не містить даних про висоту, перейдіть до контекстного меню треку (*Контекстне меню треку → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), виберіть *Використовувати Карти рельєфу*, і після розрахунку ви отримаєте графік треку на основі даних рельєфу.  
 
-    ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
+    ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
 3. Якщо ви створюєте маршрут за допомогою інструмента [Планування маршруту](../../plan-route/create-route.md#graph) методом *Пряма лінія* і на графіку немає даних про висоту, вам потрібно:
     - Натиснути *Отримати дані про висоту*, потім вибрати *Використовувати Карти рельєфу*.
     - Після розрахунку ви отримаєте повний графік висоти/нахилу вашого маршруту на основі даних рельєфу.  
 
-  ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
 
 ## Точки / Шляхові точки {#points--waypoints}
@@ -391,13 +392,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Контекстне меню треку Точки Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Контекстне меню треку Точки iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
 
 </TabItem>
 
@@ -428,13 +429,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Додати шляхову точку](@site/static/img/personal/tracks/add_waypoint_1_andr.png)  ![Додати шляхову точку](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
+![Add waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Додати шляхову точку](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Додати шляхову точку](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
+![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
 
 </TabItem>
 
@@ -464,13 +465,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Меню групи треку Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню групи треку iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
 
 </TabItem>
 
@@ -484,8 +485,8 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - **<Translate android="true" ids="shared_string_rename"/>** - Змінити назву групи.
 - **<Translate android="true" ids="change_default_appearance"/>** - Змінити параметри відображення для групи шляхових точок.
 - **<Translate android="true" ids="add_group_to_markers"/>** або **Видалити** (*Лише для Android*) - Перемістити шляхові точки групи до списку [Маркерів на мапі](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Лише для Android*) - Перемістити шляхові точки групи до [Улюблених](../../personal/favorites.md).
-- **<Translate android="true" ids="add_to_navigation"/>** (*Лише для Android*) - Створює маршрут між шляховими точками. Перша та остання точки стають початком та кінцем маршруту, а решта перетворюються на проміжні точки.
+- **<Translate android="true" ids="add_to_favorites"/>** (*Лише для Android*) - Дозволяє скопіювати вибрану групу Шляхових точок до [Улюблених](../../personal/favorites.md). Ви можете вибрати одну з двох опцій: ***<Translate android="true" ids="copy_as_new_folder"/>*** або ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_navigation"/>**  (*Лише для Android*) - Створює маршрут між шляховими точками. Перша та остання точки стають початком та кінцем маршруту, а решта перетворюються на проміжні точки.
 - **<Translate android="true" ids="shared_string_delete"/>** - Видалити групу шляхових точок.
 
 
@@ -495,13 +496,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Мапа групи треку Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Мапа групи треку Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Мапа групи треку iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Мапа групи треку iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
 
 </TabItem>
 
@@ -517,13 +518,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Точки](@site/static/img/personal/tracks/waypoints_tag_info_android.png)
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Точки](@site/static/img/personal/tracks/waypoints_tag_info_ios.png)
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_ios.png)
 
 </TabItem>
 
@@ -532,7 +533,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <details>
 
-<summary>Приклад XML-коду тегів шляхової точки</summary>
+<summary>Example XML code of Waypoint tags</summary>
 
 ```xml
   <wpt lat="40.123456" lon="-73.987654">
@@ -561,7 +562,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <details>
 
-<summary>Приклад XML-коду тегів точки маршруту</summary>
+<summary>Example XML code of Route point tags</summary>
 
 ```xml
   <rte>
@@ -633,7 +634,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <InfoAndroidOnly />
 
-![Розділення треку Android](@site/static/img/personal/tracks/split_by_1.png) 
+![Track split by Android](@site/static/img/personal/tracks/split_by_1.png) 
 
 Опція **Аналіз за інтервалами** дозволяє розділити трек на секції та переглянути детальну статистику для кожної частини маршруту. Треки можна розділити за параметрами ***відстань***, ***час*** або ***підйом/спуск***. 
 
@@ -643,13 +644,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Розділити за відстанню {#split-by-distance}
 
-![Вкладка розділення треку за відстанню](@site/static/img/personal/tracks/split_by_2_tab.png) ![Мапа розділення треку за відстанню](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Ця опція дозволяє розділити трек на фіксовані інтервали відстані та проаналізувати детальну статистику для кожного сегмента. Доступні інтервали відстані: ***20 м***, ***50 м***, ***100 м***, ***200 м***, ***500 м***, ***1 км***, ***2 км***, ***5 км*** та ***10 км***. Після вибору інтервалу відстані трек відображається як список сегментів. 
 
 Для кожного сегмента ви можете переглянути:
 - пройдену відстань.
-- проміжок часу.
+- тривалість.
 - середню, мінімальну та максимальну висоту.
 - підйом та спуск.
 - час у русі.
@@ -660,21 +661,21 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Розділити за часом {#split-by-time}
 
-![Вкладка розділення треку за часом](@site/static/img/personal/tracks/split_by_3_tab.png) ![Мапа розділення треку за часом](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 Опція **Розділити за часом** розділяє трек на інтервали однакової тривалості. Ви можете вибрати між ***1 хв***, ***2 хв***, ***2,5 хв***, ***5 хв***, ***10 хв***, ***15 хв***, ***30 хв*** та ***60 хв***. Спосіб відображення інтервалів, статистика, надана для кожного сегмента, та їхній вигляд на мапі такі ж, як у розділі [Розділити за відстанню](#split-by-distance).
 
 
 ### Розділити за підйомом/спуском {#split-by-uphill-downhill}
 
-![Вкладка розділення треку за підйомом/спуском](@site/static/img/personal/tracks/split_by_4_tab.png) ![Мапа розділення треку за підйомом/спуском](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
 
 Ця опція розділяє трек на сегменти на основі змін висоти. Кожен інтервал класифікується як ***підйом***, ***спуск*** або ***рівнина***. Спосіб відображення інтервалів, статистика, надана для кожного сегмента, та їхній вигляд на мапі також такі ж, як у розділі [Розділити за відстанню](#split-by-distance).
 
 
 ### Метрики частоти серцевих скорочень {#heart-rate-metrics}
 
-![Метрики частоти серцевих скорочень](@site/static/img/personal/tracks/heart_rate.png)
+![Heart Rate Metrics](@site/static/img/personal/tracks/heart_rate.png)
 
 Ця опція дозволяє переглянути середні, мінімальні та максимальні значення частоти серцевих скорочень (удари за хвилину, bpm) для кожного інтервалу вашого треку. Дані про частоту серцевих скорочень беруться з файлу GPX треку або записуються безпосередньо з підключеного [зовнішнього датчика частоти серцевих скорочень](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Якщо дані про частоту серцевих скорочень недоступні, цей рядок приховується в таблиці інтервалів.
 
@@ -687,7 +688,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 *<Translate android="true" ids="shared_string_options,shared_string_gps_filter"/>*
 
-![Екран GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_android.png)
+![GPS filter screen Android](@site/static/img/personal/tracks/gps_filter_android.png)
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
@@ -713,21 +714,21 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 | ***Точки*** |
 |:------------|
 |Ця частина показує кількість точок після фільтрації та загальну кількість точок на вибраному треку до застосування фільтрів.|
-|![Номери точок екрану GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
+|![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Дії*** |
-|*Згладжування*. Встановлює порогову відстань між точками. Точки треку, що знаходяться на відстані, меншій за цю, від останньої видимої точки, приховуються. Усі точки на треку, що знаходяться на відстані одна від одної меншій за відстань, вибрану фільтром, будуть приховані. Точки треку відраховуються від останньої видимої точки. Зверніть увагу, що високі пороги можуть надмірно спростити геометрію треку.|
-|![Номери згладжування GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
+|*Згладжування*. Встановлює порогову відстань між точками. Точки треку, що знаходяться щонайменше на цій відстані від останньої видимої точки, приховуються. Усі точки на треку, що знаходяться на відстані одна від одної меншій за відстань, вибрану фільтром, будуть приховані. Точки треку відраховуються від останньої видимої точки. Зверніть увагу, що високі пороги можуть надмірно спростити геометрію треку.|
+|![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
 |*Швидкість*. На графіку та мапі відображаються лише точки треку, що відповідають вибраному інтервалу швидкості, інші приховуються.|
-|![Номери швидкості GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
+|![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
 |*Висота*. На графіку та мапі відображаються лише точки треку, що відповідають вибраному інтервалу висоти, інші приховуються.|
-|![Номери висоти GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
+|![GPS filter altitude numbers Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
 |*Точність GPS*. Встановлює максимально допустиме значення для HDOP. Точки з вищим значенням приховуються.|
-|![Номери точності GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
+|![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
 
 ### Статистика {#statistics}
 
-![Графік GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 Вкладка "Статистика" відображає інформацію про **змінений** трек, тобто трек без відфільтрованих значень. Вона відображається в блоках статистики та даних графіка.
   
@@ -736,7 +737,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Дії {#actions}
 
-![Дія GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
+![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
 
 Список дій доступний внизу вкладки **Фільтр** або **Статистика**. OsmAnd застосовує всі зміни, внесені до треку, без оновлення файлу, але ви можете зберегти зміни вручну.
 

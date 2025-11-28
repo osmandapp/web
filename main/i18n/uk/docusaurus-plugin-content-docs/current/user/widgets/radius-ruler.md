@@ -1,5 +1,5 @@
 ---
-source-hash: 7bcd604be2adee088e0e972171e253a6a74edb5bd00fc30c97ec3fe0031d35e8
+source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
 sidebar_position: 5
 title:  Радіусна лінійка та Лінійка
 ---
@@ -69,6 +69,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>*
 
+Доступний на всіх панелях: <Translate android="true" ids="top"/>, <Translate android="true" ids="position_on_map_bottom"/>, <Translate android="true" ids="shared_string_left"/>, та <Translate android="true" ids="shared_string_right"/>.
+
 ![Позиція на екрані Android](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
 
@@ -76,7 +78,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>*
 
-![Позиція на екрані Android](@site/static/img/widgets/radius_ruler_height_ios.png)
+Доступний на всіх панелях: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Ліворуч, та Праворуч.
+
+![Позиція на екрані iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
 </TabItem>
 
@@ -101,7 +105,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
-<TabItem value="iOS" label="iOS">
+<TabItem value="ios" label="iOS">
 
 <table class="blogimage">
     <tr>
@@ -167,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Інше → Позиція місцезнаходження на екрані*
 
-![Позиція на екрані Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Радіусна лінійка знизу](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Позиція на екрані iOS](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Радіусна лінійка знизу](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 7021467d39551444b4db60312e7579cedf6fb967a05c6c5b5739359b5810a22b
+source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
 sidebar_position: 9
 title:  Редагування OpenStreetMap
 ---
@@ -119,7 +119,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">  
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Шар редагувань OSM Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![Шар редагувань OSM Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -127,7 +127,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Шар редагувань OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -135,7 +135,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Ви можете увімкнути або вимкнути як окремий шар відображення модифікацій OSM, таких як *Нотатки OSM* (онлайн), *Редагування OSM*, *Теги Fixme*, *Теги Note*, *Іконки при низьких масштабах*, у розділі [Налаштувати карту](../map/configure-map-menu.md) *Головного меню*.  
+Ви можете увімкнути або вимкнути як окремий шар відображення модифікацій OSM у розділі [Налаштувати карту](../map/configure-map-menu.md) *Головного меню*.  Модифікації OSM включають таке:  
+- **Нотатки OSM (онлайн)**. Відображає публічні нотатки OpenStreetMap, створені користувачами для виділення проблем картографування або запиту оновлень. Нотатки показуються як інтерактивні маркери, які можна переглянути, відкрити та вирішити маперам.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+- **Редагування OSM**. Показує ваші власні локальні редагування OSM, збережені на пристрої перед їх завантаженням на сервер OpenStreetMap. Цей шар допомагає переглянути геометрію та атрибути об'єктів, які ви змінили або додали.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+- **Теги Fixme**. Виділяє об'єкти, позначені тегом fixme=* в OSM. Ці елементи містять коментарі маперів, що вказують на неповну, невизначену інформацію або потребу в перевірці на місцевості.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+- **Теги Note**. Відображає об'єкти, що містять теги note=* — коментарі маперів, вбудовані безпосередньо в дані OSM. Ці теги зазвичай описують тимчасові умови або додатковий контекст для майбутнього редагування.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+- **Іконки при низьких масштабах**. Увімкнює спрощені іконкоподібні представлення об'єктів OSM з використанням коротких абревіатур, отриманих з їх основних ключів тегів. Їх значення описано [тут](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Ця функція робить більше об'єктів видимими при низьких рівнях масштабу без перевантаження карти або накладання іконок.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## Створення / Зміна POI {#create--modify-poi}

@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
 sidebar_position: 1
 title:  Спеціальні можливості
 ---
@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 3. **Налаштуйте параметри плагіна**:  
    - Відкрийте [налаштування доступності](#plugin-settings) у додатку OsmAnd.
-   - Налаштуйте функції, такі як швидкість мовлення, автоматичне оголошення та тактильний відгук.
+   - Налаштуйте функції, такі як швидкість мовлення, автооголошення та тактильний відгук.
 
 <br/>
 
@@ -93,7 +93,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Спеціальні можливості](@site/static/img/plugins/Accessibility/access_.png)  
+![Спеціальні можливості](@site/static/img/plugins/accessibility/access_new.png)  
 
 Плагін Спеціальні можливості пропонує різні налаштування для персоналізації навігації та взаємодії для користувачів з інвалідністю. Ці налаштування застосовуються за [профіль](../personal/profiles.md) в OsmAnd.
 
@@ -101,11 +101,28 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |---------------------------|-------------|  
 | **Режим доступності**    | Увімкнює *вбудовані функції OsmAnd* або використовує **налаштування системи**. |  
 | **Швидкість мовлення**           | Керує *швидкістю перетворення тексту в мовлення*, від **50% до 200%**. |  
+| **Збільшення при щипку**    | Тимчасово збільшує карту під час щипкового масштабування, коли ви тримаєте пальці на екрані, збільшуючи текст та іконки без зміни фактичного рівня масштабування. |  
 | [Smart Autoannounce](#smart-autoannounce)    | Надає *голосові інструкції* при відхиленні від маршруту. |  
 | **Період автооголошення**   | Встановлює мінімальний час між оголошеннями, від **5 секунд до 5 хвилин**. |  
 | [Стиль напрямку](#direction-style)       | Оберіть між *Боковим (8 напрямків)* або *За годинниковою стрілкою (12 напрямків)*. |  
 | **Аудіо напрямки**      | Відтворює *аудіо інструкції* що вказують напрямок. |  
 | **Тактильні напрямки**     | Надає *вібраційний відгук* для поворотів та відхилень.|  
+
+<!--
+- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
+
+- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
+
+- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
+
+- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
+
+- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
+
+- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
+
+- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
+-->
 
 <br/>
 

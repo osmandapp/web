@@ -1,5 +1,5 @@
 ---
-source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
+source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
 sidebar_position: 10
 title:  Імпорт / Експорт
 ---
@@ -24,7 +24,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Експорт / Імпорт даних {#export--import-data}
 
-*Імпорт* та *Експорт* дозволяють зберігати дані з генерованих **файлів** `.osf` або використовувати [онлайн-джерела](../map/raster-maps.md), що дає змогу відновити інформацію після перевстановлення.
+*Імпорт* та *Експорт* дозволяють зберігати дані з генерованих `.osf` **файлів** або використовувати [онлайн-джерела](../map/raster-maps.md), що дає змогу відновити інформацію після перевстановлення.
 
 **Типи даних**, доступні для імпорту/експорту:
 
@@ -91,6 +91,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - *Деякі елементи вже існують*. Ви можете скористатися цією функцією, щоб зберегти обидва файли або замінити всі.
 - *Перезапуск*. Після імпорту файлів програму необхідно перезапустити.
+
+Підтримувані типи файлів для імпорту:
+- [Треки, маршрути](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) та [обране](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Файли KML та KMZ імпортуються з конвертацією у формат GPX.
+- [Векторні карти OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
+- [Тайли онлайн-карт](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Резервні копії та профілі](#export): `.osf`.
+- [Висотні карти / 3D дані](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Інше](color-palette-schemes.md): `.txt`.
+
+Для технічного огляду всіх підтримуваних форматів див. [Формати файлів OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

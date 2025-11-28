@@ -1,5 +1,5 @@
 ---
-source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
+source-hash: 9f4eacf3ab926b0fc0d1086f0b2c0e8318d07b76b6b1173f2bfea26d1829863c
 sidebar_position: 3
 title:  Веб-покупки
 ---
@@ -30,7 +30,7 @@ import Translate from '@site/src/components/Translate.js';
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **План підписки**, що розблоковує всі [професійні функції](#free-and-paid-features), включаючи CarPlay та 3D-рельєф. | Підтримує **кросплатформний** доступ |
 
 :::note  
-**Кросплатформний доступ** означає, що ви можете придбати OsmAnd на нашому веб-сайті або в одному з магазинів (наприклад, *App Store, Google Play або osmand.net*) і використовувати його на іншій платформі, [прив'язавши покупку до облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+**Кросплатформний доступ** означає, що ви можете придбати OsmAnd на нашому веб-сайті або в одному магазині (наприклад, *App Store, Google Play або osmand.net*) і використовувати його на іншій платформі, [прив'язавши покупку до облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 :::
 
 ## Ціни {#prices}
@@ -38,11 +38,11 @@ import Translate from '@site/src/components/Translate.js';
 Нижче наведено ціни на продукти OsmAnd у США та ЄС. Ціни в інших регіонах автоматично конвертуються у місцеву валюту платіжною платформою.
 
 
-<!--
 
-:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Ціни Чорної п'ятниці
+
+*Поспішайте! Ця пропозиція доступна лише до* **30 листопада (23:00 CET)**.
 
 :::
 
@@ -51,27 +51,28 @@ import Translate from '@site/src/components/Translate.js';
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
+| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічно) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |**Одноразова покупка** (15 років Pro / Maps+ Довічно) |
+| **Ціна (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
+| **Ціна (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
 
 :::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
+Купуючи підписку через наш [веб-сайт](https://osmand.net/pricing) за зниженою ціною,  
+ви отримуєте 2-річний план зі знижкою.  
+Починаючи з третього року, застосовуватиметься повна ціна.
 :::
 
--->
+<!--
 
 
-|    | OsmAnd Free   | **Maps+** Одноразово | **Maps+** Підписка | **OsmAnd Pro** |**OsmAnd XV** |
+
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічно) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |**Одноразова покупка** (15 років Pro / Maps+ Довічно) |
-| **Ціна (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Ціна (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
+| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
 
-
+-->
 
 ### Безплатні та платні функції {#free-and-paid-features}
 
