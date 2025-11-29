@@ -1,9 +1,8 @@
 ---
-source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
+source-hash: 1bd20746ffeab531cb3d1ba5be872da020fbb3e3e511c4199d1144aff385a1dc
 sidebar_position: 11
 title:  OsmAnd Tracker
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,6 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 <InfoAndroidOnly />
 
@@ -50,10 +50,10 @@ OsmAnd Tracker — це модифікований клієнт Telegram, ств
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
 
-Ви можете встановити OsmAnd Online GPS Tracker:
+Встановіть APK-файл OsmAnd Online GPS Tracker:
 
-- з [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
-- або з [OsmAnd server](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk) (APK-файл)
+- [Google Play store](https://play.google.com/store/apps/details?id=net.osmand.telegram)
+- [Сервер OsmAnd](https://download.osmand.net/latest-night-build/OsmAnd-tracker.apk)
 
 
 ## Налаштування плагіну {#plugin-settings}
@@ -79,11 +79,11 @@ OsmAnd Tracker — це модифікований клієнт Telegram, ств
 
 **Надсилати місцезнаходження як** - дозволяє вибрати категорію для надсилання повідомлень про ваше місцезнаходження в Telegram (3 типи надсилання): текст, мапа, текст і мапа.
 
-**Час закінчення терміну дії буфера** - дозволяє вибрати час збереження точок у буфері.
+**Час очищення буфера** - дозволяє вибрати час збереження точок у буфері.
 
 **Фонова робота** - дозволяє змінити налаштування оптимізації батареї для стабілізації передачі місцезнаходження.
 
-**Джерело місцезнаходження** - дозволяє вибрати *Google Play Services* (за замовчуванням) або *Android API* для визначення місцезнаходження.
+**Джерело місцезнаходження** - дозволяє вибрати *Сервіси Google Play* (за замовчуванням) або *Android API* для визначення місцезнаходження.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/settingstracker.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
 
@@ -130,7 +130,7 @@ OsmAnd Tracker — це модифікований клієнт Telegram, ств
 
 ### Обліковий запис {#account}
 
-Використовуйте це налаштування, щоб перевірити, який обліковий запис Telegram ви зараз використовуєте. Також у цьому меню ви можете вийти з програми OsmAnd Telegram, просто торкнувшись кнопки *Вийти*.  
+Використовуйте це налаштування, щоб перевірити, який обліковий запис Telegram ви зараз використовуєте. Також у цьому меню ви можете вийти з програми OsmAnd Telegram, просто натиснувши кнопку *Вийти*.  
 
 
 ### Буфер Logcat {#logcat-buffer}
@@ -201,7 +201,7 @@ OsmAnd Tracker — це модифікований клієнт Telegram, ств
 Віджет має кілька виглядів.  
 
 1. Перший — *Старт*.  
-   Коли ви торкаєтеся *Старт*, ви переходите до [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram), де ви можете вибрати будь-які контакти або торкнутися Запропонованих контактів.
+   Коли ви натискаєте *Старт*, ви переходите до [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram), де ви можете вибрати будь-які контакти або натиснути на Запропоновані контакти.
 2. Другий, коли ви починаєте ділитися своїм місцезнаходженням, віджет змінює свій вигляд.  
 
    - Зелена іконка-емодзі *OK* означає, що ваше місцезнаходження зараз передається. Все нормально, передача відбувається без помилок.  
@@ -224,6 +224,6 @@ OsmAnd Tracker — це модифікований клієнт Telegram, ств
 
 Додаток OsmAnd має власного Telegram-бота під назвою "OsmAnd Assistant", який допомагає інтегрувати OsmAnd Telegram зі сторонніми трекерами або API. Ви зможете ділитися не тільки своїм місцезнаходженням, але й місцезнаходженням вашого велосипеда або групи людей, що беруть участь у перегонах, доступних через API. OsmAnd Telegram надасть вам гарне представлення ваших місцезнаходжень на мапі в самому OsmAnd.  
 
-Будь ласка, поділіться з нами своїми думками про цей новий додаток у [Twitter](https://x.com/osmandapp) та інших соціальних мережах.
+Будь ласка, поділіться з нами своїми думками про цей новий додаток у [Twitter](https://twitter.com/osmandapp) та інших соціальних мережах.
 
 Щоб переглядати GPS-позиції контактів на мапі, вам потрібна остання версія [OsmAnd або OsmAnd+](./../purchases/android.md). Мінімальна підтримувана версія OsmAnd або OsmAnd+ — 3.0.4.

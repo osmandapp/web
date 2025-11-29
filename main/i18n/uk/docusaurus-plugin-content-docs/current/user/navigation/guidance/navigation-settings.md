@@ -1,9 +1,8 @@
 ---
-source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
+source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
 sidebar_position: 1
 title:  Налаштування навігації
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,6 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 ## Огляд {#overview}
@@ -132,7 +132,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Параметр | Опис | Примітка |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> у разі відхилення* | <Translate android="true" ids="recalculate_route_distance_promo"/>  | Якщо [Голосові підказки](../guidance/voice-navigation.md#voice-settings) увімкнені, OsmAnd оголошує, що маршрут перераховується. |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> у разі відхилення* | <Translate android="true" ids="recalculate_route_distance_promo"/> | Якщо [Голосові підказки](../guidance/voice-navigation.md#voice-settings) увімкнені, OsmAnd оголошує, що маршрут перераховується. |
 |  *Перераховувати маршрут у разі руху у зворотному напрямку*  | Ваш маршрут буде перераховано, якщо ви рухатиметеся до початкової точки.  |  Якщо це налаштування вимкнено, рух до початкової точки не вважається відхиленням від шляху (доки він слідує розрахованому маршруту).  |
 
 
@@ -185,14 +185,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Choose profile → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *кнопка <Translate ios="true" ids="routing_settings"/>* *(або <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Виберіть профіль → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
 ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
@@ -207,16 +207,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Якщо ви обираєте трек як пункт призначення, для коректної роботи голосових підказок необхідно використовувати опцію [Прив'язати до доріг](../setup/gpx-navigation.md#attach-to-the-roads).
 
 *Голосові підказки* дозволяють зосередитися на дорозі і не відволікатися на карту або навігаційний пристрій. Вони також підвищують безпеку водіння, скорочують час, необхідний для навігації по незнайомій місцевості, і можуть бути корисними для різних [типів маршрутів](../routing/osmand-routing.md#routing-types).
-
-У розділі **Оголошувати** ви можете вибрати, які типи сповіщень повинні відтворюватися або відображатися під час навігації:
-
-- **Поворот-за-поворотом напрямки** (лише Android) – дозволяє увімкнути або вимкнути стандартні інструкції навігації, такі як *«Поверніть ліворуч»*, *«Поверніть праворуч»* або *«Через 200 метрів…»*. Коли опція вимкнена, оголошення поворотів і назв вулиць не надаються, тоді як сповіщення для контрольних точок, користувацьких точок і подій маршруту залишаються активними. Цей режим призначений для таких видів діяльності, як рафтинг, піші прогулянки чи велосипедні прогулянки вздовж заздалегідь записаних треків, коли потрібні лише сповіщення для вручну доданих контрольних точок.
-- **Назви вулиць (TTS)** – оголошує назви вулиць уздовж вашого маршруту.
-- **Номер виїзду** – оголошує номер виїзду під час руху автомагістралями.
-- **Попередження про дорожній рух** – надає сповіщення про важливі дорожні події, такі як затори чи обмеження.
-- **Пішохідні переходи** – попереджає вас при наближенні до пішохідних переходів.
-- **[Камери контролю швидкості](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – сповіщає про розташування камер контролю швидкості (де це дозволено законом).
-- **Тунелі** – повідомляє вас при в'їзді в тунель.
 
 
 ## Екранні сповіщення {#screen-alerts}
@@ -250,11 +240,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете ***вибрати, які сповіщення*** ви хочете бачити на екрані додатка під час навігації:
 
-- **Обмеження швидкості** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Speed_limits)). У налаштуваннях екранних сповіщень *Обмеження швидкості* відображається на екрані лише при увімкнених *Попередженнях про дорожній рух*. Якщо ви хочете бачити обмеження швидкості під час навігації без інших попереджень, використовуйте [віджет](../../widgets/nav-widgets.md#speed-limit).
-- **Попередження про дорожній рух** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Додаткову інформацію можна знайти у статті [Екран карти під час навігації](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
-- **Пішохідні переходи** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
-- **Камери контролю швидкості** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Для отримання додаткової інформації про налаштування камер контролю швидкості в OsmAnd, прочитайте [Типи сповіщень](../../widgets/nav-widgets.md#alert-types) та статтю *Загальні налаштування*, розділ [Правова інформація](../../personal/global-settings.md#legal).
-- **Тунелі** ([OSM Wiki info](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
+- **Обмеження швидкості** ([інформація з OSM Wiki](https://wiki.openstreetmap.org/wiki/Speed_limits)). У налаштуваннях екранних сповіщень *Обмеження швидкості* відображається на екрані лише при увімкнених *Попередженнях про дорожній рух*. Якщо ви хочете бачити обмеження швидкості під час навігації без інших попереджень, використовуйте [віджет](../../widgets/nav-widgets.md#speed-limit).
+- **Попередження про дорожній рух** ([інформація з OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Додаткову інформацію можна знайти у статті [Екран карти під час навігації](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
+- **Пішохідні переходи** ([інформація з OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
+- **Камери контролю швидкості** ([інформація з OSM Wiki](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). Для отримання додаткової інформації про налаштування камер контролю швидкості в OsmAnd, прочитайте [Типи сповіщень](../../widgets/nav-widgets.md#alert-types) та статтю *Загальні налаштування*, розділ [Правова інформація](../../personal/global-settings.md#legal).
+- **Тунелі** ([інформація з OSM Wiki](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
 :::note
 Типи попереджень мають різний візуальний вигляд, що залежить від регіону подорожі. OsmAnd не має на меті представити 100% ідентичні дорожні знаки, але вказує на деякі подібності.  
@@ -349,7 +339,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detailed track guidance*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Детальні вказівки по треку*
 
 ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 
