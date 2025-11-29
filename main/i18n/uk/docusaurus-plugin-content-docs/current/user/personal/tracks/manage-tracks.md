@@ -1,9 +1,8 @@
 ---
-source-hash: 04406e7e66e2e6cda894bf72a3f747e6b543f8a003e1b65c58a1772ff944c6c2
+source-hash: df7c8f53eee21b0eb4dfeaecf53d0c5ae26f02cec322c124641bc379e421196b
 sidebar_position: 2
 title:  Керування треками
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -16,9 +15,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+
 ## Огляд {#overview}
 
-Усі треки в OsmAnd зберігаються у вкладці *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd обробляє файл треку у [форматі GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), але [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) та [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) можна імпортувати та конвертувати у GPX. Детальніше про різні типи треків читайте у статті [Треки на карті](../../map/tracks/index.md#types-of-tracks).
+Усі треки в OsmAnd зберігаються у вкладці *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd обробляє файли треків у [форматі GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), але файли [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) та [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) можна імпортувати та конвертувати у GPX. Детальніше про різні типи треків читайте у статті [Треки на карті](../../map/tracks/index.md#types-of-tracks).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,13 +43,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![Планування маршруту зміна-треку-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![Планування маршруту зміна-треку-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 2. Створити новий трек у застосунку за допомогою інструмента **[Планування маршруту](../../plan-route/create-route.md)**.
 3. Записати трек у застосунку за допомогою плагіна **[Запис поїздки](../../plugins/trip-recording.md)**.
 4. Ввести кілька точок за координатами та зберегти їх як трек за допомогою інструмента **[Введення координат](../../plan-route/coordinate-input.md)**.
-5. Ви також можете додати **Шляхові точки** до нового треку через **[Контекстне меню](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
+5. Ви також можете додати **шляхові точки** до нового треку через **[Контекстне меню](../../map/map-context-menu.md#-add--edit-track-waypoint)**.
 
 
 ## Керування треками {#manage-tracks}
@@ -196,13 +196,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Показати на карті** — За допомогою цієї функції ви можете відобразити вибрані треки на карті, щоб краще зрозуміти їхнє розташування та взаємозв'язок.
 
-- **Поділитися** (*Android*) / **Експорт** (*iOS*) — Відкриває системне меню Поділитися та надсилає вибрані треки як файли GPX (.gpx) або експортує вибрані теки за допомогою обраного застосунку чи хмарного сервісу.
+- **Поділитися** (*Android*) / **Експорт** (*iOS*) — Якщо ви хочете поділитися вибраними даними з іншими користувачами або зберегти їх у хмарному сервісі, функція *Поділитися/Експорт* дозволяє надсилати треки та теки різними способами.
 
 - **Завантажити в OpenStreetMap** — Ви можете надіслати вибрані треки в OpenStreetMap, сприяючи розвитку та покращенню даних.
 
 - **Перемістити** — Ви можете впорядкувати свої дані, перемістивши вибрані треки та теки в інші теки.
 
-- [Змінити активність](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Ця дія дозволяє змінити тип активності, наприклад, на *Автомобіль*, *Екстремальний мотоспорт*, *Піший туризм* або інші, для вибраного треку.
+- [Змінити вид активності](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Ця дія дозволяє змінити тип активності, наприклад, на *Автомобіль*, *Екстремальний мотоспорт*, *Піший туризм* або інші, для вибраного треку.
 
 - [Змінити вигляд](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Ця опція дозволяє налаштувати вигляд вибраних треків, роблячи їх більш помітними та впізнаваними на карті.
 
@@ -273,7 +273,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 Торкніться *меню з трьома крапками* у полі теки, щоб **відкрити** меню теки.
 
-![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
+![імпорт мультитреку](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
@@ -329,7 +329,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 - *Загальна сума* **відстаней** — Відображається загальна довжина всіх треків у вибраній теці, виміряна у вибраних вами одиницях.
 - *Сума* **підйомів** — Дані вказують на загальний вертикальний набір висоти на всіх треках у вибраній теці.
 - *Сума* **спусків** — Цей параметр є сумою вертикальних спусків на всіх треках у вибраній теці.
-- *Сума* **тривалості** *часу* — Відображає загальний час, витрачений на проходження всіх треків у вибраній теці.
+- *Сума* **тривалості** — Відображає загальний час, витрачений на проходження всіх треків у вибраній теці.
 - *Загальний **розмір** завантажених файлів у МБ* — Загальний розмір завантажених файлів у мегабайтах показує, скільки місця займають усі треки у вибраній теці на вашому пристрої.
 
 
@@ -433,15 +433,15 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 <TabItem value="android" label="Android">
 
-![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
+![імпорт мультитреку](@site/static/img/personal/tracks/import_multitrack.png) ![імпорт мультитреку](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-| Export | Import |
+| Експорт | Імпорт |
 |:------------|:---------------|
-| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Експорт </summary> ![імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Експорт </summary> ![імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">

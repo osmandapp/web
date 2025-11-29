@@ -1,9 +1,8 @@
 ---
-source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
+source-hash: 7f2e85f7e22604bcf22bbc6bdb7faf78780ede4bd62e7cd5554ceedacb06dd7d
 sidebar_position: 6
 title:  Запис треку
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,13 +12,14 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
+
 ## Огляд {#overview}
 
 У цій статті розглядаються проблеми із записом GPX-треків, які тривалий час спостерігаються в різних версіях Android та iOS. Під **фоновим режимом** ми маємо на увазі, що застосунок OsmAnd не відображається на передньому плані, особливо коли екран пристрою вимкнено (що відрізняється від внутрішнього визначення *фонового режиму* в пристроях).
 
 **Примітки**:
 
-- Починаючи з Android 11 (2020/12), більше не існує системного дозволу *Завжди дозволяти* доступ до місцезнаходження у фоновому режимі, але це **не обмежує** фоновий запис треків в OsmAnd. Згідно з документацією Google, тепер це вважається **використанням на передньому плані**, оскільки дозвіл на використання служби на передньому плані використовується внутрішньо, і системне сповіщення про запис треку завжди видиме.
+- Починаючи з Android 11 (грудень 2020), більше не існує системного дозволу *Завжди дозволяти* доступ до місцезнаходження у фоновому режимі, але це **не обмежує** фоновий запис треків в OsmAnd. Згідно з документацією Google, тепер це вважається **використанням на передньому плані**, оскільки дозвіл на використання служби на передньому плані використовується внутрішньо, і системне сповіщення про запис треку завжди видиме.
 
 - Зверніть увагу, що нові формулювання в Android можуть вводити в оману:
 
@@ -28,7 +28,7 @@ import Translate from '@site/src/components/Translate.js';
   - **Дозволити завжди**, з іншого боку, означає, що застосунок в принципі може отримувати ваше місцезнаходження "непомітно" без виконання жодної з цих умов. Але *Android* обмежує частоту доступу до місцезнаходження в цьому (*фоновому*) режимі приблизно до одного разу на годину, що, безумовно, не є правильним режимом для навігаційного застосунку.
 
 
-## Recorded Tracks are Noisy {#recorded-tracks-are-noisy}
+## Записані треки "шумні" {#recorded-tracks-are-noisy}
 
 Існує 2 типові проблеми з точністю, що призводять до *безладного* записаного треку.
 
@@ -37,99 +37,82 @@ import Translate from '@site/src/components/Translate.js';
 
 Заходи для пом'якшення:
 
-- Призупиняйте запис під час зупинок або використовуйте фільтр *Minimum displacement* плагіна "Запис поїздки".
-- Вибирайте інтервал часу або відстані між точками запису, що відповідає кривизні вашої поїздки, але не створює багато зайвих точок (розкид яких створюватиме шум і перебільшуватиме коливання відстані та висоти). 
+- Призупиняйте запис під час зупинок або використовуйте фільтр *Мінімальне зміщення* плагіна "Запис поїздки".
+- Вибирайте інтервал часу або відстані між точками запису, що відповідає кривизні вашої поїздки, але не створює багато зайвих точок (розкид яких створюватиме шум і перебільшуватиме коливання відстані та висоти).
 - Також можна відредагувати трек пізніше і видалити *"шумні"* точки.
 - Або ви можете використовувати налаштування *плагіна "Запис поїздки"*, щоб фільтрувати *"шумні"* точки вже під час запису, виходячи з вашого **досвіду** та **пристрою запису**. Ви можете фільтрувати точки за різними критеріями:
   - Точки з низькою або нульовою швидкістю.
   - Точки з поганою точністю (GPS 'hdop').
   - Точки, розташовані ближче, ніж заданий поріг у метрах.
 
-- **Google Services API or Android API**. Ви можете додатково змінити спосіб отримання даних про місцезнаходження в OsmAnd на пристроях Android. У [Налаштування OsmAnd → Джерело місцезнаходження](../personal/global-settings.md#location-source) виберіть між **Google Play Services** та **Android API**, у багатьох випадках перемикання на **Android API** допомагає покращити записані треки та зробити їх менш "шумними".
+- **API сервісів Google або API Android**. Ви можете додатково змінити спосіб отримання даних про місцезнаходження в OsmAnd на пристроях Android. У [Налаштування OsmAnd → Джерело місцезнаходження](../personal/global-settings.md#location-source) виберіть між **Сервісами Google Play** та **Android API**, у багатьох випадках перемикання на **Android API** допомагає покращити записані треки та зробити їх менш "шумними".
 
 
-## Recorded Tracks Have Gaps {#recorded-tracks-have-gaps}
+## У записаних треках є розриви {#recorded-tracks-have-gaps}
 
-### Configuring OsmAnd for Track Recording {#configuring-osmand-for-track-recording}
+### Налаштування OsmAnd для запису треку {#configuring-osmand-for-track-recording}
 
-- **Prevent Standalone Logging**. Ensure the *Prevent standalone logging* setting under Plugins/Trip Recording is deactivated to allow OsmAnd to record tracks with the screen off.
-- **Update OsmAnd**. Android versions use different strategies to reduce power consumption by [killing applications running in the background](https://dontkillmyapp.com/). Version 3.9 or higher uses a Foreground service, visible in the notification bar, [to keep the app running in the background](https://dontkillmyapp.com/) on most Android versions. This is particularly effective on Android 8+ ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255), [Issue #5587](https://github.com/osmandapp/Osmand/issues/5587)).
+- **Заборонити автономний запис**. Переконайтеся, що налаштування *Заборонити автономний запис* у розділі Плагіни/Запис поїздки вимкнено, щоб дозволити OsmAnd записувати треки з вимкненим екраном.
+- **Оновіть OsmAnd**. Версії Android використовують різні стратегії для зменшення споживання енергії шляхом [завершення роботи застосунків, що працюють у фоновому режимі](https://dontkillmyapp.com/). Версія 3.9 або новіша використовує службу переднього плану (Foreground service), видиму на панелі сповіщень, [щоб підтримувати роботу застосунку у фоновому режимі](https://dontkillmyapp.com/) на більшості версій Android. Це особливо ефективно на Android 8+ ([Проблема #5255](https://github.com/osmandapp/Osmand/issues/5255), [Проблема #5587](https://github.com/osmandapp/Osmand/issues/5587)).
 
-### Optimizing Android for Track Recording {#optimizing-android-for-track-recording}
 
-Starting with Android 4.4, power-saving features can limit CPU usage, reduce screen brightness, and kill background apps when the screen is off. This can affect OsmAnd’s performance for outdoor use, map rendering, and track recording. Later versions of Android have added AI-based power saving behaviors like **Automatic battery** and **Automatic power saving**, introducing dynamic and even less predictable behavior. To avoid recording issues, at least initially or for debugging, **consider disabling power-saving features entirely**. Users report that the impact on battery life for most devices is tolerable.
+### Оптимізація Android для запису треку {#optimizing-android-for-track-recording}
 
-- **Exclude OsmAnd from *Battery optimization*.** In your Android device's *Settings*, find OsmAnd under *Apps*, *Applications*, or *App Manager*. Locate the *Battery*, *Power Savings* or *Power Consumption* section, and exclude OsmAnd from battery optimization. ([Issue #5255](https://github.com/osmandapp/Osmand/issues/5255))
+Починаючи з Android 4.4, функції енергозбереження можуть обмежувати використання ЦП, зменшувати яскравість екрана та закривати фонові застосунки, коли екран вимкнено. Це може вплинути на продуктивність OsmAnd під час використання на відкритому повітрі, рендерингу карти та запису треку. Пізніші версії Android додали функції енергозбереження на основі штучного інтелекту, такі як **Автоматична батарея** та **Автоматичне енергозбереження**, що вносить динамічну та ще менш передбачувану поведінку. Щоб уникнути проблем із записом, принаймні на початковому етапі або для налагодження, **розгляньте можливість повного вимкнення функцій енергозбереження**. Користувачі повідомляють, що вплив на час роботи батареї для більшості пристроїв є прийнятним.
+
+- **Виключіть OsmAnd з *Оптимізації батареї*.** У *Налаштуваннях* вашого пристрою Android знайдіть OsmAnd у розділі *Застосунки*, *Програми* або *Менеджер застосунків*. Знайдіть розділ *Батарея*, *Енергозбереження* або *Споживання енергії* та виключіть OsmAnd з оптимізації батареї. ([Проблема #5255](https://github.com/osmandapp/Osmand/issues/5255))
   
-- **Disable the *Power saving* Mode.** This mode has a high chance of impacting/killing even foreground services, like OsmAnd's trip recording.
+- **Вимкніть режим *Енергозбереження*.** Цей режим має високу ймовірність вплинути/завершити роботу навіть служб переднього плану, таких як запис поїздки в OsmAnd.
 
-- **Disable *Adaptive power saving*.** Having this 'on' will apply system-wide, use-pattern based policies to deactivate/activate the above 'power saving' mode.
+- **Вимкніть *Адаптивне енергозбереження*.** Якщо ця функція увімкнена, вона застосовуватиме загальносистемні політики на основі шаблонів використання для деактивації/активації вищезгаданого режиму "енергозбереження".
 
-- **Disable *Adaptive battery* unless you use the OsmAnd app regularly.** *Adaptive battery* works on a per app basis, also use-pattern based. Its effect on a specific app can be reduced by exempting that app from *Battery optimization* (like setting to *Not optimized*). However, *Adaptive battery* can still kill foreground services such as OsmAnd's trip recording, if the device judges OsmAnd to be in your 'rarely used' pool of apps.
+- **Вимкніть *Адаптивну батарею*, якщо ви не використовуєте застосунок OsmAnd регулярно.** *Адаптивна батарея* працює для кожного застосунку окремо, також на основі шаблонів використання. Її вплив на конкретний застосунок можна зменшити, виключивши цей застосунок з *Оптимізації батареї* (наприклад, встановивши значення *Не оптимізовано*). Однак *Адаптивна батарея* все ще може завершувати роботу служб переднього плану, таких як запис поїздки в OsmAnd, якщо пристрій вважає, що OsmAnd належить до вашого пулу "рідко використовуваних" застосунків.
 
-### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
+### Керування поведінкою фонових застосунків iOS {#control-the-behavior-of-ios-background-apps}
 
-The following Power settings have been successfully tested under Android 9, 10, and later 11 (on Samsung devices) to make OsmAnd register tracks without gaps. Please review these **10 settings** and set accordingly:
+iOS може автоматично призупиняти або зупиняти фонові застосунки, коли системні ресурси перерозподіляються. OsmAnd не може змінити цю поведінку. Якщо запис треку переривається, коли пристрій заблоковано, це може залишити пропуски в записі. Ви можете відредагувати ці пропуски за допомогою інструмента [Планування маршруту](https://docs.osmand.net/docs/user/plan-route/create-route).
 
-- (1) **Power saving (mode)** = OFF (or *Optimized* in Android 10)
-- (2) **Adaptive power saving** = OFF (When ON, power saving mode may sometimes be activated, which prevents OsmAnd from logging.)
-- (3) **Adaptive battery** = ON (Does not affect apps exempted from battery optimization anyway, see (9) below, **unless the app is used rarely**. To be safe, set to OFF.)
-- (4) **Put unused apps to sleep** = ON (But OsmAnd is exempted from battery optimization, see (9) below!)
-- (5) **Auto disable unused apps** = OFF (Seems only present in Android 9.)
-- (6) **Optimize settings** = OFF (In Android 10 under *Device care / Advanced*, in Android 11 seems gone.)
-- (7) **Auto optimize (daily)** = ON (Has no effect here.)
-- (8) **Auto restart (at set times)** = OFF (Has no effect here.)
-- (9) **Optimize Battery Usage** (Under Android *Settings / Apps / OsmAnd / Battery* or *Settings / Apps / 3-dots / Special access / Optimize battery usage / All / OsmAnd*) = Exempt OsmAnd from battery optimization (very advisable, although not necessary if the app is user-started frequently).
-- (10) **Allow background activity** = ON for OsmAnd under *Apps / OsmAnd / Battery* for Android 11
-
-Some of these settings interact, so be accurate. The best search for the above settings by name (with and without the expressions in parentheses). Depending on your version of Android, they may be scattered over these various *Android Settings screens*:
-
-- *Device care*
-- *Device care / 3-dots / Automation*
-- *Device care / Advanced*
-- *Device care / Battery*
-- *Device care / Battery / Settings*
-- *Device care / Battery / App Power Management*
-- *Device care / Battery / More battery settings*
-
-### Control the Behavior of iOS Background Apps {#control-the-behavior-of-ios-background-apps}
-
-iOS can suspend or stop background apps automatically when system resources are reallocated. OsmAnd cannot override this behavior. If track recording is interrupted when the device is locked, this can leave gaps in the recording. You can edit these gaps using the [Plan a Route](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
-
-For more details on how iOS handles location tracking, check out Apple's documentation [here](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
+Для отримання додаткової інформації про те, як iOS обробляє відстеження місцезнаходження, перегляньте документацію Apple [тут](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 
 
-## How to Track Traveled Distance {#how-to-track-traveled-distance}
+### Перевірені налаштування живлення для Android 9, 10 та 11 (Hardy, 25.08.2020) {#tested-power-settings-for-android-9-10-and-11-hardy-2020-08-25}
 
-OsmAnd does not have a special widget similar to an odometer, you can use the [Trip Recording plugin](../plugins/trip-recording.md#new-track-recording) to track your traveled distance and reset it when needed.  
+Наступні налаштування живлення були успішно протестовані на Android 9, 10, а пізніше і 11 (на пристроях Samsung), щоб OsmAnd записував треки без розривів. Будь ласка, перегляньте ці **10 налаштувань** і встановіть їх відповідно:
+
+- (1) **Економія енергії (режим)** = ВИМК (або *Оптимізований* в Android 10)
+- (2) **Адаптивне енергозбереження** = ВИМК (Коли УВІМК, режим економії енергії може іноді активуватися, що заважає OsmAnd вести запис.)
+- (3) **Адаптивна батарея** = УВІМК (Все одно не впливає на застосунки, виключені з оптимізації батареї, див. (9) нижче, **якщо застосунок не використовується рідко**. Для безпеки встановіть ВИМК.)
+- (4) **Переводити невикористовувані застосунки в режим сну** = УВІМК (Але OsmAnd виключено з оптимізації батареї, див. (9) нижче!)
+- (5) **Автоматично вимикати невикористовувані застосунки** = ВИМК (Здається, присутнє лише в Android 9.)
+- (6) **Оптимізувати налаштування** = ВИМК (В Android 10 у розділі *Обслуговування пристрою / Додатково*, в Android 11, здається, зникло.)
+- (7) **Автоматична оптимізація (щодня)** = УВІМК (Тут не має ефекту.)
+- (8) **Автоматичний перезапуск (у встановлений час)** = ВИМК (Тут не має ефекту.)
+- (9) **Оптимізувати використання батареї** (В Android *Налаштування / Застосунки / OsmAnd / Батарея* або *Налаштування / Застосунки / 3 крапки / Спеціальний доступ / Оптимізувати використання батареї / Усі / OsmAnd*) = Виключити OsmAnd з оптимізації батареї (дуже бажано, хоча і не обов'язково, якщо застосунок часто запускається користувачем).
+- (10) **Дозволити фонову активність** = УВІМК для OsmAnd у розділі *Застосунки / OsmAnd / Батарея* для Android 11
+
+Деякі з цих налаштувань взаємодіють між собою, тому будьте точними. Найкраще шукати вищевказані налаштування за назвою (з виразами в дужках та без них). Залежно від вашої версії Android, вони можуть бути розкидані по різних *екранах налаштувань Android*:
+
+- *Обслуговування пристрою*
+- *Обслуговування пристрою / 3 крапки / Автоматизація*
+- *Обслуговування пристрою / Додатково*
+- *Обслуговування пристрою / Батарея*
+- *Обслуговування пристрою / Батарея / Налаштування*
+- *Обслуговування пристрою / Батарея / Керування живленням застосунків*
+- *Обслуговування пристрою / Батарея / Інші налаштування батареї*
 
 
-## OsmAnd 3.9: Altitude issues when using Google Play Services {#osmand-39-altitude-issues-when-using-google-play-services}
+## Як відстежувати пройдену відстань {#how-to-track-traveled-distance}
 
-Google Play has changed its policy, and to comply, OsmAnd, as of version 3.9 (excluding Nightly, F-Droid, and Huawei builds) is required to use Google Play Services to obtain location fixes while running in the background (that is, in Android terminology, as a foreground service with a visible system notification).
-
-After this change, there seems to be an issue with altitude recording: Apparently, Google Play Services interpolates the altitude measurement very aggressively, see [GitHub issue #10864](https://github.com/osmandapp/OsmAnd/issues/10864). This issue affects Android 10, possibly not Android 11. The [issue](https://issuetracker.google.com/issues/180218747) has already been reported on Google's website, and will probably be fixed on 09-03-2021.  
-
-As a workaround, in [*OsmAnd Settings → Location Source*](../personal/global-settings.md#location-source) you can switch the location source from **Google Play Services** to **Android API**.
+OsmAnd не має спеціального віджета, схожого на одометр, ви можете використовувати [плагін "Запис поїздки"](../plugins/trip-recording.md#new-track-recording), щоб відстежувати пройдену відстань і скидати її за потреби.
 
 
-## OsmAnd 3.9: GPS wake-up now replaced by continuous foreground service (2020/12) {#osmand-39-gps-wake-up-now-replaced-by-continuous-foreground-service-202012}
+## OsmAnd 3.9: Проблеми з висотою при використанні Сервісів Google Play {#osmand-39-altitude-issues-when-using-google-play-services}
 
-As of version 3.9, when track recording or navigation is required, OsmAnd continuously supports GPX via the *Android* background service, and this is visible as an *Android* system notification.
+Google Play змінив свою політику, і для її дотримання OsmAnd, починаючи з версії 3.9 (за винятком збірок Nightly, F-Droid та Huawei), зобов'язаний використовувати Сервіси Google Play для отримання даних про місцезнаходження під час роботи у фоновому режимі (тобто, за термінологією Android, як служба переднього плану з видимим системним сповіщенням).
 
-The prior strategy of using a doze mode and periodic GPS Wake-Up has been removed from our code (commit [Drop waking navigation service on alarm](https://github.com/osmandapp/OsmAnd/commit/950a9cc8f8660b3f3d750391ddc1429d5dc38b34)), as required by new Google Play restrictions on Background location access. As a result, the following sections (A) and (B) apply only to versions of OsmAnd before 3.9:
+Після цієї зміни, схоже, виникла проблема із записом висоти: очевидно, Сервіси Google Play дуже агресивно інтерполюють вимірювання висоти, див. [проблему на GitHub #10864](https://github.com/osmandapp/OsmAnd/issues/10864). Ця проблема стосується Android 10, можливо, не Android 11. Про [проблему](https://issuetracker.google.com/issues/180218747) вже повідомлено на вебсайті Google, і, ймовірно, її буде виправлено 09-03-2021.
 
-**<del> (A) GPS Wake-up Strategy</del>**
+Як обхідний шлях, у [*Налаштування OsmAnd → Джерело місцезнаходження*](../personal/global-settings.md#location-source) ви можете перемкнути джерело місцезнаходження з **Сервісів Google Play** на **Android API**.
 
-- (A1) While OsmAnd is used, e.g. Navigation. We keep the system's GPS module on all the time, as continuous location information is key here. Effect on battery use (order of magnitude) seems about 5% per hour on older systems up to Android 4.4, and 2-3% for newer systems.
-- (A2) For *background* track recording without simultaneous navigation. For recording with up to 15-second intervals, we also keep GPS on, other strategies will not save much battery power.
-- (A3) For intervals \>=30sec, we turn GPS on only for each sampling point. This has some noticeable effect on the accuracy of the points recorded but reduces battery usage to an order of magnitude 1.2% per hour for 30-second track recording.
 
-**<del> (B) GPS Wake-up Issues</del>**
-
-To achieve the GPS wake-up, so far we use the Android Alarm Manger to wake up the device periodically (also from Doze mode, which was introduced in Android 6). New Android versions introduced the following issues:
-
-- **(B1) Alarm Manager's setRepeating() became inexact starting with Android 4.4:**  
-Mitigation: We now use *setRepeating()* only up to Android 4.2, the new *setExact()* method starting with Android 4.4, and *setExactAndAllowWhileIdle()* for Android 8+. ([Issue \#5632](https://github.com/osmandapp/Osmand/issues/5632))
-- **(B2) Starting from Android 4.4, systems limit the number of times *setExact()* is executed repeatedly** to e.g. once per 5 or even 15 minutes. (The actual value seems wildly device-specific.)  
-No good solution found for now. Current mitigation is we do not use Alarm Manager wake-up, instead keep GPS always on for background track logging on devices with Android 5+ for all recording intervals shorter than 5 minutes. This produces reliable and precise tracks at the cost of higher battery use. ([Issue \#5632](https://github.com/osmandapp/Osmand/issues/5632))
+## OsmAnd 3.9: Пробудження GPS замінено на безперервну службу переднього плану (грудень 2020) {#osmand-39-gps-wake-up-now-replaced-by-continuous-foreground-service-20

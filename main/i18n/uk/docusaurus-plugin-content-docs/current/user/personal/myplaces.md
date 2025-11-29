@@ -1,9 +1,8 @@
 ---
-source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
+source-hash: 479b492a4c86a0646befd8187d85091dd523d1e848bf8bd1a5f10175948ab1bf
 sidebar_position: 6
 title:  Мої місця
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,11 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 <InfoIncompleteArticle/>
 
 ## Огляд {#overview}
 
-**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для впорядкування [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, що допомагає вести детальну історію ваших маршрутів і подорожей. Ви також можете керувати своїми [Редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін до мапи та її оновлення. Плагін [Аудіо/відео нотатки](#audiovideo-notes) та віджети дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до своїх подорожей.
+**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для впорядкування [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, що допомагає вести детальну історію ваших маршрутів і подорожей. Ви також можете керувати своїми [редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін до мапи та її оновлення. Плагін [Аудіо/відео нотатки](#audiovideo-notes) та віджети дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до своїх подорожей.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -48,7 +48,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [***Карти та ресурси***](../personal/maps-resources.md):  
 
-    Пункт *Головного меню* застосунку OsmAnd *Карти та ресурси* надає доступ до керування даними з розділу *Мої місця*. Вкладка [*Локальні*](../personal/maps-resources.md#local-menu) показує, скільки місця займають усі наявні дані OsmAnd на вашому пристрої, зокрема розділ *Мої місця*. Ви можете використовувати його для отримання детальної інформації про ваші дані та доступу до керування ними. Розділ може містити лише ті елементи, для яких були завантажені дані.  
+    Пункт *Головного меню* застосунку OsmAnd *Карти та ресурси* надає доступ до керування даними з розділу *Мої місця*. Вкладка [*Локальні*](../personal/maps-resources.md#local) показує, скільки місця займають усі наявні дані OsmAnd на вашому пристрої, зокрема розділ *Мої місця*. Ви можете використовувати його для отримання детальної інформації про ваші дані та доступу до керування ними. Розділ може містити лише ті елементи, для яких були завантажені дані.  
 
     **Перейдіть до** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Перевірте та керуйте своїми даними.
 
@@ -84,10 +84,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - **Видалити** (*на iOS ця опція знаходиться в меню "Редагувати"*) — видаляє улюблені точки по одній або вибрані теки з улюбленими та всі точки, що в них містяться.
 
-2. ***Меню з трьома крапками*** (*Android*) та ***довге натискання*** (*iOS*). Використовуйте меню з *трьома крапками* біля кожної теки або *довге натискання* на теку для керування групами улюблених. Дивіться [Дії групи улюблених](../personal/favorites.md#favorite-group-actions) для деталей.  
+2. ***Меню з трьома крапками*** (*Android*) та ***довге натискання*** (*iOS*). Використовуйте меню з *трьома крапками* біля кожної теки або *довге натискання* на теку для керування групами улюблених:  
 
+    <Tabs groupId="operating-systems" queryString="current-os">
 
-Щоб отримати повні інструкції, зверніться до статті [Улюблені](../personal/favorites.md).
+    <TabItem value="android" label="Android">
+
+    ![Меню з трьома крапками](@site/static/img/personal/favorites_three-dot_menu.png)
+
+    </TabItem>
+
+    <TabItem value="ios" label="iOS">
+
+    ![Меню Улюблені iOS](@site/static/img/personal/favorites_long-tap_ios.png)
+
+    </TabItem>
+
+    </Tabs>
+
+    - **<Translate android="true" ids="shared_string_rename"/>** — використовуйте цю опцію, щоб змінити назву вибраної теки.
+
+    - **<Translate android="true" ids="change_default_appearance"/>** — налаштуйте вигляд улюблених точок у теці на мапі, змінивши їхні іконки, кольори або мітки.
+
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** або **Приховати на мапі** — перемикайте цю опцію, щоб відобразити або приховати улюблені точки з теки на мапі.
+
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** або **Видалити з маркерів на мапі** (*лише для Android*) — додайте всі улюблені точки з теки до *списку маркерів на мапі* або видаліть їх за потреби для зручності.
+
+    - **<Translate android="true" ids="shared_string_share"/>** — поділіться улюбленими точками в теці, експортувавши їх як файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
+
+    - **<Translate android="true" ids="shared_string_delete"/>** — назавжди видаліть вибрану теку з улюбленими та всі точки в ній.
+
+Щоб отримати детальніші інструкції, зверніться до статті [Улюблені](../personal/favorites.md).
 
 
 ## Треки {#tracks}
@@ -124,7 +151,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Вигляд та аналіз** — [налаштуйте](../map/tracks/appearance.md) візуальний стиль треків та [аналізуйте](../map/tracks/index.md#analyze-track-on-map) їх за допомогою інструмента OsmAnd [Планування маршруту](../plan-route/create-route.md).
 
-Для вичерпних вказівок дивіться статтю [Керування треками](../personal/tracks/manage-tracks.md).
+Щоб отримати вичерпні вказівки, дивіться статтю [Керування треками](../personal/tracks/manage-tracks.md).
 
 
 ## Редагування OpenStreetMap {#openstreetmap-edits}

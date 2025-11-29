@@ -1,9 +1,8 @@
 ---
-source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
+source-hash: a7dd39e9842422ed94b4d87d1b7db2208f13c204bc60460d54d4738e9c192308
 sidebar_position: 2
 title:  Покупки в iOS
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,6 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
 
 
 ## Встановлення OsmAnd (iOS) {#install-osmand-ios}
@@ -44,7 +44,7 @@ import Translate from '@site/src/components/Translate.js';
 
 1. **Maps+** — це *оновлення* для безплатної версії OsmAnd, що розблоковує більшість функцій.
 
-2. **OsmAnd Pro**,  **OsmAnd+** та **Maps+** є *кросплатформними* покупками. Це означає, що ви можете придбати її в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore*, та *osmand.net*) і відновити в іншому, [прив'язавши покупку до свого облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+2. **OsmAnd Pro**, **OsmAnd+** та **Maps+** є *кросплатформними* покупками. Це означає, що ви можете придбати її в одному магазині (наприклад, *Google Play, Huawei AppGallery, AppStore* та *osmand.net*) і відновити в іншому, [прив'язавши покупку до свого облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
 3. Ви можете додати **Maps+** до [Сімейного доступу Apple](https://support.apple.com/en-us/HT201088), щоб поділитися покупкою з членами родини.  
 
@@ -53,34 +53,34 @@ import Translate from '@site/src/components/Translate.js';
 
 У списку наведено інформацію про ціни на продукти OsmAnd для регіонів США та Європи. Для інших регіонів ціни є еквівалентними в місцевих валютах.
 
+<!--
 
+:::danger September Sale prices
 
-:::danger Ціни Black Friday
-
-*Поспішайте! Ця пропозиція доступна лише до* **30 листопада (23:00 CET)**.
+*Hurry up! This offer is only available until* **September 14 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
-| **Ціна (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Ціна (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
-
-
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
 -->
+
+
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) Внутрішня покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
+| **Ціна (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Ціна (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+
+
 
 ### Безплатні та платні функції {#free-and-paid-features}
 
@@ -92,12 +92,11 @@ import Translate from '@site/src/components/Translate.js';
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Усі Pro функції](#pro-features) | **-** | **-** | ✔ |
 | [Завантаження мап](../start-with/download-maps.md) |  <details><summary>**5 завантажень мап** <br /> (оновлення мапи рахується як завантаження):</summary> <br /> - Завантаження або оновлення мапи означає лише завантаження-оновлення мапи країни (регіону).<br /> - **Оглядова мапа світу**, **Світова корекція висот**, **Шрифти мапи** та **Голосові підказки** не враховуються в 5 можливостей для завантаження.</details> | ✔ | ✔ |
-| [Щомісячні оновлення мап](../personal/maps-resources.md#updates-menu) |  <details><summary>**Раз на місяць** <br /> (із затримкою у 2 дні):</summary> * обмежено 5 завантаженнями (оновлення мапи рахується як завантаження) </details> |  ✔ | ✔ |
+| [Щомісячні оновлення мап](../personal/maps-resources.md#updates) |  <details><summary>**Раз на місяць** <br /> (із затримкою у 2 дні):</summary> * обмежено 5 завантаженнями (оновлення мапи рахується як завантаження) </details> |  ✔ | ✔ |
 | [Щогодинні оновлення мап](../personal/maps-resources.md#live-updates)<br/>Live-оновлення (затримка 1 година) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Топографічні дані](../plugins/topography.md#overview)<br/>(Ізолінії та Рельєф) | **-** | ✔ | ✔ |
-| [Координатна сітка — Налаштування кольору](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D-візуалізація треку](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Морські глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Путівники (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -152,7 +151,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Продовжити з OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![План Pro](@site/static/img/purchases/pro.png)
 
 ### Покупка Maps+ {#maps-purchase}
 
@@ -160,7 +159,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Торкніться списку функцій Maps+ → Продовжити з Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![План Maps+](@site/static/img/purchases/maps.png)
 
 
 ## Застарілі підписки (до версії 4.0) {#legacy-subscriptions-prior-40}
@@ -177,9 +176,9 @@ import Translate from '@site/src/components/Translate.js';
 - Увійдіть до того ж облікового запису Apple App Store, який ви використовували для придбання внутрішніх покупок (підписок) OsmAnd Maps.
 - Встановіть [OsmAnd Maps з Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 - Відкрийте OsmAnd Maps з активним інтернет-з'єднанням.
-- Щоб відновити покупки, виконайте такі дії: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* і у верхній частині екрана має з'явитися повідомлення про активацію Maps+(Pro, Live).
+- Щоб відновити покупки, виконайте такі дії: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>*, і у верхній частині екрана має з'явитися повідомлення про активацію Maps+(Pro, Live).
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+![План Pro](@site/static/img/purchases/maps_purchases_ios.png)
 
 **Якщо жоден із методів не спрацював:**
 

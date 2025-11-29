@@ -1,9 +1,8 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: d8eea89d132b8d0c465d31c1f6c3db15ee3bfaea91b54f6c6164a55ad5c97c3e
 sidebar_position: 4
 title:  Параметри транспортного засобу
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,6 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 ## Огляд
@@ -32,7 +32,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Налаштування навігації iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Налаштування навігації iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -98,14 +98,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
-**5.** [**Обмеження максимального навантаження на вісь**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Вкажіть максимальне навантаження на вісь вашого транспортного засобу, щоб уникнути доріг і мостів з обмеженнями ваги на вісь. Цей параметр доступний лише для таких типів навігації, як [*Вантажівка*](../../navigation/routing/car-based-routing.md).  
-
-![Налаштування навігації Android](@site/static/img/navigation/max_axle_load.png)
-
-**6.** [**Максимальна вага при повному завантаженні**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Вкажіть максимальну загальну вагу вашого транспортного засобу при повному завантаженні, щоб уникнути доріг і мостів з обмеженнями загальної ваги. Цей параметр доступний лише для таких типів навігації, як [*Вантажівка*](../../navigation/routing/car-based-routing.md).  
-
-![Налаштування навігації Android](@site/static/img/navigation/max_weight_at_full_load.png)
-
 Обмеження параметрів транспортного засобу можуть бути важливими для навігації та безпеки дорожнього руху. Деякі з цих обмежень можуть включати:  
 
 1. Обмеження на рух транспортних засобів у певних міських районах.  
@@ -135,7 +127,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 Якщо ви виберете тип двигуна в параметрах транспортного засобу, дані про [***вуглецевий слід CO2***](../../navigation/setup/route-details.md#elevation-info) будуть відображатися над графіком у [Деталях маршруту](../setup/route-details.md).
-Доступні шість типів пального: ***Бензин, Дизель, ЗПГ (LPG), СНГ (CNG), Електрика*** та ***Гібрид***.  
+Доступні шість типів пального: ***Бензин, Дизель, ЗНГ (LPG), СПГ (CNG), Електрика*** та ***Гібрид***.  
 
 **Застосовність:**
 
@@ -154,7 +146,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування навігації iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

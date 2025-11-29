@@ -1,9 +1,8 @@
 ---
-source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
+source-hash: 6d287ae52b65e96bd3d314e75b2a5de4ebcf7c8de44598bc47d0b69e9c17a99e
 sidebar_position: 8
 title: Популярні місця
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,6 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 <InfoIncompleteArticle/>
 
 
@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Кожне місце, включене в цю функцію, пов'язане з **ID Wikidata**, що дозволяє OsmAnd відображати перевірені назви, зображення для попереднього перегляду та посилання на статті Вікіпедії. Цей інструмент **не** показує всі точки OpenStreetMap (OSM). Він обмежується POI з посиланнями на Wikidata.
 
-Наразі підібрана база даних включає приблизно **50 000–150 000 найрейтинговіших місць** у всьому світі, відібраних з понад **1 мільйона** об'єктів Wikidata + OSM.
+Наразі підібрана база даних включає приблизно **від 50 000 до 150 000 найпопулярніших місць** у всьому світі, відібраних з понад **1 мільйона** об'єктів Wikidata + OSM.
 
 :::note
 *Це перша версія функції "Популярні місця". Відгуки вітаються на [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -33,7 +33,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
+![Популярні місця](@site/static/img/map/popular_places/popular_places.png) ![Популярні місця](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -48,7 +48,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ви можете переглянути посилання на Wikidata безпосередньо в [Контекстному меню мапи](../map/map-context-menu.md). Натискання на тег Wikidata відкриває повну сторінку об'єкта на сайті Wikidata.
 
-Дізнайтеся, як знайти ID Wikidata: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+Дізнайтеся, як знайти ID Wikidata: [Wikipedia: Пошук ID Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
 ## Як користуватися {#how-to-use}
@@ -82,8 +82,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png)  
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
+![Режим дослідження](@site/static/img/map/popular_places/popular_places_search.png)  
+![Режим дослідження](@site/static/img/map/popular_places/popular_places_search_2.png)
 
 </TabItem>
 
@@ -117,7 +117,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **<Translate android="true" ids="android_button_seq"/>**. Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+![Меню популярних місць](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
@@ -155,21 +155,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Контекстне меню онлайн-фотографій Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
-<TabItem value="iOS" label="iOS">  
+<TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Контекстне меню онлайн-фотографій iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 Це розділ у [контекстному меню POI](./map-context-menu.md), який відображає попередній перегляд фотографій обраного Популярного місця (Вікіпедія). Ви можете прокручувати по горизонталі, щоб переглянути доступні фотографії, або торкнутися будь-якого зображення, щоб відкрити його в [повноекранному режимі](#gallery).
-
-Зображення, переглянуті онлайн, автоматично кешуються для офлайн-доступу. Кешовані фотографії відображають невелику позначку офлайн-режиму в кутку. Сітка попереднього перегляду адаптується до розміру екрана на iPadOS та macOS, забезпечуючи зручне розміщення зображень на більших дисплеях. OsmAnd також уникає повторних мережевих запитів при закритті розділу "Онлайн-фотографії" та скасовує попередні запити при швидкому перемиканні між різними POI.
 
 Дізнайтеся більше про додаткові опції в розділах [Дії](#actions) та [Галерея](#gallery).
 
@@ -191,10 +189,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 - Натисніть кнопку **Показати все** (Android) / **Переглянути все** (iOS), щоб відкрити [галерею](#gallery) в повноекранному режимі, де ви можете перегортати всі доступні фотографії для вибраного місця.
 
-- Торкніться будь-якої фотографії, щоб переглянути її в [повноекранному режимі](#gallery) та отримати доступ до доступних дій:  
-  **Поділитися**, **Деталі**, **Відкрити в браузері**, та **Завантажити**.
-
-**Примітка:** Завантаження зберігає зображення в сховище пристрою для постійного офлайн-використання, тоді як кешовані фотографії зберігаються автоматично та доступні офлайн лише в межах додатка.
+- Торкніться будь-якої фотографії, щоб переглянути її в [повноекранному режимі](#gallery) та отримати доступ до доступних дій: **Поділитися**, **Деталі**, **Відкрити в браузері** та **Завантажити**.
 
 
 ### Галерея {#gallery}
@@ -203,24 +198,22 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Меню галереї – Android](@site/static/img/map/gallery_menu_android.png)
+![Меню галереї – Android](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
-<TabItem value="iOS" label="iOS">  
+<TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Меню галереї – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Меню галереї – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
 
-**Меню галереї** може відображати до **100 зображень**, пов'язаних з обраною точкою інтересу. Ви можете перегортати всі доступні фотографії. Коротке натискання на фотографію відкриває детальний перегляд, що показує: *Назва*, *Дата додавання*, *Автор*, *Ліцензія*.  
-
-На iOS, iPadOS та macOS ви можете переглядати фотографії за допомогою клавіш клавіатури (←/→ для переміщення між зображеннями, Enter/Space для відкриття).
+**Меню галереї** може відображати до **100 зображень**, пов'язаних з обраною точкою інтересу. Ви можете перегортати всі доступні фотографії. Коротке натискання на фотографію відкриває детальний перегляд, що показує: *Назва*, *Дата додавання*, *Автор*, *Ліцензія*  
 
 Ви також можете виконати наступні дії з кожною фотографією:
 
@@ -245,9 +238,9 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 </TabItem>
 
-<TabItem value="iOS" label="iOS">  
+<TabItem value="ios" label="iOS">  
 
-![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
+![iOS - Опції контекстного меню](@site/static/img/map/gallery_menu_ios_3.png)
 
 На **iOS** довге натискання на фотографію відкриває контекстне меню з додатковими діями:
 
@@ -269,13 +262,13 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <TabItem value="android" label="Android">  
 
-![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
+![Android – Детальний перегляд](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
-<TabItem value="iOS" label="iOS">  
+<TabItem value="ios" label="iOS">  
 
-![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – Детальний перегляд](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 

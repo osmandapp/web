@@ -1,9 +1,8 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: 9dd5ee763287f3119c0713993fca648b887d22a8d882b8564a493486c2574fc5
 sidebar_position: 18
 title:  Плагіни
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 🤖 *- тільки для Android версії OsmAnd.*
 
-| Назва плагіна |Функції |
+| Назва плагіна | Функції |
 |:------------|:-------|
 | [Вікіпедія](#wikipedia) | [Шар карти](../plugins/wikipedia.md#download-wikipedia-packages), [Контекстне меню](../plugins/wikipedia.md#wikipedia-settings) |
 | [Онлайн-карти](#online-maps) |[Шар карти](../plugins/online-map.md#how-to-prepare-raster-maps) |
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | [Погода](../plugins/weather.md) | [Шар карти](../plugins/weather.md#display-weather-on-the-map), [Віджет](../plugins/weather#weather-widgets), [Екран](../plugins/weather.md#weather-forecast-screen) |
 | [Вигляд морської карти](#nautical-map-view) | [Стиль карти](../plugins/nautical-charts.md#nautical-map-style), [Профіль](../plugins/nautical-charts.md#nautical-profile)  |
 | [Вигляд лижної карти](#ski-map-view) | [Стиль карти](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Профіль](../plugins/ski-maps.md#skiing-profile) |
-|[Аудіо/відео нотатки](#audiovideo-notes) 🤖  | [Шар карти](../plugins/audio-video-notes.md#show-all-on-the-map), [Контекстне меню](../plugins/audio-video-notes.md#create-a-single-note), [Віджет](../plugins/audio-video-notes.md#recording-widget) |
+|[Аудіо/відео нотатки](#audiovideo-notes) 🤖  | [Шар карти](../plugins/audio-video-notes.md#show-all-on-the-map), [Контекстне меню](../plugins/audio-video-notes.md#create), [Віджет](../plugins/audio-video-notes.md#recording-widget) |
 |[Редагування OpenStreetMap](#openstreetmap-editing)| [Шар карти](../plugins/osm-editing.md#authorization) |
 |[Місце паркування](#parking-position) | [Контекстне меню](../plugins/parking.md#set-a-spot), [Віджет](../plugins/parking.md#parking-widget) |
 |[Mapillary](#mapillary) | [Шар карти](../plugins/mapillary.md#map-layer), [Контекстне меню](../plugins/mapillary.md#map-context-menu) , [Віджет](../plugins/mapillary.md#mapillary-widget)|
@@ -122,7 +122,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Назва плагіна | Налаштування |
 |:------------|:-------|
-| [Запис поїздки](#trip-recording) | Налаштуйте [режими роботи](../plugins/trip-recording.md#required-setup-parameters) запису поїздки |
+| [Запис поїздки](#trip-recording) | Налаштування [режимів роботи](../plugins/trip-recording.md#required-setup-parameters) запису поїздки |
 | [Погода](#weather) | Налаштування одиниць вимірювання для відображення погодних явищ |
 |[Аудіо/відео нотатки](#audiovideo-notes) 🤖  | Вибір [формату відео, тривалості зберігання тощо](../plugins/audio-video-notes.md#plugin-settings) |
 |[Редагування OpenStreetMap](#openstreetmap-editing)| Вкажіть [логін](../plugins/osm-editing.md#settings) користувача  |
