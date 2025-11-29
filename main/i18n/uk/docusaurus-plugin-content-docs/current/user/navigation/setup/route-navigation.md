@@ -1,8 +1,9 @@
 ---
-source-hash: 273bc407c61abbef0f20fd6d4bb79cda29aab80f8589524d418ca1daca1c64d6
+source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
 sidebar_position: 1
 title:  Підготовка маршруту
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## Огляд {#overview}
 
-Функція **Підготовка маршруту** в OsmAnd надає покрокові навігаційні вказівки для різних [типів маршрутів](./../routing/osmand-routing.md#routing-types), включаючи [водіння автомобіля](./../routing/car-based-routing.md), [піші прогулянки](./../routing/pedestrian-routing.md), їзду на велосипеді, [верхову їзду](./../routing/horse-routing.md) та [лижі](./../routing/ski-routing.md). Користувачі можуть налаштовувати параметри навігації, додавати пункти призначення та оптимізувати маршрути для підвищення ефективності.
+Функція **Підготовка маршруту** в OsmAnd надає покрокові навігаційні вказівки для різних [типів маршрутів](./../routing/osmand-routing.md#routing-types), включаючи [водіння](./../routing/car-based-routing.md), [піші прогулянки](./../routing/pedestrian-routing.md), їзду на велосипеді, [верхову їзду](./../routing/horse-routing.md) та [лижі](./../routing/ski-routing.md). Користувачі можуть налаштовувати параметри навігації, додавати пункти призначення та оптимізувати маршрути для підвищення ефективності.
 
 :::tip
 
@@ -122,10 +122,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Кнопка **Скасувати** повертає на головний екран.
 - [Кнопка Старт](#start--stop-navigation) запускає навігацію після завершення розрахунку маршруту.
   
-### Вибір початкової точки {#select-starting-point}
+### Вибір початкової точки {#select-start-point}
 
-Що стосується початкової точки, ви можете вибрати своє поточне місцезнаходження, місцезнаходження [Улюбленої точки](../../map/point-layers-on-map.md#favorites), вибрати точку на мапі або скористатися [Пошуком](../../search/index.md). Ви також можете встановити початкову точку в [контекстному меню мапи](../../map/map-context-menu.md), вибравши функцію [Маршрут з](../../map/map-context-menu.md#directions-to--from).  
+<Tabs groupId="operating-systems" queryString="current-os">
 
+<TabItem value="android" label="Android">
+
+![Вибір на мапі](@site/static/img/navigation/route/select_on_map.png)
+
+Що стосується початкової точки, ви можете вибрати своє поточне місцезнаходження, місцезнаходження [Улюбленої точки](../../map/point-layers-on-map.md#favorites), вибрати точку на мапі або скористатися [Пошуком](../../search/index.md). Коли ви вибираєте точку на мапі, відкривається діалогове вікно. Мапа центрується з маркером, відображаються координати центру мапи, і ви переміщуєте мапу під маркер замість прямого натискання на місце. Для підтвердження натисніть кнопку *Вибрати*. Ви також можете встановити початкову точку в [контекстному меню мапи](../../map/map-context-menu.md), вибравши функцію [Маршрут з](../../map/map-context-menu.md#directions-to--from).  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Вибір на мапі iOS](@site/static/img/navigation/route/select_on_map_ios.png)
+
+Що стосується початкової точки, ви можете вибрати своє поточне місцезнаходження, місцезнаходження [Улюбленої точки](../../map/point-layers-on-map.md#favorites), вибрати точку на мапі або скористатися [Пошуком](../../search/index.md). При виборі точки на мапі ви можете вільно переміщати та масштабувати мапу, а потім торкнутися бажаного місця. Прапорець з'являється в обраному місці. Ви також можете встановити початкову точку в [контекстному меню мапи](../../map/map-context-menu.md), вибравши функцію [Маршрут з](../../map/map-context-menu.md#directions-to--from). 
+</TabItem>
+
+</Tabs>
 
 ### Встановлення цільової точки {#set-target-point}
 
@@ -134,24 +149,32 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <TabItem value="android" label="Android">
 
 ![Меню навігації Android 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
+
+Найважливіше для початку навігації - це визначити пункт призначення. Пункт призначення можна знайти за допомогою функції [*Пошук*](../../search/index.md#overview) або просто на мапі. Ви також можете встановити цільову точку в [*меню Навігація*](#navigation-menu):  
+
+- **<Translate android="true" ids="search_button"/>** - Відкриває [меню пошуку](../../search/index.md).
+- **<Translate android="true" ids="shared_string_address"/>** - Відкриває [меню пошуку адреси](../../search/search-address.md).
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Відкриває діалогове вікно, де мапа центрується з маркером. Відображаються координати центру мапи, ви переміщуєте мапу під маркер і підтверджуєте вибір натисканням *Вибрати*.
+- **<Translate android="true" ids="shared_string_favorites"/>** - Дозволяє використовувати [Улюблене](../../personal/favorites.md) як пункт призначення.
+- **<Translate android="true" ids="shared_string_markers"/>** - Дозволяє вибрати один з [Маркерів на мапі](../../personal/markers.md) як пункт призначення.
+- **Поміняти місцями початкову точку та пункт призначення** &nbsp;&#8595;&#8593; - Дозволяє поміняти місцями точки *Старт* та *Фініш*.
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Меню навігації iOS 2](@site/static/img/navigation/route/navigation_by_route_menu_ios_1.png)
 
-</TabItem>
-
-</Tabs>
-
 Найважливіше для початку навігації - це визначити пункт призначення. Пункт призначення можна знайти за допомогою функції [*Пошук*](../../search/index.md#overview) або просто на мапі. Ви також можете встановити цільову точку в [*меню Навігація*](#navigation-menu):  
 
 - **<Translate android="true" ids="search_button"/>** - Відкриває [меню пошуку](../../search/index.md).
 - **<Translate android="true" ids="shared_string_address"/>** - Відкриває [меню пошуку адреси](../../search/search-address.md).
-- **<Translate android="true" ids="shared_string_select_on_map"/>** - Відкриває мапу для вибору пункту призначення дотиком до мапи.
+- **<Translate android="true" ids="shared_string_select_on_map"/>** - Дозволяє переміщати та масштабувати мапу, а потім торкнутися бажаного місця. Прапорець з'являється в обраному місці та позначає пункт призначення.
 - **<Translate android="true" ids="shared_string_favorites"/>** - Дозволяє використовувати [Улюблене](../../personal/favorites.md) як пункт призначення.
 - **<Translate android="true" ids="shared_string_markers"/>** - Дозволяє вибрати один з [Маркерів на мапі](../../personal/markers.md) як пункт призначення.
 - **Поміняти місцями початкову точку та пункт призначення** &nbsp;&#8595;&#8593; - Дозволяє поміняти місцями точки *Старт* та *Фініш*.
+</TabItem>
+
+</Tabs>
 
 
 ### Проміжні пункти призначення {#intermediate-destinations}
@@ -205,7 +228,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **<Translate android="true" ids="reverse_all_points"/>** (*Тільки для Android*) - Усі точки будуть розташовані у зворотному порядку.
 
-- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Ви можете додати проміжні пункти призначення з цього меню.
+- **<Translate android="true" ids="add_intermediate_point"/> / <Translate ios="true" ids="add_waypoint_short"/>**. Ви можете додати проміжні пункти призначення з цього меню. Процес вибору проміжного пункту призначення на мапі такий самий, як для початкових і цільових точок.
 
 - **<Translate android="true" ids="clear_all_intermediates"/>**. Усі проміжні пункти призначення будуть видалені з мапи.
 

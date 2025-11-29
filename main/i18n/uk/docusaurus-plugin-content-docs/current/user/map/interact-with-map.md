@@ -1,8 +1,9 @@
 ---
-source-hash: 21283db3b00701562a96fe4d5d41814c5e611b4278089388e11aae43e71649e9
+source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
 sidebar_position: 2
 title:  Взаємодія з мапою
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -28,12 +28,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |:------------|:-------------|
 | **Переміщення** | Торкніться та утримуйте мапу **одним** пальцем, а потім перетягніть для переміщення. |
 | **Проведення** | Проведіть по мапі **одним** пальцем. |
-| **Збільшення** | Двічі торкníться мапи **одним** пальцем. <br/> Двічі торкніться **одним** пальцем і проведіть вниз. <br/> Розведіть **два** пальці, щоб збільшити масштаб. |
+| **Збільшення** | Двічі торкніться мапи **одним** пальцем. <br/> Двічі торкніться **одним** пальцем і проведіть вниз. <br/> Розведіть **два** пальці, щоб збільшити масштаб. |
 | **Зменшення**| Двічі торкніться **двома** пальцями. <br/> Двічі торкніться **одним** пальцем і проведіть вгору. <br/> Зведіть **два** пальці, щоб зменшити масштаб. |
 | **Обертання** | Торкніться мапи **двома** пальцями, а потім обертайте їх по колу. |
 | **Нахил (3D)** | Торкніться **двома** пальцями та рухайте ними вгору або вниз. <br/> Доступно лише з [Рушієм візуалізації мапи](../personal/global-settings.md#map-rendering-engine) версії 2 (OpenGL). |
 
-Анімацію ковзання можна вимкнути в налаштуваннях за допомогою [спеціальної опції](#no-animations).
+Анімацію ковзання можна вимкнути в налаштуваннях за допомогою [спеціальної опції](#remove-animations).
 
 
 ## Моє місцезнаходження та Масштаб {#my-location-and-zoom}
@@ -57,7 +57,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *Кнопки масштабування* завжди видимі поруч із кнопкою *Моє місцезнаходження* і дозволяють керувати рівнем масштабування мапи.
 
 - Зміна рівня масштабування не впливає на синхронізацію мапи з вашим місцезнаходженням.
-- **Довге натискання** на *Кнопки масштабування* відкриває діалогове вікно *Лупа мапи*, що дозволяє налаштувати рівні деталізації мапи.
+- **Довге натискання** на *Кнопки масштабування* відкриває діалогове вікно *Лупа мапи*,allowing you to adjust map detail levels.
 - Майте на увазі, що під час навігації масштабом можна керувати автоматично за допомогою налаштування **Автомасштаб**:
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_mode_2_andr.png)  
   
@@ -86,7 +86,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
 ![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
 
@@ -103,7 +103,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
   
@@ -111,7 +111,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
 
@@ -192,13 +192,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Додаткові налаштування компаса {#extra-compass-settings}
 
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Згладжує обертання мапи за допомогою повільнішої анімації обертання, хоча це вносить невелику затримку, не більше 1 секунди.  
+- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Згладжує обертання мапи з повільнішою анімацією обертання, хоча це вводить невелику затримку, не більше 1 секунди.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
 
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Згладжує обертання мапи за допомогою повільнішої анімації обертання, хоча це вносить невелику затримку, не більше 1 секунди.  
+- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Згладжує обертання мапи з повільнішою анімацією обертання, хоча це вводить невелику затримку, не більше 1 секунди.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### Без анімації {#no-animations}
+### Видалення анімацій {#remove-animations}
 
 <InfoAndroidOnly/>  
 
@@ -211,17 +211,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
 
-Створює ефект плавного панорамування мапи на відміну від іконки *[Моя позиція](../personal/profiles/#profile-appearance)* під час руху. Ефект вносить невелику затримку порівняно з реальним положенням приблизно на 1 секунду. Повідомлялося, що ввімкнення цієї опції за деяких обставин може спричинити помітні проблеми із затримкою; вимкніть її, якщо такі проблеми виникають.
+Створює ефект плавного панорамування мапи на відміну від іконки *[Моє місцезнаходження](../personal/profiles/#profile-appearance)* під час руху. Ефект вносить невелику затримку порівняно з реальним положенням приблизно на 1 секунду. Повідомлялося, що ввімкнення цієї опції за деяких обставин може спричинити помітні проблеми із затримкою; вимкніть її, якщо такі проблеми виникають.
 
 
 ## Зовнішні пристрої введення {#external-input-devices}
 
-Кнопки зовнішніх пристроїв введення забезпечують зручний та ефективний спосіб взаємодії з мапою та інтерфейсом програми OsmAnd. Вони розташовані на зовнішніх пристроях, таких як **Bluetooth або інші типи клавіатур**, **спеціалізовані кнопки на навігаційних пристроях транспортних засобів**, або контролери [WunderLINQ](https://blackboxembedded.com/) та [Parrot](https://www.parrot.com/en).  
+Кнопки зовнішніх пристроїв введення забезпечують зручний та ефективний спосіб взаємодії з мапою та інтерфейсом програми OsmAnd.  Вони розташовані на зовнішніх пристроях, таких як **Bluetooth або інші типи клавіатур**, **спеціалізовані кнопки на навігаційних пристроях транспортних засобів**, або контролери [WunderLINQ](https://blackboxembedded.com/) та [Parrot](https://www.parrot.com/en) (*лише Android*).  
 
-Однією з основних функцій кнопок на зовнішніх пристроях введення є збільшення та зменшення масштабу мапи. Вони також дозволяють переміщатися по мапі та змінювати її орієнтацію без необхідності торкатися екрана та використовувати жести. Кнопки на зовнішніх пристроях введення підтримують багато інших функцій, таких як відкриття *Головного меню*.
+Однією з основних функцій кнопок на зовнішніх пристроях введення є збільшення та зменшення масштабу мапи. Вони також дозволяють переміщатися по мапі та змінювати її орієнтацію без необхідності торкатися екрана та використовувати жести. Кнопки на зовнішніх пристроях введення підтримують багато інших функцій, таких як відкриття *Головного меню* та активацію *Швидких дій*. Користувачі також можуть налаштовувати призначення кнопок для підтримуваних пристроїв (Клавіатура, WunderLINQ та власні зовнішні контролери).
 
 :::note
-Клавіатура залишається функціональною, навіть якщо опція *Зовнішні пристрої введення* вимкнена, і вибрано *Нічого*.
+Клавіатура залишається функціональною, навіть якщо опція *Зовнішні пристрої введення* вимкнена, і вибрано *Нічого*. Однак власні призначення клавіш працюють лише коли *Зовнішні пристрої введення* увімкнено.
 :::
 
 ### Попередньо налаштований пристрій введення {#preconfigured-input-device}
@@ -230,7 +230,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 ![External devices](@site/static/img/map/external_menu_android.png) ![External devices](@site/static/img/map/external_types_android.png)
 
@@ -238,9 +238,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-![External devices](@site/static/img/map/external_types_ios.png)
+![External devices](@site/static/img/map/external_types_2_ios.png)
 
 </TabItem>
 
@@ -248,84 +248,129 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Щоб отримати доступ до налаштувань зовнішнього пристрою введення, вам потрібно увімкнути цю функцію.
 
-- Перейдіть до головного *Меню → Налаштування →* виберіть *Профіль → Загальні налаштування → Інше → Зовнішні пристрої введення* та перемкніть на *Увімкнено*.
+- Перейдіть до головного *Меню → Налаштування →* виберіть *Профіль → Загальні налаштування → Інше → Зовнішні пристрої введення* та переключіть на *Увімкнено*.
 
-- Виберіть пристрій із тих, що підтримуються OsmAnd, натиснувши на пункт *Тип* у списку:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*лише Android*), або створіть [**власний тип**](#custom-input-device-type) (*лише Android*).
+- Виберіть пристрій із тих, що підтримуються OsmAnd, торкнувшись елемента *Тип* у списку:  
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*лише Android*), або створіть [**власний тип**](#custom-input-device-type).
 
-- Для кожного типу зовнішнього пристрою введення існує різний **набір призначень дій-клавіш**. Натисніть *<Translate android="true" ids="key_assignments"/>*, щоб побачити список дій та клавіш. Таблиця клавіш наведена нижче.
+- Для кожного типу зовнішнього пристрою введення існує інше **визначене призначення пакета дій-клавіш**. Розділ *<Translate android="true" ids="key_assignments"/>* відображає список дій та їхніх призначених клавіш. Таблиця клавіш наведена нижче. Це призначення за замовчуванням — їх можна змінювати або розширювати відповідно до уподобань користувача.
 
 - Ви можете прочитати більше про дії зовнішніх пристроїв введення на GitHub у пакеті [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82).
 
 | Клавіша | Пристрій | Дія |
 |:---------|:---------------|:---------------|
-|**C**| *Клавіатура* | Перемістити - [До мого місцезнаходження](#my-location-and-zoom) |
-|**D**| *Клавіatura* | Змінити - [Орієнтацію мапи](#map-orientation-modes) |
-|**N**| *Клавіатура* | Показати / Сховати - Вигляд навігації |
-|**S**| *Клавіатура* | Показати / Сховати - [Вигляд пошуку](../search/index.md) |
-|**P**| *Клавіатура* | Змінити - Профіль застосунку на наступний |
-|**O**| *Клавіатура* | Змінити - Профіль застосунку на попередній |
-|**&#8593;**| *Клавіатура* | Перемістити - Мапу вгору |
-|**&#8595;**| *Клавіатура* | Перемістити - Мапу вниз |
-|**&#8592;**| *Клавіатура* | Перемістити - Мапу вліво |
-|**&#8594;**| *Клавіатура* | Перемістити - Мапу вправо |
-|**&#43;** **=**| *Клавіатура* | Мапа - [Збільшити](#my-location-and-zoom) |
-|**&#8722;**| *Клавіатура* | Мапа - [Зменшити](#my-location-and-zoom) |
-|**Press back**| *Клавіатура* | Навігація – Попередній екран |
-|**&#8595;**| *Wunderlinq* | Мапа - [Зменшити](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq* | Мапа - [Збільшити](#my-location-and-zoom) |
-| **ESC** | *Wunderlinq* | Відкрити WunderLINQ Datagrid |
-| **M** <br/> (*старий Android*) | *Клавіатура* | Показати / Сховати - [Бічне меню](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick press** <br/> (*старий Android*) | *Клавіаatura* | Перемістити - [До мого місцезнаходження](#my-location-and-zoom) |
-| **Media button** <br/> (*лише Android*)| *Клавіатура* | Показати / Сховати - [AV-нотатки](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*лише Android*)| *Parrot* | Мапа - [Зменшити](#my-location-and-zoom) |
-| **&#8594;** <br/> (*лише Android*) | *Parrot* | Мапа - [Збільшити](#my-location-and-zoom) |
+|**C**| *Клавіатура*   | Переміщення - [До мого місцезнаходження](#my-location-and-zoom) |
+|**D**| *Клавіатура*   | Зміна - [Орієнтація мапи](#map-orientation-modes) |
+|**N**| *Клавіатура*   | Показати / Приховати - Вигляд навігації |
+|**S**| *Клавіатура*   | Показати / Приховати - [Вигляд пошуку](../search/index.md) |
+|**P**| *Клавіатура*   | Зміна - Профіль додатка на наступний |
+|**O**| *Клавіатура*   | Зміна - Профіль додатка на попередній |
+|**&#8593;**| *Клавіатура*   | Переміщення - Мапа вгору  |
+|**&#8595;**| *Клавіатура*   | Переміщення - Мапа вниз  |
+|**&#8592;**| *Клавіатура*   | Переміщення - Мапа ліворуч  |
+|**&#8594;**| *Клавіатура*   | Переміщення - Мапа праворуч  |
+|**&#43;** **=**| *Клавіатура*  | Мапа - [Збільшення масштабу](#my-location-and-zoom) |
+|**&#8722;**| *Клавіатура*  | Мапа - [Зменшення масштабу](#my-location-and-zoom) |
+|**Press back**| *Клавіатура*   | Навігація – Попередній екран  |
+|**&#8595;**| *Wunderlinq*  | Мапа - [Зменшення масштабу](#my-location-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Мапа - [Збільшення масштабу](#my-location-and-zoom) |
+| **ESC** | *Wunderlinq*  | Відкрити WunderLINQ Datagrid |
+| **M** | *Клавіатура*  | Показати / Приховати - [Бічне меню](../start-with/main-menu.md#main-menu-side-menu) |
+| **Joystick press** <br/> (*legacy Android*) | *Клавіатура*  | Переміщення - [До мого місцезнаходження](#my-location-and-zoom) |
+| **Media button** <br/> (*Android only*)| *Клавіатура*  | Показати / Приховати - [Аудіо-відео нотатки](../plugins/audio-video-notes.md#manage-a-single-note) |
+| **&#8592;** <br/> (*Android only*)| *Parrot*  | Мапа - [Зменшення масштабу](#my-location-and-zoom) |
+| **&#8594;** <br/> (*Android only*) | *Parrot*  | Мапа - [Збільшення масштабу](#my-location-and-zoom) |
 
 
 ### Власний тип пристрою введення {#custom-input-device-type}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-Якщо ви хочете призначити клавіші для зовнішнього пристрою введення (наприклад, клавіатури, джойстика або контролера), вам потрібно створити тип пристрою: перейдіть до налаштування [Зовнішній пристрій введення](#external-input-devices), виберіть **Тип** зі списку, натисніть  "**＋**"  і введіть назву. Кожен тип має меню з такими опціями: ***Перейменувати, Дублювати*** та ***Видалити***.
+Якщо ви хочете призначити клавіші для зовнішнього пристрою введення (такого як клавіатура, джойстик або контролер), вам потрібно створити тип пристрою: перейдіть до налаштування [Зовнішні пристрої введення](#external-input-devices), виберіть **Тип** зі списку, торкніться&nbsp;  "**＋**"  &nbsp; і введіть назву. Кожен тип має меню з такими опціями: ***Перейменувати, Дублювати*** та ***Видалити***.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Device → Add*
+
+![External devices](@site/static/img/map/external_mypilot_ios.png)  ![External devices](@site/static/img/map/external_mypilot2_ios.png)
+
+Якщо ви хочете призначити клавіші для зовнішнього пристрою введення (такого як клавіатура, джойстик або контролер), вам потрібно створити тип пристрою: перейдіть до налаштування [Зовнішні пристрої введення](#external-input-devices), виберіть **Пристрій** зі списку, торкніться&nbsp; "**Додати**" &nbsp;і введіть назву. Кожен тип має меню з такими опціями: ***Перейменувати, Дублювати*** та ***Видалити***.
+
+</TabItem>
+
+</Tabs>  
 
 ### Додавання дії та призначення клавіш {#add-action--key-asssigments}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
 
-Після створення власного типу введення ви можете призначити необхідні дії клавішам. Доступний широкий спектр [типів дій](../widgets/quick-action.md#action-types) з віджета Швидка дія.
+</TabItem>
 
-- Виберіть тип пристрою, потім натисніть пункт **Призначення клавіш**.
-- Натисніть кнопку ***Додати*** (&nbsp;"**＋**"&nbsp;) у нижньому правому куті екрана.
-- Виберіть потрібну дію, потім натисніть поле ***Додати клавішу*** і натисніть кнопку на вашому пристрої, щоб призначити її для дії.  
+<TabItem value="ios" label="iOS">
+
+![External devices](@site/static/img/map/external_custom_4_ios.png)  ![External devices](@site/static/img/map/external_custom_3_ios.png) 
+
+</TabItem>
+
+</Tabs>  
+
+Після того, як ви створили власний тип введення, ви можете призначити необхідні дії клавішам. Доступний широкий спектр [типів дій](../widgets/quick-action.md#action-types) з віджета Швидка дія.
+
+- Виберіть тип пристрою, потім торкніться елемента **Призначення клавіш**.
+- Торкніться кнопки ***Додати*** (&nbsp;"**＋**"&nbsp;).
+- Виберіть необхідну дію, потім торкніться поля ***Додати клавішу*** і торкніться кнопки на вашому пристрої, щоб призначити її дії.  
 
 :::note
 
-- Якщо кнопка, яку ви призначаєте, вже використовується для іншої дії, ви отримаєте сповіщення з можливістю перепризначити кнопку або скасувати призначення.
-- Пізніше ви можете змінити дії та призначення клавіш або додати інші для вже створених дій, просто виберіть пункт у списку Призначення клавіш.
+- Одній дії можна призначити кілька клавіш.
+- Якщо кнопка, яку ви призначаєте, вже використовується для іншої дії, ви отримаєте сповіщення з опцією переналаштувати кнопку або скасувати призначення.
+- Пізніше ви можете змінити дії та призначення клавіш або додати інші для вже створених дій, просто вибравши елемент у списку Призначення клавіш.
 
 :::
 
 ### Видалення призначення клавіші {#delete-key-assignment}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
 ![External devices](@site/static/img/map/external_custom_1_andr.png)
 
-Ви можете видалити кілька непотрібних дій одночасно за допомогою кнопки **Редагувати** (*у формі олівця*) у верхньому правому куті екрана:
+</TabItem>
 
-- ***Видалити одну дію*** для кожної дії, за допомогою кнопки  "**−**"  у полі пункту.
-- ***Видалити всі призначення клавіш*** для вибраного типу, натиснувши кнопку у верхньому правому куті екрана поруч із *Редагувати назву*.
+<TabItem value="ios" label="iOS">
+
+![External devices](@site/static/img/map/external_custom_1_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+Ви можете видалити кілька непотрібних дій за допомогою кнопки **Редагувати** (*у формі олівця* на Android) одночасно:
+
+- ***Видалити одну дію*** для кожної дії за допомогою кнопки&nbsp;  "**−**"  &nbsp; у полі елемента. Призначення клавіші також можна видалити через контекстне меню (довге натискання на елемент) шляхом натискання **Видалити**.
+- ***Видалити всі призначення клавіш*** для вибраного типу, натиснувши кнопку у верхньому правому куті екрана поруч з *Редагувати назву* на Android; натиснувши кнопку **Очистити все** на iOS.
 
 
 ## Пов'язані статті {#related-articles}
 
-- [Контекстне меню мапи](./map-context-menu.md)
-- [Налаштувати мапу](./configure-map-menu.md)
-- [Векторні мапи (Стилі мапи)](./vector-maps.md)
-- [Растрові мапи (Онлайн / Офлайн)](./raster-maps.md)
-- [Точки на мапі](./point-layers-on-map.md)
-- [Треки та маршрути](./tracks/index.md)
-- [Контекстне меню треків](./tracks/track-context-menu.md)
-- [Громадський транспорт](./public-transport.md)
+- [Map Context menu](./map-context-menu.md)
+- [Configure Map](./configure-map-menu.md)
+- [Vector maps (Map styles)](./vector-maps.md)
+- [Raster Maps (Online / Offline)](./raster-maps.md)
+- [Points on the map](./point-layers-on-map.md)
+- [Tracks and Routes](./tracks/index.md)
+- [Tracks Context menu](./tracks/track-context-menu.md)
+- [Public transport](./public-transport.md)

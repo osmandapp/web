@@ -1,8 +1,9 @@
 ---
-source-hash: c5522cf3c673aa4af3738c22a0afc948910a5af511d7468ae41a34b1784474ea
+source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
 sidebar_position: 12
 title:  Місце паркування
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Огляд {#overview}
@@ -47,14 +47,14 @@ import Translate from '@site/src/components/Translate.js';
 
 Щоб використовувати місце для паркування на мапі, вам потрібно виконати наступні налаштування:
 
-1. Увімкніть [плагін Місце паркування](../plugins/index.md#enable--disable) в *Головному меню → Плагіни*.
+1. Увімкніть [плагін Місце паркування](../plugins/index.md#enable--disable) в *Головному меню → Плагіни*.  
 2. Встановіть [місце для паркування](#set-a-spot) на мапі через контекстне меню.
-3. (За бажанням) Додайте [віджет Паркування](#parking-widget) на екран для швидшого доступу.
+3. (За бажанням) Додайте [віджет Паркування](#parking-widget) на екран для швидшого доступу.  
 
 
 ## Місце паркування на мапі {#parking-spot-on-the-map}
 
-Коли ви позначаєте місце для паркування, OsmAnd зберігає його географічні координати разом із часовою міткою. За потреби можна також додати обмеження за часом і нагадування в календарі.
+Коли ви позначаєте місце для паркування, OsmAnd зберігає його географічні координати разом із часовою міткою. За потреби можна також додати обмеження за часом і нагадування в календарі. Місця паркування зберігаються як **Улюблені точки**. Щоб переконатися, що маркер паркування видимий на мапі, [Улюблені](../personal/favorites.md) мають бути увімкнені.
 
 
 ### Встановити місце {#set-a-spot}
@@ -147,14 +147,14 @@ import Translate from '@site/src/components/Translate.js';
 
 **Через меню Навігація**:
 
-  1. Натисніть кнопку **Навігація**.
-  2. Виберіть профіль.
+  1. Натисніть кнопку **Навігація**.  
+  2. Виберіть профіль.  
   3. Натисніть **Встановити пункт призначення** та виберіть **Паркування** зі списку збережених точок.
 
 **Через віджет Паркування**:
 
-  1. Натисніть **віджет Паркування**.
-  2. Натисніть на маркер місця паркування.
+  1. Натисніть **віджет Паркування**.  
+  2. Натисніть на маркер місця паркування.  
   3. Виберіть **Навігація** та профіль, який ви хочете використовувати.
 
 
@@ -193,7 +193,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_parking"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Виберіть панель → Додати віджет → <Translate android="true" ids="map_widget_parking"/>*  
 
 ![Додавання віджета Паркування в Android](@site/static/img/plugins/parking/and_adding_parking_widget_andr.png)
 
@@ -201,7 +201,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="parking_place"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Виберіть панель → Додати віджет → <Translate ios="true" ids="parking_place"/>*  
 
 ![Додавання віджета Паркування на iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)
 
