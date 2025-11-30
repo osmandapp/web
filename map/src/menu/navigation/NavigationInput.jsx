@@ -71,6 +71,9 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const handleHistorySelect = (item) => {
         if (item?.name) {
+            if (onHistorySelect) {
+                onHistorySelect(item);
+            }
             // Update value prop
             if (onChange) {
                 onChange(item.name);
