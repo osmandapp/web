@@ -1,10 +1,15 @@
-import React, { useMemo, useEffect, useRef } from 'react';
+import React, { useMemo, useEffect, useRef, useContext } from 'react';
 import { Menu, Divider } from '@mui/material';
 import { ReactComponent as HistoryIcon } from '../../assets/icons/ic_action_history.svg';
 import { ReactComponent as ClearIcon } from '../../assets/icons/ic_action_clear_all_fields.svg';
+import { ReactComponent as LocationIcon } from '../../assets/icons/ic_action_location_marker_outlined.svg';
 import { useTranslation } from 'react-i18next';
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import styles from './routemenu.module.css';
+import AppContext from '../../context/AppContext';
+import { useGeoLocation } from '../../util/hooks/useGeoLocation';
+import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
+import { formatLatLon } from './NavigationPointsManager';
 
 export default function NavigationHistoryDropdown({
     history = [],
@@ -17,6 +22,10 @@ export default function NavigationHistoryDropdown({
     inputRef,
 }) {
     const { t } = useTranslation();
+    const ctx = useContext(AppContext);
+
+    const currentLocationRaw = useGeoLocation(ctx, false);
+    const hasCurrentLocation = currentLocationRaw && currentLocationRaw !== LOCATION_UNAVAILABLE;
 
     const filteredHistory = useMemo(() => {
         if (!history || history.length === 0) {
@@ -53,10 +62,12 @@ export default function NavigationHistoryDropdown({
 
     const isInputEmpty = !value || value.trim() === '';
 
+    const shouldShowCurrentLocation = isInputEmpty && hasCurrentLocation;
+
     // Stabilize shouldShow to prevent Menu from causing blur on every input change
     const shouldShow = useMemo(() => {
-        return isFocused && filteredHistory.length > 0 && !hasExactMatch;
-    }, [isFocused, filteredHistory.length, hasExactMatch]);
+        return isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0) && !hasExactMatch;
+    }, [isFocused, shouldShowCurrentLocation, filteredHistory.length, hasExactMatch]);
 
     const prevShouldShowRef = useRef(shouldShow);
 
@@ -131,6 +142,31 @@ export default function NavigationHistoryDropdown({
                 horizontal: 'left',
             }}
         >
+            {shouldShowCurrentLocation && (
+                <>
+                    <DefaultItem
+                        key="current-location"
+                        id={`${inputId}-current-location`}
+                        icon={<LocationIcon />}
+                        name={t('web:current_location')}
+                        onClick={(e) => {
+                            handleHistoryItemClick(
+                                {
+                                    lat: currentLocationRaw.lat,
+                                    lng: currentLocationRaw.lng,
+                                    name: formatLatLon(currentLocationRaw),
+                                },
+                                e
+                            );
+                        }}
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }}
+                    />
+                    {filteredHistory.length > 0 && <Divider />}
+                </>
+            )}
             {filteredHistory.map((item, index) => (
                 <DefaultItem
                     key={`history-item-${index}`}
