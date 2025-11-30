@@ -15,6 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
 import PropTypes from 'prop-types';
 import { fmt } from '../../../util/dateFmt';
+import { normalizeLang } from '../../../util/lang';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -120,13 +121,21 @@ export default function PhotosModal({ photos }) {
         return isNaN(d) ? dateStr : fmt.dMMMMY(d);
     };
 
+    const normalizeLangKeys = (parsed, normalize) => {
+        const out = {};
+        for (const key in parsed) {
+            out[normalize(key)] = parsed[key];
+        }
+        return out;
+    };
+
     const parseDescription = (descriptionStr) => {
         if (!descriptionStr) {
             return '';
         }
         try {
-            const parsed = JSON.parse(descriptionStr);
-            const currentLang = i18n.language?.split('-')[0] || 'en';
+            const parsed = normalizeLangKeys(JSON.parse(descriptionStr), normalizeLang);
+            const currentLang = i18n.language ?? 'en';
 
             if (parsed[currentLang]) {
                 return parsed[currentLang];
