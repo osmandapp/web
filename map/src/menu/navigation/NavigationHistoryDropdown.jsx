@@ -84,7 +84,7 @@ export default function NavigationHistoryDropdown({
             });
         }
         prevShouldShowRef.current = shouldShow;
-    }, [shouldShow, inputRef]);
+    }, [shouldShow]);
 
     const handleHistoryItemClick = (item, e) => {
         e.preventDefault();

@@ -62,12 +62,7 @@ export default function NavigationPointsManager({ routeObject }) {
 
     const location = useLocation();
 
-    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(
-        start,
-        finish,
-        intermediates,
-        routeObject
-    );
+    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(routeObject);
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 

@@ -3,7 +3,7 @@ import { LatLng } from 'leaflet';
 import { formatLatLon } from '../../../menu/navigation/NavigationPointsManager';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../../store/geoRouter/profileConstants';
 
-export default function useNavigationHistory(start, finish, intermediates, routeObject) {
+export default function useNavigationHistory(routeObject) {
     const [history, setHistory] = useState([]);
 
     const addToHistory = (latlon) => {
