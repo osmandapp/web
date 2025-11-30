@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { LatLng } from 'leaflet';
 import { formatLatLon } from '../../../menu/navigation/NavigationPointsManager';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../../store/geoRouter/profileConstants';
+import { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from '../../../menu/navigation/NavigationInputRow';
 
 export default function useNavigationHistory(routeObject) {
     const [history, setHistory] = useState([]);
@@ -63,11 +64,11 @@ export default function useNavigationHistory(routeObject) {
             const latlon = new LatLng(item.lat, item.lng);
             const displayValue = item.name || formatLatLon(latlon);
 
-            if (pointType === ROUTE_POINTS_START) {
+            if (pointType === START_POINT) {
                 routeObject.setOption(ROUTE_POINTS_START, latlon);
-            } else if (pointType === ROUTE_POINTS_FINISH) {
+            } else if (pointType === FINISH_POINT) {
                 routeObject.setOption(ROUTE_POINTS_FINISH, latlon);
-            } else if (pointType === ROUTE_POINTS_VIA && index !== null) {
+            } else if (pointType === INTERMEDIATE_POINT && index !== null) {
                 const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
                 const newViaPoints = [...viaPoints];
                 if (index >= newViaPoints.length) {
