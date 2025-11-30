@@ -37,7 +37,7 @@ All purchases made through any of these platforms support [**cross-platform acce
 Below are the prices for OsmAnd products in the US and EU. Prices in other regions are automatically converted to local currency by the payment platform.
 
 
-
+<!--
 
 :::danger Black Friday prices
 
@@ -60,9 +60,9 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
-<!--
 
 
+-->
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -71,7 +71,7 @@ Starting from the third year, the full price will apply.
 | **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
 | **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
 
--->
+
 
 ### Free and Paid Features {#free-and-paid-features}
 
