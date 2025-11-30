@@ -37,6 +37,11 @@ export default function useNavigationHistory(start, finish, intermediates, route
 
     // Track changes in start point (for drag on map, etc.)
     useEffect(() => {
+        // Don't add to history while dragging
+        if (routeObject.preview) {
+            return;
+        }
+
         const startPoint = routeObject.getOption(ROUTE_POINTS_START);
         if (startPoint) {
             addToHistory(startPoint);
