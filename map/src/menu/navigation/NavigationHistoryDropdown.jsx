@@ -94,7 +94,9 @@ export default function NavigationHistoryDropdown({
         }
     };
 
-    const handleClearHistoryClick = () => {
+    const handleClearHistoryClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         if (onClearHistory) {
             onClearHistory();
         }
@@ -189,9 +191,7 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-history-clear`}
                         icon={<ClearIcon />}
                         name={t('web:clear_history')}
-                        onClick={(e) => {
-                            handleClearHistoryClick();
-                        }}
+                        onClick={handleClearHistoryClick}
                         onMouseDown={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
