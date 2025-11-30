@@ -351,6 +351,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 onDragOver={handleDragOver(0)}
                 onDrop={handleDrop(0)}
                 onDragEnd={handleDragEnd}
+                inputRef={startInputRef}
                 history={history}
                 onHistorySelect={handleStartHistorySelect}
                 onClearHistory={clearHistory}
