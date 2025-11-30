@@ -116,6 +116,10 @@ export default function NavigationHistoryDropdown({
                     sx: {
                         pointerEvents: 'auto',
                     },
+                    onMouseDown: (e) => {
+                        // Prevent losing focus on input
+                        e.preventDefault();
+                    },
                 },
             }}
             anchorOrigin={{
@@ -151,6 +155,10 @@ export default function NavigationHistoryDropdown({
                         name={t('web:clear_history')}
                         onClick={(e) => {
                             handleClearHistoryClick();
+                        }}
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
                         }}
                     />
                 </>

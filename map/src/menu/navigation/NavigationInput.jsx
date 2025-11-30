@@ -92,30 +92,17 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const handleBlur = (e) => {
         const relatedTarget = e.relatedTarget;
-        if (relatedTarget && (relatedTarget.closest('.MuiMenu-root') || relatedTarget.closest('[role="menu"]'))) {
-            // This blur is from Menu, ignore it
+        // If focus is moving to the history dropdown, don't clear focus
+        if (relatedTarget?.closest('.MuiMenu-root')) {
             return;
         }
 
-        // Use a longer timeout to check if input regains focus (Menu might cause temporary blur)
-        setTimeout(() => {
-            // Check if input is still focused - if yes, blur was temporary (from Menu)
-            if (inputRef?.current && document.activeElement === inputRef.current) {
-                // Input is still focused, this was a temporary blur from Menu
-                return;
-            }
+        clearFocus();
+        setShowHistory(false);
 
-            clearFocus();
-            // Check if input is still focused before hiding history
-            if (inputRef?.current && document.activeElement !== inputRef.current) {
-                setShowHistory(false);
-            }
-
-            // Only call onBlur if input really lost focus
-            if (onBlur && inputRef?.current && document.activeElement !== inputRef.current) {
-                onBlur(e.target.value);
-            }
-        }, 200);
+        if (onBlur) {
+            onBlur(e.target.value);
+        }
     };
 
     const handleKeyDown = (e) => {
