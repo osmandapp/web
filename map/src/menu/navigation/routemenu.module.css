@@ -209,3 +209,13 @@
     max-width: 16px !important;
     padding: 0px !important;
 }
+.historyDropdown {
+    background-color: white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 4px !important;
+    min-width: 290px !important;
+    max-width: 290px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+}

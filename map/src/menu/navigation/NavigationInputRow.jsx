@@ -31,6 +31,9 @@ export default function NavigationInputRow({
     onDrop,
     onDragEnd,
     inputRef,
+    history = [],
+    onHistorySelect,
+    onClearHistory,
 }) {
     const [isDraggable, setIsDraggable] = useState(false);
 
@@ -66,6 +69,12 @@ export default function NavigationInputRow({
         setIsDraggable(false);
     };
 
+    const handleInputBlur = (blurValue) => {
+        if (onBlur) {
+            onBlur(blurValue);
+        }
+    };
+
     return (
         <Box
             className={styles.navigationInputRow}
@@ -84,11 +93,14 @@ export default function NavigationInputRow({
                     placeholder={placeholder}
                     icon={getIcon()}
                     onChange={onChange}
-                    onBlur={onBlur}
+                    onBlur={handleInputBlur}
                     onKeyDown={onKeyDown}
                     focused={focused}
                     showDragHandle={true}
                     onDragHandleMouseDown={handleDragHandleMouseDown}
+                    history={history}
+                    onHistorySelect={onHistorySelect}
+                    onClearHistory={onClearHistory}
                 />
             </Box>
             <Box className={styles.actionButtons}>

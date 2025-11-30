@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
+import useNavigationHistory from '../../util/hooks/navigation/useNavigationHistory';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
@@ -60,6 +61,13 @@ export default function NavigationPointsManager({ routeObject }) {
     const usedAutoFocus = useRef(false);
 
     const location = useLocation();
+
+    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(
+        start,
+        finish,
+        intermediates,
+        routeObject
+    );
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 
@@ -204,6 +212,27 @@ export default function NavigationPointsManager({ routeObject }) {
         }
     };
 
+    const handleStartHistorySelect = (item) => {
+        const displayValue = handleHistorySelect(item, START_POINT);
+        if (displayValue) {
+            handleStartChange(displayValue);
+        }
+    };
+
+    const handleFinishHistorySelect = (item) => {
+        const displayValue = handleHistorySelect(item, FINISH_POINT);
+        if (displayValue) {
+            handleFinishChange(displayValue);
+        }
+    };
+
+    const handleIntermediateHistorySelect = (index, item) => {
+        const displayValue = handleHistorySelect(item, INTERMEDIATE_POINT, index);
+        if (displayValue) {
+            handleIntermediateChange(index, displayValue);
+        }
+    };
+
     const handleSwap = () => {
         // Remove focus from all inputs before swapping
         const blurEvent = new CustomEvent('nav-blur');
@@ -322,12 +351,14 @@ export default function NavigationPointsManager({ routeObject }) {
                 onDragOver={handleDragOver(0)}
                 onDrop={handleDrop(0)}
                 onDragEnd={handleDragEnd}
-                inputRef={startInputRef}
+                history={history}
+                onHistorySelect={handleStartHistorySelect}
+                onClearHistory={clearHistory}
             />
 
             {/* Intermediate Points */}
             {intermediates.map((value, index) => (
-                <React.Fragment key={`intermediate-${index}`}>
+                <React.Fragment key={`intermediate-point-${index}`}>
                     {/* Drop indicator */}
                     {dropTargetIndex === index + 1 && draggedIndex !== index + 1 && (
                         <Box className={styles.dropIndicator} />
@@ -345,6 +376,9 @@ export default function NavigationPointsManager({ routeObject }) {
                         onDragOver={handleDragOver(index + 1)}
                         onDrop={handleDrop(index + 1)}
                         onDragEnd={handleDragEnd}
+                        history={history}
+                        onHistorySelect={(item) => handleIntermediateHistorySelect(index, item)}
+                        onClearHistory={clearHistory}
                     />
                 </React.Fragment>
             ))}
@@ -369,6 +403,9 @@ export default function NavigationPointsManager({ routeObject }) {
                 onDragOver={handleDragOver(intermediates.length + 1)}
                 onDrop={handleDrop(intermediates.length + 1)}
                 onDragEnd={handleDragEnd}
+                history={history}
+                onHistorySelect={handleFinishHistorySelect}
+                onClearHistory={clearHistory}
             />
 
             {/* Drop indicator after finish (to move item to the end) */}
