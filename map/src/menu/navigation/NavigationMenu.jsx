@@ -200,6 +200,7 @@ export default function NavigationMenu() {
             <HeaderNoUnderline
                 title={t('web:navigation_menu_title')}
                 onClose={close}
+                titleId="se-navigation-title"
                 rightContent={
                     <Box sx={{ display: 'flex', gap: 1, ml: 'auto' }}>
                         <Tooltip title={t('shared_string_download')} arrow>
@@ -327,6 +328,7 @@ export default function NavigationMenu() {
                 {ctx.navigationRoutingInProgress && (
                     <>
                         <TextLeftIconBtn
+                            id={'se-progress-route-calculation'}
                             icon={<CircularProgress size={24} thickness={4} />}
                             text={t('web:waiting_for_route_calculation')}
                             desc={t('web:waiting_for_route_calculation_description')}

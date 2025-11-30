@@ -56,8 +56,12 @@ export default async function test() {
         await clickBy(By.id('se-route-start-point'));
         await clickBy(By.id('se-route-start-point-clear'), { optional: true });
 
+        await clickBy(By.id('se-navigation-title'));
+
         await clickBy(By.id('se-route-finish-point'));
         await clickBy(By.id('se-route-finish-point-clear'), { optional: true });
+
+        await clickBy(By.id('se-navigation-title'));
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');

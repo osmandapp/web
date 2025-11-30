@@ -50,6 +50,7 @@ export default async function test() {
     await leftClickBy(FINISH_LATLNG.lat, FINISH_LATLNG.lon);
     await actionIdleWait();
 
+    await waitByRemoved(By.id('se-progress-route-calculation'));
     await waitBy(ROUTE_SUMMARY_SELECTOR);
     await expectInputExactBy(By.id('se-route-finish-point'), formatLatLon(FINISH_LATLNG));
 

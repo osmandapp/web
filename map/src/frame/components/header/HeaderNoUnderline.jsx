@@ -9,6 +9,7 @@ export default function HeaderNoUnderline({
     rightContent = null,
     toolbarProps = {},
     appBarProps = {},
+    titleId = undefined,
 }) {
     return (
         <AppBar
@@ -21,7 +22,7 @@ export default function HeaderNoUnderline({
                 <IconButton variant="contained" type="button" onClick={onClose}>
                     <CloseIcon />
                 </IconButton>
-                <Typography component="div" className={headerStyles.title} sx={{ flexGrow: 1 }}>
+                <Typography component="div" className={headerStyles.title} sx={{ flexGrow: 1 }} id={titleId}>
                     {title}
                 </Typography>
                 {rightContent}
