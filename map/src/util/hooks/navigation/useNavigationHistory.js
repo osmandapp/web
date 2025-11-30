@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { LatLng } from 'leaflet';
 import { formatLatLon } from '../../../menu/navigation/NavigationPointsManager';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../../store/geoRouter/profileConstants';
@@ -7,7 +7,7 @@ import { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from '../../../menu/nav
 export default function useNavigationHistory(routeObject) {
     const [history, setHistory] = useState([]);
 
-    const addToHistory = (latlon) => {
+    const addToHistory = useCallback((latlon) => {
         if (!latlon?.lat || !latlon.lng) {
             return;
         }
@@ -30,7 +30,7 @@ export default function useNavigationHistory(routeObject) {
                 ...filtered,
             ].slice(0, 100);
         });
-    };
+    }, []);
 
     const clearHistory = () => {
         setHistory([]);
