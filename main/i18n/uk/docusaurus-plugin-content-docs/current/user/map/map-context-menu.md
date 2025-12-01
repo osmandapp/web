@@ -1,8 +1,9 @@
 ---
-source-hash: 3e1b165cea4cde57aec3170e4074d5cdef9d0ee2790e533d93987ac6b523addc
+source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
 sidebar_position: 3
 title: Контекстне меню карти
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -115,13 +115,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Контекстне меню Android](@site/static/img/map/context_menu_android.png)
+![Контекстне меню Android](@site/static/img/map/context_menu_2_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню iOS](@site/static/img/map/context_menu_ios.png)
+![Контекстне меню iOS](@site/static/img/map/context_menu_2_ios.png)
 
 </TabItem>
 
@@ -136,10 +136,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Доступні деталі включають:
 
+- [Опис статті](#article-description)
 - [Альтернативні назви](#alternative-names)
 - [Координати](#coordinates)
 - [В межах областей](#polygon-information)
-- [Найближчі POI / Wikipedia](#nearby-pois--wikipedia)
+- [Найближчі POI](#nearby-pois)
+- [Найближчі популярні місця](#nearby-popular-places)
 - [Маршрути громадського транспорту для зупинок](#public-transport-routes)
 - [Улюблені / Шляхові точки з тієї ж групи](#favorites--track-points-from-the-group)
 - [Посилання на OpenStreetMap](#openstreetmap-link)
@@ -152,7 +154,34 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Години роботи](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Плата](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Доступність](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
-- [Ширина](https://wiki.openstreetmap.org/wiki/Key:width) / [Висота](https://wiki.openstreetmap.org/wiki/Key:height)
+- [Ширина](https://wiki.openstreetmap.org/wiki/Key:width) / [Висота](https://wiki.openstreetmap.org/wiki/Key:height) 
+
+Окрім перелічених вище полів, OsmAnd також може відображати додаткову описову інформацію, взяту з OpenStreetMap. Ці атрибути допомагають краще зрозуміти характеристики місця та можуть включати деталі, такі як висота, напрямок, рік будівництва, тип поверхні або покриття, рівень у приміщенні, варіанти оплати, доступність доставки чи на винос та багато інших. OsmAnd відображає ці атрибути з чіткими мітками та, де можливо, іконками, що полегшує читання та розпізнавання інформації. Точний набір атрибутів залежить від даних, доступних в OpenStreetMap для вибраного об'єкта.
+
+
+### Опис статті {#article-description}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Список описів](@site/static/img/map/description_list_new_android.png) ![Список описів](@site/static/img/map/description_list_dialog.png)
+
+Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md#wikipedia-article), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
+
+Якщо вибране місце має статтю Wikipedia, у цьому розділі відображається короткий попередній перегляд. Коли повна стаття недоступна в офлайн-режимі, з'являється кнопка *Читати на Wikipedia*. Торкання її відкриває діалог з опціями залежно від доступу користувача: користувачі з купленим планом можуть завантажити регіональні дані Wikipedia або відкрити статтю в браузері, тоді як безкоштовні користувачі можуть відкрити статтю онлайн або перейти на екран, що пропонує офлайн-доступ.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Список описів](@site/static/img/map/description_list_new_ios.png)
+
+Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Альтернативні назви {#alternative-names}
@@ -167,7 +196,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Альтернативні назви iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Альтернативні назви iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Альтернативні назви Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Альтернативні назви Android](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -198,7 +227,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="ios" label="iOS">
 
-![Інформація про полігон iOS](@site/static/img/map/polygon_information_ios.png)
+![Інформація про полігон Android](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -217,15 +246,56 @@ OsmAnd відображає **додаткові назви POI** у *конте
 Веб-посилання OsmAnd може бути автоматично розпізнане OsmAnd (приклад: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Посилання OsmAnd та [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) відкриваються на відповідних сайтах з позначкою на місці інтересу.  
 
 
-### Найближчі POI / Wikipedia {#nearby-pois--wikipedia}
+### Найближчі POI {#nearby-pois}
 
-![Найближчі статті Wikipedia](@site/static/img/map/map_context_menu_nearby_wikipedia.png) ![Найближчі статті Wikipedia](@site/static/img/map/map_context_menu_nearby_wikipedia_1.png)
+<Tabs groupId="operating-systems" queryString="current-os">
 
-Ці розділи відображають найближчі [статті Wikipedia](../plugins/wikipedia.md) або [Об'єкти інтересу (POI)](../map/point-layers-on-map.md#points-of-interest-pois) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI та статей Wikipedia.
+<TabItem value="android" label="Android">  
 
-Дотик до *Найближчі POI / статті Wikipedia* відкриває список точок (POI або Wikipedia). Дотик до однієї з цих точок зі списку переміщує карту до цієї точки (POI або Wikipedia) з відкриттям контекстного меню точки на карті.
+![Найближчі POI Android](@site/static/img/map/nearby_poi_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Найближчі POI iOS](@site/static/img/map/nearby_poi_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Цей розділ відображає найближчі [Об'єкти інтересу](../map/point-layers-on-map.md#points-of-interest-pois) з кнопками *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для відображення та [пошуку](../search/search-poi.md) всіх інших POI в тій самій категорії.
+
+Дотик до *Найближчі POI* відкриває список точок. Дотик до однієї з цих точок зі списку переміщує карту до цієї точки з відкриттям контекстного меню точки на карті.
+
+
+### Найближчі популярні місця {#nearby-popular-places}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Найближчі місця Android](@site/static/img/map/nearby_places_android.png)
+
+Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам'ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
+
+Дотик до *Найближчі [Популярні місця](https://osmand.net/docs/user/map/popular_places)* відкриває список найближчих локацій. Вибір будь-якого елемента центрує карту на цьому місці та відкриває його контекстне меню, де ви можете прочитати короткий опис або торкнутися ***Читати повну статтю***, щоб переглянути повний посібник.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Найближчі місця iOS](@site/static/img/map/nearby_places_ios.png)
+
+Цей розділ виділяє популярні місця, які допомагають вам відкривати цікаві напрямки та пам'ятки навколо вашого поточного місцезнаходження. Використовуйте *<Translate android="true" ids="shared_string_show_on_map"/>* та *<Translate android="true" ids="search_more"/>* для перегляду та пошуку всіх популярних місць. 
+
+Дотик до *Найближчі [Популярні місця](https://osmand.net/docs/user/plugins/wikipedia#wikipedia-article)* відкриває список найближчих локацій. Вибір будь-якого елемента центрує карту на цьому місці та відкриває його контекстне меню, де ви можете прочитати короткий опис або торкнутися ***Читати повну статтю***, щоб переглянути повний посібник.
 
 > **ПРИМІТКА**. *[<Translate android="true" ids="wiki_around"/>](../plugins/wikipedia.md) з'явиться лише якщо ви попередньо завантажили спеціальні карти зі [статтями Wikipedia для цієї області](../plugins/wikipedia.md#download-wikipedia-packages)*.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Маршрути громадського транспорту {#public-transport-routes}
@@ -256,27 +326,6 @@ OsmAnd відображає **додаткові назви POI** у *конте
 Це список усіх точок в одній групі для Улюбленого або Шляхової точки. При дотику розгортається весь список точок однієї групи, при дотику до точки зі списку карта переміщується до вибраної точки.
 
 
-
-
-### Опис статті {#article-description}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Список описів](@site/static/img/map/description_list_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Список описів](@site/static/img/map/description_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Ця частина містить частину опису зі [статті Wikipedia](../plugins/wikipedia.md), опису [Улюбленого](../personal/favorites.md) або Шляхової точки. Торкнувшись, ви можете відкрити повний опис.
 
 
 ### Посилання на OpenStreetMap {#openstreetmap-link}
@@ -683,9 +732,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 <TabItem value="android" label="Android">  
 
-![Дія Шляхова точка Android](@site/static/img/map/action_waypoint_android.png)
-
-![Вибір треку для додавання шляхової точки Android](@site/static/img/map/action_select_track_to_add_waypoint_android.png)
+![Вибір треку для додавання шляхової точки Android](@site/static/img/map/tracks_tab_android.png) ![Дія Додати шляхова точка треку Android](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
@@ -703,7 +750,7 @@ OsmAnd підтримує інтеграцію з [Mapillary](https://www.mapill
 
 - Виберіть місце на карті [довгим дотиком](../map/map-context-menu.md#select-any-point-long-tap).
 - У *контекстному меню карти*, що відкриється, виберіть *Дії → Додати шляхову точку треку*.
-- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на карті, а також [поточний запис треку](../plugins/trip-recording.md), до якого ви можете додати вибрану шляхову точку.
+- У списку відображаються [треки](../map/tracks/index.md#display-tracks-on-the-map), записані та показані на карті, а також [поточний запис треку](../plugins/trip-recording.md), до якого ви можете додати вибрану шляхову точку (*на Android* список згруповано у вкладки: <Translate android="true" ids="shared_string_on_map"/> / <Translate android="true" ids="rendering_value_all_name"/> / <Translate android="true" ids="shared_string_folders"/>).
 - Ви можете додавати шляхові точки до треку, який ще не активний для запису, у цьому випадку неактивний трек переходить зі стану *Старт* у стан *Продовжити*.
 - [Заповніть](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) необхідні дані та збережіть шляхову точку.
 - Ви можете налаштувати [Швидкі дії](../widgets/quick-action.md), додавши шляхову точку до *Додати шляхову точку треку*.

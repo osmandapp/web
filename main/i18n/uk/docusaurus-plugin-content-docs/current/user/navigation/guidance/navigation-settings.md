@@ -1,8 +1,9 @@
 ---
-source-hash: f9e38e1def2598883a41d8eb5b283c10c5578edca311237ba2238da14c92eecd
+source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
 sidebar_position: 1
 title:  Налаштування навігації
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -185,7 +185,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt-settings.png)
+![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -207,6 +207,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Якщо ви обираєте трек як пункт призначення, для коректної роботи голосових підказок необхідно використовувати опцію [Прив'язати до доріг](../setup/gpx-navigation.md#attach-to-the-roads).
 
 *Голосові підказки* дозволяють зосередитися на дорозі і не відволікатися на карту або навігаційний пристрій. Вони також підвищують безпеку водіння, скорочують час, необхідний для навігації по незнайомій місцевості, і можуть бути корисними для різних [типів маршрутів](../routing/osmand-routing.md#routing-types).
+
+У розділі **Оголошувати** ви можете вибрати, які типи сповіщень повинні відтворюватися або відображатися під час навігації:
+
+- **Поворот-за-поворотом напрямки** (лише для Android) – дозволяє увімкнути або вимкнути стандартні інструкції навігації, такі як *«Поверніть ліворуч»*, *«Поверніть праворуч»* або *«Через 200 метрів…»*. Коли опція вимкнена, оголошення поворотів і назв вулиць не надаються, тоді як сповіщення для контрольних точок, користувацьких точок і подій маршруту залишаються активними. Цей режим призначений для таких занять, як рафтинг, піші прогулянки чи велосипедні прогулянки вздовж заздалегідь записаних треків, коли потрібні лише сповіщення для вручну доданих контрольних точок.
+- **Назви вулиць (TTS)** – оголошує назви вулиць уздовж вашого маршруту.
+- **Номер виїзду** – оголошує номер виїзду під час руху автомагістралями.
+- **Попередження про дорожній рух** – надає сповіщення про важливі дорожні події, такі як затори чи обмеження.
+- **Пішохідні переходи** – попереджає вас при наближенні до пішохідних переходів.
+- **[Камери контролю швидкості](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – сповіщає про розташування камер контролю швидкості (де це дозволено законом).
+- **Тунелі** – повідомляє вас при в'їзді в тунель.
 
 
 ## Екранні сповіщення {#screen-alerts}

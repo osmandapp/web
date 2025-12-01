@@ -1,8 +1,9 @@
 ---
-source-hash: 3effb8987b67b718c3023f4bbd63b3a859e8d17e4669e7e25c80055c77e5e131
+source-hash: 27979d17f7a7af8cb302d49b9e67afee511a69450af724a2e56ffc8beef3348a
 sidebar_position: 3
 title:  Веб-покупки
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Як придбати {#how-to-buy}
@@ -30,7 +30,7 @@ import Translate from '@site/src/components/Translate.js';
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **План підписки**, що розблоковує всі [професійні функції](#free-and-paid-features), включаючи CarPlay та 3D-рельєф. | Підтримує **кросплатформний** доступ |
 
 :::note  
-**Кросплатформний доступ** означає, що ви можете придбати OsmAnd на нашому веб-сайті або в одному з магазинів (наприклад, *App Store, Google Play або osmand.net*) і використовувати його на іншій платформі, [прив'язавши покупку до облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+**Кросплатформний доступ** означає, що ви можете придбати OsmAnd на нашому веб-сайті або в одному магазині (наприклад, *App Store, Google Play або osmand.net*) і використовувати його на іншій платформі, [прив'язавши покупку до облікового запису OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 :::
 
 ## Ціни {#prices}
@@ -40,9 +40,9 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
-:::danger September Sale prices
+:::danger Black Friday prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **September 14 (23:00 CET)**.
+*Hurry up! This offer is only available until* **November 30 (23:00 CET)**.
 
 :::
 
@@ -61,8 +61,9 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
--->
 
+
+-->
 
 |    | OsmAnd Free   | **Maps+** Одноразово | **Maps+** Підписка | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |

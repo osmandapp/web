@@ -1,8 +1,9 @@
 ---
-source-hash: 603f9c004e8355faaafe53288dad7c9600c768ad0d6a044e948235c10e23cd75
+source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
 sidebar_position: 17
 title:  Погода
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Увімкнений плагін → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Панель погоди Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Панель погоди Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Увімкнений плагін → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Панель погоди в iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Панель погоди в iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -77,6 +77,41 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 У головному бічному меню є спеціальний пункт **Погода**, який забезпечує швидкий доступ до всіх інструментів погоди. *Екран прогнозу погоди* відображає інформацію про *температуру*, *атмосферний тиск*, *швидкість вітру*, *хмарність* та *опади*.  
 
 У нижній частині екрана знаходиться *панель інструментів погоди*. Ви можете використовувати кнопки днів та повзунок часу, щоб встановити точний час, на який буде відображатися прогноз погоди.
+
+### Джерело даних {#data-source}
+
+<Tabs groupId="operating-systems" queryString="current-os">  
+
+<TabItem value="android" label="Android">
+
+![Джерело даних Android](@site/static/img/plugins/weather/weather_source_android.png)  
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Джерело даних iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+
+</TabItem>  
+
+</Tabs>
+
+Ви можете обрати, яке джерело прогнозу погоди OsmAnd використовуватиме для відображення даних на екрані "Погода":<br />
+<Translate android="true" ids="shared_string_menu,shared_string_weather"/> → ⚙️ → *Виберіть Джерело даних*
+
+Підтримуються два джерела прогнозу погоди:
+
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Глобальна система прогнозування)** – джерело за замовчуванням, що управляється NOAA/NWS. Надає повні дані про погоду, включаючи шари температури, тиску, вологості, вітру та хмарності.
+
+[**ECMWF**](https://www.ecmwf.int/) **(Європейський центр середньострокових прогнозів погоди)** – альтернативне джерело прогнозу. Пропонує якісні дані про температуру, опади та тиск, але не надає інформації про вітер чи хмарність. При використанні ECMWF недоступні параметри відображаються як «–», а відповідні шари погоди з'являються вимкненими.
+
+Як Джерело даних впливає на відображення погоди:
+- Карта, графіки, шкала часу та значення погоди на екрані оновлюються негайно після перемикання джерела.
+- Показуються лише параметри, доступні для обраного постачальника.
+- Віджети погоди автоматично оновлюються для використання обраного джерела.
+- Якщо ви раніше завантажили прогноз погоди, OsmAnd використовує дані, що відповідають обраному постачальнику.
+- GFS та ECMWF використовують окремі кеші. Перемикання джерела завантажує або оновлює відповідні плитки погоди.
+
 
 ### Налаштування шарів погоди {#customize-weather-layers}
 
@@ -226,6 +261,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *Оновлювати лише через Wi-Fi* (*iOS*). Увімкніть цю опцію, якщо не хочете використовувати мобільні дані для завантажень.  
 - Кнопка **Видалити** *кошик* (*Android*) / **Видалити прогноз** (*iOS*). Дозволяє видалити всі дані прогнозу для цього регіону.
 - Кнопка **Редагувати** *олівець* (*Android*). Дозволяє перейменувати файл погоди.
+
+**Примітка:** Деякі країни, такі як США та Канада, використовують єдиний файл Офлайн-прогнозу для всієї країни. Це зменшує кількість завантажень і спрощує керування даними про погоду.
 
 :::info  
 Дані про погоду оновлюються кожні 6 годин (усі 4 оновлення від [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) та 3 від [ECMWF](https://www.ecmwf.int/)) і стають доступними в OsmAnd з невеликою затримкою, оскільки процес обчислення займає кілька годин до випуску (зазвичай близько 07:00 UTC).  

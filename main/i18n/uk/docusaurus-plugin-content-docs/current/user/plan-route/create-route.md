@@ -1,8 +1,9 @@
 ---
-source-hash: c35887f39fe22b467071b197cd38e3d121d7a79da3a78f76da7f0093e1edc604
+source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
 sidebar_position: 1
 title:  Планування маршруту
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -115,7 +115,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Якщо в існуючому треку відсутні [дані про висоту](../map/tracks/track-context-menu.md#calculate-missing-elevation), їх можна додати за допомогою наступних інструментів:
 
 - [Використовувати прилеглі дороги](#attach-track-to-roads). Цей режим використовує офлайн-карти для пошуку найближчих доріг для побудови треку, тому дані про висоту будуть отримані з прив'язаних доріг. Геометрію треку можна коригувати.  
-- [Використовувати карти рельєфу](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Режим розраховує висоту на основі даних карти рельєфу (3D). Різниця між висотами, записаними вашим пристроєм, може бути використана для корекції висоти. Геометрія треку залишається незмінною.
+- [Використовувати карти рельєфу](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Режим розраховує висоту на основі даних карти рельєфу (3D). Різниця між висотами, записаними вашим пристроєм, може бути використана для корекції висоти.  Геометрія треку залишається незмінною.
 
 
 ### Прив'язка треку до доріг {#attach-track-to-roads}
@@ -124,7 +124,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту прив'язка до дороги iOS](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Планування маршруту прив'язка до дороги Android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
@@ -142,6 +142,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Назви вулиць та інформація про смуги руху.
 - Дані про висоту.
 - [Атрибути доріг](../navigation/setup/route-details.md#road-attributes).
+- Оновлений профіль висоти на основі геометрії дороги.
+- Можливий перерахунок геометрії треку (спрощення або коригування точок до мережі доріг).
+
+Коли трек прив'язується до доріг, такі параметри можуть змінитися через перерахунок геометрії та висоти треку: *Відстань, Підйом / Спад, Середня швидкість (та графік швидкості), Максимальна швидкість, Час у русі* та *Тривалість*. Ці значення можуть відрізнятися від оригінального треку GPX, якщо перерахована висота або геометрія на основі доріг значно відхиляється від записаних даних GPS.
 
 Ви можете вибрати [порогове значення](../navigation/setup/gpx-navigation.md#attach-to-the-roads) відстані, на якій спрощені точки треку можуть знаходитися від початкових точок треку.
 
@@ -173,7 +177,11 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_points_list_andr.png)
+![Планування маршруту Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Планування маршруту Android обрані](@site/static/img/plan-route/plan_route_favorites_and.png)
+
+Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Додати*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
+
+Ви також можете додати проміжну точку безпосередньо з карти, торкнувшись POI або обраного місця, щоб відкрити його контекстне меню, а потім торкнувшись *ДОДАТИ ТОЧКУ*. У цьому режимі контекстні меню для об'єктів, які не є точками, не відображаються. При додаванні POI/обраного місця його назва зберігається як назва точки маршруту; якщо ви пізніше перемістите цю точку на карті, назва скинеться.
 
 </TabItem>
 
@@ -181,11 +189,11 @@ To generate navigation instructions:
 
 ![Планування маршруту iOS](@site/static/img/plan-route/plan_route_points_list_ios.png)
 
+Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Додати точку*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
+
 </TabItem>
 
 </Tabs>  
-
-Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Додати точку*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
 
 :::note
 Ви також можете **Скасувати**/**Повторити** кожну дію, зроблену під час планування маршруту.
@@ -364,7 +372,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_graph_5_andr.png)
+![Планування маршруту Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 

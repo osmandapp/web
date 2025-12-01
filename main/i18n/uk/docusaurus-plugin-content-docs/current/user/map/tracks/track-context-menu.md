@@ -1,8 +1,9 @@
 ---
-source-hash: d55b5a0fc81682b066b7df15d53ce4c417c7dc366dac8b7d40d13d50c6f094e7
+source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -72,9 +72,10 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Відображає загальну суму підйомів та спусків під час поїздки.
 - *<Translate android="true" ids="altitude_range"/>*. Вказує мінімальну та максимальну висоту на треку.  
 
-:::note
-Якщо ваш трек був створений в OsmAnd або будь-якому іншому додатку для відстеження (тобто його точки мають теги [`time` та `speed`](../../plugins/trip-recording#recorded-gpx-file)), інформаційна панель також міститиме інформацію про *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) або *<Translate ios="true" ids="total_time"/>* (*iOS*) (проміжок часу між початковою та кінцевою точками треку), *<Translate android="true" ids="shared_string_time_moving"/>* (сума часу під час руху).
-:::  
+У разі, якщо ваш трек був створений в OsmAnd або будь-якому іншому додатку для відстеження (тобто його точки мають теги [`time` та `speed`](../../plugins/trip-recording#recorded-gpx-file)), інформаційна панель також міститиме інформацію про *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (загальний час між початковою та кінцевою точками треку) та *<Translate android="true" ids="shared_string_time_moving"/>* (сума часу під час руху).
+
+**Примітка:** Для записаних треків Тривалість показує фактичний час поїздки на основі міток часу. Для запланованих треків Тривалість показує приблизний час, розрахований на основі довжини маршруту та середньої швидкості обраного профілю навігації, якщо весь маршрут використовує один профіль і не містить сегментів прямої лінії.
+
 
 ### Дії з треком {#track-actions}
 
@@ -129,11 +130,11 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - **<Translate android="true" ids="join_segments"/>** (*Лише для Android*) – Об'єднує сегменти треку для заповнення прогалин.
 - **<Translate android="true" ids="analyze_on_map"/>**. Відкриває інструмент [Аналіз на мапі](../tracks/index.md#analyze-track-on-map) для перевірки висоти, швидкості та відстані треку.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Лише для Android*) - Аналізує трек за [інтервалами](./track-context-menu.md#split-interval) часу або відстані.
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Лише для Android*) - Аналізує трек за [інтервалами](#analyze-by-intervals) часу або відстані.
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Експортує вибраний трек у форматі GPX.
+- **<Translate android="true" ids="shared_string_share"/>** – Експортує вибраний трек у форматі GPX через системне меню Поділитися.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Завантажує](../../plugins/osm-editing.md#upload-gps-track) вибраний трек до OpenStreetMap.
 
 <br/>
@@ -247,7 +248,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 Функція *Активність* в OsmAnd дозволяє позначати записані GPX-треки певними видами діяльності для подальшого аналізу та організації в папках.
 
-- [Теги активності для GPX-треків](../../plugins/trip-recording.md#recording-settings). Під час запису GPX-треку ви можете призначити тип активності. Це тегування активності допомагає вам спочатку класифікувати треки.
+- [Теги активності для GPX-треків](../../plugins/trip-recording.md#recording-settings). Записані треки автоматично отримують тип активності на основі обраного профілю, що допомагає класифікувати та фільтрувати їх пізніше. Ви можете вручну змінити активність, якщо потрібно.
 - [Фільтр активності](../../personal/tracks/smart-folder.md#search-filter). Ви можете фільтрувати записані GPX-треки за активністю, що дозволяє зосередитися на пошуку певних типів записів, наприклад, усіх треків для велосипеда або піших прогулянок.
 - [Керування типами активності](../../personal/tracks/manage-tracks.md#selection-mode). Ви можете змінити тип активності для вибраних папок або треків, використовуючи режим вибору на вкладці "Треки" меню "Мої місця".
 - **Список активностей**. Категорії та групи активностей визначені в ресурсах OsmAnd. Для розробників та учасників список активностей підтримується у структурованому форматі за адресою [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), де детально описані доступні групи та типи активностей.
@@ -270,13 +271,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Графіки контекстного меню треку Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
+![Графіки контекстного меню треку Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Графіки контекстного меню треку iOS](@site/static/img/personal/tracks/track_menu_graph_2_ios.png)
+![Графіки контекстного меню треку iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 На вкладці **Огляд** ви можете побачити такі параметри, як:
 
 - *<Translate android="true" ids="distance"/>*. Сума загальної пройденої відстані на треку або довжина самого треку.
-- *<Translate android="true" ids="shared_string_time_span"/>*. Проміжок часу між початковою та кінцевою точками треку.
+- *<Translate android="true" ids="map_widget_trip_recording_duration"/>*. Проміжок часу між початковою та кінцевою точками треку.
 - *<Translate android="true" ids="shared_string_start_time"/>* Точний час початку запису треку.
 - *<Translate android="true" ids="shared_string_end_time"/>*. Час закінчення запису треку.
 
@@ -296,7 +297,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
   - *Редагувати* відкриває трек в інструменті [Планування маршруту](../../plan-route/index.md).
   - *Видалити* дозволяє видалити вибраний елемент треку.
-  - *Розділити інтервал* відкриває [функцію Розділити інтервал](#split-interval) для треку.
+  - *Розділити інтервал* відкриває [функцію Розділити інтервал](#analyze-by-intervals) для треку.
 
 
 ### Швидкість {#speed}
@@ -464,7 +465,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Меню групи треку Android](@site/static/img/personal/tracks/track_menu_group_menu_andr.png)
+![Меню групи треку Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
@@ -484,8 +485,8 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - **<Translate android="true" ids="shared_string_rename"/>** - Змінити назву групи.
 - **<Translate android="true" ids="change_default_appearance"/>** - Змінити параметри відображення для групи шляхових точок.
 - **<Translate android="true" ids="add_group_to_markers"/>** або **Видалити** (*Лише для Android*) - Перемістити шляхові точки групи до списку [Маркерів на мапі](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Лише для Android*) - Перемістити шляхові точки групи до [Улюблених](../../personal/favorites.md).
-- **<Translate android="true" ids="add_to_navigation"/>** (*Лише для Android*) - Створює маршрут між шляховими точками. Перша та остання точки стають початком та кінцем маршруту, а решта перетворюються на проміжні точки.
+- **<Translate android="true" ids="add_to_favorites"/>** (*Лише для Android*) - Дозволяє скопіювати вибрану групу Шляхових точок до [Улюблених](../../personal/favorites.md). Ви можете вибрати одну з двох опцій: ***<Translate android="true" ids="copy_as_new_folder"/>*** або ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_navigation"/>**  (*Лише для Android*) - Створює маршрут між шляховими точками. Перша та остання точки стають початком та кінцем маршруту, а решта перетворюються на проміжні точки.
 - **<Translate android="true" ids="shared_string_delete"/>** - Видалити групу шляхових точок.
 
 
@@ -629,16 +630,56 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 **Теги зручностей**, які описують додаткову інформацію, таку як години роботи або номер телефону, специфічні для POI, беруть цю інформацію з даних OpenStreetMap або даних, які ви ввели при створенні POI. Ви можете редагувати такі теги та [користувацькі теги](#display-custom-gpx-tags) лише в коді файлу GPX, який ви можете відкрити будь-яким текстовим редактором на вашому пристрої.
 
 
-## Розділити інтервал {#split-interval}
+## Аналіз за інтервалами {#analyze-by-intervals}
 
 <InfoAndroidOnly />
 
-Ви можете розділити трек на інтервали, такі як відстань та час, і проаналізувати його.  
+![Розділення треку за Android](@site/static/img/personal/tracks/split_by_1.png) 
 
-Розділіть трек за відстанню або часовим інтервалом.  
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>*  
+Опція **Аналіз за інтервалами** дозволяє розділити трек на секції та переглянути детальну статистику для кожної частини маршруту. Треки можна розділити за параметрами ***відстань***, ***час*** або ***підйом/спуск***. 
 
-![Екран розділення інтервалу треку Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Екран розділення інтервалу треку за часом Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
+Щоб відкрити цю опцію:  
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → виберіть бажаний режим розділення 
+
+
+### Розділення за відстанню {#split-by-distance}
+
+![Вкладка розділення треку за відстанню](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Мапа розділення треку за відстанню](@site/static/img/personal/tracks/split_by_2_map.png)  
+
+Ця опція дозволяє розділити трек на фіксовані інтервали відстані та проаналізувати детальну статистику для кожного сегмента. Доступні інтервали відстані: ***20 м***, ***50 м***, ***100 м***, ***200 м***, ***500 м***, ***1 км***, ***2 км***, ***5 км*** та ***10 км***. Після вибору інтервалу відстані трек відображається як список сегментів. 
+
+Для кожного сегмента ви можете переглянути:
+- пройдену відстань.
+- тривалість.
+- середню, мінімальну та максимальну висоту.
+- підйом та спуск.
+- час у русі.
+- середню та максимальну швидкість.
+
+Коли ви торкаєтеся будь-якого сегмента в списку, вид мапи показує повний трек з його інтервалами та відкриває контекстне меню для треку внизу екрана.
+
+
+### Розділення за часом {#split-by-time}
+
+![Вкладка розділення треку за часом](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Мапа розділення треку за часом](@site/static/img/personal/tracks/split_by_3_map.png) 
+
+Опція **Розділення за часом** розділяє трек на інтервали однакової тривалості. Ви можете вибрати між ***1 хв***, ***2 хв***, ***2,5 хв***, ***5 хв***, ***10 хв***, ***15 хв***, ***30 хв*** та ***60 хв***. Спосіб відображення інтервалів, статистика, надана для кожного сегмента, та їхній вигляд на мапі такі ж, як у розділі [Розділення за відстанню](#split-by-distance).
+
+
+### Розділення за підйомом/спуском {#split-by-uphill-downhill}
+
+![Вкладка розділення треку за підйомом/спуском](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Мапа розділення треку за підйомом/спуском](@site/static/img/personal/tracks/split_by_4_map.png) 
+
+Ця опція розділяє трек на сегменти на основі змін висоти. Кожен інтервал класифікується як ***підйом***, ***спуск*** або ***рівнина***. Спосіб відображення інтервалів, статистика, надана для кожного сегмента, та їхній вигляд на мапі також такі ж, як у розділі [Розділення за відстанню](#split-by-distance).
+
+
+### Метрики частоти серцевих скорочень {#heart-rate-metrics}
+
+![Метрики частоти серцевих скорочень](@site/static/img/personal/tracks/heart_rate.png)
+
+Ця опція дозволяє переглянути середні, мінімальні та максимальні значення частоти серцевих скорочень (удари за хвилину, bpm) для кожного інтервалу вашого треку. Дані про частоту серцевих скорочень беруться з файлу GPX треку або записуються безпосередньо з підключеного [зовнішнього датчика частоти серцевих скорочень](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Якщо дані про частоту серцевих скорочень недоступні, цей рядок приховується в таблиці інтервалів.
+
+**Примітка:** Ви можете підключити монітор частоти серцевих скорочень BLE через *<Translate android="true" ids="shared_string_plugin,external_sensors_plugin_name"/>* для запису даних HR безпосередньо в OsmAnd.
 
 
 ## GPS-фільтр {#gps-filter}
@@ -687,7 +728,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Статистика {#statistics}
 
-![Графік GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_andr.png)
+![Графік GPS-фільтра Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 Вкладка "Статистика" відображає інформацію про **змінений** трек, тобто трек без відфільтрованих значень. Вона відображається в блоках статистики та даних графіка.
   

@@ -1,8 +1,9 @@
 ---
-source-hash: 8b4b667b38727ca309c90df02690584a8e0ee6676ef632e8d21492801ca58e69
+source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
 sidebar_position: 10
 title:  Маршрути
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Огляд {#overview}
 
-OsmAnd має багато потужних функцій для відображення різних [маршрутів](#type-of-routes) на карті. За замовчуванням ці маршрути є частиною [векторних карт](./vector-maps.md#routes) (дані OpenStreetMap), однак подібна функціональність забезпечується [треками](./tracks/index.md), які можна створити за допомогою інструменту [Планування маршруту](../plan-route/create-route.md), імпортувати як [треки GPX](#save-as-a-track), записати за допомогою плагіна [Запис поїздки](../plugins/trip-recording.md). Легенда карти маршрутів знаходиться [тут](../map-legend/osmand.md#routes).
+OsmAnd має багато потужних функцій для відображення різних [маршрутів](#type-of-routes) на карті. За замовчуванням ці маршрути є частиною [векторних карт](./vector-maps.md#routes) (дані OpenStreetMap), однак подібна функціональність забезпечується [треками](./tracks/index.md), які можна створити за допомогою [Планування маршруту](../plan-route/create-route.md), імпортувати як [треки GPX](#save-as-a-track), записати за допомогою плагіна [Запис поїздки](../plugins/trip-recording.md). Легенда карти маршрутів знаходиться [тут](../map-legend/osmand.md#routes).
 
 
 ## Типи маршрутів {#type-of-routes}
@@ -111,11 +111,22 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 2. [Шкала CAI](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 
-### Лижні маршрути {#ski-routes}
+### Лижні траси та маршрути {#ski-slopes-and-routes}
 
+- _Лижні траси та маршрути_ у стилі карти _Зима та лижі_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-Лижні маршрути є специфічною групою [маршрутів](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) в OpenStreetMap. Зазвичай ці маршрути можна використовувати зі стилем карти [Зима та лижі](../map/vector-maps.md#winter-and-ski) з усіма видимими [трасами](https://wiki.openstreetmap.org/wiki/Pistes).  
+- _Лижні траси та маршрути_ у стилі карти _OsmAnd за замовчуванням_.  
+![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
+
+Лижні траси та маршрути є специфічною групою [маршрутів](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) в OpenStreetMap. Зазвичай ці маршрути можна використовувати зі стилем карти [Зима та лижі](../map/vector-maps.md#winter-and-ski) з усіма видимими [трасами](https://wiki.openstreetmap.org/wiki/Pistes). Якщо активний інший стиль карти, відображається банер із пропозицією перейти до [Зима та лижі](../map/vector-maps.md#winter-and-ski) (*лише Android*) і показуються лише траси. Натисніть ***Перемкнути***, щоб змінити стиль карти, не виходячи з поточного екрана, або ***Пізніше***, щоб приховати банер.
+
+
+### Стежки для снігоходів {#snowmobile-trails}
+
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+
+Стежки для снігоходів позначені в [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) як `route=snowmobile`. Вони використовуються для зимового відпочинку та для з’єднання віддалених районів під час сніжного сезону. В OsmAnd стежки для снігоходів можна натиснути, див. розділ [Дії з маршрутами](#actions-with-routes).
 
 
 ### Кінні маршрути {#horse-routes}
@@ -165,7 +176,17 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+
+- Щоб відобразити потрібні маршрути на карті, увімкніть їх у *Списку маршрутів* меню [Налаштувати карту](../map/configure-map-menu.md).
+- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідувати за кольором та іконками.
+- Основні типи маршрутів також можна фільтрувати за класами та підкласами, що дозволяє відображати лише певні групи в межах кожного типу. Наприклад, ви можете показувати пішохідні маршрути за **символами OSMC** як класи, а за *міжнародними, національними, регіональними* або *місцевими мережами* як підкласи.
+- Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md). 
+- Коли кілька маршрутів пролягають вздовж однієї дороги, кожен маршрут відображається як окрема напівпрозора лінія, розміщена над іншими. 
+- При натисканні на місце, де перетинаються кілька маршрутів, відображається контекстне меню з усіма маршрутами, що проходять через цю точку. 
+- Для відображення всіх елементів нової схеми рендерингу маршрутів потрібні оновлені векторні карти. 
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -175,22 +196,23 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
+- Щоб відобразити потрібні маршрути на карті, увімкніть їх у *Списку маршрутів* меню [Налаштувати карту](../map/configure-map-menu.md).
+- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідувати за кольором та іконками.
+- Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md). 
+- Коли кілька маршрутів пролягають вздовж однієї дороги, кожен маршрут відображається як окрема напівпрозора лінія, розміщена над іншими.   
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+
 </TabItem>
 
 </Tabs>
 
-- Щоб відобразити потрібні маршрути на карті, увімкніть їх у *Списку маршрутів* меню [Налаштувати карту](../map/configure-map-menu.md).
-- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідувати за кольором та іконками.
-- Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md).  
-
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 ## Деталі про скелелазні зони та скелі {#climbing-area-and-crag-details}
 
 ![Climbing details](@site/static/img/map/climbing_andr.png)
 
 При виборі [скелелазної зони або скелі](../map/routes.md#climbing-routes), OsmAnd надає детальну інформацію про місце для скелелазіння, включаючи: назву та місцезнаходження, категорію складності (UIAA, French, YDS тощо), тип породи, висоту та довжину маршруту, якість скелелазіння та стан поверхні.
-
 
 
 ## Дії з маршрутами {#actions-with-routes}
@@ -205,13 +227,13 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios.png) ![Route info](@site/static/img/map/routes_osm_ios_1.png)
+![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
-На карті ви можете вибрати маршрути для [піших прогулянок, велосипедних поїздок, подорожей та іншого](#type-of-routes), які позначені [символами OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol), де це доречно.
+На карті ви можете вибрати маршрути для [піших прогулянок, велосипедних поїздок, лиж, MTB, кросових мотоциклів, подорожей та іншого](#type-of-routes). Там, де це доступно, пішохідні маршрути відображають свої позначки за допомогою [символів OSMC](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol); інші типи маршрутів використовують власні позначки.
 
 Коли ви торкаєтеся **символу маршруту** на карті:
 
@@ -343,13 +365,13 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 </Tabs>  
 
-Перейдіть до *<Translate android="true" ids="search_button,search_categories,poi_routes"/>*, щоб знайти бажані маршрути. Маршрути включають назву, тип активності, довжину, місцезнаходження та відстань до найближчої точки.
+Перейдіть до *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , щоб знайти бажані маршрути. Результати пошуку маршрутів відображають назву маршруту, тип активності, довжину, місцезнаходження та відстань до найближчої точки. На Android також показуються метрики висот, такі як підйом і спуск, де це доступно. Невеликі зміни висоти (менше 10 м) приховані, щоб список залишався чітким. Усі значення відповідають вибраним у додатку одиницям відстані та висоти.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_1.png)
+![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
@@ -367,7 +389,7 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2.png) ![Routes on the ground](@site/static/img/map/route_search_3.png)
+![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 18d6a31fa10f304cf5ed4712a573c452b11e151b3e929eabeedf23dd67ec220a
+source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
 sidebar_position: 6
 title:  Растрові карти (онлайн/офлайн)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -145,7 +145,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 </Tabs>
 
-1. *Увімкнути/вимкнути* карту підкладки.
+1. *Увімкнути/вимкнути* карту накладання.
 2. *Прозорість накладання* (*Android*) / *Прозорість* карти накладання (*iOS*).
 3. *Показати повзунок прозорості* (*Android*) / *Показати повзунок на карті* (*iOS*). Швидкий доступ до налаштування прозорості.
 4. *Джерело карти накладання* (*Android*) / *Доступні шари* (*iOS*). Ви можете вибрати тайлову карту для встановлення або оновлення.
@@ -296,7 +296,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | Параметр | Опис |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Вкажіть назву для нового джерела онлайн-карти. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Введіть або вставте URL-адресу для джерела онлайн-тайлів. Переконайтеся, що вона відповідає формату URL-адреси тайла. |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Введіть або вставте URL-адресу для джерела онлайн-тайлів. Переконайтеся, що вона відповідає формату URL-адреси тайла. URL може містити певні заповнювачі, які OsmAnd автоматично замінить на основі конкретного потрібного тайла. Найпоширеніші заповнювачі базуються на [конвенції назв тайлів slippy map OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` або `{0}`: Рівень масштабування</li><li>`{x}` або `{1}`: Індекс тайла X</li><li>`{y}` або `{2}`: Індекс тайла Y</li></ul> Для прикладів менш поширених заповнювачів див. [попередньо визначені джерела онлайн-растрових карт](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Цей параметр впливає на відображення карти. <br/><ul><li>Як *тип карти*, карта буде обмежена вибраними рівнями масштабування.</li><li>Як *накладення/підкладка*, карта з'являтиметься на вибраних рівнях масштабування, з апскейлінгом або даунскейлінгом, застосованим поза цими рівнями.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Встановіть тривалість (у хвилинах), після якої кешовані тайли будуть оновлюватися. Ви можете залишити це поле порожнім, якщо не хочете, щоб тайли перезавантажувалися автоматично. <br/><ul><li>1 день = 1440 хвилин</li><li>1 тиждень = 10 080 хвилин</li><li>30 днів = 43 200 хвилин</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Виберіть між *псевдо-Меркаторською проєкцією* та *еліптичною Меркаторською проєкцією*, залежно від джерела. |
