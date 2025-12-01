@@ -11,6 +11,8 @@ import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { formatLatLon } from './NavigationPointsManager';
 
+const HISTORY_LIMIT = 5;
+
 export default function NavigationHistoryDropdown({
     history = [],
     value = '',
@@ -35,8 +37,8 @@ export default function NavigationHistoryDropdown({
         const trimmedValue = (value || '').trim().toLowerCase();
 
         if (!trimmedValue) {
-            // If input is empty, show last 5 items
-            return history.slice(0, 5);
+            // If input is empty, show last HISTORY_LIMIT items
+            return history.slice(0, HISTORY_LIMIT);
         }
 
         // Filter items that match the input
@@ -45,7 +47,7 @@ export default function NavigationHistoryDropdown({
             return itemName.includes(trimmedValue);
         });
 
-        return matched.slice(0, 5);
+        return matched.slice(0, HISTORY_LIMIT);
     }, [history, value]);
 
     // Check if input value exactly matches any history item
