@@ -475,6 +475,7 @@ function getSocialMediaUrl(key, value) {
         ok: 'https://ok.ru/%s',
         telegram: 'https://t.me/%s',
         flickr: 'https://flickr.com/%s',
+        youtube: 'https://youtube.com/channel/%s',
     };
 
     if (Object.prototype.hasOwnProperty.call(urls, key)) {
