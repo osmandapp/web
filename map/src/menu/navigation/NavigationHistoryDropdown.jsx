@@ -66,10 +66,7 @@ export default function NavigationHistoryDropdown({
 
     const shouldShowCurrentLocation = isInputEmpty && hasCurrentLocation;
 
-    // Stabilize shouldShow to prevent Menu from causing blur on every input change
-    const shouldShow = useMemo(() => {
-        return isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0) && !hasExactMatch;
-    }, [isFocused, shouldShowCurrentLocation, filteredHistory.length, hasExactMatch]);
+    const shouldShow = isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0) && !hasExactMatch;
 
     const prevShouldShowRef = useRef(shouldShow);
 
