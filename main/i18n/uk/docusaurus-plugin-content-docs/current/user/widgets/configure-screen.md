@@ -1,8 +1,9 @@
 ---
-source-hash: f123896d95f1b5ffa0ac74f2f92003e9fb8399728279d510e237d35cf9dd3f4d
+source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
 sidebar_position: 1
 title:  Налаштувати екран
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
@@ -45,7 +45,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
 
 </TabItem>
 
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Налаштувати екран](@site/static/img/widgets/configure_screen_andr.png)
+![Configure screen](@site/static/img/widgets/configure_screen_andr.png)
 
 </TabItem>
 
@@ -68,13 +68,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
-![Налаштувати екран](@site/static/img/widgets/configure_screen_ios.png)
+![Configure screen](@site/static/img/widgets/configure_screen_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd дозволяє організувати інтерфейс мапи за допомогою настроюваних панелей віджетів.
+OsmAnd дозволяє організувати інтерфейс мапи за допомогою настроюваних панелей віджетів.  
 Ви можете додавати, змінювати порядок, групувати та видаляти віджети на наступних панелях:
 
 - **Верхня панель**
@@ -94,13 +94,13 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 <TabItem value="android" label="Android">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_panels_ios.png)
 
 </TabItem>
 
@@ -229,13 +229,13 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 <TabItem value="android" label="Android">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_ios.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_ios.png) 
 
 </TabItem>
 
@@ -267,7 +267,23 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
     - [Профіль висот (*Лише Android*)](../widgets/nav-widgets#elevation-widget)
     - [Маневри на маршруті](../widgets/nav-widgets.md#next-turn)
 
-- **Прості віджети**. В один рядок можна додати кілька простих віджетів. Ці віджети можуть відображати *Назву*, *Одиниці вимірювання*, *Значення* та *Іконку*.
+- **Прості віджети**. В один рядок можна додати кілька простих віджетів. Ці віджети можуть відображати *Назву*, *Одиниці вимірювання*, *Значення* та *Іконку*. Текст у простих віджетах автоматично обводиться, щоб забезпечити чітку читабельність на тлі різних фонів мапи в режимі прозорої панелі.
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Widget stroke Android](@site/static/img/widgets/simple_widgets_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Widget stroke IOS](@site/static/img/widgets/simple_widgets_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 
 ### Сторінки {#pages}
@@ -278,7 +294,7 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
 
-![Сторінка віджетів](@site/static/img/widgets/widget_page_1_andr.png) ![Сторінка віджетів](@site/static/img/widgets/widget_page_2_andr.png)
+![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)
 
 </TabItem>
 
@@ -286,7 +302,7 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
 
-![Сторінка віджетів](@site/static/img/widgets/widget_page_1_ios.png) ![Сторінка віджетів](@site/static/img/widgets/widget_page_2_ios.png)  
+![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
 
 </TabItem>
 
@@ -303,7 +319,7 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 ## Налаштування віджетів {#widget-settings}
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
 
 1. **Параметри розміру віджета** (*для всіх панелей*):  
     Ви можете налаштувати розмір **Простих віджетів** на **Верхній, Нижній, Лівій та Правій панелях**:
@@ -317,12 +333,17 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
     - Покращує чіткість і максимізує простір для важливих даних.
     - Особливо корисно при відображенні багатьох віджетів в одному **рядку**.
 
-3. **Індивідуальний розмір для різних рядків** (*для всіх панелей*):
+3. **Приховування текстових міток віджетів**:
+
+    - Автоматично приховує текстові мітки, щоб числова інформація залишалася повністю видимою в компактних макетах.
+    - Допомагає підтримувати чистий і читабельний розклад віджетів, коли простір обмежений.   
+
+4. **Індивідуальний розмір для різних рядків** (*для всіх панелей*):
 
     - Розмір віджетів можна індивідуально налаштувати, регулюючи розмір рядка та стовпця.
     - **ПРИМІТКА:** Зміна розміру одного віджета в рядку/стовпці змінить розмір усіх віджетів у цьому рядку/стовпці.
 
-4. **Щоб змінити розмір віджета та видимість іконки:**
+5. **Щоб змінити розмір віджета та видимість іконки:**
 
     - Виберіть віджет, який ви вже додали на панель.  
     - Натисніть іконку *Налаштування* праворуч від поля віджета.
@@ -338,13 +359,13 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 <TabItem value="android" label="Android">  
 
-![Контекстне меню віджета](@site/static/img/widgets/widget_context_menu_andr.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Контекстне меню віджета](@site/static/img/widgets/widget_context_menu_ios.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_ios.png)
 
 </TabItem>
 
@@ -375,34 +396,34 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 ### Копії віджетів {#copies-of-widgets}
 
-*Меню OsmAnd → Налаштувати екран → Віджети → Панель*  
+*OsmAnd menu → Configure screen → Widgets → Panel*  
 
-![Дублікат віджета](@site/static/img/widgets/widget_dublicate.png)  
+![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
 OsmAnd дозволяє додавати кілька екземплярів одного й того ж віджета на різні панелі або сторінки. Ця функція особливо корисна, коли вам потрібна послідовна інформація в різних переглядах або профілях.  
 
 ***Як дублювати віджети:***
 
-- **Додати віджет**. Перейдіть до: *Меню OsmAnd → Налаштувати екран → Віджети → Панель →* **Додати** *віджет*.
+- **Додати віджет**. Перейдіть до: *OsmAnd menu → Configure screen → Widgets → Panel →* **Add** *widget*.
 - **Дублювати за допомогою контекстного меню**. Натисніть на віджет і виберіть **Дублювати** зі списку дій.
 - **Альтернативний метод**. Виберіть той самий віджет зі списку *Доступні віджети* та натисніть *Додати*.
 
 
 ### Перемістити або видалити {#move-or-delete}
 
-*Меню OsmAnd → Налаштувати екран → Віджети → Панель*  
+*OsmAnd menu → Configure screen → Widgets → Panel*  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_remove_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_remove_ios.png) 
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_ios.png) 
 
 </TabItem>
 
@@ -414,7 +435,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ***Як перемістити віджет:***
 
-- Перейдіть до: *Меню OsmAnd → Налаштувати екран → Віджети → Панель → кнопка Редагувати*.
+- Перейдіть до: *OsmAnd Menu → Configure Screen → Widgets → Panel → Edit button*.
 - Довго натисніть **іконку праворуч** від віджета.
 - Перетягніть його на потрібну позицію у списку віджетів.
 
@@ -435,7 +456,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_buttons_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
 </TabItem>
 
@@ -443,7 +464,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
 </TabItem>
 
@@ -459,7 +480,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
 
 </TabItem>
 
@@ -467,7 +488,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
 
 </TabItem>
 
@@ -504,7 +525,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 <InfoAndroidOnly/>
 
-![Зовнішній вигляд кнопки](@site/static/img/widgets/button_appearance_settings_andr.png)
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
 
 Функція *Зовнішній вигляд кнопки* дозволяє повністю налаштувати вигляд кнопок на вашому інтерфейсі мапи. Ці параметри налаштування доступні як для *Швидкої дії (Користувацькі кнопки)*, так і для *Кнопок за замовчуванням*, забезпечуючи всебічний контроль над зовнішнім виглядом інтерфейсу мапи та дозволяючи точне налаштування дизайну кнопок.
 
@@ -524,7 +545,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_other_andr.png)  
+![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)  
 
 </TabItem>
 
@@ -532,7 +553,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Other*
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_other_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_other_ios.png)
 
 </TabItem>
 
@@ -549,19 +570,19 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 <TabItem value="android" label="Android">  
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_display_position_andr.png)  
+![Widget page](@site/static/img/widgets/conf_screen_display_position_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Сторінка віджетів](@site/static/img/widgets/conf_screen_display_position_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-> *Положення на екрані* — це назва цього налаштування у версії OsmAnd для iOS.  
+> *Location position on screen* is the name of this setting in the iOS version of OsmAnd.  
 
 Дозволяє встановити розміщення курсора *[Моє місцезнаходження](../map/interact-with-map.md#my-location-and-zoom)* на мапі OsmAnd. Доступні три варіанти:  
 
@@ -578,7 +599,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_actions"/>*  
 
-![Сторінка віджетів](@site/static/img/widgets/widget_actions_andr.png)
+![Widget page](@site/static/img/widgets/widget_actions_andr.png)
 
 </TabItem>
 
@@ -586,7 +607,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Any panel*
 
-![Сторінка віджетів](@site/static/img/widgets/widget_actions_ios.png)  
+![Widget page](@site/static/img/widgets/widget_actions_ios.png)  
 
 </TabItem>
 
@@ -594,7 +615,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 Доступ до додаткових дій на екрані Налаштувати екран:
 
-- *Android*. Розташовано на екрані Налаштувати екран внизу екрана в розділі *Дії*: *Меню → Налаштувати екран → Дії*.
+- *Android*. Розташовано на екрані Налаштувати екран внизу екрана в розділі *Дії*: *Menu → Configure screen → Actions*.
 - *Android / iOS*. Розташовано на екранах кожної Панелі в *меню з трьома крапками* у верхньому правому куті екрана.
 
 Доступні дії:
@@ -609,13 +630,13 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 <TabItem value="android" label="Android">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_switch_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_switch_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Меню Налаштувати екран](@site/static/img/widgets/configure_screen_switch_ios.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_switch_ios.png)
 
 </TabItem>
 
@@ -629,9 +650,9 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 
 ## Пов'язані статті {#related-articles}
 
-- [Кнопки на мапі](./map-buttons.md)
-- [Інформаційні віджети](./info-widgets.md)
-- [Навігаційні віджети](./nav-widgets.md)
-- [Радіусна лінійка та Лінійка](./radius-ruler.md)
-- [Віджети маркерів](./markers.md)
-- [Швидка дія](./quick-action.md)
+- [Map buttons](./map-buttons.md)
+- [Informational widgets](./info-widgets.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Radius-ruler and Ruler](./radius-ruler.md)
+- [Marker widgets](./markers.md)
+- [Quick Action](./quick-action.md)

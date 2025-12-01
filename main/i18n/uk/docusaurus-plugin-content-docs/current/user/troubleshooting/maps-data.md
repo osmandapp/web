@@ -1,8 +1,9 @@
 ---
-source-hash: 1f3d617b7cbeec60a46ac2de62365a32fbe7c0b18d256e5efb0c6e968e640f3b
+source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
 sidebar_position: 4
 title:  Карти та дані
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,80 +14,79 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+## Maps {#maps}
 
-## Карти {#maps}
+### Why does OsmAnd not offer access to Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
-### Чому OsmAnd не надає доступ до Карт Google? {#why-does-osmand-not-offer-access-to-google-maps}
+OsmAnd is designed to support OpenStreetMap (OSM) and prioritizes this path as much as possible. Additionally, there are licensing restrictions that do not allow OsmAnd to be distributed with Google Maps data.
 
-OsmAnd розроблений для підтримки OpenStreetMap (OSM) і надає пріоритет цьому напрямку настільки, наскільки це можливо. Крім того, існують ліцензійні обмеження, які не дозволяють розповсюджувати OsmAnd з даними Карт Google.
+### Maps slowly loading on Android 11, 12 (SD card) {#maps-slowly-loading-on-android-11-12-sd-card}
 
-### Повільне завантаження карт на Android 11, 12 (SD-карта) {#maps-slowly-loading-on-android-11-12-sd-card}
+Due to the new [storage access rules introduced in Android 11 and 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), users may experience slower performance when accessing maps stored on SD cards. These changes can also cause visibility and access restrictions for files in SD card folders. More discussions and technical insights can be found on the following links: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
-Через [нові правила доступу до сховища, запроваджені в Android 11 та 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), користувачі можуть відчувати повільнішу роботу під час доступу до карт, що зберігаються на SD-картах. Ці зміни також можуть спричинити обмеження видимості та доступу до файлів у папках на SD-карті. Більше обговорень та технічних деталей можна знайти за наступними посиланнями: [Обговорення на Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+At this moment, the following solutions are available:
 
-На цей момент доступні наступні рішення:
+#### 1. Migrate the OsmAnd data storage folder to “Internal app memory” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-#### 1. Перенесіть папку зі сховищем даних OsmAnd у "Внутрішню пам'ять програми" {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+- You can change the storage folder by selecting the ***Internal app memory*** option in *Menu → Settings → OsmAnd settings → Data storage folder*.
 
-- Ви можете змінити папку для збереження даних, вибравши опцію ***Внутрішня пам'ять програми*** у *Меню → Налаштування → Налаштування OsmAnd → Папка для збереження даних*.
+- However, be aware that internal memory is often limited. As a workaround, you can move important files to internal memory while keeping rarely used maps on the SD card. Use a file manager to manually transfer these files when necessary.
 
-- Однак, майте на увазі, що внутрішня пам'ять часто обмежена. Як обхідний шлях, ви можете перемістити важливі файли у внутрішню пам'ять, а рідко використовувані карти залишити на SD-карті. Використовуйте файловий менеджер для ручного перенесення цих файлів за потреби.
+The development team is actively looking for more efficient solutions to improve SD card performance under the new Android storage policies.
 
-Команда розробників активно шукає більш ефективні рішення для покращення продуктивності SD-карти відповідно до нових політик зберігання даних Android.
+#### 2. Use the SD card's “Download” Folder {#2-use-the-sd-cards-download-folder}
 
-#### 2. Використовуйте папку "Download" на SD-карті {#2-use-the-sd-cards-download-folder}
-
-Ви можете спробувати вирішити проблему повільного завантаження карт, вказавши папку **Download** на SD-карті для зберігання даних OsmAnd у *Меню → Налаштування → Налаштування OsmAnd → Папка для збереження даних → Вказана вручну*. Можливі наступні шляхи:
+You can try resolving the slow map loading issue by specifying the SD card’s **Download** folder for OsmAnd storage under *Menu → Settings → OsmAnd settings → Data storage folder → Manually specified*. The following paths are possible:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
-   Цей шлях може викликати помилки при доступі до кількох файлів. Наприклад, ви зможете завантажити карту світу, але інші регіони можуть не з'явитися.
+   This path might cause errors when accessing multiple files. For example, you may be able to download the World Overview map, but other regions might not appear.
 
 - ***/storage/XXXX-XXXX/Download***  
-   Цей шлях повинен працювати стабільно для завантаження карт та інших даних. Однак, зауважте, що OsmAnd не розпізнає файли, записані в цю папку іншими програмами (наприклад, SasPlanet). Для отримання додаткової інформації дивіться [у цьому посібнику](../../technical/map-creation/create-offline-maps-yourself.md).
+   This path should work consistently for downloading maps and other data. However, note that OsmAnd will not recognize files written to this folder by other apps or programs (e.g., SasPlanet). For more details, see [this guide](../../technical/map-creation/create-offline-maps-yourself.md).
 
-"XXXX-XXXX" представляє унікальний ідентифікаційний номер вашої SD-карти, який іноді можна знайти у шляху до папки в опціях *Зовнішнє сховище 2* або знайти іншими методами. Більше досліджень та деталей щодо цього рішення доступні [тут](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
+The "XXXX-XXXX" represents your SD card’s unique identification number, which can sometimes be found in the folder path under *External storage 2* options or located using other methods. More research and details on this solution are available [here](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
-#### 3. Опція сховища "Медіа" {#3-media-storage-option}
+#### 3. "Media" storage option {#3-media-storage-option}
 
-Якщо попередні рішення не працюють або здаються обмеженими, ви можете спробувати використати опцію сховища "Медіа" для вирішення проблем з повільним завантаженням карт або доступом до сховища. Цей метод дозволяє вибрати папку, доступну для OsmAnd та інших програм, що особливо корисно для зовнішніх або знімних сховищ.
+If previous solutions don’t work or seem limited, you can try using the "Media" storage option to resolve slow map loading or storage access issues. This method allows selecting a folder that is accessible for OsmAnd and other apps, particularly useful for external or removable storage.
 
-### Вибір "Загальнодоступної" папки для збереження даних OsmAnd за допомогою сховища "Медіа" {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
+### Picking a "Generally Accessible" OsmAnd data storage folder using the "Media" Storage {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
 
-Android став суворішим щодо дозволів на зберігання, часто обмежуючи доступ до папок, специфічних для програм, особливо при нових інсталяціях або оновленнях системи. Стандартне місце зберігання даних OsmAnd може бути обмеженим, що робить його невидимим для інших програм або навіть файлових менеджерів. Багато користувачів хочуть зберігати карти та дані у доступному зовнішньому сховищі для резервного копіювання, синхронізації або ручного керування файлами.
+Android has become stricter with storage permissions, often limiting access to app-specific folders, especially with new installations or system upgrades. OsmAnd’s default data storage may be restricted, making it invisible to other apps or even file managers. Many users want to store maps and data in accessible external storage for backup, syncing, or manual file management.
 
-Однак OsmAnd не має дозволу на *Доступ до всіх файлів* (через обмеження Google), що обмежує вибір папок. Одним з обхідних шляхів є використання папки сховища "Медіа", якій Android зазвичай надає ширший доступ на читання/запис. Для цього:
+However, OsmAnd doesn’t have the *All files access* permission (due to Google’s restrictions), limiting the choice of folders. One workaround is using the "Media" storage folder, which Android typically grants broader read/write access. To do this:
 
-- Перейдіть до *Налаштування OsmAnd → Налаштування OsmAnd → Папка для збереження даних* та перегляньте доступні області зберігання. Використовуйте індикатор вільного місця, щоб визначити цільове сховище, часто позначене як *Зовнішнє сховище 2*.
-- Занотуйте поточний шлях до папки, який може виглядати як */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Переключіться на опцію *Вказана вручну* та змініть шлях на папку, доступну для медіа. На багатьох системах працює зміна */Android/data/* на */media/* (наприклад, ***/storage/xxxx-xxxx/media***). Деякі системи можуть вимагати інших змін шляху.
+- Go to *OsmAnd’s Settings → OsmAnd settings → Data storage folder* and review the available storage areas. Use the free space indicator to identify the target storage, often labeled *External storage 2*.
+- Note the current folder path, which might look like */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
+- Switch to the *Manually specified* option, and modify the path to a media-accessible folder. On many systems, changing */Android/data/* to */media/* (e.g., ***/storage/xxxx-xxxx/media***) works. Some systems may require different path modifications.
 
-Правильний шлях не викличе в OsmAnd жодних помилок дозволу на запис. Перед внесенням цих змін переконайтеся, що OsmAnd має відповідні дозволи на зберігання, включаючи дозвіл на зберігання "Медіа", у налаштуваннях **Програми** Android. У новіших версіях Android ці дозволи можуть знаходитися в розширених або прихованих меню.
+A correct path will not prompt OsmAnd with any write permission errors. Before making these changes, ensure that OsmAnd has the appropriate storage permissions, including "Media" storage permission, under Android’s **Apps** settings. In newer Android versions, these permissions may be located in advanced or hidden menus.
 
-### Видалення даних карти після оновлення програми (якщо вибрано "Multiuser Storage 1") {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
+### Deleting map data after the app update (if “Multiuser Storage 1” is selected) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-У версії OsmAnd для Android вибір *Multiuser Storage 1* як місця зберігання може призвести до видалення всіх [локальних карт](../personal/maps-resources.md#local) при автоматичному оновленні програми, наприклад, з версії 4.1.9 до 4.1.10, 4.1.11 або пізніших (**Android 11, 12**). Ця проблема задокументована на [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+In OsmAnd’s Android version, selecting *Multiuser Storage 1* as the storage location can lead to the deletion of all [local maps](../personal/maps-resources.md#local-menu) whenever the app is automatically updated, such as from version 4.1.9 to 4.1.10, 4.1.11, or later (**Android 11, 12**). This issue is documented on [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
-Щоб уникнути втрати даних карти під час оновлень, розгляньте ці рішення:
+To avoid losing your map data during updates, consider these solutions:
 
-1. *Резервне копіювання файлів*. Перед оновленням OsmAnd зробіть [резервну копію](../personal/import-export.md) карт, що зберігаються в *..Android/obb/net.osmand*. Після оновлення відновіть файли перед запуском оновленої програми OsmAnd.
+1. *Backup Your Files*. Before updating OsmAnd, make a [backup](../personal/import-export.md) of the maps stored in *..Android/obb/net.osmand*. After updating, restore the files before launching the updated OsmAnd app.
 
-2. *Зміна шляху зберігання*. Перемістіть папку OsmAnd у місце, доступне для запису всіма програмами (наприклад, через Wi-Fi FTP-сервер, X-plore або за допомогою USB-кабелю до ПК). Змініть шлях до папки з:
+2. *Change the Storage Path*. Move the OsmAnd folder to a location writable by all apps (e.g., Wi-Fi FTP server, X-plore, or via a USB cable to a PC). Change the folder path from:
    - /storage/emulated/0/Android/**obb**/net.osmand
-   на
+   to
    - /storage/emulated/0/Android/**media**/net.osmand.
 
 
-### Карти не відображаються на пристроях Google Pixel {#no-maps-rendering-for-google-pixel-devices}
+### No maps rendering for Google Pixel devices {#no-maps-rendering-for-google-pixel-devices}
 
-У версіях OsmAnd 4.2 для Android [відображення карти може не працювати](https://github.com/osmandapp/OsmAnd/issues/15045) на пристроях Google Pixel, залишаючи користувачам порожній білий екран замість карти.
+For the OsmAnd 4.2 Android versions, [map rendering may fail](https://github.com/osmandapp/OsmAnd/issues/15045) on Google Pixel devices, leaving users with a blank white screen instead of a map.
 
-Щоб вирішити цю проблему, переключіться на візуалізацію OpenGL:
+To resolve this issue, switch to OpenGL rendering:
 
-- Перейдіть до *Меню OsmAnd → Налаштування → Налаштування OsmAnd → Механізм візуалізації карти → Версія 2 (OpenGL)*.
-- Перезапустіть OsmAnd, щоб застосувати зміни.
+- Navigate to *OsmAnd menu → Settings → OsmAnd settings → Map rendering engine → Version 2 (OpenGL)*.
+- Restart OsmAnd to apply the changes.
 
 
-### Вирішення проблеми повільного відображення карти в OsmAnd {#resolving-slow-map-rendering-in-osmand}
+### Resolving slow map rendering in OsmAnd {#resolving-slow-map-rendering-in-osmand}
 
 <!--
 Other header variants:
@@ -95,75 +95,75 @@ Other header variants:
 - Improving map redrawing speed in OsmAnd
 -->
 
-Щоб вирішити проблему повільного відображення карти, особливо при використанні офлайн-векторних карт, слід виконати наступні кроки:
+To resolve the issue of slow map rendering, especially when using offline vector maps, the following steps should be taken:
 
-1. **Вимкніть непотрібні функції карти.** Вимкніть 3D-рельєф, лінії контуру, тіні пагорбів та схили, які можуть значно збільшити обчислювальну потужність, необхідну для відображення карт. Це можна зробити в *Меню → Налаштувати карту*.
+1. **Disable unnecessary map features.** Turn off 3D relief, contour lines, hillshades, and slopes, which can significantly increase the processing power needed to render maps. You can do this in *Menu → Configure map*.
 
-2. **Спростіть деталі карти.** Приховайте менш важливі елементи, такі як кордони, POI, нотатки OSM, погодні шари, додаткові деталі (*Меню → Налаштувати карту → Відображення карти*), щоб оптимізувати відображення карти та покращити швидкість.
+2. **Simplify map details.** Hide less critical elements like boundaries, POIs, OSM notes, weather layers, additional details (*Menu → Configure map → Map rendering*) to streamline map display and improve speed.
 
-3. **Обмежте кількість відображуваних POI.** Відображайте лише основні POI або обмежте категорії, що відображаються під час навігації, що може допомогти прискорити відображення карти. Доступ до цих налаштувань можна отримати в *Меню → Навігація → Налаштування*.
+3. **Limit the number of displayed POIs.** Display only the main POIs or limit categories displayed during navigation, which can help speed up map rendering. Access these settings in *Menu → Navigation → Settings*.
 
-4. **Налаштуйте збільшення карти.** Налаштування збільшення карти може бути ключовим фактором уповільнення роботи карти. Встановіть збільшення на 100%, довго натискаючи кнопку **"+"** або **"-"** на екрані карти, щоб оптимізувати відображення.
+4. **Adjust map magnifier.** The map magnifier setting could be a key factor in slowing down the map. Set the magnifier to 100% by long-pressing the **"+"** or **"-"** button on the map screen to optimize the display.
 
-5. **Вимкніть автоматичне масштабування.** Автоматичне масштабування може призводити до частого перемальовування карти під час навігації, що спричиняє затримки. Вимкніть автоматичне масштабування в *Меню → Налаштування → Профіль → Налаштування навігації → [Карта під час навігації](../navigation/guidance/map-during-navigation.md)*.
+5. **Disable auto-zoom.** Auto-zoom can result in frequent redrawing of the map during navigation, causing delays. Disable auto-zoom in *Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/guidance/map-during-navigation.md)*.
 
-6. **Використовуйте лише офлайн-карти.** Онлайн-карти, особливо якщо вони не завантажені заздалегідь, можуть уповільнювати завантаження карти. Переключіться на використання лише офлайн-карт для більш плавної роботи.
+6. **Use offline maps only.** Online maps, especially when not downloaded in advance, can slow down map loading. Switch to using only offline maps for smoother performance.
 
-Ці зміни повинні зменшити час, необхідний для відображення карт, особливо під час навігації. Для отримання більш детальних опцій конфігурації зверніться до [посібнику з налаштувань карти](https://osmand.net/docs/user/map/interact-with-map.md#settings).
-
-
-## Лінії контуру {#contour-lines}
-
-### Чи можна відображати лінії контуру у футах замість метрів? {#is-there-a-way-to-display-contour-lines-in-feet-instead-of-meters}
-
-Так, лінії контуру можна відображати у футах замість метрів. Перед завантаженням даних ліній контуру виберіть між футами та метрами: [прочитайте більше про це тут](../../user/plugins/topography.md#contour-lines-meters-or-feet).
-
-### Лінії контуру, дані про висоту або 3D-рельєф не відображаються {#contour-lines-elevation-data-or-3d-relief-are-not-displayed}
-
-- Перевірте, чи були завантажені дані для правильного регіону. Перейдіть до ***Меню → Карти та ресурси → Завантаження → Ваш регіон***. [Як завантажити карти](../start-with/first-steps.md#how-to-download-maps).
-- Переконайтеся, що [плагін](../plugins/topography.md#required-setup-parameters) увімкнено та він видимий у ***Меню → Плагіни → Топографія***.
-- Переконайтеся, що елементи в розділі Топографія увімкнені в ***Меню → Налаштувати карту → Топографія → Лінії контуру / Рельєф / 3D-рельєф***.
-- Перевірте свої покупки: [Android](../purchases/android.md#free-and-paid-features) / [iOS](../purchases/ios.md#free-and-paid-features).
-- Оновіть програму до останньої версії.
-- Видаліть та повторно завантажте необхідні карти, щоб переконатися, що немає пошкоджених файлів.
-- Перезапустіть OsmAnd, щоб оновити налаштування та дані.
+These changes should reduce the time it takes to render maps, especially during navigation. For more detailed configuration options, refer to the [Map Settings Guide](https://osmand.net/docs/user/map/interact-with-map.md#settings).
 
 
-## Пошук {#search}
+## Contour Lines {#contour-lines}
 
-### Структурований пошук адреси (місто → вулиця → будинок) не знаходить будинок {#structured-city--street--house-address-search-doesnt-find-the-house}
+### Is there a way to display contour lines in feet instead of meters? {#is-there-a-way-to-display-contour-lines-in-feet-instead-of-meters}
 
-Якщо ви намагаєтеся знайти місцезнаходження за структурою *Місто → Вулиця → Номер будинку* і не отримуєте результатів, розгляньте наступні поради та можливі причини:
+Yes, contour lines can be displayed in feet instead of meters. Before downloading the Contour line data, choose between Feet or Meters: [read more about it here](../../user/plugins/topography.md#contour-lines-meters-or-feet).
 
-> **Порада**: Спробуйте повнотекстовий пошук без вказівки міста, оскільки адреса може бути вказана під іншим містом.
+### Contour Lines, Elevation data or 3D Relief are not displayed {#contour-lines-elevation-data-or-3d-relief-are-not-displayed}
 
-**Можливі проблеми:**
-
-- **Будинок відсутній**. Будинок може бути не вказаний на OpenStreetMap, або він може бути присутнім, але без присвоєних номерів. Ви можете перевірити це на прикладі [тут](https://www.openstreetmap.org/#map=19/33.91937/-118.24357).
-
-- **Неправильна назва вулиці**. Назва вулиці, пов'язана з будинком, може бути неправильною в OpenStreetMap. Перевірте тег `addr:street`, щоб переконатися, що назва вулиці точно відповідає тій, що вказана в інформації про тегування вулиці.
-
-- **Проблема з Nominatim**. Будинок може бути присутнім в OpenStreetMap, але не знайдений через Nominatim (пошукова система, що використовується OpenStreetMap). Ви можете дізнатися більше про те, як виправити проблеми, пов'язані з адресами, [тут](https://wiki.openstreetmap.org/wiki/Addresses).
-
-- **Можлива проблема в OsmAnd**. Якщо будинок присутній в Nominatim, але все ще не знайдений в OsmAnd, проблема може бути специфічною для OsmAnd. Ви можете допомогти у вирішенні цієї проблеми, провівши подальше дослідження. Більше деталей можна знайти в цій [технічній статті](../../technical/algorithms/trace-address-search-issues.md).
+- Verify if the correct region's data has been downloaded. Go to ***Menu → Maps & Resources → Downloads → Your Region***. [How to download maps](../start-with/first-steps.md#how-to-download-maps).
+- Check that the [plugin](../plugins/topography.md#required-setup-parameters) is enabled and visible in ***Menu → Plugins → Topography***.
+- Check that the items in the Topography section are enabled in ***Menu → Configure Map → Topography → Contour lines / Terrain / 3D Relief***.
+- Check your purchases: [Android](../purchases/android.md#free-and-paid-features) / [iOS](../purchases/ios.md#free-and-paid-features).
+- Update the app to the latest version.
+- Delete and redownload the required maps to ensure no corrupted files.
+- Restart OsmAnd to refresh settings and data.
 
 
-## Треки та точки {#tracks-and-points}
+## Search {#search}
 
-### Як позначати різні місця на карті {#how-to-mark-different-places-on-the-map}
+### Structured (city *→* street *→* house) address search doesn't find the house {#structured-city--street--house-address-search-doesnt-find-the-house}
 
-Ви можете залишати нотатки та позначати місця на карті в різних формах, кожна з яких служить різним цілям:
+If you're trying to search for a location using the structure *City → Street → House Number* and no results are returned, consider the following tips and potential causes:
 
-- *[Обране](../personal/favorites.md)*. Це постійні точки на карті, до яких можна додавати описи. Щоб створити Обране, зробіть *довгий дотик → додати*. Обране чудово підходить для позначення місць, які ви часто відвідуєте або хочете зберегти для майбутнього.
+> **Tip**: Try a full-text search without specifying the city, as the address may be listed under a different city.
 
-- *[Маркери](../personal/markers.md)*. Маркери — це тимчасові точки, які часто використовуються для навігації або планування. Вони можуть показувати відстань від вашого поточного місцезнаходження або іншої точки, і їх можна швидко видалити, коли вони більше не потрібні. Щоб додати маркер, зробіть *довгий дотик → Маркер*.
+**Potential Issues:**
 
-- *[Шляхові точки](../map/tracks/index.md#types-of-tracks)*. Шляхові точки розміщуються вздовж створених вами маршрутів, допомагаючи позначати конкретні зупинки або місця на вашому шляху. Ви також можете додавати описи до цих точок. Щоб додати шляхову точку, зробіть *довгий дотик на карті → Маршрут → додати як проміжну точку*.
+- **House Missing**. The house might not be listed on OpenStreetMap, or it could be present but without assigned numbers. You can verify this with an example [here](https://www.openstreetmap.org/#map=19/33.91937/-118.24357).
 
-- *[Аудіо/відео нотатки](../plugins/audio-video-notes.md)*. Ці нотатки дозволяють прикріплювати аудіо, відео або фотофайли до конкретних місць на карті. Щоб увімкнути, активуйте плагін Аудіо/відео нотатки в *Меню OsmAnd → Плагіни*. Щоб додати нотатку, зробіть *довгий дотик → Дії → вибрати потрібний файл для прикріплення*.
+- **Incorrect Street Name**. The street name associated with the house might be incorrect in OpenStreetMap. Check the `addr:street` tag to ensure the street name exactly matches the one in the street's tagging information.
 
-- *[Нотатки OSM](../plugins/osm-editing.md#create--modify-osm-note)*. Це звіти, які ви можете створювати, щоб виділити помилки або відсутню інформацію на OpenStreetMap. Увімкніть плагін редагування OSM в *Меню OsmAnd → Плагіни*. Щоб додати нотатку OSM, зробіть *довгий дотик → Дії → Додати нотатку OSM*.
+- **Issue with Nominatim**. The house may be present in OpenStreetMap but not found via Nominatim (the search engine used by OpenStreetMap). You can learn more about how to fix address-related issues [here](https://wiki.openstreetmap.org/wiki/Addresses).
 
-- *[POI (Цікаві місця)](../map/point-layers-on-map.md#points-of-interest-pois)*. Це попередньо визначені точки з джерела даних OpenStreetMap, такі як ресторани, парки або пам'ятки. Ви можете переглядати POI, увімкнувши шар POI в меню *Налаштувати карту* або вибравши категорію.
+- **Possible Issue in OsmAnd**. If the house is present in Nominatim but still not found in OsmAnd, the problem might be specific to OsmAnd. You can contribute to solving this by investigating further. More details can be found in this [technical article](../../technical/algorithms/trace-address-search-issues.md).
 
-- *[Пошук](../search/index.md)*. Ви також можете використовувати функцію пошуку для знаходження та позначення місць на карті.
+
+## Tracks and Points {#tracks-and-points}
+
+### How to mark different places on the map {#how-to-mark-different-places-on-the-map}
+
+You can leave notes and mark locations on the map in various forms, each serving different purposes:
+
+- *[Favorites](../personal/favorites.md)*. These are permanent points on the map where you can add descriptions. To create a Favorite, make a *long tap → tap Add*. Favorites are great for marking places you visit frequently or want to save for future reference.
+
+- *[Markers](../personal/markers.md)*. Markers are temporary points, often used for navigation or planning. They can show the distance from your current location or another point, and can be removed quickly when no longer needed. To add a Marker, make a *long tap → tap Marker*.
+
+- *[Waypoints](../map/tracks/index.md#types-of-tracks)*. Waypoints are placed along routes you create, helping you mark specific stops or locations along your journey. You can add descriptions to these points as well. To add a waypoint, make a *long tap on the map → Directions → add as intermediate waypoint*.
+
+- *[Audio/Video Notes](../plugins/audio-video-notes.md)*. These notes allow you to attach audio, video, or photo files to specific locations on the map. To enable, activate the Audio/Video Notes plugin in *OsmAnd menu → Plugins*. To add one, make a *long tap → Actions → choose the required file to attach*.
+
+- *[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note)*. These are reports you can create to highlight errors or missing information on OpenStreetMap. Enable the OSM editing plugin in the *OsmAnd menu → Plugins*. To add an OSM Note, make a *long tap → Actions → Add OSM note*.
+
+- *[POIs (Points of Interest)](../map/point-layers-on-map.md#points-of-interest-pois)*. These are predefined points from OpenStreetMap's data source, such as restaurants, parks, or landmarks. You can view POIs by enabling the POI overlay in the *Configure Map* menu or by selecting a category.
+
+- *[Search](../search/index.md)*. You can also use the search function to find and mark places on the map.

@@ -1,8 +1,9 @@
 ---
-source-hash: 4924a1de13b954b832f4629a3e8dfc661ee5ce9339fd94fad9ab53e8ec18a4cc
+source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
 sidebar_position: 9
 title:  Редагування OpenStreetMap
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Огляд {#overview}
@@ -47,7 +47,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,osm_editing_plugin_name"/>*
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,osm_editing_plugin_name"/>*
 
-![Налаштування плагіна редагування OpenStreetMap Android](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
+![Налаштування плагіна редагування OpenStreetMap iOS](@site/static/img/plugins/osm-editing/osm_plugin_settings_ios-00.png)
 
 </TabItem>
 
@@ -119,7 +119,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">  
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Шар редагувань OSM Android](@site/static/img/plugins/osm-editing/osm_editing_layer_andr.png) ![Шар редагувань OSM Android 2](@site/static/img/plugins/osm-editing/osm_editing_layer_andr_2.png)
 
@@ -127,7 +127,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,osm_edits_offline_layer"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_open_street_map"/>*
 
 ![Шар редагувань OSM iOS](@site/static/img/plugins/osm-editing/osm_editing_layer_ios.png)
 
@@ -135,17 +135,26 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Ви можете увімкнути або вимкнути як окремий шар відображення модифікацій OSM, таких як *Нотатки OSM* (онлайн), *Редагування OSM*, *Теги Fixme*, *Теги Note*, *Іконки при низьких масштабах*, у розділі [Налаштувати карту](../map/configure-map-menu.md) *Головного меню*.  
+Ви можете увімкнути або вимкнути як окремий шар відображення модифікацій OSM у розділі [Налаштувати карту](../map/configure-map-menu.md) *Головного меню*.  Модифікації OSM включають наступне:  
+- **Нотатки OSM (онлайн)**. Відображає публічні нотатки OpenStreetMap, створені користувачами для виділення проблем мапінгу або запиту оновлень. Нотатки показуються як інтерактивні маркери, які можна переглянути, відкрити та вирішити маперам.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_note.png)  
+- **Редагування OSM**. Показує ваші локальні редагування OSM, збережені на пристрої перед їх завантаженням на сервер OpenStreetMap. Цей шар допомагає переглянути геометрію та атрибути об'єктів, які ви змінили або додали.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_osm_edits.png)  
+- **Теги Fixme**. Виділяє об'єкти, позначені тегом fixme=* в OSM. Ці елементи містять коментарі маперів, що вказують на неповну, невизначену інформацію або потребу в перевірці на місцевості.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_fixme_tags.png)  
+- **Теги Note**. Відображає об'єкти, що містять теги note=* — коментарі маперів, вбудовані безпосередньо в дані OSM. Ці теги зазвичай описують тимчасові умови або додатковий контекст для майбутнього редагування.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_note_tags.png)  
+- **Іконки при низьких масштабах**. Увімкнює спрощені іконкоподібні представлення об'єктів OSM за допомогою коротких абревіатур, отриманих з їх основних ключів тегів. Їх значення описані [тут](https://osmand.net/docs/user/map-legend/osmand#icons-for-low-zooms-option-simplified-icons-). Ця функція робить більше об'єктів видимими при низьких масштабах без перевантаження карти або накладання іконок.  
+![Шар редагувань OSM](@site/static/img/plugins/osm-editing/osm_editing_icons_zoom.png)  
 
 
 ## Створення / Зміна POI {#create--modify-poi}
 
 Плагін редагування OpenStreetMap дозволяє створювати на карті нові об'єкти, що називаються [цікавими місцями або POI](../map/point-layers-on-map.md#points-of-interest-pois). Ви можете нанести на карту новий магазин, улюблену пам'ятку, лавку або укриття, щоб люди могли їх знайти.  
 
-1. Торкніться карти, щоб розмістити новий POI, або торкніться ще не завантаженого POI.
-2. Торкніться [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Виберіть [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) та додайте його назву та іншу інформацію, таку як години роботи, веб-сайт тощо. Коли ви вибираєте ще не завантажений POI, *Створити POI* змінюється на *Змінити POI*.
-4. Залежно від налаштування [Офлайн редагування](#settings), ви можете зберегти дані локально або [завантажити їх](../map/map-context-menu#-upload-poi--osm-note).
+1. Торкніться карти, щоб розмістити новий POI, або торкніться ще не завантаженого POI.2. Торкніться [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+2. Виберіть [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) та додайте його назву та іншу інформацію, таку як години роботи, веб-сайт тощо. Коли ви вибираєте ще не завантажений POI, *Створити POI* змінюється на *Змінити POI*.
+3. Залежно від налаштування [Офлайн редагування](#settings), ви можете зберегти дані локально або [завантажити їх](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### Додавання тегів {#add-tags}
@@ -177,7 +186,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Одним із прикладів непідтримуваних типів POI, які ви можете додати, є *amenity=freeshops*. Цей тип може бути корисним, якщо ви хочете позначити безкоштовні магазини або місця, що надають безкоштовні товари.
 
-Щоб додати непідтримувані типи POI, виконайте наступні кроки:
+Щоб додати непідтримуваних типів POI, виконайте наступні кроки:
 
 1. Відкрийте вкладку *Додатково*.
 2. Торкніться *Тип POI*.
@@ -267,7 +276,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 **Налаштування:**
 
 - **<Translate android="true" ids="shared_string_description"/>**. Дозволяє додати опис до треку. Опис застосовується до всіх вибраних треків. Якщо ви нічого не введете в поле, назви треків для кожного окремого треку будуть використовуватися як описи.  
-- **<Translate android="true" ids="gpx_tags_txt"/>**. Цей пункт у розділі налаштувань дозволяє додавати теги для ідентифікації треку. Тег за замовчуванням — "osmand", ви можете вводити додаткові теги, розділені комами.  
+- **<Translate android="true" ids="gpx_tags_txt"/>**. Цей пункт у розділі налаштувань дозволяє додавати теги для ідентифікації треку. Тег за замовчуванням — "osmand". Якщо трек був записаний з певною активністю на основі вибраного профілю, ця активність також автоматично додається як тег під час завантаження. Для завантажуваних груп треків кожен трек отримує свій тег активності. Для деяких профілів (наприклад, Загальний транспорт) тег активності не додається. Ви можете вводити додаткові теги вручну, розділені комами.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Видимість треку для користувачів OSM:  
    - *Публічний* означає, що трек є загальнодоступним і відображається в необробленому вигляді у ваших GPS-треках, списках GPS-треків та списках треків з часовими мітками. Дані, що передаються через API, не пов'язані зі сторінкою вашого треку. Часові мітки точок треку недоступні через публічний GPS API, а точки треку не впорядковані хронологічно.
    - *Ідентифікований* означає, що трек буде публічно відображатися у ваших точках GPS-треків та публічних списках GPS-треків, що означає, що інші користувачі зможуть завантажити необроблений трек та пов'язати його з вашим іменем користувача. Публічні дані точок треку з часовими мітками з GPS API, передані через API точок треку, будуть посилатися на вашу оригінальну сторінку треку.
@@ -281,7 +290,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### Створення OBF-файлу {#generate-obf-file}
 
-Ви можете створити OBF-файл за допомогою [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator), якщо у вас є велика база даних GPX-треків. Це може бути колекція треків з osmand.net з тегом 'gpsies', колекція завантажених треків з OpenStreetMap або ваша власна колекція.
+Ви можете створити OBF-файл за допомогою [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md#osmandmapcreator), якщо у вас є велика база даних GPX-треків. Це колекція треків з osmand.net з тегом 'gpsies', колекція завантажених треків з OpenStreetMap або ваша власна колекція.
 
 
 ## Пов'язані статті {#related-articles}

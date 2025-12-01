@@ -1,8 +1,9 @@
 ---
-source-hash: 5df41c43a87389205811e1c6bcb621fc5c1e5d910a865f87aafd5f36b2c568be
+source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
 sidebar_position: 5
 title:  Зовнішні датчики
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -240,6 +240,8 @@ OsmAnd використовує [запис треку](../plugins/trip-recordin
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – загальна відстань, виміряна датчиком.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – поточна температура навколишнього середовища.
 7. **Рівень заряду батареї** – відсоток заряду батареї, що залишився в підключеному датчику BLE, перемкніть його в **Налаштуваннях датчика**.
+
+**Примітка:** Якщо датчик тимчасово відключається, торкніться його віджета на мапі, щоб негайно спробувати підключення — немає потреби відкривати меню Зовнішні датчики.
 
 
 ### Налаштування віджета {#widget-settings}

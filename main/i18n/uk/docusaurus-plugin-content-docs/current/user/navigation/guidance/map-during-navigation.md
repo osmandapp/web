@@ -1,8 +1,9 @@
 ---
-source-hash: 5ea4f39511656fdb1c0f82a7a7dd625d84541afc04cd5b239076bb4ba1bdd62c
+source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
 sidebar_position: 2
 title: Екран карти під час навігації
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -29,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Екран карти під час навігації](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Екран карти під час навігації](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Екран карти під час навігації](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Екран карти під час навігації](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -51,8 +51,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Час, протягом якого вигляд карти синхронізується з поточним положенням після переміщення. | *Значення:* <br /> Ніколи, 5 сек, 10 сек, 15 сек, 20 сек, 25 сек, 30 сек, 45 сек, 60 сек, 50 сек.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Автоматично масштабувати карту відповідно до вашої швидкості, доки карта синхронізована з вашим поточним положенням. | *Значення:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - масштабування вручну. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - масштаб 200 м.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - масштаб 100 м. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - масштаб 5 м. |
-| *<Translate android="true" ids="snap_to_road"/>*  | Іконка поточного місцезнаходження буде прив'язана до поточного навігаційного маршруту. | Ви можете вимкнути цю опцію, але всі пов'язані з дорогою опції, такі як відображення смуг руху, також не будуть видимі під час навігації. |
-| *<Translate android="true" ids="approximate_bearing"/>* | Визначає напрямок на основі навігаційного маршруту, яким ви рухаєтесь. | Налаштування видно лише тоді, коли увімкнено [плагін розробки OsmAnd](../../plugins/development.md). <br /> Ці налаштування слід увімкнути, якщо орієнтація карти напрямку перевертається або тремтить під час використання [Android Auto](../auto-car.md#common-issues-and-solutions). |
+| *Автомасштабування кут 3D* | Встановлює нахил карти під час перемикання на 3D-режим під час навігації. Більший кут робить горизонт видимішим далі, забезпечуючи кращу видимість вперед. | Застосовується лише тоді, коли увімкнено автомасштабування. Значення: 20°, 25°, 30°, 35°, 40°. За замовчуванням: 25°.  |
+| *Попередній перегляд наступного повороту* | Автоматично повертає карту трохи заздалегідь, щоб показати наступний поворот або маневр під час навігації. Допомагає передбачити майбутні дії.  | Увімкнено за замовчуванням. Якщо ви експортуєте та повторно імпортуєте профіль, переконайтеся, що це налаштування перевірено, оскільки в деяких попередніх версіях воно могло скинутися на «увімкнено».   |
+| *<Translate android="true" ids="snap_to_road"/>*  | Іконка поточного місцезнаходження буде прив'язана до поточного навігаційного маршруту.  | Ви можете вимкнути цю опцію, але всі пов'язані з дорогою опції, такі як відображення смуг руху, також не будуть видимі під час навігації.  |
+
 
 
 ## Точки вздовж маршруту {#show-points-along-the-route}
@@ -62,6 +64,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Можливість встановлювати різні відстані (до 5 км, або 3,11 милі, залежно від встановлених вами [одиниць вимірювання довжини](../../personal/profiles.md#units--formats)) від маршруту до найближчих точок є корисною при використанні таких типів маршрутизації, як [Пряма лінія](../routing/straight-line-routing.md) або [Напряму до точки](../routing/direct-to-point-routing.md).
 - Для налаштування *Показувати вздовж маршруту* рекомендується використовувати [Голосові підказки](../guidance/voice-navigation.md) для навігації.
 - *POI, Улюблені місця та Дорожні попередження* не відображаються у списку для вже пройденого маршруту.
+
+:::info note
+Опція **Показувати вздовж маршруту** впливає лише на списки POI та Моїх улюблених місць, а не на саму карту. Іконки POI та Улюблених місць відображаються скрізь на карті незалежно від їхньої відстані від маршруту.
+:::
 
 
 ### Перегляд та вибір точок {#view-and-select-points}
@@ -93,7 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Шар POI Android](@site/static/img/map/poi_overlay_android.png) ![Шар POI iOS](@site/static/img/map/poi_overlay_ios.png)
 
-Налаштування POI в [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) пов'язані з налаштуванням **Показувати вздовж маршруту**. По суті, це додаткове налаштування для відображення POI на карті, безпосередньо пов'язане зі створеним маршрутом.  
+Налаштування POI в [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) пов'язані з налаштуванням **Показувати вздовж маршруту**. 
 
 Коли ви вказуєте відображення певних POI в *Налаштуваннях карти*, всі вони відображаються на завантажених вами картах, незалежно від того, чи вибрали ви категорії, чи, якщо вам не важлива категорія, вибрали найближчі POI.  
 
@@ -150,7 +156,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Параметр | Опис | Примітка |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Сповіщення, такі як дорожні попередження або обмеження швидкості, з'являтимуться на екрані у вигляді віджета. Вони з'являються в лівому нижньому куті під час навігації. | [Типи віджетів сповіщень](../../widgets/nav-widgets.md#alert-widget) |
+| **<Translate android="true" ids="screen_alerts"/>** | Сповіщення, такі як дорожні попередження або обмеження швидкості, з'являтимуться на екрані у вигляді віджета. Вони з'являються в лівому нижньому куті під час навігації. | [Типи віджетів сповіщень](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Вигляд лінії маршруту {#route-line-appearance}
@@ -217,7 +223,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     ![Твердість](@site/static/img/navigation/route/firmness.png)
 
 - ***<ProFeature/> &nbsp;Складність кінних стежок***. Відображення стежок відповідно до складності кінних маршрутів.  
-    ![Складність](@site/static/img/navigation/route/firmness.png)
+    ![Твердість](@site/static/img/navigation/route/firmness.png)
 
 
 ### Ширина {#width}

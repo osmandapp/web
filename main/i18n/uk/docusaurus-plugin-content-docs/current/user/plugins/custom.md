@@ -1,8 +1,9 @@
 ---
-source-hash: 05be00df9d721de88f5dd84f0a538f8c8ba8d0e110de8bf88f54300e5f72b004
+source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
 sidebar_position: 4
 title:  Власний пакет
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStoreTracker from '@site/src/components/buttons/TrackerGooglePlay.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -303,7 +303,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Завантаження {#downloads}
 
 Ви можете додати будь-які файли, такі як *SQLite, OBF або шрифти* для завантаження, використовуючи тип **"DOWNLOADS"**. Основні типи файлів, що завантажуються, можна знайти [тут](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>ПРИМІТКА</u>*. Тег **"isHidden":"true"** (за замовчуванням *false*) може приховати дані вашої мапи з розділу [Мапи та ресурси](../personal/maps-resources.md#local) OsmAnd.  У **"scope-id"** ви можете додати всю необхідну інформацію про URL-адресу, назву, опис вашого файлу тощо.  
+   *<u>ПРИМІТКА</u>*. Тег **"isHidden":"true"** (за замовчуванням *false*) може приховати дані вашої мапи з [Мапи та ресурси](../personal/maps-resources.md#local-menu) OsmAnd.  У **"scope-id"** ви можете додати всю необхідну інформацію про URL-адресу, назву, опис вашого файлу тощо.  
 
    ![Власний пакет](@site/static/img/plugins/custom/3.jpg)
 
@@ -329,7 +329,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  - [Мапи США](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) власний плагін (дані PAD-US, стежки та дороги USFS, зони відпочинку USFS).
  - [Мапи Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) власний плагін.
  - [Легенда мапи](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) власний плагін.
- - [UMP-PL](https://ump.waw.pl/) [власний плагін мапи](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf) Польщі.
+ - [UMP-PL](https://ump.waw.pl/) Польща [власний плагін мапи](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
  - [Плагін рендерингу OsmAnd](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf) власний плагін.
  - [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) власний плагін.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 3f750dabb5ff34b12f68a43368b7fba39e6cc94ad7d466dc7206b1d8614c5f1b
+source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
 sidebar_position: 4
 title:  Профілі (Налаштування)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Огляд {#overview}
 
@@ -142,7 +142,9 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 - **<Translate android="true" ids="map_screen_orientation"/>**. Встановлює та блокує положення екрана в застосунку OsmAnd. Ця функція не підтримується на iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>*
+  - *<Translate android="true" ids="map_orientation_portrait_inverted"/>*
   - *<Translate android="true" ids="map_orientation_landscape"/>*
+  - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*лише Android*). Відкриває меню керування екраном, де ви можете вибрати опції для екрана пристрою під час навігації для економії заряду батареї пристрою.  
@@ -154,13 +156,13 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 <TabItem value="android" label="Android">
 
-![Загальні налаштування профілів, одиниці та формати, Android](@site/static/img/personal/profiles/profiles_units_formats_andr.png)
+![Загальні налаштування профілів, одиниці та формати, Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Загальні налаштування профілів, одиниці та формати, iOS](@site/static/img/personal/profiles/profile_unitsformats_3_ios.png)
+![Загальні налаштування профілів, одиниці та формати, iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -215,6 +217,8 @@ OsmAnd дозволяє вам [створювати резервні копії
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 я / 0.62 мл (1000 м) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 морських миль / 3280.84 фт / 1000 м |
 |  |  |  |
+| **Одиниці висоти** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 м / 3.28 футів |
+|  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Приклад: 50.12333° 19.93233° (Широта Довгота) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Приклад: 50°7.393′ 19°55.941′ (Широта Довгота)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Приклад: 50°7′23.6″ 19°55′56.4″ (Широта Довгота) 23°27′30″ |
@@ -255,7 +259,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Загальні налаштування профілів, інші, Android](@site/static/img/personal/profiles/profile_general_settings_other_2_andr.png)
+![Загальні налаштування профілів, інші, Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -279,11 +283,11 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*лише Android*) – Згладжує обертання мапи за допомогою [поступового руху](https://en.wikipedia.org/wiki/Kalman_filter), зменшуючи раптові зміни положення. Це вносить невелику затримку (*менше 1 секунди*).
 
-- [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*лише Android*) – Використовує [магнітний датчик](https://en.wikipedia.org/wiki/Kalman_filter) вашого пристрою для стабілізації обертання мапи, зменшуючи різкі зміни. Це також вносить невелику затримку.
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*лише Android*) – Торкніться порожнього місця на мапі, щоб приховати кнопки керування та віджети, максимізуючи видимість мапи.
 
-- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (*лише Android*) – Вимкніть анімацію в режимі навігації для швидших переходів між екранами.
+- [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*лише Android*) – Вимкніть анімацію в режимі навігації для швидших переходів між екранами.
 
 
 
