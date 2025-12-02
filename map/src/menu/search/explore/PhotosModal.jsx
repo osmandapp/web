@@ -15,6 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
 import PropTypes from 'prop-types';
 import { fmt } from '../../../util/dateFmt';
+import { getPhotoTitle } from '../../../manager/SearchManager';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -288,7 +289,8 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
     const shouldLoadImage = inView || (index >= activeStep && index < activeStep + 5);
 
     function getImageHref() {
-        return getPhotoUrl({ photo, size: 1280 });
+        const filename = getPhotoTitle(photo);
+        return `https://commons.wikimedia.org/wiki/File:${filename}`;
     }
 
     return (
