@@ -213,7 +213,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-**Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the [Quick Actions](../widgets/quick-action.md#configure-map) tool.  
+**Quick Action** to change the palette for [Terrain](../../user/plugins/topography.md#modify-color-scheme). Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the [Quick Actions](../widgets/quick-action.md#configure-map) tool.  
 
 When configuring this action, you can select one or multiple terrain color palettes. If several palettes are selected, each tap on the button will cycle through the chosen palettes. You can also enable or disable the interim dialog to either show the full list of palettes or switch between them silently in a predefined order.
 
