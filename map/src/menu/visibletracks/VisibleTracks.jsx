@@ -18,6 +18,7 @@ import LoginContext from '../../context/LoginContext';
 import Loading from '../errors/Loading';
 import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
@@ -106,6 +107,7 @@ export default function VisibleTracks({ source, open }) {
     const location = useLocation();
 
     const { t } = useTranslation();
+    const [, height] = useWindowSize();
 
     const recentSaver = useRecentDataSaver();
 
@@ -256,8 +258,9 @@ export default function VisibleTracks({ source, open }) {
                             <Box
                                 sx={{
                                     flex: 1,
-                                    overflowY: 'auto',
+                                    overflowY: 'auto !important',
                                     overflowX: 'hidden',
+                                    maxHeight: `${height - 120}px`,
                                 }}
                             >
                                 <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
