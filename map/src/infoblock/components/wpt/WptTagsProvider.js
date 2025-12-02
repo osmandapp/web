@@ -234,8 +234,8 @@ async function getWptTags(obj, type, ctx) {
                 }
                 tagObj.isUrl = isUrl(tagObj.value);
                 if (!tagObj.isUrl) {
-                    tagObj.hiddenUrl = getSocialMediaUrl(key, value);
-                    if (tagObj.hiddenUrl != null) {
+                    tagObj.socialMediaUrl = getSocialMediaUrl(key, value);
+                    if (tagObj.socialMediaUrl != null) {
                         tagObj.isUrl = true;
                     }
                 }
@@ -488,7 +488,7 @@ function getSocialMediaUrl(key, value) {
 function addWikipediaTags(key, value, tagObj) {
     let wikiParams = getWikiParams(key, value);
     tagObj.value = wikiParams.text;
-    tagObj.hiddenUrl = wikiParams.url;
+    tagObj.socialMediaUrl = wikiParams.url;
     tagObj.isUrl = true;
     tagObj.textPrefix = wikiParams.prefix;
 
