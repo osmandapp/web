@@ -97,8 +97,9 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             );
         }
         if (tag.isUrl) {
+            const url = tag.socialMediaUrl || value;
             return (
-                <Link href={value} target="_blank" rel="noopener noreferrer">
+                <Link href={url} target="_blank" rel="noopener noreferrer">
                     {value}
                 </Link>
             );
