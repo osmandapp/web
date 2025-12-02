@@ -13,7 +13,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-### Overview {#overview}
+### Introduction {#introduction}
 
 In this section, you will find a description of our [Web Planner](https://osmand.net/map).
 

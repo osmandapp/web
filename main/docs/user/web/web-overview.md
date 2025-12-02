@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Introduction
-title: Introduction on the Website
+title: Introduction to Web Planner
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,71 +15,105 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
-## What is OsmAnd Web Map Viewer?
+## What is OsmAnd Web Planner? {#what-is-osmand-wed-planner}
 
-The [**OsmAnd Map Portal**](https://osmand.net/map) — also referred to as the **Web Map Viewer** — is a browser-based extension of the OsmAnd mobile app. It allows users to view global maps, plan routes, simulate navigation, manage personal data, and access synced content from their devices via the cloud.
+The [**OsmAnd Map Portal**](https://osmand.net/map) — also referred to as the **Web Planner** — is a browser-based extension of the OsmAnd mobile app. It allows users to view global maps, plan routes, simulate navigation, manage personal data, and access synced content from their devices via the cloud.
 
-Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Map Viewer helps users plan trips, analyze tracks, view terrain, and manage files using any desktop or tablet browser — without installing an app.
+Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Planner helps users plan trips, analyze tracks, view terrain, and manage files using any desktop or tablet browser — without installing an app.
 
-OsmAnd Web integrates tightly with the **OsmAnd Cloud** service, which enables syncing favorites, tracks, and backups across devices and platforms. Users with **OsmAnd Start** (free) or **OsmAnd Pro** (paid) accounts can take full advantage of this ecosystem by syncing data between mobile and web.
+OsmAnd Web integrates tightly with the **OsmAnd Cloud** service, which enables syncing favorites, tracks, and backups across devices and platforms. Users with **OsmAnd Start** (free) or **OsmAnd Pro** (paid) accounts can take full advantage of this ecosystem by syncing data between mobile and web. You can find a detailed comparison of *Start* and *Pro* features in the [Subscription Access](#subscription-access) section below.
 
+> **Note:** Even without logging in or verifying your account, you can still use several core Web Planner features, including: [Navigation Route](./planner.md), [Route Planner](./planner.md), [Weather overlays](./web-map.md#weather-on-the-web), and [Settings](../web/web-userdata.mdx).
 
+<!--
+After the structure of this section is approved, some links should be updated.
+-->
 
-## Key Features
+## Key Features {#key-features}
 
-- Map with global coverage and high-quality vector data
-- Route planning using foot, car, bicycle, and other profiles
-- Navigation preview with turn-by-turn instructions
-- Search and explore nearby popular places
-- Display of Favorites, Tracks, and POIs on the map
-- Weather overlays: wind, temperature, and pressure
-- Terrain layers: hillshade, slopes, and altitude view
-- Track Analyzer for elevation and speed profiles
-- Full access to synced data via OsmAnd Cloud
-- File import/export support (GPX: tracks, favorites)
-- Seamless integration with **OsmAnd Pro** and **OsmAnd Start**
+Web Planner offers the following main capabilities for working with maps and personal data in the browser: 
 
+- [Map](./web-map.md) with global coverage and high-quality vector data.
+- [Route planning](./planner.md) using foot, car, bicycle, and other profiles.
+- [Navigation](./planner.md) preview with turn-by-turn instructions.
+- [Search](./web-search.md) and [explore](./web-search.md#explore) nearby popular places.
+- Display of [Favorites](./web-map.md#favorites-section), [Tracks](./web-map.md#tracks-section), and [POIs](./web-map.md#poi-overlay-section) on the map.
+- [Weather overlays](./web-map.md#weather-on-the-web): wind, temperature, and pressure.
+- [Terrain layers](./web-map.md#terrain-section): hillshade, slopes, and altitude view.
+- [Track Analyzer](../web/web-userdata.mdx) for elevation and speed profiles.
+- Full access to synced data via [OsmAnd Cloud](./web-cloud).
+- File import/export support (GPX: tracks, favorites).
+- Seamless integration with **OsmAnd Pro** and **OsmAnd Start**.
+
+<!--
+After the structure of this section is approved, some links should be updated.
+-->
 
 
 ### Subscription Access {#subscription-accesses}
 
-Many features are free to use, but some require a registered account.  
-The table below outlines what is available in each version:
+![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
+
+Web Planner supports several access levels: without login, with OsmAnd Start, and with OsmAnd Pro. The table below summarizes which features are available at each level so you can quickly see what you already have and what becomes available with an account or an upgrade. This overview is intended to help you decide whether you need an account at all and, if you do, which option best matches how you use OsmAnd.
 
 | Feature | Available In |
 |--------|--------------|
-| [Navigation Route](./planner.md) | Free |
-| [Route Planner](./planner.md) | Free |
-| [Weather Overlays](./web-map.md) | Free |
-| [Favorites](./web-map.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [Navigation Route](./planner.md) | Without Login |
+| [Route Planner](./planner.md) | Without Login |
+| [Weather Overlays](./web-map.md) | Without Login |
+| [Settings](../web/web-userdata.mdx) | Without Login |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay-section), [Favorites](./web-map.md#favorites-section), [Tracks](./web-map.md#tracks-section))| [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain-section))| <ProFeature/> |
 | [OsmAnd Cloud Sync](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Tracks folders and Layer](./web-map.md) | <ProFeature/> |
 
+<!--
+After the structure of this section is approved, some links should be updated.
+-->
+
 
 ## How to Start {#how-to-start}
 
-To access the full features of the OsmAnd Web Map Viewer, you need to log in with an OsmAnd Cloud account.
+To access the full features of the OsmAnd Web Planner, you need to log in with an OsmAnd Cloud account.
 
 - If you already have an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) subscription or want to create a free [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account, follow these steps:
 
 1. Go to the [**OsmAnd Map Portal**](https://osmand.net/map).
 2. Open the **Account** menu:
-   - **Log in**: Enter the email address linked to your Pro or Start subscription.
-   - **Create account**: Register for a free OsmAnd Start account.
+   - **Log in**: Enter the email address linked to your Pro or Start subscription, or
+   - **Create account**: Register for a free OsmAnd Start account. For a detailed step-by-step guide to creating a new account, see the [Sign Up / Login](./web-cloud) article.
 
 ![Web Account](@site/static/img/web/web_account.png)
 
+<!--
+After the structure of this section is approved, some links should be updated.
+-->
 
 
 ### How to Change Language {#how-to-change-language}
 
 To change the language of the interface:
 
-- Navigate to **Menu → ⚙ Settings → Display language**
+*Go to: Menu → ⚙ Settings → Display language*
 
 ![Web Language](@site/static/img/web/web_language.png)
 
+You can find more information about other settings, such as Units of length and Unit of speed, in the [Settings](../web/web-userdata.mdx) section.
+
+<!--
+After the structure of this section is approved, some links should be updated.
+-->
+
+
+## Related Articles {#related-articles}
+
+- [First Steps](../start-with/first-steps.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [Web Purchases](../purchases/web.md)
+- [Cross-Platform Purchases](../purchases/cross.md)
 
