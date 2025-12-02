@@ -118,6 +118,62 @@ To start navigating around the city by public transport, use [the navigation but
 
 </Tabs>
 
+## Public Transport Types {#public-transport-types}
+
+You can search well-curated Public Transport Routes according to your preferences and choose to:
+
+- Avoid buses (and trolleybuses)
+- Avoid subways
+- Avoid trains
+- Avoid trams
+- Avoid ferries
+- Avoid share taxi
+
+By default, OsmAnd searches for routes that include all supported types of public transport.
+
+## Alternative Routes {#alternative-routes}
+
+Alternative Routes are sections of a route that are served by different transport services and share the same path and stops.
+
+Different transport services may use different route numbers (refs) or even different types of transport.
+
+The user interface displays Alternative Routes as colored badges with their refs.
+
+## Performance and Results {#performance-and-results}
+
+**Public Transport profile -&gt; Settings -&gt; Navigation settings -&gt; Route parameters**
+
+1. **Maximum number of transport changes**.
+
+The performance and memory consumption of the Public Transport Router depend on the search depth.
+
+The most important parameter that affects this depth is the **Maximum number of transport changes**.
+
+We use **2** as the default value, which seems optimal for modern public transport networks.
+
+If you encounter low performance or out-of-memory errors, try decreasing this value.
+
+If you are in a small city or travel short routes, a value of **1** may work better.
+
+There are two more parameters that help you choose the best routes.
+
+2. **Display N best routes** (specify the number of best routes to display)
+
+By default, OsmAnd displays the **10** best routes (including alternative routes).
+
+You can decrease or increase this limit, or even display all routes.
+
+Note: displaying unlimited routes might slow down your device.
+
+<!--Possible values: 0 (show all), 5, 10 (default), 15, 100-->
+
+3. **Exclude longer routes** (exclude routes longer than the best, in %)
+
+By default, OsmAnd does not display routes whose travel time is over **75%** longer than the best route.
+
+You can decrease, increase, or remove this limit, just like for the previous parameter.
+
+<!--Possible values: 0 (show all), 25%, 50%, 75% (default), 150%-->
 
 ## Data and Guideline {#data-and-guideline}
 
