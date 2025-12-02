@@ -20,6 +20,7 @@ import React from 'react';
 import { apiGet } from '../../../util/HttpApi';
 import { parseTagWithLang } from '../../../manager/SearchManager';
 import { localizeWeekTokens } from '../../../util/dateFmt';
+import { convertMeters, getSmallLengthUnit, getLargeLengthUnit, LARGE_UNIT, SMALL_UNIT } from '../../../menu/settings/units/UnitsConverter';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
@@ -298,7 +299,7 @@ async function getWptTags(obj, type, ctx) {
                         }
                 }
 
-                const formattedPrefixAndText = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag);
+                const formattedPrefixAndText = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag, ctx);
                 tagObj.textPrefix = formattedPrefixAndText[0];
                 tagObj.value = formattedPrefixAndText[1];
 
@@ -402,27 +403,40 @@ function fixTagsKeys(tags) {
     return res;
 }
 
-function getFormattedPrefixAndText(key, prefix, value, subtype) {
+function formatLengthValue(value, ctx, unitType, fallbackUnit) {
+    const numValue = parseFloat(value);
+    if (!Number.isFinite(numValue) || !ctx.unitsSettings.len) {
+        return fallbackUnit ? `${value} ${i18n?.t(fallbackUnit)}` : null;
+    }
+    
+    const converted = convertMeters(numValue, ctx.unitsSettings.len, unitType);
+    const unit = unitType === LARGE_UNIT ? getLargeLengthUnit(ctx) : getSmallLengthUnit(ctx);
+    return `${+converted.toFixed(1)} ${i18n?.t(unit)}`;
+}
+
+function getFormattedPrefixAndText(key, prefix, value, subtype, ctx) {
     let formattedPrefix = prefix ?? key;
     let formattedValue = value;
 
     switch (key) {
         case 'ele':
-            formattedValue = `${value} ${i18n?.t('m')}`;
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'm') ?? formattedValue;
             break;
         case 'width':
             formattedPrefix = i18n?.t('shared_string_width');
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'm') ?? formattedValue;
             break;
         case 'height':
             formattedPrefix = i18n?.t('shared_string_height');
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'm') ?? formattedValue;
             break;
         case 'depth':
         case 'seamark_height':
-            formattedValue = `${value} ${i18n?.t('meter')}`;
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'meter') ?? formattedValue;
             break;
         case 'distance':
-            formattedValue = `${value} ${i18n?.t('km')}`;
-            formattedPrefix = `${prefix} ${i18n?.t('distance')}`;
+            formattedPrefix = `${formattedPrefix} ${i18n?.t('distance')}`;
+            formattedValue = formatLengthValue(value, ctx, LARGE_UNIT, null) ?? formattedValue;
             break;
         case 'capacity':
             if (subtype === 'water_tower' || subtype === 'storage_tank') {
@@ -430,8 +444,10 @@ function getFormattedPrefixAndText(key, prefix, value, subtype) {
             }
             break;
         case 'maxweight':
-            if (isInt(value)) {
-                formattedValue = `${value} ${i18n?.t('metric_ton')}`;
+            const numValue = parseFloat(value);
+            if (Number.isFinite(numValue)) {
+                const formatted = Number.isInteger(numValue) ? numValue.toString() : numValue.toFixed(1);
+                formattedValue = `${formatted} ${i18n?.t('metric_ton')}`;
             }
             break;
         case 'students':
