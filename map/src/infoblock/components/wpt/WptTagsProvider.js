@@ -405,15 +405,13 @@ function fixTagsKeys(tags) {
 
 function formatLengthValue(value, ctx, unitType, fallbackUnit) {
     const numValue = parseFloat(value);
-    if (Number.isFinite(numValue) && ctx?.unitsSettings?.len) {
-        const converted = convertMeters(numValue, ctx.unitsSettings.len, unitType);
-        const unit = unitType === LARGE_UNIT ? getLargeLengthUnit(ctx) : getSmallLengthUnit(ctx);
-        const formatted = Number.isInteger(converted) ? converted.toString() : converted.toFixed(1);
-        return `${formatted} ${i18n?.t(unit)}`;
-    } else if (fallbackUnit) {
-        return `${value} ${i18n?.t(fallbackUnit)}`;
+    if (!Number.isFinite(numValue) || !ctx.unitsSettings.len) {
+        return fallbackUnit ? `${value} ${i18n?.t(fallbackUnit)}` : null;
     }
-    return null;
+    
+    const converted = convertMeters(numValue, ctx.unitsSettings.len, unitType);
+    const unit = unitType === LARGE_UNIT ? getLargeLengthUnit(ctx) : getSmallLengthUnit(ctx);
+    return `${+converted.toFixed(1)} ${i18n?.t(unit)}`;
 }
 
 function getFormattedPrefixAndText(key, prefix, value, subtype, ctx) {
