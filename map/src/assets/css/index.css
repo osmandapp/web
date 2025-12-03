@@ -101,10 +101,15 @@ code {
     display: block !important;
     width: 24px !important;
     height: 24px !important;
-    background-image: url('../icons/ic_map_zoom_in.svg') !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
+    mask-image: url('../icons/ic_map_zoom_in.svg') !important;
+    mask-size: contain !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    -webkit-mask-image: url('../icons/ic_map_zoom_in.svg') !important;
+    -webkit-mask-size: contain !important;
+    -webkit-mask-repeat: no-repeat !important;
+    -webkit-mask-position: center !important;
+    background-color: currentColor !important;
 }
 
 .leaflet-control-zoom-out::before {
@@ -112,10 +117,15 @@ code {
     display: block !important;
     width: 24px !important;
     height: 24px !important;
-    background-image: url('../icons/ic_map_zoom_out.svg') !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
+    mask-image: url('../icons/ic_map_zoom_out.svg') !important;
+    mask-size: contain !important;
+    mask-repeat: no-repeat !important;
+    mask-position: center !important;
+    -webkit-mask-image: url('../icons/ic_map_zoom_out.svg') !important;
+    -webkit-mask-size: contain !important;
+    -webkit-mask-repeat: no-repeat !important;
+    -webkit-mask-position: center !important;
+    background-color: currentColor !important;
 }
 
 .leaflet-control-zoom-in:hover,
