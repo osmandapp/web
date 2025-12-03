@@ -27,7 +27,7 @@ Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Po
 
 OsmAnd Web integrates tightly with the **OsmAnd Cloud** service, which enables syncing favorites, tracks, and backups across devices and platforms. Users with **OsmAnd Start** (free) or **OsmAnd Pro** (paid) accounts can take full advantage of this ecosystem by syncing data between mobile and web. You can find a detailed comparison of *Start* and *Pro* features in the [Subscription Access](#subscription-access) section below.
 
-> **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./planner.md), [Route Planner](./planner.md), [Weather overlays](./web-map.md#weather-on-the-web), and [Settings](../web/web-userdata.mdx).
+> **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./planner.md), [Route Planner](./planner.md), [Weather overlays](./web-map.md#weather-on-the-web), and [Settings](#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -65,7 +65,7 @@ Web Map Portal supports several access levels: without login, with OsmAnd Start,
 | [Navigation Route](./planner.md) | Without Login |
 | [Route Planner](./planner.md) | Without Login |
 | [Weather Overlays](./web-map.md) | Without Login |
-| [Settings](../web/web-userdata.mdx) | Without Login |
+| [Settings](#settings) | Without Login |
 | [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay-section), [Favorites](./web-map.md#favorites-section), [Tracks](./web-map.md#tracks-section))| [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain-section))| <ProFeature/> |
 | [OsmAnd Cloud Sync](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
@@ -105,6 +105,34 @@ To switch the interface language:
 ![Web Language](@site/static/img/web/web_language.png)
 
 ### Units {#units}
+
+*Go to: Menu → ⚙ Settings → Units of length*  
+*Go to: Menu → ⚙ Settings → Unit of speed*
+
+You can choose which units are used to display distance, elevation and speed on the map, in route details and in measurement tools. This helps you keep OsmAnd consistent with your usual habits or regional standards.
+
+The **Units of length** option defines how horizontal distance and elevation are shown:
+- Kilometers/meters.
+- Miles/feet.
+- Miles/meters.
+- Miles/yards.
+- Nautical miles/meters.
+- Nautical miles/feet. 
+
+For example, a distance of 10 km will be shown as about 6.21 mi if you choose one of the Miles/... options, or as about 5.40 nmi when Nautical miles/... is selected.
+
+The **Unit of speed** option controls how current speed and speed limits are displayed:
+- Kilometers per hour.
+- Miles per hour.
+- Meters per second.
+- Minutes per mile.
+- Minutes per kilometer.
+- Nautical miles per hour (knots). 
+
+For example, a speed of 90 km/h corresponds to 25 m/s or about 55.92 mph.
+
+![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+
 
 ### OsmAnd Cloud {#osmand-cloud}
 
