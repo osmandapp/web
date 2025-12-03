@@ -278,11 +278,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         >
             <WeatherHeader setShowInfoBlock={setShowInfoBlock} isDetails={true} />
             <Box
-                sx={{
-                    overflowX: 'hidden !important',
-                    overflowY: 'auto !important',
-                    flex: 1,
-                }}
+                sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1, }}
             >
                 <TopWeatherInfo loadingLocation={loadingLocation} weatherLoc={weatherLoc} />
                 {!isEmpty(forecastPreparedData) && (
@@ -309,7 +305,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                             id="se-weather-forecast-week-details"
                             sx={{
                                 overflowX: 'hidden',
-                                overflowY: 'auto !important',
+                                overflowY: 'auto',
                                 maxHeight: `${height - 2 * HEADER_SIZE - DEFAULT_GRAPH_HEIGHT + 30}px`,
                             }}
                         >

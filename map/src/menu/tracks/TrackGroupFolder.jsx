@@ -146,7 +146,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
-                    sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
+                    sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                 >
                     {groupItems}
                     {ctx.trackLoading?.length > 0 &&

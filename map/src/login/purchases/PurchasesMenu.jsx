@@ -100,7 +100,7 @@ export default function PurchasesMenu() {
                     {!ltx.loginUser ? (
                         <EmptyLogin />
                     ) : (
-                        <Box sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}>
+                        <Box sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}>
                             {subscriptions && inAppPurchases && !hasPurchases() && !isFreeAcc && (
                                 <ErrorEmptyPurchases />
                             )}
