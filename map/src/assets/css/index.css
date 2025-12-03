@@ -84,9 +84,8 @@ code {
     margin-bottom: 10px !important;
     flex-shrink: 0 !important;
     box-sizing: border-box !important;
-    font-size: 30px !important;
-    font-family: 'Material Symbols Outlined' !important;
-    font-weight: 400 !important;
+    font-size: 0 !important;
+    position: relative !important;
 }
 .leaflet-control-zoom-in {
     margin-bottom: 8px !important;
@@ -94,8 +93,29 @@ code {
 
 .leaflet-control-zoom-in span,
 .leaflet-control-zoom-out span {
-    margin-bottom: 14px !important;
-    margin-right: 1px !important;
+    display: none !important;
+}
+
+.leaflet-control-zoom-in::before {
+    content: '' !important;
+    display: block !important;
+    width: 24px !important;
+    height: 24px !important;
+    background-image: url('../icons/ic_map_zoom_in.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.leaflet-control-zoom-out::before {
+    content: '' !important;
+    display: block !important;
+    width: 24px !important;
+    height: 24px !important;
+    background-image: url('../icons/ic_map_zoom_out.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
 .leaflet-control-zoom-in:hover,
