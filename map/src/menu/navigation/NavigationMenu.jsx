@@ -9,7 +9,7 @@ import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
 import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attach_track.svg';
 import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
-import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_track_recordable.svg';
+import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as SaveCloudIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
