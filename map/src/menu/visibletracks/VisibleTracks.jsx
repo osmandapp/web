@@ -256,12 +256,7 @@ export default function VisibleTracks({ source, open }) {
                         {isEmpty(ctx.visibleTracks?.new) && hasTracks() && <EmptyVisible id="se-empty-visible" />}
                         {hasVisibleTracks() && (
                             <Box
-                                sx={{
-                                    flex: 1,
-                                    overflowY: 'auto !important',
-                                    overflowX: 'hidden',
-                                    maxHeight: `${height - 120}px`,
-                                }}
+                                sx={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', maxHeight: `${height - 120}px` }}
                             >
                                 <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
                                     {trackItems}
