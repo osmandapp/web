@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Introduction
-title: Introduction to Web Planner
+title: Introduction to Web Map Portal
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,15 +19,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 -->
 
-## What is OsmAnd Web Planner? {#what-is-osmand-wed-planner}
+## Overview {#overview}
 
-The [**OsmAnd Map Portal**](https://osmand.net/map) — also referred to as the **Web Planner** — is a browser-based extension of the OsmAnd mobile app. It allows users to view global maps, plan routes, simulate navigation, manage personal data, and access synced content from their devices via the cloud.
+The [**OsmAnd Map Portal**](https://osmand.net/map) is a browser-based extension of the OsmAnd mobile app. It allows users to view global maps, plan routes, simulate navigation, manage personal data, and access synced content from their devices via the cloud.
 
-Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Planner helps users plan trips, analyze tracks, view terrain, and manage files using any desktop or tablet browser — without installing an app.
+Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Portal helps users plan trips, analyze tracks, view terrain, and manage files using any desktop or tablet browser — without installing an app.
 
 OsmAnd Web integrates tightly with the **OsmAnd Cloud** service, which enables syncing favorites, tracks, and backups across devices and platforms. Users with **OsmAnd Start** (free) or **OsmAnd Pro** (paid) accounts can take full advantage of this ecosystem by syncing data between mobile and web. You can find a detailed comparison of *Start* and *Pro* features in the [Subscription Access](#subscription-access) section below.
 
-> **Note:** Even without logging in or verifying your account, you can still use several core Web Planner features, including: [Navigation Route](./planner.md), [Route Planner](./planner.md), [Weather overlays](./web-map.md#weather-on-the-web), and [Settings](../web/web-userdata.mdx).
+> **Note:** Even without logging in or verifying your account, you can still use several core Web Map Portal features, including: [Navigation Route](./planner.md), [Route Planner](./planner.md), [Weather overlays](./web-map.md#weather-on-the-web), and [Settings](../web/web-userdata.mdx).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -35,7 +35,7 @@ After the structure of this section is approved, some links should be updated.
 
 ## Key Features {#key-features}
 
-Web Planner offers the following main capabilities for working with maps and personal data in the browser: 
+Web Portal offers the following main capabilities for working with maps and personal data in the browser: 
 
 - [Map](./web-map.md) with global coverage and high-quality vector data.
 - [Route planning](./planner.md) using foot, car, bicycle, and other profiles.
@@ -58,7 +58,7 @@ After the structure of this section is approved, some links should be updated.
 
 ![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
 
-Web Planner supports several access levels: without login, with OsmAnd Start, and with OsmAnd Pro. The table below summarizes which features are available at each level so you can quickly see what you already have and what becomes available with an account or an upgrade. This overview is intended to help you decide whether you need an account at all and, if you do, which option best matches how you use OsmAnd.
+Web Map Portal supports several access levels: without login, with OsmAnd Start, and with OsmAnd Pro. The table below summarizes which features are available at each level so you can quickly see what you already have and what becomes available with an account or an upgrade. This overview is intended to help you decide whether you need an account at all and, if you do, which option best matches how you use OsmAnd.
 
 | Feature | Available In |
 |--------|--------------|
@@ -79,7 +79,7 @@ After the structure of this section is approved, some links should be updated.
 
 ## How to Start {#how-to-start}
 
-To access the full features of the OsmAnd Web Planner, you need to log in with an OsmAnd Cloud account.
+To access the full features of the OsmAnd Web Portal, you need to log in with an OsmAnd Cloud account.
 
 - If you already have an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) subscription or want to create a free [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account, follow these steps:
 
@@ -94,20 +94,19 @@ To access the full features of the OsmAnd Web Planner, you need to log in with a
 After the structure of this section is approved, some links should be updated.
 -->
 
+## Settings {#settings}
 
-### How to Change Language {#how-to-change-language}
+### Language {#language}
 
-To change the language of the interface:
+To switch the interface language:
 
 *Go to: Menu → ⚙ Settings → Display language*
 
 ![Web Language](@site/static/img/web/web_language.png)
 
-You can find more information about other settings, such as Units of length and Unit of speed, in the [Settings](../web/web-userdata.mdx) section.
+### Units {#units}
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
+### OsmAnd Cloud {#osmand-cloud}
 
 
 ## Related Articles {#related-articles}
