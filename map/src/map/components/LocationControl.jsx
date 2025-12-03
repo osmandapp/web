@@ -194,11 +194,13 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
             <div
                 className="leaflet-control leaflet-bar"
                 style={{
-                    display: 'inline-block',
+                    display: 'flex',
                     float: 'none',
                     marginRight: '60px',
                     padding: '8px',
                     marginBottom: ctx.globalGraph?.show ? `${ctx.globalGraph.size + 12}px` : '12px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
             >
                 {control}
