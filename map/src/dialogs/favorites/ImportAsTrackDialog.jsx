@@ -5,7 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import { Button, Dialog } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';
-import { isEmptyTrack, GPX_FILE_EXT, getGpxFileFromTrackData } from '../../manager/track/TracksManager';
+import { isEmptyTrack, GPX_FILE_EXT, getGpxFileFromTrackData, validName } from '../../manager/track/TracksManager';
 import { removeFileExtension, createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
@@ -27,11 +27,11 @@ export default function ImportAsTrackDialog({ setOpenDialog, track, fileName }) 
     const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
 
     async function handleImportAsTrack() {
-        if (track && fileName) {
-            const fileNameWoExtension = removeFileExtension(fileName);
+        if (track && validName(fileName)) {
+            const fileNameWithoutExtension = removeFileExtension(fileName);
             const gpx = await getGpxFileFromTrackData(track, track.routeTypes || null);
             if (gpx?.data) {
-                const trackFileName = createTrackFreeName(fileNameWoExtension, ctx.tracksGroups, null, '');
+                const trackFileName = createTrackFreeName(fileNameWithoutExtension, ctx.tracksGroups, null, '');
                 await saveTrackToCloud({
                     ctx,
                     ltx,
