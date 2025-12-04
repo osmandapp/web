@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label:  OsmAnd Cloud
-title: OsmAnd Cloud on the Website
+title: Sign Up / Login
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,15 +15,32 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Overview {#overview}
 
-The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
+Signing in with an OsmAnd account turns the [OsmAnd Map Portal](https://osmand.net/map) from a simple map viewer into your personal workspace. The same account that you use in the mobile app connects the website to your OsmAnd Cloud data and purchases, so you can access your saved content and subscriptions in a single place on the web.
 
 
+## Sign Up {#sign-up}
 
-## How to Start {#how-to-start}
+To access OsmAnd Web features, you need to create an account. Use the Sign Up flow:
+
+- Go to the [**OsmAnd Map Portal**](https://osmand.net/map).
+- Open the **Account** menu.
+- Select **Create new account**. The Create new account dialog opens.
+- In the **Email** field, enter the email address you want to use for your OsmAnd account and click **Continue**.
+- A verification code is sent to this email address. Check your inbox (and spam folder if needed).
+- In the next dialog, enter the Verification code and click **Continue** to confirm your email. If you did not receive the code, use the **I didn't receive verification code** link and follow the instructions.
+
+After the code is verified, your web account is created and you are signed in automatically.
+
+![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+
+
+## Login {#login}
 
 To access OsmAnd Web features, you need an account:
 
@@ -83,7 +100,7 @@ To update your email address:
 
 > 🔒 A verification email will be sent to the new address before the change is finalized.
 
-### Log Out and Delete Account {#log-out-and-delete}
+### Logout and Delete Account {#logout-and-delete}
 
 To log out of your OsmAnd Web account:
 
@@ -96,7 +113,7 @@ To permanently delete your account:
 - Click **Delete account** button.
 - Confirm the deletion. This action is irreversible.
 
-
+<!--
 ## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
 
 - **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#initial-setup) paid subscription. 
@@ -109,8 +126,6 @@ The cross-platform capability allows you to use OsmAnd Pro on all platforms *([A
 3. Register your [Pro or Start account](/docs/user/personal/osmand-cloud/#cross-platform) on the OsmAnd server inside OsmAnd app.
 4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
 
-
-<!--
 
 - Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
 
@@ -153,8 +168,5 @@ In this section of the menu, you can change the map style. You can read more abo
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
 
-
-
-
-
+## Related Articles {#related-articles}
 
