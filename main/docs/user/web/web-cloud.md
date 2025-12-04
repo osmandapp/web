@@ -42,30 +42,24 @@ After the code is verified, your web account is created and you are signed in au
 
 ## Login {#login}
 
-To access OsmAnd Web features, you need an account:
+If you already have an OsmAnd account, you can sign in on the [**OsmAnd Map Portal**](https://osmand.net/map) with the same email and password. Go to the **Account menu** and choose the **Log in option**. In the dialog that opens, enter the email address linked to your OsmAnd account, type your password, and select **Continue**. After a successful login, the OsmAnd Account panel opens and you can work with your data, purchases and settings.
 
-- If you already have an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) subscription or want to create a free [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account, follow these steps:
+If you do not remember your password, use the **I don’t have or forgot password** link in the login dialog. This opens the **Change or reset password** panel. Enter the email address you used to create your account and click **Continue**. A message with a verification code is sent to this email. On the next screen, type the verification code and your new password, then select **Continue** to confirm. When the code is accepted, your password is updated and you can log in to OsmAnd Web with the new credentials.
 
-  1. Go to the [**OsmAnd Map Portal**](https://osmand.net/map).
-  2. Open the **Account** menu.
-     - **Log in**: Enter the email address used for your Pro or Start subscription.
-     - **Create account**: Use this option to register for a free OsmAnd Start account.
-
-![Web Account](@site/static/img/web/web_account.png)
+![Web Account](@site/static/img/web/web_password.png)
 
 ## Managing Account {#managing-account}
 
-To manage your account, go to:  
-**General Menu → Account**
+Once you are signed in, you can manage your web account.  
+Go to: *General Menu → Account*
 
-After registering on the web, you can:
-
-- View account information
-- Download cloud backups
-- Log out of your account
-- Delete your account
-- Change your email address
-- See your payments and purchases
+From this panel you can:
+- View account information.
+- Download cloud backups.
+- Log out of your account.
+- Delete your account.
+- Change your email address.
+- See your payments and purchases.
 
 ![Web Account](@site/static/img/web/web_account_2.png)
 
