@@ -121,6 +121,9 @@
     &:hover {
         opacity: 1 !important;
     }
+    :global(.MuiIconButton-root) {
+        padding: 0 !important;
+    }
 }
 
 .actionIcon {
