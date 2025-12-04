@@ -165,6 +165,12 @@ export default function NavigationMenu() {
     const hasRouteTrack = routeTrack && !isEmptyTrack(routeTrack);
     const canSaveToCloud = hasRouteTrack && ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT;
 
+    const shouldShowRouteSummary =
+        routeObject.getRoute() &&
+        routeObject.getRouteProps()?.overall?.routingTime &&
+        !routeObject.preview &&
+        !ctx.navigationRoutingInProgress;
+
     function handleClearSelectedTrack() {
         routeObject.resetRoute();
         ctx.setRouteTrackFile(null);
@@ -314,7 +320,7 @@ export default function NavigationMenu() {
                         <ThickDivider />
                     </>
                 )}
-                {routeObject.getRoute() && routeObject.getRouteProps() && (
+                {shouldShowRouteSummary && (
                     <>
                         <ThickDivider />
                         <RouteSummaryCard routeProps={routeObject.getRouteProps()} onDetails={openInfoBlock} />
