@@ -118,11 +118,9 @@
 
 .clearIconWrapper {
     opacity: 0.5 !important;
+    margin-left: -15px !important;
     &:hover {
         opacity: 1 !important;
-    }
-    :global(.MuiIconButton-root) {
-        padding: 0 !important;
     }
 }
 

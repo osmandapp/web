@@ -145,7 +145,7 @@ const NavigationInput = forwardRef(function NavigationInput(
                         startAdornment: icon && <InputAdornment position="start">{icon}</InputAdornment>,
                         endAdornment: (
                             <InputAdornment position="end">
-                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
                                     {isFocused && inputValue && (
                                         <Box className={styles.clearIconWrapper}>
                                             <ActionIconBtn
