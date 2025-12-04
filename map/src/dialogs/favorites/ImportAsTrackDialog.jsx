@@ -9,6 +9,7 @@ import { isEmptyTrack, GPX_FILE_EXT, getGpxFileFromTrackData } from '../../manag
 import { createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 import React, { useContext } from 'react';
 
 export function hasPoints(track) {
@@ -22,6 +23,8 @@ export default function ImportAsTrackDialog({ setOpenDialog, trackToImport }) {
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+    const [width] = useWindowSize();
+    const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
 
     async function handleImportAsTrack() {
         if (trackToImport) {
@@ -59,6 +62,9 @@ export default function ImportAsTrackDialog({ setOpenDialog, trackToImport }) {
             open={true}
             onClose={() => setOpenDialog(false)}
             onClick={(e) => e.stopPropagation()}
+            PaperProps={{
+                sx: { maxWidth: `${widthDialog}px` },
+            }}
         >
             <DialogTitle className={dialogStyles.title}>{t('import_track')}</DialogTitle>
             <DialogContent className={dialogStyles.content}>
