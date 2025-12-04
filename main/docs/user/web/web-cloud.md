@@ -88,11 +88,27 @@ Click **Download Backup** to start the export and save the archive to your compu
 
 ### Payments and Purchases {#payments-and-purchases}
 
-- Go to **General Menu → Account → Payments and Purchases**.
+This section shows all products and subscriptions linked to your OsmAnd account. To open it,  
+Go to: *General Menu → Account → Payments and Purchases*
 
-In this section, you can view all purchases and subscriptions linked to your account.
+Here you can see a list of all purchases associated with your email:
+- Free and paid plans (such as OsmAnd Start or OsmAnd Pro).
+- One-time products (e.g. Maps+ or special editions).
+- Subscriptions that renew monthly or annually.
+
+For each item the list shows:
+- Product name and icon.
+- Type – monthly subscription, annual subscription or one-time payment.
+- Status – *Active, Expired or Canceled*.
+- Date information.
+
+If you click a product in the list, the details page opens. There you can see where the product was purchased (*Google Play, Apple App Store, Huawei AppGallery, Amazon* or *OsmAnd Web*) and find a link or instructions on how to manage or cancel the subscription in the corresponding store.
+
+If there are no purchases linked to your account yet, this section shows an empty state with the message **You don’t have any purchases** and a **Learn more** button that leads to a page with available OsmAnd plans and upgrade options.
 
 For more details on using your purchases across different platforms, read about [cross-platform access](../purchases/cross.md).
+
+![Web Account](@site/static/img/web/web_purchases.png)
 
 ### Change Email Address {#change-email-address}
 

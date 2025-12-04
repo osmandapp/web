@@ -1,5 +1,5 @@
 ---
-title: Web Planner
+title: Web Map Portal
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Overview {#overview}
 
-In this section, you will find a description of our [Web Planner](https://osmand.net/map).
+In this section, you will find a description of our [Web Map Portal](https://osmand.net/map).
 
 ### [Sign Up / Login](./web-cloud.md) {#sign-up--login}
 
