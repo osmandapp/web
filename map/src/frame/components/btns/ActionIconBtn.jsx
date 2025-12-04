@@ -12,9 +12,9 @@ export default function ActionIconBtn({
     className = '',
     ...props
 }) {
-    const finalClassName = className
-        ? `${styles.actionIcon} ${activeIcon ? styles.actionIconWithActive : ''} ${className}`
-        : styles.actionIcon;
+    const finalClassName = [styles.actionIcon, activeIcon && styles.actionIconWithActive, className]
+        .filter(Boolean)
+        .join(' ');
 
     return (
         <IconButton
