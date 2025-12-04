@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useContext, useMemo, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useContext, useMemo, useRef } from 'react';
 import { Box, Collapse, Drawer, List, Tooltip } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
-import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -13,6 +12,7 @@ import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_
 import SelectItem from '../../frame/components/items/SelectItem';
 import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
 import SelectItemBoolean from '../../frame/components/items/SelectItemBoolean';
+import SelectItemRadio from '../../frame/components/items/SelectItemRadio';
 import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 
 const SECTION_KEYS = {
@@ -22,6 +22,8 @@ const SECTION_KEYS = {
     VEHICLE_PARAMETERS: 'vehicle_parameters',
     DEVELOPMENT: 'development',
 };
+
+const RADIO_SECTIONS = new Set(['Relief smoothness factor']);
 
 const TRANSLATION_RULES = {
     routing: {
@@ -459,6 +461,35 @@ export default function NavigationSettings({
         );
     };
 
+    const RadioOption = ({ sectionOptions }) => {
+        return (
+            <>
+                {sectionOptions.map((opt, index) => {
+                    const stateKey = getStateKey(opt);
+                    const logicalKey = getNormalizedOptionKey(opt);
+                    const disabled = isDisabled(logicalKey);
+                    const isLast = index === sectionOptions.length - 1;
+
+                    const handleToggle = () => {
+                        toggleBooleanValue(stateKey, true);
+                    };
+
+                    return (
+                        <SelectItemRadio
+                            key={opt.key}
+                            title={opt.displayLabel}
+                            checked={!!opt.value}
+                            disabled={disabled}
+                            onToggle={handleToggle}
+                            showDivider={!isLast}
+                            boldTitle={false}
+                        />
+                    );
+                })}
+            </>
+        );
+    };
+
     // Select option component
     const SelectOption = ({ opt, showDivider }) => {
         const stateKey = getStateKey(opt);
@@ -536,18 +567,22 @@ export default function NavigationSettings({
                             />
                             <Collapse in={!!expanded} timeout="auto" unmountOnExit>
                                 <List disablePadding>
-                                    {sectionOptions.map((opt, index) => {
-                                        const isLast = index === sectionOptions.length - 1;
-                                        return (
-                                            <Box key={'opt_' + opt.key}>
-                                                {opt.type === 'boolean' ? (
-                                                    <BooleanOption opt={opt} showDivider={!isLast} />
-                                                ) : (
-                                                    <SelectOption opt={opt} showDivider={!isLast} />
-                                                )}
-                                            </Box>
-                                        );
-                                    })}
+                                    {sectionOptions.length > 0 && RADIO_SECTIONS.has(sectionOptions[0].section) ? (
+                                        <RadioOption sectionOptions={sectionOptions} />
+                                    ) : (
+                                        sectionOptions.map((opt, index) => {
+                                            const isLast = index === sectionOptions.length - 1;
+                                            return (
+                                                <Box key={'opt_' + opt.key}>
+                                                    {opt.type === 'boolean' ? (
+                                                        <BooleanOption opt={opt} showDivider={!isLast} />
+                                                    ) : (
+                                                        <SelectOption opt={opt} showDivider={!isLast} />
+                                                    )}
+                                                </Box>
+                                            );
+                                        })
+                                    )}
                                 </List>
                             </Collapse>
                             <ThickDivider mt={0} mb={0} />
