@@ -129,11 +129,7 @@ export default function TracksMenu() {
                             id={'se-track-menu'}
                             minWidth={ctx.infoBlockWidth}
                             maxWidth={ctx.infoBlockWidth}
-                            sx={{
-                                overflowX: 'hidden !important',
-                                overflowY: 'auto !important',
-                                maxHeight: `${height - 120}px`,
-                            }}
+                            sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                         >
                             <MenuItem
                                 id={'se-visible-tracks-menu'}
