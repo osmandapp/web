@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { useMutator } from '../../util/Utils';
-import TracksManager, { GPX_FILE_EXT, getGpxFileFromTrackData, isEmptyTrack } from '../../manager/track/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
     createFavGroupFreeName,
@@ -12,8 +12,7 @@ import {
     saveFavoriteGroup,
 } from '../../manager/FavoritesManager';
 import ImportFavoriteDialog from '../../dialogs/favorites/ImportFavoriteDialog';
-import ImportAsTrackDialog from '../../dialogs/favorites/ImportAsTrackDialog';
-import { createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
+import ImportAsTrackDialog, { hasPoints } from '../../dialogs/favorites/ImportAsTrackDialog';
 import cloneDeep from 'lodash-es/cloneDeep';
 
 export default function FavoriteGroupUploader({ children }) {
@@ -80,43 +79,6 @@ export default function FavoriteGroupUploader({ children }) {
         return pointsGroups;
     }
 
-    function hasViewpoints(track) {
-        if (!track) return false;
-        const hasWpts = !isEmptyTrack(track, true, false);
-        const hasPointsGroups = track.pointsGroups && Object.keys(track.pointsGroups).length > 0;
-        return hasWpts || hasPointsGroups;
-    }
-
-    async function handleImportAsTrack() {
-        if (trackToImport) {
-            const track = trackToImport.track;
-            const fileName = trackToImport.fileName.substring(0, trackToImport.fileName.lastIndexOf('.')) || trackToImport.fileName;
-            const gpx = await getGpxFileFromTrackData(track, track.routeTypes || null);
-            if (gpx && gpx.data) {
-                const trackFileName = createTrackFreeName(fileName, ctx.tracksGroups, null, "");
-            await saveTrackToCloud({
-                ctx,
-                ltx,
-                currentFolder: '',
-                fileName: trackFileName,
-                type: 'GPX',
-                uploadedFile: {
-                    originalName: trackFileName + GPX_FILE_EXT,
-                    data: gpx.data,
-                },
-                open: true,
-            });
-            } else {
-                ctx.setTrackErrorMsg({
-                    title: 'Import error',
-                    msg: `Unable to convert ${trackToImport.fileName} to GPX format`,
-                });
-            }
-            setTrackToImport(null);
-        }
-        ctx.setFavLoading(false);
-    }
-
     const fileSelected = async (e) => {
         ctx.setFavLoading(true);
         const selected = e.target.files.length === 1;
@@ -125,7 +87,7 @@ export default function FavoriteGroupUploader({ children }) {
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
-                    if (!hasViewpoints(track)) {
+                    if (!hasPoints(track)) {
                         setTrackToImport({ track, fileName: file.name });
                         setOpenImportAsTrackDialog(true);
                         return;
@@ -195,8 +157,7 @@ export default function FavoriteGroupUploader({ children }) {
                             setTrackToImport(null);
                         }
                     }}
-                    onImport={handleImportAsTrack}
-                    fileName={trackToImport.fileName}
+                    trackToImport={trackToImport}
                 />
             )}
         </>

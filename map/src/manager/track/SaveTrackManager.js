@@ -98,7 +98,7 @@ export async function saveTrackToCloud({
     }
 
     if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
-        if (currentFolder === DEFAULT_GROUP_NAME || currentFolder === null || currentFolder === '') {
+        if (currentFolder === DEFAULT_GROUP_NAME) {
             currentFolder = '';
         } else {
             currentFolder = currentFolder + '/';
