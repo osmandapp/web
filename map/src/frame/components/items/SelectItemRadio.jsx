@@ -6,21 +6,21 @@ import DividerWithMargin from '../dividers/DividerWithMargin';
 export default function SelectItemRadio({
     title,
     checked = false,
-    onToggle,
+    onSelect,
     disabled = false,
     showDivider = true,
     boldTitle = true,
 }) {
     const handleRowClick = () => {
         if (!disabled) {
-            onToggle?.(!checked);
+            onSelect();
         }
     };
 
     const handleRadioChange = (event) => {
         event.stopPropagation();
         if (!disabled) {
-            onToggle?.(event.target.checked);
+            onSelect();
         }
     };
 

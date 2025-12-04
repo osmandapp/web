@@ -470,17 +470,13 @@ export default function NavigationSettings({
                     const disabled = isDisabled(logicalKey);
                     const isLast = index === sectionOptions.length - 1;
 
-                    const handleToggle = () => {
-                        toggleBooleanValue(stateKey, true);
-                    };
-
                     return (
                         <SelectItemRadio
                             key={opt.key}
                             title={opt.displayLabel}
                             checked={!!opt.value}
                             disabled={disabled}
-                            onToggle={handleToggle}
+                            onSelect={() => toggleBooleanValue(stateKey, true)}
                             showDivider={!isLast}
                             boldTitle={false}
                         />
