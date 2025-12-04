@@ -13,6 +13,7 @@ import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_
 import SelectItem from '../../frame/components/items/SelectItem';
 import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
 import SelectItemBoolean from '../../frame/components/items/SelectItemBoolean';
+import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 
 const SECTION_KEYS = {
     GENERAL: 'general',
@@ -588,7 +589,7 @@ export default function NavigationSettings({
                 },
             }}
         >
-            <HeaderNoUnderline
+            <HeaderWithUnderline
                 title={t('shared_string_settings')}
                 onClose={handleCloseAccept}
                 rightContent={
@@ -606,6 +607,7 @@ export default function NavigationSettings({
             />
             <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, minHeight: 0 }}>
                 <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
+                    <ThickDivider />
                     {renderSections()}
                     {useDevelFeatures &&
                         geoRouter.getRoute() &&
