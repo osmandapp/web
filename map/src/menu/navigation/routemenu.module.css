@@ -22,7 +22,8 @@
 }
 
 .navigationInput :global(.MuiOutlinedInput-root:hover) :global(.MuiOutlinedInput-notchedOutline) {
-    border-color: #e0e0e0 !important;
+    border-color: #CCCCCC !important;
+    border-width: 2px !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-root.Mui-focused) {
@@ -117,11 +118,17 @@
 }
 
 .clearIconWrapper {
-    opacity: 0.5 !important;
+    opacity: 0 !important;
     margin-left: -15px !important;
-    &:hover {
-        opacity: 1 !important;
-    }
+    transition: opacity 0.2s ease !important;
+}
+
+.navigationInput:hover .clearIconWrapper {
+    opacity: 1 !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-root.Mui-focused) .clearIconWrapper {
+    opacity: 1 !important;
 }
 
 .actionIcon {
