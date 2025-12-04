@@ -5,19 +5,12 @@ import DialogActions from '@mui/material/DialogActions';
 import { Button, Dialog } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';
-import { isEmptyTrack, GPX_FILE_EXT, getGpxFileFromTrackData, validName } from '../../manager/track/TracksManager';
+import { GPX_FILE_EXT, getGpxFileFromTrackData, validName } from '../../manager/track/TracksManager';
 import { removeFileExtension, createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import React, { useContext } from 'react';
-
-export function hasPoints(track) {
-    if (!track) return false;
-    const hasWpts = !isEmptyTrack(track, true, false);
-    const hasPointsGroups = track.pointsGroups && Object.keys(track.pointsGroups).length > 0;
-    return hasWpts || hasPointsGroups;
-}
 
 export default function ImportAsTrackDialog({ setOpenDialog, track, fileName }) {
     const { t } = useTranslation();

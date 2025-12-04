@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { useMutator } from '../../util/Utils';
-import TracksManager from '../../manager/track/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
     createFavGroupFreeName,
@@ -86,7 +86,7 @@ export default function FavoriteGroupUploader({ children }) {
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
-                    if (!hasPoints(track)) {
+                    if (isEmptyTrack(track, true, false)) {
                         setOpenImportAsTrackDialog({ track, fileName: file.name });
                         return;
                     }
