@@ -21,16 +21,19 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
     /**
      * Formats distance value with appropriate unit (large or small).
      */
-    function formatDistance(value) {
+    function formatDistance(value, includeUnit = true) {
         if (!Number.isFinite(value)) {
             return '';
         }
 
+        let formattedValue;
         if (totalDistance < 1 || value < 1) {
-            return `${Math.round(value * 1000)} ${smallUnit}`;
+            formattedValue = Math.round(value * 1000).toString();
+            return includeUnit ? `${formattedValue} ${smallUnit}` : formattedValue;
         }
 
-        return `${value.toFixed(1)} ${largeUnit}`;
+        formattedValue = value.toFixed(1);
+        return includeUnit ? `${formattedValue} ${largeUnit}` : formattedValue;
     }
 
     /**
@@ -116,13 +119,13 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
                 const isLast = i === allTicks.length - 1;
 
                 if (isFirst || isLast) {
-                    ticks.push({ value, label: formatDistance(value) });
+                    ticks.push({ value, label: formatDistance(value, true) });
                 } else {
                     const prevValue = ticks.at(-1)?.value ?? currentMin;
                     const nextValue = allTicks[i + 1] ?? currentMax;
 
                     if (value - prevValue >= minDistance && nextValue - value >= minDistance) {
-                        ticks.push({ value, label: formatDistance(value) });
+                        ticks.push({ value, label: formatDistance(value, false) });
                     }
                 }
             }
@@ -159,12 +162,14 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             for (let i = 0; i < xScale.ticks.length; i++) {
                 const tick = xScale.ticks[i];
                 const x = xScale.getPixelForValue(tick.value);
-                const label = formatDistance(tick.value);
+                const isFirst = i === 0;
+                const isLast = i === xScale.ticks.length - 1;
+                const label = formatDistance(tick.value, isFirst || isLast);
 
                 // Align first label to left, last to right, others centered
-                if (i === 0) {
+                if (isFirst) {
                     ctx.textAlign = 'left';
-                } else if (i === xScale.ticks.length - 1) {
+                } else if (isLast) {
                     ctx.textAlign = 'right';
                 } else {
                     ctx.textAlign = 'center';
