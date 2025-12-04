@@ -18,6 +18,7 @@ export default function Render() {
         'Trampoline park' : {poiName:'trampoline_park', poiName2:null, folderName:'entertainment/entertainment_leisure_trampoline_park'},
         'Escape game' : {poiName:'escape_game', poiName2:null, folderName:'entertainment/entertainment_leisure_escape_game'},
         'Brothel' : {poiName:'brothel', poiName2:null, folderName:'entertainment/entertainment_amenity_brothel'},
+        'Love hotel' : {poiName:'love_hotel', poiName2:null, folderName:'entertainment/entertainment_amenity_love_hotel'},
         'Conference centre' : {poiName:'conference_centre', poiName2:null, folderName:'entertainment/entertainment_amenity_conference_centre'},
         'Harbour' : {poiName:'harbour', poiName2:null, folderName:'entertainment/entertainment_harbour_yes'},
         'Marina' : {poiName:'marina', poiName2:null, folderName:'entertainment/entertainment_leisure_marina'},
