@@ -65,17 +65,26 @@ From this panel you can:
 
 ### My Data {#my-data}
 
-You can download backups that were created and synced from your mobile device via **OsmAnd Cloud**.
-
-- Go to **General Menu → Account → My data (OsmAnd Cloud) → Download all**.
+You can download backups that were created and synced from your mobile device via **OsmAnd Cloud**.  
+Go to: *General Menu → Account → My data (OsmAnd Cloud) → Download all*
 
 This section displays:
 
-- The number of files stored in your cloud
-- Total storage volume used
-- Available cloud storage space
+- The number of files stored in your cloud.
+- Total storage volume used.
+- Available cloud storage space.
 
 > 💡 Only backups created on devices where **OsmAnd Cloud** is enabled will appear here.
+
+If you want to save a copy of all your data, use **Download all**. This opens a dialog where you can:
+
+- Select which data to export (for example, *My places, Settings, Resources, Maps*),
+- Choose the export format (*ZIP or OSF*).
+- See an estimate of the download size and time.
+
+Click **Download Backup** to start the export and save the archive to your computer.
+
+![Web Account](@site/static/img/web/web_download_all.png)
 
 ### Payments and Purchases {#payments-and-purchases}
 
