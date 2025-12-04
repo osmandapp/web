@@ -233,7 +233,7 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
-|          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
+|          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
