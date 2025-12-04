@@ -6,7 +6,7 @@ import { Button, Dialog } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { formatString } from '../../manager/SettingsManager';
 import { isEmptyTrack, GPX_FILE_EXT, getGpxFileFromTrackData } from '../../manager/track/TracksManager';
-import { createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
+import { removeFileExtension, createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
@@ -19,7 +19,7 @@ export function hasPoints(track) {
     return hasWpts || hasPointsGroups;
 }
 
-export default function ImportAsTrackDialog({ setOpenDialog, trackToImport }) {
+export default function ImportAsTrackDialog({ setOpenDialog, track, fileName }) {
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
@@ -27,13 +27,11 @@ export default function ImportAsTrackDialog({ setOpenDialog, trackToImport }) {
     const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
 
     async function handleImportAsTrack() {
-        if (trackToImport) {
-            const track = trackToImport.track;
-            const fileName =
-                trackToImport.fileName.substring(0, trackToImport.fileName.lastIndexOf('.')) || trackToImport.fileName;
+        if (track && fileName) {
+            const fileNameWoExtension = removeFileExtension(fileName);
             const gpx = await getGpxFileFromTrackData(track, track.routeTypes || null);
             if (gpx?.data) {
-                const trackFileName = createTrackFreeName(fileName, ctx.tracksGroups, null, '');
+                const trackFileName = createTrackFreeName(fileNameWoExtension, ctx.tracksGroups, null, '');
                 await saveTrackToCloud({
                     ctx,
                     ltx,
@@ -49,7 +47,7 @@ export default function ImportAsTrackDialog({ setOpenDialog, trackToImport }) {
             } else {
                 ctx.setTrackErrorMsg({
                     title: 'Import error',
-                    msg: `Unable to convert ${trackToImport.fileName} to GPX format`,
+                    msg: `Unable to convert ${fileName} to GPX format`,
                 });
             }
         }
@@ -68,7 +66,7 @@ export default function ImportAsTrackDialog({ setOpenDialog, trackToImport }) {
         >
             <DialogTitle className={dialogStyles.title}>{t('import_track')}</DialogTitle>
             <DialogContent className={dialogStyles.content}>
-                {formatString(t('import_track_desc'), [trackToImport?.fileName])}
+                {formatString(t('import_track_desc'), [fileName])}
             </DialogContent>
             <DialogActions>
                 <Button className={dialogStyles.button} onClick={() => setOpenDialog(false)}>

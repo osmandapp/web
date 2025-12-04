@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMutator } from '../../util/Utils';
 import { styled } from '@mui/material/styles';
-import { createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
+import { removeFileExtension, createTrackFreeName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 import { GPX_FILE_EXT, KMZ_FILE_EXT } from '../../manager/track/TracksManager';
@@ -15,10 +15,6 @@ export default function CloudGpxUploader({ children, folder = null, style = null
 
     function validName(name) {
         return name !== '' && name.trim().length > 0;
-    }
-
-    function removeFileExtension(filename) {
-        return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
     }
 
     useEffect(() => {

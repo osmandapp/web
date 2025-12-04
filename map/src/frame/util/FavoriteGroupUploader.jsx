@@ -22,8 +22,7 @@ export default function FavoriteGroupUploader({ children }) {
     const [importFile, setImportFile] = useState(null);
     const [openDialog, setOpenDialog] = useState(false);
     const [importFavoriteGroup, setImportFavoriteGroup] = useState(false);
-    const [openImportAsTrackDialog, setOpenImportAsTrackDialog] = useState(false);
-    const [trackToImport, setTrackToImport] = useState(null);
+    const [openImportAsTrackDialog, setOpenImportAsTrackDialog] = useState(null);
 
     function preparedCurrentFile(track, newGroupName) {
         let pointsGroups = cloneDeep(track.pointsGroups);
@@ -88,8 +87,7 @@ export default function FavoriteGroupUploader({ children }) {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
                     if (!hasPoints(track)) {
-                        setTrackToImport({ track, fileName: file.name });
-                        setOpenImportAsTrackDialog(true);
+                        setOpenImportAsTrackDialog({ track, fileName: file.name });
                         return;
                     }
                     const pointsGroups = track.pointsGroups;
@@ -148,16 +146,16 @@ export default function FavoriteGroupUploader({ children }) {
                     name={importFile.name}
                 />
             )}
-            {openImportAsTrackDialog && trackToImport && (
+            {openImportAsTrackDialog && (
                 <ImportAsTrackDialog
                     setOpenDialog={(open) => {
-                        setOpenImportAsTrackDialog(open);
                         if (!open) {
                             ctx.setFavLoading(false);
-                            setTrackToImport(null);
+                            setOpenImportAsTrackDialog(null);
                         }
                     }}
-                    trackToImport={trackToImport}
+                    track={openImportAsTrackDialog.track}
+                    fileName={openImportAsTrackDialog.fileName}
                 />
             )}
         </>

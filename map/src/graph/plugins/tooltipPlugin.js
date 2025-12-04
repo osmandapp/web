@@ -79,9 +79,7 @@ export function createTooltip({
                     if (attrData?.datasets) {
                         for (const dataset of attrData.datasets) {
                             if (dataset.data) {
-                                const point = dataset.data.find(
-                                    (p) => Math.abs(p.x - xValue) < DISTANCE_MATCH_TOLERANCE
-                                );
+                                const point = dataset.data.find((p) => Math.abs(p.x - xValue) < DISTANCE_MATCH_TOLERANCE);
                                 if (point && dataset.label && dataset.label !== 'undefined') {
                                     foundAttributes.push(dataset.label);
                                 }

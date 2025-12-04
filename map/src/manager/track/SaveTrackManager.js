@@ -150,6 +150,10 @@ export async function saveTrackToCloud({
     return false;
 }
 
+export function removeFileExtension(filename) {
+    return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
+}
+
 export function createTrackFreeName(name, otherTracks, folder = null, folderName = null) {
     let occupied = null;
     let newName = name;
