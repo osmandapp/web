@@ -277,9 +277,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             }}
         >
             <WeatherHeader setShowInfoBlock={setShowInfoBlock} isDetails={true} />
-            <Box
-                sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1, }}
-            >
+            <Box sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1 }}>
                 <TopWeatherInfo loadingLocation={loadingLocation} weatherLoc={weatherLoc} />
                 {!isEmpty(forecastPreparedData) && (
                     <Box className={styles.forecastButtonBox}>

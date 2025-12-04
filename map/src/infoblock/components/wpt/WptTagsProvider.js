@@ -20,7 +20,13 @@ import React from 'react';
 import { apiGet } from '../../../util/HttpApi';
 import { parseTagWithLang } from '../../../manager/SearchManager';
 import { localizeWeekTokens } from '../../../util/dateFmt';
-import { convertMeters, getSmallLengthUnit, getLargeLengthUnit, LARGE_UNIT, SMALL_UNIT } from '../../../menu/settings/units/UnitsConverter';
+import {
+    convertMeters,
+    getSmallLengthUnit,
+    getLargeLengthUnit,
+    LARGE_UNIT,
+    SMALL_UNIT,
+} from '../../../menu/settings/units/UnitsConverter';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
@@ -299,7 +305,13 @@ async function getWptTags(obj, type, ctx) {
                         }
                 }
 
-                const formattedPrefixAndText = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag, ctx);
+                const formattedPrefixAndText = getFormattedPrefixAndText(
+                    key,
+                    tagObj.textPrefix,
+                    value,
+                    subtypeTag,
+                    ctx
+                );
                 tagObj.textPrefix = formattedPrefixAndText[0];
                 tagObj.value = formattedPrefixAndText[1];
 
@@ -408,7 +420,7 @@ function formatLengthValue(value, ctx, unitType, fallbackUnit) {
     if (!Number.isFinite(numValue) || !ctx.unitsSettings.len) {
         return fallbackUnit ? `${value} ${i18n?.t(fallbackUnit)}` : null;
     }
-    
+
     const converted = convertMeters(numValue, ctx.unitsSettings.len, unitType);
     const unit = unitType === LARGE_UNIT ? getLargeLengthUnit(ctx) : getSmallLengthUnit(ctx);
     return `${+converted.toFixed(1)} ${i18n?.t(unit)}`;
