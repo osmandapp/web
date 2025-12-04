@@ -288,7 +288,7 @@ export default function NavigationMenu() {
                             />
                         </>
                     )}
-                {!routeObject.getOption(ROUTE_POINTS_START) && !routeObject.getOption(ROUTE_POINTS_FINISH) && (
+                {(!routeObject.getOption(ROUTE_POINTS_START) || !routeObject.getOption(ROUTE_POINTS_FINISH)) && (
                     <>
                         <ThickDivider />
                         <TextWithLeftIcon
