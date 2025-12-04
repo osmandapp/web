@@ -43,6 +43,9 @@ import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import NavigationSettings from './NavigationSettings';
 import AvoidRoadsList from './AvoidRoadsList';
 
+export const COLOR_BTN_BLUE = '#237BFF';
+export const COLOR_BTN_RED = '#E71D36';
+
 export function pickNextRoutePoint(routeObject) {
     if (!routeObject) {
         return null;
@@ -263,6 +266,7 @@ export default function NavigationMenu() {
                         <Box>
                             <ActionIconBtn
                                 size={'36px'}
+                                iconColor={COLOR_BTN_BLUE}
                                 icon={<SettingsIcon />}
                                 onClick={() => {
                                     setOpenSettings((prev) => !prev);
