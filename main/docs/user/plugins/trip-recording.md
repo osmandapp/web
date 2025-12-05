@@ -380,7 +380,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
 
 </TabItem>
 
@@ -404,7 +404,7 @@ To customize your interface, you can add or remove the Trip Recording widget and
 
 <TabItem value="ios" label="iOS">
 
-![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)  
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
 
 </TabItem>
 
@@ -476,7 +476,7 @@ If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* �
 
 <TabItem value="ios" label="iOS">
 
-![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
 
 </TabItem>
 
