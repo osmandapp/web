@@ -358,13 +358,13 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
 
 <TabItem value="android" label="Android">  
 
-![Widget context menu](@site/static/img/widgets/widget_context_menu_andr.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget context menu](@site/static/img/widgets/widget_context_menu_ios.png)
+![Widget context menu](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -387,6 +387,10 @@ The **widget context menu** provides a quick way to manage and configure widgets
 - **Delete**
     - Remove the widget from the panel.
     - A confirmation prompt ensures the action is intentional.
+
+- **Show track on map** 
+    - Available for the [Trip Recording](../plugins/trip-recording.md) widgets.
+    - Displays your currently recorded track on the map.
 
 - **Reset average speed** (example of *Widget specific actions*)
     - Available for the [Average Speed](../widgets/info-widgets.md#average-speed) widget.
