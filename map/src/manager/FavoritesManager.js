@@ -582,7 +582,14 @@ export function getSize(group, t) {
 export function getFavMenuListByLayers(layers, wpts, currentLoc) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
+        // Only process waypoint markers (skip route points, track points, polylines, start/end markers)
+        if (!value?.options?.name) {
+            return;
+        }
         const wpt = getWptByTitle(value.options.name, wpts);
+        if (!wpt) {
+            return;
+        }
         const icon = createPoiIcon({
             point: wpt,
             color: wpt.color,
