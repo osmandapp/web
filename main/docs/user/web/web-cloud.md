@@ -121,16 +121,15 @@ The Change email dialog appears. A verification code is sent to the current emai
 
 ### Logout and Delete Account {#logout-and-delete}
 
-To log out of your OsmAnd Web account:
+![Web Account](@site/static/img/web/web_logout.png)
 
-- Open **General Menu → Account**.
-- Click **Log out** button to end your current session.
+The OsmAnd Account panel contains controls for ending the current web session and permanently removing the account.
 
-To permanently delete your account:
+To log out, open OsmAnd Account and use the **Logout** button in the top-right corner of the panel (icon with an arrow leaving a square). Selecting Logout closes the account panel and ends the active session on the website.
 
-- Scroll to the bottom of the **Account** menu.
-- Click **Delete account** button.
-- Confirm the deletion. This action is irreversible.
+To delete an account, select **Delete account** at the bottom of the OsmAnd Account panel. A confirmation dialog appears with the message *“Are you sure you want to do this?”* and a short explanation that all data and account details will be removed from OsmAnd Cloud and secondary devices will lose access to paid features. A verification code is sent to the account email address. Enter the code in the Code from Email field and choose **DELETE THIS ACCOUNT** to complete the process. This operation is permanent and cannot be undone.
+
+![Web Account](@site/static/img/web/web_delete.png)
 
 <!--
 ## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
@@ -189,3 +188,11 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ## Related Articles {#related-articles}
 
+- [User Data](../web/web-userdata.mdx)
+- [Сloud Sync](../web/web-cloud.md)
+- [Cross-Platform Purchases](../purchases/cross.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)
+
+<!--
+When the structure has been approved, some links should be updated.
+-->
