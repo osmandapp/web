@@ -44,7 +44,7 @@ OsmAnd app is available for Android and iOS systems. There is a great variety of
 
 The tool provides the searching features for any use-cases: address search, POI search, custom search, history search, coordinate search.
 
-### [Web Planner](./web/index.md) {#web-planner}
+### [Web Map Portal](./web/index.md) {#web-map-portal}
 
 OsmAnd Web Source provides a wide range of map features, a navigation service, and synchronization with OsmAnd Cloud. This allows users to access detailed maps, navigate routes, and keep their data synchronized across devices.
 
