@@ -112,12 +112,12 @@ For more details on using your purchases across different platforms, read about 
 
 ### Change Email Address {#change-email-address}
 
-To update your email address:
+To update your email address,
+Go to *General Menu → Account → Email → ⋮ → Change email*
 
-1. Go to **General Menu → Account → Email → ⋮ → Change email**.
-2. Enter your new email address and confirm.
+The Change email dialog appears. A verification code is sent to the current email address. Enter this code in the **Code from Old Email** field, specify the new address in **New Email**, then select **Next**. For security reasons, a confirmation message is sent to your new email address informing you that the account email has been updated.
 
-> 🔒 A verification email will be sent to the new address before the change is finalized.
+![Web Account](@site/static/img/web/web_email.png)
 
 ### Logout and Delete Account {#logout-and-delete}
 
