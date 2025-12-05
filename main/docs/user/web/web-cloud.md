@@ -117,11 +117,11 @@ Go to *General Menu → Account → Email → ⋮ → Change email*
 
 The Change email dialog appears. A verification code is sent to the current email address. Enter this code in the **Code from Old Email** field, specify the new address in **New Email**, then select **Next**. For security reasons, a confirmation message is sent to your new email address informing you that the account email has been updated.
 
-![Web Account](@site/static/img/web/web_email.png)
+![Web Account](@site/static/img/web/web_email_new.png)
 
 ### Logout and Delete Account {#logout-and-delete}
 
-![Web Account](@site/static/img/web/web_logout.png)
+![Web Account](@site/static/img/web/web_logout_new.png)
 
 The OsmAnd Account panel contains controls for ending the current web session and permanently removing the account.
 
