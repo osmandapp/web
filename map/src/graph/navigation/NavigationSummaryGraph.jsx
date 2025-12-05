@@ -1,8 +1,9 @@
-import React, { useContext, useMemo, useRef } from 'react';
+import React, { useContext, useMemo, useRef, useCallback } from 'react';
 import { Chart } from 'react-chartjs-2';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import { useTranslation } from 'react-i18next';
+import throttle from 'lodash-es/throttle';
 import AppContext from '../../context/AppContext';
 import {
     convertMeters,
@@ -18,6 +19,9 @@ import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsP
 import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
 import { createTooltip } from '../plugins/tooltipPlugin';
 import { createMouseLinePlugin } from '../plugins/mouseLinePlugin';
+
+// ~60 FPS (16ms) for smooth performance
+const MOUSE_MOVE_THROTTLE_MS = 16;
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend, zoomPlugin);
 
@@ -200,6 +204,15 @@ export default function NavigationSummaryGraph({ route }) {
         [totalDistance, distanceUnit, smallDistanceUnit, elevationUnit]
     );
 
+    const handleMouseMove = useCallback(
+        throttle((e) => {
+            if (graphData?.coordinates) {
+                GraphManager.handleGraphMouseMove(e, chartRef, ctx, graphData.coordinates);
+            }
+        }, MOUSE_MOVE_THROTTLE_MS),
+        [graphData?.coordinates]
+    );
+
     if (!graphData) {
         return null;
     }
@@ -258,7 +271,7 @@ export default function NavigationSummaryGraph({ route }) {
                     data={data}
                     options={options}
                     plugins={[combinedLabelsPlugin, distanceXAxisPlugin, mouseLinePlugin]}
-                    onMouseMove={(e) => GraphManager.handleGraphMouseMove(e, chartRef, ctx, graphData.coordinates)}
+                    onMouseMove={handleMouseMove}
                     onMouseLeave={() => GraphManager.hideGraphMarker(ctx)}
                 />
             </div>

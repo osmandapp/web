@@ -58,7 +58,10 @@ export default function NavigationPointsManager({ routeObject }) {
     const [dropTargetIndex, setDropTargetIndex] = useState(null);
 
     const startInputRef = useRef(null);
+    const finishInputRef = useRef(null);
     const usedAutoFocus = useRef(false);
+
+    const FOCUS_DELAY_MS = 150;
 
     const location = useLocation();
 
@@ -75,27 +78,32 @@ export default function NavigationPointsManager({ routeObject }) {
     }, [startPoint]);
 
     useEffect(() => {
-        if (isMainMenu && start === '' && startInputRef.current && !usedAutoFocus.current) {
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    if (startInputRef.current) {
-                        startInputRef.current.focus();
-                        usedAutoFocus.current = true;
-                    }
-                });
-            });
-        } else if (!isMainMenu) {
-            usedAutoFocus.current = false;
-        }
-    }, [isMainMenu, start, usedAutoFocus]);
-
-    useEffect(() => {
         if (finishPoint && typeof finishPoint == 'object') {
             setFinish(formatLatLon(finishPoint));
         } else if (!finishPoint) {
             setFinish('');
         }
     }, [finishPoint]);
+
+    useEffect(() => {
+        if (!isMainMenu) {
+            usedAutoFocus.current = false;
+            return;
+        }
+        const focusTimeout = setTimeout(() => {
+            if (start === '' && startInputRef.current) {
+                startInputRef.current.focus();
+                usedAutoFocus.current = true;
+            } else if (finish === '' && finishInputRef.current) {
+                finishInputRef.current.focus();
+                usedAutoFocus.current = true;
+            } else {
+                usedAutoFocus.current = false;
+            }
+        }, FOCUS_DELAY_MS);
+
+        return () => clearTimeout(focusTimeout);
+    }, [isMainMenu, start, finish]);
 
     useEffect(() => {
         if (viaPoints && viaPoints.length > 0 && intermediates.length <= viaPoints.length) {
@@ -399,6 +407,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 onDragOver={handleDragOver(intermediates.length + 1)}
                 onDrop={handleDrop(intermediates.length + 1)}
                 onDragEnd={handleDragEnd}
+                inputRef={finishInputRef}
                 history={history}
                 onHistorySelect={handleFinishHistorySelect}
                 onClearHistory={clearHistory}

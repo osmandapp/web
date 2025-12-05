@@ -7,8 +7,11 @@ import { ReactComponent as FinishIcon } from '../../assets/icons/list_destinatio
 import { ReactComponent as ChangeIcon } from '../../assets/icons/ic_action_change_navigation_points.svg';
 import { ReactComponent as AddIcon } from '../../assets/icons/ic_action_add_outlined.svg';
 import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remove_outlined.svg';
+import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_add_filled.svg';
+import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action_remove_filled.svg';
 import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
+import { COLOR_BTN_BLUE, COLOR_BTN_RED } from './NavigationMenu';
 
 export const START_POINT = 'start';
 export const INTERMEDIATE_POINT = 'intermediate';
@@ -104,9 +107,32 @@ export default function NavigationInputRow({
                 />
             </Box>
             <Box className={styles.actionButtons}>
-                {showSwap && <ActionIconBtn id={`${inputId}-swap`} icon={<ChangeIcon />} onClick={onSwap} />}
-                {showRemove && <ActionIconBtn id={`${inputId}-remove`} icon={<RemoveIcon />} onClick={onRemove} />}
-                {showAdd && <ActionIconBtn id={`${inputId}-add`} icon={<AddIcon />} onClick={onAdd} />}
+                {showSwap && (
+                    <ActionIconBtn
+                        id={`${inputId}-swap`}
+                        icon={<ChangeIcon />}
+                        onClick={onSwap}
+                        iconColor={COLOR_BTN_BLUE}
+                    />
+                )}
+                {showRemove && (
+                    <ActionIconBtn
+                        id={`${inputId}-remove`}
+                        icon={<RemoveIcon />}
+                        activeIcon={<RemoveActiveIcon />}
+                        onClick={onRemove}
+                        iconColor={COLOR_BTN_RED}
+                    />
+                )}
+                {showAdd && (
+                    <ActionIconBtn
+                        id={`${inputId}-add`}
+                        icon={<AddIcon />}
+                        activeIcon={<AddActiveIcon />}
+                        onClick={onAdd}
+                        iconColor={COLOR_BTN_BLUE}
+                    />
+                )}
             </Box>
         </Box>
     );

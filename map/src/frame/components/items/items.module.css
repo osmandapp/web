@@ -3,6 +3,7 @@
     padding: 10px 16px !important;
     gap: 24px !important;
     min-height: 48px !important;
+    max-height: 58px !important;
 }
 .mainText {
     color: var(--text-primary) !important;
@@ -114,6 +115,12 @@
 }
 .selectBooleanControl {
     margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.selectRadioControl {
+    margin-left: auto !important;
+    margin-right: -8px !important;
     display: flex !important;
     align-items: center !important;
 }
