@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label:  OsmAnd Cloud
+sidebar_label:  Sign Up / Login
 title: Sign Up / Login
 ---
 
