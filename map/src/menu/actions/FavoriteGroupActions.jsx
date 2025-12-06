@@ -6,6 +6,8 @@ import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
+import { ReactComponent as PinnedIcon } from '../../assets/icons/ic_action_drawing_pin.svg';
+import { ReactComponent as UnpinnedIcon } from '../../assets/icons/ic_action_drawing_pin_disable.svg';
 import Utils from '../../util/Utils';
 import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
 import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
@@ -27,6 +29,20 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     function showOnMap(hidden) {
         ctx.setFavLoading(true);
         updateGroup(group, hidden);
+        if (setOpenActions) {
+            setOpenActions(false);
+        }
+    }
+
+    function togglePinned() {
+        const newPinnedState = group.pinned !== 'true';
+        const updatedGroups = ctx.favorites.groups.map((g) => {
+            if (g.id === group.id) {
+                return { ...g, pinned: newPinnedState ? 'true' : 'false' };
+            }
+            return g;
+        });
+        ctx.setFavorites({ ...ctx.favorites, groups: updatedGroups });
         if (setOpenActions) {
             setOpenActions(false);
         }
@@ -93,6 +109,23 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                                         onChange={(e) => showOnMap(e.target.checked)}
                                     />
                                 </div>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {!sharedFile && <Divider className={styles.dividerActions} />}
+                    {!sharedFile && (
+                        <MenuItem
+                            id="se-favorite-folder-actions-pinned"
+                            className={styles.action}
+                            onClick={togglePinned}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                {group.pinned === 'true' ? <UnpinnedIcon /> : <PinnedIcon />}
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    {group.pinned === 'true' ? 'Unpin folder' : 'Pin folder'}
+                                </Typography>
                             </ListItemText>
                         </MenuItem>
                     )}

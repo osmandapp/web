@@ -39,7 +39,11 @@ export default function FavoritesMenu() {
         if (groups) {
             // remove shared with me groups from main list
             groups = groups.filter((g) => !g.sharedWithMe);
-            groups.forEach((g, index) => {
+            const pinnedGroups = groups.filter((g) => g.pinned === 'true');
+            const unpinnedGroups = groups.filter((g) => g.pinned !== 'true');
+            const orderedGroups = [...pinnedGroups, ...unpinnedGroups];
+            const showPinnedGroupDivider = pinnedGroups.length > 0;
+            orderedGroups.forEach((g, index) => {
                 items.push(
                     <FavoriteGroup
                         key={g + index}
@@ -47,6 +51,7 @@ export default function FavoritesMenu() {
                         group={g}
                         enableGroups={enableGroups}
                         setEnableGroups={setEnableGroups}
+                        showPinnedGroupDivider={showPinnedGroupDivider && index === pinnedGroups.length - 1}
                     />
                 );
             });
