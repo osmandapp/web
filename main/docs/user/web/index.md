@@ -13,7 +13,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-### Introduction {#introduction}
+### [Introduction](./web-overview.md) {#introduction}
 
 In this section, you will find a description of our [Web Map Portal](https://osmand.net/map).
 
