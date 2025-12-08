@@ -27,6 +27,18 @@ export default function FavoritesMenu() {
 
     const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
 
+    const organizeGroups = (groups) => {
+        const pinnedGroups = groups.filter((g) => g.pinned === 'true');
+        const unpinnedGroups = groups.filter((g) => g.pinned !== 'true');
+        const pinnedVisible = pinnedGroups.filter((g) => g.hidden !== 'true');
+        const pinnedHidden = pinnedGroups.filter((g) => g.hidden === 'true');
+        const unpinnedVisible = unpinnedGroups.filter((g) => g.hidden !== 'true');
+        const unpinnedHidden = unpinnedGroups.filter((g) => g.hidden === 'true');
+        const orderedGroups = pinnedVisible.concat(pinnedHidden, unpinnedVisible, unpinnedHidden);
+        const dividerIndex = pinnedGroups.length > 0 && unpinnedGroups.length > 0 ? pinnedGroups.length - 1 : -1;
+        return { orderedGroups, dividerIndex };
+    };
+
     // get list of favorites groups
     const groupItems = useMemo(() => {
         const items = [];
@@ -39,10 +51,7 @@ export default function FavoritesMenu() {
         if (groups) {
             // remove shared with me groups from main list
             groups = groups.filter((g) => !g.sharedWithMe);
-            const pinnedGroups = groups.filter((g) => g.pinned === 'true');
-            const unpinnedGroups = groups.filter((g) => g.pinned !== 'true');
-            const orderedGroups = [...pinnedGroups, ...unpinnedGroups];
-            const showPinnedGroupDivider = pinnedGroups.length > 0;
+            const { orderedGroups, dividerIndex } = organizeGroups(groups);
             orderedGroups.forEach((g, index) => {
                 items.push(
                     <FavoriteGroup
@@ -51,7 +60,7 @@ export default function FavoritesMenu() {
                         group={g}
                         enableGroups={enableGroups}
                         setEnableGroups={setEnableGroups}
-                        showPinnedGroupDivider={showPinnedGroupDivider && index === pinnedGroups.length - 1}
+                        showPinnedGroupDivider={index === dividerIndex}
                     />
                 );
             });

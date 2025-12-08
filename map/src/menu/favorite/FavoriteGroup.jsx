@@ -6,6 +6,7 @@ import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action_folder_hidden.svg';
+import { ReactComponent as FolderPinIcon } from '../../assets/icons/ic_action_folder_pin.svg';
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
@@ -27,6 +28,15 @@ export default function FavoriteGroup({ index, group, smartf = null, showPinnedG
     const groupSize = getSize(group, t);
 
     const sharedFile = smartf?.type === SHARE_TYPE;
+
+    const iconStyle = {
+        fill:
+            group.name &&
+            FavoritesManager.getColorGroup({
+                favoritesGroup: group,
+                groupName: group.name,
+            }),
+    };
 
     useEffect(() => {
         if (ctx.favorites.mapObjs?.[group.id]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
@@ -61,17 +71,10 @@ export default function FavoriteGroup({ index, group, smartf = null, showPinnedG
                 <ListItemIcon className={styles.icon}>
                     {group.hidden === 'true' ? (
                         <FolderHiddenIcon id={'se-fav-menu-icon-hidden-' + group.name} />
+                    ) : group.pinned === 'true' ? (
+                        <FolderPinIcon style={iconStyle} />
                     ) : (
-                        <FolderIcon
-                            style={{
-                                fill:
-                                    group.name &&
-                                    FavoritesManager.getColorGroup({
-                                        favoritesGroup: group,
-                                        groupName: group.name,
-                                    }),
-                            }}
-                        />
+                        <FolderIcon style={iconStyle} />
                     )}
                 </ListItemIcon>
                 <ListItemText id={`se-fav-group-size-${groupSize}`}>
