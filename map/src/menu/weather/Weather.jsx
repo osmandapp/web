@@ -175,9 +175,7 @@ export default function Weather() {
                 >
                     <WeatherHeader />
                     {dayForecast || weekForecast ? (
-                        <Box
-                            sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1, }}
-                        >
+                        <Box sx={{ overflowX: 'hidden', overflowY: 'auto', flex: 1 }}>
                             <TopWeatherInfo
                                 loadingLocation={loadingLocation}
                                 headerForecast={headerForecast}

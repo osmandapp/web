@@ -224,6 +224,10 @@ export default function ExploreLayer() {
             }
             setLoadingContextMenu(true);
             const bbox = getVisibleBbox(map, ctx);
+            if (!bbox) {
+                setLoadingContextMenu(false);
+                return;
+            }
             const api = settings?.useWikiImages ? API_GET_IMGS : API_GET_OBJS;
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/${api}`, {
                 apiCache: true,

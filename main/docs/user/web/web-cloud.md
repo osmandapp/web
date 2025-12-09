@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-sidebar_label:  OsmAnd Cloud
-title: OsmAnd Cloud on the Website
+sidebar_label:  Sign Up / Login
+title: Sign Up / Login
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,88 +15,123 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Overview {#overview}
 
-The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
+Signing in with an OsmAnd account turns the [OsmAnd Map Portal](https://osmand.net/map) from a simple map viewer into your personal workspace. The same account that you use in the mobile app connects the website to your OsmAnd Cloud data and purchases, so you can access your saved content and subscriptions in a single place on the web.
 
 
+## Sign Up {#sign-up}
 
-## How to Start {#how-to-start}
+To access OsmAnd Web features, you need to create an account. Use the Sign Up flow:
 
-To access OsmAnd Web features, you need an account:
+- Go to the [**OsmAnd Map Portal**](https://osmand.net/map).
+- Open the **Account** menu.
+- Select **Create new account**. The Create new account dialog opens.
+- In the **Email** field, enter the email address you want to use for your OsmAnd account and click **Continue**.
+- A verification code is sent to this email address. Check your inbox (and spam folder if needed).
+- In the next dialog, enter the Verification code and click **Continue** to confirm your email. If you did not receive the code, use the **I didn't receive verification code** link and follow the instructions.
 
-- If you already have an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) subscription or want to create a free [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account, follow these steps:
+After the code is verified, your web account is created and you are signed in automatically.
 
-  1. Go to the [**OsmAnd Map Portal**](https://osmand.net/map).
-  2. Open the **Account** menu.
-     - **Log in**: Enter the email address used for your Pro or Start subscription.
-     - **Create account**: Use this option to register for a free OsmAnd Start account.
+![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
 
-![Web Account](@site/static/img/web/web_account.png)
+
+## Login {#login}
+
+If you already have an OsmAnd account, you can sign in on the [**OsmAnd Map Portal**](https://osmand.net/map) with the same email and password. Go to the **Account menu** and choose the **Log in option**. In the dialog that opens, enter the email address linked to your OsmAnd account, type your password, and select **Continue**. After a successful login, the OsmAnd Account panel opens and you can work with your data, purchases and settings.
+
+If you do not remember your password, use the **I don’t have or forgot password** link in the login dialog. This opens the **Change or reset password** panel. Enter the email address you used to create your account and click **Continue**. A message with a verification code is sent to this email. On the next screen, type the verification code and your new password, then select **Continue** to confirm. When the code is accepted, your password is updated and you can log in to OsmAnd Web with the new credentials.
+
+![Web Account](@site/static/img/web/web_password.png)
 
 ## Managing Account {#managing-account}
 
-To manage your account, go to:  
-**General Menu → Account**
+Once you are signed in, you can manage your web account.  
+Go to: *General Menu → Account*
 
-After registering on the web, you can:
-
-- View account information
-- Download cloud backups
-- Log out of your account
-- Delete your account
-- Change your email address
-- See your payments and purchases
+From this panel you can:
+- View account information.
+- Download cloud backups.
+- Log out of your account.
+- Delete your account.
+- Change your email address.
+- See your payments and purchases.
 
 ![Web Account](@site/static/img/web/web_account_2.png)
 
 ### My Data {#my-data}
 
-You can download backups that were created and synced from your mobile device via **OsmAnd Cloud**.
-
-- Go to **General Menu → Account → My data (OsmAnd Cloud) → Download all**.
+You can download backups that were created and synced from your mobile device via **OsmAnd Cloud**.  
+Go to: *General Menu → Account → My data (OsmAnd Cloud) → Download all*
 
 This section displays:
 
-- The number of files stored in your cloud
-- Total storage volume used
-- Available cloud storage space
+- The number of files stored in your cloud.
+- Total storage volume used.
+- Available cloud storage space.
 
 > 💡 Only backups created on devices where **OsmAnd Cloud** is enabled will appear here.
 
+If you want to save a copy of all your data, use **Download all**. This opens a dialog where you can:
+
+- Select which data to export (for example, *My places, Settings, Resources, Maps*),
+- Choose the export format (*ZIP or OSF*).
+- See an estimate of the download size and time.
+
+Click **Download Backup** to start the export and save the archive to your computer.
+
+![Web Account](@site/static/img/web/web_download_all.png)
+
 ### Payments and Purchases {#payments-and-purchases}
 
-- Go to **General Menu → Account → Payments and Purchases**.
+This section shows all products and subscriptions linked to your OsmAnd account. To open it,  
+Go to: *General Menu → Account → Payments and Purchases*
 
-In this section, you can view all purchases and subscriptions linked to your account.
+Here you can see a list of all purchases associated with your email:
+- Free and paid plans (such as OsmAnd Start or OsmAnd Pro).
+- One-time products (e.g. Maps+ or special editions).
+- Subscriptions that renew monthly or annually.
+
+For each item the list shows:
+- Product name and icon.
+- Type – monthly subscription, annual subscription or one-time payment.
+- Status – *Active, Expired or Canceled*.
+- Date information.
+
+If you click a product in the list, the details page opens. There you can see where the product was purchased (*Google Play, Apple App Store, Huawei AppGallery, Amazon* or *OsmAnd Web*) and find a link or instructions on how to manage or cancel the subscription in the corresponding store. If the product was purchased on OsmAnd Web (FastSpring), the details page shows a **Manage subscription** link that opens the FastSpring account management portal, where you can update your payment method, cancel or re-activate the subscription, change the plan, or download invoices.
+
+If there are no purchases linked to your account yet, this section shows an empty state with the message **You don’t have any purchases** and a **Learn more** button that leads to a page with available OsmAnd plans and upgrade options.
 
 For more details on using your purchases across different platforms, read about [cross-platform access](../purchases/cross.md).
 
+![Web Account](@site/static/img/web/web_purchases.png)
+
 ### Change Email Address {#change-email-address}
 
-To update your email address:
+To update your email address,
+Go to *General Menu → Account → Email → ⋮ → Change email*
 
-1. Go to **General Menu → Account → Email → ⋮ → Change email**.
-2. Enter your new email address and confirm.
+The Change email dialog appears. A verification code is sent to the current email address. Enter this code in the **Code from Old Email** field, specify the new address in **New Email**, then select **Next**. For security reasons, a confirmation message is sent to your new email address informing you that the account email has been updated.
 
-> 🔒 A verification email will be sent to the new address before the change is finalized.
+![Web Account](@site/static/img/web/web_email_new.png)
 
-### Log Out and Delete Account {#log-out-and-delete}
+### Logout and Delete Account {#logout-and-delete}
 
-To log out of your OsmAnd Web account:
+![Web Account](@site/static/img/web/web_logout_new.png)
 
-- Open **General Menu → Account**.
-- Click **Log out** button to end your current session.
+The OsmAnd Account panel contains controls for ending the current web session and permanently removing the account.
 
-To permanently delete your account:
+To log out, open OsmAnd Account and use the **Logout** button in the top-right corner of the panel (icon with an arrow leaving a square). Selecting Logout closes the account panel and ends the active session on the website.
 
-- Scroll to the bottom of the **Account** menu.
-- Click **Delete account** button.
-- Confirm the deletion. This action is irreversible.
+To delete an account, select **Delete account** at the bottom of the OsmAnd Account panel. A confirmation dialog appears with the message *“Are you sure you want to do this?”* and a short explanation that all data and account details will be removed from OsmAnd Cloud and secondary devices will lose access to paid features. A verification code is sent to the account email address. Enter the code in the Code from Email field and choose **DELETE THIS ACCOUNT** to complete the process. This operation is permanent and cannot be undone.
 
+![Web Account](@site/static/img/web/web_delete.png)
 
+<!--
 ## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
 
 - **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#initial-setup) paid subscription. 
@@ -109,8 +144,6 @@ The cross-platform capability allows you to use OsmAnd Pro on all platforms *([A
 3. Register your [Pro or Start account](/docs/user/personal/osmand-cloud/#cross-platform) on the OsmAnd server inside OsmAnd app.
 4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
 
-
-<!--
 
 - Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
 
@@ -153,8 +186,13 @@ In this section of the menu, you can change the map style. You can read more abo
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
 
+## Related Articles {#related-articles}
 
+- [User Data](../web/web-userdata.mdx)
+- [Сloud Sync](../web/web-cloud.md)
+- [Cross-Platform Purchases](../purchases/cross.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)
 
-
-
-
+<!--
+When the structure has been approved, some links should be updated.
+-->

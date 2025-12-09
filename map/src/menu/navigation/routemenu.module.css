@@ -15,14 +15,15 @@
 }
 
 .navigationInput :global(.MuiOutlinedInput-root) {
-    padding: 10px 12px !important;
+    padding: 16px 10px 16px 16px !important;
     background-color: #f5f5f5 !important;
     border-radius: 4px !important;
     height: 48px !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-root:hover) :global(.MuiOutlinedInput-notchedOutline) {
-    border-color: #e0e0e0 !important;
+    border-color: #cccccc !important;
+    border-width: 2px !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-root.Mui-focused) {
@@ -39,11 +40,11 @@
 }
 
 .navigationInput :global(.MuiInputAdornment-positionStart) {
-    margin-right: 8px !important;
+    margin-right: 16px !important;
 }
 
 .navigationInput :global(.MuiInputAdornment-positionEnd) {
-    margin-left: 8px !important;
+    margin-left: 16px !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-input) {
@@ -61,6 +62,11 @@
     font-weight: 400 !important;
     line-height: 120% !important;
     letter-spacing: 0.16px !important;
+}
+
+.inputField :global(input::placeholder) {
+    color: var(--text-primary) !important;
+    opacity: 1 !important;
 }
 
 .inputFieldLink {
@@ -112,10 +118,17 @@
 }
 
 .clearIconWrapper {
-    opacity: 0.5 !important;
-    &:hover {
-        opacity: 1 !important;
-    }
+    opacity: 0 !important;
+    margin-left: -15px !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.navigationInput:hover .clearIconWrapper {
+    opacity: 1 !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-root.Mui-focused) .clearIconWrapper {
+    opacity: 1 !important;
 }
 
 .actionIcon {

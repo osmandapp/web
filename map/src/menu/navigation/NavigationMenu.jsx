@@ -9,7 +9,7 @@ import { ReactComponent as DotsIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_point_destination.svg';
 import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attach_track.svg';
 import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
-import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_track_recordable.svg';
+import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as SaveCloudIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
@@ -33,6 +33,7 @@ import {
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
+    PROFILE_LINE,
 } from '../../store/geoRouter/profileConstants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -42,6 +43,9 @@ import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import NavigationSettings from './NavigationSettings';
 import AvoidRoadsList from './AvoidRoadsList';
+
+export const COLOR_BTN_BLUE = '#237BFF';
+export const COLOR_BTN_RED = '#E71D36';
 
 export function pickNextRoutePoint(routeObject) {
     if (!routeObject) {
@@ -162,6 +166,21 @@ export default function NavigationMenu() {
     const hasRouteTrack = routeTrack && !isEmptyTrack(routeTrack);
     const canSaveToCloud = hasRouteTrack && ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT;
 
+    function showRouteSummary() {
+        if (ctx.routeTrackFile) {
+            return true;
+        }
+        if (routeObject.getProfile()?.profile === PROFILE_LINE) {
+            return routeObject.getRoute() && !routeObject.preview && !ctx.navigationRoutingInProgress;
+        }
+        return (
+            routeObject.getRoute() &&
+            routeObject.getRouteProps()?.overall?.routingTime &&
+            !routeObject.preview &&
+            !ctx.navigationRoutingInProgress
+        );
+    }
+
     function handleClearSelectedTrack() {
         routeObject.resetRoute();
         ctx.setRouteTrackFile(null);
@@ -263,6 +282,7 @@ export default function NavigationMenu() {
                         <Box>
                             <ActionIconBtn
                                 size={'36px'}
+                                iconColor={COLOR_BTN_BLUE}
                                 icon={<SettingsIcon />}
                                 onClick={() => {
                                     setOpenSettings((prev) => !prev);
@@ -284,7 +304,7 @@ export default function NavigationMenu() {
                             />
                         </>
                     )}
-                {!routeObject.getOption(ROUTE_POINTS_START) && !routeObject.getOption(ROUTE_POINTS_FINISH) && (
+                {(!routeObject.getOption(ROUTE_POINTS_START) || !routeObject.getOption(ROUTE_POINTS_FINISH)) && (
                     <>
                         <ThickDivider />
                         <TextWithLeftIcon
@@ -310,10 +330,14 @@ export default function NavigationMenu() {
                         <ThickDivider />
                     </>
                 )}
-                {routeObject.getRoute() && routeObject.getRouteProps() && (
+                {showRouteSummary() && (
                     <>
                         <ThickDivider />
-                        <RouteSummaryCard routeProps={routeObject.getRouteProps()} onDetails={openInfoBlock} />
+                        <RouteSummaryCard
+                            key={routeObject.getProfile()?.profile}
+                            routeProps={routeObject.getRouteProps()}
+                            onDetails={openInfoBlock}
+                        />
                         <ThickDivider />
                     </>
                 )}

@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
+import LoginContext from '../../context/LoginContext';
 import { useMutator } from '../../util/Utils';
-import TracksManager from '../../manager/track/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
     createFavGroupFreeName,
@@ -11,14 +12,17 @@ import {
     saveFavoriteGroup,
 } from '../../manager/FavoritesManager';
 import ImportFavoriteDialog from '../../dialogs/favorites/ImportFavoriteDialog';
+import ImportAsTrackDialog, { hasPoints } from '../../dialogs/favorites/ImportAsTrackDialog';
 import cloneDeep from 'lodash-es/cloneDeep';
 
 export default function FavoriteGroupUploader({ children }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
     const [importFile, setImportFile] = useState(null);
     const [openDialog, setOpenDialog] = useState(false);
     const [importFavoriteGroup, setImportFavoriteGroup] = useState(false);
+    const [openImportAsTrackDialog, setOpenImportAsTrackDialog] = useState(null);
 
     function preparedCurrentFile(track, newGroupName) {
         let pointsGroups = cloneDeep(track.pointsGroups);
@@ -82,6 +86,10 @@ export default function FavoriteGroupUploader({ children }) {
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
+                    if (isEmptyTrack(track, true, false)) {
+                        setOpenImportAsTrackDialog({ track, fileName: file.name });
+                        return;
+                    }
                     const pointsGroups = track.pointsGroups;
                     for (const name of Object.keys(pointsGroups)) {
                         let groupName = name !== DEFAULT_GROUP_NAME_POINTS_GROUPS ? name : DEFAULT_FAV_GROUP_NAME;
@@ -136,6 +144,18 @@ export default function FavoriteGroupUploader({ children }) {
                     setOpenDialog={setOpenDialog}
                     setImportFavoriteGroup={setImportFavoriteGroup}
                     name={importFile.name}
+                />
+            )}
+            {openImportAsTrackDialog && (
+                <ImportAsTrackDialog
+                    setOpenDialog={(open) => {
+                        if (!open) {
+                            ctx.setFavLoading(false);
+                            setOpenImportAsTrackDialog(null);
+                        }
+                    }}
+                    track={openImportAsTrackDialog.track}
+                    fileName={openImportAsTrackDialog.fileName}
                 />
             )}
         </>

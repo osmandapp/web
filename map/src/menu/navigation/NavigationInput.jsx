@@ -5,6 +5,7 @@ import { ReactComponent as ClearIcon } from '../../assets/icons/ic_action_cancel
 import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationHistoryDropdown from './NavigationHistoryDropdown';
+import { COLOR_BTN_BLUE } from './NavigationMenu';
 
 const NavigationInput = forwardRef(function NavigationInput(
     {
@@ -25,7 +26,6 @@ const NavigationInput = forwardRef(function NavigationInput(
     ref
 ) {
     const [inputValue, setInputValue] = useState(value || '');
-    const [isFocused, setIsFocused] = useState(false);
     const [showHistory, setShowHistory] = useState(false);
 
     const isFocusedRef = useRef(false);
@@ -35,10 +35,10 @@ const NavigationInput = forwardRef(function NavigationInput(
     useImperativeHandle(ref, () => inputRef.current);
 
     useEffect(() => {
-        if (!isFocusedRef.current) {
+        if (value !== inputValue) {
             setInputValue(value || '');
         }
-    }, [value]);
+    }, [value, inputValue]);
 
     useEffect(() => {
         const handleNavigationBlur = () => {
@@ -62,7 +62,6 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const handleFocus = () => {
         isFocusedRef.current = true;
-        setIsFocused(true);
     };
 
     const handleClick = () => {
@@ -90,7 +89,6 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const clearFocus = () => {
         isFocusedRef.current = false;
-        setIsFocused(false);
     };
 
     const handleBlur = (e) => {
@@ -144,21 +142,25 @@ const NavigationInput = forwardRef(function NavigationInput(
                         startAdornment: icon && <InputAdornment position="start">{icon}</InputAdornment>,
                         endAdornment: (
                             <InputAdornment position="end">
-                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                                    {isFocused && inputValue && (
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                                    {inputValue && (
                                         <Box className={styles.clearIconWrapper}>
                                             <ActionIconBtn
                                                 id={`${inputId}-clear`}
                                                 icon={<ClearIcon />}
+                                                iconColor={COLOR_BTN_BLUE}
                                                 onClick={handleClear}
                                                 onMouseDown={(e) => e.preventDefault()}
                                             />
                                         </Box>
                                     )}
                                     {showDragHandle && (
-                                        <Box className={styles.dragHandleInline} onMouseDown={onDragHandleMouseDown}>
-                                            <MoveIcon />
-                                        </Box>
+                                        <ActionIconBtn
+                                            icon={<MoveIcon />}
+                                            iconColor={COLOR_BTN_BLUE}
+                                            onMouseDown={onDragHandleMouseDown}
+                                            className={styles.dragHandleInline}
+                                        />
                                     )}
                                 </Box>
                             </InputAdornment>

@@ -175,9 +175,59 @@
 }
 
 .actionIcon {
-    fill: var(--svg-icon-color) !important;
-    &:hover {
-        fill: var(--selected-color) !important;
-        background-color: #f5f5f5 !important;
+    border-radius: 50% !important;
+    transition: all 0.2s ease !important;
+    background-color: transparent !important;
+    & svg,
+    & path {
+        fill: var(--svg-icon-color);
+        transition: fill 0.2s ease !important;
     }
+}
+
+.actionIcon .MuiTouchRipple-root {
+    display: none !important;
+}
+
+.actionIcon::after {
+    display: none !important;
+}
+
+.iconContainer {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+}
+
+.iconContainer .defaultIcon,
+.iconContainer .activeIcon {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.iconContainer .activeIcon {
+    opacity: 0 !important;
+}
+
+.actionIcon:hover .iconContainer .defaultIcon,
+.actionIcon:active .iconContainer .defaultIcon,
+.actionIconWithActive:hover .iconContainer .defaultIcon,
+.actionIconWithActive:active .iconContainer .defaultIcon {
+    opacity: 0 !important;
+}
+
+.actionIcon:hover .iconContainer .activeIcon,
+.actionIcon:active .iconContainer .activeIcon,
+.actionIconWithActive:hover .iconContainer .activeIcon,
+.actionIconWithActive:active .iconContainer .activeIcon {
+    opacity: 1 !important;
 }

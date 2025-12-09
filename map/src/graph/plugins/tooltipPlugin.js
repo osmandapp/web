@@ -61,7 +61,11 @@ export function createTooltip({
                     return `${label}: N/A`;
                 }
 
-                return `${label}: ${value.toFixed(1)} ${param.unit}`;
+                const formattedValue = param.label?.toLowerCase().includes('altitude')
+                    ? Math.round(value)
+                    : value.toFixed(1);
+
+                return `${label}: ${formattedValue} ${param.unit}`;
             },
             // Display optional attributes below separator line
             afterBody: (items) => {
@@ -79,7 +83,9 @@ export function createTooltip({
                     if (attrData?.datasets) {
                         for (const dataset of attrData.datasets) {
                             if (dataset.data) {
-                                const point = dataset.data.find((p) => Math.abs(p.x - xValue) < DISTANCE_MATCH_TOLERANCE);
+                                const point = dataset.data.find(
+                                    (p) => Math.abs(p.x - xValue) < DISTANCE_MATCH_TOLERANCE
+                                );
                                 if (point && dataset.label && dataset.label !== 'undefined') {
                                     foundAttributes.push(dataset.label);
                                 }
