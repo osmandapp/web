@@ -224,6 +224,9 @@ export default function SearchLayer() {
     async function searchByWord(query, latlng, baseSearch) {
         const notifyTimeout = showProcessingNotification(ctx);
         const bbox = getVisibleBbox(map, ctx);
+        if (!bbox) {
+            return;
+        }
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {
