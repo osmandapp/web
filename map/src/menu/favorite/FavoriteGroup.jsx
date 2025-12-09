@@ -17,7 +17,7 @@ import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { fmt } from '../../util/dateFmt';
 
-export default function FavoriteGroup({ index, group, smartf = null, showPinnedGroupDivider = true }) {
+export default function FavoriteGroup({ index, group, smartf = null, showPinnedGroupDivider = false }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
