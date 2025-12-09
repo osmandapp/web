@@ -195,7 +195,7 @@ export default function SearchLayer() {
             }
         };
 
-        if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
+        if (ctx.searchResult?.features && ctx.searchQuery && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
             updateAsyncLayers().then();
         }
         const newBounds = map.getBounds();
@@ -224,6 +224,9 @@ export default function SearchLayer() {
     async function searchByWord(query, latlng, baseSearch) {
         const notifyTimeout = showProcessingNotification(ctx);
         const bbox = getVisibleBbox(map, ctx);
+        if (!bbox) {
+            return;
+        }
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {
