@@ -124,7 +124,9 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                             </ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    {group.pinned === 'true' ? 'Unpin folder' : 'Pin folder'}
+                                    {group.pinned === 'true'
+                                        ? t('web:shared_string_unpin_folder')
+                                        : t('web:shared_string_pin_folder')}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>

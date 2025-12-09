@@ -27,21 +27,7 @@ export default function FavoritesMenu() {
 
     const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
 
-    const organizeGroups = (groups) => {
-        const pinnedGroups = groups.filter((g) => g.pinned === 'true');
-        const unpinnedGroups = groups.filter((g) => g.pinned !== 'true');
-        const pinnedVisible = pinnedGroups.filter((g) => g.hidden !== 'true');
-        const pinnedHidden = pinnedGroups.filter((g) => g.hidden === 'true');
-        const unpinnedVisible = unpinnedGroups.filter((g) => g.hidden !== 'true');
-        const unpinnedHidden = unpinnedGroups.filter((g) => g.hidden === 'true');
-        const orderedGroups = pinnedVisible.concat(pinnedHidden, unpinnedVisible, unpinnedHidden);
-        const dividerIndex = pinnedGroups.length > 0 && unpinnedGroups.length > 0 ? pinnedGroups.length - 1 : -1;
-        return { orderedGroups, dividerIndex };
-    };
-
-    // get list of favorites groups
-    const groupItems = useMemo(() => {
-        const items = [];
+    const { orderedGroups, dividerIndex } = useMemo(() => {
         let groups = null;
         if (sortGroups && sortGroups.length > 0) {
             groups = sortGroups;
@@ -51,21 +37,35 @@ export default function FavoritesMenu() {
         if (groups) {
             // remove shared with me groups from main list
             groups = groups.filter((g) => !g.sharedWithMe);
-            const { orderedGroups, dividerIndex } = organizeGroups(groups);
-            orderedGroups.forEach((g, index) => {
-                items.push(
-                    <FavoriteGroup
-                        key={g + index}
-                        index={index}
-                        group={g}
-                        enableGroups={enableGroups}
-                        setEnableGroups={setEnableGroups}
-                        showPinnedGroupDivider={index === dividerIndex}
-                    />
-                );
+            const pinnedVisible = [];
+            const pinnedHidden = [];
+            const unpinnedVisible = [];
+            const unpinnedHidden = [];
+
+            groups.forEach((g) => {
+                const isPinned = g.pinned === 'true';
+                const isHidden = g.hidden === 'true';
+                if (isPinned) {
+                    if (isHidden) {
+                        pinnedHidden.push(g);
+                    } else {
+                        pinnedVisible.push(g);
+                    }
+                } else {
+                    if (isHidden) {
+                        unpinnedHidden.push(g);
+                    } else {
+                        unpinnedVisible.push(g);
+                    }
+                }
             });
+            const orderedGroups = pinnedVisible.concat(pinnedHidden, unpinnedVisible, unpinnedHidden);
+            const pinnedTotal = pinnedVisible.length + pinnedHidden.length;
+            const unpinnedTotal = unpinnedVisible.length + unpinnedHidden.length;
+            const dividerIndex = pinnedTotal > 0 && unpinnedTotal > 0 ? pinnedTotal - 1 : -1;
+            return { orderedGroups, dividerIndex };
         }
-        return items;
+        return { orderedGroups: [], dividerIndex: -1 };
     }, [ctx.favorites?.groups, sortGroups]);
 
     useEffect(() => {
@@ -111,7 +111,16 @@ export default function FavoritesMenu() {
                         maxWidth={ctx.infoBlockWidth}
                         sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                     >
-                        {groupItems}
+                        {orderedGroups.map((g, index) => (
+                            <FavoriteGroup
+                                key={g + index}
+                                index={index}
+                                group={g}
+                                enableGroups={enableGroups}
+                                setEnableGroups={setEnableGroups}
+                                showPinnedGroupDivider={index === dividerIndex}
+                            />
+                        ))}
                     </Box>
                 ) : (
                     <Empty
