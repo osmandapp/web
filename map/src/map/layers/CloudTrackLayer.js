@@ -47,10 +47,18 @@ export function addTrackToMap({ ctx, file, map, fit = false, recentSaver, naviga
 
     if (fit || file.zoomToTrack) {
         map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
-        if (file.wpts?.length < WPT_SIMPLIFY_THRESHOLD) {
-            addLayerToMap(map, layer, ID);
-            // otherwise, layer is added after zoom
+        if (file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD) {
+            // Simplify and add layer immediately for tracks with many waypoints
+            layer = simplifyLayer({
+                layerGroup: layer,
+                wpts: file.wpts,
+                map,
+                ctx,
+                data: file,
+                useMapBounds: true,
+            });
         }
+        addLayerToMap(map, layer, ID);
     } else {
         // case for Make track visible
         if (file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD) {
