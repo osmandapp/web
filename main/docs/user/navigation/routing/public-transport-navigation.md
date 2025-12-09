@@ -154,7 +154,7 @@ We use **2** as the default value, which seems optimal for modern public transpo
 If you encounter low performance or out-of-memory errors, try decreasing this value.
 
 If you are in a small city or travel short routes, a value of **1** may work better.
-
+<!--
 There are two more parameters that help you choose the best routes.
 
 2. **Display N best routes** (specify the number of best routes to display)
@@ -165,15 +165,8 @@ You can decrease or increase this limit, or even display all routes.
 
 Note: displaying unlimited routes might slow down your device.
 
-<!--Possible values: 0 (show all), 5, 10 (default), 15, 100-->
-
-3. **Exclude longer routes** (exclude routes longer than the best, in %)
-
-By default, OsmAnd does not display routes whose travel time is over **75%** longer than the best route.
-
-You can decrease, increase, or remove this limit, just like for the previous parameter.
-
-<!--Possible values: 0 (show all), 25%, 50%, 75% (default), 150%-->
+Possible values: 0 (show all), 5, 10 (default), 15, 100
+-->
 
 ## Data and Guideline {#data-and-guideline}
 
