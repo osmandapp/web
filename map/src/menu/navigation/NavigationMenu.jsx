@@ -33,6 +33,7 @@ import {
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
+    PROFILE_LINE,
 } from '../../store/geoRouter/profileConstants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -165,11 +166,13 @@ export default function NavigationMenu() {
     const hasRouteTrack = routeTrack && !isEmptyTrack(routeTrack);
     const canSaveToCloud = hasRouteTrack && ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT;
 
-    const shouldShowRouteSummary =
-        routeObject.getRoute() &&
-        routeObject.getRouteProps()?.overall?.routingTime &&
-        !routeObject.preview &&
-        !ctx.navigationRoutingInProgress;
+    const isLineProfile = routeObject.getProfile()?.profile === PROFILE_LINE;
+    const shouldShowRouteSummary = isLineProfile
+        ? routeObject.getRoute() && !routeObject.preview && !ctx.navigationRoutingInProgress
+        : routeObject.getRoute() &&
+          routeObject.getRouteProps()?.overall?.routingTime &&
+          !routeObject.preview &&
+          !ctx.navigationRoutingInProgress;
 
     function handleClearSelectedTrack() {
         routeObject.resetRoute();
@@ -323,7 +326,11 @@ export default function NavigationMenu() {
                 {shouldShowRouteSummary && (
                     <>
                         <ThickDivider />
-                        <RouteSummaryCard routeProps={routeObject.getRouteProps()} onDetails={openInfoBlock} />
+                        <RouteSummaryCard
+                            key={routeObject.getProfile()?.profile}
+                            routeProps={routeObject.getRouteProps()}
+                            onDetails={openInfoBlock}
+                        />
                         <ThickDivider />
                     </>
                 )}

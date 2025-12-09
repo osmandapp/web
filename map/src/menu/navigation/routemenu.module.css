@@ -15,14 +15,14 @@
 }
 
 .navigationInput :global(.MuiOutlinedInput-root) {
-    padding: 16px 10px 16px 16px!important;
+    padding: 16px 10px 16px 16px !important;
     background-color: #f5f5f5 !important;
     border-radius: 4px !important;
     height: 48px !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-root:hover) :global(.MuiOutlinedInput-notchedOutline) {
-    border-color: #CCCCCC !important;
+    border-color: #cccccc !important;
     border-width: 2px !important;
 }
 
