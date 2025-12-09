@@ -131,6 +131,19 @@ To delete an account, select **Delete account** at the bottom of the OsmAnd Acco
 
 ![Web Account](@site/static/img/web/web_delete.png)
 
+
+## Cloud Sync {#cloud-sync}
+
+Cloud Sync lets you access the data you synced to OsmAnd Cloud directly on the [Web Map Portal](https://osmand.net/map/). Once you sign in with your OsmAnd Start or OsmAnd Pro account, the website displays the Favorites, Tracks, and backup files that you previously synced from your mobile app. It’s a simple way to view your cloud content on a larger screen and download your backups whenever you need.
+
+These items become visible in the menu right after you sign in on the website. To update this information, you need to sync your data from your devices using the [Sync now action](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) in the mobile app.
+
+Cloud Sync availability depends on your account type:
+- OsmAnd Start – syncs [Favorites](../web/web-userdata.mdx#favorites-on-the-web) and displays them on the web.
+- OsmAnd Pro – syncs [Tracks](../web/web-userdata.mdx#tracks-on-the-web), Favorites, and [Backups](#my-data), and unlocks full web access to cloud data.
+
+![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+
 <!--
 ## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
 
@@ -189,7 +202,6 @@ In this section of the menu, you can change the map style. You can read more abo
 ## Related Articles {#related-articles}
 
 - [User Data](../web/web-userdata.mdx)
-- [Сloud Sync](../web/web-cloud.md)
 - [Cross-Platform Purchases](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
 
