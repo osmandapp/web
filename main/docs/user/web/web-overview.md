@@ -45,7 +45,7 @@ Web Portal offers the following main capabilities for working with maps and pers
 - [Weather overlays](./web-map.md#weather-on-the-web): wind, temperature, and pressure.
 - [Terrain layers](./web-map.md#terrain-section): hillshade, slopes, and altitude view.
 - [Track Analyzer](../web/web-userdata.mdx) for elevation and speed profiles.
-- Full access to synced data via [OsmAnd Cloud](./web-cloud).
+- Full access to synced data via [OsmAnd Cloud](./web-cloud#cloud-sync).
 - File import/export support (GPX: tracks, favorites).
 - Seamless integration with **OsmAnd Pro** and **OsmAnd Start**.
 
@@ -68,7 +68,7 @@ Web Map Portal supports several access levels: without login, with OsmAnd Start,
 | [Settings](#settings) | Without Login |
 | [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay-section), [Favorites](./web-map.md#favorites-section), [Tracks](./web-map.md#tracks-section))| [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain-section))| <ProFeature/> |
-| [OsmAnd Cloud Sync](./web-cloud.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Tracks folders and Layer](./web-map.md) | <ProFeature/> |
 
