@@ -26,7 +26,6 @@ const NavigationInput = forwardRef(function NavigationInput(
     ref
 ) {
     const [inputValue, setInputValue] = useState(value || '');
-    const [isFocused, setIsFocused] = useState(false);
     const [showHistory, setShowHistory] = useState(false);
 
     const isFocusedRef = useRef(false);
@@ -36,10 +35,10 @@ const NavigationInput = forwardRef(function NavigationInput(
     useImperativeHandle(ref, () => inputRef.current);
 
     useEffect(() => {
-        if (!isFocusedRef.current) {
+        if (value !== inputValue) {
             setInputValue(value || '');
         }
-    }, [value]);
+    }, [value, inputValue]);
 
     useEffect(() => {
         const handleNavigationBlur = () => {
@@ -63,7 +62,6 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const handleFocus = () => {
         isFocusedRef.current = true;
-        setIsFocused(true);
     };
 
     const handleClick = () => {
@@ -91,7 +89,6 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const clearFocus = () => {
         isFocusedRef.current = false;
-        setIsFocused(false);
     };
 
     const handleBlur = (e) => {
