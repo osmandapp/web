@@ -91,6 +91,18 @@ export default function NavigationPointsManager({ routeObject }) {
             return;
         }
         const focusTimeout = setTimeout(() => {
+            // Don't auto-focus if user already focused an input (start, finish, or intermediate points)
+            const activeElement = document.activeElement;
+            const isInputFocused =
+                activeElement &&
+                (activeElement === startInputRef.current ||
+                    activeElement === finishInputRef.current ||
+                    activeElement.id?.startsWith('se-route-'));
+
+            if (isInputFocused) {
+                return;
+            }
+
             if (start === '' && startInputRef.current) {
                 startInputRef.current.focus();
                 usedAutoFocus.current = true;
