@@ -378,9 +378,14 @@ export function createHoverMarker({
     let tooltipRef = ctx.searchTooltipRef;
     let pointerRef = ctx.searchPointerRef;
 
-    const onZoomEnd = () => {
-        removeTooltip(map, tooltipRef);
-    };
+    if (!map._sharedZoomEndHandler) {
+        map._sharedZoomEndHandler = () => {
+            if (ctx?.searchTooltipRef) {
+                removeTooltip(map, ctx.searchTooltipRef);
+            }
+        };
+        map.on('zoomend', map._sharedZoomEndHandler);
+    }
 
     const onMouseOver = () => {
         removeTooltip(map, tooltipRef);
@@ -449,13 +454,11 @@ export function createHoverMarker({
         }
     };
 
-    map.on('zoomend', onZoomEnd);
     marker.on('mouseover', onMouseOver);
     marker.on('mouseout', onMouseOut);
     marker.on('selectMarker', onSelectMarker);
 
     return () => {
-        map.off('zoomend', onZoomEnd);
         marker.off('mouseover', onMouseOver);
         marker.off('mouseout', onMouseOut);
         marker.off('selectMarker', onSelectMarker);
