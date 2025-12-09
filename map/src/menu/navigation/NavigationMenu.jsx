@@ -166,13 +166,20 @@ export default function NavigationMenu() {
     const hasRouteTrack = routeTrack && !isEmptyTrack(routeTrack);
     const canSaveToCloud = hasRouteTrack && ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT;
 
-    const isLineProfile = routeObject.getProfile()?.profile === PROFILE_LINE;
-    const shouldShowRouteSummary = isLineProfile
-        ? routeObject.getRoute() && !routeObject.preview && !ctx.navigationRoutingInProgress
-        : routeObject.getRoute() &&
-          routeObject.getRouteProps()?.overall?.routingTime &&
-          !routeObject.preview &&
-          !ctx.navigationRoutingInProgress;
+    function showRouteSummary() {
+        if (ctx.routeTrackFile) {
+            return true;
+        }
+        if (routeObject.getProfile()?.profile === PROFILE_LINE) {
+            return routeObject.getRoute() && !routeObject.preview && !ctx.navigationRoutingInProgress;
+        }
+        return (
+            routeObject.getRoute() &&
+            routeObject.getRouteProps()?.overall?.routingTime &&
+            !routeObject.preview &&
+            !ctx.navigationRoutingInProgress
+        );
+    }
 
     function handleClearSelectedTrack() {
         routeObject.resetRoute();
@@ -323,7 +330,7 @@ export default function NavigationMenu() {
                         <ThickDivider />
                     </>
                 )}
-                {shouldShowRouteSummary && (
+                {showRouteSummary() && (
                     <>
                         <ThickDivider />
                         <RouteSummaryCard
