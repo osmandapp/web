@@ -8,6 +8,7 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as UphillIcon } from '../../assets/icons/ic_action_altitude_ascent_16.svg';
 import { ReactComponent as DownhillIcon } from '../../assets/icons/ic_action_altitude_descent_16.svg';
 import NavigationSummaryGraph from '../../graph/navigation/NavigationSummaryGraph';
+import { PROFILE_LINE } from '../../store/geoRouter/profileConstants';
 
 function formatDistance(distanceMeters, ctx, locale, t) {
     if (!distanceMeters) {
@@ -75,10 +76,13 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
     const { t, i18n } = useTranslation();
     const previousSummary = useRef(null);
     const route = ctx.routeObject.getRoute();
+    const currentProfile = ctx.routeObject.getProfile()?.profile;
 
     const overall = routeProps?.overall ?? {};
+    const isLineProfile = currentProfile === PROFILE_LINE;
     let summary;
-    if (overall?.time === 0 && previousSummary.current) {
+
+    if (overall?.time === 0 && previousSummary.current && !isLineProfile) {
         summary = previousSummary.current;
     } else {
         const elevationUp = routeProps?.diffElevationUp ?? overall?.diffElevationUp;
