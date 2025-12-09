@@ -93,7 +93,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showPinnedG
                     processDownload={processDownload}
                 />
             </MenuItem>
-            <DividerWithMargin margin={showPinnedGroupDivider ? '0px' : '64px'} />
+            <DividerWithMargin id={'se-fav-group-divider'} margin={showPinnedGroupDivider ? '0px' : '64px'} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}

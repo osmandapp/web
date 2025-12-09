@@ -79,7 +79,57 @@ export default async function test() {
     await clickBy(By.id('se-favorite-folder-actions-show-on-map'));
     await waitBy(By.id('se-fav-menu-icon-hidden-shops'));
 
-    await validateGroupOrder(favGroupsOldDateAfterRename);
+    await validateGroupOrder(favGroupsOldDateAfterRenameHidden);
+
+    // check pinned/unpinned group order
+    // Pin ozoo group - pinned groups should appear before unpinned
+    await waitBy(By.id('se-folder-actions-button-ozoo'));
+    await clickBy(By.id('se-folder-actions-button-ozoo'));
+    await waitBy(By.id('se-favorite-folder-actions'));
+    await clickBy(By.id('se-favorite-folder-actions-pinned'));
+    await actionIdleWait();
+    await validateGroupOrder(favGroupsOldDateWithOZooPinned);
+    await validateDividerExists(true);
+
+    // Pin shops group - both pinned groups should appear before unpinned
+    await waitBy(By.id('se-folder-actions-button-shops'));
+    await clickBy(By.id('se-folder-actions-button-shops'));
+    await waitBy(By.id('se-favorite-folder-actions'));
+    await clickBy(By.id('se-favorite-folder-actions-pinned'));
+    await actionIdleWait();
+    await validateGroupOrder(favGroupsOldDateWithShopsAndOZooPinned);
+    await validateDividerExists(true);
+
+    // Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)
+    console.log('Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)');
+    await waitBy(By.id('se-folder-actions-button-shops'));
+    await clickBy(By.id('se-folder-actions-button-shops'));
+    await waitBy(By.id('se-favorite-folder-actions'));
+    await clickBy(By.id('se-favorite-folder-actions-show-on-map'));
+    await waitBy(By.id('se-fav-menu-icon-hidden-shops'));
+    await actionIdleWait();
+    await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
+    await validateDividerExists(true);
+
+    // Unpin ozoo - only shops (pinned hidden) should remain pinned
+    console.log('Unpin ozoo - only shops (pinned hidden) should remain pinned');
+    await waitBy(By.id('se-folder-actions-button-ozoo'));
+    await clickBy(By.id('se-folder-actions-button-ozoo'));
+    await waitBy(By.id('se-favorite-folder-actions'));
+    await clickBy(By.id('se-favorite-folder-actions-pinned'));
+    await actionIdleWait();
+    await validateGroupOrder(favGroupsOldDateWithOnlyPinnedHidden);
+    await validateDividerExists(true);
+
+    // Unpin shops - all groups should be unpinned, divider should disappear
+    console.log('Unpin shops - all groups should be unpinned, divider should disappear');
+    await waitBy(By.id('se-folder-actions-button-shops'));
+    await clickBy(By.id('se-folder-actions-button-shops'));
+    await waitBy(By.id('se-favorite-folder-actions'));
+    await clickBy(By.id('se-favorite-folder-actions-pinned'));
+    await actionIdleWait();
+    await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
+    await validateDividerExists(false);
 
     await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     await actionDeleteAllFavorites(favorites);
@@ -98,6 +148,16 @@ const favGroupsNewDate = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-
 const favGroupsOldDate = ['se-menu-fav-food', 'se-menu-fav-ozoo', 'se-menu-fav-shops'];
 
 const favGroupsOldDateAfterRename = ['se-menu-fav-ozoo', 'se-menu-fav-shops', 'se-menu-fav-food-renamed'];
+
+const favGroupsOldDateAfterRenameHidden = ['se-menu-fav-ozoo', 'se-menu-fav-food-renamed', 'se-menu-fav-shops'];
+
+const favGroupsOldDateWithOZooPinned = ['se-menu-fav-ozoo', 'se-menu-fav-food-renamed', 'se-menu-fav-shops'];
+
+const favGroupsOldDateWithShopsAndOZooPinned = ['se-menu-fav-ozoo', 'se-menu-fav-shops', 'se-menu-fav-food-renamed'];
+
+const favGroupsOldDateWithPinnedHidden = ['se-menu-fav-ozoo', 'se-menu-fav-shops', 'se-menu-fav-food-renamed'];
+
+const favGroupsOldDateWithOnlyPinnedHidden = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-food-renamed'];
 
 const favItemsFood = [
     'se-fav-item-name-111test',
@@ -128,5 +188,25 @@ async function validateItemOrder(ids) {
             return JSON.stringify(ids) === JSON.stringify(groups);
         },
         { tag: 'validateFavItemsSort' }
+    );
+}
+
+async function validateDividerExists(shouldExist) {
+    await enclose(
+        async (d) => {
+            await actionIdleWait();
+            // The full-width divider (margin-left: 0px) appears after the last pinned group
+            const dividers = await d.findElements(By.id('se-fav-group-divider'));
+            let foundFullWidthDivider = false;
+            for (const divider of dividers) {
+                    const marginLeft = await divider.getCssValue('margin-left');
+                    if (marginLeft === '0px' || marginLeft === '0') {
+                        foundFullWidthDivider = true;
+                        break;
+                }
+            }
+            return foundFullWidthDivider === shouldExist;
+        },
+        { tag: 'validatePinnedDivider' }
     );
 }
