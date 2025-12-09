@@ -380,7 +380,9 @@ export function createHoverMarker({
 
     if (!map._sharedZoomEndHandler) {
         map._sharedZoomEndHandler = () => {
-            removeTooltip(map, tooltipRef);
+            if (ctx?.searchTooltipRef) {
+                removeTooltip(map, ctx.searchTooltipRef);
+            }
         };
         map.on('zoomend', map._sharedZoomEndHandler);
     }
