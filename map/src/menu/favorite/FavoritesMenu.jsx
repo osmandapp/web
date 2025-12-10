@@ -14,6 +14,7 @@ import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
+import PinnedFavoriteGroups from './PinnedFavoriteGroups';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -27,7 +28,7 @@ export default function FavoritesMenu() {
 
     const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
 
-    const { orderedGroups, dividerIndex } = useMemo(() => {
+    const { pinnedGroups, unpinnedGroups } = useMemo(() => {
         let groups = null;
         if (sortGroups && sortGroups.length > 0) {
             groups = sortGroups;
@@ -59,13 +60,11 @@ export default function FavoritesMenu() {
                     }
                 }
             });
-            const orderedGroups = pinnedVisible.concat(pinnedHidden, unpinnedVisible, unpinnedHidden);
-            const pinnedTotal = pinnedVisible.length + pinnedHidden.length;
-            const unpinnedTotal = unpinnedVisible.length + unpinnedHidden.length;
-            const dividerIndex = pinnedTotal > 0 && unpinnedTotal > 0 ? pinnedTotal - 1 : -1;
-            return { orderedGroups, dividerIndex };
+            const pinnedGroups = pinnedVisible.concat(pinnedHidden);
+            const unpinnedGroups = unpinnedVisible.concat(unpinnedHidden);
+            return { pinnedGroups, unpinnedGroups };
         }
-        return { orderedGroups: [], dividerIndex: -1 };
+        return { pinnedGroups: [], unpinnedGroups: [] };
     }, [ctx.favorites?.groups, sortGroups]);
 
     useEffect(() => {
@@ -111,14 +110,14 @@ export default function FavoritesMenu() {
                         maxWidth={ctx.infoBlockWidth}
                         sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                     >
-                        {orderedGroups.map((g, index) => (
+                        <PinnedFavoriteGroups pinnedGroups={pinnedGroups} />
+                        {unpinnedGroups.map((g, index) => (
                             <FavoriteGroup
                                 key={g + index}
                                 index={index}
                                 group={g}
                                 enableGroups={enableGroups}
                                 setEnableGroups={setEnableGroups}
-                                showPinnedGroupDivider={index === dividerIndex}
                             />
                         ))}
                     </Box>

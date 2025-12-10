@@ -17,7 +17,7 @@ import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { fmt } from '../../util/dateFmt';
 
-export default function FavoriteGroup({ index, group, smartf = null, showPinnedGroupDivider = false }) {
+export default function FavoriteGroup({ index, group, smartf = null, showDivider = true }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -93,7 +93,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showPinnedG
                     processDownload={processDownload}
                 />
             </MenuItem>
-            <DividerWithMargin id={'se-fav-group-divider'} margin={showPinnedGroupDivider ? '0px' : '64px'} />
+            {showDivider && <DividerWithMargin margin={'64px'} />}
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}

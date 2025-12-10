@@ -89,7 +89,6 @@ export default async function test() {
     await clickBy(By.id('se-favorite-folder-actions-pinned'));
     await actionIdleWait();
     await validateGroupOrder(favGroupsOldDateWithOZooPinned);
-    await validateDividerExists(true);
 
     // Pin shops group - both pinned groups should appear before unpinned
     await waitBy(By.id('se-folder-actions-button-shops'));
@@ -98,7 +97,6 @@ export default async function test() {
     await clickBy(By.id('se-favorite-folder-actions-pinned'));
     await actionIdleWait();
     await validateGroupOrder(favGroupsOldDateWithShopsAndOZooPinned);
-    await validateDividerExists(true);
 
     // Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)
     console.log('Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)');
@@ -109,7 +107,6 @@ export default async function test() {
     await waitBy(By.id('se-fav-menu-icon-hidden-shops'));
     await actionIdleWait();
     await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
-    await validateDividerExists(true);
 
     // Unpin ozoo - only shops (pinned hidden) should remain pinned
     console.log('Unpin ozoo - only shops (pinned hidden) should remain pinned');
@@ -119,7 +116,6 @@ export default async function test() {
     await clickBy(By.id('se-favorite-folder-actions-pinned'));
     await actionIdleWait();
     await validateGroupOrder(favGroupsOldDateWithOnlyPinnedHidden);
-    await validateDividerExists(true);
 
     // Unpin shops - all groups should be unpinned, divider should disappear
     console.log('Unpin shops - all groups should be unpinned, divider should disappear');
@@ -129,7 +125,6 @@ export default async function test() {
     await clickBy(By.id('se-favorite-folder-actions-pinned'));
     await actionIdleWait();
     await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
-    await validateDividerExists(false);
 
     await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     await actionDeleteAllFavorites(favorites);
@@ -188,25 +183,5 @@ async function validateItemOrder(ids) {
             return JSON.stringify(ids) === JSON.stringify(groups);
         },
         { tag: 'validateFavItemsSort' }
-    );
-}
-
-async function validateDividerExists(shouldExist) {
-    await enclose(
-        async (d) => {
-            await actionIdleWait();
-            // The full-width divider (margin-left: 0px) appears after the last pinned group
-            const dividers = await d.findElements(By.id('se-fav-group-divider'));
-            let foundFullWidthDivider = false;
-            for (const divider of dividers) {
-                    const marginLeft = await divider.getCssValue('margin-left');
-                    if (marginLeft === '0px' || marginLeft === '0') {
-                        foundFullWidthDivider = true;
-                        break;
-                }
-            }
-            return foundFullWidthDivider === shouldExist;
-        },
-        { tag: 'validatePinnedDivider' }
     );
 }
