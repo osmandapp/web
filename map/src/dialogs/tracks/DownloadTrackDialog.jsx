@@ -30,6 +30,14 @@ export default function DownloadTrackDialog({
     const trackSource = track ?? ctx.selectedGpxFile;
     const routeTypes = trackSource?.routeTypes;
 
+    function showSimplifiedTrack() {
+        if (navTrack) {
+            return true;
+        }
+        const author = trackSource?.details?.author;
+        return author?.startsWith('OsmAndRouter') && trackSource?.details?.hasAdvancedRoute === true;
+    }
+
     const handleDownload = async (simplified) => {
         if (!trackSource && !navTrack) {
             return;
@@ -82,12 +90,14 @@ export default function DownloadTrackDialog({
                         name={t('web:download_track_full')}
                         onClick={() => handleDownload(false)}
                     />
-                    <DefaultItem
-                        id={'se-download-simplified-track'}
-                        icon={<SimplifiedTrackIcon />}
-                        name={t('web:download_track_simplified')}
-                        onClick={() => handleDownload(true)}
-                    />
+                    {showSimplifiedTrack() && (
+                        <DefaultItem
+                            id={'se-download-simplified-track'}
+                            icon={<SimplifiedTrackIcon />}
+                            name={t('web:download_track_simplified')}
+                            onClick={() => handleDownload(true)}
+                        />
+                    )}
                 </List>
             </DialogContent>
             <DialogActions>
