@@ -15,24 +15,33 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+{/*
 <InfoIncompleteArticle/>
+*/}
 
 ## Overview {#overview}
 
+The Web Planner gives you a simple way to work with your personal data right in the browser. After signing in, you can open your tracks, adjust them, create new ones, or upload files from your computer. The same applies to your saved places: you can add new favorites or edit the ones you already have.
+
+All changes are automatically synced through [OsmAnd Cloud](../personal/osmand-cloud.md), so anything you update on the web appears on your devices, and anything you create on your phone shows up here as well. This makes it easy to move between platforms and keep your data consistent wherever you use OsmAnd.
+
+{/*
 On the web, users can access, manage, and create their personal data, such as Tracks and Favorites, directly on the web.
 
 - Tracks: Users can upload, view, edit, or create new tracks online. All changes are automatically synchronized with the OsmAnd Cloud, ensuring the data is available across all connected devices.
 - Favorites: Create and organize saved locations on the web, with automatic syncing to your OsmAnd app for quick access and navigation.
 
 The integration with OsmAnd Cloud allows seamless synchronization, enabling users to manage their data conveniently from any device.
+*/}
 
-## Tracks on the web {#tracks-on-the-web}
 
-It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
+## Tracks {#tracks}
 
-![Track loggin](@site/static/img/web/track_loggin.png)
+It's a paid feature <ProFeature/>. To use it, log in to your OsmAnd Pro account.
 
-For Track section:
+![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+
+This section contains all track-related tools and actions. The following options are available:
 
 - Show tracks from [OsmAnd Cloud](#cloud-tracks).
 - Adding tracks on the map (**Visible on map** folder).
@@ -45,33 +54,29 @@ For Track section:
 
 ### Visible on the Map {#visible-on-the-map}
 
-Here there is a list of visible tracks on the map.
+The **Visible on map** view lists all tracks that are currently displayed on the map. Any track can be added to this list from the main Tracks panel using the **⋮ → Make track visible** option.
 
-_Switch on/off_ tracks for showing or not its on the map.
+Tracks that are visible on the map are highlighted in blue, while tracks that are currently hidden appear in grey. A switch next to each track lets you quickly show or hide it. The **Hide all** button turns off all visible tracks at once.
 
-![Visible on the map](@site/static/img/web/visible.png)
+Below the main list, the **Recently visible** section displays tracks that were shown on the map earlier. This makes it easy to turn a track back on without searching for it again in your folders or in OsmAnd Cloud.
+
+![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
 
 
 ### Track folder menu {#track-folder-menu}
 
-Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
+![Track folder menu](@site/static/img/web/collection_new.png)
+
+Click the three-dot button (⋮) to open the *Track Folder* menu. From here, you can:
 
  - Download as OSF.
- - Download as OBF Collection:
-  You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+ - Download as OBF Collection. Export the folder in OsmAnd Binary Format, choosing either an [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or a [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+      -  **OBF file**. You can download an offline OBF map and open it with OsmAnd on your device. It is suitable for displaying a large number of tracks on the map.
+      -  **Travel OBF**. You can also import a map of tracks as a travel book, which allows you to select individual tracks on the map and use them like normal GPX files. A travel book also supports features such as displaying tracks as points, filtering tracks by activity type, and filtering waypoints.
+ - Rename. Opens a dialog where you can enter a new name for the selected folder. The change is synced to OsmAnd Cloud and will appear on all connected devices.
+ - Delete. Opens a confirmation dialog. Deleting a folder removes it permanently along with all tracks it contains. This action is also synced through OsmAnd Cloud.
 
-    -  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
-
-  You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
-
-    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
-
-  Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
-
-- _Rename_ chosen folder.
-- _Delete_ chosen folder.
-
-![Track folder menu](@site/static/img/web/collection.png)
+![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
 
 
 ### Cloud Tracks {#cloud-tracks}
@@ -97,8 +102,7 @@ The following features are available after choosin cloud track:
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
 
 
-
-## Favorites on the web {#favorites-on-the-web}
+## Favorites {#favorites}
 
 After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), your Favorites are displayed in the Favorites menu.  
 The following actions are available:
