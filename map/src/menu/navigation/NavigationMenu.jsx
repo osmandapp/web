@@ -351,6 +351,7 @@ export default function NavigationMenu() {
                 />
                 {ctx.navigationRoutingInProgress && (
                     <>
+                        <ThickDivider />
                         <TextLeftIconBtn
                             id={'se-progress-route-calculation'}
                             icon={<CircularProgress size={24} thickness={4} />}
