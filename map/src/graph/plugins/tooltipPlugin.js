@@ -30,6 +30,18 @@ export function createTooltip({
         intersect: false,
         backgroundColor: '#757575',
         displayColors: false,
+        transitions: {
+            show: {
+                animation: {
+                    duration: 0,
+                },
+            },
+            hide: {
+                animation: {
+                    duration: 0,
+                },
+            },
+        },
         callbacks: {
             // Display distance in tooltip title
             title: (items) => {
