@@ -66,7 +66,7 @@ Typically, *Boat routing* is used with boat profile (the last one enabled togeth
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Allows you to use streams and drains for boat navigation. Enabling this option may be useful for small boats such as canoes, kayaks, rafts, rowboats. |  [Streams](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) are naturally-forming waterways that are too narrow to be called a river. [Drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) are artificial waterways, typically lined with concrete or similar, used to carry superfluous water like storm water or grey-discharge.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Turning this option on allows you to use intermittent waterways to navigate by boat.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
-| *Allow ferries* | Enables routing via ferry routes. | Uses `route=ferry` where present in OSM. No new maps required. |
+| *Allow ferries* | Enables routing via ferry routes. | Usually [ferry routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) are inaccessible for small boats based on OSM definition. |
 
 :::note Water Navigation and Limitation
 
