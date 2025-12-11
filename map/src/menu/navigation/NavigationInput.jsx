@@ -6,6 +6,7 @@ import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationHistoryDropdown from './NavigationHistoryDropdown';
 import { COLOR_BTN_BLUE } from './NavigationMenu';
+import { START_POINT, FINISH_POINT, INTERMEDIATE_POINT } from './NavigationInputRow';
 
 const NavigationInput = forwardRef(function NavigationInput(
     {
@@ -22,6 +23,9 @@ const NavigationInput = forwardRef(function NavigationInput(
         history = [],
         onHistorySelect,
         onClearHistory,
+        type,
+        hasIntermediates = false,
+        isFirstIntermediate = false,
     },
     ref
 ) {
@@ -123,13 +127,30 @@ const NavigationInput = forwardRef(function NavigationInput(
         }
     };
 
+    const getInputClassName = () => {
+        const classes = [styles.navigationInput];
+
+        if (type === START_POINT) {
+            classes.push(styles.navigationInputStart);
+            if (!hasIntermediates) {
+                classes.push(styles.navigationInputStartNoIntermediates);
+            }
+        } else if (type === FINISH_POINT) {
+            classes.push(styles.navigationInputFinish);
+        } else if (type === INTERMEDIATE_POINT && !isFirstIntermediate) {
+            classes.push(styles.navigationInputIntermediateNotFirst);
+        }
+
+        return classes.join(' ');
+    };
+
     return (
         <>
             <Box ref={containerRef} onClick={handleClick}>
                 <TextField
                     inputRef={inputRef}
                     id={inputId}
-                    className={styles.navigationInput}
+                    className={getInputClassName()}
                     value={inputValue}
                     placeholder={placeholder}
                     onChange={handleChange}
@@ -142,7 +163,7 @@ const NavigationInput = forwardRef(function NavigationInput(
                         startAdornment: icon && <InputAdornment position="start">{icon}</InputAdornment>,
                         endAdornment: (
                             <InputAdornment position="end">
-                                <Box sx={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: '1px' }}>
                                     {inputValue && (
                                         <Box className={styles.clearIconWrapper}>
                                             <ActionIconBtn

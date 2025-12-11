@@ -370,6 +370,8 @@ export default function NavigationPointsManager({ routeObject }) {
                 history={history}
                 onHistorySelect={handleStartHistorySelect}
                 onClearHistory={clearHistory}
+                isDragging={draggedIndex === 0}
+                hasIntermediates={intermediates.length > 0}
             />
 
             {/* Intermediate Points */}
@@ -395,6 +397,8 @@ export default function NavigationPointsManager({ routeObject }) {
                         history={history}
                         onHistorySelect={(item) => handleIntermediateHistorySelect(index, item)}
                         onClearHistory={clearHistory}
+                        isDragging={draggedIndex === index + 1}
+                        isFirstIntermediate={index === 0}
                     />
                 </React.Fragment>
             ))}
@@ -423,6 +427,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 history={history}
                 onHistorySelect={handleFinishHistorySelect}
                 onClearHistory={clearHistory}
+                isDragging={draggedIndex === intermediates.length + 1}
             />
 
             {/* Drop indicator after finish (to move item to the end) */}
