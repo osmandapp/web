@@ -65,6 +65,8 @@ export default function NavigationPointsManager({ routeObject }) {
     const startInputRef = useRef(null);
     const finishInputRef = useRef(null);
     const usedAutoFocus = useRef(false);
+    const autofocusDisabled = useRef(false);
+    const prevIsMainMenu = useRef(false);
 
     const FOCUS_DELAY_MS = 150;
 
@@ -90,13 +92,28 @@ export default function NavigationPointsManager({ routeObject }) {
         }
     }, [finishPoint]);
 
+    // Reset autofocus flags when menu is reopened
+    useEffect(() => {
+        if (isMainMenu && !prevIsMainMenu.current) {
+            // Menu was just opened
+            usedAutoFocus.current = false;
+            autofocusDisabled.current = false;
+        }
+        prevIsMainMenu.current = isMainMenu;
+    }, [isMainMenu]);
+
     useEffect(() => {
         if (!isMainMenu) {
             usedAutoFocus.current = false;
             return;
         }
+
+        if (autofocusDisabled.current) {
+            return;
+        }
+
         const focusTimeout = setTimeout(() => {
-            // Don't auto-focus if user already focused an input (start, finish, or intermediate points)
+            // Don't autofocus if user already focused an input
             const activeElement = document.activeElement;
             const isInputFocused =
                 activeElement &&
@@ -108,14 +125,12 @@ export default function NavigationPointsManager({ routeObject }) {
                 return;
             }
 
-            if (start === '' && startInputRef.current) {
+            if (start === '' && startInputRef.current && !usedAutoFocus.current) {
                 startInputRef.current.focus();
                 usedAutoFocus.current = true;
-            } else if (finish === '' && finishInputRef.current) {
+            } else if (start !== '' && finish === '' && finishInputRef.current) {
                 finishInputRef.current.focus();
                 usedAutoFocus.current = true;
-            } else {
-                usedAutoFocus.current = false;
             }
         }, FOCUS_DELAY_MS);
 
@@ -213,12 +228,14 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleAddIntermediate = () => {
+        autofocusDisabled.current = true;
         const newIntermediates = [...intermediates, ''];
         setIntermediates(newIntermediates);
         routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleRemoveIntermediate = (index) => {
+        autofocusDisabled.current = true;
         const newIntermediates = intermediates.filter((_, i) => i !== index);
         setIntermediates(newIntermediates);
 
@@ -262,6 +279,7 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleSwap = () => {
+        autofocusDisabled.current = true;
         // Remove focus from all inputs before swapping
         const blurEvent = new CustomEvent('nav-blur');
         globalThis.dispatchEvent(blurEvent);
