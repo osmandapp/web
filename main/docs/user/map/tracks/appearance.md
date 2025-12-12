@@ -236,7 +236,7 @@ The [Tracks](../../personal/tracks/manage-tracks.md) tab automatically displays 
 
 Modify multiple track appearances in *My Places → Tracks*:
 
-- **Change default appearance** - Applies settings to all tracks in a [folder](../../personal/tracks/manage-tracks.md#track-folder).
+- **Change default appearance** (Android only) - Allows to configure default settings which will be applied once track is added to the [folder](../../personal/tracks/manage-tracks.md#track-folder).
 - **Reset to original** - Restores individual track settings.
 
 - [Selection mode](../../personal/tracks/manage-tracks.md#selection-mode) - Changes the appearance of specific tracks in the selected folder or the entire list in the Tracks tab.
