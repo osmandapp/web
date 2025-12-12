@@ -12,7 +12,13 @@ import Utils from '../../util/Utils';
 import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
 import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
-import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
+import {
+    updateAllFavorites,
+    updateFavoriteGroup,
+    updateFavoriteGroups,
+    DEFAULT_FAV_GROUP_NAME,
+    DEFAULT_GROUP_NAME_POINTS_GROUPS,
+} from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo } from '../../manager/ShareManager';
 import { SHARE_TYPE } from '../share/shareConstants';
@@ -21,6 +27,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
+    const normalizePinnedValue = (val) => (val === true || val === 'true' ? 'true' : 'false');
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
@@ -34,17 +41,62 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
         }
     }
 
-    function togglePinned() {
+    async function togglePinned() {
         const newPinnedState = group.pinned !== 'true';
+        const newPinnedString = normalizePinnedValue(newPinnedState);
+        const prevGroups = [...ctx.favorites.groups];
         const updatedGroups = ctx.favorites.groups.map((g) => {
             if (g.id === group.id) {
-                return { ...g, pinned: newPinnedState ? 'true' : 'false' };
+                return { ...g, pinned: newPinnedState };
             }
             return g;
         });
-        ctx.setFavorites({ ...ctx.favorites, groups: updatedGroups });
+        ctx.setFavorites((prev) => ({ ...prev, groups: updatedGroups }));
         if (setOpenActions) {
             setOpenActions(false);
+        }
+
+        try {
+            const pointsGroup = updatedGroups.find((g) => g.id === group.id);
+            const groupName =
+                pointsGroup.name === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : pointsGroup.name;
+            let updatedPointsGroups = { ...pointsGroup.pointsGroups };
+            updatedPointsGroups[groupName].pinned = newPinnedString;
+
+            const data = {
+                pointsGroups: updatedPointsGroups,
+            };
+            const result = await updateFavoriteGroup(data, group, ctx);
+            if (result) {
+                let syncedPinned = newPinnedString;
+                if (result.data?.pointsGroups) {
+                    const groupEntry = result.data.pointsGroups[groupName];
+                    if (groupEntry) {
+                        const pinnedValue = groupEntry.pinned;
+                        if (pinnedValue !== undefined) {
+                            syncedPinned = pinnedValue;
+                        }
+                    }
+                }
+
+                ctx.setFavorites((prev) => {
+                    const syncedGroups = prev.groups.map((g) => {
+                        if (g.id === group.id) {
+                            return {
+                                ...g,
+                                pinned: normalizePinnedValue(syncedPinned),
+                                updatetimems: result.updatetimems ?? g.updatetimems,
+                                clienttimems: result.clienttimems ?? g.clienttimems,
+                            };
+                        }
+                        return g;
+                    });
+                    return { ...prev, groups: syncedGroups };
+                });
+            }
+        } catch (e) {
+            console.error('[togglePinned] failed to update group', e);
+            ctx.setFavorites((prev) => ({ ...prev, groups: prevGroups }));
         }
     }
 

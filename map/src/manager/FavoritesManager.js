@@ -149,6 +149,23 @@ export async function updateAllFavorites(group, data, hiddenChanged) {
     return prepareResult(resp);
 }
 
+export async function updateFavoriteGroup(data, group, ctx) {
+    if (!data || !group) {
+        return;
+    }
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-group`, data, {
+        params: {
+            fileName: group.file.name,
+            groupName: group.name,
+            updatetime: group.updatetimems,
+        },
+    });
+    if (resp?.data) {
+        const td = prepareTrackData(resp.data.details.trackData);
+        return new GroupResult(resp.data.clienttime, resp.data.updatetime, td);
+    }
+}
+
 export function prepareResult(resp) {
     if (resp.data) {
         let newGroupResp = null;
@@ -248,6 +265,20 @@ function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
     // for menu
     favArr.groups[menuId].hidden = hidden;
 
+    return favArr;
+}
+
+function addPinned({ pointsGroups, groupName, favArr, menuId }) {
+    const normalizePinned = (val) => (val === true || val === 'true' ? 'true' : 'false');
+    let pinned = 'false';
+    const normalizedGroupName = groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
+    if (pointsGroups && pointsGroups[normalizedGroupName]) {
+        const groupEntry = pointsGroups[normalizedGroupName];
+        if (groupEntry.pinned !== undefined) {
+            pinned = groupEntry.pinned;
+        }
+    }
+    favArr.groups[menuId].pinned = normalizePinned(pinned);
     return favArr;
 }
 
@@ -448,6 +479,13 @@ function addExistFavGroup(obj, g, favGroups) {
         menuId: ind,
     });
 
+    favGroups = addPinned({
+        pointsGroups: obj.pointsGroups,
+        groupName: g.name,
+        favArr: favGroups,
+        menuId: ind,
+    });
+
     return favGroups;
 }
 
@@ -497,6 +535,13 @@ async function createFavGroupObj(g, favGroups) {
                 groupName,
                 favArr: favGroups,
                 mapId: g.id,
+                menuId: ind,
+            });
+
+            favGroups = addPinned({
+                pointsGroups,
+                groupName,
+                favArr: favGroups,
                 menuId: ind,
             });
         }
