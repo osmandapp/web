@@ -137,15 +137,21 @@ export default function NavigationPointsManager({ routeObject }) {
         return () => clearTimeout(focusTimeout);
     }, [isMainMenu, start, finish]);
 
+    // Sync intermediate inputs with map points, preserving manually added empty inputs.
+    // Example: user adds 2 empty inputs, then clicks map
     useEffect(() => {
-        if (viaPoints && viaPoints.length > 0 && intermediates.length <= viaPoints.length) {
-            const formatted = viaPoints.map((p) => formatLatLon(p));
-            setIntermediates(formatted);
-            routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, formatted.length);
-        } else if (!viaPoints || viaPoints.length === 0) {
-            setIntermediates([]);
-            routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, 0);
-        }
+        const viaInputsCount = routeObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
+        const formattedPoints = viaPoints?.length > 0 ? viaPoints.map((p) => formatLatLon(p)) : [];
+
+        const targetInputsCount = Math.max(formattedPoints.length, viaInputsCount);
+
+        const newIntermediates = [
+            ...formattedPoints,
+            ...Array(Math.max(0, targetInputsCount - formattedPoints.length)).fill(''),
+        ];
+
+        setIntermediates(newIntermediates);
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, targetInputsCount);
     }, [viaPoints]);
 
     const handleStartChange = (value) => {

@@ -153,6 +153,7 @@ export default function NavigationMenu() {
         routeObject.setOption(ROUTE_POINTS_START, null);
         routeObject.setOption(ROUTE_POINTS_FINISH, null);
         routeObject.setOption(ROUTE_POINTS_VIA, []);
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, 0);
         routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
         routeObject.resetRoute();
 
