@@ -123,6 +123,7 @@ function createNewGroup({ g, file, updatetimems, clienttimems, pointsGroups }) {
         clienttimems: clienttimems,
         file: file,
         pointsGroups: pointsGroups || {},
+        pinned: g.pinned,
     };
     if (!isEmpty(file.wpts)) {
         newGroup.hidden = file.wpts[0].hidden;
