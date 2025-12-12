@@ -36,3 +36,4 @@ export const ROUTE_POINTS_START = 'route.points.start';
 export const ROUTE_POINTS_FINISH = 'route.points.finish';
 export const ROUTE_POINTS_VIA = 'route.points.viaPoints';
 export const ROUTE_POINTS_AVOID_ROADS = 'route.points.avoidRoads';
+export const ROUTE_POINTS_VIA_INPUTS_COUNT = 'route.points.viaInputsCount';

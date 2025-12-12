@@ -73,7 +73,10 @@ export function RouteService() {
                 obj['end'] = finishPoint.lat.toFixed(6) + ',' + finishPoint.lng.toFixed(6);
             }
             if (viaPoints?.length > 0) {
-                obj['via'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
+                obj['via'] = viaPoints
+                    .filter((i) => i != null)
+                    .map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6))
+                    .join(';');
             }
             if (avoidRoads?.length > 0) {
                 obj['avoid'] = avoidRoads.map(({ id }) => id).join(';');

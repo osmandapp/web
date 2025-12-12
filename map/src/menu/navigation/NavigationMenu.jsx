@@ -34,6 +34,7 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
     PROFILE_LINE,
+    ROUTE_POINTS_VIA_INPUTS_COUNT,
 } from '../../store/geoRouter/profileConstants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -52,13 +53,32 @@ export function pickNextRoutePoint(routeObject) {
         return null;
     }
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
-    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
-
-    if (startPoint && finishPoint) {
-        return null;
+    if (!startPoint) {
+        return ROUTE_POINTS_START;
     }
 
-    return startPoint ? ROUTE_POINTS_FINISH : ROUTE_POINTS_START;
+    const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
+    const viaInputsCount = routeObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
+
+    // Check for null slots in viaPoints array (e.g., [point1, null, point3] → return index 1)
+    for (let i = 0; i < viaPoints.length; i++) {
+        if (!viaPoints[i]) {
+            return { type: ROUTE_POINTS_VIA, index: i };
+        }
+    }
+
+    // Check if there are more UI inputs than filled points (e.g., viaPoints=[p1,p2], viaInputsCount=3 → return index 2)
+    if (viaInputsCount > viaPoints.length) {
+        return { type: ROUTE_POINTS_VIA, index: viaPoints.length };
+    }
+
+    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
+    if (!finishPoint) {
+        return ROUTE_POINTS_FINISH;
+    }
+
+    // All inputs are filled - no empty slots available
+    return null;
 }
 
 export function hasMissingRoutePoint(routeObject) {

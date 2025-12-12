@@ -5,7 +5,12 @@ import { useTranslation } from 'react-i18next';
 import useNavigationHistory from '../../util/hooks/navigation/useNavigationHistory';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
-import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+    ROUTE_POINTS_VIA_INPUTS_COUNT,
+} from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 
@@ -119,9 +124,12 @@ export default function NavigationPointsManager({ routeObject }) {
 
     useEffect(() => {
         if (viaPoints && viaPoints.length > 0 && intermediates.length <= viaPoints.length) {
-            setIntermediates(viaPoints.map((p) => formatLatLon(p)));
+            const formatted = viaPoints.map((p) => formatLatLon(p));
+            setIntermediates(formatted);
+            routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, formatted.length);
         } else if (!viaPoints || viaPoints.length === 0) {
             setIntermediates([]);
+            routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, 0);
         }
     }, [viaPoints]);
 
@@ -137,6 +145,7 @@ export default function NavigationPointsManager({ routeObject }) {
         const newIntermediates = [...intermediates];
         newIntermediates[index] = value;
         setIntermediates(newIntermediates);
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleStartBlur = (value) => {
@@ -204,7 +213,9 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleAddIntermediate = () => {
-        setIntermediates([...intermediates, '']);
+        const newIntermediates = [...intermediates, ''];
+        setIntermediates(newIntermediates);
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleRemoveIntermediate = (index) => {
@@ -215,6 +226,8 @@ export default function NavigationPointsManager({ routeObject }) {
             const newViaPoints = viaPoints.filter((_, i) => i !== index);
             routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
+
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleKeyPress = (e, handler) => {
