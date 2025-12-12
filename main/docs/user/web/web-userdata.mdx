@@ -134,6 +134,45 @@ The following actions are available:
 ![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
 
 
+## Tracks Analyzer {#tracks-analyzer}
+
+**Tracks Analyzer** is a web tool that helps analyze repeating track segments between selected points on the map. It scans your tracks and finds all segments that pass through the chosen location(s), allowing you to compare speed, elevation, distance, and time across multiple activities.
+
+### How to Use {#how-to-use}
+
+![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points.png)
+
+After opening the Tracks Analyzer (shown as a wrench), the tool opens with a map view and an empty state. From here, you can choose which tracks will be included in the analysis using the **Select tracks** panel. The analyzer allows working with all available tracks or limiting the analysis to specific folders.
+
+To start the analysis, set one or two points directly on the map. Right-click on the desired location and select **Point A / Point B** from the context menu. The analyzer then searches for track segments that pass through the selected point or between the two points.
+
+The results are displayed as a list of matching track segments. The list can be reordered using the **Sort** option, which changes how segments are listed. In addition, the **Fields** button opens the Visible parameters panel, where you can control which analysis parameters are shown for each segment. You can display all available parameters or select only those relevant to your analysis.
+
+![Track Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Track Analyzer](@site/static/img/web/web_analyzer_fields.png)
+
+### Data Analysis and Graphs {#data-analysis-and-graphs}
+
+![Track Analyzer](@site/static/img/web/web_analyzer_menu.png)
+
+Each matching segment is shown in the results list on the left. For every segment, a set of calculated parameters is displayed, depending on which Visible parameters are enabled.
+
+Each segment also has a three-dot menu (⋮) with the following actions:
+- Open track — opens the full track related to the selected segment.
+- Hide track / Make track visible — controls whether the track is shown on the map.
+- Exclude — removes the segment from the current analysis results.
+
+Below the map, the analyzer displays a graph that visualizes the selected segments. The graph represents data only for the segments found between the selected points, not the entire tracks.
+
+The graph supports switching between different data types:
+- Altitude.
+- Slope.
+- Speed.
+Only one data type is displayed at a time, and changing it updates the graph immediately.
+
+When multiple segments are present, the graph shows data for several segments simultaneously. A selector above the graph allows you to choose how many segment graphs are displayed at once and to switch between them.
+
+![Track Analyzer](@site/static/img/web/web_analyzer_altitude.png) ![Track Analyzer](@site/static/img/web/web_analyzer_tracks.png)
+
 ## Related Articles {#related-articles}
 
 - [Manage Tracks](../personal/tracks/manage-tracks.md)
