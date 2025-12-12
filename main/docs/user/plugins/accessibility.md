@@ -88,6 +88,23 @@ To activate device's accessibility features in OsmAnd, you need to make the foll
 3. Configure Accessibility plugin [settings](#plugin-settings).
 
 
+## Autoannounce {#autoannounce}
+
+To enable:
+*My location* (Long tap) → *Show details* → *Start/Stop autoannounce*
+
+- A long tap on **My location** opens a menu with the options ***Show your position*** and ***Show details***. Selecting Show details displays additional route information and provides button ***Start/Stop autoannounce***.
+- Set the **Autoannounce Period** (e.g., *10 seconds*) to control the frequency of announcements.
+- If **TalkBack** is not enabled device’s system settings, OsmAnd won't provide *voice notifications* and only display *text notifications* on the screen.  
+
+### Smart Autoannounce {#smart-autoannounce}
+
+To enable:
+*Plugins* → *Accessibility* → *Settings* → *Smart Autoannounce*
+
+The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route. It is designed to support visually impaired users who rely on *voice guidance*.  
+
+
 ## Plugin Settings {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
@@ -107,42 +124,11 @@ The Accessibility plugin offers various settings to personalize navigation and i
 | **Audio Directions**      | Plays *audio guidances* indicating direction. |  
 | **Haptic Directions**     | Provides *vibration feedback* for turns and deviations.|  
 
-<!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
-
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
-
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
-
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
-
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
-
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
-
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
--->
-
-<br/>
-
 ***Tips for optimized accessibility:***
 
 - **Screen reader** - Use TalkBack (*Android*) or VoiceOver (*iOS*) for enhanced map interaction.
 - **Audio navigation** - Enable auto-announce to receive voice directions while the screen is off.
 - **Haptic feedback** - Ideal for low-visibility environments or when audio guidances are impractical.
-
-
-### Smart Autoannounce {#smart-autoannounce}
-
-The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route. It is designed to support visually impaired users who rely on *voice guidance*.  
-
-- If **TalkBack is not enabled**, *Smart Autoannounce* will only display *text notifications* on the screen.  
-
-- **Voice notifications** are activated only when *TalkBack* is enabled in the **device’s system settings**.  
-
-- Set the **Autoannounce Period** (e.g., *10 seconds*) to control the frequency of announcements.
-
-- A long tap on **My location** opens a menu with the options ***Show your position*** and ***Show details***. Selecting Show details displays additional route information and provides button ***Start/Stop autoannouncement***.
 
 
 ### Direction Style {#direction-style}
