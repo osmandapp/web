@@ -15,24 +15,33 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+{/*
 <InfoIncompleteArticle/>
+*/}
 
 ## Overview {#overview}
 
+The Web Planner gives you a simple way to work with your personal data right in the browser. After signing in, you can open your tracks, adjust them, create new ones, or upload files from your computer. The same applies to your saved places: you can add new favorites or edit the ones you already have.
+
+All changes are automatically synced through [OsmAnd Cloud](../personal/osmand-cloud.md), so anything you update on the web appears on your devices, and anything you create on your phone shows up here as well. This makes it easy to move between platforms and keep your data consistent wherever you use OsmAnd.
+
+{/*
 On the web, users can access, manage, and create their personal data, such as Tracks and Favorites, directly on the web.
 
 - Tracks: Users can upload, view, edit, or create new tracks online. All changes are automatically synchronized with the OsmAnd Cloud, ensuring the data is available across all connected devices.
 - Favorites: Create and organize saved locations on the web, with automatic syncing to your OsmAnd app for quick access and navigation.
 
 The integration with OsmAnd Cloud allows seamless synchronization, enabling users to manage their data conveniently from any device.
+*/}
 
-## Tracks on the web {#tracks-on-the-web}
 
-It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
+## Tracks {#tracks}
 
-![Track loggin](@site/static/img/web/track_loggin.png)
+It's a paid feature <ProFeature/>. To use it, log in to your OsmAnd Pro account.
 
-For Track section:
+![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+
+This section contains all track-related tools and actions. The following options are available:
 
 - Show tracks from [OsmAnd Cloud](#cloud-tracks).
 - Adding tracks on the map (**Visible on map** folder).
@@ -45,33 +54,29 @@ For Track section:
 
 ### Visible on the Map {#visible-on-the-map}
 
-Here there is a list of visible tracks on the map.
+The **Visible on map** view lists all tracks that are currently displayed on the map. Any track can be added to this list from the main Tracks panel using the **⋮ → Make track visible** option.
 
-_Switch on/off_ tracks for showing or not its on the map.
+Tracks that are visible on the map are highlighted in blue, while tracks that are currently hidden appear in grey. A switch next to each track lets you quickly show or hide it. The **Hide all** button turns off all visible tracks at once.
 
-![Visible on the map](@site/static/img/web/visible.png)
+Below the main list, the **Recently visible** section displays tracks that were shown on the map earlier. This makes it easy to turn a track back on without searching for it again in your folders or in OsmAnd Cloud.
+
+![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
 
 
 ### Track folder menu {#track-folder-menu}
 
-Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
+![Track folder menu](@site/static/img/web/collection_new.png)
+
+Click the three-dot button (⋮) to open the *Track Folder* menu. From here, you can:
 
  - Download as OSF.
- - Download as OBF Collection:
-  You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+ - Download as OBF Collection. Export the folder in OsmAnd Binary Format, choosing either an [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or a [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+      -  **OBF file**. You can download an offline OBF map and open it with OsmAnd on your device. It is suitable for displaying a large number of tracks on the map.
+      -  **Travel OBF**. You can also import a map of tracks as a travel book, which allows you to select individual tracks on the map and use them like normal GPX files. A travel book also supports features such as displaying tracks as points, filtering tracks by activity type, and filtering waypoints.
+ - Rename. Opens a dialog where you can enter a new name for the selected folder. The change is synced to OsmAnd Cloud and will appear on all connected devices.
+ - Delete. Opens a confirmation dialog. Deleting a folder removes it permanently along with all tracks it contains. This action is also synced through OsmAnd Cloud.
 
-    -  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
-
-  You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
-
-    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
-
-  Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
-
-- _Rename_ chosen folder.
-- _Delete_ chosen folder.
-
-![Track folder menu](@site/static/img/web/collection.png)
+![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
 
 
 ### Cloud Tracks {#cloud-tracks}
@@ -80,12 +85,20 @@ GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be 
 
 The following features are available after choosin cloud track:
 
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
+
 - Information screens:
   - *Information* - displaying track data.
   - *Elevation* - graph of elevation.
   - *Speed* - speed graph.
   - *Slope* - slope graph.
-  - *Settings* - list of navigation profiles for the *Create route* tool.  
+  - *Settings* - list of navigation profiles for the *Create route* tool.
+  - *Turns* - a generated list of approximate turn instructions based on the track geometry.
+  - *Road type* - breaks the track into segments by road classification .
+  - *Surface* - shows the types of track surfaces along the route.
+  - *Smoothness* - displays segment smoothness based on OSM tags .
+
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details.png)
 
 - Action buttons:
   - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
@@ -94,24 +107,74 @@ The following features are available after choosin cloud track:
   - *Delete Track* - deletes the track.
   - *Close track* - close the track.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
 
+## Favorites {#favorites}
 
-
-## Favorites on the web {#favorites-on-the-web}
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_new.png)
 
 After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), your Favorites are displayed in the Favorites menu.  
 The following actions are available:
 
 - *Show on map* - show favorites points from the chosen folder on the map.
 - *Rename* - name and description of favorite folder.
+- *Share* - opens sharing options. You can choose who can access this folder:
+     -  Private — only you can view the folder.
+     -  Request Only — users need to request access, which you can approve or deny.
+     -  Anyone — anyone with the link can view the folder.
+     A link becomes available when access is set to *Request Only* or *Anyone*.
 - *Download* - download the chosen favorite folder.
 - *Delete* - delete the chosen favorite folder.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
 
 ### Add / Edit Favorite {#add--edit-favorite}
 
 [To add](../personal/favorites.md#manage-favorites) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+
+
+## Tracks Analyzer {#tracks-analyzer}
+
+**Tracks Analyzer** is a web tool that helps analyze repeating track segments between selected points on the map. It scans your tracks and finds all segments that pass through the chosen location(s), allowing you to compare speed, elevation, distance, and time across multiple activities.
+
+### How to Use {#how-to-use}
+
+![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points.png)
+
+After opening the Tracks Analyzer (shown as a wrench), the tool opens with a map view and an empty state. From here, you can choose which tracks will be included in the analysis using the **Select tracks** panel. The analyzer allows working with all available tracks or limiting the analysis to specific folders.
+
+To start the analysis, set one or two points directly on the map. Right-click on the desired location and select **Point A / Point B** from the context menu. The analyzer then searches for track segments that pass through the selected point or between the two points.
+
+The results are displayed as a list of matching track segments. The list can be reordered using the **Sort** option, which changes how segments are listed. In addition, the **Fields** button opens the Visible parameters panel, where you can control which analysis parameters are shown for each segment. You can display all available parameters or select only those relevant to your analysis.
+
+![Track Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Track Analyzer](@site/static/img/web/web_analyzer_fields.png)
+
+### Data Analysis and Graphs {#data-analysis-and-graphs}
+
+![Track Analyzer](@site/static/img/web/web_analyzer_menu.png)
+
+Each matching segment is shown in the results list on the left. For every segment, a set of calculated parameters is displayed, depending on which Visible parameters are enabled.
+
+Each segment also has a three-dot menu (⋮) with the following actions:
+- Open track — opens the full track related to the selected segment.
+- Hide track / Make track visible — controls whether the track is shown on the map.
+- Exclude — removes the segment from the current analysis results.
+
+Below the map, the analyzer displays a graph that visualizes the selected segments. The graph represents data only for the segments found between the selected points, not the entire tracks.
+
+The graph supports switching between different data types:
+- Altitude.
+- Slope.
+- Speed.
+Only one data type is displayed at a time, and changing it updates the graph immediately.
+
+When multiple segments are present, the graph shows data for several segments simultaneously. A selector above the graph allows you to choose how many segment graphs are displayed at once and to switch between them.
+
+![Track Analyzer](@site/static/img/web/web_analyzer_altitude.png) ![Track Analyzer](@site/static/img/web/web_analyzer_tracks.png)
+
+## Related Articles {#related-articles}
+
+- [Manage Tracks](../personal/tracks/manage-tracks.md)
+- [Favorites](../personal/favorites.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)

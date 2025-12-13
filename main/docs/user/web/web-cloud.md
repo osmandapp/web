@@ -139,8 +139,8 @@ Cloud Sync lets you access the data you synced to OsmAnd Cloud directly on the [
 These items become visible in the menu right after you sign in on the website. To update this information, you need to sync your data from your devices using the [Sync now action](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) in the mobile app.
 
 Cloud Sync availability depends on your account type:
-- OsmAnd Start – syncs [Favorites](../web/web-userdata.mdx#favorites-on-the-web) and displays them on the web.
-- OsmAnd Pro – syncs [Tracks](../web/web-userdata.mdx#tracks-on-the-web), Favorites, and [Backups](#my-data), and unlocks full web access to cloud data.
+- OsmAnd Start – syncs [Favorites](../web/web-userdata.mdx#favorites) and displays them on the web.
+- OsmAnd Pro – syncs [Tracks](../web/web-userdata.mdx#tracks), Favorites, and [Backups](#my-data), and unlocks full web access to cloud data.
 
 ![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
 
