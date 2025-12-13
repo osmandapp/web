@@ -1,11 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Box } from '@mui/material';
 import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
 import useNavigationHistory from '../../util/hooks/navigation/useNavigationHistory';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
-import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
+import AppContext from '../../context/AppContext';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+    ROUTE_POINTS_VIA_INPUTS_COUNT,
+} from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 
@@ -44,6 +50,7 @@ const preparePointUpdate = ({ value, current }) => {
 
 export default function NavigationPointsManager({ routeObject }) {
     const { t } = useTranslation();
+    const ctx = useContext(AppContext);
 
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
@@ -60,12 +67,14 @@ export default function NavigationPointsManager({ routeObject }) {
     const startInputRef = useRef(null);
     const finishInputRef = useRef(null);
     const usedAutoFocus = useRef(false);
+    const autofocusDisabled = useRef(false);
+    const prevIsMainMenu = useRef(false);
 
     const FOCUS_DELAY_MS = 150;
 
     const location = useLocation();
 
-    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(routeObject);
+    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(routeObject, ctx);
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 
@@ -85,13 +94,28 @@ export default function NavigationPointsManager({ routeObject }) {
         }
     }, [finishPoint]);
 
+    // Reset autofocus flags when menu is reopened
+    useEffect(() => {
+        if (isMainMenu && !prevIsMainMenu.current) {
+            // Menu was just opened
+            usedAutoFocus.current = false;
+            autofocusDisabled.current = false;
+        }
+        prevIsMainMenu.current = isMainMenu;
+    }, [isMainMenu]);
+
     useEffect(() => {
         if (!isMainMenu) {
             usedAutoFocus.current = false;
             return;
         }
+
+        if (autofocusDisabled.current) {
+            return;
+        }
+
         const focusTimeout = setTimeout(() => {
-            // Don't auto-focus if user already focused an input (start, finish, or intermediate points)
+            // Don't autofocus if user already focused an input
             const activeElement = document.activeElement;
             const isInputFocused =
                 activeElement &&
@@ -103,26 +127,33 @@ export default function NavigationPointsManager({ routeObject }) {
                 return;
             }
 
-            if (start === '' && startInputRef.current) {
+            if (start === '' && startInputRef.current && !usedAutoFocus.current) {
                 startInputRef.current.focus();
                 usedAutoFocus.current = true;
-            } else if (finish === '' && finishInputRef.current) {
+            } else if (start !== '' && finish === '' && finishInputRef.current) {
                 finishInputRef.current.focus();
                 usedAutoFocus.current = true;
-            } else {
-                usedAutoFocus.current = false;
             }
         }, FOCUS_DELAY_MS);
 
         return () => clearTimeout(focusTimeout);
     }, [isMainMenu, start, finish]);
 
+    // Sync intermediate inputs with map points, preserving manually added empty inputs.
+    // Example: user adds 2 empty inputs, then clicks map
     useEffect(() => {
-        if (viaPoints && viaPoints.length > 0 && intermediates.length <= viaPoints.length) {
-            setIntermediates(viaPoints.map((p) => formatLatLon(p)));
-        } else if (!viaPoints || viaPoints.length === 0) {
-            setIntermediates([]);
-        }
+        const viaInputsCount = routeObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
+        const formattedPoints = viaPoints?.length > 0 ? viaPoints.map((p) => formatLatLon(p)) : [];
+
+        const targetInputsCount = Math.max(formattedPoints.length, viaInputsCount);
+
+        const newIntermediates = [
+            ...formattedPoints,
+            ...Array(Math.max(0, targetInputsCount - formattedPoints.length)).fill(''),
+        ];
+
+        setIntermediates(newIntermediates);
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, targetInputsCount);
     }, [viaPoints]);
 
     const handleStartChange = (value) => {
@@ -137,6 +168,7 @@ export default function NavigationPointsManager({ routeObject }) {
         const newIntermediates = [...intermediates];
         newIntermediates[index] = value;
         setIntermediates(newIntermediates);
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleStartBlur = (value) => {
@@ -204,10 +236,14 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleAddIntermediate = () => {
-        setIntermediates([...intermediates, '']);
+        autofocusDisabled.current = true;
+        const newIntermediates = [...intermediates, ''];
+        setIntermediates(newIntermediates);
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleRemoveIntermediate = (index) => {
+        autofocusDisabled.current = true;
         const newIntermediates = intermediates.filter((_, i) => i !== index);
         setIntermediates(newIntermediates);
 
@@ -215,6 +251,8 @@ export default function NavigationPointsManager({ routeObject }) {
             const newViaPoints = viaPoints.filter((_, i) => i !== index);
             routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
+
+        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleKeyPress = (e, handler) => {
@@ -249,6 +287,7 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleSwap = () => {
+        autofocusDisabled.current = true;
         // Remove focus from all inputs before swapping
         const blurEvent = new CustomEvent('nav-blur');
         globalThis.dispatchEvent(blurEvent);
@@ -370,6 +409,8 @@ export default function NavigationPointsManager({ routeObject }) {
                 history={history}
                 onHistorySelect={handleStartHistorySelect}
                 onClearHistory={clearHistory}
+                isDragging={draggedIndex === 0}
+                hasIntermediates={intermediates.length > 0}
             />
 
             {/* Intermediate Points */}
@@ -395,6 +436,8 @@ export default function NavigationPointsManager({ routeObject }) {
                         history={history}
                         onHistorySelect={(item) => handleIntermediateHistorySelect(index, item)}
                         onClearHistory={clearHistory}
+                        isDragging={draggedIndex === index + 1}
+                        isFirstIntermediate={index === 0}
                     />
                 </React.Fragment>
             ))}
@@ -423,6 +466,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 history={history}
                 onHistorySelect={handleFinishHistorySelect}
                 onClearHistory={clearHistory}
+                isDragging={draggedIndex === intermediates.length + 1}
             />
 
             {/* Drop indicator after finish (to move item to the end) */}

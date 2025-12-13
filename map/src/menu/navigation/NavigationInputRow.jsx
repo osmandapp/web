@@ -37,6 +37,9 @@ export default function NavigationInputRow({
     history = [],
     onHistorySelect,
     onClearHistory,
+    isDragging = false,
+    hasIntermediates = false,
+    isFirstIntermediate = false,
 }) {
     const [isDraggable, setIsDraggable] = useState(false);
 
@@ -78,9 +81,17 @@ export default function NavigationInputRow({
         }
     };
 
+    const getRowClassName = () => {
+        let className = styles.navigationInputRow;
+        if (isDragging) {
+            className += ` ${styles.navigationInputRowDragging}`;
+        }
+        return className;
+    };
+
     return (
         <Box
-            className={styles.navigationInputRow}
+            className={getRowClassName()}
             draggable={isDraggable}
             onDragStart={onDragStart}
             onDragOver={onDragOver}
@@ -104,6 +115,9 @@ export default function NavigationInputRow({
                     history={history}
                     onHistorySelect={onHistorySelect}
                     onClearHistory={onClearHistory}
+                    type={type}
+                    hasIntermediates={hasIntermediates}
+                    isFirstIntermediate={isFirstIntermediate}
                 />
             </Box>
             <Box className={styles.actionButtons}>

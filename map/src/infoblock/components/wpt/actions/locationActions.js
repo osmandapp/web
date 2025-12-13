@@ -1,20 +1,36 @@
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../../store/geoRouter/profileConstants';
+import {
+    createNavObjectFromCoords,
+    createNavObjectFromWpt,
+    NAVIGATION_OBJECT_TYPE_SEARCH,
+    NAVIGATION_OBJECT_TYPE_FAVORITE,
+} from '../../../../menu/navigation/NavigationObject';
 
-export function directionFrom(lat, lon, ctx) {
-    if (lat != null && lon != null) {
-        ctx.routeObject.setOption(ROUTE_POINTS_START, {
-            lat: Number(lat),
-            lng: Number(lon),
-        });
-    }
+export function directionFrom(lat, lon, ctx, wpt = null) {
+    if (lat == null || lon == null) return;
+    addNavObject(wpt, lat, lon, ctx);
+    ctx.routeObject.setOption(ROUTE_POINTS_START, {
+        lat: Number(lat),
+        lng: Number(lon),
+    });
 }
 
-export function directionTo(lat, lon, ctx) {
-    if (lat != null && lon != null) {
-        ctx.routeObject.setOption(ROUTE_POINTS_FINISH, {
-            lat: Number(lat),
-            lng: Number(lon),
-        });
+export function directionTo(lat, lon, ctx, wpt = null) {
+    if (lat == null || lon == null) return;
+    addNavObject(wpt, lat, lon, ctx);
+    ctx.routeObject.setOption(ROUTE_POINTS_FINISH, {
+        lat: Number(lat),
+        lng: Number(lon),
+    });
+}
+
+function addNavObject(wpt, lat, lon, ctx) {
+    if (!wpt) return;
+    const type =
+        wpt.type?.isFav || wpt.type?.isShareFav ? NAVIGATION_OBJECT_TYPE_FAVORITE : NAVIGATION_OBJECT_TYPE_SEARCH;
+    const navObject = createNavObjectFromWpt(wpt, type) || createNavObjectFromCoords(lat, lon);
+    if (navObject) {
+        ctx.setCurrentNavObject(navObject);
     }
 }
 

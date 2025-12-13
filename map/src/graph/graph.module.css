@@ -24,3 +24,7 @@
     font-size: 12px !important;
     font-weight: 400 !important;
 }
+
+.routeSummaryGraphCanvas :global(.chartjs-tooltip) {
+    transition: none !important;
+}

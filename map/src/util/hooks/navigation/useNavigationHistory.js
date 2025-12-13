@@ -1,39 +1,51 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { LatLng } from 'leaflet';
 import { formatLatLon } from '../../../menu/navigation/NavigationPointsManager';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../../store/geoRouter/profileConstants';
 import { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from '../../../menu/navigation/NavigationInputRow';
+import { createNavObjectFromCoords, NavigationObject } from '../../../menu/navigation/NavigationObject';
 
-export default function useNavigationHistory(routeObject) {
-    const [history, setHistory] = useState([]);
+export default function useNavigationHistory(routeObject, ctx = null) {
+    const history = ctx.navigationHistory || [];
+    const setHistory = ctx.setNavigationHistory;
 
-    const addToHistory = useCallback((latlon) => {
-        if (!latlon?.lat || !latlon.lng) {
+    const addToHistory = useCallback(({ location = null, obj = null }) => {
+        if (location) {
+            obj = createNavObjectFromCoords(location.lat, location.lng);
+        }
+        if (!obj || !obj.lat || !obj.lng) {
             return;
         }
+
+        if (!setHistory) return;
 
         setHistory((prev) => {
             const prevHistory = prev || [];
             // Remove duplicates
-            const filtered = prevHistory.filter((h) => {
-                const isSameLat = Math.abs(h.lat - latlon.lat) < 0.00001;
-                const isSameLng = Math.abs(h.lng - latlon.lng) < 0.00001;
-                return !(isSameLat && isSameLng);
+            const filtered = prevHistory.filter((prevObj) => {
+                const isSameLat = Math.abs(prevObj.lat - obj.lat) < 0.00001;
+                const isSameLng = Math.abs(prevObj.lng - obj.lng) < 0.00001;
+                const isSameType = prevObj.type === obj.type;
+                return !(isSameLat && isSameLng && isSameType);
             });
 
             return [
-                {
-                    lat: latlon.lat,
-                    lng: latlon.lng,
-                    name: formatLatLon(latlon),
-                },
+                NavigationObject({
+                    lat: obj.lat,
+                    lng: obj.lng,
+                    type: obj.type,
+                    icon: obj.icon,
+                    displayValue: obj.displayValue,
+                }),
                 ...filtered,
             ].slice(0, 100);
         });
     }, []);
 
     const clearHistory = () => {
-        setHistory([]);
+        if (setHistory) {
+            setHistory([]);
+        }
     };
 
     // Track changes in start point (for drag on map, etc.)
@@ -45,24 +57,31 @@ export default function useNavigationHistory(routeObject) {
 
         const startPoint = routeObject.getOption(ROUTE_POINTS_START);
         if (startPoint) {
-            addToHistory(startPoint);
+            addToHistory({ location: startPoint });
         }
         const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
         if (finishPoint) {
-            addToHistory(finishPoint);
+            addToHistory({ location: finishPoint });
         }
         const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
         if (viaPoints && viaPoints.length > 0) {
             viaPoints.forEach((point) => {
-                addToHistory(point);
+                addToHistory({ location: point });
             });
         }
     }, [routeObject]);
 
+    useEffect(() => {
+        if (ctx.currentNavObject) {
+            addToHistory({ obj: ctx.currentNavObject });
+            ctx.setCurrentNavObject(null);
+        }
+    }, [ctx.currentNavObject]);
+
     const handleHistorySelect = (item, pointType, index = null) => {
         if (item?.lat && item?.lng) {
             const latlon = new LatLng(item.lat, item.lng);
-            const displayValue = item.name || formatLatLon(latlon);
+            const displayValue = item.displayValue || formatLatLon(latlon);
 
             if (pointType === START_POINT) {
                 routeObject.setOption(ROUTE_POINTS_START, latlon);

@@ -451,6 +451,9 @@ export const AppContextProvider = (props) => {
 
     const [selectedPoiId, setSelectedPoiId] = useState(null);
 
+    const [currentNavObject, setCurrentNavObject] = useState(null);
+    const [navigationHistory, setNavigationHistory] = useState([]);
+
     routeObject.initSetter({ setter: setRouteObject });
     trackRouter.initSetter({ setter: setTrackRouter });
     afterPointRouter.initSetter({ setter: setAfterPointRouter });
@@ -912,6 +915,10 @@ export const AppContextProvider = (props) => {
                 setProcessingAnalytics,
                 openNavigationSettings,
                 setOpenNavigationSettings,
+                currentNavObject,
+                setCurrentNavObject,
+                navigationHistory,
+                setNavigationHistory,
             }}
         >
             {props.children}

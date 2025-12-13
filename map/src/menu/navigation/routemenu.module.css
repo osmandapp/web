@@ -17,22 +17,50 @@
 .navigationInput :global(.MuiOutlinedInput-root) {
     padding: 16px 10px 16px 16px !important;
     background-color: #f5f5f5 !important;
-    border-radius: 4px !important;
+    border-radius: 0 !important;
     height: 48px !important;
+}
+
+.navigationInputStart :global(.MuiOutlinedInput-root),
+.navigationInputStart :global(.MuiOutlinedInput-notchedOutline) {
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important;
+}
+
+.navigationInputStart :global(.MuiOutlinedInput-notchedOutline) {
+    border-bottom-width: 0 !important;
+}
+
+.navigationInputStartNoIntermediates :global(.MuiOutlinedInput-notchedOutline) {
+    border-bottom-width: 1px !important;
+}
+
+.navigationInputFinish :global(.MuiOutlinedInput-root),
+.navigationInputFinish :global(.MuiOutlinedInput-notchedOutline) {
+    border-bottom-left-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+}
+
+.navigationInputFinish :global(.MuiOutlinedInput-notchedOutline),
+.navigationInputIntermediateNotFirst :global(.MuiOutlinedInput-notchedOutline) {
+    border-top-width: 0 !important;
+}
+
+.navigationInput :global(.MuiOutlinedInput-root:hover),
+.navigationInput :global(.MuiOutlinedInput-root.Mui-focused) {
+    background-color: #ffffff !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-root:hover) :global(.MuiOutlinedInput-notchedOutline) {
     border-color: #cccccc !important;
     border-width: 2px !important;
-}
-
-.navigationInput :global(.MuiOutlinedInput-root.Mui-focused) {
-    background-color: #ffffff !important;
+    border-top-width: 3px !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-root.Mui-focused) :global(.MuiOutlinedInput-notchedOutline) {
     border-color: var(--selected-color) !important;
     border-width: 2px !important;
+    border-top-width: 3px !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-notchedOutline) {
@@ -78,6 +106,10 @@
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
+}
+
+.navigationInputRowDragging {
+    opacity: 0.5 !important;
 }
 
 .inputContainer {
@@ -144,7 +176,6 @@
     display: flex !important;
     flex-direction: column !important;
     padding: 4px 10px 20px 16px !important;
-    gap: 1px !important;
 }
 
 .dropIndicator {

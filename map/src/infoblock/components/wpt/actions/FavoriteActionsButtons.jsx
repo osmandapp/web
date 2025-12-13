@@ -85,14 +85,14 @@ export default function FavoriteActionsButtons({ wpt }) {
                     additionalStyle={{ flex: 1 }}
                 />
                 <BlueBtn
-                    action={() => directionFrom(lat, lon, ctx)}
+                    action={() => directionFrom(lat, lon, ctx, wpt)}
                     id={'se-direction-from-fav-item'}
                     icon={<DirectionFromIcon className={styles.wptActionButtonIcon} />}
                     tooltipTitle={t('context_menu_item_directions_from')}
                     additionalStyle={{ flex: 1 }}
                 />
                 <BlueBtn
-                    action={() => directionTo(lat, lon, ctx)}
+                    action={() => directionTo(lat, lon, ctx, wpt)}
                     id={'se-navigation-fav-item'}
                     icon={<NavigationIcon className={styles.wptActionButtonIcon} />}
                     tooltipTitle={t('shared_string_navigation')}
