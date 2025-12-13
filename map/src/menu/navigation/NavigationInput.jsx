@@ -73,19 +73,19 @@ const NavigationInput = forwardRef(function NavigationInput(
     };
 
     const handleHistorySelect = (item) => {
-        if (item?.name) {
+        if (item?.displayValue) {
             if (onHistorySelect) {
                 onHistorySelect(item);
             }
             // Update value prop
             if (onChange) {
-                onChange(item.name);
+                onChange(item.displayValue);
             }
             // Also update inputValue directly to ensure it shows immediately
-            setInputValue(item.name);
+            setInputValue(item.displayValue);
             // Call onBlur to process the value (like pressing Enter)
             if (onBlur) {
-                onBlur(item.name);
+                onBlur(item.displayValue);
             }
         }
         setShowHistory(false);

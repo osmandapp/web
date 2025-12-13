@@ -1,6 +1,5 @@
 import React, { useMemo, useEffect, useRef, useContext } from 'react';
 import { Menu, Divider } from '@mui/material';
-import { ReactComponent as HistoryIcon } from '../../assets/icons/ic_action_history.svg';
 import { ReactComponent as ClearIcon } from '../../assets/icons/ic_action_clear_all_fields.svg';
 import { ReactComponent as LocationIcon } from '../../assets/icons/ic_action_location_marker_outlined.svg';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +9,7 @@ import AppContext from '../../context/AppContext';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { formatLatLon } from './NavigationPointsManager';
+import { createWptIcon } from './NavigationObject';
 
 const HISTORY_LIMIT = 5;
 
@@ -172,8 +172,8 @@ export default function NavigationHistoryDropdown({
                 <DefaultItem
                     key={`history-item-${index}`}
                     id={`${inputId}-history-item-${index}`}
-                    icon={<HistoryIcon />}
-                    name={item.name}
+                    icon={createWptIcon(item.icon, ctx)}
+                    name={item.displayValue}
                     onClick={(e) => {
                         handleHistoryItemClick(item, e);
                     }}

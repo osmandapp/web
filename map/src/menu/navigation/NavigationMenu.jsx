@@ -157,6 +157,8 @@ export default function NavigationMenu() {
         routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
         routeObject.resetRoute();
 
+        ctx.setCurrentNavObject(null);
+
         setResetSettings(true);
         closeHeader({ ctx });
     }

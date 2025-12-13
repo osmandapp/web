@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Box } from '@mui/material';
 import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
 import useNavigationHistory from '../../util/hooks/navigation/useNavigationHistory';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
+import AppContext from '../../context/AppContext';
 import {
     ROUTE_POINTS_START,
     ROUTE_POINTS_FINISH,
@@ -49,6 +50,7 @@ const preparePointUpdate = ({ value, current }) => {
 
 export default function NavigationPointsManager({ routeObject }) {
     const { t } = useTranslation();
+    const ctx = useContext(AppContext);
 
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
@@ -72,7 +74,7 @@ export default function NavigationPointsManager({ routeObject }) {
 
     const location = useLocation();
 
-    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(routeObject);
+    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(routeObject, ctx);
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 
