@@ -22,7 +22,6 @@ export default function FavoritesMenu() {
 
     const { t } = useTranslation();
 
-    const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
     const [sortGroups, setSortGroups] = useState([]);
 
@@ -112,13 +111,7 @@ export default function FavoritesMenu() {
                     >
                         <PinnedFavoriteGroups pinnedGroups={pinnedGroups} />
                         {unpinnedGroups.map((g, index) => (
-                            <FavoriteGroup
-                                key={g.id ?? index}
-                                index={index}
-                                group={g}
-                                enableGroups={enableGroups}
-                                setEnableGroups={setEnableGroups}
-                            />
+                            <FavoriteGroup key={g.id ?? index} index={index} group={g} />
                         ))}
                     </Box>
                 ) : (

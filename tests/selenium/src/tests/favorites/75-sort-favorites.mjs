@@ -121,7 +121,7 @@ export default async function test() {
     await waitBy(By.id('se-favorite-folder-actions'));
     await clickBy(By.id('se-favorite-folder-actions-pinned'));
     await actionIdleWait();
-    await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
+    await validateGroupOrder(favGroupsOldDateAfterRenameHidden);
 
     await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
     await actionDeleteAllFavorites(favorites);

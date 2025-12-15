@@ -8,7 +8,7 @@ export default function PinnedFavoriteGroups({ pinnedGroups }) {
         <>
             {pinnedGroups.map((g, index) => (
                 <FavoriteGroup
-                    key={g + index}
+                    key={g.id ?? index}
                     index={index}
                     group={g}
                     showDivider={index !== pinnedGroups.length - 1}

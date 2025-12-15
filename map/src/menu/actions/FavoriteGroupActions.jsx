@@ -16,6 +16,7 @@ import {
     updateAllFavorites,
     updateFavoriteGroup,
     updateFavoriteGroups,
+    normalizeBoolean,
     DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
 } from '../../manager/FavoritesManager';
@@ -26,8 +27,6 @@ import { SHARE_TYPE } from '../share/shareConstants';
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload, smartf = null }, ref) => {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-
-    const normalizePinnedValue = (val) => (val === true || val === 'true' ? 'true' : 'false');
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
@@ -43,7 +42,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
 
     async function togglePinned() {
         const newPinnedState = group.pinned !== 'true';
-        const newPinnedString = normalizePinnedValue(newPinnedState);
+        const newPinnedString = normalizeBoolean(newPinnedState);
         const prevGroups = [...ctx.favorites.groups];
         const updatedGroups = ctx.favorites.groups.map((g) => {
             if (g.id === group.id) {
@@ -87,7 +86,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                         if (g.id === group.id) {
                             return {
                                 ...g,
-                                pinned: normalizePinnedValue(syncedPinned),
+                                pinned: normalizeBoolean(syncedPinned),
                                 updatetimems: result.updatetimems ?? g.updatetimems,
                                 clienttimems: result.clienttimems ?? g.clienttimems,
                             };

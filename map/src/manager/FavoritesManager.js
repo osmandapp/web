@@ -16,6 +16,7 @@ import { getFavoriteFromDB, saveFavoriteToDB } from '../context/FavoriteStorage'
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
+export const PERSONAL_FAV_GROUP_NAME = 'personal';
 const DEFAULT_TAB_ICONS = 'used';
 const FAVORITE_GROUP_FOLDER = '/map/images/poi_categories';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
@@ -24,8 +25,8 @@ export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const FAVORITE_PLACEHOLDER_MAP = { '_-_': ':', '_%_': '/' };
 
-export const HIDDEN_TRUE = 'true';
-export const HIDDEN_FALSE = 'false';
+export const TRUE_STRING = 'true';
+export const FALSE_STRING = 'false';
 
 const colors = [
     '#10c0f0',
@@ -259,7 +260,7 @@ function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
             hidden = isHidden(pointsGroups, groupName);
         }
     }
-    hidden = hidden ? HIDDEN_TRUE : HIDDEN_FALSE;
+    hidden = hidden ? TRUE_STRING : FALSE_STRING;
     // for map
     favArr.mapObjs[mapId].hidden = hidden;
     // for menu
@@ -268,17 +269,21 @@ function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
     return favArr;
 }
 
+export const normalizeBoolean = (val) => (val === true || val === TRUE_STRING ? TRUE_STRING : FALSE_STRING);
+
 function addPinned({ pointsGroups, groupName, favArr, menuId }) {
-    const normalizePinned = (val) => (val === true || val === 'true' ? 'true' : 'false');
-    let pinned = 'false';
+    const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
+    let pinned = FALSE_STRING;
     const normalizedGroupName = groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
     if (pointsGroups && pointsGroups[normalizedGroupName]) {
         const groupEntry = pointsGroups[normalizedGroupName];
-        if (groupEntry.pinned !== undefined) {
+        if (groupEntry.pinned !== undefined && !isPersonalGroup) {
             pinned = groupEntry.pinned;
+        } else if (isPersonalGroup) {
+            pinned = TRUE_STRING;
         }
     }
-    favArr.groups[menuId].pinned = normalizePinned(pinned);
+    favArr.groups[menuId].pinned = normalizeBoolean(pinned);
     return favArr;
 }
 
