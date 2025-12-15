@@ -47,7 +47,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
         const prevGroups = [...ctx.favorites.groups];
         const updatedGroups = ctx.favorites.groups.map((g) => {
             if (g.id === group.id) {
-                return { ...g, pinned: newPinnedState };
+                return { ...g, pinned: newPinnedString };
             }
             return g;
         });
@@ -98,7 +98,6 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                 });
             }
         } catch (e) {
-            console.error('[togglePinned] failed to update group', e);
             ctx.setFavorites((prev) => ({ ...prev, groups: prevGroups }));
         }
     }

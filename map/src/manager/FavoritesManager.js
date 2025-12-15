@@ -149,7 +149,7 @@ export async function updateAllFavorites(group, data, hiddenChanged) {
     return prepareResult(resp);
 }
 
-export async function updateFavoriteGroup(data, group, ctx) {
+export async function updateFavoriteGroup(data, group) {
     if (!data || !group) {
         return;
     }

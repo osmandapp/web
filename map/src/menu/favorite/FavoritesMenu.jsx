@@ -113,7 +113,7 @@ export default function FavoritesMenu() {
                         <PinnedFavoriteGroups pinnedGroups={pinnedGroups} />
                         {unpinnedGroups.map((g, index) => (
                             <FavoriteGroup
-                                key={g + index}
+                                key={g.id ?? index}
                                 index={index}
                                 group={g}
                                 enableGroups={enableGroups}

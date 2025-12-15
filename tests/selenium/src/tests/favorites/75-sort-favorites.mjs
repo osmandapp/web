@@ -99,7 +99,6 @@ export default async function test() {
     await validateGroupOrder(favGroupsOldDateWithShopsAndOZooPinned);
 
     // Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)
-    console.log('Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)');
     await waitBy(By.id('se-folder-actions-button-shops'));
     await clickBy(By.id('se-folder-actions-button-shops'));
     await waitBy(By.id('se-favorite-folder-actions'));
@@ -109,7 +108,6 @@ export default async function test() {
     await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
 
     // Unpin ozoo - only shops (pinned hidden) should remain pinned
-    console.log('Unpin ozoo - only shops (pinned hidden) should remain pinned');
     await waitBy(By.id('se-folder-actions-button-ozoo'));
     await clickBy(By.id('se-folder-actions-button-ozoo'));
     await waitBy(By.id('se-favorite-folder-actions'));
@@ -118,7 +116,6 @@ export default async function test() {
     await validateGroupOrder(favGroupsOldDateWithOnlyPinnedHidden);
 
     // Unpin shops - all groups should be unpinned, divider should disappear
-    console.log('Unpin shops - all groups should be unpinned, divider should disappear');
     await waitBy(By.id('se-folder-actions-button-shops'));
     await clickBy(By.id('se-folder-actions-button-shops'));
     await waitBy(By.id('se-favorite-folder-actions'));
