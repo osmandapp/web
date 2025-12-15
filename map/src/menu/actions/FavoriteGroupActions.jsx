@@ -61,12 +61,15 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
             const groupName =
                 pointsGroup.name === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : pointsGroup.name;
             let updatedPointsGroups = { ...pointsGroup.pointsGroups };
+            if (!updatedPointsGroups[groupName]) {
+                updatedPointsGroups[groupName] = {};
+            }
             updatedPointsGroups[groupName].pinned = newPinnedString;
 
             const data = {
                 pointsGroups: updatedPointsGroups,
             };
-            const result = await updateFavoriteGroup(data, group, ctx);
+            const result = await updateFavoriteGroup(data, group);
             if (result) {
                 let syncedPinned = newPinnedString;
                 if (result.data?.pointsGroups) {
