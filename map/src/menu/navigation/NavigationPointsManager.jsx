@@ -370,7 +370,7 @@ export default function NavigationPointsManager() {
             // Also clean up viaPoints
             const cleanViaPoints = viaPoints ? viaPoints.filter((p) => p !== null) : [];
             if (cleanViaPoints.length !== (viaPoints ? viaPoints.length : 0)) {
-                routeObject.setOption(ROUTE_POINTS_VIA, cleanViaPoints);
+                navObject.setOption(ROUTE_POINTS_VIA, cleanViaPoints);
             }
         }
 

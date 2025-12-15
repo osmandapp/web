@@ -916,7 +916,7 @@ export const AppContextProvider = (props) => {
                 setOpenNavigationSettings,
                 navigationHistory,
                 setNavigationHistory,
-                navigationObject: routeObject, // Same as routeObject, but for navigation points
+                navigationObject: routeObject,
             }}
         >
             {props.children}
