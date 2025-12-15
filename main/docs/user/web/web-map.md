@@ -15,7 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+
 
 :::info
 The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
@@ -23,6 +25,7 @@ The *[osmand.net/map](https://osmand.net/map/)* site is currently being develope
 
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
+-->
 
 
 ## Overview {#overview}
@@ -43,20 +46,25 @@ For opening it right click anywhere on the map. This menu includes the following
 - **Directions from** –  Sets the selected point as the [starting location](../web/planner.md#navigation-route) for navigation.
 - **Directions to** – Sets the selected point as the [destination for navigation](../web/planner.md#navigation-route).
 - **Copy coordinates** – Copies the coordinates of the selected point for external use.
-- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 - **Show regions** – Displays the regions associated with the selected location.
 
+<!--
+- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
+
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
+-->
+
+![Map Context menu](@site/static/img/web/map_context_menu_new.png)
 
 
 ## Weather on the Web {#weather-on-the-web}
 
 The OsmAnd Web provides weather information from two forecast sources:
 
-- **GFS (default)**  
-- **ECMWF**  
+- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – the default source operated by NOAA/NWS. Provides full weather data, including temperature, pressure, humidity, wind and cloud layers.  
+- [**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – an alternative forecast source. Offers high-quality temperature, precipitation and pressure data but does not provide wind or cloud information.  
 
-To switch between these forecast sources, click the **umbrella button** in the Weather menu.
+To switch between them, click the **umbrella button** in the Weather menu.
 
 ***Features of the weather menu:***  
 
