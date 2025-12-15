@@ -10,20 +10,26 @@ export default function DefaultItem({
     additionalInfo = null,
     revertText = false,
     onClick = null,
+    maxLines = 2,
 }) {
+    const textSx = {
+        mr: maxLines === 1 ? 7 : 0,
+        ...(icon ? {} : { ml: '48px' }),
+    };
+
     return (
         <MenuItem id={id} className={styles.item} disableRipple onClick={onClick}>
             {icon && <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>}
             {revertText ? (
-                <ListItemText sx={!icon ? { marginLeft: '48px' } : {}}>
+                <ListItemText sx={textSx}>
                     <Typography variant="body2" className={styles.addInfo} noWrap>
                         {name}
                     </Typography>
-                    {additionalInfo && <MenuItemWithLines name={additionalInfo} maxLines={2} />}
+                    {additionalInfo && <MenuItemWithLines name={additionalInfo} maxLines={maxLines} />}
                 </ListItemText>
             ) : (
-                <ListItemText sx={!icon ? { marginLeft: '48px' } : {}}>
-                    <MenuItemWithLines name={name} maxLines={2} />
+                <ListItemText sx={textSx}>
+                    <MenuItemWithLines name={name} maxLines={maxLines} />
                     {additionalInfo && (
                         <Typography variant="body2" className={styles.addInfo} noWrap>
                             {additionalInfo}

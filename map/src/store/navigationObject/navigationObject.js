@@ -66,9 +66,9 @@ export class navigationObject extends geoObject {
         // Build display value
         let displayValue = name;
         if (poiType && type === NAVIGATION_OBJECT_TYPE_SEARCH) {
-            displayValue = `${name} (${poiType})`;
+            displayValue = `${name} • ${poiType}`;
         } else if (category && type === NAVIGATION_OBJECT_TYPE_FAVORITE) {
-            displayValue = name ? `${name} (${category})` : category;
+            displayValue = name ? `${name} • ${category}` : category;
         } else if (!name) {
             displayValue = formatLatLon(new LatLng(lat, lon));
         }

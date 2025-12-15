@@ -193,6 +193,7 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-history-item-${index}`}
                         icon={icon}
                         name={item.getDisplayValue()}
+                        maxLines={1}
                         onClick={(e) => {
                             handleHistoryItemClick(item, e);
                         }}
