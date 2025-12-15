@@ -201,7 +201,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ## Related Articles {#related-articles}
 
-- [User Data](../web/web-userdata.mdx)
+- [Introduction](./web-cloud.md)
 - [Cross-Platform Purchases](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
 
