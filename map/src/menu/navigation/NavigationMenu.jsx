@@ -48,17 +48,17 @@ import AvoidRoadsList from './AvoidRoadsList';
 export const COLOR_BTN_BLUE = '#237BFF';
 export const COLOR_BTN_RED = '#E71D36';
 
-export function pickNextRoutePoint(routeObject) {
-    if (!routeObject) {
+export function pickNextRoutePoint(navObject) {
+    if (!navObject) {
         return null;
     }
-    const startPoint = routeObject.getOption(ROUTE_POINTS_START);
+    const startPoint = navObject.getOption(ROUTE_POINTS_START);
     if (!startPoint) {
         return ROUTE_POINTS_START;
     }
 
-    const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
-    const viaInputsCount = routeObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
+    const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
+    const viaInputsCount = navObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
 
     // Check for null slots in viaPoints array (e.g., [point1, null, point3] → return index 1)
     for (let i = 0; i < viaPoints.length; i++) {
@@ -72,7 +72,7 @@ export function pickNextRoutePoint(routeObject) {
         return { type: ROUTE_POINTS_VIA, index: viaPoints.length };
     }
 
-    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
+    const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);
     if (!finishPoint) {
         return ROUTE_POINTS_FINISH;
     }
@@ -81,8 +81,8 @@ export function pickNextRoutePoint(routeObject) {
     return null;
 }
 
-export function hasMissingRoutePoint(routeObject) {
-    return pickNextRoutePoint(routeObject) !== null;
+export function hasMissingRoutePoint(navObject) {
+    return pickNextRoutePoint(navObject) !== null;
 }
 
 const StyledInput = styled('input')({
@@ -99,12 +99,12 @@ export default function NavigationMenu() {
 
     const [, height] = useWindowSize();
 
-    const routeObject = ctx.routeObject;
+    const navObject = ctx.navigationObject;
 
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
 
-    const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
+    const avoidRoads = navObject.getOption(ROUTE_POINTS_AVOID_ROADS);
 
     useEffect(() => {
         ctx.setOpenNavigationSettings(openSettings);
@@ -134,12 +134,12 @@ export default function NavigationMenu() {
     }, [ctx.routeTrackFile]);
 
     function openInfoBlock() {
-        const route = routeObject.getRoute();
+        const route = navObject.getRoute();
         if (route) {
             if (isRouteTrack(ctx) === false) {
-                const { track } = routeObject.putRoute({ route: routeObject.getRoute() }); // get track instantly
+                const { track } = navObject.putRoute({ route: navObject.getRoute() }); // get track instantly
                 ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
-                routeObject.setOption('route.map.zoom', true);
+                navObject.setOption('route.map.zoom', true);
                 ctx.setSelectedGpxFile(track);
                 ctx.setUpdateInfoBlock(true);
             }
@@ -150,14 +150,12 @@ export default function NavigationMenu() {
         if (openSettings) {
             setOpenSettings(false);
         }
-        routeObject.setOption(ROUTE_POINTS_START, null);
-        routeObject.setOption(ROUTE_POINTS_FINISH, null);
-        routeObject.setOption(ROUTE_POINTS_VIA, []);
-        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, 0);
-        routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
-        routeObject.resetRoute();
-
-        ctx.setCurrentNavObject(null);
+        navObject.setOption(ROUTE_POINTS_START, null);
+        navObject.setOption(ROUTE_POINTS_FINISH, null);
+        navObject.setOption(ROUTE_POINTS_VIA, []);
+        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, 0);
+        navObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
+        navObject.resetRoute();
 
         setResetSettings(true);
         closeHeader({ ctx });
@@ -165,7 +163,7 @@ export default function NavigationMenu() {
 
     function handleProfileSelect(profileKey) {
         if (visibleProfiles.includes(profileKey)) {
-            routeObject.onRouterProfileSelected({ profile: profileKey });
+            navObject.onRouterProfileSelected({ profile: profileKey });
             return;
         }
 
@@ -175,17 +173,17 @@ export default function NavigationMenu() {
         const updatedProfiles = newVisibleProfiles.slice(0, MAX_VISIBLE_PROFILES);
         setVisibleProfiles(updatedProfiles);
         ctx.setRouteVisibleProfiles(updatedProfiles);
-        routeObject.onRouterProfileSelected({ profile: profileKey });
+        navObject.onRouterProfileSelected({ profile: profileKey });
     }
 
     function handleCancelRouteCalculation() {
-        routeObject.resetRoute();
+        navObject.resetRoute();
         ctx.setRoutingErrorMsg(null);
         abortApiRequest(NAVIGATION_ROUTE_ABORT_KEY);
         ctx.setNavigationRoutingInProgress(false);
     }
 
-    const routeTrack = routeObject.getTrack();
+    const routeTrack = navObject.getTrack();
     const hasRouteTrack = routeTrack && !isEmptyTrack(routeTrack);
     const canSaveToCloud = hasRouteTrack && ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT;
 
@@ -193,22 +191,22 @@ export default function NavigationMenu() {
         if (ctx.routeTrackFile) {
             return true;
         }
-        if (routeObject.getProfile()?.profile === PROFILE_LINE) {
-            return routeObject.getRoute() && !routeObject.preview && !ctx.navigationRoutingInProgress;
+        if (navObject.getProfile()?.profile === PROFILE_LINE) {
+            return navObject.getRoute() && !navObject.preview && !ctx.navigationRoutingInProgress;
         }
         return (
-            routeObject.getRoute() &&
-            routeObject.getRouteProps()?.overall?.routingTime &&
-            !routeObject.preview &&
+            navObject.getRoute() &&
+            navObject.getRouteProps()?.overall?.routingTime &&
+            !navObject.preview &&
             !ctx.navigationRoutingInProgress
         );
     }
 
     function handleClearSelectedTrack() {
-        routeObject.resetRoute();
+        navObject.resetRoute();
         ctx.setRouteTrackFile(null);
-        routeObject.setOption(ROUTE_POINTS_START, null);
-        routeObject.setOption(ROUTE_POINTS_FINISH, null);
+        navObject.setOption(ROUTE_POINTS_START, null);
+        navObject.setOption(ROUTE_POINTS_FINISH, null);
     }
 
     function handleDownloadSelectedTrack() {
@@ -273,7 +271,7 @@ export default function NavigationMenu() {
             <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box className={styles.profileButtonBox}>
                     {visibleProfiles.map((key) => {
-                        const profile = routeObject.listProfiles().find((p) => p.key === key);
+                        const profile = navObject.listProfiles().find((p) => p.key === key);
                         if (!profile) return null;
                         return (
                             <SquareIconBtn
@@ -281,9 +279,9 @@ export default function NavigationMenu() {
                                 key={key}
                                 id={`se-route-profile-${key}`}
                                 icon={profile.icon}
-                                selected={routeObject.getProfile().profile === key}
+                                selected={navObject.getProfile().profile === key}
                                 selectedBorderColor={profile.color}
-                                onClick={() => routeObject.onRouterProfileSelected({ profile: key })}
+                                onClick={() => navObject.onRouterProfileSelected({ profile: key })}
                             />
                         );
                     })}
@@ -314,10 +312,10 @@ export default function NavigationMenu() {
                         </Box>
                     </Tooltip>
                 </Box>
-                <NavigationPointsManager routeObject={routeObject} />
+                <NavigationPointsManager />
                 {ctx.routingErrorMsg &&
-                    routeObject.getOption(ROUTE_POINTS_START) &&
-                    routeObject.getOption(ROUTE_POINTS_FINISH) && (
+                    navObject.getOption(ROUTE_POINTS_START) &&
+                    navObject.getOption(ROUTE_POINTS_FINISH) && (
                         <>
                             <ThickDivider mt={0} mb={0} />
                             <TextLeftIconBtn
@@ -327,7 +325,7 @@ export default function NavigationMenu() {
                             />
                         </>
                     )}
-                {(!routeObject.getOption(ROUTE_POINTS_START) || !routeObject.getOption(ROUTE_POINTS_FINISH)) && (
+                {(!navObject.getOption(ROUTE_POINTS_START) || !navObject.getOption(ROUTE_POINTS_FINISH)) && (
                     <>
                         <ThickDivider />
                         <TextWithLeftIcon
@@ -357,8 +355,8 @@ export default function NavigationMenu() {
                     <>
                         <ThickDivider />
                         <RouteSummaryCard
-                            key={routeObject.getProfile()?.profile}
-                            routeProps={routeObject.getRouteProps()}
+                            key={navObject.getProfile()?.profile}
+                            routeProps={navObject.getRouteProps()}
                             onDetails={openInfoBlock}
                         />
                         <ThickDivider />
@@ -369,7 +367,7 @@ export default function NavigationMenu() {
                     onRemove={(ind) => {
                         const newAvoidRoads = Object.assign([], avoidRoads);
                         newAvoidRoads.splice(ind, 1);
-                        routeObject.setOption(ROUTE_POINTS_AVOID_ROADS, newAvoidRoads);
+                        navObject.setOption(ROUTE_POINTS_AVOID_ROADS, newAvoidRoads);
                     }}
                 />
                 {ctx.navigationRoutingInProgress && (
@@ -399,7 +397,7 @@ export default function NavigationMenu() {
                     anchorEl={profilesMenuAnchor}
                     onClose={() => setProfilesMenuAnchor(null)}
                     onProfileSelect={handleProfileSelect}
-                    routeObject={routeObject}
+                    routeObject={navObject}
                 />
             </Box>
             {downloadDialogOpen && (

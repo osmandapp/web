@@ -451,7 +451,6 @@ export const AppContextProvider = (props) => {
 
     const [selectedPoiId, setSelectedPoiId] = useState(null);
 
-    const [currentNavObject, setCurrentNavObject] = useState(null);
     const [navigationHistory, setNavigationHistory] = useState([]);
 
     routeObject.initSetter({ setter: setRouteObject });
@@ -915,10 +914,9 @@ export const AppContextProvider = (props) => {
                 setProcessingAnalytics,
                 openNavigationSettings,
                 setOpenNavigationSettings,
-                currentNavObject,
-                setCurrentNavObject,
                 navigationHistory,
                 setNavigationHistory,
+                navigationObject: routeObject, // Same as routeObject, but for navigation points
             }}
         >
             {props.children}

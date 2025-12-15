@@ -14,6 +14,7 @@ import {
 } from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { navigationObject } from '../../store/navigationObject/navigationObject';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -41,20 +42,31 @@ const preparePointUpdate = ({ value, current }) => {
         return { shouldClear: true, shouldSkip: false, trimmedValue };
     }
 
-    if (current && trimmedValue === formatLatLon(current)) {
+    let matches = false;
+    if (current) {
+        if (current instanceof navigationObject) {
+            matches = trimmedValue === current.getDisplayValue() || trimmedValue === formatLatLon(current.toLatLng());
+        } else {
+            matches = trimmedValue === formatLatLon(current);
+        }
+    }
+
+    if (matches) {
         return { shouldClear: false, shouldSkip: true, trimmedValue };
     }
 
     return { shouldClear: false, shouldSkip: false, trimmedValue };
 };
 
-export default function NavigationPointsManager({ routeObject }) {
+export default function NavigationPointsManager() {
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
 
-    const startPoint = routeObject.getOption(ROUTE_POINTS_START);
-    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
-    const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
+    const navObject = ctx.navigationObject;
+
+    const startPoint = navObject.getOption(ROUTE_POINTS_START);
+    const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
 
     const [start, setStart] = useState('');
     const [finish, setFinish] = useState('');
@@ -74,12 +86,14 @@ export default function NavigationPointsManager({ routeObject }) {
 
     const location = useLocation();
 
-    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(routeObject, ctx);
+    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(navObject, ctx);
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 
     useEffect(() => {
-        if (startPoint && typeof startPoint == 'object') {
+        if (startPoint instanceof navigationObject) {
+            setStart(startPoint.getDisplayValue());
+        } else if (startPoint && typeof startPoint == 'object') {
             setStart(formatLatLon(startPoint));
         } else if (!startPoint) {
             setStart('');
@@ -87,7 +101,9 @@ export default function NavigationPointsManager({ routeObject }) {
     }, [startPoint]);
 
     useEffect(() => {
-        if (finishPoint && typeof finishPoint == 'object') {
+        if (finishPoint instanceof navigationObject) {
+            setFinish(finishPoint.getDisplayValue());
+        } else if (finishPoint && typeof finishPoint == 'object') {
             setFinish(formatLatLon(finishPoint));
         } else if (!finishPoint) {
             setFinish('');
@@ -142,8 +158,11 @@ export default function NavigationPointsManager({ routeObject }) {
     // Sync intermediate inputs with map points, preserving manually added empty inputs.
     // Example: user adds 2 empty inputs, then clicks map
     useEffect(() => {
-        const viaInputsCount = routeObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
-        const formattedPoints = viaPoints?.length > 0 ? viaPoints.map((p) => formatLatLon(p)) : [];
+        const viaInputsCount = navObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
+        const formattedPoints =
+            viaPoints?.length > 0
+                ? viaPoints.map((p) => (p instanceof navigationObject ? p.getDisplayValue() : formatLatLon(p)))
+                : [];
 
         const targetInputsCount = Math.max(formattedPoints.length, viaInputsCount);
 
@@ -153,7 +172,7 @@ export default function NavigationPointsManager({ routeObject }) {
         ];
 
         setIntermediates(newIntermediates);
-        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, targetInputsCount);
+        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, targetInputsCount);
     }, [viaPoints]);
 
     const handleStartChange = (value) => {
@@ -168,13 +187,13 @@ export default function NavigationPointsManager({ routeObject }) {
         const newIntermediates = [...intermediates];
         newIntermediates[index] = value;
         setIntermediates(newIntermediates);
-        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
+        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleStartBlur = (value) => {
         const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
             value,
-            current: routeObject.getOption(ROUTE_POINTS_START),
+            current: navObject.getOption(ROUTE_POINTS_START),
         });
 
         if (shouldSkip) {
@@ -182,21 +201,22 @@ export default function NavigationPointsManager({ routeObject }) {
         }
 
         if (shouldClear) {
-            routeObject.setOption(ROUTE_POINTS_START, null);
-            routeObject.resetRoute();
+            navObject.setOption(ROUTE_POINTS_START, null);
+            navObject.resetRoute();
             return;
         }
 
         const latlon = getValidatedLatLon(trimmedValue);
         if (latlon) {
-            routeObject.setOption(ROUTE_POINTS_START, latlon);
+            const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
+            navObject.setOption(ROUTE_POINTS_START, navObj);
         }
     };
 
     const handleFinishBlur = (value) => {
         const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
             value,
-            current: routeObject.getOption(ROUTE_POINTS_FINISH),
+            current: navObject.getOption(ROUTE_POINTS_FINISH),
         });
 
         if (shouldSkip) {
@@ -204,14 +224,15 @@ export default function NavigationPointsManager({ routeObject }) {
         }
 
         if (shouldClear) {
-            routeObject.setOption(ROUTE_POINTS_FINISH, null);
-            routeObject.resetRoute();
+            navObject.setOption(ROUTE_POINTS_FINISH, null);
+            navObject.resetRoute();
             return;
         }
 
         const latlon = getValidatedLatLon(trimmedValue);
         if (latlon) {
-            routeObject.setOption(ROUTE_POINTS_FINISH, latlon);
+            const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
+            navObject.setOption(ROUTE_POINTS_FINISH, navObj);
         }
     };
 
@@ -219,19 +240,20 @@ export default function NavigationPointsManager({ routeObject }) {
         if (!value || value.trim() === '') {
             if (viaPoints && index < viaPoints.length) {
                 const newViaPoints = viaPoints.filter((_, i) => i !== index);
-                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+                navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
             }
             return;
         }
         const latlon = getValidatedLatLon(value);
         if (latlon) {
+            const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             const newViaPoints = viaPoints ? [...viaPoints] : [];
             if (index >= newViaPoints.length) {
-                newViaPoints.push(latlon);
+                newViaPoints.push(navObj);
             } else {
-                newViaPoints[index] = latlon;
+                newViaPoints[index] = navObj;
             }
-            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+            navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
 
@@ -239,7 +261,7 @@ export default function NavigationPointsManager({ routeObject }) {
         autofocusDisabled.current = true;
         const newIntermediates = [...intermediates, ''];
         setIntermediates(newIntermediates);
-        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
+        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleRemoveIntermediate = (index) => {
@@ -249,10 +271,10 @@ export default function NavigationPointsManager({ routeObject }) {
 
         if (viaPoints && index < viaPoints.length) {
             const newViaPoints = viaPoints.filter((_, i) => i !== index);
-            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+            navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
 
-        routeObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
+        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
     };
 
     const handleKeyPress = (e, handler) => {
@@ -292,8 +314,8 @@ export default function NavigationPointsManager({ routeObject }) {
         const blurEvent = new CustomEvent('nav-blur');
         globalThis.dispatchEvent(blurEvent);
 
-        routeObject.setOption(ROUTE_POINTS_START, finishPoint);
-        routeObject.setOption(ROUTE_POINTS_FINISH, startPoint);
+        navObject.setOption(ROUTE_POINTS_START, finishPoint);
+        navObject.setOption(ROUTE_POINTS_FINISH, startPoint);
     };
 
     const getAllPoints = () => {
@@ -306,7 +328,7 @@ export default function NavigationPointsManager({ routeObject }) {
             points.push(...viaPoints);
         }
         points.push(finishPoint);
-        return points;
+        return points.map((p) => (p instanceof navigationObject ? p.toLatLng() : p));
     };
 
     const updateAllPoints = (newPoints) => {
@@ -332,11 +354,11 @@ export default function NavigationPointsManager({ routeObject }) {
         }
 
         if (newRoutePoints.length >= 2) {
-            routeObject.setOption('route.points.start', newRoutePoints.at(0));
-            routeObject.setOption(ROUTE_POINTS_FINISH, newRoutePoints.at(-1));
+            navObject.setOption('route.points.start', newRoutePoints.at(0));
+            navObject.setOption(ROUTE_POINTS_FINISH, newRoutePoints.at(-1));
 
             const newViaPoints = newRoutePoints.slice(1, -1).filter((p) => p !== null);
-            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+            navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
 

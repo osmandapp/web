@@ -9,7 +9,10 @@ import AppContext from '../../context/AppContext';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { formatLatLon } from './NavigationPointsManager';
-import { createWptIcon } from './NavigationObject';
+import { navigationObject } from '../../store/navigationObject/navigationObject';
+import { WptIcon } from '../../infoblock/components/wpt/WptDetails';
+import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
+import { ReactComponent as HistoryIcon } from '../../assets/icons/ic_action_history.svg';
 
 const HISTORY_LIMIT = 5;
 
@@ -43,7 +46,8 @@ export default function NavigationHistoryDropdown({
 
         // Filter items that match the input
         const matched = history.filter((item) => {
-            const itemName = (item.name || '').toLowerCase();
+            if (!(item instanceof navigationObject)) return false;
+            const itemName = (item.getDisplayValue() || '').toLowerCase();
             return itemName.includes(trimmedValue);
         });
 
@@ -168,21 +172,37 @@ export default function NavigationHistoryDropdown({
                     {filteredHistory.length > 0 && <Divider />}
                 </>
             )}
-            {filteredHistory.map((item, index) => (
-                <DefaultItem
-                    key={`history-item-${index}`}
-                    id={`${inputId}-history-item-${index}`}
-                    icon={createWptIcon(item.icon, ctx)}
-                    name={item.displayValue}
-                    onClick={(e) => {
-                        handleHistoryItemClick(item, e);
-                    }}
-                    onMouseDown={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }}
-                />
-            ))}
+            {filteredHistory.map((item, index) => {
+                if (!(item instanceof navigationObject)) return null;
+
+                const icon = item.icon?.wpt ? (
+                    <WptIcon
+                        wpt={item.icon.wpt}
+                        color={item.icon.color || DEFAULT_POI_COLOR}
+                        background={item.icon.background || DEFAULT_POI_SHAPE}
+                        icon={item.icon.icon}
+                        ctx={ctx}
+                    />
+                ) : (
+                    <HistoryIcon />
+                );
+
+                return (
+                    <DefaultItem
+                        key={`history-item-${index}`}
+                        id={`${inputId}-history-item-${index}`}
+                        icon={icon}
+                        name={item.getDisplayValue()}
+                        onClick={(e) => {
+                            handleHistoryItemClick(item, e);
+                        }}
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }}
+                    />
+                );
+            })}
             {isInputEmpty && filteredHistory.length > 0 && (
                 <>
                     <Divider />
