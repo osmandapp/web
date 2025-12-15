@@ -99,5 +99,5 @@ The following features are available after choosin cloud track:
 ## Related Articles {#related-articles}
 
 - [Manage Tracks](../personal/tracks/manage-tracks.md)
-- [Favorites](../personal/favorites.md)
+- [Tracks Analyzer](../web/web-tracks-analyzer.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
