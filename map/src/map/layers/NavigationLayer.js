@@ -78,7 +78,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 container.style.cursor = '';
                 return;
             }
-            container.style.cursor = pickNextRoutePoint(routeObject) ? 'crosshair' : '';
+            container.style.cursor = pickNextRoutePoint(routeObject, ctx.viaInputsCount || 0) ? 'crosshair' : '';
         };
 
         const handleMapClick = (event) => {
@@ -94,7 +94,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             }
 
             // Find first empty input from top to bottom (start -> intermediates -> finish)
-            const target = pickNextRoutePoint(routeObject);
+            const target = pickNextRoutePoint(routeObject, ctx.viaInputsCount || 0);
             if (!target) {
                 updateCursor();
                 return;
@@ -145,7 +145,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             map.off('mousemove', updateCursor);
             container.style.cursor = '';
         };
-    }, [routeObject, ctx.openContextMenu]);
+    }, [routeObject, ctx.openContextMenu, ctx.viaInputsCount]);
 
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);

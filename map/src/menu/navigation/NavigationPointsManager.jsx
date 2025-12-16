@@ -10,7 +10,6 @@ import {
     ROUTE_POINTS_START,
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
-    ROUTE_POINTS_VIA_INPUTS_COUNT,
 } from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
@@ -158,13 +157,12 @@ export default function NavigationPointsManager() {
     // Sync intermediate inputs with map points, preserving manually added empty inputs.
     // Example: user adds 2 empty inputs, then clicks map
     useEffect(() => {
-        const viaInputsCount = navObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
         const formattedPoints =
             viaPoints?.length > 0
                 ? viaPoints.map((p) => (p instanceof navigationObject ? p.getDisplayValue() : formatLatLon(p)))
                 : [];
 
-        const targetInputsCount = Math.max(formattedPoints.length, viaInputsCount);
+        const targetInputsCount = Math.max(formattedPoints.length, ctx.viaInputsCount || 0);
 
         const newIntermediates = [
             ...formattedPoints,
@@ -172,7 +170,9 @@ export default function NavigationPointsManager() {
         ];
 
         setIntermediates(newIntermediates);
-        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, targetInputsCount);
+        if (targetInputsCount !== ctx.viaInputsCount) {
+            ctx.setViaInputsCount(targetInputsCount);
+        }
     }, [viaPoints]);
 
     const handleStartChange = (value) => {
@@ -187,7 +187,7 @@ export default function NavigationPointsManager() {
         const newIntermediates = [...intermediates];
         newIntermediates[index] = value;
         setIntermediates(newIntermediates);
-        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
+        ctx.setViaInputsCount(newIntermediates.length);
     };
 
     const handleStartBlur = (value) => {
@@ -261,7 +261,7 @@ export default function NavigationPointsManager() {
         autofocusDisabled.current = true;
         const newIntermediates = [...intermediates, ''];
         setIntermediates(newIntermediates);
-        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
+        ctx.setViaInputsCount(newIntermediates.length);
     };
 
     const handleRemoveIntermediate = (index) => {
@@ -274,7 +274,7 @@ export default function NavigationPointsManager() {
             navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
 
-        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, newIntermediates.length);
+        ctx.setViaInputsCount(newIntermediates.length);
     };
 
     const handleKeyPress = (e, handler) => {

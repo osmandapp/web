@@ -441,6 +441,7 @@ export const AppContextProvider = (props) => {
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
     const [routeVisibleProfiles, setRouteVisibleProfiles] = useState(null);
+    const [viaInputsCount, setViaInputsCount] = useState(0);
 
     const [trackLoading, setTrackLoading] = useState([]);
 
@@ -916,6 +917,8 @@ export const AppContextProvider = (props) => {
                 setOpenNavigationSettings,
                 navigationHistory,
                 setNavigationHistory,
+                viaInputsCount,
+                setViaInputsCount,
                 navigationObject: routeObject,
             }}
         >

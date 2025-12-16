@@ -3,43 +3,40 @@ import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../..
 import { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from '../../../menu/navigation/NavigationInputRow';
 import { navigationObject } from '../../../store/navigationObject/navigationObject';
 
-export default function useNavigationHistory(navObject, ctx = null) {
+export default function useNavigationHistory(navObject, ctx) {
     const history = ctx.navigationHistory || [];
     const setHistory = ctx.setNavigationHistory;
 
-    const addToHistory = useCallback(
-        (navObj) => {
-            if (!navObj || !(navObj instanceof navigationObject)) {
-                return;
-            }
+    const addToHistory = useCallback((navObj) => {
+        if (!navObj || !(navObj instanceof navigationObject)) {
+            return;
+        }
 
-            if (!setHistory) return;
+        if (!setHistory) return;
 
-            setHistory((prev) => {
-                const prevHistory = prev || [];
-                // Remove duplicates
-                const filtered = prevHistory.filter((prevObj) => {
-                    if (!(prevObj instanceof navigationObject)) return true;
-                    const isSameLat = Math.abs(prevObj.lat - navObj.lat) < 0.00001;
-                    const isSameLng = Math.abs(prevObj.lng - navObj.lng) < 0.00001;
-                    const isSameType = prevObj.type === navObj.type;
-                    return !(isSameLat && isSameLng && isSameType);
-                });
-
-                const newObj = new navigationObject(navObj.lat, navObj.lng, {
-                    name: navObj.name,
-                    type: navObj.type,
-                    poiType: navObj.poiType,
-                    icon: navObj.icon,
-                    displayValue: navObj.displayValue,
-                    usedAt: navObj.usedAt,
-                });
-
-                return [newObj, ...filtered].slice(0, 100);
+        setHistory((prev) => {
+            const prevHistory = prev || [];
+            // Remove duplicates
+            const filtered = prevHistory.filter((prevObj) => {
+                if (!(prevObj instanceof navigationObject)) return true;
+                const isSameLat = Math.abs(prevObj.lat - navObj.lat) < 0.00001;
+                const isSameLng = Math.abs(prevObj.lng - navObj.lng) < 0.00001;
+                const isSameType = prevObj.type === navObj.type;
+                return !(isSameLat && isSameLng && isSameType);
             });
-        },
-        [setHistory]
-    );
+
+            const newObj = new navigationObject(navObj.lat, navObj.lng, {
+                name: navObj.name,
+                type: navObj.type,
+                poiType: navObj.poiType,
+                icon: navObj.icon,
+                displayValue: navObj.getDisplayValue(),
+                usedAt: navObj.usedAt,
+            });
+
+            return [newObj, ...filtered].slice(0, 100);
+        });
+    }, []);
 
     const clearHistory = () => {
         if (setHistory) {
@@ -79,7 +76,7 @@ export default function useNavigationHistory(navObject, ctx = null) {
                 }
             });
         }
-    }, [navObject]);
+    }, [navObject, addToHistory]);
 
     const handleHistorySelect = (item, pointType, index = null) => {
         if (!(item instanceof navigationObject)) {

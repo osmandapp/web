@@ -34,7 +34,6 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
     PROFILE_LINE,
-    ROUTE_POINTS_VIA_INPUTS_COUNT,
 } from '../../store/geoRouter/profileConstants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -48,7 +47,7 @@ import AvoidRoadsList from './AvoidRoadsList';
 export const COLOR_BTN_BLUE = '#237BFF';
 export const COLOR_BTN_RED = '#E71D36';
 
-export function pickNextRoutePoint(navObject) {
+export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
     if (!navObject) {
         return null;
     }
@@ -58,7 +57,6 @@ export function pickNextRoutePoint(navObject) {
     }
 
     const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
-    const viaInputsCount = navObject.getOption(ROUTE_POINTS_VIA_INPUTS_COUNT) || 0;
 
     // Check for null slots in viaPoints array (e.g., [point1, null, point3] → return index 1)
     for (let i = 0; i < viaPoints.length; i++) {
@@ -79,10 +77,6 @@ export function pickNextRoutePoint(navObject) {
 
     // All inputs are filled - no empty slots available
     return null;
-}
-
-export function hasMissingRoutePoint(navObject) {
-    return pickNextRoutePoint(navObject) !== null;
 }
 
 const StyledInput = styled('input')({
@@ -153,7 +147,7 @@ export default function NavigationMenu() {
         navObject.setOption(ROUTE_POINTS_START, null);
         navObject.setOption(ROUTE_POINTS_FINISH, null);
         navObject.setOption(ROUTE_POINTS_VIA, []);
-        navObject.setOption(ROUTE_POINTS_VIA_INPUTS_COUNT, 0);
+        ctx.setViaInputsCount(0);
         navObject.setOption(ROUTE_POINTS_AVOID_ROADS, []);
         navObject.resetRoute();
 

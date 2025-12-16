@@ -11,6 +11,14 @@ export const NAVIGATION_OBJECT_TYPE_FAVORITE = 'favorite';
  * Extends geoObject to inherit route management capabilities
  */
 export class navigationObject extends geoObject {
+    lat = null;
+    lng = null;
+    name = '';
+    type = NAVIGATION_OBJECT_TYPE_LOCATION;
+    poiType = null;
+    icon = null;
+    displayValue = '';
+
     constructor(lat, lng, metadata = {}) {
         super();
 
