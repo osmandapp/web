@@ -55,21 +55,23 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
         finish || routeGeometry[routeGeometry.length - 1];
 
     // viaPoints (measured ~10 RPS on a big 2500 km route with 10 via-points)
-    viaPoints.forEach((via) => {
-        let closest = null;
-        let min = Infinity;
-        for (const element of routeGeometry) {
-            const geo = element;
-            const dist = getDistance(via.lat, via.lng, geo.lat, geo.lng);
-            if (dist < min) {
-                closest = geo;
-                min = dist;
+    viaPoints
+        .filter((i) => i != null)
+        .forEach((via) => {
+            let closest = null;
+            let min = Infinity;
+            for (const element of routeGeometry) {
+                const geo = element;
+                const dist = getDistance(via.lat, via.lng, geo.lat, geo.lng);
+                if (dist < min) {
+                    closest = geo;
+                    min = dist;
+                }
             }
-        }
-        if (closest) {
-            theNearestMap[llRoundedKey(closest)] = via;
-        }
-    });
+            if (closest) {
+                theNearestMap[llRoundedKey(closest)] = via;
+            }
+        });
 
     // split by route points = N segments (gpx-rtept)
     let lastIndex = 0;
