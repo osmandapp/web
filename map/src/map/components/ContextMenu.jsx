@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import AppContext, {
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_NAVIGATION_ALONE,
-    OBJECT_TYPE_NAVIGATION_TRACK,
 } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -34,7 +33,6 @@ import {
     POI_URL,
 } from '../../manager/GlobalManager';
 import LoginContext from '../../context/LoginContext';
-import { addClicksToMap } from '../OsmAndMap';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -50,14 +48,6 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const [clickLatLng, setClickLatLng] = useState(null);
     const anchorEl = useRef(document.createElement('div'));
     const [open, setOpen] = useState(false);
-
-    useEffect(() => {
-        if (ctx.openContextMenu) {
-            map.off('click');
-        } else {
-            addClicksToMap(map, ctx);
-        }
-    }, [ctx.openContextMenu]);
 
     const handleContextMenu = (event) => {
         event.originalEvent.preventDefault();
