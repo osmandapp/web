@@ -188,7 +188,7 @@ function makeLineFeatureCollection({ style = {} } = {}) {
     const startPoint = this.getOption(ROUTE_POINTS_START);
     const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
     // viaPoints may contain null placeholders for empty intermediate inputs – ignore them in geometry
-    const viaPoints = (this.getOption(ROUTE_POINTS_VIA) || []).filter((p) => p);
+    const viaPoints = (this.getOption(ROUTE_POINTS_VIA) || []).filter((p) => p != null);
 
     const coordinates = [];
     coordinates.push([startPoint.lng, startPoint.lat]);

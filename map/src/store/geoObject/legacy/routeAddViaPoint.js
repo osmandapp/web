@@ -70,7 +70,7 @@ function getInsertAfterIndex(currentIndex, isLastPoint) {
 }
 
 function dist(a1, a2) {
-    const lon1 = a1.lon !== undefined ? a1.lon : a1.lng;
-    const lon2 = a2.lon !== undefined ? a2.lon : a2.lng;
+    const lon1 = a1.lng !== undefined ? a1.lng : a1.lon;
+    const lon2 = a2.lng !== undefined ? a2.lng : a2.lon;
     return Utils.getDistance(a1.lat, lon1, a2.lat, lon2);
 }
