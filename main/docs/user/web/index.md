@@ -1,5 +1,5 @@
 ---
-title: Web Map Portal
+title: Web Planner
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### [Introduction](./web-overview.md) {#introduction}
 
-In this section, you will find a description of our [Web Map Portal](https://osmand.net/map).
+In this section, you will find a description of our [Web Planner](https://osmand.net/map).
 
 ### [Sign Up / Login](./web-cloud.md) {#sign-up--login}
 
@@ -25,9 +25,17 @@ This section explains how to log in and sign up at [www.osmand.net/map](https://
 
 This section details additional map data such as Favorites, Personal Tracks, and Weather Layers.
 
-### [User Data](../web/web-userdata.mdx) {#user-data}
+### [Tracks](./web-tracks.md) {#tracks}
 
-GPX tracks and Favorites of user on the map.
+This section covers working with personal GPX tracks on the web, including viewing, editing, organizing, and synchronizing them with OsmAnd Cloud.
+
+### [Favorites](./web-favorites.md) {#favorites}
+
+Saved places displayed on the map, with options to organize them into folders, manage access, and reuse them for navigation or route planning.
+
+### [Tracks Analyzer](./web-tracks-analyzer.md) {#tracks-analyzer}
+
+This section focuses on analyzing track segments between selected points on the map and comparing key parameters across multiple tracks.
 
 ### [Plan Route](./planner.md) {#plan-route}
 
