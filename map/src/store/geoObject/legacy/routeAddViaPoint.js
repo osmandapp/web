@@ -6,51 +6,71 @@ import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../..
  */
 
 export function routeAddViaPoint({ ll } = {}) {
-    /*
-
-    TODO:
-
-        1. start is the nearest point = add 1st inter
-
-        2. end is the nearest point = add last inter
-
-        3. inter is the nearest point && start is closer to this inter
-            compare distance start<->inter vs start<->new
-                if new is closer to start, add before inter
-                if inter is closer to start, add after inter
-
-        4. inter is the nearest point && end is closer to this inter
-            compare distance end<->inter vs end<->new
-                if new is closer to end, add after inter
-                if inter is closer to end, add before inter
-    */
-
     const startPoint = this.getOption(ROUTE_POINTS_START);
     const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
     const viaPoints = this.getOption(ROUTE_POINTS_VIA);
 
-    let newViaPoints = Object.assign([], viaPoints);
-    let minInd = -1;
+    const validPoints = viaPoints
+        .map((point, index) => (point != null ? { point, index } : null))
+        .filter((item) => item != null);
 
-    if (viaPoints.length > 0) {
-        let minDist = dist(finishPoint, ll) + dist(viaPoints[viaPoints.length - 1], ll);
-        for (let i = 0; i < viaPoints.length; i++) {
-            let dst = dist(i === 0 ? startPoint : viaPoints[i - 1], ll) + dist(viaPoints[i], ll);
-            if (dst < minDist) {
-                minInd = i;
-                minDist = dst;
-            }
+    if (validPoints.length === 0) {
+        // No intermediate points, add to end
+        this.setOption(ROUTE_POINTS_VIA, [...viaPoints, ll]);
+        return;
+    }
+
+    const distToStart = dist(startPoint, ll);
+    const distToFinish = dist(finishPoint, ll);
+    const nearestInter = validPoints.reduce(
+        (min, item) => {
+            const d = dist(item.point, ll);
+            return d < min.dist ? { item, dist: d } : min;
+        },
+        { item: validPoints[0], dist: dist(validPoints[0].point, ll) }
+    );
+
+    let insertIndex = -1; // -1 means add to end
+
+    if (distToStart < distToFinish && distToStart < nearestInter.dist) {
+        // start is nearest → add as 1st intermediate
+        insertIndex = validPoints[0].index;
+    } else if (distToFinish < distToStart && distToFinish < nearestInter.dist) {
+        // finish is nearest → add to end
+        insertIndex = -1;
+    } else {
+        // intermediate point is nearest
+        const nearestIndex = nearestInter.item.index;
+        const isLastPoint = nearestIndex === validPoints[validPoints.length - 1].index;
+        const distStartToInter = dist(startPoint, nearestInter.item.point);
+        const distFinishToInter = dist(finishPoint, nearestInter.item.point);
+        const isStartCloser = distStartToInter < distFinishToInter;
+
+        if (isStartCloser) {
+            insertIndex =
+                distToStart < distStartToInter ? nearestIndex : getInsertAfterIndex(nearestIndex, isLastPoint);
+        } else {
+            insertIndex =
+                distToFinish < distFinishToInter ? getInsertAfterIndex(nearestIndex, isLastPoint) : nearestIndex;
         }
     }
-    if (minInd < 0) {
+
+    const newViaPoints = [...viaPoints];
+    if (insertIndex < 0) {
         newViaPoints.push(ll);
     } else {
-        newViaPoints.splice(minInd, 0, ll);
+        newViaPoints.splice(insertIndex, 0, ll);
     }
 
     this.setOption(ROUTE_POINTS_VIA, newViaPoints);
 }
 
+function getInsertAfterIndex(currentIndex, isLastPoint) {
+    return isLastPoint ? -1 : currentIndex + 1;
+}
+
 function dist(a1, a2) {
-    return Utils.getDistance(a1.lat, a1.lon, a2.lat, a2.lon);
+    const lon1 = a1.lon !== undefined ? a1.lon : a1.lng;
+    const lon2 = a2.lon !== undefined ? a2.lon : a2.lng;
+    return Utils.getDistance(a1.lat, lon1, a2.lat, lon2);
 }

@@ -239,7 +239,8 @@ export default function NavigationPointsManager() {
     const handleIntermediateBlur = (index, value) => {
         if (!value || value.trim() === '') {
             if (viaPoints && index < viaPoints.length) {
-                const newViaPoints = viaPoints.filter((_, i) => i !== index);
+                const newViaPoints = [...viaPoints];
+                newViaPoints[index] = null;
                 navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
             }
             return;
@@ -248,11 +249,10 @@ export default function NavigationPointsManager() {
         if (latlon) {
             const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             const newViaPoints = viaPoints ? [...viaPoints] : [];
-            if (index >= newViaPoints.length) {
-                newViaPoints.push(navObj);
-            } else {
-                newViaPoints[index] = navObj;
+            while (newViaPoints.length <= index) {
+                newViaPoints.push(null);
             }
+            newViaPoints[index] = navObj;
             navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
@@ -325,7 +325,7 @@ export default function NavigationPointsManager() {
     const getAllRoutePoints = () => {
         const points = [startPoint];
         if (viaPoints && viaPoints.length > 0) {
-            points.push(...viaPoints);
+            points.push(...viaPoints.filter((p) => p != null));
         }
         points.push(finishPoint);
         return points.map((p) => (p instanceof navigationObject ? p.toLatLng() : p));

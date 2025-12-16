@@ -424,18 +424,20 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     zIndexOffset={1000}
                 />
             )}
-            {viaPoints.map((it, ind) => (
-                <Marker
-                    ref={(m) => m && viaLayersRef.current.push(m)}
-                    key={'mark-via' + ind + refreshKey}
-                    data-index={ind}
-                    position={it}
-                    icon={MarkerOptions.options.interIcon}
-                    draggable={true}
-                    eventHandlers={intermediateEventHandlers}
-                    zIndexOffset={1000}
-                />
-            ))}
+            {viaPoints.map((it, ind) =>
+                it != null ? (
+                    <Marker
+                        ref={(m) => m && viaLayersRef.current.push(m)}
+                        key={'mark-via' + ind + refreshKey}
+                        data-index={ind}
+                        position={it}
+                        icon={MarkerOptions.options.interIcon}
+                        draggable={true}
+                        eventHandlers={intermediateEventHandlers}
+                        zIndexOffset={1000}
+                    />
+                ) : null
+            )}
             {finishPoint && (
                 <Marker
                     key={'mark-finish' + refreshKey}

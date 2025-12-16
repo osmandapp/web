@@ -76,7 +76,7 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
     const viaPoints = this.getOption(ROUTE_POINTS_VIA);
 
     points.push(geo(startPoint));
-    viaPoints?.forEach((i) => points.push(geo(i)));
+    viaPoints?.filter((i) => i != null).forEach((i) => points.push(geo(i)));
     points.push(geo(finishPoint));
 
     const coordinates = points.join(';');
@@ -123,9 +123,11 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
 
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
     let inter = '';
-    viaPoints.forEach((i) => {
-        inter += `&points=${i.lat.toFixed(6)},${i.lng.toFixed(6)}`;
-    });
+    viaPoints
+        .filter((i) => i != null)
+        .forEach((i) => {
+            inter += `&points=${i.lat.toFixed(6)},${i.lng.toFixed(6)}`;
+        });
     const endurl = `points=${finishPoint.lat.toFixed(6)},${finishPoint.lng.toFixed(6)}`;
 
     let avoidRoadsUrl = '';
@@ -185,11 +187,12 @@ async function calculateRouteLine({ changeRouteText, setRoutingErrorMsg, style }
 function makeLineFeatureCollection({ style = {} } = {}) {
     const startPoint = this.getOption(ROUTE_POINTS_START);
     const finishPoint = this.getOption(ROUTE_POINTS_FINISH);
-    const viaPoints = this.getOption(ROUTE_POINTS_VIA);
+    // viaPoints may contain null placeholders for empty intermediate inputs – ignore them in geometry
+    const viaPoints = (this.getOption(ROUTE_POINTS_VIA) || []).filter((p) => p);
 
     const coordinates = [];
     coordinates.push([startPoint.lng, startPoint.lat]);
-    viaPoints?.forEach((i) => coordinates.push([i.lng, i.lat]));
+    viaPoints.forEach((i) => coordinates.push([i.lng, i.lat]));
     coordinates.push([finishPoint.lng, finishPoint.lat]);
 
     const id = md5(JSON.stringify(coordinates));
