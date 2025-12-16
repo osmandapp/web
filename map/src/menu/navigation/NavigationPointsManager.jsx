@@ -1,13 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Box } from '@mui/material';
 import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
 import { useTranslation } from 'react-i18next';
 import useNavigationHistory from '../../util/hooks/navigation/useNavigationHistory';
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
-import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
+import AppContext from '../../context/AppContext';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_VIA,
+} from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { navigationObject } from '../../store/navigationObject/navigationObject';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -35,19 +41,31 @@ const preparePointUpdate = ({ value, current }) => {
         return { shouldClear: true, shouldSkip: false, trimmedValue };
     }
 
-    if (current && trimmedValue === formatLatLon(current)) {
+    let matches = false;
+    if (current) {
+        if (current instanceof navigationObject) {
+            matches = trimmedValue === current.getDisplayValue() || trimmedValue === formatLatLon(current.toLatLng());
+        } else {
+            matches = trimmedValue === formatLatLon(current);
+        }
+    }
+
+    if (matches) {
         return { shouldClear: false, shouldSkip: true, trimmedValue };
     }
 
     return { shouldClear: false, shouldSkip: false, trimmedValue };
 };
 
-export default function NavigationPointsManager({ routeObject }) {
+export default function NavigationPointsManager() {
     const { t } = useTranslation();
+    const ctx = useContext(AppContext);
 
-    const startPoint = routeObject.getOption(ROUTE_POINTS_START);
-    const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
-    const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
+    const navObject = ctx.navigationObject;
+
+    const startPoint = navObject.getOption(ROUTE_POINTS_START);
+    const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);
+    const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
 
     const [start, setStart] = useState('');
     const [finish, setFinish] = useState('');
@@ -60,17 +78,21 @@ export default function NavigationPointsManager({ routeObject }) {
     const startInputRef = useRef(null);
     const finishInputRef = useRef(null);
     const usedAutoFocus = useRef(false);
+    const autofocusDisabled = useRef(false);
+    const prevIsMainMenu = useRef(false);
 
     const FOCUS_DELAY_MS = 150;
 
     const location = useLocation();
 
-    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(routeObject);
+    const { history, clearHistory, handleHistorySelect } = useNavigationHistory(navObject, ctx);
 
     const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + NAVIGATE_URL + '*' }, location.pathname);
 
     useEffect(() => {
-        if (startPoint && typeof startPoint == 'object') {
+        if (startPoint instanceof navigationObject) {
+            setStart(startPoint.getDisplayValue());
+        } else if (startPoint && typeof startPoint == 'object') {
             setStart(formatLatLon(startPoint));
         } else if (!startPoint) {
             setStart('');
@@ -78,20 +100,37 @@ export default function NavigationPointsManager({ routeObject }) {
     }, [startPoint]);
 
     useEffect(() => {
-        if (finishPoint && typeof finishPoint == 'object') {
+        if (finishPoint instanceof navigationObject) {
+            setFinish(finishPoint.getDisplayValue());
+        } else if (finishPoint && typeof finishPoint == 'object') {
             setFinish(formatLatLon(finishPoint));
         } else if (!finishPoint) {
             setFinish('');
         }
     }, [finishPoint]);
 
+    // Reset autofocus flags when menu is reopened
+    useEffect(() => {
+        if (isMainMenu && !prevIsMainMenu.current) {
+            // Menu was just opened
+            usedAutoFocus.current = false;
+            autofocusDisabled.current = false;
+        }
+        prevIsMainMenu.current = isMainMenu;
+    }, [isMainMenu]);
+
     useEffect(() => {
         if (!isMainMenu) {
             usedAutoFocus.current = false;
             return;
         }
+
+        if (autofocusDisabled.current) {
+            return;
+        }
+
         const focusTimeout = setTimeout(() => {
-            // Don't auto-focus if user already focused an input (start, finish, or intermediate points)
+            // Don't autofocus if user already focused an input
             const activeElement = document.activeElement;
             const isInputFocused =
                 activeElement &&
@@ -103,25 +142,36 @@ export default function NavigationPointsManager({ routeObject }) {
                 return;
             }
 
-            if (start === '' && startInputRef.current) {
+            if (start === '' && startInputRef.current && !usedAutoFocus.current) {
                 startInputRef.current.focus();
                 usedAutoFocus.current = true;
-            } else if (finish === '' && finishInputRef.current) {
+            } else if (start !== '' && finish === '' && finishInputRef.current) {
                 finishInputRef.current.focus();
                 usedAutoFocus.current = true;
-            } else {
-                usedAutoFocus.current = false;
             }
         }, FOCUS_DELAY_MS);
 
         return () => clearTimeout(focusTimeout);
     }, [isMainMenu, start, finish]);
 
+    // Sync intermediate inputs with map points, preserving manually added empty inputs.
+    // Example: user adds 2 empty inputs, then clicks map
     useEffect(() => {
-        if (viaPoints && viaPoints.length > 0 && intermediates.length <= viaPoints.length) {
-            setIntermediates(viaPoints.map((p) => formatLatLon(p)));
-        } else if (!viaPoints || viaPoints.length === 0) {
-            setIntermediates([]);
+        const formattedPoints =
+            viaPoints?.length > 0
+                ? viaPoints.map((p) => (p instanceof navigationObject ? p.getDisplayValue() : formatLatLon(p)))
+                : [];
+
+        const targetInputsCount = Math.max(formattedPoints.length, ctx.viaInputsCount || 0);
+
+        const newIntermediates = [
+            ...formattedPoints,
+            ...Array(Math.max(0, targetInputsCount - formattedPoints.length)).fill(''),
+        ];
+
+        setIntermediates(newIntermediates);
+        if (targetInputsCount !== ctx.viaInputsCount) {
+            ctx.setViaInputsCount(targetInputsCount);
         }
     }, [viaPoints]);
 
@@ -137,12 +187,13 @@ export default function NavigationPointsManager({ routeObject }) {
         const newIntermediates = [...intermediates];
         newIntermediates[index] = value;
         setIntermediates(newIntermediates);
+        ctx.setViaInputsCount(newIntermediates.length);
     };
 
     const handleStartBlur = (value) => {
         const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
             value,
-            current: routeObject.getOption(ROUTE_POINTS_START),
+            current: navObject.getOption(ROUTE_POINTS_START),
         });
 
         if (shouldSkip) {
@@ -150,21 +201,22 @@ export default function NavigationPointsManager({ routeObject }) {
         }
 
         if (shouldClear) {
-            routeObject.setOption(ROUTE_POINTS_START, null);
-            routeObject.resetRoute();
+            navObject.setOption(ROUTE_POINTS_START, null);
+            navObject.resetRoute();
             return;
         }
 
         const latlon = getValidatedLatLon(trimmedValue);
         if (latlon) {
-            routeObject.setOption(ROUTE_POINTS_START, latlon);
+            const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
+            navObject.setOption(ROUTE_POINTS_START, navObj);
         }
     };
 
     const handleFinishBlur = (value) => {
         const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
             value,
-            current: routeObject.getOption(ROUTE_POINTS_FINISH),
+            current: navObject.getOption(ROUTE_POINTS_FINISH),
         });
 
         if (shouldSkip) {
@@ -172,14 +224,15 @@ export default function NavigationPointsManager({ routeObject }) {
         }
 
         if (shouldClear) {
-            routeObject.setOption(ROUTE_POINTS_FINISH, null);
-            routeObject.resetRoute();
+            navObject.setOption(ROUTE_POINTS_FINISH, null);
+            navObject.resetRoute();
             return;
         }
 
         const latlon = getValidatedLatLon(trimmedValue);
         if (latlon) {
-            routeObject.setOption(ROUTE_POINTS_FINISH, latlon);
+            const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
+            navObject.setOption(ROUTE_POINTS_FINISH, navObj);
         }
     };
 
@@ -187,34 +240,41 @@ export default function NavigationPointsManager({ routeObject }) {
         if (!value || value.trim() === '') {
             if (viaPoints && index < viaPoints.length) {
                 const newViaPoints = viaPoints.filter((_, i) => i !== index);
-                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+                navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
             }
             return;
         }
         const latlon = getValidatedLatLon(value);
         if (latlon) {
+            const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             const newViaPoints = viaPoints ? [...viaPoints] : [];
             if (index >= newViaPoints.length) {
-                newViaPoints.push(latlon);
+                newViaPoints.push(navObj);
             } else {
-                newViaPoints[index] = latlon;
+                newViaPoints[index] = navObj;
             }
-            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+            navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
 
     const handleAddIntermediate = () => {
-        setIntermediates([...intermediates, '']);
+        autofocusDisabled.current = true;
+        const newIntermediates = [...intermediates, ''];
+        setIntermediates(newIntermediates);
+        ctx.setViaInputsCount(newIntermediates.length);
     };
 
     const handleRemoveIntermediate = (index) => {
+        autofocusDisabled.current = true;
         const newIntermediates = intermediates.filter((_, i) => i !== index);
         setIntermediates(newIntermediates);
 
         if (viaPoints && index < viaPoints.length) {
             const newViaPoints = viaPoints.filter((_, i) => i !== index);
-            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+            navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
+
+        ctx.setViaInputsCount(newIntermediates.length);
     };
 
     const handleKeyPress = (e, handler) => {
@@ -249,12 +309,13 @@ export default function NavigationPointsManager({ routeObject }) {
     };
 
     const handleSwap = () => {
+        autofocusDisabled.current = true;
         // Remove focus from all inputs before swapping
         const blurEvent = new CustomEvent('nav-blur');
         globalThis.dispatchEvent(blurEvent);
 
-        routeObject.setOption(ROUTE_POINTS_START, finishPoint);
-        routeObject.setOption(ROUTE_POINTS_FINISH, startPoint);
+        navObject.setOption(ROUTE_POINTS_START, finishPoint);
+        navObject.setOption(ROUTE_POINTS_FINISH, startPoint);
     };
 
     const getAllPoints = () => {
@@ -267,7 +328,7 @@ export default function NavigationPointsManager({ routeObject }) {
             points.push(...viaPoints);
         }
         points.push(finishPoint);
-        return points;
+        return points.map((p) => (p instanceof navigationObject ? p.toLatLng() : p));
     };
 
     const updateAllPoints = (newPoints) => {
@@ -293,11 +354,11 @@ export default function NavigationPointsManager({ routeObject }) {
         }
 
         if (newRoutePoints.length >= 2) {
-            routeObject.setOption('route.points.start', newRoutePoints.at(0));
-            routeObject.setOption(ROUTE_POINTS_FINISH, newRoutePoints.at(-1));
+            navObject.setOption('route.points.start', newRoutePoints.at(0));
+            navObject.setOption(ROUTE_POINTS_FINISH, newRoutePoints.at(-1));
 
             const newViaPoints = newRoutePoints.slice(1, -1).filter((p) => p !== null);
-            routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+            navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
         }
     };
 
@@ -309,7 +370,7 @@ export default function NavigationPointsManager({ routeObject }) {
             // Also clean up viaPoints
             const cleanViaPoints = viaPoints ? viaPoints.filter((p) => p !== null) : [];
             if (cleanViaPoints.length !== (viaPoints ? viaPoints.length : 0)) {
-                routeObject.setOption(ROUTE_POINTS_VIA, cleanViaPoints);
+                navObject.setOption(ROUTE_POINTS_VIA, cleanViaPoints);
             }
         }
 
@@ -370,6 +431,8 @@ export default function NavigationPointsManager({ routeObject }) {
                 history={history}
                 onHistorySelect={handleStartHistorySelect}
                 onClearHistory={clearHistory}
+                isDragging={draggedIndex === 0}
+                hasIntermediates={intermediates.length > 0}
             />
 
             {/* Intermediate Points */}
@@ -395,6 +458,8 @@ export default function NavigationPointsManager({ routeObject }) {
                         history={history}
                         onHistorySelect={(item) => handleIntermediateHistorySelect(index, item)}
                         onClearHistory={clearHistory}
+                        isDragging={draggedIndex === index + 1}
+                        isFirstIntermediate={index === 0}
                     />
                 </React.Fragment>
             ))}
@@ -423,6 +488,7 @@ export default function NavigationPointsManager({ routeObject }) {
                 history={history}
                 onHistorySelect={handleFinishHistorySelect}
                 onClearHistory={clearHistory}
+                isDragging={draggedIndex === intermediates.length + 1}
             />
 
             {/* Drop indicator after finish (to move item to the end) */}

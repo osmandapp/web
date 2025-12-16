@@ -1,21 +1,38 @@
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../../store/geoRouter/profileConstants';
+import {
+    navigationObject,
+    NAVIGATION_OBJECT_TYPE_SEARCH,
+    NAVIGATION_OBJECT_TYPE_FAVORITE,
+} from '../../../../store/navigationObject/navigationObject';
 
-export function directionFrom(lat, lon, ctx) {
-    if (lat != null && lon != null) {
-        ctx.routeObject.setOption(ROUTE_POINTS_START, {
-            lat: Number(lat),
-            lng: Number(lon),
-        });
-    }
+export function directionFrom(lat, lon, ctx, wpt = null) {
+    const navObj = prepareNavObj(lat, lon, wpt);
+    if (!navObj) return;
+
+    ctx.navigationObject.setOption(ROUTE_POINTS_START, navObj);
 }
 
-export function directionTo(lat, lon, ctx) {
-    if (lat != null && lon != null) {
-        ctx.routeObject.setOption(ROUTE_POINTS_FINISH, {
-            lat: Number(lat),
-            lng: Number(lon),
-        });
+export function directionTo(lat, lon, ctx, wpt = null) {
+    const navObj = prepareNavObj(lat, lon, wpt);
+    if (!navObj) return;
+
+    ctx.navigationObject.setOption(ROUTE_POINTS_FINISH, navObj);
+}
+
+function prepareNavObj(lat, lon, wpt) {
+    if (lat == null || lon == null) return null;
+
+    let navObj;
+    if (wpt) {
+        const type =
+            wpt.type?.isFav || wpt.type?.isShareFav ? NAVIGATION_OBJECT_TYPE_FAVORITE : NAVIGATION_OBJECT_TYPE_SEARCH;
+        navObj = navigationObject.fromWpt(wpt, type);
     }
+
+    if (!navObj) {
+        navObj = navigationObject.fromCoordinates(lat, lon);
+    }
+    return navObj;
 }
 
 export function createShareLocations(wpt) {

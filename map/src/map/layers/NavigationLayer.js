@@ -78,7 +78,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 container.style.cursor = '';
                 return;
             }
-            container.style.cursor = pickNextRoutePoint(routeObject) ? 'crosshair' : '';
+            container.style.cursor = pickNextRoutePoint(routeObject, ctx.viaInputsCount || 0) ? 'crosshair' : '';
         };
 
         const handleMapClick = (event) => {
@@ -93,8 +93,8 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 return;
             }
 
-            // add start or finish point if one is missing
-            const target = pickNextRoutePoint(routeObject);
+            // Find first empty input from top to bottom (start -> intermediates -> finish)
+            const target = pickNextRoutePoint(routeObject, ctx.viaInputsCount || 0);
             if (!target) {
                 updateCursor();
                 return;
@@ -104,7 +104,20 @@ const NavigationLayer = ({ geocodingData, region }) => {
             // remove focus from all inputs
             globalThis.dispatchEvent(new Event('nav-blur'));
 
-            routeObject.setOption(target, point);
+            // Handle intermediate point
+            if (target.type === ROUTE_POINTS_VIA) {
+                const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
+                const newViaPoints = [...viaPoints];
+                while (newViaPoints.length <= target.index) {
+                    newViaPoints.push(null);
+                }
+                newViaPoints[target.index] = point;
+                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+            } else {
+                // Handle start or finish point
+                routeObject.setOption(target, point);
+            }
+
             ctx.setRouteTrackFile(null);
 
             updateCursor();
@@ -132,7 +145,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             map.off('mousemove', updateCursor);
             container.style.cursor = '';
         };
-    }, [routeObject, ctx.openContextMenu]);
+    }, [routeObject, ctx.openContextMenu, ctx.viaInputsCount]);
 
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);

@@ -1,86 +1,103 @@
-import { useCallback, useEffect, useState } from 'react';
-import { LatLng } from 'leaflet';
-import { formatLatLon } from '../../../menu/navigation/NavigationPointsManager';
+import { useCallback, useEffect } from 'react';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../../store/geoRouter/profileConstants';
 import { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from '../../../menu/navigation/NavigationInputRow';
+import { navigationObject } from '../../../store/navigationObject/navigationObject';
 
-export default function useNavigationHistory(routeObject) {
-    const [history, setHistory] = useState([]);
+export default function useNavigationHistory(navObject, ctx) {
+    const history = ctx.navigationHistory || [];
+    const setHistory = ctx.setNavigationHistory;
 
-    const addToHistory = useCallback((latlon) => {
-        if (!latlon?.lat || !latlon.lng) {
+    const addToHistory = useCallback((navObj) => {
+        if (!navObj || !(navObj instanceof navigationObject)) {
             return;
         }
+
+        if (!setHistory) return;
 
         setHistory((prev) => {
             const prevHistory = prev || [];
             // Remove duplicates
-            const filtered = prevHistory.filter((h) => {
-                const isSameLat = Math.abs(h.lat - latlon.lat) < 0.00001;
-                const isSameLng = Math.abs(h.lng - latlon.lng) < 0.00001;
-                return !(isSameLat && isSameLng);
+            const filtered = prevHistory.filter((prevObj) => {
+                if (!(prevObj instanceof navigationObject)) return true;
+                const isSameLat = Math.abs(prevObj.lat - navObj.lat) < 0.00001;
+                const isSameLng = Math.abs(prevObj.lng - navObj.lng) < 0.00001;
+                const isSameType = prevObj.type === navObj.type;
+                return !(isSameLat && isSameLng && isSameType);
             });
 
-            return [
-                {
-                    lat: latlon.lat,
-                    lng: latlon.lng,
-                    name: formatLatLon(latlon),
-                },
-                ...filtered,
-            ].slice(0, 100);
+            const newObj = new navigationObject(navObj.lat, navObj.lng, {
+                name: navObj.name,
+                type: navObj.type,
+                poiType: navObj.poiType,
+                icon: navObj.icon,
+                displayValue: navObj.getDisplayValue(),
+                usedAt: navObj.usedAt,
+            });
+
+            return [newObj, ...filtered].slice(0, 100);
         });
     }, []);
 
     const clearHistory = () => {
-        setHistory([]);
+        if (setHistory) {
+            setHistory([]);
+        }
     };
 
-    // Track changes in start point (for drag on map, etc.)
     useEffect(() => {
-        // Don't add to history while dragging
-        if (routeObject.preview) {
+        if (navObject.preview) {
             return;
         }
 
-        const startPoint = routeObject.getOption(ROUTE_POINTS_START);
-        if (startPoint) {
+        const startPoint = navObject.getOption(ROUTE_POINTS_START);
+        if (startPoint instanceof navigationObject) {
             addToHistory(startPoint);
+        } else if (startPoint) {
+            const navObj = navigationObject.fromCoordinates(startPoint.lat, startPoint.lng);
+            addToHistory(navObj);
         }
-        const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
-        if (finishPoint) {
+
+        const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);
+        if (finishPoint instanceof navigationObject) {
             addToHistory(finishPoint);
+        } else if (finishPoint) {
+            const navObj = navigationObject.fromCoordinates(finishPoint.lat, finishPoint.lng);
+            addToHistory(navObj);
         }
-        const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
+
+        const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
         if (viaPoints && viaPoints.length > 0) {
             viaPoints.forEach((point) => {
-                addToHistory(point);
+                if (point instanceof navigationObject) {
+                    addToHistory(point);
+                } else if (point) {
+                    const navObj = navigationObject.fromCoordinates(point.lat, point.lng);
+                    addToHistory(navObj);
+                }
             });
         }
-    }, [routeObject]);
+    }, [navObject, addToHistory]);
 
     const handleHistorySelect = (item, pointType, index = null) => {
-        if (item?.lat && item?.lng) {
-            const latlon = new LatLng(item.lat, item.lng);
-            const displayValue = item.name || formatLatLon(latlon);
-
-            if (pointType === START_POINT) {
-                routeObject.setOption(ROUTE_POINTS_START, latlon);
-            } else if (pointType === FINISH_POINT) {
-                routeObject.setOption(ROUTE_POINTS_FINISH, latlon);
-            } else if (pointType === INTERMEDIATE_POINT && index !== null) {
-                const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
-                const newViaPoints = [...viaPoints];
-                if (index >= newViaPoints.length) {
-                    newViaPoints.push(latlon);
-                } else {
-                    newViaPoints[index] = latlon;
-                }
-                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
-            }
-            return displayValue;
+        if (!(item instanceof navigationObject)) {
+            return null;
         }
-        return null;
+
+        if (pointType === START_POINT) {
+            navObject.setOption(ROUTE_POINTS_START, item);
+        } else if (pointType === FINISH_POINT) {
+            navObject.setOption(ROUTE_POINTS_FINISH, item);
+        } else if (pointType === INTERMEDIATE_POINT && index !== null) {
+            const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
+            const newViaPoints = [...viaPoints];
+            if (index >= newViaPoints.length) {
+                newViaPoints.push(item);
+            } else {
+                newViaPoints[index] = item;
+            }
+            navObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+        }
+        return item.getDisplayValue();
     };
 
     return {

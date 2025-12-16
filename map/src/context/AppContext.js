@@ -441,6 +441,7 @@ export const AppContextProvider = (props) => {
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
     const [routeVisibleProfiles, setRouteVisibleProfiles] = useState(null);
+    const [viaInputsCount, setViaInputsCount] = useState(0);
 
     const [trackLoading, setTrackLoading] = useState([]);
 
@@ -450,6 +451,8 @@ export const AppContextProvider = (props) => {
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
     const [selectedPoiId, setSelectedPoiId] = useState(null);
+
+    const [navigationHistory, setNavigationHistory] = useState([]);
 
     routeObject.initSetter({ setter: setRouteObject });
     trackRouter.initSetter({ setter: setTrackRouter });
@@ -912,6 +915,11 @@ export const AppContextProvider = (props) => {
                 setProcessingAnalytics,
                 openNavigationSettings,
                 setOpenNavigationSettings,
+                navigationHistory,
+                setNavigationHistory,
+                viaInputsCount,
+                setViaInputsCount,
+                navigationObject: routeObject,
             }}
         >
             {props.children}

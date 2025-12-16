@@ -1,6 +1,5 @@
 import React, { useMemo, useEffect, useRef, useContext } from 'react';
 import { Menu, Divider } from '@mui/material';
-import { ReactComponent as HistoryIcon } from '../../assets/icons/ic_action_history.svg';
 import { ReactComponent as ClearIcon } from '../../assets/icons/ic_action_clear_all_fields.svg';
 import { ReactComponent as LocationIcon } from '../../assets/icons/ic_action_location_marker_outlined.svg';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +9,10 @@ import AppContext from '../../context/AppContext';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { formatLatLon } from './NavigationPointsManager';
+import { navigationObject } from '../../store/navigationObject/navigationObject';
+import { WptIcon } from '../../infoblock/components/wpt/WptDetails';
+import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
+import { ReactComponent as HistoryIcon } from '../../assets/icons/ic_action_history.svg';
 
 const HISTORY_LIMIT = 5;
 
@@ -43,7 +46,8 @@ export default function NavigationHistoryDropdown({
 
         // Filter items that match the input
         const matched = history.filter((item) => {
-            const itemName = (item.name || '').toLowerCase();
+            if (!(item instanceof navigationObject)) return false;
+            const itemName = (item.getDisplayValue() || '').toLowerCase();
             return itemName.includes(trimmedValue);
         });
 
@@ -168,21 +172,38 @@ export default function NavigationHistoryDropdown({
                     {filteredHistory.length > 0 && <Divider />}
                 </>
             )}
-            {filteredHistory.map((item, index) => (
-                <DefaultItem
-                    key={`history-item-${index}`}
-                    id={`${inputId}-history-item-${index}`}
-                    icon={<HistoryIcon />}
-                    name={item.name}
-                    onClick={(e) => {
-                        handleHistoryItemClick(item, e);
-                    }}
-                    onMouseDown={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }}
-                />
-            ))}
+            {filteredHistory.map((item, index) => {
+                if (!(item instanceof navigationObject)) return null;
+
+                const icon = item.icon?.wpt ? (
+                    <WptIcon
+                        wpt={item.icon.wpt}
+                        color={item.icon.color || DEFAULT_POI_COLOR}
+                        background={item.icon.background || DEFAULT_POI_SHAPE}
+                        icon={item.icon.icon}
+                        ctx={ctx}
+                    />
+                ) : (
+                    <HistoryIcon />
+                );
+
+                return (
+                    <DefaultItem
+                        key={`history-item-${index}`}
+                        id={`${inputId}-history-item-${index}`}
+                        icon={icon}
+                        name={item.getDisplayValue()}
+                        maxLines={1}
+                        onClick={(e) => {
+                            handleHistoryItemClick(item, e);
+                        }}
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }}
+                    />
+                );
+            })}
             {isInputEmpty && filteredHistory.length > 0 && (
                 <>
                     <Divider />
