@@ -37,7 +37,7 @@ Release date 11/2025:
 - Improved UI for adding truck metrics in Truck profile settings.
 - More parameters for route showing on the map.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### Version 5.1 {#version-51}
 
