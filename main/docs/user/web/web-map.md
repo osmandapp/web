@@ -126,12 +126,12 @@ Alternatively, you can use the [**Search section**](web-search.md) to find the d
 
 ### Favorites Section {#favorites-section}
 
-With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](./web-favorites.mdx#favorites-on-the-web) will be displayed.
+With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](./web-favorites.md#favorites-on-the-web) will be displayed.
 
 
 ### Tracks section {#tracks-section}
 
-This section contains a list of your [**GPX tracks visible on the map**](../web/web-tracks.mdx#visible-on-the-map) and **Recently Visible** tracks.
+This section contains a list of your [**GPX tracks visible on the map**](./web-tracks.md#visible-on-the-map) and **Recently Visible** tracks.
 
 - You can toggle tracks on or off directly.  
 - Switch tracks on or off from the **Recently Visible** list.  
