@@ -493,7 +493,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             } else {
                 ctx.setSelectedPoiObj(null);
                 navigate({
-                    pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL,
+                    pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + (ctx.exploreMenu ? EXPLORE_URL : ''),
                     hash: window.location.hash,
                 });
             }
