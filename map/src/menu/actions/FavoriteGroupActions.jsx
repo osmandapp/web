@@ -41,9 +41,8 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     async function togglePinned() {
         const newPinnedState = group.pinned !== 'true';
         const newPinnedString = newPinnedState ? 'true' : 'false';
-        const pointsGroup = ctx.favorites.groups.find((g) => g.id === group.id);
-        const groupName = normalizeFavoritePointsGroupName(pointsGroup.name);
-        let updatedPointsGroups = { ...pointsGroup.pointsGroups };
+        const groupName = normalizeFavoritePointsGroupName(group.name);
+        let updatedPointsGroups = { ...group.pointsGroups };
         if (!updatedPointsGroups[groupName]) {
             updatedPointsGroups[groupName] = {};
         }

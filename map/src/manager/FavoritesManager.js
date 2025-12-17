@@ -286,47 +286,25 @@ export async function updateFavGroupPinned({ group, updatedPointsGroups, groupNa
         return;
     }
 
-    const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
-    let syncedPinned = updatedPointsGroups[groupName]?.pinned ?? PINNED_FALSE;
-    const groupEntry = result?.data?.pointsGroups?.[groupName];
-    if (groupEntry) {
-        const pinnedValue = groupEntry.pinned;
-        if (pinnedValue !== undefined) {
-            syncedPinned = pinnedValue;
-        } else if (pinnedValue === undefined && isPersonalGroup) {
-            syncedPinned = PINNED_TRUE;
-        }
-    }
-
+    const pinned = normalizeBoolean(result?.data?.pointsGroups?.[groupName]?.pinned ?? PINNED_FALSE);
     ctx.setFavorites((prev) => {
-        const syncedGroups = prev.groups.map((g) => {
+        const groups = prev.groups.map((g) => {
             if (g.id === group.id) {
                 return {
                     ...g,
-                    pinned: normalizeBoolean(syncedPinned),
+                    pinned,
                     updatetimems: result.updatetimems ?? g.updatetimems,
                     clienttimems: result.clienttimems ?? g.clienttimems,
                 };
             }
             return g;
         });
-        return { ...prev, groups: syncedGroups };
+        return { ...prev, groups };
     });
 }
 
 function addPinned({ pointsGroups, groupName, favArr, menuId }) {
-    const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
-    let pinned = PINNED_FALSE;
-    const normalizedGroupName = normalizeFavoritePointsGroupName(groupName);
-    if (pointsGroups && pointsGroups[normalizedGroupName]) {
-        const groupEntry = pointsGroups[normalizedGroupName];
-        if (groupEntry.pinned !== undefined && !isPersonalGroup) {
-            pinned = groupEntry.pinned;
-        } else if (groupEntry.pinned === undefined && isPersonalGroup) {
-            pinned = PINNED_TRUE;
-        }
-    }
-    favArr.groups[menuId].pinned = normalizeBoolean(pinned);
+    favArr.groups[menuId].pinned = isPinned(pointsGroups, groupName);
     return favArr;
 }
 
@@ -401,12 +379,19 @@ export function isFavGroupExists(name, groups) {
     return groups && groups.some((g) => g.name === name);
 }
 
-function isPinned(pointsGroups, name) {
-    let group = pointsGroups[name];
-    if (group && group.pinned) {
-        return group.pinned;
+function isPinned(pointsGroups, groupName) {
+    const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
+    let pinned = PINNED_FALSE;
+    const normalizedGroupName = normalizeFavoritePointsGroupName(groupName);
+    if (pointsGroups && pointsGroups[normalizedGroupName]) {
+        const groupEntry = pointsGroups[normalizedGroupName];
+        if (groupEntry.pinned !== undefined) {
+            pinned = groupEntry.pinned;
+        } else if (groupEntry.pinned === undefined && isPersonalGroup) {
+            pinned = PINNED_TRUE;
+        }
     }
-    return false;
+    return normalizeBoolean(pinned);
 }
 
 function isHidden(pointsGroups, name) {
