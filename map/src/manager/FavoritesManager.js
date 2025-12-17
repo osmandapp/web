@@ -25,6 +25,8 @@ export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const FAVORITE_PLACEHOLDER_MAP = { '_-_': ':', '_%_': '/' };
 
+export const PINNED_TRUE = 'true';
+export const PINNED_FALSE = 'false';
 export const HIDDEN_TRUE = 'true';
 export const HIDDEN_FALSE = 'false';
 
@@ -147,7 +149,7 @@ export async function updateAllFavorites(group, data, hiddenChanged) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
         params: {
             fileName: group.file.name,
-            groupName: groupName,
+            groupName,
             updatetime: group.updatetimems,
             updateTimestamp: !hiddenChanged,
         },
@@ -162,7 +164,7 @@ export async function updateFavoriteGroup(favGroupData, group, groupName) {
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-group`, favGroupData, {
         params: {
             fileName: group.file.name,
-            groupName: groupName,
+            groupName,
             updatetime: group.updatetimems,
         },
     });
@@ -275,7 +277,7 @@ function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
 
 export const normalizeBoolean = (val) => (val === true || val === 'true' ? 'true' : 'false');
 
-export async function togglePinnedAndSync({ group, updatedPointsGroups, groupName, ctx }) {
+export async function updateFavGroupPinned({ group, updatedPointsGroups, groupName, ctx }) {
     const favGroupData = {
         pointsGroups: updatedPointsGroups,
     };
@@ -285,15 +287,14 @@ export async function togglePinnedAndSync({ group, updatedPointsGroups, groupNam
     }
 
     const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
-    const sentPinned = updatedPointsGroups[groupName]?.pinned;
-    let syncedPinned = sentPinned ?? 'false';
+    let syncedPinned = updatedPointsGroups[groupName]?.pinned ?? PINNED_FALSE;
     const groupEntry = result?.data?.pointsGroups?.[groupName];
     if (groupEntry) {
         const pinnedValue = groupEntry.pinned;
         if (pinnedValue !== undefined) {
             syncedPinned = pinnedValue;
         } else if (pinnedValue === undefined && isPersonalGroup) {
-            syncedPinned = 'true';
+            syncedPinned = PINNED_TRUE;
         }
     }
 
@@ -315,14 +316,14 @@ export async function togglePinnedAndSync({ group, updatedPointsGroups, groupNam
 
 function addPinned({ pointsGroups, groupName, favArr, menuId }) {
     const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
-    let pinned = 'false';
+    let pinned = PINNED_FALSE;
     const normalizedGroupName = normalizeFavoritePointsGroupName(groupName);
     if (pointsGroups && pointsGroups[normalizedGroupName]) {
         const groupEntry = pointsGroups[normalizedGroupName];
         if (groupEntry.pinned !== undefined && !isPersonalGroup) {
             pinned = groupEntry.pinned;
         } else if (groupEntry.pinned === undefined && isPersonalGroup) {
-            pinned = 'true';
+            pinned = PINNED_TRUE;
         }
     }
     favArr.groups[menuId].pinned = normalizeBoolean(pinned);
@@ -398,6 +399,14 @@ export function createFavGroupFreeName(name, groups) {
 
 export function isFavGroupExists(name, groups) {
     return groups && groups.some((g) => g.name === name);
+}
+
+function isPinned(pointsGroups, name) {
+    let group = pointsGroups[name];
+    if (group && group.pinned) {
+        return group.pinned;
+    }
+    return false;
 }
 
 function isHidden(pointsGroups, name) {

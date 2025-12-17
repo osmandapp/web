@@ -15,7 +15,7 @@ import AppContext from '../../context/AppContext';
 import {
     updateAllFavorites,
     updateFavoriteGroups,
-    togglePinnedAndSync,
+    updateFavGroupPinned,
     normalizeFavoritePointsGroupName,
 } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
@@ -49,7 +49,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
         }
         updatedPointsGroups[groupName].pinned = newPinnedString;
 
-        await togglePinnedAndSync({
+        await updateFavGroupPinned({
             group,
             updatedPointsGroups,
             groupName,
