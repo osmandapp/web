@@ -702,9 +702,12 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     <Folder fontSize="small" />
                 </ListItemIcon>
                 <Box>
-                    <Typography id={'se-wpt-group'} className={styles.wptCategoryText} noWrap>
-                        {getWptGroup(wpt)}
-                    </Typography>
+                    <MenuItemWithLines
+                        id={'se-wpt-group'}
+                        name={getWptGroup(wpt)}
+                        maxLines={1}
+                        className={styles.wptCategoryText}
+                    />
                 </Box>
             </Box>
         );
