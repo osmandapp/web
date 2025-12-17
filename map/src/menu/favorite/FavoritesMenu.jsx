@@ -43,7 +43,7 @@ export default function FavoritesMenu() {
             const unpinnedHidden = [];
 
             groups.forEach((g) => {
-                const isPinned = g.pinned === 'true';
+                const isPinned = g.pinned;
                 const isHidden = g.hidden === 'true';
                 if (isPinned) {
                     if (isHidden) {

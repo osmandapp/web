@@ -25,8 +25,6 @@ export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const FAVORITE_PLACEHOLDER_MAP = { '_-_': ':', '_%_': '/' };
 
-export const PINNED_TRUE = 'true';
-export const PINNED_FALSE = 'false';
 export const HIDDEN_TRUE = 'true';
 export const HIDDEN_FALSE = 'false';
 
@@ -275,31 +273,32 @@ function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
     return favArr;
 }
 
-export const normalizeBoolean = (val) => (val === true || val === 'true' ? 'true' : 'false');
+export const normalizeBoolean = (val) => val === true || val === 'true';
+
+/**
+ * Normalizes pinned value before sending to backend according to storage rules:
+ * - For non-personal groups: omit pinned=false (only store pinned=true)
+ * - For personal group: store both pinned=true and pinned=false explicitly
+ */
+function normalizePinnedForBackend(pointsGroups, groupName) {
+    const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
+    const currentGroup = pointsGroups[groupName];
+
+    if (!isPersonalGroup && currentGroup?.pinned === false) {
+        delete currentGroup.pinned;
+    }
+}
 
 export async function updateFavGroupPinned({ group, updatedPointsGroups, groupName, ctx }) {
-    // Backend storage rule:
-    // - For non-personal groups: store only pinned=true (omit pinned=false)
-    // - For personal group: store both pinned=true and pinned=false explicitly
-    const isPersonalGroup = group?.name === PERSONAL_FAV_GROUP_NAME;
-    const pointsGroups = { ...(updatedPointsGroups ?? {}) };
-    const currentGroup = pointsGroups?.[groupName];
-    if (!isPersonalGroup && currentGroup?.pinned !== undefined) {
-        const pinned = normalizeBoolean(currentGroup.pinned);
-        if (pinned === PINNED_FALSE) {
-            delete currentGroup.pinned;
-        } else {
-            currentGroup.pinned = PINNED_TRUE;
-        }
-    }
+    normalizePinnedForBackend(updatedPointsGroups, groupName);
 
-    const favGroupData = { pointsGroups };
+    const favGroupData = { pointsGroups: updatedPointsGroups };
     const result = await updateFavoriteGroup(favGroupData, group, groupName);
     if (!result) {
         return;
     }
 
-    const pinned = normalizeBoolean(result?.data?.pointsGroups?.[groupName]?.pinned ?? PINNED_FALSE);
+    const pinned = normalizeBoolean(result.data.pointsGroups[groupName].pinned);
     ctx.setFavorites((prev) => {
         const groups = prev.groups.map((g) => {
             if (g.id === group.id) {
@@ -393,18 +392,15 @@ export function isFavGroupExists(name, groups) {
 }
 
 function isPinned(pointsGroups, groupName) {
-    const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
-    let pinned = PINNED_FALSE;
     const normalizedGroupName = normalizeFavoritePointsGroupName(groupName);
-    if (pointsGroups && pointsGroups[normalizedGroupName]) {
-        const groupEntry = pointsGroups[normalizedGroupName];
-        if (groupEntry.pinned !== undefined) {
-            pinned = groupEntry.pinned;
-        } else if (groupEntry.pinned === undefined && isPersonalGroup) {
-            pinned = PINNED_TRUE;
-        }
+    const groupEntry = pointsGroups?.[normalizedGroupName];
+    if (!groupEntry) {
+        return false;
     }
-    return normalizeBoolean(pinned);
+    if (groupEntry.pinned !== undefined) {
+        return normalizeBoolean(groupEntry.pinned);
+    }
+    return groupName === PERSONAL_FAV_GROUP_NAME;
 }
 
 function isHidden(pointsGroups, name) {

@@ -71,7 +71,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                 <ListItemIcon className={styles.icon}>
                     {group.hidden === 'true' ? (
                         <FolderHiddenIcon id={'se-fav-menu-icon-hidden-' + group.name} />
-                    ) : group.pinned === 'true' ? (
+                    ) : group.pinned ? (
                         <FolderPinIcon style={iconStyle} />
                     ) : (
                         <FolderIcon style={iconStyle} />

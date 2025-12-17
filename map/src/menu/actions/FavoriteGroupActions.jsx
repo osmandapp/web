@@ -17,8 +17,6 @@ import {
     updateFavoriteGroups,
     updateFavGroupPinned,
     normalizeFavoritePointsGroupName,
-    PINNED_TRUE,
-    PINNED_FALSE,
 } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo } from '../../manager/ShareManager';
@@ -41,14 +39,13 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     }
 
     async function togglePinned() {
-        const newPinnedState = group.pinned !== PINNED_TRUE;
-        const newPinnedString = newPinnedState ? PINNED_TRUE : PINNED_FALSE;
+        const newPinnedValue = !group.pinned;
         const groupName = normalizeFavoritePointsGroupName(group.name);
         let updatedPointsGroups = { ...group.pointsGroups };
         if (!updatedPointsGroups[groupName]) {
             updatedPointsGroups[groupName] = {};
         }
-        updatedPointsGroups[groupName].pinned = newPinnedString;
+        updatedPointsGroups[groupName].pinned = newPinnedValue;
 
         await updateFavGroupPinned({
             group,
@@ -133,11 +130,11 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                             onClick={togglePinned}
                         >
                             <ListItemIcon className={styles.iconAction}>
-                                {group.pinned === 'true' ? <UnpinnedIcon /> : <PinnedIcon />}
+                                {group.pinned ? <UnpinnedIcon /> : <PinnedIcon />}
                             </ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    {group.pinned === 'true'
+                                    {group.pinned
                                         ? t('web:shared_string_unpin_folder')
                                         : t('web:shared_string_pin_folder')}
                                 </Typography>
