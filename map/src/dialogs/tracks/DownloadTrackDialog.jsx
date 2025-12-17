@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Button, Dialog, List } from '@mui/material';
@@ -38,6 +38,8 @@ export default function DownloadTrackDialog({
         return author?.startsWith('OsmAndRouter') && trackSource?.details?.hasAdvancedRoute === true;
     }
 
+    const canSimplified = showSimplifiedTrack();
+
     const handleDownload = async (simplified) => {
         if (!trackSource && !navTrack) {
             return;
@@ -70,6 +72,16 @@ export default function DownloadTrackDialog({
         }
     };
 
+    useEffect(() => {
+        if (dialogOpen && !canSimplified) {
+            handleDownload(false).then();
+        }
+    }, [dialogOpen, canSimplified]);
+
+    if (!canSimplified) {
+        return null;
+    }
+
     return (
         <Dialog
             PaperProps={{
@@ -90,7 +102,7 @@ export default function DownloadTrackDialog({
                         name={t('web:download_track_full')}
                         onClick={() => handleDownload(false)}
                     />
-                    {showSimplifiedTrack() && (
+                    {canSimplified && (
                         <DefaultItem
                             id={'se-download-simplified-track'}
                             icon={<SimplifiedTrackIcon />}
