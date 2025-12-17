@@ -41,9 +41,9 @@ Web Portal offers the following main capabilities for working with maps and pers
 - [Route planning](./planner.md) using foot, car, bicycle, and other profiles.
 - [Navigation](./planner.md) preview with turn-by-turn instructions.
 - [Search](./web-search.md) and [explore](./web-search.md#explore) nearby popular places.
-- Display of [Favorites](./web-map.md#favorites-section), [Tracks](./web-map.md#tracks-section), and [POIs](./web-map.md#poi-overlay-section) on the map.
-- [Weather overlays](./web-map.md#weather-on-the-web): wind, temperature, and pressure.
-- [Terrain layers](./web-map.md#terrain-section): hillshade, slopes, and altitude view.
+- Display of [Favorites](./web-map.md#favorites), [Tracks](./web-map.md#tracks), and [POIs](./web-map.md#poi-overlay) on the map.
+- [Weather overlays](./web-weather.md): wind, temperature, and pressure.
+- [Terrain layers](./web-map.md#terrain): hillshade, slopes, and altitude view.
 - [Track Analyzer](./web-tracks-analyzer.md) for elevation and speed profiles.
 - Full access to synced data via [OsmAnd Cloud](./web-cloud#cloud-sync).
 - File import/export support (GPX: tracks, favorites).
@@ -64,10 +64,10 @@ Web Map Portal supports several access levels: without login, with OsmAnd Start,
 |--------|--------------|
 | [Navigation Route](./planner.md) | Without Login |
 | [Route Planner](./planner.md) | Without Login |
-| [Weather Overlays](./web-map.md) | Without Login |
-| [Settings](#settings) | Without Login |
-| [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay-section), [Favorites](./web-map.md#favorites-section), [Tracks](./web-map.md#tracks-section))| [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain-section))| <ProFeature/> |
+| [Weather Overlays](./web-weather.md) | Without Login |
+| [Settings](./web-map.md#settings) | Without Login |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favorites](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| <ProFeature/> |
 | [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
 | [Tracks folders and Layer](./web-tracks.md) | <ProFeature/> |
@@ -86,7 +86,7 @@ To access the full features of the OsmAnd Web Portal, you need to log in with an
 1. Go to the [**OsmAnd Map Portal**](https://osmand.net/map).
 2. Open the **Account** menu:
    - **Log in**: Enter the email address linked to your Pro or Start subscription, or
-   - **Create account**: Register for a free OsmAnd Start account. For a detailed step-by-step guide to creating a new account, see the [Sign Up / Login](./web-cloud) article.
+   - **Create account**: Register for a free OsmAnd Start account. For a detailed step-by-step guide to creating a new account, see the [OsmAnd Account](./web-cloud) article.
 
 ![Web Account](@site/static/img/web/web_account.png)
 
