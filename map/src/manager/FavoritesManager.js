@@ -25,8 +25,12 @@ export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const FAVORITE_PLACEHOLDER_MAP = { '_-_': ':', '_%_': '/' };
 
-export const TRUE_STRING = 'true';
-export const FALSE_STRING = 'false';
+export const HIDDEN_TRUE = 'true';
+export const HIDDEN_FALSE = 'false';
+
+export function normalizeFavoritePointsGroupName(groupName) {
+    return groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
+}
 
 const colors = [
     '#10c0f0',
@@ -139,10 +143,11 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
 }
 
 export async function updateAllFavorites(group, data, hiddenChanged) {
+    const groupName = normalizeFavoritePointsGroupName(group.name);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
         params: {
             fileName: group.file.name,
-            groupName: group.name,
+            groupName: groupName,
             updatetime: group.updatetimems,
             updateTimestamp: !hiddenChanged,
         },
@@ -150,14 +155,14 @@ export async function updateAllFavorites(group, data, hiddenChanged) {
     return prepareResult(resp);
 }
 
-export async function updateFavoriteGroup(data, group) {
-    if (!data || !group) {
+export async function updateFavoriteGroup(favGroupData, group, groupName) {
+    if (!favGroupData || !group) {
         return;
     }
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-group`, data, {
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-group`, favGroupData, {
         params: {
             fileName: group.file.name,
-            groupName: group.name,
+            groupName: groupName,
             updatetime: group.updatetimems,
         },
     });
@@ -217,9 +222,7 @@ function orderList(items, defaultItem) {
 
 function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = null, groupName }) {
     let color;
-    if (groupName === DEFAULT_FAV_GROUP_NAME) {
-        groupName = DEFAULT_GROUP_NAME_POINTS_GROUPS;
-    }
+    groupName = normalizeFavoritePointsGroupName(groupName);
     if (selectedFile) {
         const currentGroup =
             selectedFile?.pointsGroups && !isEmpty(selectedFile?.pointsGroups) && selectedFile.pointsGroups[groupName];
@@ -252,6 +255,7 @@ function createGroup(file) {
 }
 
 function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
+    groupName = normalizeFavoritePointsGroupName(groupName);
     let hidden = false;
     if (pointsGroups && pointsGroups[groupName]) {
         if (pointsGroups[groupName].ext.hidden !== undefined) {
@@ -260,7 +264,7 @@ function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
             hidden = isHidden(pointsGroups, groupName);
         }
     }
-    hidden = hidden ? TRUE_STRING : FALSE_STRING;
+    hidden = hidden ? HIDDEN_TRUE : HIDDEN_FALSE;
     // for map
     favArr.mapObjs[mapId].hidden = hidden;
     // for menu
@@ -269,18 +273,56 @@ function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
     return favArr;
 }
 
-export const normalizeBoolean = (val) => (val === true || val === TRUE_STRING ? TRUE_STRING : FALSE_STRING);
+export const normalizeBoolean = (val) => (val === true || val === 'true' ? 'true' : 'false');
+
+export async function togglePinnedAndSync({ group, updatedPointsGroups, groupName, ctx }) {
+    const favGroupData = {
+        pointsGroups: updatedPointsGroups,
+    };
+    const result = await updateFavoriteGroup(favGroupData, group, groupName);
+    if (!result) {
+        return;
+    }
+
+    const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
+    const sentPinned = updatedPointsGroups[groupName]?.pinned;
+    let syncedPinned = sentPinned ?? 'false';
+    const groupEntry = result?.data?.pointsGroups?.[groupName];
+    if (groupEntry) {
+        const pinnedValue = groupEntry.pinned;
+        if (pinnedValue !== undefined) {
+            syncedPinned = pinnedValue;
+        } else if (pinnedValue === undefined && isPersonalGroup) {
+            syncedPinned = 'true';
+        }
+    }
+
+    ctx.setFavorites((prev) => {
+        const syncedGroups = prev.groups.map((g) => {
+            if (g.id === group.id) {
+                return {
+                    ...g,
+                    pinned: normalizeBoolean(syncedPinned),
+                    updatetimems: result.updatetimems ?? g.updatetimems,
+                    clienttimems: result.clienttimems ?? g.clienttimems,
+                };
+            }
+            return g;
+        });
+        return { ...prev, groups: syncedGroups };
+    });
+}
 
 function addPinned({ pointsGroups, groupName, favArr, menuId }) {
     const isPersonalGroup = groupName === PERSONAL_FAV_GROUP_NAME;
-    let pinned = FALSE_STRING;
-    const normalizedGroupName = groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
+    let pinned = 'false';
+    const normalizedGroupName = normalizeFavoritePointsGroupName(groupName);
     if (pointsGroups && pointsGroups[normalizedGroupName]) {
         const groupEntry = pointsGroups[normalizedGroupName];
         if (groupEntry.pinned !== undefined && !isPersonalGroup) {
             pinned = groupEntry.pinned;
-        } else if (isPersonalGroup) {
-            pinned = TRUE_STRING;
+        } else if (groupEntry.pinned === undefined && isPersonalGroup) {
+            pinned = 'true';
         }
     }
     favArr.groups[menuId].pinned = normalizeBoolean(pinned);
@@ -381,7 +423,7 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    const name = group.name === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name;
+    const name = normalizeFavoritePointsGroupName(group.name);
     const pointsGroup = group?.pointsGroups?.[name];
     if (pointsGroup?.groupSize) {
         return Number(pointsGroup.groupSize);

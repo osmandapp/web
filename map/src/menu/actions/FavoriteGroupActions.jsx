@@ -14,11 +14,9 @@ import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
 import {
     updateAllFavorites,
-    updateFavoriteGroup,
     updateFavoriteGroups,
-    normalizeBoolean,
-    DEFAULT_FAV_GROUP_NAME,
-    DEFAULT_GROUP_NAME_POINTS_GROUPS,
+    togglePinnedAndSync,
+    normalizeFavoritePointsGroupName,
 } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo } from '../../manager/ShareManager';
@@ -42,62 +40,23 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
 
     async function togglePinned() {
         const newPinnedState = group.pinned !== 'true';
-        const newPinnedString = normalizeBoolean(newPinnedState);
-        const prevGroups = [...ctx.favorites.groups];
-        const updatedGroups = ctx.favorites.groups.map((g) => {
-            if (g.id === group.id) {
-                return { ...g, pinned: newPinnedString };
-            }
-            return g;
+        const newPinnedString = newPinnedState ? 'true' : 'false';
+        const pointsGroup = ctx.favorites.groups.find((g) => g.id === group.id);
+        const groupName = normalizeFavoritePointsGroupName(pointsGroup.name);
+        let updatedPointsGroups = { ...pointsGroup.pointsGroups };
+        if (!updatedPointsGroups[groupName]) {
+            updatedPointsGroups[groupName] = {};
+        }
+        updatedPointsGroups[groupName].pinned = newPinnedString;
+
+        await togglePinnedAndSync({
+            group,
+            updatedPointsGroups,
+            groupName,
+            ctx,
         });
-        ctx.setFavorites((prev) => ({ ...prev, groups: updatedGroups }));
         if (setOpenActions) {
             setOpenActions(false);
-        }
-
-        try {
-            const pointsGroup = updatedGroups.find((g) => g.id === group.id);
-            const groupName =
-                pointsGroup.name === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : pointsGroup.name;
-            let updatedPointsGroups = { ...pointsGroup.pointsGroups };
-            if (!updatedPointsGroups[groupName]) {
-                updatedPointsGroups[groupName] = {};
-            }
-            updatedPointsGroups[groupName].pinned = newPinnedString;
-
-            const data = {
-                pointsGroups: updatedPointsGroups,
-            };
-            const result = await updateFavoriteGroup(data, group);
-            if (result) {
-                let syncedPinned = newPinnedString;
-                if (result.data?.pointsGroups) {
-                    const groupEntry = result.data.pointsGroups[groupName];
-                    if (groupEntry) {
-                        const pinnedValue = groupEntry.pinned;
-                        if (pinnedValue !== undefined) {
-                            syncedPinned = pinnedValue;
-                        }
-                    }
-                }
-
-                ctx.setFavorites((prev) => {
-                    const syncedGroups = prev.groups.map((g) => {
-                        if (g.id === group.id) {
-                            return {
-                                ...g,
-                                pinned: normalizeBoolean(syncedPinned),
-                                updatetimems: result.updatetimems ?? g.updatetimems,
-                                clienttimems: result.clienttimems ?? g.clienttimems,
-                            };
-                        }
-                        return g;
-                    });
-                    return { ...prev, groups: syncedGroups };
-                });
-            }
-        } catch (e) {
-            ctx.setFavorites((prev) => ({ ...prev, groups: prevGroups }));
         }
     }
 
