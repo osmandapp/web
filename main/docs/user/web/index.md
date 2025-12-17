@@ -25,6 +25,10 @@ This section explains how to log in and sign up at [www.osmand.net/map](https://
 
 This section details additional map data such as Favorites, Personal Tracks, and Weather Layers.
 
+### [Weather](./web-weather.md) {#weather}
+
+This section explains how to view weather conditions and forecasts on the web map, including time-based forecasts and weather overlays.
+
 ### [Tracks](./web-tracks.md) {#tracks}
 
 This section covers working with personal GPX tracks on the web, including viewing, editing, organizing, and synchronizing them with OsmAnd Cloud.
