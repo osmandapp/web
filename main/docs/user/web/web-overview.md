@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Introduction
-title: Introduction to Web Map Portal
+title: Introduction to Web Planner
 ---
 
 import Tabs from '@theme/Tabs';
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-The [**OsmAnd Map Portal**](https://osmand.net/map) is a browser-based extension of the OsmAnd mobile app. It allows users to view global maps, plan routes, simulate navigation, manage personal data, and access synced content from their devices via the cloud.
+The **Web Planner**, also known as the [**OsmAnd Map Portal**](https://osmand.net/map), is a browser-based extension of the OsmAnd mobile app. It allows users to view global maps, plan routes, simulate navigation, manage personal data, and access synced content from their devices via the cloud.
 
 Designed as a cross-platform companion to OsmAnd for Android and iOS, the Web Portal helps users plan trips, analyze tracks, view terrain, and manage files using any desktop or tablet browser — without installing an app.
 
@@ -91,8 +91,6 @@ To access the full features of the OsmAnd Web Portal, you need to log in with an
 ![Web Account](@site/static/img/web/web_account.png)
 
 <!--
-After the structure of this section is approved, some links should be updated.
--->
 
 ## Settings {#settings}
 
@@ -145,9 +143,8 @@ In the Web Map Portal, the *General settings* (Display language, Units of length
 
 ![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
 
-<!--
-After the structure of this section is approved, some links should be updated.
 -->
+
 
 ## Related Articles {#related-articles}
 
