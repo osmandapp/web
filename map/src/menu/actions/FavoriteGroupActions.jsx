@@ -17,6 +17,8 @@ import {
     updateFavoriteGroups,
     updateFavGroupPinned,
     normalizeFavoritePointsGroupName,
+    PINNED_TRUE,
+    PINNED_FALSE,
 } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo } from '../../manager/ShareManager';
@@ -39,8 +41,8 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     }
 
     async function togglePinned() {
-        const newPinnedState = group.pinned !== 'true';
-        const newPinnedString = newPinnedState ? 'true' : 'false';
+        const newPinnedState = group.pinned !== PINNED_TRUE;
+        const newPinnedString = newPinnedState ? PINNED_TRUE : PINNED_FALSE;
         const groupName = normalizeFavoritePointsGroupName(group.name);
         let updatedPointsGroups = { ...group.pointsGroups };
         if (!updatedPointsGroups[groupName]) {
