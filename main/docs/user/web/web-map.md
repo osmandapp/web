@@ -15,7 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+
 
 :::info
 The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
@@ -23,6 +25,7 @@ The *[osmand.net/map](https://osmand.net/map/)* site is currently being develope
 
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
+-->
 
 
 ## Overview {#overview}
@@ -39,99 +42,64 @@ For opening it right click anywhere on the map. This menu includes the following
 - **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
 - **Open weather** – Access the [Weather menu](#weather-on-the-web) to view weather details.
 - **Create new route** – Opens the [*Plan a route* tool](../web/planner.md#navigation-route) with the selected location as the starting or destination point.
-- **Add Favorite** –  Allows you to create and save a [favorite](./web-favorites.md) at any point on the map for easy access.
+- **Add Favorite** –  Allows you to create and save a [favorite](../web/web-favorites.md#add--edit-favorite) at any point on the map for easy access.
 - **Directions from** –  Sets the selected point as the [starting location](../web/planner.md#navigation-route) for navigation.
 - **Directions to** – Sets the selected point as the [destination for navigation](../web/planner.md#navigation-route).
 - **Copy coordinates** – Copies the coordinates of the selected point for external use.
-- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 - **Show regions** – Displays the regions associated with the selected location.
+
+<!--
+- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
 
+Add pin option will be added back once it becomes available again.
+-->
 
-## Weather on the Web {#weather-on-the-web}
-
-The OsmAnd Web provides weather information from two forecast sources:
-
-- **GFS (default)**  
-- **ECMWF**  
-
-To switch between these forecast sources, click the **umbrella button** in the Weather menu.
-
-***Features of the weather menu:***  
-
-- **Current Weather Data**: Displays your coordinates along with the following data:
-
-  - Temperature.
-  - Precipitation.
-  - Wind.
-  - Air Pressure.
-  - Cloud Cover.
-
-- **Time Adjustment**: Modify the date and time using the **time tool** in the Weather menu to view weather for a specific moment.
-
-***Weather layers on the map:***  
-
-- Use the **layers button** to select and enable weather layers such as:
-
-  - Temperature.
-  - Pressure.
-  - Wind.
-  - Cloud Cover.
-  - Precipitation.
-
-***Viewing forecasts:***  
-
-- Weather forecasts are available for the **7-day** forecast.
-- Forecast updates are provided in **3-hour steps** for detailed insights.
-
-To access or customize these features, use the menus on the left or right side of the interface.
-
-  ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
-
-***7-Day Forecast***:  
-
-Click on the forecast data in the menu to view the **7-day forecast** for your location. The forecast is available in:
-
-- **Graph format**  
-- **List format**
-
-  ![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
+![Map Context menu](@site/static/img/web/map_context_menu_new.png)
 
 
 ## Configure Map Menu {#configure-map-menu}
 
-The Configure Map menu allows you to manage the display settings for map data, such as POI layers, Favorites, tracks, and terrain. Please log in to your OsmAnd account to use this menu section.
+The Configure Map menu allows you to manage the display settings for map data, such as POI layers, favorites, tracks, and terrain. This menu is available after you sign in to your OsmAnd account. To open it, click the button in the **top left corner** or access it through the **Menu**.
 
-To open this menu, click the button in the **top left corner** or access it through the **Menu**.
-
-- [POI overlay...](#poi-overlay-section). Allows you to choose and show needed POI categories on the map.
-- [Favorites](#favorites-section). Toggle the display of favorites on the map.
-- [Tracks](#tracks-section). Contains GPX tracks visible on the map.  
-- [Terrain](#terrain-section). Enable or disable the terrain color scheme on the map.
+- [POI overlay...](#poi-overlay). Allows you to choose and show needed POI categories on the map.
+- [Favorites](#favorites). Toggle the display of favorites on the map.
+- [Tracks](#tracks). Contains GPX tracks visible on the map.  
+- [Terrain](#terrain). Enable or disable the terrain color scheme on the map.
 
 ![POIs menu](@site/static/img/web/configure_map_web.png)
 
 
-### POI overlay section {#poi-overlay-section}
+### POI overlay {#poi-overlay}
 
-To show POIs on the map:
+The POI overlay feature lets you display Points of Interest (POIs) on the map by selected categories. This is useful when you want to browse places directly on the map.
 
-*Configure map menu → POI overlay...*. Here, you can choose categories to display on the map.
+To open the overlay: *Configure map menu → POI overlay*...The overlay list contains 18 categories. You can enable one category or enable multiple categories in any combination. When at least one category is enabled, the overlay provides a **Deselect all** action to clear the selection at once.
 
-Alternatively, you can use the [**Search section**](web-search.md) to find the desired place.
+**Note:** If you are looking for a specific place, you can also use the [**Search section**](web-search.md) on the map.
 
-![POIs menu](@site/static/img/web/poi_menu.png)
+Once POIs are displayed, selecting a POI marker on the map opens its details panel that shows information available for that object. Depending on the POI, it can include: place name and type, address, contact fields, OSM-related identifiers and coordinates, reference links (Wikipedia, Wikidata), when present. 
+
+For POIs that have online photos, the details panel shows an Online photos block with thumbnails. Show all opens a gallery view with the full photo list. In the photo viewer, OsmAnd Web displays photo metadata when available, including: date, author, license, and description.
+
+In the POI details panel, quick actions are available from the action buttons:
+- *Add to Favorites* — saves the POI to your Favorites.
+- *Share* — generates a shareable link that opens the POI directly in OsmAnd Web. The link includes the POI name, type, and coordinates (pin).
+- *Directions from* — sets the selected POI as the start point and opens the Route panel so you can choose a destination and profile.
+- *Navigation* — sets the selected POI as the destination point for navigation.
+
+![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
 
 
-### Favorites Section {#favorites-section}
+### Favorites {#favorites}
 
-With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](./web-favorites.md#favorites-on-the-web) will be displayed.
+With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](../web/web-favorites.md#manage-favorites) will be displayed.
 
 
-### Tracks section {#tracks-section}
+### Tracks {#tracks}
 
-This section contains a list of your [**GPX tracks visible on the map**](./web-tracks.md#visible-on-the-map) and **Recently Visible** tracks.
+This section contains a list of your [**GPX tracks visible on the map**](../web/web-tracks.md#visible-on-the-map) and **Recently Visible** tracks.
 
 - You can toggle tracks on or off directly.  
 - Switch tracks on or off from the **Recently Visible** list.  
@@ -148,7 +116,7 @@ Each track has a **Context Menu** (accessible via the ⋮ button) with the follo
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
-### Terrain section {#terrain-section}
+### Terrain {#terrain}
 
 The **Terrain** section is a paid feature <ProFeature/>. To use this feature, you must first log in to your OsmAnd Pro account.
 
@@ -161,6 +129,48 @@ In this section, you can:
 - Adjust the visibility of the selected terrain layer from **0% to 100%**.
 
 ![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+
+
+## Settings {#settings}
+
+In the Web Planner, the *General settings* (Display language, Units of length, Unit of speed) are available for all users, whether you are signed in or not. Once you log in with your OsmAnd account, an additional OsmAnd Cloud section appears in the Settings panel. You can read about OsmAnd Cloud [here](./web-cloud.md).
+
+### Language {#language}
+
+To switch the interface language:
+
+*Go to: Menu → ⚙ Settings → Display language*
+
+![Web Language](@site/static/img/web/web_language.png)
+
+### Units {#units}
+
+*Go to: Menu → ⚙ Settings → Units of length*  
+*Go to: Menu → ⚙ Settings → Unit of speed*
+
+You can choose which units are used to display distance, elevation and speed on the map, in route details and in measurement tools. This helps you keep OsmAnd consistent with your usual habits or regional standards.
+
+The **Units of length** option defines how horizontal distance and elevation are shown:
+- Kilometers/meters.
+- Miles/feet.
+- Miles/meters.
+- Miles/yards.
+- Nautical miles/meters.
+- Nautical miles/feet. 
+
+For example, a distance of 10 km will be shown as about 6.21 mi if you choose one of the Miles/... options, or as about 5.40 nmi when Nautical miles/... is selected.
+
+The **Unit of speed** option controls how current speed and speed limits are displayed:
+- Kilometers per hour.
+- Miles per hour.
+- Meters per second.
+- Minutes per mile.
+- Minutes per kilometer.
+- Nautical miles per hour (knots). 
+
+For example, a speed of 90 km/h corresponds to 25 m/s or about 55.92 mph.
+
+![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -231,4 +241,11 @@ Depending on the specified parameters, URL strings can contain:
 11. Direct link to the current [**Explore page**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
 
 
+## Related Articles {#related-articles}
+
+- [Map Context Menu](../map/map-context-menu.md)
+- [OsmAnd Account](./web-cloud.md)
+- [Tracks](./web-tracks.md)
+- [Favorites](./web-favorites.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)
 

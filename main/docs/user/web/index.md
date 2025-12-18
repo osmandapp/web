@@ -23,7 +23,7 @@ This section explains how to log in and sign up at [www.osmand.net/map](https://
 
 ### [Map](./web-map.md) {#map}
 
-This section details additional map data such as Favorites, Personal Tracks, and Weather Layers.
+This section covers the OsmAnd Web map interface, including map menu, layer configuration, settings, and URL links.
 
 ### [Weather](./web-weather.md) {#weather}
 
