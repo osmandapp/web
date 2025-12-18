@@ -63,28 +63,38 @@ Add pin option will be added back once it becomes available again.
 
 The Configure Map menu allows you to manage the display settings for map data, such as POI layers, favorites, tracks, and terrain. This menu is available after you sign in to your OsmAnd account. To open it, click the button in the **top left corner** or access it through the **Menu**.
 
-- [POI overlay...](#poi-overlay-section). Allows you to choose and show needed POI categories on the map.
-- [Favorites](#favorites-section). Toggle the display of favorites on the map.
-- [Tracks](#tracks-section). Contains GPX tracks visible on the map.  
-- [Terrain](#terrain-section). Enable or disable the terrain color scheme on the map.
+- [POI overlay...](#poi-overlay). Allows you to choose and show needed POI categories on the map.
+- [Favorites](#favorites). Toggle the display of favorites on the map.
+- [Tracks](#tracks). Contains GPX tracks visible on the map.  
+- [Terrain](#terrain). Enable or disable the terrain color scheme on the map.
 
 ![POIs menu](@site/static/img/web/configure_map_web.png)
 
 
 ### POI overlay {#poi-overlay}
 
-To show POIs on the map:
+The POI overlay feature lets you display Points of Interest (POIs) on the map by selected categories. This is useful when you want to browse places directly on the map.
 
-*Configure map menu → POI overlay...*. Here, you can choose categories to display on the map.
+To open the overlay: *Configure map menu → POI overlay*...The overlay list contains 18 categories. You can enable one category or enable multiple categories in any combination. When at least one category is enabled, the overlay provides a **Deselect all** action to clear the selection at once.
 
-Alternatively, you can use the [**Search section**](web-search.md) to find the desired place.
+**Note:** If you are looking for a specific place, you can also use the [**Search section**](web-search.md) on the map.
 
-![POIs menu](@site/static/img/web/poi_menu.png)
+Once POIs are displayed, selecting a POI marker on the map opens its details panel that shows information available for that object. Depending on the POI, it can include: place name and type, address, contact fields, OSM-related identifiers and coordinates, reference links (Wikipedia, Wikidata), when present. 
+
+For POIs that have online photos, the details panel shows an Online photos block with thumbnails. Show all opens a gallery view with the full photo list. In the photo viewer, OsmAnd Web displays photo metadata when available, including: date, author, license, and description.
+
+In the POI details panel, quick actions are available from the action buttons:
+- *Add to Favorites* — saves the POI to your Favorites.
+- *Share* — generates a shareable link that opens the POI directly in OsmAnd Web. The link includes the POI name, type, and coordinates (pin).
+- *Directions from* — sets the selected POI as the start point and opens the Route panel so you can choose a destination and profile.
+- *Navigation* — sets the selected POI as the destination point for navigation.
+
+![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
 
 
 ### Favorites {#favorites}
 
-With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](../web/web-favorites.md) will be displayed.
+With one click, you can toggle favorites on or off on the map. However, only favorites with [**Show on map enabled**](../web/web-favorites.md#manage-favorites) will be displayed.
 
 
 ### Tracks {#tracks}
@@ -238,6 +248,4 @@ Depending on the specified parameters, URL strings can contain:
 - [Tracks](./web-tracks.md)
 - [Favorites](./web-favorites.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
-
-
 
