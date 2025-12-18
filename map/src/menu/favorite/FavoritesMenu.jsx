@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteGroup from './FavoriteGroup';
-import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
+import { DEFAULT_FAV_GROUP_NAME, HIDDEN_TRUE } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
 import { Box, LinearProgress } from '@mui/material';
 import GroupHeader from '../actions/GroupHeader';
@@ -44,7 +44,7 @@ export default function FavoritesMenu() {
 
             groups.forEach((g) => {
                 const isPinned = g.pinned;
-                const isHidden = g.hidden === 'true';
+                const isHidden = g.hidden === HIDDEN_TRUE;
                 if (isPinned) {
                     if (isHidden) {
                         pinnedHidden.push(g);

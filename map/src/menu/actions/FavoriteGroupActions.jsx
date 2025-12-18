@@ -41,18 +41,16 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     async function togglePinned() {
         const newPinnedValue = !group.pinned;
         const groupName = normalizeFavoritePointsGroupName(group.name);
-        let updatedPointsGroups = { ...group.pointsGroups };
-        if (!updatedPointsGroups[groupName]) {
-            updatedPointsGroups[groupName] = {};
+        const updatedPointsGroups = { ...group.pointsGroups };
+        if (updatedPointsGroups[groupName]) {
+            updatedPointsGroups[groupName].pinned = newPinnedValue;
+            await updateFavGroupPinned({
+                group,
+                updatedPointsGroups,
+                groupName,
+                ctx,
+            });
         }
-        updatedPointsGroups[groupName].pinned = newPinnedValue;
-
-        await updateFavGroupPinned({
-            group,
-            updatedPointsGroups,
-            groupName,
-            ctx,
-        });
         if (setOpenActions) {
             setOpenActions(false);
         }
