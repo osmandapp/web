@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteGroup from './FavoriteGroup';
-import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
+import { DEFAULT_FAV_GROUP_NAME, HIDDEN_TRUE } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
 import { Box, LinearProgress } from '@mui/material';
 import GroupHeader from '../actions/GroupHeader';
@@ -14,6 +14,7 @@ import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
+import PinnedFavoriteGroups from './PinnedFavoriteGroups';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -21,15 +22,12 @@ export default function FavoritesMenu() {
 
     const { t } = useTranslation();
 
-    const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
     const [sortGroups, setSortGroups] = useState([]);
 
     const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
 
-    // get list of favorites groups
-    const groupItems = useMemo(() => {
-        const items = [];
+    const { pinnedGroups, unpinnedGroups } = useMemo(() => {
         let groups = null;
         if (sortGroups && sortGroups.length > 0) {
             groups = sortGroups;
@@ -39,19 +37,33 @@ export default function FavoritesMenu() {
         if (groups) {
             // remove shared with me groups from main list
             groups = groups.filter((g) => !g.sharedWithMe);
-            groups.forEach((g, index) => {
-                items.push(
-                    <FavoriteGroup
-                        key={g + index}
-                        index={index}
-                        group={g}
-                        enableGroups={enableGroups}
-                        setEnableGroups={setEnableGroups}
-                    />
-                );
+            const pinnedVisible = [];
+            const pinnedHidden = [];
+            const unpinnedVisible = [];
+            const unpinnedHidden = [];
+
+            groups.forEach((g) => {
+                const isPinned = g.pinned;
+                const isHidden = g.hidden === HIDDEN_TRUE;
+                if (isPinned) {
+                    if (isHidden) {
+                        pinnedHidden.push(g);
+                    } else {
+                        pinnedVisible.push(g);
+                    }
+                } else {
+                    if (isHidden) {
+                        unpinnedHidden.push(g);
+                    } else {
+                        unpinnedVisible.push(g);
+                    }
+                }
             });
+            const pinnedGroups = pinnedVisible.concat(pinnedHidden);
+            const unpinnedGroups = unpinnedVisible.concat(unpinnedHidden);
+            return { pinnedGroups, unpinnedGroups };
         }
-        return items;
+        return { pinnedGroups: [], unpinnedGroups: [] };
     }, [ctx.favorites?.groups, sortGroups]);
 
     useEffect(() => {
@@ -97,7 +109,10 @@ export default function FavoritesMenu() {
                         maxWidth={ctx.infoBlockWidth}
                         sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}
                     >
-                        {groupItems}
+                        <PinnedFavoriteGroups pinnedGroups={pinnedGroups} />
+                        {unpinnedGroups.map((g, index) => (
+                            <FavoriteGroup key={g.id ?? index} index={index} group={g} />
+                        ))}
                     </Box>
                 ) : (
                     <Empty

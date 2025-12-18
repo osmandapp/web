@@ -6,11 +6,18 @@ import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_group.svg';
+import { ReactComponent as PinnedIcon } from '../../assets/icons/ic_action_drawing_pin.svg';
+import { ReactComponent as UnpinnedIcon } from '../../assets/icons/ic_action_drawing_pin_disable.svg';
 import Utils from '../../util/Utils';
 import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
 import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
-import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
+import {
+    updateAllFavorites,
+    updateFavoriteGroups,
+    updateFavGroupPinned,
+    normalizeFavoritePointsGroupName,
+} from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
 import { getShareFileInfo } from '../../manager/ShareManager';
 import { SHARE_TYPE } from '../share/shareConstants';
@@ -18,7 +25,6 @@ import { SHARE_TYPE } from '../share/shareConstants';
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload, smartf = null }, ref) => {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
@@ -27,6 +33,24 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     function showOnMap(hidden) {
         ctx.setFavLoading(true);
         updateGroup(group, hidden);
+        if (setOpenActions) {
+            setOpenActions(false);
+        }
+    }
+
+    async function togglePinned() {
+        const newPinnedValue = !group.pinned;
+        const groupName = normalizeFavoritePointsGroupName(group.name);
+        const updatedPointsGroups = { ...group.pointsGroups };
+        if (updatedPointsGroups[groupName]) {
+            updatedPointsGroups[groupName].pinned = newPinnedValue;
+            await updateFavGroupPinned({
+                group,
+                updatedPointsGroups,
+                groupName,
+                ctx,
+            });
+        }
         if (setOpenActions) {
             setOpenActions(false);
         }
@@ -93,6 +117,25 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                                         onChange={(e) => showOnMap(e.target.checked)}
                                     />
                                 </div>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {!sharedFile && <Divider className={styles.dividerActions} />}
+                    {!sharedFile && (
+                        <MenuItem
+                            id="se-favorite-folder-actions-pinned"
+                            className={styles.action}
+                            onClick={togglePinned}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                {group.pinned ? <UnpinnedIcon /> : <PinnedIcon />}
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    {group.pinned
+                                        ? t('web:shared_string_unpin_folder')
+                                        : t('web:shared_string_pin_folder')}
+                                </Typography>
                             </ListItemText>
                         </MenuItem>
                     )}

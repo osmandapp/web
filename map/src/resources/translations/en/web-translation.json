@@ -235,5 +235,7 @@
   "gpx_approximation_geo_java": "Geometry-based Java",
   "gpx_approximation_geo_cpp": "Geometry-based C++",
   "gpx_approximation_routing_java": "Routing-based Java",
-  "gpx_approximation_routing_cpp": "Routing-based C++"
+  "gpx_approximation_routing_cpp": "Routing-based C++",
+  "shared_string_unpin_folder": "Unpin folder",
+  "shared_string_pin_folder": "Pin folder"
 }
