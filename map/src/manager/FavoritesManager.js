@@ -294,9 +294,10 @@ export async function updateFavGroupPinned({ group, updatedPointsGroups, groupNa
     ctx.setFavorites((prev) => {
         const groups = prev.groups.map((g) => {
             if (g.id === group.id) {
+                const newPinned = result.data?.pointsGroups?.[groupName]?.pinned;
                 return {
                     ...g,
-                    pinned: result.data.pointsGroups[groupName].pinned,
+                    pinned: newPinned ?? g.pinned,
                     updatetimems: result.updatetimems ?? g.updatetimems,
                     clienttimems: result.clienttimems ?? g.clienttimems,
                 };

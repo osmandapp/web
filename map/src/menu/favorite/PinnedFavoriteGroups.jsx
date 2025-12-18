@@ -1,5 +1,4 @@
 import React from 'react';
-import isEmpty from 'lodash-es/isEmpty';
 import FavoriteGroup from './FavoriteGroup';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 
@@ -14,7 +13,7 @@ export default function PinnedFavoriteGroups({ pinnedGroups }) {
                     showDivider={index !== pinnedGroups.length - 1}
                 />
             ))}
-            {!isEmpty(pinnedGroups) && <DividerWithMargin margin="0px" />}
+            {pinnedGroups.length > 0 && <DividerWithMargin margin="0px" />}
         </>
     );
 }
