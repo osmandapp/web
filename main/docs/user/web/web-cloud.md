@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-sidebar_label:  Sign Up / Login
-title: Sign Up / Login
+sidebar_label:  Account
+title: OsmAnd Account
 ---
 
 import Tabs from '@theme/Tabs';
@@ -21,10 +21,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-Signing in with an OsmAnd account turns the [OsmAnd Map Portal](https://osmand.net/map) from a simple map viewer into your personal workspace. The same account that you use in the mobile app connects the website to your OsmAnd Cloud data and purchases, so you can access your saved content and subscriptions in a single place on the web.
+Signing in with an OsmAnd account turns the [OsmAnd Web Planner](https://osmand.net/map) from a simple map viewer into your personal workspace. The same account that you use in the mobile app connects the website to your OsmAnd Cloud data and purchases, so you can access your saved content and subscriptions in a single place on the web.
 
 
-## Sign Up {#sign-up}
+## Authorization {#authorization}
+
+### Sign Up {#sign-up}
 
 To access OsmAnd Web features, you need to create an account. Use the Sign Up flow:
 
@@ -40,28 +42,12 @@ After the code is verified, your web account is created and you are signed in au
 ![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
 
 
-## Login {#login}
+### Login {#login}
 
 If you already have an OsmAnd account, you can sign in on the [**OsmAnd Map Portal**](https://osmand.net/map) with the same email and password. Go to the **Account menu** and choose the **Log in option**. In the dialog that opens, enter the email address linked to your OsmAnd account, type your password, and select **Continue**. After a successful login, the OsmAnd Account panel opens and you can work with your data, purchases and settings.
 
-If you do not remember your password, use the **I don’t have or forgot password** link in the login dialog. This opens the **Change or reset password** panel. Enter the email address you used to create your account and click **Continue**. A message with a verification code is sent to this email. On the next screen, type the verification code and your new password, then select **Continue** to confirm. When the code is accepted, your password is updated and you can log in to OsmAnd Web with the new credentials.
-
-![Web Account](@site/static/img/web/web_password.png)
 
 ## Managing Account {#managing-account}
-
-Once you are signed in, you can manage your web account.  
-Go to: *General Menu → Account*
-
-From this panel you can:
-- View account information.
-- Download cloud backups.
-- Log out of your account.
-- Delete your account.
-- Change your email address.
-- See your payments and purchases.
-
-![Web Account](@site/static/img/web/web_account_2.png)
 
 ### My Data {#my-data}
 
@@ -110,6 +96,37 @@ For more details on using your purchases across different platforms, read about 
 
 ![Web Account](@site/static/img/web/web_purchases.png)
 
+### Cloud Sync {#cloud-sync}
+
+Cloud Sync lets you access the data you synced to OsmAnd Cloud directly on the [Web Map Portal](https://osmand.net/map/). Once you sign in with your OsmAnd Start or OsmAnd Pro account, the website displays the Favorites, Tracks, and backup files that you previously synced from your mobile app. It’s a simple way to view your cloud content on a larger screen and download your backups whenever you need.
+
+These items become visible in the menu right after you sign in on the website. To update this information, you need to sync your data from your devices using the [Sync now action](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) in the mobile app.
+
+Cloud Sync availability depends on your account type:
+- OsmAnd Start – syncs [Favorites](../web/web-favorites.md) and displays them on the web.
+- OsmAnd Pro – syncs [Tracks](../web/web-tracks.md), Favorites, and [Backups](#my-data), and unlocks full web access to cloud data.
+
+![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+
+### OsmAnd Cloud {#osmand-cloud}
+
+When you are signed in, the OsmAnd Cloud section appears in Menu → Settings and includes Changes and Trash.
+
+**Changes** option shows a chronological list of files stored in your OsmAnd Cloud account. Items are grouped by month and include the file name, the type of change (for example, added, modified or deleted), the time of the last update and the device that created it. For each entry, you can open the three-dot menu and choose *Download* to save the selected file to your computer, or *Delete*.
+
+**Trash** option contains files that were deleted from OsmAnd Cloud. The list is also grouped by month and shows when each file was removed and from which device. Use the three-dot menu next to a file to *Download* a copy, *Restore from trash* (return the file to OsmAnd Cloud so it becomes available again in your data), or *Delete immediately* to remove it permanently. This helps prevent accidental data loss while still letting you free up cloud storage when you are sure a file is no longer needed. You can also clear all deleted items at once by clicking the Trash icon in the Trash panel header. This opens the **Empty trash** dialog, where you confirm deletion to permanently remove all files from Trash.
+
+![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+
+
+## Troubleshooting {#troubleshooting}
+
+### Reset Password {#reset-password}
+
+If you do not remember your password, use the **I don’t have or forgot password** link in the login dialog. This opens the **Change or reset password** panel. Enter the email address you used to create your account and click **Continue**. A message with a verification code is sent to this email. On the next screen, type the verification code and your new password, then select **Continue** to confirm. When the code is accepted, your password is updated and you can log in to OsmAnd Web with the new credentials.
+
+![Web Account](@site/static/img/web/web_password.png)
+
 ### Change Email Address {#change-email-address}
 
 To update your email address,
@@ -130,19 +147,6 @@ To log out, open OsmAnd Account and use the **Logout** button in the top-right c
 To delete an account, select **Delete account** at the bottom of the OsmAnd Account panel. A confirmation dialog appears with the message *“Are you sure you want to do this?”* and a short explanation that all data and account details will be removed from OsmAnd Cloud and secondary devices will lose access to paid features. A verification code is sent to the account email address. Enter the code in the Code from Email field and choose **DELETE THIS ACCOUNT** to complete the process. This operation is permanent and cannot be undone.
 
 ![Web Account](@site/static/img/web/web_delete.png)
-
-
-## Cloud Sync {#cloud-sync}
-
-Cloud Sync lets you access the data you synced to OsmAnd Cloud directly on the [Web Map Portal](https://osmand.net/map/). Once you sign in with your OsmAnd Start or OsmAnd Pro account, the website displays the Favorites, Tracks, and backup files that you previously synced from your mobile app. It’s a simple way to view your cloud content on a larger screen and download your backups whenever you need.
-
-These items become visible in the menu right after you sign in on the website. To update this information, you need to sync your data from your devices using the [Sync now action](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) in the mobile app.
-
-Cloud Sync availability depends on your account type:
-- OsmAnd Start – syncs [Favorites](../web/web-favorites.md) and displays them on the web.
-- OsmAnd Pro – syncs [Tracks](../web/web-tracks.md), Favorites, and [Backups](#my-data), and unlocks full web access to cloud data.
-
-![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
 
 <!--
 ## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
@@ -205,6 +209,4 @@ In this section of the menu, you can change the map style. You can read more abo
 - [Cross-Platform Purchases](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
 
-<!--
-When the structure has been approved, some links should be updated.
--->
+

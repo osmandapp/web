@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 In this section, you will find a description of our [Web Planner](https://osmand.net/map).
 
-### [Sign Up / Login](./web-cloud.md) {#sign-up--login}
+### [Account](./web-cloud.md) {#account}
 
 This section explains how to log in and sign up at [www.osmand.net/map](https://osmand.net/map/) and highlights the benefits users receive after registering.
 
