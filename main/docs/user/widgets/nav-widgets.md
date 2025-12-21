@@ -324,6 +324,13 @@ The *Route Guidance* widgets contain information about:
 | Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lanes**: No changes. |
 
 
+### Lanes {#lanes}
+
+![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+
+The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. A distance indicator is also shown below the lane diagram, representing how far remains until the maneuver where the lane guidance applies. This widget is available only for Top and Bottom panels. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### Next Turn {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -342,16 +349,21 @@ The *Route Guidance* widgets contain information about:
 
 </Tabs>
 
-The navigation widgets **Next turn**, **Next turn (small)**, **Second next turn** can be placed on any panel for user convenience. However, the information displayed differs depending on the widget type and its placement. The table below summarizes the behavior:
+The navigation widgets **Next turn**, **Next turn (small)**, **Second next turn** can be placed on any panel for user convenience. However, the information displayed differs depending on the widget type and its placement. 
 
-|   Widget/Panel   | Left panel    | Right panet   | Top panel              | Bottom panel           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Next turn**        | Distance only | Distance only | Street name + distance | Street name + distance |
-| **Next turn (small)**| Distance only | Distance only | Not available          | Not available          |
-| **Second next turn** | Distance only | Distance only | Street name + distance | Street name + distance |
+In Top / Bottom panels, the Next turn and Second next turn widgets can be displayed as Full width (one widget per row) or Half width (two widgets per row). The content depends on the layout and the selected widget size (S / M / L).
 
+Full width shows:
+- First line — Distance to the turn + Exit N (if available)
+- Second line — Road number with a shield + road/street name
 
-### Color Prompts for Next Turn {#color-prompts-for-next-turn}
+Half width shows:
+- First line — Distance to the turn
+- Second line — Exit N (if available) + road number with a shield + road/street name
+
+**Next turn** uses a large arrow and supports Full width / Half width layouts in Top / Bottom panels. **Next turn (small)** uses a small arrow with the distance placed next to the arrow and is intended for the Left / Right panels. **Second next turn** shows the maneuver after the next turn and becomes active when the second maneuver is within the approach distance.
+
+### Color Prompts {#color-prompts}
 
 This table shows the approximate time until the prompts are activated and the corresponding color indication of the arrows to perform the maneuver. For more information, refer to the [technical documentation](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) or in the article [Voice prompts](../navigation/guidance/voice-navigation.md).
 
@@ -361,13 +373,9 @@ This table shows the approximate time until the prompts are activated and the co
 | 🟡 Yellow | 20 seconds     | Approaching| Turn in `x` m   |
 | ⚪ Grey   | > 100 seconds  | Distant    | Prepare to turn |
 
+The same color meaning applies to the Lanes widget. The Lanes widget is shown according to approach time settings, and lane colors follow the voice prompt stage.
 
-### Lanes {#lanes}
-
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
-
-The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. A distance indicator is also shown below the lane diagram, representing how far remains until the maneuver where the lane guidance applies. This widget is available only for Top and Bottom panels. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
-
+<!--
 ### Color Prompts for Lanes {#color-prompts-for-lanes}
 
 Displays a widget by approach time settings. Lane's color is associated with [voice prompts](../navigation/guidance/voice-navigation.md) and time remaining to perform the maneuver.
@@ -376,7 +384,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 | :-------- | :------------- | :---------- | :---------- |
 | 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 | 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+-->
 
 
 ## Alert Widget {#alert-widget}
