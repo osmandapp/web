@@ -63,6 +63,49 @@ Typical sections include:
 ![Web Navigation](@site/static/img/web/navigation_settings.png) ![Web Navigation](@site/static/img/web/navigation_settings_2.png)
 
 
+## Attaching Track {#attaching-track}
+
+The **Attach to roads** block lets you use an existing GPX track as the basis for navigation. OsmAnd Web matches the track to nearby roads to provide turn-by-turn guidance.
+
+When you click Select track, the browser opens a file picker where you can choose a .gpx file from your computer. After you select a track:
+- The track is displayed on the map and used to calculate the route.
+- Route summary (distance and time) is shown in the Route panel.
+- The selected file appears under Selected track (with the track’s filename).
+- You can remove the attached track using the minus (–) button next to Selected track.
+
+
+## Route Details {#route-details}
+
+When a route is calculated, the panel shows a basic summary (distance, time, uphill/downhill) and a **Details** button. Use Details to open the route view with two tabs: Info and Turns.
+
+Info summarizes the route and elevation data:
+- **Points** — the number of route points used to build the route.
+- **Route** — distance and time.
+- **Uphill/Downhill** — total ascent and descent.
+- **Elevation (min/avg/max)** — elevation statistics for the route.
+- **Elevation (Satellite)** — Recalculate to rebuild elevation using satellite data (if available).
+
+Below the summary, the elevation chart helps you inspect the route profile. You can toggle Elevation and Slope, and use the slider under the chart to focus on a specific part of the route.
+
+Use Turns for turn-by-turn guidance. The route is also marked with orange circles along the line. Click a circle to open a pop-up with the corresponding navigation instruction. The pop-up can also include:
+- Avoid — avoids that specific segment.
+- Way ID — a link to the underlying OSM way for that part of the route.
+
+![Web Navigation](@site/static/img/web/navigation_info.png) ![Web Navigation](@site/static/img/web/navigation_turns.png)
+
+### Download and Save {#download-and-save}
+
+Use *Download* to export the route as a track. The download dialog offers two options:
+Full track data — includes full data, including navigation instructions.
+Simplified track — a lighter version that’s more suitable for use with other apps.
+
+You can save the route as a track using *Save to Cloud / Upload to OsmAnd Cloud*. This opens a dialog where you can confirm saving to cloud tracks, edit the Name, optionally choose a Folder, then Save or Cancel.
+
+### Share a Route {#share-a-route}
+
+To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+
 ## Related Articles {#related-articles}
 
 - [Route Preparation](../navigation/setup/route-navigation.md)
