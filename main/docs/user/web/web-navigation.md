@@ -40,6 +40,29 @@ Swap Start and Destination — swaps the Start and Destination while keeping int
 ![Web Navigation](@site/static/img/web/navigation_points.png)
 
 
+## Routing Profile {#routing-profile}
+
+At the top of the Route panel, you can choose a routing profile for your route. A set of commonly used profiles is shown as four icons. To access more options, open the three-dots menu next to the profile icons. It expands the full list of available profiles.
+
+When you switch the profile, Navigation updates the route to match the selected travel mode.
+
+![Web Navigation](@site/static/img/web/navigation_profile.png)
+
+
+## Navigation Settings {#navigation-settings}
+
+To adjust how routes are calculated, open Settings using the gear icon in the Route panel. Settings are grouped into sections that you can expand/collapse. The set of sections and options depends on the selected routing profile, so you’ll see different parameters for different travel modes.
+
+Typical sections include:
+
+- **General** — profile-specific options (for example, in the car profile you can see toggles like *Fuel-efficient way* and *Goods delivery*).
+- **Allow** — options that permit specific road or path types when routing .
+- **Avoid** — options that exclude certain road types or situations from the route (for example, avoiding toll roads, ferries, motorways, tunnels, etc.).
+- **Vehicle parameters** — available for vehicle-based profiles. Lets you specify vehicle constraints (such as dimensions/weight), which can influence routing on restricted roads.
+
+![Web Navigation](@site/static/img/web/navigation_settings.png) ![Web Navigation](@site/static/img/web/navigation_settings_2.png)
+
+
 ## Related Articles {#related-articles}
 
 - [Route Preparation](../navigation/setup/route-navigation.md)
