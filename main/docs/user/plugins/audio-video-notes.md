@@ -244,7 +244,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 
 <TabItem value="android" label="Android">
 
-![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![The widget](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -271,9 +271,9 @@ Adding a widget to the screen is necessary if you prefer to avoid searching for 
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - start taking photos.
 
-    ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+### External Input Devices {#external-input-devices}   
 
-**Using external input devices (*Android*)**. If you use an [external input device](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), you can start and stop Audio/Video Notes without touching the screen. To do this, assign the “Add audio note” or “Add video note” action to a key:<br/>
+If you use an [external input device](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*), you can start and stop Audio/Video Notes without touching the screen. To do this, assign the “Add audio note” or “Add video note” action to a key:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Once assigned, the key works as a toggle:
