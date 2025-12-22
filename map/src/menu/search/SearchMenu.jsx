@@ -37,6 +37,7 @@ import { SEARCH_RESULTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/us
 import ExploreMenu from './explore/ExploreMenu';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
+export const SEARCH_POI_ALL_MODE = 'all';
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
@@ -232,10 +233,6 @@ export default function SearchMenu() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
     }
 
-    function searchByCategory(category) {
-        navigateToSearchResults({ query: category, type: SEARCH_TYPE_CATEGORY });
-    }
-
     return (
         <>
             {ltx.isLoggedIn() ? (
@@ -293,7 +290,12 @@ export default function SearchMenu() {
                                                                     }
                                                                     key={key + catName}
                                                                     onClick={(e) => {
-                                                                        searchByCategory(catName);
+                                                                        navigateToSearchResults({
+                                                                            query: catName,
+                                                                            type: SEARCH_TYPE_CATEGORY,
+                                                                            key: item,
+                                                                            mode: SEARCH_POI_ALL_MODE,
+                                                                        });
                                                                         e.preventDefault();
                                                                     }}
                                                                 >
