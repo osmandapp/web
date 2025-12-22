@@ -361,8 +361,6 @@ export default function PoiLayer() {
         if (!showPoiCategories || showPoiCategories.length === 0) {
             return null;
         }
-        const catArr = [];
-        const catArrLang = {};
         //add fields for restoring the previous search result
         let prevSearchRes;
         let prevSearchCategory;
@@ -375,15 +373,10 @@ export default function PoiLayer() {
                     console.warn('Only one category can be searched at a time');
                 }
             }
-            if (obj.lang) {
-                catArrLang[obj.key] = obj.lang;
-            }
-            catArr.push(obj.category);
         });
 
         const searchData = {
-            categories: catArr,
-            categoriesLang: catArrLang,
+            categories: showPoiCategories,
             northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
             southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
             savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,

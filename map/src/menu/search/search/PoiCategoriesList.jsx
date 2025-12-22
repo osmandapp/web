@@ -16,6 +16,7 @@ import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
+import { SEARCH_POI_ALL_MODE } from '../SearchMenu';
 
 export default function PoiCategoriesList({ categories, setSearchValue, categoriesIcons, loadingIcons }) {
     const ctx = useContext(AppContext);
@@ -87,6 +88,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                                         query: catName,
                                         type: SEARCH_TYPE_CATEGORY,
                                         key: category,
+                                        mode: SEARCH_POI_ALL_MODE,
                                     });
                                     ctx.setPoiCatMenu(false);
                                 }}

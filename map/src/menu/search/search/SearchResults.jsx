@@ -47,6 +47,7 @@ export function searchByCategory(searchParams, ctx) {
         query: formattingPoiType(searchParams.query),
         type: searchParams.type,
         key: searchParams.key,
+        mode: searchParams.mode,
     };
     ctx.setSearchQuery({
         search: preparedValue,
