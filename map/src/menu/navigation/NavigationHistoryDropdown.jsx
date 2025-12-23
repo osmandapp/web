@@ -73,31 +73,11 @@ export default function NavigationHistoryDropdown({
 
     const shouldShow = isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0) && !hasExactMatch;
 
-    const prevShouldShowRef = useRef(shouldShow);
-
-    // Restore focus when menu closes
-    useEffect(() => {
-        if (!inputRef) return;
-
-        if (prevShouldShowRef.current && !shouldShow && inputRef?.current) {
-            // Menu just closed, ensure input keeps focus
-            requestAnimationFrame(() => {
-                if (inputRef?.current && document.activeElement !== inputRef.current) {
-                    inputRef.current.focus();
-                }
-            });
-        }
-        prevShouldShowRef.current = shouldShow;
-    }, [shouldShow]);
-
     const handleHistoryItemClick = (item, e) => {
         e.preventDefault();
         e.stopPropagation();
         if (onHistorySelect) {
             onHistorySelect(item);
-        }
-        if (inputRef?.current) {
-            inputRef.current.blur();
         }
     };
 
@@ -113,13 +93,16 @@ export default function NavigationHistoryDropdown({
     };
 
     const handleMenuClose = () => {
-        if (inputRef?.current) {
-            requestAnimationFrame(() => {
-                if (inputRef?.current && document.activeElement !== inputRef.current) {
-                    inputRef.current.focus();
-                }
-            });
+        if (!isFocused || !inputRef?.current) {
+            return;
         }
+
+        // Restore focus only when menu closes while this input is still considered active.
+        requestAnimationFrame(() => {
+            if (inputRef?.current && document.activeElement !== inputRef.current) {
+                inputRef.current.focus();
+            }
+        });
     };
 
     return (

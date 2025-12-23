@@ -56,6 +56,21 @@ const NavigationInput = forwardRef(function NavigationInput(
         };
     }, []);
 
+    // Close this history dropdown when another input opens its history
+    useEffect(() => {
+        const handleHistoryOpen = (e) => {
+            const otherId = e.detail?.inputId;
+            if (otherId && otherId !== inputId) {
+                setShowHistory(false);
+            }
+        };
+
+        globalThis.addEventListener('nav-history-open', handleHistoryOpen);
+        return () => {
+            globalThis.removeEventListener('nav-history-open', handleHistoryOpen);
+        };
+    }, [inputId]);
+
     const handleChange = (e) => {
         const newValue = e.target.value;
         setInputValue(newValue);
@@ -69,6 +84,7 @@ const NavigationInput = forwardRef(function NavigationInput(
     };
 
     const handleClick = () => {
+        globalThis.dispatchEvent(new CustomEvent('nav-history-open', { detail: { inputId } }));
         setShowHistory(true);
     };
 
@@ -84,10 +100,6 @@ const NavigationInput = forwardRef(function NavigationInput(
             }
             // Also update inputValue directly to ensure it shows immediately
             setInputValue(displayValue);
-            // Call onBlur to process the value (like pressing Enter)
-            if (onBlur) {
-                onBlur(displayValue);
-            }
         }
         setShowHistory(false);
     };
