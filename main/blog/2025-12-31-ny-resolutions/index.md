@@ -32,59 +32,83 @@ The journey continues — and we’re thrilled to have you with us.
 
 ## 2026 New Year Resolutions
 
-At OsmAnd, each new year brings new inspiration and a renewed drive to make navigation even better. As we step into 2026, we’re setting ambitious goals to push innovation further and deliver an even smoother, smarter experience for every user. Here’s what we’re looking forward to this year.
-
-
-### Configure Map with Map Legend
- 
-![Map legend](./img/configure_map_legend_legend.png)
-
-Have you ever wondered what every map symbol stands for? With our new map legend tool, you can effortlessly configure and understand layers, tailoring your view for any adventure.
-
-
-### Smartwatches
-
-![Wear os](./img/smartwatch.png)
-
-At OsmAnd, each year brings exciting advancements in external device connectivity. In 2023, we introduced external sensor support. In 2024, it was the OBD-II protocol. Now, for 2025, we’re thrilled to announce smartwatch integration!
-
-With this new feature, you’ll be able to browse and record tracks or view simple navigation instructions directly on your wrist.
+At OsmAnd, every new year brings fresh ideas and an even stronger drive to make navigation smarter, faster, and more intuitive. As we step into 2026, we’re excited to continue innovating and delivering a more seamless experience for every traveler. Here’s a glimpse of what’s coming next.
 
 
 ### 3D Buildings
 
-*A new dimension of exploration*. Experience richer, more immersive navigation with detailed 3D building representations on your maps.
+![3D Buildings](./img/3d_buildings.png)
+
+*A new dimension of exploration.*  
+Discover maps like never before with detailed 3D building representations that make navigation more immersive and visually engaging.
 
 
-### Share Favorites / GPX / Location
+### Globe View
 
-*Stay connected and share the adventure*. Share GPX files, favorite locations, or real-time routes with your friends and family directly from OsmAnd.
+![Globe View](./img/globe_view.png)
+
+Experience the world as it truly is — round!  
+In 2026, OsmAnd will introduce **Globe View**, allowing you to see the planet from a global perspective and explore routes across continents with ease.
+
+
+### Configure Map with Map Legend
+
+![Map Legend](./img/configure_map_legend_legend.png)
+
+In 2025, we expanded route configuration options.  
+Next in 2026, we’re releasing a **Map Legend tool** — giving you full control over how your map looks and helping you understand every layer at a glance. Tailor your OsmAnd maps perfectly for your next adventure.
+
+
+### Smartwatch Integration
+
+![Smartwatch](./img/smartwatch.png)
+
+In 2025, we laid the groundwork for wearable integration — and now it’s coming to life!  
+In 2026, OsmAnd will launch **Smartwatch support**, allowing you to browse and record tracks, or follow navigation instructions right from your wrist. Compact, convenient, and perfect for explorers on the move.
+
+
+### Astronomy Plugin
+
+![Astronomy](./img/astronomy.png)
+
+We’re reaching for the stars — literally.  
+A new **Astronomy plugin** will arrive in 2026, letting you identify planets, stars, and constellations right from your map. Explore the night sky as easily as you explore the Earth.
+
+
+### Share Favorites, GPX, and Locations
+
+*Stay connected. Share the adventure.*  
+Easily share your favorite places, GPX tracks, or real-time locations with your friends and family directly from OsmAnd. Whether you’re hiking, cycling, or traveling together — sharing is just one tap away.
 
 
 ### And More to Come!
 
-Our journey doesn’t stop here. In 2025, expect:
+Our journey doesn’t end here!  
+In 2026, you can also look forward to:
 
-- More features for Web version of OsmAnd - [osmand.net](https://osmand.net/map).
-- Weather information along your route.
-- Automatic cloud synchronization for seamless data sharing. 
-- Alternative routes.
+- Enhanced features for the OsmAnd Web Map — [osmand.net](https://osmand.net/map)
+- Integrated weather information along your route
+- Alternative route suggestions
 - Smarter route planning with advanced options
-- New and improved widgets for ultimate customization.
+- New and improved widgets for deeper customization
+
+Stay tuned — the best of OsmAnd is yet to come!
 
 
 ## 2025: A Year of Transformation
 
 In 2025, OsmAnd reached new milestones that reshaped the way you navigate the world. Here’s a glimpse of how we turned resolutions into reality, bringing innovation and usability to every corner of our app.
 
-[4.7](https://osmand.net/blog/osmand-ios-4-7-released), [4.8](https://osmand.net/blog/osmand-ios-4-8-released), [4.9](https://osmand.net/blog/osmand-ios-4-9-released) **(iOS)**; [4.7](https://osmand.net/blog/osmand-android-4-7-released), [4.8](https://osmand.net/blog/osmand-android-4-8-released), [4.9](https://osmand.net/blog/osmand-android-4-9-released) **(Android)**, [1.01](https://osmand.net/blog/osmand-web-1-01-released/) Map **Web**.
+[5.0](https://osmand.net/blog/osmand-ios-5-0-released), [5.1](https://osmand.net/blog/osmand-ios-5-1-released), [5.2](https://osmand.net/blog/osmand-ios-5-2-released) **(iOS)**; [5.0](https://osmand.net/blog/osmand-android-5-0-released), [5.1](https://osmand.net/blog/osmand-android-5-1-released), [5.2](https://osmand.net/blog/osmand-android-5-2-released) **(Android)**, [web beta 1.02](https://osmand.net/docs/user/web/) Map **Web**.
 
-[Resolutions 2024](https://osmand.net/blog/ny-resolutions-2024):
+[Resolutions 2025](https://osmand.net/blog/ny-resolutions-2025):
 
-- ✔️ **Customizable quick actions and widgets**. Effortlessly tailor your navigation tools. Custom and default buttons, quick actions for the external keyboard - each feature is designed to meet your unique needs.
-- ✔️ **Enhanced map visualizations**. Experience the world in greater detail with redesigned menus, weather animations, and specialized maps like dirt bike trails.
-- ✔️ **Smarter Routing and Navigation**. With features like fast offline routing, auto-zoom, and new widgets, your journeys have never been smoother or more efficient.
-- ✔️ **Visual Exploration with Photos**. Dive into rich visual content with Wikimedia gallery viewers for both web and Android.
+- ✔️ **Main Navigation Widgets**. Customizable tools that keep essential route info at your fingertips for smoother journeys.
+- ✔️ **Configure Map with Map Legend**. Decode every symbol effortlessly — full control over map layers for personalized adventures.
+- ✔️ **Extended Route Details**. Deeper insights into time, distance, and alternatives to help you plan smarter.
+- ✔️ **Explore Popular Places**. Discover hotspots with improved *Explore* functionality and enhanced POI photo galleries on Android and iOS.
+- ✔️ **Share Favorites, GPX, and Locations**. One-tap sharing of tracks, spots, and live routes to keep adventures connected.
+- ✔️ **Fast Offline Routing**. The game-changer of 2025 — lightning-fast route calculations for long-distance travel, even without internet.
 
 
 ### iOS
