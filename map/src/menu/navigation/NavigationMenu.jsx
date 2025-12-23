@@ -34,6 +34,7 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
     PROFILE_LINE,
+    PROFILE_RESCUETRACK,
 } from '../../store/geoRouter/profileConstants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -185,7 +186,10 @@ export default function NavigationMenu() {
         if (ctx.routeTrackFile) {
             return true;
         }
-        if (navObject.getProfile()?.profile === PROFILE_LINE) {
+        if (
+            navObject.getProfile()?.profile === PROFILE_LINE ||
+            navObject.getProfile()?.profile.startsWith(PROFILE_RESCUETRACK)
+        ) {
             return navObject.getRoute() && !navObject.preview && !ctx.navigationRoutingInProgress;
         }
         return (
