@@ -350,7 +350,7 @@ export default function InformationBlock({
                                 id="se-infoblock-all"
                                 style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
                             >
-                                <Box sx={{ flexShrink: 0 }}>
+                                <Box>
                                     {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                                     <IconButton
                                         id={ctx.selectedGpxFile.mapObj ? 'se-button-close' : 'se-button-back'}
