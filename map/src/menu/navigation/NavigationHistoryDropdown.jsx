@@ -67,8 +67,9 @@ export default function NavigationHistoryDropdown({
     }, [history, value]);
 
     const isInputEmpty = !value || value.trim() === '';
-
-    const shouldShowCurrentLocation = isInputEmpty && hasCurrentLocation;
+    // Show "Current location" item always when input is empty,
+    // even if browser/location permission is disabled.
+    const shouldShowCurrentLocation = isInputEmpty;
 
     const shouldShow = isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0) && !hasExactMatch;
 
@@ -95,6 +96,9 @@ export default function NavigationHistoryDropdown({
         if (onHistorySelect) {
             onHistorySelect(item);
         }
+        if (inputRef?.current) {
+            inputRef.current.blur();
+        }
     };
 
     const handleClearHistoryClick = (e) => {
@@ -102,6 +106,9 @@ export default function NavigationHistoryDropdown({
         e.stopPropagation();
         if (onClearHistory) {
             onClearHistory();
+        }
+        if (inputRef?.current) {
+            inputRef.current.blur();
         }
     };
 
@@ -155,6 +162,20 @@ export default function NavigationHistoryDropdown({
                         icon={<LocationIcon />}
                         name={t('web:current_location')}
                         onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            if (!hasCurrentLocation) {
+                                ctx.setNotification({
+                                    text: t('web:location_disabled_message'),
+                                    severity: 'info',
+                                });
+                                if (inputRef?.current) {
+                                    inputRef.current.blur();
+                                }
+                                return;
+                            }
+
                             handleHistoryItemClick(
                                 {
                                     lat: currentLocationRaw.lat,
