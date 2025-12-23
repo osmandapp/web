@@ -58,7 +58,7 @@ Typical sections include:
 - **General** — profile-specific options (for example, in the car profile you can see toggles like *Fuel-efficient way* and *Goods delivery*).
 - **Allow** — options that permit specific road or path types when routing .
 - **Avoid** — options that exclude certain road types or situations from the route (for example, avoiding toll roads, ferries, motorways, tunnels, etc.).
-- **Vehicle parameters** — available for vehicle-based profiles. Lets you specify vehicle constraints (such as dimensions/weight), which can influence routing on restricted roads.
+- **[Vehicle parameters](../navigation/guidance/vehicle-parameters.md)** — available for vehicle-based profiles. Lets you specify vehicle constraints (such as dimensions/weight), which can influence routing on restricted roads.
 
 ![Web Navigation](@site/static/img/web/navigation_settings.png) ![Web Navigation](@site/static/img/web/navigation_settings_2.png)
 
@@ -76,6 +76,8 @@ When you click Select track, the browser opens a file picker where you can choos
 
 ## Route Details {#route-details}
 
+![Web Navigation](@site/static/img/web/navigation_info.png) ![Web Navigation](@site/static/img/web/navigation_turns.png)
+
 When a route is calculated, the panel shows a basic summary (distance, time, uphill/downhill) and a **Details** button. Use Details to open the route view with two tabs: Info and Turns.
 
 Info summarizes the route and elevation data:
@@ -91,7 +93,13 @@ Use Turns for turn-by-turn guidance. The route is also marked with orange circle
 - Avoid — avoids that specific segment.
 - Way ID — a link to the underlying OSM way for that part of the route.
 
-![Web Navigation](@site/static/img/web/navigation_info.png) ![Web Navigation](@site/static/img/web/navigation_turns.png)
+You can fine-tune the route directly on the map by dragging route markers to a different place. When you click and drag a marker to another road (or to a nearby location) and then release it:
+- OsmAnd Web recalculates the route to pass through the new position.
+- The moved marker is converted into a new intermediate point.
+- The new intermediate point appears in the Route panel as an additional point inserted above the Destination, and the route summary  updates accordingly.
+- You can manage the added via point the same way as other [intermediate points](#manage-route-points).
+
+![Web Navigation](@site/static/img/web/navigation_on_map.png)
 
 ### Download and Save {#download-and-save}
 
@@ -110,4 +118,5 @@ To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792
 
 - [Route Preparation](../navigation/setup/route-navigation.md)
 - [Navigation Settings](../navigation/guidance/navigation-settings.md)
+- [Vehicle Parameters](../navigation/guidance/vehicle-parameters.md)
 - [Plan Route](../web/planner.md)
