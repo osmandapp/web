@@ -337,77 +337,101 @@ export default function InformationBlock({
                     )}
                     {isOpenMainFavShareFile() && <ShareFile />}
                     {hasOldTabs() && (
-                        <Box anchor={'right'} sx={{ height: 'auto', overflowX: 'hidden' }}>
-                            <div id="se-infoblock-all">
-                                {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
-                                <IconButton
-                                    id={ctx.selectedGpxFile.mapObj ? 'se-button-close' : 'se-button-back'}
-                                    size="small"
-                                    edge="start"
-                                    color="inherit"
-                                    aria-label="menu"
-                                    className={styles.appBarIcon}
-                                    sx={{ mx: '11px', my: '11px' }}
-                                    onClick={() => {
-                                        setShowInfoBlock(false);
+                        <Box
+                            anchor={'right'}
+                            sx={{
+                                height: '100vh',
+                                overflowX: 'hidden',
+                                display: 'flex',
+                                flexDirection: 'column',
+                            }}
+                        >
+                            <div
+                                id="se-infoblock-all"
+                                style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+                            >
+                                <Box sx={{ flexShrink: 0 }}>
+                                    {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
+                                    <IconButton
+                                        id={ctx.selectedGpxFile.mapObj ? 'se-button-close' : 'se-button-back'}
+                                        size="small"
+                                        edge="start"
+                                        color="inherit"
+                                        aria-label="menu"
+                                        className={styles.appBarIcon}
+                                        sx={{ mx: '11px', my: '11px' }}
+                                        onClick={() => {
+                                            setShowInfoBlock(false);
 
-                                        // not change object type if track analyzer is active, because return to prev menu
-                                        if (!isTrackAnalyzer(ctx)) {
-                                            ctx.setCurrentObjectType(null);
-                                        }
-                                        if (ctx.selectedGpxFile.mapObj) {
-                                            ctx.setCloseMapObj(true);
-                                            if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
-                                                ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].mapObj = null));
+                                            // not change object type if track analyzer is active, because return to prev menu
+                                            if (!isTrackAnalyzer(ctx)) {
+                                                ctx.setCurrentObjectType(null);
                                             }
-                                        } else if (isCloudTrack(ctx)) {
-                                            hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
-                                            if (!isEmpty(ctx.selectedGpxFile)) {
-                                                ctx.setSelectedGpxFile({});
-                                            }
-                                            setTrackName(null);
-                                            setSavePrevState(true);
-                                            ctx.setSelectedCloudTrackObj(null);
+                                            if (ctx.selectedGpxFile.mapObj) {
+                                                ctx.setCloseMapObj(true);
+                                                if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
+                                                    ctx.mutateGpxFiles(
+                                                        (o) => (o[ctx.selectedGpxFile.name].mapObj = null)
+                                                    );
+                                                }
+                                            } else if (isCloudTrack(ctx)) {
+                                                hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+                                                if (!isEmpty(ctx.selectedGpxFile)) {
+                                                    ctx.setSelectedGpxFile({});
+                                                }
+                                                setTrackName(null);
+                                                setSavePrevState(true);
+                                                ctx.setSelectedCloudTrackObj(null);
 
-                                            navigate({
-                                                pathname: MAIN_URL_WITH_SLASH + trackType,
-                                                hash: window.location.hash,
-                                            });
-                                        } else if (isLocalTrack(ctx)) {
-                                            if (!isEmpty(ctx.selectedGpxFile)) {
-                                                ctx.setSelectedGpxFile({});
+                                                navigate({
+                                                    pathname: MAIN_URL_WITH_SLASH + trackType,
+                                                    hash: window.location.hash,
+                                                });
+                                            } else if (isLocalTrack(ctx)) {
+                                                if (!isEmpty(ctx.selectedGpxFile)) {
+                                                    ctx.setSelectedGpxFile({});
+                                                }
+                                                ctx.setSelectedLocalTrackObj(null);
                                             }
-                                            ctx.setSelectedLocalTrackObj(null);
-                                        }
-                                    }}
-                                >
-                                    {ctx.selectedGpxFile.mapObj ? <CloseIcon /> : <BackIcon />}
-                                </IconButton>
+                                        }}
+                                    >
+                                        {ctx.selectedGpxFile.mapObj ? <CloseIcon /> : <BackIcon />}
+                                    </IconButton>
+                                </Box>
                                 {tabsObj && tabsObj.tabList.length > 0 && (
-                                    <TabContext value={value}>
-                                        <AppBar position="static" color="default">
+                                    <Box
+                                        sx={{
+                                            flex: 1,
+                                            minHeight: 0,
+                                            overflowY: 'auto',
+                                            overflowX: 'hidden',
+                                        }}
+                                    >
+                                        <TabContext value={value}>
+                                            <AppBar position="static" color="default">
+                                                <div>
+                                                    <TabList
+                                                        variant="scrollable"
+                                                        scrollButtons
+                                                        onChange={(e, newValue) => setValue(newValue)}
+                                                    >
+                                                        {tabsObj.tabList}
+                                                    </TabList>
+                                                </div>
+                                            </AppBar>
                                             <div>
-                                                <TabList
-                                                    variant="scrollable"
-                                                    scrollButtons
-                                                    onChange={(e, newValue) => setValue(newValue)}
-                                                >
-                                                    {tabsObj.tabList}
-                                                </TabList>
+                                                {Object.values(tabsObj.tabs).map((item) => (
+                                                    <PersistentTabPanel
+                                                        key={'tabpanel-desktop:' + item.key}
+                                                        selectedTabId={value}
+                                                        tabId={item.key}
+                                                    >
+                                                        {item}
+                                                    </PersistentTabPanel>
+                                                ))}
                                             </div>
-                                        </AppBar>
-                                        <div>
-                                            {Object.values(tabsObj.tabs).map((item) => (
-                                                <PersistentTabPanel
-                                                    key={'tabpanel-desktop:' + item.key}
-                                                    selectedTabId={value}
-                                                    tabId={item.key}
-                                                >
-                                                    {item}
-                                                </PersistentTabPanel>
-                                            ))}
-                                        </div>
-                                    </TabContext>
+                                        </TabContext>
+                                    </Box>
                                 )}
                             </div>
                         </Box>
