@@ -51,6 +51,10 @@ export default async function test() {
     await matchTextBy(By.id('se-route-start-point-history-item-0'), formatLatLon(NEW_START_LATLNG));
 
     await clickBy(By.id('se-navigation-title'));
+    await clickBy(By.id('se-route-finish-point'));
+    await waitByRemoved(By.id('se-route-start-point-history'));
+
+    await clickBy(By.id('se-navigation-title'));
 
     await clickBy(By.id('se-route-start-point'));
     await clickBy(By.id('se-route-start-point-clear'));

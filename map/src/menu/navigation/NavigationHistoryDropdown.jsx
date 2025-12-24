@@ -107,6 +107,7 @@ export default function NavigationHistoryDropdown({
 
     return (
         <Menu
+            id={`${inputId}-history`}
             anchorEl={anchorEl?.current}
             open={shouldShow}
             onClose={handleMenuClose}
