@@ -41,6 +41,10 @@ Saved places displayed on the map, with options to organize them into folders, m
 
 This section focuses on analyzing track segments between selected points on the map and comparing key parameters across multiple tracks.
 
+### [Navigation](./web-navigation.md) {#navigation}
+
+This section explains how to build and preview navigation routes on the web map, including routing profiles, settings, and route details.
+
 ### [Plan Route](./planner.md) {#plan-route}
 
 This section provides information on planning routes or creating navigation using different profiles.
