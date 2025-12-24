@@ -118,6 +118,28 @@ export default function NavigationMenu() {
 
     const [profilesMenuAnchor, setProfilesMenuAnchor] = useState(null);
     const [visibleProfiles, setVisibleProfiles] = useState(ctx.routeVisibleProfiles || DEFAULT_VISIBLE_PROFILES);
+    const [profilesReady, setProfilesReady] = useState(false);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(globalThis.location.search);
+        const urlProfile = searchParams.get('profile');
+        if (!urlProfile) {
+            setProfilesReady(true);
+            return;
+        }
+        const profile = navObject.listProfiles().find((p) => p.key === urlProfile);
+        if (!profile) {
+            return;
+        }
+        if (urlProfile && visibleProfiles[0] !== urlProfile) {
+            const newVisibleProfiles = visibleProfiles.filter((key) => key !== urlProfile);
+            newVisibleProfiles.unshift(urlProfile);
+            const updatedProfiles = newVisibleProfiles.slice(0, MAX_VISIBLE_PROFILES);
+            setVisibleProfiles(updatedProfiles);
+            ctx.setRouteVisibleProfiles(updatedProfiles);
+        }
+        setProfilesReady(true);
+    }, [navObject.listProfiles()]);
 
     useEffect(() => {
         if (!ctx.routeTrackFile) {
@@ -264,7 +286,23 @@ export default function NavigationMenu() {
             />
             <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box className={styles.profileButtonBox}>
-                    {visibleProfiles.map((key) => {
+                    {visibleProfiles.map((key, index) => {
+                        if (index === 0 && !profilesReady) {
+                            return (
+                                <Box
+                                    key="loading"
+                                    sx={{
+                                        width: 40,
+                                        height: 40,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <CircularProgress size={24} />
+                                </Box>
+                            );
+                        }
                         const profile = navObject.listProfiles().find((p) => p.key === key);
                         if (!profile) return null;
                         return (
