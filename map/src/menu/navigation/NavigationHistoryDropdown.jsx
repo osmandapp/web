@@ -145,6 +145,7 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-current-location`}
                         icon={<LocationIcon />}
                         name={t('web:current_location')}
+                        className={styles.historyItem}
                         onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
@@ -198,6 +199,7 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-history-item-${index}`}
                         icon={icon}
                         name={item.getDisplayValue()}
+                        className={styles.historyItem}
                         maxLines={1}
                         onClick={(e) => {
                             handleHistoryItemClick(item, e);
@@ -216,6 +218,7 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-history-clear`}
                         icon={<ClearIcon />}
                         name={t('web:clear_history')}
+                        className={styles.historyItem}
                         onClick={handleClearHistoryClick}
                         onMouseDown={(e) => {
                             e.preventDefault();
