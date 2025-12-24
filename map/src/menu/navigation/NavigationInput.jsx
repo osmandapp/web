@@ -82,8 +82,11 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const handleBlur = (e) => {
         const relatedTarget = e.relatedTarget;
-        // If focus is moving to the history dropdown, don't clear focus
+        // If focus is moving to the history dropdown, restore it immediately
         if (relatedTarget?.closest('.MuiMenu-root')) {
+            if (inputRef.current) {
+                inputRef.current.focus();
+            }
             return;
         }
 
