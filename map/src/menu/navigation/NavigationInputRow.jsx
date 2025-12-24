@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Box } from '@mui/material';
 import NavigationInput from './NavigationInput';
+import NavigationHistoryDropdown from './NavigationHistoryDropdown';
 import { ReactComponent as StartIcon } from '../../assets/icons/list_startpoint.svg';
 import { ReactComponent as IntermediateIcon } from '../../assets/icons/list_intermediate.svg';
 import { ReactComponent as FinishIcon } from '../../assets/icons/list_destination.svg';
@@ -42,6 +43,9 @@ export default function NavigationInputRow({
     isFirstIntermediate = false,
 }) {
     const [isDraggable, setIsDraggable] = useState(false);
+    const [showHistory, setShowHistory] = useState(false);
+
+    const containerRef = useRef(null);
 
     const showSwap = type === START_POINT;
     const showRemove = type === INTERMEDIATE_POINT;
@@ -60,8 +64,10 @@ export default function NavigationInputRow({
         }
     };
 
-    const handleDragHandleMouseDown = () => {
+    const handleDragHandleMouseDown = (e) => {
+        e.stopPropagation();
         setIsDraggable(true);
+        setShowHistory(false);
     };
 
     const handleDragEnd = (e) => {
@@ -112,13 +118,26 @@ export default function NavigationInputRow({
                     focused={focused}
                     showDragHandle={true}
                     onDragHandleMouseDown={handleDragHandleMouseDown}
-                    history={history}
-                    onHistorySelect={onHistorySelect}
-                    onClearHistory={onClearHistory}
                     type={type}
                     hasIntermediates={hasIntermediates}
                     isFirstIntermediate={isFirstIntermediate}
+                    showHistory={showHistory}
+                    setShowHistory={setShowHistory}
+                    containerRef={containerRef}
+                    isDraggable={isDraggable}
                 />
+                {!isDragging && !isDraggable && (
+                    <NavigationHistoryDropdown
+                        history={history}
+                        value={value}
+                        isFocused={showHistory}
+                        anchorEl={containerRef}
+                        onHistorySelect={onHistorySelect}
+                        onClearHistory={onClearHistory}
+                        inputId={inputId}
+                        inputRef={inputRef}
+                    />
+                )}
             </Box>
             <Box className={styles.actionButtons}>
                 {showSwap && (
