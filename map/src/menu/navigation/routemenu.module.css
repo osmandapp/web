@@ -273,3 +273,6 @@
 .historyItem {
     gap: 14px !important;
 }
+.navigationSettingsItem {
+    max-height: 48px !important;
+}
