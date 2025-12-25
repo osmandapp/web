@@ -80,11 +80,11 @@ export class navigationObject extends geoObject {
         } else if (!name) {
             displayValue = formatLatLon(new LatLng(lat, lon));
         }
-
+        const icon = wpt.iconName || wpt.icon;
         const wptForIcon = {
             name: wpt.name,
             poiType: wpt.poiType,
-            icon: wpt.icon,
+            icon,
             color: wpt.color,
             background: wpt.background,
         };
@@ -97,7 +97,7 @@ export class navigationObject extends geoObject {
                 wpt: wptForIcon,
                 color: wpt.color,
                 background: wpt.background,
-                icon: wpt.icon,
+                icon,
             },
             displayValue,
         });

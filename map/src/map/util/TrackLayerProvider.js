@@ -47,7 +47,7 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
             }
         }
     });
-    parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts, groupId });
+    parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts, groupId, type });
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
@@ -385,7 +385,16 @@ export function getPointLatLon(point) {
 // When the 'title' attribute is set on a marker, Leaflet automatically creates a default tooltip
 // displaying the 'title' content. This tooltip is hardcoded and cannot be removed or modified
 // through typical methods.
-function parseWpt({ points, layers, ctx = null, data = null, map = null, simplify = false, groupId = null }) {
+function parseWpt({
+    points,
+    layers,
+    ctx = null,
+    data = null,
+    map = null,
+    simplify = false,
+    groupId = null,
+    type = GPX_FILE_TYPE,
+}) {
     const zoom = map.getZoom();
     const lat = map.getCenter().lat;
     const clusters = simplify
@@ -412,6 +421,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
         let coords = new L.LatLng(lat, lon);
         if (icon) {
             opt = { clickable: true, icon: icon };
+            opt.iconName = point.icon;
             if (pInfo?.time) {
                 opt.time = pInfo.time;
             }
@@ -439,16 +449,18 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null, simplif
             return;
         }
         if (ctx && map && data) {
-            marker.on('click', (e) => {
-                const wpt = {
-                    trackWpt: true,
-                    mapObj: true,
-                    trackData: data,
-                    ...e,
-                    ...point,
-                };
-                ctx.setSelectedWpt(wpt);
-            });
+            if (type === GPX_FILE_TYPE) {
+                marker.on('click', (e) => {
+                    const wpt = {
+                        trackWpt: true,
+                        mapObj: true,
+                        trackData: data,
+                        ...e,
+                        ...point,
+                    };
+                    ctx.setSelectedWpt(wpt);
+                });
+            }
             createHoverMarker({
                 marker,
                 mainStyle: true,
