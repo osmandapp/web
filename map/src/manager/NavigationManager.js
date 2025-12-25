@@ -1,5 +1,9 @@
 import { ROUTE_POINTS_FINISH, ROUTE_POINTS_START, ROUTE_POINTS_VIA } from '../store/geoRouter/profileConstants';
 
+export const NAVIGATION_OBJECT_TYPE_LOCATION = 'location';
+export const NAVIGATION_OBJECT_TYPE_SEARCH = 'search';
+export const NAVIGATION_OBJECT_TYPE_FAVORITE = 'favorite';
+
 export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
     if (!navObject) {
         return null;

@@ -1,10 +1,11 @@
 import { geoObject } from '../geoObject/geoObject.js';
 import { LatLng } from 'leaflet';
 import { formatLatLon } from '../../menu/navigation/NavigationPointsManager';
-
-export const NAVIGATION_OBJECT_TYPE_LOCATION = 'location';
-export const NAVIGATION_OBJECT_TYPE_SEARCH = 'search';
-export const NAVIGATION_OBJECT_TYPE_FAVORITE = 'favorite';
+import {
+    NAVIGATION_OBJECT_TYPE_LOCATION,
+    NAVIGATION_OBJECT_TYPE_SEARCH,
+    NAVIGATION_OBJECT_TYPE_FAVORITE,
+} from '../../manager/NavigationManager';
 
 /**
  * navigationObject represents a navigation point with coordinates and metadata
@@ -80,7 +81,7 @@ export class navigationObject extends geoObject {
         } else if (!name) {
             displayValue = formatLatLon(new LatLng(lat, lon));
         }
-        const icon = wpt.iconName || wpt.icon;
+        const icon = wpt.iconName || wpt.web_poi_iconName || wpt.icon;
         const wptForIcon = {
             name: wpt.name,
             poiType: wpt.poiType,

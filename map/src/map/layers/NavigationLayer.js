@@ -11,7 +11,7 @@ import {
     ROUTE_POINTS_AVOID_ROADS,
 } from '../../store/geoRouter/profileConstants';
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
-import { navigationObject, NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../store/navigationObject/navigationObject';
+import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
 
 const DRAG_DEBOUNCE_MS = 10;
@@ -116,9 +116,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 event.preventDefault();
             }
 
-            const point = wpt
-                ? navigationObject.fromWpt(wpt, NAVIGATION_OBJECT_TYPE_FAVORITE)
-                : L.latLng(coords.lat, coords.lng);
+            const point = wpt ? navigationObject.fromWpt(wpt, wpt.type) : L.latLng(coords.lat, coords.lng);
 
             // remove focus from all inputs
             globalThis.dispatchEvent(new Event('nav-blur'));

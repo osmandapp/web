@@ -19,6 +19,7 @@ import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
 
 export function restoreOriginalIcon(layer) {
     if (layer.options.originalIcon) {
@@ -310,9 +311,12 @@ const FavoriteLayer = () => {
                 const lon = e.latlng?.lng ?? e.sourceTarget?._latlng?.lng;
 
                 if (lat && lon) {
-                    const wpt = { ...e.sourceTarget.options };
-                    wpt.lat = lat;
-                    wpt.lng = lon;
+                    const wpt = {
+                        ...e.sourceTarget.options,
+                        lat,
+                        lng: lon,
+                        type: NAVIGATION_OBJECT_TYPE_FAVORITE,
+                    };
                     const navEvent = new CustomEvent('nav-marker-click', {
                         detail: {
                             wpt,
