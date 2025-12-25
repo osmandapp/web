@@ -20,6 +20,7 @@ export default function NavigationHistoryDropdown({
     history = [],
     value = '',
     isFocused = false,
+    setShowHistory,
     anchorEl,
     onHistorySelect,
     onClearHistory,
@@ -79,6 +80,9 @@ export default function NavigationHistoryDropdown({
         if (onHistorySelect) {
             onHistorySelect(item);
         }
+        if (setShowHistory) {
+            setShowHistory(false);
+        }
     };
 
     const handleClearHistoryClick = (e) => {
@@ -86,6 +90,9 @@ export default function NavigationHistoryDropdown({
         e.stopPropagation();
         if (onClearHistory) {
             onClearHistory();
+        }
+        if (setShowHistory) {
+            setShowHistory(false);
         }
         if (inputRef?.current) {
             inputRef.current.blur();
@@ -147,9 +154,6 @@ export default function NavigationHistoryDropdown({
                         name={t('web:current_location')}
                         className={styles.historyItem}
                         onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-
                             if (!hasCurrentLocation) {
                                 ctx.setNotification({
                                     text: t('web:location_disabled_message'),

@@ -131,6 +131,7 @@ export default function NavigationInputRow({
                         history={history}
                         value={value}
                         isFocused={showHistory}
+                        setShowHistory={setShowHistory}
                         anchorEl={containerRef}
                         onHistorySelect={onHistorySelect}
                         onClearHistory={onClearHistory}
