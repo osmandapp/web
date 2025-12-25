@@ -68,8 +68,8 @@ export class navigationObject extends geoObject {
 
         if (lat == null || lon == null) return null;
 
-        const name = wpt.name || '';
-        const poiType = wpt.poiType || null;
+        const name = wpt.name || wpt.wikiTitle || '';
+        const poiType = wpt.poiType || wpt.poitype || null;
         const category = wpt.category || null;
 
         // Build display value

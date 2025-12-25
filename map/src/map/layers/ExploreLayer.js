@@ -26,6 +26,8 @@ import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { navigateToPoi } from '../../manager/PoiManager';
 import { useNavigate } from 'react-router-dom';
+import { NAVIGATE_URL } from '../../manager/GlobalManager';
+import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
@@ -448,6 +450,36 @@ export default function ExploreLayer() {
     function addEventListeners({ marker, place, main = false, latlng, iconSize = SIMPLE_ICON_SIZE }) {
         // Add click event to open information about the place
         marker.on('click', (e) => {
+            if (globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                const lat = e.latlng?.lat ?? latlng?.lat;
+                const lon = e.latlng?.lng ?? latlng?.lng;
+
+                if (lat && lon) {
+                    const wpt = {
+                        ...place.properties,
+                        lat,
+                        lng: lon,
+                        type: NAVIGATION_OBJECT_TYPE_SEARCH,
+                    };
+                    const navEvent = new CustomEvent('nav-marker-click', {
+                        detail: {
+                            wpt,
+                            latlng: L.latLng(lat, lon),
+                        },
+                        cancelable: true,
+                    });
+                    navEvent.originalEvent = e.originalEvent;
+                    globalThis.dispatchEvent(navEvent);
+
+                    // If NavigationLayer handled it (found empty input), don't open info
+                    if (navEvent.defaultPrevented) {
+                        L.DomEvent.stopPropagation(e);
+                        return;
+                    }
+                }
+            }
+
+            // Normal logic: open info
             openInfo(e, place);
         });
 
