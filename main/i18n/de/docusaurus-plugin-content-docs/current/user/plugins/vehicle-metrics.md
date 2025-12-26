@@ -1,5 +1,5 @@
 ---
-source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
+source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
 sidebar_position: 16
 title:  Fahrzeugmetriken
 ---
@@ -119,7 +119,7 @@ Wählen Sie Ihr OBD-II-Gerät aus der Liste aus und stellen Sie die Verbindung h
 - **Umbenennen**. Ermöglicht es Ihnen, dem Sensor zur leichteren Identifizierung einen benutzerdefinierten Namen zuzuweisen.
 - **Vergessen**. Entfernt den zuvor gekoppelten OBD-II-Sensor aus der Liste, sodass bei Bedarf eine erneute Kopplung erforderlich ist.
 
-**Wiederverbindungsverhalten** *(Nur Android)*:** OsmAnd versucht automatisch, sich mit dem OBD-II-Adapter neu zu verbinden, wenn die Anwendung gestartet wird, wenn die Navigation gestartet wird oder wenn Android Auto gestartet wird. Wenn keine Verbindung verfügbar ist, zeigen die Fahrzeugmetriken-Widgets „–“. Ein einzelner Tippen auf ein beliebiges Fahrzeugmetriken-Widget versucht, sich mit dem Sensor neu zu verbinden. Wenn der Sensor bereits verbunden ist, wechselt der Tippen den Anzeigemodus des Widgets wie gewohnt.
+**Wiederverbindungsverhalten:** OsmAnd versucht automatisch, sich mit dem OBD-II-Adapter neu zu verbinden, wenn die Anwendung gestartet wird, wenn die Navigation gestartet wird oder wenn Android Auto / CarPlay gestartet wird. Wenn keine Verbindung verfügbar ist, zeigen die Fahrzeugmetriken-Widgets „–“. Ein einzelner Tippen auf ein beliebiges Fahrzeugmetriken-Widget versucht, sich mit dem Sensor neu zu verbinden. Wenn der Sensor bereits verbunden ist, wechselt der Tippen den Anzeigemodus des Widgets wie gewohnt.
 
 
 ## Metrikenliste {#metrics-list}

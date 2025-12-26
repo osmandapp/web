@@ -1,5 +1,5 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Topografie
 ---
@@ -215,7 +215,7 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 
 | Schummerung | Neigung | Höhe |
 | ------ | ------- | ------- |
-| ![Schummerung](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Schummerung](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) | ![Höhe](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Schummerung** basiert auf der Simulation der Oberflächenbeleuchtung unter Verwendung von Geländedaten. Diese Methode beinhaltet die Erzeugung von Schatten und Lichtern basierend auf dem Winkel der Oberfläche zur Lichtquelle. Als Ergebnis sehen Sie natürliche Hügel, Täler und andere Geländedetails auf der Karte.  
 
@@ -250,7 +250,7 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 ### Farbschema ändern {#modify-color-scheme}
 
 :::info Kostenpflichtige Funktion
-*Farbschema ändern* ist eine kostenpflichtige **OsmAnd Pro**-Funktion für [iOS](../purchases/ios.md#pro-features) und [Android](../purchases/android.md#pro-features) <ProFeature />.
+*[Farbschema ändern](../../user/personal/color-palette-schemes.md#terrain)* ist eine kostenpflichtige **OsmAnd Pro**-Funktion für [iOS](../purchases/ios.md#pro-features) und [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -289,7 +289,7 @@ Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-Die Funktion *Skalierungsstufen* ermöglicht es Ihnen, die minimalen und maximalen Werte der Kartenzoomstufen von 4 bis 19 festzulegen, bei denen die Schummerungs- oder Neigungskartenebenen angezeigt werden.
+Die Funktion *Zoomstufen* ermöglicht es Ihnen, die minimalen und maximalen Werte der Kartenzoomstufen von 4 bis 19 festzulegen, bei denen die Schummerungs- oder Neigungskartenebenen angezeigt werden.
 
 ### Cache-Größe {#cache-size}
 
@@ -314,7 +314,7 @@ Die Funktion *Skalierungsstufen* ermöglicht es Ihnen, die minimalen und maximal
 
 ![QA für Gelände](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Sie können die *Schnellaktions*-Schaltflächen auf dem Kartenbildschirm verwenden, um die Sichtbarkeit der Ebenen [Höhenlinien](#contour-lines), [Gelände](#terrain) und des [Gelände-Farbschemas](#default-color-scheme) umzuschalten. Abhängig von der im Menü "Karte konfigurieren" ausgewählten Ebene wird durch Zuweisen einer *Gelände*-Aktion zur Schaltfläche *Schummerung*, *Neigung* oder *Höhe* angezeigt.  
+Sie können die *Schnellaktions*-Schaltflächen auf dem Kartenbildschirm verwenden, um die Sichtbarkeit der Ebenen [Höhenlinien](#contour-lines), [Gelände](#terrain) und des [Gelände-Farbschemas](../../user/personal/color-palette-schemes.md#quick-actions) umzuschalten. Abhängig von der im Menü "Karte konfigurieren" ausgewählten Ebene wird durch Zuweisen einer *Gelände*-Aktion zur Schaltfläche *Schummerung*, *Neigung* oder *Höhe* angezeigt.  
 
 Die Haupteinstellungen für *Kartentypen anzeigen oder ausblenden* befinden sich im Abschnitt Topografie des Menüs "Karte konfigurieren". Im Artikel [Schnellaktion](../widgets/quick-action.md#configure-map) finden Sie eine Liste der zur Anzeige verfügbaren Ebenen. Wenn Sie schnellen Zugriff auf diese Kartenkonfiguration benötigen, verwenden Sie das Werkzeug *Benutzerdefinierte Schaltfläche*.
 

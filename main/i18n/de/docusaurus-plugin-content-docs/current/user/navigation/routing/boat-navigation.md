@@ -1,7 +1,7 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
-title:  Boots-Routing
+title:  Boat routing
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Übersicht {#overview}
 
-Boots-Routing kann ein wertvolles Werkzeug für jeden sein, der gerne mit dem Boot oder Segelboot auf Kanälen, Flüssen oder Fahrrinnen unterwegs ist. Aufgrund des Fehlens der meisten Fahrrinnen in den OpenStreetMap-Daten wird das Boots-Routing für die **Navigation auf offenem Wasser** *nicht empfohlen*. Es wird stattdessen empfohlen, **[Direkt zum Punkt](#direct-to-point-routing-for-boat)** zu verwenden. Wenn Tiefenlinien aktiviert sind, kann es Ihnen helfen, auf dem Wasser sicher zu bleiben, indem Gefahren wie seichtes Wasser, Felsen oder andere Hindernisse vermieden werden.  
+Boots-Routing kann ein wertvolles Werkzeug für jeden sein, der gerne mit dem Boot oder Segelboot auf Kanälen, Flüssen oder Fahrrinnen unterwegs ist. Aufgrund des Fehlens der meisten Fahrrinnen in den OpenStreeetMap-Daten wird das Boots-Routing für die **Navigation auf offenem Wasser** *nicht empfohlen*. Es wird stattdessen empfohlen, **[Direkt zum Punkt](#direct-to-point-routing-for-boat)** zu verwenden. Wenn Tiefenlinien aktiviert sind, kann es Ihnen helfen, auf dem Wasser sicher zu bleiben, indem Gefahren wie seichtes Wasser, Felsen oder andere Hindernisse vermieden werden.  
 Die OsmAnd Boots-Routing-Engine berücksichtigt auch die Eigenschaften der Wasserstraßen und des Bootes selbst.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -67,7 +67,7 @@ Typischerweise wird das *Boots-Routing* mit dem Bootsprofil verwendet (das zulet
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Ermöglicht die Nutzung von Bächen und Abflussgräben für die Bootsnavigation. Die Aktivierung dieser Option kann für kleine Boote wie Kanus, Kajaks, Flöße und Ruderboote nützlich sein. |  [Bäche](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sind natürlich entstandene Wasserläufe, die zu schmal sind, um als Fluss bezeichnet zu werden. [Abflussgräben](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sind künstliche Wasserwege, typischerweise mit Beton oder Ähnlichem ausgekleidet, die dazu dienen, überschüssiges Wasser wie Regenwasser oder Grauwasser abzuführen.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Das Aktivieren dieser Option ermöglicht es Ihnen, zeitweise wasserführende Wasserwege für die Bootsnavigation zu nutzen.   | Das Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) wird verwendet, um anzuzeigen, dass ein Wasserweg nicht ständig Wasser führt.  |
-| *Fähren erlauben* | Ermöglicht das Routing über Fährrouten. | Verwendet `route=ferry`, wo in OSM vorhanden. Keine neuen Karten erforderlich. |
+| *Fähren erlauben* | Ermöglicht das Routing über Fährrouten. | Normalerweise sind [Fährverbindungen](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) für kleine Boote aufgrund der OSM-Definition nicht zugänglich. |
 
 :::note Wassernavigation und Einschränkungen
 
@@ -109,4 +109,4 @@ Der [Direkt-zum-Punkt-Routing-Typ](./direct-to-point-routing.md) kann mit dem Bo
 
 Der [Luftlinien-Routing-Typ](./straight-line-routing) kann mit dem Bootsprofil verwendet werden, wenn Sie Ihr Boot auf offenem Wasser navigieren möchten, aber lieber einer geraden Linie anstelle einer gekrümmten Route zu Ihrem Zielpunkt folgen. Dies kann nützlich sein, wenn Sie zu einem entfernten Punkt navigieren, der beispielsweise am Horizont sichtbar ist.
 
-![Luftlinien-Navigationstyp Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
+![Geradlinien-Navigationstyp Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)

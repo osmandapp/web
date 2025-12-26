@@ -1,5 +1,5 @@
 ---
-source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
+source-hash: f883cecaa5261a36f9d1f1d64d29499b611644d5e7812a27bf94c9d003dd7880
 sidebar_position: 1
 title:  Android-Käufe
 ---
@@ -76,25 +76,25 @@ Für Android-Geräte können Sie die **kostenlose** und die **kostenpflichtige**
 
 In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für die Regionen USA und Europa. Für andere Regionen sind die Preise in den lokalen Währungen äquivalent.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Weihnachtsverkauf
+
+*Beeilen Sie sich! Dieses Angebot ist nur bis zum* **28. Dezember (23:00 CET)** verfügbar.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |
+| **Preis (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Preis (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -103,7 +103,7 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | **Preis (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Preis (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
-
+-->
 
 ### Kostenlose und kostenpflichtige Funktionen {#free-and-paid-features}
 
@@ -171,6 +171,7 @@ Das **Pro**-Abonnement umfasst derzeit die folgenden Funktionen:
 | [Höhen-Widget](../widgets/nav-widgets.md#elevation-widget) | Zeigt Ihren Standort auf dem Höhendiagramm der Navigationsroute mit zusätzlichen Informationen an.  |
 | [Höhen-Widgets - Höhe: Kartenzentrum](../widgets/info-widgets.md#elevation-map-center) | Ermöglicht es Ihnen, die Höhe des aktuellen Kartenzentrums über dem Meeresspiegel zu ermitteln.  |
 | [Höhenkorrektur (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Ermöglicht die Berechnung eines Höhendiagramms für Ihren Track ([Geländekarte](../plugins/topography.md#download-maps) für die gewählte Region erforderlich). |
+| [Farbenschema anpassen](../../user/plugins/topography.md#modify-color-scheme) | Ermöglicht es Ihnen, das Kartenbild durch Auswählen oder Importieren von Farbpaletten anzupassen. Sie können integrierte Schemata bearbeiten oder eigene Paletten-Dateien verwenden, um Karten- und Routenfarben zu personalisieren. |
 
 
 ## Wie man kauft {#how-to-buy}

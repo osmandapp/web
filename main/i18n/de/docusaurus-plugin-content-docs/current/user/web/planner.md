@@ -1,9 +1,10 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
 sidebar_label:  Route planen
 title: Route auf der Webseite planen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -24,34 +24,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Der OsmAnd Web-Routenplaner ermöglicht es Ihnen, Navigationsrouten zu erstellen, Tracks zu planen und lokale Dateien direkt in Ihrem Browser zu verwalten. Dieses Web-Tool ist nützlich, um detaillierte Reiserouten zu erstellen, die Sie mit Ihrer App synchronisieren oder mit anderen teilen können.
 
 
-## Navigationsroute {#navigation-route}
+<!--
+## Navigation Route {#navigation-route}
 
-Um eine Navigationsroute zu erstellen, folgen Sie diesen Schritten:
+To create a navigation route, follow these steps:
 
-- **Klicken Sie mit der rechten Maustaste** auf die Karte, um Wegpunkte hinzuzufügen:
+- **Right-click** on the map to add waypoints:
 
-  - *Navigieren von*. Legen Sie den Startpunkt fest.
-  - *Navigieren nach*. Legen Sie das Ziel fest.
-  - *Navigieren über*. Fügen Sie bei Bedarf Zwischenpunkte hinzu.
+  - *Navigate from*. Set the starting point.
+  - *Navigate to*. Set the destination.
+  - *Navigate via*. Add intermediate points if needed.
 
-- Nachdem Sie den Start- und Endpunkt festgelegt haben, wird die Route auf der Karte angezeigt.
+- After setting the start and end points, the route will be displayed on the map.
 
-- Im **Route**-Block:
+- In the **Route** block:
 
-  - Verschieben Sie bei Bedarf den Start- und Endpunkt.
-  - Bearbeiten Sie die Wegpunkte und wählen Sie den gewünschten Routentyp (z. B. Auto, Fahrrad, zu Fuß).
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
-  ![OsmAnd Web Route erstellen](@site/static/img/web/navigation.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- Wählen Sie das passende **Routenprofil** für verschiedene Navigationsoptionen.
+- Select the appropriate **Route Profile** for different navigation options.
 
-  ![OsmAnd Web Route erstellen](@site/static/img/web/profile_type.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- Klicken Sie auf die orangefarbenen Kreise entlang der Route, um detaillierte Navigationsanweisungen anzuzeigen.
+- Click on the orange circles along the route to view detailed navigation instructions.
 
-  ![OsmAnd Web Route erstellen](@site/static/img/web/nav_instr.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- Um die Route zu teilen, kopieren Sie die URL. Beispiel: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
 ## Track und lokale Dateien erstellen {#create-track-and-local-files}
@@ -61,7 +64,7 @@ Das Werkzeug [**Route planen**](../plan-route/create-route.md) von OsmAnd Web er
 
 ***Eine neue Route erstellen:***
 
-- *Klicken Sie mit der rechten Maustaste* auf die Karte und wählen Sie **Neue Route erstellen**.
+- *Mit der rechten Maustaste klicken* auf die Karte und **Neue Route erstellen** auswählen.
 - Alternativ können Sie die Schaltfläche **Track erstellen** im Menü *Lokal* verwenden (befindet sich auf der rechten Seite mit den Schaltflächen *Stift* und *Hochladen*).
 
 
@@ -93,7 +96,7 @@ Das Menü **Lokaler Track** bietet drei Bereiche zur Bearbeitung: **Info**, **Tr
 - *Neu berechnen*. Höhendaten hinzufügen oder aktualisieren.
 - *Höhe*. Zeigen Sie das Höhenprofil an.
 - *Geschwindigkeitsdiagramm*. Zeigen Sie Geschwindigkeitsdaten entlang des Tracks an.
-- *Steigungsdiagramm*. Zeigen Sie Steigungsänderungen entlang der Route an.
+- *Steigungsdiagramm*. Zeigen Sie Steigungsänderungen entlang der Route an.  
 - *Straßendetails*. Zeigen Sie detaillierte Informationen wie Straßentyp, Oberfläche und Steilheit an.
 - *GPX herunterladen*. Exportieren Sie den Track als GPX-Datei ([Pro-Funktion](../purchases/index.md)).
 - *Track schließen*. Schließen Sie die Bearbeitungsansicht des Tracks.

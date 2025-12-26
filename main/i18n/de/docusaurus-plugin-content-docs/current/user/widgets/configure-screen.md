@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -310,7 +310,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 Widgets in der rechten und linken Leiste können in **Seiten** gruppiert werden. Die Funktion **Seitenmodus** ermöglicht es Ihnen, 5 Seiten zur linken und rechten Leiste hinzuzufügen.
 
-***Wie man Zeilen konfiguriert:***
+***Wie man Seiten konfiguriert:***
 
 - **Eine Seite hinzufügen**. Navigieren Sie zu den Einstellungen der linken/rechten Leiste und tippen Sie auf *Bearbeiten → Seite hinzufügen*.
 - **Widgets nach Seite organisieren**. Diese Funktion ist nützlich, wenn verschiedene Sätze von Widgets für unterschiedliche Aufgaben benötigt werden, wie z. B. beim Navigieren im Vergleich zum Durchsuchen der Karte.
@@ -359,13 +359,13 @@ Widgets in der rechten und linken Leiste können in **Seiten** gruppiert werden.
 
 <TabItem value="android" label="Android">  
 
-![Widget-Kontextmenü](@site/static/img/widgets/widget_context_menu_andr.png)
+![Widget-Kontextmenü](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget-Kontextmenü](@site/static/img/widgets/widget_context_menu_ios.png)
+![Widget-Kontextmenü](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -389,6 +389,10 @@ Das **Widget-Kontextmenü** bietet eine schnelle Möglichkeit, Widgets direkt vo
     - Entfernen Sie das Widget von der Leiste.
     - Eine Bestätigungsaufforderung stellt sicher, dass die Aktion beabsichtigt ist.
 
+- **Route auf Karte anzeigen** 
+    - Verfügbar für die [Routenaufzeichnungs-](../plugins/trip-recording.md) Widgets.
+    - Zeigt Ihre derzeit aufgezeichnete Route auf der Karte an.
+
 - **Durchschnittsgeschwindigkeit zurücksetzen** (Beispiel für *Widget-spezifische Aktionen*)
     - Verfügbar für das Widget [Durchschnittsgeschwindigkeit](../widgets/info-widgets.md#average-speed).
     - Langes Tippen, um den Geschwindigkeitswert während einer Fahrt sofort zurückzusetzen.
@@ -404,7 +408,7 @@ OsmAnd ermöglicht es Ihnen, mehrere Instanzen desselben Widgets zu verschiedene
 
 ***Wie man Widgets dupliziert:***
 
-- **Das Widget hinzufügen**. Navigieren Sie zu: *OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Leiste →* **Widget hinzufügen**.
+- **Das Widget hinzufügen**. Navigieren Sie zu: *OsmAnd-Menü → Bildschirm konfigurieren → Widgets → Leiste →* **Hinzufügen** *Widget*.
 - **Über das Kontextmenü duplizieren**. Tippen Sie auf das Widget und wählen Sie **Duplizieren** aus der Liste der Aktionen.
 - **Alternative Methode**. Wählen Sie dasselbe Widget aus der Liste der *verfügbaren Widgets* und tippen Sie auf *Hinzufügen*.
 
