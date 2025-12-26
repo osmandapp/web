@@ -1,7 +1,8 @@
 ---
-source-hash: 257aa3375005b7337989c2fb8807d99a7f493686cc168590879f6312c2b3d6f2
+source-hash: 9b261b980d55ca844b224f16fdc5201ded60242c62cc91adffc973d4d27faf3e
 title: مخطط الويب
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,22 +14,37 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
+### [مقدمة](./web-overview.md) {#introduction}
 
-### نظرة عامة {#overview}
+في هذا القسم، ستجد وصفًا لـ[مخطط الويب](https://osmand.net/map) الخاص بنا.
 
-ستجد في هذا القسم وصفًا [لمخطط الويب](https://osmand.net/map) الخاص بنا.
+### [الحساب](./web-cloud.md) {#account}
 
-### [سحابة OsmAnd](./web-cloud.md) {#osmand-cloud}
-
-يشرح هذا القسم كيفية تسجيل الدخول والاشتراك في [www.osmand.net/map](https://osmand.net/map/) ويسلط الضوء على المزايا التي يحصل عليها المستخدمون بعد التسجيل.
+يشرح هذا القسم كيفية تسجيل الدخول والاشتراك في [www.osmand.net/map](https://osmand.net/map/) ويسلط الضوء على الفوائد التي يحصل عليها المستخدمون بعد التسجيل.
 
 ### [الخريطة](./web-map.md) {#map}
 
-يفصل هذا القسم بيانات الخريطة الإضافية مثل المفضلة والمسارات الشخصية وطبقات الطقس.
+يغطي هذا القسم واجهة خريطة الويب OsmAnd، بما في ذلك قائمة الخريطة، وتكوين الطبقات، والإعدادات، وروابط URL.
 
-### [بيانات المستخدم](../web/web-userdata.mdx) {#user-data}
+### [الطقس](./web-weather.md) {#weather}
 
-مسارات GPX والمفضلة للمستخدم على الخريطة.
+يشرح هذا القسم كيفية عرض ظروف الطقس والتوقعات على خريطة الويب، بما في ذلك التوقعات القائمة على الوقت والتراكبات الجوية.
+
+### [المسارات](./web-tracks.md) {#tracks}
+
+يغطي هذا القسم العمل مع مسارات GPX الشخصية على الويب، بما في ذلك عرضها، وتحريرها، وتنظيمها، ومزامنتها مع سحابة OsmAnd.
+
+### [المفضلة](./web-favorites.md) {#favorites}
+
+الأماكن المحفوظة المعروضة على الخريطة، مع خيارات لتنظيمها في مجلدات، وإدارة الوصول إليها، وإعادة استخدامها للملاحة أو تخطيط المسار.
+
+### [محلل المسارات](./web-tracks-analyzer.md) {#tracks-analyzer}
+
+يركز هذا القسم على تحليل مقاطع المسار بين النقاط المحددة على الخريطة ومقارنة المعلمات الرئيسية عبر مسارات متعددة.
+
+### [الملاحة](./web-navigation.md) {#navigation}
+
+يشرح هذا القسم كيفية بناء ومعاينة مسارات الملاحة على خريطة الويب، بما في ذلك ملفات تعريف التوجيه، والإعدادات، وتفاصيل المسار.
 
 ### [تخطيط مسار](./planner.md) {#plan-route}
 

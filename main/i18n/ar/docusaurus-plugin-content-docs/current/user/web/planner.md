@@ -1,9 +1,10 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
 sidebar_label:  تخطيط المسار
 title: تخطيط المسار على موقع الويب
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -24,34 +24,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يسمح لك مخطط المسارات على الويب في OsmAnd بإنشاء مسارات ملاحة، وتخطيط المسارات، وإدارة الملفات المحلية مباشرة من متصفحك. هذه الأداة على الويب مفيدة لإنشاء مسارات سفر مفصلة يمكنك مزامنتها مع تطبيقك أو مشاركتها مع الآخرين.
 
 
-## مسار الملاحة {#navigation-route}
+<!--
+## Navigation Route {#navigation-route}
 
-لإنشاء مسار ملاحة، اتبع الخطوات التالية:
+To create a navigation route, follow these steps:
 
-- **انقر بزر الماوس الأيمن** على الخريطة لإضافة نقاط الطريق:
+- **Right-click** on the map to add waypoints:
 
-  - *الانتقال من*. قم بتعيين نقطة البداية.
-  - *الانتقال إلى*. قم بتعيين الوجهة.
-  - *الانتقال عبر*. أضف نقاطًا وسيطة إذا لزم الأمر.
+  - *Navigate from*. Set the starting point.
+  - *Navigate to*. Set the destination.
+  - *Navigate via*. Add intermediate points if needed.
 
-- بعد تعيين نقطتي البداية والنهاية، سيتم عرض المسار على الخريطة.
+- After setting the start and end points, the route will be displayed on the map.
 
-- في قسم **المسار**:
+- In the **Route** block:
 
-  - انقل نقطتي البداية والنهاية إذا لزم الأمر.
-  - قم بتحرير نقاط الطريق واختر نوع المسار المطلوب (على سبيل المثال، سيارة، دراجة، مشي).
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
-  ![إنشاء مسار على الويب في OsmAnd](@site/static/img/web/navigation.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- حدد **ملف تعريف المسار** المناسب لخيارات الملاحة المختلفة.
+- Select the appropriate **Route Profile** for different navigation options.
 
-  ![إنشاء مسار على الويب في OsmAnd](@site/static/img/web/profile_type.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- انقر على الدوائر البرتقالية على طول المسار لعرض تعليمات الملاحة المفصلة.
+- Click on the orange circles along the route to view detailed navigation instructions.
 
-  ![إنشاء مسار على الويب في OsmAnd](@site/static/img/web/nav_instr.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- لمشاركة المسار، انسخ عنوان URL. مثال: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
 ## إنشاء مسار وملفات محلية {#create-track-and-local-files}
@@ -93,7 +96,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *إعادة الحساب*. أضف أو حدث بيانات الارتفاع.
 - *الارتفاع*. عرض ملف تعريف الارتفاع.
 - *الرسم البياني للسرعة*. عرض بيانات السرعة عبر المسار.
-- *الرsem البياني للانحدار*. عرض تغيرات الانحدار على طول المسار.
+- *الرسم البياني للانحدار*. عرض تغيرات الانحدار على طول المسار.  
 - *تفاصيل الطريق*. عرض معلومات مفصلة مثل نوع الطريق والسطح والانحدار.
 - *تنزيل GPX*. قم بتصدير المسار كملف GPX ([ميزة Pro](../purchases/index.md)).
 - *إغلاق المسار*. أغلق عرض تحرير المسار.

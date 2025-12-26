@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  تهيئة الشاشة
 ---
@@ -74,7 +74,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يسمح لك OsmAnd بتنظيم واجهة الخريطة باستخدام لوحات أدوات قابلة للتخصيص.
+يسمح لك OsmAnd بتنظيم واجهة الخريطة باستخدام لوحات أدوات قابلة للتخصيص.  
 يمكنك إضافة وإعادة ترتيب وتجميع وإزالة الأدوات في اللوحات التالية:
 
 - **اللوحة العلوية**
@@ -267,19 +267,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - [ملف الارتفاع (*أندرويد فقط*)](../widgets/nav-widgets#elevation-widget)
     - [مناورات المسار](../widgets/nav-widgets.md#next-turn)
 
-- **الأدوات البسيطة**. يمكن إضافة أدوات بسيطة متعددة إلى صف واحد. يمكن أن تعرض هذه الأدوات *الاسم*، *وحدات القياس*، *القيمة*، و*الأيقونة*. يتم تلخيط النص في الأدوات البسيطة تلقائيًا لضمان قابلية القراءة الواضحة مقابل خلفيات الخرائط المختلفة في وضع اللوحة الشفافة.
+- **الأدوات البسيطة**. يمكن إضافة أدوات بسيطة متعددة إلى صف واحد. يمكن أن تعرض هذه الأدوات *الاسم*، *وحدات القياس*، *القيمة*، و*الأيقونة*. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="أندرويد">  
 
-![تلخيط الأداة أندرويد](@site/static/img/widgets/simple_widgets_andr.png) 
+![تلخيص الأداة أندرويد](@site/static/img/widgets/simple_widgets_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![تلخيط الأداة iOS](@site/static/img/widgets/simple_widgets_ios.png) 
+![تلخيص الأداة iOS](@site/static/img/widgets/simple_widgets_ios.png) 
 
 </TabItem>
 
@@ -310,7 +310,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكن تجميع الأدوات في اللوحتين اليمنى واليسرى في **صفحات**. تتيح لك ميزة **وضع الصفحات** إضافة ٥ صفحات إلى اللوحتين اليسرى واليمنى.
 
-***كيفية تهيئة الصفحات:***
+***كيفية تهيئة الصفوف:***
 
 - **إضافة صفحة**. انتقل إلى إعدادات اللوحة اليسرى/اليمنى وانقر على *تعديل → إضافة صفحة*.
 - **تنظيم الأدوات حسب الصفحة**. هذه الميزة مفيدة عندما تكون هناك حاجة لمجموعات مختلفة من الأدوات لمهام مختلفة، مثل الملاحة مقابل تصفح الخريطة.
@@ -359,13 +359,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة سياق الأداة](@site/static/img/widgets/widget_context_menu_andr.png)
+![قائمة سياق الأداة](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة سياق الأداة](@site/static/img/widgets/widget_context_menu_ios.png)
+![قائمة سياق الأداة](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **حذف**
     - إزالة الأداة من اللوحة.
     - يضمن موجه التأكيد أن الإجراء مقصود.
+
+- **عرض المسار على الخريطة** 
+    - متاح لأدوات [تسجيل الرحلة](../plugins/trip-recording.md).
+    - يعرض المسار المسجل حاليًا على الخريطة.
 
 - **إعادة تعيين متوسط السرعة** (مثال على *إجراءات خاصة بالأداة*)
     - متاح لأداة [متوسط السرعة](../widgets/info-widgets.md#average-speed).

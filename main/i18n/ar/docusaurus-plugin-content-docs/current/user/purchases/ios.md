@@ -1,5 +1,5 @@
 ---
-source-hash: 3036a4367dec965dc2ce8a575aa5d332ed8bf23931798249cf1fc88b99ef5ae5
+source-hash: 8c3dc9c3a003016cc5fe0c21111724824979c926da2493e288be8190be239b47
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -53,34 +53,34 @@ import Translate from '@site/src/components/Translate.js';
 
 في القائمة، توجد معلومات حول أسعار منتجات OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، تكون الأسعار معادلة بالعملات المحلية.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger عرض عيد الميلاد
+
+*سارع! هذا العرض متاح فقط حتى* **٢٨ ديسمبر (٢٣:٠٠ CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-
--->
-
-|    | OsmAnd مجاني   | [Maps+](#install-osmand-ios) شراء داخل التطبيق | [Maps+](#install-osmand-ios) اشتراك | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) شراء داخل التطبيق | [Maps+](#install-osmand-ios) اشتراك | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 شهرًا) | **اشتراك** (شهر واحد / 12 شهرًا) |
-| **السعر (يورو)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **السعر (دولار أمريكي)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **السعر (يورو)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **السعر (دولار أمريكي)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+<!--
 
 
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+
+-->
 
 ### الميزات المجانية والمدفوعة {#free-and-paid-features}
 
@@ -136,6 +136,7 @@ import Translate from '@site/src/components/Translate.js';
 | [ملحق الطقس](../plugins/weather.md) | توقعات جوية كل ساعة لمدة ٢٤ ساعة، ٧ أيام مقدمًا على الخريطة. |
 | [ملحق مقاييس المركبة (OBD-II)](../plugins/vehicle-metrics.md) | يسمح لك بتوصيل ماسح OBD-II لعرض بيانات المركبة التفصيلية في تطبيق OsmAnd وتخزين المعلومات في سجلات المسارات. معلومات سرعة المركبة وسرعة المحرك متاحة في OsmAnd المجاني.  |
 | [تخصيص خط المسار](../navigation/guidance/map-during-navigation.md#route-line-appearance) | تغيير لون وعرض خط المسار أثناء الملاحة. |
+| [تعديل مخطط الألوان](../../user/plugins/topography.md#modify-color-scheme) | يسمح لك بتخصيص مظهر الخريطة من خلال اختيار أو استيراد لوحات ألوان. يمكنك تحرير المخططات المدمجة أو استخدام ملفات لوحة ألوان خاصة بك لتخصيص ألوان الخريطة والمسار. |
 
 
 ## كيفية الشراء {#how-to-buy}

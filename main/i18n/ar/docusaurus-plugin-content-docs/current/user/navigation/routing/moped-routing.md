@@ -1,8 +1,9 @@
 ---
-source-hash: 46a1886051c86f82be8c7760e97112a93aa73290d7f57d40189238af7d9e4f39
+source-hash: 75f7c0d57899f1fdc282afb4724e5f3f76160e359fd1c402d5453ff85ce761c8
 sidebar_position: 4
 title:  توجيه الدراجة البخارية
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## نظرة عامة {#overview}
 
-يسمح *توجيه الدراجة البخارية* للسائقين بإنشاء المسار الأمثل (الأسرع)، مع مراعاة خصوصيات قيادة مركبة مثل الدراجة البخارية أو السكوتر. تأخذ عملية التوجيه في الاعتبار عوامل مختلفة للحركة الآمنة والمريحة والقانونية على الطرق أو مسارات الدراجات.
+يسمح *توجيه الدراجة البخارية* للسائقين بإنشاء المسار الأمثل (الأسرع)، مع مراعاة خصوصيات قيادة مركبة مثل الدراجة البخارية أو السكوتر. تأخذ عملية التوجيه في الاعتبار عوامل مختلفة للحركة الآمنة والمريحة والقانونية على الطرق أو مسارات الدراجات. يتجنب ملف تعريف الدراجة البخارية الطرق عالية السرعة: على وجه الخصوص، لا يستخدم الطرق السريعة والطرق التي يزيد فيها حد السرعة عن 80 كم/ساعة عند حساب المسار.
 
 :::note
 بشكل افتراضي، يكون *ملف تعريف الدراجة البخارية* غير نشط. لاستخدام هذا الملف الشخصي للتوجيه، تحتاج إلى تشغيله في *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## معلمات المسار - الدراجة البخارية {#route-parameters---moped}
 
-يمكن تكوين *توجيه الدراجة البخارية* وفقًا لاحتياجاتك في قسم [معلمات المسار](../guidance/navigation-settings.md#route-parameters) من إعدادات الملاحة.
+يمكن تكوين *توجيه الدراجة البخارية* وفقًا لاحتياجاتك في قسم [معلمات المسار](../guidance/navigation-settings.md#route-parameters) من إعدادات الملاحة.  
 
 إعدادات توجيه الدراجة البخارية بسيطة جدًا وتتكون من بضعة خيارات فقط.
 
@@ -40,7 +40,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![إعدادات توجيه الدراجة البخارية على iOS](@site/static/img/navigation/routing/moped_routing_ios.png)  
+![إعدادات توجيه الدراجة البخارية على iOS](@site/static/img/navigation/routing/moped_routing_new_ios.png)  
 
 </TabItem>
 
@@ -49,4 +49,5 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | المعلمة | الوصف | ملاحظة |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="impassable_road"/>* |  <details><summary> حدد الطرق التي تريد تجنبها أثناء الملاحة.  </summary>![تجنب الطرق على أندرويد](@site/static/img/navigation/routing/avoid_moped_android.png) </details>  | يمكنك إما [تحديد طريق على الخريطة](../../map/map-context-menu/#avoid-road) أو اختيار نوع (أنواع) الطريق من القائمة:  <ul><li>[<Translate android="true" ids="routing_attr_avoid_ferries_name"/>](https://wiki.openstreetmap.org/wiki/Ferries) (نوع من النقل المائي، يحمل المركبات عبر المسطحات المائية)</li></ul>|
-| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  سيتم تجاهل قيود الوصول الخاص عند حساب المسار.  | يُستخدم الوسم *[private](https://wiki.openstreetmap.org/wiki/Key:access)* في OSM لوصف القيود المفروضة على استخدام الطرق السريعة وغيرها من طرق النقل، بالإضافة إلى المباني والمداخل والمرافق والكيانات الترفيهية.   |
+| *<Translate android="true" ids="routing_attr_allow_private_name"/>* |  سيتم تجاهل قيود الوصول الخاصة عند حساب المسار.  | يُستخدم الوسم *[private](https://wiki.openstreetmap.org/wiki/Key:access)* في OSM لوصف القيود المفروضة على استخدام الطرق وغيرها من طرق النقل، بالإضافة إلى المباني والمداخل والمرافق والكيانات الترفيهية.   |
+| *<Translate android="true" ids="temporary_conditional_routing"/>* |  يأخذ في الاعتبار القيود المؤقتة من OpenStreetMap عند حساب المسار (على سبيل المثال، الإغلاقات الموسمية أو أعمال البناء).  | قد تكون بيانات OSM قديمة، لذا قد لا تكون بعض القيود المؤقتة صالحة بعد في وقت الملاحة.   |

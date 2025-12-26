@@ -1,5 +1,5 @@
 ---
-source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
+source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
 sidebar_position: 4
 title:  الملفات الشخصية (الإعدادات)
 ---
@@ -215,9 +215,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ميل / 3281 قدم (1000 م) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ميل / 1000 م |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ياردة / 0.62 ميل (1000 م) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 ميل بحري / 3280.84 قدم / 1000 م |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 ميل بحري / 3280.84 قدم / 1000 م<br/>تنطبق وحدات الطول على قيم المسافة الأفقية (مثل مسافات القيادة/المسار ومسافات المناورة في الملاحة).|
 |  |  |  |
-| **وحدات الارتفاع** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 م / 3.28 قدم |
+| **وحدات الارتفاع** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 م / 3.28 قدم<br/>تنطبق وحدات الارتفاع على قيم الارتفاع/الارتفاعات والمقاييس ذات الصلة (الصعود/الهبوط، نطاق الارتفاع) في أدوات الارتفاع، ومعلومات مسار الملاحة، وإحصاءات المسار.<br/>افتراضيًا، تتزامن وحدات الارتفاع مع وحدات الطول وتصبح مستقلة فقط بعد تغييرها يدويًا من قبل المستخدم. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | مثال: 50.12333° 19.93233° (خط عرض خط طول) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | مثال: 50°7.393′ 19°55.941′ (خط عرض خط طول)  |
@@ -234,7 +234,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*أندرويد*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 كم/ساعة  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 ميل/ساعة  |
-|          | <Translate android="true" ids="si_m_s"/> | 30 م/ث |
+|          | <Translate android="true" ids="si_m_s"/> | 25 م/ث |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 دقيقة/م |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 دقيقة/كم |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 عقدة |
@@ -275,7 +275,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يوفر قسم **أخرى** إعدادات ملف شخصي إضافية لتخصيص واجهة OsmAnd وعناصر التحكم في الإدخال. تتيح لك هذه الإعدادات تكوين الأجهزة الخارجية، وضبط تفضيلات الرسوم المتحركة، وتبديل وضع ملء الشاشة.
 
-- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – قم بتوصيل وحدات تحكم خارجية مثل *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*، *<Translate ios="true" ids="sett_generic_ext_input"/>*، أو *<Translate android="true" ids="sett_parrot_ext_input"/>* لتشغيل OsmAnd باستخدام الأزرار المادية.
+- [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – قم بتوصيل وحدات تحكم خارجية مثل *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, أو *<Translate android="true" ids="sett_parrot_ext_input"/>* لتشغيل OsmAnd باستخدام الأزرار المادية.
 
 - **<Translate android="true" ids="position_animation"/>** / **تحريك الموقع الخاص** – يتم تحريك أيقونة [الموقع](../map/interact-with-map.md#my-location-and-zoom) مع كل نقطة GPS يتم تلقيها (مرة واحدة في الثانية). قد يكون هناك تأخير طفيف في حركتها، خاصة أثناء الحركة السريعة أو تقلبات إشارة GPS. يمكنك ضبط هذا التأثير باستخدام إعداد *وقت التنبؤ* (أندرويد فقط): تزيد القيم الأعلى من السلاسة ولكنها تضيف تأخيرًا، بينما تقلل القيم الأقل من التأخير ولكنها قد تجعل الحركة أقل سلاسة.
 

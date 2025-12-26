@@ -1,5 +1,5 @@
 ---
-source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
+source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
 sidebar_position: 2
 ---
 
@@ -38,7 +38,7 @@ import Download from '@site/src/components/buttons/Download.js';
 - تحسين واجهة المستخدم لإضافة مقاييس الشاحنة في إعدادات ملف تعريف الشاحنة.
 - المزيد من المعاملات لعرض الطريق على الخريطة.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### الإصدار 5.1 {#version-51}
 
@@ -488,7 +488,7 @@ import Download from '@site/src/components/buttons/Download.js';
 
 - زر الإجراء السريع. أضف الميزات المحددة إلى شريط أدوات واحد
 - قائمة بحث محسّنة. بحث تقليدي خطوة بخطوة مدمج مع البحث الحديث
-- ملفات تعريف الارتفاع والانحدار للمسارات. عرض تفاصيل الارتفاع لكل مسار
+- ملفات تعريف الارتفاع والانحدر للمسارات. عرض تفاصيل الارتفاع لكل مسار
 - خطوط الكنتور للأعماق البحرية
 - إعدادات أسلوب القيادة لراكبي الدراجات
 - نمط خريطة جديد
