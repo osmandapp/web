@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  Configurar pantalla
 ---
@@ -267,7 +267,7 @@ El modo le permite agregar **más de un widget en una sola fila** en los paneles
     - [Perfil de elevación (*Solo Android*)](../widgets/nav-widgets#elevation-widget)
     - [Maniobras de ruta](../widgets/nav-widgets.md#next-turn)
 
-- **Widgets simples**. Se pueden agregar varios widgets simples a una sola fila. Estos widgets pueden mostrar *Nombre*, *Unidades de medida*, *Valor* e *Icono*. El texto en los widgets simples se delineará automáticamente para garantizar una legibilidad clara contra diversos fondos de mapa en el modo de panel transparente.
+- **Widgets simples**. Se pueden agregar varios widgets simples a una sola fila. Estos widgets pueden mostrar *Nombre*, *Unidades de medida*, *Valor* e *Icono*. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -359,13 +359,13 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
 
 <TabItem value="android" label="Android">  
 
-![Menú contextual del widget](@site/static/img/widgets/widget_context_menu_andr.png)
+![Menú contextual del widget](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menú contextual del widget](@site/static/img/widgets/widget_context_menu_ios.png)
+![Menú contextual del widget](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ El **menú contextual del widget** proporciona una forma rápida de administrar 
 - **Eliminar**
     - Elimine el widget del panel.
     - Un aviso de confirmación garantiza que la acción sea intencional.
+
+- **Mostrar pista en el mapa** 
+    - Disponible para los widgets de [Grabación de viaje](../plugins/trip-recording.md).
+    - Muestra su pista grabada actualmente en el mapa.
 
 - **Restablecer velocidad media** (ejemplo de *Acciones específicas del widget*)
     - Disponible para el widget [Velocidad media](../widgets/info-widgets.md#average-speed).
@@ -645,7 +649,7 @@ Acciones disponibles:
 - Para dispositivos **Android**, puede cambiar de perfil en la parte superior de la pantalla de inicio de Configurar pantalla utilizando los iconos de perfil disponibles.  
 - Si está utilizando un dispositivo **iOS**, toque el icono de perfil en la esquina superior de la pantalla de inicio de Configurar pantalla y seleccione el perfil requerido de la lista para activarlo.  
 
-**Tome nota**: La opción *Cambiar perfil* no muestra todos los perfiles existentes, sino solo aquellos que han sido *activados* en el menú de Configuración.
+**Tenga en cuenta**: La opción *Cambiar perfil* no muestra todos los perfiles existentes, sino solo aquellos que han sido *activados* en el menú de Configuración.
 
 
 ## Artículos relacionados {#related-articles}

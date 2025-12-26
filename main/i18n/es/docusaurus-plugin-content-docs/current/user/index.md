@@ -1,10 +1,10 @@
 ---
-source-hash: b2bc3b3bf84c6557e58eb916fc3afa481aecddd1fe686e1bc462f51cc56d1f90
+source-hash: 2a5a8d9243388603303027ae9b84f063c4d6530ca0abde2410ebbaf4d725fe4e
 
 ---
 # Guía de usuario {#user-guide}
 
-OsmAnd proporciona navegación y visualización de mapas sin conexión a nivel mundial con muchas herramientas especiales para Android e iOS.
+OsmAnd proporciona exploración de mapas sin conexión a nivel mundial y navegación sin conexión con muchas herramientas especiales para Android e iOS.
 
 
 ### [Empezar con OsmAnd](./start-with/index.md) {#begin-with-osmand}
@@ -48,7 +48,7 @@ La aplicación OsmAnd está disponible para los sistemas Android e iOS. Hay una 
 
 La herramienta proporciona funciones de búsqueda para cualquier caso de uso: búsqueda de direcciones, búsqueda de PDI, búsqueda personalizada, búsqueda en el historial, búsqueda por coordenadas.
 
-### [Planificador web](./web/index.md) {#web-planner}
+### [Portal de Mapas Web](./web/index.md) {#web-map-portal}
 
 La fuente web de OsmAnd proporciona una amplia gama de funciones de mapa, un servicio de navegación y sincronización con OsmAnd Cloud. Esto permite a los usuarios acceder a mapas detallados, navegar por rutas y mantener sus datos sincronizados entre dispositivos.
 

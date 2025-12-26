@@ -1,5 +1,5 @@
 ---
-source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
+source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
 sidebar_position: 16
 title:  Métricas del vehículo
 ---
@@ -53,7 +53,7 @@ Para usar los datos de un escáner OBD-II:
 4. [Conecte](#pair-odb-ii-scanner) el escáner OBD-II al puerto de su vehículo.
 5. [Configure](#scanner-settings) los **ajustes del escáner**.
 6. [Añada](#widgets) **widgets de Métricas del vehículo** para datos en pantalla (opcional).
-7. [Use](#trip-recording) el **plugin de Grabación de viaje** para registrar los datos del vehículo.
+7. [Use](#trip-recording)el **plugin de Grabación de viaje** para registrar los datos del vehículo.
 
 
 ### Emparejar escáner ODB-II {#pair-odb-ii-scanner}
@@ -119,7 +119,7 @@ Elija su dispositivo OBD-II de la lista y establezca la conexión.
 - **Renombrar**. Le permite asignar un nombre personalizado al sensor para una identificación más fácil.
 - **Olvidar**. Elimina el sensor OBD-II previamente emparejado de la lista, requiriendo un nuevo emparejamiento si se necesita más tarde.
 
-**Comportamiento de reconexión** *(solo Android)***:** OsmAnd intenta automáticamente reconectarse al adaptador OBD-II cuando se inicia la aplicación, cuando se inicia la navegación o cuando se lanza Android Auto. Si no hay conexión disponible, los widgets de Métricas del vehículo muestran “–”. Un solo toque en cualquier widget de Métricas del vehículo intentará reconectarse al sensor. Si el sensor ya está conectado, el toque cambia los modos de visualización del widget como de costumbre.
+**Comportamiento de reconexión:** OsmAnd intenta automáticamente reconectarse al adaptador OBD-II cuando se inicia la aplicación, cuando se inicia la navegación o cuando se lanza Android Auto / CarPlay. Si no hay conexión disponible, los widgets de Métricas del vehículo muestran “–”. Un solo toque en cualquier widget de Métricas del vehículo intentará reconectarse al sensor. Si el sensor ya está conectado, el toque cambia los modos de visualización del widget como de costumbre.
 
 
 ## Lista de métricas {#metrics-list}

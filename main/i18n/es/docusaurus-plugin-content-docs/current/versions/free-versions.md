@@ -1,5 +1,5 @@
 ---
-source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
+source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
 sidebar_position: 2
 ---
 
@@ -39,7 +39,7 @@ Fecha de lanzamiento 11/2025:
 - Interfaz de usuario mejorada para añadir métricas de camión en la configuración del perfil de Camión.
 - Más parámetros para mostrar la ruta en el mapa.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### Versión 5.1 {#version-51}
 
@@ -83,12 +83,12 @@ Fecha de lanzamiento 04/2025:
 Fecha de lanzamiento 11/2024:
 
 - Añadido un visor de galería a pantalla completa para imágenes de Wikimedia.
-- Introducido un nuevo plugin "Métricas del vehículo" para monitorizar el rendimiento del vehículo utilizando el protocolo OBD-II.
+- Introducido un nuevo plugin "Vehicle Metrics" para monitorizar el rendimiento del vehículo utilizando el protocolo OBD-II.
 - Añadida la capacidad de asignar actividades a las pistas y filtrarlas en consecuencia.
 - Implementadas nuevas acciones rápidas para la grabación de viajes y el bloqueo de la pantalla táctil.
 - Introducida una apariencia de botón de mapa personalizable y una cuadrícula precisa.
 - Añadido un menú contextual y una acción "Restablecer velocidad media" a los widgets.
-- Añadida nueva capa de ruta "Senderos para motos de cross".
+- Añadida nueva capa de ruta "Dirt Bike trails".
 - Corregido "Grabar pista automáticamente durante la navegación".
 - Corregido el problema con las coordenadas invertidas en RTL.
 - Corregidos los datos del sensor perdidos para la pista que se está grabando actualmente.
@@ -104,7 +104,7 @@ Fecha de lanzamiento 11/2024:
 
 Fecha de lanzamiento 08/2024:
 
-- Nueva opción de coloración del terreno "Altitud".
+- Nueva opción de coloración del terreno "Altitude".
 - Paletas de colores personalizadas para terreno, pistas y rutas.
 - Variante 3D para iconos de posición de ubicación.
 - Las acciones rápidas ahora se pueden asignar a teclados externos.
@@ -122,7 +122,7 @@ Fecha de lanzamiento 08/2024:
 
 Fecha de lanzamiento 04/2024:
 
-- Nuevo widget "Velocímetro" compatible con Android Auto.
+- Nuevo widget "Speedometer" compatible con Android Auto.
 - Configura la pantalla del mapa añadiendo múltiples botones de "Acción rápida".
 - Legibilidad mejorada de los datos en los gráficos.
 - Apariencia mejorada de personalización para grupos de pistas.
@@ -143,12 +143,12 @@ Fecha de lanzamiento 12/2023:
 - Paneles de widgets superior e inferior mejorados para acomodar todos los widgets.
 - Gestión de recursos locales mejorada.
 - Mapeo de botones personalizable para controladores externos.
-- Nuevos widgets: "Relación de planeo" y "Posición del sol".
+- Nuevos widgets: "Glide Ratio" y "Sun Position".
 - OsmAnd Cloud: Ahora accede a los archivos eliminados.
 - Coloración de pistas mejorada en modo Pendiente con nuevo gradiente simétrico.
 - Problemas resueltos con la barra de estado transparente.
 - Añadido soporte para el widget de temperatura ANT+.
-- Introducido el widget "RAM disponible".
+- Introducido el widget "Available RAM".
 
 <DownloadRelease blog="osmand-android-4-6-released" release="net.osmand-4.6.13.apk" />
 
@@ -162,14 +162,14 @@ Fecha de lanzamiento 08/2023:
 - Gestión de pistas: interfaz de usuario actualizada, clasificación añadida, soporte de carpetas anidadas.
 - Android Auto: nuevo menú de inicio para acceder a favoritos, pistas y categorías de PDI.
 - Una lista de widgets para el panel superior/inferior.
-- Nuevo perfil "Tren", permite calcular rutas ferroviarias.
-- Las líneas de contorno funcionan con cualquier "Fuente de mapa".
+- Nuevo perfil "Train", permite calcular rutas ferroviarias.
+- Las líneas de contorno funcionan con cualquier "Map source".
 - Lista ampliada de acciones predeterminadas para teclados externos.
 - Archivos de enrutamiento personalizados, opciones añadidas para eliminar o sobrescribir.
-- Añadida opción para "Anunciar desviación de la ruta".
+- Añadida opción para "Announce deviation from the route".
 - Pantalla de inicio: añadida opción para restaurar el estado de OsmAnd desde un archivo.
-- Añadidas clases de "Materiales peligrosos" para la navegación de camiones en América del Norte.
-- Añadido soporte de "Vía ferrata" para el enrutamiento peatonal.
+- Añadidas clases de "Hazardous Materials" para la navegación de camiones en América del Norte.
+- Añadido soporte de "Via ferrata" para el enrutamiento peatonal.
 - Añadida escala "CAI" para la clasificación de dificultad de las rutas.
 - Corregida la selección de idioma por aplicación.
 - Añadido soporte para iconos temáticos.
@@ -182,20 +182,20 @@ Fecha de lanzamiento 08/2023:
 
 Fecha de lanzamiento 03/2023:
 
-- Menú "Pistas" mejorado en "Configurar mapa"
+- Menú "Tracks" mejorado en "Configure Map"
 - El menú contextual ahora muestra nombres localizados para PDI
 - Añadida opción para compartir ruta por enlace
-- Añadida unidad de longitud "Millas náuticas/pies"
+- Añadida unidad de longitud "Nautical miles/feet"
 - Orientación del mapa añadida nuevo modo fijo
 - Pantalla de inicio simplificada
 - Posición de ubicación fija en modo de pantalla dividida en Android Auto
-- Añadido gráfico "Velocidad/Pendiente" para el análisis de pistas
+- Añadido gráfico "Speed/Slope" para el análisis de pistas
 - La selección de idioma de la aplicación se movió a la configuración del sistema en Android 13
 - Se corrigieron problemas con la visualización de lugares veganos
-- Añadida la posibilidad de descargar mosaicos en línea utilizados como mapas de "Superposición" o "Subcapa"
-- Añadido soporte de unidades de medida imperiales para "Parámetros del vehículo"
+- Añadida la posibilidad de descargar mosaicos en línea utilizados como mapas de "Overlay" o "Underlay"
+- Añadido soporte de unidades de medida imperiales para "Vehicle parameters"
 - Nuevo perfil de ciclomotor
-- "Posición de visualización" añadió nueva opción "Automático"
+- "Display position" añadió nueva opción "Automatic"
 - Se corrigieron los gestos del mapa para inclinar, hacer zoom y rotar
 
 <DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
@@ -208,11 +208,11 @@ Fecha de lanzamiento 12/2022:
 - Nuevo motor de renderizado de mapas Versión 2 (OpenGL) más rápido, con vista 2.5D
 - Animación fluida de los cambios de ubicación en movimiento
 - Nuevos widgets para las coordenadas del centro del mapa y la elevación de las geolocalizaciones
-- "Distancia al toque": opciones de tamaño de texto añadidas
-- Widget "Marcador de mapa": opción añadida para cambiar el comportamiento del clic
-- Corregida la opción "Mostrar posición"
+- "Distance to tap": opciones de tamaño de texto añadidas
+- Widget "Map marker": opción añadida para cambiar el comportamiento del clic
+- Corregida la opción "Display position"
 - GPX: se añadió soporte para las etiquetas "link", "cmt", "desc" y para cualquier extensión personalizada
-- Se reorganizó la lista de "Mapas náuticos"
+- Se reorganizó la lista de "Nautical maps"
 - Se añadió soporte para sensores ANT+
 - Se añadió la opción de deshabilitar la descarga de UUID
 
@@ -254,15 +254,15 @@ Fecha de lanzamiento 08/2021:
 - Copia de seguridad en la nube
 - Añadido modo nocturno para el estilo de renderizado Topo
 - Añadida opción para descargar líneas de contorno en pies
-- Las actualizaciones de OsmAnd Live se movieron a "Descargas > Actualizaciones"
+- Las actualizaciones de OsmAnd Live se movieron a "Downloads > Updates"
 - Las pistas ahora se pueden colorear por altitud, velocidad o pendiente.
 - Añadida opción para cambiar la apariencia de la línea de ruta.
-- Diálogo "Grabación de viaje" actualizado
-- La distancia por toque se movió de la regla de radio a una opción separada
-- Planificar ruta horizontal: se añadieron pestañas para alternar entre puntos o gráficos
-- Planificar ruta: se añadió la capacidad de cambiar las opciones de navegación, accediendo a configurar mapa y búsqueda sin salir de planificar ruta
+- Diálogo "Trip recording" actualizado
+- Distance by tap se movió de la Radius ruler a una opción separada
+- Plan Route landscape: se añadieron pestañas para alternar entre puntos o gráficos
+- Plan Route: se añadió la capacidad de cambiar las opciones de navegación, accediendo a configurar mapa y búsqueda sin salir de plan route
 - Nueva pantalla de compra con información detallada sobre la compra
-- Añadidos nuevos tipos de PDI, clubes: música, social, scout, francmasonería
+- Añadidos nuevos tipos de PDI, clubs: music, social, scout, freemasonry
 - Diálogo rediseñado para seleccionar el idioma de las instrucciones de navegación
 - Mis lugares: la última pestaña abierta ahora se recuerda y se abrirá la próxima vez
 - Varias correcciones para RTL
@@ -283,7 +283,7 @@ Fecha de lanzamiento 08/2021:
 Fecha de lanzamiento 02/2021:
 
 - Añadida opción para exportar e importar todos los datos, incluyendo configuraciones, recursos, mis lugares.
-- Planificar ruta: gráficos para segmentos de pista con ruta, y se añadió la capacidad de crear y editar múltiples segmentos de pista.
+- Plan Route: gráficos para segmentos de pista con ruta, y se añadió la capacidad de crear y editar múltiples segmentos de pista.
 - Añadido método de autenticación OAuth para OpenStreetMap, interfaz de usuario mejorada de los diálogos de OSM.
 - Soporte de colores personalizados para favoritos y puntos de paso de pista.
 
@@ -294,12 +294,12 @@ Fecha de lanzamiento 02/2021:
 
 Fecha de lanzamiento 09/2020:
 
-- Función "Planificar una ruta" actualizada: permite usar diferentes tipos de navegación por segmento y la inclusión de pistas
-- Nuevo menú "Apariencia" para pistas: selecciona color, grosor, muestra flechas de dirección, iconos de inicio/fin
+- Función "Plan a route" actualizada: permite usar diferentes tipos de navegación por segmento y la inclusión de pistas
+- Nuevo menú "Appearance" para pistas: selecciona color, grosor, muestra flechas de dirección, iconos de inicio/fin
 - Visibilidad mejorada de los nodos de bicicleta.
 - Las pistas ahora se pueden tocar, tienen menú contextual con información básica.
-- Algoritmos de "Búsqueda" mejorados
-- Opciones de "Seguir pista" mejoradas en Navegación
+- Algoritmos de "Search" mejorados
+- Opciones de "Follow track" mejoradas en Navegación
 - Se corrigieron problemas con la importación/exportación de la configuración del perfil
 
 <DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
@@ -315,7 +315,7 @@ Fecha de lanzamiento 05/2020:
 - Wikipedia como capa separada en configurar mapa, selecciona solo los idiomas necesarios
 - Crea tu propio filtro/mapas de PDI con total flexibilidad
 - Añadidas opciones para restaurar la configuración de perfiles personalizados
-- Las rutas GPX completas de navegación admiten carriles de tráfico e instrucciones de giro completas
+- Rutas GPX completas de navegación admiten carriles de tráfico e instrucciones de giro completas
 - Corregir tamaños de interfaz de usuario en tabletas
 - Corregir errores con RTL
 
@@ -369,7 +369,7 @@ Fecha de lanzamiento: 07/2019
 - Añadido un widget para las coordenadas actuales
 - Añadidas opciones para mostrar la brújula y una regla de radio en el mapa
 - Descargas de mapas mejoradas en segundo plano
-- Opción "Encender pantalla" devuelta
+- Opción "Turn Screen On" devuelta
 - Se corrigió la selección de idioma de Wikipedia
 - Se corrigió el comportamiento del botón de la brújula durante la navegación
 - Corrección de errores
@@ -383,7 +383,7 @@ Fecha de lanzamiento: 07/2019
 Fecha de lanzamiento: 03/2019
 
 - Nueva pantalla de Direcciones: Muestra los botones de destino de Casa y Trabajo, acceso directo a rutas anteriores, lista de pistas activas, historial de búsqueda
-- Información adicional en *Detalles de la ruta*: tipos de carretera, superficie, pendiente, suavidad
+- Información adicional en *Route details*: tipos de carretera, superficie, pendiente, suavidad
 - Navegación de transporte público
 - Nueva acción rápida para mostrar/ocultar pistas y modos día/noche
 - Se corrigieron las áreas inundadas en Alemania, Sudáfrica, Quebec
@@ -402,7 +402,7 @@ Fecha de lanzamiento 09/2018:
 - Se corrigió el bloqueo al inicio que ocurría con mapas no latinos
 - Se mejoraron los problemas de velocidad de renderizado en dispositivos Android 8.0
 - Soporte para la edición de objetos de polígono (no de amenidad)
-- Medir distancia: añadir botón Medir a Acciones en el menú contextual
+- Measure distance: añadir botón Measure a Actions en el menú contextual
 
 
 <DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
@@ -546,7 +546,7 @@ Fecha de lanzamiento: 03/2016
 Fecha de lanzamiento: 11/2015
 
 - Nueva interfaz de usuario sensible al contexto para tocar ubicaciones en el mapa y en otras pantallas
-- La pantalla del mapa ahora se inicia directamente a menos que se seleccione 'Mostrar panel al iniciar la aplicación'
+- La pantalla del mapa ahora se inicia directamente a menos que se seleccione 'Show Dashboard on app start'
 - Nuevos datos de Wikipedia, ahora se descargan por país y con datos mucho más completos
 - Mejor recálculo de rutas (después de repetidos intentos, el motor ahora sugiere una ruta diferente)
 - La búsqueda de PDI ahora admite consultas más específicas
@@ -620,7 +620,7 @@ Interfaz de usuario y otros:
 
 Simplificación de la grabación de viajes en segundo plano y la navegación en segundo plano:
 
-- OsmAnd ahora habilita automáticamente el servicio de modo de suspensión GPS si la navegación o la grabación de viajes se han activado, para que esto siga funcionando mientras la pantalla del dispositivo está apagada. Solo si se desea, el servicio de modo de suspensión GPS aún se puede interrumpir o configurar manualmente tocando el widget "Estado del GPS".
+- OsmAnd ahora habilita automáticamente el servicio de modo de suspensión GPS si la navegación o la grabación de viajes se han activado, para que esto siga funcionando mientras la pantalla del dispositivo está apagada. Solo si se desea, el servicio de modo de suspensión GPS aún se puede interrumpir o configurar manualmente tocando el widget "GPS status".
 
 - Plugin OsMo  
 - Funcionalidad de inicio/cierre de sesión
@@ -669,7 +669,7 @@ Fecha de lanzamiento 03/2014:
 - Enrutamiento completamente actualizado (rápido y preciso)
 - Nueva pantalla con Planificación de rutas (más intuitiva y potente)
 - Botones de ocultación automática en modo de navegación
-- Calcular ruta sin conexión al primer punto de la ruta GPX (opción 'pasar toda la pista')
+- Calcular ruta sin conexión al primer punto de la ruta GPX (opción 'pass the whole track')
 - Simulación activa en túneles
 - Configuración de accesibilidad de velocidad de voz
 
@@ -763,7 +763,7 @@ Fecha de lanzamiento 12/2012:
 - Plugin de notas de audio/video
 - Plugin de líneas de contorno
 - Corrección de errores
-- Opción de estilo de mapa 'Vista de turismo' con más detalles de mapa, nuevos estilos de carretera, más contraste y opción de senderismo alpino (escala SAC)
+- Opción de estilo de mapa 'Touring view' con más detalles de mapa, nuevos estilos de carretera, más contraste y opción de senderismo alpino (escala SAC)
 - Corrección de desplazamiento del geoide EGM96 para lecturas de altitud GPS
 
 <Download link="net.osmand-1.1.4%20beta-120.apk" />
@@ -786,7 +786,7 @@ Fecha de lanzamiento 09/2012:
 Fecha de lanzamiento: 07/2012
 
 - Soporte de plugins
-- Plugin de estacionamiento ('¿Dónde está mi coche aparcado?')
+- Plugin de estacionamiento ('Where is my car parked at?')
 - Puntos de paso
 - Guía de ruta mejorada
 - Configuración para evitar autopistas durante la navegación
@@ -808,7 +808,7 @@ Fecha de lanzamiento 04/2012:
 - Edición de PDI sin conexión
 - Opción de seguimiento en línea: envía coordenadas al servicio web periódicamente
 - Mostrar la pista grabada actualmente en el mapa
-- Detección de dirección: se indica y anuncia 'Girar en U' cuando se dirige en dirección opuesta o después de perder un giro
+- Detección de dirección: se indica y anuncia 'Make U-turn' cuando se dirige en dirección opuesta o después de perder un giro
 - Indicación óptica de un giro inminente dentro de 100 m mediante el cambio de color de la flecha de dirección
 - Datos de Wikipedia sin conexión con artículos
 

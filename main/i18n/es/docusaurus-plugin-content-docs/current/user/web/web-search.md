@@ -1,9 +1,10 @@
 ---
-source-hash: 552b7ab98cb47cfebc8836a696e65629cc7df57f4c5ef8f5c2339517189845a0
-sidebar_position: 6
+source-hash: 098646f83acbbceecc81138e6c1f095f561c363dd813f1adacc2c3762c0d0865
+sidebar_position: 10
 sidebar_label:  Búsqueda
 title: Búsqueda en el sitio web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,17 +16,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
 ## Resumen {#overview}
 
-Se puede acceder al **menú de Búsqueda** desde el panel lateral o la **esquina izquierda 🔍** del mapa. Contiene:
+El **menú de Búsqueda** se puede acceder desde el panel lateral o la **esquina izquierda 🔍** del mapa. Contiene:
 
 - [Barra de búsqueda](#search-bar). Introduce palabras clave para buscar lugares o puntos de interés específicos.  
 - [Sección de Categorías](#categories). Navega a través de opciones categorizadas para búsquedas de PDI más fáciles.  
-- [Sección Explorar](#explore). Descubre lugares y áreas de interés cercanas con fotos.
+- [Sección Explorar](#explore). Descubre lugares y áreas de interés cercanos con fotos.
 
 ![Menú de búsqueda](@site/static/img/web/search.png)
 
@@ -42,7 +42,7 @@ Si buscas por **nombre de Categoría**, el primer resultado mostrará la categor
 Al hacer clic en el PDI elegido en el mapa o en la lista de resultados se abre el **Menú contextual de PDI**. Este menú proporciona los siguientes datos y enlaces:
 
 - **Nombre e Icono**. Muestra el nombre y el icono del PDI.  
-- **Botón ★ (*Añadir a Favoritos*)**. Permite guardar el PDI elegido como [favorito](../web/web-userdata.mdx#add--edit-favorite).  
+- **Botón ★ (*Añadir a Favoritos*)**. Permite guardar el PDI elegido como [favorito](../web/web-favorites.md#add--edit-favorite).  
 - **Botón 🔍**. Mueve el mapa a la ubicación del PDI.  
 - **Distancia y Dirección**. Muestra la distancia y la dirección desde tu ubicación hasta el PDI elegido.  
 - **Ubicación**. Muestra las coordenadas del PDI.  
@@ -65,7 +65,7 @@ Puedes elegir y mostrar una categoría de PDI en el mapa en el **Menú de Catego
 Al hacer clic en el PDI seleccionado en el mapa o en la lista de resultados se abre el **Menú contextual de PDI**. Este menú proporciona los siguientes datos y enlaces:
 
 - **Nombre e Icono**. Muestra el nombre y el icono del PDI.  
-- **Botón ★ (*Añadir a Favoritos*)**. Permite guardar el PDI elegido como [favorito](../web/web-userdata.mdx#add--edit-favorite).  
+- **Botón ★ (*Añadir a Favoritos*)**. Permite guardar el PDI elegido como [favorito](../web/web-favorites.md#add--edit-favorite).  
 - **Botón 🔍**. Mueve el mapa a la ubicación del PDI.  
 - **Distancia y Dirección**. Muestra la distancia y la dirección desde tu ubicación hasta el PDI elegido.  
 - **Ubicación**. Muestra las coordenadas del PDI.  

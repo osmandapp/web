@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Notas de audio/vídeo
 ---
@@ -245,7 +245,7 @@ Para gestionar una nota en Mis Lugares, pulse los tres puntos verticales de la n
 
 <TabItem value="android" label="Android">
 
-![El widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![El widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![El widget](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ Es necesario añadir un widget a la pantalla si prefiere evitar la búsqueda de 
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - empezar a tomar fotos.
 
-    ![El widget](@site/static/img/plugins/audio-video-notes/widget.png)
+### Dispositivos de entrada externos {#external-input-devices}   
 
-**Utilizar dispositivos de entrada externos (*Android*)**. Si utiliza un [dispositivo de entrada externo](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), puede iniciar y detener las Notas de audio/vídeo sin tocar la pantalla. Para ello, asigne la acción «Añadir nota de audio» o «Añadir nota de vídeo» a una tecla:<br/>
+Si utiliza un [dispositivo de entrada externo](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*), puede iniciar y detener las Notas de audio/vídeo sin tocar la pantalla. Para ello, asigne la acción «Añadir nota de audio» o «Añadir nota de vídeo» a una tecla:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Una vez asignada, la tecla funciona como un alternador:
@@ -412,7 +412,7 @@ Puede especificar nombres para cada waypoint creado manualmente.
 
 ### Archivo GPX con waypoints {#gpx-file-with-waypoints}
 
-![Waypoint en un archivo GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
+![Waypoint en un archivo GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)  
 
 Si visualiza el archivo GPX de la pista añadida con un waypoint a partir de una nota de audio/vídeo/foto, el waypoint será como en el ejemplo siguiente, con las coordenadas, la marca de tiempo, el nombre de la nota respectiva y el enlace corto.
 
@@ -430,7 +430,7 @@ donde `SHORTLINK_LOCATION` especifica la latitud y longitud de la ubicación a l
 
 ### Exportar a JOSM {#export-to-josm}
 
-![Notas de audio y vídeo en Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Notas de audio y vídeo en Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
 Para verlo todo más tarde, puede exportar la pista junto con todos los archivos multimedia y verlos en el [editor JOSM](https://josm.openstreetmap.de/). Tenga en cuenta que los archivos multimedia deben colocarse en la carpeta adecuada. Puede averiguar cuál es haciendo clic en el vídeo. Aparecerá una notificación indicando que no hay ningún archivo disponible, coloque el archivo correcto en la carpeta especificada.
 

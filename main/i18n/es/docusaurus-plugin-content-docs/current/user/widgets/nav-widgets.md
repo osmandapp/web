@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title:  Widgets de navegación
 ---
@@ -325,6 +325,13 @@ Los widgets de *Guía de ruta* contienen información sobre:
 | Pulsación larga    | **Próximo giro**: Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Carriles**: Sin cambios. |
 
 
+### Carriles {#lanes}
+
+![Widgets de carriles](@site/static/img/widgets/lanes_widget.png)
+
+El widget **Carriles** resalta el carril actual cuando la navegación está activa y muestra la disposición de los carriles de la carretera real cuando la navegación es pasiva. También se muestra un indicador de distancia debajo del diagrama de carriles, que representa qué tan lejos queda hasta la maniobra donde se aplica la guía de carril. Este widget solo está disponible para los paneles Superior e Inferior. Los datos se toman del [proyecto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### Próximo giro {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,16 +350,21 @@ Los widgets de *Guía de ruta* contienen información sobre:
 
 </Tabs>
 
-Los widgets de navegación **Próximo giro**, **Próximo giro (pequeño)**, **Segundo próximo giro** se pueden colocar en cualquier panel para mayor comodidad del usuario. Sin embargo, la información mostrada difiere dependiendo del tipo de widget y su colocación. La tabla a continuación resume el comportamiento:
+Los widgets de navegación **Próximo giro**, **Próximo giro (pequeño)**, **Segundo próximo giro** se pueden colocar en cualquier panel para mayor comodidad del usuario. Sin embargo, la información mostrada difiere dependiendo del tipo de widget y su colocación. 
 
-|   Widget/Panel   | Panel izquierdo    | Panel derecho   | Panel superior              | Panel inferior           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Próximo giro**        | Solo distancia | Solo distancia | Nombre de la calle + distancia | Nombre de la calle + distancia |
-| **Próximo giro (pequeño)**| Solo distancia | Solo distancia | No disponible          | No disponible          |
-| **Segundo próximo giro** | Solo distancia | Solo distancia | Nombre de la calle + distancia | Nombre de la calle + distancia |
+En los paneles Superior / Inferior, los widgets Próximo giro y Segundo próximo giro se pueden mostrar como Ancho completo (un widget por fila) o Mitad de ancho (dos widgets por fila). El contenido depende del diseño y del tamaño del widget seleccionado (S / M / L).
 
+Ancho completo muestra:
+- Primera línea — Distancia hasta el giro + Salida N (si está disponible)
+- Segunda línea — Número de carretera con un escudo + nombre de carretera/calle
 
-### Indicaciones de color para el próximo giro {#color-prompts-for-next-turn}
+Mitad de ancho muestra:
+- Primera línea — Distancia hasta el giro
+- Segunda línea — Salida N (si está disponible) + número de carretera con un escudo + nombre de carretera/calle
+
+**Próximo giro** utiliza una flecha grande y admite diseños de Ancho completo / Mitad de ancho en los paneles Superior / Inferior. **Próximo giro (pequeño)** utiliza una flecha pequeña con la distancia colocada junto a la flecha y está destinado a los paneles Izquierdo / Derecho. **Segundo próximo giro** muestra la maniobra después del próximo giro y se activa cuando la segunda maniobra está dentro de la distancia de aproximación.
+
+### Indicaciones de color {#color-prompts}
 
 Esta tabla muestra el tiempo aproximado hasta que se activan las indicaciones y la indicación de color correspondiente de las flechas para realizar la maniobra. Para más información, consulte la [documentación técnica](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) o el artículo [Indicaciones de voz](../navigation/guidance/voice-navigation.md).
 
@@ -362,22 +374,18 @@ Esta tabla muestra el tiempo aproximado hasta que se activan las indicaciones y 
 | 🟡 Amarillo | 20 segundos     | Aproximándose| Gire en `x` m   |
 | ⚪ Gris   | > 100 segundos  | Distante    | Prepárese para girar |
 
+El mismo significado de color se aplica al widget de Carriles. El widget de Carriles se muestra según la configuración del tiempo de aproximación, y los colores de los carriles siguen la etapa de la indicación de voz.
 
-### Carriles {#lanes}
+<!--
+### Color Prompts for Lanes {#color-prompts-for-lanes}
 
-![Widgets de carriles](@site/static/img/widgets/lanes_widget.png)
+Displays a widget by approach time settings. Lane's color is associated with [voice prompts](../navigation/guidance/voice-navigation.md) and time remaining to perform the maneuver.
 
-El widget **Carriles** resalta el carril actual cuando la navegación está activa y muestra la disposición de los carriles de la carretera real cuando la navegación es pasiva. También se muestra un indicador de distancia debajo del diagrama de carriles, que representa qué tan lejos queda hasta la maniobra donde se aplica la guía de carril. Este widget solo está disponible para los paneles Superior e Inferior. Los datos se toman del [proyecto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
-
-### Indicaciones de color para los carriles {#color-prompts-for-lanes}
-
-Muestra un widget según la configuración del tiempo de aproximación. El color del carril está asociado con las [indicaciones de voz](../navigation/guidance/voice-navigation.md) y el tiempo restante para realizar la maniobra.
-
-| Color     | ~ Tiempo de activación | Distancia    | Tipo de indicación |
+| Color     | ~ Trigger Time | Distance    | Prompt type |
 | :-------- | :------------- | :---------- | :---------- |
-| 🟢 Verde  | 5 segundos      | Cerca    | [Gire ahora](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-| 🟡 Amarillo | 20 segundos     | Aproximándose | [Gire en X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+| 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+| 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+-->
 
 
 ## Widget de alertas {#alert-widget}
@@ -423,46 +431,29 @@ El widget de nombre de la calle muestra **el nombre de la calle actual** con una
 
 En los **Ajustes** del widget puede seleccionar mostrar siempre **el nombre de la calle actual** y usarlo con el widget [**Próximo giro**](#next-turn). La **Información del próximo giro** está DESACTIVADA por defecto. Si la habilita, el cambio entre el nombre de la calle actual y el nombre de la siguiente calle ocurre cuando se acerca al lugar donde desea realizar la maniobra (~20 segundos), igual que la indicación de voz [Gire en X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
-- Al conducir por una calle o carretera, el widget muestra el nombre o la designación de la calle (carretera) actual con una flecha azul.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
- ![Nombre de calle sin próximo giro](@site/static/img/widgets/without_next_turn_and.png) 
+ ![Nombre de calle sin próximo giro](@site/static/img/widgets/without_next_turn_and.png) ![Nombre de calle con próximo giro](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Nombre de calle sin próximo giro en iOS](@site/static/img/widgets/without_next_turn_ios.png) 
+ ![Nombre de calle sin próximo giro en iOS](@site/static/img/widgets/without_next_turn_ios.png) ![Nombre de calle con próximo giro en iOS](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-- Cuando cambia de dirección, el widget muestra el esquema de la maniobra y el nombre (designación) de la calle (carretera) a la que necesita girar con una flecha amarilla (Información del próximo giro = ACTIVADA).
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Nombre de calle con próximo giro](@site/static/img/widgets/with_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Nombre de calle con próximo giro en iOS](@site/static/img/widgets/with_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
 
 | | |
 |:------------|:------------|
 | Activar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Añadir widget → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Añadir widget → <Translate android="true" ids="map_widget_top_text"/>* |
+| Ajustes | Seleccione para mostrar siempre **el nombre de la calle actual** o mostrar **el nombre de la siguiente calle** al aproximarse a la maniobra |
 | Al tocar | Abre un menú contextual con Ajustes (cambiar Información del próximo giro ACTIVADA/DESACTIVADA) y Eliminar |
 
 

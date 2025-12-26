@@ -1,5 +1,5 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
 title:  Navegación en barco
 ---
@@ -67,7 +67,7 @@ Normalmente, el *enrutamiento en barco* se utiliza con el perfil de barco (el ú
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Le permite usar arroyos y desagües para la navegación en barco. Habilitar esta opción puede ser útil para barcos pequeños como canoas, kayaks, balsas, botes de remos. |  [Arroyos](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) son cursos de agua de formación natural que son demasiado estrechos para ser llamados río. [Desagües](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) son cursos de agua artificiales, típicamente revestidos de hormigón o similar, utilizados para transportar agua superflua como agua de tormenta o descarga de aguas grises.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Activar esta opción le permite usar vías fluviales intermitentes para navegar en barco.   | La etiqueta [Intermitente](https://wiki.openstreetmap.org/wiki/Key:intermittent) se usa para indicar que una vía fluvial no contiene agua permanentemente.  |
-| *Permitir ferris* | Habilita el enrutamiento a través de rutas de ferry. | Utiliza `route=ferry` donde esté presente en OSM. No se requieren nuevos mapas. |
+| *Permitir ferris* | Habilita el enrutamiento a través de rutas de ferry. | Normalmente, las [rutas de ferry](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) son inaccesibles para barcos pequeños según la definición de OSM. |
 
 :::note Navegación acuática y limitaciones
 

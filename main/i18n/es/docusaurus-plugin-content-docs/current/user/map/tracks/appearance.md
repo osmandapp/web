@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Apariencia de la pista
 ---
@@ -55,35 +55,19 @@ Puede modificar la apariencia de la pista utilizando uno de los siguientes méto
 Algunos ajustes solo se pueden usar con *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Funciones gratuitas y de pago.
 :::
 
-![Apariencia](@site/static/img/map/appearance_color_andr.png)
+![Apariencia](@site/static/img/map/appearance_color_andr.png) ![Menú contextual de coloreado iOS](@site/static/img/map/colorisation_ios.png)
 
 Puede establecer el color de la pista manualmente o usar la **visualización de datos basada en colores** (p. ej., velocidad, altitud, pendiente). Si una pista carece de ciertos datos, OsmAnd muestra las secciones faltantes en gris.
 
 **Opciones de color disponibles:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- **Ajustes gratuitos**: color *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si se grabó) y *<Translate android="true" ids="altitude"/>* (si se grabó).   
+- [Función Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Menú de pista Apariencia Color de pista Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Apariencia Color de pista Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Menú contextual de coloreado iOS](@site/static/img/map/colorisation_ios.png)
-
-La lista de **Coloreado** se abre como un menú contextual. Los elementos pueden aparecer en tres estados: 
+En iOS, la lista de **Coloreado** se abre como un menú contextual. Los elementos pueden aparecer en tres estados: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Se puede aplicar a la pista actual.
 2. <Translate ios="true" ids="weather_update_disabled"/>. A la pista le faltan los datos requeridos.
 3. PRO. Disponible para la pista actual pero requiere una suscripción; al tocar se abre la pantalla [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Ajustes gratuitos**: color *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si se grabó) y *<Translate android="true" ids="altitude"/>* (si se grabó).   
-- [Función Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Para más detalles sobre la personalización de la apariencia de la línea de ruta, consulte [Pantalla de mapa durante la navegación](../../navigation/guidance/map-during-navigation.md#color) y sobre la selección y creación de un color personalizado, consulte [Esquemas de color](../../personal/color-palette-schemes.md#routes).
 
@@ -124,7 +108,7 @@ Ajuste el ancho de la pista para mejorar la visibilidad en el mapa.
 
 </Tabs>
 
-Seleccione si desea dividir la pista en intervalos por **distancia**, **tiempo** o **subida/bajada** (Android), o por **distancia** o **tiempo** (iOS). Para ver estadísticas detalladas por intervalo, consulte [Analizar por intervalos](../../map/tracks/track-context-menu.md#analyze-by-intervals) (solo Android).
+Seleccione si desea dividir la pista en intervalos por **distancia**, **tiempo**, o **subida/bajada** (Android), o por **distancia** o **tiempo** (iOS). Para ver estadísticas detalladas por intervalo, consulte [Analizar por intervalos](../../map/tracks/track-context-menu.md#analyze-by-intervals) (solo Android).
 
 
 ### Flechas de dirección {#direction-arrows}
@@ -237,7 +221,7 @@ La pestaña [Pistas](../../personal/tracks/manage-tracks.md) muestra automática
 
 Modifique la apariencia de varias pistas en *Mis Lugares → Pistas*:
 
-- **Cambiar apariencia predeterminada** - Aplica los ajustes a todas las pistas en una [carpeta](../../personal/tracks/manage-tracks.md#track-folder).
+- **Cambiar apariencia predeterminada** (solo Android) - Permite configurar ajustes predeterminados que se aplicarán una vez que se añada una pista a la [carpeta](../../personal/tracks/manage-tracks.md#track-folder).
 - **Restablecer al original** - Restaura los ajustes individuales de la pista.
 
 - [Modo de selección](../../personal/tracks/manage-tracks.md#selection-mode) - Cambia la apariencia de pistas específicas en la carpeta seleccionada o en toda la lista en la pestaña Pistas.

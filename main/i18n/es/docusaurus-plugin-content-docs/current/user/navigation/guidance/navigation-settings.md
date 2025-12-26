@@ -1,5 +1,5 @@
 ---
-source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
+source-hash: a8559f43cff19c4a14831feb61c4c3facdea6dab64c9c232c37b5ba47e810958
 sidebar_position: 1
 title:  Ajustes de navegación
 ---
@@ -211,7 +211,7 @@ Si selecciona una pista como punto de destino, necesita usar la opción [Ajustar
 En la sección **Anunciar**, puede elegir qué tipos de notificaciones deben reproducirse o mostrarse durante la navegación:
 
 - **Direcciones giro a giro** (solo Android) – permite habilitar o deshabilitar las instrucciones de navegación estándar como *“Gire a la izquierda”*, *“Gire a la derecha”* o *“En 200 metros…”*. Cuando la opción está desactivada, no se proporcionan anuncios de giros y nombres de calles, mientras que las notificaciones para puntos de ruta, puntos de usuario y eventos de ruta permanecen activas. Este modo está destinado a actividades como rafting, senderismo o ciclismo a lo largo de pistas pregrabadas, cuando solo se requieren alertas para puntos de ruta añadidos manualmente.
-- **Nombres de calles (TTS)** – anuncia los nombres de las calles a lo largo de su ruta.
+- **Nombres de calles(TTS)** – anuncia los nombres de las calles a lo largo de su ruta.
 - **Número de salida** – anuncia el número de salida al conducir por autopistas.
 - **Advertencias de tráfico** – proporciona alertas sobre eventos importantes en la carretera como congestiones o restricciones.
 - **Pasos de peatones** – le avisa cuando se acerca a pasos de peatones.
@@ -326,7 +326,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Ajustes de navegación iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
