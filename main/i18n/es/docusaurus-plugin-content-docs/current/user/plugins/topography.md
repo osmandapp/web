@@ -1,5 +1,5 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Topografía
 ---
@@ -215,7 +215,7 @@ El menú **Terreno** incluye la selección del [esquema de color](#default-color
 
 | Sombreado de relieve | Pendiente | Altitud |
 | ------ | ------- | ------- |
-| ![Sombreado de relieve](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendiente](../../../blog/2023-08-28-terrain/img/slope.png) | ![Altitud](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Sombreado de relieve](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendiente](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pendiente](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Sombreado de relieve** se basa en la simulación de la iluminación de la superficie utilizando datos del terreno. Este método implica la creación de sombras y luces basadas en el ángulo de la superficie con respecto a la fuente de luz. Como resultado, ves colinas, valles y otros detalles del terreno de forma natural en el mapa.  
 
@@ -250,7 +250,7 @@ Los mapas raster de **Sombreado de relieve**, **Pendiente** y **Altitud** se cre
 ### Modificar esquema de color {#modify-color-scheme}
 
 :::info Función de pago
-*Modificar esquema de color* es una función de pago de **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) y [Android](../purchases/android.md#pro-features) <ProFeature />.
+*[Modificar esquema de color](../../user/personal/color-palette-schemes.md#terrain)* es una función de pago de **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) y [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -274,7 +274,7 @@ La función *Modificar esquema de color* te permite seleccionar un esquema de co
 - De una [lista predefinida](#default-color-scheme).
 - De archivos de paleta de colores que hayas creado en tu ordenador. Los archivos personalizados se pueden agregar a OsmAnd utilizando la [herramienta de importación/exportación](../personal/import-export.md).
 
-Puedes [editar estas paletas](../personal/color-palette-schemes.md#edit-palette-file) para personalizar la apariencia de los mapas y las rutas.
+Puedes [editar estas paletas](../personal/color-palette-schemes.md#palette-modify) para personalizar la apariencia de los mapas y las rutas.
 
 
 ### Visibilidad {#visibility}
@@ -314,7 +314,7 @@ La función *Niveles de escala* te permite establecer los valores mínimos y má
 
 ![Acción rápida para Terreno](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Puedes usar los botones de *Acción rápida* en la pantalla del mapa para cambiar la visibilidad de las capas de [Curvas de nivel](#contour-lines), [Terreno](#terrain) y el [esquema de color del Terreno](#default-color-scheme). Dependiendo de la capa seleccionada en el menú Configurar mapa, asignar una acción de *Terreno* al botón mostrará *Sombreado de relieve*, *Pendiente* o *Altitud*.  
+Puedes usar los botones de *Acción rápida* en la pantalla del mapa para cambiar la visibilidad de las capas de [Curvas de nivel](#contour-lines), [Terreno](#terrain) y el [esquema de color del Terreno](../../user/personal/color-palette-schemes.md#quick-actions). Dependiendo de la capa seleccionada en el menú Configurar mapa, asignar una acción de *Terreno* al botón mostrará *Sombreado de relieve*, *Pendiente* o *Altitud*.  
 
 La configuración principal para *Mostrar u ocultar tipos de mapa* se encuentra en la sección Topografía del menú Configurar mapa. En el artículo [Acción rápida](../widgets/quick-action.md#configure-map), puedes encontrar una lista de capas disponibles para mostrar. Si necesitas acceso rápido a esta configuración de mapa, utiliza la herramienta *Botón personalizado*.
 

@@ -1,7 +1,8 @@
 ---
-source-hash: 257aa3375005b7337989c2fb8807d99a7f493686cc168590879f6312c2b3d6f2
+source-hash: 9b261b980d55ca844b224f16fdc5201ded60242c62cc91adffc973d4d27faf3e
 title: Planificador Web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,21 +13,37 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-### Resumen {#overview}
+### [Introducción](./web-overview.md) {#introduction}
 
 En esta sección, encontrará una descripción de nuestro [Planificador Web](https://osmand.net/map).
 
-### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
+### [Cuenta](./web-cloud.md) {#account}
 
 Esta sección explica cómo iniciar sesión y registrarse en [www.osmand.net/map](https://osmand.net/map/) y destaca los beneficios que los usuarios reciben después de registrarse.
 
 ### [Mapa](./web-map.md) {#map}
 
-Esta sección detalla datos adicionales del mapa como Favoritos, Rutas Personales y Capas Meteorológicas.
+Esta sección cubre la interfaz del mapa web de OsmAnd, incluyendo el menú del mapa, la configuración de capas, los ajustes y los enlaces URL.
 
-### [Datos de usuario](../web/web-userdata.mdx) {#user-data}
+### [Tiempo](./web-weather.md) {#weather}
 
-Rutas GPX y Favoritos del usuario en el mapa.
+Esta sección explica cómo ver las condiciones meteorológicas y los pronósticos en el mapa web, incluyendo pronósticos basados en el tiempo y superposiciones meteorológicas.
+
+### [Pistas](./web-tracks.md) {#tracks}
+
+Esta sección cubre el trabajo con pistas GPX personales en la web, incluyendo su visualización, edición, organización y sincronización con OsmAnd Cloud.
+
+### [Favoritos](./web-favorites.md) {#favorites}
+
+Lugares guardados mostrados en el mapa, con opciones para organizarlos en carpetas, gestionar el acceso y reutilizarlos para navegación o planificación de rutas.
+
+### [Analizador de Pistas](./web-tracks-analyzer.md) {#tracks-analyzer}
+
+Esta sección se centra en el análisis de segmentos de pista entre puntos seleccionados en el mapa y en la comparación de parámetros clave entre múltiples pistas.
+
+### [Navegación](./web-navigation.md) {#navigation}
+
+Esta sección explica cómo construir y previsualizar rutas de navegación en el mapa web, incluyendo perfiles de enrutamiento, ajustes y detalles de la ruta.
 
 ### [Planificar Ruta](./planner.md) {#plan-route}
 

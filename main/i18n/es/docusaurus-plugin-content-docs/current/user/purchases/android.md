@@ -1,5 +1,5 @@
 ---
-source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
+source-hash: f883cecaa5261a36f9d1f1d64d29499b611644d5e7812a27bf94c9d003dd7880
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -76,25 +76,25 @@ Para dispositivos Android, puedes descargar las versiones **Gratuita** y de **Pa
 
 En la lista, hay información sobre los precios del producto OsmAnd para la región de EE. UU. y Europa. Para otras regiones, los precios son equivalentes en las monedas locales.
 
-<!--
 
-:::danger October Sale prices
 
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Oferta de Navidad
+
+*¡Date prisa! Esta oferta solo está disponible hasta* **28 de diciembre (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) en la aplicación | Suscripción [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Tipo de compra** | **Gratis** | **Compra única** (de por vida) | **Suscripción** (12 meses) | **Suscripción** (1 mes / 12 meses) |
+| **Precio (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Precio (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
+<!--
 
--->
 
 |    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) en la aplicación | Suscripción [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -103,7 +103,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | **Precio (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Precio (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
-
+-->
 
 ### Funciones gratuitas y de pago {#free-and-paid-features}
 
@@ -119,13 +119,13 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Todas las funciones Pro](#pro-features) | **-** | **-** | ✔ |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Descargas ilimitadas de mapas](../start-with/download-maps.md) | <details><summary>**7 descargas de mapas**</summary>  - La descarga o actualización de un mapa se refiere únicamente a la descarga-actualización del mapa de un país (región). <br/> - El **mapa general del mundo**, la **corrección de altitud mundial**, las **fuentes de mapa** y las **indicaciones de voz** no se cuentan como parte de las 7 posibilidades de descarga. </details> | ✔ | ✔ |
+| [Descargas ilimitadas de mapas](../start-with/download-maps.md) | <details><summary>**7 descargas de mapas**</summary>  - La descarga o actualización de un mapa se refiere únicamente a la descarga-actualización del mapa de un país (región). <br/> - **Mapa general del mundo**, **Corrección de altitud mundial**, **Fuentes de mapa** y **Indicaciones de voz** no se cuentan como parte de las 7 posibilidades de descarga. </details> | ✔ | ✔ |
 | [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates-menu)<br/>Una vez al mes (con 2 días de retraso) | <details><summary>**7 descargas de mapas**</summary> La actualización de un mapa cuenta como una descarga.</details> | ✔ | ✔ |
 | [Actualizaciones de mapas por hora](../personal/maps-resources.md#live-updates)<br/>Actualizaciones en vivo (retraso de 1 hora) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
-| [Personalización de color de la cuadrícula de coordenadas](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
+| [Cuadrícula de coordenadas — Personalización de color](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
 | [Visualización de tracks en 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lugares populares (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
@@ -171,6 +171,7 @@ La suscripción **Pro** tiene actualmente las siguientes características:
 | [Widget de elevación](../widgets/nav-widgets.md#elevation-widget) | Muestra tu ubicación en el gráfico de elevación de la ruta de navegación con información adicional.  |
 | [Widgets de altitud - Elevación: Centro del mapa](../widgets/info-widgets.md#elevation-map-center) | Permite conocer la elevación del centro del mapa actual sobre el nivel del mar.  |
 | [Corrección de elevación (sin conexión)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permite calcular un gráfico de altitud para tu track (se requiere un [mapa de terreno](../plugins/topography.md#download-maps) para la región elegida). |
+| [Modificar esquema de color](../../user/plugins/topography.md#modify-color-scheme) | Te permite personalizar la apariencia del mapa seleccionando o importando paletas de colores. Puedes editar esquemas integrados o usar tus propios archivos de paleta para personalizar los colores del mapa y de la ruta. |
 
 
 ## Cómo comprar {#how-to-buy}

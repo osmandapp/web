@@ -1,8 +1,9 @@
 ---
-source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
+source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
 sidebar_position: 5
 title:  Enrutamiento de Transporte Público
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-
-## Resumen {#overview}
+## Overview {#overview}
 
 La navegación de transporte público en la aplicación OsmAnd le permite calcular las rutas utilizando el transporte público, lo que sin duda le ayudará a moverse más rápido por la "jungla de asfalto".
 
-Los datos sobre las rutas de transporte público se toman del proyecto [OpenStreetMap](http://openstreetmap.org/). OsmAnd utiliza el [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para la navegación. OsmAnd admite las siguientes rutas de OpenStreetMap para la navegación: *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. La velocidad predeterminada para cada tipo de vehículo se configura en el [XML de enrutamiento](../../../technical/build-osmand/routing.md) y se utiliza para encontrar las rutas más rápidas.
+Los datos sobre las rutas de transporte público se toman del proyecto [OpenStreetMap](http://openstreetmap.org/). OsmAnd utiliza el [esquema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) para la navegación. OsmAnd admite las siguientes rutas de OpenStreetMap para la navegación: *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. La velocidad predeterminada para cada tipo de vehículo se configura en [Routing xml](../../../technical/build-osmand/routing.md) y se utiliza para encontrar las rutas más rápidas.
 
 :::note
 El enrutamiento de transporte público está en fase de pruebas. Por ahora, puede crear y ver su ruta sin la función de navegación completa.
@@ -42,7 +42,7 @@ El enrutamiento de transporte público está en fase de pruebas. Por ahora, pued
 </Tabs>
 
 
-## Cómo usar {#how-to-use}
+## How to Use {#how-to-use}
 
 Para comenzar a navegar por la ciudad en transporte público, use [el botón de navegación](../../widgets/map-buttons.md#directions) en la pantalla del mapa o seleccione la opción de navegación en el *Menú principal*.  
 
@@ -119,8 +119,57 @@ Para comenzar a navegar por la ciudad en transporte público, use [el botón de 
 
 </Tabs>
 
+## Public Transport Types {#public-transport-types}
 
-## Datos y directrices {#data-and-guideline}
+Puede buscar rutas de transporte público bien curadas según sus preferencias y elegir evitar:
+
+- Autobuses (y trolebuses)
+- Metro
+- Trenes
+- Tranvías
+- Ferries
+- Taxi compartido
+
+Por defecto, OsmAnd busca rutas que incluyan todos los tipos de transporte público compatibles.
+
+## Alternative Routes {#alternative-routes}
+
+Las rutas alternativas son secciones de una ruta que son atendidas por diferentes servicios de transporte y comparten el mismo camino y paradas.
+
+Diferentes servicios de transporte pueden usar números de ruta (refs) diferentes o incluso diferentes tipos de transporte.
+
+La interfaz de usuario muestra las rutas alternativas como insignias de color con sus refs.
+
+## Performance and Results {#performance-and-results}
+
+**Perfil de Transporte Público -> Configuración -> Configuración de navegación -> Parámetros de ruta**
+
+1. **Número máximo de cambios de transporte**.
+
+El rendimiento y el consumo de memoria del enrutador de Transporte Público dependen de la profundidad de búsqueda.
+
+El parámetro más importante que afecta esta profundidad es el **Número máximo de cambios de transporte**.
+
+Usamos **2** como valor predeterminado, que parece óptimo para las redes modernas de transporte público.
+
+Si encuentra bajo rendimiento o errores de memoria insuficiente, pruebe disminuyendo este valor.
+
+Si está en una ciudad pequeña o viaja rutas cortas, un valor de **1** puede funcionar mejor.
+<!--
+There are two more parameters that help you choose the best routes.
+
+2. **Display N best routes** (specify the number of best routes to display)
+
+By default, OsmAnd displays the **10** best routes (including alternative routes).
+
+You can decrease or increase this limit, or even display all routes.
+
+Note: displaying unlimited routes might slow down your device.
+
+Possible values: 0 (show all), 5, 10 (default), 15, 100
+-->
+
+## Data and Guideline {#data-and-guideline}
 
 OsmAnd utiliza un nuevo esquema de transporte público, también llamado Public Transport Version 2 (PTv2) para el algoritmo de navegación de Transporte Público de OsmAnd.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
+source-hash: 07f0f9eef0edaa9b0f5ade51776aa2f175ba53128c6bdac5c99ffcb6ffad3f65
 sidebar_position: 3
 title:  Compras Web
 ---
@@ -38,11 +38,11 @@ Todas las compras realizadas a través de cualquiera de estas plataformas admite
 A continuación se muestran los precios de los productos OsmAnd en EE. UU. y la UE. Los precios en otras regiones son convertidos automáticamente a la moneda local por la plataforma de pago.
 
 
-<!--
 
-:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Oferta de Navidad
+
+*¡Apúrese! Esta oferta solo está disponible hasta* **28 de diciembre (23:00 CET)**.
 
 :::
 
@@ -51,27 +51,28 @@ A continuación se muestran los precios de los productos OsmAnd en EE. UU. y la 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
+| **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 meses) | **Suscripción** (1 mes / 12 meses) |**Compra única** (15 años Pro / Maps+ Vitalicia) |
+| **Precio (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
+| **Precio (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
 
 :::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
+Al comprar una suscripción a través de nuestro [sitio web](https://osmand.net/pricing) con un descuento,  
+recibe un plan con descuento de 2 años.  
+A partir del tercer año, se aplicará el precio completo.
 :::
 
--->
+
+<!--
 
 
-|    | OsmAnd Free   | **Maps+** Compra única | **Maps+** Suscripción | **OsmAnd Pro** |**OsmAnd XV** |
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 meses) | **Suscripción** (1 mes / 12 meses) |**Compra única** (15 años Pro / Maps+ Vitalicia) |
-| **Precio (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Precio (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
+| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
 
-
+-->
 
 ### Funciones gratuitas y de pago {#free-and-paid-features}
 

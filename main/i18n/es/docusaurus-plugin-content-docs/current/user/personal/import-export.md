@@ -1,5 +1,5 @@
 ---
-source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
+source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
 sidebar_position: 10
 title:  Importar / Exportar
 ---
@@ -92,6 +92,16 @@ Abre y restaura archivos `.osf`. Toque el archivo en el gestor de archivos del d
 - *Algunos elementos ya existen*. Puede utilizar esta función para guardar ambos archivos o reemplazarlos todos.
 - *Reiniciar*. Después de importar los archivos, la aplicación debe reiniciarse.
 
+Tipos de archivos de importación compatibles:
+- [Pistas, rutas](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) y [favoritos](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Los archivos KML y KMZ se importan con conversión al formato GPX.
+- [Mapas vectoriales de OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
+- [Baldosas de mapas en línea](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Copias de seguridad y perfiles](#export): `.osf`.
+- [Mapas de altura / datos 3D](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Otros](color-palette-schemes.md): `.txt`.
+
+Para una visión técnica general de todos los formatos compatibles, consulte [Formatos de archivos de OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
+
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -100,7 +110,7 @@ Abre y restaura archivos `.osf`. Toque el archivo en el gestor de archivos del d
 
 ## Prevenir la pérdida de datos {#preventing-data-loss}
 
-En las versiones de *Android* e *iOS* de OsmAnd, si **desinstala** completamente la aplicación o selecciona **Borrar datos** en el menú de Ajustes de información de la aplicación de su dispositivo, la carpeta de datos también se eliminará del gestor de archivos del dispositivo. Si no toma precauciones, esto resultará en la **pérdida de todos los mapas descargados para los datos de OsmAnd, todos los Favoritos guardados, las pistas GPX, las instrucciones de voz (TTS) y [otros datos](#export--import-data).**
+En las versiones de *Android* e *iOS* de OsmAnd, si **desinstala** completamente la aplicación o selecciona **Borrar datos** en el menú de Ajustes de información de la aplicación de su dispositivo, la carpeta de datos también se eliminará del gestor de archivos del dispositivo. Si no toma precauciones, esto resultará en la **pérdida de todos los mapas descargados para OsmAnd, todos los Favoritos guardados, pistas GPX, Instrucciones de voz (TTS) y [otros datos](#export--import-data).**
 
 Hay dos formas de guardar sus datos antes de reinstalar la aplicación OsmAnd:
 

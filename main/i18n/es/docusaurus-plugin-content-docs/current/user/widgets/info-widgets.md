@@ -1,6 +1,5 @@
 ---
-source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
-
+source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
 sidebar_position: 3
 title:  Widgets informativos
 ---
@@ -20,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-Los widgets informativos le proporcionan un acceso rápido a datos importantes. Pueden ser datos sobre la velocidad, el tiempo, la posición de aparcamiento, datos de sensores externos y mucho más. Los widgets pueden configurarse según sus necesidades específicas, permitiendo su visibilidad en la pantalla de la aplicación o desactivándolos si es necesario.
+Los widgets informativos le proporcionan un acceso rápido a datos importantes. Pueden ser datos sobre la velocidad, el clima, la posición de aparcamiento, datos de sensores externos y mucho más. Los widgets pueden configurarse según sus necesidades específicas, permitiendo su visibilidad en la pantalla de la aplicación o desactivándolos si es necesario.
 
 ![Widgets informativos](@site/static/img/widgets/informational_widgets_all.png)
 
@@ -476,7 +475,7 @@ Puede leer una descripción más detallada aquí: **[complemento <Translate andr
 
 </Tabs>
 
-Los widgets de grabación de viaje se refieren al [complemento <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Puede utilizar los widgets para ver en la pantalla información breve sobre la grabación de la ruta. Como *Distancia*, *Duración*, *Ascenso*, *Descenso*, *Velocidad máxima* y *Pendiente media* (los dos últimos solo disponibles en Android).
+Los widgets de grabación de viaje se refieren al [complemento <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Puede utilizar los widgets para ver en la pantalla información breve sobre la grabación de la ruta. Como *Distancia*, *Duración*, *Ascenso*, *Descenso*, *Velocidad máxima* y *Pendiente media*.
 
 | | |
 |:------------|:------------|

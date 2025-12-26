@@ -1,9 +1,10 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
 sidebar_label:  Planificar Ruta
 title: Planificar Ruta en el Sitio Web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -24,34 +24,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 El Planificador de Rutas Web de OsmAnd le permite crear rutas de navegación, planificar pistas y gestionar archivos locales directamente desde su navegador. Esta herramienta web es útil para crear rutas de viaje detalladas que puede sincronizar con su aplicación o compartir con otros.
 
 
-## Ruta de Navegación {#navigation-route}
+<!--
+## Navigation Route {#navigation-route}
 
-Para crear una ruta de navegación, siga estos pasos:
+To create a navigation route, follow these steps:
 
-- **Haga clic con el botón derecho** en el mapa para añadir puntos de ruta:
+- **Right-click** on the map to add waypoints:
 
-  - *Navegar desde*. Establezca el punto de partida.
-  - *Navegar hasta*. Establezca el destino.
-  - *Navegar vía*. Añada puntos intermedios si es necesario.
+  - *Navigate from*. Set the starting point.
+  - *Navigate to*. Set the destination.
+  - *Navigate via*. Add intermediate points if needed.
 
-- Después de establecer los puntos de inicio y fin, la ruta se mostrará en el mapa.
+- After setting the start and end points, the route will be displayed on the map.
 
-- En el bloque **Ruta**:
+- In the **Route** block:
 
-  - Mueva los puntos de inicio y fin si es necesario.
-  - Edite los puntos de ruta y elija el tipo de ruta deseado (por ejemplo, coche, bicicleta, a pie).
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
-  ![Crear Ruta Web de OsmAnd](@site/static/img/web/navigation.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- Seleccione el **Perfil de Ruta** apropiado para las diferentes opciones de navegación.
+- Select the appropriate **Route Profile** for different navigation options.
 
-  ![Crear Ruta Web de OsmAnd](@site/static/img/web/profile_type.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- Haga clic en los círculos naranjas a lo largo de la ruta para ver las instrucciones de navegación detalladas.
+- Click on the orange circles along the route to view detailed navigation instructions.
 
-  ![Crear Ruta Web de OsmAnd](@site/static/img/web/nav_instr.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- Para compartir la ruta, copie la URL. Ejemplo: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
 ## Crear Pista y Archivos Locales {#create-track-and-local-files}
