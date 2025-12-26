@@ -32,7 +32,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             return includeUnit ? `${formattedValue} ${smallUnit}` : formattedValue;
         }
 
-        formattedValue = value.toFixed(1);
+        formattedValue = Number.parseFloat(value.toFixed(1)).toString();
         return includeUnit ? `${formattedValue} ${largeUnit}` : formattedValue;
     }
 

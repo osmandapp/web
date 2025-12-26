@@ -48,38 +48,6 @@ import AvoidRoadsList from './AvoidRoadsList';
 export const COLOR_BTN_BLUE = '#237BFF';
 export const COLOR_BTN_RED = '#E71D36';
 
-export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
-    if (!navObject) {
-        return null;
-    }
-    const startPoint = navObject.getOption(ROUTE_POINTS_START);
-    if (!startPoint) {
-        return ROUTE_POINTS_START;
-    }
-
-    const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
-
-    // Check for null slots in viaPoints array (e.g., [point1, null, point3] → return index 1)
-    for (let i = 0; i < viaPoints.length; i++) {
-        if (!viaPoints[i]) {
-            return { type: ROUTE_POINTS_VIA, index: i };
-        }
-    }
-
-    // Check if there are more UI inputs than filled points (e.g., viaPoints=[p1,p2], viaInputsCount=3 → return index 2)
-    if (viaInputsCount > viaPoints.length) {
-        return { type: ROUTE_POINTS_VIA, index: viaPoints.length };
-    }
-
-    const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);
-    if (!finishPoint) {
-        return ROUTE_POINTS_FINISH;
-    }
-
-    // All inputs are filled - no empty slots available
-    return null;
-}
-
 const StyledInput = styled('input')({
     display: 'none',
 });
@@ -119,6 +87,28 @@ export default function NavigationMenu() {
 
     const [profilesMenuAnchor, setProfilesMenuAnchor] = useState(null);
     const [visibleProfiles, setVisibleProfiles] = useState(ctx.routeVisibleProfiles || DEFAULT_VISIBLE_PROFILES);
+    const [profilesReady, setProfilesReady] = useState(false);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(globalThis.location.search);
+        const urlProfile = searchParams.get('profile');
+        if (!urlProfile) {
+            setProfilesReady(true);
+            return;
+        }
+        const profile = navObject.listProfiles().find((p) => p.key === urlProfile);
+        if (!profile) {
+            return;
+        }
+        if (urlProfile && visibleProfiles[0] !== urlProfile) {
+            const newVisibleProfiles = visibleProfiles.filter((key) => key !== urlProfile);
+            newVisibleProfiles.unshift(urlProfile);
+            const updatedProfiles = newVisibleProfiles.slice(0, MAX_VISIBLE_PROFILES);
+            setVisibleProfiles(updatedProfiles);
+            ctx.setRouteVisibleProfiles(updatedProfiles);
+        }
+        setProfilesReady(true);
+    }, [navObject.listProfiles()]);
 
     useEffect(() => {
         if (!ctx.routeTrackFile) {
@@ -268,7 +258,23 @@ export default function NavigationMenu() {
             />
             <Box className={gStyles.scrollActiveBlock} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box className={styles.profileButtonBox}>
-                    {visibleProfiles.map((key) => {
+                    {visibleProfiles.map((key, index) => {
+                        if (index === 0 && !profilesReady) {
+                            return (
+                                <Box
+                                    key="loading"
+                                    sx={{
+                                        width: 40,
+                                        height: 40,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <CircularProgress size={24} />
+                                </Box>
+                            );
+                        }
                         const profile = navObject.listProfiles().find((p) => p.key === key);
                         if (!profile) return null;
                         return (

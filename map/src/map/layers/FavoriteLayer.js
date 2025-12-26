@@ -18,7 +18,8 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
-import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
+import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
 
 export function restoreOriginalIcon(layer) {
     if (layer.options.originalIcon) {
@@ -305,6 +306,36 @@ const FavoriteLayer = () => {
 
     const onClick = useCallback(
         (e) => {
+            if (globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                const lat = e.latlng?.lat ?? e.sourceTarget?._latlng?.lat;
+                const lon = e.latlng?.lng ?? e.sourceTarget?._latlng?.lng;
+
+                if (lat && lon) {
+                    const wpt = {
+                        ...e.sourceTarget.options,
+                        lat,
+                        lng: lon,
+                        type: NAVIGATION_OBJECT_TYPE_FAVORITE,
+                    };
+                    const navEvent = new CustomEvent('nav-marker-click', {
+                        detail: {
+                            wpt,
+                            latlng: L.latLng(lat, lon),
+                        },
+                        cancelable: true,
+                    });
+                    navEvent.originalEvent = e.originalEvent;
+                    globalThis.dispatchEvent(navEvent);
+
+                    // If NavigationLayer handled it (found empty input), don't open info
+                    if (navEvent.defaultPrevented) {
+                        L.DomEvent.stopPropagation(e);
+                        return;
+                    }
+                }
+            }
+
+            // Normal logic: open context info block
             ctx.selectedGpxFile = {};
             ctx.selectedGpxFile.trackData = { ...ctx.favorites.mapObjs[e.sourceTarget.options.groupId] };
 

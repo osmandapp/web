@@ -10,6 +10,7 @@ export default function SelectItemRadio({
     disabled = false,
     showDivider = true,
     boldTitle = true,
+    className = '',
 }) {
     const handleRowClick = () => {
         if (!disabled) {
@@ -26,7 +27,7 @@ export default function SelectItemRadio({
 
     return (
         <>
-            <MenuItem className={styles.item} onClick={handleRowClick} disabled={disabled}>
+            <MenuItem className={`${styles.item} ${className}`} onClick={handleRowClick} disabled={disabled}>
                 <ListItemText disableTypography>
                     <Box className={styles.selectItemContent}>
                         <Typography className={boldTitle ? styles.selectTitleText : styles.selectTitleTextNormal}>

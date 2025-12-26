@@ -11,7 +11,8 @@ import {
     ROUTE_POINTS_AVOID_ROADS,
 } from '../../store/geoRouter/profileConstants';
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
-import { pickNextRoutePoint } from '../../menu/navigation/NavigationMenu';
+import { navigationObject } from '../../store/navigationObject/navigationObject';
+import { pickNextRoutePoint } from '../../manager/NavigationManager';
 
 const DRAG_DEBOUNCE_MS = 10;
 
@@ -70,52 +71,68 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     const routeObject = ctx.routeObject;
 
+    const routeObjectRef = useRef(routeObject);
+    const viaInputsCountRef = useRef(ctx.viaInputsCount);
+
     useEffect(() => {
+        routeObjectRef.current = routeObject;
+        viaInputsCountRef.current = ctx.viaInputsCount;
+    }, [routeObject, ctx.viaInputsCount]);
+
+    const updateCursor = useCallback(() => {
         const container = map.getContainer();
+        if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+            container.style.cursor = '';
+            return;
+        }
+        container.style.cursor = pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0)
+            ? 'crosshair'
+            : '';
+    }, []);
 
-        const updateCursor = () => {
-            if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
-                container.style.cursor = '';
-                return;
-            }
-            container.style.cursor = pickNextRoutePoint(routeObject, ctx.viaInputsCount || 0) ? 'crosshair' : '';
-        };
-
-        const handleMapClick = (event) => {
+    const handleMapClick = useCallback(
+        (event) => {
             if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
                 return;
             }
             if (event?.originalEvent?.button !== 0) {
                 return;
             }
-            const latlng = event?.latlng;
-            if (!latlng) {
+            const coords = event?.latlng || event.detail?.latlng;
+            if (!coords) {
                 return;
             }
+            const wpt = event.detail?.wpt;
 
             // Find first empty input from top to bottom (start -> intermediates -> finish)
-            const target = pickNextRoutePoint(routeObject, ctx.viaInputsCount || 0);
+            const target = pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0);
             if (!target) {
                 updateCursor();
                 return;
             }
-            const point = L.latLng(latlng.lat, latlng.lng);
+
+            // Signal that we're handling this event (found empty input)
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+
+            const point = wpt ? navigationObject.fromWpt(wpt, wpt.type) : L.latLng(coords.lat, coords.lng);
 
             // remove focus from all inputs
             globalThis.dispatchEvent(new Event('nav-blur'));
 
             // Handle intermediate point
             if (target.type === ROUTE_POINTS_VIA) {
-                const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA) || [];
+                const viaPoints = routeObjectRef.current.getOption(ROUTE_POINTS_VIA) || [];
                 const newViaPoints = [...viaPoints];
                 while (newViaPoints.length <= target.index) {
                     newViaPoints.push(null);
                 }
                 newViaPoints[target.index] = point;
-                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+                routeObjectRef.current.setOption(ROUTE_POINTS_VIA, newViaPoints);
             } else {
                 // Handle start or finish point
-                routeObject.setOption(target, point);
+                routeObjectRef.current.setOption(target, point);
             }
 
             ctx.setRouteTrackFile(null);
@@ -124,7 +141,12 @@ const NavigationLayer = ({ geocodingData, region }) => {
             if (event?.originalEvent) {
                 event.originalEvent.navigationHandled = true;
             }
-        };
+        },
+        [ctx.setRouteTrackFile]
+    );
+
+    useEffect(() => {
+        const container = map.getContainer();
 
         // Don't register click handler when context menu is open
         if (ctx.openContextMenu) {
@@ -139,13 +161,15 @@ const NavigationLayer = ({ geocodingData, region }) => {
         updateCursor();
         map.on('click', handleMapClick);
         map.on('mousemove', updateCursor);
+        globalThis.addEventListener('nav-marker-click', handleMapClick);
 
         return () => {
             map.off('click', handleMapClick);
             map.off('mousemove', updateCursor);
+            globalThis.removeEventListener('nav-marker-click', handleMapClick);
             container.style.cursor = '';
         };
-    }, [routeObject, ctx.openContextMenu, ctx.viaInputsCount]);
+    }, [ctx.openContextMenu]);
 
     const startPoint = routeObject.getOption(ROUTE_POINTS_START);
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);

@@ -1,9 +1,6 @@
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../../store/geoRouter/profileConstants';
-import {
-    navigationObject,
-    NAVIGATION_OBJECT_TYPE_SEARCH,
-    NAVIGATION_OBJECT_TYPE_FAVORITE,
-} from '../../../../store/navigationObject/navigationObject';
+import { navigationObject } from '../../../../store/navigationObject/navigationObject';
+import { NAVIGATION_OBJECT_TYPE_FAVORITE, NAVIGATION_OBJECT_TYPE_SEARCH } from '../../../../manager/NavigationManager';
 
 export function directionFrom(lat, lon, ctx, wpt = null) {
     const navObj = prepareNavObj(lat, lon, wpt);

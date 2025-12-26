@@ -4,7 +4,6 @@ import { ReactComponent as MoveIcon } from '../../assets/icons/ic_action_item_mo
 import { ReactComponent as ClearIcon } from '../../assets/icons/ic_action_cancel.svg';
 import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
-import NavigationHistoryDropdown from './NavigationHistoryDropdown';
 import { COLOR_BTN_BLUE } from './NavigationMenu';
 import { START_POINT, FINISH_POINT, INTERMEDIATE_POINT } from './NavigationInputRow';
 
@@ -20,21 +19,20 @@ const NavigationInput = forwardRef(function NavigationInput(
         focused,
         showDragHandle = true,
         onDragHandleMouseDown,
-        history = [],
-        onHistorySelect,
-        onClearHistory,
         type,
         hasIntermediates = false,
         isFirstIntermediate = false,
+        showHistory = false,
+        setShowHistory,
+        containerRef,
+        isDraggable = false,
     },
     ref
 ) {
     const [inputValue, setInputValue] = useState(value || '');
-    const [showHistory, setShowHistory] = useState(false);
 
     const isFocusedRef = useRef(false);
     const inputRef = useRef(null);
-    const containerRef = useRef(null);
 
     useImperativeHandle(ref, () => inputRef.current);
 
@@ -69,27 +67,13 @@ const NavigationInput = forwardRef(function NavigationInput(
     };
 
     const handleClick = () => {
-        setShowHistory(true);
-    };
-
-    const handleHistorySelect = (item) => {
-        const displayValue = item?.getDisplayValue();
-        if (displayValue) {
-            if (onHistorySelect) {
-                onHistorySelect(item);
-            }
-            // Update value prop
-            if (onChange) {
-                onChange(displayValue);
-            }
-            // Also update inputValue directly to ensure it shows immediately
-            setInputValue(displayValue);
-            // Call onBlur to process the value (like pressing Enter)
-            if (onBlur) {
-                onBlur(displayValue);
-            }
+        // Don't open history if dragging
+        if (isDraggable) {
+            return;
         }
-        setShowHistory(false);
+        if (setShowHistory) {
+            setShowHistory(true);
+        }
     };
 
     const clearFocus = () => {
@@ -98,13 +82,18 @@ const NavigationInput = forwardRef(function NavigationInput(
 
     const handleBlur = (e) => {
         const relatedTarget = e.relatedTarget;
-        // If focus is moving to the history dropdown, don't clear focus
+        // If focus is moving to the history dropdown, restore it immediately
         if (relatedTarget?.closest('.MuiMenu-root')) {
+            if (inputRef.current) {
+                inputRef.current.focus();
+            }
             return;
         }
 
         clearFocus();
-        setShowHistory(false);
+        if (setShowHistory) {
+            setShowHistory(false);
+        }
 
         if (onBlur) {
             onBlur(e.target.value);
@@ -191,16 +180,6 @@ const NavigationInput = forwardRef(function NavigationInput(
                     }}
                 />
             </Box>
-            <NavigationHistoryDropdown
-                history={history}
-                value={inputValue}
-                isFocused={showHistory}
-                anchorEl={containerRef}
-                onHistorySelect={handleHistorySelect}
-                onClearHistory={onClearHistory}
-                inputId={inputId}
-                inputRef={inputRef}
-            />
         </>
     );
 });

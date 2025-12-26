@@ -73,10 +73,16 @@
 
 .navigationInput :global(.MuiInputAdornment-positionEnd) {
     margin-left: 16px !important;
+    position: relative !important;
 }
 
 .navigationInput :global(.MuiOutlinedInput-input) {
     padding: 0 !important;
+}
+
+.navigationInput:hover :global(.MuiOutlinedInput-input),
+.navigationInput :global(.MuiOutlinedInput-root.Mui-focused) :global(.MuiOutlinedInput-input) {
+    padding-right: 18px !important;
 }
 
 .inputField {
@@ -150,9 +156,10 @@
 }
 
 .clearIconWrapper {
+    position: absolute !important;
+    right: 32px !important;
     opacity: 0 !important;
-    margin-left: -15px !important;
-    transition: opacity 0.2s ease !important;
+    transition: opacity 0.15s ease-in-out !important;
 }
 
 .navigationInput:hover .clearIconWrapper {
@@ -262,4 +269,10 @@
     overflow-y: auto !important;
     overflow-x: hidden !important;
     box-sizing: border-box !important;
+}
+.historyItem {
+    gap: 14px !important;
+}
+.navigationSettingsItem {
+    max-height: 48px !important;
 }

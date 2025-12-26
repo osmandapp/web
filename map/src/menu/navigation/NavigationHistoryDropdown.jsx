@@ -20,6 +20,7 @@ export default function NavigationHistoryDropdown({
     history = [],
     value = '',
     isFocused = false,
+    setShowHistory,
     anchorEl,
     onHistorySelect,
     onClearHistory,
@@ -67,33 +68,20 @@ export default function NavigationHistoryDropdown({
     }, [history, value]);
 
     const isInputEmpty = !value || value.trim() === '';
-
-    const shouldShowCurrentLocation = isInputEmpty && hasCurrentLocation;
+    // Show "Current location" item always when input is empty,
+    // even if browser/location permission is disabled.
+    const shouldShowCurrentLocation = isInputEmpty;
 
     const shouldShow = isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0) && !hasExactMatch;
-
-    const prevShouldShowRef = useRef(shouldShow);
-
-    // Restore focus when menu closes
-    useEffect(() => {
-        if (!inputRef) return;
-
-        if (prevShouldShowRef.current && !shouldShow && inputRef?.current) {
-            // Menu just closed, ensure input keeps focus
-            requestAnimationFrame(() => {
-                if (inputRef?.current && document.activeElement !== inputRef.current) {
-                    inputRef.current.focus();
-                }
-            });
-        }
-        prevShouldShowRef.current = shouldShow;
-    }, [shouldShow]);
 
     const handleHistoryItemClick = (item, e) => {
         e.preventDefault();
         e.stopPropagation();
         if (onHistorySelect) {
             onHistorySelect(item);
+        }
+        if (setShowHistory) {
+            setShowHistory(false);
         }
     };
 
@@ -103,20 +91,30 @@ export default function NavigationHistoryDropdown({
         if (onClearHistory) {
             onClearHistory();
         }
+        if (setShowHistory) {
+            setShowHistory(false);
+        }
+        if (inputRef?.current) {
+            inputRef.current.blur();
+        }
     };
 
     const handleMenuClose = () => {
-        if (inputRef?.current) {
-            requestAnimationFrame(() => {
-                if (inputRef?.current && document.activeElement !== inputRef.current) {
-                    inputRef.current.focus();
-                }
-            });
+        if (!isFocused || !inputRef?.current) {
+            return;
         }
+
+        // Restore focus only when menu closes while this input is still considered active.
+        requestAnimationFrame(() => {
+            if (inputRef?.current && document.activeElement !== inputRef.current) {
+                inputRef.current.focus();
+            }
+        });
     };
 
     return (
         <Menu
+            id={`${inputId}-history`}
             anchorEl={anchorEl?.current}
             open={shouldShow}
             onClose={handleMenuClose}
@@ -154,7 +152,19 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-current-location`}
                         icon={<LocationIcon />}
                         name={t('web:current_location')}
+                        className={styles.historyItem}
                         onClick={(e) => {
+                            if (!hasCurrentLocation) {
+                                ctx.setNotification({
+                                    text: t('web:location_disabled_message'),
+                                    severity: 'info',
+                                });
+                                if (inputRef?.current) {
+                                    inputRef.current.blur();
+                                }
+                                return;
+                            }
+
                             handleHistoryItemClick(
                                 {
                                     lat: currentLocationRaw.lat,
@@ -193,6 +203,7 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-history-item-${index}`}
                         icon={icon}
                         name={item.getDisplayValue()}
+                        className={styles.historyItem}
                         maxLines={1}
                         onClick={(e) => {
                             handleHistoryItemClick(item, e);
@@ -211,6 +222,7 @@ export default function NavigationHistoryDropdown({
                         id={`${inputId}-history-clear`}
                         icon={<ClearIcon />}
                         name={t('web:clear_history')}
+                        className={styles.historyItem}
                         onClick={handleClearHistoryClick}
                         onMouseDown={(e) => {
                             e.preventDefault();

@@ -14,6 +14,7 @@ import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWit
 import SelectItemBoolean from '../../frame/components/items/SelectItemBoolean';
 import SelectItemRadio from '../../frame/components/items/SelectItemRadio';
 import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
+import styles from './routemenu.module.css';
 
 const SECTION_KEYS = {
     GENERAL: 'general',
@@ -457,6 +458,7 @@ export default function NavigationSettings({
                 onToggle={handleToggle}
                 showDivider={showDivider}
                 boldTitle={false}
+                className={styles.navigationSettingsItem}
             />
         );
     };
@@ -479,6 +481,7 @@ export default function NavigationSettings({
                             onSelect={() => toggleBooleanValue(stateKey, true)}
                             showDivider={!isLast}
                             boldTitle={false}
+                            className={styles.navigationSettingsItem}
                         />
                     );
                 })}
@@ -650,6 +653,7 @@ export default function NavigationSettings({
                                 onToggle={(checked) => geoRouter.setOption(opt, checked)}
                                 boldTitle={false}
                                 showDivider={false}
+                                className={styles.navigationSettingsItem}
                             />
                         ))}
                 </Box>

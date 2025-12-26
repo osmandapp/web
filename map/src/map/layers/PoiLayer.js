@@ -39,7 +39,8 @@ import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
-import { MENU_INFO_OPEN_SIZE, showProcessingNotification } from '../../manager/GlobalManager';
+import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
+import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getVisibleBbox } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
@@ -592,6 +593,36 @@ export default function PoiLayer() {
     }, []);
 
     function onClick(e) {
+        if (globalThis.location.pathname.includes(NAVIGATE_URL)) {
+            const lat = e.latlng?.lat ?? e.sourceTarget?._latlng?.lat;
+            const lon = e.latlng?.lng ?? e.sourceTarget?._latlng?.lng;
+
+            if (lat && lon) {
+                const wpt = {
+                    ...e.sourceTarget.options,
+                    lat,
+                    lng: lon,
+                    type: NAVIGATION_OBJECT_TYPE_SEARCH,
+                };
+                const navEvent = new CustomEvent('nav-marker-click', {
+                    detail: {
+                        wpt,
+                        latlng: L.latLng(lat, lon),
+                    },
+                    cancelable: true,
+                });
+                navEvent.originalEvent = e.originalEvent;
+                globalThis.dispatchEvent(navEvent);
+
+                // If NavigationLayer handled it (found empty input), don't open info
+                if (navEvent.defaultPrevented) {
+                    L.DomEvent.stopPropagation(e);
+                    return;
+                }
+            }
+        }
+
+        // Normal logic: open info block
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
         ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
 

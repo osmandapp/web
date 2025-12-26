@@ -1,6 +1,7 @@
 import styles from './buttons.module.css';
 import { IconButton } from '@mui/material';
 import React from 'react';
+import { COLOR_BTN_BLUE } from '../../../menu/navigation/NavigationMenu';
 
 export default function ActionIconBtn({
     id = null,
@@ -8,7 +9,7 @@ export default function ActionIconBtn({
     activeIcon = null,
     onClick,
     size = null,
-    iconColor = null,
+    iconColor = '#237BFF',
     className = '',
     ...props
 }) {

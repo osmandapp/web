@@ -218,6 +218,7 @@
   "set_via_point" : "Intermediate",
   "navigation_tips": "Click on the map to set <strong>Start</strong> and <strong>Destination</strong> points.",
   "current_location": "Current location",
+  "location_disabled_message": "Location access is disabled in your browser. Please enable it to use current location.",
   "clear_history": "Clear history",
   "attach_gpx_title": "Attach to roads",
   "attach_gpx_desc": "OsmAnd will match your track to nearby roads for enhanced turn-by-turn guidance.",

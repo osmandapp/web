@@ -1,10 +1,11 @@
 import { geoObject } from '../geoObject/geoObject.js';
 import { LatLng } from 'leaflet';
 import { formatLatLon } from '../../menu/navigation/NavigationPointsManager';
-
-export const NAVIGATION_OBJECT_TYPE_LOCATION = 'location';
-export const NAVIGATION_OBJECT_TYPE_SEARCH = 'search';
-export const NAVIGATION_OBJECT_TYPE_FAVORITE = 'favorite';
+import {
+    NAVIGATION_OBJECT_TYPE_LOCATION,
+    NAVIGATION_OBJECT_TYPE_SEARCH,
+    NAVIGATION_OBJECT_TYPE_FAVORITE,
+} from '../../manager/NavigationManager';
 
 /**
  * navigationObject represents a navigation point with coordinates and metadata
@@ -67,8 +68,8 @@ export class navigationObject extends geoObject {
 
         if (lat == null || lon == null) return null;
 
-        const name = wpt.name || '';
-        const poiType = wpt.poiType || null;
+        const name = wpt.name || wpt.wikiTitle || '';
+        const poiType = wpt.poiType || wpt.poitype || null;
         const category = wpt.category || null;
 
         // Build display value
@@ -80,11 +81,11 @@ export class navigationObject extends geoObject {
         } else if (!name) {
             displayValue = formatLatLon(new LatLng(lat, lon));
         }
-
+        const icon = wpt.iconName || wpt.web_poi_iconName || wpt.icon;
         const wptForIcon = {
             name: wpt.name,
             poiType: wpt.poiType,
-            icon: wpt.icon,
+            icon,
             color: wpt.color,
             background: wpt.background,
         };
@@ -97,7 +98,7 @@ export class navigationObject extends geoObject {
                 wpt: wptForIcon,
                 color: wpt.color,
                 background: wpt.background,
-                icon: wpt.icon,
+                icon,
             },
             displayValue,
         });

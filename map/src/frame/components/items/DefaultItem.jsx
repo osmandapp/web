@@ -11,6 +11,7 @@ export default function DefaultItem({
     revertText = false,
     onClick = null,
     maxLines = 2,
+    className = '',
 }) {
     const textSx = {
         mr: maxLines === 1 ? 7 : 0,
@@ -18,7 +19,7 @@ export default function DefaultItem({
     };
 
     return (
-        <MenuItem id={id} className={styles.item} disableRipple onClick={onClick}>
+        <MenuItem id={id} className={`${styles.item} ${className}`} disableRipple onClick={onClick}>
             {icon && <ListItemIcon className={styles.icon}>{icon}</ListItemIcon>}
             {revertText ? (
                 <ListItemText sx={textSx}>
