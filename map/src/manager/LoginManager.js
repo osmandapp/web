@@ -41,7 +41,7 @@ export const openLogin = (ltx, navigate, reopenLoginDialog = null) => {
     ltx.setLoginState({ login: true });
 };
 
-export function createAccount(ctx, ltx, navigate, reopenLoginDialog = null) {
+export function createAccount(ltx, navigate, reopenLoginDialog = null) {
     if (reopenLoginDialog) {
         reopenLoginDialog();
         return;

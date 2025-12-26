@@ -144,7 +144,7 @@ export default function Login({ dialog = false }) {
                     />
                     {emailError !== EMPTY_INPUT && (
                         <BlueBtn
-                            action={() => createAccount(ctx, ltx, navigate)}
+                            action={() => createAccount(ltx, navigate)}
                             text={t('web:create_account_btn')}
                             additionalStyle={{ mb: 1.5, mt: 0.5 }}
                             span={true}
