@@ -1,7 +1,7 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
-title:  مظهر المسار
+title: مظهر المسار
 ---
 
 import Tabs from '@theme/Tabs';
@@ -51,39 +51,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### اللون {#color}
 
-:::tip عمليات الشراء
-بعض الإعدادات لا يمكنك استخدامها إلا مع *OsmAnd Pro*. ميزات <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">أندرويد</a> و <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> المجانية والمدفوعة.
+:::tip purchases
+بعض الإعدادات لا يمكنك استخدامها إلا مع *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> و <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> المجانية والمدفوعة.
 :::
 
-![المظهر](@site/static/img/map/appearance_color_andr.png)
+![المظهر](@site/static/img/map/appearance_color_andr.png) ![قائمة التلوين في iOS](@site/static/img/map/colorisation_ios.png)
 
 يمكنك ضبط لون المسار يدويًا أو استخدام **تصور البيانات المعتمد على اللون** (مثل السرعة والارتفاع والميل). إذا كان المسار يفتقر إلى بيانات معينة، يعرض OsmAnd الأجزاء المفقودة باللون الرمادي.
 
 **خيارات الألوان المتاحة:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- **الإعدادات المجانية**: لون *<Translate android="true" ids="track_coloring_solid"/>*، *<Translate android="true" ids="shared_string_speed"/>* (إذا تم تسجيله) و *<Translate android="true" ids="altitude"/>* (إذا تم تسجيله).   
+- [ميزة Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![قائمة المسار - المظهر - لون المسار في أندرويد](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![المظهر - لون المسار في أندرويد](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![قائمة التلوين في iOS](@site/static/img/map/colorisation_ios.png)
-
-يفتح **قائمة التلوين** كقائمة سياق. يمكن أن تظهر العناصر في ثلاث حالات: 
+في iOS، يفتح **قائمة التلوين** كقائمة سياق. يمكن أن تظهر العناصر في ثلاث حالات: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. يمكن تطبيقها على المسار الحالي.
 2. <Translate ios="true" ids="weather_update_disabled"/>. يفتقر المسار إلى البيانات المطلوبة.
 3. PRO. متاحة للمسار الحالي لكنها تتطلب اشتراكًا؛ الضغط عليها يفتح شاشة [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **الإعدادات المجانية**: لون *<Translate android="true" ids="track_coloring_solid"/>*، *<Translate android="true" ids="shared_string_speed"/>* (إذا تم تسجيله) و *<Translate android="true" ids="altitude"/>* (إذا تم تسجيله).   
-- [ميزة Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 لمزيد من التفاصيل حول تخصيص مظهر خط المسار، راجع [شاشة الخريطة أثناء الملاحة](../../navigation/guidance/map-during-navigation.md#color) وحول تحديد وإنشاء لون مخصص، راجع [أنظمة الألوان](../../personal/color-palette-schemes.md#routes).
 
@@ -150,7 +134,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## مسار ثلاثي الأبعاد {#3d-track}
 
-:::info ميزة مدفوعة
+:::info Paid feature
 **المسار ثلاثي الأبعاد** هي ميزة مدفوعة في **OsmAnd Pro** لنظامي [iOS](../../purchases/ios.md#pro-features) و [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
@@ -237,7 +221,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 عدّل مظهر مسارات متعددة في *أماكني ← المسارات*:
 
-- **تغيير المظهر الافتراضي** - يطبق الإعدادات على جميع المسارات في [مجلد](../../personal/tracks/manage-tracks.md#track-folder).
+- **تغيير المظهر الافتراضي** (أندرويد فقط) - يسمح بتكوين الإعدادات الافتراضية التي سيتم تطبيقها عند إضافة مسار إلى [المجلد](../../personal/tracks/manage-tracks.md#track-folder).
 - **إعادة التعيين إلى الأصل** - يعيد إعدادات المسار الفردية.
 
 - [وضع التحديد](../../personal/tracks/manage-tracks.md#selection-mode) - يغير مظهر مسارات محددة في المجلد المحدد أو القائمة بأكملها في تبويب المسارات.

@@ -1,5 +1,5 @@
 ---
-source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
+source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
 sidebar_position: 10
 title:  استيراد / تصدير
 ---
@@ -31,9 +31,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - **الإعدادات:**  
         [الملفات الشخصية](../personal/profiles.md#actions)، &nbsp;[إعدادات OsmAnd/الإعدادات العامة](../personal/global-settings.md)، &nbsp;[الألوان](../personal/color-palette-schemes.md)، &nbsp;[الإجراء السريع](../widgets/quick-action.md)، &nbsp;[نوع نقاط الاهتمام](../map/point-layers-on-map.md#poi-types)، &nbsp;[تجنب الطريق](../map/map-context-menu.md#avoid-road).
 - **أماكني:**  
-        [المفضلات](../personal/favorites.md#export--import)، &nbsp;[المسارات](../personal/tracks/manage-tracks.md#import--export-track)، &nbsp;*ملاحظات OSM*، *تعديلات OSM*](../plugins/osm-editing.md#create--modify-poi)، &nbsp;[ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md)، &nbsp;[علامات الخريطة](../personal/markers.md)، &nbsp;[سجل العلامات*، *سجل البحث*، *سجل الملاحة](../personal/global-settings.md#history)، &nbsp;*مسار الرحلة*.
+        [المفضلات](../personal/favorites.md#export--import)، &nbsp;[المسارات](../personal/tracks/manage-tracks.md#import--export-track)، &nbsp;[ملاحظات OSM*، *تعديلات OSM](../plugins/osm-editing.md#create--modify-poi)، &nbsp;[ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md)، &nbsp;[علامات الخريطة](../personal/markers.md)، &nbsp;[سجل العلامات*، *سجل البحث*، *سجل الملاحة](../personal/global-settings.md#history)، &nbsp;*مسار الرحلة*.
 - **الموارد:**  
-        [نمط العرض](../map/vector-maps.md#custom-map-style)، &nbsp;[التوجيه](../navigation/routing/osmand-routing.md)، &nbsp;[محركات التوجيه عبر الإنترنت](../navigation/routing/online-routing.md)، &nbsp;*مصادر الخرائط*، *الخرائط القياسية/غير المتصلة بالإنترنت](../map/raster-maps.md)، &nbsp;[خرائط ويكيبيديا والسفر](../plan-route/travel-guides.md)، &nbsp;[الخرائط البحرية](../plugins/nautical-charts.md)، &nbsp;[خرائط الطرق](../map/vector-maps.md#road-style)، &nbsp;[الخرائط الطبوغرافية](../plugins/topography.md)، &nbsp;[التوجيهات الصوتية (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech)، [التوجيهات الصوتية (مسجلة)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts)، &nbsp;[النسخ الاحتياطي للمفضلات](../personal/favorites.md#automatic-favorites-backup).
+        [نمط العرض](../map/vector-maps.md#custom-map-style)، &nbsp;[التوجيه](../navigation/routing/osmand-routing.md)، &nbsp;[محركات التوجيه عبر الإنترنت](../navigation/routing/online-routing.md)، &nbsp;[مصادر الخرائط*، *الخرائط القياسية/غير المتصلة بالإنترنت](../map/raster-maps.md)، &nbsp;[خرائط ويكيبيديا والسفر](../plan-route/travel-guides.md)، &nbsp;[الخرائط البحرية](../plugins/nautical-charts.md)، &nbsp;[خرائط الطرق](../map/vector-maps.md#road-style)، &nbsp;[الخرائط الطبوغرافية](../plugins/topography.md)، &nbsp;[التوجيهات الصوتية (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech)، [التوجيهات الصوتية (مسجلة)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts)، &nbsp;[النسخ الاحتياطي للمفضلات](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### تصدير {#export}
@@ -91,6 +91,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - *بعض العناصر موجودة بالفعل*. يمكنك استخدام هذه الميزة لحفظ كلا الملفين أو استبدالها جميعًا.
 - *إعادة التشغيل*. بعد استيراد الملفات، يجب إعادة تشغيل التطبيق.
+
+أنواع ملفات الاستيراد المدعومة:
+- [المسارات، الطرق](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) و [المفضلات](https://osmand.net/docs/user/personal/favorites/): `.gpx`، `.kml`، `.kmz`. يتم استيراد ملفات KML و KMZ مع التحويل إلى تنسيق GPX.
+- [خرائط OsmAnd المتجهة](https://osmand.net/docs/user/map/vector-maps): `.obf`.
+- [بلاط خرائط عبر الإنترنت](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [النسخ الاحتياطي والملفات الشخصية](#export): `.osf`.
+- [خرائط الارتفاع / بيانات 3D](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [أخرى](color-palette-schemes.md): `.txt`.
+
+للحصول على نظرة عامة فنية على جميع التنسيقات المدعومة، انظر [تنسيقات ملفات OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

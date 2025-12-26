@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title:  Navigational Widgets
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-يتم تفعيل أدوات التنقل أثناء التنقل لعرض معلومات مثل المسافة، ووقت الوصول أو الوقت المتبقي، والمنعطفات التالية، والاتجاه، واسم الشارع الحالي، ومعلومات المسار، والسرعة القصوى، وتنبيهات الاقتراب، ونقاط الاهتمام، ونقاط الطريق.
+يتم تفعيل أدوات التنقل أثناء التنقل لعرض معلومات مثل المسافة، ووقت الوصول أو الوقت المتبقي، والمنعطفات التالية، والاتجاه، واسم الشارع الحالي، ومعلومات المسارات، والسرعة القصوى، وتنبيهات الاقتراب، ونقاط الاهتمام، ونقاط الطريق.
 
 ![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
 
@@ -49,7 +49,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **الوظائف:**  
   - يحاول تحديد الطريق الذي تتبعه باستخدام بيانات GPS.  
-  - يعرض **معلومات الطريق الأساسية**، مثل [اسم الشارع](#street-name)، [معلومات المسار](#lanes)، [السرعة القصوى](#speed-limit).
+  - يعرض **معلومات الطريق الأساسية**، مثل [اسم الشارع](#street-name)، [معلومات المسارات](#lanes)، [السرعة القصوى](#speed-limit).
 
 - **القيود:**  
   - قد لا تعمل بعض الميزات المتقدمة بشكل صحيح بدون تعيين وجهة.  
@@ -196,7 +196,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget →<Translate android="true" ids="map_widget_route_information"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Add widget  →Route information* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Add widget  →معلومات الطريق* |
 | By tapping | Tap the button with arrow to open [Start/Stop Navigation panel](../navigation/setup/route-navigation.md#start--stop-navigation) |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
@@ -250,7 +250,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +278,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -325,6 +325,13 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lanes**: No changes. |
 
 
+### المسارات {#lanes}
+
+![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+
+تبرز أداة **Lanes** المسار الحالي عندما يكون التنقل نشطًا وتعرض تخطيط المسار للطريق الفعلي عندما يكون التنقل سلبيًا. كما يُعرض مؤشر مسافة أيضًا أسفل رسم المسار، يمثل المسافة المتبقية حتى المناورة التي ينطبق عليها إرشاد المسار. هذه الأداة متاحة فقط لـ Top وBottom panels. يتم أخذ البيانات من [مشروع OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### المنعطف التالي {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,16 +350,21 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 </Tabs>
 
-يمكن وضع أدوات التنقل **Next turn**، **Next turn (small)**، **Second next turn** على أي لوحة لتسهيل المستخدم. ومع ذلك، تختلف المعلومات المعروضة اعتمادًا على نوع الأداة ووضعها. يلخص الجدول أدناه السلوك:
+يمكن وضع أدوات التنقل **Next turn**، **Next turn (small)**، **Second next turn** على أي لوحة لتسهيل المستخدم. ومع ذلك، تختلف المعلومات المعروضة اعتمادًا على نوع الأداة ووضعها. 
 
-|   Widget/Panel   | Left panel    | Right panet   | Top panel              | Bottom panel           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Next turn**        | Distance only | Distance only | Street name + distance | Street name + distance |
-| **Next turn (small)**| Distance only | Distance only | Not available          | Not available          |
-| **Second next turn** | Distance only | Distance only | Street name + distance | Street name + distance |
+في لوحات Top / Bottom، يمكن عرض أدوات Next turn وSecond next turn كـ Full width (أداة واحدة لكل صف) أو Half width (أداتان لكل صف). يعتمد المحتوى على التخطيط وحجم الأداة المحدد (S / M / L).
 
+يعرض Full width:
+- السطر الأول — المسافة إلى المنعطف + Exit N (إذا كان متاحًا)
+- السطر الثاني — رقم الطريق مع درع + اسم الطريق/الشارع
 
-### تلميحات الألوان للمنعطف التالي {#color-prompts-for-next-turn}
+يعرض Half width:
+- السطر الأول — المسافة إلى المنعطف
+- السطر الثاني — Exit N (إذا كان متاحًا) + رقم الطريق مع درع + اسم الطريق/الشارع
+
+**Next turn** يستخدم سهمًا كبيرًا ويدعم تخطيطات Full width / Half width في لوحات Top / Bottom. **Next turn (small)** يستخدم سهمًا صغيرًا مع المسافة الموضوعة بجانب السهم وهو مخصص للوحات Left / Right. **Second next turn** يعرض المناورة بعد المنعطف التالي ويصبح نشطًا عندما تكون المناورة الثانية ضمن مسافة الاقتراب.
+
+### تلميحات الألوان {#color-prompts}
 
 يعرض هذا الجدول الوقت التقريبي حتى تفعيل التلميحات والإشارة اللونية المقابلة للأسهم لأداء المناورة. لمزيد من المعلومات، راجع [الوثائق الفنية](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) أو في المقالة [Voice prompts](../navigation/guidance/voice-navigation.md).
 
@@ -362,22 +374,18 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | 🟡 Yellow | 20 seconds     | Approaching| Turn in `x` m   |
 | ⚪ Grey   | > 100 seconds  | Distant    | Prepare to turn |
 
+ينطبق نفس معنى اللون على أداة Lanes. تُعرض أداة Lanes وفقًا لإعدادات وقت الاقتراب، ولألوان المسارات تتبع مرحلة الإرشاد الصوتي.
 
-### المسارات {#lanes}
+<!--
+### Color Prompts for Lanes {#color-prompts-for-lanes}
 
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
-
-تبرز أداة **Lanes** المسار الحالي عندما يكون التنقل نشطًا وتعرض تخطيط المسار للطريق الفعلي عندما يكون التنقل سلبيًا. كما يُعرض مؤشر مسافة أيضًا أسفل رسم المسار، يمثل المسافة المتبقية حتى المناورة التي ينطبق عليها إرشاد المسار. هذه الأداة متاحة فقط لـ Top وBottom panels. يتم أخذ البيانات من [مشروع OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
-
-### تلميحات الألوان للمسارات {#color-prompts-for-lanes}
-
-يعرض أداة حسب إعدادات وقت الاقتراب. لون المسار مرتبط بـ [voice prompts](../navigation/guidance/voice-navigation.md) والوقت المتبقي لأداء المناورة.
+Displays a widget by approach time settings. Lane's color is associated with [voice prompts](../navigation/guidance/voice-navigation.md) and time remaining to perform the maneuver.
 
 | Color     | ~ Trigger Time | Distance    | Prompt type |
 | :-------- | :------------- | :---------- | :---------- |
 | 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 | 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+-->
 
 
 ## أداة التنبيه {#alert-widget}
@@ -421,48 +429,31 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 تعرض أداة اسم الشارع **اسم الشارع الحالي** مع سهم مستقيم، أو **اسم الشارع التالي** مع المناورة المراد أداؤها. عادةً ما يتكون اسم الشارع من درع الطريق السريع، و[اسم](https://wiki.openstreetmap.org/wiki/Key:name)، و[ref](https://wiki.openstreetmap.org/wiki/Key:ref)، و[مرجع دولي](https://wiki.openstreetmap.org/wiki/Key:int_ref)، و[وجهة](https://wiki.openstreetmap.org/wiki/Key:destination). 
 
-في إعدادات الأداة **Settings** يمكنك اختيار عرض **اسم الشارع الحالي** دائمًا واستخدامه مع أداة [**Next turn**](#next-turn). **Next turn information** مغلق افتراضيًا. إذا قمت بتفعيله، فإن التبديل بين اسم الشارع الحالي واسم الشارع التالي يحدث عندما تقترب من المكان الذي تريد أداء المناورة فيه (~٢٠ ثانية)، نفس الإرشاد الصوتي [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+في الإعدادات يمكنك اختيار عرض **اسم الشارع الحالي** دائمًا واستخدامه مع أداة [**Next turn**](#next-turn). **Next turn information** مغلق افتراضيًا. إذا قمت بتفعيله، فإن التبديل بين اسم الشارع الحالي واسم الشارع التالي يحدث عندما تقترب من المكان الذي تريد أداء المناورة فيه (~٢٠ ثانية)، نفس الإرشاد الصوتي [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
-- عند القيادة على طول شارع أو طريق سريع، تعرض الأداة اسم أو تسمية الشارع (الطريق) الحالي مع سهم أزرق.
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-- عندما تغير الاتجاه، تعرض الأداة مخطط المناورة واسم (التسمية) الشارع (الطريق) الذي يجب أن تنعطف إليه مع سهم أصفر (Next turn information = ON).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
- ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
+ ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
+ ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
 </Tabs>
+
 
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
+| Settings | اختر لعرض **اسم الشارع الحالي** دائمًا أو عرض **اسم الشارع التالي** عند الاقتراب من المناورة |
 | By tapping | Opens a context menu with Settings (toggle Next turn information ON/OFF) and Delete |
 
 
