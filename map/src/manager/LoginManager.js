@@ -41,6 +41,7 @@ export const openLogin = (ltx, navigate, reopenLoginDialog = null) => {
     ltx.setLoginState({ login: true });
 };
 
-export function createAccount(ltx) {
+export function createAccount(ltx, navigate) {
+    navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
     ltx.setLoginState({ create: true });
 }

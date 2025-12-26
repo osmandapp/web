@@ -205,6 +205,7 @@ export default function MainMenu({
 
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
+            setMenuInfo(null);
             const params = new URLSearchParams(location.search);
             const to = params.get('redirect');
             if (to) {
@@ -212,7 +213,7 @@ export default function MainMenu({
             }
             openLoginMenu(ctx, ltx, navigate, location);
         }
-    }, [location.pathname, ctx, navigate]);
+    }, [location.pathname]);
 
     useEffect(() => {
         if (ltx.loginUser && redirectUrl) {
