@@ -7,6 +7,7 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { createAccount, openLogin } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
+import AppContext from '../context/AppContext';
 import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 
 export default function EmptyLogin({
@@ -14,6 +15,7 @@ export default function EmptyLogin({
     setOpenLoginDialog = null,
     setOpenCreateAccountDialog = null,
 }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
@@ -51,7 +53,7 @@ export default function EmptyLogin({
                     if (setOpenCreateAccountDialog) {
                         setOpenCreateAccountDialog(true);
                     } else {
-                        createAccount(ltx);
+                        createAccount(ctx, ltx, navigate);
                     }
                 }}
                 text={t('web:create_account_btn')}
