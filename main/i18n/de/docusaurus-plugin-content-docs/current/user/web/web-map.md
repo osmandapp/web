@@ -1,9 +1,10 @@
 ---
-source-hash: d91382fd90471c35f09518fffca8df6e01494de94a597a6b8006d0c7f62c249d
+source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
 sidebar_position: 3
 sidebar_label: Karte
 title: Globale Karte auf der Webseite
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,15 +16,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
 
-:::info
-Die Seite *[osmand.net/map](https://osmand.net/map/)* wird derzeit entwickelt und getestet.
-**Daher können das Layout und die Funktionsweise einiger Funktionen auf der Seite von den in diesem Artikel beschriebenen abweichen.**
 
-Wir haben das [Diskussionsthema](https://github.com/osmandapp/OsmAnd/discussions/16567) auf unserem GitHub erstellt, damit Sie dort Feedback hinterlassen können.
+:::info
+The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
+**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
+
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
+-->
 
 
 ## Übersicht {#overview}
@@ -40,116 +43,81 @@ Um es zu öffnen, klicken Sie mit der rechten Maustaste irgendwo auf die Karte. 
 - **Wo bin ich** – Finden Sie schnell Ihren aktuellen Standort auf der Karte. Diese Funktion zeigt die nächstgelegenen Adressen zum ausgewählten Punkt auf der Karte an.
 - **Wetter öffnen** – Greifen Sie auf das [Wettermenü](#weather-on-the-web) zu, um Wetterdetails anzuzeigen.
 - **Neue Route erstellen** – Öffnet das Werkzeug [*Route planen*](../web/planner.md#navigation-route) mit dem ausgewählten Ort als Start- oder Zielpunkt.
-- **Favorit hinzufügen** – Ermöglicht es Ihnen, einen [Favoriten](../web/web-userdata.mdx#add--edit-favorite) an einem beliebigen Punkt auf der Karte zu erstellen und zu speichern, um einen einfachen Zugriff zu ermöglichen.
+- **Favorit hinzufügen** – Ermöglicht es Ihnen, einen [Favoriten](../web/web-favorites.md#add--edit-favorite) an einem beliebigen Punkt auf der Karte zu erstellen und zu speichern, um einen einfachen Zugriff zu ermöglichen.
 - **Route von hier** – Legt den ausgewählten Punkt als [Startort](../web/planner.md#navigation-route) für die Navigation fest.
 - **Route hierher** – Legt den ausgewählten Punkt als [Zielort für die Navigation](../web/planner.md#navigation-route) fest.
 - **Koordinaten kopieren** – Kopiert die Koordinaten des ausgewählten Punktes zur externen Verwendung.
-- **Pin hinzufügen** – Platziert einen Pin, um einen Ort auf der Karte zu markieren. ([Beispiel](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 - **Regionen anzeigen** – Zeigt die mit dem ausgewählten Ort verbundenen Regionen an.
 
-![Kartenkontextmenü](@site/static/img/web/map_context_menu.png)
+<!--
+- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 
+![Map Context menu](@site/static/img/web/map_context_menu.png)
 
-## Wetter im Web {#weather-on-the-web}
+Add pin option will be added back once it becomes available again.
+-->
 
-OsmAnd Web bietet Wetterinformationen aus zwei Vorhersagequellen:
-
-- **GFS (Standard)**
-- **ECMWF**
-
-Um zwischen diesen Vorhersagequellen zu wechseln, klicken Sie auf die **Schaltfläche mit dem Regenschirm** im Wettermenü.
-
-***Funktionen des Wettermenüs:***
-
-- **Aktuelle Wetterdaten**: Zeigt Ihre Koordinaten zusammen mit den folgenden Daten an:
-
-  - Temperatur.
-  - Niederschlag.
-  - Wind.
-  - Luftdruck.
-  - Bewölkung.
-
-- **Zeitanpassung**: Ändern Sie Datum und Uhrzeit mit dem **Zeitwerkzeug** im Wettermenü, um das Wetter für einen bestimmten Moment anzuzeigen.
-
-***Wetterebenen auf der Karte:***
-
-- Verwenden Sie die **Schaltfläche für Ebenen**, um Wetterebenen auszuwählen und zu aktivieren, wie z.B.:
-
-  - Temperatur.
-  - Druck.
-  - Wind.
-  - Bewölkung.
-  - Niederschlag.
-
-***Vorhersagen anzeigen:***
-
-- Wettervorhersagen sind für die **7-Tage**-Vorhersage verfügbar.
-- Vorhersage-Updates werden in **3-Stunden-Schritten** für detaillierte Einblicke bereitgestellt.
-
-Um auf diese Funktionen zuzugreifen oder sie anzupassen, verwenden Sie die Menüs auf der linken oder rechten Seite der Benutzeroberfläche.
-
-  ![OsmAnd Web Wetter](@site/static/img/web/web_weather.png)
-
-***7-Tage-Vorhersage***:
-
-Klicken Sie auf die Vorhersagedaten im Menü, um die **7-Tage-Vorhersage** für Ihren Standort anzuzeigen. Die Vorhersage ist verfügbar in:
-
-- **Grafikformat**
-- **Listenformat**
-
-  ![OsmAnd Web Wetter](@site/static/img/web/web_7day.png)
+![Kartenkontextmenü](@site/static/img/web/map_context_menu_new.png)
 
 
 ## Menü "Karte konfigurieren" {#configure-map-menu}
 
-Das Menü "Karte konfigurieren" ermöglicht es Ihnen, die Anzeigeeinstellungen für Kartendaten wie POI-Ebenen, Favoriten, Tracks und Gelände zu verwalten. Bitte melden Sie sich bei Ihrem OsmAnd-Konto an, um diesen Menübereich zu verwenden.
+Das Menü "Karte konfigurieren" ermöglicht es Ihnen, die Anzeigeeinstellungen für Kartendaten wie POI-Ebenen, Favoriten, Tracks und Gelände zu verwalten. Dieses Menü ist verfügbar, nachdem Sie sich bei Ihrem OsmAnd-Konto angemeldet haben. Um es zu öffnen, klicken Sie auf die Schaltfläche in der **oberen linken Ecke** oder greifen Sie über das **Menü** darauf zu.
 
-Um dieses Menü zu öffnen, klicken Sie auf die Schaltfläche in der **oberen linken Ecke** oder greifen Sie über das **Menü** darauf zu.
-
-- [POI-Overlay...](#poi-overlay-section). Ermöglicht es Ihnen, die benötigten POI-Kategorien auszuwählen und auf der Karte anzuzeigen.
-- [Favoriten](#favorites-section). Schaltet die Anzeige von Favoriten auf der Karte um.
-- [Tracks](#tracks-section). Enthält GPX-Tracks, die auf der Karte sichtbar sind.
-- [Gelände](#terrain-section). Aktiviert oder deaktiviert das Geländefarbschema auf der Karte.
+- [POI-Overlay...](#poi-overlay). Ermöglicht es Ihnen, die benötigten POI-Kategorien auszuwählen und auf der Karte anzuzeigen.
+- [Favoriten](#favorites). Schaltet die Anzeige von Favoriten auf der Karte um.
+- [Tracks](#tracks). Enthält GPX-Tracks, die auf der Karte sichtbar sind.  
+- [Gelände](#terrain). Aktiviert oder deaktiviert das Geländefarbschema auf der Karte.
 
 ![POIs-Menü](@site/static/img/web/configure_map_web.png)
 
 
-### Abschnitt POI-Overlay {#poi-overlay-section}
+### POI-Overlay {#poi-overlay}
 
-So zeigen Sie POIs auf der Karte an:
+Die POI-Overlay-Funktion ermöglicht es Ihnen, Points of Interest (POIs) auf der Karte nach ausgewählten Kategorien anzuzeigen. Dies ist nützlich, wenn Sie Orte direkt auf der Karte durchsuchen möchten.
 
-*Menü "Karte konfigurieren" → POI-Overlay...*. Hier können Sie Kategorien auswählen, die auf der Karte angezeigt werden sollen.
+Um das Overlay zu öffnen: *Menü "Karte konfigurieren" → POI-Overlay*...Die Overlay-Liste enthält 18 Kategorien. Sie können eine Kategorie aktivieren oder mehrere Kategorien in beliebiger Kombination aktivieren. Wenn mindestens eine Kategorie aktiviert ist, bietet das Overlay eine Aktion **Alle abwählen**, um die Auswahl auf einmal zu löschen.
 
-Alternativ können Sie den [**Suchbereich**](web-search.md) verwenden, um den gewünschten Ort zu finden.
+**Hinweis:** Wenn Sie nach einem bestimmten Ort suchen, können Sie auch den [**Suchbereich**](web-search.md) auf der Karte verwenden.
 
-![POIs-Menü](@site/static/img/web/poi_menu.png)
+Sobald POIs angezeigt werden, öffnet die Auswahl eines POI-Markers auf der Karte das Detailfenster, das die für dieses Objekt verfügbaren Informationen anzeigt. Je nach POI kann es den Ortsnamen und Typ, Adresse, Kontaktfelder, OSM-bezogene Bezeichner und Koordinaten, Referenzlinks (Wikipedia, Wikidata) enthalten, wenn vorhanden. 
+
+Für POIs mit Online-Fotos zeigt das Detailfenster einen Block **Online-Fotos** mit Vorschaubildern. *Alle anzeigen* öffnet eine Galerieansicht mit der vollständigen Fotoliste. Im Foto-Viewer zeigt OsmAnd Web Foto-Metadaten an, wenn verfügbar, einschließlich: Datum, Autor, Lizenz und Beschreibung.
+
+Im POI-Detailfenster sind Schnellaktionen über die Aktionsschaltflächen verfügbar:
+- *Zu Favoriten hinzufügen* — speichert den POI in Ihren Favoriten.
+- *Teilen* — erzeugt einen teilbaren Link, der den POI direkt in OsmAnd Web öffnet. Der Link enthält den POI-Namen, Typ und Koordinaten (Pin).
+- *Route von hier* — setzt den ausgewählten POI als Startpunkt und öffnet das Routenfenster, damit Sie ein Ziel und Profil wählen können.
+- *Navigation* — setzt den ausgewählten POI als Zielpunkt für die Navigation.
+
+![POIs-Menü](@site/static/img/web/poi_categories.png) ![POIs-Menü](@site/static/img/web/poi_photo_new.png)
 
 
-### Abschnitt Favoriten {#favorites-section}
+### Favoriten {#favorites}
 
-Mit einem Klick können Sie Favoriten auf der Karte ein- oder ausblenden. Es werden jedoch nur Favoriten angezeigt, bei denen [**Auf Karte anzeigen aktiviert**](../web/web-userdata.mdx#favorites-on-the-web) ist.
+Mit einem Klick können Sie Favoriten auf der Karte ein- oder ausblenden. Es werden jedoch nur Favoriten angezeigt, bei denen [**Auf Karte anzeigen aktiviert**](../web/web-favorites.md#manage-favorites) ist.
 
 
-### Abschnitt Tracks {#tracks-section}
+### Tracks {#tracks}
 
-Dieser Abschnitt enthält eine Liste Ihrer [**auf der Karte sichtbaren GPX-Tracks**](../web/web-userdata.mdx#visible-on-the-map) und **kürzlich sichtbaren** Tracks.
+Dieser Abschnitt enthält eine Liste Ihrer [**auf der Karte sichtbaren GPX-Tracks**](../web/web-tracks.md#visible-on-the-map) und **kürzlich sichtbaren** Tracks.
 
-- Sie können Tracks direkt ein- oder ausschalten.
-- Schalten Sie Tracks aus der Liste **Kürzlich sichtbar** ein oder aus.
+- Sie können Tracks direkt ein- oder ausschalten.  
+- Schalten Sie Tracks aus der Liste **Kürzlich sichtbar** ein oder aus.  
 
 Jeder Track hat ein **Kontextmenü** (zugänglich über die Schaltfläche ⋮) mit den folgenden Befehlen:
 
-- **Track ausblenden**: Blendet den aktuell sichtbaren Track von der Karte aus.
-- **Track sichtbar machen**: Zeigt einen Track aus der Liste "Kürzlich sichtbar" auf der Karte an.
-- **Umbenennen**: Ermöglicht es Ihnen, den Track zur leichteren Identifizierung umzubenennen.
-- **Duplizieren**: Erstellt eine Kopie des Tracks.
-- **Herunterladen**: Speichert den Track auf Ihrem lokalen Gerät.
+- **Track ausblenden**: Blendet den aktuell sichtbaren Track von der Karte aus.  
+- **Track sichtbar machen**: Zeigt einen Track aus der Liste "Kürzlich sichtbar" auf der Karte an.  
+- **Umbenennen**: Ermöglicht es Ihnen, den Track zur leichteren Identifizierung umzubenennen.  
+- **Duplizieren**: Erstellt eine Kopie des Tracks.  
+- **Herunterladen**: Speichert den Track auf Ihrem lokalen Gerät.  
 - **Löschen**: Entfernt den Track dauerhaft aus der Liste.
 
 ![Menü "Karte konfigurieren" Tracks](@site/static/img/web/configure_map_track.png)
 
 
-### Abschnitt Gelände {#terrain-section}
+### Gelände {#terrain}
 
 Der Abschnitt **Gelände** ist eine kostenpflichtige Funktion <ProFeature/>. Um diese Funktion zu nutzen, müssen Sie sich zuerst bei Ihrem OsmAnd Pro-Konto anmelden.
 
@@ -162,6 +130,48 @@ In diesem Abschnitt können Sie:
 - Die Sichtbarkeit der ausgewählten Geländeschicht von **0% bis 100%** anpassen.
 
 ![Menü "Karte konfigurieren" Gelände](@site/static/img/web/configure_map_terrain.png)
+
+
+## Einstellungen {#settings}
+
+Im Web-Planer sind die *Allgemeinen Einstellungen* (Anzeigesprache, Längeneinheiten, Geschwindigkeitseinheit) für alle Benutzer verfügbar, unabhängig davon, ob Sie angemeldet sind oder nicht. Sobald Sie sich mit Ihrem OsmAnd-Konto anmelden, erscheint ein zusätzlicher Abschnitt OsmAnd Cloud im Einstellungsfeld. Sie können mehr über OsmAnd Cloud [hier](./web-cloud.md) lesen.
+
+### Sprache {#language}
+
+Um die Interface-Sprache zu wechseln:
+
+*Gehen Sie zu: Menü → ⚙ Einstellungen → Anzeigesprache*
+
+![Web Sprache](@site/static/img/web/web_language.png)
+
+### Einheiten {#units}
+
+*Gehen Sie zu: Menü → ⚙ Einstellungen → Längeneinheiten*  
+*Gehen Sie zu: Menü → ⚙ Einstellungen → Geschwindigkeitseinheit*
+
+Sie können auswählen, welche Einheiten für die Anzeige von Entfernung, Höhenunterschied und Geschwindigkeit auf der Karte, in Routendetails und in Messwerkzeugen verwendet werden. Dies hilft Ihnen, OsmAnd mit Ihren üblichen Gewohnheiten oder regionalen Standards konsistent zu halten.
+
+Die Option **Längeneinheiten** definiert, wie horizontale Entfernung und Höhenunterschied angezeigt werden:
+- Kilometer/Meter.
+- Meilen/Fuß.
+- Meilen/Meter.
+- Meilen/Yard.
+- Seemeilen/Meter.
+- Seemeilen/Fuß. 
+
+Zum Beispiel wird eine Entfernung von 10 km als etwa 6,21 mi angezeigt, wenn Sie eine der Meilen/...-Optionen wählen, oder als etwa 5,40 nmi, wenn Seemeilen/... ausgewählt ist.
+
+Die Option **Geschwindigkeitseinheit** steuert, wie aktuelle Geschwindigkeit und Geschwindigkeitsbegrenzungen angezeigt werden:
+- Kilometer pro Stunde.
+- Meilen pro Stunde.
+- Meter pro Sekunde.
+- Minuten pro Meile.
+- Minuten pro Kilometer.
+- Seemeilen pro Stunde (Knoten). 
+
+Zum Beispiel entspricht eine Geschwindigkeit von 90 km/h 25 m/s oder etwa 55,92 mph.
+
+![Web Einheiten](@site/static/img/web/web_units_len.png) ![Web Einheiten](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -206,15 +216,15 @@ Diese URLs können kopiert und über jedes von Ihrem Gerät unterstützte Medium
 
 Abhängig von den angegebenen Parametern können URL-Zeichenfolgen enthalten:
 
-- **latitude**: Breitengradwert als Zahl.
-- **longitude**: Längengradwert als Zahl.
-- **start-finish**: Koordinaten für die Navigation.
-- **profile**: Navigationsprofil (z.B. Auto, Fahrrad).
+- **latitude**: Breitengradwert als Zahl.  
+- **longitude**: Längengradwert als Zahl.  
+- **start-finish**: Koordinaten für die Navigation.  
+- **profile**: Navigationsprofil (z.B. Auto, Fahrrad).  
 - **zoom**: Zoomstufe.
 
 4. **Wetter**&nbsp; – &nbsp;`osmand.net/map/weather`
 
-***Zum Beispiel*** können Sie direkt auf die Wetterseite mit angegebenen Koordinaten zugreifen:
+***Zum Beispiel*** können Sie direkt auf die Wetterseite mit angegebenen Koordinaten zugreifen:  
     [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
 
 5. **Konto**&nbsp; – &nbsp;`osmand.net/map/account`
@@ -230,3 +240,13 @@ Abhängig von den angegebenen Parametern können URL-Zeichenfolgen enthalten:
 10. **Route planen**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Direkter Link zur aktuellen [**Erkunden-Seite**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+
+
+## Verwandte Artikel {#related-articles}
+
+- [Kartenkontextmenü](../map/map-context-menu.md)
+- [OsmAnd-Konto](./web-cloud.md)
+- [Tracks](./web-tracks.md)
+- [Favoriten](./web-favorites.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)
+-->

@@ -1,9 +1,10 @@
 ---
-source-hash: 552b7ab98cb47cfebc8836a696e65629cc7df57f4c5ef8f5c2339517189845a0
-sidebar_position: 6
+source-hash: 098646f83acbbceecc81138e6c1f095f561c363dd813f1adacc2c3762c0d0865
+sidebar_position: 10
 sidebar_label:  Suche
 title: Suche auf der Webseite
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -32,7 +32,7 @@ Das **Suchmenü** kann über das Seitenpanel oder die **linke Ecke 🔍** der Ka
 
 ## Suchleiste {#search-bar}
 
-Klicken Sie auf die **Schaltfläche 🔍**, um die Suche zu starten. Geben Sie eine Anfrage in die **Suchzeile** ein und klicken Sie auf einen POI, um das [**POI-Kontextmenü**](#explore-poi-data) zu öffnen, in dem Sie die Tag-Informationen einsehen können.
+Klicken Sie auf die **🔍-Schaltfläche**, um die Suche zu starten. Geben Sie eine Anfrage in die **Suchzeile** ein und klicken Sie auf einen POI, um das [**POI-Kontextmenü**](#explore-poi-data) zu öffnen, in dem Sie die Tag-Informationen einsehen können.
 
 Wenn Sie nach dem **Kategorienamen** suchen, wird das erste Ergebnis die Kategorie dieses POI anzeigen. Wenn Sie auf eine POI-Kategorie klicken, öffnet sich das Fenster [**Kategoriensuche**](#categories).
 
@@ -42,7 +42,7 @@ Wenn Sie nach dem **Kategorienamen** suchen, wird das erste Ergebnis die Kategor
 Ein Klick auf den ausgewählten POI auf der Karte oder in der Ergebnisliste öffnet das **POI-Kontextmenü**. Dieses Menü bietet die folgenden Daten und Links:
 
 - **Name und Symbol**. Zeigt den Namen und das Symbol des POI an.  
-- **★-Schaltfläche (*Zu Favoriten hinzufügen*)**. Ermöglicht es Ihnen, den ausgewählten POI als [Favoriten](../web/web-userdata.mdx#add--edit-favorite) zu speichern.  
+- **★-Schaltfläche (*Zu Favoriten hinzufügen*)**. Ermöglicht es Ihnen, den ausgewählten POI als [Favoriten](../web/web-favorites.md#add--edit-favorite) zu speichern.  
 - **🔍-Schaltfläche**. Verschiebt die Karte zum Standort des POI.  
 - **Entfernung und Richtung**. Zeigt die Entfernung und Richtung von Ihrem Standort zum ausgewählten POI an.  
 - **Standort**. Zeigt die Koordinaten des POI an.  
@@ -65,7 +65,7 @@ Im **Kategorienmenü** können Sie eine POI-Kategorie auswählen und auf der Kar
 Ein Klick auf den ausgewählten POI auf der Karte oder in der Ergebnisliste öffnet das **POI-Kontextmenü**. Dieses Menü bietet die folgenden Daten und Links:
 
 - **Name und Symbol**. Zeigt den Namen und das Symbol des POI an.  
-- **★-Schaltfläche (*Zu Favoriten hinzufügen*)**. Ermöglicht es Ihnen, den ausgewählten POI als [Favoriten](../web/web-userdata.mdx#add--edit-favorite) zu speichern.  
+- **★-Schaltfläche (*Zu Favoriten hinzufügen*)**. Ermöglicht es Ihnen, den ausgewählten POI als [Favoriten](../web/web-favorites.md#add--edit-favorite) zu speichern.  
 - **🔍-Schaltfläche**. Verschiebt die Karte zum Standort des POI.  
 - **Entfernung und Richtung**. Zeigt die Entfernung und Richtung von Ihrem Standort zum ausgewählten POI an.  
 - **Standort**. Zeigt die Koordinaten des POI an.  
@@ -84,7 +84,7 @@ Der **Erkunden**-Bereich im Suchmenü erleichtert das Finden von Orten und das A
 
 So fangen Sie an:
 
-1. Klicken Sie auf das **Symbol 🔍**, um den Such-Tab zu öffnen, der beliebte POI-Kategorien und das **Erkunden**-Menü darunter anzeigt.  
+1. Klicken Sie auf das **🔍-Symbol**, um den Such-Tab zu öffnen, der beliebte POI-Kategorien und das **Erkunden**-Menü darunter anzeigt.  
 2. Die **Erkunden**-Daten werden automatisch auf der Karte angezeigt.  
 3. Wählen Sie **"Alle anzeigen"** im Erkunden-Bereich, um die vollständige Kategorienliste mit der ***Filter***-Schaltfläche oben zu öffnen.  
 
@@ -112,7 +112,7 @@ Ein Klick auf einen Bild-POI öffnet ein neues Kontextmenü, das Folgendes enth�
 
 ### Fotogalerie {#photo-gallery}
 
-Wenn Sie im Kontextmenü im Bereich **Online-Fotos** auf ***Alle anzeigen*** klicken, öffnet sich die *Fotogalerie* des ausgewählten POI.  
+Wenn Sie im **Online-Fotos**-Bereich des Kontextmenüs auf ***Alle anzeigen*** klicken, öffnet sich die *Fotogalerie* des ausgewählten POI.  
 In der *Fotogalerie* können Sie durch alle Fotos des POI scrollen.  
 
 Jedes Foto enthält:

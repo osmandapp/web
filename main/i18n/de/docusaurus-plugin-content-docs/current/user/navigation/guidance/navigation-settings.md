@@ -1,5 +1,5 @@
 ---
-source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
+source-hash: a8559f43cff19c4a14831feb61c4c3facdea6dab64c9c232c37b5ba47e810958
 sidebar_position: 1
 title:  Navigationseinstellungen
 ---
@@ -24,13 +24,13 @@ Für eine erfolgreiche Navigation ist es wichtig, die entsprechenden Einstellung
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_ios.png)
+![Navigationseinstellungen iOS](@site/static/img/navigation/navigation_settings_overview_ios.png)
 
 </TabItem>
 
@@ -59,13 +59,13 @@ Das Standardprofil *Karte durchsuchen* hat keine Navigationseinstellungen.
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png)   ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_type_offline_andr.png)   ![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_type_online_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_type_ios.png)
+![Navigationseinstellungen iOS](@site/static/img/navigation/navigation_settings_type_ios.png)
 
 </TabItem>
 
@@ -88,13 +88,13 @@ Der Navigationstyp bestimmt, welche Regeln zur Berechnung von Routen verwendet w
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route_parameters_1_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_route_parameters_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route_parameters_1_ios.png)
+![Navigationseinstellungen iOS](@site/static/img/navigation/navigation_settings_route_parameters_1_ios.png)
 
 </TabItem>
 
@@ -114,15 +114,15 @@ Alle Routenparameter werden in den entsprechenden Abschnitten der Dokumentation 
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route-recalculation1_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_route-recalculation2_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_route-recalculation1_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_route-recalculation2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route-recalculation1_ios.png)
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_route-recalculation2_ios.png)
+![Navigationseinstellungen iOS](@site/static/img/navigation/navigation_settings_route-recalculation1_ios.png)
+![Navigationseinstellungen iOS](@site/static/img/navigation/navigation_settings_route-recalculation2_ios.png)
 
 </TabItem>
 
@@ -144,7 +144,7 @@ Der Parameter **Routenberechnung** ändert die berechnete Route automatisch, wen
 
 Gehen Sie zu: *Menü → Einstellungen → App-Profil → Navigationseinstellungen → Routenparameter → Entwicklung*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
 </TabItem>
 
@@ -152,7 +152,7 @@ Gehen Sie zu: *Menü → Einstellungen → App-Profil → Navigationseinstellung
 
 Gehen Sie zu: *Menü → Einstellungen → App-Profil → Navigationseinstellungen → Routenparameter → Entwicklung*
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
+![Navigationseinstellungen iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
 </TabItem>
 
@@ -185,7 +185,7 @@ Die Parameter im Abschnitt **Entwicklung** sind hauptsächlich für fortgeschrit
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Sprachnavigations-Einstellungen Android](@site/static/img/navigation/voice/voice_promt_android.png)
 
 </TabItem>
 
@@ -194,7 +194,7 @@ Die Parameter im Abschnitt **Entwicklung** sind hauptsächlich für fortgeschrit
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> button* *(oder <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Profil auswählen → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Sprachnavigations-Einstellungen iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
 
 </TabItem>
 
@@ -227,7 +227,7 @@ Im Abschnitt **Ankündigen** können Sie auswählen, welche Arten von Benachrich
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
+![Navigationseinstellungen](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
 </TabItem>
 
@@ -235,7 +235,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
+![Navigationseinstellungen](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
 </TabItem>
 
@@ -279,7 +279,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 </Tabs>
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)
 
 Die **Karte wird während der Navigation verwendet**, um Ihren Standort zu bestimmen, Ihre Route zu planen und sich im Gelände zu orientieren. Während der Navigation können Sie die Karte mit *automatischer Zentrierung* anzeigen, sie verschieben und *hinein- und herauszoomen*, um den gewünschten Bereich zu sehen. Die Karte kann auch Markierungen anzeigen, die auf Sehenswürdigkeiten, Routen, Wetterbedingungen, Verkehrszeichen und andere Objekte hinweisen, die Ihnen bei der Navigation helfen. Die Karte kann in *Echtzeit* aktualisiert werden und zeigt *aktuelle Informationen* an, die die Routenplanung beeinflussen können.
 
@@ -293,7 +293,7 @@ Wie sich das Verhalten der Karte während der Navigation ändert, erfahren Sie i
 
 Gehen Sie zu: *<Translate android="true" ids="profile_type_user_string,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_andr.png)
+![Navigationseinstellungen](@site/static/img/navigation/navigation_settings_route-line_andr.png)
 
 </TabItem>
 
@@ -301,7 +301,7 @@ Gehen Sie zu: *<Translate android="true" ids="profile_type_user_string,shared_st
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_route-line_ios.png)
+![Navigationseinstellungen](@site/static/img/navigation/navigation_settings_route-line_ios.png)
 
 </TabItem>
 
@@ -318,7 +318,7 @@ Mit der Einstellung **Routenlinie anpassen** können Sie das Aussehen der Routen
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
 
 </TabItem>
 
@@ -326,7 +326,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -343,7 +343,7 @@ Um sicherzustellen, dass OsmAnd die optimalste Route berechnet, ist es entscheid
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>*
 
-![Attach to the roads 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png)    ![Navigation Settings Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
+![An Straßen ausrichten 1](@site/static/img/navigation/gpx/detailed_track_guidance_1_andr.png)    ![Navigationseinstellungen Android](@site/static/img/navigation/gpx/detailed_track_guidance_2_andr.png)
 
 </TabItem>
 
@@ -351,7 +351,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>* → *Detaillierte Track-Führung*
 
-![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Navigation Settings](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
+![Navigationseinstellungen](@site/static/img/navigation/detailed_track_guidance_1_ios.png)   ![Navigationseinstellungen](@site/static/img/navigation/detailed_track_guidance_2_ios.png)
 
 </TabItem>
 

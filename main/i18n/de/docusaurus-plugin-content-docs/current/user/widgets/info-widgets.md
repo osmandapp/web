@@ -1,5 +1,5 @@
 ---
-source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
+source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -475,7 +475,7 @@ Eine detailliertere Beschreibung finden Sie hier: **[<Translate android="true" i
 
 </Tabs>
 
-Reiseaufzeichnungs-Widgets beziehen sich auf das [<Translate android="true" ids="record_plugin_name"/>-Plugin](../plugins/trip-recording.md#widgets). Sie können Widgets verwenden, um kurze Informationen über die Track-Aufzeichnung auf dem Bildschirm anzuzeigen. Wie z.B. *Distanz*, *Dauer*, *Anstieg*, *Abstieg*, *Höchstgeschwindigkeit* und *Durchschnittliche Steigung* (letztere zwei nur auf Android verfügbar).
+Reiseaufzeichnungs-Widgets beziehen sich auf das [<Translate android="true" ids="record_plugin_name"/>-Plugin](../plugins/trip-recording.md#widgets). Sie können Widgets verwenden, um kurze Informationen über die Track-Aufzeichnung auf dem Bildschirm anzuzeigen. Wie z.B. *Distanz*, *Dauer*, *Anstieg*, *Abstieg*, *Höchstgeschwindigkeit* und *Durchschnittliche Steigung*.
 
 | | |
 |:------------|:------------|

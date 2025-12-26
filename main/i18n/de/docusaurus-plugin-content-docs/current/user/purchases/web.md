@@ -1,5 +1,5 @@
 ---
-source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
+source-hash: 07f0f9eef0edaa9b0f5ade51776aa2f175ba53128c6bdac5c99ffcb6ffad3f65
 sidebar_position: 3
 title:  Web-Käufe
 ---
@@ -38,45 +38,46 @@ Alle über eine dieser Plattformen getätigten Käufe unterstützen den [**platt
 Nachfolgend finden Sie die Preise für OsmAnd-Produkte in den USA und der EU. Die Preise in anderen Regionen werden von der Zahlungsplattform automatisch in die lokale Währung umgerechnet.
 
 
-<!--
 
-:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Weihnachtsverkauf
+
+*Beeilen Sie sich! Dieses Angebot ist nur bis* **28. Dezember (23:00 CET)** verfügbar.
 
 :::
 
-
-
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
-| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
-
-:::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
-:::
-
--->
 
 
 |    | OsmAnd Free   | **Maps+** Einmalkauf | **Maps+** Abonnement | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |**Einmalkauf** (15 Jahre Pro / Maps+ Lebenslang) |
-| **Preis (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Preis (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Preis (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
+| **Preis (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
+
+:::note 
+Durch den Kauf eines Abonnements über [unsere Website](https://osmand.net/pricing) zu einem ermäßigten Preis,  
+erhalten Sie einen 2-Jahres-Ermäßigungsplan.  
+Ab dem dritten Jahr gilt der volle Preis.
+:::
 
 
+<!--
+
+
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
+| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
+| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+
+-->
 
 ### Kostenlose und kostenpflichtige Funktionen {#free-and-paid-features}
 
-- [Kostenlose und kostenpflichtige Funktionen für Android.](./android.md#free-and-paid-features)
-- [Kostenlose und kostenpflichtige Funktionen für iOS.](./ios.md#free-and-paid-features)
+- [Androids kostenlose und kostenpflichtige Funktionen.](./android.md#free-and-paid-features)
+- [iOS' kostenlose und kostenpflichtige Funktionen.](./ios.md#free-and-paid-features)
 
 
 

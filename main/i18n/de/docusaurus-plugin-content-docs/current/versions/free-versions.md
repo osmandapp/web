@@ -1,5 +1,5 @@
 ---
-source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
+source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
 sidebar_position: 2
 ---
 
@@ -39,7 +39,7 @@ Veröffentlichungsdatum 11/2025:
 - Verbesserte Benutzeroberfläche zum Hinzufügen von LKW-Metriken in den LKW-Profil-Einstellungen.
 - Mehr Parameter für die Routenanzeige auf der Karte.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### Version 5.1 {#version-51}
 
@@ -207,7 +207,7 @@ Veröffentlichungsdatum 12/2022:
 
 - Neue, schnellere Version 2 (OpenGL) Karten-Rendering-Engine mit 2,5D-Ansicht
 - Flüssige Animation von Standortänderungen während der Bewegung
-- Neue Widgets für Kartenmittelpunktkoordinaten und Höhe von Geostandorten
+- Neue Widgets für die Kartenmittelpunktkoordinaten und Höhe von Geostandorten
 - „Entfernung zum Tippen“: Optionen für Textgröße hinzugefügt
 - „Kartenmarkierung“-Widget: Option zum Ändern des Klickverhaltens hinzugefügt
 - Option „Anzeigeposition“ behoben

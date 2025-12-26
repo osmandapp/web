@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Audio-/Videonotizen
 ---
@@ -245,7 +245,7 @@ Um eine Notiz in "Meine Orte" zu verwalten, tippen Sie auf die vertikalen drei P
 
 <TabItem value="android" label="Android">
 
-![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![The widget](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ Das Hinzufügen eines Widgets zum Bildschirm ist notwendig, wenn Sie es vorziehe
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - mit dem Fotografieren beginnen.
 
-    ![The widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+### Externe Eingabegeräte verwenden {#external-input-devices}   
 
-**Externe Eingabegeräte verwenden (*Android*)**. Wenn Sie ein [externes Eingabegerät](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) verwenden, können Sie Audio-/Videonotizen starten und stoppen, ohne den Bildschirm zu berühren. Zu diesem Zweck weisen Sie die Aktion „Audio-Notiz hinzufügen“ oder „Video-Notiz hinzufügen“ einer Taste zu:<br/>
+Wenn Sie ein [externes Eingabegerät](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*) verwenden, können Sie Audio-/Videonotizen starten und stoppen, ohne den Bildschirm zu berühren. Zu diesem Zweck weisen Sie die Aktion „Audio-Notiz hinzufügen“ oder „Video-Notiz hinzufügen“ einer Taste zu:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Sobald zugewiesen, funktioniert die Taste als Umschalter:

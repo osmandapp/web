@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Darstellung von Tracks
 ---
@@ -39,7 +39,7 @@ Die Funktion **Darstellung von Tracks** ermöglicht es Benutzern, die Anzeige vo
 
 ## Zugriff auf das Menü {#access-to-the-menu}
 
-Sie können die Darstellung von Tracks mit einer der folgenden Methoden ändern:
+Sie können die Track-Darstellung mit einer der folgenden Methoden ändern:
 
 - **Über "Meine Orte"**. Öffnen Sie *Menü → Meine Orte → Tracks*, wählen Sie einen Track aus und tippen Sie auf das *Symbol "Darstellung"* im [Track-Kontextmenü](../../map/tracks/track-context-menu.md#overview).
 - **Von der Karte**. Tippen Sie direkt auf einen Track auf der Karte und dann auf das *Symbol "Darstellung"* im Bereich *Übersicht*.
@@ -55,35 +55,19 @@ Sie können die Darstellung von Tracks mit einer der folgenden Methoden ändern:
 Einige Einstellungen können nur mit *OsmAnd Pro* verwendet werden. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> und <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Kostenlose und kostenpflichtige Funktionen.
 :::
 
-![Darstellung](@site/static/img/map/appearance_color_andr.png)
+![Darstellung](@site/static/img/map/appearance_color_andr.png) ![Färbung Kontextmenü iOS](@site/static/img/map/colorisation_ios.png)
 
 Sie können die Track-Farbe manuell einstellen oder eine **farbbasierte Datenvisualisierung** verwenden (z. B. nach Geschwindigkeit, Höhe, Steigung). Wenn einem Track bestimmte Daten fehlen, zeigt OsmAnd die fehlenden Abschnitte in Grau an.
 
 **Verfügbare Farboptionen:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- Kostenlose Einstellungen: *<Translate android="true" ids="track_coloring_solid"/> Farbe*, *<Translate android="true" ids="shared_string_speed"/>* (falls aufgezeichnet) und *<Translate android="true" ids="altitude"/>* (falls aufgezeichnet).   
+- [Pro-Funktion](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Track-Menü Darstellung Track-Farbe Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Darstellung Track-Farbe Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Färbung Kontextmenü iOS](@site/static/img/map/colorisation_ios.png)
-
-Die **Färbungsliste** öffnet sich als Kontextmenü. Elemente können in drei Zuständen erscheinen: 
+Auf iOS öffnet sich die **Färbungsliste** als Kontextmenü. Elemente können in drei Zuständen erscheinen: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Kann auf den aktuellen Track angewendet werden.
 2. <Translate ios="true" ids="weather_update_disabled"/>. Dem Track fehlen die erforderlichen Daten.
 3. PRO. Für den aktuellen Track verfügbar, erfordert jedoch ein Abonnement; Tippen öffnet den [<Translate ios="true" ids="purchase_dialog_title"/> Bildschirm](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Kostenlose Einstellungen**: *<Translate android="true" ids="track_coloring_solid"/> Farbe*, *<Translate android="true" ids="shared_string_speed"/>* (falls aufgezeichnet) und *<Translate android="true" ids="altitude"/>* (falls aufgezeichnet).   
-- [Pro-Funktion](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Weitere Details zur Anpassung der Routenliniendarstellung finden Sie unter [Kartenbildschirm während der Navigation](../../navigation/guidance/map-during-navigation.md#color) und zur Auswahl und Erstellung einer benutzerdefinierten Farbe unter [Farbschemata](../../personal/color-palette-schemes.md#routes).
 
@@ -237,7 +221,7 @@ Der Tab [Tracks](../../personal/tracks/manage-tracks.md) zeigt automatisch alle 
 
 Ändern Sie die Darstellung mehrerer Tracks unter *Meine Orte → Tracks*:
 
-- **Standarddarstellung ändern** - Wendet Einstellungen auf alle Tracks in einem [Ordner](../../personal/tracks/manage-tracks.md#track-folder) an.
+- **Standarddarstellung ändern** (nur Android) - Ermöglicht die Konfiguration von Standardeinstellungen, die angewendet werden, sobald ein Track zu dem [Ordner](../../personal/tracks/manage-tracks.md#track-folder) hinzugefügt wird.
 - **Auf Original zurücksetzen** - Stellt die individuellen Track-Einstellungen wieder her.
 
 - [Auswahlmodus](../../personal/tracks/manage-tracks.md#selection-mode) - Ändert die Darstellung bestimmter Tracks im ausgewählten Ordner oder der gesamten Liste im Tab "Tracks".

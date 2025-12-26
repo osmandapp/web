@@ -1,5 +1,5 @@
 ---
-source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
+source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
 sidebar_position: 1
 title:  Barrierefreiheit
 ---
@@ -36,7 +36,7 @@ Die Barrierefreiheit verbessert die Benutzerfreundlichkeit für blinde und sehbe
    - Aktivieren Sie TalkBack oder einen anderen Bildschirmleser.
 
 3. **Passen Sie die Plugin-Einstellungen an**:  
-   - Öffnen Sie die [Barrierefreiheitseinstellungen](#plugin-settings) in der OsmAnd-App.
+   - Öffnen Sie [Barrierefreiheitseinstellungen](#plugin-settings) in der OsmAnd-App.
    - Konfigurieren Sie Funktionen wie Sprechgeschwindigkeit, Auto-Ansage und haptisches Feedback.
 
 <br/>
@@ -89,6 +89,23 @@ Um die Barrierefreiheitsfunktionen des Geräts in OsmAnd zu aktivieren, müssen 
 3. Konfigurieren Sie die [Einstellungen des Barrierefreiheits-Plugins](#plugin-settings).
 
 
+## Auto-Ansage {#autoannounce}
+
+Zum Aktivieren:
+*Meine Position* (Langes Tippen) → *Details anzeigen* → *Auto-Ansage starten/stoppen*
+
+- Ein langes Tippen auf **Meine Position** öffnet ein Menü mit den Optionen ***Ihre Position anzeigen*** und ***Details anzeigen***. Die Auswahl von Details anzeigen zeigt zusätzliche Routeninformationen an und bietet den Button ***Auto-Ansage starten/stoppen***.
+- Stellen Sie die **Auto-Ansage-Periode** (z. B. *10 Sekunden*) ein, um die Häufigkeit der Ansagen zu steuern.
+- Wenn **TalkBack** nicht in den Systemeinstellungen des Geräts aktiviert ist, liefert OsmAnd keine *Sprachbenachrichtigungen* und zeigt nur *Textbenachrichtigungen* auf dem Bildschirm an.  
+
+### Intelligente Auto-Ansage {#smart-autoannounce}
+
+Zum Aktivieren:
+*Plugins* → *Barrierefreiheit* → *Einstellungen* → *Intelligente Auto-Ansage*
+
+Die Funktion **Intelligente Auto-Ansage** bietet *Audio-Benachrichtigungen*, wenn Sie von der geplanten Route abweichen. Sie ist darauf ausgelegt, sehbehinderte Benutzer zu unterstützen, die auf *Sprachführung* angewiesen sind.  
+
+
 ## Plugin-Einstellungen {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
@@ -100,50 +117,19 @@ Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen, um die Navigatio
 | Einstellung                   | Beschreibung |  
 |---------------------------|-------------|  
 | **Barrierefreiheitsmodus**    | Aktiviert *integrierte OsmAnd-Funktionen* oder verwendet **Systemeinstellungen**. |  
-| **Sprechgeschwindigkeit**           | Steuert die *Text-zu-Sprache-Geschwindigkeit* im Bereich von **50 % bis 200 %**. |  
-| **Pinch-Zoom-Vergrößerung**    | Vergrößert die Karte vorübergehend, während Sie pinch-zoomen und Ihre Finger auf dem Bildschirm belassen, vergrößert Text und Symbole, ohne das tatsächliche Zoom-Niveau zu ändern. |  
+| **Sprechgeschwindigkeit**           | Steuert die *Text-zu-Sprache-Geschwindigkeit*, im Bereich von **50 % bis 200 %**. |  
+| **Pinch-Zoom-Vergrößerung**    | Vergrößert die Karte vorübergehend, während Sie pinch-zoomen und Ihre Finger auf dem Bildschirm belassen, vergrößert Text und Symbole, ohne das tatsächliche Zoom-Niveau zu ändern. |
 | [Intelligente Auto-Ansage](#smart-autoannounce)    | Bietet *Sprachführung*, wenn von der Route abgewichen wird. |  
 | **Auto-Ansage-Periode**   | Legt die Mindestzeit zwischen den Ansagen fest, von **5 Sekunden bis 5 Minuten**. |  
 | [Richtungsstil](#direction-style)       | Wählen Sie zwischen *Seitwärts (8 Richtungen)* oder *Im Uhrzeigersinn (12 Richtungen)*. |  
-| **Audio-Richtungsanweisungen**      | Spielt *Audio-Anweisungen* ab, die die Richtung angeben. |  
-| **Haptische Richtungsanweisungen**     | Bietet *Vibrationsfeedback* für Abbiegungen und Abweichungen.|  
-
-<!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
-
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
-
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
-
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
-
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
-
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
-
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
--->
-
-<br/>
+| **Audio-Richtungen**      | Spielt *Audio-Anweisungen* ab, die die Richtung angeben. |  
+| **Haptische Richtungen**     | Bietet *Vibrationsfeedback* für Abbiegungen und Abweichungen.|  
 
 ***Tipps für eine optimierte Barrierefreiheit:***
 
 - **Bildschirmleser** - Verwenden Sie TalkBack (*Android*) oder VoiceOver (*iOS*) für eine verbesserte Karteninteraktion.
 - **Audio-Navigation** - Aktivieren Sie die Auto-Ansage, um Sprachanweisungen zu erhalten, während der Bildschirm ausgeschaltet ist.
 - **Haptisches Feedback** - Ideal für Umgebungen mit schlechter Sicht oder wenn Audio-Anweisungen unpraktisch sind.
-
-
-### Intelligente Auto-Ansage {#smart-autoannounce}
-
-Die Funktion **Intelligente Auto-Ansage** bietet *Audio-Benachrichtigungen*, wenn Sie von der geplanten Route abweichen. Sie ist darauf ausgelegt, sehbehinderte Benutzer zu unterstützen, die auf *Sprachführung* angewiesen sind.  
-
-- Wenn **TalkBack nicht aktiviert ist**, zeigt die *Intelligente Auto-Ansage* nur *Textbenachrichtigungen* auf dem Bildschirm an.  
-
-- **Sprachbenachrichtigungen** werden nur aktiviert, wenn *TalkBack* in den **Systemeinstellungen des Geräts** aktiviert ist.  
-
-- Stellen Sie die **Auto-Ansage-Periode** (z. B. *10 Sekunden*) ein, um die Häufigkeit der Ansagen zu steuern.
-
-- Ein langes Tippen auf **Meine Position** öffnet ein Menü mit den Optionen ***Ihre Position anzeigen*** und ***Details anzeigen***. Die Auswahl von Details anzeigen zeigt zusätzliche Routeninformationen an und bietet den Button ***Auto-Ansage starten/stoppen***.
 
 
 ### Richtungsstil {#direction-style}
