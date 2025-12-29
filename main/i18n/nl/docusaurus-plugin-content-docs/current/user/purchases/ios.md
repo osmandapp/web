@@ -1,5 +1,5 @@
 ---
-source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
+source-hash: 1f88b8a69546be11fe397f39ef6e1255bf0e2760eeb2883d1ca6539d40dd08af
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -53,24 +53,24 @@ U kunt de app downloaden via deze link - [OsmAnd Maps on Apple App Store](https:
 
 In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS en de Europese regio. Voor andere regio's zijn de prijzen equivalent in lokale valuta.
 
+<!--
 
+:::danger Christmas sale
 
-:::danger Black Friday prijzen
-
-*Haast je! Dit aanbod is alleen beschikbaar tot* **30 november (23:00 CET)**.
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |
-| **Prijs (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Prijs (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
-<!--
+-->
 
 
 |    | OsmAnd Gratis   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
@@ -80,7 +80,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | **Prijs (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
 | **Prijs (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
--->
+
 
 ### Gratis en betaalde functies {#free-and-paid-features}
 
@@ -136,6 +136,7 @@ Op dit moment heeft het Pro-abonnement de volgende functies:
 | [Weer-plugin](../plugins/weather.md) | 24-uurs voorspelling per uur, 7 dagen vooruit op de kaart. |
 | [Plugin voor voertuigstatistieken (OBD-II)](../plugins/vehicle-metrics.md) | Hiermee kunt u een OBD-II-scanner aansluiten om gedetailleerde voertuiggegevens in de OsmAnd-app weer te geven en de informatie op te slaan in trackrecords. Informatie over voertuigsnelheid en motortoerental is beschikbaar voor OsmAnd gratis.  |
 | [Routelijn aanpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | De kleur en breedte van de routelijn tijdens de navigatie wijzigen. |
+| [Kleurenpalet aanpassen](../../user/plugins/topography.md#modify-color-scheme) | Hiermee kunt u het uiterlijk van de kaart aanpassen door kleurenpaletten te selecteren of te importeren. U kunt ingebouwde schema's bewerken of uw eigen paletbestanden gebruiken om kaart- en routekleuren te personaliseren. |
 
 
 ## Hoe te kopen {#how-to-buy}

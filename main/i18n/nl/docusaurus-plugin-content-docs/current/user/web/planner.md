@@ -1,9 +1,10 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
 sidebar_label:  Route Plannen
 title: Route Plannen op de Website
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -24,34 +24,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Met de OsmAnd Web Route Planner kunt u navigatieroutes aanmaken, tracks plannen en lokale bestanden rechtstreeks vanuit uw browser beheren. Deze webtool is handig voor het maken van gedetailleerde reisroutes die u kunt synchroniseren met uw app of kunt delen met anderen.
 
 
-## Navigatieroute {#navigation-route}
+<!--
+## Navigation Route {#navigation-route}
 
-Volg deze stappen om een navigatieroute aan te maken:
+To create a navigation route, follow these steps:
 
-- **Rechtermuisklik** op de kaart om routepunten toe te voegen:
+- **Right-click** on the map to add waypoints:
 
-  - *Navigeer vanaf*. Stel het startpunt in.
-  - *Navigeer naar*. Stel de bestemming in.
-  - *Navigeer via*. Voeg indien nodig tussenliggende punten toe.
+  - *Navigate from*. Set the starting point.
+  - *Navigate to*. Set the destination.
+  - *Navigate via*. Add intermediate points if needed.
 
-- Nadat de start- en eindpunten zijn ingesteld, wordt de route op de kaart weergegeven.
+- After setting the start and end points, the route will be displayed on the map.
 
-- In het **Route**-blok:
+- In the **Route** block:
 
-  - Verplaats de start- en eindpunten indien nodig.
-  - Bewerk de routepunten en kies het gewenste routetype (bijv. auto, fiets, wandelen).
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
   ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- Selecteer het juiste **Routeprofiel** voor verschillende navigatieopties.
+- Select the appropriate **Route Profile** for different navigation options.
 
   ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- Klik op de oranje cirkels langs de route om gedetailleerde navigatie-instructies te bekijken.
+- Click on the orange circles along the route to view detailed navigation instructions.
 
   ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- Om de route te delen, kopieer de URL. Voorbeeld: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
 ## Track en Lokale Bestanden Aanmaken {#create-track-and-local-files}
@@ -93,7 +96,7 @@ Het menu **Lokale Track** biedt drie panelen voor bewerking: **Info**, **Track**
 - *Herberekenen*. Voeg hoogtegegevens toe of werk deze bij.
 - *Hoogte*. Bekijk het hoogteprofiel.
 - *Snelheidsgrafiek*. Toon snelheidsgegevens over de track.
-- *Hellinggrafiek*. Toon hellingsveranderingen langs de route.
+- *Hellinggrafiek*. Toon hellingsveranderingen langs de route.  
 - *Wegdetails*. Bekijk gedetailleerde informatie zoals wegtype, wegdek en steilheid.
 - *GPX downloaden*. Exporteer de track als een GPX-bestand ([Pro-functie](../purchases/index.md)).
 - *Track sluiten*. Sluit de bewerkingsweergave van de track.

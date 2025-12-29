@@ -1,5 +1,5 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
 title:  Bootnavigatie
 ---
@@ -67,7 +67,7 @@ Normaal gesproken wordt *Bootnavigatie* gebruikt met het bootprofiel (de laatste
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Hiermee kunt u beken en afwateringskanalen gebruiken voor bootnavigatie. Het inschakelen van deze optie kan handig zijn voor kleine boten zoals kano's, kajaks, vlotten en roeiboten. |  [Beken](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) zijn natuurlijk gevormde waterwegen die te smal zijn om een rivier te worden genoemd. [Afwateringskanalen](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) zijn kunstmatige waterwegen, meestal bekleed met beton of iets dergelijks, die worden gebruikt om overtollig water zoals regenwater of grijswater af te voeren.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Door deze optie in te schakelen, kunt u intermitterende waterwegen gebruiken om per boot te navigeren.   | De tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) wordt gebruikt om aan te geven dat een waterweg niet permanent water bevat.  |
-| *Veerboten toestaan* | Hiermee wordt navigatie via veerbootroutes ingeschakeld. | Gebruikt `route=ferry` waar aanwezig in OSM. Er zijn geen nieuwe kaarten vereist. |
+| *Veerboten toestaan* | Hiermee wordt navigatie via veerbootroutes ingeschakeld. | Meestal zijn [veerbootroutes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) ontoegankelijk voor kleine boten op basis van de OSM-definitie. |
 
 :::note Waternavigatie en beperkingen
 

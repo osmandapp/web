@@ -1,5 +1,5 @@
 ---
-source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
+source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
 sidebar_position: 16
 title:  Voertuigstatistieken
 ---
@@ -119,7 +119,7 @@ Kies uw OBD-II-apparaat uit de lijst en breng de verbinding tot stand.
 - **Hernoemen**. Hiermee kunt u een aangepaste naam aan de sensor toewijzen voor eenvoudigere identificatie.
 - **Vergeten**. Verwijdert de eerder gekoppelde OBD-II-sensor uit de lijst, waardoor opnieuw koppelen later nodig is.
 
-**Herconnectiegedrag** *(Alleen Android)***:** OsmAnd probeert automatisch opnieuw verbinding te maken met de OBD-II-adapter wanneer de applicatie wordt gestart, wanneer navigatie wordt gestart, of wanneer Android Auto wordt gelanceerd. Als een verbinding niet beschikbaar is, tonen Voertuigstatistieken-widgets “–”. Een enkele tik op een willekeurige Voertuigstatistieken-widget zal proberen opnieuw verbinding te maken met de sensor. Als de sensor al verbonden is, schakelt de tik de weergavemodi van de widget zoals gewoonlijk.
+**Herconnectiegedrag:** OsmAnd probeert automatisch opnieuw verbinding te maken met de OBD-II-adapter wanneer de applicatie wordt gestart, wanneer navigatie wordt gestart, of wanneer Android Auto / CarPlay wordt gelanceerd. Als een verbinding niet beschikbaar is, tonen Voertuigstatistieken-widgets “–”. Een enkele tik op een willekeurige Voertuigstatistieken-widget zal proberen opnieuw verbinding te maken met de sensor. Als de sensor al verbonden is, schakelt de tik de weergavemodi van de widget zoals gewoonlijk.
 
 
 ## Lijst met statistieken {#metrics-list}

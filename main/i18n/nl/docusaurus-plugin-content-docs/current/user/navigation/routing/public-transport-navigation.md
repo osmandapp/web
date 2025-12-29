@@ -1,8 +1,9 @@
 ---
-source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
+source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
 sidebar_position: 5
 title:  Routering openbaar vervoer
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 
@@ -119,6 +119,55 @@ Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [
 
 </Tabs>
 
+## Typen openbaar vervoer {#public-transport-types}
+
+U kunt goed samengestelde routes voor het openbaar vervoer doorzoeken volgens uw voorkeuren en kiezen om:
+
+- Bussen (en trolleybussen) te vermijden
+- Metro's te vermijden
+- Treinen te vermijden
+- Trams te vermijden
+- Veerboten te vermijden
+- Deeltaxi's te vermijden
+
+Standaard zoekt OsmAnd naar routes die alle ondersteunde typen openbaar vervoer omvatten.
+
+## Alternatieve routes {#alternative-routes}
+
+Alternatieve routes zijn secties van een route die worden bediend door verschillende vervoersdiensten en dezelfde weg en haltes delen.
+
+Verschillende vervoersdiensten kunnen verschillende routenummers (refs) gebruiken of zelfs verschillende typen vervoer.
+
+De gebruikersinterface toont alternatieve routes als gekleurde badges met hun refs.
+
+## Prestaties en resultaten {#performance-and-results}
+
+**Openbaar vervoer profiel -> Instellingen -> Navigatie-instellingen -> Routeparameters**
+
+1. **Maximum aantal vervoerswisselingen**.
+
+De prestaties en het geheugengebruik van de router voor openbaar vervoer hangen af van de zoekdiepte.
+
+De belangrijkste parameter die deze diepte beïnvloedt, is het **Maximum aantal vervoerswisselingen**.
+
+We gebruiken **2** als standaardwaarde, wat optimaal lijkt voor moderne netwerken voor openbaar vervoer.
+
+Als u te maken krijgt met lage prestaties of geheugenfouten, probeer dan deze waarde te verlagen.
+
+Als u in een kleine stad bent of korte routes aflegt, kan een waarde van **1** beter werken.
+<!--
+There are two more parameters that help you choose the best routes.
+
+2. **Display N best routes** (specify the number of best routes to display)
+
+By default, OsmAnd displays the **10** best routes (including alternative routes).
+
+You can decrease or increase this limit, or even display all routes.
+
+Note: displaying unlimited routes might slow down your device.
+
+Possible values: 0 (show all), 5, 10 (default), 15, 100
+-->
 
 ## Gegevens en richtlijnen {#data-and-guideline}
 

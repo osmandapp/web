@@ -1,5 +1,5 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Topografie
 ---
@@ -244,13 +244,11 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 
 - *Hoogte*. De hoogtekaart kleurt elke pixel volgens de berekende kaarthoogte met behulp van het verloop van een gedefinieerd kleurenschema. Meestal zijn hoogteschema's sterk afhankelijk van de locatie. In berggebieden geeft u er de voorkeur aan kleuren te verdelen over een breder hoogtebereik en in vlakke gebieden kiest u een kleurenschema met een klein bereik tussen min/max hoogte.
 
-> *Lees het artikel [Kleurenschema](../personal/color-palette-schemes.md) voor meer informatie.*
-
 
 ### Kleurenschema Wijzigen {#modify-color-scheme}
 
 :::info Betaalde functie
-*Kleurenschema Wijzigen* is een **OsmAnd Pro** betaalde functie voor [iOS](../purchases/ios.md#pro-features) en [Android](../purchases/android.md#pro-features) <ProFeature />.
+*[Kleurenschema Wijzigen](../../user/personal/color-palette-schemes.md#terrain)* is een **OsmAnd Pro** betaalde functie voor [iOS](../purchases/ios.md#pro-features) en [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -274,7 +272,7 @@ De functie *Kleurenschema Wijzigen* stelt u in staat een kleurenschema te select
 - Uit een [vooraf gedefinieerde lijst](#default-color-scheme).
 - Uit kleurenpaletbestanden die u op uw computer hebt gemaakt. Aangepaste bestanden kunnen aan OsmAnd worden toegevoegd met behulp van de [import/export tool](../personal/import-export.md).
 
-U kunt [deze paletten bewerken](../personal/color-palette-schemes.md#edit-palette-file) om het uiterlijk van kaarten en routes te personaliseren.
+U kunt [deze paletten bewerken](../personal/color-palette-schemes.md#palette-modify) om het uiterlijk van kaarten en routes te personaliseren.
 
 
 ### Zichtbaarheid {#visibility}
@@ -314,7 +312,7 @@ De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de
 
 ![QA voor Terrein](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-U kunt de *Snelle Actie*-knoppen op het kaartscherm gebruiken om de zichtbaarheid van [Hoogtelijnen](#contour-lines), [Terrein](#terrain)-lagen en [Terrein kleurenschema](#default-color-scheme) te wisselen. Afhankelijk van de laag die is geselecteerd in het menu Kaart configureren, zal het toewijzen van een *Terrein*-actie aan de knop *Schaduwreliëf*, *Helling* of *Hoogte* weergeven.  
+U kunt de *Snelle Actie*-knoppen op het kaartscherm gebruiken om de zichtbaarheid van [Hoogtelijnen](#contour-lines), [Terrein](#terrain)-lagen en [Terrein kleurenschema](../../user/personal/color-palette-schemes.md#quick-actions) te wisselen. Afhankelijk van de laag die is geselecteerd in het menu Kaart configureren, zal het toewijzen van een *Terrein*-actie aan de knop *Schaduwreliëf*, *Helling* of *Hoogte* weergeven.  
 
 De hoofdinstellingen voor *Toon of Verberg kaarttypes* bevinden zich in de sectie Topografie van het menu Kaart configureren. In het artikel [Snelle Actie](../widgets/quick-action.md#configure-map) vindt u een lijst met lagen die beschikbaar zijn voor weergave. Als u snelle toegang tot deze kaartconfiguratie nodig heeft, gebruik dan de tool *Aangepaste Knop*.
 

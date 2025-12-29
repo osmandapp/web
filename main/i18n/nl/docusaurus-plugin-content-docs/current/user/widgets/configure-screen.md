@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  Scherm configureren
 ---
@@ -267,7 +267,7 @@ De modus stelt u in staat om **meer dan één widget in een enkele rij** toe te 
     - [Hoogteprofiel (*Alleen Android*)](../widgets/nav-widgets#elevation-widget)
     - [Route manoeuvres](../widgets/nav-widgets.md#next-turn)
 
-- **Eenvoudige widgets**. Meerdere eenvoudige widgets kunnen aan een enkele rij worden toegevoegd. Deze widgets kunnen *Naam*, *Meeteenheden*, *Waarde* en *Pictogram* weergeven. Tekst in eenvoudige widgets wordt automatisch omlijnd om een duidelijke leesbaarheid te garanderen tegen verschillende kaartachtergronden in transparante paneelmodus.
+- **Eenvoudige widgets**. Meerdere eenvoudige widgets kunnen aan een enkele rij worden toegevoegd. Deze widgets kunnen *Naam*, *Meeteenheden*, *Waarde* en *Pictogram* weergeven. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -310,7 +310,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map
 
 Widgets in de rechter- en linkerpanelen kunnen worden gegroepeerd in **Pagina's**. De functie **Paginamodus** stelt u in staat om 5 pagina's toe te voegen aan de linker- en rechterpanelen.
 
-***Hoe rijen te configureren:***
+***Hoe pagina's te configureren:***
 
 - **Een pagina toevoegen**. Navigeer naar de instellingen van het linker-/rechterpaneel en tik op *Bewerken → Pagina toevoegen*.
 - **Widgets per pagina organiseren**. Deze functie is handig wanneer verschillende sets widgets nodig zijn voor verschillende taken, zoals navigeren versus de kaart doorbladeren.
@@ -359,13 +359,13 @@ Widgets in de rechter- en linkerpanelen kunnen worden gegroepeerd in **Pagina's*
 
 <TabItem value="android" label="Android">  
 
-![Widget-contextmenu](@site/static/img/widgets/widget_context_menu_andr.png)
+![Widget-contextmenu](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget-contextmenu](@site/static/img/widgets/widget_context_menu_ios.png)
+![Widget-contextmenu](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ Het **widget-contextmenu** biedt een snelle manier om widgets te beheren en te c
 - **Verwijderen**
     - Verwijder de widget uit het paneel.
     - Een bevestigingsprompt zorgt ervoor dat de actie opzettelijk is.
+
+- **Track op kaart tonen** 
+    - Beschikbaar voor de [Tripopname](../plugins/trip-recording.md) widgets.
+    - Toont uw momenteel opgenomen track op de kaart.
 
 - **Gemiddelde snelheid resetten** (voorbeeld van *Widgetspecifieke acties*)
     - Beschikbaar voor de widget [Gemiddelde snelheid](../widgets/info-widgets.md#average-speed).

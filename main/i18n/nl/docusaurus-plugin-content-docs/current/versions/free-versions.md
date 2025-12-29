@@ -1,5 +1,5 @@
 ---
-source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
+source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
 sidebar_position: 2
 ---
 
@@ -39,7 +39,7 @@ Releasedatum 11/2025:
 - Verbeterde UI voor het toevoegen van vrachtwagenmetrics in Truck-profielinstellingen.
 - Meer parameters voor het tonen van routes op de kaart.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### Versie 5.1 {#version-51}
 
@@ -84,7 +84,7 @@ Releasedatum 11/2024:
 
 - Een full-screen galerijviewer voor Wikimedia-afbeeldingen toegevoegd.
 - Een nieuwe plug-in "Voertuigstatistieken" geïntroduceerd om voertuigprestaties te monitoren met behulp van het OBD-II-protocol.
-- De mogelijkheid toegevoegd om activiteiten aan tracks toe te wijzen en deze dienovereenkomstig te filteren.
+- De mogelijkheid toegevoegd om activiteiten aan tracks toe te wijzen en deze dienovereenkomstend te filteren.
 - Nieuwe snelle acties geïmplementeerd voor het opnemen van ritten en het vergrendelen van het touchscreen.
 - Aanpasbare weergave van kaartknoppen en een nauwkeurig raster geïntroduceerd.
 - Een contextmenu en een actie "Gemiddelde snelheid resetten" toegevoegd aan widgets.

@@ -1,5 +1,5 @@
 ---
-source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
+source-hash: a8559f43cff19c4a14831feb61c4c3facdea6dab64c9c232c37b5ba47e810958
 sidebar_position: 1
 title:  Navigatie-instellingen
 ---
@@ -211,7 +211,7 @@ Als u een track als bestemmingspunt selecteert, moet u de optie [Aan de wegen ko
 In de sectie **Aankondigen** kunt u kiezen welke soorten meldingen moeten worden afgespeeld of weergegeven tijdens de navigatie:
 
 - **Stap-voor-stap aanwijzingen** (alleen Android) – stelt u in staat om standaard navigatie-instructies zoals *“Sla linksaf”*, *“Sla rechtsaf”* of *“Over 200 meter…”* in- of uit te schakelen. Wanneer de optie is uitgeschakeld, worden er geen aankondigingen gegeven voor bochten en straatnamen, terwijl meldingen voor wegpunten, gebruikerspunten en routegebeurtenissen actief blijven. Deze modus is bedoeld voor activiteiten zoals raften, wandelen of fietsen langs vooropgenomen tracks, wanneer alleen waarschuwingen voor handmatig toegevoegde wegpunten nodig zijn.
-- **Straatnamen (TTS)** – kondigt de namen van straten langs uw route aan.
+- **Straatnamen(TTS)** – kondigt de namen van straten langs uw route aan.
 - **Uitritnummer** – kondigt het uitritnummer aan bij het rijden op autosnelwegen.
 - **Verkeerswaarschuwingen** – geeft waarschuwingen over belangrijke weggebeurtenissen zoals files of beperkingen.
 - **Voetgangersoversteekplaatsen** – waarschuwt u wanneer u voetgangersoversteekplaatsen nadert.

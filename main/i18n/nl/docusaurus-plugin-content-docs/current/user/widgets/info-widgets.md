@@ -1,5 +1,5 @@
 ---
-source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
+source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -217,7 +217,7 @@ Na het resetten wordt de gemiddelde snelheid opnieuw berekend op basis van de ni
 
 </Tabs>  
 
-De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widgets bieden waardevolle informatie over het glijgetal om weloverwogen beslissingen te nemen bij het plannen van luchtwegen. De *Glijgetal* widget in OsmAnd helpt u de efficiëntie van uw daling of stijging te evalueren bij het navigeren naar een specifieke locatie ([markeringspositie](../personal/markers.md) op de kaart). Het berekent het glijgetal als de verhouding tussen de afstand en het hoogteverschil tussen uw huidige positie en uw beoogde bestemming. U kunt hier meer over lezen op [Wikipedia](https://nl.wikipedia.org/wiki/Glijgetal).
+De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widgets bieden waardevolle informatie over het glijgetal om weloverwogen beslissingen te nemen bij het plannen van luchtwegen. De *Glijgetal* widget in OsmAnd helpt u de efficiëntie van uw daling of stijging te evalueren bij het navigeren naar een specifieke locatie ([markeringspositie](../personal/markers.md) op de kaart). Het berekent het glijgetal als de verhouding tussen de afstand en het hoogteverschil tussen uw huidige positie en uw beoogde bestemming. U kunt hier meer over lezen op [Wikipedia](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 
 **Gebruik van widgets:**
@@ -475,7 +475,7 @@ U kunt hier een meer gedetailleerde beschrijving lezen: **[<Translate android="t
 
 </Tabs>
 
-Ritregistratie-widgets verwijzen naar de [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). U kunt widgets gebruiken om korte informatie over de trackopname op het scherm te bekijken. Zoals *Afstand*, *Duur*, *Stijging*, *Daling*, *Max Snelheid* en *Gemiddelde Helling* (de laatste twee zijn alleen beschikbaar op Android).
+Ritregistratie-widgets verwijzen naar de [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). U kunt widgets gebruiken om korte informatie over de trackopname op het scherm te bekijken. Zoals *Afstand*, *Duur*, *Stijging*, *Daling*, *Max Snelheid* en *Gemiddelde Helling*.
 
 | | |
 |:------------|:------------|

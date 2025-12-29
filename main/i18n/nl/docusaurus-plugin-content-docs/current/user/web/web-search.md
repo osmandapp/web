@@ -1,9 +1,10 @@
 ---
-source-hash: 552b7ab98cb47cfebc8836a696e65629cc7df57f4c5ef8f5c2339517189845a0
-sidebar_position: 6
+source-hash: 098646f83acbbceecc81138e6c1f095f561c363dd813f1adacc2c3762c0d0865
+sidebar_position: 10
 sidebar_label:  Zoeken
 title: Zoeken op de Website
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -23,9 +23,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Het **Zoekmenu** is toegankelijk via het zijpaneel of de **linkerhoek 🔍** van de kaart. Het bevat:
 
-- [Zoekbalk](#search-bar). Voer trefwoorden in om te zoeken naar specifieke locaties of nuttige plaatsen.  
-- [Categorieënsectie](#categories). Blader door gecategoriseerde opties voor eenvoudiger zoeken naar POI's.  
-- [Verkennen sectie](#explore). Ontdek nabijgelegen plaatsen en interessante gebieden met foto's.
+- [Zoekbalk](#search-bar). Voer trefwoorden in om te zoeken naar specifieke locaties of punten van interesse.  
+- [Categorieënsectie](#categories). Blader door gecategoriseerde opties voor eenvoudiger POI-zoekopdrachten.  
+- [Verkennen sectie](#explore). Ontdek nabijgelegen plaatsen en gebieden van interesse met foto's.
 
 ![Zoekmenu](@site/static/img/web/search.png)
 
@@ -42,7 +42,7 @@ Als u zoekt op **Categorienaam**, zal het eerste resultaat de categorie van die 
 Door op de gekozen POI op de kaart of in de resultatenlijst te klikken, wordt het **POI Contextmenu** geopend. Dit menu biedt de volgende gegevens en links:
 
 - **Naam en Icoon**. Toont de naam en het icoon van de POI.  
-- **★ Knop (*Toevoegen aan Favorieten*)**. Hiermee kunt u de gekozen POI opslaan als een [favoriet](../web/web-userdata.mdx#add--edit-favorite).  
+- **★ Knop (*Toevoegen aan Favorieten*)**. Hiermee kunt u de gekozen POI opslaan als een [favoriet](../web/web-favorites.md#add--edit-favorite).  
 - **🔍 Knop**. Verplaatst de kaart naar de locatie van de POI.  
 - **Afstand en Richting**. Toont de afstand en richting vanaf uw locatie naar de gekozen POI.  
 - **Locatie**. Toont de coördinaten van de POI.  
@@ -65,7 +65,7 @@ U kunt één POI-categorie kiezen en weergeven op de kaart in het **Categorieën
 Door op de geselecteerde POI op de kaart of in de resultatenlijst te klikken, wordt het **POI Contextmenu** geopend. Dit menu biedt de volgende gegevens en links:
 
 - **Naam en Icoon**. Toont de naam en het icoon van de POI.  
-- **★ Knop (*Toevoegen aan Favorieten*)**. Hiermee kunt u de gekozen POI opslaan als een [favoriet](../web/web-userdata.mdx#add--edit-favorite).  
+- **★ Knop (*Toevoegen aan Favorieten*)**. Hiermee kunt u de gekozen POI opslaan als een [favoriet](../web/web-favorites.md#add--edit-favorite).  
 - **🔍 Knop**. Verplaatst de kaart naar de locatie van de POI.  
 - **Afstand en Richting**. Toont de afstand en richting vanaf uw locatie naar de gekozen POI.  
 - **Locatie**. Toont de coördinaten van de POI.  
@@ -79,18 +79,18 @@ Door op de geselecteerde POI op de kaart of in de resultatenlijst te klikken, wo
 
 ## Verkennen {#explore}
 
-De sectie **Verkennen** in het zoekmenu maakt het gemakkelijker om plaatsen te vinden en nuttige plaatsen (POI's) met hun foto's ([Wikidata-bron](https://www.wikidata.org/)) direct op de kaart te bekijken.
+De sectie **Verkennen** in het zoekmenu maakt het gemakkelijker om plaatsen te vinden en punten van interesse (POI's) met hun foto's ([Wikidata-bron](https://www.wikidata.org/)) direct op de kaart te bekijken.
 
 
 Om te beginnen:
 
 1. Klik op het **🔍 icoon** om het zoektabblad te openen, dat populaire POI-categorieën en het **Verkennen** menu hieronder weergeeft.  
 2. De **Verkennen** gegevens worden automatisch op de kaart weergegeven.  
-3. Selecteer **"Alles Weergeven"** in de sectie Verkennen om de volledige lijst met categorieën te openen met de knop ***Filter*** bovenaan.  
+3. Selecteer **"Alles Weergeven"** in de sectie Verkennen om de volledige lijst met categorieën te openen met de ***Filter*** knop bovenaan.  
 
    ![Verkennen menu](@site/static/img/web/explore.png)
 
-4. Door op de knop ***Filter*** te drukken, wordt het Categorieënmenu voor "Verkennen" geopend. Om uw zoekopdracht te verfijnen, opent u het Categorieënmenu en selecteert u de items waarin u geïnteresseerd bent.  
+4. Door op de ***Filterknop*** te drukken, wordt het Categorieënmenu voor "Verkennen" geopend. Om uw zoekopdracht te verfijnen, opent u het Categorieënmenu en selecteert u de items waarin u geïnteresseerd bent.  
 
    ![Verkennen menu](@site/static/img/web/explore_cat.png)
 

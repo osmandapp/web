@@ -1,5 +1,5 @@
 ---
-source-hash: 3e1eba0c128d1ad05a1bdb817c7e495e0e8772c3818a05fe0583ef8e6277b1c5
+source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
 sidebar_position: 5
 title:  Kleurenschema's
 ---
@@ -24,7 +24,7 @@ Kleurenschema's worden gebruikt als onderdeel van de betaalde [Maps+](../purchas
 
 :::
 
-Kleurenschema's worden gebruikt bij [routekleuring](#routes), [kaartterrein](#terrain) en [weerkaart](#weather), en worden weergegeven als een afzonderlijk deel van de informatie die kan worden geëxporteerd, geïmporteerd en bewerkt om het kleurenschema van de kaart en de datavisualisatie te wijzigen.
+Kleurenschema's worden gebruikt bij [routekleuring](#tracks-routes), [kaartterrein](#terrain) en [weerkaart](#weather), en worden weergegeven als een afzonderlijk deel van de informatie die kan worden geëxporteerd, geïmporteerd en bewerkt om het kleurenschema van de kaart en de datavisualisatie te wijzigen.
 
 Gegevens van het kleurenpalet zijn beschikbaar in het menu [*Kaarten & Bronnen*](../personal/maps-resources.md#local-menu).
 
@@ -51,65 +51,84 @@ Ga naar: *Menu → Kaarten & Bronnen → Lokaal → Kleuren*
 
 ## Schematypes {#scheme-types}
 
+### Terrein {#terrain}
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Paletten](@site/static/img/personal/color-schemes/palette.png)
+![Paletten](@site/static/img/personal/color-schemes/palette_new.png) ![Paletten](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Kleurenpalet](@site/static/img/personal/color-schemes/color_altitude.png)
+![Kleurenpalet](@site/static/img/personal/color-schemes/palette_ios.png) ![Kleurenpalet](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
+Terreinbestanden (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiëren 3 [terreinvisualisaties](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schaduwreliëf, Helling,* en *Hoogte*. Voor elk type kunt u meerdere paletten hebben, bijvoorbeeld *lawinehelling* wordt standaard meegeleverd. Raadpleeg het artikel [Topografie](../plugins/topography.md#default-color-scheme) voor meer details.
 
-### Terrein {#terrain}
+### Tracks & Routes {#tracks-routes}
 
-Terreinbestanden (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiëren 3 [terreinvisualisaties](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schaduwreliëf, Helling,* en *Hoogte*. Voor elk type kunt u meerdere paletten hebben, bijvoorbeeld *lawinehelling* wordt standaard meegeleverd.
+<Tabs groupId="operating-systems" queryString="current-os">
 
-### Routes {#routes}
+<TabItem value="android" label="Android">
+
+![Paletten](@site/static/img/personal/color-schemes/track_palette_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kleurenpalet](@site/static/img/personal/color-schemes/track_palette_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 Visualisaties met lijngradiënt gebruiken paletbestanden (`route_<type_name>_<palette_name>.txt`) om GPX-tracks en Routes te kleuren:
 
-- Voor [Routes](../navigation/guidance/map-during-navigation.md#color): *Snelheid, Helling,* en *Hoogte (Altitude)*.
-- Voor [GPX-tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Snelheid, Helling,* en *Hoogte (Altitude), of info van externe sensoren*.
+- Voor [Routes](../navigation/guidance/map-during-navigation.md#color): *Snelheid (`route_speed_default.txt`), Helling (`route_slope_default.txt`),* en *Hoogte (Altitude) (`route_elevation_default.txt`)*.
+- Voor [GPX-tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Snelheid, Helling, Max Snelheid (`route_maxspeed_default.txt`)*, en *Hoogte (Altitude)*, of info van *Externe sensoren*.
+
+### Favorieten & Waypoints {#favorites-waypoints}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Paletten](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Paletten](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kleurenpalet](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+Het `user_palette_default.txt` palet wordt gebruikt voor vooraf gedefinieerde kleuren die worden toegewezen aan [Favorieten](./favorites.md#edit--replace--delete) en [Waypoints](https://osmand.net/docs/user/navigation/setup/gpx-navigation#waypoints).
 
 ### Weer {#weather}
 
-Weerpaletbestanden (`weather_<type_name>.txt`) definiëren de visualisatie voor [weerlagen](../plugins/weather.md#weather-layers).
-
-### Kleuren {#colors}
-
-Kleurenpalet (`user_palette_default.txt`) wordt eenvoudigweg gebruikt voor vooraf gedefinieerde kleuren om toe te wijzen aan [Favorieten](./favorites.md), [Tracks](./tracks/).
+Weerpaletbestanden (`weather_cloud.txt`, `weather_precip.txt`, `weather_pressure.txt`, `weather_temperature.txt`, `weather_wind.txt`) definiëren de visualisatie voor [weerlagen](../plugins/weather.md#weather-layers).
 
 
-## Paletlegenda {#palette-legend}
+## Instellingen {#settings}
 
-<table class="image">
-    <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="kleur"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="kleur"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="kleur"/></td>
-    </tr>
-</table>
-
-
-De legenda biedt een eenvoudige manier om de verschillende markeringen op de kaart te bekijken en te begrijpen. Nieuwe kleurenpaletten zijn toegevoegd om [**snelheid** voor tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**lijntype** voor routes](../navigation/guidance/map-during-navigation.md#color), [**hoogte en helling** voor terrein](../plugins/topography.md#default-color-scheme) en alle [**weerlaag**](../plugins/weather.md#weather-layers) kleurenpaletten weer te geven.
-
-
-## Paletbestand bewerken {#edit-palette-file}
+### Palet wijzigen {#palette-modify}
 
 U kunt paletten bewerken om het uiterlijk van kaarten en routes te personaliseren. Eigen kleurenpaletbestanden kunnen aan OsmAnd worden toegevoegd met de [import/export-tool](./import-export.md).
 
-- *Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
+- *Tracks en Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_maxspeed_default.txt`, `route_elevation_default.txt`.
 - *Terrein*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
 - *Weer*: `weather_<type_name>.txt`.
-- *Kleur*: `user_palette_default.txt`.
+- *Favorieten en Waypoints*: `user_palette_default.txt`.
 
 Elke regel vertegenwoordigt een numerieke waarde (voor het kleurenpalet is dit een index) en een RGB-kleur. Bijvoorbeeld:
 
@@ -126,37 +145,9 @@ Elke regel vertegenwoordigt een numerieke waarde (voor het kleurenpalet is dit e
 
 ```
 
-Na het verplaatsen van dit TXT-bestand naar *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, zal een nieuw palet verschijnen in het menu Kleurenschema.
+Na het verplaatsen van dit TXT-bestand naar *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, zal een nieuw palet verschijnen in het menu Kleurenschema.
 
-
-## Lees meer {#read-more}
-
-### Snelle acties {#quick-actions}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Actie toevoegen → Topografie → Wijzig Terrein kleurenschema*
-
-![Kleurenschema](@site/static/img/widgets/color_scheme.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Actie toevoegen → Topografie → Wijzig Terrein kleurenschema*
-
-![Kleurenpalet](@site/static/img/personal/color-schemes/color_scheme_qa_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-**Snelle actie** om het palet voor Terrein te wijzigen. De mogelijkheid toegevoegd om te schakelen tussen terrein kleurenschema's, vergelijkbaar met het schakelen tussen lagen. Dit kan worden gedaan met de tool [Snelle acties](../widgets/quick-action.md#configure-map).  
-
-
-### Kleuren importeren / exporteren {#import--export-colors}
+### Importeren / Exporteren {#import--export}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -185,6 +176,47 @@ U kunt alle beschikbare standaard en aangepaste kleurenpaletten importeren en ex
 - Alle geëxporteerde bestanden worden opgeslagen in `.osf` formaat.
 - Als de grootte van uw geselecteerde gegevens aanzienlijk is, duurt het enige tijd voordat de applicatie het `.osf` bestand heeft voorbereid.
 - Bekijk het artikel [*Importeren / Exporteren*](../personal/import-export.md) voor meer gedetailleerde informatie.
+
+### Legenda {#palette}
+
+<table class="image">
+    <tr>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="kleur"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="kleur"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="kleur"/></td>
+    </tr>
+</table>
+
+
+De legenda biedt een eenvoudige manier om de verschillende markeringen op de kaart te bekijken en te begrijpen. Nieuwe kleurenpaletten zijn toegevoegd om [**snelheid** voor tracks](../map/tracks/appearance#track-colors-in-gpx-files), [**lijntype** voor routes](../navigation/guidance/map-during-navigation.md#color), [**hoogte en helling** voor terrein](../plugins/topography.md#default-color-scheme), en alle [**weerlaag**](../plugins/weather.md#weather-layers) kleurenpaletten weer te geven.
+
+De legenda wordt automatisch gegenereerd op basis van het geselecteerde palet en toont gradiëntstappen met passende eenheden (bijvoorbeeld km/u voor snelheid, % voor helling, of meter voor hoogte).
+
+### Snelle acties {#quick-actions}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Actie toevoegen → <Translate ios="true" ids="configure_map"/> → Wijzig Terrein kleurenschema*
+
+![Kleurenschema](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Kleurenschema](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Actie toevoegen → <Translate ios="true" ids="configure_map"/> → Wijzig Terrein kleurenschema*
+
+![Kleurenpalet](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Kleurenpalet](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
+
+</TabItem>
+
+</Tabs>
+
+**Snelle actie** om het palet voor [Terrein](../../user/plugins/topography.md#modify-color-scheme) te wijzigen. De mogelijkheid toegevoegd om te schakelen tussen terrein kleurenschema's, vergelijkbaar met het schakelen tussen lagen. Dit kan worden gedaan met de tool [Snelle acties](../widgets/quick-action.md#configure-map).  
+
+Bij het configureren van deze actie kunt u een of meerdere terreinkleurenschema's selecteren. Als meerdere paletten zijn geselecteerd, schakelt elke tik op de knop door de gekozen paletten. U kunt ook de tussendialoog in- of uitschakelen om ofwel de volledige lijst met paletten te tonen of stilzwijgend te schakelen tussen hen in een vooraf gedefinieerde volgorde.
 
 
 ## Gerelateerde artikelen {#related-articles}
