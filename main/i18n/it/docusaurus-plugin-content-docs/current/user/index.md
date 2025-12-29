@@ -1,5 +1,5 @@
 ---
-source-hash: b2bc3b3bf84c6557e58eb916fc3afa481aecddd1fe686e1bc462f51cc56d1f90
+source-hash: 2a5a8d9243388603303027ae9b84f063c4d6530ca0abde2410ebbaf4d725fe4e
 
 ---
 # Guida utente {#user-guide}
@@ -13,7 +13,7 @@ Come iniziare a usare l'app OsmAnd e scaricare le mappe.
 
 ### [Mappa](./map/index.md) {#map}
 
-La mappa è un elemento centrale di OsmAnd. Questa sezione spiega come interagire con la mappa, come configurare livelli PDI aggiuntivi, come personalizzare la mappa per il trekking, il ciclismo o la navigazione fuoristrada, come aggiungere informazioni sul terreno, come abilitare le immagini a livello stradale, ecc.
+La mappa è un elemento centrale di OsmAnd. Questa sezione spiega come interagire con la mappa, come configurare livelli PDI aggiuntivi, come personalizzare la mappa per il trekking, il ciclismo o la navigazione fuoristrada, come aggiungere informazioni sul terreno, come abilitare le immagini a livello stradale ecc.
 
 ### [Legenda della mappa](./map-legend/index.md) {#map-legend}
 
@@ -38,7 +38,7 @@ OsmAnd consente di creare i propri percorsi e di utilizzare i percorsi di altri 
 
 ### [Plugin](./plugins/index.md) {#plugins}
 
-I plugin attivano impostazioni avanzate e funzionalità aggiuntive per OsmAnd, come la registrazione dei viaggi, la visualizzazione dei dati del terreno sulla mappa, le viste stradali di Mapillary, gli articoli offline di Wikipedia sulla mappa, ecc.
+I plugin attivano impostazioni avanzate e funzionalità aggiuntive per OsmAnd, come la registrazione dei viaggi, la visualizzazione dei dati del terreno sulla mappa, le viste stradali di Mapillary, gli articoli offline di Wikipedia sulla mappa e altro.
 
 ### [Acquisti](./purchases/index.md) {#purchases}
 
@@ -48,10 +48,10 @@ L'app OsmAnd è disponibile per i sistemi Android e iOS. C'è una grande variet�
 
 Lo strumento fornisce le funzioni di ricerca per qualsiasi caso d'uso: ricerca di indirizzi, ricerca di PDI, ricerca personalizzata, ricerca nella cronologia, ricerca di coordinate.
 
-### [Pianificatore Web](./web/index.md) {#web-planner}
+### [Portale Mappa Web](./web/index.md) {#web-map-portal}
 
-La fonte Web di OsmAnd offre un'ampia gamma di funzioni cartografiche, un servizio di navigazione e la sincronizzazione con OsmAnd Cloud. Ciò consente agli utenti di accedere a mappe dettagliate, navigare percorsi e mantenere i propri dati sincronizzati tra i vari dispositivi.
+La sorgente Web di OsmAnd fornisce un'ampia gamma di funzioni cartografiche, un servizio di navigazione e la sincronizzazione con OsmAnd Cloud. Ciò consente agli utenti di accedere a mappe dettagliate, navigare percorsi e mantenere i propri dati sincronizzati tra i vari dispositivi.
 
 ### [Risoluzione dei problemi](./troubleshooting/index.md) {#troubleshooting}
 
-Soluzioni e suggerimenti per i problemi più frequenti.
+Soluzioni e suggerimenti per problemi frequentemente incontrati.

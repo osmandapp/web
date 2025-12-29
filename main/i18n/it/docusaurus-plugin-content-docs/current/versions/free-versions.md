@@ -1,5 +1,5 @@
 ---
-source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
+source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
 sidebar_position: 2
 ---
 
@@ -7,7 +7,6 @@ import DownloadRelease from '@site/src/components/buttons/DownloadRelease.js';
 import Download from '@site/src/components/buttons/Download.js';
 
 # Versioni gratuite — Android {#free-releases--android}
-
 
 Puoi ottenere l'ultima versione di OsmAnd gratuitamente dagli store di app elencati.
 
@@ -39,7 +38,7 @@ Data di rilascio 11/2025:
 - Migliorata l'UI per aggiungere metriche camion nelle impostazioni del profilo Camion.
 - Più parametri per la visualizzazione del percorso sulla mappa.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### Versione 5.1 {#version-51}
 

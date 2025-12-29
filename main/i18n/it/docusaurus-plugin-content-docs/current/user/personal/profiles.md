@@ -1,5 +1,5 @@
 ---
-source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
+source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
 sidebar_position: 4
 title:  Profili (Impostazioni)
 ---
@@ -215,9 +215,9 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Le unità di lunghezza si applicano ai valori di distanza orizzontale (ad es. distanze di guida/percorso e distanze di manovra in navigazione).|
 |  |  |  |
-| **Unità di altitudine** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft |
+| **Unità di altitudine** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Le unità di altitudine si applicano ai valori di altitudine/elevazione e alle metriche correlate (salita/discesa, intervallo di altitudine) nei widget Altitudine, nelle informazioni sul percorso di navigazione e nelle statistiche delle tracce.<br/>Per impostazione predefinita, le unità di altitudine sono sincronizzate con le unità di lunghezza e diventano indipendenti solo dopo che l'utente le modifica manualmente. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Esempio: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Esempio: 50°7.393′ 19°55.941′ (Lat Long)  |
@@ -234,7 +234,7 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
-|          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
+|          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
@@ -248,7 +248,7 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
 | **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Per misurazioni precise*, scegli come vengono visualizzate le informazioni sulla distanza nei widget di navigazione, come la distanza da un punto, la prossima svolta o una corsia specifica. |
-|          | <Translate android="true" ids="round_up"/> | *Per una migliore leggibilità*, i numeri visualizzati nei widget di navigazione (distanza da un punto, prossima svolta o corsia) verranno arrotondati per avere meno cifre. <br/> Ad esempio: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
+|          | <Translate android="true" ids="round_up"/> | *Per una migliore leggibilità*, i numeri visualizzati nei widget di navigazione (distanza da un punto, prossima svolta o corsia) verranno arrotondati verso il basso per avere meno cifre. <br/> Ad esempio: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
 ### Altro {#other}

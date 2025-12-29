@@ -1,5 +1,5 @@
 ---
-source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
+source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
 sidebar_position: 15
 title:  Registrazione tracce
 ---
@@ -164,9 +164,9 @@ Ecco cosa potete trovare su di essi:
 
 - **Grafico per informazioni chiave**:
     - ***Android***. Per l'***asse Y*** del grafico, è possibile selezionare *fino a due parametri* tra tutti i dati disponibili come *Altitudine*, *Pendenza*, *Velocità* e [informazioni da sensori esterni](../plugins/external-sensors.md#trip-recording). Per l'***asse X***, selezionare la visualizzazione di *Distanza*, *Durata* o *Ora del giorno*.
-    - ***iOS***. I parametri sono organizzati nelle schede *Panoramica*, *Altitudine* e *Velocità* con i valori appropriati per l'asse Y e *Distanza* per l'asse X.
+    - ***iOS***. I parametri sono organizzati nelle schede *Panoramica*, *Altitudine*, e *Velocità* con i valori appropriati per l'asse Y e *Distanza* per l'asse X.
 
-- **Statistiche**. Per Android, visualizza un insieme costante di dati statistici indipendenti dalle impostazioni del grafico: *Distanza*, *Durata*, *Salita*, *Discesa*, *Velocità media*. Per iOS, ogni scheda, Panoramica, Altitudine e Velocità, ha un diverso set di dati.
+- **Statistiche**. Per Android, visualizza un insieme costante di dati statistici indipendenti dalle impostazioni del grafico: *Distanza*, *Durata*, *Salita*, *Discesa*, *Velocità media*. Per iOS, ogni scheda, Panoramica, Altitudine, e Velocità, ha un diverso set di dati.
 
 Per una visualizzazione più dettagliata, è possibile **scalare il grafico**:
 
@@ -201,7 +201,7 @@ Per maggiori dettagli, potete esplorare il [**Menu contestuale delle tracce**](.
 
 <TabItem value="ios" label="iOS">
 
-![mostra_tr_sulla_mappa_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configura tracce mappa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configura tracce mappa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -297,7 +297,7 @@ Prima di iniziare a tracciare i vostri viaggi, è necessario configurare corrett
 | **Metriche veicolo** <br/> *Necessario plugin abilitato* | I dati dallo [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) vengono registrati nel file GPX. Visualizzato solo quando il [plugin Metriche veicolo](../plugins/vehicle-metrics.md) è abilitato.<br />*Nota*: È possibile aggiungere quali metriche registrare nel file GPX dalla lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Cartella di archiviazione tracce** (*Android*) | Definisce dove nella scheda *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* vengono archiviate le tracce registrate. Le opzioni includono l'archiviazione di tutte le tracce nella cartella Rec o l'organizzazione per mese, come Rec/aaaa-mm. |
 | **Notifica** | Controlla la visualizzazione di una notifica di sistema di [registrazione tracce](#notifications) nell'area di notifica del dispositivo che consente di avviare la registrazione dei viaggi. |
-| **Tracciamento online** (*Android*) | Consente il tracciamento in tempo reale della vostra posizione inviando i punti registrati a un URL specificato. L'intervallo di tracciamento determina la frequenza con cui i punti vengono inviati e il buffer di tempo memorizza i punti quando non c'è connessione a Internet.<details><summary>*Nota*</summary>Se questa opzione è abilitata e la registrazione della traccia è in corso, il widget Distanza/Avvio-Stop (REC) diventa **verde** invece di **rosso**, indicando che ogni punto registrato viene trasmesso a un URL specificato. Il campo **Indirizzo web** consente di inserire l'URL utilizzando il seguente formato di parametri:<ul><li>`lat={0}`: Latitudine</li><li>`lon={1}`: Longitudine</li><li>`timestamp={2}`: Timestamp (ora Unix)</li><li>`hdop={3}`: Diluizione orizzontale della precisione</li><li>`altitude={4}`: Altitudine</li><li>`speed={5}`: Velocità</li><li>`bearing={6}`: Direzione (direzione del movimento)</li><li>`eta={7}`: Orario di arrivo previsto (ora Unix)</li><li>`etfa={8}`: Orario previsto al primo punto intermedio o al punto di arrivo (ora Unix)</li><li>`eda={9}`: Distanza stimata all'arrivo o a un marcatore (in metri)</li><li>`edfa={10}`: Distanza stimata al primo punto intermedio o al punto di arrivo (in metri)</li></ul>È possibile impostare l'**Intervallo di tracciamento** per specificare la frequenza con cui i punti di localizzazione vengono inviati, con opzioni che vanno da 0 secondi a 5 minuti. Inoltre, il parametro **Buffer di tempo** determina per quanto tempo i punti di localizzazione vengono memorizzati se non c'è connessione a Internet, garantendo che i dati vengano salvati e trasmessi quando la connessione viene ripristinata.</details> |
+| **Tracciamento online** (*Android*) | Consente il tracciamento in tempo reale della vostra posizione inviando i punti registrati a un URL specificato. L'intervallo di tracciamento determina la frequenza con cui i punti vengono inviati e il buffer di tempo memorizza i punti quando non c'è connessione a Internet.<details><summary>*Nota*</summary>Se questa opzione è abilitata e la registrazione della traccia è in corso, il widget Distanza/Avvio-Stop (REC) diventa **verde** invece di **rosso**, indicando che ogni punto registrato viene trasmesso a un URL specificato. Il campo **Indirizzo web** consente di inserire l'URL utilizzando il seguente formato di parametri:<ul><li>`lat={0}`: Latitudine</li><li>`lon={1}`: Longitudine</li><li>`timestamp={2}`: Timestamp (ora Unix)</li><li>`hdop={3}`: Diluizione orizzontale della precisione</li><li>`altitude={4}`: Altitudine</li><li>`speed={5}`: Velocità</li><li>`bearing={6}`: Direzione (direzione del movimento)</li><li>`eta={7}`: Orario di arrivo previsto (ora Unix)</li><li>`etfa={8}`: Orario previsto al primo punto intermedio o al punto di arrivo (ora Unix)</li><li>`eda={9}`: Distanza stimata all'arrivo o a un marcatore (in metri)</li><li>`edfa={10}`: Distanza stimata al primo punto intermedio o al punto di arrivo (in metri)</li></ul>È possibile impostare l'**Intervallo di tracciamento** per specificare la frequenza con cui i punti di localizzazione vengono inviati, con opzioni che vanno da 0 secondi a 5 minuti. Inoltre, il parametro **Buffer di tempo** determina per quanto tempo i punti di localizzazione vengono memorizzati se non c'è connessione a Internet, garantendo che i dati vengano salvati e trasmessi quando la connessione viene ripristinata.</details><br />OsmAnd memorizza i punti di localizzazione non inviati solo nella memoria temporanea dell'app mentre l'applicazione è in esecuzione. Ciò significa che il buffer non viene scritto in una memoria permanente. Se l'app viene chiusa, forzata a terminare o il dispositivo si riavvia, tutti i punti nel buffer vengono persi.<br />L'impostazione Buffer di tempo non definisce per quanto tempo i punti vengono mantenuti in memoria — funziona solo come un filtro al momento del caricamento. Quando OsmAnd tenta di inviare i punti nel buffer, ogni punto viene controllato rispetto al limite del Buffer di tempo. I punti più vecchi del limite selezionato (ad es., 24 ore) vengono rimossi invece di essere caricati. Di conseguenza, il buffer potrebbe contenere temporaneamente punti più vecchi del valore del Buffer di tempo scelto, ma questi punti verranno scartati durante il processo di caricamento. |
 | **Tracce** | Un riferimento rapido alla cartella in cui vengono salvate le tracce nella scheda *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Ripristina impostazioni predefinite del plugin** | Ripristina tutte le impostazioni di registrazione delle tracce per il profilo corrente ai valori predefiniti. |
 | **Copia da un altro profilo** (*Android*) | Copia le impostazioni di registrazione delle tracce da un profilo a un altro. |
@@ -381,7 +381,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,map_widget_config,
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegli un pannello → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Aggiunta del widget Distanza/Avvio-Stop su iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
+![Aggiunta del widget Distanza/Avvio-Stop su iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
 
 </TabItem>
 
@@ -405,7 +405,7 @@ Per personalizzare l'interfaccia, è possibile aggiungere o rimuovere il widget 
 
 <TabItem value="ios" label="iOS">
 
-![Widget Registrazione tracce](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Widget Registrazione tracce](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)  
+![Widget Registrazione tracce](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Widget Registrazione tracce](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
 
 </TabItem>
 
@@ -417,7 +417,7 @@ Il widget *Distanza* visualizza la distanza totale del viaggio attualmente regis
 - Il widget viene aggiunto automaticamente quando il *plugin Registrazione tracce* è abilitato, ma può essere nascosto tramite il [menu Configura schermo](../widgets/configure-screen.md#overview).
 - Se l'opzione *Mostra finestra di dialogo avvio* è disabilitata nelle impostazioni del plugin Registrazione tracce, toccando il widget attivo si aprirà comunque la finestra di dialogo *Registrazione tracce*, consentendo di accedere a ulteriori opzioni e informazioni.  
 
-Oltre al widget *Distanza/Avvio-Stop*, il **plugin Registrazione tracce** include altri tre widget: *Durata*, *Salita*, *Discesa*, *Velocità massima* e *Pendenza media* (gli ultimi due sono disponibili solo su Android). Questi forniscono informazioni aggiuntive sul vostro viaggio, aiutandovi a monitorare i progressi in tempo reale.
+Oltre al widget *Distanza/Avvio-Stop*, il **plugin Registrazione tracce** include altri cinque widget: *Durata*, *Salita*, *Discesa*, *Velocità massima* e *Pendenza media*. Questi forniscono informazioni aggiuntive sul vostro viaggio, aiutandovi a monitorare i progressi in tempo reale.
 
 | |
 |-----------|
@@ -425,7 +425,7 @@ Oltre al widget *Distanza/Avvio-Stop*, il **plugin Registrazione tracce** includ
 | ![Widget Registrazione tracce (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Per aprire la [finestra di dialogo Registrazione tracce](#start-a-dialog) quando si tocca un widget inattivo, abilitare l'opzione *Mostra finestra di dialogo avvio* nelle impostazioni del plugin Registrazione tracce. Se l'opzione è disabilitata, la registrazione inizierà immediatamente dopo aver toccato il widget senza aprire la finestra di dialogo.| 
 
-Su Android, il widget Distanza supporta più modalità di visualizzazione:
+Il widget Distanza supporta più modalità di visualizzazione:
 - **Distanza totale** – distanza totale della registrazione corrente (predefinita).
 - **Ultima salita** – distanza dell'ultima sezione di ascesa.
 - **Ultima discesa** – distanza dell'ultima sezione di discesa.
@@ -454,9 +454,9 @@ Su Android, il widget Distanza supporta più modalità di visualizzazione:
 |------------|
 |**Durata**. Visualizza il tempo totale della registrazione del viaggio corrente in ore e minuti. |
 |![widget](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Salita**. Mostra il dislivello positivo cumulativo per la registrazione del viaggio corrente. |
+|**Salita**. Mostra la salita totale o l'ultima sezione di salita, a seconda della modalità selezionata. |
 |![widget](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Discesa**. Indica la discesa totale accumulata durante la registrazione del viaggio corrente. |
+|**Discesa**. Indica la discesa totale o l'ultima sezione di discesa, a seconda della modalità selezionata. |
 |![widget](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
 </TabItem>
@@ -467,9 +467,21 @@ Se avete selezionato più widget — *Durata*, *Salita* o *Discesa* — potete a
 
 ### Velocità massima & Pendenza media {#max-speed--average-slope}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Velocità massima Android](@site/static/img/widgets/max_speed_android.png) ![Pendenza media Android](@site/static/img/widgets/average_slope_android.png)  
+<TabItem value="android" label="Android">  
+
+![Velocità massima Android](@site/static/img/widgets/max_speed_android.png) ![Pendenza media Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Velocità massima Android](@site/static/img/widgets/max_speed_ios.png) ![Pendenza media Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
 
 Il widget **Velocità massima** mostra la velocità massima per il viaggio attualmente registrato. Toccare il widget per passare tra la velocità massima complessiva e la velocità massima dell'ultima sezione di salita o discesa.
 

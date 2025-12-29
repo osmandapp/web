@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Aspetto della traccia
 ---
@@ -55,35 +55,19 @@ La funzione **Aspetto della traccia** consente agli utenti di personalizzare la 
 Alcune impostazioni possono essere utilizzate solo con *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Funzionalità gratuite e a pagamento.
 :::
 
-![Aspetto](@site/static/img/map/appearance_color_andr.png)
+![Aspetto](@site/static/img/map/appearance_color_andr.png) ![Menu contestuale Colorazione iOS](@site/static/img/map/colorisation_ios.png)
 
 È possibile impostare il colore della traccia manualmente o utilizzare la **visualizzazione dei dati basata sul colore** (ad esempio, velocità, altitudine, pendenza). Se una traccia è priva di alcuni dati, OsmAnd visualizza le sezioni mancanti in grigio.
 
 **Opzioni di colore disponibili:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- **Impostazioni gratuite**: colore *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (se registrata) e *<Translate android="true" ids="altitude"/>* (se registrata).   
+- [Funzionalità Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Menu traccia Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Aspetto Colore traccia Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Menu contestuale Colorazione iOS](@site/static/img/map/colorisation_ios.png)
-
-La **lista di Colorazione** si apre come un menu contestuale. Gli elementi possono apparire in tre stati: 
+Su iOS la **lista di Colorazione** si apre come un menu contestuale. Gli elementi possono apparire in tre stati: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Può essere applicata alla traccia corrente.
 2. <Translate ios="true" ids="weather_update_disabled"/>. La traccia manca dei dati richiesti.
 3. PRO. Disponibile per la traccia corrente ma richiede un abbonamento; toccando si apre la schermata [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Impostazioni gratuite**: colore *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (se registrata) e *<Translate android="true" ids="altitude"/>* (se registrata).   
-- [Funzionalità Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del percorso, vedere [Schermata della mappa durante la navigazione](../../navigation/guidance/map-during-navigation.md#color) e sulla selezione e creazione di un colore personalizzato, vedere [Schemi di colori](../../personal/color-palette-schemes.md#routes).
 
@@ -187,7 +171,7 @@ La funzione **Traccia 3D** genera una visualizzazione tridimensionale integrando
 
 **<Translate android="true" ids="wall_color"/>**  
 Personalizza il **colore della traccia 3D** utilizzando gradienti o visualizzazioni basate sui dati.  
-Le opzioni includono: *Nessuno*, &nbsp;*Tinta unita*, &nbsp;*Gradiente verso il basso*, &nbsp;*Gradiente verso l'alto*, &nbsp;*Altitudine*, &nbsp;*Pendenza*, &nbsp;*Velocità*.
+Le opzioni includono: *Nessuna*, &nbsp;*Tinta unita*, &nbsp;*Gradiente verso il basso*, &nbsp;*Gradiente verso l'alto*, &nbsp;*Altitudine*, &nbsp;*Pendenza*, &nbsp;*Velocità*.
 
 **<Translate android="true" ids="track_line"/>**  
 Aggiunge una [linea evidenziata](#color) alla parte superiore o inferiore della traccia 3D.  
@@ -237,7 +221,7 @@ La scheda [Tracce](../../personal/tracks/manage-tracks.md) visualizza automatica
 
 Modifica l'aspetto di più tracce in *I miei luoghi → Tracce*:
 
-- **Cambia aspetto predefinito** - Applica le impostazioni a tutte le tracce in una [cartella](../../personal/tracks/manage-tracks.md#track-folder).
+- **Cambia aspetto predefinito** (solo Android) - Consente di configurare le impostazioni predefinite che verranno applicate una volta che la traccia è aggiunta alla [cartella](../../personal/tracks/manage-tracks.md#track-folder).
 - **Ripristina originale** - Ripristina le impostazioni individuali della traccia.
 
 - [Modalità di selezione](../../personal/tracks/manage-tracks.md#selection-mode) - Cambia l'aspetto di tracce specifiche nella cartella selezionata o dell'intero elenco nella scheda Tracce.

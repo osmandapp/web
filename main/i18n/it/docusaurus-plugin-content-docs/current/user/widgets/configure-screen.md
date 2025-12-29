@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -267,7 +267,7 @@ La modalità consente di aggiungere **più di un widget in una singola riga** su
     - [Profilo altimetrico (*Solo Android*)](../widgets/nav-widgets#elevation-widget)
     - [Manovre del percorso](../widgets/nav-widgets.md#next-turn)
 
-- **Widget semplici**. È possibile aggiungere più widget semplici in una singola riga. Questi widget possono visualizzare *Nome*, *Unità di misura*, *Valore* e *Icona*. Il testo nei widget semplici è automaticamente delineato per garantire una leggibilità chiara contro vari sfondi mappa in modalità pannello trasparente.
+- **Widget semplici**. È possibile aggiungere più widget semplici in una singola riga. Questi widget possono visualizzare *Nome*, *Unità di misura*, *Valore* e *Icona*. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -310,7 +310,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_w
 
 I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**. La funzione **Modalità pagine** consente di aggiungere 5 pagine ai pannelli sinistro e destro.
 
-***Come configurare le righe:***
+***Come configurare le pagine:***
 
 - **Aggiungi una Pagina**. Vai alle impostazioni del Pannello Sinistro/Destro e tocca *Modifica → Aggiungi pagina*.
 - **Organizza i widget per Pagina**. Questa funzione è utile quando sono necessari diversi set di widget per compiti diversi, come la navigazione rispetto alla consultazione della mappa.
@@ -359,13 +359,13 @@ I widget nei pannelli destro e sinistro possono essere raggruppati in **Pagine**
 
 <TabItem value="android" label="Android">  
 
-![Menu contestuale del widget](@site/static/img/widgets/widget_context_menu_andr.png)
+![Menu contestuale del widget](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contestuale del widget](@site/static/img/widgets/widget_context_menu_ios.png)
+![Menu contestuale del widget](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ Il **menu contestuale del widget** fornisce un modo rapido per gestire e configu
 - **Elimina**
     - Rimuovi il widget dal pannello.
     - Una richiesta di conferma assicura che l'azione sia intenzionale.
+
+- **Mostra traccia sulla mappa** 
+    - Disponibile per i widget [Registrazione viaggio](../plugins/trip-recording.md).
+    - Visualizza la traccia attualmente registrata sulla mappa.
 
 - **Azzera velocità media** (esempio di *Azioni specifiche del widget*)
     - Disponibile per il widget [Velocità media](../widgets/info-widgets.md#average-speed).

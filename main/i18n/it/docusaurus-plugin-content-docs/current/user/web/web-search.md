@@ -1,9 +1,10 @@
 ---
-source-hash: 552b7ab98cb47cfebc8836a696e65629cc7df57f4c5ef8f5c2339517189845a0
-sidebar_position: 6
+source-hash: 098646f83acbbceecc81138e6c1f095f561c363dd813f1adacc2c3762c0d0865
+sidebar_position: 10
 sidebar_label:  Cerca
 title: Cerca sul sito web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 <InfoIncompleteArticle/>
 
@@ -42,7 +42,7 @@ Se cerchi per **Nome categoria**, il primo risultato mostrerà la categoria di q
 Facendo clic sul PDI scelto sulla mappa o nell'elenco dei risultati si apre il **Menu contestuale del PDI**. Questo menu fornisce i seguenti dati e link:
 
 - **Nome e icona**. Mostra il nome e l'icona del PDI.  
-- **Pulsante ★ (*Aggiungi ai Preferiti*)**. Consente di salvare il PDI scelto come [preferito](../web/web-userdata.mdx#add--edit-favorite).  
+- **Pulsante ★ (*Aggiungi ai Preferiti*)**. Consente di salvare il PDI scelto come [preferito](../web/web-favorites.md#add--edit-favorite).  
 - **Pulsante 🔍**. Sposta la mappa sulla posizione del PDI.  
 - **Distanza e direzione**. Mostra la distanza e la direzione dalla tua posizione al PDI scelto.  
 - **Posizione**. Mostra le coordinate del PDI.  
@@ -65,7 +65,7 @@ Puoi scegliere e visualizzare una categoria di PDI sulla mappa nel **Menu Catego
 Facendo clic sul PDI selezionato sulla mappa o nell'elenco dei risultati si apre il **Menu contestuale del PDI**. Questo menu fornisce i seguenti dati e link:
 
 - **Nome e icona**. Mostra il nome e l'icona del PDI.  
-- **Pulsante ★ (*Aggiungi ai Preferiti*)**. Consente di salvare il PDI scelto come [preferito](../web/web-userdata.mdx#add--edit-favorite).  
+- **Pulsante ★ (*Aggiungi ai Preferiti*)**. Consente di salvare il PDI scelto come [preferito](../web/web-favorites.md#add--edit-favorite).  
 - **Pulsante 🔍**. Sposta la mappa sulla posizione del PDI.  
 - **Distanza e direzione**. Mostra la distanza e la direzione dalla tua posizione al PDI scelto.  
 - **Posizione**. Mostra le coordinate del PDI.  
@@ -98,7 +98,7 @@ Per iniziare:
 
 Facendo clic su un PDI con immagine si apre un nuovo menu contestuale che include:
 
-- **Nome e Tag PDI**. Mostra il nome e il tag generale del PDI.  
+- **Nome e tag PDI**. Mostra il nome e il tag generale del PDI.  
 - **Pulsante 🔍**. Sposta la mappa sulla posizione del PDI.  
 - **Distanza e direzione**. Mostra la distanza e la direzione dalla tua posizione al PDI scelto.  
 - **Posizione**. Mostra le coordinate del PDI.  
@@ -112,7 +112,7 @@ Facendo clic su un PDI con immagine si apre un nuovo menu contestuale che includ
 
 ### Galleria fotografica {#photo-gallery}
 
-Se fai clic su ***Mostra tutto*** nella sezione **Foto online** del menu contestuale, si apre la *Galleria fotografica* del PDI selezionato.  
+Se fai clic su ***Mostra tutto*** nella sezione **Foto online** del menu contestuale si apre la *Galleria fotografica* del PDI selezionato.  
 Nella *Galleria fotografica*, puoi scorrere tutte le foto del PDI.  
 
 Ogni foto contiene:

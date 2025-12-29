@@ -1,5 +1,5 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Topografia
 ---
@@ -215,7 +215,7 @@ Il menu **Terreno** include la selezione dello [schema di colori](#default-color
 
 | Ombreggiatura | Pendenza | Altitudine |
 | ------ | ------- | ------- |
-| ![Ombreggiatura](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Ombreggiatura](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) | ![Altitudine](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **L'ombreggiatura** si basa sulla simulazione dell'illuminazione della superficie utilizzando i dati del terreno. Questo metodo comporta la creazione di ombre e luci in base all'angolo della superficie rispetto alla fonte di luce. Di conseguenza, sulla mappa si vedono colline, valli e altri dettagli del terreno in modo naturale.  
 
@@ -250,7 +250,7 @@ Le mappe raster di **Ombreggiatura**, **Pendenza** e **Altitudine** sono create 
 ### Modifica schema di colori {#modify-color-scheme}
 
 :::info Funzionalità a pagamento
-*Modifica schema di colori* è una funzionalità a pagamento di **OsmAnd Pro** per [iOS](../purchases/ios.md#pro-features) e [Android](../purchases/android.md#pro-features) <ProFeature />.
+*[Modifica schema di colori](../personal/color-palette-schemes.md#terrain)* è una funzionalità a pagamento di **OsmAnd Pro** per [iOS](../purchases/ios.md#pro-features) e [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -274,7 +274,7 @@ La funzione *Modifica schema di colori* consente di selezionare uno schema di co
 - Da un [elenco predefinito](#default-color-scheme).
 - Da file di tavolozze di colori che hai creato sul tuo computer. I file personalizzati possono essere aggiunti a OsmAnd utilizzando lo strumento di [importazione/esportazione](../personal/import-export.md).
 
-È possibile [modificare queste tavolozze](../personal/color-palette-schemes.md#edit-palette-file) per personalizzare l'aspetto di mappe e percorsi.
+È possibile [modificare queste tavolozze](../personal/color-palette-schemes.md#palette-modify) per personalizzare l'aspetto di mappe e percorsi.
 
 
 ### Visibilità {#visibility}
@@ -314,7 +314,7 @@ La funzione *Livelli di scala* consente di impostare i valori minimo e massimo d
 
 ![Azione rapida per Terreno](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-È possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa per attivare/disattivare la visibilità dei livelli [Curve di livello](#contour-lines), [Terreno](#terrain) e dello [schema di colori del Terreno](#default-color-scheme). A seconda del livello selezionato nel menu Configura mappa, l'assegnazione di un'azione *Terreno* al pulsante visualizzerà *Ombreggiatura*, *Pendenza* o *Altitudine*.  
+È possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa per attivare/disattivare la visibilità dei livelli [Curve di livello](#contour-lines), [Terreno](#terrain) e dello [schema di colori del Terreno](../personal/color-palette-schemes.md#quick-actions). A seconda del livello selezionato nel menu Configura mappa, l'assegnazione di un'azione *Terreno* al pulsante visualizzerà *Ombreggiatura*, *Pendenza* o *Altitudine*.  
 
 Le impostazioni principali per *Mostra o nascondi tipi di mappa* si trovano nella sezione Topografia del menu Configura mappa. Nell'articolo [Azione rapida](../widgets/quick-action.md#configure-map), è possibile trovare un elenco dei livelli disponibili per la visualizzazione. Se è necessario un accesso rapido a questa configurazione della mappa, utilizzare lo strumento *Pulsante personalizzato*.
 

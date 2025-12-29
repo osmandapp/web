@@ -1,5 +1,5 @@
 ---
-source-hash: 3ffa99cce13c9a2a4d5bbc3427ff7a024904fa2e60aa3fd947c3244a3acced4b
+source-hash: 95e66b93e0c5a981ee18f89cb1798bfb0b845b2b0d468d645cf6efd637edebac
 sidebar_position: 3
 title:  Acquisti Web
 ---
@@ -40,12 +40,12 @@ Di seguito sono riportati i prezzi dei prodotti OsmAnd negli Stati Uniti e nell'
 
 <!--
 
-:::danger October Sale prices
 
-*[Hurry up!](https://osmand.net/pricing) This offer is only available until* **October 19 (23:00 CET)**.
+:::danger Christmas sale
+
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
 
 :::
-
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
@@ -62,7 +62,6 @@ Starting from the third year, the full price will apply.
 :::
 
 -->
-
 
 |    | OsmAnd Free   | **Maps+** Acquisto unico | **Maps+** Abbonamento | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
