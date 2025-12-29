@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title:  Widgets de navigation
 ---
@@ -149,16 +149,16 @@ Le relèvement est la direction vers une cible en dehors de votre véhicule, com
 
 Pour afficher le relèvement, un **point cible** doit être sélectionné. Si un point de **destination** (ou le **premier point intermédiaire**, s'il y en a un) est sélectionné pour la navigation, il sera utilisé comme point cible. Sinon, le **marqueur sélectionné le plus haut** sera utilisé.  
 
-- Le [relèvement relatif](https://fr.wikipedia.org/wiki/Gisement_(navigation)) est l'angle entre votre direction de mouvement vers l'avant et le point cible. La **direction de mouvement vers l'avant** est soit la **direction de votre mouvement** obtenue à partir des capteurs GPS, soit, si vous êtes à l'arrêt, **la direction vers laquelle vous avez pointé votre appareil** (c'est-à-dire l'orientation de votre appareil selon sa boussole magnétique). Exemple : Un objet avec un relèvement relatif de 0° est directement devant vous et un objet avec un relèvement relatif de 180° est directement derrière vous. Le **relèvement relatif** est l'angle entre votre direction vers l'avant et le point cible.
+- Le [relèvement relatif](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) est l'angle entre votre direction de mouvement vers l'avant et le point cible. La **direction de mouvement vers l'avant** est soit la **direction de votre mouvement** obtenue à partir des capteurs GPS, soit, si vous êtes à l'arrêt, **la direction vers laquelle vous avez pointé votre appareil** (c'est-à-dire l'orientation de votre appareil selon sa boussole magnétique). Exemple : Un objet avec un relèvement relatif de 0° est directement devant vous et un objet avec un relèvement relatif de 180° est directement derrière vous. Le **relèvement relatif** est l'angle entre votre direction vers l'avant et le point cible.
 
-- Le [relèvement magnétique](https://fr.wikipedia.org/wiki/Gisement_(navigation)#Rel%C3%A8vement_magn%C3%A9tique) est l'angle (horizontal) dans le sens des aiguilles d'une montre entre le nord magnétique et le point cible observé depuis votre position. Vous devez suivre cette valeur de boussole magnétique pour atteindre votre cible. Exemple : Si le **relèvement magnétique** est affiché comme 0° M, vous devez vous déplacer strictement vers le nord magnétique pour atteindre le point cible.
+- Le [relèvement magnétique](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) est l'angle (horizontal) dans le sens des aiguilles d'une montre entre le nord magnétique et le point cible observé depuis votre position. Vous devez suivre cette valeur de boussole magnétique pour atteindre votre cible. Exemple : Si le **relèvement magnétique** est affiché comme 0° M, vous devez vous déplacer strictement vers le nord magnétique pour atteindre le point cible.
 
-- Le [relèvement vrai](https://fr.wikipedia.org/wiki/Gisement_(navigation)#Utilisations) est exprimé comme l'angle horizontal entre le méridien géographique et une ligne sur la Terre. Spécifiquement, le **relèvement vrai d'un point** est l'angle mesuré en degrés dans le sens des aiguilles d'une montre à partir de la ligne du Nord vrai. Le logiciel OsmAnd vous montrera le relèvement vrai et le cap dans notre interface conviviale, vous facilitant la prise de décision précoce.
+- Le [relèvement vrai](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) est exprimé comme l'angle horizontal entre le méridien géographique et une ligne sur la Terre. Spécifiquement, le **relèvement vrai d'un point** est l'angle mesuré en degrés dans le sens des aiguilles d'une montre à partir de la ligne du Nord vrai. Le logiciel OsmAnd vous montrera le relèvement vrai et le cap dans notre interface conviviale, vous facilitant la prise de décision précoce.
 
 ### Navigation le long de la loxodromie {#navigation-along-the-rhumb-line}
 
-- **Relèvement relatif**. Si vous vous en tenez à un relèvement relatif de 0 degré et avancez, vous arriverez au point de destination, mais pas par le chemin le plus court ([Loxodromie](https://fr.wikipedia.org/wiki/Loxodromie) ).
-- **Relèvement magnétique**. Si vous alignez la boussole de votre bateau/véhicule avec la valeur du widget et que vous vous dirigez vers l'avant, vous arriverez à votre destination, mais pas par le chemin le plus court ([Loxodromie](https://fr.wikipedia.org/wiki/Loxodromie) ).
+- **Relèvement relatif**. Si vous vous en tenez à un relèvement relatif de 0 degré et avancez, vous arriverez au point de destination, mais pas par le chemin le plus court ([Loxodromie](https://en.wikipedia.org/wiki/Rhumb_line) ).
+- **Relèvement magnétique**. Si vous alignez la boussole de votre bateau/véhicule avec la valeur du widget et que vous vous dirigez vers l'avant, vous arriverez à votre destination, mais pas par le chemin le plus court ([Loxodromie](https://en.wikipedia.org/wiki/Rhumb_line) ).
 
 <!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
 
@@ -250,7 +250,7 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps à parcourir* jusqu'au premi
 | | |
 |:------------|:------------|
 | Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Par appui | Bascule entre *Heure d'arrivée* et *Temps à parcourir* et inversement. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +278,7 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps à parcourir* jusqu'au derni
 | | |
 |:------------|:------------|
 | Activer |  **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | Par appui | Bascule entre *Heure d'arrivée* et *Temps à parcourir* et inversement. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -325,6 +325,13 @@ Les widgets de *Guidage d'itinéraire* contiennent des informations sur :
 | Appui long    | **Prochain virage** : Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Voies** : Pas de changement. |
 
 
+### Voies {#lanes}
+
+![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+
+Le widget **Voies** met en évidence la voie actuelle lorsque la navigation est active et affiche la disposition des voies pour la route réelle lorsque la navigation est passive. Un indicateur de distance est également affiché sous le diagramme des voies, représentant la distance restante jusqu'à la manœuvre à laquelle s'applique le guidage des voies. Ce widget est disponible uniquement pour les panneaux Haut et Bas. Les données sont extraites du [projet OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### Prochain virage {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,16 +350,21 @@ Les widgets de *Guidage d'itinéraire* contiennent des informations sur :
 
 </Tabs>
 
-Les widgets de navigation **Prochain virage**, **Prochain virage (petit)**, **Deuxième prochain virage** peuvent être placés sur n'importe quel panneau pour la commodité de l'utilisateur. Cependant, les informations affichées diffèrent en fonction du type de widget et de son placement. Le tableau ci-dessous résume le comportement :
+Les widgets de navigation **Prochain virage**, **Prochain virage (petit)**, **Deuxième prochain virage** peuvent être placés sur n'importe quel panneau pour la commodité de l'utilisateur. Cependant, les informations affichées diffèrent en fonction du type de widget et de son placement. 
 
-|   Widget/Panneau   | Panneau gauche    | Panneau droit   | Panneau haut              | Panneau bas           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Prochain virage**        | Distance uniquement | Distance uniquement | Nom de rue + distance | Nom de rue + distance |
-| **Prochain virage (petit)**| Distance uniquement | Distance uniquement | Non disponible          | Non disponible          |
-| **Deuxième prochain virage** | Distance uniquement | Distance uniquement | Nom de rue + distance | Nom de rue + distance |
+Dans les panneaux Haut / Bas, les widgets Prochain virage et Deuxième prochain virage peuvent être affichés en Largeur complète (un widget par ligne) ou Demi-largeur (deux widgets par ligne). Le contenu dépend de la mise en page et de la taille du widget sélectionné (P / M / G).
 
+Largeur complète affiche :
+- Première ligne — Distance jusqu'au virage + Sortie N (si disponible)
+- Deuxième ligne — Numéro de route avec un écusson + nom de la route/rue
 
-### Indications de couleur pour le prochain virage {#color-prompts-for-next-turn}
+Demi-largeur affiche :
+- Première ligne — Distance jusqu'au virage
+- Deuxième ligne — Sortie N (si disponible) + numéro de route avec un écusson + nom de la route/rue
+
+**Prochain virage** utilise une grande flèche et prend en charge les mises en page Largeur complète / Demi-largeur dans les panneaux Haut / Bas. **Prochain virage (petit)** utilise une petite flèche avec la distance placée à côté de la flèche et est destiné aux panneaux Gauche / Droite. **Deuxième prochain virage** montre la manœuvre après le prochain virage et devient actif lorsque la deuxième manœuvre est à distance d'approche.
+
+### Indications de couleur {#color-prompts}
 
 Ce tableau montre le temps approximatif jusqu'à l'activation des indications et l'indication de couleur correspondante des flèches pour effectuer la manœuvre. Pour plus d'informations, consultez la [documentation technique](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) ou l'article [Instructions vocales](../navigation/guidance/voice-navigation.md).
 
@@ -362,13 +374,9 @@ Ce tableau montre le temps approximatif jusqu'à l'activation des indications et
 | 🟡 Jaune  | 20 secondes              | Approche   | Tournez dans `x` m    |
 | ⚪ Gris   | > 100 secondes           | Éloigné    | Préparez-vous à tourner |
 
+La même signification de couleur s'applique au widget Voies. Le widget Voies est affiché selon les paramètres de temps d'approche, et les couleurs des voies suivent l'étape de l'instruction vocale.
 
-### Voies {#lanes}
-
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
-
-Le widget **Voies** met en évidence la voie actuelle lorsque la navigation est active et affiche la disposition des voies pour la route réelle lorsque la navigation est passive. Un indicateur de distance est également affiché sous le diagramme des voies, représentant la distance restante jusqu'à la manœuvre à laquelle s'applique le guidage des voies. Ce widget est disponible uniquement pour les panneaux Haut et Bas. Les données sont extraites du [projet OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
-
+<!--
 ### Indications de couleur pour les voies {#color-prompts-for-lanes}
 
 Affiche un widget selon les paramètres de temps d'approche. La couleur de la voie est associée aux [instructions vocales](../navigation/guidance/voice-navigation.md) et au temps restant pour effectuer la manœuvre.
@@ -377,7 +385,7 @@ Affiche un widget selon les paramètres de temps d'approche. La couleur de la vo
 | :-------- | :----------------------- | :---------- | :---------- |
 | 🟢 Vert   | 5 secondes               | Proche      | [Tournez maintenant](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 | 🟡 Jaune  | 20 secondes              | Approche    | [Tournez dans X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+-->
 
 
 ## Widget d'alerte {#alert-widget}
@@ -405,15 +413,15 @@ Les types d'alertes ont un design visuel différent, qui dépend de la **<Transl
 | | | |
 |:------------|:------------|:------------|
 | Nom | Description | Icône |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | La [modération de la circulation](https://fr.wikipedia.org/wiki/Mod%C3%A9ration_de_la_circulation) utilise des aménagements physiques et d'autres mesures pour améliorer la sécurité des automobilistes, des piétons et des cyclistes. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Un [passage piéton](https://fr.wikipedia.org/wiki/Passage_pi%C3%A9ton) (principalement en anglais britannique) ou passage clouté est un endroit désigné pour que les piétons traversent une route, une rue ou une avenue. OsmAnd affiche l'alerte du passage piéton non contrôlé.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Dans la plupart des pays, les [limitations de vitesse routière](https://fr.wikipedia.org/wiki/Limitation_de_vitesse) fixent la vitesse maximale, moyenne ou minimale légale à laquelle les véhicules routiers peuvent circuler sur un tronçon de route donné. Dans OsmAnd, l'alerte est affichée lorsque vous dépassez la vitesse. Vous pouvez définir les paramètres de dépassement de vitesse (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_traffic_warnings"/>* | La [modération de la circulation](https://en.wikipedia.org/wiki/Traffic_calming) utilise des aménagements physiques et d'autres mesures pour améliorer la sécurité des automobilistes, des piétons et des cyclistes. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Un [passage piéton](https://en.wikipedia.org/wiki/Pedestrian_crossing) (principalement en anglais britannique) ou passage clouté est un endroit désigné pour que les piétons traversent une route, une rue ou une avenue. OsmAnd affiche l'alerte du passage piéton non contrôlé.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Dans la plupart des pays, les [limitations de vitesse routière](https://en.wikipedia.org/wiki/Speed_limit) fixent la vitesse maximale, moyenne ou minimale légale à laquelle les véhicules routiers peuvent circuler sur un tronçon de route donné. Dans OsmAnd, l'alerte est affichée lorsque vous dépassez la vitesse. Vous pouvez définir les paramètres de dépassement de vitesse (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
 | *<Translate android="true" ids="show_tunnels"/>* | Un tunnel est un passage souterrain, passant sous une montagne, une rivière ou une zone urbaine congestionnée. Dans OsmAnd, l'alerte *Tunnels* contient des informations sur la longueur du tunnel. Si vous êtes dans un tunnel, elle indique la distance jusqu'à la fin du tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | Les [radars de contrôle routier](https://fr.wikipedia.org/wiki/Radar_automatique_en_France) et les [radars de vitesse](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) enregistrent les infractions au code de la route, y compris les excès de vitesse, le non-respect des feux rouges et d'autres types de comportements illégaux. <br />**NOTE :** Les alertes de radars de vitesse sont interdites ou illégales dans certains pays. Pour [supprimer complètement les radars de vitesse](../personal/global-settings.md#legal) d'OsmAnd, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | Un [panneau stop](https://fr.wikipedia.org/wiki/Panneau_stop) est un panneau de signalisation conçu pour notifier aux conducteurs qu'ils doivent s'arrêter complètement et s'assurer que l'intersection est dégagée de véhicules et de piétons avant de continuer au-delà du panneau.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |Cet avertissement signifie qu'il y a un [passage à niveau](https://fr.wikipedia.org/wiki/Passage_%C3%A0_niveau) devant. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
+| *<Translate android="true" ids="show_cameras"/>* | Les [radars de contrôle routier](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) et les [radars de vitesse](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) enregistrent les infractions au code de la route, y compris les excès de vitesse, le non-respect des feux rouges et d'autres types de comportements illégaux. <br />**NOTE :** Les alertes de radars de vitesse sont interdites ou illégales dans certains pays. Pour [supprimer complètement les radars de vitesse](../personal/global-settings.md#legal) d'OsmAnd, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | Un [panneau stop](https://en.wikipedia.org/wiki/Stop_sign) est un panneau de signalisation conçu pour notifier aux conducteurs qu'ils doivent s'arrêter complètement et s'assurer que l'intersection est dégagée de véhicules et de piétons avant de continuer au-delà du panneau.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |Cet avertissement signifie qu'il y a un [passage à niveau](https://en.wikipedia.org/wiki/Crossbuck) devant. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
 | *<Translate android="true" ids="traffic_warning_border_control"/>* |Cet avertissement indique qu'un contrôle frontalier est à venir.| ![Alert border control widgets](@site/static/img/widgets/warnings_border_control.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | Les [symboles de danger ou symboles d'avertissement](https://fr.wikipedia.org/wiki/Symbole_de_danger) sont des symboles reconnaissables conçus pour avertir des matières, des lieux ou des objets dangereux, y compris les courants électriques, les poisons et la radioactivité. | ![Alert warnings_hazard widgets](@site/static/img/widgets/warnings_hazard.png)  ![Alert warnings_hazard_us widgets](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | Les [symboles de danger ou symboles d'avertissement](https://en.wikipedia.org/wiki/Hazard_symbol) sont des symboles reconnaissables conçus pour avertir des matières, des lieux ou des objets dangereux, y compris les courants électriques, les poisons et la radioactivité. | ![Alert warnings_hazard widgets](@site/static/img/widgets/warnings_hazard.png)  ![Alert warnings_hazard_us widgets](@site/static/img/widgets/warnings_hazard_us.png) |
 | *<Translate android="true" ids="traffic_warning_payment"/>* | Cet avertissement indique qu'un péage pour une route à péage est à venir.   ![Alert toll_booth widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) |
 
 
@@ -429,40 +437,24 @@ Dans les **Paramètres** du widget, vous pouvez choisir d'afficher toujours **le
 
 <TabItem value="android" label="Android">  
 
- ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) 
+ ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) 
+ ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-- Lorsque vous changez de direction, le widget affiche le schéma de la manœuvre et le nom (désignation) de la rue (route) vers laquelle vous devez tourner avec une flèche jaune (Informations sur le prochain virage = ACTIVÉ).
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
 
 | | |
 |:------------|:------------|
 | Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate ios="true" ids="map_widget_top_text"/>* |
+|   | **iOS :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget → <Translate android="true" ids="map_widget_top_text"/>* |
+| Paramètres | Sélectionnez pour afficher toujours **le nom de la rue actuelle** ou afficher **le nom de la prochaine rue** en approchant de la manœuvre |
 | Par appui | Ouvre un menu contextuel avec Paramètres (bascule Informations sur le prochain virage ACTIVÉ/DÉSACTIVÉ) et Supprimer |
 
 

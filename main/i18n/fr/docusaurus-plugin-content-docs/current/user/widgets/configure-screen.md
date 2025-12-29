@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  Configurer l'écran
 ---
@@ -267,7 +267,7 @@ Le mode vous permet d'ajouter **plus d'un widget dans une seule ligne** sur les 
     - [Profil d'altitude (*Android uniquement*)](../widgets/nav-widgets#elevation-widget)
     - [Manœuvres d'itinéraire](../widgets/nav-widgets.md#next-turn)
 
-- **Widgets simples**. Plusieurs widgets simples peuvent être ajoutés à une seule ligne. Ces widgets peuvent afficher *Nom*, *Unités de mesure*, *Valeur* et *Icône*. Le texte dans les widgets simples est automatiquement surligné pour assurer une lisibilité claire sur divers arrière-plans de carte en mode panneau transparent.
+- **Widgets simples**. Plusieurs widgets simples peuvent être ajoutés à une seule ligne. Ces widgets peuvent afficher *Nom*, *Unités de mesure*, *Valeur* et *Icône*. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -310,7 +310,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,m
 
 Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Pages**. La fonction **Mode Pages** vous permet d'ajouter 5 pages aux panneaux gauche et droit.
 
-***Comment configurer les pages :***
+***Comment configurer les lignes :***
 
 - **Ajouter une page**. Accédez aux paramètres du panneau gauche/droit et appuyez sur *Modifier → Ajouter une page*.
 - **Organiser les widgets par page**. Cette fonction est utile lorsque différents ensembles de widgets sont nécessaires pour différentes tâches, comme la navigation par rapport à la consultation de la carte.
@@ -359,13 +359,13 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
 
 <TabItem value="android" label="Android">  
 
-![Menu contextuel du widget](@site/static/img/widgets/widget_context_menu_andr.png)
+![Menu contextuel du widget](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel du widget](@site/static/img/widgets/widget_context_menu_ios.png)
+![Menu contextuel du widget](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ Le **menu contextuel du widget** offre un moyen rapide de gérer et de configure
 - **Supprimer**
     - Supprimez le widget du panneau.
     - Une invite de confirmation garantit que l'action est intentionnelle.
+
+- **Afficher la trace sur la carte** 
+    - Disponible pour les widgets [Enregistrement de trajet](../plugins/trip-recording.md).
+    - Affiche votre trace actuellement enregistrée sur la carte.
 
 - **Réinitialiser la vitesse moyenne** (exemple d'*Actions spécifiques au widget*)
     - Disponible pour le widget [Vitesse moyenne](../widgets/info-widgets.md#average-speed).

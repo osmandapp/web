@@ -1,5 +1,5 @@
 ---
-source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
+source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
 sidebar_position: 1
 title:  Accessibilité
 ---
@@ -89,6 +89,23 @@ Pour activer les fonctionnalités d'accessibilité de l'appareil dans OsmAnd, vo
 3. Configurer les [paramètres](#plugin-settings) du plugin Accessibilité.
 
 
+## Annonce automatique {#autoannounce}
+
+Pour activer :
+*Ma position* (Appui long) → *Afficher les détails* → *Démarrer/Arrêter l'annonce automatique*
+
+- Un appui long sur **Ma position** ouvre un menu avec les options ***Afficher votre position*** et ***Afficher les détails***. Sélectionner Afficher les détails affiche des informations supplémentaires sur l'itinéraire et fournit le bouton ***Démarrer/Arrêter l'annonce automatique***.
+- Réglez la **Période d'annonce automatique** (par exemple, *10 secondes*) pour contrôler la fréquence des annonces.
+- Si **TalkBack** n'est pas activé dans les paramètres système de l'appareil, OsmAnd ne fournira pas de *notifications vocales* et n'affichera que des *notifications textuelles* à l'écran.  
+
+### Annonce automatique intelligente {#smart-autoannounce}
+
+Pour activer :
+*Plugins* → *Accessibilité* → *Paramètres* → *Annonce automatique intelligente*
+
+La fonction **Annonce automatique intelligente** fournit des *notifications audio* lorsque vous vous écartez de l'itinéraire prévu. Elle est conçue pour aider les utilisateurs malvoyants qui dépendent du *guidage vocal*.  
+
+
 ## Paramètres du plugin {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
@@ -101,49 +118,18 @@ Le plugin Accessibilité offre divers paramètres pour personnaliser la navigati
 |---------------------------|-------------|  
 | **Mode Accessibilité**    | Active les *fonctionnalités intégrées d'OsmAnd* ou utilise les **paramètres système**. |  
 | **Débit de la parole**           | Contrôle la *vitesse de la synthèse vocale*, allant de **50 % à 200 %**. |  
-| **Grossissement au zoom par pincement**    | Agrandit temporairement la carte pendant que vous effectuez un zoom par pincement et maintenez vos doigts sur l'écran, en agrandissant le texte et les icônes sans changer le niveau de zoom réel. |  
+| **Grossissement au zoom par pincement**    | Agrandit temporairement la carte pendant que vous effectuez un zoom par pincement et maintenez vos doigts sur l'écran, en agrandissant le texte et les icônes sans changer le niveau de zoom réel. |
 | [Annonce automatique intelligente](#smart-autoannounce)    | Fournit un *guidage vocal* en cas d'écart par rapport à l'itinéraire. |  
 | **Période d'annonce automatique**   | Définit le temps minimum entre les annonces, de **5 secondes à 5 minutes**. |  
 | [Style de direction](#direction-style)       | Choisissez entre *Latéral (8 directions)* ou *Horaire (12 directions)*. |  
 | **Directions audio**      | Joue des *guidages audio* indiquant la direction. |  
 | **Directions haptiques**     | Fournit un *retour par vibration* pour les virages et les écarts.|  
 
-<!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
-
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
-
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
-
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
-
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
-
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
-
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
--->
-
-<br/>
-
 ***Conseils pour une accessibilité optimisée :***
 
 - **Lecteur d'écran** - Utilisez TalkBack (*Android*) ou VoiceOver (*iOS*) pour une interaction améliorée avec la carte.
 - **Navigation audio** - Activez l'annonce automatique pour recevoir des instructions vocales lorsque l'écran est éteint.
 - **Retour haptique** - Idéal pour les environnements à faible visibilité ou lorsque les guidages audio ne sont pas pratiques.
-
-
-### Annonce automatique intelligente {#smart-autoannounce}
-
-La fonction **Annonce automatique intelligente** fournit des *notifications audio* lorsque vous vous écartez de l'itinéraire prévu. Elle est conçue pour aider les utilisateurs malvoyants qui dépendent du *guidage vocal*.  
-
-- Si **TalkBack n'est pas activé**, l'*Annonce automatique intelligente* n'affichera que des *notifications textuelles* à l'écran.  
-
-- Les **notifications vocales** ne sont activées que lorsque *TalkBack* est activé dans les **paramètres système de l'appareil**.  
-
-- Réglez la **Période d'annonce automatique** (par exemple, *10 secondes*) pour contrôler la fréquence des annonces.
-
-- Un appui long sur **Ma position** ouvre un menu avec les options ***Afficher votre position*** et ***Afficher les détails***. Sélectionner Afficher les détails affiche des informations supplémentaires sur l'itinéraire et fournit le bouton ***Démarrer/Arrêter l'annonce automatique***.
 
 
 ### Style de direction {#direction-style}

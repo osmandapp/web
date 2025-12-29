@@ -1,5 +1,5 @@
 ---
-source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
+source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
 sidebar_position: 15
 title:  Enregistrement de trajet
 ---
@@ -297,7 +297,7 @@ Avant de commencer à suivre vos trajets, vous devez configurer correctement le 
 | **Métriques du véhicule** <br/> *Nécessite l'activation du plugin* | Les données du [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) sont enregistrées dans le fichier GPX. Affiché uniquement lorsque le [plugin Métriques du véhicule](../plugins/vehicle-metrics.md) est activé.<br />*Note* : Vous pouvez ajouter les métriques à enregistrer dans le fichier GPX depuis la liste : *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Dossier de stockage des traces** (*Android*) | Définit où les traces enregistrées sont stockées dans l'onglet *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. Les options incluent le stockage de toutes les traces dans le dossier Rec ou leur organisation par mois, comme Rec/aaaa-mm. |
 | **Notification** | Contrôle l'affichage d'une notification système d'[enregistrement de trajet](#notifications) dans la zone de notification de l'appareil qui vous permet de démarrer l'enregistrement de trajets. |
-| **Suivi en ligne** (*Android*) | Permet le suivi en temps réel de votre position en envoyant les points enregistrés à une URL spécifiée. L'intervalle de suivi détermine la fréquence d'envoi des points, et le tampon temporel stocke les points en l'absence de connexion Internet.<details><summary>*Remarque*</summary>Si cette option est activée et que l'enregistrement de la trace est en cours, le widget Distance/Démarrer-Arrêter (REC) devient **vert** au lieu de **rouge**, indiquant que chaque point enregistré est transmis à une URL spécifiée. Le champ **Adresse Web** vous permet de saisir l'URL en utilisant le format de paramètre suivant :<ul><li>`lat={0}` : Latitude</li><li>`lon={1}` : Longitude</li><li>`timestamp={2}` : Horodatage (temps Unix)</li><li>`hdop={3}` : Dilution horizontale de la précision</li><li>`altitude={4}` : Altitude</li><li>`speed={5}` : Vitesse</li><li>`bearing={6}` : Relèvement (direction du mouvement)</li><li>`eta={7}` : Heure d'arrivée estimée (temps Unix)</li><li>`etfa={8}` : Temps estimé jusqu'au premier point intermédiaire ou point d'arrivée (temps Unix)</li><li>`eda={9}` : Distance estimée jusqu'à l'arrivée ou un marqueur (en mètres)</li><li>`edfa={10}` : Distance estimée jusqu'au premier point intermédiaire ou point d'arrivée (en mètres)</li></ul>Vous pouvez définir l'**Intervalle de suivi** pour spécifier la fréquence d'envoi des points de localisation, avec des options allant de 0 seconde à 5 minutes. De plus, le paramètre **Tampon temporel** détermine la durée de stockage des points de localisation en l'absence de connexion Internet, garantissant que les données sont sauvegardées et transmises lorsque la connexion est rétablie.</details> |
+| **Suivi en ligne** (*Android*) | Permet le suivi en temps réel de votre position en envoyant les points enregistrés à une URL spécifiée. L'intervalle de suivi détermine la fréquence d'envoi des points, et le tampon temporel stocke les points en l'absence de connexion Internet.<details><summary>*Remarque*</summary>Si cette option est activée et que l'enregistrement de la trace est en cours, le widget Distance/Démarrer-Arrêter (REC) devient **vert** au lieu de **rouge**, indiquant que chaque point enregistré est transmis à une URL spécifiée. Le champ **Adresse Web** vous permet de saisir l'URL en utilisant le format de paramètre suivant :<ul><li>`lat={0}` : Latitude</li><li>`lon={1}` : Longitude</li><li>`timestamp={2}` : Horodatage (temps Unix)</li><li>`hdop={3}` : Dilution horizontale de la précision</li><li>`altitude={4}` : Altitude</li><li>`speed={5}` : Vitesse</li><li>`bearing={6}` : Relèvement (direction du mouvement)</li><li>`eta={7}` : Heure d'arrivée estimée (temps Unix)</li><li>`etfa={8}` : Temps estimé jusqu'au premier point intermédiaire ou point d'arrivée (temps Unix)</li><li>`eda={9}` : Distance estimée jusqu'à l'arrivée ou un marqueur (en mètres)</li><li>`edfa={10}` : Distance estimée jusqu'au premier point intermédiaire ou point d'arrivée (en mètres)</li></ul>Vous pouvez définir l'**Intervalle de suivi** pour spécifier la fréquence d'envoi des points de localisation, avec des options allant de 0 seconde à 5 minutes. De plus, le paramètre **Tampon temporel** détermine la durée de stockage des points de localisation en l'absence de connexion Internet, garantissant que les données sont sauvegardées et transmises lorsque la connexion est rétablie.<br />OsmAnd stocke les points de localisation non envoyés uniquement dans la mémoire temporaire de l'application tant que l'application est en cours d'exécution. Cela signifie que le tampon n'est pas écrit dans un stockage permanent. Si l'application est fermée, arrêtée de force ou si l'appareil redémarre, tous les points tamponnés sont perdus.<br />Le paramètre Tampon temporel ne définit pas la durée pendant laquelle les points sont conservés en mémoire — il ne fonctionne que comme un filtre au moment du téléchargement. Lorsque OsmAnd tente d'envoyer les points tamponnés, chaque point est vérifié par rapport à la limite du Tampon temporel. Les points plus anciens que la limite sélectionnée (par exemple, 24 heures) sont supprimés au lieu d'être téléchargés. En conséquence, le tampon peut temporairement contenir des points plus anciens que la valeur du Tampon temporel choisie, mais ces points seront supprimés pendant le processus de téléchargement.</details> |
 | **Traces** | Une référence rapide vers le dossier où les traces sont sauvegardées dans l'onglet *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Réinitialiser les paramètres du plugin par défaut** | Réinitialise tous les paramètres d'enregistrement de trajet pour le profil actuel à leurs valeurs par défaut. |
 | **Copier depuis un autre profil** (*Android*) | Copie les paramètres d'enregistrement de trajet d'un profil à un autre. |
@@ -356,7 +356,7 @@ Le badge de l'icône de l'application apparaît à côté de l'icône OsmAnd lor
 
 ## Widgets {#widgets}
 
-Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Distance*, la *Durée*, le *Dénivelé positif* et le *Dénivelé négatif*. Sur Android, vous pouvez également ajouter des widgets *Vitesse max.* et *Pente moyenne*.
+Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Distance*, la *Durée*, le *Dénivelé positif* et le *Dénivelé négatif*. Vous pouvez également ajouter des widgets *Vitesse max.* et *Pente moyenne*.
 
 Pour commencer à utiliser les *widgets d'enregistrement de trajet*, vous devez effectuer tous les réglages suivants :
 
@@ -381,7 +381,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisissez un panneau → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Ajout de widgets d'enregistrement sur iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
+![Ajout du widget Distance/Démarrer-Arrêter sur iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
 
 </TabItem>
 
@@ -405,7 +405,7 @@ Pour personnaliser votre interface, vous pouvez ajouter ou supprimer le widget d
 
 <TabItem value="ios" label="iOS">
 
-![Widget d'enregistrement de trajet](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Widget d'enregistrement de trajet](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)  
+![Widget d'enregistrement de trajet](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Widget d'enregistrement de trajet](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
 
 </TabItem>
 
@@ -417,7 +417,7 @@ Le widget *Distance* affiche la distance totale de votre trajet enregistré actu
 - Le widget est ajouté automatiquement lorsque le *plugin d'enregistrement de trajet* est activé, mais il peut être masqué via le [menu Configurer l'écran](../widgets/configure-screen.md#overview).
 - Si l'option *Afficher la boîte de dialogue de démarrage* est désactivée dans les paramètres du plugin d'enregistrement de trajet, appuyer sur le widget actif ouvrira quand même la boîte de dialogue *Enregistrement de trajet*, vous permettant d'accéder à d'autres options et informations.  
 
-En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de trajet** inclut trois autres widgets : *Durée*, *Dénivelé positif*, *Dénivelé négatif*, *Vitesse max.* et *Pente moyenne* (les deux derniers sont disponibles uniquement sur Android). Ceux-ci fournissent des informations supplémentaires sur votre trajet, vous aidant à suivre la progression en temps réel.
+En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de trajet** inclut cinq autres widgets : *Durée*, *Dénivelé positif*, *Dénivelé négatif*, *Vitesse max.* et *Pente moyenne*. Ceux-ci fournissent des informations supplémentaires sur votre trajet, vous aidant à suivre la progression en temps réel.
 
 | |
 |-----------|
@@ -425,7 +425,7 @@ En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de
 | ![Widget d'enregistrement de trajet (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Pour ouvrir la [boîte de dialogue d'enregistrement de trajet](#start-a-dialog) en appuyant sur un widget inactif, activez l'option *Afficher la boîte de dialogue de démarrage* dans les paramètres du plugin d'enregistrement de trajet. Si l'option est désactivée, l'enregistrement commencera immédiatement après avoir appuyé sur le widget sans ouvrir la boîte de dialogue.| 
 
-Sur Android, le widget Distance prend en charge plusieurs modes d'affichage :
+Le widget Distance prend en charge plusieurs modes d'affichage :
 - **Distance totale** – distance totale de l'enregistrement actuel (par défaut).
 - **Dernière montée** – distance de la section de montée la plus récente.
 - **Dernière descente** – distance de la section de descente la plus récente.
@@ -454,9 +454,9 @@ Sur Android, le widget Distance prend en charge plusieurs modes d'affichage :
 |------------|
 |**Durée**. Affiche la durée totale de l'enregistrement du trajet en cours en heures et minutes. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Dénivelé positif**. Affiche le gain d'altitude cumulé pour l'enregistrement du trajet en cours. |
+|**Dénivelé positif**. Affiche le gain d'altitude total ou la section de montée la plus récente, en fonction du mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Dénivelé négatif**. Indique la descente totale accumulée pendant l'enregistrement du trajet en cours. |
+|**Dénivelé négatif**. Indique la descente totale ou la section de descente la plus récente, en fonction du mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
 </TabItem>
@@ -467,9 +467,21 @@ Si vous avez sélectionné plusieurs widgets — *Durée*, *Dénivelé positif* 
 
 ### Vitesse max. et Pente moyenne {#max-speed--average-slope}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Vitesse max. Android](@site/static/img/widgets/max_speed_android.png) ![Pente moyenne Android](@site/static/img/widgets/average_slope_android.png)  
+<TabItem value="android" label="Android">  
+
+![Vitesse max. Android](@site/static/img/widgets/max_speed_android.png) ![Pente moyenne Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Vitesse max. iOS](@site/static/img/widgets/max_speed_ios.png) ![Pente moyenne iOS](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
 
 Le widget **Vitesse max.** affiche la vitesse maximale pour le trajet enregistré actuellement. Appuyez sur le widget pour basculer entre la vitesse maximale globale et la vitesse maximale de la dernière section de montée ou de descente.
 

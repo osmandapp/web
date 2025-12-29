@@ -1,6 +1,6 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
 sidebar_label:  Planifier un itinéraire
 title: Planifier un itinéraire sur le site web
 ---
@@ -24,6 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Le planificateur d'itinéraires web d'OsmAnd vous permet de créer des itinéraires de navigation, de planifier des traces et de gérer des fichiers locaux directement depuis votre navigateur. Cet outil web est utile pour créer des itinéraires de voyage détaillés que vous pouvez synchroniser avec votre application ou partager avec d'autres.
 
 
+<!--
 ## Itinéraire de navigation {#navigation-route}
 
 Pour créer un itinéraire de navigation, suivez ces étapes :
@@ -52,6 +53,8 @@ Pour créer un itinéraire de navigation, suivez ces étapes :
   ![Créer un itinéraire web OsmAnd](@site/static/img/web/nav_instr.png)
 
 - Pour partager l'itinéraire, copiez l'URL. Exemple : [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
 ## Créer une trace et des fichiers locaux {#create-track-and-local-files}

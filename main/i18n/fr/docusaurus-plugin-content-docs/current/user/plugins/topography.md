@@ -1,5 +1,5 @@
 ---
-source-hash: bb8bbb3b99f1b4954f0981ba2c0484f3b8c2e9b6f79760da1ce5c5003cadc3e7
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Topographie
 ---
@@ -244,13 +244,11 @@ Les cartes raster d'**Estompage**, de **Pente** et d'**Altitude** sont créées 
 
 - *Altitude*. La carte d'altitude colore chaque pixel en fonction de la hauteur calculée de la carte en utilisant le dégradé d'un jeu de couleurs défini. Habituellement, les jeux de couleurs d'altitude dépendent fortement de l'emplacement. Dans les zones montagneuses, vous préférerez répartir les couleurs sur une plage d'altitude plus large et dans les zones plates, vous sélectionnerez un jeu de couleurs avec une petite plage entre l'altitude min/max.
 
-> *Veuillez lire l'article [Jeu de couleurs](../personal/color-palette-schemes.md) pour plus d'informations.*
-
 
 ### Modifier le jeu de couleurs {#modify-color-scheme}
 
 :::info Fonctionnalité payante
-*Modifier le jeu de couleurs* est une fonctionnalité payante d'**OsmAnd Pro** pour [iOS](../purchases/ios.md#pro-features) et [Android](../purchases/android.md#pro-features) <ProFeature />.
+*[Modifier le jeu de couleurs](../../user/personal/color-palette-schemes.md#terrain)* est une fonctionnalité payante d'**OsmAnd Pro** pour [iOS](../purchases/ios.md#pro-features) et [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -274,7 +272,7 @@ La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un
 - À partir d'une [liste prédéfinie](#default-color-scheme).
 - À partir de fichiers de palette de couleurs que vous avez créés sur votre ordinateur. Les fichiers personnalisés peuvent être ajoutés à OsmAnd en utilisant l'[outil d'import/export](../personal/import-export.md).
 
-Vous pouvez [modifier ces palettes](../personal/color-palette-schemes.md#edit-palette-file) pour personnaliser l'apparence des cartes et des itinéraires.
+Vous pouvez [modifier ces palettes](../personal/color-palette-schemes.md#palette-modify) pour personnaliser l'apparence des cartes et des itinéraires.
 
 
 ### Visibilité {#visibility}
@@ -314,7 +312,7 @@ L'**Estompage** et la **Pente** sont affichés et ajustés dans n'importe quel [
 
 ![QA pour le Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Vous pouvez utiliser les boutons *Action rapide* sur l'écran de la carte pour basculer la visibilité des couches de [Lignes de niveau](#contour-lines), de [Terrain](#terrain) et du [jeu de couleurs du Terrain](#default-color-scheme). Selon la couche sélectionnée dans le menu Configurer la carte, l'attribution d'une action *Terrain* au bouton affichera *Estompage*, *Pente* ou *Altitude*.  
+Vous pouvez utiliser les boutons *Action rapide* sur l'écran de la carte pour basculer la visibilité des couches de [Lignes de niveau](#contour-lines), de [Terrain](#terrain) et du [jeu de couleurs du Terrain](../../user/personal/color-palette-schemes.md#quick-actions). Selon la couche sélectionnée dans le menu Configurer la carte, l'attribution d'une action *Terrain* au bouton affichera *Estompage*, *Pente* ou *Altitude*.  
 
 Les principaux paramètres pour *Afficher ou Masquer les types de carte* se trouvent dans la section Topographie du menu Configurer la carte. Dans l'article [Action rapide](../widgets/quick-action.md#configure-map), vous trouverez une liste des couches disponibles pour l'affichage. Si vous avez besoin d'un accès rapide à cette configuration de carte, utilisez l'outil *Bouton personnalisé*.
 

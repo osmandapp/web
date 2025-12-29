@@ -1,5 +1,5 @@
 ---
-source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
+source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
 sidebar_position: 5
 title:  Itinéraire en transport en commun
 ---
@@ -119,6 +119,55 @@ Pour commencer à naviguer en ville en transport en commun, utilisez [le bouton 
 
 </Tabs>
 
+## Types de transport en commun {#public-transport-types}
+
+Vous pouvez rechercher des itinéraires de transport en commun bien organisés selon vos préférences et choisir de :
+
+- Éviter les bus (et trolleybus)
+- Éviter les métros
+- Éviter les trains
+- Éviter les trams
+- Éviter les ferries
+- Éviter les taxis collectifs
+
+Par défaut, OsmAnd recherche des itinéraires qui incluent tous les types de transport en commun pris en charge.
+
+## Itinéraires alternatifs {#alternative-routes}
+
+Les itinéraires alternatifs sont des sections d'un itinéraire desservies par différents services de transport et qui partagent le même trajet et les mêmes arrêts.
+
+Différents services de transport peuvent utiliser des numéros d'itinéraire (refs) différents ou même des types de transport différents.
+
+L'interface utilisateur affiche les itinéraires alternatifs sous forme de badges colorés avec leurs refs.
+
+## Performances et résultats {#performance-and-results}
+
+**Profil Transport en commun -> Paramètres -> Paramètres de navigation -> Paramètres d'itinéraire**
+
+1. **Nombre maximum de changements de transport**.
+
+Les performances et la consommation de mémoire du routeur de transport en commun dépendent de la profondeur de recherche.
+
+Le paramètre le plus important qui affecte cette profondeur est le **Nombre maximum de changements de transport**.
+
+Nous utilisons **2** comme valeur par défaut, qui semble optimale pour les réseaux de transport en commun modernes.
+
+Si vous rencontrez des performances faibles ou des erreurs de mémoire insuffisante, essayez de diminuer cette valeur.
+
+Si vous êtes dans une petite ville ou que vous effectuez de courts trajets, une valeur de **1** peut mieux convenir.
+<!--
+There are two more parameters that help you choose the best routes.
+
+2. **Display N best routes** (specify the number of best routes to display)
+
+By default, OsmAnd displays the **10** best routes (including alternative routes).
+
+You can decrease or increase this limit, or even display all routes.
+
+Note: displaying unlimited routes might slow down your device.
+
+Possible values: 0 (show all), 5, 10 (default), 15, 100
+-->
 
 ## Données et directives {#data-and-guideline}
 

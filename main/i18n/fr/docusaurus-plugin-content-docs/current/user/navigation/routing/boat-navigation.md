@@ -1,7 +1,7 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
-title:  Itinéraire pour bateau
+title:  Routage pour bateau
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Aperçu {#overview}
 
-La navigation pour bateau peut être un outil précieux pour tous ceux qui aiment naviguer ou faire de la voile sur des canaux, des rivières ou des chenaux. En raison de l'absence de la plupart des chenaux dans les données OpenStreetMap, la navigation pour bateau est *non recommandée* pour la **navigation en eaux libres**, il est suggéré d'utiliser plutôt la **[Direct to point](#direct-to-point-routing-for-boat)**. Avec les lignes de contour de profondeur activées, cela peut vous aider à rester en sécurité sur l'eau en évitant les dangers tels que les eaux peu profondes, les rochers ou d'autres obstacles.  
+Le routage pour bateau peut être un outil précieux pour tous ceux qui aiment naviguer ou faire de la voile sur des canaux, des rivières ou des chenaux. En raison de l'absence de la plupart des chenaux dans les données OpenStreetMap, le routage pour bateau est *non recommandé* pour la **navigation en eaux libres**, il est suggéré d'utiliser plutôt le **[Routage direct vers un point](#direct-to-point-routing-for-boat)**. Avec les lignes de contour de profondeur activées, cela peut vous aider à rester en sécurité sur l'eau en évitant les dangers tels que les eaux peu profondes, les rochers ou d'autres obstacles.  
 Le moteur de routage pour bateau d'OsmAnd prend également en compte les caractéristiques des voies navigables et des bateaux eux-mêmes.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -41,9 +41,9 @@ Le moteur de routage pour bateau d'OsmAnd prend également en compte les caract�
 Par défaut, le *profil Bateau* est désactivé. Pour utiliser ce profil pour le routage, vous devez l'activer dans *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-La navigation pour bateau peut être configurée selon vos besoins dans la section [Paramètres d'itinéraire](../../navigation/guidance/navigation-settings.md#route-parameters) des paramètres de navigation.  
+Le routage pour bateau peut être configuré selon vos besoins dans la section [Paramètres d'itinéraire](../../navigation/guidance/navigation-settings.md#route-parameters) des paramètres de navigation.  
 
-Généralement, la *navigation pour bateau* est utilisée avec le profil bateau (le dernier activé avec le [plugin Cartes marines](../../plugins/nautical-charts.md)). Cependant, il est possible d'utiliser la navigation pour bateau avec d'autres profils également, et différents [types de routage](#other-routing-types-for-boat) peuvent aussi être employés dans le profil bateau.  
+Généralement, le *routage pour bateau* est utilisé avec le profil bateau (le dernier activé avec le [plugin Cartes marines](../../plugins/nautical-charts.md)). Cependant, il est possible d'utiliser le routage pour bateau avec d'autres profils également, et différents [types de routage](#other-routing-types-for-boat) peuvent aussi être employés dans le profil bateau.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -65,9 +65,9 @@ Généralement, la *navigation pour bateau* est utilisée avec le profil bateau 
 
 | Paramètre | Description | Remarque |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Permet d'utiliser les ruisseaux et les drains pour la navigation en bateau. L'activation de cette option peut être utile pour les petites embarcations telles que les canoës, les kayaks, les radeaux, les barques. |  [Les ruisseaux (Streams)](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sont des voies d'eau formées naturellement trop étroites pour être appelées une rivière. [Les drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sont des voies d'eau artificielles, généralement revêtues de béton ou d'un matériau similaire, utilisées pour évacuer les eaux superflues comme les eaux pluviales ou les rejets d'eaux grises.|
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Permet d'utiliser les ruisseaux et les drains pour la navigation en bateau. L'activation de cette option peut être utile pour les petites embarcations telles que les canoës, les kayaks, les radeaux, les barques. |  [Les ruisseaux](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sont des voies d'eau formées naturellement trop étroites pour être appelées une rivière. [Les drains](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sont des voies d'eau artificielles, généralement revêtues de béton ou d'un matériau similaire, utilisées pour évacuer les eaux superflues comme les eaux pluviales ou les rejets d'eaux grises.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  L'activation de cette option vous permet d'utiliser des voies navigables intermittentes pour naviguer en bateau.   | La balise [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) est utilisée pour indiquer qu'une voie navigable ne contient pas d'eau en permanence.  |
-| *Autoriser les ferries* | Active le routage via les itinéraires de ferry. | Utilise `route=ferry` là où elle est présente dans OSM. Aucune nouvelle carte requise. |
+| *Autoriser les ferries* | Active le routage via les itinéraires de ferry. | Généralement, les [itinéraires de ferry](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) sont inaccessibles pour les petites embarcations selon la définition OSM. |
 
 :::note Navigation sur l'eau et limitations
 

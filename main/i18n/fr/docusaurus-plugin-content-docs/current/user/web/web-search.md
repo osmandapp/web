@@ -1,6 +1,6 @@
 ---
-source-hash: 552b7ab98cb47cfebc8836a696e65629cc7df57f4c5ef8f5c2339517189845a0
-sidebar_position: 6
+source-hash: 098646f83acbbceecc81138e6c1f095f561c363dd813f1adacc2c3762c0d0865
+sidebar_position: 10
 sidebar_label:  Recherche
 title: Recherche sur le site web
 ---
@@ -32,17 +32,17 @@ Le **menu Recherche** est accessible depuis le panneau latéral ou le **coin gau
 
 ## Barre de recherche {#search-bar}
 
-Cliquez sur le **bouton 🔍** pour lancer la recherche. Saisissez une requête dans la **ligne de recherche** et cliquez sur un POI pour ouvrir le [**menu contextuel du POI**](#explore-poi-data), où vous pouvez consulter les informations des balises.
+Cliquez sur le **bouton 🔍** pour lancer la recherche. Saisissez une requête dans la **Ligne de recherche** et cliquez sur un POI pour ouvrir le [**Menu contextuel du POI**](#explore-poi-data), où vous pouvez consulter les informations des balises.
 
-Si vous recherchez par **nom de catégorie**, le premier résultat affichera la catégorie de ce POI. Si vous cliquez sur une catégorie de POI, la fenêtre [**Recherche par catégories**](#categories) s'ouvre.
+Si vous recherchez par **nom de catégorie**, le premier résultat affichera la catégorie de ce POI.  Si vous cliquez sur une catégorie de POI, la fenêtre [**Recherche par catégories**](#categories) s'ouvre.
 
 ![Menu contextuel du POI](@site/static/img/web/context_menu_poi.png)
 
 
-Cliquer sur le POI choisi sur la carte ou dans la liste de résultats ouvre le **menu contextuel du POI**. Ce menu fournit les données et liens suivants :
+Cliquer sur le POI choisi sur la carte ou dans la liste de résultats ouvre le **Menu contextuel du POI**. Ce menu fournit les données et liens suivants :
 
 - **Nom et icône**. Affiche le nom et l'icône du POI.  
-- **Bouton ★ (*Ajouter aux favoris*)**. Permet d'enregistrer le POI choisi comme [favori](../web/web-userdata.mdx#add--edit-favorite).  
+- **Bouton ★ (*Ajouter aux favoris*)**. Permet d'enregistrer le POI choisi comme [favori](../web/web-favorites.md#add--edit-favorite).  
 - **Bouton 🔍**. Déplace la carte vers l'emplacement du POI.  
 - **Distance et direction**. Affiche la distance et la direction depuis votre position jusqu'au POI choisi.  
 - **Emplacement**. Affiche les coordonnées du POI.  
@@ -62,10 +62,10 @@ Vous pouvez choisir et afficher une catégorie de POI sur la carte dans le **men
 
 ![Catégories de POI](@site/static/img/web/categories_poi.png)
 
-Cliquer sur le POI sélectionné sur la carte ou dans la liste de résultats ouvre le **menu contextuel du POI**. Ce menu fournit les données et liens suivants :
+Cliquer sur le POI sélectionné sur la carte ou dans la liste de résultats ouvre le **Menu contextuel du POI**. Ce menu fournit les données et liens suivants :
 
 - **Nom et icône**. Affiche le nom et l'icône du POI.  
-- **Bouton ★ (*Ajouter aux favoris*)**. Permet d'enregistrer le POI choisi comme [favori](../web/web-userdata.mdx#add--edit-favorite).  
+- **Bouton ★ (*Ajouter aux favoris*)**. Permet d'enregistrer le POI choisi comme [favori](../web/web-favorites.md#add--edit-favorite).  
 - **Bouton 🔍**. Déplace la carte vers l'emplacement du POI.  
 - **Distance et direction**. Affiche la distance et la direction depuis votre position jusqu'au POI choisi.  
 - **Emplacement**. Affiche les coordonnées du POI.  

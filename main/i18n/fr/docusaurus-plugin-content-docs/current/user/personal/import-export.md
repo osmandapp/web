@@ -1,5 +1,5 @@
 ---
-source-hash: 1cb3cb625144df1fdde1a89546eb0dd6bf2c4217b3e8431939d976cba2b359fb
+source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
 sidebar_position: 10
 title:  Importer / Exporter
 ---
@@ -17,8 +17,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Les outils **Importer** et **Exporter** d'OsmAnd vous permettent de gérer vos données. Vous pouvez déplacer vos profils, favoris, traces et autres paramètres en utilisant un format spécial via les applications de votre appareil. Ce processus simplifie la sauvegarde et le transfert de données entre appareils et vous permet de les partager avec d'autres utilisateurs d'OsmAnd.
 
-:::note Taille importante
+:::note Grande taille
 *Si la taille des données que vous avez sélectionnées est importante, l'application mettra un certain temps à préparer le fichier `.osf`.*
+
 :::
 
 
@@ -91,6 +92,16 @@ Ouvre et restaure les fichiers `.osf`. Appuyez sur le fichier dans le gestionnai
 
 - *Certains éléments existent déjà*. Vous pouvez utiliser cette fonction pour enregistrer les deux fichiers ou pour les remplacer tous.
 - *Redémarrer*. Après l'importation des fichiers, l'application doit être redémarrée.
+
+Types de fichiers d'importation pris en charge :
+- [Traces, itinéraires](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoris](https://osmand.net/docs/user/personal/favorites/) : `.gpx`, `.kml`, `.kmz`. Les fichiers KML et KMZ sont importés avec conversion au format GPX.
+- [Cartes vectorielles OsmAnd](https://osmand.net/docs/user/map/vector-maps) : `.obf`.
+- [Tuiles de cartes en ligne](https://www.osmand.net/docs/user/map/raster-maps/) : `.sqlitedb`. 
+- [Sauvegardes & profils](#export) : `.osf`.
+- [Cartes de hauteur / données 3D](https://www.osmand.net/docs/user/plugins/topography/) : `.geotif`.
+- [Autres](color-palette-schemes.md) : `.txt`.
+
+Pour un aperçu technique de tous les formats pris en charge, voir [Formats de fichiers OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}
