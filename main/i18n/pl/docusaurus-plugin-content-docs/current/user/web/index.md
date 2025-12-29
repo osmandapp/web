@@ -1,7 +1,8 @@
 ---
-source-hash: 257aa3375005b7337989c2fb8807d99a7f493686cc168590879f6312c2b3d6f2
+source-hash: 9b261b980d55ca844b224f16fdc5201ded60242c62cc91adffc973d4d27faf3e
 title: Planer internetowy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,22 +14,37 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
-### Przegląd {#overview}
+### [Wstęp](./web-overview.md) {#introduction}
 
 W tej sekcji znajdziesz opis naszego [Planera internetowego](https://osmand.net/map).
 
-### [Chmura OsmAnd](./web-cloud.md) {#osmand-cloud}
+### [Konto](./web-cloud.md) {#account}
 
-W tej sekcji wyjaśniono, jak zalogować się i zarejestrować na stronie [www.osmand.net/map](https://osmand.net/map/) oraz jakie korzyści otrzymują użytkownicy po rejestracji.
+W tej sekcji wyjaśniono, jak zalogować się i zarejestrować na stronie [www.osmand.net/map](https://osmand.net/map/) oraz podkreślono korzyści, jakie użytkownicy otrzymują po rejestracji.
 
 ### [Mapa](./web-map.md) {#map}
 
-W tej sekcji szczegółowo opisano dodatkowe dane mapy, takie jak Ulubione, Trasy osobiste i Warstwy pogodowe.
+W tej sekcji omówiono interfejs mapy internetowej OsmAnd, w tym menu mapy, konfigurację warstw, ustawienia i linki URL.
 
-### [Dane użytkownika](../web/web-userdata.mdx) {#user-data}
+### [Pogoda](./web-weather.md) {#weather}
 
-Trasy GPX i Ulubione użytkownika na mapie.
+W tej sekcji wyjaśniono, jak wyświetlać warunki pogodowe i prognozy na mapie internetowej, w tym prognozy oparte na czasie i nakładki pogodowe.
+
+### [Ścieżki](./web-tracks.md) {#tracks}
+
+W tej sekcji omówiono pracę z osobistymi trasami GPX w sieci, w tym ich przeglądanie, edytowanie, organizowanie i synchronizowanie z OsmAnd Cloud.
+
+### [Ulubione](./web-favorites.md) {#favorites}
+
+Zapisane miejsca wyświetlane na mapie, z opcjami organizowania ich w foldery, zarządzania dostępem i ponownego użycia do nawigacji lub planowania tras.
+
+### [Analizator ścieżek](./web-tracks-analyzer.md) {#tracks-analyzer}
+
+W tej sekcji skupiono się na analizie segmentów ścieżek między wybranymi punktami na mapie i porównywaniu kluczowych parametrów między wieloma ścieżkami.
+
+### [Nawigacja](./web-navigation.md) {#navigation}
+
+W tej sekcji wyjaśniono, jak budować i podglądać trasy nawigacyjne na mapie internetowej, w tym profile routingu, ustawienia i szczegóły trasy.
 
 ### [Planuj trasę](./planner.md) {#plan-route}
 
@@ -36,4 +52,4 @@ Ta sekcja zawiera informacje na temat planowania tras lub tworzenia nawigacji pr
 
 ### [Wyszukiwanie](./web-search.md) {#search}
 
-W tej sekcji wyjaśniono, jak znaleźć na mapie interesujące miejsca (POI) z różnych kategorii, przeprowadzić klasyczne wyszukiwanie i wyświetlić ikony kategorii na mapie.
+W tej sekcji wyjaśniono, jak znaleźć punkty zainteresowania (POI) z różnych kategorii na mapie, przeprowadzić klasyczne wyszukiwanie i wyświetlić ikony kategorii na mapie.

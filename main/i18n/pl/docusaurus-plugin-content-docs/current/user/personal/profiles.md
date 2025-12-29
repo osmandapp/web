@@ -1,5 +1,5 @@
 ---
-source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
+source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
 sidebar_position: 4
 title:  Profile (Ustawienia)
 ---
@@ -215,9 +215,9 @@ W sekcji **Jednostki i formaty** można dostosować jednostki miary i formaty, a
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Jednostki długości stosują się do wartości odległości poziomej (np. odległości jazdy/trasy i odległości manewrów w nawigacji).|
 |  |  |  |
-| **Jednostki wysokości** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft |
+| **Jednostki wysokości** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Jednostki wysokości stosują się do wartości wysokości/wzniesienia i powiązanych metryk (pod górę/w dół, zakres wysokości) w widżetach Wysokość, Informacjach o trasie nawigacyjnej i Statystykach śladu.<br/>Domyślnie Jednostki wysokości są synchronizowane z Jednostkami długości i stają się niezależne dopiero po ręcznej zmianie przez użytkownika. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Przykład: 50.12333° 19.93233° (szer. dł.) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Przykład: 50°7.393′ 19°55.941′ (szer. dł.)  |
@@ -234,7 +234,7 @@ W sekcji **Jednostki i formaty** można dostosować jednostki miary i formaty, a
 |  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
-|          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
+|          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |

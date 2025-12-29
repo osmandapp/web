@@ -1,5 +1,5 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
 title:  Boat routing
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Nawigacja dla łodzi może być cennym narzędziem dla każdego, kto lubi pływać łodzią lub żeglować po kanałach, rzekach lub torach wodnych. Ze względu na brak większości torów wodnych w danych OpenStreetMap, nawigacja dla łodzi *nie jest zalecana* do **nawigacji na wodach otwartych**, zamiast tego sugeruje się użycie **[Bezpośrednio do punktu](#direct-to-point-routing-for-boat)**. Włączenie warstwicy głębokości może pomóc w zachowaniu bezpieczeństwa na wodzie poprzez unikanie zagrożeń, takich jak płytkie wody, skały lub inne przeszkody.  
+Nawigacja dla łodzi może być cennym narzędziem dla każdego, kto lubi pływać łodzią lub żeglować po kanałach, rzekach lub torach wodnych. Ze względu na brak większości torów wodnych w danych OpenStreetMap, nawigacja dla łodzi *nie jest zalecana* do **nawigacji na wodach otwartych**, zamiast tego sugeruje się użycie **[Bezpośrednio do punktu](#direct-to-point-routing-for-boat)**. Włączenie izobat głębokości może pomóc w zachowaniu bezpieczeństwa na wodzie poprzez unikanie zagrożeń, takich jak płytkie wody, skały lub inne przeszkody.  
 Silnik nawigacji dla łodzi OsmAnd uwzględnia również charakterystykę dróg wodnych i samych łodzi.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -65,9 +65,9 @@ Zwykle *Nawigacja dla łodzi* jest używana z profilem łodzi (ostatni włączon
 
 | Parametr | Opis | Uwaga |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Umożliwia korzystanie ze strumieni i kanałów odwadniających do nawigacji łodzią. Włączenie tej opcji może być przydatne dla małych łodzi, takich jak canoe, kajaki, tratwy, łodzie wiosłowe. |  [Strumienie](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) to naturalnie uformowane drogi wodne, które są zbyt wąskie, aby nazwać je rzeką. [Kanały odwadniające](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) to sztuczne drogi wodne, zazwyczaj wyłożone betonem lub podobnym materiałem, używane do odprowadzania nadmiaru wody, takiej jak woda deszczowa lub szara woda.|
+| *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Umożliwia korzystanie ze strumieni i kanałów odwadniających do nawigacji łodzią. Włączenie tej opcji może być przydatne dla małych łodzi, takich jak canoe, kajaki, tratwy, łodzie wiosłowe. |  [Strumienie](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) to naturalnie uformowane drogi wodne, które są zbyt wąskie, aby nazwać je rzeką. [Kanały odwadniające](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) to sztuczne drogi wodne, zazwyczaj wyłożone betonem lub podobnym materiałem, używane do odprowadzania nadmiaru wody, takiej jak woda deszczowa lub woda szara.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Włączenie tej opcji pozwala na korzystanie z okresowych dróg wodnych do nawigacji łodzią.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) służy do oznaczania dróg wodnych, które nie zawierają wody na stałe.  |
-| *Zezwalaj na promy* | Włącza wyznaczanie tras przez trasy promowe. | Używa `route=ferry` tam, gdzie jest obecne w OSM. Nie wymaga nowych map. |
+| *Zezwalaj na promy* | Włącza wyznaczanie tras przez trasy promowe. | Zazwyczaj [trasy promowe](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) są niedostępne dla małych łodzi na podstawie definicji OSM. |
 
 :::note Nawigacja wodna i ograniczenia
 
@@ -97,7 +97,7 @@ Te typy tras dla profilu łodzi można aktywować, korzystając z następującej
 ### Wyznaczanie tras bezpośrednio do punktu dla łodzi {#direct-to-point-routing-for-boat}
 
 :::note
-Podczas korzystania z typów nawigacji Bezpośrednio do punktu i Łódź, potrzebne będą [dane o warstwach głębokości](../../plugins/nautical-charts.md#nautical-map-style), które można włączyć i ustawić w *Konfiguruj mapę*.
+Podczas korzystania z typów nawigacji Bezpośrednio do punktu i Łódź, potrzebne będą [dane o izobatach głębokości](../../plugins/nautical-charts.md#nautical-map-style), które można włączyć i ustawić w *Konfiguruj mapę*.
 :::
 
 Typ trasy [Bezpośrednio do punktu](./direct-to-point-routing.md) może być używany z profilem łodzi, gdy chcesz nawigować łodzią na otwartej wodzie bez podążania określoną trasą lub drogą wodną. Ten typ trasy pozwala ustawić punkt docelowy, a OsmAnd obliczy bezpośrednią ścieżkę do tego punktu z bieżącej lokalizacji. Ten typ wyznaczania tras nie uwzględnia charakterystyki łodzi, takiej jak minimalna i maksymalna prędkość, wysokość i szerokość. Trasa nie zostanie przeliczona w przypadku zboczenia z niej.

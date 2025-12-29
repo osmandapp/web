@@ -1,5 +1,5 @@
 ---
-source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
+source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
 sidebar_position: 1
 title:  Ułatwienia dostępu
 ---
@@ -89,6 +89,23 @@ Aby aktywować funkcje ułatwień dostępu urządzenia w OsmAnd, należy wprowad
 3. Skonfiguruj [ustawienia](#plugin-settings) wtyczki Ułatwienia dostępu.
 
 
+## Automatyczne komunikaty {#autoannounce}
+
+Aby włączyć:
+*Moja lokalizacja* (Długie dotknięcie) → *Pokaż szczegóły* → *Rozpocznij/Zatrzymaj automatyczne komunikaty*
+
+- Długie dotknięcie na **Moja lokalizacja** otwiera menu z opcjami ***Pokaż swoją pozycję*** i ***Pokaż szczegóły***. Wybranie Pokaż szczegóły wyświetla dodatkowe informacje o trasie i udostępnia przycisk ***Rozpocznij/Zatrzymaj automatyczne komunikaty***.
+- Ustaw **Okres automatycznych komunikatów** (np. *10 sekund*), aby kontrolować częstotliwość komunikatów.
+- Jeśli **TalkBack** nie jest włączony w ustawieniach systemowych urządzenia, OsmAnd nie zapewni *powiadomień głosowych* i wyświetli tylko *powiadomienia tekstowe* na ekranie.  
+
+### Inteligentne automatyczne komunikaty {#smart-autoannounce}
+
+Aby włączyć:
+*Wtyczki* → *Ułatwienia dostępu* → *Ustawienia* → *Inteligentne automatyczne komunikaty*
+
+Funkcja **Inteligentne automatyczne komunikaty** zapewnia *powiadomienia dźwiękowe*, gdy zboczysz z zaplanowanej trasy. Jest zaprojektowana do wspierania niedowidzących użytkowników, którzy polegają na *wskazówkach głosowych*.  
+
+
 ## Ustawienia wtyczki {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
@@ -101,49 +118,18 @@ Wtyczka Ułatwienia dostępu oferuje różne ustawienia personalizacji nawigacji
 |---------------------------|-------------|  
 | **Tryb ułatwień dostępu**    | Włącza *wbudowane funkcje OsmAnd* lub używa **ustawień systemowych**. |  
 | **Szybkość mowy**           | Kontroluje *szybkość zamiany tekstu na mowę*, w zakresie od **50% do 200%**. |  
-| **Powiększenie przy szczypaniu**    | Tymczasowo powiększa mapę podczas szczypania i trzymania palców na ekranie, powiększając tekst i ikony bez zmiany rzeczywistego poziomu powiększenia. |  
+| **Powiększenie przy szczypaniu**    | Tymczasowo powiększa mapę podczas szczypania i trzymania palców na ekranie, powiększając tekst i ikony bez zmiany rzeczywistego poziomu powiększenia. |
 | [Inteligentne automatyczne komunikaty](#smart-autoannounce)    | Zapewnia *wskazówki głosowe* w przypadku zboczenia z trasy. |  
 | **Okres automatycznych komunikatów**   | Ustawia minimalny czas między komunikatami, od **5 sekund do 5 minut**. |  
 | [Styl kierunku](#direction-style)       | Wybierz pomiędzy *Na boki (8 kierunków)* lub *Zegarowe (12 kierunków)*. |  
 | **Kierunki dźwiękowe**      | Odtwarza *wskazówki dźwiękowe* wskazujące kierunek. |  
 | **Kierunki haptyczne**     | Zapewnia *informacje zwrotne w postaci wibracji* przy skrętach i odchyleniach od trasy.|  
 
-<!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
-
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
-
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
-
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
-
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
-
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
-
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
--->
-
-<br/>
-
 ***Wskazówki dotyczące zoptymalizowanych ułatwień dostępu:***
 
 - **Czytnik ekranu** - Użyj TalkBack (*Android*) lub VoiceOver (*iOS*) dla lepszej interakcji z mapą.
 - **Nawigacja dźwiękowa** - Włącz automatyczne komunikaty, aby otrzymywać wskazówki głosowe, gdy ekran jest wyłączony.
 - **Informacje zwrotne haptyczne** - Idealne w warunkach słabej widoczności lub gdy wskazówki dźwiękowe są niepraktyczne.
-
-
-### Inteligentne automatyczne komunikaty {#smart-autoannounce}
-
-Funkcja **Inteligentne automatyczne komunikaty** zapewnia *powiadomienia dźwiękowe*, gdy zboczysz z zaplanowanej trasy. Jest zaprojektowana do wspierania niedowidzących użytkowników, którzy polegają na *wskazówkach głosowych*.  
-
-- Jeśli **TalkBack nie jest włączony**, *Inteligentne automatyczne komunikaty* będą wyświetlać tylko *powiadomienia tekstowe* na ekranie.  
-
-- **Powiadomienia głosowe** są aktywowane tylko wtedy, gdy *TalkBack* jest włączony w **ustawieniach systemowych urządzenia**.  
-
-- Ustaw **Okres automatycznych komunikatów** (np. *10 sekund*), aby kontrolować częstotliwość komunikatów.
-
-- Długie dotknięcie na **Moja lokalizacja** otwiera menu z opcjami ***Pokaż swoją pozycję*** i ***Pokaż szczegóły***. Wybranie Pokaż szczegóły wyświetla dodatkowe informacje o trasie i udostępnia przycisk ***Rozpocznij/Zatrzymaj automatyczne powiadamianie***.
 
 
 ### Styl kierunku {#direction-style}

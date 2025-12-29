@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Notatki audio/wideo
 ---
@@ -245,7 +245,7 @@ Aby zarządzać notatką w Moich miejscach, dotknij trzech pionowych kropek nota
 
 <TabItem value="android" label="Android">
 
-![Widżet](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![Widżet](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![Widżet](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ Dodanie widżetu do ekranu jest konieczne, jeśli wolisz unikać wyszukiwania ge
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - rozpocznij robienie zdjęć.
 
-    ![Widżet](@site/static/img/plugins/audio-video-notes/widget.png)  
+### Zewnętrzne urządzenia wejściowe {#external-input-devices}   
 
-**Używanie zewnętrznych urządzeń wejściowych (*Android*)**. Jeśli używasz [zewnętrznego urządzenia wejściowego](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), możesz rozpocząć i zatrzymać Notatki audio/wideo bez dotykania ekranu. Aby to zrobić, przypisz akcję „Dodaj notatkę audio” lub „Dodaj notatkę wideo” do klawisza:<br/>
+Jeśli używasz [zewnętrznego urządzenia wejściowego](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*), możesz rozpocząć i zatrzymać Notatki audio/wideo bez dotykania ekranu. Aby to zrobić, przypisz akcję „Dodaj notatkę audio” lub „Dodaj notatkę wideo” do klawisza:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Po przypisaniu klawisz działa jako przełącznik:

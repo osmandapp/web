@@ -1,9 +1,10 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
-sidebar_label:  Planowanie trasy
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
+sidebar_label:  Planuj trasę
 title: Planowanie trasy na stronie internetowej
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,48 +16,50 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
-## Przegląd {#overview}
+## Overview {#overview}
 
 Narzędzie do planowania tras OsmAnd Web pozwala tworzyć trasy nawigacyjne, planować ślady i zarządzać lokalnymi plikami bezpośrednio z przeglądarki. To narzędzie internetowe jest przydatne do tworzenia szczegółowych tras podróży, które można zsynchronizować z aplikacją lub udostępnić innym.
 
 
-## Trasa nawigacyjna {#navigation-route}
+<!--
+## Navigation Route {#navigation-route}
 
-Aby utworzyć trasę nawigacyjną, wykonaj następujące kroki:
+To create a navigation route, follow these steps:
 
-- **Kliknij prawym przyciskiem myszy** na mapie, aby dodać punkty trasy:
+- **Right-click** on the map to add waypoints:
 
-  - *Nawiguj z*. Ustaw punkt początkowy.
-  - *Nawiguj do*. Ustaw miejsce docelowe.
-  - *Nawiguj przez*. W razie potrzeby dodaj punkty pośrednie.
+  - *Navigate from*. Set the starting point.
+  - *Navigate to*. Set the destination.
+  - *Navigate via*. Add intermediate points if needed.
 
-- Po ustawieniu punktów początkowego i końcowego trasa zostanie wyświetlona na mapie.
+- After setting the start and end points, the route will be displayed on the map.
 
-- W bloku **Trasa**:
+- In the **Route** block:
 
-  - W razie potrzeby przesuń punkty początkowy i końcowy.
-  - Edytuj punkty trasy i wybierz pożądany typ trasy (np. samochód, rower, pieszo).
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
-  ![Tworzenie trasy w OsmAnd Web](@site/static/img/web/navigation.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- Wybierz odpowiedni **Profil trasy** dla różnych opcji nawigacji.
+- Select the appropriate **Route Profile** for different navigation options.
 
-  ![Tworzenie trasy w OsmAnd Web](@site/static/img/web/profile_type.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- Kliknij pomarańczowe kółka wzdłuż trasy, aby wyświetlić szczegółowe instrukcje nawigacyjne.
+- Click on the orange circles along the route to view detailed navigation instructions.
 
-  ![Tworzenie trasy w OsmAnd Web](@site/static/img/web/nav_instr.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- Aby udostępnić trasę, skopiuj adres URL. Przykład: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
-## Tworzenie śladu i pliki lokalne {#create-track-and-local-files}
+## Create Track and Local Files {#create-track-and-local-files}
 
-Narzędzie **Planowanie trasy** w OsmAnd Web pozwala na tworzenie i edytowanie śladów w podobny sposób jak w aplikacji mobilnej. Oto jak można tworzyć i zarządzać śladami:
+Narzędzie [**Planuj trasę**](../plan-route/create-route.md) w OsmAnd Web pozwala na tworzenie i edytowanie śladów w podobny sposób jak w aplikacji mobilnej. Oto jak można tworzyć i zarządzać śladami:
 
 
 ***Tworzenie nowej trasy:***
@@ -93,7 +96,7 @@ Menu **Ślad lokalny** udostępnia trzy panele do edycji: **Informacje**, **Śla
 - *Przelicz ponownie*. Dodaj lub zaktualizuj dane o wysokości.
 - *Wysokość*. Wyświetl profil wysokości.
 - *Wykres prędkości*. Wyświetl dane o prędkości na całej trasie.
-- *Wykres nachylenia*. Pokaż zmiany nachylenia wzdłuż trasy.
+- *Wykres nachylenia*. Pokaż zmiany nachylenia wzdłuż trasy.  
 - *Szczegóły drogi*. Wyświetl szczegółowe informacje, takie jak typ drogi, nawierzchnia i stromość.
 - *Pobierz GPX*. Eksportuj ślad jako plik GPX ([funkcja Pro](../purchases/index.md)).
 - *Zamknij ślad*. Zamknij widok edycji śladu.

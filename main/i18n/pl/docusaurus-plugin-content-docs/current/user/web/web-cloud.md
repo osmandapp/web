@@ -1,9 +1,10 @@
 ---
-source-hash: 36fa594008d56ae693369164879dccfe01f275c12d52be379ad60b0b9c264d67
+source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
 sidebar_position: 2
-sidebar_label:  OsmAnd Cloud
-title: OsmAnd Cloud na stronie internetowej
+sidebar_label:  Konto
+title: Konto OsmAnd
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,103 +16,152 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Przegląd {#overview}
 
-[Portal map OsmAnd](https://osmand.net/map) to oparta na przeglądarce usługa świadczona przez OsmAnd, pozwalająca użytkownikom na przeglądanie map, zarządzanie danymi, planowanie i tworzenie podróży lub po prostu przeglądanie mapy.
+Zalogowanie się za pomocą konta OsmAnd zmienia [Planer internetowy OsmAnd](https://osmand.net/map) z prostego przeglądarki map w Twoją osobistą przestrzeń roboczą. To samo konto, którego używasz w aplikacji mobilnej, łączy stronę internetową z danymi OsmAnd Cloud i zakupami, dzięki czemu możesz uzyskać dostęp do zapisanej zawartości i subskrypcji w jednym miejscu w sieci.
 
 
+## Autoryzacja {#authorization}
 
-## Jak zacząć {#how-to-start}
+### Rejestracja {#sign-up}
 
-Aby uzyskać dostęp do funkcji OsmAnd Web, potrzebujesz konta:
+Aby uzyskać dostęp do funkcji OsmAnd Web, musisz utworzyć konto. Użyj procesu rejestracji:
 
-- Jeśli masz już subskrypcję [**OsmAnd Pro**](../personal/osmand-cloud.md#login) lub chcesz utworzyć darmowe konto [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), postępuj zgodnie z poniższymi krokami:
+- Przejdź do [**Portalu map OsmAnd**](https://osmand.net/map).
+- Otwórz menu **Konto**.
+- Wybierz **Utwórz nowe konto**. Otwiera się okno dialogowe Utwórz nowe konto.
+- W polu **E-mail** wprowadź adres e-mail, którego chcesz użyć dla swojego konta OsmAnd, i kliknij **Kontynuuj**.
+- Kod weryfikacyjny zostanie wysłany na ten adres e-mail. Sprawdź skrzynkę odbiorczą (i folder spamu, jeśli to konieczne).
+- W następnym oknie dialogowym wprowadź Kod weryfikacyjny i kliknij **Kontynuuj**, aby potwierdzić swój e-mail. Jeśli nie otrzymałeś kodu, użyj linku **Nie otrzymałem kodu weryfikacyjnego** i postępuj zgodnie z instrukcjami.
 
-  1. Przejdź do [**Portalu map OsmAnd**](https://osmand.net/map).
-  2. Otwórz menu **Konto**.
-     - **Zaloguj się**: Wprowadź adres e-mail użyty do subskrypcji Pro lub Start.
-     - **Utwórz konto**: Użyj tej opcji, aby zarejestrować darmowe konto OsmAnd Start.
+Po zweryfikowaniu kodu konto internetowe zostanie utworzone i nastąpi automatyczne zalogowanie.
 
-![Konto internetowe](@site/static/img/web/web_account.png)
+![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+
+
+### Logowanie {#login}
+
+Jeśli masz już konto OsmAnd, możesz się zalogować na [**Portalu map OsmAnd**](https://osmand.net/map) za pomocą tego samego adresu e-mail i hasła. Przejdź do menu **Konto** i wybierz opcję **Zaloguj się**. W otwierającym się oknie dialogowym wprowadź adres e-mail powiązany z Twoim kontem OsmAnd, wpisz hasło i wybierz **Kontynuuj**. Po pomyślnym zalogowaniu otworzy się panel Konto OsmAnd, w którym możesz pracować z danymi, zakupami i ustawieniami.
+
 
 ## Zarządzanie kontem {#managing-account}
 
-Aby zarządzać swoim kontem, przejdź do:  
-**Menu Główne → Konto**
-
-Po zarejestrowaniu się w internecie możesz:
-
-- Przeglądać informacje o koncie
-- Pobierać kopie zapasowe z chmury
-- Wylogować się ze swojego konta
-- Usunąć swoje konto
-- Zmienić swój adres e-mail
-- Sprawdzić swoje płatności i zakupy
-
-![Konto internetowe](@site/static/img/web/web_account_2.png)
-
 ### Moje dane {#my-data}
 
-Możesz pobrać kopie zapasowe, które zostały utworzone i zsynchronizowane z Twojego urządzenia mobilnego za pośrednictwem **OsmAnd Cloud**.
-
-- Przejdź do **Menu Główne → Konto → Moje dane (OsmAnd Cloud) → Pobierz wszystko**.
+Możesz pobrać kopie zapasowe utworzone i zsynchronizowane z urządzenia mobilnego za pośrednictwem **OsmAnd Cloud**.  
+Przejdź do: *Menu Główne → Konto → Moje dane (OsmAnd Cloud) → Pobierz wszystko*
 
 Ta sekcja wyświetla:
 
-- Liczbę plików przechowywanych w chmurze
-- Całkowitą zajętą przestrzeń dyskową
-- Dostępną przestrzeń w chmurze
+- Liczbę plików przechowywanych w chmurze.
+- Całkowitą objętość pamięci używaną.
+- Dostępną przestrzeń w chmurze.
 
 > 💡 Pojawią się tutaj tylko kopie zapasowe utworzone na urządzeniach, na których włączono **OsmAnd Cloud**.
 
+Jeśli chcesz zapisać kopię wszystkich swoich danych, użyj **Pobierz wszystko**. Otworzy się okno dialogowe, w którym możesz:
+
+- Wybrać, które dane wyeksportować (na przykład *Moje miejsca, Ustawienia, Zasoby, Mapy*),
+- Wybrać format eksportu (*ZIP lub OSF*).
+- Zobacz szacowany rozmiar i czas pobierania.
+
+Kliknij **Pobierz kopię zapasową**, aby rozpocząć eksport i zapisać archiwum na komputerze.
+
+![Web Account](@site/static/img/web/web_download_all.png)
+
 ### Płatności i zakupy {#payments-and-purchases}
 
-- Przejdź do **Menu Główne → Konto → Płatności i zakupy**.
+Ta sekcja pokazuje wszystkie produkty i subskrypcje powiązane z Twoim kontem OsmAnd. Aby ją otworzyć,  
+Przejdź do: *Menu Główne → Konto → Płatności i zakupy*
 
-W tej sekcji możesz przeglądać wszystkie zakupy i subskrypcje powiązane z Twoim kontem.
+Tutaj możesz zobaczyć listę wszystkich zakupów powiązanych z Twoim adresem e-mail:
+- Darmowe i płatne plany (takie jak OsmAnd Start lub OsmAnd Pro).
+- Produkty jednorazowe (np. Maps+ lub edycje specjalne).
+- Subskrypcje odnawiane miesięcznie lub rocznie.
+
+Dla każdego elementu lista pokazuje:
+- Nazwę produktu i ikonę.
+- Typ – subskrypcja miesięczna, subskrypcja roczna lub płatność jednorazowa.
+- Status – *Aktywne, Wygaśnięte lub Anulowane*.
+- Informacje o dacie.
+
+Jeśli klikniesz produkt na liście, otworzy się strona szczegółów. Tam możesz zobaczyć, gdzie produkt został zakupiony (*Google Play, Apple App Store, Huawei AppGallery, Amazon* lub *OsmAnd Web*) i znaleźć link lub instrukcje, jak zarządzać lub anulować subskrypcję w odpowiednim sklepie. Jeśli produkt został zakupiony w OsmAnd Web (FastSpring), strona szczegółów pokazuje link **Zarządzaj subskrypcją**, który otwiera portal zarządzania kontem FastSpring, gdzie możesz zaktualizować metodę płatności, anulować lub reaktywować subskrypcję, zmienić plan lub pobrać faktury.
+
+Jeśli nie masz jeszcze żadnych zakupów powiązanych z kontem, ta sekcja pokazuje stan pusty z komunikatem **Nie masz żadnych zakupów** i przyciskiem **Dowiedz się więcej**, który prowadzi do strony z dostępnymi planami OsmAnd i opcjami uaktualnienia.
 
 Więcej szczegółów na temat korzystania z zakupów na różnych platformach znajdziesz w artykule o [dostępie wieloplatformowym](../purchases/cross.md).
 
+![Web Account](@site/static/img/web/web_purchases.png)
+
+### Synchronizacja w chmurze {#cloud-sync}
+
+Synchronizacja w chmurze pozwala na dostęp do danych zsynchronizowanych z OsmAnd Cloud bezpośrednio na [Portalu map internetowych](https://osmand.net/map/). Po zalogowaniu się za pomocą konta OsmAnd Start lub OsmAnd Pro strona wyświetla Ulubione, Ścieżki i pliki kopii zapasowych, które wcześniej zsynchronizowałeś z aplikacji mobilnej. To prosty sposób na przeglądanie zawartości chmury na większym ekranie i pobieranie kopii zapasowych, kiedy tylko potrzebujesz.
+
+Te elementy stają się widoczne w menu zaraz po zalogowaniu się na stronie. Aby zaktualizować te informacje, musisz zsynchronizować dane z urządzeń za pomocą akcji [Synchronizuj teraz](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) w aplikacji mobilnej.
+
+Dostępność synchronizacji w chmurze zależy od typu konta:
+- OsmAnd Start – synchronizuje [Ulubione](../web/web-favorites.md) i wyświetla je w sieci.
+- OsmAnd Pro – synchronizuje [Ścieżki](../web/web-tracks.md), Ulubione i [Kopie zapasowe](#my-data), oraz odblokowuje pełny dostęp w sieci do danych chmurowych.
+
+![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+
+### OsmAnd Cloud {#osmand-cloud}
+
+Po zalogowaniu sekcja OsmAnd Cloud pojawia się w Menu → Ustawienia i zawiera Zmiany i Kosz.
+
+Opcja **Zmiany** pokazuje chronologiczny wykaz plików przechowywanych w koncie OsmAnd Cloud. Elementy są pogrupowane według miesięcy i zawierają nazwę pliku, typ zmiany (na przykład dodano, zmodyfikowano lub usunięto), czas ostatniej aktualizacji i urządzenie, które ją utworzyło. Dla każdego wpisu możesz otworzyć menu z trzema kropkami i wybrać *Pobierz*, aby zapisać wybrany plik na komputerze, lub *Usuń*.
+
+Opcja **Kosz** zawiera pliki usunięte z OsmAnd Cloud. Lista jest również pogrupowana według miesięcy i pokazuje, kiedy każdy plik został usunięty i z jakiego urządzenia. Użyj menu z trzema kropkami obok pliku, aby *Pobrać* kopię, *Przywróć z kosza* (zwróć plik do OsmAnd Cloud, aby stał się ponownie dostępny w danych), lub *Usuń natychmiast*, aby usunąć go na stałe. Pomaga to zapobiegać przypadkowej utracie danych, jednocześnie pozwalając na zwolnienie miejsca w chmurze, gdy jesteś pewien, że plik nie jest już potrzebny. Możesz również wyczyścić wszystkie usunięte elementy naraz, klikając ikonę Kosza w nagłówku panelu Kosz. Otworzy się okno dialogowe **Opróżnij kosz**, w którym potwierdzasz usunięcie, aby trwale usunąć wszystkie pliki z Kosza.
+
+![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+
+
+## Rozwiązywanie problemów {#troubleshooting}
+
+### Resetowanie hasła {#reset-password}
+
+Jeśli nie pamiętasz hasła, użyj linku **Nie mam hasła lub je zapomniałem** w oknie dialogowym logowania. Otworzy się panel **Zmień lub zresetuj hasło**. Wprowadź adres e-mail użyty do utworzenia konta i kliknij **Kontynuuj**. Wiadomość z kodem weryfikacyjnym zostanie wysłana na ten e-mail. Na następnym ekranie wpisz kod weryfikacyjny i nowe hasło, a następnie wybierz **Kontynuuj**, aby potwierdzić. Po zaakceptowaniu kodu hasło zostanie zaktualizowane i możesz zalogować się do OsmAnd Web za pomocą nowych poświadczeń.
+
+![Web Account](@site/static/img/web/web_password.png)
+
 ### Zmiana adresu e-mail {#change-email-address}
 
-Aby zaktualizować swój adres e-mail:
+Aby zaktualizować adres e-mail,
+Przejdź do *Menu Główne → Konto → E-mail → ⋮ → Zmień e-mail*
 
-1. Przejdź do **Menu Główne → Konto → E-mail → ⋮ → Zmień e-mail**.
-2. Wprowadź nowy adres e-mail i potwierdź.
+Pojawia się okno dialogowe Zmiana e-mail. Kod weryfikacyjny zostanie wysłany na aktualny adres e-mail. Wprowadź ten kod w polu **Kod z starego e-maila**, podaj nowy adres w **Nowy e-mail**, a następnie wybierz **Dalej**. Z powodów bezpieczeństwa wiadomość potwierdzająca zostanie wysłana na nowy adres e-mail z informacją, że e-mail konta został zaktualizowany.
 
-> 🔒 E-mail weryfikacyjny zostanie wysłany na nowy adres przed sfinalizowaniem zmiany.
+![Web Account](@site/static/img/web/web_email_new.png)
 
-### Wylogowanie i usunięcie konta {#log-out-and-delete}
+### Wylogowanie i usunięcie konta {#logout-and-delete}
 
-Aby wylogować się z konta OsmAnd Web:
+![Web Account](@site/static/img/web/web_logout_new.png)
 
-- Otwórz **Menu Główne → Konto**.
-- Kliknij przycisk **Wyloguj**, aby zakończyć bieżącą sesję.
+Panel Konto OsmAnd zawiera elementy sterujące do zakończenia bieżącej sesji internetowej i trwałego usunięcia konta.
 
-Aby trwale usunąć swoje konto:
+Aby się wylogować, otwórz Konto OsmAnd i użyj przycisku **Wyloguj** w prawym górnym rogu panelu (ikona ze strzałką wychodzącą z kwadratu). Wybranie Wyloguj zamyka panel konta i kończy aktywną sesję na stronie internetowej.
 
-- Przewiń na dół menu **Konto**.
-- Kliknij przycisk **Usuń konto**.
-- Potwierdź usunięcie. Ta czynność jest nieodwracalna.
+Aby usunąć konto, wybierz **Usuń konto** na dole panelu Konto OsmAnd. Pojawia się okno dialogowe potwierdzające z komunikatem *„Czy na pewno chcesz to zrobić?”* i krótkim wyjaśnieniem, że wszystkie dane i szczegóły konta zostaną usunięte z OsmAnd Cloud, a urządzenia drugorzędne stracą dostęp do płatnych funkcji. Kod weryfikacyjny zostanie wysłany na adres e-mail konta. Wprowadź kod w polu Kod z e-maila i wybierz **USUŃ TO KONTO**, aby ukończyć proces. Ta operacja jest trwała i nie może być cofnięta.
 
-
-## Synchronizacja OsmAnd Pro i OsmAnd Start {#osmand-pro-and-osmand-start-sync}
-
-- **OsmAnd Pro** to płatna subskrypcja [wieloplatformowa](../troubleshooting/setup.md#initial-setup). 
-- **OsmAnd Start** to [darmowa rejestracja w OsmAnd Cloud](https://osmand.net/blog/start).
-
-Funkcja wieloplatformowości pozwala na korzystanie z OsmAnd Pro na wszystkich platformach *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. Aby to zrobić, musisz:
-
-1. Zasubskrybować **OsmAnd Pro**. Przeczytaj więcej o tym, jak to zrobić dla [Androida tutaj](../purchases/android.md#how-to-buy) i dla [iOS tutaj](../purchases/ios.md#how-to-buy).
-2. Jak utworzyć konto **OsmAnd Start**, przeczytaj więcej [tutaj](https://osmand.net/blog/start#how-to-create-an-account).
-3. Zarejestruj swoje [konto Pro lub Start](/docs/user/personal/osmand-cloud/#cross-platform) na serwerze OsmAnd w aplikacji OsmAnd.
-4. Zarejestrowany e-mail będzie Twoim loginem do aktywacji OsmAnd Pro na platformie internetowej. Przy pierwszym logowaniu należy wybrać hasło do przyszłego logowania na portalu internetowym (proszę postępować zgodnie z instrukcjami na portalu).
-
+![Web Account](@site/static/img/web/web_delete.png)
 
 <!--
+## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
+
+- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#initial-setup) paid subscription. 
+- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
+
+The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
+
+1. Subscribe to **OsmAnd Pro**. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
+2. How to create **OsmAnd Start** account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
+3. Register your [Pro or Start account](/docs/user/personal/osmand-cloud/#cross-platform) on the OsmAnd server inside OsmAnd app.
+4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
+
 
 - Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
 
@@ -153,3 +203,9 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
+
+## Powiązane artykuły {#related-articles}
+
+- [Wprowadzenie](./web-overview.md)
+- [Zakupy wieloplatformowe](../purchases/cross.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)

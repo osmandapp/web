@@ -1,5 +1,5 @@
 ---
-source-hash: b2bc3b3bf84c6557e58eb916fc3afa481aecddd1fe686e1bc462f51cc56d1f90
+source-hash: 2a5a8d9243388603303027ae9b84f063c4d6530ca0abde2410ebbaf4d725fe4e
 
 ---
 # Podręcznik użytkownika {#user-guide}
@@ -13,15 +13,15 @@ Jak rozpocząć pracę z aplikacją OsmAnd i pobrać mapy.
 
 ### [Mapa](./map/index.md) {#map}
 
-Mapa jest podstawowym elementem OsmAnd. W tej sekcji wyjaśniono, jak korzystać z mapy, jak konfigurować dodatkowe warstwy POI, jak dostosować mapę do trekkingu, jazdy na rowerze lub nawigacji w terenie, jak dodawać informacje o rzeźbie terenu, jak włączyć zdjęcia na poziomie ulicy itp.
+Mapa jest podstawowym elementem OsmAnd. W tej sekcji wyjaśniono, jak wchodzić w interakcje z mapą, jak konfigurować dodatkowe warstwy POI, jak dostosować mapę do trekkingu, jazdy na rowerze lub nawigacji w terenie, jak dodawać informacje o rzeźbie terenu, jak włączyć zdjęcia na poziomie ulicy itp.
 
 ### [Legenda mapy](./map-legend/index.md) {#map-legend}
 
-Legenda mapy to klucz, który wyjaśnia symbole, kolory i linie używane na mapie. Pomaga użytkownikom zrozumieć, co oznaczają różne elementy mapy, takie jak drogi, szlaki, zbiorniki wodne i różne rodzaje użytkowania gruntów. Odnosząc się do legendy mapy, można dokładnie zinterpretować informacje wyświetlane na mapie, co ułatwia nawigację i zrozumienie układu terenu.
+Legenda mapy to klucz, który wyjaśnia symbole, kolory i linie używane na mapie. Pomaga użytkownikom zrozumieć, co reprezentują różne elementy mapy, takie jak drogi, szlaki, zbiorniki wodne i różne rodzaje użytkowania gruntów. Odnosząc się do legendy mapy, można dokładnie zinterpretować informacje wyświetlane na mapie, co ułatwia nawigację i zrozumienie układu terenu.
 
 ### [Widżety mapy](./widgets/index.md) {#map-widgets}
 
-Widżety to elementy interfejsu użytkownika, które są wyświetlane na ekranie mapy i nie są powiązane z lokalizacją na mapie. Dostarczają dodatkowych informacji o bieżącej trasie, prędkości, wysokości, zarejestrowanym śladzie itp., a także pozwalają na szybką interakcję z aplikacją.
+Widżety to elementy interfejsu użytkownika, które są wyświetlane na ekranie mapy i nie są powiązane z lokalizacją na mapie. Dostarczają dodatkowych informacji o bieżącej trasie, prędkości, wysokości, zarejestrowanym śladzie itp. oraz pozwalają na szybką interakcję z aplikacją.
 
 ### [Moje dane](./personal/index.md) {#my-data}
 
@@ -32,7 +32,7 @@ OsmAnd pozwala na przechowywanie i zarządzanie różnymi danymi map, takimi jak
 Funkcja nawigacji prowadzi do celu, wyświetlając trasy, oferując instrukcje krok po kroku i opcjonalne wskazówki głosowe.
 
 
-### [Planowanie trasy](./plan-route/index.md) {#plan-route}
+### [Planuj trasę](./plan-route/index.md) {#plan-route}
 
 OsmAnd pozwala tworzyć własne trasy i korzystać z tras innych użytkowników podczas podróży.
 
@@ -48,7 +48,7 @@ Aplikacja OsmAnd jest dostępna na systemy Android i iOS. OsmAnd oferuje szerok�
 
 Narzędzie to zapewnia funkcje wyszukiwania dla dowolnych zastosowań: wyszukiwanie adresów, wyszukiwanie POI, wyszukiwanie niestandardowe, wyszukiwanie w historii, wyszukiwanie po współrzędnych.
 
-### [Planer internetowy](./web/index.md) {#web-planner}
+### [Portal mapy internetowej](./web/index.md) {#web-map-portal}
 
 Źródło internetowe OsmAnd zapewnia szeroki zakres funkcji mapy, usługę nawigacji i synchronizację z OsmAnd Cloud. Pozwala to użytkownikom na dostęp do szczegółowych map, nawigację po trasach i synchronizację danych między urządzeniami.
 

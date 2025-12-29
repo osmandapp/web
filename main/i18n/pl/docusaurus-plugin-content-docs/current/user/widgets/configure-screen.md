@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -267,7 +267,7 @@ Tryb ten pozwala na dodanie **więcej niż jednego widżetu w jednym wierszu** n
     - [Profil wysokości (*Tylko Android*)](../widgets/nav-widgets#elevation-widget)
     - [Manewry na trasie](../widgets/nav-widgets.md#next-turn)
 
-- **Widżety proste**. W jednym wierszu można dodać wiele prostych widżetów. Widżety te mogą wyświetlać *Nazwę*, *Jednostki miary*, *Wartość* i *Ikonę*. Tekst w prostych widżetach jest automatycznie obramowany, aby zapewnić czytelność na tle różnych map w trybie przezroczystego panelu.
+- **Widżety proste**. W jednym wierszu można dodać wiele prostych widżetów. Widżety te mogą wyświetlać *Nazwę*, *Jednostki miary*, *Wartość* i *Ikonę*. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -310,7 +310,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb stron** pozwala na dodanie 5 stron do lewego i prawego panelu.
 
-***Jak konfigurować strony:***
+***Jak konfigurować wiersze:***
 
 - **Dodaj stronę**. Przejdź do ustawień panelu lewego/prawego i dotknij *Edytuj → Dodaj stronę*.
 - **Organizuj widżety według stron**. Ta funkcja jest przydatna, gdy potrzebne są różne zestawy widżetów do różnych zadań, takich jak nawigacja w porównaniu z przeglądaniem mapy.
@@ -359,13 +359,13 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
 
 <TabItem value="android" label="Android">  
 
-![Menu kontekstowe widżetu](@site/static/img/widgets/widget_context_menu_andr.png)
+![Menu kontekstowe widżetu](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu kontekstowe widżetu](@site/static/img/widgets/widget_context_menu_ios.png)
+![Menu kontekstowe widżetu](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
 - **Usuń**
     - Usuń widżet z panelu.
     - Monit o potwierdzenie zapewnia, że działanie jest zamierzone.
+
+- **Pokaż ślad na mapie** 
+    - Dostępne dla widżetów [Nagrywanie trasy](../plugins/trip-recording.md).
+    - Wyświetla aktualnie nagrywany ślad na mapie.
 
 - **Zresetuj średnią prędkość** (przykład *akcji specyficznych dla widżetu*)
     - Dostępne dla widżetu [Średnia prędkość](../widgets/info-widgets.md#average-speed).

@@ -1,8 +1,9 @@
 ---
-source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
+source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
 sidebar_position: 5
 title:  Nawigacja transportem publicznym
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 
 
-
 ## Przegląd {#overview}
 
 Nawigacja transportem publicznym w aplikacji OsmAnd pozwala na wyznaczanie tras z wykorzystaniem transportu publicznego, co z pewnością pomoże w szybszym poruszaniu się po "betonowej dżungli".
@@ -22,7 +22,7 @@ Nawigacja transportem publicznym w aplikacji OsmAnd pozwala na wyznaczanie tras 
 Dane o trasach transportu publicznego pochodzą z projektu [OpenStreetMap](http://openstreetmap.org/). OsmAnd do nawigacji wykorzystuje schemat [PTv2](https://wiki.openstreetmap.org/wiki/Public_transport). OsmAnd obsługuje nawigację po trasach OpenStreetMap dla *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Domyślna prędkość dla każdego typu pojazdu jest skonfigurowana w [pliku XML routingu](../../../technical/build-osmand/routing.md) i jest używana do znajdowania najszybszych tras.
 
 :::note
-Nawigacja transportem publicznym jest w fazie testów. Na razie można zbudować i wyświetlić trasę bez pełnej funkcji nawigacji.
+Wyznaczanie tras transportem publicznym jest w fazie testów. Na razie można zbudować i wyświetlić trasę bez pełnej funkcji nawigacji.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -119,6 +119,55 @@ Aby rozpocząć nawigację po mieście transportem publicznym, użyj [przycisku 
 
 </Tabs>
 
+## Typy transportu publicznego {#public-transport-types}
+
+Możesz wyszukiwać dobrze zorganizowane trasy transportu publicznego zgodnie z preferencjami i wybrać opcję:
+
+- Unikaj autobusów (i trolejbusów)
+- Unikaj metra
+- Unikaj pociągów
+- Unikaj tramwajów
+- Unikaj promów
+- Unikaj współdzielonych taksówek
+
+Domyślnie OsmAnd wyszukuje trasy obejmujące wszystkie obsługiwane typy transportu publicznego.
+
+## Alternatywne trasy {#alternative-routes}
+
+Alternatywne trasy to odcinki trasy obsługiwane przez różne usługi transportowe, które dzielą tę samą ścieżkę i przystanki.
+
+Różne usługi transportowe mogą używać różnych numerów tras (refs) lub nawet różnych typów transportu.
+
+Interfejs użytkownika wyświetla alternatywne trasy jako kolorowe odznaki z ich refami.
+
+## Wydajność i wyniki {#performance-and-results}
+
+**Profil transportu publicznego -> Ustawienia -> Ustawienia nawigacji -> Parametry trasy**
+
+1. **Maksymalna liczba zmian transportu**.
+
+Wydajność i zużycie pamięci routera transportu publicznego zależy od głębokości wyszukiwania.
+
+Najważniejszym parametrem wpływającym na tę głębokość jest **Maksymalna liczba zmian transportu**.
+
+Używamy wartości **2** jako domyślnej, co wydaje się optymalne dla nowoczesnych sieci transportu publicznego.
+
+Jeśli napotkasz niską wydajność lub błędy braku pamięci, spróbuj zmniejszyć tę wartość.
+
+Jeśli jesteś w małym mieście lub podróżujesz krótkimi trasami, wartość **1** może działać lepiej.
+<!--
+There are two more parameters that help you choose the best routes.
+
+2. **Display N best routes** (specify the number of best routes to display)
+
+By default, OsmAnd displays the **10** best routes (including alternative routes).
+
+You can decrease or increase this limit, or even display all routes.
+
+Note: displaying unlimited routes might slow down your device.
+
+Possible values: 0 (show all), 5, 10 (default), 15, 100
+-->
 
 ## Dane i wytyczne {#data-and-guideline}
 

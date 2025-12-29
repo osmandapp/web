@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Wygląd trasy
 ---
@@ -55,35 +55,19 @@ Możesz modyfikować wygląd trasy, korzystając z jednej z następujących meto
 Z niektórych ustawień można korzystać tylko z *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> i <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Darmowe i płatne funkcje.
 :::
 
-![Wygląd](@site/static/img/map/appearance_color_andr.png)
+![Wygląd](@site/static/img/map/appearance_color_andr.png) ![Menu kontekstowe kolorowania iOS](@site/static/img/map/colorisation_ios.png)
 
 Możesz ustawić kolor trasy ręcznie lub użyć **wizualizacji danych opartej na kolorach** (np. prędkość, wysokość, nachylenie). Jeśli w trasie brakuje pewnych danych, OsmAnd wyświetla brakujące odcinki na szaro.
 
 **Dostępne opcje kolorów:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- Darmowe ustawienia: *<Translate android="true" ids="track_coloring_solid"/> kolor*, *<Translate android="true" ids="shared_string_speed"/>* (jeśli zarejestrowano) i *<Translate android="true" ids="altitude"/>* (jeśli zarejestrowano).   
+- [Funkcja Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Menu trasy Wygląd Kolor trasy Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Wygląd Kolor trasy Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Menu kontekstowe kolorowania iOS](@site/static/img/map/colorisation_ios.png)
-
-Lista **Kolorowania** otwiera się jako menu kontekstowe. Elementy mogą występować w trzech stanach: 
+Na iOS lista **Kolorowania** otwiera się jako menu kontekstowe. Elementy mogą występować w trzech stanach: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Można go zastosować do bieżącej trasy.
 2. <Translate ios="true" ids="weather_update_disabled"/>. Trasie brakuje wymaganych danych.
 3. PRO. Dostępne dla bieżącej trasy, ale wymaga subskrypcji; dotknięcie otwiera ekran [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Darmowe ustawienia**: *<Translate android="true" ids="track_coloring_solid"/> kolor*, *<Translate android="true" ids="shared_string_speed"/>* (jeśli zarejestrowano) i *<Translate android="true" ids="altitude"/>* (jeśli zarejestrowano).   
-- [Funkcja Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Więcej szczegółów na temat dostosowywania wyglądu linii trasy można znaleźć w artykule [Ekran mapy podczas nawigacji](../../navigation/guidance/map-during-navigation.md#color), a na temat wybierania i tworzenia niestandardowego koloru w artykule [Schematy kolorów](../../personal/color-palette-schemes.md#routes).
 
@@ -237,7 +221,7 @@ Zakładka [Trasy](../../personal/tracks/manage-tracks.md) automatycznie wyświet
 
 Zmodyfikuj wygląd wielu tras w *Moje miejsca → Trasy*:
 
-- **Zmień domyślny wygląd** - Stosuje ustawienia do wszystkich tras w [folderze](../../personal/tracks/manage-tracks.md#track-folder).
+- **Zmień domyślny wygląd** (tylko Android) – Pozwala skonfigurować domyślne ustawienia, które zostaną zastosowane po dodaniu trasy do [folderu](../../personal/tracks/manage-tracks.md#track-folder).
 - **Przywróć oryginalne** - Przywraca indywidualne ustawienia trasy.
 
 - [Tryb wyboru](../../personal/tracks/manage-tracks.md#selection-mode) - Zmienia wygląd określonych tras w wybranym folderze lub całej listy w zakładce Trasy.

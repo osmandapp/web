@@ -1,5 +1,5 @@
 ---
-source-hash: a4cce1f5b1b6bf6a375aec1d9807d689ffb13ab254ba342950f6b912e5149b1f
+source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -56,7 +56,7 @@ Na urządzenia z systemem Android można pobrać **darmową** i **płatną** wer
 
 | Plan | Opis | Dostępność | Uwagi |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | **Darmowy plan** zapewniający dostęp do [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) dla *Ulubionych*, *Ustawień* i *edycji/notatek OSM*. | Dostępny dla wszystkich użytkowników darmowej wersji OsmAnd. | Ograniczony do podstawowych funkcji chmury i **5 MB** pamięci. |
+| **OsmAnd Start** | **Darmowy plan** zapewniający dostęp do [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) dla *Ulubionych*, *Ustawień* i *edycji/notatek OSM*. | Dostępny dla wszystkich użytkowników darmowej wersji OsmAnd. | Ograniczony do podstawowych funkcji chmury i **5MB** pamięci. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | **Oddzielna płatna aplikacja**, która zawiera zaawansowane funkcje. | Dostępna w [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Można dodać do [Biblioteki rodzinnej Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Zakup w aplikacji** lub **subskrypcja** dla darmowej aplikacji OsmAnd, odblokowująca te same funkcje co OsmAnd+. | Dostępna w [Google Play](https://play.google.com/store/apps/details?id=net.osmand) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identyczna pod względem funkcji i ceny z OsmAnd+. |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **Plan subskrypcyjny**, który odblokowuje dodatkowe zaawansowane i [profesjonalne funkcje](#pro-features). | Dostępna w [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) i [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Zapewnia pełny dostęp do funkcji OsmAnd Cloud. |
@@ -78,24 +78,6 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 
 
-:::danger Ceny Black Friday
-
-*Pośpiesz się! Ta oferta jest dostępna tylko do* **30 listopada (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
-| **Cena (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Cena (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
-
-
 |    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
@@ -103,7 +85,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | **Cena (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Cena (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
--->
+
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
@@ -171,6 +153,7 @@ Subskrypcja **Pro** obejmuje obecnie następujące funkcje:
 | [Widżet wysokości](../widgets/nav-widgets.md#elevation-widget) | Pokazuje Twoją lokalizację na wykresie wysokości trasy nawigacyjnej z dodatkowymi informacjami.  |
 | [Widżety wysokości - Wysokość: Środek mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala dowiedzieć się, jaka jest wysokość nad poziomem morza w bieżącym środku mapy.  |
 | [Korekta wysokości (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Umożliwia obliczenie wykresu wysokości dla Twojej trasy (wymagana [mapa terenu](../plugins/topography.md#download-maps) dla wybranego regionu). |
+| [Modyfikuj schemat kolorów](../../user/plugins/topography.md#modify-color-scheme) | Pozwala na dostosowanie wyglądu mapy poprzez wybór lub import palet kolorów. Możesz edytować wbudowane schematy lub używać własnych plików palet, aby spersonalizować kolory mapy i trasy. |
 
 
 ## Jak kupować {#how-to-buy}
