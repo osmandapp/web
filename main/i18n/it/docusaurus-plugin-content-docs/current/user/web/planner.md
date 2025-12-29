@@ -1,9 +1,10 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
 sidebar_label:  Pianifica Itinerario
 title: Pianificare un Itinerario sul Sito Web
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -24,6 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Il Pianificatore di Itinerari Web di OsmAnd ti permette di creare itinerari di navigazione, pianificare tracce e gestire file locali direttamente dal tuo browser. Questo strumento web è utile per creare itinerari di viaggio dettagliati che puoi sincronizzare con la tua app o condividere con altri.
 
 
+<!--
 ## Itinerario di Navigazione {#navigation-route}
 
 Per creare un itinerario di navigazione, segui questi passaggi:
@@ -52,6 +53,8 @@ Per creare un itinerario di navigazione, segui questi passaggi:
   ![Creazione Itinerario Web OsmAnd](@site/static/img/web/nav_instr.png)
 
 - Per condividere l'itinerario, copia l'URL. Esempio: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
 ## Creare Tracce e File Locali {#create-track-and-local-files}
@@ -93,7 +96,7 @@ Il menu **Traccia Locale** fornisce tre pannelli per la modifica: **Info**, **Tr
 - *Ricalcola*. Aggiungi o aggiorna i dati di altitudine.
 - *Altitudine*. Visualizza il profilo altimetrico.
 - *Grafico velocità*. Mostra i dati di velocità lungo la traccia.
-- *Grafico pendenza*. Mostra le variazioni di pendenza lungo l'itinerario.
+- *Grafico pendenza*. Mostra le variazioni di pendenza lungo l'itinerario.  
 - *Dettagli strada*. Visualizza informazioni dettagliate come tipo di strada, superficie e pendenza.
 - *Scarica GPX*. Esporta la traccia come file GPX ([Funzionalità Pro](../purchases/index.md)).
 - *Chiudi Traccia*. Chiudi la vista di modifica della traccia.

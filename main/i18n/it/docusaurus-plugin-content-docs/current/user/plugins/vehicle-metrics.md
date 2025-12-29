@@ -1,5 +1,5 @@
 ---
-source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
+source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
 sidebar_position: 16
 title:  Metriche veicolo
 ---
@@ -53,7 +53,7 @@ Per utilizzare i dati di uno scanner OBD-II:
 4. [Collega](#pair-odb-ii-scanner) lo scanner OBD-II alla porta del tuo veicolo.
 5. [Configura](#scanner-settings) le **impostazioni dello scanner**.
 6. [Aggiungi](#widgets) i **widget Metriche veicolo** per i dati su schermo (opzionale).
-7. [Usa](#trip-recording) il **plugin Registrazione viaggio** per registrare i dati del veicolo.
+7. [Usa](#trip-recording)il **plugin Registrazione viaggio** per registrare i dati del veicolo.
 
 
 ### Associa scanner ODB-II {#pair-odb-ii-scanner}
@@ -119,7 +119,7 @@ Scegli il tuo dispositivo OBD-II dall'elenco e stabilisci la connessione.
 - **Rinomina**. Consente di assegnare un nome personalizzato al sensore per una più facile identificazione.
 - **Dimentica**. Rimuove il sensore OBD-II precedentemente associato dall'elenco, richiedendo una nuova associazione se necessario in seguito.
 
-**Comportamento di riconnessione** *(solo Android)***:** OsmAnd tenta automaticamente di riconnettersi all'adattatore OBD-II quando l'applicazione viene avviata, quando la navigazione viene avviata o quando Android Auto viene lanciato. Se una connessione non è disponibile, i widget Metriche veicolo mostrano “–”. Un singolo tocco su qualsiasi widget Metriche veicolo tenterà di riconnettersi al sensore. Se il sensore è già connesso, il tocco passa alle modalità di visualizzazione del widget come al solito.
+**Comportamento di riconnessione:** OsmAnd tenta automaticamente di riconnettersi all'adattatore OBD-II quando l'applicazione viene avviata, quando la navigazione viene avviata o quando Android Auto / CarPlay viene avviato. Se una connessione non è disponibile, i widget Metriche veicolo mostrano “–”. Un singolo tocco su qualsiasi widget Metriche veicolo tenterà di riconnettersi al sensore. Se il sensore è già connesso, il tocco passa alle modalità di visualizzazione del widget come al solito.
 
 
 ## Elenco metriche {#metrics-list}
@@ -230,7 +230,7 @@ I [widget Metriche veicolo](../widgets/info-widgets.md#vehicle-metrics-widgets) 
 
 ### Impostazioni widget {#widget-settings}
 
-I widget mostrano in tempo reale i dati chiave del dispositivo OBD-II collegato, come velocità, metriche del motore e consumo di carburante. Assicurati che siano visibili prima di iniziare il viaggio per tracciare le metriche senza interruzioni.
+I widget mostrano in tempo reale i dati chiave dal tuo dispositivo OBD-II collegato, come velocità, metriche del motore e consumo di carburante. Assicurati che siano visibili prima di iniziare il viaggio per tracciare le metriche senza interruzioni.
 
 Alcuni widget offrono opzioni di modalità di visualizzazione:
 

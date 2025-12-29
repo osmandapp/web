@@ -1,5 +1,5 @@
 ---
-source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
+source-hash: a8559f43cff19c4a14831feb61c4c3facdea6dab64c9c232c37b5ba47e810958
 sidebar_position: 1
 title:  Impostazioni di navigazione
 ---
@@ -215,7 +215,7 @@ Nella sezione **Annuncia**, è possibile scegliere quali tipi di notifiche devon
 - **Numero di uscita** – annuncia il numero di uscita durante la guida sulle autostrade.
 - **Avvisi sul traffico** – fornisce notifiche su eventi stradali importanti come ingorghi o restrizioni.
 - **Attraversamenti pedonali** – avvisa quando ci si avvicina a un attraversamento pedonale.
-- **[Autovelox](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – avvisa sulle posizioni degli autovelox (dove consentito legalmente).
+- **[Autovelox](https://osmand.net/docs/user/navigation/guidance/voice-navigation#speed-cameras)**  – avvisa sulle posizione degli autovelox (dove consentito legalmente).
 - **Gallerie** – informa quando si entra in una galleria.
 
 
@@ -326,7 +326,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,configure_profile,
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Impostazioni di navigazione iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 

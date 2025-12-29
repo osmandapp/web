@@ -1,5 +1,5 @@
 ---
-source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
+source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -59,7 +59,7 @@ Per i dispositivi Android, è possibile scaricare le versioni **Gratuita** e a *
 | **OsmAnd Start** | Un **piano gratuito** che fornisce l'accesso a [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) per *Preferiti*, *Impostazioni* e *modifiche/note OSM*. | Disponibile per tutti gli utenti della versione gratuita di OsmAnd. | Limitato alle funzionalità cloud di base e a **5MB** di spazio di archiviazione. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | Un'**app a pagamento separata** che include funzionalità avanzate. | Disponibile su [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Può essere aggiunto alla [Raccolta di famiglia di Google Play](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Un **acquisto in-app** o un **abbonamento** per l'app gratuita OsmAnd, che sblocca le stesse funzionalità di OsmAnd+. | Disponibile su [Google Play](https://play.google.com/store/apps/details?id=net.osmand) e [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Identico nelle funzionalità e nel prezzo a OsmAnd+. |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **piano di abbonamento** che sblocca funzionalità avanzate e [professionali](#pro-features) aggiuntive. | Disponibile su [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) e [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Fornisce accesso completo alle funzionalità di OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **piano di abbonamento** che sblocca funzionalità avanzate e [funzionalità pro](#pro-features) aggiuntive. | Disponibile su [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) e [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Fornisce accesso completo alle funzionalità di OsmAnd Cloud. |
 
 ### Note importanti {#important-notes}
 
@@ -76,11 +76,11 @@ Per i dispositivi Android, è possibile scaricare le versioni **Gratuita** e a *
 
 Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le regioni USA ed Europa. Per le altre regioni, i prezzi sono equivalenti nelle valute locali.
 
+
 <!--
+:::danger Christmas sale
 
-:::danger October Sale prices
-
-*Hurry up! This offer is only available until* **October 19 (23:00 CET)**.
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
 
 :::
 
@@ -111,7 +111,7 @@ L'applicazione OsmAnd offre una vasta gamma di funzionalità e strumenti, molti 
 
 La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti gratuiti e a pagamento di OsmAnd, con i rispettivi prezzi.
 
-|  | OsmAnd Gratuito | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in&#8209;app e abbonamento) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd Gratuito | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in‑app e abbonamento) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -171,6 +171,7 @@ L'abbonamento **Pro** include attualmente le seguenti funzionalità:
 | [Widget Altitudine](../widgets/nav-widgets.md#elevation-widget) | Mostra la tua posizione sul grafico dell'altitudine del percorso di navigazione con informazioni aggiuntive.  |
 | [Widget Altitudine - Altitudine: Centro Mappa](../widgets/info-widgets.md#elevation-map-center) | Consente di conoscere l'altitudine del centro mappa corrente rispetto al livello del mare.  |
 | [Correzione altitudine (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Consente di calcolare un grafico dell'altitudine per la propria traccia (è richiesta la [Mappa del terreno](../plugins/topography.md#download-maps) per la regione scelta). |
+| [Modifica schema colori](../../user/plugins/topography.md#modify-color-scheme) | Consente di personalizzare l'aspetto della mappa selezionando o importando palette di colori. È possibile modificare gli schemi integrati o utilizzare i propri file di palette per personalizzare i colori della mappa e del percorso. |
 
 
 ## Come acquistare {#how-to-buy}

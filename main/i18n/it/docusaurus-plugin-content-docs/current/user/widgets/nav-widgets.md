@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title:  Widget di navigazione
 ---
@@ -325,6 +325,13 @@ I widget *Guida al percorso* contengono informazioni su:
 | Tocco lungo    | **Prossima svolta**: Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Corsie**: Nessuna modifica. |
 
 
+### Corsie {#lanes}
+
+![Widget corsie](@site/static/img/widgets/lanes_widget.png)
+
+Il widget **Corsie** evidenzia la corsia corrente quando la navigazione è attiva e visualizza la disposizione delle corsie per la strada effettiva quando la navigazione è passiva. Un indicatore di distanza è mostrato anche sotto il diagramma delle corsie, che rappresenta la distanza rimanente fino alla manovra in cui si applica la guida sulle corsie. Questo widget è disponibile solo per i pannelli Superiore e Inferiore. I dati sono presi dal [progetto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### Prossima svolta {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,16 +350,21 @@ I widget *Guida al percorso* contengono informazioni su:
 
 </Tabs>
 
-I widget di navigazione **Prossima svolta**, **Prossima svolta (piccola)**, **Seconda prossima svolta** possono essere posizionati su qualsiasi pannello per comodità dell'utente. Tuttavia, le informazioni visualizzate differiscono a seconda del tipo di widget e della sua posizione. La tabella seguente riassume il comportamento:
+I widget di navigazione **Prossima svolta**, **Prossima svolta (piccola)**, **Seconda prossima svolta** possono essere posizionati su qualsiasi pannello per comodità dell'utente. Tuttavia, le informazioni visualizzate differiscono a seconda del tipo di widget e della sua posizione. 
 
-|   Widget/Pannello   | Pannello sinistro    | Pannello destro   | Pannello superiore              | Pannello inferiore           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Prossima svolta**        | Solo distanza | Solo distanza | Nome via + distanza | Nome via + distanza |
-| **Prossima svolta (piccola)**| Solo distanza | Solo distanza | Non disponibile          | Non disponibile          |
-| **Seconda prossima svolta** | Solo distanza | Solo distanza | Nome via + distanza | Nome via + distanza |
+Nei pannelli Superiore / Inferiore, i widget Prossima svolta e Seconda prossima svolta possono essere visualizzati come Larghezza intera (un widget per riga) o Metà larghezza (due widget per riga). Il contenuto dipende dal layout e dalla dimensione del widget selezionata (S / M / L).
 
+Larghezza intera mostra:
+- Prima riga — Distanza dalla svolta + Uscita N (se disponibile)
+- Seconda riga — Numero di strada con scudo + nome della strada/via
 
-### Indicazioni colorate per la prossima svolta {#color-prompts-for-next-turn}
+Metà larghezza mostra:
+- Prima riga — Distanza dalla svolta
+- Seconda riga — Uscita N (se disponibile) + numero di strada con scudo + nome della strada/via
+
+**Prossima svolta** utilizza una freccia grande e supporta layout Larghezza intera / Metà larghezza nei pannelli Superiore / Inferiore. **Prossima svolta (piccola)** utilizza una freccia piccola con la distanza posizionata accanto alla freccia ed è destinata ai pannelli Sinistro / Destro. **Seconda prossima svolta** mostra la manovra dopo la prossima svolta e diventa attiva quando la seconda manovra è entro la distanza di avvicinamento.
+
+### Indicazioni colorate {#color-prompts}
 
 Questa tabella mostra il tempo approssimativo fino all'attivazione delle indicazioni e la corrispondente indicazione a colori delle frecce per eseguire la manovra. Per ulteriori informazioni, fare riferimento alla [documentazione tecnica](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) o all'articolo [Istruzioni vocali](../navigation/guidance/voice-navigation.md).
 
@@ -362,13 +374,9 @@ Questa tabella mostra il tempo approssimativo fino all'attivazione delle indicaz
 | 🟡 Giallo | 20 secondi     | In avvicinamento| Svolta tra `x` m   |
 | ⚪ Grigio   | > 100 secondi  | Lontano    | Prepararsi a svoltare |
 
+Lo stesso significato del colore si applica al widget Corsie. Il widget Corsie è mostrato in base alle impostazioni del tempo di avvicinamento e i colori delle corsie seguono lo stadio dell'istruzione vocale.
 
-### Corsie {#lanes}
-
-![Widget corsie](@site/static/img/widgets/lanes_widget.png)
-
-Il widget **Corsie** evidenzia la corsia corrente quando la navigazione è attiva e visualizza la disposizione delle corsie per la strada effettiva quando la navigazione è passiva. Un indicatore di distanza è mostrato anche sotto il diagramma delle corsie, che rappresenta la distanza rimanente fino alla manovra in cui si applica la guida sulle corsie. Questo widget è disponibile solo per i pannelli Superiore e Inferiore. I dati sono presi dal [progetto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
-
+<!--
 ### Indicazioni colorate per le corsie {#color-prompts-for-lanes}
 
 Visualizza un widget in base alle impostazioni del tempo di avvicinamento. Il colore della corsia è associato alle [istruzioni vocali](../navigation/guidance/voice-navigation.md) e al tempo rimanente per eseguire la manovra.
@@ -377,7 +385,7 @@ Visualizza un widget in base alle impostazioni del tempo di avvicinamento. Il co
 | :-------- | :------------- | :---------- | :---------- |
 | 🟢 Verde  | 5 secondi      | Vicino    | [Svolta ora](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 | 🟡 Giallo | 20 secondi     | In avvicinamento | [Svolta tra X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+-->
 
 
 ## Widget avvisi {#alert-widget}
@@ -429,31 +437,13 @@ Nelle **Impostazioni** del widget è possibile scegliere di visualizzare sempre 
 
 <TabItem value="android" label="Android">  
 
- ![Nome via senza prossima svolta](@site/static/img/widgets/without_next_turn_and.png) 
+ ![Nome via senza prossima svolta](@site/static/img/widgets/without_next_turn_and.png) ![Nome via con prossima svolta](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Nome via senza prossima svolta iOS](@site/static/img/widgets/without_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-- Quando si cambia direzione, il widget mostra lo schema della manovra e il nome (designazione) della strada in cui si deve svoltare con una freccia gialla (Informazioni prossima svolta = ATTIVA).
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Nome via con prossima svolta](@site/static/img/widgets/with_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Nome via con prossima svolta iOS](@site/static/img/widgets/with_next_turn_ios.png) 
+ ![Nome via senza prossima svolta iOS](@site/static/img/widgets/without_next_turn_ios.png) ![Nome via con prossima svolta iOS](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
@@ -463,6 +453,7 @@ Nelle **Impostazioni** del widget è possibile scegliere di visualizzare sempre 
 |:------------|:------------|
 | Abilita | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Aggiungi widget → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Aggiungi widget → <Translate android="true" ids="map_widget_top_text"/>* |
+| Impostazioni | Selezionare per visualizzare sempre **il nome della via corrente** o visualizzare **il nome della via successiva** quando ci si avvicina alla manovra |
 | Con un tocco | Apre un menu contestuale con Impostazioni (attiva/disattiva Informazioni prossima svolta) ed Elimina |
 
 

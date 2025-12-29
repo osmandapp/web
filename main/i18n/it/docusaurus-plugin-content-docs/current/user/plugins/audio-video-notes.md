@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Note audio/video
 ---
@@ -245,7 +245,7 @@ Per gestire una nota in I miei luoghi, tocca i tre punti verticali della nota ne
 
 <TabItem value="android" label="Android">
 
-![Il widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![Il widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![Il widget](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ Aggiungere un widget allo schermo è necessario se si preferisce evitare di cerc
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - inizia a scattare foto.
 
-    ![Il widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+### Dispositivi di input esterni {#external-input-devices}   
 
-**Utilizzo di dispositivi di input esterni (*Android*)**. Se utilizzi un [dispositivo di input esterno](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), puoi avviare e interrompere le Note audio/video senza toccare lo schermo. Per farlo, assegna l'azione “Aggiungi nota audio” o “Aggiungi nota video” a un tasto:<br/>
+Se utilizzi un [dispositivo di input esterno](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*), puoi avviare e interrompere le Note audio/video senza toccare lo schermo. Per farlo, assegna l'azione “Aggiungi nota audio” o “Aggiungi nota video” a un tasto:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Una volta assegnato, il tasto funziona come un interruttore:
@@ -400,7 +400,7 @@ Ci sono due modi per creare un waypoint: automaticamente e manualmente.
 
 - Sulla mappa, un waypoint e una nota audio, video o fotografica possono essere visibili o meno. Ciò è determinato da quale livello è attualmente attivato per il profilo.
 
-- Quando né il livello Tracce né il livello Registrazione sono attivati, sia i waypoint che le note possono essere mostrati toccandoli in I miei luoghi. In questo caso, la mappa mostra le posizione della nota toccata o, rispettivamente, le posizioni di tutti i waypoint della traccia toccata.
+- Quando né il livello Tracce né il livello Registrazione sono attivati, sia i waypoint che le note possono essere mostrati toccandoli in I miei luoghi. In questo caso, la mappa mostra le posizione della nota toccata o, rispettivamente, le posizione di tutti i waypoint della traccia toccata.
 
 | Visibile | Livello attivato |
 | --- | --- |

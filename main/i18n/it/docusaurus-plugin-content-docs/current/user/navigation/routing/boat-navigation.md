@@ -1,5 +1,5 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
 title:  Navigazione per barca
 ---
@@ -67,7 +67,7 @@ Tipicamente, la *Navigazione per barca* viene utilizzata con il profilo barca (l
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Consente di utilizzare corsi d'acqua e canali di scolo per la navigazione in barca. L'attivazione di questa opzione può essere utile per piccole imbarcazioni come canoe, kayak, zattere, barche a remi. |  [Corsi d'acqua](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) sono corsi d'acqua naturali troppo stretti per essere definiti fiumi. [Canali di scolo](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) sono corsi d'acqua artificiali, tipicamente rivestiti di cemento o materiale simile, utilizzati per trasportare l'acqua in eccesso, come l'acqua piovana o di scarico.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  L'attivazione di questa opzione consente di utilizzare corsi d'acqua intermittenti per la navigazione in barca.   | Il tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) viene utilizzato per indicare che un corso d'acqua non contiene acqua in modo permanente.  |
-| *Consenti traghetti* | Consente la navigazione tramite rotte dei traghetti. | Utilizza `route=ferry` dove presente in OSM. Non sono richieste nuove mappe. |
+| *Consenti traghetti* | Consente la navigazione tramite rotte dei traghetti. | Di solito le [rotte dei traghetti](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) sono inaccessibili per piccole imbarcazioni in base alla definizione OSM. |
 
 :::note Navigazione in acqua e limitazioni
 
@@ -100,13 +100,13 @@ Questi tipi di navigazione per il profilo barca possono essere attivati tramite 
 Quando si utilizzano i tipi di navigazione Diretta al punto e Barca, saranno necessari i [dati delle curve di profondità](../../plugins/nautical-charts.md#nautical-map-style), che possono essere abilitati e impostati in *Configura mappa*.
 :::
 
-Il [tipo di navigazione diretta al punto](./direct-to-point-routing.md) può essere utilizzato con il profilo barca quando si desidera navigare in acque aperte senza seguire alcun percorso o corso d'acqua specifico. Questo tipo di navigazione consente di impostare un punto di destinazione e OsmAnd calcolerà un percorso diretto a quel punto dalla posizione corrente. Questo tipo di navigazione non considera le caratteristiche della propria barca come velocità minima e massima, altezza e larghezza. Il percorso non verrà ricalcolato in caso di deviazione.
+Il [tipo di navigazione diretta al punto](./direct-to-point-routing.md) può essere utilizzato con il profilo barca quando si desidera navigare la propria barca in acque aperte senza seguire alcun percorso o corso d'acqua specifico. Questo tipo di navigazione consente di impostare un punto di destinazione e OsmAnd calcolerà un percorso diretto a quel punto dalla posizione corrente. Questo tipo di navigazione non considera le caratteristiche della propria barca come velocità minima e massima, altezza e larghezza. Il percorso non verrà ricalcolato in caso di deviazione.
 
 ![Tipo di navigazione diretta al punto Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
 
 ### Navigazione in linea retta per barca {#straight-line-routing-for-boat}
 
-Il [tipo di navigazione in linea retta](./straight-line-routing) può essere utilizzato con il profilo barca quando si desidera navigare in acque aperte ma si preferisce seguire una linea retta piuttosto che un percorso curvo verso il punto di destinazione. Questo può essere utile quando si naviga verso un punto distante, visibile all'orizzonte, per esempio.
+Il [tipo di navigazione in linea retta](./straight-line-routing) può essere utilizzato con il profilo barca quando si desidera navigare la propria barca in acque aperte ma si preferisce seguire una linea retta piuttosto che un percorso curvo verso il punto di destinazione. Questo può essere utile quando si naviga verso un punto distante, visibile all'orizzonte, per esempio.
 
 ![Tipo di navigazione in linea retta Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
