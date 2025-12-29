@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title:  Widżety nawigacyjne
 ---
@@ -30,7 +30,7 @@ Widżety nawigacyjne w OsmAnd są zaprojektowane w celu ulepszenia zarówno **ak
 
 - **Wymagania:**  
   - Ustaw **cel**.  
-  - Oblicz **trasę** za pomocą funkcji *Wskazówki* (Directions).  
+  - Oblicz **trasę** za pomocą funkcji *Wskazówki*.  
   - **Rozpocznij** nawigację (wskazówki głosowe są opcjonalne).
   - Dostępne tylko podczas poruszania się po trasie.
 
@@ -98,7 +98,7 @@ Po wybraniu trasy i naciśnięciu przycisku **Start** otworzy się mapa z bież�
 
 |  |
 |:------------|
-| ***Przypięta lokalizacja*** |
+| ***Pinezka lokalizacji*** |
 | Twoja ***Bieżąca lokalizacja*** na wykresie zawiera ikonę lokalizacji, wysokość i wartość procentową nachylenia. Prawa strona widżetu zawiera najwyższą wysokość i nachylenie, ich średnią wartość oraz najniższą wartość na wybranym odcinku trasy widocznym na wykresie. |
 | ![punkt](@site/static/img/widgets/sch_1-1.png)|
 | ***Dodatkowe informacje*** |
@@ -325,6 +325,13 @@ Widżety *Wskazówki dotyczące trasy* zawierają informacje o:
 | Długie naciśnięcie    | **Następny zakręt**: Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) <br/> **Pasy**: Brak zmian. |
 
 
+### Pasy ruchu {#lanes}
+
+![Widżet pasów ruchu](@site/static/img/widgets/lanes_widget.png)
+
+Widżet **Pasy ruchu** podświetla bieżący pas, gdy nawigacja jest aktywna, i wyświetla układ pasów dla rzeczywistej drogi, gdy nawigacja jest pasywna. Wskaznik odległości jest również wyświetlany poniżej schematu pasów, wskazujący, jak daleko pozostało do manewru, w którym stosuje się wskazówki dotyczące pasów. Ten widżet jest dostępny tylko dla paneli górnych i dolnych. Dane pochodzą z projektu [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### Następny zakręt {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,16 +350,21 @@ Widżety *Wskazówki dotyczące trasy* zawierają informacje o:
 
 </Tabs>
 
-Widżety nawigacyjne **Następny zakręt**, **Następny zakręt (mały)**, **Drugi następny zakręt** mogą być umieszczone na dowolnym panelu dla wygody użytkownika. Jednak wyświetlane informacje różnią się w zależności od typu widżetu i jego umiejscowienia. Poniższa tabela podsumowuje zachowanie:
+Widżety nawigacyjne **Następny zakręt**, **Następny zakręt (mały)**, **Drugi następny zakręt** mogą być umieszczone na dowolnym panelu dla wygody użytkownika. Jednak wyświetlane informacje różnią się w zależności od typu widżetu i jego umiejscowienia. 
 
-|   Widżet/Panel   | Panel lewy    | Panel prawy   | Panel górny              | Panel dolny           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Następny zakręt**        | Tylko odległość | Tylko odległość | Nazwa ulicy + odległość | Nazwa ulicy + odległość |
-| **Następny zakręt (mały)**| Tylko odległość | Tylko odległość | Niedostępne          | Niedostępne          |
-| **Drugi następny zakręt** | Tylko odległość | Tylko odległość | Nazwa ulicy + odległość | Nazwa ulicy + odległość |
+W panelach górnych/dolnych widżety Następny zakręt i Drugi następny zakręt mogą być wyświetlane jako Pełna szerokość (jeden widżet na wiersz) lub Połowa szerokość (dwa widżety na wiersz). Zawartość zależy od układu i wybranego rozmiaru widżetu (S / M / L).
 
+Pełna szerokość pokazuje:
+- Pierwszy wiersz — Odległość do zakrętu + Wyjazd N (jeśli dostępny)
+- Drugi wiersz — Numer drogi z tarczą + nazwa drogi/ulicy
 
-### Kolorowe podpowiedzi dla następnego zakrętu {#color-prompts-for-next-turn}
+Połowa szerokość pokazuje:
+- Pierwszy wiersz — Odległość do zakrętu
+- Drugi wiersz — Wyjazd N (jeśli dostępny) + numer drogi z tarczą + nazwa drogi/ulicy
+
+**Następny zakręt** używa dużej strzałki i obsługuje układy Pełna szerokość / Połowa szerokość w panelach górnych/dolnych. **Następny zakręt (mały)** używa małej strzałki z odległością umieszczoną obok strzałki i jest przeznaczony dla paneli lewych/prawych. **Drugi następny zakręt** pokazuje manewr po następnym zakręcie i staje się aktywny, gdy drugi manewr znajduje się w odległości zbliżania.
+
+### Kolorowe podpowiedzi {#color-prompts}
 
 Ta tabela pokazuje przybliżony czas do aktywacji podpowiedzi i odpowiadające im kolorowe oznaczenie strzałek do wykonania manewru. Więcej informacji można znaleźć w [dokumentacji technicznej](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) lub w artykule [Komunikaty głosowe](../navigation/guidance/voice-navigation.md).
 
@@ -362,22 +374,18 @@ Ta tabela pokazuje przybliżony czas do aktywacji podpowiedzi i odpowiadające i
 | 🟡 Żółty | 20 sekund     | Zbliżanie się| Skręć za `x` m   |
 | ⚪ Szary   | > 100 sekund  | Daleko    | Przygotuj się do skrętu |
 
+To samo znaczenie kolorów dotyczy widżetu Pasów ruchu. Widżet Pasów ruchu jest wyświetlany zgodnie z ustawieniami czasu zbliżania, a kolory pasów odpowiadają etapowi komunikatu głosowego.
 
-### Pasy ruchu {#lanes}
+<!--
+### Color Prompts for Lanes {#color-prompts-for-lanes}
 
-![Widżet pasów ruchu](@site/static/img/widgets/lanes_widget.png)
+Displays a widget by approach time settings. Lane's color is associated with [voice prompts](../navigation/guidance/voice-navigation.md) and time remaining to perform the maneuver.
 
-Widżet **Pasy ruchu** podświetla bieżący pas, gdy nawigacja jest aktywna, i wyświetla układ pasów dla rzeczywistej drogi, gdy nawigacja jest pasywna. Wskaznik odległości jest również wyświetlany poniżej schematu pasów, wskazujący, jak daleko pozostało do manewru, w którym stosuje się wskazówki dotyczące pasów. Ten widżet jest dostępny tylko dla paneli górnych i dolnych. Dane pochodzą z projektu [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
-
-### Kolorowe podpowiedzi dla pasów ruchu {#color-prompts-for-lanes}
-
-Wyświetla widżet zgodnie z ustawieniami czasu zbliżania. Kolor pasa jest powiązany z [komunikatami głosowymi](../navigation/guidance/voice-navigation.md) i czasem pozostałym do wykonania manewru.
-
-| Kolor     | ~ Czas wyzwalania | Odległość    | Typ podpowiedzi |
+| Color     | ~ Trigger Time | Distance    | Prompt type |
 | :-------- | :------------- | :---------- | :---------- |
-| 🟢 Zielony  | 5 sekund      | Blisko    | [Skręć teraz](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-| 🟡 Żółty | 20 sekund     | Zbliżanie się | [Skręć za X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+| 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+| 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+-->
 
 
 ## Widżet alertów {#alert-widget}
@@ -429,40 +437,24 @@ W **Ustawieniach** widżetu możesz wybrać, aby zawsze wyświetlać **nazwę bi
 
 <TabItem value="android" label="Android">  
 
- ![Nazwa ulicy bez następnego zakrętu](@site/static/img/widgets/without_next_turn_and.png) 
+ ![Nazwa ulicy bez następnego zakrętu](@site/static/img/widgets/without_next_turn_and.png) ![Nazwa ulicy z następnym zakrętem](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Nazwa ulicy bez następnego zakrętu iOS](@site/static/img/widgets/without_next_turn_ios.png) 
+ ![Nazwa ulicy bez następnego zakrętu iOS](@site/static/img/widgets/without_next_turn_ios.png) ![Nazwa ulicy z następnym zakrętem iOS](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-- Gdy zmieniasz kierunek, widżet pokazuje schemat manewru i nazwę (oznaczenie) ulicy (drogi), na którą musisz skręcić z żółtą strzałką (Informacje o następnym zakręcie = WŁĄCZONE).
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Nazwa ulicy z następnym zakrętem](@site/static/img/widgets/with_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Nazwa ulicy z następnym zakrętem iOS](@site/static/img/widgets/with_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
 
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
+| Ustawienia | Wybierz, aby zawsze wyświetlać **nazwę bieżącej ulicy** lub wyświetlać **nazwę następnej ulicy** podczas zbliżania się do manewru |
 | Po dotknięciu | Otwiera menu kontekstowe z ustawieniami (przełącz Informacje o następnym zakręcie WŁĄCZONE/WYŁĄCZONE) i Usuń |
 
 
@@ -506,6 +498,6 @@ Wyświetla **nazwę**, **ikonę punktu** i 2 **odległości**:
 - [Przyciski na mapie](./map-buttons.md)
 - [Widżety informacyjne](./info-widgets.md)
 - [Widżety nawigacyjne](./nav-widgets.md)
-- [Linijka i linijka z promieniem](./radius-ruler.md)
+- [Linijka z promieniem i linijka](./radius-ruler.md)
 - [Widżety znaczników](./markers.md)
 - [Szybka akcja](./quick-action.md)

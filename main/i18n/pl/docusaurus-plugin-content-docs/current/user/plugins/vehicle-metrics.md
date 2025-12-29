@@ -1,7 +1,7 @@
 ---
-source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
+source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
 sidebar_position: 16
-title:  Dane pojazdu
+title:  Metryki pojazdu
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,10 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Przegląd {#overview}
 
 :::info Płatna funkcja
-Wtyczka Dane pojazdu jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne za darmo w OsmAnd.
+Wtyczka Metryki pojazdu jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne za darmo w OsmAnd.
 :::
 
-**Wtyczka Dane pojazdu** umożliwia monitorowanie danych pojazdu w czasie rzeczywistym za pośrednictwem [protokołu OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Użytkownicy mogą śledzić podstawowe wskaźniki, takie jak wydajność silnika, wydajność paliwową i prędkość, co pozwala na proaktywną konserwację i rozwiązywanie problemów z pojazdem.  
+**Wtyczka Metryki pojazdu** umożliwia monitorowanie danych pojazdu w czasie rzeczywistym za pośrednictwem [protokołu OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Użytkownicy mogą śledzić podstawowe wskaźniki, takie jak wydajność silnika, wydajność paliwową i prędkość, co pozwala na proaktywną konserwację i rozwiązywanie problemów z pojazdem.  
 
 [Skanery OBD-II](https://en.wikipedia.org/wiki/ELM327) są integralną częścią nowoczesnej diagnostyki samochodowej. Dzięki strumieniowaniu danych w czasie rzeczywistym użytkownicy uzyskują natychmiastowy wgląd w systemy pojazdu, co ułatwia konserwację zapobiegawczą i obniża koszty napraw. Narzędzia te są niezbędne zarówno do użytku osobistego, jak i w profesjonalnych serwisach samochodowych.
 
@@ -48,12 +48,12 @@ Wtyczka Dane pojazdu jest [płatną funkcją](../purchases/index.md) aplikacji O
 Aby korzystać z danych ze skanera OBD-II:
 
 1. [Kup](../purchases/) subskrypcję **OsmAnd Pro**. (*Prędkość pojazdu* i *Prędkość obrotowa silnika* są bezpłatne.)  
-2. [Włącz](../plugins/index.md#enable--disable) wtyczkę Dane pojazdu w sekcji Wtyczki w *Menu głównym*.
+2. [Włącz](../plugins/index.md#enable--disable) wtyczkę Metryki pojazdu w sekcji Wtyczki w *Menu głównym*.
 3. **Włącz** Bluetooth na swoim urządzeniu.
 4. [Podłącz](#pair-odb-ii-scanner) skaner OBD-II do portu w pojeździe.
 5. [Skonfiguruj](#scanner-settings) **ustawienia skanera**.
-6. [Dodaj](#widgets) **widżety Danych pojazdu**, aby wyświetlać dane na ekranie (opcjonalnie).
-7. [Użyj](#trip-recording) **wtyczki Zapis trasy**, aby rejestrować dane pojazdu.
+6. [Dodaj](#widgets) **widżety Metryk pojazdu** w celu wyświetlania danych na ekranie (opcjonalnie).
+7. [Użyj](#trip-recording)wtyczki **Zapis trasy**, aby rejestrować dane pojazdu.
 
 
 ### Parowanie skanera ODB-II {#pair-odb-ii-scanner}
@@ -81,8 +81,8 @@ Aby korzystać z danych ze skanera OBD-II:
 
 Podłącz skaner do portu w pojeździe i sparuj go za pomocą aplikacji:
 
-- Przejdź do *Menu → Wtyczki → Dane pojazdu → Ustawienia → Połącz* lub **+**.
-- Jeśli Dane pojazdu znajdują się w *Menu głównym*:  *Menu → Dane pojazdu → Ustawienia → Połącz* lub **+**.
+- Przejdź do *Menu → Wtyczki → Metryki pojazdu → Ustawienia → Połącz* lub **+**.
+- Jeśli Metryki pojazdu znajdują się w *Menu głównym*:  *Menu → Metryki pojazdu → Ustawienia → Połącz* lub **+**.
 
 Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 
@@ -93,7 +93,7 @@ Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 
 <TabItem value="android" label="Android">
 
-**Android.** Przejdź do: *Menu → Wtyczki → Dane pojazdu → OBD → menu z trzema kropkami*
+**Android.** Przejdź do: *Menu → Wtyczki → Metryki pojazdu → OBD → menu z trzema kropkami*
 
 |  |  |
 |--|--|
@@ -104,7 +104,7 @@ Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Przejdź do: *Menu → Wtyczki → Dane pojazdu → OBD → menu z trzema kropkami*
+**iOS.** Przejdź do: *Menu → Wtyczki → Metryki pojazdu → OBD → menu z trzema kropkami*
 
 |  |  |
 |--|--|
@@ -119,7 +119,7 @@ Wybierz swoje urządzenie OBD-II z listy i nawiąż połączenie.
 - **Zmień nazwę**. Pozwala przypisać niestandardową nazwę do czujnika w celu łatwiejszej identyfikacji.
 - **Zapomnij**. Usuwa wcześniej sparowany czujnik OBD-II z listy, co wymaga ponownego parowania w razie potrzeby.
 
-**Zachowanie ponownego połączenia** *(tylko Android)***:** OsmAnd automatycznie próbuje ponownie połączyć się z adapterem OBD-II po uruchomieniu aplikacji, rozpoczęciu nawigacji lub uruchomieniu Android Auto. Jeśli połączenie jest niedostępne, widżety Danych pojazdu wyświetlają „–”. Pojedyncze dotknięcie dowolnego widżetu Danych pojazdu spowoduje próbę ponownego połączenia z czujnikiem. Jeśli czujnik jest już podłączony, dotknięcie przełącza tryby wyświetlania widżetu jak zwykle.
+**Zachowanie ponownego połączenia:** OsmAnd automatycznie próbuje ponownie połączyć się z adapterem OBD-II po uruchomieniu aplikacji, rozpoczęciu nawigacji lub uruchomieniu Android Auto / CarPlay. Jeśli połączenie jest niedostępne, widżety Metryk pojazdu wyświetlają „–”. Pojedyncze dotknięcie dowolnego widżetu Metryk pojazdu spowoduje próbę ponownego połączenia z czujnikiem. Jeśli czujnik jest już podłączony, dotknięcie przełącza tryby wyświetlania widżetu jak zwykle.
 
 
 ## Lista metryk {#metrics-list}
@@ -203,7 +203,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 <TabItem value="android" label="Android">
 
-**Android.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Dane pojazdu*
+**Android.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Metryki pojazdu*
 
 | | |
 |--|--|
@@ -214,7 +214,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 <TabItem value="ios" label="iOS">
 
-**iOS.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Dane pojazdu*
+**iOS.** Przejdź do: *Menu → Konfiguruj ekran → Widżety → Wybierz panel → Metryki pojazdu*
 
 | | |
 |--|--|
@@ -226,7 +226,7 @@ Te tagi ułatwiają identyfikację i wykorzystanie określonych danych pojazdu p
 
 
 
-[Widżety Danych pojazdu](../widgets/info-widgets.md#vehicle-metrics-widgets) są automatycznie dodawane po włączeniu wtyczki. Jeśli nie są widoczne, można je dodać ręcznie za pomocą menu [Konfiguruj ekran](../widgets/configure-screen.md).
+[Widżety metryk pojazdu](../widgets/info-widgets.md#vehicle-metrics-widgets) są automatycznie dodawane po włączeniu wtyczki. Jeśli nie są widoczne, można je dodać ręcznie za pomocą menu [Konfiguruj ekran](../widgets/configure-screen.md).
 
 ### Ustawienia widżetu {#widget-settings}
 

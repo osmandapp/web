@@ -1,5 +1,5 @@
 ---
-source-hash: e2fafc2d2918ce6f0758531fadbde46e18997fd1f84eaa0251558562c491b867
+source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
 sidebar_position: 5
 title:  Schematy kolorów
 ---
@@ -20,11 +20,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::info Płatna funkcja
 
-Schematy kolorów są używane jako część płatnych funkcji [Maps+](../purchases/index.md) i Pro <ProFeature />.
+Schematy kolorów są używane jako część płatnych funkcji [Maps+](../purchases/index.md) i Pro <ProFeature />.  
 
 :::
 
-Schematy kolorów są używane w [kolorowaniu tras i śladów](#tracks-routes), [terenie mapy](#terrain) i [mapie pogody](#weather), i są reprezentowane jako oddzielna część informacji, które można eksportować, importować i edytować w celu zmiany schematu kolorów mapy i wizualizacji danych.
+Schematy kolorów są używane w [kolorowaniu tras](#tracks-routes), [terenie mapy](#terrain) i [mapie pogody](#weather), i są reprezentowane jako oddzielna część informacji, które można eksportować, importować i edytować w celu zmiany schematu kolorów mapy i wizualizacji danych.
 
 Dane palety kolorów są dostępne w menu [*Mapy i zasoby*](../personal/maps-resources.md#local-menu).
 
@@ -91,8 +91,8 @@ Pliki terenu (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.tx
 
 Wizualizacje gradientu linii wykorzystują pliki palet (`route_<type_name>_<palette_name>.txt`) do kolorowania śladów GPX i tras:
 
-- Dla [tras](../navigation/guidance/map-during-navigation.md#color): *Prędkość (`route_speed_default.txt`), Nachylenie (`route_slope_default.txt`)* i *Wysokość (wysokości) (`route_elevation_default.txt`)*.
-- Dla [śladów GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Prędkość, Nachylenie, Maks. prędkość (`route_maxspeed_default.txt`)* i *Wysokość (wysokości)* lub informacje z *czujników zewnętrznych*.
+- Dla [tras](../navigation/guidance/map-during-navigation.md#color): *Prędkość (`route_speed_default.txt`), Nachylenie (`route_slope_default.txt`),* i *Wysokość (`route_elevation_default.txt`)*.
+- Dla [śladów GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Prędkość, Nachylenie, Maks. prędkość (`route_maxspeed_default.txt`)* i *Wysokość*, lub informacje z *czujników zewnętrznych*.
 
 ### Ulubione i punkty trasy {#favorites-waypoints}
 
@@ -214,9 +214,9 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-**Szybka akcja** do zmiany palety dla terenu. Dodano możliwość przełączania się między schematami kolorów terenu, podobnie jak przełączanie się między warstwami. Można to zrobić za pomocą narzędzia [Szybkie akcje](../widgets/quick-action.md#configure-map).  
+**Szybka akcja** do zmiany palety dla [terenu](../../user/plugins/topography.md#modify-color-scheme). Dodano możliwość przełączania się między schematami kolorów terenu, podobnie jak przełączanie się między warstwami. Można to zrobić za pomocą narzędzia [Szybkie akcje](../widgets/quick-action.md#configure-map).  
 
-Podczas konfigurowania tej akcji możesz wybrać jedną lub wiele palet kolorów terenu. Jeśli wybrano kilka palet, każde naciśnięcie przycisku będzie przełączać między wybranymi paletami. Możesz również włączyć lub wyłączyć pośredni dialog, aby pokazać pełną listę palet lub przełączać się między nimi cicho w predefiniowanej kolejności.
+Podczas konfigurowania tej akcji możesz wybrać jedną lub wiele palet kolorów terenu. Jeśli wybrano kilka palet, każde naciśnięcie przycisku będzie cyklować przez wybrane palety. Możesz również włączyć lub wyłączyć pośredni dialog, aby pokazać pełną listę palet lub przełączać się między nimi bez dialogu w predefiniowanej kolejności.
 
 
 ## Powiązane artykuły {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
+source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
 sidebar_position: 2
 ---
 
@@ -38,7 +38,7 @@ Data wydania 11/2025:
 - Ulepszony interfejs użytkownika do dodawania metryk ciężarówki w ustawieniach profilu Ciężarówka.
 - Więcej parametrów dla pokazywania trasy na mapie.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### Wersja 5.1 {#version-51}
 
@@ -282,7 +282,7 @@ Data wydania 08/2021:
 Data wydania 02/2021:
 
 - Dodano opcję eksportu i importu wszystkich danych, w tym ustawień, zasobów, moich miejsc.
-- Planowanie trasy: wykresy dla segmentów trasy, oraz dodano możliwość tworzenia i edytowania wielu segmentów trasy.
+- Planuj trasę: wykresy dla segmentów ścieżek z trasą, oraz dodano możliwość tworzenia i edytowania wielu segmentów ścieżek.
 - Dodano metodę uwierzytelniania OAuth dla OpenStreetMap, ulepszono interfejs użytkownika okien dialogowych OSM.
 - Obsługa niestandardowych kolorów dla ulubionych i punktów trasy.
 
@@ -461,7 +461,7 @@ Data wydania: 02/2018
 Data wydania 10/2017:
 
 - Całkowicie przebudowane znaczniki mapy z wytycznymi i planowaniem trasy
-- Narzędzie do pomiaru odległości, oferujące funkcję przyciągania do drogi i zapisywania punktów jako ścieżki
+- Narzędzie do pomiaru odległości, oferujące funkcję przyciągania do drogi i zapisywania punktów jako ścieżkę
 - OsmAnd Live: poprawki błędów, świeże dane na serwerze co 15 minut, aktualizacje zaimplementowane w nawigacji
 
 <DownloadRelease blog="osmand-2-8" release="net.osmand-2.8.2.apk" />

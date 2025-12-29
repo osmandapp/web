@@ -1,5 +1,5 @@
 ---
-source-hash: a45f8d3e0c7440482cc20c9fa56b987c3a3c65ecfc717d9d8abb99c630f8d16e
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Topografia
 ---
@@ -99,7 +99,7 @@ W celu zapewnienia stabilnej pracy i oszczędności zasobów można pobrać map�
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Pobieranie linii konturowych Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Pobieranie linii konturowych Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Pobieranie map Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Pobieranie map Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +107,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resourc
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Pobieranie linii konturowych iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Pobieranie linii konturowych iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Pobieranie map iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Pobieranie map iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -250,7 +250,7 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 ### Modyfikuj schemat kolorów {#modify-color-scheme}
 
 :::info Płatna funkcja
-*Modyfikuj schemat kolorów* to płatna funkcja **OsmAnd Pro** dla [iOS](../purchases/ios.md#pro-features) i [Androida](../purchases/android.md#pro-features) <ProFeature />.
+*[Modyfikuj schemat kolorów](../../user/personal/color-palette-schemes.md#terrain)* to płatna funkcja **OsmAnd Pro** dla [iOS](../purchases/ios.md#pro-features) i [Androida](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -289,7 +289,7 @@ Funkcja *Widoczność* służy do regulacji przezroczystości cieni dla Cieniowa
 
 ![Powiększenie](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-Funkcja *Poziomy skali* pozwala ustawić minimalne i maksymalne wartości poziomów powiększenia mapy, w zakresie od 4 do 19, przy których będą wyświetlane warstwy mapy Cieniowanie wzgórz lub Nachylenie.
+Funkcja *Poziomy powiększenia* pozwala ustawić minimalne i maksymalne wartości poziomów powiększenia mapy, w zakresie od 4 do 19, przy których będą wyświetlane warstwy mapy Cieniowanie wzgórz lub Nachylenie.
 
 ### Rozmiar pamięci podręcznej {#cache-size}
 
@@ -314,7 +314,7 @@ Funkcja *Poziomy skali* pozwala ustawić minimalne i maksymalne wartości poziom
 
 ![Szybka akcja dla Terenu](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Możesz użyć przycisków *Szybkiej akcji* na ekranie mapy, aby przełączać widoczność warstw [Linii konturowych](#contour-lines), [Terenu](#terrain) oraz [schematu kolorów Terenu](#default-color-scheme). W zależności od warstwy wybranej w menu Konfiguruj mapę, przypisanie akcji *Teren* do przycisku spowoduje wyświetlenie *Cieniowania wzgórz*, *Nachylenia* lub *Wysokości*.  
+Możesz użyć przycisków *Szybkiej akcji* na ekranie mapy, aby przełączać widoczność warstw [Linii konturowych](#contour-lines), [Terenu](#terrain) oraz [schematu kolorów terenu](../../user/personal/color-palette-schemes.md#quick-actions). W zależności od warstwy wybranej w menu Konfiguruj mapę, przypisanie akcji *Teren* do przycisku spowoduje wyświetlenie *Cieniowania wzgórz*, *Nachylenia* lub *Wysokości*.  
 
 Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topografia w menu Konfiguruj mapę. W artykule [Szybka akcja](../widgets/quick-action.md#configure-map) można znaleźć listę warstw dostępnych do wyświetlenia. Jeśli potrzebujesz szybkiego dostępu do tej konfiguracji mapy, użyj narzędzia *Przycisk niestandardowy*.
 
@@ -449,7 +449,7 @@ OsmAnd pozwala na łączenie wielu typów warstw mapy w celu uzyskania bardziej 
 
 - [Interakcja z mapą](../../user/map/interact-with-map.md)
 - [Ustawienia globalne](../../user/personal/global-settings.md)
-- [Mapy wektorowe (Style map)](../../user/map/vector-maps.md)
+- [Mapy wektorowe (Style mapy)](../../user/map/vector-maps.md)
 
 ### Częste problemy i rozwiązania {#common-issues-and-solutions}
 

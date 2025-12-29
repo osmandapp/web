@@ -1,5 +1,5 @@
 ---
-source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
+source-hash: 1f88b8a69546be11fe397f39ef6e1255bf0e2760eeb2883d1ca6539d40dd08af
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -53,11 +53,11 @@ Aplikację można pobrać, korzystając z tego linku - [OsmAnd Maps w Apple App 
 
 Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA i Europy. W innych regionach ceny są ekwiwalentem w lokalnych walutach.
 
+<!--
 
+:::danger Christmas sale
 
-:::danger Black Friday prices
-
-*Hurry up! This offer is only available until* **November 30 (23:00 CET)**.
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
 
 :::
 
@@ -66,21 +66,21 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
-| **Cena (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Cena (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
-<!--
+-->
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
+| **Cena (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Cena (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
--->
+
 
 ### Funkcje darmowe i płatne {#free-and-paid-features}
 
@@ -136,6 +136,7 @@ Obecnie subskrypcja Pro obejmuje następujące funkcje:
 | [Wtyczka Pogoda](../plugins/weather.md) | Godzinowa prognoza na 24h z 7-dniowym wyprzedzeniem na mapie. |
 | [Wtyczka Metryki pojazdu (OBD-II)](../plugins/vehicle-metrics.md) | Umożliwia podłączenie skanera OBD-II w celu wyświetlania szczegółowych danych pojazdu w aplikacji OsmAnd i przechowywania informacji w zapisach tras. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne w darmowej wersji OsmAnd.  |
 | [Dostosuj linię trasy](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Zmiana koloru i szerokości linii trasy podczas nawigacji. |
+| [Modyfikuj schemat kolorów](../../user/plugins/topography.md#modify-color-scheme) | Pozwala dostosować wygląd mapy poprzez wybór lub import palet kolorów. Możesz edytować wbudowane schematy lub używać własnych plików palet, aby spersonalizować kolory mapy i trasy. |
 
 
 ## Jak kupić {#how-to-buy}
