@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title:  Navigatiewidgets
 ---
@@ -325,6 +325,13 @@ De *Routebegeleiding*-widgets bevatten informatie over:
 | Lang indrukken    | **Volgende afslag**: Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Rijstroken**: Geen wijzigingen. |
 
 
+### Rijstroken {#lanes}
+
+![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+
+De **Rijstroken**-widget markeert de huidige rijstrook wanneer de navigatie actief is en toont de rijstrookindeling voor de huidige weg wanneer de navigatie passief is. Een afstandsindicator wordt ook onder het rijstrookschema weergegeven, die aangeeft hoe ver het nog is tot de manoeuvre waarvoor de rijstrookbegeleiding geldt. Deze widget is alleen beschikbaar voor de Boven- en Onderpanelen. De gegevens zijn afkomstig van het [OpenStreetMap-project](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### Volgende afslag {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,16 +350,21 @@ De *Routebegeleiding*-widgets bevatten informatie over:
 
 </Tabs>
 
-De navigatiewidgets **Volgende afslag**, **Volgende afslag (klein)**, **Tweede volgende afslag** kunnen op elk paneel worden geplaatst voor gebruiksgemak. De weergegeven informatie verschilt echter afhankelijk van het widgettype en de plaatsing. De onderstaande tabel vat het gedrag samen:
+De navigatiewidgets **Volgende afslag**, **Volgende afslag (klein)**, **Tweede volgende afslag** kunnen op elk paneel worden geplaatst voor gebruiksgemak. De weergegeven informatie verschilt echter afhankelijk van het widgettype en de plaatsing. 
 
-|   Widget/Paneel   | Linkerpaneel    | Rechterpaneel   | Bovenpaneel              | Onderpaneel           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Volgende afslag**        | Alleen afstand | Alleen afstand | Straatnaam + afstand | Straatnaam + afstand |
-| **Volgende afslag (klein)**| Alleen afstand | Alleen afstand | Niet beschikbaar          | Niet beschikbaar          |
-| **Tweede volgende afslag** | Alleen afstand | Alleen afstand | Straatnaam + afstand | Straatnaam + afstand |
+In Boven-/Onderpanelen kunnen de Volgende afslag- en Tweede volgende afslag-widgets worden weergegeven als Volle breedte (één widget per rij) of Halve breedte (twee widgets per rij). De inhoud hangt af van de lay-out en de geselecteerde widgetgrootte (S / M / L).
 
+Volle breedte toont:
+- Eerste regel — Afstand tot de afslag + Uitgang N (indien beschikbaar)
+- Tweede regel — Wegenummer met een schild + weg-/straatnaam
 
-### Kleuraanwijzingen voor Volgende Afslag {#color-prompts-for-next-turn}
+Halve breedte toont:
+- Eerste regel — Afstand tot de afslag
+- Tweede regel — Uitgang N (indien beschikbaar) + wegenummer met een schild + weg-/straatnaam
+
+**Volgende afslag** gebruikt een grote pijl en ondersteunt Volle breedte-/Halve breedte-lay-outs in Boven-/Onderpanelen. **Volgende afslag (klein)** gebruikt een kleine pijl met de afstand naast de pijl en is bedoeld voor de Linker-/Rechterpanelen. **Tweede volgende afslag** toont de manoeuvre na de volgende afslag en wordt actief wanneer de tweede manoeuvre binnen de naderingsafstand ligt.
+
+### Kleuraanwijzingen {#color-prompts}
 
 Deze tabel toont de geschatte tijd totdat de aanwijzingen worden geactiveerd en de bijbehorende kleurindicatie van de pijlen om de manoeuvre uit te voeren. Voor meer informatie, raadpleeg de [technische documentatie](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) of het artikel [Spraakprompts](../navigation/guidance/voice-navigation.md).
 
@@ -362,22 +374,18 @@ Deze tabel toont de geschatte tijd totdat de aanwijzingen worden geactiveerd en 
 | 🟡 Geel | 20 seconden     | Naderend| Sla af over `x` m   |
 | ⚪ Grijs   | > 100 seconden  | Ver weg    | Bereid u voor om af te slaan |
 
+Dezelfde kleurdefinitie geldt voor de Rijstroken-widget. De Rijstroken-widget wordt weergegeven volgens de naderingstijdinstellingen, en de kleuren van de rijstroken volgen het stadium van de spraakprompt.
 
-### Rijstroken {#lanes}
+<!--
+### Color Prompts for Lanes {#color-prompts-for-lanes}
 
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+Displays a widget by approach time settings. Lane's color is associated with [voice prompts](../navigation/guidance/voice-navigation.md) and time remaining to perform the maneuver.
 
-De **Rijstroken**-widget markeert de huidige rijstrook wanneer de navigatie actief is en toont de rijstrookindeling voor de huidige weg wanneer de navigatie passief is. Een afstandsindicator wordt ook onder het rijstrookschema weergegeven, die aangeeft hoe ver het nog is tot de manoeuvre waarvoor de rijstrookbegeleiding geldt. Deze widget is alleen beschikbaar voor de Boven- en Onderpanelen. De gegevens zijn afkomstig van het [OpenStreetMap-project](https://wiki.openstreetmap.org/wiki/Key:turn).
-
-### Kleuraanwijzingen voor Rijstroken {#color-prompts-for-lanes}
-
-Toont een widget op basis van de naderingstijdinstellingen. De kleur van de rijstrook is gekoppeld aan [spraakprompts](../navigation/guidance/voice-navigation.md) en de resterende tijd om de manoeuvre uit te voeren.
-
-| Kleur     | ~ Activeringstijd | Afstand    | Type aanwijzing |
+| Color     | ~ Trigger Time | Distance    | Prompt type |
 | :-------- | :------------- | :---------- | :---------- |
-| 🟢 Groen  | 5 seconden      | Dichtbij    | [Sla nu af](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-| 🟡 Geel | 20 seconden     | Naderend | [Sla af over X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+| 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+| 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+-->
 
 
 ## Waarschuwingswidget {#alert-widget}
@@ -429,40 +437,24 @@ In de **Instellingen** van de widget kunt u selecteren om altijd **de huidige st
 
 <TabItem value="android" label="Android">  
 
- ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) 
+ ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) 
+ ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-- Wanneer u van richting verandert, toont de widget het schema van de manoeuvre en de naam (aanduiding) van de straat (weg) waar u naartoe moet afslaan met een gele pijl (Informatie volgende afslag = AAN).
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget toevoegen → <Translate android="true" ids="map_widget_top_text"/>* |
+| Instellingen | Selecteer om altijd **de huidige straatnaam** weer te geven of **de volgende straatnaam** weer te geven bij nadering van de manoeuvre |
 | Door te tikken | Opent een contextmenu met Instellingen (schakel Informatie volgende afslag IN/UIT) en Verwijderen |
 
 

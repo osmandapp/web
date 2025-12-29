@@ -1,5 +1,5 @@
 ---
-source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
+source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
@@ -215,9 +215,9 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 |          | <Translate android="true" ids="si_mi_feet"/> | 0,62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0,62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0,62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>Eenheden van lengte zijn van toepassing op horizontale afstandswaarden (bijv. rij-/routeafstanden en manoeuvreafstanden in navigatie). |
 |  |  |  |
-| **Eenheden van hoogte** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft |
+| **Eenheden van hoogte** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>Eenheden van hoogte zijn van toepassing op hoogte-/verhogingswaarden en gerelateerde metrieken (bergop/bergaf, hoogtebereik) in Hoogtewidgets, Navigatie-route-info en Trackstatistieken.<br/>Standaard is Eenheden van hoogte gesynchroniseerd met Eenheden van lengte en wordt onafhankelijk alleen nadat de gebruiker deze handmatig heeft gewijzigd. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Voorbeeld: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Voorbeeld: 50°7.393′ 19°55.941′ (Lat Long)  |
@@ -234,7 +234,7 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 |  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
-|          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
+|          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
@@ -406,7 +406,7 @@ Het [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Uiterlijk profiel](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
+![Uiterlijk profielen](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
 
 </TabItem>
 
@@ -414,7 +414,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,pr
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Uiterlijk profiel](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Uiterlijk profielen](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
 
 </TabItem>
 

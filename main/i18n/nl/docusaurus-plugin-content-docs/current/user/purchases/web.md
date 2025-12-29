@@ -1,5 +1,5 @@
 ---
-source-hash: 9f4eacf3ab926b0fc0d1086f0b2c0e8318d07b76b6b1173f2bfea26d1829863c
+source-hash: 95e66b93e0c5a981ee18f89cb1798bfb0b845b2b0d468d645cf6efd637edebac
 sidebar_position: 3
 title:  Webaankopen
 ---
@@ -37,42 +37,39 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 
 Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in andere regio's worden automatisch door het betalingsplatform omgerekend naar de lokale valuta.
 
-
-
-
-:::danger Black Friday-prijzen
-
-*Snel zijn! Dit aanbod is alleen beschikbaar tot* **30 november (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
-| **Prijs (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
-| **Prijs (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
-
-:::note 
-Door een abonnement aan te schaffen via onze [website](https://osmand.net/pricing) tegen een kortingstarief,  
-krijgt u een 2-jarig kortingsplan.  
-Vanaf het derde jaar geldt de volledige prijs.
-:::
-
 <!--
 
+
+:::danger Christmas sale
+
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+
+:::
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
+
+:::note 
+By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
+you receive a 2-year discounted plan.  
+Starting from the third year, the full price will apply.
+:::
 
 -->
+
+|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
+| **Prijs (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
+| **Prijs (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+
+
 
 ### Gratis en betaalde functies {#free-and-paid-features}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
+source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
 sidebar_position: 15
 title:  Ritten Registreren
 ---
@@ -166,7 +166,7 @@ Hier is wat u erop kunt vinden:
     - ***Android***. Voor de ***Y-as*** op de grafiek kunt u *tot twee parameters* selecteren uit alle beschikbare gegevens zoals *Hoogte*, *Helling*, *Snelheid* en [informatie van externe sensoren](../plugins/external-sensors.md#trip-recording). Voor de ***X-as***, selecteer om ofwel *Afstand*, *Tijd* of *Tijd van de dag* weer te geven.
     - ***iOS***. De parameters zijn georganiseerd in tabbladen *Overzicht*, *Hoogte* en *Snelheid* met de juiste waarden voor de Y-as en *Afstand* voor de X-as.
 
-- **Statistiek**. Voor Android wordt een constante set statistische gegevens weergegeven, onafhankelijk van de grafiekinstellingen: *Afstand*, *Tijdsduur*, *Stijgen*, *Dalen*, *Gemiddelde snelheid*. Voor iOS heeft elk tabblad, Overzicht, Hoogte en Snelheid, een andere gegevensset.
+- **Statistiek**. Voor Android wordt een constante set statistische gegevens weergegeven, onafhankelijk van de grafiekinstellingen: *Afstand*, *Tijdsduur*, *Stijgen*, *Dalen*, *Gemiddelde snelheid*. Voor iOS heeft elk tabblad, Overzicht, Houding en Snelheid, een andere gegevensset.
 
 Voor een meer gedetailleerde weergave kunt u **de grafiek schalen**:
 
@@ -297,7 +297,7 @@ Voordat u begint met het volgen van uw ritten, moet u de **plug-in Ritten Regist
 | **Voertuigmetrieken** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van een [OBD-II scanner](../plugins/vehicle-metrics.md#trip-recording) worden gelogd in het GPX-bestand. Alleen weergegeven wanneer de [plug-in Voertuigmetrieken](../plugins/vehicle-metrics.md) is ingeschakeld.<br />*Opmerking*: U kunt toevoegen welke metrieken u wilt opnemen in het GPX-bestand uit de lijst: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Opslagmap voor tracks** (*Android*) | Bepaalt waar in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* opgenomen tracks worden opgeslagen. Opties zijn onder meer het opslaan van alle tracks in de map Rec of het organiseren ervan per maand, zoals Rec/jjjjj-mm. |
 | **Melding** | Regelt de weergave van een systeemmelding voor [ritregistratie](#notifications) in het meldingengebied van het apparaat, waarmee u ritten kunt starten. |
-| **Online tracking** (*Android*) | Maakt real-time tracking van uw locatie mogelijk door opgenomen punten naar een opgegeven URL te sturen. Het trackinginterval bepaalt hoe vaak punten worden verzonden, en de tijdbuffer slaat punten op wanneer er geen internetverbinding is.<details><summary>*Opmerking*</summary>Als deze optie is ingeschakeld en de trackregistratie bezig is, wordt de Afstand/Start-Stop (REC) widget **groen** in plaats van **rood**, wat aangeeft dat elk opgenomen punt wordt verzonden naar een opgegeven URL. Het veld **Webadres** stelt u in staat de URL in te voeren met het volgende parameterformaat:<ul><li>`lat={0}`: Breedtegraad</li><li>`lon={1}`: Lengtegraad</li><li>`timestamp={2}`: Tijdstempel (Unix-tijd)</li><li>`hdop={3}`: Horizontale dilutie van precisie</li><li>`altitude={4}`: Hoogte</li><li>`speed={5}`: Snelheid</li><li>`bearing={6}`: Peiling (bewegingsrichting)</li><li>`eta={7}`: Geschatte aankomsttijd (Unix-tijd)</li><li>`etfa={8}`: Geschatte tijd tot het eerste tussenpunt of eindpunt (Unix-tijd)</li><li>`eda={9}`: Geschatte afstand tot aankomst of een markering (in meters)</li><li>`edfa={10}`: Geschatte afstand tot het eerste tussenpunt of eindpunt (in meters)</li></ul>U kunt het **Trackinginterval** instellen om te specificeren hoe vaak locatiepunten worden verzonden, met opties variërend van 0 seconden tot 5 minuten. Daarnaast bepaalt de parameter **Tijdbuffer** hoe lang locatiepunten worden opgeslagen als er geen internetverbinding is, zodat gegevens worden opgeslagen en verzonden wanneer de verbinding wordt hersteld.</details> |
+| **Online tracking** (*Android*) | Maakt real-time tracking van uw locatie mogelijk door opgenomen punten naar een opgegeven URL te sturen. Het trackinginterval bepaalt hoe vaak punten worden verzonden, en de tijdbuffer slaat punten op wanneer er geen internetverbinding is.<details><summary>*Opmerking*</summary>Als deze optie is ingeschakeld en de trackregistratie bezig is, wordt de Afstand/Start-Stop (REC) widget **groen** in plaats van **rood**, wat aangeeft dat elk opgenomen punt wordt verzonden naar een opgegeven URL. Het veld **Webadres** stelt u in staat de URL in te voeren met het volgende parameterformaat:<ul><li>`lat={0}`: Breedtegraad</li><li>`lon={1}`: Lengtegraad</li><li>`timestamp={2}`: Tijdstempel (Unix-tijd)</li><li>`hdop={3}`: Horizontale dilutie van precisie</li><li>`altitude={4}`: Hoogte</li><li>`speed={5}`: Snelheid</li><li>`bearing={6}`: Peiling (bewegingsrichting)</li><li>`eta={7}`: Geschatte aankomsttijd (Unix-tijd)</li><li>`etfa={8}`: Geschatte tijd tot het eerste tussenpunt of eindpunt (Unix-tijd)</li><li>`eda={9}`: Geschatte afstand tot aankomst of een markering (in meters)</li><li>`edfa={10}`: Geschatte afstand tot het eerste tussenpunt of eindpunt (in meters)</li></ul>U kunt het **Trackinginterval** instellen om te specificeren hoe vaak locatiepunten worden verzonden, met opties variërend van 0 seconden tot 5 minuten. Daarnaast bepaalt de parameter **Tijdbuffer** hoe lang locatiepunten worden opgeslagen als er geen internetverbinding is, zodat gegevens worden opgeslagen en verzonden wanneer de verbinding wordt hersteld.</details><br />OsmAnd slaat de niet-verzonden locatiepunten alleen op in het tijdelijke geheugen van de app terwijl de applicatie draait. Dit betekent dat de buffer niet naar permanente opslag wordt geschreven. Als de app wordt gesloten, geforceerd gestopt of het apparaat herstart, gaan alle gebufferde punten verloren.<br />De instelling Tijdbuffer definieert niet hoe lang punten in het geheugen worden bewaard — het fungeert alleen als een filter op het moment van uploaden. Wanneer OsmAnd probeert gebufferde punten te verzenden, wordt elk punt gecontroleerd op de limiet van de Tijdbuffer. Punten ouder dan de geselecteerde limiet (bijv. 24 uur) worden verwijderd in plaats van geüpload. Als gevolg hiervan kan de buffer tijdelijk punten bevatten die ouder zijn dan de gekozen Tijdbuffer-waarde, maar deze punten worden weggegooid tijdens het uploadproces. |
 | **Tracks** | Een snelle verwijzing naar de map waar tracks worden opgeslagen in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Plug-ininstellingen naar standaard resetten** | Reset alle ritregistratie-instellingen voor het huidige profiel naar hun standaardwaarden. |
 | **Kopiëren van een ander profiel** (*Android*) | Kopieert de ritregistratie-instellingen van het ene profiel naar het andere. |
@@ -356,7 +356,7 @@ De app-pictogrambadge verschijnt naast het OsmAnd-pictogram wanneer de trackregi
 
 ## Widgets {#widgets}
 
-Widgets stellen u in staat om belangrijke informatie over de trackregistratie direct op het scherm weer te geven, zoals *Afstand*, *Duur*, *Stijgen* en *Dalen*. Op Android kunt u ook *Max Snelheid* en *Gemiddelde Helling* widgets toevoegen.
+Widgets stellen u in staat om belangrijke informatie over de trackregistratie direct op het scherm weer te geven, zoals *Afstand*, *Duur*, *Stijgen* en *Dalen*. U kunt ook *Max Snelheid* en *Gemiddelde Helling* widgets toevoegen.
 
 Om *widgets voor Ritten Registreren* te gaan gebruiken, moet u alle volgende instellingen doen:
 
@@ -381,7 +381,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,sh
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Kies een paneel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Afstand/Start-Stop widget toevoegen in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
+![Afstand/Start-Stop widget toevoegen in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
 
 </TabItem>
 
@@ -405,7 +405,7 @@ Om uw interface aan te passen, kunt u de widget Ritten Registreren en [andere wi
 
 <TabItem value="ios" label="iOS">
 
-![Ritten registreren widget](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Ritten registreren widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)  
+![Ritten registreren widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Ritten registreren widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
 
 </TabItem>
 
@@ -417,7 +417,7 @@ De *Afstand* widget toont de totale afstand van uw huidige opgenomen rit en fung
 - De widget wordt automatisch toegevoegd wanneer de *plug-in Ritten Registreren* is ingeschakeld, maar kan worden verborgen via het [menu Scherm configureren](../widgets/configure-screen.md#overview).
 - Als de optie *Startdialoog tonen* is uitgeschakeld in de instellingen van de plug-in Ritten Registreren, zal het tikken op de actieve widget nog steeds het *dialoogvenster Ritten Registreren* openen, waardoor u toegang krijgt tot verdere opties en informatie.  
 
-Naast de *Afstand/Start-Stop* widget, bevat de **plug-in Ritten Registreren** drie andere widgets: *Duur*, *Stijgen*, *Dalen*, *Max Snelheid* en *Gemiddelde Helling* (de laatste twee zijn alleen beschikbaar op Android). Deze bieden aanvullende informatie over uw rit, zodat u de voortgang in real-time kunt volgen.
+Naast de *Afstand/Start-Stop* widget, bevat de **plug-in Ritten Registreren** vijf andere widgets: *Duur*, *Stijgen*, *Dalen*, *Max Snelheid* en *Gemiddelde Helling*. Deze bieden aanvullende informatie over uw rit, zodat u de voortgang in real-time kunt volgen.
 
 | |
 |-----------|
@@ -425,7 +425,7 @@ Naast de *Afstand/Start-Stop* widget, bevat de **plug-in Ritten Registreren** dr
 | ![Ritten registreren (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Om het [dialoogvenster Ritten Registreren](#start-a-dialog) te openen wanneer u op een inactieve widget tikt, schakelt u de optie *Startdialoog tonen* in de instellingen van de plug-in Ritten Registreren in. Als de optie is uitgeschakeld, begint de opname onmiddellijk na het tikken op de widget zonder het dialoogvenster te openen.| 
 
-Op Android ondersteunt de Afstand-widget meerdere weergavemodi:
+De Afstand-widget ondersteunt meerdere weergavemodi:
 - **Totale afstand** – totale afstand van de huidige opname (standaard).
 - **Laatste stijging** – afstand van het meest recente klimsegment.
 - **Laatste daling** – afstand van het meest recente dalingssegment.
@@ -454,9 +454,9 @@ Op Android ondersteunt de Afstand-widget meerdere weergavemodi:
 |------------|
 |**Duur**. Toont de totale tijd van de huidige ritregistratie in uren en minuten. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Stijgen**. Toont de cumulatieve hoogtewinst voor de huidige ritregistratie. |
+|**Stijgen**. Toont de totale stijging of het laatste stijgingssegment, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Dalen**. Geeft de totale daling aan die is verzameld tijdens de huidige ritregistratie. |
+|**Dalen**. Geeft de totale daling of het laatste dalingssegment aan, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
 </TabItem>
@@ -467,9 +467,21 @@ Als u meerdere widgets hebt geselecteerd — *Duur*, *Stijgen* of *Dalen* — ku
 
 ### Max Snelheid & Gemiddelde Helling {#max-speed--average-slope}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Max Snelheid Android](@site/static/img/widgets/max_speed_android.png) ![Gemiddelde Helling Android](@site/static/img/widgets/average_slope_android.png)  
+<TabItem value="android" label="Android">  
+
+![Max Snelheid Android](@site/static/img/widgets/max_speed_android.png) ![Gemiddelde Helling Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Snelheid iOS](@site/static/img/widgets/max_speed_ios.png) ![Gemiddelde Helling iOS](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
 
 De **Max Snelheid** widget toont de maximale snelheid voor de momenteel opgenomen rit. Tik op de widget om te schakelen tussen de algemene maximale snelheid en de maximale snelheid van het laatste stijgings- of dalingssegment.
 

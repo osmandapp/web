@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Audio / Videonotities
 ---
@@ -245,7 +245,7 @@ Om een notitie in Mijn Plaatsen te beheren, tikt u op de verticale drie puntjes 
 
 <TabItem value="android" label="Android">
 
-![De widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![De widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![De widget](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ Het toevoegen van een widget aan het scherm is nodig als u liever niet naar geol
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - begin met het maken van foto's.
 
-    ![De widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+### Externe Invoerapparaten {#external-input-devices}   
 
-**Externe invoerapparaten gebruiken (*Android*)**. Als u een [extern invoerapparaat](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) gebruikt, kunt u Audio-/Videonotities starten en stoppen zonder het scherm aan te raken. Om dit te doen, wijs de actie “Audiobestand toevoegen” of “Videobestand toevoegen” toe aan een toets:<br/>
+Als u een [extern invoerapparaat](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) gebruikt (*Android*), kunt u Audio-/Videonotities starten en stoppen zonder het scherm aan te raken. Om dit te doen, wijs de actie “Audiobestand toevoegen” of “Videobestand toevoegen” toe aan een toets:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Zodra toegewezen, fungeert de toets als een schakelaar:

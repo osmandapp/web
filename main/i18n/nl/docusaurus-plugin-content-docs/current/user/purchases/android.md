@@ -1,5 +1,5 @@
 ---
-source-hash: a4cce1f5b1b6bf6a375aec1d9807d689ffb13ab254ba342950f6b912e5149b1f
+source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
 sidebar_position: 1
 title:  Android Aankopen
 ---
@@ -78,32 +78,14 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regi
 
 
 
-:::danger Black Friday-prijzen
-
-*Schiet op! Dit aanbod is alleen beschikbaar tot* **30 november (23:00 CET)**.
-
-:::
-
-
-
 |    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 Maanden) | **Abonnement** (1 Maand / 12 Maanden) |
-| **Prijs (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Prijs (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
+| **Prijs (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
+| **Prijs (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
-
--->
 
 ### Gratis en betaalde functies {#free-and-paid-features}
 
@@ -171,6 +153,7 @@ Het **Pro**-abonnement heeft momenteel de volgende functies:
 | [Hoogtewidget](../widgets/nav-widgets.md#elevation-widget) | Toont uw locatie op de hoogtegrafiek van de navigatieroute met extra informatie.  |
 | [Hoogtewidgets - Hoogte: Kaartcentrum](../widgets/info-widgets.md#elevation-map-center) | Hiermee kunt u de hoogte van het huidige kaartcentrum boven zeeniveau achterhalen.  |
 | [Hoogtecorrectie (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Hiermee kunt u een hoogtegrafiek voor uw track berekenen ([Terreinkaart](../plugins/topography.md#download-maps) vereist voor de gekozen regio). |
+| [Kleurenschema aanpassen](../../user/plugins/topography.md#modify-color-scheme) | Hiermee kunt u het kaaruiterlijk aanpassen door kleurpaletten te selecteren of te importeren. U kunt ingebouwde schema's bewerken of uw eigen paletbestanden gebruiken om kaarten- en routekleuren te personaliseren. |
 
 
 ## Hoe te kopen {#how-to-buy}

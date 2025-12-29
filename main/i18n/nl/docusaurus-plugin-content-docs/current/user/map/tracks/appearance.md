@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Uiterlijk van de track
 ---
@@ -55,35 +55,19 @@ U kunt het uiterlijk van de track op een van de volgende manieren wijzigen:
 Sommige instellingen kunt u alleen gebruiken met *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> en <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Gratis en betaalde functies.
 :::
 
-![Uiterlijk](@site/static/img/map/appearance_color_andr.png)
+![Uiterlijk](@site/static/img/map/appearance_color_andr.png) ![Kleuringscontextmenu iOS](@site/static/img/map/colorisation_ios.png)
 
 U kunt de kleur van de track handmatig instellen of **kleurgebaseerde datavisualisatie** gebruiken (bijv. snelheid, hoogte, helling). Als een track bepaalde gegevens mist, geeft OsmAnd ontbrekende secties in grijs weer.
 
 **Beschikbare kleuropties:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- **Gratis instellingen**: *<Translate android="true" ids="track_coloring_solid"/> kleur*, *<Translate android="true" ids="shared_string_speed"/>* (indien opgenomen) en *<Translate android="true" ids="altitude"/>* (indien opgenomen).   
+- [Pro-functie](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Trackmenu Uiterlijk Trackkleur Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Uiterlijk Trackkleur Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Kleuringscontextmenu iOS](@site/static/img/map/colorisation_ios.png)
-
-De **lijst met kleuringsopties** opent als een contextmenu. Items kunnen in drie toestanden verschijnen: 
+Op iOS opent de **lijst met kleuringsopties** als een contextmenu. Items kunnen in drie toestanden verschijnen: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Kan worden toegepast op de huidige track.
 2. <Translate ios="true" ids="weather_update_disabled"/>. De track mist de vereiste gegevens.
 3. PRO. Beschikbaar voor de huidige track maar vereist een abonnement; tikken opent het [<Translate ios="true" ids="purchase_dialog_title"/> scherm](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Gratis instellingen**: *<Translate android="true" ids="track_coloring_solid"/> kleur*, *<Translate android="true" ids="shared_string_speed"/>* (indien opgenomen) en *<Translate android="true" ids="altitude"/>* (indien opgenomen).   
-- [Pro-functie](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Voor meer details over het aanpassen van het uiterlijk van de routelijn, zie [Kaartscherm tijdens navigatie](../../navigation/guidance/map-during-navigation.md#color) en voor het selecteren en maken van een aangepaste kleur, zie [Kleurenschema's](../../personal/color-palette-schemes.md#routes).
 
@@ -100,7 +84,7 @@ U kunt het uiterlijk van de track in verschillende menu's van de applicatie aanp
 
 Pas de breedte van de track aan om de zichtbaarheid op de kaart te verbeteren.
 
-- **Vooraf ingestelde opties**: **Dun, Medium** en **Dik**.
+- **Vooraf ingestelde opties**: **Dun, Middel** en **Dik**.
 
 - **Aangepaste breedte**: Instelbaar van 1 tot 24 px met een schuifregelaar.
 
@@ -237,7 +221,7 @@ Het tabblad [Tracks](../../personal/tracks/manage-tracks.md) geeft automatisch a
 
 Wijzig het uiterlijk van meerdere tracks in *Mijn Plaatsen → Tracks*:
 
-- **Standaard uiterlijk wijzigen** - Past instellingen toe op alle tracks in een [map](../../personal/tracks/manage-tracks.md#track-folder).
+- **Standaard uiterlijk wijzigen** (alleen Android) - Maakt het mogelijk om standaardinstellingen te configureren die worden toegepast zodra een track aan de [map](../../personal/tracks/manage-tracks.md#track-folder) is toegevoegd.
 - **Terugzetten naar origineel** - Herstelt individuele trackinstellingen.
 
 - [Selectiemodus](../../personal/tracks/manage-tracks.md#selection-mode) - Wijzigt het uiterlijk van specifieke tracks in de geselecteerde map of de hele lijst in het tabblad Tracks.

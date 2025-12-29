@@ -1,5 +1,5 @@
 ---
-source-hash: 178483f40e3d28fd59c81c2964fa46455a3df586182e7a09aef9e32023d7bd72
+source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
 sidebar_position: 1
 title:  Toegankelijkheid
 ---
@@ -14,18 +14,18 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-:::caution Opmerking
+:::caution Note
 De Toegankelijkheidsplugin is alleen beschikbaar op de **Android-versie** van OsmAnd. De [iOS-versie](#how-to-use-ios) maakt gebruik van de standaard toegankelijkheidsinstellingen van het systeem.
 :::
 
-## Overzicht {#overview}
+## Overview {#overview}
 
 Toegankelijkheid verbetert de bruikbaarheid voor blinde en visueel beperkte gebruikers door integratie met [Android Toegankelijkheid](https://www.android.com/accessibility/) tools. De plugin biedt **tekst-naar-spraak, gebarenbediening, automatische aankondigingen** en **haptische feedback** om navigatie toegankelijker te maken. Op iOS maakt OsmAnd gebruik van de ingebouwde toegankelijkheidsfuncties van Apple, zoals VoiceOver.
 
 
-### Hoe te gebruiken (Android) {#how-to-use-android}
+### How To Use (Android) {#how-to-use-android}
 
-![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Toegankelijkheid](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 ***De Toegankelijkheidsplugin inschakelen:***  
 
@@ -62,7 +62,7 @@ Toegankelijkheid verbetert de bruikbaarheid voor blinde en visueel beperkte gebr
 | **Dubbel tikken** | *Niet beschikbaar in Toegankelijkheidsmodus* | *Niet ondersteund* |
 
 
-### Hoe te gebruiken (iOS) {#how-to-use-ios}
+### How To Use (iOS) {#how-to-use-ios}
 
 De iOS-versie van OsmAnd maakt gebruik van de **ingebouwde toegankelijkheidstools** van het systeem.
 
@@ -80,7 +80,7 @@ De iOS-versie van OsmAnd maakt gebruik van de **ingebouwde toegankelijkheidstool
    - Verken VoiceOver-gebaren voor de iPhone [hier](https://support.apple.com/en-gb/guide/iphone/iph3e2e2281/ios).
 
 
-## Vereiste instellingsparameters {#required-setup-parameters}
+## Required Setup Parameters {#required-setup-parameters}
 
 Om de toegankelijkheidsfuncties van het apparaat in OsmAnd te activeren, moet u de volgende instellingen maken:
 
@@ -89,11 +89,28 @@ Om de toegankelijkheidsfuncties van het apparaat in OsmAnd te activeren, moet u 
 3. Configureer de [instellingen](#plugin-settings) van de Toegankelijkheidsplugin.
 
 
-## Plugin-instellingen {#plugin-settings}
+## Autoannounce {#autoannounce}
+
+Om in te schakelen:  
+*Mijn locatie* (Lang tikken) → *Toon details* → *Start/Stop automatische aankondiging*
+
+- Een lang tikken op **Mijn locatie** opent een menu met de opties ***Toon uw positie*** en ***Toon details***. Het selecteren van Toon details toont aanvullende route-informatie en biedt de knop ***Start/Stop automatische aankondiging***.
+- Stel de **Periode voor automatische aankondiging** in (bijv. *10 seconden*) om de frequentie van de aankondigingen te regelen.
+- Als **TalkBack** niet is ingeschakeld in de systeeminstellingen van het apparaat, zal OsmAnd geen *spraakmeldingen* bieden en alleen *tekstmeldingen* op het scherm weergeven.  
+
+### Smart Autoannounce {#smart-autoannounce}
+
+Om in te schakelen:  
+*Plugins* → *Toegankelijkheid* → *Instellingen* → *Slimme automatische aankondiging*
+
+De functie **Slimme automatische aankondiging** biedt *audiomeldingen* wanneer u afwijkt van de geplande route. Deze functie is ontworpen om visueel beperkte gebruikers te ondersteunen die afhankelijk zijn van *spraakbegeleiding*.  
+
+
+## Plugin Settings {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Accessibility](@site/static/img/plugins/Accessibility/access_.png)  
+![Toegankelijkheid](@site/static/img/plugins/accessibility/access_new.png)  
 
 De Toegankelijkheidsplugin biedt verschillende instellingen om navigatie en interactie te personaliseren voor gebruikers met een beperking. Deze instellingen worden toegepast per [profiel](../personal/profiles.md) in OsmAnd.
 
@@ -101,29 +118,12 @@ De Toegankelijkheidsplugin biedt verschillende instellingen om navigatie en inte
 |---------------------------|-------------|  
 | **Toegankelijkheidsmodus**    | Schakelt *ingebouwde OsmAnd-functies* in of gebruikt **systeeminstellingen**. |  
 | **Spraaksnelheid**           | Regelt de *tekst-naar-spraak-snelheid*, variërend van **50% tot 200%**. |  
+| **Vergroting bij knijpzoomen**    | Vergroot de kaart tijdelijk terwijl u knijpt en uw vingers op het scherm houdt, waardoor tekst en pictogrammen groter worden zonder het werkelijke zoomniveau te wijzigen. |  
 | [Slimme automatische aankondiging](#smart-autoannounce)    | Biedt *spraakbegeleiding* bij afwijking van de route. |  
 | **Periode voor automatische aankondiging**   | Stelt de minimale tijd tussen aankondigingen in, van **5 seconden tot 5 minuten**. |  
 | [Richtingsstijl](#direction-style)       | Kies tussen *Zijdelings (8 richtingen)* of *Kloksgewijs (12 richtingen)*. |  
 | **Audio-aanwijzingen**      | Speelt *audiobegeleiding* af die de richting aangeeft. |  
 | **Haptische aanwijzingen**     | Biedt *trilfeedback* voor bochten en afwijkingen.|  
-
-<!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
-
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
-
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
-
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
-
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
-
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
-
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
--->
-
-<br/>
 
 ***Tips voor geoptimaliseerde toegankelijkheid:***
 
@@ -132,20 +132,7 @@ De Toegankelijkheidsplugin biedt verschillende instellingen om navigatie en inte
 - **Haptische feedback** - Ideaal voor omgevingen met weinig zicht of wanneer audiobegeleiding onpraktisch is.
 
 
-### Slimme automatische aankondiging {#smart-autoannounce}
-
-De functie **Slimme automatische aankondiging** biedt *audiomeldingen* wanneer u afwijkt van de geplande route. Deze functie is ontworpen om visueel beperkte gebruikers te ondersteunen die afhankelijk zijn van *spraakbegeleiding*.  
-
-- Als **TalkBack niet is ingeschakeld**, zal *Slimme automatische aankondiging* alleen *tekstmeldingen* op het scherm weergeven.  
-
-- **Spraakmeldingen** worden alleen geactiveerd wanneer *TalkBack* is ingeschakeld in de **systeeminstellingen van het apparaat**.  
-
-- Stel de **Periode voor automatische aankondiging** in (bijv. *10 seconden*) om de frequentie van de aankondigingen te regelen.
-
-- Een lang tikken op **Mijn locatie** opent een menu met de opties ***Toon uw positie*** en ***Toon details***. Het selecteren van Toon details toont aanvullende route-informatie en biedt de knop ***Start/Stop automatische aankondiging***.
-
-
-### Richtingsstijl {#direction-style}
+### Direction Style {#direction-style}
 
 De instelling **Richtingsstijl** definieert hoe navigatie-instructies worden gepresenteerd:
 
@@ -161,7 +148,7 @@ Om in te schakelen:
 Richtingsstijl is een onafhankelijke optie. Het is niet gekoppeld aan Slimme automatische aankondiging en werkt ongeacht of Slimme automatische aankondiging is ingeschakeld.
 :::
 
-## Gerelateerde artikelen {#related-articles}
+## Related Articles {#related-articles}
 
 - [Interactie met de kaart](../../user/map/interact-with-map.md)
 - [Algemene instellingen](../../user/personal/global-settings.md)
