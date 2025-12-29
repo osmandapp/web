@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -55,35 +55,19 @@ Vous pouvez modifier l'apparence de la trace en utilisant l'une des méthodes su
 Certains paramètres ne peuvent être utilisés qu'avec *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> et <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Fonctionnalités gratuites et payantes.
 :::
 
-![Apparence](@site/static/img/map/appearance_color_andr.png)
+![Apparence](@site/static/img/map/appearance_color_andr.png) ![Menu contextuel Coloration iOS](@site/static/img/map/colorisation_ios.png)
 
 Vous pouvez définir la couleur de la trace manuellement ou utiliser la **visualisation des données par couleur** (par exemple, vitesse, altitude, pente). Si une trace manque de certaines données, OsmAnd affiche les sections manquantes en gris.
 
 **Options de couleur disponibles :**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- **Paramètres gratuits** : couleur *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si enregistrée) et *<Translate android="true" ids="altitude"/>* (si enregistrée).   
+- [Fonctionnalité Pro](../../purchases/index.md)) : *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Menu de la trace Apparence Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Apparence Couleur de la trace Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Menu contextuel Coloration iOS](@site/static/img/map/colorisation_ios.png)
-
-La liste **Coloration** s'ouvre sous forme de menu contextuel. Les éléments peuvent apparaître dans trois états : 
+Sur iOS, la liste **Coloration** s'ouvre sous forme de menu contextuel. Les éléments peuvent apparaître dans trois états : 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Peut être appliqué à la trace actuelle.
 2. <Translate ios="true" ids="weather_update_disabled"/>. La trace manque des données requises.
 3. PRO. Disponible pour la trace actuelle mais nécessite un abonnement ; appuyer ouvre l'écran [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Paramètres gratuits** : couleur *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si enregistrée) et *<Translate android="true" ids="altitude"/>* (si enregistrée).   
-- [Fonctionnalité Pro](../../purchases/index.md)) : *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Pour plus de détails sur la personnalisation de l'apparence de la ligne d'itinéraire, consultez [Écran de la carte pendant la navigation](../../navigation/guidance/map-during-navigation.md#color) et sur la sélection et la création d'une couleur personnalisée, consultez [Schémas de couleurs](../../personal/color-palette-schemes.md#routes).
 
@@ -237,7 +221,7 @@ L'onglet [Traces](../../personal/tracks/manage-tracks.md) affiche automatiquemen
 
 Modifiez l'apparence de plusieurs traces dans *Mes Lieux → Traces* :
 
-- **Modifier l'apparence par défaut** - Applique les paramètres à toutes les traces d'un [dossier](../../personal/tracks/manage-tracks.md#track-folder).
+- **Modifier l'apparence par défaut** (Android uniquement) - Permet de configurer les paramètres par défaut qui seront appliqués une fois que la trace est ajoutée au [dossier](../../personal/tracks/manage-tracks.md#track-folder).
 - **Réinitialiser à l'original** - Restaure les paramètres individuels de la trace.
 
 - [Mode de sélection](../../personal/tracks/manage-tracks.md#selection-mode) - Modifie l'apparence de traces spécifiques dans le dossier sélectionné ou de toute la liste dans l'onglet Traces.

@@ -1,5 +1,5 @@
 ---
-source-hash: 257aa3375005b7337989c2fb8807d99a7f493686cc168590879f6312c2b3d6f2
+source-hash: 9b261b980d55ca844b224f16fdc5201ded60242c62cc91adffc973d4d27faf3e
 title: Planificateur Web
 ---
 
@@ -13,21 +13,38 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-### Aperçu {#overview}
+
+### [Introduction](./web-overview.md) {#introduction}
 
 Dans cette section, vous trouverez une description de notre [Planificateur Web](https://osmand.net/map).
 
-### [OsmAnd Cloud](./web-cloud.md) {#osmand-cloud}
+### [Compte](./web-cloud.md) {#account}
 
 Cette section explique comment se connecter et s'inscrire sur [www.osmand.net/map](https://osmand.net/map/) et met en évidence les avantages que les utilisateurs reçoivent après leur inscription.
 
 ### [Carte](./web-map.md) {#map}
 
-Cette section détaille les données cartographiques supplémentaires telles que les Favoris, les Traces personnelles et les Couches météo.
+Cette section couvre l'interface de la carte web OsmAnd, y compris le menu de la carte, la configuration des couches, les paramètres et les liens URL.
 
-### [Données utilisateur](../web/web-userdata.mdx) {#user-data}
+### [Météo](./web-weather.md) {#weather}
 
-Traces GPX et Favoris de l'utilisateur sur la carte.
+Cette section explique comment visualiser les conditions météorologiques et les prévisions sur la carte web, y compris les prévisions basées sur le temps et les superpositions météorologiques.
+
+### [Traces](./web-tracks.md) {#tracks}
+
+Cette section couvre le travail avec des traces GPX personnelles sur le web, y compris la visualisation, la modification, l'organisation et la synchronisation avec OsmAnd Cloud.
+
+### [Favoris](./web-favorites.md) {#favorites}
+
+Lieux enregistrés affichés sur la carte, avec des options pour les organiser en dossiers, gérer l'accès et les réutiliser pour la navigation ou la planification d'itinéraires.
+
+### [Analyseur de traces](./web-tracks-analyzer.md) {#tracks-analyzer}
+
+Cette section se concentre sur l'analyse des segments de traces entre les points sélectionnés sur la carte et la comparaison des paramètres clés entre plusieurs traces.
+
+### [Navigation](./web-navigation.md) {#navigation}
+
+Cette section explique comment construire et prévisualiser des itinéraires de navigation sur la carte web, y compris les profils de routage, les paramètres et les détails de l'itinéraire.
 
 ### [Planifier un itinéraire](./planner.md) {#plan-route}
 

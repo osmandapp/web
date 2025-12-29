@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Notes audio/vidéo
 ---
@@ -245,7 +245,7 @@ Pour gérer une note dans Mes endroits, appuyez sur les trois points verticaux d
 
 <TabItem value="android" label="Android">
 
-![Le widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+![Le widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![Le widget](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ L'ajout d'un widget à l'écran est nécessaire si vous préférez éviter de re
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - commencer à prendre des photos.
 
-    ![Le widget](@site/static/img/plugins/audio-video-notes/widget.png)
+### Appareils d'entrée externes {#external-input-devices}   
 
-**Utilisation d'appareils d'entrée externes (*Android*)**. Si vous utilisez un [appareil d'entrée externe](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), vous pouvez démarrer et arrêter les Notes audio/vidéo sans toucher l'écran. Pour ce faire, assignez l'action « Ajouter une note audio » ou « Ajouter une note vidéo » à une touche :<br/>
+Si vous utilisez un [appareil d'entrée externe](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*), vous pouvez démarrer et arrêter les Notes audio/vidéo sans toucher l'écran. Pour ce faire, assignez l'action « Ajouter une note audio » ou « Ajouter une note vidéo » à une touche :<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Une fois assignée, la touche fonctionne comme un basculement :
@@ -412,7 +412,7 @@ Vous pouvez spécifier des noms pour chaque point de cheminement créé manuelle
 
 ### Fichier GPX avec points de cheminement {#gpx-file-with-waypoints}
 
-![Point de cheminement dans un fichier GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)
+![Point de cheminement dans un fichier GPX](@site/static/img/plugins/audio-video-notes/waypoint_in_GPX_file.png)  
 
 Si vous visualisez le fichier GPX de la trace ajoutée avec un point de cheminement à partir d'une note audio/vidéo/photo, le point de cheminement sera comme dans l'exemple ci-dessous, avec les coordonnées, l'horodatage, le nom de la note respective et le lien court.
 
@@ -430,7 +430,7 @@ où `LIENCOURT_EMPLACEMENT` spécifie la latitude et la longitude de l'emplaceme
 
 ### Exporter vers JOSM {#export-to-josm}
 
-![Notes audio/vidéo dans Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)
+![Notes audio/vidéo dans Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
 Pour tout visualiser plus tard, vous pouvez exporter la trace avec tous les fichiers multimédias et les visualiser dans l'[éditeur JOSM](https://josm.openstreetmap.de/). Notez que les fichiers multimédias doivent être placés dans le dossier approprié. Vous pouvez savoir lequel en cliquant sur la vidéo. Une notification apparaîtra indiquant qu'aucun fichier n'est disponible, placez le fichier correct dans le dossier spécifié.
 

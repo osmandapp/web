@@ -1,5 +1,5 @@
 ---
-source-hash: c2291fe2e2daa00adedaf5e8955528b8f9554b3729c4dda6151fe66c442fb6cc
+source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
 sidebar_position: 1
 title:  Achats Android
 ---
@@ -153,6 +153,7 @@ L'abonnement **Pro** inclut actuellement les fonctionnalités suivantes :
 | [Widget d'altitude](../widgets/nav-widgets.md#elevation-widget) | Affiche votre position sur le graphique d'altitude de l'itinéraire de navigation avec des informations supplémentaires.  |
 | [Widgets d'altitude - Élévation : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Permet de connaître l'altitude du centre actuel de la carte au-dessus du niveau de la mer.  |
 | [Correction d'altitude (hors ligne)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permet de calculer un graphique d'altitude pour votre trace ([Carte de terrain](../plugins/topography.md#download-maps) requise pour la région choisie). |
+| [Modifier le schéma de couleurs](../../user/plugins/topography.md#modify-color-scheme) | Permet de personnaliser l'apparence de la carte en sélectionnant ou en important des palettes de couleurs. Vous pouvez modifier les schémas intégrés ou utiliser vos propres fichiers de palette pour personnaliser les couleurs de la carte et de l'itinéraire. |
 
 
 ## Comment acheter {#how-to-buy}

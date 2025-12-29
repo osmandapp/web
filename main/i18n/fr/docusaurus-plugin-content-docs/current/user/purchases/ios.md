@@ -1,5 +1,5 @@
 ---
-source-hash: 3036a4367dec965dc2ce8a575aa5d332ed8bf23931798249cf1fc88b99ef5ae5
+source-hash: 1f88b8a69546be11fe397f39ef6e1255bf0e2760eeb2883d1ca6539d40dd08af
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -53,6 +53,24 @@ Vous pouvez télécharger l'application via ce lien - [OsmAnd Maps sur l'Apple A
 
 La liste ci-dessous contient des informations sur les prix des produits OsmAnd pour les régions des États-Unis et de l'Europe. Pour les autres régions, les prix sont équivalents dans les devises locales.
 
+<!--
+
+:::danger Christmas sale
+
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+-->
 
 
 |    | OsmAnd Gratuit   | [Maps+](#install-osmand-ios) Achat intégré | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
@@ -118,6 +136,7 @@ Pour le moment, l'abonnement Pro inclut les fonctionnalités suivantes :
 | [Plugin Météo](../plugins/weather.md) | Prévisions horaires sur 24h pour les 7 prochains jours sur la carte. |
 | [Plugin Métriques du véhicule (OBD-II)](../plugins/vehicle-metrics.md) | Permet de connecter un scanner OBD-II pour afficher des données détaillées du véhicule dans l'application OsmAnd et de stocker les informations dans les enregistrements de trace. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles pour OsmAnd gratuit.  |
 | [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modification de la couleur et de la largeur de la ligne d'itinéraire pendant la navigation. |
+| [Modifier le schéma de couleurs](../../user/plugins/topography.md#modify-color-scheme) | Vous permet de personnaliser l'apparence de la carte en sélectionnant ou en important des palettes de couleurs. Vous pouvez modifier les schémas intégrés ou utiliser vos propres fichiers de palettes pour personnaliser les couleurs de la carte et de l'itinéraire. |
 
 
 ## Comment acheter {#how-to-buy}

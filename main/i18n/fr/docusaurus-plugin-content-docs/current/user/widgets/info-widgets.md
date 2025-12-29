@@ -1,5 +1,5 @@
 ---
-source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
+source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -475,7 +475,7 @@ Vous pouvez lire une description plus détaillée ici : **[Extension <Translate 
 
 </Tabs>
 
-Les widgets d'enregistrement de trajet se réfèrent à l'[extension <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Vous pouvez utiliser les widgets pour afficher de brèves informations sur l'enregistrement de la trace à l'écran. Telles que *Distance*, *Durée*, *Montée*, *Descente*, *Vitesse max.* et *Pente moyenne* (les deux dernières sont disponibles uniquement sur Android).
+Les widgets d'enregistrement de trajet se réfèrent à l'[extension <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Vous pouvez utiliser les widgets pour afficher de brèves informations sur l'enregistrement de la trace à l'écran. Telles que *Distance*, *Durée*, *Montée*, *Descente*, *Vitesse max.* et *Pente moyenne*.
 
 | | |
 |:------------|:------------|
