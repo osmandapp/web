@@ -170,7 +170,7 @@ In the iOS version of OsmAnd, you can change measurement units and transparency 
 
 ### Weather Layers {#weather-layers}
 
-All weather data is presented as separate map layers. To see the weather layers on the map, you need to zoom out, they are only available on zoom scales 2-12. Weather layers are using [weather palettes](../personal/color-palette-schemes.md#weather) to colorize the map, these palettes could be [changed](../personal/color-palette-schemes.md#edit-palette-file) if necessary.
+All weather data is presented as separate map layers. To see the weather layers on the map, you need to zoom out, they are only available on zoom scales 2-12. Weather layers are using [weather palettes](../personal/color-palette-schemes.md#weather) to colorize the map, these palettes could be [changed](../personal/color-palette-schemes.md#palette-modify) if necessary.
 
 | |  
 |------------|  
