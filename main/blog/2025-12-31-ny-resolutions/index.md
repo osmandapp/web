@@ -49,7 +49,7 @@ Discover maps like never before with detailed 3D building representations that m
 
 ### Globe View
 
-![Globe View](./img/globe_view.png)
+![Globe View](./img/globe_view.png) ![Globe View](./img/globe_view-1.png)
 
 Experience the world as it truly is — round!  
 In 2026, OsmAnd will introduce **Globe View**, allowing you to see the planet from a global perspective and seamlessly plan routes across continents.
@@ -91,7 +91,7 @@ Revamping the Favorites screen has been a goal of ours for quite some time. This
 
 ### Astronomy Plugin
 
-![Astronomy](./img/astronomy.png)
+![Astronomy](./img/astronomy.png) ![Astronomy](./img/astronomy-1.png)
 
 We're reaching for the stars — literally.  
 A new **Astronomy plugin** will arrive in 2026, letting you identify planets, stars, and constellations right from your map. Explore the night sky as easily as you explore the Earth.
