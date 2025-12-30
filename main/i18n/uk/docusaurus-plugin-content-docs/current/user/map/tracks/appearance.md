@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Зовнішній вигляд треку
 ---
@@ -55,35 +55,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Деякі налаштування можна використовувати лише з *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> та <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Безкоштовні та платні функції.
 :::
 
-![Вигляд](@site/static/img/map/appearance_color_andr.png)
+![Вигляд](@site/static/img/map/appearance_color_andr.png) ![Контекстне меню забарвлення iOS](@site/static/img/map/colorisation_ios.png)
 
 Ви можете встановити колір треку вручну або використовувати **візуалізацію даних на основі кольору** (наприклад, швидкість, висота, нахил). Якщо в треку відсутні певні дані, OsmAnd відображає відсутні ділянки сірим кольором.
 
 **Доступні варіанти кольору:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- **Безкоштовні налаштування**: *колір <Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (якщо записано) та *<Translate android="true" ids="altitude"/>* (якщо записано).   
+- [Функція Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Меню треку Вигляд Колір треку Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Вигляд Колір треку Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Контекстне меню забарвлення iOS](@site/static/img/map/colorisation_ios.png)
-
-Список **Забарвлення** відкривається як контекстне меню. Елементи можуть з'являтися в трьох станах: 
+На iOS список **Забарвлення** відкривається як контекстне меню. Елементи можуть з'являтися в трьох станах: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Можна застосувати до поточного треку.
 2. <Translate ios="true" ids="weather_update_disabled"/>. У треку відсутні необхідні дані.
 3. PRO. Доступно для поточного треку, але вимагає підписки; натискання відкриває екран [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Безкоштовні налаштування**: *колір <Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (якщо записано) та *<Translate android="true" ids="altitude"/>* (якщо записано).   
-- [Функція Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Для отримання додаткової інформації про налаштування зовнішнього вигляду лінії маршруту див. [Екран мапи під час навігації](../../navigation/guidance/map-during-navigation.md#color), а про вибір і створення власного кольору див. [Колірні схеми](../../personal/color-palette-schemes.md#routes).
 
@@ -237,7 +221,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Змініть зовнішній вигляд кількох треків у *Мої місця → Треки*:
 
-- **Змінити вигляд за замовчуванням** - застосовує налаштування до всіх треків у [теці](../../personal/tracks/manage-tracks.md#track-folder).
+- **Змінити вигляд за замовчуванням** (лише Android) — Дозволяє налаштувати налаштування за замовчуванням, які будуть застосовані, коли трек додається до [теки](../../personal/tracks/manage-tracks.md#track-folder).
 - **Скинути до початкових** - відновлює індивідуальні налаштування треку.
 
 - [Режим вибору](../../personal/tracks/manage-tracks.md#selection-mode) - змінює зовнішній вигляд певних треків у вибраній теці або всього списку на вкладці Треки.

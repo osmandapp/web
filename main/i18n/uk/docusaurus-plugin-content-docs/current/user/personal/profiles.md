@@ -1,5 +1,5 @@
 ---
-source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
+source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
 sidebar_position: 4
 title:  Профілі (Налаштування)
 ---
@@ -215,9 +215,9 @@ OsmAnd дозволяє вам [створювати резервні копії
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 мл / 3281 фт (1000 м) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 мл / 1000 м |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 я / 0.62 мл (1000 м) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 морських миль / 3280.84 фт / 1000 м |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 морських миль / 3280.84 фт / 1000 м<br/>Одиниці довжини застосовуються до горизонтальних значень відстані (наприклад, відстані для водіння/маршруту та маневрів у навігації).|
 |  |  |  |
-| **Одиниці висоти** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 м / 3.28 футів |
+| **Одиниці висоти** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 м / 3.28 футів<br/>Одиниці висоти застосовуються до значень висоти/підйому та пов'язаних метрик (підйом/спуск, діапазон висоти) у віджетах Висоти, інформації про маршрут навігації та статистиці треків.<br/>За замовчуванням одиниці висоти синхронізуються з одиницями довжини та стають незалежними лише після ручної зміни користувачем. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Приклад: 50.12333° 19.93233° (Широта Довгота) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Приклад: 50°7.393′ 19°55.941′ (Широта Довгота)  |
@@ -234,7 +234,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 |  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 км/год  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 миль/год  |
-|          | <Translate android="true" ids="si_m_s"/> | 30 м/с |
+|          | <Translate android="true" ids="si_m_s"/> | 25 м/с |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 хв/м |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 хв/км |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 вузлів |
@@ -248,7 +248,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 |  | <Translate android="true" ids="weather_temperature_fahrenheit"/> |  |
 |  |  |  |
 | **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *Для точних вимірювань*, виберіть, як інформація про відстань відображатиметься у віджетах навігації, наприклад, відстань до точки, наступного повороту або певної смуги. |
-|          | <Translate android="true" ids="round_up"/> | *Для кращої читабельності*, числа, що відображаються у віджетах навігації (відстань до точки, наступного повороту або смуги), будуть заокруглені до меншої кількості цифр. <br/> Наприклад: 3672 м *→* 3.6 км,&nbsp; 462 м *→* 400 м,&nbsp; 184 м *→* 150 м,&nbsp; 47 м *→* 40 м,&nbsp; 18 м *→* 15 м. |
+|          | <Translate android="true" ids="round_up"/> | *Для кращої читабельності*, числа, що відображаються у віджетах навігації (відстань до точки, наступного повороту або смуги), будуть заокруглені вниз, щоб мати менше цифр. <br/> Наприклад: 3672 м *→* 3.6 км,&nbsp; 462 м *→* 400 м,&nbsp; 184 м *→* 150 м,&nbsp; 47 м *→* 40 м,&nbsp; 18 м *→* 15 м. |
 
 
 ### Інші {#other}

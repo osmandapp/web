@@ -1,5 +1,5 @@
 ---
-source-hash: 27979d17f7a7af8cb302d49b9e67afee511a69450af724a2e56ffc8beef3348a
+source-hash: 95e66b93e0c5a981ee18f89cb1798bfb0b845b2b0d468d645cf6efd637edebac
 sidebar_position: 3
 title:  Веб-покупки
 ---
@@ -40,12 +40,12 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
-:::danger Black Friday prices
 
-*Hurry up! This offer is only available until* **November 30 (23:00 CET)**.
+:::danger Christmas sale
+
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
 
 :::
-
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
@@ -60,8 +60,6 @@ By purchasing a subscription through our [website](https://osmand.net/pricing) a
 you receive a 2-year discounted plan.  
 Starting from the third year, the full price will apply.
 :::
-
-
 
 -->
 

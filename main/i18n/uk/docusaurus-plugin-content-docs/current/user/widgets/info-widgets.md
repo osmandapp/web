@@ -1,6 +1,5 @@
 ---
-source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
-
+source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
 sidebar_position: 3
 title:  Інформаційні віджети
 ---
@@ -155,7 +154,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
    - Середня швидкість розраховується на основі обраного проміжку часу, який може становити від **15 секунд до 60 хвилин**.  
 
    - Розрахунок базується на даних GPS за формулою:  
-   `Середня швидкість = СЕРЕДНЄ(GPS_LOCATION.speed)`.
+   `Середня швидкість = AVERAGE(GPS_LOCATION.speed)`.
 
 3. ***Враховувати зупинки.***
 
@@ -302,7 +301,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Віджет координат Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Віджет координат iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -476,7 +475,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 </Tabs>
 
-Віджети запису поїздки відносяться до [плагіна <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Ви можете використовувати віджети для перегляду короткої інформації про запис треку на екрані. Наприклад, *Відстань*, *Тривалість*, *Підйом*, *Спуск*, *Макс. швидкість* та *Середній ухил* (останні два доступні лише на Android).
+Віджети запису поїздки відносяться до [плагіна <Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Ви можете використовувати віджети для перегляду короткої інформації про запис треку на екрані. Наприклад, *Відстань*, *Тривалість*, *Підйом*, *Спуск*, *Макс. швидкість* та *Середній ухил*.
 
 | | |
 |:------------|:------------|
@@ -502,7 +501,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="ios" label="iOS">
 
-![віджет_запису_поїздки](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Віджети зовнішніх датчиків iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -550,7 +549,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="ios" label="iOS">
 
-![Віджети показників транспортного засобу Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Віджети показників транспортного засобу iOS](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
@@ -769,7 +768,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 <InfoAndroidOnly />
 
-![Віджети середньої швидкості](@site/static/img/widgets/available_RAM_2_andr.png)
+![Віджет доступної оперативної пам'яті](@site/static/img/widgets/available_RAM_2_andr.png)
 
 Віджет **Доступна оперативна пам'ять** — це інструмент для моніторингу використання пам'яті вашого пристрою у зв'язку з OsmAnd. Він надає детальні дані для оптимізації продуктивності програми.
 

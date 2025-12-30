@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Аудіо/відеонотатки
 ---
@@ -147,7 +147,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Можна зупинити запис дотиком до віджета <Translate android="true" ids="map_widget_av_notes"/>, незалежно від того, чи було розпочато запис з контекстного меню, чи з віджета. Для *фотонотатки* з'являється функціонал камери, і ви можете зробити фото, переглянути результат, прийняти та зберегти його, або зробити нове фото.
 
-:::info Примітка
+:::info note
 Автоматично всі фото-, аудіо- та відеозаписи зберігаються у: вкладка <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
 :::
 
@@ -245,7 +245,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Віджет](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![Віджет](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![Віджет](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - почати фотографувати.
 
-    ![Віджет](@site/static/img/plugins/audio-video-notes/widget.png)  
+### Зовнішні пристрої введення {#external-input-devices}   
 
-**Використання зовнішніх пристроїв введення (*Android*)**. Якщо ви використовуєте [зовнішній пристрій введення](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), ви можете почати та зупинити аудіо/відеонотатки без дотику до екрана. Для цього призначте дію «Додати аудіонотатку» або «Додати відеонотатку» клавіші:<br/>
+Якщо ви використовуєте [зовнішній пристрій введення](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*), ви можете почати та зупинити аудіо/відеонотатки без дотику до екрана. Для цього призначте дію «Додати аудіонотатку» або «Додати відеонотатку» клавіші:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Після призначення клавіша працює як перемикач:
@@ -387,7 +387,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - Виберіть трек, до якого ви хочете додати шляхову точку.
     - Відкриється діалогове вікно *<Translate android="true" ids="quick_action_add_gpx"/>* , яке дозволяє встановити деякі властивості, такі як назва шляхової точки, іконка, колір та інші. Після завершення торкніться **Зберегти**.
 
-:::info Примітка
+:::info note
 Ви можете вказати назви для кожної шляхової точки, створеної вручну.
 :::
 
