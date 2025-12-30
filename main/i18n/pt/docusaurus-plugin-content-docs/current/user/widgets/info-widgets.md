@@ -1,5 +1,5 @@
 ---
-source-hash: d316c6a306b18280040c2135391d01c55aa7a43411c22e487755810c163d4cb6
+source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
 sidebar_position: 3
 title:  Widgets Informativos
 ---
@@ -475,7 +475,7 @@ Você pode ler uma descrição mais detalhada aqui: **[plugin <Translate android
 
 </Tabs>
 
-Os widgets de gravação de viagem referem-se ao plugin [<Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Você pode usar os widgets para visualizar informações breves sobre a gravação da trilha na tela. Como *Distância*, *Duração*, *Subida*, *Descida*, *Velocidade Máxima* e *Inclinação Média* (os dois últimos estão disponíveis apenas no Android).
+Os widgets de gravação de viagem referem-se ao plugin [<Translate android="true" ids="record_plugin_name"/>](../plugins/trip-recording.md#widgets). Você pode usar os widgets para visualizar informações breves sobre a gravação da trilha na tela. Como *Distância*, *Duração*, *Subida*, *Descida*, *Velocidade Máxima* e *Inclinação Média*.
 
 | | |
 |:------------|:------------|
@@ -680,12 +680,12 @@ Você pode configurar qual ação é selecionada por padrão:
 <InfoAndroidOnly />
 
 :::note
-Para adicionar o widget Rastreador à tela do mapa, ative o plugin OsmAnd [Rastreador OsmAnd](../plugins/osmand-tracker.md).
+Para adicionar o widget Rastreador à tela do mapa, ative o plugin OsmAnd [Rastreador](../plugins/osmand-tracker.md).
 :::  
 
 Para que o plugin e o widget funcionem, você precisa instalar o [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) do Google Play ou de outras fontes.  
 
-Este widget do plugin OsmAnd Tracker é usado para acessar rapidamente o aplicativo OsmAnd Tracker e compartilhar suas informações de localização com outros usuários. O aplicativo envia mensagens de *Localização ao Vivo* para chats selecionados dentro de um determinado tempo, exibe uma lista de contatos e grupos e verifica os chats em busca de mensagens com sua localização, que são então exibidas em um mapa no OsmAnd.  
+Este widget do plugin OsmAnd Rastreador é usado para acessar rapidamente o aplicativo OsmAnd Rastreador e compartilhar suas informações de localização com outros usuários. O aplicativo envia mensagens de *Localização ao Vivo* para chats selecionados dentro de um determinado tempo, exibe uma lista de contatos e grupos e verifica os chats em busca de mensagens com sua localização, que são então exibidas em um mapa no OsmAnd.  
 
 ![Widget de rastreador](@site/static/img/plugins/online-tracker/tracker_widget.png)
 

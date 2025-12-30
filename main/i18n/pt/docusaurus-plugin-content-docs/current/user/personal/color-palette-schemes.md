@@ -1,5 +1,5 @@
 ---
-source-hash: e2fafc2d2918ce6f0758531fadbde46e18997fd1f84eaa0251558562c491b867
+source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
 sidebar_position: 5
 title: Esquemas de Cores
 ---
@@ -214,7 +214,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
 </Tabs>
 
-**Ação Rápida** para alterar a paleta do Terreno. Adicionada a capacidade de alternar entre esquemas de cores de terreno, semelhante a alternar entre camadas. Isso pode ser feito usando a ferramenta [Ações Rápidas](../widgets/quick-action.md#configure-map).  
+**Ação Rápida** para alterar a paleta do [Terreno](../../user/plugins/topography.md#modify-color-scheme). Adicionada a capacidade de alternar entre esquemas de cores de terreno, semelhante a alternar entre camadas. Isso pode ser feito usando a ferramenta [Ações Rápidas](../widgets/quick-action.md#configure-map).  
 
 Ao configurar esta ação, você pode selecionar uma ou várias paletas de cores de terreno. Se várias paletas forem selecionadas, cada toque no botão ciclará pelas paletas escolhidas. Você também pode ativar ou desativar o diálogo intermediário para mostrar a lista completa de paletas ou alternar entre elas silenciosamente em uma ordem predefinida.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title: Widgets de Navegação
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão geral {#overview}
 
-Os widgets de navegação são ativados durante a navegação para exibir informações como distância, hora de chegada ou de partida, próximas curvas, rumo, nome da rua atual, informações de faixa, velocidade máxima, alertas de aproximação, POIs e pontos de passagem.
+Os widgets de navegação são ativados durante a navegação para exibir informações como distância, hora de chegada ou tempo restante, próximas curvas, rumo, nome da rua atual, informações de faixa, velocidade máxima, alertas de aproximação, POIs e pontos de passagem.
 
 ![Todos os widgets de navegação](@site/static/img/widgets/navigational_widgets_all.png)
 
@@ -32,7 +32,7 @@ Os widgets de navegação no OsmAnd são projetados para aprimorar os modos de n
   - Definir um **destino**.  
   - Calcular a **rota** usando o recurso *Direções*.  
   - **Iniciar** a navegação (orientação por voz é opcional).
-  - Disponível apenas ao longo da rota.
+  - Disponível apenas ao se mover ao longo da rota.
 
 - **Widgets suportados:**  
   - Todos os **widgets de navegação** estão disponíveis.  
@@ -118,19 +118,19 @@ Ao selecionar uma rota e pressionar o botão **Iniciar**, o mapa é aberto com s
   
 Rumo é a direção para um alvo fora do seu veículo, como um destino ou ponto de origem. Um rumo pode ser *Relativo* (de acordo com o seu curso) ou *Magnético* (de acordo com a bússola). Por exemplo, um rumo magnético de 180° é a direção para o sul, e um rumo relativo de 180° está diretamente atrás de você. Os pontos cardeais são as quatro direções principais da bússola. Eles são Norte (*N* - 0° ou 360°), Leste (*E* - 90°), Sul (*S* - 180°) e oeste (*W* - 270°).  
 
-![Widget de gravação de viagem](@site/static/img/widgets/bearing.png)
+![Widget de rumo](@site/static/img/widgets/bearing.png)
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Widget de gravação de viagem](@site/static/img/widgets/bearing_widget.png) ![Widget de gravação de viagem](@site/static/img/widgets/bearing_widget_1.png)  
+![Widget de rumo](@site/static/img/widgets/bearing_widget.png) ![Widget de rumo](@site/static/img/widgets/bearing_widget_1.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget de gravação de viagem](@site/static/img/widgets/bearing_widget_ios_3.png)
+![Widget de rumo](@site/static/img/widgets/bearing_widget_ios_3.png)
 
 </TabItem>
 
@@ -325,6 +325,13 @@ Os widgets de *Orientação de Rota* contêm informações sobre:
 | Toque longo    | **Próxima curva**: Abre o [menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Faixas**: Nenhuma alteração. |
 
 
+### Faixas {#lanes}
+
+![Widgets de faixas](@site/static/img/widgets/lanes_widget.png)
+
+O widget **Faixas** destaca a faixa atual quando a navegação está ativa e exibe o layout da faixa para a estrada real quando a navegação é passiva. Um indicador de distância também é mostrado abaixo do diagrama da faixa, representando o quanto resta até a manobra onde a orientação da faixa se aplica. Este widget está disponível apenas para os painéis Superior e Inferior. Os dados são obtidos do [projeto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+
+
 ### Próxima Curva {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,41 +350,42 @@ Os widgets de *Orientação de Rota* contêm informações sobre:
 
 </Tabs>
 
-Os widgets de navegação **Próxima curva**, **Próxima curva (pequena)**, **Segunda próxima curva** podem ser colocados em qualquer painel para conveniência do usuário. No entanto, as informações exibidas diferem dependendo do tipo de widget e de sua colocação. A tabela abaixo resume o comportamento:
+Os widgets de navegação **Próxima curva**, **Próxima curva (pequena)**, **Segunda próxima curva** podem ser colocados em qualquer painel para conveniência do usuário. No entanto, as informações exibidas diferem dependendo do tipo de widget e de sua colocação. 
 
-|   Widget/Painel   | Painel esquerdo    | Painel direito   | Painel superior              | Painel inferior           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Próxima curva**        | Apenas distância | Apenas distância | Nome da rua + distância | Nome da rua + distância |
-| **Próxima curva (pequena)**| Apenas distância | Apenas distância | Não disponível          | Não disponível          |
-| **Segunda próxima curva** | Apenas distância | Apenas distância | Nome da rua + distância | Nome da rua + distância |
+Nos painéis Superior / Inferior, os widgets Próxima curva e Segunda próxima curva podem ser exibidos como Largura total (um widget por linha) ou Meia largura (dois widgets por linha). O conteúdo depende do layout e do tamanho do widget selecionado (P / M / G).
 
+Largura total mostra:
+- Primeira linha — Distância até a curva + Saída N (se disponível)
+- Segunda linha — Número da estrada com escudo + nome da estrada/rua
 
-### Avisos de Cores para a Próxima Curva {#color-prompts-for-next-turn}
+Meia largura mostra:
+- Primeira linha — Distância até a curva
+- Segunda linha — Saída N (se disponível) + número da estrada com escudo + nome da estrada/rua
+
+**Próxima curva** usa uma seta grande e suporta layouts de Largura total / Meia largura nos painéis Superior / Inferior. **Próxima curva (pequena)** usa uma seta pequena com a distância colocada ao lado da seta e é destinada aos painéis Esquerdo / Direito. **Segunda próxima curva** mostra a manobra após a próxima curva e se torna ativa quando a segunda manobra está dentro da distância de aproximação.
+
+### Avisos de Cores {#color-prompts}
 
 Esta tabela mostra o tempo aproximado até que os avisos sejam ativados e a indicação de cor correspondente das setas para realizar a manobra. Para mais informações, consulte a [documentação técnica](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) ou o artigo [Avisos de voz](../navigation/guidance/voice-navigation.md).
 
-| Cor     | ~ Tempo de ativação | Distância   | Tipo de aviso     |
+| Cor     | ~ Tempo de Ativação | Distância   | Tipo de Aviso     |
 | :-------- | :------------- | :--------- | :-------------- |
-| 🟢 Verde  | 5 segundos      | Perto | Virar agora        |
+| 🟢 Verde  | 5 segundos      | Próximo    | Virar agora        |
 | 🟡 Amarelo | 20 segundos     | Aproximando| Virar em `x` m   |
 | ⚪ Cinza   | > 100 segundos  | Distante    | Preparar para virar |
 
+O mesmo significado de cor se aplica ao widget de Faixas. O widget de Faixas é mostrado de acordo com as configurações de tempo de aproximação, e as cores das faixas seguem o estágio do aviso de voz.
 
-### Faixas {#lanes}
+<!--
+### Color Prompts for Lanes {#color-prompts-for-lanes}
 
-![Widgets de faixas](@site/static/img/widgets/lanes_widget.png)
+Displays a widget by approach time settings. Lane's color is associated with [voice prompts](../navigation/guidance/voice-navigation.md) and time remaining to perform the maneuver.
 
-O widget **Faixas** destaca a faixa atual quando a navegação está ativa e exibe o layout da faixa para a estrada real quando a navegação é passiva. Um indicador de distância também é mostrado abaixo do diagrama da faixa, representando o quanto resta até a manobra onde a orientação da faixa se aplica. Este widget está disponível apenas para os painéis Superior e Inferior. Os dados são obtidos do [projeto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
-
-### Avisos de Cores para Faixas {#color-prompts-for-lanes}
-
-Exibe um widget pelas configurações de tempo de aproximação. A cor da faixa está associada aos [avisos de voz](../navigation/guidance/voice-navigation.md) e ao tempo restante para realizar a manobra.
-
-| Cor     | ~ Tempo de ativação | Distância    | Tipo de aviso |
+| Color     | ~ Trigger Time | Distance    | Prompt type |
 | :-------- | :------------- | :---------- | :---------- |
-| 🟢 Verde  | 5 segundos      | Perto    | [Virar agora](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-| 🟡 Amarelo | 20 segundos     | Aproximando | [Virar em X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+| 🟢 Green  | 5 seconds      | Close by    | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+| 🟡 Yellow | 20 seconds     | Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
+-->
 
 
 ## Widget de Alerta {#alert-widget}
@@ -408,4 +416,87 @@ Os tipos de alerta têm um design visual diferente, que depende da **<Translate 
 | *<Translate android="true" ids="show_traffic_warnings"/>* | [Acalmia de tráfego](https://en.wikipedia.org/wiki/Traffic_calming) usa design físico e outras medidas para melhorar a segurança de motoristas, pedestres e ciclistas. | ![Widgets de alertas de acalmia de tráfego](@site/static/img/widgets/warnings_traffic_calming.png)  ![Widgets de alertas de acalmia de tráfego us](@site/static/img/widgets/warnings_traffic_calming_us.png)|
 | *<Translate android="true" ids="show_pedestrian_warnings"/>* | [Uma passagem de pedestres](https://en.wikipedia.org/wiki/Pedestrian_crossing) (principalmente inglês britânico) ou faixa de pedestres é um local designado para pedestres atravessarem uma estrada, rua ou avenida. O OsmAnd mostra o alerta de passagem de pedestres não controlada.  | ![Widgets de alertas de acalmia de tráfego](@site/static/img/widgets/warnings_pedestrian.png)  ![Widgets de alertas de acalmia de tráfego us](@site/static/img/widgets/warnings_pedestrian_us.png) |
 | *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Na maioria dos países, os [limites de velocidade rodoviários](https://en.wikipedia.org/wiki/Speed_limit) definem a velocidade máxima, média ou mínima legal em que os veículos rodoviários podem viajar em um determinado trecho da estrada. No OsmAnd, o alerta é mostrado quando você excede a velocidade. Você pode definir parâmetros de excesso de velocidade (0, 5, 10.. km/h). ![Widgets de alerta ex_speed](@site/static/img/widgets/ex_warning_speed.png)  | ![Widgets de alerta speed_limit](@site/static/img/widgets/warnings_limit.png) ![Widgets de alerta speed_limit_ca](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Widgets de alerta speed_limit_us](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *
+| *<Translate android="true" ids="show_tunnels"/>* | Um túnel é uma passagem subterrânea, passando sob uma montanha, rio ou uma área urbana congestionada. No OsmAnd, o alerta *Túnel* tem informações sobre o comprimento do túnel. Se você estiver em um túnel, ele mostra a distância até o final do túnel.   ![Widgets de alerta ex_tunnel](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Widgets de alerta warnings_tunnel](@site/static/img/widgets/warnings_tunnel.png)  ![Widgets de alerta warnings_tunnel_us](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | [Câmeras de fiscalização de tráfego](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) e [câmeras de velocidade](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) registram infrações de tráfego, incluindo excesso de velocidade, passar por semáforos vermelhos e outros tipos de comportamento ilegal. <br />**NOTA:** Alertas de câmeras de velocidade são proibidos ou ilegais em alguns países. Para remover completamente [câmeras de velocidade](../personal/global-settings.md#legal) do OsmAnd, vá para o menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Widgets de alerta traffic calming](@site/static/img/widgets/warnings_speed_camera.png)   |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | [Uma placa de pare](https://en.wikipedia.org/wiki/Stop_sign) é um sinal de trânsito projetado para notificar os motoristas de que eles devem parar completamente e garantir que a interseção esteja livre de veículos e pedestres de forma segura antes de continuar após a placa.  | ![Widgets de alerta stop](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |Este alerta significa que há uma [passagem de nível](https://en.wikipedia.org/wiki/Crossbuck) à frente. | ![Widgets de alerta warnings_railways](@site/static/img/widgets/warnings_railways.png) ![Widgets de alerta warnings_railways_ca](@site/static/img/widgets/warnings_railways_ca.png)  ![Widgets de alerta warnings_railways_us](@site/static/img/widgets/warnings_railways_us.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |Este alerta indica que o controle de fronteira está à frente.| ![Widgets de alerta border control](@site/static/img/widgets/warnings_border_control.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Símbolos de risco ou símbolos de aviso](https://en.wikipedia.org/wiki/Hazard_symbol) são símbolos reconhecíveis projetados para alertar sobre materiais, locais ou objetos perigosos, incluindo correntes elétricas, venenos e radioatividade. | ![Widgets de alerta warnings_hazard](@site/static/img/widgets/warnings_hazard.png)  ![Widgets de alerta warnings_hazard_us](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | Este alerta indica que uma cabine de pedágio para uma estrada de pedágio está à frente.   ![Widgets de alerta toll_booth](@site/static/img/widgets/ex_toll_booth.png) | ![Widgets de alerta speed_limit](@site/static/img/widgets/warnings_limit.png) |
+
+
+## Nome da Rua {#street-name}
+
+O widget Nome da Rua mostra **o nome da rua atual** com uma seta reta, ou **o próximo nome da rua** com a manobra a ser realizada. O nome da rua geralmente consiste em um escudo de rodovia, um [nome](https://wiki.openstreetmap.org/wiki/Key:name), um [ref](https://wiki.openstreetmap.org/wiki/Key:ref), um [ref internacional](https://wiki.openstreetmap.org/wiki/Key:int_ref) e um [destino](https://wiki.openstreetmap.org/wiki/Key:destination). 
+
+Nas Configurações, você pode selecionar para sempre exibir **o nome da rua atual** e usá-lo com o widget [**Próxima curva**](#next-turn) para sempre ver o próximo nome da rua também. A **informação da Próxima curva** está DESLIGADA por padrão. Se você ativá-la, então a alternância entre o nome da rua atual e o próximo nome da rua acontece quando você se aproxima do local onde deseja realizar a manobra (~20 segundos), assim como o aviso de voz [Virar em X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+ ![Nome da rua sem próxima curva](@site/static/img/widgets/without_next_turn_and.png) ![Nome da rua com próxima curva](@site/static/img/widgets/with_next_turn_and.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+ ![Nome da rua sem próxima curva ios](@site/static/img/widgets/without_next_turn_ios.png) ![Nome da rua com próxima curva ios](@site/static/img/widgets/with_next_turn_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+| | |
+|:------------|:------------|
+| Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Adicionar widget → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Adicionar widget → <Translate android="true" ids="map_widget_top_text"/>* |
+| Configurações | Selecione para sempre exibir **o nome da rua atual** ou exibir **o próximo nome da rua** ao se aproximar da manobra |
+| Ao tocar | Abre um menu de contexto com Configurações (alternar Informação da Próxima curva LIGADO/DESLIGADO) e Excluir |
+
+
+## POIs / Favoritos de Aproximação {#approach-pois--favorites}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![POIs/Favoritos de aproximação android](@site/static/img/widgets/street_name_poi_widget_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![POIs/Favoritos de aproximação ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+O widget **POIs/Favoritos/Pontos de Passagem de Aproximação** é combinado com [Nome da Rua](#street-name) e exibe pontos de interesse, pontos de passagem de trilhas seguidas e favoritos de aproximação e passagem ao longo da rota.  
+
+Ele exibe o **nome**, o **ícone do ponto** e 2 **distâncias**:
+
+- **Distância da rota** (superior) exibe quanta distância precisa ser percorrida pela rota seguinte.
+- **Distância de desvio** é uma distância reta do ponto da rota mais próximo para o ponto em si.
+
+**iOS** - Além da distância até o ponto de passagem mais próximo, o lado (esquerdo ou direito) da rota em que o ponto de passagem está localizado também é exibido.
+
+| | |
+|:------------|:------------|
+| Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Iniciar navegação → botão lápis* |
+| Ao tocar | Nenhuma alteração |
+
+
+## Artigos Relacionados {#related-articles}
+
+- [Configurar Tela](./configure-screen.md)
+- [Botões do Mapa](./map-buttons.md)
+- [Widgets informativos](./info-widgets.md)
+- [Widgets de navegação](./nav-widgets.md)
+- [Radius-ruler e Ruler](./radius-ruler.md)
+- [Widgets de marcador](./markers.md)
+- [Ação Rápida](./quick-action.md)

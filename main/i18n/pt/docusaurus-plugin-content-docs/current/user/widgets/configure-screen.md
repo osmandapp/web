@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -267,7 +267,7 @@ O modo permite adicionar **mais de um widget em uma única linha** nos painéis 
     - [Perfil de elevação (*Apenas Android*)](../widgets/nav-widgets#elevation-widget)
     - [Manobras de rota](../widgets/nav-widgets.md#next-turn)
 
-- **Widgets simples**. Vários widgets simples podem ser adicionados a uma única linha. Esses widgets podem exibir *Nome*, *Unidades de medida*, *Valor* e *Ícone*. O texto em widgets simples é automaticamente contornado para garantir legibilidade clara contra vários fundos de mapa no modo de painel transparente.
+- **Widgets simples**. Vários widgets simples podem ser adicionados a uma única linha. Esses widgets podem exibir *Nome*, *Unidades de medida*, *Valor* e *Ícone*.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -359,13 +359,13 @@ Os widgets nos painéis direito e esquerdo podem ser agrupados em **Páginas**. 
 
 <TabItem value="android" label="Android">  
 
-![Menu de contexto do widget](@site/static/img/widgets/widget_context_menu_andr.png)
+![Menu de contexto do widget](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu de contexto do widget](@site/static/img/widgets/widget_context_menu_ios.png)
+![Menu de contexto do widget](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ O **menu de contexto do widget** oferece uma maneira rápida de gerenciar e conf
 - **Excluir**
     - Remova o widget do painel.
     - Um prompt de confirmação garante que a ação seja intencional.
+
+- **Mostrar trilha no mapa** 
+    - Disponível para os widgets de [Gravação de Viagem](../plugins/trip-recording.md).
+    - Exibe sua trilha gravada atualmente no mapa.
 
 - **Redefinir velocidade média** (exemplo de *Ações específicas do widget*)
     - Disponível para o widget [Velocidade Média](../widgets/info-widgets.md#average-speed).

@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  Aparência da Trilha
 ---
@@ -24,13 +24,13 @@ O recurso **Aparência da Trilha** permite aos usuários personalizar como as tr
 
 <TabItem value="android" label="Android">  
 
-![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Visão geral da Aparência da Trilha Android](@site/static/img/map/track-appear-and-1.png)  ![Menu de Aparência da Trilha Android](@site/static/img/map/track_appearence_1_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu Appearance iOS](@site/static/img/map/track_appearence_1_ios.png) ![Track menu Appearance iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Menu de Aparência da Trilha iOS](@site/static/img/map/track_appearence_1_ios.png) ![Menu de Aparência da Trilha iOS](@site/static/img/map/track_appearence_2_ios.png)  
 
 </TabItem>
 
@@ -55,42 +55,26 @@ Você pode modificar a aparência da trilha usando um dos seguintes métodos:
 Algumas configurações você pode usar apenas com *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Recursos Gratuitos e Pagos.
 :::
 
-![Appearance](@site/static/img/map/appearance_color_andr.png)
+![Aparência](@site/static/img/map/appearance_color_andr.png) ![Menu de Contexto de Coloração iOS](@site/static/img/map/colorisation_ios.png)
 
 Você pode definir a cor da trilha manualmente ou usar a **visualização de dados baseada em cores** (por exemplo, velocidade, altitude, inclinação). Se uma trilha não tiver certos dados, o OsmAnd exibirá as seções ausentes em cinza.
 
 **Opções de Cores Disponíveis:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- Configurações gratuitas: *<Translate android="true" ids="track_coloring_solid"/> cor*, *<Translate android="true" ids="shared_string_speed"/>* (se gravado) e *<Translate android="true" ids="altitude"/>* (se gravado).   
+- [Recurso Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Coloring Context Menu IOS](@site/static/img/map/colorisation_ios.png)
-
-A **lista de Coloração** abre como um menu de contexto. Os itens podem aparecer em três estados: 
+No iOS, a **lista de Coloração** abre como um menu de contexto. Os itens podem aparecer em três estados: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Pode ser aplicado à trilha atual.
 2. <Translate ios="true" ids="weather_update_disabled"/>. A trilha não possui os dados necessários.
 3. PRO. Disponível para a trilha atual, mas requer uma assinatura; ao tocar, abre a tela [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
-
-</TabItem>
-
-</Tabs>
-
-- **Configurações gratuitas**: *<Translate android="true" ids="track_coloring_solid"/> cor*, *<Translate android="true" ids="shared_string_speed"/>* (se gravado) e *<Translate android="true" ids="altitude"/>* (se gravado).   
-- [Recurso Pro](../../purchases/index.md)): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Para mais detalhes sobre a personalização da aparência da linha da rota, consulte [Tela do mapa durante a navegação](../../navigation/guidance/map-during-navigation.md#color) e sobre a seleção e criação de uma cor personalizada, consulte [Esquemas de cores](../../personal/color-palette-schemes.md#routes).
 
 
 ### Largura {#width}
 
-![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
+![Menu de Aparência da Trilha Espessura da Trilha Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Aparência da Trilha](@site/static/img/map/track_appearance_width_andr.png)  
 
 Você pode personalizar a aparência da trilha em vários menus do aplicativo:
 
@@ -113,12 +97,12 @@ Ajuste a largura da trilha para melhorar a visibilidade no mapa.
 
 <TabItem value="android" label="Android">
 
-![Track menu Appearance Split interval Android](@site/static/img/map/split_interval_android.png)  ![Split interval Android](@site/static/img/map/split_interval_2_android.png)
+![Menu de Aparência da Trilha Intervalo de Divisão Android](@site/static/img/map/split_interval_android.png)  ![Intervalo de Divisão Android](@site/static/img/map/split_interval_2_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+![Menu de Aparência da Trilha Intervalo de Divisão](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Intervalo de Divisão](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
 </TabItem>
 
@@ -129,13 +113,13 @@ Selecione se deseja dividir a trilha em intervalos por **distância**, **tempo**
 
 ### Setas de Direção {#direction-arrows}
 
-![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Menu de Aparência da Trilha setas de direção Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Adiciona **marcadores de seta** ao longo da trilha para indicar a direção do movimento.
 
 ### Ícones de Início e Fim {#start-and-finish-icons}
 
-![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Menu de Aparência da Trilha ícones de início e fim Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
 Permite selecionar se deseja mostrar os **ícones de início e fim** para os segmentos da trilha.
 
@@ -158,13 +142,13 @@ Restaura todas as **configurações de aparência da trilha** para seus valores 
 
 <TabItem value="android" label="Android">
 
-![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_android.png)
+![Menu de Aparência da Trilha visualização 3D](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_ios.png)
+![Menu de Aparência da Trilha visualização 3D](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
@@ -221,13 +205,13 @@ O recurso de trilha 3D é altamente benéfico para atividades como parapente, on
 
 <TabItem value="android" label="Android">
 
-![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+![Aparência Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Aparência Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Alterar Aparência](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Alterar Aparência](@site/static/img/map/tracks_change_appear_2_ios.png)
 
 </TabItem>
 
@@ -237,7 +221,7 @@ A aba [Trilhas](../../personal/tracks/manage-tracks.md) exibe automaticamente to
 
 Modifique a aparência de várias trilhas em *Meus Locais → Trilhas*:
 
-- **Alterar aparência padrão** - Aplica as configurações a todas as trilhas em uma [pasta](../../personal/tracks/manage-tracks.md#track-folder).
+- **Alterar aparência padrão** (apenas Android) - Permite configurar configurações padrão que serão aplicadas quando a trilha for adicionada à [pasta](../../personal/tracks/manage-tracks.md#track-folder).
 - **Redefinir para o original** - Restaura as configurações de trilhas individuais.
 
 - [Modo de seleção](../../personal/tracks/manage-tracks.md#selection-mode) - Altera a aparência de trilhas específicas na pasta selecionada ou na lista inteira na aba Trilhas.
@@ -320,9 +304,9 @@ Para especificar uma cor para uma trilha, use o seguinte formato:
 
 ## Artigos Relacionados {#related-articles}
 
-- [Menu de contexto do mapa](../map-context-menu.md)
+- [Menu de Contexto do Mapa](../map-context-menu.md)
 - [Configurar Mapa](../configure-map-menu.md)
 - [Pontos no mapa](../point-layers-on-map.md)
 - [Trilhas](../tracks/index.md)
-- [Menu de contexto das trilhas](../tracks/track-context-menu.md)
+- [Menu de Contexto das Trilhas](../tracks/track-context-menu.md)
 - [Gravação de Viagem](../../plugins/trip-recording.md)

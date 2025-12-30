@@ -1,5 +1,5 @@
 ---
-source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
+source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
 sidebar_position: 1
 title: Acessibilidade
 ---
@@ -25,7 +25,7 @@ A acessibilidade melhora a usabilidade para usuários cegos e com deficiência v
 
 ### Como Usar (Android) {#how-to-use-android}
 
-![Acessibilidade](@site/static/img/plugins/Accessibility/access_turned_off.png)
+![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)
 
 ***Ativar o plugin de Acessibilidade:***  
 
@@ -89,11 +89,28 @@ Para ativar os recursos de acessibilidade do dispositivo no OsmAnd, você precis
 3. Configurar as [configurações](#plugin-settings) do plugin de Acessibilidade.
 
 
+## Anúncio Automático {#autoannounce}
+
+Para ativar:
+*Minha localização* (Toque longo) → *Mostrar detalhes* → *Iniciar/Parar anúncio automático*
+
+- Um toque longo no **Minha localização** abre um menu com as opções ***Mostrar sua posição*** e ***Mostrar detalhes***. Selecionar Mostrar detalhes exibe informações adicionais da rota e fornece o botão ***Iniciar/Parar anúncio automático***.
+- Defina o **Período de Anúncio Automático** (por exemplo, *10 segundos*) para controlar a frequência dos anúncios.
+- Se o **TalkBack** não estiver ativado nas configurações do sistema do dispositivo, o OsmAnd não fornecerá *notificações por voz* e exibirá apenas *notificações de texto* na tela.  
+
+### Anúncio Automático Inteligente {#smart-autoannounce}
+
+Para ativar:
+*Plugins* → *Acessibilidade* → *Configurações* → *Anúncio Automático Inteligente*
+
+O recurso **Anúncio Automático Inteligente** fornece *notificações em áudio* quando você desvia da rota planejada. Ele é projetado para apoiar usuários com deficiência visual que dependem de *orientação por voz*.  
+
+
 ## Configurações do Plugin {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
 
-![Acessibilidade](@site/static/img/plugins/accessibility/access_new.png)  
+![Accessibility](@site/static/img/plugins/accessibility/access_new.png)  
 
 O plugin de Acessibilidade oferece várias configurações para personalizar a navegação e a interação para usuários com deficiência. Essas configurações são aplicadas por [perfil](../personal/profiles.md) no OsmAnd.
 
@@ -101,49 +118,18 @@ O plugin de Acessibilidade oferece várias configurações para personalizar a n
 |---------------------------|-------------|  
 | **Modo de Acessibilidade**    | Ativa *recursos integrados do OsmAnd* ou usa **configurações do sistema**. |  
 | **Taxa de Fala**           | Controla a *velocidade da conversão de texto em fala*, variando de **50% a 200%**. |  
-| **Magnificação de Zoom por Pinch**    | Amplia temporariamente o mapa enquanto você faz zoom por pinch e mantém os dedos na tela, ampliando texto e ícones sem alterar o nível de zoom real. |  
+| **Magnificação de Zoom por Pinch**    | Amplia temporariamente o mapa enquanto você faz zoom por pinch e mantém os dedos na tela, ampliando texto e ícones sem alterar o nível de zoom real. |
 | [Anúncio Automático Inteligente](#smart-autoannounce)    | Fornece *orientação por voz* ao desviar da rota. |  
 | **Período de Anúncio Automático**   | Define o tempo mínimo entre os anúncios, de **5 segundos a 5 minutos**. |  
 | [Estilo de Direção](#direction-style)       | Escolha entre *Lateral (8 direções)* ou *Sentido Horário (12 direções)*. |  
 | **Direções em Áudio**      | Reproduz *orientações em áudio* indicando a direção. |  
 | **Direções Táteis**     | Fornece *feedback de vibração* para curvas e desvios.|  
 
-<!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
-
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
-
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
-
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
-
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
-
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
-
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
--->
-
-<br/>
-
 ***Dicas para acessibilidade otimizada:***
 
 - **Leitor de tela** - Use TalkBack (*Android*) ou VoiceOver (*iOS*) para uma interação aprimorada com o mapa.
 - **Navegação por áudio** - Ative o anúncio automático para receber direções por voz enquanto a tela estiver desligada.
 - **Feedback tátil** - Ideal para ambientes com pouca visibilidade ou quando as orientações em áudio são impraticáveis.
-
-
-### Anúncio Automático Inteligente {#smart-autoannounce}
-
-O recurso **Anúncio Automático Inteligente** fornece *notificações em áudio* quando você desvia da rota planejada. Ele é projetado para apoiar usuários com deficiência visual que dependem de *orientação por voz*.  
-
-- Se o **TalkBack não estiver ativado**, o *Anúncio Automático Inteligente* exibirá apenas *notificações de texto* na tela.  
-
-- As **notificações por voz** são ativadas apenas quando o *TalkBack* está ativado nas **configurações do sistema do dispositivo**.  
-
-- Defina o **Período de Anúncio Automático** (por exemplo, *10 segundos*) para controlar a frequência dos anúncios.
-
-- Um toque longo no **Minha localização** abre um menu com as opções ***Mostrar sua posição*** e ***Mostrar detalhes***. Selecionar Mostrar detalhes exibe informações adicionais da rota e fornece o botão ***Iniciar/Parar anúncio automático***.
 
 
 ### Estilo de Direção {#direction-style}

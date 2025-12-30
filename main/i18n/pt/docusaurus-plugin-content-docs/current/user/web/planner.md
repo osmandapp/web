@@ -1,9 +1,10 @@
 ---
-source-hash: 8126842666c1b2fbd00d6cdb9fb5d9a688401ea2ca74976ccf168038defc6772
-sidebar_position: 5
+source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+sidebar_position: 9
 sidebar_label: Planear Rota
 title: Planear Rota no Website
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 <InfoIncompleteArticle/>
 
 
@@ -24,6 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 O Planeador de Rotas Web do OsmAnd permite-lhe criar rotas de navegação, planear percursos e gerir ficheiros locais diretamente a partir do seu navegador. Esta ferramenta web é útil para criar rotas de viagem detalhadas que pode sincronizar com a sua aplicação ou partilhar com outros.
 
 
+<!--
 ## Rota de Navegação {#navigation-route}
 
 Para criar uma rota de navegação, siga estes passos:
@@ -52,6 +53,8 @@ Para criar uma rota de navegação, siga estes passos:
   ![OsmAnd Web Criar Rota](@site/static/img/web/nav_instr.png)
 
 - Para partilhar a rota, copie o URL. Exemplo: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+-->
 
 
 ## Criar Percurso e Ficheiros Locais {#create-track-and-local-files}
@@ -93,7 +96,7 @@ O menu **Percurso Local** oferece três painéis para edição: **Informação**
 - *Recalcular*. Adicione ou atualize dados de elevação.
 - *Elevação*. Visualize o perfil de elevação.
 - *Gráfico de velocidade*. Exiba dados de velocidade ao longo do percurso.
-- *Gráfico de inclinação*. Mostre as mudanças de inclinação ao longo da rota.
+- *Gráfico de inclinação*. Mostre as mudanças de inclinação ao longo da rota.  
 - *Detalhes da estrada*. Visualize informações detalhadas como tipo de estrada, superfície e inclinação.
 - *Descarregar GPX*. Exporte o percurso como um ficheiro GPX ([funcionalidade Pro](../purchases/index.md)).
 - *Fechar Percurso*. Feche a vista de edição do percurso.
@@ -107,7 +110,7 @@ O menu **Percurso Local** oferece três painéis para edição: **Informação**
 
 **Painel de Pontos de Passagem**:
 
-- Visualize e gira os pontos de passagem do percurso.
+- Visualize e gerencie os pontos de passagem do percurso.
 - Alterne a visibilidade dos pontos de passagem no mapa.
 - Elimine pontos de passagem individualmente, se necessário.
 

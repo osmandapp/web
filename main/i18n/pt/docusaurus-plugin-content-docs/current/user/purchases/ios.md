@@ -1,5 +1,5 @@
 ---
-source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
+source-hash: 1f88b8a69546be11fe397f39ef6e1255bf0e2760eeb2883d1ca6539d40dd08af
 sidebar_position: 2
 title: Compras iOS
 ---
@@ -55,24 +55,6 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 
 
-:::danger Preços Black Friday
-
-*Apresse-se! Esta oferta está disponível apenas até* **30 de novembro (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Na Aplicação | [Maps+](#install-osmand-ios) Subscrição | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Subscrição** (12 Meses) | **Subscrição** (1 Mês / 12 Meses) |
-| **Preço (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Preço (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
-
-
 |    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) Na Aplicação | [Maps+](#install-osmand-ios) Subscrição | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
@@ -80,7 +62,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | **Preço (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
 | **Preço (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
 
--->
+
 
 ### Funcionalidades Gratuitas e Pagas {#free-and-paid-features}
 
@@ -119,7 +101,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 #### ** Atualizações de mapas {#-map-updates}
 
-[Gratuito](../personal/maps-resources.md#free-for-osm-mappers). Atualizações em tempo real e transferências ilimitadas de mapas estão disponíveis para Mapeadores OSM.
+[Gratuito](../personal/maps-resources.md#free-for-osm-mappers). As atualizações em tempo real e transferências ilimitadas de mapas estão disponíveis para Mapeadores OSM.
 
 ### Funcionalidades Pro {#pro-features}
 
@@ -136,6 +118,7 @@ Atualmente, a subscrição Pro tem as seguintes funcionalidades:
 | [Plugin Meteorológico](../plugins/weather.md) | Previsão horária de 24h para 7 dias no mapa. |
 | [Plugin de Métricas do Veículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar um scanner OBD-II para exibir dados detalhados do veículo na aplicação OsmAnd e armazenar as informações em registos de trilhos. As informações de velocidade do veículo e rotações do motor estão disponíveis para o OsmAnd gratuito.  |
 | [Personalizar linha de rota](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Alterar a cor e a largura da linha de rota durante a navegação. |
+| [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Pode editar esquemas incorporados ou usar os seus próprios ficheiros de paleta para personalizar as cores do mapa e da rota. |
 
 
 ## Como Comprar {#how-to-buy}

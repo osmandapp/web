@@ -1,19 +1,19 @@
 ---
-source-hash: b2bc3b3bf84c6557e58eb916fc3afa481aecddd1fe686e1bc462f51cc56d1f90
+source-hash: 2a5a8d9243388603303027ae9b84f063c4d6530ca0abde2410ebbaf4d725fe4e
 
 ---
 # Guia do Usuário {#user-guide}
 
-OsmAnd oferece navegação offline global e navegação offline com muitas ferramentas especiais para Android e iOS.
+OsmAnd oferece navegação de mapas offline global e navegação offline com muitas ferramentas especiais para Android e iOS.
 
 
 ### [Começar com o OsmAnd](./start-with/index.md) {#begin-with-osmand}
 
-Como começar a usar o aplicativo OsmAnd e baixar mapas.
+Como Começar com o Aplicativo OsmAnd e Baixar Mapas.
 
 ### [Mapa](./map/index.md) {#map}
 
-O mapa é um elemento central do OsmAnd. Esta seção explica como interagir com o mapa, como configurar camadas adicionais de POIs, como personalizar o mapa para trekking, ciclismo ou navegação off-road, como adicionar informações de terreno, como habilitar imagens de nível de rua, etc.
+O mapa é um elemento central do OsmAnd. Esta seção explica como interagir com o mapa, como configurar camadas adicionais de POIs, como personalizar o mapa para trekking, ciclismo ou navegação off-road, como adicionar informações de terreno, como habilitar imagens de nível de rua etc.
 
 ### [Legenda do Mapa](./map-legend/index.md) {#map-legend}
 
@@ -21,7 +21,7 @@ A Legenda do Mapa é uma chave que explica os símbolos, cores e linhas usados e
 
 ### [Widgets do Mapa](./widgets/index.md) {#map-widgets}
 
-Widgets são elementos da Interface do Usuário que são exibidos sobre a tela do mapa e não estão anexados à localização do mapa. Eles fornecem informações adicionais sobre a rota atual, velocidade, altitude, trilha gravada, etc., e também permitem interagir rapidamente com o aplicativo.
+Widgets são elementos da Interface do Usuário que são exibidos sobre a tela do mapa e não estão anexados à localização do mapa. Eles fornecem informações adicionais sobre a rota atual, velocidade, altitude, trilha gravada etc. e também permitem interagir rapidamente com o aplicativo.
 
 ### [Meus dados](./personal/index.md) {#my-data}
 
@@ -48,7 +48,7 @@ O aplicativo OsmAnd está disponível para sistemas Android e iOS. Há uma grand
 
 A ferramenta oferece recursos de pesquisa para qualquer caso de uso: pesquisa de endereço, pesquisa de POI, pesquisa personalizada, pesquisa de histórico, pesquisa de coordenadas.
 
-### [Planejador Web](./web/index.md) {#web-planner}
+### [Portal de Mapa Web](./web/index.md) {#web-map-portal}
 
 O OsmAnd Web Source oferece uma ampla gama de recursos de mapa, um serviço de navegação e sincronização com o OsmAnd Cloud. Isso permite que os usuários acessem mapas detalhados, naveguem por rotas e mantenham seus dados sincronizados entre dispositivos.
 
