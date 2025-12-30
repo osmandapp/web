@@ -80,7 +80,7 @@ A new **Astronomy plugin** will arrive in 2026, letting you identify planets, st
 *Stay connected. Share the adventure.*  
 Easily share your favorite places, GPX tracks, or real-time locations with your friends and family directly from OsmAnd. Whether you're hiking, cycling, or traveling together — sharing is just one tap away.
 
-### And More to Come!
+### More Innovations Ahead
 
 Our journey doesn't end here!  
 In 2026, you can also look forward to:
@@ -96,7 +96,7 @@ In 2026, you can also look forward to:
 
 Stay tuned — the best of OsmAnd is yet to come!
 
-## 2025: A Year of Transformation
+## 2025 Achievements
 
 In 2025, OsmAnd reached new milestones that reshaped the way you navigate the world. Here's a glimpse of how we turned resolutions into reality, bringing innovation and usability to every corner of our app.
 
