@@ -1,5 +1,5 @@
 ---
-source-hash: bbd8a4068925d6a30bba06c2e75c496a884452d7e338c2615117b76552e9cc2c
+source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
 sidebar_position: 15
 title:  Gezi Kaydı
 ---
@@ -297,7 +297,7 @@ Gezilerinizi izlemeye başlamadan önce, en iyi performans için **Gezi Kaydı e
 | **Araç Metrikleri** <br/> *Eklentinin etkinleştirilmesi gerekir* | [OBD-II tarayıcısından](../plugins/vehicle-metrics.md#trip-recording) gelen veriler GPX dosyasına kaydedilir. Yalnızca [Araç Metrikleri eklentisi](../plugins/vehicle-metrics.md) etkinleştirildiğinde görüntülenir.<br />*Not*: Listeden GPX dosyasına hangi metriklerin kaydedileceğini ekleyebilirsiniz: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Parkur depolama klasörü** (*Android*) | *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* sekmesinde kaydedilen parkurların nerede depolanacağını tanımlar. Seçenekler arasında tüm parkurları Rec klasöründe depolamak veya bunları Rec/yyyyy-mm gibi aylara göre düzenlemek bulunur. |
 | **Bildirim** | Gezileri kaydetmeye başlamanıza olanak tanıyan cihazın bildirim alanında bir [gezi kaydı](#notifications) sistem bildiriminin görüntülenmesini kontrol eder. |
-| **Çevrimiçi izleme** (*Android*) | Kaydedilen noktaları belirtilen bir URL'ye göndererek konumunuzun gerçek zamanlı olarak izlenmesine olanak tanır. İzleme aralığı, noktaların ne sıklıkta gönderileceğini belirler ve zaman arabelleği, İnternet bağlantısı olmadığında noktaları depolar.<details><summary>*Açıklama*</summary>Bu seçenek etkinleştirilirse ve parkur kaydı devam ediyorsa, Mesafe/Başlat-Durdur (REC) widget'ı **kırmızı** yerine **yeşil** renge döner ve kaydedilen her noktanın belirtilen bir URL'ye iletildiğini gösterir. **Web adresi** alanı, aşağıdaki parametre formatını kullanarak URL'yi girmenize olanak tanır:<ul><li>`lat={0}`: Enlem</li><li>`lon={1}`: Boylam</li><li>`timestamp={2}`: Zaman damgası (Unix zamanı)</li><li>`hdop={3}`: Yatay doğruluk azaltma</li><li>`altitude={4}`: Rakım</li><li>`speed={5}`: Hız</li><li>`bearing={6}`: Yön (hareket yönü)</li><li>`eta={7}`: Tahmini varış zamanı (Unix zamanı)</li><li>`etfa={8}`: İlk ara noktaya veya bitiş noktasına tahmini süre (Unix zamanı)</li><li>`eda={9}`: Varışa veya bir işaretleyiciye tahmini mesafe (metre cinsinden)</li><li>`edfa={10}`: İlk ara noktaya veya bitiş noktasına tahmini mesafe (metre cinsinden)</li></ul>Konum noktalarının ne sıklıkta gönderileceğini belirtmek için **İzleme Aralığı**nı 0 saniyeden 5 dakikaya kadar seçeneklerle ayarlayabilirsiniz. Ayrıca, **Zaman Arabelleği** parametresi, İnternet bağlantısı olmadığında konum noktalarının ne kadar süreyle depolanacağını belirleyerek, bağlantı geri geldiğinde verilerin kaydedilmesini ve iletilmesini sağlar.</details> |
+| **Çevrimiçi izleme** (*Android*) | Kaydedilen noktaları belirtilen bir URL'ye göndererek konumunuzun gerçek zamanlı olarak izlenmesine olanak tanır. İzleme aralığı, noktaların ne sıklıkta gönderileceğini belirler ve zaman arabelleği, İnternet bağlantısı olmadığında noktaları depolar.<details><summary>*Açıklama*</summary>Bu seçenek etkinleştirilirse ve parkur kaydı devam ediyorsa, Mesafe/Başlat-Durdur (REC) widget'ı **kırmızı** yerine **yeşil** renge döner ve kaydedilen her noktanın belirtilen bir URL'ye iletildiğini gösterir. **Web adresi** alanı, aşağıdaki parametre formatını kullanarak URL'yi girmenize olanak tanır:<ul><li>`lat={0}`: Enlem</li><li>`lon={1}`: Boylam</li><li>`timestamp={2}`: Zaman damgası (Unix zamanı)</li><li>`hdop={3}`: Yatay doğruluk azaltma</li><li>`altitude={4}`: Rakım</li><li>`speed={5}`: Hız</li><li>`bearing={6}`: Yön (hareket yönü)</li><li>`eta={7}`: Tahmini varış zamanı (Unix zamanı)</li><li>`etfa={8}`: İlk ara noktaya veya bitiş noktasına tahmini süre (Unix zamanı)</li><li>`eda={9}`: Varışa veya bir işaretleyiciye tahmini mesafe (metre cinsinden)</li><li>`edfa={10}`: İlk ara noktaya veya bitiş noktasına tahmini mesafe (metre cinsinden)</li></ul>Konum noktalarının ne sıklıkta gönderileceğini belirtmek için **İzleme Aralığı**nı 0 saniyeden 5 dakikaya kadar seçeneklerle ayarlayabilirsiniz. Ayrıca, **Zaman Arabelleği** parametresi, İnternet bağlantısı olmadığında konum noktalarının ne kadar süreyle depolanacağını belirleyerek, bağlantı geri geldiğinde verilerin kaydedilmesini ve iletilmesini sağlar.</details><br />OsmAnd, gönderilmemiş konum noktalarını yalnızca uygulama çalışırken uygulamanın geçici belleğinde depolar. Bu, arabelleğin kalıcı depolamaya yazılmadığı anlamına gelir. Uygulama kapatılırsa, zorla durdurulursa veya cihaz yeniden başlarsa, tüm arabelleğe alınmış noktalar kaybolur.<br />Zaman Arabelleği ayarı, noktaların bellekte ne kadar süre tutulacağını tanımlamaz — yalnızca yükleme anında filtre olarak çalışır. OsmAnd arabelleğe alınmış noktaları göndermeye çalıştığında, her nokta Zaman Arabelleği sınırına karşı kontrol edilir. Seçilen sınırdan (örneğin, 24 saat) eski noktalar yüklenmek yerine kaldırılır. Sonuç olarak, aralıklı olarak seçilen Zaman Arabelleği değerinden eski noktalar içerebilir, ancak bu noktalar yükleme işlemi sırasında atılır. |
 | **Parkurlar** | Parkurların kaydedildiği klasöre hızlı bir referans *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* sekmesi. |
 | **Eklenti ayarlarını varsayılana sıfırla** | Mevcut profil için tüm gezi kaydı ayarlarını varsayılanlarına sıfırlar. |
 | **Başka bir profilden kopyala** (*Android*) | Gezi kaydı ayarlarını bir profilden diğerine kopyalar. |
@@ -381,7 +381,7 @@ Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı* gibi parkur
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![iOS'ta Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2.png)
+![iOS'ta Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
 
 </TabItem>
 
@@ -405,7 +405,7 @@ Arayüzünüzü özelleştirmek için Gezi Kaydı widget'ını ve [diğer widget
 
 <TabItem value="ios" label="iOS">
 
-![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr.png) ![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr_2.png)  
+![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
 
 </TabItem>
 
@@ -454,9 +454,9 @@ Android'de Mesafe widget'ı birden fazla görüntüleme modunu destekler:
 |------------|
 |**Süre**. Mevcut gezi kaydının toplam süresini saat ve dakika cinsinden gösterir. |
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Yokuş yukarı**. Mevcut gezi kaydı için kümülatif yükseklik kazanımını gösterir. |
+|**Yokuş yukarı**. Seçilen moda bağlı olarak toplam yokuş yukarı veya son yokuş yukarı bölümünü gösterir. |
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Yokuş aşağı**. Mevcut gezi kaydı sırasında biriken toplam inişi gösterir. |
+|**Yokuş aşağı**. Seçilen moda bağlı olarak toplam yokuş aşağı veya son yokuş aşağı bölümünü gösterir. |
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_dow.png)|
 
 </TabItem>
@@ -467,9 +467,21 @@ Birden fazla widget seçtiyseniz — *Süre*, *Yokuş yukarı* veya *Yokuş aşa
 
 ### Maksimum Hız & Ortalama Eğim {#max-speed--average-slope}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Maksimum Hız Android](@site/static/img/widgets/max_speed_android.png) ![Ortalama Eğim Android](@site/static/img/widgets/average_slope_android.png)  
+<TabItem value="android" label="Android">  
+
+![Maksimum Hız Android](@site/static/img/widgets/max_speed_android.png) ![Ortalama Eğim Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Maksimum Hız iOS](@site/static/img/widgets/max_speed_ios.png) ![Ortalama Eğim iOS](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
 
 **Maksimum Hız** widget'ı, şu anda kaydedilen gezi için maksimum hızı gösterir. Widget'a dokunarak genel maksimum hız ile son yokuş yukarı veya yokuş aşağı bölümünden maksimum hız arasında geçiş yapabilirsiniz.
 

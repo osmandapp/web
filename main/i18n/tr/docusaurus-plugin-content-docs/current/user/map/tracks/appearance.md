@@ -1,5 +1,5 @@
 ---
-source-hash: 2c2d25b6ae77f1d55f733737ddf11f54c5c9eec7a72184fdb55506bdac760262
+source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
 sidebar_position: 5
 title:  İz Görünümü
 ---
@@ -55,35 +55,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Bazı ayarları yalnızca *OsmAnd Pro* ile kullanabilirsiniz. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> ve <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Ücretsiz ve Ücretli özellikler.
 :::
 
-![Görünüm](@site/static/img/map/appearance_color_andr.png)
+![Görünüm](@site/static/img/map/appearance_color_andr.png) ![Renklandırma Bağlam Menüsü iOS](@site/static/img/map/colorisation_ios.png)
 
 İz rengini manuel olarak ayarlayabilir veya **renk tabanlı veri görselleştirmesi** (örn. hız, rakım, eğim) kullanabilirsiniz. Bir izde belirli veriler eksikse, OsmAnd eksik bölümleri gri renkte görüntüler.
 
 **Mevcut Renk Seçenekleri:**
 
-<Tabs groupId="operating-systems" queryString="current-os">
+- **Ücretsiz ayarlar**: *<Translate android="true" ids="track_coloring_solid"/> renk*, *<Translate android="true" ids="shared_string_speed"/>* (kaydedilmişse) ve *<Translate android="true" ids="altitude"/>* (kaydedilmişse).   
+- [Pro özelliği](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
-<TabItem value="android" label="Android"> 
-
-![İz menüsü Görünüm İz rengi Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Görünüm İz rengi Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Renklandırma Bağlam Menüsü iOS](@site/static/img/map/colorisation_ios.png)
-
-**Renklandırma listesi** bir bağlam menüsü olarak açılır. Öğeler üç durumda görünebilir: 
+iOS'ta **Renklandırma listesi** bir bağlam menüsü olarak açılır. Öğeler üç durumda görünebilir: 
 1. <Translate ios="true" ids="shared_string_enabled"/>. Mevcut ize uygulanabilir.
 2. <Translate ios="true" ids="weather_update_disabled"/>. İz gerekli veriyi içermiyor.
 3. PRO. Mevcut iz için kullanılabilir ancak abonelik gerektirir; dokunulduğunda [<Translate ios="true" ids="purchase_dialog_title"/> ekranı](https://osmand.net/docs/user/purchases/ios) açılır.
-
-</TabItem>
-
-</Tabs>
-
-- **Ücretsiz ayarlar**: *<Translate android="true" ids="track_coloring_solid"/> renk*, *<Translate android="true" ids="shared_string_speed"/>* (kaydedilmişse) ve *<Translate android="true" ids="altitude"/>* (kaydedilmişse).   
-- [Pro özelliği](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Rota çizgisi görünümünü özelleştirme hakkında daha fazla bilgi için [Navigasyon sırasında harita ekranı](../../navigation/guidance/map-during-navigation.md#color) ve özel bir renk seçme ve oluşturma hakkında bilgi için [Renk şemaları](../../personal/color-palette-schemes.md#routes) bölümüne bakın.
 
@@ -237,7 +221,7 @@ Seçenekler şunları içerir: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 
 *Yerlerim → İzler*'de birden fazla izin görünümünü değiştirin:
 
-- **Varsayılan görünümü değiştir** - Bir [klasördeki](../../personal/tracks/manage-tracks.md#track-folder) tüm izlere ayarları uygular.
+- **Varsayılan görünümü değiştir** (yalnızca Android) - Bir [klasöre](../../personal/tracks/manage-tracks.md#track-folder) iz eklendiğinde uygulanacak varsayılan ayarları yapılandırmanıza olanak tanır.
 - **Orijinale sıfırla** - Bireysel iz ayarlarını geri yükler.
 
 - [Seçim modu](../../personal/tracks/manage-tracks.md#selection-mode) - Seçilen klasördeki veya İzler sekmesindeki tüm listedeki belirli izlerin görünümünü değiştirir.

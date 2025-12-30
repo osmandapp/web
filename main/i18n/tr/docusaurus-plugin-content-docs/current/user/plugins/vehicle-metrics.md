@@ -1,5 +1,5 @@
 ---
-source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
+source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
 sidebar_position: 16
 title: Araç Metrikleri
 ---
@@ -119,7 +119,7 @@ Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 - **Yeniden Adlandır**. Sensöre daha kolay tanımlama için özel bir ad atamanızı sağlar.
 - **Unut**. Daha önce eşleştirilmiş OBD-II sensörünü listeden kaldırır, daha sonra gerekirse yeniden eşleştirme gerektirir.
 
-**Yeniden Bağlantı Davranışı** *(Yalnızca Android)***:** OsmAnd, uygulama başlatıldığında, navigasyon başlatıldığında veya Android Auto başlatıldığında OBD-II adaptörüne otomatik olarak yeniden bağlanmayı dener. Bağlantı kullanılamıyorsa, Araç Metrikleri widget'ları “–” görüntüler. Herhangi bir Araç Metrikleri widget'ına tek dokunma, sensöre yeniden bağlanmayı dener. Sensör zaten bağlıysa, dokunma widget görüntüleme modlarını normal şekilde değiştirir.
+**Yeniden bağlantı davranışı:** OsmAnd, uygulama başlatıldığında, navigasyon başlatıldığında veya Android Auto / CarPlay başlatıldığında OBD-II adaptörüne otomatik olarak yeniden bağlanmayı dener. Bağlantı kullanılamıyorsa, Araç Metrikleri widget'ları “–” görüntüler. Herhangi bir Araç Metrikleri widget'ına tek dokunma, sensöre yeniden bağlanmayı dener. Sensör zaten bağlıysa, dokunma widget görüntüleme modlarını normal şekilde değiştirir.
 
 
 ## Metrik Listesi {#metrics-list}

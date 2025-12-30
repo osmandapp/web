@@ -1,5 +1,5 @@
 ---
-source-hash: 2df261c9180b4551af320e1c543ad9f218568286c2606e5a64d23089fbff8bdd
+source-hash: a8559f43cff19c4a14831feb61c4c3facdea6dab64c9c232c37b5ba47e810958
 sidebar_position: 1
 title: Navigasyon Ayarları
 ---
@@ -326,7 +326,7 @@ Navigasyon sırasında haritanın davranışının nasıl değiştiğini [Naviga
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigasyon Ayarları iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 

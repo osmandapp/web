@@ -1,5 +1,5 @@
 ---
-source-hash: b2bc3b3bf84c6557e58eb916fc3afa481aecddd1fe686e1bc462f51cc56d1f90
+source-hash: 2a5a8d9243388603303027ae9b84f063c4d6530ca0abde2410ebbaf4d725fe4e
 
 ---
 # Kullanım Kılavuzu {#user-guide}
@@ -31,6 +31,7 @@ OsmAnd, haritalar, noktalar, izler gibi farklı harita verilerini; uygulama prof
 
 Navigasyon işlevi, rotaları görüntüleyerek, adım adım talimatlar ve isteğe bağlı sesli rehberlik sunarak sizi hedeflerinize yönlendirir.
 
+
 ### [Rota Planla](./plan-route/index.md) {#plan-route}
 
 OsmAnd, kendi rotalarınızı oluşturmanıza ve geziler için diğer kullanıcı rotalarını kullanmanıza olanak tanır.
@@ -47,7 +48,7 @@ OsmAnd uygulaması Android ve iOS sistemleri için mevcuttur. OsmAnd'ın sunduğ
 
 Araç, her türlü kullanım durumu için arama özellikleri sağlar: adres arama, POI arama, özel arama, geçmiş arama, koordinat arama.
 
-### [Web Planlayıcı](./web/index.md) {#web-planner}
+### [Web Harita Portalı](./web/index.md) {#web-map-portal}
 
 OsmAnd Web Kaynağı, geniş bir harita özelliği yelpazesi, bir navigasyon hizmeti ve OsmAnd Cloud ile senkronizasyon sağlar. Bu, kullanıcıların ayrıntılı haritalara erişmesine, rotalarda gezinmesine ve verilerini cihazlar arasında senkronize tutmasına olanak tanır.
 

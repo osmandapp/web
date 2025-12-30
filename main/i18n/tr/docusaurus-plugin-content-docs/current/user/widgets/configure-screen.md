@@ -1,5 +1,5 @@
 ---
-source-hash: fdd12adf291a5cea20dd8e7dbadf1d71cf7c14eada5b2f809e40ee69e559cbd6
+source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -267,7 +267,7 @@ Mod, gerektiği kadar bilgi görüntülemek için üst ve alt panellerde **tek b
     - [Yükseklik profili (*Yalnızca Android*)](../widgets/nav-widgets#elevation-widget)
     - [Rota manevraları](../widgets/nav-widgets.md#next-turn)
 
-- **Basit widget'lar**. Tek bir satıra birden çok basit widget eklenebilir. Bu widget'lar *Ad*, *Ölçü birimleri*, *Değer* ve *Simge* görüntüleyebilir. Basit widget'larda metin, şeffaf panel modunda çeşitli harita arka planlarına karşı net okunabilirliği sağlamak için otomatik olarak çerçevelenir.
+- **Basit widget'lar**. Tek bir satıra birden çok basit widget eklenebilir. Bu widget'lar *Ad*, *Ölçü birimleri*, *Değer* ve *Simge* görüntüleyebilir. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -310,7 +310,7 @@ Mod, gerektiği kadar bilgi görüntülemek için üst ve alt panellerde **tek b
 
 Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. **Sayfalar modu** özelliği, sol ve sağ panellere 5 sayfa eklemenize olanak tanır.
 
-***Sayfalar nasıl yapılandırılır:***
+***Satırları nasıl yapılandırılır:***
 
 - **Sayfa Ekle**. Sol/Sağ Panel ayarlarına gidin ve *Düzenle → Sayfa Ekle* öğesine dokunun.
 - **Widget'ları Sayfaya göre düzenle**. Bu özellik, navigasyon veya harita tarama gibi farklı görevler için farklı widget setleri gerektiğinde kullanışlıdır.
@@ -359,13 +359,13 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 
 <TabItem value="android" label="Android">  
 
-![Widget bağlam menüsü](@site/static/img/widgets/widget_context_menu_andr.png)
+![Widget bağlam menüsü](@site/static/img/widgets/widget_context_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget bağlam menüsü](@site/static/img/widgets/widget_context_menu_ios.png)
+![Widget bağlam menüsü](@site/static/img/widgets/widget_context_menu_ios_new.png)
 
 </TabItem>
 
@@ -388,6 +388,10 @@ Sağ ve sol panellerdeki widget'lar **Sayfalar** halinde gruplandırılabilir. *
 - **Sil**
     - Widget'ı panelden kaldırın.
     - Bir onay istemi, eylemin kasıtlı olmasını sağlar.
+
+- **Haritada izi göster** 
+    - [Yolculuk Kaydı](../plugins/trip-recording.md) widget'ları için mevcuttur.
+    - Şu anda kaydedilen izinizi haritada görüntüler.
 
 - **Ortalama hızı sıfırla** (*Widget'a özel eylemler örneği*)
     - [Ortalama Hız](../widgets/info-widgets.md#average-speed) widget'ı için kullanılabilir.

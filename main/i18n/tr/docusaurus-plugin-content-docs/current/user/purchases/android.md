@@ -1,5 +1,5 @@
 ---
-source-hash: a4cce1f5b1b6bf6a375aec1d9807d689ffb13ab254ba342950f6b912e5149b1f
+source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
 sidebar_position: 1
 title: Android Satın Almaları
 ---
@@ -78,24 +78,6 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürününün fiyatları hakkında b
 
 
 
-:::danger Black Friday fiyatları
-
-*Çabuk olun! Bu teklif yalnızca* **30 Kasım (23:00 CET)**'e kadar geçerlidir.
-
-:::
-
-
-
-|    | OsmAnd Ücretsiz   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) Uygulama İçi | [Maps+](#install-osmand-android) Abonelik | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |
-| **Fiyat (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Fiyat (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
-
-
 |    | OsmAnd Ücretsiz   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) Uygulama İçi | [Maps+](#install-osmand-android) Abonelik | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
@@ -103,7 +85,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürününün fiyatları hakkında b
 | **Fiyat (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
 | **Fiyat (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
--->
+
 
 ### Ücretsiz ve Ücretli Özellikler {#free-and-paid-features}
 
@@ -171,6 +153,7 @@ Pro Özellikleri [OsmAnd Pro aboneliği](#prices) için mevcuttur.
 | [Yükseklik widget'ı](../widgets/nav-widgets.md#elevation-widget) | Ek bilgilerle birlikte navigasyon rotasının Yükseklik grafiğinde konumunuzu gösterir.  |
 | [Yükseklik Widget'ları - Yükseklik: Harita Merkezi](../widgets/info-widgets.md#elevation-map-center) | Mevcut harita merkezinin deniz seviyesinden yüksekliğini öğrenmenizi sağlar.  |
 | [Yükseklik düzeltmesi (çevrimdışı)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | İziniz için bir yükseklik grafiği hesaplamanıza olanak tanır (seçilen bölge için [Arazi haritası](../plugins/topography.md#download-maps) gereklidir). |
+| [Renk Şemasını Değiştir](../../user/plugins/topography.md#modify-color-scheme) | Harita görünümünü seçerek veya içe aktararak renk paletlerini özelleştirmenize olanak tanır. Yerleşik şemaları düzenleyebilir veya harita ve rota renklerini kişiselleştirmek için kendi palet dosyalarınızı kullanabilirsiniz. |
 
 
 ## Nasıl Satın Alınır {#how-to-buy}

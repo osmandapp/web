@@ -1,8 +1,9 @@
 ---
-source-hash: 80dc4983a69b5c41013a01014add8bf4ae3e59f35fc0c079bd4e47887e3e4bea
+source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
 sidebar_position: 5
-title: Toplu Taşıma rotası
+title: Toplu Taşıma Rotası
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 
@@ -119,6 +119,55 @@ Toplu taşıma rotası test aşamasındadır. Şimdilik, tam navigasyon işlevi 
 
 </Tabs>
 
+## Toplu Taşıma Türleri {#public-transport-types}
+
+Tercihlerinize göre iyi düzenlenmiş Toplu Taşıma Rotalarını arayabilir ve şunlardan birini seçebilirsiniz:
+
+- Otobüslerden (ve troleybüslerden) kaçının
+- Metrolardan kaçının
+- Trenlerden kaçının
+- Tramvaylardan kaçının
+- Feribotlardan kaçının
+- Paylaşımlı taksilerden kaçının
+
+Varsayılan olarak, OsmAnd tüm desteklenen toplu taşıma türlerini içeren rotaları arar.
+
+## Alternatif Rotalar {#alternative-routes}
+
+Alternatif Rotalar, farklı ulaşım hizmetleri tarafından servis edilen, aynı yolu ve durakları paylaşan rota bölümleridir.
+
+Farklı ulaşım hizmetleri farklı rota numaraları (refs) kullanabilir veya hatta farklı ulaşım türleri kullanabilir.
+
+Kullanıcı arayüzü, Alternatif Rotaları refs'leri ile renkli rozetler olarak görüntüler.
+
+## Performans ve Sonuçlar {#performance-and-results}
+
+**Toplu Taşıma profili -> Ayarlar -> Navigasyon ayarları -> Rota parametreleri**
+
+1. **Maksimum ulaşım değişikliği sayısı**.
+
+Toplu Taşıma Yönlendiricisinin performansı ve bellek tüketimi, arama derinliğine bağlıdır.
+
+Bu derinliği etkileyen en önemli parametre **Maksimum ulaşım değişikliği sayısı**'dır.
+
+Varsayılan değer olarak **2** kullanıyoruz, bu modern toplu taşıma ağları için optimal görünüyor.
+
+Düşük performans veya bellek hatası ile karşılaşırsanız, bu değeri düşürmeyi deneyin.
+
+Küçük bir şehirdeyseniz veya kısa rotalarla seyahat ediyorsanız, **1** değeri daha iyi çalışabilir.
+<!--
+There are two more parameters that help you choose the best routes.
+
+2. **Display N best routes** (specify the number of best routes to display)
+
+By default, OsmAnd displays the **10** best routes (including alternative routes).
+
+You can decrease or increase this limit, or even display all routes.
+
+Note: displaying unlimited routes might slow down your device.
+
+Possible values: 0 (show all), 5, 10 (default), 15, 100
+-->
 
 ## Veri ve Kılavuz {#data-and-guideline}
 

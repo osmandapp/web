@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title:  Sesli / Görüntülü Notlar
 ---
@@ -245,7 +245,7 @@ Yerlerim'de bir notu yönetmek için listedeki notun dikey üç noktasına dokun
 
 <TabItem value="android" label="Android">
 
-![Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![Widget](@site/static/img/plugins/audio-video-notes/widget.png)  
 
 </TabItem>
 
@@ -272,9 +272,9 @@ Haritada coğrafi konum aramaktan kaçınmayı ve notları mevcut varsayılan ko
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - fotoğraf çekmeye başlayın.
 
-    ![Widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+### Dış Giriş Cihazları {#external-input-devices}   
 
-**Dış giriş cihazlarını kullanma (*Android*)**. Bir [dış giriş cihazı](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) kullanıyorsanız, ekrana dokunmadan Sesli/Görüntülü Notlar'ı başlatabilir ve durdurabilirsiniz. Bunu yapmak için, bir tuşa “Sesli not ekle” veya “Görüntülü not ekle” eylemini atayın:<br/>
+Bir [dış giriş cihazı](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*) kullanıyorsanız, ekrana dokunmadan Sesli/Görüntülü Notlar'ı başlatabilir ve durdurabilirsiniz. Bunu yapmak için, bir tuşa “Sesli not ekle” veya “Görüntülü not ekle” eylemini atayın:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Atandıktan sonra, tuş bir geçiş olarak çalışır:
@@ -315,7 +315,7 @@ Alt çubuktaki seçenekler, [Yerlerim](../personal/myplaces.md#audiovideo-notes)
 
 </Tabs>
 
-[Yerlerim](../personal/myplaces.md#audiovideo-notes) ekranında alt menü düğmesine tıklayarak, seçilen notları yol noktaları olarak içeren [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) dahil tüm Notları paylaşabilirsiniz. Belirli notları seçmek için her notun yanında bir onay kutusu görünecektir. Notların üzerinde iki onay kutusu vardır: tüm notları seçmek için *Tarihe göre A/V notları* ve *Konumlar* onay kutusu. *Konumlar* onay kutusu, koordinatlar ve verilerle ayrı bir GPX dosyası eklemenizi sağlar.  
+[Yerlerim](../personal/myplaces.md#audiovideo-notes) ekranında alt menü düğmesine tıklayarak, seçilen notları yol noktaları olarak içeren [GPX](../plugins/audio-video-notes.md#waypoints-created-from-notes) dahil tüm Notları paylaşabilirsiniz. Belirli notları seçmek için her notun yanında bir onay kutusu görünecektir. Notların üzerinde iki onay kutusu vardır: *Tarihe göre A/V notları* ve *Konumlar* onay kutusu. *Konumlar* onay kutusu, koordinatlar ve verilerle ayrı bir GPX dosyası eklemenizi sağlar.  
 
 Her not, oluşturulduğu zamanı, veri miktarını ve bir kayıt ise kayıt zamanını ve konum verilerini içerir, GPX verileri ekleyebilirsiniz.  
 Desteklenen dosya formatları: ses - **3gp**, video - **mp4**, fotoğraf -**jpg**.

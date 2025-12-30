@@ -1,5 +1,5 @@
 ---
-source-hash: e2fafc2d2918ce6f0758531fadbde46e18997fd1f84eaa0251558562c491b867
+source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
 sidebar_position: 5
 title: Renk Şemaları
 ---
@@ -133,14 +133,14 @@ Haritaların ve rotaların görünümünü kişiselleştirmek için paletleri d�
 Her satır bir sayısal değeri (renk paleti için bir dizin) ve RGB rengini temsil eder. Örneğin:
 
 ```xml
-# *height_altitude_0-200.txt* adlı TXT dosyası {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 derece RGBA {#0---90-degree-rgba}
+# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# 0 - 90 degree RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# sarı  {#yellow-}
+# yellow  {#yellow-}
 100,255,222,2,227
-# kırmızı {#red}
+# red {#red}
 200,255,1,1,255
-# mor {#violet}
+# violet {#violet}
 220,130,1,255,255
 
 ```
@@ -190,7 +190,7 @@ OsmAnd'ın geri yükleme ve yedekleme dosyaları aracını kullanarak mevcut tü
 
 Açıklama, haritadaki farklı işaretleri görüntülemenin ve anlamanın kolay bir yolunu sunar. [İzler için **hız**](../map/tracks/appearance#track-colors-in-gpx-files), [rotalar için **çizgi tipi**](../navigation/guidance/map-during-navigation.md#color), [arazi için **rakım ve eğim**](../plugins/topography.md#default-color-scheme) ve tüm [**hava durumu katmanı**](../plugins/weather.md#weather-layers) renk paletlerini görüntülemek için yeni renk paletleri eklenmiştir.
 
-Açıklama, seçilen palete göre otomatik olarak oluşturulur ve gradyan adımlarını uygun birimler ile gösterir (örneğin, hız için km/s, eğim için %, rakım için metre).
+Açıklama, seçilen palete göre otomatik olarak oluşturulur ve gradyan adımlarını uygun birimler ile gösterir (örneğin, hız için km/saat, eğim için %, rakım için metre).
 
 ### Hızlı eylemler {#quick-actions}
 
@@ -214,7 +214,7 @@ Açıklama, seçilen palete göre otomatik olarak oluşturulur ve gradyan adıml
 
 </Tabs>
 
-Arazi için paleti değiştirmek için **Hızlı Eylem**. Katmanlar arasında geçiş yapmaya benzer şekilde, arazi renk şemaları arasında geçiş yapma yeteneği eklendi. Bu, [Hızlı Eylemler](../widgets/quick-action.md#configure-map) aracı kullanılarak yapılabilir.  
+[Arazi](../../user/plugins/topography.md#modify-color-scheme) için paleti değiştirmek için **Hızlı Eylem**. Katmanlar arasında geçiş yapmaya benzer şekilde, arazi renk şemaları arasında geçiş yapma yeteneği eklendi. Bu, [Hızlı Eylemler](../widgets/quick-action.md#configure-map) aracı kullanılarak yapılabilir.  
 
 Bu eylemi yapılandırırken, bir veya birden fazla arazi renk paleti seçebilirsiniz. Birkaç palet seçilirse, butona her dokunuş seçilen paletler arasında döngü yapacaktır. Ayrıca, paletlerin tam listesini göstermek için ara diyaloğu etkinleştirebilir veya devre dışı bırakabilirsiniz ya da önceden tanımlanmış sırada sessizce geçiş yapabilirsiniz.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
 title:  Tekne rotası
 ---
@@ -67,7 +67,7 @@ Tipik olarak, *Tekne rotası* tekne profiliyle (Nautical eklentisiyle birlikte e
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Tekne navigasyonu için akarsu ve drenajları kullanmanıza olanak tanır. Bu seçeneği etkinleştirmek, kano, kayık, sal, kürekli tekne gibi küçük tekneler için faydalı olabilir. |  [Akarsular](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) nehir olarak adlandırılamayacak kadar dar, doğal olarak oluşan su yollarıdır. [Drenajlar](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) ise genellikle beton veya benzeri malzemelerle kaplı, fırtına suyu veya gri deşarj gibi fazla suyu taşımak için kullanılan yapay su yollarıdır.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Bu seçeneği açmak, tekneyle seyir için aralıklı su yollarını kullanmanıza olanak tanır.   | [Aralıklı](https://wiki.openstreetmap.org/wiki/Key:intermittent) etiketi, bir su yolunun sürekli olarak su içermediğini belirtmek için kullanılır.  |
-| *Feribotlara izin ver* | Feribot rotaları üzerinden rota oluşturmayı etkinleştirir. | OSM'de mevcut olan yerlerde `route=ferry` kullanır. Yeni haritalar gerekmez. |
+| *Feribotlara izin ver* | Feribot rotaları üzerinden rota oluşturmayı etkinleştirir. | OSM tanımına göre [feribot rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) genellikle küçük tekneler için erişilemezdir. |
 
 :::note Su Navigasyonu ve Sınırlaması
 

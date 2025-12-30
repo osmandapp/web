@@ -1,5 +1,5 @@
 ---
-source-hash: fb6d615d3272ebc54d4244753eb6fc369c05162044837973b9f3031ced24140a
+source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
 sidebar_position: 1
 title: Erişilebilirlik
 ---
@@ -51,15 +51,15 @@ Erişilebilirlik, [Android Erişilebilirlik](https://www.android.com/accessibili
    - TalkBack ekran okuyucu, navigasyon ve menü etkileşimleri için sesli rehberlik sunar.
    - TalkBack hareketleri hakkında daha fazla bilgiyi [burada](https://support.google.com/accessibility/android/answer/6151827?hl=en&ref_topic=10601570#zippy=%2Cother%2Cbasic-navigation) bulabilirsiniz.
 
-- **Arka plan işlemleri**. Ekran kapalı veya kilitli olsa bile sesli ve dokunsal geri bildirim devam eder.
+- **Arka plan işlemleri**. Sesli ve dokunsal geri bildirim, ekran kapalı veya kilitli olsa bile devam eder.
 
 - **Pusula düğmesi eylemleri**:
 
-| Gesture | Action | TalkBack equivalent |
+| Hareket | Eylem | TalkBack Karşılığı |
 |-----|-----|-----|
-| **Single tap** | Rotates map to **North** | **Double tap** |
-| **Long tap** | Opens the list of [map orientations](../map/interact-with-map.md#map-orientation-modes) | **Double tap and hold** |
-| **Double tap** | *Not available in Accessibility mode* | *Not supported* |
+| **Tek dokunuş** | Haritayı **Kuzey**'e döndürür | **Çift dokunuş** |
+| **Uzun dokunuş** | [Harita yönlendirme modları](../map/interact-with-map.md#map-orientation-modes) listesini açar | **Çift dokunuş ve tut** |
+| **Çift dokunuş** | *Erişilebilirlik modunda mevcut değil* | *Desteklenmiyor* |
 
 
 ### Nasıl Kullanılır (iOS) {#how-to-use-ios}
@@ -89,6 +89,23 @@ OsmAnd'da cihazın erişilebilirlik özelliklerini etkinleştirmek için aşağ�
 3. Erişilebilirlik eklentisi [ayarlarını](#plugin-settings) yapılandırın.
 
 
+## Otomatik Duyuru {#autoannounce}
+
+Etkinleştirmek için:  
+*Konumum* (Uzun dokunuş) → *Ayrıntıları göster* → *Otomatik duyuruyu başlat/durdur*
+
+- **Konumum** üzerine uzun dokunuş, ***Konumunuzu göster*** ve ***Ayrıntıları göster*** seçenekleriyle bir menü açar. Ayrıntıları göster'i seçmek ek rota bilgilerini görüntüler ve ***Otomatik duyuruyu başlat/durdur*** düğmesini sağlar.
+- Duyuruların sıklığını kontrol etmek için **Otomatik Duyuru Periyodunu** (örn. *10 saniye*) ayarlayın.
+- **TalkBack** cihazın sistem ayarlarında etkinleştirilmediyse, OsmAnd *sesli bildirimler* sağlamaz ve yalnızca ekranda *metin bildirimleri* görüntüler.  
+
+### Akıllı Otomatik Duyuru {#smart-autoannounce}
+
+Etkinleştirmek için:  
+*Eklentiler* → *Erişilebilirlik* → *Ayarlar* → *Akıllı Otomatik Duyuru*
+
+**Akıllı Otomatik Duyuru** özelliği, planlanan rotadan saptığınızda *sesli bildirimler* sağlar. *Sesli rehberliğe* güvenen görme engelli kullanıcıları desteklemek için tasarlanmıştır.  
+
+
 ## Eklenti Ayarları {#plugin-settings}
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_accessibility,shared_string_settings"/>*
@@ -97,53 +114,22 @@ OsmAnd'da cihazın erişilebilirlik özelliklerini etkinleştirmek için aşağ�
 
 Erişilebilirlik eklentisi, engelli kullanıcılar için navigasyon ve etkileşimi kişiselleştirmek için çeşitli ayarlar sunar. Bu ayarlar OsmAnd'da [profil](../personal/profiles.md) göre uygulanır.
 
-| Setting                   | Description |  
-|---------------------------|-------------|  
-| **Erişilebilirlik Modu**    | *Yerleşik OsmAnd özelliklerini* etkinleştirir veya **sistem ayarlarını** kullanır. |  
-| **Konuşma Hızı**           | *Metin okuma hızını* **%50 ila %200** arasında kontrol eder. |  
-| **Çimdik Yakınlaştırma Büyütmesi**    | Çimdikle yakınlaştırırken ve parmaklarınızı ekranda tutarken haritayı geçici olarak büyütür, metin ve simgeleri gerçek yakınlaştırma seviyesini değiştirmeden büyütür. |  
+| Ayar                          | Açıklama |  
+|-------------------------------|----------|  
+| **Erişilebilirlik Modu**      | *Yerleşik OsmAnd özelliklerini* etkinleştirir veya **sistem ayarlarını** kullanır. |  
+| **Konuşma Hızı**              | *Metin okuma hızını* **%50 ila %200** arasında kontrol eder. |  
+| **Çimdik Yakınlaştırma Büyütmesi**    | Çimdikle yakınlaştırırken ve parmaklarınızı ekranda tutarken haritayı geçici olarak büyütür, metin ve simgeleri gerçek yakınlaştırma seviyesini değiştirmeden büyütür. |
 | [Akıllı Otomatik Duyuru](#smart-autoannounce)    | Rotadan sapıldığında *sesli rehberlik* sağlar. |  
-| **Otomatik Duyuru Periyodu**   | Duyurular arasındaki minimum süreyi **5 saniyeden 5 dakikaya** ayarlar. |  
+| **Otomatik Duyuru Periyodu**  | Duyurular arasındaki minimum süreyi **5 saniyeden 5 dakikaya** ayarlar. |  
 | [Yön Stili](#direction-style)       | *Yana doğru (8 yön)* veya *Saat yönünde (12 yön)* arasında seçim yapın. |  
 | **Sesli Yönlendirmeler**      | Yönü gösteren *sesli rehberlikler* çalar. |  
-| **Dokunsal Yönlendirmeler**     | Dönüşler ve sapmalar için *titreşim geri bildirimi* sağlar.|  
-
-<!--
-- **Accessibility Mode**. Enable special tools that help people with disabilities interact with the OsmAnd app. There are three modes: *On* - turns on the built-in OsmAnd features, *Off* - turns off all plugin features, and *According to the Android system settings* - turns on Android system settings.
-
-- **Speech rate**. Adjust the speech rate of the text-to-speech, ranging from 50%  to 200%.
-
-- **Smart autoannounce**. If enabled, you will receive voice announcements when you deviate from the set track.
-
-- **Autoannounce period**. This is an automatic announcement of the direction and distance to your destination. You can select a minimal time between announcements, ranging from 5 seconds to 5 minutes.
-
-- **Direction style**. Choose how the OsmAnd app will notify you about directions. *Sidewise* - indicates the direction to the sides of the world (8 directions), *Clockwise* - indicates directions oriented to the clock face (12 directions).
-
-- **Audio directions**. Provides feedback when navigating by indicating the direction to the target point with sound.
-
-- **Haptic directions**. This setting provides haptic feedback when navigating. The vibration indicates the direction to the target point and deviations from the path.
--->
-
-<br/>
+| **Dokunsal Yönlendirmeler**   | Dönüşler ve sapmalar için *titreşim geri bildirimi* sağlar.|  
 
 ***Optimize edilmiş erişilebilirlik için ipuçları:***
 
 - **Ekran okuyucu** - Gelişmiş harita etkileşimi için TalkBack (*Android*) veya VoiceOver (*iOS*) kullanın.
 - **Sesli navigasyon** - Ekran kapalıyken sesli yönlendirmeler almak için otomatik duyuruyu etkinleştirin.
 - **Dokunsal geri bildirim** - Düşük görüşlü ortamlar veya sesli rehberliklerin pratik olmadığı durumlar için idealdir.
-
-
-### Akıllı Otomatik Duyuru {#smart-autoannounce}
-
-**Akıllı Otomatik Duyuru** özelliği, planlanan rotadan saptığınızda *sesli bildirimler* sağlar. *Sesli rehberliğe* güvenen görme engelli kullanıcıları desteklemek için tasarlanmıştır.  
-
-- **TalkBack etkin değilse**, *Akıllı Otomatik Duyuru* yalnızca ekranda *metin bildirimleri* gösterecektir.  
-
-- **Sesli bildirimler** yalnızca *TalkBack* **cihazın sistem ayarlarında** etkinleştirildiğinde etkinleştirilir.  
-
-- Duyuruların sıklığını kontrol etmek için **Otomatik Duyuru Periyodunu** (örn. *10 saniye*) ayarlayın.
-
-- **Konumum** üzerine uzun dokunuş, ***Konumunuzu göster*** ve ***Ayrıntıları göster*** seçenekleriyle bir menü açar. Ayrıntıları göster'i seçmek ek rota bilgilerini görüntüler ve ***Otomatik duyuruyu başlat/durdur*** düğmesini sağlar.
 
 
 ### Yön Stili {#direction-style}
