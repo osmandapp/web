@@ -1,5 +1,5 @@
 ---
-source-hash: a45f8d3e0c7440482cc20c9fa56b987c3a3c65ecfc717d9d8abb99c630f8d16e
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Топографія
 ---
@@ -14,6 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 ## Огляд {#overview}
 
@@ -247,7 +248,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Змінити колірну схему {#modify-color-scheme}
 
 :::info Платна функція
-*Змінити колірну схему* — це платна функція **OsmAnd Pro** для [iOS](../purchases/ios.md#pro-features) та [Android](../purchases/android.md#pro-features) <ProFeature />.
+*[Змінити колірну схему](../../user/personal/color-palette-schemes.md#terrain)* — це платна функція **OsmAnd Pro** для [iOS](../purchases/ios.md#pro-features) та [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -311,7 +312,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![QA для рельєфу](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Ви можете використовувати кнопки *Швидкої дії* на екрані карти для перемикання видимості шарів [Лінії контуру](#contour-lines), [Рельєф](#terrain) та [колірної схеми рельєфу](#default-color-scheme). Залежно від шару, вибраного в меню "Налаштувати карту", призначення дії *Рельєф* кнопці відобразить *Відтінення пагорбів*, *Ухил* або *Висоту*.  
+Ви можете використовувати кнопки *Швидкої дії* на екрані карти для перемикання видимості шарів [Лінії контуру](#contour-lines), [Рельєф](#terrain) та [колірної схеми рельєфу](../../user/personal/color-palette-schemes.md#quick-actions). Залежно від шару, вибраного в меню "Налаштувати карту", призначення дії *Рельєф* кнопці відобразить *Відтінення пагорбів*, *Ухил* або *Висоту*.  
 
 Основні налаштування для *Показати або приховати типи карт* знаходяться в розділі "Топографія" меню "Налаштувати карту". У статті [Швидка дія](../widgets/quick-action.md#configure-map) ви можете знайти список шарів, доступних для відображення. Якщо вам потрібен швидкий доступ до цієї конфігурації карти, використовуйте інструмент *Користувацька кнопка*.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: e2fafc2d2918ce6f0758531fadbde46e18997fd1f84eaa0251558562c491b867
+source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
 sidebar_position: 5
 title:  Колірні схеми
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::
 
-Колірні схеми використовуються для [колоризації маршрутів та треків](#tracks-routes), [рельєфу мапи](#terrain) та [карти погоди](#weather) і є окремою частиною інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.
+Колірні схеми використовуються для [колоризації маршрутів](#tracks-routes), [рельєфу мапи](#terrain) та [карти погоди](#weather) і є окремою частиною інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.
 
 Дані колірної палітри доступні в меню [*Maps & Resources*](../personal/maps-resources.md#local-menu).
 
@@ -91,8 +91,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Для візуалізації лінійного градієнта використовуються файли палітри (`route_<type_name>_<palette_name>.txt`) для забарвлення GPX-треків та маршрутів:
 
-- Для [маршрутів](../navigation/guidance/map-during-navigation.md#color): *Швидкість (`route_speed_default.txt`), Ухил (`route_slope_default.txt`)* та *Висота (над рівнем моря) (`route_elevation_default.txt`)*.
-- Для [GPX-треків](../map/tracks/appearance#track-colors-in-gpx-files): *Швидкість, Ухил, Максимальна швидкість (`route_maxspeed_default.txt`)* та *Висота (над рівнем моря)* або інформація із *зовнішніх датчиків*.
+- Для [маршрутів](../navigation/guidance/map-during-navigation.md#color): *Швидкість (`route_speed_default.txt`), Ухил (`route_slope_default.txt`)* та *Висота (`route_elevation_default.txt`)*.
+- Для [GPX-треків](../map/tracks/appearance#track-colors-in-gpx-files): *Швидкість, Ухил, Максимальна швидкість (`route_maxspeed_default.txt`)* та *Висота*, або інформація із *зовнішніх датчиків*.
 
 ### Обрані та контрольні точки {#favorites-waypoints}
 
@@ -214,7 +214,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-**Швидка дія** для зміни палітри рельєфу. Додано можливість перемикатися між колірними схемами рельєфу, подібно до перемикання між шарами. Це можна зробити за допомогою інструменту [Швидкі дії](../widgets/quick-action.md#configure-map).  
+**Швидка дія** для зміни палітри для [Рельєфу](../../user/plugins/topography.md#modify-color-scheme). Додано можливість перемикатися між колірними схемами рельєфу, подібно до перемикання між шарами. Це можна зробити за допомогою інструменту [Швидкі дії](../widgets/quick-action.md#configure-map).  
 
 Під час налаштування цієї дії ви можете вибрати одну або кілька колірних палітр рельєфу. Якщо вибрано кілька палітр, кожне натискання кнопки буде перемикати між вибраними палітрами. Ви також можете увімкнути або вимкнути проміжний діалог, щоб показати повний список палітр або перемикатися між ними безмовно в заданий порядок.
 

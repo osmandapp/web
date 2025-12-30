@@ -1,5 +1,5 @@
 ---
-source-hash: 7292acaeb0445de57c777bdcb5483d9e5d611e274d176b11dbf5d7d046cd970f
+source-hash: 1f88b8a69546be11fe397f39ef6e1255bf0e2760eeb2883d1ca6539d40dd08af
 sidebar_position: 2
 title:  Покупки в iOS
 ---
@@ -55,9 +55,9 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
-:::danger Black Friday prices
+:::danger Christmas sale
 
-*Hurry up! This offer is only available until* **November 30 (23:00 CET)**.
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
 
 :::
 
@@ -70,8 +70,8 @@ import Translate from '@site/src/components/Translate.js';
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
-
 -->
+
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) Внутрішня покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -136,6 +136,7 @@ import Translate from '@site/src/components/Translate.js';
 | [Плагін "Погода"](../plugins/weather.md) | Погодинний прогноз на 24 години, 7 днів наперед на мапі. |
 | [Плагін "Показники автомобіля" (OBD-II)](../plugins/vehicle-metrics.md) | Дозволяє під'єднати сканер OBD-II для відображення детальних даних про автомобіль у застосунку OsmAnd та зберігання інформації в записах треків. Інформація про швидкість автомобіля та оберти двигуна доступна для безплатної версії OsmAnd.  |
 | [Налаштування лінії маршруту](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Зміна кольору та ширини лінії маршруту під час навігації. |
+| [Зміна схеми кольорів](../../user/plugins/topography.md#modify-color-scheme) | Дозволяє налаштувати зовнішній вигляд мапи, обравши або імпортувавши палітри кольорів. Ви можете редагувати вбудовані схеми або використовувати власні файли палітр для персоналізації кольорів мапи та маршруту. |
 
 
 ## Як придбати {#how-to-buy}
