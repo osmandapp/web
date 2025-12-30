@@ -44,7 +44,7 @@ Here's a glimpse of what's coming next.
 ![3D Buildings](./img/3d_buildings.png)
 
 *A new dimension of exploration.*  
-Discover maps like never before with detailed 3D building representations that make navigation more immersive and visually engaging. Also Displays Sun / Realistic sun "shadows"
+Discover maps like never before with detailed 3D building representations that make navigation more immersive and visually engaging. This update also introduces dynamic lighting, rendering realistic sun positions and cast shadows based on the time of day.
 
 
 ### Globe View
@@ -52,14 +52,14 @@ Discover maps like never before with detailed 3D building representations that m
 ![Globe View](./img/globe_view.png)
 
 Experience the world as it truly is — round!  
-In 2026, OsmAnd will introduce **Globe View**, allowing you to see the planet from a global perspective and explore routes across continents with ease.
+In 2026, OsmAnd will introduce **Globe View**, allowing you to see the planet from a global perspective and seamlessly plan routes across continents.
 
 ### Adjustable Map Style
 
 ![Map Legend](./img/legend.png)
 
 In 2025, we expanded [route configuration options](https://osmand.net/docs/user/map/routes#display-routes-on-the-map).  
-Next in 2026, we're releasing a **Map Legend tool** — giving you full control over how your map looks and helping you understand every layer at a glance. Tailor your OsmAnd maps perfectly for your next adventure.
+Next in 2026, we're releasing a **Adjustable Map Style** — giving you full control over how your map looks and helping you understand every layer at a glance. Tailor your OsmAnd maps perfectly for your next adventure.
 
 ## Routes
 
@@ -67,27 +67,27 @@ Next in 2026, we're releasing a **Map Legend tool** — giving you full control 
 
 ![Route Details](./img/extended_route_details.png)
 
-Gain deeper insights into your journey with expanded route details. Get an insight into time, distance, or alternative transportation options so you can make smarter decisions.
+Gain deeper insights into your journey with expanded route details. We are improving the overview of time, distance, and alternative transportation options so you can make smarter decisions on the fly.
 
 ### Alternative routes
 
-We plan to provide the **alternative routes** and tool to generate **roundtrips** taking into account advanced options.
+We are launching a dedicated tool to generate Alternative Routes and automated Roundtrips. This feature will calculate paths that take into account your specific advanced routing preferences.
 
 ### Share your Location & GPX
 
 *Stay connected. Share the adventure.*  
 
-We already implemented sharing GPX on the Web platform and did Autosync with cloud for Android platform. We will need to complete the solution of sharing data with your friends and family directly from OsmAnd without 3rd party tools. 
+We have already implemented GPX sharing on the Web platform and Autosync with the cloud for Android. The next step is to finalize a solution for sharing data with your friends and family directly from OsmAnd, eliminating the need for 3rd party tools.
 
 ### Public GPX Track Collection
 
-In 2025 we added extra data stored in GPX like Keywords & Activity and this data is provided to OpenStreetMap website. So now we are ready to the next step of organizing by activity and displaying all publicly available tracks that you already uploaded. 
+In 2025, we added the ability to store extra data in GPX files, such as Keywords & Activity types, which are then provided to the OpenStreetMap website. Now, we are ready to utilize this data to organize tracks by activity and visualize all the publicly available tracks that you have uploaded.
 
 ## Miscellaneous
 
 ### Manage Favorites & Media
 
-Revamping the Favorites screen has been a goal of ours for quite some time. This year, we are moving forward with a major redesign. Beyond just a fresh look, we are expanding the functionality to handle media attachments, organizing into smart folder. Our goal is to transform your Favorites into a rich personal travel log.
+Revamping the Favorites screen has been a goal of ours for quite some time. This year, we are moving forward with a major redesign. Beyond just a fresh look, we are expanding the functionality to handle media attachments and organize locations into smart folders. Our goal is to transform your Favorites into a rich personal travel log.
 
 ### Astronomy Plugin
 
@@ -100,9 +100,10 @@ A new **Astronomy plugin** will arrive in 2026, letting you identify planets, st
 
 ![Smartwatch](./img/smartwatch.png)
 
-In 2025, we laid the groundwork for wearable integration — and now it's coming to life!  
-In 2026, OsmAnd will launch **Smartwatch support**, allowing you to browse and record tracks, or follow navigation instructions right from your wrist. Compact, convenient, and perfect for explorers on the move.
-- Garmin Connect integration: Trip recording function and info; Show navigation instructions.
+In 2025, we laid the groundwork for wearable integration — and now it's coming to life! In 2026, OsmAnd will launch Smartwatch support, allowing you to browse and record tracks, or follow navigation instructions right from your wrist. Compact, convenient, and perfect for explorers on the move. Specific updates include:
+
+- Garmin Connect integration: Seamless trip recording and data syncing.
+- Navigation: Turn-by-turn instructions displayed directly on your watch.
 
 ### Pricing
 
