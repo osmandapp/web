@@ -35,16 +35,17 @@ The journey continues — and we're thrilled to have you with us.
 
 At OsmAnd, every new year brings fresh ideas and an even stronger drive to make navigation smarter, faster, and more intuitive. As we step into 2026, we're excited to continue innovating and delivering a more seamless experience for every traveler.
 
-> **Note**: To support ongoing development, rising infrastructure costs, and new features planned for this year, **subscription and in‑app prices will slightly increase in 2026**. This adjustment helps us maintain OsmAnd's high quality, enhance user support, and bring even more value through future updates.
-
 Here's a glimpse of what's coming next.
+
+## Map
 
 ### 3D Buildings
 
 ![3D Buildings](./img/3d_buildings.png)
 
 *A new dimension of exploration.*  
-Discover maps like never before with detailed 3D building representations that make navigation more immersive and visually engaging.
+Discover maps like never before with detailed 3D building representations that make navigation more immersive and visually engaging. Also Displays Sun / Realistic sun "shadows"
+
 
 ### Globe View
 
@@ -53,20 +54,40 @@ Discover maps like never before with detailed 3D building representations that m
 Experience the world as it truly is — round!  
 In 2026, OsmAnd will introduce **Globe View**, allowing you to see the planet from a global perspective and explore routes across continents with ease.
 
-### Configure Map with Map Legend
+### Adjustable Map Style
 
 ![Map Legend](./img/legend.png)
 
 In 2025, we expanded [route configuration options](https://osmand.net/docs/user/map/routes#display-routes-on-the-map).  
 Next in 2026, we're releasing a **Map Legend tool** — giving you full control over how your map looks and helping you understand every layer at a glance. Tailor your OsmAnd maps perfectly for your next adventure.
 
-### Smartwatch Integration
+## Routes
 
-![Smartwatch](./img/smartwatch.png)
+### Route Details & Alerts
 
-In 2025, we laid the groundwork for wearable integration — and now it's coming to life!  
-In 2026, OsmAnd will launch **Smartwatch support**, allowing you to browse and record tracks, or follow navigation instructions right from your wrist. Compact, convenient, and perfect for explorers on the move.
-- Garmin Connect integration: Trip recording function and info; Show navigation instructions.
+![Route Details](./img/extended_route_details.png)
+
+Gain deeper insights into your journey with expanded route details. Get an insight into time, distance, or alternative transportation options so you can make smarter decisions.
+
+### Alternative routes
+
+We plan to provide the **alternative routes** and tool to generate **roundtrips** taking into account advanced options.
+
+### Share your Location & GPX
+
+*Stay connected. Share the adventure.*  
+
+We already implemented sharing GPX on the Web platform and did Autosync with cloud for Android platform. We will need to complete the solution of sharing data with your friends and family directly from OsmAnd without 3rd party tools. 
+
+### Public GPX Track Collection
+
+In 2025 we added extra data stored in GPX like Keywords & Activity and this data is provided to OpenStreetMap website. So now we are ready to the next step of organizing by activity and displaying all publicly available tracks that you already uploaded. 
+
+## Miscellaneous
+
+### Manage Favorites & Media
+
+Revamping the Favorites screen has been a goal of ours for quite some time. This year, we are moving forward with a major redesign. Beyond just a fresh look, we are expanding the functionality to handle media attachments, organizing into smart folder. Our goal is to transform your Favorites into a rich personal travel log.
 
 ### Astronomy Plugin
 
@@ -75,26 +96,17 @@ In 2026, OsmAnd will launch **Smartwatch support**, allowing you to browse and r
 We're reaching for the stars — literally.  
 A new **Astronomy plugin** will arrive in 2026, letting you identify planets, stars, and constellations right from your map. Explore the night sky as easily as you explore the Earth.
 
-### Share Favorites, GPX, and Locations
+### Smartwatches
 
-*Stay connected. Share the adventure.*  
-Easily share your favorite places, GPX tracks, or real-time locations with your friends and family directly from OsmAnd. Whether you're hiking, cycling, or traveling together — sharing is just one tap away.
+![Smartwatch](./img/smartwatch.png)
 
-### More Innovations Ahead
+In 2025, we laid the groundwork for wearable integration — and now it's coming to life!  
+In 2026, OsmAnd will launch **Smartwatch support**, allowing you to browse and record tracks, or follow navigation instructions right from your wrist. Compact, convenient, and perfect for explorers on the move.
+- Garmin Connect integration: Trip recording function and info; Show navigation instructions.
 
-Our journey doesn't end here!  
-In 2026, you can also look forward to:
+### Pricing
 
-- Enhanced features for the OsmAnd Web Map — [osmand.net](https://osmand.net/map): interactive map, web redesign (Navigation, Plan route and etc.)
-- Integrated weather information along your route
-- Display Sun / Realistic sun "shadows"
-- Alternative route suggestions
-- Smarter route planning with advanced options
-- Update Public transport routing
-- Public GPX track collections
-- Improve interaction with superroute like Eurovelo
-
-Stay tuned — the best of OsmAnd is yet to come!
+To support ongoing development, rising infrastructure costs, and new features planned for this year, subscription and in‑app prices will slightly increase in 2026. This adjustment helps us maintain OsmAnd's high quality, enhance user support, and bring even more value through future updates.
 
 ## 2025 Achievements
 
