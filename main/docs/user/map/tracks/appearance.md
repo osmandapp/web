@@ -68,7 +68,7 @@ On IOS the **Coloring list** opens as a context menu. Items can appear in three 
 2. <Translate ios="true" ids="weather_update_disabled"/>. The track lacks the required data.
 3. PRO. Available for the current track but requires a subscription; tapping opens the [<Translate ios="true" ids="purchase_dialog_title"/> screen](https://osmand.net/docs/user/purchases/ios).
 
-For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color) and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#routes).
+For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color) and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### Width {#width}

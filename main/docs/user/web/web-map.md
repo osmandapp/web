@@ -40,8 +40,8 @@ The OsmAnd web map is a global map based on [OpenStreetMap (OSM)](https://www.op
 For opening it right click anywhere on the map. This menu includes the following actions:
 
 - **Where am I** – Quickly find your current location on the map. This feature displays the nearest addresses to the selected point on the map.
-- **Open weather** – Access the [Weather menu](#weather-on-the-web) to view weather details.
-- **Create new route** – Opens the [*Plan a route* tool](../web/planner.md#navigation-route) with the selected location as the starting or destination point.
+- **Open weather** – Access the [Weather menu](../web/web-weather.md) to view weather details.
+- **Create new route** – Opens the [*Plan a route* tool](../web/web-navigation.md) with the selected location as the starting or destination point.
 - **Add Favorite** –  Allows you to create and save a [favorite](../web/web-favorites.md#add--edit-favorite) at any point on the map for easy access.
 - **Directions from** –  Sets the selected point as the [starting location](../web/planner.md#navigation-route) for navigation.
 - **Directions to** – Sets the selected point as the [destination for navigation](../web/planner.md#navigation-route).

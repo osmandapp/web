@@ -238,8 +238,8 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 To find out which pistes outside the ski resort you can navigate, you need to enable **Ski slopes and routes** option in the [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md) list, opened from the [Configure map](../map/configure-map-menu.md) menu.  
 
-With the Skiing profile, the ski navigation and the [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) enabled, the [Ski slopes and routes](../map/vector-maps.md#ski-slopes-and-routes) show all types of pistes that the Ski navigation can use to build navigation routes along. Such ski slope routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.  
-When enabling the option [Ski slopes and routes](../map/vector-maps.md#ski-slopes-and-routes) for a map style other than Winter and Ski, only the slopes are displayed. Other ski-related features might not be shown in this styling layer.  
+With the Skiing profile, the ski navigation and the [Winter and Ski map style](../map/vector-maps.md#winter-and-ski) enabled, the [Ski slopes and routes](../map/routes.md#ski-slopes-and-routes) show all types of pistes that the Ski navigation can use to build navigation routes along. Such ski slope routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.  
+When enabling the option [Ski slopes and routes](../map/routes.md#ski-slopes-and-routes) for a map style other than Winter and Ski, only the slopes are displayed. Other ski-related features might not be shown in this styling layer.  
 _Ski slopes and routes_ [are clickable](../map/routes.md#actions-with-routes).
 
 
