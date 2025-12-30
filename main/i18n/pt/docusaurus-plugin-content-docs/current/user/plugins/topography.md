@@ -1,5 +1,5 @@
 ---
-source-hash: a45f8d3e0c7440482cc20c9fa56b987c3a3c65ecfc717d9d8abb99c630f8d16e
+source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
 sidebar_position: 14
 title: Topografia
 ---
@@ -248,7 +248,7 @@ Os mapas raster de **Hillshade**, **Declive** e **Altitude** são criados com ba
 ### Modificar Esquema de Cores {#modify-color-scheme}
 
 :::info Recurso pago
-*Modificar Esquema de Cores* é um recurso pago do **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) e [Android](../purchases/android.md#pro-features) <ProFeature />.
+*[Modificar Esquema de Cores](../../user/personal/color-palette-schemes.md#terrain)* é um recurso pago do **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) e [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -312,7 +312,7 @@ A função *Níveis de Zoom* permite definir os valores mínimo e máximo dos n�
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-Você pode usar os botões de *Ação Rápida* na tela do mapa para alternar a visibilidade das camadas de [Curvas de Nível](#contour-lines), [Terreno](#terrain) e o [esquema de cores do Terreno](#default-color-scheme). Dependendo da camada selecionada no menu Configurar mapa, atribuir uma ação de *Terreno* ao botão exibirá *Hillshade*, *Declive* ou *Altitude*.  
+Você pode usar os botões de *Ação Rápida* na tela do mapa para alternar a visibilidade das camadas de [Curvas de Nível](#contour-lines), [Terreno](#terrain) e o [esquema de cores do Terreno](../../user/personal/color-palette-schemes.md#quick-actions). Dependendo da camada selecionada no menu Configurar mapa, atribuir uma ação de *Terreno* ao botão exibirá *Hillshade*, *Declive* ou *Altitude*.  
 
 As principais configurações para *Mostrar ou Ocultar tipos de mapa* estão na seção Topografia do menu Configurar Mapa. No artigo [Ação Rápida](../widgets/quick-action.md#configure-map), você pode encontrar uma lista de camadas disponíveis para exibição. Se você precisar de acesso rápido a esta configuração de mapa, use a ferramenta *Botão Personalizado*.
 
@@ -440,7 +440,7 @@ O OsmAnd permite combinar vários tipos de camadas de mapa para uma exibição m
 
 - A combinação de **Curvas de Nível** e **Hillshade** é ideal para estimar visualmente e numericamente a inclinação de montanhas.
 - A combinação das camadas de **Curvas de Nível** e **Declive** é melhor para estimar a inclinação e encontrar pontos com a mesma altura.
-- A combinação das camadas de **Relevo 3D** e **Hillshade** permite obter uma representação mais realista e visual do terreno, relevo e detalhes da paisagem. Esta combinação é especialmente adequada para terrenos montanhosos e acidentados.
+- A combinação das camadas de **Relevo 3D** e **Hillshade** permite obter uma representação mais realista e visual do terreno, relevo e detalhes da paisagem. Esta combinação é especialmente adequada para terrenos montanhosos e ondulados.
 
 
 ## Artigos Relacionados {#related-articles}

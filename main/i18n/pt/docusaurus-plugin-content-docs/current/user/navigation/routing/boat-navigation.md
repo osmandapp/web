@@ -1,5 +1,5 @@
 ---
-source-hash: 23c4f778402ca496deaebdf1d6a07d760d1d6b0418031a36f35310e5644277da
+source-hash: 34cdbd7faeeddcb957aff2e6c83967fb6111c3baa30d876cbad58ab2801cd0d1
 sidebar_position: 8
 title:  Rotas de barco
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão geral {#overview}
 
-O roteamento de barco pode ser uma ferramenta valiosa para quem gosta de passear de barco ou navegar por canais, rios ou vias navegáveis. Devido à falta da maioria das vias navegáveis nos dados do OpenStreetMap, o roteamento de barco *não é recomendado* para **navegação em águas abertas**, sendo sugerido o uso de **[Direto ao ponto](#direct-to-point-routing-for-boat)**. Com as linhas de contorno de profundidade ativadas, ele pode ajudar você a se manter seguro na água, evitando perigos como águas rasas, rochas ou outros obstáculos.  
+O roteamento de barco pode ser uma ferramenta valiosa para quem gosta de passear de barco ou navegar por canais, rios ou caldeiras. Devido à falta da maioria das caldeiras nos dados do OpenStreetMap, o roteamento de barco *não é recomendado* para **navegação em águas abertas**, sendo sugerido o uso de **[Direto ao ponto](#direct-to-point-routing-for-boat)**. Com as linhas de contorno de profundidade ativadas, ele pode ajudar você a se manter seguro na água, evitando perigos como águas rasas, rochas ou outros obstáculos.  
 O motor de roteamento de barco do OsmAnd também leva em consideração as características das vias navegáveis e dos próprios barcos.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -67,7 +67,7 @@ Normalmente, o *roteamento de barco* é usado com o perfil de barco (o último a
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="routing_attr_allow_streams_name"/>* | Permite usar riachos e drenos para navegação de barco. Ativar esta opção pode ser útil para pequenos barcos, como canoas, caiaques, jangadas, barcos a remo. |  [Riachos](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Dstream) são cursos d'água de formação natural que são muito estreitos para serem chamados de rio. [Drenos](https://wiki.openstreetmap.org/wiki/Tag:waterway%3Ddrain) são cursos d'água artificiais, tipicamente revestidos com concreto ou similar, usados para transportar água supérflua, como água da chuva ou descarga de águas cinzas.|
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Ativar esta opção permite usar cursos d'água intermitentes para navegar de barco.   | A tag [Intermitente](https://wiki.openstreetmap.org/wiki/Key:intermittent) é usada para indicar que um curso d'água não contém água permanentemente.  |
-| *Permitir balsas* | Ativa o roteamento via rotas de balsa. | Usa `route=ferry` onde presente no OSM. Nenhum novo mapa necessário. |
+| *Permitir balsas* | Ativa o roteamento via rotas de balsa. | Normalmente, [rotas de balsa](https://wiki.openstreetmap.org/wiki/Tag:route%3Dferry) são inacessíveis para pequenos barcos com base na definição do OSM. |
 
 :::note Navegação Aquática e Limitação
 

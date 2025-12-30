@@ -1,9 +1,10 @@
 ---
-source-hash: d91382fd90471c35f09518fffca8df6e01494de94a597a6b8006d0c7f62c249d
+source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
 sidebar_position: 3
-sidebar_label: Mapa
-title: Mapa Global no Site
+sidebar_label: Map
+title: Global Map on the Website
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,15 +16,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
 
-:::info
-O site *[osmand.net/map](https://osmand.net/map/)* está atualmente em desenvolvimento e testes.
-**Portanto, o layout e o funcionamento de algumas funções no site podem ser diferentes dos descritos neste artigo.**
 
-Criamos o [tema de Discussão](https://github.com/osmandapp/OsmAnd/discussions/16567) no nosso GitHub para que você possa deixar seu feedback lá.
+:::info
+The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
+**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
+
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
+-->
 
 
 ## Visão Geral {#overview}
@@ -40,116 +43,80 @@ Para abri-lo, clique com o botão direito em qualquer lugar do mapa. Este menu i
 - **Onde estou** – Encontre rapidamente sua localização atual no mapa. Este recurso exibe os endereços mais próximos ao ponto selecionado no mapa.
 - **Abrir clima** – Acesse o [menu Clima](#weather-on-the-web) para ver os detalhes do clima.
 - **Criar nova rota** – Abre a ferramenta [*Planejar uma rota*](../web/planner.md#navigation-route) com o local selecionado como ponto de partida ou destino.
-- **Adicionar Favorito** – Permite criar e salvar um [favorito](../web/web-userdata.mdx#add--edit-favorite) em qualquer ponto do mapa para fácil acesso.
+- **Adicionar Favorito** – Permite criar e salvar um [favorito](../web/web-favorites.md#add--edit-favorite) em qualquer ponto do mapa para fácil acesso.
 - **Rotas de** – Define o ponto selecionado como o [local de partida](../web/planner.md#navigation-route) para navegação.
 - **Rotas para** – Define o ponto selecionado como o [destino para navegação](../web/planner.md#navigation-route).
-- **Copiar coordenadas** – Copia as coordenadas do ponto selecionado para uso externo.
-- **Adicionar pino** – Coloca um pino para marcar um local no mapa. ([Exemplo](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 - **Mostrar regiões** – Exibe as regiões associadas ao local selecionado.
+
+<!--
+- **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
 
+Add pin option will be added back once it becomes available again.
+-->
 
-## Clima na Web {#weather-on-the-web}
-
-O OsmAnd Web fornece informações meteorológicas de duas fontes de previsão:
-
-- **GFS (padrão)**
-- **ECMWF**
-
-Para alternar entre essas fontes de previsão, clique no **botão do guarda-chuva** no menu Clima.
-
-***Recursos do menu de clima:***
-
-- **Dados Meteorológicos Atuais**: Exibe suas coordenadas junto com os seguintes dados:
-
-  - Temperatura.
-  - Precipitação.
-  - Vento.
-  - Pressão do Ar.
-  - Cobertura de Nuvens.
-
-- **Ajuste de Tempo**: Modifique a data e a hora usando a **ferramenta de tempo** no menu Clima para visualizar o clima para um momento específico.
-
-***Camadas de clima no mapa:***
-
-- Use o **botão de camadas** para selecionar e ativar camadas de clima como:
-
-  - Temperatura.
-  - Pressão.
-  - Vento.
-  - Cobertura de Nuvens.
-  - Precipitação.
-
-***Visualizando previsões:***
-
-- As previsões meteorológicas estão disponíveis para a previsão de **7 dias**.
-- As atualizações da previsão são fornecidas em **passos de 3 horas** para insights detalhados.
-
-Para acessar ou personalizar esses recursos, use os menus no lado esquerdo ou direito da interface.
-
-  ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
-
-***Previsão de 7 Dias***:
-
-Clique nos dados da previsão no menu para visualizar a **previsão de 7 dias** para sua localização. A previsão está disponível em:
-
-- **Formato de gráfico**
-- **Formato de lista**
-
-  ![OsmAnd Web Weather](@site/static/img/web/web_7day.png)
+![Map Context menu](@site/static/img/web/map_context_menu_new.png)
 
 
 ## Menu Configurar Mapa {#configure-map-menu}
 
-O menu Configurar Mapa permite gerenciar as configurações de exibição para dados do mapa, como camadas de POI, Favoritos, trilhas e terreno. Faça login na sua conta OsmAnd para usar esta seção do menu.
+O menu Configurar Mapa permite gerenciar as configurações de exibição para dados do mapa, como camadas de POI, Favoritos, trilhas e terreno. Este menu está disponível após você fazer login na sua conta OsmAnd. Para abri-lo, clique no botão no **canto superior esquerdo** ou acesse-o através do **Menu**.
 
-Para abrir este menu, clique no botão no **canto superior esquerdo** ou acesse-o através do **Menu**.
-
-- [Sobreposição de POI...](#poi-overlay-section). Permite escolher e mostrar as categorias de POI necessárias no mapa.
-- [Favoritos](#favorites-section). Alterna a exibição de favoritos no mapa.
-- [Trilhas](#tracks-section). Contém trilhas GPX visíveis no mapa.
-- [Terreno](#terrain-section). Ativa ou desativa o esquema de cores do terreno no mapa.
+- [Sobreposição de POI...](#poi-overlay). Permite escolher e mostrar as categorias de POI necessárias no mapa.
+- [Favoritos](#favorites). Alterna a exibição de favoritos no mapa.
+- [Trilhas](#tracks). Contém trilhas GPX visíveis no mapa.  
+- [Terreno](#terrain). Ativa ou desativa o esquema de cores do terreno no mapa.
 
 ![POIs menu](@site/static/img/web/configure_map_web.png)
 
 
-### Seção de sobreposição de POI {#poi-overlay-section}
+### Sobreposição de POI {#poi-overlay}
 
-Para mostrar POIs no mapa:
+O recurso de sobreposição de POI permite exibir Pontos de Interesse (POIs) no mapa por categorias selecionadas. Isso é útil quando você deseja navegar por lugares diretamente no mapa.
 
-*Menu Configurar mapa → Sobreposição de POI...*. Aqui, você pode escolher as categorias a serem exibidas no mapa.
+Para abrir a sobreposição: *Menu Configurar mapa → Sobreposição de POI*...A lista de sobreposição contém 18 categorias. Você pode ativar uma categoria ou ativar várias categorias em qualquer combinação. Quando pelo menos uma categoria estiver ativada, a sobreposição fornece uma ação **Desselecionar tudo** para limpar a seleção de uma vez.
 
-Alternativamente, você pode usar a [**seção de Pesquisa**](web-search.md) para encontrar o local desejado.
+**Nota:** Se você estiver procurando por um lugar específico, também pode usar a [**seção de Pesquisa**](web-search.md) no mapa.
 
-![POIs menu](@site/static/img/web/poi_menu.png)
+Uma vez que os POIs sejam exibidos, selecionar um marcador de POI no mapa abre seu painel de detalhes que mostra as informações disponíveis para esse objeto. Dependendo do POI, pode incluir: nome do lugar e tipo, endereço, campos de contato, identificadores relacionados ao OSM e coordenadas, links de referência (Wikipedia, Wikidata), quando presentes. 
+
+Para POIs que têm fotos online, o painel de detalhes mostra um bloco Fotos Online com miniaturas. Mostrar tudo abre uma visualização de galeria com a lista completa de fotos. No visualizador de fotos, o OsmAnd Web exibe metadados de fotos quando disponíveis, incluindo: data, autor, licença e descrição.
+
+No painel de detalhes do POI, ações rápidas estão disponíveis a partir dos botões de ação:
+- *Adicionar aos Favoritos* — salva o POI nos seus Favoritos.
+- *Compartilhar* — gera um link compartilhável que abre o POI diretamente no OsmAnd Web. O link inclui o nome do POI, tipo e coordenadas (pino).
+- *Rotas de* — define o POI selecionado como o ponto de partida e abre o painel de Rota para que você possa escolher um destino e perfil.
+- *Navegação* — define o POI selecionado como o ponto de destino para navegação.
+
+![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
 
 
-### Seção de Favoritos {#favorites-section}
+### Favoritos {#favorites}
 
-Com um clique, você pode ativar ou desativar os favoritos no mapa. No entanto, apenas os favoritos com [**Mostrar no mapa ativado**](../web/web-userdata.mdx#favorites-on-the-web) serão exibidos.
+Com um clique, você pode ativar ou desativar os favoritos no mapa. No entanto, apenas os favoritos com [**Mostrar no mapa ativado**](../web/web-favorites.md#manage-favorites) serão exibidos.
 
 
-### Seção de Trilhas {#tracks-section}
+### Trilhas {#tracks}
 
-Esta seção contém uma lista das suas [**trilhas GPX visíveis no mapa**](../web/web-userdata.mdx#visible-on-the-map) e trilhas **Recentemente Visíveis**.
+Esta seção contém uma lista das suas [**trilhas GPX visíveis no mapa**](../web/web-tracks.md#visible-on-the-map) e trilhas **Recentemente Visíveis**.
 
-- Você pode ativar ou desativar as trilhas diretamente.
-- Ativar ou desativar trilhas da lista **Recentemente Visíveis**.
+- Você pode ativar ou desativar as trilhas diretamente.  
+- Ativar ou desativar trilhas da lista **Recentemente Visíveis**.  
 
 Cada trilha possui um **Menu de Contexto** (acessível através do botão ⋮) com os seguintes comandos:
 
-- **Ocultar trilha**: Oculta a trilha atualmente visível do mapa.
-- **Tornar trilha visível**: Exibe uma trilha da lista Recentemente Visíveis no mapa.
-- **Renomear**: Permite renomear a trilha para facilitar a identificação.
-- **Duplicar**: Cria uma cópia da trilha.
-- **Baixar**: Salva a trilha no seu dispositivo local.
+- **Ocultar trilha**: Oculta a trilha atualmente visível do mapa.  
+- **Tornar trilha visível**: Exibe uma trilha da lista Recentemente Visíveis no mapa.  
+- **Renomear**: Permite renomear a trilha para facilitar a identificação.  
+- **Duplicar**: Cria uma cópia da trilha.  
+- **Baixar**: Salva a trilha no seu dispositivo local.  
 - **Excluir**: Remove a trilha permanentemente da lista.
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
-### Seção de Terreno {#terrain-section}
+### Terreno {#terrain}
 
 A seção **Terreno** é um recurso pago <ProFeature/>. Para usar este recurso, você deve primeiro fazer login na sua conta OsmAnd Pro.
 
@@ -164,10 +131,52 @@ Nesta seção, você pode:
 ![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
 
 
+## Configurações {#settings}
+
+No Planejador Web, as *configurações gerais* (Idioma de exibição, Unidades de comprimento, Unidade de velocidade) estão disponíveis para todos os usuários, independentemente de você estar logado ou não. Uma vez que você faça login com sua conta OsmAnd, uma seção adicional do OsmAnd Cloud aparece no painel de Configurações. Você pode ler sobre o OsmAnd Cloud [aqui](./web-cloud.md).
+
+### Idioma {#language}
+
+Para alternar o idioma da interface:
+
+*Vá para: Menu → ⚙ Configurações → Idioma de exibição*
+
+![Web Language](@site/static/img/web/web_language.png)
+
+### Unidades {#units}
+
+*Vá para: Menu → ⚙ Configurações → Unidades de comprimento*  
+*Vá para: Menu → ⚙ Configurações → Unidade de velocidade*
+
+Você pode escolher quais unidades são usadas para exibir distância, elevação e velocidade no mapa, nos detalhes da rota e nas ferramentas de medição. Isso ajuda a manter o OsmAnd consistente com seus hábitos habituais ou padrões regionais.
+
+A opção **Unidades de comprimento** define como a distância horizontal e a elevação são mostradas:
+- Quilômetros/metros.
+- Milhas/pés.
+- Milhas/metros.
+- Milhas/jardas.
+- Milhas náuticas/metros.
+- Milhas náuticas/pés. 
+
+Por exemplo, uma distância de 10 km será mostrada como cerca de 6,21 mi se você escolher uma das opções Milhas/..., ou como cerca de 5,40 nmi quando Milhas náuticas/... for selecionado.
+
+A opção **Unidade de velocidade** controla como a velocidade atual e os limites de velocidade são exibidos:
+- Quilômetros por hora.
+- Milhas por hora.
+- Metros por segundo.
+- Minutos por milha.
+- Minutos por quilômetro.
+- Milhas náuticas por hora (nós). 
+
+Por exemplo, uma velocidade de 90 km/h corresponde a 25 m/s ou cerca de 55,92 mph.
+
+![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+
+
 <!--
 ## Map style {#map-style}
 
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.
+In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
 **Some examples:**
 
 - Nautical map style
@@ -206,15 +215,15 @@ Esses URLs podem ser copiados e compartilhados usando qualquer meio suportado pe
 
 Dependendo dos parâmetros especificados, as strings de URL podem conter:
 
-- **latitude**: valor da latitude como um número.
-- **longitude**: valor da longitude como um número.
-- **start-finish**: coordenadas para navegação.
-- **profile**: perfil de navegação (por exemplo, carro, bicicleta).
+- **latitude**: valor da latitude como um número.  
+- **longitude**: valor da longitude como um número.  
+- **start-finish**: coordenadas para navegação.  
+- **profile**: perfil de navegação (por exemplo, carro, bicicleta).  
 - **zoom**: nível de zoom.
 
 4. **Clima**&nbsp; – &nbsp;`osmand.net/map/weather`
 
-***Por exemplo***, você pode acessar diretamente a página do clima com coordenadas especificadas:
+***Por exemplo***, você pode acessar diretamente a página do clima com coordenadas especificadas:  
     [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
 
 5. **Conta**&nbsp; – &nbsp;`osmand.net/map/account`
@@ -229,4 +238,13 @@ Dependendo dos parâmetros especificados, as strings de URL podem conter:
 
 10. **Planejar uma Rota**&nbsp; - &nbsp;`osmand.net/map/plan`
 
-11. Link direto para a [**página Explorar**](https://osmand.net/docs/user/web/web-search#explore) atual&nbsp; - &nbsp;`osmand.net/map/search`
+11. Link direto para a página [**Explorar**](https://osmand.net/docs/user/web/web-search#explore) atual&nbsp; - &nbsp;`osmand.net/map/search`
+
+
+## Artigos Relacionados {#related-articles}
+
+- [Menu de Contexto do Mapa](../map/map-context-menu.md)
+- [Conta OsmAnd](./web-cloud.md)
+- [Trilhas](./web-tracks.md)
+- [Favoritos](./web-favorites.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)

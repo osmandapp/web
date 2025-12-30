@@ -1,5 +1,5 @@
 ---
-source-hash: 76bfae8b6346115687fd1268df49ae83691792da2e5ef2e1b6a05d4692239228
+source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
 sidebar_position: 16
 title: Métricas do Veículo
 ---
@@ -119,7 +119,7 @@ Escolha seu dispositivo OBD-II na lista e estabeleça a conexão.
 - **Renomear**. Permite atribuir um nome personalizado ao sensor para facilitar a identificação.
 - **Esquecer**. Remove o sensor OBD-II emparelhado anteriormente da lista, exigindo um novo emparelhamento, se necessário posteriormente.
 
-**Comportamento de reconexão** *(apenas Android)***:** O OsmAnd tenta automaticamente reconectar ao adaptador OBD-II quando o aplicativo é iniciado, quando a navegação é iniciada ou quando o Android Auto é lançado. Se uma conexão não estiver disponível, os widgets de Métricas do Veículo exibem “–”. Um toque único em qualquer widget de Métricas do Veículo tentará reconectar ao sensor. Se o sensor já estiver conectado, o toque alternará os modos de exibição do widget como de costume.
+**Comportamento de reconexão:** O OsmAnd tenta automaticamente reconectar ao adaptador OBD-II quando o aplicativo é iniciado, quando a navegação é iniciada ou quando o Android Auto / CarPlay é lançado. Se uma conexão não estiver disponível, os widgets de Métricas do Veículo exibem “–”. Um toque único em qualquer widget de Métricas do Veículo tentará reconectar ao sensor. Se o sensor já estiver conectado, o toque alternará os modos de exibição do widget como de costume.
 
 
 ## Lista de Métricas {#metrics-list}

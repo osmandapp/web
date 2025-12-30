@@ -1,5 +1,5 @@
 ---
-source-hash: 494c0f42fb3a14331085fa79522a6bbb96cda5013289fdce88b34a3330403762
+source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
 sidebar_position: 3
 title: Notas de Áudio / Vídeo
 ---
@@ -245,7 +245,7 @@ Para gerenciar uma nota em Meus Locais, toque nos três pontos verticais da nota
 
 <TabItem value="android" label="Android">
 
-![O widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![O widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png) ![O widget](@site/static/img/plugins/audio-video-notes/widget.png) 
 
 </TabItem>
 
@@ -272,9 +272,9 @@ Adicionar um widget à tela é necessário se você preferir evitar a busca por 
 
     - **<Translate android="true" ids="av_def_action_picture"/>** - começar a tirar fotos.
 
-    ![O widget](@site/static/img/plugins/audio-video-notes/widget.png)  
+### Dispositivos de Entrada Externos {#external-input-devices}   
 
-**Usando dispositivos de entrada externos (*Android*)**. Se você usar um [dispositivo de entrada externo](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), você pode iniciar e parar Notas de Áudio/Vídeo sem tocar na tela. Para fazer isso, atribua a ação “Adicionar nota de áudio” ou “Adicionar nota de vídeo” a uma tecla:<br/>
+Se você usar um [dispositivo de entrada externo](https://osmand.net/docs/user/map/interact-with-map#external-input-devices) (*Android*), você pode iniciar e parar Notas de Áudio/Vídeo sem tocar na tela. Para fazer isso, atribua a ação “Adicionar nota de áudio” ou “Adicionar nota de vídeo” a uma tecla:<br/>
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 Uma vez atribuída, a tecla funciona como um alternador:

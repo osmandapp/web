@@ -1,5 +1,5 @@
 ---
-source-hash: a4cce1f5b1b6bf6a375aec1d9807d689ffb13ab254ba342950f6b912e5149b1f
+source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
 sidebar_position: 1
 title: Compras Android
 ---
@@ -78,32 +78,14 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 
 
-:::danger Black Friday prices
-
-*Hurry up! This offer is only available until* **November 30 (23:00 CET)**.
-
-:::
-
-
-
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) na Aplicação | [Maps+](#install-osmand-android) Assinatura | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |
-| **Preço (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Preço (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
+| **Preço (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
+| **Preço (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
-
--->
 
 ### Funcionalidades Gratuitas e Pagas {#free-and-paid-features}
 
@@ -116,7 +98,7 @@ A tabela abaixo detalha as funcionalidades incluídas nos pacotes gratuito e pag
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
 | [Acesso sem publicidade](#free-and-paid-features) | Sem publicidade | Sem publicidade | Sem publicidade |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | [Iniciar](../personal/osmand-cloud.md#osmand-start) | [Iniciar](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | [Iniciar](../personal/osmand-cloud.md#osmand-start) | [Iniciar](../personal/osmand-cloud-md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Todas as funcionalidades Pro](#pro-features) | **-** | **-** | ✔ |
 | [Relevo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Downloads ilimitados de mapas](../start-with/download-maps.md) | <details><summary>**7 downloads de mapas**</summary>  - Download ou atualização de mapa significa apenas download-atualização de um mapa de país (região). <br/> - **Mapa de visão geral do mundo**, **Correção de altitude mundial**, **Fontes de mapa** e **Instruções de voz** não são contados como 7 possibilidades de download. </details> | ✔ | ✔ |
@@ -171,6 +153,7 @@ A assinatura **Pro** atualmente tem as seguintes funcionalidades:
 | [Widget de Elevação](../widgets/nav-widgets.md#elevation-widget) | Mostra a sua localização no gráfico de Elevação da rota de navegação com informações adicionais.  |
 | [Widgets de Altitude - Elevação: Centro do Mapa](../widgets/info-widgets.md#elevation-map-center) | Permite descobrir a elevação do centro do mapa atual acima do nível do mar.  |
 | [Correção de elevação (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permite calcular um gráfico de altitude para o seu trilho ([mapa de Terreno](../plugins/topography.md#download-maps) necessário para a região escolhida). |
+| [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Pode editar esquemas incorporados ou usar os seus próprios ficheiros de paleta para personalizar cores de mapa e rota. |
 
 
 ## Como Comprar {#how-to-buy}
