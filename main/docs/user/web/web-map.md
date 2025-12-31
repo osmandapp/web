@@ -43,8 +43,8 @@ For opening it right click anywhere on the map. This menu includes the following
 - **Open weather** – Access the [Weather menu](../web/web-weather.md) to view weather details.
 - **Create new route** – Opens the [*Plan a route* tool](../web/web-navigation.md) with the selected location as the starting or destination point.
 - **Add Favorite** –  Allows you to create and save a [favorite](../web/web-favorites.md#add--edit-favorite) at any point on the map for easy access.
-- **Directions from** –  Sets the selected point as the [starting location](../web/planner.md#navigation-route) for navigation.
-- **Directions to** – Sets the selected point as the [destination for navigation](../web/planner.md#navigation-route).
+- **Directions from** –  Sets the selected point as the [starting location](../web/web-navigation.md) for navigation.
+- **Directions to** – Sets the selected point as the [destination for navigation](../web/web-navigation.md).
 - **Copy coordinates** – Copies the coordinates of the selected point for external use.
 - **Show regions** – Displays the regions associated with the selected location.
 
