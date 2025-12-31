@@ -96,6 +96,7 @@ The [Radius Ruler Widget](../widgets/info-widgets.md#radius-ruler) shows the dis
 
 Use this widget to estimate proximity to points of interest or plan around a defined area.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -117,9 +118,10 @@ Use this widget to estimate proximity to points of interest or plan around a def
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Compass for Radius Ruler {#compass-for-radius-ruler}
+### Compass {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -154,7 +156,7 @@ This overlay is helpful for outdoor navigation, allowing you to match [map orien
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Center / Bottom Position {#center--bottom-position}
+### Center / Bottom Position {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -181,7 +183,7 @@ To increase the visible radius around your location, you can change the position
 For more information about *the position on the screen*, see the article [Configure Screen](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## 3D View {#3d-view}
+### 3D View {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
