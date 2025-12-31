@@ -5,7 +5,6 @@ authors:
  - victor
  - eugene
 tags: [resolutions, OsmAnd]
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
