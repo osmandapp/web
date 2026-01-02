@@ -65,8 +65,9 @@ Starting from the third year, the full price will apply.
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |s>$450</s> $299.00   |
+
 
 
 
