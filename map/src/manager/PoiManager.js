@@ -267,6 +267,26 @@ export function translatePoi({ key = null, value = null, ctx, t }) {
 }
 
 /**
+ * Check if type is a brand (contains ':' separator)
+ * Brand format: brandName:lang
+ */
+export function isBrandType(type) {
+    return type && type.includes(':') && !type.includes('name:') && !type.includes('lang:');
+}
+
+/**
+ * Parse brand type to extract brand name and language
+ * @returns {Object} { brandName, lang } or null if not a brand
+ */
+export function parseBrandType(type) {
+    if (!isBrandType(type)) {
+        return null;
+    }
+    const [brandName, lang] = type.split(':');
+    return { brandName, lang };
+}
+
+/**
  * Get category name from category type and translation function
  * Handles special cases: name:lang and lang:lang formats
  */

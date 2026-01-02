@@ -6,6 +6,8 @@ import PoiManager, {
     getCatPoiIconName,
     getSearchResultIcon,
     getCategoryName,
+    isBrandType,
+    parseBrandType,
 } from '../../../manager/PoiManager';
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
@@ -49,13 +51,15 @@ export function performBaseSearch(searchParams, ctx, loc) {
 }
 
 export function searchByCategory(searchParams, ctx, t) {
-    // If lang is present, it's a brand search - use type directly (brand name)
-    // Otherwise, it's a category search - translate category name
+    // Brand format: type:lang, Category format: just type
     let categoryName = '';
+    let lang = null;
     if (searchParams.type) {
-        if (searchParams.lang) {
-            // Brand search: type is already the brand name
-            categoryName = searchParams.type;
+        const brandInfo = parseBrandType(searchParams.type);
+        if (brandInfo) {
+            // Brand search: type format is "brandName:lang"
+            categoryName = brandInfo.brandName;
+            lang = brandInfo.lang;
         } else {
             // Category search: translate category name
             categoryName = getCategoryName(searchParams.type, t, getFirstSubstring);
@@ -65,7 +69,7 @@ export function searchByCategory(searchParams, ctx, t) {
     ctx.setSearchQuery({
         query: formattingPoiType(categoryName),
         type: searchParams.type,
-        lang: searchParams.lang,
+        lang: lang,
     });
 }
 
@@ -109,9 +113,14 @@ export default function SearchResults() {
         if (params.query) {
             document.title = params.query;
         } else if (params.type) {
-            document.title = params.lang ? params.type : getCategoryName(params.type, t, getFirstSubstring);
+            const brandInfo = parseBrandType(params.type);
+            if (brandInfo) {
+                document.title = brandInfo.brandName;
+            } else {
+                document.title = getCategoryName(params.type, t, getFirstSubstring);
+            }
         }
-    }, [params.query, params.type, params.lang]);
+    }, [params.query, params.type]);
 
     // always hide explore markers when search query is active
     useEffect(() => {
@@ -280,9 +289,12 @@ export default function SearchResults() {
                 defaultSearchValue={
                     ctx.searchQuery?.query ||
                     (params?.type
-                        ? params?.lang
-                            ? params.type // Brand search: use type directly (brand name)
-                            : getCategoryName(params.type, t, getFirstSubstring) // Category search: translate
+                        ? (() => {
+                              const brandInfo = parseBrandType(params.type);
+                              return brandInfo
+                                  ? brandInfo.brandName
+                                  : getCategoryName(params.type, t, getFirstSubstring);
+                          })()
                         : params?.query || '')
                 }
             />

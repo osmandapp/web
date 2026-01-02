@@ -8,6 +8,7 @@ import PoiManager, {
     DEFAULT_POI_SHAPE,
     navigateToPoi,
     updatePoiCache,
+    parseBrandType,
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
@@ -408,7 +409,16 @@ export default function SearchLayer() {
     }
 
     function searchByCategory(searchData) {
-        const newCategory = { category: searchData.type, lang: searchData.lang };
+        let category = searchData.type;
+        let lang = searchData.lang;
+
+        const brandInfo = parseBrandType(searchData.type);
+        if (brandInfo) {
+            category = brandInfo.brandName;
+            lang = brandInfo.lang;
+        }
+
+        const newCategory = { category, lang };
         ctx.setShowPoiCategories((prev) => [...prev, newCategory]);
     }
 

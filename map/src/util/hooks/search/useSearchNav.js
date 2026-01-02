@@ -4,18 +4,16 @@ import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../man
 
 const QUERY_KEY = 'query';
 const TYPE_KEY = 'type';
-const LANG_KEY = 'lang';
 
-const QUERY_SEARCH_RESULT_PARAMS = [QUERY_KEY, TYPE_KEY, LANG_KEY];
+const QUERY_SEARCH_RESULT_PARAMS = [QUERY_KEY, TYPE_KEY];
 
 export function buildSearchParamsFromQuery(q) {
     if (!q) return '';
 
     const type = q.type;
-    const lang = q.lang;
     const query = q.query;
 
-    return buildSearchParams({ query, type, lang }, new URLSearchParams());
+    return buildSearchParams({ query, type }, new URLSearchParams());
 }
 
 export default function useSearchNav() {
@@ -24,8 +22,8 @@ export default function useSearchNav() {
 
     const params = useMemo(() => parseParams(searchParams), [searchParams]);
 
-    function updateSearchParams({ query, type, lang } = {}) {
-        return buildSearchParams({ query, type, lang }, searchParams);
+    function updateSearchParams({ query, type } = {}) {
+        return buildSearchParams({ query, type }, searchParams);
     }
 
     function navigateToSearchMenu() {
@@ -35,8 +33,8 @@ export default function useSearchNav() {
         });
     }
 
-    function navigateToSearchResults({ query, type, lang }) {
-        const searchString = updateSearchParams({ query, type, lang });
+    function navigateToSearchResults({ query, type }) {
+        const searchString = updateSearchParams({ query, type });
         navigate({
             pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
             search: searchString,
@@ -82,7 +80,7 @@ function shallowEqualByKeys(a, b, keys) {
     return true;
 }
 
-function buildSearchParams({ query, type, lang } = {}, currentSearchParams) {
+function buildSearchParams({ query, type } = {}, currentSearchParams) {
     const sp = new URLSearchParams(currentSearchParams);
 
     if (type) {
@@ -91,7 +89,6 @@ function buildSearchParams({ query, type, lang } = {}, currentSearchParams) {
         query ? sp.set(QUERY_KEY, query) : sp.delete(QUERY_KEY);
     }
     type ? sp.set(TYPE_KEY, type) : sp.delete(TYPE_KEY);
-    lang ? sp.set(LANG_KEY, lang) : sp.delete(LANG_KEY);
 
     const str = sp.toString();
     return str ? `?${str}` : '';

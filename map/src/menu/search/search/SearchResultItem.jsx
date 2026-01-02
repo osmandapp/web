@@ -219,15 +219,16 @@ export default function SearchResultItem({ item, typeItem }) {
                 });
             } else {
                 // search by brand
-                let lang;
+                let brandType = item.properties[CATEGORY_NAME];
                 let type = item.properties[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
                 if (type) {
                     const brandRes = parseTagWithLang(type);
-                    lang = brandRes.lang;
+                    if (brandRes.lang) {
+                        brandType = `${brandType}:${brandRes.lang}`;
+                    }
                 }
                 return navigateToSearchResults({
-                    type: item.properties[CATEGORY_NAME],
-                    lang,
+                    type: brandType,
                 });
             }
         }
