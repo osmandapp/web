@@ -144,17 +144,15 @@ export default function SearchLayer() {
     }, [ctx.zoomToCoords]);
 
     useEffect(() => {
-        if (ctx.searchQuery?.search) {
+        if (ctx.searchQuery) {
             removeOldSearchLayer();
             //remove old categories from search
             ctx.setShowPoiCategories([]);
-            const searchData = ctx.searchQuery.search;
-            if (ctx.searchQuery.type === SEARCH_TYPE_CATEGORY) {
-                const category = PoiManager.formattingPoiFilter(searchData?.query, true);
-                searchByCategory(category, searchData, ctx.searchQuery.lang);
+            if (ctx.searchQuery.type) {
+                searchByCategory(ctx.searchQuery);
             } else {
                 if (ctx.searchQuery.latlng) {
-                    searchByWord(searchData.query, ctx.searchQuery.latlng, ctx.searchQuery.baseSearch).then();
+                    searchByWord(ctx.searchQuery).then();
                 } else {
                     console.debug('SearchLayer: search query without latlng');
                 }
@@ -195,7 +193,7 @@ export default function SearchLayer() {
             }
         };
 
-        if (ctx.searchResult?.features && ctx.searchQuery && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
+        if (ctx.searchResult?.features && ctx.searchQuery && !ctx.searchQuery.type) {
             updateAsyncLayers().then();
         }
         const newBounds = map.getBounds();
@@ -221,7 +219,7 @@ export default function SearchLayer() {
         }
     }, [ctx.zoomToMapObj]);
 
-    async function searchByWord(query, latlng, baseSearch) {
+    async function searchByWord(searchData) {
         const notifyTimeout = showProcessingNotification(ctx);
         const bbox = getVisibleBbox(map, ctx);
         if (!bbox) {
@@ -230,13 +228,13 @@ export default function SearchLayer() {
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {
-                lat: latlng.lat,
-                lon: latlng.lng,
+                lat: searchData.latlng.lat,
+                lon: searchData.latlng.lng,
                 northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                 southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
-                text: query,
+                text: searchData.query,
                 locale: i18n.language,
-                baseSearch,
+                baseSearch: searchData.baseSearch,
             },
         });
         if (response?.ok) {
@@ -260,12 +258,12 @@ export default function SearchLayer() {
         const addAsyncLayers = async () => {
             if (!ctx.searchResult) {
                 removeOldSearchLayer();
-                if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
-                    const category = PoiManager.formattingPoiFilter(ctx.searchQuery?.search?.query, true);
+                if (ctx.searchQuery?.type) {
+                    const category = PoiManager.formattingPoiFilter(ctx.searchQuery?.query, true);
                     removeCategory(category);
                 }
             } else {
-                if (ctx.searchResult?.features && ctx.searchQuery?.type !== SEARCH_TYPE_CATEGORY) {
+                if (ctx.searchResult?.features && !ctx.searchQuery?.type) {
                     const layers = await createSearchLayer({
                         objList: ctx.searchResult?.features,
                     });
@@ -409,8 +407,8 @@ export default function SearchLayer() {
         return L.divIcon({ html: iconHtml, svg: coloredSvg });
     }
 
-    function searchByCategory(category, searchData, lang) {
-        const newCategory = { key: searchData.key, category, lang, mode: searchData.mode };
+    function searchByCategory(searchData) {
+        const newCategory = { category: searchData.type, lang: searchData.lang };
         ctx.setShowPoiCategories((prev) => [...prev, newCategory]);
     }
 

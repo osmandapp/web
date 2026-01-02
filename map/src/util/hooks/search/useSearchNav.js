@@ -4,21 +4,18 @@ import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../man
 
 const QUERY_KEY = 'query';
 const TYPE_KEY = 'type';
-const CAT_KEY = 'key';
 const LANG_KEY = 'lang';
-const MODE_KEY = 'mode';
 
-const QUERY_SEARCH_RESULT_PARAMS = [QUERY_KEY, TYPE_KEY, CAT_KEY, LANG_KEY, MODE_KEY];
+const QUERY_SEARCH_RESULT_PARAMS = [QUERY_KEY, TYPE_KEY, LANG_KEY];
 
 export function buildSearchParamsFromQuery(q) {
     if (!q) return '';
 
     const type = q.type;
     const lang = q.lang;
-    const query = q.search.query;
-    const key = q.search.key;
+    const query = q.query;
 
-    return buildSearchParams({ query, type, key, lang }, new URLSearchParams());
+    return buildSearchParams({ query, type, lang }, new URLSearchParams());
 }
 
 export default function useSearchNav() {
@@ -27,8 +24,8 @@ export default function useSearchNav() {
 
     const params = useMemo(() => parseParams(searchParams), [searchParams]);
 
-    function updateSearchParams({ query, type, key, lang, mode } = {}) {
-        return buildSearchParams({ query, type, key, lang, mode }, searchParams);
+    function updateSearchParams({ query, type, lang } = {}) {
+        return buildSearchParams({ query, type, lang }, searchParams);
     }
 
     function navigateToSearchMenu() {
@@ -38,8 +35,8 @@ export default function useSearchNav() {
         });
     }
 
-    function navigateToSearchResults({ query, type, key, lang, mode }) {
-        const searchString = updateSearchParams({ query, type, key, lang, mode });
+    function navigateToSearchResults({ query, type, lang }) {
+        const searchString = updateSearchParams({ query, type, lang });
         navigate({
             pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
             search: searchString,
@@ -85,14 +82,12 @@ function shallowEqualByKeys(a, b, keys) {
     return true;
 }
 
-function buildSearchParams({ query, type, key, lang, mode } = {}, currentSearchParams) {
+function buildSearchParams({ query, type, lang } = {}, currentSearchParams) {
     const sp = new URLSearchParams(currentSearchParams);
 
     query ? sp.set(QUERY_KEY, query) : sp.delete(QUERY_KEY);
     type ? sp.set(TYPE_KEY, type) : sp.delete(TYPE_KEY);
-    key ? sp.set(CAT_KEY, key) : sp.delete(CAT_KEY);
     lang ? sp.set(LANG_KEY, lang) : sp.delete(LANG_KEY);
-    mode ? sp.set(MODE_KEY, mode) : sp.delete(MODE_KEY);
 
     const str = sp.toString();
     return str ? `?${str}` : '';

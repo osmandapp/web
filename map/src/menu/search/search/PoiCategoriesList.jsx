@@ -8,7 +8,6 @@ import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
 import PoiManager from '../../../manager/PoiManager';
-import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getFirstSubstring } from './SearchResultItem';
@@ -16,7 +15,7 @@ import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
-import { SEARCH_POI_ALL_MODE } from '../SearchMenu';
+import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
 export default function PoiCategoriesList({ categories, setSearchValue, categoriesIcons, loadingIcons }) {
     const ctx = useContext(AppContext);
@@ -86,9 +85,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                                     e.preventDefault();
                                     navigateToSearchResults({
                                         query: catName,
-                                        type: SEARCH_TYPE_CATEGORY,
-                                        key: category,
-                                        mode: SEARCH_POI_ALL_MODE,
+                                        type: category,
                                     });
                                     ctx.setPoiCatMenu(false);
                                 }}

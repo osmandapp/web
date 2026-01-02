@@ -23,7 +23,6 @@ import PoiManager, {
 import PoiCategoriesList from './search/PoiCategoriesList';
 import SearchResults from './search/SearchResults';
 import { MenuButton } from './search/MenuButton';
-import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
 import { CATEGORY_KEY_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
 import EmptyLogin from '../../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
@@ -35,9 +34,9 @@ import gStyles from '../gstylesmenu.module.css';
 import useSearchNav from '../../util/hooks/search/useSearchNav';
 import { SEARCH_RESULTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import ExploreMenu from './explore/ExploreMenu';
+import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
 
 export const DEFAULT_EXPLORE_POITYPES = ['0'];
-export const SEARCH_POI_ALL_MODE = 'all';
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
@@ -292,9 +291,7 @@ export default function SearchMenu() {
                                                                     onClick={(e) => {
                                                                         navigateToSearchResults({
                                                                             query: catName,
-                                                                            type: SEARCH_TYPE_CATEGORY,
-                                                                            key: item,
-                                                                            mode: SEARCH_POI_ALL_MODE,
+                                                                            type: item,
                                                                         });
                                                                         e.preventDefault();
                                                                     }}

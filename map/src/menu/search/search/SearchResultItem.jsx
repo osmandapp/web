@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
 import {
     ADDRESS_1,
@@ -216,8 +216,7 @@ export default function SearchResultItem({ item, typeItem }) {
             if (category) {
                 return navigateToSearchResults({
                     query: getFirstSubstring(t(`poi_${category}`)),
-                    type: SEARCH_TYPE_CATEGORY,
-                    key: category,
+                    type: category,
                 });
             } else {
                 // search by brand
@@ -229,8 +228,7 @@ export default function SearchResultItem({ item, typeItem }) {
                 }
                 return navigateToSearchResults({
                     query: item.properties[CATEGORY_NAME],
-                    type: SEARCH_TYPE_CATEGORY,
-                    key: item.properties[CATEGORY_NAME],
+                    type: item.properties[CATEGORY_NAME],
                     lang,
                 });
             }

@@ -32,7 +32,6 @@ import {
     getObjIdSearch,
     SEARCH_ICON_MAP_LOCATION,
     SEARCH_LAYER_ID,
-    SEARCH_TYPE_CATEGORY,
     searchTypeMap,
 } from './SearchLayer';
 import i18n from '../../i18n';
@@ -405,7 +404,7 @@ export default function PoiLayer() {
 
     function typesChanged() {
         if (!isEmpty(ctx.showPoiCategories)) {
-            if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
+            if (ctx.searchQuery?.type) {
                 // always clear the old poi list
                 return true;
             }
@@ -483,7 +482,7 @@ export default function PoiLayer() {
     ).current;
 
     function addToSearchRes(poiList) {
-        if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
+        if (ctx.searchQuery?.type) {
             ctx.setSearchResult((prevResult) => {
                 return {
                     ...prevResult,

@@ -4,11 +4,11 @@ import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_se
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
-import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
+import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
 export default function CustomInput({
     menuButton = null,
@@ -46,7 +46,7 @@ export default function CustomInput({
                 } else {
                     ctx.setSearchQuery((prev) => ({
                         ...prev,
-                        search: { query: '' },
+                        query: '',
                         type: null,
                     }));
                     navigateToSearchResults({ query: '', type: null });
@@ -84,7 +84,7 @@ export default function CustomInput({
             return;
         }
         ctx.setForceSearch(true);
-        navigateToSearchResults({ query: value, type });
+        navigateToSearchResults({ query: value });
     }
 
     const handleKeyPress = (e) => {

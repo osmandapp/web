@@ -5,7 +5,7 @@ import PoiManager, { formattingPoiType, getCatPoiIconName, getSearchResultIcon }
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
-import { iconPathMap, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { iconPathMap, SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
@@ -32,7 +32,7 @@ const EMPTY_SEARCH_RESULT = 'empty';
 
 export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
     ctx.setSearchQuery({
-        search: { query: formattingPoiType(searchParams.query) },
+        query: formattingPoiType(searchParams.query),
         latlng: { lat: loc.lat, lng: loc.lng },
         baseSearch,
     });
@@ -43,15 +43,9 @@ export function performBaseSearch(searchParams, ctx, loc) {
 }
 
 export function searchByCategory(searchParams, ctx) {
-    const preparedValue = {
+    ctx.setSearchQuery({
         query: formattingPoiType(searchParams.query),
         type: searchParams.type,
-        key: searchParams.key,
-        mode: searchParams.mode,
-    };
-    ctx.setSearchQuery({
-        search: preparedValue,
-        type: SEARCH_TYPE_CATEGORY,
         lang: searchParams.lang,
     });
 }
@@ -99,10 +93,10 @@ export default function SearchResults() {
 
     // always hide explore markers when search query is active
     useEffect(() => {
-        if (ctx.searchQuery?.search) {
+        if (ctx.searchQuery) {
             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
         }
-    }, [ctx.searchQuery?.search]);
+    }, [ctx.searchQuery]);
 
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
@@ -190,7 +184,7 @@ export default function SearchResults() {
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
-                if (params.type === SEARCH_TYPE_CATEGORY) {
+                if (params.type) {
                     searchByCategory(params, ctx);
                 } else {
                     const { loc } = getLoc();
@@ -260,7 +254,7 @@ export default function SearchResults() {
         <>
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
-                defaultSearchValue={ctx.searchQuery?.search?.query || params?.query || ''}
+                defaultSearchValue={ctx.searchQuery?.query || params?.query || ''}
             />
             {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
             {!ctx.processingSearch &&
@@ -276,9 +270,7 @@ export default function SearchResults() {
                                     key={index + (item?.id || item?.properties?.id || '')}
                                     item={item}
                                     index={index}
-                                    typeItem={
-                                        ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID
-                                    }
+                                    typeItem={ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID}
                                 />
                             ))}
                     </Box>
