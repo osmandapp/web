@@ -290,7 +290,6 @@ export default function SearchMenu() {
                                                                     key={key + catName}
                                                                     onClick={(e) => {
                                                                         navigateToSearchResults({
-                                                                            query: catName,
                                                                             type: item,
                                                                         });
                                                                         e.preventDefault();

@@ -85,7 +85,11 @@ function shallowEqualByKeys(a, b, keys) {
 function buildSearchParams({ query, type, lang } = {}, currentSearchParams) {
     const sp = new URLSearchParams(currentSearchParams);
 
-    query ? sp.set(QUERY_KEY, query) : sp.delete(QUERY_KEY);
+    if (type) {
+        sp.delete(QUERY_KEY);
+    } else {
+        query ? sp.set(QUERY_KEY, query) : sp.delete(QUERY_KEY);
+    }
     type ? sp.set(TYPE_KEY, type) : sp.delete(TYPE_KEY);
     lang ? sp.set(LANG_KEY, lang) : sp.delete(LANG_KEY);
 

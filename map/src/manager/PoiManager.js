@@ -266,6 +266,22 @@ export function translatePoi({ key = null, value = null, ctx, t }) {
     return '';
 }
 
+/**
+ * Get category name from category type and translation function
+ * Handles special cases: name:lang and lang:lang formats
+ */
+export function getCategoryName(category, t, getFirstSubstring) {
+    if (!category) return '';
+    if (category.includes('name:')) {
+        const [mainPart, subPart] = category.split(':');
+        return getFirstSubstring(t(`poi_${mainPart}`)) + ' (' + t(`lang_${subPart}`) + ')';
+    } else if (category.includes('lang:')) {
+        const preparedCategory = category.replace(':', '_');
+        return getFirstSubstring(t(`poi_${preparedCategory}`));
+    }
+    return getFirstSubstring(t(`poi_${category}`));
+}
+
 export async function getCategoryIcon(category) {
     const name = PoiManager.preparePoiFilterIcon(category);
     return (

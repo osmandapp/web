@@ -215,7 +215,6 @@ export default function SearchResultItem({ item, typeItem }) {
             const category = item.properties['web_keyName'];
             if (category) {
                 return navigateToSearchResults({
-                    query: getFirstSubstring(t(`poi_${category}`)),
                     type: category,
                 });
             } else {
@@ -227,7 +226,6 @@ export default function SearchResultItem({ item, typeItem }) {
                     lang = brandRes.lang;
                 }
                 return navigateToSearchResults({
-                    query: item.properties[CATEGORY_NAME],
                     type: item.properties[CATEGORY_NAME],
                     lang,
                 });

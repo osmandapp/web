@@ -7,7 +7,7 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
-import PoiManager from '../../../manager/PoiManager';
+import PoiManager, { getCategoryName } from '../../../manager/PoiManager';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getFirstSubstring } from './SearchResultItem';
@@ -28,17 +28,6 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
         const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`)).toLowerCase();
         return nameA.localeCompare(nameB);
     });
-
-    function getCatName(category) {
-        if (category.includes('name:')) {
-            const [mainPart, subPart] = category.split(':');
-            return getFirstSubstring(t(`poi_${mainPart}`)) + ' (' + t(`lang_${subPart}`) + ')';
-        } else if (category.includes('lang:')) {
-            const preparedCategory = category.replace(':', '_');
-            return getFirstSubstring(t(`poi_${preparedCategory}`));
-        }
-        return getFirstSubstring(t(`poi_${category}`));
-    }
 
     return (
         <Box className={gStyles.scrollMainBlock}>
@@ -73,7 +62,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                 <Box id={'se-search-categories-box'} className={gStyles.scrollActiveBlock}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
-                        const catName = getCatName(category);
+                        const catName = getCategoryName(category, t, getFirstSubstring);
                         const mainCatName = getPoiParentCategory(item, t);
 
                         return (
@@ -84,7 +73,6 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                                 onClick={(e) => {
                                     e.preventDefault();
                                     navigateToSearchResults({
-                                        query: catName,
                                         type: category,
                                     });
                                     ctx.setPoiCatMenu(false);

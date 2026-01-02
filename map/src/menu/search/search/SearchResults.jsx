@@ -1,8 +1,13 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
-import PoiManager, { formattingPoiType, getCatPoiIconName, getSearchResultIcon } from '../../../manager/PoiManager';
-import SearchResultItem from './SearchResultItem';
+import PoiManager, {
+    formattingPoiType,
+    getCatPoiIconName,
+    getSearchResultIcon,
+    getCategoryName,
+} from '../../../manager/PoiManager';
+import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
 import { iconPathMap, SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
@@ -25,6 +30,7 @@ import {
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
+import { useTranslation } from 'react-i18next';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -42,9 +48,22 @@ export function performBaseSearch(searchParams, ctx, loc) {
     searchByWord(searchParams, ctx, loc, true);
 }
 
-export function searchByCategory(searchParams, ctx) {
+export function searchByCategory(searchParams, ctx, t) {
+    // If lang is present, it's a brand search - use type directly (brand name)
+    // Otherwise, it's a category search - translate category name
+    let categoryName = '';
+    if (searchParams.type) {
+        if (searchParams.lang) {
+            // Brand search: type is already the brand name
+            categoryName = searchParams.type;
+        } else {
+            // Category search: translate category name
+            categoryName = getCategoryName(searchParams.type, t, getFirstSubstring);
+        }
+    }
+
     ctx.setSearchQuery({
-        query: formattingPoiType(searchParams.query),
+        query: formattingPoiType(categoryName),
         type: searchParams.type,
         lang: searchParams.lang,
     });
@@ -52,6 +71,7 @@ export function searchByCategory(searchParams, ctx) {
 
 export default function SearchResults() {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [result, setResult] = useState(null);
     const hash = window.location.hash;
@@ -88,8 +108,10 @@ export default function SearchResults() {
     useEffect(() => {
         if (params.query) {
             document.title = params.query;
+        } else if (params.type) {
+            document.title = params.lang ? params.type : getCategoryName(params.type, t, getFirstSubstring);
         }
-    }, [params.query]);
+    }, [params.query, params.type, params.lang]);
 
     // always hide explore markers when search query is active
     useEffect(() => {
@@ -179,13 +201,14 @@ export default function SearchResults() {
 
     useEffect(() => {
         if (locReady) {
-            if (params.query && params.query !== '' && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
+            const hasSearchParams = params.type || (params.query && params.query !== '');
+            if (hasSearchParams && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
                 ctx.setProcessingSearch(true);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
                 if (params.type) {
-                    searchByCategory(params, ctx);
+                    searchByCategory(params, ctx, t);
                 } else {
                     const { loc } = getLoc();
                     if (!loc) return;
@@ -247,14 +270,21 @@ export default function SearchResults() {
     }
 
     function reopenSearchResult() {
-        return result && result !== EMPTY_SEARCH_RESULT && !params.query;
+        return result && result !== EMPTY_SEARCH_RESULT && !params.query && !params.type;
     }
 
     return (
         <>
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
-                defaultSearchValue={ctx.searchQuery?.query || params?.query || ''}
+                defaultSearchValue={
+                    ctx.searchQuery?.query ||
+                    (params?.type
+                        ? params?.lang
+                            ? params.type // Brand search: use type directly (brand name)
+                            : getCategoryName(params.type, t, getFirstSubstring) // Category search: translate
+                        : params?.query || '')
+                }
             />
             {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
             {!ctx.processingSearch &&
