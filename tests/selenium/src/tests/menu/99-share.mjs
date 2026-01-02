@@ -78,6 +78,7 @@ export default async function test() {
 
     // send request to access from another user
     await actionLogOut();
+    await clickBy(By.id('se-login-button'));
     await actionLogIn({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
 
     await actionOpenMap(linkTrack1);
@@ -97,7 +98,7 @@ export default async function test() {
     await clickBy(By.id('se-request-access-btn'));
 
     await actionLogOut();
-
+    await clickBy(By.id('se-login-button'));
     // approve access
     await actionLogIn();
 
@@ -111,7 +112,7 @@ export default async function test() {
     await approveAccessFav(favName2Short, userName);
 
     await actionLogOut();
-
+    await clickBy(By.id('se-login-button'));
     // check shared with me
     await actionLogIn({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
     // check shared link
@@ -135,6 +136,7 @@ export default async function test() {
     await waitBy(By.id(`se-menu-fav-${favName2Short}`));
 
     await actionLogOut();
+    await clickBy(By.id('se-login-button'));
     await actionLogIn();
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
