@@ -6,7 +6,6 @@ import PoiManager, {
     getCatPoiIconName,
     getSearchResultIcon,
     getCategoryName,
-    isBrandType,
     parseBrandType,
 } from '../../../manager/PoiManager';
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
