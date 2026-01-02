@@ -15,7 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 
 ## Overview {#overview}
@@ -56,74 +58,83 @@ To create a navigation route, follow these steps:
 -->
 
 
-## Create Track and Local Files {#create-track-and-local-files}
+## Create New Route {#create-new-route}
 
-OsmAnd Web's [**Plan route**](../plan-route/create-route.md) tool allows you to create and edit tracks similarly to the mobile app. Here's how you can create and manage tracks:
+There are two ways to start a new route in Plan route. The first option is directly from the map: right-click anywhere on the map and select **Create new route**. The second option is from the left panel: click the **Create track** button.
 
+Once the route is created, add points directly on the map. Each click places the next point, and the planner builds the route between points.
 
-***Creating a new route:***
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route.png)
 
-- *Right-click* on the map and select **Create New Route**.
-- Alternatively, use the **Create Track** button in the *Local* menu (located on the right side with the *Pencil* and *Upload* buttons).
+### Import Track {#import-track}
 
+If you already have a track file, you can import it into Plan route and continue working with it in the Web Planner. Click the **Import track** button and select a GPX file from your computer. After the upload, the track appears in your local list and opens in the planner, so you can review it on the map and proceed with editing and management in the track panels.
 
-***Managing tracks:***
+### Local Files {#local-files}
 
-- **Select Navigation Profile**. Choose a profile (e.g., hiking, driving) for specific route sections (*New segments*) or for the entire route (*All segments*).
-- **Add Waypoints**. Click on the map to add new points.
-- **Save the Route**. Save your route for future use.
-- **View Route Details**. Access detailed track information, including length, duration, and terrain.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
+All routes and tracks you create or import in Plan route are added to the Local list in the left panel. This makes it easier to keep multiple GPX files in one place and switch between them while planning.
 
+Each item in the list has a toggle that lets you quickly show or hide the track on the map. Select a track from the list to open it in the planner and continue working with it. 
 
-***Importing and creating tracks:***
-
-- **Import Track**. You can upload any GPX file to the **Local** section by visiting [osmand.net/map](https://osmand.net/map).
-- **Create Track**. Manually create a new track by selecting waypoints.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
+![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
-***Local track actions and information:***
+## Manage Track {#manage-track}
 
-The **Local Track** menu provides three panels for editing: **Info**, **Track**, and **Waypoints**.
+When you create or import a route in Plan route, a vertical track panel opens. Use this panel to change the routing profile and manage the route. Click the profile control to open the **Change profile** dialog, select the profile you need (for example, Car, Bicycle, or Pedestrian), and choose how to apply it: *Next segments* applies the profile only to new parts added from this point forward, while *All segments* recalculates the entire route with the selected profile.
 
-**Info Panel**:
+From the track panel you can also perform common file actions. You can **Save to Cloud** to keep the route for later use, **Download GPX** to export it as a file, **Close track** to stop editing it, or **Delete track** to remove it from your local list. These actions are also available from the corresponding controls in the [Info panel](#info-panel).
 
-- *Save to Cloud*. Save your track to OsmAnd Cloud for cross-device access.
-- *Add description*. Add notes about the track.
-- *Rename*. Change the track name.
-- *Recalculate*. Add or update elevation data.
-- *Elevation*. View the elevation profile.
-- *Speed graph*. Display speed data across the track.
-- *Slope graph*. Show slope changes along the route.  
-- *Road details*. View detailed information such as road type, surface, and steepness.
-- *Download GPX*. Export the track as a GPX file ([Pro feature](../purchases/index.md)).
-- *Close Track*. Close the track editing view.
-- *Delete Track*. Permanently delete the track.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
-
-**Track Panel**:
-
-- View and edit track points.
-- Reorder or delete points as needed.
-
-**Waypoints Panel**:
-
-- View and manage track waypoints.
-- Toggle the visibility of waypoints on the map.
-- Delete waypoints individually if necessary.
-
-**Turns Panel**:
-
-- View detailed information about turns along the track.
-
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
-***Additional features:***
+## Track Details Panels {#track-details-panels}
 
-- **Sync with app**. Save routes to OsmAnd Cloud and access them on your mobile app.
-- **Custom route profiles**. Adjust profiles to suit different activities, such as cycling or hiking.
-- **Shareable routes**. Copy and share route URLs for collaborative planning.
+The local track menu includes three panels: **Info**, **Track**, and **Waypoints**. Use them to view track information and manage route points and waypoints.
+
+### Info Panel {#info-panel}
+
+The Info panel summarizes the selected track and shows key route and elevation data. It includes a quick overview of the route statistics, plus charts and additional track analysis based on available map data.
+
+The summary section shows:
+
+- Points — the number of route points used to build the route.
+- Distance — the total route length.
+- Uphill / downhill — total ascent and total descent along the route.
+- Elevation (min/avg/max) — elevation statistics for the route.
+- If elevation data is missing or needs to be updated, use Elevation (Satellite) → recalculate to rebuild elevation using satellite data (when available).
+
+Below the summary, the panel provides charts:
+
+- Elevation — an elevation profile of the route.
+- Slope — a slope graph showing gradient changes along the track.
+
+For additional track details, open the analysis sections:
+
+- Surface — shows surface types along the route based on OSM data.
+- Smoothness — shows segment smoothness based on OSM tags.
+
+Common track actions such as saving, downloading, closing, and deleting are also available in this panel.
+
+![OsmAnd Web Info Panel](@site/static/img/web/info_panel.png) ![OsmAnd Web Manage Track](@site/static/img/web/info_panel_2.png)
+
+### Track Panel {#track-panel}
+
+The Track panel shows the list of route points used to build the track. Use it to review and edit the route structure: drag points to reorder them, remove points using the delete icon, or use Clear points to remove all points and start over.
+
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel.png)
+
+### Waypoints Panel {#waypoints-panel}
+
+The Waypoints panel is used to view and manage waypoints for the selected track. Waypoints can be added from the map context menu — right-click on the map and choose the option to **Add awaypoint**, then fill in the waypoint details (such as name, icon, and color) and save it.
+
+In the Waypoints list, you can control whether waypoints are shown on the map and remove individual waypoints when needed. To remove all waypoints from the track at once, use *Clear all waypoints*.
+
+![OsmAnd Web Waypoints Panel](@site/static/img/web/waypoints_panel.png)
 
 
+## Related Article {#related-article}
+
+- [Plan a Route](../plan-route/create-route.md)
+- [Travel Guides](../plan-route/travel-guides.md)
+- [Navigation](../web/web-navigation.md)
