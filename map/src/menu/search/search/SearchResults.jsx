@@ -1,13 +1,20 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
-import PoiManager, { formattingPoiType, getCatPoiIconName, getSearchResultIcon } from '../../../manager/PoiManager';
-import SearchResultItem from './SearchResultItem';
+import PoiManager, {
+    formattingPoiType,
+    getCatPoiIconName,
+    getSearchResultIcon,
+    getCategoryName,
+    parseBrandType,
+} from '../../../manager/PoiManager';
+import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
-import { iconPathMap, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { iconPathMap, SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
+import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import { getDistance, getBearing } from '../../../util/Utils';
@@ -25,6 +32,7 @@ import {
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
+import { useTranslation } from 'react-i18next';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -32,7 +40,7 @@ const EMPTY_SEARCH_RESULT = 'empty';
 
 export function searchByWord(searchParams, ctx, loc, baseSearch = false) {
     ctx.setSearchQuery({
-        search: { query: formattingPoiType(searchParams.query) },
+        query: formattingPoiType(searchParams.query),
         latlng: { lat: loc.lat, lng: loc.lng },
         baseSearch,
     });
@@ -42,22 +50,32 @@ export function performBaseSearch(searchParams, ctx, loc) {
     searchByWord(searchParams, ctx, loc, true);
 }
 
-export function searchByCategory(searchParams, ctx) {
-    const preparedValue = {
-        query: formattingPoiType(searchParams.query),
-        type: searchParams.type,
-        key: searchParams.key,
-        mode: searchParams.mode,
-    };
+export function searchByCategory(searchParams, ctx, t) {
+    // Brand format: type:lang, Category format: just type
+    let categoryName = '';
+    let lang = null;
+    if (searchParams.type) {
+        const brandInfo = parseBrandType(searchParams.type);
+        if (brandInfo) {
+            // Brand search: type format is "brandName:lang"
+            categoryName = brandInfo.brandName;
+            lang = brandInfo.lang;
+        } else {
+            // Category search: translate category name
+            categoryName = getCategoryName(searchParams.type, t, getFirstSubstring);
+        }
+    }
+
     ctx.setSearchQuery({
-        search: preparedValue,
-        type: SEARCH_TYPE_CATEGORY,
-        lang: searchParams.lang,
+        query: formattingPoiType(categoryName),
+        type: searchParams.type,
+        lang: lang,
     });
 }
 
 export default function SearchResults() {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [result, setResult] = useState(null);
     const hash = window.location.hash;
@@ -91,18 +109,29 @@ export default function SearchResults() {
         }
     }, [zoom]);
 
-    useEffect(() => {
+    // Calculate page title based on search params
+    const pageTitle = useMemo(() => {
         if (params.query) {
-            document.title = params.query;
+            return params.query;
+        } else if (params.type) {
+            const brandInfo = parseBrandType(params.type);
+            if (brandInfo) {
+                return brandInfo.brandName;
+            } else {
+                return getCategoryName(params.type, t, getFirstSubstring);
+            }
         }
-    }, [params.query]);
+        return null;
+    }, [params.query, params.type]);
+
+    usePageTitle(pageTitle);
 
     // always hide explore markers when search query is active
     useEffect(() => {
-        if (ctx.searchQuery?.search) {
+        if (ctx.searchQuery) {
             ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
         }
-    }, [ctx.searchQuery?.search]);
+    }, [ctx.searchQuery]);
 
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
@@ -185,13 +214,14 @@ export default function SearchResults() {
 
     useEffect(() => {
         if (locReady) {
-            if (params.query && params.query !== '' && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
+            const hasSearchParams = params.type || (params.query && params.query !== '');
+            if (hasSearchParams && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
                 ctx.setProcessingSearch(true);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
-                if (params.type === SEARCH_TYPE_CATEGORY) {
-                    searchByCategory(params, ctx);
+                if (params.type) {
+                    searchByCategory(params, ctx, t);
                 } else {
                     const { loc } = getLoc();
                     if (!loc) return;
@@ -253,14 +283,24 @@ export default function SearchResults() {
     }
 
     function reopenSearchResult() {
-        return result && result !== EMPTY_SEARCH_RESULT && !params.query;
+        return result && result !== EMPTY_SEARCH_RESULT && !params.query && !params.type;
     }
 
     return (
         <>
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
-                defaultSearchValue={ctx.searchQuery?.search?.query || params?.query || ''}
+                defaultSearchValue={
+                    ctx.searchQuery?.query ||
+                    (params?.type
+                        ? (() => {
+                              const brandInfo = parseBrandType(params.type);
+                              return brandInfo
+                                  ? brandInfo.brandName
+                                  : getCategoryName(params.type, t, getFirstSubstring);
+                          })()
+                        : params?.query || '')
+                }
             />
             {(ctx.processingSearch || resulNotPrepared()) && <Loading />}
             {!ctx.processingSearch &&
@@ -276,9 +316,7 @@ export default function SearchResults() {
                                     key={index + (item?.id || item?.properties?.id || '')}
                                     item={item}
                                     index={index}
-                                    typeItem={
-                                        ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID
-                                    }
+                                    typeItem={ctx.searchQuery?.type ? POI_LAYER_ID : SEARCH_LAYER_ID}
                                 />
                             ))}
                     </Box>

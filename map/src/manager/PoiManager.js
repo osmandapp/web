@@ -266,6 +266,42 @@ export function translatePoi({ key = null, value = null, ctx, t }) {
     return '';
 }
 
+/**
+ * Check if type is a brand (contains ':' separator)
+ * Brand format: brandName:lang
+ */
+export function isBrandType(type) {
+    return type && type.includes(':') && !type.includes('name:') && !type.includes('lang:');
+}
+
+/**
+ * Parse brand type to extract brand name and language
+ * @returns {Object} { brandName, lang } or null if not a brand
+ */
+export function parseBrandType(type) {
+    if (!isBrandType(type)) {
+        return null;
+    }
+    const [brandName, lang] = type.split(':');
+    return { brandName, lang };
+}
+
+/**
+ * Get category name from category type and translation function
+ * Handles special cases: name:lang and lang:lang formats
+ */
+export function getCategoryName(category, t, getFirstSubstring) {
+    if (!category) return '';
+    if (category.includes('name:')) {
+        const [mainPart, subPart] = category.split(':');
+        return getFirstSubstring(t(`poi_${mainPart}`)) + ' (' + t(`lang_${subPart}`) + ')';
+    } else if (category.includes('lang:')) {
+        const preparedCategory = category.replace(':', '_');
+        return getFirstSubstring(t(`poi_${preparedCategory}`));
+    }
+    return getFirstSubstring(t(`poi_${category}`));
+}
+
 export async function getCategoryIcon(category) {
     const name = PoiManager.preparePoiFilterIcon(category);
     return (

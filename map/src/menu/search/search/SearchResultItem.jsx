@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
-import { getObjIdSearch, SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
 import {
     ADDRESS_1,
@@ -215,23 +215,20 @@ export default function SearchResultItem({ item, typeItem }) {
             const category = item.properties['web_keyName'];
             if (category) {
                 return navigateToSearchResults({
-                    query: getFirstSubstring(t(`poi_${category}`)),
-                    type: SEARCH_TYPE_CATEGORY,
-                    key: category,
+                    type: category,
                 });
             } else {
                 // search by brand
-                let lang;
+                let brandType = item.properties[CATEGORY_NAME];
                 let type = item.properties[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
                 if (type) {
                     const brandRes = parseTagWithLang(type);
-                    lang = brandRes.lang;
+                    if (brandRes.lang) {
+                        brandType = `${brandType}:${brandRes.lang}`;
+                    }
                 }
                 return navigateToSearchResults({
-                    query: item.properties[CATEGORY_NAME],
-                    type: SEARCH_TYPE_CATEGORY,
-                    key: item.properties[CATEGORY_NAME],
-                    lang,
+                    type: brandType,
                 });
             }
         }

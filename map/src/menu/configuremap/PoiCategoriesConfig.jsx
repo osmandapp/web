@@ -66,7 +66,6 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
 
     function selectCheckedCategories() {
         const updatedCategories = Array.from(selectedCategories).map((category) => ({
-            key: null,
             fromConfig: true,
             category,
         }));
@@ -102,7 +101,7 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                             id={`se-poi-category-${category}`}
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleTogglePoiCategories(category);
+                                handleTogglePoiCategories(item);
                             }}
                         >
                             <ListItemIcon>{ctx.categoryIcons[item]}</ListItemIcon>
@@ -112,8 +111,8 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                                 </Typography>
                             </ListItemText>
                             <Checkbox
-                                checked={selectedCategories.has(category)}
-                                onChange={() => handleTogglePoiCategories(category)}
+                                checked={selectedCategories.has(item)}
+                                onChange={() => handleTogglePoiCategories(item)}
                             />
                         </MenuItem>
                     );
