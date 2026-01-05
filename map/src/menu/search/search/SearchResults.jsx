@@ -14,6 +14,7 @@ import { Box } from '@mui/material';
 import { iconPathMap, SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
+import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import { getDistance, getBearing } from '../../../util/Utils';
@@ -108,18 +109,22 @@ export default function SearchResults() {
         }
     }, [zoom]);
 
-    useEffect(() => {
+    // Calculate page title based on search params
+    const pageTitle = useMemo(() => {
         if (params.query) {
-            document.title = params.query;
+            return params.query;
         } else if (params.type) {
             const brandInfo = parseBrandType(params.type);
             if (brandInfo) {
-                document.title = brandInfo.brandName;
+                return brandInfo.brandName;
             } else {
-                document.title = getCategoryName(params.type, t, getFirstSubstring);
+                return getCategoryName(params.type, t, getFirstSubstring);
             }
         }
+        return null;
     }, [params.query, params.type]);
+
+    usePageTitle(pageTitle);
 
     // always hide explore markers when search query is active
     useEffect(() => {
