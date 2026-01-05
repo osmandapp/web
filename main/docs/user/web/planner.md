@@ -133,7 +133,7 @@ In the Waypoints list, you can control whether waypoints are shown on the map an
 ![OsmAnd Web Waypoints Panel](@site/static/img/web/waypoints_panel.png)
 
 
-## Related Article {#related-article}
+## Related Articles {#related-articles}
 
 - [Plan a Route](../plan-route/create-route.md)
 - [Travel Guides](../plan-route/travel-guides.md)

@@ -88,7 +88,7 @@ You can switch between different weather parameters using the icons at the top o
 ![OsmAnd Web Weather](@site/static/img/web/weather_forecast.png)
 
 
-## Related Article {#related-article}
+## Related Articles {#related-articles}
 
 - [Weather](../plugins/weather.md)
 - [Introduction](../web/web-overview.md)
