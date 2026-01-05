@@ -75,19 +75,42 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
 
     useEffect(() => {
         if (tileLayer.current) {
-            tileLayer.current.getLeafletLayer().setUrl(ctx.tileURL.url);
+            const leafletLayer = tileLayer.current.getLeafletLayer();
+            if (leafletLayer) {
+                leafletLayer.setUrl(ctx.tileURL.url);
+                window.seIsTilesLoaded = false;
+            }
         }
     }, [ctx.tileURL]);
 
+    const handlersRef = useRef({ handleLoad: null, leafletLayer: null });
+
     useEffect(() => {
+        if (handlersRef.current.leafletLayer) return;
+
         if (tileLayer.current && tileLayer.current.getLeafletLayer) {
             const leafletLayer = tileLayer.current.getLeafletLayer();
             if (leafletLayer) {
-                leafletLayer.on('load', () => (window.seIsTilesLoaded = true));
-                leafletLayer.on('tileload', () => (window.seIsTilesLoaded = false));
+                handlersRef.current.leafletLayer = leafletLayer;
+                window.seIsTilesLoaded = false;
+                handlersRef.current.handleLoad = () => {
+                    window.seIsTilesLoaded = true;
+                };
+                leafletLayer.on('load', handlersRef.current.handleLoad);
             }
         }
-    }, [tileLayer.current]);
+    });
+
+    useEffect(() => {
+        return () => {
+            const { leafletLayer, handleLoad } = handlersRef.current;
+            if (leafletLayer && handleLoad) {
+                leafletLayer.off('load', handleLoad);
+                handlersRef.current.leafletLayer = null;
+                handlersRef.current.handleLoad = null;
+            }
+        };
+    }, []);
 
     // fix contextmenu of point for mobile device
     useEffect(() => {
