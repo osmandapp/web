@@ -29,6 +29,8 @@ To use *CarPlay* on your vehicle screen, follow these steps:
 
 *CarPlay* is **not a direct replication** of the OsmAnd mobile app. It has a simplified interface, focusing on essential navigation functions to ensure safe driving. Some advanced features are not supported due to platform limitations.
 
+The position of the buttons and navigation widget in *CarPlay* matches the side of the CarPlay status bar. It depends on the **Driver Position** (left-hand or right-hand) setting in your car’s head unit, not on any setting inside CarPlay or the OsmAnd app.
+
 ### Connection Screen {#connection-screen}
 
 ![CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
