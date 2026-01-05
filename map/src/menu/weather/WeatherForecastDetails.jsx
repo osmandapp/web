@@ -170,22 +170,12 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     function getSavedForecast() {
         if (localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK)) {
             const weatherData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK));
-
-            // Check if the data is an array, not empty, contains only arrays, and has more than one element
             if (
                 Array.isArray(weatherData) &&
                 weatherData.length > 0 &&
-                weatherData.every(Array.isArray) &&
-                weatherData.length > 1
+                weatherData.every((item) => typeof item === 'object' && item !== null && 'ts' in item)
             ) {
-                // Check if the first inner array contains exactly 8 elements
-                if (weatherData[0].length === 8) {
-                    return weatherData;
-                } else {
-                    console.debug('The first array does not contain 8 elements.');
-                }
-            } else {
-                console.debug('The data does not meet the requirements.');
+                return weatherData;
             }
         } else {
             console.debug('No data in local storage.');
