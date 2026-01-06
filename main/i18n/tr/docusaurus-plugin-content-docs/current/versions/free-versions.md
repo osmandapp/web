@@ -1,5 +1,5 @@
 ---
-source-hash: d7eda39207a4188bbeef235dcd28159d932fcfef6c047873bcb30d7589d79665
+source-hash: cd308905593a78aba555c2531c95bb4d35fff459b95edcc7533ea52c22b2f940
 sidebar_position: 2
 ---
 
@@ -39,7 +39,7 @@ Yayın tarihi 11/2025:
 - Kamyon profili ayarlarında kamyon metrikleri ekleme için UI iyileştirildi.
 - Haritada rota gösterme için daha fazla parametre.
 
-<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.9-5209.apk" />
+<DownloadRelease blog="osmand-android-5-2-released" release="net.osmand-5.2.13.apk" />
 
 ### Sürüm 5.1 {#version-51}
 

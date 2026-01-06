@@ -1,5 +1,5 @@
 ---
-source-hash: d9a27c2bdd5ed4f508328eaa6bfd395073b20a8a1d1c00b711b20ebafd3bd9a9
+source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
 sidebar_position: 4
 title:  Profiller (Ayarlar)
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd, sürüş, bisiklet, yürüyüş ve kayak ve tekne gezintisi gibi daha özel aktiviteler dahil olmak üzere farklı aktivitelere göre uyarlanmış çeşitli varsayılan profiller sunar. Bu profiller, yaptığınız aktiviteye göre navigasyon deneyiminizi geliştirmek için tasarlanmıştır. Her profil, ayarları yapmanıza ve tercihlerinize uygun ek eklentileri dahil etmenize olanak tanıyan yapılandırılabilir seçenekler içerir.
+OsmAnd, sürüş, bisiklet, yürüyüş ve kayak ile tekne gezintisi gibi daha özel aktiviteler dahil olmak üzere farklı aktivitelere göre uyarlanmış çeşitli varsayılan profiller sunar. Bu profiller, yaptığınız aktiviteye göre navigasyon deneyiminizi geliştirmek için tasarlanmıştır. Her profil, ayarları yapmanıza ve tercihlerinize uygun ek eklentileri dahil etmenize olanak tanıyan yapılandırılabilir seçenekler içerir.
 
 - *Kayak* ve *Tekne* gibi belirli profiller, ilgili eklentiler etkinleştirildiğinde kullanılabilen **ek özelliklere** sahiptir.
 
@@ -98,7 +98,7 @@ Bu bölüm, görünüm, navigasyon seçenekleri, harita gösterimi, ayarlar men�
 
 </Tabs>
 
-OsmAnd, uygulama profil ayarlarınızı OsmAnd Cloud'a [yedeklemenize](../personal/osmand-cloud.md#osmand-start) olanak tanır, böylece yapılandırmalarınız güvenli bir şekilde saklanır ve Android, iOS ve Web sürümleri arasında kolayca geri yüklenebilir. Bu yedekleme özelliği, cihaz arızası veya uygulama yeniden yüklemesi durumunda ayarlarınızı korur. [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) kullanarak bu özel plandan yararlanabilirsiniz.
+OsmAnd, uygulama profil ayarlarınızı OsmAnd Cloud'a [yedeklemenize](../personal/osmand-cloud.md#osmand-start) olanak tanır, böylece yapılandırmalarınız güvenli bir şekilde saklanır ve Android, iOS ve Web sürümleri arasında kolayca geri yüklenebilir. Bu yedekleme özelliği, cihaz arızası veya uygulama yeniden yüklemesi durumunda ayarlarınızı korur. [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) kullanarak bu özel plandan yararlanabilirsiniz.  
 
 *Ücretsiz Ayarlar Yedeklemesi*'ni kullanmak için bir [OsmAnd Cloud](../personal/osmand-cloud.md#login) hesabınızın olması gerekir. Bir *OsmAnd Pro* aboneliğiniz veya aktif bir *OsmAnd Cloud* hesabınız varsa, promosyon afişi görüntülenmez.
 
@@ -147,7 +147,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
   - *<Translate android="true" ids="map_orientation_landscape_inverted"/>*
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
-- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Yalnızca Android*). Cihaz pil tüketimini azaltmak için navigasyon sırasında cihaz ekranı için seçenekleri seçebileceğiniz ekran kontrol menüsünü açar.
+- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Yalnızca Android*). Cihaz pil tüketimini azaltmak için navigasyon sırasında cihaz ekranı için seçenekleri seçebileceğiniz ekran kontrol menüsünü açar.  
 
 
 ### Birimler ve Formatlar {#units--formats}
@@ -215,9 +215,9 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 mil / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 mil / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0.62 mil (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Uzunluk birimleri, yatay mesafe değerlerine (örneğin, sürüş/rota mesafeleri ve navigasyondaki manevra mesafeleri) uygulanır. |
 |  |  |  |
-| **Yükseklik Birimleri** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft |
+| **Yükseklik Birimleri** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Yükseklik birimleri, Yükseklik widget'larında, Navigasyon rota bilgisinde ve Parkur istatistiklerinde yükseklik/yükselti değerlerine ve ilgili ölçütlere (yokuş yukarı/aşağı, yükseklik aralığı) uygulanır.<br/>Varsayılan olarak, Yükseklik Birimleri Uzunluk Birimleri ile senkronize edilir ve yalnızca kullanıcı manuel olarak değiştirdikten sonra bağımsız hale gelir. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Örnek: 50.12333° 19.93233° (Enlem Boylam) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Örnek: 50°7.393′ 19°55.941′ (Enlem Boylam)  |
@@ -234,7 +234,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 |  |  |  |
 | **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/sa  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mil/sa  |
-|          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
+|          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 dak/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 dak/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
@@ -282,6 +282,8 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 - **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Yalnızca Android*) – Cihazınızın ses düğmelerini haritada [yakınlaştırmak](../map/interact-with-map.md#my-location-and-zoom) ve uzaklaştırmak için kullanma özelliğini etkinleştirin veya devre dışı bırakın.
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Yalnızca Android*) – Harita dönüşünü [kademeli hareketle](https://en.wikipedia.org/wiki/Kalman_filter) yumuşatır, ani konum değişikliklerini azaltır. Bu, küçük bir gecikme (*1 saniyeden az*) yaratır.
+
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Yalnızca Android*) – Kontrol düğmelerini ve widget'ları gizlemek için haritada boş bir alana dokunun, harita görünürlüğünü en üst düzeye çıkarın.
 

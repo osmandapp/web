@@ -1,5 +1,5 @@
 ---
-source-hash: 9483f3d66167f7855c9e285f38ca766c6bb711f3cd7fc3db4f43e4bac373c8bf
+source-hash: 1f88b8a69546be11fe397f39ef6e1255bf0e2760eeb2883d1ca6539d40dd08af
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -53,34 +53,34 @@ Uygulamayı bu bağlantıdan indirebilirsiniz - [Apple App Store'da OsmAnd Harit
 
 Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgiler bulunmaktadır. Diğer bölgeler için fiyatlar yerel para birimlerinde eşdeğerdir.
 
+<!--
 
+:::danger Christmas sale
 
-:::danger Black Friday fiyatları
-
-*Aceleye gerek yok! Bu teklif yalnızca* **30 Kasım (23:00 CET)**'e kadar geçerlidir.
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
 
 :::
 
 
 
-|    | OsmAnd Ücretsiz   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |
-| **Fiyat (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Fiyat (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
-
-
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Price (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
 -->
+
+
+|    | OsmAnd Ücretsiz   | [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |
+| **Fiyat (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
+| **Fiyat (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+
+
 
 ### Ücretsiz ve Ücretli Özellikler {#free-and-paid-features}
 
@@ -136,6 +136,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Hava Durumu Eklentisi](../plugins/weather.md) | Harita üzerinde 24 saatlik saatlik tahmin, 7 gün önceden. |
 | [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanızı sağlar. Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümü için mevcuttur.  |
 | [Rota çizgisini özelleştir](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Navigasyon sırasında rota çizgisinin rengini ve genişliğini değiştirme. |
+| [Renk Şemasını Değiştir](../../user/plugins/topography.md#modify-color-scheme) | Harita görünümünü seçerek veya içe aktararak renk paletleri ile özelleştirmenizi sağlar. Yerleşik şemaları düzenleyebilir veya harita ve rota renklerini kişiselleştirmek için kendi palet dosyalarınızı kullanabilirsiniz. |
 
 
 ## Nasıl Satın Alınır {#how-to-buy}

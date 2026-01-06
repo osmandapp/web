@@ -1,9 +1,10 @@
 ---
-source-hash: 36fa594008d56ae693369164879dccfe01f275c12d52be379ad60b0b9c264d67
+source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
 sidebar_position: 2
-sidebar_label: OsmAnd Cloud
-title: Web Sitesinde OsmAnd Cloud
+sidebar_label:  Account
+title: OsmAnd Account
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,103 +16,152 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Genel Bakış {#overview}
 
-[OsmAnd Harita Portalı](https://osmand.net/map), OsmAnd tarafından sağlanan, kullanıcıların haritaları keşfetmesine, verilerini yönetmesine, geziler planlamasına ve oluşturmasına veya sadece haritada gezinmesine olanak tanıyan tarayıcı tabanlı bir hizmettir.
+OsmAnd hesabıyla oturum açmak, [OsmAnd Web Planlayıcısı](https://osmand.net/map)'nı basit bir harita görüntüleyicisinden kişisel çalışma alanınıza dönüştürür. Mobil uygulamada kullandığınız aynı hesap, web sitesini OsmAnd Cloud verileriniz ve satın alımlarınızla bağlar, böylece kaydedilmiş içeriğinize ve aboneliklerinize web'de tek bir yerden erişebilirsiniz.
 
 
+## Yetkilendirme {#authorization}
 
-## Nasıl Başlanır {#how-to-start}
+### Kayıt Ol {#sign-up}
 
-OsmAnd Web özelliklerine erişmek için bir hesaba ihtiyacınız var:
+OsmAnd Web özelliklerine erişmek için bir hesap oluşturmanız gerekir. Kayıt Ol akışını kullanın:
 
-- Zaten bir [**OsmAnd Pro**](../personal/osmand-cloud.md#login) aboneliğiniz varsa veya ücretsiz bir [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) hesabı oluşturmak istiyorsanız, şu adımları izleyin:
+- [**OsmAnd Harita Portalı**](https://osmand.net/map) adresine gidin.
+- **Hesap** menüsünü açın.
+- **Yeni hesap oluştur**'u seçin. Yeni hesap oluştur diyaloğu açılır.
+- **E-posta** alanına OsmAnd hesabınız için kullanmak istediğiniz e-posta adresini girin ve **Devam Et**'e tıklayın.
+- Bu e-posta adresine bir doğrulama kodu gönderilir. Gelen kutunuzu (gerekirse spam klasörünü) kontrol edin.
+- Sonraki diyaloğu açın, Doğrulama kodunu girin ve e-postanızı onaylamak için **Devam Et**'e tıklayın. Kodu almadıysanız, **Doğrulama kodu almadım** bağlantısını kullanın ve talimatları izleyin.
 
-  1. [**OsmAnd Harita Portalı**](https://osmand.net/map) adresine gidin.
-  2. **Hesap** menüsünü açın.
-     - **Giriş yap**: Pro veya Start aboneliğiniz için kullandığınız e-posta adresini girin.
-     - **Hesap oluştur**: Ücretsiz bir OsmAnd Start hesabı kaydetmek için bu seçeneği kullanın.
+Kod doğrulandıktan sonra web hesabınız oluşturulur ve otomatik olarak oturum açılır.
 
-![Web Hesabı](@site/static/img/web/web_account.png)
+![Web Kayıt Ol](@site/static/img/web/web_sign_up.png) ![Web Kayıt Ol](@site/static/img/web/web_ver_code.png)
+
+
+### Giriş Yap {#login}
+
+Zaten bir OsmAnd hesabınız varsa, aynı e-posta ve parola ile [**OsmAnd Harita Portalı**](https://osmand.net/map) adresinde oturum açabilirsiniz. **Hesap menüsüne** gidin ve **Giriş Yap** seçeneğini seçin. Açılan diyaloğa OsmAnd hesabınıza bağlı e-posta adresini girin, parolanızı yazın ve **Devam Et**'i seçin. Başarılı bir girişten sonra OsmAnd Hesap paneli açılır ve verileriniz, satın alımlarınız ve ayarlarınızla çalışabilirsiniz.
+
 
 ## Hesabı Yönetme {#managing-account}
 
-Hesabınızı yönetmek için şuraya gidin:
-**Genel Menü → Hesap**
-
-Web'e kaydolduktan sonra şunları yapabilirsiniz:
-
-- Hesap bilgilerini görüntüle
-- Bulut yedeklerini indir
-- Hesabınızdan çıkış yapın
-- Hesabınızı silin
-- E-posta adresinizi değiştirin
-- Ödemelerinizi ve satın alımlarınızı görün
-
-![Web Hesabı](@site/static/img/web/web_account_2.png)
-
 ### Verilerim {#my-data}
 
-**OsmAnd Cloud** aracılığıyla mobil cihazınızdan oluşturulan ve senkronize edilen yedekleri indirebilirsiniz.
-
-- **Genel Menü → Hesap → Verilerim (OsmAnd Cloud) → Tümünü indir**'e gidin.
+**OsmAnd Cloud** aracılığıyla mobil cihazınızdan oluşturulan ve senkronize edilen yedekleri indirebilirsiniz.  
+Şuraya gidin: *Genel Menü → Hesap → Verilerim (OsmAnd Cloud) → Tümünü indir*
 
 Bu bölüm şunları gösterir:
 
-- Bulutunuzda depolanan dosya sayısı
-- Kullanılan toplam depolama hacmi
-- Kullanılabilir bulut depolama alanı
+- Bulutunuzda depolanan dosya sayısı.
+- Kullanılan toplam depolama hacmi.
+- Kullanılabilir bulut depolama alanı.
 
 > 💡 Yalnızca **OsmAnd Cloud**'un etkin olduğu cihazlarda oluşturulan yedekler burada görünecektir.
 
+Tüm verilerinizin bir kopyasını kaydetmek istiyorsanız, **Tümünü indir**'i kullanın. Bu, şu seçenekleri içeren bir diyaloğu açar:
+
+- Dışa aktarılacak verileri seçin (örneğin, *Yerlerim, Ayarlar, Kaynaklar, Haritalar*),
+- Dışa aktarma formatını seçin (*ZIP veya OSF*).
+- İndirme boyutu ve süresinin bir tahminini görün.
+
+Dışa aktarmayı başlatmak ve arşivi bilgisayarınıza kaydetmek için **Yedek İndir**'e tıklayın.
+
+![Web Hesabı](@site/static/img/web/web_download_all.png)
+
 ### Ödemeler ve Satın Alımlar {#payments-and-purchases}
 
-- **Genel Menü → Hesap → Ödemeler ve Satın Alımlar**'a gidin.
+Bu bölüm, OsmAnd hesabınıza bağlı tüm ürünleri ve abonelikleri gösterir. Açmak için,  
+Şuraya gidin: *Genel Menü → Hesap → Ödemeler ve Satın Alımlar*
 
-Bu bölümde, hesabınıza bağlı tüm satın alımları ve abonelikleri görüntüleyebilirsiniz.
+Burada e-postanıza bağlı tüm satın alımların bir listesini görebilirsiniz:
+- Ücretsiz ve ücretli planlar (örneğin OsmAnd Start veya OsmAnd Pro).
+- Tek seferlik ürünler (ör. Maps+ veya özel sürümler).
+- Aylık veya yıllık yenilenen abonelikler.
 
-Satın alımlarınızı farklı platformlarda kullanma hakkında daha fazla bilgi için [çapraz platform erişimi](../purchases/cross.md) hakkındaki yazıyı okuyun.
+Liste her öğe için şunları gösterir:
+- Ürün adı ve simgesi.
+- Tür – aylık abonelik, yıllık abonelik veya tek seferlik ödeme.
+- Durum – *Aktif, Süresi Dolmuş veya İptal Edilmiş*.
+- Tarih bilgileri.
+
+Listede bir ürüne tıklarsanız, detay sayfası açılır. Orada ürünün nerede satın alındığını (*Google Play, Apple App Store, Huawei AppGallery, Amazon* veya *OsmAnd Web*) görebilir ve abonelik yönetimini veya iptalini ilgili mağazada yönetmek için bağlantı veya talimatlar bulabilirsiniz. Ürün OsmAnd Web'de (FastSpring) satın alınmışsa, detay sayfası **Aboneliği Yönet** bağlantısını gösterir; bu bağlantı FastSpring hesap yönetim portalını açar, burada ödeme yönteminizi güncelleyebilir, aboneliği iptal edebilir veya yeniden etkinleştirebilir, planı değiştirebilir veya faturaları indirebilirsiniz.
+
+Hesabınıza henüz bağlı satın alım yoksa, bu bölüm **Henüz satın alımınız yok** mesajı ve mevcut OsmAnd planları ile yükseltme seçenekleri içeren bir sayfaya yönlendiren **Daha Fazla Bilgi Edin** düğmesiyle boş bir durum gösterir.
+
+Satın alımlarınızı farklı platformlarda kullanma hakkında daha fazla detay için [çapraz platform erişimi](../purchases/cross.md) hakkındaki yazıyı okuyun.
+
+![Web Hesabı](@site/static/img/web/web_purchases.png)
+
+### Bulut Senkronizasyonu {#cloud-sync}
+
+Bulut Senkronizasyonu, [Web Harita Portalı](https://osmand.net/map/)'nda OsmAnd Cloud'a senkronize ettiğiniz verilere doğrudan erişmenizi sağlar. OsmAnd Start veya OsmAnd Pro hesabınızla oturum açtığınızda, web sitesi mobil uygulamanızdan daha önce senkronize ettiğiniz Favoriler, İzler ve yedek dosyaları gösterir. Bu, bulut içeriğinizi daha büyük bir ekranda görüntülemenin ve yedeklerinizi ihtiyaç duyduğunuzda indirmenin basit bir yoludur.
+
+Bu öğeler web sitesinde oturum açtıktan hemen sonra menüde görünür hale gelir. Bu bilgileri güncellemek için mobil uygulamada [Şimdi Senkronize Et](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) eylemini kullanarak verilerinizi cihazlarınızdan senkronize etmeniz gerekir.
+
+Bulut Senkronizasyonu kullanılabilirliği hesap türünüze bağlıdır:
+- OsmAnd Start – [Favorileri](../web/web-favorites.md) senkronize eder ve web'de gösterir.
+- OsmAnd Pro – [İzleri](../web/web-tracks.md), Favorileri ve [Yedekleri](#my-data) senkronize eder ve bulut verilerine tam web erişimini açar.
+
+![Web İz](@site/static/img/web/web_track_start.png) ![Web İz](@site/static/img/web/web_track_pro.png)
+
+### OsmAnd Cloud {#osmand-cloud}
+
+Oturum açtığınızda, OsmAnd Cloud bölümü Menü → Ayarlar'da görünür ve Değişiklikler ile Çöp Kutusu içerir.
+
+**Değişiklikler** seçeneği, OsmAnd Cloud hesabınızda depolanan dosyaların kronolojik bir listesini gösterir. Öğeler aya göre gruplandırılır ve dosya adı, değişiklik türü (örneğin, eklendi, değiştirildi veya silindi), son güncelleme zamanı ve oluşturan cihazı içerir. Her giriş için üç nokta menüsünü açabilir ve seçili dosyayı bilgisayarınıza kaydetmek için *İndir*'i veya *Sil*'i seçebilirsiniz.
+
+**Çöp Kutusu** seçeneği, OsmAnd Cloud'dan silinen dosyaları içerir. Liste de aya göre gruplandırılır ve her dosyanın ne zaman kaldırıldığını ve hangi cihazdan kaldırıldığını gösterir. Bir dosyanın yanındaki üç nokta menüsünü kullanarak bir kopyayı *İndir*', *Çöp kutusundan Geri Yükle* (dosyayı OsmAnd Cloud'a geri döndürerek verilerinize tekrar erişilebilir hale getirin) veya *Hemen Sil*'i seçerek kalıcı olarak kaldırabilirsiniz. Bu, kazara veri kaybını önlerken, bir dosyanın artık gerekmediğinden emin olduğunuzda bulut depolama alanını boşaltmanıza olanak tanır. Ayrıca, Çöp Kutusu panel başlığındaki Çöp Kutusu simgesine tıklayarak tüm silinen öğeleri bir kerede temizleyebilirsiniz. Bu, **Çöp kutusunu boşalt** diyaloğunu açar; burada silmeyi onaylayarak Çöp Kutusu'ndaki tüm dosyaları kalıcı olarak kaldırırsınız.
+
+![Web Bulut](@site/static/img/web/web_changes.png) ![Web Bulut](@site/static/img/web/web_trash.png)
+
+
+## Sorun Giderme {#troubleshooting}
+
+### Parolayı Sıfırla {#reset-password}
+
+Parolanızı hatırlamıyorsanız, giriş diyaloğundaki **Parolam yok veya unuttum** bağlantısını kullanın. Bu, **Parolayı değiştir veya sıfırla** panelini açar. Hesabınızı oluşturmak için kullandığınız e-posta adresini girin ve **Devam Et**'e tıklayın. Bu e-postaya bir doğrulama kodu içeren bir mesaj gönderilir. Sonraki ekranda, doğrulama kodunu ve yeni parolanızı yazın, ardından onaylamak için **Devam Et**'i seçin. Kod kabul edildiğinde, parolanız güncellenir ve yeni kimlik bilgilerinizle OsmAnd Web'e giriş yapabilirsiniz.
+
+![Web Hesabı](@site/static/img/web/web_password.png)
 
 ### E-posta Adresini Değiştir {#change-email-address}
 
-E-posta adresinizi güncellemek için:
+E-posta adresinizi güncellemek için,
+Şuraya gidin: *Genel Menü → Hesap → E-posta → ⋮ → E-postayı değiştir*
 
-1. **Genel Menü → Hesap → E-posta → ⋮ → E-postayı değiştir**'e gidin.
-2. Yeni e-posta adresinizi girin ve onaylayın.
+E-postayı değiştir diyaloğu görünür. Mevcut e-posta adresine bir doğrulama kodu gönderilir. Bu kodu **Eski E-postadan Gelen Kod** alanına girin, **Yeni E-posta**'da yeni adresi belirtin, ardından **İleri**'yi seçin. Güvenlik nedenleriyle, hesabınızın e-postasının güncellendiğini bildiren bir onay mesajı yeni e-posta adresinize gönderilir.
 
-> 🔒 Değişiklik kesinleşmeden önce yeni adrese bir doğrulama e-postası gönderilecektir.
+![Web Hesabı](@site/static/img/web/web_email_new.png)
 
-### Çıkış Yap ve Hesabı Sil {#log-out-and-delete}
+### Çıkış Yap ve Hesabı Sil {#logout-and-delete}
 
-OsmAnd Web hesabınızdan çıkış yapmak için:
+![Web Hesabı](@site/static/img/web/web_logout_new.png)
 
-- **Genel Menü → Hesap**'ı açın.
-- Mevcut oturumunuzu sonlandırmak için **Çıkış yap** düğmesine tıklayın.
+OsmAnd Hesap paneli, mevcut web oturumunu sonlandırmak ve hesabı kalıcı olarak kaldırmak için kontroller içerir.
 
-Hesabınızı kalıcı olarak silmek için:
+Çıkış yapmak için, OsmAnd Hesap'ı açın ve panelin sağ üst köşesindeki **Çıkış Yap** düğmesini kullanın (kareyi terk eden ok simgesi). Çıkış Yap'ı seçmek, hesap panelini kapatır ve web sitesindeki aktif oturumu sonlandırır.
 
-- **Hesap** menüsünün en altına gidin.
-- **Hesabı sil** düğmesine tıklayın.
-- Silme işlemini onaylayın. Bu işlem geri alınamaz.
+Hesabı silmek için, OsmAnd Hesap panelinin en altında **Hesabı sil**'i seçin. *“Bunu yapmak istediğinizden emin misiniz?”* mesajı ve tüm verilerin ve hesap detaylarının OsmAnd Cloud'dan kaldırılacağı, ikincil cihazların ücretli özelliklere erişimi kaybedeceği kısa bir açıklamayla bir onay diyaloğu görünür. Hesap e-posta adresine bir doğrulama kodu gönderilir. Kodu E-postadan Gelen Kod alanına girin ve işlemi tamamlamak için **BU HESABI SİL**'i seçin. Bu işlem kalıcıdır ve geri alınamaz.
 
-
-## OsmAnd Pro ve OsmAnd Start Senkronizasyonu {#osmand-pro-and-osmand-start-sync}
-
-- **OsmAnd Pro** [çapraz platform](../troubleshooting/setup.md#initial-setup) ücretli bir aboneliktir.
-- **OsmAnd Start** [ücretsiz bir OsmAnd Cloud kaydıdır](https://osmand.net/blog/start).
-
-Çapraz platform özelliği, OsmAnd Pro'yu tüm platformlarda kullanmanıza olanak tanır *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))*. Bunu yapmak için şunları yapmanız gerekir:
-
-1. **OsmAnd Pro**'ya abone olun. Bunun [Android için nasıl yapılacağı hakkında daha fazla bilgiyi buradan](../purchases/android.md#how-to-buy), [iOS için ise buradan](../purchases/ios.md#how-to-buy) okuyun.
-2. **OsmAnd Start** hesabı nasıl oluşturulur, daha fazla bilgiyi [buradan](https://osmand.net/blog/start#how-to-create-an-account) okuyun.
-3. OsmAnd uygulamasında OsmAnd sunucusunda [Pro veya Start hesabınızı](/docs/user/personal/osmand-cloud/#cross-platform) kaydedin.
-4. Kayıtlı e-posta, OsmAnd Pro'yu web platformunda etkinleştirmek için giriş bilgileriniz olacaktır. İlk kez, web portalına gelecekteki girişler için bir parola seçmeniz gerekir (lütfen web portalındaki talimatları kullanın).
-
+![Web Hesabı](@site/static/img/web/web_delete.png)
 
 <!--
+## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
+
+- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#initial-setup) paid subscription. 
+- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
+
+The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
+
+1. Subscribe to **OsmAnd Pro**. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
+2. How to create **OsmAnd Start** account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
+3. Register your [Pro or Start account](/docs/user/personal/osmand-cloud/#cross-platform) on the OsmAnd server inside OsmAnd app.
+4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
+
 
 - Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
 
@@ -153,3 +203,9 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
+
+## İlgili Makaleler {#related-articles}
+
+- [Giriş](./web-overview.md)
+- [Çapraz Platform Satın Alımlar](../purchases/cross.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)

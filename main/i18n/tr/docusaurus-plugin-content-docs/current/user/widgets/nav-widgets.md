@@ -1,5 +1,5 @@
 ---
-source-hash: cd4c07ca17073a532727f9088e038002b88141f8fe22166e5d1677766c6e8e03
+source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
 sidebar_position: 4
 title: Navigasyon Widget'ları
 ---
@@ -188,7 +188,7 @@ Yönü görüntülemek için bir **hedef nokta** seçilmelidir. Navigasyon için
 
 **Ayarlar menüsü**:
 
-- Bir **Varsayılan Görünüm** seçin: *Tahmini varış süresi*, *Kalan süre*, *Mesafe*.
+- Bir **Varsayılan Görünüm** seçin: *Tahmini varış süresi*, *Gitme süresi*, *Mesafe*.
 - **Görüntüleme Önceliği**'nde, *Önce hedef (varsayılan)* veya *Önce ara nokta* arasında seçim yapın.
 
 > NOT: Widget yalnızca navigasyon sırasında görünür.
@@ -210,7 +210,7 @@ Widget, hesaplanan bir rotayı takip ederken son varış noktasına kalan mesafe
 | | |
 |:------------|:------------|
 | Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
-  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
 | Dokunarak | Haritayı varış noktasına taşır. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
 
@@ -223,7 +223,7 @@ Widget, hesaplanan rota üzerindeki ilk ara noktaya olan mesafeyi gösterir. Ara
 | | |
 |:------------|:------------|
 | Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
-  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
 | Dokunarak | **Bir ara nokta** - haritayı ara noktaya taşır. <br /> **İki veya daha fazla ara nokta** - Hedefler listesi menüsünü açar. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
 
@@ -233,25 +233,25 @@ Widget, hesaplanan rota üzerindeki ilk ara noktaya olan mesafeyi gösterir. Ara
 
 <TabItem value="android" label="Android">  
 
-![Varış zamanı Kalan süre widget'ı](@site/static/img/widgets/arrival_time_widget_android.png)  ![Varış zamanı Kalan süre widget'ı](@site/static/img/widgets/time_to_go_widget_android.png)  
+![Varış zamanı Gitme süresi widget'ı](@site/static/img/widgets/arrival_time_widget_android.png)  ![Varış zamanı Gitme süresi widget'ı](@site/static/img/widgets/time_to_go_widget_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Varış zamanı Kalan süre widget'ı](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Varış zamanı Kalan süre widget'ı](@site/static/img/widgets/time_to_go_widget_ios.png)  
+![Varış zamanı Gitme süresi widget'ı](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Varış zamanı Gitme süresi widget'ı](@site/static/img/widgets/time_to_go_widget_ios.png)  
 
 </TabItem>
 
 </Tabs>  
 
-Widget, ilk ara noktaya *Varış zamanını* veya *Kalan süreyi* gösterir. Navigasyon sırasında süre sürekli güncellenir ve bir ara nokta geçilir geçilmez süre bir sonraki ara noktaya güncellenir. Örneğin, navigasyonu durdurursanız, *Kalan süre* değişmeden kalır ve *Varış zamanı*, *Kalan süre* artı *Mevcut zaman*a eşit olur.
+Widget, ilk ara noktaya *Varış zamanını* veya *Gitme süresini* gösterir. Navigasyon sırasında süre sürekli güncellenir ve bir ara nokta geçilir geçilmez süre bir sonraki ara noktaya güncellenir. Örneğin, navigasyonu durdurursanız, *Gitme süresi* değişmeden kalır ve *Varış zamanı*, *Gitme süresi* artı *Mevcut zaman*a eşit olur.
 
 | | |
 |:------------|:------------|
 | Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| Dokunarak | *Varış zamanı* ile *Kalan süre* arasında ve tersi yönde geçiş yapar. |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+| Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapar. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
 
 
@@ -273,13 +273,13 @@ Widget, ilk ara noktaya *Varış zamanını* veya *Kalan süreyi* gösterir. Nav
 
 </Tabs>
 
-Widget, son varış noktasına *Varış zamanını* veya *Kalan süreyi* gösterir. Süre navigasyon sırasında sürekli güncellenir ve mevcut konumunuzdan rota süresine eşittir.  
+Widget, son varış noktasına *Varış zamanını* veya *Gitme süresini* gösterir. Süre navigasyon sırasında sürekli güncellenir ve mevcut konumunuzdan rota süresine eşittir.  
 
 | | |
 |:------------|:------------|
 | Etkinleştir |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| Dokunarak | *Varış zamanı* ile *Kalan süre* arasında ve tersi yönde geçiş yapar. |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+| Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapar. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |  
 
 
@@ -325,6 +325,13 @@ Sonraki dönüşe kalan mesafe, yol adı, mevcut sokak adı ve şerit bilgileri 
 | Uzun dokunuş    | **Sonraki dönüş**: [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar <br/> **Şeritler**: Değişiklik yok. |
 
 
+### Şeritler {#lanes}
+
+![Şeritler widget'ları](@site/static/img/widgets/lanes_widget.png)
+
+**Şeritler** widget'ı, navigasyon aktifken mevcut şeridi vurgular ve navigasyon pasifken mevcut yol için şerit düzenini gösterir. Şerit diyagramının altında, şerit rehberliğinin uygulanacağı manevraya kadar ne kadar kaldığını gösteren bir mesafe göstergesi de bulunur. Bu widget yalnızca Üst ve Alt paneller için kullanılabilir. Veriler [OpenStreetMap projesinden](https://wiki.openstreetmap.org/wiki/Key:turn) alınmıştır.
+
+
 ### Sonraki Dönüş {#next-turn}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -343,16 +350,21 @@ Sonraki dönüşe kalan mesafe, yol adı, mevcut sokak adı ve şerit bilgileri 
 
 </Tabs>
 
-Navigasyon widget'ları **Sonraki dönüş**, **Sonraki dönüş (küçük)**, **İkinci sonraki dönüş**, kullanıcı kolaylığı için herhangi bir panele yerleştirilebilir. Ancak, görüntülenen bilgiler widget türüne ve yerleşimine göre farklılık gösterir. Aşağıdaki tablo davranışı özetlemektedir:
+Navigasyon widget'ları **Sonraki dönüş**, **Sonraki dönüş (küçük)**, **İkinci sonraki dönüş**, kullanıcı kolaylığı için herhangi bir panele yerleştirilebilir. Ancak, görüntülenen bilgiler widget türüne ve yerleşimine göre farklılık gösterir. 
 
-|   Widget/Panel   | Sol panel    | Sağ panel   | Üst panel              | Alt panel           |
-| :--------------- | :------------ | :------------ | :--------------------- | :--------------------- |
-| **Sonraki dönüş**        | Yalnızca mesafe | Yalnızca mesafe | Sokak adı + mesafe | Sokak adı + mesafe |
-| **Sonraki dönüş (küçük)**| Yalnızca mesafe | Yalnızca mesafe | Mevcut değil          | Mevcut değil          |
-| **İkinci sonraki dönüş** | Yalnızca mesafe | Yalnızca mesafe | Sokak adı + mesafe | Sokak adı + mesafe |
+Üst / Alt panellerde, Sonraki dönüş ve İkinci sonraki dönüş widget'ları Tam genişlik (satır başına bir widget) veya Yarım genişlik (satır başına iki widget) olarak görüntülenebilir. İçerik, düzene ve seçilen widget boyutuna (K / O / B) bağlıdır.
 
+Tam genişlik gösterir:
+- Birinci satır — Dönüşe mesafe + Çıkış N (varsa)
+- İkinci satır — Kalkan ile yol numarası + yol/sokak adı
 
-### Sonraki Dönüş İçin Renkli Uyarılar {#color-prompts-for-next-turn}
+Yarım genişlik gösterir:
+- Birinci satır — Dönüşe mesafe
+- İkinci satır — Çıkış N (varsa) + kalkan ile yol numarası + yol/sokak adı
+
+**Sonraki dönüş** büyük bir ok kullanır ve Üst / Alt panellerde Tam genişlik / Yarım genişlik düzenlerini destekler. **Sonraki dönüş (küçük)** okun yanına yerleştirilmiş mesafeyle küçük bir ok kullanır ve Sol / Sağ paneller için tasarlanmıştır. **İkinci sonraki dönüş** bir sonraki dönüşten sonraki manevrayı gösterir ve ikinci manevra yaklaşma mesafesi içindeyse etkinleşir.
+
+### Renkli Uyarılar {#color-prompts}
 
 Bu tablo, uyarıların etkinleştirileceği yaklaşık süreyi ve manevrayı gerçekleştirmek için okların karşılık gelen renk göstergesini göstermektedir. Daha fazla bilgi için [teknik belgelere](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) veya [Sesli komutlar](../navigation/guidance/voice-navigation.md) makalesine bakın.
 
@@ -362,13 +374,9 @@ Bu tablo, uyarıların etkinleştirileceği yaklaşık süreyi ve manevrayı ger
 | 🟡 Sarı | 20 saniye     | Yaklaşıyor| `x` m sonra dön   |
 | ⚪ Gri   | > 100 saniye  | Uzak    | Dönmeye hazırlan |
 
+Aynı renk anlamı Şeritler widget'ı için de geçerlidir. Şeritler widget'ı yaklaşma süresi ayarlarına göre gösterilir ve şerit renkleri sesli komut aşamasına uyar.
 
-### Şeritler {#lanes}
-
-![Şeritler widget'ları](@site/static/img/widgets/lanes_widget.png)
-
-**Şeritler** widget'ı, navigasyon aktifken mevcut şeridi vurgular ve navigasyon pasifken mevcut yol için şerit düzenini gösterir. Şerit diyagramının altında, şerit rehberliğinin uygulanacağı manevraya kadar ne kadar kaldığını gösteren bir mesafe göstergesi de bulunur. Bu widget yalnızca Üst ve Alt paneller için kullanılabilir. Veriler [OpenStreetMap projesinden](https://wiki.openstreetmap.org/wiki/Key:turn) alınmıştır.
-
+<!--
 ### Şeritler İçin Renkli Uyarılar {#color-prompts-for-lanes}
 
 Yaklaşma süresi ayarlarına göre bir widget görüntüler. Şeridin rengi [sesli komutlarla](../navigation/guidance/voice-navigation.md) ve manevrayı gerçekleştirmek için kalan süreyle ilişkilidir.
@@ -377,7 +385,7 @@ Yaklaşma süresi ayarlarına göre bir widget görüntüler. Şeridin rengi [se
 | :-------- | :------------- | :---------- | :---------- |
 | 🟢 Yeşil  | 5 saniye      | Yakın    | [Şimdi dön](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
 | 🟡 Sarı | 20 saniye     | Yaklaşıyor | [X m sonra dön](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) |
-
+-->
 
 
 ## Uyarı Widget'ı {#alert-widget}
@@ -429,40 +437,24 @@ Widget **Ayarları**'nda her zaman **mevcut sokak adını** görüntülemeyi se�
 
 <TabItem value="android" label="Android">  
 
- ![Sokak adı sonraki dönüş olmadan](@site/static/img/widgets/without_next_turn_and.png) 
+ ![Sokak adı sonraki dönüş olmadan](@site/static/img/widgets/without_next_turn_and.png) ![Sokak adı sonraki dönüş ile](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Sokak adı sonraki dönüş olmadan ios](@site/static/img/widgets/without_next_turn_ios.png) 
+ ![Sokak adı sonraki dönüş olmadan ios](@site/static/img/widgets/without_next_turn_ios.png) ![Sokak adı sonraki dönüş ile ios](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-- Yön değiştirdiğinizde, widget manevra şemasını ve dönmeniz gereken caddenin (yolun) adını (tanımını) sarı bir okla gösterir (Sonraki dönüş bilgisi = AÇIK).
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
- ![Sokak adı sonraki dönüş ile](@site/static/img/widgets/with_next_turn_and.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
- ![Sokak adı sonraki dönüş ile ios](@site/static/img/widgets/with_next_turn_ios.png) 
-
-</TabItem>
-
-</Tabs>
 
 | | |
 |:------------|:------------|
 | Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget ekle → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget ekle → <Translate android="true" ids="map_widget_top_text"/>* |
+| Ayarlar | Her zaman **mevcut sokak adını** görüntülemeyi veya manevraya yaklaşırken **bir sonraki sokak adını** görüntülemeyi seçin |
 | Dokunarak | Ayarlar (Sonraki dönüş bilgisini AÇIK/KAPALI yap) ve Sil ile bağlam menüsünü açar |
 
 
