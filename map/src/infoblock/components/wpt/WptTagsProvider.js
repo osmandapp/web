@@ -415,14 +415,21 @@ function fixTagsKeys(tags) {
     return res;
 }
 
-function formatLengthValue(value, ctx, unitType, fallbackUnit) {
-    const numValue = parseFloat(value);
+function isFloat(value) {
+    return /^[+-]?(?:\d+(?:\.\d+)?|\.\d+)$/.test(value);
+}
+
+function formatLengthValue(value, ctx, unitType) {
+    const numValue = isFloat(value) ? Number(value) : undefined;
+    if (numValue === undefined) {
+        return value;
+    }
+    const unit = unitType === LARGE_UNIT ? getLargeLengthUnit(ctx) : getSmallLengthUnit(ctx);
     if (!Number.isFinite(numValue) || !ctx.unitsSettings.len) {
-        return fallbackUnit ? `${value} ${i18n?.t(fallbackUnit)}` : null;
+        return `${value} ${i18n?.t(unit)}`;
     }
 
     const converted = convertMeters(numValue, ctx.unitsSettings.len, unitType);
-    const unit = unitType === LARGE_UNIT ? getLargeLengthUnit(ctx) : getSmallLengthUnit(ctx);
     return `${+converted.toFixed(1)} ${i18n?.t(unit)}`;
 }
 
@@ -432,23 +439,23 @@ function getFormattedPrefixAndText(key, prefix, value, subtype, ctx) {
 
     switch (key) {
         case 'ele':
-            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'm') ?? formattedValue;
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT);
             break;
         case 'width':
             formattedPrefix = i18n?.t('shared_string_width');
-            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'm') ?? formattedValue;
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT);
             break;
         case 'height':
             formattedPrefix = i18n?.t('shared_string_height');
-            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'm') ?? formattedValue;
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT);
             break;
         case 'depth':
         case 'seamark_height':
-            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT, 'meter') ?? formattedValue;
+            formattedValue = formatLengthValue(value, ctx, SMALL_UNIT);
             break;
         case 'distance':
             formattedPrefix = `${formattedPrefix} ${i18n?.t('distance')}`;
-            formattedValue = formatLengthValue(value, ctx, LARGE_UNIT, null) ?? formattedValue;
+            formattedValue = formatLengthValue(value, ctx, LARGE_UNIT);
             break;
         case 'capacity':
             if (subtype === 'water_tower' || subtype === 'storage_tank') {
