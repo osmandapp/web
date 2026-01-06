@@ -39,6 +39,7 @@ import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import TopographyProFeatures from '../../frame/pro/TopographyProFeatures';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
@@ -178,30 +179,15 @@ export default function ConfigureMap() {
                                     </ListItemText>
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
-                                <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
-                                    <ListItemIcon className={setIconStyles(ctx.configureMapState.showFavorites)}>
-                                        <StarIcon />
-                                    </ListItemIcon>
-                                    <ListItemText>
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'space-between',
-                                            }}
-                                        >
-                                            <Typography variant="inherit" noWrap>
-                                                {t('shared_string_favorites')}
-                                            </Typography>
-                                            <Switch
-                                                id="se-configure-map-menu-favorite-switch"
-                                                checked={ctx.configureMapState.showFavorites}
-                                                onClick={(e) => e.stopPropagation()}
-                                                onChange={handleFavoritesSwitchChange}
-                                            />
-                                        </div>
-                                    </ListItemText>
-                                </MenuItem>
+                                <SimpleItemWithSwitch
+                                    icon={<StarIcon />}
+                                    text={t('shared_string_favorites')}
+                                    checked={ctx.configureMapState.showFavorites}
+                                    onChange={handleFavoritesSwitchChange}
+                                    id="se-configure-map-menu-favorite-switch"
+                                    className={styles.item}
+                                    iconClassName={setIconStyles(ctx.configureMapState.showFavorites)}
+                                />
                                 <DividerWithMargin margin={'64px'} />
                                 <MenuItem
                                     id={'se-configure-map-visible-tracks'}
