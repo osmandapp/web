@@ -22,6 +22,7 @@ import AppContext, {
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_POI,
     OBJECT_TYPE_SHARE_FILE,
+    OBJECT_TYPE_STOP,
 } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
@@ -30,19 +31,12 @@ import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
 import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_openstreetmap_logo.svg';
-import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import FavoritesManager, {
-    getColorLocation,
-    LOCATION_UNAVAILABLE,
-    prepareBackground,
-    prepareColor,
-    prepareIcon,
-} from '../../../manager/FavoritesManager';
+import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
@@ -64,8 +58,6 @@ import WptTagsProvider, {
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
-import { getDistance } from '../../../util/Utils';
-import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
@@ -76,10 +68,15 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
-import { getIconFromMap, iconPathMap, SEARCH_ICON_MAP_LOCATION } from '../../../map/layers/SearchLayer';
+import { iconPathMap, getIconFromMap } from '../../../map/util/MapManager';
+import { SEARCH_ICON_MAP_LOCATION } from '../../../map/layers/SearchLayer';
+import {
+    TRANSPORT_STOP_SHIELD_COLOR,
+    TRANSPORT_STOP_BACKGROUND,
+    TRANSPORT_STOP_ICON_NAME,
+} from '../../../map/layers/TransportStopsLayer';
 import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
-import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../../../menu/settings/units/UnitsConverter';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
@@ -131,9 +128,12 @@ export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldS
     );
 };
 
-export function getObjType(wpt) {
+export function getObjType(wpt, t) {
     if (!wpt) {
         return TYPE_NOT_FOUND;
+    }
+    if (wpt?.type?.isStop) {
+        return t('web:public_transport_stop_position');
     }
     let type = wpt?.poiType;
     if (!wpt.name || wpt.name === EMPTY_STRING) {
@@ -262,6 +262,19 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
                 mapObj,
             };
+        } else if (type?.isStop) {
+            const currentStop = ctx.selectedWpt.stop;
+            const { options: objOptions, latlng, mapObj } = currentStop;
+            return {
+                id: objOptions.idObj,
+                type,
+                name: objOptions.name,
+                latlon: { lat: latlng.lat, lon: latlng.lng },
+                background: TRANSPORT_STOP_BACKGROUND,
+                color: TRANSPORT_STOP_SHIELD_COLOR,
+                icon: TRANSPORT_STOP_ICON_NAME,
+                mapObj,
+            };
         }
         return null;
     }, [ctx.selectedWpt]);
@@ -306,6 +319,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     fallbackTags.push(wikidataTag);
                     tags = { res: fallbackTags };
                 }
+            } else if (type?.isStop) {
+                tags = null;
             }
             return tags;
         };
@@ -452,6 +467,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             isWpt: isTrack(ctx) && wpt?.trackWpt,
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
             isShareFav: ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && wpt?.markerCurrent,
+            isStop: ctx.currentObjectType === OBJECT_TYPE_STOP && wpt?.stop,
         };
     }
 
@@ -503,6 +519,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isShareFav) {
             setShowInfoBlock(false);
             ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));
+        } else if (type.isStop) {
+            if (wpt.mapObj) {
+                closeObjectFromMap();
+            }
         }
     }
 
@@ -831,7 +851,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                     <MenuItemWithLines maxLines={3} className={styles.name}>
                                         <WptName />
                                     </MenuItemWithLines>
-                                    <MenuItemWithLines className={styles.type} name={getObjType(wpt)} maxLines={2} />
+                                    <MenuItemWithLines className={styles.type} name={getObjType(wpt, t)} maxLines={2} />
                                 </div>
                                 {wpt.icon && (
                                     <WptIcon

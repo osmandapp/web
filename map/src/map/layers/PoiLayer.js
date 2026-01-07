@@ -27,13 +27,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import {
-    getIconFromMap,
-    getObjIdSearch,
-    SEARCH_ICON_MAP_LOCATION,
-    SEARCH_LAYER_ID,
-    searchTypeMap,
-} from './SearchLayer';
+import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
@@ -41,7 +35,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getVisibleBbox, findFeatureGroupById } from '../util/MapManager';
+import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { selectMarker } from '../util/MarkerSelectionService';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
