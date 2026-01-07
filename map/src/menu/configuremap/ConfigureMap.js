@@ -5,7 +5,6 @@ import {
     FormControl,
     InputLabel,
     Select,
-    Switch,
     Typography,
     ListItemText,
     ListItemIcon,
@@ -25,6 +24,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as TerrainIcon } from '../../assets/icons/ic_action_terrain.svg';
+import { ReactComponent as TransportStopIcon } from '../../assets/icons/ic_action_transport_stop.svg';
 import cloneDeep from 'lodash-es/cloneDeep';
 import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
@@ -73,6 +73,13 @@ export default function ConfigureMap() {
     const handleFavoritesSwitchChange = () => {
         const newConfigureMap = cloneDeep(ctx.configureMapState);
         newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
+        updateConfigureMapCache(newConfigureMap);
+        ctx.setConfigureMapState(newConfigureMap);
+    };
+
+    const handleTransportStopsSwitchChange = () => {
+        const newConfigureMap = cloneDeep(ctx.configureMapState);
+        newConfigureMap.showTransportStops = !ctx.configureMapState.showTransportStops;
         updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
     };
@@ -225,6 +232,20 @@ export default function ConfigureMap() {
                                     </ListItemText>
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
+                                {ctx.develFeatures && (
+                                    <>
+                                        <SimpleItemWithSwitch
+                                            icon={<TransportStopIcon />}
+                                            text={t('web:transport_stops_title')}
+                                            checked={ctx.configureMapState.showTransportStops}
+                                            onChange={handleTransportStopsSwitchChange}
+                                            id="se-configure-map-menu-transport_stops"
+                                            className={styles.item}
+                                            iconClassName={setIconStyles(ctx.configureMapState.showTransportStops)}
+                                        />
+                                        <DividerWithMargin margin={'64px'} />
+                                    </>
+                                )}
                                 <MenuItem
                                     divider
                                     className={styles.item}

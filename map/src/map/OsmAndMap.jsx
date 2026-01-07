@@ -24,6 +24,7 @@ import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
+import TransportStopsLayer from './layers/TransportStopsLayer';
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
@@ -210,6 +211,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <PoiLayer />
                 <SearchLayer />
                 <ExploreLayer />
+                <TransportStopsLayer />
                 <CustomTileLayer
                     ref={tileLayer}
                     attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'

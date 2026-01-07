@@ -41,7 +41,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getVisibleBbox } from '../util/MapManager';
+import { getVisibleBbox, findFeatureGroupById } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { selectMarker } from '../util/MarkerSelectionService';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
@@ -191,16 +191,6 @@ export default function PoiLayer() {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
-
-    function findFeatureGroupById(id) {
-        let found = null;
-        map.eachLayer((layer) => {
-            if (layer instanceof L.FeatureGroup && layer.options?.id === id) {
-                found = layer;
-            }
-        });
-        return found;
-    }
 
     useSelectMarkerOnMap({
         ctx,
@@ -454,7 +444,7 @@ export default function PoiLayer() {
                                 map,
                                 zoom,
                             });
-                            const existing = findFeatureGroupById(POI_LAYER_ID);
+                            const existing = findFeatureGroupById(map, POI_LAYER_ID);
                             if (existing) {
                                 map.removeLayer(existing);
                             }
@@ -565,7 +555,7 @@ export default function PoiLayer() {
     // add search result to the map and to the left panel
     useEffect(() => {
         if (!ctx.processingSearch) {
-            const existing = findFeatureGroupById(POI_LAYER_ID);
+            const existing = findFeatureGroupById(map, POI_LAYER_ID);
             if (existing) {
                 map.removeLayer(existing);
             }
@@ -583,7 +573,7 @@ export default function PoiLayer() {
 
     useEffect(() => {
         return () => {
-            const existing = findFeatureGroupById(POI_LAYER_ID);
+            const existing = findFeatureGroupById(map, POI_LAYER_ID);
             if (existing) {
                 map.removeLayer(existing);
             }

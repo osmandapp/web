@@ -58,6 +58,7 @@ export const MAX_RECENT_OBJS = 5;
 
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
+    showTransportStops: false,
     pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
