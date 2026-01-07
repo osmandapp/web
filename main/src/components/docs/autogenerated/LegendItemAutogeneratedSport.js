@@ -100,5 +100,6 @@ export default function Render() {
         'Water polo' : {poiName:'water_polo', poiName2:null, folderName:'sport/sport_sport_water_polo'},
         'Water ski' : {poiName:'water_ski', poiName2:null, folderName:'sport/sport_sport_water_ski'},
         'Wrestling' : {poiName:'wrestling', poiName2:null, folderName:'sport/sport_sport_wrestling'},
+        'Yoga' : {poiName:'null', poiName2:null, folderName:'sport/sport_sport_yoga'},
     }});
 }
