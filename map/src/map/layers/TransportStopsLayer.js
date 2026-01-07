@@ -142,8 +142,16 @@ const TransportStopsLayer = () => {
         return null;
     }
 
-    const debouncedGetTransportStops = useRef(
-        debounce(async ({ controller, ignore, zoom, reqId }) => {
+    useEffect(() => {
+        if (!ctx.configureMapState.showTransportStops || map.getZoom() < MIN_ZOOM_FOR_STOPS) {
+            removeTransportStopsLayer();
+            return;
+        }
+
+        let ignore = false;
+        let controller = new AbortController();
+
+        const debouncedGetTransportStops = debounce(async ({ controller, ignore, zoom, reqId }) => {
             const bbox = getVisibleBbox(map, ctx);
             if (!bbox) {
                 return;
@@ -181,17 +189,7 @@ const TransportStopsLayer = () => {
                     console.error('Failed to load transport stops:', error);
                 }
             }
-        }, 1000)
-    ).current;
-
-    useEffect(() => {
-        if (!ctx.configureMapState.showTransportStops || map.getZoom() < MIN_ZOOM_FOR_STOPS) {
-            removeTransportStopsLayer();
-            return;
-        }
-
-        let ignore = false;
-        let controller = new AbortController();
+        }, 1000);
 
         function allStopsFound(zoomVal, prevZoomVal) {
             return prevZoomVal && zoomVal > prevZoomVal && !useLimit;
