@@ -32,7 +32,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
-import { getVisibleBbox } from '../util/MapManager';
+import { getVisibleBbox, findFeatureGroupById } from '../util/MapManager';
 import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
@@ -81,16 +81,6 @@ export async function getIconFromMap(name) {
         svgData = await response.text();
     }
     return svgData;
-}
-
-export function findFeatureGroupById(map, id) {
-    let foundGroup = null;
-    map.eachLayer(function (layer) {
-        if (layer instanceof L.FeatureGroup && layer.options.id === id) {
-            foundGroup = layer;
-        }
-    });
-    return foundGroup;
 }
 
 export function getObjIdSearch(obj) {

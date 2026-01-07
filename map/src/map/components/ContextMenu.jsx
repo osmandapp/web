@@ -1,8 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import AppContext, {
-    OBJECT_TRACK_ANALYZER,
-    OBJECT_TYPE_NAVIGATION_ALONE,
-} from '../../context/AppContext';
+import AppContext, { OBJECT_TRACK_ANALYZER, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useLocation, useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';

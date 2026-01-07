@@ -6,11 +6,7 @@ import useNavigationHistory from '../../util/hooks/navigation/useNavigationHisto
 import { LatLng } from 'leaflet';
 import styles from './routemenu.module.css';
 import AppContext from '../../context/AppContext';
-import {
-    ROUTE_POINTS_START,
-    ROUTE_POINTS_FINISH,
-    ROUTE_POINTS_VIA,
-} from '../../store/geoRouter/profileConstants';
+import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
