@@ -30,8 +30,9 @@ ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend, zoomPl
  * Supports zoom, pan, and shows marker on map on hover.
  *
  * @param {Object} route - GeoJSON route with features containing LineString geometry and elevation data
+ * @param {number} totalDistanceMeters - Total route distance in meters (from route API)
  */
-export default function NavigationSummaryGraph({ route }) {
+export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const unitsSettings = ctx.unitsSettings;
@@ -102,7 +103,9 @@ export default function NavigationSummaryGraph({ route }) {
     const smallDistanceUnit = t(getSmallLengthUnit({ unitsSettings }));
     const elevationUnit = smallDistanceUnit;
 
-    const totalDistance = graphData?.points[graphData.points.length - 1]?.distance || 0;
+    const totalDistance = totalDistanceMeters
+        ? (convertMeters(totalDistanceMeters, unitsSettings.len, LARGE_UNIT) ?? 0)
+        : graphData?.points[graphData.points.length - 1]?.distance || 0;
 
     const mouseLinePlugin = useMemo(() => createMouseLinePlugin('#f8931d'), []);
 

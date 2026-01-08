@@ -144,7 +144,7 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
                     </>
                 )}
             </Box>
-            {route && <NavigationSummaryGraph route={route} />}
+            {route && <NavigationSummaryGraph route={route} totalDistanceMeters={overall?.distance} />}
             <Box sx={{ mt: '20px' }}>
                 <GrayBtnWithBlueHover
                     id="se-route-more-information"
