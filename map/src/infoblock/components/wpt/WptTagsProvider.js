@@ -415,20 +415,17 @@ function fixTagsKeys(tags) {
     return res;
 }
 
-function isFloat(value) {
-    return /^[+-]?(?:\d+(?:\.\d+)?|\.\d+)$/.test(value);
+function isNumeric(value) {
+    const IS_NUMERIC_REGEX = /^[+-]?(?:\d+(?:\.\d+)?|\.\d+)$/;
+    return IS_NUMERIC_REGEX.test(value);
 }
 
 function formatLengthValue(value, ctx, unitType) {
-    const numValue = isFloat(value) ? Number(value) : undefined;
-    if (numValue === undefined) {
+    const numValue = isNumeric(value) ? Number(value) : undefined;
+    if (numValue === undefined || !ctx.unitsSettings.len) {
         return value;
     }
     const unit = unitType === LARGE_UNIT ? getLargeLengthUnit(ctx) : getSmallLengthUnit(ctx);
-    if (!Number.isFinite(numValue) || !ctx.unitsSettings.len) {
-        return `${value} ${i18n?.t(unit)}`;
-    }
-
     const converted = convertMeters(numValue, ctx.unitsSettings.len, unitType);
     return `${+converted.toFixed(1)} ${i18n?.t(unit)}`;
 }
