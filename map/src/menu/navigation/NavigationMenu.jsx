@@ -133,6 +133,11 @@ export default function NavigationMenu() {
                 ctx.setUpdateInfoBlock(true);
             }
         }
+        // Close navigation settings when opening route details
+        if (openSettings) {
+            setOpenSettings(false);
+        }
+        ctx.setOpenNavigationSettings(false);
     }
 
     function close() {
