@@ -39,3 +39,59 @@
     font-weight: 400 !important;
     line-height: 150% !important;
 }
+
+.stopRouteItem {
+    display: flex !important;
+    padding: 12px 16px 16px 16px !important;
+    align-items: center !important;
+    gap: 24px !important;
+    align-self: stretch !important;
+}
+
+.stopRouteName {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+
+.stopRouteInfo {
+    color: #666 !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+}
+
+.stopRouteInfoRow {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 3px !important;
+}
+
+.stopRouteShield {
+    height: 20px !important;
+    min-width: 20px !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    padding: 0 6px !important;
+    gap: 6px !important;
+}

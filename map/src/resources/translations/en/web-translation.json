@@ -240,5 +240,16 @@
     "shared_string_unpin_folder": "Unpin folder",
     "shared_string_pin_folder": "Pin folder",
     "transport_stops_title": "Transport stops",
-    "public_transport_stop_position": "Public transport stop position"
+    "public_transport_stop_position": "Public transport stop position",
+    "route_type_bus": "Bus",
+    "route_type_ferry": "Ferry",
+    "route_type_funicular": "Funicular",
+    "route_type_light_rail": "Light rail",
+    "route_type_monorail": "Monorail",
+    "route_type_railway": "Railway",
+    "route_type_share_taxi": "Share taxi",
+    "route_type_train": "Train",
+    "route_type_tram": "Tram",
+    "route_type_trolleybus": "Trolleybus",
+    "route_type_subway": "Subway"
 }
