@@ -79,6 +79,7 @@ import TransportStopsRoutes from './transport/TransportStopsRoutes';
 import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
+import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
 import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
@@ -692,6 +693,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return wpt.type.isPoi || wpt.type.isWikiPoi || wpt?.type?.isSearch;
     }
 
+    function showTransportStopActions() {
+        return wpt?.type?.isStop;
+    }
+
     const Header = () => {
         return (
             <AppBar position="static" className={headerStyles.appbar}>
@@ -875,6 +880,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             ) : null}
                             {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                             {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
+                            {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
                             {wpt?.type?.isStop && wpt?.routes && <TransportStopsRoutes routes={wpt.routes} />}
                             {wpt?.wikiDesc && (
                                 <>

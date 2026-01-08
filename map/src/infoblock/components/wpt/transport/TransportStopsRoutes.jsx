@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Collapse } from '@mui/material';
+import { Box, Collapse, Divider } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as BusIcon } from '../../../../assets/icons/ic_action_transport_bus.svg';
@@ -108,6 +108,7 @@ export default function TransportStopsRoutes({ routes = [] }) {
 
     return (
         <Box>
+            <Divider sx={{ mt: '16px' }} />
             <SelectItemWithoutOptions
                 title={t('transport_Routes')}
                 onClick={() => setOpen(!open)}

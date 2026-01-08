@@ -75,6 +75,8 @@ export default function FavoriteName({
             const objOptions = ctx.selectedWpt.poi?.options ?? ctx.selectedWpt.poi?.properties;
             const { name } = getPropsFromSearchResultItem(objOptions, t);
             setFavoriteName(name);
+        } else if (ctx.selectedWpt?.stop) {
+            setFavoriteName(ctx.selectedWpt?.stop.options.name);
         }
     }, [ctx.selectedWpt]);
 
