@@ -103,7 +103,8 @@ export default function NavigationMenu() {
         if (!profile) {
             return;
         }
-        if (urlProfile && visibleProfiles[0] !== urlProfile) {
+
+        if (urlProfile && !visibleProfiles.includes(urlProfile)) {
             const newVisibleProfiles = visibleProfiles.filter((key) => key !== urlProfile);
             newVisibleProfiles.unshift(urlProfile);
             const updatedProfiles = newVisibleProfiles.slice(0, MAX_VISIBLE_PROFILES);
