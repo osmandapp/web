@@ -10,6 +10,8 @@ import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../..
 import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
+import { apiGet } from '../../util/HttpApi';
+import { parseCoordinate } from '../analyzer/util/PointsManager';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -18,15 +20,24 @@ export function formatLatLon(pnt) {
     return pnt.lat.toFixed(5) + ', ' + pnt.lng.toFixed(5);
 }
 
-function getValidatedLatLon(value) {
-    const coords = value.trim().split(/[, ]+/);
-    if (coords.length === 2) {
-        let lat = coords[0];
-        let lng = coords[1];
-        if (lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180) {
-            return new LatLng(lat, lng);
-        }
+async function getValidatedLatLon(value) {
+    // Try to parse as coordinates first using existing parseCoordinate function
+    const latlon = parseCoordinate(value);
+    if (latlon) {
+        return latlon;
     }
+
+    // If not valid coordinates, try API search
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/parse-location`, {
+        params: {
+            location: value,
+        },
+    });
+
+    if (response?.data && response.data.lat && response.data.lon) {
+        return new LatLng(response.data.lat, response.data.lon);
+    }
+
     return null;
 }
 
@@ -186,7 +197,7 @@ export default function NavigationPointsManager() {
         ctx.setViaInputsCount(newIntermediates.length);
     };
 
-    const handleStartBlur = (value) => {
+    const handleStartBlur = async (value) => {
         const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
             value,
             current: navObject.getOption(ROUTE_POINTS_START),
@@ -202,14 +213,14 @@ export default function NavigationPointsManager() {
             return;
         }
 
-        const latlon = getValidatedLatLon(trimmedValue);
+        const latlon = await getValidatedLatLon(trimmedValue);
         if (latlon) {
             const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             navObject.setOption(ROUTE_POINTS_START, navObj);
         }
     };
 
-    const handleFinishBlur = (value) => {
+    const handleFinishBlur = async (value) => {
         const { shouldClear, shouldSkip, trimmedValue } = preparePointUpdate({
             value,
             current: navObject.getOption(ROUTE_POINTS_FINISH),
@@ -225,14 +236,14 @@ export default function NavigationPointsManager() {
             return;
         }
 
-        const latlon = getValidatedLatLon(trimmedValue);
+        const latlon = await getValidatedLatLon(trimmedValue);
         if (latlon) {
             const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             navObject.setOption(ROUTE_POINTS_FINISH, navObj);
         }
     };
 
-    const handleIntermediateBlur = (index, value) => {
+    const handleIntermediateBlur = async (index, value) => {
         if (!value || value.trim() === '') {
             if (viaPoints && index < viaPoints.length) {
                 const newViaPoints = [...viaPoints];
@@ -241,7 +252,7 @@ export default function NavigationPointsManager() {
             }
             return;
         }
-        const latlon = getValidatedLatLon(value);
+        const latlon = await getValidatedLatLon(value);
         if (latlon) {
             const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             const newViaPoints = viaPoints ? [...viaPoints] : [];
