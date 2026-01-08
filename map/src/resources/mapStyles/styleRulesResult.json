@@ -1337,6 +1337,71 @@
       }
     ]
   },
+  "publictransportroutes.addon.render.xml": {
+    "routeFunicularColor": [
+      {
+        "attrColorValue": "#3880a9",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#3880a9"
+      }
+    ],
+    "routeLightrailColor": [
+      {
+        "attrColorValue": "#009100",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#009100"
+      }
+    ],
+    "routeTrainColor": [
+      {
+        "attrColorValue": "#cb6e23",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#8c3f01"
+      }
+    ],
+    "routeBusColor": [
+      {
+        "attrColorValue": "#ff0000",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#ff0000"
+      }
+    ],
+    "routeTramColor": [
+      {
+        "attrColorValue": "#0000ff",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#0000ff"
+      }
+    ],
+    "routeShareTaxiColor": [
+      {
+        "attrColorValue": "#f620cb",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#f620cb"
+      }
+    ],
+    "routeTrolleybusColor": [
+      {
+        "attrColorValue": "#920071",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#920071"
+      }
+    ]
+  },
   "skimap.render.xml": {
     "routeInfo_winter_ice_road": [
       {
