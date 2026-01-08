@@ -75,6 +75,7 @@ import {
     TRANSPORT_STOP_BACKGROUND,
     TRANSPORT_STOP_ICON_NAME,
 } from '../../../map/layers/TransportStopsLayer';
+import TransportStopsRoutes from './transport/TransportStopsRoutes';
 import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
@@ -273,6 +274,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 background: TRANSPORT_STOP_BACKGROUND,
                 color: TRANSPORT_STOP_SHIELD_COLOR,
                 icon: TRANSPORT_STOP_ICON_NAME,
+                routes: objOptions.routes,
                 mapObj,
             };
         }
@@ -873,6 +875,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             ) : null}
                             {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                             {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
+                            {wpt?.type?.isStop && wpt?.routes && <TransportStopsRoutes routes={wpt.routes} />}
                             {wpt?.wikiDesc && (
                                 <>
                                     <Divider sx={{ mt: 2 }} />
