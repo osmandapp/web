@@ -1,17 +1,5 @@
 {
   "topo.render.xml": {
-    "routeInfo_winter_ice_road": [
-      {
-        "attrStringValue": "winter_road",
-        "attrColorValue": "#458fff",
-        "additional": "winter_road=yes"
-      },
-      {
-        "attrStringValue": "ice_road",
-        "attrColorValue": "#7bb0ff",
-        "additional": "ice_road=yes"
-      }
-    ],
     "routeInfo_steepness": [
       {
         "attrStringValue": "-100_-20",
@@ -74,6 +62,11 @@
         "additional": "steepness=21_100"
       }
     ],
+    "routeTrainColor": [
+      {
+        "attrColorValue": "#8c3f01"
+      }
+    ],
     "routeInfo_tracktype": [
       {
         "attrStringValue": "tracktype_grade1",
@@ -99,6 +92,28 @@
         "attrStringValue": "tracktype_grade5",
         "attrColorValue": "#44628f59",
         "additional": "tracktype=grade5"
+      }
+    ],
+    "routeTramColor": [
+      {
+        "attrColorValue": "#0000ff"
+      }
+    ],
+    "routeLightrailColor": [
+      {
+        "attrColorValue": "#009100"
+      }
+    ],
+    "routeInfo_winter_ice_road": [
+      {
+        "attrStringValue": "winter_road",
+        "attrColorValue": "#458fff",
+        "additional": "winter_road=yes"
+      },
+      {
+        "attrStringValue": "ice_road",
+        "attrColorValue": "#7bb0ff",
+        "additional": "ice_road=yes"
       }
     ],
     "routeInfo_surface": [
@@ -267,6 +282,11 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeBusColor": [
+      {
+        "attrColorValue": "#ff0000"
       }
     ],
     "routeInfo_roadClass": [
@@ -442,6 +462,16 @@
         "attrStringValue": "smoothness_undefined",
         "attrColorValue": "#e8e8e8",
         "additional": "smoothness=undefined"
+      }
+    ],
+    "routeShareTaxiColor": [
+      {
+        "attrColorValue": "#f620cb"
+      }
+    ],
+    "routeTrolleybusColor": [
+      {
+        "attrColorValue": "#920071"
       }
     ]
   },
@@ -715,6 +745,15 @@
         "value": "impossible"
       }
     ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
+      }
+    ],
     "routeInfo_roadClass": [
       {
         "attrStringValue": "highway_class_motorway",
@@ -892,18 +931,6 @@
     ]
   },
   "offroad.render.xml": {
-    "routeInfo_winter_ice_road": [
-      {
-        "attrStringValue": "winter_road",
-        "attrColorValue": "#458fff",
-        "additional": "winter_road=yes"
-      },
-      {
-        "attrStringValue": "ice_road",
-        "attrColorValue": "#7bb0ff",
-        "additional": "ice_road=yes"
-      }
-    ],
     "routeInfo_steepness": [
       {
         "attrStringValue": "-100_-20",
@@ -966,6 +993,11 @@
         "additional": "steepness=21_100"
       }
     ],
+    "routeTrainColor": [
+      {
+        "attrColorValue": "#8c3f01"
+      }
+    ],
     "routeInfo_tracktype": [
       {
         "attrStringValue": "tracktype_grade1",
@@ -991,6 +1023,28 @@
         "attrStringValue": "tracktype_grade5",
         "attrColorValue": "#44628f59",
         "additional": "tracktype=grade5"
+      }
+    ],
+    "routeTramColor": [
+      {
+        "attrColorValue": "#0000ff"
+      }
+    ],
+    "routeLightrailColor": [
+      {
+        "attrColorValue": "#009100"
+      }
+    ],
+    "routeInfo_winter_ice_road": [
+      {
+        "attrStringValue": "winter_road",
+        "attrColorValue": "#458fff",
+        "additional": "winter_road=yes"
+      },
+      {
+        "attrStringValue": "ice_road",
+        "attrColorValue": "#7bb0ff",
+        "additional": "ice_road=yes"
       }
     ],
     "routeInfo_surface": [
@@ -1159,6 +1213,11 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeBusColor": [
+      {
+        "attrColorValue": "#ff0000"
       }
     ],
     "routeInfo_roadClass": [
@@ -1334,6 +1393,16 @@
         "attrStringValue": "smoothness_undefined",
         "attrColorValue": "#e8e8e8",
         "additional": "smoothness=undefined"
+      }
+    ],
+    "routeShareTaxiColor": [
+      {
+        "attrColorValue": "#f620cb"
+      }
+    ],
+    "routeTrolleybusColor": [
+      {
+        "attrColorValue": "#920071"
       }
     ]
   },
@@ -1784,6 +1853,15 @@
         "tag": "aerialway"
       }
     ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
+      }
+    ],
     "routeInfo_roadClass": [
       {
         "attrStringValue": "highway_class_motorway",
@@ -2228,6 +2306,15 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
       }
     ],
     "routeInfo_roadClass": [
@@ -2676,6 +2763,15 @@
         "value": "impossible"
       }
     ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
+      }
+    ],
     "routeInfo_roadClass": [
       {
         "attrStringValue": "highway_class_motorway",
@@ -3120,6 +3216,15 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#7777ff"
+      },
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
       }
     ],
     "routeInfo_roadClass": [
