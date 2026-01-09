@@ -42,6 +42,7 @@ export const OBJECT_TYPE_NAVIGATION_ALONE = 'navigation'; // special case of OBJ
 export const OBJECT_TYPE_FAVORITE = 'favorite';
 export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
+export const OBJECT_TYPE_STOP = 'stop';
 
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
 export const OBJECT_SEARCH = 'search';

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useMap } from 'react-leaflet';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_STOP } from '../../context/AppContext';
 import { apiGet } from '../../util/HttpApi';
 import { getVisibleBbox, findFeatureGroupById, bindTooltipToMarker } from '../util/MapManager';
 import L from 'leaflet';
@@ -10,19 +10,21 @@ import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { getObjIdSearch } from './SearchLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import debounce from 'lodash-es/debounce';
+import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 
 export const TRANSPORT_STOPS_LAYER_ID = 'transport-stops-layer';
 
 const TRANSPORT_STOP_ICON_COLOR = '#ffffff';
-const TRANSPORT_STOP_SHIELD_COLOR = '#237BFF';
-const TRANSPORT_STOP_BACKGROUND = 'square';
+export const TRANSPORT_STOP_SHIELD_COLOR = '#237BFF';
+export const TRANSPORT_STOP_BACKGROUND = 'square';
+export const TRANSPORT_STOP_ICON_NAME = 'ic_action_transport_bus';
 const TRANSPORT_STOP_ICON_SIZE = 16;
 
 const MIN_ZOOM_FOR_STOPS = 12;
 
 async function getTransportStopIcon() {
     try {
-        const response = await fetch('/map/images/map_icons/ic_action_transport_bus.svg');
+        const response = await fetch(`/map/images/map_icons/${TRANSPORT_STOP_ICON_NAME}.svg`);
         const svgData = await response.text();
         return changeIconColor(svgData, TRANSPORT_STOP_ICON_COLOR);
     } catch (error) {
@@ -31,7 +33,7 @@ async function getTransportStopIcon() {
     }
 }
 
-async function createTransportStopsLayer({ stopsList = [], map, zoom }) {
+async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick }) {
     if (!stopsList || stopsList.length === 0) {
         return L.featureGroup();
     }
@@ -74,6 +76,10 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom }) {
 
             bindTooltipToMarker(marker, stopName, TRANSPORT_STOP_ICON_SIZE, true);
 
+            if (onClick) {
+                marker.on('click', onClick);
+            }
+
             return marker;
         })
     );
@@ -92,6 +98,9 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom }) {
         if (circle) {
             const stopName = place.properties.name;
             bindTooltipToMarker(circle, stopName, TRANSPORT_STOP_ICON_SIZE, false);
+            if (onClick) {
+                circle.on('click', onClick);
+            }
             simpleMarkersArr.addLayer(circle);
         }
     }
@@ -125,6 +134,22 @@ const TransportStopsLayer = () => {
     const [useLimit, setUseLimit] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+
+    function onClick(e) {
+        const lat = e.latlng?.lat ?? e.sourceTarget?._latlng?.lat;
+        const lon = e.latlng?.lng ?? e.sourceTarget?._latlng?.lng;
+
+        if (lat && lon) {
+            const stop = {
+                mapObj: true,
+                options: e.sourceTarget.options,
+                latlng: e.sourceTarget._latlng,
+            };
+            ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+            ctx.setSelectedWpt({ stop });
+        }
+    }
 
     async function getTransportStops(controller, bbox) {
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-transport-stops`, {
@@ -170,6 +195,7 @@ const TransportStopsLayer = () => {
                         stopsList,
                         map,
                         zoom,
+                        onClick,
                     });
 
                     updateLayerOnMap(layer);
@@ -213,6 +239,7 @@ const TransportStopsLayer = () => {
                     stopsList: stopsData.listFeatures.features,
                     map,
                     zoom,
+                    onClick,
                 });
 
                 updateLayerOnMap(layer);

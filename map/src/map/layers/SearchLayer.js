@@ -32,7 +32,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
-import { getVisibleBbox, findFeatureGroupById } from '../util/MapManager';
+import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/MapManager';
 import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
@@ -59,29 +59,12 @@ export const searchTypeMap = {
     VILLAGE: 'VILLAGE',
 };
 
-export const iconPathMap = {
-    [SEARCH_ICON_MAP_LOCATION]: '/map/images/map_icons/ic_action_marker_dark.svg',
-    [SEARCH_ICON_MAP_BUILDING]: '/map/images/map_icons/ic_action_building.svg',
-    [SEARCH_ICON_MAP_STREET]: '/map/images/map_icons/ic_action_street_name.svg',
-    [SEARCH_ICON_MAP_INTERSECTION]: '/map/images/map_icons/ic_action_intersection.svg',
-};
-
 export const typeIconMap = {
     [searchTypeMap.LOCATION]: SEARCH_ICON_MAP_LOCATION,
     [searchTypeMap.HOUSE]: SEARCH_ICON_MAP_BUILDING,
     [searchTypeMap.STREET]: SEARCH_ICON_MAP_STREET,
     [searchTypeMap.INTERSECTION]: SEARCH_ICON_MAP_INTERSECTION,
 };
-
-export async function getIconFromMap(name) {
-    let svgData = null;
-    const svgIconPath = iconPathMap[name];
-    if (svgIconPath) {
-        const response = await fetch(svgIconPath);
-        svgData = await response.text();
-    }
-    return svgData;
-}
 
 export function getObjIdSearch(obj) {
     if (obj.properties[POI_ID]) {

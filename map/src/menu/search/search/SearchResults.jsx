@@ -11,7 +11,8 @@ import PoiManager, {
 import SearchResultItem, { getFirstSubstring } from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
-import { iconPathMap, SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
+import { iconPathMap } from '../../../map/util/MapManager';
+import { SEARCH_LAYER_ID, searchTypeMap } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { usePageTitle } from '../../../util/hooks/usePageTitle';

@@ -1,5 +1,251 @@
 {
   "topo.render.xml": {
+    "routeInfo_steepness": [
+      {
+        "attrStringValue": "-100_-20",
+        "attrColorValue": "#028306",
+        "additional": "steepness=-100_-20"
+      },
+      {
+        "attrStringValue": "-19_-16",
+        "attrColorValue": "#2c8f1e",
+        "additional": "steepness=-19_-16"
+      },
+      {
+        "attrStringValue": "-15_-12",
+        "attrColorValue": "#559b36",
+        "additional": "steepness=-15_-12"
+      },
+      {
+        "attrStringValue": "-11_-8",
+        "attrColorValue": "#7fa74e",
+        "additional": "steepness=-11_-8"
+      },
+      {
+        "attrStringValue": "-7_-4",
+        "attrColorValue": "#aab467",
+        "additional": "steepness=-7_-4"
+      },
+      {
+        "attrStringValue": "-3_0",
+        "attrColorValue": "#d3c07f",
+        "additional": "steepness=-3_0"
+      },
+      {
+        "attrStringValue": "1_4",
+        "attrColorValue": "#ffcc99",
+        "additional": "steepness=1_4"
+      },
+      {
+        "attrStringValue": "5_8",
+        "attrColorValue": "#f2ad82",
+        "additional": "steepness=5_8"
+      },
+      {
+        "attrStringValue": "9_12",
+        "attrColorValue": "#e48e6a",
+        "additional": "steepness=9_12"
+      },
+      {
+        "attrStringValue": "13_16",
+        "attrColorValue": "#d76e53",
+        "additional": "steepness=13_16"
+      },
+      {
+        "attrStringValue": "17_20",
+        "attrColorValue": "#c94e3b",
+        "additional": "steepness=17_20"
+      },
+      {
+        "attrStringValue": "21_100",
+        "attrColorValue": "#bb2e23",
+        "additional": "steepness=21_100"
+      }
+    ],
+    "routeTrainColor": [
+      {
+        "attrColorValue": "#8c3f01"
+      }
+    ],
+    "routeInfo_tracktype": [
+      {
+        "attrStringValue": "tracktype_grade1",
+        "attrColorValue": "#628f59",
+        "additional": "tracktype=grade1"
+      },
+      {
+        "attrStringValue": "tracktype_grade2",
+        "attrColorValue": "#bb628f59",
+        "additional": "tracktype=grade2"
+      },
+      {
+        "attrStringValue": "tracktype_grade3",
+        "attrColorValue": "#88628f59",
+        "additional": "tracktype=grade3"
+      },
+      {
+        "attrStringValue": "tracktype_grade4",
+        "attrColorValue": "#66628f59",
+        "additional": "tracktype=grade4"
+      },
+      {
+        "attrStringValue": "tracktype_grade5",
+        "attrColorValue": "#44628f59",
+        "additional": "tracktype=grade5"
+      }
+    ],
+    "routeTramColor": [
+      {
+        "attrColorValue": "#0000ff"
+      }
+    ],
+    "routeLightrailColor": [
+      {
+        "attrColorValue": "#009100"
+      }
+    ],
+    "routeInfo_winter_ice_road": [
+      {
+        "attrStringValue": "winter_road",
+        "attrColorValue": "#458fff",
+        "additional": "winter_road=yes"
+      },
+      {
+        "attrStringValue": "ice_road",
+        "attrColorValue": "#7bb0ff",
+        "additional": "ice_road=yes"
+      }
+    ],
+    "routeInfo_surface": [
+      {
+        "attrStringValue": "surface_unpaved",
+        "attrColorValue": "#cc9900",
+        "additional": "surface=unpaved"
+      },
+      {
+        "attrStringValue": "surface_sand",
+        "attrColorValue": "#ffd700",
+        "additional": "surface=sand"
+      },
+      {
+        "attrStringValue": "surface_grass",
+        "attrColorValue": "#1fbe1f",
+        "additional": "surface=grass"
+      },
+      {
+        "attrStringValue": "surface_grass_paver",
+        "attrColorValue": "#a7bef8",
+        "additional": "surface=grass_paver"
+      },
+      {
+        "attrStringValue": "surface_ground",
+        "attrColorValue": "#cc9900",
+        "additional": "surface=ground"
+      },
+      {
+        "attrStringValue": "surface_dirt",
+        "attrColorValue": "#a9820f",
+        "additional": "surface=dirt"
+      },
+      {
+        "attrStringValue": "surface_mud",
+        "attrColorValue": "#765902",
+        "additional": "surface=mud"
+      },
+      {
+        "attrStringValue": "surface_ice",
+        "attrColorValue": "#9feeef",
+        "additional": "surface=ice"
+      },
+      {
+        "attrStringValue": "surface_salt",
+        "attrColorValue": "#7eded8",
+        "additional": "surface=salt"
+      },
+      {
+        "attrStringValue": "surface_snow",
+        "attrColorValue": "#9feeef",
+        "additional": "surface=snow"
+      },
+      {
+        "attrStringValue": "surface_asphalt",
+        "attrColorValue": "#6f687e",
+        "additional": "surface=asphalt"
+      },
+      {
+        "attrStringValue": "surface_paved",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paved"
+      },
+      {
+        "attrStringValue": "surface_chipseal",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=chipseal"
+      },
+      {
+        "attrStringValue": "surface_concrete",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=concrete"
+      },
+      {
+        "attrStringValue": "surface_sett",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=sett"
+      },
+      {
+        "attrStringValue": "surface_cobblestone",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=cobblestone"
+      },
+      {
+        "attrStringValue": "surface_paving_stones",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paving_stones"
+      },
+      {
+        "attrStringValue": "surface_pebblestone",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=pebblestone"
+      },
+      {
+        "attrStringValue": "surface_stone",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=stone"
+      },
+      {
+        "attrStringValue": "surface_metal",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=metal"
+      },
+      {
+        "attrStringValue": "surface_wood",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=wood"
+      },
+      {
+        "attrStringValue": "surface_gravel",
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=gravel"
+      },
+      {
+        "attrStringValue": "surface_fine_gravel",
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=fine_gravel"
+      },
+      {
+        "attrStringValue": "surface_compacted",
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=compacted"
+      },
+      {
+        "attrStringValue": "surface_undefined",
+        "attrColorValue": "#e8e8e8",
+        "additional": "surface=undefined"
+      },
+      {
+        "attrColorValue": "#00000000"
+      }
+    ],
     "routeInfo_horse_scale": [
       {
         "attrStringValue": "horse_scale_common",
@@ -37,235 +283,425 @@
         "tag": "horse_scale",
         "value": "impossible"
       }
+    ],
+    "routeBusColor": [
+      {
+        "attrColorValue": "#ff0000"
+      }
+    ],
+    "routeInfo_roadClass": [
+      {
+        "attrStringValue": "highway_class_motorway",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "motorway"
+      },
+      {
+        "attrStringValue": "highway_class_motorway",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "motorway_link"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "trunk"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "trunk_link"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#ff9067",
+        "tag": "highway",
+        "value": "primary"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#ff9067",
+        "tag": "highway",
+        "value": "primary_link"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffa14b",
+        "tag": "highway",
+        "value": "secondary"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffa14b",
+        "tag": "highway",
+        "value": "secondary_link"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffc073",
+        "tag": "highway",
+        "value": "tertiary"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffc073",
+        "tag": "highway",
+        "value": "tertiary_link"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffddb2",
+        "tag": "highway",
+        "value": "unclassified"
+      },
+      {
+        "attrStringValue": "highway_class_street",
+        "attrColorValue": "#f1f1f1",
+        "tag": "highway",
+        "value": "residential"
+      },
+      {
+        "attrStringValue": "highway_class_street",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "living_street"
+      },
+      {
+        "attrStringValue": "highway_class_service",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "service"
+      },
+      {
+        "attrStringValue": "highway_class_footway",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "pedestrian"
+      },
+      {
+        "attrStringValue": "highway_class_undefined",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "road"
+      },
+      {
+        "attrStringValue": "highway_class_footway",
+        "attrColorValue": "#00005b",
+        "tag": "highway",
+        "value": "footway"
+      },
+      {
+        "attrStringValue": "highway_class_bridleway",
+        "attrColorValue": "#339900",
+        "tag": "highway",
+        "value": "bridleway"
+      },
+      {
+        "attrStringValue": "highway_class_steps",
+        "attrColorValue": "#00005b",
+        "tag": "highway",
+        "value": "steps"
+      },
+      {
+        "attrStringValue": "highway_class_path",
+        "attrColorValue": "#000000",
+        "tag": "highway",
+        "value": "path"
+      },
+      {
+        "attrStringValue": "highway_class_cycleway",
+        "attrColorValue": "#0000ff",
+        "tag": "highway",
+        "value": "cycleway"
+      }
+    ],
+    "routeInfo_smoothness": [
+      {
+        "attrStringValue": "smoothness_excellent",
+        "attrColorValue": "#00d8ff",
+        "additional": "smoothness=excellent"
+      },
+      {
+        "attrStringValue": "smoothness_good",
+        "attrColorValue": "#7debff",
+        "additional": "smoothness=good"
+      },
+      {
+        "attrStringValue": "smoothness_intermediate",
+        "attrColorValue": "#b1f3ff",
+        "additional": "smoothness=intermediate"
+      },
+      {
+        "attrStringValue": "smoothness_bad",
+        "attrColorValue": "#febcbc",
+        "additional": "smoothness=bad"
+      },
+      {
+        "attrStringValue": "smoothness_very_bad",
+        "attrColorValue": "#fea9a9",
+        "additional": "smoothness=very_bad"
+      },
+      {
+        "attrStringValue": "smoothness_horrible",
+        "attrColorValue": "#ff7f7f",
+        "additional": "smoothness=horrible"
+      },
+      {
+        "attrStringValue": "smoothness_very_horrible",
+        "attrColorValue": "#fe5050",
+        "additional": "smoothness=very_horrible"
+      },
+      {
+        "attrStringValue": "smoothness_impassable",
+        "attrColorValue": "#ff1111",
+        "additional": "smoothness=impassable"
+      },
+      {
+        "attrStringValue": "smoothness_undefined",
+        "attrColorValue": "#e8e8e8",
+        "additional": "smoothness=undefined"
+      }
+    ],
+    "routeShareTaxiColor": [
+      {
+        "attrColorValue": "#f620cb"
+      }
+    ],
+    "routeTrolleybusColor": [
+      {
+        "attrColorValue": "#920071"
+      }
     ]
   },
   "default.render.xml": {
     "routeInfo_winter_ice_road": [
       {
         "attrStringValue": "winter_road",
-        "additional": "winter_road=yes",
-        "attrColorValue": "#995f5fff"
+        "attrColorValue": "#995f5fff",
+        "additional": "winter_road=yes"
       },
       {
         "attrStringValue": "ice_road",
-        "additional": "ice_road=yes",
-        "attrColorValue": "#995fbcff"
+        "attrColorValue": "#995fbcff",
+        "additional": "ice_road=yes"
       }
     ],
     "routeInfo_steepness": [
       {
         "attrStringValue": "-100_-20",
-        "additional": "steepness=-100_-20",
-        "attrColorValue": "#028306"
+        "attrColorValue": "#028306",
+        "additional": "steepness=-100_-20"
       },
       {
         "attrStringValue": "-19_-16",
-        "additional": "steepness=-19_-16",
-        "attrColorValue": "#2c8f1e"
+        "attrColorValue": "#2c8f1e",
+        "additional": "steepness=-19_-16"
       },
       {
         "attrStringValue": "-15_-12",
-        "additional": "steepness=-15_-12",
-        "attrColorValue": "#559b36"
+        "attrColorValue": "#559b36",
+        "additional": "steepness=-15_-12"
       },
       {
         "attrStringValue": "-11_-8",
-        "additional": "steepness=-11_-8",
-        "attrColorValue": "#7fa74e"
+        "attrColorValue": "#7fa74e",
+        "additional": "steepness=-11_-8"
       },
       {
         "attrStringValue": "-7_-4",
-        "additional": "steepness=-7_-4",
-        "attrColorValue": "#aab467"
+        "attrColorValue": "#aab467",
+        "additional": "steepness=-7_-4"
       },
       {
         "attrStringValue": "-3_0",
-        "additional": "steepness=-3_0",
-        "attrColorValue": "#d3c07f"
+        "attrColorValue": "#d3c07f",
+        "additional": "steepness=-3_0"
       },
       {
         "attrStringValue": "1_4",
-        "additional": "steepness=1_4",
-        "attrColorValue": "#ffcc99"
+        "attrColorValue": "#ffcc99",
+        "additional": "steepness=1_4"
       },
       {
         "attrStringValue": "5_8",
-        "additional": "steepness=5_8",
-        "attrColorValue": "#f2ad82"
+        "attrColorValue": "#f2ad82",
+        "additional": "steepness=5_8"
       },
       {
         "attrStringValue": "9_12",
-        "additional": "steepness=9_12",
-        "attrColorValue": "#e48e6a"
+        "attrColorValue": "#e48e6a",
+        "additional": "steepness=9_12"
       },
       {
         "attrStringValue": "13_16",
-        "additional": "steepness=13_16",
-        "attrColorValue": "#d76e53"
+        "attrColorValue": "#d76e53",
+        "additional": "steepness=13_16"
       },
       {
         "attrStringValue": "17_20",
-        "additional": "steepness=17_20",
-        "attrColorValue": "#c94e3b"
+        "attrColorValue": "#c94e3b",
+        "additional": "steepness=17_20"
       },
       {
         "attrStringValue": "21_100",
-        "additional": "steepness=21_100",
-        "attrColorValue": "#bb2e23"
+        "attrColorValue": "#bb2e23",
+        "additional": "steepness=21_100"
       }
     ],
     "routeInfo_tracktype": [
       {
         "attrStringValue": "tracktype_grade1",
-        "additional": "tracktype=grade1",
-        "attrColorValue": "#628f59"
+        "attrColorValue": "#628f59",
+        "additional": "tracktype=grade1"
       },
       {
         "attrStringValue": "tracktype_grade2",
-        "additional": "tracktype=grade2",
-        "attrColorValue": "#bb628f59"
+        "attrColorValue": "#bb628f59",
+        "additional": "tracktype=grade2"
       },
       {
         "attrStringValue": "tracktype_grade3",
-        "additional": "tracktype=grade3",
-        "attrColorValue": "#88628f59"
+        "attrColorValue": "#88628f59",
+        "additional": "tracktype=grade3"
       },
       {
         "attrStringValue": "tracktype_grade4",
-        "additional": "tracktype=grade4",
-        "attrColorValue": "#66628f59"
+        "attrColorValue": "#66628f59",
+        "additional": "tracktype=grade4"
       },
       {
         "attrStringValue": "tracktype_grade5",
-        "additional": "tracktype=grade5",
-        "attrColorValue": "#44628f59"
+        "attrColorValue": "#44628f59",
+        "additional": "tracktype=grade5"
       }
     ],
     "routeInfo_surface": [
       {
         "attrStringValue": "surface_unpaved",
-        "additional": "surface=unpaved",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=unpaved"
       },
       {
         "attrStringValue": "surface_sand",
-        "additional": "surface=sand",
-        "attrColorValue": "#ffd700"
+        "attrColorValue": "#ffd700",
+        "additional": "surface=sand"
       },
       {
         "attrStringValue": "surface_grass",
-        "additional": "surface=grass",
-        "attrColorValue": "#1fbe1f"
+        "attrColorValue": "#1fbe1f",
+        "additional": "surface=grass"
       },
       {
         "attrStringValue": "surface_grass_paver",
-        "additional": "surface=grass_paver",
-        "attrColorValue": "#a7bef8"
+        "attrColorValue": "#a7bef8",
+        "additional": "surface=grass_paver"
       },
       {
         "attrStringValue": "surface_ground",
-        "additional": "surface=ground",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=ground"
       },
       {
         "attrStringValue": "surface_dirt",
-        "additional": "surface=dirt",
-        "attrColorValue": "#a9820f"
+        "attrColorValue": "#a9820f",
+        "additional": "surface=dirt"
       },
       {
         "attrStringValue": "surface_mud",
-        "additional": "surface=mud",
-        "attrColorValue": "#765902"
+        "attrColorValue": "#765902",
+        "additional": "surface=mud"
       },
       {
         "attrStringValue": "surface_ice",
-        "additional": "surface=ice",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=ice"
       },
       {
         "attrStringValue": "surface_salt",
-        "additional": "surface=salt",
-        "attrColorValue": "#7eded8"
+        "attrColorValue": "#7eded8",
+        "additional": "surface=salt"
       },
       {
         "attrStringValue": "surface_snow",
-        "additional": "surface=snow",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=snow"
       },
       {
         "attrStringValue": "surface_asphalt",
-        "additional": "surface=asphalt",
-        "attrColorValue": "#6f687e"
+        "attrColorValue": "#6f687e",
+        "additional": "surface=asphalt"
       },
       {
         "attrStringValue": "surface_paved",
-        "additional": "surface=paved",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paved"
       },
       {
         "attrStringValue": "surface_chipseal",
-        "additional": "surface=chipseal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=chipseal"
       },
       {
         "attrStringValue": "surface_concrete",
-        "additional": "surface=concrete",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=concrete"
       },
       {
         "attrStringValue": "surface_sett",
-        "additional": "surface=sett",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=sett"
       },
       {
         "attrStringValue": "surface_cobblestone",
-        "additional": "surface=cobblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=cobblestone"
       },
       {
         "attrStringValue": "surface_paving_stones",
-        "additional": "surface=paving_stones",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paving_stones"
       },
       {
         "attrStringValue": "surface_pebblestone",
-        "additional": "surface=pebblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=pebblestone"
       },
       {
         "attrStringValue": "surface_stone",
-        "additional": "surface=stone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=stone"
       },
       {
         "attrStringValue": "surface_metal",
-        "additional": "surface=metal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=metal"
       },
       {
         "attrStringValue": "surface_wood",
-        "additional": "surface=wood",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=wood"
       },
       {
         "attrStringValue": "surface_gravel",
-        "additional": "surface=gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=gravel"
       },
       {
         "attrStringValue": "surface_fine_gravel",
-        "additional": "surface=fine_gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=fine_gravel"
       },
       {
         "attrStringValue": "surface_compacted",
-        "additional": "surface=compacted",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=compacted"
       },
       {
         "attrStringValue": "surface_undefined",
-        "additional": "surface=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "surface=undefined"
       },
       {
         "attrColorValue": "#00000000"
@@ -307,6 +743,15 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
       }
     ],
     "routeInfo_roadClass": [
@@ -396,19 +841,19 @@
       },
       {
         "attrStringValue": "highway_class_footway",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "pedestrian"
       },
       {
         "attrStringValue": "highway_class_undefined",
-        "attrColorValue": "#dddddd",
+        "attrColorValue": "#cdcdcd",
         "tag": "highway",
         "value": "road"
       },
       {
         "attrStringValue": "highway_class_footway",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "footway"
       },
@@ -420,13 +865,13 @@
       },
       {
         "attrStringValue": "highway_class_steps",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "steps"
       },
       {
         "attrStringValue": "highway_class_path",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "path"
       },
@@ -440,52 +885,298 @@
     "routeInfo_smoothness": [
       {
         "attrStringValue": "smoothness_excellent",
-        "additional": "smoothness=excellent",
-        "attrColorValue": "#00d8ff"
+        "attrColorValue": "#00d8ff",
+        "additional": "smoothness=excellent"
       },
       {
         "attrStringValue": "smoothness_good",
-        "additional": "smoothness=good",
-        "attrColorValue": "#7debff"
+        "attrColorValue": "#7debff",
+        "additional": "smoothness=good"
       },
       {
         "attrStringValue": "smoothness_intermediate",
-        "additional": "smoothness=intermediate",
-        "attrColorValue": "#b1f3ff"
+        "attrColorValue": "#b1f3ff",
+        "additional": "smoothness=intermediate"
       },
       {
         "attrStringValue": "smoothness_bad",
-        "additional": "smoothness=bad",
-        "attrColorValue": "#febcbc"
+        "attrColorValue": "#febcbc",
+        "additional": "smoothness=bad"
       },
       {
         "attrStringValue": "smoothness_very_bad",
-        "additional": "smoothness=very_bad",
-        "attrColorValue": "#fea9a9"
+        "attrColorValue": "#fea9a9",
+        "additional": "smoothness=very_bad"
       },
       {
         "attrStringValue": "smoothness_horrible",
-        "additional": "smoothness=horrible",
-        "attrColorValue": "#ff7f7f"
+        "attrColorValue": "#ff7f7f",
+        "additional": "smoothness=horrible"
       },
       {
         "attrStringValue": "smoothness_very_horrible",
-        "additional": "smoothness=very_horrible",
-        "attrColorValue": "#fe5050"
+        "attrColorValue": "#fe5050",
+        "additional": "smoothness=very_horrible"
       },
       {
         "attrStringValue": "smoothness_impassable",
-        "additional": "smoothness=impassable",
-        "attrColorValue": "#ff1111"
+        "attrColorValue": "#ff1111",
+        "additional": "smoothness=impassable"
       },
       {
         "attrStringValue": "smoothness_undefined",
-        "additional": "smoothness=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "smoothness=undefined"
       }
     ]
   },
   "offroad.render.xml": {
+    "routeInfo_steepness": [
+      {
+        "attrStringValue": "-100_-20",
+        "attrColorValue": "#028306",
+        "additional": "steepness=-100_-20"
+      },
+      {
+        "attrStringValue": "-19_-16",
+        "attrColorValue": "#2c8f1e",
+        "additional": "steepness=-19_-16"
+      },
+      {
+        "attrStringValue": "-15_-12",
+        "attrColorValue": "#559b36",
+        "additional": "steepness=-15_-12"
+      },
+      {
+        "attrStringValue": "-11_-8",
+        "attrColorValue": "#7fa74e",
+        "additional": "steepness=-11_-8"
+      },
+      {
+        "attrStringValue": "-7_-4",
+        "attrColorValue": "#aab467",
+        "additional": "steepness=-7_-4"
+      },
+      {
+        "attrStringValue": "-3_0",
+        "attrColorValue": "#d3c07f",
+        "additional": "steepness=-3_0"
+      },
+      {
+        "attrStringValue": "1_4",
+        "attrColorValue": "#ffcc99",
+        "additional": "steepness=1_4"
+      },
+      {
+        "attrStringValue": "5_8",
+        "attrColorValue": "#f2ad82",
+        "additional": "steepness=5_8"
+      },
+      {
+        "attrStringValue": "9_12",
+        "attrColorValue": "#e48e6a",
+        "additional": "steepness=9_12"
+      },
+      {
+        "attrStringValue": "13_16",
+        "attrColorValue": "#d76e53",
+        "additional": "steepness=13_16"
+      },
+      {
+        "attrStringValue": "17_20",
+        "attrColorValue": "#c94e3b",
+        "additional": "steepness=17_20"
+      },
+      {
+        "attrStringValue": "21_100",
+        "attrColorValue": "#bb2e23",
+        "additional": "steepness=21_100"
+      }
+    ],
+    "routeTrainColor": [
+      {
+        "attrColorValue": "#8c3f01"
+      }
+    ],
+    "routeInfo_tracktype": [
+      {
+        "attrStringValue": "tracktype_grade1",
+        "attrColorValue": "#628f59",
+        "additional": "tracktype=grade1"
+      },
+      {
+        "attrStringValue": "tracktype_grade2",
+        "attrColorValue": "#bb628f59",
+        "additional": "tracktype=grade2"
+      },
+      {
+        "attrStringValue": "tracktype_grade3",
+        "attrColorValue": "#88628f59",
+        "additional": "tracktype=grade3"
+      },
+      {
+        "attrStringValue": "tracktype_grade4",
+        "attrColorValue": "#66628f59",
+        "additional": "tracktype=grade4"
+      },
+      {
+        "attrStringValue": "tracktype_grade5",
+        "attrColorValue": "#44628f59",
+        "additional": "tracktype=grade5"
+      }
+    ],
+    "routeTramColor": [
+      {
+        "attrColorValue": "#0000ff"
+      }
+    ],
+    "routeLightrailColor": [
+      {
+        "attrColorValue": "#009100"
+      }
+    ],
+    "routeInfo_winter_ice_road": [
+      {
+        "attrStringValue": "winter_road",
+        "attrColorValue": "#458fff",
+        "additional": "winter_road=yes"
+      },
+      {
+        "attrStringValue": "ice_road",
+        "attrColorValue": "#7bb0ff",
+        "additional": "ice_road=yes"
+      }
+    ],
+    "routeInfo_surface": [
+      {
+        "attrStringValue": "surface_unpaved",
+        "attrColorValue": "#cc9900",
+        "additional": "surface=unpaved"
+      },
+      {
+        "attrStringValue": "surface_sand",
+        "attrColorValue": "#ffd700",
+        "additional": "surface=sand"
+      },
+      {
+        "attrStringValue": "surface_grass",
+        "attrColorValue": "#1fbe1f",
+        "additional": "surface=grass"
+      },
+      {
+        "attrStringValue": "surface_grass_paver",
+        "attrColorValue": "#a7bef8",
+        "additional": "surface=grass_paver"
+      },
+      {
+        "attrStringValue": "surface_ground",
+        "attrColorValue": "#cc9900",
+        "additional": "surface=ground"
+      },
+      {
+        "attrStringValue": "surface_dirt",
+        "attrColorValue": "#a9820f",
+        "additional": "surface=dirt"
+      },
+      {
+        "attrStringValue": "surface_mud",
+        "attrColorValue": "#765902",
+        "additional": "surface=mud"
+      },
+      {
+        "attrStringValue": "surface_ice",
+        "attrColorValue": "#9feeef",
+        "additional": "surface=ice"
+      },
+      {
+        "attrStringValue": "surface_salt",
+        "attrColorValue": "#7eded8",
+        "additional": "surface=salt"
+      },
+      {
+        "attrStringValue": "surface_snow",
+        "attrColorValue": "#9feeef",
+        "additional": "surface=snow"
+      },
+      {
+        "attrStringValue": "surface_asphalt",
+        "attrColorValue": "#6f687e",
+        "additional": "surface=asphalt"
+      },
+      {
+        "attrStringValue": "surface_paved",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paved"
+      },
+      {
+        "attrStringValue": "surface_chipseal",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=chipseal"
+      },
+      {
+        "attrStringValue": "surface_concrete",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=concrete"
+      },
+      {
+        "attrStringValue": "surface_sett",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=sett"
+      },
+      {
+        "attrStringValue": "surface_cobblestone",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=cobblestone"
+      },
+      {
+        "attrStringValue": "surface_paving_stones",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paving_stones"
+      },
+      {
+        "attrStringValue": "surface_pebblestone",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=pebblestone"
+      },
+      {
+        "attrStringValue": "surface_stone",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=stone"
+      },
+      {
+        "attrStringValue": "surface_metal",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=metal"
+      },
+      {
+        "attrStringValue": "surface_wood",
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=wood"
+      },
+      {
+        "attrStringValue": "surface_gravel",
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=gravel"
+      },
+      {
+        "attrStringValue": "surface_fine_gravel",
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=fine_gravel"
+      },
+      {
+        "attrStringValue": "surface_compacted",
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=compacted"
+      },
+      {
+        "attrStringValue": "surface_undefined",
+        "attrColorValue": "#e8e8e8",
+        "additional": "surface=undefined"
+      },
+      {
+        "attrColorValue": "#00000000"
+      }
+    ],
     "routeInfo_horse_scale": [
       {
         "attrStringValue": "horse_scale_common",
@@ -523,168 +1214,363 @@
         "tag": "horse_scale",
         "value": "impossible"
       }
+    ],
+    "routeBusColor": [
+      {
+        "attrColorValue": "#ff0000"
+      }
+    ],
+    "routeInfo_roadClass": [
+      {
+        "attrStringValue": "highway_class_motorway",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "motorway"
+      },
+      {
+        "attrStringValue": "highway_class_motorway",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "motorway_link"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "trunk"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#fb5734",
+        "tag": "highway",
+        "value": "trunk_link"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#ff9067",
+        "tag": "highway",
+        "value": "primary"
+      },
+      {
+        "attrStringValue": "highway_class_state_road",
+        "attrColorValue": "#ff9067",
+        "tag": "highway",
+        "value": "primary_link"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffa14b",
+        "tag": "highway",
+        "value": "secondary"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffa14b",
+        "tag": "highway",
+        "value": "secondary_link"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffc073",
+        "tag": "highway",
+        "value": "tertiary"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffc073",
+        "tag": "highway",
+        "value": "tertiary_link"
+      },
+      {
+        "attrStringValue": "highway_class_road",
+        "attrColorValue": "#ffddb2",
+        "tag": "highway",
+        "value": "unclassified"
+      },
+      {
+        "attrStringValue": "highway_class_street",
+        "attrColorValue": "#f1f1f1",
+        "tag": "highway",
+        "value": "residential"
+      },
+      {
+        "attrStringValue": "highway_class_street",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "living_street"
+      },
+      {
+        "attrStringValue": "highway_class_service",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "service"
+      },
+      {
+        "attrStringValue": "highway_class_footway",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "pedestrian"
+      },
+      {
+        "attrStringValue": "highway_class_undefined",
+        "attrColorValue": "#ececec",
+        "tag": "highway",
+        "value": "road"
+      },
+      {
+        "attrStringValue": "highway_class_footway",
+        "attrColorValue": "#00005b",
+        "tag": "highway",
+        "value": "footway"
+      },
+      {
+        "attrStringValue": "highway_class_bridleway",
+        "attrColorValue": "#339900",
+        "tag": "highway",
+        "value": "bridleway"
+      },
+      {
+        "attrStringValue": "highway_class_steps",
+        "attrColorValue": "#00005b",
+        "tag": "highway",
+        "value": "steps"
+      },
+      {
+        "attrStringValue": "highway_class_path",
+        "attrColorValue": "#770000",
+        "tag": "highway",
+        "value": "path"
+      },
+      {
+        "attrStringValue": "highway_class_cycleway",
+        "attrColorValue": "#222277",
+        "tag": "highway",
+        "value": "cycleway"
+      }
+    ],
+    "routeInfo_smoothness": [
+      {
+        "attrStringValue": "smoothness_excellent",
+        "attrColorValue": "#00d8ff",
+        "additional": "smoothness=excellent"
+      },
+      {
+        "attrStringValue": "smoothness_good",
+        "attrColorValue": "#7debff",
+        "additional": "smoothness=good"
+      },
+      {
+        "attrStringValue": "smoothness_intermediate",
+        "attrColorValue": "#b1f3ff",
+        "additional": "smoothness=intermediate"
+      },
+      {
+        "attrStringValue": "smoothness_bad",
+        "attrColorValue": "#febcbc",
+        "additional": "smoothness=bad"
+      },
+      {
+        "attrStringValue": "smoothness_very_bad",
+        "attrColorValue": "#fea9a9",
+        "additional": "smoothness=very_bad"
+      },
+      {
+        "attrStringValue": "smoothness_horrible",
+        "attrColorValue": "#ff7f7f",
+        "additional": "smoothness=horrible"
+      },
+      {
+        "attrStringValue": "smoothness_very_horrible",
+        "attrColorValue": "#fe5050",
+        "additional": "smoothness=very_horrible"
+      },
+      {
+        "attrStringValue": "smoothness_impassable",
+        "attrColorValue": "#ff1111",
+        "additional": "smoothness=impassable"
+      },
+      {
+        "attrStringValue": "smoothness_undefined",
+        "attrColorValue": "#e8e8e8",
+        "additional": "smoothness=undefined"
+      }
+    ],
+    "routeShareTaxiColor": [
+      {
+        "attrColorValue": "#f620cb"
+      }
+    ],
+    "routeTrolleybusColor": [
+      {
+        "attrColorValue": "#920071"
+      }
+    ]
+  },
+  "publictransportroutes.addon.render.xml": {
+    "routeFunicularColor": [
+      {
+        "attrColorValue": "#3880a9",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#3880a9"
+      }
+    ],
+    "routeLightrailColor": [
+      {
+        "attrColorValue": "#009100",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#009100"
+      }
+    ],
+    "routeTrainColor": [
+      {
+        "attrColorValue": "#cb6e23",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#8c3f01"
+      }
+    ],
+    "routeBusColor": [
+      {
+        "attrColorValue": "#ff0000",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#ff0000"
+      }
+    ],
+    "routeTramColor": [
+      {
+        "attrColorValue": "#0000ff",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#0000ff"
+      }
+    ],
+    "routeShareTaxiColor": [
+      {
+        "attrColorValue": "#f620cb",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#f620cb"
+      }
+    ],
+    "routeTrolleybusColor": [
+      {
+        "attrColorValue": "#920071",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#920071"
+      }
     ]
   },
   "skimap.render.xml": {
     "routeInfo_winter_ice_road": [
       {
         "attrStringValue": "winter_road",
-        "additional": "winter_road=yes",
-        "attrColorValue": "#995f5fff"
+        "attrColorValue": "#995f5fff",
+        "additional": "winter_road=yes"
       },
       {
         "attrStringValue": "ice_road",
-        "additional": "ice_road=yes",
-        "attrColorValue": "#995fbcff"
+        "attrColorValue": "#995fbcff",
+        "additional": "ice_road=yes"
       }
     ],
     "routeInfo_steepness": [
       {
         "attrStringValue": "-100_-20",
-        "additional": "steepness=-100_-20",
-        "attrColorValue": "#cf0600"
+        "attrColorValue": "#cf0600",
+        "additional": "steepness=-100_-20"
       },
       {
         "attrStringValue": "-19_-16",
-        "additional": "steepness=-19_-16",
-        "attrColorValue": "#ec4e4e"
+        "attrColorValue": "#ec4e4e",
+        "additional": "steepness=-19_-16"
       },
       {
         "attrStringValue": "-15_-12",
-        "additional": "steepness=-15_-12",
-        "attrColorValue": "#ff7575"
+        "attrColorValue": "#ff7575",
+        "additional": "steepness=-15_-12"
       },
       {
         "attrStringValue": "-11_-8",
-        "additional": "steepness=-11_-8",
-        "attrColorValue": "#ff8989"
+        "attrColorValue": "#ff8989",
+        "additional": "steepness=-11_-8"
       },
       {
         "attrStringValue": "-7_-4",
-        "additional": "steepness=-7_-4",
-        "attrColorValue": "#ffa0a0"
+        "attrColorValue": "#ffa0a0",
+        "additional": "steepness=-7_-4"
       },
       {
         "attrStringValue": "-3_0",
-        "additional": "steepness=-3_0",
-        "attrColorValue": "#ffcba8"
+        "attrColorValue": "#ffcba8",
+        "additional": "steepness=-3_0"
       },
       {
         "attrStringValue": "1_4",
-        "additional": "steepness=1_4",
-        "attrColorValue": "#ceffab"
+        "attrColorValue": "#ceffab",
+        "additional": "steepness=1_4"
       },
       {
         "attrStringValue": "5_8",
-        "additional": "steepness=5_8",
-        "attrColorValue": "#b0fc79"
+        "attrColorValue": "#b0fc79",
+        "additional": "steepness=5_8"
       },
       {
         "attrStringValue": "9_12",
-        "additional": "steepness=9_12",
-        "attrColorValue": "#89f73b"
+        "attrColorValue": "#89f73b",
+        "additional": "steepness=9_12"
       },
       {
         "attrStringValue": "13_16",
-        "additional": "steepness=13_16",
-        "attrColorValue": "#63ef00"
+        "attrColorValue": "#63ef00",
+        "additional": "steepness=13_16"
       },
       {
         "attrStringValue": "17_20",
-        "additional": "steepness=17_20",
-        "attrColorValue": "#5cde00"
+        "attrColorValue": "#5cde00",
+        "additional": "steepness=17_20"
       },
       {
         "attrStringValue": "21_100",
-        "additional": "steepness=21_100",
-        "attrColorValue": "#56ce00"
-      },
-      {
-        "attrStringValue": "-100_-20",
-        "additional": "steepness=-100_-20",
-        "attrColorValue": "#028306"
-      },
-      {
-        "attrStringValue": "-19_-16",
-        "additional": "steepness=-19_-16",
-        "attrColorValue": "#2c8f1e"
-      },
-      {
-        "attrStringValue": "-15_-12",
-        "additional": "steepness=-15_-12",
-        "attrColorValue": "#559b36"
-      },
-      {
-        "attrStringValue": "-11_-8",
-        "additional": "steepness=-11_-8",
-        "attrColorValue": "#7fa74e"
-      },
-      {
-        "attrStringValue": "-7_-4",
-        "additional": "steepness=-7_-4",
-        "attrColorValue": "#aab467"
-      },
-      {
-        "attrStringValue": "-3_0",
-        "additional": "steepness=-3_0",
-        "attrColorValue": "#d3c07f"
-      },
-      {
-        "attrStringValue": "1_4",
-        "additional": "steepness=1_4",
-        "attrColorValue": "#ffcc99"
-      },
-      {
-        "attrStringValue": "5_8",
-        "additional": "steepness=5_8",
-        "attrColorValue": "#f2ad82"
-      },
-      {
-        "attrStringValue": "9_12",
-        "additional": "steepness=9_12",
-        "attrColorValue": "#e48e6a"
-      },
-      {
-        "attrStringValue": "13_16",
-        "additional": "steepness=13_16",
-        "attrColorValue": "#d76e53"
-      },
-      {
-        "attrStringValue": "17_20",
-        "additional": "steepness=17_20",
-        "attrColorValue": "#c94e3b"
-      },
-      {
-        "attrStringValue": "21_100",
-        "additional": "steepness=21_100",
-        "attrColorValue": "#bb2e23"
+        "attrColorValue": "#56ce00",
+        "additional": "steepness=21_100"
       }
     ],
     "routeInfo_tracktype": [
       {
         "attrStringValue": "tracktype_grade1",
-        "additional": "tracktype=grade1",
-        "attrColorValue": "#628f59"
+        "attrColorValue": "#628f59",
+        "additional": "tracktype=grade1"
       },
       {
         "attrStringValue": "tracktype_grade2",
-        "additional": "tracktype=grade2",
-        "attrColorValue": "#bb628f59"
+        "attrColorValue": "#bb628f59",
+        "additional": "tracktype=grade2"
       },
       {
         "attrStringValue": "tracktype_grade3",
-        "additional": "tracktype=grade3",
-        "attrColorValue": "#88628f59"
+        "attrColorValue": "#88628f59",
+        "additional": "tracktype=grade3"
       },
       {
         "attrStringValue": "tracktype_grade4",
-        "additional": "tracktype=grade4",
-        "attrColorValue": "#66628f59"
+        "attrColorValue": "#66628f59",
+        "additional": "tracktype=grade4"
       },
       {
         "attrStringValue": "tracktype_grade5",
-        "additional": "tracktype=grade5",
-        "attrColorValue": "#44628f59"
+        "attrColorValue": "#44628f59",
+        "additional": "tracktype=grade5"
       }
     ],
     "routeInfo_piste_type": [
@@ -738,8 +1624,8 @@
       },
       {
         "attrStringValue": "piste_difficulty_connection",
-        "additional": "piste:type=connection",
-        "attrColorValue": "#e3e9f5"
+        "attrColorValue": "#e3e9f5",
+        "additional": "piste:type=connection"
       },
       {
         "attrStringValue": "piste_difficulty_aerialway",
@@ -750,128 +1636,128 @@
     "routeInfo_surface": [
       {
         "attrStringValue": "surface_unpaved",
-        "additional": "surface=unpaved",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=unpaved"
       },
       {
         "attrStringValue": "surface_sand",
-        "additional": "surface=sand",
-        "attrColorValue": "#ffd700"
+        "attrColorValue": "#ffd700",
+        "additional": "surface=sand"
       },
       {
         "attrStringValue": "surface_grass",
-        "additional": "surface=grass",
-        "attrColorValue": "#1fbe1f"
+        "attrColorValue": "#1fbe1f",
+        "additional": "surface=grass"
       },
       {
         "attrStringValue": "surface_grass_paver",
-        "additional": "surface=grass_paver",
-        "attrColorValue": "#a7bef8"
+        "attrColorValue": "#a7bef8",
+        "additional": "surface=grass_paver"
       },
       {
         "attrStringValue": "surface_ground",
-        "additional": "surface=ground",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=ground"
       },
       {
         "attrStringValue": "surface_dirt",
-        "additional": "surface=dirt",
-        "attrColorValue": "#a9820f"
+        "attrColorValue": "#a9820f",
+        "additional": "surface=dirt"
       },
       {
         "attrStringValue": "surface_mud",
-        "additional": "surface=mud",
-        "attrColorValue": "#765902"
+        "attrColorValue": "#765902",
+        "additional": "surface=mud"
       },
       {
         "attrStringValue": "surface_ice",
-        "additional": "surface=ice",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=ice"
       },
       {
         "attrStringValue": "surface_salt",
-        "additional": "surface=salt",
-        "attrColorValue": "#7eded8"
+        "attrColorValue": "#7eded8",
+        "additional": "surface=salt"
       },
       {
         "attrStringValue": "surface_snow",
-        "additional": "surface=snow",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=snow"
       },
       {
         "attrStringValue": "surface_asphalt",
-        "additional": "surface=asphalt",
-        "attrColorValue": "#6f687e"
+        "attrColorValue": "#6f687e",
+        "additional": "surface=asphalt"
       },
       {
         "attrStringValue": "surface_paved",
-        "additional": "surface=paved",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paved"
       },
       {
         "attrStringValue": "surface_chipseal",
-        "additional": "surface=chipseal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=chipseal"
       },
       {
         "attrStringValue": "surface_concrete",
-        "additional": "surface=concrete",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=concrete"
       },
       {
         "attrStringValue": "surface_sett",
-        "additional": "surface=sett",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=sett"
       },
       {
         "attrStringValue": "surface_cobblestone",
-        "additional": "surface=cobblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=cobblestone"
       },
       {
         "attrStringValue": "surface_paving_stones",
-        "additional": "surface=paving_stones",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paving_stones"
       },
       {
         "attrStringValue": "surface_pebblestone",
-        "additional": "surface=pebblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=pebblestone"
       },
       {
         "attrStringValue": "surface_stone",
-        "additional": "surface=stone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=stone"
       },
       {
         "attrStringValue": "surface_metal",
-        "additional": "surface=metal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=metal"
       },
       {
         "attrStringValue": "surface_wood",
-        "additional": "surface=wood",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=wood"
       },
       {
         "attrStringValue": "surface_gravel",
-        "additional": "surface=gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=gravel"
       },
       {
         "attrStringValue": "surface_fine_gravel",
-        "additional": "surface=fine_gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=fine_gravel"
       },
       {
         "attrStringValue": "surface_compacted",
-        "additional": "surface=compacted",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=compacted"
       },
       {
         "attrStringValue": "surface_undefined",
-        "additional": "surface=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "surface=undefined"
       },
       {
         "attrColorValue": "#00000000"
@@ -918,53 +1804,62 @@
     "routeInfo_piste_difficulty": [
       {
         "attrStringValue": "piste_difficulty_novice",
-        "additional": "piste:difficulty=novice",
-        "attrColorValue": "#6620d740"
+        "attrColorValue": "#6620d740",
+        "additional": "piste:difficulty=novice"
       },
       {
         "attrStringValue": "piste_difficulty_easy",
-        "additional": "piste:difficulty=easy",
-        "attrColorValue": "#551f19d0"
+        "attrColorValue": "#551f19d0",
+        "additional": "piste:difficulty=easy"
       },
       {
         "attrStringValue": "piste_difficulty_intermediate",
-        "additional": "piste:difficulty=intermediate",
-        "attrColorValue": "#55d01a19"
+        "attrColorValue": "#55d01a19",
+        "additional": "piste:difficulty=intermediate"
       },
       {
         "attrStringValue": "piste_difficulty_advanced",
-        "additional": "piste:difficulty=advanced",
-        "attrColorValue": "#6663615b"
+        "attrColorValue": "#6663615b",
+        "additional": "piste:difficulty=advanced"
       },
       {
         "attrStringValue": "piste_difficulty_expert",
-        "additional": "piste:difficulty=expert",
-        "attrColorValue": "#88fcb533"
+        "attrColorValue": "#88fcb533",
+        "additional": "piste:difficulty=expert"
       },
       {
         "attrStringValue": "piste_difficulty_freeride",
-        "additional": "piste:difficulty=freeride",
-        "attrColorValue": "#66ffde00"
+        "attrColorValue": "#66ffde00",
+        "additional": "piste:difficulty=freeride"
       },
       {
         "attrStringValue": "piste_difficulty_extreme",
-        "additional": "piste:difficulty=extreme",
-        "attrColorValue": "#66f95a00"
+        "attrColorValue": "#66f95a00",
+        "additional": "piste:difficulty=extreme"
       },
       {
         "attrStringValue": "piste_difficulty_undefined",
-        "additional": "piste:difficutly=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "piste:difficutly=undefined"
       },
       {
         "attrStringValue": "piste_difficulty_connection",
-        "additional": "piste:type=connection",
-        "attrColorValue": "#e3e9f5"
+        "attrColorValue": "#e3e9f5",
+        "additional": "piste:type=connection"
       },
       {
         "attrStringValue": "piste_difficulty_aerialway",
         "attrColorValue": "#4d4d4d",
         "tag": "aerialway"
+      }
+    ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
       }
     ],
     "routeInfo_roadClass": [
@@ -1060,7 +1955,7 @@
       },
       {
         "attrStringValue": "highway_class_undefined",
-        "attrColorValue": "#dddddd",
+        "attrColorValue": "#ffffff",
         "tag": "highway",
         "value": "road"
       },
@@ -1098,48 +1993,48 @@
     "routeInfo_smoothness": [
       {
         "attrStringValue": "smoothness_excellent",
-        "additional": "smoothness=excellent",
-        "attrColorValue": "#00d8ff"
+        "attrColorValue": "#00d8ff",
+        "additional": "smoothness=excellent"
       },
       {
         "attrStringValue": "smoothness_good",
-        "additional": "smoothness=good",
-        "attrColorValue": "#7debff"
+        "attrColorValue": "#7debff",
+        "additional": "smoothness=good"
       },
       {
         "attrStringValue": "smoothness_intermediate",
-        "additional": "smoothness=intermediate",
-        "attrColorValue": "#b1f3ff"
+        "attrColorValue": "#b1f3ff",
+        "additional": "smoothness=intermediate"
       },
       {
         "attrStringValue": "smoothness_bad",
-        "additional": "smoothness=bad",
-        "attrColorValue": "#febcbc"
+        "attrColorValue": "#febcbc",
+        "additional": "smoothness=bad"
       },
       {
         "attrStringValue": "smoothness_very_bad",
-        "additional": "smoothness=very_bad",
-        "attrColorValue": "#fea9a9"
+        "attrColorValue": "#fea9a9",
+        "additional": "smoothness=very_bad"
       },
       {
         "attrStringValue": "smoothness_horrible",
-        "additional": "smoothness=horrible",
-        "attrColorValue": "#ff7f7f"
+        "attrColorValue": "#ff7f7f",
+        "additional": "smoothness=horrible"
       },
       {
         "attrStringValue": "smoothness_very_horrible",
-        "additional": "smoothness=very_horrible",
-        "attrColorValue": "#fe5050"
+        "attrColorValue": "#fe5050",
+        "additional": "smoothness=very_horrible"
       },
       {
         "attrStringValue": "smoothness_impassable",
-        "additional": "smoothness=impassable",
-        "attrColorValue": "#ff1111"
+        "attrColorValue": "#ff1111",
+        "additional": "smoothness=impassable"
       },
       {
         "attrStringValue": "smoothness_undefined",
-        "additional": "smoothness=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "smoothness=undefined"
       }
     ]
   },
@@ -1147,229 +2042,229 @@
     "routeInfo_winter_ice_road": [
       {
         "attrStringValue": "winter_road",
-        "additional": "winter_road=yes",
-        "attrColorValue": "#995f5fff"
+        "attrColorValue": "#995f5fff",
+        "additional": "winter_road=yes"
       },
       {
         "attrStringValue": "ice_road",
-        "additional": "ice_road=yes",
-        "attrColorValue": "#995fbcff"
+        "attrColorValue": "#995fbcff",
+        "additional": "ice_road=yes"
       }
     ],
     "routeInfo_steepness": [
       {
         "attrStringValue": "-100_-20",
-        "additional": "steepness=-100_-20",
-        "attrColorValue": "#028306"
+        "attrColorValue": "#028306",
+        "additional": "steepness=-100_-20"
       },
       {
         "attrStringValue": "-19_-16",
-        "additional": "steepness=-19_-16",
-        "attrColorValue": "#2c8f1e"
+        "attrColorValue": "#2c8f1e",
+        "additional": "steepness=-19_-16"
       },
       {
         "attrStringValue": "-15_-12",
-        "additional": "steepness=-15_-12",
-        "attrColorValue": "#559b36"
+        "attrColorValue": "#559b36",
+        "additional": "steepness=-15_-12"
       },
       {
         "attrStringValue": "-11_-8",
-        "additional": "steepness=-11_-8",
-        "attrColorValue": "#7fa74e"
+        "attrColorValue": "#7fa74e",
+        "additional": "steepness=-11_-8"
       },
       {
         "attrStringValue": "-7_-4",
-        "additional": "steepness=-7_-4",
-        "attrColorValue": "#aab467"
+        "attrColorValue": "#aab467",
+        "additional": "steepness=-7_-4"
       },
       {
         "attrStringValue": "-3_0",
-        "additional": "steepness=-3_0",
-        "attrColorValue": "#d3c07f"
+        "attrColorValue": "#d3c07f",
+        "additional": "steepness=-3_0"
       },
       {
         "attrStringValue": "1_4",
-        "additional": "steepness=1_4",
-        "attrColorValue": "#ffcc99"
+        "attrColorValue": "#ffcc99",
+        "additional": "steepness=1_4"
       },
       {
         "attrStringValue": "5_8",
-        "additional": "steepness=5_8",
-        "attrColorValue": "#f2ad82"
+        "attrColorValue": "#f2ad82",
+        "additional": "steepness=5_8"
       },
       {
         "attrStringValue": "9_12",
-        "additional": "steepness=9_12",
-        "attrColorValue": "#e48e6a"
+        "attrColorValue": "#e48e6a",
+        "additional": "steepness=9_12"
       },
       {
         "attrStringValue": "13_16",
-        "additional": "steepness=13_16",
-        "attrColorValue": "#d76e53"
+        "attrColorValue": "#d76e53",
+        "additional": "steepness=13_16"
       },
       {
         "attrStringValue": "17_20",
-        "additional": "steepness=17_20",
-        "attrColorValue": "#c94e3b"
+        "attrColorValue": "#c94e3b",
+        "additional": "steepness=17_20"
       },
       {
         "attrStringValue": "21_100",
-        "additional": "steepness=21_100",
-        "attrColorValue": "#bb2e23"
+        "attrColorValue": "#bb2e23",
+        "additional": "steepness=21_100"
       }
     ],
     "routeInfo_tracktype": [
       {
         "attrStringValue": "tracktype_grade1",
-        "additional": "tracktype=grade1",
-        "attrColorValue": "#628f59"
+        "attrColorValue": "#628f59",
+        "additional": "tracktype=grade1"
       },
       {
         "attrStringValue": "tracktype_grade2",
-        "additional": "tracktype=grade2",
-        "attrColorValue": "#bb628f59"
+        "attrColorValue": "#bb628f59",
+        "additional": "tracktype=grade2"
       },
       {
         "attrStringValue": "tracktype_grade3",
-        "additional": "tracktype=grade3",
-        "attrColorValue": "#88628f59"
+        "attrColorValue": "#88628f59",
+        "additional": "tracktype=grade3"
       },
       {
         "attrStringValue": "tracktype_grade4",
-        "additional": "tracktype=grade4",
-        "attrColorValue": "#66628f59"
+        "attrColorValue": "#66628f59",
+        "additional": "tracktype=grade4"
       },
       {
         "attrStringValue": "tracktype_grade5",
-        "additional": "tracktype=grade5",
-        "attrColorValue": "#44628f59"
+        "attrColorValue": "#44628f59",
+        "additional": "tracktype=grade5"
       }
     ],
     "routeInfo_surface": [
       {
         "attrStringValue": "surface_unpaved",
-        "additional": "surface=unpaved",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=unpaved"
       },
       {
         "attrStringValue": "surface_sand",
-        "additional": "surface=sand",
-        "attrColorValue": "#ffd700"
+        "attrColorValue": "#ffd700",
+        "additional": "surface=sand"
       },
       {
         "attrStringValue": "surface_grass",
-        "additional": "surface=grass",
-        "attrColorValue": "#1fbe1f"
+        "attrColorValue": "#1fbe1f",
+        "additional": "surface=grass"
       },
       {
         "attrStringValue": "surface_grass_paver",
-        "additional": "surface=grass_paver",
-        "attrColorValue": "#a7bef8"
+        "attrColorValue": "#a7bef8",
+        "additional": "surface=grass_paver"
       },
       {
         "attrStringValue": "surface_ground",
-        "additional": "surface=ground",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=ground"
       },
       {
         "attrStringValue": "surface_dirt",
-        "additional": "surface=dirt",
-        "attrColorValue": "#a9820f"
+        "attrColorValue": "#a9820f",
+        "additional": "surface=dirt"
       },
       {
         "attrStringValue": "surface_mud",
-        "additional": "surface=mud",
-        "attrColorValue": "#765902"
+        "attrColorValue": "#765902",
+        "additional": "surface=mud"
       },
       {
         "attrStringValue": "surface_ice",
-        "additional": "surface=ice",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=ice"
       },
       {
         "attrStringValue": "surface_salt",
-        "additional": "surface=salt",
-        "attrColorValue": "#7eded8"
+        "attrColorValue": "#7eded8",
+        "additional": "surface=salt"
       },
       {
         "attrStringValue": "surface_snow",
-        "additional": "surface=snow",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=snow"
       },
       {
         "attrStringValue": "surface_asphalt",
-        "additional": "surface=asphalt",
-        "attrColorValue": "#6f687e"
+        "attrColorValue": "#6f687e",
+        "additional": "surface=asphalt"
       },
       {
         "attrStringValue": "surface_paved",
-        "additional": "surface=paved",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paved"
       },
       {
         "attrStringValue": "surface_chipseal",
-        "additional": "surface=chipseal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=chipseal"
       },
       {
         "attrStringValue": "surface_concrete",
-        "additional": "surface=concrete",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=concrete"
       },
       {
         "attrStringValue": "surface_sett",
-        "additional": "surface=sett",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=sett"
       },
       {
         "attrStringValue": "surface_cobblestone",
-        "additional": "surface=cobblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=cobblestone"
       },
       {
         "attrStringValue": "surface_paving_stones",
-        "additional": "surface=paving_stones",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paving_stones"
       },
       {
         "attrStringValue": "surface_pebblestone",
-        "additional": "surface=pebblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=pebblestone"
       },
       {
         "attrStringValue": "surface_stone",
-        "additional": "surface=stone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=stone"
       },
       {
         "attrStringValue": "surface_metal",
-        "additional": "surface=metal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=metal"
       },
       {
         "attrStringValue": "surface_wood",
-        "additional": "surface=wood",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=wood"
       },
       {
         "attrStringValue": "surface_gravel",
-        "additional": "surface=gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=gravel"
       },
       {
         "attrStringValue": "surface_fine_gravel",
-        "additional": "surface=fine_gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=fine_gravel"
       },
       {
         "attrStringValue": "surface_compacted",
-        "additional": "surface=compacted",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=compacted"
       },
       {
         "attrStringValue": "surface_undefined",
-        "additional": "surface=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "surface=undefined"
       },
       {
         "attrColorValue": "#00000000"
@@ -1411,6 +2306,15 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
       }
     ],
     "routeInfo_roadClass": [
@@ -1500,19 +2404,19 @@
       },
       {
         "attrStringValue": "highway_class_footway",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "pedestrian"
       },
       {
         "attrStringValue": "highway_class_undefined",
-        "attrColorValue": "#dddddd",
+        "attrColorValue": "#cdcdcd",
         "tag": "highway",
         "value": "road"
       },
       {
         "attrStringValue": "highway_class_footway",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "footway"
       },
@@ -1524,13 +2428,13 @@
       },
       {
         "attrStringValue": "highway_class_steps",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "steps"
       },
       {
         "attrStringValue": "highway_class_path",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "path"
       },
@@ -1544,48 +2448,48 @@
     "routeInfo_smoothness": [
       {
         "attrStringValue": "smoothness_excellent",
-        "additional": "smoothness=excellent",
-        "attrColorValue": "#00d8ff"
+        "attrColorValue": "#00d8ff",
+        "additional": "smoothness=excellent"
       },
       {
         "attrStringValue": "smoothness_good",
-        "additional": "smoothness=good",
-        "attrColorValue": "#7debff"
+        "attrColorValue": "#7debff",
+        "additional": "smoothness=good"
       },
       {
         "attrStringValue": "smoothness_intermediate",
-        "additional": "smoothness=intermediate",
-        "attrColorValue": "#b1f3ff"
+        "attrColorValue": "#b1f3ff",
+        "additional": "smoothness=intermediate"
       },
       {
         "attrStringValue": "smoothness_bad",
-        "additional": "smoothness=bad",
-        "attrColorValue": "#febcbc"
+        "attrColorValue": "#febcbc",
+        "additional": "smoothness=bad"
       },
       {
         "attrStringValue": "smoothness_very_bad",
-        "additional": "smoothness=very_bad",
-        "attrColorValue": "#fea9a9"
+        "attrColorValue": "#fea9a9",
+        "additional": "smoothness=very_bad"
       },
       {
         "attrStringValue": "smoothness_horrible",
-        "additional": "smoothness=horrible",
-        "attrColorValue": "#ff7f7f"
+        "attrColorValue": "#ff7f7f",
+        "additional": "smoothness=horrible"
       },
       {
         "attrStringValue": "smoothness_very_horrible",
-        "additional": "smoothness=very_horrible",
-        "attrColorValue": "#fe5050"
+        "attrColorValue": "#fe5050",
+        "additional": "smoothness=very_horrible"
       },
       {
         "attrStringValue": "smoothness_impassable",
-        "additional": "smoothness=impassable",
-        "attrColorValue": "#ff1111"
+        "attrColorValue": "#ff1111",
+        "additional": "smoothness=impassable"
       },
       {
         "attrStringValue": "smoothness_undefined",
-        "additional": "smoothness=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "smoothness=undefined"
       }
     ]
   },
@@ -1593,229 +2497,229 @@
     "routeInfo_winter_ice_road": [
       {
         "attrStringValue": "winter_road",
-        "additional": "winter_road=yes",
-        "attrColorValue": "#995f5fff"
+        "attrColorValue": "#995f5fff",
+        "additional": "winter_road=yes"
       },
       {
         "attrStringValue": "ice_road",
-        "additional": "ice_road=yes",
-        "attrColorValue": "#995fbcff"
+        "attrColorValue": "#995fbcff",
+        "additional": "ice_road=yes"
       }
     ],
     "routeInfo_steepness": [
       {
         "attrStringValue": "-100_-20",
-        "additional": "steepness=-100_-20",
-        "attrColorValue": "#028306"
+        "attrColorValue": "#028306",
+        "additional": "steepness=-100_-20"
       },
       {
         "attrStringValue": "-19_-16",
-        "additional": "steepness=-19_-16",
-        "attrColorValue": "#2c8f1e"
+        "attrColorValue": "#2c8f1e",
+        "additional": "steepness=-19_-16"
       },
       {
         "attrStringValue": "-15_-12",
-        "additional": "steepness=-15_-12",
-        "attrColorValue": "#559b36"
+        "attrColorValue": "#559b36",
+        "additional": "steepness=-15_-12"
       },
       {
         "attrStringValue": "-11_-8",
-        "additional": "steepness=-11_-8",
-        "attrColorValue": "#7fa74e"
+        "attrColorValue": "#7fa74e",
+        "additional": "steepness=-11_-8"
       },
       {
         "attrStringValue": "-7_-4",
-        "additional": "steepness=-7_-4",
-        "attrColorValue": "#aab467"
+        "attrColorValue": "#aab467",
+        "additional": "steepness=-7_-4"
       },
       {
         "attrStringValue": "-3_0",
-        "additional": "steepness=-3_0",
-        "attrColorValue": "#d3c07f"
+        "attrColorValue": "#d3c07f",
+        "additional": "steepness=-3_0"
       },
       {
         "attrStringValue": "1_4",
-        "additional": "steepness=1_4",
-        "attrColorValue": "#ffcc99"
+        "attrColorValue": "#ffcc99",
+        "additional": "steepness=1_4"
       },
       {
         "attrStringValue": "5_8",
-        "additional": "steepness=5_8",
-        "attrColorValue": "#f2ad82"
+        "attrColorValue": "#f2ad82",
+        "additional": "steepness=5_8"
       },
       {
         "attrStringValue": "9_12",
-        "additional": "steepness=9_12",
-        "attrColorValue": "#e48e6a"
+        "attrColorValue": "#e48e6a",
+        "additional": "steepness=9_12"
       },
       {
         "attrStringValue": "13_16",
-        "additional": "steepness=13_16",
-        "attrColorValue": "#d76e53"
+        "attrColorValue": "#d76e53",
+        "additional": "steepness=13_16"
       },
       {
         "attrStringValue": "17_20",
-        "additional": "steepness=17_20",
-        "attrColorValue": "#c94e3b"
+        "attrColorValue": "#c94e3b",
+        "additional": "steepness=17_20"
       },
       {
         "attrStringValue": "21_100",
-        "additional": "steepness=21_100",
-        "attrColorValue": "#bb2e23"
+        "attrColorValue": "#bb2e23",
+        "additional": "steepness=21_100"
       }
     ],
     "routeInfo_tracktype": [
       {
         "attrStringValue": "tracktype_grade1",
-        "additional": "tracktype=grade1",
-        "attrColorValue": "#628f59"
+        "attrColorValue": "#628f59",
+        "additional": "tracktype=grade1"
       },
       {
         "attrStringValue": "tracktype_grade2",
-        "additional": "tracktype=grade2",
-        "attrColorValue": "#bb628f59"
+        "attrColorValue": "#bb628f59",
+        "additional": "tracktype=grade2"
       },
       {
         "attrStringValue": "tracktype_grade3",
-        "additional": "tracktype=grade3",
-        "attrColorValue": "#88628f59"
+        "attrColorValue": "#88628f59",
+        "additional": "tracktype=grade3"
       },
       {
         "attrStringValue": "tracktype_grade4",
-        "additional": "tracktype=grade4",
-        "attrColorValue": "#66628f59"
+        "attrColorValue": "#66628f59",
+        "additional": "tracktype=grade4"
       },
       {
         "attrStringValue": "tracktype_grade5",
-        "additional": "tracktype=grade5",
-        "attrColorValue": "#44628f59"
+        "attrColorValue": "#44628f59",
+        "additional": "tracktype=grade5"
       }
     ],
     "routeInfo_surface": [
       {
         "attrStringValue": "surface_unpaved",
-        "additional": "surface=unpaved",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=unpaved"
       },
       {
         "attrStringValue": "surface_sand",
-        "additional": "surface=sand",
-        "attrColorValue": "#ffd700"
+        "attrColorValue": "#ffd700",
+        "additional": "surface=sand"
       },
       {
         "attrStringValue": "surface_grass",
-        "additional": "surface=grass",
-        "attrColorValue": "#1fbe1f"
+        "attrColorValue": "#1fbe1f",
+        "additional": "surface=grass"
       },
       {
         "attrStringValue": "surface_grass_paver",
-        "additional": "surface=grass_paver",
-        "attrColorValue": "#a7bef8"
+        "attrColorValue": "#a7bef8",
+        "additional": "surface=grass_paver"
       },
       {
         "attrStringValue": "surface_ground",
-        "additional": "surface=ground",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=ground"
       },
       {
         "attrStringValue": "surface_dirt",
-        "additional": "surface=dirt",
-        "attrColorValue": "#a9820f"
+        "attrColorValue": "#a9820f",
+        "additional": "surface=dirt"
       },
       {
         "attrStringValue": "surface_mud",
-        "additional": "surface=mud",
-        "attrColorValue": "#765902"
+        "attrColorValue": "#765902",
+        "additional": "surface=mud"
       },
       {
         "attrStringValue": "surface_ice",
-        "additional": "surface=ice",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=ice"
       },
       {
         "attrStringValue": "surface_salt",
-        "additional": "surface=salt",
-        "attrColorValue": "#7eded8"
+        "attrColorValue": "#7eded8",
+        "additional": "surface=salt"
       },
       {
         "attrStringValue": "surface_snow",
-        "additional": "surface=snow",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=snow"
       },
       {
         "attrStringValue": "surface_asphalt",
-        "additional": "surface=asphalt",
-        "attrColorValue": "#6f687e"
+        "attrColorValue": "#6f687e",
+        "additional": "surface=asphalt"
       },
       {
         "attrStringValue": "surface_paved",
-        "additional": "surface=paved",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paved"
       },
       {
         "attrStringValue": "surface_chipseal",
-        "additional": "surface=chipseal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=chipseal"
       },
       {
         "attrStringValue": "surface_concrete",
-        "additional": "surface=concrete",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=concrete"
       },
       {
         "attrStringValue": "surface_sett",
-        "additional": "surface=sett",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=sett"
       },
       {
         "attrStringValue": "surface_cobblestone",
-        "additional": "surface=cobblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=cobblestone"
       },
       {
         "attrStringValue": "surface_paving_stones",
-        "additional": "surface=paving_stones",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paving_stones"
       },
       {
         "attrStringValue": "surface_pebblestone",
-        "additional": "surface=pebblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=pebblestone"
       },
       {
         "attrStringValue": "surface_stone",
-        "additional": "surface=stone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=stone"
       },
       {
         "attrStringValue": "surface_metal",
-        "additional": "surface=metal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=metal"
       },
       {
         "attrStringValue": "surface_wood",
-        "additional": "surface=wood",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=wood"
       },
       {
         "attrStringValue": "surface_gravel",
-        "additional": "surface=gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=gravel"
       },
       {
         "attrStringValue": "surface_fine_gravel",
-        "additional": "surface=fine_gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=fine_gravel"
       },
       {
         "attrStringValue": "surface_compacted",
-        "additional": "surface=compacted",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=compacted"
       },
       {
         "attrStringValue": "surface_undefined",
-        "additional": "surface=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "surface=undefined"
       },
       {
         "attrColorValue": "#00000000"
@@ -1857,6 +2761,15 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
+      },
+      {
+        "attrColorValue": "#53a3be"
       }
     ],
     "routeInfo_roadClass": [
@@ -1946,19 +2859,19 @@
       },
       {
         "attrStringValue": "highway_class_footway",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "pedestrian"
       },
       {
         "attrStringValue": "highway_class_undefined",
-        "attrColorValue": "#dddddd",
+        "attrColorValue": "#cdcdcd",
         "tag": "highway",
         "value": "road"
       },
       {
         "attrStringValue": "highway_class_footway",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "footway"
       },
@@ -1970,13 +2883,13 @@
       },
       {
         "attrStringValue": "highway_class_steps",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "steps"
       },
       {
         "attrStringValue": "highway_class_path",
-        "attrColorValue": "#33000000",
+        "attrColorValue": "#55000000",
         "tag": "highway",
         "value": "path"
       },
@@ -1990,48 +2903,48 @@
     "routeInfo_smoothness": [
       {
         "attrStringValue": "smoothness_excellent",
-        "additional": "smoothness=excellent",
-        "attrColorValue": "#00d8ff"
+        "attrColorValue": "#00d8ff",
+        "additional": "smoothness=excellent"
       },
       {
         "attrStringValue": "smoothness_good",
-        "additional": "smoothness=good",
-        "attrColorValue": "#7debff"
+        "attrColorValue": "#7debff",
+        "additional": "smoothness=good"
       },
       {
         "attrStringValue": "smoothness_intermediate",
-        "additional": "smoothness=intermediate",
-        "attrColorValue": "#b1f3ff"
+        "attrColorValue": "#b1f3ff",
+        "additional": "smoothness=intermediate"
       },
       {
         "attrStringValue": "smoothness_bad",
-        "additional": "smoothness=bad",
-        "attrColorValue": "#febcbc"
+        "attrColorValue": "#febcbc",
+        "additional": "smoothness=bad"
       },
       {
         "attrStringValue": "smoothness_very_bad",
-        "additional": "smoothness=very_bad",
-        "attrColorValue": "#fea9a9"
+        "attrColorValue": "#fea9a9",
+        "additional": "smoothness=very_bad"
       },
       {
         "attrStringValue": "smoothness_horrible",
-        "additional": "smoothness=horrible",
-        "attrColorValue": "#ff7f7f"
+        "attrColorValue": "#ff7f7f",
+        "additional": "smoothness=horrible"
       },
       {
         "attrStringValue": "smoothness_very_horrible",
-        "additional": "smoothness=very_horrible",
-        "attrColorValue": "#fe5050"
+        "attrColorValue": "#fe5050",
+        "additional": "smoothness=very_horrible"
       },
       {
         "attrStringValue": "smoothness_impassable",
-        "additional": "smoothness=impassable",
-        "attrColorValue": "#ff1111"
+        "attrColorValue": "#ff1111",
+        "additional": "smoothness=impassable"
       },
       {
         "attrStringValue": "smoothness_undefined",
-        "additional": "smoothness=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "smoothness=undefined"
       }
     ]
   },
@@ -2039,229 +2952,229 @@
     "routeInfo_winter_ice_road": [
       {
         "attrStringValue": "winter_road",
-        "additional": "winter_road=yes",
-        "attrColorValue": "#995f5fff"
+        "attrColorValue": "#995f5fff",
+        "additional": "winter_road=yes"
       },
       {
         "attrStringValue": "ice_road",
-        "additional": "ice_road=yes",
-        "attrColorValue": "#995fbcff"
+        "attrColorValue": "#995fbcff",
+        "additional": "ice_road=yes"
       }
     ],
     "routeInfo_steepness": [
       {
         "attrStringValue": "-100_-20",
-        "additional": "steepness=-100_-20",
-        "attrColorValue": "#028306"
+        "attrColorValue": "#028306",
+        "additional": "steepness=-100_-20"
       },
       {
         "attrStringValue": "-19_-16",
-        "additional": "steepness=-19_-16",
-        "attrColorValue": "#2c8f1e"
+        "attrColorValue": "#2c8f1e",
+        "additional": "steepness=-19_-16"
       },
       {
         "attrStringValue": "-15_-12",
-        "additional": "steepness=-15_-12",
-        "attrColorValue": "#559b36"
+        "attrColorValue": "#559b36",
+        "additional": "steepness=-15_-12"
       },
       {
         "attrStringValue": "-11_-8",
-        "additional": "steepness=-11_-8",
-        "attrColorValue": "#7fa74e"
+        "attrColorValue": "#7fa74e",
+        "additional": "steepness=-11_-8"
       },
       {
         "attrStringValue": "-7_-4",
-        "additional": "steepness=-7_-4",
-        "attrColorValue": "#aab467"
+        "attrColorValue": "#aab467",
+        "additional": "steepness=-7_-4"
       },
       {
         "attrStringValue": "-3_0",
-        "additional": "steepness=-3_0",
-        "attrColorValue": "#d3c07f"
+        "attrColorValue": "#d3c07f",
+        "additional": "steepness=-3_0"
       },
       {
         "attrStringValue": "1_4",
-        "additional": "steepness=1_4",
-        "attrColorValue": "#ffcc99"
+        "attrColorValue": "#ffcc99",
+        "additional": "steepness=1_4"
       },
       {
         "attrStringValue": "5_8",
-        "additional": "steepness=5_8",
-        "attrColorValue": "#f2ad82"
+        "attrColorValue": "#f2ad82",
+        "additional": "steepness=5_8"
       },
       {
         "attrStringValue": "9_12",
-        "additional": "steepness=9_12",
-        "attrColorValue": "#e48e6a"
+        "attrColorValue": "#e48e6a",
+        "additional": "steepness=9_12"
       },
       {
         "attrStringValue": "13_16",
-        "additional": "steepness=13_16",
-        "attrColorValue": "#d76e53"
+        "attrColorValue": "#d76e53",
+        "additional": "steepness=13_16"
       },
       {
         "attrStringValue": "17_20",
-        "additional": "steepness=17_20",
-        "attrColorValue": "#c94e3b"
+        "attrColorValue": "#c94e3b",
+        "additional": "steepness=17_20"
       },
       {
         "attrStringValue": "21_100",
-        "additional": "steepness=21_100",
-        "attrColorValue": "#bb2e23"
+        "attrColorValue": "#bb2e23",
+        "additional": "steepness=21_100"
       }
     ],
     "routeInfo_tracktype": [
       {
         "attrStringValue": "tracktype_grade1",
-        "additional": "tracktype=grade1",
-        "attrColorValue": "#628f59"
+        "attrColorValue": "#628f59",
+        "additional": "tracktype=grade1"
       },
       {
         "attrStringValue": "tracktype_grade2",
-        "additional": "tracktype=grade2",
-        "attrColorValue": "#bb628f59"
+        "attrColorValue": "#bb628f59",
+        "additional": "tracktype=grade2"
       },
       {
         "attrStringValue": "tracktype_grade3",
-        "additional": "tracktype=grade3",
-        "attrColorValue": "#88628f59"
+        "attrColorValue": "#88628f59",
+        "additional": "tracktype=grade3"
       },
       {
         "attrStringValue": "tracktype_grade4",
-        "additional": "tracktype=grade4",
-        "attrColorValue": "#66628f59"
+        "attrColorValue": "#66628f59",
+        "additional": "tracktype=grade4"
       },
       {
         "attrStringValue": "tracktype_grade5",
-        "additional": "tracktype=grade5",
-        "attrColorValue": "#44628f59"
+        "attrColorValue": "#44628f59",
+        "additional": "tracktype=grade5"
       }
     ],
     "routeInfo_surface": [
       {
         "attrStringValue": "surface_unpaved",
-        "additional": "surface=unpaved",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=unpaved"
       },
       {
         "attrStringValue": "surface_sand",
-        "additional": "surface=sand",
-        "attrColorValue": "#ffd700"
+        "attrColorValue": "#ffd700",
+        "additional": "surface=sand"
       },
       {
         "attrStringValue": "surface_grass",
-        "additional": "surface=grass",
-        "attrColorValue": "#1fbe1f"
+        "attrColorValue": "#1fbe1f",
+        "additional": "surface=grass"
       },
       {
         "attrStringValue": "surface_grass_paver",
-        "additional": "surface=grass_paver",
-        "attrColorValue": "#a7bef8"
+        "attrColorValue": "#a7bef8",
+        "additional": "surface=grass_paver"
       },
       {
         "attrStringValue": "surface_ground",
-        "additional": "surface=ground",
-        "attrColorValue": "#cc9900"
+        "attrColorValue": "#cc9900",
+        "additional": "surface=ground"
       },
       {
         "attrStringValue": "surface_dirt",
-        "additional": "surface=dirt",
-        "attrColorValue": "#a9820f"
+        "attrColorValue": "#a9820f",
+        "additional": "surface=dirt"
       },
       {
         "attrStringValue": "surface_mud",
-        "additional": "surface=mud",
-        "attrColorValue": "#765902"
+        "attrColorValue": "#765902",
+        "additional": "surface=mud"
       },
       {
         "attrStringValue": "surface_ice",
-        "additional": "surface=ice",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=ice"
       },
       {
         "attrStringValue": "surface_salt",
-        "additional": "surface=salt",
-        "attrColorValue": "#7eded8"
+        "attrColorValue": "#7eded8",
+        "additional": "surface=salt"
       },
       {
         "attrStringValue": "surface_snow",
-        "additional": "surface=snow",
-        "attrColorValue": "#9feeef"
+        "attrColorValue": "#9feeef",
+        "additional": "surface=snow"
       },
       {
         "attrStringValue": "surface_asphalt",
-        "additional": "surface=asphalt",
-        "attrColorValue": "#6f687e"
+        "attrColorValue": "#6f687e",
+        "additional": "surface=asphalt"
       },
       {
         "attrStringValue": "surface_paved",
-        "additional": "surface=paved",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paved"
       },
       {
         "attrStringValue": "surface_chipseal",
-        "additional": "surface=chipseal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=chipseal"
       },
       {
         "attrStringValue": "surface_concrete",
-        "additional": "surface=concrete",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=concrete"
       },
       {
         "attrStringValue": "surface_sett",
-        "additional": "surface=sett",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=sett"
       },
       {
         "attrStringValue": "surface_cobblestone",
-        "additional": "surface=cobblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=cobblestone"
       },
       {
         "attrStringValue": "surface_paving_stones",
-        "additional": "surface=paving_stones",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=paving_stones"
       },
       {
         "attrStringValue": "surface_pebblestone",
-        "additional": "surface=pebblestone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=pebblestone"
       },
       {
         "attrStringValue": "surface_stone",
-        "additional": "surface=stone",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=stone"
       },
       {
         "attrStringValue": "surface_metal",
-        "additional": "surface=metal",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=metal"
       },
       {
         "attrStringValue": "surface_wood",
-        "additional": "surface=wood",
-        "attrColorValue": "#a7cdf8"
+        "attrColorValue": "#a7cdf8",
+        "additional": "surface=wood"
       },
       {
         "attrStringValue": "surface_gravel",
-        "additional": "surface=gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=gravel"
       },
       {
         "attrStringValue": "surface_fine_gravel",
-        "additional": "surface=fine_gravel",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=fine_gravel"
       },
       {
         "attrStringValue": "surface_compacted",
-        "additional": "surface=compacted",
-        "attrColorValue": "#cbcbe8"
+        "attrColorValue": "#cbcbe8",
+        "additional": "surface=compacted"
       },
       {
         "attrStringValue": "surface_undefined",
-        "additional": "surface=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "surface=undefined"
       },
       {
         "attrColorValue": "#00000000"
@@ -2303,6 +3216,15 @@
         "attrColorValue": "#e94d00",
         "tag": "horse_scale",
         "value": "impossible"
+      }
+    ],
+    "routeFerryColor": [
+      {
+        "attrColorValue": "#7777ff"
+      },
+      {
+        "attrColorValue": "#185499",
+        "nightMode": "1"
       }
     ],
     "routeInfo_roadClass": [
@@ -2398,7 +3320,7 @@
       },
       {
         "attrStringValue": "highway_class_undefined",
-        "attrColorValue": "#dddddd",
+        "attrColorValue": "#ececec",
         "tag": "highway",
         "value": "road"
       },
@@ -2436,48 +3358,48 @@
     "routeInfo_smoothness": [
       {
         "attrStringValue": "smoothness_excellent",
-        "additional": "smoothness=excellent",
-        "attrColorValue": "#00d8ff"
+        "attrColorValue": "#00d8ff",
+        "additional": "smoothness=excellent"
       },
       {
         "attrStringValue": "smoothness_good",
-        "additional": "smoothness=good",
-        "attrColorValue": "#7debff"
+        "attrColorValue": "#7debff",
+        "additional": "smoothness=good"
       },
       {
         "attrStringValue": "smoothness_intermediate",
-        "additional": "smoothness=intermediate",
-        "attrColorValue": "#b1f3ff"
+        "attrColorValue": "#b1f3ff",
+        "additional": "smoothness=intermediate"
       },
       {
         "attrStringValue": "smoothness_bad",
-        "additional": "smoothness=bad",
-        "attrColorValue": "#febcbc"
+        "attrColorValue": "#febcbc",
+        "additional": "smoothness=bad"
       },
       {
         "attrStringValue": "smoothness_very_bad",
-        "additional": "smoothness=very_bad",
-        "attrColorValue": "#fea9a9"
+        "attrColorValue": "#fea9a9",
+        "additional": "smoothness=very_bad"
       },
       {
         "attrStringValue": "smoothness_horrible",
-        "additional": "smoothness=horrible",
-        "attrColorValue": "#ff7f7f"
+        "attrColorValue": "#ff7f7f",
+        "additional": "smoothness=horrible"
       },
       {
         "attrStringValue": "smoothness_very_horrible",
-        "additional": "smoothness=very_horrible",
-        "attrColorValue": "#fe5050"
+        "attrColorValue": "#fe5050",
+        "additional": "smoothness=very_horrible"
       },
       {
         "attrStringValue": "smoothness_impassable",
-        "additional": "smoothness=impassable",
-        "attrColorValue": "#ff1111"
+        "attrColorValue": "#ff1111",
+        "additional": "smoothness=impassable"
       },
       {
         "attrStringValue": "smoothness_undefined",
-        "additional": "smoothness=undefined",
-        "attrColorValue": "#e8e8e8"
+        "attrColorValue": "#e8e8e8",
+        "additional": "smoothness=undefined"
       }
     ]
   }

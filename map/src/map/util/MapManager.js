@@ -61,3 +61,21 @@ export function bindTooltipToMarker(marker, text, iconSize = 16, mainStyle = fal
         className: styles.tooltip,
     });
 }
+
+export const iconPathMap = {
+    location: '/map/images/map_icons/ic_action_marker_dark.svg',
+    house: '/map/images/map_icons/ic_action_building.svg',
+    street: '/map/images/map_icons/ic_action_street_name.svg',
+    intersection: '/map/images/map_icons/ic_action_intersection.svg',
+    ic_action_transport_bus: '/map/images/map_icons/ic_action_transport_bus.svg',
+};
+
+export async function getIconFromMap(name) {
+    let svgData = null;
+    const svgIconPath = iconPathMap[name];
+    if (svgIconPath) {
+        const response = await fetch(svgIconPath);
+        svgData = await response.text();
+    }
+    return svgData;
+}
