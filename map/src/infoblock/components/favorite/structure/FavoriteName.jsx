@@ -76,7 +76,12 @@ export default function FavoriteName({
             const { name } = getPropsFromSearchResultItem(objOptions, t);
             setFavoriteName(name);
         } else if (ctx.selectedWpt?.stop) {
-            setFavoriteName(ctx.selectedWpt?.stop.options.name);
+            const name = ctx.selectedWpt?.stop.options.name;
+            if (name && name.trim() !== '') {
+                setFavoriteName(name);
+            } else {
+                setFavoriteName(t('web:transport_stop'));
+            }
         }
     }, [ctx.selectedWpt]);
 

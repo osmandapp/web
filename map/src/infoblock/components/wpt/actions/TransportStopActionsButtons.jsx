@@ -60,12 +60,12 @@ export default function TransportStopActionsButtons({ wpt }) {
             .writeText(shareText)
             .then(() => {
                 ctx.setNotification({
-                    text: 'Information about the selected transport stop has been copied to clipboard',
+                    text: t('web:transport_stop_copied_success'),
                     severity: 'success',
                 });
             })
             .catch(() => {
-                ctx.setNotification({ text: 'Failed to copy transport stop information', severity: 'error' });
+                ctx.setNotification({ text: t('web:transport_stop_copy_failed'), severity: 'error' });
             });
     }
 
