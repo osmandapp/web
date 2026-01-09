@@ -11,7 +11,7 @@ import { matchPath, useLocation } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { apiGet } from '../../util/HttpApi';
-import { parseCoordinate } from '../analyzer/util/PointsManager';
+import { parseCoordinates } from '../analyzer/util/PointsManager';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -22,7 +22,7 @@ export function formatLatLon(pnt) {
 
 async function getValidatedLatLon(value) {
     // Try to parse as coordinates first using existing parseCoordinate function
-    const latlon = parseCoordinate(value);
+    const latlon = parseCoordinates(value);
     if (latlon) {
         return latlon;
     }

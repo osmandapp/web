@@ -4,7 +4,7 @@ import { ReactComponent as PointBIcon } from '../../assets/icons/ic_action_point
 import { useEffect, useState } from 'react';
 import styles from './trackanalyzer.module.css';
 import { formatLatLon } from '../navigation/NavigationPointsManager';
-import { parseCoordinate } from './util/PointsManager';
+import { parseCoordinates } from './util/PointsManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
 
@@ -40,7 +40,7 @@ export default function PointField({ name, point, setPoint, setStartAnalysis }) 
         if (e.key === 'Enter' && pointValue !== '') {
             setStartAnalysis(true);
             //validate point only after pressing enter
-            setPoint(pointValue === '' ? null : parseCoordinate(pointValue));
+            setPoint(pointValue === '' ? null : parseCoordinates(pointValue));
         } else if (e.key === 'Backspace' && pointValue.length > 0) {
             const input = e.target;
             if (input.selectionStart === input.selectionEnd && input.selectionStart === pointValue.length) {
