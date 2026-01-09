@@ -95,14 +95,18 @@ To enable:
 
 - A long tap on **My location** opens a menu with the options ***Show your position*** and ***Show details***. Selecting Show details displays additional route information and provides button ***Start/Stop autoannounce***.
 - Set the **Autoannounce Period** (e.g., *10 seconds*) to control the frequency of announcements.
-- If **TalkBack** is not enabled device’s system settings, OsmAnd won't provide *voice notifications* and only display *text notifications* on the screen.  
+- With **TalkBack** enabled, these notifications are spoken aloud. If **TalkBack** is not enabled device’s system settings, OsmAnd won't provide *voice notifications* and only display *text notifications* on the screen.  
 
 ### Smart Autoannounce {#smart-autoannounce}
 
 To enable:
 *Plugins* → *Accessibility* → *Settings* → *Smart Autoannounce*
 
-The **Smart Autoannounce** feature provides *audio notifications* when you deviate from the planned route. It is designed to support visually impaired users who rely on *voice guidance*.  
+The **Smart Autoannounce** feature works on top of Autoannounce. Start Autoannounce first, and then enable Smart Autoannounce in the plugin settings.
+
+When Smart Autoannounce is enabled, announcements are triggered when the current navigation target changes its sector. This typically happens when your movement changes the direction to the next turn or destination. When Smart Autoannounce is disabled, OsmAnd shows periodic notifications according to the Autoannounce Period.
+
+**Note:** Only the Autoannounce Period can be adjusted. The “sector change” trigger is not configurable in the app settings. 
 
 
 ## Plugin Settings {#plugin-settings}
