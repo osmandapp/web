@@ -11,7 +11,8 @@ import { ReactComponent as AttachIcon } from '../../assets/icons/ic_action_attac
 import { ReactComponent as WarningIcon } from '../../assets/icons/ic_action_warning_yellow_colored.svg';
 import { ReactComponent as SaveLocalIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as SaveCloudIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
-import { HEADER_SIZE } from '../../manager/GlobalManager';
+import { HEADER_SIZE, PRICING_URL } from '../../manager/GlobalManager';
+import { useNavigate, useLocation } from 'react-router-dom';
 import gStyles from '../gstylesmenu.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
 import { Trans, useTranslation } from 'react-i18next';
@@ -59,6 +60,8 @@ export default function NavigationMenu() {
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const [, height] = useWindowSize();
 
@@ -100,7 +103,8 @@ export default function NavigationMenu() {
         if (!profile) {
             return;
         }
-        if (urlProfile && visibleProfiles[0] !== urlProfile) {
+
+        if (urlProfile && !visibleProfiles.includes(urlProfile)) {
             const newVisibleProfiles = visibleProfiles.filter((key) => key !== urlProfile);
             newVisibleProfiles.unshift(urlProfile);
             const updatedProfiles = newVisibleProfiles.slice(0, MAX_VISIBLE_PROFILES);
@@ -129,6 +133,11 @@ export default function NavigationMenu() {
                 ctx.setUpdateInfoBlock(true);
             }
         }
+        // Close navigation settings when opening route details
+        if (openSettings) {
+            setOpenSettings(false);
+        }
+        ctx.setOpenNavigationSettings(false);
     }
 
     function close() {
@@ -170,7 +179,6 @@ export default function NavigationMenu() {
 
     const routeTrack = navObject.getTrack();
     const hasRouteTrack = routeTrack && !isEmptyTrack(routeTrack);
-    const canSaveToCloud = hasRouteTrack && ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT;
 
     function showRouteSummary() {
         if (ctx.routeTrackFile) {
@@ -211,9 +219,18 @@ export default function NavigationMenu() {
     }
 
     function handleSaveTrackCloud() {
-        if (!canSaveToCloud || !routeTrack) {
+        if (!hasRouteTrack || !routeTrack) {
             return;
         }
+
+        if (!ltx.loginUser || ltx.accountInfo?.account === FREE_ACCOUNT) {
+            navigate({
+                pathname: '/' + PRICING_URL,
+                hash: location.hash,
+            });
+            return;
+        }
+
         const trackToSave = {
             ...routeTrack,
             save: true,
@@ -241,18 +258,16 @@ export default function NavigationMenu() {
                                 />
                             </span>
                         </Tooltip>
-                        {ltx.isLoggedIn() && (
-                            <Tooltip title={t('web:upload_gpx_track')} arrow>
-                                <span>
-                                    <ActionIconBtn
-                                        id="se-route-save-to-cloud"
-                                        icon={<SaveCloudIcon />}
-                                        onClick={handleSaveTrackCloud}
-                                        disabled={!canSaveToCloud}
-                                    />
-                                </span>
-                            </Tooltip>
-                        )}
+                        <Tooltip title={t('web:upload_gpx_track')} arrow>
+                            <span>
+                                <ActionIconBtn
+                                    id="se-route-save-to-cloud"
+                                    icon={<SaveCloudIcon />}
+                                    onClick={handleSaveTrackCloud}
+                                    disabled={!hasRouteTrack}
+                                />
+                            </span>
+                        </Tooltip>
                     </Box>
                 }
             />

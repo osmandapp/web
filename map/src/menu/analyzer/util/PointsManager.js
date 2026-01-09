@@ -21,11 +21,11 @@ export function getPointsForAnalysis({ startPoint, finishPoint }) {
     return coordinates;
 }
 
-export function parseCoordinate(coord) {
-    if (!coord) return null;
+export function parseCoordinates(coords) {
+    if (!coords) return null;
 
     // try to parse coordinate in format "lat, lon" or "lat lon"
-    const parts = coord.trim().split(/[, ]+/);
+    const parts = coords.trim().split(/[, ]+/);
     if (parts.length !== 2) return null;
 
     const [lat, lon] = parts;
