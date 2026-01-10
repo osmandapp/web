@@ -351,8 +351,9 @@ Auto-backup automatically saves selected OsmAnd data to the Cloud at regular int
 
 Auto-backup behavior:
 
-- Auto-backup runs approximately every hour while OsmAnd is working in the foreground.
-- Backup also starts when you return to the map screen.
+- Auto-backup runs approximately every hour while OsmAnd is working in the foreground. This interval is not currently adjustable in the app. It can be changed by importing an .osf file.
+- Auto-backup can start when you open or return to the map screen.
+- In addition to scheduled runs, auto-backup can also start after changes to some data types (for example, Favorites), using the enabled backup types in Auto-backup settings.
 - You can enable/disable each item or whole sections independently.
 - Your data remains available locally even if auto-backup is turned off.
 
