@@ -47,6 +47,9 @@ export default function FavoriteGroupUploader({ children }) {
                     renameGroup(track, newGroupName, importFile.oldName);
                 }
                 const updatedTrack = hasSeveralGroups ? preparedCurrentFile(track, newGroupName) : track;
+                if (updatedTrack.trackAppearance && Object.keys(updatedTrack.trackAppearance).length === 0) {
+                    delete updatedTrack.trackAppearance;
+                }
                 saveFavoriteGroup(updatedTrack, newGroupName, ctx).then();
             }
             mutateUploadedFiles((o) => delete o[file]);
