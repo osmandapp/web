@@ -13,8 +13,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Overview {#overview}
 
@@ -39,7 +40,7 @@ Currently, the curated database includes approximately **50,000 to 150,000 top-r
 </Tabs>
 
 
-### Data Sources
+## Data Sources {#data-sources}
 
 **Popular Places** are based on structured content from [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/).
 
@@ -61,6 +62,8 @@ There are two main ways to access this feature:
 - **Free version**  
   Access via [Search](#explore-in-search) to explore nearby places in list view.  
   *<Translate android="true" ids="android_button_seq"/>*. Go to: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  
+  This Explore list shows popularity-ranked Wikipedia/Wikidata places near you and works online. It displays up to 50 places. Because Explore/Wikipedia results are rating-ranked, the ordering in these results may differ from regular POI search.
 
 - **Paid versions** *(Maps+ and OsmAnd Pro)*  
   Enable the visual overlay in the [Configure Map](#enable-layer).  
@@ -129,19 +132,19 @@ Before using this feature:
 - Make sure the [Wikipedia Plugin](../plugins/wikipedia.md) is enabled.
 - Download Wikipedia data for your region if you want to use it offline.
 
-### Layer Options
+### Layer Options {#layer-options}
 
 Once enabled, the following options become available:
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – Toggle Wikipedia POIs on the map.
 
 - **POI Source** – Switch between:
-  - *Offline mode* (Wikipedia articles must be downloaded).
-  - *Online only* mode (uses live data and images).
+  - *Offline Only* mode — uses downloaded Wikipedia map data for your region. 
+  - *Online Only* mode — loads places and image previews online. Online results may depend on your selected language settings.
 
 - **<Translate android="true" ids="shared_string_language"/>** – Select the language for Wikipedia descriptions.
 
-- **<Translate android="true" ids="show_image_previews"/>** – Show image thumbnails from Wikidata next to POIs.
+- **<Translate android="true" ids="show_image_previews"/>** – Show image thumbnails from Wikidata next to POIs. If image previews are disabled, Popular Places are shown with icons instead of thumbnails on the map. Image previews use Wikidata/Wikipedia-linked images: in *Offline Only* mode previews depend on the downloaded Wikipedia data, while in *Online Only* mode previews are fetched online.
 
 Tapping a POI on the map opens the [POI context menu](./map-context-menu.md), where you can view [online photos](#online-photos) and access linked [Wikipedia articles](../plugins/wikipedia.md).
 
@@ -170,10 +173,9 @@ This is a section within the [POI context menu](./map-context-menu.md) that disp
 
 Images viewed online are automatically cached for offline access. Cached photos display a small offline badge in the corner. The preview grid adapts to the screen size on iPadOS and macOS, ensuring comfortable image layout on larger displays. OsmAnd also avoids triggering repeated network requests when the Online Photos section is closed, and cancels previous requests when switching quickly between different POIs.
 
+<!-- 
 Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
 
-
-<!-- 
 
 When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
 
@@ -182,7 +184,6 @@ When you tap a Popular Place on the map or from the list, the [POI context menu]
 
 For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
 
--->
 
 ### Actions {#actions}
 
@@ -193,8 +194,7 @@ In the Map Context menu How to access:
 - Tap any photo to view it in [full screen](#gallery) and access the available actions:  
   **Share**, **Details**, **Open in browser**, and **Download**.
 
-**Note:** Download saves the image to the device’s storage for permanent offline use, while cached photos are stored automatically and available offline only within the app.
-
+-->
 
 ### Gallery {#gallery}
 
@@ -216,8 +216,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-
-The **Gallery Menu** can display up to **100 images** related to the selected point of interest. You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Name*, *Date added*, *Author*, *License*.
+The **Gallery Menu** can display up to **100 images** related to the selected point of interest. To view these images, tap **Show All** (Android) / **View All** (iOS). You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Name*, *Date added*, *Author*, *License*.
 
 On iOS, iPadOS, and macOS, you can navigate photos using keyboard keys (←/→ to move between images, Enter/Space to open).
 
@@ -235,7 +234,9 @@ You can also perform the following actions on each photo:
 - **Download**  
   Save the image to your device’s storage. The downloaded image can be found in your device’s default Downloads folder and accessed offline.
 
+**Note:** Download saves the image to the device’s storage for permanent offline use, while cached photos are stored automatically and available offline only within the app.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
@@ -281,9 +282,10 @@ On **iOS**, long-pressing a photo opens a context menu with additional actions:
 </Tabs>
 
 The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+-->
 
 
-## Related Articles
+## Related Articles {#related-articles}
 
 - [Map Context menu](./map-context-menu.md)
 - [Configure Map](./configure-map-menu.md)
