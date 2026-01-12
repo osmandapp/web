@@ -22,7 +22,7 @@ Please check the documentation inside routing.xml:
 
 Depending on [the selected mode (Less hilly, Flat, Hilly) of Bicycle-based routing](../../user/navigation/routing/bicycle-based-routing.md) and the physical slope (%) of thse road, a penalty calculated from the height difference is added to each horizontal metre.
 
-Explaination given as 3% 1:2 means that route with flat 2 km will be preferred over route with 3% 1 km though 3% 1km route will be preferred over route flat 2.5 km.
+The 1:2 penalty assigns a cost factor of 2.0 to a 3% incline. Consequently, a 1 km uphill segment (cost 2.0) is weighed equally to a 2 km flat segment, but is preferred over any flat detour exceeding 2 km.
 
 **Table of penalties bicycle routing:**
 
