@@ -80,6 +80,127 @@ Read full info about Cross-platform and Login [here](https://osmand.net/docs/use
 
 _________________________________
 
+## Version française
+
+**Comment activer OsmAnd Promo Pro**
+
+Vous avez saisi votre e-mail dans l’un des formulaires Promo. Vous devez maintenant activer OsmAnd Pro sur vos appareils.
+
+**Étapes à suivre :**
+
+1. **Vous recevez la liste suivante** par e-mail de la part d’OsmAnd concernant l’inscription :
+
+![Confirmation](@site/static/img/promo/advportal/confirmation.png)
+
+2. **Prochaine étape** : vous devez activer **OsmAnd Pro** sur votre appareil.
+
+2a. Installez l’application OsmAnd :  
+- Version Android : [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).  
+- Version iOS : [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+
+2b. Activez OsmAnd Pro sur votre appareil :
+
+_Menu de l’application OsmAnd > Paramètres > OsmAnd Cloud > J’ai déjà un compte_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_1.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_2.png').default} alt="confirmation"/></td>
+  </tr>
+</table>
+
+3. Après cela, vous recevrez **un code à quatre chiffres** par e-mail à saisir.
+
+![Confirmation](@site/static/img/promo/advportal/confirmation_3.png)
+
+Veuillez utiliser ce code à quatre chiffres dans l’application OsmAnd :
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_4.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_5.png').default} alt="confirmation"/></td>
+  </tr>
+</table>
+
+4. Redémarrez l’application OsmAnd et vérifiez l’activation de votre compte OsmAnd Pro :
+
+_Menu de l’application OsmAnd > Paramètres > Achats > Restaurer les achats_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_6.png').default} alt="confirmation"/></td>
+  </tr>
+</table>
+
+5. Profitez des [fonctionnalités OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features).
+
+:::tip Remarque
+Lisez les informations complètes sur l’utilisation multiplateforme et la connexion [ici](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
+:::
+
+_________________________________
+
+
+## Deutsche Version
+
+**OsmAnd Promo Pro aktivieren**
+
+Sie haben Ihre E-Mail in eines der Promo-Formulare eingegeben. Nun müssen Sie OsmAnd Pro auf Ihren Geräten aktivieren.
+
+**Ihre Schritte:**
+
+1. **Sie erhalten die folgende Liste** per E-Mail von OsmAnd zur Registrierung:
+
+![Bestätigung](@site/static/img/promo/advportal/confirmation.png)
+
+2. **Nächster Schritt**: Aktivieren Sie **OsmAnd Pro** auf Ihrem Gerät.
+
+2a. Installieren Sie die OsmAnd-App:  
+- Android-Version: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).  
+- iOS-Version: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+
+2b. OsmAnd Pro auf dem Gerät aktivieren:
+
+_OsmAnd-App-Menü > Einstellungen > OsmAnd Cloud > Ich habe bereits ein Konto_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_1.png').default} alt="bestätigung"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_2.png').default} alt="bestätigung"/></td>
+  </tr>
+</table>
+
+3. Danach erhalten Sie **einen vierstelligen Code** per E-Mail zur Eingabe.
+
+![Bestätigung](@site/static/img/promo/advportal/confirmation_3.png)
+
+Bitte verwenden Sie diesen vierstelligen Code in der OsmAnd-App:
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_4.png').default} alt="bestätigung"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_5.png').default} alt="bestätigung"/></td>
+  </tr>
+</table>
+
+4. Starten Sie die OsmAnd-App neu und überprüfen Sie die Aktivierung von OsmAnd Pro:
+
+_OsmAnd-App-Menü > Einstellungen > Käufe > Käufe wiederherstellen_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_6.png').default} alt="bestätigung"/></td>
+  </tr>
+</table>
+
+5. Genießen Sie die [OsmAnd Pro-Funktionen](https://osmand.net/docs/user/purchases/android#pro-features).
+
+:::tip Hinweis
+Lesen Sie die vollständigen Infos zu Cross-Platform und Login [hier](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
+:::
+
+__________________________________
+
 ## Versión en español
 
 **Cómo activar OsmAnd Promo Pro**
