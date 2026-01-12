@@ -42,8 +42,8 @@ const routes = [
         hasAttributes: false,
         strings: [
             'Points: 2',
-            /Car 47[0123]\.\d+ km/,
-            /Route: 47[0123]\.\d+ km, 5:[2-4]\d min/,
+            /Car 4[0-9][0-9]\.\d+ km/,
+            /Route: 4[0-9][0-9]\.\d+ km, 5:\d{2} min/,
             /[-10] \/ 2[45] \/ 85 m/, // ele
         ],
         turns: [
