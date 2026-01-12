@@ -17,7 +17,7 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ## Version française
 
-**OsmAnd Pro pour les utilisateurs de Florian Veks**
+**OsmAnd Pro pour les utilisateurs de Lady-c-rider**
 
 Bonjour aux amateurs de deux roues !
 
@@ -43,7 +43,7 @@ ________________________________
 
 ## English version
 
-**OsmAnd Pro for "Florian Veks" users**
+**OsmAnd Pro for "Lady-c-rider" users**
 
 Hello funs of two wheels!
 
