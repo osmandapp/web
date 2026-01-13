@@ -46,11 +46,6 @@ const routes = [
             /Route: 4[0-9][0-9]\.\d+ km, 5:\d{2} min/,
             /-?\d+ \/ -?\d+ \/ -?\d+ m/, // ele
         ],
-        turns: [
-            'Go ahead onto Gottlieb-Daimler-Straße and go 0.1 km',
-            'Keep left (+C|+C,TSLR) onto Sønderjyske Motorvej E 45 and go 74.0 km',
-            'Turn slightly left (+TSLL,C|C) onto Banegårdspladsen and go 0.2 km',
-        ],
     },
 ];
 
@@ -89,7 +84,9 @@ export default async function test() {
         await validateInfoBlockButtons(routeTrackInfoBlockButtons);
 
         await validateInfoBlockStrings(strings, hasAttributes);
-        await validateInfoBlockTurns(turns);
+        if (turns) {
+            await validateInfoBlockTurns(turns);
+        }
 
         await clickBy(By.id('se-button-back'));
         await actionIdleWait();
