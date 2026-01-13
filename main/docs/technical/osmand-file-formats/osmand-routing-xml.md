@@ -24,25 +24,57 @@ Depending on [the selected mode (Less hilly, Flat, Hilly) of Bicycle-based routi
 
 The 1:2 penalty assigns a cost factor of 2.0 to a 3% incline. Consequently, a 1 km uphill segment (cost 2.0) is weighed equally to a 2 km flat segment, but is preferred over any flat detour exceeding 2 km.
 
-**Table of penalties bicycle routing:**
+**Tables of penalties bicycle routing:**
 
+|                  **Option**                 |**Incline:**| &lt;1% | &lt;3%  | &lt;7% | &lt;13% | &lt;25% | &gt;=25% |
+|:--------------------------------------------|:-----------|-----|------|-----|------|------|-------|
+|**_Disabled/Any_** (the shortest but hardest)|            |  -  |   -  |  -  |   -  |   -  |   -   |
+|**_Flat_** (the longest but easy)            |            |     |  1:2 | 1:12| 1:30 | 1:50 | 1:74  |            
+|**_Less hilly_** (default, balanced)         |            |     |  1:2 | 1:8 | 1:16 | 1:32 | 1:48  |     
+|**_Hilly_** (more difficult)                 |            | 1:61|1:19.7|1:7.5|  1:3 | 1:0.5| 1:0.3 |           
+
+|                  **Option**                 |**Decline:**| &lt;17% | &lt;35% | &lt;60% | &gt;=60%      |
+|:--------------------------------------------|:-----------|------|------|------|------------|
+|**_Disabled/Any_** (the shortest but hardest)|            |   -  |   -  |   -  |     -      |
+|**_Flat_** (the longest but easy)            |            | 1:6.4| 1:25 | 1:25 | impossible |
+|**_Less hilly_** (default, balanced)         |            | 1:6.4| 1:25 | 1:25 | impossible |
+|**_Hilly_** (more difficult)                 |            | 1:6.4| 1:25 | 1:25 | impossible |
+
+<!--
 |                  **Option**                 |**Incline:**| &lt;1% | &lt;3%  | &lt;7% | &lt;13% | &lt;25% | &gt;=25% |**Decline:**| &lt;17% | &lt;35% | &lt;60% | &gt;=60%      |
 |:--------------------------------------------|:-----------|-----|------|-----|------|------|-------|:-----------|------|------|------|------------|
 |**_Disabled/Any_** (the shortest but hardest)|            |  -  |   -  |  -  |   -  |   -  |   -   |            |   -  |   -  |   -  |     -      |
 |**_Less hilly_** (default, balanced)         |            |     |  1:2 | 1:8 | 1:16 | 1:32 | 1:48  |            | 1:6.4| 1:25 | 1:25 | impossible |
 |**_Flat_** (the longest but easy)            |            |     |  1:2 | 1:12| 1:30 | 1:50 | 1:74  |            | 1:6.4| 1:25 | 1:25 | impossible |
 |**_Hilly_** (more difficult)                 |            | 1:61|1:19.7|1:7.5|  1:3 | 1:0.5| 1:0.3 |            | 1:6.4| 1:25 | 1:25 | impossible |
+-->
 
 
 Depending on [the selected mode (Less hilly, Flat, Hilly) of Pedestrian routing](../../user/navigation/routing/pedestrian-routing.md) and the physical slope (%) of the road, a penalty calculated from the height difference is added to each horizontal metre.
 
-**Table of penalties pedestrian routing:**
+**Tables of penalties pedestrian routing:**
 
+|                  **Option**                 | **Incline:** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | 
+|:--------------------------------------------|:-------------|-----|-----|-----|------|------|-------|
+|**_Disabled/Any_** (the shortest but hardest)|              |  -  |  -  |  -  |   -  |   -  |   -   |
+|**_Flat_** (the longest but easy)            |              |     | 1:2 | 1:12| 1:30 | 1:50 | 1:74  |      
+|**_Less hilly_** (default, balanced)         |              |     | 1:1 | 1:4 | 1:8  | 1:10 | 1:15  |  
+|**_Hilly_** (more difficult)                 |              | 1:61| 1:20| 1:7 | 1: 3 | 1:0.5| 1:0.3 |
+
+|                  **Option**                 | **Decline:** | &lt;9% | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
+|:--------------------------------------------|:-------------|-----|------|------|------|-------|
+|**_Disabled/Any_** (the shortest but hardest)|              |  -  |   -  |   -  |   -  |   -   |
+|**_Flat_** (the longest but easy)            |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |
+|**_Less hilly_** (default, balanced)         |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |
+|**_Hilly_** (more difficult)                 |              |  1:5| 1:10 | 1:17 | 1:25 | 1:40  |
+
+<!--
 |                  **Option**                 | **Incline:** | &lt;1% | &lt;3% | &lt;7% | &lt;13% | &lt;25% | &gt;=25% | **Decline:** | &lt;9% | &lt;17% | &lt;35% | &lt;60% | &gt;=60% |
 |:--------------------------------------------|:-------------|-----|-----|-----|------|------|-------|:-------------|-----|------|------|------|-------|
 |**_Disabled/Any_** (the shortest but hardest)|              |  -  |  -  |  -  |   -  |   -  |   -   |              |  -  |   -  |   -  |   -  |   -   |
 |**_Less hilly_** (default, balanced)         |              |     | 1:1 | 1:4 | 1:8  | 1:10 | 1:15  |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |
 |**_Flat_** (the longest but easy)            |              |     | 1:2 | 1:12| 1:30 | 1:50 | 1:74  |              | 1:5 | 1:10 | 1:17 | 1:25 | 1:40  |
 |**_Hilly_** (more difficult)                 |              | 1:61| 1:20| 1:7 | 1: 3 | 1:0.5| 1:0.3 |              |  1:5| 1:10 | 1:17 | 1:25 | 1:40  |
+-->
 
 
