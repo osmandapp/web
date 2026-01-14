@@ -104,10 +104,18 @@ You can fine-tune the route directly on the map by dragging route markers to a d
 ### Download and Save {#download-and-save}
 
 Use *Download* to export the route as a track. The download dialog offers two options:
-Full track data — includes full data, including navigation instructions.
-Simplified track — a lighter version that’s more suitable for use with other apps.
+**Full track data** — includes full data, including navigation instructions.
+**Simplified track** — a lighter version that’s more suitable for use with other apps.
+
+If you plan to open the GPX in third-party apps, choose Simplified track for better compatibility. This helps avoid cases when another app may display an incorrect segment after import.
+
+What’s the difference:
+- Full track data may include route/navigation information in addition to the track geometry (useful if you want to keep navigation instructions or re-edit the route in OsmAnd).
+- Simplified track exports a cleaner GPX intended for other apps by removing route/navigation data and leaving only the track shape. Waypoints are preserved when exporting a simplified track.
 
 You can save the route as a track using *Save to Cloud / Upload to OsmAnd Cloud*. This opens a dialog where you can confirm saving to cloud tracks, edit the Name, optionally choose a Folder, then Save or Cancel.
+
+![Web Navigation](@site/static/img/web/download_options.png)
 
 ### Share a Route {#share-a-route}
 
