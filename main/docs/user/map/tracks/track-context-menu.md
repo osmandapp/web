@@ -470,7 +470,7 @@ Tap the *Add Waypoint* button to open waypoint creation screen (this screen is f
 
 <TabItem value="ios" label="iOS">
 
-![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -482,9 +482,9 @@ The *three-dot menu* ( &#8285; ) opens the waypoint *Group menu*.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Allows you to display or not display group waypoints on the map. Or you can use [the screen button](#points--waypoints) to display or omit group waypoints on the map.
 - **<Translate android="true" ids="shared_string_rename"/>** - Change the name of the group.
-- **<Translate android="true" ids="change_default_appearance"/>** - Change the display options for a group of waypoints.
+- **<Translate android="true" ids="change_default_appearance"/>** (Android) / **<Translate ios="true" ids="change_appearance"/>** (IOS) - Change the display options for a group of waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** or **Remove** (*Android only*) - Move group waypoints to [Map markers](../../personal/markers.md) list.
-- **<Translate android="true" ids="add_to_favorites"/>** (*Android only*) - Allows you to copy the selected group of Waypoints into [Favorites](../../personal/favorites.md). You can choose one of two options: ***<Translate android="true" ids="copy_as_new_folder"/>*** or ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Allows you to copy the selected group of Waypoints into [Favorites](../../personal/favorites.md). You can choose one of two options: ***<Translate android="true" ids="copy_as_new_folder"/>*** or ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Android only*) - Creates a route between waypoints. The first and last points become the start and finish of the route, and the rest are converted to intermediate points.
 - **<Translate android="true" ids="shared_string_delete"/>** - Delete a group of waypoints.
 
