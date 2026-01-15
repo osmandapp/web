@@ -98,7 +98,7 @@ const ROUTE_TYPES = {
     },
 };
 
-export default function TransportStopsRoutes({ routes = [] }) {
+export default function TransportStopsRoutes({ routes = [], wpt = null }) {
     const { t } = useTranslation();
     const [open, setOpen] = useState(true);
 
@@ -126,6 +126,7 @@ export default function TransportStopsRoutes({ routes = [] }) {
                                     icon={routeType.icon}
                                     color={routeType.color}
                                     typeName={t(`web:${routeType.name}`)}
+                                    wpt={wpt}
                                 />
                                 {index < routes.length - 1 && <DividerWithMargin margin={'64px'} />}
                             </React.Fragment>

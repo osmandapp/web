@@ -268,7 +268,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             const currentStop = ctx.selectedWpt.stop;
             const { options: objOptions, latlng, mapObj } = currentStop;
             return {
-                id: objOptions.idObj,
+                id: objOptions.id,
                 type,
                 name: objOptions.name,
                 latlon: { lat: latlng.lat, lon: latlng.lng },
@@ -479,6 +479,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!type) return;
 
         ctx.setSelectedWpt(null);
+
+        if (type.isStop) {
+            ctx.setSelectedTransportRoute(null);
+        }
 
         if (type.isPoi || type.isSearch) {
             if (ctx.selectedPoiId) {
@@ -881,7 +885,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                             {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                             {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
-                            {wpt?.type?.isStop && wpt?.routes && <TransportStopsRoutes routes={wpt.routes} />}
+                            {wpt?.type?.isStop && wpt?.routes && <TransportStopsRoutes routes={wpt.routes} wpt={wpt} />}
                             {wpt?.wikiDesc && (
                                 <>
                                     <Divider sx={{ mt: 2 }} />

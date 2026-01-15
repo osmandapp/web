@@ -350,6 +350,7 @@ export const AppContextProvider = (props) => {
     const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
+    const [selectedTransportRoute, setSelectedTransportRoute] = useState(null);
     // share
     const [shareFile, setShareFile] = useState(null);
     const [updatedRequestList, setUpdatedRequestList] = useState([]);
@@ -839,6 +840,8 @@ export const AppContextProvider = (props) => {
                 setSearchTravelRoutes,
                 selectedTravelRoute,
                 setSelectedTravelRoute,
+                selectedTransportRoute,
+                setSelectedTransportRoute,
                 travelFilter,
                 setTravelFilter,
                 openProFeatures,
