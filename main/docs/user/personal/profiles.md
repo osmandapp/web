@@ -434,19 +434,24 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,prof
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary (Resting) and in motion (Navigation). Motion is detected by the operating system when the device speed is **greater than zero**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary (Resting) and in motion (Navigation). Motion is detected by the operating system when the device speed is **greater than zero**.
+
+Use **Icon size** to adjust the size of the My Location position icon independently from the app’s text size. You can set different sizes for Resting and Navigation modes. The size can be adjusted from 50% to 300% (50, 75, 100, 125, 150, 200, 250, 300%). The default value is 100%. Tap Icon size to open the size settings, then use the slider or the + / – step buttons to change the value. Use **Reset to Default** to return to 100%.
 
 </TabItem>
 
 </Tabs>
 
-The **My Location appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when the device speed is **greater than zero**.
 
 ### View Angle and Location Radius {#view-angle-and-location-radius}
 
