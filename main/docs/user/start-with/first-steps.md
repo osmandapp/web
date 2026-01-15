@@ -641,13 +641,15 @@ Allows you to ask questions or make suggestions.
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_about_ios.png)
+![Maps menu iOS](@site/static/img/steps/offline_about_ios_new.png) ![Maps menu iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 You can learn about our team, see the current version of the app and what's new, and download the beta version of the app.
+
+The build is shown in the format OsmAnd Maps &lt;build&gt;, released &lt;date&gt;. To quickly share this information with support, long-press the build line to copy the build number together with the release date.
 
 
 ## Privacy {#privacy}
