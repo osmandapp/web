@@ -116,6 +116,13 @@ If [Elevation data](../map/tracks/track-context-menu.md#calculate-missing-elevat
 - [Use nearby roads](#attach-track-to-roads). This mode uses offline maps to find the nearest roads to build a track, so elevation data will be retrieved from attached roads. The geometry of the track can be adjusted.  
 - [Use Terrain maps](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitudes recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
+:::note
+
+**Online elevation correction** (server-based) was removed in recent OsmAnd versions and is unavailable.  
+For older versions, it was deprecated and unreliable.  
+Use offline options instead: attach to roads or Terrain maps (Pro).  
+
+:::
 
 ### Attach Track to Roads {#attach-track-to-roads}
 

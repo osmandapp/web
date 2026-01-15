@@ -364,12 +364,12 @@ If there is *no elevation information* on the route, you can add it in the follo
 ### Calculate Missing Elevation {#calculate-missing-elevation}
 
 :::note OsmAnd Pro subscription
-Calculate elevation offline feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
+[Calculate elevation offline](../../plan-route/create-route.md#get-elevation-data) feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-This feature allows you to calculate the elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#download-maps). *Terrain maps (3D) should be previously downloaded*.
+[This feature](../../plan-route/create-route.md#get-elevation-data) allows you to calculate the elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#download-maps). *Terrain maps (3D) should be previously downloaded*.
 
 1. Download [Terrain maps (3D)](../../plugins/topography.md#download-maps) for the required region.
 2. If the track does not contain any altitude data, go to the track context menu (*Track context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
