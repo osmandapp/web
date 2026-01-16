@@ -374,8 +374,6 @@ const TransportStopsLayer = () => {
                 }
             }
 
-            ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
-            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             ctx.setSelectedWpt({ stop });
 
             navigateToStop(stop, navigate);

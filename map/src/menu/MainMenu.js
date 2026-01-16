@@ -312,7 +312,10 @@ export default function MainMenu({
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
         const openFavorite =
             !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
-        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite && !ctx.selectedPoiObj) {
+        // Don't close infoBlock if selectedWpt exists - it means user selected an object on map
+        // (even if data is still loading asynchronously)
+        const hasSelectedWpt = !!ctx.selectedWpt;
+        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite && !ctx.selectedPoiObj && !hasSelectedWpt) {
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
