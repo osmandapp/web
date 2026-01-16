@@ -285,9 +285,17 @@ const TransportStopsLayer = () => {
         }
 
         const coords = pin.split(',');
+        if (coords.length !== 2) {
+            return;
+        }
+        const lat = Number.parseFloat(coords[0]);
+        const lon = Number.parseFloat(coords[1]);
+        if (Number.isNaN(lat) || Number.isNaN(lon)) {
+            return;
+        }
         const params = {
-            lat: coords[0],
-            lon: coords[1],
+            lat,
+            lon,
             stopId: id,
         };
         const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
