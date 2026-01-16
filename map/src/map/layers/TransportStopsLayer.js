@@ -106,7 +106,7 @@ async function createTransportStopsLayer({
 
     // After clustering: add route stops to mainMarkers if not present, remove from secondaryMarkers
     if (selectedRoute && routeStopIds.length > 0) {
-        const mainMarkersStopIds = new Set((mainMarkers || []).map((stop) => stop.properties?.id).filter((id) => id));
+        const mainMarkersStopIds = new Set((mainMarkers || []).map((stop) => stop.properties?.id));
 
         routeStopsMap.forEach((routeStop) => {
             const stopId = routeStop.properties?.id;

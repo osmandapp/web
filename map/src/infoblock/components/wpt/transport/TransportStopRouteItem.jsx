@@ -17,6 +17,7 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
 
         try {
             const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-route`, {
+                apiCache: true,
                 params: {
                     lat: wpt.latlon.lat,
                     lon: wpt.latlon.lon,
