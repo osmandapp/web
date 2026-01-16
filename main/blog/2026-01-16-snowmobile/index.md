@@ -44,8 +44,8 @@ To explore these, simply switch to the Snowmobile map style in OsmAnd (_Menu →
 
 For a ready-to-go setup, we have prepared a custom **Snowmobile Profile OSF file**. Importing this file will automatically set up your profile icon, colors, necessary settings, and enable the required US maps plugin. Just open the `.osf` file in OsmAnd to activate it instantly.
 
-* [Download Snowmobile Profile OSF for Maine](Add_Link_Here)
-* [The US maps Plugin](Add_Link_Here)
+* Download Snowmobile Profile OSF for Maine
+* The US maps Plugin
 
 ![Maine Snowmobile Trail Map Example](./img/snowmobile_2.png)
 
