@@ -232,20 +232,16 @@ export default function ConfigureMap() {
                                     </ListItemText>
                                 </MenuItem>
                                 <DividerWithMargin margin={'64px'} />
-                                {ctx.develFeatures && (
-                                    <>
-                                        <SimpleItemWithSwitch
-                                            icon={<TransportStopIcon />}
-                                            text={t('web:transport_stops_title')}
-                                            checked={ctx.configureMapState.showTransportStops}
-                                            onChange={handleTransportStopsSwitchChange}
-                                            id="se-configure-map-menu-transport_stops"
-                                            className={styles.item}
-                                            iconClassName={setIconStyles(ctx.configureMapState.showTransportStops)}
-                                        />
-                                        <DividerWithMargin margin={'64px'} />
-                                    </>
-                                )}
+                                <SimpleItemWithSwitch
+                                    icon={<TransportStopIcon />}
+                                    text={t('web:transport_stops_title')}
+                                    checked={ctx.configureMapState.showTransportStops}
+                                    onChange={handleTransportStopsSwitchChange}
+                                    id="se-configure-map-menu-transport_stops"
+                                    className={styles.item}
+                                    iconClassName={setIconStyles(ctx.configureMapState.showTransportStops)}
+                                />
+                                <DividerWithMargin margin={'64px'} />
                                 <MenuItem
                                     divider
                                     className={styles.item}
