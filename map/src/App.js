@@ -31,6 +31,7 @@ import {
     POI_CATEGORIES_URL,
     SEARCH_RESULT_URL,
     POI_URL,
+    STOP_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -146,6 +147,7 @@ const App = () => {
                                 <Route path={SHARE_FILE_URL} element={<ShareFile />}></Route>
                                 <Route path={TRACK_ANALYZER_URL} element={<TrackAnalyzerMenu />}></Route>
                                 <Route path={POI_URL} element={<WptDetails />}></Route>
+                                <Route path={STOP_URL} element={<WptDetails />}></Route>
                             </Route>
                             <Route path={PRICING_URL} element={<PricingPage />}></Route>
                         </Routes>

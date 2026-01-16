@@ -20,5 +20,14 @@ export function closeHeader({ ctx, setShowInfoBlock = null }) {
             };
         });
     }
+    if (ctx.stopByUrl?.layer) {
+        // remove stop marker
+        ctx.setStopByUrl((prev) => {
+            return {
+                ...prev,
+                open: false,
+            };
+        });
+    }
     ctx.setCurrentObjectType(null);
 }

@@ -546,6 +546,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             });
         }
 
+        if (ctx.stopByUrl?.layer) {
+            // remove stop marker
+            ctx.setStopByUrl((prev) => {
+                return {
+                    ...prev,
+                    open: false,
+                };
+            });
+        }
+
         ctx.setCloseMapObj(true);
     }
 

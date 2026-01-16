@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useMap } from 'react-leaflet';
+import { useNavigate } from 'react-router-dom';
 import AppContext, { OBJECT_TYPE_STOP } from '../../context/AppContext';
 import { apiGet } from '../../util/HttpApi';
 import { getVisibleBbox, findFeatureGroupById, bindTooltipToMarker } from '../util/MapManager';
@@ -10,7 +11,7 @@ import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { getObjIdSearch } from './SearchLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import debounce from 'lodash-es/debounce';
-import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
+import { MENU_INFO_OPEN_SIZE, MAIN_URL_WITH_SLASH, STOP_URL } from '../../manager/GlobalManager';
 
 export const TRANSPORT_STOPS_LAYER_ID = 'transport-stops-layer';
 
@@ -200,9 +201,31 @@ async function createTransportStopsLayer({
     }
 }
 
+export function navigateToStop(stop, navigate) {
+    if (!stop || !stop.options || !stop.latlng) return;
+
+    const stopId = stop.options.id;
+    const lat = stop.latlng.lat;
+    const lng = stop.latlng.lng;
+
+    if (!stopId || lat == null || lng == null) return;
+
+    const pin = `${lat.toFixed(6)},${lng.toFixed(6)}`;
+    const search = new URLSearchParams();
+    search.append('id', stopId.toString());
+    search.append('pin', pin);
+
+    navigate({
+        pathname: MAIN_URL_WITH_SLASH + STOP_URL,
+        search: `?${search}`,
+        hash: globalThis.location.hash,
+    });
+}
+
 const TransportStopsLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
+    const navigate = useNavigate();
 
     const reqIdRef = useRef(0);
 
@@ -222,6 +245,112 @@ const TransportStopsLayer = () => {
     const selectedRouteIdRef = useRef(null);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+
+    async function createStopMarker(stopData) {
+        const iconSvg = await getTransportStopIcon();
+        if (!iconSvg) {
+            return null;
+        }
+
+        const coord = stopData.geometry.coordinates;
+        const stopName = stopData.properties.name;
+
+        const iconHtml = createPoiIcon({
+            color: TRANSPORT_STOP_SHIELD_COLOR,
+            background: TRANSPORT_STOP_BACKGROUND,
+            svgIcon: iconSvg,
+            iconSize: TRANSPORT_STOP_ICON_SIZE,
+        }).options.html;
+
+        const icon = L.divIcon({ html: iconHtml, svg: iconSvg });
+
+        const marker = new L.Marker(new L.LatLng(coord[1], coord[0]), {
+            ...stopData.properties,
+            idObj: stopData.properties.id,
+            name: stopName,
+            icon,
+            svg: iconSvg,
+        });
+
+        bindTooltipToMarker(marker, stopName, TRANSPORT_STOP_ICON_SIZE, true);
+
+        return L.featureGroup([marker]);
+    }
+
+    async function openStopByUrl() {
+        const { id, pin } = ctx.stopByUrl.params;
+
+        if (!id || !pin) {
+            return null;
+        }
+
+        const coords = pin.split(',');
+        if (coords.length !== 2) {
+            return;
+        }
+        const lat = Number.parseFloat(coords[0]);
+        const lon = Number.parseFloat(coords[1]);
+        if (Number.isNaN(lat) || Number.isNaN(lon)) {
+            return;
+        }
+        const params = {
+            lat,
+            lon,
+            stopId: id,
+        };
+        const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
+
+        const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-stop`, {
+            params: cleanParams,
+            apiCache: true,
+        });
+
+        if (response?.data) {
+            const data = response.data;
+            const stop = {
+                mapObj: true,
+                options: { ...data.properties },
+                latlng: {
+                    lat: data.geometry.coordinates[1],
+                    lng: data.geometry.coordinates[0],
+                },
+            };
+
+            ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+            ctx.setSelectedWpt({ stop });
+            return data;
+        }
+        return null;
+    }
+
+    useEffect(() => {
+        if (ctx.stopByUrl?.params) {
+            openStopByUrl().then(async (res) => {
+                let stopLayer = null;
+                if (res) {
+                    stopLayer = await createStopMarker(res);
+                    // remove old stop marker
+                    if (ctx.stopByUrl.layer) {
+                        map.removeLayer(ctx.stopByUrl.layer);
+                    }
+                    if (stopLayer) {
+                        map.addLayer(stopLayer);
+                    }
+                }
+                ctx.setStopByUrl({
+                    params: null,
+                    layer: stopLayer,
+                    open: true,
+                });
+                ctx.setProcessingStopByUrl(false);
+            });
+        } else if (ctx.stopByUrl?.layer && !ctx.stopByUrl?.open) {
+            map.removeLayer(ctx.stopByUrl.layer);
+            ctx.setStopByUrl(null);
+            ctx.setProcessingStopByUrl(false);
+        }
+    }, [ctx.stopByUrl]);
 
     function onClick(e) {
         const lat = e.latlng?.lat ?? e.sourceTarget?._latlng?.lat;
@@ -245,9 +374,9 @@ const TransportStopsLayer = () => {
                 }
             }
 
-            ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
-            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             ctx.setSelectedWpt({ stop });
+
+            navigateToStop(stop, navigate);
         }
     }
 

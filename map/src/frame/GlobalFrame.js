@@ -16,6 +16,7 @@ import {
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
     POI_URL,
+    STOP_URL,
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import GlobalAlert from './components/GlobalAlert';
@@ -32,6 +33,11 @@ import { hideAllTracks } from '../manager/track/DeleteTrackManager';
 import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
+import { createUrlParams } from '../util/Utils';
+
+const ENCODED_COMMA = '%2C';
+const ENCODED_COLON = '%3A';
+const ENCODED_SEMICOLON = '%3B';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -82,6 +88,32 @@ const GlobalFrame = () => {
 
         setShowInstallBanner(isMobileDevice && !isSafari);
     }, [height, width]);
+
+    // URL normalization
+    useEffect(() => {
+        const currentSearch = location.search;
+        if (!currentSearch) return;
+
+        const hasEncodedChars =
+            currentSearch.includes(ENCODED_COMMA) ||
+            currentSearch.includes(ENCODED_COLON) ||
+            currentSearch.includes(ENCODED_SEMICOLON);
+
+        if (!hasEncodedChars) return;
+
+        const searchParams = new URLSearchParams(currentSearch);
+        const params = {};
+        searchParams.forEach((value, key) => {
+            params[key] = value;
+        });
+
+        const normalizedSearch = createUrlParams(params);
+
+        if (normalizedSearch !== currentSearch) {
+            const newUrl = location.pathname + normalizedSearch + (location.hash || '');
+            window.history.replaceState(window.history.state, '', newUrl);
+        }
+    }, [location.search]);
 
     useEffect(() => {
         if (ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
@@ -156,6 +188,26 @@ const GlobalFrame = () => {
         } else {
             ctx.setProcessingPoiByUrl(false);
             ctx.setPoiByUrl((prev) => {
+                return prev ? { ...prev, open: false } : prev;
+            });
+        }
+    }, [location.pathname]);
+
+    useEffect(() => {
+        if (location.pathname.includes(STOP_URL)) {
+            ctx.setProcessingStopByUrl(true);
+            ctx.setStopByUrl((prev) => {
+                return {
+                    ...prev,
+                    params: {
+                        id: searchParams.get('id'),
+                        pin: searchParams.get('pin'),
+                    },
+                };
+            });
+        } else {
+            ctx.setProcessingStopByUrl(false);
+            ctx.setStopByUrl((prev) => {
                 return prev ? { ...prev, open: false } : prev;
             });
         }
