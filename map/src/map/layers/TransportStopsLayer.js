@@ -33,14 +33,70 @@ async function getTransportStopIcon() {
     }
 }
 
-async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick }) {
+function getRouteStopsMap({ stopsList, selectedRoute, routeStopIds, routeStopsMapRef, selectedRouteIdRef }) {
+    const currentRouteId = selectedRoute?.id || null;
+    let routeStopsMap = routeStopsMapRef?.current || null;
+
+    if (selectedRoute && routeStopIds.length > 0) {
+        // Rebuild map only if route id changed
+        if (!routeStopsMap || selectedRouteIdRef?.current !== currentRouteId) {
+            routeStopsMap = new Map();
+            stopsList.forEach((stop) => {
+                const stopId = stop.properties?.id;
+                if (stopId && routeStopIds.includes(stopId)) {
+                    routeStopsMap.set(stopId, stop);
+                }
+            });
+            if (routeStopsMapRef) {
+                routeStopsMapRef.current = routeStopsMap;
+            }
+            if (selectedRouteIdRef) {
+                selectedRouteIdRef.current = currentRouteId;
+            }
+        }
+    } else {
+        // Clear map if no route selected
+        routeStopsMap = null;
+        if (routeStopsMapRef) {
+            routeStopsMapRef.current = null;
+        }
+        if (selectedRouteIdRef) {
+            selectedRouteIdRef.current = null;
+        }
+    }
+
+    return routeStopsMap;
+}
+
+async function createTransportStopsLayer({
+    stopsList = [],
+    map,
+    zoom,
+    onClick,
+    ctx = null,
+    routeStopsMapRef = null,
+    selectedRouteIdRef = null,
+}) {
     if (!stopsList || stopsList.length === 0) {
         return L.featureGroup();
     }
 
+    const selectedRoute = ctx.selectedTransportRoute;
+    const routeStopIds = selectedRoute?.stops || [];
+    const routeColor = selectedRoute?.color || TRANSPORT_STOP_SHIELD_COLOR;
+
+    // Before clustering: collect all route stops from stopsList
+    const routeStopsMap = getRouteStopsMap({
+        stopsList,
+        selectedRoute,
+        routeStopIds,
+        routeStopsMapRef,
+        selectedRouteIdRef,
+    });
+
     const center = map.getCenter();
     const latitude = center.lat;
-    const { mainMarkers, secondaryMarkers } = clusterMarkers({
+    let { mainMarkers, secondaryMarkers } = clusterMarkers({
         places: stopsList,
         zoom,
         latitude,
@@ -48,15 +104,43 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick })
         isPoi: true,
     });
 
+    // After clustering: add route stops to mainMarkers if not present, remove from secondaryMarkers
+    if (selectedRoute && routeStopIds.length > 0) {
+        const mainMarkersStopIds = new Set((mainMarkers || []).map((stop) => stop.properties?.id).filter((id) => id));
+
+        routeStopsMap.forEach((routeStop) => {
+            const stopId = routeStop.properties?.id;
+            if (stopId && !mainMarkersStopIds.has(stopId)) {
+                mainMarkers = [...(mainMarkers || []), routeStop];
+                mainMarkersStopIds.add(stopId);
+            }
+        });
+
+        if (secondaryMarkers) {
+            secondaryMarkers = secondaryMarkers.filter((stop) => {
+                const stopId = stop.properties?.id;
+                return !stopId || !routeStopIds.includes(stopId);
+            });
+        }
+    }
+
     const iconSvg = await getTransportStopIcon();
     if (!iconSvg) {
         return L.featureGroup();
     }
 
+    const getStopColor = (stopId) => {
+        if (ctx.selectedTransportRoute && routeStopIds.length > 0 && stopId && routeStopIds.includes(stopId)) {
+            return routeColor;
+        }
+        return TRANSPORT_STOP_SHIELD_COLOR;
+    };
+
     const mainMarkersLayers = await Promise.all(
         mainMarkers?.map(async (stop) => {
+            const stopColor = getStopColor(stop.properties.id);
             const iconHtml = createPoiIcon({
-                color: TRANSPORT_STOP_SHIELD_COLOR,
+                color: stopColor,
                 background: TRANSPORT_STOP_BACKGROUND,
                 svgIcon: iconSvg,
                 iconSize: TRANSPORT_STOP_ICON_SIZE,
@@ -68,7 +152,7 @@ async function createTransportStopsLayer({ stopsList = [], map, zoom, onClick })
 
             const marker = new L.Marker(new L.LatLng(coord[1], coord[0]), {
                 ...stop.properties,
-                idObj: getObjIdSearch(stop),
+                idObj: stop.properties.id,
                 name: stopName,
                 icon,
                 svg: iconSvg,
@@ -132,6 +216,10 @@ const TransportStopsLayer = () => {
     });
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
+    const [transportRouteLines, setTransportRouteLines] = useState([]);
+
+    const routeStopsMapRef = useRef(null);
+    const selectedRouteIdRef = useRef(null);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
@@ -145,6 +233,18 @@ const TransportStopsLayer = () => {
                 options: e.sourceTarget.options,
                 latlng: e.sourceTarget._latlng,
             };
+
+            // Check if clicked stop belongs to selected route
+            if (ctx.selectedTransportRoute?.stops?.length > 0) {
+                const stopId = e.sourceTarget.options?.id;
+                const routeStopIds = ctx.selectedTransportRoute.stops;
+
+                // If clicked stop is not in route stops, clear the route
+                if (!stopId || !routeStopIds.includes(stopId)) {
+                    ctx.setSelectedTransportRoute(null);
+                }
+            }
+
             ctx.setCurrentObjectType(OBJECT_TYPE_STOP);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             ctx.setSelectedWpt({ stop });
@@ -196,6 +296,9 @@ const TransportStopsLayer = () => {
                         map,
                         zoom,
                         onClick,
+                        ctx,
+                        routeStopsMapRef,
+                        selectedRouteIdRef,
                     });
 
                     updateLayerOnMap(layer);
@@ -240,6 +343,9 @@ const TransportStopsLayer = () => {
                     map,
                     zoom,
                     onClick,
+                    ctx,
+                    routeStopsMapRef,
+                    selectedRouteIdRef,
                 });
 
                 updateLayerOnMap(layer);
@@ -258,7 +364,7 @@ const TransportStopsLayer = () => {
             ignore = true;
             controller.abort();
         };
-    }, [zoom, move, ctx.configureMapState.showTransportStops]);
+    }, [zoom, move, ctx.configureMapState.showTransportStops, ctx.selectedTransportRoute]);
 
     useEffect(() => {
         if (!move) {
@@ -283,7 +389,58 @@ const TransportStopsLayer = () => {
         }
     }
 
-    return null;
+    useEffect(() => {
+        if (!ctx.selectedTransportRoute) {
+            transportRouteLines.forEach((line) => {
+                if (map.hasLayer(line)) {
+                    map.removeLayer(line);
+                }
+            });
+            setTransportRouteLines([]);
+            return;
+        }
+
+        const routeData = ctx.selectedTransportRoute;
+        if (!routeData.nodes || routeData.nodes.length === 0) {
+            return;
+        }
+
+        // Remove old lines
+        transportRouteLines.forEach((line) => {
+            if (map.hasLayer(line)) {
+                map.removeLayer(line);
+            }
+        });
+
+        const routeColor = routeData.color;
+        const newLines = [];
+
+        routeData.nodes.forEach((segment) => {
+            if (!segment || segment.length === 0) {
+                return;
+            }
+            const coords = segment.map((node) => [node.latitude, node.longitude]);
+
+            const polyline = new L.Polyline(coords, {
+                color: routeColor,
+                weight: 4,
+                opacity: 0.8,
+            });
+
+            polyline.addTo(map);
+            newLines.push(polyline);
+        });
+
+        setTransportRouteLines(newLines);
+
+        return () => {
+            newLines.forEach((line) => {
+                if (map.hasLayer(line)) {
+                    map.removeLayer(line);
+                }
+            });
+        };
+    }, [ctx.selectedTransportRoute]);
 };
 
 export default TransportStopsLayer;

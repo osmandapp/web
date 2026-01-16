@@ -6,6 +6,7 @@ import AppContext, {
     isTrack,
     isCloudTrack,
     isTrackAnalyzer,
+    OBJECT_TYPE_STOP,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
@@ -365,6 +366,9 @@ export default function InformationBlock({
 
                                             // not change object type if track analyzer is active, because return to prev menu
                                             if (!isTrackAnalyzer(ctx)) {
+                                                if (ctx.currentObjectType === OBJECT_TYPE_STOP) {
+                                                    ctx.setSelectedTransportRoute(null);
+                                                }
                                                 ctx.setCurrentObjectType(null);
                                             }
                                             if (ctx.selectedGpxFile.mapObj) {
