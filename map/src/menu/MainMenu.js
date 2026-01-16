@@ -766,7 +766,7 @@ export default function MainMenu({
             navigateToUrl({ menu, params: ctx.pageParams });
             return;
         }
-        if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
+        if (location.pathname === MAIN_URL_WITH_SLASH) {
             // if the menu not found, navigate to the main page
             navigateToUrl({ isMain: true, params: ctx.pageParams });
         }

@@ -1,4 +1,5 @@
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { createUrlParams } from '../../Utils';
 
 export function useUpdateQueryParam() {
     const navigate = useNavigate();
@@ -16,12 +17,17 @@ export function useUpdateQueryParam() {
         } else {
             next.set(key, value);
         }
-        const nextStr = next.toString();
+
+        const params = {};
+        next.forEach((value, key) => {
+            params[key] = value;
+        });
+        const nextStr = createUrlParams(params);
         const hash = window.location.hash || location.hash || '';
         navigate(
             {
                 pathname: location.pathname,
-                search: nextStr ? `?${nextStr}` : '',
+                search: nextStr,
                 hash,
             },
             { replace, preventScrollReset: true }
