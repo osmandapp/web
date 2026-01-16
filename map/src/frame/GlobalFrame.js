@@ -16,6 +16,7 @@ import {
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
     POI_URL,
+    STOP_URL,
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import GlobalAlert from './components/GlobalAlert';
@@ -156,6 +157,26 @@ const GlobalFrame = () => {
         } else {
             ctx.setProcessingPoiByUrl(false);
             ctx.setPoiByUrl((prev) => {
+                return prev ? { ...prev, open: false } : prev;
+            });
+        }
+    }, [location.pathname]);
+
+    useEffect(() => {
+        if (location.pathname.includes(STOP_URL)) {
+            ctx.setProcessingStopByUrl(true);
+            ctx.setStopByUrl((prev) => {
+                return {
+                    ...prev,
+                    params: {
+                        id: searchParams.get('id'),
+                        pin: searchParams.get('pin'),
+                    },
+                };
+            });
+        } else {
+            ctx.setProcessingStopByUrl(false);
+            ctx.setStopByUrl((prev) => {
                 return prev ? { ...prev, open: false } : prev;
             });
         }

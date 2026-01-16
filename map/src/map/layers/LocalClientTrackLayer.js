@@ -67,8 +67,8 @@ export default function LocalClientTrackLayer() {
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
     useEffect(() => {
-        map.spin(ctx.processingSaveTrack || ctx.processingPoiByUrl, { color: '#1976d2' });
-    }, [ctx.processingSaveTrack, ctx.processingPoiByUrl]);
+        map.spin(ctx.processingSaveTrack || ctx.processingPoiByUrl || ctx.processingStopByUrl, { color: '#1976d2' });
+    }, [ctx.processingSaveTrack, ctx.processingPoiByUrl, ctx.processingStopByUrl]);
 
     let ctxTrack = ctx.selectedGpxFile;
 

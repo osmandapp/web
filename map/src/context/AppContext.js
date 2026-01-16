@@ -19,7 +19,7 @@ import cloneDeep from 'lodash-es/cloneDeep';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { getShareWithMe } from '../manager/ShareManager';
-import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX, POI_URL } from '../manager/GlobalManager';
+import { FAVOURITES, GLOBAL_GRAPH_HEIGHT_SIZE, GPX, POI_URL, STOP_URL } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
 import { getSortFromDB } from './FavoriteStorage';
@@ -344,6 +344,7 @@ export const AppContextProvider = (props) => {
     const [exploreMenu, setExploreMenu] = useState(false);
     const [poiCatMenu, setPoiCatMenu] = useState(false);
     const [poiByUrl, setPoiByUrl] = useState(null);
+    const [stopByUrl, setStopByUrl] = useState(null);
 
     // travel
     const [openTravel, setOpenTravel] = useState(false);
@@ -371,7 +372,11 @@ export const AppContextProvider = (props) => {
     const [processHeightmaps, setProcessHeightmaps] = useState(false);
 
     let pinInit;
-    if (searchParams.get(PIN_PARAM) && !globalThis.location.pathname.includes(POI_URL)) {
+    if (
+        searchParams.get(PIN_PARAM) &&
+        !globalThis.location.pathname.includes(POI_URL) &&
+        !globalThis.location.pathname.includes(STOP_URL)
+    ) {
         const arr = searchParams.get(PIN_PARAM).split(',');
         const lat = Number.parseFloat(arr[0]);
         const lng = Number.parseFloat(arr[1]);
@@ -499,6 +504,7 @@ export const AppContextProvider = (props) => {
     const [selectedPoiObj, setSelectedPoiObj] = useState(null);
 
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
+    const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
 
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
@@ -906,6 +912,8 @@ export const AppContextProvider = (props) => {
                 setZoomToCoords,
                 poiByUrl,
                 setPoiByUrl,
+                stopByUrl,
+                setStopByUrl,
                 closeMapObj,
                 setCloseMapObj,
                 saveTrackToCloud,
@@ -916,6 +924,8 @@ export const AppContextProvider = (props) => {
                 setShowPoiConfig,
                 processingPoiByUrl,
                 setProcessingPoiByUrl,
+                processingStopByUrl,
+                setProcessingStopByUrl,
                 processingAnalytics,
                 setProcessingAnalytics,
                 openNavigationSettings,
