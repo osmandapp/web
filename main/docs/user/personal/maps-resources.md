@@ -427,13 +427,15 @@ When a map is deactivated, it may temporarily disappear from the Local tab. If a
 
 Go to: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Weather forecast Update maps iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Weather forecast Update maps iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 The **Updates** tab allows you to refresh OsmAnd maps and resources. Standard and road-only maps are released once a month, usually between the 2nd and 5th day, and include OpenStreetMap data up to the last day of the previous month (for example, the October release contains data until 30 September). Other data such as Wikipedia, terrain, or nautical maps may follow different, non-regular update schedules. 
 
 Use the *Update all* button to update all maps simultaneously, or update individual maps as needed. For hourly updates, check your [Live Updates](#live-updates) subscription status. If enabled, the **Live Updates** section will appear at the top of the tab, under the Device Memory indicator.
 
-The **Updates** tab also includes a Weather forecast section. It is designed to manage your offline forecasts for selected countries:
+The **Updates** tab may also show an **Unsupported maps** item. It appears when you have maps that are no longer supported and have been replaced by smaller regions. Tap Unsupported maps to review the list, remove outdated maps, and download the new region versions instead. On the Unsupported maps screen, you can view all unsupported maps and use Delete all to remove them at once (a confirmation prompt is shown before deletion).
+
+The **Updates** tab also includes a **Weather forecast** section. It is designed to manage your offline forecasts for selected countries:
 
 - If no forecast has been downloaded yet, you will see a prompt to select countries. Forecast data is available for up to 7 days.
 - Once a forecast is downloaded, the ***Offline forecast*** screen displays the list of countries with status information, including the last update time, validity period, and total data size.
