@@ -117,6 +117,15 @@ export default function PhotosModal({ photos }) {
 
     const formatDate = (dateStr) => {
         const clean = dateStr?.startsWith('+') ? dateStr.slice(1) : dateStr;
+        const yearRegex = /^\d{4}$/;
+        if (yearRegex.test(clean)) {
+            return clean;
+        }
+        const yearMonthRegex = /^\d{4}-\d{2}$/;
+        if (yearMonthRegex.test(clean)) {
+            const d = new Date(clean + '-01'); // Add the first day of the month for browser compatibility
+            return isNaN(d) ? dateStr : fmt.monthYearLong(d);
+        }
         const d = new Date(clean);
         return isNaN(d) ? dateStr : fmt.dMMMMY(d);
     };
