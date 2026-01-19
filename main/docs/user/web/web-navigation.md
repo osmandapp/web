@@ -44,6 +44,8 @@ Swap Start and Destination — swaps the Start and Destination while keeping int
 
 At the top of the Route panel, you can choose a routing profile for your route. A set of commonly used profiles is shown as four icons. To access more options, open the three-dots menu next to the profile icons. It expands the full list of available profiles.
 
+Routing profiles on the Web Map Portal use the same routing rules and settings as in the OsmAnd mobile app. For details on how routes are calculated and how routing parameters work, see [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing)
+
 When you switch the profile, Navigation updates the route to match the selected travel mode.
 
 ![Web Navigation](@site/static/img/web/navigation_profile.png)
@@ -51,7 +53,7 @@ When you switch the profile, Navigation updates the route to match the selected 
 
 ## Navigation Settings {#navigation-settings}
 
-To adjust how routes are calculated, open Settings using the gear icon in the Route panel. Settings are grouped into sections that you can expand/collapse. The set of sections and options depends on the selected routing profile, so you’ll see different parameters for different travel modes.
+To adjust how routes are calculated, open Settings using the gear icon in the Route panel (for navigation settings in the OsmAnd mobile app, see [here](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). Settings are grouped into sections that you can expand/collapse. The set of sections and options depends on the selected routing profile, so you’ll see different parameters for different travel modes.
 
 Typical sections include:
 
@@ -65,7 +67,7 @@ Typical sections include:
 
 ## Attaching Track {#attaching-track}
 
-The **Attach to roads** block lets you use an existing GPX track as the basis for navigation. OsmAnd Web matches the track to nearby roads to provide turn-by-turn guidance.
+The **[Attach to roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** block lets you use an existing GPX track as the basis for navigation. OsmAnd Web matches the track to nearby roads to provide turn-by-turn guidance.
 
 When you click Select track, the browser opens a file picker where you can choose a .gpx file from your computer. After you select a track:
 - The track is displayed on the map and used to calculate the route.
@@ -126,5 +128,6 @@ To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792
 
 - [Route Preparation](../navigation/setup/route-navigation.md)
 - [Navigation Settings](../navigation/guidance/navigation-settings.md)
+- [About OsmAnd routing](../navigation/routing/osmand-routing.md)
 - [Vehicle Parameters](../navigation/guidance/vehicle-parameters.md)
 - [Plan Route](../web/planner.md)
