@@ -48,7 +48,7 @@ Use **Categories** to browse POI by type and display them on the map. The menu s
 
 ### Explore {#explore}
 
-The **Explore** section shows popular places with photos directly on the map. It builds a list of POI for the current map center (sorted by popularity) and displays the same places as photo markers on the map. Preview images and POI information are based on Wikidata/Wikimedia and related sources when available.
+The **Explore** section shows [popular places](https://osmand.net/docs/user/map/popular_places) with photos directly on the map. It builds a list of POI for the current map center (sorted by popularity) and displays the same places as photo markers on the map. Preview images and POI information are based on Wikidata/Wikimedia and related sources when available.
 
 Open the Search tab to access Explore — the Explore results are displayed on the map automatically. Use Show all to open the full Explore categories list. You can refine what appears in the list and on the map using Filter, which opens the Explore categories menu. Selecting a POI from the list or on the map opens the [POI Context Menu](#poi-context-menu).
 

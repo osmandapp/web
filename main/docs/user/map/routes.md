@@ -123,7 +123,7 @@ Ski slopes and routes are a specific group of [routes](https://wiki.openstreetma
 
 ### Snowmobile trails {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
 
 Snowmobile trails are mapped in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) as `route=snowmobile`. They are used for winter recreation and to connect remote areas during the snow season. In OsmAnd, snowmobile trails are clickable, see [Actions with Routes](#actions-with-routes) section.
 

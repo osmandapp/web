@@ -66,11 +66,11 @@ Web Map Portal supports several access levels: without login, with OsmAnd Start,
 | [Route Planner](./planner.md) | Without Login |
 | [Weather Overlays](./web-weather.md) | Without Login |
 | [Settings](./web-map.md#settings) | Without Login |
-| [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favorites](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| <ProFeature/> |
-| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Tracks folders and Layer](./web-tracks.md) | <ProFeature/> |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favorites](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Tracks folders and Layer](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.

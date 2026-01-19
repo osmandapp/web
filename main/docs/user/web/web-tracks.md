@@ -91,7 +91,7 @@ The following features are available after choosin cloud track:
 - Action buttons:
   - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
   - *Download GPX* - downloads the track to the PC.
-  - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
+  - *Recalculate* Elevation (Satellite) - recalculates elevation values for the selected track and shows them on the elevation graph.
   - *Delete Track* - deletes the track.
   - *Close track* - close the track.
 

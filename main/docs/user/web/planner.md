@@ -85,7 +85,7 @@ When you create or import a route in Plan route, a vertical track panel opens. U
 
 From the track panel you can also perform common file actions. You can **Save to Cloud** to keep the route for later use, **Download GPX** to export it as a file, **Close track** to stop editing it, or **Delete track** to remove it from your local list. These actions are also available from the corresponding controls in the [Info panel](#info-panel).
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
 ## Track Details Panels {#track-details-panels}

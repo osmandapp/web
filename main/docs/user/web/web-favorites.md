@@ -59,7 +59,7 @@ During access configuration, the following dialogs may appear:
 
 Selecting a favorite opens the **Details** panel. This panel appears when you click a favorite directly on the map or select it from a favorites folder.
 
-The Details view provides information associated with the selected place and depends on the data available for that specific favorite. At a minimum, it includes the location on the map and its geographic coordinates. For places linked to OpenStreetMap objects or enriched sources, additional metadata may be shown, such as names, categories, identifiers, or reference links (for example, [Wikipedia](../plugins/wikipedia.md) or Wikidata links). 
+The Details view provides information associated with the selected place and depends on the data available for that specific favorite. At a minimum, it includes the location on the map and its geographic coordinates. For places linked to OpenStreetMap objects or enriched sources, additional metadata may be shown, such as names, categories, identifiers, or reference links (for example, Wikipedia or Wikidata links). 
 
 ![Web Favorites Details](@site/static/img/web/favorites_details.png)
 
