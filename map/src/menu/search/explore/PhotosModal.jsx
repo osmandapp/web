@@ -116,7 +116,22 @@ export default function PhotosModal({ photos }) {
     }
 
     const formatDate = (dateStr) => {
+        if (!dateStr) {
+            return '';
+        }
         const clean = dateStr?.startsWith('+') ? dateStr.slice(1) : dateStr;
+        // Format YYYY 2025 -> 2025
+        const yearRegex = /^\d{4}$/;
+        if (yearRegex.test(clean)) {
+            return clean;
+        }
+        // Format YYYY-MM 2025-09 -> September 2025
+        const yearMonthRegex = /^\d{4}-\d{2}$/;
+        if (yearMonthRegex.test(clean)) {
+            const d = new Date(clean + '-01'); // Add the first day of the month for browser compatibility
+            return isNaN(d) ? dateStr : fmt.monthYearLong(d);
+        }
+        // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025
         const d = new Date(clean);
         return isNaN(d) ? dateStr : fmt.dMMMMY(d);
     };
