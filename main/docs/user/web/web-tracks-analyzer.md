@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-**Tracks Analyzer** is a web tool that helps analyze repeating track segments between selected points on the map. It scans your tracks and finds all segments that pass through the chosen location(s), allowing you to compare speed, elevation, distance, and time across multiple activities.
+**Tracks Analyzer** is a web tool that helps analyze repeating track segments between selected points on the map. To use this feature with your own data, you need an OsmAnd Pro account with tracks synced to OsmAnd Cloud — otherwise, your tracks won’t be available on the Web Planner. It scans your tracks and finds all segments that pass through the chosen location(s), allowing you to compare speed, elevation, distance, and time across multiple activities.
 
 ## How to Use {#how-to-use}
 
