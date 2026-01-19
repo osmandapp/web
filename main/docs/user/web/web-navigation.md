@@ -44,7 +44,7 @@ Swap Start and Destination — swaps the Start and Destination while keeping int
 
 At the top of the Route panel, you can choose a routing profile for your route. A set of commonly used profiles is shown as four icons. To access more options, open the three-dots menu next to the profile icons. It expands the full list of available profiles.
 
-Routing profiles on the Web Map Portal use the same routing rules and settings as in the OsmAnd mobile app. For details on how routes are calculated and how routing parameters work, see [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing)
+Routing profiles on the Web Planner use the same routing rules and settings as in the OsmAnd mobile app. For details on how routes are calculated and how routing parameters work, see [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
 
 When you switch the profile, Navigation updates the route to match the selected travel mode.
 
@@ -87,7 +87,7 @@ Info summarizes the route and elevation data:
 - **Route** — distance and time.
 - **Uphill/Downhill** — total ascent and descent.
 - **Elevation (min/avg/max)** — elevation statistics for the route.
-- **Elevation (Satellite)** — Recalculate to rebuild elevation using satellite data (if available).
+- **Elevation (Satellite)** — recalculates the track’s elevation data using terrain (DEM) data and updates the elevation graph.
 
 Below the summary, the elevation chart helps you inspect the route profile. You can toggle Elevation and Slope, and use the slider under the chart to focus on a specific part of the route.
 
@@ -107,7 +107,7 @@ You can fine-tune the route directly on the map by dragging route markers to a d
 
 Use *Download* to export the route as a track. The download dialog offers two options:
 **Full track data** — includes full data, including navigation instructions.
-**Simplified track** — a lighter version that’s more suitable for use with other apps.
+**[Simplified track](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — a lighter version that’s more suitable for use with other apps.
 
 If you plan to open the GPX in third-party apps, choose Simplified track for better compatibility. This helps avoid cases when another app may display an incorrect segment after import.
 
