@@ -59,6 +59,12 @@ export default async function test() {
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
+    await waitBy(By.id(`se-cloud-track-${trackName}`));
+    await clickBy(By.id(`se-cloud-track-${trackName}`));
+    await waitBy(By.id('se-infoblock-all'));
+    await clickBy(By.id('se-button-back'));
+    await waitBy(By.id(`se-cloud-track-${trackName}`));
+
     await actionOpenShare(trackName2);
     linkTrack2 = await createShareFile(trackName2);
 
