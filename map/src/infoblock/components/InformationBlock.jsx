@@ -102,6 +102,13 @@ export default function InformationBlock({
         }
     }, [closeShareMenu]);
 
+    // close share file item when track is closed
+    useEffect(() => {
+        if (ctx.selectedGpxFile && isEmpty(ctx.selectedGpxFile) && openShareFileItem) {
+            setOpenShareFileItem(false);
+        }
+    }, [ctx.selectedGpxFile]);
+
     useEffect(() => {
         if (!showInfoBlock) {
             // stop-editor (close button)
