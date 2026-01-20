@@ -589,6 +589,17 @@ export default function MainMenu({
         }
     }, [ctx.currentObjectType]);
 
+    // Close navigation settings if the navigation is closed
+    useEffect(() => {
+        if (
+            selectedType !== OBJECT_TYPE_NAVIGATION_TRACK &&
+            ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK &&
+            ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_ALONE
+        ) {
+            ctx.setOpenNavigationSettings(false);
+        }
+    }, [ctx.currentObjectType, selectedType]);
+
     useEffect(() => {
         if (ctx.saveTrackToCloud) {
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
