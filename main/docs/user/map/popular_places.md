@@ -48,6 +48,8 @@ Only POIs with a linked **Wikidata ID** are displayed. These IDs connect map obj
 
 You can view the Wikidata link directly in the [Map Context Menu](../map/map-context-menu.md). Tapping the Wikidata tag opens the full object page on the Wikidata website.
 
+Images and other Wikidata-based content in Popular Places are refreshed on a schedule and may not appear immediately after changes in Wikidata or Wikimedia Commons. Current refresh frequency: twice a month — on the **10th** and **20th**.
+
 Learn how to find a Wikidata ID: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
