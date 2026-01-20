@@ -163,7 +163,7 @@ export default function ConfigureMap() {
                                         setOpenPoiConfig(true);
                                     }}
                                 >
-                                    <ListItemIcon className={setIconStyles(ctx.configureMapState.pois.length > 0)}>
+                                    <ListItemIcon className={setIconStyles((ctx.configureMapState.pois?.length ?? 0) > 0)}>
                                         <PoiIcon />
                                     </ListItemIcon>
                                     <ListItemText>
@@ -177,9 +177,9 @@ export default function ConfigureMap() {
                                             <Typography variant="inherit" noWrap>
                                                 {t('layer_poi')}
                                             </Typography>
-                                            {ctx.configureMapState.pois.length > 0 && (
+                                            {(ctx.configureMapState.pois?.length ?? 0) > 0 && (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                                    {ctx.configureMapState.pois.length}
+                                                    {ctx.configureMapState.pois?.length ?? 0}
                                                 </Typography>
                                             )}
                                         </div>
