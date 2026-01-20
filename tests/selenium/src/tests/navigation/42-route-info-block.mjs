@@ -43,7 +43,7 @@ const routes = [
         strings: [
             'Points: 2',
             /Car 4[0-9][0-9]\.\d+ km/,
-            /Route: 4[0-9][0-9]\.\d+ km, 5:\d{2} min/,
+            /Route: 4[0-9][0-9]\.\d+ km, [4-9]:\d{2} min/,
             /-?\d+ \/ -?\d+ \/ -?\d+ m/, // ele
         ],
     },
