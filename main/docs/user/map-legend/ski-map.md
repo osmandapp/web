@@ -5,7 +5,7 @@ title: Ski Map Style
 import Translate from '@site/src/components/Translate.js';
 
 # Ski map style {#ski-map-style}
-Default OsmAnd map style, part of Ski map plugin.
+Ski map style is a separate OsmAnd rendering style defined by its own XML configuration file. The complete set of rendering rules is available [here](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml).
 <Translate android="yes" id="ski_map_render_descr" />
 
 ## Piste type {#piste-type}
