@@ -230,16 +230,18 @@ export default function PoiLayer() {
 
     useEffect(() => {
         ctx.setShowPoiCategories((prev) => {
-            const configCats = ctx.configureMapState.pois.map((x) => x.category);
+            const pois = ctx.configureMapState?.pois;
+            if (!pois || !Array.isArray(pois)) {
+                return prev;
+            }
 
+            const configCats = new Set(pois.map((x) => x.category));
             // drop config-origin items that no longer exist in Configure Map
-            const kept = prev.filter((o) => !(o.fromConfig && !configCats.includes(o.category)));
+            const kept = prev.filter((o) => !(o.fromConfig && !configCats.has(o.category)));
 
             const prevConfigCats = new Set(kept.filter((o) => o.fromConfig).map((o) => o.category));
 
-            const toAdd = ctx.configureMapState.pois
-                .filter((o) => !prevConfigCats.has(o.category))
-                .map((o) => ({ ...o, fromConfig: true }));
+            const toAdd = pois.filter((o) => !prevConfigCats.has(o.category)).map((o) => ({ ...o, fromConfig: true }));
 
             return toAdd.length || kept.length !== prev.length ? [...kept, ...toAdd] : prev;
         });

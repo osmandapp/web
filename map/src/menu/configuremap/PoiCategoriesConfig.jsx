@@ -41,7 +41,11 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
     const activePoiFilters = ctx.poiCategory?.filters;
 
     useEffect(() => {
-        if (ctx.configureMapState.pois.length > 0) {
+        if (
+            ctx.configureMapState?.pois &&
+            Array.isArray(ctx.configureMapState.pois) &&
+            ctx.configureMapState.pois.length > 0
+        ) {
             const categories = ctx.configureMapState.pois.map((item) => item.category);
             setSelectedCategories(new Set(categories));
         }
