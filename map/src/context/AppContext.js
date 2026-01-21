@@ -543,6 +543,8 @@ export const AppContextProvider = (props) => {
                 localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(savedConfigureMap));
                 return defaultConfigureMapStateValues;
             }
+            // Normalize saved data to ensure all default fields are present
+            savedConfigureMap = { ...defaultConfigureMapStateValues, ...savedConfigureMap };
             setHeightmap(savedConfigureMap.terrain);
             if (!isEmpty(savedConfigureMap.pois)) {
                 setShowPoiCategories(savedConfigureMap.pois);
