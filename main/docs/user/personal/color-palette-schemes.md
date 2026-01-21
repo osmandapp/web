@@ -146,6 +146,13 @@ Each line represents a numerical value (for the color palette, it's an index) an
 
 After moving this TXT file to *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
+If you need to change an existing palette file inside OsmAnd (instead of adding a new TXT file), you can edit it through an exported backup (.osf).
+- Export the palette data as an .osf backup (see the [Import / Export](#import--export) section below).
+- Unzip the exported .osf. The .osf file is a renamed .zip archive. Make a copy of the original .osf file, then unzip it using any archive tool.
+- Find and edit the palette TXT file. Inside the extracted folders, locate the needed palette file (for example: height_altitude_&lt;type_name&gt;.txt or route_speed_&lt;type_name&gt;.txt) and edit its values in a text editor.
+- Zip back and rename to .osf. Zip the extracted content back into a .zip archive, then rename it to .osf. Keep the same folder structure.
+- Import the updated .osf into OsmAnd (see the **Import / Export** section below) and restart the app to apply changes.
+
 ### Import / Export {#import--export}
 
 <Tabs groupId="operating-systems" queryString="current-os">
