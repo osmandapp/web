@@ -4,8 +4,9 @@ import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
 import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './creator/EditablePolyline';
-import { clusterMarkers, createHoverMarker } from './Clusterizer';
+import { clusterMarkers, createHoverMarker, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
+import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -48,6 +49,15 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
         }
     });
     parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts, groupId, type });
+
+    const trackName = data?.name;
+    if (trackName) {
+        for (const layer of layers) {
+            if (layer instanceof L.Polyline) {
+                layer.options.trackName = trackName;
+            }
+        }
+    }
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
@@ -175,6 +185,47 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
     return coordsAll;
 }
 
+function addTooltipOnHover(polyline, map, coords) {
+    if (coords.length === 0) return;
+
+    const tooltipRef = { current: null };
+
+    const onMouseOver = (e) => {
+        const trackName = polyline.options?.trackName;
+        if (!trackName) return;
+
+        if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
+            map.removeLayer(tooltipRef.current);
+        }
+        // show tooltip at mouse position or at middle of the track
+        const latlng = e.latlng || (coords.length > 0 ? coords[Math.floor(coords.length / 2)] : null);
+        if (latlng) {
+            const shortName = Utils.truncateText(trackName, TOOLTIP_MAX_LENGTH);
+            tooltipRef.current = createTooltip(shortName, latlng);
+            map.addLayer(tooltipRef.current);
+        }
+    };
+
+    const onMouseOut = () => {
+        removeTooltip(map, tooltipRef);
+    };
+
+    const onZoomEnd = () => {
+        removeTooltip(map, tooltipRef);
+    };
+
+    polyline.on('mouseover', onMouseOver);
+    polyline.on('mouseout', onMouseOut);
+    map.on('zoomend', onZoomEnd);
+
+    polyline.on('remove', () => {
+        removeTooltip(map, tooltipRef);
+        map.off('zoomend', onZoomEnd);
+        polyline.off('mouseover', onMouseOver);
+        polyline.off('mouseout', onMouseOut);
+    });
+}
+
 function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
     let color =
         point && points
@@ -197,6 +248,8 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
         weight: getPolylineWeight(width, map.getZoom()),
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
+
+    addTooltipOnHover(polyline, map, coords);
 
     if (!arrowSettings.show) return polyline;
 

@@ -1,6 +1,8 @@
 import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
+import Utils from '../../util/Utils';
 import { getPointLatLon } from './TrackLayerProvider';
+import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
 import { getObjIdSearch, searchTypeMap } from '../layers/SearchLayer';
 import {
     CATEGORY_TYPE,
@@ -397,16 +399,10 @@ export function createHoverMarker({
         }
         if (text) {
             const offset = mainStyle ? [5, iconSize * 0.8] : [0, iconSize * 0.8];
-            const title = text;
-            const shortTitle = title.length > 50 ? title.substring(0, 50) + '...' : title;
-            tooltipRef.current = L.tooltip({
-                permanent: true,
-                direction: 'bottom',
+            const shortTitle = Utils.truncateText(text, TOOLTIP_MAX_LENGTH);
+            tooltipRef.current = createTooltip(shortTitle, latlng, {
                 offset: offset,
-                className: styles.tooltip,
-            })
-                .setContent(shortTitle)
-                .setLatLng(latlng);
+            });
             map.addLayer(tooltipRef.current);
         }
     };
