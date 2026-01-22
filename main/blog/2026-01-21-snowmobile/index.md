@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 When the landscape turns white and roads become snowy paths, OsmAnd is your perfect winter riding companion.
 
-With the dedicated [**Snowmobile map style**](https://osmand.net/docs/user/map/vector-maps#snowmobile), you can easily identify official routes right on the map. Trails mapped as [`route=snowmobile`](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) in OpenStreetMap appear clearly, distinct from standard roads. Because OsmAnd works completely offline, you can rely on guidance even in backcountry areas with zero network coverage.
+With the dedicated [**Snowmobile map style**](https://osmand.net/docs/user/map/vector-maps#snowmobile), you can easily identify official routes right on the map. Trails mapped as [`route=snowmobile`](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) in OpenStreetMap appear clearly, distinct from standard roads. Snowmobile map legend is [here](https://osmand.net/docs/user/map-legend/snowmobile-map). Because OsmAnd works completely offline, you can rely on guidance even in backcountry areas with zero network coverage. 
 
 Just tap on a visible trail on the map to [follow the track](https://osmand.net/docs/user/navigation/setup/gpx-navigation#follow-track-options) and start your adventure.
 
