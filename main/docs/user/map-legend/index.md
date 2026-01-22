@@ -13,5 +13,8 @@ OsmAnd map legend for any styles
 ### [Ski Map Style](./ski-map.md) {#ski-map-style}
 <Translate android="yes" id="ski_map_render_descr" />
 
+### [Snowmobile Map Style](./snowmobile-map.md) {#snowmobile-map-style}
+<Translate android="yes" id="snowmobile_render_descr" />
+
 ### [Nautical Map Style](./nautical-map.md) {#nautical-map-style}
 <Translate android="yes" id="nautical_render_descr" />
