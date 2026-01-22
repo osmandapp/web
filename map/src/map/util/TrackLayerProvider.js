@@ -6,7 +6,7 @@ import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, createHoverMarker, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
-import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
+import { createTooltip, TOOLTIP_MAX_LENGTH, formatTrackName } from './MapManager';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -200,7 +200,8 @@ function addTooltipOnHover(polyline, map, coords) {
         // show tooltip at mouse position or at middle of the track
         const latlng = e.latlng || coords[Math.floor(coords.length / 2)];
         if (latlng) {
-            const shortName = Utils.truncateText(trackName, TOOLTIP_MAX_LENGTH);
+            const formattedName = formatTrackName(trackName);
+            const shortName = Utils.truncateText(formattedName, TOOLTIP_MAX_LENGTH);
             tooltipRef.current = createTooltip(shortName, latlng);
             map.addLayer(tooltipRef.current);
         }
