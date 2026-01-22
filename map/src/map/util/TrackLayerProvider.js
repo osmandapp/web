@@ -185,13 +185,13 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
     return coordsAll;
 }
 
-function addTooltipOnHover(polyline, map, coords) {
+function addTooltipOnHover(polyline, map, coords, name = null) {
     if (coords.length === 0) return;
 
     const tooltipRef = { current: null };
 
     const onMouseOver = (e) => {
-        const trackName = polyline.options?.trackName;
+        const trackName = name ?? polyline.options?.trackName;
         if (!trackName) return;
 
         if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
@@ -735,6 +735,7 @@ const TrackLayerProvider = {
     getPolylines,
     updatePolyline,
     createEditableTempLPolyline,
+    addTooltipOnHover,
     TEMP_LINE_STYLE,
     TEMP_LAYER_FLAG,
 };
