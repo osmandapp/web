@@ -1,6 +1,9 @@
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE } from '../../manager/GlobalManager';
 import L from 'leaflet';
-import styles from '../../menu/search/search.module.css';
+import Utils from '../../util/Utils';
+import styles from '../map.module.css';
+
+export const TOOLTIP_MAX_LENGTH = 50;
 
 export function getVisibleBbox(map, ctx) {
     if (!map?.getSize) {
@@ -51,7 +54,7 @@ export function bindTooltipToMarker(marker, text, iconSize = 16, mainStyle = fal
     if (!text) {
         return;
     }
-    const shortTitle = text.length > 50 ? text.substring(0, 50) + '...' : text;
+    const shortTitle = Utils.truncateText(text, TOOLTIP_MAX_LENGTH);
     const offset = mainStyle ? [5, iconSize * 0.8 + 5] : [0, iconSize * 0.8];
 
     marker.bindTooltip(shortTitle, {
@@ -78,4 +81,16 @@ export async function getIconFromMap(name) {
         svgData = await response.text();
     }
     return svgData;
+}
+
+export function createTooltip(content, latlng, options = {}) {
+    const { direction = 'bottom', offset = [0, 8], permanent = true } = options;
+    return L.tooltip({
+        permanent,
+        direction,
+        offset,
+        className: styles.tooltip,
+    })
+        .setContent(content)
+        .setLatLng(latlng);
 }

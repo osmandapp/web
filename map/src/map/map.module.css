@@ -74,3 +74,6 @@
     margin-left: 4px !important;
     margin-top: 4px !important;
 }
+.tooltip {
+    border-radius: 33px !important;
+}

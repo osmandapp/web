@@ -366,6 +366,10 @@ export function decodeString(str) {
     }
 }
 
+export function truncateText(text, maxLength) {
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+}
+
 const Utils = {
     getFileData,
     getFileInfo,
@@ -374,6 +378,7 @@ const Utils = {
     getPointsDist,
     hexToRgba,
     numberToRgba,
+    truncateText,
 };
 
 export default Utils;
