@@ -268,6 +268,13 @@ export default function LocalClientTrackLayer() {
                 // Check if the track layer is still present on the map
                 if (!map.hasLayer(currLayer.layer)) {
                     currLayer.layer.options = { ...currLayer.layer.options, type: LOCAL_TRACKS_LAYERS_ID };
+                    // Set trackName for all polylines in the layer
+                    TrackLayerProvider.addTooltipOnHover(
+                        currLayer.layer,
+                        map,
+                        currLayer.points.map((point) => new L.LatLng(point.lat, point.lng)),
+                        track?.name
+                    );
                     map.addLayer(currLayer.layer);
                 }
 
