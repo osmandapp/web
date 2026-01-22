@@ -198,7 +198,7 @@ function addTooltipOnHover(polyline, map, coords) {
             map.removeLayer(tooltipRef.current);
         }
         // show tooltip at mouse position or at middle of the track
-        const latlng = e.latlng || (coords.length > 0 ? coords[Math.floor(coords.length / 2)] : null);
+        const latlng = e.latlng || coords[Math.floor(coords.length / 2)];
         if (latlng) {
             const shortName = Utils.truncateText(trackName, TOOLTIP_MAX_LENGTH);
             tooltipRef.current = createTooltip(shortName, latlng);
