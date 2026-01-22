@@ -76,4 +76,9 @@
 }
 .tooltip {
     border-radius: 33px !important;
+    width: max-content !important;
+    max-width: 170px !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+    text-align: center !important;
 }

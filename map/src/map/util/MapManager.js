@@ -5,6 +5,10 @@ import styles from '../map.module.css';
 
 export const TOOLTIP_MAX_LENGTH = 50;
 
+export function formatTrackName(name) {
+    return name ? name.replaceAll('/', ' · ') : name;
+}
+
 export function getVisibleBbox(map, ctx) {
     if (!map?.getSize) {
         return null;
