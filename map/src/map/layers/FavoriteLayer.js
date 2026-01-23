@@ -148,21 +148,40 @@ const FavoriteLayer = () => {
         }
     }, [ctx.updateMarkers]);
 
-    useEffect(() => {
-        if (!isEmpty(ctx.favorites)) {
-            Object.values(ctx.favorites.mapObjs).forEach((file) => {
-                if (!ctx.configureMapState.showFavorites) {
-                    removeMarkersFromMap(file);
-                } else {
-                    addMarkersOnMap(file);
-                }
-            });
-        }
-    }, [ctx.configureMapState.showFavorites]);
-
     function removeMarkersFromMap(file) {
         deleteMarkers(file);
         deleteOldMarkers(file);
+    }
+
+    function updateMarkers({ onlyOpened = false } = {}) {
+        const favoritesGroups = ctx.favorites?.mapObjs;
+        if (!favoritesGroups) return;
+
+        const openGroupId = ctx.openFavGroups?.[ctx.openFavGroups.length - 1]?.id;
+
+        for (const fileId of Object.keys(favoritesGroups)) {
+            const file = favoritesGroups[fileId];
+
+            if (onlyOpened && !file.url) {
+                continue;
+            }
+
+            if (!ctx.configureMapState.showFavorites) {
+                removeMarkersFromMap(file);
+                continue;
+            }
+
+            if (file.url) {
+                if (openGroupId) {
+                    fileId === openGroupId ? addMarkersOnMap(file) : removeMarkersFromMap(file);
+                } else {
+                    addMarkersOnMap(file);
+                }
+                deleteOldMarkers(file);
+            } else {
+                removeMarkersFromMap(file);
+            }
+        }
     }
 
     function addMarkersOnMap(file) {
@@ -236,20 +255,10 @@ const FavoriteLayer = () => {
         }
     }
 
-    // add markers on map or remove markers from map
     useEffect(() => {
         ctx.setFavLoading(false);
-        const favoritesGroups = ctx.favorites?.mapObjs;
-        favoritesGroups &&
-            Object.values(favoritesGroups).forEach((file) => {
-                if (file.url && ctx.configureMapState.showFavorites) {
-                    addMarkersOnMap(file);
-                    deleteOldMarkers(file);
-                } else if (!file.url) {
-                    removeMarkersFromMap(file);
-                }
-            });
-    }, [ctx.favorites]);
+        updateMarkers();
+    }, [ctx.favorites, ctx.openFavGroups, ctx.configureMapState.showFavorites]);
 
     // update markers on map after zoom
     useEffect(() => {
@@ -260,27 +269,16 @@ const FavoriteLayer = () => {
             delete ctx.selectedGpxFile.zoom;
             return;
         }
-        updateMarkers();
+        updateMarkers({ onlyOpened: true });
     }, [zoom]);
 
     // update markers on map after move
     useEffect(() => {
         if (move) {
-            updateMarkers();
+            updateMarkers({ onlyOpened: true });
             setMove(false);
         }
     }, [move]);
-
-    function updateMarkers() {
-        const favoritesGroups = ctx.favorites?.mapObjs;
-        favoritesGroups &&
-            Object.values(favoritesGroups).forEach((file) => {
-                if (file.url && ctx.configureMapState.showFavorites) {
-                    addMarkersOnMap(file);
-                    deleteOldMarkers(file);
-                }
-            });
-    }
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent?.layer) {
