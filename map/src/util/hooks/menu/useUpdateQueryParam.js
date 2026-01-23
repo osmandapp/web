@@ -6,7 +6,7 @@ export function useUpdateQueryParam() {
     const location = useLocation();
     const [searchParams] = useSearchParams();
 
-    return (key, value, expectedLocation, { replace = true } = {}) => {
+    const updateQueryParam = (key, value, expectedLocation, { replace = true } = {}) => {
         if (expectedLocation && expectedLocation !== location.pathname) {
             // Prevent updating query param if location has changed
             return;
@@ -33,4 +33,6 @@ export function useUpdateQueryParam() {
             { replace, preventScrollReset: true }
         );
     };
+
+    return { updateQueryParam, searchParams };
 }

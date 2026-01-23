@@ -44,6 +44,8 @@ export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
 export const OBJECT_TYPE_STOP = 'stop';
 
+export const FAVORITES_URL_PARAM_FOLDER = 'folder';
+
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
 export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';

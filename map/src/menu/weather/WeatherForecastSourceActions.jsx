@@ -30,7 +30,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
 
     const { t } = useTranslation();
 
-    const updateQueryParam = useUpdateQueryParam();
+    const { updateQueryParam } = useUpdateQueryParam();
 
     const handleWeatherType = (e) => {
         const selectedType = e.target.value;

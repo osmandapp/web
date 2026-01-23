@@ -1,6 +1,6 @@
 import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
 import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
 import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
@@ -16,10 +16,13 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { fmt } from '../../util/dateFmt';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
+import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function FavoriteGroup({ index, group, smartf = null, showDivider = true }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const { updateQueryParam } = useUpdateQueryParam();
 
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
@@ -63,6 +66,12 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                             ctx.setOpenFavGroups((prevState) => [...prevState, { group, type: smartf?.type }]);
                         } else {
                             ctx.setOpenFavGroups((prevState) => [...prevState, group]);
+                            updateQueryParam(
+                                FAVORITES_URL_PARAM_FOLDER,
+                                group.name,
+                                MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                                { replace: false }
+                            );
                         }
                         ctx.setZoomToFavGroup(group.id);
                     }

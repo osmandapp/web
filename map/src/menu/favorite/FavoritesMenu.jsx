@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import AppContext, { FAVORITES_URL_PARAM_FOLDER, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteGroup from './FavoriteGroup';
 import { DEFAULT_FAV_GROUP_NAME, HIDDEN_TRUE } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
@@ -15,12 +15,17 @@ import { useTranslation } from 'react-i18next';
 import { SHARE_TYPE } from '../share/shareConstants';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
 import PinnedFavoriteGroups from './PinnedFavoriteGroups';
+import { useLocation } from 'react-router-dom';
+import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
+    const location = useLocation();
+    const { updateQueryParam, searchParams } = useUpdateQueryParam();
 
     const [, height] = useWindowSize();
     const [sortGroups, setSortGroups] = useState([]);
@@ -76,6 +81,48 @@ export default function FavoritesMenu() {
             });
         }
     }, [ctx.selectedSort?.favorites, ctx.favorites.groups]);
+
+    useEffect(() => {
+        if (location.pathname !== MAIN_URL_WITH_SLASH + FAVORITES_URL || !ctx.favorites?.groups) {
+            return;
+        }
+
+        const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
+        const lastOpenGroup = ctx.openFavGroups?.[ctx.openFavGroups.length - 1];
+        const openFolderName = lastOpenGroup?.name;
+
+        if (folderName) {
+            if (openFolderName !== folderName) {
+                // open favorite group from url param
+                const group = ctx.favorites.groups.find((g) => g.name === folderName);
+                ctx.setOpenFavGroups(group ? [group] : []);
+            }
+        } else if (openFolderName) {
+            // update url param to match open favorite group
+            updateQueryParam(FAVORITES_URL_PARAM_FOLDER, openFolderName, MAIN_URL_WITH_SLASH + FAVORITES_URL, {
+                replace: true,
+            });
+        }
+    }, [location.pathname, ctx.favorites?.groups]);
+
+    // handle back/forward navigation
+    useEffect(() => {
+        if (location.pathname !== MAIN_URL_WITH_SLASH + FAVORITES_URL) {
+            return;
+        }
+
+        const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
+        if (!folderName && ctx.openFavGroups.length > 0) {
+            // close all open favorite groups
+            ctx.setOpenFavGroups([]);
+        } else if (folderName && ctx.openFavGroups.length === 0) {
+            // open favorite group from url param
+            const group = ctx.favorites?.groups?.find((g) => g.name === folderName);
+            if (group) {
+                ctx.setOpenFavGroups([group]);
+            }
+        }
+    }, [searchParams]);
 
     // open favorite group
     if (ctx.openFavGroups && ctx.openFavGroups.length > 0) {

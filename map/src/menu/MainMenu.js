@@ -26,12 +26,13 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_NAVIGATION_ALONE,
+    FAVORITES_URL_PARAM_FOLDER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import VisibleTracks from './visibletracks/VisibleTracks';
 import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
-import { matchPath, useLocation, useNavigate, useOutlet, useParams } from 'react-router-dom';
+import { matchPath, useLocation, useNavigate, useOutlet, useParams, useSearchParams } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu, { openSelectedLocalTrack } from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
@@ -144,6 +145,9 @@ export default function MainMenu({
     const showShareOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + SHARE_FILE_MAIN_URL + '*' }, location.pathname);
 
     const [, height] = useWindowSize();
+
+    const [searchParams] = useSearchParams();
+
     const { filename, favgroup, favname } = useParams();
 
     const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
@@ -533,6 +537,11 @@ export default function MainMenu({
                 navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
                 return;
             }
+        }
+
+        if (selectedType === OBJECT_TYPE_FAVORITE && searchParams.get(FAVORITES_URL_PARAM_FOLDER)) {
+            // open selected favorite folder only after loading favorites
+            return;
         }
 
         const menu = items.find((item) => isSelectedMenuItem(item));

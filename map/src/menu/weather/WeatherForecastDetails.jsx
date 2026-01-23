@@ -29,7 +29,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const [, height] = useWindowSize();
 
-    const updateQueryParam = useUpdateQueryParam();
+    const { updateQueryParam } = useUpdateQueryParam();
 
     const [forecast, setForecast] = useState(getSavedForecast());
     const [weatherLoc, setWeatherLoc] = useState(getWeatherLoc());
