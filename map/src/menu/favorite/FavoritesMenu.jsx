@@ -124,8 +124,11 @@ export default function FavoritesMenu() {
         }
     }, [searchParams]);
 
-    // open favorite group
-    if (ctx.openFavGroups && ctx.openFavGroups.length > 0) {
+    const folderNameFromUrl = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
+    const shouldShowGroup = ctx.openFavGroups && ctx.openFavGroups.length > 0;
+    const shouldWaitForGroup = folderNameFromUrl && !shouldShowGroup && ctx.favorites?.groups;
+
+    if (shouldShowGroup) {
         const lastGroup = ctx.openFavGroups[ctx.openFavGroups.length - 1];
         if (lastGroup?.type === SHARE_TYPE) {
             if (lastGroup?.files) {
@@ -134,6 +137,21 @@ export default function FavoritesMenu() {
             return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
         }
         return <FavoriteGroupFolder folder={lastGroup} />;
+    }
+
+    if (shouldWaitForGroup) {
+        return (
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                {ltx.loginUser && (
+                    <GroupHeader
+                        type="favorites"
+                        favoriteGroup={DEFAULT_FAV_GROUP_NAME}
+                        setSortGroups={setSortGroups}
+                    />
+                )}
+                <Loading />
+            </Box>
+        );
     }
 
     return (
