@@ -13,11 +13,15 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Overview {#overview}
 
 **My Places** is the central hub in the OsmAnd app for managing and customizing all personal data. You can use this section to organize [Favorite points](#favorites) marked as important or frequently visited. The [Tracks](#tracks) tab allows you to view, import, record, and create GPX files to help you keep a detailed history of your routes and travels. You can also manage your [OpenStreetMap Edits](#openstreetmap-edits), making contributing to map improvements and updates easy. The [Audio / Video Notes](#audiovideo-notes) plugin and widgets allow Android users to create and save multimedia notes related to specific locations, adding context to their travels.
+
+## My Places Menu {#my-places-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -25,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*  
 
-![My Places android](@site/static/img/personal/my_places_android.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android.png)
+![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -33,26 +37,15 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
 
 Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*  
 
-![My Places ios](@site/static/img/personal/my_places_ios.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.png)
+![My Places ios](@site/static/img/personal/my_places_ios_new.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
-- [***Import and export data***](../personal/import-export.md):  
+My Places is organized by categories. Select a tab to manage the corresponding data.
 
-    All data stored in the *My Places* menu can be moved using a special `.osf` format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
-
-    **Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data.
-
-- [***Maps & Resources***](../personal/maps-resources.md):  
-
-    *Maps & Resources* *Main Menu* item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps-resources.md#local-menu) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
-
-    **Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
-
-
-## Favorites {#favorites}
+### Favorites {#favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -72,7 +65,9 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
 
 **Favorites** allow you to bookmark important or frequently visited locations. These favorite points are organized in folders and can be customized with different colors, shapes, and icons. You can quickly navigate to any favorite place through the **My Places** menu without needing to search for it repeatedly.
 
+For full instructions, refer to the [Favorites](../personal/favorites.md) article.
 
+<!--
 1. ***Action buttons***. *Action buttons* at the bottom of the My Places screen allow you to manage the list of folders with your favorites:  
 
     - **Import** (*Add* button) — Allows you to import *favorite.gpx* files from your device storage.
@@ -84,12 +79,9 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
     - **Delete** (*on iOS, this option is located in the Edit menu*) — Deletes favorite points one at a time or selected favorite folders and all points contained in them.
 
 2. ***Three-dot menu*** (*Android*) and ***long tap*** (*iOS*). Use the *three-dot* menu next to each folder or *long tap* the folder to manage groups of favorites. See [Favorite Group Actions](../personal/favorites.md#favorite-group-actions) for details.  
+-->
 
-
-For full instructions, refer to the [Favorites](../personal/favorites.md) article.
-
-
-## Tracks {#tracks}
+### Tracks {#tracks}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -113,6 +105,9 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 **Tracks** offer powerful tools for recording, creating, and managing routes within OsmAnd. They can be used for [navigation](../navigation/setup/gpx-navigation.md), [trip recording](../plugins/trip-recording.md), or [integrating](../personal/tracks/manage-tracks.md#import) external GPX files.
 
+For comprehensive guidance, see the [Manage Tracks](../personal/tracks/manage-tracks.md) article.
+
+<!--
 - **Tracks tab** — All tracks ever recorded, created, or imported are automatically displayed in the *My Places* folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 
 - **Create a track** — Start recording using the **Tracks Tab** or the [Trip recording plugin](../plugins/trip-recording.md).
@@ -122,11 +117,9 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 - **Manage** — Use the [Filter](../personal/tracks/smart-folder.md#available-filters) and [Smart folder](../personal/tracks/smart-folder.md#smart-folder) tools to organize tracks based on specific parameters.
 
 - **Appearance and Analysis** — [Customize](../map/tracks/appearance.md) the visual style of tracks and [analyze](../map/tracks/index.md#analyze-track-on-map) them using OsmAnd's [Plan a Route](../plan-route/create-route.md) tool.
+-->
 
-For comprehensive guidance, see the [Manage Tracks](../personal/tracks/manage-tracks.md) article.
-
-
-## OpenStreetMap Edits {#openstreetmap-edits}
+### OpenStreetMap Edits {#openstreetmap-edits}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -150,6 +143,9 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 OsmAnd's **OpenStreetMap Edits** feature enables you to contribute to the global mapping community by adding, modifying, or commenting on map data.
 
+Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step instructions.
+
+<!--
 1. ***Action buttons***. You can use the *action buttons* on the My Places screen to manage your list of notes:  
 
     ![Share](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
@@ -172,11 +168,9 @@ OsmAnd's **OpenStreetMap Edits** feature enables you to contribute to the global
     - **Modify OSM change/note** — Make further edits to the POI or note that have already been added to OpenStreetMap.
 
     - **Delete** — Remove the selected POI or note from your list.
+    -->
 
-Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step instructions.
-
-
-## Audio/Video Notes {#audiovideo-notes}
+### Audio/Video Notes {#audiovideo-notes}
 
 <InfoAndroidOnly />
 
@@ -186,6 +180,9 @@ Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step in
 
 The **Audio/Video Notes plugin** allows you to create multimedia notes linked to specific map locations. These notes are stored in **My Places** under the **A/V Notes Tab**.
 
+For more information, visit the [Audio/Video Notes plugin](../plugins/audio-video-notes.md) page.
+
+<!--
 1. ***Action buttons***. You can use the *action buttons* at the bottom of the My Places screen to manage your list of notes:  
 
     ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
@@ -212,8 +209,22 @@ The **Audio/Video Notes plugin** allows you to create multimedia notes linked to
     - **<Translate android="true" ids="shared_string_rename"/>** — Change the name of the note to something more descriptive or relevant.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — Selected notes are permanently deleted from your collection.
+    -->
 
-For more information, visit the [Audio/Video Notes plugin](../plugins/audio-video-notes.md) page.
+
+## Managing Data {#managing-data}
+
+### Import and Export {#import-and-export}
+
+All data stored in the *My Places* menu can be moved using a special `.osf` format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
+
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data. For more details, see the [Import / Export](../personal/import-export.md) article.
+
+### Manage Storage {#manage-storage}
+
+*Maps & Resources* *Main Menu* item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps-resources.md#local-menu) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
+
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data. For detailed information, see the [Maps & Resources](../personal/maps-resources.md) article.  
 
 
 <!--
@@ -239,6 +250,9 @@ You can manage specific audio, video, or photo notes using the **three-dot menu*
 ## Related Articles {#related-articles}
 
 - [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
+- [Favorites](../personal/favorites.md)
+- [OpenStreetMap Editing](../plugins/osm-editing.md)
+- [Audio/Video Notes](../plugins/audio-video-notes.md)
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
