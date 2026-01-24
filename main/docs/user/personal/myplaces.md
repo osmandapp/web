@@ -45,6 +45,8 @@ Go to: *<Translate android="true" ids="shared_string_menu"/> → My Places*
 
 My Places is organized by categories. Select a tab to manage the corresponding data.
 
+**Note:** All data stored in the *My Places* menu can be moved using a special `.osf` format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users. 
+
 ### Favorites {#favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -209,16 +211,7 @@ For more information, visit the [Audio/Video Notes plugin](../plugins/audio-vide
     - **<Translate android="true" ids="shared_string_rename"/>** — Change the name of the note to something more descriptive or relevant.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — Selected notes are permanently deleted from your collection.
-    -->
 
-
-## Managing Data {#managing-data}
-
-### Import and Export {#import-and-export}
-
-All data stored in the *My Places* menu can be moved using a special `.osf` format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
-
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data. For more details, see the [Import / Export](../personal/import-export.md) article.
 
 ### Manage Storage {#manage-storage}
 
@@ -227,7 +220,6 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data. For detailed information, see the [Maps & Resources](../personal/maps-resources.md) article.  
 
 
-<!--
 ### Share with GPX Waypoints {#share-with-gpx-waypoints}
 
 ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
