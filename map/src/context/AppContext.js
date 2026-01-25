@@ -681,7 +681,6 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     const [openGroups, setOpenGroups] = useState([]);
-    const [openFavGroups, setOpenFavGroups] = useState([]);
 
     const [stopUseGeoLocation, setStopUseGeoLocation] = useState(false);
 
@@ -894,8 +893,6 @@ export const AppContextProvider = (props) => {
                 setNotification,
                 usedIcons,
                 setUsedIcons,
-                openFavGroups,
-                setOpenFavGroups,
                 recentObjs,
                 setRecentObjs,
                 selectedFavoriteObj,

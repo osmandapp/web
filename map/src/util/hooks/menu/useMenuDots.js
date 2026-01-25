@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
     OBJECT_SEARCH,
     OBJECT_TRACK_ANALYZER,
@@ -8,20 +9,23 @@ import {
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_TRAVEL,
     OBJECT_TYPE_WEATHER,
+    FAVORITES_URL_PARAM_FOLDER,
 } from '../../../context/AppContext';
 import { selectedForecastDetails } from '../../../menu/weather/Weather';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../store/geoRouter/profileConstants';
 
 export default function useMenuDots(ctx) {
     const [menuDots, setMenuDots] = useState({});
+    const [searchParams] = useSearchParams();
 
     function setActiveMenu(type, value) {
         setMenuDots((prev) => ({ ...prev, [type]: value }));
     }
 
     useEffect(() => {
-        setActiveMenu(OBJECT_TYPE_FAVORITE, ctx.openFavGroups?.length > 0 || ctx.selectedFavoriteObj);
-    }, [ctx.openFavGroups, ctx.selectedFavoriteObj]);
+        const hasOpenFolder = searchParams.get(FAVORITES_URL_PARAM_FOLDER) !== null;
+        setActiveMenu(OBJECT_TYPE_FAVORITE, hasOpenFolder || ctx.selectedFavoriteObj);
+    }, [searchParams, ctx.selectedFavoriteObj]);
 
     useEffect(() => {
         setActiveMenu(

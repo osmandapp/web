@@ -33,10 +33,12 @@ export default function GroupHeader({
     setSortGroups = null,
     setSortFiles = null,
     markers = null,
+    onClose = null,
 }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
-    const { updateQueryParam } = useUpdateQueryParam();
+
+    const { updateQueryParam, searchParams } = useUpdateQueryParam();
 
     const TRACKS_TYPE = 'tracks';
     const FAVORITES_TYPE = 'favorites';
@@ -68,21 +70,12 @@ export default function GroupHeader({
             ctx.openGroups.pop();
             ctx.setOpenGroups([...ctx.openGroups]);
         } else if (type === FAVORITES_TYPE) {
-            const remainingGroups = [...ctx.openFavGroups];
-            remainingGroups.pop();
-            ctx.setOpenFavGroups(remainingGroups);
-            if (remainingGroups.length === 0) {
+            if (onClose) {
+                onClose();
+            } else {
                 updateQueryParam(FAVORITES_URL_PARAM_FOLDER, null, MAIN_URL_WITH_SLASH + FAVORITES_URL, {
                     replace: false,
                 });
-            } else {
-                const lastGroup = remainingGroups[remainingGroups.at(-1)];
-                const folderName = lastGroup?.name;
-                if (folderName && !smartf) {
-                    updateQueryParam(FAVORITES_URL_PARAM_FOLDER, folderName, MAIN_URL_WITH_SLASH + FAVORITES_URL, {
-                        replace: false,
-                    });
-                }
             }
         }
     }
@@ -91,7 +84,7 @@ export default function GroupHeader({
         if (type === TRACKS_TYPE) {
             return ctx.openGroups?.length || 0;
         } else if (type === FAVORITES_TYPE) {
-            return ctx.openFavGroups?.length || 0;
+            return searchParams.get(FAVORITES_URL_PARAM_FOLDER) || onClose ? 1 : 0;
         }
         return 0;
     }
@@ -147,13 +140,16 @@ export default function GroupHeader({
                                 if (type === TRACKS_TYPE) {
                                     ctx.setOpenGroups([]);
                                 } else if (type === FAVORITES_TYPE) {
-                                    ctx.setOpenFavGroups([]);
-                                    updateQueryParam(
-                                        FAVORITES_URL_PARAM_FOLDER,
-                                        null,
-                                        MAIN_URL_WITH_SLASH + FAVORITES_URL,
-                                        { replace: false }
-                                    );
+                                    if (onClose) {
+                                        onClose();
+                                    } else {
+                                        updateQueryParam(
+                                            FAVORITES_URL_PARAM_FOLDER,
+                                            null,
+                                            MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                                            { replace: false }
+                                        );
+                                    }
                                 }
                                 closeHeader({ ctx });
                             }}

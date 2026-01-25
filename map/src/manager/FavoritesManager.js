@@ -9,9 +9,9 @@ import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
-import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
+import { OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
-import { getUniqFileId } from './GlobalManager';
+import { getUniqFileId, MAIN_URL_WITH_SLASH, FAVORITES_URL } from './GlobalManager';
 import { getFavoriteFromDB, saveFavoriteToDB } from '../context/FavoriteStorage';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
@@ -747,6 +747,18 @@ export function openFavoriteObj(ctx, object) {
     ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
     ctx.setSelectedWpt({ ...object });
     ctx.setSelectedGpxFile({ ...object });
+}
+
+export function navigateToFavoritesMenu(navigate, ctx) {
+    const favGroup = ctx.selectedGpxFile.nameGroup;
+    if (favGroup) {
+        const savedParams = ctx.pageParams?.[OBJECT_TYPE_FAVORITE];
+        if (savedParams?.includes(FAVORITES_URL_PARAM_FOLDER)) {
+            navigate(MAIN_URL_WITH_SLASH + FAVORITES_URL + savedParams + globalThis.location.hash);
+        }
+    } else {
+        navigate(MAIN_URL_WITH_SLASH + FAVORITES_URL + globalThis.location.hash);
+    }
 }
 
 const FavoritesManager = {

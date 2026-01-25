@@ -27,7 +27,7 @@ const types = {
     },
 };
 
-export default function SmartFolder({ type, subtype, files }) {
+export default function SmartFolder({ type, subtype, files, onOpenFolder = null }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -43,7 +43,9 @@ export default function SmartFolder({ type, subtype, files }) {
 
     function openFiles() {
         if (subtype === 'favorite') {
-            ctx.setOpenFavGroups((prevState) => [...prevState, { files: Object.values(files), type }]);
+            if (onOpenFolder) {
+                onOpenFolder({ files: Object.values(files), type });
+            }
         } else if (subtype === 'track') {
             ctx.setOpenGroups((prevState) => [...prevState, { files: Object.values(files), type }]);
         }

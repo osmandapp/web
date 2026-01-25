@@ -260,11 +260,10 @@ export default function MainMenu({
                     const group = ctx.favorites.groups.find((g) => g.name === decodeString(favgroup));
                     if (!group) return;
 
-                    const markerList = getFavMenuListByLayers(
-                        ctx.favorites.mapObjs[group.id].markers._layers,
-                        ctx.favorites.mapObjs[group.id].wpts,
-                        currentLoc
-                    );
+                    const mapObj = ctx.favorites.mapObjs[group.id];
+                    if (!mapObj?.markers?._layers) return;
+
+                    const markerList = getFavMenuListByLayers(mapObj.markers._layers, mapObj.wpts, currentLoc);
                     if (markerList.length === 0) return;
 
                     const marker = markerList.find((m) => m.name === decodeString(favname));
@@ -812,34 +811,32 @@ export default function MainMenu({
                 return;
             }
         }
+
+        const currentUrl = location.pathname + location.search + location.hash;
+        const navigateIfChanged = (targetUrl) => {
+            if (targetUrl !== currentUrl) navigate(targetUrl);
+        };
+
         if (isMain) {
-            if (params?.[MAIN_PAGE_TYPE] !== undefined) {
-                navigate(MAIN_URL_WITH_SLASH + params?.[MAIN_PAGE_TYPE] + location.hash);
-            } else {
-                navigate(MAIN_URL_WITH_SLASH + location.hash);
-            }
+            const pageType = params?.[MAIN_PAGE_TYPE] ?? '';
+            navigateIfChanged(MAIN_URL_WITH_SLASH + pageType + location.hash);
         } else if (menu) {
-            if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
-                if (ctx.routeObject.getOption('route.map.zoom')) {
-                    // auto navigation from the route (fitBounds)
-                    return;
-                }
-                // special case for Navigation due to lazy-loading providers
-                if (params?.[menu.type] !== undefined) {
-                    navigate(menu.url + params?.[menu.type] + location.hash);
-                } else if (!ctx.routeObject.isReady()) {
-                    navigate(menu.url + window.location.search + location.hash);
-                } else {
-                    navigate(menu.url + location.hash);
-                }
-            } else {
-                // all other cases
-                if (params?.[menu.type] !== undefined) {
-                    navigate(menu.url + params?.[menu.type] + location.hash);
-                } else {
-                    navigate(menu.url + location.hash);
-                }
+            if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && ctx.routeObject.getOption('route.map.zoom')) {
+                // auto navigation from the route (fitBounds)
+                return;
             }
+
+            const menuParams = params?.[menu.type];
+            let targetUrl = menu.url;
+
+            if (menuParams !== undefined) {
+                targetUrl += menuParams;
+            } else if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !ctx.routeObject.isReady()) {
+                // special case for Navigation due to lazy-loading providers
+                targetUrl += window.location.search;
+            }
+
+            navigateIfChanged(targetUrl + location.hash);
         }
     }
 

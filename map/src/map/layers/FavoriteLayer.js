@@ -1,5 +1,6 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import React, { useCallback, useContext, useEffect, useRef, useState, useMemo } from 'react';
+import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
+import { useSearchParams } from 'react-router-dom';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
@@ -77,11 +78,20 @@ const FavoriteLayer = () => {
 
     const map = useMap();
 
+    const [searchParams] = useSearchParams();
+
     const { lat } = useHashParams();
     const [move, setMove] = useState(false);
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
+
+    const openGroupId = useMemo(() => {
+        const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
+        if (!folderName || !ctx.favorites?.groups) return null;
+        const group = ctx.favorites.groups.find((g) => g.name === folderName);
+        return group?.id || null;
+    }, [searchParams, ctx.favorites?.groups]);
 
     const [openAddDialog, setOpenAddDialog] = useState(false);
 
@@ -156,8 +166,6 @@ const FavoriteLayer = () => {
     function updateMarkers({ onlyOpened = false } = {}) {
         const favoritesGroups = ctx.favorites?.mapObjs;
         if (!favoritesGroups) return;
-
-        const openGroupId = ctx.openFavGroups?.[ctx.openFavGroups.length - 1]?.id;
 
         for (const fileId of Object.keys(favoritesGroups)) {
             const file = favoritesGroups[fileId];
@@ -258,7 +266,7 @@ const FavoriteLayer = () => {
     useEffect(() => {
         ctx.setFavLoading(false);
         updateMarkers();
-    }, [ctx.favorites, ctx.openFavGroups, ctx.configureMapState.showFavorites]);
+    }, [ctx.favorites, openGroupId, ctx.configureMapState.showFavorites]);
 
     // update markers on map after zoom
     useEffect(() => {

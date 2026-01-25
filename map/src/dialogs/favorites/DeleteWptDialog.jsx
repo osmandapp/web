@@ -5,15 +5,17 @@ import TracksManager from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import { Button, Dialog, LinearProgress } from '@mui/material';
 import React, { useContext, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
 import FavoritesManager from '../../manager/FavoritesManager';
 import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
 import PointManager from '../../manager/PointManager';
 import isEmpty from 'lodash-es/isEmpty';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { MENU_INFO_CLOSE_SIZE, FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { useNavigate } from 'react-router-dom';
 
 export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null, setOpenActions = null }) {
     const ctx = useContext(AppContext);
+    const navigate = useNavigate();
 
     const useSelected = !isEmpty(ctx.selectedGpxFile) && ctx.selectedGpxFile.markerCurrent;
     const [process, setProcess] = useState(false);
@@ -40,13 +42,33 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
             }
         } else {
             //delete favorite point from group
-            deleteFavorite().then(() => {
-                ctx.setSelectedWpt(null);
-                ctx.setSelectedFavoriteObj(null);
-                if (wpt.mapObj) {
-                    ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
+            const favGroup = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
+            ctx.setProcessingGroups(true);
+            if (favGroup) {
+                const savedParams = ctx.pageParams?.[OBJECT_TYPE_FAVORITE];
+                if (savedParams?.includes(FAVORITES_URL_PARAM_FOLDER)) {
+                    navigate(MAIN_URL_WITH_SLASH + FAVORITES_URL + savedParams + globalThis.location.hash, {
+                        replace: true,
+                    });
+                } else {
+                    console.debug('No folder param saved, navigating to favorites main url');
+                    navigate(MAIN_URL_WITH_SLASH + FAVORITES_URL + globalThis.location.hash, { replace: true });
                 }
-                closeDialog();
+            } else {
+                navigate(MAIN_URL_WITH_SLASH + FAVORITES_URL + globalThis.location.hash, { replace: true });
+            }
+
+            deleteFavorite().then(() => {
+                setTimeout(() => {
+                    ctx.setSelectedWpt(null);
+                    ctx.setSelectedFavoriteObj(null);
+                    ctx.setSelectedGpxFile({});
+                    ctx.setCurrentObjectType(null);
+                    if (wpt.mapObj) {
+                        ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
+                    }
+                    closeDialog();
+                }, 0);
             });
         }
     }
@@ -76,7 +98,7 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
                 //update favorites groups
                 if (result) {
                     ctx.favorites.mapObjs[id] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[id], result);
-                    ctx.favorites = FavoriteHelper.updateSelectedGroup({
+                    const updatedFavorites = FavoriteHelper.updateSelectedGroup({
                         favorites: ctx.favorites,
                         selectedGroupName: groupName,
                         result,
@@ -90,7 +112,8 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
                             selectedGroup,
                             deleted: true,
                         });
-                    ctx.setUpdateMarkers({ ...ctx.favorites });
+                    ctx.setFavorites(updatedFavorites);
+                    ctx.setUpdateMarkers({ ...updatedFavorites });
                     closeContextMenu();
                     break;
                 }

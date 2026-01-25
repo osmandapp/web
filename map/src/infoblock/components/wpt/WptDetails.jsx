@@ -36,7 +36,12 @@ import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../../manager/FavoritesManager';
+import FavoritesManager, {
+    prepareBackground,
+    prepareColor,
+    prepareIcon,
+    navigateToFavoritesMenu,
+} from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
@@ -562,6 +567,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     function closeOnlyFavDetails() {
         setShowInfoBlock(false);
         ctx.setCurrentObjectType(null);
+        navigateToFavoritesMenu(navigate, ctx);
         ctx.setSelectedGpxFile({});
     }
 

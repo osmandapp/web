@@ -7,6 +7,7 @@ import AppContext, {
     isCloudTrack,
     isTrackAnalyzer,
     OBJECT_TYPE_STOP,
+    OBJECT_TYPE_FAVORITE,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
@@ -33,6 +34,7 @@ import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
 import { useNavigate } from 'react-router-dom';
 import { encodeString } from '../../util/Utils';
+import { navigateToFavoritesMenu } from '../../manager/FavoritesManager';
 import LoginContext from '../../context/LoginContext';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
@@ -152,8 +154,14 @@ export default function InformationBlock({
         }
     }, [trackName]);
 
+    // open favorite info menu when marker is selected
     useEffect(() => {
-        if (ctx.selectedGpxFile.file?.type === FAVOURITES && !ctx.shareFile) {
+        if (
+            ctx.selectedGpxFile.file?.type === FAVOURITES &&
+            !ctx.shareFile &&
+            ctx.selectedGpxFile.markerCurrent &&
+            ctx.selectedGpxFile.name
+        ) {
             const favName = ctx.selectedGpxFile.name;
             const favGroup = ctx.selectedGpxFile.nameGroup;
             const fullName =
@@ -161,12 +169,12 @@ export default function InformationBlock({
             navigate(
                 {
                     pathname: MAIN_URL_WITH_SLASH + FAVORITES_URL + INFO_MENU_URL + fullName,
-                    hash: window.location.hash,
+                    hash: globalThis.location.hash,
                 },
                 { replace: true }
             );
         }
-    }, [ctx.selectedGpxFile.name]);
+    }, [ctx.selectedGpxFile.markerCurrent]);
 
     // detect leaving from Local Track Editor when another kind of object type is activated
     useEffect(() => {
@@ -403,6 +411,13 @@ export default function InformationBlock({
                                                     ctx.setSelectedGpxFile({});
                                                 }
                                                 ctx.setSelectedLocalTrackObj(null);
+                                            } else if (
+                                                ctx.currentObjectType === OBJECT_TYPE_FAVORITE &&
+                                                ctx.selectedGpxFile.file?.type === FAVOURITES
+                                            ) {
+                                                navigateToFavoritesMenu(navigate, ctx);
+                                                ctx.setSelectedGpxFile({});
+                                                ctx.setSelectedFavoriteObj(null);
                                             }
                                         }}
                                     >

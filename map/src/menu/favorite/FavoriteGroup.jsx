@@ -62,10 +62,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                 id={'se-menu-fav-' + group.name}
                 onClick={(e) => {
                     if (e.target !== 'path') {
-                        if (sharedFile) {
-                            ctx.setOpenFavGroups((prevState) => [...prevState, { group, type: smartf?.type }]);
-                        } else {
-                            ctx.setOpenFavGroups((prevState) => [...prevState, group]);
+                        if (!sharedFile) {
                             updateQueryParam(
                                 FAVORITES_URL_PARAM_FOLDER,
                                 group.name,
