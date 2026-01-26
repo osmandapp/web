@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title:  Erste Schritte
 ---
@@ -153,7 +153,7 @@ Gehen Sie zu: *Einstellungen → OsmAnd Maps → Sprache*
 </Tabs>
 
 :::note Keine Option zum Einstellen der App-Sprachen
-Auf einigen Android-Geräten (Xiaomi mit Muiu 14) gibt es keine Möglichkeit, die App-Sprachen einzeln in den Systemeinstellungen festzulegen, sodass die Sprache von OsmAnd nur mit der Sprache des gesamten Systems geändert werden kann. Weitere Informationen finden Sie in der Diskussion auf [GitHub-Diskussion](https://github.com/osmandapp/OsmAnd/issues/16990).
+Auf einigen Android-Geräten (Xiaomi mit MIUI 14) gibt es keine Möglichkeit, die App-Sprachen einzeln in den Systemeinstellungen festzulegen, sodass die Sprache von OsmAnd nur mit der Sprache des gesamten Systems geändert werden kann. Weitere Informationen finden Sie in der Diskussion auf [GitHub-Diskussion](https://github.com/osmandapp/OsmAnd/issues/16990).
 :::
 
 
@@ -642,13 +642,15 @@ Ermöglicht es Ihnen, Fragen zu stellen oder Vorschläge zu machen.
 
 <TabItem value="ios" label="iOS">
 
-![Kartenmenü iOS](@site/static/img/steps/offline_about_ios.png)
+![Kartenmenü iOS](@site/static/img/steps/offline_about_ios_new.png) ![Kartenmenü iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Sie können mehr über unser Team erfahren, die aktuelle Version der App und was neu ist sehen und die Beta-Version der App herunterladen.
+
+Der Build wird im Format OsmAnd Maps &lt;build&gt;, veröffentlicht &lt;date&gt; angezeigt. Um diese Informationen schnell mit dem Support zu teilen, tippen Sie lange auf die Build-Zeile, um die Build-Nummer zusammen mit dem Veröffentlichungsdatum zu kopieren.
 
 
 ## Datenschutz {#privacy}

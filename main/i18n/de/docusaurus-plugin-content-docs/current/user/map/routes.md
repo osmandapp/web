@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title:  Routen
 ---
@@ -124,7 +124,7 @@ Skirouten sind eine spezielle Gruppe von [Routen](https://wiki.openstreetmap.org
 
 ### Schneemobil-Strecken {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
 
 Schneemobil-Strecken sind in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) als `route=snowmobile` kartiert. Sie werden für Winterrekreation und zur Verbindung entfernter Gebiete in der Schneesaison verwendet. In OsmAnd sind Schneemobil-Strecken anklickbar, siehe Abschnitt [Aktionen mit Routen](#actions-with-routes).
 
@@ -345,45 +345,29 @@ Sie können mit dem [Schnellaktions-Widget](../widgets/quick-action.md#configure
 
 ## Routensuche {#routes-search}
 
-Finden Sie Routen über die [Suchfunktion](../search/index.md) nach Namen oder indem Sie "Routen" im Abschnitt [Kategorien](../search/search-poi.md#) auswählen.
-
-Um zu suchen, gehen Sie zum Menü *<Translate android="true" ids="search_button"/>* oder *<Translate android="true" ids="search_button,search_categories"/>* und geben Sie Ihre Aktivität ein.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png)
+![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png)
+![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , um die gewünschten Routen zu finden. Die Suchergebnisse für Routen zeigen den Routennamen, den Aktivitätstyp, die Länge, den Ort und die Entfernung zum nächstgelegenen Punkt an. Auf Android werden auch Höhenmetriken wie Anstieg und Abstieg angezeigt, wo verfügbar. Geringe Höhenänderungen (weniger als 10 m) werden ausgeblendet, um die Liste übersichtlich zu halten. Alle Werte berücksichtigen die in der App ausgewählten Einheiten für Entfernung und Höhe.
+Finden Sie Routen über die [Suchfunktion](../search/index.md) nach Namen oder indem Sie "Routen" im Abschnitt [Kategorien](../search/search-poi.md#) auswählen.
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Um zu suchen, gehen Sie zum Menü *<Translate android="true" ids="search_button"/>* oder *<Translate android="true" ids="search_button,search_categories"/>* und geben Sie Ihre Aktivität ein.
 
-<TabItem value="android" label="Android">
+Navigieren Sie zu *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , um die gewünschten Routen zu finden. Die Suchergebnisse für Routen zeigen den Routennamen, den Aktivitätstyp, die Länge, den Ort, Anstieg/Abstieg (auf Android) und die Entfernung zum nächstgelegenen Punkt an. 
 
-![Routes on the ground](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Verwenden Sie die Filter-Schaltfläche (oben rechts), um nur die gewünschten Routen anzuzeigen.
+### Routenfilter {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Verwenden Sie die Filter-Schaltfläche (oben rechts), um nur die gewünschten Ro
 </TabItem>
 
 </Tabs>
+
+In den Suchergebnissen für Routen tippen Sie auf die Schaltfläche **Filter** in der oberen rechten Ecke, um die Liste einzugrenzen. Der Filterbildschirm enthält ein Feld **Nach Name filtern**; einen Block **Typ** mit *Bureau*, *Post annex* und *Post partner*; und **zusätzliche Kriterien**, die von der ausgewählten Routenkategorie oder Aktivität abhängen, da jede Kategorie ihre eigenen Merkmale und Filterwerte anzeigen kann.
+
+Sie können Filter mit den Schaltern aktivieren oder deaktivieren, und einige Abschnitte enthalten *Alle anzeigen*, um zusätzliche Werte anzuzeigen.
 
 
 ## Verwandte Artikel {#related-articles}

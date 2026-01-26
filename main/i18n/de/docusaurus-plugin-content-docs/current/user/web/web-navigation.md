@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -45,6 +45,8 @@ Start und Ziel austauschen — tauscht Start und Ziel aus, während Zwischenpunk
 
 Oben im Routenpanel können Sie ein Routing-Profil für Ihre Route auswählen. Eine Reihe gängiger Profile wird als vier Symbole angezeigt. Um weitere Optionen aufzurufen, öffnen Sie das Drei-Punkte-Menü neben den Profilsymbolen. Es erweitert die vollständige Liste der verfügbaren Profile.
 
+Routing-Profile im Web-Planer verwenden dieselben Routing-Regeln und Einstellungen wie in der OsmAnd-Mobile-App. Für Details, wie Routen berechnet werden und wie Routing-Parameter funktionieren, siehe [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
+
 Wenn Sie das Profil wechseln, aktualisiert die Navigation die Route, um dem ausgewählten Fortbewegungsmodus zu entsprechen.
 
 ![Web-Navigation](@site/static/img/web/navigation_profile.png)
@@ -52,7 +54,7 @@ Wenn Sie das Profil wechseln, aktualisiert die Navigation die Route, um dem ausg
 
 ## Navigationseinstellungen {#navigation-settings}
 
-Um anzupassen, wie Routen berechnet werden, öffnen Sie die Einstellungen mit dem Zahnrad-Symbol im Routenpanel. Die Einstellungen sind in Abschnitte unterteilt, die Sie erweitern/einklappen können. Die Menge der Abschnitte und Optionen hängt vom ausgewählten Routing-Profil ab, sodass Sie für verschiedene Fortbewegungsmodi unterschiedliche Parameter sehen.
+Um anzupassen, wie Routen berechnet werden, öffnen Sie die Einstellungen mit dem Zahnrad-Symbol im Routenpanel (für Navigations-Einstellungen in der OsmAnd-Mobile-App siehe [hier](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). Die Einstellungen sind in Abschnitte unterteilt, die Sie erweitern/einklappen können. Die Menge der Abschnitte und Optionen hängt vom ausgewählten Routing-Profil ab, sodass Sie für verschiedene Fortbewegungsmodi unterschiedliche Parameter sehen.
 
 Typische Abschnitte umfassen:
 
@@ -66,7 +68,7 @@ Typische Abschnitte umfassen:
 
 ## Track anhängen {#attaching-track}
 
-Der Block **An Straßen anheften** ermöglicht es Ihnen, einen vorhandenen GPX-Track als Basis für die Navigation zu verwenden. OsmAnd Web passt den Track an nahegelegene Straßen an, um Abbiege-für-Abbiege-Anleitungen bereitzustellen.
+Der **[An Straßen anheften](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)**-Block ermöglicht es Ihnen, einen vorhandenen GPX-Track als Basis für die Navigation zu verwenden. OsmAnd Web passt den Track an nahegelegene Straßen an, um Abbiege-für-Abbiege-Anleitungen bereitzustellen.
 
 Wenn Sie Track auswählen anklicken, öffnet der Browser einen Dateiauswahldialog, in dem Sie eine .gpx-Datei von Ihrem Computer auswählen können. Nach der Auswahl eines Tracks:
 - Der Track wird auf der Karte angezeigt und zur Routenberechnung verwendet.
@@ -86,7 +88,7 @@ Info fasst die Route und Höhenangaben zusammen:
 - **Route** — Distanz und Zeit.
 - **Anstieg/Abstieg** — Gesamtaufstieg und -abstieg.
 - **Höhe (min/durchschn/max)** — Höhenstatistiken für die Route.
-- **Höhe (Satellit)** — Neu berechnen, um die Höhe mit Satellitendaten neu zu erstellen (falls verfügbar).
+- **Höhe (Satellit)** — berechnet die Höhenangaben des Tracks neu unter Verwendung von Geländedaten (DEM) und aktualisiert das Höhen-diagramm.
 
 Unter der Zusammenfassung hilft das Höhenprofil-Diagramm Ihnen, das Routenprofil zu untersuchen. Sie können Höhe und Steigung umschalten und den Schieberegler unter dem Diagramm verwenden, um sich auf einen bestimmten Teil der Route zu konzentrieren.
 
@@ -105,10 +107,18 @@ Sie können die Route direkt auf der Karte feinabstimmen, indem Sie Routenmarker
 ### Herunterladen und Speichern {#download-and-save}
 
 Verwenden Sie *Herunterladen*, um die Route als Track zu exportieren. Der Download-Dialog bietet zwei Optionen:
-Vollständige Track-Daten — enthält vollständige Daten, einschließlich Navigationsanweisungen.
-Vereinfachter Track — eine leichtere Version, die besser für die Verwendung mit anderen Apps geeignet ist.
+**Vollständige Track-Daten** — enthält vollständige Daten, einschließlich Navigationsanweisungen.
+**[Vereinfachter Track](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — eine leichtere Version, die besser für die Verwendung mit anderen Apps geeignet ist.
+
+Wenn Sie die GPX in Drittanbieter-Apps öffnen möchten, wählen Sie Vereinfachten Track für bessere Kompatibilität. Dies hilft, Fälle zu vermeiden, in denen eine andere App nach dem Import ein falsches Segment anzeigt.
+
+Unterschiede:
+- Vollständige Track-Daten können Routing-/Navigationsinformationen zusätzlich zur Track-Geometrie enthalten (nützlich, wenn Sie Navigationsanweisungen beibehalten oder die Route in OsmAnd neu bearbeiten möchten).
+- Vereinfachter Track exportiert eine sauberere GPX für andere Apps, indem Routing-/Navigationsdaten entfernt und nur die Track-Form belassen werden. Wegpunkte werden beim Exportieren eines vereinfachten Tracks erhalten.
 
 Sie können die Route als Track speichern, indem Sie *In die Cloud speichern / In OsmAnd Cloud hochladen* verwenden. Dies öffnet einen Dialog, in dem Sie das Speichern in Cloud-Tracks bestätigen, den Namen bearbeiten, optional einen Ordner wählen und dann Speichern oder Abbrechen können.
+
+![Web-Navigation](@site/static/img/web/download_options.png)
 
 ### Route teilen {#share-a-route}
 
@@ -119,5 +129,6 @@ Um die Route zu teilen, kopieren Sie die URL. Beispiel: [https://osmand.net/map/
 
 - [Routenplanung](../navigation/setup/route-navigation.md)
 - [Navigations-Einstellungen](../navigation/guidance/navigation-settings.md)
+- [Über OsmAnd Routing](../navigation/routing/osmand-routing.md)
 - [Fahrzeugparameter](../navigation/guidance/vehicle-parameters.md)
 - [Route planen](../web/planner.md)

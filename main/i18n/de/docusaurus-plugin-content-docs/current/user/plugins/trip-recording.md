@@ -1,5 +1,5 @@
 ---
-source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
+source-hash: 54955c988c3df62ddc5b423281774611836946ef872c1c7dfae018ca6fc8bbe2
 sidebar_position: 15
 title:  Reiseaufzeichnung
 ---
@@ -211,7 +211,7 @@ Verwalten Sie, welche Tracks auf Ihrer Karte sichtbar sind, mit einer von zwei O
 
 ### Aufgezeichnete GPX-Datei {#recorded-gpx-file}
 
-OsmAnd erfasst Ihre Reise in einer strukturierten [GPX-Datei](https://de.wikipedia.org/wiki/GPS_Exchange_Format), die eine Hierarchie von *Datei > Track > Segmente > Punkte* verwendet. So funktioniert es:
+OsmAnd erfasst Ihre Reise in einer strukturierten [GPX-Datei](https://en.wikipedia.org/wiki/GPS_Exchange_Format), die eine Hierarchie von *Datei > Track > Segmente > Punkte* verwendet. So funktioniert es:
 
 - **Punkte** repräsentieren einzelne Momente Ihres aufgezeichneten Pfades, jeder markiert mit Attributen wie Koordinaten, Geschwindigkeit, Höhe und Kurs.
 - Diese Punkte werden zu **Tracks** gruppiert, die Ihre gesamte Route darstellen.
@@ -243,7 +243,7 @@ OsmAnd erfasst Ihre Reise in einer strukturierten [GPX-Datei](https://de.wikiped
 | `time` | **Zeitstempel** zeichnet das genaue Datum und die Uhrzeit auf, zu der ein Track-Punkt protokolliert wird. Dies ermöglicht es Ihnen, die Dauer und das Timing Ihrer Aktivität präzise zu verfolgen.    |
 | `hdop` | **Horizontale Genauigkeitsverdünnung (HDOP)** ist ein Maß für die GPS-Genauigkeit, das den potenziellen Standortfehler aufgrund der Positionen der Satelliten widerspiegelt. Im Gegensatz zum Standard-HDOP verwenden OsmAnd GPX-Tracks diesen Wert, um die horizontale Genauigkeit in Metern darzustellen. Bitte beachten Sie, dass diese Implementierung von typischen HDOP-Standards abweicht. [Erfahren Sie mehr](https://github.com/osmandapp/Osmand/issues/3445).   |
 | `speed` | **Geschwindigkeit** zeichnet Ihre Bewegungsrate in Metern pro Sekunde auf. Es gibt Einblick in Ihr Tempo während verschiedener Abschnitte Ihrer Aktivität.  |
-| `heading`  | **Kurs** gibt die Richtung an, in die die Vorderseite Ihres Fahrzeugs oder Geräts zeigt, gemessen in Grad. Er unterscheidet sich vom tatsächlichen Bewegungspfad (Course over ground). Unterschiede können durch externe Faktoren wie Wind, Strömungen oder Straßenbedingungen entstehen. [Mehr zum Thema Kurs](https://de.wikipedia.org/wiki/Kurs_(Navigation)).  |
+| `heading`  | **Kurs** gibt die Richtung an, in die die Vorderseite Ihres Fahrzeugs oder Geräts zeigt, gemessen in Grad. Er unterscheidet sich vom tatsächlichen Bewegungspfad (Course over ground). Unterschiede können durch externe Faktoren wie Wind, Strömungen oder Straßenbedingungen entstehen. [Mehr zum Thema Kurs](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
 | `speed_sensor` | **Geschwindigkeit** von [externen Sensoren](../plugins/external-sensors.md) erfasst Daten von verbundenen Sensoren und liefert präzisere Geschwindigkeitsinformationen, was besonders beim Radfahren nützlich ist. Weitere Details finden Sie in der [Dokumentation zum GPX-Dateiformat](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 | `cadence` | **Trittfrequenz** misst die Anzahl der Pedalumdrehungen pro Minute, aufgezeichnet mit [externen Sensoren](../plugins/external-sensors.md). Dies ist besonders nützlich für Radfahrer, die ihre Treteffizienz überwachen und optimieren möchten. [Lesen Sie mehr](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 | `power` | **Fahrradleistung** quantifiziert die beim Treten erzeugte Leistung, erfasst von [externen Sensoren](../plugins/external-sensors.md). Es ist eine wesentliche Metrik für ernsthafte Radfahrer, die ihre Leistung messen möchten. [Erfahren Sie mehr](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
@@ -389,39 +389,66 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 Das [Reiseaufzeichnungs-Widget](../widgets/info-widgets.md#trip-recording-widgets) bietet eine einfache Möglichkeit, Ihren Aufzeichnungsstatus zu überwachen und schnell auf Aufzeichnungseinstellungen und -details zuzugreifen. Dieses Widget wird automatisch zu Ihrem Bildschirm hinzugefügt, wenn das Reiseaufzeichnungs-Plugin aktiviert ist.
 
-Um Ihre Benutzeroberfläche anzupassen, können Sie das Reiseaufzeichnungs-Widget und [andere Widgets](../plugins/trip-recording#duration-uphill-downhill) über das Menü "Bildschirm konfigurieren" hinzufügen oder entfernen.
+Um Ihre Benutzeroberfläche anzupassen, können Sie das Reiseaufzeichnungs-Widget und [andere Widgets](#additional-widgets) über das Menü "Bildschirm konfigurieren" hinzufügen oder entfernen.
 
 
-### Distanz (Start-Stopp) {#distance-start-stop}
+### Anzeigemodi {#display-modes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Aufzeichnung in Android beenden](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
-![Reiseaufzeichnungs-Widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+![Anzeigemodi](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Anzeigemodi](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Reiseaufzeichnungs-Widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Reiseaufzeichnungs-Widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+![Anzeigemodi](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Anzeigemodi](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Wenn Widgets auf der Karte angezeigt werden, zeigt ein Tippen auf eines von ihnen zusätzliche Track-Details an und ermöglicht die Interaktion mit der Aufzeichnung.
-Das *Distanz*-Widget zeigt die Gesamtdistanz Ihrer aktuell aufgezeichneten Reise an und dient als Hauptschnittstelle zur Verwaltung Ihrer Aufzeichnungen. Ein Tippen darauf öffnet den [Reiseaufzeichnungsdialog](#start-a-dialog), in dem Sie detaillierte Informationen zu Ihrem Track starten, stoppen und anzeigen können.
+Einige Reiseaufzeichnungs-Widgets unterstützen mehrere Anzeigemodi. Modi ermöglichen es Ihnen, zwischen Gesamtwerten der Reise und Metriken für den zuletzt aufgenommenen Bergauf- oder Bergababschnitt der aktuell aufgezeichneten Reise zu wechseln.
 
-- Das Widget wird automatisch hinzugefügt, wenn das *Reiseaufzeichnungs-Plugin* aktiviert ist, kann aber über das Menü [Bildschirm konfigurieren](../widgets/configure-screen.md#overview) ausgeblendet werden.
-- Wenn die Option *Startdialog anzeigen* in den Einstellungen des Reiseaufzeichnungs-Plugins deaktiviert ist, öffnet ein Tippen auf das aktive Widget dennoch das *Reiseaufzeichnungsdialogfeld*, sodass Sie auf weitere Optionen und Informationen zugreifen können.  
+Die folgenden Modi können je nach Widget verfügbar sein.
+1. **Distanz (Start-Stopp)**:
+- Gesamtdistanz (Standard)
+- Letzter Bergauf
+- Letzter Bergab
 
-Zusätzlich zum *Distanz/Start-Stopp*-Widget enthält das **Reiseaufzeichnungs-Plugin** fünf weitere Widgets: *Dauer*, *Bergauf*, *Bergab*, *Max. Geschwindigkeit* und *Durchschnittssteigung*. Diese liefern zusätzliche Informationen über Ihre Reise und helfen Ihnen, den Fortschritt in Echtzeit zu verfolgen.
+2. **Bergauf**:
+- Gesamt (Standard)
+- Letzter Bergauf
+
+3. **Bergab**:
+- Gesamt (Standard)
+- Letzter Bergab
+
+4. **Max. Geschwindigkeit**:
+- Gesamt (Standard)
+- Letzter Bergauf
+- Letzter Bergab
+
+5. **Durchschnittssteigung**:
+- Letzter Bergauf  
+- Letzter Bergab 
+
+Der Moduswechsel hängt vom Widget ab:
+- Bergauf / Bergab / Max. Geschwindigkeit / Durchschnittssteigung — Tippen Sie auf das Widget auf der Karte, um seinen Modus zu wechseln.
+- Distanz (Start-Stopp) — Das Distanz-Widget unterstützt mehrere Anzeigemodi (wählen Sie sie in den Widget-Einstellungen aus), aber ein Tippen darauf öffnet immer den Reiseaufzeichnungsdialog, in dem Sie detaillierte Informationen zu Ihrem Track starten, stoppen und anzeigen können. 
+
+Wenn die aktuelle Aufzeichnung noch keinen Bergauf- oder Bergababschnitt enthält, zeigen Widgets im Modus Letzter Bergauf oder Letzter Bergab 0 oder — (keine Daten) an.
+
+**Hinweise:** Modi gelten für die aktuell aufgezeichnete Reise und werden während der Aufzeichnung aktualisiert.
+
+
+### Distanz (Start-Stopp) {#distance-start-stop}
 
 | |
 |-----------|
-| **Distanz/Start-Stopp**. Dieses Widget zeigt die Distanz Ihrer laufenden Reiseaufzeichnung an. Es wird automatisch hinzugefügt, wenn das Reiseaufzeichnungs-Plugin aktiviert ist, aber Sie können es über das Menü "Bildschirm konfigurieren" ausblenden. Das Widget hat drei verschiedene Zustände: *Aufzeichnung*, *Pausiert* und *Inaktiv*, die jeweils den aktuellen Status Ihrer Reiseaufzeichnung anzeigen. |
+| **Distanz/Start-Stopp**. Dieses Widget zeigt die Distanz Ihrer laufenden Reiseaufzeichnung an. Es wird automatisch hinzugefügt, wenn das Reiseaufzeichnungs-Plugin aktiviert ist, kann aber über das Menü "Bildschirm konfigurieren" ausgeblendet werden. Das Widget hat drei verschiedene Zustände: *Aufzeichnung*, *Pausiert* und *Inaktiv*, die jeweils den aktuellen Status Ihrer Reiseaufzeichnung anzeigen. |
 | ![Reiseaufzeichnungs (REC) Widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Um den [Reiseaufzeichnungsdialog](#start-a-dialog) zu öffnen, wenn Sie auf ein inaktives Widget tippen, aktivieren Sie die Option *Startdialog anzeigen* in den Einstellungen des Reiseaufzeichnungs-Plugins. Wenn die Option deaktiviert ist, startet die Aufzeichnung sofort nach dem Tippen auf das Widget, ohne den Dialog zu öffnen.| 
 
@@ -431,61 +458,22 @@ Unter Android unterstützt das Distanz-Widget mehrere Anzeigemodi:
 - **Letzter Bergab** – Distanz des zuletzt aufgenommenen Abstiegsabschnitts.
 
 
-### Dauer, Bergauf, Bergab {#duration-uphill-downhill}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
+### Zusätzliche Widgets {#additional-widgets}
 
 | |
 |------------|
 |**Dauer**. Zeigt die Gesamtzeit der aktuellen Reiseaufzeichnung in Stunden und Minuten an. |
-|![Widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Bergauf**. Zeigt den gesamten Anstieg oder den letzten Anstiegsabschnitt an, abhängig vom ausgewählten Modus. |
-|![Widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 |**Bergab**. Zeigt den gesamten Abstieg oder den letzten Abstiegsabschnitt an, abhängig vom ausgewählten Modus. |
-|![Widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-| |
-|------------|
-|**Dauer**. Zeigt die Gesamtzeit der aktuellen Reiseaufzeichnung in Stunden und Minuten an. |
-|![Widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Bergauf**. Zeigt den gesamten Anstieg oder den letzten Anstiegsabschnitt an, abhängig vom ausgewählten Modus. |
-|![Widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Bergab**. Zeigt den gesamten Abstieg oder den letzten Abstiegsabschnitt an, abhängig vom ausgewählten Modus. |
-|![Widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-</Tabs>
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Max. Geschwindigkeit**. Zeigt die maximale Geschwindigkeit für die aktuell aufgezeichnete Reise im ausgewählten Modus an. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Durchschnittssteigung**. Zeigt die durchschnittliche Steigung für den letzten Bergauf- oder Bergababschnitt der aktuellen Reise an, abhängig vom ausgewählten Modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 
 Wenn Sie mehrere Widgets ausgewählt haben – *Dauer*, *Bergauf* oder *Bergab* – können Sie für jedes auf dasselbe Dialogfeld zugreifen, ohne es wechseln oder schließen zu müssen. Diese einheitliche Benutzeroberfläche erleichtert die nahtlose Anzeige und Verwaltung aller zugehörigen Informationen.
-
-### Max. Geschwindigkeit & Durchschnittssteigung {#max-speed--average-slope}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Max. Geschwindigkeit Android](@site/static/img/widgets/max_speed_android.png) ![Durchschnittssteigung Android](@site/static/img/widgets/average_slope_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Max. Geschwindigkeit iOS](@site/static/img/widgets/max_speed_ios.png) ![Durchschnittssteigung iOS](@site/static/img/widgets/average_slope_ios.png) 
-
-</TabItem>
-
-</Tabs> 
-
-Das **Max. Geschwindigkeit**-Widget zeigt die maximale Geschwindigkeit für die aktuell aufgezeichnete Reise an. Tippen Sie auf das Widget, um zwischen der Gesamtmaximalgeschwindigkeit und der maximalen Geschwindigkeit aus dem letzten Bergauf- oder Bergababschnitt zu wechseln.
-
-Das **Durchschnittssteigung**-Widget zeigt die durchschnittliche Steigung für den letzten Bergauf- oder Bergababschnitt der aktuellen Reise an. Es hilft, abzuschätzen, wie steil der vorherige Anstieg oder Abstieg war, basierend auf Höhengewinn und Distanz.
 
 
 ## Verwandte Artikel {#related-articles}

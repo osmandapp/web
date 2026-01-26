@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title:  Barrierefreiheit
 ---
@@ -96,14 +96,18 @@ Zum Aktivieren:
 
 - Ein langes Tippen auf **Meine Position** öffnet ein Menü mit den Optionen ***Ihre Position anzeigen*** und ***Details anzeigen***. Die Auswahl von Details anzeigen zeigt zusätzliche Routeninformationen an und bietet den Button ***Auto-Ansage starten/stoppen***.
 - Stellen Sie die **Auto-Ansage-Periode** (z. B. *10 Sekunden*) ein, um die Häufigkeit der Ansagen zu steuern.
-- Wenn **TalkBack** nicht in den Systemeinstellungen des Geräts aktiviert ist, liefert OsmAnd keine *Sprachbenachrichtigungen* und zeigt nur *Textbenachrichtigungen* auf dem Bildschirm an.  
+- Wenn **TalkBack** aktiviert ist, werden diese Benachrichtigungen laut vorgelesen. Wenn **TalkBack** nicht in den Systemeinstellungen des Geräts aktiviert ist, liefert OsmAnd keine *Sprachbenachrichtigungen* und zeigt nur *Textbenachrichtigungen* auf dem Bildschirm an.  
 
 ### Intelligente Auto-Ansage {#smart-autoannounce}
 
 Zum Aktivieren:
 *Plugins* → *Barrierefreiheit* → *Einstellungen* → *Intelligente Auto-Ansage*
 
-Die Funktion **Intelligente Auto-Ansage** bietet *Audio-Benachrichtigungen*, wenn Sie von der geplanten Route abweichen. Sie ist darauf ausgelegt, sehbehinderte Benutzer zu unterstützen, die auf *Sprachführung* angewiesen sind.  
+Die Funktion **Intelligente Auto-Ansage** arbeitet aufbauend auf der Auto-Ansage. Starten Sie zuerst die Auto-Ansage und aktivieren Sie dann die Intelligente Auto-Ansage in den Plugin-Einstellungen.
+
+Wenn die Intelligente Auto-Ansage aktiviert ist, werden Ansagen ausgelöst, wenn sich der Sektor des aktuellen Navigationsziels ändert. Dies geschieht typischerweise, wenn sich Ihre Bewegung die Richtung zum nächsten Abbiegemanöver oder Ziel ändert. Wenn die Intelligente Auto-Ansage deaktiviert ist, zeigt OsmAnd periodische Benachrichtigungen gemäß der Auto-Ansage-Periode an.
+
+**Hinweis:** Nur die Auto-Ansage-Periode kann angepasst werden. Der Auslöser „Sektorwechsel“ ist in den App-Einstellungen nicht konfigurierbar. 
 
 
 ## Plugin-Einstellungen {#plugin-settings}
@@ -117,7 +121,7 @@ Das Barrierefreiheits-Plugin bietet verschiedene Einstellungen, um die Navigatio
 | Einstellung                   | Beschreibung |  
 |---------------------------|-------------|  
 | **Barrierefreiheitsmodus**    | Aktiviert *integrierte OsmAnd-Funktionen* oder verwendet **Systemeinstellungen**. |  
-| **Sprechgeschwindigkeit**           | Steuert die *Text-zu-Sprache-Geschwindigkeit*, im Bereich von **50 % bis 200 %**. |  
+| **Sprechgeschwindigkeit**           | Steuert die *Text-zu-Sprache-Geschwindigkeit*, im Bereich von **50% bis 200%**. |  
 | **Pinch-Zoom-Vergrößerung**    | Vergrößert die Karte vorübergehend, während Sie pinch-zoomen und Ihre Finger auf dem Bildschirm belassen, vergrößert Text und Symbole, ohne das tatsächliche Zoom-Niveau zu ändern. |
 | [Intelligente Auto-Ansage](#smart-autoannounce)    | Bietet *Sprachführung*, wenn von der Route abgewichen wird. |  
 | **Auto-Ansage-Periode**   | Legt die Mindestzeit zwischen den Ansagen fest, von **5 Sekunden bis 5 Minuten**. |  

@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Weather
 title: Weather on the Web
@@ -28,8 +28,8 @@ Wetterdaten sind verfügbar, ohne sich anzumelden. Die Wetteransicht kann direkt
 
 Die OsmAnd Web stellt Wetterinformationen aus zwei Prognosequellen bereit:
 
-- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Globales Prognosesystem)** – die Standardquelle, betrieben von NOAA/NWS. Bietet vollständige Wetterdaten, einschließlich Temperatur, Druck, Feuchtigkeit, Wind- und Wolken-Schichten.  
-- [**ECMWF**](https://www.ecmwf.int/) **(Europäisches Zentrum für mittelfristige Wettervorhersagen)** – eine alternative Prognosequelle. Bietet hochwertige Temperatur-, Niederschlags- und Druckdaten, liefert jedoch keine Wind- oder Wolkeninformationen.  
+- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – die Standardquelle, betrieben von NOAA/NWS. Bietet vollständige Wetterdaten, einschließlich Temperatur, Druck, Feuchtigkeit, Wind- und Wolken-Schichten.  
+- [**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – eine alternative Prognosequelle. Bietet hochwertige Temperatur-, Niederschlags- und Druckdaten, liefert jedoch keine Wind- oder Wolkeninformationen.  
 
 Um zwischen ihnen zu wechseln, klicken Sie auf die **Regenschirm-Schaltfläche** im Wettermenü.
 
@@ -49,7 +49,7 @@ Das Menü zeigt die folgenden Wetterparameter für den ausgewählten Ort:
 - *Niederschlag*.
 - *Wind*.
 - *Luftdruck*.
-- *Wolken*.  
+- *Wolke*.  
 
 Jeder Wert aktualisiert sich dynamisch, wenn die Prognosezeit oder das Datum geändert wird.
 
@@ -69,7 +69,7 @@ Die folgenden Wetterschichten sind verfügbar:
 - *Niederschlag* — zeigt die Niederschlagsintensität im ausgewählten Bereich.
 - *Wind* — visualisiert Windgeschwindigkeit und -richtung.
 - *Luftdruck* — zeigt atmosphärische Druckmuster an.
-- *Wolken* — zeigt die Wolkenbedeckung.
+- *Wolke* — zeigt die Wolkenbedeckung.
 
 Alle Wetterschichten sind mit dem ausgewählten Datum und der Uhrzeit im Wettermenü synchronisiert. Das Ändern des Prognosetags oder das Anpassen des Zeitreglers aktualisiert die Kartenüberlagerungen sofort, um den gewählten Moment widerzuspiegeln.
 
@@ -89,7 +89,7 @@ Sie können zwischen verschiedenen Wetterparametern mit den Symbolen oben im Pro
 ![OsmAnd Web Wetter](@site/static/img/web/weather_forecast.png)
 
 
-## Related Article {#related-article}
+## Related Articles {#related-articles}
 
 - [Wetter](../plugins/weather.md)
 - [Einführung](../web/web-overview.md)

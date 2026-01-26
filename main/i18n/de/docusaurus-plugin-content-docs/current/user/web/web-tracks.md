@@ -1,5 +1,5 @@
 ---
-source-hash: ece3e6010ee14839c5fe53b38593cda3c765a31a9395566df04b16ce2b73c3b4
+source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -78,21 +78,21 @@ Die folgenden Funktionen sind verfügbar, nachdem Sie einen Cloud-Track ausgewä
 
 - Informationsbildschirme:
   - *Information* - Anzeige der Track-Daten.
-  - *Höhe* - Höhen-diagramm.
+  - *Höhe* - Höhen-Diagramm.
   - *Geschwindigkeit* - Geschwindigkeitsdiagramm.
   - *Steigung* - Steigungsdiagramm.
   - *Einstellungen* - Liste der Navigationsprofile für das Tool *Route erstellen*.
   - *Wenden* - Eine generierte Liste approximativer Wendeanweisungen basierend auf der Track-Geometrie.
   - *Straßentyp* - Zerlegt den Track in Segmente nach Straßeneinstufung.
   - *Oberfläche* - Zeigt die Arten von Track-Oberflächen entlang der Route.
-  - *Glatte* - Zeigt die Glätte von Segmenten basierend auf OSM-Tags an.
+  - *Glätte* - Zeigt die Glätte der Segmente basierend auf OSM-Tags an.
 
 ![OsmAnd Web Cloud-GPX-Bearbeitung](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web Cloud-GPX-Bearbeitung](@site/static/img/web/cloud_track_details.png)
 
 - Aktionsbuttons:
   - *Track bearbeiten* - Cloud-Track lokal zur Bearbeitung hinzufügen (_Lokale Bearbeitung*-Button auf dem Panel).
   - *GPX herunterladen* - Lädt den Track auf den PC herunter.
-  - *Höhe (Satellit) neu berechnen* - Zeigt das Höhen-diagramm des ausgewählten Tracks an.
+  - *Höhe (Satellit) neu berechnen* - Berechnet die Höhenwerte für den ausgewählten Track neu und zeigt sie im Höhen-Diagramm an.
   - *Track löschen* - Löscht den Track.
   - *Track schließen* - Schließt den Track.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
+source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
 sidebar_position: 2
 title: Kartenansicht während der Navigation
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Dieser Artikel beschreibt, wie Sie das Erscheinungsbild der Karte während der Navigation konfigurieren. Dies umfasst Funktionen wie die Anzeige von [POIs entlang der Route](#show-points-along-the-route), die Verwendung von [Bildschirmwarnungen](#screen-alerts) und das [Aussehen der Routenlinie](#route-line-appearance) einschließlich Farbe, Breite und Abbiegepfeilen. Diese Funktionen sind eng mit den [Einstellungen für die Routennavigation](../setup/route-navigation.md#settings) verknüpft.
+Dieser Artikel beschreibt, wie Sie das Erscheinungsbild der Karte während der Navigation konfigurieren. Dies umfasst Funktionen wie die Anzeige von [POIs entlang der Route](#show-points-along-the-route), die Verwendung von [Bildschirmwarnungen](#screen-alerts), [Aussehen der Routenlinie](#route-line-appearance) einschließlich Farbe, Breite und Abbiegepfeilen. Diese Funktionen sind eng mit den [Einstellungen für die Routennavigation](../setup/route-navigation.md#settings) verknüpft.
 
 
 ## Karte während der Navigation {#map-during-navigation}
@@ -50,9 +50,9 @@ Während der Navigation passt sich das Erscheinungsbild der Karte an das ausgew�
 | Parameter | Beschreibung | Hinweis |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Die Zeit, für die die Kartenansicht nach einer Bewegung mit der aktuellen Position synchronisiert wird. | *Wert:* <br /> Nie, 5 Sek., 10 Sek., 15 Sek., 20 Sek., 25 Sek., 30 Sek., 45 Sek., 60 Sek., 50 Sek.|
-| *<Translate android="true" ids="auto_zoom_map"/>*  | Automatische Skalierung der Karte entsprechend Ihrer Geschwindigkeit, solange die Karte mit Ihrer aktuellen Position synchronisiert ist. | *Wert:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manueller Zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - Zoom ist 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - Zoom ist 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - Zoom ist 5 m. |
-| *Auto-Zoom-3D-Winkel* | Legt den Neigungswinkel der Karte fest, wenn während der Navigation auf die 3D-Ansicht gewechselt wird. Ein höherer Winkel lässt den Horizont weiter entfernt erscheinen und bietet mehr Sicht nach vorn. |Wird nur angewendet, wenn Auto-Zoom aktiviert ist. Werte: 20°, 25°, 30°, 35°, 40°. Standard: 25°.  |
-| *Nächste Abbiegung vorbereiten* | Rotiert die Karte automatisch etwas im Voraus, um die nächste Abbiegung oder das nächste Manöver während der Navigation anzuzeigen. Hilft, bevorstehende Aktionen zu antizipieren.  | Standardmäßig aktiviert. Wenn Sie ein Profil exportieren und erneut importieren, überprüfen Sie diese Einstellung, da sie in einigen früheren Versionen auf „aktiviert“ zurückgesetzt werden konnte.   |
+| *<Translate android="true" ids="auto_zoom_map"/>*  | Automatische Skalierung der Karte entsprechend Ihrer Geschwindigkeit, solange die Karte mit Ihrer aktuellen Position synchronisiert ist. | *Wert:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manueller Zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - Zoom ist 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - Zoom ist 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - Zoom ist 5 m. <br /> Auto-Zoom-Änderungen können animiert (Sanft) oder schrittweise (Diskret) sein, abhängig von den [Entwicklungseinstellungen](navigation-settings.md#development-settings). Im Sanft-Modus verwenden Zoom-Änderungen eine kontrollierte Animation (ca. 0,1 Zoom/Sekunde). Auto-Zoom passt den Zoom bei sehr niedrigen Geschwindigkeiten (unter ~7 km/h) nicht an. Wenn die erforderliche Zoom-Änderung weniger als ~1,5 Sekunden dauern würde, wird die Animation nicht gestartet. <br /> Auto-Zoom zielt darauf ab, das bevorstehende Manöver in einem stabilen Fokus-Bereich auf dem Bildschirm zu halten, sodass die sichtbare Distanz voraus während der Fahrt konsistent bleibt.|
+| *Auto-Zoom-3D-Winkel* | Legt den Neigungswinkel der Karte fest, wenn während der Navigation auf die 3D-Ansicht gewechselt wird. Ein höherer Winkel lässt den Horizont weiter entfernt erscheinen und bietet mehr Sicht nach vorn. |Wird nur angewendet, wenn Auto-Zoom aktiviert ist. Werte: 20°, 25°, 30°, 35°, 40°. Standard: 25°. <br /> Beim Annähern an ein Manöver/Kreuzung kann die App den 3D-Neigungswinkel schrittweise auf eine 2D-Ansicht reduzieren, um die nächste Abbiegung lesbar zu halten. |
+| *Nächste Abbiegung vorbereiten* | Rotiert die Karte automatisch etwas im Voraus, um die nächste Abbiegung oder das nächste Manöver während der Navigation anzuzeigen. Hilft, bevorstehende Aktionen zu antizipieren.  | Standardmäßig aktiviert. Wenn Sie ein Profil exportieren und erneut importieren, überprüfen Sie diese Einstellung, da sie in einigen früheren Versionen auf „aktiviert“ zurückgesetzt werden konnte.   <br /> Die Rotation/Vorschau wird ausgelöst, sobald der nächste Manöverpunkt in den Fokus-Bereich fällt (die Karte beginnt also, sich die Abbiegung anzusehen, wenn sie relevant wird). |
 | *<Translate android="true" ids="snap_to_road"/>*  | Das Symbol für die aktuelle Position wird mit der aktuellen Navigationsroute verknüpft. | Sie können diese Option deaktivieren, aber alle straßenbezogenen Optionen, wie z. B. die Spuranzeige, sind dann während der Navigation ebenfalls nicht sichtbar.  |
 
 
@@ -182,7 +182,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 Sie können das Aussehen der Routenlinie nach Stil auswählen oder die Farbe, Breite und Transparenz der Linie manuell festlegen. Zusätzlich können Sie wählen, ob Abbiegepfeile und Richtungspfeile auf der Linie angezeigt werden sollen.
 
-**Erweitert**: Die Einstellung "Routenlinie anpassen" ermöglicht es Ihnen, das Aussehen der Routenlinie anzupassen, um Höhenänderungen, deutliche Steigungen oder Gefälle, Eis auf der Straße, unbefestigte Straßen, Autobahnen und andere mögliche Hindernisse anzuzeigen. Sie können auch benutzerdefinierte [Farbschemata](../../personal/color-palette-schemes.md#routes) auswählen oder erstellen, um sie auf die Routenlinie anzuwenden.
+**Erweitert**: Die Einstellung "Routenlinie anpassen" ermöglicht es Ihnen, das Aussehen der Routenlinie anzupassen, um Höhenänderungen, deutliche Steigungen oder Gefälle, Eis auf der Straße, unbefestigte Straßen, Autobahnen und andere mögliche Hindernisse anzuzeigen. Sie können auch benutzerdefinierte [Farbschemata](../../personal/color-palette-schemes.md#tracks-routes) auswählen oder erstellen, um sie auf die Routenlinie anzuwenden.
 
 
 :::note

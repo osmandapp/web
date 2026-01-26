@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title:  Darstellung von Tracks
 ---
@@ -69,7 +69,7 @@ Auf iOS öffnet sich die **Färbungsliste** als Kontextmenü. Elemente können i
 2. <Translate ios="true" ids="weather_update_disabled"/>. Dem Track fehlen die erforderlichen Daten.
 3. PRO. Für den aktuellen Track verfügbar, erfordert jedoch ein Abonnement; Tippen öffnet den [<Translate ios="true" ids="purchase_dialog_title"/> Bildschirm](https://osmand.net/docs/user/purchases/ios).
 
-Weitere Details zur Anpassung der Routenliniendarstellung finden Sie unter [Kartenbildschirm während der Navigation](../../navigation/guidance/map-during-navigation.md#color) und zur Auswahl und Erstellung einer benutzerdefinierten Farbe unter [Farbschemata](../../personal/color-palette-schemes.md#routes).
+Weitere Details zur Anpassung der Routenliniendarstellung finden Sie unter [Kartenbildschirm während der Navigation](../../navigation/guidance/map-during-navigation.md#color) und zur Auswahl und Erstellung einer benutzerdefinierten Farbe unter [Farbschemata](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### Breite {#width}

@@ -1,5 +1,5 @@
 ---
-source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
+source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
 sidebar_position: 2
 title:  Mit der Karte interagieren
 ---
@@ -208,8 +208,8 @@ Sie können alle Kartenanimationen während der Interaktion mit der Karte, einsc
 
 ### Eigene Position animieren {#animate-own-position}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
 Erzeugt einen sanften Schwenkeffekt der Karte im Vergleich zum Symbol *[Meine Position](../personal/profiles/#profile-appearance)*, wenn man sich bewegt. Der Effekt führt zu einer leichten Verzögerung von etwa 1 Sekunde gegenüber der tatsächlichen Position. Es wurde berichtet, dass die Aktivierung dieser Funktion unter bestimmten Umständen zu spürbaren Verzögerungen führen kann. Deaktivieren Sie sie, wenn solche Probleme auftreten.
 
@@ -358,7 +358,7 @@ Nachdem Sie einen benutzerdefinierten Eingabetyp erstellt haben, können Sie den
 
 </Tabs> 
 
-Sie können mehrere unnötige Aktionen auf einmal löschen, indem Sie die **Bearbeiten-Schaltfläche** (*bleistiftförmig* auf Android) in der oberen rechten Ecke des Bildschirms verwenden:
+Sie können mehrere unnötige Aktionen mit der **Bearbeiten-Schaltfläche** (*bleistiftförmig* auf Android) auf einmal löschen:
 
 - ***Eine Aktion entfernen*** pro Aktion, mit der &nbsp; "**−**" &nbsp;-Schaltfläche im Elementfeld. Tastenzuweisung kann auch über das Kontextmenü (langes Tippen auf das Element) entfernt werden, indem Sie **Entfernen** tippen.
 - ***Alle Tastenzuweisungen entfernen*** für den ausgewählten Typ, indem Sie auf die Schaltfläche in der oberen rechten Ecke des Bildschirms neben dem *Namen bearbeiten* auf Android tippen; indem Sie auf die Schaltfläche **Alle löschen** auf iOS tippen.

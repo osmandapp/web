@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -365,12 +365,12 @@ Wenn auf der Route *keine Höheninformationen* vorhanden sind, können Sie diese
 ### Fehlende Höhe berechnen {#calculate-missing-elevation}
 
 :::note OsmAnd Pro-Abonnement
-Die Funktion zur Offline-Berechnung der Höhe ist nur für [**OsmAnd Pro-Abonnenten**](../../purchases/android.md#pro-features) verfügbar <ProFeature />.
+[Calculate elevation offline](../../plan-route/create-route.md#get-elevation-data) feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Diese Funktion ermöglicht es Ihnen, das Höhenprofil für einen GPX-Track offline für jedes Gelände zwischen 70 Grad nördlicher und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) müssen zuvor heruntergeladen werden*.
+[Diese Funktion](../../plan-route/create-route.md#get-elevation-data) ermöglicht es Ihnen, das Höhenprofil für einen GPX-Track offline für jedes Gelände zwischen 70 Grad nördlicher und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) müssen zuvor heruntergeladen werden*.
 
 1. Laden Sie [Geländekarten (3D)](../../plugins/topography.md#download-maps) für die erforderliche Region herunter.
 2. Wenn der Track keine Höhendaten enthält, gehen Sie zum Track-Kontextmenü (*Track-Kontextmenü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wählen Sie *Geländekarten verwenden*, und nach der Berechnung erhalten Sie ein Track-Diagramm basierend auf den Geländedaten.  
@@ -471,7 +471,7 @@ Tippen Sie auf die Schaltfläche *Wegpunkt hinzufügen*, um den Bildschirm zur E
 
 <TabItem value="ios" label="iOS">
 
-![Track-Menü Gruppenmenü iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Track-Menü Gruppenmenü iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Track-Menü Gruppenmenü iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -483,7 +483,7 @@ Das *Drei-Punkte-Menü* ( &#8285; ) öffnet das *Gruppenmenü* des Wegpunkts.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Ermöglicht es Ihnen, Gruppenwegpunkte auf der Karte anzuzeigen oder nicht. Oder Sie können die [Bildschirmschaltfläche](#points--waypoints) verwenden, um Gruppenwegpunkte auf der Karte anzuzeigen oder auszublenden.
 - **<Translate android="true" ids="shared_string_rename"/>** - Ändern Sie den Namen der Gruppe.
-- **<Translate android="true" ids="change_default_appearance"/>** - Ändern Sie die Anzeigeoptionen für eine Gruppe von Wegpunkten.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Ändern Sie die Anzeigeoptionen für eine Gruppe von Wegpunkten.
 - **<Translate android="true" ids="add_group_to_markers"/>** oder **Entfernen** (*Nur Android*) - Verschieben Sie Gruppenwegpunkte in die Liste der [Kartenmarkierungen](../../personal/markers.md).
 - **<Translate android="true" ids="add_to_favorites"/>** (*Nur Android*) - Ermöglicht es Ihnen, die ausgewählte Gruppe von Wegpunkten in [Favoriten](../../personal/favorites.md) zu kopieren. Sie können eine von zwei Optionen wählen: ***<Translate android="true" ids="copy_as_new_folder"/>*** oder ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Nur Android*) - Erstellt eine Route zwischen Wegpunkten. Der erste und letzte Punkt werden zum Start und Ziel der Route, und die restlichen werden zu Zwischenpunkten.
@@ -656,7 +656,7 @@ Für jedes Segment können Sie anzeigen:
 - Zeit in Bewegung.
 - durchschnittliche und maximale Geschwindigkeit.
 
-Wenn Sie auf ein beliebiges Segment in der Liste tippen, zeigt die Kartenansicht den vollständigen Track mit seinen Intervallen an und öffnet das Kontextmenü für den Track am unteren Rand des Bildschirms.
+Wenn Sie auf ein beliebiges Segment in der Liste tippen, zeigt die Kartenansicht den vollständigen Track mit seinen Intervallen an und öffnet das Kontextmenü für den Track am unteren Rand des Bildschirms. Auf der Karte unterstützen Intervallbeschriftungen zwei Aktionen: Tippen, um das Track-Übersichtsfenster zu öffnen, und langes Drücken, um das Track-Kontextmenü zu öffnen.
 
 
 ### Nach Zeit aufteilen {#split-by-time}
@@ -668,9 +668,14 @@ Die Option **Nach Zeit aufteilen** teilt einen Track in Intervalle gleicher Daue
 
 ### Nach Bergauf/-ab aufteilen {#split-by-uphill-downhill}
 
-![Track-Aufteilung nach Bergauf/-ab Tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track-Aufteilung nach Bergauf/-ab Karte](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Track-Aufteilung nach Bergauf/-ab Tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track-Aufteilung nach Bergauf/-ab Karte](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
 Diese Option teilt einen Track in Segmente basierend auf Höhenänderungen auf. Jedes Intervall wird als ***Bergauf***, ***Bergab*** oder ***Ebene*** klassifiziert. Die Art und Weise, wie die Intervalle angezeigt werden, die für jedes Segment bereitgestellten Statistiken und wie sie auf der Karte erscheinen, sind ebenfalls dieselben wie im Abschnitt [Nach Entfernung aufteilen](#split-by-distance).
+
+Auf der Karte werden die Segmente mit farbigen Beschriftungen am Anfang jedes Intervalls markiert:
+- **Bergauf-Segmente** (rote Beschriftungen) zeigen einen Pfeil nach oben, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↑ 11. 2 %).
+- **Bergab-Segmente** (grüne Beschriftungen) zeigen einen Pfeil nach unten, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↓ 12. -2 %).
+- **Ebene Segmente** (blaue Beschriftungen) zeigen die Distanz des ebenen Abschnitts (z. B. 616 m, 411 m).
 
 
 ### Herzfrequenz-Metriken {#heart-rate-metrics}

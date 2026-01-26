@@ -1,5 +1,5 @@
 ---
-source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
+source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
 sidebar_position: 9
 title: Ressourcen und Anpassungen
 ---
@@ -27,16 +27,16 @@ Um sich mit anderen OsmAnd-Nutzern zu vernetzen, Fragen zu stellen und Ihre Erfa
 
 | Plattform | Gruppenname | Beschreibung | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | OsmAnd users community (*Englisch*)  |  Dies ist eine Gruppe, in der OsmAnd-Nutzer anderen Nutzern helfen können.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
-|  Facebook | Osmand-gebruikers (*Niederländisch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
-|  Facebook | OSMAND+ Aide Partage et Astuces (*Französisch*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | LC8 Rally OsmAnd user group (*Englisch*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*Italienisch*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*Englisch*)  | Eine Gruppe, in der Nutzer Tipps teilen, Fragen beantworten und die Funktionalitäten von OsmAnd diskutieren. | [Google Groups](https://groups.google.com/g/osmand)  |
-|  Reddit | OsmAnd - Diskussion und Support  | Die Reddit-Community für OsmAnd-Nutzer. Stellen Sie Fragen, teilen Sie Erfahrungen oder präsentieren Sie Ihre benutzerdefinierten Kartenstile. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | OsmAnd News channel (*Englisch*)  | Die offizielle OsmAnd-Gruppe für Ankündigungen und Updates direkt von den Entwicklern. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  X (Twitter) | OsmAnd-Nachrichtenkanal  | Offizielle OsmAnd-Gruppe für Live-Diskussionen, Ankündigungen und Updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
-|  Instagram | OsmAnd-Nachrichtenkanal | Eine Community, in der Sie chatten, Tipps austauschen und Hilfe zu OsmAnd-Funktionen erhalten können. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
+| Facebook | OsmAnd users community (*English*)  |  Dies ist eine Gruppe, in der OsmAnd-Nutzer anderen Nutzern helfen können.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+|  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
+|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italian*)  |  Zum Austausch von Erfahrungen mit der Nutzung von OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | Eine Gruppe, in der Nutzer Tipps teilen, Fragen beantworten und die Funktionalitäten von OsmAnd diskutieren. | [Google Groups](https://groups.google.com/g/osmand)  |
+|  Reddit | OsmAnd - discussion and support  | Die Reddit-Community für OsmAnd-Nutzer. Stellen Sie Fragen, teilen Sie Erfahrungen oder präsentieren Sie Ihre benutzerdefinierten Kartenstile. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
+|  Telegram | OsmAnd News channel (*English*)  | Die offizielle OsmAnd-Gruppe für Ankündigungen und Updates direkt von den Entwicklern. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  X (Twitter) | OsmAnd news channel  | Offizielle OsmAnd-Gruppe für Live-Diskussionen, Ankündigungen und Updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
+|  Instagram | OsmAnd news channel | Eine Community, in der Sie chatten, Tipps austauschen und Hilfe zu OsmAnd-Funktionen erhalten können. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## Konverter {#converters}
@@ -87,8 +87,8 @@ Das Folgende ist eine Liste von [benutzerdefinierten Plugins](../plugins/custom.
 | 3D model  | Dieses Paket fügt eine 3D-Modelloption für Profile hinzu. Passen Sie das Aussehen über das Menü an: [*OsmAnd-Menü → Einstellungen → Profil → Profil-Aussehen → wählen Sie das 4.-5. Symbol des Positionssymbols*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS online maps collection | Eine Sammlung verschiedener Online-Kartenquellen, darunter Satelliten-, Touristen- und historische Karten.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Map Legend  | Dieses Paket fügt eine Offline-Kartenlegende hinzu (Version 1.01; 03-04-2024), zugänglich über *Menü → Meine Orte → Favoriten → Kartenlegende*. Die Kartenlegende ist auch an [diesem Ort](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059) verfügbar.  | [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 The USA Maps | Eine Sammlung von US-Karten mit [Öffentlichem Land (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), [USFS Trails and Roads](https://www.fs.usda.gov/visit/maps), [The Bureau of Land Management (BLM)](https://www.blm.gov) und [Parzellendaten (Privatland)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) für einige Bundesstaaten. Alle öffentlichen und privaten Landkarten wurden nach Bundesstaat kategorisiert. BLM- und USFS-Kartendaten wurden in *Straßen und Wege* und *POIs* für das gesamte Gebiet der Vereinigten Staaten unterteilt. Die Karten liegen im OBF-Format für OsmAnd vor. Weitere Informationen auf [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [The USA maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱 UMP map of Poland | [UMP](https://ump.waw.pl/) deckt den größten Teil Polens ab und wird kontinuierlich weiterentwickelt. Lange Zeit wurde der Name UMP-pcPL (mapą prawie całej Polski) verwendet. | [UMP map of Poand](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| 🇺🇸 The USA Maps | Eine Sammlung spezialisierter US-Karten, konvertiert in das OsmAnd-OBF-Format, mit<ul><li>[USGS Public lands and protected areas (PAD-US 3.0), by state](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[USFS Trails and Roads, nationwide](https://www.fs.usda.gov/visit/maps),</li><li>[BLM Roads and Trails, nationwide](https://www.blm.gov/maps),</li><li>[BLM Receation Activity POIs, nationwide](https://www.blm.gov/maps),</li><li>[Private lands (parcel data), for some states](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Weitere Informationen auf [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [The USA maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇵🇱 UMP map of Poland | [UMP](https://ump.waw.pl/) deckt den größten Teil Polens ab und wird kontinuierlich weiterentwickelt. Lange Zeit wurde der Name UMP-pcPL (mapą prawie całej Polski) verwendet. | [UMP map of Poland](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Dieses Plugin enthält einen leichtgewichtigen Kartenstil, der die Sichtbarkeit von unbefestigten Straßen und Wegen in OsmAnd verbessert.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
@@ -98,7 +98,7 @@ Die Standarddatei [render.xml](https://github.com/osmandapp/OsmAnd-resources/blo
 
 | Quellenname | Beschreibung | Link |
 | -- | -- | --|
-| Gravel Roads Seeker | Kartenstil, der eine bessere Visualisierung der Straßenoberfläche bietet und zwischen befestigten und unbefestigten Straßen unterscheidet (*französische* Webseite). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
+| Gravel Roads Seeker | Kartenstil, der eine bessere Visualisierung der Straßenoberfläche bietet und zwischen befestigten und unbefestigten Straßen unterscheidet (*Französisch* Webseite). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
 | OsmAnd Rendering | Eine Sammlung von Zugriffen auf Online-Karten, topografische Karten, Orthofotos und andere geografische Ressourcen, die von einigen der wichtigsten geografischen Institutionen in verschiedenen Ländern verfügbar sind. Updates werden laufend durchgeführt, aber wenn Dateien veraltet sind, werden die Nutzer gebeten, dies zu melden. | [Online Maps: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | Eine topografische Karte mit der Option *Alles Wasser ausblenden*, beigesteuert von [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | Das Repository dient dazu, von Nutzern erstellte benutzerdefinierte Kartenstile für andere Nutzer bereitzustellen. |[UniMap from GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|

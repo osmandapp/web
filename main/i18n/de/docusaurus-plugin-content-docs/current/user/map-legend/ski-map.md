@@ -1,12 +1,13 @@
 ---
-source-hash: bb22bcf1fdaa828b07cfccd05959b1c7d957608a4bc40163f0ca9a3600f43560
+source-hash: 80e2ab2b423ea0f0215d8fc6f6072afceb1a4fe11928706bd7f77a87155262a4
 sidebar_position: 2
 title: Ski-Kartenstil
 ---
+
 import Translate from '@site/src/components/Translate.js';
 
 # Ski-Kartenstil {#ski-map-style}
-Standard-Kartenstil von OsmAnd, Teil des Ski-Kartenplugins.
+Der Ski-Kartenstil ist ein separater Rendering-Stil von OsmAnd, der durch seine eigene XML-Konfigurationsdatei definiert wird. Die vollständige Sammlung der Rendering-Regeln ist [hier](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/skimap.render.xml) verfügbar.
 <Translate android="yes" id="ski_map_render_descr" />
 
 ## Pistenzweck {#piste-type}

@@ -1,5 +1,5 @@
 ---
-source-hash: fe9500be3570d2dbf08995ee5614eb89cd647a44f0360730e48015dced34c738
+source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-**Tracks Analyzer** ist ein Web-Tool, das hilft, wiederkehrende Track-Segmente zwischen ausgewählten Punkten auf der Karte zu analysieren. Es scannt Ihre Tracks und findet alle Segmente, die durch die gewählten Ort(e) verlaufen, sodass Sie Geschwindigkeit, Höhe, Distanz und Zeit über mehrere Aktivitäten hinweg vergleichen können.
+**Tracks Analyzer** ist ein Web-Tool, das hilft, wiederkehrende Track-Segmente zwischen ausgewählten Punkten auf der Karte zu analysieren. Um diese Funktion mit Ihren eigenen Daten zu nutzen, benötigen Sie ein OsmAnd Pro-Konto mit Tracks, die mit OsmAnd Cloud synchronisiert sind – andernfalls sind Ihre Tracks im Web Planner nicht verfügbar. Es scannt Ihre Tracks und findet alle Segmente, die durch die gewählten Ort(e) verlaufen, sodass Sie Geschwindigkeit, Höhe, Distanz und Zeit über mehrere Aktivitäten hinweg vergleichen können.
 
 ## Verwendung {#how-to-use}
 
@@ -27,7 +27,7 @@ Nach dem Öffnen des Tracks Analyzer (dargestellt als Schraubenschlüssel) öffn
 
 Um die Analyse zu starten, legen Sie einen oder zwei Punkte direkt auf der Karte fest. Klicken Sie mit der rechten Maustaste auf den gewünschten Ort und wählen Sie **Punkt A / Punkt B** aus dem Kontextmenü aus. Der Analyzer sucht dann nach Track-Segmenten, die durch den ausgewählten Punkt verlaufen oder zwischen den beiden Punkten liegen.
 
-![Streckenanalysator](@site/static/img/web/web_analyzer_select.png) ![Streckenanalysator](@site/static/img/web/web_analyzer_points.png)
+![Tracks Analyzer](@site/static/img/web/web_analyzer_select.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_points.png)
 
 
 ## Sortierung und sichtbare Parameter {#sorting-and-visible-parameters}
@@ -57,7 +57,7 @@ Die verfügbaren Parameter sind nach Typ gruppiert:
 
 **Länge**
 
-![Streckenanalysator](@site/static/img/web/web_analyzer_sort.png) ![Streckenanalysator](@site/static/img/web/web_analyzer_fields.png)
+![Tracks Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_fields.png)
 
 ## Datenanalyse {#data-analysis}
 
@@ -68,7 +68,7 @@ Jedes Segment hat auch ein Menü mit drei Punkten (⋮) mit den folgenden Aktion
 - Track ausblenden / Track sichtbar machen — steuert, ob der Track auf der Karte angezeigt wird.
 - Ausschließen — entfernt das Segment aus den aktuellen Analyseergebnissen.
 
-![Streckenanalysator](@site/static/img/web/web_analyzer_menu.png)
+![Tracks Analyzer](@site/static/img/web/web_analyzer_menu.png)
 
 ### Diagramme {#graphs}
 
@@ -82,7 +82,7 @@ Nur ein Datentyp wird zur Zeit angezeigt, und die Änderung aktualisiert das Dia
 
 Wenn mehrere Segmente vorhanden sind, zeigt das Diagramm Daten für mehrere Segmente gleichzeitig. Ein Selector über dem Diagramm ermöglicht es, auszuwählen, wie viele Segmentdiagramme gleichzeitig angezeigt werden, und zwischen ihnen zu wechseln.
 
-![Streckenanalysator](@site/static/img/web/web_analyzer_altitude.png) ![Streckenanalysator](@site/static/img/web/web_analyzer_tracks.png)
+![Tracks Analyzer](@site/static/img/web/web_analyzer_altitude.png) ![Tracks Analyzer](@site/static/img/web/web_analyzer_tracks.png)
 
 ## Verwandte Artikel {#related-articles}
 

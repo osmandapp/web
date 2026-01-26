@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -142,7 +142,8 @@ Verfügbare Details umfassen:
 - [Innerhalb von Gebieten](#polygon-information)
 - [Nahegelegene POIs](#nearby-pois)
 - [Nahegelegene beliebte Orte](#nearby-popular-places)
-- [ÖPNV-Routen für Haltestellen](#public-transport-routes)
+- [Reiseführer](#guides) (nur Android)
+- [ÖPNV-Routen](#public-transport-routes)
 - [Favoriten / Trackpunkte aus derselben Gruppe](#favorites--track-points-from-the-group)
 - [OpenStreetMap-Link](#openstreetmap-link)
 - [Online-Fotos](#online-photos)
@@ -215,7 +216,7 @@ Merkmale der Anzeige alternativer Namen:
 - Wenn eine bestimmte Übersetzung *nicht verfügbar* ist, greift OsmAnd auf den **lokalen** Namen zurück, um Genauigkeit und Konsistenz in mehrsprachigen Regionen zu gewährleisten.
 
 
-### Innerhalb des Gebiets {#polygon-information}
+### Innerhalb von Gebieten {#polygon-information}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -233,7 +234,7 @@ Merkmale der Anzeige alternativer Namen:
 
 </Tabs>
 
-Die Funktion **Innerhalb des Gebiets** listet die **Gebiete** auf, in denen sich ein Objekt befindet. Dazu gehören geografische Merkmale, Verwaltungsgrenzen, Landnutzungsgebiete, natürliche Merkmale und andere kategorisierte Gebiete. Eine *Liste der umgebenden Polygone*, sortiert *vom kleinsten zum größten* nach Flächengröße.
+Die Funktion **Innerhalb von Gebieten** listet die **Gebiete** auf, in denen sich ein Objekt befindet. Dazu gehören geografische Merkmale, Verwaltungsgrenzen, Landnutzungsgebiete, natürliche Merkmale und andere kategorisierte Gebiete. Eine *Liste der umgebenden Polygone*, sortiert *vom kleinsten zum größten* nach Flächengröße.
 
 ### Koordinaten {#coordinates}
 
@@ -296,6 +297,18 @@ Ein Tippen auf *Nahegelegene [Beliebte Orte](https://osmand.net/docs/user/plugin
 </TabItem>
 
 </Tabs>
+
+### Reiseführer {#guides}
+
+<InfoAndroidOnly/>
+
+![Reiseführer Android](@site/static/img/map/details_guides.png)
+
+Der Abschnitt **Reiseführer** erscheint im Kartenkontextmenü für einige Orte und bietet Zugriff auf **Reise (Wikivoyage)**-Führer im Zusammenhang mit dem ausgewählten Punkt von Interesse. Er zeigt eine Liste von Führereinträgen (z. B. ein Land oder eine Region) an, die den ausgewählten Ort erwähnen.
+
+Der Abschnitt Reiseführer wird nur angezeigt, wenn **Reise (Wikivoyage)**-Daten für den ausgewählten Bereich heruntergeladen wurden.
+
+**Hinweis:** Reiseführer sind mit Wikivoyage-Inhalten verknüpft, nicht mit allgemeinen Wikipedia-Beschreibungen.
 
 
 ### ÖPNV-Routen {#public-transport-routes}
@@ -725,7 +738,7 @@ Jeder ausgewählte Ort auf der Karte kann als [Parkposition](../plugins/parking.
 ### * Track-Wegpunkt hinzufügen / bearbeiten {#-add--edit-track-waypoint}
 
 :::note
-Um Trackpunkte hinzuzufügen/zu bearbeiten, aktivieren Sie das OsmAnd [**Reiseaufzeichnungs-Plugin**](../plugins/trip-recording.md).
+Um Trackpunkte hinzuzufügen/bearbeiten, aktivieren Sie das OsmAnd [**Reiseaufzeichnungs-Plugin**](../plugins/trip-recording.md).
 :::  
 
 <Tabs groupId="operating-systems" queryString="current-os">

@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Einführung
 title: Einführung in den Web-Planer
@@ -26,9 +26,9 @@ Der **Web-Planer**, auch bekannt als das [**OsmAnd Kartenportal**](https://osman
 
 Entwickelt als plattformübergreifender Begleiter zu OsmAnd für Android und iOS, hilft das Web-Portal Benutzern, Reisen zu planen, Tracks zu analysieren, Gelände anzuzeigen und Dateien mit jedem Desktop- oder Tablet-Browser zu verwalten – ohne eine App installieren zu müssen.
 
-OsmAnd Web ist eng mit dem **OsmAnd Cloud**-Dienst integriert, der die Synchronisierung von Favoriten, Tracks und Backups über Geräte und Plattformen hinweg ermöglicht. Benutzer mit **OsmAnd Start** (kostenlos) oder **OsmAnd Pro** (kostenpflichtig) Konten können dieses Ökosystem voll ausnutzen, indem sie Daten zwischen Mobilgeräten und dem Web synchronisieren. Eine detaillierte Vergleich der *Start*- und *Pro*-Funktionen finden Sie im Abschnitt [Abonnement-Zugang](#subscription-access) unten.
+OsmAnd Web ist eng mit dem **OsmAnd Cloud**-Dienst integriert, der die Synchronisierung von Favoriten, Tracks und Backups über Geräte und Plattformen hinweg ermöglicht. Benutzer mit **OsmAnd Start** (kostenlos) oder **OsmAnd Pro** (kostenpflichtig) Konten können dieses Ökosystem voll ausnutzen, indem sie Daten zwischen Mobilgeräten und dem Web synchronisieren. Eine detaillierte Vergleich der *Start*- und *Pro*-Funktionen finden Sie im Abschnitt [Abonnement-Zugang](#subscription-accesses) unten.
 
-> **Hinweis:** Auch ohne Anmeldung oder Verifizierung Ihres Kontos können Sie mehrere Kernfunktionen des Web-Kartenportals nutzen, einschließlich: [Navigationsroute](./planner.md), [Routenplaner](./planner.md), [Wetter-Overlays](./web-map.md#weather-on-the-web) und [Einstellungen](#settings).
+> **Hinweis:** Auch ohne Anmeldung oder Verifizierung Ihres Kontos können Sie mehrere Kernfunktionen des Web-Kartenportals nutzen, einschließlich: [Navigationsroute](./web-navigation.md), [Routenplaner](./planner.md), [Wetter-Overlays](./web-weather.md#) und [Einstellungen](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -40,7 +40,7 @@ Das Web-Portal bietet die folgenden Hauptfunktionen zur Arbeit mit Karten und pe
 
 - [Karte](./web-map.md) mit globaler Abdeckung und hochwertigen Vektordaten.
 - [Routenplanung](./planner.md) mit Profilen für Fußgänger, Auto, Fahrrad und andere.
-- [Navigationsvorschau](./planner.md) mit Abbiegehinweisen.
+- [Navigation](./planner.md) Vorschau mit Abbiegehinweisen.
 - [Suche](./web-search.md) und [Erkundung](./web-search.md#explore) beliebter Orte in der Nähe.
 - Anzeige von [Favoriten](./web-map.md#favorites), [Tracks](./web-map.md#tracks) und [POIs](./web-map.md#poi-overlay) auf der Karte.
 - [Wetter-Overlays](./web-weather.md): Wind, Temperatur und Luftdruck.
@@ -67,11 +67,11 @@ Das Web-Kartenportal unterstützt mehrere Zugriffsebenen: ohne Anmeldung, mit Os
 | [Routenplaner](./planner.md) | Ohne Anmeldung |
 | [Wetter-Overlays](./web-weather.md) | Ohne Anmeldung |
 | [Einstellungen](./web-map.md#settings) | Ohne Anmeldung |
-| [Kartenmenü konfigurieren](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favoriten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) oder <ProFeature/> |
-| [Kartenmenü konfigurieren](./web-map.md#configure-map-menu) ([Gelände](./web-map.md#terrain))| <ProFeature/> |
-| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) oder <ProFeature/> |
-| [Websuche, Beliebte Orte](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) oder <ProFeature/> |
-| [Track-Ordner und -Ebene](./web-tracks.md) | <ProFeature/> |
+| [Kartenmenü konfigurieren](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favoriten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) oder [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Kartenmenü konfigurieren](./web-map.md#configure-map-menu) ([Gelände](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) oder [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Websuche, Beliebte Orte](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) oder [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Track-Ordner und -Ebene](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.
