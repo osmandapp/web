@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Karte
 title: Globale Karte auf der Webseite
@@ -41,11 +41,11 @@ Die OsmAnd-Webkarte ist eine globale Karte, die auf Daten von [OpenStreetMap (OS
 Um es zu öffnen, klicken Sie mit der rechten Maustaste irgendwo auf die Karte. Dieses Menü enthält die folgenden Aktionen:
 
 - **Wo bin ich** – Finden Sie schnell Ihren aktuellen Standort auf der Karte. Diese Funktion zeigt die nächstgelegenen Adressen zum ausgewählten Punkt auf der Karte an.
-- **Wetter öffnen** – Greifen Sie auf das [Wettermenü](#weather-on-the-web) zu, um Wetterdetails anzuzeigen.
-- **Neue Route erstellen** – Öffnet das Werkzeug [*Route planen*](../web/planner.md#navigation-route) mit dem ausgewählten Ort als Start- oder Zielpunkt.
+- **Wetter öffnen** – Greifen Sie auf das [Wettermenü](../web/web-weather.md) zu, um Wetterdetails anzuzeigen.
+- **Neue Route erstellen** – Öffnet das Werkzeug [*Route planen*](../web/web-navigation.md) mit dem ausgewählten Ort als Start- oder Zielpunkt.
 - **Favorit hinzufügen** – Ermöglicht es Ihnen, einen [Favoriten](../web/web-favorites.md#add--edit-favorite) an einem beliebigen Punkt auf der Karte zu erstellen und zu speichern, um einen einfachen Zugriff zu ermöglichen.
-- **Route von hier** – Legt den ausgewählten Punkt als [Startort](../web/planner.md#navigation-route) für die Navigation fest.
-- **Route hierher** – Legt den ausgewählten Punkt als [Zielort für die Navigation](../web/planner.md#navigation-route) fest.
+- **Route von hier** – Legt den ausgewählten Punkt als [Startort](../web/web-navigation.md#start-a-route) für die Navigation fest.
+- **Route hierher** – Legt den ausgewählten Punkt als [Zielort für die Navigation](../web/web-navigation.md#start-a-route) fest.
 - **Koordinaten kopieren** – Kopiert die Koordinaten des ausgewählten Punktes zur externen Verwendung.
 - **Regionen anzeigen** – Zeigt die mit dem ausgewählten Ort verbundenen Regionen an.
 
@@ -216,11 +216,11 @@ Diese URLs können kopiert und über jedes von Ihrem Gerät unterstützte Medium
 
 Abhängig von den angegebenen Parametern können URL-Zeichenfolgen enthalten:
 
-- **latitude**: Breitengradwert als Zahl.  
-- **longitude**: Längengradwert als Zahl.  
+- **Breitengrad**: Breitengradwert als Zahl.  
+- **Längengrad**: Längengradwert als Zahl.  
 - **start-finish**: Koordinaten für die Navigation.  
-- **profile**: Navigationsprofil (z.B. Auto, Fahrrad).  
-- **zoom**: Zoomstufe.
+- **Profil**: Navigationsprofil (z.B. Auto, Fahrrad).  
+- **Zoom**: Zoomstufe.
 
 4. **Wetter**&nbsp; – &nbsp;`osmand.net/map/weather`
 

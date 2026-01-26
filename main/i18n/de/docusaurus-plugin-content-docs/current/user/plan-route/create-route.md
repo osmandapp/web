@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Eine Route planen
 ---
@@ -116,6 +116,14 @@ Wenn [Höhendaten](../map/tracks/track-context-menu.md#calculate-missing-elevati
 
 - [Nahegelegene Straßen verwenden](#attach-track-to-roads). Dieser Modus verwendet Offline-Karten, um die nächstgelegenen Straßen zum Erstellen eines Tracks zu finden, sodass Höhendaten von den angehängten Straßen abgerufen werden. Die Geometrie des Tracks kann angepasst werden.  
 - [Geländekarten verwenden](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Dieser Modus berechnet die Höhe basierend auf Geländekartendaten (3D). Der Unterschied zwischen den von Ihrem Gerät aufgezeichneten Höhen kann zur Höhenkorrektur verwendet werden. Die Geometrie des Tracks bleibt unverändert.
+
+:::note
+
+**Online-Höhenkorrektur** (serverbasiert) wurde in neueren OsmAnd-Versionen entfernt und ist nicht verfügbar.  
+Für ältere Versionen war sie veraltet und unzuverlässig.  
+Verwenden Sie stattdessen Offline-Optionen: An Straßen anheften oder Geländekarten (Pro).  
+
+:::
 
 
 ### Track an Straßen anheften {#attach-track-to-roads}

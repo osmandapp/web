@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -428,11 +428,13 @@ Wenn eine Karte deaktiviert ist, kann sie vorübergehend aus dem Lokal-Reiter ve
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Kartenmenü Karten aktualisieren iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Wettervorhersage Karten aktualisieren iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Kartenmenü Karten aktualisieren iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Wettervorhersage Karten aktualisieren iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 Der Reiter **Aktualisierungen** ermöglicht es Ihnen, OsmAnd-Karten und -Ressourcen zu aktualisieren. Standard- und Nur-Straßen-Karten werden einmal im Monat veröffentlicht, normalerweise zwischen dem 2. und 5. Tag, und enthalten OpenStreetMap-Daten bis zum letzten Tag des Vormonats (zum Beispiel enthält die Oktober-Version Daten bis zum 30. September). Andere Daten wie Wikipedia, Gelände- oder Seekarten können unterschiedlichen, unregelmäßigen Aktualisierungsplänen folgen. 
 
 Verwenden Sie die Schaltfläche *Alle aktualisieren*, um alle Karten gleichzeitig zu aktualisieren, oder aktualisieren Sie einzelne Karten nach Bedarf. Für stündliche Updates überprüfen Sie Ihren [Live-Updates](#live-updates)-Abonnementstatus. Wenn aktiviert, erscheint der Abschnitt **Live-Updates** oben im Reiter unter der Gerätespeicheranzeige.
+
+Der Reiter **Aktualisierungen** kann auch ein Element **Nicht unterstützte Karten** anzeigen. Es erscheint, wenn Sie Karten haben, die nicht mehr unterstützt werden und durch kleinere Regionen ersetzt wurden. Tippen Sie auf Nicht unterstützte Karten, um die Liste zu überprüfen, veraltete Karten zu entfernen und stattdessen die neuen Regionalversionen herunterzuladen. Auf dem Bildschirm Nicht unterstützte Karten können Sie alle nicht unterstützten Karten anzeigen und Alle löschen verwenden, um sie auf einmal zu entfernen (vor dem Löschen wird eine Bestätigungsaufforderung angezeigt).
 
 Der Reiter **Aktualisierungen** enthält auch einen Abschnitt zur Wettervorhersage. Er dient zur Verwaltung Ihrer Offline-Vorhersagen für ausgewählte Länder:
 

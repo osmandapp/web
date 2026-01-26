@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title:  Wetter
 ---
@@ -60,7 +60,7 @@ Das Wetter-Plugin ist nur mit der Karten-Rendering-Engine [Version 2](../persona
 
 Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Wetter-Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_me
 
 Gehe zu: *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Wetter-Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -84,13 +84,13 @@ Am unteren Bildschirmrand befindet sich die *Wetter-Symbolleiste*. Mit den Tages
 
 <TabItem value="android" label="Android">
 
-![Datenquelle Android](@site/static/img/plugins/weather/weather_source_android.png)  
+![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Datenquelle iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
 
 </TabItem>  
 
@@ -112,6 +112,7 @@ Auswirkungen der Datenquelle auf die Wetteranzeige:
 - Wenn Sie zuvor eine Wettervorhersage heruntergeladen haben, verwendet OsmAnd die Daten, die der ausgewählten Quelle entsprechen.
 - GFS und ECMWF verwenden separate Caches. Der Wechsel der Quelle lädt oder aktualisiert die relevanten Wetter-Tiles.
 
+
 ### Wetter-Ebenen anpassen {#customize-weather-layers}
 
 <Tabs groupId="operating-systems" queryString="current-os">  
@@ -120,7 +121,7 @@ Auswirkungen der Datenquelle auf die Wetteranzeige:
 
 Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Wetter-Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -128,7 +129,7 @@ Gehe zu: *Aktiviertes Plugin → <Translate android="true" ids="shared_string_me
 
 Gehe zu: *Aktiviertes Plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Wetter-Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
 </TabItem>  
 
@@ -148,7 +149,7 @@ In diesem Menü können Sie die **Sichtbarkeit** und die [Einstellungen](#weathe
 - *Hauptmenü → Plugins → Wetter → Einstellungen*
 - *Hauptmenü → Einstellungen → Profil → Plugin-Einstellungen → Wetter*
 
-![Wetter-Einstellungen Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Wetter-Einstellungen 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
 
 </TabItem>
 
@@ -156,7 +157,7 @@ In diesem Menü können Sie die **Sichtbarkeit** und die [Einstellungen](#weathe
 
 - *Hauptmenü → Einstellungen → Profil → Plugins → Wetter*
 
-![Wetter-Einstellungen iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Wetter-Einstellungen iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
 
 </TabItem>
 
@@ -170,7 +171,7 @@ In der iOS-Version von OsmAnd können Sie die Maßeinheiten und die Transparenzs
 
 ### Wetter-Ebenen {#weather-layers}
 
-Alle Wetterdaten werden als separate Kartenebenen dargestellt. Um die Wetter-Ebenen auf der Karte zu sehen, müssen Sie herauszoomen, sie sind nur auf den Zoomstufen 2-12 verfügbar. Wetter-Ebenen verwenden [Wetterpaletten](../personal/color-palette-schemes.md#weather), um die Karte einzufärben. Diese Paletten können bei Bedarf [geändert](../personal/color-palette-schemes.md#edit-palette-file) werden.
+Alle Wetterdaten werden als separate Kartenebenen dargestellt. Um die Wetter-Ebenen auf der Karte zu sehen, müssen Sie herauszoomen, sie sind nur auf den Zoomstufen 2-12 verfügbar. Wetter-Ebenen verwenden [Wetterpaletten](../personal/color-palette-schemes.md#weather), um die Karte einzufärben. Diese Paletten können bei Bedarf [geändert](../personal/color-palette-schemes.md#palette-modify) werden.
 
 | |  
 |------------|  
@@ -211,7 +212,7 @@ Um umfassende Wetterinformationen zu erhalten, können Sie die Kartenebenen sepa
 
 ### Schnellaktionen für Ebenen {#quick-actions-for-layers}
 
-![QA Wetter-Ebenen](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
+![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
 Um die Sichtbarkeit von Wetter-Ebenen umzuschalten, können Sie die *Schnellaktions*-Schaltflächen auf dem Kartenbildschirm verwenden. Die allgemeinen Einstellungen zum Ein- oder Ausblenden von Ebenen finden Sie im separaten [Wetter-Abschnitt](#weather-forecast-screen) des *Hauptmenüs*. Im Artikel [Schnellaktion](../widgets/quick-action.md#configure-map) finden Sie eine Liste der zur Anzeige verfügbaren Ebenen. Wenn Sie schnellen Zugriff auf diese Kartenkonfiguration benötigen, verwenden Sie das Werkzeug *Benutzerdefinierte Schaltfläche*.
 
@@ -227,7 +228,7 @@ Wenn der Wetter-Tab geöffnet ist, werden die erforderlichen Wetterinformationen
 
 :::tip
 Auf Android-Geräten können Sie überprüfen, wann Wetterdaten heruntergeladen wurden, indem Sie auf das *Wetter-Widget* tippen. Das OsmAnd-Entwicklungs-Plugin muss aktiviert sein.  
-![Datum des Wetter-Caches Android](@site/static/img/plugins/weather/weather_cash_andr.png)  
+![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Vorhersage herunterladen {#download-forecast}
@@ -236,13 +237,13 @@ Auf Android-Geräten können Sie überprüfen, wann Wetterdaten heruntergeladen 
 
 <TabItem value="android" label="Android">  
 
-![Wetter-Plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Wetter-Plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
+![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Wetter-Plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Wetter-Plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
 </TabItem>
 
@@ -276,7 +277,7 @@ Wetterdaten werden alle 6 Stunden aktualisiert (alle 4 Updates von [GFS](https:/
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="shared_string_weather"/>*
 
-![Wetter-Widgets auf Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Wetter-Widgets auf Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
+![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
@@ -284,7 +285,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,sh
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate ios="true" ids="shared_string_weather"/>*
 
-![Wetter-Widgets auf iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
+![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 

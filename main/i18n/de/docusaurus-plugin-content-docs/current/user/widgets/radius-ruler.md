@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  Radiuslineal und Maßstab
 ---
@@ -97,6 +97,7 @@ Das [Radiuslineal-Widget](../widgets/info-widgets.md#radius-ruler) zeigt die Ent
 
 Verwenden Sie dieses Widget, um die Nähe zu Sehenswürdigkeiten abzuschätzen oder um ein definiertes Gebiet herum zu planen.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -118,9 +119,10 @@ Verwenden Sie dieses Widget, um die Nähe zu Sehenswürdigkeiten abzuschätzen o
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Kompass für Radiuslineal {#compass-for-radius-ruler}
+### Kompass {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Diese Überlagerung ist hilfreich für die Outdoor-Navigation und ermöglicht es
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Position Mitte / Unten {#center--bottom-position}
+### Mitte / Unten Position {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ Um den sichtbaren Radius um Ihren Standort zu vergrößern, können Sie die Posi
 Weitere Informationen zur *Position auf dem Bildschirm* finden Sie im Artikel [Bildschirm konfigurieren](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## 3D-Ansicht {#3d-view}
+### 3D-Ansicht {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -353,8 +353,9 @@ Das automatische Backup speichert ausgewählte OsmAnd-Daten automatisch in regel
 
 Verhalten des automatischen Backups:
 
-- Das automatische Backup läuft etwa alle Stunde, während OsmAnd im Vordergrund arbeitet.
-- Das Backup startet auch, wenn Sie zum Kartenbildschirm zurückkehren.
+- Das automatische Backup läuft etwa alle Stunde, während OsmAnd im Vordergrund arbeitet. Dieses Intervall ist derzeit in der App nicht einstellbar. Es kann durch das Importieren einer .osf-Datei geändert werden.
+- Das automatische Backup kann starten, wenn Sie die Kartenansicht öffnen oder dorthin zurückkehren.
+- Zusätzlich zu den geplanten Läufen kann das automatische Backup auch nach Änderungen an bestimmten Datentypen (z. B. Favoriten) starten, unter Verwendung der aktivierten Backupdate in den Einstellungen für das automatische Backup.
 - Sie können jeden Eintrag oder ganze Abschnitte unabhängig voneinander aktivieren oder deaktivieren.
 - Ihre Daten bleiben lokal verfügbar, auch wenn das automatische Backup deaktiviert ist.
 

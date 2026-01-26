@@ -1,5 +1,5 @@
 ---
-source-hash: 8c3dc9c3a003016cc5fe0c21111724824979c926da2493e288be8190be239b47
+source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
 sidebar_position: 2
 title:  iOS-Käufe
 ---
@@ -55,32 +55,14 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 
 
 
-:::danger Weihnachtsverkauf
-
-*Beeilen Sie sich! Dieses Angebot ist nur bis* **28. Dezember (23:00 CET)** verfügbar.
-
-:::
-
-
-
-|    | OsmAnd Kostenlos   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |
-| **Preis (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Preis (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
-
-
 |    | OsmAnd Kostenlos   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |
-| **Preis (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Preis (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Preis (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Preis (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Kostenlose und kostenpflichtige Funktionen {#free-and-paid-features}
 

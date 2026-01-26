@@ -1,5 +1,5 @@
 ---
-source-hash: f883cecaa5261a36f9d1f1d64d29499b611644d5e7812a27bf94c9d003dd7880
+source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
 sidebar_position: 1
 title:  Android-Käufe
 ---
@@ -78,32 +78,14 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 
 
 
-:::danger Weihnachtsverkauf
-
-*Beeilen Sie sich! Dieses Angebot ist nur bis zum* **28. Dezember (23:00 CET)** verfügbar.
-
-:::
-
-
-
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |
-| **Preis (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Preis (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
+| **Preis (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Preis (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |
-| **Preis (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Preis (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
-
--->
 
 ### Kostenlose und kostenpflichtige Funktionen {#free-and-paid-features}
 
@@ -163,9 +145,9 @@ Das **Pro**-Abonnement umfasst derzeit die folgenden Funktionen:
 |  Pro-Funktion  | Beschreibung   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Sichern und Wiederherstellen Ihrer Daten, Synchronisieren von Daten mit dem [OsmAnd-Webportal](https://www.osmand.net/map). |
-| [3D-Relief](../plugins/topography.md#3d-relief) | Ermöglicht es Ihnen, ein maßstabsgetreues Modell Ihrer Nachbarschaft oder eines ganzen Kontinents zu betrachten. |
+| [3D-Relief](../plugins/topography.md#3d-relief) | Ermöglicht es Ihnen, ein maßstabsgetreues Modell Ihrer Nachbarschaft oder eines ganzen Kontinents zu besitzen und zu betrachten. |
 | [Live-Updates](../personal/maps-resources.md#live-updates) | OsmAnd-Karten werden alle 15 Minuten nach einer Verbesserung auf [OpenStreetMap](https://www.openstreetmap.org/) aktualisiert. |
-| [Wetter-Plugin](../plugins/weather.md) | Stündliche 24-Stunden-Vorhersage für 7 Tage im Voraus auf der Karte. |
+| [Wetter-Plugin](../plugins/weather.md) | 24-Stunden-stündliche Vorhersage für 7 Tage im Voraus auf der Karte. |
 | [Fahrzeugmetrik-Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Ermöglicht den Anschluss eines OBD-II-Scanners, um detaillierte Fahrzeugdaten in der OsmAnd-App anzuzeigen und die Informationen in den Track-Aufzeichnungen zu speichern. Informationen zur Fahrzeuggeschwindigkeit und Motordrehzahl sind für OsmAnd kostenlos verfügbar.  |
 | [Routenlinie anpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Ändern der Farbe und Breite der Routenlinie während der Navigation. |
 | [Höhen-Widget](../widgets/nav-widgets.md#elevation-widget) | Zeigt Ihren Standort auf dem Höhendiagramm der Navigationsroute mit zusätzlichen Informationen an.  |

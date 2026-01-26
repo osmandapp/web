@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  Profiles (Settings)
 ---
@@ -36,7 +36,7 @@ OsmAnd bietet eine Vielzahl von Standardprofilen, die auf verschiedene Aktivitä
 - *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Karte durchsuchen oder ein anderes Profil)
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
+![Profileinstellungen Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
 
 </TabItem>
 
@@ -44,7 +44,7 @@ OsmAnd bietet eine Vielzahl von Standardprofilen, die auf verschiedene Aktivitä
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
+![Profileinstellungen iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
 </TabItem>
 
@@ -61,13 +61,13 @@ Alle Einstellungen gelten ausschließlich für das aktuell ausgewählte Anwendun
 
 <TabItem value="android" label="Android">
 
-![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
+![Profileinstellungen Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Profileinstellungen Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
+![Profileinstellungen iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
 
 </TabItem>
 
@@ -84,7 +84,7 @@ Dieser Abschnitt enthält alle Einstellungen zu Erscheinungsbild, Navigationsopt
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
-![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+![Funktionen des Favoritenordners Android](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
 </TabItem>
 
@@ -92,7 +92,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
+![Favoritenaktionen iOS](@site/static/img/personal/profile_settings_free_backup_ios.png)
 
 </TabItem>
 
@@ -115,7 +115,7 @@ Dieser Abschnitt enthält Einstellungen für das Anwendungsthema und die Kompass
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
+![Allgemeine Profileinstellungen Erscheinungsbild Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
 
 </TabItem>
 
@@ -123,7 +123,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![Allgemeine Profileinstellungen Erscheinungsbild iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
 
 </TabItem>
 
@@ -156,13 +156,13 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 <TabItem value="android" label="Android">
 
-![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/units_formats_android.png)
+![Allgemeine Profileinstellungen Einheiten & Formate Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
+![Allgemeine Profileinstellungen Einheiten & Formate iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -259,7 +259,7 @@ Im Abschnitt **Einheiten und Formate** können Sie Maßeinheiten und Formate an 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/other_settings_android.png)
+![Allgemeine Profileinstellungen Sonstiges Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -267,7 +267,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
+![Allgemeine Profileinstellungen Sonstiges iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
 
 </TabItem>
 
@@ -299,7 +299,7 @@ Der Abschnitt **Sonstiges** bietet zusätzliche Profileinstellungen zur Anpassun
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
@@ -307,7 +307,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
+![Navigationseinstellungen iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
 
 </TabItem>
 
@@ -345,7 +345,7 @@ Im Profil *Karte durchsuchen* gibt es keine Navigationseinstellungen.
 - *<Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>*  
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* *→ Karte konfigurieren*
 
-![Profiles Configure map Settings Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
+![Profile Karte konfigurieren Einstellungen Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
 
 </TabItem>
 
@@ -353,7 +353,7 @@ Im Profil *Karte durchsuchen* gibt es keine Navigationseinstellungen.
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
 
-![Profiles Configure map Settings iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
+![Profile Karte konfigurieren Einstellungen iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
 
 </TabItem>
 
@@ -383,7 +383,7 @@ Mit diesem Menü können Sie:
 - Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 - Gehen Sie zu: *Menü → Einstellungen → App-Profil → Bildschirm konfigurieren*
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Bildschirm konfigurieren Menü](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Bildschirm konfigurieren Menü](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
@@ -391,7 +391,7 @@ Mit diesem Menü können Sie:
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![Bildschirm konfigurieren Menü](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Bildschirm konfigurieren Menü](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
 </TabItem>
 
@@ -408,7 +408,7 @@ Das [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
+![Profile Erscheinungsbild](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
 
 </TabItem>
 
@@ -416,7 +416,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profile Erscheinungsbild](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
 
 </TabItem>
 
@@ -433,7 +433,9 @@ Die Einstellungen für das **Profil-Erscheinungsbild** ermöglichen es Ihnen, de
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
+![Mein Standort Erscheinungsbild](@site/static/img/personal/profiles/location_appearance_andr.png)
+
+Die Einstellungen für das **Erscheinungsbild "Mein Standort"** ermöglichen es Ihnen, anzupassen, wie Ihr Standort auf der Karte angezeigt wird, sowohl im Stillstand (Ruhend) als auch in Bewegung (Navigation). Bewegung wird vom Betriebssystem erkannt, wenn die Geschwindigkeit des Geräts **größer als Null** ist.
 
 </TabItem>
 
@@ -441,13 +443,16 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![Mein Standort Erscheinungsbild](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+Die Einstellungen für das **Erscheinungsbild "Mein Standort"** ermöglichen es Ihnen, anzupassen, wie Ihr Standort auf der Karte angezeigt wird, sowohl im Stillstand (Ruhend) als auch in Bewegung (Navigation). Bewegung wird vom Betriebssystem erkannt, wenn die Geschwindigkeit des Geräts **größer als Null** ist.
+
+Verwenden Sie **Symbolgröße**, um die Größe des Mein-Standort-Positionsymbols unabhängig von der Textgröße der App anzupassen. Sie können unterschiedliche Größen für die Modi Ruhend und Navigation festlegen. Die Größe kann von 50 % bis 300 % (50, 75, 100, 125, 150, 200, 250, 300 %) eingestellt werden. Der Standardwert beträgt 100 %. Tippen Sie auf Symbolgröße, um die Größeneinstellungen zu öffnen, und verwenden Sie dann den Schieberegler oder die Schritttasten + / – , um den Wert zu ändern. Verwenden Sie **Auf Standard zurücksetzen**, um zu 100 % zurückzukehren.
 
 </TabItem>
 
 </Tabs>
 
-Die Einstellungen für das **Erscheinungsbild "Mein Standort"** ermöglichen es Ihnen, anzupassen, wie Ihr Standort auf der Karte angezeigt wird, sowohl im Stillstand als auch in Bewegung. Bewegung wird vom Betriebssystem erkannt, wenn die Geschwindigkeit des Geräts **größer als Null** ist.
 
 ### Blickwinkel und Standortradius {#view-angle-and-location-radius}
 
@@ -493,14 +498,14 @@ Um alle Steuerungsparameter ungenutzter [Plugins](../plugins/index.md#configure-
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
-![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
+![Profile UI-Anpassung Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
 Mit der Funktion zur UI-Anpassung können Sie die Anzahl der Elemente in Aktionen wie [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) und [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md) anpassen. Informationen über die Anzahl der hinzugefügten Elemente aus allen möglichen Elementen finden Sie unter dem Titel jeder Funktion.
 
 
 ### Seitenleiste (Drawer) {#drawer}
 
-![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
+![Profile Seitenleiste Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Zurücksetzen Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
 - **Sichtbare Hauptelemente** - Im Abschnitt *UI anpassen* können Sie Elemente aus der [Seitenleiste (Drawer)](../start-with/main-menu.md#customize-advanced-use-of-android) *neu anordnen, ausblenden und wiederherstellen*, um sie Ihren Vorlieben anzupassen.
 
@@ -510,7 +515,7 @@ Mit der Funktion zur UI-Anpassung können Sie die Anzahl der Elemente in Aktione
 
 ### Karte konfigurieren {#configuring-the-map}
 
-![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
+![Profile Karte konfigurieren Menü Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Karte konfigurieren Menü Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
 - **Menü „Karte konfigurieren“** - Im Abschnitt *UI anpassen* können Sie Elemente aus dem Menü [Karte konfigurieren](../map/configure-map-menu.md) *neu anordnen oder ausblenden*, um schnellen Zugriff auf häufig verwendete Einstellungen zu ermöglichen.
 
@@ -521,7 +526,7 @@ Mit der Funktion zur UI-Anpassung können Sie die Anzahl der Elemente in Aktione
 
 ### Kontextmenü-Aktionen {#context-menu-actions}
 
-![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+![Profile Kontextmenü Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Karte konfigurieren Menü Zurücksetzen Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Karten-Kontextmenü** - Im Abschnitt *UI anpassen* können Sie Elemente im [Karten-Kontextmenü](../map/map-context-menu.md) neu anordnen oder ausblenden, um den Zugriff auf häufig verwendete Funktionen zu optimieren.
 
@@ -542,7 +547,7 @@ Um auf die Einstellungen des Plugins zuzugreifen, müssen Sie zuerst das [**Plug
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
 
-![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
+![Profileinstellungen Plugins Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
 
 </TabItem>
 
@@ -550,7 +555,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
-![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
+![Profileinstellungen Plugins iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
 
 </TabItem>
 
@@ -589,13 +594,13 @@ Plugins schalten zusätzliche Funktionen der Anwendung frei und können entweder
 
 <TabItem value="android" label="Android">
 
-![Profiles Actions Settings Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
+![Profile Aktionen Einstellungen Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
+![Profile Aktionen Einstellungen iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
 
 </TabItem>
 

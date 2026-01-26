@@ -1,9 +1,10 @@
 ---
-source-hash: 2e2bedc5911717de92c663881adf7da2b32d2027a6c8127a8c9d02651753f230
+source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
 sidebar_position: 10
 title:  CarPlay
 android: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,20 +16,21 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
 ## Übersicht {#overview}
 
 Das Führen eines Fahrzeugs und die gleichzeitige Benutzung Ihres Telefons oder Tablets ist aus Sicherheitsgründen in der Regel gesetzlich verboten. [***CarPlay***](https://www.apple.com/ios/carplay/) ist eine Software, die eine angepasste und optimierte Version der OsmAnd-App für die sichere Nutzung während der Fahrt bereitstellt und so den Zugriff auf die Navigationsfunktionen der App einfacher und sicherer macht.
 
 Um *CarPlay* auf dem Bildschirm Ihres Fahrzeugs zu verwenden, gehen Sie wie folgt vor:
 
-1. *CarPlay* ist nicht in allen Ländern verfügbar. Vergewissern Sie sich, dass es in Ihrem [Land oder Ihrer Region](https://www.apple.com/de/ios/feature-availability/#applecarplay-applecarplay) unterstützt wird und dass *CarPlay* in Ihrem [Fahrzeugmodell](https://www.apple.com/de/ios/carplay/available-models/) unterstützt wird.
-2. [Verbinden Sie Ihr Gerät](https://support.apple.com/de-de/HT203412) über einen USB-Anschluss oder drahtlos über Wi-Fi oder Bluetooth mit dem Multimediasystem Ihres Fahrzeugs. Bei der ersten Verbindung müssen Sie möglicherweise die Erlaubnis zur Nutzung von *CarPlay* auf Ihrem Gerät erteilen.
-3. Sobald die Verbindung hergestellt ist, erscheint die *CarPlay-Oberfläche* automatisch auf dem Bildschirm Ihres Fahrzeugs mit allen verfügbaren Apps. Wenn der *CarPlay-Startbildschirm* nicht erscheint, wählen Sie das *CarPlay-Logo* auf dem Fahrzeugdisplay.
+1. *CarPlay* ist nicht in allen Ländern verfügbar. Vergewissern Sie sich, dass es in Ihrem [Land oder Ihrer Region](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) unterstützt wird und dass *CarPlay* in Ihrem [Fahrzeugmodell](https://www.apple.com/ios/carplay/available-models/) unterstützt wird.
+2. [Verbinden Sie Ihr Gerät](https://support.apple.com/en-gb/HT203412) über einen USB-Anschluss oder drahtlos über Wi-Fi oder Bluetooth mit dem Multimediasystem Ihres Fahrzeugs. Bei der ersten Verbindung müssen Sie möglicherweise die Erlaubnis zur Nutzung von *CarPlay* auf Ihrem Gerät erteilen.
+3. Sobald die Verbindung hergestellt ist, erscheint die *CarPlay-Oberfläche* automatisch auf dem Bildschirm Ihres Fahrzeugs mit allen verfügbaren Apps. Wenn der *CarPlay-Startbildschirm* nicht erscheint, wählen Sie das *CarPlay-Logo* auf dem Fahrzeugdisplay.  
 
 ### CarPlay-Oberfläche {#carplay-interface}
 
 *CarPlay* ist **keine direkte Nachbildung** der mobilen OsmAnd-App. Es hat eine vereinfachte Benutzeroberfläche, die sich auf die wesentlichen Navigationsfunktionen konzentriert, um eine sichere Fahrt zu gewährleisten. Einige erweiterte Funktionen werden aufgrund von Plattformbeschränkungen nicht unterstützt.
+
+Die Position der Schaltflächen und des Navigations-Widgets in *CarPlay* entspricht der Seite der CarPlay-Statusleiste. Sie hängt von der Einstellung **Fahrerposition** (Links- oder Rechtslenker) im Head-Unit Ihres Autos ab, nicht von einer Einstellung innerhalb von CarPlay oder der OsmAnd-App.
 
 ### Verbindungsbildschirm {#connection-screen}
 
@@ -41,7 +43,7 @@ Während Ihr Gerät mit *CarPlay* verbunden ist, ist die Karte auf dem App-Bilds
 
 ![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
-*CarPlay* zeigt die an den Bildschirm des Fahrzeug-Multimediasystems angepasste OsmAnd-Oberfläche an. Die Interaktion mit der Karte ist beschränkt auf:
+*CarPlay* zeigt die an den Bildschirm des Fahrzeug-Multimediasystems angepasste OsmAnd-Oberfläche an. Die Interaktion mit der Karte ist beschränkt auf:  
 
 - [Mein Standort](../widgets/map-buttons.md#my-location-and-zoom). Verschiebt den sichtbaren Teil der Karte so, dass Ihr aktueller Standort in der Mitte des Bildschirms liegt.
 - [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Ermöglicht das Vergrößern und Verkleinern des sichtbaren Teils der Karte.
@@ -51,12 +53,12 @@ Während Ihr Gerät mit *CarPlay* verbunden ist, ist die Karte auf dem App-Bilds
 
 ![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
-- Zuerst müssen Sie das Profil auswählen und konfigurieren, das bei der Verbindung mit *CarPlay* verwendet werden soll. Wie Sie ein Profil konfigurieren, können Sie im Artikel [Profile (Einstellungen)](../personal/profiles) nachlesen.
+- Zuerst müssen Sie das Profil auswählen und konfigurieren, das bei der Verbindung mit *CarPlay* verwendet werden soll. Wie Sie ein Profil konfigurieren, können Sie im Artikel [Profile (Einstellungen)](../personal/profiles) nachlesen.  
     - Ein praktisches Profil für die Verwendung von *CarPlay* kann *Fahren* sein, und die Art des Routings kann [Auto-Routing](../navigation/routing/car-based-routing.md) sein.
     - OsmAnd hat einen separaten Punkt [CarPlay-Profil](#carplay-profile) für den schnellen Zugriff auf die Liste der für die Verbindung mit *CarPlay* verfügbaren Profile.
-- Damit OsmAnd funktioniert, [verbinden Sie Ihr iOS-Gerät](#overview) mit dem Multimediasystem des Fahrzeugs. Um mehr darüber zu erfahren, wie Sie Ihr Gerät anschließen und einrichten, können Sie die [**CarPlay**](https://support.apple.com/de-de/HT205634) Website besuchen.
+- Damit OsmAnd funktioniert, [verbinden Sie Ihr iOS-Gerät](#overview) mit dem Multimediasystem des Fahrzeugs. Um mehr darüber zu erfahren, wie Sie Ihr Gerät anschließen und einrichten, können Sie die [**CarPlay**](https://support.apple.com/en-us/HT205634) Website besuchen.
 - Sie benötigen eine der [kostenpflichtigen oder Abonnement-Versionen von OsmAnd](../purchases/ios#free-and-paid-features). Überprüfen Sie dies hier: *Menü → Einstellungen → Käufe*.
-- Sobald die Verbindung hergestellt ist, können Sie ein Ziel festlegen und die OsmAnd-Navigation in *CarPlay* starten.
+- Sobald die Verbindung hergestellt ist, können Sie ein Ziel festlegen und die OsmAnd-Navigation in *CarPlay* starten.  
 
 :::note
 Möglicherweise benötigen Sie eine Internetverbindung, um OsmAnd in *CarPlay* zu verwenden. Wenn Ihr Gerät nur begrenzten Internetzugang hat, können Sie [*Routen vorladen oder erstellen*](../personal/tracks/manage-tracks.md) und diese ohne Internet nutzen.
@@ -65,31 +67,31 @@ Möglicherweise benötigen Sie eine Internetverbindung, um OsmAnd in *CarPlay* z
 
 ### Navigation starten {#start-navigation}
 
-![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-start(1).png)
+![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
-Um die iOS-Version der OsmAnd-App in *CarPlay* zu verwenden, müssen Sie eine [kostenpflichtige Version der App erwerben oder ein Abonnement abschließen](../purchases/ios#free-and-paid-features).
+Um die iOS-Version der OsmAnd-App in *CarPlay* zu verwenden, müssen Sie eine [kostenpflichtige Version der App erwerben oder ein Abonnement abschließen](../purchases/ios#free-and-paid-features).  
 
 1. Um eine Route zu erstellen, müssen Sie den [Routenendpunkt](#select-a-route-endpoint) auf dem *CarPlay-Bildschirm* oder in der [OsmAnd-App](../navigation/setup/route-navigation.md) auswählen.
-2. Sie können [Sprachanweisungen](#voice-prompts) verwenden, um Anweisungen oder Meldungen über Probleme auf der Straße zu hören.
+2. Sie können [Sprachanweisungen](#voice-prompts) verwenden, um Anweisungen oder Meldungen über Probleme auf der Straße zu hören.  
 3. Nachdem Sie einen Ort ausgewählt haben, drücken Sie **Start**, um der Route zu folgen.
 4. Während der Fahrt zeigt der Fahrzeugbildschirm OsmAnd-Informationen über Ihren aktuellen Standort auf der Karte, Fahranweisungen, die Entfernung zur nächsten Abbiegung, Spuren, die Ankunftszeit und die Entfernung zu Ihrem Ziel an.
-    ![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car_play_navmode.png)
+    ![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car_play_navmode.png)  
 5. Wenn Sie Ihre Route ändern oder einen anderen Ort auswählen möchten, können Sie die entsprechende Schaltfläche auf dem Bildschirm drücken.
 6. Sobald Sie Ihre Route beendet haben, können Sie *CarPlay* deaktivieren, indem Sie das Gerät von Ihrem Fahrzeug-Multimediasystem trennen.
 
 :::note
 Alle Kategorien für die Auswahl des **Routenendpunkts**, *[Verlauf](#history), [POIs](#poi-categories), [Markierungen](#map-markers), [Suche](#search), [Favoriten](#favorites) und [Tracks](#tracks)*, dürfen nicht mehr Listeneinträge enthalten, als Ihr Fahrzeug-Multimediasystem vorsieht. Typischerweise sind die Listen in den meisten Fahrzeugen dynamisch auf 12 oder 24 Einträge begrenzt. Das bedeutet, dass die Liste in *CarPlay* möglicherweise nicht vollständig ist. Die Gesamtzahl der Einträge und die tatsächlich angezeigte Anzahl der Einträge wird unter dem Ordnernamen angegeben.
-:::
+:::  
 
 
 ### CarPlay-Profil {#carplay-profile}
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 ![Allgemeine Einstellungen Standardprofil Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
-**CarPlay-Profil** ist ein spezifisches Profil in der OsmAnd-App zur bequemen Nutzung des Audio- und Videosystems Ihres Autos zur weiteren Anzeige dieser Daten auf Ihrem Telefon.
+**CarPlay-Profil** ist ein spezifisches Profil in der OsmAnd-App zur bequemen Nutzung des Audio- und Videosystems Ihres Autos zur weiteren Anzeige dieser Daten auf Ihrem Telefon.  
 
-Dieses Profil wird verwendet, solange Ihr Gerät mit *CarPlay* verbunden ist. Tippen Sie auf das Feld *CarPlay-Profil* im Menü *OsmAnd-Einstellungen* und wählen Sie aus der Liste der [zur Verwendung aktivierten Profile](../personal/profiles.md) das Profil aus, mit dem *CarPlay* aktiviert werden soll.
+Dieses Profil wird verwendet, solange Ihr Gerät mit *CarPlay* verbunden ist. Tippen Sie auf das Feld *CarPlay-Profil* im Menü *OsmAnd-Einstellungen* und wählen Sie aus der Liste der [zur Verwendung aktivierten Profile](../personal/profiles.md) das Profil aus, mit dem *CarPlay* aktiviert werden soll.  
 
 Sie können ein Profil nicht direkt in *CarPlay* vom Fahrzeugbildschirm aus auswählen. Wählen Sie zuerst das gewünschte Profil auf Ihrem Gerät aus und weisen Sie ihm das *CarPlay-Profil* zu. Sie sollten ein Profil wählen, das dem Fahrzeugtyp entspricht, wie z. B. *Fahren*, *LKW*, *Auto*, *Motorrad* oder *Moped*. **Die App aktiviert automatisch** das *CarPlay-Profil*, wenn sie mit einem Fahrzeug verbunden wird.
 
@@ -103,8 +105,8 @@ Sie können ein Profil nicht direkt in *CarPlay* vom Fahrzeugbildschirm aus ausw
 
 Sie können zuvor voreingestellte und hinzugefügte [POIs](../map/point-layers-on-map.md#points-of-interest-pois), [Favoriten](../personal/favorites.md) oder [Kartenmarkierungen](../personal/markers.md) als Zielpunkt auswählen. Es ist auch möglich, einen aufgezeichneten oder heruntergeladenen [Track](../personal/tracks/index.md) für die Route auszuwählen, die [Suche](../search/index.md) zu verwenden oder ein Ziel aus dem Routen-[Verlauf](../search/search-history.md) auszuwählen.
 
-1. Wenn Sie einen bestimmten Ort auf der Karte als Endpunkt wünschen, wählen Sie die entsprechende Kategorie von Punkten aus der Liste, [POIs](#poi-categories), [Favoriten](#favorites) oder [Kartenmarkierungen](#map-markers).
-
+1. Wenn Sie einen bestimmten Ort auf der Karte als Endpunkt wünschen, wählen Sie die entsprechende Kategorie von Punkten aus der Liste, [POIs](#poi-categories), [Favoriten](#favorites) oder [Kartenmarkierungen](#map-markers).  
+  
     - Alle Kategorien dürfen nicht mehr Listeneinträge enthalten, als von Ihrem Fahrzeug-Multimediasystem vorgesehen sind. Das bedeutet, dass die Liste in *CarPlay* unvollständig sein könnte und alle anderen Ordner nur in der OsmAnd-App auf Ihrem Gerät verfügbar sind.
     - Der Ordner [Zuletzt geändert](#folder-last-modified) enthält eine Liste der letzten Ziele, sortiert nach dem Datum des Hinzufügens oder Änderns.
     - Die Liste aller anderen Ordner ist nach der letzten Aktualisierung sortiert, neue Ordner stehen ganz oben in der Liste. Es ist nicht möglich, ihre Reihenfolge manuell zu ändern.
@@ -119,7 +121,7 @@ Während der Fahrt können ausgewählte Punkte [angesagt](#voice-prompts) werden
 
 ### Verlauf {#history}
 
-![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car_play_history.png)
+![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car_play_history.png)  
 
 In der **Kategorie Verlauf** können Sie ein Ziel aus einer Liste von Endpunkten auswählen.
 
@@ -137,7 +139,7 @@ In der **Kategorie Verlauf** können Sie ein Ziel aus einer Liste von Endpunkten
     </tr>
 </table>
 
-*POIs (Points of Interest)* sind eine Art von Punkten, die Orte oder Objekte auf der Karte kennzeichnen, die für Benutzer wichtig oder von Interesse sind. Sie werden durch spezielle Symbole hervorgehoben, die in den [OsmAnd-Einstellungen](../map/point-layers-on-map.md#poi-types) bereitgestellt und in Gruppen sortiert sind.
+*POIs (Points of Interest)* sind eine Art von Punkten, die Orte oder Objekte auf der Karte kennzeichnen, die für Benutzer wichtig oder von Interesse sind. Sie werden durch spezielle Symbole hervorgehoben, die in den [OsmAnd-Einstellungen](../map/point-layers-on-map.md#poi-types) bereitgestellt und in Gruppen sortiert sind.  
 
 Um eine Route zu einem *POI* in *CarPlay* zu erstellen, gehen Sie wie folgt vor:
 
@@ -149,40 +151,40 @@ Um eine Route zu einem *POI* in *CarPlay* zu erstellen, gehen Sie wie folgt vor:
 
 ### Favoriten {#favorites}
 
-![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-favorites(1).png)
+![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
 **Favoriten** ist eine der Funktionen von OsmAnd, mit der Sie eine Art Notizen auf der Karte machen können.
 
 - Während der Nutzung von **CarPlay** können Sie keine *Favoriten* hinzufügen oder ändern, sondern nur vorhandene verwenden.
 - Die Liste der [Favoriten](../personal/favorites.md#manage-favorites) finden Sie in der OsmAnd-App unter *Menü → Meine Orte → Favoriten*.
-- Wenn Sie sie für die Navigation verwenden möchten, konfigurieren Sie alles Notwendige, bevor Sie das Gerät mit dem Multimediasystem Ihres Fahrzeugs verbinden.
+- Wenn Sie sie für die Navigation verwenden möchten, konfigurieren Sie alles Notwendige, bevor Sie das Gerät mit dem Multimediasystem Ihres Fahrzeugs verbinden.  
 
 
 ### Kartenmarkierungen {#map-markers}
 
-![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-markers(1).png)
+![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
 - Um Ihr endgültiges Ziel als *Kartenmarkierung* zu definieren, müssen Sie zuerst die erforderliche Anzahl von Markierungen in der OsmAnd-App auf Ihrem Gerät erstellen, bevor Sie es mit dem Multimediasystem des Fahrzeugs verbinden.
 - *Markierungen* müssen in der Liste *Menü → Kartenmarkierungen* verfügbar sein.
-- Dies wird im Artikel [Kartenmarkierungen](../personal/markers.md) ausführlicher beschrieben.
+- Dies wird im Artikel [Kartenmarkierungen](../personal/markers.md) ausführlicher beschrieben.  
 
 
 ### Tracks {#tracks}
 
-![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-tracks(1).png)
+![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
-Um eine Route zu einem Ziel zu erstellen, können Sie einen vorhandenen Track auswählen, der in der OsmAnd-App verfügbar ist. Der Track kann im Voraus [heruntergeladen](../personal/tracks/manage-tracks.md#import), als [aufgezeichnet](../plugins/trip-recording.md) verwendet oder in [Route planen](../plan-route/create-route.md) erstellt werden.
+Um eine Route zu einem Ziel zu erstellen, können Sie einen vorhandenen Track auswählen, der in der OsmAnd-App verfügbar ist. Der Track kann im Voraus [heruntergeladen](../personal/tracks/manage-tracks.md#import), als [aufgezeichnet](../plugins/trip-recording.md) verwendet oder in [Route planen](../plan-route/create-route.md) erstellt werden.  
 
-Wählen Sie aus der Liste der Tracks unter *Menü → Meine Orte → [Tracks](../personal/tracks/manage-tracks.md)* den gewünschten aus, bevor Sie sich mit dem Multimediasystem des Fahrzeugs verbinden, und die Route wird entweder bis zum Start des Tracks aufgebaut oder die aktuelle Richtung entlang des Tracks angezeigt.
+Wählen Sie aus der Liste der Tracks unter *Menü → Meine Orte → [Tracks](../personal/tracks/manage-tracks.md)* den gewünschten aus, bevor Sie sich mit dem Multimediasystem des Fahrzeugs verbinden, und die Route wird entweder bis zum Start des Tracks aufgebaut oder die aktuelle Richtung entlang des Tracks angezeigt.  
 
 Tracks können auch direkt auf dem Fahrzeugbildschirm in *CarPlay* ausgewählt werden. Sie sind in von Ihnen erstellten Ordnern organisiert, und für einen einfachen und schnellen Zugriff auf kürzlich geöffnete Tracks gibt es einen speziellen Ordner [Zuletzt geändert](#folder-last-modified).
 
 
 ### Suche {#search}
 
-![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-search(1).png)
+![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
-Der Aufruf der **Suche** ermöglicht Ihnen einen schnellen Zugriff auf eine Liste des letzten [Zielverlaufs](#history). Ähnlich wie im [Navigationsmenü](../navigation/setup/route-navigation.md#navigation-menu), wo alle OsmAnd-Zielmethoden wie Adresse, POIs oder Koordinaten gesammelt sind.
+Der Aufruf der **Suche** ermöglicht Ihnen einen schnellen Zugriff auf eine Liste des letzten [Zielverlaufs](#history). Ähnlich wie im [Navigationsmenü](../navigation/setup/route-navigation.md#navigation-menu), wo alle OsmAnd-Zielmethoden wie Adresse, POIs oder Koordinaten gesammelt sind.  
 
 Sie können das *Suchwerkzeug* verwenden, um den gewünschten Ort auf der Karte für die Routenplanung aus jeder verfügbaren Suchkategorie zu finden.
 
@@ -212,20 +214,20 @@ Die Kategorien *Favoriten* und *Tracks* haben einen speziellen Ordner **Zuletzt 
 
 ## Zusätzliche Funktionen {#additional-features}
 
-Zusätzlich zu den Grundfunktionen der OsmAnd-App in *CarPlay*, die eine bequeme Navigation in Ihrem Fahrzeug ermöglichen, gibt es eine Reihe von zusätzlichen Funktionen, die Ihr Erlebnis verbessern und die Navigation persönlicher, komfortabler und effizienter machen.
+Zusätzlich zu den Grundfunktionen der OsmAnd-App in *CarPlay*, die eine bequeme Navigation in Ihrem Fahrzeug ermöglichen, gibt es eine Reihe von zusätzlichen Funktionen, die Ihr Erlebnis verbessern und die Navigation persönlicher, komfortabler und effizienter machen.  
 
 
 ### Sprachanweisungen {#voice-prompts}
 
-Die Sprachführung für *CarPlay* ist eine der nützlichsten Navigationsfunktionen von OsmAnd. Sie gibt Anweisungen in Echtzeit und ermöglicht es dem Fahrer, sich auf die Straße zu konzentrieren. Die Sprachanweisungen geben Abbiegungen, Richtungen und andere Navigationsanweisungen klar an und gewährleisten so eine sicherere und komfortablere Nutzung des Navigationssystems.
+Die Sprachführung für *CarPlay* ist eine der nützlichsten Navigationsfunktionen von OsmAnd. Sie gibt Anweisungen in Echtzeit und ermöglicht es dem Fahrer, sich auf die Straße zu konzentrieren. Die Sprachanweisungen geben Abbiegungen, Richtungen und andere Navigationsanweisungen klar an und gewährleisten so eine sicherere und komfortablere Nutzung des Navigationssystems.  
 
-Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun. Empfohlene Einstellungen für *CarPlay* finden Sie im Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md).
+Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun. Empfohlene Einstellungen für *CarPlay* finden Sie im Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md).  
 
 
 
 ### Bildschirm-Warnhinweis-Widget {#screen-alert-widget}
 
-![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)
+![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 Dieses Informations-Widget kombiniert Warnungstypen wie **Fußgängerüberwege** und **Geschwindigkeitsbegrenzung**.
 
@@ -275,7 +277,7 @@ Sie können die Benachrichtigungseinstellungen für die OsmAnd-App in den System
 - *Neue Nachrichten stummschalten*
 - *Vorherige Einstellung merken*
 
-Sie können das Ansagen von Nachrichten auch direkt in *CarPlay* aktivieren oder deaktivieren. Lesen Sie, wie die Benachrichtigungsverwaltung auf [iOS](https://support.apple.com/de-de/HT201925#:~:text=Gehe%20zu%20%E2%80%9CEinstellungen%E2%80%9C%20%3E%20%E2%80%9CMitteilungen%E2%80%9D.,in%20der%20geplanten%20Mitteilungs%C3%BCbersicht%20angezeigt.) und [CarPlay](https://support.apple.com/de-de/guide/iphone/iph9c8438165/ios) implementiert ist.
+Sie können das Ansagen von Nachrichten auch direkt in *CarPlay* aktivieren oder deaktivieren. Lesen Sie, wie die Benachrichtigungsverwaltung auf [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) und [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios) implementiert ist.
 
 ### Position des Standorts in CarPlay {#location-position-in-carplay}
 
@@ -292,9 +294,9 @@ Die OsmAnd-App für *CarPlay* ermöglicht es Ihnen, die Position des aktuellen S
 
 ### Problem mit der Lautstärkeregelung {#volume-control-issue}
 
-Manchmal verbindet sich *CarPlay* nicht, oder Sie können einfach nichts hören, obwohl es verbunden ist. In anderen Fällen öffnet sich die OsmAnd-App nicht richtig in *CarPlay*. Mögliche Lösungen:
+Manchmal verbindet sich *CarPlay* nicht, oder Sie können einfach nichts hören, obwohl es verbunden ist. In anderen Fällen öffnet sich die OsmAnd-App nicht richtig in *CarPlay*. Mögliche Lösungen:  
 
-1. In den meisten Fällen bleiben alle **Signale** auf konstanter voller Lautstärke, getrennt von den gleichzeitigen Audio-Wiedergabeeinstellungen. Um die Lautstärke der OsmAnd-Navigationsansagen bei Verwendung von *CarPlay* zu ändern, gehen Sie auf dem Bildschirm des Fahrzeug-Multimediasystems zu *Setup → Stimme → Lautstärke der Stimme*.
+1. In den meisten Fällen bleiben alle **Signale** auf konstanter voller Lautstärke, getrennt von den gleichzeitigen Audio-Wiedergabeeinstellungen. Um die Lautstärke der OsmAnd-Navigationsansagen bei Verwendung von *CarPlay* zu ändern, gehen Sie auf dem Bildschirm des Fahrzeug-Multimediasystems zu *Setup → Stimme → Lautstärke der Stimme*.  
 2. Starten Sie das Gerät neu.
 3. Stellen Sie sicher, dass *CarPlay* auf Ihrem iPhone aktiviert ist. Gehen Sie dazu wie folgt vor:
    - Gehen Sie zu den Einstellungen Ihres Telefons und dann zu *Allgemein*.
@@ -302,7 +304,7 @@ Manchmal verbindet sich *CarPlay* nicht, oder Sie können einfach nichts hören,
 4. Stellen Sie sicher, dass Ihr Bluetooth verbunden ist.
 5. Überprüfen Sie das USB-Kabel.
 6. Aktualisieren Sie Ihr Betriebssystem regelmäßig.
-7. Überprüfen Sie, ob *CarPlay* in Ihrer [Region](https://www.apple.com/de/ios/feature-availability/#applecarplay-applecarplay) unterstützt wird.
+7. Überprüfen Sie, ob *CarPlay* in Ihrer [Region](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) unterstützt wird.
 8. Wenn Sie ein VPN auf Ihrem iPhone verwenden, kann dies die Funktion von *CarPlay* verhindern. Versuchen Sie, das VPN zu deaktivieren und zu sehen, ob dies *CarPlay* zum Laufen bringt.
 
 
@@ -314,10 +316,10 @@ Manchmal verbindet sich *CarPlay* nicht, oder Sie können einfach nichts hören,
 ### Häufige Probleme und Lösungen {#common-issues-and-solutions}
 
 1. Häufige Fragen zum Verbindungsbildschirm:
-    - *Warum kann ich die App nicht von meinem Telefon aus steuern, wenn sie mit CarPlay verbunden ist?*
+    - *Warum kann ich die App nicht von meinem Telefon aus steuern, wenn sie mit CarPlay verbunden ist?*  
         Aus Sicherheitsgründen ist der Bildschirm der OsmAnd-App auf Ihrem Telefon gesperrt, während es mit CarPlay verbunden ist. Sie können nur über das Autodisplay mit der App interagieren.
-    - *Kann ich den gesperrten Bildschirm deaktivieren und die App auf meinem Telefon verwenden?*
+    - *Kann ich den gesperrten Bildschirm deaktivieren und die App auf meinem Telefon verwenden?*  
         Nein, CarPlay erzwingt diese Einschränkung, um Ablenkungen während der Fahrt zu vermeiden.
-    - *Was soll ich tun, wenn mein Telefon und das Autodisplay getrennt zu sein scheinen?*
-        Stellen Sie sicher, dass Ihr Gerät ordnungsgemäß über USB oder Bluetooth verbunden ist.
+    - *Was soll ich tun, wenn mein Telefon und das Autodisplay getrennt zu sein scheinen?*  
+        Stellen Sie sicher, dass Ihr Gerät ordnungsgemäß über USB oder Bluetooth verbunden ist.  
         Starten Sie das Infotainmentsystem Ihres Autos und die OsmAnd-App neu, wenn die Verbindung instabil ist.

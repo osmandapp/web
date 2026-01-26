@@ -1,5 +1,5 @@
 ---
-source-hash: ef13b994168cf04dcf98784cf4ef75aea6eb57a3e4db536a0fa48e3617173008
+source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites

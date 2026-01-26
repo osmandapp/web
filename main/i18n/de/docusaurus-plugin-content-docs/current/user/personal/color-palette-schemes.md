@@ -1,5 +1,5 @@
 ---
-source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
+source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
 sidebar_position: 5
 title:  Farbschemata
 ---
@@ -147,6 +147,13 @@ Jede Zeile repräsentiert einen numerischen Wert (für die Farbpalette ist es ei
 
 Nachdem Sie diese TXT-Datei nach *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt* verschoben haben, erscheint eine neue Palette im Menü Farbschema.
 
+Wenn Sie eine bestehende Palettendatei in OsmAnd ändern müssen (anstatt eine neue TXT-Datei hinzuzufügen), können Sie sie über eine exportierte Sicherung (.osf) bearbeiten.
+- Exportieren Sie die Palettendaten als .osf-Sicherung (siehe den Abschnitt [Import / Export](#import--export) unten).
+- Entpacken Sie die exportierte .osf. Die .osf-Datei ist ein umbenanntes .zip-Archiv. Erstellen Sie eine Kopie der ursprünglichen .osf-Datei und entpacken Sie sie mit einem beliebigen Archiv-Tool.
+- Finden und bearbeiten Sie die Paletten-TXT-Datei. Suchen Sie in den extrahierten Ordnern die benötigte Palettendatei (z. B. height_altitude_&lt;type_name&gt;.txt oder route_speed_&lt;type_name&gt;.txt) und bearbeiten Sie ihre Werte in einem Texteditor.
+- Zurückzippen und in .osf umbenennen. Packen Sie den extrahierten Inhalt wieder in ein .zip-Archiv und benennen Sie es in .osf um. Behalten Sie die gleiche Ordnerstruktur bei.
+- Importieren Sie die aktualisierte .osf in OsmAnd (siehe den Abschnitt **Import / Export** unten) und starten Sie die App neu, um die Änderungen anzuwenden.
+
 ### Import / Export {#import--export}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -169,7 +176,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 </Tabs>
 
-Sie können alle verfügbaren Standard- und benutzerdefinierten Farbpaletten mit dem Wiederherstellungs- und Sicherungswerkzeug von OsmAnd importieren und exportieren.
+Sie können alle verfügbaren Standard- und benutzerdefinierten Farbpaletten mit dem Wiederherstellungs- und Backup-Dateien-Tool von OsmAnd importieren und exportieren.
 
 - Öffnen Sie das Hauptmenü *Menü*, *Einstellungen*, scrollen Sie nach unten zum Abschnitt **Import/Export** (*Android*) oder **Lokales Backup** (*iOS*) und wählen Sie die gewünschte Aktion.
 - Wählen Sie ein oder mehrere Elemente aus der Liste *Farbe* oder die Option *Alle auswählen*.

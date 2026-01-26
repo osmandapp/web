@@ -1,5 +1,5 @@
 ---
-source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
+source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -104,7 +104,7 @@ Cloud-Sync ermöglicht es Ihnen, die Daten, die Sie zu **OsmAnd Cloud** synchron
 Diese Elemente werden direkt nach der Anmeldung auf der Website im Menü sichtbar. Um diese Informationen zu aktualisieren, müssen Sie Ihre Daten von Ihren Geräten aus synchronisieren, indem Sie die Aktion [Jetzt synchronisieren](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) in der mobilen App verwenden.
 
 Die Verfügbarkeit von Cloud-Sync hängt von Ihrem Kontotyp ab:
-- OsmAnd Start – synchronisiert [Favoriten](../web/web-favorites.md) und zeigt sie im Web an.
+- [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – synchronisiert [Favoriten](../web/web-favorites.md) und zeigt sie im Web an.
 - **OsmAnd Pro** – synchronisiert [Tracks](../web/web-tracks.md), Favoriten und [Backups](#my-data) und entsperrt vollen Web-Zugang zu Cloud-Daten.
 
 ![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
