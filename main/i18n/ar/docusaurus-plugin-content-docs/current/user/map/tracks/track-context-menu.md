@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  قائمة سياق المسار
 ---
@@ -72,11 +72,10 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. يعرض المجموع الكلي للصعود والهبوط أثناء الرحلة.
 - *<Translate android="true" ids="altitude_range"/>*. يشير إلى الحد الأدنى والأقصى للارتفاع على المسار.  
 
-:::note
 في حال تم إنشاء مسارك في OsmAnd أو أي تطبيق تتبع آخر (بحيث تحتوي نقاطه على علامات [`time` و `speed`](../../plugins/trip-recording#recorded-gpx-file))، ستحتوي لوحة المعلومات أيضًا على معلومات حول *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (المدة الزمنية بين نقطتي البداية والنهاية للمسار)، و*<Translate android="true" ids="shared_string_time_moving"/>* (مجموع الوقت أثناء الحركة).
 
 **ملاحظة:** بالنسبة للمسارات المسجلة، يعرض المدة الزمنية الفعلية للسفر بناءً على الطوابع الزمنية. أما بالنسبة للمسارات المخططة، فيعرض المدة الزمنية الوقت المقدر المحسوب من طول الطريق ومتوسط السرعة لملف الملاحة المحدد، إذا كان الطريق بأكمله يستخدم ملفًا واحدًا ولا يحتوي على أجزاء خطوط مستقيمة.
-:::
+
 
 ### إجراءات المسار {#track-actions}
 
@@ -125,7 +124,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** – يتحكم في رؤية المسار على الخريطة.
 - **<Translate android="true" ids="shared_string_appearance"/>** – يفتح [قائمة المظهر](../tracks/appearance.md) لتخصيص لون المسار وعرضه وشفافيته.
-- **<Translate android="true" ids="follow_track"/>** (*أندرويد*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – يبدأ [الملاحة حسب المسار](../../navigation/setup/gpx-navigation.md).، مع محاذاة مسارك مع المسار المحدد.
+- **<Translate android="true" ids="follow_track"/>** (*أندرويد*) / **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) – يبدأ [الملاحة حسب المسار](../../navigation/setup/gpx-navigation.md)، مع محاذاة مسارك مع المسار المحدد.
 
 <br/>
 
@@ -371,7 +370,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <InfoAndroidOnly />
 
-تتيح لك هذه الميزة حساب ملف تعريف الارتفاع لمسار GPX دون اتصال بالإنترنت لأي تضاريس بين خط عرض ٧٠ درجة شمالًا و ٧٠ درجة جنوبًا، بناءً على [بيانات خرائط التضاريس](../../plugins/topography.md#download-maps). *يجب تنزيل خرائط التضاريس (ثلاثية الأبعاد) مسبقًا*.
+[تتيح لك هذه الميزة](../../plan-route/create-route.md#get-elevation-data) حساب ملف تعريف الارتفاع لمسار GPX دون اتصال بالإنترنت لأي تضاريس بين خط عرض ٧٠ درجة شمالًا و ٧٠ درجة جنوبًا، بناءً على [بيانات خرائط التضاريس](../../plugins/topography.md#download-maps). *يجب تنزيل خرائط التضاريس (ثلاثية الأبعاد) مسبقًا*.
 
 ١. قم بتنزيل [خرائط التضاريس (ثلاثية الأبعاد)](../../plugins/topography.md#download-maps) للمنطقة المطلوبة.
 ٢. إذا كان المسار لا يحتوي على أي بيانات ارتفاع، فانتقل إلى قائمة سياق المسار (*قائمة سياق المسار ← <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), وحدد *استخدام خرائط التضاريس*، وبعد الحساب ستحصل على رسم بياني للمسار بناءً على بيانات التضاريس.  
@@ -472,7 +471,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="ios" label="iOS">
 
-![قائمة مجموعة قائمة المسار iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![قائمة مجموعة قائمة المسار iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![قائمة مجموعة قائمة المسار iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -484,9 +483,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - يسمح لك بعرض أو عدم عرض نقاط طريق المجموعة على الخريطة. أو يمكنك استخدام [زر الشاشة](#points--waypoints) لعرض أو إغفال نقاط طريق المجموعة على الخريطة.
 - **<Translate android="true" ids="shared_string_rename"/>** - تغيير اسم المجموعة.
-- **<Translate android="true" ids="change_default_appearance"/>** - تغيير خيارات العرض لمجموعة من نقاط الطريق.
+- **<Translate android="true" ids="change_default_appearance"/>** (*أندرويد*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - تغيير خيارات العرض لمجموعة من نقاط الطريق.
 - **<Translate android="true" ids="add_group_to_markers"/>** أو **إزالة** (*أندرويد فقط*) - نقل نقاط طريق المجموعة إلى قائمة [علامات الخريطة](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*أندرويد فقط*) - يسمح لك بنسخ المجموعة المحددة من نقاط الطريق إلى [المفضلة](../../personal/favorites.md). يمكنك اختيار إحدى خيارين: ***<Translate android="true" ids="copy_as_new_folder"/>*** أو ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - يسمح لك بنسخ المجموعة المحددة من نقاط الطريق إلى [المفضلة](../../personal/favorites.md). يمكنك اختيار إحدى خيارين: ***<Translate android="true" ids="copy_as_new_folder"/>*** أو ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*أندرويد فقط*) - ينشئ مسارًا بين نقاط الطريق. تصبح النقطتان الأولى والأخيرة بداية ونهاية المسار، ويتم تحويل الباقي إلى نقاط وسيطة.
 - **<Translate android="true" ids="shared_string_delete"/>** - حذف مجموعة من نقاط الطريق.
 
@@ -651,13 +650,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 لكل قطعة، يمكنك رؤية:
 - المسافة المقطوعة.
-- الفاصل الزمني.
+- المدة الزمنية.
 - متوسط الارتفاع، والحد الأدنى والأقصى.
 - الصعود والهبوط.
 - الوقت في الحركة.
 - متوسط السرعة والسرعة القصوى.
 
-عند النقر على أي قطعة في القائمة، تعرض عرض الخريطة المسار الكامل مع فواصله وتفتح قائمة السياق للمسار في أسفل الشاشة.
+عند النقر على أي قطعة في القائمة، تعرض عرض الخريطة المسار الكامل مع فواصله وتفتح قائمة السياق للمسار في أسفل الشاشة. على الخريطة، تدعم علامات الفواصل إجراءين: النقر لفتح لوحة نظرة عامة على المسار، والنقر المطول لفتح قائمة سياق المسار.
 
 
 ### التقسيم حسب الوقت {#split-by-time}
@@ -669,9 +668,14 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### التقسيم حسب الصعود/الهبوط {#split-by-uphill-downhill}
 
-![علامة تبويب تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![خريطة تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/split_by_4_map.png) 
+![علامة تبويب تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![خريطة تقسيم المسار حسب الصعود/الهبوط](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-يقسم هذا الخيار مسارًا إلى قطع بناءً على تغييرات الارتفاع. يتم تصنيف كل فاصل كـ ***صعود***، ***هبوط***، أو ***مسطح***. الطريقة التي يتم بها عرض الفواصل، والإحصائيات المقدمة لكل قطعة، وكيفية ظهورها على الخريطة هي أيضًا نفسها كما في قسم [التقسيم حسب المسافة](#split-by-distance).
+يقسم هذا الخيار مسارًا إلى قطع بناءً على تغييرات الارتفاع. يتم تصنيف كل فاصل كـ ***صعود***، ***هبوط***، أو ***مسطح***. الطريقة التي يتم بها عرض الفواصل، والإحصائيات المقدمة لكل قطعة هي نفسها كما في قسم [التقسيم حسب المسافة](#split-by-distance).
+
+على الخريطة، يتم تمييز القطع بعلامات ملونة في بداية كل فاصل:
+- **قطع الصعود** (علامات حمراء) تعرض سهمًا لأعلى، ورقم القطعة، ومتوسط المنحدر بالنسبة المئوية (على سبيل المثال، ↑ 11. 2%).
+- **قطع الهبوط** (علامات خضراء) تعرض سهمًا لأسفل، ورقم القطعة، ومتوسط المنحدر بالنسبة المئوية (على سبيل المثال، ↓ 12. -2%).
+- **قطع المسطح** (علامات زرقاء) تعرض مسافة القسم المسطح (على سبيل المثال، 616 م، 411 م).
 
 
 ### مقاييس معدل ضربات القلب {#heart-rate-metrics}

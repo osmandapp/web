@@ -1,5 +1,5 @@
 ---
-source-hash: 07f0f9eef0edaa9b0f5ade51776aa2f175ba53128c6bdac5c99ffcb6ffad3f65
+source-hash: 3970a0828bc6b80d9b68504c9d78e40d1226e1cf16d6f1fbc2fdcc5d6af480ec
 sidebar_position: 3
 title: عمليات الشراء عبر الويب
 ---
@@ -26,53 +26,51 @@ import Translate from '@site/src/components/Translate.js';
 
 | الخطة | الوصف | ملاحظات |
 |------------|------------|------------|
-| ![خرائط+](@site/static/img/svg/osmand_maps_plus.svg) **خرائط+** | **عملية شراء داخل التطبيق** أو **اشتراك** يفتح الميزات المتقدمة لتطبيق OsmAnd المجاني. | يدعم **الوصول عبر المنصات** |
-| ![برو](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح جميع [الميزات الاحترافية](#free-and-paid-features)، بما في ذلك CarPlay و 3D Relief. | يدعم **الوصول عبر المنصات** |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **خرائط+** | **عملية شراء داخل التطبيق** أو **اشتراك** يفتح الميزات المتقدمة لتطبيق OsmAnd المجاني. | يدعم **الوصول عبر المنصات** |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح جميع [الميزات الاحترافية](#free-and-paid-features)، بما في ذلك CarPlay و 3D Relief. | يدعم **الوصول عبر المنصات** |
 
 :::note  
-**الوصول عبر المنصات** يعني أنه يمكنك شراء OsmAnd من موقعنا الإلكتروني أو من أحد المتاجر (على سبيل المثال، *App Store أو Google Play أو osmand.net*) واستخدامه على منصة أخرى عن طريق [ربط عملية الشراء بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+**الوصول عبر المنصات** يعني أنه يمكنك شراء OsmAnd من موقعنا أو من متجر واحد (على سبيل المثال، *App Store أو Google Play أو osmand.net*) واستخدامه على منصة أخرى عن طريق [ربط عملية الشراء بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 :::
 
 ## الأسعار {#prices}
 
 فيما يلي أسعار منتجات OsmAnd في الولايات المتحدة والاتحاد الأوروبي. يتم تحويل الأسعار في المناطق الأخرى تلقائيًا إلى العملة المحلية بواسطة منصة الدفع.
 
-
-
-
-:::danger عرض عيد الميلاد
-
-*سارع بالشراء! هذا العرض متاح فقط حتى* **٢٨ ديسمبر (٢٣:٠٠ CET)**.
-
-:::
-
-
-
-|    | OsmAnd المجاني   | **خرائط+** لمرة واحدة | اشتراك **خرائط+** | **OsmAnd Pro** |**OsmAnd XV** |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
-|  | ![خرائط+](@site/static/img/svg/osmand_maps.svg) | ![خرائط+](@site/static/img/svg/osmand_maps_plus.svg) | ![خرائط+](@site/static/img/svg/osmand_maps_plus.svg) | ![برو](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (١٢ شهرًا) | **اشتراك** (شهر واحد / ١٢ شهرًا) |**شراء لمرة واحدة** (١٥ عامًا من Pro / خرائط+ مدى الحياة) |
-| **السعر (يورو)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
-| **السعر (دولار أمريكي)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
-
-:::note 
-من خلال شراء اشتراك عبر [موقعنا الإلكتروني](https://osmand.net/pricing) بسعر مخفض،  
-ستحصل على خطة مخفضة لمدة عامين.  
-بدءًا من السنة الثالثة، سيتم تطبيق السعر الكامل.
-:::
-
-
 <!--
+
+
+:::danger Christmas sale
+
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+
+:::
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Price (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |<s>€450</s> **€299.00**   |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|<s>$450</s> **$299.00**   |
+
+:::note 
+By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
+you receive a 2-year discounted plan.  
+Starting from the third year, the full price will apply.
+:::
 
 -->
+
+|    | OsmAnd Free   | **خرائط+** لمرة واحدة | اشتراك **خرائط+** | **OsmAnd Pro** |**OsmAnd XV** |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
+| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (١٢ شهرًا) | **اشتراك** (شهر واحد / ١٢ شهرًا) |**شراء لمرة واحدة** (١٥ عامًا من Pro / خرائط+ مدى الحياة) |
+| **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
+| **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
+
+
+
 
 ### الميزات المجانية والمدفوعة {#free-and-paid-features}
 
@@ -85,18 +83,18 @@ import Translate from '@site/src/components/Translate.js';
 
 ترتبط مشترياتك بـ [حساب OsmAnd Cloud الخاص بك](../personal/osmand-cloud.md#login) (بريدك الإلكتروني). لاستعادة المشتريات على جهاز جديد:
 
-١. قم بتثبيت تطبيق OsmAnd (أندرويد أو iOS).
-٢. افتح التطبيق مع وجود اتصال إنترنت نشط.
-٣. اذهب إلى:  
+1. قم بتثبيت تطبيق OsmAnd (أندرويد أو iOS).
+2. افتح التطبيق مع وجود اتصال إنترنت نشط.
+3. اذهب إلى:  
    **القائمة ← الإعدادات ← OsmAnd Cloud ← لدي حساب بالفعل**  
    [مزيد من المعلومات هنا](../personal/osmand-cloud.md#login)
-٤. لاستعادة المشتريات:  
+4. لاستعادة المشتريات:  
    اذهب إلى **القائمة ← الإعدادات ← المشتريات ← استعادة المشتريات**  
-   ستؤكد الشاشة أن **خرائط+** أو **Pro** أو **Live** قد تم تفعيله.
+   ستؤكد الشاشة أن **خرائط+**، **Pro**، أو **Live** قد تم تفعيله.
 
 **إذا لم تنجح عملية الاستعادة:**
 
-١. امسح ذاكرة التخزين المؤقت للتطبيق.
-٢. أعد تشغيل جهازك.
-٣. حاول الاستعادة مرة أخرى باستخدام نفس الحساب.
-٤. أو راسلنا على: support@osmand.net
+1. امسح ذاكرة التخزين المؤقت للتطبيق.
+2. أعد تشغيل جهازك.
+3. حاول الاستعادة مرة أخرى باستخدام نفس الحساب.
+4. أو راسلنا على: support@osmand.net

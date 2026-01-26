@@ -1,5 +1,5 @@
 ---
-source-hash: f883cecaa5261a36f9d1f1d64d29499b611644d5e7812a27bf94c9d003dd7880
+source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -78,32 +78,14 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 
-:::danger عرض عيد الميلاد
-
-*سارع! هذا العرض متاح فقط حتى* **28 ديسمبر (23:00 CET)**.
-
-:::
-
-
-
 |    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 Months) | **اشتراك** (1 Month / 12 Months) |
-| **السعر (يورو)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **السعر (دولار أمريكي)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
+| **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Price (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
-
--->
 
 ### الميزات المجانية والمدفوعة {#free-and-paid-features}
 

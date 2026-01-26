@@ -1,5 +1,5 @@
 ---
-source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
+source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
 sidebar_position: 2
 sidebar_label:  الحساب
 title: حساب OsmAnd
@@ -104,7 +104,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 تصبح هذه العناصر مرئية في القائمة مباشرة بعد تسجيل الدخول على الموقع. لتحديث هذه المعلومات، تحتاج إلى مزامنة بياناتك من أجهزتك باستخدام [إجراء المزامنة الآن](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) في التطبيق المحمول.
 
 تعتمد توافر مزامنة السحابة على نوع حسابك:
-- OsmAnd Start – يزامن [المفضلات](../web/web-favorites.md) ويعرضها على الويب.
+- [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – يزامن [المفضلات](../web/web-favorites.md) ويعرضها على الويب.
 - OsmAnd Pro – يزامن [المسارات](../web/web-tracks.md)، المفضلات، و[النسخ الاحتياطية](#my-data)، ويفتح الوصول الكامل إلى بيانات السحابة على الويب.
 
 ![مسار الويب](@site/static/img/web/web_track_start.png) ![مسار الويب](@site/static/img/web/web_track_pro.png)

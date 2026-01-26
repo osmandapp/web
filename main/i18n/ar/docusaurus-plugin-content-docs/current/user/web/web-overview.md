@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: مقدمة
 title: مقدمة عن مخطط الويب
@@ -26,9 +26,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 صُمم كرفيق متعدد المنصات لـ OsmAnd على أندرويد و iOS، يساعد بوابة الويب المستخدمين على تخطيط الرحلات، وتحليل المسارات، وعرض التضاريس، وإدارة الملفات باستخدام أي متصفح على سطح المكتب أو الجهاز اللوحي — دون الحاجة إلى تثبيت تطبيق.
 
-يتكامل OsmAnd Web بشكل وثيق مع خدمة **OsmAnd Cloud**، التي تتيح مزامنة المفضلة والمسارات والنسخ الاحتياطية عبر الأجهزة والمنصات. يمكن للمستخدمين الذين لديهم حسابات **OsmAnd Start** (مجاني) أو **OsmAnd Pro** (مدفوع) الاستفادة الكاملة من هذا النظام البيئي عن طريق مزامنة البيانات بين الهاتف المحمول والويب. يمكنك العثور على مقارنة مفصلة بين ميزات *Start* و *Pro* في قسم [الوصول حسب الاشتراك](#subscription-access) أدناه.
+يتكامل OsmAnd Web بشكل وثيق مع خدمة **OsmAnd Cloud**، التي تتيح مزامنة المفضلة والمسارات والنسخ الاحتياطية عبر الأجهزة والمنصات. يمكن للمستخدمين الذين لديهم حسابات **OsmAnd Start** (مجاني) أو **OsmAnd Pro** (مدفوع) الاستفادة الكاملة من هذا النظام البيئي عن طريق مزامنة البيانات بين الهاتف المحمول والويب. يمكنك العثور على مقارنة مفصلة بين ميزات *Start* و *Pro* في قسم [الوصول حسب الاشتراك](#subscription-accesses) أدناه.
 
-> **ملاحظة:** حتى بدون تسجيل الدخول أو التحقق من حسابك، يمكنك لا تزال استخدام العديد من الميزات الأساسية لبوابة خرائط الويب، بما في ذلك: [مسار الملاحة](./planner.md)، [مخطط المسارات](./planner.md)، [طبقات الطقس](./web-map.md#weather-on-the-web)، و [الإعدادات](#settings).
+> **ملاحظة:** حتى بدون تسجيل الدخول أو التحقق من حسابك، يمكنك لا تزال استخدام العديد من الميزات الأساسية لبوابة خرائط الويب، بما في ذلك: [مسار الملاحة](./web-navigation.md)، [مخطط المسارات](./planner.md)، [طبقات الطقس](./web-weather.md#)، و [الإعدادات](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -40,7 +40,7 @@ After the structure of this section is approved, some links should be updated.
 
 - [الخريطة](./web-map.md) بتغطية عالمية وبيانات متجهة عالية الجودة.
 - [تخطيط المسارات](./planner.md) باستخدام ملفات تعريف المشي والسيارة والدراجة وغيرها.
-- [معاينة الملاحة](./planner.md) مع تعليمات منعطف بمنعطف.
+- [الملاحة](./planner.md) معاينة مع تعليمات منعطف بمنعطف.
 - [البحث](./web-search.md) و [استكشاف](./web-search.md#explore) الأماكن الشهيرة القريبة.
 - عرض [المفضلة](./web-map.md#favorites)، [المسارات](./web-map.md#tracks)، و [النقاط المهمة](./web-map.md#poi-overlay) على الخريطة.
 - [طبقات الطقس](./web-weather.md): الرياح ودرجة الحرارة والضغط.
@@ -67,11 +67,11 @@ After the structure of this section is approved, some links should be updated.
 | [مخطط المسارات](./planner.md) | بدون تسجيل الدخول |
 | [طبقات الطقس](./web-weather.md) | بدون تسجيل الدخول |
 | [الإعدادات](./web-map.md#settings) | بدون تسجيل الدخول |
-| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([النقاط المهمة](./web-map.md#poi-overlay)، [المفضلة](./web-map.md#favorites)، [المسارات](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) أو <ProFeature/> |
-| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([التضاريس](./web-map.md#terrain))| <ProFeature/> |
-| [مزامنة OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) أو <ProFeature/> |
-| [بحث الويب، الأماكن الشهيرة](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) أو <ProFeature/> |
-| [مجلدات المسارات وطبقتها](./web-tracks.md) | <ProFeature/> |
+| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([النقاط المهمة](./web-map.md#poi-overlay)، [المفضلة](./web-map.md#favorites)، [المسارات](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([التضاريس](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [مزامنة OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [بحث الويب، الأماكن الشهيرة](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [مجلدات المسارات وطبقتها](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.

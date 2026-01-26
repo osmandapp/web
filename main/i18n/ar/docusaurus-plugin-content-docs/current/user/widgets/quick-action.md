@@ -1,5 +1,5 @@
 ---
-source-hash: 2577f77348fb868d63648ae2d8c21c5f6d95f6b42bc9152283acbe92a24fd938
+source-hash: acec87397450d121c90aab13dab433cdd3d9e2ce9716bf61ccd71e41489aca96
 sidebar_position: 7
 title:  الإجراء السريع (الأزرار المخصصة)
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-أداة الإجراء السريع هي عنصر واجهة مستخدم تفاعلي يوفر وصولاً سريعًا إلى الوظائف أو الإجراءات الرئيسية دون فتح إعدادات إضافية. توضع هذه الأداة على شاشة الخريطة الرئيسية وتسمح بتبسيط وتسريع التفاعل مع التطبيق، مما يجعله أكثر ملاءمة وكفاءة.
+أداة الإجراء السريع هي عنصر واجهة مستخدم تفاعلي يوفر وصولاً سريعًا إلى الوظائف أو الإجراءات الرئيسية دون فتح إعدادات إضافية. توضع هذه الأداة على شاشة الخريطة الرئيسية وتسمح بتبسيط وتسريع التفاعل مع التطبيق، مما يجعله أكثر ملاءمة وكفاءة.  
 
 ![أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget.png)
 
@@ -28,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
@@ -46,7 +46,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-لاستخدام زر الإجراء السريع، يجب عليك تمكين هذه الأداة أولاً.
+لاستخدام زر الإجراء السريع، يجب عليك تمكين هذه الأداة أولاً.  
 
 <!--
 - To open the Quick action menu, just tap the button.
@@ -59,7 +59,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> ← انقر على حذف (أيقونة سلة المهملات في الزاوية اليمنى العليا) ← حدد الإجراءات*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → انقر على حذف (أيقونة سلة المهملات في الزاوية اليمنى العليا) → حدد الإجراءات*
 
 ![إضافة أداة الإجراء السريع_أندرويد](@site/static/img/widgets/quick_action_widget_andr.png)  ![زر مخصص أندرويد](@site/static/img/widgets/add_action_screen_andr.png)
 
@@ -67,7 +67,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  ← انقر على تعديل (أيقونة القلم في الزاوية اليمنى العليا) ← حدد الإجراءات*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → انقر على تعديل (أيقونة القلم في الزاوية اليمنى العليا) → حدد الإجراءات*
 
 ![إضافة أداة الإجراء السريع_iOS](@site/static/img/widgets/quick_action_widget_2_ios.png) ![زر مخصص iOS](@site/static/img/widgets/add_action_screen_ios.png)
 
@@ -79,8 +79,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك تعيين إجراء واحد أو أكثر لزر الإجراء السريع. هناك طريقتان لإضافة الإجراءات.
 
-- **في شاشة الإعدادات**. حدد زرًا من القائمة، وانقر على زر "**＋**". تحتاج إلى تحديد [نوع الإجراء](#action-types) أولاً، ثم تغيير اسمه و[معلماته](#action-parameters).
-- **في لوحة زر الإجراء السريع**. انقر على *زر الإجراء السريع* على شاشة الخريطة. في نهاية القائمة، على آخر شاشة في اللوحة، يوجد مربع "**＋**" *إضافة إجراء*. انقر عليه وحدد إجراءً من [قائمة الأنواع](#action-types).
+- **في شاشة الإعدادات**. حدد زرًا من القائمة، وانقر على زر&nbsp;  "**＋**"  &nbsp; . تحتاج إلى تحديد [نوع الإجراء](#action-types) أولاً، ثم تغيير اسمه و[معلماته](#action-parameters).
+- **في لوحة زر الإجراء السريع**. انقر على *زر الإجراء السريع* على شاشة الخريطة. في نهاية القائمة، على آخر شاشة في اللوحة، يوجد مربع "**＋**"  &nbsp;*إضافة إجراء*. انقر عليه وحدد إجراءً من [قائمة الأنواع](#action-types).
 
 
 :::note
@@ -95,7 +95,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 ![ترتيب أداة الإجراء السريع_أندرويد](@site/static/img/widgets/quick_action_widget_android_order.png)
 
@@ -109,7 +109,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-يتم تجميع الإجراءات المخصصة لزر الإجراء السريع في شاشات. يتم فتح مجموعات الإجراءات هذه عند النقر على هذا الزر على الخريطة. يتم إنشاء شاشات جديدة تلقائيًا عندما تتجاوز قائمة الإجراءات *6 عناصر*. يمكنك إعادة ترتيب الإجراءات لتناسب تفضيلاتك باتباع الخطوات التالية:
+يتم تجميع الإجراءات المخصصة لزر الإجراء السريع في شاشات. يتم فتح مجموعات الإجراءات هذه عند النقر على هذا الزر على الخريطة. يتم إنشاء شاشات جديدة تلقائيًا عندما تتجاوز قائمة الإجراءات *6 عناصر*. يمكنك إعادة ترتيب الإجراءات لتناسب تفضيلاتك باتباع الخطوات التالية:  
 
 **لأندرويد**.
 
@@ -121,14 +121,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 2. عبر قائمة الإجراء السريع:
 
     - افتح قائمة الإجراء السريع، ثم انقر مطولاً على *إضافة إجراء*.
-    - استخدم *الضغط والسحب* على أيقونة الخطين العموديين لإعادة ترتيب الإجراءات.
+    - استخدم *الضغط والسحب* على أيقونة الخطين العموديين لإعادة ترتيب الإجراءات.  
 
 **لـ iOS**.
 
 - انتقل إلى *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*.
 - انقر على *تعديل* (أيقونة القلم)، ثم *اضغط واسحب* على أيقونة الخطوط العمودية الثلاثة لإعادة ترتيب الإجراءات.
 
-:::info
+:::info note
 بعض الإجراءات مثل *مصدر الخريطة*، *نمط الخريطة*، *طبقة علوية*، *طبقة سفلية*، *نظام ألوان التضاريس*، و*إضافة ملف شخصي* يمكن تعيينها كحلقة. كل نقرة على الزر تدور عبر الطبقات المحددة. يمكن إظهار مربع حوار مؤقت للاختيار يدويًا من القائمة، أو إخفاؤه للتبديل بالترتيب المحدد.
 :::
 
@@ -141,23 +141,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> ←*&nbsp;  "**＋**"  &nbsp;*← <Translate android="true" ids="add_button"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*  
 
-![زر مخصص أندرويد](@site/static/img/widgets/custom_button_andr.png)
+![زر مخصص أندرويد](@site/static/img/widgets/custom_button_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> ←*&nbsp;  "**＋**"  &nbsp;*← <Translate ios="true" ids="add_button"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
-![زر مخصص iOS](@site/static/img/widgets/custom_button_ios.png)
+![زر مخصص iOS](@site/static/img/widgets/custom_button_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-**الأزرار المخصصة** هي أزرار إضافية على الخريطة تعمل بنفس طريقة زر *الإجراء السريع*. يمكنك إنشاء زر بإجراء واحد أو أكثر وعرضه على شاشة الخريطة. توجد الأزرار المخصصة في قائمة *إعداد الشاشة ← الأزرار ← الأزرار المخصصة*. لكل زر قائمة إجراءات مستقلة عن الملف الشخصي ويجب أن يكون له ***اسم*** فريد، ومع ذلك، يمكن تشغيل/إيقاف الزر بشكل فردي لكل **ملف شخصي**.
+**الأزرار المخصصة** هي أزرار إضافية على الخريطة تعمل بنفس طريقة زر *الإجراء السريع*. يمكنك إنشاء زر بإجراء واحد أو أكثر وعرضه على شاشة الخريطة.  توجد الأزرار المخصصة في قائمة *إعداد الشاشة → الأزرار → الأزرار المخصصة*. لكل زر قائمة إجراءات مستقلة عن الملف الشخصي ويجب أن يكون له ***اسم*** فريد، ومع ذلك، يمكن تشغيل/إيقاف الزر بشكل فردي لكل **ملف شخصي**.
 
 جميع [الإجراءات](#action-types) المتاحة مطابقة لتلك التي يمكن تطبيقها على الإجراء السريع الافتراضي. يمكن تكوين الأزرار المخصصة كأزرار ***إجراء واحد***، والتي تطبق الإجراء المحدد فور النقر عليها، دون الحاجة إلى التنقل عبر قائمة إضافية.
 
@@ -167,7 +167,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![مظهر زر الإجراء السريع](@site/static/img/widgets/qa_button_appearance_andr.png)
 
-يمكنك تعديل مظهر أزرار الإجراء السريع من خلال: *القائمة ← إعداد الشاشة ← الأزرار المخصصة ← الإجراء السريع ← قائمة النقاط الثلاث ← المظهر*. يوفر هذا الإعداد خيارات لتخصيص حجم الزر وشكله وأيقونته وشفافية الخلفية، مما يوفر تحكمًا أكبر في كيفية ظهور الأزرار على شاشتك.
+يمكنك تعديل مظهر أزرار الإجراء السريع من خلال: *القائمة → إعداد الشاشة → الأزرار المخصصة → الإجراء السريع → قائمة النقاط الثلاث → المظهر*. يوفر هذا الإعداد خيارات لتخصيص حجم الزر وشكله وأيقونته وشفافية الخلفية، مما يوفر تحكمًا أكبر في كيفية ظهور الأزرار على شاشتك.  
 
 للحصول على إعدادات تخصيص مفصلة، راجع مقال [إعداد الشاشة](../widgets/configure-screen.md#button-appearance)، حيث يمكنك معرفة كيفية ضبط مظهر كل زر ليتناسب مع تفضيلاتك.
 
@@ -179,7 +179,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     ![عرض أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_view.png)
 
-- **نقل الأداة**. بالضغط المطول والسحب على الأداة، يمكنك إعادة وضعها على الشاشة، مع محاذاة تلقائية للأعمدة والصفوف.
+- **نقل الأداة**. بالضغط المطول والسحب على الأداة، يمكنك إعادة وضعها على الشاشة، مع محاذاة تلقائية للأعمدة والصفوف.  
 
     ![النقر على أداة الإجراء السريع](@site/static/img/widgets/quick_action_widget_tap.png)
 
@@ -195,7 +195,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 ![شبكة للأزرار_v_أندرويد](@site/static/img/widgets/grid_buttons_v_and.png) 
 
@@ -231,7 +231,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | إظهار / إخفاء <br/> [**المسارات**](../map/vector-maps.md#routes) | يمكنك تحديد أنواع المسارات لتمكين أو تعطيل عرضها. <br/> بعض المسارات لها إعدادات إضافية. بشكل افتراضي، إذا لم تحدد أي شيء في قائمة [إعداد الخريطة](../map/configure-map-menu.md)، فسيتم تعيين نوع المسار الأول من القائمة، وإلا فسيتم تعيين نوع من اختيارك. يمكنك قراءة المزيد في مقال [المسارات](../map/routes.md). <br/> - ***مسارات الدراجات***  &nbsp;(*المسار*، *شبكات العقد*) <br/> - ***مسارات الدراجات الجبلية***  &nbsp;(*مقياس MTB*، *IMBA*) <br/> - ***مسارات المشي لمسافات طويلة***  &nbsp;(*OSMC*، *الانتماء للشبكة*، *شبكات العقد*) <br/> - ***درجة صعوبة مسارات المشي لمسافات طويلة***  &nbsp;(*مقياس SAC*، *مقياس CAI*) <br/> - ***منحدرات التزلج*** <br/> - ***مسارات الخيل*** <br/> - ***رياضات المياه البيضاء*** <br/> - ***مسارات الجري*** <br/> - ***مسارات اللياقة البدنية*** <br/> - ***مسارات السفر***  &nbsp;(*المسارات*، *كتب السفر*، *النقاط*) <br/> |
 | إظهار / إخفاء <br/> [**طبقات التضاريس**](../plugins/topography.md#overview) | يتم عرض جميع بيانات التضاريس كطبقات خريطة منفصلة. يمكنك تبديل رؤية هذه الطبقات بسرعة باستخدام الإجراء السريع. <br/> - ***خطوط الكنتور*** <br/> - ***التضاريس***  &nbsp;(*اعتمادًا على الطبقة المحددة في قائمة [إعداد الخريطة](../map/configure-map-menu.md)*، *سيتم عرض تظليل التلال*، *أو المنحدر*، *أو الارتفاع*.) |
 | تغيير <br/> [**نظام ألوان التضاريس**](../plugins/topography.md#modify-color-scheme) | يسمح لك بتحديد لوحة ألوان واحدة أو أكثر من قائمة اللوحات الموجودة، والتي ستتغير عند النقر على الزر. |
-| إظهار / إخفاء <br/> [**طبقات الطقس**](../plugins/weather.md#weather-layers) | يتم عرض جميع بيانات الطقس كطبقات خريطة منفصلة. باستخدام الإجراء السريع، يمكنك الوصول السريع لتبديل رؤية هذه الطبقات على الخريطة. <br/> - ***طبقة هطول الأمطار*** <br/> - ***طبقة السحب*** <br/> - ***طبقة الضغط الجوي*** <br/> - ***طبقة الرياح*** <br/> - ***طبقة رسوم متحركة الرياح*** *(أندرويد فقط)* <br/> - ***طبقة درجة الحرارة*** <br/> على أندرويد، هناك أيضًا **طبقات الطقس** — مفتاح رئيسي لجميع طبقات الطقس النشطة. يقوم بإيقاف جميع طبقات الطقس المفعلة حاليًا دفعة واحدة. عند إعادة تشغيلها، يستعيد نفس مجموعة الطبقات التي كانت نشطة سابقًا. |
+| إظهار / إخفاء <br/> [**طبقات الطقس**](../plugins/weather.md#weather-layers) | يتم عرض جميع بيانات الطقس كطبقات خريطة منفصلة. باستخدام الإجراء السريع، يمكنك الوصول السريع لتبديل رؤية هذه الطبقات على الخريطة. <br/> - ***طبقة هطول الأمطار*** <br/> - ***طبقة السحب*** <br/> - ***طبقة الضغط الجوي*** <br/> - ***طبقة الرياح*** <br/> - ***طبقة رسوم متحركة الرياح*** <br/> - ***طبقة درجة الحرارة*** <br/> هناك أيضًا **طبقات الطقس** — مفتاح رئيسي لجميع طبقات الطقس النشطة. يقوم بإيقاف جميع طبقات الطقس المفعلة حاليًا دفعة واحدة. عند إعادة تشغيلها، يستعيد نفس مجموعة الطبقات التي كانت نشطة سابقًا. |
 | فتح <br/> [**شاشة الطقس**](../plugins/weather.md) | يفتح شاشة توقعات [*الطقس*](../plugins/weather.md#weather-forecast-screen) مع المعلومات التفصيلية. |
 | إظهار / إخفاء <br/> [**المفضلة**](../map/point-layers-on-map.md#favorites) | إظهار أو إخفاء النقاط المفضلة على الخريطة. |
 | إظهار / إخفاء <br/> [**المسارات**](../personal/tracks/manage-tracks.md#track-menu) | إظهار أو إخفاء آخر المسارات المرئية على الخريطة. |
@@ -241,7 +241,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | إظهار / إخفاء <br /> [**النقل العام**](../map/vector-maps.md#transport) | تمكين أو تعطيل طبقة خريطة النقل العام <br /> - *نوع النقل*. عند النقر لأول مرة، يمكنك تحديد نوع واحد أو أكثر من أنواع النقل، بما في ذلك *محطات النقل*، *مسارات الحافلات والترولي باص والمكوكات*، *مسارات الترام والقطار*، *مسارات المترو*. |
 | تغيير <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | إنشاء قائمة بمصادر الخرائط كطبقة علوية للخريطة والتنقل بينها. <br /> - *ملاحظة*. لتغيير الطبقات العلوية للخريطة في OsmAnd، يمكنك إما إعداد إجراء سريع واحد يسمح لك بالتبديل بين طبقات علوية متعددة، أو إنشاء عدة إجراءات سريعة منفصلة، كل منها لطبقة علوية معينة. |
 | تغيير <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | إنشاء قائمة بمصادر الخرائط كطبقة سفلية للخريطة والتنقل بينها. <br /> - *ملاحظة*. لتغيير الطبقات السفلية للخريطة في OsmAnd، يمكنك إما إعداد إجراء سريع واحد يسمح لك بالتبديل بين طبقات سفلية متعددة، أو إنشاء عدة إجراءات سريعة منفصلة، كل منها لطبقة سفلية معينة.  |
-| تغيير <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | إنشاء قائمة بأنماط الخرائط للخرائط المتجهة والتنقل بينها. <br /> - *ملاحظة*. لتغيير أنماط الخريطة في OsmAnd، يمكنك إما إعداد إجراء سريع واحد يسمح لك بالتبديل بين طبقات علوية متعددة، أو إنشاء عدة إجراءات سريعة منفصلة، كل منها لنمط خريطة معين. |
+| تغيير <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | إنشاء قائمة بأنماط الخرائط للخرائط المتجهة والتنقل بينها. يمكنك إظهار أو إخفاء مربع حوار الاختيار: <br /> - *إذا تم إظهار المربع الحواري*، يمكنك اختيار أي نمط من القائمة. <br /> - *إذا تم إخفاء المربع الحواري*، يعمل الإجراء كمفتاح تبديل بنقرة واحدة (دورة فقط). <br /> عند الدوران، يظهر تسمية الإجراء السريع مع سهم (مثل > Nautical) النمط التالي للخريطة الذي سيتم تطبيقه عند النقر التالي، وليس النشط حاليًا. <br /> - *ملاحظة*. لتغيير أنماط الخريطة في OsmAnd، يمكنك إما إعداد إجراء سريع واحد يسمح لك بالتبديل بين طبقات علوية متعددة، أو إنشاء عدة إجراءات سريعة منفصلة، كل منها لنمط خريطة معين. |
 | إظهار / إخفاء <br/> [**طبقة Mapillary**](../plugins/mapillary.md) | يسمح لك بعرض طبقات الخريطة مع صور على مستوى الشارع مقدمة من Mapillary. |
 | إظهار / إخفاء <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | يمكنك تحديد عرض أو إخفاء جميع ملاحظات OSM على الخريطة بنقرة واحدة على الزر. |
 
@@ -276,7 +276,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | الإجراء | الوصف |
 |:-------------|:-------------|
 | بدء / إيقاف مؤقت <br/> [**تسجيل الرحلة**](../plugins/trip-recording.md#new-track-recording) | بدء جلسة تسجيل للمسار الحالي أو إيقافها مؤقتًا دون إكمال الرحلة. |
-| بدء <br/> [**مقطع رحلة جديد**](../plugins/trip-recording.md#overview-screen) | بدء مقطع جديد من الرحلة دون إيقاف التسجيل الكلي. |
+| بدء  <br/> [**مقطع رحلة جديد**](../plugins/trip-recording.md#overview-screen) | بدء مقطع جديد من الرحلة دون إيقاف التسجيل الكلي. |
 | حفظ <br/> [**الرحلة المسجلة والمتابعة**](../plugins/trip-recording.md#current-track-recording) | حفظ تسجيل الرحلة الحالي ومتابعة التسجيل دون انقطاع. |
 | إنهاء <br/> [**تسجيل الرحلة**](../plugins/trip-recording.md#current-track-recording) | إنهاء جلسة تسجيل الرحلة الحالية. |
 | إضافة <br/> [**مفضلة**](../map/configure-map-menu.md#map-layers) | يضيف مفضلة إلى موقع الخريطة المحدد (المركزي). <br /> - *إظهار مربع حوار مؤقت*. يعرض مربع حوار تأكيد. <br /> - *المجموعة*. يضيف مفضلة إلى المجموعة المحددة. <br /> - *اللون*. يضيف مفضلة بلون محدد مسبقًا <br /> - *الاسم*. يضيف مفضلة ببادئة اسم محددة.  |
@@ -322,7 +322,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> ← &#43;*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![الأجهزة الخارجية](@site/static/img/map/external_custom_2_andr.png)
 
@@ -330,7 +330,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> ← الجهاز ← إضافة*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → الجهاز → إضافة*
 
 ![الأجهزة الخارجية](@site/static/img/map/external_custom_2_ios.png)
 

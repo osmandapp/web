@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  مسطرة نصف القطر والمسطرة
 ---
@@ -69,7 +69,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
-متاحة على جميع اللوحات: <Translate android="true" ids="top"/>، <Translate android="true" ids="position_on_map_bottom"/>، <Translate android="true" ids="shared_string_left"/>، و<Translate android="true" ids="shared_string_right"/>.
+متاحة على جميع اللوحات: <Translate android="true" ids="top"/>، <Translate android="true" ids="position_on_map_bottom"/>، <Translate android="true" ids="shared_string_left"/>, و<Translate android="true" ids="shared_string_right"/>.
 
 ![موضع العرض أندرويد](@site/static/img/widgets/radius_ruler_height_android.png)
 </TabItem>
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>*
 
-متاحة على جميع اللوحات: <Translate ios="true" ids="shared_string_top"/>، <Translate ios="true" ids="position_on_map_bottom"/>، اليسار، واليمين.
+متاحة على جميع اللوحات: <Translate ios="true" ids="shared_string_top"/>، <Translate ios="true" ids="position_on_map_bottom"/>, اليسار، واليمين.
 
 ![موضع العرض iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
@@ -91,17 +91,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - عرض دوائر متحدة المركز تتمحور حول النقطة المحددة.
 - تعكس الدائرة الأولى [مقياس الخريطة](#ruler) الحالي كمرجع بصري سريع.
 - يتم الضبط تلقائيًا عند التكبير للحفاظ على قيم نصف قطر دقيقة.
-- انقر على الودجة للتبديل بين ثلاثة أوضاع عرض: <Translate android="true" ids="shared_string_hide"/>، <Translate android="true" ids="light_theme"/>، و<Translate android="true" ids="dark_theme"/>.
+- انقر على الودجة للتبديل بين ثلاثة أوضاع عرض: <Translate android="true" ids="shared_string_hide"/>, <Translate android="true" ids="light_theme"/>, و<Translate android="true" ids="dark_theme"/>.
 - الضغط المطول يفتح قائمة السياق للودجة مع خيارات إضافية.
 - تشمل إعدادات الودجة معاملين قابلين للتعديل: *<Translate android="true" ids="shared_string_height"/>* — يتحكم في الارتفاع البصري للودجة على الشاشة؛ *<Translate android="true" ids="shared_string_show_icon"/>* — يتحكم في إظهار أيقونة الودجة.
 
 استخدم هذه الودجة لتقدير القرب من نقاط الاهتمام أو التخطيط حول منطقة محددة.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-![شاشة مسطرة نصف القطر](@site/static/img/widgets/radius_ruler_widget.png)
+![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -109,18 +110,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="مسطرة نصف القطر"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="مسطرة نصف القطر"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="مسطرة نصف القطر"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
 </table>
 
 </TabItem>
 
 </Tabs>
+-->
 
 
-## بوصلة لمسطرة نصف القطر {#compass-for-radius-ruler}
+### البوصلة {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -150,12 +152,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |------------|------------|
-| تفعيل | **أندرويد**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>* |
+| التفعيل | **أندرويد**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → أضف ودجة → <Translate android="true" ids="radius_ruler_item"/>* |
 | التنسيق | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (أندرويد)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## موضع الوسط / الأسفل {#center--bottom-position}
+### موضع الوسط / الأسفل {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لمزيد من المعلومات حول *الموضع على الشاشة*، راجع مقالة [تكوين الشاشة](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## العرض ثلاثي الأبعاد {#3d-view}
+### العرض ثلاثي الأبعاد {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -240,7 +242,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |------------|------------|
-| تفعيل |  **أندرويد:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
+| التفعيل |  **أندرويد:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap"/>* |
 |   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location,map_widget_distance_by_tap"/>* |
 | حجم النص | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other,map_widget_distance_by_tap,text_size"/>* |
 | تنسيق الوحدات | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |

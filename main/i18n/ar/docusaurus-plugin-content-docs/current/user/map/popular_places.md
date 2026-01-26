@@ -1,5 +1,5 @@
 ---
-source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
+source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
 sidebar_position: 8
 title: الأماكن المشهورة
 ---
@@ -14,8 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## نظرة عامة {#overview}
 
@@ -40,13 +41,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 
-### مصادر البيانات
+## مصادر البيانات {#data-sources}
 
 تعتمد **الأماكن المشهورة** على محتوى منظم من [ويكيداتا](https://www.wikidata.org) و[ويكيبيديا](https://www.wikipedia.org/).
 
 يتم عرض نقاط الاهتمام التي لها **معرّف ويكيداتا (Wikidata ID)** مرتبط فقط. تربط هذه المعرّفات كائنات الخريطة بأسماء وأوصاف وصور موثقة.
 
 يمكنك عرض رابط ويكيداتا مباشرة في [قائمة سياق الخريطة](../map/map-context-menu.md). يؤدي النقر على وسم ويكيداتا إلى فتح صفحة الكائن الكاملة على موقع ويكيداتا.
+
+يتم تحديث الصور وغيرها من المحتوى المبني على ويكيداتا في الأماكن المشهورة وفقًا لجدول زمني وقد لا تظهر فورًا بعد التغييرات في ويكيداتا أو ويكيميديا كومنز. تردد التحديث الحالي: مرتين في الشهر — في اليوم **١٠** و**٢٠**.
 
 تعلم كيفية العثور على معرّف ويكيداتا: [ويكيبيديا: العثور على معرّف ويكيداتا](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -61,7 +64,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **النسخة المجانية**  
   يمكنك الوصول إليها عبر [البحث](#explore-in-search) لاستكشاف الأماكن القريبة في عرض القائمة.  
-  *<Translate android="true" ids="android_button_seq"/>*. اذهب إلى: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  *<Translate android="true" ids="android_button_seq"/>*. اذهب إلى: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*  
+  
+  تعرض قائمة الاستكشاف هذه أماكن ويكيبيديا/ويكيداتا المرتبة حسب الشعبية بالقرب من موقعك وتعمل عبر الإنترنت. تعرض ما يصل إلى ٥٠ مكانًا. بما أن نتائج الاستكشاف/ويكيبيديا مرتبة حسب التقييم، فقد تختلف الترتيب في هذه النتائج عن بحث نقاط الاهتمام العادي.
 
 - **النسخ المدفوعة** *(Maps+ و OsmAnd Pro)*  
   قم بتمكين الطبقة المرئية في [تخصيص الخريطة](#enable-layer).  
@@ -130,19 +135,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تأكد من تمكين [إضافة ويكيبيديا](../plugins/wikipedia.md).
 - قم بتنزيل بيانات ويكيبيديا لمنطقتك إذا كنت ترغب في استخدامها دون اتصال بالإنترنت.
 
-### خيارات الطبقة
+### خيارات الطبقة {#layer-options}
 
 بمجرد التمكين، تصبح الخيارات التالية متاحة:
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – تبديل عرض نقاط اهتمام ويكيبيديا على الخريطة.
 
 - **مصدر نقاط الاهتمام** – التبديل بين:
-  - *وضع عدم الاتصال* (يجب تنزيل مقالات ويكيبيديا).
-  - *وضع الاتصال بالإنترنت فقط* (يستخدم البيانات والصور الحية).
+  - *وضع عدم الاتصال فقط* — يستخدم بيانات خريطة ويكيبيديا المحملة لمنطقتك. 
+  - *وضع الاتصال بالإنترنت فقط* — يحمل الأماكن ومعاينات الصور عبر الإنترنت. قد تعتمد النتائج عبر الإنترنت على إعدادات اللغة المحددة لديك.
 
 - **<Translate android="true" ids="shared_string_language"/>** – حدد لغة أوصاف ويكيبيديا.
 
-- **<Translate android="true" ids="show_image_previews"/>** – إظهار الصور المصغرة من ويكيداتا بجانب نقاط الاهتمام.
+- **<Translate android="true" ids="show_image_previews"/>** – إظهار الصور المصغرة من ويكيداتا بجانب نقاط الاهتمام. إذا تم تعطيل معاينات الصور، فإن الأماكن المشهورة تُعرض بأيقونات بدلاً من الصور المصغرة على الخريطة. تستخدم معاينات الصور صورًا مرتبطة بويكيداتا/ويكيبيديا: في *وضع عدم الاتصال فقط* تعتمد المعاينات على بيانات ويكيبيديا المحملة، بينما في *وضع الاتصال بالإنترنت فقط* يتم جلب المعاينات عبر الإنترنت.
 
 يؤدي النقر على نقطة اهتمام على الخريطة إلى فتح [قائمة سياق نقطة الاهتمام](./map-context-menu.md)، حيث يمكنك عرض [الصور عبر الإنترنت](#online-photos) والوصول إلى [مقالات ويكيبيديا](../plugins/wikipedia.md) المرتبطة.
 
@@ -171,10 +176,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يتم تخزين الصور المعروضة عبر الإنترنت تلقائيًا في التخزين المؤقت للوصول إليها دون اتصال. تعرض الصور المخزنة في التخزين المؤقت شارة صغيرة تشير إلى عدم الاتصال في الزاوية. يتكيف شبكة المعاينة مع حجم الشاشة على iPadOS وmacOS، مما يضمن تخطيطًا مريحًا للصور على الشاشات الأكبر. كما يتجنب OsmAnd إطلاق طلبات شبكة متكررة عند إغلاق قسم الصور عبر الإنترنت، ويلغي الطلبات السابقة عند التبديل بسرعة بين نقاط الاهتمام المختلفة.
 
-تعرف على المزيد حول الخيارات الإضافية في قسمي [الإجراءات](#actions) و[المعرض](#gallery).
-
-
 <!-- 
+Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
+
 
 When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
 
@@ -183,19 +187,17 @@ When you tap a Popular Place on the map or from the list, the [POI context menu]
 
 For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
 
+
+### Actions {#actions}
+
+In the Map Context menu How to access:
+
+- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
+
+- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
+  **Share**, **Details**, **Open in browser**, and **Download**.
+
 -->
-
-### الإجراءات {#actions}
-
-في قائمة سياق الخريطة، كيفية الوصول:
-
-- انقر على زر **عرض الكل** (Android) / **View All** (iOS) لفتح [المعرض](#gallery) في وضع ملء الشاشة، حيث يمكنك التمرير عبر جميع الصور المتاحة للموقع المحدد.
-
-- انقر على أي صورة لعرضها في [ملء الشاشة](#gallery) والوصول إلى الإجراءات المتاحة:  
-  **مشاركة**، **تفاصيل**، **فتح في المتصفح**، و**تنزيل**.
-
-**ملاحظة:** يحفظ التنزيل الصورة في تخزين الجهاز للاستخدام دون اتصال بشكل دائم، بينما يتم تخزين الصور المؤقتة تلقائيًا وتكون متاحة دون اتصال فقط داخل التطبيق.
-
 
 ### المعرض {#gallery}
 
@@ -217,8 +219,7 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 </Tabs>
 
-
-يمكن لـ **قائمة المعرض** عرض ما يصل إلى **١٠٠ صورة** تتعلق بنقطة الاهتمام المحددة. يمكنك التمرير عبر جميع الصور المتاحة. يؤدي النقر لفترة وجيزة على صورة ما إلى فتح عرض تفصيلي يوضح: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*.
+يمكن لـ **قائمة المعرض** عرض ما يصل إلى **١٠٠ صورة** تتعلق بنقطة الاهتمام المحددة. لعرض هذه الصور، انقر على **عرض الكل** (أندرويد) / **عرض الكل** (iOS). يمكنك التمرير عبر جميع الصور المتاحة. يؤدي النقر لفترة وجيزة على صورة ما إلى فتح عرض تفصيلي يوضح: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*.
 
 على iOS وiPadOS وmacOS، يمكنك التنقل بين الصور باستخدام مفاتيح لوحة المفاتيح (←/→ للانتقال بين الصور، Enter/Space للفتح).
 
@@ -236,29 +237,31 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 - **تنزيل**  
   احفظ الصورة في مساحة تخزين جهازك. يمكن العثور على الصورة التي تم تنزيلها في مجلد التنزيلات الافتراضي بجهازك والوصول إليها دون اتصال بالإنترنت.
 
+**ملاحظة:** يحفظ التنزيل الصورة في تخزين الجهاز للاستخدام دون اتصال بشكل دائم، بينما يتم تخزين الصور المؤقتة تلقائيًا وتكون متاحة دون اتصال فقط داخل التطبيق.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-لا يتضمن إصدار أندرويد قائمة إضافية لإجراءات الصور.
+The Android version does not include an additional menu for photo actions.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS - خيارات قائمة السياق](@site/static/img/map/gallery_menu_ios_3.png)
+![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
 
-في **iOS**، يؤدي الضغط المطول على الصورة إلى فتح قائمة سياق تحتوي على إجراءات إضافية:
+On **iOS**, long-pressing a photo opens a context menu with additional actions:
 
-- **تفاصيل**  
-- **فتح في المتصفح**  
-- **تنزيل**
+- **Details**  
+- **Open in browser**  
+- **Download**
 
-**الأزرار**:
+**Buttons**:
 
-- يتيح لك زر **المشاركة** مشاركة الصورة المحددة بسرعة.  
-- توفر **قائمة النقاط الثلاث** الوصول إلى إجراءات إضافية، بما في ذلك عرض التفاصيل أو فتح المصدر في متصفح أو تنزيل الصورة.
+- The **Share** button lets you quickly share the selected image.  
+- The **three-dot menu** provides access to extra actions, including viewing details, opening the source in a browser, or downloading the image.
 
 </TabItem>
 
@@ -269,22 +272,23 @@ For more actions like sharing, viewing metadata, or downloading — see [Gallery
 
 <TabItem value="android" label="Android">  
 
-![أندرويد – عرض التفاصيل](@site/static/img/map/gallery_menu_android_2.png)
+![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS – عرض التفاصيل](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-توفر شاشة **التفاصيل** بيانات وصفية كاملة للصورة المحددة، بما في ذلك: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*، *المصدر*، و*الرابط المباشر*
+The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+-->
 
 
-## مقالات ذات صلة
+## مقالات ذات صلة {#related-articles}
 
 - [قائمة سياق الخريطة](./map-context-menu.md)
 - [تخصيص الخريطة](./configure-map-menu.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -142,6 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [ضمن مناطق](#polygon-information)
 - [نقاط الاهتمام القريبة](#nearby-pois)
 - [الأماكن الشائعة القريبة](#nearby-popular-places)
+- [الدلائل](#guides) (أندرويد فقط)
 - [مسارات النقل العام للمحطات](#public-transport-routes)
 - [المفضلة / نقاط المسار من نفس المجموعة](#favorites--track-points-from-the-group)
 - [رابط OpenStreetMap](#openstreetmap-link)
@@ -296,6 +297,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
+
+### الدلائل {#guides}
+
+<InfoAndroidOnly/>
+
+![الدلائل في أندرويد](@site/static/img/map/details_guides.png)
+
+يظهر قسم **الدلائل** في قائمة سياق الخريطة لبعض الأماكن ويوفر الوصول إلى **دلائل السفر (Wikivoyage)** المتعلقة بنقطة الاهتمام المحددة. يعرض قائمة بإدخالات الدليل (على سبيل المثال، بلد أو منطقة) التي تذكر المكان المحدد.
+
+يتم عرض قسم الدلائل فقط إذا تم تنزيل بيانات **السفر (Wikivoyage)** للمنطقة المحددة.
+
+**ملاحظة:** ترتبط الدلائل بمحتوى Wikivoyage، وليس بوصف ويكيبيديا العام.
 
 
 ### مسارات النقل العام {#public-transport-routes}

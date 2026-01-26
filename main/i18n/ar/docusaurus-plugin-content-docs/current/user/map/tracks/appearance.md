@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title: مظهر المسار
 ---
@@ -61,7 +61,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **خيارات الألوان المتاحة:**
 
-- **الإعدادات المجانية**: لون *<Translate android="true" ids="track_coloring_solid"/>*، *<Translate android="true" ids="shared_string_speed"/>* (إذا تم تسجيله) و *<Translate android="true" ids="altitude"/>* (إذا تم تسجيله).   
+- الإعدادات المجانية: لون *<Translate android="true" ids="track_coloring_solid"/>*، *<Translate android="true" ids="shared_string_speed"/>* (إذا تم تسجيله) و *<Translate android="true" ids="altitude"/>* (إذا تم تسجيله).   
 - [ميزة Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 في iOS، يفتح **قائمة التلوين** كقائمة سياق. يمكن أن تظهر العناصر في ثلاث حالات: 
@@ -69,7 +69,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 2. <Translate ios="true" ids="weather_update_disabled"/>. يفتقر المسار إلى البيانات المطلوبة.
 3. PRO. متاحة للمسار الحالي لكنها تتطلب اشتراكًا؛ الضغط عليها يفتح شاشة [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
 
-لمزيد من التفاصيل حول تخصيص مظهر خط المسار، راجع [شاشة الخريطة أثناء الملاحة](../../navigation/guidance/map-during-navigation.md#color) وحول تحديد وإنشاء لون مخصص، راجع [أنظمة الألوان](../../personal/color-palette-schemes.md#routes).
+لمزيد من التفاصيل حول تخصيص مظهر خط المسار، راجع [شاشة الخريطة أثناء الملاحة](../../navigation/guidance/map-during-navigation.md#color) وحول تحديد وإنشاء لون مخصص، راجع [أنظمة الألوان](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### العرض {#width}
