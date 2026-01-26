@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  الطقس
 title: الطقس على الويب
@@ -16,11 +16,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## نظرة عامة {#overview}
 
-يُعرض ميزة الطقس على خريطة OsmAnd الإلكترونية الظروف الجوية الحالية وبيانات التنبؤ مباشرة على الخريطة. ويوفر الوصول إلى معلومات الطقس من مصادر تنبؤ متعددة، ويدعم تعديل الوقت، ويسمح بعرض طبقات الطقس مثل درجة الحرارة والرياح والضغط وتغطية السحب والأمطار.
+تُعرض ميزة الطقس على خريطة OsmAnd الإلكترونية الظروف الجوية الحالية وبيانات التنبؤ مباشرة على الخريطة. ويوفر الوصول إلى معلومات الطقس من مصادر تنبؤ متعددة، ويدعم تعديل الوقت، ويسمح بعرض طبقات الطقس مثل درجة الحرارة والرياح والضغط وتغطية السحب والأمطار.
 
 تكون بيانات الطقس متاحة دون الحاجة إلى تسجيل الدخول. يمكن فتح عرض الطقس مباشرة من واجهة الخريطة إما بالنقر على أيقونة المظلة في لوحة القائمة أو بالنقر بزر الفأرة الأيمن على الخريطة واختيار فتح الطقس من القائمة السياقية.
+
 
 ## مصدر البيانات {#data-source}
 
@@ -32,6 +34,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 للتبديل بينهما، انقر على **زر المظلة** في قائمة الطقس.
 
 ![طقس OsmAnd الإلكتروني](@site/static/img/web/weather_source.png)
+
 
 ## قائمة الطقس {#weather-menu}
 
@@ -54,6 +57,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![طقس OsmAnd الإلكتروني](@site/static/img/web/weather_menu.png)
 
+
 ## طبقات الطقس {#weather-layers}
 
 تسمح طبقات الطقس برؤية بيانات التنبؤ مباشرة على الخريطة كتراكب. وتساعد في تقييم الظروف الجوية بسرعة عبر منطقة أوسع بدلاً من عرض القيم لنقطة واحدة فقط.
@@ -71,6 +75,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![طقس OsmAnd الإلكتروني](@site/static/img/web/weather_layers.png)
 
+
 ## عرض التنبؤ {#forecast-view}
 
 تكون تنبؤات الطقس متاحة لمدة تصل إلى 7 أيام مقدمًا. يتم حساب قيم التنبؤ على فترات 3 ساعات، مما يسمح لك بفحص التغييرات قصيرة المدى طوال كل يوم.
@@ -83,7 +88,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![طقس OsmAnd الإلكتروني](@site/static/img/web/weather_forecast.png)
 
-## مقالة ذات صلة {#related-article}
+
+## مقالات ذات صلة {#related-articles}
 
 - [الطقس](../plugins/weather.md)
 - [مقدمة](../web/web-overview.md)

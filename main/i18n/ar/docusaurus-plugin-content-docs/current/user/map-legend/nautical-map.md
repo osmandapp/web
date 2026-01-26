@@ -1,16 +1,17 @@
 ---
-source-hash: f02ec46753a3101b544ff59059a374da99a432907dcbacd5732081d6f1f151e5
-sidebar_position: 3
+source-hash: 255739a6c5541179fb7a0d0ff2c0e498a0e6eb685a3a9858e4e92263572632fd
+sidebar_position: 4
 title: نمط الخرائط البحرية
 ---
+
 import Translate from '@site/src/components/Translate.js';
 
 # نمط الخرائط البحرية {#nautical-map-style}
-نمط خريطة OsmAnd الافتراضي، جزء من الملحق البحري.
+النمط الافتراضي لخريطة OsmAnd، جزء من ملحق الملاحة البحرية.
 <Translate android="yes" id="nautical_render_descr" />
 
-## المرابط والمراسي {#anchorage-and-berth}
-<img src={require('@site/static/img/map-legend/nautical-anchorage-and-berth.png').default} alt="المرابط والمراسي" />
+## المراسي والرسوب {#anchorage-and-berth}
+<img src={require('@site/static/img/map-legend/nautical-anchorage-and-berth.png').default} alt="المراسي والرسوب" />
 
 ## العوامات والمنارات {#buyos-and-beacons}
 <img src={require('@site/static/img/map-legend/nautical-buyos-and-beacons.png').default} alt="العوامات والمنارات" />
@@ -41,8 +42,9 @@ import Translate from '@site/src/components/Translate.js';
 ## حطام السفن والصخور {#wrecks-and-rocks}
 <img src={require('@site/static/img/map-legend/nautical-wrecks-and-rocks.png').default} alt="حطام السفن والصخور" />
 
-## الجسور والبوابات المقفلة {#bridges-lockgates}
+## الجسور بوابات الأقفال {#bridges-lockgates}
 <img src={require('@site/static/img/map-legend/nautical-bridges-lockgates.png').default} alt="حطام السفن والصخور" />
+
 
 ## مرفق الحرف البحرية الصغيرة {#nautical-small-craft-facility}
 <img src={require('@site/static/img/map-legend/nautical-small-craft-facility.png').default} alt="مرفق الحرف البحرية الصغيرة" />
@@ -56,11 +58,14 @@ import Translate from '@site/src/components/Translate.js';
 ## منطقة قاع البحر {#seabed-area}
 <img src={require('@site/static/img/map-legend/nautical-seabed.png').default} alt="منطقة قاع البحر" />
 
+
 ## الكابلات وخطوط الأنابيب {#cables-and-pipelines}
 <img src={require('@site/static/img/map-legend/nautical-cables-and-pipelines.png').default} alt="الكابلات وخطوط الأنابيب" />
 
+
 ## العوائق {#obstruction}
 <img src={require('@site/static/img/map-legend/nautical-obstruction.png').default} alt="العوائق" />
+
 
 ## المنطقة المحظورة {#restricted-area}
 <img src={require('@site/static/img/map-legend/nautical-restricted-area.png').default} alt="المنطقة المحظورة" />

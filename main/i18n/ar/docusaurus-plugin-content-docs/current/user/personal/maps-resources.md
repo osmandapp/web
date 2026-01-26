@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title:  Maps & Resources
 ---
@@ -55,7 +55,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![قائمة تنزيل الخريطة iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![خرائط إقليمية واسعة أندرويد](@site/static/img/personal/maps/map_type_2_ios.png)  
+![قائمة تنزيل الخريطة iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![خرائط إقليمية واسعة iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -428,11 +428,13 @@ Use sorting options to organize map data:
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![قائمة الخرائط تحديث الخرائط iOS](@site/static/img/personal/maps/maps_update_ios.png) ![توقعات الطقس تحديث الخرائط iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![قائمة الخرائط تحديث الخرائط iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![توقعات الطقس تحديث الخرائط iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 يسمح تبويب **التحديثات** بتحديث خرائط وموارد OsmAnd. تُصدر الخرائط القياسية والطرق فقط مرة واحدة شهريًا، عادةً بين اليوم الثاني والخامس، وتشمل بيانات OpenStreetMap حتى اليوم الأخير من الشهر السابق (على سبيل المثال، إصدار أكتوبر يحتوي على بيانات حتى 30 سبتمبر). قد تتبع بيانات أخرى مثل ويكيبيديا، أو التضاريس، أو الخرائط البحرية جداول تحديث مختلفة، غير منتظمة. 
 
 استخدم زر *تحديث الكل* لتحديث جميع الخرائط في وقت واحد، أو حدث الخرائط الفردية حسب الحاجة. للتحديثات الساعية، تحقق من حالة اشتراك [التحديثات الحية](#live-updates). إذا تم تمكينها، سيظهر قسم **التحديثات الحية** في أعلى التبويب، تحت مؤشر ذاكرة الجهاز.
+
+قد يظهر تبويب **التحديثات** أيضًا عنصر **الخرائط غير المدعومة**. يظهر عندما تكون لديك خرائط لم تعد مدعومة وتم استبدالها بمناطق أصغر. اضغط على الخرائط غير المدعومة لمراجعة القائمة، وإزالة الخرائط القديمة، وتنزيل إصدارات المناطق الجديدة بدلاً من ذلك. في شاشة الخرائط غير المدعومة، يمكنك عرض جميع الخرائط غير المدعومة واستخدام حذف الكل لإزالتها دفعة واحدة (يظهر تنبيه تأكيد قبل الحذف).
 
 يشمل تبويب **التحديثات** أيضًا قسم توقعات الطقس. تم تصميمه لإدارة توقعاتك غير المتصلة للدول المحددة:
 

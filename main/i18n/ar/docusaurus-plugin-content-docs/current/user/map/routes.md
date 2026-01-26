@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title:  المسارات
 ---
@@ -51,23 +51,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | ***<Translate android="true" ids="mtb_imba"/>*** | Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
 -->
 
-- ***<Translate android="true" ids="mtb_scale"/>***. يعرض المسارات وفقًا لمقياس MTB. يتوفر المزيد من المعلومات في مقالة [وسيلة إيضاح الخريطة](../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  يعرض المسارات وفقًا لمقياس MTB. يتوفر المزيد من المعلومات في مقالة [وسيلة إيضاح الخريطة](../map-legend/index.md).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***. يعرض مسارات MTB وفقًا لجمعية الدراجات الجبلية الدولية، [MTB IMBA](https://www.imba.com/). يتوفر المزيد من المعلومات في مقالة [وسيلة إيضاح الخريطة](../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  يعرض مسارات MTB وفقًا لجمعية الدراجات الجبلية الدولية، [MTB IMBA](https://www.imba.com/). يتوفر المزيد من المعلومات في مقالة [وسيلة إيضاح الخريطة](../map-legend/index.md).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ### مسارات المشي لمسافات طويلة / المشي {#hiking--walking-routes}
 
 توجد [مسارات المشي لمسافات طويلة](https://wiki.openstreetmap.org/wiki/Walking_Routes) في ثلاثة أنواع: *محلية* (`lwn`)، و*إقليمية* (`rwn`)، و*وطنية* (`nwn`)، و*دولية* (`iwn`). أيضًا، يمكن أن تكون مسارات المشي جزءًا من [شبكات العقد](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). لا يفصل OsmAnd بين مسارات المشي والمشي لمسافات طويلة ويجمعها في مجموعة واحدة. يمكنك اختيار كيفية تعيين لون لقطاعات المسار:
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***. يلون المسارات وفقًا لـ [لونها المحلي](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) الفردي (إذا كان متاحًا في OpenStreetMap) ورمز الدرع السياحي.  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  يلون المسارات وفقًا لـ [لونها المحلي](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) الفردي (إذا كان متاحًا في OpenStreetMap) ورمز الدرع السياحي.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***. يلون حسب [الانتماء للشبكة](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  يلون حسب [الانتماء للشبكة](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
 ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***. يلون المسارات وفقًا لنوع [شبكة العقد](https://wiki.openstreetmap.org/wiki/Node_Networks) (دولية أو إقليمية أو محلية).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  يلون المسارات وفقًا لنوع [شبكة العقد](https://wiki.openstreetmap.org/wiki/Node_Networks) (دولية أو إقليمية أو محلية).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
@@ -124,7 +124,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### مسارات الدراجات الثلجية {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
 
 يتم رسم مسارات الدراجات الثلجية في [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) كـ `route=snowmobile`. يتم استخدامها للترفيه الشتوي ولربط المناطق النائية خلال موسم الثلج. في OsmAnd، تكون مسارات الدراجات الثلجية قابلة للنقر، انظر قسم [الإجراءات مع المسارات](#actions-with-routes).
 
@@ -345,45 +345,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## البحث عن المسارات {#routes-search}
 
-ابحث عن المسارات باستخدام [وظيفة البحث](../search/index.md) بالاسم أو عن طريق تحديد "المسارات" في [قسم الفئات](../search/search-poi.md#).
-
-للبحث، انتقل إلى قائمة *<Translate android="true" ids="search_button"/>* أو *<Translate android="true" ids="search_button,search_categories"/>* وأدخل نشاطك.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png)
+![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png)
+![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-انتقل إلى *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* للعثور على المسارات المطلوبة. تتضمن نتائج بحث المسارات اسم المسار، ونوع النشاط، والطول، والموقع، والمسافة إلى أقرب نقطة. على أندرويد، يتم أيضًا عرض مقاييس الارتفاع مثل الصعود والنزول حيثما تتوفر. يتم إخفاء التغييرات الطفيفة في الارتفاع (أقل من 10 م) للحفاظ على وضوح القائمة. جميع القيم تحترم وحدات المسافة والارتفاع المحددة في التطبيق.
+ابحث عن المسارات باستخدام [وظيفة البحث](../search/index.md) بالاسم أو عن طريق تحديد "المسارات" في [قسم الفئات](../search/search-poi.md#).
 
-<Tabs groupId="operating-systems" queryString="current-os">
+للبحث، انتقل إلى قائمة *<Translate android="true" ids="search_button"/>* أو *<Translate android="true" ids="search_button,search_categories"/>* وأدخل نشاطك.
 
-<TabItem value="android" label="Android">
+انتقل إلى *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* للعثور على المسارات المطلوبة. تتضمن نتائج بحث المسارات اسم المسار، ونوع النشاط، والطول، والموقع، والصعود/النزول (على أندرويد)، والمسافة إلى أقرب نقطة. 
 
-![Routes on the ground](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-استخدم زر المرشحات (الزاوية العلوية اليمنى) لعرض المسارات المطلوبة فقط.
+### مرشحات المسارات {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
+
+في نتائج بحث المسارات، انقر على زر **المرشحات** في الزاوية العلوية اليمنى لتضييق القائمة. تشمل شاشة المرشحات حقل **تصفية حسب الاسم**؛ وكتلة **النوع** مع *Bureau*، و*Post annex*، و*Post partner*؛ و**معايير إضافية** تعتمد على فئة المسار أو النشاط المحدد، حيث يمكن لكل فئة الكشف عن خصائصها و قيم التصفية الخاصة بها.
+
+يمكنك تمكين أو تعطيل المرشحات باستخدام المفاتيح التبديلية، وبعض الأقسام تشمل *عرض الكل* لعرض قيم إضافية.
 
 
 ## مقالات ذات صلة {#related-articles}

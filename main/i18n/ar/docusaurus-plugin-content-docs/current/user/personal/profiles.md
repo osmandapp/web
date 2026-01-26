@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  الملفات الشخصية (الإعدادات)
 ---
@@ -283,6 +283,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*أندرويد فقط*) – ينعم دوران الخريطة بـ [حركة تدريجية](https://en.wikipedia.org/wiki/Kalman_filter)، مما يقلل من التحولات المفاجئة في الموقع. هذا يسبب تأخيرًا صغيرًا (*أقل من ثانية واحدة*).
 
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*أندرويد فقط*) – انقر على مساحة فارغة على الخريطة لإخفاء أزرار التحكم والأدوات، مما يزيد من رؤية الخريطة.
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*أندرويد فقط*) – تعطيل الرسوم المتحركة في وضع الملاحة لانتقالات أسرع للشاشة.
@@ -433,23 +435,28 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+تتيح لك إعدادات **مظهر موقعي** تخصيص كيفية عرض موقعك على الخريطة، سواء عند الثبات (الراحة) أو أثناء الحركة (الملاحة). يتم اكتشاف الحركة بواسطة نظام التشغيل عندما تكون سرعة الجهاز **أكبر من الصفر**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+تتيح لك إعدادات **مظهر موقعي** تخصيص كيفية عرض موقعك على الخريطة، سواء عند الثبات (الراحة) أو أثناء الحركة (الملاحة). يتم اكتشاف الحركة بواسطة نظام التشغيل عندما تكون سرعة الجهاز **أكبر من الصفر**.
+
+استخدم **حجم الأيقونة** لضبط حجم أيقونة موقعي بشكل مستقل عن حجم نص التطبيق. يمكنك تعيين أحجام مختلفة لوضعي الراحة والملاحة. يمكن ضبط الحجم من 50% إلى 300% (50، 75، 100، 125، 150، 200، 250، 300%). القيمة الافتراضية هي 100%. انقر على حجم الأيقونة لفتح إعدادات الحجم، ثم استخدم الشريط المنزلق أو أزرار الخطوة + / – لتغيير القيمة. استخدم **إعادة التعيين إلى الافتراضي** للعودة إلى 100%.
 
 </TabItem>
 
 </Tabs>
 
-تتيح لك إعدادات **مظهر موقعي** تخصيص كيفية عرض موقعك على الخريطة، سواء عند الثبات أو أثناء الحركة. يتم اكتشاف الحركة بواسطة نظام التشغيل عندما تكون سرعة الجهاز **أكبر من الصفر**.
 
 ### زاوية العرض ونصف قطر الموقع {#view-angle-and-location-radius}
 
-يمكنك تخصيص العناصر المرئية المتعلقة بموقعك وتطبيقها بشكل منفصل أو معًا لمواضع **السكون** و**الملاحة**. لكل من الوضعين ثنائي الأبعاد وثلاثي الأبعاد، يتم عرض *زاوية العرض* و*نصف قطر الموقع* بنفس اللون المحدد [لملف تعريف الملاحة](#profile-appearance)، مباشرة أسفل أيقونة [موقعي](../map/interact-with-map.md#my-location-and-zoom).
+يمكنك تخصيص العناصر المرئية المتعلقة بموقعك وتطبيقها بشكل منفصل أو معًا لمواضع **الراحة** و**الملاحة**. لكل من الوضعين ثنائي الأبعاد وثلاثي الأبعاد، يتم عرض *زاوية العرض* و*نصف قطر الموقع* بنفس اللون المحدد [لملف تعريف الملاحة](#profile-appearance)، مباشرة أسفل أيقونة [موقعي](../map/interact-with-map.md#my-location-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – يعرض منطقة **على شكل مخروط** تشير إلى الاتجاه الذي تواجهه حاليًا.  
 - **<Translate android="true" ids="location_radius"/>** – يعرض منطقة **دائرية** حول أيقونتك، تمثل دقة موقعك الحالي.
