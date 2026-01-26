@@ -388,7 +388,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 The [Trip Recording widget](../widgets/info-widgets.md#trip-recording-widgets) provides an easy way to monitor your recording status and quickly access recording settings and details. This widget is automatically added to your screen when the Trip Recording plugin is enabled.
 
-To customize your interface, you can add or remove the Trip Recording widget and [other widgets](../plugins/trip-recording#duration-uphill-downhill) through the Configure Screen menu.
+To customize your interface, you can add or remove the Trip Recording widget and [other widgets](../plugins/trip-recording#additional-widgets) through the Configure Screen menu.
 
 
 ### Display Modes {#display-modes}
