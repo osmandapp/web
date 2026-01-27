@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title:  Apariencia de la pista
 ---
@@ -61,7 +61,7 @@ Puede establecer el color de la pista manualmente o usar la **visualización de 
 
 **Opciones de color disponibles:**
 
-- **Ajustes gratuitos**: color *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si se grabó) y *<Translate android="true" ids="altitude"/>* (si se grabó).   
+- Ajustes gratuitos: color *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (si se grabó) y *<Translate android="true" ids="altitude"/>* (si se grabó).   
 - [Función Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 En iOS, la lista de **Coloreado** se abre como un menú contextual. Los elementos pueden aparecer en tres estados: 
@@ -69,7 +69,7 @@ En iOS, la lista de **Coloreado** se abre como un menú contextual. Los elemento
 2. <Translate ios="true" ids="weather_update_disabled"/>. A la pista le faltan los datos requeridos.
 3. PRO. Disponible para la pista actual pero requiere una suscripción; al tocar se abre la pantalla [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
 
-Para más detalles sobre la personalización de la apariencia de la línea de ruta, consulte [Pantalla de mapa durante la navegación](../../navigation/guidance/map-during-navigation.md#color) y sobre la selección y creación de un color personalizado, consulte [Esquemas de color](../../personal/color-palette-schemes.md#routes).
+Para más detalles sobre la personalización de la apariencia de la línea de ruta, consulte [Pantalla de mapa durante la navegación](../../navigation/guidance/map-during-navigation.md#color) y sobre la selección y creación de un color personalizado, consulte [Esquemas de color](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### Ancho {#width}

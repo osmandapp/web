@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title:  Rutas
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Vista general {#overview}
 
-OsmAnd tiene muchas funciones potentes para mostrar diferentes [rutas](#type-of-routes) en el mapa. Por defecto, estas rutas forman parte de los [mapas vectoriales](./vector-maps.md#routes) (datos de OpenStreetMap), sin embargo, una funcionalidad similar es proporcionada por las [pistas](./tracks/index.md) que pueden ser creadas con [Planificar una Ruta](../plan-route/create-route.md), importadas como [pistas GPX](#save-as-a-track), grabadas con el [plugin Grabación de viaje](../plugins/trip-recording.md). La Leyenda del Mapa de Rutas está [aquí](../map-legend/osmand.md#routes).
+OsmAnd tiene muchas funciones potentes para mostrar diferentes [rutas](#type-of-routes) en el mapa. Por defecto, estas rutas forman parte de los [mapas vectoriales](./vector-maps.md#routes) (datos de OpenStreetMap); sin embargo, una funcionalidad similar es proporcionada por las [pistas](./tracks/index.md) que pueden ser creadas con [Planificar una Ruta](../plan-route/create-route.md), importadas como [pistas GPX](#save-as-a-track), grabadas con el [plugin Grabación de viaje](../plugins/trip-recording.md). La Leyenda del Mapa de Rutas está [aquí](../map-legend/osmand.md#routes).
 
 
 ## Tipo de Rutas {#type-of-routes}
@@ -124,7 +124,7 @@ Las pistas y rutas de esquí son un grupo específico de [rutas](https://wiki.op
 
 ### Senderos para motos de nieve {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
 
 Los senderos para motos de nieve están mapeados en [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) como `route=snowmobile`. Se utilizan para la recreación invernal y para conectar áreas remotas durante la temporada de nieve. En OsmAnd, los senderos para motos de nieve son clicables, consulte la sección [Acciones con Rutas](#actions-with-routes).
 
@@ -345,45 +345,29 @@ Puede personalizar si las rutas se activan o desactivan utilizando el widget de 
 
 ## Búsqueda de Rutas {#routes-search}
 
-Encuentre rutas utilizando la [función de Búsqueda](../search/index.md) por nombre o seleccionando "Rutas" en la [sección de Categorías](../search/search-poi.md#).
-
-Para buscar, vaya al menú *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e ingrese su actividad.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png)
+![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png)
+![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Navegue a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar las rutas deseadas. Las rutas incluyen nombre, tipo de actividad, longitud, ubicación y distancia al punto más cercano. En Android, también se muestran métricas de elevación como subida y bajada donde estén disponibles. Los cambios de elevación menores (menos de 10 m) están ocultos para mantener la lista clara. Todos los valores respetan las unidades de distancia y altitud seleccionadas en la aplicación.
+Encuentre rutas utilizando la [función de Búsqueda](../search/index.md) por nombre o seleccionando "Rutas" en la [sección de Categorías](../search/search-poi.md#).
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Para buscar, vaya al menú *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e ingrese su actividad.
 
-<TabItem value="android" label="Android">
+Navegue a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar las rutas deseadas. Los resultados de búsqueda de rutas muestran el nombre de la ruta, tipo de actividad, longitud, ubicación, subida/bajada (en Android) y distancia al punto más cercano. 
 
-![Routes on the ground](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Use el botón de filtros (esquina superior derecha) para mostrar solo las rutas deseadas.
+### Filtros de Rutas {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Use el botón de filtros (esquina superior derecha) para mostrar solo las rutas 
 </TabItem>
 
 </Tabs>
+
+En los resultados de búsqueda de rutas, toque el botón **Filtros** en la esquina superior derecha para reducir la lista. La pantalla de Filtros incluye un campo **Filtrar por nombre**; un bloque **Tipo** con *Bureau*, *Post annex* y *Post partner*; y **criterios adicionales** que dependen de la categoría o actividad de ruta seleccionada, ya que cada categoría puede exponer sus propias características y valores de filtro.
+
+Puede activar o desactivar filtros utilizando los interruptores, y algunas secciones incluyen *Mostrar todo* para mostrar valores adicionales.
 
 
 ## Artículos Relacionados {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 8c3dc9c3a003016cc5fe0c21111724824979c926da2493e288be8190be239b47
+source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -38,7 +38,7 @@ Puedes descargar la aplicación a través de este enlace - [OsmAnd Maps en la Ap
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Un **plan gratuito** que proporciona acceso a [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) para *Favoritos*, *Ajustes* y *edición/notas de OSM*. | Disponible para todos los usuarios de la versión gratuita de OsmAnd. | Limitado a las funciones básicas de la nube y **5MB** de almacenamiento. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Una **compra dentro de la aplicación** o **suscripción** que desbloquea funciones avanzadas para la aplicación gratuita OsmAnd. | Disponible en la [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Se puede añadir a [Compartir en familia de Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan de suscripción** que desbloquea funciones avanzadas y [profesionales](#pro-features) adicionales. | Disponible en la [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Proporciona acceso completo a las funciones de OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Un **plan de suscripción** que desbloquea funciones avanzadas adicionales y [funciones pro](#pro-features). | Disponible en la [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Proporciona acceso completo a las funciones de OsmAnd Cloud. |
 
 ### Notas importantes {#important-notes}
 
@@ -55,32 +55,14 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 
 
-:::danger Oferta de Navidad
-
-*¡Date prisa! Esta oferta solo está disponible hasta* **28 de diciembre (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
-| **Precio (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
-| **Precio (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
-
-<!--
+| **Precio (EUR)** | €0 | €69.99 | €14.99 | €5.99 / €39.99 |
+| **Precio (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Suscripción | [OsmAnd Pro](#install-osmand-ios) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
-| **Precio (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Precio (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
-
--->
 
 ### Funciones gratuitas y de pago {#free-and-paid-features}
 
@@ -132,7 +114,7 @@ Por el momento, la suscripción Pro tiene las siguientes características:
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Copia de seguridad y restauración de tus datos, sincronización de datos con el [portal web de OsmAnd](https://www.osmand.net/map). |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | Te permite tener y observar un modelo a escala de tu vecindario o de un continente entero. |
 | [Widgets de altitud - Elevación: Centro del mapa](../widgets/info-widgets.md#elevation-map-center) | Te permite conocer la elevación del centro del mapa actual sobre el nivel del mar.  |
-| [Live](../personal/maps-resources.md#live-updates) | Los mapas de OsmAnd se actualizan cada 15 minutos después de la mejora de [OpenStreetMap](https://www.openstreetmap.org/). |
+| [Live Updates](../personal/maps-resources.md#live-updates) | Los mapas de OsmAnd se actualizan cada 15 minutos después de la mejora de [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin del tiempo](../plugins/weather.md) | Previsión horaria de 24h con 7 días de antelación en el mapa. |
 | [Plugin de métricas del vehículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar un escáner OBD-II para mostrar datos detallados del vehículo en la aplicación OsmAnd y almacenar la información en los registros de los tracks. La información sobre la velocidad del vehículo y la velocidad del motor está disponible para OsmAnd gratis.  |
 | [Personalizar la línea de ruta](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Cambiar el color y el ancho de la línea de ruta durante la navegación. |

@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Planificar una ruta
 ---
@@ -115,8 +115,15 @@ La *Línea recta* es necesaria y se utilizará para zonas no cubiertas por datos
 Si faltan [Datos de elevación](../map/tracks/track-context-menu.md#calculate-missing-elevation) en un track existente, es posible añadirlos utilizando las siguientes herramientas:
 
 - [Usar carreteras cercanas](#attach-track-to-roads). Este modo utiliza mapas sin conexión para encontrar las carreteras más cercanas para construir un track, por lo que los datos de elevación se recuperarán de las carreteras adjuntas. La geometría del track se puede ajustar.  
-- [Usar mapas de terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) El modo calcula la altitud basándose en los datos del mapa de terreno (3D). La diferencia entre las altitudes registradas por su dispositivo puede utilizarse para la corrección de la elevación. La geometría del track no se modifica.
+- [Usar mapas de terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) El modo calcula la altitud basándose en los datos del mapa de terreno (3D). La diferencia entre las altitudes registradas por su dispositivo puede utilizarse para la corrección de la elevación.  La geometría del track no se modifica.
 
+:::note
+
+La **corrección de elevación en línea** (basada en servidor) se eliminó en las versiones recientes de OsmAnd y no está disponible.  
+En versiones anteriores, estaba obsoleta e poco fiable.  
+Utilice opciones sin conexión en su lugar: adjuntar a carreteras o mapas de terreno (Pro).  
+
+:::
 
 ### Adjuntar track a carreteras {#attach-track-to-roads}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title:  Primeros Pasos
 ---
@@ -55,7 +55,7 @@ OsmAnd es una aplicación móvil de Mapas y Navegación disponible para **Androi
 
 ## Bienvenido a OsmAnd {#welcome-to-osmand}
 
-Nuestro objetivo es crear una aplicación orientada a mapas totalmente funcional que pueda utilizarse para diversos fines con y sin conexión. La aplicación tiene muchas funciones, por lo que no tendrá que cambiar entre diferentes aplicaciones, y todo estará al alcance de su mano.
+Nuestro objetivo es crear una aplicación orientada a mapas totalmente funcional que pueda utilizarse para diversos fines sin conexión y con conexión. La aplicación tiene muchas funciones, por lo que no tendrá que cambiar entre diferentes aplicaciones, y todo estará al alcance de su mano.
 
 - Ver un mapa mundial con gran detalle mostrado en [diferentes estilos de mapa](../map/vector-maps.md).
 - Mostrar, [buscar](../search/search-poi.md) y guardar varios [Puntos de interés](../map/point-layers-on-map.md).
@@ -642,13 +642,15 @@ Le permite hacer preguntas o sugerencias.
 
 <TabItem value="ios" label="iOS">
 
-![Menú de mapas iOS](@site/static/img/steps/offline_about_ios.png)
+![Menú de mapas iOS](@site/static/img/steps/offline_about_ios_new.png) ![Menú de mapas iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Puede conocer a nuestro equipo, ver la versión actual de la aplicación y las novedades, y descargar la versión beta de la aplicación.
+
+La compilación se muestra en el formato OsmAnd Maps &lt;build&gt;, lanzada &lt;date&gt;. Para compartir rápidamente esta información con el soporte, toque prolongadamente la línea de compilación para copiar el número de compilación junto con la fecha de lanzamiento.
 
 
 ## Privacidad {#privacy}

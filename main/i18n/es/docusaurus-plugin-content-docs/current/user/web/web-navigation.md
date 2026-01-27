@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-Utilice **Navigation on the Web** para crear una ruta en el mapa y obtener una vista previa de la guía paso a paso. Calcula una ruta para el modo de viaje seleccionado, muestra la distancia y el tiempo esperados, y le permite verificar los cambios de elevación y las próximas curvas. Puede ajustar la ruta en los ajustes de Navegación (por ejemplo, permitiendo o evitando ciertos tipos de carreteras o utilizando parámetros del vehículo) y usar múltiples puntos de ruta cuando sea necesario.
+Utilice **Navigation on the Web** para crear una ruta en el mapa y obtener una vista previa de la guía paso a paso. Calcula una ruta para el modo de viaje seleccionado, muestra la distancia y el tiempo esperados, y le permite verificar los cambios de elevación y las próximas curvas. Puede ajustar finamente la ruta en los ajustes de Navegación (por ejemplo, permitiendo o evitando ciertos tipos de carreteras o utilizando parámetros del vehículo) y usar múltiples puntos de ruta cuando sea necesario.
 
 
 ## Iniciar una ruta {#start-a-route}
@@ -45,6 +45,8 @@ Intercambiar Inicio y Destino — intercambia el Inicio y el Destino manteniendo
 
 En la parte superior del panel de Ruta, puede elegir un perfil de enrutamiento para su ruta. Un conjunto de perfiles comúnmente utilizados se muestra como cuatro iconos. Para acceder a más opciones, abra el menú de tres puntos junto a los iconos del perfil. Esto expande la lista completa de perfiles disponibles.
 
+Los perfiles de enrutamiento en el Planificador Web utilizan las mismas reglas y ajustes de enrutamiento que en la aplicación móvil de OsmAnd. Para obtener detalles sobre cómo se calculan las rutas y cómo funcionan los parámetros de enrutamiento, consulte [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
+
 Cuando cambie el perfil, Navigation actualiza la ruta para que coincida con el modo de viaje seleccionado.
 
 ![Navegación web](@site/static/img/web/navigation_profile.png)
@@ -52,7 +54,7 @@ Cuando cambie el perfil, Navigation actualiza la ruta para que coincida con el m
 
 ## Ajustes de navegación {#navigation-settings}
 
-Para ajustar cómo se calculan las rutas, abra Ajustes utilizando el icono de engranaje en el panel de Ruta. Los ajustes están agrupados en secciones que puede expandir/colapsar. El conjunto de secciones y opciones depende del perfil de enrutamiento seleccionado, por lo que verá parámetros diferentes para diferentes modos de viaje.
+Para ajustar cómo se calculan las rutas, abra Ajustes utilizando el icono de engranaje en el panel de Ruta (para los ajustes de navegación en la aplicación móvil de OsmAnd, consulte [aquí](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). Los ajustes están agrupados en secciones que puede expandir/colapsar. El conjunto de secciones y opciones depende del perfil de enrutamiento seleccionado, por lo que verá parámetros diferentes para diferentes modos de viaje.
 
 Las secciones típicas incluyen:
 
@@ -66,7 +68,7 @@ Las secciones típicas incluyen:
 
 ## Adjuntar pista {#attaching-track}
 
-El bloque **Adjuntar a carreteras** le permite usar una pista GPX existente como base para la navegación. OsmAnd Web empareja la pista con carreteras cercanas para proporcionar guía paso a paso.
+El bloque **[Adjuntar a carreteras](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** le permite usar una pista GPX existente como base para la navegación. OsmAnd Web empareja la pista con carreteras cercanas para proporcionar guía paso a paso.
 
 Cuando haga clic en Seleccionar pista, el navegador abre un selector de archivos donde puede elegir un archivo .gpx de su computadora. Después de seleccionar una pista:
 - La pista se muestra en el mapa y se utiliza para calcular la ruta.
@@ -86,7 +88,7 @@ Info resume la ruta y los datos de elevación:
 - **Ruta** — distancia y tiempo.
 - **Subida/Bajada** — ascenso y descenso totales.
 - **Elevación (mín/prom/máx)** — estadísticas de elevación para la ruta.
-- **Elevación (Satélite)** — Recalcular para reconstruir la elevación utilizando datos de satélite (si están disponibles).
+- **Elevación (Satélite)** — recalcula los datos de elevación de la pista utilizando datos de terreno (DEM) y actualiza el gráfico de elevación.
 
 Debajo del resumen, el gráfico de elevación le ayuda a inspeccionar el perfil de la ruta. Puede alternar Elevación y Pendiente, y utilizar el deslizador debajo del gráfico para enfocarse en una parte específica de la ruta.
 
@@ -94,7 +96,7 @@ Utilice Curvas para la guía paso a paso. La ruta también está marcada con cí
 - Evitar — evita ese segmento específico.
 - ID de vía — un enlace a la vía OSM subyacente para esa parte de la ruta.
 
-Puede ajustar la ruta directamente en el mapa arrastrando los marcadores de ruta a un lugar diferente. Cuando haga clic y arrastre un marcador a otra carretera (o a una ubicación cercana) y luego lo suelte:
+Puede ajustar finamente la ruta directamente en el mapa arrastrando los marcadores de ruta a un lugar diferente. Cuando haga clic y arrastre un marcador a otra carretera (o a una ubicación cercana) y luego lo suelte:
 - OsmAnd Web recalcula la ruta para pasar por la nueva posición.
 - El marcador movido se convierte en un nuevo punto intermedio.
 - El nuevo punto intermedio aparece en el panel de Ruta como un punto adicional insertado encima del Destino, y el resumen de la ruta se actualiza en consecuencia.
@@ -105,10 +107,18 @@ Puede ajustar la ruta directamente en el mapa arrastrando los marcadores de ruta
 ### Descargar y guardar {#download-and-save}
 
 Utilice *Descargar* para exportar la ruta como una pista. El diálogo de descarga ofrece dos opciones:
-Datos completos de la pista — incluye datos completos, incluidas las instrucciones de navegación.
-Pista simplificada — una versión más ligera que es más adecuada para usar con otras aplicaciones.
+**Datos completos de la pista** — incluye datos completos, incluidas las instrucciones de navegación.
+**[Pista simplificada](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — una versión más ligera que es más adecuada para usar con otras aplicaciones.
+
+Si planea abrir el GPX en aplicaciones de terceros, elija Pista simplificada para una mejor compatibilidad. Esto ayuda a evitar casos en los que otra aplicación pueda mostrar un segmento incorrecto después de la importación.
+
+¿Cuál es la diferencia:
+- Los datos completos de la pista pueden incluir información de ruta/navegación además de la geometría de la pista (útil si desea mantener las instrucciones de navegación o volver a editar la ruta en OsmAnd).
+- La pista simplificada exporta un GPX más limpio destinado a otras aplicaciones al eliminar los datos de ruta/navegación y dejar solo la forma de la pista. Los puntos de referencia se preservan al exportar una pista simplificada.
 
 Puede guardar la ruta como una pista utilizando *Guardar en la nube / Subir a OsmAnd Cloud*. Esto abre un diálogo donde puede confirmar el guardado en pistas de la nube, editar el Nombre, opcionalmente elegir una Carpeta, luego Guardar o Cancelar.
+
+![Navegación web](@site/static/img/web/download_options.png)
 
 ### Compartir una ruta {#share-a-route}
 
@@ -119,5 +129,6 @@ Para compartir la ruta, copie la URL. Ejemplo: [https://osmand.net/map/?start=43
 
 - [Preparación de rutas](../navigation/setup/route-navigation.md)
 - [Ajustes de navegación](../navigation/guidance/navigation-settings.md)
+- [Acerca del enrutamiento de OsmAnd](../navigation/routing/osmand-routing.md)
 - [Parámetros del vehículo](../navigation/guidance/vehicle-parameters.md)
 - [Planificar ruta](../web/planner.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
+source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
 sidebar_position: 5
 title:  Esquemas de color
 ---
@@ -146,6 +146,13 @@ Cada línea representa un valor numérico (para la paleta de colores, es un índ
 ```
 
 Después de mover este archivo TXT a *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, aparecerá una nueva paleta en el menú Esquema de color.
+
+Si necesita cambiar un archivo de paleta existente dentro de OsmAnd (en lugar de agregar un nuevo archivo TXT), puede editarlo a través de una copia de seguridad exportada (.osf).
+- Exporte los datos de la paleta como una copia de seguridad .osf (consulte la sección [Importar / Exportar](#import--export) a continuación).
+- Descomprima el .osf exportado. El archivo .osf es un archivo .zip renombrado. Haga una copia del archivo .osf original, luego descomprímalo usando cualquier herramienta de archivo.
+- Busque y edite el archivo TXT de la paleta. Dentro de las carpetas extraídas, localice el archivo de paleta necesario (por ejemplo: height_altitude_&lt;type_name&gt;.txt o route_speed_&lt;type_name&gt;.txt) y edite sus valores en un editor de texto.
+- Vuelva a comprimir y renombre a .osf. Comprima el contenido extraído de nuevo en un archivo .zip, luego renómbrelo a .osf. Mantenga la misma estructura de carpetas.
+- Importe el .osf actualizado en OsmAnd (consulte la sección **Importar / Exportar** a continuación) y reinicie la aplicación para aplicar los cambios.
 
 ### Importar / Exportar {#import--export}
 

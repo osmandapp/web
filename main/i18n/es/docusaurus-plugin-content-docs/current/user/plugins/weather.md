@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title:  Tiempo
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Las capas interactivas del mapa meteorológico en la aplicación OsmAnd le permiten monitorear la temperatura, la presión atmosférica, la cobertura de nubes, la velocidad del viento y la precipitación en su ciudad o en cualquier otro lugar en un mapa global interactivo. El complemento del Tiempo proporciona pronósticos meteorológicos por hora para los próximos 7 días directamente en el mapa de OsmAnd. La información meteorológica también se puede descargar para su uso sin conexión.  
 
-La fuente de datos para el complemento del Tiempo es el [Sistema Global de Predicción](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) operado por el Servicio Meteorológico Nacional de los Estados Unidos (NWS) y el Centro Europeo de Previsiones Meteorológicas a Plazo Medio ([ECMWF](https://www.ecmwf.int/)).  
+La fuente de datos para el complemento del Tiempo es el [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) operado por el Servicio Meteorológico Nacional de los Estados Unidos (NWS) y el Centro Europeo de Previsiones Meteorológicas a Plazo Medio ([ECMWF](https://www.ecmwf.int/)).  
 
 
 ## Parámetros de configuración requeridos {#required-setup-parameters}
@@ -101,9 +101,9 @@ Puede elegir qué proveedor de pronósticos meteorológicos usa OsmAnd para most
 
 Se admiten dos proveedores de pronósticos meteorológicos:
 
-[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Sistema Global de Predicción)** – la fuente predeterminada operada por NOAA/NWS. Proporciona datos meteorológicos completos, incluidas las capas de temperatura, presión, humedad, viento y nubes.
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – la fuente predeterminada operada por NOAA/NWS. Proporciona datos meteorológicos completos, incluidas las capas de temperatura, presión, humedad, viento y nubes.
 
-[**ECMWF**](https://www.ecmwf.int/) **(Centro Europeo de Previsiones Meteorológicas a Plazo Medio)** – una fuente alternativa de pronósticos. Ofrece datos de alta calidad de temperatura, precipitación y presión, pero no proporciona información sobre viento o nubes. Al usar ECMWF, los parámetros no disponibles se muestran como “–” y las capas meteorológicas correspondientes aparecen desactivadas.
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – una fuente alternativa de pronósticos. Ofrece datos de alta calidad de temperatura, precipitación y presión, pero no proporciona información sobre viento o nubes. Al usar ECMWF, los parámetros no disponibles se muestran como “–” y las capas meteorológicas correspondientes aparecen desactivadas.
 
 Cómo afecta la Fuente de datos a la visualización del Tiempo:
 - El mapa, los gráficos, la línea de tiempo y los valores meteorológicos en la pantalla se actualizan inmediatamente después de cambiar la fuente.
@@ -171,7 +171,7 @@ En la versión para iOS de OsmAnd, puede cambiar las unidades de medida y el niv
 
 ### Capas del tiempo {#weather-layers}
 
-Todos los datos meteorológicos se presentan como capas de mapa separadas. Para ver las capas del tiempo en el mapa, debe alejar el zoom, ya que solo están disponibles en escalas de zoom de 2 a 12. Las capas del tiempo utilizan [paletas de colores meteorológicos](../personal/color-palette-schemes.md#weather) para colorear el mapa; estas paletas se pueden [cambiar](../personal/color-palette-schemes.md#edit-palette-file) si es necesario.
+Todos los datos meteorológicos se presentan como capas de mapa separadas. Para ver las capas del tiempo en el mapa, debe alejar el zoom, ya que solo están disponibles en escalas de zoom de 2 a 12. Las capas del tiempo utilizan [paletas de colores meteorológicos](../personal/color-palette-schemes.md#weather) para colorear el mapa; estas paletas se pueden [cambiar](../personal/color-palette-schemes.md#palette-modify) si es necesario.
 
 | |  
 |------------|  

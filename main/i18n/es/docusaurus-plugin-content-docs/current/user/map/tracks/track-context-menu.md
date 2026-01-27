@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -365,12 +365,12 @@ Si no hay *información de elevación* en la ruta, puedes añadirla de las sigui
 ### Calcular elevación faltante {#calculate-missing-elevation}
 
 :::note Suscripción OsmAnd Pro
-La función de calcular la elevación sin conexión solo está disponible para los [**suscriptores de OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
+La función de [calcular elevación sin conexión](../../plan-route/create-route.md#get-elevation-data) solo está disponible para los [**suscriptores de OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Esta función te permite calcular el perfil de elevación para un track GPX sin conexión para cualquier terreno entre 70 grados de latitud norte y 70 grados de latitud sur, basándose en los [datos del mapa de terreno](../../plugins/topography.md#download-maps). *Los mapas de terreno (3D) deben haber sido descargados previamente*.
+[Esta función](../../plan-route/create-route.md#get-elevation-data) te permite calcular el perfil de elevación para un track GPX sin conexión para cualquier terreno entre 70 grados de latitud norte y 70 grados de latitud sur, basándose en los [datos del mapa de terreno](../../plugins/topography.md#download-maps). *Los mapas de terreno (3D) deben haber sido descargados previamente*.
 
 1. Descarga los [Mapas de terreno (3D)](../../plugins/topography.md#download-maps) para la región requerida.
 2. Si el track no contiene datos de altitud, ve al menú contextual del track (*Menú contextual del track → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), selecciona *Usar mapas de terreno*, y después del cálculo obtendrás un gráfico del track basado en los datos del terreno.  
@@ -471,7 +471,7 @@ Toca el botón *Añadir Waypoint* para abrir la pantalla de creación de waypoin
 
 <TabItem value="ios" label="iOS">
 
-![Menú de Grupo del menú del track en iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Menú de Grupo del menú del track en iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Menú de Grupo del menú del track en iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -483,9 +483,9 @@ El *menú de tres puntos* ( &#8285; ) abre el *Menú de Grupo* de waypoints.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Te permite mostrar o no mostrar los waypoints del grupo en el mapa. O puedes usar [el botón de pantalla](#points--waypoints) para mostrar u omitir los waypoints del grupo en el mapa.
 - **<Translate android="true" ids="shared_string_rename"/>** - Cambia el nombre del grupo.
-- **<Translate android="true" ids="change_default_appearance"/>** - Cambia las opciones de visualización para un grupo de waypoints.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Cambia las opciones de visualización para un grupo de waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** o **Eliminar** (*Solo Android*) - Mueve los waypoints del grupo a la lista de [Marcadores de mapa](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*Solo Android*) - Te permite copiar el grupo seleccionado de Waypoints en [Favoritos](../../personal/favorites.md). Puedes elegir una de dos opciones: ***<Translate android="true" ids="copy_as_new_folder"/>*** o ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Te permite copiar el grupo seleccionado de Waypoints en [Favoritos](../../personal/favorites.md). Puedes elegir una de dos opciones: ***<Translate android="true" ids="copy_as_new_folder"/>*** o ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Solo Android*) - Crea una ruta entre waypoints. El primer y último punto se convierten en el inicio y el final de la ruta, y el resto se convierten en puntos intermedios.
 - **<Translate android="true" ids="shared_string_delete"/>** - Elimina un grupo de waypoints.
 
@@ -656,7 +656,7 @@ Para cada segmento, puedes ver:
 - tiempo en movimiento.
 - velocidad promedio y máxima.
 
-Cuando tocas cualquier segmento en la lista, la vista del mapa muestra el track completo con sus intervalos y abre el menú contextual del track en la parte inferior de la pantalla.
+Cuando tocas cualquier segmento en la lista, la vista del mapa muestra el track completo con sus intervalos y abre el menú contextual del track en la parte inferior de la pantalla. En el mapa, las etiquetas de intervalo admiten dos acciones: tocar para abrir el panel de vista general del track, y mantener pulsado para abrir el menú contextual del track.
 
 
 ### Dividir por tiempo {#split-by-time}
@@ -668,9 +668,14 @@ La opción **Dividir por tiempo** divide un track en intervalos de duración igu
 
 ### Dividir por subida/bajada {#split-by-uphill-downhill}
 
-![Pestaña de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Pestaña de división del track por subida/bajada](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de división del track por subida/bajada](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Esta opción divide un track en segmentos basados en cambios de elevación. Cada intervalo se clasifica como ***subida***, ***bajada*** o ***plano***. La forma en que se muestran los intervalos, las estadísticas proporcionadas para cada segmento y cómo aparecen en el mapa también son las mismas que en la sección [Dividir por distancia](#split-by-distance).
+Esta opción divide un track en segmentos basados en cambios de elevación. Cada intervalo se clasifica como ***subida***, ***bajada*** o ***plano***. La forma en que se muestran los intervalos y las estadísticas proporcionadas para cada segmento son las mismas que en la sección [Dividir por distancia](#split-by-distance).
+
+En el mapa, los segmentos están marcados con etiquetas de color al inicio de cada intervalo:
+- **Segmentos de subida** (etiquetas rojas) muestran una flecha hacia arriba, el índice del segmento y la pendiente media en porcentaje (por ejemplo, ↑ 11. 2%).
+- **Segmentos de bajada** (etiquetas verdes) muestran una flecha hacia abajo, el índice del segmento y la pendiente media en porcentaje (por ejemplo, ↓ 12. -2%).
+- **Segmentos planos** (etiquetas azules) muestran la distancia de la sección plana (por ejemplo, 616 m, 411 m).
 
 
 ### Métricas de frecuencia cardíaca {#heart-rate-metrics}

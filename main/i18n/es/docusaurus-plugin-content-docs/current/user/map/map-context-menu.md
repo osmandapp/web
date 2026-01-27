@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -142,6 +142,7 @@ Los detalles disponibles incluyen:
 - [Dentro de áreas](#polygon-information)
 - [PDI cercanos](#nearby-pois)
 - [Lugares populares cercanos](#nearby-popular-places)
+- [Guías](#guides) (solo Android)
 - [Rutas de transporte público para paradas](#public-transport-routes)
 - [Favoritos / Puntos de track del mismo grupo](#favorites--track-points-from-the-group)
 - [Enlace de OpenStreetMap](#openstreetmap-link)
@@ -196,7 +197,7 @@ Esta parte contiene una parte de la descripción de un [artículo de Wikipedia](
 
 <TabItem value="ios" label="iOS">
 
-![Nombres alternativos Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Nombres alternativos Android](@site/static/img/map/alternative_names_2_ios.png)
+![Nombres alternativos iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Nombres alternativos iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -227,7 +228,7 @@ Características de la visualización de nombres alternativos:
 
 <TabItem value="ios" label="iOS">
 
-![Información de polígono Android](@site/static/img/map/polygon_information_ios.png)
+![Información de polígono iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -258,7 +259,7 @@ El enlace web de OsmAnd puede ser reconocido automáticamente por OsmAnd (ejempl
 
 <TabItem value="ios" label="iOS">
 
-![PDI cercano IOS](@site/static/img/map/nearby_poi_ios.png)
+![PDI cercanos iOS](@site/static/img/map/nearby_poi_ios.png)
 
 </TabItem>
 
@@ -285,7 +286,7 @@ Al tocar *Lugares populares cercanos* ([Popular Places](https://osmand.net/docs/
 
 <TabItem value="ios" label="iOS">
 
-![Lugares cercanos IOS](@site/static/img/map/nearby_places_ios.png)
+![Lugares cercanos iOS](@site/static/img/map/nearby_places_ios.png)
 
 Esta sección resalta lugares populares que le ayudan a descubrir destinos interesantes y puntos de referencia alrededor de su ubicación actual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* y *<Translate android="true" ids="search_more"/>* para navegar y buscar todos los lugares populares. 
 
@@ -296,6 +297,18 @@ Al tocar *Lugares populares cercanos* ([Popular Places](https://osmand.net/docs/
 </TabItem>
 
 </Tabs>
+
+### Guías {#guides}
+
+<InfoAndroidOnly/>
+
+![Guías Android](@site/static/img/map/details_guides.png)
+
+La sección **Guías** aparece en el menú contextual del mapa para algunos lugares y proporciona acceso a guías de **Travel (Wikivoyage)** relacionadas con el punto de interés seleccionado. Muestra una lista de entradas de guías (por ejemplo, un país o región) que mencionan el lugar seleccionado.
+
+La sección de Guías se muestra solo si se han descargado datos de **Travel (Wikivoyage)** para el área seleccionada.
+
+**Nota:** Las guías están vinculadas al contenido de Wikivoyage, no a descripciones generales de Wikipedia.
 
 
 ### Rutas de transporte público {#public-transport-routes}

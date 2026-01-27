@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -428,11 +428,13 @@ Cuando un mapa está desactivado, puede desaparecer temporalmente de la pestaña
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Menú de mapas Actualizar mapas iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Pronóstico del tiempo Actualizar mapas iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Menú de mapas Actualizar mapas iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Pronóstico del tiempo Actualizar mapas iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 La pestaña **Actualizaciones** le permite actualizar los mapas y recursos de OsmAnd. Los mapas estándar y de solo carreteras se publican una vez al mes, generalmente entre el segundo y el quinto día, e incluyen datos de OpenStreetMap hasta el último día del mes anterior (por ejemplo, la versión de octubre contiene datos hasta el 30 de septiembre). Otros datos como Wikipedia, terreno o mapas náuticos pueden seguir diferentes calendarios de actualización no regulares. 
 
 Use el botón *Actualizar todo* para actualizar todos los mapas simultáneamente, o actualice mapas individuales según sea necesario. Para actualizaciones por hora, verifique el estado de su suscripción a [Actualizaciones en vivo](#live-updates). Si está habilitado, la sección **Actualizaciones en vivo** aparecerá en la parte superior de la pestaña, debajo del indicador de Memoria del dispositivo.
+
+La pestaña **Actualizaciones** también puede mostrar un elemento **Mapas no compatibles**. Aparece cuando tiene mapas que ya no son compatibles y han sido reemplazados por regiones más pequeñas. Toque Mapas no compatibles para revisar la lista, eliminar mapas obsoletos y descargar las nuevas versiones de regiones en su lugar. En la pantalla de Mapas no compatibles, puede ver todos los mapas no compatibles y usar Eliminar todo para eliminarlos de una vez (se muestra un mensaje de confirmación antes de la eliminación).
 
 La pestaña **Actualizaciones** también incluye una sección de Pronóstico del tiempo. Está diseñada para gestionar sus pronósticos sin conexión para los países seleccionados:
 
