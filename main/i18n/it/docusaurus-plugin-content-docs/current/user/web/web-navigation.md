@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -45,6 +45,8 @@ Scambia Partenza e Destinazione — scambia la Partenza e la Destinazione manten
 
 In cima al pannello Route, puoi scegliere un profilo di routing per il tuo percorso. Un set di profili comunemente utilizzati è mostrato come quattro icone. Per accedere a più opzioni, apri il menu a tre punti accanto alle icone del profilo. Espande l'elenco completo dei profili disponibili.
 
+I profili di routing nel Web Planner utilizzano le stesse regole e impostazioni di routing dell'app mobile OsmAnd. Per dettagli su come vengono calcolati i percorsi e su come funzionano i parametri di routing, consulta [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
+
 Quando cambi il profilo, Navigation aggiorna il percorso per adattarlo alla modalità di viaggio selezionata.
 
 ![Navigazione Web](@site/static/img/web/navigation_profile.png)
@@ -52,7 +54,7 @@ Quando cambi il profilo, Navigation aggiorna il percorso per adattarlo alla moda
 
 ## Impostazioni di Navigazione {#navigation-settings}
 
-Per regolare come vengono calcolati i percorsi, apri Impostazioni utilizzando l'icona a ingranaggio nel pannello Route. Le impostazioni sono raggruppate in sezioni che puoi espandere/collassare. L'insieme di sezioni e opzioni dipende dal profilo di routing selezionato, quindi vedrai parametri diversi per diverse modalità di viaggio.
+Per regolare come vengono calcolati i percorsi, apri Impostazioni utilizzando l'icona a ingranaggio nel pannello Route (per le impostazioni di navigazione nell'app mobile OsmAnd, consulta [qui](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). Le impostazioni sono raggruppate in sezioni che puoi espandere/collassare. L'insieme di sezioni e opzioni dipende dal profilo di routing selezionato, quindi vedrai parametri diversi per diverse modalità di viaggio.
 
 Le sezioni tipiche includono:
 
@@ -66,7 +68,7 @@ Le sezioni tipiche includono:
 
 ## Allegare Traccia {#attaching-track}
 
-Il blocco **Attach to roads** ti permette di utilizzare una traccia GPX esistente come base per la navigazione. OsmAnd Web abbina la traccia alle strade vicine per fornire indicazioni turn-by-turn.
+Il blocco **[Attach to roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** ti permette di utilizzare una traccia GPX esistente come base per la navigazione. OsmAnd Web abbina la traccia alle strade vicine per fornire indicazioni turn-by-turn.
 
 Quando clicchi Seleziona traccia, il browser apre un selettore di file dove puoi scegliere un file .gpx dal tuo computer. Dopo aver selezionato una traccia:
 - La traccia viene visualizzata sulla mappa e utilizzata per calcolare il percorso.
@@ -86,7 +88,7 @@ Info riassume il percorso e i dati di altitudine:
 - **Percorso** — distanza e tempo.
 - **Salita/Discesa** — ascesa e discesa totali.
 - **Altitudine (min/media/max)** — statistiche di altitudine per il percorso.
-- **Altitudine (Satellite)** — Ricalcola per ricostruire l'altitudine utilizzando dati satellitari (se disponibili).
+- **Altitudine (Satellite)** — ricalcola i dati di altitudine della traccia utilizzando dati del terreno (DEM) e aggiorna il grafico di altitudine.
 
 Sotto il riassunto, il grafico di altitudine ti aiuta a ispezionare il profilo del percorso. Puoi attivare/disattivare Altitudine e Pendenza e utilizzare il cursore sotto il grafico per concentrarti su una parte specifica del percorso.
 
@@ -105,10 +107,18 @@ Puoi affinare il percorso direttamente sulla mappa trascinando i marker del perc
 ### Scarica e Salva {#download-and-save}
 
 Utilizza *Download* per esportare il percorso come traccia. La finestra di download offre due opzioni:
-Dati traccia completa — include dati completi, incluse le istruzioni di navigazione.
-Traccia semplificata — una versione più leggera più adatta per l'uso con altre app.
+**Dati traccia completa** — include dati completi, incluse le istruzioni di navigazione.
+**[Traccia semplificata](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — una versione più leggera più adatta per l'uso con altre app.
+
+Se prevedi di aprire il GPX in app di terze parti, scegli Traccia semplificata per una migliore compatibilità. Questo aiuta a evitare casi in cui un'altra app potrebbe visualizzare un segmento errato dopo l'importazione.
+
+Qual è la differenza:
+- I dati traccia completa possono includere informazioni sul percorso/navigazione in aggiunta alla geometria della traccia (utile se desideri mantenere le istruzioni di navigazione o modificare nuovamente il percorso in OsmAnd).
+- La traccia semplificata esporta un GPX più pulito destinato ad altre app rimuovendo i dati sul percorso/navigazione e lasciando solo la forma della traccia. I waypoint sono preservati durante l'esportazione di una traccia semplificata.
 
 Puoi salvare il percorso come traccia utilizzando *Salva su Cloud / Carica su OsmAnd Cloud*. Questo apre una finestra di dialogo dove puoi confermare il salvataggio nelle tracce cloud, modificare il Nome, opzionalmente scegliere una Cartella, quindi Salva o Annulla.
+
+![Navigazione Web](@site/static/img/web/download_options.png)
 
 ### Condividi un Percorso {#share-a-route}
 
@@ -119,5 +129,6 @@ Per condividere il percorso, copia l'URL. Esempio: [https://osmand.net/map/?star
 
 - [Preparazione del Percorso](../navigation/setup/route-navigation.md)
 - [Impostazioni di Navigazione](../navigation/guidance/navigation-settings.md)
+- [Informazioni sul routing di OsmAnd](../navigation/routing/osmand-routing.md)
 - [Parametri del Veicolo](../navigation/guidance/vehicle-parameters.md)
 - [Pianifica Percorso](../web/planner.md)

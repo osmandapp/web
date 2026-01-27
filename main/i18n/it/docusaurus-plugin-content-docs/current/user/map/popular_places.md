@@ -1,5 +1,5 @@
 ---
-source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
+source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
 sidebar_position: 8
 title: Luoghi Popolari
 ---
@@ -14,8 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Panoramica {#overview}
 
@@ -24,6 +25,8 @@ La funzione **Luoghi Popolari** di OsmAnd evidenzia punti di riferimento e attra
 Ogni luogo incluso in questa funzione è collegato a un **ID Wikidata**, che consente a OsmAnd di visualizzare nomi verificati, immagini di anteprima e collegamenti ad articoli di Wikipedia. Questo strumento **non** mostra tutti i punti di OpenStreetMap (OSM). È limitato ai PDI con riferimenti a Wikidata.
 
 Attualmente, il database curato include circa **50.000 a 150.000 luoghi tra i più votati** a livello globale, selezionati da oltre **1 milione** di oggetti Wikidata + OSM.
+
+Le immagini e altri contenuti basati su Wikidata nei Luoghi Popolari vengono aggiornati secondo una pianificazione e potrebbero non apparire immediatamente dopo le modifiche in Wikidata o Wikimedia Commons. Frequenza di aggiornamento attuale: due volte al mese — il **10** e il **20**.
 
 :::note
 *Questa è la prima versione della funzione Luoghi Popolari. I feedback sono benvenuti su [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -40,7 +43,7 @@ Attualmente, il database curato include circa **50.000 a 150.000 luoghi tra i pi
 </Tabs>
 
 
-### Fonti dei dati
+## Fonti dei dati {#data-sources}
 
 I **Luoghi Popolari** si basano su contenuti strutturati provenienti da [Wikidata](https://www.wikidata.org) e [Wikipedia](https://www.wikipedia.org/).
 
@@ -62,6 +65,8 @@ Ci sono due modi principali per accedere a questa funzione:
 - **Versione gratuita**  
   Accesso tramite [Ricerca](#explore-in-search) per esplorare i luoghi vicini in una visualizzazione a elenco.  
   *<Translate android="true" ids="android_button_seq"/>*. Vai a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  
+  Questa lista Esplora mostra luoghi Wikipedia/Wikidata classificati per popolarità vicino a te e funziona online. Visualizza fino a 50 luoghi. Poiché i risultati Esplora/Wikipedia sono classificati per rating, l'ordinamento in questi risultati potrebbe differire dalla ricerca POI regolare.
 
 - **Versioni a pagamento** *(Maps+ e OsmAnd Pro)*  
   Abilita la sovrapposizione visiva in [Configura Mappa](#enable-layer).  
@@ -130,19 +135,19 @@ Prima di utilizzare questa funzione:
 - Assicurati che il [Plugin Wikipedia](../plugins/wikipedia.md) sia abilitato.
 - Scarica i dati di Wikipedia per la tua regione se vuoi usarli offline.
 
-### Opzioni Livello
+### Opzioni Livello {#layer-options}
 
 Una volta abilitate, diventano disponibili le seguenti opzioni:
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – Attiva/disattiva i PDI di Wikipedia sulla mappa.
 
 - **Fonte POI** – Passa da:
-  - *Modalità offline* (gli articoli di Wikipedia devono essere scaricati).
-  - Modalità *Solo online* (utilizza dati e immagini in tempo reale).
+  - Modalità *Solo Offline* — utilizza i dati della mappa Wikipedia scaricati per la tua regione. 
+  - Modalità *Solo Online* — carica luoghi e anteprime delle immagini online. I risultati online potrebbero dipendere dalle impostazioni di lingua selezionate.
 
 - **<Translate android="true" ids="shared_string_language"/>** – Seleziona la lingua per le descrizioni di Wikipedia.
 
-- **<Translate android="true" ids="show_image_previews"/>** – Mostra le anteprime delle immagini da Wikidata accanto ai PDI.
+- **<Translate android="true" ids="show_image_previews"/>** – Mostra le anteprime delle immagini da Wikidata accanto ai PDI. Se le anteprime delle immagini sono disabilitate, i Luoghi Popolari vengono mostrati con icone invece di miniature sulla mappa. Le anteprime delle immagini utilizzano immagini collegate a Wikidata/Wikipedia: in modalità *Solo Offline* le anteprime dipendono dai dati Wikipedia scaricati, mentre in modalità *Solo Online* le anteprime vengono recuperate online.
 
 Toccando un PDI sulla mappa si apre il [menu contestuale del PDI](./map-context-menu.md), dove è possibile visualizzare le [foto online](#online-photos) e accedere agli [articoli di Wikipedia](../plugins/wikipedia.md) collegati.
 
@@ -171,10 +176,9 @@ Questa è una sezione all'interno del [menu contestuale del PDI](./map-context-m
 
 Le immagini visualizzate online vengono memorizzate automaticamente in cache per l'accesso offline. Le foto memorizzate in cache mostrano un piccolo badge offline nell'angolo. La griglia di anteprima si adatta alla dimensione dello schermo su iPadOS e macOS, garantendo un layout confortevole delle immagini su display più grandi. OsmAnd evita anche di attivare richieste di rete ripetute quando la sezione Foto Online viene chiusa e annulla le richieste precedenti quando si passa rapidamente tra diversi PDI.
 
-Scopri di più sulle opzioni aggiuntive nelle sezioni [Azioni](#actions) e [Galleria](#gallery).
-
-
 <!-- 
+Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
+
 
 When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
 
@@ -183,19 +187,17 @@ When you tap a Popular Place on the map or from the list, the [POI context menu]
 
 For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
 
+
+### Actions {#actions}
+
+In the Map Context menu How to access:
+
+- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
+
+- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
+  **Share**, **Details**, **Open in browser**, and **Download**.
+
 -->
-
-### Azioni {#actions}
-
-Nel menu contestuale della mappa Come accedere:
-
-- Tocca il pulsante **Mostra tutto** (Android) / **Visualizza tutto** (iOS) per aprire la [galleria](#gallery) in modalità a schermo intero, dove puoi scorrere tutte le foto disponibili per la località selezionata.
-
-- Tocca una foto qualsiasi per visualizzarla a [schermo intero](#gallery) e accedere alle azioni disponibili:  
-  **Condividi**, **Dettagli**, **Apri nel browser** e **Scarica**.
-
-**Nota:** Il download salva l'immagine nello storage del dispositivo per un uso offline permanente, mentre le foto memorizzate in cache vengono salvate automaticamente e disponibili offline solo all'interno dell'app.
-
 
 ### Galleria {#gallery}
 
@@ -217,8 +219,7 @@ Nel menu contestuale della mappa Come accedere:
 
 </Tabs>
 
-
-Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. È possibile scorrere tutte le foto disponibili. Toccando brevemente una foto si apre una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*.  
+Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. Per visualizzare queste immagini, tocca **Mostra tutto** (Android) / **Visualizza tutto** (iOS). È possibile scorrere tutte le foto disponibili. Toccando brevemente una foto si apre una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*.  
 
 Su iOS, iPadOS e macOS, è possibile navigare tra le foto utilizzando i tasti della tastiera (←/→ per spostarsi tra le immagini, Enter/Spazio per aprire).
 
@@ -236,29 +237,31 @@ Su iOS, iPadOS e macOS, è possibile navigare tra le foto utilizzando i tasti de
 - **Scarica**  
   Salva l'immagine nella memoria del tuo dispositivo. L'immagine scaricata si trova nella cartella Download predefinita del dispositivo e può essere consultata offline.
 
+**Nota:** Il download salva l'immagine nello storage del dispositivo per un uso offline permanente, mentre le foto memorizzate in cache vengono salvate automaticamente e disponibili offline solo all'interno dell'app.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-La versione Android non include un menu aggiuntivo per le azioni sulle foto.
+The Android version does not include an additional menu for photo actions.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS - Opzioni del menu contestuale](@site/static/img/map/gallery_menu_ios_3.png)
+![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
 
-Su **iOS**, una pressione prolungata su una foto apre un menu contestuale con azioni aggiuntive:
+On **iOS**, long-pressing a photo opens a context menu with additional actions:
 
-- **Dettagli**  
-- **Apri nel browser**  
-- **Scarica**
+- **Details**  
+- **Open in browser**  
+- **Download**
 
-**Pulsanti**:
+**Buttons**:
 
-- Il pulsante **Condividi** consente di condividere rapidamente l'immagine selezionata.  
-- Il **menu a tre punti** dà accesso ad azioni extra, tra cui la visualizzazione dei dettagli, l'apertura della fonte in un browser o il download dell'immagine.
+- The **Share** button lets you quickly share the selected image.  
+- The **three-dot menu** provides access to extra actions, including viewing details, opening the source in a browser, or downloading the image.
 
 </TabItem>
 
@@ -269,22 +272,23 @@ Su **iOS**, una pressione prolungata su una foto apre un menu contestuale con az
 
 <TabItem value="android" label="Android">  
 
-![Android – Vista Dettagli](@site/static/img/map/gallery_menu_android_2.png)
+![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS – Vista Dettagli](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-La schermata **Dettagli** fornisce i metadati completi della foto selezionata, tra cui: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*, *Fonte* e *Link diretto*
+The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+-->
 
 
-## Articoli Correlati
+## Articoli Correlati {#related-articles}
 
 - [Menu contestuale della mappa](./map-context-menu.md)
 - [Configura Mappa](./configure-map-menu.md)

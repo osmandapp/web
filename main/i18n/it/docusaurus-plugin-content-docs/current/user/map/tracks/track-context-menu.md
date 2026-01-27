@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
@@ -370,7 +370,7 @@ La funzione di calcolo dell'altitudine offline è disponibile solo per gli [**ab
 
 <InfoAndroidOnly />
 
-Questa funzione consente di calcolare il profilo altimetrico per una traccia GPX offline per qualsiasi terreno tra 70 gradi di latitudine nord e 70 gradi di latitudine sud, basandosi sui [dati delle mappe del terreno](../../plugins/topography.md#download-maps). *Le mappe del terreno (3D) devono essere state scaricate in precedenza*.
+[Questa funzione](../../plan-route/create-route.md#get-elevation-data) consente di calcolare il profilo altimetrico per una traccia GPX offline per qualsiasi terreno tra 70 gradi di latitudine nord e 70 gradi di latitudine sud, basandosi sui [dati delle mappe del terreno](../../plugins/topography.md#download-maps). *Le mappe del terreno (3D) devono essere state scaricate in precedenza*.
 
 1. Scarica le [Mappe del terreno (3D)](../../plugins/topography.md#download-maps) per la regione richiesta.
 2. Se la traccia non contiene dati di altitudine, vai al menu contestuale della traccia (*Menu contestuale traccia → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), seleziona *Usa mappe del terreno* e, dopo il calcolo, otterrai un grafico della traccia basato sui dati del terreno.  
@@ -471,7 +471,7 @@ Tocca il pulsante *Aggiungi Waypoint* per aprire la schermata di creazione del w
 
 <TabItem value="ios" label="iOS">
 
-![Menu gruppo menu traccia iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Menu gruppo menu traccia iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Menu gruppo menu traccia iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -483,9 +483,9 @@ Il *menu a tre punti* ( &#8285; ) apre il *Menu del gruppo* di waypoint.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Consente di visualizzare o meno i waypoint del gruppo sulla mappa. Oppure è possibile utilizzare [il pulsante sullo schermo](#points--waypoints) per visualizzare o omettere i waypoint del gruppo sulla mappa.
 - **<Translate android="true" ids="shared_string_rename"/>** - Cambia il nome del gruppo.
-- **<Translate android="true" ids="change_default_appearance"/>** - Cambia le opzioni di visualizzazione per un gruppo di waypoint.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Cambia le opzioni di visualizzazione per un gruppo di waypoint.
 - **<Translate android="true" ids="add_group_to_markers"/>** o **Rimuovi** (*Solo Android*) - Sposta i waypoint del gruppo nell'elenco dei [Segnalibri mappa](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*Solo Android*) - Consente di copiare il gruppo di Waypoint selezionato nei [Preferiti](../../personal/favorites.md). È possibile scegliere una delle due opzioni: ***<Translate android="true" ids="copy_as_new_folder"/>*** o ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Consente di copiare il gruppo di Waypoint selezionato nei [Preferiti](../../personal/favorites.md). È possibile scegliere una delle due opzioni: ***<Translate android="true" ids="copy_as_new_folder"/>*** o ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Solo Android*) - Crea un percorso tra i waypoint. Il primo e l'ultimo punto diventano l'inizio e la fine del percorso, e gli altri vengono convertiti in punti intermedi.
 - **<Translate android="true" ids="shared_string_delete"/>** - Elimina un gruppo di waypoint.
 
@@ -649,14 +649,14 @@ Per aprire questa opzione:
 Questa opzione consente di dividere una traccia in intervalli di distanza fissi e analizzare statistiche dettagliate per ogni segmento. Gli intervalli di distanza disponibili sono ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** e ***10 km***. Dopo aver scelto un intervallo di distanza, la traccia viene visualizzata come un elenco di segmenti. 
 
 Per ogni segmento, è possibile visualizzare:
-- distanza percorsa.
-- durata.
-- altitudine media, minima e massima.
-- salita e discesa.
-- tempo in movimento.
-- velocità media e massima.
+- Distanza percorsa.
+- Durata.
+- Altitudine media, minima e massima.
+- Salita e discesa.
+- Tempo in movimento.
+- Velocità media e massima.
 
-Quando si tocca qualsiasi segmento nell'elenco, la vista della mappa mostra la traccia completa con i suoi intervalli e apre il menu contestuale per la traccia in fondo allo schermo.
+Quando si tocca qualsiasi segmento nell'elenco, la vista della mappa mostra la traccia completa con i suoi intervalli e apre il menu contestuale per la traccia in fondo allo schermo. Sulla mappa, le etichette degli intervalli supportano due azioni: tocco per aprire il pannello di panoramica della traccia e tocco prolungato per aprire il menu contestuale della traccia.
 
 
 ### Dividi per Tempo {#split-by-time}
@@ -668,9 +668,14 @@ L'opzione **Dividi per Tempo** divide una traccia in intervalli di durata uguale
 
 ### Dividi per Salita/Discesa {#split-by-uphill-downhill}
 
-![Scheda divisione traccia per salita/discesa](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mappa divisione traccia per salita/discesa](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Scheda divisione traccia per salita/discesa](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mappa divisione traccia per salita/discesa](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Questa opzione divide una traccia in segmenti in base alle variazioni di altitudine. Ogni intervallo è classificato come ***salita***, ***discesa*** o ***piano***. Il modo in cui gli intervalli vengono visualizzati, le statistiche fornite per ogni segmento e il modo in cui appaiono sulla mappa sono gli stessi della sezione [Dividi per Distanza](#split-by-distance).
+Questa opzione divide una traccia in segmenti in base alle variazioni di altitudine. Ogni intervallo è classificato come ***salita***, ***discesa*** o ***piano***. Il modo in cui gli intervalli vengono visualizzati e le statistiche fornite per ogni segmento sono gli stessi della sezione [Dividi per Distanza](#split-by-distance).
+
+Sulla mappa, i segmenti sono contrassegnati con etichette colorate all'inizio di ogni intervallo:
+- **Segmenti in salita** (etichette rosse) mostrano una freccia verso l'alto, l'indice del segmento e la pendenza media in percentuale (ad esempio, ↑ 11. 2%).
+- **Segmenti in discesa** (etichette verdi) mostrano una freccia verso il basso, l'indice del segmento e la pendenza media in percentuale (ad esempio, ↓ 12. -2%).
+- **Segmenti piani** (etichette blu) mostrano la distanza della sezione piano (ad esempio, 616 m, 411 m).
 
 
 ### Metriche Frequenza Cardiaca {#heart-rate-metrics}

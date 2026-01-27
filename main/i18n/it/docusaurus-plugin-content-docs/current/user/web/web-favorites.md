@@ -1,5 +1,5 @@
 ---
-source-hash: ef13b994168cf04dcf98784cf4ef75aea6eb57a3e4db536a0fa48e3617173008
+source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -60,7 +60,7 @@ Durante la configurazione dell'accesso, potrebbero apparire i seguenti dialoghi:
 
 Selezionando un preferito si apre il pannello **Dettagli**. Questo pannello appare quando fai clic su un preferito direttamente sulla mappa o lo selezioni da una cartella preferiti.
 
-La vista Dettagli fornisce le informazioni associate al luogo selezionato e dipende dai dati disponibili per quel preferito specifico. Al minimo, include la posizione sulla mappa e le sue coordinate geografiche. Per i luoghi collegati a oggetti OpenStreetMap o fonti arricchite, potrebbero essere mostrate metadati aggiuntive, come nomi, categorie, identificatori o link di riferimento (ad esempio, [Wikipedia](../plugins/wikipedia.md) o link Wikidata). 
+La vista Dettagli fornisce le informazioni associate al luogo selezionato e dipende dai dati disponibili per quel preferito specifico. Al minimo, include la posizione sulla mappa e le sue coordinate geografiche. Per i luoghi collegati a oggetti OpenStreetMap o fonti arricchite, potrebbero essere mostrate metadati aggiuntive, come nomi, categorie, identificatori o link di riferimento (ad esempio, Wikipedia o link Wikidata). 
 
 ![Dettagli Preferiti Web](@site/static/img/web/favorites_details.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title:  Mappe e Risorse
 ---
@@ -428,11 +428,13 @@ Quando una mappa è disattivata, potrebbe scomparire temporaneamente dalla sched
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Menu Mappe Aggiorna mappe iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Previsioni meteo Aggiorna mappe iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Menu Mappe Aggiorna mappe iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Previsioni meteo Aggiorna mappe iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 La scheda **Aggiornamenti** consente di aggiornare le mappe e le risorse di OsmAnd. Le mappe standard e solo strade vengono rilasciate una volta al mese, di solito tra il 2° e il 5° giorno, e includono i dati di OpenStreetMap fino all'ultimo giorno del mese precedente (ad esempio, la versione di ottobre contiene i dati fino al 30 settembre). Altri dati come Wikipedia, mappe del terreno o nautiche possono seguire calendari di aggiornamento diversi e non regolari. 
 
 Usa il pulsante *Aggiorna tutto* per aggiornare tutte le mappe contemporaneamente, o aggiorna le singole mappe secondo necessità. Per aggiornamenti orari, controlla lo stato del tuo abbonamento a [Aggiornamenti Live](#live-updates). Se abilitato, la sezione **Aggiornamenti Live** apparirà in cima alla scheda, sotto l'indicatore della Memoria del Dispositivo.
+
+La scheda **Aggiornamenti** può mostrare anche un elemento **Mappe non supportate**. Appare quando hai mappe che non sono più supportate e sono state sostituite da regioni più piccole. Tocca Mappe non supportate per rivedere l'elenco, rimuovere le mappe obsolete e scaricare le nuove versioni delle regioni al loro posto. Nella schermata Mappe non supportate, puoi visualizzare tutte le mappe non supportate e utilizzare Elimina tutto per rimuoverle tutte in una volta (viene mostrato un prompt di conferma prima della cancellazione).
 
 La scheda **Aggiornamenti** include anche una sezione Previsioni meteo. È progettata per gestire le tue previsioni offline per i paesi selezionati:
 

@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title:  Percorsi
 ---
@@ -71,13 +71,13 @@ I [percorsi escursionistici](https://wiki.openstreetmap.org/wiki/Walking_Routes)
 ![Mappa percorsi - reti di nodi escursionistici](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
-### Percorsi da Dirt Bike {#dirt-bike-trails}
+### Sentieri da Dirt Bike {#dirt-bike-trails}
 
-![Mappa percorsi - Percorsi da Dirt Bike](@site/static/img/map/map-routes-dirt-bike-trails.png)
+![Mappa percorsi - Sentieri da Dirt Bike](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
-La funzione **Percorsi da Dirt Bike** consente di visualizzare sulla mappa percorsi specifici per dirt bike basati sul tag `dirtbike:scale`. Questa scala evidenzia i sentieri adatti al dirt biking, con una sovrapposizione colorata che mostra i livelli di difficoltà ([Legenda della mappa](../map-legend/osmand.md#routes)).  
+La funzione **Sentieri da Dirt Bike** consente di visualizzare sulla mappa percorsi specifici per dirt bike basati sul tag `dirtbike:scale`. Questa scala evidenzia i sentieri adatti al dirt biking, con una sovrapposizione colorata che mostra i livelli di difficoltà ([Legenda della mappa](../map-legend/osmand.md#routes)).  
 
-È possibile attivare questa funzione in *Menu → Configura mappa → Percorsi → Percorsi da dirt bike*. Il sistema funziona in modo simile alla scala MTB, offrendo una rappresentazione visiva dei percorsi su misura per il dirt biking — maggiori informazioni sul [tag `dirtbike` possono essere trovate qui](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+È possibile attivare questa funzione in *Menu → Configura mappa → Percorsi → Sentieri da dirt bike*. Il sistema funziona in modo simile alla scala MTB, offrendo una rappresentazione visiva dei percorsi su misura per il dirt biking — maggiori informazioni sul [tag `dirtbike` possono essere trovate qui](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
 
 ### Vie di arrampicata {#climbing-routes}
@@ -124,7 +124,7 @@ Le piste da sci e i percorsi sono un gruppo specifico di [percorsi](https://wiki
 
 ### Sentieri per motoslitta {#snowmobile-trails}
 
-![Mappa percorsi - motoslitta](@site/static/img/map/snowmobile_trail.png)
+![Mappa percorsi - motoslitta](@site/static/img/map/snowmobile_trail_new.png)
 
 I sentieri per motoslitta sono mappati in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) come `route=snowmobile`. Sono utilizzati per il tempo libero invernale e per collegare aree remote durante la stagione nevosa. In OsmAnd, i sentieri per motoslitta sono cliccabili, vedere la sezione [Azioni con i percorsi](#actions-with-routes).
 
@@ -138,7 +138,7 @@ I [percorsi a cavallo](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) so
 
 ### Sport in acque bianche {#whitewater-sports}
 
-![Mappa percorsi - sport acquatici](@site/static/img/map/map-routes-whitewater-sport.png)
+![Mappa percorsi - sport in acque bianche](@site/static/img/map/map-routes-whitewater-sport.png)
 
 I [percorsi per acque bianche](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) sono mostrati insieme a icone di accesso, zone di pericolo per il [turismo in acque bianche](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
 
@@ -181,7 +181,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 - Per visualizzare i percorsi richiesti sulla mappa, abilitali nell'elenco *Percorsi* del menu [Configura mappa](../map/configure-map-menu.md).
 - OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
 - I tipi principali di percorso possono essere filtrati anche per classi e sottoclassi, consentendo di visualizzare solo gruppi specifici all'interno di ciascun tipo. Ad esempio, è possibile mostrare i percorsi escursionistici per **simboli OSMC** come classi e per *reti internazionali, nazionali, regionali* o *locali* come sottoclassi.
-- È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md).  
+- È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md). 
 - Quando più percorsi corrono lungo la stessa strada, ogni percorso viene visualizzato come una linea semitrasparente separata posizionata sopra le altre. 
 - Quando si tocca una posizione in cui più percorsi si sovrappongono, viene mostrato un menu contestuale con tutti i percorsi che passano attraverso quel punto. 
 - Sono richieste mappe vettoriali aggiornate per visualizzare tutti gli elementi del nuovo schema di rendering dei percorsi. 
@@ -194,7 +194,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Menu Tracce iOS](@site/static/img/map/configure_map_routes_ios.png)
+![Menu Percorsi iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - Per visualizzare i percorsi richiesti sulla mappa, abilitali nell'elenco *Percorsi* del menu [Configura mappa](../map/configure-map-menu.md).
 - OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
@@ -345,45 +345,29 @@ Questo avvierà la modalità [**Navigazione tramite traccia**](../navigation/set
 
 ## Ricerca percorsi {#routes-search}
 
-Trova i percorsi utilizzando la [funzione Cerca](../search/index.md) per nome o selezionando "Percorsi" nella [sezione Categorie](../search/search-poi.md#).
-
-Per cercare, vai al menu *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e inserisci la tua attività.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Percorsi sul terreno](@site/static/img/map/route_search.png)
+![Percorsi sul terreno](@site/static/img/map/route_search.png) ![Percorsi sul terreno](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Percorsi sul terreno](@site/static/img/map/route_search_ios.png)
+![Percorsi sul terreno](@site/static/img/map/route_search_ios.png) ![Percorsi sul terreno](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Vai a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* per trovare i percorsi desiderati. I percorsi includono nome, tipo di attività, lunghezza, posizione e distanza dal punto più vicino. Su Android, vengono mostrate anche le metriche di altitudine come salita e discesa dove disponibili. Le variazioni di altitudine minori (meno di 10 m) sono nascoste per mantenere l'elenco chiaro. Tutti i valori rispettano le unità di distanza e altitudine selezionate nell'app.
+Trova i percorsi utilizzando la [funzione Cerca](../search/index.md) per nome o selezionando "Percorsi" nella [sezione Categorie](../search/search-poi.md#).
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Per cercare, vai al menu *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e inserisci la tua attività.
 
-<TabItem value="android" label="Android">
+Vai a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* per trovare i percorsi desiderati. I risultati della ricerca dei percorsi mostrano il nome del percorso, il tipo di attività, la lunghezza, la posizione, salita/discesa (su Android) e la distanza dal punto più vicino. 
 
-![Percorsi sul terreno](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Percorsi sul terreno](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Utilizza il pulsante dei filtri (angolo in alto a destra) per visualizzare solo i percorsi desiderati.
+### Filtri percorsi {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Utilizza il pulsante dei filtri (angolo in alto a destra) per visualizzare solo 
 </TabItem>
 
 </Tabs>
+
+Nei risultati della ricerca dei percorsi, tocca il pulsante **Filtri** nell'angolo in alto a destra per restringere l'elenco. La schermata Filtri include un campo **Filtra per nome**; un blocco **Tipo** con *Bureau*, *Allegato postale* e *Partner postale*; e **criteri extra** che dipendono dalla categoria o attività di percorso selezionata, poiché ogni categoria può esporre le proprie caratteristiche e valori di filtro.
+
+È possibile abilitare o disabilitare i filtri utilizzando gli interruttori, e alcune sezioni includono *Mostra tutto* per visualizzare valori aggiuntivi.
 
 
 ## Articoli correlati {#related-articles}

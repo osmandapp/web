@@ -1,9 +1,10 @@
 ---
-source-hash: 2e2bedc5911717de92c663881adf7da2b32d2027a6c8127a8c9d02651753f230
+source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
 sidebar_position: 10
 title:  CarPlay
 android: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 ## Panoramica {#overview}
@@ -29,6 +29,8 @@ Per utilizzare *CarPlay* sullo schermo del veicolo, seguire questi passaggi:
 ### Interfaccia CarPlay {#carplay-interface}
 
 *CarPlay* **non è una replica diretta** dell'app mobile OsmAnd. Ha un'interfaccia semplificata, incentrata sulle funzioni di navigazione essenziali per garantire una guida sicura. Alcune funzioni avanzate non sono supportate a causa di limitazioni della piattaforma.
+
+La posizione dei pulsanti e del widget di navigazione in *CarPlay* corrisponde al lato della barra di stato di CarPlay. Dipende dall'impostazione **Posizione del guidatore** (mano sinistra o mano destra) nell'unità principale della vostra auto, non da alcuna impostazione all'interno di CarPlay o dell'app OsmAnd.
 
 ### Schermata di connessione {#connection-screen}
 
@@ -91,7 +93,7 @@ Il **profilo CarPlay** è un profilo specifico dell'app OsmAnd per un uso comodo
 
 Questo profilo viene utilizzato finché il dispositivo è connesso a *CarPlay*. Toccare il campo *Profilo CarPlay* nel menu *Impostazioni OsmAnd* e dall'elenco dei [profili abilitati all'uso](../personal/profiles.md) selezionare il profilo con cui verrà attivato *CarPlay*.  
 
-Non è possibile selezionare un profilo direttamente in *CarPlay* dalla schermata del veicolo. Innanzitutto, selezionare il profilo richiesto sul dispositivo e collegarvi il *profilo CarPlay*. È necessario selezionare un profilo che corrisponda al tipo di veicolo, come *Guida*, *Camion*, *Auto*, *Moto* o *Ciclomotore*. **L'app attiverà automaticamente** il *profilo CarPlay* quando viene collegata a un veicolo.
+Non è possibile selezionare un profilo direttamente in *CarPlay* dalla schermata del veicolo. Innanzitutto, selezionare il profilo richiesto sul dispositivo e collegarvi il *profilo CarPlay*. È necessario selezionare un profilo che corrisponda al tipo di veicolo, come *Guida*, *Camion*, *Auto*, *Motocicletta* o *Ciclomotore*. **L'app attiverà automaticamente** il *profilo CarPlay* quando viene collegata a un veicolo.
 
 **Perché è importante selezionare il profilo appropriato per il proprio tipo di veicolo.**
 
@@ -248,7 +250,7 @@ Il widget **Tachimetro** è un elemento di interfaccia integrato che visualizza 
 
 ### Aspetto della mappa (3D) {#map-appearance-3d}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
+![CarPlay](@site/static/img/navigation/auto-car/car_play_3.png)
 
 L'app OsmAnd consente di utilizzare la visualizzazione della mappa 3D sulla *schermata di CarPlay* per visualizzare il percorso e la navigazione.
 
@@ -258,7 +260,7 @@ L'app OsmAnd consente di utilizzare la visualizzazione della mappa 3D sulla *sch
 
 ### Cruscotto multifunzione {#multifunction-dashboard}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_4.png)
+![CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
 
 L'app OsmAnd può essere aperta e utilizzata per navigare in *CarPlay* sullo schermo del sistema multimediale del veicolo contemporaneamente alle app di musica, messaggi o altre notifiche.
 

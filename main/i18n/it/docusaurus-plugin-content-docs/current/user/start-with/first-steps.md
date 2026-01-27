@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title:  Primi Passi
 ---
@@ -642,13 +642,15 @@ Consente di porre domande o fare suggerimenti.
 
 <TabItem value="ios" label="iOS">
 
-![Menu Mappe iOS](@site/static/img/steps/offline_about_ios.png)
+![Menu Mappe iOS](@site/static/img/steps/offline_about_ios_new.png) ![Menu Mappe iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Puoi conoscere il nostro team, vedere la versione attuale dell'app e le novità, e scaricare la versione beta dell'app.
+
+La build è mostrata nel formato OsmAnd Maps &lt;build&gt;, rilasciata &lt;date&gt;. Per condividere rapidamente queste informazioni con il supporto, premi a lungo sulla riga della build per copiare il numero di build insieme alla data di rilascio.
 
 
 ## Privacy {#privacy}
@@ -668,3 +670,4 @@ OsmAnd non ha permessi obbligatori nella versione iOS / Android.
 **Opzionali**:
 
 - **Fotocamera/Registrazione vocale** (*Android*). Utilizzato solo dalle [Note audio/video](../plugins/audio-video-notes.md). Questa funzione è confezionata come un plugin e disabilitata per impostazione predefinita. Consente di creare rapidamente note audio/video relative alla posizione durante un viaggio.
+

@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Mappa
 title: Mappa Globale sul Sito Web
@@ -41,11 +41,11 @@ La mappa web di OsmAnd è una mappa globale basata sui dati di [OpenStreetMap (O
 Per aprirlo, fare clic con il pulsante destro del mouse in un punto qualsiasi della mappa. Questo menu include le seguenti azioni:
 
 - **Dove sono** – Trova rapidamente la tua posizione attuale sulla mappa. Questa funzione mostra gli indirizzi più vicini al punto selezionato sulla mappa.
-- **Apri meteo** – Accedi al [menu Meteo](#weather-on-the-web) per visualizzare i dettagli meteorologici.
-- **Crea nuovo percorso** – Apre lo strumento [*Pianifica un percorso*](../web/planner.md#navigation-route) con la posizione selezionata come punto di partenza o di destinazione.
+- **Apri meteo** – Accedi al [menu Meteo](../web/web-weather.md) per visualizzare i dettagli meteorologici.
+- **Crea nuovo percorso** – Apre lo strumento [*Pianifica un percorso*](../web/web-navigation.md) con la posizione selezionata come punto di partenza o di destinazione.
 - **Aggiungi Preferito** – Consente di creare e salvare un [preferito](../web/web-favorites.md#add--edit-favorite) in qualsiasi punto della mappa per un facile accesso.
-- **Indicazioni da** – Imposta il punto selezionato come [luogo di partenza](../web/planner.md#navigation-route) per la navigazione.
-- **Indicazioni per** – Imposta il punto selezionato come [destinazione per la navigazione](../web/planner.md#navigation-route).
+- **Indicazioni da** – Imposta il punto selezionato come [luogo di partenza](../web/web-navigation.md#start-a-route) per la navigazione.
+- **Indicazioni per** – Imposta il punto selezionato come [destinazione per la navigazione](../web/web-navigation.md#start-a-route).
 - **Copia coordinate** – Copia le coordinate del punto selezionato per uso esterno.
 - **Mostra regioni** – Visualizza le regioni associate alla posizione selezionata.
 

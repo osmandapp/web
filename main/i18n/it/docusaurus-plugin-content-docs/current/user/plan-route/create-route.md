@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Pianifica un percorso
 ---
@@ -25,7 +25,7 @@ Un percorso è costituito da un insieme di segmenti tra punti specificati. I seg
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_overview_andr.png)
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ Un percorso è costituito da un insieme di segmenti tra punti specificati. I seg
 
 Andare a: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan-route-menu-andr.png)
+![Pianifica un percorso android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -93,7 +93,7 @@ Lo strumento *Pianifica un percorso* consente di modificare una traccia GPX esis
 
 ### Misurazione della distanza {#distance-measurement}
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_lines_andr.png)  
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_lines_andr.png)  
 
 *Pianifica un percorso* è un modo semplice e veloce per misurare la distanza tra i punti.
 
@@ -110,13 +110,20 @@ La *Linea retta* è necessaria e verrà utilizzata per le aree non coperte dai d
 
 <InfoAndroidOnly />
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
 
 Se in una traccia esistente mancano i [dati di altitudine](../map/tracks/track-context-menu.md#calculate-missing-elevation), è possibile aggiungerli utilizzando i seguenti strumenti:
 
 - [Usa strade vicine](#attach-track-to-roads). Questa modalità utilizza le mappe offline per trovare le strade più vicine per costruire una traccia, in modo che i dati di altitudine vengano recuperati dalle strade collegate. La geometria della traccia può essere regolata.  
 - [Usa Mappe del terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) La modalità calcola l'altitudine in base ai dati della mappa del terreno (3D). La differenza tra le altitudini registrate dal dispositivo può essere utilizzata per la correzione dell'altitudine.  La geometria della traccia rimane invariata.
 
+:::note
+
+La **correzione dell'altitudine online** (basata su server) è stata rimossa nelle versioni recenti di OsmAnd ed è non disponibile.  
+Per le versioni precedenti, era deprecata e non affidabile.  
+Usa invece le opzioni offline: aggancia alle strade o Mappe del terreno (Pro).  
+
+:::
 
 ### Agganciare la traccia alle strade {#attach-track-to-roads}
 
@@ -130,7 +137,7 @@ Se in una traccia esistente mancano i [dati di altitudine](../map/tracks/track-c
 
 <TabItem value="ios" label="iOS">
 
-![Pianifica un percorso aggancia-strada-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Pianifica un percorso aggancia-strada-iOS](@site/static/img/plan-route/plan_route-snap_ios.png)
 
 </TabItem>
 
@@ -177,7 +184,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Pianifica un percorso Preferiti Android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Pianifica un percorso Preferiti android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Aggiungi*. Accedendo all'**elenco dei punti** sottostante, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico.
 
@@ -211,7 +218,7 @@ I punti aggiunti nell'editor possono essere collegati come una linea retta o com
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Pianifica un percorso android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
 </TabItem>
 
@@ -243,7 +250,7 @@ Un segmento di traccia è un insieme di punti collegati senza **interruzioni**. 
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
 
 </TabItem>
 
@@ -293,7 +300,7 @@ Ogni punto del percorso ha il suo menu contestuale. Mostra il *numero di sequenz
 
 <TabItem value="ios" label="iOS">
 
-![Pianifica un percorso ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Pianifica un percorso iOS-screen](@site/static/img/plan-route/plan-route-routeline-ios.png)
 
 </TabItem>
 
@@ -310,7 +317,7 @@ Utilizzando lo strumento *Pianifica un percorso* e l'opzione [Percorso tra i pun
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
 </TabItem>
 
@@ -348,7 +355,7 @@ Quando si salva una nuova traccia, è possibile selezionare l'opzione traccia **
 
 <TabItem value="ios" label="iOS">
 
-![Pianifica un percorso ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
+![Pianifica un percorso iOS-options](@site/static/img/plan-route/plan_route_menu_options_ios.png)
 
 </TabItem>
 
@@ -372,13 +379,13 @@ Quando si salva una nuova traccia, è possibile selezionare l'opzione traccia **
 
 <TabItem value="android" label="Android">
 
-![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
+![Pianifica un percorso android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pianifica un percorso aggancia-strada-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Pianifica un percorso aggancia-strada-iOS](@site/static/img/plan-route/plan_route-snap_ios.png)
 
 </TabItem>
 

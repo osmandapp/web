@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  Profili (Impostazioni)
 ---
@@ -212,9 +212,9 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
 | **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
-|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
-|          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
+|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 mi / 3281 ft (1000 m) |
+|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 mi / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0.62 mi (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Le unità di lunghezza si applicano ai valori di distanza orizzontale (ad es. distanze di guida/percorso e distanze di manovra in navigazione).|
 |  |  |  |
 | **Unità di altitudine** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Le unità di altitudine si applicano ai valori di altitudine/elevazione e alle metriche correlate (salita/discesa, intervallo di altitudine) nei widget Altitudine, nelle informazioni sul percorso di navigazione e nelle statistiche delle tracce.<br/>Per impostazione predefinita, le unità di altitudine sono sincronizzate con le unità di lunghezza e diventano indipendenti solo dopo che l'utente le modifica manualmente. |
@@ -435,19 +435,23 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_profile,prof
 
 ![Aspetto La mia posizione](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+Le impostazioni di **Aspetto La mia posizione** ti consentono di personalizzare come la tua posizione viene visualizzata sulla mappa, sia quando sei fermo (Riposo) che in movimento (Navigazione). Il movimento viene rilevato dal sistema operativo quando la velocità del dispositivo è **maggiore di zero**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Aspetto La mia posizione](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![Aspetto La mia posizione](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+Le impostazioni di **Aspetto La mia posizione** ti consentono di personalizzare come la tua posizione viene visualizzata sulla mappa, sia quando sei fermo (Riposo) che in movimento (Navigazione). Il movimento viene rilevato dal sistema operativo quando la velocità del dispositivo è **maggiore di zero**.
+
+Utilizza **Dimensione icona** per regolare la dimensione dell'icona della posizione La mia posizione in modo indipendente dalla dimensione del testo dell'app. Puoi impostare dimensioni diverse per le modalità Riposo e Navigazione. La dimensione può essere regolata dal 50% al 300% (50, 75, 100, 125, 150, 200, 250, 300%). Il valore predefinito è 100%. Tocca Dimensione icona per aprire le impostazioni di dimensione, quindi utilizza il cursore o i pulsanti di passo + / – per modificare il valore. Utilizza **Reimposta predefinito** per tornare al 100%.
 
 </TabItem>
 
 </Tabs>
-
-Le impostazioni di **Aspetto La mia posizione** ti consentono di personalizzare come la tua posizione viene visualizzata sulla mappa, sia quando sei fermo che in movimento. Il movimento viene rilevato dal sistema operativo quando la velocità del dispositivo è **maggiore di zero**.
 
 ### Angolo di visuale e Raggio di posizione {#view-angle-and-location-radius}
 

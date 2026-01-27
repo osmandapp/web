@@ -1,5 +1,5 @@
 ---
-source-hash: ece3e6010ee14839c5fe53b38593cda3c765a31a9395566df04b16ce2b73c3b4
+source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Il Pianificatore Web ti offre un modo semplice per lavorare con i tuoi dati personali direttamente nel browser. Dopo aver effettuato l'accesso, puoi aprire le tue tracce, modificarle, crearne di nuove o caricare file dal tuo computer. 
+Il Pianificatore Web ti offre un modo semplice per lavorare con i tuoi dati personali direttamente nel browser. Dopo aver effettuato l'accesso, puoi aprire le tue tracce, regolarle, crearne di nuove o caricare file dal tuo computer. 
 
 Tutte le modifiche vengono sincronizzate automaticamente tramite [OsmAnd Cloud](../personal/osmand-cloud.md), quindi tutto ciò che aggiorni sul web appare sui tuoi dispositivi e tutto ciò che crei sul telefono appare qui. Questo rende facile passare tra le piattaforme e mantenere i tuoi dati coerenti ovunque utilizzi OsmAnd.
 
@@ -33,7 +33,7 @@ Si tratta di una funzionalità a pagamento <ProFeature/>. Per utilizzarla, acced
 La sezione Tracce contiene tutti gli strumenti e le azioni relativi alle tracce. Sono disponibili le seguenti opzioni:
 
 - Mostra tracce da [OsmAnd Cloud](#cloud-tracks).
-- Aggiungi tracce sulla mappa (cartella **Visibile sulla mappa**).
+- Aggiungi tracce sulla mappa (cartella **Visible on map**).
 - Visualizza tutte le informazioni sulle tracce e il grafico
 - Modifica tracce e aggiungile al Cloud.
 - Scarica ed elimina tracce.
@@ -43,11 +43,11 @@ La sezione Tracce contiene tutti gli strumenti e le azioni relativi alle tracce.
 
 ## Visibile sulla mappa {#visible-on-the-map}
 
-La vista **Visibile sulla mappa** elenca tutte le tracce attualmente visualizzate sulla mappa. Qualsiasi traccia può essere aggiunta a questa lista dal pannello principale Tracce utilizzando l'opzione **⋮ → Rendi traccia visibile**.
+La vista **Visible on map** elenca tutte le tracce attualmente visualizzate sulla mappa. Qualsiasi traccia può essere aggiunta a questa lista dal pannello principale Tracce utilizzando l'opzione **⋮ → Make track visible**.
 
-Le tracce visibili sulla mappa sono evidenziate in blu, mentre le tracce attualmente nascoste appaiono in grigio. Un interruttore accanto a ogni traccia ti permette di mostrarla o nasconderla rapidamente. Il pulsante **Nascondi tutto** disattiva tutte le tracce visibili contemporaneamente.
+Le tracce visibili sulla mappa sono evidenziate in blu, mentre le tracce attualmente nascoste appaiono in grigio. Un interruttore accanto a ogni traccia ti permette di mostrarla o nasconderla rapidamente. Il pulsante **Hide all** disattiva tutte le tracce visibili contemporaneamente.
 
-Sotto l'elenco principale, la sezione **Recentemente visibile** mostra le tracce che erano visualizzate sulla mappa in precedenza. Questo rende facile riattivare una traccia senza doverla cercare di nuovo nelle tue cartelle o in OsmAnd Cloud.
+Sotto l'elenco principale, la sezione **Recently visible** mostra le tracce che erano visualizzate sulla mappa in precedenza. Questo rende facile riattivare una traccia senza doverla cercare di nuovo nelle tue cartelle o in OsmAnd Cloud.
 
 ![Visibile sulla mappa](@site/static/img/web/visible_new.png) ![Visibile sulla mappa](@site/static/img/web/visible_new_2.png)
 
@@ -56,7 +56,7 @@ Sotto l'elenco principale, la sezione **Recentemente visibile** mostra le tracce
 
 ![Menu cartella traccia](@site/static/img/web/collection_new.png)
 
-Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Cartella traccia*. Da qui, puoi:
+Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Track Folder*. Da qui, puoi:
 
  - Scarica come OSF.
  - Scarica come Collezione OBF. Esporta la cartella in formato binario OsmAnd, scegliendo un [file OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) o un [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
@@ -77,28 +77,28 @@ Le seguenti funzionalità sono disponibili dopo aver selezionato una traccia clo
 ![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track.png)
 
 - Schermi informativi:
-  - *Informazioni* - visualizza i dati della traccia.
-  - *Elevazione* - grafico dell'elevazione.
-  - *Velocità* - grafico della velocità.
-  - *Pendenza* - grafico della pendenza.
-  - *Impostazioni* - elenco di profili di navigazione per lo strumento *Crea percorso*.
-  - *Curve* - un elenco generato di istruzioni approssimative di svolta basate sulla geometria della traccia.
-  - *Tipo di strada* - divide la traccia in segmenti per classificazione stradale.
-  - *Superficie* - mostra i tipi di superfici della traccia lungo il percorso.
-  - *Fluidità* - visualizza la fluidità del segmento basata sui tag OSM.
+  - *Information* - visualizza i dati della traccia.
+  - *Elevation* - grafico dell'elevazione.
+  - *Speed* - grafico della velocità.
+  - *Slope* - grafico della pendenza.
+  - *Settings* - elenco di profili di navigazione per lo strumento *Create route*.
+  - *Turns* - un elenco generato di istruzioni approssimative di svolta basate sulla geometria della traccia.
+  - *Road type* - divide la traccia in segmenti per classificazione stradale.
+  - *Surface* - mostra i tipi di superfici della traccia lungo il percorso.
+  - *Smoothness* - visualizza la fluidità del segmento basata sui tag OSM.
 
 ![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_turns.png) ![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_details.png)
 
 - Pulsanti di azione:
-  - *Modifica traccia* - aggiungi traccia cloud al locale per la modifica (pulsante _Modifica località_ sul pannello).
-  - *Scarica GPX* - scarica la traccia sul PC.
-  - *Ricalcola* Elevazione (Satellite) - visualizza il grafico dell'elevazione della traccia selezionata.
-  - *Elimina traccia* - elimina la traccia.
-  - *Chiudi traccia* - chiudi la traccia.
+  - *Edit track* - aggiungi traccia cloud al locale per la modifica (pulsante _Edit locality_ sul pannello).
+  - *Download GPX* - scarica la traccia sul PC.
+  - *Recalculate* Elevazione (Satellite) - ricalcola i valori di elevazione per la traccia selezionata e li mostra nel grafico dell'elevazione.
+  - *Delete Track* - elimina la traccia.
+  - *Close track* - chiudi la traccia.
 
 
 ## Articoli correlati {#related-articles}
 
 - [Gestisci tracce](../personal/tracks/manage-tracks.md)
-- [Analizzatore tracce](../web/web-tracks-analyzer.md)
+- [Tracks Analyzer](../web/web-tracks-analyzer.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
