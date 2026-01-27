@@ -1,5 +1,5 @@
 import AppBarWithBtns from '../../frame/components/header/AppBarWithBtns';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
 import EmptyLogin from '../EmptyLogin';
@@ -18,6 +18,96 @@ import { getAccountType } from '../LoginMenu';
 import { FREE_ACCOUNT_SUB_TYPE } from '../../manager/LoginManager';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 import { formatString } from '../../manager/SettingsManager';
+
+const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000;
+
+function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) {
+    const subscriptionItems = subscriptions
+        ? subscriptions.map((item, index) => ({
+              item,
+              index,
+          }))
+        : [];
+
+    const inAppItemsRaw = inAppPurchases
+        ? inAppPurchases.map((item, index) => ({
+              item,
+              index,
+          }))
+        : [];
+
+    // --- SUBSCRIPTIONS ---
+    const activeSubscriptions = []; // valid and not expired
+    const inactiveSubscriptions = []; // expired (<= 1 month) or invalid
+    const oldExpiredSubscriptions = []; // expired > 1 month
+
+    for (const { item, index } of subscriptionItems) {
+        const isValid = item.valid !== 'false';
+        const expireTime = item.expire_time ? Number(item.expire_time) : null;
+        const isExpired = expireTime !== null && expireTime < now;
+        const isOldExpired = isExpired && now - expireTime > ONE_MONTH_MS;
+
+        if (isOldExpired) {
+            oldExpiredSubscriptions.push({ item, index, expireTime, isValid });
+            continue;
+        }
+
+        if (!isExpired && isValid) {
+            activeSubscriptions.push({ item, index, expireTime, isValid });
+        } else {
+            inactiveSubscriptions.push({ item, index, expireTime, isValid });
+        }
+    }
+
+    const sortByExpireTimeDesc = (a, b) => {
+        const aTime = a.expireTime ?? 0;
+        const bTime = b.expireTime ?? 0;
+        return bTime - aTime;
+    };
+
+    activeSubscriptions.sort(sortByExpireTimeDesc);
+    inactiveSubscriptions.sort(sortByExpireTimeDesc);
+
+    // --- IN‑APP PURCHASES ---
+    const activeInApps = []; // valid
+    const inactiveInApps = []; // non-valid
+
+    for (const { item, index } of inAppItemsRaw) {
+        const isValid = item.valid !== 'false';
+        const ts = item.purchaseTime ? Number(item.purchaseTime) : 0;
+        const target = isValid ? activeInApps : inactiveInApps;
+        target.push({ item, index, ts, isValid });
+    }
+
+    const sortByPurchaseTimeDesc = (a, b) => b.ts - a.ts;
+
+    activeInApps.sort(sortByPurchaseTimeDesc);
+    inactiveInApps.sort(sortByPurchaseTimeDesc);
+
+    const hasActiveOrders = activeSubscriptions.length + activeInApps.length > 0;
+
+    // If there are no active subscriptions/in‑apps, show the last expired subscription (if any) at the top of inactive
+    if (!hasActiveOrders && oldExpiredSubscriptions.length > 0) {
+        const lastExpired = oldExpiredSubscriptions.reduce((latest, current) => {
+            const latestExpire = Number(latest.expireTime) || 0;
+            const currentExpire = Number(current.expireTime) || 0;
+            return currentExpire > latestExpire ? current : latest;
+        }, oldExpiredSubscriptions[0]);
+
+        inactiveSubscriptions.unshift(lastExpired);
+    }
+
+    const hasPurchases =
+        activeSubscriptions.length + inactiveSubscriptions.length + activeInApps.length + inactiveInApps.length > 0;
+
+    return {
+        activeSubscriptions,
+        inactiveSubscriptions,
+        activeInApps,
+        inactiveInApps,
+        hasPurchases,
+    };
+}
 
 export default function PurchasesMenu() {
     const ltx = useContext(LoginContext);
@@ -44,9 +134,10 @@ export default function PurchasesMenu() {
     const subscriptions = ltx.accountInfo?.subscriptions && JSON.parse(ltx.accountInfo.subscriptions);
     const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);
 
-    const hasPurchases = () => {
-        return subscriptions?.length > 0 || inAppPurchases?.length > 0;
-    };
+    const { activeSubscriptions, inactiveSubscriptions, activeInApps, inactiveInApps, hasPurchases } = useMemo(
+        () => buildDisplayPurchases(subscriptions, inAppPurchases),
+        [subscriptions, inAppPurchases]
+    );
 
     function clickOnSubscription(index) {
         setSelectedPurchase({
@@ -101,36 +192,52 @@ export default function PurchasesMenu() {
                         <EmptyLogin />
                     ) : (
                         <Box sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}>
-                            {subscriptions && inAppPurchases && !hasPurchases() && !isFreeAcc && (
-                                <ErrorEmptyPurchases />
-                            )}
+                            {subscriptions && inAppPurchases && !hasPurchases && !isFreeAcc && <ErrorEmptyPurchases />}
                             {isFreeAcc && (
                                 <FreeAccItem regTime={ltx.accountInfo?.regtime} onClick={() => clickOnFreeAcc()} />
                             )}
-                            {hasPurchases() && (
+                            {hasPurchases && (
                                 <>
-                                    {subscriptions?.length > 0 &&
-                                        subscriptions.map((item, index) => (
-                                            <SubscriptionItem
-                                                id={item.name}
-                                                key={index + item.name}
-                                                name={item.name}
-                                                type={item.type}
-                                                state={getStatus(item.state)}
-                                                billingDate={item.billingDate}
-                                                onClick={() => clickOnSubscription(index)}
-                                            />
-                                        ))}
-                                    {inAppPurchases?.length > 0 &&
-                                        inAppPurchases.map((item, index) => (
-                                            <InAppItem
-                                                id={item.name}
-                                                key={index + item.name}
-                                                name={item.name}
-                                                purchaseTime={item.purchaseTime}
-                                                onClick={() => clickOnInApp(index)}
-                                            />
-                                        ))}
+                                    {activeSubscriptions.map(({ item, index }) => (
+                                        <SubscriptionItem
+                                            id={item.name}
+                                            key={`active-sub-${index}-${item.name}`}
+                                            name={item.name}
+                                            type={item.type}
+                                            state={getStatus(item.state)}
+                                            billingDate={item.billingDate}
+                                            onClick={() => clickOnSubscription(index)}
+                                        />
+                                    ))}
+                                    {activeInApps.map(({ item, index }) => (
+                                        <InAppItem
+                                            id={item.name}
+                                            key={`active-inapp-${index}-${item.name}`}
+                                            name={item.name}
+                                            purchaseTime={item.purchaseTime}
+                                            onClick={() => clickOnInApp(index)}
+                                        />
+                                    ))}
+                                    {inactiveSubscriptions.map(({ item, index }) => (
+                                        <SubscriptionItem
+                                            id={item.name}
+                                            key={`inactive-sub-${index}-${item.name}`}
+                                            name={item.name}
+                                            type={item.type}
+                                            state={getStatus(item.state)}
+                                            billingDate={item.billingDate}
+                                            onClick={() => clickOnSubscription(index)}
+                                        />
+                                    ))}
+                                    {inactiveInApps.map(({ item, index }) => (
+                                        <InAppItem
+                                            id={item.name}
+                                            key={`inactive-inapp-${index}-${item.name}`}
+                                            name={item.name}
+                                            purchaseTime={item.purchaseTime}
+                                            onClick={() => clickOnInApp(index)}
+                                        />
+                                    ))}
                                 </>
                             )}
                             <ThickDivider mt={'0px'} mb={'0px'} />
