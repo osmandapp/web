@@ -1,5 +1,5 @@
 ---
-source-hash: ece3e6010ee14839c5fe53b38593cda3c765a31a9395566df04b16ce2b73c3b4
+source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Web Planner oferuje prosty sposób pracy z Twoimi osobistymi danymi bezpośrednio w przeglądarce. Po zalogowaniu możesz otworzyć swoje trasy, dostosować je, utworzyć nowe lub wgrać pliki z komputera.
+Web Planner oferuje prosty sposób pracy z Twoimi osobistymi danymi bezpośrednio w przeglądarce. Po zalogowaniu możesz otworzyć swoje trasy, dostosować je, utworzyć nowe lub wgrać pliki z komputera. 
 
 Wszystkie zmiany są automatycznie synchronizowane za pośrednictwem [OsmAnd Cloud](../personal/osmand-cloud.md), więc wszystko, co zaktualizujesz w sieci, pojawi się na Twoich urządzeniach, a wszystko, co utworzysz na telefonie, pojawi się tutaj. Ułatwia to przechodzenie między platformami i utrzymywanie spójności danych, gdziekolwiek używasz OsmAnd.
 
@@ -34,8 +34,8 @@ Sekcja Trasy zawiera wszystkie narzędzia i akcje związane z trasami. Dostępne
 
 - Wyświetlanie tras z [OsmAnd Cloud](#cloud-tracks).
 - Dodawanie tras na mapie (folder **Widoczne na mapie**).
-- Przeglądanie informacji o wszystkich trasach i wykresów
-- Modyfikowanie tras i dodawanie ich do Cloud.
+- Przeglądanie informacji o wszystkich trasach i wykresach
+- Modyfikowanie tras i dodawanie ich do chmury.
 - Pobieranie i usuwanie tras.
 - Tworzenie nowych folderów lub usuwanie ich.
 - Pobieranie folderów jako kolekcja OSF lub OBF.
@@ -80,11 +80,11 @@ Po wybraniu trasy w chmurze dostępne są następujące funkcje:
   - *Informacje* - wyświetlanie danych trasy.
   - *Wysokość* - wykres wysokości.
   - *Prędkość* - wykres prędkości.
-  - *Spadki* - wykres nachylenia.
+  - *Nachylenie* - wykres nachylenia.
   - *Ustawienia* - lista profili nawigacyjnych dla narzędzia *Utwórz trasę*.
   - *Zakręty* - wygenerowana lista przybliżonych instrukcji skrętów na podstawie geometrii trasy.
   - *Typ drogi* - dzieli trasę na segmenty według klasyfikacji dróg.
-  - *Nawierzchnia* - pokazuje typy nawierzchni trasy wzdłuż маршруtu.
+  - *Nawierzchnia* - pokazuje typy nawierzchni trasy wzdłuż trasy.
   - *Gładkość* - wyświetla gładkość segmentów na podstawie tagów OSM.
 
 ![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_turns.png) ![Edycja GPX w chmurze OsmAnd Web](@site/static/img/web/cloud_track_details.png)
@@ -92,7 +92,7 @@ Po wybraniu trasy w chmurze dostępne są następujące funkcje:
 - Przyciski akcji:
   - *Edytuj trasę* - dodawanie trasy z chmury do lokalnej w celu edycji (przycisk _Edytuj lokalnie_ na panelu).
   - *Pobierz GPX* - pobiera trasę na komputer.
-  - *Przelicz* Wysokość (Satelita) - wyświetla wykres wysokości wybranej trasy.
+  - *Przelicz* Wysokość (Satelita) - przelicza wartości wysokości dla wybranej trasy i wyświetla je na wykresie wysokości.
   - *Usuń trasę* - usuwa trasę.
   - *Zamknij trasę* - zamyka trasę.
 

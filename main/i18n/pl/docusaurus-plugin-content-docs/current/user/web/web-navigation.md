@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -45,6 +45,8 @@ Zamień Start i Cel — zamienia Start i Cel, zachowując punkty pośrednie bez 
 
 Na górze panelu Trasy możesz wybrać profil routingu dla swojej trasy. Zestaw powszechnie używanych profili jest pokazany jako cztery ikony. Aby uzyskać dostęp do więcej opcji, otwórz menu z trzema kropkami obok ikon profili. Rozwija pełną listę dostępnych profili.
 
+Profile routingu w Planerze internetowym używają tych samych zasad i ustawień routingu co aplikacja mobilna OsmAnd. Szczegóły na temat sposobu obliczania tras i działania parametrów routingu znajdziesz w [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
+
 Gdy przełączysz profil, Nawigacja aktualizuje trasę, aby dopasować ją do wybranego trybu podróży.
 
 ![Nawigacja w sieci](@site/static/img/web/navigation_profile.png)
@@ -52,7 +54,7 @@ Gdy przełączysz profil, Nawigacja aktualizuje trasę, aby dopasować ją do wy
 
 ## Ustawienia nawigacji {#navigation-settings}
 
-Aby dostosować sposób obliczania tras, otwórz Ustawienia za pomocą ikony koła zębatego w panelu Trasy. Ustawienia są pogrupowane w sekcje, które możesz rozwijać/zmniejszać. Zestaw sekcji i opcji zależy od wybranego profilu routingu, więc zobaczysz różne parametry dla różnych trybów podróży.
+Aby dostosować sposób obliczania tras, otwórz Ustawienia za pomocą ikony koła zębatego w panelu Trasy (ustawienia nawigacji w aplikacji mobilnej OsmAnd znajdziesz [tutaj](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). Ustawienia są pogrupowane w sekcje, które możesz rozwijać/zmniejszać. Zestaw sekcji i opcji zależy od wybranego profilu routingu, więc zobaczysz różne parametry dla różnych trybów podróży.
 
 Typowe sekcje obejmują:
 
@@ -66,7 +68,7 @@ Typowe sekcje obejmują:
 
 ## Dołączanie śladu {#attaching-track}
 
-Blok **Dołącz do dróg** umożliwia użycie istniejącego śladu GPX jako podstawy do nawigacji. OsmAnd Web dopasowuje ślad do pobliskich dróg, aby zapewnić wskazówki skręt po skręcie.
+Blok **[Dołącz do dróg](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** umożliwia użycie istniejącego śladu GPX jako podstawy do nawigacji. OsmAnd Web dopasowuje ślad do pobliskich dróg, aby zapewnić wskazówki skręt po skręcie.
 
 Gdy klikniesz Wybierz ślad, przeglądarka otwiera selektor plików, w którym możesz wybrać plik .gpx z komputera. Po wybraniu śladu:
 - Ślad jest wyświetlany na mapie i używany do obliczania trasy.
@@ -86,7 +88,7 @@ Info podsumowuje trasę i dane wysokościowe:
 - **Trasa** — odległość i czas.
 - **Podjazdy/Zjazdy** — całkowity wzniesienie i zejście.
 - **Wysokość (min/śred/max)** — statystyki wysokości dla trasy.
-- **Wysokość (Satelita)** — Przelicz ponownie, aby odbudować wysokość za pomocą danych satelitarnych (jeśli dostępne).
+- **Wysokość (Satelita)** — przelicza dane wysokościowe śladu za pomocą danych terenu (DEM) i aktualizuje wykres wysokości.
 
 Poniżej podsumowania wykres wysokości pomaga zbadać profil trasy. Możesz przełączać Wysokość i Spadki oraz używać suwaka pod wykresem, aby skupić się na określonej części trasy.
 
@@ -98,17 +100,25 @@ Możesz dostosować trasę bezpośrednio na mapie, przeciągając znaczniki tras
 - OsmAnd Web przelicza trasę, aby przechodziła przez nową pozycję.
 - Przeniesiony znacznik jest konwertowany na nowy punkt pośredni.
 - Nowy punkt pośredni pojawia się w panelu Trasy jako dodatkowy punkt wstawiony powyżej Celu, a podsumowanie trasy jest odpowiednio aktualizowane.
-- Możesz zarządzać dodanym punktem via w taki sam sposób jak innymi [punktami pośrednimi](#manage-route-points).
+- Możesz zarządzać dodanym punktem pośrednim w taki sam sposób jak innymi [punktami pośrednimi](#manage-route-points).
 
 ![Nawigacja w sieci](@site/static/img/web/navigation_on_map.png)
 
 ### Pobieranie i zapisywanie {#download-and-save}
 
 Użyj *Pobierz*, aby wyeksportować trasę jako ślad. Okno dialogowe pobierania oferuje dwie opcje:
-Pełne dane śladu — zawiera pełne dane, w tym instrukcje nawigacyjne.
-Uproszczony ślad — lżejsza wersja, bardziej odpowiednia do użycia z innymi aplikacjami.
+**Pełne dane śladu** — zawiera pełne dane, w tym instrukcje nawigacyjne.
+**[Uproszczony ślad](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — lżejsza wersja, bardziej odpowiednia do użycia z innymi aplikacjami.
+
+Jeśli planujesz otworzyć GPX w aplikacjach zewnętrznych, wybierz Uproszczony ślad dla lepszej kompatybilności. Pomaga to uniknąć sytuacji, w których inna aplikacja może wyświetlić niepoprawny odcinek po imporcie.
+
+Czym się różnią:
+- Pełne dane śladu mogą zawierać informacje o trasie/nawigacji oprócz geometrii śladu (przydatne, jeśli chcesz zachować instrukcje nawigacyjne lub ponownie edytować trasę w OsmAnd).
+- Uproszczony ślad eksportuje czystszy GPX przeznaczony dla innych aplikacji, usuwając dane o trasie/nawigacji i pozostawiając tylko kształt śladu. Punkty trasy są zachowywane podczas eksportu uproszczonego śladu.
 
 Możesz zapisać trasę jako ślad za pomocą *Zapisz w chmurze / Prześlij do OsmAnd Cloud*. Otwiera to okno dialogowe, w którym możesz potwierdzić zapisanie w śladach chmurowych, edytować Nazwę, opcjonalnie wybrać Folder, a następnie Zapisz lub Anuluj.
+
+![Nawigacja w sieci](@site/static/img/web/download_options.png)
 
 ### Udostępnianie trasy {#share-a-route}
 
@@ -119,5 +129,6 @@ Aby udostępnić trasę, skopiuj URL. Przykład: [https://osmand.net/map/?start=
 
 - [Przygotowanie trasy](../navigation/setup/route-navigation.md)
 - [Ustawienia nawigacji](../navigation/guidance/navigation-settings.md)
+- [Informacje o routingu w OsmAnd](../navigation/routing/osmand-routing.md)
 - [Parametry pojazdu](../navigation/guidance/vehicle-parameters.md)
 - [Planuj trasę](../web/planner.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Weather
 title: Weather on the Web
@@ -17,26 +17,26 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Przegląd {#overview}
+## Overview {#overview}
 
 Funkcja Pogody na mapie OsmAnd Web wyświetla aktualne warunki pogodowe i dane prognozowane bezpośrednio na mapie. Zapewnia dostęp do informacji pogodowych z wielu źródeł prognoz, obsługuje regulację czasu i pozwala na przeglądanie warstw pogodowych, takich jak temperatura, wiatr, ciśnienie, zachmurzenie i opady.
 
 Dane pogodowe są dostępne bez logowania. Widok Pogody można otworzyć bezpośrednio z interfejsu mapy, klikając ikonę parasola w panelu menu lub klikając prawym przyciskiem myszy na mapie i wybierając Otwórz pogodę z menu kontekstowego.
 
 
-## Źródło danych {#data-source}
+## Data Source {#data-source}
 
 OsmAnd Web dostarcza informacje pogodowe z dwóch źródeł prognoz:
 
-- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(System Prognozy Globalnej)** – domyślne źródło obsługiwane przez NOAA/NWS. Zapewnia pełne dane pogodowe, w tym warstwy temperatury, ciśnienia, wilgotności, wiatru i chmur.  
-- [**ECMWF**](https://www.ecmwf.int/) **(Europejskie Centrum Prognoz Średnioterminowych)** – alternatywne źródło prognoz. Oferuje wysokiej jakości dane temperatury, opadów i ciśnienia, ale nie dostarcza informacji o wietrze ani chmurach.  
+- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – domyślne źródło obsługiwane przez NOAA/NWS. Zapewnia pełne dane pogodowe, w tym warstwy temperatury, ciśnienia, wilgotności, wiatru i chmur.  
+- [**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – alternatywne źródło prognoz. Oferuje wysokiej jakości dane temperatury, opadów i ciśnienia, ale nie dostarcza informacji o wietrze ani chmurach.  
 
 Aby przełączać się między nimi, kliknij przycisk **parasola** w menu Pogody.
 
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_source.png)
 
 
-## Menu Pogody {#weather-menu}
+## Weather Menu {#weather-menu}
 
 Menu **Pogody** wyświetla aktualne warunki pogodowe i dane prognozowane dla wybranego miejsca na mapie. Łączy widok podsumowujący, kontrolki czasu i warstwy pogodowe w jednym panelu.
 
@@ -58,7 +58,7 @@ Na dole panelu wyświetlana jest informacja o czasie generowania danych pogodowy
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_menu.png)
 
 
-## Warstwy pogodowe {#weather-layers}
+## Weather Layers {#weather-layers}
 
 Warstwy pogodowe pozwalają na wizualizację danych prognozowanych bezpośrednio na mapie jako nakładka. Pomagają szybko ocenić warunki pogodowe na szerszym obszarze zamiast przeglądać wartości tylko dla jednego punktu.
 
@@ -76,7 +76,7 @@ Wszystkie warstwy pogodowe są zsynchronizowane z wybraną datą i czasem w menu
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_layers.png)
 
 
-## Widok prognozy {#forecast-view}
+## Forecast View {#forecast-view}
 
 Prognozy pogody są dostępne na maksymalnie 7 dni do przodu. Wartości prognozowane są obliczane w 3-godzinnych interwałach, co pozwala na badanie krótkoterminowych zmian w ciągu każdego dnia.
 
@@ -89,7 +89,7 @@ Możesz przełączać się między różnymi parametrami pogodowymi za pomocą i
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_forecast.png)
 
 
-## Powiązany artykuł {#related-article}
+## Related Articles {#related-articles}
 
 - [Pogoda](../plugins/weather.md)
 - [Wstęp](../web/web-overview.md)

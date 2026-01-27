@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title:  Pogoda
 ---
@@ -14,6 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 ## Przegląd {#overview}
 
@@ -170,7 +171,7 @@ W wersji OsmAnd na iOS można zmienić jednostki miary i poziom przezroczystośc
 
 ### Warstwy pogodowe {#weather-layers}
 
-Wszystkie dane pogodowe są prezentowane jako oddzielne warstwy mapy. Aby zobaczyć warstwy pogodowe na mapie, należy oddalić widok, są one dostępne tylko w skalach powiększenia 2-12. Warstwy pogodowe używają [palet pogodowych](../personal/color-palette-schemes.md#weather) do kolorowania mapy, palety te można w razie potrzeby [zmienić](../personal/color-palette-schemes.md#edit-palette-file).
+Wszystkie dane pogodowe są prezentowane jako oddzielne warstwy mapy. Aby zobaczyć warstwy pogodowe na mapie, należy oddalić widok, są one dostępne tylko w skalach powiększenia 2-12. Warstwy pogodowe używają [palet pogodowych](../personal/color-palette-schemes.md#weather) do kolorowania mapy, palety te można [zmienić](../personal/color-palette-schemes.md#palette-modify) w razie potrzeby.
 
 | |  
 |------------|  
@@ -206,7 +207,7 @@ Wszystkie dane pogodowe są prezentowane jako oddzielne warstwy mapy. Aby zobacz
 
 </Tabs>
 
-Aby uzyskać kompleksowe informacje o pogodzie, można używać warstw mapy osobno lub łatwo je łączyć. Do warstwy pogodowej można również dodać izolinie jednego określonego typu. Wystarczy dotknąć przycisku *Warstwy* lub *Izolinie* na ekranie.
+Aby uzyskać kompleksowe informacje o pogodzie, można używać warstw mapy osobno lub łatwo je łączyć. Izolinie jednego określonego typu można również dodać do warstwy pogodowej. Wystarczy dotknąć przycisku *Warstwy* lub *Izolinie* na ekranie.
 
 
 ### Szybkie działania dla warstw {#quick-actions-for-layers}

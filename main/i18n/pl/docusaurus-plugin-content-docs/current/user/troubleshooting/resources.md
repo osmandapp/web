@@ -1,5 +1,5 @@
 ---
-source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
+source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -27,16 +27,16 @@ Aby nawiązać kontakt z innymi użytkownikami OsmAnd, zadawać pytania i dzieli
 
 | Platforma | Nazwa grupy | Opis | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | Społeczność użytkowników OsmAnd (*English*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+| Facebook | OsmAnd users community (*English*)  |  This is a group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | Grupa użytkowników LC8 Rally OsmAnd (*English*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
 |  Facebook | Osmand Italian's friends (*Italian*)  |  To exchange experiences with the OsmAnd usage. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
 |  Google Groups | Osmand (*English*)  | Grupa, w której użytkownicy dzielą się wskazówkami, odpowiadają na pytania i omawiają funkcjonalności OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
-|  Reddit | OsmAnd - dyskusja i wsparcie  | Społeczność Reddit dla użytkowników OsmAnd. Zadawaj pytania, dziel się doświadczeniami lub pochwal się niestandardowymi stylami map. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | Kanał informacyjny OsmAnd (*English*)  | Oficjalna grupa OsmAnd z ogłoszeniami i aktualizacjami bezpośrednio od deweloperów. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  X (Twitter) | Kanał informacyjny OsmAnd  | Oficjalna grupa OsmAnd do dyskusji na żywo, ogłoszeń i aktualizacji. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
-|  Instagram | Kanał informacyjny OsmAnd | Społeczność, w której można rozmawiać, dzielić się wskazówkami i uzyskać pomoc dotyczącą funkcji OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
+|  Reddit | OsmAnd - discussion and support  | Społeczność Reddit dla użytkowników OsmAnd. Zadawaj pytania, dziel się doświadczeniami lub pochwal się niestandardowymi stylami map. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
+|  Telegram | OsmAnd News channel (*English*)  | Oficjalna grupa OsmAnd z ogłoszeniami i aktualizacjami bezpośrednio od deweloperów. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  X (Twitter) | OsmAnd news channel  | Oficjalna grupa OsmAnd do dyskusji na żywo, ogłoszeń i aktualizacji. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
+|  Instagram | OsmAnd news channel | Społeczność, w której można rozmawiać, dzielić się wskazówkami i uzyskać pomoc dotyczącą funkcji OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## Konwertery {#converters}
@@ -51,7 +51,7 @@ Poniższa lista zawiera konwertery dla różnych typów danych obsługiwanych pr
 | GeoPDF/Tiff, ozi do OsmAnd | Konwersja formatów map geoPDF, geoTiff i ozi do OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
 | GPX do KML | Narzędzie do konwersji plików *GPX* z OsmAnd do formatu *KML* z zachowaniem ikon. | [GitHub](https://github.com/mariush444/osmand2kml) |
 | iOverlander GPX do OsmAnd | Skrypt Pythona do konwersji wyeksportowanych plików *GPX* iOverlander do OsmAnd z ikonami. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Mapa topo do druku| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania drukowalnej mapy topograficznej za pomocą zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| Topo map into printable| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania drukowalnej mapy topograficznej za pomocą zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
 ## Niestandardowe zasoby {#custom-resources}
 
@@ -87,7 +87,7 @@ Poniżej znajduje się lista [niestandardowych wtyczek](../plugins/custom.md) op
 | Model 3D  | Ten pakiet dodaje opcję modelu 3D dla profili. Dostosuj wygląd za pomocą menu: [*Menu OsmAnd → Ustawienia → Profil → Wygląd profilu → wybierz 4-5 ikonę ikony pozycji*](../personal/profiles.md#profile-appearance). | [Model 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | Kolekcja map online AnyGIS | Kolekcja różnych źródeł map online, w tym map satelitarnych, turystycznych i historycznych.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Legenda mapy  | Ten pakiet dodaje legendę mapy offline (wersja 1.01; 03-04-2024), dostępną poprzez *Menu → Moje miejsca → Ulubione → Legenda mapy*. Legenda mapy jest również dostępna w [tej lokalizacji](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Legenda mapy](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 Mapy USA | Kolekcja map USA zawierająca [Tereny publiczne (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), [Szlaki i drogi USFS](https://www.fs.usda.gov/visit/maps), [Biuro Gospodarki Gruntami (BLM)](https://www.blm.gov) oraz [Dane o działkach (grunty prywatne)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) dla niektórych stanów. Wszystkie mapy gruntów publicznych i prywatnych zostały podzielone na kategorie według stanów. Dane map BLM i USFS zostały podzielone na *Drogi i szlaki* oraz *POI* dla całego terytorium Stanów Zjednoczonych. Mapy są w formacie OBF dla OsmAnd. Więcej informacji na [Reddicie](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [Mapy USA](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇺🇸 Mapy USA | Kolekcja specjalistycznych map USA, przekonwertowana do formatu OBF OsmAnd, zawierająca<ul><li>[Tereny publiczne i obszary chronione USGS (PAD-US 3.0), według stanów](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Szlaki i drogi USFS, na terenie całego kraju](https://www.fs.usda.gov/visit/maps),</li><li>[Drogi i szlaki BLM, na terenie całego kraju](https://www.blm.gov/maps),</li><li>[POI aktywności rekreacyjnych BLM, na terenie całego kraju](https://www.blm.gov/maps),</li><li>[Grunty prywatne (dane działek), dla niektórych stanów](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Więcej informacji na [Reddicie](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [Mapy USA](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
 | 🇵🇱 Mapa UMP Polski | [UMP](https://ump.waw.pl/) obejmuje większość Polski i jest stale rozwijana. Przez długi czas używano nazwy UMP-pcPL (mapą prawie całej Polski). | [Mapa UMP Polski](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Odkrywca outdoorowy  |  Ta wtyczka zawiera lekki styl mapy, który poprawia widoczność nieutwardzonych dróg i szlaków w OsmAnd.  | [Odkrywca outdoorowy](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
@@ -130,7 +130,7 @@ Poniższa tabela zawiera listę różnych źródeł map online przygotowanych pr
 | RainViewer | Mapa [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) z różnymi [schematami kolorów](https://www.rainviewer.com/api/color-schemes.html) |[Dane RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | Zestaw map Austrii oparty na [basemap.at WMTS](https://basemap.at/en/) stworzony przez mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | Mapy OsmAnd IGN (FR) | Zestaw map dostarczony przez francuski instytut geograficzny IGN. | [Mapy OsmAnd IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
-| Kolekcja map AnyGis | Strona zawiera kolekcję map na wakacje na wsi, w tym mapy turystyczne, górskie, morskie i wiele innych. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| Kolekcja map AnyGis | Strona zawiera kolekcję map na wakacje w kraju, w tym mapy turystyczne, górskie, morskie i wiele innych. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
 
 
 <!-- Hardware

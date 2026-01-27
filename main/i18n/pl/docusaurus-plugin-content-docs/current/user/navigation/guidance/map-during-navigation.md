@@ -1,5 +1,5 @@
 ---
-source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
+source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
 sidebar_position: 2
 title: Ekran mapy podczas nawigacji
 ---
@@ -50,9 +50,9 @@ Podczas nawigacji wygląd mapy dostosowuje się do wybranego profilu nawigacji. 
 | Parametr | Opis | Uwaga |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Czas, przez który widok mapy jest zsynchronizowany z bieżącą pozycją po przesunięciu. | *Wartość:* <br /> Nigdy, 5 s, 10 s, 15 s, 20 s, 25 s, 30 s, 45 s, 60 s, 50 s. |
-| *<Translate android="true" ids="auto_zoom_map"/>*  | Automatycznie skaluj mapę w zależności od prędkości, o ile mapa jest zsynchronizowana z bieżącą pozycją. | *Wartość:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - powiększenie ręczne. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - powiększenie wynosi 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - powiększenie wynosi 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - powiększenie wynosi 5 m. |
-| *Automatyczne powiększenie kąta 3D* | Ustawia nachylenie mapy podczas przełączania na widok 3D w trakcie nawigacji. Wyższy kąt sprawia, że horyzont wydaje się dalej, dając większą widoczność do przodu. | Jest stosowane tylko wtedy, gdy włączone jest automatyczne powiększenie. Wartości: 20°, 25°, 30°, 35°, 40°. Domyślnie: 25°.  |
-| *Podgląd następnego skrętu* | Automatycznie obraca mapę nieco wcześniej, aby pokazać następny skręt lub manewr podczas nawigacji. Pomaga antycypować nadchodzące działania.  | Włączone domyślnie. Jeśli eksportujesz i ponownie importujesz profil, upewnij się, że ta opcja jest zweryfikowana, ponieważ w niektórych wcześniejszych wersjach mogła zostać zresetowana do „włączonej”.   |
+| *<Translate android="true" ids="auto_zoom_map"/>*  | Automatycznie skaluj mapę w zależności od prędkości, o ile mapa jest zsynchronizowana z bieżącą pozycją. | *Wartość:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - powiększenie ręczne. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - powiększenie wynosi 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - powiększenie wynosi 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - powiększenie wynosi 5 m. <br /> Zmiany automatycznego powiększenia mogą być animowane (Płynne) lub oparte na krokach (Dyskretne), w zależności od [ustawień deweloperskich](navigation-settings.md#development-settings). W trybie Płynnym zmiany powiększenia wykorzystują kontrolowaną animację (około 0,1 powiększenia/sekundę). Automatyczne powiększenie nie dostosowuje powiększenia przy bardzo niskich prędkościach (poniżej ~7 km/h). Jeśli wymagana zmiana powiększenia zajęłaby mniej niż ~1,5 sekundy, animacja nie jest uruchamiana. <br /> Automatyczne powiększenie ma na celu utrzymanie nadchodzącego manewru w stabilnym obszarze skupienia na ekranie, tak aby widoczna odległość do przodu pozostała spójna podczas jazdy. |
+| *Automatyczne powiększenie kąta 3D* | Ustawia nachylenie mapy podczas przełączania na widok 3D w trakcie nawigacji. Wyższy kąt sprawia, że horyzont wydaje się dalej, dając większą widoczność do przodu. | Jest stosowane tylko wtedy, gdy włączone jest automatyczne powiększenie. Wartości: 20°, 25°, 30°, 35°, 40°. Domyślnie: 25°. <br /> Podczas zbliżania się do manewru/skrzyżowania aplikacja może stopniowo zmniejszać nachylenie 3D w kierunku widoku 2D, aby następny skręt pozostał czytelny. |
+| *Podgląd następnego skrętu* | Automatycznie obraca mapę nieco wcześniej, aby pokazać następny skręt lub manewr podczas nawigacji. Pomaga antycypować nadchodzące działania.  | Włączone domyślnie. Jeśli eksportujesz i ponownie importujesz profil, upewnij się, że ta opcja jest zweryfikowana, ponieważ w niektórych wcześniejszych wersjach mogła zostać zresetowana do „włączonej”.  <br /> Obrót/podgląd jest wyzwalany, gdy punkt następnego manewru znajdzie się w obszarze skupienia (mapa zaczyna „patrzeć” na skręt, gdy staje się on istotny). |
 | *<Translate android="true" ids="snap_to_road"/>*  | Ikona bieżącej pozycji będzie powiązana z bieżącą trasą nawigacji.  | Można wyłączyć tę opcję, ale wszystkie opcje związane z drogą, takie jak wyświetlanie pasów ruchu, również nie będą widoczne podczas nawigacji.  |
 
 
@@ -182,7 +182,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 Możesz wybrać wygląd linii trasy według stylu lub ręcznie wybrać kolor, szerokość i przezroczystość linii. Ponadto można wybrać, czy na linii mają być wyświetlane strzałki skrętów i strzałki kierunku.
 
-**Zaawansowane**: ustawienie Dostosuj linię trasy pozwala dostosować wygląd linii trasy, aby wyświetlać zmiany wysokości, znaczne podjazdy lub zjazdy, lód na drodze, drogi nieutwardzone, autostrady i inne możliwe przeszkody. Możesz także wybrać lub utworzyć niestandardowe [schematy kolorów](../../personal/color-palette-schemes.md#routes), które zostaną zastosowane do linii trasy.
+**Zaawansowane**: ustawienie Dostosuj linię trasy pozwala dostosować wygląd linii trasy, aby wyświetlać zmiany wysokości, znaczne podjazdy lub zjazdy, lód na drodze, drogi nieutwardzone, autostrady i inne możliwe przeszkody. Możesz także wybrać lub utworzyć niestandardowe [schematy kolorów](../../personal/color-palette-schemes.md#tracks-routes), które zostaną zastosowane do linii trasy.
 
 
 :::note

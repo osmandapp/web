@@ -1,5 +1,5 @@
 ---
-source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
 sidebar_position: 9
 sidebar_label:  Planuj trasę
 title: Planowanie trasy na stronie internetowej
@@ -16,7 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 
 ## Overview {#overview}
@@ -57,72 +59,83 @@ To create a navigation route, follow these steps:
 -->
 
 
-## Create Track and Local Files {#create-track-and-local-files}
+## Create New Route {#create-new-route}
 
-Narzędzie [**Planuj trasę**](../plan-route/create-route.md) w OsmAnd Web pozwala na tworzenie i edytowanie śladów w podobny sposób jak w aplikacji mobilnej. Oto jak można tworzyć i zarządzać śladami:
+Istnieją dwa sposoby na rozpoczęcie nowej trasy w narzędziu Planuj trasę. Pierwsza opcja to bezpośrednio z mapy: kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie i wybierz **Utwórz nową trasę**. Druga opcja to z panelu po lewej stronie: kliknij przycisk **Utwórz ślad**.
 
+Po utworzeniu trasy dodawaj punkty bezpośrednio na mapie. Każdy klik umieszcza następny punkt, a planista buduje trasę między punktami.
 
-***Tworzenie nowej trasy:***
+![Tworzenie nowej trasy w OsmAnd Web](@site/static/img/web/create_new_route.png)
 
-- *Kliknij prawym przyciskiem myszy* na mapie i wybierz **Utwórz nową trasę**.
-- Alternatywnie, użyj przycisku **Utwórz ślad** w menu *Lokalne* (znajdującym się po prawej stronie z przyciskami *Ołówek* i *Prześlij*).
+### Import Track {#import-track}
 
+Jeśli masz już plik śladu, możesz zaimportować go do narzędzia Planuj trasę i kontynuować pracę z nim w Planerze internetowym. Kliknij przycisk **Importuj ślad** i wybierz plik GPX z komputera. Po przesłaniu ślad pojawia się na liście lokalnej i otwiera się w planiście, dzięki czemu możesz przejrzeć go na mapie i kontynuować edycję oraz zarządzanie w panelach śladu.
 
-***Zarządzanie śladami:***
+### Local Files {#local-files}
 
-- **Wybierz profil nawigacji**. Wybierz profil (np. pieszy, samochodowy) dla określonych odcinków trasy (*Nowe segmenty*) lub dla całej trasy (*Wszystkie segmenty*).
-- **Dodaj punkty trasy**. Kliknij na mapie, aby dodać nowe punkty.
-- **Zapisz trasę**. Zapisz trasę do przyszłego użytku.
-- **Wyświetl szczegóły trasy**. Uzyskaj dostęp do szczegółowych informacji o śladzie, w tym długości, czasu trwania i ukształtowania terenu.
-  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route.png)
+Wszystkie trasy i ślady, które utworzysz lub zaimportujesz w narzędziu Planuj trasę, są dodawane do listy Lokalne w panelu po lewej stronie. Ułatwia to przechowywanie wielu plików GPX w jednym miejscu i przełączanie między nimi podczas planowania.
 
+Każdy element na liście ma przełącznik, który pozwala szybko pokazywać lub ukrywać ślad na mapie. Wybierz ślad z listy, aby otworzyć go w planiście i kontynuować pracę z nim. 
 
-***Importowanie i tworzenie śladów:***
-
-- **Importuj ślad**. Możesz przesłać dowolny plik GPX do sekcji **Lokalne**, odwiedzając [osmand.net/map](https://osmand.net/map).
-- **Utwórz ślad**. Ręcznie utwórz nowy ślad, wybierając punkty trasy.
-  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route_2.png)
+![Tworzenie nowej trasy w OsmAnd Web](@site/static/img/web/local_files.png)
 
 
-***Działania i informacje o śladzie lokalnym:***
+## Manage Track {#manage-track}
 
-Menu **Ślad lokalny** udostępnia trzy panele do edycji: **Informacje**, **Ślad** i **Punkty trasy**.
+Po utworzeniu lub zaimportowaniu trasy w narzędziu Planuj trasę otwiera się pionowy panel śladu. Użyj tego panelu, aby zmienić profil routingu i zarządzać trasą. Kliknij kontrolkę profilu, aby otworzyć okno dialogowe **Zmień profil**, wybierz potrzebny profil (na przykład Samochód, Rower lub Pieszy) i wybierz, jak go zastosować: *Następne segmenty* stosuje profil tylko do nowych części dodanych od tego punktu wzwyż, natomiast *Wszystkie segmenty* przelicza całą trasę z wybranym profilem.
 
-**Panel Informacje**:
+Z panelu śladu możesz również wykonywać typowe akcje na plikach. Możesz **Zapisać w chmurze**, aby zachować trasę do późniejszego użytku, **Pobrać GPX**, aby wyeksportować ją jako plik, **Zamknąć ślad**, aby zakończyć edycję, lub **Usunąć ślad**, aby usunąć go z listy lokalnej. Te akcje są również dostępne z odpowiednich kontrolek w [panelu Informacje](#info-panel).
 
-- *Zapisz w chmurze*. Zapisz swój ślad w OsmAnd Cloud, aby mieć do niego dostęp na różnych urządzeniach.
-- *Dodaj opis*. Dodaj notatki o śladzie.
-- *Zmień nazwę*. Zmień nazwę śladu.
-- *Przelicz ponownie*. Dodaj lub zaktualizuj dane o wysokości.
-- *Wysokość*. Wyświetl profil wysokości.
-- *Wykres prędkości*. Wyświetl dane o prędkości na całej trasie.
-- *Wykres nachylenia*. Pokaż zmiany nachylenia wzdłuż trasy.  
-- *Szczegóły drogi*. Wyświetl szczegółowe informacje, takie jak typ drogi, nawierzchnia i stromość.
-- *Pobierz GPX*. Eksportuj ślad jako plik GPX ([funkcja Pro](../purchases/index.md)).
-- *Zamknij ślad*. Zamknij widok edycji śladu.
-- *Usuń ślad*. Trwale usuń ślad.
-  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route_3.png)
-
-**Panel Ślad**:
-
-- Wyświetlaj i edytuj punkty śladu.
-- W razie potrzeby zmieniaj kolejność lub usuwaj punkty.
-
-**Panel Punkty trasy**:
-
-- Wyświetlaj i zarządzaj punktami trasy.
-- Przełączaj widoczność punktów trasy na mapie.
-- W razie potrzeby usuwaj pojedyncze punkty trasy.
-
-**Panel Zakręty**:
-
-- Wyświetl szczegółowe informacje o zakrętach na trasie.
-
-  ![Tworzenie śladu w OsmAnd Web](@site/static/img/web/create_route_1.png)
+![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/manage_track_new.png) ![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/change_profile.png)
 
 
-***Dodatkowe funkcje:***
+## Track Details Panels {#track-details-panels}
 
-- **Synchronizacja z aplikacją**. Zapisuj trasy w OsmAnd Cloud i uzyskuj do nich dostęp w aplikacji mobilnej.
-- **Niestandardowe profile tras**. Dostosuj profile do różnych aktywności, takich jak jazda na rowerze czy piesze wędrówki.
-- **Trasy do udostępniania**. Kopiuj i udostępniaj adresy URL tras w celu wspólnego planowania.
+Menu lokalnego śladu zawiera trzy panele: **Informacje**, **Ślad** i **Punkty trasy**. Użyj ich do wyświetlania informacji o śladzie i zarządzania punktami trasy oraz punktami orientacyjnymi.
+
+### Info Panel {#info-panel}
+
+Panel Informacje podsumowuje wybrany ślad i pokazuje kluczowe dane trasy oraz wysokości. Zawiera szybki przegląd statystyk trasy, a także wykresy i dodatkową analizę śladu na podstawie dostępnych danych mapy.
+
+Sekcja podsumowania pokazuje:
+
+- Punkty — liczba punktów trasy użytych do zbudowania trasy.
+- Dystans — całkowita długość trasy.
+- Podjazdy / zjazdy — całkowity wzniesienie i całkowite zejście wzdłuż trasy.
+- Wysokość (min/śred/max) — statystyki wysokości dla trasy.
+- Jeśli dane wysokości są brakujące lub wymagają aktualizacji, użyj Wysokość (satelitarna) → przelicz ponownie, aby odbudować wysokość za pomocą danych satelitarnych (jeśli dostępne).
+
+Pod podsumowaniem panel zapewnia wykresy:
+
+- Wysokość — profil wysokości trasy.
+- Nachylenie — wykres nachylenia pokazujący zmiany gradientu wzdłuż śladu.
+
+Aby uzyskać dodatkowe szczegóły śladu, otwórz sekcje analizy:
+
+- Powierzchnia — pokazuje typy nawierzchni wzdłuż trasy na podstawie danych OSM.
+- Gładkość — pokazuje gładkość segmentów na podstawie znaczników OSM.
+
+Typowe akcje na śladzie, takie jak zapisywanie, pobieranie, zamykanie i usuwanie, są również dostępne w tym panelu.
+
+![Panel Informacje w OsmAnd Web](@site/static/img/web/info_panel.png) ![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/info_panel_2.png)
+
+### Track Panel {#track-panel}
+
+Panel Ślad pokazuje listę punktów trasy użytych do zbudowania śladu. Użyj go do przeglądu i edycji struktury trasy: przeciągaj punkty, aby zmienić ich kolejność, usuwaj punkty za pomocą ikony usuń lub użyj Wyczyść punkty, aby usunąć wszystkie punkty i zacząć od nowa.
+
+![Panel Ślad w OsmAnd Web](@site/static/img/web/track_panel.png)
+
+### Waypoints Panel {#waypoints-panel}
+
+Panel Punkty trasy służy do wyświetlania i zarządzania punktami orientacyjnymi dla wybranego śladu. Punkty orientacyjne można dodać z menu kontekstowego mapy — kliknij prawym przyciskiem myszy na mapie i wybierz opcję **Dodaj punkt orientacyjny**, a następnie wypełnij szczegóły punktu orientacyjnego (takie jak nazwa, ikona i kolor) i zapisz go.
+
+Na liście Punkty trasy możesz kontrolować, czy punkty orientacyjne są wyświetlane na mapie, oraz usuwać pojedyncze punkty orientacyjne w razie potrzeby. Aby usunąć wszystkie punkty orientacyjne z śladu naraz, użyj *Wyczyść wszystkie punkty orientacyjne*.
+
+![Panel Punkty trasy w OsmAnd Web](@site/static/img/web/waypoints_panel.png)
+
+
+## Related Articles {#related-articles}
+
+- [Planuj trasę](../plan-route/create-route.md)
+- [Przewodniki podróżnicze](../plan-route/travel-guides.md)
+- [Nawigacja](../web/web-navigation.md)

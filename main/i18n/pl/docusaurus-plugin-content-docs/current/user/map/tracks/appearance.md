@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title:  Wygląd trasy
 ---
@@ -69,7 +69,7 @@ Na iOS lista **Kolorowania** otwiera się jako menu kontekstowe. Elementy mogą 
 2. <Translate ios="true" ids="weather_update_disabled"/>. Trasie brakuje wymaganych danych.
 3. PRO. Dostępne dla bieżącej trasy, ale wymaga subskrypcji; dotknięcie otwiera ekran [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
 
-Więcej szczegółów na temat dostosowywania wyglądu linii trasy można znaleźć w artykule [Ekran mapy podczas nawigacji](../../navigation/guidance/map-during-navigation.md#color), a na temat wybierania i tworzenia niestandardowego koloru w artykule [Schematy kolorów](../../personal/color-palette-schemes.md#routes).
+Więcej szczegółów na temat dostosowywania wyglądu linii trasy można znaleźć w artykule [Ekran mapy podczas nawigacji](../../navigation/guidance/map-during-navigation.md#color), a na temat wybierania i tworzenia niestandardowego koloru w artykule [Schematy kolorów](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### Szerokość {#width}

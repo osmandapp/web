@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title:  Mapy i zasoby
 ---
@@ -428,11 +428,13 @@ Gdy mapa jest dezaktywowana, może tymczasowo zniknąć z zakładki Lokalne. Je�
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Menu map Aktualizuj mapy iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Prognoza pogody Aktualizuj mapy iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Menu map Aktualizuj mapy iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Prognoza pogody Aktualizuj mapy iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 Zakładka **Aktualizacje** umożliwia odświeżenie map i zasobów OsmAnd. Mapy standardowe i tylko z drogami są wydawane raz w miesiącu, zwykle między 2 a 5 dniem, i zawierają dane OpenStreetMap do ostatniego dnia poprzedniego miesiąca (na przykład wydanie październikowe zawiera dane do 30 września). Inne dane, takie jak Wikipedia, mapy terenu lub mapy morskie, mogą mieć inne, nieregularne harmonogramy aktualizacji. 
 
 Użyj przycisku *Aktualizuj wszystko*, aby zaktualizować wszystkie mapy jednocześnie, lub aktualizuj poszczególne mapy w razie potrzeby. Aby uzyskać cogodzinne aktualizacje, sprawdź status subskrypcji [Aktualizacji na żywo](#live-updates). Jeśli jest włączona, sekcja **Aktualizacje na żywo** pojawi się na górze zakładki, pod wskaźnikiem pamięci urządzenia.
+
+Zakładka **Aktualizacje** może również wyświetlać element **Nieobsługiwane mapy**. Pojawia się on, gdy masz mapy, które nie są już obsługiwane i zostały zastąpione mniejszymi regionami. Dotknij Nieobsługiwane mapy, aby przejrzeć listę, usunąć przestarzałe mapy i pobrać nowe wersje regionów. Na ekranie Nieobsługiwane mapy możesz wyświetlić wszystkie nieobsługiwane mapy i użyć Usuń wszystko, aby usunąć je wszystkie naraz (przed usunięciem pojawi się monit potwierdzający).
 
 Zakładka **Aktualizacje** zawiera również sekcję Prognoza pogody. Służy ona do zarządzania prognozami offline dla wybranych krajów:
 

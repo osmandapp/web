@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title:  Ułatwienia dostępu
 ---
@@ -96,14 +96,18 @@ Aby włączyć:
 
 - Długie dotknięcie na **Moja lokalizacja** otwiera menu z opcjami ***Pokaż swoją pozycję*** i ***Pokaż szczegóły***. Wybranie Pokaż szczegóły wyświetla dodatkowe informacje o trasie i udostępnia przycisk ***Rozpocznij/Zatrzymaj automatyczne komunikaty***.
 - Ustaw **Okres automatycznych komunikatów** (np. *10 sekund*), aby kontrolować częstotliwość komunikatów.
-- Jeśli **TalkBack** nie jest włączony w ustawieniach systemowych urządzenia, OsmAnd nie zapewni *powiadomień głosowych* i wyświetli tylko *powiadomienia tekstowe* na ekranie.  
+- Gdy **TalkBack** jest włączony, te powiadomienia są odczytywane na głos. Jeśli **TalkBack** nie jest włączony w ustawieniach systemowych urządzenia, OsmAnd nie zapewni *powiadomień głosowych* i wyświetli tylko *powiadomienia tekstowe* na ekranie.  
 
 ### Inteligentne automatyczne komunikaty {#smart-autoannounce}
 
 Aby włączyć:
 *Wtyczki* → *Ułatwienia dostępu* → *Ustawienia* → *Inteligentne automatyczne komunikaty*
 
-Funkcja **Inteligentne automatyczne komunikaty** zapewnia *powiadomienia dźwiękowe*, gdy zboczysz z zaplanowanej trasy. Jest zaprojektowana do wspierania niedowidzących użytkowników, którzy polegają na *wskazówkach głosowych*.  
+Funkcja **Inteligentne automatyczne komunikaty** działa na bazie Automatycznych komunikatów. Najpierw uruchom Automatyczne komunikaty, a następnie włącz Inteligentne automatyczne komunikaty w ustawieniach wtyczki.
+
+Gdy Inteligentne automatyczne komunikaty są włączone, komunikaty są wyzwalane, gdy aktualny cel nawigacji zmienia swój sektor. Dzieje się to zazwyczaj, gdy Twój ruch zmienia kierunek do następnego skrętu lub celu. Gdy Inteligentne automatyczne komunikaty są wyłączone, OsmAnd wyświetla okresowe powiadomienia zgodnie z Okresem automatycznych komunikatów.
+
+**Uwaga:** Można dostosować tylko Okres automatycznych komunikatów. Wyzwalacz „zmiana sektora” nie jest konfigurowalny w ustawieniach aplikacji. 
 
 
 ## Ustawienia wtyczki {#plugin-settings}

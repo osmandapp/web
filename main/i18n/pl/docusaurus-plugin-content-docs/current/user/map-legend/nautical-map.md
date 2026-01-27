@@ -1,12 +1,13 @@
 ---
-source-hash: f02ec46753a3101b544ff59059a374da99a432907dcbacd5732081d6f1f151e5
-sidebar_position: 3
+source-hash: 255739a6c5541179fb7a0d0ff2c0e498a0e6eb685a3a9858e4e92263572632fd
+sidebar_position: 4
 title: Styl mapy morskiej
 ---
+
 import Translate from '@site/src/components/Translate.js';
 
 # Styl mapy morskiej {#nautical-map-style}
-Domyślny styl mapy OsmAnd, część wtyczki Nawigacja morska.
+Domyślny styl mapy OsmAnd, część wtyczki Nautical.
 <Translate android="yes" id="nautical_render_descr" />
 
 ## Kotwicowisko i miejsce postoju {#anchorage-and-berth}

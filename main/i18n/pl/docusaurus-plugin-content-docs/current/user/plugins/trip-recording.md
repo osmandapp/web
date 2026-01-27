@@ -1,5 +1,5 @@
 ---
-source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
+source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
 sidebar_position: 15
 title:  Nagrywanie trasy
 ---
@@ -389,35 +389,62 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 [Widżet Nagrywanie trasy](../widgets/info-widgets.md#trip-recording-widgets) zapewnia łatwy sposób monitorowania statusu nagrywania i szybkiego dostępu do ustawień i szczegółów nagrywania. Ten widżet jest automatycznie dodawany do ekranu po włączeniu wtyczki Nagrywanie trasy.
 
-Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i [inne widżety](../plugins/trip-recording#duration-uphill-downhill) za pomocą menu Konfiguruj ekran.
+Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i [inne widżety](../plugins/trip-recording#additional-widgets) za pomocą menu Konfiguruj ekran.
 
 
-### Dystans (Start-Stop) {#distance-start-stop}
+### Tryby wyświetlania {#display-modes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Zakończ nagrywanie w systemie Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
-![Widżet nagrywania trasy](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+![Tryby wyświetlania](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Tryby wyświetlania](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widżet nagrywania trasy](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Widżet nagrywania trasy](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+![Tryby wyświetlania](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Tryby wyświetlania](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Gdy widżety są wyświetlane na mapie, stuknięcie dowolnego z nich ujawnia dodatkowe szczegóły trasy i pozwala na interakcję z nagraniem.
-Widżet *Dystans* wyświetla całkowity dystans bieżącej zarejestrowanej podróży i działa jako główny interfejs do zarządzania nagraniami. Stuknięcie go powoduje wyświetlenie [okna dialogowego Nagrywanie trasy](#start-a-dialog), w którym można rozpocząć, zatrzymać i wyświetlić szczegółowe informacje o trasie.
+Niektóre widżety Nagrywanie trasy obsługują wiele trybów wyświetlania. Tryby pozwalają przełączać się między ogólnymi wartościami podróży a metrykami dla najbardziej ostatniego odcinka podjazdu lub zjazdu aktualnie nagrywanej trasy.
 
-- Widżet jest dodawany automatycznie po włączeniu *wtyczki Nagrywanie trasy*, ale można go ukryć za pomocą [menu Konfiguruj ekran](../widgets/configure-screen.md#overview).
-- Jeśli opcja *Pokaż okno dialogowe startu* jest wyłączona w ustawieniach wtyczki Nagrywanie trasy, stuknięcie aktywnego widżetu nadal otworzy okno dialogowe *Nagrywanie trasy*, umożliwiając dostęp do dalszych opcji i informacji.  
+Poniższe tryby mogą być dostępne w zależności od widżetu.
+1. **Dystans (Start-Stop)**:
+- Całkowity dystans (domyślnie)
+- Ostatni podjazd
+- Ostatni zjazd
 
-Oprócz widżetu *Dystans/Start-Stop*, **wtyczka Nagrywanie trasy** zawiera pięć innych widżetów: *Czas trwania*, *W górę*, *W dół*, *Maks. prędkość* i *Średnie nachylenie*. Zapewniają one dodatkowe informacje o podróży, pomagając śledzić postępy w czasie rzeczywistym.
+2. **W górę**:
+- Całkowity (domyślnie)
+- Ostatni podjazd
+
+3. **W dół**:
+- Całkowity (domyślnie)
+- Ostatni zjazd
+
+4. **Maks. prędkość**:
+- Całkowity (domyślnie)
+- Ostatni podjazd
+- Ostatni zjazd
+
+5. **Średnie nachylenie**:
+- Ostatni podjazd  
+- Ostatni zjazd 
+
+Przełączanie trybów zależy od widżetu:
+- W górę / W dół / Maks. prędkość / Średnie nachylenie — stuknij widżet na mapie, aby przełączyć jego tryb.
+- Dystans (Start-Stop) — widżet Dystans obsługuje wiele trybów wyświetlania (wybierz je w ustawieniach widżetu), ale stuknięcie go zawsze otwiera okno dialogowe Nagrywanie trasy, w którym można rozpocząć, zatrzymać i wyświetlić szczegółowe informacje o trasie. 
+
+Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, widżety w trybie Ostatni podjazd lub Ostatni zjazd pokazują 0 lub — (brak danych).
+
+**Uwagi:** Tryby dotyczą aktualnie nagrywanej trasy i aktualizują się w miarę kontynuowania nagrywania.
+
+
+### Dystans (Start-Stop) {#distance-start-stop}
 
 | |
 |-----------|
@@ -425,67 +452,23 @@ Oprócz widżetu *Dystans/Start-Stop*, **wtyczka Nagrywanie trasy** zawiera pię
 | ![Widżet nagrywania trasy (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Aby otworzyć [okno dialogowe Nagrywanie trasy](#start-a-dialog) po stuknięciu nieaktywnego widżetu, włącz opcję *Pokaż okno dialogowe uruchamiania* w ustawieniach wtyczki Nagrywanie trasy. Jeśli opcja jest wyłączona, nagrywanie rozpocznie się natychmiast po stuknięciu widżetu bez otwierania okna dialogowego.| 
 
-W systemie Android widżet Dystans obsługuje wiele trybów wyświetlania:
-- **Całkowity dystans** – całkowity dystans bieżącego nagrania (domyślnie).
-- **Ostatni podjazd** – dystans ostatniego odcinka wzniesienia.
-- **Ostatni zjazd** – dystans ostatniego odcinka zejścia.
 
-
-### Czas trwania, W górę, W dół {#duration-uphill-downhill}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
+### Dodatkowe widżety {#additional-widgets}
 
 | |
 |------------|
 |**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_up.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 |**W dół**. Wskazuje całkowity spadek lub ostatni odcinek zejścia, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_dow.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Maks. prędkość**. Pokazuje maksymalną prędkość dla aktualnie nagrywanego wyjazdu w wybranym trybie. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Średnie nachylenie**. Wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnego wyjazdu, w zależności od wybranego trybu. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-| |
-|------------|
-|**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**W dół**. Wskazuje całkowity spadek lub ostatni odcinek zejścia, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-</Tabs>
-
-Jeśli wybrano wiele widżetów — *Czas trwania*, *W górę* lub *W dół* — można uzyskać dostęp do tego samego okna dialogowego dla każdego z nich bez konieczności przełączania lub zamykania go. Ten ujednolicony interfejs ułatwia płynne przeglądanie i zarządzanie wszystkimi powiązanymi informacjami.
-
-### Maks. prędkość i Średnie nachylenie {#max-speed--average-slope}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Maks. prędkość Android](@site/static/img/widgets/max_speed_android.png) ![Średnie nachylenie Android](@site/static/img/widgets/average_slope_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Maks. prędkość iOS](@site/static/img/widgets/max_speed_ios.png) ![Średnie nachylenie iOS](@site/static/img/widgets/average_slope_ios.png) 
-
-</TabItem>
-
-</Tabs> 
-
-Widżet **Maks. prędkość** pokazuje maksymalną prędkość dla aktualnie nagrywanego wyjazdu. Stuknij widżet, aby przełączyć się między ogólną maksymalną prędkością a maksymalną prędkością z ostatniego odcinka podjazdu lub zjazdu.
-
-Widżet **Średnie nachylenie** wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnego wyjazdu. Pomaga oszacować, jak stroma była poprzednia wspinaczka lub zejście, na podstawie wzrostu wysokości i dystansu.
+Jeśli wybrano wiele widżetów, można uzyskać dostęp do tego samego okna dialogowego dla każdego z nich bez konieczności przełączania lub zamykania go. Ten ujednolicony interfejs ułatwia płynne przeglądanie i zarządzanie wszystkimi powiązanymi informacjami.
 
 
 ## Powiązane artykuły {#related-articles}

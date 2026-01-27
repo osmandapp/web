@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Menu Kontekstowe Śladu
 ---
@@ -365,12 +365,12 @@ Jeśli na trasie *nie ma informacji o wysokości*, można je dodać w następuj�
 ### Oblicz brakującą wysokość {#calculate-missing-elevation}
 
 :::note Subskrypcja OsmAnd Pro
-Funkcja obliczania wysokości offline jest dostępna tylko dla [**subskrybentów OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
+Funkcja [obliczania wysokości offline](../../plan-route/create-route.md#get-elevation-data) jest dostępna tylko dla [**subskrybentów OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Ta funkcja pozwala na obliczenie profilu wysokościowego dla śladu GPX w trybie offline dla dowolnego terenu między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej, na podstawie [danych mapy terenu](../../plugins/topography.md#download-maps). *Mapy terenu (3D) powinny być wcześniej pobrane*.
+[Ta funkcja](../../plan-route/create-route.md#get-elevation-data) pozwala na obliczenie profilu wysokościowego dla śladu GPX w trybie offline dla dowolnego terenu między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej, na podstawie [danych mapy terenu](../../plugins/topography.md#download-maps). *Mapy terenu (3D) powinny być wcześniej pobrane*.
 
 1. Pobierz [Mapy terenu (3D)](../../plugins/topography.md#download-maps) dla wymaganego regionu.
 2. Jeśli ślad nie zawiera żadnych danych o wysokości, przejdź do menu kontekstowego śladu (*Menu kontekstowe śladu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wybierz *Użyj map terenu*, a po obliczeniu otrzymasz wykres śladu oparty na danych terenu.  
@@ -471,7 +471,7 @@ Dotknij przycisku *Dodaj waypoint*, aby otworzyć ekran tworzenia waypointu (ten
 
 <TabItem value="ios" label="iOS">
 
-![Menu grupy menu śladu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Menu grupy menu śladu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Menu grupy menu śladu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -483,9 +483,9 @@ Dotknij przycisku *Dodaj waypoint*, aby otworzyć ekran tworzenia waypointu (ten
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Pozwala wyświetlać lub nie wyświetlać waypointów grupy na mapie. Można też użyć [przycisku na ekranie](#points--waypoints), aby wyświetlić lub pominąć waypointy grupy na mapie.
 - **<Translate android="true" ids="shared_string_rename"/>** - Zmień nazwę grupy.
-- **<Translate android="true" ids="change_default_appearance"/>** - Zmień opcje wyświetlania dla grupy waypointów.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Zmień opcje wyświetlania dla grupy waypointów.
 - **<Translate android="true" ids="add_group_to_markers"/>** lub **Usuń** (*tylko Android*) - Przenieś waypointy grupy do listy [Znaczników mapy](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*tylko Android*) - Pozwala skopiować wybraną grupę Waypointów do [Ulubionych](../../personal/favorites.md). Można wybrać jedną z dwóch opcji: ***<Translate android="true" ids="copy_as_new_folder"/>*** lub ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Pozwala skopiować wybraną grupę Waypointów do [Ulubionych](../../personal/favorites.md). Można wybrać jedną z dwóch opcji: ***<Translate android="true" ids="copy_as_new_folder"/>*** lub ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*tylko Android*) - Tworzy trasę między waypointami. Pierwszy i ostatni punkt stają się początkiem i końcem trasy, a reszta jest konwertowana na punkty pośrednie.
 - **<Translate android="true" ids="shared_string_delete"/>** - Usuń grupę waypointów.
 
@@ -656,7 +656,7 @@ Dla każdego segmentu możesz wyświetlić:
 - czas w ruchu.
 - średnią i maksymalną prędkość.
 
-Po dotknięciu dowolnego segmentu na liście widok mapy pokazuje cały ślad z jego interwałami i otwiera menu kontekstowe śladu na dole ekranu.
+Po dotknięciu dowolnego segmentu na liście widok mapy pokazuje cały ślad z jego interwałami i otwiera menu kontekstowe śladu na dole ekranu. Na mapie etykiety interwałów obsługują dwie akcje: dotknięcie, aby otworzyć panel przeglądu śladu, oraz długie naciśnięcie, aby otworzyć menu kontekstowe śladu.
 
 
 ### Podziel według czasu {#split-by-time}
@@ -668,9 +668,14 @@ Opcja **Podziel według czasu** dzieli ślad na interwały o równej długości.
 
 ### Podziel według wzniesień/spadków {#split-by-uphill-downhill}
 
-![Zakładka podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Zakładka podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
 Ta opcja dzieli ślad na segmenty na podstawie zmian wysokości. Każdy interwał jest klasyfikowany jako ***wzniesienie***, ***spadek*** lub ***płasko***. Sposób wyświetlania interwałów, statystyki podane dla każdego segmentu oraz sposób ich wyświetlania na mapie są również takie same jak w sekcji [Podziel według odległości](#split-by-distance).
+
+Na mapie segmenty są oznaczone kolorowymi etykietami na początku każdego interwału:
+- **Segmenty wzniesień** (czerwone etykiety) pokazują strzałkę w górę, indeks segmentu i średnie nachylenie w procentach (na przykład, ↑ 11. 2%).
+- **Segmenty spadków** (zielone etykiety) pokazują strzałkę w dół, indeks segmentu i średnie nachylenie w procentach (na przykład, ↓ 12. -2%).
+- **Płaskie segmenty** (niebieskie etykiety) pokazują odległość płaskiego odcinka (na przykład, 616 m, 411 m).
 
 
 ### Metryki tętna {#heart-rate-metrics}

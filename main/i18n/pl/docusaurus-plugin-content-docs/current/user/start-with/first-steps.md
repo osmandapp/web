@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title:  Pierwsze kroki
 ---
@@ -642,13 +642,15 @@ Umożliwia zadawanie pytań lub zgłaszanie sugestii.
 
 <TabItem value="ios" label="iOS">
 
-![Menu map iOS](@site/static/img/steps/offline_about_ios.png)
+![Menu map iOS](@site/static/img/steps/offline_about_ios_new.png) ![Menu map iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Możesz dowiedzieć się o naszym zespole, zobaczyć aktualną wersję aplikacji i co nowego, a także pobrać wersję beta aplikacji.
+
+Wersja kompilacji jest wyświetlana w formacie OsmAnd Maps &lt;build&gt;, wydana &lt;date&gt;. Aby szybko udostępnić te informacje wsparciu, długie naciśnięcie linii z wersją kompilacji pozwoli skopiować numer kompilacji wraz z datą wydania.
 
 
 ## Prywatność {#privacy}
