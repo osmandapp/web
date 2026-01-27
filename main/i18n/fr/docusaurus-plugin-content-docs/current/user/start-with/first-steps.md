@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title:  Premiers Pas
 ---
@@ -642,13 +642,15 @@ Vous permet de poser des questions ou de faire des suggestions.
 
 <TabItem value="ios" label="iOS">
 
-![Menu Cartes iOS](@site/static/img/steps/offline_about_ios.png)
+![Menu Cartes iOS](@site/static/img/steps/offline_about_ios_new.png) ![Menu Cartes iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Vous pouvez en apprendre davantage sur notre équipe, voir la version actuelle de l'application et les nouveautés, et télécharger la version bêta de l'application.
+
+La build est affichée au format OsmAnd Maps &lt;build&gt;, publiée &lt;date&gt;. Pour partager rapidement ces informations avec le support, appuyez longuement sur la ligne de build pour copier le numéro de build avec la date de publication.
 
 
 ## Confidentialité {#privacy}

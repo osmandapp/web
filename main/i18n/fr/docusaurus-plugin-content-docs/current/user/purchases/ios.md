@@ -1,5 +1,5 @@
 ---
-source-hash: 1f88b8a69546be11fe397f39ef6e1255bf0e2760eeb2883d1ca6539d40dd08af
+source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -77,8 +77,8 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Type d'achat** | **Gratuit** | **Achat unique** (À vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
-| **Prix (EUR)** | €0 | €39.99  |  €9.99   |  €2.99 / €29.99   |
-| **Prix (USD)** | $0 | $39.99  |  $9.99   |  $2.99 / $29.99   |
+| **Prix (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Prix (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
 

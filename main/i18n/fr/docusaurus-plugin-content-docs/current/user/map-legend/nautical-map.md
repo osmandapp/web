@@ -1,6 +1,6 @@
 ---
-source-hash: f02ec46753a3101b544ff59059a374da99a432907dcbacd5732081d6f1f151e5
-sidebar_position: 3
+source-hash: 255739a6c5541179fb7a0d0ff2c0e498a0e6eb685a3a9858e4e92263572632fd
+sidebar_position: 4
 title: Style de carte nautique
 ---
 
@@ -42,7 +42,7 @@ Systèmes de positionnement électronique, signaux de brume
 ## Épaves et rochers {#wrecks-and-rocks}
 <img src={require('@site/static/img/map-legend/nautical-wrecks-and-rocks.png').default} alt="Épaves et rochers" />
 
-## Ponts, écluses {#bridges-lockgates}
+## Ponts écluses {#bridges-lockgates}
 <img src={require('@site/static/img/map-legend/nautical-bridges-lockgates.png').default} alt="Épaves et rochers" />
 
 
@@ -63,8 +63,8 @@ Systèmes de positionnement électronique, signaux de brume
 <img src={require('@site/static/img/map-legend/nautical-cables-and-pipelines.png').default} alt="Câbles et pipelines" />
 
 
-## Obstruction {#obstruction}
-<img src={require('@site/static/img/map-legend/nautical-obstruction.png').default} alt="Obstruction" />
+## Obstacle {#obstruction}
+<img src={require('@site/static/img/map-legend/nautical-obstruction.png').default} alt="Obstacle" />
 
 
 ## Zone réglementée {#restricted-area}

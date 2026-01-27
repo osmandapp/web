@@ -1,5 +1,5 @@
 ---
-source-hash: ece3e6010ee14839c5fe53b38593cda3c765a31a9395566df04b16ce2b73c3b4
+source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -92,7 +92,7 @@ Les fonctionnalités suivantes sont disponibles après avoir choisi une trace cl
 - Boutons d'action :
   - *Modifier la trace* - ajout de la trace cloud en local pour modification (bouton _Modifier localement_ sur le panneau).
   - *Télécharger GPX* - télécharge la trace sur le PC.
-  - *Recalculer* Altitude (Satellite) - affiche le graphique d'altitude de la trace sélectionnée.
+  - *Recalculer* Altitude (Satellite) - recalcule les valeurs d'altitude pour la trace sélectionnée et les affiche sur le graphique d'altitude.
   - *Supprimer la trace* - supprime la trace.
   - *Fermer la trace* - ferme la trace.
 

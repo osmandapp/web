@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -45,6 +45,8 @@ Vous pouvez étendre un itinéraire au-delà de Départ → Destination en ajout
 
 En haut du panneau Itinéraire, vous pouvez choisir un profil d'itinéraire pour votre itinéraire. Un ensemble de profils couramment utilisés est affiché sous forme de quatre icônes. Pour accéder à plus d'options, ouvrez le menu à trois points à côté des icônes de profil. Il étend la liste complète des profils disponibles.
 
+Les profils d'itinéraire dans le Planificateur Web utilisent les mêmes règles et paramètres d'itinéraire que dans l'application mobile OsmAnd. Pour plus de détails sur la façon dont les itinéraires sont calculés et sur le fonctionnement des paramètres d'itinéraire, consultez [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
+
 Lorsque vous changez de profil, Navigation met à jour l'itinéraire pour correspondre au mode de déplacement sélectionné.
 
 ![Navigation Web](@site/static/img/web/navigation_profile.png)
@@ -52,7 +54,7 @@ Lorsque vous changez de profil, Navigation met à jour l'itinéraire pour corres
 
 ## Paramètres de navigation {#navigation-settings}
 
-Pour ajuster la façon dont les itinéraires sont calculés, ouvrez les Paramètres en utilisant l'icône d'engrenage dans le panneau Itinéraire. Les paramètres sont regroupés en sections que vous pouvez développer/reduire. L'ensemble des sections et des options dépend du profil d'itinéraire sélectionné, vous verrez donc différents paramètres pour différents modes de déplacement.
+Pour ajuster la façon dont les itinéraires sont calculés, ouvrez les Paramètres en utilisant l'icône d'engrenage dans le panneau Itinéraire (pour les paramètres de navigation dans l'application mobile OsmAnd, consultez [ici](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). Les paramètres sont regroupés en sections que vous pouvez développer/reduire. L'ensemble des sections et des options dépend du profil d'itinéraire sélectionné, vous verrez donc différents paramètres pour différents modes de déplacement.
 
 Les sections typiques incluent :
 
@@ -66,7 +68,7 @@ Les sections typiques incluent :
 
 ## Attacher une piste {#attaching-track}
 
-Le bloc **Attacher aux routes** vous permet d'utiliser une piste GPX existante comme base pour la navigation. OsmAnd Web fait correspondre la piste aux routes proches pour fournir des instructions au virage par virage.
+Le bloc **[Attacher aux routes](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** vous permet d'utiliser une piste GPX existante comme base pour la navigation. OsmAnd Web fait correspondre la piste aux routes proches pour fournir des instructions au virage par virage.
 
 Lorsque vous cliquez sur Sélectionner une piste, le navigateur ouvre un sélecteur de fichiers où vous pouvez choisir un fichier .gpx depuis votre ordinateur. Après avoir sélectionné une piste :
 - La piste est affichée sur la carte et utilisée pour calculer l'itinéraire.
@@ -86,7 +88,7 @@ Info résume l'itinéraire et les données d'altitude :
 - **Itinéraire** — distance et temps.
 - **Montée/Descente** — ascension et descente totales.
 - **Altitude (min/moy/max)** — statistiques d'altitude pour l'itinéraire.
-- **Altitude (Satellite)** — Recalculer pour reconstruire l'altitude en utilisant les données satellite (si disponibles).
+- **Altitude (Satellite)** — recalcule les données d'altitude de la piste en utilisant les données de terrain (DEM) et met à jour le graphique d'altitude.
 
 Sous le résumé, le graphique d'altitude vous aide à inspecter le profil de l'itinéraire. Vous pouvez basculer Altitude et Pente, et utiliser le curseur sous le graphique pour vous concentrer sur une partie spécifique de l'itinéraire.
 
@@ -98,17 +100,25 @@ Vous pouvez affiner l'itinéraire directement sur la carte en glissant les marqu
 - OsmAnd Web recalcule l'itinéraire pour passer par la nouvelle position.
 - Le marqueur déplacé est converti en un nouveau point intermédiaire.
 - Le nouveau point intermédiaire apparaît dans le panneau Itinéraire comme un point supplémentaire inséré au-dessus de la Destination, et le résumé de l'itinéraire se met à jour en conséquence.
-- Vous pouvez gérer le point via ajouté de la même manière que les autres [points intermédiaires](#manage-route-points).
+- Vous pouvez gérer le point intermédiaire ajouté de la même manière que les autres [points intermédiaires](#manage-route-points).
 
 ![Navigation Web](@site/static/img/web/navigation_on_map.png)
 
 ### Télécharger et enregistrer {#download-and-save}
 
 Utilisez *Télécharger* pour exporter l'itinéraire sous forme de piste. La boîte de dialogue de téléchargement propose deux options :
-Données complètes de la piste — inclut toutes les données, y compris les instructions de navigation.
-Piste simplifiée — une version plus légère plus adaptée à l'utilisation avec d'autres applications.
+**Données complètes de la piste** — inclut toutes les données, y compris les instructions de navigation.
+**[Piste simplifiée](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — une version plus légère plus adaptée à l'utilisation avec d'autres applications.
+
+Si vous prévoyez d'ouvrir le GPX dans des applications tierces, choisissez Piste simplifiée pour une meilleure compatibilité. Cela aide à éviter les cas où une autre application peut afficher un segment incorrect après l'importation.
+
+Quelle est la différence :
+- Les données complètes de la piste peuvent inclure des informations d'itinéraire/navigation en plus de la géométrie de la piste (utile si vous souhaitez conserver les instructions de navigation ou rééditer l'itinéraire dans OsmAnd).
+- La piste simplifiée exporte un GPX plus propre destiné à d'autres applications en supprimant les données d'itinéraire/navigation et en ne laissant que la forme de la piste. Les points de passage sont conservés lors de l'exportation d'une piste simplifiée.
 
 Vous pouvez enregistrer l'itinéraire sous forme de piste en utilisant *Enregistrer dans le Cloud / Téléverser vers OsmAnd Cloud*. Cela ouvre une boîte de dialogue où vous pouvez confirmer l'enregistrement dans les pistes cloud, modifier le Nom, choisir optionnellement un Dossier, puis Enregistrer ou Annuler.
+
+![Navigation Web](@site/static/img/web/download_options.png)
 
 ### Partager un itinéraire {#share-a-route}
 
@@ -119,5 +129,6 @@ Pour partager l'itinéraire, copiez l'URL. Exemple : [https://osmand.net/map/?st
 
 - [Préparation d'itinéraire](../navigation/setup/route-navigation.md)
 - [Paramètres de navigation](../navigation/guidance/navigation-settings.md)
+- [À propos du routage OsmAnd](../navigation/routing/osmand-routing.md)
 - [Paramètres du véhicule](../navigation/guidance/vehicle-parameters.md)
 - [Planifier un itinéraire](../web/planner.md)

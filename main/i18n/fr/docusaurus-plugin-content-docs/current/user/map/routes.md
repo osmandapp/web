@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title:  Itinéraires
 ---
@@ -124,7 +124,7 @@ Les pistes et itinéraires de ski sont un groupe spécifique d'[itinéraires](ht
 
 ### Pistes de motoneige {#snowmobile-trails}
 
-![Itinéraires sur la carte - motoneige](@site/static/img/map/snowmobile_trail.png)
+![Itinéraires sur la carte - motoneige](@site/static/img/map/snowmobile_trail_new.png)
 
 Les pistes de motoneige sont cartographiées dans [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) comme `route=snowmobile`. Elles sont utilisées pour les loisirs d'hiver et pour relier des zones isolées pendant la saison des neiges. Dans OsmAnd, les pistes de motoneige sont cliquables, voir la section [Actions avec les itinéraires](#actions-with-routes).
 
@@ -345,45 +345,29 @@ Vous pouvez personnaliser l'activation ou la désactivation des itinéraires à 
 
 ## Recherche d'itinéraires {#routes-search}
 
-Trouvez des itinéraires en utilisant la fonction [Recherche](../search/index.md) par nom ou en sélectionnant "Itinéraires" dans la section [Catégories](../search/search-poi.md#).
-
-Pour rechercher, allez dans le menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* et entrez votre activité.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Itinéraires sur le terrain](@site/static/img/map/route_search.png)
+![Itinéraires sur le terrain](@site/static/img/map/route_search.png) ![Itinéraires sur le terrain](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Itinéraires sur le terrain](@site/static/img/map/route_search_ios.png)
+![Itinéraires sur le terrain](@site/static/img/map/route_search_ios.png) ![Itinéraires sur le terrain](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Naviguez vers *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* pour trouver les itinéraires souhaités. Les résultats de recherche d'itinéraires affichent le nom de l'itinéraire, le type d'activité, la longueur, l'emplacement et la distance jusqu'au point le plus proche. Sur Android, les métriques d'altitude telles que la montée et la descente sont également affichées lorsque disponibles. Les changements d'altitude mineurs (moins de 10 m) sont masqués pour garder la liste claire. Toutes les valeurs respectent les unités de distance et d'altitude sélectionnées dans l'application.
+Trouvez des itinéraires en utilisant la fonction [Recherche](../search/index.md) par nom ou en sélectionnant "Itinéraires" dans la section [Catégories](../search/search-poi.md#).
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Pour rechercher, allez dans le menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* et entrez votre activité.
 
-<TabItem value="android" label="Android">
+Naviguez vers *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* pour trouver les itinéraires souhaités. Les résultats de recherche d'itinéraires affichent le nom de l'itinéraire, le type d'activité, la longueur, l'emplacement, la montée/descente (sur Android), et la distance jusqu'au point le plus proche. 
 
-![Itinéraires sur le terrain](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Itinéraires sur le terrain](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Utilisez le bouton de filtres (coin supérieur droit) pour n'afficher que les itinéraires souhaités.
+### Filtres d'itinéraires {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Utilisez le bouton de filtres (coin supérieur droit) pour n'afficher que les it
 </TabItem>
 
 </Tabs>
+
+Dans les résultats de recherche d'itinéraires, appuyez sur le bouton **Filtres** dans le coin supérieur droit pour affiner la liste. L'écran des filtres inclut un champ **Filtrer par nom** ; un bloc **Type** avec *Bureau*, *Post annex*, et *Post partner* ; et des **critères supplémentaires** qui dépendent de la catégorie ou de l'activité d'itinéraire sélectionnée, car chaque catégorie peut exposer ses propres caractéristiques et valeurs de filtre.
+
+Vous pouvez activer ou désactiver les filtres à l'aide des interrupteurs, et certaines sections incluent *Afficher tout* pour afficher des valeurs supplémentaires.
 
 
 ## Articles connexes {#related-articles}

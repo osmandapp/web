@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  Règle de rayon et Règle
 ---
@@ -97,6 +97,7 @@ Le [Widget Règle de rayon](../widgets/info-widgets.md#radius-ruler) affiche la 
 
 Utilisez ce widget pour estimer la proximité de points d'intérêt ou planifier autour d'une zone définie.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -118,9 +119,10 @@ Utilisez ce widget pour estimer la proximité de points d'intérêt ou planifier
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Boussole pour la Règle de rayon {#compass-for-radius-ruler}
+### Boussole {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Cette superposition est utile pour la navigation en extérieur, vous permettant 
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Position Centre / Bas {#center--bottom-position}
+### Position Centre / Bas {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ Pour augmenter le rayon visible autour de votre position, vous pouvez changer la
 Pour plus d'informations sur *la position sur l'écran*, consultez l'article [Configurer l'écran](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## Vue 3D {#3d-view}
+### Vue 3D {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Weather
 title: Weather on the Web
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 La fonctionnalité Météo sur la Carte Web OsmAnd affiche les conditions météorologiques actuelles et les données de prévision directement sur la carte. Elle fournit un accès aux informations météorologiques provenant de plusieurs sources de prévision, prend en charge le réglage du temps et permet de visualiser des couches météorologiques telles que la température, le vent, la pression, la couverture nuageuse et les précipitations.
 
-Les données météorologiques sont disponibles sans connexion. La vue Météo peut être ouverte directement depuis l'interface de la carte en cliquant sur l'icône parapluie dans le panneau de menu ou en cliquant avec le bouton droit sur la carte et en sélectionnant Ouvrir la météo dans le menu contextuel.
+Les données météorologiques sont disponibles sans se connecter. La vue Météo peut être ouverte directement depuis l'interface de la carte en cliquant sur l'icône parapluie dans le panneau de menu ou en cliquant avec le bouton droit sur la carte et en sélectionnant Ouvrir la météo dans le menu contextuel.
 
 
 ## Source de données {#data-source}
@@ -89,7 +89,7 @@ Vous pouvez passer entre différents paramètres météorologiques en utilisant 
 ![Météo OsmAnd Web](@site/static/img/web/weather_forecast.png)
 
 
-## Article associé {#related-article}
+## Articles associés {#related-articles}
 
 - [Météo](../plugins/weather.md)
 - [Introduction](../web/web-overview.md)
