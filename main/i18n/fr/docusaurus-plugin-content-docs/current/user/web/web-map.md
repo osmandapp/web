@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Carte
 title: Carte globale sur le site web
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 La carte web d'OsmAnd est une carte mondiale basée sur les données d'[OpenStreetMap (OSM)](https://www.openstreetmap.org/). Elle permet aux utilisateurs de visualiser leurs propres données, telles que les traces et les favoris, de créer des itinéraires de navigation pour n'importe quel profil, et d'accéder à des fonctionnalités supplémentaires comme la météo, les traces GPX publiques, les POI et les images Wikimedia. Explorez et personnalisez votre expérience des données directement dans votre navigateur.
 
-![OsmAnd Web tout](@site/static/img/web/web_map_all.png)
+![Tout OsmAnd Web](@site/static/img/web/web_map_all.png)
 
 
 ## Menu contextuel de la carte {#map-context-menu}
@@ -41,11 +41,11 @@ La carte web d'OsmAnd est une carte mondiale basée sur les données d'[OpenStre
 Pour l'ouvrir, faites un clic droit n'importe où sur la carte. Ce menu comprend les actions suivantes :
 
 - **Où suis-je** – Trouvez rapidement votre position actuelle sur la carte. Cette fonction affiche les adresses les plus proches du point sélectionné sur la carte.
-- **Ouvrir la météo** – Accédez au [menu Météo](#weather-on-the-web) pour voir les détails météorologiques.
-- **Créer un nouvel itinéraire** – Ouvre l'outil [*Planifier un itinéraire*](../web/planner.md#navigation-route) avec l'emplacement sélectionné comme point de départ ou de destination.
+- **Ouvrir la météo** – Accédez au [Menu Météo](../web/web-weather.md) pour voir les détails météorologiques.
+- **Créer un nouvel itinéraire** – Ouvre l'outil [*Planifier un itinéraire*](../web/web-navigation.md) avec l'emplacement sélectionné comme point de départ ou de destination.
 - **Ajouter un favori** – Permet de créer et d'enregistrer un [favori](../web/web-favorites.md#add--edit-favorite) à n'importe quel point de la carte pour un accès facile.
-- **Itinéraire depuis** – Définit le point sélectionné comme [lieu de départ](../web/planner.md#navigation-route) pour la navigation.
-- **Itinéraire vers** – Définit le point sélectionné comme [destination pour la navigation](../web/planner.md#navigation-route).
+- **Itinéraire depuis** – Définit le point sélectionné comme [lieu de départ](../web/web-navigation.md#start-a-route) pour la navigation.
+- **Itinéraire vers** – Définit le point sélectionné comme [destination pour la navigation](../web/web-navigation.md#start-a-route).
 - **Copier les coordonnées** – Copie les coordonnées du point sélectionné pour une utilisation externe.
 - **Afficher les régions** – Affiche les régions associées à l'emplacement sélectionné.
 

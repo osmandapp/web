@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -142,6 +142,7 @@ Les détails disponibles incluent :
 - [Dans les zones](#polygon-information)
 - [POI à proximité](#nearby-pois)
 - [Lieux populaires à proximité](#nearby-popular-places)
+- [Guides](#guides) (Android uniquement)
 - [Itinéraires de transport public pour les arrêts](#public-transport-routes)
 - [Favoris / Points de trace du même groupe](#favorites--track-points-from-the-group)
 - [Lien OpenStreetMap](#openstreetmap-link)
@@ -296,6 +297,18 @@ Appuyer sur *[Lieux populaires à proximité](https://osmand.net/docs/user/plugi
 </TabItem>
 
 </Tabs>
+
+### Guides {#guides}
+
+<InfoAndroidOnly/>
+
+![Guides Android](@site/static/img/map/details_guides.png)
+
+La section **Guides** apparaît dans le menu contextuel de la carte pour certains lieux et fournit un accès aux guides **Voyage (Wikivoyage)** liés au point d'intérêt sélectionné. Elle affiche une liste d'entrées de guide (par exemple, un pays ou une région) qui mentionnent le lieu sélectionné.
+
+La section Guides n'est affichée que si les données **Voyage (Wikivoyage)** sont téléchargées pour la zone sélectionnée.
+
+**Note :** Les guides sont liés au contenu Wikivoyage, et non aux descriptions générales de Wikipedia.
 
 
 ### Itinéraires de transport public {#public-transport-routes}

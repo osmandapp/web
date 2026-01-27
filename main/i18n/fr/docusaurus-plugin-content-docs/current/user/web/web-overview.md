@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Introduction
 title: Introduction au Planificateur Web
@@ -28,7 +28,7 @@ Conçu comme un compagnon multiplateforme pour OsmAnd sur Android et iOS, le Por
 
 OsmAnd Web s'intègre étroitement avec le service **OsmAnd Cloud**, qui permet de synchroniser les favoris, les traces et les sauvegardes entre les appareils et les plateformes. Les utilisateurs disposant de comptes **OsmAnd Start** (gratuit) ou **OsmAnd Pro** (payant) peuvent tirer pleinement parti de cet écosystème en synchronisant les données entre le mobile et le web. Vous trouverez une comparaison détaillée des fonctionnalités de *Start* et de *Pro* dans la section [Accès par abonnement](#subscription-accesses) ci-dessous.
 
-> **Note :** Même sans vous connecter ou vérifier votre compte, vous pouvez toujours utiliser plusieurs fonctionnalités principales du Portail de Carte Web, notamment : [Itinéraire de navigation](./planner.md), [Planificateur d'itinéraire](./planner.md), [Superpositions météo](./web-map.md#weather-on-the-web) et [Paramètres](#settings).
+> **Note :** Même sans vous connecter ou vérifier votre compte, vous pouvez toujours utiliser plusieurs fonctionnalités principales du Portail de Carte Web, notamment : [Itinéraire de navigation](./web-navigation.md), [Planificateur d'itinéraire](./planner.md), [Superpositions météo](./web-weather.md#), et [Paramètres](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -42,7 +42,7 @@ Le Portail Web offre les principales capacités suivantes pour travailler avec d
 - [Planification d'itinéraire](./planner.md) utilisant les profils à pied, voiture, vélo et autres.
 - [Aperçu de la navigation](./planner.md) avec des instructions au virage par virage.
 - [Recherche](./web-search.md) et [exploration](./web-search.md#explore) des lieux populaires à proximité.
-- Affichage des [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks) et [POI](./web-map.md#poi-overlay) sur la carte.
+- Affichage des [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks), et [POI](./web-map.md#poi-overlay) sur la carte.
 - [Superpositions météo](./web-weather.md) : vent, température et pression.
 - [Couches de terrain](./web-map.md#terrain) : ombrage, pentes et vue en altitude.
 - [Analyseur de trace](./web-tracks-analyzer.md) pour les profils d'altitude et de vitesse.
@@ -67,11 +67,11 @@ Le Portail de Carte Web prend en charge plusieurs niveaux d'accès : sans connex
 | [Planificateur d'itinéraire](./planner.md) | Sans connexion |
 | [Superpositions météo](./web-weather.md) | Sans connexion |
 | [Paramètres](./web-map.md#settings) | Sans connexion |
-| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| <ProFeature/> |
-| [Synchronisation OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Recherche web, Lieux populaires](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Dossiers de traces et couche](./web-tracks.md) | <ProFeature/> |
+| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Synchronisation OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Recherche web, Lieux populaires](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Dossiers de traces et couche](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.

@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Planifier un itinéraire
 ---
@@ -117,6 +117,13 @@ Si les [données d'altitude](../map/tracks/track-context-menu.md#calculate-missi
 - [Utiliser les routes à proximité](#attach-track-to-roads). Ce mode utilise les cartes hors ligne pour trouver les routes les plus proches afin de construire une trace, de sorte que les données d'altitude seront récupérées à partir des routes attachées. La géométrie de la trace peut être ajustée.  
 - [Utiliser les cartes de terrain](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Ce mode calcule l'altitude en se basant sur les données des cartes de terrain (3D). La différence entre les altitudes enregistrées par votre appareil peut être utilisée pour la correction de l'altitude.  La géométrie de la trace reste inchangée.
 
+:::note
+
+**Correction d'altitude en ligne** (basée sur le serveur) a été supprimée dans les versions récentes d'OsmAnd et n'est plus disponible.  
+Pour les versions antérieures, elle était dépréciée et peu fiable.  
+Utilisez plutôt les options hors ligne : attacher aux routes ou cartes de terrain (Pro).  
+
+:::
 
 ### Attacher la trace aux routes {#attach-track-to-roads}
 

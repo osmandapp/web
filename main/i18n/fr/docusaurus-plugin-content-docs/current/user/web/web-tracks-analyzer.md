@@ -1,5 +1,5 @@
 ---
-source-hash: fe9500be3570d2dbf08995ee5614eb89cd647a44f0360730e48015dced34c738
+source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-**Analyseur de traces** est un outil web qui aide à analyser les segments de traces répétitifs entre des points sélectionnés sur la carte. Il analyse vos traces et trouve tous les segments qui passent par le(s) emplacement(s) choisi(s), vous permettant de comparer la vitesse, l'altitude, la distance et le temps à travers plusieurs activités.
+**Analyseur de traces** est un outil web qui aide à analyser les segments de traces répétitifs entre des points sélectionnés sur la carte. Pour utiliser cette fonctionnalité avec vos propres données, vous avez besoin d'un compte OsmAnd Pro avec des traces synchronisées vers OsmAnd Cloud — sinon, vos traces ne seront pas disponibles dans le Planificateur Web. Il analyse vos traces et trouve tous les segments qui passent par le(s) emplacement(s) choisi(s), vous permettant de comparer la vitesse, l'altitude, la distance et le temps à travers plusieurs activités.
 
 ## Comment utiliser {#how-to-use}
 
@@ -37,12 +37,12 @@ Les paramètres disponibles sont regroupés par type :
 
 **Vitesse**
 - Vitesse max.
-- Vitesse moyenne
+- Vitesse moy.
 - Vitesse min.
 
 **Altitude**
 - Altitude max.
-- Altitude moyenne
+- Altitude moy.
 - Altitude min.
 
 **Montée / Descente**

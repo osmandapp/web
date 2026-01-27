@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -195,13 +195,13 @@ Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources
 L'onglet Local fournit un aperçu de l'utilisation du stockage pour toutes les données OsmAnd sur votre appareil. Les données sont divisées en trois sections codées par couleur pour plus de clarté, avec les éléments triés par taille du plus grand au plus petit. Chaque section n'affiche que les éléments avec des données téléchargées :
 
 - ***Ressources*** (*bleu*).  
-    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topographie](../plugins/topography.md), &nbsp;[Météo](../plugins/weather.md)), &nbsp;[Wikipédia](../plugins/wikipedia.md) et les [Guides de voyage](../plan-route/travel-guides.md), &nbsp;[Mises à jour en direct](../personal/maps-resources.md#live-updates), &nbsp;**Routes seules**,  &nbsp;[Sources de carte](../map/raster-maps.md), &nbsp;[Styles de rendu](../map/vector-maps.md#default-map-styles), &nbsp;**Polices de carte, &nbsp;Instructions vocales (enregistrées et TTS), &nbsp;Cache**.  
+    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
-- ***Mes lieux*** (*jaune*).  
-    Inclut les [Favoris](../personal/favorites.md), &nbsp;les [Traces](../personal/tracks/manage-tracks.md), &nbsp;les [Notes OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;les [Modifications OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;les [Notes A/V](../plugins/audio-video-notes.md), &nbsp;les [Marqueurs de carte](../personal/markers.md), &nbsp;l'[Historique](../personal/global-settings.md#history), &nbsp;*Itinéraire*.  
+- ***My Places*** (*yellow*).  
+    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
 
-- ***Paramètres*** (*vert*).  
-    Inclut les [Profils](../personal/profiles.md), &nbsp;les [Couleurs](../personal/color-palette-schemes.md) et les **Autres** configurations de l'application.
+- ***Settings*** (*green*).  
+    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
 
 </TabItem>
 
@@ -428,11 +428,13 @@ Lorsque une carte est désactivée, elle peut disparaître temporairement de l'o
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Menu Cartes Mettre à jour les cartes iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Prévisions météo Mettre à jour les cartes iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Menu Cartes Mettre à jour les cartes iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Prévisions météo Mettre à jour les cartes iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 L'onglet **Mises à jour** vous permet de rafraîchir les cartes et les ressources d'OsmAnd. Les cartes standard et les cartes de routes seules sont publiées une fois par mois, généralement entre le 2 et le 5 du mois, et incluent les données OpenStreetMap jusqu'au dernier jour du mois précédent (par exemple, la version d'octobre contient les données jusqu'au 30 septembre). D'autres données telles que Wikipédia, le relief ou les cartes marines peuvent suivre des calendriers de mise à jour différents et non réguliers. 
 
 Utilisez le bouton *Tout mettre à jour* pour mettre à jour toutes les cartes simultanément, ou mettez à jour les cartes individuelles selon vos besoins. Pour les mises à jour horaires, vérifiez l'état de votre abonnement aux [Mises à jour en direct](#live-updates). Si cette option est activée, la section **Mises à jour en direct** apparaîtra en haut de l'onglet, sous l'indicateur de mémoire de l'appareil.
+
+L'onglet **Mises à jour** peut également afficher un élément **Cartes non prises en charge**. Il apparaît lorsque vous avez des cartes qui ne sont plus prises en charge et qui ont été remplacées par des régions plus petites. Appuyez sur Cartes non prises en charge pour examiner la liste, supprimer les cartes obsolètes et télécharger les nouvelles versions de régions à la place. Sur l'écran Cartes non prises en charge, vous pouvez visualiser toutes les cartes non prises en charge et utiliser Supprimer tout pour les supprimer en une fois (un invite de confirmation est affiché avant la suppression).
 
 L'onglet **Mises à jour** comprend également une section Prévisions météo. Elle est conçue pour gérer vos prévisions hors ligne pour les pays sélectionnés :
 

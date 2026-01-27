@@ -1,5 +1,5 @@
 ---
-source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
+source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
 sidebar_position: 13
 title:  Vue Carte des pistes de ski
 ---
@@ -112,7 +112,7 @@ Si vous préférez supprimer les pistes et les couleurs d'hiver de la carte, ou 
 
 
 :::info uninstall plugin
-Le plugin Vueur de carte des pistes de ski est une application distincte, et la désactivation de son affichage ne le supprime pas. Si vous devez le désinstaller, allez dans les paramètres d'Android en utilisant *Ouvrir les paramètres* dans le menu du plugin.  
+Le plugin Vue Carte des pistes de ski est une application distincte, et la désactivation de son affichage ne le supprime pas. Si vous devez le désinstaller, allez dans les paramètres d'Android en utilisant *Ouvrir les paramètres* dans le menu du plugin.  
 :::
 
 
@@ -239,8 +239,8 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,renderin
 
 Pour savoir sur quelles pistes en dehors de la station de ski vous pouvez naviguer, vous devez activer l'option **Pistes et itinéraires de ski** dans la liste [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), ouverte depuis le menu [Configurer la carte](../map/configure-map-menu.md).  
 
-Avec le profil Ski, la navigation à ski et le [style de carte Hiver et ski](../map/vector-maps.md#winter-and-ski) activés, les [pistes et itinéraires de ski](../map/vector-maps.md#ski-slopes-and-routes) montrent tous les types de pistes que la navigation à ski peut utiliser pour construire des itinéraires de navigation. Ces itinéraires de pistes de ski, s'ils sont activés, sont délimités par une couleur violette, principalement en dehors des limites de la station de ski.  
-Lors de l'activation de l'option [Pistes et itinéraires de ski](../map/vector-maps.md#ski-slopes-and-routes) pour un style de carte autre que Hiver et ski, seules les pentes sont affichées. D'autres fonctionnalités liées au ski pourraient ne pas être affichées dans cette couche de style.  
+Avec le profil Ski, la navigation à ski et le [style de carte Hiver et ski](../map/vector-maps.md#winter-and-ski) activés, les [pistes et itinéraires de ski](../map/routes.md#ski-slopes-and-routes) montrent tous les types de pistes que la navigation à ski peut utiliser pour construire des itinéraires de navigation. Ces itinéraires de pistes de ski, s'ils sont activés, sont délimités par une couleur violette, principalement en dehors des limites de la station de ski.  
+Lors de l'activation de l'option [Pistes et itinéraires de ski](../map/routes.md#ski-slopes-and-routes) pour un style de carte autre que Hiver et ski, seules les pentes sont affichées. D'autres fonctionnalités liées au ski pourraient ne pas être affichées dans cette couche de style.  
 Les _pistes et itinéraires de ski_ [sont cliquables](../map/routes.md#actions-with-routes).
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
+source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -27,7 +27,7 @@ Pour vous connecter avec d'autres utilisateurs d'OsmAnd, poser des questions et 
 
 | Plateforme | Nom du groupe | Description | Lien |
 | :-- | :-- | :-- | :-- |
-| Facebook | Communauté des utilisateurs d'OsmAnd (*English*)  |  C'est un groupe où les utilisateurs d'OsmAnd peuvent aider d'autres utilisateurs.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+| Facebook | OsmAnd users community (*English*)  |  C'est un groupe où les utilisateurs d'OsmAnd peuvent aider d'autres utilisateurs.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
 |  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
 |  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
 |  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Pour échanger des expériences sur l'utilisation d'OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
@@ -87,8 +87,8 @@ Ce qui suit est une liste de [plugins personnalisés](../plugins/custom.md) dév
 | 3D model  | Ce paquet ajoute une option de modèle 3D pour les profils. Personnalisez l'apparence via le menu : [*Menu OsmAnd → Paramètres → Profil → Apparence du profil → choisissez les 4ème-5ème icônes de l'icône de position*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS online maps collection | Une collection de diverses sources de cartes en ligne, y compris des cartes satellites, touristiques et historiques, entre autres.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Map Legend  | Ce paquet ajoute une légende de carte hors ligne (version 1.01 ; 03-04-2024), accessible via *Menu → Mes lieux → Favoris → Légende de la carte*. La légende de la carte est également disponible à [cet emplacement](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 The USA Maps | Une collection de cartes des États-Unis comprenant les [terres publiques (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), les [sentiers et routes de l'USFS](https://www.fs.usda.gov/visit/maps), le [Bureau of Land Management (BLM)](https://www.blm.gov), et les [données parcellaires (terres privées)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) pour certains États. Toutes les cartes des terres publiques et privées ont été classées par État. Les données cartographiques du BLM et de l'USFS ont été divisées en *Routes et sentiers* et *POI* pour l'ensemble du territoire des États-Unis. Les cartes sont au format OBF pour OsmAnd. Plus d'infos sur [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [The USA maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱 UMP map of Poland | [UMP](https://ump.waw.pl/) couvre la majeure partie de la Pologne avec un effort de développement continu. Pendant longtemps, le nom UMP-pcPL (mapą prawie całej Polski) a été utilisé. | [UMP map of Poand](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| 🇺🇸 The USA Maps | Une collection de cartes spécialisées des États-Unis, converties au format OBF d'OsmAnd, comportant<ul><li>[Terres publiques et zones protégées USGS (PAD-US 3.0), par État](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Sentiers et routes USFS, à l'échelle nationale](https://www.fs.usda.gov/visit/maps),</li><li>[Routes et sentiers BLM, à l'échelle nationale](https://www.blm.gov/maps),</li><li>[POI d'activités de loisirs BLM, à l'échelle nationale](https://www.blm.gov/maps),</li><li>[Terres privées (données parcellaires), pour certains États](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Plus d'infos sur [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [The USA maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇵🇱 UMP map of Poland | [UMP](https://ump.waw.pl/) couvre la majeure partie de la Pologne avec un effort de développement continu. Pendant longtemps, le nom UMP-pcPL (mapą prawie całej Polski) a été utilisé. | [UMP map of Poland](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Ce plugin inclut un style de carte léger qui améliore la visibilité des routes non goudronnées et des sentiers dans OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 

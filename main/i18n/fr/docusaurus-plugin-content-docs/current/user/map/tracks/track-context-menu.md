@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
@@ -134,7 +134,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 
 <br/>
 
-- **<Translate android="true" ids="shared_string_share"/>** – Exporte la trace sélectionnée au format GPX.
+- **<Translate android="true" ids="shared_string_share"/>** – Exporte la trace sélectionnée au format GPX via le menu Partager du système.
 - **<Translate android="true" ids="upload_to_openstreetmap"/>** - [Téléverse](../../plugins/osm-editing.md#upload-gps-track) la trace sélectionnée sur OpenStreetMap.
 
 <br/>
@@ -370,7 +370,7 @@ La fonctionnalité de calcul d'altitude hors ligne n'est disponible que pour les
 
 <InfoAndroidOnly />
 
-Cette fonctionnalité vous permet de calculer le profil d'altitude pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en se basant sur les [données des cartes de terrain](../../plugins/topography.md#download-maps). *Les cartes de terrain (3D) doivent être préalablement téléchargées*.
+[Cette fonctionnalité](../../plan-route/create-route.md#get-elevation-data) vous permet de calculer le profil d'altitude pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en se basant sur les [données des cartes de terrain](../../plugins/topography.md#download-maps). *Les cartes de terrain (3D) doivent être préalablement téléchargées*.
 
 1. Téléchargez les [Cartes de terrain (3D)](../../plugins/topography.md#download-maps) pour la région requise.
 2. Si la trace ne contient aucune donnée d'altitude, allez dans le menu contextuel de la trace (*Menu contextuel de la trace → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), sélectionnez *Utiliser les cartes de terrain*, et après le calcul, vous obtiendrez un graphique de la trace basé sur les données du terrain.  
@@ -472,7 +472,7 @@ Appuyez sur le bouton *Ajouter un waypoint* pour ouvrir l'écran de création de
 
 <TabItem value="ios" label="iOS">
 
-![Menu du groupe du menu de la trace iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Menu du groupe du menu de la trace iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Menu du groupe du menu de la trace iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -484,7 +484,7 @@ Le *menu à trois points* ( &#8285; ) ouvre le *menu du groupe* de waypoints.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Permet d'afficher ou de ne pas afficher les waypoints du groupe sur la carte. Ou vous pouvez utiliser [le bouton à l'écran](#points--waypoints) pour afficher ou masquer les waypoints du groupe sur la carte.
 - **<Translate android="true" ids="shared_string_rename"/>** - Changer le nom du groupe.
-- **<Translate android="true" ids="change_default_appearance"/>** - Changer les options d'affichage pour un groupe de waypoints.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Changer les options d'affichage pour un groupe de waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** ou **Supprimer** (*Android uniquement*) - Déplacer les waypoints du groupe vers la liste des [Marqueurs de carte](../../personal/markers.md).
 - **<Translate android="true" ids="add_to_favorites"/>** (*Android uniquement*) - Permet de copier le groupe de waypoints sélectionné dans les [Favoris](../../personal/favorites.md). Vous pouvez choisir l'une des deux options : ***<Translate android="true" ids="copy_as_new_folder"/>*** ou ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Android uniquement*) - Crée un itinéraire entre les waypoints. Les premier et dernier points deviennent le départ et l'arrivée de l'itinéraire, et les autres sont convertis en points intermédiaires.
@@ -657,7 +657,7 @@ Pour chaque segment, vous pouvez voir :
 - temps en mouvement.
 - vitesse moyenne et maximale.
 
-Lorsque vous appuyez sur un segment dans la liste, la vue de la carte affiche la trace complète avec ses intervalles et ouvre le menu contextuel pour la trace en bas de l'écran.
+Lorsque vous appuyez sur un segment dans la liste, la vue de la carte affiche la trace complète avec ses intervalles et ouvre le menu contextuel pour la trace en bas de l'écran. Sur la carte, les étiquettes d'intervalle supportent deux actions : appui pour ouvrir le panneau d'aperçu de la trace, et appui long pour ouvrir le menu contextuel de la trace.
 
 
 ### Diviser par temps {#split-by-time}
@@ -669,9 +669,14 @@ L'option **Diviser par temps** divise une trace en intervalles de durée égale.
 
 ### Diviser par montée/descente {#split-by-uphill-downhill}
 
-![Onglet de division de la trace par montée/descente](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Carte de division de la trace par montée/descente](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Onglet de division de la trace par montée/descente](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Carte de division de la trace par montée/descente](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
 Cette option divise une trace en segments basés sur les changements d'altitude. Chaque intervalle est classé comme ***montée***, ***descente*** ou ***plat***. La manière dont les intervalles sont affichés, les statistiques fournies pour chaque segment et leur apparition sur la carte sont également les mêmes que dans la section [Diviser par distance](#split-by-distance).
+
+Sur la carte, les segments sont marqués avec des étiquettes colorées au début de chaque intervalle :
+- **Segments en montée** (étiquettes rouges) montrent une flèche vers le haut, l'index du segment et la pente moyenne en pourcentage (par exemple, ↑ 11. 2 %).
+- **Segments en descente** (étiquettes vertes) montrent une flèche vers le bas, l'index du segment et la pente moyenne en pourcentage (par exemple, ↓ 12. -2 %).
+- **Segments plats** (étiquettes bleues) montrent la distance de la section plate (par exemple, 616 m, 411 m).
 
 
 ### Métriques de fréquence cardiaque {#heart-rate-metrics}

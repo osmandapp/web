@@ -1,5 +1,5 @@
 ---
-source-hash: 2e2bedc5911717de92c663881adf7da2b32d2027a6c8127a8c9d02651753f230
+source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -29,6 +29,8 @@ Pour utiliser *CarPlay* sur l'écran de votre véhicule, suivez ces étapes :
 ### Interface CarPlay {#carplay-interface}
 
 *CarPlay* n'est **pas une réplique directe** de l'application mobile OsmAnd. Il dispose d'une interface simplifiée, axée sur les fonctions de navigation essentielles pour garantir une conduite sûre. Certaines fonctionnalités avancées ne sont pas prises en charge en raison des limitations de la plateforme.
+
+La position des boutons et du widget de navigation dans *CarPlay* correspond au côté de la barre d'état CarPlay. Elle dépend du paramètre **Position du conducteur** (main gauche ou main droite) dans l'unité principale de votre voiture, et non d'un paramètre à l'intérieur de CarPlay ou de l'application OsmAnd.
 
 ### Écran de connexion {#connection-screen}
 

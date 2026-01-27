@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  Profils (Paramètres)
 ---
@@ -239,7 +239,7 @@ Dans la section **Unités et formats**, vous pouvez ajuster les unités de mesur
 |          | <Translate android="true" ids="si_min_km"/> | 0,667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48,59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Aisa, Amérique latine, Canada, Japon, Inde, Australie |
+| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Asie, Amérique latine, Canada, Japon, Inde, Australie |
 |  | <Translate android="true" ids="imperial_gallons"/> | Royaume-Uni et similaires |
 |  | <Translate android="true" ids="us_gallons"/> | États-Unis |
 |  |  |  |
@@ -435,19 +435,24 @@ Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,
 
 ![Apparence de Ma position](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+Les paramètres **Apparence de Ma position** vous permettent de personnaliser la façon dont votre position est affichée sur la carte, que ce soit à l'arrêt (Repos) ou en mouvement (Navigation). Le mouvement est détecté par le système d'exploitation lorsque la vitesse de l'appareil est **supérieure à zéro**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Apparence de Ma position](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![Apparence de Ma position](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+Les paramètres **Apparence de Ma position** vous permettent de personnaliser la façon dont votre position est affichée sur la carte, que ce soit à l'arrêt (Repos) ou en mouvement (Navigation). Le mouvement est détecté par le système d'exploitation lorsque la vitesse de l'appareil est **supérieure à zéro**.
+
+Utilisez **Taille de l'icône** pour ajuster la taille de l'icône de position Ma position indépendamment de la taille du texte de l'application. Vous pouvez définir des tailles différentes pour les modes Repos et Navigation. La taille peut être ajustée de 50 % à 300 % (50, 75, 100, 125, 150, 200, 250, 300 %). La valeur par défaut est de 100 %. Appuyez sur Taille de l'icône pour ouvrir les paramètres de taille, puis utilisez le curseur ou les boutons de pas + / – pour modifier la valeur. Utilisez **Réinitialiser par défaut** pour revenir à 100 %.
 
 </TabItem>
 
 </Tabs>
 
-Les paramètres **Apparence de Ma position** vous permettent de personnaliser la façon dont votre position est affichée sur la carte, que ce soit à l'arrêt ou en mouvement. Le mouvement est détecté par le système d'exploitation lorsque la vitesse de l'appareil est **supérieure à zéro**.
 
 ### Angle de vue et rayon de localisation {#view-angle-and-location-radius}
 

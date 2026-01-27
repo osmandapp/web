@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title:  Accessibilité
 ---
@@ -96,14 +96,18 @@ Pour activer :
 
 - Un appui long sur **Ma position** ouvre un menu avec les options ***Afficher votre position*** et ***Afficher les détails***. Sélectionner Afficher les détails affiche des informations supplémentaires sur l'itinéraire et fournit le bouton ***Démarrer/Arrêter l'annonce automatique***.
 - Réglez la **Période d'annonce automatique** (par exemple, *10 secondes*) pour contrôler la fréquence des annonces.
-- Si **TalkBack** n'est pas activé dans les paramètres système de l'appareil, OsmAnd ne fournira pas de *notifications vocales* et n'affichera que des *notifications textuelles* à l'écran.  
+- Avec **TalkBack** activé, ces notifications sont prononcées à voix haute. Si **TalkBack** n'est pas activé dans les paramètres système de l'appareil, OsmAnd ne fournira pas de *notifications vocales* et n'affichera que des *notifications textuelles* à l'écran.  
 
 ### Annonce automatique intelligente {#smart-autoannounce}
 
 Pour activer :
 *Plugins* → *Accessibilité* → *Paramètres* → *Annonce automatique intelligente*
 
-La fonction **Annonce automatique intelligente** fournit des *notifications audio* lorsque vous vous écartez de l'itinéraire prévu. Elle est conçue pour aider les utilisateurs malvoyants qui dépendent du *guidage vocal*.  
+La fonctionnalité **Annonce automatique intelligente** fonctionne en complément de l'Annonce automatique. Démarrez d'abord l'Annonce automatique, puis activez l'Annonce automatique intelligente dans les paramètres du plugin.
+
+Lorsque l'Annonce automatique intelligente est activée, les annonces sont déclenchées lorsque la cible de navigation actuelle change de secteur. Cela se produit généralement lorsque votre mouvement modifie la direction vers le prochain virage ou la destination. Lorsque l'Annonce automatique intelligente est désactivée, OsmAnd affiche des notifications périodiques selon la Période d'annonce automatique.
+
+**Remarque :** Seule la Période d'annonce automatique peut être ajustée. Le déclencheur de « changement de secteur » n'est pas configurable dans les paramètres de l'application. 
 
 
 ## Paramètres du plugin {#plugin-settings}

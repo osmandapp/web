@@ -1,5 +1,5 @@
 ---
-source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
+source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
 sidebar_position: 15
 title:  Enregistrement de trajet
 ---
@@ -134,7 +134,7 @@ Pour *Arrêter / Enregistrer / Mettre en pause* :
 
 - Pour **Enregistrer, Mettre en pause, Démarrer** un nouveau segment, ou **Terminer** l'enregistrement, utilisez les boutons d'[Action rapide](../widgets/quick-action.md#add-and-delete-actions). Allez dans *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → Ajouter une action → [Mes lieux](../widgets/quick-action.md#my-places)* et ajoutez un ou plusieurs boutons d'action rapide.
 
-- (*Android uniquement*) Pour **Mettre en pause** ou **Enregistrer** une trace en cours d'enregistrement, utilisez la [notification](#notifications) système dans la zone de notification de votre appareil.<br/><br/> ![arrêter-enregistrer-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Android uniquement*) Pour **Mettre en pause** ou **Enregistrer** une trace en cours d'enregistrement, utilisez la [notification](#notifications) système dans la zone de notification de votre appareil.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Écran d'aperçu {#overview-screen}
@@ -389,35 +389,62 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 Le [widget d'enregistrement de trajet](../widgets/info-widgets.md#trip-recording-widgets) offre un moyen facile de surveiller l'état de votre enregistrement et d'accéder rapidement aux paramètres et détails de l'enregistrement. Ce widget est automatiquement ajouté à votre écran lorsque le plugin d'enregistrement de trajet est activé.
 
-Pour personnaliser votre interface, vous pouvez ajouter ou supprimer le widget d'enregistrement de trajet et [d'autres widgets](../plugins/trip-recording#duration-uphill-downhill) via le menu Configurer l'écran.
+Pour personnaliser votre interface, vous pouvez ajouter ou supprimer le widget d'enregistrement de trajet et [d'autres widgets](../plugins/trip-recording#additional-widgets) via le menu Configurer l'écran.
 
 
-### Distance (Démarrer-Arrêter) {#distance-start-stop}
+### Modes d'affichage {#display-modes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Terminer l'enregistrement sur Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
-![Widget d'enregistrement de trajet](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+![Modes d'affichage](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Modes d'affichage](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget d'enregistrement de trajet](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Widget d'enregistrement de trajet](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+![Modes d'affichage](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Modes d'affichage](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Lorsque les widgets sont affichés sur la carte, appuyer sur l'un d'eux révèle des détails supplémentaires sur la trace et permet d'interagir avec l'enregistrement.
-Le widget *Distance* affiche la distance totale de votre trajet enregistré actuel et sert d'interface principale pour la gestion de vos enregistrements. Appuyer dessus révèle la [boîte de dialogue d'enregistrement de trajet](#start-a-dialog), où vous pouvez démarrer, arrêter et afficher des informations détaillées sur votre trace.
+Certains widgets d'enregistrement de trajet prennent en charge plusieurs modes d'affichage. Les modes vous permettent de basculer entre les valeurs globales du trajet et les métriques pour la section la plus récente en montée ou en descente du trajet actuellement enregistré.
 
-- Le widget est ajouté automatiquement lorsque le *plugin d'enregistrement de trajet* est activé, mais il peut être masqué via le [menu Configurer l'écran](../widgets/configure-screen.md#overview).
-- Si l'option *Afficher la boîte de dialogue de démarrage* est désactivée dans les paramètres du plugin d'enregistrement de trajet, appuyer sur le widget actif ouvrira quand même la boîte de dialogue *Enregistrement de trajet*, vous permettant d'accéder à d'autres options et informations.  
+Les modes suivants peuvent être disponibles en fonction du widget.
+1. **Distance (Démarrer-Arrêter)** :
+- Distance totale (par défaut)
+- Dernière montée
+- Dernière descente
 
-En plus du widget *Distance/Démarrer-Arrêter*, le **plugin d'enregistrement de trajet** inclut cinq autres widgets : *Durée*, *Dénivelé positif*, *Dénivelé négatif*, *Vitesse max.* et *Pente moyenne*. Ceux-ci fournissent des informations supplémentaires sur votre trajet, vous aidant à suivre la progression en temps réel.
+2. **Dénivelé positif** :
+- Total (par défaut)
+- Dernière montée
+
+3. **Dénivelé négatif** :
+- Total (par défaut)
+- Dernière descente
+
+4. **Vitesse max.** :
+- Total (par défaut)
+- Dernière montée
+- Dernière descente
+
+5. **Pente moyenne** :
+- Dernière montée  
+- Dernière descente 
+
+Le basculement de mode dépend du widget :
+- Dénivelé positif / Dénivelé négatif / Vitesse max. / Pente moyenne — appuyez sur le widget sur la carte pour basculer son mode.
+- Distance (Démarrer-Arrêter) — le widget Distance prend en charge plusieurs modes d'affichage (sélectionnez-les dans les paramètres du widget), mais l'appui dessus ouvre toujours la boîte de dialogue d'enregistrement de trajet, où vous pouvez démarrer, arrêter et afficher des informations détaillées sur votre trace. 
+
+Si l'enregistrement actuel ne contient pas encore de section en montée ou en descente, les widgets en mode Dernière montée ou Dernière descente affichent 0 ou — (pas de données).
+
+**Notes :** Les modes s'appliquent au trajet actuellement enregistré et se mettent à jour au fur et à mesure que l'enregistrement continue.
+
+
+### Distance (Démarrer-Arrêter) {#distance-start-stop}
 
 | |
 |-----------|
@@ -431,61 +458,22 @@ Le widget Distance prend en charge plusieurs modes d'affichage :
 - **Dernière descente** – distance de la section de descente la plus récente.
 
 
-### Durée, Dénivelé positif, Dénivelé négatif {#duration-uphill-downhill}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
+### Widgets supplémentaires {#additional-widgets}
 
 | |
 |------------|
 |**Durée**. Affiche la durée totale de l'enregistrement du trajet en cours en heures et minutes. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Dénivelé positif**. Affiche le gain d'altitude total ou la section de montée la plus récente, en fonction du mode sélectionné. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 |**Dénivelé négatif**. Indique la descente totale ou la section de descente la plus récente, en fonction du mode sélectionné. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-| |
-|------------|
-|**Durée**. Affiche la durée totale de l'enregistrement du trajet en cours en heures et minutes. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Dénivelé positif**. Affiche le gain d'altitude total ou la section de montée la plus récente, en fonction du mode sélectionné. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Dénivelé négatif**. Indique la descente totale ou la section de descente la plus récente, en fonction du mode sélectionné. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-</Tabs>
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Vitesse max.** . Affiche la vitesse maximale pour le trajet enregistré actuellement dans le mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Pente moyenne**. Affiche la pente moyenne pour la dernière section de montée ou de descente du trajet actuel, en fonction du mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 
 Si vous avez sélectionné plusieurs widgets — *Durée*, *Dénivelé positif* ou *Dénivelé négatif* — vous pouvez accéder à la même boîte de dialogue pour chacun sans avoir besoin de changer ou de la fermer. Cette interface unifiée facilite la visualisation et la gestion de toutes les informations connexes de manière transparente.
-
-### Vitesse max. et Pente moyenne {#max-speed--average-slope}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Vitesse max. Android](@site/static/img/widgets/max_speed_android.png) ![Pente moyenne Android](@site/static/img/widgets/average_slope_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Vitesse max. iOS](@site/static/img/widgets/max_speed_ios.png) ![Pente moyenne iOS](@site/static/img/widgets/average_slope_ios.png) 
-
-</TabItem>
-
-</Tabs> 
-
-Le widget **Vitesse max.** affiche la vitesse maximale pour le trajet enregistré actuellement. Appuyez sur le widget pour basculer entre la vitesse maximale globale et la vitesse maximale de la dernière section de montée ou de descente.
-
-Le widget **Pente moyenne** affiche la pente moyenne pour la dernière section de montée ou de descente du trajet actuel. Il aide à estimer à quel point la montée ou la descente précédente était raide, en se basant sur le gain d'altitude et la distance.
 
 
 ## Articles connexes {#related-articles}

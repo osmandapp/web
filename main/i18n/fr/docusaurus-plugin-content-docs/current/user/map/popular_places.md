@@ -1,5 +1,5 @@
 ---
-source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
+source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
 sidebar_position: 8
 title: Lieux populaires
 ---
@@ -14,8 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Aperçu {#overview}
 
@@ -26,7 +27,7 @@ Chaque lieu inclus dans cette fonctionnalité est lié à un **ID Wikidata**, ce
 Actuellement, la base de données organisée comprend environ **50 000 à 150 000 lieux les mieux notés** dans le monde, sélectionnés parmi plus de **1 million** d'objets Wikidata + OSM.
 
 :::note
-*Ceci est la première version de la fonctionnalité Lieux populaires. Vos commentaires sont les bienvenus sur [GitHub](https://github.com/osmandapp/OsmAnd)*.
+*This is the first version of the Popular Places feature. Feedback is welcome on [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -40,13 +41,15 @@ Actuellement, la base de données organisée comprend environ **50 000 à 150 00
 </Tabs>
 
 
-### Sources des données
+## Sources des données {#data-sources}
 
 Les **Lieux populaires** sont basés sur du contenu structuré de [Wikidata](https://www.wikidata.org) et [Wikipedia](https://www.wikipedia.org/).
 
 Seuls les POI avec un **ID Wikidata** lié sont affichés. Ces ID connectent les objets de la carte à des noms, descriptions et images vérifiés.
 
 Vous pouvez voir le lien Wikidata directement dans le [Menu contextuel de la carte](../map/map-context-menu.md). Appuyer sur l'étiquette Wikidata ouvre la page complète de l'objet sur le site web de Wikidata.
+
+Les images et autres contenus basés sur Wikidata dans les Lieux populaires sont actualisés selon un calendrier et peuvent ne pas apparaître immédiatement après les modifications dans Wikidata ou Wikimedia Commons. Fréquence d'actualisation actuelle : deux fois par mois — les **10** et **20**.
 
 Apprenez à trouver un ID Wikidata : [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -62,6 +65,8 @@ Il y a deux manières principales d'accéder à cette fonctionnalité :
 - **Version gratuite**  
   Accès via [Recherche](#explore-in-search) pour explorer les lieux à proximité en vue de liste.  
   *<Translate android="true" ids="android_button_seq"/>*. Allez à : *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  
+  Cette liste Explorer affiche des lieux Wikipedia/Wikidata classés par popularité près de vous et fonctionne en ligne. Elle affiche jusqu'à 50 lieux. Comme les résultats Explorer/Wikipedia sont classés par notation, l'ordre dans ces résultats peut différer de la recherche POI régulière.
 
 - **Versions payantes** *(Maps+ et OsmAnd Pro)*  
   Activez la surcouche visuelle dans [Configurer la carte](#enable-layer).  
@@ -130,19 +135,19 @@ Avant d'utiliser cette fonctionnalité :
 - Assurez-vous que le [Plugin Wikipedia](../plugins/wikipedia.md) est activé.
 - Téléchargez les données Wikipedia pour votre région si vous souhaitez l'utiliser hors ligne.
 
-### Options de la couche
+### Options de la couche {#layer-options}
 
 Une fois activées, les options suivantes deviennent disponibles :
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – Active/désactive les POI Wikipedia sur la carte.
 
 - **Source des POI** – Basculer entre :
-  - *Mode hors ligne* (les articles Wikipedia doivent être téléchargés).
-  - *Mode en ligne uniquement* (utilise les données et images en direct).
+  - *Mode hors ligne uniquement* — utilise les données de carte Wikipedia téléchargées pour votre région. 
+  - *Mode en ligne uniquement* — charge les lieux et aperçus d'images en ligne. Les résultats en ligne peuvent dépendre de vos paramètres de langue sélectionnés.
 
 - **<Translate android="true" ids="shared_string_language"/>** – Sélectionnez la langue pour les descriptions Wikipedia.
 
-- **<Translate android="true" ids="show_image_previews"/>** – Affichez les aperçus d'images de Wikidata à côté des POI.
+- **<Translate android="true" ids="show_image_previews"/>** – Affichez les miniatures d'images de Wikidata à côté des POI. Si les aperçus d'images sont désactivés, les Lieux populaires sont affichés avec des icônes au lieu de miniatures sur la carte. Les aperçus d'images utilisent des images liées à Wikidata/Wikipedia : en *mode hors ligne uniquement*, les aperçus dépendent des données Wikipedia téléchargées, tandis qu'en *mode en ligne uniquement*, les aperçus sont récupérés en ligne.
 
 Appuyer sur un POI sur la carte ouvre le [menu contextuel du POI](./map-context-menu.md), où vous pouvez voir les [photos en ligne](#online-photos) et accéder aux [articles Wikipedia](../plugins/wikipedia.md) liés.
 
@@ -171,10 +176,9 @@ Ceci est une section dans le [menu contextuel du POI](./map-context-menu.md) qui
 
 Les images consultées en ligne sont mises en cache automatiquement pour un accès hors ligne. Les photos mises en cache affichent un petit badge hors ligne dans le coin. La grille d'aperçu s'adapte à la taille de l'écran sur iPadOS et macOS, garantissant une mise en page confortable des images sur les écrans plus grands. OsmAnd évite également de déclencher des requêtes réseau répétées lorsque la section Photos en ligne est fermée, et annule les requêtes précédentes lors d'un basculement rapide entre différents POI.
 
-En savoir plus sur les options supplémentaires dans les sections [Actions](#actions) et [Galerie](#gallery).
-
-
 <!-- 
+Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
+
 
 When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
 
@@ -183,19 +187,17 @@ When you tap a Popular Place on the map or from the list, the [POI context menu]
 
 For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
 
--->
 
 ### Actions {#actions}
 
-Dans le menu contextuel de la carte Comment y accéder :
+In the Map Context menu How to access:
 
-- Appuyez sur le bouton **Tout afficher** (Android) / **Voir tout** (iOS) pour ouvrir la [galerie](#gallery) en mode plein écran, où vous pouvez faire défiler toutes les photos disponibles pour le lieu sélectionné.
+- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
 
-- Appuyez sur n'importe quelle photo pour la voir en [plein écran](#gallery) et accéder aux actions disponibles :  
-  **Partager**, **Détails**, **Ouvrir dans le navigateur**, et **Télécharger**.
+- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
+  **Share**, **Details**, **Open in browser**, and **Download**.
 
-**Note :** Le téléchargement enregistre l'image dans le stockage de l'appareil pour une utilisation hors ligne permanente, tandis que les photos mises en cache sont stockées automatiquement et disponibles hors ligne uniquement dans l'application.
-
+-->
 
 ### Galerie {#gallery}
 
@@ -217,8 +219,7 @@ Dans le menu contextuel de la carte Comment y accéder :
 
 </Tabs>
 
-
-Le **Menu Galerie** peut afficher jusqu'à **100 images** relatives au point d'intérêt sélectionné. Vous pouvez faire défiler toutes les photos disponibles. Un appui bref sur une photo ouvre une vue détaillée affichant : *Nom*, *Date d'ajout*, *Auteur*, *Licence*.  
+Le **Menu Galerie** peut afficher jusqu'à **100 images** relatives au point d'intérêt sélectionné. Pour voir ces images, appuyez sur **Tout afficher** (Android) / **Voir tout** (iOS). Vous pouvez faire défiler toutes les photos disponibles. Un appui bref sur une photo ouvre une vue détaillée affichant : *Nom*, *Date d'ajout*, *Auteur*, *Licence*.  
 
 Sur iOS, iPadOS et macOS, vous pouvez naviguer dans les photos à l'aide des touches du clavier (←/→ pour passer d'une image à l'autre, Entrée/Espace pour ouvrir).
 
@@ -236,29 +237,31 @@ Vous pouvez également effectuer les actions suivantes sur chaque photo :
 - **Télécharger**  
   Enregistrez l'image dans le stockage de votre appareil. L'image téléchargée se trouve dans le dossier Téléchargements par défaut de votre appareil et est accessible hors ligne.
 
+**Note :** Le téléchargement enregistre l'image dans le stockage de l'appareil pour une utilisation hors ligne permanente, tandis que les photos mises en cache sont stockées automatiquement et disponibles hors ligne uniquement dans l'application.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-La version Android n'inclut pas de menu supplémentaire pour les actions sur les photos.
+The Android version does not include an additional menu for photo actions.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS - Options du menu contextuel](@site/static/img/map/gallery_menu_ios_3.png)
+![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
 
-Sur **iOS**, un appui long sur une photo ouvre un menu contextuel avec des actions supplémentaires :
+On **iOS**, long-pressing a photo opens a context menu with additional actions:
 
-- **Détails**  
-- **Ouvrir dans le navigateur**  
-- **Télécharger**
+- **Details**  
+- **Open in browser**  
+- **Download**
 
-**Boutons** :
+**Buttons**:
 
-- Le bouton **Partager** vous permet de partager rapidement l'image sélectionnée.  
-- Le **menu à trois points** donne accès à des actions supplémentaires, notamment l'affichage des détails, l'ouverture de la source dans un navigateur ou le téléchargement de l'image.
+- The **Share** button lets you quickly share the selected image.  
+- The **three-dot menu** provides access to extra actions, including viewing details, opening the source in a browser, or downloading the image.
 
 </TabItem>
 
@@ -269,22 +272,23 @@ Sur **iOS**, un appui long sur une photo ouvre un menu contextuel avec des actio
 
 <TabItem value="android" label="Android">  
 
-![Android – Vue détaillée](@site/static/img/map/gallery_menu_android_2.png)
+![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS – Vue détaillée](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-L'écran **Détails** fournit les métadonnées complètes de la photo sélectionnée, y compris : *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source*, et *Lien direct*
+The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+-->
 
 
-## Articles connexes
+## Articles connexes {#related-articles}
 
 - [Menu contextuel de la carte](./map-context-menu.md)
 - [Configurer la carte](./configure-map-menu.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: ef13b994168cf04dcf98784cf4ef75aea6eb57a3e4db536a0fa48e3617173008
+source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -26,7 +26,7 @@ Les Favoris dans le Planificateur Web vous permettent d'enregistrer et de gérer
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_new.png)
 
-Après avoir enregistré un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) et pour [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos Favoris dans le Planificateur Web sont organisés en dossiers. Chaque dossier regroupe les lieux enregistrés et propose un ensemble d'actions disponibles depuis le menu des Favoris. 
+Après s'être inscrit à un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) et pour [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos Favoris dans le Planificateur Web sont organisés en dossiers. Chaque dossier regroupe les lieux enregistrés et propose un ensemble d'actions disponibles depuis le menu des Favoris. 
 Les actions suivantes sont disponibles :
 
 - *Afficher sur la carte* - afficher les points de favoris du dossier choisi sur la carte.
@@ -60,7 +60,7 @@ Lors de la configuration d'accès, les boîtes de dialogue suivantes peuvent app
 
 La sélection d'un favori ouvre le panneau **Détails**. Ce panneau apparaît lorsque vous cliquez sur un favori directement sur la carte ou que vous le sélectionnez depuis un dossier de favoris.
 
-La vue Détails fournit les informations associées au lieu sélectionné et dépend des données disponibles pour ce favori spécifique. Au minimum, elle inclut l'emplacement sur la carte et ses coordonnées géographiques. Pour les lieux liés à des objets OpenStreetMap ou à des sources enrichies, des métadonnées supplémentaires peuvent être affichées, telles que des noms, des catégories, des identifiants ou des liens de référence (par exemple, [Wikipedia](../plugins/wikipedia.md) ou des liens Wikidata). 
+La vue Détails fournit les informations associées au lieu sélectionné et dépend des données disponibles pour ce favori spécifique. Au minimum, elle inclut l'emplacement sur la carte et ses coordonnées géographiques. Pour les lieux liés à des objets OpenStreetMap ou à des sources enrichies, des métadonnées supplémentaires peuvent être affichées, telles que des noms, des catégories, des identifiants ou des liens de référence (par exemple, Wikipedia ou des liens Wikidata). 
 
 ![Web Favorites Details](@site/static/img/web/favorites_details.png)
 

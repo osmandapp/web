@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -352,8 +352,9 @@ La sauvegarde automatique enregistre automatiquement les données OsmAnd sélect
 
 Comportement de la sauvegarde automatique :
 
-- La sauvegarde automatique s'exécute approximativement toutes les heures pendant que OsmAnd fonctionne au premier plan.
-- La sauvegarde démarre également lorsque vous revenez à l'écran de la carte.
+- La sauvegarde automatique s'exécute approximativement toutes les heures pendant que OsmAnd fonctionne au premier plan. Cet intervalle n'est actuellement pas ajustable dans l'application. Il peut être modifié en important un fichier .osf.
+- La sauvegarde peut également démarrer lorsque vous ouvrez ou revenez à l'écran de la carte.
+- En plus des exécutions programmées, la sauvegarde automatique peut également démarrer après des modifications de certains types de données (par exemple, Favoris), en utilisant les types de sauvegarde activés dans les paramètres de sauvegarde automatique.
 - Vous pouvez activer/désactiver chaque élément ou sections entières indépendamment.
 - Vos données restent disponibles localement même si la sauvegarde automatique est désactivée.
 
