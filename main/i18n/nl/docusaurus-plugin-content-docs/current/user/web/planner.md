@@ -1,5 +1,5 @@
 ---
-source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
 sidebar_position: 9
 sidebar_label:  Route Plannen
 title: Route Plannen op de Website
@@ -16,7 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 
 ## Overzicht {#overview}
@@ -57,72 +59,83 @@ To create a navigation route, follow these steps:
 -->
 
 
-## Track en Lokale Bestanden Aanmaken {#create-track-and-local-files}
+## Nieuwe Route Aanmaken {#create-new-route}
 
-Met de tool [**Route plannen**](../plan-route/create-route.md) van OsmAnd Web kunt u tracks aanmaken en bewerken, vergelijkbaar met de mobiele app. Hier leest u hoe u tracks kunt aanmaken en beheren:
+Er zijn twee manieren om een nieuwe route te starten in Route plannen. De eerste optie is direct vanaf de kaart: rechtermuisklik ergens op de kaart en selecteer **Nieuwe route aanmaken**. De tweede optie is vanaf het linker paneel: klik op de knop **Track aanmaken**.
 
+Zodra de route is aangemaakt, voeg punten direct toe op de kaart. Elke klik plaatst het volgende punt, en de planner bouwt de route tussen de punten.
 
-***Een nieuwe route aanmaken:***
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route.png)
 
-- *Rechtermuisklik* op de kaart en selecteer **Nieuwe route aanmaken**.
-- U kunt ook de knop **Track aanmaken** gebruiken in het *Lokaal*-menu (rechts te vinden met de *Potlood*- en *Upload*-knoppen).
+### Track Importeren {#import-track}
 
+Als u al een trackbestand hebt, kunt u het importeren in Route plannen en doorgaan met werken eraan in de Web Planner. Klik op de knop **Track importeren** en selecteer een GPX-bestand van uw computer. Na de upload verschijnt de track in uw lokale lijst en opent deze in de planner, zodat u deze op de kaart kunt bekijken en doorgaan met bewerken en beheren in de trackpanelen.
 
-***Tracks beheren:***
+### Lokale Bestanden {#local-files}
 
-- **Navigatieprofiel selecteren**. Kies een profiel (bijv. wandelen, autorijden) voor specifieke routesecties (*Nieuwe segmenten*) of voor de hele route (*Alle segmenten*).
-- **Routepunten toevoegen**. Klik op de kaart om nieuwe punten toe te voegen.
-- **De route opslaan**. Sla uw route op voor toekomstig gebruik.
-- **Routedetails bekijken**. Krijg toegang tot gedetailleerde trackinformatie, inclusief lengte, duur en terrein.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
+Alle routes en tracks die u aanmaakt of importeert in Route plannen worden toegevoegd aan de Lokale lijst in het linker paneel. Dit maakt het eenvoudiger om meerdere GPX-bestanden op één plaats te bewaren en tussen hen te schakelen tijdens het plannen.
 
+Elk item in de lijst heeft een schakelaar waarmee u de track snel op de kaart kunt tonen of verbergen. Selecteer een track uit de lijst om deze te openen in de planner en doorgaan met werken eraan. 
 
-***Tracks importeren en aanmaken:***
-
-- **Track importeren**. U kunt elk GPX-bestand uploaden naar de sectie **Lokaal** door naar [osmand.net/map](https://osmand.net/map) te gaan.
-- **Track aanmaken**. Maak handmatig een nieuwe track aan door routepunten te selecteren.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
+![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
-***Acties en informatie voor lokale tracks:***
+## Track Beheren {#manage-track}
 
-Het menu **Lokale Track** biedt drie panelen voor bewerking: **Info**, **Track** en **Routepunten**.
+Wanneer u een route aanmaakt of importeert in Route plannen, opent een verticaal trackpaneel. Gebruik dit paneel om het routeringsprofiel te wijzigen en de route te beheren. Klik op de profielbesturing om het dialoogvenster **Profiel wijzigen** te openen, selecteer het profiel dat u nodig hebt (bijvoorbeeld Auto, Fiets of Voetganger), en kies hoe u het wilt toepassen: *Volgende segmenten* past het profiel alleen toe op nieuwe delen die vanaf dit punt worden toegevoegd, terwijl *Alle segmenten* de gehele route herberekent met het geselecteerde profiel.
 
-**Info-paneel**:
+Vanuit het trackpaneel kunt u ook veelvoorkomende bestandsacties uitvoeren. U kunt **Opslaan in Cloud** om de route voor later gebruik te bewaren, **GPX downloaden** om het als bestand te exporteren, **Track sluiten** om het bewerken te stoppen, of **Track verwijderen** om het uit uw lokale lijst te verwijderen. Deze acties zijn ook beschikbaar vanuit de bijbehorende besturingselementen in het [Info-paneel](#info-panel).
 
-- *Opslaan in Cloud*. Sla uw track op in OsmAnd Cloud voor toegang op al uw apparaten.
-- *Beschrijving toevoegen*. Voeg notities over de track toe.
-- *Hernoemen*. Wijzig de naam van de track.
-- *Herberekenen*. Voeg hoogtegegevens toe of werk deze bij.
-- *Hoogte*. Bekijk het hoogteprofiel.
-- *Snelheidsgrafiek*. Toon snelheidsgegevens over de track.
-- *Hellinggrafiek*. Toon hellingsveranderingen langs de route.  
-- *Wegdetails*. Bekijk gedetailleerde informatie zoals wegtype, wegdek en steilheid.
-- *GPX downloaden*. Exporteer de track als een GPX-bestand ([Pro-functie](../purchases/index.md)).
-- *Track sluiten*. Sluit de bewerkingsweergave van de track.
-- *Track verwijderen*. Verwijder de track permanent.
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
-
-**Track-paneel**:
-
-- Bekijk en bewerk trackpunten.
-- Wijzig de volgorde van punten of verwijder ze indien nodig.
-
-**Routepunten-paneel**:
-
-- Bekijk en beheer de routepunten van de track.
-- Schakel de zichtbaarheid van routepunten op de kaart in of uit.
-- Verwijder routepunten afzonderlijk indien nodig.
-
-**Afslagen-paneel**:
-
-- Bekijk gedetailleerde informatie over afslagen langs de track.
-
-  ![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
-***Extra functies:***
+## Trackdetails Panelen {#track-details-panels}
 
-- **Synchroniseren met app**. Sla routes op in OsmAnd Cloud en open ze in uw mobiele app.
-- **Aangepaste routeprofielen**. Pas profielen aan voor verschillende activiteiten, zoals fietsen of wandelen.
-- **Deelbare routes**. Kopieer en deel route-URL's voor gezamenlijke planning.
+Het lokale trackmenu bevat drie panelen: **Info**, **Track** en **Routepunten**. Gebruik ze om trackinformatie te bekijken en routepunten en waypoints te beheren.
+
+### Info-paneel {#info-panel}
+
+Het Info-paneel vat de geselecteerde track samen en toont belangrijke route- en hoogtegegevens. Het bevat een snel overzicht van de routestatistieken, plus grafieken en aanvullende trackanalyse op basis van beschikbare kaarengegevens.
+
+Het samenvattingsgedeelte toont:
+
+- Punten — het aantal routepunten dat is gebruikt om de route op te bouwen.
+- Afstand — de totale routelengte.
+- Stijging / daling — totale stijging en totale daling langs de route.
+- Hoogte (min/gem/max) — hoogte-statistieken voor de route.
+- Als hoogtegegevens ontbreken of moeten worden bijgewerkt, gebruik Hoogte (Satelliet) → herberekenen om de hoogte te herbouwen met behulp van satellietgegevens (indien beschikbaar).
+
+Onder de samenvatting biedt het paneel grafieken:
+
+- Hoogte — een hoogteprofiel van de route.
+- Helling — een hellingsgrafiek die gradiëntveranderingen langs de track toont.
+
+Voor aanvullende trackdetails, open de analysesecties:
+
+- Oppervlak — toont oppervlaktypes langs de route op basis van OSM-gegevens.
+- Gladheid — toont segmentgladheid op basis van OSM-tags.
+
+Veelvoorkomende trackacties zoals opslaan, downloaden, sluiten en verwijderen zijn ook beschikbaar in dit paneel.
+
+![OsmAnd Web Info Panel](@site/static/img/web/info_panel.png) ![OsmAnd Web Manage Track](@site/static/img/web/info_panel_2.png)
+
+### Track-paneel {#track-panel}
+
+Het Track-paneel toont de lijst van routepunten die zijn gebruikt om de track op te bouwen. Gebruik het om de routestructuur te beoordelen en te bewerken: sleep punten om ze te herordenen, verwijder punten met behulp van het verwijderpictogram, of gebruik Punten wissen om alle punten te verwijderen en opnieuw te beginnen.
+
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel.png)
+
+### Routepunten-paneel {#waypoints-panel}
+
+Het Routepunten-paneel wordt gebruikt om waypoints voor de geselecteerde track te bekijken en te beheren. Waypoints kunnen worden toegevoegd vanuit het contextmenu van de kaart — rechtermuisklik op de kaart en kies de optie om **Waypoint toevoegen**, vul vervolgens de waypointdetails in (zoals naam, pictogram en kleur) en sla het op.
+
+In de Routepunten-lijst kunt u beheren of waypoints op de kaart worden weergegeven en individuele waypoints verwijderen indien nodig. Om alle waypoints van de track tegelijk te verwijderen, gebruik *Alle waypoints wissen*.
+
+![OsmAnd Web Waypoints Panel](@site/static/img/web/waypoints_panel.png)
+
+
+## Gerelateerde Artikelen {#related-articles}
+
+- [Een Route Plannen](../plan-route/create-route.md)
+- [Reisgidsen](../plan-route/travel-guides.md)
+- [Navigatie](../web/web-navigation.md)

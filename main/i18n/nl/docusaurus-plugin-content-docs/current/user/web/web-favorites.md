@@ -1,5 +1,5 @@
 ---
-source-hash: ef13b994168cf04dcf98784cf4ef75aea6eb57a3e4db536a0fa48e3617173008
+source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -19,18 +19,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Favorieten in de Web Planner laten je belangrijke plaatsen direct op de kaart opslaan en beheren. Ze kunnen worden gebruikt om locaties te markeren waartoe je snel toegang wilt, ze in mappen te organiseren en ze te hergebruiken voor navigatie of routeplanning. De webinterface biedt handige tools om favorieten te bekijken, bewerken en te gebruiken tijdens het verkennen van de kaart, waarbij alle updates naadloos worden gesynchroniseerd via je [OsmAnd Cloud](../personal/osmand-cloud.md).
+Favorieten in de Web Planner laten je belangrijke plaatsen direct op de kaart opslaan en beheren. Ze kunnen worden gebruikt om locaties te markeren waartoe je snel toegang wilt, ze in mappen te organiseren en ze te hergebruiken voor navigatie of routeplanning. De webinterface biedt handige tools om favorieten te bekijken, bewerken en te gebruiken tijdens het verkennen van de kaart, waarbij alle updates naadloos worden gesynchroniseerd over je [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 
 ## Favorieten beheren {#manage-favorites}
 
 ![OsmAnd Web cloud Favorieten bewerken](@site/static/img/web/favorites_new.png)
 
-Na registratie voor [**OsmAnd Pro**](../personal/osmand-cloud.md#login) en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) zijn je Favorieten in de Web Planner georganiseerd in mappen. Elke map groepeert opgeslagen plaatsen en biedt een reeks acties die beschikbaar zijn via het Favorietenmenu. 
+Na registratie voor een [**OsmAnd Pro**](../personal/osmand-cloud.md#login) en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) zijn je Favorieten in de Web Planner georganiseerd in mappen. Elke map groepeert opgeslagen plaatsen en biedt een reeks acties die beschikbaar zijn via het Favorietenmenu. 
 De volgende acties zijn beschikbaar:
 
 - *Op kaart tonen* - toon favorietenpunten uit de gekozen map op de kaart.
-- *Naam wijzigen* - naam en beschrijving van de favorietenmap.
+- *Naam wijzigen* - naam en beschrijving van favorietenmap.
 - *Delen* - opent deelopties. Je kunt kiezen wie toegang heeft tot deze map:
 - *Downloaden* - download de gekozen favorietenmap.
 - *Verwijderen* - verwijder de gekozen favorietenmap.
@@ -60,7 +60,7 @@ Tijdens de toegangconfiguratie kunnen de volgende dialogen verschijnen:
 
 Het selecteren van een favoriet opent het **Details**-paneel. Dit paneel verschijnt wanneer je op een favoriet direct op de kaart klikt of deze selecteert uit een favorietenmap.
 
-Het Details-weergave biedt informatie die is gekoppeld aan de geselecteerde plaats en hangt af van de beschikbare gegevens voor die specifieke favoriet. Op zijn minst bevat het de locatie op de kaart en de geografische coördinaten. Voor plaatsen die zijn gekoppeld aan OpenStreetMap-objecten of verrijkte bronnen, kunnen aanvullende metadata worden weergegeven, zoals namen, categorieën, identificatoren of referentielinks (bijvoorbeeld [Wikipedia](../plugins/wikipedia.md) of Wikidata-links). 
+De Details-weergave biedt informatie die is gekoppeld aan de geselecteerde plaats en hangt af van de beschikbare gegevens voor die specifieke favoriet. Op zijn minst bevat het de locatie op de kaart en de geografische coördinaten. Voor plaatsen die zijn gekoppeld aan OpenStreetMap-objecten of verrijkte bronnen, kunnen aanvullende metadata worden weergegeven, zoals namen, categorieën, identificatoren of referentielinks (bijvoorbeeld Wikipedia- of Wikidata-links). 
 
 ![Web Favorietendetails](@site/static/img/web/favorites_details.png)
 
@@ -69,7 +69,7 @@ Het Details-weergave biedt informatie die is gekoppeld aan de geselecteerde plaa
 
 ### Favoriet toevoegen / bewerken {#add--edit-favorite}
 
-[Om een nieuwe favorietpunt toe te voegen](../personal/favorites.md#manage-favorites), klik je met de rechtermuisknop op het scherm. 
+[Om toe te voegen](../personal/favorites.md#manage-favorites) een nieuw favorietpunt, klik je met de rechtermuisknop op het scherm. 
 
 Om een bestaande favoriet te bewerken, klik je op het favorietpunt direct op de kaart of selecteer je het uit een favorietenmap. Dit opent het Details-paneel, waar de Bewerk-actie beschikbaar is. Bewerken kan ook worden gestart vanuit het driepuntmenu (⋮) naast de favoriet in de Favorietenlijst.
 

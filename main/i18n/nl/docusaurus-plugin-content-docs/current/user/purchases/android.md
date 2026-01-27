@@ -1,5 +1,5 @@
 ---
-source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
+source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
 sidebar_position: 1
 title:  Android Aankopen
 ---
@@ -82,8 +82,8 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regi
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 Maanden) | **Abonnement** (1 Maand / 12 Maanden) |
-| **Prijs (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Prijs (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
+| **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
 
@@ -145,7 +145,7 @@ Het **Pro**-abonnement heeft momenteel de volgende functies:
 |  Pro-functie  | Beschrijving   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Back-up en herstel van uw gegevens, synchroniseer gegevens met het [OsmAnd-webportaal](https://www.osmand.net/map). |
-| [3D-reliëf](../plugins/topography.md#3d-relief) | Hiermee kunt u een schaalmodel van uw buurt of een heel continent bekijken. |
+| [3D-reliëf](../plugins/topography.md#3d-relief) | Hiermee kunt u een schaalmodel van uw buurt of een heel continent bekijken en observeren. |
 | [Live updates](../personal/maps-resources.md#live-updates) | OsmAnd-kaarten worden elke 15 minuten bijgewerkt na een verbetering van [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Weer-plugin](../plugins/weather.md) | 24-uurs voorspelling per uur, 7 dagen vooruit op de kaart. |
 | [Voertuigstatistieken Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Hiermee kunt u een OBD-II-scanner aansluiten om gedetailleerde voertuiggegevens in de OsmAnd-app weer te geven en de informatie op te slaan in trackrecords. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.  |

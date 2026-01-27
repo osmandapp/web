@@ -1,5 +1,5 @@
 ---
-source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
+source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
 sidebar_position: 2
 title:  Interactie met de kaart
 ---
@@ -208,8 +208,8 @@ U kunt alle kaartanimaties tijdens kaartinteracties, inclusief gebaren en knoppe
 
 ### Eigen positie animeren {#animate-own-position}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
 Creëert een vloeiend kaart-pan-effect ten opzichte van het pictogram *[Mijn Positie](../personal/profiles/#profile-appearance)* wanneer u in beweging bent. Het effect introduceert een lichte vertraging ten opzichte van de werkelijke positie van ongeveer 1 seconde. Het inschakelen hiervan kan onder bepaalde omstandigheden merkbare vertragingsproblemen veroorzaken; schakel het uit als dergelijke problemen zich voordoen.
 
@@ -274,7 +274,7 @@ Om toegang te krijgen tot de instellingen van een extern invoerapparaat, moet u 
 |**Press back**| *Toetsenbord*   | Navigeren – Vorig scherm  |
 |**&#8595;**| *Wunderlinq*  | Kaart - [Uitzoomen](#my-location-and-zoom) |
 |**&#8593;**| *Wunderlinq*  | Kaart - [Inzoomen](#my-location-and-zoom) |
-| **ESC** | *Wunderlinq*  | WunderLINQ Datagrid openen |
+| **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
 | **M** | *Toetsenbord*  | Tonen / Verbergen - [Zijmenu](../start-with/main-menu.md#main-menu-side-menu) |
 | **Joystick press** <br/> (*legacy Android*) | *Toetsenbord*  | Verplaatsen - [Naar Mijn locatie](#my-location-and-zoom) |
 | **Media button** <br/> (*alleen Android*)| *Toetsenbord*  | Tonen / Verbergen - [AV-notities](../plugins/audio-video-notes.md#manage-a-single-note) |

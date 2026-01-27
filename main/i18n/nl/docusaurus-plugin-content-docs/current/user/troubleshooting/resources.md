@@ -1,5 +1,5 @@
 ---
-source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
+source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
 sidebar_position: 9
 title: Hulpbronnen en Aanpassingen
 ---
@@ -27,16 +27,16 @@ Om in contact te komen met andere OsmAnd-gebruikers, vragen te stellen en je erv
 
 | Platform | Groepsnaam | Beschrijving | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | OsmAnd users community (*Engels*)  |  Dit is een groep waar OsmAnd-gebruikers andere gebruikers kunnen helpen.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
-|  Facebook | Osmand-gebruikers (*Nederlands*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
-|  Facebook | OSMAND+ Aide Partage et Astuces (*Frans*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | LC8 Rally OsmAnd user group (*Engels*)  |  Om ervaringen met het gebruik van OsmAnd uit te wisselen. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Osmand Italian's friends (*Italiaans*)  |  Om ervaringen met het gebruik van OsmAnd uit te wisselen. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*Engels*)  | Een groep waar gebruikers tips delen, vragen beantwoorden en de functionaliteiten van OsmAnd bespreken. | [Google Groups](https://groups.google.com/g/osmand)  |
+| Facebook | OsmAnd users community (*English*)  |  Dit is een groep waar OsmAnd-gebruikers andere gebruikers kunnen helpen.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+|  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
+|  Facebook | LC8 Rally OsmAnd user group (*English*)  |  Om ervaringen met het gebruik van OsmAnd uit te wisselen. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Osmand Italian's friends (*Italian*)  |  Om ervaringen met het gebruik van OsmAnd uit te wisselen. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | Een groep waar gebruikers tips delen, vragen beantwoorden en de functionaliteiten van OsmAnd bespreken. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discussie en ondersteuning  | De Reddit-community voor OsmAnd-gebruikers. Stel vragen, deel ervaringen of toon je aangepaste kaartstijlen. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | OsmAnd News channel (*Engels*)  | De officiële OsmAnd-groep voor aankondigingen en updates rechtstreeks van de ontwikkelaars. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
-|  X (Twitter) | OsmAnd nieuwskanaal  | Officiële OsmAnd-groep voor live discussies, aankondigingen en updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
-|  Instagram | OsmAnd nieuwskanaal | Een community waar je kunt chatten, tips kunt delen en hulp kunt krijgen met OsmAnd-functies. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
+|  Telegram | OsmAnd News channel (*English*)  | De officiële OsmAnd-groep voor aankondigingen en updates rechtstreeks van de ontwikkelaars. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  X (Twitter) | OsmAnd news channel  | Officiële OsmAnd-groep voor live discussies, aankondigingen en updates. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
+|  Instagram | OsmAnd news channel | Een community waar je kunt chatten, tips kunt delen en hulp kunt krijgen met OsmAnd-functies. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## Converters {#converters}
@@ -68,7 +68,7 @@ Deze handleidingen, beschikbaar in meerdere talen, bieden vaak unieke inzichten,
 | Spaans  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
 | Tsjechisch   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | Frans  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
-| Italiaans | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android en iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
+| Italiaans | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
 | Nederlands | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
 | Nederlands | OsmAnd Nederlandse instructie. | [Nederlandse instructie](https://docs.google.com/document/d/1JdyVswTcfrpVmflLZ_WBKEhmndlJBl57qPuAWFv5Pqg/edit?usp=drivesdk)   |
 | Nederlands | Filmpjes zijn door mij gemaakt met korte en duidelijke uitleg over de werking van Osmand. | [Janiek.de](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
@@ -87,7 +87,7 @@ Hieronder volgt een lijst van [aangepaste plugins](../plugins/custom.md) die zij
 | 3D-model  | Dit pakket voegt een 3D-modeloptie toe voor profielen. Pas het uiterlijk aan via het menu: [*OsmAnd-menu → Instellingen → Profiel → Profielweergave → kies het 4e-5e pictogram van Positiepictogram*](../personal/profiles.md#profile-appearance). | [3D-model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS online kaartenverzameling | Een verzameling van verschillende online kaartbronnen, waaronder satelliet-, toeristische en historische kaarten.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Kaartlegenda  | Dit pakket voegt een offline kaartlegenda toe (versie 1.01; 03-04-2024), toegankelijk via *Menu → Mijn Plaatsen → Favorieten → Kaartlegenda*. De kaartlegenda is ook beschikbaar op [deze locatie](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Kaartlegenda](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 De USA Kaarten | Een verzameling van Amerikaanse kaarten met [Openbare gronden (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), [USFS Paden en Wegen](https://www.fs.usda.gov/visit/maps), [Het Bureau of Land Management (BLM)](https://www.blm.gov), en [Perceelgegevens (Privégronden)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) voor sommige staten. Alle openbare en privégrondkaarten zijn per staat gecategoriseerd. BLM- en USFS-kaartgegevens zijn onderverdeeld in *Wegen en Paden* en *POI's* voor het hele grondgebied van de Verenigde Staten. De kaarten zijn in OBF-formaat voor OsmAnd. Meer info op [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [De USA kaarten](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇺🇸 De USA Kaarten | Een verzameling van gespecialiseerde Amerikaanse kaarten, geconverteerd naar OsmAnd OBF-formaat, met:<ul><li>[USGS Openbare gronden en beschermde gebieden (PAD-US 3.0), per staat](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[USFS Paden en Wegen, landelijk](https://www.fs.usda.gov/visit/maps),</li><li>[BLM Wegen en Paden, landelijk](https://www.blm.gov/maps),</li><li>[BLM Recreatieactiviteit POI's, landelijk](https://www.blm.gov/maps),</li><li>[Privégronden (perceelgegevens), voor sommige staten](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Meer info op [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [De USA kaarten](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
 | 🇵🇱 UMP kaart van Polen | [UMP](https://ump.waw.pl/) dekt het grootste deel van Polen met een doorlopende ontwikkelingsinspanning. Lange tijd werd de naam UMP-pcPL (mapą prawie całej Polski) gebruikt. | [UMP kaart van Polen](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Deze plugin bevat een lichtgewicht kaartstijl die de zichtbaarheid van onverharde wegen en paden in OsmAnd verbetert.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 

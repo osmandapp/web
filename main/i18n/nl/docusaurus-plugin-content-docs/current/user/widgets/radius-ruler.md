@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  Radiusliniaal en Liniaal
 ---
@@ -97,6 +97,7 @@ De [Radiusliniaal Widget](../widgets/info-widgets.md#radius-ruler) toont de afst
 
 Gebruik deze widget om de nabijheid van interessante punten in te schatten of om te plannen rond een bepaald gebied.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -118,9 +119,10 @@ Gebruik deze widget om de nabijheid van interessante punten in te schatten of om
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Kompas voor Radiusliniaal {#compass-for-radius-ruler}
+### Kompas {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Deze overlay is handig voor buitennavigatie, waardoor u de [kaartoriëntatie](..
 | Formaat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Midden / Onder Positie {#center--bottom-position}
+### Midden / Onder Positie {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ Om de zichtbare radius rond uw locatie te vergroten, kunt u de positie van de Ra
 Voor meer informatie over *de positie op het scherm*, zie het artikel [Scherm configureren](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## 3D-weergave {#3d-view}
+### 3D-weergave {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

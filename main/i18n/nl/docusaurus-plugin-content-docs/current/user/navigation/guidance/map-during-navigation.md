@@ -1,5 +1,5 @@
 ---
-source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
+source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
 sidebar_position: 2
 title: Kaartscherm tijdens navigatie
 ---
@@ -50,9 +50,9 @@ Tijdens de navigatie past het uiterlijk van de kaart zich aan op basis van het g
 | Parameter | Beschrijving | Opmerking |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | De tijd waarvoor de kaartweergave wordt gesynchroniseerd met de huidige positie na verplaatsing. | *Waarde:* <br /> Nooit, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| *<Translate android="true" ids="auto_zoom_map"/>*  | Schaal de kaart automatisch op basis van uw snelheid, zolang de kaart is gesynchroniseerd met uw huidige positie. | *Waarde:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - handmatig zoomen. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
-| *Auto zoom 3D-hoek* | Stelt de helling van de kaart in bij overschakelen naar de 3D-weergave tijdens de navigatie. Een hogere hoek maakt de horizon verder weg, wat meer zicht naar voren geeft. |Het wordt alleen toegepast wanneer Auto zoom is ingeschakeld. Waarden: 20°, 25°, 30°, 35°, 40°. Standaard: 25°.  |
-| *Volgende bocht voorspellen* | Draait de kaart automatisch iets vooruit om de volgende bocht of manoeuvre tijdens de navigatie te tonen. Helpt om aankomende acties te anticiperen.  | Standaard ingeschakeld. Als u een profiel exporteert en opnieuw importeert, controleer dan deze instelling, omdat deze in sommige eerdere versies kon terugvallen op “ingeschakeld”.   |
+| *<Translate android="true" ids="auto_zoom_map"/>*  | Schaal de kaart automatisch op basis van uw snelheid, zolang de kaart is gesynchroniseerd met uw huidige positie. | *Waarde:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - handmatig zoomen. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. <br /> Autozoom-veranderingen kunnen geanimeerd (Vloeiend) of stapsgewijs (Discreet) zijn, afhankelijk van [Ontwikkelinstellingen](navigation-settings.md#development-settings). In de Vloeiende modus gebruiken zoomveranderingen een gecontroleerde animatie (ongeveer 0,1 zoom/seconde). Autozoom past de zoom niet aan bij zeer lage snelheden (onder ~7 km/u). Als de vereiste zoomverandering minder dan ~1,5 seconden zou duren, wordt de animatie niet gestart. <br /> Autozoom probeert de aankomende manoeuvre binnen een stabiel schermfocusgebied te houden, zodat de zichtbare afstand vooruit consistent blijft tijdens het rijden.|
+| *Auto zoom 3D-hoek* | Stelt de helling van de kaart in bij overschakelen naar de 3D-weergave tijdens de navigatie. Een hogere hoek maakt de horizon verder weg, wat meer zicht naar voren geeft. |Het wordt alleen toegepast wanneer Auto zoom is ingeschakeld. Waarden: 20°, 25°, 30°, 35°, 40°. Standaard: 25°. <br /> Bij het naderen van een manoeuvre/kruising kan de app de 3D-helling geleidelijk verminderen naar een 2D-weergave om de volgende bocht leesbaar te houden. |
+| *Volgende bocht voorspellen* | Draait de kaart automatisch iets vooruit om de volgende bocht of manoeuvre tijdens de navigatie te tonen. Helpt om aankomende acties te anticiperen.  | Standaard ingeschakeld. Als u een profiel exporteert en opnieuw importeert, controleer dan deze instelling, omdat deze in sommige eerdere versies kon terugvallen op “ingeschakeld”.   <br /> De rotatie/voorvertoning wordt geactiveerd zodra het volgende manoeuvrepunt in het focusgebied valt (zodat de kaart begint te “kijken” naar de bocht wanneer deze relevant wordt). |
 | *<Translate android="true" ids="snap_to_road"/>*  | Het pictogram van de huidige positie wordt gekoppeld aan de huidige navigatieroute.  | U kunt deze optie uitschakelen, maar alle weggerelateerde opties, zoals rijstrookweergave, zijn dan ook niet zichtbaar tijdens de navigatie.  |
 
 
@@ -182,7 +182,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 U kunt het uiterlijk van de routelijn selecteren op stijl of handmatig de kleur, breedte en transparantie van de lijn selecteren. Daarnaast kunt u kiezen of u afslagpijlen en richtingpijlen op de lijn wilt weergeven.
 
-**Geavanceerd**: de instelling Routelijn aanpassen stelt u in staat om het uiterlijk van de routelijn aan te passen om hoogteverschillen, aanzienlijke stijgingen of dalingen, ijs op de weg, onverharde wegen, snelwegen en andere mogelijke obstakels weer te geven. U kunt ook aangepaste [kleurenschema's](../../personal/color-palette-schemes.md#routes) selecteren of maken om op de routelijn toe te passen.
+**Geavanceerd**: de instelling Routelijn aanpassen stelt u in staat om het uiterlijk van de routelijn aan te passen om hoogteverschillen, aanzienlijke stijgingen of dalingen, ijs op de weg, onverharde wegen, snelwegen en andere mogelijke obstakels weer te geven. U kunt ook aangepaste [kleurenschema's](../../personal/color-palette-schemes.md#tracks-routes) selecteren of maken om op de routelijn toe te passen.
 
 
 :::note
@@ -244,10 +244,10 @@ U kunt de breedte van de routelijn aanpassen aan de weg of het pad dat op de kaa
 De instelling Afslagpijlen stelt u in staat om te selecteren of afslagpijlen op de routelijn worden weergegeven.  
 
 - ***Op kaart***  
-    ![Hoogte](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Afslagpijl iOS op kaart](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Afslagpijlen op kaart Android](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Afslagpijl iOS op kaart](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***In app***  
-    ![Hoogte](@site/static/img/navigation/route/turn_arr.png)   ![Afslagpijl iOS](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Afslagpijlen in app Android](@site/static/img/navigation/route/turn_arr.png)   ![Afslagpijl iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Gerelateerde artikelen {#related-articles}

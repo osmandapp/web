@@ -1,5 +1,5 @@
 ---
-source-hash: fe9500be3570d2dbf08995ee5614eb89cd647a44f0360730e48015dced34c738
+source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-**Tracks Analyzer** is een webtool die helpt bij het analyseren van herhalende tracksegmenten tussen geselecteerde punten op de kaart. Het scant uw tracks en vindt alle segmenten die door de gekozen locatie(s) gaan, waardoor u snelheid, hoogte, afstand en tijd kunt vergelijken over meerdere activiteiten.
+**Tracks Analyzer** is een webtool die helpt bij het analyseren van herhalende tracksegmenten tussen geselecteerde punten op de kaart. Om deze functie met uw eigen gegevens te gebruiken, hebt u een OsmAnd Pro-account nodig met tracks gesynchroniseerd naar OsmAnd Cloud — anders zijn uw tracks niet beschikbaar in de Web Planner. Het scant uw tracks en vindt alle segmenten die door de gekozen locatie(s) gaan, waardoor u snelheid, hoogte, afstand en tijd kunt vergelijken over meerdere activiteiten.
 
 ## Hoe te gebruiken {#how-to-use}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title:  Uiterlijk van de track
 ---
@@ -61,7 +61,7 @@ U kunt de kleur van de track handmatig instellen of **kleurgebaseerde datavisual
 
 **Beschikbare kleuropties:**
 
-- **Gratis instellingen**: *<Translate android="true" ids="track_coloring_solid"/> kleur*, *<Translate android="true" ids="shared_string_speed"/>* (indien opgenomen) en *<Translate android="true" ids="altitude"/>* (indien opgenomen).   
+- Gratis instellingen: *<Translate android="true" ids="track_coloring_solid"/> kleur*, *<Translate android="true" ids="shared_string_speed"/>* (indien opgenomen) en *<Translate android="true" ids="altitude"/>* (indien opgenomen).   
 - [Pro-functie](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 Op iOS opent de **lijst met kleuringsopties** als een contextmenu. Items kunnen in drie toestanden verschijnen: 
@@ -69,7 +69,7 @@ Op iOS opent de **lijst met kleuringsopties** als een contextmenu. Items kunnen 
 2. <Translate ios="true" ids="weather_update_disabled"/>. De track mist de vereiste gegevens.
 3. PRO. Beschikbaar voor de huidige track maar vereist een abonnement; tikken opent het [<Translate ios="true" ids="purchase_dialog_title"/> scherm](https://osmand.net/docs/user/purchases/ios).
 
-Voor meer details over het aanpassen van het uiterlijk van de routelijn, zie [Kaartscherm tijdens navigatie](../../navigation/guidance/map-during-navigation.md#color) en voor het selecteren en maken van een aangepaste kleur, zie [Kleurenschema's](../../personal/color-palette-schemes.md#routes).
+Voor meer details over het aanpassen van het uiterlijk van de routelijn, zie [Kaartscherm tijdens navigatie](../../navigation/guidance/map-during-navigation.md#color) en voor het selecteren en maken van een aangepaste kleur, zie [Kleurenschema's](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### Breedte {#width}
@@ -84,7 +84,7 @@ U kunt het uiterlijk van de track in verschillende menu's van de applicatie aanp
 
 Pas de breedte van de track aan om de zichtbaarheid op de kaart te verbeteren.
 
-- **Vooraf ingestelde opties**: **Dun, Middel** en **Dik**.
+- **Vooraf ingestelde opties**: **Dun, Middel** en **Vet**.
 
 - **Aangepaste breedte**: Instelbaar van 1 tot 24 px met een schuifregelaar.
 
@@ -108,7 +108,7 @@ Pas de breedte van de track aan om de zichtbaarheid op de kaart te verbeteren.
 
 </Tabs>
 
-Selecteer of het interval op de track moet worden gesplitst **op afstand**, **tijd** of **omhoog/omlaag** (Android), of op **afstand** of **tijd** (iOS). Om gedetailleerde statistieken per interval te bekijken, zie [Analyseren per intervallen](../../map/tracks/track-context-menu.md#analyze-by-intervals) (alleen Android).
+Selecteer of het interval op de track moet worden gesplitst **op afstand**, **tijd**, of **omhoog/omlaag** (Android), of op **afstand** of **tijd** (iOS). Om gedetailleerde statistieken per interval te bekijken, zie [Analyseren per intervallen](../../map/tracks/track-context-menu.md#analyze-by-intervals) (alleen Android).
 
 
 ### Richtingpijlen {#direction-arrows}
@@ -308,5 +308,5 @@ Gebruik het volgende formaat om een kleur voor een track te specificeren:
 - [Kaart configureren](../configure-map-menu.md)
 - [Punten op de kaart](../point-layers-on-map.md)
 - [Tracks](../tracks/index.md)
-- [Trackcontextmenu](../tracks/track-context-menu.md)
+- [Tracks Contextmenu](../tracks/track-context-menu.md)
 - [Reis opnemen](../../plugins/trip-recording.md)

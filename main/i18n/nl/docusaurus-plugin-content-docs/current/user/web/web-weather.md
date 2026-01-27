@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Weer
 title: Weer op het Web
@@ -24,7 +24,7 @@ De Weer-functie op de OsmAnd Web-kaart toont actuele weersomstandigheden en voor
 Weergegevens zijn beschikbaar zonder in te loggen. Het Weer-weergave kan direct worden geopend vanuit de kaartinterface door op het paraplu-icoon in het menupaneel te klikken of door met de rechtermuisknop op de kaart te klikken en Weer openen te selecteren in het contextmenu.
 
 
-## Bron van gegevens {#data-source}
+## Data Source {#data-source}
 
 OsmAnd Web biedt weergegevens van twee voorspellingbronnen:
 
@@ -36,7 +36,7 @@ Om tussen hen te schakelen, klikt u op de **paraplu-knop** in het Weermenu.
 ![OsmAnd Web Weer](@site/static/img/web/weather_source.png)
 
 
-## Weermenu {#weather-menu}
+## Weather Menu {#weather-menu}
 
 Het **Weermenu** toont actuele weersomstandigheden en voorspellingsgegevens voor de geselecteerde locatie op de kaart. Het combineert een samenvattingsweergave, tijdregelaars en weerlagen in één paneel.
 
@@ -58,7 +58,7 @@ Onderaan het paneel wordt informatie over de generatietijd van de weergegevens w
 ![OsmAnd Web Weer](@site/static/img/web/weather_menu.png)
 
 
-## Weerlagen {#weather-layers}
+## Weather Layers {#weather-layers}
 
 Weerlagen maken het visualiseren van voorspellingsgegevens direct op de kaart als een overlay mogelijk. Ze helpen bij het snel beoordelen van weersomstandigheden over een groter gebied in plaats van alleen waarden voor één punt te bekijken.
 
@@ -76,7 +76,7 @@ Alle weerlagen zijn gesynchroniseerd met de geselecteerde datum en tijd in het W
 ![OsmAnd Web Weer](@site/static/img/web/weather_layers.png)
 
 
-## Voorspellingsweergave {#forecast-view}
+## Forecast View {#forecast-view}
 
 Weersvoorspellingen zijn beschikbaar tot 7 dagen vooruit. Voorspellingswaarden worden berekend in intervallen van 3 uur, waardoor u korte-termijnveranderingen gedurende elke dag kunt onderzoeken.
 
@@ -89,7 +89,7 @@ U kunt tussen verschillende weergegevens schakelen met behulp van de pictogramme
 ![OsmAnd Web Weer](@site/static/img/web/weather_forecast.png)
 
 
-## Gerelateerd artikel {#related-article}
+## Related Articles {#related-articles}
 
 - [Weer](../plugins/weather.md)
 - [Inleiding](../web/web-overview.md)

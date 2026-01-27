@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -428,11 +428,13 @@ Wanneer een kaart is gedeactiveerd, verdwijnt deze mogelijk tijdelijk uit het Lo
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Kaartenmenu Kaarten bijwerken iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Weersvoorspelling Kaarten bijwerken iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Kaartenmenu Kaarten bijwerken iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Weersvoorspelling Kaarten bijwerken iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernieuwen. Standaard- en 'alleen wegen'-kaarten worden één keer per maand uitgebracht, meestal tussen de 2e en 5e dag, en bevatten OpenStreetMap-gegevens tot de laatste dag van de voorgaande maand (bijvoorbeeld, de oktober-release bevat gegevens tot 30 september). Andere gegevens zoals Wikipedia, terrein- of nautische kaarten kunnen verschillende, niet-regelmatige updateschema's volgen. 
 
 Gebruik de knop *Alles bijwerken* om alle kaarten tegelijk bij te werken, of werk individuele kaarten naar behoefte bij. Voor uurlijkse updates, controleer de status van uw [Live Updates](#live-updates)-abonnement. Indien ingeschakeld, verschijnt de sectie **Live Updates** bovenaan het tabblad, onder de indicator voor het apparaatgeheugen.
+
+Het tabblad **Updates** kan ook een item **Niet-ondersteunde kaarten** tonen. Dit verschijnt wanneer u kaarten hebt die niet langer worden ondersteund en zijn vervangen door kleinere regio's. Tik op Niet-ondersteunde kaarten om de lijst te bekijken, verouderde kaarten te verwijderen en in plaats daarvan de nieuwe regioversies te downloaden. Op het scherm Niet-ondersteunde kaarten kunt u alle niet-ondersteunde kaarten bekijken en Alles verwijderen gebruiken om ze in één keer te verwijderen (een bevestigingsaanvraag wordt getoond vóór verwijdering).
 
 Het tabblad **Updates** bevat ook een sectie Weersvoorspelling. Deze is ontworpen om uw offline voorspellingen voor geselecteerde landen te beheren:
 

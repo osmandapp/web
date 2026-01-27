@@ -1,9 +1,10 @@
 ---
-source-hash: 2e2bedc5911717de92c663881adf7da2b32d2027a6c8127a8c9d02651753f230
+source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
 sidebar_position: 10
 title:  CarPlay
 android: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
 ## Overzicht {#overview}
 
 Een voertuig besturen en tegelijkertijd uw telefoon of tablet gebruiken is om veiligheidsredenen meestal bij wet verboden. [***CarPlay***](https://www.apple.com/ios/carplay/) is software die een aangepaste en geoptimaliseerde versie van de OsmAnd-app biedt voor veilig gebruik tijdens het rijden, waardoor het gemakkelijker en veiliger wordt om toegang te krijgen tot de navigatiefuncties van de app.
@@ -24,11 +24,13 @@ Volg deze stappen om *CarPlay* op het scherm van uw voertuig te gebruiken:
 
 1. *CarPlay* is niet in alle landen beschikbaar. Zorg ervoor dat het wordt ondersteund in uw [land of regio](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) en dat *CarPlay* wordt ondersteund in uw [voertuigmodel](https://www.apple.com/ios/carplay/available-models/).
 2. [Verbind uw apparaat](https://support.apple.com/en-gb/HT203412) met het multimediasysteem van uw voertuig via een USB-poort of draadloos met Wi-Fi of Bluetooth. Wanneer u voor de eerste keer verbinding maakt, heeft u mogelijk toestemming nodig om *CarPlay* op uw apparaat te gebruiken.
-3. Eenmaal verbonden, zal de *CarPlay-interface* automatisch op het scherm van uw voertuig verschijnen met alle beschikbare apps. Als het *CarPlay-startscherm* niet verschijnt, selecteer dan het *CarPlay-logo* op het display van het voertuig.
+3. Eenmaal verbonden, zal de *CarPlay-interface* automatisch op het scherm van uw voertuig verschijnen met alle beschikbare apps. Als het *CarPlay-startscherm* niet verschijnt, selecteer dan het *CarPlay-logo* op het display van het voertuig.  
 
 ### CarPlay-interface {#carplay-interface}
 
 *CarPlay* is **geen directe kopie** van de mobiele OsmAnd-app. Het heeft een vereenvoudigde interface, gericht op essentiële navigatiefuncties om veilig rijden te garanderen. Sommige geavanceerde functies worden niet ondersteund vanwege platformbeperkingen.
+
+De positie van de knoppen en navigatie-widget in *CarPlay* komt overeen met de zijde van de CarPlay-statusbalk. Het hangt af van de instelling **Rijderpositie** (links- of rechtshandig) in het head unit van uw auto, niet van een instelling binnen CarPlay of de OsmAnd-app.
 
 ### Verbindingsscherm {#connection-screen}
 
@@ -41,7 +43,7 @@ Terwijl uw apparaat is verbonden met *CarPlay*, is de kaart op het app-scherm ve
 
 ![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
-*CarPlay* toont de OsmAnd-interface aangepast aan het scherm van het multimediasysteem van het voertuig. Interactie met de kaart is beperkt tot:
+*CarPlay* toont de OsmAnd-interface aangepast aan het scherm van het multimediasysteem van het voertuig. Interactie met de kaart is beperkt tot:  
 
 - [Mijn Locatie](../widgets/map-buttons.md#my-location-and-zoom). Verplaatst het zichtbare deel van de kaart zodat uw huidige locatie in het midden van het scherm staat.
 - [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Hiermee kunt u in- en uitzoomen op het zichtbare deel van de kaart.
@@ -51,12 +53,12 @@ Terwijl uw apparaat is verbonden met *CarPlay*, is de kaart op het app-scherm ve
 
 ![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
-- Eerst moet u het profiel selecteren en configureren dat moet worden gebruikt bij het verbinden met *CarPlay*. U kunt lezen hoe u een profiel configureert in het artikel [Profielen (Instellingen)](../personal/profiles).
+- Eerst moet u het profiel selecteren en configureren dat moet worden gebruikt bij het verbinden met *CarPlay*. U kunt lezen hoe u een profiel configureert in het artikel [Profielen (Instellingen)](../personal/profiles).  
     - Een handig profiel voor het gebruik van *CarPlay* kan *Rijden* zijn, en het type routebepaling kan [Autoroute](../navigation/routing/car-based-routing.md) zijn.
     - OsmAnd heeft een apart item [CarPlay-profiel](#carplay-profile) voor snelle toegang tot de lijst met profielen die beschikbaar zijn voor verbinding met *CarPlay*.
 - Om OsmAnd te laten werken, [verbindt u uw iOS-apparaat](#overview) met het multimediasysteem van het voertuig. Voor meer informatie over hoe u uw apparaat kunt verbinden en instellen, kunt u de [**CarPlay**](https://support.apple.com/en-us/HT205634) website bezoeken.
 - U moet een van de [betaalde of abonnementsversies van OsmAnd](../purchases/ios#free-and-paid-features) hebben. Controleer dit hier *Menu → Instellingen → Aankopen*.
-- Eenmaal verbonden, kunt u een bestemming instellen en de OsmAnd-navigatie starten in *CarPlay*.
+- Eenmaal verbonden, kunt u een bestemming instellen en de OsmAnd-navigatie starten in *CarPlay*.  
 
 :::note
 U heeft mogelijk een internetverbinding nodig om OsmAnd in *CarPlay* te gebruiken. Als uw apparaat beperkte internettoegang heeft, kunt u [*routes vooraf laden of aanmaken*](../personal/tracks/manage-tracks.md) en deze zonder internet gebruiken.
@@ -65,33 +67,33 @@ U heeft mogelijk een internetverbinding nodig om OsmAnd in *CarPlay* te gebruike
 
 ### Start navigatie {#start-navigation}
 
-![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-start(1).png)
+![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
-Om de iOS-versie van de OsmAnd-app in *CarPlay* te gebruiken, moet u een [betaalde versie van de app kopen of een abonnement nemen](../purchases/ios#free-and-paid-features).
+Om de iOS-versie van de OsmAnd-app in *CarPlay* te gebruiken, moet u een [betaalde versie van de app kopen of een abonnement nemen](../purchases/ios#free-and-paid-features).  
 
 1. Om een route te maken, moet u het [eindpunt van de route](#select-a-route-endpoint) kiezen op het *CarPlay-scherm* of in de [OsmAnd-app](../navigation/setup/route-navigation.md).
-2. U kunt [gesproken aanwijzingen](#voice-prompts) gebruiken om te luisteren naar aanwijzingen of berichten over problemen op de weg.
+2. U kunt [gesproken aanwijzingen](#voice-prompts) gebruiken om te luisteren naar aanwijzingen of berichten over problemen op de weg.  
 3. Nadat u een locatie hebt geselecteerd, drukt u op **Start** om de route te volgen.
 4. Tijdens het rijden toont het voertuigscherm OsmAnd-informatie over uw huidige locatie op de kaart, rij-instructies, afstand tot de volgende afslag, rijstroken, aankomsttijd en afstand tot uw bestemming.
-    ![CarPlay-scherm](@site/static/img/navigation/auto-car/car_play_navmode.png)
+    ![CarPlay-scherm](@site/static/img/navigation/auto-car/car_play_navmode.png)  
 5. Als u uw route wilt wijzigen of een andere locatie wilt selecteren, kunt u op de betreffende knop op het scherm drukken.
 6. Nadat u uw route hebt voltooid, kunt u *CarPlay* deactiveren door het apparaat los te koppelen van het multimediasysteem van uw voertuig.
 
 :::note
 Alle categorieën voor de selectie van het **eindpunt van de route**, *[Geschiedenis](#history), [POI's](#poi-categories), [Markers](#map-markers), [Zoeken](#search), [Favorieten](#favorites), en [Tracks](#tracks)* mogen niet meer lijstitems bevatten dan uw multimediasysteem van het voertuig toestaat. Doorgaans zijn lijsten in de meeste voertuigen dynamisch beperkt tot 12 of 24 items. Dit betekent dat de lijst in *CarPlay* mogelijk niet volledig is. Het totale aantal items en het werkelijke aantal weergegeven items wordt aangegeven onder de mapnaam.
-:::
+:::  
 
 
 ### CarPlay-profiel {#carplay-profile}
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 ![Algemene Instellingen Standaardprofiel Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
-**CarPlay-profiel** is een specifiek profiel in de OsmAnd-app voor handig gebruik van het audio- en videosysteem van uw auto voor verdere weergave van deze gegevens op uw telefoon.
+Het **CarPlay-profiel** is een specifiek profiel in de OsmAnd-app voor handig gebruik van het audio- en videosysteem van uw auto voor verdere weergave van deze gegevens op uw telefoon.  
 
-Dit profiel wordt gebruikt zolang uw apparaat is verbonden met *CarPlay*. Tik op het veld *CarPlay-profiel* in het menu *OsmAnd-instellingen* en selecteer uit de lijst met [profielen die zijn ingeschakeld voor gebruik](../personal/profiles.md) het profiel waarmee *CarPlay* wordt geactiveerd.
+Dit profiel wordt gebruikt zolang uw apparaat is verbonden met *CarPlay*. Tik op het veld *CarPlay-profiel* in het menu *OsmAnd-instellingen* en selecteer uit de lijst met [profielen die zijn ingeschakeld voor gebruik](../personal/profiles.md) het profiel waarmee *CarPlay* wordt geactiveerd.  
 
-U kunt geen profiel rechtstreeks in *CarPlay* selecteren vanaf het voertuigscherm. Selecteer eerst het vereiste profiel op uw apparaat en koppel het *CarPlay-profiel* eraan. U moet een profiel selecteren dat overeenkomt met het type voertuig, zoals *Rijden*, *Vrachtwagen*, *Auto*, *Motorfiets* of *Bromfiets*. **De app activeert automatisch** het *CarPlay-profiel* wanneer deze met een voertuig is verbonden.
+U kunt geen profiel rechtstreeks in *CarPlay* selecteren vanaf het voertuigscherm. Selecteer eerst het vereiste profiel op uw apparaat en koppel het *CarPlay-profiel* eraan. U moet een profiel selecteren dat overeenkomt met het type voertuig, zoals *Rijden*, *Vrachtwagen*, *Auto*, *Motorfiets*, of *Bromfiets*. **De app activeert automatisch** het *CarPlay-profiel* wanneer deze met een voertuig is verbonden.
 
 **Waarom het belangrijk is om het juiste profiel voor uw type voertuig te selecteren.**
 
@@ -103,8 +105,8 @@ U kunt geen profiel rechtstreeks in *CarPlay* selecteren vanaf het voertuigscher
 
 U kunt eerder ingestelde en toegevoegde [POI's](../map/point-layers-on-map.md#points-of-interest-pois), of [Favorieten](../personal/favorites.md), of [Markers](../personal/markers.md) als bestemmingspunt selecteren. Het is ook mogelijk om een opgenomen of gedownloade [Track](../personal/tracks/index.md) voor de route te selecteren, de [Zoekfunctie](../search/index.md) te gebruiken, of een bestemming te selecteren uit de [Geschiedenis](../search/search-history.md) van de route.
 
-1. Als u een bepaalde locatie op de kaart als eindpunt wilt, selecteer dan de juiste categorie punten uit de lijst, [POI's](#poi-categories), [Favorieten](#favorites), of [Kaartmarkers](#map-markers).
-
+1. Als u een bepaalde locatie op de kaart als eindpunt wilt, selecteer dan de juiste categorie punten uit de lijst, [POI's](#poi-categories), [Favorieten](#favorites), of [Kaartmarkers](#map-markers).  
+  
     - Alle categorieën mogen niet meer lijstitems bevatten dan door uw multimediasysteem van het voertuig worden geleverd. Dit betekent dat de lijst in *CarPlay* onvolledig kan zijn en dat alle andere mappen alleen beschikbaar zijn in de OsmAnd-app op uw apparaat.
     - De map [Laatst gewijzigd](#folder-last-modified) bevat een lijst met recente bestemmingen, gesorteerd op datum van toevoeging of wijziging.
     - De lijst van alle andere mappen is gesorteerd op de meest recente update, nieuwe mappen staan bovenaan de lijst. Het is niet mogelijk om hun volgorde handmatig te wijzigen.
@@ -119,7 +121,7 @@ Tijdens het rijden kunnen geselecteerde punten worden [aangekondigd](#voice-prom
 
 ### Geschiedenis {#history}
 
-![CarPlay-scherm](@site/static/img/navigation/auto-car/car_play_history.png)
+![CarPlay-scherm](@site/static/img/navigation/auto-car/car_play_history.png)  
 
 In de **categorie Geschiedenis** kunt u een bestemming selecteren uit een lijst met eindpunten.
 
@@ -137,7 +139,7 @@ In de **categorie Geschiedenis** kunt u een bestemming selecteren uit een lijst 
     </tr>
 </table>
 
-*POI's (Points of Interest)* zijn een type punten die plaatsen of objecten op de kaart identificeren die belangrijk of interessant zijn voor gebruikers. Ze worden gemarkeerd door speciale pictogrammen die worden aangeboden in de [OsmAnd-instellingen](../map/point-layers-on-map.md#poi-types) en zijn in groepen gesorteerd.
+*POI's (Points of Interest)* zijn een type punten die plaatsen of objecten op de kaart identificeren die belangrijk of interessant zijn voor gebruikers. Ze worden gemarkeerd door speciale pictogrammen die worden aangeboden in de [OsmAnd-instellingen](../map/point-layers-on-map.md#poi-types) en zijn in groepen gesorteerd.  
 
 Volg deze stappen om een route naar een *POI* in *CarPlay* te maken:
 
@@ -149,40 +151,40 @@ Volg deze stappen om een route naar een *POI* in *CarPlay* te maken:
 
 ### Favorieten {#favorites}
 
-![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-favorites(1).png)
+![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
 **Favorieten** is een van de functies van OsmAnd waarmee u een soort notities op de kaart kunt maken.
 
 - Tijdens het gebruik van **CarPlay** kunt u geen *Favorieten* toevoegen of wijzigen, alleen bestaande gebruiken.
 - De lijst met [Favorieten](../personal/favorites.md#manage-favorites) is te vinden in de OsmAnd-app *Menu → Mijn Plaatsen → Favorieten*.
-- Als u ze voor navigatie wilt gebruiken, configureer dan alles wat u nodig hebt voordat u het apparaat op het multimediasysteem van uw voertuig aansluit.
+- Als u ze voor navigatie wilt gebruiken, configureer dan alles wat u nodig hebt voordat u het apparaat op het multimediasysteem van uw voertuig aansluit.  
 
 
 ### Kaartmarkers {#map-markers}
 
-![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-markers(1).png)
+![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
 - Om uw eindbestemming als een *Kaartmarker* te definiëren, moet u eerst het vereiste aantal markers aanmaken in de OsmAnd-app op uw apparaat voordat u het verbindt met het multimediasysteem van het voertuig.
 - *Markers* moeten beschikbaar zijn in de lijst *Menu → Kaartmarker*.
-- Dit wordt in meer detail beschreven in het artikel [Markers](../personal/markers.md).
+- Dit wordt in meer detail beschreven in het artikel [Markers](../personal/markers.md).  
 
 
 ### Tracks {#tracks}
 
-![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-tracks(1).png)
+![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
-Om een route naar een bestemming te maken, kunt u een bestaande track selecteren die beschikbaar is in de OsmAnd-app. De track kan van tevoren worden [gedownload](../personal/tracks/manage-tracks.md#import), gebruikt worden als [opgenomen](../plugins/trip-recording.md) of aangemaakt worden in [Route plannen](../plan-route/create-route.md).
+Om een route naar een bestemming te maken, kunt u een bestaande track selecteren die beschikbaar is in de OsmAnd-app. De track kan van tevoren worden [gedownload](../personal/tracks/manage-tracks.md#import), gebruikt worden als [opgenomen](../plugins/trip-recording.md) of aangemaakt worden in [Route plannen](../plan-route/create-route.md).  
 
-Selecteer uit de lijst met tracks in *Menu → Mijn Plaatsen → [Tracks](../personal/tracks/manage-tracks.md)* de gewenste track voordat u verbinding maakt met het multimediasysteem van het voertuig, en de route zal ofwel opbouwen tot het begin van de track of de huidige richting langs de track weergeven.
+Selecteer uit de lijst met tracks in *Menu → Mijn Plaatsen → [Tracks](../personal/tracks/manage-tracks.md)* de gewenste track voordat u verbinding maakt met het multimediasysteem van het voertuig, en de route zal ofwel opbouwen tot het begin van de track of de huidige richting langs de track weergeven.  
 
 Tracks kunnen ook rechtstreeks op het voertuigscherm in *CarPlay* worden geselecteerd. Ze zijn georganiseerd in mappen die u hebt gemaakt, en voor gemakkelijke en snelle toegang tot recent geopende tracks is er een speciale map [Laatst gewijzigd](#folder-last-modified).
 
 
 ### Zoeken {#search}
 
-![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-search(1).png)
+![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
-Naar **Zoeken** gaan geeft u snelle toegang tot een lijst met recente [bestemmingsgeschiedenis](#history). Vergelijkbaar met het [Navigatiemenu](../navigation/setup/route-navigation.md#navigation-menu), waar alle OsmAnd-bestemmingsmethoden zoals een adres, POI's of coördinaten zijn verzameld.
+Naar **Zoeken** gaan geeft u snelle toegang tot een lijst met recente [bestemmingsgeschiedenis](#history). Vergelijkbaar met het [Navigatiemenu](../navigation/setup/route-navigation.md#navigation-menu), waar alle OsmAnd-bestemmingsmethoden zoals een adres, POI's of coördinaten zijn verzameld.  
 
 U kunt de *Zoekfunctie* gebruiken om de vereiste plaats op de kaart te vinden voor routeplanning vanuit elke beschikbare zoekcategorie.
 
@@ -212,24 +214,24 @@ De categorieën *Favorieten* en *Tracks* hebben een speciale map **Laatst gewijz
 
 ## Extra functies {#additional-features}
 
-Naast de basisfuncties van de OsmAnd-app in *CarPlay* die handige navigatie in uw voertuig bieden, zijn er een aantal extra functies die uw ervaring verbeteren en de navigatie persoonlijker, comfortabeler en efficiënter maken.
+Naast de basisfuncties van de OsmAnd-app in *CarPlay* die handige navigatie in uw voertuig bieden, zijn er een aantal extra functies die uw ervaring verbeteren en de navigatie persoonlijker, comfortabeler en efficiënter maken.  
 
 
 ### Gesproken aanwijzingen {#voice-prompts}
 
-Spraakbegeleiding voor *CarPlay* is een van de meest nuttige navigatiefuncties van OsmAnd, die real-time begeleiding biedt en de bestuurder in staat stelt om gefocust te blijven op de weg. Gesproken aanwijzingen geven duidelijk bochten, richtingen en andere navigatie-instructies aan, wat zorgt voor een veiliger en comfortabeler gebruik van het navigatiesysteem.
+Spraakbegeleiding voor *CarPlay* is een van de meest nuttige navigatiefuncties van OsmAnd, die real-time begeleiding biedt en de bestuurder in staat stelt om gefocust te blijven op de weg. Gesproken aanwijzingen geven duidelijk bochten, richtingen en andere navigatie-instructies aan, wat zorgt voor een veiliger en comfortabeler gebruik van het navigatiesysteem.  
 
-Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. Voor aanbevolen instellingen voor *CarPlay*, ga naar het artikel [Gesproken aanwijzingen / Meldingen](../navigation/guidance/voice-navigation.md).
+Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. Voor aanbevolen instellingen voor *CarPlay*, ga naar het artikel [Gesproken aanwijzingen / Meldingen](../navigation/guidance/voice-navigation.md).  
 
 
 
 ### Schermwaarschuwingswidget {#screen-alert-widget}
 
-![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)
+![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
-Deze informatiewidget combineert waarschuwingstypes zoals **Zebrapaden** en **Snelheidslimiet**.
+Deze informatiewidget combineert waarschuwingstypes zoals **Voetgangersoversteekplaatsen** en **Snelheidslimiet**.
 
-- De typen waarschuwingen hebben een verschillend uiterlijk, dat afhangt van de **<Translate android="true" ids="driving_region"/>** en kan worden geconfigureerd in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*.
+- De typen waarschuwingen hebben een verschillend uiterlijk, dat afhangt van de **<Translate android="true" ids="driving_region"/>**  en kan worden geconfigureerd in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*.
 - In *CarPlay* is het niet mogelijk om de weergave van waarschuwingen in te stellen, u moet de widget in de applicatie configureren voordat u de navigatie start en uw apparaat met het voertuig verbindt.
 - Voor een gedetailleerde beschrijving van de waarschuwingstypes, zie [dit artikel](../widgets/nav-widgets.md#alert-types).
 - Om schermwaarschuwingen voor beschikbare profielen in te stellen, zie het artikel [Navigatie-instellingen](../navigation/guidance/navigation-settings.md#screen-alerts).
@@ -260,7 +262,7 @@ De OsmAnd-app stelt u in staat om de 3D-kaartweergave op het *CarPlay-scherm* te
 
 ![CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
 
-De OsmAnd-app kan worden geopend en gebruikt voor navigatie in *CarPlay* op het multimediasysteemscherm van het voertuig, tegelijk met muziek-, berichten- of andere meldingsapps.
+De OsmAnd-app kan worden geopend en gebruikt voor navigatie in *CarPlay* op het scherm van het multimediasysteem van het voertuig, tegelijk met muziek-, berichten- of andere meldingsapps.
 
 - Het multifunctionele dashboard instellen op een telefoon die is verbonden met *CarPlay* of op het scherm in uw voertuigsysteem.
 - Zoek de knop Multi-venster en schakel deze in.
@@ -292,9 +294,9 @@ De OsmAnd-app voor *CarPlay* stelt u in staat om de positie van de huidige locat
 
 ### Probleem met volumeregeling {#volume-control-issue}
 
-Soms maakt *CarPlay* geen verbinding, of hoort u gewoon niets, ook al is het verbonden. Andere keren opent de OsmAnd-app niet correct in *CarPlay*. Mogelijke oplossingen:
+Soms maakt *CarPlay* geen verbinding, of hoort u gewoon niets, ook al is het verbonden. Andere keren opent de OsmAnd-app niet correct in *CarPlay*. Mogelijke oplossingen:  
 
-1. In de meeste gevallen blijven alle **signalen** op een constant vol volume, los van de audio-afspeelinstellingen op hetzelfde moment. Om het volume van de OsmAnd-navigatieaanwijzingen te wijzigen bij gebruik van *CarPlay*, gaat u naar *Instellingen → Stem → Stemvolume* op het multimediasysteemscherm van het voertuig.
+1. In de meeste gevallen blijven alle **signalen** op een constant vol volume, los van de audio-afspeelinstellingen op hetzelfde moment. Om het volume van de OsmAnd-navigatieaanwijzingen te wijzigen bij gebruik van *CarPlay*, gaat u naar *Instellingen → Stem → Stemvolume* op het multimediasysteemscherm van het voertuig.  
 2. Herstart het apparaat.
 3. Zorg ervoor dat *CarPlay* is ingeschakeld op uw iPhone. Om dit te doen:
    - Ga naar de instellingen van uw telefoon en dan naar *Algemeen*.
@@ -314,10 +316,10 @@ Soms maakt *CarPlay* geen verbinding, of hoort u gewoon niets, ook al is het ver
 ### Veelvoorkomende problemen en oplossingen {#common-issues-and-solutions}
 
 1. Veelgestelde vragen over het verbindingsscherm:
-    - *Waarom kan ik de app niet bedienen vanaf mijn telefoon wanneer deze is verbonden met CarPlay?*
+    - *Waarom kan ik de app niet bedienen vanaf mijn telefoon wanneer deze is verbonden met CarPlay?*  
         Om veiligheidsredenen is het scherm van de OsmAnd-app op uw telefoon vergrendeld terwijl deze is verbonden met CarPlay. U kunt alleen met de app communiceren via het autoscherm.
-    - *Kan ik het vergrendelde scherm uitschakelen en de app op mijn telefoon gebruiken?*
+    - *Kan ik het vergrendelde scherm uitschakelen en de app op mijn telefoon gebruiken?*  
         Nee, CarPlay dwingt deze beperking af om afleiding tijdens het rijden te voorkomen.
-    - *Wat moet ik doen als mijn telefoon en het autoscherm niet verbonden lijken te zijn?*
-        Zorg ervoor dat uw apparaat correct is aangesloten via USB of Bluetooth.
+    - *Wat moet ik doen als mijn telefoon en het autoscherm niet verbonden lijken te zijn?*  
+        Zorg ervoor dat uw apparaat correct is aangesloten via USB of Bluetooth.  
         Herstart het infotainmentsysteem van uw auto en de OsmAnd-app als de verbinding onstabiel is.

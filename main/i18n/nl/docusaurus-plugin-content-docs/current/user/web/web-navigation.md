@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -45,6 +45,8 @@ Start en Bestemming wisselen — wisselt de Start en Bestemming terwijl tussenli
 
 Bovenaan het Routepaneel kun je een routingprofiel voor je route kiezen. Een set veelgebruikte profielen wordt weergegeven als vier pictogrammen. Om meer opties te openen, open je het drie-puntmenu naast de profielpictogrammen. Het breidt de volledige lijst met beschikbare profielen uit.
 
+Routingprofielen in de Web Planner gebruiken dezelfde routingregels en instellingen als in de OsmAnd mobiele app. Voor details over hoe routes worden berekend en hoe routingparameters werken, zie [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
+
 Wanneer je het profiel wisselt, werkt Navigatie de route bij om aan te sluiten bij de geselecteerde reismodus.
 
 ![Web Navigatie](@site/static/img/web/navigation_profile.png)
@@ -52,7 +54,7 @@ Wanneer je het profiel wisselt, werkt Navigatie de route bij om aan te sluiten b
 
 ## Navigatie-instellingen {#navigation-settings}
 
-Om aan te passen hoe routes worden berekend, open je Instellingen met het tandwielpictogram in het Routepaneel. Instellingen zijn gegroepeerd in secties die je kunt uitklappen/invouwen. De set secties en opties hangt af van het geselecteerde routingprofiel, dus je ziet verschillende parameters voor verschillende reismodussen.
+Om aan te passen hoe routes worden berekend, open je Instellingen met het tandwielpictogram in het Routepaneel (voor navigatie-instellingen in de OsmAnd mobiele app, zie [hier](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). Instellingen zijn gegroepeerd in secties die je kunt uitklappen/invouwen. De set secties en opties hangt af van het geselecteerde routingprofiel, dus je ziet verschillende parameters voor verschillende reismodussen.
 
 Typische secties omvatten:
 
@@ -66,7 +68,7 @@ Typische secties omvatten:
 
 ## Track Koppelen {#attaching-track}
 
-Het blok **Aan wegen koppelen** laat je een bestaande GPX-track gebruiken als basis voor navigatie. OsmAnd Web past de track aan op nabijgelegen wegen om bocht-na-bocht begeleiding te bieden.
+Het **[Aan wegen koppelen](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** blok laat je een bestaande GPX-track gebruiken als basis voor navigatie. OsmAnd Web past de track aan op nabijgelegen wegen om bocht-na-bocht begeleiding te bieden.
 
 Wanneer je Track selecteren klikt, opent de browser een bestandskiezer waar je een .gpx-bestand van je computer kunt kiezen. Nadat je een track hebt geselecteerd:
 - De track wordt weergegeven op de kaart en gebruikt om de route te berekenen.
@@ -86,7 +88,7 @@ Info vat de route en hoogtegegevens samen:
 - **Route** — afstand en tijd.
 - **Klimmen/Dalen** — totale stijging en daling.
 - **Hoogte (min/gem/max)** — hoogte-statistieken voor de route.
-- **Hoogte (Satelliet)** — Herberekenen om hoogte opnieuw op te bouwen met satellietgegevens (indien beschikbaar).
+- **Hoogte (Satelliet)** — herberekent de hoogtegegevens van de track met behulp van terreingegevens (DEM) en werkt het hoogtegrafiek bij.
 
 Onder het overzicht helpt het hoogtegrafiek je het routeprofiel te inspecteren. Je kunt Hoogte en Hellingsgraad schakelen, en de schuifregelaar onder het grafiek gebruiken om te focussen op een specifiek deel van de route.
 
@@ -105,10 +107,18 @@ Je kunt de route direct op de kaart verfijnen door route-markers naar een andere
 ### Downloaden en Opslaan {#download-and-save}
 
 Gebruik *Downloaden* om de route te exporteren als een track. Het downloadvenster biedt twee opties:
-Volledige trackgegevens — bevat volledige gegevens, inclusief navigatie-instructies.
-Vereenvoudigde track — een lichtere versie die geschikter is voor gebruik met andere apps.
+**Volledige trackgegevens** — bevat volledige gegevens, inclusief navigatie-instructies.
+**[Vereenvoudigde track](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — een lichtere versie die geschikter is voor gebruik met andere apps.
+
+Als je van plan bent de GPX te openen in apps van derden, kies dan Vereenvoudigde track voor betere compatibiliteit. Dit helpt gevallen te vermijden waarin een andere app na import een onjuist segment kan weergeven.
+
+Wat is het verschil:
+- Volledige trackgegevens kan route/navigatie-informatie bevatten naast de trackgeometrie (handig als je navigatie-instructies wilt behouden of de route opnieuw wilt bewerken in OsmAnd).
+- Vereenvoudigde track exporteert een schonere GPX bedoeld voor andere apps door route/navigatiegegevens te verwijderen en alleen de tracks vorm achter te laten. Waypoints worden behouden bij het exporteren van een vereenvoudigde track.
 
 Je kunt de route opslaan als een track met *Opslaan in Cloud / Uploaden naar OsmAnd Cloud*. Dit opent een dialoog waar je het opslaan in cloud-tracks kunt bevestigen, de Naam kunt bewerken, optioneel een Map kunt kiezen, en dan Opslaan of Annuleren.
+
+![Web Navigatie](@site/static/img/web/download_options.png)
 
 ### Een Route Delen {#share-a-route}
 
@@ -119,5 +129,6 @@ Om de route te delen, kopieer je de URL. Voorbeeld: [https://osmand.net/map/?sta
 
 - [Routevoorbereiding](../navigation/setup/route-navigation.md)
 - [Navigatie-instellingen](../navigation/guidance/navigation-settings.md)
+- [Over OsmAnd routing](../navigation/routing/osmand-routing.md)
 - [Voertuigparameters](../navigation/guidance/vehicle-parameters.md)
 - [Route Plannen](../web/planner.md)

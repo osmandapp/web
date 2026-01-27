@@ -1,5 +1,5 @@
 ---
-source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
+source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
 sidebar_position: 15
 title:  Ritten Registreren
 ---
@@ -166,7 +166,7 @@ Hier is wat u erop kunt vinden:
     - ***Android***. Voor de ***Y-as*** op de grafiek kunt u *tot twee parameters* selecteren uit alle beschikbare gegevens zoals *Hoogte*, *Helling*, *Snelheid* en [informatie van externe sensoren](../plugins/external-sensors.md#trip-recording). Voor de ***X-as***, selecteer om ofwel *Afstand*, *Tijd* of *Tijd van de dag* weer te geven.
     - ***iOS***. De parameters zijn georganiseerd in tabbladen *Overzicht*, *Hoogte* en *Snelheid* met de juiste waarden voor de Y-as en *Afstand* voor de X-as.
 
-- **Statistiek**. Voor Android wordt een constante set statistische gegevens weergegeven, onafhankelijk van de grafiekinstellingen: *Afstand*, *Tijdsduur*, *Stijgen*, *Dalen*, *Gemiddelde snelheid*. Voor iOS heeft elk tabblad, Overzicht, Houding en Snelheid, een andere gegevensset.
+- **Statistiek**. Voor Android wordt een constante set statistische gegevens weergegeven, onafhankelijk van de grafiekinstellingen: *Afstand*, *Tijdsduur*, *Stijgen*, *Dalen*, *Gemiddelde snelheid*. Voor iOS heeft elk tabblad, Overzicht, Hoogte en Snelheid, een andere gegevensset.
 
 Voor een meer gedetailleerde weergave kunt u **de grafiek schalen**:
 
@@ -389,35 +389,62 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 De [widget Ritten Registreren](../widgets/info-widgets.md#trip-recording-widgets) biedt een eenvoudige manier om uw opnamestatus te monitoren en snel toegang te krijgen tot opname-instellingen en details. Deze widget wordt automatisch aan uw scherm toegevoegd wanneer de plug-in Ritten Registreren is ingeschakeld.
 
-Om uw interface aan te passen, kunt u de widget Ritten Registreren en [andere widgets](../plugins/trip-recording#duration-uphill-downhill) toevoegen of verwijderen via het menu Scherm configureren.
+Om uw interface aan te passen, kunt u de widget Ritten Registreren en [andere widgets](../plugins/trip-recording#additional-widgets) toevoegen of verwijderen via het menu Scherm configureren.
 
 
-### Afstand (Start-Stop) {#distance-start-stop}
+### Weergavemodi {#display-modes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Opname voltooien in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
-![Ritten registreren widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+![Weergavemodi](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Weergavemodi](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ritten registreren widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Ritten registreren widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+![Weergavemodi](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Weergavemodi](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Wanneer widgets op de kaart worden weergegeven, onthult het tikken op een van hen extra trackdetails en maakt interactie met de opname mogelijk.
-De *Afstand* widget toont de totale afstand van uw huidige opgenomen rit en fungeert als de hoofdinterface voor het beheren van uw opnames. Door erop te tikken wordt het [dialoogvenster Ritten Registreren](#start-a-dialog) geopend, waar u kunt starten, stoppen en gedetailleerde informatie over uw track kunt bekijken.
+Sommige widgets voor Ritten Registreren ondersteunen meerdere weergavemodi. Modi laten u schakelen tussen algemene reiswaarden en metrieken voor het meest recente stijgings- of dalingssegment van de momenteel opgenomen rit.
 
-- De widget wordt automatisch toegevoegd wanneer de *plug-in Ritten Registreren* is ingeschakeld, maar kan worden verborgen via het [menu Scherm configureren](../widgets/configure-screen.md#overview).
-- Als de optie *Startdialoog tonen* is uitgeschakeld in de instellingen van de plug-in Ritten Registreren, zal het tikken op de actieve widget nog steeds het *dialoogvenster Ritten Registreren* openen, waardoor u toegang krijgt tot verdere opties en informatie.  
+De volgende modi kunnen beschikbaar zijn afhankelijk van de widget.
+1. **Afstand (Start-Stop)**:
+- Totale afstand (standaard)
+- Laatste stijging
+- Laatste daling
 
-Naast de *Afstand/Start-Stop* widget, bevat de **plug-in Ritten Registreren** vijf andere widgets: *Duur*, *Stijgen*, *Dalen*, *Max Snelheid* en *Gemiddelde Helling*. Deze bieden aanvullende informatie over uw rit, zodat u de voortgang in real-time kunt volgen.
+2. **Stijgen**:
+- Totaal (standaard)
+- Laatste stijging
+
+3. **Dalen**:
+- Totaal (standaard)
+- Laatste daling
+
+4. **Max Snelheid**:
+- Totaal (standaard)
+- Laatste stijging
+- Laatste daling
+
+5. **Gemiddelde Helling**:
+- Laatste stijging  
+- Laatste daling 
+
+Moduswisseling hangt af van de widget:
+- Stijgen / Dalen / Max Snelheid / Gemiddelde Helling — tik op de widget op de kaart om de modus te wisselen.
+- Afstand (Start-Stop) — de Afstand-widget ondersteunt meerdere weergavemodi (selecteer ze in de widgetinstellingen), maar het tikken erop opent altijd het dialoogvenster Ritten Registreren, waar u kunt starten, stoppen en gedetailleerde informatie over uw track kunt bekijken. 
+
+Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets in Laatste stijging of Laatste daling modus 0 of — (geen gegevens).
+
+**Opmerkingen:** Modi zijn van toepassing op de momenteel opgenomen rit en worden bijgewerkt naarmate de opname doorgaat.
+
+
+### Afstand (Start-Stop) {#distance-start-stop}
 
 | |
 |-----------|
@@ -425,46 +452,25 @@ Naast de *Afstand/Start-Stop* widget, bevat de **plug-in Ritten Registreren** vi
 | ![Ritten registreren (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Om het [dialoogvenster Ritten Registreren](#start-a-dialog) te openen wanneer u op een inactieve widget tikt, schakelt u de optie *Startdialoog tonen* in de instellingen van de plug-in Ritten Registreren in. Als de optie is uitgeschakeld, begint de opname onmiddellijk na het tikken op de widget zonder het dialoogvenster te openen.| 
 
-De Afstand-widget ondersteunt meerdere weergavemodi:
-- **Totale afstand** – totale afstand van de huidige opname (standaard).
-- **Laatste stijging** – afstand van het meest recente klimsegment.
-- **Laatste daling** – afstand van het meest recente dalingssegment.
 
-
-### Duur, Stijgen, Dalen {#duration-uphill-downhill}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
+### Aanvullende Widgets {#additional-widgets}
 
 | |
 |------------|
 |**Duur**. Toont de totale tijd van de huidige ritregistratie in uren en minuten. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Stijgen**. Toont de totale stijging of het laatste stijgingssegment, afhankelijk van de geselecteerde modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 |**Dalen**. Geeft de totale daling of het laatste dalingssegment aan, afhankelijk van de geselecteerde modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Max Snelheid**. Toont de maximale snelheid voor de momenteel opgenomen rit in de geselecteerde modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Gemiddelde Helling**. Toont de gemiddelde helling voor het laatste stijgings- of dalingssegment van de huidige rit, afhankelijk van de geselecteerde modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 
-</TabItem>
+Als u meerdere widgets hebt geselecteerd, kunt u voor elk hetzelfde dialoogvenster openen zonder te hoeven schakelen of het te sluiten. Deze uniforme interface maakt het gemakkelijk om alle gerelateerde informatie naadloos te bekijken en te beheren.
 
-<TabItem value="ios" label="iOS">  
-
-| |
-|------------|
-|**Duur**. Toont de totale tijd van de huidige ritregistratie in uren en minuten. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Stijgen**. Toont de totale stijging of het laatste stijgingssegment, afhankelijk van de geselecteerde modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Dalen**. Geeft de totale daling of het laatste dalingssegment aan, afhankelijk van de geselecteerde modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-</Tabs>
-
-Als u meerdere widgets hebt geselecteerd — *Duur*, *Stijgen* of *Dalen* — kunt u voor elk hetzelfde dialoogvenster openen zonder te hoeven schakelen of het te sluiten. Deze uniforme interface maakt het gemakkelijk om alle gerelateerde informatie naadloos te bekijken en te beheren.
-
+<!--
 ### Max Snelheid & Gemiddelde Helling {#max-speed--average-slope}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -477,7 +483,7 @@ Als u meerdere widgets hebt geselecteerd — *Duur*, *Stijgen* of *Dalen* — ku
 
 <TabItem value="ios" label="iOS">
 
-![Max Snelheid iOS](@site/static/img/widgets/max_speed_ios.png) ![Gemiddelde Helling iOS](@site/static/img/widgets/average_slope_ios.png) 
+![Max Snelheid Android](@site/static/img/widgets/max_speed_ios.png) ![Gemiddelde Helling Android](@site/static/img/widgets/average_slope_ios.png) 
 
 </TabItem>
 
@@ -486,6 +492,7 @@ Als u meerdere widgets hebt geselecteerd — *Duur*, *Stijgen* of *Dalen* — ku
 De **Max Snelheid** widget toont de maximale snelheid voor de momenteel opgenomen rit. Tik op de widget om te schakelen tussen de algemene maximale snelheid en de maximale snelheid van het laatste stijgings- of dalingssegment.
 
 De **Gemiddelde Helling** widget toont de gemiddelde helling voor het laatste stijgings- of dalingssegment van de huidige rit. Het helpt om te schatten hoe steil de vorige klim of daling was, op basis van hoogtewinst en afstand.
+-->
 
 
 ## Gerelateerde Artikelen {#related-articles}
@@ -510,8 +517,8 @@ De **Gemiddelde Helling** widget toont de gemiddelde helling voor het laatste st
     - Controleer of GPS is ingeschakeld en een actief signaal heeft.  
     - Verlaag de drempel voor GPS-nauwkeurigheid: *Menu → Profiel configureren → Ritten Registreren → Minimale nauwkeurigheid*.
 
-- Geregistreerde tracks zijn ruisachtig. [(controleer)](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy).
-- Geregistreerde tracks hebben gaten. [(controleer)](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps)
+- Geregistreerde Tracks zijn ruisachtig. [(controleer)](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy).
+- Geregistreerde Tracks hebben gaten. [(controleer)](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps)
 - Hoe de afgelegde afstand te volgen. [(controleer)](../troubleshooting/track-recording-issues.md#how-to-track-traveled-distance)
 
 Voor aanvullende probleemoplossing, bezoek: [Probleemoplossing voor trackregistratie](https://osmand.net/docs/user/troubleshooting/track-recording-issues).

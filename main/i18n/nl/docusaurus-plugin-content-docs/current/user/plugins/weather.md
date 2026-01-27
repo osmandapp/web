@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title:  Weer
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Met de interactieve weerkaartlagen in de OsmAnd-app kunt u de temperatuur, atmosferische druk, bewolking, windsnelheid en neerslag in uw stad of op een andere locatie op een interactieve wereldkaart volgen. De Weer-plugin biedt uurlijkse weersvoorspellingen voor 7 dagen vooruit, rechtstreeks op de OsmAnd-kaart. Weersinformatie kan ook worden gedownload voor offline gebruik.  
 
-De gegevensbron voor de Weer-plugin is het [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast), bediend door de National Weather Service (NWS) van de Verenigde Staten en het Europees Centrum voor Weersvoorspellingen op Middellange Termijn ([ECMWF](https://www.ecmwf.int/)).  
+De gegevensbron voor de Weer-plugin is het [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) bediend door de National Weather Service (NWS) van de Verenigde Staten en het Europees Centrum voor Weersvoorspellingen op Middellange Termijn ([ECMWF](https://www.ecmwf.int/)).  
 
 
 ## Vereiste Instelparameters {#required-setup-parameters}
@@ -171,7 +171,7 @@ In de iOS-versie van OsmAnd kunt u de meeteenheden en het transparantieniveau wi
 
 ### Weerlagen {#weather-layers}
 
-Alle weergegevens worden gepresenteerd als afzonderlijke kaartlagen. Om de weerlagen op de kaart te zien, moet u uitzoomen; ze zijn alleen beschikbaar op zoomschalen 2-12. Weerlagen gebruiken [weerpaletten](../personal/color-palette-schemes.md#weather) om de kaart in te kleuren, deze paletten kunnen indien nodig worden [gewijzigd](../personal/color-palette-schemes.md#edit-palette-file).
+Alle weergegevens worden gepresenteerd als afzonderlijke kaartlagen. Om de weerlagen op de kaart te zien, moet u uitzoomen; ze zijn alleen beschikbaar op zoomschalen 2-12. Weerlagen gebruiken [weerpaletten](../personal/color-palette-schemes.md#weather) om de kaart in te kleuren, deze paletten kunnen indien nodig worden [gewijzigd](../personal/color-palette-schemes.md#palette-modify).
 
 | |  
 |------------|  

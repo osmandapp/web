@@ -1,5 +1,5 @@
 ---
-source-hash: 95e66b93e0c5a981ee18f89cb1798bfb0b845b2b0d468d645cf6efd637edebac
+source-hash: 3970a0828bc6b80d9b68504c9d78e40d1226e1cf16d6f1fbc2fdcc5d6af480ec
 sidebar_position: 3
 title:  Webaankopen
 ---
@@ -24,7 +24,7 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 
 ### Verschil tussen aankopen {#difference-between-purchases}
 
-| Plan | Beschrijving | Opmerkingen |
+| Plan | Description | Notes |
 |------------|------------|------------|
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** dat geavanceerde functies ontgrendelt voor de gratis OsmAnd-app. | Ondersteunt **cross-platform** toegang |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Een **abonnementplan** dat alle [pro-functies](#free-and-paid-features) ontgrendelt, inclusief CarPlay en 3D-reliëf. | Ondersteunt **cross-platform** toegang |
@@ -66,8 +66,9 @@ Starting from the third year, the full price will apply.
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
-| **Prijs (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Prijs (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
+| **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
+
 
 
 

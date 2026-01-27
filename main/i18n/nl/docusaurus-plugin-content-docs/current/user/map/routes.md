@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title:  Routes
 ---
@@ -124,7 +124,7 @@ Skipistes en -routes zijn een specifieke groep [routes](https://wiki.openstreetm
 
 ### Sneeuwscooterpaden {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
 
 Sneeuwscooterpaden zijn gemapt in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) als `route=snowmobile`. Ze worden gebruikt voor winterrecreatie en om afgelegen gebieden tijdens het sneeuwseizoen te verbinden. In OsmAnd zijn sneeuwscooterpaden klikbaar, zie de sectie [Acties met routes](#actions-with-routes).
 
@@ -345,45 +345,29 @@ U kunt aanpassen of routes in- of uitgeschakeld zijn met de widget [Snelle actie
 
 ## Routes zoeken {#routes-search}
 
-Vind routes met de [Zoekfunctie](../search/index.md) op naam of door "Routes" te selecteren in de [sectie Categorieën](../search/search-poi.md#).
-
-Om te zoeken, ga naar het menu *<Translate android="true" ids="search_button"/>* of *<Translate android="true" ids="search_button,search_categories"/>* en voer uw activiteit in.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png)
+![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png)
+![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Navigeer naar *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* om de gewenste routes te vinden. Routes bevatten naam, activiteitstype, lengte, locatie en afstand tot het dichtstbijzijnde punt. Op Android worden ook hoogtemetrics zoals stijging en daling weergegeven waar beschikbaar. Kleine hoogteveranderingen (minder dan 10 m) worden verborgen om de lijst overzichtelijk te houden. Alle waarden respecteren de geselecteerde afstands- en hoogte-eenheden van de app.
+Vind routes met de [Zoekfunctie](../search/index.md) op naam of door "Routes" te selecteren in de [sectie Categorieën](../search/search-poi.md#).
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Om te zoeken, ga naar het menu *<Translate android="true" ids="search_button"/>* of *<Translate android="true" ids="search_button,search_categories"/>* en voer uw activiteit in.
 
-<TabItem value="android" label="Android">
+Navigeer naar *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* om de gewenste routes te vinden. Routes bevatten naam, activiteitstype, lengte, locatie, stijging/daling (op Android), en afstand tot het dichtstbijzijnde punt. 
 
-![Routes on the ground](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Gebruik de filterknop (rechterbovenhoek) om alleen de gewenste routes weer te geven.
+### Routefilters {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Gebruik de filterknop (rechterbovenhoek) om alleen de gewenste routes weer te ge
 </TabItem>
 
 </Tabs>
+
+In de zoekresultaten voor routes tikt u op de knop **Filters** in de rechterbovenhoek om de lijst te verfijnen. Het Filterscherm bevat een veld **Filteren op naam**; een blok **Type** met *Bureau*, *Post annex*, en *Post partner*; en **extra criteria** die afhankelijk zijn van de geselecteerde routecategorie of activiteit, omdat elke categorie zijn eigen kenmerken en filterwaarden kan blootleggen.
+
+U kunt filters in- of uitschakelen met de schakelaars, en sommige secties bevatten *Alles tonen* om aanvullende waarden weer te geven.
 
 
 ## Gerelateerde artikelen {#related-articles}
