@@ -1,5 +1,5 @@
 ---
-source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
+source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
 sidebar_position: 15
 title:  Grabación de viaje
 ---
@@ -389,35 +389,62 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shar
 
 El [widget de Grabación de viaje](../widgets/info-widgets.md#trip-recording-widgets) proporciona una manera fácil de monitorear el estado de su grabación y acceder rápidamente a los ajustes y detalles de la grabación. Este widget se añade automáticamente a su pantalla cuando se activa el complemento Grabación de viaje.
 
-Para personalizar su interfaz, puede añadir o eliminar el widget de Grabación de viaje y [otros widgets](../plugins/trip-recording#duration-uphill-downhill) a través del menú Configurar pantalla.
+Para personalizar su interfaz, puede añadir o eliminar el widget de Grabación de viaje y [otros widgets](../plugins/trip-recording#additional-widgets) a través del menú Configurar pantalla.
 
 
-### Distancia (Iniciar-Detener) {#distance-start-stop}
+### Modos de visualización {#display-modes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Finalizar grabación en Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
-![Widget de grabación de viaje](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+![Modos de visualización](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Modos de visualización](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget de grabación de viaje](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Widget de grabación de viaje](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+![Modos de visualización](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Modos de visualización](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Cuando los widgets se muestran en el mapa, tocar cualquiera de ellos revela detalles adicionales de la pista y permite interactuar con la grabación.
-El widget *Distancia* muestra la distancia total de su viaje grabado actual y actúa como la interfaz principal para gestionar sus grabaciones. Al tocarlo, se revela el [diálogo de Grabación de viaje](#start-a-dialog), donde puede iniciar, detener y ver información detallada sobre su pista.
+Algunos widgets de Grabación de viaje admiten múltiples modos de visualización. Los modos le permiten alternar entre los valores generales del viaje y las métricas para la sección de ascenso o descenso más reciente de la pista grabada actualmente.
 
-- El widget se añade automáticamente cuando se activa el *complemento Grabación de viaje*, pero se puede ocultar a través del [menú Configurar pantalla](../widgets/configure-screen.md#overview).
-- Si la opción *Mostrar diálogo de inicio* está desactivada en los ajustes del complemento Grabación de viaje, al tocar el widget activo se abrirá igualmente el cuadro de diálogo *Grabación de viaje*, lo que le permitirá acceder a más opciones e información.  
+Los siguientes modos pueden estar disponibles dependiendo del widget.
+1. **Distancia (Iniciar-Detener)**:
+- Distancia total (predeterminado)
+- Último ascenso
+- Último descenso
 
-Además del widget *Distancia/Iniciar-Detener*, el **complemento Grabación de viaje** incluye otros cinco widgets: *Duración*, *Ascenso*, *Descenso*, *Velocidad máxima* y *Pendiente promedio*. Estos proporcionan información adicional sobre su viaje, ayudándole a seguir el progreso en tiempo real.
+2. **Ascenso**:
+- Total (predeterminado)
+- Último ascenso
+
+3. **Descenso**:
+- Total (predeterminado)
+- Último descenso
+
+4. **Velocidad máxima**:
+- Total (predeterminado)
+- Último ascenso
+- Último descenso
+
+5. **Pendiente promedio**:
+- Último ascenso  
+- Último descenso 
+
+El cambio de modo depende del widget:
+- Ascenso / Descenso / Velocidad máxima / Pendiente promedio — toque el widget en el mapa para cambiar su modo.
+- Distancia (Iniciar-Detener) — el widget Distancia admite múltiples modos de visualización (selecciónelos en los ajustes del widget), pero tocarlo siempre abre el diálogo de Grabación de viaje, donde puede iniciar, detener y ver información detallada sobre su pista. 
+
+Si la grabación actual aún no contiene una sección de ascenso o descenso, los widgets en modo Último ascenso o Último descenso muestran 0 o — (sin datos).
+
+**Notas:** Los modos se aplican a la pista grabada actualmente y se actualizan a medida que continúa la grabación.
+
+
+### Distancia (Iniciar-Detener) {#distance-start-stop}
 
 | |
 |-----------|
@@ -431,61 +458,22 @@ El widget Distancia admite varios modos de visualización:
 - **Último descenso** – distancia de la sección de descenso más reciente.
 
 
-### Duración, Ascenso, Descenso {#duration-uphill-downhill}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
+### Widgets adicionales {#additional-widgets}
 
 | |
 |------------|
 |**Duración**. Muestra el tiempo total de la grabación del viaje actual en horas y minutos. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Ascenso**. Muestra el ascenso total o la última sección de ascenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 |**Descenso**. Indica el descenso total o la última sección de descenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Velocidad máxima**. Muestra la velocidad máxima para el viaje grabado actualmente en el modo seleccionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Pendiente promedio**. Muestra la pendiente promedio para la última sección de ascenso o descenso del viaje actual, dependiendo del modo seleccionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-| |
-|------------|
-|**Duración**. Muestra el tiempo total de la grabación del viaje actual en horas y minutos. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Ascenso**. Muestra el ascenso total o la última sección de ascenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Descenso**. Indica el descenso total o la última sección de descenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-</Tabs>
-
-Si tiene varios widgets seleccionados — *Duración*, *Ascenso* o *Descenso* — puede acceder al mismo cuadro de diálogo para cada uno sin necesidad de cambiarlo o cerrarlo. Esta interfaz unificada facilita la visualización y gestión de toda la información relacionada sin problemas.
-
-### Velocidad máxima y Pendiente promedio {#max-speed--average-slope}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Velocidad máxima en Android](@site/static/img/widgets/max_speed_android.png) ![Pendiente promedio en Android](@site/static/img/widgets/average_slope_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Velocidad máxima en iOS](@site/static/img/widgets/max_speed_ios.png) ![Pendiente promedio en iOS](@site/static/img/widgets/average_slope_ios.png) 
-
-</TabItem>
-
-</Tabs> 
-
-El widget **Velocidad máxima** muestra la velocidad máxima para el viaje grabado actualmente. Toque el widget para alternar entre la velocidad máxima general y la velocidad máxima de la última sección de ascenso o descenso.
-
-El widget **Pendiente promedio** muestra la pendiente promedio para la última sección de ascenso o descenso del viaje actual. Ayuda a estimar qué tan empinada fue la subida o bajada anterior, basada en la ganancia de elevación y la distancia.
+Si tiene varios widgets seleccionados, puede acceder al mismo cuadro de diálogo para cada uno sin necesidad de cambiarlo o cerrarlo. Esta interfaz unificada facilita la visualización y gestión de toda la información relacionada sin problemas.
 
 
 ## Artículos relacionados {#related-articles}

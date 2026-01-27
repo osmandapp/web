@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  Perfiles (Ajustes)
 ---
@@ -435,19 +435,24 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,profi
 
 ![Apariencia de Mi ubicación](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+Los ajustes de **Apariencia de Mi Ubicación** le permiten personalizar cómo se muestra su ubicación en el mapa, tanto cuando está parado (Reposo) como en movimiento (Navegación). El movimiento es detectado por el sistema operativo cuando la velocidad del dispositivo es **mayor que cero**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Apariencia de Mi ubicación](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![Apariencia de Mi ubicación](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+Los ajustes de **Apariencia de Mi Ubicación** le permiten personalizar cómo se muestra su ubicación en el mapa, tanto cuando está parado (Reposo) como en movimiento (Navegación). El movimiento es detectado por el sistema operativo cuando la velocidad del dispositivo es **mayor que cero**.
+
+Utilice **Tamaño del icono** para ajustar el tamaño del icono de posición de Mi Ubicación de forma independiente del tamaño de texto de la aplicación. Puede establecer tamaños diferentes para los modos Reposo y Navegación. El tamaño se puede ajustar desde el 50% hasta el 300% (50, 75, 100, 125, 150, 200, 250, 300%). El valor predeterminado es 100%. Toque Tamaño del icono para abrir la configuración de tamaño, luego use el control deslizante o los botones de paso + / – para cambiar el valor. Utilice **Restablecer a los valores predeterminados** para volver al 100%.
 
 </TabItem>
 
 </Tabs>
 
-Los ajustes de **Apariencia de Mi Ubicación** le permiten personalizar cómo se muestra su ubicación en el mapa, tanto cuando está parado como en movimiento. El movimiento es detectado por el sistema operativo cuando la velocidad del dispositivo es **mayor que cero**.
 
 ### Ángulo de Visión y Radio de Ubicación {#view-angle-and-location-radius}
 

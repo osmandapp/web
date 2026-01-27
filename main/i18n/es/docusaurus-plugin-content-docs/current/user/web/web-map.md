@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Mapa
 title: Mapa global en el sitio web
@@ -41,11 +41,11 @@ El mapa web de OsmAnd es un mapa global basado en datos de [OpenStreetMap (OSM)]
 Para abrirlo, haz clic derecho en cualquier parte del mapa. Este menú incluye las siguientes acciones:
 
 - **Dónde estoy** – Encuentra rápidamente tu ubicación actual en el mapa. Esta función muestra las direcciones más cercanas al punto seleccionado en el mapa.
-- **Abrir tiempo** – Accede al [Menú del tiempo](#weather-on-the-web) para ver los detalles meteorológicos.
-- **Crear nueva ruta** – Abre la herramienta [*Planificar una ruta*](../web/planner.md#navigation-route) con la ubicación seleccionada como punto de partida o de destino.
+- **Abrir tiempo** – Accede al [Menú del tiempo](../web/web-weather.md) para ver los detalles meteorológicos.
+- **Crear nueva ruta** – Abre la herramienta [*Planificar una ruta*](../web/web-navigation.md) con la ubicación seleccionada como punto de partida o de destino.
 - **Añadir Favorito** – Te permite crear y guardar un [favorito](../web/web-favorites.md#add--edit-favorite) en cualquier punto del mapa para un acceso fácil.
-- **Direcciones desde** – Establece el punto seleccionado como la [ubicación de inicio](../web/planner.md#navigation-route) para la navegación.
-- **Direcciones a** – Establece el punto seleccionado como el [destino para la navegación](../web/planner.md#navigation-route).
+- **Direcciones desde** – Establece el punto seleccionado como la [ubicación de inicio](../web/web-navigation.md#start-a-route) para la navegación.
+- **Direcciones a** – Establece el punto seleccionado como el [destino para la navegación](../web/web-navigation.md#start-a-route).
 - **Copiar coordenadas** – Copia las coordenadas del punto seleccionado para uso externo.
 - **Mostrar regiones** – Muestra las regiones asociadas con la ubicación seleccionada.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  Regla de radio y Regla
 ---
@@ -97,11 +97,12 @@ El [Widget Regla de radio](../widgets/info-widgets.md#radius-ruler) muestra la d
 
 Utiliza este widget para estimar la proximidad a puntos de interés o planificar en torno a un área definida.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Pantalla de la regla de radio](@site/static/img/widgets/radius_ruler_widget.png)
+![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -109,18 +110,19 @@ Utiliza este widget para estimar la proximidad a puntos de interés o planificar
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Regla de radio"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Regla de radio"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Regla de radio"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
 </table>
 
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Brújula para la Regla de radio {#compass-for-radius-ruler}
+### Brújula {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Esta superposición es útil para la navegación al aire libre, permitiéndote h
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Posición Central / Inferior {#center--bottom-position}
+### Posición Central / Inferior {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ Para aumentar el radio visible alrededor de tu ubicación, puedes cambiar la pos
 Para más información sobre *la posición en la pantalla*, consulta el artículo [Configurar pantalla](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## Vista 3D {#3d-view}
+### Vista 3D {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

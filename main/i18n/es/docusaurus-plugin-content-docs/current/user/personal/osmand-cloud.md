@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -346,14 +346,15 @@ Eliminar datos de la Nube no afecta su estado de copia de seguridad ni las copia
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
 
-![Copia de seguridad automática Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+![Copia de seguridad automática en Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
 
 La copia de seguridad automática guarda automáticamente los datos seleccionados de OsmAnd en la Nube a intervalos regulares mientras la aplicación está activa. Esto ayuda a proteger sus datos y mantenerlos sincronizados entre dispositivos que usan la misma cuenta. La pantalla de copia de seguridad automática se divide en tres secciones expandibles: *Ajustes*, *Mis Lugares* y *Recursos*.
 
 Comportamiento de la copia de seguridad automática:
 
-- La copia de seguridad automática se ejecuta aproximadamente cada hora mientras OsmAnd funciona en primer plano.
-- La copia de seguridad también se inicia cuando regresa a la pantalla del mapa.
+- La copia de seguridad automática se ejecuta aproximadamente cada hora mientras OsmAnd funciona en primer plano. Este intervalo no es ajustable actualmente en la aplicación. Se puede cambiar importando un archivo .osf.
+- La copia de seguridad automática puede iniciarse cuando abre o regresa a la pantalla del mapa.
+- Además de las ejecuciones programadas, la copia de seguridad automática también puede iniciarse después de cambios en algunos tipos de datos (por ejemplo, Favoritos), utilizando los tipos de copia de seguridad habilitados en los ajustes de copia de seguridad automática.
 - Puede activar/desactivar cada elemento o secciones completas de forma independiente.
 - Sus datos permanecen disponibles localmente incluso si la copia de seguridad automática está desactivada.
 

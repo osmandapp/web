@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Weather
 title: Weather on the Web
@@ -28,7 +28,7 @@ Los datos meteorológicos están disponibles sin necesidad de iniciar sesión. L
 
 OsmAnd Web proporciona información meteorológica de dos fuentes de pronóstico:
 
-- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Sistema de Pronóstico Global)** – la fuente predeterminada operada por NOAA/NWS. Proporciona datos meteorológicos completos, incluyendo capas de temperatura, presión, humedad, viento y nubes.  
+- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Sistema de Pronóstico Global)** – la fuente predeterminada operada por NOAA/NWS. Proporciona datos meteorológicos completos, incluyendo temperatura, presión, humedad, viento y capas de nubes.  
 - [**ECMWF**](https://www.ecmwf.int/) **(Centro Europeo para Pronósticos Meteorológicos a Medio Plazo)** – una fuente de pronóstico alternativa. Ofrece datos de alta calidad de temperatura, precipitación y presión, pero no proporciona información sobre viento o nubes.  
 
 Para cambiar entre ellas, haga clic en el **botón del paraguas** en el menú de Clima.
@@ -89,7 +89,7 @@ Puede cambiar entre diferentes parámetros meteorológicos usando los iconos en 
 ![Clima de OsmAnd Web](@site/static/img/web/weather_forecast.png)
 
 
-## Artículo relacionado {#related-article}
+## Artículos relacionados {#related-articles}
 
 - [Clima](../plugins/weather.md)
 - [Introducción](../web/web-overview.md)

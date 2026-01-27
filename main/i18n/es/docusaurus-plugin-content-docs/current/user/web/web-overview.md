@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Introducción
 title: Introducción al Planificador Web
@@ -26,9 +26,9 @@ El **Planificador Web**, también conocido como el [**Portal de Mapas de OsmAnd*
 
 Diseñado como un complemento multiplataforma para OsmAnd en Android e iOS, el Portal Web ayuda a los usuarios a planificar viajes, analizar tracks, ver el terreno y gestionar archivos utilizando cualquier navegador de escritorio o tableta — sin necesidad de instalar una aplicación.
 
-OsmAnd Web se integra estrechamente con el servicio **OsmAnd Cloud**, que permite sincronizar favoritos, tracks y copias de seguridad entre dispositivos y plataformas. Los usuarios con cuentas **OsmAnd Start** (gratuita) o **OsmAnd Pro** (de pago) pueden aprovechar al máximo este ecosistema sincronizando datos entre el móvil y la web. Puede encontrar una comparación detallada de las funciones de *Start* y *Pro* en la sección [Acceso por suscripción](#subscription-access) a continuación.
+OsmAnd Web se integra estrechamente con el servicio **OsmAnd Cloud**, que permite sincronizar favoritos, tracks y copias de seguridad entre dispositivos y plataformas. Los usuarios con cuentas **OsmAnd Start** (gratuita) o **OsmAnd Pro** (de pago) pueden aprovechar al máximo este ecosistema sincronizando datos entre el móvil y la web. Puede encontrar una comparación detallada de las funciones de *Start* y *Pro* en la sección [Acceso por suscripción](#subscription-accesses) a continuación.
 
-> **Nota:** Incluso sin iniciar sesión o verificar su cuenta, aún puede usar varias funciones principales del Portal de Mapas Web, incluyendo: [Ruta de navegación](./planner.md), [Planificador de rutas](./planner.md), [Capas meteorológicas](./web-map.md#weather-on-the-web) y [Ajustes](#settings).
+> **Nota:** Incluso sin iniciar sesión o verificar su cuenta, aún puede usar varias funciones principales del Portal de Mapas Web, incluyendo: [Ruta de navegación](./web-navigation.md), [Planificador de rutas](./planner.md), [Capas meteorológicas](./web-weather.md#) y [Ajustes](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -67,11 +67,11 @@ El Portal de Mapas Web admite varios niveles de acceso: sin inicio de sesión, c
 | [Planificador de rutas](./planner.md) | Sin inicio de sesión |
 | [Capas meteorológicas](./web-weather.md) | Sin inicio de sesión |
 | [Ajustes](./web-map.md#settings) | Sin inicio de sesión |
-| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([PDI](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) o <ProFeature/> |
-| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| <ProFeature/> |
-| [Sincronización con OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) o <ProFeature/> |
-| [Búsqueda web, Lugares populares](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) o <ProFeature/> |
-| [Carpetas y capa de Tracks](./web-tracks.md) | <ProFeature/> |
+| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([PDI](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Sincronización con OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Búsqueda web, Lugares populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Carpetas y capa de Tracks](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -153,4 +153,3 @@ In the Web Map Portal, the *General settings* (Display language, Units of length
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
 - [Compras web](../purchases/web.md)
 - [Compras multiplataforma](../purchases/cross.md)
--->

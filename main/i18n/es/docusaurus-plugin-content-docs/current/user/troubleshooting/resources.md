@@ -1,5 +1,5 @@
 ---
-source-hash: 56b2f5077f359bdd8d55b0b0d0c08a58a5a8a3758b047493c62af93177b4a7f0
+source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
 sidebar_position: 9
 title: Recursos y personalizaciones
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Explora OsmAnd {#explore-osmand}
 
-OsmAnd es una potente aplicación con una amplia base de usuarios y, más allá de su documentación oficial, existen numerosos recursos creados por la comunidad.
+OsmAnd es una potente aplicación con una amplia base de usuarios y, más allá de su documentación oficial, existen numerosos recursos creados por la comunidad.  
 
 Este artículo recopila enlaces a manuales de usuario personalizados, grupos de redes sociales, plugins, estilos de mapa y más. Explora estos recursos para ampliar tus conocimientos, personalizar tu experiencia con OsmAnd y conectar con otros usuarios.
 
@@ -57,7 +57,7 @@ La siguiente lista proporciona conversores para varios tipos de datos compatible
 
 ### Manuales {#manuals}
 
-La documentación oficial de OsmAnd es exhaustiva, pero la comunidad también ha producido una variedad de manuales personalizados para ayudar a los usuarios con funciones y casos de uso específicos.
+La documentación oficial de OsmAnd es exhaustiva, pero la comunidad también ha producido una variedad de manuales personalizados para ayudar a los usuarios con funciones y casos de uso específicos.  
 
 Estos manuales, disponibles en varios idiomas, a menudo proporcionan ideas, consejos y trucos únicos que podrían no estar cubiertos en las guías oficiales. Estos recursos son adiciones convenientes a la [Guía de usuario de OsmAnd](https://osmand.net/docs/user/) oficial, ofreciendo más información sobre las características de la aplicación.
 
@@ -87,7 +87,7 @@ La siguiente es una lista de [plugins personalizados](../plugins/custom.md) desa
 | Modelo 3D  | Este paquete añade una opción de modelo 3D para los perfiles. Personaliza la apariencia a través del menú: [*Menú de OsmAnd → Ajustes → Perfil → Apariencia del perfil → elige los iconos 4º-5º del icono de Posición*](../personal/profiles.md#profile-appearance). | [Modelo 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | Colección de mapas en línea AnyGIS | Una colección de diversas fuentes de mapas en línea que incluyen mapas satelitales, turísticos e históricos, entre otros.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Leyenda del mapa  | Este paquete añade una leyenda de mapa sin conexión (versión 1.01; 03-04-2024), accesible a través de *Menú → Mis lugares → Favoritos → Leyenda del mapa*. La leyenda del mapa también está disponible en [esta ubicación](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Leyenda del mapa](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 Mapas de EE. UU. | Una colección de mapas de EE. UU. que incluye [Tierras públicas (PAD-US 3.0)](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview), [Senderos y carreteras del USFS](https://www.fs.usda.gov/visit/maps), [La Oficina de Administración de Tierras (BLM)](https://www.blm.gov) y [Datos de parcelas (Tierras privadas)](https://portal.ct.gov/datapolicy/knowledge-base/articles/what-is-parcel-data?language=en_US) para algunos estados. Todos los mapas de tierras públicas y privadas se clasificaron por estado. Los datos de los mapas de BLM y USFS se dividieron en *Carreteras y Senderos* y *PDI* para todo el territorio de los Estados Unidos. Los mapas están en formato OBF para OsmAnd. Más información en [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [Mapas de EE. UU.](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇺🇸 Mapas de EE. UU. | Una colección de mapas especializados de EE. UU., convertidos al formato OBF de OsmAnd, que incluyen<ul><li>[Tierras públicas y áreas protegidas del USGS (PAD-US 3.0), por estado](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Senderos y carreteras del USFS, a nivel nacional](https://www.fs.usda.gov/visit/maps),</li><li>[Carreteras y senderos del BLM, a nivel nacional](https://www.blm.gov/maps),</li><li>[POI de actividades recreativas del BLM, a nivel nacional](https://www.blm.gov/maps),</li><li>[Tierras privadas (datos de parcelas), para algunos estados](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Más información en [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [Mapas de EE. UU.](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
 | 🇵🇱 Mapa UMP de Polonia | [UMP](https://ump.waw.pl/) cubre la mayor parte de Polonia con un esfuerzo de desarrollo continuo. Durante mucho tiempo, se utilizó el nombre UMP-pcPL (mapą prawie całej Polski). | [Mapa UMP de Polonia](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Este plugin incluye un estilo de mapa ligero que mejora la visibilidad de carreteras no pavimentadas y senderos en OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
@@ -108,7 +108,6 @@ El archivo por defecto [render.xml](https://github.com/osmandapp/OsmAnd-resource
 | Estilo de mapa de selección | El [Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) es un estilo de mapa de Holder Tamm que te permite elegir si ocultar ciertos objetos o no.  |[Estilo de mapa "Selección"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [El estilo de renderizado ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) se basa principalmente en UniMap y routes.addon.render.xml  |[Estilo de mapa "ExplorerRS"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Este es un estilo de renderizado de OsmAnd optimizado para la caza de tormentas](https://github.com/pqo/stormchasing-rendering-style)  |[Estilo de renderizado Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-
 
 ### Mapas sin conexión {#offline-maps}
 

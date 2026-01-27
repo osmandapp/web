@@ -1,5 +1,5 @@
 ---
-source-hash: fe9500be3570d2dbf08995ee5614eb89cd647a44f0360730e48015dced34c738
+source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-**Analizador de pistas** es una herramienta web que ayuda a analizar segmentos de pistas repetidos entre puntos seleccionados en el mapa. Escanea tus pistas y encuentra todos los segmentos que pasan por la(s) ubicación(es) elegida(s), permitiéndote comparar velocidad, elevación, distancia y tiempo en múltiples actividades.
+**Analizador de pistas** es una herramienta web que ayuda a analizar segmentos de pistas repetidos entre puntos seleccionados en el mapa. Para usar esta función con tus propios datos, necesitas una cuenta de OsmAnd Pro con pistas sincronizadas a OsmAnd Cloud; de lo contrario, tus pistas no estarán disponibles en el Planificador Web. Escanea tus pistas y encuentra todos los segmentos que pasan por la(s) ubicación(es) elegida(s), permitiéndote comparar velocidad, elevación, distancia y tiempo en múltiples actividades.
 
 ## Cómo usar {#how-to-use}
 

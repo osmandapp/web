@@ -1,7 +1,7 @@
 ---
-source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
+source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
 sidebar_position: 2
-title: Pantalla del mapa durante la navegación
+title: Map Screen During Navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,12 +16,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Resumen {#overview}
+## Overview {#overview}
 
 Este artículo describe cómo configurar la apariencia del mapa durante la navegación. Esto incluye características como mostrar [PDI a lo largo de la ruta](#show-points-along-the-route), usar [alertas en pantalla](#screen-alerts), [apariencia de la línea de ruta](#route-line-appearance) incluyendo color, ancho y flechas de giro. Estas características están estrechamente relacionadas con los [ajustes de navegación de ruta](../setup/route-navigation.md#settings).
 
 
-## Mapa durante la navegación {#map-during-navigation}
+## Map During Navigation {#map-during-navigation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -50,27 +50,27 @@ Durante la navegación, la apariencia del mapa se ajusta según el perfil de nav
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | El tiempo durante el cual la vista del mapa se sincroniza con la posición actual después de moverse. | *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 50 seg.|
-| *<Translate android="true" ids="auto_zoom_map"/>*  | Escala automáticamente el mapa según su velocidad, siempre que el mapa esté sincronizado con su posición actual. | *Valor:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manual. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - el zoom es de 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - el zoom es de 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - el zoom es de 5 m. |
-| *Ángulo de zoom automático 3D* | Establece la inclinación del mapa al cambiar a vista 3D durante la navegación. Un ángulo más alto hace que el horizonte aparezca más lejos, proporcionando mayor visibilidad hacia adelante. |Se aplica solo cuando el Zoom automático está habilitado. Valores: 20°, 25°, 30°, 35°, 40°. Predeterminado: 25°.  |
-| *Vista previa de la próxima vuelta* | Rota automáticamente el mapa ligeramente con antelación para mostrar la próxima vuelta o maniobra durante la navegación. Ayuda a anticipar las acciones próximas.  | Habilitado por defecto. Si exporta e importa nuevamente un perfil, asegúrese de verificar esta configuración, ya que en algunas versiones anteriores podría restablecerse a “habilitado.”   |
+| *<Translate android="true" ids="auto_zoom_map"/>*  | Escala automáticamente el mapa según su velocidad, siempre que el mapa esté sincronizado con su posición actual. | *Valor:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manual. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - el zoom es de 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - el zoom es de 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - el zoom es de 5 m. <br /> Los cambios de zoom automático pueden ser animados (Suave) o basados en pasos (Discreto), dependiendo de los [Ajustes de desarrollo](navigation-settings.md#development-settings). En el modo Suave, los cambios de zoom usan una animación controlada (alrededor de 0.1 zoom/segundo). El zoom automático no ajusta el zoom a velocidades muy bajas (por debajo de ~7 km/h). Si el cambio de zoom requerido tomaría menos de ~1.5 segundos, la animación no se inicia. <br /> El zoom automático busca mantener la maniobra próxima dentro de un área de enfoque estable en pantalla, por lo que la distancia visible hacia adelante permanece consistente mientras conduce.|
+| *Ángulo de zoom automático 3D* | Establece la inclinación del mapa al cambiar a vista 3D durante la navegación. Un ángulo más alto hace que el horizonte aparezca más lejos, proporcionando mayor visibilidad hacia adelante. |Se aplica solo cuando el Zoom automático está habilitado. Valores: 20°, 25°, 30°, 35°, 40°. Predeterminado: 25°. <br /> Al acercarse a una maniobra/intersección, la aplicación puede reducir gradualmente la inclinación 3D hacia una vista 2D para mantener legible la próxima vuelta. |
+| *Vista previa de la próxima vuelta* | Rota automáticamente el mapa ligeramente con antelación para mostrar la próxima vuelta o maniobra durante la navegación. Ayuda a anticipar las acciones próximas.  | Habilitado por defecto. Si exporta e importa nuevamente un perfil, asegúrese de verificar esta configuración, ya que en algunas versiones anteriores podría restablecerse a “habilitado.”   <br /> La rotación/vista previa se activa una vez que el punto de la próxima maniobra entra en el área de enfoque (por lo que el mapa comienza a “mirar” la vuelta cuando se vuelve relevante). |
 | *<Translate android="true" ids="snap_to_road"/>*  | El icono de la posición actual se asociará con la ruta de navegación actual. | Puede desactivar esta opción, pero todas las opciones relacionadas con la carretera, como la visualización de carriles, tampoco serán visibles durante la navegación.  |
 
 
 
-## Mostrar puntos a lo largo de la ruta {#show-points-along-the-route}
+## Show Points Along the Route {#show-points-along-the-route}
 
 El ajuste *Mostrar a lo largo de la ruta* le permite configurar parámetros de ruta adicionales y es necesario para el funcionamiento de widgets como el [Nombre de la calle](../../widgets/nav-widgets#street-name) y el [Widget de alertas](../../widgets/nav-widgets.md#alert-widget). Las opciones incluyen mostrar [**PDI**](#points-of-interest-pois) y [**Mis Favoritos**](#my-favorites) a lo largo de la ruta o usarlos como un complemento a los ya configurados para el perfil, así como mostrar una lista completa de [**Advertencias de tráfico**](#traffic-warnings) a lo largo de la ruta.  
 
 - La capacidad de establecer diferentes distancias (hasta 5 km, o 3.11 millas, dependiendo de la [unidad de longitud](../../personal/profiles.md#units--formats) que establezca) desde la ruta hasta los puntos cercanos es útil cuando se utilizan tipos de enrutamiento como [Línea recta](../routing/straight-line-routing.md) o [Directo al punto](../routing/direct-to-point-routing.md).
 - Para el ajuste *Mostrar a lo largo de la ruta*, se recomienda usar [Indicaciones de voz](../guidance/voice-navigation.md) para la navegación.
-- *PDI, Favoritos y Advertencias de tráfico* no se muestran en la lista de una ruta que ya ha recorrido.
+- *PDI, Favorito y Advertencias de tráfico* no se muestran en la lista de una ruta que ya ha recorrido.
 
 :::info note
 La opción **Mostrar a lo largo de la ruta** afecta solo a las listas de PDI y Mis Favoritos, no al mapa en sí. Los iconos de PDI y Favoritos se muestran en todas partes del mapa independientemente de su distancia de la ruta.
 :::
 
 
-### Ver y seleccionar puntos {#view-and-select-points}
+### View and Select Points {#view-and-select-points}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -95,7 +95,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,sh
 Cuando crea una ruta, puede establecer los tipos de puntos que se mostrarán a lo largo de la ruta en la sección *Navegación*.
 
 
-### Puntos de interés (PDI) {#points-of-interest-pois}
+### Points of Interest (POIs) {#points-of-interest-pois}
 
 ![Superposición de PDI en Android](@site/static/img/map/poi_overlay_android.png) ![Superposición de PDI en iOS](@site/static/img/map/poi_overlay_ios.png)
 
@@ -103,7 +103,7 @@ Los ajustes de PDI en [*<Translate android="true" ids="shared_string_menu,config
 
 Cuando especifica la visualización de ciertos PDI en *Configurar mapa*, todos se muestran en los mapas que ha descargado, ya sea que haya seleccionado categorías o, si no le importa qué categoría, haya seleccionado PDI cercanos.  
 
-- El número y la identificación de los PDI dependen de la *escala*.
+- El número y la identificación de los PDI es *dependiente de la escala*.
 
 - El ajuste *Mostrar a lo largo de la ruta* muestra la misma categoría que en la *Superposición de PDI*, pero ve la *lista completa* de PDI seleccionados de una vez, comenzando desde el punto de la ubicación actual a la distancia establecida dentro de su ruta.  
 
@@ -112,9 +112,9 @@ Cuando especifica la visualización de ciertos PDI en *Configurar mapa*, todos s
 - La lista contiene los [tipos de PDI](../../map/point-layers-on-map.md#poi-types) seleccionados e información breve sobre cada uno de ellos, como el *icono de tipo, nombre, distancia desde el punto de ubicación actual hasta el PDI a lo largo de la ruta*, e *indicaciones de a qué lado de la ruta en línea recta y a qué distancia se encuentra el PDI*.  
 
 
-### Mis Favoritos {#my-favorites}
+### My Favorites {#my-favorites}
 
-La lista contiene todos los puntos [Favoritos](../../personal/favorites.md#favorite-point) agregados previamente cerca de la ruta que ha creado. Al igual que con los PDI, puede seleccionar la distancia a la que se encuentran estos puntos.  
+La lista contiene todos los puntos [Favorito](../../personal/favorites.md#favorite-point) agregados previamente cerca de la ruta que ha creado. Al igual que con los PDI, puede seleccionar la distancia a la que se encuentran estos puntos.  
 
 - Si [desactiva la visualización de Favoritos en el mapa](../../map/configure-map-menu.md), no desaparecen de la lista y continúan mostrándose en el [widget](../../widgets/nav-widgets.md#street-name) y anunciándose cuando se acerca a ellos.
 
@@ -125,7 +125,7 @@ La lista contiene todos los puntos [Favoritos](../../personal/favorites.md#favor
 - Cada punto contiene un nombre o coordenadas, un grupo, la distancia desde el punto de ubicación actual hasta el *Favorito* directamente en la línea de la ruta, información sobre qué tan lejos a la derecha o a la izquierda está el punto de la línea, y la dirección de la ruta.
 
 
-### Advertencias de tráfico {#traffic-warnings}
+### Traffic Warnings {#traffic-warnings}
 
 *Las advertencias de tráfico* no se muestran directamente en el mapa como los *PDI* o *Mis Favoritos*.
 
@@ -136,7 +136,7 @@ La lista contiene todos los puntos [Favoritos](../../personal/favorites.md#favor
 - Puede eliminar alertas innecesarias de la lista, o tocar el nombre de la alerta para [editar la ubicación](../../map/map-context-menu.md#avoid-road).
 
 
-## Alertas en pantalla {#screen-alerts}
+## Screen Alerts {#screen-alerts}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -159,7 +159,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 | **<Translate android="true" ids="screen_alerts"/>** | Las notificaciones, como advertencias de tráfico o límites de velocidad, aparecerán en la pantalla como un widget. Aparecen en la esquina inferior izquierda mientras navega. | [Tipos de widgets de alerta](../../widgets/nav-widgets.md#alert-widget)   |
 
 
-## Apariencia de la línea de ruta {#route-line-appearance}
+## Route Line Appearance {#route-line-appearance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -175,7 +175,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Ruta de navegación en Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Ruta de navegación en iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 
@@ -183,7 +183,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 Puede seleccionar la apariencia de la línea de ruta por estilo o seleccionar manualmente el color, el ancho y la transparencia de la línea. Además, puede elegir si desea mostrar flechas de giro y flechas de dirección en la línea.
 
-**Avanzado**: el ajuste Personalizar línea de ruta le permite ajustar la apariencia de la línea de ruta para mostrar cambios de elevación, subidas o bajadas significativas, hielo en la carretera, carreteras sin pavimentar, autopistas y otros posibles obstáculos. También puede seleccionar o crear [esquemas de color](../../personal/color-palette-schemes.md#routes) personalizados para aplicar a la línea de ruta.
+**Avanzado**: el ajuste Personalizar línea de ruta le permite ajustar la apariencia de la línea de ruta para mostrar cambios de elevación, subidas o bajadas significativas, hielo en la carretera, carreteras sin pavimentar, autopistas y otros posibles obstáculos. También puede seleccionar o crear [esquemas de color](../../personal/color-palette-schemes.md#tracks-routes) personalizados para aplicar a la línea de ruta.
 
 
 :::note
@@ -226,7 +226,7 @@ El ajuste **Color** cambia los tonos de color de las líneas de ruta. Su color g
     ![Altitud](@site/static/img/navigation/route/firmness.png)
 
 
-### Ancho {#width}
+### Width {#width}
 
 Puede ajustar el ancho de la línea de la ruta para alinearla con la carretera o el camino que se muestra en el mapa. Para una identificación visual más clara, puede aumentar o disminuir manualmente el ancho de la línea según sea necesario. Para más detalles, consulte el artículo *Tracks y Rutas — [Apariencia](../../map/tracks/appearance.md)*.
 
@@ -240,7 +240,7 @@ Puede ajustar el ancho de la línea de la ruta para alinearla con la carretera o
     ![personalizado](@site/static/img/navigation/route/custom_2.png)  
 
 
-### Flechas de giro {#turn-arrows}
+### Turn Arrows {#turn-arrows}
 
 El ajuste Flechas de giro le permite seleccionar si se muestran flechas de giro en la línea de la ruta.  
 
@@ -251,7 +251,7 @@ El ajuste Flechas de giro le permite seleccionar si se muestran flechas de giro 
     ![Altitud](@site/static/img/navigation/route/turn_arr.png)   ![flechas_giro_ios](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
-## Artículos relacionados {#related-articles}
+## Related Articles {#related-articles}
 
 - [Parámetros de ruta](../routing/osmand-routing.md#routing-types)
 - [Preparación de la ruta](../setup/route-navigation.md)

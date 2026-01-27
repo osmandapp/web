@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title:  Accesibilidad
 ---
@@ -44,7 +44,7 @@ La accesibilidad mejora la usabilidad para usuarios ciegos y con discapacidad vi
 ***Características y funcionalidades:***
 
 - **Controles por gestos**:
-   - Soporta todos los [gestos estándar de OsmAnd](../map/interact-with-map.md#gestures).
+   - Soporta todos los [gestos estándar de OsmAnd](../map/interact-with-map.md#gestos).
    - Ajusta los gestos para alinearlos con las instrucciones de **TalkBack** de Android.
 
 - **Integración con TalkBack**:
@@ -73,7 +73,7 @@ La versión para iOS de OsmAnd utiliza las **herramientas de accesibilidad integ
 2. **Funciones compatibles**:
    - **Soporte de lector de pantalla** para interacciones con el mapa.
    - **Gestos personalizables** a través de los ajustes de iOS.
-   - Todos los [gestos estándar de OsmAnd](../map/interact-with-map.md#gestures) están disponibles.
+   - Todos los [gestos estándar de OsmAnd](../map/interact-with-map.md#gestos) están disponibles.
 
 3. **Aprenda más**:
    - Lea sobre las funciones de Accesibilidad Visual de iOS [aquí](https://www.apple.com/accessibility/vision/).
@@ -96,14 +96,18 @@ Para activar:
 
 - Un toque largo en **Mi ubicación** abre un menú con las opciones ***Mostrar su posición*** y ***Mostrar detalles***. Al seleccionar Mostrar detalles, se muestra información adicional de la ruta y se proporciona el botón ***Iniciar/Detener anuncio automático***.
 - Establezca el **Período de anuncio automático** (p. ej., *10 segundos*) para controlar la frecuencia de los anuncios.
-- Si **TalkBack** no está activado en los ajustes del sistema del dispositivo, OsmAnd no proporcionará *notificaciones de voz* y solo mostrará *notificaciones de texto* en la pantalla.  
+- Con **TalkBack** activado, estas notificaciones se pronuncian en voz alta. Si **TalkBack** no está activado en los ajustes del sistema del dispositivo, OsmAnd no proporcionará *notificaciones de voz* y solo mostrará *notificaciones de texto* en la pantalla.  
 
 ### Anuncio automático inteligente {#smart-autoannounce}
 
 Para activar:
 *Plugins* → *Accesibilidad* → *Ajustes* → *Anuncio automático inteligente*
 
-La función **Anuncio automático inteligente** proporciona *notificaciones de audio* cuando se desvía de la ruta planificada. Está diseñada para ayudar a los usuarios con discapacidad visual que dependen de la *guía por voz*.  
+La función **Anuncio automático inteligente** funciona sobre el Anuncio automático. Inicie primero el Anuncio automático y, a continuación, active el Anuncio automático inteligente en los ajustes del plugin.
+
+Cuando el Anuncio automático inteligente está activado, los anuncios se activan cuando el objetivo de navegación actual cambia de sector. Esto ocurre típicamente cuando su movimiento cambia la dirección hacia la siguiente curva o destino. Cuando el Anuncio automático inteligente está desactivado, OsmAnd muestra notificaciones periódicas según el Período de anuncio automático.
+
+**Nota:** Solo se puede ajustar el Período de anuncio automático. El desencadenador de “cambio de sector” no es configurable en los ajustes de la aplicación. 
 
 
 ## Ajustes del plugin {#plugin-settings}
