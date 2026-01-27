@@ -46,27 +46,28 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
         const expireTime = item.expire_time ? Number(item.expire_time) : null;
         const isExpired = expireTime !== null && expireTime < now;
         const isOldExpired = isExpired && now - expireTime > ONE_MONTH_MS;
+        const startTime = item.start_time ? Number(item.start_time) : 0;
 
         if (isOldExpired) {
-            oldExpiredSubscriptions.push({ item, index, expireTime, isValid });
+            oldExpiredSubscriptions.push({ item, index, startTime });
             continue;
         }
 
         if (!isExpired && isValid) {
-            activeSubscriptions.push({ item, index, expireTime, isValid });
+            activeSubscriptions.push({ item, index, startTime });
         } else {
-            inactiveSubscriptions.push({ item, index, expireTime, isValid });
+            inactiveSubscriptions.push({ item, index, startTime });
         }
     }
 
-    const sortByExpireTimeDesc = (a, b) => {
-        const aTime = a.expireTime ?? 0;
-        const bTime = b.expireTime ?? 0;
+    const sortByStartTimeDesc = (a, b) => {
+        const aTime = a.startTime ?? 0;
+        const bTime = b.startTime ?? 0;
         return bTime - aTime;
     };
 
-    activeSubscriptions.sort(sortByExpireTimeDesc);
-    inactiveSubscriptions.sort(sortByExpireTimeDesc);
+    activeSubscriptions.sort(sortByStartTimeDesc);
+    inactiveSubscriptions.sort(sortByStartTimeDesc);
 
     // --- IN‑APP PURCHASES ---
     const activeInApps = []; // valid
@@ -88,13 +89,9 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
 
     // If there are no active subscriptions/in‑apps, show the last expired subscription (if any) at the top of inactive
     if (!hasActiveOrders && oldExpiredSubscriptions.length > 0) {
-        const lastExpired = oldExpiredSubscriptions.reduce((latest, current) => {
-            const latestExpire = Number(latest.expireTime) || 0;
-            const currentExpire = Number(current.expireTime) || 0;
-            return currentExpire > latestExpire ? current : latest;
-        }, oldExpiredSubscriptions[0]);
-
-        inactiveSubscriptions.unshift(lastExpired);
+        oldExpiredSubscriptions.sort(sortByStartTimeDesc);
+        inactiveSubscriptions.push(oldExpiredSubscriptions[0]);
+        inactiveSubscriptions.sort(sortByStartTimeDesc);
     }
 
     const hasPurchases =
