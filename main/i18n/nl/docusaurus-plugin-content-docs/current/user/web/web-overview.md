@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Introductie
 title: Introductie tot de Web Planner
@@ -26,9 +26,9 @@ De **Web Planner**, ook wel de [**OsmAnd Kaartportaal**](https://osmand.net/map)
 
 Ontworpen als een cross-platform metgezel voor OsmAnd voor Android en iOS, helpt de Web Planner gebruikers bij het plannen van reizen, analyseren van tracks, bekijken van terrein en beheren van bestanden met elke desktop- of tabletbrowser — zonder een app te installeren.
 
-OsmAnd Web is nauw geïntegreerd met de **OsmAnd Cloud**-dienst, die het synchroniseren van favorieten, tracks en back-ups over apparaten en platforms mogelijk maakt. Gebruikers met een **OsmAnd Start** (gratis) of **OsmAnd Pro** (betaald) account kunnen volledig profiteren van dit ecosysteem door gegevens te synchroniseren tussen mobiel en web. U vindt een gedetailleerde vergelijking van *Start* en *Pro* functies in het [Abonnements Toegang](#subscription-access) gedeelte hieronder.
+OsmAnd Web is nauw geïntegreerd met de **OsmAnd Cloud**-dienst, die het synchroniseren van favorieten, tracks en back-ups over apparaten en platforms mogelijk maakt. Gebruikers met een **OsmAnd Start** (gratis) of **OsmAnd Pro** (betaald) account kunnen volledig profiteren van dit ecosysteem door gegevens te synchroniseren tussen mobiel en web. U vindt een gedetailleerde vergelijking van *Start* en *Pro* functies in het [Abonnements Toegang](#subscription-accesses) gedeelte hieronder.
 
-> **Opmerking:** Zelfs zonder inloggen of het verifiëren van uw account, kunt u nog steeds verschillende kernfuncties van de Web Kaartportaal gebruiken, waaronder: [Navigatieroute](./planner.md), [Routeplanner](./planner.md), [Weer-overlays](./web-map.md#weather-on-the-web), en [Instellingen](#settings).
+> **Opmerking:** Zelfs zonder inloggen of het verifiëren van uw account, kunt u nog steeds verschillende kernfuncties van de Web Kaartportaal gebruiken, waaronder: [Navigatie Route](./web-navigation.md), [Routeplanner](./planner.md), [Weer-overlays](./web-weather.md#), en [Instellingen](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -63,15 +63,15 @@ De Web Kaartportaal ondersteunt verschillende toegangsniveaus: zonder inloggen, 
 
 | Functie | Beschikbaar In |
 |--------|--------------|
-| [Navigatieroute](./planner.md) | Zonder Inloggen |
+| [Navigatie Route](./planner.md) | Zonder Inloggen |
 | [Routeplanner](./planner.md) | Zonder Inloggen |
 | [Weer-overlays](./web-weather.md) | Zonder Inloggen |
 | [Instellingen](./web-map.md#settings) | Zonder Inloggen |
-| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) of <ProFeature/> |
-| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([Terrein](./web-map.md#terrain))| <ProFeature/> |
-| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) of <ProFeature/> |
-| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) of <ProFeature/> |
-| [Tracks-mappen en -laag](./web-tracks.md) | <ProFeature/> |
+| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([Terrein](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Tracks-mappen en -laag](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.

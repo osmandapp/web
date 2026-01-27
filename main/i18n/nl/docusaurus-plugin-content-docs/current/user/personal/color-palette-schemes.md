@@ -1,5 +1,5 @@
 ---
-source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
+source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
 sidebar_position: 5
 title:  Kleurenschema's
 ---
@@ -133,19 +133,26 @@ U kunt paletten bewerken om het uiterlijk van kaarten en routes te personalisere
 Elke regel vertegenwoordigt een numerieke waarde (voor het kleurenpalet is dit een index) en een RGB-kleur. Bijvoorbeeld:
 
 ```xml
-# TXT-bestand met de naam *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
-# 0 - 90 graden RGBA {#0---90-degree-rgba}
+# TXT file named *height_altitude_0-200.txt* {#txt-file-named-heightaltitude0-200txt}
+# 0 - 90 degree RGBA {#0---90-degree-rgba}
 0,46,185,0,191
-# geel  {#yellow-}
+# yellow  {#yellow-}
 100,255,222,2,227
-# rood {#red}
+# red {#red}
 200,255,1,1,255
 # violet {#violet}
 220,130,1,255,255
 
 ```
 
-Na het verplaatsen van dit TXT-bestand naar *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, zal een nieuw palet verschijnen in het menu Kleurenschema.
+Na het verplaatsen van dit TXT-bestand naar *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, zal een nieuw palet verschijnen in het Kleurenschema menu.
+
+Als u een bestaand paletbestand in OsmAnd moet wijzigen (in plaats van een nieuw TXT-bestand toe te voegen), kunt u dit doen via een geëxporteerde back-up (.osf).
+- Exporteer de paletgegevens als een .osf-back-up (zie de sectie [Importeren / Exporteren](#import--export) hieronder).
+- Pak de geëxporteerde .osf uit. Het .osf-bestand is een hernoemd .zip-archief. Maak een kopie van het oorspronkelijke .osf-bestand en pak het uit met een archieftool.
+- Zoek en bewerk het palet-TXT-bestand. Zoek in de uitgepakte mappen het benodigde paletbestand (bijvoorbeeld: height_altitude_&lt;type_name&gt;.txt of route_speed_&lt;type_name&gt;.txt) en bewerk de waarden in een teksteditor.
+- Zip terug en hernoem naar .osf. Zip de uitgepakte inhoud terug naar een .zip-archief en hernoem het naar .osf. Behoud dezelfde mapstructuur.
+- Importeer de bijgewerkte .osf in OsmAnd (zie de sectie **Importeren / Exporteren** hieronder) en herstart de app om de wijzigingen toe te passen.
 
 ### Importeren / Exporteren {#import--export}
 

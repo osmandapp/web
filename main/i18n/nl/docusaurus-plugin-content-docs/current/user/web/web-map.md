@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Kaart
 title: Wereldkaart op de Website
@@ -31,7 +31,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 ## Overzicht {#overview}
 
-De OsmAnd-webkaart is een wereldkaart gebaseerd op gegevens van [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Het stelt gebruikers in staat om hun eigen gegevens te bekijken, zoals tracks en favorieten, navigatieroutes voor elk profiel te maken en toegang te krijgen tot extra functies zoals het weer, openbare GPX-tracks, POI's en Wikimedia-afbeeldingen. Verken en pas uw gegevenservaring rechtstreeks in uw browser aan.
+De OsmAnd-webkaart is een wereldkaart gebaseerd op [OpenStreetMap (OSM)](https://www.openstreetmap.org/) gegevens. Het stelt gebruikers in staat om hun eigen gegevens te bekijken, zoals tracks en favorieten, navigatieroutes voor elk profiel te maken en toegang te krijgen tot extra functies zoals het weer, openbare GPX-tracks, POI's en Wikimedia-afbeeldingen. Verken en pas uw gegevenservaring rechtstreeks in uw browser aan.
 
 ![OsmAnd Web alles](@site/static/img/web/web_map_all.png)
 
@@ -41,11 +41,11 @@ De OsmAnd-webkaart is een wereldkaart gebaseerd op gegevens van [OpenStreetMap (
 Om het te openen, klikt u met de rechtermuisknop ergens op de kaart. Dit menu bevat de volgende acties:
 
 - **Waar ben ik** – Vind snel uw huidige locatie op de kaart. Deze functie toont de dichtstbijzijnde adressen bij het geselecteerde punt op de kaart.
-- **Weer openen** – Ga naar het [Weermenu](#weather-on-the-web) om weergegevens te bekijken.
-- **Nieuwe route maken** – Opent de tool [*Plan een route*](../web/planner.md#navigation-route) met de geselecteerde locatie als start- of eindpunt.
+- **Weer openen** – Ga naar het [Weermenu](../web/web-weather.md) om weergegevens te bekijken.
+- **Nieuwe route maken** – Opent de [*Plan een route*-tool](../web/web-navigation.md) met de geselecteerde locatie als start- of eindpunt.
 - **Favoriet toevoegen** – Hiermee kunt u een [favoriet](../web/web-favorites.md#add--edit-favorite) op elk punt op de kaart maken en opslaan voor eenvoudige toegang.
-- **Route vanaf** – Stelt het geselecteerde punt in als de [startlocatie](../web/planner.md#navigation-route) voor navigatie.
-- **Route naar** – Stelt het geselecteerde punt in als de [bestemming voor navigatie](../web/planner.md#navigation-route).
+- **Route vanaf** – Stelt het geselecteerde punt in als de [startlocatie](../web/web-navigation.md#start-a-route) voor navigatie.
+- **Route naar** – Stelt het geselecteerde punt in als de [bestemming voor navigatie](../web/web-navigation.md#start-a-route).
 - **Coördinaten kopiëren** – Kopieert de coördinaten van het geselecteerde punt voor extern gebruik.
 - **Regio's tonen** – Toont de regio's die bij de geselecteerde locatie horen.
 

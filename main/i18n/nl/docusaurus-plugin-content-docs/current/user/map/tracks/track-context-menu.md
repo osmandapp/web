@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -72,11 +72,10 @@ Het infopaneel geeft ook informatie over het volgende:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Toont de totale som van stijgingen en dalingen tijdens de rit.
 - *<Translate android="true" ids="altitude_range"/>*. Geeft de minimale en maximale hoogte op een spoor aan.  
 
-:::note
 Als uw spoor is gemaakt in OsmAnd of een andere tracking-app (dus de punten hebben [`time` en  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), zal het informatiepaneel ook informatie bevatten over *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (de totale tijd tussen het begin- en eindpunt van het spoor), en *<Translate android="true" ids="shared_string_time_moving"/>* (de som van de tijd tijdens het rijden).
 
 **Opmerking:** Voor opgenomen sporen toont Duur de werkelijke reistijd op basis van tijdstempels. Voor geplande sporen toont Duur de geschatte tijd berekend uit de routelengte en de gemiddelde snelheid van het geselecteerde navigatieprofiel, als de gehele route één profiel gebruikt en geen rechte lijnsegmenten bevat.
-:::
+
 
 ### Spooracties {#track-actions}
 
@@ -366,12 +365,12 @@ Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manie
 ### Bereken Ontbrekende Hoogte {#calculate-missing-elevation}
 
 :::note OsmAnd Pro abonnement
-De functie voor het offline berekenen van hoogte is alleen beschikbaar voor [**OsmAnd Pro abonnees**](../../purchases/android.md#pro-features) <ProFeature />.
+[Hoogte offline berekenen](../../plan-route/create-route.md#get-elevation-data) functie is alleen beschikbaar voor [**OsmAnd Pro abonnees**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Deze functie stelt u in staat om het hoogteprofiel voor een GPX-spoor offline te berekenen voor elk terrein tussen 70 graden noorderbreedte en 70 graden zuiderbreedte, gebaseerd op [Terreinkaartgegevens](../../plugins/topography.md#download-maps). *Terreinkaarten (3D) moeten vooraf gedownload zijn*.
+[Deze functie](../../plan-route/create-route.md#get-elevation-data) stelt u in staat om het hoogteprofiel voor een GPX-spoor offline te berekenen voor elk terrein tussen 70 graden noorderbreedte en 70 graden zuiderbreedte, gebaseerd op [Terreinkaartgegevens](../../plugins/topography.md#download-maps). *Terreinkaarten (3D) moeten vooraf gedownload zijn*.
 
 1. Download [Terreinkaarten (3D)](../../plugins/topography.md#download-maps) voor de vereiste regio.
 2. Als het spoor geen hoogtegegevens bevat, ga dan naar het contextmenu van het spoor (*Contextmenu Spoor → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), selecteer *Gebruik Terreinkaarten*, en na de berekening krijgt u een spoorgrafiek gebaseerd op de terreingegevens.  
@@ -472,7 +471,7 @@ Tik op de knop *Waypoint toevoegen* om het scherm voor het aanmaken van waypoint
 
 <TabItem value="ios" label="iOS">
 
-![Spoormenu Groepsmenu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Spoormenu Groepsmenu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Spoormenu Groepsmenu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -484,7 +483,7 @@ Het *drie-punten-menu* ( &#8285; ) opent het waypoint *Groepsmenu*.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Hiermee kunt u groepswaypoints op de kaart weergeven of niet. Of u kunt [de schermknop](#points--waypoints) gebruiken om groepswaypoints op de kaart weer te geven of weg te laten.
 - **<Translate android="true" ids="shared_string_rename"/>** - Wijzig de naam van de groep.
-- **<Translate android="true" ids="change_default_appearance"/>** - Wijzig de weergaveopties voor een groep waypoints.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Wijzig de weergaveopties voor een groep waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** of **Verwijderen** (*Alleen Android*) - Verplaats groepswaypoints naar de [Kaartmarkeringen](../../personal/markers.md) lijst.
 - **<Translate android="true" ids="add_to_favorites"/>** (*Alleen Android*) - Hiermee kunt u de geselecteerde groep Waypoints kopiëren naar [Favorieten](../../personal/favorites.md). U kunt kiezen uit twee opties: ***<Translate android="true" ids="copy_as_new_folder"/>*** of ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Alleen Android*) - Creëert een route tussen waypoints. Het eerste en laatste punt worden het begin en einde van de route, en de rest wordt omgezet in tussenliggende punten.
@@ -657,7 +656,7 @@ Voor elk segment kunt u bekijken:
 - tijd in beweging.
 - gemiddelde en maximale snelheid.
 
-Wanneer u op een segment in de lijst tikt, toont de kaartweergave het volledige spoor met zijn intervallen en opent het contextmenu voor het spoor onderaan het scherm.
+Wanneer u op een segment in de lijst tikt, toont de kaartweergave het volledige spoor met zijn intervallen en opent het contextmenu voor het spoor onderaan het scherm. Op de kaart ondersteunen intervalabels twee acties: tik om het spooroverzichtspaneel te openen en lang ingedrukt houden om het contextmenu van het spoor te openen.
 
 
 ### Splitsen per Tijd {#split-by-time}
@@ -669,9 +668,14 @@ De optie **Splitsen per tijd** verdeelt een spoor in intervallen van gelijke duu
 
 ### Splitsen per Stijging/Daling {#split-by-uphill-downhill}
 
-![Tabblad spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Kaart spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Tabblad spoor splitsen per stijging/daling](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Kaart spoor splitsen per stijging/daling](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
 Deze optie verdeelt een spoor in segmenten op basis van hoogteveranderingen. Elk interval wordt geclassificeerd als ***stijging***, ***daling*** of ***vlak***. De manier waarop de intervallen worden weergegeven, de statistieken die voor elk segment worden verstrekt en hoe ze op de kaart verschijnen, zijn ook hetzelfde als in de sectie [Splitsen per Afstand](#split-by-distance).
+
+Op de kaart worden segmenten gemarkeerd met gekleurde labels aan het begin van elk interval:
+- **Stijgingssegmenten** (rode labels) tonen een omhoog pijl, het segmentindex en de gemiddelde helling in procent (bijvoorbeeld, ↑ 11. 2%).
+- **Dalingsegmenten** (groene labels) tonen een omlaag pijl, het segmentindex en de gemiddelde helling in procent (bijvoorbeeld, ↓ 12. -2%).
+- **Vlakke segmenten** (blauwe labels) tonen de afstand van het vlakke gedeelte (bijvoorbeeld, 616 m, 411 m).
 
 
 ### Hartslagmetrieken {#heart-rate-metrics}

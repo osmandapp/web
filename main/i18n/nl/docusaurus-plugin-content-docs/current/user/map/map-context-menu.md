@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -142,6 +142,7 @@ Beschikbare details zijn onder andere:
 - [Binnen gebieden](#polygon-information)
 - [Nabije POI's](#nearby-pois)
 - [Nabije populaire plaatsen](#nearby-popular-places)
+- [Gidsen](#guides) (alleen Android)
 - [Openbaarvervoerroutes voor haltes](#public-transport-routes)
 - [Favorieten / Trackpunten uit dezelfde groep](#favorites--track-points-from-the-group)
 - [OpenStreetMap-link](#openstreetmap-link)
@@ -196,7 +197,7 @@ Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugi
 
 <TabItem value="ios" label="iOS">
 
-![Alternatieve namen Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen Android](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatieve namen iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -227,7 +228,7 @@ Kenmerken van de weergave van alternatieve namen:
 
 <TabItem value="ios" label="iOS">
 
-![Polygooninformatie Android](@site/static/img/map/polygon_information_ios.png)
+![Polygooninformatie iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -296,6 +297,18 @@ Tik op *Nabije [Populaire plaatsen](https://osmand.net/docs/user/plugins/wikiped
 </TabItem>
 
 </Tabs>
+
+### Gidsen {#guides}
+
+<InfoAndroidOnly/>
+
+![Gidsen Android](@site/static/img/map/details_guides.png)
+
+De **Gidsen**-sectie verschijnt in het kaartcontextmenu voor sommige plaatsen en biedt toegang tot **Reis (Wikivoyage)**-gidsen die gerelateerd zijn aan het geselecteerde punt van interesse. Het toont een lijst van gidsvermeldingen (bijvoorbeeld een land of regio) die de geselecteerde plaats vermelden.
+
+De Gidsen-sectie wordt alleen weergegeven als **Reis (Wikivoyage)**-gegevens zijn gedownload voor het geselecteerde gebied.
+
+**Opmerking:** Gidsen zijn gekoppeld aan Wikivoyage-inhoud, niet aan algemene Wikipedia-beschrijvingen.
 
 
 ### Openbaarvervoerroutes {#public-transport-routes}

@@ -1,5 +1,5 @@
 ---
-source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
+source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
 sidebar_position: 13
 title:  Skikaartweergave
 ---
@@ -239,8 +239,8 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 Om te weten te komen over welke pistes buiten het skiresort u kunt navigeren, moet u de optie **Skipistes en routes** inschakelen in de [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md) lijst, die geopend wordt vanuit het menu [Kaart configureren](../map/configure-map-menu.md).  
 
-Met het Skiprofiel, de skinavigatie en de [Winter en Ski kaartstijl](../map/vector-maps.md#winter-and-ski) ingeschakeld, tonen de [Skipistes en routes](../map/vector-maps.md#ski-slopes-and-routes) alle soorten pistes die de Skinavigatie kan gebruiken om navigatieroutes langs uit te stippelen. Dergelijke skipisteroutes worden, indien ingeschakeld, meestal buiten de grenzen van het skiresort met een violette kleur omlijnd.  
-Wanneer de optie [Skipistes en routes](../map/vector-maps.md#ski-slopes-and-routes) wordt ingeschakeld voor een kaartstijl anders dan Winter en Ski, worden alleen de hellingen weergegeven. Andere ski-gerelateerde kenmerken worden mogelijk niet getoond in deze stijl-laag.  
+Met het Skiprofiel, de skinavigatie en de [Winter en Ski kaartstijl](../map/vector-maps.md#winter-and-ski) ingeschakeld, tonen de [Skipistes en routes](../map/routes.md#ski-slopes-and-routes) alle soorten pistes die de Skinavigatie kan gebruiken om navigatieroutes langs uit te stippelen. Dergelijke skipisteroutes worden, indien ingeschakeld, meestal buiten de grenzen van het skiresort met een violette kleur omlijnd.  
+Wanneer de optie [Skipistes en routes](../map/routes.md#ski-slopes-and-routes) wordt ingeschakeld voor een kaartstijl anders dan Winter en Ski, worden alleen de hellingen weergegeven. Andere ski-gerelateerde kenmerken worden mogelijk niet getoond in deze stijl-laag.  
 _Skipistes en routes_ [zijn klikbaar](../map/routes.md#actions-with-routes).
 
 

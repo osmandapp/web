@@ -1,5 +1,5 @@
 ---
-source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
+source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -104,7 +104,7 @@ Cloud-synchronisatie stelt u in staat om de gegevens die u naar OsmAnd Cloud heb
 Deze items worden direct na het inloggen op de website zichtbaar in het menu. Om deze informatie bij te werken, moet u uw gegevens synchroniseren vanaf uw apparaten met de [Nu synchroniseren-actie](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) in de mobiele app.
 
 De beschikbaarheid van Cloud-synchronisatie hangt af van uw accounttype:
-- OsmAnd Start – synchroniseert [Favorieten](../web/web-favorites.md) en toont ze op het web.
+- [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – synchroniseert [Favorieten](../web/web-favorites.md) en toont ze op het web.
 - OsmAnd Pro – synchroniseert [Tracks](../web/web-tracks.md), Favorieten en [Back-ups](#my-data), en ontgrendelt volledige webtoegang tot cloud-gegevens.
 
 ![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)

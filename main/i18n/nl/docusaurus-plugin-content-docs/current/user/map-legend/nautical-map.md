@@ -1,8 +1,9 @@
 ---
-source-hash: f02ec46753a3101b544ff59059a374da99a432907dcbacd5732081d6f1f151e5
-sidebar_position: 3
+source-hash: 255739a6c5541179fb7a0d0ff2c0e498a0e6eb685a3a9858e4e92263572632fd
+sidebar_position: 4
 title: Nautische kaartstijl
 ---
+
 import Translate from '@site/src/components/Translate.js';
 
 # Nautische kaartstijl {#nautical-map-style}
@@ -41,7 +42,7 @@ Elektronische positiebepalingssystemen, misthoorns
 ## Wrakken en rotsen {#wrecks-and-rocks}
 <img src={require('@site/static/img/map-legend/nautical-wrecks-and-rocks.png').default} alt="Wrakken en rotsen" />
 
-## Bruggen, sluizen {#bridges-lockgates}
+## Bruggen sluizen {#bridges-lockgates}
 <img src={require('@site/static/img/map-legend/nautical-bridges-lockgates.png').default} alt="Wrakken en rotsen" />
 
 

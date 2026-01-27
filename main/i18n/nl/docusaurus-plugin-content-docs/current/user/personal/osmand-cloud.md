@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -41,7 +41,7 @@ OsmAnd ondersteunt **cross-platformgebruik** tussen *([Android](../purchases/and
     1.1 **Abonneer u op OsmAnd Pro voor volledige Cloud-toegang.**  
    Lees meer over aankopen voor [Android](../purchases/android.md#how-to-buy) of [iOS](../purchases/ios.md#how-to-buy).
 
-    2.1 **Gebruik het gratis OsmAnd Start-abonnement** voor cloudback-ups van favorieten, instellingen en OSM-bewerkingen/notities.  
+    2.1 **Gebruik het gratis OsmAnd Start-plan** voor cloudback-ups van favorieten, instellingen en OSM-bewerkingen/notities.  
    De gratis opslaglimiet is **5 MB**.
 
 2. **Gebruik het geregistreerde e-mailadres** als uw login om [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) of OsmAnd Start op andere platforms te activeren.
@@ -119,7 +119,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,p
 
 </Tabs>  
 
-Het **OsmAnd Start**-abonnement biedt gratis toegang tot **OsmAnd Cloud** met beperkte basisfuncties en 5 MB opslagruimte om uw **Favorieten, Instellingen en OpenStreetMap (OSM)-bewerkingen en -notities** op te slaan en te synchroniseren. Dit abonnement is beschikbaar voor gebruikers van [OsmAnd Free of Maps+](../purchases/index.md).  
+Het **OsmAnd Start**-plan biedt gratis toegang tot **OsmAnd Cloud** met beperkte basisfuncties en 5 MB opslagruimte om uw **Favorieten, Instellingen en OpenStreetMap (OSM)-bewerkingen en -notities** op te slaan en te synchroniseren. Dit plan is beschikbaar voor gebruikers van [OsmAnd Free of Maps+](../purchases/index.md).  
 
 Functies inbegrepen in OsmAnd Start:
 
@@ -159,7 +159,7 @@ Volg deze stappen om OsmAnd Start te gebruiken:
 - **Maak een back-up** om te beginnen met het opslaan van uw gegevens in OsmAnd Cloud.
 
 :::note Abonnementsbeperkingen
-Als u al een **OsmAnd Pro**-abonnement of een **actief OsmAnd Cloud-account** heeft, is het **OsmAnd Start**-abonnement niet beschikbaar.
+Als u al een **OsmAnd Pro**-abonnement of een **actief OsmAnd Cloud-account** heeft, is het **OsmAnd Start**-plan niet beschikbaar.
 :::
 
 
@@ -352,8 +352,9 @@ Automatische back-up slaat geselecteerde OsmAnd-gegevens automatisch op in de Cl
 
 Gedrag van automatische back-up:
 
-- Automatische back-up wordt ongeveer elk uur uitgevoerd terwijl OsmAnd op de voorgrond werkt.
-- Back-up start ook wanneer u terugkeert naar het kaartscherm.
+- Automatische back-up wordt ongeveer elk uur uitgevoerd terwijl OsmAnd op de voorgrond werkt. Dit interval is momenteel niet in de app aan te passen. Het kan worden gewijzigd door een .osf-bestand te importeren.
+- Automatische back-up kan starten wanneer u het kaartscherm opent of er naar terugkeert.
+- Naast geplande uitvoeringen kan automatische back-up ook starten na wijzigingen in sommige gegevenstypen (bijvoorbeeld Favorieten), met gebruik van de ingeschakelde back-uptypen in de instellingen voor Automatische back-up.
 - U kunt elk item of hele secties onafhankelijk in- of uitschakelen.
 - Uw gegevens blijven lokaal beschikbaar, zelfs als automatische back-up is uitgeschakeld.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title:  Toegankelijkheid
 ---
@@ -96,14 +96,18 @@ Om in te schakelen:
 
 - Een lang tikken op **Mijn locatie** opent een menu met de opties ***Toon uw positie*** en ***Toon details***. Het selecteren van Toon details toont aanvullende route-informatie en biedt de knop ***Start/Stop automatische aankondiging***.
 - Stel de **Periode voor automatische aankondiging** in (bijv. *10 seconden*) om de frequentie van de aankondigingen te regelen.
-- Als **TalkBack** niet is ingeschakeld in de systeeminstellingen van het apparaat, zal OsmAnd geen *spraakmeldingen* bieden en alleen *tekstmeldingen* op het scherm weergeven.  
+- Met **TalkBack** ingeschakeld worden deze meldingen hardop voorgelezen. Als **TalkBack** niet is ingeschakeld in de systeeminstellingen van het apparaat, zal OsmAnd geen *spraakmeldingen* bieden en alleen *tekstmeldingen* op het scherm weergeven.  
 
 ### Smart Autoannounce {#smart-autoannounce}
 
 Om in te schakelen:  
 *Plugins* → *Toegankelijkheid* → *Instellingen* → *Slimme automatische aankondiging*
 
-De functie **Slimme automatische aankondiging** biedt *audiomeldingen* wanneer u afwijkt van de geplande route. Deze functie is ontworpen om visueel beperkte gebruikers te ondersteunen die afhankelijk zijn van *spraakbegeleiding*.  
+De functie **Slimme automatische aankondiging** werkt bovenop Automatische aankondiging. Start eerst Automatische aankondiging, en schakel vervolgens Slimme automatische aankondiging in in de plugin-instellingen.
+
+Wanneer Slimme automatische aankondiging is ingeschakeld, worden aankondigingen geactiveerd wanneer het huidige navigatiedoel van sector verandert. Dit gebeurt doorgaans wanneer uw beweging de richting naar de volgende bocht of bestemming verandert. Wanneer Slimme automatische aankondiging is uitgeschakeld, toont OsmAnd periodieke meldingen volgens de Periode voor automatische aankondiging.
+
+**Opmerking:** Alleen de Periode voor automatische aankondiging kan worden aangepast. De trigger voor 'sectorverandering' is niet configureerbaar in de app-instellingen.  
 
 
 ## Plugin Settings {#plugin-settings}
@@ -122,14 +126,14 @@ De Toegankelijkheidsplugin biedt verschillende instellingen om navigatie en inte
 | [Slimme automatische aankondiging](#smart-autoannounce)    | Biedt *spraakbegeleiding* bij afwijking van de route. |  
 | **Periode voor automatische aankondiging**   | Stelt de minimale tijd tussen aankondigingen in, van **5 seconden tot 5 minuten**. |  
 | [Richtingsstijl](#direction-style)       | Kies tussen *Zijdelings (8 richtingen)* of *Kloksgewijs (12 richtingen)*. |  
-| **Audio-aanwijzingen**      | Speelt *audiobegeleiding* af die de richting aangeeft. |  
+| **Audio-aanwijzingen**      | Speelt *audio-aanwijzingen* af die de richting aangeven. |  
 | **Haptische aanwijzingen**     | Biedt *trilfeedback* voor bochten en afwijkingen.|  
 
 ***Tips voor geoptimaliseerde toegankelijkheid:***
 
 - **Schermlezer** - Gebruik TalkBack (*Android*) of VoiceOver (*iOS*) voor verbeterde kaartinteractie.
 - **Audionavigatie** - Schakel automatische aankondigingen in om spraakaanwijzingen te ontvangen terwijl het scherm uit is.
-- **Haptische feedback** - Ideaal voor omgevingen met weinig zicht of wanneer audiobegeleiding onpraktisch is.
+- **Haptische feedback** - Ideaal voor omgevingen met weinig zicht of wanneer audio-aanwijzingen onpraktisch zijn.
 
 
 ### Direction Style {#direction-style}

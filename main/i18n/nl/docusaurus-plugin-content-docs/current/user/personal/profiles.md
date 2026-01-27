@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
@@ -283,6 +283,8 @@ Het gedeelte **Overig** biedt extra profielinstellingen om de interface en invoe
 
 - [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Alleen Android*) – Vloeiende kaartrotatie met [geleidelijke beweging](https://en.wikipedia.org/wiki/Kalman_filter), waardoor plotselinge positieverschuivingen worden verminderd. Dit introduceert een kleine vertraging (*minder dan 1 seconde*).
 
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Alleen Android*) – Tik op een lege ruimte op de kaart om bedieningsknoppen en widgets te verbergen, waardoor de kaart maximaal zichtbaar wordt.
 
 - [<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#remove-animations) (*Alleen Android*) – Schakel animaties in de navigatiemodus uit voor snellere schermovergangen.
@@ -433,23 +435,28 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,pr
 
 ![Uiterlijk Mijn locatie](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+De instellingen voor **Uiterlijk Mijn locatie** stellen u in staat om aan te passen hoe uw locatie op de kaart wordt weergegeven, zowel wanneer u stilstaat (Rustend) als in beweging (Navigatie). Beweging wordt gedetecteerd door het besturingssysteem wanneer de snelheid van het apparaat **groter is dan nul**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Uiterlijk Mijn locatie](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![Uiterlijk Mijn locatie](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+De instellingen voor **Uiterlijk Mijn locatie** stellen u in staat om aan te passen hoe uw locatie op de kaart wordt weergegeven, zowel wanneer u stilstaat (Rustend) als in beweging (Navigatie). Beweging wordt gedetecteerd door het besturingssysteem wanneer de snelheid van het apparaat **groter is dan nul**.
+
+Gebruik **Icoonafmeting** om de grootte van het Mijn Locatie-positie-icoon onafhankelijk van de tekstgrootte van de app aan te passen. U kunt verschillende groottes instellen voor Rustend en Navigatiemodi. De grootte kan worden aangepast van 50% tot 300% (50, 75, 100, 125, 150, 200, 250, 300%). De standaardwaarde is 100%. Tik op Icoonafmeting om de grootte-instellingen te openen, gebruik vervolgens de schuifregelaar of de + / – stapsgewijze knoppen om de waarde te wijzigen. Gebruik **Herstellen naar standaard** om terug te keren naar 100%.
 
 </TabItem>
 
 </Tabs>
 
-De instellingen voor **Uiterlijk Mijn locatie** stellen u in staat om aan te passen hoe uw locatie op de kaart wordt weergegeven, zowel wanneer u stilstaat als in beweging. Beweging wordt gedetecteerd door het besturingssysteem wanneer de snelheid van het apparaat **groter is dan nul**.
 
 ### Kijkhoek en Locatieradius {#view-angle-and-location-radius}
 
-U kunt de visuele elementen met betrekking tot uw locatie aanpassen en ze afzonderlijk of samen toepassen voor de posities **Stilstand** en **Navigatie**. Voor zowel 2D- als 3D-modi worden *Kijkhoek* en *Locatieradius* weergegeven in dezelfde kleur die is geselecteerd voor het [navigatieprofiel](#profile-appearance), direct onder het icoon [Mijn Locatie](../map/interact-with-map.md#my-location-and-zoom).
+U kunt de visuele elementen met betrekking tot uw locatie aanpassen en ze afzonderlijk of samen toepassen voor de posities **Rustend** en **Navigatie**. Voor zowel 2D- als 3D-modi worden *Kijkhoek* en *Locatieradius* weergegeven in dezelfde kleur die is geselecteerd voor het [navigatieprofiel](#profile-appearance), direct onder het icoon [Mijn Locatie](../map/interact-with-map.md#my-location-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Toont een **kegelvormig** gebied dat de richting aangeeft waarin u momenteel kijkt.  
 - **<Translate android="true" ids="location_radius"/>** – Toont een **cirkelvormig gebied** rond uw icoon, dat de nauwkeurigheid van uw huidige locatie weergeeft.
@@ -519,7 +526,7 @@ Met de functie voor UI-aanpassing kunt u het aantal items in acties aanpassen, z
 
 ### Contextmenu-acties {#context-menu-actions}
 
-![Profiel Contextmenu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profiel Contextmenu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+![Profiel Contextmenu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profiel Kaart configureren menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Kaartcontextmenu** - In het gedeelte UI aanpassen kunt u items in het [kaartcontextmenu](../map/map-context-menu.md) herordenen of verbergen om de toegang tot veelgebruikte functies te optimaliseren.
 

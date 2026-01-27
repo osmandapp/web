@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Een route plannen
 ---
@@ -117,6 +117,13 @@ Als [Hoogtegegevens](../map/tracks/track-context-menu.md#calculate-missing-eleva
 - [Gebruik nabijgelegen wegen](#attach-track-to-roads). Deze modus gebruikt offline kaarten om de dichtstbijzijnde wegen te vinden om een track te bouwen, zodat hoogtegegevens worden opgehaald van de gekoppelde wegen. De geometrie van de track kan worden aangepast.  
 - [Gebruik terreinkaarten](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Modus berekent hoogte op basis van terreinkaartgegevens (3D). Het verschil tussen de door uw apparaat geregistreerde hoogtes kan worden gebruikt voor hoogtecorrectie. De geometrie van de track blijft ongewijzigd.
 
+:::note
+
+**Online hoogtecorrectie** (gebaseerd op server) is verwijderd in recente versies van OsmAnd en is niet beschikbaar.  
+Voor oudere versies was het verouderd en onbetrouwbaar.  
+Gebruik in plaats daarvan offline opties: koppelen aan wegen of terreinkaarten (Pro).  
+
+:::
 
 ### Track aan wegen koppelen {#attach-track-to-roads}
 
@@ -124,7 +131,7 @@ Als [Hoogtegegevens](../map/tracks/track-context-menu.md#calculate-missing-eleva
 
 <TabItem value="android" label="Android">
 
-![Een route plannen snap-road-android](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Een route plannen snap-road-ios](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 

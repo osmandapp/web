@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title:  Eerste Stappen
 ---
@@ -121,7 +121,7 @@ OsmAnd kan niet correct werken zonder gedownloade offline kaarten. Hoewel de app
 
 Hoewel OsmAnd u toestaat kaarten voor alle beschikbare regio's te downloaden, is er geen enkel pakket om de hele wereld in één keer te downloaden. In plaats daarvan kunt u individuele land- of regiokaarten downloaden op basis van uw behoeften.
 
-***Belangrijkste punten:***
+***Belangrijke punten:***
 
 - **OsmAnd Pro** en **Maps+** bieden **onbeperkte kaartdownloads**, maar u moet de kaarten nog steeds regio voor regio downloaden.
 - **Opslagbeperkingen.** Zorg ervoor dat uw apparaat voldoende ruimte heeft voordat u meerdere regio's downloadt.
@@ -642,13 +642,15 @@ Hiermee kunt u vragen stellen of suggesties doen.
 
 <TabItem value="ios" label="iOS">
 
-![Kaartenmenu iOS](@site/static/img/steps/offline_about_ios.png)
+![Kaartenmenu iOS](@site/static/img/steps/offline_about_ios_new.png) ![Kaartenmenu iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 U kunt meer te weten komen over ons team, de huidige versie van de app en wat er nieuw is bekijken, en de bètaversie van de app downloaden.
+
+De build wordt weergegeven in het formaat OsmAnd Maps &lt;build&gt;, uitgebracht &lt;date&gt;. Om deze informatie snel met de ondersteuning te delen, druk lang op de build-regel om het build-nummer samen met de releasedatum te kopiëren.
 
 
 ## Privacy {#privacy}

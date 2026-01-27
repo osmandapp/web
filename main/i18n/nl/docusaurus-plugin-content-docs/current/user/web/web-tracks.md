@@ -1,5 +1,5 @@
 ---
-source-hash: ece3e6010ee14839c5fe53b38593cda3c765a31a9395566df04b16ce2b73c3b4
+source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -52,7 +52,7 @@ Onder de hoofdlijst toont de sectie **Recent zichtbaar** tracks die eerder op de
 ![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
 
 
-## Menu van track-map {#track-folder-menu}
+## Menu van de track-map {#track-folder-menu}
 
 ![Track folder menu](@site/static/img/web/collection_new.png)
 
@@ -92,7 +92,7 @@ De volgende functies zijn beschikbaar na het kiezen van een cloud-track:
 - Actieknoppen:
   - *Track bewerken* - cloud-track toevoegen aan lokaal voor bewerking (knop _Edit locality_ op het paneel).
   - *GPX downloaden* - downloadt de track naar de PC.
-  - *Herberekenen* Hoogte (Satelliet) - toont de hoogtegrafiek van de geselecteerde track.
+  - *Herberekenen* Hoogte (Satelliet) - herberekent de hoogtewaarden voor de geselecteerde track en toont deze op de hoogtegrafiek.
   - *Track verwijderen* - verwijdert de track.
   - *Track sluiten* - sluit de track.
 
