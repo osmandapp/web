@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Weather
 title: Weather on the Web
@@ -28,7 +28,7 @@ I dati meteorologici sono disponibili senza effettuare l'accesso. La vista Meteo
 
 OsmAnd Web fornisce informazioni meteorologiche da due fonti di previsione:
 
-- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – la fonte predefinita gestita da NOAA/NWS. Fornisce dati meteorologici completi, inclusi livelli di temperatura, pressione, umidità, vento e nuvole.  
+- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – la fonte predefinita gestita da NOAA/NWS. Fornisce dati meteorologici completi, inclusi temperatura, pressione, umidità, vento e livelli di nuvole.  
 - [**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – una fonte di previsione alternativa. Offre dati di alta qualità su temperatura, precipitazioni e pressione, ma non fornisce informazioni su vento o nuvole.  
 
 Per passare da una all'altra, fare clic sul **pulsante ombrello** nel menu Meteo.
@@ -89,7 +89,7 @@ La previsione a 7 giorni è visualizzata utilizzando due formati complementari:
 ![Meteo su OsmAnd Web](@site/static/img/web/weather_forecast.png)
 
 
-## Articolo Correlato {#related-article}
+## Articoli Correlati {#related-articles}
 
 - [Meteo](../plugins/weather.md)
 - [Introduzione](../web/web-overview.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title:  Aspetto della traccia
 ---
@@ -69,7 +69,7 @@ Su iOS la **lista di Colorazione** si apre come un menu contestuale. Gli element
 2. <Translate ios="true" ids="weather_update_disabled"/>. La traccia manca dei dati richiesti.
 3. PRO. Disponibile per la traccia corrente ma richiede un abbonamento; toccando si apre la schermata [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
 
-Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del percorso, vedere [Schermata della mappa durante la navigazione](../../navigation/guidance/map-during-navigation.md#color) e sulla selezione e creazione di un colore personalizzato, vedere [Schemi di colori](../../personal/color-palette-schemes.md#routes).
+Per maggiori dettagli sulla personalizzazione dell'aspetto della linea del percorso, vedere [Schermata della mappa durante la navigazione](../../navigation/guidance/map-during-navigation.md#color) e sulla selezione e creazione di un colore personalizzato, vedere [Schemi di colori](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### Larghezza {#width}

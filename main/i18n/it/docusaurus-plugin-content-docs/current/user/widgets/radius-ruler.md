@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  Righello del raggio e Righello
 ---
@@ -97,6 +97,7 @@ Il [Widget Righello del raggio](../widgets/info-widgets.md#radius-ruler) mostra 
 
 Usa questo widget per stimare la prossimità a punti di interesse o per pianificare attorno a un'area definita.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -118,9 +119,10 @@ Usa questo widget per stimare la prossimità a punti di interesse o per pianific
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Bussola per Righello del raggio {#compass-for-radius-ruler}
+### Bussola {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Questa sovrapposizione è utile per la navigazione all'aperto, consentendoti di 
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Posizione Centrale / Inferiore {#center--bottom-position}
+### Posizione Centrale / Inferiore {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ Per aumentare il raggio visibile intorno alla tua posizione, puoi cambiare la po
 Per maggiori informazioni sulla *posizione sulla schermata*, consulta l'articolo [Configura Schermata](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## Vista 3D {#3d-view}
+### Vista 3D {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

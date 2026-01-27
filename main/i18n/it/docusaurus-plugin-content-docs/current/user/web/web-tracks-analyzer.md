@@ -1,5 +1,5 @@
 ---
-source-hash: fe9500be3570d2dbf08995ee5614eb89cd647a44f0360730e48015dced34c738
+source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-**Tracks Analyzer** è uno strumento web che aiuta ad analizzare i segmenti di traccia ripetuti tra punti selezionati sulla mappa. Scansiona le tue tracce e trova tutti i segmenti che passano attraverso la posizione(i) scelta, permettendoti di confrontare velocità, elevazione, distanza e tempo attraverso più attività.
+**Tracks Analyzer** è uno strumento web che aiuta ad analizzare i segmenti di traccia ripetuti tra punti selezionati sulla mappa. Per utilizzare questa funzionalità con i tuoi dati, è necessario un account OsmAnd Pro con tracce sincronizzate su OsmAnd Cloud — altrimenti, le tue tracce non saranno disponibili sul Web Planner. Scansiona le tue tracce e trova tutti i segmenti che passano attraverso la posizione(i) scelta, permettendoti di confrontare velocità, elevazione, distanza e tempo attraverso più attività.
 
 ## Come usare {#how-to-use}
 

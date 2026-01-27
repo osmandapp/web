@@ -1,5 +1,5 @@
 ---
-source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
 sidebar_position: 9
 sidebar_label:  Pianifica Itinerario
 title: Pianificare un Itinerario sul Sito Web
@@ -16,7 +16,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 
 ## Panoramica {#overview}
@@ -25,104 +27,115 @@ Il Pianificatore di Itinerari Web di OsmAnd ti permette di creare itinerari di n
 
 
 <!--
-## Itinerario di Navigazione {#navigation-route}
+## Navigation Route {#navigation-route}
 
-Per creare un itinerario di navigazione, segui questi passaggi:
+To create a navigation route, follow these steps:
 
-- **Fai clic con il pulsante destro del mouse** sulla mappa per aggiungere waypoint:
+- **Right-click** on the map to add waypoints:
 
-  - *Parti da*. Imposta il punto di partenza.
-  - *Arriva a*. Imposta la destinazione.
-  - *Passa per*. Aggiungi punti intermedi se necessario.
+  - *Navigate from*. Set the starting point.
+  - *Navigate to*. Set the destination.
+  - *Navigate via*. Add intermediate points if needed.
 
-- Dopo aver impostato i punti di partenza e di arrivo, l'itinerario verrà visualizzato sulla mappa.
+- After setting the start and end points, the route will be displayed on the map.
 
-- Nel blocco **Itinerario**:
+- In the **Route** block:
 
-  - Sposta i punti di partenza e di arrivo se necessario.
-  - Modifica i waypoint e scegli il tipo di itinerario desiderato (ad es. auto, bicicletta, a piedi).
+  - Move the start and end points if needed.
+  - Edit the waypoints and choose the desired route type (e.g., car, bicycle, walking).
 
-  ![Creazione Itinerario Web OsmAnd](@site/static/img/web/navigation.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
-- Seleziona il **Profilo Itinerario** appropriato per le diverse opzioni di navigazione.
+- Select the appropriate **Route Profile** for different navigation options.
 
-  ![Creazione Itinerario Web OsmAnd](@site/static/img/web/profile_type.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-- Clicca sui cerchi arancioni lungo l'itinerario per visualizzare le istruzioni di navigazione dettagliate.
+- Click on the orange circles along the route to view detailed navigation instructions.
 
-  ![Creazione Itinerario Web OsmAnd](@site/static/img/web/nav_instr.png)
+  ![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-- Per condividere l'itinerario, copia l'URL. Esempio: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+- To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
 -->
 
 
-## Creare Tracce e File Locali {#create-track-and-local-files}
+## Creare Nuovo Itinerario {#create-new-route}
 
-Lo strumento [**Pianifica itinerario**](../plan-route/create-route.md) di OsmAnd Web ti permette di creare e modificare tracce in modo simile all'app mobile. Ecco come puoi creare e gestire le tracce:
+Esistono due modi per iniziare un nuovo itinerario in Pianifica itinerario. La prima opzione è direttamente dalla mappa: fai clic con il pulsante destro del mouse in qualsiasi punto della mappa e seleziona **Crea nuovo itinerario**. La seconda opzione è dal pannello sinistro: fai clic sul pulsante **Crea traccia**.
 
+Una volta creato l'itinerario, aggiungi punti direttamente sulla mappa. Ogni clic posiziona il punto successivo e il pianificatore costruisce l'itinerario tra i punti.
 
-***Creazione di un nuovo itinerario:***
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route.png)
 
-- *Fai clic con il pulsante destro del mouse* sulla mappa e seleziona **Crea Nuovo Itinerario**.
-- In alternativa, usa il pulsante **Crea Traccia** nel menu *Locale* (situato sul lato destro con i pulsanti *Matita* e *Carica*).
+### Importa Traccia {#import-track}
 
+Se hai già un file di traccia, puoi importarlo in Pianifica itinerario e continuare a lavorare con esso nel Pianificatore Web. Fai clic sul pulsante **Importa traccia** e seleziona un file GPX dal tuo computer. Dopo il caricamento, la traccia appare nella tua lista locale e si apre nel pianificatore, in modo da poterla rivedere sulla mappa e procedere con la modifica e la gestione nei pannelli della traccia.
 
-***Gestione delle tracce:***
+### File Locali {#local-files}
 
-- **Seleziona Profilo di Navigazione**. Scegli un profilo (ad es. escursionismo, guida) per sezioni specifiche dell'itinerario (*Nuovi segmenti*) o per l'intero itinerario (*Tutti i segmenti*).
-- **Aggiungi Waypoint**. Clicca sulla mappa per aggiungere nuovi punti.
-- **Salva l'Itinerario**. Salva il tuo itinerario per un uso futuro.
-- **Visualizza Dettagli Itinerario**. Accedi alle informazioni dettagliate della traccia, inclusi lunghezza, durata e terreno.
-  ![Creazione Traccia Web OsmAnd](@site/static/img/web/create_route.png)
+Tutti gli itinerari e le tracce che crei o importi in Pianifica itinerario vengono aggiunti alla lista Locale nel pannello sinistro. Questo rende più facile mantenere più file GPX in un unico posto e passare da uno all'altro durante la pianificazione.
 
+Ogni elemento nella lista ha un interruttore che ti permette di mostrare o nascondere rapidamente la traccia sulla mappa. Seleziona una traccia dalla lista per aprirla nel pianificatore e continuare a lavorare con essa. 
 
-***Importazione e creazione di tracce:***
-
-- **Importa Traccia**. Puoi caricare qualsiasi file GPX nella sezione **Locale** visitando [osmand.net/map](https://osmand.net/map).
-- **Crea Traccia**. Crea manualmente una nuova traccia selezionando i waypoint.
-  ![Creazione Traccia Web OsmAnd](@site/static/img/web/create_route_2.png)
+![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
-***Azioni e informazioni sulla traccia locale:***
+## Gestire Traccia {#manage-track}
 
-Il menu **Traccia Locale** fornisce tre pannelli per la modifica: **Info**, **Traccia** e **Waypoint**.
+Quando crei o importi un itinerario in Pianifica itinerario, si apre un pannello verticale della traccia. Usa questo pannello per cambiare il profilo di instradamento e gestire l'itinerario. Fai clic sul controllo del profilo per aprire la finestra di dialogo **Cambia profilo**, seleziona il profilo di cui hai bisogno (ad esempio, Auto, Bicicletta o Pedone) e scegli come applicarlo: *Segmenti successivi* applica il profilo solo alle nuove parti aggiunte da questo punto in poi, mentre *Tutti i segmenti* ricalcola l'intero itinerario con il profilo selezionato.
 
-**Pannello Info**:
+Dal pannello della traccia puoi anche eseguire azioni comuni sui file. Puoi **Salva su Cloud** per mantenere l'itinerario per un uso successivo, **Scarica GPX** per esportarlo come file, **Chiudi traccia** per interrompere la modifica o **Elimina traccia** per rimuoverla dalla tua lista locale. Queste azioni sono disponibili anche dai controlli corrispondenti nel [pannello Info](#info-panel).
 
-- *Salva su Cloud*. Salva la tua traccia su OsmAnd Cloud per accedervi da più dispositivi.
-- *Aggiungi descrizione*. Aggiungi note sulla traccia.
-- *Rinomina*. Cambia il nome della traccia.
-- *Ricalcola*. Aggiungi o aggiorna i dati di altitudine.
-- *Altitudine*. Visualizza il profilo altimetrico.
-- *Grafico velocità*. Mostra i dati di velocità lungo la traccia.
-- *Grafico pendenza*. Mostra le variazioni di pendenza lungo l'itinerario.  
-- *Dettagli strada*. Visualizza informazioni dettagliate come tipo di strada, superficie e pendenza.
-- *Scarica GPX*. Esporta la traccia come file GPX ([Funzionalità Pro](../purchases/index.md)).
-- *Chiudi Traccia*. Chiudi la vista di modifica della traccia.
-- *Elimina Traccia*. Elimina permanentemente la traccia.
-  ![Creazione Traccia Web OsmAnd](@site/static/img/web/create_route_3.png)
-
-**Pannello Traccia**:
-
-- Visualizza e modifica i punti della traccia.
-- Riordina o elimina i punti secondo necessità.
-
-**Pannello Waypoint**:
-
-- Visualizza e gestisci i waypoint della traccia.
-- Attiva/disattiva la visibilità dei waypoint sulla mappa.
-- Elimina i waypoint singolarmente se necessario.
-
-**Pannello Svolte**:
-
-- Visualizza informazioni dettagliate sulle svolte lungo la traccia.
-
-  ![Creazione Traccia Web OsmAnd](@site/static/img/web/create_route_1.png)
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
-***Funzionalità aggiuntive:***
+## Pannelli Dettagli Traccia {#track-details-panels}
 
-- **Sincronizza con l'app**. Salva gli itinerari su OsmAnd Cloud e accedi ad essi sulla tua app mobile.
-- **Profili itinerario personalizzati**. Regola i profili per adattarli a diverse attività, come ciclismo o escursionismo.
-- **Itinerari condivisibili**. Copia e condividi gli URL degli itinerari per la pianificazione collaborativa.
+Il menu della traccia locale include tre pannelli: **Info**, **Traccia** e **Waypoint**. Usali per visualizzare le informazioni sulla traccia e gestire i punti dell'itinerario e i waypoint.
+
+### Pannello Info {#info-panel}
+
+Il pannello Info riassume la traccia selezionata e mostra i dati chiave sull'itinerario e sull'elevazione. Include una panoramica rapida delle statistiche dell'itinerario, più grafici e analisi aggiuntive della traccia basate sui dati della mappa disponibili.
+
+La sezione di riepilogo mostra:
+
+- Punti — il numero di punti dell'itinerario utilizzati per costruire l'itinerario.
+- Distanza — la lunghezza totale dell'itinerario.
+- Salita / discesa — ascesa totale e discesa totale lungo l'itinerario.
+- Elevazione (min/media/max) — statistiche di elevazione per l'itinerario.
+- Se i dati di elevazione sono mancanti o devono essere aggiornati, usa Elevazione (Satellite) → ricalcola per ricostruire l'elevazione utilizzando dati satellitari (quando disponibili).
+
+Sotto il riepilogo, il pannello fornisce grafici:
+
+- Elevazione — un profilo di elevazione dell'itinerario.
+- Pendenza — un grafico della pendenza che mostra le variazioni di gradiente lungo la traccia.
+
+Per dettagli aggiuntivi sulla traccia, apri le sezioni di analisi:
+
+- Superficie — mostra i tipi di superficie lungo l'itinerario basati sui dati OSM.
+- Fluidità — mostra la fluidità dei segmenti basata sui tag OSM.
+
+Azioni comuni sulla traccia come salvare, scaricare, chiudere ed eliminare sono disponibili anche in questo pannello.
+
+![OsmAnd Web Info Panel](@site/static/img/web/info_panel.png) ![OsmAnd Web Manage Track](@site/static/img/web/info_panel_2.png)
+
+### Pannello Traccia {#track-panel}
+
+Il pannello Traccia mostra l'elenco dei punti dell'itinerario utilizzati per costruire la traccia. Usalo per rivedere e modificare la struttura dell'itinerario: trascina i punti per riordinarli, rimuovi i punti usando l'icona di eliminazione o usa Cancella punti per rimuovere tutti i punti e ricominciare.
+
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel.png)
+
+### Pannello Waypoint {#waypoints-panel}
+
+Il pannello Waypoint viene utilizzato per visualizzare e gestire i waypoint per la traccia selezionata. I waypoint possono essere aggiunti dal menu contestuale della mappa — fai clic con il pulsante destro del mouse sulla mappa e scegli l'opzione per **Aggiungi waypoint**, quindi compila i dettagli del waypoint (come nome, icona e colore) e salvalo.
+
+Nell'elenco dei Waypoint, puoi controllare se i waypoint sono mostrati sulla mappa e rimuovere waypoint individuali quando necessario. Per rimuovere tutti i waypoint dalla traccia in una volta, usa *Cancella tutti i waypoint*.
+
+![OsmAnd Web Waypoints Panel](@site/static/img/web/waypoints_panel.png)
+
+
+## Articoli Correlati {#related-articles}
+
+- [Pianifica un Itinerario](../plan-route/create-route.md)
+- [Guide di Viaggio](../plan-route/travel-guides.md)
+- [Navigazione](../web/web-navigation.md)

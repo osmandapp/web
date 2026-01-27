@@ -1,5 +1,5 @@
 ---
-source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
+source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
 sidebar_position: 13
 title:  Visualizzazione Mappa Sci
 ---
@@ -160,10 +160,10 @@ La Mappa Sci di OsmAnd è costruita come uno degli stili di rendering, che deter
 | Colore | Descrizione |
 | --- | --- |
 | ![Pista per principianti](@site/static/img/plugins/ski-maps/1c_green_1.png) | Verde - Pista per principianti |
-| ![Piste facili](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Blu - Piste facili |
-| ![Piste intermedie](@site/static/img/plugins/ski-maps/3c_red_1.png) | Rosso - Piste intermedie |
-| ![Difficoltà avanzata](@site/static/img/plugins/ski-maps/4c_black_1.png) | Nero - Piste di difficoltà avanzata |
-| ![Difficoltà per esperti](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Giallo - Piste di difficoltà per esperti |
+| ![Piste facili](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Blu - Colline facili |
+| ![Pendenze intermedie](@site/static/img/plugins/ski-maps/3c_red_1.png) | Rosso - Pendenze intermedie |
+| ![Difficoltà avanzata](@site/static/img/plugins/ski-maps/4c_black_1.png) | Grigio - Pendenze di difficoltà avanzata |
+| ![Difficoltà per esperti](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Giallo - Pendenze di difficoltà per esperti |
 
 La difficoltà delle tracce è solitamente indicata da colori specifici. I colori possono essere diversi in diversi paesi e resort. Di seguito sono riportate alcune linee guida pratiche.
 
@@ -239,8 +239,8 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 Per scoprire su quali piste al di fuori della stazione sciistica è possibile navigare, è necessario abilitare l'opzione **Piste da sci e percorsi** nell'elenco [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), aperto dal menu [Configura mappa](../map/configure-map-menu.md).  
 
-Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) abilitati, le [Piste da sci e percorsi](../map/vector-maps.md#ski-slopes-and-routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.  
-Quando si abilita l'opzione [Piste da sci e percorsi](../map/vector-maps.md#ski-slopes-and-routes) per uno stile mappa diverso da Inverno e Sci, vengono visualizzate solo le piste. Altre funzionalità relative allo sci potrebbero non essere mostrate in questo livello di stile.  
+Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) abilitati, le [Piste da sci e percorsi](../map/routes.md#ski-slopes-and-routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.  
+Quando si abilita l'opzione [Piste da sci e percorsi](../map/routes.md#ski-slopes-and-routes) per uno stile mappa diverso da Inverno e Sci, vengono visualizzate solo le piste. Altre funzionalità relative allo sci potrebbero non essere mostrate in questo livello di stile.  
 _Le piste da sci e i percorsi_ [sono cliccabili](../map/routes.md#actions-with-routes).
 
 

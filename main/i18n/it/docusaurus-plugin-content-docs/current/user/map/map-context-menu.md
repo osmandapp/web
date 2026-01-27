@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -142,6 +142,7 @@ I dettagli disponibili includono:
 - [All'interno delle aree](#polygon-information)
 - [POI nelle vicinanze](#nearby-pois)
 - [Luoghi popolari nelle vicinanze](#nearby-popular-places)
+- [Guide](#guides) (solo Android)
 - [Percorsi del trasporto pubblico per le fermate](#public-transport-routes)
 - [Preferiti / Punti traccia dello stesso gruppo](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -296,6 +297,18 @@ Toccando *Luoghi popolari nelle vicinanze [Popular Places](https://osmand.net/do
 </TabItem>
 
 </Tabs>
+
+### Guide {#guides}
+
+<InfoAndroidOnly/>
+
+![Guide Android](@site/static/img/map/details_guides.png)
+
+La sezione **Guide** appare nel menu contestuale della mappa per alcuni luoghi e fornisce accesso alle guide **Travel (Wikivoyage)** relative al punto di interesse selezionato. Mostra un elenco di voci della guida (ad esempio, un paese o una regione) che menzionano il luogo selezionato.
+
+La sezione Guide viene visualizzata solo se i dati **Travel (Wikivoyage)** sono scaricati per l'area selezionata.
+
+**Nota:** Le guide sono collegate al contenuto Wikivoyage, non alle descrizioni generali di Wikipedia.
 
 
 ### Percorsi del trasporto pubblico {#public-transport-routes}

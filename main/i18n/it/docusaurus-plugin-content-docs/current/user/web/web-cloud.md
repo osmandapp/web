@@ -1,5 +1,5 @@
 ---
-source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
+source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -104,7 +104,7 @@ La Sincronizzazione cloud ti consente di accedere ai dati che hai sincronizzato 
 Questi elementi diventano visibili nel menu subito dopo l'accesso al sito web. Per aggiornare queste informazioni, è necessario sincronizzare i tuoi dati dai tuoi dispositivi utilizzando l'azione [Sincronizza ora](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) nell'app mobile.
 
 La disponibilità della Sincronizzazione cloud dipende dal tipo di account:
-- OsmAnd Start – sincronizza [Preferiti](../web/web-favorites.md) e li visualizza sul web.
+- [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – sincronizza [Preferiti](../web/web-favorites.md) e li visualizza sul web.
 - OsmAnd Pro – sincronizza [Tracce](../web/web-tracks.md), Preferiti e [Backup](#my-data), e sblocca l'accesso completo al web ai dati cloud.
 
 ![Traccia Web](@site/static/img/web/web_track_start.png) ![Traccia Web](@site/static/img/web/web_track_pro.png)

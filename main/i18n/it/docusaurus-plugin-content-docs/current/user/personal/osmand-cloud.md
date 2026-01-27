@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -143,7 +143,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Azioni Preferiti ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Azioni Preferiti iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 
@@ -303,7 +303,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 In questo menu, puoi selezionare quali dati e cartelle caricare sul Cloud:
 
-1. **Impostazioni**. Questa scheda include tutte le tue impostazioni, come preferenze generali, profili specifici, azioni rapide, PDI e impostazioni per evitare le strade.
+1. **Impostazioni**. Questa scheda include tutte le tue impostazioni, come preferenze generali, profili specifici, azioni rapide, POI e impostazioni per evitare le strade.
 
 2. **I miei luoghi**. Questa scheda elenca i dati dal menu [I miei luoghi](../personal/myplaces), inclusi preferiti, tracce, note OSM, marcatori e altri elementi.
 
@@ -352,8 +352,9 @@ Il backup automatico salva automaticamente i dati OsmAnd selezionati nel Cloud a
 
 Comportamento del backup automatico:
 
-- Il backup automatico viene eseguito approssimativamente ogni ora mentre OsmAnd è in esecuzione in primo piano.
-- Il backup si avvia anche quando torni allo schermo della mappa.
+- Il backup automatico viene eseguito approssimativamente ogni ora mentre OsmAnd è in esecuzione in primo piano. Questo intervallo non è attualmente regolabile nell'app. Può essere modificato importando un file .osf.
+- Il backup automatico può avviarsi quando apri o torni allo schermo della mappa.
+- Oltre alle esecuzioni programmate, il backup automatico può anche avviarsi dopo le modifiche ad alcuni tipi di dati (ad esempio, Preferiti), utilizzando i tipi di backup abilitati nelle impostazioni del Backup automatico.
 - Puoi abilitare/disabilitare ciascun elemento o intere sezioni in modo indipendente.
 - I tuoi dati rimangono disponibili localmente anche se il backup automatico è disattivato.
 

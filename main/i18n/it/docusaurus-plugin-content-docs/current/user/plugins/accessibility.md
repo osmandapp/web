@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title:  Accessibilità
 ---
@@ -96,14 +96,18 @@ Per abilitare:
 
 - Un tocco lungo su **La mia posizione** apre un menu con le opzioni ***Mostra la tua posizione*** e ***Mostra dettagli***. Selezionando Mostra dettagli visualizza informazioni aggiuntive sul percorso e fornisce il pulsante ***Avvia/Ferma annuncio automatico***.
 - Imposta il **Periodo di annuncio automatico** (ad es. *10 secondi*) per controllare la frequenza degli annunci.
-- Se **TalkBack** non è abilitato nelle impostazioni di sistema del dispositivo, OsmAnd non fornirà *notifiche vocali* e mostrerà solo *notifiche di testo* sullo schermo.  
+- Con **TalkBack** abilitato, queste notifiche vengono lette ad alta voce. Se **TalkBack** non è abilitato nelle impostazioni di sistema del dispositivo, OsmAnd non fornirà *notifiche vocali* e mostrerà solo *notifiche di testo* sullo schermo.  
 
 ### Annuncio automatico intelligente {#smart-autoannounce}
 
 Per abilitare:
 *Plugins* → *Accessibility* → *Settings* → *Smart Autoannounce*
 
-La funzione **Annuncio automatico intelligente** fornisce *notifiche audio* quando si devia dal percorso pianificato. È progettata per supportare gli utenti ipovedenti che si affidano alla *guida vocale*.  
+La funzione **Annuncio automatico intelligente** opera sopra l'Annuncio automatico. Avvia prima l'Annuncio automatico e quindi abilita l'Annuncio automatico intelligente nelle impostazioni del plugin.
+
+Quando l'Annuncio automatico intelligente è abilitato, gli annunci vengono attivati quando il bersaglio di navigazione corrente cambia settore. Questo accade tipicamente quando il tuo movimento cambia la direzione verso la prossima svolta o destinazione. Quando l'Annuncio automatico intelligente è disabilitato, OsmAnd mostra notifiche periodiche in base al Periodo di annuncio automatico.
+
+**Nota:** Solo il Periodo di annuncio automatico può essere regolato. Il trigger di “cambio di settore” non è configurabile nelle impostazioni dell'app. 
 
 
 ## Impostazioni del plugin {#plugin-settings}

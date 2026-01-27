@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title:  Meteo
 ---
@@ -171,7 +171,7 @@ Nella versione iOS di OsmAnd, è possibile modificare le unità di misura e il l
 
 ### Livelli Meteo {#weather-layers}
 
-Tutti i dati meteorologici sono presentati come livelli di mappa separati. Per vedere i livelli meteo sulla mappa, è necessario ridurre lo zoom, poiché sono disponibili solo su scale di zoom 2-12. I livelli meteo utilizzano [tavolozze di colori per il meteo](../personal/color-palette-schemes.md#weather) per colorare la mappa; queste tavolozze possono essere [modificate](../personal/color-palette-schemes.md#edit-palette-file) se necessario.
+Tutti i dati meteorologici sono presentati come livelli di mappa separati. Per vedere i livelli meteo sulla mappa, è necessario ridurre lo zoom, poiché sono disponibili solo su scale di zoom 2-12. I livelli meteo utilizzano [tavolozze di colori per il meteo](../personal/color-palette-schemes.md#weather) per colorare la mappa; queste tavolozze possono essere [modificate](../personal/color-palette-schemes.md#palette-modify) se necessario.
 
 | |  
 |------------|  

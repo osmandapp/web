@@ -1,5 +1,5 @@
 ---
-source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
+source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
 sidebar_position: 2
 title: Schermata della Mappa Durante la Navigazione
 ---
@@ -50,9 +50,9 @@ Durante la navigazione, l'aspetto della mappa si adatta in base al profilo di na
 | Parametro | Descrizione | Nota |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* |  Il tempo per cui la visualizzazione della mappa viene sincronizzata con la posizione corrente dopo lo spostamento.  |  *Valore:* <br /> Mai, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
-| *<Translate android="true" ids="auto_zoom_map"/>*  |  Ridimensiona automaticamente la mappa in base alla tua velocità, finché la mappa è sincronizzata con la tua posizione attuale. | *Valore:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuale. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - lo zoom è di 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - lo zoom è di 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - lo zoom è di 5 m. |
-| *Auto zoom 3D angle* | Imposta l'inclinazione della mappa quando si passa alla vista 3D durante la navigazione. Un angolo più alto fa apparire l'orizzonte più lontano, fornendo maggiore visibilità in avanti. |Viene applicato solo quando Auto zoom è abilitato. Valori: 20°, 25°, 30°, 35°, 40°. Predefinito: 25°.  |
-| *Preview next turn* | Ruota automaticamente la mappa leggermente in anticipo per mostrare la prossima svolta o manovra durante la navigazione. Aiuta ad anticipare le azioni imminenti.  | Abilitato per impostazione predefinita. Se esporti e reimporti un profilo, assicurati di verificare questa impostazione, poiché in alcune versioni precedenti poteva essere reimpostata su “abilitato”.   |
+| *<Translate android="true" ids="auto_zoom_map"/>*  |  Ridimensiona automaticamente la mappa in base alla tua velocità, finché la mappa è sincronizzata con la tua posizione attuale. | *Valore:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuale. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - lo zoom è di 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - lo zoom è di 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - lo zoom è di 5 m. <br /> Le modifiche dello zoom automatico possono essere animate (Fluido) o basate su passaggi (Discreto), a seconda delle [Impostazioni di sviluppo](navigation-settings.md#development-settings). In modalità Fluida, le modifiche dello zoom utilizzano un'animazione controllata (circa 0,1 zoom/secondo). Lo zoom automatico non regola lo zoom a velocità molto basse (sotto ~7 km/h). Se la modifica dello zoom richiesta richiedesse meno di ~1,5 secondi, l'animazione non viene avviata. <br /> Lo zoom automatico mira a mantenere la manovra imminente all'interno di un'area di messa a fuoco stabile sullo schermo, in modo che la distanza visibile davanti rimanga costante durante la guida.|
+| *Auto zoom 3D angle* | Imposta l'inclinazione della mappa quando si passa alla vista 3D durante la navigazione. Un angolo più alto fa apparire l'orizzonte più lontano, fornendo maggiore visibilità in avanti. |Viene applicato solo quando Auto zoom è abilitato. Valori: 20°, 25°, 30°, 35°, 40°. Predefinito: 25°. <br /> Quando ci si avvicina a una manovra/intersezione, l'app può ridurre gradualmente l'inclinazione 3D verso una vista 2D per mantenere leggibile la prossima svolta. |
+| *Preview next turn* | Ruota automaticamente la mappa leggermente in anticipo per mostrare la prossima svolta o manovra durante la navigazione. Aiuta ad anticipare le azioni imminenti.  | Abilitato per impostazione predefinita. Se esporti e reimporti un profilo, assicurati di verificare questa impostazione, poiché in alcune versioni precedenti poteva essere reimpostata su “abilitato”.   <br /> La rotazione/anteprima viene attivata non appena il punto della prossima manovra entra nell'area di messa a fuoco (in modo che la mappa inizi a “guardare” la svolta quando diventa rilevante). |
 | *<Translate android="true" ids="snap_to_road"/>*  | L'icona della posizione corrente sarà associata al percorso di navigazione corrente.  | È possibile disattivare questa opzione, ma anche tutte le opzioni relative alla strada, come la visualizzazione delle corsie, non saranno visibili durante la navigazione.  |
 
 
@@ -63,7 +63,7 @@ L'impostazione *Mostra lungo il percorso* consente di configurare parametri di p
 
 - La possibilità di impostare distanze diverse (fino a 5 km, o 3,11 miglia, a seconda dell'[unità di lunghezza](../../personal/profiles.md#units--formats) impostata) dal percorso ai punti vicini è utile quando si utilizzano tipi di percorso come [Linea retta](../routing/straight-line-routing.md) o [Diretto al punto](../routing/direct-to-point-routing.md).
 - Per l'impostazione *Mostra lungo il percorso*, si consiglia di utilizzare le [Istruzioni vocali](../guidance/voice-navigation.md) per la navigazione.
-- *PDI, Preferiti e Avvisi sul traffico* non vengono visualizzati nell'elenco di un percorso già percorso.
+- *PDI, Preferito e Avvisi sul traffico* non vengono visualizzati nell'elenco di un percorso già percorso.
 
 :::info note
 L'opzione **Mostra lungo il percorso** influisce solo sugli elenchi PDI e I miei Preferiti, non sulla mappa stessa. Le icone di PDI e Preferiti vengono visualizzate ovunque sulla mappa indipendentemente dalla loro distanza dal percorso.
@@ -183,7 +183,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 È possibile selezionare l'aspetto della linea del percorso per stile o selezionare manualmente il colore, la larghezza e la trasparenza della linea. Inoltre, è possibile scegliere se mostrare le frecce di svolta e le frecce di direzione sulla linea.
 
-**Avanzate**: l'impostazione Personalizza linea del percorso consente di regolare l'aspetto della linea del percorso per visualizzare i cambiamenti di altitudine, salite o discese significative, ghiaccio sulla strada, strade non asfaltate, autostrade e altri possibili ostacoli. È inoltre possibile selezionare o creare [schemi di colori](../../personal/color-palette-schemes.md#routes) personalizzati da applicare alla linea del percorso.
+**Avanzate**: l'impostazione Personalizza linea del percorso consente di regolare l'aspetto della linea del percorso per visualizzare i cambiamenti di altitudine, salite o discese significative, ghiaccio sulla strada, strade non asfaltate, autostrade e altri possibili ostacoli. È inoltre possibile selezionare o creare [schemi di colori](../../personal/color-palette-schemes.md#tracks-routes) personalizzati da applicare alla linea del percorso.
 
 
 :::note

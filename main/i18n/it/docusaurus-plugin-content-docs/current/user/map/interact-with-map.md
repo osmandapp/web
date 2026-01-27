@@ -1,5 +1,5 @@
 ---
-source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
+source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
 sidebar_position: 2
 title:  Interagire con la mappa
 ---
@@ -208,8 +208,8 @@ Messaggi chiari sullo schermo ti guideranno durante il blocco o lo sblocco dello
 
 ### Anima la propria posizione {#animate-own-position}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
 Crea un effetto di scorrimento fluido della mappa rispetto all'icona *[La mia posizione](../personal/profiles/#profile-appearance)* quando si è in movimento. L'effetto introduce un leggero ritardo rispetto alla posizione reale di circa 1 secondo. È stato segnalato che l'attivazione di questa opzione può creare alcuni problemi di lag pronunciati in alcune circostanze; disattivala se si verificano tali problemi.
 
@@ -276,7 +276,7 @@ Per accedere alle impostazioni di un dispositivo di input esterno, è necessario
 |**&#8593;**| *Wunderlinq*  | Mappa - [Zoom avanti](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Apri WunderLINQ Datagrid |
 | **M** | *Tastiera*  | Mostra / Nascondi - [Menu laterale](../start-with/main-menu.md#main-menu-side-menu) |
-| **Pressione joystick** <br/> (*Android legacy*) | *Tastiera*  | Sposta - [Alla mia posizione](#my-location-and-zoom) |
+| **Premi joystick** <br/> (*Android legacy*) | *Tastiera*  | Sposta - [Alla mia posizione](#my-location-and-zoom) |
 | **Pulsante Media** <br/> (*solo Android*)| *Tastiera*  | Mostra / Nascondi - [Note AV](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*solo Android*)| *Parrot*  | Mappa - [Zoom indietro](#my-location-and-zoom) |
 | **&#8594;** <br/> (*solo Android*) | *Parrot*  | Mappa - [Zoom avanti](#my-location-and-zoom) |
