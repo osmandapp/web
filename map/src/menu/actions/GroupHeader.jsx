@@ -1,7 +1,7 @@
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import CloudGpxUploader from '../../frame/util/CloudGpxUploader';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
@@ -22,6 +22,8 @@ import SortFilesButton from '../components/buttons/SortFilesButton';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE } from '../share/shareConstants';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
+import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function GroupHeader({
     type,
@@ -31,9 +33,12 @@ export default function GroupHeader({
     setSortGroups = null,
     setSortFiles = null,
     markers = null,
+    onClose = null,
 }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+
+    const { updateQueryParam, searchParams } = useUpdateQueryParam();
 
     const TRACKS_TYPE = 'tracks';
     const FAVORITES_TYPE = 'favorites';
@@ -65,8 +70,13 @@ export default function GroupHeader({
             ctx.openGroups.pop();
             ctx.setOpenGroups([...ctx.openGroups]);
         } else if (type === FAVORITES_TYPE) {
-            ctx.openFavGroups.pop();
-            ctx.setOpenFavGroups([...ctx.openFavGroups]);
+            if (onClose) {
+                onClose();
+            } else {
+                updateQueryParam(FAVORITES_URL_PARAM_FOLDER, null, MAIN_URL_WITH_SLASH + FAVORITES_URL, {
+                    replace: false,
+                });
+            }
         }
     }
 
@@ -74,7 +84,7 @@ export default function GroupHeader({
         if (type === TRACKS_TYPE) {
             return ctx.openGroups?.length || 0;
         } else if (type === FAVORITES_TYPE) {
-            return ctx.openFavGroups?.length || 0;
+            return searchParams.get(FAVORITES_URL_PARAM_FOLDER) || onClose ? 1 : 0;
         }
         return 0;
     }
@@ -130,7 +140,16 @@ export default function GroupHeader({
                                 if (type === TRACKS_TYPE) {
                                     ctx.setOpenGroups([]);
                                 } else if (type === FAVORITES_TYPE) {
-                                    ctx.setOpenFavGroups([]);
+                                    if (onClose) {
+                                        onClose();
+                                    } else {
+                                        updateQueryParam(
+                                            FAVORITES_URL_PARAM_FOLDER,
+                                            null,
+                                            MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                                            { replace: false }
+                                        );
+                                    }
                                 }
                                 closeHeader({ ctx });
                             }}

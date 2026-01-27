@@ -18,7 +18,7 @@ import { getCenterMapLoc } from '../../manager/MapManager';
 import { FixedSizeList } from 'react-window';
 import FavoriteGroup from './FavoriteGroup';
 
-export default function FavoriteGroupFolder({ folder, smartf = null }) {
+export default function FavoriteGroupFolder({ folder, smartf = null, onClose = null }) {
     const ctx = useContext(AppContext);
 
     const [group, setGroup] = useState(folder);
@@ -95,7 +95,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
             });
         }
         return items;
-    }, [smartf, sortGroups, ctx.openFavGroups]);
+    }, [smartf, sortGroups]);
 
     useEffect(() => {
         if (!currentLoc) return;
@@ -183,6 +183,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null }) {
                         smartf={smartf}
                         favoriteGroup={DEFAULT_FAV_GROUP_NAME}
                         setSortGroups={setSortGroups}
+                        onClose={onClose}
                     />
                 ) : (
                     <GroupHeader

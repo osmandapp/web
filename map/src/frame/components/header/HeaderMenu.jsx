@@ -60,7 +60,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
     const [availableLanguages, setAvailableLanguages] = useState([]);
 
     const [searchParams] = useSearchParams();
-    const updateQueryParam = useUpdateQueryParam();
+    const { updateQueryParam } = useUpdateQueryParam();
 
     useEffect(() => {
         if (searchParams.size !== 1) return;

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import AppContext, { FAVORITES_URL_PARAM_FOLDER, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteGroup from './FavoriteGroup';
 import { DEFAULT_FAV_GROUP_NAME, HIDDEN_TRUE } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
@@ -12,18 +12,23 @@ import { byTime, doSort } from '../actions/SortActions';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
-import { SHARE_TYPE } from '../share/shareConstants';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
 import PinnedFavoriteGroups from './PinnedFavoriteGroups';
+import { useSearchParams, useLocation } from 'react-router-dom';
+import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
+    const location = useLocation();
+    const [searchParams] = useSearchParams();
 
     const [, height] = useWindowSize();
     const [sortGroups, setSortGroups] = useState([]);
+
+    const [openSharedFolder, setOpenSharedFolder] = useState(null);
 
     const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
 
@@ -77,16 +82,57 @@ export default function FavoritesMenu() {
         }
     }, [ctx.selectedSort?.favorites, ctx.favorites.groups]);
 
-    // open favorite group
-    if (ctx.openFavGroups && ctx.openFavGroups.length > 0) {
-        const lastGroup = ctx.openFavGroups[ctx.openFavGroups.length - 1];
-        if (lastGroup?.type === SHARE_TYPE) {
-            if (lastGroup?.files) {
-                return <FavoriteGroupFolder smartf={lastGroup} />;
-            }
-            return <FavoriteGroupFolder folder={lastGroup.group} smartf={lastGroup} />;
-        }
-        return <FavoriteGroupFolder folder={lastGroup} />;
+    useEffect(() => {
+        if (location.pathname !== MAIN_URL_WITH_SLASH + FAVORITES_URL) return;
+        const nextSearch = location.search || '';
+        ctx.setPageParams((prev) => {
+            if (prev?.[OBJECT_TYPE_FAVORITE] === nextSearch) return prev;
+            return { ...prev, [OBJECT_TYPE_FAVORITE]: nextSearch };
+        });
+    }, [location.pathname, location.search]);
+
+    const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
+    const openGroup = useMemo(() => {
+        if (!folderName || !ctx.favorites?.groups) return null;
+        return ctx.favorites.groups.find((g) => g.name === folderName);
+    }, [folderName, ctx.favorites?.groups]);
+
+    if (folderName && ctx.processingGroups) {
+        return (
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                {ltx.loginUser && (
+                    <GroupHeader
+                        type="favorites"
+                        favoriteGroup={DEFAULT_FAV_GROUP_NAME}
+                        setSortGroups={setSortGroups}
+                    />
+                )}
+                <Loading />
+            </Box>
+        );
+    }
+
+    if (folderName && (!ctx.favorites?.groups || !openGroup)) {
+        return (
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                {ltx.loginUser && (
+                    <GroupHeader
+                        type="favorites"
+                        favoriteGroup={DEFAULT_FAV_GROUP_NAME}
+                        setSortGroups={setSortGroups}
+                    />
+                )}
+                <Loading />
+            </Box>
+        );
+    }
+
+    if (openGroup) {
+        return <FavoriteGroupFolder folder={openGroup} />;
+    }
+
+    if (openSharedFolder) {
+        return <FavoriteGroupFolder smartf={openSharedFolder} onClose={() => setOpenSharedFolder(null)} />;
     }
 
     return (
@@ -100,7 +146,14 @@ export default function FavoritesMenu() {
                     />
                 )}
                 {ctx.favLoading && <LinearProgress />}
-                {!isEmpty(sharedFiles) && <SmartFolder type={'share'} subtype={'favorite'} files={sharedFiles} />}
+                {!isEmpty(sharedFiles) && (
+                    <SmartFolder
+                        type={'share'}
+                        subtype={'favorite'}
+                        files={sharedFiles}
+                        onOpenFolder={setOpenSharedFolder}
+                    />
+                )}
                 {ctx.gpxLoading || ctx.processingGroups ? (
                     <Loading />
                 ) : !isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
