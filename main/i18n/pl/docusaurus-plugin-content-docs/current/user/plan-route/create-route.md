@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Planowanie trasy
 ---
@@ -117,6 +117,13 @@ Jeśli w istniejącym śladzie brakuje [danych o wysokości](../map/tracks/track
 - [Użyj pobliskich dróg](#attach-track-to-roads). Ten tryb wykorzystuje mapy offline do znalezienia najbliższych dróg w celu zbudowania śladu, dzięki czemu dane o wysokości zostaną pobrane z dołączonych dróg. Geometria śladu może być dostosowana.  
 - [Użyj map terenu](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Tryb ten oblicza wysokość na podstawie danych z mapy terenu (3D). Różnica między wysokościami zarejestrowanymi przez urządzenie może być wykorzystana do korekty wysokości. Geometria śladu pozostaje niezmieniona.
 
+:::note
+
+**Korekta wysokości online** (oparta na serwerze) została usunięta w ostatnich wersjach OsmAnd i nie jest dostępna.  
+W starszych wersjach była przestarzała i niewiarygodna.  
+Używaj zamiast tego opcji offline: dołącz do dróg lub mapy terenu (Pro).  
+
+:::
 
 ### Dołącz ślad do dróg {#attach-track-to-roads}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  Linijka promienia i Linijka
 ---
@@ -97,6 +97,7 @@ Dostępny na wszystkich panelach: <Translate ios="true" ids="shared_string_top"/
 
 Użyj tego widżetu, aby oszacować bliskość interesujących miejsc lub planować wokół zdefiniowanego obszaru.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -118,9 +119,10 @@ Użyj tego widżetu, aby oszacować bliskość interesujących miejsc lub planow
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Kompas dla Linijki promienia {#compass-for-radius-ruler}
+### Kompas {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Ta nakładka jest pomocna w nawigacji na zewnątrz, umożliwiając dopasowanie [
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Pozycja na środku / na dole {#center--bottom-position}
+### Pozycja na środku / na dole {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ Aby zwiększyć widoczny promień wokół swojej lokalizacji, możesz zmienić p
 Więcej informacji na temat *pozycji na ekranie* można znaleźć w artykule [Konfiguracja ekranu](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## Widok 3D {#3d-view}
+### Widok 3D {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

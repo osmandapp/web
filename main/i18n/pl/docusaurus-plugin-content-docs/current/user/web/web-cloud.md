@@ -1,5 +1,5 @@
 ---
-source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
+source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
 sidebar_position: 2
 sidebar_label:  Konto
 title: Konto OsmAnd
@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Zalogowanie się za pomocą konta OsmAnd zmienia [Planer internetowy OsmAnd](https://osmand.net/map) z prostego przeglądarki map w Twoją osobistą przestrzeń roboczą. To samo konto, którego używasz w aplikacji mobilnej, łączy stronę internetową z danymi OsmAnd Cloud i zakupami, dzięki czemu możesz uzyskać dostęp do zapisanej zawartości i subskrypcji w jednym miejscu w sieci.
+Zalogowanie się za pomocą konta OsmAnd zmienia [Planer OsmAnd Web](https://osmand.net/map) z prostego przeglądarki map w Twoją osobistą przestrzeń roboczą. To samo konto, którego używasz w aplikacji mobilnej, łączy stronę internetową z danymi OsmAnd Cloud i zakupami, dzięki czemu możesz uzyskać dostęp do zapisanej zawartości i subskrypcji w jednym miejscu w sieci.
 
 
 ## Autoryzacja {#authorization}
@@ -99,12 +99,12 @@ Więcej szczegółów na temat korzystania z zakupów na różnych platformach z
 
 ### Synchronizacja w chmurze {#cloud-sync}
 
-Synchronizacja w chmurze pozwala na dostęp do danych zsynchronizowanych z OsmAnd Cloud bezpośrednio na [Portalu map internetowych](https://osmand.net/map/). Po zalogowaniu się za pomocą konta OsmAnd Start lub OsmAnd Pro strona wyświetla Ulubione, Ścieżki i pliki kopii zapasowych, które wcześniej zsynchronizowałeś z aplikacji mobilnej. To prosty sposób na przeglądanie zawartości chmury na większym ekranie i pobieranie kopii zapasowych, kiedy tylko potrzebujesz.
+Synchronizacja w chmurze pozwala na dostęp do danych zsynchronizowanych z OsmAnd Cloud bezpośrednio na [Portalu map internetowych](https://osmand.net/map/). Po zalogowaniu się za pomocą konta [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub OsmAnd Pro strona wyświetla Ulubione, Ścieżki i pliki kopii zapasowych, które wcześniej zsynchronizowałeś z aplikacji mobilnej. To prosty sposób na przeglądanie zawartości chmury na większym ekranie i pobieranie kopii zapasowych, kiedy tylko potrzebujesz.
 
 Te elementy stają się widoczne w menu zaraz po zalogowaniu się na stronie. Aby zaktualizować te informacje, musisz zsynchronizować dane z urządzeń za pomocą akcji [Synchronizuj teraz](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) w aplikacji mobilnej.
 
 Dostępność synchronizacji w chmurze zależy od typu konta:
-- OsmAnd Start – synchronizuje [Ulubione](../web/web-favorites.md) i wyświetla je w sieci.
+- [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – synchronizuje [Ulubione](../web/web-favorites.md) i wyświetla je w sieci.
 - OsmAnd Pro – synchronizuje [Ścieżki](../web/web-tracks.md), Ulubione i [Kopie zapasowe](#my-data), oraz odblokowuje pełny dostęp w sieci do danych chmurowych.
 
 ![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)

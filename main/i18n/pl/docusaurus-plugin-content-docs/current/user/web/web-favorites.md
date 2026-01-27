@@ -1,5 +1,5 @@
 ---
-source-hash: ef13b994168cf04dcf98784cf4ef75aea6eb57a3e4db536a0fa48e3617173008
+source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -19,14 +19,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Ulubione w Planerze Www pozwalają zapisywać i zarządzać ważnymi miejscami bezpośrednio na mapie. Można ich używać do oznaczania lokalizacji, do których chcesz mieć szybki dostęp, organizowania ich w foldery oraz ponownego wykorzystania do nawigacji lub planowania trasy. Interfejs www zapewnia wygodne narzędzia do przeglądania, edycji i pracy z ulubionymi podczas eksploracji mapy, przy czym wszystkie aktualizacje są bezproblemowo synchronizowane w ramach Twojego [OsmAnd Cloud](../personal/osmand-cloud.md).
+Ulubione w Planerze WWW pozwalają zapisywać i zarządzać ważnymi miejscami bezpośrednio na mapie. Można ich używać do oznaczania lokalizacji, do których chcesz mieć szybki dostęp, organizowania ich w foldery oraz ponownego wykorzystania do nawigacji lub planowania trasy. Interfejs www zapewnia wygodne narzędzia do przeglądania, edycji i pracy z ulubionymi podczas eksploracji mapy, przy czym wszystkie aktualizacje są bezproblemowo synchronizowane w ramach Twojego [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 
 ## Zarządzanie Ulubionymi {#manage-favorites}
 
 ![Edycja ulubionych w chmurze OsmAnd Web](@site/static/img/web/favorites_new.png)
 
-Po zarejestrowaniu [**OsmAnd Pro**](../personal/osmand-cloud.md#login) i dla [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), Twoje Ulubione w Planerze Www są zorganizowane w foldery. Każdy folder grupuje zapisane miejsca i zapewnia zestaw czynności dostępnych z menu Ulubione. 
+Po zarejestrowaniu [**OsmAnd Pro**](../personal/osmand-cloud.md#login) i dla [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), Twoje Ulubione w Planerze WWW są zorganizowane w foldery. Każdy folder grupuje zapisane miejsca i zapewnia zestaw czynności dostępnych z menu Ulubione. 
 Dostępne są następujące czynności:
 
 - *Pokaż na mapie* - pokaż punkty ulubionych z wybranego folderu na mapie.
@@ -60,7 +60,7 @@ Podczas konfigurowania dostępu mogą pojawić się następujące okna dialogowe
 
 Wybranie ulubionego otwiera panel **Szczegóły**. Ten panel pojawia się, gdy klikniesz ulubione bezpośrednio na mapie lub wybierzesz je z folderu ulubionych.
 
-Widok Szczegóły zapewnia informacje związane z wybranym miejscem i zależy od danych dostępnych dla tego konkretnego ulubionego. Na minimum obejmuje lokalizację na mapie i jej współrzędne geograficzne. Dla miejsc powiązanych z obiektami OpenStreetMap lub wzbogaconymi źródłami mogą być wyświetlane dodatkowe metadane, takie jak nazwy, kategorie, identyfikatory lub linki referencyjne (na przykład [Wikipedia](../plugins/wikipedia.md) lub linki Wikidata). 
+Widok Szczegóły zapewnia informacje związane z wybranym miejscem i zależy od danych dostępnych dla tego konkretnego ulubionego. Na minimum obejmuje lokalizację na mapie i jej współrzędne geograficzne. Dla miejsc powiązanych z obiektami OpenStreetMap lub wzbogaconymi źródłami mogą być wyświetlane dodatkowe metadane, takie jak nazwy, kategorie, identyfikatory lub linki referencyjne (na przykład Wikipedia lub linki Wikidata). 
 
 ![Szczegóły ulubionych w sieci](@site/static/img/web/favorites_details.png)
 

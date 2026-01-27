@@ -1,5 +1,5 @@
 ---
-source-hash: 95e66b93e0c5a981ee18f89cb1798bfb0b845b2b0d468d645cf6efd637edebac
+source-hash: 3970a0828bc6b80d9b68504c9d78e40d1226e1cf16d6f1fbc2fdcc5d6af480ec
 sidebar_position: 3
 title:  Zakupy przez stronę internetową
 ---
@@ -66,8 +66,8 @@ Starting from the third year, the full price will apply.
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Typ zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |**Zakup jednorazowy** (15 lat Pro / Maps+ Dożywotnio) |
-| **Cena (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Cena (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Cena (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
+| **Cena (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
 
 
 
@@ -80,7 +80,7 @@ Starting from the third year, the full price will apply.
 
 ## Przywracanie zakupów {#restore-purchases}
 
-Twoje zakupy są powiązane z Twoim [kontem OsmAnd Cloud](../personal/osmand-cloud.md#login) (Twoim adresem e-mail). Aby przywrócić zakupy na nowym urządzeniu:
+Twoje zakupy są powiązane z Twoim [kontem OsmAnd Cloud](../personal/osmand-cloud.md#login) (Twój adres e-mail). Aby przywrócić zakupy na nowym urządzeniu:
 
 1. Zainstaluj aplikację OsmAnd (Android lub iOS).
 2. Otwórz aplikację z aktywnym połączeniem internetowym.

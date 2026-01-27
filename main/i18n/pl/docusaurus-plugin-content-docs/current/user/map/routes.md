@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title:  Trasy
 ---
@@ -51,23 +51,23 @@ Trasy MTB mają specyficzne mapowanie w [OpenStreetMap](https://wiki.openstreetm
 | ***<Translate android="true" ids="mtb_imba"/>*** | Show MTB trails according to the International Mountain Bicycling Association, [MTB IMBA](https://www.imba.com/). More information is in the article [Map legend](../map-legend/index.md). | ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png) |
 -->
 
-- ***<Translate android="true" ids="mtb_scale"/>***. Pokazuje szlaki zgodnie ze skalą MTB. Więcej informacji znajduje się w artykule [Legenda mapy](../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_scale"/>***.  Pokazuje szlaki zgodnie ze skalą MTB. Więcej informacji znajduje się w artykule [Legenda mapy](../map-legend/index.md).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-- ***<Translate android="true" ids="mtb_imba"/>***. Pokazuje szlaki MTB zgodnie z Międzynarodowym Stowarzyszeniem Kolarstwa Górskiego, [MTB IMBA](https://www.imba.com/). Więcej informacji znajduje się w artykule [Legenda mapy](../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Pokazuje szlaki MTB zgodnie z Międzynarodowym Stowarzyszeniem Kolarstwa Górskiego, [MTB IMBA](https://www.imba.com/). Więcej informacji znajduje się w artykule [Legenda mapy](../map-legend/index.md).  
 ![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ### Szlaki piesze / spacerowe {#hiking--walking-routes}
 
 [Szlaki piesze](https://wiki.openstreetmap.org/wiki/Walking_Routes) występują w trzech typach: *lokalne* (`lwn`), *regionalne* (`rwn`), *krajowe* (`nwn`), *międzynarodowe* (`iwn`). Szlaki piesze mogą być również częścią [sieci węzłów](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd nie rozdziela tras spacerowych i pieszych, łącząc je w jedną grupę. Możesz wybrać sposób przypisywania kolorów do segmentów trasy:
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***. Koloruje trasy zgodnie z ich indywidualnym [kolorem lokalnym](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (jeśli jest dostępny w OpenStreetMap) i symbolem tarczy turystycznej.  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Koloruje trasy zgodnie z ich indywidualnym [kolorem lokalnym](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (jeśli jest dostępny w OpenStreetMap) i symbolem tarczy turystycznej.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***. Koloruje według [przynależności do sieci](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  Koloruje według [przynależności do sieci](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
 ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***. Koloruje trasy zgodnie z typem [sieci węzłów](https://wiki.openstreetmap.org/wiki/Node_Networks) (międzynarodowa, regionalna lub lokalna).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Koloruje trasy zgodnie z typem [sieci węzłów](https://wiki.openstreetmap.org/wiki/Node_Networks) (międzynarodowa, regionalna lub lokalna).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
@@ -124,7 +124,7 @@ Stoki i trasy narciarskie to specyficzna grupa [tras](https://wiki.openstreetmap
 
 ### Szlaki skuterów śnieżnych {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
 
 Szlaki skuterów śnieżnych są mapowane w [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) jako `route=snowmobile`. Są używane do zimowej rekreacji i do łączenia odległych obszarów w sezonie śnieżnym. W OsmAnd szlaki skuterów śnieżnych są klikalne, patrz sekcja [Działania na trasach](#actions-with-routes).
 
@@ -345,45 +345,29 @@ Możesz dostosować, czy trasy są włączone, czy wyłączone, za pomocą widż
 
 ## Wyszukiwanie tras {#routes-search}
 
-Znajdź trasy za pomocą funkcji [Wyszukaj](../search/index.md) według nazwy lub wybierając "Trasy" w sekcji [Kategorie](../search/search-poi.md#).
-
-Aby wyszukać, przejdź do menu *<Translate android="true" ids="search_button"/>* lub *<Translate android="true" ids="search_button,search_categories"/>* i wprowadź swoją aktywność.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png)
+![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png)
+![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , aby znaleźć żądane trasy. Wyniki wyszukiwania tras wyświetlają nazwę trasy, rodzaj aktywności, długość, lokalizację i odległość do najbliższego punktu. Na Androidzie, tam gdzie dostępne, wyświetlane są również metryki wysokościowe, takie jak podjazd i zjazd. Mniejsze zmiany wysokości (mniej niż 10 m) są ukrywane, aby lista pozostała czytelna. Wszystkie wartości respektują wybrane w aplikacji jednostki odległości i wysokości.
+Znajdź trasy za pomocą funkcji [Wyszukaj](../search/index.md) według nazwy lub wybierając "Trasy" w sekcji [Kategorie](../search/search-poi.md#).
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Aby wyszukać, przejdź do menu *<Translate android="true" ids="search_button"/>* lub *<Translate android="true" ids="search_button,search_categories"/>* i wprowadź swoją aktywność.
 
-<TabItem value="android" label="Android">
+Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* , aby znaleźć żądane trasy. Wyniki wyszukiwania tras wyświetlają nazwę trasy, rodzaj aktywności, długość, lokalizację, podjazd/zjazd (na Androidzie) i odległość do najbliższego punktu. 
 
-![Routes on the ground](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Użyj przycisku filtrów (w prawym górnym rogu), aby wyświetlić tylko żądane trasy.
+### Filtry tras {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Użyj przycisku filtrów (w prawym górnym rogu), aby wyświetlić tylko żądan
 </TabItem>
 
 </Tabs>
+
+W wynikach wyszukiwania tras dotknij przycisku **Filtry** w prawym górnym rogu, aby zawęzić listę. Ekran filtrów zawiera pole **Filtruj według nazwy**; blok **Typ** z *Bureau*, *Post annex* i *Post partner*; oraz **dodatkowe kryteria**, które zależą od wybranej kategorii trasy lub aktywności, ponieważ każda kategoria może ujawniać własne cechy i wartości filtrów.
+
+Możesz włączać lub wyłączać filtry za pomocą przełączników, a niektóre sekcje zawierają *Pokaż wszystko*, aby wyświetlić dodatkowe wartości.
 
 
 ## Powiązane artykuły {#related-articles}

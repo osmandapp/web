@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title:  Chmura OsmAnd
 ---
@@ -32,7 +32,7 @@ Chmura OsmAnd pozwala na **przechowywanie i synchronizację osobistych ustawień
 
 ## Wieloplatformowość {#cross-platform}
 
-Chmura OsmAnd umożliwia tworzenie kopii zapasowych, przywracanie i synchronizowanie danych między systemami Android, iOS i [wersją internetową](../web/index.md). Dzięki możliwościom wieloplatformowym możesz przenosić **ustawienia profilu**, **trasy**, **ulubione**, **edycje/notatki OSM** i wiele więcej między urządzeniami. Dodatkowo **wersja internetowa** umożliwia planowanie tras i zapisywanie ich do późniejszego wykorzystania na połączonych urządzeniach.  
+Chmura OsmAnd umożliwia tworzenie kopii zapasowych, przywracanie i synchronizowanie danych między systemami Android, iOS i [wersją internetową](../web/index.md). Dzięki możliwościom wieloplatformowym możesz przenosić **ustawienia profilu**, **ścieżki**, **ulubione**, **edycje/notatki OSM** i wiele więcej między urządzeniami. Dodatkowo **wersja internetowa** umożliwia planowanie tras i zapisywanie ich do późniejszego wykorzystania na połączonych urządzeniach.  
 
 OsmAnd obsługuje **użycie wieloplatformowe** na *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* w następujących krokach:
 
@@ -305,7 +305,7 @@ W tym menu możesz wybrać, które dane i foldery mają być przesyłane do Chmu
 
 1. **Ustawienia**. Ta zakładka obejmuje wszystkie Twoje ustawienia, takie jak ogólne preferencje, określone profile, szybkie akcje, POI i ustawienia unikania dróg.
 
-2. **Moje miejsca**. Ta zakładka zawiera dane z menu [Moje miejsca](../personal/myplaces), w tym ulubione, trasy, notatki OSM, znaczniki i inne elementy.
+2. **Moje miejsca**. Ta zakładka zawiera dane z menu [Moje miejsca](../personal/myplaces), w tym ulubione, ścieżki, notatki OSM, znaczniki i inne elementy.
 
 3. **Zasoby**. Tutaj możesz wybrać tworzenie kopii zapasowych zasobów, takich jak ulubione, informacje o trasach, komunikaty głosowe i dodatkowe elementy.
 
@@ -352,8 +352,9 @@ Automatyczna kopia zapasowa automatycznie zapisuje wybrane dane OsmAnd do Chmury
 
 Zachowanie automatycznej kopii zapasowej:
 
-- Automatyczna kopia zapasowa uruchamia się około co godzinę, gdy OsmAnd działa na pierwszym planie.
-- Kopia zapasowa uruchamia się również po powrocie do ekranu mapy.
+- Automatyczna kopia zapasowa uruchamia się około co godzinę, gdy OsmAnd działa na pierwszym planie. Ten interwał nie jest obecnie regulowany w aplikacji. Można go zmienić, importując plik .osf.
+- Automatyczna kopia zapasowa może rozpocząć się po otwarciu lub powrocie do ekranu mapy.
+- Oprócz zaplanowanych uruchomień, automatyczna kopia zapasowa może również rozpocząć się po zmianach w niektórych typach danych (na przykład Ulubionych), używając włączonych typów kopii zapasowych w ustawieniach automatycznej kopii zapasowej.
 - Możesz włączać/wyłączać każdy element lub całe sekcje niezależnie.
 - Twoje dane pozostają dostępne lokalnie, nawet jeśli automatyczna kopia zapasowa jest wyłączona.
 

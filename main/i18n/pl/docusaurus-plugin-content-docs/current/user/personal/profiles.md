@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  Profile (Ustawienia)
 ---
@@ -433,19 +433,24 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profil
 
 ![Wygląd mojej lokalizacji](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+Ustawienia **Wygląd mojej lokalizacji** pozwalają dostosować sposób wyświetlania lokalizacji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Wygląd mojej lokalizacji](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![Wygląd mojej lokalizacji](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+Ustawienia **Wygląd mojej lokalizacji** pozwalają dostosować sposób wyświetlania lokalizacji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
+
+Użyj **Rozmiar ikony**, aby dostosować rozmiar ikony pozycji Moja lokalizacja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij Rozmiar ikony, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **Przywróć domyślne**, aby wrócić do 100%.
 
 </TabItem>
 
 </Tabs>
 
-Ustawienia **Wygląd mojej lokalizacji** pozwalają dostosować sposób wyświetlania lokalizacji na mapie, zarówno w spoczynku, jak i w ruchu. Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
 
 ### Kąt widzenia i promień lokalizacji {#view-angle-and-location-radius}
 

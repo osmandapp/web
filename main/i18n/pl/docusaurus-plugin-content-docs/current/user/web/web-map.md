@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Mapa
 title: Globalna mapa na stronie internetowej
@@ -41,11 +41,11 @@ Mapa internetowa OsmAnd to globalna mapa oparta na danych [OpenStreetMap (OSM)](
 Aby je otworzyć, kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie. Menu to zawiera następujące działania:
 
 - **Gdzie jestem** – Szybko znajdź swoją bieżącą lokalizację na mapie. Ta funkcja wyświetla najbliższe adresy do wybranego punktu na mapie.
-- **Otwórz pogodę** – Uzyskaj dostęp do [menu Pogoda](#weather-on-the-web), aby wyświetlić szczegóły pogody.
-- **Utwórz nową trasę** – Otwiera narzędzie [*Plan a route* tool](../web/planner.md#navigation-route) z wybraną lokalizacją jako punktem początkowym lub docelowym.
+- **Otwórz pogodę** – Uzyskaj dostęp do [menu Pogoda](../web/web-weather.md), aby wyświetlić szczegóły pogody.
+- **Utwórz nową trasę** – Otwiera narzędzie [*Plan a route* tool](../web/web-navigation.md) z wybraną lokalizacją jako punktem początkowym lub docelowym.
 - **Dodaj ulubione** –  Umożliwia utworzenie i zapisanie [ulubionego](../web/web-favorites.md#add--edit-favorite) w dowolnym punkcie na mapie w celu łatwego dostępu.
-- **Trasa z** –  Ustawia wybrany punkt jako [lokalizację początkową](../web/planner.md#navigation-route) dla nawigacji.
-- **Trasa do** – Ustawia wybrany punkt jako [cel nawigacji](../web/planner.md#navigation-route).
+- **Trasa z** –  Ustawia wybrany punkt jako [lokalizację początkową](../web/web-navigation.md#start-a-route) dla nawigacji.
+- **Trasa do** – Ustawia wybrany punkt jako [cel nawigacji](../web/web-navigation.md#start-a-route).
 - **Kopiuj współrzędne** – Kopiuje współrzędne wybranego punktu do użytku zewnętrznego.
 - **Pokaż regiony** – Wyświetla regiony powiązane z wybraną lokalizacją.
 

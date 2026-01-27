@@ -1,5 +1,5 @@
 ---
-source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
+source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
 sidebar_position: 5
 title:  Schematy kolorów
 ---
@@ -91,8 +91,8 @@ Pliki terenu (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.tx
 
 Wizualizacje gradientu linii wykorzystują pliki palet (`route_<type_name>_<palette_name>.txt`) do kolorowania śladów GPX i tras:
 
-- Dla [tras](../navigation/guidance/map-during-navigation.md#color): *Prędkość (`route_speed_default.txt`), Nachylenie (`route_slope_default.txt`),* i *Wysokość (`route_elevation_default.txt`)*.
-- Dla [śladów GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Prędkość, Nachylenie, Maks. prędkość (`route_maxspeed_default.txt`)* i *Wysokość*, lub informacje z *czujników zewnętrznych*.
+- Dla [tras](../navigation/guidance/map-during-navigation.md#color): *Prędkość (`route_speed_default.txt`), Nachylenie (`route_slope_default.txt`),* i *Wysokość (altitude) (`route_elevation_default.txt`)*.
+- Dla [śladów GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Prędkość, Nachylenie, Maks. prędkość (`route_maxspeed_default.txt`)* i *Wysokość (altitude)*, lub informacje z *czujników zewnętrznych*.
 
 ### Ulubione i punkty trasy {#favorites-waypoints}
 
@@ -146,6 +146,13 @@ Każda linia reprezentuje wartość liczbową (dla palety kolorów jest to indek
 ```
 
 Po przeniesieniu tego pliku TXT do *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, nowa paleta pojawi się w menu Schemat kolorów.
+
+Jeśli chcesz zmienić istniejący plik palety wewnątrz OsmAnd (zamiast dodawania nowego pliku TXT), możesz go edytować za pośrednictwem wyeksportowanej kopii zapasowej (.osf).
+- Wyeksportuj dane palety jako kopię zapasową .osf (patrz sekcja [Import / Eksport](#import--export) poniżej).
+- Rozpakuj wyeksportowany .osf. Plik .osf to przemianowany archiwum .zip. Zrób kopię oryginalnego pliku .osf, a następnie rozpakuj go za pomocą dowolnego narzędzia do archiwów.
+- Znajdź i edytuj plik TXT palety. W rozpakowanych folderach zlokalizuj potrzebny plik palety (na przykład: height_altitude_&lt;type_name&gt;.txt lub route_speed_&lt;type_name&gt;.txt) i edytuj jego wartości w edytorze tekstu.
+- Spakuj z powrotem i zmień nazwę na .osf. Spakuj rozpakowaną zawartość z powrotem do archiwum .zip, a następnie zmień nazwę na .osf. Zachowaj tę samą strukturę folderów.
+- Zaimportuj zaktualizowany .osf do OsmAnd (patrz sekcja **Import / Eksport** poniżej) i uruchom ponownie aplikację, aby zastosować zmiany.
 
 ### Import / Eksport {#import--export}
 

@@ -1,9 +1,10 @@
 ---
-source-hash: 2e2bedc5911717de92c663881adf7da2b32d2027a6c8127a8c9d02651753f230
+source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
 sidebar_position: 10
 title:  CarPlay
 android: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
 ## Przegląd {#overview}
 
 Prowadzenie pojazdu i jednoczesne korzystanie z telefonu lub tabletu jest zwykle zabronione przez prawo ze względów bezpieczeństwa. [***CarPlay***](https://www.apple.com/ios/carplay/) to oprogramowanie, które zapewnia dostosowaną i zoptymalizowaną wersję aplikacji OsmAnd do bezpiecznego użytkowania podczas jazdy, ułatwiając i zwiększając bezpieczeństwo dostępu do funkcji nawigacyjnych aplikacji.
@@ -24,11 +24,13 @@ Aby korzystać z *CarPlay* na ekranie pojazdu, wykonaj następujące kroki:
 
 1. *CarPlay* nie jest dostępny we wszystkich krajach. Upewnij się, że jest obsługiwany w Twoim [kraju lub regionie](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) oraz że *CarPlay* jest obsługiwany w Twoim [modelu pojazdu](https://www.apple.com/ios/carplay/available-models/).
 2. [Podłącz swoje urządzenie](https://support.apple.com/en-gb/HT203412) do systemu multimedialnego pojazdu za pomocą portu USB lub bezprzewodowo przez Wi-Fi lub Bluetooth. Przy pierwszym podłączeniu może być wymagane zezwolenie na korzystanie z *CarPlay* na Twoim urządzeniu.
-3. Po podłączeniu *interfejs CarPlay* automatycznie pojawi się na ekranie pojazdu ze wszystkimi dostępnymi aplikacjami. Jeśli *ekran główny CarPlay* się nie pojawi, wybierz *logo CarPlay* na wyświetlaczu pojazdu.
+3. Po podłączeniu *interfejs CarPlay* automatycznie pojawi się na ekranie pojazdu ze wszystkimi dostępnymi aplikacjami. Jeśli *ekran główny CarPlay* się nie pojawi, wybierz *logo CarPlay* na wyświetlaczu pojazdu.  
 
 ### Interfejs CarPlay {#carplay-interface}
 
 *CarPlay* **nie jest bezpośrednią replikacją** aplikacji mobilnej OsmAnd. Ma uproszczony interfejs, skupiający się na podstawowych funkcjach nawigacyjnych, aby zapewnić bezpieczną jazdę. Niektóre zaawansowane funkcje nie są obsługiwane ze względu na ograniczenia platformy.
+
+Pozycja przycisków i widżetu nawigacyjnego w *CarPlay* odpowiada stronie paska stanu CarPlay. Zależy to od ustawienia **Pozycja kierowcy** (lewo- lub prawostronna) w jednostce głównej samochodu, a nie od ustawień w CarPlay lub aplikacji OsmAnd.
 
 ### Ekran połączenia {#connection-screen}
 
@@ -41,7 +43,7 @@ Gdy urządzenie jest podłączone do *CarPlay*, mapa na ekranie aplikacji jest z
 
 ![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
-*CarPlay* wyświetla interfejs OsmAnd dostosowany do ekranu systemu multimedialnego pojazdu. Interakcja z mapą jest ograniczona do:
+*CarPlay* wyświetla interfejs OsmAnd dostosowany do ekranu systemu multimedialnego pojazdu. Interakcja z mapą jest ograniczona do:  
 
 - [Moja lokalizacja](../widgets/map-buttons.md#my-location-and-zoom). Przesuwa widoczną część mapy tak, aby Twoja bieżąca lokalizacja znalazła się na środku ekranu.
 - [Powiększenie](../widgets/map-buttons.md#my-location-and-zoom). Umożliwia powiększanie i pomniejszanie widocznej części mapy.
@@ -51,12 +53,12 @@ Gdy urządzenie jest podłączone do *CarPlay*, mapa na ekranie aplikacji jest z
 
 ![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
-- Najpierw musisz wybrać i skonfigurować profil, który będzie używany podczas łączenia z *CarPlay*. O tym, jak skonfigurować profil, możesz przeczytać w artykule [Profile (Ustawienia)](../personal/profiles).
+- Najpierw musisz wybrać i skonfigurować profil, który będzie używany podczas łączenia z *CarPlay*. O tym, jak skonfigurować profil, możesz przeczytać w artykule [Profile (Ustawienia)](../personal/profiles).  
     - Wygodnym profilem do korzystania z *CarPlay* może być *Jazda samochodem*, a typem wyznaczania trasy może być [Nawigacja samochodowa](../navigation/routing/car-based-routing.md).
     - OsmAnd ma osobną pozycję [Profil CarPlay](#carplay-profile) do szybkiego dostępu do listy profili dostępnych do połączenia z *CarPlay*.
 - Aby OsmAnd działał, [podłącz swoje urządzenie iOS](#overview) do systemu multimedialnego pojazdu. Aby dowiedzieć się więcej o tym, jak podłączyć i skonfigurować urządzenie, możesz odwiedzić stronę [**CarPlay**](https://support.apple.com/en-us/HT205634).
 - Musisz mieć jedną z [płatnych wersji lub subskrypcji OsmAnd](../purchases/ios#free-and-paid-features). Sprawdź to tutaj *Menu → Ustawienia → Zakupy*.
-- Po podłączeniu możesz ustawić cel i rozpocząć nawigację OsmAnd w *CarPlay*.
+- Po podłączeniu możesz ustawić cel i rozpocząć nawigację OsmAnd w *CarPlay*.  
 
 :::note
 Do korzystania z OsmAnd w *CarPlay* może być potrzebne połączenie z Internetem. Jeśli Twoje urządzenie ma ograniczony dostęp do Internetu, możesz [*wcześniej załadować lub utworzyć trasy*](../personal/tracks/manage-tracks.md) i używać ich bez Internetu.
@@ -65,31 +67,31 @@ Do korzystania z OsmAnd w *CarPlay* może być potrzebne połączenie z Internet
 
 ### Rozpocznij nawigację {#start-navigation}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-start(1).png)
+![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
-Aby korzystać z wersji OsmAnd na iOS w *CarPlay*, musisz kupić [płatną wersję aplikacji lub subskrypcję](../purchases/ios#free-and-paid-features).
+Aby korzystać z wersji OsmAnd na iOS w *CarPlay*, musisz kupić [płatną wersję aplikacji lub subskrypcję](../purchases/ios#free-and-paid-features).  
 
 1. Aby utworzyć trasę, musisz wybrać [punkt końcowy trasy](#select-a-route-endpoint) na *ekranie CarPlay* lub w [aplikacji OsmAnd](../navigation/setup/route-navigation.md).
-2. Możesz używać [komunikatów głosowych](#voice-prompts), aby słuchać wskazówek lub komunikatów o problemach na drodze.
+2. Możesz używać [komunikatów głosowych](#voice-prompts), aby słuchać wskazówek lub komunikatów o problemach na drodze.  
 3. Po wybraniu lokalizacji naciśnij **Start**, aby podążać trasą.
 4. Podczas jazdy na ekranie pojazdu będą wyświetlane informacje OsmAnd o Twojej bieżącej lokalizacji na mapie, wskazówki dojazdu, odległość do następnego zakrętu, pasy ruchu, czas przybycia i odległość do celu.
-    ![Ekran CarPlay](@site/static/img/navigation/auto-car/car_play_navmode.png)
+    ![Ekran CarPlay](@site/static/img/navigation/auto-car/car_play_navmode.png)  
 5. Jeśli chcesz zmienić trasę lub wybrać inną lokalizację, możesz nacisnąć odpowiedni przycisk na ekranie.
 6. Po zakończeniu trasy możesz dezaktywować *CarPlay*, odłączając urządzenie od systemu multimedialnego pojazdu.
 
 :::note
 Wszystkie kategorie wyboru **punktu końcowego trasy**, *[Historia](#history), [POI](#poi-categories), [Znaczniki](#map-markers), [Wyszukiwanie](#search), [Ulubione](#favorites) i [Trasy](#tracks)*, mogą zawierać nie więcej elementów listy, niż zapewnia system multimedialny Twojego pojazdu. Zazwyczaj w większości pojazdów listy są dynamicznie ograniczane do 12 lub 24 elementów. Oznacza to, że lista w *CarPlay* może nie być kompletna. Całkowita liczba elementów i rzeczywista liczba wyświetlanych elementów jest wskazana pod nazwą folderu.
-:::
+:::  
 
 
 ### Profil CarPlay {#carplay-profile}
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 ![Ustawienia ogólne Domyślny profil Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
-**Profil CarPlay** to specyficzny profil w aplikacji OsmAnd, umożliwiający wygodne korzystanie z systemu audio i wideo samochodu w celu dalszego wyświetlania tych danych na telefonie.
+**Profil CarPlay** to specyficzny profil w aplikacji OsmAnd, umożliwiający wygodne korzystanie z systemu audio i wideo samochodu w celu dalszego wyświetlania tych danych na telefonie.  
 
-Ten profil jest używany tak długo, jak urządzenie jest podłączone do *CarPlay*. Dotknij pola *Profil CarPlay* w menu *Ustawień OsmAnd* i z listy [profili włączonych do użytku](../personal/profiles.md) wybierz profil, z którym *CarPlay* zostanie aktywowany.
+Ten profil jest używany tak długo, jak urządzenie jest podłączone do *CarPlay*. Dotknij pola *Profil CarPlay* w menu *Ustawień OsmAnd* i z listy [profili włączonych do użytku](../personal/profiles.md) wybierz profil, z którym *CarPlay* zostanie aktywowany.  
 
 Nie można wybrać profilu bezpośrednio w *CarPlay* z ekranu pojazdu. Najpierw wybierz wymagany profil na swoim urządzeniu i przypisz do niego *profil CarPlay*. Należy wybrać profil odpowiadający typowi pojazdu, taki jak *Jazda samochodem*, *Ciężarówka*, *Samochód*, *Motocykl* lub *Motorower*. **Aplikacja automatycznie aktywuje** *profil CarPlay* po podłączeniu do pojazdu.
 
@@ -103,8 +105,8 @@ Nie można wybrać profilu bezpośrednio w *CarPlay* z ekranu pojazdu. Najpierw 
 
 Jako punkt docelowy można wybrać wcześniej ustawione i dodane [POI](../map/point-layers-on-map.md#points-of-interest-pois), [Ulubione](../personal/favorites.md) lub [Znaczniki](../personal/markers.md). Możliwe jest również wybranie zarejestrowanej lub pobranej [Trasy](../personal/tracks/index.md) dla trasy, skorzystanie z [Wyszukiwania](../search/index.md) lub wybranie celu z [Historii](../search/search-history.md) tras.
 
-1. Jeśli chcesz, aby określona lokalizacja na mapie była punktem końcowym, wybierz odpowiednią kategorię punktów z listy, [POI](#poi-categories), [Ulubione](#favorites) lub [Znaczniki mapy](#map-markers).
-
+1. Jeśli chcesz, aby określona lokalizacja na mapie była punktem końcowym, wybierz odpowiednią kategorię punktów z listy, [POI](#poi-categories), [Ulubione](#favorites) lub [Znaczniki mapy](#map-markers).  
+  
     - Wszystkie kategorie mogą zawierać nie więcej elementów listy, niż jest to przewidziane przez system multimedialny Twojego pojazdu. Oznacza to, że lista w *CarPlay* może być niekompletna, a wszystkie inne foldery są dostępne tylko w aplikacji OsmAnd na Twoim urządzeniu.
     - Folder [Ostatnio zmodyfikowane](#folder-last-modified) zawiera listę ostatnich celów, posortowaną według daty dodania lub zmiany.
     - Lista wszystkich pozostałych folderów jest sortowana według najnowszej aktualizacji, nowe foldery znajdują się na górze listy. Nie można ręcznie zmienić ich kolejności.
@@ -119,7 +121,7 @@ Podczas jazdy wybrane punkty mogą być [ogłaszane](#voice-prompts) głosowo, g
 
 ### Historia {#history}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car_play_history.png)
+![Ekran CarPlay](@site/static/img/navigation/auto-car/car_play_history.png)  
 
 W **kategorii Historia** możesz wybrać cel z listy punktów końcowych.
 
@@ -137,7 +139,7 @@ W **kategorii Historia** możesz wybrać cel z listy punktów końcowych.
     </tr>
 </table>
 
-*POI (Punkty Użyteczności Publicznej)* to rodzaj punktów, które identyfikują na mapie miejsca lub obiekty ważne lub interesujące dla użytkowników. Są one wyróżnione specjalnymi ikonami dostępnymi w [ustawieniach OsmAnd](../map/point-layers-on-map.md#poi-types) i posortowane w grupy.
+*POI (Punkty Użyteczności Publicznej)* to rodzaj punktów, które identyfikują na mapie miejsca lub obiekty ważne lub interesujące dla użytkowników. Są one wyróżnione specjalnymi ikonami dostępnymi w [ustawieniach OsmAnd](../map/point-layers-on-map.md#poi-types) i posortowane w grupy.  
 
 Aby wyznaczyć trasę do *POI* w *CarPlay*, wykonaj następujące kroki:
 
@@ -149,40 +151,40 @@ Aby wyznaczyć trasę do *POI* w *CarPlay*, wykonaj następujące kroki:
 
 ### Ulubione {#favorites}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-favorites(1).png)
+![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
 **Ulubione** to jedna z funkcji OsmAnd, która pozwala na tworzenie swego rodzaju notatek na mapie.
 
 - Podczas korzystania z **CarPlay** nie można dodawać ani modyfikować *Ulubionych*, a jedynie korzystać z istniejących.
 - Listę [Ulubionych](../personal/favorites.md#manage-favorites) można znaleźć w aplikacji OsmAnd *Menu → Moje miejsca → Ulubione*.
-- Jeśli chcesz ich używać do nawigacji, skonfiguruj wszystko, czego potrzebujesz, przed podłączeniem urządzenia do systemu multimedialnego pojazdu.
+- Jeśli chcesz ich używać do nawigacji, skonfiguruj wszystko, czego potrzebujesz, przed podłączeniem urządzenia do systemu multimedialnego pojazdu.  
 
 
 ### Znaczniki mapy {#map-markers}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-markers(1).png)
+![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
 - Aby zdefiniować swój ostateczny cel jako *Znacznik mapy*, musisz najpierw utworzyć wymaganą liczbę znaczników w aplikacji OsmAnd na swoim urządzeniu przed podłączeniem go do systemu multimedialnego pojazdu.
 - *Znaczniki* muszą być dostępne na liście *Menu → Znacznik mapy*.
-- Jest to opisane bardziej szczegółowo w artykule [Znaczniki](../personal/markers.md).
+- Jest to opisane bardziej szczegółowo w artykule [Znaczniki](../personal/markers.md).  
 
 
 ### Trasy {#tracks}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-tracks(1).png)
+![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
-Aby wyznaczyć trasę do celu, możesz wybrać istniejącą trasę dostępną w aplikacji OsmAnd. Trasa może być [pobrana](../personal/tracks/manage-tracks.md#import) z wyprzedzeniem, użyta jako [zarejestrowana](../plugins/trip-recording.md) lub utworzona w [Zaplanuj trasę](../plan-route/create-route.md).
+Aby wyznaczyć trasę do celu, możesz wybrać istniejącą trasę dostępną w aplikacji OsmAnd. Trasa może być [pobrana](../personal/tracks/manage-tracks.md#import) z wyprzedzeniem, użyta jako [zarejestrowana](../plugins/trip-recording.md) lub utworzona w [Zaplanuj trasę](../plan-route/create-route.md).  
 
-Z listy tras w *Menu → Moje miejsca → [Trasy](../personal/tracks/manage-tracks.md)* wybierz wymaganą przed podłączeniem do systemu multimedialnego pojazdu, a trasa zostanie wyznaczona do początku śladu lub wyświetli bieżący kierunek wzdłuż śladu.
+Z listy tras w *Menu → Moje miejsca → [Trasy](../personal/tracks/manage-tracks.md)* wybierz wymaganą przed podłączeniem do systemu multimedialnego pojazdu, a trasa zostanie wyznaczona do początku śladu lub wyświetli bieżący kierunek wzdłuż śladu.  
 
 Trasy można również wybierać bezpośrednio na ekranie pojazdu w *CarPlay*. Są one zorganizowane w utworzonych przez Ciebie folderach, a dla łatwego i szybkiego dostępu do ostatnio otwieranych tras istnieje specjalny folder [Ostatnio zmodyfikowane](#folder-last-modified).
 
 
 ### Wyszukiwanie {#search}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-search(1).png)
+![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
-Przejście do **Wyszukiwania** daje szybki dostęp do listy ostatniej [historii celów](#history). Podobnie jak w [menu Nawigacji](../navigation/setup/route-navigation.md#navigation-menu), gdzie zebrane są wszystkie metody wyznaczania celu w OsmAnd, takie jak adres, POI czy współrzędne.
+Przejście do **Wyszukiwania** daje szybki dostęp do listy ostatniej [historii celów](#history). Podobnie jak w [menu Nawigacji](../navigation/setup/route-navigation.md#navigation-menu), gdzie zebrane są wszystkie metody wyznaczania celu w OsmAnd, takie jak adres, POI czy współrzędne.  
 
 Możesz użyć *narzędzia Wyszukiwania*, aby znaleźć wymagane miejsce na mapie do planowania trasy z dowolnej dostępnej kategorii wyszukiwania.
 
@@ -212,20 +214,20 @@ Kategorie *Ulubione* i *Trasy* mają specjalny folder **Ostatnio zmodyfikowane**
 
 ## Dodatkowe funkcje {#additional-features}
 
-Oprócz podstawowych funkcji aplikacji OsmAnd w *CarPlay*, które zapewniają wygodną nawigację w pojeździe, istnieje szereg dodatkowych funkcji, które poprawiają wrażenia i sprawiają, że nawigacja jest bardziej spersonalizowana, komfortowa i wydajna.
+Oprócz podstawowych funkcji aplikacji OsmAnd w *CarPlay*, które zapewniają wygodną nawigację w pojeździe, istnieje szereg dodatkowych funkcji, które poprawiają wrażenia i sprawiają, że nawigacja jest bardziej spersonalizowana, komfortowa i wydajna.  
 
 
 ### Komunikaty głosowe {#voice-prompts}
 
-Wskazówki głosowe dla *CarPlay* to jedna z najbardziej użytecznych funkcji nawigacyjnych OsmAnd, zapewniająca wskazówki w czasie rzeczywistym i pozwalająca kierowcy skupić się na drodze. Komunikaty głosowe wyraźnie wskazują zakręty, kierunki i inne instrukcje nawigacyjne, zapewniając bezpieczniejsze i bardziej komfortowe korzystanie z systemu nawigacji.
+Wskazówki głosowe dla *CarPlay* to jedna z najbardziej użytecznych funkcji nawigacyjnych OsmAnd, zapewniająca wskazówki w czasie rzeczywistym i pozwalająca kierowcy skupić się na drodze. Komunikaty głosowe wyraźnie wskazują zakręty, kierunki i inne instrukcje nawigacyjne, zapewniając bezpieczniejsze i bardziej komfortowe korzystanie z systemu nawigacji.  
 
-Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md).
+Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md).  
 
 
 
 ### Widżet alertów ekranowych {#screen-alert-widget}
 
-![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)
+![Ekran CarPlay](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 Ten widżet informacyjny łączy typy alertów, takie jak **Przejścia dla pieszych** i **Ograniczenie prędkości**.
 
@@ -292,9 +294,9 @@ Aplikacja OsmAnd dla *CarPlay* pozwala dostosować pozycję wskaźnika bieżące
 
 ### Problem z regulacją głośności {#volume-control-issue}
 
-Czasami *CarPlay* nie łączy się lub po prostu nic nie słychać, mimo że jest podłączony. Innym razem aplikacja OsmAnd nie otwiera się poprawnie w *CarPlay*. Możliwe rozwiązania:
+Czasami *CarPlay* nie łączy się lub po prostu nic nie słychać, mimo że jest podłączony. Innym razem aplikacja OsmAnd nie otwiera się poprawnie w *CarPlay*. Możliwe rozwiązania:  
 
-1. W większości przypadków wszystkie **sygnały** pozostają na stałym, pełnym poziomie głośności, niezależnie od ustawień odtwarzania dźwięku w tym samym czasie. Aby zmienić głośność komunikatów nawigacyjnych OsmAnd podczas korzystania z *CarPlay*, przejdź do *Ustawienia → Głos → Głośność głosu* na ekranie systemu multimedialnego pojazdu.
+1. W większości przypadków wszystkie **sygnały** pozostają na stałym, pełnym poziomie głośności, niezależnie od ustawień odtwarzania dźwięku w tym samym czasie. Aby zmienić głośność komunikatów nawigacyjnych OsmAnd podczas korzystania z *CarPlay*, przejdź do *Ustawienia → Głos → Głośność głosu* na ekranie systemu multimedialnego pojazdu.  
 2. Uruchom ponownie urządzenie.
 3. Upewnij się, że *CarPlay* jest włączony na Twoim iPhonie. Aby to zrobić:
    - Przejdź do ustawień telefonu, a następnie do *Ogólne*.
@@ -314,10 +316,10 @@ Czasami *CarPlay* nie łączy się lub po prostu nic nie słychać, mimo że jes
 ### Częste problemy i rozwiązania {#common-issues-and-solutions}
 
 1. Częste pytania dotyczące ekranu połączenia:
-    - *Dlaczego nie mogę sterować aplikacją z telefonu, gdy jest podłączony do CarPlay?*
+    - *Dlaczego nie mogę sterować aplikacją z telefonu, gdy jest podłączony do CarPlay?*  
         Ze względów bezpieczeństwa ekran aplikacji OsmAnd na telefonie jest zablokowany podczas połączenia z CarPlay. Możesz wchodzić w interakcję z aplikacją tylko za pośrednictwem wyświetlacza samochodowego.
-    - *Czy mogę wyłączyć zablokowany ekran i korzystać z aplikacji na telefonie?*
+    - *Czy mogę wyłączyć zablokowany ekran i korzystać z aplikacji na telefonie?*  
         Nie, CarPlay wymusza to ograniczenie, aby zapobiec rozpraszaniu uwagi podczas jazdy.
-    - *Co powinienem zrobić, jeśli mój telefon i wyświetlacz samochodowy wydają się być rozłączone?*
-        Upewnij się, że urządzenie jest prawidłowo podłączone przez USB lub Bluetooth.
+    - *Co powinienem zrobić, jeśli mój telefon i wyświetlacz samochodowy wydają się być rozłączone?*  
+        Upewnij się, że urządzenie jest prawidłowo podłączone przez USB lub Bluetooth.  
         Uruchom ponownie system informacyjno-rozrywkowy samochodu i aplikację OsmAnd, jeśli połączenie jest niestabilne.

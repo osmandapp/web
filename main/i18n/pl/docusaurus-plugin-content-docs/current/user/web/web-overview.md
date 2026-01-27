@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Wprowadzenie
 title: Wprowadzenie do planera internetowego
@@ -28,7 +28,7 @@ Zaprojektowany jako wieloplatformowy towarzysz aplikacji OsmAnd na Androida i iO
 
 OsmAnd Web jest ściśle zintegrowany z usługą **OsmAnd Cloud**, która umożliwia synchronizację ulubionych, śladów i kopii zapasowych między urządzeniami i platformami. Użytkownicy z kontami **OsmAnd Start** (bezpłatne) lub **OsmAnd Pro** (płatne) mogą w pełni wykorzystać ten ekosystem, synchronizując dane między urządzeniami mobilnymi a wersją internetową. Szczegółowe porównanie funkcji *Start* i *Pro* znajdziesz w sekcji [Dostęp w ramach subskrypcji](#subscription-accesses) poniżej.
 
-> **Uwaga:** Nawet bez logowania lub weryfikacji konta możesz nadal korzystać z kilku podstawowych funkcji Portalu map internetowych, w tym: [Trasy nawigacyjne](./planner.md), [Planer trasy](./planner.md), [Nakładki pogodowe](./web-map.md#weather-on-the-web) oraz [Ustawienia](#settings).
+> **Uwaga:** Nawet bez logowania lub weryfikacji konta możesz nadal korzystać z kilku podstawowych funkcji Portalu map internetowych, w tym: [Trasa nawigacyjna](./web-navigation.md), [Planer trasy](./planner.md), [Nakładki pogodowe](./web-weather.md#), oraz [Ustawienia](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -40,9 +40,9 @@ Portal internetowy oferuje następujące główne możliwości pracy z mapami i 
 
 - [Mapa](./web-map.md) o globalnym zasięgu i wysokiej jakości danych wektorowych.
 - [Planowanie trasy](./planner.md) z wykorzystaniem profili pieszego, samochodowego, rowerowego i innych.
-- [Podgląd nawigacji](./planner.md) z instrukcjami krok po kroku.
+- [Nawigacja](./planner.md) z instrukcjami krok po kroku.
 - [Wyszukiwanie](./web-search.md) i [odkrywanie](./web-search.md#explore) popularnych miejsc w pobliżu.
-- Wyświetlanie [Ulubionych](./web-map.md#favorites), [Śladów](./web-map.md#tracks) i [POI](./web-map.md#poi-overlay) na mapie.
+- Wyświetlanie [Ulubionych](./web-map.md#favorites), [Śladów](./web-map.md#tracks), i [POI](./web-map.md#poi-overlay) na mapie.
 - [Nakładki pogodowe](./web-weather.md): wiatr, temperatura i ciśnienie.
 - [Warstwy terenu](./web-map.md#terrain): cieniowanie wzgórz, stoki i widok wysokości.
 - [Analizator śladów](./web-tracks-analyzer.md) dla profili wysokości i prędkości.
@@ -67,11 +67,11 @@ Portal map internetowych obsługuje kilka poziomów dostępu: bez logowania, z O
 | [Planer trasy](./planner.md) | Bez logowania |
 | [Nakładki pogodowe](./web-weather.md) | Bez logowania |
 | [Ustawienia](./web-map.md#settings) | Bez logowania |
-| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Ulubione](./web-map.md#favorites), [Ślady](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) lub <ProFeature/> |
-| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([Teren](./web-map.md#terrain))| <ProFeature/> |
-| [Synchronizacja OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) lub <ProFeature/> |
-| [Wyszukiwanie w sieci, popularne miejsca](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) lub <ProFeature/> |
-| [Foldery śladów i warstwa](./web-tracks.md) | <ProFeature/> |
+| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Ulubione](./web-map.md#favorites), [Ślady](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([Teren](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Synchronizacja OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Wyszukiwanie w sieci, popularne miejsca](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Foldery śladów i warstwa](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.

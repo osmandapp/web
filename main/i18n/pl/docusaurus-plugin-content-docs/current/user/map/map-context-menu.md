@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -142,6 +142,7 @@ Dostępne szczegóły obejmują:
 - [W obszarach](#polygon-information)
 - [Pobliskie POI](#nearby-pois)
 - [Pobliskie popularne miejsca](#nearby-popular-places)
+- [Przewodniki](#guides) (tylko Android)
 - [Trasy transportu publicznego dla przystanków](#public-transport-routes)
 - [Ulubione / Punkty trasy z tej samej grupy](#favorites--track-points-from-the-group)
 - [Link OpenStreetMap](#openstreetmap-link)
@@ -296,6 +297,18 @@ Dotknięcie *Pobliskie [Popularne miejsca](https://osmand.net/docs/user/plugins/
 </TabItem>
 
 </Tabs>
+
+### Przewodniki {#guides}
+
+<InfoAndroidOnly/>
+
+![Przewodniki Android](@site/static/img/map/details_guides.png)
+
+Sekcja **Przewodniki** pojawia się w menu kontekstowym mapy dla niektórych miejsc i zapewnia dostęp do przewodników **Podróże (Wikivoyage)** związanych z wybranym punktem użyteczności. Wyświetla listę wpisów przewodnika (na przykład, kraj lub region), które wspominają o wybranym miejscu.
+
+Sekcja Przewodniki jest wyświetlana tylko wtedy, gdy dane **Podróże (Wikivoyage)** są pobrane dla wybranego obszaru.
+
+**Uwaga:** Przewodniki są powiązane z treścią Wikivoyage, a nie z ogólnymi opisami Wikipedii.
 
 
 ### Trasy transportu publicznego {#public-transport-routes}
@@ -491,7 +504,7 @@ Przeczytaj więcej o [znacznikach tutaj](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-| Wersje do Android 14 | 14+ Android |
+| Wersje do Androida 14 | Android 14+ |
 |:------------|:---------------|
 | ![Akcja Udostępnij Android](@site/static/img/map/action_share_1_andr.png) | ![Akcja Udostępnij Android](@site/static/img/map/action_share_2_andr.png) |
 
