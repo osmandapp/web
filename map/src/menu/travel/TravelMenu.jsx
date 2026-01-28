@@ -86,14 +86,14 @@ export default function TravelMenu() {
         }
     }, []);
 
-    // Create years array
-    const years = [
-        { id: ALL_YEARS, label: capitalize(ALL_YEARS) },
-        ...Array.from({ length: new Date().getFullYear() - MIN_YEAR + 1 }, (_, i) => {
-            const year = MIN_YEAR + i;
-            return { id: year, label: `${year}` };
-        }),
-    ];
+    const years = useMemo(() => {
+        const currentYear = new Date().getFullYear();
+        const items = [];
+        for (let year = currentYear; year >= MIN_YEAR; year--) {
+            items.push({ id: year, label: `${year}` });
+        }
+        return [{ id: ALL_YEARS, label: capitalize(ALL_YEARS) }, ...items];
+    }, []);
 
     // Create activities array
     const activitiesArr = useMemo(() => {
