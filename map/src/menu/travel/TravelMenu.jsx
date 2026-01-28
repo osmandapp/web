@@ -221,68 +221,72 @@ export default function TravelMenu() {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                    <Box className={gStyles.scrollActiveBlock}>
-                        {updatedActivities?.length > 0 && (
+                    <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
+                        <Box>
+                            {updatedActivities?.length > 0 && (
+                                <CustomSelect
+                                    name="Activity"
+                                    value={selectedActivityType}
+                                    onChange={(value) => setSelectedActivityType(value)}
+                                    options={updatedActivities}
+                                    renderLabel={(option) => option?.label}
+                                    renderIcon={(option) => option?.icon}
+                                    handleSelect={(id) => handleActivitySelect(id)}
+                                />
+                            )}
                             <CustomSelect
-                                name="Activity"
-                                value={selectedActivityType}
-                                onChange={(value) => setSelectedActivityType(value)}
-                                options={updatedActivities}
+                                name="Year"
+                                value={selectedYear}
+                                onChange={(value) => setSelectedYear(value)}
+                                options={years}
                                 renderLabel={(option) => option?.label}
-                                renderIcon={(option) => option?.icon}
-                                handleSelect={(id) => handleActivitySelect(id)}
+                                handleSelect={(year) => handleYearSelect(year)}
+                                menuWidth={'auto'}
+                                hasIcons={false}
+                                defaultIcon={SortDateIcon}
+                                my={'0px'}
+                                marginLeft={'250px'}
                             />
-                        )}
-                        <CustomSelect
-                            name="Year"
-                            value={selectedYear}
-                            onChange={(value) => setSelectedYear(value)}
-                            options={years}
-                            renderLabel={(option) => option?.label}
-                            handleSelect={(year) => handleYearSelect(year)}
-                            menuWidth={'auto'}
-                            hasIcons={false}
-                            defaultIcon={SortDateIcon}
-                            my={'0px'}
-                            marginLeft={'250px'}
-                        />
-                        <TagFilter selectedTags={selectedTags} onChangeTags={setSelectedTags} />
-                        <Box sx={{ mx: 2, mt: 1 }}>
-                            <ToggleButtonGroup
-                                fullWidth
-                                size="small"
-                                className={styles.tagMatchToggleGroup}
-                                exclusive
-                                value={tagMatchMode}
-                                onChange={(event, value) => {
-                                    if (value) {
-                                        setTagMatchMode(value);
-                                    }
-                                }}
-                            >
-                                <ToggleButton value={TAG_MATCH_MODES.OR}>Matches any tag</ToggleButton>
-                                <ToggleButton value={TAG_MATCH_MODES.AND}>Contains all tags</ToggleButton>
-                            </ToggleButtonGroup>
+                            <TagFilter selectedTags={selectedTags} onChangeTags={setSelectedTags} />
+                            <Box sx={{ mx: 2, mt: 1 }}>
+                                <ToggleButtonGroup
+                                    fullWidth
+                                    size="small"
+                                    className={styles.tagMatchToggleGroup}
+                                    exclusive
+                                    value={tagMatchMode}
+                                    onChange={(event, value) => {
+                                        if (value) {
+                                            setTagMatchMode(value);
+                                        }
+                                    }}
+                                >
+                                    <ToggleButton value={TAG_MATCH_MODES.OR}>Matches any tag</ToggleButton>
+                                    <ToggleButton value={TAG_MATCH_MODES.AND}>Contains all tags</ToggleButton>
+                                </ToggleButtonGroup>
+                            </Box>
+                            <Box sx={{ m: 2 }}>
+                                <PrimaryBtn
+                                    action={showRoutes}
+                                    id={'se-submit-show-travel'}
+                                    text={t('shared_string_show')}
+                                />
+                            </Box>
+                            {loadingResult && <CircularProgress sx={{ mt: 2, ml: 2 }} size={36} />}
                         </Box>
-                        <Box sx={{ m: 2 }}>
-                            <PrimaryBtn
-                                action={showRoutes}
-                                id={'se-submit-show-travel'}
-                                text={t('shared_string_show')}
-                            />
+                        <Box className={gStyles.scrollActiveBlock}>
+                            {travelResult &&
+                                (travelResult?.features?.length > 0 ? (
+                                    <>
+                                        <Typography variant="body2" sx={{ mt: 2, ml: 2 }}>
+                                            Results: {travelResult?.features?.length || 0}
+                                        </Typography>
+                                        <TravelRoutesResult routes={travelResult.features} />
+                                    </>
+                                ) : (
+                                    <EmptyTravel reset={resetSearch} />
+                                ))}
                         </Box>
-                        {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
-                        {travelResult &&
-                            (travelResult?.features?.length > 0 ? (
-                                <>
-                                    <Typography variant="body2" sx={{ mt: 2, ml: 2 }}>
-                                        Results: {travelResult?.features?.length || 0}
-                                    </Typography>
-                                    <TravelRoutesResult routes={travelResult.features} />
-                                </>
-                            ) : (
-                                <EmptyTravel reset={resetSearch} />
-                            ))}
                     </Box>
                 </>
             ) : (
