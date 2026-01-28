@@ -1,5 +1,5 @@
 ---
-source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
+source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
 sidebar_position: 8
 title: Locais Populares
 ---
@@ -14,8 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Visão Geral {#overview}
 
@@ -24,6 +25,8 @@ O recurso **Locais Populares** no OsmAnd destaca pontos de referência e atraç�
 Cada local incluído neste recurso está vinculado a um **ID do Wikidata**, o que permite ao OsmAnd exibir nomes verificados, visualizar imagens e links para artigos da Wikipedia. Esta ferramenta **não** mostra todos os pontos do OpenStreetMap (OSM). Ela se limita a POIs com referências do Wikidata.
 
 Atualmente, o banco de dados curado inclui aproximadamente **50.000 a 150.000 locais de alta classificação** globalmente, selecionados de mais de **1 milhão** de objetos Wikidata + OSM.
+
+Imagens e outro conteúdo baseado no Wikidata nos Locais Populares são atualizados em um cronograma e podem não aparecer imediatamente após alterações no Wikidata ou no Wikimedia Commons. Frequência de atualização atual: duas vezes por mês — nos dias **10** e **20**.
 
 :::note
 *Esta é a primeira versão do recurso Locais Populares. O feedback é bem-vindo no [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -40,13 +43,15 @@ Atualmente, o banco de dados curado inclui aproximadamente **50.000 a 150.000 lo
 </Tabs>
 
 
-### Fontes de Dados
+## Fontes de Dados {#data-sources}
 
 **Locais Populares** são baseados em conteúdo estruturado do [Wikidata](https://www.wikidata.org) e da [Wikipedia](https://www.wikipedia.org/).
 
 Apenas POIs com um **ID do Wikidata** vinculado são exibidos. Esses IDs conectam objetos do mapa a nomes, descrições e imagens verificados.
 
 Você pode visualizar o link do Wikidata diretamente no [Menu de Contexto do Mapa](../map/map-context-menu.md). Tocar na tag do Wikidata abre a página completa do objeto no site do Wikidata.
+
+Imagens e outro conteúdo baseado no Wikidata nos Locais Populares são atualizados em um cronograma e podem não aparecer imediatamente após alterações no Wikidata ou no Wikimedia Commons. Frequência de atualização atual: duas vezes por mês — nos dias **10** e **20**.
 
 Saiba como encontrar um ID do Wikidata: [Wikipedia: Encontrando um ID do Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -62,6 +67,8 @@ Existem duas maneiras principais de acessar este recurso:
 - **Versão gratuita**  
   Acesse via [Pesquisa](#explore-in-search) para explorar locais próximos em visualização de lista.  
   *<Translate android="true" ids="android_button_seq"/>*. Vá para: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  
+  Esta lista Explorar mostra locais da Wikipedia/Wikidata classificados por popularidade perto de você e funciona online. Ela exibe até 50 locais. Como os resultados do Explorar/Wikipedia são classificados por avaliação, a ordenação nesses resultados pode diferir da pesquisa regular de POI.
 
 - **Versões pagas** *(Maps+ e OsmAnd Pro)*  
   Ative a sobreposição visual em [Configurar Mapa](#enable-layer).  
@@ -130,19 +137,19 @@ Antes de usar este recurso:
 - Certifique-se de que o [Plugin da Wikipedia](../plugins/wikipedia.md) esteja ativado.
 - Baixe os dados da Wikipedia para sua região se quiser usá-los offline.
 
-### Opções de Camada
+### Opções de Camada {#layer-options}
 
 Uma vez ativadas, as seguintes opções ficam disponíveis:
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – Alternar POIs da Wikipedia no mapa.
 
 - **Fonte do POI** – Alternar entre:
-  - *Modo offline* (artigos da Wikipedia devem ser baixados).
-  - *Modo apenas online* (usa dados e imagens ao vivo).
+  - *Modo Apenas Offline* — usa dados do mapa da Wikipedia baixados para sua região. 
+  - *Modo Apenas Online* — carrega locais e visualizações de imagens online. Os resultados online podem depender das configurações de idioma selecionadas.
 
 - **<Translate android="true" ids="shared_string_language"/>** – Selecione o idioma para as descrições da Wikipedia.
 
-- **<Translate android="true" ids="show_image_previews"/>** – Mostrar miniaturas de imagens do Wikidata ao lado dos POIs.
+- **<Translate android="true" ids="show_image_previews"/>** – Mostrar miniaturas de imagens do Wikidata ao lado dos POIs. Se as visualizações de imagens estiverem desativadas, os Locais Populares são exibidos com ícones em vez de miniaturas no mapa. As visualizações de imagens usam imagens vinculadas ao Wikidata/Wikipedia: no *Modo Apenas Offline*, as visualizações dependem dos dados da Wikipedia baixados, enquanto no *Modo Apenas Online*, as visualizações são obtidas online.
 
 Tocar em um POI no mapa abre o [menu de contexto do POI](./map-context-menu.md), onde você pode visualizar [fotos online](#online-photos) e acessar [artigos da Wikipedia](../plugins/wikipedia.md) vinculados.
 
@@ -171,19 +178,17 @@ Esta é uma seção dentro do [menu de contexto do POI](./map-context-menu.md) q
 
 As imagens visualizadas online são armazenadas em cache automaticamente para acesso offline. As fotos em cache exibem um pequeno selo offline no canto. A grade de visualização se adapta ao tamanho da tela no iPadOS e macOS, garantindo um layout confortável de imagens em telas maiores. O OsmAnd também evita acionar solicitações de rede repetidas quando a seção Fotos Online é fechada e cancela solicitações anteriores ao alternar rapidamente entre diferentes POIs.
 
+<!-- 
 Saiba mais sobre opções adicionais na seção [Ações](#actions) e [Galeria](#gallery).
 
 
-<!-- 
+Quando você toca em um Local Popular no mapa ou na lista, o [menu de contexto do POI](./map-context-menu.md) inclui uma seção **Fotos Online** com uma prévia horizontal de imagens.
 
-When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
+- Toque em qualquer foto para visualizá-la em tela cheia.  
+- Deslize para navegar por mais imagens.
 
-- Tap any photo to view it in fullscreen.  
-- Swipe to browse more images.
+Para mais ações como compartilhar, visualizar metadados ou baixar — veja [Galeria](#gallery).
 
-For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
-
--->
 
 ### Ações {#actions}
 
@@ -194,8 +199,7 @@ No menu de contexto do mapa Como acessar:
 - Toque em qualquer foto para visualizá-la em [tela cheia](#gallery) e acessar as ações disponíveis:  
   **Compartilhar**, **Detalhes**, **Abrir no navegador** e **Baixar**.
 
-**Nota:** O download salva a imagem no armazenamento do dispositivo para uso offline permanente, enquanto as fotos em cache são armazenadas automaticamente e disponíveis offline apenas dentro do aplicativo.
-
+-->
 
 ### Galeria {#gallery}
 
@@ -217,8 +221,7 @@ No menu de contexto do mapa Como acessar:
 
 </Tabs>
 
-
-O **Menu da Galeria** pode exibir até **100 imagens** relacionadas ao ponto de interesse selecionado. Você pode deslizar por todas as fotos disponíveis. Tocar brevemente em uma foto abre uma visualização detalhada mostrando: *Nome*, *Data de adição*, *Autor*, *Licença*. 
+O **Menu da Galeria** pode exibir até **100 imagens** relacionadas ao ponto de interesse selecionado. Para visualizar essas imagens, toque em **Mostrar Tudo** (Android) / **Ver Tudo** (iOS). Você pode deslizar por todas as fotos disponíveis. Tocar brevemente em uma foto abre uma visualização detalhada mostrando: *Nome*, *Data de adição*, *Autor*, *Licença*. 
 
 No iOS, iPadOS e macOS, você pode navegar pelas fotos usando teclas do teclado (←/→ para mover entre imagens, Enter/Espaço para abrir).
 
@@ -236,7 +239,9 @@ Você também pode realizar as seguintes ações em cada foto:
 - **Baixar**  
   Salve a imagem no armazenamento do seu dispositivo. A imagem baixada pode ser encontrada na pasta de Downloads padrão do seu dispositivo e acessada offline.
 
+**Nota:** O download salva a imagem no armazenamento do dispositivo para uso offline permanente, enquanto as fotos em cache são armazenadas automaticamente e disponíveis offline apenas dentro do aplicativo.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
@@ -282,9 +287,10 @@ No **iOS**, pressionar e segurar uma foto abre um menu de contexto com ações a
 </Tabs>
 
 A tela **Detalhes** fornece metadados completos para a foto selecionada, incluindo: *Nome*, *Data de adição*, *Autor*, *Licença*, *Fonte* e *Link direto*
+-->
 
 
-## Artigos Relacionados
+## Artigos Relacionados {#related-articles}
 
 - [Menu de contexto do mapa](./map-context-menu.md)
 - [Configurar Mapa](./configure-map-menu.md)

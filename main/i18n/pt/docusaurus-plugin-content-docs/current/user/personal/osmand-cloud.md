@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title: OsmAnd Cloud
 ---
@@ -352,8 +352,9 @@ O backup automático salva automaticamente os dados selecionados do OsmAnd na Nu
 
 Comportamento do backup automático:
 
-- O backup automático é executado aproximadamente a cada hora enquanto o OsmAnd está funcionando em primeiro plano.
-- O backup também inicia quando você retorna à tela do mapa.
+- O backup automático é executado aproximadamente a cada hora enquanto o OsmAnd está funcionando em primeiro plano. Este intervalo não é ajustável no aplicativo no momento. Ele pode ser alterado importando um arquivo .osf.
+- O backup automático pode iniciar quando você abre ou retorna à tela do mapa.
+- Além das execuções agendadas, o backup automático também pode iniciar após alterações em alguns tipos de dados (por exemplo, Favoritos), usando os tipos de backup ativados nas configurações de Backup Automático.
 - Você pode ativar/desativar cada item ou seções inteiras de forma independente.
 - Seus dados permanecem disponíveis localmente mesmo se o backup automático estiver desativado.
 

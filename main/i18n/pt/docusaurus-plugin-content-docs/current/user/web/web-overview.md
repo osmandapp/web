@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Introdução
 title: Introdução ao Planejador Web
@@ -26,9 +26,9 @@ O **Planejador Web**, também conhecido como o [**Portal de Mapas OsmAnd**](http
 
 Projetado como um companheiro multiplataforma para o OsmAnd para Android e iOS, o Portal Web ajuda os usuários a planejar viagens, analisar trilhas, visualizar terrenos e gerenciar arquivos usando qualquer navegador de desktop ou tablet — sem instalar um aplicativo.
 
-O OsmAnd Web se integra perfeitamente com o serviço **OsmAnd Cloud**, que permite sincronizar favoritos, trilhas e backups entre dispositivos e plataformas. Usuários com contas **OsmAnd Start** (gratuita) ou **OsmAnd Pro** (paga) podem aproveitar ao máximo este ecossistema sincronizando dados entre o móvel e a web. Você pode encontrar uma comparação detalhada dos recursos do *Start* e do *Pro* na seção [Acesso por Assinatura](#subscription-access) abaixo.
+O OsmAnd Web se integra perfeitamente com o serviço **OsmAnd Cloud**, que permite sincronizar favoritos, trilhas e backups entre dispositivos e plataformas. Usuários com contas **OsmAnd Start** (gratuita) ou **OsmAnd Pro** (paga) podem aproveitar ao máximo este ecossistema sincronizando dados entre o móvel e a web. Você pode encontrar uma comparação detalhada dos recursos do *Start* e do *Pro* na seção [Acesso por Assinatura](#subscription-accesses) abaixo.
 
-> **Nota:** Mesmo sem fazer login ou verificar sua conta, você ainda pode usar vários recursos principais do Portal de Mapas Web, incluindo: [Rota de Navegação](./planner.md), [Planejador de Rotas](./planner.md), [Sobreposições de Clima](./web-map.md#weather-on-the-web) e [Configurações](#settings).
+> **Nota:** Mesmo sem fazer login ou verificar sua conta, você ainda pode usar vários recursos principais do Portal de Mapas Web, incluindo: [Rota de Navegação](./web-navigation.md), [Planejador de Rotas](./planner.md), [Sobreposições de Clima](./web-weather.md#), e [Configurações](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -42,7 +42,7 @@ O Portal Web oferece as seguintes principais capacidades para trabalhar com mapa
 - [Planejamento de rotas](./planner.md) usando perfis de pedestre, carro, bicicleta e outros.
 - [Navegação](./planner.md) com visualização de instruções virada a virada.
 - [Pesquisa](./web-search.md) e [exploração](./web-search.md#explore) de lugares populares próximos.
-- Exibição de [Favoritos](./web-map.md#favorites), [Trilhas](./web-map.md#tracks) e [POIs](./web-map.md#poi-overlay) no mapa.
+- Exibição de [Favoritos](./web-map.md#favorites), [Trilhas](./web-map.md#tracks), e [POIs](./web-map.md#poi-overlay) no mapa.
 - [Sobreposições de clima](./web-weather.md): vento, temperatura e pressão.
 - [Camadas de terreno](./web-map.md#terrain): relevo sombreado, inclinações e visualização de altitude.
 - [Analisador de Trilhas](./web-tracks-analyzer.md) para perfis de elevação e velocidade.
@@ -67,11 +67,11 @@ O Portal de Mapas Web suporta vários níveis de acesso: sem login, com OsmAnd S
 | [Planejador de Rotas](./planner.md) | Sem Login |
 | [Sobreposições de Clima](./web-weather.md) | Sem Login |
 | [Configurações](./web-map.md#settings) | Sem Login |
-| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Trilhas](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| <ProFeature/> |
-| [Sincronização OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Pesquisa Web, Lugares Populares](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) ou <ProFeature/> |
-| [Pastas de Trilhas e Camada](./web-tracks.md) | <ProFeature/> |
+| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Trilhas](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Sincronização OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Pesquisa Web, Lugares Populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Pastas de Trilhas e Camada](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.

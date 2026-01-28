@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -365,12 +365,12 @@ Se não houver *informações de elevação* na rota, você pode adicioná-las d
 ### Calcular Elevação Faltante {#calculate-missing-elevation}
 
 :::note Assinatura OsmAnd Pro
-O recurso de cálculo de elevação offline está disponível apenas para [**assinantes OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
+O recurso [Calcular elevação offline](../../plan-route/create-route.md#get-elevation-data) está disponível apenas para [**assinantes OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Este recurso permite calcular o perfil de elevação para trilhas GPX offline para qualquer terreno entre 70 graus de latitude norte e 70 graus de latitude sul, com base nos [dados do mapa de terreno](../../plugins/topography.md#download-maps). *Os mapas de terreno (3D) devem ter sido baixados previamente*.
+[Este recurso](../../plan-route/create-route.md#get-elevation-data) permite calcular o perfil de elevação para trilhas GPX offline para qualquer terreno entre 70 graus de latitude norte e 70 graus de latitude sul, com base nos [dados do mapa de terreno](../../plugins/topography.md#download-maps). *Os mapas de terreno (3D) devem ter sido baixados previamente*.
 
 1. Baixe [Mapas de terreno (3D)](../../plugins/topography.md#download-maps) para a região desejada.
 2. Se a trilha não contiver dados de altitude, vá para o menu de contexto da trilha (*Menu de contexto da trilha → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), selecione *Usar mapas de terreno* e, após o cálculo, você obterá um gráfico da trilha com base nos dados de terreno.  
@@ -472,7 +472,7 @@ Toque no botão *Adicionar Waypoint* para abrir a tela de criação de waypoint 
 
 <TabItem value="ios" label="iOS">
 
-![Menu de grupo da trilha iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Menu de grupo da trilha iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Menu de grupo da trilha iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -484,9 +484,9 @@ O *menu de três pontos* ( &#8285; ) abre o *menu de Grupo* de waypoints.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Permite exibir ou não waypoints de grupo no mapa. Ou você pode usar [o botão da tela](#points--waypoints) para exibir ou omitir waypoints de grupo no mapa.
 - **<Translate android="true" ids="shared_string_rename"/>** - Altera o nome do grupo.
-- **<Translate android="true" ids="change_default_appearance"/>** - Altera as opções de exibição para um grupo de waypoints.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Altera as opções de exibição para um grupo de waypoints.
 - **<Translate android="true" ids="add_group_to_markers"/>** ou **Remover** (*Somente Android*) - Move waypoints de grupo para a lista de [Marcadores de mapa](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*Somente Android*) - Permite copiar o grupo de Waypoints selecionado para [Favoritos](../../personal/favorites.md). Você pode escolher uma de duas opções: ***<Translate android="true" ids="copy_as_new_folder"/>*** ou ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Permite copiar o grupo de Waypoints selecionado para [Favoritos](../../personal/favorites.md). Você pode escolher uma de duas opções: ***<Translate android="true" ids="copy_as_new_folder"/>*** ou ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Somente Android*) - Cria uma rota entre waypoints. Os pontos inicial e final se tornam o início e o fim da rota, e o restante é convertido em pontos intermediários.
 - **<Translate android="true" ids="shared_string_delete"/>** - Exclui um grupo de waypoints.
 
@@ -657,7 +657,7 @@ Para cada segmento, você pode visualizar:
 - tempo em movimento.
 - velocidade média e máxima.
 
-Ao tocar em qualquer segmento na lista, a visualização do mapa mostra a trilha completa com seus intervalos e abre o menu de contexto para a trilha na parte inferior da tela.
+Ao tocar em qualquer segmento na lista, a visualização do mapa mostra a trilha completa com seus intervalos e abre o menu de contexto para a trilha na parte inferior da tela. No mapa, os rótulos de intervalo suportam duas ações: toque para abrir o painel de visão geral da trilha e toque longo para abrir o menu de contexto da trilha.
 
 
 ### Dividir por Tempo {#split-by-time}
@@ -669,9 +669,14 @@ A opção **Dividir por Tempo** divide uma trilha em intervalos de duração igu
 
 ### Dividir por Subida/Descida {#split-by-uphill-downhill}
 
-![Aba de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Aba de divisão de trilha por subida/descida](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa de divisão de trilha por subida/descida](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
-Esta opção divide uma trilha em segmentos com base em mudanças de elevação. Cada intervalo é classificado como ***subida***, ***descida*** ou ***plano***. A forma como os intervalos são exibidos, as estatísticas fornecidas para cada segmento e como eles aparecem no mapa também são as mesmas da seção [Dividir por Distância](#split-by-distance).
+Esta opção divide uma trilha em segmentos com base em mudanças de elevação. Cada intervalo é classificado como ***subida***, ***descida*** ou ***plano***. A forma como os intervalos são exibidos e as estatísticas fornecidas para cada segmento são as mesmas da seção [Dividir por Distância](#split-by-distance).
+
+No mapa, os segmentos são marcados com rótulos coloridos no início de cada intervalo:
+- **Segmentos de subida** (rótulos vermelhos) mostram uma seta para cima, o índice do segmento e a inclinação média em porcentagem (por exemplo, ↑ 11. 2%).
+- **Segmentos de descida** (rótulos verdes) mostram uma seta para baixo, o índice do segmento e a inclinação média em porcentagem (por exemplo, ↓ 12. -2%).
+- **Segmentos planos** (rótulos azuis) mostram a distância da seção plana (por exemplo, 616 m, 411 m).
 
 
 ### Métricas de Frequência Cardíaca {#heart-rate-metrics}

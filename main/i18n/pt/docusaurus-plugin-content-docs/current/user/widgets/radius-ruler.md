@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title: Régua de Raio e Régua
 ---
@@ -97,6 +97,7 @@ O [Widget da Régua de Raio](../widgets/info-widgets.md#radius-ruler) mostra a d
 
 Use este widget para estimar a proximidade de pontos de interesse ou planejar em torno de uma área definida.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -118,9 +119,10 @@ Use este widget para estimar a proximidade de pontos de interesse ou planejar em
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Bússola para Régua de Raio {#compass-for-radius-ruler}
+### Bússola {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Esta sobreposição é útil para navegação ao ar livre, permitindo que você 
 | Formato | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Posição Central / Inferior {#center--bottom-position}
+### Posição Central / Inferior {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -171,7 +173,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,layer_map_appearanc
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Outros → Posição do local na tela*
 
-![Posição de exibição iOS](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Régua de raio para baixo](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Posição de exibição Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Régua de raio para baixo](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 
@@ -182,7 +184,7 @@ Para aumentar o raio visível ao redor de sua localização, você pode alterar 
 Para mais informações sobre *a posição na tela*, consulte o artigo [Configurar Tela](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## Visualização 3D {#3d-view}
+### Visualização 3D {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

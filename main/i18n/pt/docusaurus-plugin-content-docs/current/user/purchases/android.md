@@ -1,5 +1,5 @@
 ---
-source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
+source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
 sidebar_position: 1
 title: Compras Android
 ---
@@ -82,8 +82,8 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |
-| **Preço (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Preço (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
+| **Preço (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Preço (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
 
@@ -98,7 +98,7 @@ A tabela abaixo detalha as funcionalidades incluídas nos pacotes gratuito e pag
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
 | [Acesso sem publicidade](#free-and-paid-features) | Sem publicidade | Sem publicidade | Sem publicidade |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | [Iniciar](../personal/osmand-cloud.md#osmand-start) | [Iniciar](../personal/osmand-cloud-md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | [Iniciar](../personal/osmand-cloud.md#osmand-start) | [Iniciar](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Todas as funcionalidades Pro](#pro-features) | **-** | **-** | ✔ |
 | [Relevo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Downloads ilimitados de mapas](../start-with/download-maps.md) | <details><summary>**7 downloads de mapas**</summary>  - Download ou atualização de mapa significa apenas download-atualização de um mapa de país (região). <br/> - **Mapa de visão geral do mundo**, **Correção de altitude mundial**, **Fontes de mapa** e **Instruções de voz** não são contados como 7 possibilidades de download. </details> | ✔ | ✔ |

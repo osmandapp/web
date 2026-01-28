@@ -1,5 +1,5 @@
 ---
-source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
+source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
 sidebar_position: 2
 title: Interagir com o Mapa
 ---
@@ -69,7 +69,7 @@ Você pode personalizar os ícones do botão **Minha Localização** usando as c
 
 ## Lupa do Mapa {#map-magnifier}
 
-A *Lupa do Mapa* é uma ferramenta que melhora a visibilidade do mapa, semelhante a uma lupa usada com mapas de papel. Ela permite que você amplie o mapa para visualizar textos e detalhes com mais clareza ou para ajustar o nível de detalhe mantendo a mesma escala. Para mais informações, consulte o artigo [Mapas Vetoriais](../map/vector-maps.md#map-magnifier).
+A *Lupa do Mapa* é uma ferramenta que melhora a visibilidade do mapa, semelhante a uma lupa usada com mapas de papel. Ela permite que você amplie o mapa para visualizar textos e detalhes com mais clareza ou para ajustar o nível de detalhe mantendo a mesma escala. Para mais informações, vá para o artigo [Mapas Vetoriais](../map/vector-maps.md#map-magnifier).
 
 
 ## Modos de Orientação do Mapa {#map-orientation-modes}
@@ -208,8 +208,8 @@ Você pode desativar todas as animações do mapa durante as interações com o 
 
 ### Animar Posição Própria {#animate-own-position}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
 Cria um efeito de panorâmica suave do mapa em relação ao ícone *[Minha Posição](../personal/profiles/#profile-appearance)* quando em movimento. O efeito introduz um pequeno atraso em relação à realidade de cerca de 1 segundo. A ativação disso tem sido relatada como causadora de alguns problemas de atraso pronunciados em algumas circunstâncias; desative-o se tais problemas surgirem.
 

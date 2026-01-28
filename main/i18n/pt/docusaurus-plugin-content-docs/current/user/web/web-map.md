@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Map
 title: Global Map on the Website
@@ -41,11 +41,12 @@ O mapa web do OsmAnd é um mapa global baseado em dados do [OpenStreetMap (OSM)]
 Para abri-lo, clique com o botão direito em qualquer lugar do mapa. Este menu inclui as seguintes ações:
 
 - **Onde estou** – Encontre rapidamente sua localização atual no mapa. Este recurso exibe os endereços mais próximos ao ponto selecionado no mapa.
-- **Abrir clima** – Acesse o [menu Clima](#weather-on-the-web) para ver os detalhes do clima.
-- **Criar nova rota** – Abre a ferramenta [*Planejar uma rota*](../web/planner.md#navigation-route) com o local selecionado como ponto de partida ou destino.
+- **Abrir clima** – Acesse o [menu Clima](../web/web-weather.md) para ver os detalhes do clima.
+- **Criar nova rota** – Abre a ferramenta [*Planejar uma rota*](../web/web-navigation.md) com o local selecionado como ponto de partida ou destino.
 - **Adicionar Favorito** – Permite criar e salvar um [favorito](../web/web-favorites.md#add--edit-favorite) em qualquer ponto do mapa para fácil acesso.
-- **Rotas de** – Define o ponto selecionado como o [local de partida](../web/planner.md#navigation-route) para navegação.
-- **Rotas para** – Define o ponto selecionado como o [destino para navegação](../web/planner.md#navigation-route).
+- **Rotas de** – Define o ponto selecionado como o [local de partida](../web/web-navigation.md#start-a-route) para navegação.
+- **Rotas para** – Define o ponto selecionado como o [destino para navegação](../web/web-navigation.md#start-a-route).
+- **Copiar coordenadas** – Copia as coordenadas do ponto selecionado para uso externo.
 - **Mostrar regiões** – Exibe as regiões associadas ao local selecionado.
 
 <!--

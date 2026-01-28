@@ -1,7 +1,7 @@
 ---
-source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
+source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
 sidebar_position: 13
-title: Vista de Mapa de Esqui
+title: Visualização de Mapa de Esqui
 ---
 
 import Tabs from '@theme/Tabs';
@@ -239,8 +239,8 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 Para descobrir quais pistas fora da estação de esqui você pode navegar, você precisa ativar a opção **Pistas de esqui e rotas** na lista [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), aberta no menu [Configurar mapa](../map/configure-map-menu.md).  
 
-Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) ativados, as [Pistas de esqui e rotas](../map/vector-maps.md#ski-slopes-and-routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.  
-Ao ativar a opção [Pistas de esqui e rotas](../map/vector-maps.md#ski-slopes-and-routes) para um estilo de mapa diferente de Inverno e Esqui, apenas as pistas são exibidas. Outros recursos relacionados ao esqui podem não ser mostrados nesta camada de estilo.  
+Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) ativados, as [Pistas de esqui e rotas](../map/routes.md#ski-slopes-and-routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.  
+Ao ativar a opção [Pistas de esqui e rotas](../map/routes.md#ski-slopes-and-routes) para um estilo de mapa diferente de Inverno e Esqui, apenas as pistas são exibidas. Outros recursos relacionados ao esqui podem não ser mostrados nesta camada de estilo.  
 _Pistas de esqui e rotas_ [são clicáveis](../map/routes.md#actions-with-routes).
 
 
