@@ -1,5 +1,14 @@
 import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, CircularProgress, IconButton, Toolbar, Typography } from '@mui/material';
+import {
+    AppBar,
+    Box,
+    CircularProgress,
+    IconButton,
+    Toolbar,
+    Typography,
+    ToggleButton,
+    ToggleButtonGroup,
+} from '@mui/material';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
@@ -26,6 +35,10 @@ import gStyles from '../gstylesmenu.module.css';
 import TagFilter from './TagFilter';
 
 export const ALL_YEARS = 'all';
+export const TAG_MATCH_MODES = {
+    OR: 'OR',
+    AND: 'AND',
+};
 
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
@@ -44,6 +57,7 @@ export default function TravelMenu() {
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
     const [selectedTags, setSelectedTags] = useState([]);
+    const [tagMatchMode, setTagMatchMode] = useState(TAG_MATCH_MODES.OR);
 
     useEffect(() => {
         if (ctx.searchTravelRoutes?.res) {
@@ -57,14 +71,16 @@ export default function TravelMenu() {
             activity: selectedActivityType,
             year: selectedYear,
             tags: selectedTags,
+            tagMatchMode,
         });
-    }, [selectedActivityType, selectedYear, selectedTags]);
+    }, [selectedActivityType, selectedYear, selectedTags, tagMatchMode]);
 
     useEffect(() => {
         if (ctx.travelFilter) {
             setSelectedActivityType(ctx.travelFilter.activity);
             setSelectedYear(ctx.travelFilter.year);
             setSelectedTags(ctx.travelFilter.tags || []);
+            setTagMatchMode(ctx.travelFilter.tagMatchMode || TAG_MATCH_MODES.OR);
         }
     }, []);
 
@@ -148,6 +164,7 @@ export default function TravelMenu() {
         setSelectedActivityType(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
         setSelectedTags([]);
+        setTagMatchMode(TAG_MATCH_MODES.OR);
         ctx.setOpenTravel(false);
     }
 
@@ -162,17 +179,11 @@ export default function TravelMenu() {
     async function showRoutes() {
         setLoadingResult(true);
         setTravelResult(null);
-        const tagsMap =
-            selectedTags && selectedTags.length > 0
-                ? selectedTags.reduce((acc, tag) => {
-                      acc[tag] = true;
-                      return acc;
-                  }, {})
-                : null;
         ctx.setSearchTravelRoutes({
             activity: selectedActivityType,
             year: selectedYear,
-            tags: tagsMap,
+            tags: selectedTags,
+            tagMatchMode,
         });
     }
 
@@ -181,6 +192,7 @@ export default function TravelMenu() {
         setSelectedActivityType(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
         setSelectedTags([]);
+        setTagMatchMode(TAG_MATCH_MODES.OR);
     }
 
     return (
@@ -223,6 +235,23 @@ export default function TravelMenu() {
                             marginLeft={'250px'}
                         />
                         <TagFilter selectedTags={selectedTags} onChangeTags={setSelectedTags} />
+                        <Box sx={{ mx: 2, mt: 1 }}>
+                            <ToggleButtonGroup
+                                fullWidth
+                                size="small"
+                                className={styles.tagMatchToggleGroup}
+                                exclusive
+                                value={tagMatchMode}
+                                onChange={(event, value) => {
+                                    if (value) {
+                                        setTagMatchMode(value);
+                                    }
+                                }}
+                            >
+                                <ToggleButton value={TAG_MATCH_MODES.OR}>Matches any tag</ToggleButton>
+                                <ToggleButton value={TAG_MATCH_MODES.AND}>Contains all tags</ToggleButton>
+                            </ToggleButtonGroup>
+                        </Box>
                         <Box sx={{ m: 2 }}>
                             <PrimaryBtn
                                 action={showRoutes}

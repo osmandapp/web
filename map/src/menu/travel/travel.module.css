@@ -29,3 +29,16 @@
     flex-wrap: wrap;
     gap: 6px;
 }
+
+.tagMatchToggleGroup {
+    height: 36px !important;
+}
+
+.tagMatchToggleGroup :global(.MuiToggleButton-root) {
+    text-transform: none !important;
+    color: #237bff !important;
+}
+
+.tagMatchToggleGroup :global(.Mui-selected) {
+    color: #212121 !important;
+}
