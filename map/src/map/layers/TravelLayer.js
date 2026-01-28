@@ -9,6 +9,50 @@ import { addDistance } from '../../manager/track/TracksManager';
 import { clusterMarkers } from '../util/Clusterizer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 
+function buildOsmPopupHtml({ id, name, user }) {
+    let html = '';
+    if (name) {
+        html += name;
+    }
+    if (user && id !== undefined && id !== null) {
+        const encodedUser = encodeURIComponent(user);
+        const url = `https://www.openstreetmap.org/user/${encodedUser}/traces/${id}`;
+        if (html) {
+            html += '<br/>';
+        }
+        html += `<a href="${url}" target="_blank" rel="noopener noreferrer">Open in OpenStreetMap</a>`;
+    }
+    return html;
+}
+
+function attachAutoClosePopup(layer, html, offset) {
+    if (!html) {
+        return;
+    }
+    layer.bindPopup(html, {
+        offset,
+        closeButton: false,
+        autoPan: false,
+    });
+    let closeTimeout = null;
+    layer.on('mouseover', () => {
+        if (closeTimeout) {
+            clearTimeout(closeTimeout);
+            closeTimeout = null;
+        }
+        layer.openPopup();
+    });
+    layer.on('mouseout', () => {
+        if (closeTimeout) {
+            clearTimeout(closeTimeout);
+        }
+        closeTimeout = setTimeout(() => {
+            layer.closePopup();
+            closeTimeout = null;
+        }, 1000);
+    });
+}
+
 export default function TravelLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -66,9 +110,19 @@ export default function TravelLayer() {
                             weight: ROUTE_WIDTH,
                             id: route.properties.id,
                         });
+                        const html = buildOsmPopupHtml({
+                            id: route.properties.id,
+                            name: route.properties.name || '',
+                            user: route.properties.user,
+                        });
+                        attachAutoClosePopup(polyline, html, [0, 0]);
                         polyline.on('click', (e) => openInfoBlock(e.target.options.id));
-                        polyline.on('mouseover', () => ctx.setSelectedTravelRoute({ route, hover: true }));
-                        polyline.on('mouseout', () => ctx.setSelectedTravelRoute({ route, hover: false }));
+                        polyline.on('mouseover', () => {
+                            ctx.setSelectedTravelRoute({ route, hover: true });
+                        });
+                        polyline.on('mouseout', () => {
+                            ctx.setSelectedTravelRoute({ route, hover: false });
+                        });
                         routeLayers.push(polyline);
                     });
                 } else if (route.properties.point) {
@@ -122,47 +176,12 @@ export default function TravelLayer() {
                         weight: 1,
                     }).build();
                     const id = place.properties.id;
-                    const name = place.properties.name || '';
-                    const user = place.properties.user;
-                    let url = null;
-                    if (user && id !== undefined && id !== null) {
-                        const encodedUser = encodeURIComponent(user);
-                        url = `https://www.openstreetmap.org/user/${encodedUser}/traces/${id}`;
-                    }
-                    let html = '';
-                    if (name) {
-                        html += name;
-                    }
-                    if (url) {
-                        if (html) {
-                            html += '<br/>';
-                        }
-                        html += `<a href="${url}" target="_blank" rel="noopener noreferrer">Open in OpenStreetMap</a>`;
-                    }
-                    if (html) {
-                        marker.bindPopup(html, {
-                            offset: [0, -radius],
-                            closeButton: false,
-                            autoPan: false,
-                        });
-                        let closeTimeout = null;
-                        marker.on('mouseover', () => {
-                            if (closeTimeout) {
-                                clearTimeout(closeTimeout);
-                                closeTimeout = null;
-                            }
-                            marker.openPopup();
-                        });
-                        marker.on('mouseout', () => {
-                            if (closeTimeout) {
-                                clearTimeout(closeTimeout);
-                            }
-                            closeTimeout = setTimeout(() => {
-                                marker.closePopup();
-                                closeTimeout = null;
-                            }, 1000);
-                        });
-                    }
+                    const html = buildOsmPopupHtml({
+                        id,
+                        name: place.properties.name || '',
+                        user: place.properties.user,
+                    });
+                    attachAutoClosePopup(marker, html, [0, -radius]);
                     marker.on('click', () => openInfoBlock(id));
                     markers.push(marker);
                 }
