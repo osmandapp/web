@@ -6,7 +6,7 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import CloudTrackItem from '../tracks/CloudTrackItem';
-import EmptyVisible from '../errors/EmptyVisible';
+import EmptyVisible, { EMPTY_VISIBLE_HEIGHT } from '../errors/EmptyVisible';
 import isEmpty from 'lodash-es/isEmpty';
 import { DEFAULT_GROUP_NAME, getFileName, TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
@@ -118,6 +118,7 @@ export default function VisibleTracks({ source, open }) {
     }, [ctx.visibleTracks]);
 
     const isLoading = ctx.gpxLoading;
+    const showEmptyVisible = isEmpty(ctx.visibleTracks?.new) && hasTracks();
 
     const trackItems = useMemo(() => {
         const items = [];
@@ -253,10 +254,15 @@ export default function VisibleTracks({ source, open }) {
                     <Loading />
                 ) : (
                     <>
-                        {isEmpty(ctx.visibleTracks?.new) && hasTracks() && <EmptyVisible id="se-empty-visible" />}
+                        {showEmptyVisible && <EmptyVisible id="se-empty-visible" />}
                         {hasVisibleTracks() && (
                             <Box
-                                sx={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', maxHeight: `${height - 120}px` }}
+                                sx={{
+                                    flex: 1,
+                                    overflowY: 'auto',
+                                    overflowX: 'hidden',
+                                    maxHeight: `${height - 120 - (showEmptyVisible ? EMPTY_VISIBLE_HEIGHT : 0)}px`,
+                                }}
                             >
                                 <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
                                     {trackItems}
