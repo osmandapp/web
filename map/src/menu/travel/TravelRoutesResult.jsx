@@ -6,6 +6,8 @@ import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useInView } from 'react-intersection-observer';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import { FixedSizeList } from 'react-window';
+import { Box } from '@mui/material';
 
 const TravelRoute = ({ route }) => {
     const { ref, inView } = useInView();
@@ -45,7 +47,7 @@ const TravelRoute = ({ route }) => {
                         <TrackIcon />
                     </ListItemIcon>
                     <ListItemText>
-                        <MenuItemWithLines name={route.properties.description} maxLines={3} />
+                        <MenuItemWithLines name={route.properties.description} maxLines={1} />
                         <Typography variant="body2" className={styles.groupInfo} noWrap>
                             {Number.isFinite(route.properties.distance)
                                 ? `${(route.properties.distance / 1000).toFixed(2)} km · `
@@ -61,9 +63,32 @@ const TravelRoute = ({ route }) => {
     );
 };
 
+// Keep in sync with --menu-item-size (68px) from variables.css + 1px divider
+const ITEM_HEIGHT = 69;
+const SECTION_HEIGHT = 750;
+
 const TravelRoutesResult = React.memo(({ routes }) => {
+    if (!routes || routes.length === 0) {
+        return null;
+    }
+
+    const itemCount = routes.length;
+
     return (
-        <>{routes && routes.map((route, index) => <TravelRoute key={route.properties.id || index} route={route} />)}</>
+        <Box sx={{ overflowX: 'hidden' }}>
+            <FixedSizeList
+                height={Math.min(itemCount * ITEM_HEIGHT, SECTION_HEIGHT)}
+                itemCount={itemCount}
+                itemSize={ITEM_HEIGHT}
+                width={'100%'}
+            >
+                {({ index, style }) => (
+                    <div style={style}>
+                        <TravelRoute route={routes[index]} />
+                    </div>
+                )}
+            </FixedSizeList>
+        </Box>
     );
 });
 TravelRoutesResult.displayName = 'TravelRoutesResult';

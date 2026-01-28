@@ -8,6 +8,7 @@ import {
     ToggleButtonGroup,
     Toolbar,
     Typography,
+    SvgIcon,
 } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -28,6 +29,8 @@ import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
+import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
+import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
 import capitalize from 'lodash-es/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import LoginContext from '../../context/LoginContext';
@@ -60,6 +63,7 @@ export default function TravelMenu() {
     const [loadingResult, setLoadingResult] = useState(false);
     const [selectedTags, setSelectedTags] = useState([]);
     const [tagMatchMode, setTagMatchMode] = useState(TAG_MATCH_MODES.OR);
+    const [sortByDistance, setSortByDistance] = useState(null); // 'asc' | 'desc' | null
 
     useEffect(() => {
         if (ctx.searchTravelRoutes?.res) {
@@ -205,7 +209,29 @@ export default function TravelMenu() {
         setSelectedYear(DEFAULT_YEAR);
         setSelectedTags([]);
         setTagMatchMode(TAG_MATCH_MODES.OR);
+        setSortByDistance(null);
     }
+
+    const sortedRoutes = useMemo(() => {
+        const features = travelResult?.features;
+        if (!features?.length) {
+            return [];
+        }
+        if (!sortByDistance) {
+            return features;
+        }
+        const hasDistance = features.some((r) => Number.isFinite(r.properties?.distance));
+        if (!hasDistance) {
+            return features;
+        }
+        const copy = [...features];
+        copy.sort((a, b) => {
+            const da = Number.isFinite(a.properties?.distance) ? a.properties.distance : Infinity;
+            const db = Number.isFinite(b.properties?.distance) ? b.properties.distance : Infinity;
+            return sortByDistance === 'asc' ? da - db : db - da;
+        });
+        return copy;
+    }, [travelResult, sortByDistance]);
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
@@ -272,16 +298,57 @@ export default function TravelMenu() {
                                     text={t('shared_string_show')}
                                 />
                             </Box>
-                            {loadingResult && <CircularProgress sx={{ mt: 2, ml: 2 }} size={36} />}
+                            {loadingResult && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
                         </Box>
-                        <Box className={gStyles.scrollActiveBlock}>
+                        <Box sx={{ flex: 1, overflow: 'hidden' }}>
                             {travelResult &&
                                 (travelResult?.features?.length > 0 ? (
                                     <>
-                                        <Typography variant="body2" sx={{ mt: 2, ml: 2 }}>
-                                            Results: {travelResult?.features?.length || 0}
-                                        </Typography>
-                                        <TravelRoutesResult routes={travelResult.features} />
+                                        <Box
+                                            sx={{
+                                                mt: 2,
+                                                mx: 2,
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'space-between',
+                                            }}
+                                        >
+                                            <Typography variant="body2">
+                                                Results: {travelResult?.features?.length || 0}
+                                            </Typography>
+                                            {travelResult.features.some((r) =>
+                                                Number.isFinite(r.properties?.distance)
+                                            ) && (
+                                                <ToggleButtonGroup
+                                                    size="small"
+                                                    exclusive
+                                                    value={sortByDistance}
+                                                    className={styles.distanceSortToggleGroup}
+                                                    onChange={(event, value) => {
+                                                        if (!value) {
+                                                            return;
+                                                        }
+                                                        setSortByDistance(value);
+                                                    }}
+                                                >
+                                                    <ToggleButton value="asc">
+                                                        <SvgIcon
+                                                            className={styles.distanceSortIcon}
+                                                            component={ShortToLongIcon}
+                                                            inheritViewBox
+                                                        />
+                                                    </ToggleButton>
+                                                    <ToggleButton value="desc">
+                                                        <SvgIcon
+                                                            className={styles.distanceSortIcon}
+                                                            component={LongToShortIcon}
+                                                            inheritViewBox
+                                                        />
+                                                    </ToggleButton>
+                                                </ToggleButtonGroup>
+                                            )}
+                                        </Box>
+                                        <TravelRoutesResult routes={sortedRoutes} />
                                     </>
                                 ) : (
                                     <EmptyTravel reset={resetSearch} />
