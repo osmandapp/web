@@ -23,6 +23,7 @@ import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
+import TagFilter from './TagFilter';
 
 export const ALL_YEARS = 'all';
 
@@ -42,6 +43,7 @@ export default function TravelMenu() {
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
+    const [selectedTags, setSelectedTags] = useState([]);
 
     useEffect(() => {
         if (ctx.searchTravelRoutes?.res) {
@@ -54,13 +56,15 @@ export default function TravelMenu() {
         ctx.setTravelFilter({
             activity: selectedActivityType,
             year: selectedYear,
+            tags: selectedTags,
         });
-    }, [selectedActivityType, selectedYear]);
+    }, [selectedActivityType, selectedYear, selectedTags]);
 
     useEffect(() => {
         if (ctx.travelFilter) {
             setSelectedActivityType(ctx.travelFilter.activity);
             setSelectedYear(ctx.travelFilter.year);
+            setSelectedTags(ctx.travelFilter.tags || []);
         }
     }, []);
 
@@ -143,6 +147,7 @@ export default function TravelMenu() {
         setTravelResult(null);
         setSelectedActivityType(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
+        setSelectedTags([]);
         ctx.setOpenTravel(false);
     }
 
@@ -157,9 +162,17 @@ export default function TravelMenu() {
     async function showRoutes() {
         setLoadingResult(true);
         setTravelResult(null);
+        const tagsMap =
+            selectedTags && selectedTags.length > 0
+                ? selectedTags.reduce((acc, tag) => {
+                      acc[tag] = true;
+                      return acc;
+                  }, {})
+                : null;
         ctx.setSearchTravelRoutes({
             activity: selectedActivityType,
             year: selectedYear,
+            tags: tagsMap,
         });
     }
 
@@ -167,6 +180,7 @@ export default function TravelMenu() {
         setTravelResult(null);
         setSelectedActivityType(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
+        setSelectedTags([]);
     }
 
     return (
@@ -208,6 +222,7 @@ export default function TravelMenu() {
                             my={'0px'}
                             marginLeft={'250px'}
                         />
+                        <TagFilter selectedTags={selectedTags} onChangeTags={setSelectedTags} />
                         <Box sx={{ m: 2 }}>
                             <PrimaryBtn
                                 action={showRoutes}

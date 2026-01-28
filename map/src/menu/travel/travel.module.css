@@ -16,3 +16,16 @@
     align-items: center !important;
     gap: 8px !important;
 }
+
+.tagFilterContainer {
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tagChipsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
