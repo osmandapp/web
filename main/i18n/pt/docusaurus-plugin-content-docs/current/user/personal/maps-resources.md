@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title: Mapas e Recursos
 ---
@@ -428,11 +428,13 @@ Quando um mapa é desativado, ele pode desaparecer temporariamente da aba Local.
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Menu de mapas Atualizar mapas iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Previsão do tempo Atualizar mapas iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Menu de mapas Atualizar mapas iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Previsão do tempo Atualizar mapas iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 A aba **Atualizações** permite atualizar mapas e recursos do OsmAnd. Mapas padrão e somente estradas são lançados uma vez por mês, geralmente entre o dia 2 e o dia 5, e incluem dados do OpenStreetMap até o último dia do mês anterior (por exemplo, o lançamento de outubro contém dados até 30 de setembro). Outros dados, como Wikipedia, terreno ou mapas náuticos, podem seguir cronogramas de atualização diferentes e não regulares. 
 
 Use o botão *Atualizar tudo* para atualizar todos os mapas simultaneamente, ou atualize mapas individuais conforme necessário. Para atualizações por hora, verifique o status da sua assinatura de [Atualizações ao vivo](#live-updates). Se ativado, a seção **Atualizações ao vivo** aparecerá na parte superior da aba, abaixo do indicador de Memória do Dispositivo.
+
+A aba **Atualizações** também pode exibir um item **Mapas não suportados**. Ele aparece quando você tem mapas que não são mais suportados e foram substituídos por regiões menores. Toque em Mapas não suportados para revisar a lista, remover mapas desatualizados e baixar as novas versões de região em vez disso. Na tela de Mapas não suportados, você pode visualizar todos os mapas não suportados e usar Excluir tudo para removê-los de uma vez (um prompt de confirmação é exibido antes da exclusão).
 
 A aba **Atualizações** também inclui uma seção de Previsão do tempo. Ela foi projetada para gerenciar suas previsões offline para países selecionados:
 

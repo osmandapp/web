@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Clima
 title: Clima na Web
@@ -24,11 +24,11 @@ O recurso de Clima no Mapa Web do OsmAnd exibe condições climáticas atuais e 
 Os dados climáticos estão disponíveis sem necessidade de login. A visualização de Clima pode ser aberta diretamente da interface do mapa, seja clicando no ícone de guarda-chuva no painel de menu ou clicando com o botão direito no mapa e selecionando Abrir clima no menu de contexto.
 
 
-## Fonte de Dados {#data-source}
+## Data Source {#data-source}
 
 O OsmAnd Web fornece informações climáticas de duas fontes de previsão:
 
-- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – a fonte padrão operada pela NOAA/NWS. Fornece dados climáticos completos, incluindo camadas de temperatura, pressão, umidade, vento e nuvens.  
+- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – a fonte padrão operada pela NOAA/NWS. Fornece dados climáticos completos, incluindo temperatura, pressão, umidade, vento e camadas de nuvens.  
 - [**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – uma fonte de previsão alternativa. Oferece dados de alta qualidade de temperatura, precipitação e pressão, mas não fornece informações de vento ou nuvens.  
 
 Para alternar entre elas, clique no **botão guarda-chuva** no menu de Clima.
@@ -36,7 +36,7 @@ Para alternar entre elas, clique no **botão guarda-chuva** no menu de Clima.
 ![Clima no OsmAnd Web](@site/static/img/web/weather_source.png)
 
 
-## Menu de Clima {#weather-menu}
+## Weather Menu {#weather-menu}
 
 O **menu de Clima** exibe condições climáticas atuais e dados de previsão para o local selecionado no mapa. Ele combina uma visualização resumida, controles de tempo e camadas climáticas em um único painel.
 
@@ -58,7 +58,7 @@ Na parte inferior do painel, são exibidas informações sobre o horário de ger
 ![Clima no OsmAnd Web](@site/static/img/web/weather_menu.png)
 
 
-## Camadas de Clima {#weather-layers}
+## Weather Layers {#weather-layers}
 
 As camadas de clima permitem visualizar os dados de previsão diretamente no mapa como uma sobreposição. Elas ajudam a avaliar rapidamente as condições climáticas em uma área mais ampla, em vez de visualizar valores apenas para um único ponto.
 
@@ -76,7 +76,7 @@ Todas as camadas de clima estão sincronizadas com a data e hora selecionadas no
 ![Clima no OsmAnd Web](@site/static/img/web/weather_layers.png)
 
 
-## Visualização de Previsão {#forecast-view}
+## Forecast View {#forecast-view}
 
 As previsões climáticas estão disponíveis para até 7 dias à frente. Os valores de previsão são calculados em intervalos de 3 horas, permitindo examinar mudanças de curto prazo ao longo de cada dia.
 
@@ -89,7 +89,7 @@ Você pode alternar entre diferentes parâmetros climáticos usando os ícones n
 ![Clima no OsmAnd Web](@site/static/img/web/weather_forecast.png)
 
 
-## Artigo Relacionado {#related-article}
+## Related Articles {#related-articles}
 
 - [Clima](../plugins/weather.md)
 - [Introdução](../web/web-overview.md)

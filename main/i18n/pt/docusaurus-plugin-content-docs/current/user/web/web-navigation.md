@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -45,6 +45,8 @@ Trocar Início e Destino — troca o Início e o Destino mantendo os pontos inte
 
 No topo do painel de Rota, você pode escolher um perfil de roteamento para sua rota. Um conjunto de perfis comumente usados é mostrado como quatro ícones. Para acessar mais opções, abra o menu de três pontos ao lado dos ícones de perfil. Ele expande a lista completa de perfis disponíveis.
 
+Os perfis de roteamento no Planejador da Web usam as mesmas regras e configurações de roteamento que no aplicativo móvel OsmAnd. Para detalhes sobre como as rotas são calculadas e como os parâmetros de roteamento funcionam, consulte [OsmAnd Routing](https://osmand.net/docs/user/navigation/routing/osmand-routing).
+
 Quando você alterna o perfil, a Navegação atualiza a rota para corresponder ao modo de viagem selecionado.
 
 ![Navegação na Web](@site/static/img/web/navigation_profile.png)
@@ -52,7 +54,7 @@ Quando você alterna o perfil, a Navegação atualiza a rota para corresponder a
 
 ## Configurações de Navegação {#navigation-settings}
 
-Para ajustar como as rotas são calculadas, abra Configurações usando o ícone de engrenagem no painel de Rota. As configurações são agrupadas em seções que você pode expandir/recolher. O conjunto de seções e opções depende do perfil de roteamento selecionado, então você verá parâmetros diferentes para diferentes modos de viagem.
+Para ajustar como as rotas são calculadas, abra Configurações usando o ícone de engrenagem no painel de Rota (para configurações de navegação no aplicativo móvel OsmAnd, consulte [aqui](https://osmand.net/docs/user/navigation/guidance/navigation-settings)). As configurações são agrupadas em seções que você pode expandir/recolher. O conjunto de seções e opções depende do perfil de roteamento selecionado, então você verá parâmetros diferentes para diferentes modos de viagem.
 
 Seções típicas incluem:
 
@@ -66,7 +68,7 @@ Seções típicas incluem:
 
 ## Anexar Trilha {#attaching-track}
 
-O bloco **Anexar a estradas** permite que você use uma trilha GPX existente como base para a navegação. O OsmAnd Web combina a trilha com estradas próximas para fornecer orientação por turnos.
+O bloco **[Anexar a estradas](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** permite que você use uma trilha GPX existente como base para a navegação. O OsmAnd Web combina a trilha com estradas próximas para fornecer orientação por turnos.
 
 Quando você clica em Selecionar trilha, o navegador abre um seletor de arquivos onde você pode escolher um arquivo .gpx do seu computador. Após selecionar uma trilha:
 - A trilha é exibida no mapa e usada para calcular a rota.
@@ -86,7 +88,7 @@ Info resume a rota e dados de elevação:
 - **Rota** — distância e tempo.
 - **Subida/Descida** — ascensão e descida totais.
 - **Elevação (mín/média/máx)** — estatísticas de elevação para a rota.
-- **Elevação (Satélite)** — Recalcular para reconstruir a elevação usando dados de satélite (se disponível).
+- **Elevação (Satélite)** — recalcula os dados de elevação da trilha usando dados de terreno (DEM) e atualiza o gráfico de elevação.
 
 Abaixo do resumo, o gráfico de elevação ajuda você a inspecionar o perfil da rota. Você pode alternar Elevação e Inclinação, e usar o controle deslizante sob o gráfico para focar em uma parte específica da rota.
 
@@ -105,10 +107,18 @@ Você pode ajustar finamente a rota diretamente no mapa arrastando marcadores de
 ### Baixar e Salvar {#download-and-save}
 
 Use *Baixar* para exportar a rota como uma trilha. A caixa de diálogo de download oferece duas opções:
-Dados completos da trilha — inclui dados completos, incluindo instruções de navegação.
-Trilha simplificada — uma versão mais leve que é mais adequada para uso com outros aplicativos.
+**Dados completos da trilha** — inclui dados completos, incluindo instruções de navegação.
+**[Trilha simplificada](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — uma versão mais leve que é mais adequada para uso com outros aplicativos.
+
+Se você planeja abrir o GPX em aplicativos de terceiros, escolha Trilha simplificada para melhor compatibilidade. Isso ajuda a evitar casos em que outro aplicativo pode exibir um segmento incorreto após a importação.
+
+Qual é a diferença:
+- Dados completos da trilha podem incluir informações de rota/navegação além da geometria da trilha (útil se você quiser manter instruções de navegação ou reeditar a rota no OsmAnd).
+- Trilha simplificada exporta um GPX mais limpo destinado a outros aplicativos, removendo dados de rota/navegação e deixando apenas o formato da trilha. Waypoints são preservados ao exportar uma trilha simplificada.
 
 Você pode salvar a rota como uma trilha usando *Salvar na Nuvem / Carregar para OsmAnd Cloud*. Isso abre uma caixa de diálogo onde você pode confirmar a salvação em trilhas na nuvem, editar o Nome, opcionalmente escolher uma Pasta, então Salvar ou Cancelar.
+
+![Navegação na Web](@site/static/img/web/download_options.png)
 
 ### Compartilhar uma Rota {#share-a-route}
 
@@ -119,5 +129,6 @@ Para compartilhar a rota, copie a URL. Exemplo: [https://osmand.net/map/?start=4
 
 - [Preparação de Rota](../navigation/setup/route-navigation.md)
 - [Configurações de Navegação](../navigation/guidance/navigation-settings.md)
+- [Sobre o roteamento do OsmAnd](../navigation/routing/osmand-routing.md)
 - [Parâmetros do Veículo](../navigation/guidance/vehicle-parameters.md)
 - [Planejar Rota](../web/planner.md)

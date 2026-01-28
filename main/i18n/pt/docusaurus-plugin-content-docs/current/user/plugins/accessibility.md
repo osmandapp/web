@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title: Acessibilidade
 ---
@@ -73,7 +73,7 @@ A versão iOS do OsmAnd usa as **ferramentas de acessibilidade integradas** do s
 2. **Recursos suportados**:
    - **Suporte a leitor de tela** para interações com o mapa.
    - **Gestos personalizáveis** através das configurações do iOS.
-   - Todos os [gestos padrão do OsmAnd](../map/interact-with-map.md#gestures) estão disponíveis.
+   - Todos os [gestos padrão do OsmAnd](../map/interact-with-map.md#gestos) estão disponíveis.
 
 3. **Saiba mais**:
    - Leia sobre os recursos de Acessibilidade Visual do iOS [aqui](https://www.apple.com/accessibility/vision/).
@@ -96,14 +96,18 @@ Para ativar:
 
 - Um toque longo no **Minha localização** abre um menu com as opções ***Mostrar sua posição*** e ***Mostrar detalhes***. Selecionar Mostrar detalhes exibe informações adicionais da rota e fornece o botão ***Iniciar/Parar anúncio automático***.
 - Defina o **Período de Anúncio Automático** (por exemplo, *10 segundos*) para controlar a frequência dos anúncios.
-- Se o **TalkBack** não estiver ativado nas configurações do sistema do dispositivo, o OsmAnd não fornecerá *notificações por voz* e exibirá apenas *notificações de texto* na tela.  
+- Com o **TalkBack** ativado, essas notificações são faladas em voz alta. Se o **TalkBack** não estiver ativado nas configurações do sistema do dispositivo, o OsmAnd não fornecerá *notificações por voz* e exibirá apenas *notificações de texto* na tela.  
 
 ### Anúncio Automático Inteligente {#smart-autoannounce}
 
 Para ativar:
 *Plugins* → *Acessibilidade* → *Configurações* → *Anúncio Automático Inteligente*
 
-O recurso **Anúncio Automático Inteligente** fornece *notificações em áudio* quando você desvia da rota planejada. Ele é projetado para apoiar usuários com deficiência visual que dependem de *orientação por voz*.  
+O recurso **Anúncio Automático Inteligente** funciona sobre o Anúncio Automático. Inicie o Anúncio Automático primeiro e, em seguida, ative o Anúncio Automático Inteligente nas configurações do plugin.
+
+Quando o Anúncio Automático Inteligente está ativado, os anúncios são acionados quando o alvo de navegação atual altera seu setor. Isso geralmente acontece quando o seu movimento altera a direção para a próxima curva ou destino. Quando o Anúncio Automático Inteligente está desativado, o OsmAnd exibe notificações periódicas de acordo com o Período de Anúncio Automático.
+
+**Nota:** Apenas o Período de Anúncio Automático pode ser ajustado. O gatilho de “alteração de setor” não é configurável nas configurações do aplicativo. 
 
 
 ## Configurações do Plugin {#plugin-settings}

@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title: Primeiros Passos
 ---
@@ -642,13 +642,15 @@ Permite que você faça perguntas ou sugestões.
 
 <TabItem value="ios" label="iOS">
 
-![Menu de mapas iOS](@site/static/img/steps/offline_about_ios.png)
+![Menu de mapas iOS](@site/static/img/steps/offline_about_ios_new.png) ![Menu de mapas iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Você pode aprender sobre nossa equipe, ver a versão atual do aplicativo e as novidades, e baixar a versão beta do aplicativo.
+
+A compilação é exibida no formato OsmAnd Maps &lt;build&gt;, lançada em &lt;date&gt;. Para compartilhar rapidamente esta informação com o suporte, toque e segure a linha da compilação para copiar o número da compilação junto com a data de lançamento.
 
 
 ## Privacidade {#privacy}

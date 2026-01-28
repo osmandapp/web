@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title: Tempo
 ---
@@ -37,7 +37,7 @@ As seguintes configurações são *necessárias* para exibir o Tempo no mapa do 
 
 **3.** [Selecione as **unidades de medida**](#weather-settings) para as ocorrências meteorológicas.
 
-**4.** [Exiba as **camadas de Tempo**](#customize-weather-layers) no mapa usando o item de menu Tempo no menu Configurar mapa (lembre-se de diminuir o zoom).
+**4.** [Exiba as **camadas de Tempo**](#customize-weather-layers) no mapa usando o item de menu Tempo no menu Configurar mapa (lembre-se de dar zoom para fora).
 
 **5.** [Visualize a **previsão do tempo**](#weather-forecast-screen) para a área selecionada (este menu permite que a tela principal do mapa do OsmAnd não seja sobrecarregada com camadas meteorológicas).
 
@@ -171,7 +171,7 @@ Na versão iOS do OsmAnd, você pode alterar as unidades de medida e o nível de
 
 ### Camadas de Tempo {#weather-layers}
 
-Todos os dados meteorológicos são apresentados como camadas de mapa separadas. Para ver as camadas meteorológicas no mapa, você precisa diminuir o zoom, elas estão disponíveis apenas em escalas de zoom de 2 a 12. As camadas meteorológicas usam [paletas de tempo](../personal/color-palette-schemes.md#weather) para colorir o mapa, essas paletas podem ser [alteradas](../personal/color-palette-schemes.md#edit-palette-file) se necessário.
+Todos os dados meteorológicos são apresentados como camadas de mapa separadas. Para ver as camadas meteorológicas no mapa, você precisa dar zoom para fora, elas estão disponíveis apenas em escalas de zoom de 2 a 12. As camadas meteorológicas usam [paletas de tempo](../personal/color-palette-schemes.md#weather) para colorir o mapa, essas paletas podem ser [alteradas](../personal/color-palette-schemes.md#palette-modify) se necessário.
 
 | |
 |------------|

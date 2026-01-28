@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title: Rotas
 ---
@@ -119,12 +119,12 @@ Alguns segmentos de estrada podem fazer parte de muitas rotas, mas podem ser col
 - _Pistas e rotas de esqui_ no estilo de mapa _OsmAnd padrão_.  
 ![Rotas do mapa - pistas de esqui](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Pistas e rotas de esqui são um grupo específico de [rotas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) no OpenStreetMap. Tipicamente, essas rotas podem ser usadas com o estilo de mapa [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) com todas as [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visíveis. Se outro estilo de mapa estiver ativo, uma faixa é exibida sugerindo a troca para [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) (*apenas Android*) e apenas as Pistas são exibidas. Toque em ***Trocar*** para alterar o estilo de mapa sem sair da tela atual, ou ***Mais tarde*** para ocultar a faixa.
+Pistas e rotas de esqui são um grupo específico de [rotas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) no OpenStreetMap. Tipicamente, essas rotas podem ser usadas com o estilo de mapa [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) com todas as [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visíveis. Se outro estilo de mapa estiver ativo, uma faixa é exibida sugerindo a troca para [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) (*apenas Android*) e apenas as pistas são exibidas. Toque em ***Trocar*** para alterar o estilo de mapa sem sair da tela atual, ou ***Mais tarde*** para ocultar a faixa.
 
 
 ### Trilhas de moto de neve {#snowmobile-trails}
 
-![Rotas do mapa - moto de neve](@site/static/img/map/snowmobile_trail.png)
+![Rotas do mapa - moto de neve](@site/static/img/map/snowmobile_trail_new.png)
 
 Trilhas de moto de neve são mapeadas no [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) como `route=snowmobile`. Elas são usadas para recreação no inverno e para conectar áreas remotas durante a temporada de neve. No OsmAnd, as trilhas de moto de neve são clicáveis, veja a seção [Ações com Rotas](#actions-with-routes).
 
@@ -345,45 +345,29 @@ Você pode personalizar se as rotas são ativadas ou desativadas usando o widget
 
 ## Pesquisa de Rotas {#routes-search}
 
-Encontre rotas usando a função [Pesquisar](../search/index.md) por nome ou selecionando "Rotas" na seção [Categorias](../search/search-poi.md#).
-
-Para pesquisar, vá para o menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* e insira sua atividade.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Rotas no chão](@site/static/img/map/route_search.png)
+![Rotas no chão](@site/static/img/map/route_search.png) ![Rotas no chão](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Rotas no chão](@site/static/img/map/route_search_ios.png)
+![Rotas no chão](@site/static/img/map/route_search_ios.png) ![Rotas no chão](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Navegue até *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar as rotas desejadas. Os resultados da pesquisa de rotas exibem o nome da rota, tipo de atividade, comprimento, localização e distância até o ponto mais próximo. No Android, métricas de elevação como subida e descida também são exibidas quando disponíveis. Alterações menores de elevação (menos de 10 m) são ocultadas para manter a lista clara. Todos os valores respeitam as unidades de distância e altitude selecionadas no aplicativo.
+Encontre rotas usando a função [Pesquisar](../search/index.md) por nome ou selecionando "Rotas" na seção [Categorias](../search/search-poi.md#).
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Para pesquisar, vá para o menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* e insira sua atividade.
 
-<TabItem value="android" label="Android">
+Navegue até *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* para encontrar as rotas desejadas. Os resultados da pesquisa de rotas exibem o nome da rota, tipo de atividade, comprimento, localização, subida/descida (no Android) e distância até o ponto mais próximo. 
 
-![Rotas no chão](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Rotas no chão](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Use o botão de filtros (canto superior direito) para exibir apenas as rotas desejadas.
+### Filtros de Rotas {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Use o botão de filtros (canto superior direito) para exibir apenas as rotas des
 </TabItem>
 
 </Tabs>
+
+Nos resultados da pesquisa de Rotas, toque no botão **Filtros** no canto superior direito para refinar a lista. A tela de Filtros inclui um campo **Filtrar por nome**; um bloco **Tipo** com *Bureau*, *Post annex* e *Post partner*; e **critérios extras** que dependem da categoria de rota ou atividade selecionada, pois cada categoria pode expor suas próprias características e valores de filtro.
+
+Você pode ativar ou desativar filtros usando as alternâncias, e algumas seções incluem *Mostrar tudo* para exibir valores adicionais.
 
 
 ## Artigos Relacionados {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Planejar uma Rota
 ---
@@ -117,6 +117,13 @@ Se os [dados de elevação](../map/tracks/track-context-menu.md#calculate-missin
 - [Usar estradas próximas](#attach-track-to-roads). Este modo usa mapas offline para encontrar as estradas mais próximas para construir uma trilha, então os dados de elevação serão recuperados das estradas anexadas. A geometria da trilha pode ser ajustada.  
 - [Usar mapas de terreno](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) O modo calcula a altitude com base nos dados do mapa de terreno (3D). A diferença entre as altitudes registradas pelo seu dispositivo pode ser usada para correção de elevação.  A geometria da trilha permanece inalterada.
 
+:::note
+
+**Correção de elevação online** (baseada em servidor) foi removida nas versões recentes do OsmAnd e está indisponível.  
+Para versões mais antigas, ela estava obsoleta e não confiável.  
+Use opções offline em vez disso: anexar a estradas ou mapas de terreno (Pro).  
+
+:::
 
 ### Anexar Trilha a Estradas {#attach-track-to-roads}
 
@@ -181,7 +188,7 @@ To generate navigation instructions:
 
 Para medir uma distância ou planejar uma viagem, adicione pontos na localização do *Ponteiro* um por um e toque no botão *Adicionar*. Ao acessar a **lista de pontos** abaixo, você pode reordenar pontos, excluir ou acessar um [menu de contexto de ponto](#point-context-menu) específico.
 
-Você também pode adicionar um ponto via diretamente do mapa tocando em um POI ou Favorito para abrir seu menu de contexto e depois tocando em *ADICIONAR PONTO*. Nesse modo, menus de contexto para objetos não pontos não são exibidos. Ao adicionar um POI/Favorito, seu nome é preservado como o nome do ponto da rota; se você mover este ponto no mapa mais tarde, o nome é redefinido.
+Você também pode adicionar um ponto diretamente do mapa tocando em um POI ou Favorito para abrir seu menu de contexto e depois tocando em *ADICIONAR PONTO*. Nesse modo, menus de contexto para objetos não pontos não são exibidos. Ao adicionar um POI/Favorito, seu nome é preservado como o nome do ponto da rota; se você mover este ponto no mapa mais tarde, o nome é redefinido.
 
 </TabItem>
 

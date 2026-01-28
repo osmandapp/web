@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -142,6 +142,7 @@ Os detalhes disponíveis incluem:
 - [Dentro de áreas](#polygon-information)
 - [POIs próximos](#nearby-pois)
 - [Lugares populares próximos](#nearby-popular-places)
+- [Guias](#guides) (apenas Android)
 - [Rotas de Transporte Público para paradas](#public-transport-routes)
 - [Favoritos / Pontos de trilha do mesmo grupo](#favorites--track-points-from-the-group)
 - [Link do OpenStreetMap](#openstreetmap-link)
@@ -296,6 +297,18 @@ Tocar em *[Lugares Populares Próximos](https://osmand.net/docs/user/plugins/wik
 </TabItem>
 
 </Tabs>
+
+### Guias {#guides}
+
+<InfoAndroidOnly/>
+
+![Guias Android](@site/static/img/map/details_guides.png)
+
+A seção **Guias** aparece no menu de contexto do mapa para alguns lugares e fornece acesso a guias de **Viagem (Wikivoyage)** relacionados ao ponto de interesse selecionado. Ela mostra uma lista de entradas de guias (por exemplo, um país ou região) que mencionam o lugar selecionado.
+
+A seção Guias é exibida apenas se os dados de **Viagem (Wikivoyage)** estiverem baixados para a área selecionada.
+
+**Nota:** Os guias estão vinculados ao conteúdo do Wikivoyage, não às descrições gerais da Wikipedia.
 
 
 ### Rotas de Transporte Público {#public-transport-routes}

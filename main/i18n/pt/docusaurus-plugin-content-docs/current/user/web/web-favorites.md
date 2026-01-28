@@ -1,5 +1,5 @@
 ---
-source-hash: ef13b994168cf04dcf98784cf4ef75aea6eb57a3e4db536a0fa48e3617173008
+source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -60,7 +60,7 @@ Durante a configuração de acesso, os seguintes diálogos podem aparecer:
 
 Selecionar um favorito abre o painel **Detalhes**. Este painel aparece quando você clica em um favorito diretamente no mapa ou o seleciona de uma pasta de favoritos.
 
-A visualização de Detalhes fornece informações associadas ao lugar selecionado e depende dos dados disponíveis para esse favorito específico. No mínimo, inclui a localização no mapa e suas coordenadas geográficas. Para lugares vinculados a objetos do OpenStreetMap ou fontes enriquecidas, metadados adicionais podem ser exibidos, como nomes, categorias, identificadores ou links de referência (por exemplo, [Wikipedia](../plugins/wikipedia.md) ou links do Wikidata). 
+A visualização de Detalhes fornece informações associadas ao lugar selecionado e depende dos dados disponíveis para esse favorito específico. No mínimo, inclui a localização no mapa e suas coordenadas geográficas. Para lugares vinculados a objetos do OpenStreetMap ou fontes enriquecidas, metadados adicionais podem ser exibidos, como nomes, categorias, identificadores ou links de referência (por exemplo, Wikipedia ou links do Wikidata). 
 
 ![Web Favorites Details](@site/static/img/web/favorites_details.png)
 

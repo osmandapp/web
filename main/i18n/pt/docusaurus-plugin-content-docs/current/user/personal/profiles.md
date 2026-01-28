@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title: Perfis (Configurações)
 ---
@@ -17,11 +17,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão geral {#overview}
 
-OsmAnd oferece uma variedade de perfis padrão adaptados para diferentes atividades, incluindo condução, ciclismo, caminhada e atividades mais especializadas, como esqui e navegação. Esses perfis são projetados para aprimorar sua experiência de navegação de acordo com a atividade em que você está envolvido. Cada perfil inclui opções configuráveis, permitindo que você ajuste as configurações e incorpore plugins adicionais para corresponder às suas preferências.
+OsmAnd oferece uma variedade de perfis padrão adaptados para diferentes atividades, incluindo condução, ciclismo, caminhada e atividades mais especializadas, como esqui e navegação de barco. Esses perfis são projetados para aprimorar sua experiência de navegação de acordo com a atividade em que você está envolvido. Cada perfil inclui opções configuráveis, permitindo que você ajuste as configurações e incorpore plugins adicionais para corresponder às suas preferências.
 
 - Certos perfis, como *Esqui* e *Barco*, possuem **recursos adicionais** que se tornam disponíveis apenas quando os plugins correspondentes estão ativados.
 
-     - Os plugins podem ser ativados navegando em *Menu → Plugins → Visualização do mapa de esqui* ou *Visualização do mapa náutico*.
+     - Os plugins podem ser ativados navegando em *Menu → Plugins → Ski map view* ou *Nautical map view*.
      - A ativação dos plugins fornece aos perfis os recursos essenciais para atender aos requisitos específicos dessas atividades.
 
 - É importante notar que alguns perfis, como **Caminhão**, **Motocicleta**, **Ciclomotor**, **Trem**, **Aeronave**, **Barco** e **Equitação**, não são ativados por padrão.
@@ -37,6 +37,8 @@ OsmAnd oferece uma variedade de perfis padrão adaptados para diferentes ativida
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
 ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
+
+As configurações de **Aparência da Minha Localização** permitem que você personalize como sua localização é exibida no mapa, tanto quando parado (Repouso) quanto em movimento (Navegação). O movimento é detectado pelo sistema operacional quando a velocidade do dispositivo é **maior que zero**.
 
 </TabItem>
 
@@ -212,12 +214,12 @@ Na seção **Unidades e Formatos**, você pode ajustar as unidades de medida e o
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
 | **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate android="true" ids="si_mi_feet"/> | 0,62 ml / 3281 pés (1000 m) |
-|          | <Translate android="true" ids="si_mi_meters"/> | 0,62 ml / 1000 m |
-|          | <Translate android="true" ids="si_mi_yard"/> | 1094 jardas / 0,62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 pés / 1000 m<br/>As unidades de comprimento se aplicam a valores de distância horizontal (por exemplo, distâncias de direção/rota e distâncias de manobra na navegação). |
+|          | <Translate android="true" ids="si_mi_feet"/> | 0,62 mi / 3281 ft (1000 m) |
+|          | <Translate android="true" ids="si_mi_meters"/> | 0,62 mi / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0,62 mi (1000 m) |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>As unidades de comprimento se aplicam a valores de distância horizontal (por exemplo, distâncias de direção/rota e distâncias de manobra na navegação). |
 |  |  |  |
-| **Unidades de altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 pés<br/>As unidades de altitude se aplicam a valores de altitude/elevação e métricas relacionadas (subida/descida, faixa de altitude) em widgets de Altitude, informações de rota de Navegação e estatísticas de Rastreamento.<br/>Por padrão, Unidades de altitude está sincronizado com Unidades de comprimento e se torna independente apenas após o usuário alterá-lo manualmente. |
+| **Unidades de altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>As unidades de altitude se aplicam a valores de altitude/elevação e métricas relacionadas (subida/descida, faixa de altitude) em widgets de Altitude, informações de rota de Navegação e estatísticas de Rastreamento.<br/>Por padrão, Unidades de altitude está sincronizado com Unidades de comprimento e se torna independente apenas após o usuário alterá-lo manualmente. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Exemplo: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Exemplo: 50°7.393′ 19°55.941′ (Lat Long)  |
@@ -435,19 +437,24 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,p
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
+As configurações de **Aparência da Minha Localização** permitem que você personalize como sua localização é exibida no mapa, tanto quando parado (Repouso) quanto em movimento (Navegação). O movimento é detectado pelo sistema operacional quando a velocidade do dispositivo é **maior que zero**.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+As configurações de **Aparência da Minha Localização** permitem que você personalize como sua localização é exibida no mapa, tanto quando parado (Repouso) quanto em movimento (Navegação). O movimento é detectado pelo sistema operacional quando a velocidade do dispositivo é **maior que zero**.
+
+Use **Tamanho do ícone** para ajustar o tamanho do ícone de posição da Minha Localização independentemente do tamanho do texto do aplicativo. Você pode definir tamanhos diferentes para os modos Repouso e Navegação. O tamanho pode ser ajustado de 50% a 300% (50, 75, 100, 125, 150, 200, 250, 300%). O valor padrão é 100%. Toque em Tamanho do ícone para abrir as configurações de tamanho, em seguida, use o controle deslizante ou os botões de etapa + / – para alterar o valor. Use **Redefinir para o Padrão** para retornar a 100%.
 
 </TabItem>
 
 </Tabs>
 
-As configurações de **Aparência da Minha Localização** permitem personalizar como sua localização é exibida no mapa, tanto quando parado quanto em movimento. O movimento é detectado pelo sistema operacional quando a velocidade do dispositivo é **maior que zero**.
 
 ### Ângulo de Visão e Raio de Localização {#view-angle-and-location-radius}
 
@@ -469,8 +476,8 @@ Para uma experiência mais personalizada, você pode criar e adicionar **ícones
    - Desenvolva um [plugin personalizado](../plugins/custom.md) usando o [exemplo de plugin](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) fornecido.  
    - Coloque seus arquivos de ícone 3D nos seguintes caminhos:  
 
-     `..osmand/models/nome_da_pasta_do_icone/arquivo_3d_personalizado.mtl`  
-     `..osmand/models/nome_da_pasta_do_icone/arquivo_3d_personalizado.obj`
+     `..osmand/models/nome_da_pasta_do_ícone/arquivo_3d_personalizado.mtl`  
+     `..osmand/models/nome_da_pasta_do_ícone/arquivo_3d_personalizado.obj`
 
    - Alternativamente, copie os **arquivos MTL e OBJ** diretamente para a pasta OsmAnd usando a mesma estrutura de diretórios.  
 
