@@ -47,8 +47,9 @@ const TravelRoute = ({ route }) => {
                     <ListItemText>
                         <MenuItemWithLines name={route.properties.description} maxLines={3} />
                         <Typography variant="body2" className={styles.groupInfo} noWrap>
-                            {`${(route.properties.distance / 1000).toFixed(2)} km`}
-                            {' · '}
+                            {Number.isFinite(route.properties.distance)
+                                ? `${(route.properties.distance / 1000).toFixed(2)} km · `
+                                : ''}
                             {route.properties.date.slice(0, 10)}
                             {route.properties.geo && ` · ${countPoints(route.properties.geo)}`}
                         </Typography>
