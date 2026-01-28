@@ -4,7 +4,7 @@ import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
 import L from 'leaflet';
 import { ZOOM_TO_MAP } from './SearchLayer';
-import { ALL_YEARS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
+import { ACTIVITY_ALL, ALL_YEARS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
 import { addDistance } from '../../manager/track/TracksManager';
 import { clusterMarkers } from '../util/Clusterizer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
@@ -260,7 +260,7 @@ export default function TravelLayer() {
         const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, {
             apiCache: true,
             params: {
-                activity,
+                activity: activity === ACTIVITY_ALL ? undefined : activity,
                 year: year === ALL_YEARS ? undefined : year,
                 minlat: minLat,
                 maxlat: maxLat,

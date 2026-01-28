@@ -4,14 +4,15 @@ import {
     Box,
     CircularProgress,
     IconButton,
-    Toolbar,
-    Typography,
     ToggleButton,
     ToggleButtonGroup,
+    Toolbar,
+    Typography,
 } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
+import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import { HEADER_SIZE, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
 import activities from '../../resources/activities.json';
@@ -35,6 +36,7 @@ import gStyles from '../gstylesmenu.module.css';
 import TagFilter from './TagFilter';
 
 export const ALL_YEARS = 'all';
+export const ACTIVITY_ALL = 'all';
 export const TAG_MATCH_MODES = {
     OR: 'OR',
     AND: 'AND',
@@ -45,7 +47,7 @@ export default function TravelMenu() {
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
-    const DEFAULT_ACTIVITY = 'hiking';
+    const DEFAULT_ACTIVITY = ACTIVITY_ALL;
     const DEFAULT_YEAR = new Date().getFullYear();
     const MIN_YEAR = 2005;
 
@@ -96,8 +98,15 @@ export default function TravelMenu() {
     // Create activities array
     const activitiesArr = useMemo(() => {
         if (!ctx.openTravel) return [];
+
         return activities?.groups.reduce((act, group) => {
             if (act.length === 0) {
+                act.push({
+                    id: ACTIVITY_ALL,
+                    label: 'All activities',
+                    type: 'group',
+                    icon: <ActivityAllIcon />,
+                });
                 act.push({
                     id: 'nospeed',
                     label: 'Unidentified tracks',
@@ -138,6 +147,9 @@ export default function TravelMenu() {
         const fetchIcons = async () => {
             const updatedActivities = await Promise.all(
                 activitiesArr.map(async (activity) => {
+                    if (!activity.iconName) {
+                        return activity;
+                    }
                     const icon = await getActivityIcon(activity.iconName);
                     return { ...activity, icon };
                 })
