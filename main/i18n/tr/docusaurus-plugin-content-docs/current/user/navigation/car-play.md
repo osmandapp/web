@@ -1,9 +1,10 @@
 ---
-source-hash: 2e2bedc5911717de92c663881adf7da2b32d2027a6c8127a8c9d02651753f230
+source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
 sidebar_position: 10
-title: CarPlay
+title:  CarPlay
 android: false
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
 Araç kullanırken telefonunuzu veya tabletinizi aynı anda kullanmak, güvenlik nedenleriyle genellikle yasa dışıdır. [***CarPlay***](https://www.apple.com/ios/carplay/), sürüş sırasında güvenli kullanım için OsmAnd uygulamasının uyarlanmış ve optimize edilmiş bir sürümünü sağlayan, uygulamanın navigasyon işlevlerine erişimi daha kolay ve güvenli hâle getiren bir yazılımdır.
@@ -24,11 +24,13 @@ Araç ekranınızda *CarPlay* kullanmak için şu adımları izleyin:
 
 1. *CarPlay* tüm ülkelerde mevcut değildir. [Ülkenizde veya bölgenizde](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) desteklendiğinden ve *CarPlay*'in [araç modelinizde](https://www.apple.com/ios/carplay/available-models/) desteklendiğinden emin olun.
 2. Cihazınızı bir USB bağlantı noktası kullanarak veya Wi-Fi ya da Bluetooth ile kablosuz olarak araç multimedya sisteminize [bağlayın](https://support.apple.com/en-gb/HT203412). İlk kez bağlanırken, cihazınızda *CarPlay* kullanmak için izin vermeniz gerekebilir.
-3. Bağlandıktan sonra, *CarPlay arayüzü* tüm mevcut uygulamalarla birlikte araç ekranınızda otomatik olarak görünecektir. *CarPlay ana ekranı* görünmezse, araç ekranındaki *CarPlay logosunu* seçin.
+3. Bağlandıktan sonra, *CarPlay arayüzü* tüm mevcut uygulamalarla birlikte araç ekranınızda otomatik olarak görünecektir. *CarPlay ana ekranı* görünmezse, araç ekranındaki *CarPlay logosunu* seçin.  
 
 ### CarPlay Arayüzü {#carplay-interface}
 
 *CarPlay*, OsmAnd mobil uygulamasının **doğrudan bir kopyası değildir**. Güvenli sürüşü sağlamak için temel navigasyon işlevlerine odaklanan basitleştirilmiş bir arayüze sahiptir. Bazı gelişmiş özellikler platform sınırlamaları nedeniyle desteklenmemektedir.
+
+*CarPlay*'deki düğme ve navigasyon widget'ının konumu, CarPlay durum çubuğunun tarafıyla eşleşir. Bu, arabanızın ana ünitesindeki **Sürücü Konumu** (sol el veya sağ el) ayarına bağlıdır, CarPlay veya OsmAnd uygulamasındaki herhangi bir ayara değil.
 
 ### Bağlantı Ekranı {#connection-screen}
 
@@ -36,56 +38,60 @@ Araç ekranınızda *CarPlay* kullanmak için şu adımları izleyin:
 
 Cihazınız *CarPlay*'e bağlıyken, uygulama ekranındaki harita kilitlenir. Bu, navigasyonun yalnızca araç ekranından kontrol edilmesini sağlayarak sürüş sırasında dikkat dağıtıcı unsurları en aza indiren kasıtlı bir güvenlik özelliğidir. Bağlantı ekranıyla ilgili [sıkça sorulan soruları](#common-issues-and-solutions) kontrol edin.
 
+
 ### Harita ile Etkileşim {#interaction-with-the-map}
 
 ![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
-*CarPlay*, OsmAnd arayüzünü araç multimedya sistemi ekranına uyarlanmış şekilde görüntüler. Harita ile etkileşim şunlarla sınırlıdır:
+*CarPlay*, OsmAnd arayüzünü araç multimedya sistemi ekranına uyarlanmış şekilde görüntüler. Harita ile etkileşim şunlarla sınırlıdır:  
 
 - [Konumum](../widgets/map-buttons.md#my-location-and-zoom). Haritanın görünür kısmını, mevcut konumunuzun ekranın ortasında olacak şekilde hareket ettirir.
 - [Yakınlaştır](../widgets/map-buttons.md#my-location-and-zoom). Haritanın görünür kısmını yakınlaştırmanıza ve uzaklaştırmanıza olanak tanır.
+
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
 ![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
-- Öncelikle, *CarPlay*'e bağlanırken kullanılacak profili seçmeniz ve yapılandırmanız gerekir. Bir profili nasıl yapılandıracağınızı [Profiller (Ayarlar)](../personal/profiles) makalesinde okuyabilirsiniz.
+- Öncelikle, *CarPlay*'e bağlanırken kullanılacak profili seçmeniz ve yapılandırmanız gerekir. Bir profili nasıl yapılandıracağınızı [Profiller (Ayarlar)](../personal/profiles) makalesinde okuyabilirsiniz.  
     - *CarPlay* kullanmak için uygun bir profil *Sürüş* olabilir ve rota türü [Araç rotası](../navigation/routing/car-based-routing.md) olabilir.
     - OsmAnd, *CarPlay*'e bağlanmak için mevcut profiller listesine hızlı erişim için ayrı bir [CarPlay Profili](#carplay-profile) öğesine sahiptir.
 - OsmAnd'ın çalışması için [iOS cihazınızı](#overview) araç multimedya sistemine bağlamanız gerekir. Cihazınızı nasıl bağlayacağınız ve kuracağınız hakkında daha fazla bilgi edinmek için [**CarPlay**](https://support.apple.com/en-us/HT205634) web sitesini ziyaret edebilirsiniz.
 - [OsmAnd ücretli veya abonelik](../purchases/ios#free-and-paid-features) seçeneklerinden birine sahip olmanız gerekir. Bunu *Menü → Ayarlar → Satın Almalar* bölümünden kontrol edin.
-- Bağlandıktan sonra, bir hedef belirleyebilir ve *CarPlay*'de OsmAnd navigasyonunu başlatabilirsiniz.
+- Bağlandıktan sonra, bir hedef belirleyebilir ve *CarPlay*'de OsmAnd navigasyonunu başlatabilirsiniz.  
 
 :::note
 *CarPlay*'de OsmAnd kullanmak için İnternet bağlantısına ihtiyacınız olabilir. Cihazınızın İnternet erişimi sınırlıysa, [*rotaları önceden yükleyebilir veya oluşturabilir*](../personal/tracks/manage-tracks.md) ve bunları İnternet olmadan kullanabilirsiniz.
 :::
 
+
 ### Navigasyonu Başlat {#start-navigation}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-start(1).png)
+![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
-OsmAnd uygulamasının iOS sürümünü *CarPlay*'de kullanmak için, uygulamanın [ücretli bir sürümünü satın almanız veya abone olmanız](../purchases/ios#free-and-paid-features) gerekir.
+*CarPlay*'de OsmAnd uygulamasının iOS sürümünü kullanmak için, uygulamanın [ücretli bir sürümünü satın almanız veya abone olmanız](../purchases/ios#free-and-paid-features) gerekir.  
 
 1. Bir rota oluşturmak için, *CarPlay ekranında* veya [OsmAnd uygulamasında](../navigation/setup/route-navigation.md) [rota bitiş noktasını](#select-a-route-endpoint) seçmeniz gerekir.
-2. Yol üzerindeki sorunlar hakkında yol tariflerini veya mesajları dinlemek için [sesli komutları](#voice-prompts) kullanabilirsiniz.
+2. Yol üzerindeki sorunlar hakkında yol tariflerini veya mesajları dinlemek için [sesli komutları](#voice-prompts) kullanabilirsiniz.  
 3. Bir konum seçtikten sonra, rotayı takip etmek için **Başlat**'a basın.
 4. Siz sürerken, araç ekranı mevcut konumunuzla ilgili OsmAnd bilgilerini haritada, sürüş talimatlarını, bir sonraki dönüşe olan mesafeyi, çizgileri, varış süresini ve hedefinize olan mesafeyi gösterecektir.
-    ![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_navmode.png)
+    ![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_navmode.png)  
 5. Rotanızı değiştirmek veya farklı bir konum seçmek isterseniz, ekrandaki uygun düğmeye basabilirsiniz.
 6. Rotanızı tamamladıktan sonra, cihazı araç multimedya sisteminizden ayırarak *CarPlay*'i devre dışı bırakabilirsiniz.
 
 :::note
 **Rota bitiş noktası** seçimi için tüm kategoriler, *[Geçmiş](#history), [İÇN'ler](#poi-categories), [İşaretleyiciler](#map-markers), [Ara](#search), [Favoriler](#favorites) ve [İzler](#tracks)*, araç multimedya sisteminizin sağladığından daha fazla liste öğesi içeremez. Genellikle, çoğu araçta listeler dinamik olarak 12 veya 24 öğeyle sınırlıdır. Bu, *CarPlay*'deki listenin tam olmayabileceği anlamına gelir. Toplam öğe sayısı ve görüntülenen gerçek öğe sayısı klasör adının altında belirtilir.
-:::
+:::  
+
 
 ### CarPlay Profili {#carplay-profile}
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*
-![Genel Ayarlar Varsayılan profil Android](@site/static/img/personal/profiles/CarPlay_ios.png)
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
+![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
-**CarPlay profili**, OsmAnd uygulamasında aracınızın ses ve video sistemini, bu verilerin telefonunuzda daha fazla görüntülenmesi için rahatça kullanmak üzere özel bir profildir.
+**CarPlay profili**, OsmAnd uygulamasında aracınızın ses ve video sistemini, bu verilerin telefonunuzda daha fazla görüntülenmesi için rahatça kullanmak üzere özel bir profildir.  
 
-Bu profil, cihazınız *CarPlay*'e bağlı olduğu sürece kullanılır. *OsmAnd ayarları* menüsünde *CarPlay profili* alanına dokunun ve [kullanım için etkinleştirilmiş profiller](../personal/profiles.md) listesinden *CarPlay*'in etkinleştirileceği profili seçin.
+Bu profil, cihazınız *CarPlay*'e bağlı olduğu sürece kullanılır. *OsmAnd ayarları* menüsünde *CarPlay profili* alanına dokunun ve [kullanım için etkinleştirilmiş profiller](../personal/profiles.md) listesinden *CarPlay*'in etkinleştirileceği profili seçin.  
 
 *CarPlay*'de doğrudan araç ekranından bir profil seçemezsiniz. Öncelikle cihazınızda gerekli profili seçmeli ve *CarPlay profilini* ona eklemelisiniz. *Sürüş*, *Kamyon*, *Araba*, *Motosiklet* veya *Moped* gibi araç tipine uygun bir profil seçmelisiniz. **Uygulama, bir araca bağlandığında** *CarPlay profilini* otomatik olarak etkinleştirecektir.
 
@@ -94,12 +100,13 @@ Bu profil, cihazınız *CarPlay*'e bağlı olduğu sürece kullanılır. *OsmAnd
 - **Sürüş güvenliği.** Farklı ulaşım türleri, sürüş sırasında farklı bilgiler ve ayarlar gerektirir. Örneğin, kamyon şoförleri araçlarının yüksekliği, ağırlığı ve genişliği konusunda sınırlı olabilir, bu nedenle *Kamyon* profili onlara uygun kısıtlamalar ve yönergeler sağlar. Bisikletçiler ve motosikletçiler ise kamyonlar için veri olmadan bisiklet yolları ve rotaları hakkında bilgiye ihtiyaç duyarlar.
 - **Kullanışlılık ve Verimlilik.** Navigasyon, belirli bir ulaşım modunun ihtiyaçlarını karşılamak üzere özelleştirilmelidir. Bu, kullanıcıların optimum rotaları bulmak için harcadıkları süreyi azaltmalarına ve gereksiz trafik kısıtlamalarından kaçınmalarına olanak tanır.
 
+
 ## Rota Bitiş Noktası Seçin {#select-a-route-endpoint}
 
-Daha önce ayarlanmış ve eklenmiş [İÇN'leri](../map/point-layers-on-map.md#points-of-interest-pois) veya [Favorileri](../personal/favorites.md) veya [İşaretleyicileri](../personal/markers.md) hedef noktası olarak seçebilirsiniz. Ayrıca rota için kaydedilmiş veya indirilmiş bir [İz](../personal/tracks/index.md) seçmek, [Ara](../search/index.md) özelliğini kullanmak veya rota [Geçmişi'nden](../search/search-history.md) bir hedef seçmek de mümkündür.
+Önceden ayarlanmış ve eklenmiş [İÇN'leri](../map/point-layers-on-map.md#points-of-interest-pois), veya [Favorileri](../personal/favorites.md), veya [İşaretleyicileri](../personal/markers.md) hedef noktası olarak seçebilirsiniz. Ayrıca rota için kaydedilmiş veya indirilmiş bir [İz](../personal/tracks/index.md) seçmek, [Ara](../search/index.md) özelliğini kullanmak veya rota [Geçmişi'nden](../search/search-history.md) bir hedef seçmek de mümkündür.
 
-1. Haritada belirli bir konumu bitiş noktası olarak istiyorsanız, listeden uygun nokta kategorisini, [İÇN'ler](#poi-categories), [Favoriler](#favorites) veya [Harita İşaretleyicileri](#map-markers) seçin.
-
+1. Haritada belirli bir konumu bitiş noktası olarak istiyorsanız, listeden uygun nokta kategorisini, [İÇN'ler](#poi-categories), [Favoriler](#favorites), veya [Harita İşaretleyicileri](#map-markers) seçin.  
+  
     - Tüm kategoriler, araç multimedya sisteminizin sağladığından daha fazla liste öğesi içeremez. Bu, *CarPlay*'deki listenin eksik olabileceği ve diğer tüm klasörlerin yalnızca cihazınızdaki OsmAnd uygulamasında mevcut olduğu anlamına gelir.
     - [Son Değiştirilen](#folder-last-modified) klasörü, eklenme veya değiştirilme tarihine göre sıralanmış son hedeflerin bir listesini içerir.
     - Diğer tüm klasörlerin listesi en son güncellemeye göre sıralanır, yeni klasörler listenin en üstündedir. Sıralamalarını manuel olarak değiştirmek mümkün değildir.
@@ -111,15 +118,17 @@ Daha önce ayarlanmış ve eklenmiş [İÇN'leri](../map/point-layers-on-map.md#
 Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde [duyurulabilir](#voice-prompts). Sesli bildirimleri ayarlamak için uygun makaledeki [Sesli komutlar](../navigation/guidance/voice-navigation.md) ayarlarına bakın.
 :::
 
+
 ### Geçmiş {#history}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_history.png)
+![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_history.png)  
 
 **Geçmiş kategorisinde**, bitiş noktaları listesinden bir hedef seçebilirsiniz.
 
 - En yeni olanlardan başlayarak en son kullanıma göre sıralanırlar.
 - Bu, sık kullanılan rotalara hızlı erişim için uygun olabilir.
 - Bir hedefi nasıl kullanacağınızı veya sileceğinizi öğrenmek için [Arama Geçmişi](../search/search-history.md) makalesini okuyun.
+
 
 ### İÇN Kategorileri {#poi-categories}
 
@@ -130,7 +139,7 @@ Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde
     </tr>
 </table>
 
-*İÇN'ler (İlgi Çekici Noktalar)*, harita üzerinde kullanıcılar için önemli veya ilgi çekici yerleri veya nesneleri tanımlayan bir nokta türüdür. [OsmAnd ayarlarında](../map/point-layers-on-map.md#poi-types) sağlanan özel simgelerle vurgulanır ve gruplara ayrılır.
+*İÇN'ler (İlgi Çekici Noktalar)*, harita üzerinde kullanıcılar için önemli veya ilgi çekici yerleri veya nesneleri tanımlayan bir nokta türüdür. [OsmAnd ayarlarında](../map/point-layers-on-map.md#poi-types) sağlanan özel simgelerle vurgulanır ve gruplara ayrılır.  
 
 *CarPlay*'de bir *İÇN*'ye rota oluşturmak için şu adımları izleyin:
 
@@ -139,39 +148,43 @@ Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde
 3. OsmAnd uygulama ayarlarınıza ve aracınıza bağlı olarak, hedefinize yönlendirmek için [sesli komutlar](#voice-prompts) alabilirsiniz.
 4. Konuma vardığınızda, uygulama *İÇN*'ye ulaştığınızı bildirecektir.
 
+
 ### Favoriler {#favorites}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-favorites(1).png)
+![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
 **Favoriler**, OsmAnd'ın harita üzerinde bir tür not almanızı sağlayan özelliklerinden biridir.
 
 - **CarPlay** kullanırken, *Favori* ekleyemez veya değiştiremezsiniz, yalnızca mevcut olanları kullanabilirsiniz.
 - [Favoriler](../personal/favorites.md#manage-favorites) listesi OsmAnd uygulamasında *Menü → Yerlerim → Favoriler* bölümünde bulunabilir.
-- Bunları navigasyon için kullanmak istiyorsanız, cihazı araç multimedya sisteminize bağlamadan önce ihtiyacınız olan her şeyi yapılandırın.
+- Bunları navigasyon için kullanmak istiyorsanız, cihazı araç multimedya sisteminize bağlamadan önce ihtiyacınız olan her şeyi yapılandırın.  
+
 
 ### Harita İşaretleyicileri {#map-markers}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-markers(1).png)
+![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
 - Son hedefinizi bir *Harita işaretleyicisi* olarak tanımlamak için, cihazı araç multimedya sistemine bağlamadan önce OsmAnd uygulamasında gerekli sayıda işaretleyici oluşturmanız gerekir.
 - *İşaretleyicilerin* *Menü → Harita işaretleyicisi* listesinde mevcut olması gerekir.
-- Bu, [İşaretleyiciler](../personal/markers.md) makalesinde daha ayrıntılı olarak açıklanmıştır.
+- Bu, [İşaretleyiciler](../personal/markers.md) makalesinde daha ayrıntılı olarak açıklanmıştır.  
+
 
 ### İzler {#tracks}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-tracks(1).png)
+![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
-Bir hedefe rota oluşturmak için, OsmAnd uygulamasında mevcut bir izi seçebilirsiniz. İz önceden [indirilebilir](../personal/tracks/manage-tracks.md#import), [kaydedilmiş](../plugins/trip-recording.md) olarak kullanılabilir veya [Rota planla](../plan-route/create-route.md) bölümünde oluşturulabilir.
+Bir hedefe rota oluşturmak için, OsmAnd uygulamasında mevcut bir izi seçebilirsiniz. İz önceden [indirilebilir](../personal/tracks/manage-tracks.md#import), [kaydedilmiş](../plugins/trip-recording.md) olarak kullanılabilir veya [Rota planla](../plan-route/create-route.md) bölümünde oluşturulabilir.  
 
-*Menü → Yerlerim → [İzler](../personal/tracks/manage-tracks.md)* bölümündeki izler listesinden, araç multimedya sistemine bağlanmadan önce gerekli olanı seçin ve rota ya izin başlangıcına kadar oluşturulacak ya da iz boyunca mevcut yönü gösterecektir.
+*Menü → Yerlerim → [İzler](../personal/tracks/manage-tracks.md)* bölümündeki izler listesinden, araç multimedya sistemine bağlanmadan önce gerekli olanı seçin ve rota ya izin başlangıcına kadar oluşturulacak ya da iz boyunca mevcut yönü gösterecektir.  
 
 İzler doğrudan *CarPlay*'deki araç ekranında da seçilebilir. Oluşturduğunuz klasörlerde düzenlenirler ve yakın zamanda açılan izlere kolay ve hızlı erişim için özel bir klasör olan [Son Değiştirilen](#folder-last-modified) bulunur.
 
+
 ### Ara {#search}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-search(1).png)
+![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
-**Ara**'ya gitmek, son [hedef geçmişi](#history) listesine hızlı erişim sağlar. Benzer şekilde, adres, İÇN'ler veya koordinatlar gibi tüm OsmAnd hedef yöntemlerinin toplandığı [Navigasyon menüsü](../navigation/setup/route-navigation.md#navigation-menu) ile de aynıdır.
+**Ara**'ya gitmek, son [hedef geçmişi](#history) listesine hızlı erişim sağlar. Benzer şekilde, adres, İÇN'ler veya koordinatlar gibi tüm OsmAnd hedef yöntemlerinin toplandığı [Navigasyon menüsü](../navigation/setup/route-navigation.md#navigation-menu) ile de aynıdır.  
 
 Rota planlaması için harita üzerinde gerekli yeri bulmak için *Arama aracını* mevcut herhangi bir arama kategorisinden kullanabilirsiniz.
 
@@ -183,6 +196,7 @@ Rota planlaması için harita üzerinde gerekli yeri bulmak için *Arama aracın
 *CarPlay*'de bir sokak adı arayarak ve arama kutusunda seçerek belirli bir binayı seçebilirsiniz. Sonuç listesinin 25 öğeyle sınırlı olduğunu unutmayın. Bu nedenle beklediğiniz bina eksikse, bina numarasını yazmanız gerekir.
 :::
 
+
 ### Adres Arama Öncelikleri {#address-search-priorities}
 
 CarPlay arama özelliği, **adres ararken** sokaklara ve bina numaralarına öncelik verir.
@@ -190,25 +204,30 @@ CarPlay arama özelliği, **adres ararken** sokaklara ve bina numaralarına önc
 - Bir adres aradığınızda sokaklar ve bina numaraları ilk olarak görüntülenir. Bu, ilgili adres bilgilerinin yollar veya istasyonlar gibi diğer konumlardan önce görüntülenmesini sağlar.
 - Bir şehir aradığınızda, şehirdeki sokaklar ilk olarak görüntülenir, ardından bu sokaklardaki bina numaraları gelir.
 
+
 ### Son Değiştirilen Klasör {#folder-last-modified}
 
 ![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_last_modified.png)
 
 *Favoriler* ve *İzler* kategorilerinde özel bir **Son Değiştirilen** klasörü bulunur. Bu kategorilerdeki liste, mevcut tüm favorilerinizi veya izlerinizi içerdiğinden çok büyük olabileceğinden, bu klasör en son hedeflerinize kolay ve hızlı erişim için gereklidir.
 
+
 ## Ek Özellikler {#additional-features}
 
-*CarPlay*'deki OsmAnd uygulamasının aracınızda rahat navigasyon sağlayan temel özelliklerine ek olarak, deneyiminizi geliştiren ve navigasyonu daha kişiselleştirilmiş, konforlu ve verimli hale getiren bir dizi ek özellik bulunmaktadır.
+*CarPlay*'deki OsmAnd uygulamasının aracınızda rahat navigasyon sağlayan temel özelliklerine ek olarak, deneyiminizi geliştiren ve navigasyonu daha kişiselleştirilmiş, konforlu ve verimli hale getiren bir dizi ek özellik bulunmaktadır.  
+
 
 ### Sesli Komutlar {#voice-prompts}
 
-*CarPlay* için sesli rehberlik, OsmAnd'ın en kullanışlı navigasyon özelliklerinden biridir, gerçek zamanlı rehberlik sağlar ve sürücünün yola odaklanmasını sağlar. Sesli komutlar, dönüşleri, yönleri ve diğer navigasyon talimatlarını açıkça belirtir, navigasyon sisteminin daha güvenli ve konforlu kullanılmasını sağlar.
+*CarPlay* için sesli rehberlik, OsmAnd'ın en kullanışlı navigasyon özelliklerinden biridir, gerçek zamanlı rehberlik sağlar ve sürücünün yola odaklanmasını sağlar. Sesli komutlar, dönüşleri, yönleri ve diğer navigasyon talimatlarını açıkça belirtir, navigasyon sisteminin daha güvenli ve konforlu kullanılmasını sağlar.  
 
-Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *CarPlay* için önerilen ayarları görmek için [Sesli komutlar / Bildirimler](../navigation/guidance/voice-navigation.md) makalesine gidin.
+Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *CarPlay* için önerilen ayarları görmek için [Sesli komutlar / Bildirimler](../navigation/guidance/voice-navigation.md) makalesine gidin.  
+
+
 
 ### Ekran Uyarısı Widget'ı {#screen-alert-widget}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)
+![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 Bu bilgi widget'ı **Yaya geçitleri** ve **Hız Sınırı** gibi uyarı türlerini birleştirir.
 
@@ -216,6 +235,7 @@ Bu bilgi widget'ı **Yaya geçitleri** ve **Hız Sınırı** gibi uyarı türler
 - *Car Play*'de uyarıların görüntülenmesini ayarlamak mümkün değildir, navigasyonu başlatmadan ve cihazınızı araca bağlamadan önce uygulamada widget'ı yapılandırmanız gerekir.
 - Uyarı türlerinin ayrıntılı açıklaması için [bu makaleye](../widgets/nav-widgets.md#alert-types) bakın.
 - Mevcut profiller için ekran uyarılarını ayarlamak için [Navigasyon ayarları](../navigation/guidance/navigation-settings.md#screen-alerts) makalesine bakın.
+
 
 ### Hız Göstergesi {#speedometer}
 
@@ -227,6 +247,7 @@ Bu bilgi widget'ı **Yaya geçitleri** ve **Hız Sınırı** gibi uyarı türler
 - *Hız Göstergesi*'nin doğrudan *CarPlay*'de görüntülenmesini ayarlama seçeneği yoktur. Navigasyonu başlatmadan ve cihazınızı araca bağlamadan önce seçilen [navigasyon profili](#carplay-profile) için OsmAnd uygulamasında yapılandırmanız gerekir.
 - *Hız Göstergesi* widget'ını ekrana nasıl ekleyeceğiniz ve yapılandıracağınız hakkında daha fazla bilgi için lütfen [Bilgi widget'ları makalesini](../widgets/info-widgets.md#speedometer) okuyun.
 
+
 ### Harita Görünümü (3D) {#map-appearance-3d}
 
 ![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
@@ -235,6 +256,7 @@ OsmAnd uygulaması, rotanızı ve navigasyonunuzu görüntülemek için *CarPlay
 
 - **3D / 2D düğmesi** *CarPlay ekranında* görüntülenir.
 - Bu düğmeye dokunarak 3D / 2D harita modları arasında geçiş yapabilirsiniz.
+
 
 ### Çok Fonksiyonlu Gösterge Paneli {#multifunction-dashboard}
 
@@ -269,11 +291,12 @@ Ayrıca *CarPlay*'de doğrudan Mesajları Duyur özelliğini etkinleştirebilir 
     - **Merkez**. Gösterge ekranın ortasına yerleştirilir, standart navigasyon için uygundur.
     - **Alt**. Gösterge ekranın altına daha yakın konumlandırılır, çevredeki nesneleri ve karmaşık kavşakları gözlemlemeyi kolaylaştırır.
 
+
 ### Ses Kontrol Sorunu {#volume-control-issue}
 
-Bazen *CarPlay* bağlanmaz veya bağlı olmasına rağmen hiçbir şey duyamazsınız. Diğer zamanlarda, OsmAnd uygulaması *CarPlay*'de düzgün açılmaz. Olası çözümler:
+Bazen *CarPlay* bağlanmaz veya bağlı olmasına rağmen hiçbir şey duyamazsınız. Diğer zamanlarda, OsmAnd uygulaması *CarPlay*'de düzgün açılmaz. Olası çözümler:  
 
-1. Çoğu durumda, tüm **sinyaller** aynı anda ses çalma ayarlarından ayrı olarak sabit tam ses seviyesinde kalır. *CarPlay* kullanırken OsmAnd navigasyon komutlarının ses seviyesini değiştirmek için, araç multimedya sistemi ekranında *Kurulum → Ses → Ses seviyesi* bölümüne gidin.
+1. Çoğu durumda, tüm **sinyaller** aynı anda ses çalma ayarlarından ayrı olarak sabit tam ses seviyesinde kalır. *CarPlay* kullanırken OsmAnd navigasyon komutlarının ses seviyesini değiştirmek için, araç multimedya sistemi ekranında *Kurulum → Ses → Ses seviyesi* bölümüne gidin.  
 2. Cihazı yeniden başlatın.
 3. *CarPlay*'in iPhone'unuzda etkinleştirildiğinden emin olun. Bunu yapmak için:
    - Telefonunuzun ayarlarına ve ardından *Genel*'e gidin.
@@ -284,6 +307,7 @@ Bazen *CarPlay* bağlanmaz veya bağlı olmasına rağmen hiçbir şey duyamazs�
 7. *CarPlay*'in [bölgenizde](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay) desteklendiğinden emin olun.
 8. iPhone'unuzda bir VPN kullanıyorsanız, bu *CarPlay*'in çalışmasını engelleyebilir. VPN'i devre dışı bırakmayı deneyin ve bunun *CarPlay*'in çalışmasına yardımcı olup olmayacağını görün.
 
+
 ## İlgili Makaleler {#related-articles}
 
 - [Profiller (Ayarlar)](../personal/profiles.md)
@@ -292,10 +316,10 @@ Bazen *CarPlay* bağlanmaz veya bağlı olmasına rağmen hiçbir şey duyamazs�
 ### Sık Karşılaşılan Sorunlar ve Çözümleri {#common-issues-and-solutions}
 
 1. Bağlantı ekranıyla ilgili sıkça sorulan sorular:
-    - *CarPlay'e bağlıyken uygulamayı telefonumdan neden kontrol edemiyorum?*
+    - *CarPlay'e bağlıyken uygulamayı telefonumdan neden kontrol edemiyorum?*  
         Güvenlik nedenleriyle, CarPlay'e bağlıyken telefonunuzdaki OsmAnd uygulama ekranı kilitlenir. Uygulamayla yalnızca araç ekranı aracılığıyla etkileşim kurabilirsiniz.
-    - *Kilitli ekranı devre dışı bırakıp uygulamayı telefonumda kullanabilir miyim?*
+    - *Kilitli ekranı devre dışı bırakıp uygulamayı telefonumda kullanabilir miyim?*  
         Hayır, CarPlay sürüş sırasında dikkat dağıtıcı unsurları önlemek için bu kısıtlamayı uygular.
-    - *Telefonum ve araç ekranım bağlantısı kesilmiş gibi görünüyorsa ne yapmalıyım?*
-        Cihazınızın USB veya Bluetooth aracılığıyla düzgün şekilde bağlandığından emin olun.
+    - *Telefonum ve araç ekranım bağlantısı kesilmiş gibi görünüyorsa ne yapmalıyım?*  
+        Cihazınızın USB veya Bluetooth aracılığıyla düzgün şekilde bağlandığından emin olun.  
         Bağlantı kararsızsa aracınızın bilgi-eğlence sistemini ve OsmAnd uygulamasını yeniden başlatın.

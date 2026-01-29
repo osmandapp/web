@@ -1,5 +1,5 @@
 ---
-source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
+source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
 sidebar_position: 6
 title: Yerlerim
 ---
@@ -14,11 +14,15 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Genel Bakış {#overview}
 
 **Yerlerim**, OsmAnd uygulamasında tüm kişisel verileri yönetmek ve özelleştirmek için merkezi bir merkezdir. Bu bölümü, önemli veya sık ziyaret edilen olarak işaretlenmiş [Favori noktaları](#favorites) düzenlemek için kullanabilirsiniz. [Parkurlar](#tracks) sekmesi, rotalarınızın ve seyahatlerinizin ayrıntılı bir geçmişini tutmanıza yardımcı olmak için GPX dosyalarını görüntülemenize, içe aktarmanıza, kaydetmenize ve oluşturmanıza olanak tanır. Ayrıca [OpenStreetMap Düzenlemelerinizi](#openstreetmap-edits) yönetebilir, harita iyileştirmelerine ve güncellemelerine katkıda bulunmayı kolaylaştırabilirsiniz. [Sesli / Görüntülü Notlar](#audiovideo-notes) eklentisi ve widget'ları, Android kullanıcılarının belirli konumlarla ilgili multimedya notları oluşturmasına ve kaydetmesine olanak tanıyarak seyahatlerine bağlam ekler.
+
+## Yerlerim Menüsü {#my-places-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -26,7 +30,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu"/> → Yerlerim*  
 
-![Yerlerim android](@site/static/img/personal/my_places_android.png) ![Yerlerim menüsü Android](@site/static/img/personal/my_places_menu_android.png)
+![Yerlerim android](@site/static/img/personal/my_places_android_new.png) ![Yerlerim menüsü Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -34,26 +38,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu"/> → Yerlerim*  
 
-![Yerlerim ios](@site/static/img/personal/my_places_ios.png)  ![Yerlerim menüsü iOS](@site/static/img/personal/my_places_menu_ios.png)
+![Yerlerim ios](@site/static/img/personal/my_places_ios_new.png)  ![Yerlerim menüsü iOS](@site/static/img/personal/my_places_menu_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
-- [***Verileri içe ve dışa aktarma***](../personal/import-export.md):  
+Yerlerim kategorilere göre organize edilmiştir. İlgili veriyi yönetmek için bir sekme seçin.
 
-    *Yerlerim* menüsünde depolanan tüm veriler, cihazınızdaki uygulamalar aracılığıyla özel bir `.osf` formatı kullanılarak taşınabilir. Bu işlem, verileri cihazlar arasında kaydetmeyi ve aktarmayı basitleştirir ve diğer OsmAnd kullanıcılarıyla paylaşmanıza olanak tanır.  
+**Not:** *Yerlerim* menüsünde depolanan tüm veriler, cihazınızdaki uygulamalar aracılığıyla özel bir `.osf` formatı kullanılarak taşınabilir. Bu işlem, verileri cihazlar arasında kaydetmeyi ve aktarmayı basitleştirir ve diğer OsmAnd kullanıcılarıyla paylaşmanıza olanak tanır. 
 
-    **Şuraya git** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* bölümüne gidin ve verileri dışa veya içe aktarmayı seçin. *Dışa aktar* seçeneğini seçerseniz, *Yerlerim grubunu* genişletmeniz ve gerekli verileri işaretlemeniz gerekecektir.
-
-- [***Haritalar ve Kaynaklar***](../personal/maps-resources.md):  
-
-    OsmAnd uygulamasının *Haritalar ve Kaynaklar* *Ana Menü* öğesi, *Yerlerim* bölümünden veri yönetimine erişim sağlar. [*Yerel*](../personal/maps-resources.md#local-menu) sekmesi, cihazınızdaki tüm mevcut OsmAnd verilerinin ne kadar yer kapladığını ve özellikle *Yerlerim* bölümünü gösterir. Verileriniz hakkında ayrıntılı bilgi almak ve bunları yönetmek için kullanabilirsiniz. Bölüm yalnızca verileri indirilmiş öğeleri içerebilir.  
-
-    **Şuraya git** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Verilerinizi kontrol edin ve yönetin.
-
-
-## Favoriler {#favorites}
+### Favoriler {#favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -73,24 +68,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Favoriler**, önemli veya sık ziyaret edilen konumları yer imlerine eklemenizi sağlar. Bu favori noktalar klasörler halinde düzenlenir ve farklı renkler, şekiller ve simgelerle özelleştirilebilir. Tekrar tekrar aramanıza gerek kalmadan **Yerlerim** menüsü aracılığıyla herhangi bir favori yere hızlıca gidebilirsiniz.
 
+Tam talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
 
-1. ***Eylem düğmeleri***. Yerlerim ekranının altındaki *Eylem düğmeleri*, favorilerinizle birlikte klasör listesini yönetmenize olanak tanır:  
+<!--
+1. ***Action buttons***. *Action buttons* at the bottom of the My Places screen allow you to manage the list of folders with your favorites:  
 
-    - **İçe Aktar** (*Ekle* düğmesi) — Cihaz depolama alanınızdan *favorite.gpx* dosyalarını içe aktarmanıza olanak tanır.
+    - **Import** (*Add* button) — Allows you to import *favorite.gpx* files from your device storage.
 
-    - **Dışa Aktar** — Favori noktalarınızı harici kullanım veya yedekleme için bir *favorites.gpx* dosyası olarak kaydedin.
+    - **Export** — Save your favorite points as a *favorites.gpx* file for external use or backup.
 
-    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*Yalnızca Android*) — Herhangi bir favori noktayı veya bir klasördeki tüm favori noktalar listesini [Harita işaretçileri listesine](../personal/markers.md) ekleyebilirsiniz.
+    - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*Android only*) — You can add any favorite point or the entire list of favorite points in a folder to the [Map markers list](../personal/markers.md).
 
-    - **Sil** (*iOS'ta bu seçenek Düzenle menüsünde bulunur*) — Favori noktaları tek tek veya seçilen favori klasörleri ve içerdikleri tüm noktaları siler.
+    - **Delete** (*on iOS, this option is located in the Edit menu*) — Deletes favorite points one at a time or selected favorite folders and all points contained in them.
 
-2. ***Üç noktalı menü*** (*Android*) ve ***uzun dokunuş*** (*iOS*). Her klasörün yanındaki *üç noktalı* menüyü veya klasöre *uzun dokunuşu* kullanarak favori gruplarını yönetin. Ayrıntılar için [Favori Grup Eylemleri](../personal/favorites.md#favorite-group-actions) bölümüne bakın.  
+2. ***Three-dot menu*** (*Android*) and ***long tap*** (*iOS*). Use the *three-dot* menu next to each folder or *long tap* the folder to manage groups of favorites. See [Favorite Group Actions](../personal/favorites.md#favorite-group-actions) for details.  
+-->
 
-
-Daha ayrıntılı talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
-
-
-## Parkurlar {#tracks}
+### Parkurlar {#tracks}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -114,20 +108,21 @@ Daha ayrıntılı talimatlar için [Favoriler](../personal/favorites.md) makales
 
 **Parkurlar**, OsmAnd içinde rotaları kaydetmek, oluşturmak ve yönetmek için güçlü araçlar sunar. [Navigasyon](../navigation/setup/gpx-navigation.md), [seyahat kaydı](../plugins/trip-recording.md) veya harici GPX dosyalarını [entegre etmek](../personal/tracks/manage-tracks.md#import) için kullanılabilirler.
 
-- **Parkurlar sekmesi** — Kaydedilen, oluşturulan veya içe aktarılan tüm parkurlar, *Yerlerim* klasöründe *Parkurlar* sekmesinde otomatik olarak görüntülenir. Klasörlere göre düzenlenir veya altlarında bir listede görüntülenir.
-
-- **Parkur oluştur** — **Parkurlar Sekmesi** veya [Seyahat kaydı eklentisi](../plugins/trip-recording.md) kullanarak kayda başlayın.
-
-- **Görüntüle ve Düzenle** — *Yerlerim* aracılığıyla parkur listesine erişin ve [klasörler](../personal/tracks/manage-tracks.md#track-folder) için *üç noktalı menü* veya [tek parkur](../personal/tracks/manage-tracks.md#search) menüsü kullanarak bunları yönetin.
-
-- **Yönet** — Parkurları belirli parametrelere göre düzenlemek için [Filtre](../personal/tracks/smart-folder.md#available-filters) ve [Akıllı klasör](../personal/tracks/smart-folder.md#smart-folder) araçlarını kullanın.
-
-- **Görünüm ve Analiz** — Parkurların görsel stilini [özelleştirin](../map/tracks/appearance.md) ve OsmAnd'ın [Rota Planla](../plan-route/create-route.md) aracını kullanarak bunları [analiz edin](../map/tracks/index.md#analyze-track-on-map).
-
 Kapsamlı rehberlik için [Parkurları Yönet](../personal/tracks/manage-tracks.md) makalesine bakın.
 
+<!--
+- **Tracks tab** — All tracks ever recorded, created, or imported are automatically displayed in the *My Places* folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 
-## OpenStreetMap Düzenlemeleri {#openstreetmap-edits}
+- **Create a track** — Start recording using the **Tracks Tab** or the [Trip recording plugin](../plugins/trip-recording.md).
+
+- **View and Edit** — Access the list of tracks through *My Places* and manage them using the *three-dot menu* for [folders](../personal/tracks/manage-tracks.md#track-folder) or the [single track](../personal/tracks/manage-tracks.md#search) menu.
+
+- **Manage** — Use the [Filter](../personal/tracks/smart-folder.md#available-filters) and [Smart folder](../personal/tracks/smart-folder.md#smart-folder) tools to organize tracks based on specific parameters.
+
+- **Appearance and Analysis** — [Customize](../map/tracks/appearance.md) the visual style of tracks and [analyze](../map/tracks/index.md#analyze-track-on-map) them using OsmAnd's [Plan a Route](../plan-route/create-route.md) tool.
+-->
+
+### OpenStreetMap Düzenlemeleri {#openstreetmap-edits}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -143,7 +138,7 @@ Kapsamlı rehberlik için [Parkurları Yönet](../personal/tracks/manage-tracks.
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Paylaş](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Paylaş](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
 
 </TabItem>
 
@@ -151,33 +146,34 @@ Kapsamlı rehberlik için [Parkurları Yönet](../personal/tracks/manage-tracks.
 
 OsmAnd'ın **OpenStreetMap Düzenlemeleri** özelliği, harita verilerine ekleme, değiştirme veya yorum yapma yoluyla küresel haritalama topluluğuna katkıda bulunmanızı sağlar.
 
-1. ***Eylem düğmeleri***. Not listenizi yönetmek için Yerlerim ekranındaki *eylem düğmelerini* kullanabilirsiniz:  
-
-    ![Paylaş](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
-
-    - **Dosyaları OSM'ye yükle** — Notlarınızı ve verilerinizi OpenStreetMap'e göndererek topluluğa katkıda bulunun.
-
-    - **Dışa Aktar** (*Yalnızca Android*) — Notlarınızı ve POI'lerinizi harici kullanım veya yedekleme için dosya olarak kaydedin; OSM notları, POI'ler veya tüm verileri birleştirilmiş olarak dışa aktarma seçenekleriyle.
-
-    - **Sil** — Seçilen öğeleri listenizden kalıcı olarak kaldırın.
-
-
-2. ***Üç noktalı menü***. Her notun yanındaki *üç noktalı menüyü* kullanarak belirli POI'leri veya notları yönetebilirsiniz:  
-
-    ![Üç noktalı menü](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
-
-    - **Düzenlemeyi OSM'ye yükle** — Değişikliklerinizi veya düzenlemelerinizi OpenStreetMap'e göndererek başkalarının görmesini sağlayın.
-
-    - **Haritada göster** — POI'nin veya notun belirli konumunu haritada görüntüleyin.
-
-    - **OSM değişikliğini/notunu değiştir** — OpenStreetMap'e zaten eklenmiş olan POI veya not üzerinde daha fazla düzenleme yapın.
-
-    - **Sil** — Seçilen POI'yi veya notu listenizden kaldırın.
-
 Adım adım talimatlar için [OSM Düzenleme eklentisine](../plugins/osm-editing.md) bakın.
 
+<!--
+1. ***Action buttons***. You can use the *action buttons* on the My Places screen to manage your list of notes:  
 
-## Sesli/Görüntülü Notlar {#audiovideo-notes}
+    ![Share](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
+
+    - **Upload files to OSM** — Send your notes and data to OpenStreetMap to contribute to the community.
+
+    - **Export** (*Android only*) — Save your notes and POIs as files for external use or backup, with options to export as OSM notes, POIs, or all data combined.
+
+    - **Delete** — Remove selected items from your list permanently.
+
+
+2. ***Three-dot menu***. You can manage specific POIs or notes using the *three-dot menu* next to each note:  
+
+    ![Three-dot menu](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
+
+    - **Upload edit to OSM** — Submit your changes or edits to OpenStreetMap for others to see.
+
+    - **Show on map** — Display the specific location of the POI or note on the map.
+
+    - **Modify OSM change/note** — Make further edits to the POI or note that have already been added to OpenStreetMap.
+
+    - **Delete** — Remove the selected POI or note from your list.
+    -->
+
+### Sesli/Görüntülü Notlar {#audiovideo-notes}
 
 <InfoAndroidOnly />
 
@@ -187,58 +183,68 @@ Adım adım talimatlar için [OSM Düzenleme eklentisine](../plugins/osm-editing
 
 **Sesli/Görüntülü Notlar eklentisi**, belirli harita konumlarına bağlı multimedya notları oluşturmanıza olanak tanır. Bu notlar, **Yerlerim** altında **A/V Notları Sekmesi**'nde saklanır.
 
-1. ***Eylem düğmeleri***. Not listenizi yönetmek için Yerlerim ekranının altındaki *eylem düğmelerini* kullanabilirsiniz:  
-
-    ![Paylaş](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
-
-    - **<Translate android="true" ids="shared_string_sort"/>** — Sıralama yöntemleri seçeneğini açar, *Türe göre* veya *Tarihe göre*, ve seçildiğinde listeyi buna göre sıralar.
-
-    - **<Translate android="true" ids="shared_string_share"/>** — GPX dosyalarına ara nokta olarak eklenenler de dahil olmak üzere tüm notların bir kontrol listesini görüntüler. İlk olarak, gerekli notlar işaretlenir, ardından ekranın sağ üst köşesindeki *Paylaş* simgesi mevcut paylaşım seçeneklerini önerir ve son olarak bu notlar seçilen seçeneğe göre kullanılabilir hale gelir.
-
-    - **GPX ara noktalarıyla paylaş** — *Yerlerim* menüsünde ara nokta olarak seçilen notları, *A/V notları* sekmesi ekranının altındaki **Paylaş** düğmesini kullanarak bunlara [GPX verileri](../plugins/audio-video-notes.md#share-with-gpx-waypoints) ekleyerek paylaşabilirsiniz.
-
-    - **<Translate android="true" ids="shared_string_delete"/>** — Yalnızca sesli, fotoğraflı ve görüntülü notların bir kontrol listesini görüntüler. İlk olarak, gereksiz notları işaretleyin, ardından ekranın sağ üst köşesindeki *Sil* simgesine dokunun, onayladıktan sonra seçilen notlar kalıcı olarak silinecektir.
-
-
-2. ***Üç noktalı menü***. Her notun yanındaki *üç noktalı menüyü* kullanarak belirli sesli, görüntülü veya fotoğraflı notları yönetebilirsiniz:  
-
-    ![Üç noktalı menü](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
-
-    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — Seçilen sesli, görüntülü veya fotoğraflı notu doğrudan görüntüler veya dinler.
-
-    - **<Translate android="true" ids="shared_string_share"/>** — Notu çeşitli uygulamalar veya platformlar aracılığıyla başkalarıyla paylaşır.
-
-    - **<Translate android="true" ids="shared_string_show_on_map"/>** — Notun ilgili konumunu ve [Bağlam menüsünü](../plugins/audio-video-notes#show-on-the-map) haritada görüntüler.
-
-    - **<Translate android="true" ids="shared_string_rename"/>** — Notun adını daha açıklayıcı veya ilgili bir şeyle değiştirin.
-
-    - **<Translate android="true" ids="shared_string_delete"/>** — Seçilen notlar koleksiyonunuzdan kalıcı olarak silinir.
-
 Daha fazla bilgi için [Sesli/Görüntülü Notlar eklentisi](../plugins/audio-video-notes.md) sayfasına bakın.
 
-
 <!--
-### GPX Ara Noktalarıyla Paylaş {#share-with-gpx-waypoints}
+1. ***Action buttons***. You can use the *action buttons* at the bottom of the My Places screen to manage your list of notes:  
 
-![Paylaş](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
+    ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
 
-*Yerlerim* menüsünde ara nokta olarak seçilen notları, *A/V notları* sekmesi ekranının altındaki **Paylaş** düğmesini kullanarak bunlara [GPX verileri](../plugins/audio-video-notes.md#share-with-gpx-waypoints) ekleyerek paylaşabilirsiniz.
+    - **<Translate android="true" ids="shared_string_sort"/>** — Opens a selection of sorting methods, *By type* or *By date*, and when selected, sorts the list accordingly.
 
-### Tek Notu Yönet {#manage-single-note}
+    - **<Translate android="true" ids="shared_string_share"/>** — Displays a checklist of all notes, including those added to GPX files as waypoints. First, the required notes are checked, then the *Share* icon in the upper right corner of the screen suggests available sharing options, and finally, these notes become available according to the selected option.
 
-![Üç noktalı menü](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+    - **Share with GPX waypoints** — You can share the notes selected as waypoints in the *My Places* menu by adding [GPX data](../plugins/audio-video-notes.md#share-with-gpx-waypoints) to them using the **Share** button at the bottom of the *A/V notes* tab screen.
 
-Her notun yanındaki **üç noktalı menüyü** kullanarak belirli sesli, görüntülü veya fotoğraflı notları yönetebilirsiniz:
+    - **<Translate android="true" ids="shared_string_delete"/>** — Displays a checklist of audio, photo, and video notes only. First, check the unnecessary notes, then tap the *Delete* icon in the upper right corner of the screen, after confirming, the selected notes will be deleted permanently.
 
-- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Seçilen sesli, görüntülü veya fotoğraflı notu doğrudan görüntüler veya dinler.
-- **<Translate android="true" ids="shared_string_share"/>**. Notu çeşitli uygulamalar veya platformlar aracılığıyla başkalarıyla paylaşır.
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Notun ilgili konumunu ve [Bağlam menüsünü](../plugins/audio-video-notes#actions-in-map-context-menu) haritada görüntüler.
-- **<Translate android="true" ids="shared_string_rename"/>**. Notun adını daha açıklayıcı veya ilgili bir şeyle değiştirin.
-- **<Translate android="true" ids="shared_string_delete"/>**. Seçilen notlar koleksiyonunuzdan kalıcı olarak silinir.
+
+2. ***Three-dot menu***. You can manage specific audio, video, or photo notes using the *three-dot menu* next to each note:  
+
+    ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+
+    - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — Views or listens to the selected audio, video, or photo note directly.
+
+    - **<Translate android="true" ids="shared_string_share"/>** — Shares the note with others through various apps or platforms.
+
+    - **<Translate android="true" ids="shared_string_show_on_map"/>** — Displays the related location and [Context menu](../plugins/audio-video-notes#show-on-the-map) of the note on the map.
+
+    - **<Translate android="true" ids="shared_string_rename"/>** — Change the name of the note to something more descriptive or relevant.
+
+    - **<Translate android="true" ids="shared_string_delete"/>** — Selected notes are permanently deleted from your collection.
+
+
+### Manage Storage {#manage-storage}
+
+*Maps & Resources* *Main Menu* item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps-resources.md#local-menu) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
+
+Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data. For detailed information, see the [Maps & Resources](../personal/maps-resources.md) article.  
+
+
+### Share with GPX Waypoints {#share-with-gpx-waypoints}
+
+![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
+
+You can share the notes selected as waypoints in the *My Places* menu by adding [GPX data](../plugins/audio-video-notes.md#share-with-gpx-waypoints) to them using the **Share** button at the bottom of the *A/V notes* tab screen.
+
+### Manage Single Note {#manage-single-note}
+
+![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+
+You can manage specific audio, video, or photo notes using the **three-dot menu** next to each note:
+
+- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Views or listens to the selected audio, video, or photo note directly.
+- **<Translate android="true" ids="shared_string_share"/>**. Shares the note with others through various apps or platforms.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Displays the related location and [Context menu](../plugins/audio-video-notes#actions-in-map-context-menu) of the note on the map.
+- **<Translate android="true" ids="shared_string_rename"/>**. Change the name of the note to something more descriptive or relevant.
+- **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
 -->
 
 ## İlgili Makaleler {#related-articles}
 
 - [Parkurları Yönet](../personal/tracks/manage-tracks.md#import--export-track)
+- [Favoriler](../personal/favorites.md)
+- [OpenStreetMap Düzenleme](../plugins/osm-editing.md)
+- [Sesli/Görüntülü Notlar](../plugins/audio-video-notes.md)
 - [Arama Geçmişi](../search/search-history.md#export-and-share)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)

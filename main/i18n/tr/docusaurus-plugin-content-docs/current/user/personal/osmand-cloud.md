@@ -1,5 +1,5 @@
 ---
-source-hash: f226d084703de03e3f99403e8dcc59a5b5a2e637c9afed048546221a7c4b939e
+source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -352,8 +352,9 @@ Otomatik yedekleme, uygulama aktifken seçili OsmAnd verilerini düzenli aralık
 
 Otomatik yedekleme davranışı:
 
-- Otomatik yedekleme, OsmAnd ön planda çalışırken yaklaşık her saat çalışır.
-- Harita ekranına döndüğünüzde yedekleme de başlar.
+- Otomatik yedekleme, OsmAnd ön planda çalışırken yaklaşık her saat çalışır. Bu aralık şu anda uygulamada ayarlanamaz. .osf dosyası içe aktararak değiştirilebilir.
+- Harita ekranını açtığınızda veya döndüğünüzde otomatik yedekleme başlayabilir.
+- Zamanlanmış çalıştırmalara ek olarak, otomatik yedekleme bazı veri türlerinde (örneğin, Favoriler) değişikliklerden sonra da başlayabilir; Otomatik yedekleme ayarlarında etkinleştirilen yedekleme türlerini kullanır.
 - Her öğeyi veya tüm bölümleri bağımsız olarak etkinleştirebilir/devre dışı bırakabilirsiniz.
 - Otomatik yedekleme kapalı olsa bile verileriniz yerel olarak kullanılabilir kalır.
 
@@ -483,7 +484,7 @@ Bir **çakışma**, bir dosyanın **Yerel sürümü** ile **Bulut sürümünün*
 
 - Yerel değişikliklerle **Bulut sürümünü değiştirebilir** veya **Bulut sürümünü** cihazınıza indirebilirsiniz.
 
-- Bir çakışma çözüldüğünde, listeden otomatik olarak kaldırılır. İşlem genellikle sadece birkaç dakika sürer.
+- Bir çakışma çözüldüğünde, listeden otomatik olarak kaldırılır. İşlem genellikle sadece birkaç an sürer.
 
 - **Çakışmalar** klasöründeki bir dosyaya dokunmak, **Yerel** ve **Bulut** sürümleri hakkında, son değiştirme ve yükleme zamanları dahil olmak üzere ayrıntıları görüntüler.
 

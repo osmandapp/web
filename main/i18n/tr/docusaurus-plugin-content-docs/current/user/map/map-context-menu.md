@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
@@ -142,6 +142,7 @@ Mevcut ayrıntılar şunları içerir:
 - [Alanlar içinde](#polygon-information)
 - [Yakındaki İÇN'ler](#nearby-pois)
 - [Yakındaki Popüler Yerler](#nearby-popular-places)
+- [Kılavuzlar](#guides) (yalnızca Android)
 - [Duraklar için Toplu Taşıma rotaları](#public-transport-routes)
 - [Aynı gruptan Favoriler / İz Noktaları](#favorites--track-points-from-the-group)
 - [OpenStreetMap bağlantısı](#openstreetmap-link)
@@ -235,6 +236,7 @@ Alternatif adların görüntülenme özellikleri:
 
 **Alan İçinde** özelliği, bir nesnenin içinde bulunduğu **alanları** listeler. Bu, coğrafi özellikleri, idari sınırları, arazi kullanım alanlarını, doğal özellikleri ve diğer kategorize edilmiş alanları içerir. Alan boyutuna göre *en küçükten en büyüğe* sıralanmış bir *çevreleyen çokgenler listesi*.
 
+
 ### Koordinatlar {#coordinates}
 
 |Koordinat formatı| |
@@ -296,6 +298,18 @@ Bu bölüm, mevcut konumunuzun etrafındaki ilginç destinasyonları ve simgeler
 </TabItem>
 
 </Tabs>
+
+### Kılavuzlar {#guides}
+
+<InfoAndroidOnly/>
+
+![Kılavuzlar Android](@site/static/img/map/details_guides.png)
+
+**Kılavuzlar** bölümü, harita bağlam menüsünde bazı yerler için görünür ve seçilen ilgi çekici nokta ile ilgili **Seyahat (Wikivoyage)** kılavuzlarına erişim sağlar. Seçilen yeri bahseden kılavuz girişlerinin (örneğin, bir ülke veya bölge) bir listesini gösterir.
+
+Kılavuzlar bölümü, yalnızca seçilen alan için **Seyahat (Wikivoyage)** verileri indirilmişse görüntülenir.
+
+**Not:** Kılavuzlar, genel Wikipedia açıklamalarına değil, Wikivoyage içeriğine bağlıdır.
 
 
 ### Toplu Taşıma Rotaları {#public-transport-routes}

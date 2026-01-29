@@ -1,5 +1,5 @@
 ---
-source-hash: c74ee94364343aaac19d958ab09b3dda962064b21f0cad21692d75b92ec0bf3b
+source-hash: 1e4aec6f72946e16539e16387ad515a3f9a679af93b952962603672526fc606e
 sidebar_position: 1
 title: Erişilebilirlik
 ---
@@ -96,14 +96,18 @@ Etkinleştirmek için:
 
 - **Konumum** üzerine uzun dokunuş, ***Konumunuzu göster*** ve ***Ayrıntıları göster*** seçenekleriyle bir menü açar. Ayrıntıları göster'i seçmek ek rota bilgilerini görüntüler ve ***Otomatik duyuruyu başlat/durdur*** düğmesini sağlar.
 - Duyuruların sıklığını kontrol etmek için **Otomatik Duyuru Periyodunu** (örn. *10 saniye*) ayarlayın.
-- **TalkBack** cihazın sistem ayarlarında etkinleştirilmediyse, OsmAnd *sesli bildirimler* sağlamaz ve yalnızca ekranda *metin bildirimleri* görüntüler.  
+- **TalkBack** etkinleştirildiğinde, bu bildirimler sesli olarak okunur. Eğer **TalkBack** cihazın sistem ayarlarında etkinleştirilmediyse, OsmAnd *sesli bildirimler* sağlamaz ve yalnızca ekranda *metin bildirimleri* görüntüler.  
 
 ### Akıllı Otomatik Duyuru {#smart-autoannounce}
 
 Etkinleştirmek için:  
 *Eklentiler* → *Erişilebilirlik* → *Ayarlar* → *Akıllı Otomatik Duyuru*
 
-**Akıllı Otomatik Duyuru** özelliği, planlanan rotadan saptığınızda *sesli bildirimler* sağlar. *Sesli rehberliğe* güvenen görme engelli kullanıcıları desteklemek için tasarlanmıştır.  
+**Akıllı Otomatik Duyuru** özelliği, Otomatik Duyuru'nun üzerine çalışır. Önce Otomatik Duyuru'yu başlatın ve ardından eklenti ayarlarında Akıllı Otomatik Duyuru'yu etkinleştirin.
+
+Akıllı Otomatik Duyuru etkinleştirildiğinde, duyurular mevcut navigasyon hedefinin sektörü değiştiğinde tetiklenir. Bu, genellikle hareketinizin bir sonraki dönüşe veya varış noktasına olan yönü değiştirdiği durumlarda olur. Akıllı Otomatik Duyuru devre dışı bırakıldığında, OsmAnd Otomatik Duyuru Periyodu'na göre periyodik bildirimler gösterir.
+
+**Not:** Yalnızca Otomatik Duyuru Periyodu ayarlanabilir. “Sektör değişikliği” tetikleyicisi uygulama ayarlarında yapılandırılabilir değildir.  
 
 
 ## Eklenti Ayarları {#plugin-settings}

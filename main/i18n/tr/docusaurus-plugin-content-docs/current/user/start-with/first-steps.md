@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title: İlk Adımlar
 ---
@@ -42,11 +42,11 @@ Haritaları nasıl indireceğinizi, uygulamayı nasıl yapılandıracağınızı
 
 OsmAnd, **Android** ve **iOS** için kullanılabilen Haritalar ve Navigasyon için bir mobil uygulamadır. En popüler marketlerden indirebilirsiniz.
 
-**Android marketleri**: [Google Play Store](https://play.google.com/store/apps/details?id=net.osmand) ve [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+**Android marketleri**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) ve [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
 <AndroidStore/>
 
-**iOS**: [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+**iOS**: [App store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 <AppleStore/>
 
@@ -642,13 +642,15 @@ Soru sormanıza veya önerilerde bulunmanıza olanak tanır.
 
 <TabItem value="ios" label="iOS">
 
-![Haritalar menüsü iOS](@site/static/img/steps/offline_about_ios.png)
+![Haritalar menüsü iOS](@site/static/img/steps/offline_about_ios_new.png) ![Haritalar menüsü iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Ekibimiz hakkında bilgi edinebilir, uygulamanın güncel sürümünü ve yenilikleri görebilir, uygulamanın beta sürümünü indirebilirsiniz.
+
+Yapı, OsmAnd Maps &lt;build&gt; formatında, &lt;date&gt; yayınlandı şeklinde gösterilir. Bu bilgiyi destekle hızlıca paylaşmak için, yapı satırına uzun dokunarak yapı numarasını yayın tarihiyle birlikte kopyalayabilirsiniz.
 
 
 ## Gizlilik {#privacy}

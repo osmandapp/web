@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Rota Bağlam Menüsü
 ---
@@ -365,12 +365,12 @@ Rota üzerinde *yükseklik bilgisi yoksa*, aşağıdaki yollarla ekleyebilirsini
 ### Eksik Yüksekliği Hesapla {#calculate-missing-elevation}
 
 :::note OsmAnd Pro aboneliği
-Çevrimdışı yükseklik hesaplama özelliği yalnızca [**OsmAnd Pro aboneleri**](../../purchases/android.md#pro-features) <ProFeature /> için kullanılabilir.
+[Yükseklik çevrimdışı hesapla](../../plan-route/create-route.md#get-elevation-data) özelliği yalnızca [**OsmAnd Pro aboneleri**](../../purchases/android.md#pro-features) <ProFeature /> için kullanılabilir.
 :::
 
 <InfoAndroidOnly />
 
-Bu özellik, 70 derece kuzey enlemi ile 70 derece güney enlemi arasındaki herhangi bir arazi için GPX rotasının yükseklik profilini çevrimdışı olarak hesaplamanıza olanak tanır, [Arazi haritası verilerine](../../plugins/topography.md#download-maps) dayanarak. *Arazi haritaları (3D) daha önce indirilmiş olmalıdır*.
+[Bu özellik](../../plan-route/create-route.md#get-elevation-data), 70 derece kuzey enlemi ile 70 derece güney enlemi arasındaki herhangi bir arazi için GPX rotasının yükseklik profilini çevrimdışı olarak hesaplamanıza olanak tanır, [Arazi haritası verilerine](../../plugins/topography.md#download-maps) dayanarak. *Arazi haritaları (3D) daha önce indirilmiş olmalıdır*.
 
 1. Gerekli bölge için [Arazi haritalarını (3D)](../../plugins/topography.md#download-maps) indirin.
 2. Rota herhangi bir yükseklik verisi içermiyorsa, rota bağlam menüsüne gidin (*Rota bağlam menüsü → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), *Arazi haritalarını kullan*'ı seçin ve hesaplamadan sonra arazi verilerine dayalı bir rota grafiği elde edeceksiniz.  
@@ -471,7 +471,7 @@ Yol noktası oluşturma ekranını açmak için *Yol Noktası Ekle* düğmesine 
 
 <TabItem value="ios" label="iOS">
 
-![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -483,9 +483,9 @@ Yol noktası oluşturma ekranını açmak için *Yol Noktası Ekle* düğmesine 
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Grup yol noktalarını haritada görüntülemenize veya görüntülememenize olanak tanır. Veya grup yol noktalarını haritada görüntülemek veya atlamak için [ekran düğmesini](#points--waypoints) kullanabilirsiniz.
 - **<Translate android="true" ids="shared_string_rename"/>** - Grubun adını değiştirin.
-- **<Translate android="true" ids="change_default_appearance"/>** - Bir yol noktası grubunun görüntüleme seçeneklerini değiştirin.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Bir yol noktası grubunun görüntüleme seçeneklerini değiştirin.
 - **<Translate android="true" ids="add_group_to_markers"/>** veya **Kaldır** (*Yalnızca Android*) - Grup yol noktalarını [Harita işaretçileri](../../personal/markers.md) listesine taşıyın.
-- **<Translate android="true" ids="add_to_favorites"/>** (*Yalnızca Android*) – Seçilen Yol Noktası grubunu [Favorilere](../../personal/favorites.md) kopyalamanıza olanak tanır. İki seçenekten birini seçebilirsiniz: ***<Translate android="true" ids="copy_as_new_folder"/>*** veya ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** – Seçilen Yol Noktası grubunu [Favorilere](../../personal/favorites.md) kopyalamanıza olanak tanır. İki seçenekten birini seçebilirsiniz: ***<Translate android="true" ids="copy_as_new_folder"/>*** veya ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Yalnızca Android*) - Yol noktaları arasında bir rota oluşturur. İlk ve son noktalar rotanın başlangıcı ve bitişi olur, diğerleri ara noktalara dönüştürülür.
 - **<Translate android="true" ids="shared_string_delete"/>** - Bir yol noktası grubunu silin.
 
@@ -656,7 +656,7 @@ Her segment için görüntüleyebilirsiniz:
 - hareket süresi.
 - ortalama ve maksimum hız.
 
-Listede herhangi bir segmente dokunduğunuzda, harita görünümü rotanın aralıklarıyla tam rotayı gösterir ve ekranın alt kısmında rota için bağlam menüsünü açar.
+Listede herhangi bir segmente dokunduğunuzda, harita görünümü rotanın aralıklarıyla tam rotayı gösterir ve ekranın alt kısmında rota için bağlam menüsünü açar. Haritada, aralık etiketleri iki eylemi destekler: rota genel bakış panelini açmak için dokunun ve rota bağlam menüsünü açmak için uzun basın.
 
 
 ### Zamana Göre Böl {#split-by-time}
@@ -668,9 +668,14 @@ Listede herhangi bir segmente dokunduğunuzda, harita görünümü rotanın aral
 
 ### Yokuş Yukarı/Yokuş Aşağıya Göre Böl {#split-by-uphill-downhill}
 
-![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
 Bu seçenek, bir rotayı yükseklik değişikliklerine göre segmentlere böler. Her aralık ***yokuş yukarı***, ***yokuş aşağı*** veya ***düz*** olarak sınıflandırılır. Aralıkların görüntülenme şekli, her segment için sağlanan istatistikler ve haritada görünme şekli de [Mesafeye Göre Böl](#split-by-distance) bölümündeki gibidir.
+
+Haritada, segmentler her aralığın başında renkli etiketlerle işaretlenir:
+- **Yokuş yukarı segmentler** (kırmızı etiketler) yukarı ok, segment indeksi ve yüzde olarak ortalama eğimi gösterir (örneğin, ↑ 11. 2%).
+- **Yokuş aşağı segmentler** (yeşil etiketler) aşağı ok, segment indeksi ve yüzde olarak ortalama eğimi gösterir (örneğin, ↓ 12. -2%).
+- **Düz segmentler** (mavi etiketler) düz bölüm mesafesini gösterir (örneğin, 616 m, 411 m).
 
 
 ### Kalp Atış Hızı Metrikleri {#heart-rate-metrics}
