@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_TRAVEL } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import { apiGet } from '../../util/HttpApi';
+import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
 import { ZOOM_TO_MAP } from './SearchLayer';
 import { ACTIVITY_ALL, ALL_YEARS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
@@ -335,18 +335,19 @@ export default function TravelLayer() {
         const maxLon = bounds.getEast();
 
         const { activity, year, tags, tagMatchMode = TAG_MATCH_MODES.OR } = ctx.searchTravelRoutes;
-        const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, {
+        const body = {
+            activity: activity === ACTIVITY_ALL ? undefined : activity,
+            year: year === ALL_YEARS ? undefined : year,
+            minlat: minLat,
+            maxlat: maxLat,
+            minlon: minLon,
+            maxlon: maxLon,
+            tags: tags.length ? tags : undefined,
+            tagMatchMode,
+        };
+
+        const response = await apiPost(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, body, {
             apiCache: true,
-            params: {
-                activity: activity === ACTIVITY_ALL ? undefined : activity,
-                year: year === ALL_YEARS ? undefined : year,
-                minlat: minLat,
-                maxlat: maxLat,
-                minlon: minLon,
-                maxlon: maxLon,
-                tags: tags.length ? tags.join(',') : undefined,
-                tagMatchMode,
-            },
         });
 
         if (response?.data) {
