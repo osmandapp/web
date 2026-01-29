@@ -16,9 +16,10 @@ import { SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import LoginContext from '../../context/LoginContext';
 import Loading from '../errors/Loading';
-import { CONFIGURE_URL, EMPTY_VISIBLE_HEIGHT, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
+import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import gStyles from '../gstylesmenu.module.css';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
@@ -254,34 +255,29 @@ export default function VisibleTracks({ source, open }) {
                     <Loading />
                 ) : (
                     <>
-                        {showEmptyVisible && <EmptyVisible id="se-empty-visible" />}
-                        {hasVisibleTracks() && (
-                            <Box
-                                sx={{
-                                    flex: 1,
-                                    overflowY: 'auto',
-                                    overflowX: 'hidden',
-                                    maxHeight: `${height - 120 - (showEmptyVisible ? EMPTY_VISIBLE_HEIGHT : 0)}px`,
-                                }}
-                            >
-                                <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
-                                    {trackItems}
+                        <Box sx={{ height: `${height - 120}px` }} className={gStyles.scrollMainBlock}>
+                            {showEmptyVisible && <EmptyVisible id="se-empty-visible" />}
+                            {hasVisibleTracks() && (
+                                <Box className={gStyles.scrollActiveBlock}>
+                                    <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
+                                        {trackItems}
+                                    </Box>
+                                    {trackItemsOld.length > 0 && (
+                                        <>
+                                            <Divider />
+                                            <MenuItem className={visibleStyles.item}>
+                                                <Typography className={visibleStyles.title} noWrap>
+                                                    {t('web:recently_visible')}
+                                                </Typography>
+                                            </MenuItem>
+                                            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
+                                                {trackItemsOld}
+                                            </Box>
+                                        </>
+                                    )}
                                 </Box>
-                                {trackItemsOld.length > 0 && (
-                                    <>
-                                        <Divider />
-                                        <MenuItem className={visibleStyles.item}>
-                                            <Typography className={visibleStyles.title} noWrap>
-                                                {t('web:recently_visible')}
-                                            </Typography>
-                                        </MenuItem>
-                                        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
-                                            {trackItemsOld}
-                                        </Box>
-                                    </>
-                                )}
-                            </Box>
-                        )}
+                            )}
+                        </Box>
                         {!hasVisibleTracks() && !hasTracks() && (
                             <Empty
                                 title={"You don't have track files"}
