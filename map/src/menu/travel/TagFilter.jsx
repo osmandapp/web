@@ -95,6 +95,7 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
     function removeTag(tagToRemove) {
         const next = selectedTags.filter((tag) => tag !== tagToRemove);
         onChangeTags(next);
+        setTagInput('');
     }
 
     const options = useMemo(() => {
