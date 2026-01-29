@@ -171,7 +171,7 @@ export default function SearchLayer() {
             updateAsyncLayers().then();
         }
         const newBounds = map.getBounds();
-        if (!ctx.visibleBounds || !ctx.visibleBounds.equals(newBounds)) {
+        if (!ctx.visibleBounds?.equals(newBounds)) {
             ctx.setVisibleBounds(newBounds);
         }
     }, [zoom, move]);
