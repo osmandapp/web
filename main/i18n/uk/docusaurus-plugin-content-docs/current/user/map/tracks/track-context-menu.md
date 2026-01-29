@@ -1,5 +1,5 @@
 ---
-source-hash: c3e5ac67f7089096f5b71e7e0201440bab4f393bc16c357be3085327287a1bd3
+source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
@@ -365,12 +365,12 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 ### Розрахунок відсутньої висоти {#calculate-missing-elevation}
 
 :::note Підписка OsmAnd Pro
-Функція розрахунку висоти офлайн доступна лише для [**передплатників OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
+Функція [розрахунку висоти офлайн](../../plan-route/create-route.md#get-elevation-data) доступна лише для [**передплатників OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
 <InfoAndroidOnly />
 
-Ця функція дозволяє розрахувати профіль висот для GPX-треку в автономному режимі для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти на основі [даних Карти рельєфу](../../plugins/topography.md#download-maps). *Карти рельєфу (3D) повинні бути попередньо завантажені*.
+[Ця функція](../../plan-route/create-route.md#get-elevation-data) дозволяє розрахувати профіль висот для GPX-треку в автономному режимі для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти на основі [даних Карти рельєфу](../../plugins/topography.md#download-maps). *Карти рельєфу (3D) повинні бути попередньо завантажені*.
 
 1. Завантажте [Карти рельєфу (3D)](../../plugins/topography.md#download-maps) для потрібного регіону.
 2. Якщо трек не містить даних про висоту, перейдіть до контекстного меню треку (*Контекстне меню треку → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), виберіть *Використовувати Карти рельєфу*, і після розрахунку ви отримаєте графік треку на основі даних рельєфу.  
@@ -471,7 +471,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="ios" label="iOS">
 
-![Меню групи треку iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+![Меню групи треку iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Меню групи треку iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -483,9 +483,9 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - Дозволяє відображати або не відображати шляхові точки групи на мапі. Або ви можете використовувати [кнопку на екрані](#points--waypoints) для відображення або приховування шляхових точок групи на мапі.
 - **<Translate android="true" ids="shared_string_rename"/>** - Змінити назву групи.
-- **<Translate android="true" ids="change_default_appearance"/>** - Змінити параметри відображення для групи шляхових точок.
+- **<Translate android="true" ids="change_default_appearance"/>** (*Android*) / **<Translate ios="true" ids="change_appearance"/>** (*iOS*) - Змінити параметри відображення для групи шляхових точок.
 - **<Translate android="true" ids="add_group_to_markers"/>** або **Видалити** (*Лише для Android*) - Перемістити шляхові точки групи до списку [Маркерів на мапі](../../personal/markers.md).
-- **<Translate android="true" ids="add_to_favorites"/>** (*Лише для Android*) - Дозволяє скопіювати вибрану групу Шляхових точок до [Улюблених](../../personal/favorites.md). Ви можете вибрати одну з двох опцій: ***<Translate android="true" ids="copy_as_new_folder"/>*** або ***<Translate android="true" ids="add_to_a_folder"/>***.
+- **<Translate android="true" ids="add_to_favorites"/>** - Дозволяє скопіювати вибрану групу Шляхових точок до [Улюблених](../../personal/favorites.md). Ви можете вибрати одну з двох опцій: ***<Translate android="true" ids="copy_as_new_folder"/>*** або ***<Translate android="true" ids="add_to_a_folder"/>***.
 - **<Translate android="true" ids="add_to_navigation"/>**  (*Лише для Android*) - Створює маршрут між шляховими точками. Перша та остання точки стають початком та кінцем маршруту, а решта перетворюються на проміжні точки.
 - **<Translate android="true" ids="shared_string_delete"/>** - Видалити групу шляхових точок.
 
@@ -656,7 +656,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 - час у русі.
 - середню та максимальну швидкість.
 
-Коли ви торкаєтеся будь-якого сегмента в списку, вид мапи показує повний трек з його інтервалами та відкриває контекстне меню для треку внизу екрана.
+Коли ви торкаєтеся будь-якого сегмента в списку, вид мапи показує повний трек з його інтервалами та відкриває контекстне меню для треку внизу екрана. На мапі позначки інтервалів підтримують дві дії: торкання для відкриття панелі огляду треку та довге натискання для відкриття контекстного меню треку.
 
 
 ### Розділення за часом {#split-by-time}
@@ -668,9 +668,14 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Розділення за підйомом/спуском {#split-by-uphill-downhill}
 
-![Вкладка розділення треку за підйомом/спуском](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Мапа розділення треку за підйомом/спуском](@site/static/img/personal/tracks/split_by_4_map.png) 
+![Вкладка розділення треку за підйомом/спуском](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Мапа розділення треку за підйомом/спуском](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
 Ця опція розділяє трек на сегменти на основі змін висоти. Кожен інтервал класифікується як ***підйом***, ***спуск*** або ***рівнина***. Спосіб відображення інтервалів, статистика, надана для кожного сегмента, та їхній вигляд на мапі також такі ж, як у розділі [Розділення за відстанню](#split-by-distance).
+
+На мапі сегменти позначаються кольоровими мітками на початку кожного інтервалу:
+- **Сегменти підйому** (червоні мітки) показують стрілку вгору, індекс сегмента та середній нахил у відсотках (наприклад, ↑ 11. 2%).
+- **Сегменти спуску** (зелені мітки) показують стрілку вниз, індекс сегмента та середній нахил у відсотках (наприклад, ↓ 12. -2%).
+- **Рівнинні сегменти** (сині мітки) показують відстань рівнинної ділянки (наприклад, 616 м, 411 м).
 
 
 ### Метрики частоти серцевих скорочень {#heart-rate-metrics}

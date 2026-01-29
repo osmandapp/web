@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title:  Зовнішній вигляд треку
 ---
@@ -61,7 +61,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Доступні варіанти кольору:**
 
-- **Безкоштовні налаштування**: *колір <Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* (якщо записано) та *<Translate android="true" ids="altitude"/>* (якщо записано).   
+- Безкоштовні налаштування: *<Translate android="true" ids="track_coloring_solid"/> колір*, *<Translate android="true" ids="shared_string_speed"/>* (якщо записано) та *<Translate android="true" ids="altitude"/>* (якщо записано).   
 - [Функція Pro](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 На iOS список **Забарвлення** відкривається як контекстне меню. Елементи можуть з'являтися в трьох станах: 
@@ -69,7 +69,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 2. <Translate ios="true" ids="weather_update_disabled"/>. У треку відсутні необхідні дані.
 3. PRO. Доступно для поточного треку, але вимагає підписки; натискання відкриває екран [<Translate ios="true" ids="purchase_dialog_title"/>](https://osmand.net/docs/user/purchases/ios).
 
-Для отримання додаткової інформації про налаштування зовнішнього вигляду лінії маршруту див. [Екран мапи під час навігації](../../navigation/guidance/map-during-navigation.md#color), а про вибір і створення власного кольору див. [Колірні схеми](../../personal/color-palette-schemes.md#routes).
+Для отримання додаткової інформації про налаштування зовнішнього вигляду лінії маршруту див. [Екран мапи під час навігації](../../navigation/guidance/map-during-navigation.md#color), а про вибір і створення власного кольору див. [Колірні схеми](../../personal/color-palette-schemes.md#tracks-routes).
 
 
 ### Ширина {#width}

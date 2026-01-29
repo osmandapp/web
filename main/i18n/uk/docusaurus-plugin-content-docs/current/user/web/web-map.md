@@ -1,5 +1,5 @@
 ---
-source-hash: bdb9eac116a28f1d5dfc284cdfe30f108124a7c87fbf05c077f70e32504f6445
+source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
 sidebar_position: 3
 sidebar_label: Мапа
 title: Глобальна мапа на сайті
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 Веб-мапа OsmAnd — це глобальна мапа, що базується на даних [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Вона дозволяє користувачам переглядати власні дані, такі як треки та улюблені місця, створювати навігаційні маршрути для будь-якого профілю та отримувати доступ до додаткових функцій, таких як погода, загальнодоступні GPX-треки, POI та зображення з Wikimedia. Досліджуйте та налаштовуйте досвід роботи з даними безпосередньо у браузері.
 
-![Веб-версія OsmAnd усе](@site/static/img/web/web_map_all.png)
+![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
 ## Контекстне меню мапи {#map-context-menu}
@@ -41,11 +41,11 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 Щоб відкрити його, клацніть правою кнопкою миші в будь-якому місці на мапі. Це меню містить наступні дії:
 
 - **Де я** – Швидко знаходьте своє поточне місцезнаходження на мапі. Ця функція показує найближчі адреси до вибраної точки на мапі.
-- **Відкрити погоду** – Доступ до [меню Погода](#weather-on-the-web) для перегляду деталей погоди.
-- **Створити новий маршрут** – Відкриває інструмент [*Планування маршруту*](../web/planner.md#navigation-route), де вибране місце стає початковою або кінцевою точкою.
+- **Відкрити погоду** – Доступ до [меню Погода](../web/web-weather.md) для перегляду деталей погоди.
+- **Створити новий маршрут** – Відкриває інструмент [*Планування маршруту*](../web/web-navigation.md), де вибране місце стає початковою або кінцевою точкою.
 - **Додати улюблене місце** –  Дозволяє створювати та зберігати [улюблене місце](../web/web-favorites.md#add--edit-favorite) в будь-якій точці на мапі для легкого доступу.
-- **Маршрут звідси** –  Встановлює вибрану точку як [початкову точку](../web/planner.md#navigation-route) для навігації.
-- **Маршрут сюди** – Встановлює вибрану точку як [пункт призначення для навігації](../web/planner.md#navigation-route).
+- **Маршрут звідси** –  Встановлює вибрану точку як [початкову точку](../web/web-navigation.md#start-a-route) для навігації.
+- **Маршрут сюди** – Встановлює вибрану точку як [пункт призначення для навігації](../web/web-navigation.md#start-a-route).
 - **Копіювати координати** – Копіює координати вибраної точки для зовнішнього використання.
 - **Показати регіони** – Показує регіони, пов'язані з вибраним місцезнаходженням.
 
@@ -57,7 +57,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 Add pin option will be added back once it becomes available again.
 -->
 
-![Контекстне меню мапи](@site/static/img/web/map_context_menu_new.png)
+![Map Context menu](@site/static/img/web/map_context_menu_new.png)
 
 
 ## Меню "Налаштувати мапу" {#configure-map-menu}
@@ -69,7 +69,7 @@ Add pin option will be added back once it becomes available again.
 - [Треки](#tracks). Містить GPX-треки, видимі на мапі.  
 - [Рельєф](#terrain). Вмикає або вимикає колірну схему рельєфу на мапі.
 
-![Меню POI](@site/static/img/web/configure_map_web.png)
+![POIs menu](@site/static/img/web/configure_map_web.png)
 
 
 ### Шар POI {#poi-overlay}
@@ -80,7 +80,7 @@ Add pin option will be added back once it becomes available again.
 
 **Примітка:** Якщо ви шукаєте конкретне місце, ви також можете скористатися [**розділом Пошук**](web-search.md) на мапі.
 
-Після відображення POI вибір маркера POI на мапі відкриває панель деталей, яка показує доступну інформацію про цей об'єкт. Залежно від POI, це може включати: назву місця та тип, адресу, контактні поля, ідентифікатори, пов'язані з OSM, та координати, посилання на посилання (Wikipedia, Wikidata), коли вони присутні. 
+Після відображення POI вибір маркера POI на мапі відкриває панель деталей, яка показує доступну інформацію про цей об'єкт. Залежно від POI, це може включати: назву місця та тип, адресу, контактні поля, ідентифікатори, пов'язані з OSM, та координати, посилання (Wikipedia, Wikidata), коли вони присутні. 
 
 Для POI, які мають онлайн-фотографії, панель деталей показує блок "Онлайн-фотографії" з ескізами. "Показати все" відкриває режим галереї з повним списком фотографій. У переглядачі фотографій веб-версія OsmAnd відображає метадані фотографії, коли вони доступні, включаючи: дату, автора, ліцензію та опис.
 
@@ -90,7 +90,7 @@ Add pin option will be added back once it becomes available again.
 - *Маршрут звідси* — встановлює вибраний POI як початкову точку та відкриває панель Маршруту, щоб ви могли вибрати пункт призначення та профіль.
 - *Навігація* — встановлює вибраний POI як пункт призначення для навігації.
 
-![Меню POI](@site/static/img/web/poi_categories.png) ![Меню POI](@site/static/img/web/poi_photo_new.png)
+![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
 
 
 ### Улюблені місця {#favorites}
@@ -114,7 +114,7 @@ Add pin option will be added back once it becomes available again.
 - **Завантажити**: Зберігає трек на ваш локальний пристрій.  
 - **Видалити**: Назавжди видаляє трек зі списку.
 
-![Меню "Налаштувати мапу" Треки](@site/static/img/web/configure_map_track.png)
+![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
 
 ### Рельєф {#terrain}
@@ -129,7 +129,7 @@ Add pin option will be added back once it becomes available again.
   - **Висота**
 - Налаштувати видимість вибраного шару рельєфу від **0% до 100%**.
 
-![Меню "Налаштувати мапу" Рельєф](@site/static/img/web/configure_map_terrain.png)
+![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
 
 
 ## Налаштування {#settings}
@@ -142,7 +142,7 @@ Add pin option will be added back once it becomes available again.
 
 *Перейдіть до: Меню → ⚙ Налаштування → Мова відображення*
 
-![Мова веб-версії](@site/static/img/web/web_language.png)
+![Web Language](@site/static/img/web/web_language.png)
 
 ### Одиниці {#units}
 
@@ -171,7 +171,7 @@ Add pin option will be added back once it becomes available again.
 
 Наприклад, швидкість 90 км/год відповідає 25 м/с або близько 55,92 миль/год.
 
-![Одиниці веб-версії](@site/static/img/web/web_units_len.png) ![Одиниці веб-версії](@site/static/img/web/web_units_spe.png)
+![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -200,27 +200,27 @@ In this section of the menu, you can change the map style. You can read more abo
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![Веб-версія OsmAnd Створити трек](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL без позначки на мапі:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![Веб-версія OsmAnd Створити трек](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL з навігацією:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![Веб-версія OsmAnd Створити трек](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
 
 Залежно від зазначених параметрів, рядки URL можуть містити:
 
-- **latitude**: значення широти у вигляді числа.  
-- **longitude**: значення довготи у вигляді числа.  
-- **start-finish**: координати для навігації.  
-- **profile**: профіль навігації (наприклад, автомобіль, велосипед).  
-- **zoom**: рівень масштабування.
+- **широта**: значення широти у вигляді числа.  
+- **довгота**: значення довготи у вигляді числа.  
+- **початок-кінець**: координати для навігації.  
+- **профіль**: профіль навігації (наприклад, автомобіль, велосипед).  
+- **масштаб**: рівень масштабування.
 
 4. **Погода**&nbsp; – &nbsp;`osmand.net/map/weather`
 
@@ -239,7 +239,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 10. **Планувати маршрут**&nbsp; - &nbsp;`osmand.net/map/plan`
 
-11. Пряме посилання на поточну [сторінку "Огляд"](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+11. Пряме посилання на поточну [**сторінку "Огляд"**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
 
 
 ## Пов'язані статті {#related-articles}

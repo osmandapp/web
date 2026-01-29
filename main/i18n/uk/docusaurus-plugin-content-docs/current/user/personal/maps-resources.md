@@ -1,7 +1,7 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
-title:  Карти та ресурси
+title:  Maps & Resources
 ---
 
 import Tabs from '@theme/Tabs';
@@ -428,11 +428,13 @@ Use sorting options to organize map data:
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Меню Карти Оновлення карт iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Прогноз погоди Оновлення карт iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Меню Карти Оновлення карт iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Прогноз погоди Оновлення карт iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 Вкладка **Оновлення** дозволяє оновлювати карти та ресурси OsmAnd. Стандартні карти та карти лише з дорогами випускаються раз на місяць, зазвичай між 2-м і 5-м числом, і містять дані OpenStreetMap до останнього дня попереднього місяця (наприклад, жовтневий випуск містить дані до 30 вересня). Інші дані, такі як Wikipedia, рельєф або морські карти, можуть мати інші, нерегулярні графіки оновлення. 
 
 Використовуйте кнопку *Оновити все*, щоб оновити всі карти одночасно, або оновлюйте окремі карти за потреби. Для щогодинних оновлень перевірте статус вашої підписки на [Live-оновлення](#live-updates). Якщо увімкнено, розділ **Live-оновлення** з'явиться у верхній частині вкладки, під індикатором пам'яті пристрою.
+
+Вкладка **Оновлення** також може відображати елемент **Непідтримувані карти**. Він з'являється, коли у вас є карти, які більше не підтримуються і були замінені меншими регіонами. Торкніться **Непідтримувані карти**, щоб переглянути список, видалити застарілі карти та завантажити нові версії регіонів замість них. На екрані **Непідтримувані карти** ви можете переглянути всі непідтримувані карти та використати **Видалити все**, щоб видалити їх одразу (перед видаленням з'являється запит на підтвердження).
 
 Вкладка **Оновлення** також містить розділ "Прогноз погоди". Він призначений для керування вашими офлайн-прогнозами для вибраних країн:
 
@@ -464,7 +466,7 @@ Live-оновлення — це платна функція.
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Меню Карти OsmAnd live iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Меню Карти OsmAnd live редагування iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Меню Карти OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Меню Карти OsmAnd live редагування iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: b3628319fe264d1340c71509c8c7c386e2371ca88bd67b6c06961f0a7f2a9726
+source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
 sidebar_position: 3
 title: Контекстне меню карти
 ---
@@ -142,6 +142,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [В межах областей](#polygon-information)
 - [Найближчі POI](#nearby-pois)
 - [Найближчі популярні місця](#nearby-popular-places)
+- [Гіди](#guides) (лише Android)
 - [Маршрути громадського транспорту для зупинок](#public-transport-routes)
 - [Улюблені / Шляхові точки з тієї ж групи](#favorites--track-points-from-the-group)
 - [Посилання на OpenStreetMap](#openstreetmap-link)
@@ -196,7 +197,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Альтернативні назви Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Альтернативні назви Android](@site/static/img/map/alternative_names_2_ios.png)
+![Альтернативні назви iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Альтернативні назви iOS](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -227,7 +228,7 @@ OsmAnd відображає **додаткові назви POI** у *конте
 
 <TabItem value="ios" label="iOS">
 
-![Інформація про полігон Android](@site/static/img/map/polygon_information_ios.png)
+![Інформація про полігон iOS](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -296,6 +297,18 @@ OsmAnd відображає **додаткові назви POI** у *конте
 </TabItem>
 
 </Tabs>
+
+### Гіди {#guides}
+
+<InfoAndroidOnly/>
+
+![Гіди Android](@site/static/img/map/details_guides.png)
+
+Розділ **Гіди** з'являється в контекстному меню карти для деяких місць і надає доступ до **подорожніх (Wikivoyage)** гайдів, пов'язаних із вибраною точкою інтересу. Він показує список записів гайдів (наприклад, країна чи регіон), які згадують вибране місце.
+
+Розділ Гіди відображається лише якщо дані **Travel (Wikivoyage)** завантажено для вибраної області.
+
+**Примітка:** Гіди пов'язані з вмістом Wikivoyage, а не з загальними описами Wikipedia.
 
 
 ### Маршрути громадського транспорту {#public-transport-routes}
