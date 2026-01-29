@@ -43,10 +43,10 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
                 const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/tags`, {
                     apiCache: true,
                     params: {
-                        minlat: minLat,
-                        maxlat: maxLat,
-                        minlon: minLon,
-                        maxlon: maxLon,
+                        minLat,
+                        maxLat,
+                        minLon,
+                        maxLon,
                     },
                 });
                 if (response?.data) {

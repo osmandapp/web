@@ -340,10 +340,10 @@ export default function TravelLayer() {
         const body = {
             activity: activity === ACTIVITY_ALL ? undefined : activity,
             year: year === ALL_YEARS ? undefined : year,
-            minlat: minLat,
-            maxlat: maxLat,
-            minlon: minLon,
-            maxlon: maxLon,
+            minLat,
+            maxLat,
+            minLon,
+            maxLon,
             tags: tags.length ? tags : undefined,
             tagMatchMode,
         };
