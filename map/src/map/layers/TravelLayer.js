@@ -201,7 +201,9 @@ export default function TravelLayer() {
                 setTravelPoints(null);
             }
         } else {
-            getRoutesList().then();
+            if (ctx.searchTravelRoutes.res !== null) {
+                getRoutesList().then();
+            }
             if (travelRoutes) {
                 map.removeLayer(travelRoutes);
             }
@@ -353,7 +355,7 @@ export default function TravelLayer() {
         if (response?.data) {
             ctx.setSearchTravelRoutes((prev) => ({ ...prev, res: response.data }));
         } else {
-            ctx.setSearchTravelRoutes((prev) => ({ ...prev, res: null }));
+            ctx.setSearchTravelRoutes((prev) => (prev.res === null ? prev : { ...prev, res: null }));
         }
     }
 }
