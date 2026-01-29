@@ -1,5 +1,5 @@
 ---
-source-hash: 210874cd215f873716ff02e4a6ce9879fc7e3299b5e0bb94a5f569c0274b575a
+source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
 sidebar_position: 2
 title:  Harita ile Etkileşim
 ---
@@ -208,8 +208,8 @@ Hareketler ve düğmeler dahil olmak üzere harita etkileşimleri sırasında t�
 
 ### Kendi Konumunu Canlandır {#animate-own-position}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
 Hareket halindeyken *[Konumum](../personal/profiles/#profile-appearance)* simgesine göre yumuşak bir harita kaydırma efekti oluşturur. Efekt, gerçek zemine göre yaklaşık 1 saniyelik hafif bir gecikme yaratır. Bunun etkinleştirilmesinin bazı durumlarda belirgin gecikme sorunları yarattığı bildirilmiştir, bu tür sorunlar ortaya çıkarsa devre dışı bırakın.
 
@@ -218,7 +218,7 @@ Hareket halindeyken *[Konumum](../personal/profiles/#profile-appearance)* simges
 
 Harici giriş cihazı düğmeleri, harita ve OsmAnd uygulama arayüzü ile etkileşim kurmak için kullanışlı ve verimli bir yol sağlar.  **Bluetooth veya diğer klavye türleri**, **araç navigasyon cihazlarındaki özel düğmeler** veya [WunderLINQ](https://blackboxembedded.com/) ve [Parrot](https://www.parrot.com/en) (*yalnızca Android*) kontrolörleri gibi harici cihazlarda bulunurlar.  
 
-Harici giriş cihazlarındaki düğmelerin ana işlevlerinden biri, haritayı yakınlaştırmak ve uzaklaştırmaktır. Ayrıca, ekrana dokunmak ve hareket etmek zorunda kalmadan haritada gezinmenizi ve yönünü değiştirmenizi sağlarlar. Harici giriş cihazlarındaki düğmeler, *Ana Menü*'yü açmak gibi birçok başka işlevi de destekler. Desteklenen cihazlar (Klavye, WunderLINQ ve özel harici kontrolörler) için düğme atamalarını özelleştirebilirsiniz.
+Harici giriş cihazlarındaki düğmelerin ana işlevlerinden biri, haritayı yakınlaştırmak ve uzaklaştırmaktır. Ayrıca, ekrana dokunmak ve hareket etmek zorunda kalmadan haritada gezinmenizi ve yönünü değiştirmenizi sağlarlar. Harici giriş cihazlarındaki düğmeler, *Ana Menü*'yü açmak ve *Hızlı Eylemler* tetiklemek gibi birçok başka işlevi de destekler. Desteklenen cihazlar (Klavye, WunderLINQ ve özel harici kontrolörler) için düğme atamalarını özelleştirebilirsiniz.
 
 :::note
 Klavye, *Harici giriş cihazları* seçeneği kapatıldığında ve *Yok* seçildiğinde bile işlevsel kalır. Ancak, özel tuş atamaları yalnızca *Harici giriş cihazları* etkinleştirildiğinde çalışır.

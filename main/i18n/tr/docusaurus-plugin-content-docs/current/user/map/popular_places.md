@@ -1,7 +1,7 @@
 ---
-source-hash: 729e2be1334766fc7bf3aecc088333d8c9184af20c6e90fa4a5b8a7ab28df7b2
+source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
 sidebar_position: 8
-title: Popüler Yerler
+title: Popular Places
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,14 +14,15 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Genel Bakış {#overview}
 
 OsmAnd'daki **Popüler Yerler** özelliği, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) kaynaklarındaki açık yapılandırılmış verileri kullanarak önemli yer işaretlerini ve çekici noktaları vurgular. Çok dilli açıklamalar ve fotoğraflarla kullanıcıların iyi bilinen destinasyonları keşfetmelerine yardımcı olur.
 
-Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme görüntülerini ve Wikipedia makalelerine bağlantıları görüntülemesini sağlayan bir **Wikidata Kimliği** ile bağlantılıdır. Bu araç tüm OpenStreetMap (OSM) noktalarını göstermez. Wikidata referansları olan İÇN'lerle sınırlıdır.
+Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme görüntülerini ve Wikipedia makalelerine bağlantıları görüntülemesini sağlayan bir **Wikidata Kimliği** ile bağlantılıdır. Bu araç tüm OpenStreetMap (OSM) noktalarını **göstermez**. Wikidata referansları olan İÇN'lerle sınırlıdır.
 
 Şu anda, seçilmiş veritabanı dünya genelinde yaklaşık **50.000 ila 150.000 en yüksek puanlı yer** içermektedir ve bu yerler, **1 milyondan fazla** Wikidata + OSM nesnesinden seçilmiştir.
 
@@ -33,20 +34,22 @@ Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme
 
 <TabItem value="android" label="Android">
 
-![Popüler yerler](@site/static/img/map/popular_places/popular_places.png) ![Popüler yerler](@site/static/img/map/popular_places/popular_places_1.png)
+![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
 </Tabs>
 
 
-### Veri Kaynakları
+## Veri Kaynakları {#data-sources}
 
 **Popüler Yerler**, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) kaynaklarındaki yapılandırılmış içeriğe dayanmaktadır.
 
-Yalnızca bağlantılı bir **Wikidata Kimliği** olan İÇN'ler görüntülenir. Bu kimlikler, harita nesnelerini doğrulanmış adlara, açıklamalara ve görüntülere bağlar.
+Bağlantılı bir **Wikidata Kimliği** olan İÇN'ler yalnızca görüntülenir. Bu kimlikler, harita nesnelerini doğrulanmış adlara, açıklamalara ve görüntülere bağlar.
 
 Wikidata bağlantısını doğrudan [Harita Bağlam Menüsü'nde](../map/map-context-menu.md) görüntüleyebilirsiniz. Wikidata etiketine dokunmak, Wikidata web sitesinde tam nesne sayfasını açar.
+
+Popüler Yerler'deki görüntüler ve diğer Wikidata tabanlı içerikler, Wikidata veya Wikimedia Commons'ta değişikliklerden hemen sonra görünmeyebilecek şekilde zamanlanmış olarak yenilenir. Mevcut yenileme sıklığı: ayda iki kez — **10'unda** ve **20'sinde**.
 
 Wikidata Kimliği nasıl bulunur öğrenin: [Wikipedia: Wikidata Kimliği Bulma](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -62,6 +65,8 @@ Bu özelliğe erişmenin iki ana yolu vardır:
 - **Ücretsiz sürüm**  
   Yakındaki yerleri liste görünümünde keşfetmek için [Arama](#explore-in-search) yoluyla erişin.  
   *<Translate android="true" ids="android_button_seq"/>*. Şuraya gidin: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  
+  Bu Keşfet listesi, yakınınızdaki popülerlik sıralamasına göre Wikipedia/Wikidata yerlerini gösterir ve çevrimiçi çalışır. En fazla 50 yer görüntüler. Keşfet/Wikipedia sonuçları derecelendirme sıralamasına göre olduğu için, bu sonuçlardaki sıralama düzenli İÇN aramasından farklı olabilir.
 
 - **Ücretli sürümler** *(Maps+ ve OsmAnd Pro)*  
   [Haritayı Yapılandır](#enable-layer) bölümünde görsel katmanı etkinleştirin.  
@@ -82,8 +87,8 @@ Bu özelliğe erişmenin iki ana yolu vardır:
 
 Şuraya gidin: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Keşfet Modu](@site/static/img/map/popular_places/popular_places_search.png)  
-![Keşfet Modu](@site/static/img/map/popular_places/popular_places_search_2.png)
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png)  
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
 
 </TabItem>
 
@@ -117,7 +122,7 @@ Arama tabanlı Keşfet Modu, ücretsiz sürümde **yalnızca çevrimiçi** çal�
 
 **<Translate android="true" ids="android_button_seq"/>**. Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popüler yerler menüsü](@site/static/img/map/popular_places/popular_places_menu.png)
+![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
@@ -130,19 +135,19 @@ Bu özelliği kullanmadan önce:
 - [Wikipedia Eklentisinin](../plugins/wikipedia.md) etkinleştirildiğinden emin olun.
 - Çevrimdışı kullanmak istiyorsanız bölgeniz için Wikipedia verilerini indirin.
 
-### Katman Seçenekleri
+### Katman Seçenekleri {#layer-options}
 
 Etkinleştirildikten sonra aşağıdaki seçenekler kullanılabilir hale gelir:
 
 - **<Translate android="true" ids="poi_osmwiki"/>** – Haritadaki Wikipedia İÇN'lerini açıp kapatın.
 
 - **İÇN Kaynağı** – Şunlar arasında geçiş yapın:
-  - *Çevrimdışı mod* (Wikipedia makaleleri indirilmiş olmalıdır).
-  - *Yalnızca çevrimiçi* mod (canlı verileri ve görüntüleri kullanır).
+  - *Çevrimdışı Yalnızca* modu — bölgeniz için indirilmiş Wikipedia harita verilerini kullanır. 
+  - *Çevrimiçi Yalnızca* modu — yerleri ve görüntü önizlemelerini çevrimiçi yükler. Çevrimiçi sonuçlar seçili dil ayarlarınıza bağlı olabilir.
 
 - **<Translate android="true" ids="shared_string_language"/>** – Wikipedia açıklamaları için dili seçin.
 
-- **<Translate android="true" ids="show_image_previews"/>** – İÇN'lerin yanında Wikidata'dan küçük resim önizlemelerini göster.
+- **<Translate android="true" ids="show_image_previews"/>** – İÇN'lerin yanında Wikidata'dan küçük resim önizlemelerini göster. Eğer görüntü önizlemeleri devre dışı bırakılırsa, Popüler Yerler haritada küçük resimler yerine simgelerle gösterilir. Görüntü önizlemeleri Wikidata/Wikipedia bağlantılı görüntüleri kullanır: *Çevrimdışı Yalnızca* modunda önizlemeler indirilmiş Wikipedia verilerine bağlıdır, *Çevrimiçi Yalnızca* modunda ise önizlemeler çevrimiçi getirilir.
 
 Haritadaki bir İÇN'ye dokunmak, [çevrimiçi fotoğrafları](#online-photos) görüntüleyebileceğiniz ve bağlantılı [Wikipedia makalelerine](../plugins/wikipedia.md) erişebileceğiniz [İÇN bağlam menüsünü](./map-context-menu.md) açar.
 
@@ -155,26 +160,25 @@ Haritadaki bir İÇN'ye dokunmak, [çevrimiçi fotoğrafları](#online-photos) g
 
 <TabItem value="android" label="Android">  
 
-![Çevrimiçi Fotoğraflar bağlam menüsü Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Çevrimiçi Fotoğraflar bağlam menüsü iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Bu, seçilen Popüler Yer'in (Wikipedia) bir fotoğraf önizlemesini görüntüleyen [İÇN bağlam menüsü](./map-context-menu.md) içindeki bir bölümdür. Mevcut fotoğraflar arasında gezinmek için yatay olarak kaydırabilir veya tam ekran modunda açmak için herhangi bir görüntüye dokunabilirsiniz.
+Bu, seçilen Popüler Yer'in (Wikipedia) bir fotoğraf önizlemesini görüntüleyen [İÇN bağlam menüsü](./map-context-menu.md) içindeki bir bölümdür. Mevcut fotoğraflar arasında gezinmek için yatay olarak kaydırabilir veya [tam ekran modunda](#gallery) açmak için herhangi bir görüntüye dokunabilirsiniz.
 
 Çevrimiçi görüntülenen görüntüler, çevrimdışı erişim için otomatik olarak önbelleğe alınır. Önbelleğe alınmış fotoğraflar köşede küçük bir çevrimdışı rozet gösterir. Önizleme ızgarası iPadOS ve macOS'ta ekran boyutuna uyum sağlar ve büyük ekranlarda rahat bir görüntü düzeni sağlar. OsmAnd ayrıca Çevrimiçi Fotoğraflar bölümü kapatıldığında tekrarlanan ağ isteklerini tetiklemeyi önler ve farklı İÇN'ler arasında hızlı geçişlerde önceki istekleri iptal eder.
 
-[Eylemler](#actions) bölümündeki ve [Galeri](#gallery) bölümündeki ek seçenekler hakkında daha fazla bilgi edinin.
-
-
 <!-- 
+Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
+
 
 When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
 
@@ -183,19 +187,17 @@ When you tap a Popular Place on the map or from the list, the [POI context menu]
 
 For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
 
+
+### Actions {#actions}
+
+In the Map Context menu How to access:
+
+- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
+
+- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
+  **Share**, **Details**, **Open in browser**, and **Download**.
+
 -->
-
-### Eylemler {#actions}
-
-Harita Bağlam menüsünde nasıl erişilir:
-
-- [Galeriyi](#gallery) tam ekran modunda açmak için **Tümünü Göster** (Android) / **Tümünü Görüntüle** (iOS) düğmesine dokunun; burada seçilen konum için mevcut tüm fotoğraflar arasında gezinebilirsiniz.
-
-- Mevcut eylemlere erişmek için herhangi bir fotoğrafa dokunun ve [tam ekranda](#gallery) görüntüleyin:  
-  **Paylaş**, **Ayrıntılar**, **Tarayıcıda aç** ve **İndir**.
-
-**Not:** İndir, görüntüyü kalıcı çevrimdışı kullanım için cihazın depolama alanına kaydeder, önbelleğe alınmış fotoğraflar ise otomatik olarak saklanır ve yalnızca uygulama içinde çevrimdışı kullanılabilir.
-
 
 ### Galeri {#gallery}
 
@@ -203,22 +205,21 @@ Harita Bağlam menüsünde nasıl erişilir:
 
 <TabItem value="android" label="Android">  
 
-![Galeri Menüsü – Android](@site/static/img/map/gallery_menu_android.png)
-![Galeri Menüsü – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Galeri Menüsü – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Galeri Menüsü – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
-
-**Galeri Menüsü**, seçilen ilgi çekici noktayla ilgili **100 adede kadar görüntü** görüntüleyebilir. Mevcut tüm fotoğraflar arasında gezinebilirsiniz. Bir fotoğrafa dokunmak, kısa bir süre için ayrıntılı bir görünüm açar ve şunları gösterir: *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans*.  
+**Galeri Menüsü**, seçilen ilgi çekici noktayla ilgili **100 adede kadar görüntü** görüntüleyebilir. Bu görüntüleri görüntülemek için **Tümünü Göster** (Android) / **Tümünü Görüntüle** (iOS) düğmesine dokunun. Mevcut tüm fotoğraflar arasında gezinebilirsiniz. Bir fotoğrafa kısa dokunmak, *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans* gösteren ayrıntılı bir görünüm açar.
 
 iOS, iPadOS ve macOS'ta, fotoğrafları klavye tuşlarıyla gezinebilirsiniz (←/→ resimler arasında hareket için, Enter/Boşluk açmak için).
 
@@ -236,29 +237,31 @@ Her fotoğraf üzerinde aşağıdaki eylemleri de gerçekleştirebilirsiniz:
 - **İndir**  
   Görüntüyü cihazınızın depolama alanına kaydedin. İndirilen görüntü, cihazınızın varsayılan İndirilenler klasöründe bulunabilir ve çevrimdışı erişilebilir.
 
+**Not:** İndir, görüntüyü kalıcı çevrimdışı kullanım için cihazın depolama alanına kaydeder, önbelleğe alınmış fotoğraflar ise otomatik olarak saklanır ve yalnızca uygulama içinde çevrimdışı kullanılabilir.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Android sürümü, fotoğraf eylemleri için ek bir menü içermez.
+The Android version does not include an additional menu for photo actions.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS - Bağlam Menüsü Seçenekleri](@site/static/img/map/gallery_menu_ios_3.png)
+![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
 
-**iOS**'ta, bir fotoğrafa uzun basmak ek eylemler içeren bir bağlam menüsü açar:
+On **iOS**, long-pressing a photo opens a context menu with additional actions:
 
-- **Ayrıntılar**  
-- **Tarayıcıda aç**  
-- **İndir**
+- **Details**  
+- **Open in browser**  
+- **Download**
 
-**Düğmeler**:
+**Buttons**:
 
-- **Paylaş** düğmesi, seçilen görüntüyü hızlı bir şekilde paylaşmanızı sağlar.  
-- **Üç nokta menüsü**, ayrıntıları görüntüleme, kaynağı bir tarayıcıda açma veya görüntüyü indirme gibi ek eylemlere erişim sağlar.
+- The **Share** button lets you quickly share the selected image.  
+- The **three-dot menu** provides access to extra actions, including viewing details, opening the source in a browser, or downloading the image.
 
 </TabItem>
 
@@ -269,22 +272,23 @@ Android sürümü, fotoğraf eylemleri için ek bir menü içermez.
 
 <TabItem value="android" label="Android">  
 
-![Android – Ayrıntılar Görünümü](@site/static/img/map/gallery_menu_android_2.png)
+![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![iOS – Ayrıntılar Görünümü](@site/static/img/map/gallery_menu_ios_2.png)
+![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-**Ayrıntılar** ekranı, seçilen fotoğraf için tam meta verileri sağlar: *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans*, *Kaynak* ve *Doğrudan bağlantı*
+The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+-->
 
 
-## İlgili Makaleler
+## İlgili Makaleler {#related-articles}
 
 - [Harita Bağlam menüsü](./map-context-menu.md)
 - [Haritayı Yapılandır](./configure-map-menu.md)

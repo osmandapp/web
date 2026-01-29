@@ -1,5 +1,5 @@
 ---
-source-hash: a869782aa735dab23fcbaeec7b7c95203ee66ac9003a203ce92de965424802d9
+source-hash: 04d526547ef4c354b6f5ba6ac750895180675cce9fd30590c87b43243024bb14
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd hesabıyla oturum açmak, [OsmAnd Web Planlayıcısı](https://osmand.net/map)'nı basit bir harita görüntüleyicisinden kişisel çalışma alanınıza dönüştürür. Mobil uygulamada kullandığınız aynı hesap, web sitesini OsmAnd Cloud verileriniz ve satın alımlarınızla bağlar, böylece kaydedilmiş içeriğinize ve aboneliklerinize web'de tek bir yerden erişebilirsiniz.
+OsmAnd hesabıyla oturum açmak, [OsmAnd Web Planner](https://osmand.net/map)'ı basit bir harita görüntüleyicisinden kişisel çalışma alanınıza dönüştürür. Mobil uygulamada kullandığınız aynı hesap, web sitesini OsmAnd Cloud verileriniz ve satın alımlarınızla bağlar, böylece kaydedilmiş içeriğinize ve aboneliklerinize web'de tek bir yerden erişebilirsiniz.
 
 
 ## Yetkilendirme {#authorization}

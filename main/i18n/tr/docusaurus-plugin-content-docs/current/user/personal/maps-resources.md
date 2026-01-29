@@ -1,5 +1,5 @@
 ---
-source-hash: 18fb3a3ada428d5cb9890f755d85611b5560c8e172ba9d7c50665504b2f3c137
+source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -428,11 +428,13 @@ Bir harita devre dışı bırakıldığında, Yerel sekmesinden geçici olarak k
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Haritalar menüsü Haritaları güncelle iOS](@site/static/img/personal/maps/maps_update_ios.png) ![Hava durumu tahmini Haritaları güncelle iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Haritalar menüsü Haritaları güncelle iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Hava durumu tahmini Haritaları güncelle iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 **Güncellemeler** sekmesi, OsmAnd haritalarını ve kaynaklarını yenilemenizi sağlar. Standart ve yalnızca yol haritaları ayda bir kez, genellikle ayın 2'si ile 5'i arasında yayınlanır ve önceki ayın son gününe kadar olan OpenStreetMap verilerini içerir (örneğin, Ekim sürümü 30 Eylül'e kadar olan verileri içerir). Wikipedia, arazi veya deniz haritaları gibi diğer veriler farklı, düzensiz güncelleme programlarını takip edebilir. 
 
 Tüm haritaları aynı anda güncellemek için *Tümünü güncelle* düğmesini kullanın veya gerektiğinde tek tek haritaları güncelleyin. Saatlik güncellemeler için [Canlı Güncellemeler](#live-updates) abonelik durumunuzu kontrol edin. Etkinleştirilirse, **Canlı Güncellemeler** bölümü, Cihaz Belleği göstergesinin altında, sekmenin üst kısmında görünecektir.
+
+**Güncellemeler** sekmesi ayrıca bir **Desteklenmeyen haritalar** öğesi gösterebilir. Bu, daha küçük bölgelerle değiştirilen ve artık desteklenmeyen haritalarınız olduğunda görünür. Desteklenmeyen haritalara dokunarak listeyi inceleyin, eski haritaları kaldırın ve bunun yerine yeni bölge sürümlerini indirin. Desteklenmeyen haritalar ekranında, tüm desteklenmeyen haritaları görüntüleyebilir ve hepsini bir kerede kaldırmak için Sil hepsini kullanabilirsiniz (silme işleminden önce bir onay istemi gösterilir).
 
 **Güncellemeler** sekmesi ayrıca bir Hava durumu tahmini bölümü içerir. Seçilen ülkeler için çevrimdışı tahminlerinizi yönetmek üzere tasarlanmıştır:
 

@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title: Yarıçap Cetveli ve Cetvel
 ---
@@ -97,6 +97,7 @@ Tüm panellerde mevcut: <Translate ios="true" ids="shared_string_top"/>, <Transl
 
 Bu pencere öğesini, ilgi çekici noktalara yakınlığı tahmin etmek veya belirli bir alan etrafında plan yapmak için kullanın.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -118,9 +119,10 @@ Bu pencere öğesini, ilgi çekici noktalara yakınlığı tahmin etmek veya bel
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Yarıçap Cetveli için Pusula {#compass-for-radius-ruler}
+### Pusula {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes)
 | Biçim | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Merkez / Alt Konum {#center--bottom-position}
+### Merkez / Alt Konum {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ Konumunuz etrafındaki görünür yarıçapı artırmak için, Yarıçap Cetveli
 *Ekrandaki konum* hakkında daha fazla bilgi için [Ekranı Yapılandır](../widgets/configure-screen.md#display-position-location-position-on-screen) makalesine bakın.
 
 
-## 3B Görünüm {#3d-view}
+### 3B Görünüm {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

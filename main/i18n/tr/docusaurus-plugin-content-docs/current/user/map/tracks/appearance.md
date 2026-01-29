@@ -1,5 +1,5 @@
 ---
-source-hash: 03b2d3f6e375b05230f448cf1908a173e0c48d07ed9e09a8337b5c05c7d6208d
+source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
 sidebar_position: 5
 title:  İz Görünümü
 ---
@@ -61,7 +61,7 @@ Bazı ayarları yalnızca *OsmAnd Pro* ile kullanabilirsiniz. <a href="https://o
 
 **Mevcut Renk Seçenekleri:**
 
-- **Ücretsiz ayarlar**: *<Translate android="true" ids="track_coloring_solid"/> renk*, *<Translate android="true" ids="shared_string_speed"/>* (kaydedilmişse) ve *<Translate android="true" ids="altitude"/>* (kaydedilmişse).   
+- Ücretsiz ayarlar: *<Translate android="true" ids="track_coloring_solid"/> renk*, *<Translate android="true" ids="shared_string_speed"/>* (kaydedilmişse) ve *<Translate android="true" ids="altitude"/>* (kaydedilmişse).   
 - [Pro özelliği](../../purchases/index.md): *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>*.  
 
 iOS'ta **Renklandırma listesi** bir bağlam menüsü olarak açılır. Öğeler üç durumda görünebilir: 
@@ -69,7 +69,7 @@ iOS'ta **Renklandırma listesi** bir bağlam menüsü olarak açılır. Öğeler
 2. <Translate ios="true" ids="weather_update_disabled"/>. İz gerekli veriyi içermiyor.
 3. PRO. Mevcut iz için kullanılabilir ancak abonelik gerektirir; dokunulduğunda [<Translate ios="true" ids="purchase_dialog_title"/> ekranı](https://osmand.net/docs/user/purchases/ios) açılır.
 
-Rota çizgisi görünümünü özelleştirme hakkında daha fazla bilgi için [Navigasyon sırasında harita ekranı](../../navigation/guidance/map-during-navigation.md#color) ve özel bir renk seçme ve oluşturma hakkında bilgi için [Renk şemaları](../../personal/color-palette-schemes.md#routes) bölümüne bakın.
+Rota çizgisi görünümünü özelleştirme hakkında daha fazla bilgi için [Navigasyon sırasında harita ekranı](../../navigation/guidance/map-during-navigation.md#color) ve özel bir renk seçme ve oluşturma hakkında bilgi için [Renk şemaları](../../personal/color-palette-schemes.md#tracks-routes) bölümüne bakın.
 
 
 ### Genişlik {#width}
@@ -231,23 +231,23 @@ Seçenekler şunları içerir: *Üst*, &nbsp;*Alt*, &nbsp;*Üst ve alt*.
 Toplu görünüm özelleştirme seçenekleri:
 
 - **Yön okları** - [Hareket göstergeleri](#direction-arrows) ekler.  
-    Durumlar: *Değişmedi*, &nbsp;*Orijinal*, &nbsp;*Açık*, &nbsp;*Kapalı*.
+    Durumlar: *Değişmemiş*, &nbsp;*Orijinal*, &nbsp;*Açık*, &nbsp;*Kapalı*.
 
 - **Başlangıç ve bitiş simgelerini göster** - İz başlangıç ve bitiş noktaları için [işaretçileri görüntüler](#start-and-finish-icons).  
-    Durumlar: *Değişmedi*, &nbsp;*Orijinal*, &nbsp;*Açık*, &nbsp;*Kapalı*.
+    Durumlar: *Değişmemiş*, &nbsp;*Orijinal*, &nbsp;*Açık*, &nbsp;*Kapalı*.
 
 - **Renk** – Manuel veya veri tabanlı [renklendirme](#color) uygulayın.
 
 - **Genişlik** – Ön ayarları kullanarak veya manuel olarak [iz çizgisi genişliğini](#width) ayarlayın.
 
 - **Bölme aralığı** – Mesafe / zaman işaretleyicileri için [aralığı ayarlayın](#split-interval).  
-    Durumlar: *Değişmedi*, &nbsp;*Orijinal*, &nbsp;*Seç*: *Zaman* veya *Mesafe*.
+    Durumlar: *Değişmemiş*, &nbsp;*Orijinal*, &nbsp;*Seç*: *Zaman* veya *Mesafe*.
 
 Orijinal ve değişmemiş:
 
 - **Orijinal** - İz dosyasındaki orijinal parametreleri geri yükler.
 
-- **Değişmedi** - Düzenleme oturumu sırasında mevcut ayarları korur.
+- **Değişmemiş** - Düzenleme oturumu sırasında mevcut ayarları korur.
 
 
 ## GPX Dosyalarındaki İz Renkleri {#track-colors-in-gpx-files}

@@ -1,5 +1,5 @@
 ---
-source-hash: b7357e6a51f940ace21ac3c4ebf732361180dc9c7f5720e449fa9f0856db537a
+source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -30,7 +30,7 @@ Rota noktaları Rota panelinden sağlanabilir. **Başlangıç noktasını ayarla
 
 Navigasyon basit bir akışı takip eder: ilk nokta Başlangıç olur ve sonraki nokta Hedef olur. Her iki nokta da ayarlanır ayarlanmaz, rota hesaplanır ve haritada görüntülenir.
 
-![Web Navigasyon](@site/static/img/web/navigation_start.png)
+![Web Navigation](@site/static/img/web/navigation_start.png)
 
 ### Rota Noktalarını Yönetin {#manage-route-points}
 
@@ -38,21 +38,23 @@ Başlangıç → Hedef ötesinde bir rota genişletebilirsiniz ara noktalar ekle
 
 Başlangıç ve Hedef'i Değiştir — Başlangıç ve Hedef'i değiştirir ara noktaları değiştirmeden. Eylem, zıt yönlerde iki ok gösteren bir simgeyle işaretlenir.
 
-![Web Navigasyon](@site/static/img/web/navigation_points.png)
+![Web Navigation](@site/static/img/web/navigation_points.png)
 
 
 ## Yönlendirme Profili {#routing-profile}
 
 Rota panelinin üst kısmında, rotanız için bir yönlendirme profili seçebilirsiniz. Yaygın kullanılan profiller dört simge olarak gösterilir. Daha fazla seçeneğe erişmek için profil simgelerinin yanındaki üç nokta menüsünü açın. Bu, mevcut profillerin tam listesini genişletir.
 
+Web Planlayıcısı'ndaki yönlendirme profilleri, OsmAnd mobil uygulamasındaki aynı yönlendirme kurallarını ve ayarlarını kullanır. Rotaların nasıl hesaplandığı ve yönlendirme parametrelerinin nasıl çalıştığı hakkında detaylar için [OsmAnd Yönlendirme](https://osmand.net/docs/user/navigation/routing/osmand-routing) adresine bakın.
+
 Profil değiştirildiğinde, Navigasyon rotayı seçilen seyahat moduna uydurmak için günceller.
 
-![Web Navigasyon](@site/static/img/web/navigation_profile.png)
+![Web Navigation](@site/static/img/web/navigation_profile.png)
 
 
 ## Navigasyon Ayarları {#navigation-settings}
 
-Rotaların nasıl hesaplandığını ayarlamak için Rota panelindeki dişli simgesini kullanarak Ayarlar'ı açın. Ayarlar, genişletebileceğiniz/b küçültebileceğiniz bölümlere gruplanmıştır. Bölümler ve seçenekler kümesi seçilen yönlendirme profiline bağlıdır, bu nedenle farklı seyahat modları için farklı parametreler göreceksiniz.
+Rotaların nasıl hesaplandığını ayarlamak için Rota panelindeki dişli simgesini kullanarak Ayarlar'ı açın (OsmAnd mobil uygulamasındaki navigasyon ayarları için [buraya](https://osmand.net/docs/user/navigation/guidance/navigation-settings) bakın). Ayarlar, genişletebileceğiniz/b küçültebileceğiniz bölümlere gruplanmıştır. Bölümler ve seçenekler kümesi seçilen yönlendirme profiline bağlıdır, bu nedenle farklı seyahat modları için farklı parametreler göreceksiniz.
 
 Tipik bölümler şunlardır:
 
@@ -61,12 +63,12 @@ Tipik bölümler şunlardır:
 - **Kaçın** — rotadan belirli yol türlerini veya durumları hariç tutan seçenekler (örneğin, ücretli yollar, feribotlar, otoyollar, tüneller vb. kaçınma).
 - **[Araç parametreleri](../navigation/guidance/vehicle-parameters.md)** — araç tabanlı profiller için kullanılabilir. Araç kısıtlamalarını (boyutlar/ağırlık gibi) belirtmenize olanak tanır, bu kısıtlı yollarda yönlendirmeyi etkileyebilir.
 
-![Web Navigasyon](@site/static/img/web/navigation_settings.png) ![Web Navigasyon](@site/static/img/web/navigation_settings_2.png)
+![Web Navigation](@site/static/img/web/navigation_settings.png) ![Web Navigation](@site/static/img/web/navigation_settings_2.png)
 
 
 ## İz Ekleme {#attaching-track}
 
-**Yollara Ekle** bloğu, mevcut bir GPX izini navigasyonun temeli olarak kullanmanızı sağlar. OsmAnd Web izi yakındaki yollarla eşleştirir dönüş dönüş rehberliği sağlamak için.
+**[Yollara Ekle](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** bloğu, mevcut bir GPX izini navigasyonun temeli olarak kullanmanızı sağlar. OsmAnd Web izi yakındaki yollarla eşleştirir dönüş dönüş rehberliği sağlamak için.
 
 İz Seç'e tıkladığınızda, tarayıcı bilgisayarınızdan bir .gpx dosyası seçebileceğiniz bir dosya seçici açar. Bir iz seçtikten sonra:
 - İz haritada görüntülenir ve rotayı hesaplamak için kullanılır.
@@ -77,7 +79,7 @@ Tipik bölümler şunlardır:
 
 ## Rota Detayları {#route-details}
 
-![Web Navigasyon](@site/static/img/web/navigation_info.png) ![Web Navigasyon](@site/static/img/web/navigation_turns.png)
+![Web Navigation](@site/static/img/web/navigation_info.png) ![Web Navigation](@site/static/img/web/navigation_turns.png)
 
 Bir rota hesaplandığında, panel temel bir özet (mesafe, süre, yokuş yukarı/yokuş aşağı) ve bir **Detaylar** düğmesi gösterir. Detaylar'ı kullanarak İki sekme ile rota görünümünü açın: Bilgi ve Dönüşler.
 
@@ -86,7 +88,7 @@ Bilgi rotayı ve yükseklik verilerini özetler:
 - **Rota** — mesafe ve süre.
 - **Yokuş Yukarı/Yokuş Aşağı** — toplam tırmanış ve iniş.
 - **Yükseklik (min/ort/max)** — rota için yükseklik istatistikleri.
-- **Yükseklik (Uydu)** — mevcutsa uydu verilerini kullanarak yükseklik yeniden hesapla.
+- **Yükseklik (Uydu)** — izin yükseklik verilerini arazi (DEM) verilerini kullanarak yeniden hesaplar ve yükseklik grafiğini günceller.
 
 Özetin altında, yükseklik grafiği rota profilini incelemenize yardımcı olur. Yükseklik ve Eğim'i açıp kapatabilirsiniz ve grafiğin altındaki kaydırıcıyı kullanarak rotanın belirli bir kısmına odaklanabilirsiniz.
 
@@ -100,15 +102,23 @@ Rotayı doğrudan harita üzerinde sürükleyerek rota işaretçilerini farklı 
 - Yeni ara nokta Rota panelinde Hedef'in üzerine eklenmiş ek bir nokta olarak görünür ve rota özeti buna göre güncellenir.
 - Eklenen geçiş noktasını diğer [ara noktalar](#manage-route-points) gibi yönetebilirsiniz.
 
-![Web Navigasyon](@site/static/img/web/navigation_on_map.png)
+![Web Navigation](@site/static/img/web/navigation_on_map.png)
 
 ### İndir ve Kaydet {#download-and-save}
 
 Rota'yı bir iz olarak dışa aktarmak için *İndir*'i kullanın. İndirme diyaloğu iki seçenek sunar:
-Tam iz verisi — tam veri içerir, navigasyon talimatları dahil.
-Basitleştirilmiş iz — diğer uygulamalarla kullanım için daha uygun hafif bir sürüm.
+**Tam iz verisi** — tam veri içerir, navigasyon talimatları dahil.
+**[Basitleştirilmiş iz](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — diğer uygulamalarla kullanım için daha uygun hafif bir sürüm.
+
+Üçüncü taraf uygulamalarda GPX'i açmayı planlıyorsanız, uyumluluk için Basitleştirilmiş iz'i seçin. Bu, başka bir uygulamanın içe aktarma sonrası yanlış bir segment görüntülemesini önlemeye yardımcı olur.
+
+Fark nedir:
+- Tam iz verisi, iz geometrisine ek olarak rota/navigasyon bilgilerini içerebilir (navigasyon talimatlarını korumak veya OsmAnd'da rotayı yeniden düzenlemek istiyorsanız faydalıdır).
+- Basitleştirilmiş iz, rota/navigasyon verilerini kaldırarak yalnızca iz şeklini bırakarak diğer uygulamalar için daha temiz bir GPX dışa aktarır. Basitleştirilmiş iz dışa aktarılırken işaret noktaları korunur.
 
 Rotayı bir iz olarak kaydetmek için *Buluta Kaydet / OsmAnd Cloud'a Yükle*'yi kullanın. Bu, bulut izlerine kaydetmeyi onaylayabileceğiniz, Adı düzenleyebileceğiniz, isteğe bağlı olarak bir Klasör seçebileceğiniz, ardından Kaydet veya İptal edebileceğiniz bir diyaloğu açar.
+
+![Web Navigation](@site/static/img/web/download_options.png)
 
 ### Bir Rota Paylaşın {#share-a-route}
 
@@ -119,5 +129,6 @@ Rotayı paylaşmak için URL'yi kopyalayın. Örnek: [https://osmand.net/map/?st
 
 - [Rota Hazırlığı](../navigation/setup/route-navigation.md)
 - [Navigasyon Ayarları](../navigation/guidance/navigation-settings.md)
+- [OsmAnd Yönlendirme Hakkında](../navigation/routing/osmand-routing.md)
 - [Araç Parametreleri](../navigation/guidance/vehicle-parameters.md)
 - [Rota Planla](../web/planner.md)

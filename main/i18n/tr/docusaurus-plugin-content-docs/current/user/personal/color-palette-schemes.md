@@ -1,5 +1,5 @@
 ---
-source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
+source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
 sidebar_position: 5
 title: Renk Şemaları
 ---
@@ -146,6 +146,13 @@ Her satır bir sayısal değeri (renk paleti için bir dizin) ve RGB rengini tem
 ```
 
 Bu TXT dosyasını *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt* konumuna taşıdıktan sonra, Renk Şeması menüsünde yeni bir palet görünecektir.
+
+Mevcut bir palet dosyasını OsmAnd içinde değiştirmeniz gerekiyorsa (yeni bir TXT dosyası eklemek yerine), bunu dışa aktarılmış bir yedek (.osf) aracılığıyla düzenleyebilirsiniz.
+- Palet verilerini .osf yedeği olarak dışa aktarın ([İçe / Dışa Aktar](#import--export) bölümüne bakın).
+- Dışa aktarılan .osf'yi açın. .osf dosyası yeniden adlandırılmış bir .zip arşividir. Orijinal .osf dosyasının bir kopyasını oluşturun, ardından herhangi bir arşiv aracı kullanarak açın.
+- Palet TXT dosyasını bulun ve düzenleyin. Çıkarılan klasörler içinde gerekli palet dosyasını (örneğin: height_altitude_&lt;type_name&gt;.txt veya route_speed_&lt;type_name&gt;.txt) bulun ve bir metin düzenleyicide değerlerini düzenleyin.
+- Geri sıkıştırın ve .osf olarak yeniden adlandırın. Çıkarılan içeriği .zip arşivine geri sıkıştırın, ardından .osf olarak yeniden adlandırın. Aynı klasör yapısını koruyun.
+- Güncellenmiş .osf'yi OsmAnd'a içe aktarın (**İçe / Dışa Aktar** bölümüne bakın) ve değişiklikleri uygulamak için uygulamayı yeniden başlatın.
 
 ### İçe / Dışa Aktar {#import--export}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: ece3e6010ee14839c5fe53b38593cda3c765a31a9395566df04b16ce2b73c3b4
+source-hash: 4427520649e37a1c6251f034dde8d8f74d204717b078947ad26793d8ccee0640
 sidebar_position: 5
 sidebar_label: İzler
 title: İzler
@@ -28,7 +28,7 @@ Tüm değişiklikler [OsmAnd Cloud](../personal/osmand-cloud.md) üzerinden otom
 
 Bu, ücretli bir özelliktir <ProFeature/>. Kullanmak için OsmAnd Pro hesabınıza giriş yapın.
 
-![İz girişi](@site/static/img/web/track_login.png) ![İz girişi](@site/static/img/web/track_login_2.png)
+![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
 
 İzler bölümü, izlerle ilgili tüm araçları ve eylemleri içerir. Aşağıdaki seçenekler mevcuttur:
 
@@ -49,12 +49,12 @@ Haritada görünür olan izler mavi renkle vurgulanır, şu anda gizli olan izle
 
 Ana listenin altında, **Son Görünür** bölümü, daha önce haritada gösterilen izleri görüntüler. Bu, bir izi tekrar klasörlerinizde veya OsmAnd Cloud'da aramadan kolayca tekrar açmanızı sağlar.
 
-![Haritada Görünür](@site/static/img/web/visible_new.png) ![Haritada Görünür](@site/static/img/web/visible_new_2.png)
+![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
 
 
 ## İz Klasörü Menüsü {#track-folder-menu}
 
-![İz klasörü menüsü](@site/static/img/web/collection_new.png)
+![Track folder menu](@site/static/img/web/collection_new.png)
 
 Üç nokta düğmesine (⋮) tıklayarak *İz Klasörü* menüsünü açın. Buradan şunları yapabilirsiniz:
 
@@ -65,7 +65,7 @@ Ana listenin altında, **Son Görünür** bölümü, daha önce haritada göster
  - Yeniden Adlandır. Seçili klasör için yeni bir ad girebileceğiniz bir iletişim kutusu açar. Değişiklik OsmAnd Cloud'a senkronize edilir ve tüm bağlı cihazlarda görünür.
  - Sil. Bir onay iletişim kutusu açar. Bir klasörü silmek, içerdiği tüm izlerle birlikte kalıcı olarak kaldırır. Bu eylem de OsmAnd Cloud üzerinden senkronize edilir.
 
-![İz klasörü menüsü](@site/static/img/web/collection_rename.png) ![İz klasörü menüsü](@site/static/img/web/collection_delete.png)
+![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
 
 
 ## Bulut İzleri {#cloud-tracks}
@@ -74,7 +74,7 @@ Ana listenin altında, **Son Görünür** bölümü, daha önce haritada göster
 
 Bulut izi seçildikten sonra aşağıdaki özellikler mevcuttur:
 
-![OsmAnd Web bulut GPX düzenleme](@site/static/img/web/cloud_track.png)
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
 
 - Bilgi ekranları:
   - *Bilgi* - iz verilerini görüntüleme.
@@ -87,12 +87,12 @@ Bulut izi seçildikten sonra aşağıdaki özellikler mevcuttur:
   - *Yüzey* - rota boyunca iz yüzey türlerini gösterme.
   - *Pürüzsüzlük* - OSM etiketlerine dayalı segment pürüzsüzlüğünü görüntüleme.
 
-![OsmAnd Web bulut GPX düzenleme](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web bulut GPX düzenleme](@site/static/img/web/cloud_track_details.png)
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_turns.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details.png)
 
 - Eylem düğmeleri:
   - *İz Düzenle* - bulut izini düzenleme için yerel olarak ekleme (_Yerel Düzenle_ panel düğmesi).
   - *GPX İndir* - izi bilgisayara indirir.
-  - *Yeniden Hesapla* Yükseklik (Uydu) - seçili izin yükseklik grafiğini görüntüler.
+  - *Yeniden Hesapla* Yükseklik (Uydu) - seçili iz için yükseklik değerlerini yeniden hesaplar ve bunları yükseklik grafiğinde gösterir.
   - *İz Sil* - izi siler.
   - *İz Kapat* - izi kapatır.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: c542cbb5952fb2ff6a44defcd1d4f1428cda6f2f08e20fdd5c2611ae081556a3
+source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
 sidebar_position: 10
 title: Rotalar
 ---
@@ -124,7 +124,7 @@ Kayak pistleri ve rotaları, OpenStreetMap'teki belirli bir [rota](https://wiki.
 
 ### Kar motosikleti parkurları {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail.png)
+![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
 
 Kar motosikleti parkurları [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile)'te `route=snowmobile` olarak eşlenir. Kış eğlencesi ve kar mevsimi sırasında uzak alanları bağlamak için kullanılır. OsmAnd'da kar motosikleti parkurları tıklanabilir, bkz. [Rotalarla İşlemler](#actions-with-routes) bölümü.
 
@@ -345,45 +345,29 @@ Bu, sesli rehberlik ve navigasyon özellikleriyle rotayı takip etmenizi sağlay
 
 ## Rota Arama {#routes-search}
 
-[Arama işlevini](../search/index.md) kullanarak adıyla veya [Kategoriler bölümünde](../search/search-poi.md#) "Rotalar"ı seçerek rotaları bulun.
-
-Arama yapmak için *<Translate android="true" ids="search_button"/>* menüsüne veya *<Translate android="true" ids="search_button,search_categories"/>* bölümüne gidin ve etkinliğinizi girin.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png)
+![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png)
+![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-İstenen rotaları bulmak için *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* bölümüne gidin. Rotalar arama sonuçları rota adı, etkinlik türü, uzunluk, konum ve en yakın noktaya olan mesafeyi içerir. Android'de, mevcut olduğunda yokuş yukarı ve yokuş aşağı gibi yükseklik ölçümleri de gösterilir. Küçük yükseklik değişiklikleri (10 m'den az) liste net tutulmak için gizlenir. Tüm değerler uygulamanın seçilen mesafe ve yükseklik birimlerine uyar.
+[Arama işlevini](../search/index.md) kullanarak adıyla veya [Kategoriler bölümünde](../search/search-poi.md#) "Rotalar"ı seçerek rotaları bulun.
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Arama yapmak için *<Translate android="true" ids="search_button"/>* menüsüne veya *<Translate android="true" ids="search_button,search_categories"/>* bölümüne gidin ve etkinliğinizi girin.
 
-<TabItem value="android" label="Android">
+*<Translate android="true" ids="search_button,search_categories,poi_routes"/>* bölümüne giderek istenen rotaları bulun. Rotalar arama sonuçları rota adı, etkinlik türü, uzunluk, konum, yokuş yukarı/yokuş aşağı (Android'de) ve en yakın noktaya olan mesafeyi görüntüler. 
 
-![Routes on the ground](@site/static/img/map/route_search_1_new.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Yalnızca istenen rotaları görüntülemek için filtreler düğmesini (sağ üst köşe) kullanın.
+### Rota Filtreleri {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -400,6 +384,10 @@ Yalnızca istenen rotaları görüntülemek için filtreler düğmesini (sağ ü
 </TabItem>
 
 </Tabs>
+
+Rotalar arama sonuçlarında, listeyi daraltmak için sağ üst köşedeki **Filtreler** düğmesine dokunun. Filtreler ekranı, **İsimle filtrele** alanını; *Bureau*, *Post annex* ve *Post partner* içeren bir **Tür** bloğunu; ve seçilen rota kategorisi veya etkinliğe bağlı **ek kriterleri** içerir, çünkü her kategori kendi özelliklerini ve filtre değerlerini ortaya koyabilir.
+
+Filtreleri anahtarlarla etkinleştirebilir veya devre dışı bırakabilirsiniz ve bazı bölümler ek değerleri görüntülemek için *Tümünü göster* içerir.
 
 
 ## İlgili Makaleler {#related-articles}

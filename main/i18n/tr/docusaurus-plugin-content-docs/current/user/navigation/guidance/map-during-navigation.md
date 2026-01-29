@@ -1,5 +1,5 @@
 ---
-source-hash: 126bdbfe84f38b892a3c07c56eec4eba2956a96775fa4206e17eba71b6dbd43d
+source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
 sidebar_position: 2
 title: Navigasyon Sırasında Harita Ekranı
 ---
@@ -43,16 +43,16 @@ Bu makale, navigasyon sırasında haritanın görünümünü nasıl yapılandır
 
 </Tabs>
 
-Navigasyon sırasında harita, konumunuzu bulmak, hedef planınızı belirlemek ve navigasyon rehberliğini görüntülemek için görsel bir araçtır. Bunu yapmak için yakınlaştırma kullanabilir ve haritayı gerektiği gibi sürükleyip döndürebilirsiniz. Harita ayrıca, rotanızı kolayca belirlemenize yardımcı olmak için yol bilgilerini, sokak adlarını, binaları ve diğer nesneleri de görüntüleyebilir.  
+Navigasyon sırasında harita, konumunuzu bulmak, hedefinizi belirlemek, rotanızı planlamak ve navigasyon rehberliğini görüntülemek için görsel bir araçtır. Bunu yapmak için yakınlaştırma kullanabilir ve haritayı gerektiği gibi sürükleyip döndürebilirsiniz. Harita ayrıca, rotanızı kolayca belirlemenize yardımcı olmak için yol bilgilerini, sokak adlarını, binaları ve diğer nesneleri de görüntüleyebilir.  
 
 Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline göre ayarlanır. Navigasyona başlamadan önce, haritanın görünümünün sürüş sırasında nasıl çalışması gerektiğine ilişkin tercihlerinize uygun olduğundan emin olun.
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="choose_auto_follow_route"/>* | Harita görünümünün hareket ettikten sonra mevcut konumla senkronize edildiği süre. | *Değer:* <br /> Asla, 5 sn, 10 sn, 15 sn, 20 sn, 25 sn, 30 sn, 45 sn, 60 sn, 50 sn. |
-| *<Translate android="true" ids="auto_zoom_map"/>* | Harita mevcut konumunuzla senkronize olduğu sürece, haritayı hızınıza göre otomatik olarak ölçeklendirin. | *Değer:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manuel yakınlaştırma. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - yakınlaştırma 200 m'dir.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - yakınlaştırma 100 m'dir. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - yakınlaştırma 5 m'dir. |
-| *Otomatik yakınlaştırma 3D açısı* | Navigasyon sırasında 3D görünüme geçişte haritanın eğimini ayarlar. Daha yüksek bir açı, ufku daha uzak göstererek daha fazla ileri görüş sağlar. | Yalnızca Otomatik yakınlaştırma etkinleştirildiğinde uygulanır. Değerler: 20°, 25°, 30°, 35°, 40°. Varsayılan: 25°. |
-| *Bir sonraki dönüşü önizle* | Navigasyon sırasında bir sonraki dönüşü veya manevrayı göstermek için haritayı biraz önceden otomatik olarak döndürür. Yaklaşan eylemleri öngörmeye yardımcı olur. | Varsayılan olarak etkin. Bir profili dışa aktarıp yeniden içe aktarırsanız, bu ayarı doğruladığınızdan emin olun; bazı eski sürümlerde "etkin" olarak sıfırlanabilir. |
+| *<Translate android="true" ids="auto_zoom_map"/>* | Harita mevcut konumunuzla senkronize olduğu sürece, haritayı hızınıza göre otomatik olarak ölçeklendirin. | *Değer:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manuel yakınlaştırma. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - yakınlaştırma 200 m'dir.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - yakınlaştırma 100 m'dir. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - yakınlaştırma 5 m'dir. <br /> Otomatik yakınlaştırma değişiklikleri, [Geliştirme ayarlarına](navigation-settings.md#development-settings) bağlı olarak animasyonlu (Pürüzsüz) veya adım tabanlı (Ayrık) olabilir. Pürüzsüz modda, yakınlaştırma değişiklikleri kontrollü bir animasyon kullanır (yaklaşık 0,1 yakınlaştırma/saniye). Otomatik yakınlaştırma, çok düşük hızlarda (yaklaşık 7 km/saatin altında) yakınlaştırmayı ayarlamaz. Gerekli yakınlaştırma değişikliği yaklaşık 1,5 saniyeden az sürecekse, animasyon başlatılmaz. <br /> Otomatik yakınlaştırma, yaklaşan manevrayı sabit bir ekran odak alanında tutmayı amaçlar, böylece sürüş sırasında öndeki görünür mesafe tutarlı kalır. |
+| *Otomatik yakınlaştırma 3D açısı* | Navigasyon sırasında 3D görünüme geçişte haritanın eğimini ayarlar. Daha yüksek bir açı, ufku daha uzak göstererek daha fazla ileri görüş sağlar. | Yalnızca Otomatik yakınlaştırma etkinleştirildiğinde uygulanır. Değerler: 20°, 25°, 30°, 35°, 40°. Varsayılan: 25°. <br /> Bir manevra/kavşağa yaklaşırken, uygulama bir sonraki dönüşün okunabilir kalması için 3D eğimi kademeli olarak 2D görünüme doğru azaltabilir. |
+| *Bir sonraki dönüşü önizle* | Navigasyon sırasında bir sonraki dönüşü veya manevrayı göstermek için haritayı biraz önceden otomatik olarak döndürür. Yaklaşan eylemleri öngörmeye yardımcı olur. | Varsayılan olarak etkin. Bir profili dışa aktarıp yeniden içe aktarırsanız, bu ayarı doğruladığınızdan emin olun; bazı eski sürümlerde "etkin" olarak sıfırlanabilir. <br /> Dönüş/önizleme, bir sonraki manevra noktası odak alanına girdiğinde tetiklenir (yani harita, dönüşün ilgili hale geldiğinde 'bakmaya' başlar). |
 | *<Translate android="true" ids="snap_to_road"/>* | Mevcut konum simgesi, mevcut navigasyon rotasıyla ilişkilendirilecektir. | Bu seçeneği kapatabilirsiniz, ancak şerit gösterimi gibi yolla ilgili tüm seçenekler de navigasyon sırasında görünmeyecektir. |
 
 
@@ -60,9 +60,9 @@ Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline g�
 
 *Rota boyunca göster* ayarı, ek rota parametrelerini yapılandırmanıza olanak tanır ve [Sokak adı](../../widgets/nav-widgets#street-name) ve [Uyarı widget'ı](../../widgets/nav-widgets.md#alert-widget) gibi widget'ların çalışması için gereklidir. Seçenekler arasında rota boyunca [**İÇN'leri**](#points-of-interest-pois) ve [**Favorilerimi**](#my-favorites) görüntülemek veya bunları profil için zaten yapılandırılmış olanlara ek olarak kullanmak, ayrıca rota boyunca [**Trafik uyarılarının**](#traffic-warnings) tam bir listesini görüntülemek yer alır.  
 
-- Rota boyunca yakın noktalara farklı mesafeler (belirlediğiniz [uzunluk birimine](../../personal/profiles.md#units--formats) bağlı olarak 5 km'ye veya 3,11 mile kadar) ayarlama yeteneği, [Düz Çizgi](../routing/straight-line-routing.md) veya [Noktadan Noktaya](../routing/direct-to-point-routing.md) gibi rota türlerini kullanırken faydalıdır.
+- Rota boyunca yakın noktalara farklı mesafeler (belirlediğiniz [uzunluk birimine](../../personal/profiles.md#units--formats) bağlı olarak 5 km'ye veya 3,11 mile kadar) ayarlama yeteneği, [Düz Çizgi](../routing/straight-line-routing.md) veya [Doğrudan Noktaya](../routing/direct-to-point-routing.md) gibi rota türlerini kullanırken faydalıdır.
 - *Rota boyunca göster* ayarı için, navigasyon için [Sesli komutlar](../guidance/voice-navigation.md) kullanılması önerilir.
-- *İÇN'ler, Favoriler ve Trafik uyarıları*, zaten kat ettiğiniz bir rota için listede görüntülenmez.
+- *İÇN'ler, Favori ve Trafik uyarıları*, zaten kat ettiğiniz bir rota için listede görüntülenmez.
 
 :::info note
 **Rota boyunca göster** seçeneği yalnızca İÇN ve Favorilerim listelerini etkiler, haritayı değil. İÇN ve Favori simgeleri, rotadan uzaklıklarına bakılmaksızın haritanın her yerinde görüntülenir.
@@ -155,7 +155,7 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
-| **<Translate android="true" ids="screen_alerts"/>** | Trafik uyarıları veya hız limitleri gibi bildirimler, siz gezinirken ekranın sol alt köşesinde bir widget olarak görünecektir. | [Uyarı widget'ı türleri](../../widgets/nav-widgets.md#alert-widget)   |
+| **<Translate android="true" ids="screen_alerts"/>** | Trafik uyarıları veya hız limitleri gibi bildirimler, gezinirken ekranın sol alt köşesinde bir widget olarak görünecektir. | [Uyarı widget'ı türleri](../../widgets/nav-widgets.md#alert-widget)   |
 
 
 ## Rota Çizgisi Görünümü {#route-line-appearance}
@@ -174,7 +174,7 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Navigasyon rotası Android](@site/static/img/navigation/route/RLApp_iOS.png)
+![Navigasyon rotası iOS](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 
@@ -182,7 +182,7 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 Rota çizgisi görünümünü stile göre seçebilir veya çizginin rengini, genişliğini ve şeffaflığını manuel olarak seçebilirsiniz. Ayrıca, çizgide dönüş oklarının ve yön oklarının gösterilip gösterilmeyeceğini de seçebilirsiniz.
 
-**Gelişmiş**: Rota çizgisini özelleştirme ayarı, rota çizgisinin görünümünü yükseklik değişikliklerini, önemli yokuş yukarı veya yokuş aşağı, yolda buz, asfaltlanmamış yollar, otoyollar ve diğer olası engelleri gösterecek şekilde ayarlamanıza olanak tanır. Rota çizgisine uygulanacak özel [renk şemalarını](../../personal/color-palette-schemes.md#routes) da seçebilir veya oluşturabilirsiniz.
+**Gelişmiş**: Rota çizgisini özelleştirme ayarı, rota çizgisinin görünümünü yükseklik değişikliklerini, önemli yokuş yukarı veya yokuş aşağı, yolda buz, asfaltlanmamış yollar, otoyollar ve diğer olası engelleri gösterecek şekilde ayarlamanıza olanak tanır. Rota çizgisine uygulanacak özel [renk şemalarını](../../personal/color-palette-schemes.md#tracks-routes) da seçebilir veya oluşturabilirsiniz.
 
 
 :::note
@@ -244,10 +244,10 @@ Rota çizgisinin genişliğini, haritada görüntülenen yol veya patika ile hiz
 Dönüş Okları ayarı, rota çizgisinde dönüş oklarının görüntülenip görüntülenmeyeceğini seçmenizi sağlar.  
 
 - ***Haritada***  
-    ![Yükseklik](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![dönüş_okları_ios_harita](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Haritada dönüş okları](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![iOS haritasında dönüş okları](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***Uygulamada***  
-    ![Yükseklik](@site/static/img/navigation/route/turn_arr.png)   ![dönüş_okları_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Uygulamada dönüş okları](@site/static/img/navigation/route/turn_arr.png)   ![iOS'ta dönüş okları](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## İlgili Makaleler {#related-articles}

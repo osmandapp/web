@@ -1,5 +1,5 @@
 ---
-source-hash: aa3c29fb6cbe9138714a34b48b5eaee74f61c4713d9c46b72e2d28a1d615ca35
+source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
 sidebar_label:  Weather
 title: Weather on the Web
@@ -21,14 +21,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd Web Haritası'ndaki Hava Durumu özelliği, mevcut hava koşullarını ve tahmin verilerini doğrudan harita üzerinde görüntüler. Birden fazla tahmin kaynağından hava bilgilerine erişim sağlar, zaman ayarlamasını destekler ve sıcaklık, rüzgar, basınç, bulut örtüsü ve yağış gibi hava katmanlarını görüntülemeye olanak tanır.
 
-Hava durumu verileri oturum açmadan kullanılabilir. Hava Durumu görünümü, harita arayüzünden doğrudan açılabilir; menü panelindeki şemsiye simgesine tıklayarak veya haritaya sağ tıklayıp bağlam menüsünden Hava Durumunu Aç'ı seçerek.
+Hava durumu verileri oturum açmadan kullanılabilir. Hava Durumu görünümü, harita arayüzünden doğrudan açılabilir; menü panelindeki şemsiye simgesine tıklayarak veya haritaya sağ tıklayıp bağlam menüsünden Open weather'ı seçerek.
+
 
 ## Veri Kaynağı {#data-source}
 
 OsmAnd Web, iki tahmin kaynağından hava durumu bilgisi sağlar:
 
-- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Küresel Tahmin Sistemi)** – NOAA/NWS tarafından işletilen varsayılan kaynak. Sıcaklık, basınç, nem, rüzgar ve bulut katmanlarını içeren tam hava durumu verileri sağlar.  
-- [**ECMWF**](https://www.ecmwf.int/) **(Avrupa Orta Vadeli Hava Tahmin Merkezi)** – alternatif bir tahmin kaynağı. Yüksek kaliteli sıcaklık, yağış ve basınç verileri sunar ancak rüzgar veya bulut bilgisi sağlamaz.  
+- [**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – NOAA/NWS tarafından işletilen varsayılan kaynak. Sıcaklık, basınç, nem, rüzgar ve bulut katmanlarını içeren tam hava durumu verileri sağlar.  
+- [**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – alternatif bir tahmin kaynağı. Yüksek kaliteli sıcaklık, yağış ve basınç verileri sunar ancak rüzgar veya bulut bilgisi sağlamaz.  
 
 Bunlar arasında geçiş yapmak için Hava Durumu menüsündeki **şemsiye düğmesine** tıklayın.
 
@@ -88,7 +89,7 @@ Farklı hava parametreleri arasında geçiş yapmak için tahmin panelinin üst 
 ![OsmAnd Web Hava Durumu](@site/static/img/web/weather_forecast.png)
 
 
-## İlgili Makale {#related-article}
+## İlgili Makaleler {#related-articles}
 
 - [Hava Durumu](../plugins/weather.md)
 - [Giriş](../web/web-overview.md)

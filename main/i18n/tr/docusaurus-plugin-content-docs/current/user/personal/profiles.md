@@ -1,5 +1,5 @@
 ---
-source-hash: 6a05b52d6441fb5364abfd03b7da6c66258c7474e0a72a0ee7ea63b645d8011a
+source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
 sidebar_position: 4
 title:  Profiller (Ayarlar)
 ---
@@ -36,7 +36,7 @@ OsmAnd, sürüş, bisiklet, yürüyüş ve kayak ile tekne gezintisi gibi daha �
 - *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (Haritaya göz at veya başka bir profil)
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Profiller Ayarları Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
+![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
 
 </TabItem>
 
@@ -44,7 +44,7 @@ OsmAnd, sürüş, bisiklet, yürüyüş ve kayak ile tekne gezintisi gibi daha �
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Profiller Ayarları iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
+![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
 </TabItem>
 
@@ -61,13 +61,13 @@ Tüm ayarlar yalnızca o anda seçili olan uygulama profiline uygulanır.
 
 <TabItem value="android" label="Android">
 
-![Profiller Ayarları Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Profiller Ayarları Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
+![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiller Ayarları iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
+![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
 
 </TabItem>
 
@@ -84,7 +84,7 @@ Bu bölüm, görünüm, navigasyon seçenekleri, harita gösterimi, ayarlar men�
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
-![Favoriler klasör işlevleri android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
 </TabItem>
 
@@ -92,7 +92,7 @@ Bu bölüm, görünüm, navigasyon seçenekleri, harita gösterimi, ayarlar men�
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Favori eylemleri ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
+![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
 
 </TabItem>
 
@@ -115,7 +115,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
-![Profiller Genel Ayarlar Görünüm Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
+![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
 
 </TabItem>
 
@@ -123,7 +123,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiller Genel Ayarlar Görünüm iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
 
 </TabItem>
 
@@ -156,13 +156,13 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 <TabItem value="android" label="Android">
 
-![Profiller Genel Ayarlar Birimler ve formatlar Android](@site/static/img/personal/profiles/units_formats_android.png)
+![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiller Genel Ayarlar Birimler ve formatlar iOS](@site/static/img/personal/profiles/units_formats_ios.png)
+![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -259,7 +259,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiller Genel Ayarlar Diğer Android](@site/static/img/personal/profiles/other_settings_android.png)
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -267,7 +267,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-![Profiller Genel Ayarlar Diğer iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
+![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
 
 </TabItem>
 
@@ -299,7 +299,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
-![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
@@ -307,7 +307,7 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigasyon Ayarları iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
+![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
 
 </TabItem>
 
@@ -345,7 +345,7 @@ Navigasyon seçeneklerine ilişkin ayrıntılı bir genel bakış için, OsmAnd'
 - *<Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>*  
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* *→ Haritayı yapılandır*
 
-![Profiller Haritayı Yapılandır Ayarları Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
+![Profiles Configure map Settings Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
 
 </TabItem>
 
@@ -353,7 +353,7 @@ Navigasyon seçeneklerine ilişkin ayrıntılı bir genel bakış için, OsmAnd'
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
 
-![Profiller Haritayı Yapılandır Ayarları iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
+![Profiles Configure map Settings iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
 
 </TabItem>
 
@@ -383,7 +383,7 @@ Bu menü ile şunları yapabilirsiniz:
 - Şuraya git: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 - Şuraya git: *Menü → Ayarlar → Uygulama Profili → Ekranı yapılandır*
 
-![Ekran menüsünü yapılandır](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Ekran menüsünü yapılandır](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
@@ -391,7 +391,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Ekran menüsünü yapılandır](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Ekran menüsünü yapılandır](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
 </TabItem>
 
@@ -408,7 +408,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Profiller Görünüm](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
 
 </TabItem>
 
@@ -416,7 +416,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profiller Görünüm](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
+![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios.png)
 
 </TabItem>
 
@@ -433,7 +433,9 @@ Bu menü ile şunları yapabilirsiniz:
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Konumum Görünüm](@site/static/img/personal/profiles/location_appearance_andr.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
+
+**Konumum görünümü** ayarları, konumunuzun haritada hem sabitken hem de hareket halindeyken nasıl görüntülendiğini özelleştirmenize olanak tanır. Cihaz hızı **sıfırdan büyük** olduğunda hareket işletim sistemi tarafından algılanır.
 
 </TabItem>
 
@@ -441,13 +443,16 @@ Bu menü ile şunları yapabilirsiniz:
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Konumum Görünüm](@site/static/img/personal/profiles/location_appearance_2_ios.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+
+**Konumum görünümü** ayarları, konumunuzun haritada hem sabitken (Dinlenme) hem de hareket halindeyken (Navigasyon) nasıl görüntülendiğini özelleştirmenize olanak tanır. Cihaz hızı **sıfırdan büyük** olduğunda hareket işletim sistemi tarafından algılanır.
+
+**Simges boyutu**nu kullanarak, Konumum konum simgesinin boyutunu uygulamanın metin boyutundan bağımsız olarak ayarlayın. Dinlenme ve Navigasyon modları için farklı boyutlar ayarlayabilirsiniz. Boyut %50'den %300'e kadar ayarlanabilir (%50, %75, %100, %125, %150, %200, %250, %300). Varsayılan değer %100'dür. Simges boyutuna dokunarak boyut ayarlarını açın, ardından kaydırıcıyı veya + / – adım düğmelerini kullanarak değeri değiştirin. **Varsayılana Sıfırla**yı kullanarak %100'e dönün.
 
 </TabItem>
 
 </Tabs>
 
-**Konumum görünümü** ayarları, konumunuzun haritada hem sabitken hem de hareket halindeyken nasıl görüntülendiğini özelleştirmenize olanak tanır. Cihaz hızı **sıfırdan büyük** olduğunda hareket işletim sistemi tarafından algılanır.
 
 ### Görüş Açısı ve Konum Yarıçapı {#view-angle-and-location-radius}
 
@@ -493,14 +498,14 @@ Kullanılmayan [eklentilerin](../plugins/index.md#configure-plugin) tüm kontrol
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
-![Profil Kullanıcı Arayüzü Özelleştirme Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
+![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
 Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android), [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) ve [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md) gibi eylemlerdeki öğe sayısını ayarlayabilirsiniz. Tüm olası öğelerden eklenen öğe sayısı hakkında bilgi, her özelliğin başlığının altında bulunabilir.
 
 
 ### Çekmece {#drawer}
 
-![Profil Çekmece Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profil Sıfırla Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
+![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
 - **Ana görünür öğeler** - *Kullanıcı Arayüzünü Özelleştir* bölümünde, [Çekmece'deki](../start-with/main-menu.md#customize-advanced-use-of-android) öğeleri tercihlerinize göre *yeniden sıralayabilir, gizleyebilir ve geri yükleyebilirsiniz*.
 
@@ -510,7 +515,7 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 
 ### Haritayı Yapılandırma {#configuring-the-map}
 
-![Profil Harita menüsünü yapılandır Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profil Harita menüsünü yapılandır Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
+![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
 - **Harita menüsünü yapılandır** - *Kullanıcı Arayüzünü Özelleştir* bölümünde, [Haritayı yapılandır](../map/configure-map-menu.md) bölümündeki öğeleri *yeniden sıralayabilir veya gizleyebilirsiniz*, bu da sık kullanılan ayarlara hızlı erişim sağlar.
 
@@ -521,7 +526,7 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 
 ### Bağlam Menüsü Eylemleri {#context-menu-actions}
 
-![Profil Bağlam menüsü Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profil Harita menüsünü sıfırla Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **Harita bağlam menüsü** - Kullanıcı Arayüzünü Özelleştir bölümünde, sık kullanılan özelliklere erişimi optimize etmek için [harita bağlam menüsündeki](../map/map-context-menu.md) öğeleri yeniden sıralayabilir veya gizleyebilirsiniz.
 
@@ -542,7 +547,7 @@ Eklentinin ayarlarına erişmek için önce ana menünün *Eklenti bölümünde*
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
 
-![Profil Ayarları Eklentiler Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
+![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
 
 </TabItem>
 
@@ -550,7 +555,7 @@ Eklentinin ayarlarına erişmek için önce ana menünün *Eklenti bölümünde*
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
-![Profil Ayarları Eklentiler iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
+![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
 
 </TabItem>
 
@@ -589,13 +594,13 @@ Eklentiler uygulamanın ek özelliklerini açar ve [ücretli veya ücretsiz](../
 
 <TabItem value="android" label="Android">
 
-![Profiller Eylemler Ayarları Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
+![Profiles Actions Settings Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiller Eylemler Ayarları iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
+![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
 
 </TabItem>
 

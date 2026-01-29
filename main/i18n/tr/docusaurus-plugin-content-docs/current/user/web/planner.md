@@ -1,5 +1,5 @@
 ---
-source-hash: f973f145e5f4519df92ee087ead534986bb074b9e858cae169c3d3c6b00b1839
+source-hash: efbd8cb409a1e8ef85e36e19d96eeb7a90fa212c810385f1ad6562e2e09d6d40
 sidebar_position: 9
 sidebar_label: Rota Planla
 title: Web Sitesinde Rota Planla
@@ -16,12 +16,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 
 ## Overview {#overview}
 
-OsmAnd Web Rota Planlayıcı, doğrudan tarayıcınızdan navigasyon rotaları oluşturmanıza, parkurları planlamanıza ve yerel dosyaları yönetmenize olanak tanır. Bu web aracı, uygulamanızla senkronize edebileceğiniz veya başkalarıyla paylaşabileceğiniz ayrıntılı seyahat rotaları oluşturmak için kullanışlıdır.
+OsmAnd Web Rota Planlayıcı, tarayıcınızdan doğrudan navigasyon rotaları oluşturmanıza, parkurları planlamanıza ve yerel dosyaları yönetmenize olanak tanır. Bu web aracı, uygulamanızla senkronize edebileceğiniz veya başkalarıyla paylaşabileceğiniz ayrıntılı seyahat rotaları oluşturmak için kullanışlıdır.
 
 
 <!--
@@ -57,72 +59,83 @@ To create a navigation route, follow these steps:
 -->
 
 
-## Create Track and Local Files {#create-track-and-local-files}
+## Yeni Rota Oluştur {#create-new-route}
 
-OsmAnd Web'in [**Rota planla**](../plan-route/create-route.md) aracı, mobil uygulamaya benzer şekilde parkurlar oluşturmanıza ve düzenlemenize olanak tanır. Parkurları nasıl oluşturup yöneteceğiniz aşağıda açıklanmıştır:
+Rota Planla'da yeni bir rota başlatmanın iki yolu vardır. İlk seçenek doğrudan haritadan: haritanın herhangi bir yerine sağ tıklayın ve **Yeni rota oluştur**'u seçin. İkinci seçenek sol panelden: **Parkur oluştur** düğmesine tıklayın.
 
+Rota oluşturulduktan sonra, noktaları doğrudan haritaya ekleyin. Her tıklama bir sonraki noktayı yerleştirir ve planlayıcı noktalar arasında rotayı oluşturur.
 
-***Creating a new route:***
+![OsmAnd Web Create New Route](@site/static/img/web/create_new_route.png)
 
-- Haritaya *sağ tıklayın* ve **Yeni Rota Oluştur**'u seçin.
-- Alternatif olarak, *Yerel* menüsündeki **Parkur Oluştur** düğmesini kullanın (*Kalem* ve *Yükle* düğmeleriyle birlikte sağ tarafta bulunur).
+### Parkur İçe Aktar {#import-track}
 
+Zaten bir parkur dosyanız varsa, bunu Rota Planla'ya içe aktarabilir ve Web Planlayıcı'da onunla çalışmaya devam edebilirsiniz. **Parkur içe aktar** düğmesine tıklayın ve bilgisayarınızdan bir GPX dosyası seçin. Yükleme tamamlandıktan sonra, parkur yerel listenizde görünür ve planlayıcıda açılır, böylece haritada inceleyebilir ve parkur panellerinde düzenleme ve yönetme işlemlerine devam edebilirsiniz.
 
-***Managing tracks:***
+### Yerel Dosyalar {#local-files}
 
-- **Navigasyon Profilini Seçin**. Belirli rota bölümleri (*Yeni segmentler*) veya tüm rota (*Tüm segmentler*) için bir profil (örn. yürüyüş, sürüş) seçin.
-- **Yol Noktaları Ekle**. Yeni noktalar eklemek için haritaya tıklayın.
-- **Rotayı Kaydet**. Rotanızı ileride kullanmak üzere kaydedin.
-- **Rota Ayrıntılarını Görüntüle**. Uzunluk, süre ve arazi dahil olmak üzere ayrıntılı parkur bilgilerine erişin.
-  ![OsmAnd Web Parkur Oluştur](@site/static/img/web/create_route.png)
+Rota Planla'da oluşturduğunuz veya içe aktardığınız tüm rotalar ve parkurlar, sol paneldeki Yerel listesine eklenir. Bu, birden fazla GPX dosyasını tek bir yerde tutmayı ve planlama sırasında aralarında geçiş yapmayı kolaylaştırır.
 
+Listedeki her öğe, parkuru haritada hızlıca gösterip gizlemenize olanak tanıyan bir geçiş anahtarı içerir. Listeden bir parkur seçerek planlayıcıda açın ve onunla çalışmaya devam edin. 
 
-***Importing and creating tracks:***
-
-- **Parkuru İçe Aktar**. [osmand.net/map](https://osmand.net/map) adresini ziyaret ederek herhangi bir GPX dosyasını **Yerel** bölümüne yükleyebilirsiniz.
-- **Parkur Oluştur**. Yol noktalarını seçerek manuel olarak yeni bir parkur oluşturun.
-  ![OsmAnd Web Parkur Oluştur](@site/static/img/web/create_route_2.png)
+![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
 
 
-***Local track actions and information:***
+## Parkuru Yönet {#manage-track}
 
-**Yerel Parkur** menüsü, düzenleme için üç panel sunar: **Bilgi**, **Parkur** ve **Yol Noktaları**.
+Rota Planla'da bir rota oluşturduğunuzda veya içe aktardığınızda, dikey bir parkur paneli açılır. Bu paneli, yönlendirme profilini değiştirmek ve rotayı yönetmek için kullanın. Profil denetimine tıklayarak **Profili değiştir** iletişim kutusunu açın, ihtiyacınız olan profili seçin (örneğin, Araba, Bisiklet veya Yaya) ve nasıl uygulanacağını seçin: *Sonraki segmentler* profili yalnızca bu noktadan itibaren eklenen yeni kısımlara uygular, *Tüm segmentler* ise seçilen profille tüm rotayı yeniden hesaplar.
 
-**Bilgi Paneli**:
+Parkur panelinden ayrıca yaygın dosya işlemlerini gerçekleştirebilirsiniz. Rotayı daha sonra kullanmak için **Buluta Kaydet**'i, dosyaya dışa aktarmak için **GPX İndir**'i, düzenlemeyi durdurmak için **Parkuru Kapat**'ı veya yerel listenizden kaldırmak için **Parkuru Sil**'i kullanabilirsiniz. Bu işlemler ayrıca [Bilgi paneli](#info-panel)'ndeki ilgili denetimlerden de kullanılabilir.
 
-- *Buluta Kaydet*. Parkurunuzu cihazlar arası erişim için OsmAnd Cloud'a kaydedin.
-- *Açıklama ekle*. Parkur hakkında notlar ekleyin.
-- *Yeniden Adlandır*. Parkur adını değiştirin.
-- *Yeniden Hesapla*. Yükseklik verilerini ekleyin veya güncelleyin.
-- *Yükseklik*. Yükseklik profilini görüntüleyin.
-- *Hız grafiği*. Parkur boyunca hız verilerini görüntüleyin.
-- *Eğim grafiği*. Rota boyunca eğim değişikliklerini gösterin.  
-- *Yol ayrıntıları*. Yol tipi, yüzey ve eğim gibi ayrıntılı bilgileri görüntüleyin.
-- *GPX İndir*. Parkuru bir GPX dosyası olarak dışa aktarın ([Pro özelliği](../purchases/index.md)).
-- *Parkuru Kapat*. Parkur düzenleme görünümünü kapatın.
-- *Parkuru Sil*. Parkuru kalıcı olarak silin.
-  ![OsmAnd Web Parkur Oluştur](@site/static/img/web/create_route_3.png)
-
-**Parkur Paneli**:
-
-- Parkur noktalarını görüntüleyin ve düzenleyin.
-- Gerekirse noktaları yeniden sıralayın veya silin.
-
-**Yol Noktaları Paneli**:
-
-- Parkur yol noktalarını görüntüleyin ve yönetin.
-- Yol noktalarının haritadaki görünürlüğünü değiştirin.
-- Gerekirse yol noktalarını tek tek silin.
-
-**Dönüşler Paneli**:
-
-- Parkur boyunca dönüşler hakkında ayrıntılı bilgileri görüntüleyin.
-
-  ![OsmAnd Web Parkur Oluştur](@site/static/img/web/create_route_1.png)
+![OsmAnd Web Manage Track](@site/static/img/web/manage_track_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
 
 
-***Additional features:***
+## Parkur Ayrıntı Panelleri {#track-details-panels}
 
-- **Uygulama ile senkronize et**. Rotaları OsmAnd Cloud'a kaydedin ve mobil uygulamanızdan erişin.
-- **Özel rota profilleri**. Bisiklet veya yürüyüş gibi farklı aktivitelere uyacak şekilde profilleri ayarlayın.
-- **Paylaşılabilir rotalar**. Ortak planlama için rota URL'lerini kopyalayın ve paylaşın.
+Yerel parkur menüsü, üç panel içerir: **Bilgi**, **Parkur** ve **Yol Noktaları**. Parkur bilgilerini görüntülemek ve rota noktalarını ile yol noktalarını yönetmek için bunları kullanın.
+
+### Bilgi Paneli {#info-panel}
+
+Bilgi paneli, seçili parkuru özetler ve ana rota ile yükseklik verilerini gösterir. Rota istatistiklerinin hızlı bir genel bakışını içerir, ayrıca mevcut harita verilerine dayalı grafik ve ek parkur analizleri sunar.
+
+Özet bölümünde şunlar gösterilir:
+
+- Noktalar — rotayı oluşturmak için kullanılan rota noktalarının sayısı.
+- Mesafe — toplam rota uzunluğu.
+- Yokuş yukarı / yokuş aşağı — rota boyunca toplam yükselme ve toplam iniş.
+- Yükseklik (min/ort/max) — rota için yükseklik istatistikleri.
+- Yükseklik verisi eksikse veya güncellenmesi gerekiyorsa, Yükseklik (Uydu) → yeniden hesapla'yı kullanarak yükseklik verilerini uydu verileriyle (kullanılabilir olduğunda) yeniden oluşturun.
+
+Özetin altında, panel grafikler sağlar:
+
+- Yükseklik — rotanın yükseklik profili.
+- Eğim — parkur boyunca eğim değişikliklerini gösteren eğim grafiği.
+
+Ek parkur ayrıntıları için analiz bölümlerini açın:
+
+- Yüzey — OSM verilerine dayalı rota boyunca yüzey tiplerini gösterir.
+- Pürüzsüzlük — OSM etiketlerine dayalı segment pürüzsüzlüğünü gösterir.
+
+Kaydetme, indirme, kapatma ve silme gibi yaygın parkur işlemleri bu panelde de mevcuttur.
+
+![OsmAnd Web Info Panel](@site/static/img/web/info_panel.png) ![OsmAnd Web Manage Track](@site/static/img/web/info_panel_2.png)
+
+### Parkur Paneli {#track-panel}
+
+Parkur paneli, parkuru oluşturmak için kullanılan rota noktalarının listesini gösterir. Rota yapısını incelemek ve düzenlemek için kullanın: noktaları sürükleyerek yeniden sıralayın, silme simgesini kullanarak noktaları kaldırın veya tüm noktaları kaldırmak ve baştan başlamak için Noktaları Temizle'yi kullanın.
+
+![OsmAnd Web Track Panel](@site/static/img/web/track_panel.png)
+
+### Yol Noktaları Paneli {#waypoints-panel}
+
+Yol Noktaları paneli, seçili parkur için yol noktalarını görüntülemek ve yönetmek için kullanılır. Yol noktaları harita bağlam menüsünden eklenebilir — haritaya sağ tıklayın ve **Yol noktası ekle** seçeneğini seçin, ardından yol noktası ayrıntılarını (ad, simge ve renk gibi) doldurun ve kaydedin.
+
+Yol Noktaları listesinde, yol noktalarının haritada gösterilip gösterilmeyeceğini kontrol edebilir ve gerektiğinde bireysel yol noktalarını kaldırabilirsiniz. Parkurdan tüm yol noktalarını bir kerede kaldırmak için *Tüm yol noktalarını temizle*'yi kullanın.
+
+![OsmAnd Web Waypoints Panel](@site/static/img/web/waypoints_panel.png)
+
+
+## İlgili Makaleler {#related-articles}
+
+- [Rota Planla](../plan-route/create-route.md)
+- [Seyahat Rehberleri](../plan-route/travel-guides.md)
+- [Navigasyon](../web/web-navigation.md)
