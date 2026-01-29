@@ -1,5 +1,5 @@
 ---
-source-hash: e19a1247251c1151c1b92569c2eff3cbb1c0c47315a2754b8b205cb0177ef347
+source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
 sidebar_position: 5
 title:  Радіусна лінійка та Лінійка
 ---
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="radius_ruler_item"/>*
 
-Доступний на всіх панелях: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Left, and Right.
+Доступний на всіх панелях: <Translate ios="true" ids="shared_string_top"/>, <Translate ios="true" ids="position_on_map_bottom"/>, Ліворуч, та Праворуч.
 
 ![Позиція відображення iOS](@site/static/img/widgets/radius_ruler_height_ios.png)
 
@@ -97,11 +97,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Використовуйте цей віджет для оцінки близькості до цікавих місць або планування навколо визначеної області.
 
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Екран радіусної лінійки](@site/static/img/widgets/radius_ruler_widget.png)
+![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -109,18 +110,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Радіусна лінійка"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Радіусна лінійка"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Радіусна лінійка"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
 </table>
 
 </TabItem>
 
 </Tabs>
+-->
 
 
-## Компас для Радіусної лінійки {#compass-for-radius-ruler}
+### Компас {#compass}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -155,7 +157,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | Формат | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
-## Позиція по центру / знизу {#center--bottom-position}
+### Позиція по центру / знизу {#center--bottom-position}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -182,7 +184,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Для отримання додаткової інформації про *позицію на екрані*, дивіться статтю [Налаштування екрана](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
-## 3D-вигляд {#3d-view}
+### 3D-вигляд {#3d-view}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

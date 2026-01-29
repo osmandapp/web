@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title:  Погода
 ---
@@ -121,7 +121,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Увімкнений плагін → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Панель погоди Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
+![Налаштування погоди Android](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -129,7 +129,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Увімкнений плагін → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Панель погоди в iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![Налаштування погоди в iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
 </TabItem>  
 

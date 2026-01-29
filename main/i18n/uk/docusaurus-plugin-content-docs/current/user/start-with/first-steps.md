@@ -1,5 +1,5 @@
 ---
-source-hash: 22db732c5f66852486fa2129937bfba2c697d211dccbcef555621bf176facb12
+source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
 sidebar_position: 1
 title:  Перші кроки
 ---
@@ -642,13 +642,15 @@ OsmAnd працює на даних [OpenStreetMap](https://www.openstreetmap.or
 
 <TabItem value="ios" label="iOS">
 
-![Меню мап iOS](@site/static/img/steps/offline_about_ios.png)
+![Меню мап iOS](@site/static/img/steps/offline_about_ios_new.png) ![Меню мап iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 
 </Tabs>
 
 Ви можете дізнатися про нашу команду, побачити поточну версію застосунку та що нового, а також завантажити бета-версію застосунку.
+
+Збірка відображається у форматі OsmAnd Maps &lt;build&gt;, випущена &lt;date&gt;. Щоб швидко поділитися цією інформацією з підтримкою, довго натисніть рядок збірки, щоб скопіювати номер збірки разом з датою випуску.
 
 
 ## Конфіденційність {#privacy}

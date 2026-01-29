@@ -1,7 +1,7 @@
 ---
-source-hash: 3969b9e7c1d8cd95ffd81346c80a2ec879cb86431f1db86cbdc923f556504f94
+source-hash: 822817a60d43552808de6f3ba701ff373fc32cdd07367b0d49b825e58a1bdb4e
 sidebar_position: 6
-title:  Мої місця
+title:  My Places
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,11 +14,15 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Огляд {#overview}
 
-**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для впорядкування [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, що допомагає вести детальну історію ваших маршрутів і подорожей. Ви також можете керувати своїми [редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін до мапи та її оновлення. Плагін [Аудіо/відео нотатки](#audiovideo-notes) та віджети дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до своїх подорожей.
+**Мої місця** — це центральний вузол у застосунку OsmAnd для керування та налаштування всіх особистих даних. Ви можете використовувати цей розділ для впорядкування [Улюблених точок](#favorites), позначених як важливі або часто відвідувані. Вкладка [Треки](#tracks) дозволяє переглядати, імпортувати, записувати та створювати файли GPX, що допомагає вести детальну історію ваших маршрутів і подорожей. Ви також можете керувати своїми [редагуваннями OpenStreetMap](#openstreetmap-edits), що полегшує внесення змін до мапи та її оновлення. Плагін [Аудіо / Відео нотатки](#audiovideo-notes) та віджети дозволяють користувачам Android створювати та зберігати мультимедійні нотатки, пов'язані з певними місцями, додаючи контекст до своїх подорожей.
+
+## Меню Мої місця {#my-places-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -26,7 +30,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu"/> → Мої місця*  
 
-![Мої місця Android](@site/static/img/personal/my_places_android.png) ![Меню Мої місця Android](@site/static/img/personal/my_places_menu_android.png)
+![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -34,38 +38,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu"/> → Мої місця*  
 
-![Мої місця iOS](@site/static/img/personal/my_places_ios.png)  ![Меню Мої місця iOS](@site/static/img/personal/my_places_menu_ios.png)
+![My Places ios](@site/static/img/personal/my_places_ios_new.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios_new.png)
 
 </TabItem>
 
 </Tabs>
 
-- [***Імпорт та експорт даних***](../personal/import-export.md):  
+Мої місця впорядковано за категоріями. Виберіть вкладку, щоб керувати відповідними даними.
 
-    Усі дані, що зберігаються в меню *Мої місця*, можна переміщувати за допомогою спеціального формату `.osf` через програми на вашому пристрої. Цей процес спрощує збереження та передачу даних між пристроями та дозволяє ділитися ними з іншими користувачами OsmAnd.  
+**Примітка:** Усі дані, що зберігаються в меню *Мої місця*, можна переміщувати за допомогою спеціального формату `.osf` через програми на вашому пристрої. Цей процес спрощує збереження та передачу даних між пристроями та дозволяє ділитися ними з іншими користувачами OsmAnd. 
 
-    **Перейдіть до** розділу *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* та виберіть, експортувати чи імпортувати дані. Якщо ви виберете *експорт*, вам потрібно буде розгорнути групу *Мої місця* та позначити потрібні дані.
-
-- [***Карти та ресурси***](../personal/maps-resources.md):  
-
-    Пункт *Головного меню* застосунку OsmAnd *Карти та ресурси* надає доступ до керування даними з розділу *Мої місця*. Вкладка [*Локальні*](../personal/maps-resources.md#local-menu) показує, скільки місця займають усі наявні дані OsmAnd на вашому пристрої, зокрема розділ *Мої місця*. Ви можете використовувати його для отримання детальної інформації про ваші дані та доступу до керування ними. Розділ може містити лише ті елементи, для яких були завантажені дані.  
-
-    **Перейдіть до** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Перевірте та керуйте своїми даними.
-
-
-## Улюблені {#favorites}
+### Улюблені {#favorites}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Меню Улюблені Android](@site/static/img/personal/favorites_menu_android.png)
+![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню Улюблені iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
+![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.png)
 
 </TabItem>
 
@@ -73,10 +68,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Улюблені** дозволяють додавати в закладки важливі або часто відвідувані місця. Ці улюблені точки впорядковані в теках і можуть бути налаштовані за допомогою різних кольорів, форм та іконок. Ви можете швидко перейти до будь-якого улюбленого місця через меню **Мої місця** без необхідності шукати його повторно.
 
+Щоб отримати повні інструкції, зверніться до статті [Улюблені](../personal/favorites.md).
 
+<!--
 1. ***Кнопки дій***. *Кнопки дій* внизу екрана "Мої місця" дозволяють керувати списком тек з вашими улюбленими місцями:  
 
-    - **Імпорт** (кнопка *Додати*) — дозволяє імпортувати файли *favorite.gpx* зі сховища вашого пристрою.
+    - **Імпорт** (*кнопка Додати*) — дозволяє імпортувати файли *favorite.gpx* зі сховища вашого пристрою.
 
     - **Експорт** — збережіть ваші улюблені точки як файл *favorites.gpx* для зовнішнього використання або резервного копіювання.
 
@@ -85,12 +82,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - **Видалити** (*на iOS ця опція знаходиться в меню "Редагувати"*) — видаляє улюблені точки по одній або вибрані теки з улюбленими та всі точки, що в них містяться.
 
 2. ***Меню з трьома крапками*** (*Android*) та ***довге натискання*** (*iOS*). Використовуйте меню з *трьома крапками* біля кожної теки або *довге натискання* на теку для керування групами улюблених. Докладніше див. [Дії для груп улюблених](../personal/favorites.md#favorite-group-actions).  
+-->
 
-
-Щоб отримати детальніші інструкції, зверніться до статті [Улюблені](../personal/favorites.md).
-
-
-## Треки {#tracks}
+### Треки {#tracks}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -98,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> вкладка*
 
-![Мої місця з треками в Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
@@ -106,7 +100,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> вкладка*
 
-![Мої місця з треками в iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
 
 </TabItem>
 
@@ -114,6 +108,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Треки** пропонують потужні інструменти для запису, створення та керування маршрутами в OsmAnd. Їх можна використовувати для [навігації](../navigation/setup/gpx-navigation.md), [запису поїздок](../plugins/trip-recording.md) або [інтеграції](../personal/tracks/manage-tracks.md#import) зовнішніх файлів GPX.
 
+Щоб отримати вичерпні вказівки, дивіться статтю [Керування треками](../personal/tracks/manage-tracks.md).
+
+<!--
 - **Вкладка "Треки"** — усі треки, які коли-небудь були записані, створені або імпортовані, автоматично відображаються в теці *Мої місця* на вкладці *Треки*. Вони впорядковані за теками або відображаються у списку під ними.
 
 - **Створити трек** — почніть запис за допомогою **вкладки "Треки"** або [плагіна "Запис поїздки"](../plugins/trip-recording.md).
@@ -123,11 +120,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **Керування** — використовуйте інструменти [Фільтр](../personal/tracks/smart-folder.md#available-filters) та [Розумна тека](../personal/tracks/smart-folder.md#smart-folder) для впорядкування треків за певними параметрами.
 
 - **Вигляд та аналіз** — [налаштуйте](../map/tracks/appearance.md) візуальний стиль треків та [аналізуйте](../map/tracks/index.md#analyze-track-on-map) їх за допомогою інструмента OsmAnd [Планування маршруту](../plan-route/create-route.md).
+-->
 
-Щоб отримати вичерпні вказівки, дивіться статтю [Керування треками](../personal/tracks/manage-tracks.md).
-
-
-## Редагування OpenStreetMap {#openstreetmap-edits}
+### Редагування OpenStreetMap {#openstreetmap-edits}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -135,7 +130,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Поділитися](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -143,7 +138,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Поділитися](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.png)
 
 </TabItem>
 
@@ -151,9 +146,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Функція **Редагування OpenStreetMap** в OsmAnd дозволяє вам робити внесок у світову спільноту картографів, додаючи, змінюючи або коментуючи дані мапи.
 
+Покрокові інструкції дивіться у статті про [плагін "Редагування OSM"](../plugins/osm-editing.md).
+
+<!--
 1. ***Кнопки дій***. Ви можете використовувати *кнопки дій* на екрані "Мої місця" для керування списком нотаток:  
 
-    ![Поділитися](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
+    ![Share](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
 
     - **Завантажити файли в OSM** — надсилайте свої нотатки та дані в OpenStreetMap, щоб зробити внесок у спільноту.
 
@@ -164,7 +162,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 2. ***Меню з трьома крапками***. Ви можете керувати певними POI або нотатками за допомогою *меню з трьома крапками* біля кожної нотатки:  
 
-    ![Меню з трьома крапками](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
+    ![Three-dot menu](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
 
     - **Завантажити редагування в OSM** — надішліть свої зміни або редагування в OpenStreetMap, щоб їх побачили інші.
 
@@ -173,36 +171,37 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - **Змінити зміну/нотатку OSM** — внесіть подальші зміни до POI або нотатки, які вже були додані до OpenStreetMap.
 
     - **Видалити** — видаліть вибраний POI або нотатку зі списку.
+    -->
 
-Покрокові інструкції дивіться у статті про [плагін "Редагування OSM"](../plugins/osm-editing.md).
-
-
-## Аудіо/відео нотатки {#audiovideo-notes}
+### Аудіо/Відео нотатки {#audiovideo-notes}
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Плагін аудіо/відео нотаток Меню Мої місця Три дії](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-**Плагін "Аудіо/відео нотатки"** дозволяє створювати мультимедійні нотатки, пов'язані з певними місцями на мапі. Ці нотатки зберігаються в **Моїх місцях** на вкладці **А/В нотатки**.
+**Плагін "Аудіо/Відео нотатки"** дозволяє створювати мультимедійні нотатки, пов'язані з певними місцями на мапі. Ці нотатки зберігаються в **Моїх місцях** на вкладці **А/В нотатки**.
 
+Для отримання додаткової інформації відвідайте сторінку [плагіна "Аудіо/Відео нотатки"](../plugins/audio-video-notes.md).
+
+<!--
 1. ***Кнопки дій***. Ви можете використовувати *кнопки дій* внизу екрана "Мої місця" для керування списком нотаток:  
 
-    ![Поділитися](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
+    ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
 
     - **<Translate android="true" ids="shared_string_sort"/>** — відкриває вибір методів сортування, *За типом* або *За датою*, і при виборі сортує список відповідно.
 
     - **<Translate android="true" ids="shared_string_share"/>** — відображає список усіх нотаток, включаючи ті, що додані до файлів GPX як шляхові точки. Спочатку позначаються потрібні нотатки, потім іконка *Поділитися* у верхньому правому куті екрана пропонує доступні варіанти поширення, і, нарешті, ці нотатки стають доступними відповідно до вибраного варіанту.
 
-    - **Поділитися з шляховими точками GPX** — ви можете поділитися нотатками, вибраними як шляхові точки в меню *Мої місця*, додавши до них [дані GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) за допомогою кнопки **Поділитися** внизу екрана вкладки *А/В нотатки*.
+    - **Share with GPX waypoints** — ви можете поділитися нотатками, вибраними як шляхові точки в меню *Мої місця*, додавши до них [дані GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) за допомогою кнопки **Поділитися** внизу екрана вкладки *А/В нотатки*.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — відображає список лише аудіо-, фото- та відеонотаток. Спочатку позначте непотрібні нотатки, потім торкніться іконки *Видалити* у верхньому правому куті екрана, після підтвердження вибрані нотатки будуть видалені назавжди.
 
 
 2. ***Меню з трьома крапками***. Ви можете керувати певними аудіо-, відео- або фотонотатками за допомогою *меню з трьома крапками* біля кожної нотатки:  
 
-    ![Меню з трьома крапками](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
+    ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
     - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>** — переглядає або прослуховує вибрану аудіо-, відео- або фотонотатку безпосередньо.
 
@@ -213,32 +212,38 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - **<Translate android="true" ids="shared_string_rename"/>** — змініть назву нотатки на більш описову або релевантну.
 
     - **<Translate android="true" ids="shared_string_delete"/>** — вибрані нотатки назавжди видаляються з вашої колекції.
+-->
 
-Для отримання додаткової інформації відвідайте сторінку [плагіна "Аудіо/відео нотатки"](../plugins/audio-video-notes.md).
+### Керування сховищем {#manage-storage}
+
+Пункт *Головного меню* застосунку OsmAnd *Карти та ресурси* надає доступ до керування даними з розділу *Мої місця*. Вкладка [*Локальні*](../personal/maps-resources.md#local-menu) показує, скільки місця займають усі наявні дані OsmAnd на вашому пристрої, зокрема розділ *Мої місця*. Ви можете використовувати його для отримання детальної інформації про ваші дані та доступу до керування ними. Розділ може містити лише ті елементи, для яких були завантажені дані.  
+
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Перевірте та керуйте своїми даними. Для детальної інформації дивіться статтю [Карти та ресурси](../personal/maps-resources.md).  
 
 
-<!--
-### Share with GPX Waypoints {#share-with-gpx-waypoints}
+### Поділитися з шляховими точками GPX {#share-with-gpx-waypoints}
 
 ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx.png)
 
-You can share the notes selected as waypoints in the *My Places* menu by adding [GPX data](../plugins/audio-video-notes.md#share-with-gpx-waypoints) to them using the **Share** button at the bottom of the *A/V notes* tab screen.
+Ви можете поділитися нотатками, вибраними як шляхові точки в меню *Мої місця*, додавши [дані GPX](../plugins/audio-video-notes.md#share-with-gpx-waypoints) до них за допомогою кнопки **Поділитися** внизу екрана вкладки *А/В нотатки*.
 
-### Manage Single Note {#manage-single-note}
+### Керування окремою нотаткою {#manage-single-note}
 
 ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
-You can manage specific audio, video, or photo notes using the **three-dot menu** next to each note:
+Ви можете керувати певними аудіо-, відео- або фотонотатками за допомогою **меню з трьома крапками** біля кожної нотатки:
 
-- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Views or listens to the selected audio, video, or photo note directly.
-- **<Translate android="true" ids="shared_string_share"/>**. Shares the note with others through various apps or platforms.
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Displays the related location and [Context menu](../plugins/audio-video-notes#actions-in-map-context-menu) of the note on the map.
-- **<Translate android="true" ids="shared_string_rename"/>**. Change the name of the note to something more descriptive or relevant.
-- **<Translate android="true" ids="shared_string_delete"/>**. Selected notes are permanently deleted from your collection.
--->
+- **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Переглядає або прослуховує вибрану аудіо-, відео- або фотонотатку безпосередньо.
+- **<Translate android="true" ids="shared_string_share"/>**. Ділиться нотаткою з іншими через різні програми або платформи.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Відображає відповідне місцезнаходження та [Контекстне меню](../plugins/audio-video-notes#actions-in-map-context-menu) нотатки на мапі.
+- **<Translate android="true" ids="shared_string_rename"/>**. Змініть назву нотатки на більш описову або релевантну.
+- **<Translate android="true" ids="shared_string_delete"/>**. Вибрані нотатки назавжди видаляються з вашої колекції.
 
 ## Пов'язані статті {#related-articles}
 
 - [Керування треками](../personal/tracks/manage-tracks.md#import--export-track)
+- [Улюблені](../personal/favorites.md)
+- [Редагування OpenStreetMap](../plugins/osm-editing.md)
+- [Аудіо/Відео нотатки](../plugins/audio-video-notes.md)
 - [Історія пошуку](../search/search-history.md#export-and-share)
 - [Схеми палітри кольорів](../personal/color-palette-schemes.md)
