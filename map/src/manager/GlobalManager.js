@@ -8,6 +8,7 @@ export const MENU_INFO_CLOSE_SIZE = 0;
 export const HEADER_SIZE = 60;
 export const INSTALL_BANNER_SIZE = 60;
 export const GLOBAL_GRAPH_HEIGHT_SIZE = 200;
+export const EMPTY_VISIBLE_HEIGHT = 250;
 
 export const GPX = 'GPX';
 export const FAVOURITES = 'FAVOURITES';

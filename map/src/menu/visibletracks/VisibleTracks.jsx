@@ -6,7 +6,7 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import CloudTrackItem from '../tracks/CloudTrackItem';
-import EmptyVisible, { EMPTY_VISIBLE_HEIGHT } from '../errors/EmptyVisible';
+import EmptyVisible from '../errors/EmptyVisible';
 import isEmpty from 'lodash-es/isEmpty';
 import { DEFAULT_GROUP_NAME, getFileName, TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
@@ -16,7 +16,7 @@ import { SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import LoginContext from '../../context/LoginContext';
 import Loading from '../errors/Loading';
-import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
+import { CONFIGURE_URL, EMPTY_VISIBLE_HEIGHT, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 

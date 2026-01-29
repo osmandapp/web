@@ -8,8 +8,6 @@ import LoginContext from '../../context/LoginContext';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
 
-export const EMPTY_VISIBLE_HEIGHT = 250;
-
 export default function EmptyVisible({ id = null }) {
     const ltx = useContext(LoginContext);
     const ctx = useContext(AppContext);
