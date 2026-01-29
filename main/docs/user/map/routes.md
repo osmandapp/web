@@ -179,7 +179,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 - To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../map/configure-map-menu.md) menu.
 - OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
-- The main route types can also be filtered by classes and subclasses, allowing you to display only specific groups within each type. For example, you can show hiking routes by **OSMC symbols** as classes, and by *international, national, regional*, or *local networks* as subclasses.
+- The main route types can also be filtered by classes and subclasses, allowing you to display only specific groups within each type. For example, you can show hiking routes by **OSMC symbols** as classes, and by *international, national, regional*, or *local networks* as subclasses, which are currently available when the [OsmAnd Development](../plugins/development.md) plugin is enabled.
 - You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool. 
 - When several routes run along the same road, each route is displayed as a separate semi-transparent line placed above others. 
 - When tapping a location where multiple routes overlap, a context menu with all routes passing through this point is shown. 
