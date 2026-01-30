@@ -66,10 +66,11 @@ export default function TravelMenu() {
     const [sortByDistance, setSortByDistance] = useState(null); // 'asc' | 'desc' | null
 
     useEffect(() => {
-        if (ctx.searchTravelRoutes?.res) {
-            setTravelResult(ctx.searchTravelRoutes?.res);
-            setLoadingResult(false);
+        const res = ctx.searchTravelRoutes?.res;
+        if (res !== undefined) {
+            setTravelResult(res ?? null);
         }
+        setLoadingResult(false);
     }, [ctx.searchTravelRoutes?.res]);
 
     useEffect(() => {
