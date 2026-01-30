@@ -69,8 +69,8 @@ export default function TravelMenu() {
         const res = ctx.searchTravelRoutes?.res;
         if (res !== undefined) {
             setTravelResult(res ?? null);
+            setLoadingResult(false);
         }
-        setLoadingResult(false);
     }, [ctx.searchTravelRoutes?.res]);
 
     useEffect(() => {
