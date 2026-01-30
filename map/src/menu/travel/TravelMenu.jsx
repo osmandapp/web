@@ -273,7 +273,12 @@ export default function TravelMenu() {
                                 my={'0px'}
                                 marginLeft={'250px'}
                             />
-                            <TagFilter selectedTags={selectedTags} onChangeTags={setSelectedTags} />
+                            <TagFilter
+                                selectedTags={selectedTags}
+                                onChangeTags={setSelectedTags}
+                                selectedYear={selectedYear}
+                                selectedActivity={selectedActivityType}
+                            />
                             <Box sx={{ mx: 2, mt: 1 }}>
                                 <ToggleButtonGroup
                                     fullWidth
