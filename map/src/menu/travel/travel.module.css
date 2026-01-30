@@ -68,3 +68,12 @@
 .distanceSortToggleGroup :global(.Mui-selected) .distanceSortIcon {
     fill: var(--selected-color) !important;
 }
+
+.osmIdLink {
+    color: var(--text-secondary) !important;
+    cursor: pointer;
+    text-decoration: none;
+}
+.osmIdLink:hover {
+    color: var(--selected-color) !important;
+}

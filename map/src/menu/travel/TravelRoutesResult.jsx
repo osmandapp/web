@@ -8,6 +8,7 @@ import AppContext from '../../context/AppContext';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import styles from '../trackfavmenu.module.css';
+import travelStyles from './travel.module.css';
 
 const ACTIVITY_IDS_HIDDEN = ['nospeed'];
 
@@ -16,7 +17,7 @@ function formatActivity(route) {
     if (!activity) return null;
     if (ACTIVITY_IDS_HIDDEN.includes(activity)) return null;
 
-    return capitalize(activity);
+    return capitalize(activity.replace(/_/g, ' '));
 }
 
 const TravelRoute = ({ route }) => {
@@ -35,10 +36,12 @@ const TravelRoute = ({ route }) => {
         return sum;
     }
 
+    const activity = formatActivity(route);
+
     return (
         <div ref={ref}>
             {!inView ? (
-                <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
+                <Skeleton variant="rectangular" width="100%" height={ITEM_HEIGHT - 1} />
             ) : (
                 <MenuItem
                     className={styles.item}
@@ -59,13 +62,32 @@ const TravelRoute = ({ route }) => {
                     <ListItemText>
                         <MenuItemWithLines name={route.properties.description} maxLines={1} />
                         <Typography variant="body2" className={styles.groupInfo} noWrap>
-                            {formatActivity(route) && `${formatActivity(route)} · `}
                             {Number.isFinite(route.properties.distance)
                                 ? `${(route.properties.distance / 1000).toFixed(2)} km · `
                                 : ''}
                             {route.properties.date?.slice(0, 10)}
                             {route.properties.geo && ` · ${countPoints(route.properties.geo)}`}
                         </Typography>
+                        {route.properties.id != null && route.properties.user && (
+                            <Typography
+                                variant="body2"
+                                className={styles.groupInfo}
+                                noWrap
+                                component="span"
+                                sx={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                            >
+                                {activity && `${activity} · `}
+                                <a
+                                    href={`https://www.openstreetmap.org/user/${encodeURIComponent(route.properties.user)}/traces/${route.properties.id}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                    className={travelStyles.osmIdLink}
+                                >
+                                    OSM ID
+                                </a>
+                            </Typography>
+                        )}
                     </ListItemText>
                 </MenuItem>
             )}
@@ -74,8 +96,8 @@ const TravelRoute = ({ route }) => {
     );
 };
 
-// Keep in sync with --menu-item-size (68px) from variables.css + 1px divider
-const ITEM_HEIGHT = 69;
+// Keep in sync with menu item (3 lines)
+const ITEM_HEIGHT = 85;
 const SECTION_HEIGHT = 750;
 
 const TravelRoutesResult = React.memo(({ routes }) => {
