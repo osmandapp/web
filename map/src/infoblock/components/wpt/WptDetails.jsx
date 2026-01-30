@@ -33,6 +33,7 @@ import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_openstreetmap_logo.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
+import { ReactComponent as OpeningHoursIcon } from '../../../assets/icons/ic_action_opening_hour_16.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
@@ -50,6 +51,8 @@ import WptTagsProvider, {
     GRAPH_URL_ENDPOINT,
     MAPILLARY_OSM_TAG,
     openWikivoyageContent,
+    OPENING_HOURS_INFO,
+    AMENITY_PREFIX,
     OSM_PREFIX,
     otherImgTags,
     PARAM_ACCESS_TOKEN,
@@ -90,6 +93,7 @@ import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useR
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useNavigate } from 'react-router-dom';
+import '../../../variables.css';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -211,6 +215,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!ctx.selectedWpt) return null;
 
         const type = getWptType(ctx.selectedWpt);
+        console.log('type', type);
         if (type?.isWikiPoi) {
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
@@ -267,6 +272,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 tags: null,
                 osmUrl: objOptions[POI_OSM_URL],
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
+                openingHours: getOpeningHours(objOptions[AMENITY_PREFIX + OPENING_HOURS_INFO]),
                 mapObj,
             };
         } else if (type?.isStop) {
@@ -349,6 +355,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             }
         }
     }, [ctx.loadingContextMenu]);
+
+    function getOpeningHours(oh) {
+        const IS_OPEN_PREFIX = 'open:';
+        if (!oh) {
+            return null;
+        }
+        return { isOpen: oh.startsWith(IS_OPEN_PREFIX), text: oh.replace(IS_OPEN_PREFIX, '') };
+    }
 
     function getWikiCommons(wikimediaCommons) {
         const WIKIMEDIA_FILE = 'File:';
@@ -784,6 +798,26 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         );
     };
 
+    const WptOpeningHours = () => {
+        return (
+            <Box className={styles.wptCategory}>
+                <ListItemIcon className={wpt.openingHours.isOpen ? wptStyles.tagOpenIcon : wptStyles.tagClosedIcon}>
+                    <OpeningHoursIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography
+                        className={
+                            wpt.openingHours.isOpen ? styles.wptOpeningHoursOpenText : styles.wptOpeningHoursClosedText
+                        }
+                        id={'se-wpt-opening-hours'}
+                    >
+                        {wpt.openingHours.text}
+                    </Typography>
+                </ListItemText>
+            </Box>
+        );
+    };
+
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
 
@@ -893,6 +927,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 )}
                             </Box>
                             {wpt?.category && <WptCategory />}
+                            {wpt?.openingHours && <WptOpeningHours />}
                             {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <WptAddress />
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (

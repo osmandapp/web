@@ -66,6 +66,18 @@
     font-size: 14px !important;
     font-weight: 400 !important;
 }
+.wptOpeningHoursOpenText {
+    color: var(--svg-icon-color-open);
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 400;
+}
+.wptOpeningHoursClosedText {
+    color: var(--svg-icon-color-close);
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
 .wptActionsButtons {
     flex: 1 !important;
     display: flex !important;

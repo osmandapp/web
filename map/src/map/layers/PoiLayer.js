@@ -250,7 +250,16 @@ export default function PoiLayer() {
     async function openPoiByUrl() {
         const { pin, name, type, osmId, wikidataId, lang } = ctx.poiByUrl.params;
 
-        const params = { pin, name, type, osmId, wikidataId, lang };
+        const params = {
+            pin,
+            name,
+            type,
+            osmId,
+            wikidataId,
+            lang,
+            clientTime: Date.now(),
+            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        };
         const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
 
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
@@ -377,6 +386,8 @@ export default function PoiLayer() {
                 lat: map.getCenter().lat,
                 lon: map.getCenter().lng,
                 baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
+                clientTime: Date.now(),
+                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
             },
             apiCache: true,
             signal: controller.signal,
