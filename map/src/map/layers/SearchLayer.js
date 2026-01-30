@@ -209,6 +209,8 @@ export default function SearchLayer() {
                 text: searchData.query,
                 locale: i18n.language,
                 baseSearch: searchData.baseSearch,
+                clientTime: Date.now(),
+                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
             },
         });
         if (response?.ok) {
