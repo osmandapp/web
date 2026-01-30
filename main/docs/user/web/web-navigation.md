@@ -27,6 +27,8 @@ In the empty state, Navigation prompts you to add route points: *Click on the ma
 
 Route points can be provided from the Route panel. When you select **Set start point** or **Set destination**, the field shows suggestions such as *Current location* and previously used points from history. You can remove saved suggestions using *Clear history*.
 
+You can also enter coordinates directly in the route point fields using the latitude, longitude format (for example, 48.23737, 24.40830). Other coordinate formats or shared links may not always be recognized. If a location is not parsed correctly, try converting it to lat,lon or find the place using search.
+
 Navigation follows a simple flow: the first point becomes the Start, and the next point becomes the Destination. As soon as both points are set, the route is calculated and displayed on the map.
 
 ![Web Navigation](@site/static/img/web/navigation_start.png)
@@ -115,13 +117,15 @@ What’s the difference:
 - Full track data may include route/navigation information in addition to the track geometry (useful if you want to keep navigation instructions or re-edit the route in OsmAnd).
 - Simplified track exports a cleaner GPX intended for other apps by removing route/navigation data and leaving only the track shape. Waypoints are preserved when exporting a simplified track.
 
-You can save the route as a track using *Save to Cloud / Upload to OsmAnd Cloud*. This opens a dialog where you can confirm saving to cloud tracks, edit the Name, optionally choose a Folder, then Save or Cancel.
+You can save the route as a track using *Save to Cloud / Upload to OsmAnd Cloud*. This opens a dialog where you can confirm saving to cloud tracks, edit the Name, optionally choose a Folder, then Save or Cancel. If you are not signed in, *Save to Cloud / Upload to OsmAnd Cloud* opens the Pricing page.
 
 ![Web Navigation](@site/static/img/web/download_options.png)
 
 ### Share a Route {#share-a-route}
 
 To share the route, copy the URL. Example: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+When opening a shared link, the route is restored on the map. If needed, you can change the [routing profile](#routing-profile) manually in the Route panel.
 
 
 ## Related Articles {#related-articles}
