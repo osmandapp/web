@@ -8,7 +8,7 @@ import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
-import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
+import DistanceAndDirection from './DistanceAndDirection';
 import {
     ADDRESS_1,
     ADDRESS_2,
@@ -28,7 +28,6 @@ import { getPoiParentCategory, parseTagWithLang } from '../../../manager/SearchM
 import { LatLng } from 'leaflet';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
-import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 import { apiGet } from '../../../util/HttpApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
@@ -161,14 +160,6 @@ export default function SearchResultItem({ item, typeItem }) {
         return { ...res, icon, distance, bearing, isUserLocation };
     }
 
-    function addDistance() {
-        if (!distance) return '';
-        if (distance < 1000) {
-            return `${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;
-        }
-        return `${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
-    }
-
     const id =
         item.properties[CATEGORY_TYPE] === searchTypeMap.POI_TYPE
             ? `se-search-result-${item.properties[CATEGORY_NAME]}`
@@ -278,26 +269,14 @@ export default function SearchResultItem({ item, typeItem }) {
                                     {distance && (
                                         <span style={{ display: 'inline-flex' }}>
                                             <Typography className={styles.placeDistance}>{' · '}</Typography>
-                                            <ListItemIcon
-                                                sx={{
-                                                    mr: -2.5,
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-                                                <DirectionIcon
-                                                    style={{
-                                                        transform: `rotate(${bearing ?? 0}deg)`,
-                                                        transformOrigin: 'center',
-                                                        fill: isUserLocation ? '#237bff' : '#727272',
-                                                    }}
+                                            {distance && (
+                                                <DistanceAndDirection
+                                                    distance={distance}
+                                                    bearing={bearing}
+                                                    isUserLocation={isUserLocation}
+                                                    ctx={ctx}
                                                 />
-                                            </ListItemIcon>
-                                            <Typography
-                                                className={styles.placeDistance}
-                                                style={{ color: isUserLocation ? '#237bff' : '#727272' }}
-                                            >
-                                                {addDistance()}
-                                            </Typography>
+                                            )}
                                         </span>
                                     )}
                                 </MenuItemWithLines>

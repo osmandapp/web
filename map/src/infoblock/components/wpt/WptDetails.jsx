@@ -93,6 +93,9 @@ import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useR
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useNavigate } from 'react-router-dom';
+import DistanceAndDirection from '../../../menu/search/search/DistanceAndDirection';
+import { getDistance, getBearing } from '../../../util/Utils';
+import { getCenterMapLoc } from '../../../manager/MapManager';
 import '../../../variables.css';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
@@ -195,6 +198,19 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
         return wikidataTag ? [...otherTags, wikidataTag] : otherTags;
     }, [wpt?.tags?.res]);
+
+    const distanceAndBearing = useMemo(() => {
+        if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
+            return { distance: null, bearing: null };
+        }
+        const mapCenter = getCenterMapLoc(hash);
+        if (!mapCenter) {
+            return { distance: null, bearing: null };
+        }
+        const distance = getDistance(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
+        const bearing = getBearing(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
+        return { distance, bearing };
+    }, [hash, wpt?.latlon]);
 
     const [delayedHash, setDelayedHash] = useState(hash);
     const debouncerTimer = useRef(0);
@@ -786,9 +802,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const WptAddress = () => {
         return (
             <Box className={styles.wptCategory}>
-                <ListItemIcon style={{ minWidth: 'auto' }}>
-                    <LocationOn fontSize="small" />
-                </ListItemIcon>
                 <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
                     <Typography id={'se-wpt-address'} className={styles.wptCategoryText}>
                         {wpt.address}
@@ -928,11 +941,32 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             </Box>
                             {wpt?.category && <WptCategory />}
                             {wpt?.openingHours && <WptOpeningHours />}
-                            {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                <WptAddress />
-                            ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                <CircularProgress sx={{ ml: 2 }} size={19} />
-                            ) : null}
+                            {(distanceAndBearing.distance || wpt?.address) && (
+                                <Box className={styles.wptCategory}>
+                                    <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
+                                        <Typography id={'se-wpt-address'} className={styles.wptCategoryText} component="div">
+                                            {distanceAndBearing.distance && (
+                                                <>
+                                                <DistanceAndDirection
+                                                    distance={distanceAndBearing.distance}
+                                                    bearing={distanceAndBearing.bearing}
+                                                    isUserLocation={true}
+                                                    ctx={ctx}        
+                                                />
+                                                {distanceAndBearing.distance && wpt?.address && <span style={{ whiteSpace: 'pre' }}> · </span>}
+                                                {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND && (wpt.address)}
+                                                </>
+                                            )}
+                                            {!distanceAndBearing.distance && wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND && (
+                                                wpt.address
+                                            )}
+                                            {wpt?.address !== ADDRESS_NOT_FOUND && !wpt?.address && (
+                                                <CircularProgress sx={{ ml: 2 }} size={19} />
+                                            )}
+                                        </Typography>
+                                    </ListItemText>
+                                </Box>
+                            )}
                             {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                             {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                             {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
