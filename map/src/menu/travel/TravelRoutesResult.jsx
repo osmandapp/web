@@ -10,6 +10,14 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import styles from '../trackfavmenu.module.css';
 import travelStyles from './travel.module.css';
+import {
+    convertMeters,
+    convertSpeedMS,
+    getLargeLengthUnit,
+    getSpeedUnit,
+    LARGE_UNIT,
+} from '../settings/units/UnitsConverter';
+import { useTranslation } from 'react-i18next';
 
 const ACTIVITY_IDS_HIDDEN = ['nospeed'];
 
@@ -24,6 +32,7 @@ function formatActivity(route) {
 const TravelRoute = ({ route }) => {
     const { ref, inView } = useInView();
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const { updateQueryParam } = useUpdateQueryParam();
 
@@ -32,14 +41,6 @@ const TravelRoute = ({ route }) => {
         if (route?.properties?.id != null) {
             updateQueryParam(TRAVEL_ROUTE_ID_PARAM, String(route.properties.id));
         }
-    }
-
-    function countPoints(route) {
-        let sum = 0;
-        route.forEach((segment) => {
-            sum += segment.length;
-        });
-        return sum;
     }
 
     const activity = formatActivity(route);
@@ -68,32 +69,38 @@ const TravelRoute = ({ route }) => {
                     <ListItemText>
                         <MenuItemWithLines name={route.properties.description} maxLines={1} />
                         <Typography variant="body2" className={styles.groupInfo} noWrap>
-                            {Number.isFinite(route.properties.distance)
-                                ? `${(route.properties.distance / 1000).toFixed(2)} km · `
+                            {route.properties.dist
+                                ? `${convertMeters(route.properties.dist, ctx.unitsSettings.len, LARGE_UNIT).toFixed(2)} ${t(getLargeLengthUnit(ctx))} · `
                                 : ''}
-                            {route.properties.date?.slice(0, 10)}
-                            {route.properties.geo && ` · ${countPoints(route.properties.geo)}`}
+                            {route.properties.speed
+                                ? `${convertSpeedMS(route.properties.speed / 3.6, ctx.unitsSettings.speed).toFixed(0)} ${t(getSpeedUnit(ctx))} · `
+                                : ''}
+                            {route.properties.points ? `${route.properties.points}` : ''}
                         </Typography>
-                        {route.properties.id != null && route.properties.user && (
-                            <Typography
-                                variant="body2"
-                                className={styles.groupInfo}
-                                noWrap
-                                component="span"
-                                sx={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis' }}
-                            >
-                                {activity && `${activity} · `}
-                                <a
-                                    href={`https://www.openstreetmap.org/user/${encodeURIComponent(route.properties.user)}/traces/${route.properties.id}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={(e) => e.stopPropagation()}
-                                    className={travelStyles.osmIdLink}
-                                >
-                                    OSM ID
-                                </a>
-                            </Typography>
-                        )}
+                        <Typography
+                            variant="body2"
+                            className={styles.groupInfo}
+                            noWrap
+                            component="span"
+                            sx={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                        >
+                            {activity && `${activity} · `}
+                            {route.properties.date?.slice(0, 10)}
+                            {route.properties.id != null && route.properties.user && (
+                                <>
+                                    {' · '}
+                                    <a
+                                        href={`https://www.openstreetmap.org/user/${encodeURIComponent(route.properties.user)}/traces/${route.properties.id}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className={travelStyles.osmIdLink}
+                                    >
+                                        OSM ID
+                                    </a>
+                                </>
+                            )}
+                        </Typography>
                     </ListItemText>
                 </MenuItem>
             )}

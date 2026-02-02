@@ -221,14 +221,14 @@ export default function TravelMenu() {
         if (!sortByDistance) {
             return features;
         }
-        const hasDistance = features.some((r) => Number.isFinite(r.properties?.distance));
+        const hasDistance = features.some((r) => Number.isFinite(r.properties?.dist));
         if (!hasDistance) {
             return features;
         }
         const copy = [...features];
         copy.sort((a, b) => {
-            const da = Number.isFinite(a.properties?.distance) ? a.properties.distance : Infinity;
-            const db = Number.isFinite(b.properties?.distance) ? b.properties.distance : Infinity;
+            const da = Number.isFinite(a.properties?.dist) ? a.properties.dist : Infinity;
+            const db = Number.isFinite(b.properties?.dist) ? b.properties.dist : Infinity;
             return sortByDistance === 'asc' ? da - db : db - da;
         });
         return copy;
@@ -323,7 +323,7 @@ export default function TravelMenu() {
                                                 Results: {travelResult?.features?.length || 0}
                                             </Typography>
                                             {travelResult.features.some((r) =>
-                                                Number.isFinite(r.properties?.distance)
+                                                Number.isFinite(r.properties?.dist)
                                             ) && (
                                                 <ToggleButtonGroup
                                                     size="small"
