@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
 import styles from '../search.module.css';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
+import AppContext from '../../../context/AppContext';
 
-export default function DistanceAndDirection({ distance, bearing, isUserLocation, ctx }) {
+export default function DistanceAndBearing({ distance, bearing, isUserLocation }) {
+    const ctx = useContext(AppContext);
     const { t } = useTranslation();
     function addDistance() {
         if (!distance) return '';

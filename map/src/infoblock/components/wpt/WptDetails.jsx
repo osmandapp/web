@@ -93,7 +93,7 @@ import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useR
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useNavigate } from 'react-router-dom';
-import DistanceAndDirection from '../../../menu/search/search/DistanceAndDirection';
+import DistanceAndBearing from '../../../menu/search/search/DistanceAndDirection';
 import { getDistance, getBearing } from '../../../util/Utils';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 
@@ -957,11 +957,10 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         >
                                             {distanceAndBearing.distance && (
                                                 <>
-                                                    <DistanceAndDirection
+                                                    <DistanceAndBearing
                                                         distance={distanceAndBearing.distance}
                                                         bearing={distanceAndBearing.bearing}
                                                         isUserLocation={true}
-                                                        ctx={ctx}
                                                     />
                                                     {distanceAndBearing.distance && wpt?.address && (
                                                         <span style={{ whiteSpace: 'pre' }}> · </span>
