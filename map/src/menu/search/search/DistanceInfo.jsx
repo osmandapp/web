@@ -8,16 +8,18 @@ import AppContext from '../../../context/AppContext';
 export default function DistanceInfo({ distance, bearing, isUserLocation }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+
     function addDistance() {
+        const DISTANCE_THRESHOLD_LARGE_UNIT = 1000;
         if (!distance) return '';
-        if (distance < 1000) {
+        if (distance < DISTANCE_THRESHOLD_LARGE_UNIT) {
             return `${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;
         }
         return `${convertMeters(distance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
     }
 
     return (
-        <span style={{ display: 'inline-flex', gap: '4px' }}>
+        <span className={styles.distanceInfo}>
             <DirectionIcon
                 style={{
                     width: '16px',

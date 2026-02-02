@@ -36,6 +36,7 @@ import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/Ma
 import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
+import { getCurrentTimeParams } from '../../util/Utils';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -209,8 +210,7 @@ export default function SearchLayer() {
                 text: searchData.query,
                 locale: i18n.language,
                 baseSearch: searchData.baseSearch,
-                clientTime: Date.now(),
-                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                ...getCurrentTimeParams(),
             },
         });
         if (response?.ok) {

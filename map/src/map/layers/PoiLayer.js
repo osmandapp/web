@@ -41,6 +41,7 @@ import { selectMarker } from '../util/MarkerSelectionService';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
+import { getCurrentTimeParams } from '../../util/Utils';
 
 // WARNING: Do not use the 'title' field in marker layers on the map.
 // See the 'parseWpt' function for more details.
@@ -247,13 +248,6 @@ export default function PoiLayer() {
         });
     }, [ctx.configureMapState.pois]);
 
-    function getTimeParams() {
-        return {
-            clientTime: Date.now(),
-            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        };
-    }
-
     async function openPoiByUrl() {
         const { pin, name, type, osmId, wikidataId, lang } = ctx.poiByUrl.params;
 
@@ -264,7 +258,7 @@ export default function PoiLayer() {
             osmId,
             wikidataId,
             lang,
-            ...getTimeParams(),
+            ...getCurrentTimeParams(),
         };
         const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
 
@@ -392,7 +386,7 @@ export default function PoiLayer() {
                 lat: map.getCenter().lat,
                 lon: map.getCenter().lng,
                 baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
-                ...getTimeParams(),
+                ...getCurrentTimeParams(),
             },
             apiCache: true,
             signal: controller.signal,

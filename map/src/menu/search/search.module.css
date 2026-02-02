@@ -381,3 +381,7 @@
     font-size: 16px !important;
     letter-spacing: 0.00938em !important;
 }
+.distanceInfo {
+    display: inline-flex;
+    gap: 4px;
+}
