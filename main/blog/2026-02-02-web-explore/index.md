@@ -3,6 +3,7 @@ slug: web-explore
 title: Discover Patagonia with OsmAnd Web Explore
 authors: eugene
 tags: [marketing,map,web]
+unlistead: true
 ---
 
 import Tabs from '@theme/Tabs';
