@@ -8,7 +8,7 @@ import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
-import DistanceAndBearing from './DistanceAndDirection';
+import DistanceInfo from './DistanceInfo';
 import {
     ADDRESS_1,
     ADDRESS_2,
@@ -270,7 +270,7 @@ export default function SearchResultItem({ item, typeItem }) {
                                         <span style={{ display: 'inline-flex' }}>
                                             <Typography className={styles.placeDistance}>{' · '}</Typography>
                                             {distance && (
-                                                <DistanceAndBearing
+                                                <DistanceInfo
                                                     distance={distance}
                                                     bearing={bearing}
                                                     isUserLocation={isUserLocation}

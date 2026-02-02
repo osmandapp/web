@@ -5,7 +5,7 @@ import styles from '../search.module.css';
 import { convertMeters, getLargeLengthUnit, getSmallLengthUnit, LARGE_UNIT } from '../../settings/units/UnitsConverter';
 import AppContext from '../../../context/AppContext';
 
-export default function DistanceAndBearing({ distance, bearing, isUserLocation }) {
+export default function DistanceInfo({ distance, bearing, isUserLocation }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     function addDistance() {

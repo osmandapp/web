@@ -93,7 +93,7 @@ import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useR
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useNavigate } from 'react-router-dom';
-import DistanceAndBearing from '../../../menu/search/search/DistanceAndDirection';
+import DistanceInfo from '../../../menu/search/search/DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 
@@ -198,7 +198,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return wikidataTag ? [...otherTags, wikidataTag] : otherTags;
     }, [wpt?.tags?.res]);
 
-    const distanceAndBearing = useMemo(() => {
+    const distanceInfo = useMemo(() => {
         if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
             return { distance: null, bearing: null };
         }
@@ -944,7 +944,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             </Box>
                             {wpt?.category && <WptCategory />}
                             {wpt?.openingHours && <WptOpeningHours />}
-                            {(distanceAndBearing.distance || wpt?.address) && (
+                            {(distanceInfo.distance || wpt?.address) && (
                                 <Box className={styles.wptCategory}>
                                     <ListItemText
                                         onClick={() => ctx.setZoomToCoords(wpt.latlon)}
@@ -955,20 +955,20 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                             className={styles.wptCategoryText}
                                             component="div"
                                         >
-                                            {distanceAndBearing.distance && (
+                                            {distanceInfo.distance && (
                                                 <>
-                                                    <DistanceAndBearing
-                                                        distance={distanceAndBearing.distance}
-                                                        bearing={distanceAndBearing.bearing}
+                                                    <DistanceInfo
+                                                        distance={distanceInfo.distance}
+                                                        bearing={distanceInfo.bearing}
                                                         isUserLocation={true}
                                                     />
-                                                    {distanceAndBearing.distance && wpt?.address && (
+                                                    {distanceInfo.distance && wpt?.address && (
                                                         <span style={{ whiteSpace: 'pre' }}> · </span>
                                                     )}
                                                     {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND && wpt.address}
                                                 </>
                                             )}
-                                            {!distanceAndBearing.distance &&
+                                            {!distanceInfo.distance &&
                                                 wpt?.address &&
                                                 wpt?.address !== ADDRESS_NOT_FOUND &&
                                                 wpt.address}
