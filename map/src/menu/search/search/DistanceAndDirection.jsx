@@ -1,5 +1,4 @@
 import React from 'react';
-import { ListItemIcon, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
 import styles from '../search.module.css';

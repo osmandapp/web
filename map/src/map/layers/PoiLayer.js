@@ -247,6 +247,13 @@ export default function PoiLayer() {
         });
     }, [ctx.configureMapState.pois]);
 
+    function getTimeParams() {
+        return {
+            clientTime: Date.now(),
+            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        };
+    }
+
     async function openPoiByUrl() {
         const { pin, name, type, osmId, wikidataId, lang } = ctx.poiByUrl.params;
 
@@ -257,8 +264,7 @@ export default function PoiLayer() {
             osmId,
             wikidataId,
             lang,
-            clientTime: Date.now(),
-            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            ...getTimeParams(),
         };
         const cleanParams = Object.fromEntries(Object.entries(params).filter(([, v]) => v != null && v !== ''));
 
@@ -386,8 +392,7 @@ export default function PoiLayer() {
                 lat: map.getCenter().lat,
                 lon: map.getCenter().lng,
                 baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
-                clientTime: Date.now(),
-                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                ...getTimeParams(),
             },
             apiCache: true,
             signal: controller.signal,

@@ -66,14 +66,24 @@
     font-size: 14px !important;
     font-weight: 400 !important;
 }
-.wptOpeningHoursOpenText {
-    color: var(--svg-icon-color-open);
+.openingHoursOpenIcon {
+    min-width: 24px !important;
+    max-width: 24px !important;
+    fill: #5baf3f !important;
+}
+.openingHoursClosedIcon {
+    min-width: 24px !important;
+    max-width: 24px !important;
+    fill: #e71d36 !important;
+}
+.openingHoursOpenText {
+    color: #5baf3f;
     font-family: Roboto !important;
     font-size: 14px !important;
-    font-weight: 400;
+    font-weight: 400 !important;
 }
-.wptOpeningHoursClosedText {
-    color: var(--svg-icon-color-close);
+.openingHoursClosedText {
+    color: #e71d36;
     font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;

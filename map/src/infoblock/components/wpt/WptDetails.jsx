@@ -96,7 +96,6 @@ import { useNavigate } from 'react-router-dom';
 import DistanceAndDirection from '../../../menu/search/search/DistanceAndDirection';
 import { getDistance, getBearing } from '../../../util/Utils';
 import { getCenterMapLoc } from '../../../manager/MapManager';
-import '../../../variables.css';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -231,7 +230,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!ctx.selectedWpt) return null;
 
         const type = getWptType(ctx.selectedWpt);
-        console.log('type', type);
         if (type?.isWikiPoi) {
             setLoading(true);
             const currentPoi = ctx.selectedWpt.poi;
@@ -372,12 +370,15 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
     }, [ctx.loadingContextMenu]);
 
-    function getOpeningHours(oh) {
+    function getOpeningHours(openingHoursString) {
         const IS_OPEN_PREFIX = 'open:';
-        if (!oh) {
+        if (!openingHoursString) {
             return null;
         }
-        return { isOpen: oh.startsWith(IS_OPEN_PREFIX), text: oh.replace(IS_OPEN_PREFIX, '') };
+        return {
+            isOpen: openingHoursString.startsWith(IS_OPEN_PREFIX),
+            text: openingHoursString.replace(IS_OPEN_PREFIX, ''),
+        };
     }
 
     function getWikiCommons(wikimediaCommons) {
@@ -814,13 +815,15 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const WptOpeningHours = () => {
         return (
             <Box className={styles.wptCategory}>
-                <ListItemIcon className={wpt.openingHours.isOpen ? wptStyles.tagOpenIcon : wptStyles.tagClosedIcon}>
+                <ListItemIcon
+                    className={wpt.openingHours.isOpen ? styles.openingHoursOpenIcon : styles.openingHoursClosedIcon}
+                >
                     <OpeningHoursIcon />
                 </ListItemIcon>
                 <ListItemText>
                     <Typography
                         className={
-                            wpt.openingHours.isOpen ? styles.wptOpeningHoursOpenText : styles.wptOpeningHoursClosedText
+                            wpt.openingHours.isOpen ? styles.openingHoursOpenText : styles.openingHoursClosedText
                         }
                         id={'se-wpt-opening-hours'}
                     >
@@ -943,23 +946,33 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             {wpt?.openingHours && <WptOpeningHours />}
                             {(distanceAndBearing.distance || wpt?.address) && (
                                 <Box className={styles.wptCategory}>
-                                    <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
-                                        <Typography id={'se-wpt-address'} className={styles.wptCategoryText} component="div">
+                                    <ListItemText
+                                        onClick={() => ctx.setZoomToCoords(wpt.latlon)}
+                                        sx={{ cursor: 'pointer' }}
+                                    >
+                                        <Typography
+                                            id={'se-wpt-address'}
+                                            className={styles.wptCategoryText}
+                                            component="div"
+                                        >
                                             {distanceAndBearing.distance && (
                                                 <>
-                                                <DistanceAndDirection
-                                                    distance={distanceAndBearing.distance}
-                                                    bearing={distanceAndBearing.bearing}
-                                                    isUserLocation={true}
-                                                    ctx={ctx}        
-                                                />
-                                                {distanceAndBearing.distance && wpt?.address && <span style={{ whiteSpace: 'pre' }}> · </span>}
-                                                {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND && (wpt.address)}
+                                                    <DistanceAndDirection
+                                                        distance={distanceAndBearing.distance}
+                                                        bearing={distanceAndBearing.bearing}
+                                                        isUserLocation={true}
+                                                        ctx={ctx}
+                                                    />
+                                                    {distanceAndBearing.distance && wpt?.address && (
+                                                        <span style={{ whiteSpace: 'pre' }}> · </span>
+                                                    )}
+                                                    {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND && wpt.address}
                                                 </>
                                             )}
-                                            {!distanceAndBearing.distance && wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND && (
-                                                wpt.address
-                                            )}
+                                            {!distanceAndBearing.distance &&
+                                                wpt?.address &&
+                                                wpt?.address !== ADDRESS_NOT_FOUND &&
+                                                wpt.address}
                                             {wpt?.address !== ADDRESS_NOT_FOUND && !wpt?.address && (
                                                 <CircularProgress sx={{ ml: 2 }} size={19} />
                                             )}
