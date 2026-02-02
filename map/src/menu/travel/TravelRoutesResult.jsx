@@ -4,9 +4,10 @@ import { Box, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from 
 import { useInView } from 'react-intersection-observer';
 import { FixedSizeList } from 'react-window';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
-import AppContext from '../../context/AppContext';
+import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import MenuItemWithLines from '../components/MenuItemWithLines';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import styles from '../trackfavmenu.module.css';
 import travelStyles from './travel.module.css';
 
@@ -24,8 +25,13 @@ const TravelRoute = ({ route }) => {
     const { ref, inView } = useInView();
     const ctx = useContext(AppContext);
 
+    const { updateQueryParam } = useUpdateQueryParam();
+
     function openRouteInfo(route) {
         ctx.setSelectedTravelRoute({ route, show: true });
+        if (route?.properties?.id != null) {
+            updateQueryParam(TRAVEL_ROUTE_ID_PARAM, String(route.properties.id));
+        }
     }
 
     function countPoints(route) {

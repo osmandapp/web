@@ -45,6 +45,7 @@ export const OBJECT_TYPE_POI = 'poi';
 export const OBJECT_TYPE_STOP = 'stop';
 
 export const FAVORITES_URL_PARAM_FOLDER = 'folder';
+export const TRAVEL_ROUTE_ID_PARAM = 'id';
 
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
 export const OBJECT_SEARCH = 'search';
@@ -354,6 +355,7 @@ export const AppContextProvider = (props) => {
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
     const [selectedTransportRoute, setSelectedTransportRoute] = useState(null);
+    const [travelRouteIdByUrl, setTravelRouteIdByUrl] = useState(null);
     // share
     const [shareFile, setShareFile] = useState(null);
     const [updatedRequestList, setUpdatedRequestList] = useState([]);
@@ -507,6 +509,7 @@ export const AppContextProvider = (props) => {
 
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
     const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
+    const [processingTravelRouteByUrl, setProcessingTravelRouteByUrl] = useState(false);
 
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
@@ -851,6 +854,8 @@ export const AppContextProvider = (props) => {
                 setSelectedTravelRoute,
                 selectedTransportRoute,
                 setSelectedTransportRoute,
+                travelRouteIdByUrl,
+                setTravelRouteIdByUrl,
                 travelFilter,
                 setTravelFilter,
                 openProFeatures,
@@ -927,6 +932,8 @@ export const AppContextProvider = (props) => {
                 setProcessingPoiByUrl,
                 processingStopByUrl,
                 setProcessingStopByUrl,
+                processingTravelRouteByUrl,
+                setProcessingTravelRouteByUrl,
                 processingAnalytics,
                 setProcessingAnalytics,
                 openNavigationSettings,
