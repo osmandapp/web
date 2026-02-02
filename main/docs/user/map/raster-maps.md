@@ -53,7 +53,7 @@ Raster maps have a wide range of uses. Here are some of the most popular:
 ![Online maps overview](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
 :::tip
-You can also change the main source of maps from vector maps to online tiles.
+You can also change [the main source](#main) of maps from vector maps to online tiles.
 :::
 
 
@@ -64,7 +64,7 @@ You can also change the main source of maps from vector maps to online tiles.
 - **iOS**. For *iOS*, this feature works by default.
 - **Android**. For *Android*, to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/online-map.md). Follow these steps: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**Change layer parameters**. To improve the visibility and mix of raster map layers, you can adjust the layer transparency using the screen slider. Additionally, you can modify the vector map style by hiding polygons, making the underlay layers more visible. This is especially useful when viewing satellite imagery.
+**[Change layer parameters](#layers)**. To improve the visibility and mix of raster map layers, you can adjust the layer transparency using the screen slider. Additionally, you can modify the vector map style by hiding polygons, making the underlay layers more visible. This is especially useful when viewing satellite imagery.
 
 
 ## Layers {#layers}
@@ -87,7 +87,11 @@ You can also change the main source of maps from vector maps to online tiles.
 
 In OsmAnd, raster maps can serve as an additional map source alongside the default vector maps, which are optimized for offline use.  
 
-You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen. For instance, you can have OsmAnd's offline vector map as the base, overlay it with a satellite view, and place a bike path map as the underlay for added detail. 
+You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen (plus Terrain). Think of them like a pie: [**Underlay**](#underlay) (raster base below), [**Main**](#main) (vector* or raster core), [**Overlay**](#overlay) (raster atop), with [**Terrain**](#terrain) shading over all. For instance, you can have OsmAnd's offline vector map as the Main base, overlay it with a satellite view, and place a bike path map as the Underlay for added detail.
+
+>[Vector maps](./vector-maps.md) are available **only** in the [Main](#main) layer (and are the default there). Raster maps can be used in all three layers: Main, Underlay, and Overlay.
+
+
 
 If you want to switch these layers faster ([Main map source](#main), [Overlay](#overlay), [Underlay](#underlay), and [Terrain](#terrain)), you can add a [Quick Action (Custom button)](../widgets/quick-action.md) to the map screen and assign the corresponding map actions to it.
 
@@ -115,7 +119,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 </Tabs>
 
-By default, the main map is set to Offline vector maps (OsmAnd maps), optimized for offline use. You can choose a different map source from the list or [add](#add-new-online-source) your own.
+By default, the main map is set to [Offline vector maps](./vector-maps.md) (OsmAnd maps), optimized for offline use. You can choose a different map source from the list (_Add more_(Android) or _Instal more_ (iOS)) or [add](#add-new-online-source) your own.
 
 ### Overlay {#overlay}
 
@@ -139,12 +143,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 </Tabs>
 
-1. *Switch on/off* the Underlay map.
+1. *Switch on/off* the Underlay map layer.
 2. *Overlay transparency* (*Android*)/ *Transparency* of the Overlay map (*iOS*).
 3. *Show transparency slider* (*Android*) / *Show slider on the map* (*iOS*). Quick access to the transparency setting.
-4. *Overlay map source* (*Android*) / *Available layers* (*iOS*). You can choose a tile map to install or update.
+4. *Overlay map source* (*Android*) / *Available layers* (*iOS*). Select an online tile map from the list to add it directly as your Overlay layer.
 5. *Show map symbols* - such as text, road signs, and others.  
-6. *Add online source* (*iOS*).
+6. *Add online source* (*iOS*). [Add new online source](#add-new-online-source).
 7. *Import from documents* (*iOS*).
 
 ### Underlay {#underlay}
@@ -172,18 +176,18 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 1. *Switch on/off* the Underlay map.
 2. *Base map transparency*.
 3. *Show transparency slider* (*Android*) / *Show slider on the map* (*iOS*). Quick access to the transparency setting.
-4. *Underlay map source* (*Android*) / *Available layers* (*iOS*). You can choose a tile map to install or update.
+4. *Underlay map source* (*Android*) / *Available layers* (*iOS*). Select an online tile map from the list to add it directly as your Underlay layer.
 5. *Show/Hide polygons*.
-6. *Add online source* (*iOS*).
+6. *Add online source* (*iOS*). [Add new online source](#add-new-online-source).
 7. *Import from documents* (*iOS*).
 
 ### Terrain {#terrain}
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
-In the context of raster maps, Terrain refers to a relief shading layer that helps visualize the shape of the landscape on a flat map. This layer is based on raster terrain data and is displayed on top of the base map to improve perception of elevation, slopes, and terrain forms.
+In the context of raster maps, [Terrain](../plugins/topography.md#terrain) refers to a relief shading layer that helps visualize the shape of the landscape on a flat map. This layer is based on raster terrain data and is displayed on top of the base map to improve perception of slopes, and terrain forms.
 
-Terrain shading is one of the raster layers available in OsmAnd and represents a colorized relief visualization derived from elevation data. It is downloaded separately and works independently from 3D terrain rendering.
+Terrain shading is one of the raster layers available in OsmAnd and represents a colorized relief visualization derived from elevation data. 
 
 To use the Terrain layer you need to:
 1. Purchase the Topography plugin:
@@ -191,12 +195,12 @@ To use the Terrain layer you need to:
     - [iOS purchases](../purchases/ios.md)
 2. Enable the [Topography plugin](../plugins/topography.md):  
     *Menu → Plugins → ︙ → Enable*
-3. Select your required region, and download **Terrain map (3D)**.
+3. Select your required region, and download Hillshades or Slopes (for Maps+) or Terrain map 3D (for Pro).
 4. The download process may take some time, depending on the size of the selected region and the speed of your Internet connection.
 
 Terrain visualization can be combined with other raster layers and with the default vector map.
 
-More advanced terrain features, including 3D relief and additional terrain-related options, are described in the [Topography](../plugins/topography.md) article.
+More advanced terrain features, including 3D relief (only Pro) and additional terrain-related options, are described in the [Topography](../plugins/topography.md) article.
 
 <!--
 ## Hillshade / Slope {#hillshade--slope}
