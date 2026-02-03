@@ -26,10 +26,12 @@ import {
     BLOCKED_ACCESS_TYPE,
     PENDING_ACCESS_TYPE,
 } from './shareConstants';
+import { useLocation } from 'react-router-dom';
 
 export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const location = useLocation();
 
     const shareTypes = {
         private: {
@@ -163,7 +165,7 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     }
 
     function createLink(uuid) {
-        return `${window.location.origin}${MAIN_URL_WITH_SLASH}${SHARE_FILE_MAIN_URL}${uuid}`;
+        return `${location.origin}${MAIN_URL_WITH_SLASH}${SHARE_FILE_MAIN_URL}${uuid}`;
     }
 
     async function generateNewLink() {
@@ -229,7 +231,7 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
                 />
                 <ThickDivider />
                 <Box>
-                    <SubTitleMenu text={'Users'} />
+                    <SubTitleMenu text={t('web:share_users')} />
                     {selectedShareType.key === shareTypes.request.key && (
                         <Box sx={{ mx: 2 }}>
                             <ToggleButtonGroup

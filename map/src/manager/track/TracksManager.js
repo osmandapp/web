@@ -90,7 +90,7 @@ function createName(ctx) {
     let count = 0;
     let name;
     let maxNumber = 0;
-    ctx.localTracks.forEach((t) => {
+    ctx?.localTracks.forEach((t) => {
         if (t?.name.split(' - ')[0] === date) {
             let sp = parseInt(t?.name.split(' - ')[1], 10);
             count++;
@@ -100,7 +100,7 @@ function createName(ctx) {
         }
     });
     name = count > 0 ? date + ' - ' + (count + 1) : date;
-    ctx.localTracks.forEach((t) => {
+    ctx?.localTracks.forEach((t) => {
         if (t?.name === name) {
             name = date + ' - ' + (maxNumber + 1);
         }

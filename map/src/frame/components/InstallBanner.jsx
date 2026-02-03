@@ -21,7 +21,7 @@ export default function InstallBanner({ showInstallBanner }) {
     }, []);
 
     const handleInstallClick = () => {
-        window.location.href = isIos ? URL_APPLE : URL_GOOGLE;
+        globalThis.location.href = isIos ? URL_APPLE : URL_GOOGLE;
     };
 
     return showInstallBanner ? (

@@ -42,8 +42,10 @@ export default function useMenuDots(ctx) {
     }, [ctx.weatherDate, ctx.weatherLayers, ctx.weatherType]);
 
     useEffect(() => {
-        setActiveMenu(OBJECT_TYPE_TRAVEL, ctx.searchTravelRoutes && !ctx.searchTravelRoutes.clear);
-    }, [ctx.searchTravelRoutes]);
+        const hasSearchResults = ctx.searchTravelRoutes && !ctx.searchTravelRoutes.clear;
+
+        setActiveMenu(OBJECT_TYPE_TRAVEL, hasSearchResults || ctx.selectedTravelRoute);
+    }, [ctx.searchTravelRoutes, ctx.selectedTravelRoute]);
 
     useEffect(() => {
         setActiveMenu(OBJECT_SEARCH, ctx.searchResult || ctx.exploreMenu || ctx.poiCatMenu || ctx.selectedPoiObj);

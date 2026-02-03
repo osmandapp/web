@@ -61,8 +61,8 @@ export default function UserAccessListItem({
 
     function formatRequestedDateWithDateFns(date) {
         const d = new Date(date);
-        if (isNaN(d)) return `Requested: ${date ?? '-'}`;
-        return `Requested: ${fmt.MMMdY(d)}`;
+        if (isNaN(d)) return `${t('web:share_requested')}: ${date ?? '-'}`;
+        return `${t('web:share_requested')}: ${fmt.MMMdY(d)}`;
     }
 
     function approveRequest() {

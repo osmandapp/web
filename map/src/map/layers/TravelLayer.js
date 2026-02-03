@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_TYPE_TRAVEL } from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_TRAVEL, TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
 import { ZOOM_TO_MAP } from './SearchLayer';
@@ -9,6 +10,9 @@ import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/
 import { clusterMarkers } from '../util/Clusterizer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import isEmpty from 'lodash-es/isEmpty';
+import { GPX } from '../../manager/GlobalManager';
+
+const ROUTE_GPX_DATA = 'gpx_data';
 
 function buildOsmPopupHtml({ id, name, user }) {
     let html = '';
@@ -54,9 +58,31 @@ function attachAutoClosePopup(layer, html, offset) {
     });
 }
 
+function getRouteStart(route, track = null) {
+    let start = route.properties?.geo ? route.properties.geo[0][0] : null;
+    if (!start && track) {
+        const points = getTrackPoints(track[ROUTE_GPX_DATA]);
+        if (points?.length > 0) {
+            start = {
+                latitude: points[0].lat,
+                longitude: points[0].lng,
+            };
+        }
+    }
+    if (!start && route.properties.point) {
+        start = {
+            latitude: route.properties.point.lat,
+            longitude: route.properties.point.lon,
+        };
+    }
+    return start;
+}
+
 export default function TravelLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const { updateQueryParam } = useUpdateQueryParam();
 
     const [travelRoutes, setTravelRoutes] = useState(null);
     const [travelPoints, setTravelPoints] = useState(null);
@@ -214,8 +240,8 @@ export default function TravelLayer() {
     }, [ctx.searchTravelRoutes]);
 
     function createRoutePolyline(route) {
-        if (!route.properties?.geo && route.track?.['gpx_data']) {
-            const track = route.track['gpx_data'];
+        if (!route.properties?.geo && route.track?.[ROUTE_GPX_DATA]) {
+            const track = route.track[ROUTE_GPX_DATA];
             const points = getTrackPoints(track);
             if (points?.length > 0) {
                 if (selectedRoutePolylineRef.current) {
@@ -253,35 +279,69 @@ export default function TravelLayer() {
         }
     }
 
-    async function openInfoBlock(id) {
-        const route = ctx.searchTravelRoutes.res.features.find((route) => route.properties.id === id);
-        if (!route) {
-            return;
-        }
+    // open route info by id from URL param or click on map
+    async function openInfoBlock(id, addParam = true) {
+        if (!id) return;
+
         const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-osm-route`, {
             apiCache: true,
-            params: {
-                id,
-            },
+            params: { id },
         });
         if (response?.data) {
+            if (addParam) {
+                updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(id) });
+            }
+            const route = createRoute(response.data);
             route.track = response.data;
-            const track = route.track['gpx_data'];
+            const track = route.track[ROUTE_GPX_DATA];
             addDistance(track);
             ctx.setCurrentObjectType(OBJECT_TYPE_TRAVEL);
             const file = {
-                id: route.properties.id,
+                id,
                 name: route.properties.name,
                 description: route.properties.description,
                 date: route.properties.date,
                 user: route.properties.user,
-                type: 'GPX',
+                type: GPX,
                 ...track,
             };
             ctx.setSelectedGpxFile(file);
             ctx.setUpdateInfoBlock(true);
             createRoutePolyline(route);
+        } else {
+            ctx.setNotification({ text: 'Failed to load route', severity: 'error' });
         }
+    }
+
+    // Open route by URL param
+    useEffect(() => {
+        const id = ctx.travelRouteIdByUrl;
+        if (!id || !ctx.processingTravelRouteByUrl) return;
+
+        openInfoBlock(id, false).then(() => {
+            ctx.setProcessingTravelRouteByUrl(false);
+        });
+    }, [ctx.processingTravelRouteByUrl, ctx.travelRouteIdByUrl]);
+
+    function createRoute(data) {
+        if (!data?.[ROUTE_GPX_DATA]) {
+            return null;
+        }
+        const route = {
+            properties: {
+                id: Number(data.id),
+                name: data.name ?? '',
+                description: data.description ?? '',
+                date: data.date ?? '',
+                user: data.user ?? '',
+            },
+            track: data,
+        };
+        const start = getRouteStart(route, data);
+        if (start) {
+            map.setView([start.latitude, start.longitude], ZOOM_TO_MAP);
+        }
+        return route;
     }
 
     useEffect(() => {
@@ -291,20 +351,13 @@ export default function TravelLayer() {
         }
     }, [ctx.selectedGpxFile]);
 
+    // manage selected route layer
     useEffect(() => {
         if (ctx.selectedTravelRoute?.show) {
-            const route = ctx.selectedTravelRoute.route;
-            const start = route.properties?.geo
-                ? route.properties?.geo[0][0]
-                : {
-                      latitude: route.properties.point.lat,
-                      longitude: route.properties.point.lon,
-                  };
-            if (!start) {
-                return; // no route
+            const start = getRouteStart(ctx.selectedTravelRoute.route);
+            if (start) {
+                map.setView([start.latitude, start.longitude], ZOOM_TO_MAP);
             }
-            map.setView([start.latitude, start.longitude], ZOOM_TO_MAP);
-            openInfoBlock(route.properties.id);
         } else if (ctx.selectedTravelRoute?.hover !== undefined) {
             const id = ctx.selectedTravelRoute.route.properties.id;
             travelRoutes?.getLayers().forEach((layer) => {
@@ -336,7 +389,14 @@ export default function TravelLayer() {
         const minLon = bounds.getWest();
         const maxLon = bounds.getEast();
 
-        const { activity, year, tags, tagMatchMode = TAG_MATCH_MODES.OR } = ctx.searchTravelRoutes;
+        const {
+            activity,
+            year,
+            tags,
+            tagMatchMode = TAG_MATCH_MODES.OR,
+            distanceRange,
+            speedRange,
+        } = ctx.searchTravelRoutes;
         const body = {
             activity: activity === ACTIVITY_ALL ? undefined : activity,
             year: year === ALL_YEARS ? undefined : year,
@@ -346,6 +406,8 @@ export default function TravelLayer() {
             maxLon,
             tags: tags.length ? tags : undefined,
             tagMatchMode,
+            distanceRange,
+            speedRange,
         };
 
         const response = await apiPost(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, body, {

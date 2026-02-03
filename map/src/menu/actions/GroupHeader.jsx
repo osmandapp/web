@@ -73,7 +73,10 @@ export default function GroupHeader({
             if (onClose) {
                 onClose();
             } else {
-                updateQueryParam(FAVORITES_URL_PARAM_FOLDER, null, MAIN_URL_WITH_SLASH + FAVORITES_URL, {
+                updateQueryParam({
+                    key: FAVORITES_URL_PARAM_FOLDER,
+                    value: null,
+                    expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
                     replace: false,
                 });
             }
@@ -143,12 +146,12 @@ export default function GroupHeader({
                                     if (onClose) {
                                         onClose();
                                     } else {
-                                        updateQueryParam(
-                                            FAVORITES_URL_PARAM_FOLDER,
-                                            null,
-                                            MAIN_URL_WITH_SLASH + FAVORITES_URL,
-                                            { replace: false }
-                                        );
+                                        updateQueryParam({
+                                            key: FAVORITES_URL_PARAM_FOLDER,
+                                            value: null,
+                                            expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                                            replace: false,
+                                        });
                                     }
                                 }
                                 closeHeader({ ctx });

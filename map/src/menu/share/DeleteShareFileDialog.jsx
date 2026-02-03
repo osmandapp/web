@@ -30,10 +30,10 @@ export default function DeleteShareFileDialog({
             <DialogTitle>{t('web:change_access')}</DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    Changing the status to <strong>Private</strong> will revoke access for all users.
+                    {t('web:share_change_access_private_desc')}
                     <br />
                     <br />
-                    To limit access to specific users, consider switching to <strong>Request Only</strong>.
+                    {t('web:share_change_access_request_desc')}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

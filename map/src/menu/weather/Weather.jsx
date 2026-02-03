@@ -53,7 +53,7 @@ export default function Weather() {
     const urlLocation = useLocation();
     const location = useGeoLocation(ctx, false);
     const currentLoc = ctx.openMenu?.latlng ?? location;
-    const hash = window.location.hash;
+    const hash = urlLocation.hash;
     const debouncerTimer = useRef(0);
     const [delayedHash, setDelayedHash] = useState(hash);
     const [loadingLocation, setLoadingLocation] = useState(false);

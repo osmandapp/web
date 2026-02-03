@@ -27,6 +27,7 @@ import AppContext, {
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_NAVIGATION_ALONE,
     FAVORITES_URL_PARAM_FOLDER,
+    TRAVEL_ROUTE_ID_PARAM,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import VisibleTracks from './visibletracks/VisibleTracks';
@@ -69,6 +70,7 @@ import {
     VISIBLE_TRACKS_URL,
     WEATHER_URL,
     TRAVEL_URL,
+    isTravelPath,
     SHARE_FILE_MAIN_URL,
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
@@ -221,7 +223,7 @@ export default function MainMenu({
 
     useEffect(() => {
         if (ltx.loginUser && redirectUrl) {
-            window.location.href = redirectUrl;
+            globalThis.location.href = redirectUrl;
         }
     }, [ltx.loginUser]);
 
@@ -501,6 +503,11 @@ export default function MainMenu({
 
         if (selectedType === OBJECT_TYPE_TRAVEL) {
             ctx.setOpenTravel(true);
+            const savedTravelUrl = lastMenuUrlsRef.current[OBJECT_TYPE_TRAVEL];
+            if (savedTravelUrl?.includes(TRAVEL_ROUTE_ID_PARAM)) {
+                navigate(savedTravelUrl);
+                return;
+            }
         }
 
         ctx.setSearchSettings({
@@ -520,20 +527,20 @@ export default function MainMenu({
                 }
             }
             if (ctx.poiCatMenu) {
-                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + location.hash);
                 return;
             }
             if (ctx.searchQuery) {
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
                     search: buildSearchParamsFromQuery(ctx.searchQuery),
-                    hash: window.location.hash,
+                    hash: location.hash,
                 });
                 return;
             }
 
             if (ctx.exploreMenu) {
-                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + location.hash);
                 return;
             }
         }
@@ -768,7 +775,7 @@ export default function MainMenu({
         if (currentMenu && menuInfo) {
             if (currentMenu.type === OBJECT_TYPE_CLOUD_TRACK) {
                 // not to navigate to the track menu if the track info is opened
-                const currentUrl = window.location.href;
+                const currentUrl = globalThis.location.href;
                 if (currentUrl.includes(INFO_MENU_URL)) {
                     return;
                 }
@@ -833,7 +840,9 @@ export default function MainMenu({
                 targetUrl += menuParams;
             } else if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !ctx.routeObject.isReady()) {
                 // special case for Navigation due to lazy-loading providers
-                targetUrl += window.location.search;
+                targetUrl += location.search;
+            } else if (menu.type === OBJECT_TYPE_TRAVEL && isTravelPath(location.pathname) && location.search) {
+                targetUrl += location.search;
             }
 
             navigateIfChanged(targetUrl + location.hash);

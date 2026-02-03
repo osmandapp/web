@@ -68,3 +68,71 @@
 .distanceSortToggleGroup :global(.Mui-selected) .distanceSortIcon {
     fill: var(--selected-color) !important;
 }
+
+.osmIdLink {
+    color: var(--text-secondary) !important;
+    cursor: pointer;
+    text-decoration: none;
+}
+.osmIdLink:hover {
+    color: var(--selected-color) !important;
+}
+
+.sliderContainer {
+    margin: 8px 16px;
+    padding-top: 12px;
+    overflow: visible;
+}
+
+.sliderHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sliderTitle {
+    color: var(--text-primary) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+
+.sliderValue {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 13px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+
+.sliderBounds {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+}
+
+.sliderBoundValue {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 11px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+
+.sliderContainer :global(.MuiSlider-rail) {
+    height: 2px !important;
+}
+
+.sliderContainer :global(.MuiSlider-track) {
+    height: 2px !important;
+}
+
+.sliderContainer :global(.MuiSlider-thumb) {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.sliderContainer :global(.MuiSlider-valueLabel) {
+    font-size: 12px !important;
+}

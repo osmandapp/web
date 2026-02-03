@@ -40,7 +40,7 @@ With the map centered on the Los Glaciares area, tap [Explore](https://osmand.ne
 
 ![Web Explore](./img/blog_web_explore.png)
 
-Each place comes with useful information: a name, category, short description, and often photos. To narrow things down, you can use filters to show only what matters to you — for example, Nature & Outdoors. This makes it easy to move from a broad view of the region to a focused list of places worth adding to your journey.
+Each place comes with useful information: a name, category, short description, and often photos. To narrow things down, you can use filters to show only what matters to you — for example, Nature & Outdoors. This makes it easy to move from a broad view of the region to a focused list of places worth adding to your journey. By the way, if you prefer exploring on the go, OsmAnd also offers a similar Explore feature in the mobile app (*Android only*) — see the step-by-step guide [here](https://osmand.net/docs/user/map/popular_places#explore-in-search).
 
 ![Web Explore](./img/blog_web_filters.png)
 

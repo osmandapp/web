@@ -92,7 +92,7 @@ import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import DistanceInfo from './DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import { getCenterMapLoc } from '../../../manager/MapManager';
@@ -164,8 +164,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const { t } = useTranslation();
 
     const navigate = useNavigate();
-
-    const hash = window.location.hash;
+    const location = useLocation();
+    const hash = location.hash;
 
     const recentSaver = useRecentDataSaver();
 
@@ -532,7 +532,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
                     search: buildSearchParamsFromQuery(ctx.searchQuery),
-                    hash: window.location.hash,
+                    hash: location.hash,
                 });
             } else {
                 closeObjectFromMap();
@@ -553,7 +553,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 ctx.setSelectedPoiObj(null);
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + (ctx.exploreMenu ? EXPLORE_URL : ''),
-                    hash: window.location.hash,
+                    hash: location.hash,
                 });
             }
         } else if (type.isFav) {

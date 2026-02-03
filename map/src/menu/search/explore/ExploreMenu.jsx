@@ -13,7 +13,7 @@ import ActionsMenu from '../../actions/ActionsMenu';
 import WikiPlacesFilter from './WikiPlacesFilter';
 import WikiPlacesList from './WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../../manager/SearchManager';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import EmptySearch from '../../errors/EmptySearch';
 import { ZOOM_ERROR } from '../search/SearchResults';
 import useHashParams from '../../../util/hooks/useHashParams';
@@ -24,6 +24,7 @@ export default function ExploreMenu() {
 
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const location = useLocation();
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
     const anchorEl = useRef(null);
 
@@ -32,7 +33,7 @@ export default function ExploreMenu() {
     const MAX_PLACES = 50;
 
     function close() {
-        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + location.hash);
         ctx.setLoadingContextMenu(false);
         ctx.setExploreMenu(false);
     }
