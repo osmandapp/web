@@ -93,7 +93,7 @@ import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useR
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useNavigate } from 'react-router-dom';
-import DistanceInfo from '../../../menu/search/search/DistanceInfo';
+import DistanceInfo from './DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 
@@ -812,9 +812,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 isUserLocation={true}
                             />
                         )}
-                        {distanceInfo.distance && wpt?.address && (
-                            <span style={{ whiteSpace: 'pre' }}> · </span>
-                        )}
+                        {distanceInfo.distance && wpt?.address && <span className={wptStyles.placeDistance}> · </span>}
                         {wpt.address}
                     </Typography>
                 </ListItemText>
@@ -826,14 +824,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return (
             <Box className={styles.wptCategory}>
                 <ListItemIcon
-                    className={wpt.openingHours.isOpen ? styles.openingHoursOpenIcon : styles.openingHoursClosedIcon}
+                    className={
+                        wpt.openingHours.isOpen ? wptStyles.openingHoursOpenIcon : wptStyles.openingHoursClosedIcon
+                    }
                 >
                     <OpeningHoursIcon />
                 </ListItemIcon>
                 <ListItemText>
                     <Typography
                         className={
-                            wpt.openingHours.isOpen ? styles.openingHoursOpenText : styles.openingHoursClosedText
+                            wpt.openingHours.isOpen ? wptStyles.openingHoursOpenText : wptStyles.openingHoursClosedText
                         }
                         id={'se-wpt-opening-hours'}
                     >

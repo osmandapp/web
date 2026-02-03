@@ -8,7 +8,7 @@ import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
-import DistanceInfo from './DistanceInfo';
+import DistanceInfo from '../../../infoblock/components/wpt/DistanceInfo';
 import {
     ADDRESS_1,
     ADDRESS_2,
