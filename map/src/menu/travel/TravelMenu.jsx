@@ -10,12 +10,14 @@ import {
     ToggleButton,
     ToggleButtonGroup,
     Toolbar,
+    Tooltip,
     Typography,
 } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import debounce from 'lodash-es/debounce';
@@ -364,6 +366,19 @@ export default function TravelMenu() {
                             <Typography id="se-travel-menu-name" component="div" className={headerStyles.title}>
                                 Travel
                             </Typography>
+                            <Tooltip title={t('reset_to_default')} arrow placement="bottom-end">
+                                <span>
+                                    <IconButton
+                                        id="se-travel-reset"
+                                        variant="contained"
+                                        type="button"
+                                        className={headerStyles.appBarIcon}
+                                        onClick={resetSearch}
+                                    >
+                                        <ResetIcon />
+                                    </IconButton>
+                                </span>
+                            </Tooltip>
                         </Toolbar>
                     </AppBar>
                     <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
