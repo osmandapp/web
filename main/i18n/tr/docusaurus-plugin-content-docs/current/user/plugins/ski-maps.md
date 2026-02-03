@@ -1,5 +1,5 @@
 ---
-source-hash: f47abfa20a1e2094476033fa2ea73c6c94bc39f2fc7f0a5024cacdd02d47d391
+source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
 sidebar_position: 13
 title:  Kayak Haritası Görünümü
 ---

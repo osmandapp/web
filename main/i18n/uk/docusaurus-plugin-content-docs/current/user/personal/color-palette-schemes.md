@@ -1,5 +1,5 @@
 ---
-source-hash: eb8c4b71007a1c4cfc8c26176511dd3bfc888cd65317d684c37297ecbb8d4fc3
+source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
 sidebar_position: 5
 title:  Колірні схеми
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::
 
-Колірні схеми використовуються для [колоризації маршрутів](#tracks-routes), [рельєфу мапи](#terrain) та [карти погоди](#weather) і є окремою частиною інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.
+Колірні схеми використовуються в [колоризації маршрутів](#tracks-routes), [рельєфі мапи](#terrain) та [мапі погоди](#weather), і є окремою частиною інформації, яку можна експортувати, імпортувати та редагувати для зміни колірної схеми мапи та візуалізації даних.
 
 Дані колірної палітри доступні в меню [*Maps & Resources*](../personal/maps-resources.md#local-menu).
 
@@ -89,10 +89,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Для візуалізації лінійного градієнта використовуються файли палітри (`route_<type_name>_<palette_name>.txt`) для забарвлення GPX-треків та маршрутів:
+Візуалізації лінійного градієнта використовують файли палітри (`route_<type_name>_<palette_name>.txt`) для забарвлення GPX-треків та маршрутів:
 
-- Для [маршрутів](../navigation/guidance/map-during-navigation.md#color): *Швидкість (`route_speed_default.txt`), Ухил (`route_slope_default.txt`)* та *Висота (`route_elevation_default.txt`)*.
-- Для [GPX-треків](../map/tracks/appearance#track-colors-in-gpx-files): *Швидкість, Ухил, Максимальна швидкість (`route_maxspeed_default.txt`)* та *Висота*, або інформація із *зовнішніх датчиків*.
+- Для [маршрутів](../navigation/guidance/map-during-navigation.md#color): *Швидкість (`route_speed_default.txt`), Ухил (`route_slope_default.txt`)* та *Висота (альтитуда) (`route_elevation_default.txt`)*.
+- Для [GPX-треків](../map/tracks/appearance#track-colors-in-gpx-files): *Швидкість, Ухил, Максимальна швидкість (`route_maxspeed_default.txt`)* та *Висота (альтитуда)*, або інформація із *зовнішніх датчиків*.
 
 ### Обрані та контрольні точки {#favorites-waypoints}
 
@@ -147,6 +147,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Після переміщення цього TXT-файлу до *..Android/data/net.osmand/files/color-palette/height_altitude_0-200.txt*, нова палітра з'явиться в меню "Колірна схема".
 
+Якщо вам потрібно змінити існуючий файл палітри всередині OsmAnd (замість додавання нового TXT-файлу), ви можете відредагувати його через експортоване резервне копіювання (.osf).
+- Експортуйте дані палітри як резервне копіювання .osf (див. розділ [Імпорт / Експорт](#import--export) нижче).
+- Розпакуйте експортований .osf. Файл .osf є перейменованим архівом .zip. Зробіть копію оригінального файлу .osf, а потім розпакуйте його за допомогою будь-якого інструменту архівування.
+- Знайдіть і відредагуйте TXT-файл палітри. Усередині розпакованих папок знайдіть потрібний файл палітри (наприклад: height_altitude_&lt;type_name&gt;.txt або route_speed_&lt;type_name&gt;.txt) і відредагуйте його значення в текстовому редакторі.
+- Запакуйте назад і перейменуйте на .osf. Запакуйте розпакований вміст назад в архів .zip, а потім перейменуйте його на .osf. Збережіть ту саму структуру папок.
+- Імпортуйте оновлений .osf в OsmAnd (див. розділ **Імпорт / Експорт** нижче) і перезапустіть додаток, щоб застосувати зміни.
+
 ### Імпорт / Експорт {#import--export}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -155,7 +162,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Експорт дій профілю Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Локальне резервне копіювання Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Дії профілю: Експорт Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Локальне резервне копіювання Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -163,7 +170,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Експорт дій профілю iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Експорт дій профілю iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Дії профілю: Експорт iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Дії профілю: Експорт iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: d4dba17d5f1c06483d79c0bfb75240e4be2b60b8e2ae7968b212d5cdad0f4c0b
+source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
 sidebar_position: 1
 title: Android Satın Almaları
 ---
@@ -78,12 +78,31 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürününün fiyatları hakkında b
 
 
 
+<!--
+:::danger Christmas sale
+
+*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+
+-->
+
 |    | OsmAnd Ücretsiz   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) Uygulama İçi | [Maps+](#install-osmand-android) Abonelik | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |
-| **Fiyat (EUR)** | €0 | €39,99 | €9.99 | €2.99 / €29.99 |
-| **Fiyat (USD)** | $0 | $39.99 | $9.99 | $2.99 / $29.99 |
+| **Fiyat (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Fiyat (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
 
@@ -145,7 +164,7 @@ Pro Özellikleri [OsmAnd Pro aboneliği](#prices) için mevcuttur.
 |  Pro Özelliği  | Açıklama   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Verilerinizi yedekleyin ve geri yükleyin, verileri [OsmAnd web portalı](https://www.osmand.net/map) ile senkronize edin. |
-| [3D Rölyef](../plugins/topography.md#3d-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modelini görmenizi ve gözlemlemenizi sağlar. |
+| [3D Rölyef](../plugins/topography.md#3D-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modelini görmenizi ve gözlemlemenizi sağlar. |
 | [Canlı güncellemeler](../personal/maps-resources.md#live-updates) | OsmAnd haritaları [OpenStreetMap](https://www.openstreetmap.org/) iyileştirmesinden 15 dakika sonra güncellenir. |
 | [Hava Durumu Eklentisi](../plugins/weather.md) | Haritada 7 gün öncesine kadar 24 saatlik saatlik tahmin. |
 | [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanıza olanak tanır. Araç hızı ve Motor devri bilgisi OsmAnd ücretsiz için mevcuttur.  |

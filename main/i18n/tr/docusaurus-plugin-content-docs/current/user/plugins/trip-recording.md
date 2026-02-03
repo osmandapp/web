@@ -1,5 +1,5 @@
 ---
-source-hash: 18bffcca1c85af3b09a5ad3aa863211cc3d83cece85301333f5d7e81b878d98a
+source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
 sidebar_position: 15
 title:  Gezi Kaydı
 ---
@@ -175,7 +175,7 @@ Daha ayrıntılı bir görünüm için grafiği **ölçeklendirebilirsiniz**:
 
 | |
 | ------------- |
-|**Genel Bakış** sekmesi iOS (Android için, Y ekseni parametreleri *Rakım*, *Hız* ve X ekseni parametresi *Mesafe*'dir). Bu sekme, parkur boyunca hız ve rakım değişikliklerini gösteren bir grafik ve anahtar parkur ayrıntılarını görüntüler. iOS için parkur verileri: *Mesafe*, *Süre*, *Başlangıç Saati* ve *Bitiş Saati*. Bunu Android ve iOS sürümlerinde nasıl görüntülendiğini aşağıda görebilirsiniz. |
+|**Genel Bakış** sekmesi iOS (Android için, Y ekseni parametreleri *Rakım*, *Hız* ve X ekseni parametresi *Mesafe*'dir). Bu sekme, parkur boyunca hız ve rakım değişikliklerini gösteren bir grafik ve anahtar parkur ayrıntılarını görüntüler. iOS için parkur verileri: *Mesafe*, *Süre*, *Başlangıç Saati* ve *Bitiş Saati*. Android ve iOS sürümlerinde nasıl görüntülendiğini aşağıda görebilirsiniz. |
 | ![veri](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![veri](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Rakım** sekmesi iOS (Android için, Y ekseni parametreleri *Rakım*, *Eğim* ve X ekseni parametresi *Mesafe*'dir). Bu sekme, kaydedilen parkurunuzun yükseklik profiline odaklanarak rakım değişiklikleri ve arazi eğimleri hakkında bilgi sağlar. iOS için anahtar metrikler şunları içerir: *Ortalama Rakım*, *Rakım Aralığı*, *Yokuş yukarı* ve *Yokuş aşağı*. Aşağıdaki grafikler, Android ve iOS arayüzleri arasındaki farklılıkları göstermektedir. |
 | ![veri](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![veri](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
@@ -389,35 +389,62 @@ Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı* gibi parkur
 
 [Gezi Kaydı widget'ı](../widgets/info-widgets.md#trip-recording-widgets), kayıt durumunuzu izlemenin ve kayıt ayarlarına ve ayrıntılarına hızlıca erişmenin kolay bir yolunu sunar. Bu widget, Gezi Kaydı eklentisi etkinleştirildiğinde otomatik olarak ekranınıza eklenir.
 
-Arayüzünüzü özelleştirmek için Gezi Kaydı widget'ını ve [diğer widget'ları](../plugins/trip-recording#duration-uphill-downhill) Ekranı Yapılandır menüsü aracılığıyla ekleyebilir veya kaldırabilirsiniz.
+Arayüzünüzü özelleştirmek için Gezi Kaydı widget'ını ve [diğer widget'ları](../plugins/trip-recording#additional-widgets) Ekranı Yapılandır menüsü aracılığıyla ekleyebilir veya kaldırabilirsiniz.
 
 
-### Mesafe (Başlat-Durdur) {#distance-start-stop}
+### Görüntüleme Modları {#display-modes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">  
+<TabItem value="android" label="Android">
 
-![Android'de kaydı bitir](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
-![Gezi kaydı widget'ı](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+![Görüntüleme Modları](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Görüntüleme Modları](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Gezi kaydı widget'ı](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+![Görüntüleme Modları](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Görüntüleme Modları](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
-Widget'lar haritada görüntülendiğinde, herhangi birine dokunmak ek parkur ayrıntılarını ortaya çıkarır ve kayıtla etkileşime geçmenizi sağlar.
-*Mesafe* widget'ı, mevcut kaydedilen gezinizin toplam mesafesini gösterir ve kayıtlarınızı yönetmek için ana arayüz görevi görür. Üzerine dokunmak, kaydı başlatabileceğiniz, durdurabileceğiniz ve parkurunuz hakkında ayrıntılı bilgi görüntüleyebileceğiniz [Gezi Kaydı iletişim kutusunu](#start-a-dialog) ortaya çıkarır.
+Bazı Gezi Kaydı widget'ları birden fazla görüntüleme modunu destekler. Modlar, şu anda kaydedilen gezinin genel gezi değerleri ile en son yokuş yukarı veya yokuş aşağı bölümüne ait metrikler arasında geçiş yapmanızı sağlar.
 
-- Widget, *Gezi kaydı eklentisi* etkinleştirildiğinde otomatik olarak eklenir, ancak [Ekranı Yapılandır menüsü](../widgets/configure-screen.md#overview) aracılığıyla gizlenebilir.
-- Gezi Kaydı eklentisi ayarlarında *Başlangıç iletişim kutusunu göster* seçeneği devre dışı bırakılırsa, etkin widget'a dokunmak yine de *Gezi Kaydı iletişim kutusunu* açarak daha fazla seçeneğe ve bilgiye erişmenizi sağlar.  
+Widget'a bağlı olarak aşağıdaki modlar mevcut olabilir.
+1. **Mesafe (Başlat-Durdur)**:
+- Toplam mesafe (varsayılan)
+- Son yokuş yukarı
+- Son yokuş aşağı
 
-*Mesafe/Başlat-Durdur* widget'ına ek olarak, **Gezi Kaydı eklentisi** dört başka widget içerir: *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Maksimum Hız* ve *Ortalama Eğim* (son ikisi yalnızca Android'de mevcuttur). Bunlar, geziniz hakkında ek bilgi sağlayarak gerçek zamanlı ilerlemeyi izlemenize yardımcı olur.
+2. **Yokuş yukarı**:
+- Toplam (varsayılan)
+- Son yokuş yukarı
+
+3. **Yokuş aşağı**:
+- Toplam (varsayılan)
+- Son yokuş aşağı
+
+4. **Maksimum Hız**:
+- Toplam (varsayılan)
+- Son yokuş yukarı
+- Son yokuş aşağı
+
+5. **Ortalama Eğim**:
+- Son yokuş yukarı  
+- Son yokuş aşağı 
+
+Mod değiştirme widget'a bağlıdır:
+- Yokuş yukarı / Yokuş aşağı / Maksimum Hız / Ortalama Eğim — Haritada widget'a dokunarak modunu değiştirin.
+- Mesafe (Başlat-Durdur) — Mesafe widget'ı birden fazla görüntüleme modunu destekler (widget ayarlarında seçin), ancak ona dokunmak her zaman Gezi Kaydı iletişim kutusunu açar, burada kaydı başlatabilir, durdurabilir ve parkurunuz hakkında ayrıntılı bilgi görüntüleyebilirsiniz. 
+
+Mevcut kayıt henüz bir yokuş yukarı veya yokuş aşağı bölümü içermiyorsa, Son yokuş yukarı veya Son yokuş aşağı modundaki widget'lar 0 veya — (veri yok) gösterir.
+
+**Notlar:** Modlar, şu anda kaydedilen geziye uygulanır ve kayıt devam ettikçe güncellenir.
+
+
+### Mesafe (Başlat-Durdur) {#distance-start-stop}
 
 | |
 |-----------|
@@ -431,61 +458,22 @@ Android'de Mesafe widget'ı birden fazla görüntüleme modunu destekler:
 - **Son yokuş aşağı** – en son yokuş aşağı bölümünün mesafesi.
 
 
-### Süre, Yokuş Yukarı, Yokuş Aşağı {#duration-uphill-downhill}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
+### Ek Widget'lar {#additional-widgets}
 
 | |
 |------------|
 |**Süre**. Mevcut gezi kaydının toplam süresini saat ve dakika cinsinden gösterir. |
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_dur.png)|  
 |**Yokuş yukarı**. Seçilen moda bağlı olarak toplam yokuş yukarı veya son yokuş yukarı bölümünü gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_up.png)|
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 |**Yokuş aşağı**. Seçilen moda bağlı olarak toplam yokuş aşağı veya son yokuş aşağı bölümünü gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-| |
-|------------|
-|**Süre**. Mevcut gezi kaydının toplam süresini saat ve dakika cinsinden gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Yokuş yukarı**. Seçilen moda bağlı olarak toplam yokuş yukarı veya son yokuş yukarı bölümünü gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_up.png)|
-|**Yokuş aşağı**. Seçilen moda bağlı olarak toplam yokuş aşağı veya son yokuş aşağı bölümünü gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_dow.png)|
-
-</TabItem>
-
-</Tabs>
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Maksimum Hız**. Seçilen modda şu anda kaydedilen gezi için maksimum hızı gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Ortalama Eğim**. Seçilen moda bağlı olarak mevcut gezinin son yokuş yukarı veya yokuş aşağı bölümünün ortalama eğimini görüntüler. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 
 Birden fazla widget seçtiyseniz — *Süre*, *Yokuş yukarı* veya *Yokuş aşağı* — her biri için aynı iletişim kutusuna geçiş yapmanıza veya kapatmanıza gerek kalmadan erişebilirsiniz. Bu birleşik arayüz, ilgili tüm bilgileri sorunsuz bir şekilde görüntülemeyi ve yönetmeyi kolaylaştırır.
-
-### Maksimum Hız & Ortalama Eğim {#max-speed--average-slope}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Maksimum Hız Android](@site/static/img/widgets/max_speed_android.png) ![Ortalama Eğim Android](@site/static/img/widgets/average_slope_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Maksimum Hız iOS](@site/static/img/widgets/max_speed_ios.png) ![Ortalama Eğim iOS](@site/static/img/widgets/average_slope_ios.png) 
-
-</TabItem>
-
-</Tabs> 
-
-**Maksimum Hız** widget'ı, şu anda kaydedilen gezi için maksimum hızı gösterir. Widget'a dokunarak genel maksimum hız ile son yokuş yukarı veya yokuş aşağı bölümünden maksimum hız arasında geçiş yapabilirsiniz.
-
-**Ortalama Eğim** widget'ı, mevcut gezinin son yokuş yukarı veya yokuş aşağı bölümünün ortalama eğimini görüntüler. Yükseklik kazancı ve mesafeye dayalı olarak önceki tırmanış veya inişin ne kadar dik olduğunu tahmin etmenize yardımcı olur.
 
 
 ## İlgili Makaleler {#related-articles}

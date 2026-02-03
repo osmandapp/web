@@ -128,7 +128,7 @@ The menu **Options** allows you to manage and modify the selected track with var
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Android only*) – Merges track segments to fill gaps.
-- **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../tracks/index.md#analyze-track-on-map) tool to inspect the track’s elevation, speed, and distance.
+- **<Translate android="true" ids="analyze_on_map"/>**. Opens the [Analyze on map](../tracks/index.md#analyze-track-on-map) tool to inspect the track’s elevation, speed, distance, and any additional data contained in the track (such as external sensor or vehicle metrics data).
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Android only*) - Analyzes the track by time or distance [intervals](./track-context-menu.md#analyze-by-intervals).
 
 <br/>

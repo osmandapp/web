@@ -83,6 +83,7 @@ export default function SearchLayer() {
     const navigate = useNavigate();
 
     const prevSelectedRes = useRef(null);
+    const skipFirstBoundsUpdate = useRef(true);
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
@@ -172,7 +173,9 @@ export default function SearchLayer() {
             updateAsyncLayers().then();
         }
         const newBounds = map.getBounds();
-        if (!ctx.visibleBounds || !ctx.visibleBounds.equals(newBounds)) {
+        if (skipFirstBoundsUpdate.current) {
+            skipFirstBoundsUpdate.current = false;
+        } else if (!ctx.visibleBounds?.equals(newBounds)) {
             ctx.setVisibleBounds(newBounds);
         }
     }, [zoom, move]);

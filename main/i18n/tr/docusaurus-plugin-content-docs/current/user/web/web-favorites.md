@@ -1,5 +1,5 @@
 ---
-source-hash: ef13b994168cf04dcf98784cf4ef75aea6eb57a3e4db536a0fa48e3617173008
+source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
 sidebar_position: 6
 sidebar_label: Favoriler
 title: Favoriler
@@ -60,7 +60,7 @@ Erişim yapılandırması sırasında aşağıdaki iletişim kutuları görüneb
 
 Bir favoriyi seçmek, **Detaylar** panelini açar. Bu panel, harita üzerinde bir favoriye doğrudan tıkladığınızda veya bir favoriler klasöründen seçtiğinizde görünür.
 
-Detaylar görünümü, seçilen yerle ilişkili bilgileri sağlar ve o belirli favori için mevcut verilere bağlıdır. En azından haritadaki konumu ve coğrafi koordinatlarını içerir. OpenStreetMap nesnelerine veya zenginleştirilmiş kaynaklara bağlı yerler için, ek meta veriler gösterilebilir; örneğin isimler, kategoriler, tanımlayıcılar veya referans bağlantıları ([Wikipedia](../plugins/wikipedia.md) veya Wikidata bağlantıları gibi). 
+Detaylar görünümü, seçilen yerle ilişkili bilgileri sağlar ve o belirli favori için mevcut verilere bağlıdır. En azından haritadaki konumu ve coğrafi koordinatlarını içerir. OpenStreetMap nesnelerine veya zenginleştirilmiş kaynaklara bağlı yerler için, ek meta veriler gösterilebilir; örneğin isimler, kategoriler, tanımlayıcılar veya referans bağlantıları (örneğin, Wikipedia veya Wikidata bağlantıları). 
 
 ![Web Favori Detayları](@site/static/img/web/favorites_details.png)
 

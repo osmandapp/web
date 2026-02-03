@@ -29,7 +29,7 @@ OsmAnd y ["IBS Moto"](https://www.ibsmoto.com/) te presentan la suscripción a O
 
 1. **Ingresa tu correo electrónico** para el registro:
    
-<RegisterUserPromoBlock  promoKey='ibs'/>
+<RegisterUserPromoBlock  promoKey='ibs1'/>
 
 <p> </p>
 
@@ -55,7 +55,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='ibs'/>
+<RegisterUserPromoBlock  promoKey='ibs1'/>
 
 <p> </p>
 

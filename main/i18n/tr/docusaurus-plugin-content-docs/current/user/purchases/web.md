@@ -1,5 +1,5 @@
 ---
-source-hash: 95e66b93e0c5a981ee18f89cb1798bfb0b845b2b0d468d645cf6efd637edebac
+source-hash: 3970a0828bc6b80d9b68504c9d78e40d1226e1cf16d6f1fbc2fdcc5d6af480ec
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
@@ -66,8 +66,8 @@ Starting from the third year, the full price will apply.
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |**Tek Seferlik Satın Alma** (15 Yıl Pro / Maps+ Ömür Boyu) |
-| **Fiyat (EUR)** | €0 | €39.99  | €9.99   | €2.99 / €29.99   |<s>€450</s> €299.00   |
-| **Fiyat (USD)** | $0 | $39.99  | $9.99   | $2.99 / $29.99   |<s>$450</s> $299.00   |
+| **Fiyat (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
+| **Fiyat (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
 
 
 

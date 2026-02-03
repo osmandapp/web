@@ -1,5 +1,5 @@
 ---
-source-hash: fe9500be3570d2dbf08995ee5614eb89cd647a44f0360730e48015dced34c738
+source-hash: 3d6c05784a73198c85ccf4c182c3b3bdd98f9d7583573418f3424f7abcb2f2cb
 sidebar_position: 7
 sidebar_label: İz Analizörü
 title: İz Analizörü
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**İz Analizörü**, haritada seçilen noktalar arasında tekrar eden iz segmentlerini analiz etmenize yardımcı olan bir web aracıdır. İzlerinizi tarar ve seçilen konum(lar)dan geçen tüm segmentleri bulur, böylece birden fazla aktivite genelinde hız, yükseklik, mesafe ve süreyi karşılaştırmanıza olanak tanır.
+**İz Analizörü**, haritada seçilen noktalar arasında tekrar eden iz segmentlerini analiz etmenize yardımcı olan bir web aracıdır. Kendi verilerinizle bu özelliği kullanmak için, izlerin OsmAnd Cloud'a senkronize edildiği bir OsmAnd Pro hesabına ihtiyacınız var — aksi takdirde, izleriniz Web Planlayıcı'da mevcut olmayacaktır. İzlerinizi tarar ve seçilen konum(lar)dan geçen tüm segmentleri bulur, böylece birden fazla aktivite genelinde hız, yükseklik, mesafe ve süreyi karşılaştırmanıza olanak tanır.
 
 ## Nasıl Kullanılır {#how-to-use}
 
@@ -37,12 +37,12 @@ Mevcut parametreler türe göre gruplandırılmıştır:
 
 **Hız**
 - Maks. hız
-- Ortalama hız
+- Ortal. hız
 - Min. hız
 
 **Yükseklik**
 - Maks. yükseklik
-- Ortalama yükseklik
+- Ortal. yükseklik
 - Min. yükseklik
 
 **Yokuş Yukarı / Yokuş Aşağı**

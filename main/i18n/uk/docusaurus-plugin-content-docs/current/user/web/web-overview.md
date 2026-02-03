@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Вступ
 title: Вступ до веб-планувальника
@@ -26,9 +26,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Розроблений як кросплатформенний супутній додаток до OsmAnd для Android та iOS, Веб-портал допомагає користувачам планувати поїздки, аналізувати треки, переглядати рельєф та керувати файлами за допомогою будь-якого браузера на настільному комп'ютері чи планшеті — без встановлення застосунку.
 
-OsmAnd Web тісно інтегрований із сервісом **OsmAnd Cloud**, який забезпечує синхронізацію улюблених місць, треків та резервних копій між пристроями та платформами. Користувачі з обліковими записами **OsmAnd Start** (безкоштовно) або **OsmAnd Pro** (платно) можуть повною мірою скористатися перевагами цієї екосистеми, синхронізуючи дані між мобільним пристроєм та вебом. Детальне порівняння функцій *Start* та *Pro* ви можете знайти в розділі [Доступ за підпискою](#subscription-access) нижче.
+OsmAnd Web тісно інтегрований із сервісом **OsmAnd Cloud**, який забезпечує синхронізацію улюблених місць, треків та резервних копій між пристроями та платформами. Користувачі з обліковими записами **OsmAnd Start** (безкоштовно) або **OsmAnd Pro** (платно) можуть повною мірою скористатися перевагами цієї екосистеми, синхронізуючи дані між мобільним пристроєм та вебом. Детальне порівняння функцій *Start* та *Pro* ви можете знайти в розділі [Доступ за підпискою](#subscription-accesses) нижче.
 
-> **Примітка:** Навіть без входу в обліковий запис або перевірки акаунта ви все одно можете використовувати кілька основних функцій Веб-порталу мап, включаючи: [Навігаційний маршрут](./planner.md), [Планувальник маршрутів](./planner.md), [Шари погоди](./web-map.md#weather-on-the-web) та [Налаштування](#settings).
+> **Примітка:** Навіть без входу в обліковий запис або перевірки акаунта ви все одно можете використовувати кілька основних функцій Веб-порталу мап, включаючи: [Навігаційний маршрут](./web-navigation.md), [Планувальник маршрутів](./planner.md), [Шари погоди](./web-weather.md#), та [Налаштування](./web-map.md#settings).
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -40,7 +40,7 @@ After the structure of this section is approved, some links should be updated.
 
 - [Мапа](./web-map.md) з глобальним покриттям та високоякісними векторними даними.
 - [Планування маршруту](./planner.md) для пішоходів, автомобілів, велосипедів та інших профілів.
-- [Попередній перегляд навігації](./planner.md) з покроковими інструкціями.
+- [Навігація](./planner.md) з покроковими інструкціями.
 - [Пошук](./web-search.md) та [дослідження](./web-search.md#explore) популярних місць поблизу.
 - Відображення [Улюблених місць](./web-map.md#favorites), [Треків](./web-map.md#tracks) та [POI](./web-map.md#poi-overlay) на мапі.
 - [Шари погоди](./web-weather.md): вітер, температура та тиск.
@@ -67,11 +67,11 @@ After the structure of this section is approved, some links should be updated.
 | [Планувальник маршрутів](./planner.md) | Без входу |
 | [Шари погоди](./web-weather.md) | Без входу |
 | [Налаштування](./web-map.md#settings) | Без входу |
-| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Улюблені місця](./web-map.md#favorites), [Треки](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([Рельєф](./web-map.md#terrain))| <ProFeature/> |
-| [Синхронізація OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Веб-пошук, популярні місця](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) or <ProFeature/> |
-| [Папки треків та шар](./web-tracks.md) | <ProFeature/> |
+| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Улюблені місця](./web-map.md#favorites), [Треки](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([Рельєф](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Синхронізація OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Веб-пошук, популярні місця](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Папки треків та шар](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.

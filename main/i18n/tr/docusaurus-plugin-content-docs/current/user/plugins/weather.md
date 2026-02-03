@@ -1,5 +1,5 @@
 ---
-source-hash: e4e558095bec4b84738b88edc8b62c95c94dec6c02803344bb5fccb2d6f00e34
+source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
 sidebar_position: 17
 title: Hava Durumu
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd uygulamasındaki etkileşimli hava durumu harita katmanları, şehrinizdeki veya etkileşimli bir küresel harita üzerindeki herhangi bir konumdaki sıcaklığı, atmosfer basıncını, bulutluluğu, rüzgar hızını ve yağışı izlemenizi sağlar. Hava Durumu eklentisi, doğrudan OsmAnd haritası üzerinde 7 gün öncesine kadar saatlik hava durumu tahminleri sunar. Hava durumu bilgileri çevrimdışı kullanım için de indirilebilir.  
 
-Hava Durumu eklentisinin veri kaynağı, Amerika Birleşik Devletleri Ulusal Hava Servisi (NWS) tarafından işletilen [Küresel Tahmin Sistemi](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) ve Avrupa Orta Vadeli Hava Tahminleri Merkezi ([ECMWF](https://www.ecmwf.int/))'dir.  
+Hava Durumu eklentisinin veri kaynağı, Amerika Birleşik Devletleri Ulusal Hava Servisi (NWS) tarafından işletilen [Global Forecast System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) ve Avrupa Orta Vadeli Hava Tahminleri Merkezi ([ECMWF](https://www.ecmwf.int/))'dir.  
 
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
@@ -101,9 +101,9 @@ Hava Durumu ekranında verileri görüntülemek için OsmAnd'ın hangi hava duru
 
 İki hava durumu tahmin sağlayıcısı desteklenir:
 
-[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Küresel Tahmin Sistemi)** – NOAA/NWS tarafından işletilen varsayılan kaynak. Sıcaklık, basınç, nem, rüzgar ve bulut katmanları dahil tam hava durumu verileri sağlar.
+[**GFS**](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) **(Global Forecast System)** – NOAA/NWS tarafından işletilen varsayılan kaynak. Sıcaklık, basınç, nem, rüzgar ve bulut katmanları dahil tam hava durumu verileri sağlar.
 
-[**ECMWF**](https://www.ecmwf.int/) **(Avrupa Orta Vadeli Hava Tahminleri Merkezi)** – alternatif tahmin kaynağı. Yüksek kaliteli sıcaklık, yağış ve basınç verileri sunar ancak rüzgar veya bulut bilgisi sağlamaz. ECMWF kullanıldığında, mevcut olmayan parametreler “–” olarak görüntülenir ve ilgili hava durumu katmanları devre dışı görünür.
+[**ECMWF**](https://www.ecmwf.int/) **(European Centre for Medium-Range Weather Forecasts)** – alternatif tahmin kaynağı. Yüksek kaliteli sıcaklık, yağış ve basınç verileri sunar ancak rüzgar veya bulut bilgisi sağlamaz. ECMWF kullanıldığında, mevcut olmayan parametreler “–” olarak görüntülenir ve ilgili hava durumu katmanları devre dışı görünür.
 
 Veri Kaynağının Hava Durumu Görüntülemeyi Etkileme Şekli:
 - Harita, grafikler, zaman çizelgesi ve ekrandaki hava durumu değerleri kaynak değiştirildikten hemen sonra güncellenir.
@@ -171,7 +171,7 @@ OsmAnd'ın iOS sürümünde, gerekli harita katmanının simgesine uzun dokunuş
 
 ### Hava Durumu Katmanları {#weather-layers}
 
-Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzerinde hava durumu katmanlarını görmek için uzaklaştırmanız gerekir, bunlar yalnızca 2-12 yakınlaştırma ölçeklerinde mevcuttur. Hava durumu katmanları, haritayı renklendirmek için [hava durumu paletlerini](../personal/color-palette-schemes.md#weather) kullanır, bu paletler gerekirse [değiştirilebilir](../personal/color-palette-schemes.md#edit-palette-file).
+Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzerinde hava durumu katmanlarını görmek için uzaklaştırmanız gerekir, bunlar yalnızca 2-12 yakınlaştırma ölçeklerinde mevcuttur. Hava durumu katmanları, haritayı renklendirmek için [hava durumu paletlerini](../personal/color-palette-schemes.md#weather) kullanır, bu paletler gerekirse [değiştirilebilir](../personal/color-palette-schemes.md#palette-modify).
 
 | |  
 |------------|  

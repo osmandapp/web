@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title: Rota Planla
 ---
@@ -117,6 +117,13 @@ Mevcut bir izde [Yükseklik verileri](../map/tracks/track-context-menu.md#calcul
 - [Yakındaki yolları kullanın](#attach-track-to-roads). Bu mod, bir iz oluşturmak için en yakın yolları bulmak için çevrimdışı haritaları kullanır, böylece yükseklik verileri bağlı yollardan alınır. İzin geometrisi ayarlanabilir.  
 - [Arazi haritalarını kullanın](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Modu, Arazi harita verilerine (3D) göre rakımı hesaplar. Cihazınız tarafından kaydedilen rakımlar arasındaki fark, yükseklik düzeltmesi için kullanılabilir. İzin geometrisi değişmeden kalır.
 
+:::note
+
+**Çevrimiçi yükseklik düzeltmesi** (sunucu tabanlı) son OsmAnd sürümlerinde kaldırıldı ve kullanılamıyor.  
+Eski sürümler için, kullanımdan kaldırıldı ve güvenilmezdi.  
+Bunun yerine çevrimdışı seçenekleri kullanın: yollara bağla veya Arazi haritaları (Pro).  
+
+:::
 
 ### İzi Yollara Bağla {#attach-track-to-roads}
 

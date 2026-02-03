@@ -1,5 +1,5 @@
 ---
-source-hash: e175b4348c1413c15e33f549f53698ae0970ca70deb9fd83602a6d9dbda79e15
+source-hash: aaf7d9c6d462de7afade9c84369e13feccd279a0012dfa5b0a55a376ca429326
 sidebar_position: 1
 title:  Планування маршруту
 ---
@@ -117,6 +117,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Використовувати прилеглі дороги](#attach-track-to-roads). Цей режим використовує офлайн-карти для пошуку найближчих доріг для побудови треку, тому дані про висоту будуть отримані з прив'язаних доріг. Геометрію треку можна коригувати.  
 - [Використовувати карти рельєфу](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Режим розраховує висоту на основі даних карти рельєфу (3D). Різниця між висотами, записаними вашим пристроєм, може бути використана для корекції висоти.  Геометрія треку залишається незмінною.
 
+:::note
+
+**Онлайн-корекція висоти** (на основі сервера) була видалена в останніх версіях OsmAnd і недоступна.  
+Для старіших версій вона була застарілою та ненадійною.  
+Використовуйте автономні опції: прив'язка до доріг або карти рельєфу (Pro).  
+
+:::
 
 ### Прив'язка треку до доріг {#attach-track-to-roads}
 
@@ -177,7 +184,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Планування маршруту Android обрані](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Планування маршруту Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Планування маршруту обрані Android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Додати*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
 

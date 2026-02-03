@@ -1,5 +1,5 @@
 ---
-source-hash: a52737232a71758590dfdb7cfbb68622999fbec373babd2b56b429093731d394
+source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
 sidebar_position: 1
 sidebar_label: Giriş
 title: Web Planlayıcıya Giriş
@@ -26,9 +26,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Android ve iOS için OsmAnd'ın çapraz platform arkadaşı olarak tasarlanan Web Portalı, kullanıcıların bir uygulama yüklemeden herhangi bir masaüstü veya tablet tarayıcısını kullanarak gezileri planlamasına, parkurları analiz etmesine, araziyi görüntülemesine ve dosyaları yönetmesine yardımcı olur.
 
-OsmAnd Web, favorileri, parkurları ve yedeklemeleri cihazlar ve platformlar arasında senkronize etmeyi sağlayan **OsmAnd Cloud** hizmetiyle sıkı bir şekilde entegre olur. **OsmAnd Start** (ücretsiz) veya **OsmAnd Pro** (ücretli) hesapları olan kullanıcılar, mobil ve web arasında veri senkronizasyonu yaparak bu ekosistemden tam olarak yararlanabilirler. *Start* ve *Pro* özelliklerinin ayrıntılı bir karşılaştırmasını aşağıda [Abonelik Erişimi](#subscription-access) bölümünde bulabilirsiniz.
+OsmAnd Web, favorileri, parkurları ve yedeklemeleri cihazlar ve platformlar arasında senkronize etmeyi sağlayan **OsmAnd Cloud** hizmetiyle sıkı bir şekilde entegre olur. **OsmAnd Start** (ücretsiz) veya **OsmAnd Pro** (ücretli) hesapları olan kullanıcılar, mobil ve web arasında veri senkronizasyonu yaparak bu ekosistemden tam olarak yararlanabilirler. *Start* ve *Pro* özelliklerinin ayrıntılı bir karşılaştırmasını aşağıda [Abonelik Erişimi](#subscription-accesses) bölümünde bulabilirsiniz.
 
-> **Not:** Giriş yapmasanız veya hesabınızı doğrulamasanız bile, birkaç temel Web Harita Portalı özelliğini kullanabilirsiniz; bunlar arasında: [Navigasyon Rotası](./planner.md), [Rota Planlayıcı](./planner.md), [Hava durumu katmanları](./web-map.md#weather-on-the-web) ve [Ayarlar](#settings) bulunur.
+> **Not:** Giriş yapmasanız veya hesabınızı doğrulamasanız bile, birkaç temel Web Harita Portalı özelliğini kullanabilirsiniz; bunlar arasında: [Navigasyon Rotası](./web-navigation.md), [Rota Planlayıcı](./planner.md), [Hava durumu katmanları](./web-weather.md#) ve [Ayarlar](./web-map.md#settings) bulunur.
 
 <!--
 After the structure of this section is approved, some links should be updated.
@@ -41,7 +41,7 @@ Web Portalı, tarayıcıda haritalar ve kişisel verilerle çalışmak için aş
 - [Harita](./web-map.md), küresel kapsama alanı ve yüksek kaliteli vektör verileriyle.
 - [Rota planlama](./planner.md), yaya, araba, bisiklet ve diğer profiller kullanılarak.
 - [Navigasyon](./planner.md), adım adım talimatlarla önizleme.
-- [Arama](./web-search.md) ve [yakınlardaki popüler yerleri keşfetme](./web-search.md#explore).
+- [Arama](./web-search.md) ve [keşfetme](./web-search.md#explore) yakınlardaki popüler yerleri.
 - Haritada [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks) ve [POI'ler](./web-map.md#poi-overlay) gösterimi.
 - [Hava durumu katmanları](./web-weather.md): rüzgar, sıcaklık ve basınç.
 - [Arazi katmanları](./web-map.md#terrain): gölgelendirme, eğimler ve yükseklik görünümü.
@@ -67,11 +67,11 @@ Web Harita Portalı, giriş yapmadan, OsmAnd Start ile ve OsmAnd Pro ile olmak �
 | [Rota Planlayıcı](./planner.md) | Giriş Yapmadan |
 | [Hava Durumu Katmanları](./web-weather.md) | Giriş Yapmadan |
 | [Ayarlar](./web-map.md#settings) | Giriş Yapmadan |
-| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([POI'ler](./web-map.md#poi-overlay), [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/blog/start) veya <ProFeature/> |
-| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([Arazi](./web-map.md#terrain))| <ProFeature/> |
-| [OsmAnd Cloud Senkronizasyonu](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/blog/start) veya <ProFeature/> |
-| [Web Arama, Popüler Yerler](./web-search.md) | [OsmAnd Start](https://osmand.net/blog/start) veya <ProFeature/> |
-| [Parkur klasörleri ve Katman](./web-tracks.md) | <ProFeature/> |
+| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([POI'ler](./web-map.md#poi-overlay), [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) veya [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([Arazi](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Senkronizasyonu](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) veya [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Web Arama, Popüler Yerler](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) veya [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Parkur klasörleri ve Katman](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 
 <!--
 After the structure of this section is approved, some links should be updated.
