@@ -97,33 +97,35 @@
 }
 
 .openingHoursOpenIcon {
-    min-width: 24px !important;
-    max-width: 24px !important;
-    fill: #5baf3f !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
+    fill: #51A014 !important;
 }
 
 .openingHoursClosedIcon {
-    min-width: 24px !important;
-    max-width: 24px !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
     fill: #e71d36 !important;
 }
 .openingHoursOpenText {
-    color: #5baf3f;
+    color: #51A014 !important;
     font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
 }
 
 .openingHoursClosedText {
-    color: #e71d36;
+    color: #e71d36 !important;
     font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
 }
 
-.distanceInfo {
-    display: inline-flex;
-    gap: 4px;
+.directionIcon {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+    margin-right: 5px !important;
 }
 
 .placeDistance {
@@ -131,4 +133,14 @@
     color: #727272;
     font-size: 14px !important;
     font-weight: 400 !important;
+}
+
+.placeAddress {
+    font-family: Roboto !important;
+    color: #727272;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    display: inline-block !important;
+    padding-left: 22px !important;
+    text-indent:  -22px !important;
 }

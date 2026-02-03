@@ -804,7 +804,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return (
             <Box className={styles.wptCategory}>
                 <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
-                    <Typography id={'se-wpt-address'} className={styles.wptCategoryText}>
+                    <Typography id={'se-wpt-address'} className={wptStyles.placeAddress}>
                         {distanceInfo.distance && (
                             <DistanceInfo
                                 distance={distanceInfo.distance}

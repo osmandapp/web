@@ -24,12 +24,9 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
     }
 
     return (
-        <span className={styles.distanceInfo}>
-            <DirectionIcon
+        <>
+            <DirectionIcon className={styles.directionIcon}
                 style={{
-                    width: '16px',
-                    height: '16px',
-                    flexShrink: 0,
                     transform: `rotate(${bearing ?? 0}deg)`,
                     transformOrigin: 'center',
                     fill: isUserLocation ? '#237bff' : '#727272',
@@ -44,6 +41,6 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
             >
                 {addDistance()}
             </span>
-        </span>
+        </>
     );
 }
