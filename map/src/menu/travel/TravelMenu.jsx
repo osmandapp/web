@@ -3,6 +3,7 @@ import {
     AppBar,
     Box,
     CircularProgress,
+    Collapse,
     IconButton,
     Slider,
     SvgIcon,
@@ -11,6 +12,8 @@ import {
     Toolbar,
     Typography,
 } from '@mui/material';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
@@ -35,6 +38,7 @@ import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
 import capitalize from 'lodash-es/capitalize';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
+import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
@@ -47,6 +51,7 @@ import {
     LARGE_UNIT,
 } from '../settings/units/UnitsConverter';
 import { apiGet } from '../../util/HttpApi';
+import ThickDivider from '../../frame/components/dividers/ThickDivider';
 
 export const ALL_YEARS = 'all';
 export const ACTIVITY_ALL = 'all';
@@ -88,6 +93,8 @@ export default function TravelMenu() {
 
     const [distanceSliderTouched, setDistanceSliderTouched] = useState(false);
     const [speedSliderTouched, setSpeedSliderTouched] = useState(false);
+    const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
+    const [showTagFilters, setShowTagFilters] = useState(true);
 
     useEffect(() => {
         const res = ctx.searchTravelRoutes?.res;
@@ -385,106 +392,141 @@ export default function TravelMenu() {
                                 my={'0px'}
                                 marginLeft={'250px'}
                             />
-                            <TagFilter
-                                selectedTags={selectedTags}
-                                onChangeTags={setSelectedTags}
-                                selectedYear={selectedYear}
-                                selectedActivity={selectedActivityType}
+                            <ThickDivider mt={16} />
+                            <SelectItemWithoutOptions
+                                title="Tag filters"
+                                onClick={() => setShowTagFilters(!showTagFilters)}
+                                endIcon={
+                                    showTagFilters ? (
+                                        <ExpandLessIcon sx={{ color: 'var(--text-secondary)' }} />
+                                    ) : (
+                                        <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} />
+                                    )
+                                }
+                                showValue={false}
                             />
-                            <Box sx={{ mx: 2, mt: 1 }}>
-                                <ToggleButtonGroup
-                                    fullWidth
-                                    size="small"
-                                    className={styles.tagMatchToggleGroup}
-                                    exclusive
-                                    value={tagMatchMode}
-                                    onChange={(event, value) => {
-                                        if (value) {
-                                            setTagMatchMode(value);
-                                        }
-                                    }}
-                                >
-                                    <ToggleButton value={TAG_MATCH_MODES.OR}>Matches any tag</ToggleButton>
-                                    <ToggleButton value={TAG_MATCH_MODES.AND}>Contains all tags</ToggleButton>
-                                </ToggleButtonGroup>
-                            </Box>
-                            <Box className={styles.sliderContainer}>
-                                <div className={styles.sliderHeader}>
-                                    <Typography className={styles.sliderTitle}>Distance</Typography>
-                                    <Typography className={styles.sliderValue}>
-                                        {convertMeters(distanceRange[0], ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}{' '}
-                                        -{' '}
-                                        {convertMeters(distanceRange[1], ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}{' '}
-                                        {t(getLargeLengthUnit(ctx))}
-                                    </Typography>
-                                </div>
-                                <Slider
-                                    value={distanceRange}
-                                    onChange={(e, newValue) => {
-                                        setDistanceRange(newValue);
-                                        setDistanceSliderTouched(
-                                            newValue[0] !== minDistance || newValue[1] !== maxDistance
-                                        );
-                                    }}
-                                    min={minDistance}
-                                    max={maxDistance}
-                                    step={1000}
-                                    valueLabelDisplay="off"
-                                    sx={{
-                                        '& .MuiSlider-thumb': {
-                                            opacity: distanceSliderTouched ? 1 : 0.5,
-                                        },
-                                        '& .MuiSlider-track': {
-                                            opacity: distanceSliderTouched ? 1 : 0.5,
-                                        },
-                                    }}
+                            <Collapse in={showTagFilters}>
+                                <TagFilter
+                                    selectedTags={selectedTags}
+                                    onChangeTags={setSelectedTags}
+                                    selectedYear={selectedYear}
+                                    selectedActivity={selectedActivityType}
                                 />
-                                <div className={styles.sliderBounds}>
-                                    <Typography className={styles.sliderBoundValue}>
-                                        {convertMeters(minDistance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}
-                                    </Typography>
-                                    <Typography className={styles.sliderBoundValue}>
-                                        {convertMeters(maxDistance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}
-                                    </Typography>
-                                </div>
-                            </Box>
-                            <Box className={styles.sliderContainer}>
-                                <div className={styles.sliderHeader}>
-                                    <Typography className={styles.sliderTitle}>Speed</Typography>
-                                    <Typography className={styles.sliderValue}>
-                                        {convertSpeedMS(speedRange[0] / 3.6, ctx.unitsSettings.speed).toFixed(0)} -{' '}
-                                        {convertSpeedMS(speedRange[1] / 3.6, ctx.unitsSettings.speed).toFixed(0)}{' '}
-                                        {t(getSpeedUnit(ctx))}
-                                    </Typography>
-                                </div>
-                                <Slider
-                                    value={speedRange}
-                                    onChange={(e, newValue) => {
-                                        setSpeedRange(newValue);
-                                        setSpeedSliderTouched(newValue[0] !== minSpeed || newValue[1] !== maxSpeed);
-                                    }}
-                                    min={minSpeed}
-                                    max={maxSpeed}
-                                    step={1}
-                                    valueLabelDisplay="off"
-                                    sx={{
-                                        '& .MuiSlider-thumb': {
-                                            opacity: !speedSliderTouched ? 0.5 : 1,
-                                        },
-                                        '& .MuiSlider-track': {
-                                            opacity: !speedSliderTouched ? 0.5 : 1,
-                                        },
-                                    }}
-                                />
-                                <div className={styles.sliderBounds}>
-                                    <Typography className={styles.sliderBoundValue}>
-                                        {convertSpeedMS(minSpeed / 3.6, ctx.unitsSettings.speed).toFixed(0)}
-                                    </Typography>
-                                    <Typography className={styles.sliderBoundValue}>
-                                        {convertSpeedMS(maxSpeed / 3.6, ctx.unitsSettings.speed).toFixed(0)}
-                                    </Typography>
-                                </div>
-                            </Box>
+                                <Box sx={{ mx: 2, mt: 2, mb: 2 }}>
+                                    <ToggleButtonGroup
+                                        fullWidth
+                                        size="small"
+                                        className={styles.tagMatchToggleGroup}
+                                        exclusive
+                                        value={tagMatchMode}
+                                        onChange={(event, value) => {
+                                            if (value) {
+                                                setTagMatchMode(value);
+                                            }
+                                        }}
+                                    >
+                                        <ToggleButton value={TAG_MATCH_MODES.OR}>Matches any tag</ToggleButton>
+                                        <ToggleButton value={TAG_MATCH_MODES.AND}>Contains all tags</ToggleButton>
+                                    </ToggleButtonGroup>
+                                </Box>
+                            </Collapse>
+                            <ThickDivider mt={0} />
+                            <SelectItemWithoutOptions
+                                title="Advanced filters"
+                                onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
+                                endIcon={
+                                    showAdvancedFilters ? (
+                                        <ExpandLessIcon sx={{ color: 'var(--text-secondary)' }} />
+                                    ) : (
+                                        <ExpandMoreIcon sx={{ color: 'var(--text-secondary)' }} />
+                                    )
+                                }
+                                showValue={false}
+                            />
+                            <Collapse in={showAdvancedFilters}>
+                                <Box className={styles.sliderContainer}>
+                                    <div className={styles.sliderHeader}>
+                                        <Typography className={styles.sliderTitle}>Distance</Typography>
+                                        <Typography className={styles.sliderValue}>
+                                            {convertMeters(distanceRange[0], ctx.unitsSettings.len, LARGE_UNIT).toFixed(
+                                                0
+                                            )}{' '}
+                                            -{' '}
+                                            {convertMeters(distanceRange[1], ctx.unitsSettings.len, LARGE_UNIT).toFixed(
+                                                0
+                                            )}{' '}
+                                            {t(getLargeLengthUnit(ctx))}
+                                        </Typography>
+                                    </div>
+                                    <Slider
+                                        value={distanceRange}
+                                        onChange={(e, newValue) => {
+                                            setDistanceRange(newValue);
+                                            setDistanceSliderTouched(
+                                                newValue[0] !== minDistance || newValue[1] !== maxDistance
+                                            );
+                                        }}
+                                        min={minDistance}
+                                        max={maxDistance}
+                                        step={1000}
+                                        valueLabelDisplay="off"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                opacity: distanceSliderTouched ? 1 : 0.5,
+                                            },
+                                            '& .MuiSlider-track': {
+                                                opacity: distanceSliderTouched ? 1 : 0.5,
+                                            },
+                                        }}
+                                    />
+                                    <div className={styles.sliderBounds}>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {convertMeters(minDistance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}
+                                        </Typography>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {convertMeters(maxDistance, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)}
+                                        </Typography>
+                                    </div>
+                                </Box>
+                                <Box className={styles.sliderContainer}>
+                                    <div className={styles.sliderHeader}>
+                                        <Typography className={styles.sliderTitle}>Speed</Typography>
+                                        <Typography className={styles.sliderValue}>
+                                            {convertSpeedMS(speedRange[0] / 3.6, ctx.unitsSettings.speed).toFixed(0)} -{' '}
+                                            {convertSpeedMS(speedRange[1] / 3.6, ctx.unitsSettings.speed).toFixed(0)}{' '}
+                                            {t(getSpeedUnit(ctx))}
+                                        </Typography>
+                                    </div>
+                                    <Slider
+                                        value={speedRange}
+                                        onChange={(e, newValue) => {
+                                            setSpeedRange(newValue);
+                                            setSpeedSliderTouched(newValue[0] !== minSpeed || newValue[1] !== maxSpeed);
+                                        }}
+                                        min={minSpeed}
+                                        max={maxSpeed}
+                                        step={1}
+                                        valueLabelDisplay="off"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                opacity: !speedSliderTouched ? 0.5 : 1,
+                                            },
+                                            '& .MuiSlider-track': {
+                                                opacity: !speedSliderTouched ? 0.5 : 1,
+                                            },
+                                        }}
+                                    />
+                                    <div className={styles.sliderBounds}>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {convertSpeedMS(minSpeed / 3.6, ctx.unitsSettings.speed).toFixed(0)}
+                                        </Typography>
+                                        <Typography className={styles.sliderBoundValue}>
+                                            {convertSpeedMS(maxSpeed / 3.6, ctx.unitsSettings.speed).toFixed(0)}
+                                        </Typography>
+                                    </div>
+                                </Box>
+                            </Collapse>
+                            <ThickDivider mt={0} />
                             <Box sx={{ m: 2 }}>
                                 <PrimaryBtn
                                     action={showRoutes}
