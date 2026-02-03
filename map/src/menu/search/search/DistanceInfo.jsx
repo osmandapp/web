@@ -8,9 +8,9 @@ import AppContext from '../../../context/AppContext';
 export default function DistanceInfo({ distance, bearing, isUserLocation }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-
+    const DISTANCE_THRESHOLD_LARGE_UNIT = 1000;
+    
     function addDistance() {
-        const DISTANCE_THRESHOLD_LARGE_UNIT = 1000;
         if (!distance) return '';
         if (distance < DISTANCE_THRESHOLD_LARGE_UNIT) {
             return `${convertMeters(distance, ctx.unitsSettings.len).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`;

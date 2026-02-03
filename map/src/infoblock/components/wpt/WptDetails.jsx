@@ -805,6 +805,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             <Box className={styles.wptCategory}>
                 <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
                     <Typography id={'se-wpt-address'} className={styles.wptCategoryText}>
+                        {distanceInfo.distance && (
+                            <DistanceInfo
+                                distance={distanceInfo.distance}
+                                bearing={distanceInfo.bearing}
+                                isUserLocation={true}
+                            />
+                        )}
+                        {distanceInfo.distance && wpt?.address && (
+                            <span style={{ whiteSpace: 'pre' }}> · </span>
+                        )}
                         {wpt.address}
                     </Typography>
                 </ListItemText>
@@ -944,41 +954,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             </Box>
                             {wpt?.category && <WptCategory />}
                             {wpt?.openingHours && <WptOpeningHours />}
-                            {(distanceInfo.distance || wpt?.address) && (
-                                <Box className={styles.wptCategory}>
-                                    <ListItemText
-                                        onClick={() => ctx.setZoomToCoords(wpt.latlon)}
-                                        sx={{ cursor: 'pointer' }}
-                                    >
-                                        <Typography
-                                            id={'se-wpt-address'}
-                                            className={styles.wptCategoryText}
-                                            component="div"
-                                        >
-                                            {distanceInfo.distance && (
-                                                <>
-                                                    <DistanceInfo
-                                                        distance={distanceInfo.distance}
-                                                        bearing={distanceInfo.bearing}
-                                                        isUserLocation={true}
-                                                    />
-                                                    {distanceInfo.distance && wpt?.address && (
-                                                        <span style={{ whiteSpace: 'pre' }}> · </span>
-                                                    )}
-                                                    {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND && wpt.address}
-                                                </>
-                                            )}
-                                            {!distanceInfo.distance &&
-                                                wpt?.address &&
-                                                wpt?.address !== ADDRESS_NOT_FOUND &&
-                                                wpt.address}
-                                            {wpt?.address !== ADDRESS_NOT_FOUND && !wpt?.address && (
-                                                <CircularProgress sx={{ ml: 2 }} size={19} />
-                                            )}
-                                        </Typography>
-                                    </ListItemText>
-                                </Box>
-                            )}
+                            {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
+                                <WptAddress />
+                            ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
+                                <CircularProgress sx={{ ml: 2 }} size={19} />
+                            ) : null}
                             {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                             {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                             {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
