@@ -223,7 +223,7 @@ export default function MainMenu({
 
     useEffect(() => {
         if (ltx.loginUser && redirectUrl) {
-            window.location.href = redirectUrl;
+            globalThis.location.href = redirectUrl;
         }
     }, [ltx.loginUser]);
 
@@ -775,7 +775,7 @@ export default function MainMenu({
         if (currentMenu && menuInfo) {
             if (currentMenu.type === OBJECT_TYPE_CLOUD_TRACK) {
                 // not to navigate to the track menu if the track info is opened
-                const currentUrl = location.href;
+                const currentUrl = globalThis.location.href;
                 if (currentUrl.includes(INFO_MENU_URL)) {
                     return;
                 }
