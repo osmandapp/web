@@ -11,7 +11,7 @@ import { createShareLocations, directionFrom, directionTo } from './locationActi
 import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { LatLng } from 'leaflet';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, POI_URL } from '../../../../manager/GlobalManager';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../../../../frame/components/btns/BlueBtn';
 import LoginContext from '../../../../context/LoginContext';
 
@@ -21,6 +21,7 @@ export default function PoiActionsButtons({ wpt }) {
     const { t } = useTranslation();
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const hasPoiTags = wpt.type.isPoi || wpt.type.isSearch || (wpt?.type.isWikiPoi && ctx.selectedWpt?.poi);
     const lat = wpt.latlon?.lat;
@@ -28,17 +29,17 @@ export default function PoiActionsButtons({ wpt }) {
 
     function addToFavorite() {
         if (ltx.loginUser) {
-            const location =
+            const loc =
                 ctx.selectedWpt?.poi?.latlng ??
                 new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);
             ctx.setAddFavorite({
                 ...ctx.addFavorite,
                 poi: ctx.selectedWpt?.poi,
                 address: wpt.address,
-                location,
+                location: loc,
             });
         } else {
-            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
+            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);
         }
     }
 

@@ -81,7 +81,7 @@ export default function LoginMenu() {
             ltx.setLoginUser(null);
             ltx.setLoginError('You are logged out by server!');
             window.location.hash = ''; // useLocation() is read-only
-            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
+            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.hash);
             ltx.setOpenLoginMenu(true);
         }
     }, [location.hash]);

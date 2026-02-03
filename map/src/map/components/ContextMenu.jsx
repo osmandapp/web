@@ -69,7 +69,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     };
 
     const openLogin = () => {
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);
     };
 
     const routeObject = ctx.routeObject;

@@ -11,7 +11,7 @@ import { createShareLocations, directionFrom, directionTo } from './locationActi
 import { ADDRESS_NOT_FOUND } from '../WptDetails';
 import { LatLng } from 'leaflet';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../../manager/GlobalManager';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../../../../frame/components/btns/BlueBtn';
 import LoginContext from '../../../../context/LoginContext';
 
@@ -21,25 +21,26 @@ export default function TransportStopActionsButtons({ wpt }) {
     const { t } = useTranslation();
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const lat = wpt.latlon?.lat;
     const lon = wpt.latlon?.lon;
 
     function addToFavorite() {
         if (ltx.loginUser) {
-            const location = lat && lon ? new LatLng(lat, lon) : null;
-            if (location) {
+            const loc = lat && lon ? new LatLng(lat, lon) : null;
+            if (loc) {
                 ctx.setAddFavorite({
                     ...ctx.addFavorite,
                     poi: {
                         name: wpt.name || '',
                     },
                     address: wpt.address,
-                    location,
+                    location: loc,
                 });
             }
         } else {
-            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
+            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);
         }
     }
 

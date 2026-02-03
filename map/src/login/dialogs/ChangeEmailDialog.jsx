@@ -7,7 +7,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import AccountManager from '../../manager/AccountManager';
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
@@ -15,6 +15,7 @@ import LoginContext from '../../context/LoginContext';
 export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
     const ltx = useContext(LoginContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const { i18n } = useTranslation();
     const lang = i18n.language;
@@ -155,7 +156,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                                     setEmailChanged(false);
                                     ltx.setLoginUser(null);
                                     ltx.setEmailCookie('');
-                                    navigate('/map/' + window.location.search + window.location.hash);
+                                    navigate('/map/' + location.search + location.hash);
                                 }}
                             >
                                 <Close fontSize="small" />

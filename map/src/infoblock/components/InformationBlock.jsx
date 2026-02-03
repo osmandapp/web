@@ -34,7 +34,7 @@ import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { encodeString } from '../../util/Utils';
 import { navigateToFavoritesMenu } from '../../manager/FavoritesManager';
 import LoginContext from '../../context/LoginContext';
@@ -69,6 +69,7 @@ export default function InformationBlock({
     const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
+    const location = useLocation();
     const { updateQueryParam } = useUpdateQueryParam();
 
     const [value, setValue] = useState('general');
@@ -151,7 +152,7 @@ export default function InformationBlock({
                 {
                     pathname:
                         MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)),
-                    hash: window.location.hash,
+                    hash: location.hash,
                 },
                 { replace: true }
             );
@@ -417,7 +418,7 @@ export default function InformationBlock({
 
                                                 navigate({
                                                     pathname: MAIN_URL_WITH_SLASH + trackType,
-                                                    hash: window.location.hash,
+                                                    hash: location.hash,
                                                 });
                                             } else if (isLocalTrack(ctx)) {
                                                 if (!isEmpty(ctx.selectedGpxFile)) {
