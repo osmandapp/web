@@ -229,7 +229,7 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
                 />
                 <ThickDivider />
                 <Box>
-                    <SubTitleMenu text={'Users'} />
+                    <SubTitleMenu text={t('web:share_users')} />
                     {selectedShareType.key === shareTypes.request.key && (
                         <Box sx={{ mx: 2 }}>
                             <ToggleButtonGroup

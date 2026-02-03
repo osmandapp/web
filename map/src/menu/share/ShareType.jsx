@@ -5,8 +5,10 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import React, { useRef, useState } from 'react';
 import ActionsMenu from '../actions/ActionsMenu';
 import DeleteShareFileDialog from './DeleteShareFileDialog';
+import { useTranslation } from 'react-i18next';
 
 export default function ShareType({ selectedShareType, setSelectedShareType, shareTypes }) {
+    const { t } = useTranslation();
     const anchorEl = useRef(null);
     const [openShareTypesMenu, setOpenShareTypesMenu] = useState(false);
     const [openDeleteShareFileDialog, setOpenDeleteShareFileDialog] = useState(false);
@@ -30,11 +32,11 @@ export default function ShareType({ selectedShareType, setSelectedShareType, sha
                         <div
                             style={{
                                 display: 'flex',
-                                alignItems: 'center',
-                            }}
-                        >
-                            <Typography className={styles.shareTypeText}>Access</Typography>
-                        </div>
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Typography className={styles.shareTypeText}>{t('web:share_access')}</Typography>
+                    </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <Typography
                                 id={`se-share-type-${selectedShareType.name}`}
