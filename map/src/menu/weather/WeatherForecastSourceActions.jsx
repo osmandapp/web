@@ -37,7 +37,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
         if (selectedType !== null && selectedType !== ctx.weatherType) {
             localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
             ctx.setWeatherType(selectedType);
-            updateQueryParam(FORECAST_SOURCE_PARAM, selectedType);
+            updateQueryParam({ key: FORECAST_SOURCE_PARAM, value: selectedType });
             ctx.setForecastLoading(true);
             if (setOpenActions) {
                 setOpenActions(false);

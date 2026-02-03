@@ -395,7 +395,7 @@ export default function InformationBlock({
                                                 }
                                                 if (ctx.currentObjectType === OBJECT_TYPE_TRAVEL) {
                                                     ctx.setSelectedTravelRoute(null);
-                                                    updateQueryParam(TRAVEL_ROUTE_ID_PARAM, null);
+                                                    updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: null });
                                                 }
                                                 ctx.setCurrentObjectType(null);
                                             }

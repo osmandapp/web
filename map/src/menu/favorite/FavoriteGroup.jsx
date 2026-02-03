@@ -63,12 +63,12 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         if (!sharedFile) {
-                            updateQueryParam(
-                                FAVORITES_URL_PARAM_FOLDER,
-                                group.name,
-                                MAIN_URL_WITH_SLASH + FAVORITES_URL,
-                                { replace: false }
-                            );
+                            updateQueryParam({
+                                key: FAVORITES_URL_PARAM_FOLDER,
+                                value: group.name,
+                                expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                                replace: false,
+                            });
                         }
                         ctx.setZoomToFavGroup(group.id);
                     }

@@ -6,7 +6,7 @@ export function useUpdateQueryParam() {
     const location = useLocation();
     const [searchParams] = useSearchParams();
 
-    const updateQueryParam = (key, value, expectedLocation = undefined, { replace = true } = {}) => {
+    const updateQueryParam = ({ key, value, expectedLocation = undefined, replace = true }) => {
         if (expectedLocation && expectedLocation !== location.pathname) {
             return;
         }

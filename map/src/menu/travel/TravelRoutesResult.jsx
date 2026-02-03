@@ -39,7 +39,7 @@ const TravelRoute = ({ route }) => {
     function openRouteInfo(route) {
         ctx.setSelectedTravelRoute({ route, show: true });
         if (route?.properties?.id != null) {
-            updateQueryParam(TRAVEL_ROUTE_ID_PARAM, String(route.properties.id));
+            updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(route.properties.id) });
         }
     }
 

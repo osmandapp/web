@@ -289,7 +289,7 @@ export default function TravelLayer() {
         });
         if (response?.data) {
             if (addParam) {
-                updateQueryParam(TRAVEL_ROUTE_ID_PARAM, String(id));
+                updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(id) });
             }
             const route = createRoute(response.data);
             route.track = response.data;

@@ -196,7 +196,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 onClick={() => {
                     setCurrentWeatherType(item.key);
                     setCurrentWeatherUnits(item.units);
-                    updateQueryParam(FORECAST_TYPE_PARAM, item.key);
+                    updateQueryParam({ key: FORECAST_TYPE_PARAM, value: item.key });
                     openWeatherForecastDetails(ctx, item.key, ctx.weatherType);
                 }}
             />
