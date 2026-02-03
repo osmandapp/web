@@ -69,13 +69,13 @@ const TravelRoute = ({ route }) => {
                     <ListItemText>
                         <MenuItemWithLines name={route.properties.description} maxLines={1} />
                         <Typography variant="body2" className={styles.groupInfo} noWrap>
-                            {route.properties.dist
+                            {Number.isFinite(route.properties.dist)
                                 ? `${convertMeters(route.properties.dist, ctx.unitsSettings.len, LARGE_UNIT).toFixed(2)} ${t(getLargeLengthUnit(ctx))} · `
                                 : ''}
-                            {route.properties.speed
+                            {Number.isFinite(route.properties.speed)
                                 ? `${convertSpeedMS(route.properties.speed / 3.6, ctx.unitsSettings.speed).toFixed(0)} ${t(getSpeedUnit(ctx))} · `
                                 : ''}
-                            {route.properties.points ? `${route.properties.points}` : ''}
+                            {Number.isFinite(route.properties.points) ? `${route.properties.points}` : ''}
                         </Typography>
                         <Typography
                             variant="body2"

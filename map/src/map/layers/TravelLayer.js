@@ -297,7 +297,7 @@ export default function TravelLayer() {
             addDistance(track);
             ctx.setCurrentObjectType(OBJECT_TYPE_TRAVEL);
             const file = {
-                id: route.properties.id,
+                id,
                 name: route.properties.name,
                 description: route.properties.description,
                 date: route.properties.date,
@@ -389,7 +389,14 @@ export default function TravelLayer() {
         const minLon = bounds.getWest();
         const maxLon = bounds.getEast();
 
-        const { activity, year, tags, tagMatchMode = TAG_MATCH_MODES.OR } = ctx.searchTravelRoutes;
+        const {
+            activity,
+            year,
+            tags,
+            tagMatchMode = TAG_MATCH_MODES.OR,
+            distanceRange,
+            speedRange,
+        } = ctx.searchTravelRoutes;
         const body = {
             activity: activity === ACTIVITY_ALL ? undefined : activity,
             year: year === ALL_YEARS ? undefined : year,
@@ -399,6 +406,8 @@ export default function TravelLayer() {
             maxLon,
             tags: tags.length ? tags : undefined,
             tagMatchMode,
+            distanceRange,
+            speedRange,
         };
 
         const response = await apiPost(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, body, {
