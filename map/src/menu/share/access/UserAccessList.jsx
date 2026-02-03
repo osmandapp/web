@@ -44,18 +44,18 @@ export default function UserAccessList({ type, users, setForcedUpdate }) {
                                     style={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                }}
-                            >
-                                {type === PENDING_ACCESS_TYPE ? (
-                                    <Typography className={styles.shareTypeText}>
-                                        {t('web:share_no_new_requests')}
-                                    </Typography>
-                                ) : (
-                                    <Typography className={styles.shareTypeText}>
-                                        {t('web:share_no_blocked_users')}
-                                    </Typography>
-                                )}
-                            </div>
+                                    }}
+                                >
+                                    {type === PENDING_ACCESS_TYPE ? (
+                                        <Typography className={styles.shareTypeText}>
+                                            {t('web:share_no_new_requests')}
+                                        </Typography>
+                                    ) : (
+                                        <Typography className={styles.shareTypeText}>
+                                            {t('web:share_no_blocked_users')}
+                                        </Typography>
+                                    )}
+                                </div>
                             </div>
                         </ListItemText>
                     </MenuItem>

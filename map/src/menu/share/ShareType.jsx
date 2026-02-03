@@ -32,11 +32,11 @@ export default function ShareType({ selectedShareType, setSelectedShareType, sha
                         <div
                             style={{
                                 display: 'flex',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <Typography className={styles.shareTypeText}>{t('web:share_access')}</Typography>
-                    </div>
+                                alignItems: 'center',
+                            }}
+                        >
+                            <Typography className={styles.shareTypeText}>{t('web:share_access')}</Typography>
+                        </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <Typography
                                 id={`se-share-type-${selectedShareType.name}`}
