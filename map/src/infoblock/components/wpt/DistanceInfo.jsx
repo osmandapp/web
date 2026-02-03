@@ -25,7 +25,8 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
 
     return (
         <>
-            <DirectionIcon className={styles.directionIcon}
+            <DirectionIcon
+                className={styles.directionIcon}
                 style={{
                     transform: `rotate(${bearing ?? 0}deg)`,
                     transformOrigin: 'center',
