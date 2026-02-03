@@ -71,7 +71,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                 setCurrentLangLabel(getTransLanguage(lang));
             })();
         }
-        updateQueryParam(LANG_PARAM, null);
+        updateQueryParam({ key: LANG_PARAM, value: null });
     }, [searchParams]);
 
     const handleOpen = () => setOpenLang(true);

@@ -60,6 +60,8 @@ export const MENU_IDS = {
     travel: 'se-show-menu-travel',
 };
 
+export const isTravelPath = (pathname) => pathname?.includes(TRAVEL_URL);
+
 export function getUniqFileId(file) {
     return `_id_${file.name}_${file.userid}`;
 }

@@ -3,7 +3,7 @@ import { Alert, Box, Button, Dialog, Snackbar } from '@mui/material';
 import OsmAndMap from '../map/OsmAndMap';
 import MainMenu from '../menu/MainMenu';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import AppContext from '../context/AppContext';
+import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../context/AppContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../dialogs/GlobalConfirmationDialog';
 import HeaderMenu from './components/header/HeaderMenu';
@@ -17,6 +17,7 @@ import {
     MENU_INFO_OPEN_SIZE,
     POI_URL,
     STOP_URL,
+    isTravelPath,
 } from '../manager/GlobalManager';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import GlobalAlert from './components/GlobalAlert';
@@ -212,6 +213,21 @@ const GlobalFrame = () => {
             });
         }
     }, [location.pathname]);
+
+    useEffect(() => {
+        const routeId = searchParams.get(TRAVEL_ROUTE_ID_PARAM);
+        if (isTravelPath(location.pathname)) {
+            if (routeId) {
+                ctx.setTravelRouteIdByUrl(routeId);
+                ctx.setProcessingTravelRouteByUrl(true);
+                setShowInfoBlock(true);
+                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+            } else {
+                ctx.setTravelRouteIdByUrl(null);
+                ctx.setProcessingTravelRouteByUrl(false);
+            }
+        }
+    }, [location.pathname, location.search]);
 
     function mergeVisibleTracks(savedVisible, newVisFiles, newVisFilesNames, shared) {
         const filterCondition = (name) =>

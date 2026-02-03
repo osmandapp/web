@@ -27,6 +27,7 @@ import AppContext, {
     OBJECT_TRACK_ANALYZER,
     OBJECT_TYPE_NAVIGATION_ALONE,
     FAVORITES_URL_PARAM_FOLDER,
+    TRAVEL_ROUTE_ID_PARAM,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import VisibleTracks from './visibletracks/VisibleTracks';
@@ -69,6 +70,7 @@ import {
     VISIBLE_TRACKS_URL,
     WEATHER_URL,
     TRAVEL_URL,
+    isTravelPath,
     SHARE_FILE_MAIN_URL,
     TRACK_ANALYZER_URL,
     INFO_MENU_URL,
@@ -501,6 +503,11 @@ export default function MainMenu({
 
         if (selectedType === OBJECT_TYPE_TRAVEL) {
             ctx.setOpenTravel(true);
+            const savedTravelUrl = lastMenuUrlsRef.current[OBJECT_TYPE_TRAVEL];
+            if (savedTravelUrl?.includes(TRAVEL_ROUTE_ID_PARAM)) {
+                navigate(savedTravelUrl);
+                return;
+            }
         }
 
         ctx.setSearchSettings({
@@ -834,6 +841,8 @@ export default function MainMenu({
             } else if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !ctx.routeObject.isReady()) {
                 // special case for Navigation due to lazy-loading providers
                 targetUrl += window.location.search;
+            } else if (menu.type === OBJECT_TYPE_TRAVEL && isTravelPath(location.pathname) && location.search) {
+                targetUrl += location.search;
             }
 
             navigateIfChanged(targetUrl + location.hash);

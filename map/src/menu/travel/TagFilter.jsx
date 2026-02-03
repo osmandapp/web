@@ -3,8 +3,9 @@ import { Autocomplete, Box, Chip, TextField } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import { apiGet } from '../../util/HttpApi';
 import styles from './travel.module.css';
+import { ACTIVITY_ALL, ALL_YEARS } from './TravelMenu';
 
-export default function TagFilter({ selectedTags, onChangeTags }) {
+export default function TagFilter({ selectedTags, onChangeTags, selectedYear, selectedActivity }) {
     const ctx = useContext(AppContext);
 
     const [availableTags, setAvailableTags] = useState([]);
@@ -38,16 +39,25 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
             const minLon = bounds.getWest();
             const maxLon = bounds.getEast();
 
+            const params = {
+                minLat,
+                maxLat,
+                minLon,
+                maxLon,
+            };
+
+            if (selectedYear && selectedYear !== ALL_YEARS) {
+                params.year = selectedYear;
+            }
+            if (selectedActivity && selectedActivity !== ACTIVITY_ALL) {
+                params.activity = selectedActivity;
+            }
+
             setLoadingTags(true);
             try {
                 const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/tags`, {
                     apiCache: true,
-                    params: {
-                        minLat,
-                        maxLat,
-                        minLon,
-                        maxLon,
-                    },
+                    params,
                 });
                 if (response?.data) {
                     const data = response.data;
@@ -62,7 +72,7 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
         };
 
         fetchTags().then();
-    }, [ctx.visibleBounds]);
+    }, [ctx.visibleBounds, selectedYear, selectedActivity]);
 
     function generatePastelColor() {
         const hue = Math.floor(Math.random() * 360);
@@ -109,6 +119,18 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
         return base;
     }, [availableTags, selectedTags, tagInput]);
 
+    const noTagsAvailable = !loadingTags && availableTags.length === 0;
+
+    const getNoOptionsText = () => {
+        if (loadingTags) {
+            return 'Loading tags...';
+        }
+        if (availableTags.length === 0) {
+            return 'No tags found for current filters';
+        }
+        return 'No matching tags';
+    };
+
     return (
         <Box className={styles.tagFilterContainer}>
             <Autocomplete
@@ -146,8 +168,14 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
                     setTagInput('');
                 }}
                 loading={loadingTags}
+                noOptionsText={getNoOptionsText()}
+                disabled={noTagsAvailable}
                 renderInput={(params) => (
-                    <TextField {...params} placeholder="Type tag to filter" size="small" />
+                    <TextField
+                        {...params}
+                        placeholder={noTagsAvailable ? 'No tags available' : 'Type tag to filter'}
+                        size="small"
+                    />
                 )}
             />
             {selectedTags.length > 0 && (

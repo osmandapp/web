@@ -1,4 +1,4 @@
-import { AppBar, LinearProgress, Box, Typography, IconButton } from '@mui/material';
+import { AppBar, LinearProgress, Box, Typography, IconButton, CircularProgress } from '@mui/material';
 import AppContext, {
     isLocalTrack,
     OBJECT_TYPE_NAVIGATION_ALONE,
@@ -8,6 +8,8 @@ import AppContext, {
     isTrackAnalyzer,
     OBJECT_TYPE_STOP,
     OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_TRAVEL,
+    TRAVEL_ROUTE_ID_PARAM,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
@@ -36,6 +38,7 @@ import { useNavigate } from 'react-router-dom';
 import { encodeString } from '../../util/Utils';
 import { navigateToFavoritesMenu } from '../../manager/FavoritesManager';
 import LoginContext from '../../context/LoginContext';
+import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -66,6 +69,7 @@ export default function InformationBlock({
     const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
+    const { updateQueryParam } = useUpdateQueryParam();
 
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
@@ -189,12 +193,17 @@ export default function InformationBlock({
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
     useEffect(() => {
-        if ((!ctx.selectedGpxFile || isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
+        const keepOpen = ctx.processingTravelRouteByUrl;
+        if (
+            (!ctx.selectedGpxFile || isEmpty(ctx.selectedGpxFile)) &&
+            ctx.currentObjectType !== OBJECT_TYPE_WEATHER &&
+            !keepOpen
+        ) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowInfoBlock(false);
         } else {
-            if (!ctx.currentObjectType) {
+            if (!ctx.currentObjectType && !keepOpen) {
                 setTabsObj(null);
                 setShowInfoBlock(false);
             } else if (ctx.updateInfoBlock || !prevTrack || Object.keys(prevTrack).length === 0 || !showInfoBlock) {
@@ -384,6 +393,10 @@ export default function InformationBlock({
                                                 if (ctx.currentObjectType === OBJECT_TYPE_STOP) {
                                                     ctx.setSelectedTransportRoute(null);
                                                 }
+                                                if (ctx.currentObjectType === OBJECT_TYPE_TRAVEL) {
+                                                    ctx.setSelectedTravelRoute(null);
+                                                    updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: null });
+                                                }
                                                 ctx.setCurrentObjectType(null);
                                             }
                                             if (ctx.selectedGpxFile.mapObj) {
@@ -424,6 +437,9 @@ export default function InformationBlock({
                                         {ctx.selectedGpxFile.mapObj ? <CloseIcon /> : <BackIcon />}
                                     </IconButton>
                                 </Box>
+                                {ctx.processingTravelRouteByUrl && (
+                                    <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />
+                                )}
                                 {tabsObj && tabsObj.tabList.length > 0 && (
                                     <Box
                                         sx={{
