@@ -27,13 +27,13 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
         const VALID_CHARACTERS_REGEX = /^[a-zA-Z0-9_]+$/;
 
         if (!nickname || nickname.trim().length === 0) {
-            return 'User name cannot be empty.';
+            return t('web:share_user_name_empty_error');
         }
         if (nickname.length < MIN_LENGTH || nickname.length > MAX_LENGTH) {
-            return `User name must be between ${MIN_LENGTH} and ${MAX_LENGTH} characters.`;
+            return t('web:share_user_name_length_error', { replace: { '%1$d': MIN_LENGTH, '%2$d': MAX_LENGTH } });
         }
         if (!VALID_CHARACTERS_REGEX.test(nickname)) {
-            return 'User name contains invalid characters. Only Latin letters, digits, and underscores are allowed.';
+            return t('web:share_user_name_invalid_chars_error');
         }
         return '';
     };
@@ -72,7 +72,7 @@ export default function RequestAccessError({ sendRequest, userName, setUserName 
                     margin="dense"
                     onChange={handleChange}
                     id="username"
-                    label={'User name'}
+                    label={t('web:share_user_name')}
                     type="email"
                     fullWidth
                     variant="filled"

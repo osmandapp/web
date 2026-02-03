@@ -59,6 +59,17 @@
   "generate_link": "Link generieren",
   "empty_pending_share_list_desc": "Benutzer, die Zugriffsanfragen für diese Datei senden, werden hier angezeigt.",
   "empty_blocked_share_list_desc": "Sie können Benutzer aus der Liste „Genehmigt“ oder „Ausstehend“ blockieren.",
+  "share_users": "Benutzer",
+  "share_access": "Zugriff",
+  "share_change_access_private_desc": "Das Ändern des Status auf <strong>Privat</strong> hebt den Zugriff für alle Benutzer auf.",
+  "share_change_access_request_desc": "Um den Zugriff auf bestimmte Benutzer zu beschränken, ziehen Sie in Erwägung, zu <strong>Nur auf Anfrage</strong> zu wechseln.",
+  "share_no_new_requests": "Keine neuen Anfragen",
+  "share_no_blocked_users": "Keine blockierten Benutzer",
+  "share_requested": "Angefordert",
+  "share_user_name": "Benutzername",
+  "share_user_name_empty_error": "Benutzername darf nicht leer sein.",
+  "share_user_name_length_error": "Benutzername muss zwischen %1$d und %2$d Zeichen lang sein.",
+  "share_user_name_invalid_chars_error": "Benutzername enthält ungültige Zeichen. Nur lateinische Buchstaben, Ziffern und Unterstriche sind erlaubt.",
   "access_denied": "Zugriff verweigert",
   "access_denied_desc": "Der Eigentümer hat Ihre Zugriffsanfrage abgelehnt",
   "not_available": "Nicht verfügbar",
@@ -256,6 +267,6 @@
   "route_type_trolleybus": "Trolleybus",
   "route_type_subway": "U-Bahn",
   "sourceHash": {
-    "message": "6a8641c076d045930416938ead915707abe9ea4e40805247db915c5a26e84207"
+    "message": "1db3fbde6e63168a094b0c0b5b0801c504632effb384afb8635534ce4def1347"
   }
 }
