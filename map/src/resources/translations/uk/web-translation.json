@@ -59,6 +59,17 @@
   "generate_link": "Згенерувати посилання",
   "empty_pending_share_list_desc": "Користувачі, які надсилають запити на доступ до цього файлу, з'являться тут.",
   "empty_blocked_share_list_desc": "Ви можете блокувати користувачів зі списку 'Схвалені' або 'Очікують'.",
+  "share_users": "Користувачі",
+  "share_access": "Доступ",
+  "share_change_access_private_desc": "Зміна статусу на <strong>Приватний</strong> скасує доступ для всіх користувачів.",
+  "share_change_access_request_desc": "Щоб обмежити доступ для конкретних користувачів, розгляньте можливість переключення на <strong>Лише за запитом</strong>.",
+  "share_no_new_requests": "Немає нових запитів",
+  "share_no_blocked_users": "Немає заблокованих користувачів",
+  "share_requested": "Запрошено",
+  "share_user_name": "Ім'я користувача",
+  "share_user_name_empty_error": "Ім'я користувача не може бути порожнім.",
+  "share_user_name_length_error": "Ім'я користувача повинно містити від %1$d до %2$d символів.",
+  "share_user_name_invalid_chars_error": "Ім'я користувача містить недопустимі символи. Дозволені лише латинські літери, цифри та підкреслення.",
   "access_denied": "Доступ заборонено",
   "access_denied_desc": "Власник відхилив ваш запит на доступ",
   "not_available": "Недоступно",
@@ -256,6 +267,6 @@
   "route_type_trolleybus": "Тролейбус",
   "route_type_subway": "Метро",
   "sourceHash": {
-    "message": "6a8641c076d045930416938ead915707abe9ea4e40805247db915c5a26e84207"
+    "message": "1db3fbde6e63168a094b0c0b5b0801c504632effb384afb8635534ce4def1347"
   }
 }

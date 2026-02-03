@@ -293,7 +293,7 @@ export default function TrackAnalyzerMenu() {
         const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-tracks-by-seg`, request, {
             apiCache: true,
         });
-        if (response.ok) {
+        if (response?.ok) {
             const text = await response.text();
             return JSON.parse(quickNaNfix(text));
         }

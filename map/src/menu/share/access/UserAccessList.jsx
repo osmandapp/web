@@ -47,9 +47,13 @@ export default function UserAccessList({ type, users, setForcedUpdate }) {
                                     }}
                                 >
                                     {type === PENDING_ACCESS_TYPE ? (
-                                        <Typography className={styles.shareTypeText}>No new requests</Typography>
+                                        <Typography className={styles.shareTypeText}>
+                                            {t('web:share_no_new_requests')}
+                                        </Typography>
                                     ) : (
-                                        <Typography className={styles.shareTypeText}>No blocked users</Typography>
+                                        <Typography className={styles.shareTypeText}>
+                                            {t('web:share_no_blocked_users')}
+                                        </Typography>
                                     )}
                                 </div>
                             </div>

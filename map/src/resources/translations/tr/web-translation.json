@@ -59,6 +59,17 @@
   "generate_link": "Bağlantı oluştur",
   "empty_pending_share_list_desc": "Bu dosya için erişim talebi gönderen kullanıcılar burada görünecektir.",
   "empty_blocked_share_list_desc": "Onaylanan veya Beklemedeki listeden kullanıcıları engelleyebilirsiniz.",
+  "share_users": "Kullanıcılar",
+  "share_access": "Erişim",
+  "share_change_access_private_desc": "<strong>Özel</strong> duruma değiştirmek tüm kullanıcılar için erişimi iptal edecektir.",
+  "share_change_access_request_desc": "Belirli kullanıcılarla erişimi sınırlamak için <strong>Sadece Talep Üzerine</strong>'ye geçmeyi düşünün.",
+  "share_no_new_requests": "Yeni talep yok",
+  "share_no_blocked_users": "Engellenmiş kullanıcı yok",
+  "share_requested": "Talep edildi",
+  "share_user_name": "Kullanıcı adı",
+  "share_user_name_empty_error": "Kullanıcı adı boş olamaz.",
+  "share_user_name_length_error": "Kullanıcı adı %1$d ile %2$d karakter arasında olmalıdır.",
+  "share_user_name_invalid_chars_error": "Kullanıcı adı geçersiz karakterler içeriyor. Yalnızca Latin harfleri, rakamlar ve alt çizgiler izinlidir.",
   "access_denied": "Erişim reddedildi",
   "access_denied_desc": "Sahip, erişim talebinizi reddetti",
   "not_available": "Mevcut değil",
@@ -256,6 +267,6 @@
   "route_type_trolleybus": "Trolibüs",
   "route_type_subway": "Metro",
   "sourceHash": {
-    "message": "6a8641c076d045930416938ead915707abe9ea4e40805247db915c5a26e84207"
+    "message": "1db3fbde6e63168a094b0c0b5b0801c504632effb384afb8635534ce4def1347"
   }
 }

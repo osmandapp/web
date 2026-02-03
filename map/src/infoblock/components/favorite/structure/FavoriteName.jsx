@@ -46,7 +46,7 @@ export default function FavoriteName({
     }, [favoriteName]);
 
     function validateName(name, otherNames) {
-        const trimmedName = name.trim();
+        const trimmedName = name?.trim();
 
         if (!trimmedName) {
             setErrorName(true);

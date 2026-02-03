@@ -18,8 +18,8 @@
   "incorrect_password": "Nieprawidłowe hasło.",
   "change_password": "Nie mam lub zapomniałem hasła",
   "change_reset_password": "Zmień lub zresetuj hasło",
-  "enter_email": "Wprowadź adres e-mail, którego użyto do utworzenia konta.",
-  "send_code_desc": "Kod weryfikacyjny został wysłany na Twój adres e-mail \\%1$s\\. Wprowadź go w polu poniżej, aby kontynuować.",
+  "enter_email": "Proszę wprowadź adres e-mail, którego użyto do utworzenia konta.",
+  "send_code_desc": "Kod weryfikacyjny został wysłany na Twój adres e-mail \\%1$s\\. Proszę wprowadź go w polu poniżej, aby kontynuować.",
   "verification_code": "Kod weryfikacyjny",
   "min_8_symbols": "Minimum 8 symboli.",
   "new_password": "Nowe hasło",
@@ -59,6 +59,17 @@
   "generate_link": "Generuj link",
   "empty_pending_share_list_desc": "Użytkownicy, którzy wysyłają prośby o dostęp do tego pliku, pojawią się tutaj.",
   "empty_blocked_share_list_desc": "Możesz blokować użytkowników z listy zatwierdzonych lub oczekujących.",
+  "share_users": "Użytkownicy",
+  "share_access": "Dostęp",
+  "share_change_access_private_desc": "Zmiana statusu na <strong>Prywatne</strong> cofnie dostęp dla wszystkich użytkowników.",
+  "share_change_access_request_desc": "Aby ograniczyć dostęp do określonych użytkowników, rozważ przełączenie na <strong>Tylko na żądanie</strong>.",
+  "share_no_new_requests": "Brak nowych próśb",
+  "share_no_blocked_users": "Brak zablokowanych użytkowników",
+  "share_requested": "Zażądano",
+  "share_user_name": "Nazwa użytkownika",
+  "share_user_name_empty_error": "Nazwa użytkownika nie może być pusta.",
+  "share_user_name_length_error": "Nazwa użytkownika musi mieć od %1$d do %2$d znaków.",
+  "share_user_name_invalid_chars_error": "Nazwa użytkownika zawiera niedozwolone znaki. Dozwolone są tylko litery łacińskie, cyfry i podkreślenia.",
   "access_denied": "Odmowa dostępu",
   "access_denied_desc": "Właściciel odrzucił Twoją prośbę o dostęp",
   "not_available": "Niedostępne",
@@ -215,7 +226,7 @@
   "selected_track": "Wybrany ślad",
   "set_start_point": "Ustaw punkt startowy",
   "set_destination": "Ustaw cel",
-  "set_via_point": "Punkt pośredni",
+  "set_via_point": "Pośredni",
   "navigation_tips": "Kliknij na mapie, aby ustawić punkty <strong>Start</strong> i <strong>Cel</strong>.",
   "current_location": "Aktualna lokalizacja",
   "location_disabled_message": "Dostęp do lokalizacji jest wyłączony w Twojej przeglądarce. Włącz go, aby korzystać z aktualnej lokalizacji.",
@@ -256,6 +267,6 @@
   "route_type_trolleybus": "Trolejbus",
   "route_type_subway": "Metro",
   "sourceHash": {
-    "message": "6a8641c076d045930416938ead915707abe9ea4e40805247db915c5a26e84207"
+    "message": "1db3fbde6e63168a094b0c0b5b0801c504632effb384afb8635534ce4def1347"
   }
 }

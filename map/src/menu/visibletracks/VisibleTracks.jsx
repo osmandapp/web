@@ -100,9 +100,16 @@ export function addCloseTracksToRecently(ctx) {
     }
 }
 
+function allVisibleTracksHidden() {
+    const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
+    if (savedVisible?.open) {
+        return savedVisible.open.length === 0;
+    }
+    return true;
+}
+
 export default function VisibleTracks({ source, open }) {
     const ctx = useContext(AppContext);
-    const ltx = useContext(LoginContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -177,11 +184,6 @@ export default function VisibleTracks({ source, open }) {
             return ctx.shareWithMeFiles.tracks?.length > 0;
         }
         return false;
-    }
-
-    function allVisibleTracksHidden() {
-        const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG));
-        return savedVisible.open.length === 0;
     }
 
     const ToggleButton = () => {

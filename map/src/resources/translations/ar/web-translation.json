@@ -59,6 +59,17 @@
   "generate_link": "إنشاء رابط",
   "empty_pending_share_list_desc": "سيظهر هنا المستخدمون الذين يرسلون طلبات الوصول لهذا الملف.",
   "empty_blocked_share_list_desc": "يمكنك حظر المستخدمين من قائمة الموافق عليهم أو المعلقين.",
+  "share_users": "المستخدمون",
+  "share_access": "الوصول",
+  "share_change_access_private_desc": "تغيير الحالة إلى <strong>خاص</strong> سيسحب الوصول لجميع المستخدمين.",
+  "share_change_access_request_desc": "لتقييد الوصول إلى مستخدمين محددين، فكر في التبديل إلى <strong>طلب فقط</strong>.",
+  "share_no_new_requests": "لا توجد طلبات جديدة",
+  "share_no_blocked_users": "لا يوجد مستخدمون محظورون",
+  "share_requested": "مطلوب",
+  "share_user_name": "اسم المستخدم",
+  "share_user_name_empty_error": "لا يمكن أن يكون اسم المستخدم فارغًا.",
+  "share_user_name_length_error": "يجب أن يكون اسم المستخدم بين %1$d و %2$d حرفًا.",
+  "share_user_name_invalid_chars_error": "يحتوي اسم المستخدم على أحرف غير صالحة. يُسمح فقط بالحروف اللاتينية، والأرقام، وشرطات سفلية.",
   "access_denied": "تم رفض الوصول",
   "access_denied_desc": "رفض المالك طلب الوصول الخاص بك",
   "not_available": "غير متاح",
@@ -256,6 +267,6 @@
   "route_type_trolleybus": "تروليباص",
   "route_type_subway": "مترو",
   "sourceHash": {
-    "message": "6a8641c076d045930416938ead915707abe9ea4e40805247db915c5a26e84207"
+    "message": "1db3fbde6e63168a094b0c0b5b0801c504632effb384afb8635534ce4def1347"
   }
 }

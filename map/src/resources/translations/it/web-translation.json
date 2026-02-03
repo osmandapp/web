@@ -59,6 +59,17 @@
   "generate_link": "Genera link",
   "empty_pending_share_list_desc": "Gli utenti che inviano richieste di accesso per questo file appariranno qui.",
   "empty_blocked_share_list_desc": "Puoi bloccare gli utenti dall'elenco Approvati o In sospeso.",
+  "share_users": "Utenti",
+  "share_access": "Accesso",
+  "share_change_access_private_desc": "Cambiare lo stato in <strong>Privato</strong> revoca l'accesso per tutti gli utenti.",
+  "share_change_access_request_desc": "Per limitare l'accesso a utenti specifici, considera di passare a <strong>Solo su richiesta</strong>.",
+  "share_no_new_requests": "Nessuna nuova richiesta",
+  "share_no_blocked_users": "Nessun utente bloccato",
+  "share_requested": "Richiesto",
+  "share_user_name": "Nome utente",
+  "share_user_name_empty_error": "Il nome utente non può essere vuoto.",
+  "share_user_name_length_error": "Il nome utente deve essere tra %1$d e %2$d caratteri.",
+  "share_user_name_invalid_chars_error": "Il nome utente contiene caratteri non validi. Sono consentite solo lettere latine, cifre e underscore.",
   "access_denied": "Accesso negato",
   "access_denied_desc": "Il proprietario ha rifiutato la tua richiesta di accesso",
   "not_available": "Non disponibile",
@@ -256,6 +267,6 @@
   "route_type_trolleybus": "Filibus",
   "route_type_subway": "Metropolitana",
   "sourceHash": {
-    "message": "6a8641c076d045930416938ead915707abe9ea4e40805247db915c5a26e84207"
+    "message": "1db3fbde6e63168a094b0c0b5b0801c504632effb384afb8635534ce4def1347"
   }
 }
