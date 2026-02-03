@@ -224,12 +224,12 @@ export default function SearchMenu() {
 
     function openSearchByCategories() {
         ctx.setPoiCatMenu(true);
-        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + location.hash);
     }
 
     function openExploreMenu() {
         ctx.setExploreMenu(true);
-        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + location.hash);
     }
 
     return (

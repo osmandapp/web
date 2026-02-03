@@ -13,9 +13,12 @@ import {
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
 } from '../store/geoRouter/profileConstants';
+import { useLocation } from 'react-router-dom';
 
 export function RouteService() {
     const ctx = useContext(AppContext);
+
+    const location = useLocation();
 
     const pinPoint = ctx.pinPoint;
 
@@ -82,7 +85,7 @@ export function RouteService() {
                 obj['avoid'] = avoidRoads.map(({ id }) => id).join(';');
             }
 
-            const qs = new URLSearchParams(window.location.search);
+            const qs = new URLSearchParams(location.search);
 
             if (Object.keys(obj).length > 0 || qs.get('profile')) {
                 const { type, profile } = routeObject.getProfile();

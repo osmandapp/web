@@ -527,20 +527,20 @@ export default function MainMenu({
                 }
             }
             if (ctx.poiCatMenu) {
-                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + window.location.hash);
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + location.hash);
                 return;
             }
             if (ctx.searchQuery) {
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL,
                     search: buildSearchParamsFromQuery(ctx.searchQuery),
-                    hash: window.location.hash,
+                    hash: location.hash,
                 });
                 return;
             }
 
             if (ctx.exploreMenu) {
-                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + window.location.hash);
+                navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + location.hash);
                 return;
             }
         }
@@ -775,7 +775,7 @@ export default function MainMenu({
         if (currentMenu && menuInfo) {
             if (currentMenu.type === OBJECT_TYPE_CLOUD_TRACK) {
                 // not to navigate to the track menu if the track info is opened
-                const currentUrl = window.location.href;
+                const currentUrl = location.href;
                 if (currentUrl.includes(INFO_MENU_URL)) {
                     return;
                 }
@@ -840,7 +840,7 @@ export default function MainMenu({
                 targetUrl += menuParams;
             } else if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !ctx.routeObject.isReady()) {
                 // special case for Navigation due to lazy-loading providers
-                targetUrl += window.location.search;
+                targetUrl += location.search;
             } else if (menu.type === OBJECT_TYPE_TRAVEL && isTravelPath(location.pathname) && location.search) {
                 targetUrl += location.search;
             }

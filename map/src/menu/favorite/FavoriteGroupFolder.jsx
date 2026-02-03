@@ -8,18 +8,20 @@ import FavoritesManager, {
     addLocDist,
     DEFAULT_FAV_GROUP_NAME,
     getFavMenuListByLayers,
+    LOCATION_UNAVAILABLE,
 } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
 import Loading from '../errors/Loading';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { byTime, doSort } from '../actions/SortActions';
-import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../manager/MapManager';
 import { FixedSizeList } from 'react-window';
 import FavoriteGroup from './FavoriteGroup';
+import { useLocation } from 'react-router-dom';
 
 export default function FavoriteGroupFolder({ folder, smartf = null, onClose = null }) {
     const ctx = useContext(AppContext);
+    const location = useLocation();
 
     const [group, setGroup] = useState(folder);
     const [sortFiles, setSortFiles] = useState([]);
@@ -32,15 +34,13 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     const refMarkers = useRef(null);
 
-    const hash = window.location.hash;
-    const [delayedHash, setDelayedHash] = useState(hash);
+    const hash = location.hash;
 
     // debounce map move/scroll
     useEffect(() => {
         debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
         debouncerTimer.current = setTimeout(() => {
             debouncerTimer.current = 0;
-            setDelayedHash(hash);
         }, 5000);
 
         return () => {

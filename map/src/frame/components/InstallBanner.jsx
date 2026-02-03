@@ -5,9 +5,11 @@ import { ReactComponent as Logo } from '../../assets/ic_app_logo_osmand.svg';
 import styles from '../frame.module.css';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 export default function InstallBanner({ showInstallBanner }) {
     const [width] = useWindowSize();
+    const location = useLocation();
 
     const { t } = useTranslation();
     const [isIos, setIsIos] = useState(false);
@@ -21,7 +23,7 @@ export default function InstallBanner({ showInstallBanner }) {
     }, []);
 
     const handleInstallClick = () => {
-        window.location.href = isIos ? URL_APPLE : URL_GOOGLE;
+        location.href = isIos ? URL_APPLE : URL_GOOGLE;
     };
 
     return showInstallBanner ? (

@@ -7,7 +7,7 @@ import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import React, { useContext, useEffect, useState } from 'react';
 import AccountManager, { sendCode } from '../../manager/AccountManager';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
@@ -16,6 +16,7 @@ import LoginContext from '../../context/LoginContext';
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ltx = useContext(LoginContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const { i18n } = useTranslation();
     const lang = i18n.language;
@@ -29,7 +30,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         if (accountDeleted) {
             ltx.setEmailCookie('');
             ltx.setLoginUser(null);
-            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
+            navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);
         }
     }, [accountDeleted]);
 
@@ -39,7 +40,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         } else {
             if (ltx.loginUser !== INIT_LOGIN_STATE) {
                 ltx.setWantDeleteAcc(true);
-                navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
+                navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.hash);
                 ltx.setOpenLoginMenu(true);
             }
         }
@@ -63,7 +64,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
             setDeleteAccountFlag(false);
         } else {
             ltx.setWantDeleteAcc(false);
-            navigate('/map/' + window.location.search + window.location.hash);
+            navigate('/map/' + location.search + location.hash);
         }
     }
 

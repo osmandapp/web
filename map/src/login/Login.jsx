@@ -10,7 +10,7 @@ import i18n from 'i18next';
 import { closeLoginMenu, createAccount, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
 import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../frame/components/btns/BlueBtn';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import LoginContext from '../context/LoginContext';
@@ -22,6 +22,7 @@ export default function Login({ dialog = false }) {
     const { t } = useTranslation();
     const lang = i18n.language;
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [userEmail, setUserEmail] = useState(EMPTY_INPUT);
     const [userPassword, setUserPassword] = useState(EMPTY_INPUT);
@@ -54,7 +55,7 @@ export default function Login({ dialog = false }) {
         setUserPassword(EMPTY_INPUT);
         closeLoginMenu(ltx);
         if (ltx.wantDeleteAcc) {
-            navigate(MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + window.location.search + window.location.hash);
+            navigate(MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + location.search + location.hash);
         } else {
             ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
         }
