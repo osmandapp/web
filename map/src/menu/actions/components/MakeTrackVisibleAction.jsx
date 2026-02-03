@@ -6,6 +6,10 @@ import { ReactComponent as MakeTrackVisible } from '../../../assets/icons/ic_act
 import { ReactComponent as HideTrackVisible } from '../../../assets/icons/ic_action_hide_outlined.svg';
 
 export default function MakeTrackVisibleAction({ ctx, track, setDisplayTrack, setOpenActions, smartf = null }) {
+    if (!track?.name) {
+        return null;
+    }
+
     const files = getFileStorage({ ctx, smartf, type: GPX });
 
     return files[track.name]?.showOnMap ? (
