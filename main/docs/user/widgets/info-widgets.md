@@ -416,13 +416,13 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -430,8 +430,10 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 **Speedometer widget** is a graphical display of the current vehicle speed based on *data received from the GPS*. It allows you to monitor in real-time the compliance between your speed and the allowable speed limit. The allowable speed limit is provided by [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd [Speed Limit Tolerance](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
 
-- In the *Speedometer settings*, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*.
-- You can specify when to receive a **Speed limit warning,** selecting *Always* or *When exceeded*.
+When your current speed approaches the configured Speed limit tolerance, the widget changes its appearance to provide an early warning. When the speed limit is exceeded (taking the tolerance into account), the widget switches to a more prominent “exceeding” indication. The warning/exceeding indication is shown by changing the widget colors (background, speed value, and units). The appearance change may be animated to draw attention when crossing the tolerance or limit threshold.
+
+- In the *Speedometer settings*, you can select the size (**Height**) of the widget on the application screen as *Small*, *Medium*, or *Large*.
+- You can specify when to receive a **Speed limit warning,** selecting *Always* or *When exceeded*. If Speed limit warning is set to Always, the widget can show both the “approaching/tolerance” and “exceeding” indication. If Speed limit warning is set to When exceeded, the indication is shown only after you exceed the speed limit.
 
 <table class="blogimage">
     <tr>
