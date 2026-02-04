@@ -432,6 +432,8 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 When your current speed approaches the configured Speed limit tolerance, the widget changes its appearance to provide an early warning. When the speed limit is exceeded (taking the tolerance into account), the widget switches to a more prominent “exceeding” indication. The warning/exceeding indication is shown by changing the widget colors (background, speed value, and units). The appearance change may be animated to draw attention when crossing the tolerance or limit threshold.
 
+![Speedometer](@site/static/img/widgets/speed_alert.gif)
+
 - In the *Speedometer settings*, you can select the size (**Height**) of the widget on the application screen as *Small*, *Medium*, or *Large*.
 - You can specify when to receive a **Speed limit warning,** selecting *Always* or *When exceeded*. If Speed limit warning is set to Always, the widget can show both the “approaching/tolerance” and “exceeding” indication. If Speed limit warning is set to When exceeded, the indication is shown only after you exceed the speed limit.
 
