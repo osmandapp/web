@@ -33,6 +33,7 @@ import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_openstreetmap_logo.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
+import { ReactComponent as OpeningHoursIcon } from '../../../assets/icons/ic_action_opening_hour_16.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
@@ -50,6 +51,8 @@ import WptTagsProvider, {
     GRAPH_URL_ENDPOINT,
     MAPILLARY_OSM_TAG,
     openWikivoyageContent,
+    OPENING_HOURS_INFO,
+    AMENITY_PREFIX,
     OSM_PREFIX,
     otherImgTags,
     PARAM_ACCESS_TOKEN,
@@ -90,6 +93,9 @@ import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useR
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useLocation, useNavigate } from 'react-router-dom';
+import DistanceInfo from './DistanceInfo';
+import { getDistance, getBearing } from '../../../util/Utils';
+import { getCenterMapLoc } from '../../../manager/MapManager';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -192,6 +198,19 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return wikidataTag ? [...otherTags, wikidataTag] : otherTags;
     }, [wpt?.tags?.res]);
 
+    const distanceInfo = useMemo(() => {
+        if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
+            return { distance: null, bearing: null };
+        }
+        const mapCenter = getCenterMapLoc(hash);
+        if (!mapCenter) {
+            return { distance: null, bearing: null };
+        }
+        const distance = getDistance(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
+        const bearing = getBearing(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
+        return { distance, bearing };
+    }, [hash, wpt?.latlon]);
+
     const [delayedHash, setDelayedHash] = useState(hash);
     const debouncerTimer = useRef(0);
     // debounce map move/scroll
@@ -267,6 +286,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 tags: null,
                 osmUrl: objOptions[POI_OSM_URL],
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
+                openingHours: getOpeningHours(objOptions[AMENITY_PREFIX + OPENING_HOURS_INFO]),
                 mapObj,
             };
         } else if (type?.isStop) {
@@ -349,6 +369,17 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             }
         }
     }, [ctx.loadingContextMenu]);
+
+    function getOpeningHours(openingHoursString) {
+        const IS_OPEN_PREFIX = 'open:';
+        if (!openingHoursString) {
+            return null;
+        }
+        return {
+            isOpen: openingHoursString.startsWith(IS_OPEN_PREFIX),
+            text: openingHoursString.replace(IS_OPEN_PREFIX, ''),
+        };
+    }
 
     function getWikiCommons(wikimediaCommons) {
         const WIKIMEDIA_FILE = 'File:';
@@ -772,12 +803,41 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const WptAddress = () => {
         return (
             <Box className={styles.wptCategory}>
-                <ListItemIcon style={{ minWidth: 'auto' }}>
-                    <LocationOn fontSize="small" />
-                </ListItemIcon>
                 <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
-                    <Typography id={'se-wpt-address'} className={styles.wptCategoryText}>
+                    <Typography id={'se-wpt-address'} className={wptStyles.placeAddress}>
+                        {distanceInfo.distance && (
+                            <DistanceInfo
+                                distance={distanceInfo.distance}
+                                bearing={distanceInfo.bearing}
+                                isUserLocation={true}
+                            />
+                        )}
+                        {distanceInfo.distance && wpt?.address && <span className={wptStyles.placeDistance}> · </span>}
                         {wpt.address}
+                    </Typography>
+                </ListItemText>
+            </Box>
+        );
+    };
+
+    const WptOpeningHours = () => {
+        return (
+            <Box className={styles.wptCategory}>
+                <ListItemIcon
+                    className={
+                        wpt.openingHours.isOpen ? wptStyles.openingHoursOpenIcon : wptStyles.openingHoursClosedIcon
+                    }
+                >
+                    <OpeningHoursIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography
+                        className={
+                            wpt.openingHours.isOpen ? wptStyles.openingHoursOpenText : wptStyles.openingHoursClosedText
+                        }
+                        id={'se-wpt-opening-hours'}
+                    >
+                        {wpt.openingHours.text}
                     </Typography>
                 </ListItemText>
             </Box>
@@ -893,6 +953,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 )}
                             </Box>
                             {wpt?.category && <WptCategory />}
+                            {wpt?.openingHours && <WptOpeningHours />}
                             {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <WptAddress />
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
