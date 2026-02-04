@@ -223,7 +223,6 @@ Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features,
 To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device. To see recommended settings for *CarPlay*, go to the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md) article.  
 
 
-
 ### Screen Alert Widget {#screen-alert-widget}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
@@ -265,6 +264,23 @@ The OsmAnd app can be opened and used to navigate in *CarPlay* on the vehicle mu
 
 - Setting up the multifunction dashboard on a phone connected to *CarPlay* or on the screen in your vehicle system.
 - Find Multi window button and switch it.
+
+
+### Finish Navigation {#finish-navigation}
+
+![Finish Navigation](@site/static/img/navigation/auto-car/finish_navigation_carplay.png)
+
+When navigation is completed in CarPlay, OsmAnd displays a **“You have arrived”** dialog on the vehicle screen. This dialog uses the same arrival detection logic as the mobile app and provides quick access to common actions after reaching your destination.
+
+Available actions:
+- **Mark as parking location**. Saves your current position as a parking location and places a parking marker on the map.
+- **Find parking**. Opens the Search screen with the Parking category preselected to help you find nearby parking options.
+- **Recalculate route**. Builds a new route to the original destination if you want to continue navigation.
+- **Finish navigation**. Ends the current route and returns OsmAnd to the default map state.
+
+If CarPlay is disconnected while navigation is active, OsmAnd applies additional logic on the iPhone:
+- If the distance to the destination is less than 100 m, navigation is automatically finished and the default profile is restored. In this case, the “You have arrived” notification is not shown on the phone screen.
+- If the current speed is below 1 m/s (for example, when stopping at a gas station), navigation is paused. Navigation resumes automatically when CarPlay is connected again.
 
 ## Settings {#settings}
 
