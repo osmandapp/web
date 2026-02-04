@@ -1,22 +1,17 @@
-import headerStyles from '../trackfavmenu.module.css';
 import {
-    AppBar,
     Box,
     CircularProgress,
     Collapse,
-    IconButton,
     Slider,
     SvgIcon,
     ToggleButton,
     ToggleButtonGroup,
-    Toolbar,
     Tooltip,
     Typography,
 } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
@@ -37,6 +32,8 @@ import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
+import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
+import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
 import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
 import capitalize from 'lodash-es/capitalize';
@@ -355,30 +352,19 @@ export default function TravelMenu() {
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             {ltx.isLoggedIn() ? (
                 <>
-                    <AppBar position="static" className={headerStyles.appbar}>
-                        <Toolbar className={headerStyles.toolbar}>
-                            <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
-                                <CloseIcon />
-                            </IconButton>
-                            <Typography id="se-travel-menu-name" component="div" className={headerStyles.title}>
-                                Travel
-                            </Typography>
+                    <HeaderNoUnderline
+                        title="Travel"
+                        onClose={close}
+                        titleId="se-travel-menu-name"
+                        rightContent={
                             <Tooltip title={t('reset_to_default')} arrow placement="bottom-end">
                                 <span>
-                                    <IconButton
-                                        id="se-travel-reset"
-                                        variant="contained"
-                                        type="button"
-                                        className={headerStyles.appBarIcon}
-                                        onClick={resetSearch}
-                                    >
-                                        <ResetIcon />
-                                    </IconButton>
+                                    <ActionIconBtn id="se-travel-reset" icon={<ResetIcon />} onClick={resetSearch} />
                                 </span>
                             </Tooltip>
-                        </Toolbar>
-                    </AppBar>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
+                        }
+                    />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, mt: '-14px' }}>
                         <Box>
                             {updatedActivities?.length > 0 && (
                                 <ActivitySelect

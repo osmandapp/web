@@ -187,7 +187,3 @@
 .sliderContainer :global(.MuiSlider-valueLabel) {
     font-size: 12px !important;
 }
-
-.closeIcon {
-    color: var(--svg-icon-color) !important;
-}
