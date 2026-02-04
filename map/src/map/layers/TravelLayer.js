@@ -4,7 +4,6 @@ import { useMap } from 'react-leaflet';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
-import { ZOOM_TO_MAP } from './SearchLayer';
 import { ACTIVITY_ALL, ALL_YEARS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
 import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/TracksManager';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -13,6 +12,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
 
 const ROUTE_GPX_DATA = 'gpx_data';
+const TRAVEL_ZOOM = 15;
 
 function buildOsmPopupHtml({ id, name, user }) {
     let html = '';
@@ -92,6 +92,8 @@ export default function TravelLayer() {
     const ROUTE_COLOR = '#666666';
     const SELECTED_ROUTE_COLOR = '#f8931d';
     const ROUTE_WIDTH = 3;
+    const OPENED_TRACK_COLOR = '#237bff';
+    const OPENED_TRACK_WIDTH = 6;
 
     useEffect(() => {
         if (!ctx.searchTravelRoutes) {
@@ -268,8 +270,8 @@ export default function TravelLayer() {
                 }
                 route.properties.geo = geo;
                 const polyline = new L.Polyline(coords, {
-                    color: ROUTE_COLOR,
-                    weight: ROUTE_WIDTH,
+                    color: OPENED_TRACK_COLOR,
+                    weight: OPENED_TRACK_WIDTH,
                     id: route.properties.id,
                 });
 
@@ -339,24 +341,41 @@ export default function TravelLayer() {
         };
         const start = getRouteStart(route, data);
         if (start) {
-            map.setView([start.latitude, start.longitude], ZOOM_TO_MAP);
+            const targetZoom = Math.max(map.getZoom(), TRAVEL_ZOOM);
+            map.setView([start.latitude, start.longitude], targetZoom);
         }
         return route;
     }
 
     useEffect(() => {
-        if (isEmpty(ctx.selectedGpxFile) && selectedRoutePolylineRef.current) {
-            map.removeLayer(selectedRoutePolylineRef.current);
-            selectedRoutePolylineRef.current = null;
+        if (isEmpty(ctx.selectedGpxFile)) {
+            if (selectedRoutePolylineRef.current) {
+                map.removeLayer(selectedRoutePolylineRef.current);
+                selectedRoutePolylineRef.current = null;
+            }
+            travelRoutes?.getLayers().forEach((layer) => {
+                layer.setStyle({ color: ROUTE_COLOR, weight: ROUTE_WIDTH });
+            });
+        } else if (ctx.selectedGpxFile?.id && travelRoutes) {
+            const trackId = ctx.selectedGpxFile.id;
+            travelRoutes.getLayers().forEach((layer) => {
+                if (layer.options.id === trackId) {
+                    layer.setStyle({ color: OPENED_TRACK_COLOR, weight: OPENED_TRACK_WIDTH });
+                    layer.bringToFront();
+                } else {
+                    layer.setStyle({ color: ROUTE_COLOR, weight: ROUTE_WIDTH });
+                }
+            });
         }
-    }, [ctx.selectedGpxFile]);
+    }, [ctx.selectedGpxFile, travelRoutes]);
 
     // manage selected route layer
     useEffect(() => {
         if (ctx.selectedTravelRoute?.show) {
             const start = getRouteStart(ctx.selectedTravelRoute.route);
             if (start) {
-                map.setView([start.latitude, start.longitude], ZOOM_TO_MAP);
+                const targetZoom = Math.max(map.getZoom(), TRAVEL_ZOOM);
+                map.setView([start.latitude, start.longitude], targetZoom);
             }
         } else if (ctx.selectedTravelRoute?.hover !== undefined) {
             const id = ctx.selectedTravelRoute.route.properties.id;
