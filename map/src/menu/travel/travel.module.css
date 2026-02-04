@@ -1,16 +1,66 @@
+.activitySelectContainer {
+    margin: 16px !important;
+}
+
+.activitySelectContainer :global(.MuiFilledInput-input) {
+    padding: 8px 4px 8px 12px !important;
+}
+
+.activitySelect {
+    max-height: 56px !important;
+}
+
+.activityDropdownPaper {
+    width: 300px !important;
+}
+
 .optionItem {
     display: flex !important;
-    padding: 4px 4px 4px 16px !important;
-    justify-content: center !important;
+    padding: 4px 16px 4px 8px !important;
     align-items: center !important;
-    gap: 32px !important;
+    gap: 4px !important;
     min-height: 48px !important;
+    background-color: transparent !important;
 }
+
+.optionItem:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.optionItem.Mui-selected:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.nestedActivityCheckbox {
+    margin-left: 24px !important;
+}
+
+.groupTitle {
+    cursor: pointer !important;
+    flex: 1 !important;
+}
+
+.expandIcon {
+    cursor: pointer !important;
+    display: flex !important;
+    margin-left: auto !important;
+    color: var(--svg-icon-color) !important;
+    border-radius: 4px !important;
+    padding: 4px !important;
+    margin-right: -4px !important;
+}
+
+.expandIcon:hover {
+    color: var(--selected-color) !important;
+    background-color: rgba(35, 123, 255, 0.08) !important;
+}
+
 .optionIcon {
     min-width: 24px !important;
     max-width: 24px !important;
     fill: var(--svg-icon-color) !important;
 }
+
 .selectedOption {
     display: flex !important;
     align-items: center !important;
@@ -74,6 +124,7 @@
     cursor: pointer;
     text-decoration: none;
 }
+
 .osmIdLink:hover {
     color: var(--selected-color) !important;
 }
@@ -135,4 +186,8 @@
 
 .sliderContainer :global(.MuiSlider-valueLabel) {
     font-size: 12px !important;
+}
+
+.closeIcon {
+    color: var(--svg-icon-color) !important;
 }

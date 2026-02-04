@@ -397,8 +397,11 @@ export default function TravelLayer() {
             distanceRange,
             speedRange,
         } = ctx.searchTravelRoutes;
+
+        const activityArr = activity === ACTIVITY_ALL ? undefined : activity;
+
         const body = {
-            activity: activity === ACTIVITY_ALL ? undefined : activity,
+            activityArr,
             year: year === ALL_YEARS ? undefined : year,
             minLat,
             maxLat,

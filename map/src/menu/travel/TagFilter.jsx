@@ -50,7 +50,7 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
                 params.year = selectedYear;
             }
             if (selectedActivity && selectedActivity !== ACTIVITY_ALL) {
-                params.activity = selectedActivity;
+                params.activityArr = selectedActivity;
             }
 
             setLoadingTags(true);

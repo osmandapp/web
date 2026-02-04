@@ -32,6 +32,7 @@ import {
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import styles from './travel.module.css';
 import CustomSelect from './CustomSelect';
+import ActivitySelect from './ActivitySelect';
 import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
@@ -73,7 +74,7 @@ export default function TravelMenu() {
 
     const [, height] = useWindowSize();
 
-    const [selectedActivityType, setSelectedActivityType] = useState(DEFAULT_ACTIVITY);
+    const [selectedActivityTypeArr, setSelectedActivityTypeArr] = useState(DEFAULT_ACTIVITY);
     const [selectedYear, setSelectedYear] = useState(DEFAULT_YEAR);
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
@@ -108,16 +109,16 @@ export default function TravelMenu() {
 
     useEffect(() => {
         ctx.setTravelFilter({
-            activity: selectedActivityType,
+            activity: selectedActivityTypeArr,
             year: selectedYear,
             tags: selectedTags,
             tagMatchMode,
         });
-    }, [selectedActivityType, selectedYear, selectedTags, tagMatchMode]);
+    }, [selectedActivityTypeArr, selectedYear, selectedTags, tagMatchMode]);
 
     useEffect(() => {
         if (ctx.travelFilter) {
-            setSelectedActivityType(ctx.travelFilter.activity);
+            setSelectedActivityTypeArr(ctx.travelFilter.activity);
             setSelectedYear(ctx.travelFilter.year);
             setSelectedTags(ctx.travelFilter.tags || []);
             setTagMatchMode(ctx.travelFilter.tagMatchMode || TAG_MATCH_MODES.OR);
@@ -142,7 +143,7 @@ export default function TravelMenu() {
                 params.year = year;
             }
             if (activity && activity !== ACTIVITY_ALL) {
-                params.activity = activity;
+                params.activityArr = activity;
             }
 
             try {
@@ -198,11 +199,11 @@ export default function TravelMenu() {
         debouncedFetchRanges({
             bounds: ctx.visibleBounds,
             year: selectedYear,
-            activity: selectedActivityType,
+            activity: selectedActivityTypeArr,
             distTouched: distanceSliderTouched,
             speedTouched: speedSliderTouched,
         });
-    }, [ctx.visibleBounds, selectedYear, selectedActivityType]);
+    }, [ctx.visibleBounds, selectedYear, selectedActivityTypeArr]);
 
     const years = useMemo(() => {
         const currentYear = new Date().getFullYear();
@@ -291,15 +292,11 @@ export default function TravelMenu() {
 
     function setDefaultState() {
         setTravelResult(null);
-        setSelectedActivityType(DEFAULT_ACTIVITY);
+        setSelectedActivityTypeArr(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
         setSelectedTags([]);
         setTagMatchMode(TAG_MATCH_MODES.OR);
         ctx.setOpenTravel(false);
-    }
-
-    function handleActivitySelect(activityId) {
-        setSelectedActivityType(activityId);
     }
 
     function handleYearSelect(year) {
@@ -311,7 +308,7 @@ export default function TravelMenu() {
         setTravelResult(null);
 
         ctx.setSearchTravelRoutes({
-            activity: selectedActivityType,
+            activity: selectedActivityTypeArr,
             year: selectedYear,
             tags: selectedTags,
             tagMatchMode,
@@ -322,7 +319,7 @@ export default function TravelMenu() {
 
     function resetSearch() {
         setTravelResult(null);
-        setSelectedActivityType(DEFAULT_ACTIVITY);
+        setSelectedActivityTypeArr(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
         setSelectedTags([]);
         setTagMatchMode(TAG_MATCH_MODES.OR);
@@ -384,14 +381,13 @@ export default function TravelMenu() {
                     <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
                         <Box>
                             {updatedActivities?.length > 0 && (
-                                <CustomSelect
+                                <ActivitySelect
                                     name="Activity"
-                                    value={selectedActivityType}
-                                    onChange={(value) => setSelectedActivityType(value)}
-                                    options={updatedActivities}
-                                    renderLabel={(option) => option?.label}
-                                    renderIcon={(option) => option?.icon}
-                                    handleSelect={(id) => handleActivitySelect(id)}
+                                    value={selectedActivityTypeArr}
+                                    onChange={(value) => setSelectedActivityTypeArr(value)}
+                                    activities={activities}
+                                    updatedActivities={updatedActivities}
+                                    defaultIcon={ActivityAllIcon}
                                 />
                             )}
                             <CustomSelect
@@ -425,7 +421,7 @@ export default function TravelMenu() {
                                     selectedTags={selectedTags}
                                     onChangeTags={setSelectedTags}
                                     selectedYear={selectedYear}
-                                    selectedActivity={selectedActivityType}
+                                    selectedActivity={selectedActivityTypeArr}
                                 />
                                 <Box sx={{ mx: 2, mt: 2, mb: 2 }}>
                                     <ToggleButtonGroup
