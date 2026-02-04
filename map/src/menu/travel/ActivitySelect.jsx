@@ -128,7 +128,6 @@ export default function ActivitySelect({
                     variant="filled"
                     className={styles.activitySelect}
                     value={isAllSelected ? ACTIVITY_ALL : 'selected'}
-                    onChange={() => {}}
                     displayEmpty
                     renderValue={() => {
                         let iconElement = null;
