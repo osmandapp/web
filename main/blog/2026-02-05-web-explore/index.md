@@ -2,7 +2,7 @@
 slug: web-explore
 title: Discover Patagonia with OsmAnd Web Explore
 authors: eugene
-tags: [marketing,map,web, android]
+tags: [marketing,map,web]
 
 ---
 
