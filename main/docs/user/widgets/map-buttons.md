@@ -17,25 +17,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-Map buttons, including *Zoom*, *Search*, *Directions*, *Compass*, *My Location*, *3D Mode*, and *Menu*, are the primary controls for interacting with the map. Each button offers specific functionalities to enhance your navigation and map usage experience.
+Map buttons, including *Zoom*, *Search*, *Navigation*, *Compass*, *My Position*, *3D Mode*, and *Menu*, are the primary controls for interacting with the map. Each button offers specific functionalities to enhance your navigation and map usage experience.
 
 
-## My Location and Zoom {#my-location-and-zoom}
+## My Position and Zoom {#my-position-and-zoom}
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
 Use these buttons to control how the map is displayed on the screen of your device:
 
-- **My Location**. Shows whether the center of the map is synchronized with your device's current geolocation.
+- **My Position**. Shows whether the center of the map is synchronized with your device's current geolocation.
 - **Zoom**. Allows you to adjust the map's zoom level to provide more or less details.
 If you want more information on using these buttons, you can see the article [Interact with map](../map/interact-with-map.md#my-location-and-zoom).
 
 
-## Directions {#directions}
+## Navigation {#navigation}
 
 ![Directions button allows](@site/static/img/widgets/directions_button_allows.png)
 
-The **Directions** button is essential for route planning and navigation:
+The **Navigation** button is essential for route planning and navigation:
 
 - [Build a route](../navigation/index.md). Use this button to create a route.
 - [Start navigation](../navigation/index.md). Initiate turn-by-turn navigation.
@@ -174,18 +174,41 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 ## Map Button Appearance {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Default buttons | Custom buttons |
 | :--- | :--- |
 | ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Setting for the map button appearance are available via the following menus:
+**Go to** (for Custom buttons): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → three-dot menu → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Go to** (for all Default buttons): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → three-dot menu → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Go to** (for a specific Default button): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → select a button → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Menu → Configure screen → Buttons → Default buttons*
-- *Menu → Configure screen → Custom buttons → Quick action → three-dot menu → Appearance*
+</TabItem>
 
-Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). This flexibility lets you personalize the interface to suit your preferences and improve usability.
+<TabItem value="ios" label="iOS">  
+
+| Default buttons | Custom buttons |
+| :--- | :--- |
+| ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Map Button Appearance](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Go to** (for Custom buttons): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → three-dot menu → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Go to** (for a specific Default button): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → select a button → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). On Android, appearance settings can be applied to all Default buttons or to a specific Default button, while on iOS they are available for specific Default buttons only.
+
+Button icons can be set to:
+- **Dynamic** – the icon changes based on the current action or state.
+- **Custom** – choose an icon from your added actions.
+- **Specific** – select a fixed icon that will always be displayed.
+
+The Appearance screen includes a preview, allowing you to see how your changes will look on the map before leaving the settings.
 
 
 ## Related Articles {#related-articles}
