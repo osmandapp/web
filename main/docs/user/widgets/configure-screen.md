@@ -483,7 +483,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -497,7 +497,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-1. **Default buttons** allow you to customize which preset map buttons are visible on the map screen. You can choose to hide or show the following buttons:
+**Default buttons** allow you to customize which preset map buttons are visible on the map screen. You can choose to hide or show the following buttons:
 
     - [3D mode](../widgets/map-buttons.md#3d-mode). For iOS, the button is always available. For Android, it appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
 
@@ -508,27 +508,38 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
     - [Menu](../widgets/map-buttons.md#main-menu). Opens the main application menu for accessing all features.
 
-    - [My location](../widgets/map-buttons.md#my-location-and-zoom). Centers the map on your current position.
+    - [My location](../widgets/map-buttons.md#my-position-and-zoom). Centers the map on your current position.
 
-    - [Navigation](../widgets/map-buttons.md#directions). Essential for route planning and starting navigation.
+    - [Navigation](../widgets/map-buttons.md#navigation). Essential for route planning and starting navigation.
 
     - [Search](../widgets/map-buttons.md#search). Opens the search tool for finding locations.
 
     - [Zoom in / out](../widgets/map-buttons.md#my-location-and-zoom). Adjusts the map's zoom level to show more or less detail.
 
-2. The **three-dot menu** on the Default buttons screen contains actions such as:
+The **three-dot menu** on the Default buttons screen contains actions such as:
 
     - *Reset to default*. Allows you to return the button settings to their original appearance.
     - *Copy from another profile*. Select from which profile from the offered list you want to copy button settings.
-
-3. **The default button appearance** (*Android only*) offers a variety of customization options for these type of buttons. To modify a button's appearance, tap the required button from the list and select the [Appearance](#button-appearance) option.
+    - *Appearance (Android only)*. Offers a variety of customization options for these type of buttons. To modify a button's appearance, tap the required button from the list and select the [Appearance](#button-appearance) option.
 
 
 ### Button Appearance {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 The *Button appearance* feature enables you to fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
 
@@ -536,8 +547,8 @@ The *Button appearance* feature enables you to fully customize the look of butto
 
 - **Icon**. Select from a list of icons that represent actions you’ve already added, making it easy to identify functions at a glance.
 - **Corner radius**. Adjust this setting to change the shape of the button, ranging from sharp, square corners to smooth, rounded edges.
-- **Size**. Choose the button size that best fits your screen and stands out as needed. For *Default buttons*, sizes are preset and cannot be adjusted.
-- **Background opacity**. Control the visibility of the button’s background. You can set it to be fully visible or partially transparent, or display only the frame shadow and icon.
+- **Size**. Choose the button size that best fits your screen and stands out as needed. 
+- **Background opacity** (Android) / **Background** (IOS) . Control the visibility of the button’s background. You can set it to be fully visible or partially transparent, or display only the frame shadow and icon.
 
 
 ## Other {#other}

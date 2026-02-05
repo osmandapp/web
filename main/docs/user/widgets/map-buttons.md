@@ -17,25 +17,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-Map buttons, including *Zoom*, *Search*, *Directions*, *Compass*, *My Location*, *3D Mode*, and *Menu*, are the primary controls for interacting with the map. Each button offers specific functionalities to enhance your navigation and map usage experience.
+Map buttons, including *Zoom*, *Search*, *Navigation*, *Compass*, *My Position*, *3D Mode*, and *Menu*, are the primary controls for interacting with the map. Each button offers specific functionalities to enhance your navigation and map usage experience.
 
 
-## My Location and Zoom {#my-location-and-zoom}
+## My Position and Zoom {#my-position-and-zoom}
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
 Use these buttons to control how the map is displayed on the screen of your device:
 
-- **My Location**. Shows whether the center of the map is synchronized with your device's current geolocation.
+- **My Position**. Shows whether the center of the map is synchronized with your device's current geolocation.
 - **Zoom**. Allows you to adjust the map's zoom level to provide more or less details.
 If you want more information on using these buttons, you can see the article [Interact with map](../map/interact-with-map.md#my-location-and-zoom).
 
 
-## Directions {#directions}
+## Navigation {#navigation}
 
 ![Directions button allows](@site/static/img/widgets/directions_button_allows.png)
 
-The **Directions** button is essential for route planning and navigation:
+The **Navigation** button is essential for route planning and navigation:
 
 - [Build a route](../navigation/index.md). Use this button to create a route.
 - [Start navigation](../navigation/index.md). Initiate turn-by-turn navigation.
