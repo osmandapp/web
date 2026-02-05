@@ -2,8 +2,8 @@
 slug: web-explore
 title: Discover Patagonia with OsmAnd Web Explore
 authors: eugene
-tags: [marketing,map,web]
-unlisted: true
+tags: [marketing,map,web, android]
+
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,7 +16,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-In classic adventure stories, traveling through remote regions meant you had to rely on maps, luck, and intuition. Patagonia — famously portrayed in *In Search of the Castaways* — was once a place of uncertainty and long, unpredictable routes. Today, exploring Patagonia can look very different with [OsmAnd Web Explore](https://osmand.net/docs/user/web/web-search#explore). Modern tools make it easy to discover key places, explore what’s nearby, and plan routes across one of the world’s most spectacular regions.
+In classic adventure stories, traveling through remote regions meant you had to rely on maps, luck, and intuition. Patagonia — famously portrayed in *"In Search of the Castaways"* — was once a place of uncertainty and long, unpredictable routes. Today, exploring Patagonia can look very different with [OsmAnd Web Explore](https://osmand.net/docs/user/web/web-search#explore). Modern tools make it easy to discover key places, explore what’s nearby, and plan routes across one of the world’s most spectacular regions.
 
 <!-- truncate -->
 
