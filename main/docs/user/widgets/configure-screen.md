@@ -497,7 +497,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-**Default buttons** allow you to customize which preset map buttons are visible on the map screen. You can choose to hide or show the following buttons:
+**Default buttons** allow you to customize which preset map buttons are visible on the map screen. Each button in the list has an On/Off switch next to it. You can choose to hide or show the following buttons:
 
     - [3D mode](../widgets/map-buttons.md#3d-mode). For iOS, the button is always available. For Android, it appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
 
@@ -519,7 +519,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 The **three-dot menu** on the Default buttons screen contains actions such as:
 
     - *Reset to default*. Allows you to return the button settings to their original appearance.
-    - *Copy from another profile*. Select from which profile from the offered list you want to copy button settings.
+    - *Copy from another profile*. Select a profile from the list to copy button visibility and appearance settings.
     - *Appearance (Android only)*. Offers a variety of customization options for these type of buttons. To modify a button's appearance, tap the required button from the list and select the [Appearance](#button-appearance) option.
 
 
