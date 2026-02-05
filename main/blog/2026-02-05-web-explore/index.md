@@ -18,7 +18,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 In classic adventure stories, traveling through remote regions meant you had to rely on maps, luck, and intuition. Patagonia — famously portrayed in *"In Search of the Castaways"* — was once a place of uncertainty and long, unpredictable routes. Today, exploring Patagonia can look very different with [OsmAnd Web Explore](https://osmand.net/docs/user/web/web-search#explore). Modern tools make it easy to discover key places, explore what’s nearby, and plan routes across one of the world’s most spectacular regions.
 
+![Patagonia](./img/rafael-pazini.jpg)
+
 <!-- truncate -->
+
+Photo by <a href="https://unsplash.com/@rflpazini?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rafael Pazini</a> on <a href="https://unsplash.com/photos/a-couple-of-people-walking-down-a-dirt-road-XpRDbsocarg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
 
 
 ## Let’s Start with a Search
