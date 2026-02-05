@@ -531,11 +531,18 @@ The **three-dot menu** on the Default buttons screen contains actions such as:
 
 ![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
 
+**Go to** (for Custom buttons): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → three-dot menu → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Go to** (for all Default buttons): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → three-dot menu → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Go to** (for a specific Default button): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → select a button → *<Translate android="true" ids="shared_string_appearance"/>*  
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![Button Appearance](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Go to** (for Custom buttons): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → three-dot menu → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Go to** (for a specific Default button): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → select a button → *<Translate ios="true" ids="shared_string_appearance"/>*
 
 </TabItem>
 
