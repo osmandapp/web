@@ -1,22 +1,17 @@
-import headerStyles from '../trackfavmenu.module.css';
 import {
-    AppBar,
     Box,
     CircularProgress,
     Collapse,
-    IconButton,
     Slider,
     SvgIcon,
     ToggleButton,
     ToggleButtonGroup,
-    Toolbar,
     Tooltip,
     Typography,
 } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
@@ -32,10 +27,13 @@ import {
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import styles from './travel.module.css';
 import CustomSelect from './CustomSelect';
+import ActivitySelect from './ActivitySelect';
 import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
+import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
+import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
 import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
 import capitalize from 'lodash-es/capitalize';
@@ -73,7 +71,7 @@ export default function TravelMenu() {
 
     const [, height] = useWindowSize();
 
-    const [selectedActivityType, setSelectedActivityType] = useState(DEFAULT_ACTIVITY);
+    const [selectedActivityTypeArr, setSelectedActivityTypeArr] = useState(DEFAULT_ACTIVITY);
     const [selectedYear, setSelectedYear] = useState(DEFAULT_YEAR);
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
@@ -108,16 +106,16 @@ export default function TravelMenu() {
 
     useEffect(() => {
         ctx.setTravelFilter({
-            activity: selectedActivityType,
+            activity: selectedActivityTypeArr,
             year: selectedYear,
             tags: selectedTags,
             tagMatchMode,
         });
-    }, [selectedActivityType, selectedYear, selectedTags, tagMatchMode]);
+    }, [selectedActivityTypeArr, selectedYear, selectedTags, tagMatchMode]);
 
     useEffect(() => {
         if (ctx.travelFilter) {
-            setSelectedActivityType(ctx.travelFilter.activity);
+            setSelectedActivityTypeArr(ctx.travelFilter.activity);
             setSelectedYear(ctx.travelFilter.year);
             setSelectedTags(ctx.travelFilter.tags || []);
             setTagMatchMode(ctx.travelFilter.tagMatchMode || TAG_MATCH_MODES.OR);
@@ -142,7 +140,7 @@ export default function TravelMenu() {
                 params.year = year;
             }
             if (activity && activity !== ACTIVITY_ALL) {
-                params.activity = activity;
+                params.activityArr = activity;
             }
 
             try {
@@ -198,11 +196,11 @@ export default function TravelMenu() {
         debouncedFetchRanges({
             bounds: ctx.visibleBounds,
             year: selectedYear,
-            activity: selectedActivityType,
+            activity: selectedActivityTypeArr,
             distTouched: distanceSliderTouched,
             speedTouched: speedSliderTouched,
         });
-    }, [ctx.visibleBounds, selectedYear, selectedActivityType]);
+    }, [ctx.visibleBounds, selectedYear, selectedActivityTypeArr]);
 
     const years = useMemo(() => {
         const currentYear = new Date().getFullYear();
@@ -291,15 +289,11 @@ export default function TravelMenu() {
 
     function setDefaultState() {
         setTravelResult(null);
-        setSelectedActivityType(DEFAULT_ACTIVITY);
+        setSelectedActivityTypeArr(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
         setSelectedTags([]);
         setTagMatchMode(TAG_MATCH_MODES.OR);
         ctx.setOpenTravel(false);
-    }
-
-    function handleActivitySelect(activityId) {
-        setSelectedActivityType(activityId);
     }
 
     function handleYearSelect(year) {
@@ -311,7 +305,7 @@ export default function TravelMenu() {
         setTravelResult(null);
 
         ctx.setSearchTravelRoutes({
-            activity: selectedActivityType,
+            activity: selectedActivityTypeArr,
             year: selectedYear,
             tags: selectedTags,
             tagMatchMode,
@@ -322,7 +316,7 @@ export default function TravelMenu() {
 
     function resetSearch() {
         setTravelResult(null);
-        setSelectedActivityType(DEFAULT_ACTIVITY);
+        setSelectedActivityTypeArr(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
         setSelectedTags([]);
         setTagMatchMode(TAG_MATCH_MODES.OR);
@@ -358,40 +352,28 @@ export default function TravelMenu() {
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
             {ltx.isLoggedIn() ? (
                 <>
-                    <AppBar position="static" className={headerStyles.appbar}>
-                        <Toolbar className={headerStyles.toolbar}>
-                            <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
-                                <CloseIcon />
-                            </IconButton>
-                            <Typography id="se-travel-menu-name" component="div" className={headerStyles.title}>
-                                Travel
-                            </Typography>
+                    <HeaderNoUnderline
+                        title="Travel"
+                        onClose={close}
+                        titleId="se-travel-menu-name"
+                        rightContent={
                             <Tooltip title={t('reset_to_default')} arrow placement="bottom-end">
                                 <span>
-                                    <IconButton
-                                        id="se-travel-reset"
-                                        variant="contained"
-                                        type="button"
-                                        className={headerStyles.appBarIcon}
-                                        onClick={resetSearch}
-                                    >
-                                        <ResetIcon />
-                                    </IconButton>
+                                    <ActionIconBtn id="se-travel-reset" icon={<ResetIcon />} onClick={resetSearch} />
                                 </span>
                             </Tooltip>
-                        </Toolbar>
-                    </AppBar>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
+                        }
+                    />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, mt: '-14px' }}>
                         <Box>
                             {updatedActivities?.length > 0 && (
-                                <CustomSelect
+                                <ActivitySelect
                                     name="Activity"
-                                    value={selectedActivityType}
-                                    onChange={(value) => setSelectedActivityType(value)}
-                                    options={updatedActivities}
-                                    renderLabel={(option) => option?.label}
-                                    renderIcon={(option) => option?.icon}
-                                    handleSelect={(id) => handleActivitySelect(id)}
+                                    value={selectedActivityTypeArr}
+                                    onChange={(value) => setSelectedActivityTypeArr(value)}
+                                    activities={activities}
+                                    updatedActivities={updatedActivities}
+                                    defaultIcon={ActivityAllIcon}
                                 />
                             )}
                             <CustomSelect
@@ -425,7 +407,7 @@ export default function TravelMenu() {
                                     selectedTags={selectedTags}
                                     onChangeTags={setSelectedTags}
                                     selectedYear={selectedYear}
-                                    selectedActivity={selectedActivityType}
+                                    selectedActivity={selectedActivityTypeArr}
                                 />
                                 <Box sx={{ mx: 2, mt: 2, mb: 2 }}>
                                     <ToggleButtonGroup

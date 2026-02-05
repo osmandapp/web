@@ -441,7 +441,7 @@ export default function InformationBlock({
                                 {ctx.processingTravelRouteByUrl && (
                                     <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />
                                 )}
-                                {tabsObj && tabsObj.tabList.length > 0 && (
+                                {tabsObj && tabsObj.tabList.length > 0 && !ctx.processingTravelRouteByUrl && (
                                     <Box
                                         sx={{
                                             flex: 1,
