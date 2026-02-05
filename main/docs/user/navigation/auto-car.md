@@ -261,7 +261,7 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-**Speedometer** widget is an integrated interface element that displays *current speed* using GPS data and *speed limit* from the [OSM database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) and [OsmAnd settings](../navigation/guidance/voice-navigation.md#speed-limit) on the vehicle's multimedia system screen.
+**Speedometer** widget is an integrated interface element that displays *current speed* using GPS data and *speed limit* from the [OSM database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) and [OsmAnd settings](../navigation/guidance/voice-navigation.md#speed-limit) on the vehicle's multimedia system screen. When your current speed approaches the configured Speed limit tolerance or exceeds the speed limit, the widget changes its appearance (colors) to provide a warning. The appearance change may be animated.
 
 - The **Speedometer widget** is [*profile dependent*](../personal/profiles.md), so if you change the settings for one profile, they will not be applied to another.
 - There is no option to customize the display of the **Speedometer widget** directly in *Android Auto*, you need to configure it in OsmAnd app before starting navigation and connecting your device to the vehicle.
