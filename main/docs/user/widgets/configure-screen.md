@@ -449,6 +449,53 @@ You can rearrange or remove widgets from the application screen using the **Edit
 - Confirm the deletion when prompted.
 
 
+## Map Screen Layout {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Map Screen Layout](@site/static/img/widgets/map_screen_layout_1.png) ![Map Screen Layout](@site/static/img/widgets/map_screen_layout_2.png)
+
+The **Map screen layout** setting allows you to control how widget panels are arranged on the map screen. It helps prevent widgets and buttons from overlapping and improves screen space usage, especially when switching between portrait and landscape orientations.
+
+You can open the Map screen layout settings from the Configure screen menu, either directly from the screen actions or via the three-dot menu.
+
+### Single & Separate Layouts {#single-and-separate-layouts}
+
+![Map Screen Layout](@site/static/img/widgets/screen_layout_single.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_separate.png)
+
+OsmAnd supports two layout modes for the map screen:
+- **Single layout** – uses the same widget layout for all screen orientations. This option is selected by default.
+- **Separate layouts** – allows you to configure different widget layouts for Portrait and Landscape orientations.
+
+When Separate layouts is enabled, changes made in one orientation do not affect the other. This is useful if you want to optimize the map screen differently for portrait and landscape use.
+
+### Portrait & Landscape Tabs {#portrait-and-landscape-tabs}
+
+![Map Screen Layout](@site/static/img/widgets/screen_layout_tabs.png)
+
+When Separate layouts is enabled, two tabs become available in the Configure screen: **Portrait** and **Landscape**. Each tab represents an independent layout for the corresponding screen orientation. You can switch between tabs by tapping them.
+
+You can copy the layout between orientations. To access these actions, tap the three-dot menu for the widget panel:
+- **Copy from Portrait** – copies the widget list from the Portrait layout to the Landscape layout.
+- **Copy from Landscape** – copies the widget list from the Landscape layout to the Portrait layout.
+
+Only the widget list is copied, and the operation applies within the same profile.
+
+![Map Screen Layout](@site/static/img/widgets/screen_layout_portrait.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Panels Layout {#panels-layout}
+
+![Map Screen Layout](@site/static/img/widgets/screen_layout_wide.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_compact.png)
+
+The **Panels layout** setting controls how the top and bottom widget panels are displayed. This option is available only when Separate layouts is enabled.
+
+You can choose between two modes:
+- **Wide** – the top and bottom panels span the full width of the screen.
+- **Compact** – the top and bottom panels fit between the side panels and map buttons.
+
+Panels layout can be configured independently for Portrait and Landscape orientations, allowing better adaptation to different screen sizes and orientations.
+
+
 ## Buttons {#buttons}
 
 ### Custom Buttons {#custom-buttons}
