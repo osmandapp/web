@@ -97,6 +97,10 @@ Vehicle parameters affect navigation and route construction because they determi
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+On Android, this parameter is also available for *[Cycling profiles](../../navigation/routing/bicycle-based-routing.md)* to help avoid narrow cycle paths.
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+
 **5.** [**Max axle load limit**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Provide your vehicle’s maximum axle load to avoid roads and bridges with axle weight restrictions. This parameter is only available in navigation types such as [*Truck*](../../navigation/routing/car-based-routing.md).  
 
 ![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
