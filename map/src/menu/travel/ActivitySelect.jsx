@@ -203,6 +203,8 @@ export default function ActivitySelect({
                     </MenuItem>
                     <Divider sx={{ my: '0px !important' }} />
                     {activities?.groups?.map((group) => {
+                        // When activityCounts is null (no data loaded or error), groups stay enabled.
+                        // When activityCounts exists: disable group only if it has no tracks in view (sum null or 0).
                         const groupSum =
                             activityCounts != null && group.activities?.length
                                 ? group.activities.reduce((sum, a) => sum + (getActivityCount(a.id) ?? 0), 0)
