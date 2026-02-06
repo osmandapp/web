@@ -28,7 +28,7 @@ OsmAnd i [Marcin z Motocyklem.net](https://motocyklem.net/) przedstawiają i pre
 
 1. **Wprowadź swój e-mail** do rejestracji:
 
-<RegisterUserPromoBlock  promoKey='motocyklem1'/>
+<RegisterUserPromoBlock  promoKey='motocyklem2'/>
 
 <p> </p>
 
@@ -53,7 +53,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='motocyklem1'/>
+<RegisterUserPromoBlock  promoKey='motocyklem2'/>
 
 <p> </p>
 
