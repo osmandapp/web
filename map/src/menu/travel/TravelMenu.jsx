@@ -95,6 +95,7 @@ export default function TravelMenu() {
     const [speedSliderTouched, setSpeedSliderTouched] = useState(false);
     const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
     const [showTagFilters, setShowTagFilters] = useState(true);
+    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
 
     useEffect(() => {
         const res = ctx.searchTravelRoutes?.res;
@@ -139,17 +140,28 @@ export default function TravelMenu() {
             if (year && year !== ALL_YEARS) {
                 params.year = year;
             }
-            if (activity && activity !== ACTIVITY_ALL) {
-                params.activityArr = activity;
-            }
+
+            const paramsActivities = { ...params };
 
             try {
-                const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
+                const activitiesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
+                    apiCache: true,
+                    params: paramsActivities,
+                });
+
+                if (activity && activity !== ACTIVITY_ALL) {
+                    params.activityArr = activity;
+                }
+
+                const rangesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
                     apiCache: true,
                     params,
                 });
-                if (response?.data) {
-                    const data = response.data;
+
+                setActivityCounts(activitiesResponse?.data || null);
+
+                if (rangesResponse?.data) {
+                    const data = rangesResponse.data;
                     const newMinDist = data.minDist || 0;
                     const newMaxDist = data.maxDist || DEFAULT_MAX_DISTANCE;
                     const newMinSpeed = data.minSpeed || 0;
@@ -183,7 +195,8 @@ export default function TravelMenu() {
                     });
                 }
             } catch (error) {
-                console.error('Error fetching ranges:', error);
+                console.error('Error fetching ranges/activities:', error);
+                setActivityCounts(null);
             }
         }, 500)
     ).current;
@@ -373,6 +386,7 @@ export default function TravelMenu() {
                                     onChange={(value) => setSelectedActivityTypeArr(value)}
                                     activities={activities}
                                     updatedActivities={updatedActivities}
+                                    activityCounts={activityCounts}
                                     defaultIcon={ActivityAllIcon}
                                 />
                             )}
