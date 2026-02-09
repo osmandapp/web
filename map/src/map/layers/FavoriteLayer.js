@@ -5,7 +5,7 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
@@ -174,7 +174,7 @@ const FavoriteLayer = () => {
                 continue;
             }
 
-            if (!ctx.configureMapState.showFavorites) {
+            if (!ctx.configureMapState.showFavorites && !openGroupId) {
                 removeMarkersFromMap(file);
                 continue;
             }
@@ -290,8 +290,10 @@ const FavoriteLayer = () => {
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent?.layer) {
-            // if the group is hidden, then only zoom to the group markers
-            if (ctx.configureMapState.showFavorites && ctx.selectedGpxFile?.trackData?.hidden !== 'true') {
+            const shouldShow =
+                (ctx.configureMapState.showFavorites || openGroupId) &&
+                ctx.selectedGpxFile?.trackData?.hidden !== HIDDEN_TRUE;
+            if (shouldShow) {
                 if (!map.hasLayer(ctx.selectedGpxFile.markerCurrent.layer)) {
                     const layer = ctx.selectedGpxFile.markerCurrent.layer;
                     layer.addTo(map).on('click', onClick);
