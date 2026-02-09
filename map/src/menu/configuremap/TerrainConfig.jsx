@@ -1,6 +1,7 @@
 import headerStyles from '../trackfavmenu.module.css';
 import { AppBar, Box, IconButton, Slider, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './configuremap.module.css';
+import gStyles from '../gstylesmenu.module.css';
 import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -110,7 +111,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
     }
 
     return (
-        <>
+        <Box className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton variant="contained" className={styles.closeIcon} onClick={() => closeConfig()}>
@@ -136,49 +137,53 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                     )}
                 </Toolbar>
             </AppBar>
-            <SelectItem
-                title={t('web:terrain_color_scheme')}
-                value={ctx.heightmap?.key ?? NO_HEIGHTMAP.key}
-                options={heightmapOptions}
-                loading={ctx.processHeightmaps}
-                getOptionLabel={(option) => option.name}
-                getOptionValue={(option) => option.key}
-                onSelect={handleHeightmapSelect}
-            />
-            {ctx.heightmap?.key ? (
-                <Box>
-                    <ThickDivider />
-                    <SubTitleMenu text={t('shared_string_appearance')} />
-                    <Box sx={{ m: 2 }}>
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                            }}
-                        >
-                            <Typography className={styles.terrainSliderTitle}>{t('web:terrain_visibility')}</Typography>
-                            <Typography className={styles.terrainSliderValue}>{`${value}%`}</Typography>
-                        </div>
-                        {value !== undefined && (
-                            <Slider
-                                value={typeof value === 'number' ? value : 0}
-                                onChange={handleSliderChange}
-                                size="small"
-                                aria-label="Small"
-                                valueLabelDisplay="off"
-                                sx={{
-                                    color: '#237BFF',
+            <Box className={gStyles.scrollActiveBlock}>
+                <SelectItem
+                    title={t('web:terrain_color_scheme')}
+                    value={ctx.heightmap?.key ?? NO_HEIGHTMAP.key}
+                    options={heightmapOptions}
+                    loading={ctx.processHeightmaps}
+                    getOptionLabel={(option) => option.name}
+                    getOptionValue={(option) => option.key}
+                    onSelect={handleHeightmapSelect}
+                />
+                {ctx.heightmap?.key ? (
+                    <Box>
+                        <ThickDivider />
+                        <SubTitleMenu text={t('shared_string_appearance')} />
+                        <Box sx={{ m: 2 }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
                                 }}
-                            />
-                        )}
+                            >
+                                <Typography className={styles.terrainSliderTitle}>
+                                    {t('web:terrain_visibility')}
+                                </Typography>
+                                <Typography className={styles.terrainSliderValue}>{`${value}%`}</Typography>
+                            </div>
+                            {value !== undefined && (
+                                <Slider
+                                    value={typeof value === 'number' ? value : 0}
+                                    onChange={handleSliderChange}
+                                    size="small"
+                                    aria-label="Small"
+                                    valueLabelDisplay="off"
+                                    sx={{
+                                        color: '#237BFF',
+                                    }}
+                                />
+                            )}
+                        </Box>
                     </Box>
-                </Box>
-            ) : (
-                <Box sx={{ mx: 2 }}>
-                    <Typography className={styles.terrainInfo}>{t('web:terrain_desc')}</Typography>
-                </Box>
-            )}
-        </>
+                ) : (
+                    <Box sx={{ mx: 2 }}>
+                        <Typography className={styles.terrainInfo}>{t('web:terrain_desc')}</Typography>
+                    </Box>
+                )}
+            </Box>
+        </Box>
     );
 }

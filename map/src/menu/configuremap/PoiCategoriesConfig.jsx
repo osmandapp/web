@@ -12,6 +12,7 @@ import {
     Typography,
 } from '@mui/material';
 import styles from '../configuremap/configuremap.module.css';
+import gStyles from '../gstylesmenu.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import AppContext from '../../context/AppContext';
@@ -84,7 +85,7 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
     }
 
     return (
-        <>
+        <Box className={gStyles.scrollMainBlock}>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton variant="contained" className={styles.closeIcon} onClick={() => closeCategories()}>
@@ -95,7 +96,7 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Box sx={{ overflowY: 'auto' }}>
+            <Box className={gStyles.scrollActiveBlock}>
                 {activePoiFilters?.map((item, key) => {
                     const category = PoiManager.formattingPoiFilter(item, true);
                     return (
@@ -136,6 +137,6 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                     </Button>
                 </Toolbar>
             </AppBar>
-        </>
+        </Box>
     );
 }
