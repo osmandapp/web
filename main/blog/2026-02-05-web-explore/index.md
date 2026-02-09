@@ -76,8 +76,6 @@ Using the [Change profile](https://osmand.net/docs/user/web/planner#manage-track
 So, while classic adventures have already been written and have earned their place in history, your own Patagonia story is still ahead of you. With OsmAnd Web Explore and Plan Route, you can turn curiosity into a clear plan: find the places that inspire you, see what’s nearby, and build a route that matches the terrain and the way you travel.
 
 
-
-
 ______________________________________________
 
 
