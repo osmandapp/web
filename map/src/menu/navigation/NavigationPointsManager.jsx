@@ -12,6 +12,7 @@ import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { apiGet } from '../../util/HttpApi';
 import { parseCoordinates } from '../analyzer/util/PointsManager';
+import { getCenterMapLoc } from '../../manager/MapManager';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -20,21 +21,24 @@ export function formatLatLon(pnt) {
     return pnt.lat.toFixed(5) + ', ' + pnt.lng.toFixed(5);
 }
 
-async function getValidatedLatLon(value) {
+async function getValidatedLatLon(value, centrePoint) {
     // Try to parse as coordinates first using existing parseCoordinate function
     const latlon = parseCoordinates(value);
     if (latlon) {
         return latlon;
     }
 
-    // If not valid coordinates, try API search
+    const params = { location: value };
+    if (centrePoint?.lat != null && centrePoint?.lng != null) {
+        params.lat = centrePoint.lat;
+        params.lon = centrePoint.lng;
+    }
+
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/parse-location`, {
-        params: {
-            location: value,
-        },
+        params,
     });
 
-    if (response?.data && response.data.lat && response.data.lon) {
+    if (response?.data?.lat && response.data.lon) {
         return new LatLng(response.data.lat, response.data.lon);
     }
 
@@ -68,7 +72,9 @@ export default function NavigationPointsManager() {
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
 
+    const location = useLocation();
     const navObject = ctx.navigationObject;
+    const centrePoint = getCenterMapLoc(location.hash);
 
     const startPoint = navObject.getOption(ROUTE_POINTS_START);
     const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);
@@ -89,8 +95,6 @@ export default function NavigationPointsManager() {
     const prevIsMainMenu = useRef(false);
 
     const FOCUS_DELAY_MS = 150;
-
-    const location = useLocation();
 
     const { history, clearHistory, handleHistorySelect } = useNavigationHistory(navObject, ctx);
 
@@ -213,7 +217,7 @@ export default function NavigationPointsManager() {
             return;
         }
 
-        const latlon = await getValidatedLatLon(trimmedValue);
+        const latlon = await getValidatedLatLon(trimmedValue, centrePoint);
         if (latlon) {
             const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             navObject.setOption(ROUTE_POINTS_START, navObj);
@@ -236,7 +240,7 @@ export default function NavigationPointsManager() {
             return;
         }
 
-        const latlon = await getValidatedLatLon(trimmedValue);
+        const latlon = await getValidatedLatLon(trimmedValue, centrePoint);
         if (latlon) {
             const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             navObject.setOption(ROUTE_POINTS_FINISH, navObj);
@@ -252,7 +256,7 @@ export default function NavigationPointsManager() {
             }
             return;
         }
-        const latlon = await getValidatedLatLon(value);
+        const latlon = await getValidatedLatLon(value, centrePoint);
         if (latlon) {
             const navObj = navigationObject.fromCoordinates(latlon.lat, latlon.lng);
             const newViaPoints = viaPoints ? [...viaPoints] : [];
