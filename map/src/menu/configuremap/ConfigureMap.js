@@ -118,37 +118,6 @@ export default function ConfigureMap() {
     const DEFAULT_CONFIGURE = () => {
         return (
             <>
-                <AppBar position="static" className={headerStyles.appbar}>
-                    <Toolbar className={headerStyles.toolbar}>
-                        <IconButton
-                            id={'se-configure-map-menu-close'}
-                            variant="contained"
-                            type="button"
-                            className={styles.closeIcon}
-                            onClick={() => closeHeader({ ctx })}
-                        >
-                            <CloseIcon />
-                        </IconButton>
-                        <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                            {t('configure_map')}
-                        </Typography>
-                        {ltx.loginUser && (
-                            <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
-                                <span>
-                                    <IconButton
-                                        id="se-reset"
-                                        variant="contained"
-                                        type="button"
-                                        className={headerStyles.appBarIcon}
-                                        onClick={setDefaultConfigureMap}
-                                    >
-                                        <ResetIcon />
-                                    </IconButton>
-                                </span>
-                            </Tooltip>
-                        )}
-                    </Toolbar>
-                </AppBar>
                 {!ltx.loginUser && !ctx.develFeatures ? (
                     <EmptyLogin />
                 ) : (
@@ -326,12 +295,53 @@ export default function ConfigureMap() {
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
-            <Box className={gStyles.scrollActiveBlock}>
-                {openPoiConfig && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
-                {openTerrainConfig && <TerrainConfig setOpenTerrainConfig={setOpenTerrainConfig} />}
-                {/* Display default configuration if no specific component is active */}
-                {!openPoiConfig && !openTerrainConfig && <DEFAULT_CONFIGURE />}
-            </Box>
+            {openPoiConfig || openTerrainConfig ? (
+                <>
+                    {openPoiConfig && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
+                    {openTerrainConfig && <TerrainConfig setOpenTerrainConfig={setOpenTerrainConfig} />}
+                </>
+            ) : (
+                <>
+                    <AppBar position="static" className={headerStyles.appbar}>
+                        <Toolbar className={headerStyles.toolbar}>
+                            <IconButton
+                                id={'se-configure-map-menu-close'}
+                                variant="contained"
+                                type="button"
+                                className={styles.closeIcon}
+                                onClick={() => closeHeader({ ctx })}
+                            >
+                                <CloseIcon />
+                            </IconButton>
+                            <Typography
+                                id="se-configure-map-menu-name"
+                                component="div"
+                                className={headerStyles.title}
+                            >
+                                {t('configure_map')}
+                            </Typography>
+                            {ltx.loginUser && (
+                                <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
+                                    <span>
+                                        <IconButton
+                                            id="se-reset"
+                                            variant="contained"
+                                            type="button"
+                                            className={headerStyles.appBarIcon}
+                                            onClick={setDefaultConfigureMap}
+                                        >
+                                            <ResetIcon />
+                                        </IconButton>
+                                    </span>
+                                </Tooltip>
+                            )}
+                        </Toolbar>
+                    </AppBar>
+                    <Box className={gStyles.scrollActiveBlock}>
+                        <DEFAULT_CONFIGURE />
+                    </Box>
+                </>
+            )}
         </Box>
     );
 }
