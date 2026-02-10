@@ -19,7 +19,6 @@ import Loading from '../errors/Loading';
 import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import gStyles from '../gstylesmenu.module.css';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
@@ -257,10 +256,10 @@ export default function VisibleTracks({ source, open }) {
                     <Loading />
                 ) : (
                     <>
-                        <Box sx={{ height: `${height - 120}px` }} className={gStyles.scrollMainBlock}>
+                        <Box sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}>
                             {showEmptyVisible && <EmptyVisible id="se-empty-visible" />}
                             {hasVisibleTracks() && (
-                                <Box className={gStyles.scrollActiveBlock}>
+                                <>
                                     <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
                                         {trackItems}
                                     </Box>
@@ -277,7 +276,7 @@ export default function VisibleTracks({ source, open }) {
                                             </Box>
                                         </>
                                     )}
-                                </Box>
+                                </>
                             )}
                         </Box>
                         {!hasVisibleTracks() && !hasTracks() && (
