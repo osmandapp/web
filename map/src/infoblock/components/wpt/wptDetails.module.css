@@ -112,6 +112,8 @@
     font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
+    line-height: 140% !important;
+    padding-left: 6px !important;
 }
 
 .openingHoursClosedText {
@@ -119,6 +121,8 @@
     font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
+    line-height: 140% !important;
+    padding-left: 6px !important;
 }
 
 .directionIcon {
@@ -133,6 +137,7 @@
     color: #727272;
     font-size: 14px !important;
     font-weight: 400 !important;
+    line-height: 140% !important;
 }
 
 .placeAddress {
@@ -140,6 +145,7 @@
     color: #727272;
     font-size: 14px !important;
     font-weight: 400 !important;
+    line-height: 140% !important;
     display: inline-block !important;
     padding-left: 22px !important;
     text-indent: -22px !important;

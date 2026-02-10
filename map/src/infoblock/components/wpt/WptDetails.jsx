@@ -7,6 +7,7 @@ import {
     Divider,
     IconButton,
     Link,
+    ListItem,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -375,10 +376,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!openingHoursString) {
             return null;
         }
-        return {
-            isOpen: openingHoursString.startsWith(IS_OPEN_PREFIX),
-            text: openingHoursString.replace(IS_OPEN_PREFIX, ''),
-        };
+        const openingHoursItems = openingHoursString.split(';').map((item) => item.trim());
+        const openingHours = [];
+        for (const item of openingHoursItems) {
+            const isOpen = item.startsWith(IS_OPEN_PREFIX);
+            const text = item.replace(IS_OPEN_PREFIX, '');
+            openingHours.push({ isOpen, text });
+        }
+        return openingHours;
     }
 
     function getWikiCommons(wikimediaCommons) {
@@ -822,24 +827,26 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     const WptOpeningHours = () => {
         return (
-            <Box className={styles.wptCategory}>
-                <ListItemIcon
-                    className={
-                        wpt.openingHours.isOpen ? wptStyles.openingHoursOpenIcon : wptStyles.openingHoursClosedIcon
-                    }
-                >
-                    <OpeningHoursIcon />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography
-                        className={
-                            wpt.openingHours.isOpen ? wptStyles.openingHoursOpenText : wptStyles.openingHoursClosedText
-                        }
-                        id={'se-wpt-opening-hours'}
-                    >
-                        {wpt.openingHours.text}
-                    </Typography>
-                </ListItemText>
+            <Box className={styles.wptOpeningHours}>
+                {wpt.openingHours.map((item, index) => (
+                    <ListItem sx={{ py: 0 }} key={item.text}>
+                        <ListItemIcon
+                            className={item.isOpen ? wptStyles.openingHoursOpenIcon : wptStyles.openingHoursClosedIcon}
+                        >
+                            <OpeningHoursIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography
+                                className={
+                                    item.isOpen ? wptStyles.openingHoursOpenText : wptStyles.openingHoursClosedText
+                                }
+                                id={'se-wpt-opening-hours' + index}
+                            >
+                                {item.text}
+                            </Typography>
+                        </ListItemText>
+                    </ListItem>
+                ))}
             </Box>
         );
     };
