@@ -16,9 +16,10 @@ import { SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import LoginContext from '../../context/LoginContext';
 import Loading from '../errors/Loading';
-import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL } from '../../manager/GlobalManager';
+import { CONFIGURE_URL, MAIN_URL_WITH_SLASH, MENU_IDS, TRACKS_URL, HEADER_SIZE } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import gStyles from '../gstylesmenu.module.css';
 
 export const VISIBLE_SHARE_MARKER = SHARE_TYPE + '_visible_marker_';
 
@@ -207,7 +208,7 @@ export default function VisibleTracks({ source, open }) {
 
     return (
         <>
-            <Box sx={{ overflow: 'hidden' }}>
+            <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
                         <IconButton
@@ -255,30 +256,28 @@ export default function VisibleTracks({ source, open }) {
                 {isLoading ? (
                     <Loading />
                 ) : (
-                    <>
-                        <Box sx={{ overflowX: 'hidden', overflowY: 'auto', maxHeight: `${height - 120}px` }}>
-                            {showEmptyVisible && <EmptyVisible id="se-empty-visible" />}
-                            {hasVisibleTracks() && (
-                                <>
-                                    <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
-                                        {trackItems}
-                                    </Box>
-                                    {trackItemsOld.length > 0 && (
-                                        <>
-                                            <Divider />
-                                            <MenuItem className={visibleStyles.item}>
-                                                <Typography className={visibleStyles.title} noWrap>
-                                                    {t('web:recently_visible')}
-                                                </Typography>
-                                            </MenuItem>
-                                            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
-                                                {trackItemsOld}
-                                            </Box>
-                                        </>
-                                    )}
-                                </>
-                            )}
-                        </Box>
+                    <Box className={gStyles.scrollActiveBlock}>
+                        {showEmptyVisible && <EmptyVisible id="se-empty-visible" />}
+                        {hasVisibleTracks() && (
+                            <>
+                                <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
+                                    {trackItems}
+                                </Box>
+                                {trackItemsOld.length > 0 && (
+                                    <>
+                                        <Divider />
+                                        <MenuItem className={visibleStyles.item}>
+                                            <Typography className={visibleStyles.title} noWrap>
+                                                {t('web:recently_visible')}
+                                            </Typography>
+                                        </MenuItem>
+                                        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth}>
+                                            {trackItemsOld}
+                                        </Box>
+                                    </>
+                                )}
+                            </>
+                        )}
                         {!hasVisibleTracks() && !hasTracks() && (
                             <Empty
                                 title={"You don't have track files"}
@@ -286,7 +285,7 @@ export default function VisibleTracks({ source, open }) {
                                 folder={DEFAULT_GROUP_NAME}
                             />
                         )}
-                    </>
+                    </Box>
                 )}
             </Box>
         </>
