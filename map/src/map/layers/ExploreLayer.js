@@ -9,7 +9,7 @@ import { Box, IconButton, Modal, Table, TableBody, TableCell, TableRow } from '@
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
-import { areSetsEqual } from '../../util/Utils';
+import { areSetsEqual, getCurrentTimeParams } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
 import {
     clusterMarkers,
@@ -125,6 +125,7 @@ export default function ExploreLayer() {
                     lon: item.geometry.coordinates[0],
                     osmid: item.properties?.osmid,
                     type: item.properties?.osmtype,
+                    ...getCurrentTimeParams(),
                 },
             });
             const key = item.properties?.osmid ?? item.geometry.coordinates[1] + item.geometry.coordinates[0];

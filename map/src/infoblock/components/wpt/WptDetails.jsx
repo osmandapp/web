@@ -256,6 +256,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 wvLinks: wikiObj?.properties.wvLinks,
                 lang: wikiObj?.properties.wikiLang,
                 wikidata: wikidataId,
+                openingHours: getOpeningHours(currentPoi?.properties[AMENITY_PREFIX + OPENING_HOURS_INFO]),
                 mapObj,
             };
         } else if (type?.isWpt) {
