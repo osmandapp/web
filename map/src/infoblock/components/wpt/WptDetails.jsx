@@ -89,7 +89,7 @@ import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
-import { fmt } from '../../../util/dateFmt';
+import { fmt, localizeWeekTokens } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
@@ -381,10 +381,33 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         const openingHours = [];
         for (const item of openingHoursItems) {
             const isOpen = item.startsWith(IS_OPEN_PREFIX);
-            const text = item.replace(IS_OPEN_PREFIX, '');
+            const text = translateOpeningHours(item.replace(IS_OPEN_PREFIX, ''));
             openingHours.push({ isOpen, text });
         }
         return openingHours;
+    }
+
+    function translateOpeningHours(text) {
+        const additionalStrings = new Map();
+        additionalStrings.set("off", "day_off_label");
+        additionalStrings.set("Open", "poi_dialog_opening_hours");
+        additionalStrings.set("Open 24/7", "shared_string_is_open_24_7");
+        additionalStrings.set("Will open at", "will_open_at");
+        additionalStrings.set("Open from", "open_from");
+        additionalStrings.set("Will close at", "will_close_at");
+        additionalStrings.set("Open till", "open_till");
+        additionalStrings.set("Will open tomorrow at", "will_open_tomorrow_at");
+        additionalStrings.set("Will open on", "will_open_on");
+
+        const sortedEntries = Array.from(additionalStrings.entries()).sort((a, b) => b[0].length - a[0].length);
+        
+        for (const [key, stringId] of sortedEntries) {
+            if (text && text.startsWith(key)) { 
+                const time = text.substring(key.length);
+                return t(stringId) + localizeWeekTokens(time);
+            }
+        }
+        return text;
     }
 
     function getWikiCommons(wikimediaCommons) {
