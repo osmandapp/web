@@ -27,7 +27,7 @@ OsmAnd e "Dallara" presentano e vi presentano gli abbonamenti OsmAnd Pro per 1 a
 
 1. **Inserite il vostro indirizzo e-mail** per la registrazione:
    
-<RegisterUserPromoBlock  promoKey='dallara'/>
+<RegisterUserPromoBlock  promoKey='dallara1'/>
 
 <p> </p>
 
@@ -51,7 +51,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='dallara'/>
+<RegisterUserPromoBlock  promoKey='dallara1'/>
 
 <p> </p>
 
