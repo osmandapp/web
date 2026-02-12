@@ -141,6 +141,7 @@ You can activate this feature via *Menu → Settings → Profiles → General se
 <TabItem value="ios" label="iOS">
 
 ![Tilt ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Tilt ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+
 </TabItem>
 
 </Tabs>  
@@ -204,6 +205,24 @@ Clear on-screen messages will guide you when locking or unlocking the screen.
 You can disable all map animations during map interactions, including gestures and buttons.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
+### Globe View {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
+
+**Globe View** allows you to display the map as a spherical Earth instead of a flat projection. This mode changes the geometry of the map surface and adapts map interaction to spherical navigation.  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+
+Globe View is currently available only when:
+- The Development plugin is enabled.  
+Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- The Map rendering engine is set to Version 2 (OpenGL).  
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+When Globe View is enabled, the map rotates as a globe. Drag gestures rotate the Earth, and zoom changes the camera distance rather than scaling a flat surface. Map elements such as tracks, markers, symbols, and 3D objects are rendered directly on the spherical surface and follow its curvature. Objects gradually disappear behind the horizon as the globe rotates.
+
+Interaction near the horizon may be limited to prevent unintended large-distance movement. The globe cannot be flipped over the poles. At very low zoom levels, the visual appearance of roads and labels remains consistent while rotating.
 
 ### Animate Own Position {#animate-own-position}
 
