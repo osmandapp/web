@@ -333,6 +333,11 @@ export const AppContextProvider = (props) => {
     // search
     const searchTooltipRef = useRef(null);
     const searchPointerRef = useRef(null);
+
+    const selectedUpdatedLayerRef = useRef(null); // layer whose icon we replaced — restore on cleanup
+    const selectedCreatedLayerRef = useRef(null); // layer we created — remove on cleanup
+    const selectedHiddenLayersRef = useRef([]); // layers hidden near selected marker — restore when selection changes
+
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
     const [forceSearch, setForceSearch] = useState(false);
@@ -846,6 +851,9 @@ export const AppContextProvider = (props) => {
                 setProcessingSearch,
                 searchTooltipRef,
                 searchPointerRef,
+                selectedUpdatedLayerRef,
+                selectedCreatedLayerRef,
+                selectedHiddenLayersRef,
                 favLoading,
                 setFavLoading,
                 searchTravelRoutes,

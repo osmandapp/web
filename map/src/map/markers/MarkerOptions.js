@@ -260,7 +260,7 @@ export function changeIconColor(svgHtml, color) {
     return svgHtml;
 }
 
-function changeSvgColor(svgHtml, color) {
+export function changeSvgColor(svgHtml, color) {
     const colorPattern = /(fill=")(?!none")[^"]*(")/g;
     return svgHtml.replace(colorPattern, `$1${color}$2`);
 }

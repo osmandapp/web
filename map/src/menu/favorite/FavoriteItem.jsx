@@ -21,6 +21,9 @@ export const CustomIcon = ({ marker }) => {
 
 export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false }) {
     const newSelectedGpxFile = {};
+    if (marker?.layer) {
+        marker.latlng = marker.layer.getLatLng?.() ?? marker.layer._latlng;
+    }
     newSelectedGpxFile.markerCurrent = marker;
     if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
         newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;

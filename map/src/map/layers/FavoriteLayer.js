@@ -5,12 +5,18 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { ZOOM_TO_MAP } from './SearchLayer';
 import { clusterMarkers, createHoverMarker } from '../util/Clusterizer';
+import {
+    applySelectedWithUpdateMarker,
+    applySelectedWithCreateMarker,
+    hideMarkersNearPoint,
+    restoreHiddenMarkers,
+} from '../util/MarkerSelectionService';
 import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
@@ -190,6 +196,7 @@ const FavoriteLayer = () => {
                 removeMarkersFromMap(file);
             }
         }
+        applySelectionIfNeeded();
     }
 
     function addMarkersOnMap(file) {
@@ -255,6 +262,7 @@ const FavoriteLayer = () => {
                 res.addTo(map);
                 updateMarkerZIndex(mainLayersGroup, 2000);
                 file.markersOnMap = res;
+                applySelectionIfNeeded();
             }
         } else {
             if (file.markersOnMap) {
@@ -289,28 +297,8 @@ const FavoriteLayer = () => {
     }, [move]);
 
     useEffect(() => {
-        if (ctx.selectedGpxFile?.markerCurrent?.layer) {
-            const shouldShow =
-                (ctx.configureMapState.showFavorites || openGroupId) &&
-                ctx.selectedGpxFile?.trackData?.hidden !== HIDDEN_TRUE;
-            if (shouldShow) {
-                if (!map.hasLayer(ctx.selectedGpxFile.markerCurrent.layer)) {
-                    const layer = ctx.selectedGpxFile.markerCurrent.layer;
-                    layer.addTo(map).on('click', onClick);
-                    layer.options.hasClickHandler = true;
-                }
-            }
-            if (ctx.selectedGpxFile.zoom) {
-                map.setView(
-                    [
-                        ctx.selectedGpxFile.markerCurrent.layer._latlng.lat,
-                        ctx.selectedGpxFile.markerCurrent.layer._latlng.lng,
-                    ],
-                    ZOOM_TO_MAP
-                );
-            }
-        }
-    }, [ctx.selectedGpxFile]);
+        applySelectionIfNeeded();
+    }, [ctx.selectedGpxFile.markerCurrent, ctx.configureMapState.showFavorites, openGroupId]);
 
     const onClick = useCallback(
         (e) => {
@@ -354,7 +342,14 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
                 icon: e.sourceTarget.options.icon.options.html,
+                color: e.sourceTarget.options.color,
+                background: e.sourceTarget.options.background,
+                groupId: e.sourceTarget.options.groupId,
+                iconSize: e.sourceTarget.options.icon?.options?.iconSize?.[0],
                 layer: e.sourceTarget,
+                latlng: e.sourceTarget.getLatLng?.() ?? e.sourceTarget._latlng,
+                originalIconHtml:
+                    e.sourceTarget.options.originalIcon?.options?.html ?? e.sourceTarget.options.icon?.options?.html,
             };
             ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.name;
             ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
@@ -372,13 +367,25 @@ const FavoriteLayer = () => {
     );
 
     function updateSelectedFavoriteOnMap(file) {
-        Object.values(file?.markers._layers).forEach((marker) => {
-            if (marker.options.name === ctx.selectedGpxFile.markerCurrent.name) {
-                ctx.selectedGpxFile.markerPrev = Object.assign({}, ctx.selectedGpxFile.markerCurrent);
-                ctx.selectedGpxFile.markerCurrent.layer = marker;
-                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-            }
-        });
+        const layer = Object.values(file?.markers?._layers ?? {}).find(
+            (m) => m.options?.name === ctx.selectedGpxFile.markerCurrent?.name
+        );
+        if (!layer) return;
+
+        const opts = layer.options;
+        const iconOpts = opts.icon?.options;
+        ctx.selectedGpxFile.markerPrev = { ...ctx.selectedGpxFile.markerCurrent };
+        ctx.selectedGpxFile.markerCurrent = {
+            ...ctx.selectedGpxFile.markerCurrent,
+            layer,
+            icon: iconOpts?.html,
+            color: opts.color,
+            background: opts.background,
+            groupId: opts.groupId,
+            latlng: layer.getLatLng?.() ?? layer._latlng,
+            originalIconHtml: opts.originalIcon?.options?.html ?? iconOpts?.html,
+        };
+        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
     }
 
     useEffect(() => {
@@ -404,6 +411,83 @@ const FavoriteLayer = () => {
         if (file?.hidden === 'true' && file?.markersOnMap) {
             map.removeLayer(file.markersOnMap);
         }
+    }
+
+    // main function for applying selection on favorite marker
+    function applySelectionIfNeeded() {
+        resetSelectionState();
+
+        const current = getCurrentSelectionIfAllowed();
+        if (!current) {
+            return;
+        }
+
+        const { selectedLayer, centerLatLng } = findOrCreateSelectedLayer(current);
+        hideMarkersAroundSelection(selectedLayer, centerLatLng);
+        zoomToSelectedMarkerIfNeeded();
+    }
+
+    function resetSelectionState() {
+        restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
+        if (ctx.selectedUpdatedLayerRef.current) {
+            restoreOriginalIcon(ctx.selectedUpdatedLayerRef.current);
+            ctx.selectedUpdatedLayerRef.current = null;
+        }
+        if (ctx.selectedCreatedLayerRef.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
+            map.removeLayer(ctx.selectedCreatedLayerRef.current);
+            ctx.selectedCreatedLayerRef.current = null;
+        }
+    }
+
+    function getCurrentSelectionIfAllowed() {
+        if (!ctx.configureMapState.showFavorites && !openGroupId) {
+            return null;
+        }
+
+        const current = ctx.selectedGpxFile?.markerCurrent;
+        if (!current?.name) {
+            return null;
+        }
+
+        return current;
+    }
+
+    function findOrCreateSelectedLayer(current) {
+        const layer = current.layer;
+        let selectedLayer = null;
+
+        if (layer && map.hasLayer(layer)) {
+            current.latlng = layer.getLatLng?.() ?? layer._latlng;
+            applySelectedWithUpdateMarker(layer, current);
+            ctx.selectedUpdatedLayerRef.current = layer;
+            selectedLayer = layer;
+        } else if (current.latlng) {
+            ctx.selectedCreatedLayerRef.current = applySelectedWithCreateMarker(map, current.latlng, current);
+            selectedLayer = ctx.selectedCreatedLayerRef.current;
+        }
+
+        return { selectedLayer, centerLatLng: current.latlng };
+    }
+
+    function hideMarkersAroundSelection(selectedLayer, centerLatLng) {
+        if (!selectedLayer || !centerLatLng) {
+            return;
+        }
+
+        hideMarkersNearPoint(map, zoom, centerLatLng, selectedLayer, ctx.selectedHiddenLayersRef);
+    }
+
+    function zoomToSelectedMarkerIfNeeded() {
+        if (!ctx.selectedGpxFile.zoom) {
+            return;
+        }
+
+        const targetLatLng =
+            ctx.selectedGpxFile.markerCurrent.layer?._latlng ?? ctx.selectedGpxFile.markerCurrent.latlng;
+        if (targetLatLng) {
+            map.setView([targetLatLng.lat, targetLatLng.lng], ZOOM_TO_MAP);
+        }
+        delete ctx.selectedGpxFile.zoom;
     }
 
     return <AddFavoriteDialog dialogOpen={openAddDialog} setDialogOpen={setOpenAddDialog} />;
