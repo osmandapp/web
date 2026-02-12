@@ -9,6 +9,7 @@ import { EXPLORE_LAYER_ID } from '../layers/ExploreLayer';
 import { SELECTED_POI_COLOR } from '../../util/hooks/map/useSelectMarkerOnMap';
 import L from 'leaflet';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
+import Utils from '../../util/Utils';
 
 export const SELECTED_PIN_SIZE = 70;
 export const SELECTED_ICON_SIZE = 36;
@@ -17,7 +18,15 @@ const SELECTED_MARKER_HIDE_MAX_ZOOM = 16;
 const SELECTED_MARKER_HIDE_RADIUS_COEFF = 300 / 16; // 18.75 → 300 m at zoom 12
 
 const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
-const toColor = (c) => c || DEFAULT_WPT_COLOR;
+const toColor = (c) => {
+    if (!c) {
+        return DEFAULT_WPT_COLOR;
+    }
+    if (c.startsWith('#')) {
+        return Utils.hexToRgba(c);
+    }
+    return c;
+};
 
 export function getSelectedMarkerHideRadiusM(zoom) {
     if (zoom >= SELECTED_MARKER_HIDE_MAX_ZOOM) {
