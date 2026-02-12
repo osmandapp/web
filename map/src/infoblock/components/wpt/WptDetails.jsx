@@ -33,7 +33,6 @@ import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_openstreetmap_logo.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
-import { ReactComponent as OpeningHoursIcon } from '../../../assets/icons/ic_action_opening_hour_16.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
@@ -88,7 +87,7 @@ import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
-import { fmt } from '../../../util/dateFmt';
+import { fmt, localizeWeekTokens } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
@@ -96,6 +95,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import DistanceInfo from './DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import { getCenterMapLoc } from '../../../manager/MapManager';
+import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -255,6 +255,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 wvLinks: wikiObj?.properties.wvLinks,
                 lang: wikiObj?.properties.wikiLang,
                 wikidata: wikidataId,
+                openingHours: getOpeningHours(currentPoi?.properties[AMENITY_PREFIX + OPENING_HOURS_INFO]),
                 mapObj,
             };
         } else if (type?.isWpt) {
@@ -369,17 +370,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             }
         }
     }, [ctx.loadingContextMenu]);
-
-    function getOpeningHours(openingHoursString) {
-        const IS_OPEN_PREFIX = 'open:';
-        if (!openingHoursString) {
-            return null;
-        }
-        return {
-            isOpen: openingHoursString.startsWith(IS_OPEN_PREFIX),
-            text: openingHoursString.replace(IS_OPEN_PREFIX, ''),
-        };
-    }
 
     function getWikiCommons(wikimediaCommons) {
         const WIKIMEDIA_FILE = 'File:';
@@ -820,30 +810,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         );
     };
 
-    const WptOpeningHours = () => {
-        return (
-            <Box className={styles.wptCategory}>
-                <ListItemIcon
-                    className={
-                        wpt.openingHours.isOpen ? wptStyles.openingHoursOpenIcon : wptStyles.openingHoursClosedIcon
-                    }
-                >
-                    <OpeningHoursIcon />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography
-                        className={
-                            wpt.openingHours.isOpen ? wptStyles.openingHoursOpenText : wptStyles.openingHoursClosedText
-                        }
-                        id={'se-wpt-opening-hours'}
-                    >
-                        {wpt.openingHours.text}
-                    </Typography>
-                </ListItemText>
-            </Box>
-        );
-    };
-
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
 
@@ -953,7 +919,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 )}
                             </Box>
                             {wpt?.category && <WptCategory />}
-                            {wpt?.openingHours && <WptOpeningHours />}
+                            {wpt?.openingHours && <OpeningHoursInfo openingHours={wpt.openingHours} />}
                             {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <WptAddress />
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (

@@ -109,5 +109,5 @@ export function localizeWeekTokens(scheduleStr) {
         Su: dayName(6),
     };
 
-    return scheduleStr.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su)\b/g, (m) => map[m]);
+    return scheduleStr.replace(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun|Mo|Tu|We|Th|Fr|Sa|Su)\b/g, (m) => map[m.slice(0, 2)]);
 }

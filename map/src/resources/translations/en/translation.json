@@ -6014,5 +6014,13 @@
     "routing_attr_avoid_ice_roads_fords_description": "Avoids ice roads and fords.",
     "routing_attr_allow_intermittent_description": "Allow intermittent water ways",
     "routing_attr_height_obstacles_description": "Projected travel time will reflect elevation impact. Routing preference can help avoid steep uphills:",
-    "transport_Routes": "Routes"
+    "transport_Routes": "Routes",
+    "day_off_label": "off",
+    "shared_string_is_open_24_7": "Open 24/7",
+    "will_open_at": "Opens at",
+    "open_from": "Open from",
+    "will_close_at": "Closes at",
+    "open_till": "Open till",
+    "will_open_tomorrow_at": "Opens tomorrow at",
+    "will_open_on": "Opens at"
 }
