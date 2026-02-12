@@ -7,7 +7,6 @@ import {
     Divider,
     IconButton,
     Link,
-    ListItem,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -34,7 +33,6 @@ import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_openstreetmap_logo.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
-import { ReactComponent as OpeningHoursIcon } from '../../../assets/icons/ic_action_opening_hour_16.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
@@ -97,6 +95,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import DistanceInfo from './DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
 import { getCenterMapLoc } from '../../../manager/MapManager';
+import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -371,44 +370,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             }
         }
     }, [ctx.loadingContextMenu]);
-
-    function getOpeningHours(openingHoursString) {
-        const IS_OPEN_PREFIX = 'open:';
-        if (!openingHoursString) {
-            return null;
-        }
-        const openingHoursItems = openingHoursString.split(';').map((item) => item.trim());
-        const openingHours = [];
-        for (const item of openingHoursItems) {
-            const isOpen = item.startsWith(IS_OPEN_PREFIX);
-            const text = translateOpeningHours(item.replace(IS_OPEN_PREFIX, ''));
-            openingHours.push({ isOpen, text });
-        }
-        return openingHours;
-    }
-
-    function translateOpeningHours(text) {
-        const additionalStrings = new Map();
-        additionalStrings.set("off", "day_off_label");
-        additionalStrings.set("Open", "poi_dialog_opening_hours");
-        additionalStrings.set("Open 24/7", "shared_string_is_open_24_7");
-        additionalStrings.set("Will open at", "will_open_at");
-        additionalStrings.set("Open from", "open_from");
-        additionalStrings.set("Will close at", "will_close_at");
-        additionalStrings.set("Open till", "open_till");
-        additionalStrings.set("Will open tomorrow at", "will_open_tomorrow_at");
-        additionalStrings.set("Will open on", "will_open_on");
-
-        const sortedEntries = Array.from(additionalStrings.entries()).sort((a, b) => b[0].length - a[0].length);
-        
-        for (const [key, stringId] of sortedEntries) {
-            if (text && text.startsWith(key)) { 
-                const time = text.substring(key.length);
-                return t(stringId) + localizeWeekTokens(time);
-            }
-        }
-        return text;
-    }
 
     function getWikiCommons(wikimediaCommons) {
         const WIKIMEDIA_FILE = 'File:';
@@ -849,32 +810,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         );
     };
 
-    const WptOpeningHours = () => {
-        return (
-            <Box className={styles.wptOpeningHours}>
-                {wpt.openingHours.map((item, index) => (
-                    <ListItem sx={{ py: 0 }} key={item.text}>
-                        <ListItemIcon
-                            className={item.isOpen ? wptStyles.openingHoursOpenIcon : wptStyles.openingHoursClosedIcon}
-                        >
-                            <OpeningHoursIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography
-                                className={
-                                    item.isOpen ? wptStyles.openingHoursOpenText : wptStyles.openingHoursClosedText
-                                }
-                                id={'se-wpt-opening-hours' + index}
-                            >
-                                {item.text}
-                            </Typography>
-                        </ListItemText>
-                    </ListItem>
-                ))}
-            </Box>
-        );
-    };
-
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
 
@@ -984,7 +919,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 )}
                             </Box>
                             {wpt?.category && <WptCategory />}
-                            {wpt?.openingHours && <WptOpeningHours />}
+                            {wpt?.openingHours && <OpeningHoursInfo openingHours={wpt.openingHours} />}
                             {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <WptAddress />
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
