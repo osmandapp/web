@@ -355,7 +355,7 @@ The app icon badge appears next to the OsmAnd icon when the track recording is a
 
 ## Widgets {#widgets}
 
-Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*. You can also add *Max Speed* and *Average Slope* widgets.
+Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. On IOS, you can also add *Moving Time* widget.
 
 To start using *Trip recording widgets*, you need to make all the following settings:
 
@@ -380,7 +380,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choose a panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -412,13 +412,13 @@ To customize your interface, you can add or remove the Trip Recording widget and
 Some Trip Recording widgets support multiple display modes. Modes let you switch between overall trip values and metrics for the most recent uphill or downhill section of the currently recorded trip.
 
 The following modes can be available depending on the widget.
-1. **Distance (Start-Stop)**:
-- Total distance (default)
-- Last uphill
-- Last downhill
+1. **Average Slope**:
+- Last downhill 
+- Last uphill  
 
-2. **Uphill**:
-- Total (default)
+2. **Distance (Start-Stop)**:
+- Total distance (default)
+- Last downhill
 - Last uphill
 
 3. **Downhill**:
@@ -427,15 +427,20 @@ The following modes can be available depending on the widget.
 
 4. **Max Speed**:
 - Total (default)
-- Last uphill
 - Last downhill
+- Last uphill
 
-5. **Average Slope**:
-- Last uphill  
-- Last downhill 
+5. **Moving Time** (*IOS only*)
+- Total (default)
+- Last downhill
+- Last uphill
+
+6. **Uphill**:
+- Total (default)
+- Last uphill
 
 Mode switching depends on the widget:
-- Uphill / Downhill / Max Speed / Average Slope — tap the widget on the map to switch its mode.
+- Uphill / Downhill / Max Speed / Average Slope / Moving Time — tap the widget on the map to switch its mode.
 - Distance (Start-Stop) — the Distance widget supports multiple display modes (select them in the widget settings), but tapping it always opens the Trip Recording dialog, where you can start, stop, and view detailed information about your track. 
 
 If the current recording does not yet contain an uphill or downhill section, widgets in Last uphill or Last downhill mode show 0 or — (no data).
@@ -483,16 +488,18 @@ In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** i
 
 | |
 |------------|
-|**Duration**. Displays the total time of the current trip recording in hours and minutes. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Uphill**. Shows the total ascent or the last ascent section, depending on the selected mode. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
-|**Downhill**. Indicates the total descent or the last descent section, depending on the selected mode. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
-|**Max Speed**. Shows the maximum speed for the currently recorded trip in the selected mode. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Average Slope**. Displays the average slope for the last uphill or downhill section of the current trip, depending on the selected mode. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Downhill**. Indicates the total descent or the last descent section, depending on the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Duration**. Displays the total time of the current trip recording in hours and minutes. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|**Max Speed**. Shows the maximum speed for the currently recorded trip in the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Moving Time** (*IOS only*). Shows the moving time for the currently recorded trip, or the time for the last uphill and downhill, depending on the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**Uphill**. Shows the total ascent or the last ascent section, depending on the selected mode. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 If you have multiple widgets selected, you can access the same dialog box for each without needing to switch or close it. This unified interface makes it easy to view and manage all related information seamlessly.
 
