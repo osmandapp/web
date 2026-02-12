@@ -64,6 +64,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
 "Terre Lucane Adventure" links: [Instagram](https://www.instagram.com/terre_lucane), [Youtube](https://www.youtube.com/@terrelucaneadventure2384), [Facebook](https://www.facebook.com/profile.php?id=100076179307356)
+
 ________________________________
 
 <SotmScreenshots />
