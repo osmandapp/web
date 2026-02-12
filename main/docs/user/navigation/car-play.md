@@ -268,7 +268,7 @@ The OsmAnd app can be opened and used to navigate in *CarPlay* on the vehicle mu
 
 ### Finish Navigation {#finish-navigation}
 
-![Finish Navigation](@site/static/img/navigation/auto-car/finish_navigation_carplay.png)
+![Finish Navigation](@site/static/img/navigation/auto-car/finish_navigation_carplay_new.png)
 
 When navigation is completed in CarPlay, OsmAnd displays a **“You have arrived”** dialog on the vehicle screen. This dialog uses the same arrival detection logic as the mobile app and provides quick access to common actions after reaching your destination.
 
