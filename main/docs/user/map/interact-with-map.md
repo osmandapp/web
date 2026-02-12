@@ -19,7 +19,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 This article explains how to customize and interact with the map using various buttons and gestures. It covers how to rotate, zoom, adjust the view angle, and change the map's view angle, rotate it manually or automatically using the compass, or according to bearing.
 
 
-## Gestures {#gestures}
+## Map Movement {#map-movement}
+
+### Gestures {#gestures}
 
 Gestures are essential for navigating the map easily and intuitively.
 
@@ -34,8 +36,7 @@ Gestures are essential for navigating the map easily and intuitively.
 
 Slide animations can be disabled in the settings with a [special option](#remove-animations).
 
-
-## My Location and Zoom {#my-location-and-zoom}
+### My Location and Zoom {#my-location-and-zoom}
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -61,103 +62,12 @@ The *My Location* button is a circular icon that indicates whether the map's cen
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### My Location Appearance {#my-location-appearance}
-
 You can customize **My Location** button icons using Profile appearance settings. Read more about how to do this [here](../personal/profiles.md#profile-appearance).
 
 
-## Map Magnifier {#map-magnifier}
+## Map Interaction {#map-interaction}
 
-The *Map Magnifier* is a tool that enhances the map's visibility, similar to a magnifying glass used with paper maps. It allows you to zoom in on the map to view text and details more clearly or to adjust the level of detail while maintaining the same scale. For more information, go to [Vector Maps](../map/vector-maps.md#map-magnifier) article.
-
-
-## Map Orientation Modes {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Compass widget](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-*Map orientation modes* allow you to choose how the map is displayed on the device screen. OsmAnd offers modes such as **Manually Rotated**, **Movement Direction**, **Compass Direction**, and **North is Up**. Enabling each mode changes the way the map is oriented according to the selected option. For full details, see the [Map Buttons](../widgets/map-buttons.md#compass) article.
-
-
-## Compass {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Compass widget](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Compass widget](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-The compass button shows how the [map is oriented](#map-orientation-modes). The *red arrow* on icons, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the compass button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. The compass button widget offers three [interaction options](../widgets/map-buttons.md#compass-tapping-behavior): *Single Tap* rotates the map to the North, *Double Tap* alternates between all map orientation modes, and *Long Tap* opens the list of modes.
-
-
-## Rotate Map by Bearing {#rotate-map-by-bearing}
-
-In the **rotate map by bearing** mode ([Movement direction](../widgets/map-buttons.md#compass)), the map automatically aligns with your direction of movement, so the area ahead of you is displayed at the top of the screen. This mode enhances navigation by shifting the map center slightly downward, showing more of the route ahead. If you are stationary, the map stays fixed.  
-
-You can activate this feature via *Menu → Settings → Profiles → General settings → Appearance → Map orientation* or by double tapping the [Compass button](../widgets/map-buttons.md#compass-tapping-behavior). For more details about bearing, see [here](../widgets/nav-widgets.md#bearing-widget).
-
-
-## Map Tilt and Horizon {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Tilt android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Tilt android 2](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Tilt ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Tilt ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
-
-</TabItem>
-
-</Tabs>  
-
-With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at a map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
-
-Under the horizon, you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only a few map details can be observed.  
-The use of fog is necessary since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on the OsmAnd map is currently limited to 35 tiles.  
-
-:::info
-Map tilt can be changed by a long tap on the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [My location](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
-You can not change the Camera tilt when the old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
-:::
-
-
-## Touch Screen Lock {#touch-screen-lock}
+### Touch Screen Lock {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +97,12 @@ Tap the on-screen button, or, if the lock is activated, via an external button (
 
 Clear on-screen messages will guide you when locking or unlocking the screen.
 
+### Animate Own Position {#animate-own-position}
 
-## Settings {#settings}
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### Extra Compass Settings {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the map with a slower rotation animation, although this introduces a slight delay, not more than 1 second.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the map with a slower rotation animation, although this introduces a slight delay, not more than 1 second.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable it if such issues arise.
 
 ### Remove Animations {#remove-animations}
 
@@ -204,6 +110,100 @@ Clear on-screen messages will guide you when locking or unlocking the screen.
 
 You can disable all map animations during map interactions, including gestures and buttons.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
+
+
+## Map Orientation {#map-orientation}
+
+### Map Orientation Modes {#map-orientation-modes}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Compass widget](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+*Map orientation modes* allow you to choose how the map is displayed on the device screen. OsmAnd offers modes such as **Manually Rotated**, **Movement Direction**, **Compass Direction**, and **North is Up**. Enabling each mode changes the way the map is oriented according to the selected option. For full details, see the [Map Buttons](../widgets/map-buttons.md#compass) article.
+
+### Rotate by Compass {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Compass widget](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Compass widget](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+The compass button shows how the [map is oriented](#map-orientation-modes). The *red arrow* on icons, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the compass button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. The compass button widget offers three [interaction options](../widgets/map-buttons.md#compass-tapping-behavior): *Single Tap* rotates the map to the North, *Double Tap* alternates between all map orientation modes, and *Long Tap* opens the list of modes.
+
+
+
+### Rotate Map by Bearing {#rotate-map-by-bearing}
+
+In the **rotate map by bearing** mode ([Movement direction](../widgets/map-buttons.md#compass)), the map automatically aligns with your direction of movement, so the area ahead of you is displayed at the top of the screen. This mode enhances navigation by shifting the map center slightly downward, showing more of the route ahead. If you are stationary, the map stays fixed.  
+
+You can activate this feature via *Menu → Settings → Profiles → General settings → Appearance → Map orientation* or by double tapping the [Compass button](../widgets/map-buttons.md#compass-tapping-behavior). For more details about bearing, see [here](../widgets/nav-widgets.md#bearing-widget).
+
+
+## Map Perspective {#map-perspective}
+
+### Map Tilt and Horizon {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Tilt android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Tilt android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Tilt ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Tilt ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+
+</TabItem>
+
+</Tabs>  
+
+With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at a map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
+
+Under the horizon, you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only a few map details can be observed.  
+The use of fog is necessary since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on the OsmAnd map is currently limited to 35 tiles.  
+
+:::info
+Map tilt can be changed by a long tap on the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [My location](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
+You can not change the Camera tilt when the old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
+:::
+
+### Map Magnifier {#map-magnifier}
+
+The *Map Magnifier* is a tool that enhances the map's visibility, similar to a magnifying glass used with paper maps. It allows you to zoom in on the map to view text and details more clearly or to adjust the level of detail while maintaining the same scale. For more information, go to [Vector Maps](../map/vector-maps.md#map-magnifier) article.
 
 ### Globe View {#globe-view}
 
@@ -223,13 +223,6 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 When Globe View is enabled, the map rotates as a globe. Drag gestures rotate the Earth, and zoom changes the camera distance rather than scaling a flat surface. Map elements such as tracks, markers, symbols, and 3D objects are rendered directly on the spherical surface and follow its curvature. Objects gradually disappear behind the horizon as the globe rotates.
 
 Interaction near the horizon may be limited to prevent unintended large-distance movement. The globe cannot be flipped over the poles. At very low zoom levels, the visual appearance of roads and labels remains consistent while rotating.
-
-### Animate Own Position {#animate-own-position}
-
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
-
-Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable it if such issues arise.
 
 
 ## External Input Devices {#external-input-devices}
@@ -298,7 +291,6 @@ To access the settings of an external input device, you need to enable this feat
 | **Media button** <br/> (*Android only*)| *Keyboard*  | Show / Hide - [AV notes](../plugins/audio-video-notes.md#manage-a-single-note) |
 | **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](#my-location-and-zoom) |
 | **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](#my-location-and-zoom) |
-
 
 ### Custom Input Device Type {#custom-input-device-type}
 
