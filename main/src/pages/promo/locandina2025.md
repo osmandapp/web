@@ -29,7 +29,7 @@ OsmAnd e ["Terre Lucane Adventure"](https://terrelucane-adventure.it/) vi presen
 
 1. **Inserite il vostro indirizzo e-mail** per la registrazione:
    
-<RegisterUserPromoBlock  promoKey='locandina'/>
+<RegisterUserPromoBlock  promoKey='locandina1'/>
 
 <p> </p>
 
@@ -55,7 +55,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='locandina'/>
+<RegisterUserPromoBlock  promoKey='locandina1'/>
 
 <p> </p>
 
