@@ -47,10 +47,6 @@ function resizeSvg(svg, size) {
     return svg.replace(/width="\d+(\.\d+)?"/, `width="${size}"`).replace(/height="\d+(\.\d+)?"/, `height="${size}"`);
 }
 
-function sanitize(html) {
-    return (html ?? '').trim();
-}
-
 function prepareInnerIcon(html, iconSize) {
     if (!html) {
         return '';
@@ -98,7 +94,7 @@ export function createLayeredPinIcon(options = {}) {
             ${
                 markerIconHtml
                     ? `<div class="map-layered-pin__icon" style="position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) translateY(${translateY}px);width:${iconWrapperSize}px;height:${iconWrapperSize}px;display:flex;align-items:center;justify-content:center;">
-                            ${sanitize(markerIconHtml)}
+                            ${markerIconHtml}
                        </div>`
                     : ''
             }
