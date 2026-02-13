@@ -24,7 +24,7 @@ export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapOb
     if (marker?.layer) {
         marker.latlng = marker.layer.getLatLng?.() ?? marker.layer._latlng;
     }
-    newSelectedGpxFile.markerCurrent = marker;
+    newSelectedGpxFile.markerCurrent = { ...marker, groupId: group.id };
     if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
         newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
     }
