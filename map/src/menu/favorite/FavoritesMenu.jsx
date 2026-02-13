@@ -30,6 +30,8 @@ export default function FavoritesMenu() {
 
     const [openSharedFolder, setOpenSharedFolder] = useState(null);
 
+    const [showListReady, setShowListReady] = useState(false);
+
     const sharedFiles = ctx.favorites?.groups?.filter((g) => g.sharedWithMe);
 
     const { pinnedGroups, unpinnedGroups } = useMemo(() => {
@@ -94,25 +96,20 @@ export default function FavoritesMenu() {
     const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
     const openGroup = useMemo(() => {
         if (!folderName || !ctx.favorites?.groups) return null;
-        return ctx.favorites.groups.find((g) => g.name === folderName);
+        return ctx.favorites.groups.find((g) => g.name === folderName) ?? null;
     }, [folderName, ctx.favorites?.groups]);
 
-    if (folderName && ctx.processingGroups) {
-        return (
-            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                {ltx.loginUser && (
-                    <GroupHeader
-                        type="favorites"
-                        favoriteGroup={DEFAULT_FAV_GROUP_NAME}
-                        setSortGroups={setSortGroups}
-                    />
-                )}
-                <Loading />
-            </Box>
-        );
-    }
+    // Until the URL is updated after returning, we show progress instead of flickering the list
+    useEffect(() => {
+        if (folderName || openGroup) {
+            setShowListReady(false);
+            return;
+        }
+        const t = setTimeout(() => setShowListReady(true), 400);
+        return () => clearTimeout(t);
+    }, [folderName, openGroup]);
 
-    if (folderName && (!ctx.favorites?.groups || !openGroup)) {
+    if (folderName && (ctx.processingGroups || !openGroup)) {
         return (
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
                 {ltx.loginUser && (
@@ -133,6 +130,21 @@ export default function FavoritesMenu() {
 
     if (openSharedFolder) {
         return <FavoriteGroupFolder smartf={openSharedFolder} onClose={() => setOpenSharedFolder(null)} />;
+    }
+
+    if (!showListReady) {
+        return (
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                {ltx.loginUser && (
+                    <GroupHeader
+                        type="favorites"
+                        favoriteGroup={DEFAULT_FAV_GROUP_NAME}
+                        setSortGroups={setSortGroups}
+                    />
+                )}
+                <Loading />
+            </Box>
+        );
     }
 
     return (
