@@ -70,7 +70,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                                 replace: false,
                             });
                         }
-                        ctx.setZoomToFavGroup(group.id);
+                        ctx.setFocusFavGroupId(group.id);
                     }
                 }}
             >

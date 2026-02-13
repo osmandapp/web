@@ -398,7 +398,7 @@ export const AppContextProvider = (props) => {
     // favorites
     const [favorites, setFavorites] = useState({});
     const [updateMarkers, setUpdateMarkers] = useState(null);
-    const [zoomToFavGroup, setZoomToFavGroup] = useState(null);
+    const [focusFavGroupId, setFocusFavGroupId] = useState(null);
     const [addFavorite, setAddFavorite] = useState({
         add: false,
         location: null,
@@ -803,8 +803,8 @@ export const AppContextProvider = (props) => {
                 setStopUseGeoLocation,
                 configureMapState,
                 setConfigureMapState,
-                zoomToFavGroup,
-                setZoomToFavGroup,
+                focusFavGroupId,
+                setFocusFavGroupId,
                 updateMarkers,
                 setUpdateMarkers,
                 processingGroups,

@@ -6,7 +6,6 @@ import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
-import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { clusterMarkers, createHoverMarker } from '../util/Clusterizer';
@@ -113,14 +112,25 @@ const FavoriteLayer = () => {
     }, [searchParams]);
 
     useEffect(() => {
-        if (ctx.zoomToFavGroup) {
-            const group = ctx.favorites.mapObjs[ctx.zoomToFavGroup];
-            if (group?.markers) {
-                map.fitBounds(group.markers.getBounds(), fitBoundsOptions(ctx));
-                ctx.setZoomToFavGroup(null);
-            }
+        const groupId = ctx.focusFavGroupId;
+        ctx.setFocusFavGroupId(null);
+        if (!groupId) return;
+
+        const group = ctx.favorites.mapObjs[groupId];
+        if (!group?.markers) return;
+
+        const layers = group.markers.getLayers();
+        if (layers.length === 0) return;
+
+        const getLatLng = (layer) => layer.getLatLng?.() ?? layer._latlng;
+        const bounds = map.getBounds();
+        const allInView = layers.every((layer) => bounds.contains(getLatLng(layer)));
+
+        if (!allInView) {
+            const firstLatLng = getLatLng(layers[0]);
+            if (firstLatLng) map.panTo(firstLatLng);
         }
-    }, [ctx.zoomToFavGroup]);
+    }, [ctx.focusFavGroupId]);
 
     useEffect(() => {
         if (ctx.removeFavGroup) {
