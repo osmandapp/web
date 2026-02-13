@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import FavoriteGroupFolder from './FavoriteGroupFolder';
 import PinnedFavoriteGroups from './PinnedFavoriteGroups';
 import { useSearchParams, useLocation } from 'react-router-dom';
-import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { FAVORITES_URL, INFO_MENU_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -125,6 +125,13 @@ export default function FavoritesMenu() {
     }
 
     if (openGroup) {
+        if (location.pathname.includes(INFO_MENU_URL)) {
+            return (
+                <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                    <Loading />
+                </Box>
+            );
+        }
         return <FavoriteGroupFolder folder={openGroup} />;
     }
 

@@ -273,6 +273,13 @@ export default function MainMenu({
                     if (!marker) return;
 
                     ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
+                    if (
+                        ctx.selectedFavoriteObj?.name === marker.name &&
+                        ctx.selectedFavoriteObj?.nameGroup === group.name
+                    ) {
+                        openFavoriteObj(ctx, ctx.selectedFavoriteObj);
+                        return;
+                    }
                     addFavoriteToMap({
                         group,
                         marker,
@@ -626,6 +633,7 @@ export default function MainMenu({
     function openMenuObject() {
         if (selectedType === OBJECT_TYPE_FAVORITE) {
             if (ctx.selectedFavoriteObj) {
+                console.log(ctx.selectedFavoriteObj);
                 openFavoriteObj(ctx, ctx.selectedFavoriteObj);
             }
         }

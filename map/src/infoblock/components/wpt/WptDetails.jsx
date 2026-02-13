@@ -557,8 +557,12 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 });
             }
         } else if (type.isFav) {
-            ctx.setSelectedFavoriteObj(null);
-            !wpt.mapObj ? closeOnlyFavDetails() : closeObjectFromMap();
+            if (!wpt.mapObj) {
+                ctx.setSelectedFavoriteObj(null);
+                closeOnlyFavDetails();
+            } else {
+                closeObjectFromMap();
+            }
         } else if (type.isShareFav) {
             setShowInfoBlock(false);
             ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));
