@@ -278,13 +278,6 @@ const FavoriteLayer = () => {
 
     // update markers on map after zoom
     useEffect(() => {
-        if (ctx.selectedGpxFile.zoom) {
-            // zoom after click on favorite
-            // not update object in context to avoid call useEffect with ctx.selectedGpxFile
-            // always delete after zoom from map.setView
-            delete ctx.selectedGpxFile.zoom;
-            return;
-        }
         updateMarkers({ onlyOpened: true });
     }, [zoom]);
 
@@ -424,7 +417,7 @@ const FavoriteLayer = () => {
 
         const { selectedLayer, centerLatLng } = findOrCreateSelectedLayer(current);
         hideMarkersAroundSelection(selectedLayer, centerLatLng);
-        zoomToSelectedMarkerIfNeeded();
+        centerSelectedMarkerIfNeeded();
     }
 
     function resetSelectionState() {
@@ -477,17 +470,17 @@ const FavoriteLayer = () => {
         hideMarkersNearPoint(map, zoom, centerLatLng, selectedLayer, ctx.selectedHiddenLayersRef);
     }
 
-    function zoomToSelectedMarkerIfNeeded() {
-        if (!ctx.selectedGpxFile.zoom) {
+    function centerSelectedMarkerIfNeeded() {
+        const targetLatLng = ctx.selectedGpxFile?.markerCurrent?.latlng;
+        if (!targetLatLng) {
             return;
         }
-
-        const targetLatLng =
-            ctx.selectedGpxFile.markerCurrent.layer?._latlng ?? ctx.selectedGpxFile.markerCurrent.latlng;
-        if (targetLatLng) {
-            map.setView([targetLatLng.lat, targetLatLng.lng], ZOOM_TO_MAP);
+        const mapBounds = map.getBounds();
+        const latlng = L.latLng(targetLatLng.lat, targetLatLng.lng);
+        if (mapBounds.contains(latlng)) {
+            return;
         }
-        delete ctx.selectedGpxFile.zoom;
+        map.panTo(latlng);
     }
 
     return <AddFavoriteDialog dialogOpen={openAddDialog} setDialogOpen={setOpenAddDialog} />;

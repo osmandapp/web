@@ -45,7 +45,6 @@ export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapOb
     newSelectedGpxFile.sharedWithMe = sharedFile;
     newSelectedGpxFile.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
     newSelectedGpxFile.name = marker.name;
-    newSelectedGpxFile.zoom = true;
     newSelectedGpxFile.prevState = ctx.selectedGpxFile;
     newSelectedGpxFile.favItem = true;
     newSelectedGpxFile.mapObj = mapObj;
