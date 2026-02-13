@@ -26,7 +26,7 @@ Section **Show**:
 
 Section **Topography**:  
 
-![Configure map android](@site/static/img/map/configure_map_topography_andr.png)  
+![Configure map android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Section **OpenStreetMap**:  
 
@@ -108,6 +108,7 @@ The map style settings depend on the main map style displayed. You can read more
 
    - [Map style](../map/vector-maps.md#default-map-styles) - includes OsmAnd (City), Topo, Nautical, and others.
    - [Map mode](../map/vector-maps.md#map-mode) - allows you to select the map view and navigation depending on the time of day.
+   - [Globe View](../map/interact-with-map.md#globe-view) - switches the map between the standard flat view and a spherical Earth view.
    - [Map magnifier](../map/vector-maps.md#map-magnifier) - allows changing the magnification of the map.
    - [Text size](../map/vector-maps.md#text-size) - allows increasing or decreasing the text size on the map.
    - [Map language](../map/vector-maps.md#map-language) - allows selecting the preferred language displayed on the map.

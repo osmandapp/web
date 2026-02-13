@@ -149,7 +149,8 @@ Go to: *Files → On My Phone → OsmAnd Maps*
 | [3D Terrain](../map/raster-maps.md#3d-relief) | Not supported. | This feature visualizes the terrain on the map by adding elevation information to a normal 2D map, which creates a 3D and depth effect. |
 | [3D Tracks](../map/tracks/appearance.md) | Not supported. | This feature allows you to display tracks by altitude above sea level. |
 | [Online map](../plugins/online-map.md) | It does not support the display of Contour lines if the map source is any online tile map. | When the map source is an online map, 3D maps are also used, and the display of Contour lines on the map is supported. |
-| [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  
+| [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |
+| [Globe View](../map/interact-with-map.md#globe-view) | Not supported. | Allows displaying the map as a spherical Earth (globe) instead of a flat projection. |   
 
 The image for the 3D view of the map is loaded tile by tile, then all the symbols. The rendering speed of the map depends on the number of 2D and 3D graphical objects on it, and directly on the performance of your hardware. Therefore, Version 2 (OpenGL) cannot be used on low-performance devices.
 
