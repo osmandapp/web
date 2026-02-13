@@ -13,6 +13,7 @@ import Utils from '../../util/Utils';
 
 export const SELECTED_PIN_SIZE = 70;
 export const SELECTED_ICON_SIZE = 36;
+export const SELECTED_MARKER_Z_INDEX = 3000;
 
 const SELECTED_MARKER_HIDE_MAX_ZOOM = 16;
 const SELECTED_MARKER_HIDE_RADIUS_COEFF = 300 / 16; // 18.75 → 300 m at zoom 12

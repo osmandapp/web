@@ -9,13 +9,13 @@ import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../man
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import { ZOOM_TO_MAP } from './SearchLayer';
 import { clusterMarkers, createHoverMarker } from '../util/Clusterizer';
 import {
     applySelectedWithUpdateMarker,
     applySelectedWithCreateMarker,
     hideMarkersNearPoint,
     restoreHiddenMarkers,
+    SELECTED_MARKER_Z_INDEX,
 } from '../util/MarkerSelectionService';
 import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import useHashParams from '../../util/hooks/useHashParams';
@@ -417,6 +417,7 @@ const FavoriteLayer = () => {
 
         const { selectedLayer, centerLatLng } = findOrCreateSelectedLayer(current);
         hideMarkersAroundSelection(selectedLayer, centerLatLng);
+        selectedLayer.setZIndexOffset(SELECTED_MARKER_Z_INDEX);
         centerSelectedMarkerIfNeeded();
     }
 
