@@ -308,6 +308,15 @@ const FavoriteLayer = () => {
         applySelectionIfNeeded();
     }, [ctx.selectedGpxFile.markerCurrent, ctx.configureMapState.showFavorites, openGroupId]);
 
+    useEffect(() => {
+        if (!ctx.configureMapState.showFavorites && !openGroupId) return;
+
+        const current = ctx.selectedGpxFile?.markerCurrent;
+        if (!current?.name) return;
+
+        centerSelectedMarkerIfNeeded();
+    }, [ctx.selectedGpxFile?.id]);
+
     const onClick = useCallback(
         (e) => {
             if (globalThis.location.pathname.includes(NAVIGATE_URL)) {
@@ -434,7 +443,6 @@ const FavoriteLayer = () => {
         const { selectedLayer, centerLatLng } = findOrCreateSelectedLayer(current);
         hideMarkersAroundSelection(selectedLayer, centerLatLng);
         selectedLayer?.setZIndexOffset(SELECTED_MARKER_Z_INDEX);
-        centerSelectedMarkerIfNeeded();
     }
 
     function resetSelectionState() {

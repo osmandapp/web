@@ -633,7 +633,6 @@ export default function MainMenu({
     function openMenuObject() {
         if (selectedType === OBJECT_TYPE_FAVORITE) {
             if (ctx.selectedFavoriteObj) {
-                console.log(ctx.selectedFavoriteObj);
                 openFavoriteObj(ctx, ctx.selectedFavoriteObj);
             }
         }
