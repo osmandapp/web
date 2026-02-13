@@ -102,10 +102,15 @@ const FavoriteLayer = () => {
     const [openAddDialog, setOpenAddDialog] = useState(false);
 
     const selectedGpxFileRef = useRef(ctx.selectedGpxFile);
+    const folderNameRef = useRef(searchParams.get(FAVORITES_URL_PARAM_FOLDER));
 
     useEffect(() => {
         selectedGpxFileRef.current = ctx.selectedGpxFile;
     }, [ctx.selectedGpxFile]);
+
+    useEffect(() => {
+        folderNameRef.current = searchParams.get(FAVORITES_URL_PARAM_FOLDER);
+    }, [searchParams]);
 
     useEffect(() => {
         if (ctx.zoomToFavGroup) {
@@ -352,6 +357,7 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.key = `${ctx.selectedGpxFile.id}:${ctx.selectedGpxFile.name}`;
 
             ctx.selectedGpxFile.mapObj = true;
+            ctx.selectedGpxFile.openedFolder = folderNameRef.current ?? undefined;
 
             openFavoriteObj(ctx, ctx.selectedGpxFile);
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
