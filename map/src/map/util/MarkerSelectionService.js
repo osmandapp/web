@@ -39,8 +39,7 @@ export function getSelectedMarkerHideRadiusM(zoom) {
 
 function collectMarkerLayers(layerOrGroup, out = []) {
     if (!layerOrGroup) return out;
-    const latlng = layerOrGroup.getLatLng?.() ?? layerOrGroup._latlng;
-    if (latlng != null) {
+    if (layerOrGroup instanceof L.Marker) {
         out.push(layerOrGroup);
         return out;
     }

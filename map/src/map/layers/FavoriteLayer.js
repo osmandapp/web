@@ -417,7 +417,7 @@ const FavoriteLayer = () => {
 
         const { selectedLayer, centerLatLng } = findOrCreateSelectedLayer(current);
         hideMarkersAroundSelection(selectedLayer, centerLatLng);
-        selectedLayer.setZIndexOffset(SELECTED_MARKER_Z_INDEX);
+        selectedLayer?.setZIndexOffset(SELECTED_MARKER_Z_INDEX);
         centerSelectedMarkerIfNeeded();
     }
 
