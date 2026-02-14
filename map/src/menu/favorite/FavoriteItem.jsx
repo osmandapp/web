@@ -70,12 +70,12 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
     const FavInfo = () => {
         return (
             <div style={{ display: 'flex', alignItems: 'centre' }}>
-                {marker.locDist && (
+                {marker.locDist > 0 && (
                     <ListItemIcon sx={{ mr: '-23px !important', fill: getColorLocation(currentLoc), mt: '2px' }}>
                         <DirectionIcon />
                     </ListItemIcon>
                 )}
-                {marker.locDist && (
+                {marker.locDist > 0 && (
                     <Typography
                         variant="body2"
                         className={styles.favLocationInfo}
@@ -92,7 +92,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
     };
 
     function getAddress() {
-        const comma = marker.locDist && marker?.layer?.options?.address ? ', ' : '';
+        const comma = marker.locDist > 0 && marker?.layer?.options?.address ? ', ' : '';
         return marker?.layer?.options?.address ? `${comma}${marker.layer.options.address}` : '';
     }
 

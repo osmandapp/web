@@ -266,16 +266,14 @@ export default function SearchResultItem({ item, typeItem }) {
                                     name={`${addInfo()}${addType()}${addCity()}`}
                                     maxLines={4}
                                 >
-                                    {distance && (
+                                    {distance > 0 && (
                                         <span style={{ display: 'inline-flex' }}>
                                             <Typography className={styles.placeDistance}>{' · '}</Typography>
-                                            {distance && (
-                                                <DistanceInfo
-                                                    distance={distance}
-                                                    bearing={bearing}
-                                                    isUserLocation={isUserLocation}
-                                                />
-                                            )}
+                                            <DistanceInfo
+                                                distance={distance}
+                                                bearing={bearing}
+                                                isUserLocation={isUserLocation}
+                                            />
                                         </span>
                                     )}
                                 </MenuItemWithLines>
