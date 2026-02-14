@@ -10,6 +10,7 @@ import AppContext, {
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_TRAVEL,
     TRAVEL_ROUTE_ID_PARAM,
+    FAVORITES_URL_PARAM_FOLDER,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
@@ -35,7 +36,7 @@ import WptPhotoList from './wpt/WptPhotoList';
 import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { encodeString } from '../../util/Utils';
+import { createUrlParams, encodeString } from '../../util/Utils';
 import { navigateToFavoritesMenu } from '../../manager/FavoritesManager';
 import LoginContext from '../../context/LoginContext';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
@@ -171,9 +172,11 @@ export default function InformationBlock({
             const favGroup = ctx.selectedGpxFile.nameGroup;
             const fullName =
                 encodeURIComponent(encodeString(favGroup)) + '/' + encodeURIComponent(encodeString(favName));
+            const folder = ctx.selectedGpxFile.openedFolder;
             navigate(
                 {
                     pathname: MAIN_URL_WITH_SLASH + FAVORITES_URL + INFO_MENU_URL + fullName,
+                    search: folder ? createUrlParams({ [FAVORITES_URL_PARAM_FOLDER]: folder }) : undefined,
                     hash: globalThis.location.hash,
                 },
                 { replace: true }

@@ -689,6 +689,8 @@ export function getFavMenuListByLayers(layers, wpts, currentLoc) {
             name: value.options.name,
             icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
             layer: value,
+            color: wpt.color,
+            background: wpt.background,
         };
         markerList.push(marker);
     });

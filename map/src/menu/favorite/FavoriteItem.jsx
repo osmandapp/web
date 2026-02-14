@@ -1,7 +1,8 @@
 import { ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import AppContext from '../../context/AppContext';
+import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
+import { useSearchParams } from 'react-router-dom';
 import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
@@ -19,9 +20,12 @@ export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
 };
 
-export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false }) {
+export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
     const newSelectedGpxFile = {};
-    newSelectedGpxFile.markerCurrent = marker;
+    if (marker?.layer) {
+        marker.latlng = marker.layer.getLatLng?.() ?? marker.layer._latlng;
+    }
+    newSelectedGpxFile.markerCurrent = { ...marker, groupId: group.id };
     if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
         newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
     }
@@ -42,16 +46,17 @@ export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapOb
     newSelectedGpxFile.sharedWithMe = sharedFile;
     newSelectedGpxFile.file = ctx.favorites.groups.find((g) => g.name === group.name).file;
     newSelectedGpxFile.name = marker.name;
-    newSelectedGpxFile.zoom = true;
     newSelectedGpxFile.prevState = ctx.selectedGpxFile;
     newSelectedGpxFile.favItem = true;
     newSelectedGpxFile.mapObj = mapObj;
+    newSelectedGpxFile.openedFolder = openedFolder;
 
     openFavoriteObj(ctx, newSelectedGpxFile);
 }
 
 export default function FavoriteItem({ marker, group, currentLoc, share = false, smartf = null }) {
     const ctx = useContext(AppContext);
+    const [searchParams] = useSearchParams();
 
     const { t } = useTranslation();
 
@@ -110,7 +115,8 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                                 if (share) {
                                     addShareFavoriteToMap(marker, ctx);
                                 } else {
-                                    addFavoriteToMap({ group, marker, ctx, sharedFile });
+                                    const openedFolder = searchParams.get(FAVORITES_URL_PARAM_FOLDER) ?? undefined;
+                                    addFavoriteToMap({ group, marker, ctx, sharedFile, openedFolder });
                                 }
                             }}
                         >

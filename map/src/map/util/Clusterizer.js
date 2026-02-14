@@ -389,6 +389,13 @@ export function createHoverMarker({
         map.on('zoomend', map._sharedZoomEndHandler);
     }
 
+    const clearPointer = () => {
+        if (pointerRef?.current && map?.hasLayer(pointerRef.current)) {
+            map.removeLayer(pointerRef.current);
+        }
+        pointerRef.current = null;
+    };
+
     const onMouseOver = () => {
         removeTooltip(map, tooltipRef);
         if (setSelectedId) {
@@ -420,23 +427,12 @@ export function createHoverMarker({
                 marker.paintDot(DEFAULT_POI_COLOR);
             }
         }
-        if (pointerRef?.current) {
-            if (map?.hasLayer(pointerRef.current)) {
-                removeTooltip(map, tooltipRef);
-                map.removeLayer(pointerRef.current);
-            }
-            pointerRef.current = null;
-        }
+        clearPointer();
     };
 
     const onSelectMarker = () => {
         removeTooltip(map, tooltipRef);
-        if (pointerRef.current) {
-            if (map?.hasLayer(pointerRef.current)) {
-                map.removeLayer(pointerRef.current);
-            }
-            pointerRef.current = null;
-        }
+        clearPointer();
         let newMarker;
         if (mainStyle) {
             newMarker = new HoverMarker(marker, iconSize, pointerStyle).build();
@@ -458,6 +454,7 @@ export function createHoverMarker({
         marker.off('mouseover', onMouseOver);
         marker.off('mouseout', onMouseOut);
         marker.off('selectMarker', onSelectMarker);
+        clearPointer();
     };
 }
 
