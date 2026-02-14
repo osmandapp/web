@@ -85,6 +85,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 - [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, and Nautical data.
 - [Map Raster sources](../map/raster-maps.md#select-raster-maps) - allows selecting underlay / main-source / overlay map with transparency levels.
 - [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - displays slope / hillshade information, 3D Relief.
+- [3D buildings](../map/vector-maps.md#3d-buildings) - displays volumetric building models on the map.
 - [Borders of downloaded maps](../map/vector-maps.md#show-borders) - displays all borders of downloaded maps on the main map layer.
 - [Coordinate grid](../map/vector-maps.md#coordinates-grid) - control the visibility of the coordinates grid on the map.
 
