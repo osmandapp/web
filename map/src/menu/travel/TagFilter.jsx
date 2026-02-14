@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Autocomplete, Box, Chip, TextField } from '@mui/material';
 import AppContext from '../../context/AppContext';
+import { MAIN_URL_WITH_SLASH, TRAVEL_URL } from '../../manager/GlobalManager';
 import { apiGet } from '../../util/HttpApi';
 import styles from './travel.module.css';
 import { ACTIVITY_ALL, ALL_YEARS } from './TravelMenu';
 
 export default function TagFilter({ selectedTags, onChangeTags, selectedYear, selectedActivity }) {
     const ctx = useContext(AppContext);
+    const location = useLocation();
 
     const [availableTags, setAvailableTags] = useState([]);
     const [tagInput, setTagInput] = useState('');
@@ -29,7 +32,7 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
 
     useEffect(() => {
         const fetchTags = async () => {
-            if (!ctx.visibleBounds) {
+            if (!ctx.visibleBounds || !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) {
                 setAvailableTags([]);
                 return;
             }

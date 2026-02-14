@@ -12,11 +12,12 @@ import {
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import debounce from 'lodash-es/debounce';
-import { HEADER_SIZE, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
 import activities from '../../resources/activities.json';
 import {
@@ -63,6 +64,7 @@ export const TAG_MATCH_MODES = {
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
+    const location = useLocation();
     const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = ACTIVITY_ALL;
@@ -202,7 +204,7 @@ export default function TravelMenu() {
     ).current;
 
     useEffect(() => {
-        if (!ctx.visibleBounds) {
+        if (!ctx.visibleBounds || !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) {
             return;
         }
 
@@ -226,7 +228,7 @@ export default function TravelMenu() {
 
     // Create activities array
     const activitiesArr = useMemo(() => {
-        if (!ctx.openTravel) return [];
+        if (!ctx.openTravel && !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) return [];
 
         return activities?.groups.reduce((act, group) => {
             if (act.length === 0) {
