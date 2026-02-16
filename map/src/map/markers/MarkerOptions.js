@@ -333,7 +333,12 @@ function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
         return { newPathData, realWidth, realHeight };
     }
 
-    return { newPathData: pathData, realWidth: 0, realHeight: 0 };
+    // Path with any other structure: scale all numbers by shapeSize/oldShapeSize
+    const scaleFactor = shapeSize / oldShapeSize;
+    const newPathData = pathData.replace(/[-+]?\d*\.?\d+/g, (num) =>
+        Math.round(parseFloat(num) * scaleFactor)
+    );
+    return { newPathData, realWidth: shapeSize, realHeight: shapeSize };
 }
 
 // only for icons with image (with href)
@@ -356,9 +361,7 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
 
     svgHtml = svgHtml.replace(viewBoxPattern, () => {
         // Update the sizes inside viewBox
-        const newWidth = shapeSize;
-        const newHeight = shapeSize;
-        return `viewBox="0 0 ${newWidth} ${newHeight}"`;
+        return `viewBox="0 0 ${shapeSize} ${shapeSize}"`;
     });
 
     // Remove <g> wrapper around <image> if it exists and process the <image>
@@ -369,12 +372,12 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
 
     svgHtml = svgHtml.replace(widthPattern, () => {
         // Update width
-        return `width="${iconSize}"`;
+        return `width="${shapeSize}"`;
     });
 
     svgHtml = svgHtml.replace(heightPattern, () => {
         // Update height
-        return `height="${iconSize}"`;
+        return `height="${shapeSize}"`;
     });
 
     // Update the sizes inside <circle>, <path>, <rect>
@@ -384,7 +387,7 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
             if (match.includes('<image')) {
                 return match;
             }
-            return `<svg ${prefix} width="${iconSize}" ${middle1} height="${iconSize}" ${middle2} viewBox="0 0 ${shapeSize} ${shapeSize}"${suffix}>`;
+            return `<svg ${prefix} width="${shapeSize}" ${middle1} height="${shapeSize}" ${middle2} viewBox="0 0 ${shapeSize} ${shapeSize}"${suffix}>`;
         }
     );
 
