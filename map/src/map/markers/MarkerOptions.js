@@ -277,66 +277,10 @@ function parseSvgSize(svgHtml) {
 }
 
 function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
-    // ex. oldShapeSize = 24 and old path = d="M1 7L7 1H17L23 7V17L17 23H7L1 17V7Z"
-    // for shapeSize = 30 new path = d="M1 9L9 1H21L29 9V21L21 29H9L1 21V9Z"
-    const values = pathData.match(/[-+]?\d*\.?\d+/g);
-
-    if (values && values.length === 14) {
-        const scaleFactor = shapeSize / oldShapeSize;
-        const newValues = values.map((value) => {
-            const shiftedValue = parseFloat(value) * scaleFactor;
-            return Math.round(shiftedValue);
-        });
-
-        const newPathData = `M${newValues[0]} ${newValues[1]}L${newValues[2]} ${newValues[3]}H${newValues[4]}L${newValues[5]} ${newValues[6]}V${newValues[7]}L${newValues[8]} ${newValues[9]}H${newValues[10]}L${newValues[11]} ${newValues[12]}V${newValues[13]}Z`;
-
-        const minX = Math.min(
-            newValues[0],
-            newValues[2],
-            newValues[4],
-            newValues[5],
-            newValues[8],
-            newValues[10],
-            newValues[11]
-        );
-        const maxX = Math.max(
-            newValues[0],
-            newValues[2],
-            newValues[4],
-            newValues[5],
-            newValues[8],
-            newValues[10],
-            newValues[11]
-        );
-        const minY = Math.min(
-            newValues[1],
-            newValues[3],
-            newValues[6],
-            newValues[7],
-            newValues[9],
-            newValues[12],
-            newValues[13]
-        );
-        const maxY = Math.max(
-            newValues[1],
-            newValues[3],
-            newValues[6],
-            newValues[7],
-            newValues[9],
-            newValues[12],
-            newValues[13]
-        );
-
-        const realWidth = maxX - minX;
-        const realHeight = maxY - minY;
-
-        return { newPathData, realWidth, realHeight };
-    }
-
-    // Path with any other structure: scale all numbers by shapeSize/oldShapeSize
+    // Scale all numbers in path by shapeSize/oldShapeSize; keep command structure (M,L,H,V etc.) unchanged
     const scaleFactor = shapeSize / oldShapeSize;
-    const newPathData = pathData.replace(/[-+]?\d*\.?\d+/g, (num) =>
-        Math.round(parseFloat(num) * scaleFactor)
+    const newPathData = pathData.replaceAll(/[-+]?\d*\.?\d+/g, (num) =>
+        Math.round(Number.parseFloat(num) * scaleFactor)
     );
     return { newPathData, realWidth: shapeSize, realHeight: shapeSize };
 }
