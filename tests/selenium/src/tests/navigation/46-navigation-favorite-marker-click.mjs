@@ -12,6 +12,7 @@ import { getFiles } from '../../util.mjs';
 
 const FAVORITE_NAME = 'Test wpt • shops';
 const FAVORITE_COORDS = { lat: 52.3554606, lon: 4.8929554 };
+const FINISH_OFFSET = 0.001;
 
 export default async function test() {
     await actionOpenMap();
@@ -46,7 +47,7 @@ export default async function test() {
     await expectInputExactBy(By.id('se-route-finish-point'), '');
 
     // Click on another place to set finish
-    await leftClickBy(FAVORITE_COORDS.lat + 0.01, FAVORITE_COORDS.lon + 0.01);
+    await leftClickBy(FAVORITE_COORDS.lat + FINISH_OFFSET, FAVORITE_COORDS.lon + FINISH_OFFSET);
     await actionIdleWait();
 
     await expectInputExactBy(By.id('se-route-start-point'), FAVORITE_NAME);
