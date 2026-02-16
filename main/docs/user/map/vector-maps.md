@@ -128,9 +128,9 @@ Tailored for snowmobile navigation, this style highlights snowmobile-friendly pa
 
 ![3D Buildings](@site/static/img/map/3d_buildings_1.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png)
 
-**3D buildings** displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:building), including building height information where it is available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
+**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
-Use the main toggle to enable or disable 3D rendering of buildings.
+Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up.
 
 Currently, this option is available only when the OsmAnd development plugin is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
@@ -141,7 +141,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugg
 - Medium – balanced level of detail (default).
 - High – more detailed geometry.
 
-**Building parts** enables rendering of separate building parts. This is most noticeable for complex buildings where different parts have different heights.
+**[Building parts](https://wiki.openstreetmap.org/wiki/Key:building:part)** enables rendering of separate building parts. This is most noticeable for complex buildings where different parts have different heights.
 
 
 ## Map Legend {#map-legend}
