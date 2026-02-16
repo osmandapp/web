@@ -132,7 +132,7 @@ Tailored for snowmobile navigation, this style highlights snowmobile-friendly pa
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
 Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up.
 
-Currently, this option is available only when the OsmAnd development plugin is enabled.  
+Currently, this option is available only when the [OsmAnd development plugin](../plugins/development.md) is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 
 **Visibility** adjusts the opacity of 3D buildings. Use the slider to set the transparency level (0–100%). Lower values make buildings more transparent and improve visibility of roads and labels. Higher values make buildings more solid and visually dominant.
