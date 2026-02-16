@@ -11,6 +11,8 @@ import { ReactComponent as SquareStroke } from '../../assets/map/map_pin_square_
 import { ReactComponent as HexagonColor } from '../../assets/map/map_pin_hexagon_color.svg';
 import { ReactComponent as HexagonLight } from '../../assets/map/map_pin_hexagon_light.svg';
 import { ReactComponent as HexagonStroke } from '../../assets/map/map_pin_hexagon_stroke.svg';
+import { SELECTED_ICON_SIZE, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
+import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 
 const SHAPES = {
     circle: {
@@ -31,13 +33,6 @@ const SHAPES = {
         stroke: HexagonStroke,
         iconOffsetRatio: 0.05,
     },
-};
-
-const DEFAULTS = {
-    size: 70,
-    iconSize: 36,
-    color: '#FF8800',
-    shape: 'circle',
 };
 
 function resizeSvg(svg, size) {
@@ -62,11 +57,14 @@ function prepareInnerIcon(html, iconSize) {
 
 export function createLayeredPinIcon(options = {}) {
     const merged = {
-        ...DEFAULTS,
+        size: SELECTED_PIN_SIZE,
+        iconSize: SELECTED_ICON_SIZE,
+        color: '#FF8800',
+        shape: DEFAULT_POI_SHAPE,
         ...options,
     };
     const { color, shape, size, iconSize, iconHtml, className, iconAnchor } = merged;
-    const shapeAssets = SHAPES[shape] ?? SHAPES[DEFAULTS.shape];
+    const shapeAssets = SHAPES[shape] ?? SHAPES[DEFAULT_POI_SHAPE];
 
     const colorSvg = renderToStaticMarkup(React.createElement(shapeAssets.color));
     const lightSvg = renderToStaticMarkup(React.createElement(shapeAssets.light));
