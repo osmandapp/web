@@ -98,10 +98,10 @@ export function createPoiIcon({
               ? point?.extensions.color
               : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToRgba(colorBackground);
-    const shapeBackground = background ? background : point?.background;
+    const shapeBackground = background ?? point?.background;
     let svg = getBackground(colorBackground, shapeBackground);
     if (backgroundSize) {
-        svg = changeIconSizeWpt(svg, 0, 48);
+        svg = changeIconSizeWpt(svg, 48, 48);
     }
     if (svg) {
         const idString = `id="se-poi-marker-background-${color}-${background}"`;
@@ -369,12 +369,12 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
 
     svgHtml = svgHtml.replace(widthPattern, () => {
         // Update width
-        return `width="${shapeSize}"`;
+        return `width="${iconSize}"`;
     });
 
     svgHtml = svgHtml.replace(heightPattern, () => {
         // Update height
-        return `height="${shapeSize}"`;
+        return `height="${iconSize}"`;
     });
 
     // Update the sizes inside <circle>, <path>, <rect>
@@ -384,7 +384,7 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
             if (match.includes('<image')) {
                 return match;
             }
-            return `<svg ${prefix} width="${shapeSize}" ${middle1} height="${shapeSize}" ${middle2} viewBox="0 0 ${shapeSize} ${shapeSize}"${suffix}>`;
+            return `<svg ${prefix} width="${iconSize}" ${middle1} height="${iconSize}" ${middle2} viewBox="0 0 ${shapeSize} ${shapeSize}"${suffix}>`;
         }
     );
 
