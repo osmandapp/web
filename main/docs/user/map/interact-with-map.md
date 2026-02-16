@@ -162,8 +162,6 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 The compass button shows how the [map is oriented](#map-orientation-modes). The *red arrow* on icons, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the compass button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. The compass button widget offers three [interaction options](../widgets/map-buttons.md#compass-tapping-behavior): *Single Tap* rotates the map to the North, *Double Tap* alternates between all map orientation modes, and *Long Tap* opens the list of modes.
 
-
-
 ### Rotate Map by Bearing {#rotate-map-by-bearing}
 
 In the **rotate map by bearing** mode ([Movement direction](../widgets/map-buttons.md#compass)), the map automatically aligns with your direction of movement, so the area ahead of you is displayed at the top of the screen. This mode enhances navigation by shifting the map center slightly downward, showing more of the route ahead. If you are stationary, the map stays fixed.  
@@ -215,9 +213,9 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
 Globe View is currently available only when:
-- The Development plugin is enabled.  
+- The [Development plugin](../plugins/development.md) is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
-- The Map rendering engine is set to Version 2 (OpenGL).  
+- The [Map rendering engine](../personal/global-settings.md#map-rendering-engine) is set to Version 2 (OpenGL).  
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 
 When Globe View is enabled, the map rotates as a globe. Drag gestures rotate the Earth, and zoom changes the camera distance rather than scaling a flat surface. Map elements such as tracks, markers, symbols, and 3D objects are rendered directly on the spherical surface and follow its curvature. Objects gradually disappear behind the horizon as the globe rotates.
