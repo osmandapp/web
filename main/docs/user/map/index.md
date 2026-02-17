@@ -18,9 +18,13 @@ Map context menu provides information of selected object on the map and allows t
 
 The Configure map menu is an important item on OsmAnd's *Main Menu* where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
 
-## [Vector Maps (Map Styles)](./vector-maps.md) {#vector-maps-map-styles}
+## [Vector Maps](./vector-maps.md) {#vector-maps}
 
 Vector maps are designed to be a default source of map data for OsmAnd, so they need to be downloaded to the device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style could be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour line information. You can create your own map style OsmAnd to display required information.
+
+## [Map Styles (Vector Maps)](./map-styles.md) {#map-styles-vector-maps}
+
+Map styles define how vector map data is rendered in OsmAnd. A style controls the visual appearance of map objects such as roads, buildings, land use, water, and points of interest, including colors, line patterns, and labels.
 
 ## [Raster Maps (Online / Offline)](./raster-maps.md) {#raster-maps-online--offline}
 
@@ -42,12 +46,11 @@ Tracks context menu is menu with actions and data of GPX-track.
 
 Tracks context menu is menu with actions and data of GPX-track.
 
-## [Routes](./routes.md) {#routes}
-
-OsmAnd has many powerful features to display various routes on the map.
-
-
 ## [Public Transport](./public-transport.md) {#public-transport}
 
 Public transport is an additional layer that allows you to display transport routes and stops on the map, to check detailed information about them and to navigate.
+
+## [Routes](./routes.md) {#routes}
+
+OsmAnd has many powerful features to display various routes on the map.
 
