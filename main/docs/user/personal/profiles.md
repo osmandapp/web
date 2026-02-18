@@ -370,7 +370,7 @@ With this menu, you can:
 
 - **Enable public transport visualization**, showing [routes and stops](../map/public-transport.md) for better trip planning.
 
-- **Adjust map appearance** by selecting a different [map style](../map/map-style.md) to match your needs.
+- **Adjust map appearance** by selecting a different [map style](../map/map-styles.md) to match your needs.
 
 
 ## Configure Screen {#configure-screen}
