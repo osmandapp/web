@@ -267,7 +267,7 @@ The grid adapts to the surrounding interface and repositions buttons when requir
 | Move <br/> [**Map up**](../map/interact-with-map.md) | When tapped, the map screen moves up. |
 | Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap the button, the map screen moves to the left. |
 | Move <br/> [**Map to the right**](../map/interact-with-map.md) | With a quick action button, you can move the map to the right. |
-| Move <br/> [**To My location**](../map/interact-with-map.md#my-location-and-zoom) | Moves the map to *My location* position. |
+| Move <br/> [**To My position**](../map/interact-with-map.md#my-position-and-zoom) | Moves the map to *My location* position. |
 
 
 ### My Places {#my-places}

@@ -172,7 +172,7 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 **Appearance settings**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Toggle contour lines on or off.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Define the [zoom levels](../map/interact-with-map.md#my-location-and-zoom) at which contour lines are visible.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Define the [zoom levels](../map/interact-with-map.md#my-position-and-zoom) at which contour lines are visible.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Choose the color for displaying contour lines.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Adjust the width of contour lines.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Select the density of contour lines (Low, Medium, High). Higher densities may affect loading speed.

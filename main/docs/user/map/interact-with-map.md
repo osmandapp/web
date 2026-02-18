@@ -36,20 +36,20 @@ Gestures are essential for navigating the map easily and intuitively.
 
 Slide animations can be disabled in the settings with a [special option](#remove-animations).
 
-### My Location and Zoom {#my-location-and-zoom}
+### My Position and Zoom {#my-position-and-zoom}
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
-**My location**.  
-The *My Location* button is a circular icon that indicates whether the map's center is synchronized with your device’s current geolocation. Often referred to as the "Where am I?" button, it helps you quickly find your location on the map. During navigation, the map typically stays synced with the device's location, so the button remains hidden. However, it becomes visible if the map and your location go out of sync due to user interaction. Tapping the button will re-center the map on your current location, and a double tap will switch the view to 3D mode.
+**My position**.  
+The *My Position* button is a circular icon that indicates whether the map's center is synchronized with your device’s current geolocation. Often referred to as the "Where am I?" button, it helps you quickly find your location on the map. During navigation, the map typically stays synced with the device's location, so the button remains hidden. However, it becomes visible if the map and your location go out of sync due to user interaction. Tapping the button will re-center the map on your current location, and a double tap will switch the view to 3D mode.
 
-- The *My Location* button has the following states:
+- The *My Position* button has the following states:
   - *Full blue icon*. The location is found but not synced with the map.
   - *White icon*. The location is found and synced with the map.
   - *Grey icon*. The location has not been found yet.
   - *Arrow icon*. 3D mode is activated.
 
-- **Long tap** (*Android*) the *My Location* button opens the [map context menu](../map/map-context-menu.md), allowing you to share your location.
+- **Long tap** (*Android*) the *My Position* button opens the [map context menu](../map/map-context-menu.md), allowing you to share your location.
 
 <br/>
 
@@ -195,7 +195,7 @@ Under the horizon, you can see so-called *haze* or *fog*. This area of the map i
 The use of fog is necessary since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on the OsmAnd map is currently limited to 35 tiles.  
 
 :::info
-Map tilt can be changed by a long tap on the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [My location](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
+Map tilt can be changed by a long tap on the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [My position](#my-position-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
 You can not change the Camera tilt when the old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
 
@@ -268,7 +268,7 @@ To access the settings of an external input device, you need to enable this feat
 
 | Key | Device | Action |
 |:---------|:---------------|:---------------|
-|**C**| *Keyboard*   | Move - [To My location](#my-location-and-zoom) |
+|**C**| *Keyboard*   | Move - [To My position](#my-position-and-zoom) |
 |**D**| *Keyboard*   | Change - [Map orientation](#map-orientation-modes) |
 |**N**| *Keyboard*   | Show / Hide - Navigation view |
 |**S**| *Keyboard*   | Show / Hide - [Search view](../search/index.md) |
@@ -278,17 +278,17 @@ To access the settings of an external input device, you need to enable this feat
 |**&#8595;**| *Keyboard*   | Move - Map down  |
 |**&#8592;**| *Keyboard*   | Move - Map to the left  |
 |**&#8594;**| *Keyboard*   | Move - Map to the right  |
-|**&#43;** **=**| *Keyboard*  | Map - [Zoom in](#my-location-and-zoom) |
-|**&#8722;**| *Keyboard*  | Map - [Zoom out](#my-location-and-zoom) |
+|**&#43;** **=**| *Keyboard*  | Map - [Zoom in](#my-position-and-zoom) |
+|**&#8722;**| *Keyboard*  | Map - [Zoom out](#my-position-and-zoom) |
 |**Press back**| *Keyboard*   | Navigate – Previous screen  |
-|**&#8595;**| *Wunderlinq*  | Map - [Zoom out](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Map - [Zoom in](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | Map - [Zoom out](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Map - [Zoom in](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
 | **M** | *Keyboard*  | Show / Hide - [Side menu](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick press** <br/> (*legacy Android*) | *Keyboard*  | Move - [To My location](#my-location-and-zoom) |
+| **Joystick press** <br/> (*legacy Android*) | *Keyboard*  | Move - [To My location](#my-position-and-zoom) |
 | **Media button** <br/> (*Android only*)| *Keyboard*  | Show / Hide - [AV notes](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](#my-location-and-zoom) |
-| **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](#my-location-and-zoom) |
+| **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](#my-position-and-zoom) |
+| **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](#my-position-and-zoom) |
 
 ### Custom Input Device Type {#custom-input-device-type}
 
