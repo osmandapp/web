@@ -52,12 +52,12 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     }
 
     function handleMouseEnter(item) {
-        ctx.setSelectedPoiId({ id: item.properties.id, show: true, type: EXPLORE_LAYER_ID });
+        ctx.setSelectedWptId({ id: item.properties.id, show: true, type: EXPLORE_LAYER_ID });
         setIsHovered(true);
     }
 
     function handleMouseLeave(item) {
-        ctx.setSelectedPoiId({ id: item.properties.id, show: false, type: EXPLORE_LAYER_ID });
+        ctx.setSelectedWptId({ id: item.properties.id, show: false, type: EXPLORE_LAYER_ID });
         setIsHovered(false);
     }
 
@@ -100,12 +100,12 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     }
 
     useEffect(() => {
-        if (ctx.selectedPoiId?.id === item.properties.id) {
+        if (ctx.selectedWptId?.id === item.properties.id) {
             setIsHovered(true);
         } else {
             setIsHovered(false);
         }
-    }, [ctx.selectedPoiId?.id]);
+    }, [ctx.selectedWptId?.id]);
 
     return useMemo(
         () => (

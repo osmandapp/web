@@ -26,7 +26,7 @@ import {
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
-import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
+import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
@@ -303,9 +303,9 @@ export default function SearchLayer() {
         }
 
         mainMarkersLayers.forEach((marker) => {
-            createHoverMarker({
+            addMarkerTooltip({
                 marker,
-                setSelectedId: ctx.setSelectedPoiId,
+                setSelectedId: ctx.setSelectedWptId,
                 mainStyle: true,
                 text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
@@ -317,9 +317,9 @@ export default function SearchLayer() {
         });
 
         simpleMarkersArr.getLayers().forEach((marker) => {
-            createHoverMarker({
+            addMarkerTooltip({
                 marker,
-                setSelectedId: ctx.setSelectedPoiId,
+                setSelectedId: ctx.setSelectedWptId,
                 text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
                 map,

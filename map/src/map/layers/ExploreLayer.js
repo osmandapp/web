@@ -13,7 +13,7 @@ import { areSetsEqual, getCurrentTimeParams } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
 import {
     clusterMarkers,
-    createHoverMarker,
+    addMarkerTooltip,
     EXPLORE_BIG_ICON_SIZE,
     removeTooltip,
     SIMPLE_ICON_SIZE,
@@ -497,9 +497,9 @@ export default function ExploreLayer() {
             }
         };
 
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
-            setSelectedId: ctx.setSelectedPoiId,
+            setSelectedId: ctx.setSelectedWptId,
             mainStyle: main,
             text: tooltipText(),
             latlng,

@@ -363,7 +363,7 @@ export function createSecondaryMarker(obj) {
     }).build();
 }
 
-export function createHoverMarker({
+export function addMarkerTooltip({
     marker,
     setSelectedId = null,
     mainStyle = false,
@@ -374,57 +374,30 @@ export function createHoverMarker({
     ctx,
     type = null,
 }) {
-    let tooltipRef = ctx.searchTooltipRef;
+    const tooltipRef = ctx.searchTooltipRef;
 
     if (!map._sharedZoomEndHandler) {
-        map._sharedZoomEndHandler = () => {
-            if (ctx?.searchTooltipRef) {
-                removeTooltip(map, ctx.searchTooltipRef);
-            }
-        };
+        map._sharedZoomEndHandler = () => removeTooltip(map, ctx.searchTooltipRef);
         map.on('zoomend', map._sharedZoomEndHandler);
     }
 
-    const onMouseOver = () => {
+    marker.on('mouseover', () => {
         removeTooltip(map, tooltipRef);
-        if (setSelectedId) {
-            setSelectedId({ id: marker.options.idObj, show: true, type });
-        }
+        setSelectedId?.({ id: marker.options.idObj, show: true, type });
         if (text) {
             const offset = mainStyle ? [5, iconSize * 0.8] : [0, iconSize * 0.8];
-            const shortTitle = Utils.truncateText(text, TOOLTIP_MAX_LENGTH);
-            tooltipRef.current = createTooltip(shortTitle, latlng, {
-                offset: offset,
-            });
+            tooltipRef.current = createTooltip(Utils.truncateText(text, TOOLTIP_MAX_LENGTH), latlng, { offset });
             map.addLayer(tooltipRef.current);
         }
-    };
+    });
 
-    const onMouseOut = (event) => {
+    marker.on('mouseout', (event) => {
         if (event.originalEvent) {
-            if (!mainStyle && marker.options.selected) {
-                return;
-            }
+            if (!mainStyle && marker.options.selected) return;
             removeTooltip(map, tooltipRef);
-            if (setSelectedId) {
-                setSelectedId({ id: -1, show: false, type });
-            }
+            setSelectedId?.({ id: -1, show: false, type });
         }
-    };
-
-    const onSelectMarker = () => {
-        removeTooltip(map, tooltipRef);
-    };
-
-    marker.on('mouseover', onMouseOver);
-    marker.on('mouseout', onMouseOut);
-    marker.on('selectMarker', onSelectMarker);
-
-    return () => {
-        marker.off('mouseover', onMouseOver);
-        marker.off('mouseout', onMouseOut);
-        marker.off('selectMarker', onSelectMarker);
-    };
+    });
 }
 
 export function removeTooltip(map, tooltipRef) {
@@ -458,7 +431,7 @@ export function addClusteredMarkersToMap({ map, markers, mainMarkers, secondaryM
     });
     markersToAdd.push(...mainLayers, ...secondaryLayers);
     markersToAdd.forEach((marker) => {
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
             mainStyle: true,
             text: marker.options['name'] ?? marker.options['title'],
