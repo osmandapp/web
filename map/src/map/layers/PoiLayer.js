@@ -1,11 +1,13 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import debounce from 'lodash-es/debounce';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import L from 'leaflet';
-import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE, getIconUrlByName } from '../markers/MarkerOptions';
+import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
+import { SELECTED_PIN_SIZE, SELECTED_ICON_SIZE } from '../util/MarkerSelectionService';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -21,6 +23,7 @@ import {
     CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
+    POI_ID,
     POI_ICON_NAME,
     POI_NAME,
     TYPE_OSM_TAG,
@@ -30,14 +33,12 @@ import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDi
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
-import styles from '../../menu/search/search.module.css';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
-import { selectMarker } from '../util/MarkerSelectionService';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
@@ -107,7 +108,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             iconSize: DEFAULT_ICON_SIZE,
             map,
             ctx,
-            pointerStyle: styles.hoverPointer,
+            type: POI_LAYER_ID,
         });
     });
 
@@ -119,7 +120,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             latlng: marker._latlng,
             map,
             ctx,
-            pointerStyle: styles.hoverPointer,
+            type: POI_LAYER_ID,
         });
     });
 
@@ -175,7 +176,6 @@ export default function PoiLayer() {
         prevLayer: null,
         listFeatures: null,
     });
-    const prevSelectedPoi = useRef(null);
 
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
@@ -187,12 +187,16 @@ export default function PoiLayer() {
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
 
+    const getPoiLayers = useCallback(() => {
+        const mainLayers = poiList?.layer?.getLayers() ?? [];
+        return mainLayers.length > 0 ? mainLayers : null;
+    }, [poiList?.layer]);
+
     useSelectMarkerOnMap({
         ctx,
-        layers: poiList?.layer?.getLayers(),
+        getLayers: getPoiLayers,
         type: POI_LAYER_ID,
         map,
-        prevSelectedMarker: prevSelectedPoi,
     });
 
     useEffect(() => {
@@ -208,6 +212,24 @@ export default function PoiLayer() {
                             map,
                             zoom,
                         });
+                        const markers = poiLayer.getLayers();
+                        if (markers.length > 0) {
+                            const marker = markers[0];
+                            const finalIconName = marker.options[FINAL_POI_ICON_NAME];
+                            const iconUrl = getIconUrlByName('poi', finalIconName);
+                            const innerIconSvgOrHtml = iconUrl ? `<img src="${iconUrl}" />` : '';
+
+                            const selectedIcon = createLayeredPinIcon({
+                                shape: DEFAULT_POI_SHAPE,
+                                color: DEFAULT_POI_COLOR,
+                                iconHtml: innerIconSvgOrHtml,
+                                size: SELECTED_PIN_SIZE,
+                                iconSize: SELECTED_ICON_SIZE,
+                            });
+
+                            marker.setIcon(selectedIcon);
+                        }
+
                         // remove old poi marker
                         if (ctx.poiByUrl.layer) {
                             map.removeLayer(ctx.poiByUrl.layer);
@@ -268,6 +290,11 @@ export default function PoiLayer() {
         });
         if (response?.data) {
             const data = response.data;
+
+            const objId = data.properties[POI_ID] ?? `${data.geometry.coordinates[1]},${data.geometry.coordinates[0]}`;
+            if (objId != null) {
+                data.properties[POI_ID] = objId;
+            }
 
             data.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
                 iconKeyName: data.properties[ICON_KEY_NAME],
@@ -570,7 +597,6 @@ export default function PoiLayer() {
             }
             if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
                 poiList?.layer.addTo(map).on('click', onClick);
-                prevSelectedPoi.current = null;
             }
             addToSearchRes(poiList);
             setMove(false);
@@ -620,8 +646,6 @@ export default function PoiLayer() {
         // Normal logic: open info block
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
         ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
-
-        prevSelectedPoi.current = selectMarker(e.sourceTarget, prevSelectedPoi.current);
 
         const poi = {
             mapObj: true,

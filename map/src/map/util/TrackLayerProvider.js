@@ -543,6 +543,9 @@ function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
     });
     if (isSecondaryMarker) {
         const color = point.color ? Utils.hexToRgba(point.color) : DEFAULT_WPT_COLOR;
+        if (!markerLayer.options.originalIcon && markerLayer.options.icon) {
+            markerLayer.options.originalIcon = markerLayer.options.icon;
+        }
         const customIcon = L.divIcon({
             className: 'custom-circle-icon',
             iconSize: [10, 10],

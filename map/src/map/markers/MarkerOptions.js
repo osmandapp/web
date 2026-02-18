@@ -25,12 +25,6 @@ export const COLORED_ICONS_PREFIX = 'c_mx_';
 export const SHADERS_PREFIX = 'h_';
 export const COLORED_SHADERS_PREFIX = 'c_h_';
 
-export const DEFAULT_BIG_HOVER_SIZE = EXPLORE_BIG_ICON_SIZE;
-export const DEFAULT_BIG_HOVER_STYLES = {
-    hover: styles.wikiIconHover,
-    large: styles.wikiIconLarge,
-};
-
 // startIcon, interIcon, endIcon, pointerIcons
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
     let svg =

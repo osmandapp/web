@@ -1,5 +1,5 @@
 import { apiGet } from '../../util/HttpApi';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
@@ -27,13 +27,11 @@ import {
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
-import styles from '../../menu/search/search.module.css';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
 import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/MapManager';
-import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
@@ -82,7 +80,6 @@ export default function SearchLayer() {
 
     const navigate = useNavigate();
 
-    const prevSelectedRes = useRef(null);
     const skipFirstBoundsUpdate = useRef(true);
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
@@ -93,12 +90,12 @@ export default function SearchLayer() {
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
 
+    const getSearchLayers = useCallback(() => searchLayers.current?.getLayers() ?? null, []);
     useSelectMarkerOnMap({
         ctx,
-        layers: searchLayers.current?.getLayers(),
+        getLayers: getSearchLayers,
         type: SEARCH_LAYER_ID,
         map,
-        prevSelectedMarker: prevSelectedRes,
     });
 
     useEffect(() => {
@@ -109,13 +106,6 @@ export default function SearchLayer() {
                 map.setView(pointLatLng, zoom, { animate: true });
             }
             ctx.setZoomToCoords(null);
-
-            updateSelectedMarkerOnMap({
-                layers: searchLayers.current?.getLayers(),
-                selectedObjId: ctx.zoomToCoords.idObj,
-                prevSelectedMarker: prevSelectedRes,
-                type: SEARCH_LAYER_ID,
-            });
         }
     }, [ctx.zoomToCoords]);
 
@@ -152,20 +142,6 @@ export default function SearchLayer() {
                 newLayers.eachLayer((l) => {
                     searchLayers.current.addLayer(l);
                 });
-                if (prevSelectedRes.current && searchLayers.current) {
-                    // If we have a previously selected result, re-add it to the search layers
-                    let wasFound = false;
-                    searchLayers.current.getLayers().forEach((layer) => {
-                        if (layer.options.idObj === prevSelectedRes.current.options.idObj) {
-                            prevSelectedRes.current = selectMarker(layer, prevSelectedRes.current, SEARCH_LAYER_ID);
-                            wasFound = true;
-                        }
-                    });
-                    if (!wasFound) {
-                        // If the previously selected result is not found, reset it
-                        prevSelectedRes.current = null;
-                    }
-                }
             }
         };
 
@@ -258,8 +234,6 @@ export default function SearchLayer() {
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
 
-        prevSelectedRes.current = selectMarker(e.sourceTarget, prevSelectedRes.current);
-
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
@@ -338,7 +312,7 @@ export default function SearchLayer() {
                 iconSize: DEFAULT_ICON_SIZE,
                 map,
                 ctx,
-                pointerStyle: styles.hoverPointer,
+                type: SEARCH_LAYER_ID,
             });
         });
 
@@ -350,7 +324,7 @@ export default function SearchLayer() {
                 latlng: marker._latlng,
                 map,
                 ctx,
-                pointerStyle: styles.hoverPointer,
+                type: SEARCH_LAYER_ID,
             });
         });
         const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];
