@@ -64,7 +64,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_r
 
 </Tabs>
 
-The map can be displayed in a light or dark theme based on the mode selected from a list of options. By default and for all new users, the [map style](#default-map-styles) aligns with the theme chosen in your device's system settings.
+The map can be displayed in a light or dark theme based on the mode selected from a list of options. By default and for all new users, the [map style](#map-styles) aligns with the theme chosen in your device's system settings.
 
 - **<Translate android="true" ids="daynight_mode_day"/>**. Always displays the map in a light theme for optimal daytime visibility.
 
@@ -182,10 +182,10 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_r
 
 </Tabs>  
 
-To improve map visibility, you might need to hide certain objects. For example, you can hide water when using the [Satellite online maps with the Underlay layer](../map/raster-maps.md#select-raster-maps).
+To improve map visibility, you might need to hide certain objects. For example, you can hide water when using the [Satellite online maps with the Underlay layer](../map/raster-maps.md#layers).
 
 - **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Hide regional boundaries inside of countries, but state boundaries are visible.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#select-raster-maps).
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#layers).
 - **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Hide all polygons of buildings.
 - **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Hide all polygons of water (seas, lakes, reservoirs, etc.)
 - **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Hide house numbers on the map.

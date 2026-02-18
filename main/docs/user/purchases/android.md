@@ -138,7 +138,7 @@ The table below details the features included in both the free and paid packages
 | [Vehicle Metrics Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | ✔ |
 | [Map markers tool](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb Map](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [SQLitedb Map](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favorite points](../map/point-layers-on-map.md)<br/>bookmarks and waypoints | ✔ | ✔ | ✔ |
 | [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |

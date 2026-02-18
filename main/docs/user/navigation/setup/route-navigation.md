@@ -78,7 +78,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 :::note
 
-**Route cannot be build when *[Online map](../../map/raster-maps.md#select-raster-maps)* is selected as map source.**
+**Route cannot be build when *[Online map](../../map/raster-maps.md#layers)* is selected as map source.**
 
 :::
 
@@ -87,7 +87,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 There are 3 ways to reach the navigation menu:
 
-- The [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
+- The [*Navigation button*](../../widgets/map-buttons.md#navigation) on the map screen.  
 - *Direction to/from* in a [*map context menu*](../../map/map-context-menu.md#directions-to--from).  
 - Navigation section in the [*Main Menu*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -324,7 +324,7 @@ This option is available in the Android version of the app in *[Notification lis
 To resume the navigation:
 
 - Use the message from OsmAnd in the notification bar.
-- Use *Quick actions menu* or dialog, that appears when you tap the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).
+- Use *Quick actions menu* or dialog, that appears when you tap the *[Navigation button](../../widgets/map-buttons.md#navigation)* (see screenshot).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

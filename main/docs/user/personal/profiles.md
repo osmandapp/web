@@ -280,9 +280,9 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 
 - **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Android only*) – Enable or disable the ability to use your device’s volume buttons for [zooming](../map/interact-with-map.md#my-location-and-zoom) in and out on the map.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Smooths map rotation with [gradual movement](https://en.wikipedia.org/wiki/Kalman_filter), reducing sudden position shifts. This introduces a small delay (*less than 1 second*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Smooths map rotation with [gradual movement](https://en.wikipedia.org/wiki/Kalman_filter), reducing sudden position shifts. This introduces a small delay (*less than 1 second*).
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Android only*) – Tap an empty space on the map to hide control buttons and widgets, maximizing map visibility.
 
@@ -370,7 +370,7 @@ With this menu, you can:
 
 - **Enable public transport visualization**, showing [routes and stops](../map/public-transport.md) for better trip planning.
 
-- **Adjust map appearance** by selecting a different [map style](../map/vector-maps.md#default-map-styles) to match your needs.
+- **Adjust map appearance** by selecting a different [map style](../map/map-style.md) to match your needs.
 
 
 ## Configure Screen {#configure-screen}

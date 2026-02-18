@@ -24,7 +24,7 @@ The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd a
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief.
 Topography information like [Contour lines](#contour-lines), [Terrain](#terrain) (*Hillshade* and *Slope*), and [3D Relief](#3d-relief) helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height.
 
-Each feature provided by this plugin is an independent map layer that, when enabled, can be displayed above or below the main map source depending on the [settings](../map/raster-maps.md#overlay-layer).  
+Each feature provided by this plugin is an independent map layer that, when enabled, can be displayed above or below the main map source depending on the [settings](../map/raster-maps.md#overlay).  
 
 The Topography plugin provides access to the following map types:  
 
@@ -345,7 +345,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </Tabs>  
 
-The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay-layer).
+The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#layers) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay).
 
 ***How to display 3D Relief on the map.***
 

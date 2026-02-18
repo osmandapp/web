@@ -83,7 +83,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 ## Map Layers {#map-layers}
 
 - [Vector Map Layer](../map/vector-maps.md) - displays all vector map information including OpenStreetMap, Contour lines, and Nautical data.
-- [Map Raster sources](../map/raster-maps.md#select-raster-maps) - allows selecting underlay / main-source / overlay map with transparency levels.
+- [Map Raster sources](../map/raster-maps.md#layers) - allows selecting underlay / main-source / overlay map with transparency levels.
 - [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - displays slope / hillshade information, 3D Relief.
 - [3D buildings](../map/vector-maps.md#3d-buildings) - displays volumetric building models on the map.
 - [Borders of downloaded maps](../map/vector-maps.md#show-borders) - displays all borders of downloaded maps on the main map layer.
@@ -107,7 +107,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
 
 The map style settings depend on the main map style displayed. You can read more about it in the [Map Styles article](../map/vector-maps).
 
-   - [Map style](../map/vector-maps.md#default-map-styles) - includes OsmAnd (City), Topo, Nautical, and others.
+   - [Map style](../map/vector-maps.md#map-styles) - includes OsmAnd (City), Topo, Nautical, and others.
    - [Map mode](../map/vector-maps.md#map-mode) - allows you to select the map view and navigation depending on the time of day.
    - [Globe View](../map/interact-with-map.md#globe-view) - switches the map between the standard flat view and a spherical Earth view.
    - [Map magnifier](../map/vector-maps.md#map-magnifier) - allows changing the magnification of the map.

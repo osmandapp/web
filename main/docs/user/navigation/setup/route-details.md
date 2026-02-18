@@ -222,7 +222,7 @@ Road attributes are accessible in the [Route Details](#how-to-access) and displa
 
 - [**Smoothness**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Applicable for all types of paths and areas, such as highways, parking lots, beaches, and trails, and indicates the usability of the route. It gives you information that you can drive without significant risk of damage, such as vehicle undercarriage, or injury, such as a fall.  
 
-- [**Winter and ice roads**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Shows the color scheme of the route according to the classification of [winter roads](../../map/vector-maps.md#winter-and-ski).  
+- [**Winter and ice roads**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Shows the color scheme of the route according to the classification of [winter roads](../../map/map-styles.md#winter-and-ski).  
 
 - [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding). This road attribute indicates the difficulty of the route while riding a horse. Suitable for [Horseback routing](../../navigation/routing/horse-routing.md).  
 

@@ -194,7 +194,7 @@ You can select route line appearance by style or manually select the color, widt
 
 The **Color** setting changes the color tones of the route lines. Their overall color changes depending on the selected type from the OsmAnd collection, and according to the **Map Legend**. Alternatively, their color becomes whatever color and transparency you set manually.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Used with the default colors. For a full description of the colors, go to [Default Map styles](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Used with the default colors. For a full description of the colors, go to [Default Map styles](../../map/map-styles.md#default-map-styles).  
     ![map stule](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Custom***. Allows you to select a line in any preferred color and transparency. You can select different settings for the day map and separately for the night map.  
@@ -215,7 +215,7 @@ The **Color** setting changes the color tones of the route lines. Their overall 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Road or trail maneuverability classification for wheeled vehicles, especially concerning the regularity and smoothness of the surface. A detailed description can be found in the *OsmAnd Map Style - [Smoothness](../../map-legend/osmand.md#surface-smoothness)* article in the *Map Legend* section.  
     ![Altitude](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colors a route or track line according to the *winter road classification*. A detailed description can be found in the *Vector Maps* article, [Winter and ice roads](../../map/vector-maps.md#winter-and-ski) section.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colors a route or track line according to the *winter road classification*. A detailed description can be found in the *Map Styles* article, [Winter and ice roads](../../map/map-styles.md#winter-and-ski) section.  
     ![Altitude](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Coloring of a route or trail line by pavement composition. Typically, used when the road network is largely unpaved. A detailed description can be found in the *OsmAnd Map Style - [Surface firmness](../../map-legend/osmand.md#surface-smoothness)* article in the *Map Legend* section.  
@@ -229,7 +229,7 @@ The **Color** setting changes the color tones of the route lines. Their overall 
 
 You can adjust the width of the route line to align with the road or path displayed on the map. For clearer visual identification, you can manually increase or decrease the line width as needed. For more details, refer to the *Tracks and Routes — [Appearance](../../map/tracks/appearance.md) article*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. It's used with the default width set by OsmAnd. A full description can be found in the *Vector Maps* article, [Map style](../../map/vector-maps.md#default-map-styles) section.  
+- ***<Translate android="true" id="map_widget_renderer"/>***. It's used with the default width set by OsmAnd. A full description can be found in the *[Map styles](../../map/map-styles.md)* article.  
     ![map stule](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Thin, Medium, and Bold widths***. You can select the width of the line to match the width of the road, or emphasize the route line more strongly on the map.  
