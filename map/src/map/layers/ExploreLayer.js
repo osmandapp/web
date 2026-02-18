@@ -19,6 +19,7 @@ import {
     SIMPLE_ICON_SIZE,
 } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
+import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { getVisibleBbox } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
@@ -82,6 +83,7 @@ export default function ExploreLayer() {
             ctx.setWikiPlaces(null);
             removeLayers();
         }
+        hideMarkersNearPin(map, ctx);
     }, [zoom]);
 
     const getExploreLayers = useCallback(() => {
@@ -347,6 +349,7 @@ export default function ExploreLayer() {
             oldLayers.clearLayers();
         }
         map.addLayer(newLayers);
+        hideMarkersNearPin(map, ctx);
         return newLayers;
     }
 

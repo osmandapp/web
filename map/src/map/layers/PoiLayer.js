@@ -7,7 +7,7 @@ import cloneDeep from 'lodash-es/cloneDeep';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE, getIconUrlByName } from '../markers/MarkerOptions';
 import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
-import { SELECTED_PIN_SIZE, SELECTED_ICON_SIZE } from '../util/MarkerSelectionService';
+import { SELECTED_PIN_SIZE, SELECTED_ICON_SIZE, hideMarkersNearPin } from '../util/MarkerSelectionService';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -523,6 +523,8 @@ export default function PoiLayer() {
         let ignore = false;
         let controller = new AbortController();
 
+        hideMarkersNearPin(map, ctx);
+
         async function getPoiList() {
             if (
                 (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
@@ -597,6 +599,7 @@ export default function PoiLayer() {
             }
             if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
                 poiList?.layer.addTo(map).on('click', onClick);
+                hideMarkersNearPin(map, ctx);
             }
             addToSearchRes(poiList);
             setMove(false);
