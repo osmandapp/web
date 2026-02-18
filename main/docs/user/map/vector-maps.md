@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  Vector Maps (Map Styles)
+title:  Vector Maps 
 ---
 
 import Tabs from '@theme/Tabs';
@@ -34,264 +34,13 @@ Very small polygons may be simplified or distorted during map data generation. O
 Customizable map styles are one of the main advantages of OsmAnd. You can customize the map display to suit yourself and your hobbies, adjust the display or hiding of certain map objects, the sizes, and colors of these objects, and change the scale of the display of certain objects.
 
 
-## Default Map Styles {#default-map-styles}
+## Map Rendering {#map-rendering}
 
-OsmAnd offers you many map styles and data layers that fit by default. This section describes the main ones for day and night modes.
+### Map Styles {#map-styles}
 
-1. **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
+OsmAnd provides several built-in vector map styles optimized for different activities. In addition to the default styles, you can create and install your own custom map style based on rendering rules.
 
-2. **iOS**. *<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*
-
-
-### OsmAnd {#osmand}
-
-![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)  
-
-OsmAnd's standard map rendering style balances detail and simplicity, making it ideal for urban and outdoor exploration. It details city features such as streets, buildings, and transportation stops while simplifying visual clutter by making maps clearer.  
-
-Key benefits include route mapping, surface quality, access restrictions, road signage, SAC-scale path renderings, sports facilities, and topographic details such as contour lines.
-
-
-### Touring View {#touring-view}
-
-![Touring view map style](@site/static/img/map/map-style-touring.png)
-
-Touring style with high contrast and maximum detail. Includes all the options of the default OsmAnd style while displaying as much detail as possible, in particular roads, paths, and other ways of traveling. Clear distinction of road types in a *touring atlas*. Suitable for day, night, and outdoor use.
-
-### UniRS and LightRS {#unirs-and-lightrs}
-
-<Translate android="true" ids="unirs_render_descr"/>
-
-UniRS and LightRS styles are author styles that render the basic map information but in different color schemes.  
-
-- **UniRS style**. This style is a modified version of the default to enhance the contrast for pedestrian and bicycle paths. It retains the classic Mapnik color scheme.  
-
-    ![LightRS map style](@site/static/img/map/map-style-lightrs.png)
-
-- **LightRS style**. This is a simple driving style that features a gentle night mode. It highlights roads in a contrasting orange color, dims secondary map objects, and displays topographical features like contour lines.
-
-    ![UniRS map style](@site/static/img/map/map-style-unirs.png)
-
-### Nautical {#nautical}
-
-![Nautical map style](@site/static/img/map/map-style-nautical.png)
-
-This is a style of nautical navigation featuring buoys, lighthouses, river routes, sea lanes, marks, harbors, and nautical marks. Read more in the section [Nautical Map Style](../plugins/nautical-charts.md#nautical-map-style).
-
-### Marine {#marine}
-
-![Marine map style](@site/static/img/map/map-style-marine.png)
-
-This is an advanced nautical map style with light sectors, full lighthouse characteristics, and other detailed maritime features for realistic and accurate marine navigation. For more details read section [Marine Map Style](../plugins/nautical-charts.md#marine-map-style).
-
-### Winter and Ski {#winter-and-ski}
-
-![Winter & Ski map style](@site/static/img/map/map-style-winter-ski.png)
-
-This is a style for ski sports that describes the pistes, elevators, and cross-country trails, as well as obscuring secondary map objects. **Winter and Ski style** is designed to help you with winter sports navigation.  
-
-You can see the ski slopes and other details such as the difficulty of the slopes and elevator markers. Key benefits include the convenient display of slopes, elevators, and other skiing features. Less of the distracting secondary objects of the map. Read more in the article [Ski Maps](../plugins/ski-maps.md).
-
-### Topo {#topo}
-
-![Topo map style](@site/static/img/map/map-style-topo.png)
-
-This style is designed for hiking, camping, and bicycling in nature. It features contrasting roads and natural features, different types of trails, extended contour line options, and additional details. It is readable in the outdoors. The *Surface Integrity* setting allows you to distinguish the quality of the road.
-
-### OSM-carto {#osm-carto}
-
-![OSM-carto map style](@site/static/img/map/map-style-osm-carto.png)
-
-This style imitates the default [OpenStreetMap web style](https://www.openstreetmap.org/). The source code of the web version is available on [Github](https://github.com/gravitystorm/openstreetmap-carto), OsmAnd code is available on [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
-
-### Desert {#desert}
-
-![Desert map style](@site/static/img/map/map-style-desert.png)
-
-Designed for deserts and other sparsely populated regions, offering more detailed map information.
-
-### Offroad {#offroad}
-
-![Offroad map style](@site/static/img/map/map-style-offroad.png)
-
-Designed for off-road navigation, this style is based on the [Topo](#topo) map layout and works well with satellite images as an underlay. It features thinner main roads to highlight paths, tracks, bike routes, and other off-road trails, making it ideal for exploring unpaved routes in rural or remote areas.
-
-### Snowmobile {#snowmobile}
-
-![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
-
-Tailored for snowmobile navigation, this style highlights snowmobile-friendly paths, roads, and tracks. It highlights specialized paths in snowy regions, offering clear navigation across snow-covered terrains where standard roads may not be available. 
-
-## 3D Buildings {#3d-buildings}
-
-<InfoAndroidOnly/> 
-
-![3D Buildings](@site/static/img/map/3d_buildings_1.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png)
-
-**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
-Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up.
-
-Currently, this option is available only when the [OsmAnd development plugin](../plugins/development.md) is enabled.  
-Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
-
-**Visibility** adjusts the opacity of 3D buildings. Use the slider to set the transparency level (0–100%). Lower values make buildings more transparent and improve visibility of roads and labels. Higher values make buildings more solid and visually dominant.
-
-**3D buildings detalization** controls the geometric complexity of 3D buildings. Available options:  
-- Medium – balanced level of detail (default).
-- High – more detailed geometry.
-
-**[Building parts](https://wiki.openstreetmap.org/wiki/Key:building:part)** enables rendering of separate building parts. This is most noticeable for complex buildings where different parts have different heights.
-
-
-## Map Legend {#map-legend}
-
-The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
-
-The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
-
-
-## Map Fonts (Android) {#map-fonts-android}
-
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
-
-![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
-
-For maps in simplified/traditional Chinese, Japanese, and Korean, incorrect characters or symbols (like squares) might appear if your device lacks the necessary fonts. This issue occurs when rendering local names and can be solved by downloading the required fonts via OsmAnd.  
-
-Some related font issues have been documented on GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
-
-
-## * Contour Lines {#-contour-lines}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Contour lines map style](@site/static/img/map/contour_lines.png)
-
-Contour lines in OsmAnd are displayed as elevation lines on vector maps. To use them, you must first enable the [Topography plugin](../plugins/topography.md), download the necessary regional data, and configure the display. This feature is not enabled by default and requires a [purchase](../purchases/index.md).  
-
-Contour lines are compatible with all map styles and can be customized through the [Contour lines menu](../plugins/topography.md#contour-lines). For further details, visit [Topography plugin](../plugins/topography.md) article.
-
-
-## * Nautical Depth {#-nautical-depth}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Nautical depth contour lines represent areas of equal depth, helping visualize underwater topography changes. This feature is available across all map styles and modes and can be adjusted with or without the Nautical map view plugin enabled.  
-
-For further details about the Nautical map view, visit the [Nautical Map plugin page](../plugins/nautical-charts).
-
-
-## Show Borders {#show-borders}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![show-borders-ios](@site/static/img/map/show-borders-ios.png)
-
-</TabItem>
-
-</Tabs>
-
-This feature allows you to toggle the visibility of borders for previously downloaded maps from the list of available maps. Its main purpose is to help declutter the main map by hiding the outlines of downloaded maps, which is especially useful if you have many maps installed.  
-
-By default, map borders will appear when you zoom in to level 7 and will disappear at zoom level 3 and below.
-
-:::tip Color Show borders of downloaded maps
-When the *Show borders of downloaded maps* feature is enabled, downloaded maps are colored **Green** in both the Android and iOS versions of OsmAnd.  
-
-On Android, archived maps are shown in **Orange**. In iOS, maps that can be updated are also marked in **Orange**.
-:::
-
-
-## Coordinates Grid {#coordinates-grid}
-
-
-Go to: *Menu → Configure Map → Show → Coordinates Grid*  
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. 
-
-You can configure the following options:
-- **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
-- **Labels position:** choose between *Edges* (default)or *Center* for grid labels.
-- **Grid color:** available separately for Day/Night mode. Customizing grid color is a [paid feature](https://osmand.net/docs/user/purchases/) available in Maps+ (in-app purchase or subscription) and OsmAnd+.
-- **Coordinate format:** select from several available formats (see list below).
-
-
-***Available coordinate formats:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
-- **MGRS** (Military Grid Reference System)
-
-By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
-
-[Quick action](../widgets/quick-action.md#overview): You can also add a quick toggle *Show/Hide Coordinates Grid* to the [Configure Map](../widgets/quick-action.md#configure-map) group for fast access.
-
-## Configure Map Style {#configure-map-style}
+For a detailed description of available styles and instructions on creating custom styles, see the [Map Styles](../map/map-styles.md) article.
 
 ### Map Mode {#map-mode}
 
@@ -325,8 +74,44 @@ The map can be displayed in a light or dark theme based on the mode selected fro
 
 - **<Translate android="true" ids="daynight_mode_sensor"/>** (*Android only*). Utilizes the device's light sensor to automatically switch between light and dark themes according to ambient light levels.
 
-- **<Translate android="true" ids="daynight_mode_app_theme"/>**. The map display adapts to the app's overall theme, showing day mode in the light theme and night mode in the dark theme.
+- **<Translate android="true" ids="daynight_mode_app_theme"/>**. The map display adapts to the app's overall theme, showing day mode in the light theme and night mode in the dark theme. 
 
+### Road Style {#road-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+Special settings for roads, where you can change the colors to match the road atlas or add high-contrast roads or bold outlines for roads.
+
+- **<Translate android="true" ids="rendering_value_default_name"/>**. Default style for highways. Look at [Map legend](../map-legend/index.md).  
+![Map road style default](@site/static/img/map/map-road-style-default.png)
+
+- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Style of German road atlas.  
+![Map road style german](@site/static/img/map/map-road-style-german.png)
+
+- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Style of American road atlas.  
+![Map road style american](@site/static/img/map/map-road-style-american.png)
+
+- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. The high contrast of roads.  
+![Map road style high contrast](@site/static/img/map/map-road-style-high-contrast.png)
+- **Pale**. Less contrasting colors of roads.  
+![Map road style bold outline](@site/static/img/map/map-road-style-pale.png)
+
+- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Bold outline for roads.  
+![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)
 
 ### Details {#details}
 
@@ -379,44 +164,36 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 
     &nbsp;&nbsp;&nbsp;![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)
 
-
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->
-
-### Routes {#routes}
+### Hide {#hide}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)  ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
+To improve map visibility, you might need to hide certain objects. For example, you can hide water when using the [Satellite online maps with the Underlay layer](../map/raster-maps.md#select-raster-maps).
 
-A route is a path that is predetermined and needs to be followed to reach a specific destination. A route can be optimized for different types of travel, such as cycling, hiking, running, public transport, and others. You can read more about routes and their types in the [Routes article](../map/routes.md).
-
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Hide regional boundaries inside of countries, but state boundaries are visible.
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#select-raster-maps).
+- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Hide all polygons of buildings.
+- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Hide all polygons of water (seas, lakes, reservoirs, etc.)
+- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Hide house numbers on the map.
+- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Hide proposed objects - those objects that are planned for construction but only have a project (projected roads, intersections, buildings, and others).
+- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Hide the POI icons from the map. However, the labels of these POIs will still appear on the map.
+- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Hide the POI labels from the map. However, the POI icons will still appear on the map.
+- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Hide all underground objects, like tunnels, passes, floors, etc. Special for clearing maps on cities from non-useful objects.
+- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Hide all overground objects. Special for seeing only underground objects like tunnels, passes, etc.
 
 ### Transport {#transport}
 
@@ -450,99 +227,8 @@ When navigating through cities, you need a more contrasting view of public trans
 - **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Shows underground routes.  
     ![Map transport subway](@site/static/img/map/map-transport-subway.png)
 
-### Hide {#hide}
 
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
-
-</TabItem>
-
-</Tabs>  
-
-To improve map visibility, you might need to hide certain objects. For example, you can hide water when using the [Satellite online maps with the Underlay layer](../map/raster-maps.md#select-raster-maps).
-
-- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Hide regional boundaries inside of countries, but state boundaries are visible.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#select-raster-maps).
-- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Hide all polygons of buildings.
-- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Hide all polygons of water (seas, lakes, reservoirs, etc.)
-- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Hide house numbers on the map.
-- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Hide proposed objects - those objects that are planned for construction but only have a project (projected roads, intersections, buildings, and others).
-- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Hide the POI icons from the map. However, the labels of these POIs will still appear on the map.
-- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Hide the POI labels from the map. However, the POI icons will still appear on the map.
-- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Hide all underground objects, like tunnels, passes, floors, etc. Special for clearing maps on cities from non-useful objects.
-- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Hide all overground objects. Special for seeing only underground objects like tunnels, passes, etc.
-
-### Road Style {#road-style}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-Special settings for roads, where you can change the colors to match the road atlas or add high-contrast roads or bold outlines for roads.
-
-- **<Translate android="true" ids="rendering_value_default_name"/>**. Default style for highways. Look at [Map legend](../map-legend/index.md).  
-![Map road style default](@site/static/img/map/map-road-style-default.png)
-
-- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Style of German road atlas.  
-![Map road style german](@site/static/img/map/map-road-style-german.png)
-
-- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Style of American road atlas.  
-![Map road style american](@site/static/img/map/map-road-style-american.png)
-
-- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. The high contrast of roads.  
-![Map road style high contrast](@site/static/img/map/map-road-style-high-contrast.png)
-- **Pale**. Less contrasting colors of roads.  
-![Map road style bold outline](@site/static/img/map/map-road-style-pale.png)
-
-- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Bold outline for roads.  
-![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)
-
-
-### Text Size {#text-size}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
-
-</TabItem>
-
-</Tabs>  
-
-- **100%**  
-    ![Map text size 100%](@site/static/img/map/map-text-size-100.png)
-
-- **200%**  
-    ![Map text size 200%](@site/static/img/map/map-text-size-200.png)
-
+## Text Rendering {#text-rendering}
 
 ### Map Magnifier {#map-magnifier}
 
@@ -572,6 +258,29 @@ This setting helps to change the magnification of the map. It is applicable for 
 - **200%**  
     ![Map magnifier 200%](@site/static/img/map/map-magnifier-200.png)
 
+### Text Size {#text-size}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
+
+</TabItem>
+
+</Tabs>  
+
+- **100%**  
+    ![Map text size 100%](@site/static/img/map/map-text-size-100.png)
+
+- **200%**  
+    ![Map text size 200%](@site/static/img/map/map-text-size-200.png)
 
 ### Map Language {#map-language}
 
@@ -594,7 +303,6 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,map_widg
 - **Use latin name if missing**   
     ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -613,25 +321,221 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_strin
 - **Transliterate names**    
     ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
 
-
-
 </TabItem>
 
 </Tabs>  
 
+### Map Fonts (Android) {#map-fonts-android}
+
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
+
+![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
+
+For maps in simplified/traditional Chinese, Japanese, and Korean, incorrect characters or symbols (like squares) might appear if your device lacks the necessary fonts. This issue occurs when rendering local names and can be solved by downloading the required fonts via OsmAnd.  
+
+Some related font issues have been documented on GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
 
 
-## Custom Map Style {#custom-map-style}
+## Topography Rendering {#topography-rendering}
 
-If you have a personal or third-party custom map style created according to the [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on your device in these ways:
+### * Contour Lines {#-contour-lines}
 
-- Copy the `.render.xml` file to your device and open it with OsmAnd.
-- Use the [standard import/export dialogs](../personal/import-export.md) to export or import rendering styles. If you create an `.osf` package, it works as a plugin that you can share with others.
-- After installation, you can select the map style from the menu.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Contour lines map style](@site/static/img/map/contour_lines.png)
+
+Contour lines in OsmAnd are displayed as elevation lines on vector maps. To use them, you must first enable the [Topography plugin](../plugins/topography.md), download the necessary regional data, and configure the display. This feature is not enabled by default and requires a [purchase](../purchases/index.md).  
+
+Contour lines are compatible with all map styles and can be customized through the [Contour lines menu](../plugins/topography.md#contour-lines). For further details, visit [Topography plugin](../plugins/topography.md) article.
+
+### * Nautical Depth {#-nautical-depth}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Nautical depth contour lines represent areas of equal depth, helping visualize underwater topography changes. This feature is available across all map styles and modes and can be adjusted with or without the Nautical map view plugin enabled.  
+
+For further details about the Nautical map view, visit the [Nautical Map plugin page](../plugins/nautical-charts).
+
+### 3D Buildings {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+![3D Buildings](@site/static/img/map/3d_buildings_1.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png)
+
+**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
+Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up.
+
+Currently, this option is available only when the [OsmAnd development plugin](../plugins/development.md) is enabled.  
+Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+
+**Visibility** adjusts the opacity of 3D buildings. Use the slider to set the transparency level (0–100%). Lower values make buildings more transparent and improve visibility of roads and labels. Higher values make buildings more solid and visually dominant.
+
+**3D buildings detalization** controls the geometric complexity of 3D buildings. Available options:  
+- Medium – balanced level of detail (default).
+- High – more detailed geometry.
+
+**[Building parts](https://wiki.openstreetmap.org/wiki/Key:building:part)** enables rendering of separate building parts. This is most noticeable for complex buildings where different parts have different heights.
+
+<!--
+## Map Legend {#map-legend}
+
+The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
+
+The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
+-->
+
+
+## Additional Settings {#additional-settings}
+
+### Show Borders {#show-borders}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![show-borders-ios](@site/static/img/map/show-borders-ios.png)
+
+</TabItem>
+
+</Tabs>
+
+This feature allows you to toggle the visibility of borders for previously downloaded maps from the list of available maps. Its main purpose is to help declutter the main map by hiding the outlines of downloaded maps, which is especially useful if you have many maps installed.  
+
+By default, map borders will appear when you zoom in to level 7 and will disappear at zoom level 3 and below.
+
+:::tip Color Show borders of downloaded maps
+When the *Show borders of downloaded maps* feature is enabled, downloaded maps are colored **Green** in both the Android and iOS versions of OsmAnd.  
+
+On Android, archived maps are shown in **Orange**. In iOS, maps that can be updated are also marked in **Orange**.
+:::
+
+### Coordinates Grid {#coordinates-grid}
+
+Go to: *Menu → Configure Map → Show → Coordinates Grid*  
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. 
+
+You can configure the following options:
+- **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
+- **Labels position:** choose between *Edges* (default)or *Center* for grid labels.
+- **Grid color:** available separately for Day/Night mode. Customizing grid color is a [paid feature](https://osmand.net/docs/user/purchases/) available in Maps+ (in-app purchase or subscription) and OsmAnd+.
+- **Coordinate format:** select from several available formats (see list below).
+
+***Available coordinate formats:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
+- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
+- **MGRS** (Military Grid Reference System)
+
+By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
+
+[Quick action](../widgets/quick-action.md#overview): You can also add a quick toggle *Show/Hide Coordinates Grid* to the [Configure Map](../widgets/quick-action.md#configure-map) group for fast access.
+
+<!--
+| | | |
+|--------|--------|--------|
+|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
+-->
+
+## Routes {#routes}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)  ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
+
+A route is a path that is predetermined and needs to be followed to reach a specific destination. A route can be optimized for different types of travel, such as cycling, hiking, running, public transport, and others. You can read more about routes and their types in the [Routes article](../map/routes.md).
 
 
 ## Related Articles {#related-articles}
 
+- [Interact with Map](../map/interact-with-map.md)
+- [Configure Map](../map/configure-map-menu.md)
+- [Map Styles](../map/map-styles.md)
+- [Routes](../map/routes.md)
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
