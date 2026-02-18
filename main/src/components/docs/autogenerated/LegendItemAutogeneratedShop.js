@@ -82,7 +82,7 @@ export default function Render() {
         'Garden furniture' : {poiName:'garden_furniture', poiName2:null, folderName:'shop/shop_shop_garden_furniture'},
         'Groundskeeping store' : {poiName:'groundskeeping', poiName2:null, folderName:'shop/shop_shop_groundskeeping'},
         'Gas store' : {poiName:'gas', poiName2:null, folderName:'shop/shop_shop_gas'},
-        'General store' : {poiName:'shop_yes', poiName2:null, folderName:'shop/shop_shop_yes'},
+        'General store' : {poiName:'shop_general', poiName2:null, folderName:'shop/shop_shop_general'},
         'Gifts' : {poiName:'gift', poiName2:null, folderName:'shop/shop_shop_gift'},
         'Glaziery' : {poiName:'glaziery', poiName2:null, folderName:'shop/shop_shop_glaziery'},
         'Hardware' : {poiName:'hardware', poiName2:null, folderName:'shop/shop_shop_hardware'},
