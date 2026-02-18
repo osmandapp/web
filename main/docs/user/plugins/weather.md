@@ -59,7 +59,7 @@ The Weather plugin is only available with Map rendering engine [Version 2](../pe
 
 Go to: *Enabled plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -73,7 +73,9 @@ Go to: *Enabled plugin → <Translate ios="true" ids="shared_string_menu,shared_
 
 </Tabs>
 
-The main side menu has a dedicated **Weather** menu item that provides quick access to all weather tools. The *Weather forecast screen* displays information about *temperature*, *atmospheric pressure*, *wind speed*, *cloud coverage*, and *precipitation*.  
+The main side menu has a dedicated **Weather** menu item that provides quick access to all weather tools. The *Weather forecast screen* displays information about *temperature*, *atmospheric pressure*, *wind speed*, *cloud coverage*, and *precipitation*. 
+
+The forecast values are shown for the map center, marked by a crosshair (black on Android, red on iOS). Move the map to change the selected location — the weather data updates automatically for the new point.
 
 At the bottom of the screen is the *weather toolbar*. You can use the day buttons and the time slider to set the exact time at which the weather forecast will be displayed.
 
