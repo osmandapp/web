@@ -60,15 +60,18 @@ export function restoreHiddenMarkers(hiddenLayersRef) {
     hiddenLayersRef.current = [];
 }
 
-export function hideMarkersNearPoint(map, zoom, centerLatLng, excludeLayer, hiddenLayersRef) {
-    const radiusM = getSelectedMarkerHideRadiusM(zoom);
-    restoreHiddenMarkers(hiddenLayersRef);
-    const center = L.latLng(centerLatLng);
+export function hideMarkersNearPin(map, ctx) {
+    const selectedPin = ctx.selectedCreatedLayerRef?.current;
+    if (!selectedPin || !map.hasLayer(selectedPin)) return;
+
+    const radiusM = getSelectedMarkerHideRadiusM(map.getZoom());
+    restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
+    const center = selectedPin.getLatLng();
     const hidden = [];
 
     map.eachLayer((group) => {
         collectMarkerLayers(group, []).forEach((layer) => {
-            if (layer === excludeLayer) return;
+            if (layer === selectedPin) return;
             const ll = layer.getLatLng?.() ?? layer._latlng;
             if (!ll || center.distanceTo(ll) > radiusM) return;
             const el = layer.getElement();
@@ -79,7 +82,7 @@ export function hideMarkersNearPoint(map, zoom, centerLatLng, excludeLayer, hidd
         });
     });
 
-    hiddenLayersRef.current = hidden;
+    ctx.selectedHiddenLayersRef.current = hidden;
 }
 
 function buildSelectedIcon(marker, layerOptions = {}) {
@@ -168,7 +171,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData);
         selectedLayer.options.idObj = layer?.options?.idObj ?? null;
         ctx.selectedCreatedLayerRef.current = selectedLayer;
-        hideMarkersNearPoint(map, map.getZoom(), ll, selectedLayer, ctx.selectedHiddenLayersRef);
+        hideMarkersNearPin(map, ctx);
     } else if (layer && map.hasLayer(layer)) {
         applySelectedWithUpdateMarker(layer, markerData);
         ctx.selectedUpdatedLayerRef.current = layer;
