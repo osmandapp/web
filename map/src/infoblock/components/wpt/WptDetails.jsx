@@ -511,8 +511,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
 
         if (type.isPoi || type.isSearch) {
-            if (ctx.selectedPoiId) {
-                ctx.setSelectedPoiId((prev) => {
+            if (ctx.selectedWptId) {
+                ctx.setSelectedWptId((prev) => {
                     return { ...prev, show: false };
                 });
             }
@@ -530,8 +530,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type.isWpt) {
             !wpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
         } else if (type.isWikiPoi) {
-            if (ctx.selectedPoiId) {
-                ctx.setSelectedPoiId((prev) => {
+            if (ctx.selectedWptId) {
+                ctx.setSelectedWptId((prev) => {
                     return { ...prev, show: false };
                 });
             }

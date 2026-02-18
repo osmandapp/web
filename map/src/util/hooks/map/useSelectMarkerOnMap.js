@@ -27,14 +27,15 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         ctx.selectedWpt?.wikidata?.properties?.id ??
         ctx.selectedWpt?.poi?.options[POI_ID] ??
         ctx.selectedWpt?.poi?.options?.idObj ??
+        ctx.selectedWpt?.selectionId ??
         null;
 
     const hoverId =
-        ctx.selectedPoiId?.type === type &&
-        ctx.selectedPoiId?.show !== false &&
-        ctx.selectedPoiId?.id !== -1 &&
-        ctx.selectedPoiId?.id != null
-            ? ctx.selectedPoiId.id
+        ctx.selectedWptId?.type === type &&
+        ctx.selectedWptId?.show !== false &&
+        ctx.selectedWptId?.id !== -1 &&
+        ctx.selectedWptId?.id != null
+            ? ctx.selectedWptId.id
             : null;
 
     // ========== SELECTED PIN ==========
@@ -75,7 +76,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
 
     // Builds markerData from layer options
     function applyPinForLayer(layer, isSelection) {
-        const latlng = layer.getLatLng?.() ?? layer._latlng;
+        const latlng = layer.getLatLng();
         if (!latlng) return;
 
         // Skip if this layer is already the active pin
@@ -114,9 +115,9 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         img.onload = () => {
             loadedPhotoUrls.add(photoUrl);
             const stillActive =
-                (ctx.selectedPoiId?.type === type &&
-                    ctx.selectedPoiId?.id === layer.options?.idObj &&
-                    ctx.selectedPoiId?.show !== false) ||
+                (ctx.selectedWptId?.type === type &&
+                    ctx.selectedWptId?.id === layer.options?.idObj &&
+                    ctx.selectedWptId?.show !== false) ||
                 (selectedObjId &&
                     (selectedObjId === layer.options?.idObj || selectedObjId === layer.options?.[POI_ID]));
             if (stillActive) doApply();

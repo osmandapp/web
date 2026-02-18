@@ -745,9 +745,15 @@ export function addShareFavoriteToMap(marker, ctx) {
     ctx.setSelectedWpt(newSelectedGpxFile);
 }
 
+export function getFavoriteId(layer) {
+    const { lat, lng } = layer.getLatLng();
+    return `fav:${lat}:${lng}`;
+}
+
 export function openFavoriteObj(ctx, object) {
     ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
-    ctx.setSelectedWpt({ ...object });
+    const selectionId = getFavoriteId(object.markerCurrent?.layer);
+    ctx.setSelectedWpt({ ...object, selectionId });
     ctx.setSelectedGpxFile({ ...object });
 }
 

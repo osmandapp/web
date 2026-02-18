@@ -1,5 +1,6 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
+import { POI_ID } from '../../infoblock/components/wpt/WptTagsProvider';
 import L from 'leaflet';
 import Utils from '../../util/Utils';
 
@@ -72,7 +73,7 @@ export function hideMarkersNearPin(map, ctx) {
     map.eachLayer((group) => {
         collectMarkerLayers(group, []).forEach((layer) => {
             if (layer === selectedPin) return;
-            const ll = layer.getLatLng?.() ?? layer._latlng;
+            const ll = layer.getLatLng();
             if (!ll || center.distanceTo(ll) > radiusM) return;
             const el = layer.getElement();
             if (el) {
@@ -110,10 +111,10 @@ function applySelectedWithUpdateMarker(layer, marker) {
 }
 
 // Creates a new pin marker and adds it directly to the map (used for selection)
-function applySelectedWithCreateMarker(map, latlng, marker) {
+function applySelectedWithCreateMarker(map, latlng, marker, layerOptions = {}) {
     const latlngObj = latlng.lat !== undefined && latlng.lng !== undefined ? L.latLng(latlng.lat, latlng.lng) : latlng;
     const layer = L.marker(latlngObj, {
-        icon: buildSelectedIcon(marker),
+        icon: buildSelectedIcon(marker, layerOptions),
         interactive: false,
     });
     layer.addTo(map);
@@ -129,13 +130,20 @@ export function restoreOriginalIcon(layer) {
 }
 
 // Removes the current selected/hover pin and restores hidden markers.
-// The selected pin is NOT removed if ctx.selectedWpt is still set, unless force=true.
+// The created pin is kept only if its idObj still matches the current selectedWpt id.
 export function resetSelectedPin({ ctx, map, force = false }) {
     if (!ctx || !map) return;
 
     restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
 
-    if (!ctx.selectedWpt || force) {
+    const createdId = ctx.selectedCreatedLayerRef?.current?.options?.idObj;
+    const wptId =
+        ctx.selectedWpt?.wikidata?.properties?.id ??
+        ctx.selectedWpt?.poi?.options?.[POI_ID] ??
+        ctx.selectedWpt?.poi?.options?.idObj ??
+        ctx.selectedWpt?.selectionId ??
+        null;
+    if (!wptId || createdId !== wptId || force) {
         if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
             map.removeLayer(ctx.selectedCreatedLayerRef.current);
             ctx.selectedCreatedLayerRef.current = null;
@@ -154,7 +162,7 @@ export function resetSelectedPin({ ctx, map, force = false }) {
 export function applySelectedPin({ ctx, map, layer = null, latlng = null, markerData, isSelection = false }) {
     if (!ctx || !map || !markerData) return null;
 
-    const ll = latlng ?? layer?.getLatLng?.() ?? layer?._latlng;
+    const ll = latlng ?? layer?.getLatLng();
     if (!ll) return null;
 
     if (isSelection) {
@@ -168,7 +176,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
     let selectedLayer;
 
     if (isSelection) {
-        selectedLayer = applySelectedWithCreateMarker(map, ll, markerData);
+        selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         selectedLayer.options.idObj = layer?.options?.idObj ?? null;
         ctx.selectedCreatedLayerRef.current = selectedLayer;
         hideMarkersNearPin(map, ctx);
@@ -178,7 +186,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         selectedLayer = layer;
     } else {
         // Fallback: layer is no longer on the map, create a new pin
-        selectedLayer = applySelectedWithCreateMarker(map, ll, markerData);
+        selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         ctx.selectedCreatedLayerRef.current = selectedLayer;
     }
 

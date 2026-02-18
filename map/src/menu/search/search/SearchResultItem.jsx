@@ -140,16 +140,16 @@ export default function SearchResultItem({ item, typeItem }) {
     }
 
     function setSelectedPoint({ show }) {
-        ctx.setSelectedPoiId({ id: itemId, show, type: typeItem, obj: item, prev: ctx.selectedPoiId });
+        ctx.setSelectedWptId({ id: itemId, show, type: typeItem, obj: item, prev: ctx.selectedWptId });
     }
 
     useEffect(() => {
-        if (ctx.selectedPoiId?.id === itemId) {
+        if (ctx.selectedWptId?.id === itemId) {
             setIsHovered(true);
         } else {
             setIsHovered(false);
         }
-    }, [ctx.selectedPoiId?.id]);
+    }, [ctx.selectedWptId?.id]);
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t);

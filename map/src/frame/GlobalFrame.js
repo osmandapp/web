@@ -174,7 +174,7 @@ const GlobalFrame = () => {
     }, [ctx.shareWithMeFiles]);
 
     useEffect(() => {
-        if (location.pathname.includes(POI_URL) && (!ctx.selectedPoiId || ctx.selectedPoiId?.id === -1)) {
+        if (location.pathname.includes(POI_URL) && (!ctx.selectedWptId || ctx.selectedWptId?.id === -1)) {
             ctx.setProcessingPoiByUrl(true);
             const params = {};
             Object.keys(poiUrlParams).forEach((key) => {

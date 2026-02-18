@@ -32,7 +32,7 @@ import {
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
-import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
+import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
@@ -99,9 +99,9 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
     }
 
     mainMarkersLayers.forEach((marker) => {
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
-            setSelectedId: ctx.setSelectedPoiId,
+            setSelectedId: ctx.setSelectedWptId,
             mainStyle: true,
             text: marker.options[POI_NAME],
             latlng: marker._latlng,
@@ -113,9 +113,9 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
     });
 
     simpleMarkersArr.getLayers().forEach((marker) => {
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
-            setSelectedId: ctx.setSelectedPoiId,
+            setSelectedId: ctx.setSelectedWptId,
             text: marker.options[POI_NAME],
             latlng: marker._latlng,
             map,
@@ -204,7 +204,7 @@ export default function PoiLayer() {
             openPoiByUrl().then(async (res) => {
                 let poiLayer;
                 if (res) {
-                    if (ctx.selectedPoiId?.id !== getObjIdSearch(res)) {
+                    if (ctx.selectedWptId?.id !== getObjIdSearch(res)) {
                         poiLayer = await createPoiLayer({
                             ctx,
                             poiList: [res],

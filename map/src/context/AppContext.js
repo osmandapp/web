@@ -467,7 +467,7 @@ export const AppContextProvider = (props) => {
     const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
-    const [selectedPoiId, setSelectedPoiId] = useState(null);
+    const [selectedWptId, setSelectedWptId] = useState(null);
 
     const [navigationHistory, setNavigationHistory] = useState([]);
 
@@ -825,8 +825,8 @@ export const AppContextProvider = (props) => {
                 setSearchSettings,
                 loadingContextItem,
                 setLoadingContextItem,
-                selectedPoiId,
-                setSelectedPoiId,
+                selectedWptId,
+                setSelectedWptId,
                 openMenu,
                 setOpenMenu,
                 openContextMenu,

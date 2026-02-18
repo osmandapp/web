@@ -104,6 +104,9 @@
     padding: 10px 16px !important;
     gap: 24px !important;
 }
+.itemHovered {
+    background-color: #f0f0f0 !important;
+}
 .actions {
     padding: 6px 0px !important;
     border-radius: 3px !important;
