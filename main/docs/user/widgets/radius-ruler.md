@@ -203,7 +203,7 @@ For more information about *the position on the screen*, see the article [Config
 
 You can switch to **3D view** to better visualize distances and surrounding terrain when using the Radius Ruler. This view tilts the map and provides a perspective effect that expands the visible radius.
 
-- Tap [the location button](../map/interact-with-map.md#my-location-and-zoom) to focus on your position.
+- Tap [the position button](../map/interact-with-map.md#my-position-and-zoom) to focus on your position.
 - Use a [two-finger swipe up](../map/interact-with-map.md#gestures) gesture to tilt the map into 3D mode.
 
 The radius circles will appear with depth, which is particularly useful for route planning in hilly areas or urban environments where vertical context matters.

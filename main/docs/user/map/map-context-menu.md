@@ -554,7 +554,7 @@ Available options to share the location:
 
 </Tabs>
 
-To start navigation or route planning, you need to select destination first with [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). In case you already have a destination point, the menu will suggest you to replace the destination point or to insert as another intermediate or start point.
+To start navigation or route planning, you need to select destination first with [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation). In case you already have a destination point, the menu will suggest you to replace the destination point or to insert as another intermediate or start point.
 
 It is also possible to select *From* Destination first via map context menu (<Translate android="true" ids="context_menu_item_directions_from"/>).
 

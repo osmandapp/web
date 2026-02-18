@@ -43,7 +43,7 @@ The [Main Menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 - [Map markers](../personal/markers.md) is a tool that allows to mark place on the map.
 - [My places](../personal/myplaces.md) is a menu that includes by default Favorites and tracks and in addition can include [A/V notes](../plugins/audio-video-notes.md) and [OSM edits](../plugins/osm-editing.md) (if such plugins are turned on).
 - [Search](../search/index.md) (Android) is a tool that allows you to find the place or object that exist on the map.
-- [Directions](../widgets/map-buttons.md#directions) button allows to create a route and start navigation.
+- [Directions](../widgets/map-buttons.md#navigation) button allows to create a route and start navigation.
 - [Configure map](../map/configure-map-menu.md) is a menu that allows configuring map view.
 - [Download maps](../start-with/download-maps.md) is a menu that contains all files that could be downloaded.
 - [Travel guides (Beta)](../plan-route/travel-guides.md) (*Android*) is a tool that allows using Wikivoyage guide for your trip.
