@@ -46,6 +46,12 @@ function prepareInnerIcon(html, iconSize) {
     if (!html) {
         return '';
     }
+    const imgMatch = html.match(/<img[^>]*src="([^"]+)"[^>]*>/i);
+    if (imgMatch?.[1]) {
+        const src = imgMatch[1];
+        return `<img src="${src}" width="${iconSize}" height="${iconSize}" style="width:${iconSize}px;height:${iconSize}px;object-fit:cover;border-radius:50%;" />`;
+    }
+
     const imageMatch = html.match(/<image[^>]*href="([^"]+)"[^>]*>/i);
     if (imageMatch?.[1]) {
         const href = imageMatch[1];

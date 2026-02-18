@@ -10,11 +10,10 @@ import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { clusterMarkers, createHoverMarker } from '../util/Clusterizer';
 import {
-    applySelectedWithUpdateMarker,
-    applySelectedWithCreateMarker,
-    hideMarkersNearPoint,
-    restoreHiddenMarkers,
+    applySelectedPin,
     SELECTED_MARKER_Z_INDEX,
+    resetSelectedPin,
+    restoreOriginalIcon,
 } from '../util/MarkerSelectionService';
 import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import useHashParams from '../../util/hooks/useHashParams';
@@ -26,14 +25,6 @@ import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
-
-export function restoreOriginalIcon(layer) {
-    if (layer.options.originalIcon) {
-        if (layer.icon !== layer.options.originalIcon) {
-            layer.setIcon(layer.options.originalIcon);
-        }
-    }
-}
 
 export function filterPointsInBounds(points, map) {
     const mapBounds = map.getBounds();
@@ -358,15 +349,15 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.prevState = cloneDeep(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
-                icon: e.sourceTarget.options.icon.options.html,
+                iconHtml:
+                    e.sourceTarget.options.originalIcon?.options?.html ?? e.sourceTarget.options.icon?.options?.html,
+                iconName: e.sourceTarget.options.iconName,
                 color: e.sourceTarget.options.color,
                 background: e.sourceTarget.options.background,
                 groupId: e.sourceTarget.options.groupId,
                 iconSize: e.sourceTarget.options.icon?.options?.iconSize?.[0],
                 layer: e.sourceTarget,
                 latlng: e.sourceTarget.getLatLng?.() ?? e.sourceTarget._latlng,
-                originalIconHtml:
-                    e.sourceTarget.options.originalIcon?.options?.html ?? e.sourceTarget.options.icon?.options?.html,
             };
             ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.name;
             ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
@@ -433,28 +424,14 @@ const FavoriteLayer = () => {
 
     // main function for applying selection on favorite marker
     function applySelectionIfNeeded() {
-        resetSelectionState();
+        resetSelectedPin({ ctx, map });
 
         const current = getCurrentSelectionIfAllowed();
         if (!current) {
             return;
         }
-
-        const { selectedLayer, centerLatLng } = findOrCreateSelectedLayer(current);
-        hideMarkersAroundSelection(selectedLayer, centerLatLng);
+        const { selectedLayer } = findOrCreateSelectedLayer(current);
         selectedLayer?.setZIndexOffset(SELECTED_MARKER_Z_INDEX);
-    }
-
-    function resetSelectionState() {
-        restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
-        if (ctx.selectedUpdatedLayerRef.current) {
-            restoreOriginalIcon(ctx.selectedUpdatedLayerRef.current);
-            ctx.selectedUpdatedLayerRef.current = null;
-        }
-        if (ctx.selectedCreatedLayerRef.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
-            map.removeLayer(ctx.selectedCreatedLayerRef.current);
-            ctx.selectedCreatedLayerRef.current = null;
-        }
     }
 
     function getCurrentSelectionIfAllowed() {
@@ -472,27 +449,20 @@ const FavoriteLayer = () => {
 
     function findOrCreateSelectedLayer(current) {
         const layer = current.layer;
-        let selectedLayer = null;
-
         if (layer && map.hasLayer(layer)) {
             current.latlng = layer.getLatLng?.() ?? layer._latlng;
-            applySelectedWithUpdateMarker(layer, current);
-            ctx.selectedUpdatedLayerRef.current = layer;
-            selectedLayer = layer;
-        } else if (current.latlng) {
-            ctx.selectedCreatedLayerRef.current = applySelectedWithCreateMarker(map, current.latlng, current);
-            selectedLayer = ctx.selectedCreatedLayerRef.current;
         }
+
+        const selectedLayer = applySelectedPin({
+            ctx,
+            map,
+            zoom,
+            layer: layer && map.hasLayer(layer) ? layer : null,
+            latlng: current.latlng,
+            markerData: current,
+        });
 
         return { selectedLayer, centerLatLng: current.latlng };
-    }
-
-    function hideMarkersAroundSelection(selectedLayer, centerLatLng) {
-        if (!selectedLayer || !centerLatLng) {
-            return;
-        }
-
-        hideMarkersNearPoint(map, zoom, centerLatLng, selectedLayer, ctx.selectedHiddenLayersRef);
     }
 
     function centerSelectedMarkerIfNeeded() {

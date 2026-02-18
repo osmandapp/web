@@ -85,4 +85,5 @@
     -webkit-box-orient: vertical !important;
     -webkit-line-clamp: 2 !important;
     overflow: hidden !important;
+    pointer-events: none !important;
 }

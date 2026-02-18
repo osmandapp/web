@@ -21,7 +21,6 @@ import {
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { getVisibleBbox } from '../util/MapManager';
-import { selectMarker } from '../util/MarkerSelectionService';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { navigateToPoi } from '../../manager/PoiManager';
@@ -44,6 +43,14 @@ export function getImgByProps(props) {
     return props.photoTitle || props.depTitle;
 }
 
+export function getPlaceMarkerInfo(ctx, place) {
+    const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+    const imgTag = ctx.searchSettings.useWikiImages ? place.properties.imageTitle : getImgByProps(place.properties);
+    const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 160 });
+
+    return { latlng, iconUrl };
+}
+
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -53,7 +60,6 @@ export default function ExploreLayer() {
     const GET_OBJ_DEBOUNCE_MS = 500;
 
     const timerRef = useRef(null);
-    const selectedObjRef = useRef(null);
 
     const filtersRef = useRef(null);
     const openedPoiRef = useRef(null);
@@ -62,6 +68,8 @@ export default function ExploreLayer() {
 
     const mainIconsLayerRef = useRef(null);
     const otherIconsLayerRef = useRef(null);
+    const [mainIconsLayer, setMainIconsLayer] = useState(null);
+    const [otherIconsLayer, setOtherIconsLayer] = useState(null);
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
@@ -76,17 +84,17 @@ export default function ExploreLayer() {
         }
     }, [zoom]);
 
+    const getExploreLayers = useCallback(() => {
+        if (mainIconsLayerRef.current && otherIconsLayerRef.current) {
+            return [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()];
+        }
+        return null;
+    }, [mainIconsLayer, otherIconsLayer]);
     useSelectMarkerOnMap({
         ctx,
-        layers:
-            mainIconsLayerRef.current && otherIconsLayerRef.current
-                ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
-                : null,
+        getLayers: getExploreLayers,
         type: EXPLORE_LAYER_ID,
         map,
-        prevSelectedMarker: selectedObjRef,
-        mainIconsLayerRef,
-        otherIconsLayerRef,
     });
     const recentSaver = useRecentDataSaver();
 
@@ -266,13 +274,6 @@ export default function ExploreLayer() {
         }
 
         ctx.setPhotoGallery(null);
-
-        if (
-            !selectedObjRef.current?.options.hover ||
-            selectedObjRef.current?.options.hover?.options.idObj !== ctx.selectedWpt?.wikidata?.properties?.id
-        ) {
-            selectedObjRef.current = selectMarker(e.sourceTarget, selectedObjRef.current, EXPLORE_LAYER_ID);
-        }
     }
 
     const markerClusterGroup = new L.MarkerClusterGroup({
@@ -373,11 +374,7 @@ export default function ExploreLayer() {
             let largeMarkersArr = new L.geoJSON();
 
             const markerPromises = mainMarkers.map((place) => {
-                const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
-                const imgTag = ctx.searchSettings.useWikiImages
-                    ? place.properties.imageTitle
-                    : getImgByProps(place.properties);
-                const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 160 });
+                const { latlng, iconUrl } = getPlaceMarkerInfo(ctx, place);
 
                 return new Promise((resolve, reject) => {
                     if (abortController.signal.aborted) {
@@ -389,6 +386,7 @@ export default function ExploreLayer() {
                         if (abortController.signal.aborted) {
                             return reject('Operation aborted');
                         }
+
                         const icon = L.icon({
                             iconUrl,
                             iconSize: [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE],
@@ -398,6 +396,7 @@ export default function ExploreLayer() {
                             icon,
                             index: place.index,
                             idObj: place.properties.id,
+                            photoUrl: iconUrl,
                         });
                         addEventListeners({ marker, place, main: true, iconSize: EXPLORE_BIG_ICON_SIZE, latlng });
                         largeMarkersArr.addLayer(marker);
@@ -407,8 +406,10 @@ export default function ExploreLayer() {
                         if (abortController.signal.aborted) {
                             return reject('Operation aborted');
                         }
+
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
+                            photoUrl: iconUrl,
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         largeMarkersArr.addLayer(circle);
@@ -421,9 +422,11 @@ export default function ExploreLayer() {
             Promise.all(markerPromises)
                 .then(() => {
                     for (const place of secondaryMarkers) {
-                        const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+                        const { latlng, iconUrl } = getPlaceMarkerInfo(ctx, place);
+
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
+                            photoUrl: iconUrl,
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         simpleMarkersArr.addLayer(circle);
@@ -434,6 +437,8 @@ export default function ExploreLayer() {
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);
                         map.fire('explore-layers-updated');
+                        setOtherIconsLayer(otherIconsLayerRef.current);
+                        setMainIconsLayer(mainIconsLayerRef.current);
                     }
                 })
                 .catch((error) => {
@@ -479,7 +484,6 @@ export default function ExploreLayer() {
                     }
                 }
             }
-
             // Normal logic: open info
             openInfo(e, place);
         });
@@ -499,6 +503,7 @@ export default function ExploreLayer() {
             iconSize,
             map,
             ctx,
+            type: EXPLORE_LAYER_ID,
         });
     }
 
