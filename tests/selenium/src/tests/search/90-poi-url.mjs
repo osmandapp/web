@@ -15,8 +15,6 @@ export default async function test() {
     const lat = 50.44559;
     const lng = 30.517246;
 
-    const iconWpt = 'amenity_cafe';
-
     let currentUrl =
         url.split('#')[0] +
         `poi/?name=${encodeURIComponent(name)}&type=${encodeURIComponent(type)}&pin=${encodeURIComponent(`${lat},${lng}`)}#16/50.4435/30.5190`;
@@ -25,13 +23,13 @@ export default async function test() {
 
     await matchTextBy(By.id('se-wpt-name'), name);
 
-    await actionCheckPoi({ iconWpt, name });
+    await actionCheckPoi({ name, isSelected: true });
 
     await clickBy(By.id('se-close-wpt-details'));
 
     await waitByRemoved(By.id('se-wpt-name'));
 
-    await actionCheckPoi({ iconWpt, name, hidden: true });
+    await actionCheckPoi({ name, hidden: true, isSelected: true });
 
     currentUrl = await driver.getCurrentUrl();
     await assert(!currentUrl.includes('poi/?name=') && !currentUrl.includes('&type=') && !currentUrl.includes('&pin='));

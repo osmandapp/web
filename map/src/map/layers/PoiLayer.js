@@ -5,9 +5,8 @@ import debounce from 'lodash-es/debounce';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import L from 'leaflet';
-import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE, getIconUrlByName } from '../markers/MarkerOptions';
-import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
-import { SELECTED_PIN_SIZE, SELECTED_ICON_SIZE, hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { applySelectedPin, hideMarkersNearPin } from '../util/MarkerSelectionService';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -212,29 +211,26 @@ export default function PoiLayer() {
                             map,
                             zoom,
                         });
-                        const markers = poiLayer.getLayers();
-                        if (markers.length > 0) {
-                            const marker = markers[0];
-                            const finalIconName = marker.options[FINAL_POI_ICON_NAME];
-                            const iconUrl = getIconUrlByName('poi', finalIconName);
-                            const innerIconSvgOrHtml = iconUrl ? `<img src="${iconUrl}" />` : '';
-
-                            const selectedIcon = createLayeredPinIcon({
-                                shape: DEFAULT_POI_SHAPE,
-                                color: DEFAULT_POI_COLOR,
-                                iconHtml: innerIconSvgOrHtml,
-                                size: SELECTED_PIN_SIZE,
-                                iconSize: SELECTED_ICON_SIZE,
-                            });
-
-                            marker.setIcon(selectedIcon);
-                        }
-
-                        // remove old poi marker
                         if (ctx.poiByUrl.layer) {
                             map.removeLayer(ctx.poiByUrl.layer);
                         }
                         map.addLayer(poiLayer);
+
+                        const markers = poiLayer.getLayers();
+                        if (markers.length > 0) {
+                            const marker = markers[0];
+                            applySelectedPin({
+                                ctx,
+                                map,
+                                layer: marker,
+                                markerData: {
+                                    color: DEFAULT_POI_COLOR,
+                                    background: DEFAULT_POI_SHAPE,
+                                    iconHtml: marker.options.svg ?? '',
+                                },
+                                isSelection: true,
+                            });
+                        }
                     }
                 }
                 ctx.setPoiByUrl({
