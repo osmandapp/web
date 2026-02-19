@@ -10,6 +10,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { clusterMarkers, addMarkerTooltip } from '../util/Clusterizer';
 import { restoreOriginalIcon } from '../util/MarkerSelectionService';
+import { panToIfNeeded } from '../util/MapManager';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import useHashParams from '../../util/hooks/useHashParams';
@@ -303,7 +304,7 @@ const FavoriteLayer = () => {
         const current = ctx.selectedGpxFile?.markerCurrent;
         if (!current?.name) return;
 
-        centerSelectedMarkerIfNeeded();
+        panToIfNeeded(map, current.latlng);
     }, [ctx.selectedGpxFile?.id]);
 
     const onClick = useCallback(
@@ -418,19 +419,6 @@ const FavoriteLayer = () => {
         if (file?.hidden === 'true' && file?.markersOnMap) {
             map.removeLayer(file.markersOnMap);
         }
-    }
-
-    function centerSelectedMarkerIfNeeded() {
-        const targetLatLng = ctx.selectedGpxFile?.markerCurrent?.latlng;
-        if (!targetLatLng) {
-            return;
-        }
-        const mapBounds = map.getBounds();
-        const latlng = L.latLng(targetLatLng.lat, targetLatLng.lng);
-        if (mapBounds.contains(latlng)) {
-            return;
-        }
-        map.panTo(latlng);
     }
 
     return <AddFavoriteDialog dialogOpen={openAddDialog} setDialogOpen={setOpenAddDialog} />;

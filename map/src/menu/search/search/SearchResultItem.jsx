@@ -192,12 +192,7 @@ export default function SearchResultItem({ item, typeItem }) {
             ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi });
             recentSaver(POI_OBJECTS_KEY, poi);
-            ctx.setZoomToMapObj((prev) => {
-                return {
-                    ...prev,
-                    obj: item,
-                };
-            });
+            ctx.setMoveToMapObj(item);
             if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
                 navigateToPoi({ poi }, navigate);
             }

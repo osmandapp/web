@@ -21,7 +21,7 @@ import {
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
-import { getVisibleBbox } from '../util/MapManager';
+import { getVisibleBbox, panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { navigateToPoi } from '../../manager/PoiManager';
@@ -160,6 +160,12 @@ export default function ExploreLayer() {
             openedPoiRef.current = null;
         }
     }, [ctx.searchSettings.getPoi]);
+
+    useEffect(() => {
+        const coords = ctx.selectedWpt?.wikidata?.geometry?.coordinates;
+        if (!coords || coords.length < 2) return;
+        panToIfNeeded(map, { lat: coords[1], lng: coords[0] });
+    }, [ctx.selectedWpt?.wikidata?.properties?.id, ctx.selectedWpt?.key]);
 
     useEffect(() => {
         let ignore = false;

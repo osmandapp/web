@@ -87,6 +87,12 @@ export async function getIconFromMap(name) {
     return svgData;
 }
 
+export function panToIfNeeded(map, latlng) {
+    if (!map || !latlng) return;
+    const ll = L.latLng(latlng.lat, latlng.lng ?? latlng.lon);
+    if (!map.getBounds().contains(ll)) map.panTo(ll);
+}
+
 export function createTooltip(content, latlng, options = {}) {
     const { direction = 'bottom', offset = [0, 8], permanent = true } = options;
     return L.tooltip({
