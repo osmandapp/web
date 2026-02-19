@@ -133,8 +133,8 @@ Restores all **track appearance settings** to their default values.
 
 ## 3D Track {#3d-track}
 
-:::info Paid feature
-**3D Track** is an **OsmAnd Pro** paid feature for [iOS](../../purchases/ios.md#pro-features) and [Android](../../purchases/android.md#pro-features) <ProFeature />.
+:::tip Purchase
+3D Track Visualization is a [paid feature](../../purchases/index.md).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

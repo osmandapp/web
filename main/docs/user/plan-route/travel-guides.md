@@ -16,8 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-:::info Paid feature
-The Travel Guides is a [paid feature](../purchases/index.md) of the OsmAnd app.
+:::tip Purchase
+The Travel Guides is a [paid feature](../purchases/index.md).  
 :::
 
 Virtual travel guides in OsmAnd offer users valuable information, recommendations, and tips. They also allow travelers to access comprehensive navigation information about attractions in the app.

@@ -17,8 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-:::info Paid feature
-The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.
+:::tip Purchase
+The Topography plugin is a [paid feature](../purchases/index.md).  
 :::
 
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief.
