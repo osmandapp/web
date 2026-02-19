@@ -17,6 +17,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Overview {#overview}
 
+:::tip Purchase
+CarPlay is a paid feature.  
+:::
+
 Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [***CarPlay***](https://www.apple.com/ios/carplay/) is software that provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.
 
 To use *CarPlay* on your vehicle screen, follow these steps:
@@ -44,8 +48,8 @@ While your device is connected to *CarPlay*, the map on the app screen is locked
 
 *CarPlay* displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to:  
 
-- [My Location](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
+- [My Location](../widgets/map-buttons.md#my-position-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Allows you to zoom in and out of the visible part of the map.
 
 
 ## Required Setup Parameters {#required-setup-parameters}

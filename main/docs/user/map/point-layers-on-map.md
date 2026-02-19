@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title:  Points on the Map
 ---
 
@@ -131,7 +131,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_ma
 
 </Tabs>
 
-Each POI type in OsmAnd assigned a specific icon and color. POI's [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/vector-maps.md#default-map-styles).  
+Each POI type in OsmAnd assigned a specific icon and color. POI's [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/map-styles.md).  
 
 [Read more](../map/vector-maps.md#hide).
 

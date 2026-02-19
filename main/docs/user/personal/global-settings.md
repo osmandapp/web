@@ -146,7 +146,7 @@ Go to: *Files → On My Phone → OsmAnd Maps*
 | 3D mode | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). | You can view the map in 2D and [3D](../widgets/map-buttons.md#3d-mode). |
 | Map display | The whole map is rendered as a set of tiles, and markers, lines, and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
 | Transparent symbols overlay / underlay | Supports all settings. | It does not support a raster layer on top of vector text. |
-| [3D Terrain](../map/raster-maps.md#3d-relief) | Not supported. | This feature visualizes the terrain on the map by adding elevation information to a normal 2D map, which creates a 3D and depth effect. |
+| [3D Terrain](../plugins/topography.md#3d-relief) | Not supported. | This feature visualizes the terrain on the map by adding elevation information to a normal 2D map, which creates a 3D and depth effect. |
 | [3D Tracks](../map/tracks/appearance.md) | Not supported. | This feature allows you to display tracks by altitude above sea level. |
 | [Online map](../plugins/online-map.md) | It does not support the display of Contour lines if the map source is any online tile map. | When the map source is an online map, 3D maps are also used, and the display of Contour lines on the map is supported. |
 | [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |

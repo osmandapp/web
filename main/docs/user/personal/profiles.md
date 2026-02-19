@@ -210,13 +210,13 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Units of length applies to horizontal distance values (e.g., driving/route distances and maneuver distances in navigation).|
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Length applies to horizontal distance values (e.g., driving/route distances and maneuver distances in navigation).|
 |  |  |  |
-| **Units of altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Units of altitude applies to altitude/elevation values and related metrics (uphill/downhill, altitude range) in Altitude widgets, Navigation route info, and Track statistics.<br/>By default, Units of altitude is synced with Units of length and becomes independent only after the user manually changes it. |
+| **Altitude** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Altitude applies to altitude/elevation values and related metrics (uphill/downhill, altitude range) in Altitude widgets, Navigation route info, Track statistics, and mountain peak elevation labels on the map.<br/>By default, Altitude is synced with Length and becomes independent only after the user manually changes it. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
@@ -231,14 +231,14 @@ In the **Units and Formats** section, you can adjust measurement units and forma
 |          | Degrees 360° | All angular values have readings from 0° to 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europe, Aisa, Latin America, Canada, Japan, India, Australia |
 |  | <Translate android="true" ids="imperial_gallons"/> | UK and similar |
 |  | <Translate android="true" ids="us_gallons"/> | United States |
 |  |  |  |
@@ -276,13 +276,13 @@ The **Other** section provides additional profile settings to customize OsmAnd�
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Connect external controllers such as *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, or *<Translate android="true" ids="sett_parrot_ext_input"/>* to operate OsmAnd using physical buttons.
 
-- **<Translate android="true" ids="position_animation"/>** / **Animate own position** – The [position](../map/interact-with-map.md#my-location-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting (Android only): higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
+- **<Translate android="true" ids="position_animation"/>** / **Animate own position** – The [position](../map/interact-with-map.md#my-position-and-zoom) icon animates with each GPS point received (once per second). A slight delay in its movement may be noticeable, especially during fast movement or GPS signal fluctuations. You can adjust this effect using the *Prediction time* setting (Android only): higher values increase smoothness but add delay, lower values reduce delay but may make movement less smooth.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Android only*) – Enable or disable the ability to use your device’s volume buttons for [zooming](../map/interact-with-map.md#my-location-and-zoom) in and out on the map.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Android only*) – Enable or disable the ability to use your device’s volume buttons for [zooming](../map/interact-with-map.md#my-position-and-zoom) in and out on the map.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Smooths map rotation with [gradual movement](https://en.wikipedia.org/wiki/Kalman_filter), reducing sudden position shifts. This introduces a small delay (*less than 1 second*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Smooths map rotation with [gradual movement](https://en.wikipedia.org/wiki/Kalman_filter), reducing sudden position shifts. This introduces a small delay (*less than 1 second*).
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Android only*) – Tap an empty space on the map to hide control buttons and widgets, maximizing map visibility.
 
@@ -370,7 +370,7 @@ With this menu, you can:
 
 - **Enable public transport visualization**, showing [routes and stops](../map/public-transport.md) for better trip planning.
 
-- **Adjust map appearance** by selecting a different [map style](../map/vector-maps.md#default-map-styles) to match your needs.
+- **Adjust map appearance** by selecting a different [map style](../map/map-styles.md) to match your needs.
 
 
 ## Configure Screen {#configure-screen}
@@ -455,7 +455,7 @@ Use **Icon size** to adjust the size of the My Location position icon independen
 
 ### View Angle and Location Radius {#view-angle-and-location-radius}
 
-You can customize the visual elements related to your location and apply them separately or together for **Resting** and **Navigation** positions. For both 2D and 3D modes, *View Angle* and *Location Radius* are displayed in the same color selected for the [navigation profile](#profile-appearance), directly below the [My Location](../map/interact-with-map.md#my-location-and-zoom) icon.
+You can customize the visual elements related to your location and apply them separately or together for **Resting** and **Navigation** positions. For both 2D and 3D modes, *View Angle* and *Location Radius* are displayed in the same color selected for the [navigation profile](#profile-appearance), directly below the [My position](../map/interact-with-map.md#my-position-and-zoom) icon.
 
 - **<Translate android="true" ids="view_angle"/>** – Displays a **cone-shaped** area indicating the direction you are currently facing.  
 - **<Translate android="true" ids="location_radius"/>** – Shows a **circular area** around your icon, representing the accuracy of your current location.

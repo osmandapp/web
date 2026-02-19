@@ -52,11 +52,11 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-<!--
 
-:::danger Christmas sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+:::danger February Sale
+
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -69,7 +69,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
--->
+<!--
+
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
@@ -79,7 +80,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
-
+-->
 
 ### Free and Paid Features {#free-and-paid-features}
 
@@ -110,7 +111,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Vehicle Metrics Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | <details><summary>**2 widgets for free**</summary><ul><li>*Vehicle speed*</li><li>*Engine speed*</li></ul></details> | ✔ |
 | [Map markers tool](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb/mbtiles Map support](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [SQLitedb/mbtiles Map support](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favorite points](../map/point-layers-on-map.md)<br/>bookmarks and waypoints | ✔ | ✔ | ✔ |
 | [Audio/pic/video points](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -152,7 +153,7 @@ or
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/pro_new.png)
 
 ### Maps+ Purchase {#maps-purchase}
 
@@ -160,7 +161,7 @@ or
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## Legacy Subscriptions (prior 4.0) {#legacy-subscriptions-prior-40}

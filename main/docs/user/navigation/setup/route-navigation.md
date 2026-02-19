@@ -67,7 +67,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
     - Wait until the route is calculated. After that, you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
     - You can switch between different [routing types](./../routing/osmand-routing.md#routing-types) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
-    - You can also change the departure point from the [current location](../../map/interact-with-map.md#my-location-and-zoom) to the required one.
+    - You can also change the departure point from the [current position](../../map/interact-with-map.md#my-position-and-zoom) to the required one.
 
 2. Additional [*Navigation settings*](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
 
@@ -78,7 +78,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 :::note
 
-**Route cannot be build when *[Online map](../../map/raster-maps.md#select-raster-maps)* is selected as map source.**
+**Route cannot be build when *[Online map](../../map/raster-maps.md#layers)* is selected as map source.**
 
 :::
 
@@ -87,7 +87,7 @@ Before using offline navigation, ensure that the required [maps are downloaded](
 
 There are 3 ways to reach the navigation menu:
 
-- The [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
+- The [*Navigation button*](../../widgets/map-buttons.md#navigation) on the map screen.  
 - *Direction to/from* in a [*map context menu*](../../map/map-context-menu.md#directions-to--from).  
 - Navigation section in the [*Main Menu*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -107,7 +107,7 @@ There are 3 ways to reach the navigation menu:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Set starting location (default: [*My Current location*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Set starting location (default: [*My Current location*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Use to [set your destination point](#set-target-point).
 - **Add** &nbsp;&#43; - Insert [intermediate points](../../widgets/nav-widgets.md#distance-to-intermediate) along the route.
 - **Swap** &nbsp;&#8595;&#8593; - Reverse the *Start* and *Finish* points.
@@ -324,7 +324,7 @@ This option is available in the Android version of the app in *[Notification lis
 To resume the navigation:
 
 - Use the message from OsmAnd in the notification bar.
-- Use *Quick actions menu* or dialog, that appears when you tap the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).
+- Use *Quick actions menu* or dialog, that appears when you tap the *[Navigation button](../../widgets/map-buttons.md#navigation)* (see screenshot).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

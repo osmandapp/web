@@ -156,7 +156,7 @@ This tool provides a detailed analysis of [track](../../map/tracks/track-context
 
 </Tabs>
 
-Tap the [My Location](../../map/interact-with-map.md#my-location-and-zoom) button to synchronize the map view and graph with your location.
+Tap the [My Position](../../map/interact-with-map.md#my-position-and-zoom) button to synchronize the map view and graph with your location.
 
 - The **scale of the graph** remains the same, and the **bar information** is fixed 1/4 to the left side.
 - As you move, the **graph will slide** from left to right, displaying information ahead of your track.

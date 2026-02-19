@@ -23,7 +23,7 @@ OsmAnd Online maps are an extensive addition to the OpenStreetMap database alrea
 The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
 
 1. [Enable](../plugins/index.md#enable--disable) **Online Maps** plugin in the *Main Menu → Plugins → Online Maps*.
-2. Make the necessary settings in [Map source](../map/raster-maps.md#select-raster-maps) section of the Configure map menu.
+2. Make the necessary settings in [Map source](../map/raster-maps.md#layers) section of the Configure map menu.
 3. Set the *Map Source*, *Overlay* and *Underlay* map. Select your preferred satellite map provider.
 4. Download selected [Online map](#how-to-prepare-raster-maps) if needed.
 
@@ -32,16 +32,16 @@ The ability to use Online maps is automatically enabled in iOS version of OsmAnd
 
 You can find detailed information about visualizing and customizing raster maps in the article [Raster Maps](../map/raster-maps.md). How to use:
 
-1. [Select](../map/raster-maps.md#select-raster-maps) the raster map as a *Main*, *Underlay*, or *Overlay* layer.
-    - [Change](../map/raster-maps.md#how-to-use-raster-maps) layer parameters (transparency).
+1. [Select](../map/raster-maps.md#layers) the raster map as a *Main*, *Underlay*, or *Overlay* layer.
+    - [Change](../map/raster-maps.md#overlay) layer parameters (transparency).
 
-2. [Prepare / copy](../map/raster-maps.md#preparecopy-raster-maps-to-device) raster maps to device.
-    - [Add new online raster map source](../map/raster-maps.md#add-new-online-raster-map-source)
+2. [Prepare / copy](../map/raster-maps.md#preparecopy-maps) raster maps to device.
+    - [Add new online raster map source](../map/raster-maps.md#add-new-online-source)
     - [Add Magic URL](../map/raster-maps.md#magic-url-to-install-map-source) to install map source.
 
-3. [Manage](../map/raster-maps.md#manage-raster-maps) raster maps.
+3. [Manage](../map/raster-maps.md#manage-map-data) raster maps.
     - [Download / update tiles](../map/raster-maps.md#download--update-tiles).
-    - [Change](../map/raster-maps.md#change-raster-map-parameters) raster map parameters.
+    - [Change](../map/raster-maps.md#change-parameters) raster map parameters.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -100,6 +100,6 @@ Online tiles can be helpful when you need just a small section of the map or a s
   
     - Verify that the Online Maps plugin is enabled: *Menu → Plugins → Online Maps*.  
     - Ensure you have an active internet connection to access satellite imagery.  
-    - Check if the selected Online Map is downloaded or requires [additional settings](../map/raster-maps.md#select-raster-maps).
+    - Check if the selected Online Map is downloaded or requires [additional settings](../map/raster-maps.md#layers).
 
 

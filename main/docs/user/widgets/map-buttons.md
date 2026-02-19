@@ -28,7 +28,7 @@ Use these buttons to control how the map is displayed on the screen of your devi
 
 - **My Position**. Shows whether the center of the map is synchronized with your device's current geolocation.
 - **Zoom**. Allows you to adjust the map's zoom level to provide more or less details.
-If you want more information on using these buttons, you can see the article [Interact with map](../map/interact-with-map.md#my-location-and-zoom).
+If you want more information on using these buttons, you can see the article [Interact with map](../map/interact-with-map.md#my-position-and-zoom).
 
 
 ## Navigation {#navigation}

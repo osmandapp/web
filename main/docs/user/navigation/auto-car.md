@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
+:::tip Purchase
+Android Auto is a paid feature.  
+:::
+
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
 [**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible vehicle multimedia systems. *Android Auto* provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
@@ -58,8 +62,8 @@ When you open the application, a list of categories is displayed. For easy navig
 - [OsmAnd menu](#destination-points). Contains a list of available options for assigning a route endpoint or a free ride.
 - [Settings](#voice-prompts). This button is responsible for: 1. access to turn *voice prompts* on/off when you are navigating the selected route; 2. show route details (time and distance) for the next stop.
 - [Search](#search). Tapping the button opens a screen with access to the search functions.
-- [My Location](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map. Pinch-to-zoom gesture is available for map scaling. If not supported by the head unit, zoom adjustment is performed by double-tap and swipe gesture.
+- [My Location](../widgets/map-buttons.md#my-position-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Allows you to zoom in and out of the visible part of the map. Pinch-to-zoom gesture is available for map scaling. If not supported by the head unit, zoom adjustment is performed by double-tap and swipe gesture.
 - [Compass](../widgets/map-buttons.md#compass). Shows which of the four available map orientation modes on your device's screen is selected.
 
 
