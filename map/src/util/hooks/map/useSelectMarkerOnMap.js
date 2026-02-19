@@ -3,6 +3,25 @@ import { FINAL_POI_ICON_NAME, POI_ID } from '../../../infoblock/components/wpt/W
 import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
+import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
+
+function extractLatlng(selectedWptId, type) {
+    const obj = selectedWptId?.obj;
+    if (!obj) return null;
+
+    if (type === FAVORITE_FILE_TYPE) return obj.getLatLng() ?? null;
+
+    const coords = obj.geometry?.coordinates;
+    if (coords?.length >= 2) return { lat: coords[1], lng: coords[0] };
+
+    return null;
+}
+
+function iconHtmlFromIconName(finalIconName) {
+    if (!finalIconName) return null;
+    const url = getIconUrlByName('poi', finalIconName) || getIconUrlByName('map', finalIconName);
+    return url ? `<image href="${url}" />` : null;
+}
 
 const loadedPhotoUrls = new Set();
 
@@ -71,6 +90,12 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
         if (found) {
             applyPinForLayer(found, false);
+        } else {
+            // Marker not on the map (e.g. hidden by clustering) — create a temporary hover pin.
+            const latlng = extractLatlng(ctx.selectedWptId, type);
+            if (latlng) {
+                applyHoverPinFallback(latlng);
+            }
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp]);
 
@@ -100,6 +125,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
     }
 
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
+        const itemId = layer?.options?.idObj;
         const markerData = {
             color: DEFAULT_POI_COLOR,
             iconHtml: `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`,
@@ -116,31 +142,45 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             loadedPhotoUrls.add(photoUrl);
             const stillActive =
                 (ctx.selectedWptId?.type === type &&
-                    ctx.selectedWptId?.id === layer.options?.idObj &&
+                    ctx.selectedWptId?.id === (itemId ?? hoverId) &&
                     ctx.selectedWptId?.show !== false) ||
-                (selectedObjId &&
-                    (selectedObjId === layer.options?.idObj || selectedObjId === layer.options?.[POI_ID]));
+                (selectedObjId && itemId && (selectedObjId === itemId || selectedObjId === layer?.options?.[POI_ID]));
             if (stillActive) doApply();
         };
         img.src = photoUrl;
     }
 
-    function buildMarkerData(layer) {
-        const isSimpleDot = !!layer.options?.simple;
-        const finalIconName = layer.options?.[FINAL_POI_ICON_NAME];
-        const poiIconUrl = finalIconName
-            ? getIconUrlByName('poi', finalIconName) || getIconUrlByName('map', finalIconName)
-            : null;
-
-        let iconHtml = layer.options?.svg ?? null;
-        if (!iconHtml && poiIconUrl) {
-            iconHtml = `<image href="${poiIconUrl}" />`;
+    function applyHoverPinFallback(latlng) {
+        const photoUrl = ctx.selectedWptId?.photoUrl;
+        if (photoUrl) {
+            applyPhotoPin(null, latlng, photoUrl, false);
+            return;
         }
 
+        const markerOpts = ctx.selectedWptId?.markerOptions ?? {};
+        const iconHtml =
+            markerOpts.iconHtml ?? iconHtmlFromIconName(ctx.selectedWptId?.obj?.properties?.[FINAL_POI_ICON_NAME]);
+
+        applySelectedPin({
+            ctx,
+            map,
+            layer: null,
+            latlng,
+            markerData: {
+                color: markerOpts.color ?? DEFAULT_POI_COLOR,
+                background: markerOpts.background ?? DEFAULT_POI_SHAPE,
+                iconHtml,
+            },
+            isSelection: false,
+        });
+    }
+
+    function buildMarkerData(layer) {
+        const isSimpleDot = !!layer.options?.simple;
         return {
             color: (isSimpleDot ? layer.options?.fillColor : layer.options?.color) ?? DEFAULT_POI_COLOR,
             background: layer.options?.background ?? DEFAULT_POI_SHAPE,
-            iconHtml,
+            iconHtml: layer.options?.svg ?? iconHtmlFromIconName(layer.options?.[FINAL_POI_ICON_NAME]),
         };
     }
 }

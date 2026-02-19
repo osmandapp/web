@@ -13,10 +13,11 @@ import {
 } from '../../../infoblock/components/wpt/WptTagsProvider';
 import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { cleanHtml, getIconNameForPoiType, navigateToPoi } from '../../../manager/PoiManager';
+import { cleanHtml, getIconNameForPoiType } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
 import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
-import { useNavigate } from 'react-router-dom';
+
+const WIKI_PLACE_PHOTO_SIZE = 160;
 
 export function getCategory(props) {
     const category = props.categories?.replace(/^\[|\]$/g, '').trim();
@@ -25,8 +26,6 @@ export function getCategory(props) {
 
 export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
-
-    const navigate = useNavigate();
 
     const { ref, inView } = useInView();
     const anchorEl = useRef(null);
@@ -52,7 +51,13 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     }
 
     function handleMouseEnter(item) {
-        ctx.setSelectedWptId({ id: item.properties.id, show: true, type: EXPLORE_LAYER_ID });
+        ctx.setSelectedWptId({
+            id: item.properties.id,
+            show: true,
+            type: EXPLORE_LAYER_ID,
+            obj: item,
+            photoUrl: imageTitle ? getPhotoUrl({ photoTitle: imageTitle, size: WIKI_PLACE_PHOTO_SIZE }) : undefined,
+        });
         setIsHovered(true);
     }
 
@@ -149,7 +154,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                     {imageTitle && imageTitle !== '' ? (
                                         <ListItemIcon>
                                             <img
-                                                src={getPhotoUrl({ photoTitle: imageTitle, size: 160 })}
+                                                src={getPhotoUrl({ photoTitle: imageTitle, size: WIKI_PLACE_PHOTO_SIZE })}
                                                 alt={name}
                                                 style={{ width: '66px', height: '66px', objectFit: 'cover' }}
                                             />
