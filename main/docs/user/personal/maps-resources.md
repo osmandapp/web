@@ -448,9 +448,10 @@ The **Updates** tab also includes a **Weather forecast** section. It is designed
 
 ## Live Updates {#live-updates}
 
-:::tip Purchase
-Live updates is a paid feature.  
+:::info Pro feature
+Live Updates is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
 :::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">

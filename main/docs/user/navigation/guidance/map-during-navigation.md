@@ -160,6 +160,10 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 ## Route Line Appearance {#route-line-appearance}
 
+:::info Pro feature
+Customization of Route Line is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -183,12 +187,6 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 You can select route line appearance by style or manually select the color, width, and transparency of the line. In addition, you can choose whether to show turn arrows and direction arrows on the line.
 
 **Advanced**: the Customize route line setting allows you to adjust the appearance of the route line to display elevation changes, significant uphill or downhill, ice on the road, unpaved roads, highways, and other possible obstacles. You can also select or create custom [color schemes](../../personal/color-palette-schemes.md#tracks-routes) to apply to the route line.
-
-
-:::note
- <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscription</a>.
-:::
-
 
 ### Color {#color}
 
