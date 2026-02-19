@@ -11,7 +11,7 @@ import { ReactComponent as SquareStroke } from '../../assets/map/map_pin_square_
 import { ReactComponent as HexagonColor } from '../../assets/map/map_pin_hexagon_color.svg';
 import { ReactComponent as HexagonLight } from '../../assets/map/map_pin_hexagon_light.svg';
 import { ReactComponent as HexagonStroke } from '../../assets/map/map_pin_hexagon_stroke.svg';
-import { SELECTED_ICON_SIZE, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
+import { SELECTED_ICON_SIZE, SELECTED_PIN_COLOR, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
 import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 
 const SHAPES = {
@@ -65,7 +65,7 @@ export function createLayeredPinIcon(options = {}) {
     const merged = {
         size: SELECTED_PIN_SIZE,
         iconSize: SELECTED_ICON_SIZE,
-        color: '#FF8800',
+        color: SELECTED_PIN_COLOR,
         shape: DEFAULT_POI_SHAPE,
         ...options,
     };
