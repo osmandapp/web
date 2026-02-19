@@ -372,7 +372,7 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
 
     const wiki = obj.wikidata;
     const poi = obj.poi;
-    console.log('Navigating to POI with params:', { wiki, poi });
+
     if (isWiki) {
         Object.assign(params, getWikiPoiParams(poi, wiki));
     } else {
