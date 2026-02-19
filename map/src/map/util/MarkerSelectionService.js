@@ -169,9 +169,16 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
     if (isSelection) {
         resetSelectedPin({ ctx, map, force: true });
         ctx.selectedHiddenLayersRef.current = [];
-    } else if (ctx.selectedUpdatedLayerRef?.current) {
-        restoreOriginalIcon(ctx.selectedUpdatedLayerRef.current);
-        ctx.selectedUpdatedLayerRef.current = null;
+    } else {
+        // On hover: restore any previously updated icon and remove any previously created hover pin.
+        if (ctx.selectedUpdatedLayerRef?.current) {
+            restoreOriginalIcon(ctx.selectedUpdatedLayerRef.current);
+            ctx.selectedUpdatedLayerRef.current = null;
+        }
+        if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
+            map.removeLayer(ctx.selectedCreatedLayerRef.current);
+            ctx.selectedCreatedLayerRef.current = null;
+        }
     }
 
     let selectedLayer;
@@ -187,7 +194,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         ctx.selectedUpdatedLayerRef.current = layer;
         selectedLayer = layer;
     } else {
-        // Fallback: layer is no longer on the map, create a new pin
+        // Fallback: layer is not on the map — create a new pin at the given latlng.
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         ctx.selectedCreatedLayerRef.current = selectedLayer;
     }

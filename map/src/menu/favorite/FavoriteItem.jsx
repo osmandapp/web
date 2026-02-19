@@ -75,7 +75,19 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
     const favId = getFavoriteId(marker.layer);
 
     function setHover(show) {
-        ctx.setSelectedWptId({ id: favId, show, type: FAVORITE_FILE_TYPE });
+        ctx.setSelectedWptId({
+            id: favId,
+            show,
+            type: FAVORITE_FILE_TYPE,
+            obj: show ? marker.layer : undefined,
+            markerOptions: show
+                ? {
+                      color: marker.layer.options?.color,
+                      background: marker.layer.options?.background,
+                      iconHtml: marker.layer.options?.icon?.options?.html,
+                  }
+                : undefined,
+        });
         setIsHovered(show);
     }
 
