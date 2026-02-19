@@ -117,6 +117,7 @@ function applySelectedWithCreateMarker(map, latlng, marker, layerOptions = {}) {
     const layer = L.marker(latlngObj, {
         icon: buildSelectedIcon(marker, layerOptions),
         interactive: false,
+        zIndexOffset: SELECTED_MARKER_Z_INDEX,
     });
     layer.addTo(map);
     return layer;
