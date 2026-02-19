@@ -392,7 +392,7 @@ For further details about the Nautical map view, visit the [Nautical Map plugin 
 
 <InfoAndroidOnly/> 
 
-![3D Buildings](@site/static/img/map/3d_buildings_1.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png)
+![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png) 
 
 **3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
@@ -408,6 +408,8 @@ Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugg
 - High – more detailed geometry.
 
 **[Building parts](https://wiki.openstreetmap.org/wiki/Key:building:part)** enables rendering of separate building parts. This is most noticeable for complex buildings where different parts have different heights.
+
+![3D Buildings](@site/static/img/map/3d_buildings_3.png)
 
 <!--
 ## Map Legend {#map-legend}
