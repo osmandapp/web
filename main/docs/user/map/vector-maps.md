@@ -408,7 +408,7 @@ The 3D buildings settings are divided into two groups: **Appearance** and **Perf
 - **Custom** — lets you set a custom building color separately for Day / Night mode.
 
 :::tip Purchase
-Color Customization is a [paid feature](../purchases/index.md).  
+Color Customization of 3D Buildings is a [paid feature](../purchases/index.md).  
 :::
 
 If Custom colors are not purchased, you’ll see an empty state with a short description and a Get button. If Custom is available, you can switch between Day and Night, pick a color from the palette (or open All colors), then tap Apply.
