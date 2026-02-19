@@ -179,6 +179,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         selectedLayer.options.idObj = layer?.options?.idObj ?? null;
         ctx.selectedCreatedLayerRef.current = selectedLayer;
+        selectedLayer.getElement().setAttribute('id', `se-selected-marker-${layer?.options?.name}`);
         hideMarkersNearPin(map, ctx);
     } else if (layer && map.hasLayer(layer)) {
         applySelectedWithUpdateMarker(layer, markerData);

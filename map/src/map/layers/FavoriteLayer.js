@@ -120,7 +120,7 @@ const FavoriteLayer = () => {
         const allInView = layers.every((layer) => bounds.contains(layer.getLatLng()));
 
         if (!allInView) {
-            const firstLatLng = getLatLng(layers[0]);
+            const firstLatLng = layers[0].getLatLng();
             if (firstLatLng) map.panTo(firstLatLng);
         }
     }, [ctx.focusFavGroupId]);
