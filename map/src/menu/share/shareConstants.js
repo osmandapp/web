@@ -1,4 +1,5 @@
 export const SHARE_TYPE = 'share';
+export const SMART_TYPE = 'smart';
 export const SHARE_FILE_TYPE = 'shared_with_me';
 export const REQUEST_ACCESS_TYPE = 'request';
 export const APPROVED_ACCESS_TYPE = 'approved';

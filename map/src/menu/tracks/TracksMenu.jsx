@@ -17,7 +17,7 @@ import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTr
 import { useTranslation } from 'react-i18next';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
-import { SHARE_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
 import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -106,6 +106,8 @@ export default function TracksMenu() {
         const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
         if (lastGroup?.type === SHARE_TYPE) {
             return <TrackGroupFolder smartf={lastGroup} />;
+        } else if (lastGroup?.type === SMART_TYPE) {
+            return <TrackGroupFolder smartf={lastGroup} />;
         }
         return <TrackGroupFolder folder={lastGroup} />;
     }
@@ -158,8 +160,19 @@ export default function TracksMenu() {
                                 </ListItemText>
                             </MenuItem>
                             {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
-                                <SmartFolder type={'share'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
+                                <SmartFolder type={SHARE_TYPE} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
+                            {!isEmpty(ctx.smartFolders?.tracks) &&
+                                ctx.smartFolders?.tracks.map((track, index) => {
+                                    return (
+                                        <SmartFolder
+                                            type={SMART_TYPE}
+                                            subtype={'track'}
+                                            files={track.files}
+                                            name={track.name}
+                                        />
+                                    );
+                                })}
                             {ctx.tracksGroups &&
                                 (sortGroups && sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)

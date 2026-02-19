@@ -95,6 +95,7 @@ async function loadListFiles(
     setProcessingGroups,
     setVisibleTracks,
     setShareWithMeFiles,
+    setSmartFolders,
     setUpdateFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
@@ -113,6 +114,7 @@ async function loadListFiles(
                         });
                         getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
+                        const smartFolders = await loadSmartFolders(setSmartFolders);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -125,6 +127,23 @@ async function loadListFiles(
             }
         }
     }
+}
+
+export async function loadSmartFolders(setSmartFolders) {
+    const res = await getSmartFolders();
+    const preparedTracks = Object.fromEntries((res ?? []).map((t) => [t.name, { ...t.files, smartFolder: true }]));
+    setSmartFolders((prev) => ({
+        ...prev,
+        tracks: res,
+    }));
+}
+
+export async function getSmartFolders() {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smartfolders`, {});
+    if (res.ok) {
+        return await res.json();
+    }
+    return null;
 }
 
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
@@ -362,6 +381,7 @@ export const AppContextProvider = (props) => {
     const [shareFileMarkers, setShareFileMarkers] = useState(null);
     const [shareFilesCache, setShareFilesCache] = useState({});
     const [shareWithMeFiles, setShareWithMeFiles] = useState(null);
+    const [smartFolders, setSmartFolders] = useState(null);
     const [fitBoundsShareTracks, setFitBoundsShareTracks] = useState(null);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
@@ -676,6 +696,7 @@ export const AppContextProvider = (props) => {
                 setProcessingGroups,
                 setVisibleTracks,
                 setShareWithMeFiles,
+                setSmartFolders,
                 setUpdateFiles
             ).then(() => {
                 setGpxLoading(false);
@@ -874,6 +895,8 @@ export const AppContextProvider = (props) => {
                 setShareFilesCache,
                 shareWithMeFiles,
                 setShareWithMeFiles,
+                smartFolders,
+                setSmartFolders,
                 fitBoundsShareTracks,
                 setFitBoundsShareTracks,
                 trackAnalyzer,

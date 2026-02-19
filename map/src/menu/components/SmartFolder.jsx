@@ -4,13 +4,14 @@ import MenuItemWithLines from './MenuItemWithLines';
 import ActionsMenu from '../actions/ActionsMenu';
 import React, { useContext, useRef, useState } from 'react';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_action_folder_share.svg';
+import { ReactComponent as SmartIcon } from '../../assets/icons/ic_action_folder_smart.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SmartFolderActions from '../actions/SmartFolderActions';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
-import { SHARE_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
 
 const types = {
     [SHARE_TYPE]: {
@@ -25,9 +26,18 @@ const types = {
             },
         },
     },
+    [SMART_TYPE]: {
+        name: 'web:smart',
+        icon: <SmartIcon />,
+        subtypes: {
+            track: {
+                substring: 'shared_string_tracks',
+            },
+        },
+    },
 };
 
-export default function SmartFolder({ type, subtype, files, onOpenFolder = null }) {
+export default function SmartFolder({ type, subtype, files, onOpenFolder = null, name }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -61,7 +71,7 @@ export default function SmartFolder({ type, subtype, files, onOpenFolder = null 
             >
                 <ListItemIcon className={styles.icon}>{folder.icon}</ListItemIcon>
                 <ListItemText>
-                    <MenuItemWithLines name={t(folder.name)} maxLines={2} />
+                    <MenuItemWithLines name={name ? name : t(folder.name)} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
                         {`${Object.entries(files).length} ${t(folderType.substring).toLowerCase()}`}
                     </Typography>
