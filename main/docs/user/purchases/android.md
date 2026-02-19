@@ -125,6 +125,7 @@ The table below details the features included in both the free and paid packages
 | [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
 | [Coordinates Grid — Color Customization](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D Buildings — Color Customization](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
 | [3D track visualization](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popular Places (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
