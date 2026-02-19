@@ -16,8 +16,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview {#overview}
 
-:::info Paid feature
-The Nautical Map View plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.
+:::tip Purchase
+The Nautical Map View plugin is a [paid feature](../purchases/index.md).  
 :::
 
 Nautical Map View is a detailed graphic representation of oceans, seas, coastal areas, and rivers that helps you navigate the water and know popular routes, obstacles in your waterway, nearest harbors, anchorages, and other important landmarks.  

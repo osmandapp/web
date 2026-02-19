@@ -17,8 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-:::info Paid feature
-The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.
+:::tip Purchase
+The Topography plugin is a [paid feature](../purchases/index.md).  
 :::
 
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief.
@@ -246,8 +246,8 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 ### Modify Color Scheme {#modify-color-scheme}
 
-:::info Paid feature
-*[Modify Color Scheme](../../user/personal/color-palette-schemes.md#terrain)* is an **OsmAnd Pro** paid feature for [iOS](../purchases/ios.md#pro-features) and [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Pro feature
+*[Modify Color Scheme](../../user/personal/color-palette-schemes.md#terrain)* is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -376,7 +376,6 @@ The 3D Relief feature produces a raised relief and provides a three-dimensional 
 </TabItem>
 
 </Tabs>
-
 
 ### Vertical Exaggeration {#vertical-exaggeration}
 

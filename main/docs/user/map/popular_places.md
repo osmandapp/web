@@ -19,6 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
+:::tip Purchase
+Popular Places is a [paid feature](../purchases/index.md).  
+:::
+
 The **Popular Places** feature in OsmAnd highlights notable landmarks and attractions using open structured data from [Wikidata](https://www.wikidata.org) and [Wikipedia](https://www.wikipedia.org/). It helps users explore well-known destinations with multilingual descriptions and photos.
 
 Each place included in this feature is linked to a **Wikidata ID**, which enables OsmAnd to display verified names, preview images, and links to Wikipedia articles. This tool does **not** show all OpenStreetMap (OSM) points. It is limited to POIs with Wikidata references.

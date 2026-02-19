@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview {#overview}
 
 :::tip Purchase
-Android Auto is a paid feature.  
+Android Auto is a [paid feature](../purchases/index.md).  
 :::
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  

@@ -64,8 +64,8 @@ On some Android devices, the altitude can display inaccurately. To solve this pr
 
 ### Elevation: Map Center {#elevation-map-center}
 
-:::info Paid feature
-&nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#pro-features) or [iOS](../purchases/ios.md#pro-features).  
+:::info Pro feature
+*Elevation: map center* widget is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

@@ -454,6 +454,10 @@ On Android, archived maps are shown in **Orange**. In iOS, maps that can be upda
 
 ### Coordinates Grid {#coordinates-grid}
 
+:::tip Purchase
+Color Customization of Coordinates Grid is a [paid feature](../purchases/index.md).  
+:::
+
 Go to: *Menu → Configure Map → Show → Coordinates Grid*  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -477,7 +481,7 @@ The **Coordinates Grid** feature overlays a reference grid on the map, allowing 
 You can configure the following options:
 - **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
 - **Labels position:** choose between *Edges* (default)or *Center* for grid labels.
-- **Grid color:** available separately for Day/Night mode. Customizing grid color is a [paid feature](https://osmand.net/docs/user/purchases/) available in Maps+ (in-app purchase or subscription) and OsmAnd+.
+- **Grid color:** available separately for Day/Night mode. 
 - **Coordinate format:** select from several available formats (see list below).
 
 ***Available coordinate formats:***

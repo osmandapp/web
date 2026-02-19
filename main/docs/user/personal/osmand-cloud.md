@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-:::tip subscribe  
-&nbsp;<ProFeature/> To access all features of OsmAnd Cloud, subscribe to **OsmAnd Pro** for [Android](../purchases/android.md#prices) or [iOS](../purchases/ios.md#prices).  
-:::  
+:::info Pro feature
+OsmAnd Cloud is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+:::
 
 :::note cross-platform  
 OsmAnd Cloud is an independent cloud storage service and is *not tied* to a specific Android, iOS, or web platform version.  
