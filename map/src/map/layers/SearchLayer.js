@@ -12,7 +12,7 @@ import PoiManager, {
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
-import L, { LatLng } from 'leaflet';
+import L from 'leaflet';
 import {
     CATEGORY_NAME,
     CATEGORY_TYPE,
@@ -31,7 +31,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
-import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/MapManager';
+import { getVisibleBbox, findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
@@ -100,11 +100,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.zoomToCoords) {
-            const mapBounds = map.getBounds();
-            const pointLatLng = new LatLng(ctx.zoomToCoords.lat, ctx.zoomToCoords.lon);
-            if (!mapBounds.contains(pointLatLng)) {
-                map.setView(pointLatLng, zoom, { animate: true });
-            }
+            panToIfNeeded(map, { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon });
             ctx.setZoomToCoords(null);
         }
     }, [ctx.zoomToCoords]);
@@ -157,21 +153,11 @@ export default function SearchLayer() {
     }, [zoom, move]);
 
     useEffect(() => {
-        if (ctx.zoomToMapObj.obj !== null) {
-            const { obj: item, animateDist: dist, zoom: z } = ctx.zoomToMapObj;
-            const mapBounds = map.getBounds();
-            const pointLatLng = new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]);
-            const mapCenter = map.getCenter();
-            if (!mapBounds.contains(pointLatLng)) {
-                const distance = mapCenter.distanceTo(pointLatLng);
-                if (distance > dist) {
-                    map.setView(pointLatLng, Math.max(map.getZoom(), z), { animate: false });
-                } else {
-                    map.setView(pointLatLng, Math.max(map.getZoom(), z), { animate: true });
-                }
-            }
+        if (ctx.moveToMapObj) {
+            const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;
+            panToIfNeeded(map, { lat, lng });
         }
-    }, [ctx.zoomToMapObj]);
+    }, [ctx.moveToMapObj]);
 
     async function searchByWord(searchData) {
         const notifyTimeout = showProcessingNotification(ctx);
