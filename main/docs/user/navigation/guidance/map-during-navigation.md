@@ -161,7 +161,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 ## Route Line Appearance {#route-line-appearance}
 
 :::info Pro feature
-Customization of Route Line is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+Customization of Route Line is an [**OsmAnd Pro**](../../purchases/index.md) paid feature <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
