@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { FINAL_POI_ICON_NAME, POI_ID } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { FINAL_POI_ICON_NAME, ICON_KEY_NAME, POI_ID, TYPE_OSM_TAG, TYPE_OSM_VALUE } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
-import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 
@@ -114,14 +114,20 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
-        applySelectedPin({
-            ctx,
-            map,
-            layer,
-            latlng,
-            markerData: buildMarkerData(layer),
-            isSelection,
-        });
+        const markerData = buildMarkerData(layer);
+        if (!markerData.iconHtml && layer.options?.simple) {
+            const props = ctx.selectedWptId?.obj?.properties;
+            markerData.iconHtml = iconHtmlFromIconName(
+                props?.[FINAL_POI_ICON_NAME] ??
+                    getIconNameForPoiType({
+                        iconKeyName: props?.[ICON_KEY_NAME],
+                        typeOsmTag: props?.[TYPE_OSM_TAG],
+                        typeOsmValue: props?.[TYPE_OSM_VALUE],
+                    })
+            );
+        }
+
+        applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
     }
 
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
@@ -158,8 +164,17 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         const markerOpts = ctx.selectedWptId?.markerOptions ?? {};
+        const props = ctx.selectedWptId?.obj?.properties;
         const iconHtml =
-            markerOpts.iconHtml ?? iconHtmlFromIconName(ctx.selectedWptId?.obj?.properties?.[FINAL_POI_ICON_NAME]);
+            markerOpts.iconHtml ??
+            iconHtmlFromIconName(
+                props?.[FINAL_POI_ICON_NAME] ??
+                    getIconNameForPoiType({
+                        iconKeyName: props?.[ICON_KEY_NAME],
+                        typeOsmTag: props?.[TYPE_OSM_TAG],
+                        typeOsmValue: props?.[TYPE_OSM_VALUE],
+                    })
+            );
 
         applySelectedPin({
             ctx,
