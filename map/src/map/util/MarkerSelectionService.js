@@ -1,6 +1,5 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
-import { POI_ID } from '../../infoblock/components/wpt/WptTagsProvider';
 import L from 'leaflet';
 import Utils from '../../util/Utils';
 
@@ -133,12 +132,7 @@ export function resetSelectedPin({ ctx, map, force = false }) {
     restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
 
     const createdId = ctx.selectedCreatedLayerRef?.current?.options?.idObj;
-    const wptId =
-        ctx.selectedWpt?.wikidata?.properties?.id ??
-        ctx.selectedWpt?.poi?.options?.[POI_ID] ??
-        ctx.selectedWpt?.poi?.options?.idObj ??
-        ctx.selectedWpt?.selectionId ??
-        null;
+    const wptId = ctx.selectedWpt?.id ?? null;
     if (!wptId || createdId !== wptId || force) {
         if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
             map.removeLayer(ctx.selectedCreatedLayerRef.current);

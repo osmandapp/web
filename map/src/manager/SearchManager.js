@@ -1,6 +1,7 @@
 import { apiGet } from '../util/HttpApi';
 import {
     MAIN_CATEGORY_KEY_NAME,
+    POI_ID,
     WEB_POI_ADDITIONAL_CATEGORY,
     WEB_POI_FILTER_NAME,
 } from '../infoblock/components/wpt/WptTagsProvider';
@@ -8,7 +9,7 @@ import capitalize from 'lodash-es/capitalize';
 import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
-import { SEARCH_ICON_MAP_LOCATION, typeIconMap } from '../map/layers/SearchLayer';
+import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, typeIconMap } from '../map/layers/SearchLayer';
 import { DEFAULT_EXPLORE_POITYPES } from '../menu/search/SearchMenu';
 import { OBJECT_TYPE_POI } from '../context/AppContext';
 
@@ -122,10 +123,11 @@ export function getPhotoTitle(photo) {
 
 export function openPoiObj(ctx, object) {
     if (object.wikidata) {
-        ctx.setSelectedWpt((prev) => ({ ...prev, ...object }));
+        ctx.setSelectedWpt((prev) => ({ ...prev, ...object, id: object.wikidata?.properties?.id }));
         ctx.setCurrentObjectType(null);
     } else {
-        ctx.setSelectedWpt((prev) => ({ ...prev, poi: object }));
+        const id = object?.properties?.[POI_ID] ?? (object?.geometry ? getObjIdSearch(object) : undefined);
+        ctx.setSelectedWpt((prev) => ({ ...prev, poi: object, id }));
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
     }
 }

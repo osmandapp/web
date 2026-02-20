@@ -753,7 +753,7 @@ export function getFavoriteId(layer) {
 export function openFavoriteObj(ctx, object) {
     ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
     const selectionId = getFavoriteId(object.markerCurrent?.layer);
-    ctx.setSelectedWpt({ ...object, selectionId });
+    ctx.setSelectedWpt({ ...object, selectionId, id: selectionId });
     ctx.setSelectedGpxFile({ ...object });
 }
 

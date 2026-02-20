@@ -317,7 +317,7 @@ export default function PoiLayer() {
                       }
                     : null;
 
-                const obj = { poi, wikidata: wiki, key, mapObj: true };
+                const obj = { poi, wikidata: wiki, key, mapObj: true, id: poi?.options?.idObj };
                 ctx.setSelectedWpt(obj);
                 recentSaver(EXPLORE_OBJS_KEY, obj);
             } else {
@@ -333,7 +333,7 @@ export default function PoiLayer() {
                     mapObj: true,
                 };
 
-                ctx.setSelectedWpt({ poi });
+                ctx.setSelectedWpt({ poi, id: getObjIdSearch(data) });
                 recentSaver(POI_OBJECTS_KEY, poi);
             }
 
@@ -357,7 +357,7 @@ export default function PoiLayer() {
                         latlng: { lat, lng },
                         mapObj: true,
                     };
-                    ctx.setSelectedWpt({ poi });
+                    ctx.setSelectedWpt({ poi, id: `${lat},${lng}` });
                     ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
                 }
                 return {
@@ -653,7 +653,7 @@ export default function PoiLayer() {
             latlng: e.sourceTarget._latlng,
         };
         recentSaver(POI_OBJECTS_KEY, poi);
-        ctx.setSelectedWpt({ poi });
+        ctx.setSelectedWpt({ poi, id: e.sourceTarget.options?.idObj });
         if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
             navigateToPoi({ poi }, navigate);
         }

@@ -187,7 +187,7 @@ export default function SearchResultItem({ item, typeItem }) {
             // click on item — navigation is handled by MainMenu via selectedType change
             ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
             ctx.setSelectedPoiObj({ ...poi });
-            ctx.setSelectedWpt({ poi });
+            ctx.setSelectedWpt({ poi, id: itemId });
             recentSaver(POI_OBJECTS_KEY, poi);
             ctx.setMoveToMapObj(item);
         } else {
