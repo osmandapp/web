@@ -5,7 +5,7 @@ import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import capitalize from 'lodash-es/capitalize';
-import { formattingPoiType, navigateToPoi } from '../../../manager/PoiManager';
+import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import { getObjIdSearch, searchTypeMap } from '../../../map/layers/SearchLayer';
 import DistanceInfo from '../../../infoblock/components/wpt/DistanceInfo';
@@ -31,7 +31,6 @@ import DividerWithMargin from '../../../frame/components/dividers/DividerWithMar
 import { apiGet } from '../../../util/HttpApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
-import { useNavigate } from 'react-router-dom';
 import i18n from 'i18next';
 
 export function getFirstSubstring(inputString) {
@@ -112,8 +111,6 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
 export default function SearchResultItem({ item, typeItem }) {
     const ctx = useContext(AppContext);
 
-    const navigate = useNavigate();
-
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
@@ -187,15 +184,12 @@ export default function SearchResultItem({ item, typeItem }) {
                 options: options ?? item.properties,
                 latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
             };
-            // click on item
+            // click on item — navigation is handled by MainMenu via selectedType change
             ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
             ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi });
             recentSaver(POI_OBJECTS_KEY, poi);
             ctx.setMoveToMapObj(item);
-            if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
-                navigateToPoi({ poi }, navigate);
-            }
         } else {
             // click on category
             const category = item.properties['web_keyName'];
