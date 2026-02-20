@@ -403,7 +403,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugg
 
 The 3D buildings settings are divided into two groups: **Appearance** and **Performance**.
 
-**Appearance, Color**. It controls the color of 3D buildings. When you tap Color, OsmAnd opens a separate preview screen where you can see the map while adjusting the setting.
+**Appearance: Color**. It controls the color of 3D buildings. When you tap Color, OsmAnd opens a separate preview screen where you can see the map while adjusting the setting.
 - **Map style** — uses the default building color from the currently selected map style.
 - **Custom** — lets you set a custom building color separately for Day / Night mode.
 
@@ -413,15 +413,15 @@ Color Customization of 3D Buildings is a [paid feature](../purchases/index.md).
 
 If Custom colors are not purchased, you’ll see an empty state with a short description and a Get button. If Custom is available, you can switch between Day and Night, pick a color from the palette (or open All colors), then tap Apply.
 
-**Appearance, Visibility**. It controls the opacity (transparency) of 3D buildings. Use the slider to set the visibility as a percentage. Lower values make buildings more transparent and help roads/labels stay readable. Higher values make buildings look more solid and visually dominant. Tapping Visibility also opens a separate preview screen with the slider.
+**Appearance: Visibility**. It controls the opacity (transparency) of 3D buildings. Use the slider to set the visibility as a percentage. Lower values make buildings more transparent and help roads/labels stay readable. Higher values make buildings look more solid and visually dominant. Tapping Visibility also opens a separate preview screen with the slider.
 
 On the preview screens (Color / Visibility), you can use Reset to default from the app bar to restore the default value.
 
-**Performance, Level of detail**. It controls how detailed the 3D building geometry is:
+**Performance: Level of detail**. It controls how detailed the 3D building geometry is:
 - Low (default) — simpler geometry.
 - High — more detailed geometry.
 
-**Performance, View distance**. It controls how far from the camera 3D buildings are rendered:
+**Performance: View distance**. It controls how far from the camera 3D buildings are rendered:
 - Near (default) — renders buildings closer to you.
 - Far — renders buildings from a longer distance.
 

@@ -78,14 +78,16 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-profile)  |
 | [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
 |[Audio/video notes](#audiovideo-notes) 🤖  | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#authorization) |
 |[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
+|[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[External Sensors](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Vehicle Metrics](#vehicle-metrics)  | [Custom Settings](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
+|[Star Watcher](#star-watcher)  | [Screen](../plugins/starwatcher.md#star-map-screen), [Context Menu](../plugins/starwatcher.md#celestial-object-info) |
 |[Accessibility](#accessibility) 🤖  | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
-| [OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [AIS vessel tracker](#ais-vessel-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
+|[OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[AIS vessel tracker](#ais-vessel-tracker) 🤖  |  [Custom Settings](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin Settings {#plugin-settings}
@@ -139,7 +141,6 @@ The following plugins provide their own settings:
 
 ## Plugins list {#plugins-list}
 
-
 ### [Wikipedia](./wikipedia.md) {#wikipedia}
 
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles related to the points of interest right on the map.
@@ -155,6 +156,10 @@ To tell a story of where you have been, GPS data, as latitude and longitude of y
 ### [Topography](./topography.md) {#topography}
 
 Topography information, such as Contour lines, Hillshade, Slope, 3D Relief, helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
+
+### [Weather](./weather.md) {#weather}
+
+Shows the hourly forecast for the current day and for 7 days ahead. 
 
 ### [Nautical Map View](./nautical-charts.md) {#nautical-map-view}
 
@@ -180,10 +185,6 @@ The OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a gl
 
 See street-level views of your routes or places of interest, provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
 
-### [Accessibility](./accessibility.md) {#accessibility}
-
-The Accessibility plugin makes the device's accessibility features directly available in OsmAnd. For Android only.  
-
 ### [External Sensors](./external-sensors.md) {#external-sensors}
 
 Connect external sensors to display their data in OsmAnd and store the information in track recordings.  
@@ -192,9 +193,13 @@ Connect external sensors to display their data in OsmAnd and store the informati
 
 Connect OBD-II scanner to display vehicle data in OsmAnd and store the information in track recordings.  
 
-### [Weather](./weather.md) {#weather}
+### [Star Watcher](./starwatcher.md) {#star-watcher}
 
-Shows the hourly forecast for the current day and for 7 days ahead.  
+Star Watcher displays an interactive star sky overlay with stars, constellations, the Sun, the Moon, and planets. It helps you identify celestial objects above your current location, preview their paths for a selected date and time, and plan stargazing sessions using built-in time controls and viewing options.
+
+### [Accessibility](./accessibility.md) {#accessibility}
+
+The Accessibility plugin makes the device's accessibility features directly available in OsmAnd. For Android only.  
 
 ### [OsmAnd Development](./development.md) {#osmand-development}
 
