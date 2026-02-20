@@ -87,7 +87,7 @@ export default function SearchResults() {
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
 
-    const { params, navigateToSearchMenu, isSearchEqualToUrl, location } = useSearchNav();
+    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
     useEffect(() => {
         const handler = setTimeout(() => {
@@ -216,10 +216,12 @@ export default function SearchResults() {
 
     useEffect(() => {
         if (locReady) {
-            const hasSearchParams =
-                (params.type || (params.query && params.query !== '')) && location.pathname.includes(SEARCH_URL);
+            const hasSearchParams = params.type || (params.query && params.query !== '');
             if (hasSearchParams && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
                 ctx.setProcessingSearch(true);
+                if (!isSearchResultRoute) {
+                    return;
+                }
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
