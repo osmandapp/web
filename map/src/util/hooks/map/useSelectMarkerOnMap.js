@@ -1,9 +1,17 @@
 import { useEffect } from 'react';
-import { FINAL_POI_ICON_NAME, ICON_KEY_NAME, POI_ID, TYPE_OSM_TAG, TYPE_OSM_VALUE } from '../../../infoblock/components/wpt/WptTagsProvider';
+import {
+    FINAL_POI_ICON_NAME,
+    ICON_KEY_NAME,
+    POI_ID,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../../infoblock/components/wpt/WptTagsProvider';
 import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
+
+const EXPLORE_LAYER_ID = 'explore-layer';
 
 function extractLatlng(selectedWptId, type) {
     const obj = selectedWptId?.obj;
@@ -114,7 +122,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
-        const markerData = buildMarkerData(layer);
+        const markerData = buildMarkerData(layer, isSelection, type);
         if (!markerData.iconHtml && layer.options?.simple) {
             const props = ctx.selectedWptId?.obj?.properties;
             markerData.iconHtml = iconHtmlFromIconName(
@@ -131,29 +139,17 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
     }
 
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
-        const itemId = layer?.options?.idObj;
         const markerData = {
             color: DEFAULT_POI_COLOR,
             iconHtml: `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`,
         };
-        const doApply = () => applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
+        applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
 
-        if (loadedPhotoUrls.has(photoUrl)) {
-            doApply();
-            return;
+        if (!loadedPhotoUrls.has(photoUrl)) {
+            const img = new Image();
+            img.onload = () => loadedPhotoUrls.add(photoUrl);
+            img.src = photoUrl;
         }
-
-        const img = new Image();
-        img.onload = () => {
-            loadedPhotoUrls.add(photoUrl);
-            const stillActive =
-                (ctx.selectedWptId?.type === type &&
-                    ctx.selectedWptId?.id === (itemId ?? hoverId) &&
-                    ctx.selectedWptId?.show !== false) ||
-                (selectedObjId && itemId && (selectedObjId === itemId || selectedObjId === layer?.options?.[POI_ID]));
-            if (stillActive) doApply();
-        };
-        img.src = photoUrl;
     }
 
     function applyHoverPinFallback(latlng) {
@@ -190,12 +186,33 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         });
     }
 
-    function buildMarkerData(layer) {
+    function buildMarkerData(layer, isSelection, layerType) {
         const isSimpleDot = !!layer.options?.simple;
+        const isFavorites = layerType === FAVORITE_FILE_TYPE;
+        const iconFromLayer = layer.options?.icon?.options?.html;
+
+        let iconHtml;
+        if (isSimpleDot) {
+            iconHtml = iconHtmlFromIconName(layer.options?.[FINAL_POI_ICON_NAME]) ?? '';
+        } else if (isSelection) {
+            if (isFavorites) {
+                iconHtml = iconFromLayer ?? '';
+            } else {
+                iconHtml = layer.options?.svg ?? '';
+            }
+        } else {
+            // hover
+            if (isFavorites) {
+                iconHtml = layer.options?.originalIcon?.options?.html ?? iconFromLayer ?? '';
+            } else {
+                iconHtml = layer.options?.svg ?? layer.options?.originalIcon?.options?.html ?? '';
+            }
+        }
+
         return {
             color: (isSimpleDot ? layer.options?.fillColor : layer.options?.color) ?? DEFAULT_POI_COLOR,
             background: layer.options?.background ?? DEFAULT_POI_SHAPE,
-            iconHtml: layer.options?.svg ?? iconHtmlFromIconName(layer.options?.[FINAL_POI_ICON_NAME]),
+            iconHtml,
         };
     }
 }

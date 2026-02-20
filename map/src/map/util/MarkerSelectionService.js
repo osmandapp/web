@@ -91,13 +91,7 @@ function buildSelectedIcon(marker, layerOptions = {}) {
     return createLayeredPinIcon({
         shape: toShape(marker.background ?? layerOptions.background),
         color: toColor(marker.color ?? layerOptions.color),
-        iconHtml:
-            marker.iconHtml ??
-            marker.originalIconHtml ??
-            marker.icon ??
-            layerOptions.originalIcon?.options?.html ??
-            layerOptions.icon?.options?.html ??
-            '',
+        iconHtml: marker.iconHtml ?? '',
         size: SELECTED_PIN_SIZE,
         iconSize: SELECTED_ICON_SIZE,
     });

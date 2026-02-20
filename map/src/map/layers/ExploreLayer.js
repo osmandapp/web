@@ -25,7 +25,13 @@ import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem'
 import { getVisibleBbox, panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
-import { navigateToPoi } from '../../manager/PoiManager';
+import { getIconNameForPoiType, navigateToPoi } from '../../manager/PoiManager';
+import {
+    FINAL_POI_ICON_NAME,
+    ICON_KEY_NAME,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
@@ -420,6 +426,11 @@ export default function ExploreLayer() {
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
                             photoUrl,
+                            [FINAL_POI_ICON_NAME]: getIconNameForPoiType({
+                                iconKeyName: place.properties?.[ICON_KEY_NAME],
+                                typeOsmTag: place.properties?.[TYPE_OSM_TAG],
+                                typeOsmValue: place.properties?.[TYPE_OSM_VALUE],
+                            }),
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         largeMarkersArr.addLayer(circle);
@@ -437,6 +448,11 @@ export default function ExploreLayer() {
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
                             photoUrl,
+                            [FINAL_POI_ICON_NAME]: getIconNameForPoiType({
+                                iconKeyName: place.properties?.[ICON_KEY_NAME],
+                                typeOsmTag: place.properties?.[TYPE_OSM_TAG],
+                                typeOsmValue: place.properties?.[TYPE_OSM_VALUE],
+                            }),
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         simpleMarkersArr.addLayer(circle);
