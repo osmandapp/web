@@ -348,8 +348,7 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.prevState = cloneDeep(selectedGpxFileRef.current);
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
-                iconHtml:
-                    e.sourceTarget.options.originalIcon?.options?.html ?? e.sourceTarget.options.icon?.options?.html,
+                iconHtml: e.sourceTarget.options.originalIcon?.options?.html,
                 iconName: e.sourceTarget.options.iconName,
                 color: e.sourceTarget.options.color,
                 background: e.sourceTarget.options.background,
@@ -391,7 +390,7 @@ const FavoriteLayer = () => {
             background: opts.background,
             groupId: opts.groupId,
             latlng: layer.getLatLng(),
-            originalIconHtml: opts.originalIcon?.options?.html ?? iconOpts?.html,
+            originalIconHtml: opts.originalIcon?.options?.html,
         };
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
     }
