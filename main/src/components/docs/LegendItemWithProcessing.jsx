@@ -22,6 +22,16 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
   const measurementComponentRef = useRef(null);
   const DEBUG = false;
 
+  const removeAllClipPaths = useCallback((element) => {
+    if (!element || element.nodeType !== 1) return;
+
+    if (element.hasAttribute('clip-path')) {
+      element.removeAttribute('clip-path');
+    }
+
+    Array.from(element.children).forEach(removeAllClipPaths);
+  }, []);
+
   const splitSvgToArray = useCallback((svgContent) => {
     const svgPartsMap = new Map(Object.entries(svgParts));
     const parser = new DOMParser();
@@ -36,40 +46,65 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
     const originalDefs = originalSvgElement.querySelector(DEFS_SELECT);
     const originalStyles = originalSvgElement.querySelectorAll(STYLE_SELECT);
     const svgArray = [];
+
     groupElements.forEach(groupElement => {
       const newSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+
       const attributesToExclude = [WIDTH_ATTR, HEIGHT_ATTR, VIEW_BOX_ATTR];
       for (const attr of originalSvgElement.attributes) {
         if (!attributesToExclude.includes(attr.name)) {
           newSvg.setAttribute(attr.name, attr.value);
         }
       }
+
       if (originalDefs) {
         newSvg.appendChild(originalDefs.cloneNode(true));
       }
       originalStyles.forEach(styleNode => {
         newSvg.appendChild(styleNode.cloneNode(true));
       });
+
       const clonedGroupElement = groupElement.cloneNode(true);
       if (clonedGroupElement.hasAttribute(TRANSFORM_ATTR)) {
         clonedGroupElement.removeAttribute(TRANSFORM_ATTR);
       }
+
+      removeAllClipPaths(clonedGroupElement);
+
       newSvg.appendChild(clonedGroupElement);
+
+      const defs = newSvg.querySelector(DEFS_SELECT);
+      if (defs) {
+        defs.querySelectorAll('clipPath').forEach(clip => {
+          if (!newSvg.querySelector(`[clip-path="url(#${clip.id})"]`)) {
+            clip.remove();
+          }
+        });
+      }
+
       const serializer = new XMLSerializer();
       let svgString = serializer.serializeToString(newSvg);
+
       const groupBBox = measurementComponentRef?.current.measureGroupBBox(svgString);
       const width = groupBBox.width.toFixed(2);
       const height = groupBBox.height.toFixed(2);
+
       newSvg.setAttribute(WIDTH_ATTR, width);
       newSvg.setAttribute(HEIGHT_ATTR, height);
-      newSvg.setAttribute(VIEW_BOX_ATTR, `${groupBBox.x.toFixed(2)} ${groupBBox.y.toFixed(2)} ${width} ${height}`)
-      svgString = serializer.serializeToString(newSvg);
-      const title = svgPartsMap.get(groupElement.id)
-      svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString, title });
-    });
-    return svgArray;
+      newSvg.setAttribute(VIEW_BOX_ATTR, `${groupBBox.x.toFixed(2)} ${groupBBox.y.toFixed(2)} ${width} ${height}`);
 
-  }, []); 
+      svgString = serializer.serializeToString(newSvg);
+
+      const title = svgPartsMap.get(groupElement.id);
+      svgArray.push({
+        id: groupElement.id || `group-${svgArray.length}`,
+        svgString,
+        title
+      });
+    });
+
+    return svgArray;
+  }, [removeAllClipPaths]);
 
   const { svgContent: svgContentDay, loading: loadingDay } = useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX);
   const { svgContent: svgContentNight, loading: loadingNight } = useSvgContent(svgPath + SVG_NIGHT_FILE_SUFFIX);
@@ -92,7 +127,7 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
     const isNightMode = mode === 'night';
     const hasRows = isNightMode ? rowsNight.length > 0 : rowsDay.length > 0;
     const isLoading = isNightMode ? loadingNight : loadingDay;
-    const hasContent = isNightMode ? !svgContentNight && !loadingNight : !svgContentDay && !loadingDay
+    const hasContent = isNightMode ? !svgContentNight && !loadingNight : !svgContentDay && !loadingDay;
     const legendStyle = isNightMode ? styles.legendNight : styles.legendDay;
 
     if (hasRows) {
@@ -126,13 +161,13 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
         </table>
       );
     } else {
-      DEBUG && !isLoading && <p>No groups found in the SVG (after processing).</p>
+      DEBUG && !isLoading && <p>No groups found in the SVG (after processing).</p>;
     }
     if (isLoading) {
-      return <p>Loading SVG...</p>
+      return <p>Loading SVG...</p>;
     }
     if (!hasContent) {
-      return <p>No SVG content to display.</p>
+      return <p>No SVG content to display.</p>;
     }
   };
 
