@@ -50,12 +50,7 @@ function findLayerById(layers, id) {
 }
 
 export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map }) {
-    const selectedObjId =
-        ctx.selectedWpt?.wikidata?.properties?.id ??
-        ctx.selectedWpt?.poi?.options[POI_ID] ??
-        ctx.selectedWpt?.poi?.options?.idObj ??
-        ctx.selectedWpt?.selectionId ??
-        null;
+    const selectedObjId = ctx.selectedWpt?.id ?? null;
 
     const hoverId =
         ctx.selectedWptId?.type === type &&

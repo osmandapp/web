@@ -226,7 +226,7 @@ export default function SearchLayer() {
             mapObj: true,
         };
         recentSaver(POI_OBJECTS_KEY, poi);
-        ctx.setSelectedWpt({ poi });
+        ctx.setSelectedWpt({ poi, id: e.sourceTarget.options?.idObj });
         if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
             navigateToPoi({ poi }, navigate);
         }
