@@ -268,7 +268,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             const currentWpt = wpts.find((p) => p.name === markerName);
             if (currentWpt) {
                 const newWpt = getDataFromWpt(type, ctx.selectedWpt, currentWpt);
-                newWpt.id = ctx.selectedWpt.id;
+                newWpt.id = ctx.selectedWpt.groupId;
+                newWpt.group = ctx.favorites.groups.find((g) => g.id === ctx.selectedWpt.groupId);
                 return newWpt;
             }
         } else if (type?.isSearch || type?.isPoi) {
@@ -432,7 +433,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             type: type,
             file: selectedWpt.file,
             trackData: selectedWpt.trackData,
-            groupId: selectedWpt.id,
+            groupId: selectedWpt.groupId,
             sharedWithMe: selectedWpt.file?.sharedWithMe,
             name: currentWpt.name,
             desc: currentWpt.desc,
