@@ -392,7 +392,7 @@ For further details about the Nautical map view, visit the [Nautical Map plugin 
 
 <InfoAndroidOnly/> 
 
-![3D Buildings](@site/static/img/map/3d_buildings_1.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png)
+![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png) 
 
 **3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
@@ -401,13 +401,31 @@ Use the main toggle to enable or disable 3D rendering of buildings. To view buil
 Currently, this option is available only when the [OsmAnd development plugin](../plugins/development.md) is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 
-**Visibility** adjusts the opacity of 3D buildings. Use the slider to set the transparency level (0–100%). Lower values make buildings more transparent and improve visibility of roads and labels. Higher values make buildings more solid and visually dominant.
+The 3D buildings settings are divided into two groups: **Appearance** and **Performance**.
 
-**3D buildings detalization** controls the geometric complexity of 3D buildings. Available options:  
-- Medium – balanced level of detail (default).
-- High – more detailed geometry.
+**Appearance, Color**. It controls the color of 3D buildings. When you tap Color, OsmAnd opens a separate preview screen where you can see the map while adjusting the setting.
+- **Map style** — uses the default building color from the currently selected map style.
+- **Custom** — lets you set a custom building color separately for Day / Night mode.
 
-**[Building parts](https://wiki.openstreetmap.org/wiki/Key:building:part)** enables rendering of separate building parts. This is most noticeable for complex buildings where different parts have different heights.
+:::tip Purchase
+Color Customization of 3D Buildings is a [paid feature](../purchases/index.md).  
+:::
+
+If Custom colors are not purchased, you’ll see an empty state with a short description and a Get button. If Custom is available, you can switch between Day and Night, pick a color from the palette (or open All colors), then tap Apply.
+
+**Appearance, Visibility**. It controls the opacity (transparency) of 3D buildings. Use the slider to set the visibility as a percentage. Lower values make buildings more transparent and help roads/labels stay readable. Higher values make buildings look more solid and visually dominant. Tapping Visibility also opens a separate preview screen with the slider.
+
+On the preview screens (Color / Visibility), you can use Reset to default from the app bar to restore the default value.
+
+**Performance, Level of detail**. It controls how detailed the 3D building geometry is:
+- Low (default) — simpler geometry.
+- High — more detailed geometry.
+
+**Performance, View distance**. It controls how far from the camera 3D buildings are rendered:
+- Near (default) — renders buildings closer to you.
+- Far — renders buildings from a longer distance.
+
+Both performance options use a two-position toggle right in the 3D buildings settings screen.
 
 <!--
 ## Map Legend {#map-legend}
