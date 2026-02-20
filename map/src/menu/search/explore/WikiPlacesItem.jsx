@@ -17,7 +17,7 @@ import { cleanHtml, getIconNameForPoiType } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
 import { EXPLORE_LAYER_ID, getImgByProps } from '../../../map/layers/ExploreLayer';
 
-const WIKI_PLACE_PHOTO_SIZE = 160;
+export const WIKI_PLACE_PHOTO_SIZE = 160;
 
 export function getCategory(props) {
     const category = props.categories?.replace(/^\[|\]$/g, '').trim();

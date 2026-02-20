@@ -21,6 +21,7 @@ import {
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
+import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem';
 import { getVisibleBbox, panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
@@ -47,7 +48,7 @@ export function getImgByProps(props) {
 export function getPlaceMarkerInfo(ctx, place) {
     const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
     const imgTag = ctx.searchSettings.useWikiImages ? place.properties.imageTitle : getImgByProps(place.properties);
-    const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 160 });
+    const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: WIKI_PLACE_PHOTO_SIZE });
 
     return { latlng, iconUrl };
 }
