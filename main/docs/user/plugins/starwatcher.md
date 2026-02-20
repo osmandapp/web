@@ -46,19 +46,19 @@ The plugin works with both Map rendering engines but performs best in OpenGL mod
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new.png)
 
-The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: **Search** — opens a search panel with an input field where you can type an object name. Below the field, there is a list of suggested objects in alphabetical order. You can switch the sorting between A–Z and Z–A; **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time; and [**Configure View**](#configure-view).
+The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: 
+- **Search** — opens a search panel with an input field where you can type an object name. Below the field, there is a list of suggested objects in alphabetical order. You can switch the sorting between A–Z and Z–A. 
+- **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
+- [**Configure View**](#configure-view).
 
-
-- The screen renders the full sky hemisphere above your location, aligned with compass direction. The Star map can be rotated manually.
-- Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings.
-- Tap celestial objects for details like magnitude, rising/setting times or paths.
+The screen renders the full sky hemisphere above your location, aligned with compass direction. The Star map can be rotated manually. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
 
 
 ## Celestial Object Info {#celestial-object-info}
 
-Tap any **star, planet, constellation, or Sun/Moon** on the **Star map screen** or **map overlay** to view detailed information.
-
 ![Object info popup](@site/static/img/plugins/starwatcher/object-info_new.png)
+
+Tap any **star, planet, constellation, or Sun/Moon** on the **Star map screen** or **map overlay** to view detailed information. Selected object  is highlighted on the Star map by a red circle marker, and its daily motion is visualized by an hour ring (00–23) showing where the object will be at each hour local time and the direction of movement.
 
 **Displayed data:**
 - **Azimuth**: Direction from North (0°-360°) where the object appears in the sky
@@ -102,15 +102,17 @@ To open Configure View, tap the Configure View button in the bottom-right corner
 
 ### Modes and Actions {#modes-and-actions}
 
-![Configure View](@site/static/img/plugins/starwatcher/view_with_map.png)
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter.png)
 
 This section controls the main display modes of the Star map.
 
 - **2D / 3D**. Switches the Star map between a flat (2D) view and a globe-like (3D) view.
 - **Map**. Enables an additional Earth map view displayed below the Star map, helping you relate celestial objects to your geographic location.
-- **Red filter**.Applies a red color filter to the entire screen to reduce light pollution and preserve night vision during dark-sky observations.
+- **Red filter**. Applies a red color filter to the entire screen to reduce light pollution and preserve night vision during dark-sky observations.
 
 ### Visible Objects {#visible-objects}
+
+![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
 
 This section lets you choose which types of celestial objects are shown on the Star map.
 
@@ -172,6 +174,6 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 - [Interact with Map](../../user/map/interact-with-map.md)
 - [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+- [Vector Maps](../../user/map/vector-maps.md)
 
 
