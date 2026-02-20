@@ -139,7 +139,7 @@ Snowmobile trails are mapped in [OpenStreetMap](https://wiki.openstreetmap.org/w
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Whitewater routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) are shown together with access icons, danger zones, and nearby rapids for [whitewater tourism](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+[Whitewater routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) are shown together with access icons, hazard areas, and nearby rapids for [whitewater tourism](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). See [Whitewater features](../map-legend/osmand.md#whitewater-features) in the Map Legend for rapid grades, river section grades, and related symbols.
 
 
 ### Running routes {#running-routes}
