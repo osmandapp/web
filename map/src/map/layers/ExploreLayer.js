@@ -48,9 +48,9 @@ export function getImgByProps(props) {
 export function getPlaceMarkerInfo(ctx, place) {
     const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
     const imgTag = ctx.searchSettings.useWikiImages ? place.properties.imageTitle : getImgByProps(place.properties);
-    const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: WIKI_PLACE_PHOTO_SIZE });
+    const photoUrl = getPhotoUrl({ photoTitle: imgTag, size: WIKI_PLACE_PHOTO_SIZE });
 
-    return { latlng, iconUrl };
+    return { latlng, photoUrl };
 }
 
 export default function ExploreLayer() {
@@ -166,7 +166,7 @@ export default function ExploreLayer() {
         const coords = ctx.selectedWpt?.wikidata?.geometry?.coordinates;
         if (!coords || coords.length < 2) return;
         panToIfNeeded(map, { lat: coords[1], lng: coords[0] });
-    }, [ctx.selectedWpt?.wikidata?.properties?.id, ctx.selectedWpt?.key]);
+    }, [ctx.selectedWpt?.wikidata?.properties?.id]);
 
     useEffect(() => {
         let ignore = false;
@@ -384,7 +384,7 @@ export default function ExploreLayer() {
             let largeMarkersArr = new L.geoJSON();
 
             const markerPromises = mainMarkers.map((place) => {
-                const { latlng, iconUrl } = getPlaceMarkerInfo(ctx, place);
+                const { latlng, photoUrl } = getPlaceMarkerInfo(ctx, place);
 
                 return new Promise((resolve, reject) => {
                     if (abortController.signal.aborted) {
@@ -398,7 +398,7 @@ export default function ExploreLayer() {
                         }
 
                         const icon = L.icon({
-                            iconUrl,
+                            iconUrl: photoUrl,
                             iconSize: [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE],
                             className: `${styles.wikiIconLarge} ${styles.wikiIcon}`,
                         });
@@ -406,7 +406,7 @@ export default function ExploreLayer() {
                             icon,
                             index: place.index,
                             idObj: place.properties.id,
-                            photoUrl: iconUrl,
+                            photoUrl,
                         });
                         addEventListeners({ marker, place, main: true, iconSize: EXPLORE_BIG_ICON_SIZE, latlng });
                         largeMarkersArr.addLayer(marker);
@@ -419,24 +419,24 @@ export default function ExploreLayer() {
 
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
-                            photoUrl: iconUrl,
+                            photoUrl,
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         largeMarkersArr.addLayer(circle);
                         resolve();
                     };
-                    image.src = iconUrl;
+                    image.src = photoUrl;
                 });
             });
 
             Promise.all(markerPromises)
                 .then(() => {
                     for (const place of secondaryMarkers) {
-                        const { latlng, iconUrl } = getPlaceMarkerInfo(ctx, place);
+                        const { latlng, photoUrl } = getPlaceMarkerInfo(ctx, place);
 
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
-                            photoUrl: iconUrl,
+                            photoUrl,
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         simpleMarkersArr.addLayer(circle);
