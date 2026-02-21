@@ -185,7 +185,7 @@ export default function SearchResultItem({ item, typeItem }) {
                 latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
             };
             // click on item — navigation is handled by MainMenu via selectedType change
-            ctx.setCurrentObjectType(POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
+            ctx.setCurrentObjectType(typeItem === POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
             ctx.setSelectedPoiObj({ ...poi });
             ctx.setSelectedWpt({ poi, id: itemId });
             recentSaver(POI_OBJECTS_KEY, poi);

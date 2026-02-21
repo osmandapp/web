@@ -11,8 +11,6 @@ import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 
-const EXPLORE_LAYER_ID = 'explore-layer';
-
 function extractLatlng(selectedWptId, type) {
     const obj = selectedWptId?.obj;
     if (!obj) return null;
