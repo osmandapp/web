@@ -112,9 +112,8 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
-                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
-                        const smartFolders = await loadSmartFolders(setSmartFolders);
+                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles, setSmartFolders);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -129,24 +128,38 @@ async function loadListFiles(
     }
 }
 
-export async function loadSmartFolders(setSmartFolders) {
+export async function loadSmartFolders(setSmartFolders, listFiles) {
     const res = await getSmartFolders();
-    const preparedTracks = Object.fromEntries((res ?? []).map((t) => [t.name, { ...t.files, smartFolder: true }]));
+    const smartFolders = (res ?? []).map((smartFolder) => {
+        const files = {};
+        (smartFolder.fileIds ?? []).forEach((fileId) => {
+            const file = listFiles?.find(f => f.id === fileId);
+            if (file) {
+                files[file.name] = { ...file, smartFolder: true };
+            }
+        });
+        
+        return {
+            name: smartFolder.name,
+            files: files
+        };
+    });
+
     setSmartFolders((prev) => ({
         ...prev,
-        tracks: res,
+        tracks: smartFolders,
     }));
 }
 
-export async function getSmartFolders() {
-    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smartfolders`, {});
+async function getSmartFolders() {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
     if (res.ok) {
         return await res.json();
     }
     return null;
 }
 
-export function getFilesForUpdateDetails(files, setUpdateFiles) {
+export async function getFilesForUpdateDetails(files, setUpdateFiles, setSmartFolders) {
     const filesToUpdate = files
         .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
         .map((f) => ({
@@ -157,6 +170,8 @@ export function getFilesForUpdateDetails(files, setUpdateFiles) {
         }));
     if (filesToUpdate.length > 0) {
         setUpdateFiles(filesToUpdate);
+    } else {
+        await loadSmartFolders(setSmartFolders, files);
     }
 }
 
@@ -677,9 +692,11 @@ export const AppContextProvider = (props) => {
             }
         };
 
-        update().then(() => {
+        (async () => {
+            await update();
             setUpdateFiles(null);
-        });
+            await loadSmartFolders(setSmartFolders, listFiles.uniqueFiles);
+        })();
     }, [updateFiles]);
 
     useEffect(() => {

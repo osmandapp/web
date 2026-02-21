@@ -71,7 +71,7 @@ export default function SmartFolder({ type, subtype, files, onOpenFolder = null,
             >
                 <ListItemIcon className={styles.icon}>{folder.icon}</ListItemIcon>
                 <ListItemText>
-                    <MenuItemWithLines name={name ? name : t(folder.name)} maxLines={2} />
+                    <MenuItemWithLines name={name ?? t(folder.name)} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
                         {`${Object.entries(files).length} ${t(folderType.substring).toLowerCase()}`}
                     </Typography>

@@ -166,6 +166,7 @@ export default function TracksMenu() {
                                 ctx.smartFolders?.tracks.map((track, index) => {
                                     return (
                                         <SmartFolder
+                                            key={track.name || `smart-folder-${index}`}
                                             type={SMART_TYPE}
                                             subtype={'track'}
                                             files={track.files}
