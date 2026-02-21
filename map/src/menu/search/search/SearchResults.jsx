@@ -218,10 +218,10 @@ export default function SearchResults() {
         if (locReady) {
             const hasSearchParams = params.type || (params.query && params.query !== '');
             if (hasSearchParams && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
-                ctx.setProcessingSearch(true);
                 if (!isSearchResultRoute) {
                     return;
                 }
+                ctx.setProcessingSearch(true);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);
                 }
