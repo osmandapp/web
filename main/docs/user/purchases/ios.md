@@ -52,7 +52,7 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 In the list, there is information about prices of OsmAnd product for the US and Europe region. For other regions, prices are equivalent in local currencies.
 
-
+<!--
 
 :::danger February Sale
 
@@ -69,8 +69,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
 
-<!--
 
+-->
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
@@ -80,7 +80,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Free and Paid Features {#free-and-paid-features}
 
