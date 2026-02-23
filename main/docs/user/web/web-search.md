@@ -64,13 +64,14 @@ The **POI Context Menu** displays key information about the selected place and p
 - **Name and icon** — shows the POI name and its icon.
 - **Distance and direction** — shows the distance and direction to the POI.
 - **Location** — displays the POI coordinates.
+- **Opening hours** — shows the parsed opening hours from [OSM data](https://wiki.openstreetmap.org/wiki/Key:opening_hours). The current status is displayed dynamically depending on the current time (for example, *Open now*, *Closed*, or *Opens at 10:00*), and the full schedule is shown below.
 - **Description** — provides additional information about the POI when available (for example, from Wikipedia).
 - **Online photos** — shows Wikimedia photos related to the POI when available. Select Show all to open the Photo Gallery. Select a photo to open it in the gallery (Open photo mode).
 - **Object data** — additional POI information, including OSM tags and other details such as contacts, social links, Wikipedia and Wikivoyage links, descriptions, and inscriptions (when available).
 - **OSM ID** — the OpenStreetMap identifier of the POI.
 - **Coordinates** — select the coordinates to copy them.
 
-![POI Context Menu](@site/static/img/web/poi_context_menu.png)
+![POI Context Menu](@site/static/img/web/poi_context_menu_new.png)
 
 ### POI Actions {#poi-actions}
 
