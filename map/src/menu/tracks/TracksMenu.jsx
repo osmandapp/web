@@ -164,13 +164,18 @@ export default function TracksMenu() {
                             )}
                             {!isEmpty(ctx.smartFolders?.tracks) &&
                                 ctx.smartFolders?.tracks.map((track, index) => {
+                                    const filesArray = Array.isArray(track.files) 
+                                        ? track.files 
+                                        : Object.values(track.files);
                                     return (
-                                        <SmartFolder
+                                        <CloudTrackGroup
                                             key={track.name || `smart-folder-${index}`}
-                                            type={SMART_TYPE}
-                                            subtype={'track'}
-                                            files={track.files}
-                                            name={track.name}
+                                            index={index + ctx.tracksGroups?.length}
+                                            group={{
+                                                name: track.name,
+                                                files: filesArray,
+                                                type: SMART_TYPE
+                                            }}
                                         />
                                     );
                                 })}
