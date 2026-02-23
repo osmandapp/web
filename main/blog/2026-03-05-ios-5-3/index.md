@@ -34,6 +34,7 @@ We're excited to announce the release of OsmAnd 5.3 for iOS! This update deliver
 - Added [Average Slope widget](#average-slope-widget) showing the average slope of the latest ascent or descent;
 - Added [Moving Time widget](#moving-time-widget) showing the the moving time for the currently recorded trip, or the last uphill and downhill;
 - *Show track on map* quick action added to the Trip recording widget group;
+- Introduced visual speeding indication to the [Speedometer widget](#speedometer-widget) with tolerance warning and limit-exceed states;
 - Improvements in route selection and altitude graph integration under the updated rendering scheme;
 - Elevation graph widget for navigation, displaying a compact profile along routes or GPX tracks;
 - [Popular places](https://osmand.net/docs/user/map/popular_places/) layer updated with POI source selection and optional image previews on the map;
@@ -68,6 +69,12 @@ Some Trip Recording widgets support multiple display modes. They let you switch 
 [Moving Time widget](https://osmand.net/docs/user/plugins/trip-recording#additional-widgets) shows the moving time for the currently recorded trip, or the time for the last uphill and downhill, depending on the selected mode.
 
 ![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)
+
+## Speedometer Widget {#speedometer-widget}
+
+[Speedometer widget](https://osmand.net/docs/user/widgets/info-widgets#speedometer) now shows visual speeding alerts with color-coded tolerance and limit-exceed states, including animated transitions when crossing speed thresholds.
+
+![Speedometer](@site/static/img/widgets/speed_alert.gif)
 
 ## Bug fixes {#bug-fixes} 
 
