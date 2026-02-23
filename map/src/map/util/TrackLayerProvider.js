@@ -3,8 +3,9 @@ import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } fr
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
 import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
+import { getFavoriteId } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
-import { clusterMarkers, createHoverMarker, removeTooltip } from './Clusterizer';
+import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
 import { createTooltip, TOOLTIP_MAX_LENGTH, formatTrackName } from './MapManager';
 
@@ -502,6 +503,7 @@ function parseWpt({
         if (!marker) {
             return;
         }
+        marker.options.idObj = getFavoriteId(marker);
         if (ctx && map && data) {
             if (type === GPX_FILE_TYPE) {
                 marker.on('click', (e) => {
@@ -515,7 +517,7 @@ function parseWpt({
                     ctx.setSelectedWpt(wpt);
                 });
             }
-            createHoverMarker({
+            addMarkerTooltip({
                 marker,
                 mainStyle: true,
                 text: marker.options['name'],
@@ -543,6 +545,9 @@ function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
     });
     if (isSecondaryMarker) {
         const color = point.color ? Utils.hexToRgba(point.color) : DEFAULT_WPT_COLOR;
+        if (!markerLayer.options.originalIcon && markerLayer.options.icon) {
+            markerLayer.options.originalIcon = markerLayer.options.icon;
+        }
         const customIcon = L.divIcon({
             className: 'custom-circle-icon',
             iconSize: [10, 10],

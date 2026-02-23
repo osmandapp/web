@@ -13,10 +13,7 @@ import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action
 import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { COLOR_BTN_BLUE, COLOR_BTN_RED } from './NavigationMenu';
-
-export const START_POINT = 'start';
-export const INTERMEDIATE_POINT = 'intermediate';
-export const FINISH_POINT = 'finish';
+import { START_POINT, INTERMEDIATE_POINT, FINISH_POINT } from '../../map/markers/trackPointMarkerFactory';
 
 export default function NavigationInputRow({
     inputId,

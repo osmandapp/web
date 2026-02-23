@@ -11,6 +11,8 @@ import { ReactComponent as SquareStroke } from '../../assets/map/map_pin_square_
 import { ReactComponent as HexagonColor } from '../../assets/map/map_pin_hexagon_color.svg';
 import { ReactComponent as HexagonLight } from '../../assets/map/map_pin_hexagon_light.svg';
 import { ReactComponent as HexagonStroke } from '../../assets/map/map_pin_hexagon_stroke.svg';
+import { SELECTED_ICON_SIZE, SELECTED_PIN_COLOR, SELECTED_PIN_SIZE } from '../util/MarkerSelectionService';
+import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 
 const SHAPES = {
     circle: {
@@ -33,13 +35,6 @@ const SHAPES = {
     },
 };
 
-const DEFAULTS = {
-    size: 70,
-    iconSize: 36,
-    color: '#FF8800',
-    shape: 'circle',
-};
-
 function resizeSvg(svg, size) {
     if (!svg) {
         return '';
@@ -51,6 +46,12 @@ function prepareInnerIcon(html, iconSize) {
     if (!html) {
         return '';
     }
+    const imgMatch = html.match(/<img[^>]*src="([^"]+)"[^>]*>/i);
+    if (imgMatch?.[1]) {
+        const src = imgMatch[1];
+        return `<img src="${src}" width="${iconSize}" height="${iconSize}" style="width:${iconSize}px;height:${iconSize}px;object-fit:cover;border-radius:50%;" />`;
+    }
+
     const imageMatch = html.match(/<image[^>]*href="([^"]+)"[^>]*>/i);
     if (imageMatch?.[1]) {
         const href = imageMatch[1];
@@ -62,11 +63,14 @@ function prepareInnerIcon(html, iconSize) {
 
 export function createLayeredPinIcon(options = {}) {
     const merged = {
-        ...DEFAULTS,
+        size: SELECTED_PIN_SIZE,
+        iconSize: SELECTED_ICON_SIZE,
+        color: SELECTED_PIN_COLOR,
+        shape: DEFAULT_POI_SHAPE,
         ...options,
     };
     const { color, shape, size, iconSize, iconHtml, className, iconAnchor } = merged;
-    const shapeAssets = SHAPES[shape] ?? SHAPES[DEFAULTS.shape];
+    const shapeAssets = SHAPES[shape] ?? SHAPES[DEFAULT_POI_SHAPE];
 
     const colorSvg = renderToStaticMarkup(React.createElement(shapeAssets.color));
     const lightSvg = renderToStaticMarkup(React.createElement(shapeAssets.light));

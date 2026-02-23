@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { matchPath, useNavigate, useSearchParams } from 'react-router-dom';
+import { matchPath, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 
 const QUERY_KEY = 'query';
@@ -19,6 +19,7 @@ export function buildSearchParamsFromQuery(q) {
 export default function useSearchNav() {
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const params = useMemo(() => parseParams(searchParams), [searchParams]);
 
@@ -62,6 +63,7 @@ export default function useSearchNav() {
         navigateToSearchMenu,
         isSearchEqualToUrl,
         isSearchResultRoute,
+        location,
     };
 }
 

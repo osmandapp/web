@@ -13,18 +13,25 @@ import { areSetsEqual, getCurrentTimeParams } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
 import {
     clusterMarkers,
-    createHoverMarker,
+    addMarkerTooltip,
     EXPLORE_BIG_ICON_SIZE,
     removeTooltip,
     SIMPLE_ICON_SIZE,
 } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
+import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
-import { getVisibleBbox } from '../util/MapManager';
-import { selectMarker } from '../util/MarkerSelectionService';
+import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem';
+import { getVisibleBbox, panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
-import { navigateToPoi } from '../../manager/PoiManager';
+import { getIconNameForPoiType, navigateToPoi } from '../../manager/PoiManager';
+import {
+    FINAL_POI_ICON_NAME,
+    ICON_KEY_NAME,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
@@ -44,6 +51,14 @@ export function getImgByProps(props) {
     return props.photoTitle || props.depTitle;
 }
 
+export function getPlaceMarkerInfo(ctx, place) {
+    const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+    const imgTag = ctx.searchSettings.useWikiImages ? place.properties.imageTitle : getImgByProps(place.properties);
+    const photoUrl = getPhotoUrl({ photoTitle: imgTag, size: WIKI_PLACE_PHOTO_SIZE });
+
+    return { latlng, photoUrl };
+}
+
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -53,7 +68,6 @@ export default function ExploreLayer() {
     const GET_OBJ_DEBOUNCE_MS = 500;
 
     const timerRef = useRef(null);
-    const selectedObjRef = useRef(null);
 
     const filtersRef = useRef(null);
     const openedPoiRef = useRef(null);
@@ -62,6 +76,8 @@ export default function ExploreLayer() {
 
     const mainIconsLayerRef = useRef(null);
     const otherIconsLayerRef = useRef(null);
+    const [mainIconsLayer, setMainIconsLayer] = useState(null);
+    const [otherIconsLayer, setOtherIconsLayer] = useState(null);
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
@@ -74,19 +90,20 @@ export default function ExploreLayer() {
             ctx.setWikiPlaces(null);
             removeLayers();
         }
+        hideMarkersNearPin(map, ctx);
     }, [zoom]);
 
+    const getExploreLayers = useCallback(() => {
+        if (mainIconsLayerRef.current && otherIconsLayerRef.current) {
+            return [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()];
+        }
+        return null;
+    }, [mainIconsLayer, otherIconsLayer]);
     useSelectMarkerOnMap({
         ctx,
-        layers:
-            mainIconsLayerRef.current && otherIconsLayerRef.current
-                ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
-                : null,
+        getLayers: getExploreLayers,
         type: EXPLORE_LAYER_ID,
         map,
-        prevSelectedMarker: selectedObjRef,
-        mainIconsLayerRef,
-        otherIconsLayerRef,
     });
     const recentSaver = useRecentDataSaver();
 
@@ -133,7 +150,7 @@ export default function ExploreLayer() {
             const obj = { poi, wikidata: item, key, mapObj: selectFromMap };
             recentSaver(EXPLORE_OBJS_KEY, obj);
             navigateToPoi(obj, navigate, true);
-            ctx.setSelectedWpt(obj);
+            ctx.setSelectedWpt({ ...obj, id: obj.wikidata?.properties?.id });
             if (!selectFromMap) {
                 ctx.setSelectedPoiObj(obj);
             }
@@ -150,6 +167,12 @@ export default function ExploreLayer() {
             openedPoiRef.current = null;
         }
     }, [ctx.searchSettings.getPoi]);
+
+    useEffect(() => {
+        const coords = ctx.selectedWpt?.wikidata?.geometry?.coordinates;
+        if (!coords || coords.length < 2) return;
+        panToIfNeeded(map, { lat: coords[1], lng: coords[0] });
+    }, [ctx.selectedWpt?.wikidata?.properties?.id]);
 
     useEffect(() => {
         let ignore = false;
@@ -266,13 +289,6 @@ export default function ExploreLayer() {
         }
 
         ctx.setPhotoGallery(null);
-
-        if (
-            !selectedObjRef.current?.options.hover ||
-            selectedObjRef.current?.options.hover?.options.idObj !== ctx.selectedWpt?.wikidata?.properties?.id
-        ) {
-            selectedObjRef.current = selectMarker(e.sourceTarget, selectedObjRef.current, EXPLORE_LAYER_ID);
-        }
     }
 
     const markerClusterGroup = new L.MarkerClusterGroup({
@@ -346,6 +362,7 @@ export default function ExploreLayer() {
             oldLayers.clearLayers();
         }
         map.addLayer(newLayers);
+        hideMarkersNearPin(map, ctx);
         return newLayers;
     }
 
@@ -373,11 +390,7 @@ export default function ExploreLayer() {
             let largeMarkersArr = new L.geoJSON();
 
             const markerPromises = mainMarkers.map((place) => {
-                const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
-                const imgTag = ctx.searchSettings.useWikiImages
-                    ? place.properties.imageTitle
-                    : getImgByProps(place.properties);
-                const iconUrl = getPhotoUrl({ photoTitle: imgTag, size: 160 });
+                const { latlng, photoUrl } = getPlaceMarkerInfo(ctx, place);
 
                 return new Promise((resolve, reject) => {
                     if (abortController.signal.aborted) {
@@ -389,8 +402,9 @@ export default function ExploreLayer() {
                         if (abortController.signal.aborted) {
                             return reject('Operation aborted');
                         }
+
                         const icon = L.icon({
-                            iconUrl,
+                            iconUrl: photoUrl,
                             iconSize: [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE],
                             className: `${styles.wikiIconLarge} ${styles.wikiIcon}`,
                         });
@@ -398,6 +412,7 @@ export default function ExploreLayer() {
                             icon,
                             index: place.index,
                             idObj: place.properties.id,
+                            photoUrl,
                         });
                         addEventListeners({ marker, place, main: true, iconSize: EXPLORE_BIG_ICON_SIZE, latlng });
                         largeMarkersArr.addLayer(marker);
@@ -407,23 +422,37 @@ export default function ExploreLayer() {
                         if (abortController.signal.aborted) {
                             return reject('Operation aborted');
                         }
+
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
+                            photoUrl,
+                            [FINAL_POI_ICON_NAME]: getIconNameForPoiType({
+                                iconKeyName: place.properties?.[ICON_KEY_NAME],
+                                typeOsmTag: place.properties?.[TYPE_OSM_TAG],
+                                typeOsmValue: place.properties?.[TYPE_OSM_VALUE],
+                            }),
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         largeMarkersArr.addLayer(circle);
                         resolve();
                     };
-                    image.src = iconUrl;
+                    image.src = photoUrl;
                 });
             });
 
             Promise.all(markerPromises)
                 .then(() => {
                     for (const place of secondaryMarkers) {
-                        const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+                        const { latlng, photoUrl } = getPlaceMarkerInfo(ctx, place);
+
                         const circle = new SimpleDotMarker(latlng, place, {
                             idObj: place.properties.id,
+                            photoUrl,
+                            [FINAL_POI_ICON_NAME]: getIconNameForPoiType({
+                                iconKeyName: place.properties?.[ICON_KEY_NAME],
+                                typeOsmTag: place.properties?.[TYPE_OSM_TAG],
+                                typeOsmValue: place.properties?.[TYPE_OSM_VALUE],
+                            }),
                         }).build();
                         addEventListeners({ marker: circle, place, latlng });
                         simpleMarkersArr.addLayer(circle);
@@ -434,6 +463,8 @@ export default function ExploreLayer() {
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
                         updateMarkerZIndex(mainIconsLayerRef.current, 2000);
                         map.fire('explore-layers-updated');
+                        setOtherIconsLayer(otherIconsLayerRef.current);
+                        setMainIconsLayer(mainIconsLayerRef.current);
                     }
                 })
                 .catch((error) => {
@@ -479,7 +510,6 @@ export default function ExploreLayer() {
                     }
                 }
             }
-
             // Normal logic: open info
             openInfo(e, place);
         });
@@ -490,15 +520,16 @@ export default function ExploreLayer() {
             }
         };
 
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
-            setSelectedId: ctx.setSelectedPoiId,
+            setSelectedId: ctx.setSelectedWptId,
             mainStyle: main,
             text: tooltipText(),
             latlng,
             iconSize,
             map,
             ctx,
+            type: EXPLORE_LAYER_ID,
         });
     }
 

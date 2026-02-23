@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Box } from '@mui/material';
-import NavigationInputRow, { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from './NavigationInputRow';
+import NavigationInputRow from './NavigationInputRow';
+import { START_POINT, INTERMEDIATE_POINT, FINISH_POINT } from '../../map/markers/trackPointMarkerFactory';
 import { useTranslation } from 'react-i18next';
 import useNavigationHistory from '../../util/hooks/navigation/useNavigationHistory';
 import { LatLng } from 'leaflet';

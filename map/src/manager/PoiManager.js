@@ -372,7 +372,7 @@ export function navigateToPoi(obj, navigate, isWiki = false) {
 
     const wiki = obj.wikidata;
     const poi = obj.poi;
-    console.log('Navigating to POI with params:', { wiki, poi });
+
     if (isWiki) {
         Object.assign(params, getWikiPoiParams(poi, wiki));
     } else {
@@ -401,7 +401,7 @@ function getWikiPoiParams(poi, wiki) {
     params.pin = getPinParam(wiki.geometry.coordinates?.[1], wiki.geometry.coordinates?.[0]);
     // from poi properties
     params.name = poi?.properties.web_poi_name;
-    params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi.properties.web_poi_osmUrl);
+    params.osmId = params.name ? null : getOsmIdFromOsmUrl(poi?.properties.web_poi_osmUrl);
 
     const wikidataIdFromOsm = poi?.properties.osm_tag_wikidata;
     params.wikidataId = wikidataIdFromOsm ? null : wiki.properties?.id;

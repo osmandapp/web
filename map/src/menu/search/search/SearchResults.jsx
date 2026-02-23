@@ -34,6 +34,7 @@ import {
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { useTranslation } from 'react-i18next';
+import { POI_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -86,7 +87,7 @@ export default function SearchResults() {
     const { zoom, lat = null, lon = null } = useHashParams();
     const [debouncedLatLon, setDebouncedLatLon] = useState({ lat, lon });
 
-    const { params, navigateToSearchMenu, isSearchEqualToUrl } = useSearchNav();
+    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
     useEffect(() => {
         const handler = setTimeout(() => {
@@ -217,6 +218,9 @@ export default function SearchResults() {
         if (locReady) {
             const hasSearchParams = params.type || (params.query && params.query !== '');
             if (hasSearchParams && (!isSearchEqualToUrl(ctx.searchQuery) || ctx.forceSearch)) {
+                if (!isSearchResultRoute) {
+                    return;
+                }
                 ctx.setProcessingSearch(true);
                 if (ctx.forceSearch) {
                     ctx.setForceSearch(false);

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import debounce from 'lodash-es/debounce';
@@ -6,6 +6,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { applySelectedPin, hideMarkersNearPin } from '../util/MarkerSelectionService';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -21,6 +22,7 @@ import {
     CATEGORY_TYPE,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
+    POI_ID,
     POI_ICON_NAME,
     POI_NAME,
     TYPE_OSM_TAG,
@@ -29,15 +31,13 @@ import {
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
-import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
-import styles from '../../menu/search/search.module.css';
+import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/MapManager';
+import { getVisibleBbox, findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
-import { selectMarker } from '../util/MarkerSelectionService';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
@@ -98,28 +98,28 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
     }
 
     mainMarkersLayers.forEach((marker) => {
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
-            setSelectedId: ctx.setSelectedPoiId,
+            setSelectedId: ctx.setSelectedWptId,
             mainStyle: true,
             text: marker.options[POI_NAME],
             latlng: marker._latlng,
             iconSize: DEFAULT_ICON_SIZE,
             map,
             ctx,
-            pointerStyle: styles.hoverPointer,
+            type: POI_LAYER_ID,
         });
     });
 
     simpleMarkersArr.getLayers().forEach((marker) => {
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
-            setSelectedId: ctx.setSelectedPoiId,
+            setSelectedId: ctx.setSelectedWptId,
             text: marker.options[POI_NAME],
             latlng: marker._latlng,
             map,
             ctx,
-            pointerStyle: styles.hoverPointer,
+            type: POI_LAYER_ID,
         });
     });
 
@@ -175,7 +175,6 @@ export default function PoiLayer() {
         prevLayer: null,
         listFeatures: null,
     });
-    const prevSelectedPoi = useRef(null);
 
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
@@ -187,12 +186,16 @@ export default function PoiLayer() {
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
 
+    const getPoiLayers = useCallback(() => {
+        const mainLayers = poiList?.layer?.getLayers() ?? [];
+        return mainLayers.length > 0 ? mainLayers : null;
+    }, [poiList?.layer]);
+
     useSelectMarkerOnMap({
         ctx,
-        layers: poiList?.layer?.getLayers(),
+        getLayers: getPoiLayers,
         type: POI_LAYER_ID,
         map,
-        prevSelectedMarker: prevSelectedPoi,
     });
 
     useEffect(() => {
@@ -200,7 +203,7 @@ export default function PoiLayer() {
             openPoiByUrl().then(async (res) => {
                 let poiLayer;
                 if (res) {
-                    if (ctx.selectedPoiId?.id !== getObjIdSearch(res)) {
+                    if (ctx.selectedWptId?.id !== getObjIdSearch(res)) {
                         poiLayer = await createPoiLayer({
                             ctx,
                             poiList: [res],
@@ -208,11 +211,27 @@ export default function PoiLayer() {
                             map,
                             zoom,
                         });
-                        // remove old poi marker
                         if (ctx.poiByUrl.layer) {
                             map.removeLayer(ctx.poiByUrl.layer);
                         }
                         map.addLayer(poiLayer);
+
+                        const markers = poiLayer.getLayers();
+                        if (markers.length > 0) {
+                            const marker = markers[0];
+                            applySelectedPin({
+                                ctx,
+                                map,
+                                layer: marker,
+                                markerData: {
+                                    color: DEFAULT_POI_COLOR,
+                                    background: DEFAULT_POI_SHAPE,
+                                    iconHtml: marker.options.svg ?? '',
+                                },
+                                isSelection: true,
+                            });
+                            panToIfNeeded(map, marker.getLatLng());
+                        }
                     }
                 }
                 ctx.setPoiByUrl({
@@ -269,6 +288,11 @@ export default function PoiLayer() {
         if (response?.data) {
             const data = response.data;
 
+            const objId = data.properties[POI_ID] ?? `${data.geometry.coordinates[1]},${data.geometry.coordinates[0]}`;
+            if (objId != null) {
+                data.properties[POI_ID] = objId;
+            }
+
             data.properties[FINAL_POI_ICON_NAME] = PoiManager.getIconNameForPoiType({
                 iconKeyName: data.properties[ICON_KEY_NAME],
                 typeOsmTag: data.properties[TYPE_OSM_TAG],
@@ -293,7 +317,7 @@ export default function PoiLayer() {
                       }
                     : null;
 
-                const obj = { poi, wikidata: wiki, key, mapObj: true };
+                const obj = { poi, wikidata: wiki, key, mapObj: true, id: poi?.options?.idObj };
                 ctx.setSelectedWpt(obj);
                 recentSaver(EXPLORE_OBJS_KEY, obj);
             } else {
@@ -309,7 +333,7 @@ export default function PoiLayer() {
                     mapObj: true,
                 };
 
-                ctx.setSelectedWpt({ poi });
+                ctx.setSelectedWpt({ poi, id: getObjIdSearch(data) });
                 recentSaver(POI_OBJECTS_KEY, poi);
             }
 
@@ -333,7 +357,7 @@ export default function PoiLayer() {
                         latlng: { lat, lng },
                         mapObj: true,
                     };
-                    ctx.setSelectedWpt({ poi });
+                    ctx.setSelectedWpt({ poi, id: `${lat},${lng}` });
                     ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
                 }
                 return {
@@ -496,6 +520,8 @@ export default function PoiLayer() {
         let ignore = false;
         let controller = new AbortController();
 
+        hideMarkersNearPin(map, ctx);
+
         async function getPoiList() {
             if (
                 (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
@@ -570,7 +596,7 @@ export default function PoiLayer() {
             }
             if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
                 poiList?.layer.addTo(map).on('click', onClick);
-                prevSelectedPoi.current = null;
+                hideMarkersNearPin(map, ctx);
             }
             addToSearchRes(poiList);
             setMove(false);
@@ -621,15 +647,13 @@ export default function PoiLayer() {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
         ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
 
-        prevSelectedPoi.current = selectMarker(e.sourceTarget, prevSelectedPoi.current);
-
         const poi = {
             mapObj: true,
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
         };
         recentSaver(POI_OBJECTS_KEY, poi);
-        ctx.setSelectedWpt({ poi });
+        ctx.setSelectedWpt({ poi, id: e.sourceTarget.options?.idObj });
         if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
             navigateToPoi({ poi }, navigate);
         }

@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import styles from '../../menu/search/search.module.css';
 import Utils from '../../util/Utils';
 import { getPointLatLon } from './TrackLayerProvider';
 import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
@@ -15,10 +14,8 @@ import {
 import PoiManager from '../../manager/PoiManager';
 import { getIconByType } from '../../manager/SearchManager';
 import { processMarkers } from '../layers/FavoriteLayer';
-import { DEFAULT_ICON_SIZE, DEFAULT_POI_COLOR } from '../markers/MarkerOptions';
+import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
-import { COLOR_POINTER } from '../../util/hooks/map/useSelectMarkerOnMap';
-import HoverMarker from './MarkerSelectionService';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
@@ -366,7 +363,7 @@ export function createSecondaryMarker(obj) {
     }).build();
 }
 
-export function createHoverMarker({
+export function addMarkerTooltip({
     marker,
     setSelectedId = null,
     mainStyle = false,
@@ -375,87 +372,32 @@ export function createHoverMarker({
     iconSize = SIMPLE_ICON_SIZE,
     map,
     ctx,
-    pointerStyle = `${styles.wikiIconHover} ${styles.wikiIconLarge}`,
+    type = null,
 }) {
-    let tooltipRef = ctx.searchTooltipRef;
-    let pointerRef = ctx.searchPointerRef;
+    const tooltipRef = ctx.searchTooltipRef;
 
     if (!map._sharedZoomEndHandler) {
-        map._sharedZoomEndHandler = () => {
-            if (ctx?.searchTooltipRef) {
-                removeTooltip(map, ctx.searchTooltipRef);
-            }
-        };
+        map._sharedZoomEndHandler = () => removeTooltip(map, ctx.searchTooltipRef);
         map.on('zoomend', map._sharedZoomEndHandler);
     }
 
-    const clearPointer = () => {
-        if (pointerRef?.current && map?.hasLayer(pointerRef.current)) {
-            map.removeLayer(pointerRef.current);
-        }
-        pointerRef.current = null;
-    };
-
-    const onMouseOver = () => {
+    marker.on('mouseover', () => {
         removeTooltip(map, tooltipRef);
-        if (setSelectedId) {
-            setSelectedId({ id: marker.options.idObj });
-        }
-        if (!mainStyle) {
-            marker.paintDot(COLOR_POINTER);
-        }
+        setSelectedId?.({ id: marker.options.idObj, show: true, type });
         if (text) {
             const offset = mainStyle ? [5, iconSize * 0.8] : [0, iconSize * 0.8];
-            const shortTitle = Utils.truncateText(text, TOOLTIP_MAX_LENGTH);
-            tooltipRef.current = createTooltip(shortTitle, latlng, {
-                offset: offset,
-            });
+            tooltipRef.current = createTooltip(Utils.truncateText(text, TOOLTIP_MAX_LENGTH), latlng, { offset });
             map.addLayer(tooltipRef.current);
         }
-    };
+    });
 
-    const onMouseOut = (event) => {
+    marker.on('mouseout', (event) => {
         if (event.originalEvent) {
-            if (!mainStyle && marker.options.selected) {
-                return;
-            }
+            if (!mainStyle && marker.options.selected) return;
             removeTooltip(map, tooltipRef);
-            if (setSelectedId) {
-                setSelectedId({ id: -1 });
-            }
-            if (!mainStyle) {
-                marker.paintDot(DEFAULT_POI_COLOR);
-            }
+            setSelectedId?.({ id: -1, show: false, type });
         }
-        clearPointer();
-    };
-
-    const onSelectMarker = () => {
-        removeTooltip(map, tooltipRef);
-        clearPointer();
-        let newMarker;
-        if (mainStyle) {
-            newMarker = new HoverMarker(marker, iconSize, pointerStyle).build();
-            pointerRef.current = newMarker.addTo(map);
-        } else {
-            newMarker = new SimpleDotMarker(latlng, marker, {
-                fillColor: COLOR_POINTER,
-                simple: true,
-            }).build();
-            pointerRef.current = newMarker.addTo(map);
-        }
-    };
-
-    marker.on('mouseover', onMouseOver);
-    marker.on('mouseout', onMouseOut);
-    marker.on('selectMarker', onSelectMarker);
-
-    return () => {
-        marker.off('mouseover', onMouseOver);
-        marker.off('mouseout', onMouseOut);
-        marker.off('selectMarker', onSelectMarker);
-        clearPointer();
-    };
+    });
 }
 
 export function removeTooltip(map, tooltipRef) {
@@ -489,7 +431,7 @@ export function addClusteredMarkersToMap({ map, markers, mainMarkers, secondaryM
     });
     markersToAdd.push(...mainLayers, ...secondaryLayers);
     markersToAdd.forEach((marker) => {
-        createHoverMarker({
+        addMarkerTooltip({
             marker,
             mainStyle: true,
             text: marker.options['name'] ?? marker.options['title'],

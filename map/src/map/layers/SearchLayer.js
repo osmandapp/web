@@ -1,5 +1,5 @@
 import { apiGet } from '../../util/HttpApi';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
@@ -12,7 +12,7 @@ import PoiManager, {
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
-import L, { LatLng } from 'leaflet';
+import L from 'leaflet';
 import {
     CATEGORY_NAME,
     CATEGORY_TYPE,
@@ -26,14 +26,12 @@ import {
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
-import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
-import styles from '../../menu/search/search.module.css';
+import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
-import { getVisibleBbox, findFeatureGroupById, getIconFromMap } from '../util/MapManager';
-import { selectMarker, updateSelectedMarkerOnMap } from '../util/MarkerSelectionService';
+import { getVisibleBbox, findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
@@ -82,7 +80,6 @@ export default function SearchLayer() {
 
     const navigate = useNavigate();
 
-    const prevSelectedRes = useRef(null);
     const skipFirstBoundsUpdate = useRef(true);
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
@@ -93,29 +90,18 @@ export default function SearchLayer() {
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
 
+    const getSearchLayers = useCallback(() => searchLayers.current?.getLayers() ?? null, []);
     useSelectMarkerOnMap({
         ctx,
-        layers: searchLayers.current?.getLayers(),
+        getLayers: getSearchLayers,
         type: SEARCH_LAYER_ID,
         map,
-        prevSelectedMarker: prevSelectedRes,
     });
 
     useEffect(() => {
         if (ctx.zoomToCoords) {
-            const mapBounds = map.getBounds();
-            const pointLatLng = new LatLng(ctx.zoomToCoords.lat, ctx.zoomToCoords.lon);
-            if (!mapBounds.contains(pointLatLng)) {
-                map.setView(pointLatLng, zoom, { animate: true });
-            }
+            panToIfNeeded(map, { lat: ctx.zoomToCoords.lat, lon: ctx.zoomToCoords.lon });
             ctx.setZoomToCoords(null);
-
-            updateSelectedMarkerOnMap({
-                layers: searchLayers.current?.getLayers(),
-                selectedObjId: ctx.zoomToCoords.idObj,
-                prevSelectedMarker: prevSelectedRes,
-                type: SEARCH_LAYER_ID,
-            });
         }
     }, [ctx.zoomToCoords]);
 
@@ -152,20 +138,6 @@ export default function SearchLayer() {
                 newLayers.eachLayer((l) => {
                     searchLayers.current.addLayer(l);
                 });
-                if (prevSelectedRes.current && searchLayers.current) {
-                    // If we have a previously selected result, re-add it to the search layers
-                    let wasFound = false;
-                    searchLayers.current.getLayers().forEach((layer) => {
-                        if (layer.options.idObj === prevSelectedRes.current.options.idObj) {
-                            prevSelectedRes.current = selectMarker(layer, prevSelectedRes.current, SEARCH_LAYER_ID);
-                            wasFound = true;
-                        }
-                    });
-                    if (!wasFound) {
-                        // If the previously selected result is not found, reset it
-                        prevSelectedRes.current = null;
-                    }
-                }
             }
         };
 
@@ -181,21 +153,11 @@ export default function SearchLayer() {
     }, [zoom, move]);
 
     useEffect(() => {
-        if (ctx.zoomToMapObj.obj !== null) {
-            const { obj: item, animateDist: dist, zoom: z } = ctx.zoomToMapObj;
-            const mapBounds = map.getBounds();
-            const pointLatLng = new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]);
-            const mapCenter = map.getCenter();
-            if (!mapBounds.contains(pointLatLng)) {
-                const distance = mapCenter.distanceTo(pointLatLng);
-                if (distance > dist) {
-                    map.setView(pointLatLng, Math.max(map.getZoom(), z), { animate: false });
-                } else {
-                    map.setView(pointLatLng, Math.max(map.getZoom(), z), { animate: true });
-                }
-            }
+        if (ctx.moveToMapObj) {
+            const [lng, lat] = ctx.moveToMapObj.geometry.coordinates;
+            panToIfNeeded(map, { lat, lng });
         }
-    }, [ctx.zoomToMapObj]);
+    }, [ctx.moveToMapObj]);
 
     async function searchByWord(searchData) {
         const notifyTimeout = showProcessingNotification(ctx);
@@ -258,15 +220,13 @@ export default function SearchLayer() {
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
 
-        prevSelectedRes.current = selectMarker(e.sourceTarget, prevSelectedRes.current);
-
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
             mapObj: true,
         };
         recentSaver(POI_OBJECTS_KEY, poi);
-        ctx.setSelectedWpt({ poi });
+        ctx.setSelectedWpt({ poi, id: e.sourceTarget.options?.idObj });
         if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
             navigateToPoi({ poi }, navigate);
         }
@@ -329,28 +289,28 @@ export default function SearchLayer() {
         }
 
         mainMarkersLayers.forEach((marker) => {
-            createHoverMarker({
+            addMarkerTooltip({
                 marker,
-                setSelectedId: ctx.setSelectedPoiId,
+                setSelectedId: ctx.setSelectedWptId,
                 mainStyle: true,
                 text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
                 iconSize: DEFAULT_ICON_SIZE,
                 map,
                 ctx,
-                pointerStyle: styles.hoverPointer,
+                type: SEARCH_LAYER_ID,
             });
         });
 
         simpleMarkersArr.getLayers().forEach((marker) => {
-            createHoverMarker({
+            addMarkerTooltip({
                 marker,
-                setSelectedId: ctx.setSelectedPoiId,
+                setSelectedId: ctx.setSelectedWptId,
                 text: marker.options[POI_NAME] ?? marker.options[CATEGORY_NAME],
                 latlng: marker._latlng,
                 map,
                 ctx,
-                pointerStyle: styles.hoverPointer,
+                type: SEARCH_LAYER_ID,
             });
         });
         const layers = [...mainMarkersLayers, ...simpleMarkersArr.getLayers()];

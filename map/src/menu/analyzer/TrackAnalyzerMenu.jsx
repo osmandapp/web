@@ -26,6 +26,7 @@ import { TYPE_ANALYZER } from '../../graph/mapGraph/GlobalGraph';
 import ErrorBlock from './ErrorBlock';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import LoginContext from '../../context/LoginContext';
+import { START_POINT, FINISH_POINT } from '../../map/markers/trackPointMarkerFactory';
 
 export const ALL_GROUP_MARKER = '_all_';
 export const MAIN_BLOCK_SIZE = 340;
@@ -397,13 +398,13 @@ export default function TrackAnalyzerMenu() {
                         <Grid sx={{ mx: 2, width: '95%' }} container spacing={2}>
                             <Grid item sx={{ flexGrow: 1, mb: 2, ml: -2, mr: -1 }}>
                                 <PointField
-                                    name={'start'}
+                                    name={START_POINT}
                                     point={startPoint}
                                     setPoint={setStartPoint}
                                     setStartAnalysis={setStartAnalysis}
                                 />
                                 <PointField
-                                    name={'finish'}
+                                    name={FINISH_POINT}
                                     point={finishPoint}
                                     setPoint={setFinishPoint}
                                     setStartAnalysis={setStartAnalysis}

@@ -5,8 +5,9 @@ import mapicons from '../../resources/generated/mapicons.json';
 import shadersicons from '../../resources/generated/shadersicons.json';
 import PoiManager from '../../manager/PoiManager';
 import backgrounds from '../../resources/generated/poiBackgroundIcons.json';
-import { EXPLORE_BIG_ICON_SIZE } from '../util/Clusterizer';
-import styles from '../../menu/search/search.module.css';
+import { startPointIcon } from './StartPointMarker';
+import { intermediatePointIcon } from './IntermediatePointMarker';
+import { destinationPointIcon } from './DestinationPointMarker';
 
 const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
 const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
@@ -25,13 +26,6 @@ export const COLORED_ICONS_PREFIX = 'c_mx_';
 export const SHADERS_PREFIX = 'h_';
 export const COLORED_SHADERS_PREFIX = 'c_h_';
 
-export const DEFAULT_BIG_HOVER_SIZE = EXPLORE_BIG_ICON_SIZE;
-export const DEFAULT_BIG_HOVER_STYLES = {
-    hover: styles.wikiIconHover,
-    large: styles.wikiIconLarge,
-};
-
-// startIcon, interIcon, endIcon, pointerIcons
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
     let svg =
         `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
@@ -44,9 +38,9 @@ const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
 };
 
 const options = {
-    startIcon: MarkerIcon({ bg: '#1976d2' }),
-    interIcon: MarkerIcon({ bg: '#f6791b' }),
-    endIcon: MarkerIcon({ bg: '#ff595e' }),
+    startIcon: startPointIcon,
+    interIcon: intermediatePointIcon,
+    endIcon: destinationPointIcon,
     pointerIcons: MarkerIcon({ bg: '#fec93b' }),
     pointerGraph: L.icon({
         iconUrl: '/map/images/map_icons/circle.svg',
@@ -58,26 +52,10 @@ const options = {
         iconSize: [13, 13],
         clickable: false,
     }),
-    trackStart: L.icon({
-        iconUrl: '/map/images/map_icons/map_track_point_start.svg',
-        iconSize: [60, 60],
-        clickable: false,
-    }),
-    trackEnd: L.icon({
-        iconUrl: '/map/images/map_icons/map_track_point_finish.svg',
-        iconSize: [60, 60],
-        clickable: false,
-    }),
-    trackAnalyzerPointA: L.icon({
-        iconUrl: '/map/images/map_icons/ic_action_point_a_colored.svg',
-        iconSize: [30, 30],
-        clickable: false,
-    }),
-    trackAnalyzerPointB: L.icon({
-        iconUrl: '/map/images/map_icons/ic_action_point_b_colored.svg',
-        iconSize: [30, 30],
-        clickable: false,
-    }),
+    trackStart: startPointIcon,
+    trackEnd: destinationPointIcon,
+    trackAnalyzerPointA: startPointIcon,
+    trackAnalyzerPointB: destinationPointIcon,
 };
 
 export function createPoiIcon({
@@ -98,10 +76,10 @@ export function createPoiIcon({
               ? point?.extensions.color
               : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToRgba(colorBackground);
-    const shapeBackground = background ? background : point?.background;
+    const shapeBackground = background ?? point?.background;
     let svg = getBackground(colorBackground, shapeBackground);
     if (backgroundSize) {
-        svg = changeIconSizeWpt(svg, 0, 48);
+        svg = changeIconSizeWpt(svg, 48, 48);
     }
     if (svg) {
         const idString = `id="se-poi-marker-background-${color}-${background}"`;
@@ -277,63 +255,12 @@ function parseSvgSize(svgHtml) {
 }
 
 function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
-    // ex. oldShapeSize = 24 and old path = d="M1 7L7 1H17L23 7V17L17 23H7L1 17V7Z"
-    // for shapeSize = 30 new path = d="M1 9L9 1H21L29 9V21L21 29H9L1 21V9Z"
-    const values = pathData.match(/[-+]?\d*\.?\d+/g);
-
-    if (values && values.length === 14) {
-        const scaleFactor = shapeSize / oldShapeSize;
-        const newValues = values.map((value) => {
-            const shiftedValue = parseFloat(value) * scaleFactor;
-            return Math.round(shiftedValue);
-        });
-
-        const newPathData = `M${newValues[0]} ${newValues[1]}L${newValues[2]} ${newValues[3]}H${newValues[4]}L${newValues[5]} ${newValues[6]}V${newValues[7]}L${newValues[8]} ${newValues[9]}H${newValues[10]}L${newValues[11]} ${newValues[12]}V${newValues[13]}Z`;
-
-        const minX = Math.min(
-            newValues[0],
-            newValues[2],
-            newValues[4],
-            newValues[5],
-            newValues[8],
-            newValues[10],
-            newValues[11]
-        );
-        const maxX = Math.max(
-            newValues[0],
-            newValues[2],
-            newValues[4],
-            newValues[5],
-            newValues[8],
-            newValues[10],
-            newValues[11]
-        );
-        const minY = Math.min(
-            newValues[1],
-            newValues[3],
-            newValues[6],
-            newValues[7],
-            newValues[9],
-            newValues[12],
-            newValues[13]
-        );
-        const maxY = Math.max(
-            newValues[1],
-            newValues[3],
-            newValues[6],
-            newValues[7],
-            newValues[9],
-            newValues[12],
-            newValues[13]
-        );
-
-        const realWidth = maxX - minX;
-        const realHeight = maxY - minY;
-
-        return { newPathData, realWidth, realHeight };
-    }
-
-    return { newPathData: pathData, realWidth: 0, realHeight: 0 };
+    // Scale all numbers in path by shapeSize/oldShapeSize; keep command structure (M,L,H,V etc.) unchanged
+    const scaleFactor = shapeSize / oldShapeSize;
+    const newPathData = pathData.replaceAll(/[-+]?\d*\.?\d+/g, (num) =>
+        Math.round(Number.parseFloat(num) * scaleFactor)
+    );
+    return { newPathData, realWidth: shapeSize, realHeight: shapeSize };
 }
 
 // only for icons with image (with href)
@@ -356,9 +283,7 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
 
     svgHtml = svgHtml.replace(viewBoxPattern, () => {
         // Update the sizes inside viewBox
-        const newWidth = shapeSize;
-        const newHeight = shapeSize;
-        return `viewBox="0 0 ${newWidth} ${newHeight}"`;
+        return `viewBox="0 0 ${shapeSize} ${shapeSize}"`;
     });
 
     // Remove <g> wrapper around <image> if it exists and process the <image>

@@ -7,9 +7,7 @@ import { formatLatLon } from '../navigation/NavigationPointsManager';
 import { parseCoordinates } from './util/PointsManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
-
-const START_POINT = 'start';
-const FINISH_POINT = 'finish';
+import { START_POINT } from '../../map/markers/trackPointMarkerFactory';
 
 export default function PointField({ name, point, setPoint, setStartAnalysis }) {
     const [pointValue, setPointValue] = useState('');

@@ -1,141 +1,211 @@
 import { useEffect } from 'react';
-import { createSecondaryMarker } from '../../../map/util/Clusterizer';
-import { POI_ID } from '../../../infoblock/components/wpt/WptTagsProvider';
-import HoverMarker, {
-    hideSelectedMarker,
-    isNewSelectedExploreMarker,
-    selectMarker,
-} from '../../../map/util/MarkerSelectionService';
-import { MENU_INFO_CLOSE_SIZE } from '../../../manager/GlobalManager';
+import {
+    FINAL_POI_ICON_NAME,
+    ICON_KEY_NAME,
+    POI_ID,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../../infoblock/components/wpt/WptTagsProvider';
+import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
+import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
+import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
+import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 
-export const COLOR_POINTER = '#237bff';
-export const SELECTED_POI_COLOR = '#237bff';
+function extractLatlng(selectedWptId, type) {
+    const obj = selectedWptId?.obj;
+    if (!obj) return null;
 
-// The marker has two selection states:
-// 1. On hover, a COLOR_POINTER circular outline appears around the marker. (ctx.selectedPoiId)
-// 2. On click, the marker’s color changes to COLOR_POINTER to indicate it’s selected. (ctx.selectedWpt.poi)
+    if (type === FAVORITE_FILE_TYPE) return obj.getLatLng() ?? null;
 
-export function useSelectMarkerOnMap({
-    ctx,
-    layers,
-    type,
-    map,
-    prevSelectedMarker = { current: null },
-    mainIconsLayerRef = null,
-    otherIconsLayerRef = null,
-}) {
-    const selectedObjId = ctx.selectedWpt?.wikidata?.properties?.id ?? ctx.selectedWpt?.poi?.options[POI_ID];
+    const coords = obj.geometry?.coordinates;
+    if (coords?.length >= 2) return { lat: coords[1], lng: coords[0] };
 
-    // add hover marker
+    return null;
+}
+
+function iconHtmlFromIconName(finalIconName) {
+    if (!finalIconName) return null;
+    const url = getIconUrlByName('poi', finalIconName) || getIconUrlByName('map', finalIconName);
+    return url ? `<image href="${url}" />` : null;
+}
+
+const loadedPhotoUrls = new Set();
+
+function resolveLayers(getLayers, layersProp) {
+    if (typeof getLayers === 'function') return getLayers();
+    if (Array.isArray(layersProp)) return layersProp;
+    return null;
+}
+
+function findLayerById(layers, id) {
+    if (!layers?.length || !id) return null;
+    return (
+        layers.find((l) => {
+            const opts = l?.options ?? {};
+            return opts.idObj === id || opts[POI_ID] === id;
+        }) ?? null
+    );
+}
+
+export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map }) {
+    const selectedObjId = ctx.selectedWpt?.id ?? null;
+
+    const hoverId =
+        ctx.selectedWptId?.type === type &&
+        ctx.selectedWptId?.show !== false &&
+        ctx.selectedWptId?.id !== -1 &&
+        ctx.selectedWptId?.id != null
+            ? ctx.selectedWptId.id
+            : null;
+
+    // ========== SELECTED PIN ==========
     useEffect(() => {
-        if (layers && ctx.selectedPoiId?.id && ctx.selectedPoiId?.type === type) {
-            hideOldMarker();
-            let foundMarker = null;
-            layers.forEach((layer) => {
-                if (layer.options.idObj === ctx.selectedPoiId.id) {
-                    foundMarker = layer;
-                }
-            });
-            if (foundMarker && foundMarker.options.idObj !== selectedObjId) {
-                removeOldPointer();
-                if (ctx.selectedPoiId.show) {
-                    foundMarker.fire('selectMarker'); // Show the selected marker
-                } else {
-                    foundMarker.fire('mouseout'); // Hide the marker
-                }
-            } else {
-                if (
-                    ctx.selectedPoiId.show &&
-                    !ctx.selectedSearchMarker &&
-                    foundMarker?.options.idObj !== selectedObjId
-                ) {
-                    const circle = createSecondaryMarker(ctx.selectedPoiId.obj);
-                    if (circle) {
-                        ctx.setSelectedSearchMarker(circle);
-                        circle.paintDot(COLOR_POINTER);
-                        circle.addTo(map);
-                    }
-                } else if (!ctx.selectedPoiId.show && ctx.selectedSearchMarker) {
-                    removeOldPointer();
-                }
-            }
-        }
-    }, [ctx.selectedPoiId, layers, type]);
+        if (!map) return;
 
-    // Change the marker’s color to COLOR_POINTER
-    useEffect(() => {
-        if (!ctx.selectedWpt && prevSelectedMarker?.current) {
-            // hide old marker after closing left info
-            hideSelectedMarker(prevSelectedMarker.current, type);
-            prevSelectedMarker.current = null;
+        if (!selectedObjId) {
+            resetSelectedPin({ ctx, map });
             return;
         }
-        layers?.forEach((layer) => {
-            if (layer.options.idObj === selectedObjId) {
-                if (ctx.selectedPoiId?.show === false) {
-                    hideSelectedMarker(prevSelectedMarker.current, type);
-                    prevSelectedMarker.current = null;
-                } else {
-                    if (
-                        prevSelectedMarker.current &&
-                        prevSelectedMarker.current.options.idObj === layer.options.idObj
-                    ) {
-                        // If the marker is already selected, do nothing
-                        return;
-                    }
-                    prevSelectedMarker.current = selectMarker(layer, prevSelectedMarker.current, type);
-                    if (isNewSelectedExploreMarker(selectedObjId, prevSelectedMarker.current.options.hover, map)) {
-                        prevSelectedMarker.current.options.hover.addTo(map);
-                    }
-                }
-            }
-        });
-    }, [ctx.selectedWpt, layers]);
 
-    useEffect(() => {
-        if (ctx.infoBlockWidth === `${MENU_INFO_CLOSE_SIZE}px`) {
-            hideSelectedMarker(prevSelectedMarker.current, type);
+        // Skip if the correct pin is already on the map
+        const existingPin = ctx.selectedCreatedLayerRef?.current;
+        if (existingPin && map.hasLayer(existingPin) && existingPin.options?.idObj === selectedObjId) {
+            return;
         }
-    }, [ctx.infoBlockWidth]);
 
+        const found = findLayerById(resolveLayers(getLayers, layersProp), selectedObjId);
+        if (found) {
+            applyPinForLayer(found, true);
+        }
+    }, [selectedObjId, type, getLayers, layersProp]);
+
+    // ========== HOVER PIN ==========
     useEffect(() => {
-        const onLayersUpdated = () => {
-            if (!prevSelectedMarker.current) return;
-            mainIconsLayerRef?.current?.getLayers().forEach((layer) => {
-                if (layer.options.idObj === selectedObjId) {
-                    if (!prevSelectedMarker.current.options.hover) {
-                        prevSelectedMarker.current.options.hover = new HoverMarker(layer).build();
-                        prevSelectedMarker.current.options.hover.addTo(map);
-                    }
-                }
-            });
-            otherIconsLayerRef?.current?.getLayers().forEach((layer) => {
-                if (layer.options.idObj === selectedObjId) {
-                    if (prevSelectedMarker.current.options?.hover) {
-                        prevSelectedMarker.current.options.hover.remove();
-                        prevSelectedMarker.current.options.hover = null;
-                    }
-                    layer.paintDot(SELECTED_POI_COLOR);
-                }
-            });
-        };
-        map.on('explore-layers-updated', onLayersUpdated);
-        return () => map.off('explore-layers-updated', onLayersUpdated);
-    }, [layers]);
+        if (!map || selectedObjId) return;
 
-    function hideOldMarker() {
-        if (ctx.selectedPoiId.prev && ctx.selectedPoiId.prev.id !== ctx.selectedPoiId.id) {
-            const prevMarker = layers.find((layer) => layer.options.idObj === ctx.selectedPoiId.prev.id);
-            if (prevMarker) {
-                prevMarker.fire('mouseout');
+        if (!hoverId) {
+            resetSelectedPin({ ctx, map });
+            return;
+        }
+
+        const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
+        if (found) {
+            applyPinForLayer(found, false);
+        } else {
+            // Marker not on the map (e.g. hidden by clustering) — create a temporary hover pin.
+            const latlng = extractLatlng(ctx.selectedWptId, type);
+            if (latlng) {
+                applyHoverPinFallback(latlng);
             }
+        }
+    }, [hoverId, selectedObjId, type, getLayers, layersProp]);
+
+    // Builds markerData from layer options
+    function applyPinForLayer(layer, isSelection) {
+        const latlng = layer.getLatLng();
+        if (!latlng) return;
+
+        // Skip if this layer is already the active pin
+        const currentRef = isSelection ? ctx.selectedCreatedLayerRef?.current : ctx.selectedUpdatedLayerRef?.current;
+        if (currentRef === layer) return;
+
+        const photoUrl = layer.options?.photoUrl;
+        if (photoUrl) {
+            applyPhotoPin(layer, latlng, photoUrl, isSelection);
+            return;
+        }
+
+        const markerData = buildMarkerData(layer, isSelection, type);
+        if (!markerData.iconHtml && layer.options?.simple) {
+            const props = ctx.selectedWptId?.obj?.properties;
+            markerData.iconHtml = iconHtmlFromIconName(
+                props?.[FINAL_POI_ICON_NAME] ??
+                    getIconNameForPoiType({
+                        iconKeyName: props?.[ICON_KEY_NAME],
+                        typeOsmTag: props?.[TYPE_OSM_TAG],
+                        typeOsmValue: props?.[TYPE_OSM_VALUE],
+                    })
+            );
+        }
+
+        applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
+    }
+
+    function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
+        const markerData = {
+            color: DEFAULT_POI_COLOR,
+            iconHtml: `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`,
+        };
+        applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
+
+        if (!loadedPhotoUrls.has(photoUrl)) {
+            const img = new Image();
+            img.onload = () => loadedPhotoUrls.add(photoUrl);
+            img.src = photoUrl;
         }
     }
 
-    function removeOldPointer() {
-        if (ctx.selectedSearchMarker && map.hasLayer(ctx.selectedSearchMarker)) {
-            map.removeLayer(ctx.selectedSearchMarker);
-            ctx.setSelectedSearchMarker(null);
+    function applyHoverPinFallback(latlng) {
+        const photoUrl = ctx.selectedWptId?.photoUrl;
+        if (photoUrl) {
+            applyPhotoPin(null, latlng, photoUrl, false);
+            return;
         }
+
+        const markerOpts = ctx.selectedWptId?.markerOptions ?? {};
+        const props = ctx.selectedWptId?.obj?.properties;
+        const iconHtml =
+            markerOpts.iconHtml ??
+            iconHtmlFromIconName(
+                props?.[FINAL_POI_ICON_NAME] ??
+                    getIconNameForPoiType({
+                        iconKeyName: props?.[ICON_KEY_NAME],
+                        typeOsmTag: props?.[TYPE_OSM_TAG],
+                        typeOsmValue: props?.[TYPE_OSM_VALUE],
+                    })
+            );
+
+        applySelectedPin({
+            ctx,
+            map,
+            layer: null,
+            latlng,
+            markerData: {
+                color: markerOpts.color ?? DEFAULT_POI_COLOR,
+                background: markerOpts.background ?? DEFAULT_POI_SHAPE,
+                iconHtml,
+            },
+            isSelection: false,
+        });
+    }
+
+    function buildMarkerData(layer, isSelection, layerType) {
+        const isSimpleDot = !!layer.options?.simple;
+        const isFavorites = layerType === FAVORITE_FILE_TYPE;
+        const iconFromLayer = layer.options?.icon?.options?.html;
+
+        let iconHtml;
+        if (isSimpleDot) {
+            iconHtml = iconHtmlFromIconName(layer.options?.[FINAL_POI_ICON_NAME]) ?? '';
+        } else if (isSelection) {
+            if (isFavorites) {
+                iconHtml = iconFromLayer ?? '';
+            } else {
+                iconHtml = layer.options?.svg ?? '';
+            }
+        } else {
+            // hover
+            if (isFavorites) {
+                iconHtml = layer.options?.originalIcon?.options?.html ?? iconFromLayer ?? '';
+            } else {
+                iconHtml = layer.options?.svg ?? layer.options?.originalIcon?.options?.html ?? '';
+            }
+        }
+
+        return {
+            color: (isSimpleDot ? layer.options?.fillColor : layer.options?.color) ?? DEFAULT_POI_COLOR,
+            background: layer.options?.background ?? DEFAULT_POI_SHAPE,
+            iconHtml,
+        };
     }
 }

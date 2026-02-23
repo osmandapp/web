@@ -343,11 +343,7 @@ export const AppContextProvider = (props) => {
     const [forceSearch, setForceSearch] = useState(false);
     const [selectedSearchMarker, setSelectedSearchMarker] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
-    const [zoomToMapObj, setZoomToMapObj] = useState({
-        obj: null,
-        zoom: 17,
-        animateDist: 1000000,
-    });
+    const [moveToMapObj, setMoveToMapObj] = useState(null);
     const [visibleBounds, setVisibleBounds] = useState(null);
     const [exploreMenu, setExploreMenu] = useState(false);
     const [poiCatMenu, setPoiCatMenu] = useState(false);
@@ -467,7 +463,7 @@ export const AppContextProvider = (props) => {
     const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
-    const [selectedPoiId, setSelectedPoiId] = useState(null);
+    const [selectedWptId, setSelectedWptId] = useState(null);
 
     const [navigationHistory, setNavigationHistory] = useState([]);
 
@@ -825,8 +821,8 @@ export const AppContextProvider = (props) => {
                 setSearchSettings,
                 loadingContextItem,
                 setLoadingContextItem,
-                selectedPoiId,
-                setSelectedPoiId,
+                selectedWptId,
+                setSelectedWptId,
                 openMenu,
                 setOpenMenu,
                 openContextMenu,
@@ -870,8 +866,8 @@ export const AppContextProvider = (props) => {
                 setOpenProFeatures,
                 selectedSearchMarker,
                 setSelectedSearchMarker,
-                zoomToMapObj,
-                setZoomToMapObj,
+                moveToMapObj,
+                setMoveToMapObj,
                 shareFile,
                 setShareFile,
                 updatedRequestList,
