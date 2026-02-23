@@ -241,28 +241,24 @@ export async function apiGet(url, options = null) {
         }
     }
 
-    // Safe methods that return already-fetched data — no stream read (avoids AbortError in caller)
-    const safeJson = () =>
-        data != null && typeof data === 'object'
-            ? Promise.resolve(data)
-            : typeof data === 'string'
-              ? Promise.resolve(JSON.parse(data))
-              : response.clone().json();
-    const safeText = () => Promise.resolve(typeof data === 'string' ? data : JSON.stringify(data ?? ''));
-    const safeBlob = () => (data instanceof Blob ? Promise.resolve(data) : response.clone().blob());
-
     if (cacheKey) {
         // console.debug('cache-store', cacheKey);
-        cache[cacheKey] = Object.assign(response, { data, blob: safeBlob, json: safeJson, text: safeText });
+        const cached = Object.assign(response, {
+            data, // axios
+            blob: async () => await response.clone().blob(), // resolved
+            json: async () => await response.clone().json(), // resolved
+            text: async () => await response.clone().text(), // resolved
+        });
+        cache[cacheKey] = cached;
     }
 
     seleniumUpdateActivity();
 
     return Object.assign(response, {
-        data,
-        blob: safeBlob,
-        json: safeJson,
-        text: safeText,
+        data, // data is for axios lovers :)
+        blob: response.blob, // original
+        json: response.json, // original
+        text: response.text, // original
     });
 }
 
