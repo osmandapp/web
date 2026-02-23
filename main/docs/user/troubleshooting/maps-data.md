@@ -19,6 +19,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 OsmAnd is designed to support OpenStreetMap (OSM) and prioritizes this path as much as possible. Additionally, there are licensing restrictions that do not allow OsmAnd to be distributed with Google Maps data.
 
+### Why Google Maps links may not open in OsmAnd? {#why-google-maps-links-may-not-open-in-osmand}
+
+Google Maps links like `https://maps.app.goo.gl/...` may not open in OsmAnd with a single tap from SMS or messengers. Even if OsmAnd can parse these links, Android 12+ enforces Verified App Links: core Google domains (for example `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) are reserved for Google system services, so third-party apps cannot automatically intercept them. As a result, the link will usually open in a Google app/service.
+
+**Workaround:** *long-tap the message → Share → select OsmAnd*. This sends the link to OsmAnd, where it can be parsed and opened as a location.
+
 ### Maps slowly loading on Android 11, 12 (SD card) {#maps-slowly-loading-on-android-11-12-sd-card}
 
 Due to the new [storage access rules introduced in Android 11 and 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), users may experience slower performance when accessing maps stored on SD cards. These changes can also cause visibility and access restrictions for files in SD card folders. More discussions and technical insights can be found on the following links: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
