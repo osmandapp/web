@@ -5,7 +5,7 @@ import { ReactComponent as ClearIcon } from '../../assets/icons/ic_action_cancel
 import styles from './routemenu.module.css';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { COLOR_BTN_BLUE } from './NavigationMenu';
-import { START_POINT, FINISH_POINT, INTERMEDIATE_POINT } from './NavigationInputRow';
+import { START_POINT, INTERMEDIATE_POINT, FINISH_POINT } from '../../map/markers/trackPointMarkerFactory';
 
 const NavigationInput = forwardRef(function NavigationInput(
     {

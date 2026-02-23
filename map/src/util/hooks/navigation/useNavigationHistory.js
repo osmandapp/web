@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../../store/geoRouter/profileConstants';
-import { FINISH_POINT, INTERMEDIATE_POINT, START_POINT } from '../../../menu/navigation/NavigationInputRow';
+import { START_POINT, INTERMEDIATE_POINT, FINISH_POINT } from '../../../map/markers/trackPointMarkerFactory';
 import { navigationObject } from '../../../store/navigationObject/navigationObject';
 
 export default function useNavigationHistory(navObject, ctx) {
