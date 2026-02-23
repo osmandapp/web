@@ -132,8 +132,8 @@ export async function loadSmartFolders(setSmartFolders, listFiles) {
     const res = await getSmartFolders();
     const smartFolders = (res ?? []).map((smartFolder) => {
         const files = {};
-        (smartFolder.fileIds ?? []).forEach((fileId) => {
-            const file = listFiles?.find(f => f.id === fileId);
+        (smartFolder.userFilePaths ?? []).forEach((path) => {
+            const file = listFiles?.find(f => f.name === path);
             if (file) {
                 files[file.name] = { ...file, smartFolder: true };
             }
