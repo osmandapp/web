@@ -3,6 +3,10 @@ import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
+import { getStartPointIconSvg } from '../markers/StartPointMarker';
+import { getIntermediatePointIconSvg } from '../markers/IntermediatePointMarker';
+import { getDestinationPointIconSvg } from '../markers/DestinationPointMarker';
+import { ICON_STATE_DEFAULT, ICON_STATE_HOVER, ICON_STATE_MOVED } from '../markers/trackPointMarkerFactory';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import {
     ROUTE_POINTS_START,
@@ -15,6 +19,11 @@ import { navigationObject } from '../../store/navigationObject/navigationObject'
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
 
 const DRAG_DEBOUNCE_MS = 10;
+
+function setMarkerIconHtml(marker, html) {
+    const el = marker?.getElement?.();
+    if (el && html) el.innerHTML = html;
+}
 
 function moveableMarker(routeObject, map, marker) {
     let startPx = null;
@@ -191,22 +200,29 @@ const NavigationLayer = ({ geocodingData, region }) => {
     const pinPointRef = useRef(null);
     const startEventHandlers = useCallback(
         {
-            drag() {
-                const marker = startPointRef.current;
-                if (marker != null) {
-                    debouncer(() => routeObject.setOption(ROUTE_POINTS_START, marker.getLatLng()));
-                }
+            drag(e) {
+                const marker = e.target;
+                setMarkerIconHtml(marker, getStartPointIconSvg(ICON_STATE_MOVED));
+                if (marker != null) debouncer(() => routeObject.setOption(ROUTE_POINTS_START, marker.getLatLng()));
             },
-            dragstart() {
+            dragstart(e) {
                 routeObject.onDragStart();
+                setMarkerIconHtml(e.target, getStartPointIconSvg(ICON_STATE_MOVED));
             },
-            dragend() {
+            dragend(e) {
                 routeObject.onDragEnd();
-                const marker = startPointRef.current;
+                const marker = e.target;
                 if (marker != null) {
+                    setMarkerIconHtml(marker, getStartPointIconSvg(ICON_STATE_DEFAULT));
                     routeObject.setOption(ROUTE_POINTS_START, marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
+            },
+            mouseover(e) {
+                setMarkerIconHtml(e.target, getStartPointIconSvg(ICON_STATE_HOVER));
+            },
+            mouseout(e) {
+                setMarkerIconHtml(e.target, getStartPointIconSvg(ICON_STATE_DEFAULT));
             },
             click() {
                 if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
@@ -219,22 +235,29 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     const endEventHandlers = useCallback(
         {
-            drag() {
-                const marker = finishPointRef.current;
-                if (marker != null) {
-                    debouncer(() => routeObject.setOption(ROUTE_POINTS_FINISH, marker.getLatLng()));
-                }
+            drag(e) {
+                const marker = e.target;
+                setMarkerIconHtml(marker, getDestinationPointIconSvg(ICON_STATE_MOVED));
+                if (marker != null) debouncer(() => routeObject.setOption(ROUTE_POINTS_FINISH, marker.getLatLng()));
             },
-            dragstart() {
+            dragstart(e) {
                 routeObject.onDragStart();
+                setMarkerIconHtml(e.target, getDestinationPointIconSvg(ICON_STATE_MOVED));
             },
-            dragend() {
+            dragend(e) {
                 routeObject.onDragEnd();
-                const marker = finishPointRef.current;
+                const marker = e.target;
                 if (marker != null) {
+                    setMarkerIconHtml(marker, getDestinationPointIconSvg(ICON_STATE_DEFAULT));
                     routeObject.setOption(ROUTE_POINTS_FINISH, marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
+            },
+            mouseover(e) {
+                setMarkerIconHtml(e.target, getDestinationPointIconSvg(ICON_STATE_HOVER));
+            },
+            mouseout(e) {
+                setMarkerIconHtml(e.target, getDestinationPointIconSvg(ICON_STATE_DEFAULT));
             },
             click() {
                 if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
@@ -261,22 +284,36 @@ const NavigationLayer = ({ geocodingData, region }) => {
     const intermediateEventHandlers = useCallback(
         {
             drag(event) {
+                const marker = event.target;
+                setMarkerIconHtml(marker, getIntermediatePointIconSvg(ICON_STATE_MOVED));
                 debouncer(() => {
-                    const ind = event.target.options['data-index'];
+                    const ind = marker?.options?.['data-index'];
+                    if (ind == null) return;
                     const newViaPoints = Object.assign([], viaPoints);
-                    newViaPoints[ind] = event.target.getLatLng();
+                    newViaPoints[ind] = marker.getLatLng();
                     routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
                 });
             },
-            dragstart() {
+            dragstart(event) {
                 routeObject.onDragStart();
+                setMarkerIconHtml(event.target, getIntermediatePointIconSvg(ICON_STATE_MOVED));
             },
             dragend(event) {
                 routeObject.onDragEnd();
-                const ind = event.target.options['data-index'];
-                const newViaPoints = Object.assign([], viaPoints);
-                newViaPoints[ind] = event.target.getLatLng();
-                routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+                const marker = event.target;
+                if (marker != null) {
+                    setMarkerIconHtml(marker, getIntermediatePointIconSvg(ICON_STATE_DEFAULT));
+                    const ind = marker.options['data-index'];
+                    const newViaPoints = Object.assign([], viaPoints);
+                    newViaPoints[ind] = marker.getLatLng();
+                    routeObject.setOption(ROUTE_POINTS_VIA, newViaPoints);
+                }
+            },
+            mouseover(event) {
+                setMarkerIconHtml(event.target, getIntermediatePointIconSvg(ICON_STATE_HOVER));
+            },
+            mouseout(event) {
+                setMarkerIconHtml(event.target, getIntermediatePointIconSvg(ICON_STATE_DEFAULT));
             },
         },
         [viaPoints]

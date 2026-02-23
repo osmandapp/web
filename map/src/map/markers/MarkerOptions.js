@@ -5,8 +5,9 @@ import mapicons from '../../resources/generated/mapicons.json';
 import shadersicons from '../../resources/generated/shadersicons.json';
 import PoiManager from '../../manager/PoiManager';
 import backgrounds from '../../resources/generated/poiBackgroundIcons.json';
-import { EXPLORE_BIG_ICON_SIZE } from '../util/Clusterizer';
-import styles from '../../menu/search/search.module.css';
+import { startPointIcon } from './StartPointMarker';
+import { intermediatePointIcon } from './IntermediatePointMarker';
+import { destinationPointIcon } from './DestinationPointMarker';
 
 const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
 const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
@@ -25,7 +26,6 @@ export const COLORED_ICONS_PREFIX = 'c_mx_';
 export const SHADERS_PREFIX = 'h_';
 export const COLORED_SHADERS_PREFIX = 'c_h_';
 
-// startIcon, interIcon, endIcon, pointerIcons
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
     let svg =
         `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
@@ -38,9 +38,9 @@ const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
 };
 
 const options = {
-    startIcon: MarkerIcon({ bg: '#1976d2' }),
-    interIcon: MarkerIcon({ bg: '#f6791b' }),
-    endIcon: MarkerIcon({ bg: '#ff595e' }),
+    startIcon: startPointIcon,
+    interIcon: intermediatePointIcon,
+    endIcon: destinationPointIcon,
     pointerIcons: MarkerIcon({ bg: '#fec93b' }),
     pointerGraph: L.icon({
         iconUrl: '/map/images/map_icons/circle.svg',
@@ -52,26 +52,10 @@ const options = {
         iconSize: [13, 13],
         clickable: false,
     }),
-    trackStart: L.icon({
-        iconUrl: '/map/images/map_icons/map_track_point_start.svg',
-        iconSize: [60, 60],
-        clickable: false,
-    }),
-    trackEnd: L.icon({
-        iconUrl: '/map/images/map_icons/map_track_point_finish.svg',
-        iconSize: [60, 60],
-        clickable: false,
-    }),
-    trackAnalyzerPointA: L.icon({
-        iconUrl: '/map/images/map_icons/ic_action_point_a_colored.svg',
-        iconSize: [30, 30],
-        clickable: false,
-    }),
-    trackAnalyzerPointB: L.icon({
-        iconUrl: '/map/images/map_icons/ic_action_point_b_colored.svg',
-        iconSize: [30, 30],
-        clickable: false,
-    }),
+    trackStart: startPointIcon,
+    trackEnd: destinationPointIcon,
+    trackAnalyzerPointA: startPointIcon,
+    trackAnalyzerPointB: destinationPointIcon,
 };
 
 export function createPoiIcon({
