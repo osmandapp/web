@@ -1,0 +1,93 @@
+---
+slug: osmand-ios-5-3-released
+title: OsmAnd 5.3 (iOS)
+authors: eugene
+tags: [release, ios]
+unlisted: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+OsmAnd 5.3 for iOS — Now Available!
+
+We're excited to announce the release of OsmAnd 5.3 for iOS! This update delivers powerful customization and clarity improvements. Key features include the new Marine Map Style for nautical navigation, Custom Button Binding for external controllers to map any Quick Action, and enhanced map display with text outlines for all widgets and a precision grid for aligning map buttons. Download now for a smoother, more personalized experience!
+
+[🔄 **Update Now**](https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
+
+
+<!--truncate-->
+
+## What's new
+
+- Last Uphill / Last Downhill mode for [Trip recording widgets](#new-trip-recording-widgets), with switching between total and last ascent/descent;
+- Updated [Distance widget](#multiple-display-modes) with modes for total distance, last uphill distance and last downhill distance;
+- Added [Max Speed widget](#max-speed-widget) showing maximum speed for the whole trip or for the most recent uphill/downhill section;
+- Added [Average Slope widget](#average-slope-widget) showing the average slope of the latest ascent or descent;
+- Added [Moving Time widget](#moving-time-widget) showing the the moving time for the currently recorded trip, or the last uphill and downhill;
+- *Show track on map* quick action added to the Trip recording widget group;
+- Improvements in route selection and altitude graph integration under the updated rendering scheme;
+- Elevation graph widget for navigation, displaying a compact profile along routes or GPX tracks;
+- [Popular places](https://osmand.net/docs/user/map/popular_places/) layer updated with POI source selection and optional image previews on the map;
+- Enhanced POI search results with consistent city display, refined layout, optional thumbnails and clearer alternative names;
+- Default appearance settings for track folders, allowing new tracks to inherit a unified folder style;
+- [Bug fixes](#bug-fixes).
+
+<!--
+- New Explore section in Search with “Popular places nearby” and improved offline/no-data states.
+-->
+
+## New Trip Recording Widgets {#new-trip-recording-widgets}
+
+### Multiple Display Modes {#multiple-display-modes}
+
+Some Trip Recording widgets support multiple display modes. They let you switch between overall trip values and metrics for the most recent uphill or downhill section of the currently recorded trip. See the list of available modes [here](https://osmand.net/docs/user/plugins/trip-recording#display-modes).
+
+### Max Speed Widget {#max-speed-widget}
+
+[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#additional-widgets) shows the maximum speed for the currently recorded trip in the selected mode: *Total (default)*, *Last downhill*, or *Last uphill*.
+
+![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)
+
+### Average Slope Widget {#average-slope-widget}
+
+[Average Slope widget](https://osmand.net/docs/user/plugins/trip-recording#additional-widgets) displays the average slope for the last uphill or downhill section of the current trip, depending on the selected mode.
+
+![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)
+
+### Moving Time Widget {#moving-time-widget}
+
+[Moving Time widget](https://osmand.net/docs/user/plugins/trip-recording#additional-widgets) shows the moving time for the currently recorded trip, or the time for the last uphill and downhill, depending on the selected mode.
+
+![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)
+
+## Bug fixes {#bug-fixes} 
+
+- Faster opening of context menus when tapping POIs, Favorites, tracks and buildings.
+- Correct handling of relation-based POIs on multipolygons.
+- Fixed “null” appearing instead of a city name in POI search results and improved night-mode background consistency.
+- Restored tappable behaviour for fitness, running and canoe routes with shields.
+
+
+
+_______________________
+
+
+If you have suggestions for improving the iOS version of the app, please get in touch with us. We appreciate and welcome your contribution to the further development of OsmAnd.
+
+______________________
+- **Follow**: <LinksSocial/>  
+
+- **Join**: <LinksTelegram/>  
+
+- **Get**: 
+
+&nbsp;<AppleStore/>
