@@ -1,8 +1,9 @@
 ---
-source-hash: 4cb7c9084c7789ea96d9afde0dedc4fd456fd2ec20405b46d983a36f733ea01e
+source-hash: 3e42829208c8917b36961ec73fb21e320c1dcf70572f1c674c9c940e72223a0e
 sidebar_position: 8
 title:  الخرائط عبر الإنترنت
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -24,7 +24,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 يتم تفعيل إمكانية استخدام الخرائط عبر الإنترنت تلقائيًا في إصدار iOS من OsmAnd. لعرض الخرائط عبر الإنترنت في أندرويد، تحتاج إلى إجراء الإعدادات التالية:
 
 1. [تفعيل](../plugins/index.md#enable--disable) إضافة **الخرائط عبر الإنترنت** في *القائمة الرئيسية ← الإضافات ← الخرائط عبر الإنترنت*.
-2. قم بالإعدادات اللازمة في قسم [مصدر الخريطة](../map/raster-maps.md#select-raster-maps) من قائمة تكوين الخريطة.
+2. قم بالإعدادات اللازمة في قسم [مصدر الخريطة](../map/raster-maps.md#layers) من قائمة تكوين الخريطة.
 3. اضبط خريطة *مصدر الخريطة* و*الطبقة العلوية* و*الطبقة السفلية*. اختر مزود خرائط الأقمار الصناعية المفضل لديك.
 4. قم بتنزيل [الخريطة عبر الإنترنت](#how-to-prepare-raster-maps) المحددة إذا لزم الأمر.
 
@@ -33,16 +33,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 يمكنك العثور على معلومات مفصلة حول تصور وتخصيص الخرائط النقطية في مقال [الخرائط النقطية](../map/raster-maps.md). كيفية الاستخدام:
 
-1. [اختر](../map/raster-maps.md#select-raster-maps) الخريطة النقطية كطبقة *رئيسية* أو *سفلية* أو *علوية*.
-    - [تغيير](../map/raster-maps.md#how-to-use-raster-maps) معلمات الطبقة (الشفافية).
+1. [اختر](../map/raster-maps.md#layers) الخريطة النقطية كطبقة *رئيسية* أو *سفلية* أو *علوية*.
+    - [تغيير](../map/raster-maps.md#overlay) معلمات الطبقة (الشفافية).
 
-2. [تحضير / نسخ](../map/raster-maps.md#preparecopy-raster-maps-to-device) الخرائط النقطية إلى الجهاز.
-    - [إضافة مصدر خريطة نقطية جديد عبر الإنترنت](../map/raster-maps.md#add-new-online-raster-map-source)
+2. [تحضير / نسخ](../map/raster-maps.md#preparecopy-maps) الخرائط النقطية إلى الجهاز.
+    - [إضافة مصدر خريطة نقطية جديد عبر الإنترنت](../map/raster-maps.md#add-new-online-source)
     - [إضافة رابط سحري](../map/raster-maps.md#magic-url-to-install-map-source) لتثبيت مصدر الخريطة.
 
-3. [إدارة](../map/raster-maps.md#manage-raster-maps) الخرائط النقطية.
+3. [إدارة](../map/raster-maps.md#manage-map-data) الخرائط النقطية.
     - [تنزيل / تحديث المربعات](../map/raster-maps.md#download--update-tiles).
-    - [تغيير](../map/raster-maps.md#change-raster-map-parameters) معلمات الخريطة النقطية.
+    - [تغيير](../map/raster-maps.md#change-parameters) معلمات الخريطة النقطية.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -101,4 +101,4 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
   
     - تحقق من تفعيل إضافة الخرائط عبر الإنترنت: *القائمة ← الإضافات ← الخرائط عبر الإنترنت*.  
     - تأكد من وجود اتصال نشط بالإنترنت للوصول إلى صور الأقمار الصناعية.  
-    - تحقق مما إذا كانت الخريطة عبر الإنترنت المحددة قد تم تنزيلها أو تتطلب [إعدادات إضافية](../map/raster-maps.md#select-raster-maps).
+    - تحقق مما إذا كانت الخريطة عبر الإنترنت المحددة قد تم تنزيلها أو تتطلب [إعدادات إضافية](../map/raster-maps.md#layers).

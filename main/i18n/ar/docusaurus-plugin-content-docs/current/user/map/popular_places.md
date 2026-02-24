@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: الأماكن المشهورة
 ---
@@ -19,6 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 ## نظرة عامة {#overview}
+
+:::tip شراء
+الأماكن المشهورة هي [ميزة مدفوعة](../purchases/index.md).  
+:::
 
 تسلط ميزة **الأماكن المشهورة** في OsmAnd الضوء على المعالم البارزة ومناطق الجذب السياحي باستخدام بيانات منظمة مفتوحة من [ويكيداتا](https://www.wikidata.org) و[ويكيبيديا](https://www.wikipedia.org/). وهي تساعد المستخدمين على استكشاف الوجهات المعروفة مع أوصاف وصور متعددة اللغات.
 

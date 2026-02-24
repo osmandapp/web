@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Navigational Widgets
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  هذه الأداة يمكنك استخدامها فقط مع ميزة Pro  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">مشتركو OsmAnd Pro</a>.
-
+:::info Pro feature
+أداة الارتفاع هي ميزة مدفوعة لـ [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 تعرض أداة الارتفاع رسمًا بيانيًا مع الارتفاع وميل طريق التنقل الخاص بك وموقعك الحالي على هذا الرسم البياني مع الارتفاع الحالي والميل. يتم رسم الرسم البياني على محورين. المحور X هو مسافة طريقك. المحور Y هو الارتفاع، والقيمة تعتمد على التضاريس، ويتم عرض الميل كنسبة مئوية.  
@@ -250,7 +248,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +276,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -57,9 +57,9 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -71,6 +71,7 @@ import Translate from '@site/src/components/Translate.js';
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
 
 -->
 
@@ -99,8 +100,8 @@ import Translate from '@site/src/components/Translate.js';
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
-| [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [أدلة السفر (ويكيبيديا)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -113,7 +114,7 @@ import Translate from '@site/src/components/Translate.js';
 | [ودجات مقاييس المركبة](../plugins/vehicle-metrics.md#widgets) | <details><summary>**ودجتان مجانًا**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | <details><summary>**ودجتان مجانًا**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | ✔ |
 | [أداة علامات الخريطة](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [مصادر الخرائط عبر الإنترنت](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [دعم خرائط SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [دعم خرائط SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [النقاط المفضلة](../map/point-layers-on-map.md)<br/>إشارات مرجعية ونقاط طريق | ✔ | ✔ | ✔ |
 | [نقاط صوت/صورة/فيديو](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [متتبع GPS عبر الإنترنت من OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -155,7 +156,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → متابعة مع OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/pro_new.png)
 
 ### شراء Maps+ {#maps-purchase}
 
@@ -163,7 +164,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → انقر على قائمة ميزات Maps+ → متابعة مع Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## الاشتراكات القديمة (قبل 4.0) {#legacy-subscriptions-prior-40}

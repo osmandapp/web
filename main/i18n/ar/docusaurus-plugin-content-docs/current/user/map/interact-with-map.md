@@ -1,5 +1,5 @@
 ---
-source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
+source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
 sidebar_position: 2
 title: التفاعل مع الخريطة
 ---
@@ -20,7 +20,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 تشرح هذه المقالة كيفية تخصيص الخريطة والتفاعل معها باستخدام أزرار وإيماءات مختلفة. وتغطي كيفية تدوير الخريطة، وتكبيرها، وتعديل زاوية العرض، وتغيير زاوية عرض الخريطة، وتدويرها يدويًا أو تلقائيًا باستخدام البوصلة، أو وفقًا للاتجاه.
 
 
-## الإيماءات {#gestures}
+## حركة الخريطة {#map-movement}
+
+### الإيماءات {#gestures}
 
 الإيماءات ضرورية للتنقل في الخريطة بسهولة وبشكل بديهي.
 
@@ -35,8 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكن تعطيل الرسوم المتحركة للتمرير في الإعدادات باستخدام [خيار خاص](#remove-animations).
 
-
-## موقعي والتكبير/التصغير {#my-location-and-zoom}
+### موقعي والتكبير {#my-position-and-zoom}
 
 ![قائمة شاشة الضبط](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -53,111 +54,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <br/>
 
-**أزرار التكبير/التصغير**.  
-تكون *أزرار التكبير/التصغير* مرئية دائمًا بجوار *موقعي* وتسمح لك بالتحكم في مستوى تكبير الخريطة.
+**أزرار التكبير**.  
+تكون *أزرار التكبير* مرئية دائمًا بجوار *موقعي* وتسمح لك بالتحكم في مستوى تكبير الخريطة.
 
 - تغيير مستوى التكبير لا يؤثر على تزامن الخريطة مع موقعك.
-- **النقر المطول** على *أزرار التكبير/التصغير* يفتح مربع حوار *مكبر الخريطة*، مما يسمح لك بضبط مستويات تفاصيل الخريطة.
+- **النقر المطول** على *أزرار التكبير* يفتح مربع حوار *مكبر الخريطة*، مما يسمح لك بضبط مستويات تفاصيل الخريطة.
 - تذكر أنه أثناء الملاحة، يمكن التحكم في التكبير تلقائيًا بواسطة إعداد **التكبير التلقائي**:
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### مظهر موقعي {#my-location-appearance}
-
 يمكنك تخصيص أيقونات زر **موقعي** باستخدام إعدادات مظهر الملف الشخصي. اقرأ المزيد حول كيفية القيام بذلك [هنا](../personal/profiles.md#profile-appearance).
 
 
-## مكبر الخريطة {#map-magnifier}
+## التفاعل مع الخريطة {#map-interaction}
 
-*مكبر الخريطة* هو أداة تعزز رؤية الخريطة، على غرار العدسة المكبرة المستخدمة مع الخرائط الورقية. يسمح لك بتكبير الخريطة لعرض النصوص والتفاصيل بشكل أوضح أو لضبط مستوى التفاصيل مع الحفاظ على نفس المقياس. لمزيد من المعلومات، انتقل إلى مقالة [الخرائط المتجهية](../map/vector-maps.md#map-magnifier).
-
-
-## أوضاع توجيه الخريطة {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![أداة البوصلة](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![أداة البوصلة](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-تتيح لك *أوضاع توجيه الخريطة* اختيار كيفية عرض الخريطة على شاشة الجهاز. يقدم OsmAnd أوضاعًا مثل **تدوير يدوي**، **اتجاه الحركة**، **اتجاه البوصلة**، و**الشمال للأعلى**. يؤدي تمكين كل وضع إلى تغيير طريقة توجيه الخريطة وفقًا للخيار المحدد. للحصول على تفاصيل كاملة، راجع مقالة [أزرار الخريطة](../widgets/map-buttons.md#compass).
-
-
-## البوصلة {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![أداة البوصلة](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![أداة البوصلة](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-يُظهر زر البوصلة كيفية [توجيه الخريطة](#map-orientation-modes). يشير *السهم الأحمر* على الأيقونات، أو اتجاه السهم في وضع *اتجاه الحركة*، إلى الشمال. تشير [الأيقونة الموجودة على زر البوصلة](../widgets/map-buttons.md#compass) إلى وضع توجيه الخريطة الحالي. توفر أداة زر البوصلة ثلاثة [خيارات تفاعل](../widgets/map-buttons.md#compass-tapping-behavior): *نقرة واحدة* تدور الخريطة إلى الشمال، و*نقرة مزدوجة* تبدل بين جميع أوضاع توجيه الخريطة، و*نقرة طويلة* تفتح قائمة الأوضاع.
-
-
-## تدوير الخريطة حسب الاتجاه {#rotate-map-by-bearing}
-
-في وضع **تدوير الخريطة حسب الاتجاه** ([اتجاه الحركة](../widgets/map-buttons.md#compass))، تتوافق الخريطة تلقائيًا مع اتجاه حركتك، بحيث يتم عرض المنطقة التي أمامك في الجزء العلوي من الشاشة. يعزز هذا الوضع الملاحة عن طريق إزاحة مركز الخريطة قليلاً إلى الأسفل، مما يُظهر المزيد من المسار أمامك. إذا كنت ثابتًا، تظل الخريطة ثابتة.  
-
-يمكنك تفعيل هذه الميزة عبر *القائمة ← الإعدادات ← الملفات الشخصية ← الإعدادات العامة ← المظهر ← توجيه الخريطة* أو بالنقر المزدوج على [زر البوصلة](../widgets/map-buttons.md#compass-tapping-behavior). لمزيد من التفاصيل حول الاتجاه، انظر [هنا](../widgets/nav-widgets.md#bearing-widget).
-
-
-## إمالة الخريطة والأفق {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![إمالة أندرويد ١](@site/static/img/map/tilt_horizon_andr_1.png)  ![إمالة أندرويد ٢](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![إمالة iOS ١](@site/static/img/map/tilt_horizon_ios_1.png) ![إمالة iOS ٢](@site/static/img/map/tilt_horizon_ios_2.png)  
-</TabItem>
-
-</Tabs>  
-
-مع [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) الجديد، يمكنك تغيير [إمالة الكاميرا](../plugins/development.md#camera-tilt) من ٩٠ (بدون إمالة) إلى ١٠ درجات. تقريبًا عند إمالة الخريطة بأقل من ٢٠-٢٢ درجة (تعتمد هذه المعلمة على مستوى التكبير)، يصبح خط الأفق الخيالي مرئيًا. على عكس الأفق الحقيقي، يكون أفق البرنامج دائمًا مستقيمًا.  
-
-تحت الأفق، يمكنك رؤية ما يسمى *بالضباب* أو *الغيوم*. تمتلئ هذه المنطقة من الخريطة باللون الرمادي، ولا يمكن ملاحظة سوى القليل من تفاصيل الخريطة.  
-يعد استخدام الضباب ضروريًا لأن عرض الكائنات البعيدة على الخريطة يتطلب موارد حاسوبية كبيرة وليس مبررًا دائمًا بسبب [تشوهات](../plugins/development.md#comparison-with-a-satellite-imagery) الخريطة عند زوايا العرض الصغيرة. لذا فإن المسافة المرئية على خريطة OsmAnd محدودة حاليًا بـ ٣٥ مربعًا.  
-
-:::info
-يمكن تغيير إمالة الخريطة بنقرة طويلة على الشاشة بإصبعين وتحريكهما لأعلى/لأسفل. يمكنك أيضًا تغيير الإمالة بالنقر على أيقونة [موقعي](#my-location-and-zoom) في الزاوية اليمنى السفلية من الشاشة (تتوفر فقط مواضع ٤٥ و ٩٠ درجة).  
-لا يمكنك تغيير إمالة الكاميرا عند تشغيل [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) القديم (الإصدار ١).
-:::
-
-
-## قفل شاشة اللمس {#touch-screen-lock}
+### قفل شاشة اللمس {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +98,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ستوجهك رسائل واضحة على الشاشة عند قفل الشاشة أو إلغاء قفلها.
 
+### تحريك الموقع الخاص {#animate-own-position}
 
-## الإعدادات {#settings}
+**أندرويد**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### إعدادات البوصلة الإضافية {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> ينعم دوران الخريطة برسوم متحركة أبطأ للدوران، على الرغم من أن هذا يسبب تأخيرًا طفيفًا لا يزيد عن ثانية واحدة.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> ينعم دوران الخريطة برسوم متحركة أبطأ للدوران، على الرغم من أن هذا يسبب تأخيرًا طفيفًا لا يزيد عن ثانية واحدة.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+ينشئ تأثير تحريك سلس للخريطة مقابل أيقونة *[موقعي](../personal/profiles/#profile-appearance)* عند الحركة. يسبب التأثير تأخيرًا طفيفًا مقابل الحقيقة على الأرض يبلغ حوالي ثانية واحدة. تم الإبلاغ عن أن تمكين هذا الخيار يسبب بعض مشكلات التأخير الملحوظة في بعض الظروف، قم بتعطيله إذا ظهرت مثل هذه المشكلات.
 
 ### إزالة الرسوم المتحركة {#remove-animations}
 
@@ -206,12 +113,117 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### تحريك الموقع الخاص {#animate-own-position}
+## توجيه الخريطة {#map-orientation}
 
-**أندرويد**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
+### أوضاع توجيه الخريطة {#map-orientation-modes}
 
-ينشئ تأثير تحريك سلس للخريطة مقابل أيقونة *[موقعي](../personal/profiles/#profile-appearance)* عند الحركة. يسبب التأثير تأخيرًا طفيفًا مقابل الحقيقة على الأرض يبلغ حوالي ثانية واحدة. تم الإبلاغ عن أن تمكين هذا الخيار يسبب بعض مشكلات التأخير الملحوظة في بعض الظروف، قم بتعطيله إذا ظهرت مثل هذه المشكلات.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![أداة البوصلة](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![أداة البوصلة](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+تتيح لك *أوضاع توجيه الخريطة* اختيار كيفية عرض الخريطة على شاشة الجهاز. يقدم OsmAnd أوضاعًا مثل **تدوير يدوي**، **اتجاه الحركة**، **اتجاه البوصلة**، و**الشمال للأعلى**. يؤدي تمكين كل وضع إلى تغيير طريقة توجيه الخريطة وفقًا للخيار المحدد. للحصول على تفاصيل كاملة، راجع مقالة [أزرار الخريطة](../widgets/map-buttons.md#compass).
+
+### تدوير بالبوصلة {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![أداة البوصلة](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![أداة البوصلة](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+يُظهر زر البوصلة كيفية [توجيه الخريطة](#map-orientation-modes). يشير *السهم الأحمر* على الأيقونات، أو اتجاه السهم في وضع *اتجاه الحركة*، إلى الشمال. تشير [الأيقونة الموجودة على زر البوصلة](../widgets/map-buttons.md#compass) إلى وضع توجيه الخريطة الحالي. توفر أداة زر البوصلة ثلاثة [خيارات تفاعل](../widgets/map-buttons.md#compass-tapping-behavior): *نقرة واحدة* تدور الخريطة إلى الشمال، و*نقرة مزدوجة* تبدل بين جميع أوضاع توجيه الخريطة، و*نقرة طويلة* تفتح قائمة الأوضاع.
+
+
+### تدوير الخريطة حسب الاتجاه {#rotate-map-by-bearing}
+
+في وضع **تدوير الخريطة حسب الاتجاه** ([اتجاه الحركة](../widgets/map-buttons.md#compass))، تتوافق الخريطة تلقائيًا مع اتجاه حركتك، بحيث يتم عرض المنطقة التي أمامك في الجزء العلوي من الشاشة. يعزز هذا الوضع الملاحة عن طريق إزاحة مركز الخريطة قليلاً إلى الأسفل، مما يُظهر المزيد من المسار أمامك. إذا كنت ثابتًا، تظل الخريطة ثابتة.  
+
+يمكنك تفعيل هذه الميزة عبر *القائمة ← الإعدادات ← الملفات الشخصية ← الإعدادات العامة ← المظهر ← توجيه الخريطة* أو بالنقر المزدوج على [زر البوصلة](../widgets/map-buttons.md#compass-tapping-behavior). لمزيد من التفاصيل حول الاتجاه، انظر [هنا](../widgets/nav-widgets.md#bearing-widget).
+
+
+## منظور الخريطة {#map-perspective}
+
+### إمالة الخريطة والأفق {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![إمالة أندرويد ١](@site/static/img/map/tilt_horizon_andr_1.png)  ![إمالة أندرويد ٢](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![إمالة iOS ١](@site/static/img/map/tilt_horizon_ios_1.png) ![إمالة iOS ٢](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+مع [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) الجديد، يمكنك تغيير [إمالة الكاميرا](../plugins/development.md#camera-tilt) من ٩٠ (بدون إمالة) إلى ١٠ درجات. تقريبًا عند إمالة الخريطة بأقل من ٢٠-٢٢ درجة (تعتمد هذه المعلمة على مستوى التكبير)، يصبح خط الأفق الخيالي مرئيًا. على عكس الأفق الحقيقي، يكون أفق البرنامج دائمًا مستقيمًا.  
+
+تحت الأفق، يمكنك رؤية ما يسمى *بالضباب* أو *الغيوم*. تمتلئ هذه المنطقة من الخريطة باللون الرمادي، ولا يمكن ملاحظة سوى القليل من تفاصيل الخريطة.  
+يعد استخدام الضباب ضروريًا لأن عرض الكائنات البعيدة على الخريطة يتطلب موارد حاسوبية كبيرة وليس مبررًا دائمًا بسبب [تشوهات](../plugins/development.md#comparison-with-a-satellite-imagery) الخريطة عند زوايا العرض الصغيرة. لذا فإن المسافة المرئية على خريطة OsmAnd محدودة حاليًا بـ ٣٥ مربعًا.  
+
+:::info
+يمكن تغيير إمالة الخريطة بنقرة طويلة على الشاشة بإصبعين وتحريكهما لأعلى/لأسفل. يمكنك أيضًا تغيير الإمالة بالنقر على أيقونة [موقعي](#my-position-and-zoom) في الزاوية اليمنى السفلية من الشاشة (تتوفر فقط مواضع ٤٥ و ٩٠ درجة).  
+لا يمكنك تغيير إمالة الكاميرا عند تشغيل [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) القديم (الإصدار ١).
+:::
+
+
+### مكبر الخريطة {#map-magnifier}
+
+*مكبر الخريطة* هو أداة تعزز رؤية الخريطة، على غرار العدسة المكبرة المستخدمة مع الخرائط الورقية. يسمح لك بتكبير الخريطة لعرض النصوص والتفاصيل بشكل أوضح أو لضبط مستوى التفاصيل مع الحفاظ على نفس المقياس. لمزيد من المعلومات، انتقل إلى مقالة [الخرائط المتجهية](../map/vector-maps.md#map-magnifier).
+
+
+### عرض الكرة الأرضية {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![عرض الكرة الأرضية](@site/static/img/map/globe_view_1.png) ![عرض الكرة الأرضية](@site/static/img/map/globe_view_2.png)
+
+**عرض الكرة الأرضية** يسمح لك بعرض الخريطة ككرة أرضية كروية بدلاً من إسقاط مسطح. يغير هذا الوضع هندسة سطح الخريطة ويعدل التفاعل مع الخريطة للتنقل الكروي.  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → عرض عالمي*
+
+عرض الكرة الأرضية متاح حاليًا فقط عندما:
+- تم تمكين [إضافة التطوير](../plugins/development.md).  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*  
+- تم تعيين [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) إلى الإصدار ٢ (OpenGL).  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+عند تمكين عرض الكرة الأرضية، تدور الخريطة ككرة أرضية. تحركات السحب تدور الأرض، والتكبير يغير مسافة الكاميرا بدلاً من تكبير سطح مسطح. يتم عرض عناصر الخريطة مثل المسارات والعلامات والرموز والكائنات ثلاثية الأبعاد مباشرة على السطح الكروي وتتبع انحنائه. تختفي الكائنات تدريجيًا خلف الأفق مع دوران الكرة الأرضية.
+
+قد يكون التفاعل بالقرب من الأفق محدودًا لمنع الحركة غير المقصودة لمسافات كبيرة. لا يمكن قلب الكرة الأرضية فوق القطبين. عند مستويات التكبير المنخفضة جدًا، يظل المظهر البصري للطرق والتسميات متسقًا أثناء الدوران.
 
 
 ## أجهزة الإدخال الخارجية {#external-input-devices}
@@ -259,7 +271,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | المفتاح | الجهاز | الإجراء |
 |:---------|:---------------|:---------------|
-|**C**| *لوحة المفاتيح*   | تحريك - [إلى موقعي](#my-location-and-zoom) |
+|**C**| *لوحة المفاتيح*   | تحريك - [إلى موقعي](#my-position-and-zoom) |
 |**D**| *لوحة المفاتيح*   | تغيير - [توجيه الخريطة](#map-orientation-modes) |
 |**N**| *لوحة المفاتيح*   | إظهار / إخفاء - عرض الملاحة |
 |**S**| *لوحة المفاتيح*   | إظهار / إخفاء - [عرض البحث](../search/index.md) |
@@ -269,17 +281,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |**&#8595;**| *لوحة المفاتيح*   | تحريك - الخريطة لأسفل  |
 |**&#8592;**| *لوحة المفاتيح*   | تحريك - الخريطة إلى اليسار  |
 |**&#8594;**| *لوحة المفاتيح*   | تحريك - الخريطة إلى اليمين  |
-|**&#43;** **=**| *لوحة المفاتيح*  | الخريطة - [تكبير](#my-location-and-zoom) |
-|**&#8722;**| *لوحة المفاتيح*  | الخريطة - [تصغير](#my-location-and-zoom) |
+|**&#43;** **=**| *لوحة المفاتيح*  | الخريطة - [تكبير](#my-position-and-zoom) |
+|**&#8722;**| *لوحة المفاتيح*  | الخريطة - [تصغير](#my-position-and-zoom) |
 |**Press back**| *لوحة المفاتيح*   | تنقل – الشاشة السابقة  |
-|**&#8595;**| *Wunderlinq*  | الخريطة - [تصغير](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | الخريطة - [تكبير](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | الخريطة - [تصغير](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | الخريطة - [تكبير](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | فتح شبكة بيانات WunderLINQ |
 | **M** | *لوحة المفاتيح*  | إظهار / إخفاء - [القائمة الجانبية](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick press** <br/> (*أندرويد قديم*) | *لوحة المفاتيح*  | تحريك - [إلى موقعي](#my-location-and-zoom) |
+| **Joystick press** <br/> (*أندرويد قديم*) | *لوحة المفاتيح*  | تحريك - [إلى موقعي](#my-position-and-zoom) |
 | **Media button** <br/> (*أندرويد فقط*)| *لوحة المفاتيح*  | إظهار / إخفاء - [ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*أندرويد فقط*)| *Parrot*  | الخريطة - [تصغير](#my-location-and-zoom) |
-| **&#8594;** <br/> (*أندرويد فقط*) | *Parrot*  | الخريطة - [تكبير](#my-location-and-zoom) |
+| **&#8592;** <br/> (*أندرويد فقط*)| *Parrot*  | الخريطة - [تصغير](#my-position-and-zoom) |
+| **&#8594;** <br/> (*أندرويد فقط*) | *Parrot*  | الخريطة - [تكبير](#my-position-and-zoom) |
 
 
 ### نوع جهاز إدخال مخصص {#custom-input-device-type}
@@ -292,7 +304,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![الأجهزة الخارجية](@site/static/img/map/external_mypilot_android.png)  ![الأجهزة الخارجية](@site/static/img/map/external_mypilot2_android.png)
 
-إذا كنت ترغب في تعيين مفاتيح لجهاز إدخال خارجي (مثل لوحة مفاتيح أو عصا تحكم أو وحدة تحكم)، فأنت بحاجة إلى إنشاء نوع جهاز: اذهب إلى إعداد [جهاز الإدخال الخارجي](#external-input-devices)، حدد **النوع** من القائمة، انقر على &nbsp; "**＋**" &nbsp; وأدخل اسمًا. كل نوع له قائمة بالخيارات التالية: ***إعادة تسمية، تكرار***، و***إزالة***.
+إذا كنت ترغب في تعيين مفاتيح لجهاز إدخال خارجي (مثل لوحة مفاتيح أو عصا تحكم أو وحدة تحكم)، فأنت بحاجة إلى إنشاء نوع جهاز: اذهب إلى إعداد [أجهزة الإدخال الخارجية](#external-input-devices)، حدد **النوع** من القائمة، انقر على &nbsp; "**＋**" &nbsp; وأدخل اسمًا. كل نوع له قائمة بالخيارات التالية: ***إعادة تسمية، تكرار***، و***إزالة***.
 
 </TabItem>
 
@@ -302,7 +314,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![الأجهزة الخارجية](@site/static/img/map/external_mypilot_ios.png)  ![الأجهزة الخارجية](@site/static/img/map/external_mypilot2_ios.png)
 
-إذا كنت ترغب في تعيين مفاتيح لجهاز إدخال خارجي (مثل لوحة مفاتيح أو عصا تحكم أو وحدة تحكم)، فأنت بحاجة إلى إنشاء نوع جهاز: اذهب إلى إعداد [جهاز الإدخال الخارجي](#external-input-devices)، حدد **Device** من القائمة، انقر على &nbsp; "**Add**" &nbsp; وأدخل اسمًا. كل نوع له قائمة بالخيارات التالية: ***إعادة تسمية، تكرار***، و***إزالة***.
+إذا كنت ترغب في تعيين مفاتيح لجهاز إدخال خارجي (مثل لوحة مفاتيح أو عصا تحكم أو وحدة تحكم)، فأنت بحاجة إلى إنشاء نوع جهاز: اذهب إلى إعداد [أجهزة الإدخال الخارجية](#external-input-devices)، حدد **Device** من القائمة، انقر على &nbsp; "**Add**" &nbsp; وأدخل اسمًا. كل نوع له قائمة بالخيارات التالية: ***إعادة تسمية، تكرار***، و***إزالة***.
 
 </TabItem>
 

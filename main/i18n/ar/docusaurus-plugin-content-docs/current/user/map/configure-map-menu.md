@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  تهيئة الخريطة
 ---
@@ -27,7 +27,7 @@ import Translate from '@site/src/components/Translate.js';
 
 قسم **التضاريس**:  
 
-![Configure map android](@site/static/img/map/configure_map_topography_andr.png)  
+![Configure map android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 قسم **OpenStreetMap**:  
 
@@ -84,8 +84,9 @@ import Translate from '@site/src/components/Translate.js';
 ## طبقات الخريطة {#map-layers}
 
 - [طبقة الخريطة المتجهية](../map/vector-maps.md) - تعرض جميع معلومات الخريطة المتجهية بما في ذلك OpenStreetMap، وخطوط الكنتور، والبيانات البحرية.
-- [مصادر الخريطة النقطية](../map/raster-maps.md#select-raster-maps) - تسمح باختيار خريطة الطبقة السفلية / المصدر الرئيسي / الطبقة العلوية مع مستويات الشفافية.
+- [مصادر الخريطة النقطية](../map/raster-maps.md#layers) - تسمح باختيار خريطة الطبقة السفلية / المصدر الرئيسي / الطبقة العلوية مع مستويات الشفافية.
 - [التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers) - تعرض معلومات المنحدر / تظليل التلال، والنماذج ثلاثية الأبعاد.
+- [المباني ثلاثية الأبعاد](../map/vector-maps.md#3d-buildings) - تعرض نماذج المباني الحجمية على الخريطة.
 - [حدود الخرائط التي تم تنزيلها](../map/vector-maps.md#show-borders) - تعرض جميع حدود الخرائط التي تم تنزيلها على طبقة الخريطة الرئيسية.
 - [شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid) - تتحكم في رؤية شبكة الإحداثيات على الخريطة.
 
@@ -107,8 +108,9 @@ import Translate from '@site/src/components/Translate.js';
 
 تعتمد إعدادات نمط الخريطة على نمط الخريطة الرئيسي المعروض. يمكنك قراءة المزيد حول هذا الموضوع في [مقالة أنماط الخرائط](../map/vector-maps).
 
-   - [نمط الخريطة](../map/vector-maps.md#default-map-styles) - يشمل OsmAnd (المدينة)، والطبوغرافي، والبحري، وغيرها.
+   - [نمط الخريطة](../map/vector-maps.md#map-styles) - يشمل OsmAnd (المدينة)، والطبوغرافي، والبحري، وغيرها.
    - [وضع الخريطة](../map/vector-maps.md#map-mode) - يسمح لك باختيار عرض الخريطة والملاحة حسب الوقت من اليوم.
+   - [عرض الكرة الأرضية](../map/interact-with-map.md#globe-view) - يقوم بتبديل الخريطة بين العرض المسطح القياسي وعرض الأرض الكروي.
    - [مكبر الخريطة](../map/vector-maps.md#map-magnifier) - يسمح بتغيير تكبير الخريطة.
    - [حجم النص](../map/vector-maps.md#text-size) - يسمح بزيادة أو تقليل حجم النص على الخريطة.
    - [لغة الخريطة](../map/vector-maps.md#map-language) - تسمح باختيار اللغة المفضلة المعروضة على الخريطة.

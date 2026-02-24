@@ -1,8 +1,9 @@
 ---
-source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
+source-hash: f1a828f975c96bbfda684d9dc28a964129f8890ae914445426256bb589a6171f
 sidebar_position: 3
 title:  القائمة الرئيسية
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 
@@ -44,7 +44,7 @@ import Translate from '@site/src/components/Translate.js';
 - [علامات الخريطة](../personal/markers.md) هي أداة تسمح بوضع علامة على مكان ما على الخريطة.
 - [أماكني](../personal/myplaces.md) هي قائمة تتضمن بشكل افتراضي المفضلة والمسارات، وبالإضافة إلى ذلك يمكن أن تشمل [ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md) و[تعديلات OSM](../plugins/osm-editing.md) (إذا كانت هذه الإضافات مفعلة).
 - [بحث](../search/index.md) (أندرويد) هي أداة تسمح لك بالعثور على المكان أو الكائن الموجود على الخريطة.
-- زر [الاتجاهات](../widgets/map-buttons.md#directions) يسمح بإنشاء مسار وبدء الملاحة.
+- زر [الاتجاهات](../widgets/map-buttons.md#navigation) يسمح بإنشاء مسار وبدء الملاحة.
 - [تكوين الخريطة](../map/configure-map-menu.md) هي قائمة تسمح بتكوين عرض الخريطة.
 - [تنزيل الخرائط](../start-with/download-maps.md) هي قائمة تحتوي على جميع الملفات التي يمكن تنزيلها.
 - [أدلة السفر (تجريبي)](../plan-route/travel-guides.md) (*أندرويد*) هي أداة تسمح باستخدام دليل Wikivoyage لرحلتك.
@@ -60,7 +60,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### الملف الشخصي النشط (أندرويد) {#active-profile-android}
 
-توفر *القائمة الرئيسية* وصولاً سريعًا للتبديل و[تخصيص الملف الشخصي](../personal/profiles.md). الغرض الرئيسي من الملفات الشخصية هو الحصول على مظهر وإحساس مختلفين للتطبيق أثناء الملاحة. على الرغم من أنه يمكنك استخدامها لتخصيص الشاشة والأدوات وتبديل الملفات الشخصية لأغراض عرض مختلفة. يتم تكوين جميع [الإعدادات](../personal/profiles.md) بشكل منفصل لكل ملف شخصي.
+*القائمة الرئيسية* توفر وصولاً سريعًا للتبديل و[تخصيص الملف الشخصي](../personal/profiles.md). الغرض الرئيسي من الملفات الشخصية هو الحصول على مظهر وإحساس مختلفين للتطبيق أثناء الملاحة. على الرغم من أنه يمكنك استخدامها لتخصيص الشاشة والأدوات وتبديل الملفات الشخصية لأغراض عرض مختلفة. يتم تكوين جميع [الإعدادات](../personal/profiles.md) بشكل منفصل لكل ملف شخصي.
 
 ![قائمة الملف الشخصي](@site/static/img/menu/profile_menu.png)
 

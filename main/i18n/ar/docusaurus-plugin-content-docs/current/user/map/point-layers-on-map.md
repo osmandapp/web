@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  النقاط على الخريطة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## نظرة عامة {#overview}
@@ -26,7 +26,7 @@ import Translate from '@site/src/components/Translate.js';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
-![طبقة المفضلة في أندرويد](@site/static/img/map/favorites_layer.png)
+![طبقة المفضلة في أندرويد](@site/static/img/map/favorites_layer.png)  
 
 </TabItem>
 
@@ -34,7 +34,7 @@ import Translate from '@site/src/components/Translate.js';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
-![طبقة المفضلة في iOS](@site/static/img/map/favorites_layer_ios.png)
+![طبقة المفضلة في iOS](@site/static/img/map/favorites_layer_ios.png)  
 
 </TabItem>
 
@@ -55,7 +55,7 @@ import Translate from '@site/src/components/Translate.js';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
-![طبقة تسميات المفضلة](@site/static/img/map/favorite_labels_layer.png)
+![طبقة تسميات المفضلة](@site/static/img/map/favorite_labels_layer.png)  
 
 </TabItem>
 
@@ -63,20 +63,20 @@ import Translate from '@site/src/components/Translate.js';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
-![طبقة تسميات المفضلة](@site/static/img/map/favorite_labels_layer.png)
+![طبقة تسميات المفضلة](@site/static/img/map/favorite_labels_layer.png)  
 
 </TabItem>
 
 </Tabs>
 
-بشكل افتراضي، يتم عرض المفضلة ونقاط الاهتمام (POI) بدون أسماء، حتى لا تزدحم الخريطة بالنصوص. يمكنك تمكين الأسماء في قائمة إعداد الخريطة.
+بشكل افتراضي، يتم عرض المفضلة ونقاط الاهتمام (POI) بدون أسماء، حتى لا تزدحم الخريطة بالنصوص. يمكنك تمكين الأسماء في قائمة إعداد الخريطة.  
 
 
 ## نقاط الاهتمام (POIs) {#points-of-interest-pois}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
 
@@ -84,21 +84,21 @@ import Translate from '@site/src/components/Translate.js';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*
 
-![تراكب نقاط الاهتمام في iOS](@site/static/img/map/poi_overlay_ios.png)
+![تراكب نقاط الاهتمام في iOS](@site/static/img/map/poi_overlay_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-[نقاط الاهتمام (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) هي مواقع محددة معلمة برمز على الخريطة. تشير إلى أماكن وأشياء مثيرة للاهتمام أو مفيدة وهي جزء من [الخرائط المتجهية](../map/vector-maps.md).
+[نقاط الاهتمام (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) هي مواقع محددة معلمة برمز على الخريطة. تشير إلى أماكن وأشياء مثيرة للاهتمام أو مفيدة وهي جزء من [الخرائط المتجهية](../map/vector-maps.md).  
 
-يتم عرض أبرز نقاط الاهتمام على الخريطة تلقائيًا. ومع ذلك، يمكنك تحديد نوع معين من نقاط الاهتمام (مثل *المطاعم*) وسيتم تمييزها جميعًا على الخريطة **بدائرة برتقالية** (بدءًا من مستوى التكبير/التصغير 9).
+يتم عرض أبرز نقاط الاهتمام على الخريطة تلقائيًا. ومع ذلك، يمكنك تحديد نوع معين من نقاط الاهتمام (مثل *المطاعم*) وسيتم تمييزها جميعًا على الخريطة **بدائرة برتقالية** (بدءًا من مستوى التكبير/التصغير 9).  
 
-يمكن العثور على معلومات مفصلة حول نقطة اهتمام في [قائمة السياق](../map/map-context-menu.md) التي تظهر عند [النقر](../map/map-context-menu.md#select-an-object-single-tap) على النقطة.
+يمكن العثور على معلومات مفصلة حول نقطة اهتمام في [قائمة السياق](../map/map-context-menu.md) التي تظهر عند [النقر](../map/map-context-menu.md#select-an-object-single-tap) على النقطة.  
 
 
 ### أنواع نقاط الاهتمام {#poi-types}
@@ -114,7 +114,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*
 
@@ -122,17 +122,17 @@ import Translate from '@site/src/components/Translate.js';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,rendering_category_hide"/>*
 
-![نقاط الاهتمام على النمط الطبوغرافي](@site/static/img/map/poi_layer_topo_style.png)
+![نقاط الاهتمام على النمط الطبوغرافي](@site/static/img/map/poi_layer_topo_style.png)  
 
 </TabItem>
 
 </Tabs>
 
-لكل نوع من نقاط الاهتمام في OsmAnd أيقونة ولون محدد. قد يختلف [مستوى التكبير/التصغير](../map/vector-maps.md#details) وتصميم نقاط الاهتمام في بعض [أنماط الخرائط](../map/vector-maps.md#default-map-styles).
+لكل نوع من نقاط الاهتمام في OsmAnd أيقونة ولون محدد. قد يختلف [مستوى التكبير/التصغير](../map/vector-maps.md#details) وتصميم نقاط الاهتمام في بعض [أنماط الخرائط](../map/map-styles.md).  
 
 [اقرأ المزيد](../map/vector-maps.md#hide).
 
@@ -141,7 +141,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>*
 
@@ -149,17 +149,17 @@ import Translate from '@site/src/components/Translate.js';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,map_markers"/>*
 
-![علامات الخريطة في iOS](@site/static/img/map/map_markers_ios.png)
+![علامات الخريطة في iOS](@site/static/img/map/map_markers_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-[علامات الخريطة](../personal/markers.md) هي نقاط مؤقتة معلمة على الخريطة كأعلام. يمكن تخصيص مظهرها باستخدام **الأسهم** (أسهم على الخريطة) و**مؤشر المسافة** (خطوط الاتجاه).
+[علامات الخريطة](../personal/markers.md) هي نقاط مؤقتة معلمة على الخريطة كأعلام. يمكن تخصيص مظهرها باستخدام **الأسهم** (أسهم على الخريطة) و**مؤشر المسافة** (خطوط الاتجاه).  
 
 يمكنك قراءة المزيد حول مظهر العلامات في هذا [المقال](../personal/markers#appearance-on-the-map).
 
@@ -168,7 +168,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ![مسار على الخريطة](@site/static/img/map/track_point_on_map.png)
 
-نقاط المسار (النقاط المرجعية) هي جزء من ملفات المسار (GPX). يتم عرض هذه النقاط تلقائيًا إذا كان المسار على الخريطة. تبدو ويمكن تهيئتها بشكل مشابه لـ [المفضلة](#favorites) - الأيقونة والأسماء واللون والشكل. كيفية إنشاء وإضافة نقطة مرجعية، اقرأ في [المقال](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).
+نقاط المسار (النقاط المرجعية) هي جزء من ملفات المسار (GPX). يتم عرض هذه النقاط تلقائيًا إذا كان المسار على الخريطة. تبدو ويمكن تهيئتها بشكل مشابه لـ [المفضلة](#favorites) - الأيقونة والأسماء واللون والشكل. كيفية إنشاء وإضافة نقطة مرجعية، اقرأ في [المقال](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
 
 [اقرأ المزيد](../map/tracks/index.md) عن المسارات على الخريطة.
 
@@ -177,9 +177,9 @@ import Translate from '@site/src/components/Translate.js';
 
 ![بحث عن نقاط الاهتمام](@site/static/img/map/poi_search.png) ![نتيجة بحث نقاط الاهتمام](@site/static/img/map/poi_search_result.png)
 
-يمكن عرض نتائج البحث على الخريطة كطبقة خاصة لنقاط الاهتمام. أثناء البحث، انقر على صف خاص (**<Translate android="true" ids="shared_string_show_on_map"/>**) لعرض نقاط الاهتمام على الخريطة.
+يمكن عرض نتائج البحث على الخريطة كطبقة خاصة لنقاط الاهتمام. أثناء البحث، انقر على صف خاص (**<Translate android="true" ids="shared_string_show_on_map"/>**) لعرض نقاط الاهتمام على الخريطة.  
 
-لإيقاف تشغيل نقاط الاهتمام، اضغط على **X** في الزاوية اليمنى العليا.
+لإيقاف تشغيل نقاط الاهتمام، اضغط على **X** في الزاوية اليمنى العليا.  
 
 اقرأ المزيد عن [البحث](../search/index.md).
 
@@ -188,7 +188,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
@@ -196,7 +196,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
@@ -206,7 +206,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-يتم عرض [صور على مستوى الشارع (Mapillary)](../plugins/mapillary.md) كنقاط خضراء على الخريطة. صور عرض الشارع مرفقة بهذه النقاط. يمكنك إنشاء [مرشح](../plugins/mapillary.md#data-filtering) وتحديد الصور التي تريد عرضها على الخريطة. لفتح صورة عرض الشارع، انقر على النقطة الخضراء.
+يتم عرض [صور على مستوى الشارع (Mapillary)](../plugins/mapillary.md) كنقاط خضراء على الخريطة. صور عرض الشارع مرفقة بهذه النقاط. يمكنك إنشاء [مرشح](../plugins/mapillary.md#data-filtering) وتحديد الصور التي تريد عرضها على الخريطة. لفتح صورة عرض الشارع، انقر على النقطة الخضراء.  
 
 يتطلب [إضافة Mapillary](../plugins/mapillary.md).
 
@@ -215,7 +215,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ![موقف سيارات محدود](@site/static/img/map/context_menu_limited_parking.png) ![موقف سيارات غير محدود](@site/static/img/map/context_menu_unlimited_parking.png)
 
-[نقطة وقوف السيارات](../plugins/parking.md) هي نقطة يحددها المستخدمون على الخريطة لتخزين معلومات حول الموقع الدقيق للمركبة. يمكن تقسيمها إلى مناطق وقوف غير مقيدة ومقيدة.
+[نقطة وقوف السيارات](../plugins/parking.md) هي نقطة يحددها المستخدمون على الخريطة لتخزين معلومات حول الموقع الدقيق للمركبة. يمكن تقسيمها إلى مناطق وقوف غير مقيدة ومقيدة.  
 
 يتطلب [إضافة موضع وقوف السيارات](../plugins/parking.md).
 
@@ -224,7 +224,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
@@ -232,7 +232,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
@@ -242,7 +242,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-يحتوي OsmAnd على نقاط اهتمام خاصة معلمة بشعار "W" ومرتبطة بمقالات ويكيبيديا. يمكن عرض هذه النقاط تمامًا مثل أي نوع آخر من نقاط الاهتمام، عبر البحث أو بالانتقال إلى <Translate android="true" ids="configure_map"/> → <Translate android="true" ids="layer_poi"/>. ومع ذلك، هناك طريقة خاصة لتصفية مقالات ويكيبيديا حسب **اللغات المتاحة**.
+يحتوي OsmAnd على نقاط اهتمام خاصة معلمة بشعار "W" ومرتبطة بمقالات ويكيبيديا. يمكن عرض هذه النقاط تمامًا مثل أي نوع آخر من نقاط الاهتمام، عبر البحث أو بالانتقال إلى <Translate android="true" ids="configure_map"/> → <Translate android="true" ids="layer_poi"/>. ومع ذلك، هناك طريقة خاصة لتصفية مقالات ويكيبيديا حسب **اللغات المتاحة**.  
 
 [اقرأ المزيد](../plugins/wikipedia.md) عن كيفية تنزيل واستخدام ميزة ويكيبيديا في OsmAnd.
 
@@ -251,7 +251,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
@@ -261,7 +261,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-ملاحظات الصوت / الفيديو هي نقاط تحتوي على بيانات صوتية وصور وفيديو على الخريطة أنشأها المستخدمون.
+ملاحظات الصوت / الفيديو هي نقاط تحتوي على بيانات صوتية وصور وفيديو على الخريطة أنشأها المستخدمون.  
 
 يتطلب [إضافة ملاحظات الصوت / الفيديو](../plugins/audio-video-notes.md).
 
@@ -270,7 +270,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
@@ -278,7 +278,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_edits_title"/>*
 
@@ -288,7 +288,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-نقاط تعديل OSM هي نقاط اهتمام أنشأها المستخدمون لإضافتها إلى [مشروع OpenStreetMap](https://www.openstreetmap.org/).
+نقاط تعديل OSM هي نقاط اهتمام أنشأها المستخدمون لإضافتها إلى [مشروع OpenStreetMap](https://www.openstreetmap.org/).  
 
 يتطلب [إضافة تعديل OSM](../plugins/osm-editing.md).
 
@@ -297,7 +297,7 @@ import Translate from '@site/src/components/Translate.js';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="أندرويد">  
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
 
@@ -305,7 +305,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_notes_online_layer"/>*
 
@@ -315,22 +315,22 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-ملاحظات OSM هي نقاط اهتمام أنشأها المستخدمون للإبلاغ عن المشكلات المتعلقة ببيانات الخريطة في [OpenStreetMap](https://www.openstreetmap.org/). الملاحظات الجديدة (التي لم يتم تحميلها بعد إلى OpenStreetMap) معلمة باللون الأخضر بعلامة **+**، والملاحظات المغلقة معلمة باللون الأخضر بحرف "V"، والملاحظات المفتوحة معلمة باللون الأحمر. يمكنك تخصيص مستوى التكبير/التصغير لعرض الملاحظات واختيار إظهار أو إخفاء الملاحظات المغلقة.
+ملاحظات OSM هي نقاط اهتمام أنشأها المستخدمون للإبلاغ عن المشكلات المتعلقة ببيانات الخريطة في [OpenStreetMap](https://www.openstreetmap.org/). الملاحظات الجديدة (التي لم يتم تحميلها بعد إلى OpenStreetMap) معلمة باللون الأخضر بعلامة **+**، والملاحظات المغلقة معلمة باللون الأخضر بحرف "V"، والملاحظات المفتوحة معلمة باللون الأحمر. يمكنك تخصيص مستوى التكبير/التصغير لعرض الملاحظات واختيار إظهار أو إخفاء الملاحظات المغلقة.  
 
 يتطلب [إضافة تعديل OSM](../plugins/osm-editing.md).
 
 
 ## النقاط على طول المسار {#points-along-the-route}
 
-النقاط المرجعية، ونقاط الاهتمام، والنقاط المفضلة، والملاحظات الصوتية/المرئية كلها تشير إلى مفهوم حفظ المواقع والمسارات بتنسيق [GPX (تنسيق تبادل GPS)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). يمكنك استخدام [نفس العلامات](../map/tracks/track-context-menu.md#display-custom-gpx-tags) لوصفها وتعديلها.
+النقاط المرجعية، ونقاط الاهتمام، والنقاط المفضلة، والملاحظات الصوتية/المرئية كلها تشير إلى مفهوم حفظ المواقع والمسارات بتنسيق [GPX (تنسيق تبادل GPS)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). يمكنك استخدام [نفس العلامات](../map/tracks/track-context-menu.md#display-custom-gpx-tags) لوصفها وتعديلها.  
 
-[النقاط المرجعية](#track-waypoints) هي نقاط فردية على خريطة أو مسار. يمكن استخدامها لتمييز أماكن معينة قد تكون مهمة للتنقل أو تسجيل رحلاتك. على سبيل المثال، يمكنك إنشاء نقطة مرجعية على الخريطة للإشارة إلى تقاطع مهم أو تغيير في الاتجاه.
+[النقاط المرجعية](#track-waypoints) هي نقاط فردية على خريطة أو مسار. يمكن استخدامها لتمييز أماكن معينة قد تكون مهمة للتنقل أو تسجيل رحلاتك. على سبيل المثال، يمكنك إنشاء نقطة مرجعية على الخريطة للإشارة إلى تقاطع مهم أو تغيير في الاتجاه.  
 
-[نقاط الاهتمام (POIs)](#points-of-interest-pois) هي أماكن ذات أهمية خاصة للمستخدمين. يمكن أن تكون هذه معالم، مطاعم، فنادق، محطات وقود، وأماكن أخرى ذات أهمية قد ترغب في تدوينها أو زيارتها.
+[نقاط الاهتمام (POIs)](#points-of-interest-pois) هي أماكن ذات أهمية خاصة للمستخدمين. يمكن أن تكون هذه معالم، مطاعم، فنادق، محطات وقود، وأماكن أخرى ذات أهمية قد ترغب في تدوينها أو زيارتها.  
 
 [النقاط المفضلة](#favorites) هي أماكن يجدها المستخدمون مهمة أو مثيرة للاهتمام بشكل خاص ويحفظونها في قائمة الأماكن المفضلة لديهم. يمكن أن تشمل الأماكن أي موقع قد ترغب في العثور عليه والعودة إليه لاحقًا.
 
-[الملاحظات الصوتية/المرئية](#-audio--video-points-android). بتنسيق GPX، يمكنك حفظ التسجيلات الصوتية والمرئية كنقاط مرجعية. يسمح لك هذا بربط ملفات الوسائط بمواقع محددة على الخريطة أو المسار.
+[الملاحظات الصوتية/المرئية](#-audio--video-points-android). بتنسيق GPX، يمكنك حفظ التسجيلات الصوتية والمرئية كنقاط مرجعية. يسمح لك هذا بربط ملفات الوسائط بمواقع محددة على الخريطة أو المسار.  
 
 يمكن حفظ كل أنواع هذه النقاط بتنسيق GPX لتزويدك بمعلومات الموقع والمساعدة في التنقل وتخطيط المسار. إنها تخدم أغراضًا مختلفة، لكن الفكرة العامة هي تخزين ونقل المعلومات الجغرافية حتى تتمكن من استخدامها في مهام الملاحة الخاصة بك.
 

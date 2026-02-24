@@ -1,5 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title: الأدوات الإعلامية
 ---
@@ -66,7 +66,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### الارتفاع: مركز الخريطة {#elevation-map-center}
 
 :::info ميزة مدفوعة
-&nbsp;<ProFeature/> للحصول على الوصول إلى استخدام أداة *الارتفاع: مركز الخريطة*، اشترك في OsmAnd Pro لـ [أندرويد](../purchases/android.md#pro-features) أو [آي أو إس](../purchases/ios.md#pro-features).  
+أداة *الارتفاع: مركز الخريطة* هي ميزة مدفوعة في [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -417,13 +417,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -431,8 +431,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 أداة **عداد السرعة** هي عرض رسومي لسرعة المركبة الحالية بناءً على *البيانات المستلمة من GPS*. تسمح لك بمراقبة الامتثال في الوقت الفعلي بين سرعتك والحد الأقصى المسموح به للسرعة. يتم توفير الحد الأقصى المسموح به للسرعة من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) لقسم طريق معين وإعداد [تحمل حد السرعة](../navigation/guidance/voice-navigation.md#speed-limit) في OsmAnd.  
 
+عندما تقترب سرعتك الحالية من تحمل حد السرعة المكون، تغير الأداة مظهرها لتقديم تحذير مبكر. عند تجاوز حد السرعة (مع الأخذ في الاعتبار التحمل)، تحول الأداة إلى إشارة "تجاوز" أكثر وضوحاً. يتم عرض التحذير/التجاوز من خلال تغيير ألوان الأداة (الخلفية، وقيمة السرعة، والوحدات). قد يكون تغيير المظهر متحركاً لجذب الانتباه عند عبور عتبة التحمل أو الحد.
+
+![Speedometer](@site/static/img/widgets/speed_alert.gif)
+
 - في *إعدادات عداد السرعة*، يمكنك اختيار حجم (**الارتفاع**) للأداة على شاشة التطبيق كـ *صغير*، *متوسط* أو *كبير*.
-- يمكنك تحديد متى تتلقى **تحذير حد السرعة**، باختيار *دائماً* أو *عند التجاوز*.
+- يمكنك تحديد متى تتلقى **تحذير حد السرعة**، باختيار *دائماً* أو *عند التجاوز*. إذا تم تعيين تحذير حد السرعة إلى دائماً، يمكن للأداة عرض كل من الإشارة "الاقتراب/التحمل" و"التجاوز". إذا تم تعيين تحذير حد السرعة إلى عند التجاوز، يتم عرض الإشارة فقط بعد تجاوزك لحد السرعة.
 
 <table class="blogimage">
     <tr>

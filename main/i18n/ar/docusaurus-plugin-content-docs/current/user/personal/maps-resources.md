@@ -1,5 +1,5 @@
 ---
-source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
+source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
 sidebar_position: 2
 title:  Maps & Resources
 ---
@@ -55,7 +55,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![قائمة تنزيل الخريطة iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![خرائط إقليمية واسعة iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![قائمة تنزيل الخريطة iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![خرائط إقليمية واسعة أندرويد](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -171,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![قائمة تنزيل الخريطة العامة iOS](@site/static/img/personal/maps/multiple_maps_ios.png) ![قائمة إلغاء التحديد iOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
+![قائمة تنزيل الخريطة العامة iOS](@site/static/img/personal/maps/multiple_maps_ios.png) ![قائمة إلغاء التحديد IOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
 
 </TabItem>
 
@@ -195,7 +195,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يوفر تبويب المحلي نظرة عامة على استخدام التخزين لجميع بيانات OsmAnd على جهازك. يتم تقسيم البيانات إلى ثلاثة أقسام ملونة للوضوح، مع ترتيب العناصر حسب الحجم من الأكبر إلى الأصغر. يعرض كل قسم فقط العناصر التي تحتوي على بيانات محملة:
 
 - ***الموارد*** (*أزرق*).  
-    تشمل الخرائط ([القياسية](../map/vector-maps.md)، &nbsp;[البحرية](../plugins/nautical-charts.md)، &nbsp;[الطبوغرافية](../plugins/topography.md)، &nbsp;[الطقس](../plugins/weather.md))، &nbsp;[ويكيبيديا](../plugins/wikipedia.md) و[دليل السفر](../plan-route/travel-guides.md)، &nbsp;[التحديثات الحية](../personal/maps-resources.md#live-updates)، &nbsp;**الطرق فقط**،  &nbsp;[مصادر الخريطة](../map/raster-maps.md)، &nbsp;[أنماط العرض](../map/vector-maps.md#default-map-styles)، &nbsp;**خطوط الخريطة، &nbsp;تعليمات الصوت (مسجلة وTTS)، &nbsp;ذاكرة التخزين المؤقت**.  
+    تشمل الخرائط ([القياسية](../map/vector-maps.md)، &nbsp;[البحرية](../plugins/nautical-charts.md)، &nbsp;[الطبوغرافية](../plugins/topography.md)، &nbsp;[الطقس](../plugins/weather.md))، &nbsp;[ويكيبيديا](../plugins/wikipedia.md) و[دليل السفر](../plan-route/travel-guides.md)، &nbsp;[التحديثات الحية](../personal/maps-resources.md#live-updates)، &nbsp;**الطرق فقط**،  &nbsp;[مصادر الخريطة](../map/raster-maps.md)، &nbsp;[أنماط العرض](../map/map-styles.md#default-map-styles)، &nbsp;**خطوط الخريطة، &nbsp;تعليمات الصوت (مسجلة وTTS)، &nbsp;ذاكرة التخزين المؤقت**.  
 
 - ***أماكني*** (*أصفر*).  
     تشمل [المفضلة](../personal/favorites.md)، &nbsp;[المسارات](../personal/tracks/manage-tracks.md)، &nbsp;[ملاحظات OSM](../plugins/osm-editing.md#create--modify-osm-note)، &nbsp;[تعديلات OSM](../plugins/osm-editing.md#osm-editing-layer)، &nbsp;[ملاحظات الصوت/الفيديو](../plugins/audio-video-notes.md)، &nbsp;[علامات الخريطة](../personal/markers.md)، &nbsp;[التاريخ](../personal/global-settings.md#history)، &nbsp;*الجدول الزمني*.  
@@ -318,7 +318,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -449,8 +449,8 @@ Use sorting options to organize map data:
 
 ## التحديثات الحية {#live-updates}
 
-:::tip شراء
-التحديثات الحية هي ميزة مدفوعة.  
+:::info ميزة Pro
+التحديثات الحية هي ميزة مدفوعة [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -458,7 +458,7 @@ Use sorting options to organize map data:
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
 
-![قائمة الخرائط OsmAnd الحية أندرويد](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![قائمة الخرائط تحرير OsmAnd الحية أندرويد](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
+![قائمة الخرائط OsmAnd الحية أندرويد](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![قائمة الخرائط OsmAnd الحية تحرير أندرويد](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
 </TabItem>
 
@@ -466,7 +466,7 @@ Use sorting options to organize map data:
 
 انتقل إلى: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![قائمة الخرائط OsmAnd الحية iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![قائمة الخرائط تحرير OsmAnd الحية iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![قائمة الخرائط OsmAnd الحية iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![قائمة الخرائط OsmAnd الحية تحرير iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
 </TabItem>
 

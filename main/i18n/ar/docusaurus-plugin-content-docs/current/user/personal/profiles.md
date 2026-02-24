@@ -1,5 +1,5 @@
 ---
-source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
+source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
 sidebar_position: 4
 title:  الملفات الشخصية (الإعدادات)
 ---
@@ -211,13 +211,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 كم / 1000 م |
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 كم / 1000 م |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ميل / 3281 قدم (1000 م) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ميل / 1000 م |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ياردة / 0.62 ميل (1000 م) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 ميل بحري / 3280.84 قدم / 1000 م<br/>تنطبق وحدات الطول على قيم المسافة الأفقية (مثل مسافات القيادة/المسار ومسافات المناورة في الملاحة).|
 |  |  |  |
-| **وحدات الارتفاع** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 م / 3.28 قدم<br/>تنطبق وحدات الارتفاع على قيم الارتفاع/الارتفاعات والمقاييس ذات الصلة (الصعود/الهبوط، نطاق الارتفاع) في أدوات الارتفاع، ومعلومات مسار الملاحة، وإحصاءات المسار.<br/>افتراضيًا، تتزامن وحدات الارتفاع مع وحدات الطول وتصبح مستقلة فقط بعد تغييرها يدويًا من قبل المستخدم. |
+| **وحدات الارتفاع** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 م / 3.28 قدم<br/>تنطبق وحدات الارتفاع على قيم الارتفاع/الارتفاعات والمقاييس ذات الصلة (الصعود/الهبوط، نطاق الارتفاع) في أدوات الارتفاع، ومعلومات مسار الملاحة، وإحصاءات المسار، وتسميات ارتفاع قمم الجبال على الخريطة.<br/>افتراضيًا، تتزامن وحدات الارتفاع مع وحدات الطول وتصبح مستقلة فقط بعد تغييرها يدويًا من قبل المستخدم. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | مثال: 50.12333° 19.93233° (خط عرض خط طول) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | مثال: 50°7.393′ 19°55.941′ (خط عرض خط طول)  |
@@ -232,14 +232,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |          | درجات 360° | جميع القيم الزاوية لها قراءات من 0° إلى 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | جميع القيم الزاوية لها [قيمة بالمللي راديان](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*أندرويد*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 كم/ساعة  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 كم/ساعة  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 ميل/ساعة  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 م/ث |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 دقيقة/م |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 دقيقة/كم |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 عقدة |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | أوروبا، آسيا، أمريكا اللاتينية، كندا، اليابان، الهند، أستراليا |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | أوروبا، آسيا، أمريكا اللاتينية، كندا، اليابان، الهند، أستراليا |
 |  | <Translate android="true" ids="imperial_gallons"/> | المملكة المتحدة وما شابهها |
 |  | <Translate android="true" ids="us_gallons"/> | الولايات المتحدة |
 |  |  |  |
@@ -277,13 +277,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – قم بتوصيل وحدات تحكم خارجية مثل *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, أو *<Translate android="true" ids="sett_parrot_ext_input"/>* لتشغيل OsmAnd باستخدام الأزرار المادية.
 
-- **<Translate android="true" ids="position_animation"/>** / **تحريك الموقع الخاص** – يتم تحريك أيقونة [الموقع](../map/interact-with-map.md#my-location-and-zoom) مع كل نقطة GPS يتم تلقيها (مرة واحدة في الثانية). قد يكون هناك تأخير طفيف في حركتها، خاصة أثناء الحركة السريعة أو تقلبات إشارة GPS. يمكنك ضبط هذا التأثير باستخدام إعداد *وقت التنبؤ* (أندرويد فقط): تزيد القيم الأعلى من السلاسة ولكنها تضيف تأخيرًا، بينما تقلل القيم الأقل من التأخير ولكنها قد تجعل الحركة أقل سلاسة.
+- **<Translate android="true" ids="position_animation"/>** / **تحريك الموقع الخاص** – يتم تحريك أيقونة [الموقع](../map/interact-with-map.md#my-position-and-zoom) مع كل نقطة GPS يتم تلقيها (مرة واحدة في الثانية). قد يكون هناك تأخير طفيف في حركتها، خاصة أثناء الحركة السريعة أو تقلبات إشارة GPS. يمكنك ضبط هذا التأثير باستخدام إعداد *وقت التنبؤ* (أندرويد فقط): تزيد القيم الأعلى من السلاسة ولكنها تضيف تأخيرًا، بينما تقلل القيم الأقل من التأخير ولكنها قد تجعل الحركة أقل سلاسة.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*أندرويد فقط*) – تمكين أو تعطيل القدرة على استخدام أزرار الصوت في جهازك [لتكبير](../map/interact-with-map.md#my-location-and-zoom) وتصغير الخريطة.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*أندرويد فقط*) – تمكين أو تعطيل القدرة على استخدام أزرار الصوت في جهازك [لتكبير](../map/interact-with-map.md#my-position-and-zoom) وتصغير الخريطة.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*أندرويد فقط*) – ينعم دوران الخريطة بـ [حركة تدريجية](https://en.wikipedia.org/wiki/Kalman_filter)، مما يقلل من التحولات المفاجئة في الموقع. هذا يسبب تأخيرًا صغيرًا (*أقل من ثانية واحدة*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*أندرويد فقط*) – ينعم دوران الخريطة بـ [حركة تدريجية](https://en.wikipedia.org/wiki/Kalman_filter)، مما يقلل من التحولات المفاجئة في الموقع. هذا يسبب تأخيرًا صغيرًا (*أقل من ثانية واحدة*).
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*أندرويد فقط*) – انقر على مساحة فارغة على الخريطة لإخفاء أزرار التحكم والأدوات، مما يزيد من رؤية الخريطة.
 
@@ -371,7 +371,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **تمكين تصور وسائل النقل العام**، وعرض [المسارات والمحطات](../map/public-transport.md) لتخطيط أفضل للرحلات.
 
-- **ضبط مظهر الخريطة** عن طريق تحديد [نمط خريطة](../map/vector-maps.md#default-map-styles) مختلف ليناسب احتياجاتك.
+- **ضبط مظهر الخريطة** عن طريق تحديد [نمط خريطة](../map/map-styles.md) مختلف ليناسب احتياجاتك.
 
 
 ## تكوين الشاشة {#configure-screen}
@@ -456,7 +456,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### زاوية العرض ونصف قطر الموقع {#view-angle-and-location-radius}
 
-يمكنك تخصيص العناصر المرئية المتعلقة بموقعك وتطبيقها بشكل منفصل أو معًا لمواضع **الراحة** و**الملاحة**. لكل من الوضعين ثنائي الأبعاد وثلاثي الأبعاد، يتم عرض *زاوية العرض* و*نصف قطر الموقع* بنفس اللون المحدد [لملف تعريف الملاحة](#profile-appearance)، مباشرة أسفل أيقونة [موقعي](../map/interact-with-map.md#my-location-and-zoom).
+يمكنك تخصيص العناصر المرئية المتعلقة بموقعك وتطبيقها بشكل منفصل أو معًا لمواضع **الراحة** و**الملاحة**. لكل من الوضعين ثنائي الأبعاد وثلاثي الأبعاد، يتم عرض *زاوية العرض* و*نصف قطر الموقع* بنفس اللون المحدد [لملف تعريف الملاحة](#profile-appearance)، مباشرة أسفل أيقونة [موقعي](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – يعرض منطقة **على شكل مخروط** تشير إلى الاتجاه الذي تواجهه حاليًا.  
 - **<Translate android="true" ids="location_radius"/>** – يعرض منطقة **دائرية** حول أيقونتك، تمثل دقة موقعك الحالي.

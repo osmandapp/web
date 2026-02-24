@@ -1,8 +1,9 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
 sidebar_position: 18
 title:  الإضافات
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 🤖 *- فقط لإصدار أندرويد من OsmAnd.*
 
-| اسم الإضافة | الميزات |
+| اسم الإضافة |الميزات |
 |:------------|:-------|
 | [ويكيبيديا](#wikipedia) | [طبقة الخريطة](../plugins/wikipedia.md#download-wikipedia-packages)، [قائمة السياق](../plugins/wikipedia.md#wikipedia-settings) |
 | [الخرائط عبر الإنترنت](#online-maps) |[طبقة الخريطة](../plugins/online-map.md#how-to-prepare-raster-maps) |
@@ -79,14 +79,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | [عرض الخرائط البحرية](#nautical-map-view) | [نمط الخريطة](../plugins/nautical-charts.md#nautical-map-style)، [الملف الشخصي](../plugins/nautical-charts.md#nautical-profile)  |
 | [عرض خرائط التزلج](#ski-map-view) | [نمط الخريطة](../plugins/ski-maps.md#set-winter-and-ski-map-style)، [الملف الشخصي](../plugins/ski-maps.md#skiing-profile) |
 |[الملاحظات الصوتية/المرئية](#audiovideo-notes) 🤖  | [طبقة الخريطة](../plugins/audio-video-notes.md#show-all-on-the-map)، [قائمة السياق](../plugins/audio-video-notes.md#create-a-single-note)، [أداة مصغرة (Widget)](../plugins/audio-video-notes.md#recording-widget) |
-|[تعديل OpenStreetMap](#openstreetmap-editing)| [طبقة الخريطة](../plugins/osm-editing.md#authorization) |
 |[موقف السيارة](#parking-position) | [قائمة السياق](../plugins/parking.md#set-a-spot)، [أداة مصغرة (Widget)](../plugins/parking.md#parking-widget) |
+|[تعديل OpenStreetMap](#openstreetmap-editing)| [طبقة الخريطة](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [طبقة الخريطة](../plugins/mapillary.md#map-layer)، [قائمة السياق](../plugins/mapillary.md#map-context-menu) ، [أداة مصغرة (Widget)](../plugins/mapillary.md#mapillary-widget)|
 |[المستشعرات الخارجية](#external-sensors) 🤖  | [أداة مصغرة (Widget)](../plugins/external-sensors.md#widgets) |
+|[مقاييس المركبة](#vehicle-metrics)  | [إعدادات مخصصة](../plugins/vehicle-metrics#scanner-settings)، [أداة مصغرة (Widget)](../plugins/vehicle-metrics#widgets) |
+|[مراقب النجوم](#star-watcher)  | [شاشة](../plugins/starwatcher.md#star-map-screen)، [قائمة السياق](../plugins/starwatcher.md#celestial-object-info) |
 |[إمكانية الوصول](#accessibility) 🤖  | [إعدادات مخصصة](../plugins/accessibility.md#plugin-settings) |
-| [تطوير OsmAnd](#osmand-development) | [إعدادات مخصصة](../plugins/development.md#plugin-settings) |
-| [متتبع OsmAnd](#osmand-tracker) 🤖  | [طبقة الخريطة](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map)، [أداة مصغرة (Widget)](../plugins/osmand-tracker.md#tracker-widget)، [قائمة السياق](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [متتبع سفن AIS](#ais-vessel-tracker) 🤖  |  [إعدادات مخصصة](../plugins/ais-tracker.md#plugin-settings) |
+|[تطوير OsmAnd](#osmand-development) | [إعدادات مخصصة](../plugins/development.md#plugin-settings) |
+|[متتبع OsmAnd](#osmand-tracker) 🤖  | [طبقة الخريطة](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map)، [أداة مصغرة (Widget)](../plugins/osmand-tracker.md#tracker-widget)، [قائمة السياق](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[متتبع سفن AIS](#ais-vessel-tracker) 🤖  |  [إعدادات مخصصة](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### إعدادات الإضافة {#plugin-settings}
@@ -122,7 +124,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | اسم الإضافة | الإعدادات |
 |:------------|:-------|
-| [تسجيل الرحلة](#trip-recording) | تهيئة [أوضاع تشغيل](../plugins/trip-recording.md#required-setup-parameters) تسجيل الرحلة |
+| [تسجيل الرحلة](#trip-recording) | تهيئة [أوضاع التشغيل](../plugins/trip-recording.md#required-setup-parameters) تسجيل الرحلة |
 | [الطقس](#weather) | تهيئة وحدات القياس لعرض أحداث الطقس |
 |[الملاحظات الصوتية/المرئية](#audiovideo-notes) 🤖  | حدد [تنسيق الفيديو، ومدة التخزين، إلخ.](../plugins/audio-video-notes.md#plugin-settings) |
 |[تعديل OpenStreetMap](#openstreetmap-editing)| حدد [تسجيل دخول](../plugins/osm-editing.md#settings) المستخدم |
@@ -140,7 +142,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## قائمة الإضافات {#plugins-list}
 
-
 ### [ويكيبيديا](./wikipedia.md) {#wikipedia}
 
 يساعدك وجود ويكيبيديا في رحلتك على معرفة المزيد عن الأماكن التي تزورها. وهي متاحة دون اتصال بالإنترنت وتعرض مقالات ويكيبيديا المتعلقة بالنقاط المهمة مباشرة على الخريطة.
@@ -156,6 +157,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### [التضاريس](./topography.md) {#topography}
 
 تساعد معلومات التضاريس، مثل خطوط الكنتور، وتظليل التلال، والانحدار، والتضاريس ثلاثية الأبعاد، على إجراء تقييم مرئي لتضاريس الأرض من خلال رؤية الارتفاع، والتضاريس، والنقاط القصوى، والانحدار، ونقاط الارتفاع المتساوية، وما إلى ذلك.
+
+### [الطقس](./weather.md) {#weather}
+
+يعرض التوقعات الجوية بالساعة لليوم الحالي ولـ 7 أيام قادمة.
 
 ### [عرض الخرائط البحرية](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 شاهد عروضًا على مستوى الشارع لمساراتك أو الأماكن التي تهمك، مقدمة من [Mapillary](https://www.mapillary.com/) (يلزم الاتصال بالإنترنت).
 
-### [إمكانية الوصول](./accessibility.md) {#accessibility}
-
-تجعل إضافة إمكانية الوصول ميزات إمكانية الوصول في الجهاز متاحة مباشرة في OsmAnd. لنظام أندرويد فقط.
-
 ### [المستشعرات الخارجية](./external-sensors.md) {#external-sensors}
 
 قم بتوصيل مستشعرات خارجية لعرض بياناتها في OsmAnd وتخزين المعلومات في تسجيلات المسار.
@@ -193,9 +194,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 قم بتوصيل ماسح OBD-II لعرض بيانات السيارة في OsmAnd وتخزين المعلومات في تسجيلات المسار.
 
-### [الطقس](./weather.md) {#weather}
+### [مراقب النجوم](./starwatcher.md) {#star-watcher}
 
-يعرض التوقعات الجوية بالساعة لليوم الحالي ولـ 7 أيام قادمة.
+يعرض مراقب النجوم طبقة تفاعلية لسماء النجوم مع النجوم، والكوكبات، والشمس، والقمر، والكواكب. يساعدك على تحديد الأجسام السماوية فوق موقعك الحالي، ومعاينة مساراتها لتاريخ وزمان محدد، وتخطيط جلسات مراقبة النجوم باستخدام عناصر التحكم في الوقت والخيارات المدمجة للعرض.
+
+### [إمكانية الوصول](./accessibility.md) {#accessibility}
+
+تجعل إضافة إمكانية الوصول ميزات إمكانية الوصول في الجهاز متاحة مباشرة في OsmAnd. لنظام أندرويد فقط.
 
 ### [تطوير OsmAnd](./development.md) {#osmand-development}
 

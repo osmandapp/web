@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  قائمة سياق المسار
 ---
@@ -129,7 +129,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*أندرويد فقط*) – يدمج أجزاء المسار لملء الفجوات.
-- **<Translate android="true" ids="analyze_on_map"/>**. يفتح أداة [التحليل على الخريطة](../tracks/index.md#analyze-track-on-map) لفحص ارتفاع المسار وسرعته ومسافته.
+- **<Translate android="true" ids="analyze_on_map"/>**. يفتح أداة [التحليل على الخريطة](../tracks/index.md#analyze-track-on-map) لفحص ارتفاع المسار وسرعته ومسافته، وبأي بيانات إضافية محتَوَاة في المسار (مثل بيانات المستشعرات الخارجية أو بيانات مقاييس المركبة).
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*أندرويد فقط*) - يحلل المسار حسب [الفواصل](./track-context-menu.md#analyze-by-intervals) الزمنية أو المسافة.
 
 <br/>
@@ -364,11 +364,11 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### حساب الارتفاع المفقود {#calculate-missing-elevation}
 
-:::note اشتراك OsmAnd Pro
-ميزة حساب الارتفاع دون اتصال بالإنترنت متاحة فقط [**لمشتركي OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info ميزة مدفوعة
+[حساب الارتفاع دون اتصال بالإنترنت](../../plan-route/create-route.md#get-elevation-data) هي ميزة مدفوعة [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
 
 [تتيح لك هذه الميزة](../../plan-route/create-route.md#get-elevation-data) حساب ملف تعريف الارتفاع لمسار GPX دون اتصال بالإنترنت لأي تضاريس بين خط عرض ٧٠ درجة شمالًا و ٧٠ درجة جنوبًا، بناءً على [بيانات خرائط التضاريس](../../plugins/topography.md#download-maps). *يجب تنزيل خرائط التضاريس (ثلاثية الأبعاد) مسبقًا*.
 

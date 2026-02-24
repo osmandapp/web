@@ -1,5 +1,5 @@
 ---
-source-hash: 3970a0828bc6b80d9b68504c9d78e40d1226e1cf16d6f1fbc2fdcc5d6af480ec
+source-hash: 10e2341332ad6f362f02e8ca20670f75459fd950a7fe11cc51ec340380692495
 sidebar_position: 3
 title: عمليات الشراء عبر الويب
 ---
@@ -30,7 +30,7 @@ import Translate from '@site/src/components/Translate.js';
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **خطة اشتراك** تفتح جميع [الميزات الاحترافية](#free-and-paid-features)، بما في ذلك CarPlay و 3D Relief. | يدعم **الوصول عبر المنصات** |
 
 :::note  
-**الوصول عبر المنصات** يعني أنه يمكنك شراء OsmAnd من موقعنا أو من متجر واحد (على سبيل المثال، *App Store أو Google Play أو osmand.net*) واستخدامه على منصة أخرى عن طريق [ربط عملية الشراء بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+**الوصول عبر المنصات** يعني أنه يمكنك شراء OsmAnd في موقعنا أو من متجر واحد (على سبيل المثال، *App Store، Google Play، أو osmand.net*) واستخدامه على منصة أخرى عن طريق [ربط عملية الشراء بحساب OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 :::
 
 ## الأسعار {#prices}
@@ -39,10 +39,9 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
+:::danger February Sale
 
-:::danger Christmas sale
-
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -59,6 +58,7 @@ By purchasing a subscription through our [website](https://osmand.net/pricing) a
 you receive a 2-year discounted plan.  
 Starting from the third year, the full price will apply.
 :::
+
 
 -->
 

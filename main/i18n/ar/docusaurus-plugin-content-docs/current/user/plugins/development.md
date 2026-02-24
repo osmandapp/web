@@ -1,5 +1,5 @@
 ---
-source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
+source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
 sidebar_position: 10
 title:  تطوير OsmAnd
 ---
@@ -47,7 +47,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![إعدادات التطوير أندرويد](@site/static/img/plugins/development/development_settings_1_andr.png) ![إعدادات التطوير 2 أندرويد](@site/static/img/plugins/development/development_settings_2_andr.png)
+![إعدادات التطوير أندرويد](@site/static/img/plugins/development/development_settings_1_andr.png) ![إعدادات التطوير ٢ أندرويد](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
@@ -144,7 +144,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![أداة التطوير fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![أداة التطوير fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+![أداة التطوير fps ١](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![أداة التطوير fps ٢](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
 </TabItem>
 
@@ -152,7 +152,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![أداة التطوير iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+![أداة التطوير iOS ٢](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
@@ -173,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*
 
-![أدوات موضع الكاميرا 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![أدوات موضع الكاميرا 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+![أدوات موضع الكاميرا ١](@site/static/img/plugins/development/dev_widgets_camera.png) ![أدوات موضع الكاميرا ٢](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 </TabItem>
 
@@ -181,7 +181,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
-![أدوات موضع الكاميرا 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![أدوات موضع الكاميرا 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
+![أدوات موضع الكاميرا ١](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![أدوات موضع الكاميرا ٢](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 
 </TabItem>
 
@@ -196,13 +196,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![أداة إمالة الكاميرا أندرويد 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![أداة إمالة الكاميرا أندرويد 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
+![أداة إمالة الكاميرا أندرويد ١](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![أداة إمالة الكاميرا أندرويد ٢](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![أداة إمالة الكاميرا ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![أداة إمالة الكاميرا ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
+![أداة إمالة الكاميرا ios ١](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![أداة إمالة الكاميرا ios ٢](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)
 
 </TabItem>
 
@@ -222,13 +222,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![أداة ارتفاع الكاميرا أندرويد 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![أداة ارتفاع الكاميرا أندرويد 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
+![أداة ارتفاع الكاميرا أندرويد ١](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![أداة ارتفاع الكاميرا أندرويد ٢](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![أداة ارتفاع الكاميرا ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![أداة ارتفاع الكاميرا ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
+![أداة ارتفاع الكاميرا ios ١](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![أداة ارتفاع الكاميرا ios ٢](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)
 
 </TabItem>
 
@@ -243,13 +243,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![أداة مستوى التكبير/التصغير أندرويد 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![أداة مستوى التكبير/التصغير أندرويد 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)
+![أداة مستوى التكبير/التصغير أندرويد ١](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![أداة مستوى التكبير/التصغير أندرويد ٢](@site/static/img/plugins/development/developer_widg_zoom_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![أداة مستوى التكبير/التصغير ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![أداة مستوى التكبير/التصغير ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)
+![أداة مستوى التكبير/التصغير ios ١](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![أداة مستوى التكبير/التصغير ios ٢](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)
 
 </TabItem>
 
@@ -273,13 +273,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![أداة المسافة إلى الهدف 1 أندرويد](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![أداة المسافة إلى الهدف 2 أندرويد](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)
+![أداة المسافة إلى الهدف ١ أندرويد](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![أداة المسافة إلى الهدف ٢ أندرويد](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![أداة المسافة إلى الهدف 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![أداة المسافة إلى الهدف 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)
+![أداة المسافة إلى الهدف ١ iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![أداة المسافة إلى الهدف ٢ iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)
 </TabItem>
 
 </Tabs>

@@ -1,7 +1,7 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
-title:  توجيه النقل العام
+title:  Public Transport routing
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## نظرة عامة {#overview}
 
-تتيح لك ميزة الملاحة عبر وسائل النقل العام في تطبيق OsmAnd تحديد المسارات باستخدام وسائل النقل العام، مما سيساعدك بالتأكيد على التنقل في "الغابة الخرسانية" بشكل أسرع.
+تتيح لك ميزة الملاحة عبر وسائل النقل العام في تطبيق OsmAnd حساب المسارات باستخدام وسائل النقل العام، مما سيساعدك بالتأكيد على التنقل في "الغابة الخرسانية" بشكل أسرع.
 
 تُؤخذ البيانات المتعلقة بمسارات النقل العام من مشروع [خريطة الشارع المفتوحة](http://openstreetmap.org/). يستخدم OsmAnd [مخطط PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) للملاحة. يدعم OsmAnd مسارات خريطة الشارع المفتوحة التالية للملاحة: *bus*، *trolleybus*، *share_taxi*، *funicular*، *subway*، *light_rail*، *monorail*، *train*، *tram*، *ferry*. يتم تكوين السرعة الافتراضية لكل نوع من المركبات في [ملف Routing xml](../../../technical/build-osmand/routing.md) ويُستخدم للعثور على أسرع المسارات.
 
@@ -44,7 +44,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## كيفية الاستخدام {#how-to-use}
 
-لبدء الملاحة في جميع أنحاء المدينة بواسطة وسائل النقل العام، استخدم [زر الملاحة](../../widgets/map-buttons.md#directions) على شاشة الخريطة أو حدد خيار الملاحة في *القائمة الرئيسية*.  
+لبدء الملاحة في جميع أنحاء المدينة بواسطة وسائل النقل العام، استخدم [زر الملاحة](../../widgets/map-buttons.md#navigation) على شاشة الخريطة أو حدد خيار الملاحة في *القائمة الرئيسية*.  
 
 **١.** تحتاج إلى اختيار *ملف تعريف ملاحة النقل العام*، ونقاط البداية والوجهة.  
 
@@ -142,7 +142,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## الأداء والنتائج {#performance-and-results}
 
-**ملف تعريف النقل العام -> الإعدادات -> إعدادات الملاحة -> معلمات المسار**
+**ملف تعريف النقل العام -&gt; الإعدادات -&gt; إعدادات الملاحة -&gt; معلمات المسار**
 
 ١. **الحد الأقصى لعدد تغييرات النقل**.
 
@@ -171,7 +171,7 @@ Possible values: 0 (show all), 5, 10 (default), 15, 100
 
 ## البيانات والإرشادات {#data-and-guideline}
 
-يستخدم OsmAnd مخططًا جديدًا للنقل العام، يُطلق عليه أيضًا اسم Public Transport Version 2 (PTv2) لخوارزمية ملاحة النقل العام في OsmAnd.
+يستخدم OsmAnd مخطط نقل عام جديد، يُدعى أيضًا Public Transport Version 2 (PTv2)، لخوارزمية الملاحة عبر النقل العام في OsmAnd.
 
 - يمكنك التحقق من وسائل النقل العام الخاصة بك [هنا](http://tools.geofabrik.de/osmi/).
 - يتوفر دليل لبناء أو تعديل مسارات النقل العام على [مدونتنا](https://osmand.net/blog/guideline-pt).

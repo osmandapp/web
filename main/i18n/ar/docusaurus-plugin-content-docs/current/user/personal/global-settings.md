@@ -1,5 +1,5 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Global Settings
 ---
@@ -59,7 +59,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![إعدادات عامة ملف شخصي افتراضي أندرويد](@site/static/img/personal/profiles/default_profile_ios.png)
+![إعدادات عامة ملف شخصي افتراضي iOS](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -79,7 +79,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![إعدادات عامة ملف شخصي افتراضي أندرويد](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![إعدادات ملف CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
 يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصوى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
 
@@ -147,10 +147,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | وضع 3D | من الممكن عرض الخريطة في 2D، ويمكنك تغيير زاوية العرض للحصول على [عرض ثلاثي الأبعاد](../widgets/map-buttons.md#3d-mode). | يمكنك عرض الخريطة في 2D و[3D](../widgets/map-buttons.md#3d-mode). |
 | عرض الخريطة | يتم عرض الخريطة بأكملها كمجموعة من البلاطات، والعلامات والخطوط والنصوص موجودة بالفعل داخل هذه البلاطات. | أولاً، يتم عرض حزمة البلاط بأكملها، ثم يتم تطبيق الرموز المتاحة على الخريطة، [طبقة بطبقة](../../technical/algorithms/map-rendering-layers.md). |
 | تراكب / تحت الرموز الشفافة | يدعم جميع الإعدادات. | لا يدعم طبقة رستر على النص المتجهي. |
-| [التضاريس ثلاثية الأبعاد](../map/raster-maps.md#3d-relief) | غير مدعوم. | تُصور هذه الميزة التضاريس على الخريطة بإضافة معلومات الارتفاع إلى خريطة 2D عادية، مما يخلق تأثيرًا ثلاثي الأبعاد وعمق. |
+| [التضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | غير مدعوم. | تُصور هذه الميزة التضاريس على الخريطة بإضافة معلومات الارتفاع إلى خريطة 2D عادية، مما يخلق تأثيرًا ثلاثي الأبعاد وعمق. |
 | [المسارات ثلاثية الأبعاد](../map/tracks/appearance.md) | غير مدعوم. | تسمح هذه الميزة بعرض المسارات حسب الارتفاع فوق مستوى سطح البحر. |
 | [خريطة عبر الإنترنت](../plugins/online-map.md) | لا يدعم عرض خطوط الارتفاع إذا كان مصدر الخريطة أي خريطة بلاطات عبر الإنترنت. | عندما يكون مصدر الخريطة خريطة عبر الإنترنت، يتم استخدام الخرائط ثلاثية الأبعاد أيضًا، ويتم دعم عرض خطوط الارتفاع على الخريطة. |
-| [إضافة الطقس](../plugins/weather.md) | لا يمكنك استخدام هذه الإضافة. | مريح للاستخدام مع الإضافة. |  
+| [إضافة الطقس](../plugins/weather.md) | لا يمكنك استخدام هذه الإضافة. | مريح للاستخدام مع الإضافة. |
+| [عرض الكرة الأرضية](../map/interact-with-map.md#globe-view) | غير مدعوم. | يسمح بعرض الخريطة ككرة أرضية كروية (كرة أرضية) بدلاً من الإسقاط المسطح. |  
 
 يتم تحميل صورة عرض الخريطة ثلاثي الأبعاد بلاطة بلاطة، ثم جميع الرموز. تعتمد سرعة عرض الخريطة على عدد الكائنات الرسومية ثنائية وثلاثية الأبعاد عليها، وعلى أداء الأجهزة الخاصة بك مباشرة. لذلك، لا يمكن استخدام الإصدار 2 (OpenGL) على الأجهزة ذات الأداء المنخفض.
 
@@ -310,7 +311,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*أندرويد فقط*)
 
-![النسخ الاحتياطي التلقائي](@site/static/img/personal/profiles/location_source_andr.png)
+![إعدادات مصدر الموقع أندرويد](@site/static/img/personal/profiles/location_source_andr.png)
 
 يوفر OsmAnd لك خيارًا من الخدمات لتحديد موقعك. يُوصى بقراءة مزيد من المعلومات حول [إذن الموقع](../start-with/first-steps.md#permission-to-access-the-location) و[استكشاف الأخطاء وإصلاحها](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) لهذا القسم.
 
@@ -365,7 +366,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![إعدادات عامة الكاميرات أندرويد](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![إعدادات عامة الكاميرات أندرويد](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![إعدادات عامة الكاميرات iOS](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![إعدادات عامة الكاميرات iOS](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 

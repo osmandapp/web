@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title:  المسارات
 ---
 
@@ -32,10 +32,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 توجد [مسارات الدراجات](https://wiki.openstreetmap.org/wiki/Cycle_routes) في ثلاثة أنواع: *محلية* (`lcn`)، و*إقليمية* (`rcn`)، و*وطنية* (`ncn`)، و*دولية* (`icn`). أيضًا، يمكن أن تكون مسارات الدراجات جزءًا من [شبكات العقد](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). يمكنك اختيار كيفية تعيين لون لقطاعات المسار:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
-![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
+![مسارات الخريطة - مسارات الدراجات](@site/static/img/map/map-routes-cycle-routes.png)
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
-![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+![مسارات الخريطة - شبكات عقد الدراجات](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 يمكنك العثور على مزيد من المعلومات في مقالة [وسيلة إيضاح الخريطة](../map-legend/index.md).
 
@@ -52,28 +52,28 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 - ***<Translate android="true" ids="mtb_scale"/>***.  يعرض المسارات وفقًا لمقياس MTB. يتوفر المزيد من المعلومات في مقالة [وسيلة إيضاح الخريطة](../map-legend/index.md).  
-![Map routes - MTB trails](@site/static/img/map/map-routes-mtb-trails.png)  
+![مسارات الخريطة - مسارات MTB](@site/static/img/map/map-routes-mtb-trails.png)  
 
 - ***<Translate android="true" ids="mtb_imba"/>***.  يعرض مسارات MTB وفقًا لجمعية الدراجات الجبلية الدولية، [MTB IMBA](https://www.imba.com/). يتوفر المزيد من المعلومات في مقالة [وسيلة إيضاح الخريطة](../map-legend/index.md).  
-![Map routes - MTB trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
+![مسارات الخريطة - مسارات MTB](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ### مسارات المشي لمسافات طويلة / المشي {#hiking--walking-routes}
 
 توجد [مسارات المشي لمسافات طويلة](https://wiki.openstreetmap.org/wiki/Walking_Routes) في ثلاثة أنواع: *محلية* (`lwn`)، و*إقليمية* (`rwn`)، و*وطنية* (`nwn`)، و*دولية* (`iwn`). أيضًا، يمكن أن تكون مسارات المشي جزءًا من [شبكات العقد](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). لا يفصل OsmAnd بين مسارات المشي والمشي لمسافات طويلة ويجمعها في مجموعة واحدة. يمكنك اختيار كيفية تعيين لون لقطاعات المسار:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  يلون المسارات وفقًا لـ [لونها المحلي](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) الفردي (إذا كان متاحًا في OpenStreetMap) ورمز الدرع السياحي.  
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
+![مسارات الخريطة - osmc للمشي](@site/static/img/map/map-routes-hiking-osmc.png)
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  يلون حسب [الانتماء للشبكة](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
-![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
+![مسارات الخريطة - شبكة المشي](@site/static/img/map/map-routes-hiking-network.png)
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  يلون المسارات وفقًا لنوع [شبكة العقد](https://wiki.openstreetmap.org/wiki/Node_Networks) (دولية أو إقليمية أو محلية).  
-![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
+![مسارات الخريطة - شبكات عقد المشي](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 
 ### مسارات الدراجات الترابية {#dirt-bike-trails}
 
-![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
+![مسارات الخريطة - مسارات الدراجات الترابية](@site/static/img/map/map-routes-dirt-bike-trails.png)
 
 تتيح لك ميزة **مسارات الدراجات الترابية** عرض مسارات خاصة بالدراجات الترابية على الخريطة بناءً على وسم `dirtbike:scale`. يسلط هذا المقياس الضوء على المسارات المناسبة لركوب الدراجات الترابية، مع تراكب ملون يوضح مستويات الصعوبة ([وسيلة إيضاح الخريطة](../map-legend/osmand.md#routes)).  
 
@@ -82,7 +82,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### مسارات التسلق {#climbing-routes}
 
-![Map routes - Climbing Routes](@site/static/img/map/map-routes-climbing-routes.png)
+![مسارات الخريطة - مسارات التسلق](@site/static/img/map/map-routes-climbing-routes.png)
 
 يدعم OsmAnd *مناطق التسلق* (`climbing=area`) و*جروف التسلق* (`climbing=crag`)، مما يتيح لك العثور على مواقع [تسلق الصخور](https://wiki.openstreetmap.org/wiki/Climbing) مباشرة على الخريطة.
 
@@ -103,7 +103,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### درجة صعوبة مسارات المشي لمسافات طويلة {#hiking-trails-difficulty-grade}
 
-![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
+![مسارات الخريطة - المشي الجبلي](@site/static/img/map/map-routes-alpine-hiking.png)
 
 يمكن أن تكون بعض قطاعات الطرق جزءًا من العديد من المسارات، ولكن يمكن تلوينها بشكل فردي لتمثيل صعوبة القطاع في المناطق الجبلية. حاليًا، يدعم OsmAnd التصنيفات الإيطالية والسويسرية، ولكل منها قائمة محددة من متطلبات المعدات للوصول إلى هذا القطاع.  
 
@@ -114,45 +114,45 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### مسارات التزلج والمنحدرات {#ski-slopes-and-routes}
 
 - _مسارات التزلج والمنحدرات_ في نمط خريطة _الشتاء والتزلج_.  
-![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
+![مسارات الخريطة - منحدرات التزلج](@site/static/img/map/map-routes-ski-slopes.png)
 
 - _مسارات التزلج والمنحدرات_ في نمط خريطة _OsmAnd الافتراضي_.  
-![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
+![مسارات الخريطة - منحدرات التزلج](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-مسارات التزلج والمنحدرات هي مجموعة محددة من [المسارات](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) في OpenStreetMap. عادةً، يمكن استخدام هذه المسارات مع نمط خريطة [الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) مع جميع [مسارات التزلج](https://wiki.openstreetmap.org/wiki/Pistes) المرئية. إذا كان نمط خريطة آخر نشطًا، يتم عرض لافتة تقترح التبديل إلى [الشتاء والتزلج](../map/vector-maps.md#winter-and-ski) (*أندرويد فقط*) ويتم عرض المنحدرات فقط. انقر على ***التبديل*** لتغيير نمط الخريطة دون مغادرة الشاشة الحالية، أو ***لاحقًا*** لإخفاء اللافتة.
+مسارات التزلج والمنحدرات هي مجموعة محددة من [المسارات](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) في OpenStreetMap. عادةً، يمكن استخدام هذه المسارات مع نمط خريطة [الشتاء والتزلج](../map/map-styles.md#winter-and-ski) مع جميع [مسارات التزلج](https://wiki.openstreetmap.org/wiki/Pistes) المرئية. إذا كان نمط خريطة آخر نشطًا، يتم عرض لافتة تقترح التبديل إلى [الشتاء والتزلج](../map/map-styles.md#winter-and-ski) (*أندرويد فقط*) ويتم عرض المنحدرات فقط. انقر على ***التبديل*** لتغيير نمط الخريطة دون مغادرة الشاشة الحالية، أو ***لاحقًا*** لإخفاء اللافتة.
 
 
 ### مسارات الدراجات الثلجية {#snowmobile-trails}
 
-![Map routes - snowmobile](@site/static/img/map/snowmobile_trail_new.png)
+![مسارات الخريطة - الدراجات الثلجية](@site/static/img/map/snowmobile_trail_new.png)
 
 يتم رسم مسارات الدراجات الثلجية في [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dsnowmobile) كـ `route=snowmobile`. يتم استخدامها للترفيه الشتوي ولربط المناطق النائية خلال موسم الثلج. في OsmAnd، تكون مسارات الدراجات الثلجية قابلة للنقر، انظر قسم [الإجراءات مع المسارات](#actions-with-routes).
 
 
 ### مسارات الخيل {#horse-routes}
 
-![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
+![مسارات الخريطة - مسارات الخيل](@site/static/img/map/map-routes-horse.png)
 
 يتم عرض [مسارات الخيل](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) كمسارات ملونة مع رموز لركوب الخيل.  
 
 
 ### رياضات المياه البيضاء {#whitewater-sports}
 
-![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
+![مسارات الخريطة - رياضة المياه البيضاء](@site/static/img/map/map-routes-whitewater-sport.png)
 
-يتم عرض [مسارات المياه البيضاء](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) مع أيقونات الوصول ومناطق الخطر لـ [سياحة المياه البيضاء](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+يتم عرض [مسارات المياه البيضاء](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) مع أيقونات الوصول ومناطق الخطر لـ [سياحة المياه البيضاء](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). انظر [ميزات المياه البيضاء](../map-legend/osmand.md#whitewater-features) في وسيلة إيضاح الخريطة لدرجات السرعة، ودرجات أقسام النهر، والرموز ذات الصلة.
 
 
 ### مسارات الجري {#running-routes}
 
-![Fitness routes](@site/static/img/map/fitness_1.png)
+![مسارات اللياقة](@site/static/img/map/fitness_1.png)
 
 تُستخدم [مسارات الجري](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) في OpenStreetMap للمسارات المسماة أو المرقمة أو المميزة بطريقة أخرى، بشكل أساسي لألعاب القوى.
 
 
 ### مسارات اللياقة البدنية {#fitness-trails}
 
-![Fitness routes](@site/static/img/map/fitness_route.png)
+![مسارات اللياقة](@site/static/img/map/fitness_route.png)
 
 [مسار اللياقة البدنية](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) هو مسار أو ممر مجهز بعقبات أو محطات على طوله لممارسة التمارين الرياضية لتحسين الصحة.  
 
@@ -161,7 +161,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
+![مسارات السفر](@site/static/img/map/travel_route_2.png)  ![مسارات السفر](@site/static/img/map/travel_routes.png)
 
 مسارات السفر هي جزء من ملفات [كتاب السفر](../plan-route/travel-guides.md) المخصصة (`travel.obf`)، والتي يمكن إنشاؤها من [مسارات المستخدم](https://osmand.net/blog/routes#generated-travel-routes) أو تكون جزءًا من [ملحقات](../plugins/index.md) إضافية.  
 
@@ -176,17 +176,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
+![قسم تكوين مسارات الخريطة](@site/static/img/map/configure_map_routes_android.png) ![فئات المسارات](@site/static/img/map/routes_classes_android.png)
 
 - لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* من قائمة [تكوين الخريطة](../map/configure-map-menu.md).
 - يمكن لـ OsmAnd إبراز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها عن طريق النقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك اتباع اللون والأيقونات.
-- يمكن أيضًا تصفية الأنواع الرئيسية للمسارات حسب الفئات والفئات الفرعية، مما يسمح لك بعرض مجموعات محددة فقط داخل كل نوع. على سبيل المثال، يمكنك عرض مسارات المشي لمسافات طويلة حسب **رموز OSMC** كفئات، وحسب *الشبكات الدولية أو الوطنية أو الإقليمية*، أو *الشبكات المحلية* كفئات فرعية.
+- يمكن أيضًا تصفية الأنواع الرئيسية للمسارات حسب الفئات والفئات الفرعية، مما يسمح لك بعرض مجموعات محددة فقط داخل كل نوع. على سبيل المثال، يمكنك عرض مسارات المشي لمسافات طويلة حسب **رموز OSMC** كفئات، وحسب *الشبكات الدولية أو الوطنية أو الإقليمية*، أو *الشبكات المحلية* كفئات فرعية، والتي تتوفر حاليًا عند تمكين [ملحق تطوير OsmAnd](../plugins/development.md).
 - يمكنك إنشاء مسار فوق المسارات باستخدام أداة [تخطيط مسار](../plan-route/create-route.md).  
 - عندما يمر عدة مسارات على طول الطريق نفسها، يتم عرض كل مسار كخط شبه شفاف منفصل موضوع فوق الآخرين.  
 - عند النقر على موقع يتداخل فيه عدة مسارات، يتم عرض قائمة سياقية بجميع المسارات التي تمر عبر هذه النقطة.  
 - تتطلب الخرائط المتجهية المحدثة لعرض جميع عناصر مخطط عرض المسارات الجديد. 
 
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+![مسارات الخريطة - osmc للمشي](@site/static/img/map/map-routes-hiking-osmc.png)![مسارات الخريطة - شبكات عقد الدراجات](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -194,14 +194,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
+![قائمة المسارات iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* من قائمة [تكوين الخريطة](../map/configure-map-menu.md).
 - يمكن لـ OsmAnd إبراز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها عن طريق النقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك اتباع اللون والأيقونات.
 - يمكنك إنشاء مسار فوق المسارات باستخدام أداة [تخطيط مسار](../plan-route/create-route.md).  
 - عندما يمر عدة مسارات على طول الطريق نفسها، يتم عرض كل مسار كخط شبه شفاف منفصل موضوع فوق الآخرين.   
 
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+![مسارات الخريطة - osmc للمشي](@site/static/img/map/map-routes-hiking-osmc.png)![مسارات الخريطة - شبكات عقد الدراجات](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -210,7 +210,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## تفاصيل منطقة وجرف التسلق {#climbing-area-and-crag-details}
 
-![Climbing details](@site/static/img/map/climbing_andr.png)
+![تفاصيل التسلق](@site/static/img/map/climbing_andr.png)
 
 عند تحديد [منطقة أو جرف تسلق](../map/routes.md#climbing-routes)، يقدم OsmAnd ملخصًا مفصلاً لموقع التسلق، بما في ذلك: الاسم والموقع، وتصنيف صعوبة التسلق (UIAA، الفرنسية، YDS، إلخ)، ونوع الصخر، والارتفاع وطول المسار، وجودة التسلق وظروف السطح.
 
@@ -221,13 +221,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/routes_osm.png) ![Route info](@site/static/img/map/routes_osm_1.png)
+![معلومات المسار](@site/static/img/map/routes_osm.png) ![معلومات المسار](@site/static/img/map/routes_osm_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
+![معلومات المسار](@site/static/img/map/routes_osm_ios_new.png) ![معلومات المسار](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
@@ -253,13 +253,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/route_info_1_andr.png)
+![معلومات المسار](@site/static/img/map/route_info_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/route_info_1_ios.png)
+![معلومات المسار](@site/static/img/map/route_info_1_ios.png)
 
 </TabItem>
 
@@ -280,13 +280,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes_osm_2.png)
+![المسارات على الأرض](@site/static/img/map/routes_osm_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png)
+![المسارات على الأرض](@site/static/img/map/routes_osm_ios_2.png)
 
 </TabItem>
 
@@ -298,13 +298,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
+![المسارات على الأرض](@site/static/img/map/routes-4.png)   ![المسارات على الأرض](@site/static/img/map/routes-5.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
+![المسارات على الأرض](@site/static/img/map/hiking.png)   ![المسارات على الأرض](@site/static/img/map/hiking_1.png)
 
 </TabItem>
 
@@ -320,13 +320,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes_osm_3.png)
+![المسارات على الأرض](@site/static/img/map/routes_osm_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/routes_osm_ios_3.png)
+![المسارات على الأرض](@site/static/img/map/routes_osm_ios_3.png)
 
 </TabItem>
 
@@ -349,13 +349,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
+![المسارات على الأرض](@site/static/img/map/route_search.png) ![المسارات على الأرض](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
+![المسارات على الأرض](@site/static/img/map/route_search_ios.png) ![المسارات على الأرض](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
@@ -373,13 +373,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
+![المسارات على الأرض](@site/static/img/map/route_search_2_new.png) ![المسارات على الأرض](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_2_ios.png) ![Routes on the ground](@site/static/img/map/route_search_3_ios.png)
+![المسارات على الأرض](@site/static/img/map/route_search_2_ios.png) ![المسارات على الأرض](@site/static/img/map/route_search_3_ios.png)
 
 </TabItem>
 

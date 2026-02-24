@@ -1,8 +1,9 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title:  BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -26,9 +26,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 يستخدم [BRouter](http://brouter.de/) بيانات OpenStreetMap لإنشاء مسار ثم يقوم بتعديله بناءً على المعلمات المحددة. يستخدم مسارات محسوبة مسبقًا لإنشاء مسار بسرعة دون اتصال بالإنترنت. كما يسمح لك بتخصيص ملفات تعريف التوجيه، والتي يتم تحديدها بواسطة مجموعة من المعلمات لمراعاة العوامل المختلفة في اختيار المسار. يشرح ملف [BRouter readme.txt](http://brouter.de/brouter/readme.txt) بمزيد من التفصيل كيفية تثبيت البرنامج واستخدامه.
 
-يوفر لك OsmAnd القدرة على تحديد المسارات باستخدام BRouter وتكوين ملفات تعريف التوجيه لتحديد المسار بشكل أفضل وفقًا لاحتياجاتك.
+يوفر لك OsmAnd القدرة على تحديد المسارات باستخدام BRouter وتكوين ملفات تعريف التوجيه لتحديد المسار بشكل أفضل وفقًا لاحتياجاتك.  
 
-لمزيد من المعلومات، يمكنك زيارة [موقع Brouter الرسمي](http://www.brouter.de/brouter/algorithm.html).
+لمزيد من المعلومات، يمكنك زيارة [موقع Brouter الرسمي](http://www.brouter.de/brouter/algorithm.html).  
 
 تغير تكامل BRouter في OsmAnd كثيرًا خلال صيف عام ٢٠١٩. يفترض هذا الدليل أنك تستخدم تطبيق BRouter لنظام أندرويد في الإصدار ١.٥.٠ أو أعلى بالإضافة إلى OsmAnd في الإصدار ٣.٤ أو أعلى.
 
@@ -47,10 +47,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## كيفية الإعداد {#how-to-configure}
 
-اتبع هذا الدليل لتثبيت وتكوين تطبيق *BRouter Offline Navigation* التابع لجهة خارجية للاستخدام في OsmAnd.
+اتبع هذا الدليل لتثبيت وتكوين تطبيق *BRouter Offline Navigation* التابع لجهة خارجية للاستخدام في OsmAnd.  
 
-**١.** للبدء، تحتاج إلى تثبيت تطبيق BRouter على جهاز أندرويد الخاص بك من [F-Droid](https://f-droid.org/packages/btools.routingapp) أو [متجر Google Play](https://play.google.com/store/apps/details?id=btools.routingapp) على جهازك.
-**٢.** بعد ذلك، للتنقل باستخدام تطبيق OsmAnd على طول المسارات المحسوبة مسبقًا باستخدام BRouter، تحتاج إلى:
+**١.** للبدء، تحتاج إلى تثبيت تطبيق BRouter على جهاز أندرويد الخاص بك من [F-Droid](https://f-droid.org/packages/btools.routingapp) أو [متجر Google Play](https://play.google.com/store/apps/details?id=btools.routingapp) على جهازك.  
+**٢.** بعد ذلك، للتنقل باستخدام تطبيق OsmAnd على طول المسارات المحسوبة مسبقًا باستخدام BRouter، تحتاج إلى:  
 
 
   - افتح تطبيق BRouter وانقر على *Download Manager*.
@@ -79,7 +79,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 **ملاحظة** أنه سيتعين عليك تكرار هذه الخطوة بشكل دوري، كلما أردت الحصول على نسخة محدثة من بيانات OSM المستخدمة في التوجيه.
 
-**٣.** بمجرد الانتهاء من ذلك، ابدأ تشغيل تطبيق BRouter مرة أخرى واختر إدخال "BRouter App" في *القائمة الرئيسية*. اختر ملف تعريف توجيه حسب وضع سفرك. يمكن أن يكون ركوب الدراجات أو الدراجة البخارية أو المشي لمسافات طويلة أو الرحلات. يمكن العثور على قائمة بالملفات الشخصية المتاحة للتنزيل بتنسيق *brf* [هنا](http://brouter.de/brouter/profiles2/). أو يمكنك محاولة استخدام ملف تعريف التوجيه في [BRouter-online](http://brouter.de/brouter-web/).
+**٣.** بمجرد الانتهاء من ذلك، ابدأ تشغيل تطبيق BRouter مرة أخرى واختر إدخال "BRouter App" في *القائمة الرئيسية*. اختر ملف تعريف توجيه حسب وضع سفرك. يمكن أن يكون ركوب الدراجات أو الدراجة البخارية أو المشي أو الرحلات. يمكن العثور على قائمة بالملفات الشخصية المتاحة للتنزيل بتنسيق *brf* [هنا](http://brouter.de/brouter/profiles2/). أو يمكنك محاولة استخدام ملف تعريف التوجيه في [BRouter-online](http://brouter.de/brouter-web/).
 انقر فوق "Service-Mode". بعد ذلك، حدد مربعات أوضاع التوجيه التي تريد استخدام هذا الملف الشخصي لها. يمكنك استخدام ملفين شخصيين مختلفين لكل وضع نقل، والتي سيتم تعيينها إلى الإعدادات المسبقة "الأقصر" و "الأسرع" (هذه مجرد تسميات) في OsmAnd.
 
 <table class="blogimage">
@@ -119,7 +119,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## إصدار OsmAnd 4.7.1 {#osmand-version-471}
 
-بدءًا من الإصدار ٤.٧.١ وما فوق، يدعم OsmAnd معلمة ملف التعريف للتعيين: منذ إصدار OsmAnd ٣، يمكن تحديد العديد من ملفات التعريف في OsmAnd ويمكنك التبديل بسهولة بين هذه الملفات. يجب إنشاء ملف تعريف جديد، على سبيل المثال عن طريق نسخ ملف تعريف *ركوب الدراجات* الحالي وإعطائه اسمًا جديدًا بالتنسيق Brouter[fastbike]. يمكنك استخدام أي من ملفات تعريف BRouter الموجودة في الاسم والمثبتة على جهازك. جميع ملفات التعريف لها تنسيق تسمية 'xxxxxxx.brf'. أو يمكنك إنشاء ملف تعريف جديد خاص بك، مثل 'myprofile.brf'.
+بدءًا من الإصدار ٤.٧.١ وما فوق، يدعم OsmAnd معلمة ملف التعريف للتعيين: منذ إصدار OsmAnd ٣، يمكن تحديد العديد من ملفات التعريف في OsmAnd ويمكنك التبديل بسهولة بين هذه الملفات. يجب إنشاء ملف تعريف جديد، على سبيل المثال عن طريق نسخ ملف تعريف *ركوب الدراجات* الحالي وإعطائه اسمًا جديدًا بالتنسيق Brouter[fastbike]. يمكنك استخدام أي من ملفات تعريف BRouter الموجودة في الاسم والتي مثبتة على جهازك. جميع ملفات التعريف لها تنسيق تسمية 'xxxxxxx.brf'. أو يمكنك إنشاء ملف تعريف جديد خاص بك، مثل 'myprofile.brf'.
 
 تعد اتفاقية التسمية في ملف تعريف OsmAnd مهمة لأن ملف تعريف BRouter المضمن في هذا الملف ينشئ الجسر الفعلي بين OsmAnd و BRouter.
 
@@ -148,9 +148,9 @@ Brouter[fastbike] "fastbike" profile will be used file: fastbike.brf
 
 ## كيفية الاستخدام {#how-to-use}
 
-يصف هذا القسم مقارنة بين BRouter والتوجيه الداخلي لتطبيق OsmAnd.
+يصف هذا القسم مقارنة بين BRouter والتوجيه الداخلي لتطبيق OsmAnd.  
 
-عند تكوين BRouter، يمكننا مقارنة سرعة الحساب المسبق لبيانات توجيه BRouter مع التوجيه الداخلي لـ OsmAnd. لنختر نقطتين عشوائيتين في هولندا ونبدأ في حساب الرحلة. لهذا، قمنا بتعيين أسلوب قيادة متوازن دون استخدام بيانات الارتفاع لملف التعريف الأساسي. وقت حساب هذه الرحلة هو ١٤.٥ ثانية لمسار OsmAnd الداخلي الخاص بنا. وقت حساب المسار عند استخدام توجيه BRouter أقل من ثانية واحدة.
+عند تكوين BRouter، يمكننا مقارنة سرعة الحساب المسبق لبيانات توجيه BRouter مع التوجيه الداخلي لـ OsmAnd. لنختر نقطتين عشوائيتين في هولندا ونبدأ في حساب الرحلة. لهذا، قمنا بتعيين أسلوب قيادة متوازن دون استخدام بيانات الارتفاع لملف التعريف الأساسي. وقت حساب هذه الرحلة هو ١٤.٥ ثانية لمسار OsmAnd الداخلي الخاص بنا. وقت حساب المسار عند استخدام توجيه BRouter أقل من ثانية واحدة.  
 
 <table class="blogimage">
     <tr>

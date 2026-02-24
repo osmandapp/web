@@ -1,5 +1,5 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
+source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
 sidebar_position: 17
 title:  الطقس
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## نظرة عامة {#overview}
 
 :::info ميزة مدفوعة
- <ProFeature/> إضافة الطقس هي [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd.
+إضافة الطقس هي [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd <ProFeature />.
 :::
 
 تسمح لك طبقات خريطة الطقس التفاعلية في تطبيق OsmAnd بمراقبة درجة الحرارة والضغط الجوي وتغطية السحب وسرعة الرياح وهطول الأمطار في مدينتك أو أي مكان آخر على خريطة عالمية تفاعلية. توفر إضافة الطقس توقعات الطقس كل ساعة لمدة 7 أيام قادمة مباشرة على خريطة OsmAnd. يمكن أيضًا تنزيل معلومات الطقس للاستخدام دون اتصال بالإنترنت.
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *الإضافة الممكّنة ← <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![لوحة معلومات الطقس أندرويد 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![لوحة معلومات الطقس أندرويد 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -75,6 +75,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 تحتوي القائمة الجانبية الرئيسية على عنصر قائمة **الطقس** المخصص الذي يوفر وصولاً سريعًا إلى جميع أدوات الطقس. تعرض *شاشة توقعات الطقس* معلومات حول *درجة الحرارة*، و*الضغط الجوي*، و*سرعة الرياح*، و*تغطية السحب*، و*هطول الأمطار*.
+
+يتم عرض قيم التوقعات لمركز الخريطة، المُشار إليه بعلامة التصويب (سوداء على أندرويد، حمراء على iOS). قم بتحريك الخريطة لتغيير الموقع المحدد — يتم تحديث بيانات الطقس تلقائيًا للنقطة الجديدة.
 
 في أسفل الشاشة يوجد *شريط أدوات الطقس*. يمكنك استخدام أزرار الأيام وشريط تمرير الوقت لضبط الوقت المحدد الذي سيتم فيه عرض توقعات الطقس.
 
@@ -171,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### طبقات الطقس {#weather-layers}
 
-يتم تقديم جميع بيانات الطقس كطبقات خريطة منفصلة. لرؤية طبقات الطقس على الخريطة، تحتاج إلى التصغير، فهي متاحة فقط على مقاييس التكبير/التصغير من 2 إلى 12. تستخدم طبقات الطقس [لوحات ألوان الطقس](../personal/color-palette-schemes.md#weather) لتلوين الخريطة، ويمكن [تغيير](../personal/color-palette-schemes.md#edit-palette-file) هذه اللوحات إذا لزم الأمر.
+يتم تقديم جميع بيانات الطقس كطبقات خريطة منفصلة. لرؤية طبقات الطقس على الخريطة، تحتاج إلى التصغير، فهي متاحة فقط على مقاييس التكبير/التصغير من 2 إلى 12. تستخدم طبقات الطقس [لوحات ألوان الطقس](../personal/color-palette-schemes.md#weather) لتلوين الخريطة، ويمكن [تغيير](../personal/color-palette-schemes.md#palette-modify) هذه اللوحات إذا لزم الأمر.
 
 | |  
 |------------|  

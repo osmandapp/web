@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title:  إعداد المسار
 ---
@@ -29,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 ![شاشة الملاحة أندرويد 1](@site/static/img/navigation/route/navigation_by_route_andr_1.png) ![شاشة الملاحة أندرويد 3](@site/static/img/navigation/route/navigation_by_route_andr_3.png)
 
@@ -48,7 +48,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **الخطوة 1: تنزيل الخرائط.**
 
-قبل استخدام الملاحة دون اتصال بالإنترنت، تأكد من [تنزيل الخرائط](../../start-with/download-maps.md) المطلوبة. اذهب إلى *القائمة ← الخرائط والموارد ← تنزيل الخرائط* لتثبيت الخرائط لمنطقتك.
+قبل استخدام الملاحة دون اتصال بالإنترنت، تأكد من [تنزيل الخرائط](../../start-with/download-maps.md) المطلوبة. اذهب إلى *القائمة → الخرائط والموارد → تنزيل الخرائط* لتثبيت الخرائط لمنطقتك.
 
 **الخطوة 2: تكوين ملفات تعريف الملاحة.**
 
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - انتظر حتى يتم حساب المسار. بعد ذلك، ستتمكن من الحصول على معلومات إضافية حول مسارك في *[قسم التفاصيل](./route-details.md#overview)*.
     - يمكنك التبديل بين [أنواع التوجيه](./../routing/osmand-routing.md#routing-types) المختلفة (ملفات التعريف) للحصول على أفضل نتيجة.
     - أضف [وجهات وسيطة](#intermediate-destinations) (اختياري).
-    - يمكنك أيضًا تغيير نقطة الانطلاق من [الموقع الحالي](../../map/interact-with-map.md#my-location-and-zoom) إلى الموقع المطلوب.
+    - يمكنك أيضًا تغيير نقطة الانطلاق من [الموقع الحالي](../../map/interact-with-map.md#my-position-and-zoom) إلى الموقع المطلوب.
 
 2. يمكن استخدام [*إعدادات الملاحة*](#settings) الإضافية حسب أغراضك (يمكنك تكوين الطرق التي يجب تجنبها أو تفضيلها، وتوفير الوقود أو اختيار أسرع مسار، إلخ).
 
@@ -79,7 +79,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::note
 
-**لا يمكن إنشاء المسار عند تحديد *[خريطة عبر الإنترنت](../../map/raster-maps.md#select-raster-maps)* كمصدر للخريطة.**
+**لا يمكن إنشاء المسار عند تحديد *[خريطة عبر الإنترنت](../../map/raster-maps.md#layers)* كمصدر للخريطة.**
 
 :::
 
@@ -88,13 +88,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 هناك 3 طرق للوصول إلى قائمة الملاحة:
 
-- [*زر الملاحة*](../../widgets/map-buttons.md#directions) على شاشة الخريطة.  
+- [*زر الملاحة*](../../widgets/map-buttons.md#navigation) على شاشة الخريطة.  
 - *الاتجاه إلى/من* في [*قائمة سياق الخريطة*](../../map/map-context-menu.md#directions-to--from).  
 - قسم الملاحة في [*القائمة الرئيسية*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![قائمة الملاحة أندرويد 1](@site/static/img/navigation/route/navigation_by_route_menu_andr_1.png)
 
@@ -108,7 +108,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – تعيين موقع البدء (الافتراضي: [*موقعي الحالي*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – تعيين موقع البدء (الافتراضي: [*موقعي الحالي*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - استخدم لـ [تعيين نقطة وجهتك](#set-target-point).
 - **إضافة** &nbsp;&#43; - إدراج [نقاط وسيطة](../../widgets/nav-widgets.md#distance-to-intermediate) على طول المسار.
 - **تبديل** &nbsp;&#8595;&#8593; - عكس نقاط *البداية* و*النهاية*.
@@ -126,7 +126,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![الاختيار على الخريطة](@site/static/img/navigation/route/select_on_map.png)
 
@@ -146,7 +146,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![قائمة الملاحة أندرويد 2](@site/static/img/navigation/route/navigation_by_route_menu_andr_2.png)
 
@@ -181,7 +181,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![وجهة وسيطة أندرويد 1](@site/static/img/navigation/route/navigation_interpoints_1_andr.png) ![وجهة وسيطة أندرويد 2](@site/static/img/navigation/route/navigation_interpoints_2_andr.png)
 
@@ -206,7 +206,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![وجهة وسيطة أندرويد 3](@site/static/img/navigation/route/navigation_interpoints_android_3.png)
 
@@ -236,7 +236,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![المفضلات الخاصة أندرويد](@site/static/img/navigation/route/special_favorite_andr.png)
 
@@ -257,7 +257,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">  
+<TabItem value="android" label="Android">  
 
 ![المسار السابق أندرويد](@site/static/img/navigation/route/previous_andr.png)  
 
@@ -276,7 +276,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 :::note
 
 - عند تعطيل [تسجيل بيانات السجل](../../personal/global-settings.md#history)، لن يُطلب منك استخدام المسارات السابقة للملاحة.
-- يمكنك حذف بعض أو كل سجلات المسارات السابقة. يمكن القيام بذلك في علامة تبويب *[سجل الملاحة](../../personal/global-settings.md#history)* لخيار السجل (*القائمة ← الإعدادات ← إعدادات OsmAnd ← السجل*).
+- يمكنك حذف بعض أو كل سجلات المسارات السابقة. يمكن القيام بذلك في علامة تبويب *[سجل الملاحة](../../personal/global-settings.md#history)* لخيار السجل (*القائمة → الإعدادات → إعدادات OsmAnd → السجل*).
 
 :::
 
@@ -285,7 +285,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![شاشة بدء الملاحة أندرويد](@site/static/img/navigation/route/navigation_start_andr.png)  
 
@@ -325,11 +325,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لاستئناف الملاحة:
 
 - استخدم الرسالة من OsmAnd في شريط الإشعارات.
-- استخدم *قائمة الإجراءات السريعة* أو الحوار الذي يظهر عند النقر على *[زر الملاحة](../../widgets/map-buttons.md#directions)* (انظر لقطة الشاشة).
+- استخدم *قائمة الإجراءات السريعة* أو الحوار الذي يظهر عند النقر على *[زر الملاحة](../../widgets/map-buttons.md#navigation)* (انظر لقطة الشاشة).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![استئناف الملاحة أندرويد](@site/static/img/navigation/route/navigation_menu_start_pause_andr_1.png)
 
@@ -344,7 +344,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 :::note
-عندما **تنقر على زر الملاحة** أثناء وجودك على مسارك، **لا تتوقف الملاحة، وتستمر التوجيهات الصوتية**، على الرغم من أن الخيارات المقترحة "استئناف" أو "بدء" قد تكون مربكة.
+عندما **تنقر على زر الملاحة** أثناء وجودك على مسارك، **لا تتوقف الملاحة، وتستمر التوجيهات الصوتية في الإعلان**، على الرغم من أن الخيارات المقترحة "استئناف" أو "بدء" قد تكون مربكة.
 :::
 
 
@@ -366,7 +366,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 للوصول إلى إعدادات الملاحة، اتبع إحدى الخطوات التالية:
 
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,app_mode_car,routing_settings_2"/>*.  
-- *زر الملاحة ← <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
+- *زر الملاحة → <Translate android="true" ids="shared_string_settings,routing_settings_2"/>*.  
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.
 
 :::info
@@ -375,7 +375,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
@@ -406,7 +406,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![محاكاة الملاحة أندرويد](@site/static/img/navigation/route/simulate_navigation_andr_1.png)
 
@@ -432,7 +432,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →*  &#x2699
 
@@ -465,7 +465,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![رسالة لا توجد خرائط عند إنشاء الملاحة أندرويد 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
 
@@ -484,7 +484,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![رسالة لا توجد خرائط عند إنشاء الملاحة أندرويد](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png)
 
