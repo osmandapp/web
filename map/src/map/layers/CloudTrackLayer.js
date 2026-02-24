@@ -46,7 +46,7 @@ export function addTrackToMap({ ctx, file, map, fit = false, recentSaver, naviga
     layer.on('click', () => clickHandler({ ctx, file, layer, recentSaver, navigate }));
 
     if (fit || file.zoomToTrack) {
-        map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
+        panToTrack({ map, layer, ctx });
         if (file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD) {
             // Simplify and add layer immediately for tracks with many waypoints
             layer = simplifyLayer({
@@ -146,6 +146,23 @@ function removeLayerFromMap(file, map) {
     return null;
 }
 
+function panToTrack({ map, layer, ctx }) {
+    const start = getTrackStart(layer);
+    if (!start) {
+        map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
+        return;
+    }
+    map.setView(start, map.getZoom());
+}
+
+function getTrackStart(layer) {
+    const polyline = layer.getLayers().find((l) => l.getLatLngs?.()?.length);
+    if (!polyline) return null;
+
+    const [first] = polyline.getLatLngs();
+    return first && (Array.isArray(first) ? first[0] : first);
+}
+
 const CloudTrackLayer = () => {
     const ctx = useContext(AppContext);
     const ctxTrack = ctx.selectedGpxFile;
@@ -234,7 +251,7 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         if (ctxTrack?.gpx && isCloudTrack(ctx)) {
             if (ctxTrack.zoom) {
-                map.fitBounds(ctxTrack.gpx.getBounds(), fitBoundsOptions(ctx));
+                panToTrack({ map, layer: ctxTrack.gpx, ctx });
                 ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
             } else if (ctxTrack.cloudRedrawWpts) {
                 // skip processing if layer is removed
@@ -286,7 +303,7 @@ const CloudTrackLayer = () => {
                 }
                 registerCleanupFileLayer(file);
             } else if (file.url && file.zoomToTrack && file.gpx) {
-                map.fitBounds(file.gpx.getBounds(), fitBoundsOptions(ctx));
+                panToTrack({ map, layer: file.gpx, ctx });
                 file.zoomToTrack = false;
             } else if (!file.url && file.gpx) {
                 processed++;

@@ -320,13 +320,26 @@ export function equalsPoints(arr1, arr2) {
  * @param {Object} ctx - Application context
  */
 export function updateTrackRouteTypes(newGeo, routeTypes, ctx) {
-    const updatedTypes = processGeometryPoints(newGeo, routeTypes ?? ctx.selectedGpxFile.routeTypes ?? []);
+    const segmentTypes = routeTypes ?? [];
     ctx.setSelectedGpxFile((prev) => {
-        return { ...prev, routeTypes: updatedTypes };
+        const base = prev.routeTypes ?? [];
+        const merged = processGeometryPoints(newGeo, segmentTypes, base);
+        return { ...prev, routeTypes: merged };
     });
 }
 
-function processGeometryPoints(result, routeTypes) {
+function processGeometryPoints(result, segmentRouteTypes, baseRouteTypes = []) {
+    const base = [...(baseRouteTypes || [])];
+    const updatedSegmentRouteTypes = new Map();
+
+    if (segmentRouteTypes?.length > 0) {
+        segmentRouteTypes.forEach((type, oldIndex) => {
+            const existingIndex = base.findIndex((t) => t.tag === type.tag && t.value === type.value);
+            const newIndex = existingIndex !== -1 ? existingIndex : base.push(type) - 1;
+            updatedSegmentRouteTypes.set(oldIndex, newIndex);
+        });
+    }
+
     result.forEach((point) => {
         if (point.segment) {
             const segment = point.segment;
@@ -335,22 +348,7 @@ function processGeometryPoints(result, routeTypes) {
             const segmentPointTypes = segment.ext.pointTypes ?? null;
             const segmentNames = segment.ext.names ?? null;
 
-            if (routeTypes && routeTypes.length > 0) {
-                let updatedSegmentRouteTypes = new Map();
-                routeTypes.map((type, oldIndex) => {
-                    let newIndex;
-                    const existingTypeIndex = routeTypes.findIndex(
-                        (globalType) => globalType.tag === type.tag && globalType.value === type.value
-                    );
-                    if (existingTypeIndex !== -1) {
-                        newIndex = existingTypeIndex;
-                    } else {
-                        routeTypes.push(type);
-                        newIndex = routeTypes.length - 1;
-                    }
-                    updatedSegmentRouteTypes.set(oldIndex, newIndex);
-                });
-
+            if (updatedSegmentRouteTypes.size > 0) {
                 if (segmentTypes) {
                     segment.ext.types = updateRouteTypeIndexes(segmentTypes, updatedSegmentRouteTypes);
                 }
@@ -365,12 +363,12 @@ function processGeometryPoints(result, routeTypes) {
             delete segment.routeTypes;
         }
     });
-    return routeTypes;
+    return base;
 }
 
 function updateRouteTypeIndexes(value, updatedSegmentRouteTypes) {
-    return value.replace(/\d+/g, (match) => {
-        const index = parseInt(match, 10);
+    return value.replaceAll(/\d+/g, (match) => {
+        const index = Number.parseInt(match, 10);
         return updatedSegmentRouteTypes.has(index) ? updatedSegmentRouteTypes.get(index) : index;
     });
 }

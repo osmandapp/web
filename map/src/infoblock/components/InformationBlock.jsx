@@ -153,7 +153,7 @@ export default function InformationBlock({
                 {
                     pathname:
                         MAIN_URL_WITH_SLASH + TRACKS_URL + INFO_MENU_URL + encodeURIComponent(encodeString(trackName)),
-                    hash: location.hash,
+                    hash: window.location.hash,
                 },
                 { replace: true }
             );
