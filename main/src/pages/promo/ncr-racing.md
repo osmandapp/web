@@ -27,7 +27,7 @@ OsmAnd e ["NCR Racing"](https://ncrmotoclub.it/) vi presentano l'abbonamento Osm
 
 1. **Inserite il vostro indirizzo e-mail** per la registrazione:
    
-<RegisterUserPromoBlock  promoKey='ncr'/>
+<RegisterUserPromoBlock  promoKey='ncr1'/>
 
 <p> </p>
 
@@ -53,7 +53,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='ncr'/>
+<RegisterUserPromoBlock  promoKey='ncr1'/>
 
 <p> </p>
 
