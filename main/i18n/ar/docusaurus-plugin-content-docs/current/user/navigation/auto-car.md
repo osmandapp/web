@@ -1,5 +1,5 @@
 ---
-source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
+source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
 sidebar_position: 9
 title:  أندرويد أوتو
 ios: false
@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## نظرة عامة {#overview}
+
+:::tip شراء
+أندرويد أوتو ميزة [مدفوعة](../purchases/index.md).  
+:::
 
 ![شاشة أندرويد أوتو](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -262,7 +266,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![أندرويد أوتو](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-أداة **عداد السرعة** هي عنصر واجهة متكامل يعرض *السرعة الحالية* باستخدام بيانات GPS و *حد السرعة* من [قاعدة بيانات OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) و [إعدادات OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) على شاشة نظام الوسائط المتعددة في السيارة.
+أداة **عداد السرعة** هي عنصر واجهة متكامل يعرض *السرعة الحالية* باستخدام بيانات GPS و *حد السرعة* من [قاعدة بيانات OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) و [إعدادات OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) على شاشة نظام الوسائط المتعددة في السيارة. عندما تقترب سرعتك الحالية من تحمل حد السرعة المُعد أو تتجاوزه، يتغير مظهر الأداة (الألوان) لتقديم تحذير. قد يكون تغيير المظهر متحركًا.
 
 - **أداة عداد السرعة** [*تعتمد على الملف الشخصي*](../personal/profiles.md)، لذا إذا قمت بتغيير الإعدادات لملف شخصي واحد، فلن يتم تطبيقها على ملف آخر.
 - لا يوجد خيار لتخصيص عرض **أداة عداد السرعة** مباشرة في *أندرويد أوتو*، تحتاج إلى تكوينها في تطبيق OsmAnd قبل بدء الملاحة وتوصيل جهازك بالمركبة.
@@ -372,6 +376,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
         لأسباب تتعلق بالسلامة، يتم قفل شاشة تطبيق OsmAnd على هاتفك أثناء الاتصال بـ أندرويد أوتو. يمكنك التفاعل مع التطبيق فقط من خلال شاشة السيارة.
     - *هل يمكنني تعطيل الشاشة المقفلة واستخدام التطبيق على هاتفي؟*  
         لا، يفرض أندرويد أوتو هذا القيد لمنع التشتيت أثناء القيادة.
-    - [ماذا أفعل إذا بدا أن هاتفي وشاشة السيارة غير متصلين؟*  
+    - *ماذا أفعل إذا بدا أن هاتفي وشاشة السيارة غير متصلين؟*  
         تأكد من أن جهازك متصل بشكل صحيح عبر USB أو بلوتوث.  
         أعد تشغيل نظام المعلومات والترفيه في سيارتك وتطبيق OsmAnd إذا كان الاتصال غير مستقر.

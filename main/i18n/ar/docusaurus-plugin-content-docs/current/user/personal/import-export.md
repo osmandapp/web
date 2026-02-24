@@ -1,5 +1,5 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
 title:  استيراد / تصدير
 ---
@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## نظرة عامة {#overview}
 
-تسمح لك أدوات **الاستيراد** و**التصدير** في OsmAnd بإدارة بياناتك. يمكنك نقل ملفاتك الشخصية، ومفضلاتك، ومساراتك، وإعداداتك الأخرى باستخدام تنسيق خاص عبر التطبيقات على جهازك. تبسط هذه العملية حفظ ونقل البيانات بين الأجهزة وتسمح لك بمشاركتها مع مستخدمي OsmAnd الآخرين.
+تسمح أدوات **الاستيراد** و**التصدير** في OsmAnd لك بإدارة بياناتك. يمكنك نقل ملفاتك الشخصية، ومفضلاتك، ومساراتك، وإعداداتك الأخرى باستخدام تنسيق خاص عبر التطبيقات على جهازك. تبسط هذه العملية حفظ ونقل البيانات بين الأجهزة وتسمح لك بمشاركتها مع مستخدمي OsmAnd الآخرين.
 
 :::note حجم كبير
 *إذا كان حجم البيانات التي اخترتها كبيرًا، فسيستغرق التطبيق بعض الوقت لإعداد ملف `.osf`.*
@@ -33,7 +33,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - **أماكني:**  
         [المفضلات](../personal/favorites.md#export--import)، &nbsp;[المسارات](../personal/tracks/manage-tracks.md#import--export-track)، &nbsp;[ملاحظات OSM*، *تعديلات OSM](../plugins/osm-editing.md#create--modify-poi)، &nbsp;[ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md)، &nbsp;[علامات الخريطة](../personal/markers.md)، &nbsp;[سجل العلامات*، *سجل البحث*، *سجل الملاحة](../personal/global-settings.md#history)، &nbsp;*مسار الرحلة*.
 - **الموارد:**  
-        [نمط العرض](../map/vector-maps.md#custom-map-style)، &nbsp;[التوجيه](../navigation/routing/osmand-routing.md)، &nbsp;[محركات التوجيه عبر الإنترنت](../navigation/routing/online-routing.md)، &nbsp;[مصادر الخرائط*، *الخرائط القياسية/غير المتصلة بالإنترنت](../map/raster-maps.md)، &nbsp;[خرائط ويكيبيديا والسفر](../plan-route/travel-guides.md)، &nbsp;[الخرائط البحرية](../plugins/nautical-charts.md)، &nbsp;[خرائط الطرق](../map/vector-maps.md#road-style)، &nbsp;[الخرائط الطبوغرافية](../plugins/topography.md)، &nbsp;[التوجيهات الصوتية (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech)، [التوجيهات الصوتية (مسجلة)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts)، &nbsp;[النسخ الاحتياطي للمفضلات](../personal/favorites.md#automatic-favorites-backup).
+        [نمط العرض](../map/map-styles.md#custom-map-style)، &nbsp;[التوجيه](../navigation/routing/osmand-routing.md)، &nbsp;[محركات التوجيه عبر الإنترنت](../navigation/routing/online-routing.md)، &nbsp;[مصادر الخرائط*، *الخرائط القياسية/غير المتصلة بالإنترنت](../map/raster-maps.md)، &nbsp;[خرائط ويكيبيديا والسفر](../plan-route/travel-guides.md)، &nbsp;[الخرائط البحرية](../plugins/nautical-charts.md)، &nbsp;[خرائط الطرق](../map/vector-maps.md#road-style)، &nbsp;[الخرائط الطبوغرافية](../plugins/topography.md)، &nbsp;[التوجيهات الصوتية (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech)، [التوجيهات الصوتية (مسجلة)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts)، &nbsp;[النسخ الاحتياطي للمفضلات](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### تصدير {#export}
@@ -127,6 +127,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### مشاكل وحلول شائعة {#common-issues-and-solutions}
 
-١. كيفية نقل المفضلات والمسارات إلى جهاز جديد. [(تحقق)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
-٢. لدي ملف GPX، كيف يمكنني استيراده إلى OsmAnd؟ [(تحقق)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
-٣. حذف بيانات الخريطة بعد تحديث التطبيق (إذا تم تحديد "Multiuser Storage 1"). [(تحقق)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
+1. كيفية نقل المفضلات والمسارات إلى جهاز جديد. [(تحقق)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
+2. لدي ملف GPX، كيف يمكنني استيراده إلى OsmAnd؟ [(تحقق)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
+3. حذف بيانات الخريطة بعد تحديث التطبيق (إذا تم تحديد "Multiuser Storage 1"). [(تحقق)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)

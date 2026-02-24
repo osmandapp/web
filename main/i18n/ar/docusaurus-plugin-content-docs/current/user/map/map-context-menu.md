@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -480,7 +480,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء إضافة/تحرير علامة في iOS](@site/static/img/map/add_marker_ios.png)  ![إجراء استعادة علامة في أندرويد](@site/static/img/map/action_restore_marker_android.png)
+![إجراء إضافة/تحرير علامة في iOS](@site/static/img/map/add_marker_ios.png)  ![إجراء استعادة علامة في iOS](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 

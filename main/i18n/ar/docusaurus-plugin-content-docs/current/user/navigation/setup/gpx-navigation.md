@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  الملاحة حسب المسار
 ---
@@ -70,7 +70,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكن بدء الملاحة على مسار باستخدام زر الإجراء السريع في [قائمة سياق المسار](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (يتم فتحها عن طريق تحديد أحد [المسارات المميزة](./route-navigation.md#history-of-previous-routes) على الخريطة، أو عن طريق النقر على ملف مسار في قسم [أماكني](../../personal/myplaces.md) من *القائمة الرئيسية*) أو من قائمة الملاحة، التي يتم فتحها عن طريق النقر على:
 
-- [*زر الملاحة*](../../widgets/map-buttons.md#directions) على شاشة الخريطة.  
+- [*زر الملاحة*](../../widgets/map-buttons.md#navigation) على شاشة الخريطة.  
 - *قسم الملاحة* في *القائمة الرئيسية* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - في [*قائمة الملاحة*](./route-navigation.md#navigation-menu) انتقل إلى *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 

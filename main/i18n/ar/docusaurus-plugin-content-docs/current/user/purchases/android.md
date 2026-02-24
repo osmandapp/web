@@ -1,5 +1,5 @@
 ---
-source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
+source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -107,7 +107,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
-| [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
+| [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [تخصيص ألوان المباني ثلاثية الأبعاد](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
 | [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [الأماكن المشهورة (ويكيبيديا)](../map/popular_places.md) | **-** | ✔ | ✔ |
@@ -121,7 +122,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [ويدجات مقاييس المركبة](../plugins/vehicle-metrics.md#widgets) | <details><summary>**ويدجتان مجانيتان**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | <details><summary>**ويدجتان مجانيتان**</summary><ul><li>*سرعة المركبة*</li><li>*سرعة المحرك*</li></ul></details> | ✔ |
 | [أداة علامات الخريطة](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [مصادر الخرائط عبر الإنترنت](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [خريطة SQLitedb](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [خريطة SQLitedb](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [النقاط المفضلة](../map/point-layers-on-map.md)<br/>الإشارات المرجعية ونقاط الطريق | ✔ | ✔ | ✔ |
 | [نقاط الصوت/الصور/الفيديو](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [متتبع GPS عبر الإنترنت من OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -170,7 +171,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → المتابعة مع OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### شراء Maps+ {#maps-purchase}
 
@@ -178,7 +179,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → انقر على قائمة ميزات Maps+ → المتابعة مع Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## الاشتراكات القديمة (قبل الإصدار ٤.٠) {#legacy-subscriptions-prior-40}

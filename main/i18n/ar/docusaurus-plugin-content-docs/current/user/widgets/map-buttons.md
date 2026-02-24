@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title:  أزرار الخريطة
 ---
@@ -18,10 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-أزرار الخريطة، بما في ذلك *التكبير*، و*البحث*، و*الاتجاهات*، و*البوصلة*، و*موقعي*، و*الوضع ثلاثي الأبعاد*، و*القائمة*، هي عناصر التحكم الأساسية للتفاعل مع الخريطة. يقدم كل زر وظائف محددة لتعزيز تجربة الملاحة واستخدام الخريطة.
+أزرار الخريطة، بما في ذلك *التكبير*، و*البحث*، و*الملاحة*، و*البوصلة*، و*موقعي*، و*الوضع ثلاثي الأبعاد*، و*القائمة*، هي العناصر الرئيسية للتحكم في التفاعل مع الخريطة. يقدم كل زر وظائف محددة لتعزيز تجربة الملاحة واستخدام الخريطة.
 
 
-## موقعي والتكبير {#my-location-and-zoom}
+## موقعي والتكبير {#my-position-and-zoom}
 
 ![قائمة تكوين الشاشة](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -29,14 +29,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **موقعي**. يوضح ما إذا كان مركز الخريطة متزامنًا مع الموقع الجغرافي الحالي لجهازك.
 - **التكبير**. يسمح لك بضبط مستوى تكبير الخريطة لتوفير تفاصيل أكثر أو أقل.
-إذا كنت تريد المزيد من المعلومات حول استخدام هذه الأزرار، يمكنك الاطلاع على مقالة [التفاعل مع الخريطة](../map/interact-with-map.md#my-location-and-zoom).
+إذا كنت تريد المزيد من المعلومات حول استخدام هذه الأزرار، يمكنك الاطلاع على مقالة [التفاعل مع الخريطة](../map/interact-with-map.md#my-position-and-zoom).
 
 
-## الاتجاهات {#directions}
+## الملاحة {#navigation}
 
 ![زر الاتجاهات يسمح بـ](@site/static/img/widgets/directions_button_allows.png)
 
-زر **الاتجاهات** ضروري لتخطيط المسار والملاحة:
+زر **الملاحة** ضروري لتخطيط المسار والملاحة:
 
 - [بناء مسار](../navigation/index.md). استخدم هذا الزر لإنشاء مسار.
 - [بدء الملاحة](../navigation/index.md). ابدأ الملاحة المنعطف بمنعطف.
@@ -175,24 +175,47 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## مظهر زر الخريطة {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | الأزرار الافتراضية | الأزرار المخصصة |
 | :--- | :--- |
 | ![مظهر زر الخريطة](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![مظهر زر الخريطة](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-تتوفر إعدادات مظهر زر الخريطة عبر القوائم التالية:
+**اذهب إلى** (للأزرار المخصصة): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → قائمة الثلاث نقاط → *<Translate android="true" ids="shared_string_appearance"/>*  
+**اذهب إلى** (لجميع الأزرار الافتراضية): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → قائمة الثلاث نقاط → *<Translate android="true" ids="shared_string_appearance"/>*  
+**اذهب إلى** (لزر افتراضي محدد): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → اختر الزر → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *القائمة ← تكوين الشاشة ← الأزرار ← الأزرار الافتراضية*
-- *القائمة ← تكوين الشاشة ← الأزرار المخصصة ← الإجراء السريع ← قائمة الثلاث نقاط ← المظهر*
+</TabItem>
 
-يسمح تخصيص مظهر الأزرار بضبط الحجم والشكل والأيقونة وشفافية الخلفية لكل من [الإجراء السريع (الأزرار المخصصة)](../widgets/quick-action.md#button-appearance) و[الأزرار الافتراضية](../widgets/configure-screen.md#button-appearance). تتيح لك هذه المرونة تخصيص الواجهة لتناسب تفضيلاتك وتحسين سهولة الاستخدام.
+<TabItem value="ios" label="iOS">  
+
+| الأزرار الافتراضية | الأزرار المخصصة |
+| :--- | :--- |
+| ![مظهر زر الخريطة](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![مظهر زر الخريطة](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**اذهب إلى** (للأزرار المخصصة): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → قائمة الثلاث نقاط → *<Translate ios="true" ids="shared_string_appearance"/>*
+**اذهب إلى** (لزر افتراضي محدد): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → اختر الزر → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+يسمح تخصيص مظهر الأزرار بضبط الحجم والشكل والأيقونة وشفافية الخلفية لكل من [الإجراء السريع (الأزرار المخصصة)](../widgets/quick-action.md#button-appearance) و[الأزرار الافتراضية](../widgets/configure-screen.md#button-appearance). على أندرويد، يمكن تطبيق إعدادات المظهر على جميع الأزرار الافتراضية أو على زر افتراضي محدد، بينما على iOS تكون متاحة للأزرار الافتراضية المحددة فقط.
+
+يمكن تعيين أيقونات الأزرار إلى:
+- **ديناميكي** – تتغير الأيقونة بناءً على الإجراء أو الحالة الحالية.
+- **مخصص** – اختر أيقونة من الإجراءات المضافة.
+- **محدد** – اختر أيقونة ثابتة ستُعرض دائمًا.
+
+تشمل شاشة المظهر معاينة، مما يتيح لك رؤية كيفية ظهور تغييراتك على الخريطة قبل مغادرة الإعدادات.
 
 
 ## مقالات ذات صلة {#related-articles}
 
 - [تكوين الشاشة](./configure-screen.md)
-- [الأدوات المعلوماتية](./info-widgets.md)
+- [أدوات المعلوماتية](./info-widgets.md)
 - [أدوات الملاحة](./nav-widgets.md)
 - [مسطرة نصف القطر والمسطرة](./radius-ruler.md)
 - [أدوات العلامات](./markers.md)

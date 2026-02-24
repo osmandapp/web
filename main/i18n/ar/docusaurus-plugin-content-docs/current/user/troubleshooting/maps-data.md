@@ -1,8 +1,9 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title:  الخرائط والبيانات
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,14 +14,19 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## الخرائط {#maps}
 
 ### لماذا لا يوفر OsmAnd الوصول إلى خرائط جوجل؟ {#why-does-osmand-not-offer-access-to-google-maps}
 
 صُمم OsmAnd لدعم خريطة الشارع المفتوحة (OSM) ويعطي الأولوية لهذا المسار قدر الإمكان. بالإضافة إلى ذلك، هناك قيود ترخيص لا تسمح بتوزيع OsmAnd مع بيانات خرائط جوجل.
 
-### بطء تحميل الخرائط على أندرويد 11 و 12 (بطاقة SD) {#maps-slowly-loading-on-android-11-12-sd-card}
+### لماذا قد لا تفتح روابط خرائط جوجل في OsmAnd؟ {#why-google-maps-links-may-not-open-in-osmand}
+
+قد لا تفتح روابط خرائط جوجل مثل `https://maps.app.goo.gl/...` في OsmAnd بنقرة واحدة من الرسائل النصية أو التطبيقات المراسلة. حتى لو كان بإمكان OsmAnd تحليل هذه الروابط، فإن أندرويد 12+ يفرض روابط التطبيقات الموثقة: يتم حجز النطاقات الأساسية لجوجل (مثل `maps.app.goo.gl`، `goo.gl`، `googleusercontent.com`) لخدمات النظام الخاصة بجوجل، لذا لا يمكن للتطبيقات الخارجية اعتراضها تلقائيًا. ونتيجة لذلك، ستفتح الرابط عادةً في تطبيق أو خدمة جوجل.
+
+**الحل البديل:** *اضغط مطولاً على الرسالة → مشاركة → اختر OsmAnd*. هذا يرسل الرابط إلى OsmAnd، حيث يمكن تحليله وفتحه كموقع.
+
+### بطء تحميل الخرائط على أندرويد 11، 12 (بطاقة SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
 بسبب [قواعد الوصول إلى التخزين الجديدة التي تم تقديمها في أندرويد 11 و 12](https://www.androidauthority.com/android-12-privacy-features-1225859/)، قد يواجه المستخدمون أداءً أبطأ عند الوصول إلى الخرائط المخزنة على بطاقات SD. يمكن أن تسبب هذه التغييرات أيضًا قيودًا على الرؤية والوصول للملفات في مجلدات بطاقة SD. يمكن العثور على المزيد من المناقشات والرؤى الفنية على الروابط التالية: [مناقشة على Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/)، [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453)، [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046)، [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
@@ -64,7 +70,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### حذف بيانات الخريطة بعد تحديث التطبيق (إذا تم تحديد "Multiuser Storage 1") {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-في إصدار OsmAnd لنظام أندرويد، يمكن أن يؤدي تحديد *Multiuser Storage 1* كموقع للتخزين إلى حذف جميع [الخرائط المحلية](../personal/maps-resources.md#local-menu) كلما تم تحديث التطبيق تلقائيًا، مثل من الإصدار 4.1.9 إلى 4.1.10 أو 4.1.11 أو أحدث (**أندرويد 11، 12**). هذه المشكلة موثقة على [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+في إصدار OsmAnd لنظام أندرويد، يمكن أن يؤدي تحديد *Multiuser Storage 1* كموقع للتخزين إلى حذف جميع [الخرائط المحلية](../personal/maps-resources.md#local-menu) كلما تم تحديث التطبيق تلقائيًا، مثل من الإصدار 4.1.9 إلى 4.1.10، 4.1.11، أو أحدث (**أندرويد 11، 12**). هذه المشكلة موثقة على [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 لتجنب فقدان بيانات الخريطة أثناء التحديثات، ضع في اعتبارك هذه الحلول:
 
@@ -131,9 +137,9 @@ Other header variants:
 
 ## البحث {#search}
 
-### البحث المنظم عن العنوان (مدينة ← شارع ← منزل) لا يجد المنزل {#structured-city--street--house-address-search-doesnt-find-the-house}
+### البحث المنظم (مدينة *→* شارع *→* منزل) عن العنوان لا يجد المنزل {#structured-city--street--house-address-search-doesnt-find-the-house}
 
-إذا كنت تحاول البحث عن موقع باستخدام البنية *مدينة ← شارع ← رقم المنزل* ولم يتم إرجاع أي نتائج، ففكر في النصائح والأسباب المحتملة التالية:
+إذا كنت تحاول البحث عن موقع باستخدام البنية *مدينة → شارع → رقم المنزل* ولم يتم إرجاع أي نتائج، ففكر في النصائح والأسباب المحتملة التالية:
 
 > **نصيحة**: جرب البحث بالنص الكامل دون تحديد المدينة، حيث قد يكون العنوان مدرجًا تحت مدينة مختلفة.
 

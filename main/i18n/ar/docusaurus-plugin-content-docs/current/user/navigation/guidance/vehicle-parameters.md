@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  معلمات المركبة
 ---
@@ -97,6 +97,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+على أندرويد، تكون هذه المعلمة متاحة أيضًا لـ*[ملفات تعريف ركوب الدراجات](../../navigation/routing/bicycle-based-routing.md)* للمساعدة في تجنب مسارات الدراجات الضيقة.
+
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **٥.** [**حد الحمولة القصوى للمحور**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - قدم الحمولة القصوى للمحور لمركبتك لتجنب الطرق والجسور التي تحتوي على قيود وزن المحور. هذه المعلمة متاحة فقط في أنواع الملاحة مثل [*الشاحنة*](../../navigation/routing/car-based-routing.md).  
 

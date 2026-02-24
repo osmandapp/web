@@ -1,5 +1,5 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
+source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
 sidebar_position: 14
 title: التضاريس
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-:::info ميزة مدفوعة
-إضافة التضاريس هي [ميزة مدفوعة](../purchases/index.md) في تطبيق OsmAnd.
+:::tip الشراء
+إضافة التضاريس هي [ميزة مدفوعة](../purchases/index.md).  
 :::
 
 التضاريس هي ميزة هامة في رسم الخرائط توفر معلومات لتقييم تضاريس الأرض بصريًا.
 تساعد معلومات التضاريس مثل [خطوط الكونتور](#contour-lines)، و[التضاريس](#terrain) (*تظليل التلال* و*الميل*)، و[التضاريس ثلاثية الأبعاد](#3d-relief) على إجراء تقييم بصري لتضاريس الأرض من خلال رؤية الارتفاع، والنقوش، والنقاط القصوى، والانحدار، أو النقاط ذات الارتفاع المتساوي.
 
-كل ميزة تقدمها هذه الإضافة هي طبقة خريطة مستقلة، عند تفعيلها، يمكن عرضها فوق أو تحت مصدر الخريطة الرئيسي اعتمادًا على [الإعدادات](../map/raster-maps.md#overlay-layer).  
+كل ميزة تقدمها هذه الإضافة هي طبقة خريطة مستقلة، عند تفعيلها، يمكن عرضها فوق أو تحت مصدر الخريطة الرئيسي اعتمادًا على [الإعدادات](../map/raster-maps.md#overlay).  
 
 توفر إضافة التضاريس الوصول إلى أنواع الخرائط التالية:  
 
@@ -37,17 +37,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-| خطوط الكونتور | تظليل التلال | الميل |
+| Contour Lines | Hillshade | Slope |
 |:---|:---|:---|
 | ![خطوط الكونتور على أندرويد](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![تظليل التلال على أندرويد](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![المنحدرات على أندرويد](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
-<TabItem value="ios" label="آي أو إس">
+<TabItem value="ios" label="iOS">
 
-| خطوط الكونتور | تظليل التلال | الميل |
+| Contour Lines | Hillshade | Slope |
 |:---|:---|:---|
 | ![خطوط الكونتور على آي أو إس](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![تظليل التلال على آي أو إس](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![المنحدرات على آي أو إس](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
@@ -95,7 +95,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
@@ -103,7 +103,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>  
 
-<TabItem value="ios" label="آي أو إس">
+<TabItem value="ios" label="iOS">
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
@@ -122,13 +122,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![حوار تنزيل خطوط الكونتور أندرويد](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="آي أو إس">  
+<TabItem value="ios" label="iOS">  
 
 ![حوار تنزيل خطوط الكونتور آي أو إس](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
@@ -145,7 +145,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
@@ -153,9 +153,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
-<TabItem value="ios" label="آي أو إس">
+<TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> ← خطوط الكونتور*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Contour lines*
 
 ![قائمة خطوط الكونتور آي أو إس](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
@@ -173,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **إعدادات المظهر**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. تبديل تشغيل أو إيقاف خطوط الكونتور.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. تحديد [مستويات التقريب](../map/interact-with-map.md#my-location-and-zoom) التي تكون فيها خطوط الكونتور مرئية.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. تحديد [مستويات التقريب](../map/interact-with-map.md#my-position-and-zoom) التي تكون فيها خطوط الكونتور مرئية.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. اختيار لون عرض خطوط الكونتور.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. ضبط عرض خطوط الكونتور.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. تحديد كثافة خطوط الكونتور (منخفضة، متوسطة، عالية). قد تؤثر الكثافات الأعلى على سرعة التحميل.
@@ -184,7 +184,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
@@ -192,7 +192,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
-<TabItem value="ios" label="آي أو إس">  
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
@@ -213,7 +213,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## طبقات تظليل التلال والميل والارتفاع {#hillshade-slope-and-altitude-layers}
 
-| تظليل التلال | الميل | الارتفاع |
+| Hillshade | Slope | Altitude |
 | ------ | ------- | ------- |
 | ![تظليل التلال](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![الميل](../../../blog/2023-08-28-terrain/img/slope.png) | ![الميل](../../../blog/2023-08-28-terrain/img/slope.png) |
 
@@ -234,7 +234,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### نظام الألوان الافتراضي {#default-color-scheme}
 
-| تظليل التلال | الميل | الارتفاع |
+| Hillshade | Slope | Altitude |
 | ------ | ------- | ------- |
 |![تظليل التلال](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![الميل](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![القائمة](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
@@ -247,19 +247,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تعديل نظام الألوان {#modify-color-scheme}
 
-:::info ميزة مدفوعة
-*[تعديل نظام الألوان](../../user/personal/color-palette-schemes.md#terrain)* هي ميزة مدفوعة في **OsmAnd Pro** لـ [iOS](../purchases/ios.md#pro-features) و [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info ميزة Pro
+*[تعديل نظام الألوان](../../user/personal/color-palette-schemes.md#terrain)* هي ميزة مدفوعة في **OsmAnd Pro** <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="آي أو إس">  
+<TabItem value="ios" label="iOS">  
 
 ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
 
@@ -277,7 +277,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الرؤية {#visibility}
 
-| رؤية ٣١٪ | رؤية ٧٤٪ |
+| Visibility 31% | Visibility 74% |
 | ------ | ------- |
 | ![الرؤية ](../../../blog/2023-08-28-terrain/img/31.png) | ![الرؤية ](../../../blog/2023-08-28-terrain/img/74.png) |
 
@@ -310,7 +310,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الإجراءات السريعة {#quick-actions}
 
-![إجراءات سريعة للتضاريس](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 يمكنك استخدام أزرار *الإجراء السريع* على شاشة الخريطة لتبديل رؤية طبقات [خطوط الكونتور](#contour-lines) و[التضاريس](#terrain) و[نظام ألوان التضاريس](../../user/personal/color-palette-schemes.md#quick-actions). اعتمادًا على الطبقة المحددة في قائمة تخصيص الخريطة، سيؤدي تعيين إجراء *التضاريس* إلى الزر إلى عرض *تظليل التلال* أو *الميل* أو *الارتفاع*.  
 
@@ -328,7 +328,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
@@ -336,7 +336,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
-<TabItem value="ios" label="آي أو إس">  
+<TabItem value="ios" label="iOS">  
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
@@ -346,7 +346,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-تنتج ميزة التضاريس ثلاثية الأبعاد نقشًا بارزًا وتوفر تمثيلًا ثلاثي الأبعاد للمناظر الطبيعية. تعمل التضاريس ثلاثية الأبعاد دون اتصال بالإنترنت ويمكن استخدامها مع [خرائط OsmAnd المتجهة](../map/vector-maps.md) أو أي [خرائط نقطية](../map/raster-maps.md#select-raster-maps) كـ [مصدر خريطة](../map/raster-maps.md#main) أو كـ [طبقة سفلية/علوية](../map/raster-maps.md#overlay-layer).
+تنتج ميزة التضاريس ثلاثية الأبعاد نقشًا بارزًا وتوفر تمثيلًا ثلاثي الأبعاد للمناظر الطبيعية. تعمل التضاريس ثلاثية الأبعاد دون اتصال بالإنترنت ويمكن استخدامها مع [خرائط OsmAnd المتجهة](../map/vector-maps.md) أو أي [خرائط نقطية](../map/raster-maps.md#layers) كـ [مصدر خريطة](../map/raster-maps.md#main) أو كـ [طبقة سفلية/علوية](../map/raster-maps.md#overlay).
 
 ***كيفية عرض التضاريس ثلاثية الأبعاد على الخريطة.***
 
@@ -360,17 +360,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-| طبقة الخريطة المتجهة | طبقة الخريطة النقطية |
+| Vector map layer | Raster map layer |
 | ------ | ------- |
 | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
-<TabItem value="ios" label="آي أو إس">
+<TabItem value="ios" label="iOS">
 
-| طبقة الخريطة المتجهة | طبقة الخريطة النقطية |
+| Vector map layer | Raster map layer |
 | ------ | ------- |
 | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
@@ -378,22 +378,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-
 ### المبالغة الرأسية {#vertical-exaggeration}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> ← المبالغة الرأسية*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
 
 ![المبالغة الرأسية أندرويد](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
-<TabItem value="ios" label="آي أو إس">
+<TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> ← المبالغة الرأسية*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Vertical exaggeration*
 
 ![المبالغة الرأسية آي أو إس](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
@@ -406,7 +405,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تظليل التلال والتضاريس ثلاثية الأبعاد {#hillshade-and-3d-relief}
 
-| تظليل التلال | التضاريس ثلاثية الأبعاد |
+| Hillshade | 3D Relief |
 |--------|---------|
 | ![طبقات التضاريس](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![طبقات التضاريس](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
@@ -422,13 +421,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![خطوط الكونتور مدمجة مع تظليل التلال](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![خطوط الكونتور مدمجة مع الميل](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
-<TabItem value="ios" label="آي أو إس">
+<TabItem value="ios" label="iOS">
 
 ![خطوط الكونتور مدمجة مع تظليل التلال في آي أو إس](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![خطوط الكونتور مدمجة مع الميل في آي أو إس](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 

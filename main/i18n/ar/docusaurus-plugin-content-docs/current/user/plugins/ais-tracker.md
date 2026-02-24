@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title:  متتبع سفن AIS
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 <InfoAndroidOnly />
@@ -31,7 +31,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يتم تفعيل القدرة على استخدام الخرائط عبر الإنترنت تلقائيًا في إصدار iOS من OsmAnd. لعرض الخرائط عبر الإنترنت في أندرويد، تحتاج إلى إجراء الإعدادات التالية:
 
 1. [تفعيل](../plugins/index.md#enable--disable) ملحق **متتبع سفن AIS** في *القائمة الرئيسية ← الملحقات ← متتبع سفن AIS*.
-2. تكوين [إعدادات AIS](../map/raster-maps.md#select-raster-maps)
+2. تكوين [إعدادات AIS](../map/raster-maps.md#layers)
 3. تكوين **اتصال خادم AIS** أو توصيل **جهاز استقبال AIS خارجي**.
 4. التحقق من عرض السفن على خريطة OsmAnd.
 
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - تتحرك السفن بناءً على السرعة والمسار في الوقت الفعلي.
 - تدخل السفن الجديدة وتخرج من المنطقة المرئية ديناميكيًا.
-- يؤدي النقر على سفينة إلى فتح معلومات مفصلة.
+- النقر على سفينة يفتح معلومات مفصلة.
 
 
 ### معلومات سفينة AIS {#ais-vessel-information}
@@ -85,7 +85,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - **MMSI (هوية الخدمة المتنقلة البحرية)** (*معرف فريد للسفينة مكون من 9 أرقام*)
     - **رقم IMO** (*إذا كان متاحًا*)  
     - **علامة النداء**  
-    - **نوع السفينة** (*على سبيل المثال، سفينة شحن، ركاب، سفينة صيد*)  
+    - **نوع السفينة** (*على سبيل المثال، شحن، ركاب، سفينة صيد*)  
     - **أبعاد السفينة** (*الطول والعرض*)  
     - **موضع هوائي AIS** (*بالنسبة لهيكل السفينة*)  
 

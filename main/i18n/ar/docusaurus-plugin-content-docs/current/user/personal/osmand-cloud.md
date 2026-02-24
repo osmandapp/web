@@ -1,5 +1,5 @@
 ---
-source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
+source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
 sidebar_position: 11
 title:  سحابة OsmAnd
 ---
@@ -19,9 +19,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## نظرة عامة {#overview}
 
-:::tip subscribe  
-&nbsp;<ProFeature/> للوصول إلى جميع ميزات سحابة OsmAnd، اشترك في **OsmAnd Pro** لنظام [أندرويد](../purchases/android.md#prices) أو [iOS](../purchases/ios.md#prices).  
-:::  
+:::info Pro feature
+سحابة OsmAnd هي ميزة مدفوعة لـ[**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
+:::
 
 :::note cross-platform  
 سحابة OsmAnd هي خدمة تخزين سحابي مستقلة و*ليست مرتبطة* بإصدار معين لمنصة أندرويد أو iOS أو الويب.  
@@ -75,7 +75,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لعمل نسخة احتياطية واستعادة البيانات، يجب أن تكون مسجلاً الدخول إلى حساب سحابة OsmAnd الخاص بك.  
 
-- للتسجيل أو تسجيل الدخول، تحتاج إلى اشتراك نشط في [OsmAnd Pro](#cross-platform) أو [OsmAnd Start](#osmand-start). يمكنك التحقق من حالة اشتراكك في تطبيق OsmAnd: *القائمة ← الإعدادات ← المشتريات*.
+- للتسجيل أو تسجيل الدخول، تحتاج إلى اشتراك نشط في [OsmAnd Pro](#cross-platform) أو [OsmAnd Start](#osmand-start). يمكنك التحقق من حالة اشتراكك في تطبيق OsmAnd:  
+  *القائمة ← الإعدادات ← المشتريات*.
 
 - يجب **تسجيل حساب السحابة الخاص بك على الجهاز الذي تم فيه الشراء الأصلي**.
 
