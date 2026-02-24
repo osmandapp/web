@@ -29,7 +29,7 @@ OsmAnd y ["Vive y Rueda"](https://www.facebook.com/profile.php?id=61565140212038
 
 1. **Ingresa tu correo electrónico** para el registro:
    
-<RegisterUserPromoBlock  promoKey='viveyrueda'/>
+<RegisterUserPromoBlock  promoKey='viveyrueda1'/>
 
 <p> </p>
 
@@ -42,7 +42,7 @@ Enlaces de "Vive y Rueda": [Instagram](https://www.instagram.com/viveyrueda/), [
 
 ______________________________
 
-## English version
+## English versionviveyrueda
 
 **OsmAnd Pro for "Vive y Rueda"**
 
@@ -55,7 +55,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='viveyrueda'/>
+<RegisterUserPromoBlock  promoKey='viveyrueda1'/>
 
 <p> </p>
 
