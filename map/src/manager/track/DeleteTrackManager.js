@@ -1,4 +1,4 @@
-import { isCloudTrack, isLocalTrack, loadShareFiles, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import { isCloudTrack, isLocalTrack, loadShareFiles, OBJECT_TYPE_FAVORITE, loadSmartFolders } from '../../context/AppContext';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import { findGroupByName, getAllVisibleFiles } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
@@ -79,6 +79,7 @@ async function deleteCloudFile(name, type, ctx) {
                 }
                 return { ...o };
             });
+            await loadSmartFolders(ctx.setSmartFolders, ctx.listFiles.uniqueFiles);
         }
     }
 }
