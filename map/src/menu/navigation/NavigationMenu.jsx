@@ -45,6 +45,7 @@ import SaveTrackDialog from '../../dialogs/tracks/SaveTrackDialog';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import NavigationSettings from './NavigationSettings';
 import AvoidRoadsList from './AvoidRoadsList';
+import PreviousRouteCard, { getRouteRecordFromNavObject } from './PreviousRouteCard';
 
 export const COLOR_BTN_BLUE = '#237BFF';
 export const COLOR_BTN_RED = '#E71D36';
@@ -121,6 +122,17 @@ export default function NavigationMenu() {
             }
         }
     }, [ctx.routeTrackFile]);
+
+    useEffect(() => {
+        if (ctx.navigationRoutingInProgress) return;
+        if (!showRouteSummary()) return;
+
+        const routeRecord = getRouteRecordFromNavObject(navObject);
+
+        if (!routeRecord?.points || routeRecord.points.length < 2) return;
+
+        ctx.setPreviousRoute(routeRecord);
+    }, [navObject]);
 
     function openInfoBlock() {
         const route = navObject.getRoute();
@@ -347,6 +359,7 @@ export default function NavigationMenu() {
                 {(!navObject.getOption(ROUTE_POINTS_START) || !navObject.getOption(ROUTE_POINTS_FINISH)) && (
                     <>
                         <ThickDivider />
+                        <PreviousRouteCard />
                         <TextWithLeftIcon
                             icon={<InfoIcon />}
                             text={<Trans i18nKey="web:navigation_tips" components={{ strong: <strong /> }} />}

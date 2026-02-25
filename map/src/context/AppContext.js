@@ -466,6 +466,7 @@ export const AppContextProvider = (props) => {
     const [selectedWptId, setSelectedWptId] = useState(null);
 
     const [navigationHistory, setNavigationHistory] = useState([]);
+    const [previousRoute, setPreviousRoute] = useState(null);
 
     routeObject.initSetter({ setter: setRouteObject });
     trackRouter.initSetter({ setter: setTrackRouter });
@@ -944,6 +945,8 @@ export const AppContextProvider = (props) => {
                 setOpenNavigationSettings,
                 navigationHistory,
                 setNavigationHistory,
+                previousRoute,
+                setPreviousRoute,
                 viaInputsCount,
                 setViaInputsCount,
                 navigationObject: routeObject,
