@@ -1,5 +1,5 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
+source-hash: 31eaf050491744fda2c071f9b7f96835aefe6b7beef39ec37dbf6a225fba7c4c
 sidebar_position: 13
 title:  Ski-Kartenansicht
 ---
@@ -99,7 +99,7 @@ Das Ski-Profil ist für die Verwendung in Kombination mit den Stilen Winter und 
 
 </Tabs>
 
-Die [Vektorkarte](../map/vector-maps.md) mit dem enthaltenen [Kartenstil Winter und Ski](../map/vector-maps.md#winter-and-ski) kann mit [Höhenlinien](../plugins/topography.md#contour-lines) und [Schummerung](../plugins/topography.md#hillshade-slope-and-altitude-layers) ergänzt werden. Unten sind zwei Beispiele abgebildet. Links sind die Spuren auf der Standard-Vektorkarte dargestellt, und rechts die Spuren auf der Vektorkarte, die mit der Rasterkarte *Höhenlinien* und *Schummerung* kombiniert ist. Im zweiten Fall zeigt die Karte mehr Höhendaten, um Schwierigkeit, Risiko und Entfernung besser einschätzen zu können.  
+Die [Vektorkarte](../map/vector-maps.md) mit dem enthaltenen [Kartenstil Winter und Ski](../map/map-styles.md#winter-and-ski) kann mit [Höhenlinien](../plugins/topography.md#contour-lines) und [Schummerung](../plugins/topography.md#hillshade-slope-and-altitude-layers) ergänzt werden. Unten sind zwei Beispiele abgebildet. Links sind die Spuren auf der Standard-Vektorkarte dargestellt, und rechts die Spuren auf der Vektorkarte, die mit der Rasterkarte *Höhenlinien* und *Schummerung* kombiniert ist. Im zweiten Fall zeigt die Karte mehr Höhendaten, um Schwierigkeit, Risiko und Entfernung besser einschätzen zu können.  
 
 
 ### Ski-Kartenstil deaktivieren {#disable-ski-map-style}
@@ -239,8 +239,8 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,rende
 
 Um herauszufinden, auf welchen Pisten außerhalb des Skigebiets Sie navigieren können, müssen Sie die Option **Skipisten und Routen** in der Liste **[<Translate android="true" ids="rendering_category_routes"/>](../map/routes.md)** aktivieren, die über das Menü [Karte konfigurieren](../map/configure-map-menu.md) geöffnet wird.  
 
-Mit aktiviertem Ski-Profil, Ski-Navigation und dem [Kartenstil Winter und Ski](../map/vector-maps.md#winter-and-ski) zeigen die [Skipisten und Routen](../map/vector-maps.md#ski-slopes-and-routes) alle Pistenarten an, die die Ski-Navigation zum Erstellen von Navigationsrouten verwenden kann. Solche Skipistenrouten sind, wenn sie aktiviert sind, meist außerhalb der Skigebietsgrenzen violett umrandet.  
-Wenn Sie die Option [Skipisten und Routen](../map/vector-maps.md#ski-slopes-and-routes) für einen Kartenstil außerhalb von Winter und Ski aktivieren, werden nur die Pisten angezeigt. Andere ski-bezogene Funktionen werden in dieser Darstellungsebene möglicherweise nicht angezeigt.  
+Mit aktiviertem Ski-Profil, Ski-Navigation und dem [Kartenstil Winter und Ski](../map/map-styles.md#winter-and-ski) zeigen die [Skipisten und Routen](../map/routes.md#ski-slopes-and-routes) alle Pistenarten an, die die Ski-Navigation zum Erstellen von Navigationsrouten verwenden kann. Solche Skipistenrouten sind, wenn sie aktiviert sind, meist außerhalb der Skigebietsgrenzen violett umrandet.  
+Wenn Sie die Option [Skipisten und Routen](../map/routes.md#ski-slopes-and-routes) für einen Kartenstil außerhalb von Winter und Ski aktivieren, werden nur die Pisten angezeigt. Andere ski-bezogene Funktionen werden in dieser Darstellungsebene möglicherweise nicht angezeigt.  
 _Skipisten und Routen_ [sind anklickbar](../map/routes.md#actions-with-routes).
 
 

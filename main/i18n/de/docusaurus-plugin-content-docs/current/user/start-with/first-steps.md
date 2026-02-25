@@ -1,5 +1,5 @@
 ---
-source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
+source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
 sidebar_position: 1
 title:  Erste Schritte
 ---
@@ -112,7 +112,7 @@ Wir empfehlen Ihnen, OsmAnd die Berechtigung zu erteilen, Informationen über de
 Die OsmAnd-App arbeitet mit verschiedenen Kartentypen, kann aber nur mit heruntergeladenen Offline-Karten voll funktionsfähig sein. Nach dem *<Translate android="true" ids="get_started"/>*-Bildschirm werden Sie aufgefordert, die [*Karte Ihrer Region herunterzuladen*](../start-with/download-maps.md#initial-setup-screen). Sie können eine andere Region wählen, aus der [OsmAnd Cloud](../personal/osmand-cloud.md) wiederherstellen oder diesen Schritt überspringen und die Karten später herunterladen.  
 Weitere verfügbare Optionen zum Herunterladen von Karten finden Sie im Artikel [Karten herunterladen](../start-with/download-maps.md).
 
-:::note Beginnen Sie mit Offline-Karten zu arbeiten
+:::note Mit Offline-Karten arbeiten
 OsmAnd kann ohne heruntergeladene Offline-Karten nicht korrekt funktionieren. Obwohl die Anwendung [Vektor-](../map/vector-maps.md) und [Rasterkarten](../map/raster-maps.md) unterstützt, wird dringend empfohlen, mit Vektor-Offline-Karten zu beginnen, damit alle Funktionen wie [Suche](../search/index.md), [Navigation](../navigation/index.md) und [Kontextmenü](../map/map-context-menu.md) ordnungsgemäß funktionieren.
 :::
 
@@ -665,7 +665,7 @@ OsmAnd hat keine erforderlichen Berechtigungen in der iOS-/Android-Version.
 **Wesentlich**:
 
 - **Internet**. Erstmaliges Herunterladen / Aktualisieren von Offline-Karten. Es kann auch erforderlich sein, um auf Online-Funktionen wie [Straßenansicht-Bilder](../map/point-layers-on-map.md#-street-level-imagery), [Online-Fotos](../map/map-context-menu.md#online-photos) oder [Online-Karten](../map/raster-maps.md) zuzugreifen.
-- **GPS** / **GSM-Netzwerk**. Bestimmen Sie Ihren Standort, folgen Sie Ihnen im Navigationsmodus und zeichnen Sie Ihre Reise auf (optional). Diese Berechtigung wird angefordert, wenn Sie auf die [Schaltfläche "Mein Standort"](../widgets/map-buttons.md#my-location-and-zoom) klicken oder wenn Sie die [Navigation starten](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **GSM-Netzwerk**. Bestimmen Sie Ihren Standort, folgen Sie Ihnen im Navigationsmodus und zeichnen Sie Ihre Reise auf (optional). Diese Berechtigung wird angefordert, wenn Sie auf die [Schaltfläche "Mein Standort"](../widgets/map-buttons.md#my-position-and-zoom) klicken oder wenn Sie die [Navigation starten](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Optional**:
 

@@ -1,5 +1,5 @@
 ---
-source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
+source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,6 +17,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Übersicht {#overview}
+
+:::tip Purchase
+CarPlay ist eine [bezahlte Funktion](../purchases/index.md).  
+:::
 
 Das Führen eines Fahrzeugs und die gleichzeitige Benutzung Ihres Telefons oder Tablets ist aus Sicherheitsgründen in der Regel gesetzlich verboten. [***CarPlay***](https://www.apple.com/ios/carplay/) ist eine Software, die eine angepasste und optimierte Version der OsmAnd-App für die sichere Nutzung während der Fahrt bereitstellt und so den Zugriff auf die Navigationsfunktionen der App einfacher und sicherer macht.
 
@@ -45,8 +49,8 @@ Während Ihr Gerät mit *CarPlay* verbunden ist, ist die Karte auf dem App-Bilds
 
 *CarPlay* zeigt die an den Bildschirm des Fahrzeug-Multimediasystems angepasste OsmAnd-Oberfläche an. Die Interaktion mit der Karte ist beschränkt auf:  
 
-- [Mein Standort](../widgets/map-buttons.md#my-location-and-zoom). Verschiebt den sichtbaren Teil der Karte so, dass Ihr aktueller Standort in der Mitte des Bildschirms liegt.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Ermöglicht das Vergrößern und Verkleinern des sichtbaren Teils der Karte.
+- [Mein Standort](../widgets/map-buttons.md#my-position-and-zoom). Verschiebt den sichtbaren Teil der Karte so, dass Ihr aktueller Standort in der Mitte des Bildschirms liegt.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Ermöglicht das Vergrößern und Verkleinern des sichtbaren Teils der Karte.
 
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
@@ -241,7 +245,7 @@ Dieses Informations-Widget kombiniert Warnungstypen wie **Fußgängerüberwege**
 
 ![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
-Das **Tachometer**-Widget ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* mithilfe von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd-Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Multimediasystems des Fahrzeugs anzeigt.
+Das **Tachometer**-Widget ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* mithilfe von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd-Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Bildschirm des Multimediasystems des Fahrzeugs anzeigt. Wenn Ihre aktuelle Geschwindigkeit die konfigurierte Toleranz der Geschwindigkeitsbegrenzung erreicht oder diese überschreitet, ändert das Widget sein Aussehen (Farben), um eine Warnung zu geben. Die Änderung des Aussehens kann animiert sein.
 
 - Das **Tachometer-Widget** ist [*profilabhängig*](../personal/profiles.md). Wenn Sie also die Einstellungen für ein Profil ändern, werden sie nicht auf ein anderes angewendet.
 - Es gibt keine Möglichkeit, die Anzeige des *Tachometers* direkt in *CarPlay* einzustellen. Sie müssen es für das ausgewählte [Navigationsprofil](#carplay-profile) in der OsmAnd-Anwendung konfigurieren, bevor Sie die Navigation starten und Ihr Gerät mit dem Fahrzeug verbinden.
@@ -266,6 +270,23 @@ Die OsmAnd-App kann geöffnet und zur Navigation in *CarPlay* auf dem Bildschirm
 
 - Richten Sie das Multifunktions-Dashboard auf einem mit *CarPlay* verbundenen Telefon oder auf dem Bildschirm Ihres Fahrzeugsystems ein.
 - Suchen Sie die Mehrfenster-Schaltfläche und schalten Sie sie um.
+
+
+### Navigation beenden {#finish-navigation}
+
+![Navigation beenden](@site/static/img/navigation/auto-car/finish_navigation_carplay_new.png)
+
+Wenn die Navigation in CarPlay abgeschlossen ist, zeigt OsmAnd einen Dialog **„Sie sind angekommen“** auf dem Fahrzeugbildschirm an. Dieser Dialog verwendet dieselbe Ankunftsdetektionslogik wie die mobile App und bietet schnellen Zugriff auf gängige Aktionen nach Erreichen des Ziels.
+
+Verfügbare Aktionen:
+- **Als Parkort markieren**. Speichert Ihre aktuelle Position als Parkort und platziert einen Parkmarker auf der Karte.
+- **Parkplatz suchen**. Öffnet den Suchbildschirm mit der vorausgewählten Parkplatz-Kategorie, um Ihnen bei der Suche nach nahegelegenen Parkmöglichkeiten zu helfen.
+- **Route neu berechnen**. Baut eine neue Route zum ursprünglichen Ziel auf, wenn Sie die Navigation fortsetzen möchten.
+- **Navigation beenden**. Beendet die aktuelle Route und setzt OsmAnd in den Standardkartenzustand zurück.
+
+Wenn CarPlay während der aktiven Navigation getrennt wird, wendet OsmAnd zusätzliche Logik auf dem iPhone an:
+- Wenn die Entfernung zum Ziel weniger als 100 m beträgt, wird die Navigation automatisch beendet und das Standardprofil wiederhergestellt. In diesem Fall wird die Benachrichtigung „Sie sind angekommen“ nicht auf dem Telefonsbildschirm angezeigt.
+- Wenn die aktuelle Geschwindigkeit unter 1 m/s liegt (z. B. beim Anhalten an einer Tankstelle), wird die Navigation pausiert. Die Navigation wird automatisch fortgesetzt, wenn CarPlay erneut verbunden wird.
 
 ## Einstellungen {#settings}
 

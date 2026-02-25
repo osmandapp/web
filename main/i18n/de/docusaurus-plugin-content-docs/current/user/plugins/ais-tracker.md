@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title:  AIS-Schiffs-Tracker
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 <InfoAndroidOnly />
 
 ## Übersicht {#overview}
 
-Das Plugin **AIS-Schiffs-Tracker** zeigt Positionen des [Automatischen Identifikationssystems (AIS)](https://de.wikipedia.org/wiki/Automatic_Identification_System) und detaillierte Informationen über Schiffe in der Nähe an. Die AIS-Daten werden über eine Netzwerkverbindung von einem externen AIS-Empfänger empfangen.
+Das Plugin **AIS-Schiffs-Tracker** zeigt Positionen des [Automatischen Identifikationssystems (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) und detaillierte Informationen über Schiffe in der Nähe an. Die AIS-Daten werden über eine Netzwerkverbindung von einem externen AIS-Empfänger empfangen.
 
 :::caution DISCLAIMER
 **Dieses Plugin ist ein Hobbyprojekt und nicht auf Zuverlässigkeit oder Genauigkeit ausgelegt. VERLASSEN SIE SICH NICHT auf diese Software für die Navigation oder die Sicherheit von Menschenleben.**
@@ -31,7 +31,7 @@ Das Plugin **AIS-Schiffs-Tracker** zeigt Positionen des [Automatischen Identifik
 Die Möglichkeit, Online-Karten zu verwenden, ist in der iOS-Version von OsmAnd automatisch aktiviert. Um Online-Karten in Android anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
 
 1. [Aktivieren](../plugins/index.md#enable--disable) Sie das Plugin **AIS-Schiffs-Tracker** im *Hauptmenü → Plugins → AIS-Schiffs-Tracker*.
-2. Konfigurieren Sie die [AIS-Einstellungen](../map/raster-maps.md#select-raster-maps)
+2. Konfigurieren Sie die [AIS-Einstellungen](../map/raster-maps.md#layers)
 3. Konfigurieren Sie eine **AIS-Serververbindung** oder schließen Sie einen **externen AIS-Empfänger** an.
 4. Überprüfen Sie, ob die Schiffe auf der OsmAnd-Karte angezeigt werden.
 
@@ -111,7 +111,7 @@ AIS-Schiffe senden drei Arten von Daten:
 
 ### AIS-Symbole und Legenden {#ais-symbols-and-legends}
 
-[Richtlinien für die Darstellung von AIS-Symbolen](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Symbole             | Beschreibung   |
 |---------------------|---------------|
@@ -189,7 +189,7 @@ Das Plugin *AIS-Schiffs-Tracker* bietet verschiedene Einstellungen zur Personali
 
     - [AIS Test 1](https://github.com/user-attachments/files/18689404/ais_test_1.txt)
     - [AIS Test 2](https://github.com/user-attachments/files/18689405/ais_test_2.txt)
-    - [Einzeln 3](https://github.com/user-attachments/files/18689403/333.txt)
+    - [Single 3](https://github.com/user-attachments/files/18689403/333.txt)
 
 2. **Laden Sie AIS-Daten in OsmAnd**  
 Öffnen Sie *<Translate android="true" ids="shared_string_menu,plugins_menu_group,development,shared_string_settings,ais_load_data"/>* und wählen Sie eine der heruntergeladenen Dateien aus.

@@ -1,5 +1,5 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
+source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
 sidebar_position: 14
 title: Topografie
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-:::info Kostenpflichtige Funktion
-Das Topografie-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.
+:::tip Kauf
+Das Topografie-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md).  
 :::
 
 Topografie ist eine wichtige Funktion der Kartografie, die Informationen zur visuellen Beurteilung des Geländereliefs liefert.
 Topografische Informationen wie [Höhenlinien](#contour-lines), [Gelände](#terrain) (*Schummerung* und *Neigung*), und [3D-Relief](#3d-relief) helfen bei der visuellen Einschätzung der Geländebeschaffenheit, indem sie Höhe, Relief, Extreme, Steilheit oder Punkte gleicher Höhe anzeigen.
 
-Jede von diesem Plugin bereitgestellte Funktion ist eine unabhängige Kartenebene, die, wenn sie aktiviert ist, je nach den [Einstellungen](../map/raster-maps.md#overlay-layer) über oder unter der Hauptkartenquelle angezeigt werden kann.  
+Jede von diesem Plugin bereitgestellte Funktion ist eine unabhängige Kartenebene, die, wenn sie aktiviert ist, je nach den [Einstellungen](../map/raster-maps.md#overlay) über oder unter der Hauptkartenquelle angezeigt werden kann.  
 
 Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:  
 
@@ -41,7 +41,7 @@ Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 
 | Höhenlinien | Schummerung | Neigung |
 |:---|:---|:---|
-| ![Höhenlinien_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Schummerung_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Neigungen_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 
 | Höhenlinien | Schummerung | Neigung |
 |:---|:---|:---|
-| ![Höhenlinien_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Schummerungen_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Neigungen_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -173,7 +173,7 @@ Bei Verwendung der [Karten-Rendering-Engine](../personal/global-settings.md#map-
 **Darstellungseinstellungen**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Höhenlinien ein- oder ausschalten.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Definieren Sie die [Zoomstufen](../map/interact-with-map.md#my-location-and-zoom), bei denen Höhenlinien sichtbar sind.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Definieren Sie die [Zoomstufen](../map/interact-with-map.md#my-position-and-zoom), bei denen Höhenlinien sichtbar sind.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Wählen Sie die Farbe für die Anzeige der Höhenlinien.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Passen Sie die Breite der Höhenlinien an.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wählen Sie die Dichte der Höhenlinien (Niedrig, Mittel, Hoch). Höhere Dichten können die Ladegeschwindigkeit beeinträchtigen.
@@ -215,7 +215,7 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 
 | Schummerung | Neigung | Höhe |
 | ------ | ------- | ------- |
-| ![Schummerung](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) | ![Höhe](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Schummerung** basiert auf der Simulation der Oberflächenbeleuchtung unter Verwendung von Geländedaten. Diese Methode beinhaltet die Erzeugung von Schatten und Lichtern basierend auf dem Winkel der Oberfläche zur Lichtquelle. Als Ergebnis sehen Sie natürliche Hügel, Täler und andere Geländedetails auf der Karte.  
 
@@ -240,17 +240,15 @@ Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-sc
 
 - *Schummerung* verwendet dunkle Farbtöne, um Hänge, Gipfel und Tiefebenen darzustellen. Die virtuelle Sonne hat einen festen Azimut (Richtung) von 315 Grad.
 
-- *Neigung* verwendet Farben, um die Steilheit des Geländes zu visualisieren. Mehr darüber können Sie [hier](https://de.wikipedia.org/wiki/Steigung) lesen. Jede Farbe entspricht einem Winkel der Abweichung von der Horizontalen. Ein zusätzliches *Neigungs*-Farbschema, ***Lawine***, ist im Menü **Ändern** verfügbar.
+- *Neigung* verwendet Farben, um die Steilheit des Geländes zu visualisieren. Mehr darüber können Sie [hier](https://en.wikipedia.org/wiki/Grade_(slope)) lesen. Jede Farbe entspricht einem Winkel der Abweichung von der Horizontalen. Ein zusätzliches *Neigungs*-Farbschema, ***Lawine***, ist im Menü **Ändern** verfügbar.
 
 - *Höhe*. Die Höhenkarte färbt jedes Pixel entsprechend der berechneten Kartenhöhe unter Verwendung des Gradienten aus einem definierten Farbschema. Normalerweise sind Höhenschemata sehr ortsabhängig. In Berggebieten würden Sie es vorziehen, Farben auf einen breiteren Höhenbereich zu verteilen, und in flachen Gebieten würden Sie ein Farbschema mit einem kleinen Bereich zwischen minimaler/maximaler Höhe wählen.
-
-> *Bitte lesen Sie den Artikel [Farbschema](../personal/color-palette-schemes.md) für weitere Informationen.*
 
 
 ### Farbschema ändern {#modify-color-scheme}
 
-:::info Kostenpflichtige Funktion
-*[Farbschema ändern](../../user/personal/color-palette-schemes.md#terrain)* ist eine kostenpflichtige **OsmAnd Pro**-Funktion für [iOS](../purchases/ios.md#pro-features) und [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Pro-Funktion
+*[Farbschema ändern](../../user/personal/color-palette-schemes.md#terrain)* ist eine [**OsmAnd Pro**](../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -274,7 +272,7 @@ Die Funktion *Farbschema ändern* ermöglicht es Ihnen, ein Farbschema auszuwäh
 - Aus einer [vordefinierten Liste](#default-color-scheme).
 - Aus Farbpalettendateien, die Sie auf Ihrem Computer erstellt haben. Benutzerdefinierte Dateien können mit dem [Import/Export-Werkzeug](../personal/import-export.md) zu OsmAnd hinzugefügt werden.
 
-Sie können [diese Paletten bearbeiten](../personal/color-palette-schemes.md#edit-palette-file), um das Aussehen von Karten und Routen zu personalisieren.
+Sie können [diese Paletten bearbeiten](../personal/color-palette-schemes.md#palette-modify), um das Aussehen von Karten und Routen zu personalisieren.
 
 
 ### Sichtbarkeit {#visibility}
@@ -325,7 +323,7 @@ Die Haupteinstellungen für *Kartentypen anzeigen oder ausblenden* befinden sich
 ## 3D-Relief {#3d-relief}
 
 :::info Pro-Funktion
-3D-Relief ist eine kostenpflichtige [**OsmAnd Pro**](../purchases/index.md)-Funktion <ProFeature />.
+3D-Relief ist eine [**OsmAnd Pro**](../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -348,7 +346,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 
 </Tabs>  
 
-Die 3D-Relief-Funktion erzeugt ein erhabenes Relief und bietet eine dreidimensionale Darstellung der Landschaft. 3D-Relief funktioniert offline und kann mit [OsmAnd-Vektorkarten](../map/vector-maps.md) oder beliebigen [Rasterkarten](../map/raster-maps.md#select-raster-maps) als [Kartenquelle](../map/raster-maps.md#main) oder als [Unterlage/Überlagerung](../map/raster-maps.md#overlay-layer) verwendet werden.
+Die 3D-Relief-Funktion erzeugt ein erhabenes Relief und bietet eine dreidimensionale Darstellung der Landschaft. 3D-Relief funktioniert offline und kann mit [OsmAnd-Vektorkarten](../map/vector-maps.md) oder beliebigen [Rasterkarten](../map/raster-maps.md#layers) als [Kartenquelle](../map/raster-maps.md#main) oder als [Unterlage/Überlagerung](../map/raster-maps.md#overlay) verwendet werden.
 
 ***Wie man 3D-Relief auf der Karte anzeigt.***
 
@@ -379,7 +377,6 @@ Die 3D-Relief-Funktion erzeugt ein erhabenes Relief und bietet eine dreidimensio
 </TabItem>
 
 </Tabs>
-
 
 ### Vertikale Überhöhung {#vertical-exaggeration}
 

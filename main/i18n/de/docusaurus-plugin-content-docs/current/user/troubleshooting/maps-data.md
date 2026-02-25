@@ -1,5 +1,5 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title:  Karten & Daten
 ---
@@ -19,6 +19,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### Warum bietet OsmAnd keinen Zugriff auf Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
 OsmAnd ist darauf ausgelegt, OpenStreetMap (OSM) zu unterstützen und priorisiert diesen Weg so weit wie möglich. Zusätzlich gibt es Lizenzbeschränkungen, die es OsmAnd nicht erlauben, mit Google Maps-Daten vertrieben zu werden.
+
+### Warum Google Maps-Links möglicherweise nicht in OsmAnd geöffnet werden? {#why-google-maps-links-may-not-open-in-osmand}
+
+Google Maps-Links wie `https://maps.app.goo.gl/...` können in OsmAnd mit einem einzigen Tippen aus SMS oder Messenger-Apps nicht geöffnet werden. Auch wenn OsmAnd diese Links parsen kann, erzwingt Android 12+ Verified App Links: Kern-Domains von Google (z. B. `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) sind für Google-Systemdienste reserviert, sodass Drittanbieter-Apps sie nicht automatisch abfangen können. Infolgedessen öffnet sich der Link in der Regel in einer Google-App/Dienst.
+
+**Workaround:** *Langes Tippen auf die Nachricht → Teilen → OsmAnd auswählen*. Dadurch wird der Link an OsmAnd gesendet, wo er geparst und als Ort geöffnet werden kann.
 
 ### Langsames Laden von Karten auf Android 11, 12 (SD-Karte) {#maps-slowly-loading-on-android-11-12-sd-card}
 

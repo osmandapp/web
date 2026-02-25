@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Beliebte Orte
 ---
@@ -19,6 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 ## Übersicht {#overview}
+
+:::tip Purchase
+Beliebte Orte ist eine [bezahlte Funktion](../purchases/index.md).  
+:::
 
 Die Funktion **Beliebte Orte** in OsmAnd hebt bemerkenswerte Sehenswürdigkeiten und Attraktionen hervor, indem sie offene strukturierte Daten von [Wikidata](https://www.wikidata.org) und [Wikipedia](https://www.wikipedia.org/) verwendet. Sie hilft Benutzern, bekannte Ziele mit mehrsprachigen Beschreibungen und Fotos zu erkunden.
 

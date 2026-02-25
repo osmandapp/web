@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Navigations-Widgets
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/> Dieses Widget können Sie nur mit der Pro-Funktion <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro-Abonnenten</a> nutzen.
-
+:::info Pro-Funktion
+Das Höhenprofil-Widget ist eine kostenpflichtige Funktion von [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 Das Höhenprofil-Widget zeigt ein Diagramm mit der Höhe und der Steigung Ihrer Navigationsroute sowie Ihre aktuelle Position auf diesem Diagramm mit aktueller Höhe und Steigung. Das Diagramm wird auf zwei Achsen dargestellt. Die X-Achse ist die Entfernung Ihrer Route. Die Y-Achse ist die Höhe, der Wert hängt vom Relief ab, und die Steigung wird in Prozent angezeigt.  
@@ -250,7 +248,7 @@ Das Widget zeigt die *Ankunftszeit* oder die *Fahrzeit* bis zum ersten Zwischenz
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | Durch Tippen | Wechselt zwischen *Ankunftszeit* und *Fahrzeit* und umgekehrt. |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +276,7 @@ Das Widget zeigt die *Ankunftszeit* oder die *Fahrzeit* bis zum letzten Zielpunk
 | | |
 |:------------|:------------|
 | Aktivieren |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
 | Durch Tippen | Wechselt zwischen *Ankunftszeit* und *Fahrzeit* und umgekehrt. |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -356,11 +354,11 @@ In den oberen/unteren Leisten können die Widgets Nächste Abbiegung und Zweite 
 
 Vollbreite zeigt:
 - Erste Zeile — Entfernung zur Abbiegung + Ausfahrt N (falls verfügbar)
-- Zweite Zeile — Straßenummer mit Schild + Straßen-/Straßenname
+- Zweite Zeile — Straßennummer mit Schild + Straßen-/Straßenname
 
 Halbbreite zeigt:
 - Erste Zeile — Entfernung zur Abbiegung
-- Zweite Zeile — Ausfahrt N (falls verfügbar) + Straßenummer mit Schild + Straßen-/Straßenname
+- Zweite Zeile — Ausfahrt N (falls verfügbar) + Straßennummer mit Schild + Straßen-/Straßenname
 
 **Nächste Abbiegung** verwendet einen großen Pfeil und unterstützt Vollbreite-/Halbbreite-Layouts in den oberen/unteren Leisten. **Nächste Abbiegung (klein)** verwendet einen kleinen Pfeil mit der Entfernung neben dem Pfeil und ist für die linken/rechten Leisten gedacht. **Zweite nächste Abbiegung** zeigt das Manöver nach der nächsten Abbiegung an und wird aktiviert, wenn das zweite Manöver in der Annäherungsdistanz liegt.
 
@@ -396,7 +394,7 @@ Das **Warnungs-Widget** kombiniert verschiedene Arten von Warnungen, die währen
 
 - Sie haben die Möglichkeit, Warnungen wie *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* und *<Translate android="true" ids="show_tunnels"/>* ein- und auszuschalten. Andere Warnungen sind standardmäßig aktiv, wenn das Widget aktiviert ist.  
 
-- Für den Warnungstyp *Geschwindigkeitsbegrenzung* können Sie den Wert <Translate android="true" ids="speed_limit_exceed"/> in den Einstellungen für Sprachansagen anpassen, um die Fahrzeuggeschwindigkeit und die GPS-Geschwindigkeit besser abzugleichen.  
+- Für den Warnungstyp *Geschwindigkeitsbegrenzung* können Sie den Wert <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) in den Einstellungen für Sprachansagen anpassen, um die Fahrzeuggeschwindigkeit und die GPS-Geschwindigkeit besser abzugleichen.  
 
 - Die meisten Warnungen werden 15 Sekunden lang auf dem Bildschirm angezeigt und per Sprachansage angekündigt, ebenso wie die Auslösezeit für das Passieren eines Wegpunkts, Favoritenpunkts oder POIs. Lesen Sie mehr [hier](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
@@ -452,7 +450,7 @@ In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der ak
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate ios="true" ids="map_widget_top_text"/>* |
 | Einstellungen | Wählen Sie aus, um immer **den aktuellen Straßennamen** anzuzeigen oder **den nächsten Straßennamen** anzuzeigen, wenn Sie sich dem Manöver nähern |
 | Durch Tippen | Öffnet ein Kontextmenü mit Einstellungen (Schalten Sie Informationen zur nächsten Abbiegung EIN/AUS) und Löschen |
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -27,6 +27,8 @@ Verwenden Sie **Navigation im Web**, um eine Route auf der Karte zu erstellen un
 Im leeren Zustand fordert die Navigation Sie auf, Routenpunkte hinzuzufügen: *Klicken Sie auf die Karte, um Start- und Zielpunkte festzulegen*.
 
 Routenpunkte können aus dem Routenpanel bereitgestellt werden. Wenn Sie **Startpunkt festlegen** oder **Ziel festlegen** auswählen, zeigt das Feld Vorschläge wie *Aktueller Standort* und zuvor verwendete Punkte aus der Verlauf an. Sie können gespeicherte Vorschläge mit *Verlauf löschen* entfernen.
+
+Sie können auch Koordinaten direkt in den Routenpunktfeldern eingeben, im Format Breitengrad, Längengrad (z. B. 48.23737, 24.40830). Andere Koordinatenformate oder geteilte Links werden nicht immer erkannt. Wenn ein Ort nicht korrekt geparst wird, versuchen Sie, ihn in lat,lon umzuwandeln oder den Ort mit der Suche zu finden.
 
 Die Navigation folgt einem einfachen Ablauf: Der erste Punkt wird zum Start, und der nächste Punkt wird zum Ziel. Sobald beide Punkte festgelegt sind, wird die Route berechnet und auf der Karte angezeigt.
 
@@ -116,7 +118,7 @@ Unterschiede:
 - Vollständige Track-Daten können Routing-/Navigationsinformationen zusätzlich zur Track-Geometrie enthalten (nützlich, wenn Sie Navigationsanweisungen beibehalten oder die Route in OsmAnd neu bearbeiten möchten).
 - Vereinfachter Track exportiert eine sauberere GPX für andere Apps, indem Routing-/Navigationsdaten entfernt und nur die Track-Form belassen werden. Wegpunkte werden beim Exportieren eines vereinfachten Tracks erhalten.
 
-Sie können die Route als Track speichern, indem Sie *In die Cloud speichern / In OsmAnd Cloud hochladen* verwenden. Dies öffnet einen Dialog, in dem Sie das Speichern in Cloud-Tracks bestätigen, den Namen bearbeiten, optional einen Ordner wählen und dann Speichern oder Abbrechen können.
+Sie können die Route als Track speichern, indem Sie *In die Cloud speichern / In OsmAnd Cloud hochladen* verwenden. Dies öffnet einen Dialog, in dem Sie das Speichern in Cloud-Tracks bestätigen, den Namen bearbeiten, optional einen Ordner wählen und dann Speichern oder Abbrechen können. Wenn Sie nicht angemeldet sind, öffnet *In die Cloud speichern / In OsmAnd Cloud hochladen* die Preisseite.
 
 ![Web-Navigation](@site/static/img/web/download_options.png)
 
@@ -124,11 +126,13 @@ Sie können die Route als Track speichern, indem Sie *In die Cloud speichern / I
 
 Um die Route zu teilen, kopieren Sie die URL. Beispiel: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
 
+Beim Öffnen eines geteilten Links wird die Route auf der Karte wiederhergestellt. Falls erforderlich, können Sie das [Routing-Profil](#routing-profile) manuell im Routenpanel ändern.
+
 
 ## Verwandte Artikel {#related-articles}
 
-- [Routenplanung](../navigation/setup/route-navigation.md)
+- [Routen-Vorbereitung](../navigation/setup/route-navigation.md)
 - [Navigations-Einstellungen](../navigation/guidance/navigation-settings.md)
-- [Über OsmAnd Routing](../navigation/routing/osmand-routing.md)
+- [Über OsmAnd-Routing](../navigation/routing/osmand-routing.md)
 - [Fahrzeugparameter](../navigation/guidance/vehicle-parameters.md)
 - [Route planen](../web/planner.md)

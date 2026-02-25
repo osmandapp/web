@@ -1,5 +1,5 @@
 ---
-source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
+source-hash: 852174395ea31db0d986b03a13dcefe0a7848d73cda99c210ec9424b8e571fd0
 sidebar_position: 5
 title:  Externe Sensoren
 ---
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-:::info Kostenpflichtige Funktion
-Das Plugin 'Externe Sensoren' ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.  
+:::tip Kostenpflichtige Funktion
+Das Plugin 'Externe Sensoren' ist eine [kostenpflichtige Funktion](../purchases/index.md).  
 :::
 
 Das **Plugin 'Externe Sensoren'** ermöglicht das Lesen und Aufzeichnen von Daten von [drahtlosen externen Sensoren](https://en.wikipedia.org/wiki/Wireless_sensor_network), die mit den Technologien [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) und [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) arbeiten, und die Anzeige dieser Daten mithilfe von [Widgets](#widgets) in der OsmAnd-Anwendung. Dieses verwaltete Netzwerk ist in der Lage, Sensordaten zu sammeln, zu übertragen und zu speichern.

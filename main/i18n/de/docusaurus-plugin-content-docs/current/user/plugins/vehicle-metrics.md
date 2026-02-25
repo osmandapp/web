@@ -1,5 +1,5 @@
 ---
-source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
+source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
 sidebar_position: 16
 title:  Fahrzeugmetriken
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Übersicht {#overview}
 
 :::info Kostenpflichtige Funktion
-Das Fahrzeugmetriken-Plugin ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App. Fahrzeuggeschwindigkeit und Motordrehzahl-Informationen sind in der kostenlosen OsmAnd-Version verfügbar.
+Das Fahrzeugmetriken-Plugin ist eine [**OsmAnd Pro**](../purchases/index.md) <ProFeature />. Fahrzeuggeschwindigkeit und Motordrehzahl-Informationen sind in der kostenlosen OsmAnd-Version verfügbar.
 :::
 
 Das **Fahrzeugmetriken-Plugin** ermöglicht die Überwachung von Fahrzeugdaten in Echtzeit über das [OBD-II-Protokoll](https://en.wikipedia.org/wiki/OBD-II_PIDs). Benutzer können wichtige Messwerte wie Motorleistung, Kraftstoffeffizienz und Geschwindigkeit verfolgen, was eine proaktive Fahrzeugwartung und Fehlerbehebung ermöglicht.  

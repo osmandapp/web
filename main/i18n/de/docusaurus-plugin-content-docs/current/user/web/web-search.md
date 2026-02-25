@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Suche
 title: Suche auf der Webseite
@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Das **Suchmenü** kann über das Seitenpanel oder das **Suchsymbol 🔍** auf der Karte aufgerufen werden. Es enthält:
 
-- [Suchleiste](#search-bar). Geben Sie Schlüsselwörter ein, um nach bestimmten Orten oder Points of Interest zu suchen.  
+- [Suchleiste](#search-bar). Geben Sie Schlüsselwörter ein, um nach bestimmten Orten oder POI zu suchen.  
 - [Kategorienbereich](#categories). Durchsuchen Sie kategorisierte Optionen für eine einfachere POI-Suche.  
 - [Erkunden-Bereich](#explore). Anzeigen Sie beliebte POI für das aktuelle Kartenzentrum und erkunden Sie Orte mit Fotos auf der Karte.
 
@@ -35,7 +35,7 @@ Das **Suchmenü** kann über das Seitenpanel oder das **Suchsymbol 🔍** auf de
 
 ### Suchleiste {#search-bar}
 
-Verwenden Sie die **Suchleiste**, um spezifische Orte oder Points of Interest nach Namen zu finden. Klicken Sie auf das Suchsymbol, geben Sie Ihre Abfrage ein und wählen Sie ein Ergebnis aus der Liste aus. Das Auswählen eines POI öffnet das [POI-Kontextmenü](#poi-context-menu), in dem Sie Details anzeigen und Schnellaktionen verwenden können.
+Verwenden Sie die **Suchleiste**, um spezifische Orte oder POI nach Namen zu finden. Klicken Sie auf das Suchsymbol, geben Sie Ihre Abfrage ein und wählen Sie ein Ergebnis aus der Liste aus. Das Auswählen eines POI öffnet das [POI-Kontextmenü](#poi-context-menu), in dem Sie Details anzeigen und Schnellaktionen verwenden können.
 
 Wenn Sie nach einem Kategoriennamen suchen, zeigt das erste Ergebnis möglicherweise die entsprechende POI-Kategorie an. Klicken Sie auf die Kategorie, um die Ansicht [Kategoriensuche](#categories) zu öffnen.
 
@@ -57,7 +57,7 @@ Der **Erkunden**-Bereich zeigt [beliebte Orte](https://osmand.net/docs/user/map/
 
 ## POI-Kontextmenü {#poi-context-menu}
 
-Egal welche Suchoption Sie verwenden (Suchleiste, Kategorien oder Erkunden), das Auswählen eines POI auf der Karte oder in der Ergebnisliste öffnet das POI-Kontextmenü. Das Kontextmenü ist der Hauptort, um POI-Informationen anzuzeigen und gängige Aktionen auszuführen. Es kombiniert POI-Details (wie Standort und verwandte Daten) mit Schnellaktionen (z. B. Speichern, Teilen oder Starten der Routenplanung und Navigation).
+Egal welche Suchoption Sie verwenden (Suchleiste, Kategorien oder Erkunden), das Auswählen eines POI auf der Karte oder in der Ergebnisliste öffnet das POI-Kontextmenü. Das Kontextmenü ist der Hauptort, um POI-Informationen anzuzeigen und gängige Aktionen auszuführen. Es kombiniert POI-Details (wie Standort und verwandte Daten) mit Schnellaktionen (z. B. Speichern, Teilen oder Starten der Navigation).
 
 ### POI-Details {#poi-details}
 
@@ -65,13 +65,14 @@ Das **POI-Kontextmenü** zeigt wichtige Informationen über den ausgewählten Or
 - **Name und Symbol** — zeigt den POI-Namen und sein Symbol an.
 - **Entfernung und Richtung** — zeigt die Entfernung und Richtung zum POI an.
 - **Standort** — zeigt die POI-Koordinaten an.
+- **Öffnungszeiten** — zeigt die geparsten Öffnungszeiten aus [OSM-Daten](https://wiki.openstreetmap.org/wiki/Key:opening_hours). Der aktuelle Status wird dynamisch je nach aktueller Zeit angezeigt (z. B. *Jetzt geöffnet*, *Geschlossen* oder *Öffnet um 10:00*), und der vollständige Zeitplan wird darunter angezeigt.
 - **Beschreibung** — bietet zusätzliche Informationen über den POI, falls verfügbar (z. B. aus Wikipedia).
 - **Online-Fotos** — zeigt Wikimedia-Fotos im Zusammenhang mit dem POI an, falls verfügbar. Wählen Sie Alle anzeigen aus, um die Fotogalerie zu öffnen. Wählen Sie ein Foto aus, um es in der Galerie zu öffnen (Foto-Öffnungsmodus).
 - **Objektdaten** — zusätzliche POI-Informationen, einschließlich OSM-Tags und anderer Details wie Kontakte, Social-Links, Wikipedia- und Wikivoyage-Links, Beschreibungen und Inschriften (falls verfügbar).
 - **OSM-ID** — der OpenStreetMap-Identifikator des POI.
 - **Koordinaten** — wählen Sie die Koordinaten aus, um sie zu kopieren.
 
-![POI-Kontextmenü](@site/static/img/web/poi_context_menu.png)
+![POI-Kontextmenü](@site/static/img/web/poi_context_menu_new.png)
 
 ### POI-Aktionen {#poi-actions}
 

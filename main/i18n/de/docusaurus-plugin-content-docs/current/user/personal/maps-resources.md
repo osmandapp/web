@@ -1,5 +1,5 @@
 ---
-source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
+source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -195,7 +195,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 Der Reiter 'Lokal' bietet eine Übersicht über die Speichernutzung aller OsmAnd-Daten auf Ihrem Gerät. Die Daten sind zur besseren Übersicht in drei farbcodierte Abschnitte unterteilt, wobei die Elemente nach Größe von groß nach klein sortiert sind. Jeder Abschnitt zeigt nur Elemente mit heruntergeladenen Daten an:
 
 - ***Ressourcen*** (*blau*).  
-    Umfasst Karten ([Standard](../map/vector-maps.md), &nbsp;[Nautische](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Wetter](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) und [Reiseführer](../plan-route/travel-guides.md), &nbsp;[Live-Updates](../personal/maps-resources.md#live-updates), &nbsp;**Nur Straßen**,  &nbsp;[Kartenquellen](../map/raster-maps.md), &nbsp;[Renderstile](../map/vector-maps.md#default-map-styles), &nbsp;**Kartenschriftarten, &nbsp;Sprachansagen (aufgezeichnet und TTS), &nbsp;Cache**.  
+    Umfasst Karten ([Standard](../map/vector-maps.md), &nbsp;[Nautische](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Wetter](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) und [Reiseführer](../plan-route/travel-guides.md), &nbsp;[Live-Updates](../personal/maps-resources.md#live-updates), &nbsp;**Nur Straßen**,  &nbsp;[Kartenquellen](../map/raster-maps.md), &nbsp;[Renderstile](../map/map-styles.md#default-map-styles), &nbsp;**Kartenschriftarten, &nbsp;Sprachansagen (aufgezeichnet und TTS), &nbsp;Cache**.  
 
 - ***Meine Orte*** (*gelb*).  
     Umfasst [Favoriten](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM-Notizen](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM-Bearbeitungen](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V-Notizen](../plugins/audio-video-notes.md), &nbsp;[Kartenmarkierungen](../personal/markers.md), &nbsp;[Verlauf](../personal/global-settings.md#history), &nbsp;*Reiseroute*.  
@@ -318,7 +318,7 @@ Verfügbare **Aktionen** hängen vom Datentyp ab:
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -449,8 +449,8 @@ Der Reiter **Aktualisierungen** enthält auch einen Abschnitt zur Wettervorhersa
 
 ## Live-Updates {#live-updates}
 
-:::tip Kauf
-Live-Updates sind eine kostenpflichtige Funktion.  
+:::info Pro feature
+Live-Updates sind eine [**OsmAnd Pro**](../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 

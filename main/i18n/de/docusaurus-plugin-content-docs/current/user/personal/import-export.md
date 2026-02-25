@@ -1,5 +1,5 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
 title:  Import / Export
 ---
@@ -15,9 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Übersicht {#overview}
 
-Die Werkzeuge **Import** und **Export** in OsmAnd ermöglichen Ihnen die Verwaltung Ihrer Daten. Sie können Ihre Profile, Favoriten, Tracks und andere Einstellungen über ein spezielles Format zwischen den Apps auf Ihrem Gerät verschieben. Dieser Prozess vereinfacht das Speichern und Übertragen von Daten zwischen Geräten und ermöglicht es Ihnen, sie mit anderen OsmAnd-Nutzern zu teilen.
+Die Werkzeuge **Import** und **Export** in OsmAnd ermöglichen Ihnen die Verwaltung Ihrer Daten. Sie können Ihre Profile, Favoriten, Tracks und andere Einstellungen über ein spezielles Format durch die Apps auf Ihrem Gerät verschieben. Dieser Prozess vereinfacht das Speichern und Übertragen von Daten zwischen Geräten und ermöglicht es Ihnen, sie mit anderen OsmAnd-Nutzern zu teilen.
 
-:::note Große Größe
+:::note Large size
 *Wenn die Größe Ihrer ausgewählten Daten erheblich ist, benötigt die Anwendung Zeit, um die `.osf`-Datei vorzubereiten.*
 :::
 
@@ -33,7 +33,7 @@ Der *Import* und *Export* ermöglichen es Ihnen, Daten aus generierten `.osf`-**
 - **Meine Orte:**  
         [Favoriten](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM-Notizen*, *OSM-Bearbeitungen](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V-Notizen](../plugins/audio-video-notes.md), &nbsp;[Kartenmarkierungen](../personal/markers.md), &nbsp;[Markierungsverlauf*, *Suchverlauf*, *Navigationsverlauf](../personal/global-settings.md#history), &nbsp;*Reiseroute*.
 - **Ressourcen:**  
-        [Renderstil](../map/vector-maps.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online-Routing-Engines](../navigation/routing/online-routing.md), &nbsp;[Kartenquellen*, *Standard-/Offline-Karten](../map/raster-maps.md), &nbsp;[Wikipedia- und Reisekarten](../plan-route/travel-guides.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Straßenkarten](../map/vector-maps.md#road-style), &nbsp;[Topografische Karten](../plugins/topography.md), &nbsp;[Sprachansagen (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sprachansagen (aufgezeichnet)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favoriten-Backup](../personal/favorites.md#automatic-favorites-backup).
+        [Renderstil](../map/map-styles.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online-Routing-Engines](../navigation/routing/online-routing.md), &nbsp;[Kartenquellen*, *Standard-/Offline-Karten](../map/raster-maps.md), &nbsp;[Wikipedia- und Reisekarten](../plan-route/travel-guides.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Straßenkarten](../map/vector-maps.md#road-style), &nbsp;[Topografische Karten](../plugins/topography.md), &nbsp;[Sprachansagen (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sprachansagen (aufgezeichnet)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favoriten-Backup](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Export {#export}
@@ -89,7 +89,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 Öffnet und stellt `.osf`-Dateien wieder her. Tippen Sie auf die Datei im Dateimanager des Geräts oder verwenden Sie die Aktionsschaltfläche.
 
-- *Einige Elemente sind bereits vorhanden*. Sie können diese Funktion verwenden, um beide zu behalten oder alle zu ersetzen.
+- *Einige Elemente sind bereits vorhanden*. Sie können diese Funktion verwenden, um beide Dateien zu behalten oder alle zu ersetzen.
 - *Neustart*. Nach dem Importieren der Dateien muss die Anwendung neu gestartet werden.
 
 Unterstützte Import-Dateitypen:

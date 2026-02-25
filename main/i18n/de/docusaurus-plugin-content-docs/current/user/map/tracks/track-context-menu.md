@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -129,7 +129,7 @@ Das Menü **Optionen** ermöglicht es Ihnen, den ausgewählten Track mit verschi
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Nur Android*) – Führt Track-Segmente zusammen, um Lücken zu füllen.
-- **<Translate android="true" ids="analyze_on_map"/>**. Öffnet das Werkzeug [Auf Karte analysieren](../tracks/index.md#analyze-track-on-map), um Höhe, Geschwindigkeit und Entfernung des Tracks zu überprüfen.
+- **<Translate android="true" ids="analyze_on_map"/>**. Öffnet das Werkzeug [Auf Karte analysieren](../tracks/index.md#analyze-track-on-map), um Höhe, Geschwindigkeit, Entfernung und alle zusätzlichen Daten im Track zu überprüfen (wie z. B. Daten von externen Sensoren oder Fahrzeugmetriken).
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Nur Android*) - Analysiert den Track nach Zeit- oder Distanz-[Intervallen](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
@@ -364,11 +364,11 @@ Wenn auf der Route *keine Höheninformationen* vorhanden sind, können Sie diese
 
 ### Fehlende Höhe berechnen {#calculate-missing-elevation}
 
-:::note OsmAnd Pro-Abonnement
-[Calculate elevation offline](../../plan-route/create-route.md#get-elevation-data) feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Pro-Funktion
+[Fehlende Höhe offline berechnen](../../plan-route/create-route.md#get-elevation-data) ist eine [**OsmAnd Pro**](../../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
+:::
 
 [Diese Funktion](../../plan-route/create-route.md#get-elevation-data) ermöglicht es Ihnen, das Höhenprofil für einen GPX-Track offline für jedes Gelände zwischen 70 Grad nördlicher und 70 Grad südlicher Breite zu berechnen, basierend auf [Geländekartendaten](../../plugins/topography.md#download-maps). *Geländekarten (3D) müssen zuvor heruntergeladen werden*.
 

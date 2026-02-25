@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title:  Radiuslineal und Maßstab
 ---
@@ -204,7 +204,7 @@ Weitere Informationen zur *Position auf dem Bildschirm* finden Sie im Artikel [B
 
 Sie können in die **3D-Ansicht** wechseln, um Entfernungen und das umliegende Gelände bei Verwendung des Radiuslineals besser zu visualisieren. Diese Ansicht neigt die Karte und bietet einen perspektivischen Effekt, der den sichtbaren Radius erweitert.
 
-- Tippen Sie auf [die Standort-Schaltfläche](../map/interact-with-map.md#my-location-and-zoom), um sich auf Ihre Position zu konzentrieren.
+- Tippen Sie auf [die Standort-Schaltfläche](../map/interact-with-map.md#my-position-and-zoom), um sich auf Ihre Position zu konzentrieren.
 - Verwenden Sie eine [Zwei-Finger-Wischgeste nach oben](../map/interact-with-map.md#gestures), um die Karte in den 3D-Modus zu neigen.
 
 Die Radiuskreise werden mit Tiefe dargestellt, was besonders nützlich für die Routenplanung in hügeligen Gebieten oder städtischen Umgebungen ist, in denen der vertikale Kontext eine Rolle spielt.
