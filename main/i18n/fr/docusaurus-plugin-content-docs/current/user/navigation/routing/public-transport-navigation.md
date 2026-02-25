@@ -1,5 +1,5 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
 title:  Itinéraire en transport en commun
 ---
@@ -44,7 +44,7 @@ Le routage en transport en commun est en phase de test. Pour l'instant, vous pou
 
 ## Comment utiliser {#how-to-use}
 
-Pour commencer à naviguer en ville en transport en commun, utilisez [le bouton de navigation](../../widgets/map-buttons.md#directions) sur l'écran de la carte ou sélectionnez l'option de navigation dans le *Menu principal*.  
+Pour commencer à naviguer en ville en transport en commun, utilisez [le bouton de navigation](../../widgets/map-buttons.md#navigation) sur l'écran de la carte ou sélectionnez l'option de navigation dans le *Menu principal*.  
 
 **1.** Vous devez choisir le *profil de navigation Transport en commun*, ainsi que les points de départ et d'arrivée.  
 
@@ -64,7 +64,7 @@ Pour commencer à naviguer en ville en transport en commun, utilisez [le bouton 
 
 </Tabs>
 
-**2.** OsmAnd propose des options d'itinéraire avec les temps de marche et les itinéraires de transport en commun avec les informations sur le trajet : durée, distance, correspondances et lignes publiques. Vous devez faire défiler l'écran de navigation pour sélectionner l'option souhaitée.  
+**2.** OsmAnd propose des options d'itinéraire avec les temps de marche et les itinéraires de transport en commun avec les informations sur le trajet : durée, distance, transferts et lignes publiques. Vous devez faire défiler l'écran de navigation pour sélectionner l'option souhaitée.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

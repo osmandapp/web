@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  Paramètres du véhicule
 ---
@@ -97,6 +97,10 @@ Les paramètres du véhicule affectent la navigation et la construction de l'iti
 
 ![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+Sur Android, ce paramètre est également disponible pour les *[profils de cyclisme](../../navigation/routing/bicycle-based-routing.md)* afin d'aider à éviter les pistes cyclables étroites.
+
+![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Limite de charge maximale par essieu**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Indiquez la charge maximale par essieu de votre véhicule pour éviter les routes et les ponts avec des restrictions de poids par essieu. Ce paramètre n'est disponible que pour les types de navigation tels que [*Camion*](../../navigation/routing/car-based-routing.md).  
 

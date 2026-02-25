@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
 sidebar_position: 2
 title: Écran de la carte pendant la navigation
 ---
@@ -161,6 +161,10 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 ## Apparence de la ligne d'itinéraire {#route-line-appearance}
 
+:::info Pro feature
+La personnalisation de la ligne d'itinéraire est une fonctionnalité payante [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -186,16 +190,11 @@ Vous pouvez sélectionner l'apparence de la ligne d'itinéraire par style ou sé
 **Avancé** : le paramètre Personnaliser la ligne d'itinéraire vous permet d'ajuster l'apparence de la ligne d'itinéraire pour afficher les changements d'altitude, les montées ou descentes importantes, la glace sur la route, les routes non pavées, les autoroutes et autres obstacles possibles. Vous pouvez également sélectionner ou créer des [schémas de couleurs personnalisés](../../personal/color-palette-schemes.md#tracks-routes) à appliquer à la ligne d'itinéraire.
 
 
-:::note
- <ProFeature/> Vous ne pouvez utiliser certains paramètres qu'avec l'abonnement <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro</a>.
-:::
-
-
 ### Couleur {#color}
 
 Le paramètre **Couleur** modifie les tons de couleur des lignes d'itinéraire. Leur couleur globale change en fonction du type sélectionné dans la collection OsmAnd, et selon la **Légende de la carte**. Alternativement, leur couleur devient celle que vous définissez manuellement avec la transparence.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Utilisé avec les couleurs par défaut. Pour une description complète des couleurs, allez à [Styles de carte par défaut](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Utilisé avec les couleurs par défaut. Pour une description complète des couleurs, allez à [Styles de carte par défaut](../../map/map-styles.md#default-map-styles).  
     ![style de carte](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Personnalisé***. Permet de sélectionner une ligne dans n'importe quelle couleur et transparence préférées. Vous pouvez sélectionner des paramètres différents pour la carte de jour et séparément pour la carte de nuit.  
@@ -205,32 +204,32 @@ Le paramètre **Couleur** modifie les tons de couleur des lignes d'itinéraire. 
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
 
 - ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. La ligne d'itinéraire est colorée en différentes couleurs en fonction du profil d'élévation de l'itinéraire. Une description détaillée se trouve dans l'article du *plugin Topographie*, section [Pente](../../plugins/topography.md#hillshade-slope-and-altitude-layers).  
-    ![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope4.png)
+    ![Pente](@site/static/img/navigation/route/Slope.png)   ![Pente](@site/static/img/navigation/route/Slope4.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Colore une ligne d'itinéraire ou de trace en fonction de la *classification de la route*. Une description détaillée se trouve dans la section *Cartes vectorielles - [Style de route](../../map/vector-maps.md#road-style)*.  
-    ![Altitude](@site/static/img/navigation/route/Roud_type.png)
+    ![Type de route](@site/static/img/navigation/route/Roud_type.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Fournit des informations sur la surface physique de la route ou du sentier. Une description détaillée se trouve dans l'article *Style de carte OsmAnd - [Surface](../../map-legend/osmand.md#surface-smoothness)* dans la section *Légende de la carte*.  
-    ![Altitude](@site/static/img/navigation/route/Surface.png)
+    ![Surface](@site/static/img/navigation/route/Surface.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Classification de la maniabilité de la route ou du sentier pour les véhicules à roues, en particulier en ce qui concerne la régularité et la douceur de la surface. Une description détaillée se trouve dans l'article *Style de carte OsmAnd - [Douceur](../../map-legend/osmand.md#surface-smoothness)* dans la section *Légende de la carte*.  
-    ![Altitude](@site/static/img/navigation/route/Smoothness.png)
+    ![Douceur](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colore une ligne d'itinéraire ou de trace en fonction de la *classification des routes d'hiver*. Une description détaillée se trouve dans l'article *Cartes vectorielles*, section [Routes d'hiver et de glace](../../map/vector-maps.md#winter-and-ski).  
-    ![Altitude](@site/static/img/navigation/route/Winter.png)
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colore une ligne d'itinéraire ou de trace en fonction de la *classification des routes d'hiver*. Une description détaillée se trouve dans l'article *Styles de carte*, section [Routes d'hiver et de glace](../../map/map-styles.md#winter-and-ski).  
+    ![Hiver](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Coloration d'une ligne d'itinéraire ou de sentier par composition du revêtement. Typiquement, utilisé lorsque le réseau routier est en grande partie non pavé. Une description détaillée se trouve dans l'article *Style de carte OsmAnd - [Fermeté de la surface](../../map-legend/osmand.md#surface-smoothness)* dans la section *Légende de la carte*.  
-    ![Altitude](@site/static/img/navigation/route/firmness.png)
+    ![Fermeté](@site/static/img/navigation/route/firmness.png)
 
 - ***<ProFeature/> &nbsp;Difficulté des sentiers équestres***. Affiche les chemins en fonction de la difficulté des sentiers équestres.  
-    ![Altitude](@site/static/img/navigation/route/firmness.png)
+    ![Fermeté](@site/static/img/navigation/route/firmness.png)
 
 
 ### Largeur {#width}
 
 Vous pouvez ajuster la largeur de la ligne d'itinéraire pour l'aligner sur la route ou le chemin affiché sur la carte. Pour une identification visuelle plus claire, vous pouvez augmenter ou diminuer manuellement la largeur de la ligne selon vos besoins. Pour plus de détails, consultez l'article *Traces et Itinéraires — [Apparence](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Utilisé avec la largeur par défaut définie par OsmAnd. Une description complète se trouve dans l'article *Cartes vectorielles*, section [Style de carte](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Utilisé avec la largeur par défaut définie par OsmAnd. Une description complète se trouve dans l'article *[Styles de carte](../../map/map-styles.md)*.  
     ![style de carte](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Largeurs Fine, Moyenne et Épaisse***. Vous pouvez sélectionner la largeur de la ligne pour qu'elle corresponde à la largeur de la route, ou pour souligner plus fortement la ligne d'itinéraire sur la carte.  
@@ -245,10 +244,10 @@ Vous pouvez ajuster la largeur de la ligne d'itinéraire pour l'aligner sur la r
 Le paramètre Flèches de virage vous permet de choisir si les flèches de virage sont affichées sur la ligne d'itinéraire.  
 
 - ***Sur la carte***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![flèches_virage_ios_carte](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Flèches de virage sur la carte Android](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Flèches de virage iOS sur la carte](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***Dans l'application***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![flèches_virage_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Flèches de virage Android](@site/static/img/navigation/route/turn_arr.png)   ![Flèches de virage iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Articles connexes {#related-articles}

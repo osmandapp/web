@@ -1,5 +1,5 @@
 ---
-source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
+source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
 sidebar_position: 2
 title:  Interagir avec la carte
 ---
@@ -20,7 +20,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Cet article explique comment personnaliser et interagir avec la carte à l'aide de divers boutons et gestes. Il couvre comment faire pivoter, zoomer, ajuster l'angle de vue, et changer l'angle de vue de la carte, la faire pivoter manuellement ou automatiquement à l'aide de la boussole, ou selon le relèvement.
 
 
-## Gestes {#gestures}
+## Déplacement de la carte {#map-movement}
+
+### Gestes {#gestures}
 
 Les gestes sont essentiels pour naviguer sur la carte facilement et intuitivement.
 
@@ -35,8 +37,7 @@ Les gestes sont essentiels pour naviguer sur la carte facilement et intuitivemen
 
 Les animations de glissement peuvent être désactivées dans les paramètres avec une [option spéciale](#remove-animations).
 
-
-## Ma position et Zoom {#my-location-and-zoom}
+### Ma position et Zoom {#my-position-and-zoom}
 
 ![Menu de configuration de l'écran](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -47,7 +48,7 @@ Le bouton *Ma position* est une icône circulaire qui indique si le centre de la
   - *Icône entièrement bleue*. La position est trouvée mais non synchronisée avec la carte.
   - *Icône blanche*. La position est trouvée et synchronisée avec la carte.
   - *Icône grise*. La position n'a pas encore été trouvée.
-  - *Icône de flèche*. Le mode 3D est activé.
+  - *Icône de flèche*.  Le mode 3D est activé.
 
 - Un **appui long** (*Android*) sur le bouton *Ma position* ouvre le [menu contextuel de la carte](../map/map-context-menu.md), vous permettant de partager votre position.
 
@@ -62,102 +63,12 @@ Les *boutons de zoom* sont toujours visibles à côté de *Ma position* et vous 
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### Apparence de Ma position {#my-location-appearance}
-
 Vous pouvez personnaliser les icônes du bouton **Ma position** en utilisant les paramètres d'apparence du profil. Pour en savoir plus sur la manière de le faire, cliquez [ici](../personal/profiles.md#profile-appearance).
 
 
-## Loupe de carte {#map-magnifier}
+## Interaction avec la carte {#map-interaction}
 
-La *Loupe de carte* est un outil qui améliore la visibilité de la carte, similaire à une loupe utilisée avec des cartes papier. Elle vous permet de zoomer sur la carte pour voir le texte et les détails plus clairement ou d'ajuster le niveau de détail tout en conservant la même échelle. Pour plus d'informations, consultez l'article [Cartes vectorielles](../map/vector-maps.md#map-magnifier).
-
-
-## Modes d'orientation de la carte {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Widget Boussole](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Widget Boussole](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-Les *modes d'orientation de la carte* vous permettent de choisir comment la carte est affichée sur l'écran de l'appareil. OsmAnd propose des modes tels que **Rotation manuelle**, **Direction du mouvement**, **Direction de la boussole** et **Le nord est en haut**. L'activation de chaque mode modifie la manière dont la carte est orientée selon l'option sélectionnée. Pour plus de détails, consultez l'article [Boutons de la carte](../widgets/map-buttons.md#compass).
-
-
-## Boussole {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Widget Boussole](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Widget Boussole](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-Le bouton de la boussole indique comment la [carte est orientée](#map-orientation-modes). La *flèche rouge* sur les icônes, ou la direction de la flèche en mode *Direction du mouvement*, indique le Nord. [L'icône sur le bouton de la boussole](../widgets/map-buttons.md#compass) indique le mode d'orientation actuel de la carte. Le widget du bouton de la boussole offre trois [options d'interaction](../widgets/map-buttons.md#compass-tapping-behavior) : un *appui simple* fait pivoter la carte vers le Nord, un *double appui* alterne entre tous les modes d'orientation de la carte, et un *appui long* ouvre la liste des modes.
-
-
-## Rotation de la carte par relèvement {#rotate-map-by-bearing}
-
-En mode **rotation de la carte par relèvement** ([Direction du mouvement](../widgets/map-buttons.md#compass)), la carte s'aligne automatiquement sur votre direction de mouvement, de sorte que la zone devant vous est affichée en haut de l'écran. Ce mode améliore la navigation en déplaçant légèrement le centre de la carte vers le bas, montrant ainsi une plus grande partie de l'itinéraire à venir. Si vous êtes à l'arrêt, la carte reste fixe.  
-
-Vous pouvez activer cette fonctionnalité via *Menu → Paramètres → Profils → Paramètres généraux → Apparence → Orientation de la carte* ou en appuyant deux fois sur le [bouton Boussole](../widgets/map-buttons.md#compass-tapping-behavior). Pour plus de détails sur le relèvement, voir [ici](../widgets/nav-widgets.md#bearing-widget).
-
-
-## Inclinaison de la carte et horizon {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Inclinaison Android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Inclinaison Android 2](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Inclinaison iOS 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Inclinaison iOS 2](@site/static/img/map/tilt_horizon_ios_2.png)  
-</TabItem>
-
-</Tabs>  
-
-Avec le nouveau [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine), vous pouvez changer l'[inclinaison de la caméra](../plugins/development.md#camera-tilt) de 90 (pas d'inclinaison) à 10 degrés. Approximativement à une inclinaison de carte inférieure à 20-22 degrés (ce paramètre dépend du niveau de zoom), la ligne d'horizon imaginaire devient visible. Contrairement à la réalité, l'horizon du programme est toujours droit.  
-
-Sous l'horizon, vous pouvez voir ce qu'on appelle de la *brume* ou du *brouillard*. Cette zone de la carte est remplie de couleur grise, seuls quelques détails de la carte peuvent être observés.  
-L'utilisation du brouillard est nécessaire car l'affichage d'objets éloignés sur la carte nécessite des ressources de calcul importantes et n'est pas toujours justifié en raison des [distorsions](../plugins/development.md#comparison-with-a-satellite-imagery) de la carte à de faibles angles de vue. Ainsi, la distance visible sur la carte OsmAnd est actuellement limitée à 35 tuiles.  
-
-:::info
-L'inclinaison de la carte peut être modifiée par un appui long sur l'écran avec deux doigts et en les déplaçant vers le haut/bas. Vous pouvez également changer l'inclinaison en appuyant sur l'icône [Ma position](#my-location-and-zoom) dans le coin inférieur droit de l'écran (seules les positions à 45 et 90 degrés sont disponibles).  
-Vous ne pouvez pas changer l'inclinaison de la caméra lorsque l'ancien [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) (version 1) est activé.
-:::
-
-
-## Verrouillage de l'écran tactile {#touch-screen-lock}
+### Verrouillage de l'écran tactile {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +98,12 @@ Appuyez sur le bouton à l'écran, ou, si le verrouillage est activé via un bou
 
 Des messages clairs à l'écran vous guideront lors du verrouillage ou du déverrouillage de l'écran.
 
+### Animer ma position {#animate-own-position}
 
-## Paramètres {#settings}
+**Android** : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS** : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### Paramètres supplémentaires de la boussole {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Lisse la rotation de la carte avec une animation de rotation plus lente, bien que cela introduise un léger retard, pas plus d'une seconde.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Lisse la rotation de la carte avec une animation de rotation plus lente, bien que cela introduise un léger retard, pas plus d'une seconde.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+Crée un effet de panoramique fluide de la carte par rapport à l'icône *[Ma Position](../personal/profiles/#profile-appearance)* lorsqu'elle est en mouvement. L'effet introduit un léger retard par rapport à la position réelle d'environ 1 seconde. Il a été signalé que l'activation de cette option peut créer des problèmes de latence prononcés dans certaines circonstances, désactivez-la si de tels problèmes surviennent.
 
 ### Supprimer les animations {#remove-animations}
 
@@ -206,12 +113,114 @@ Vous pouvez désactiver toutes les animations de la carte lors des interactions 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Animer ma position {#animate-own-position}
+## Orientation de la carte {#map-orientation}
 
-**Android** : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS** : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
+### Modes d'orientation de la carte {#map-orientation-modes}
 
-Crée un effet de panoramique fluide de la carte par rapport à l'icône *[Ma Position](../personal/profiles/#profile-appearance)* lorsqu'elle est en mouvement. L'effet introduit un léger retard par rapport à la position réelle d'environ 1 seconde. Il a été signalé que l'activation de cette option peut créer des problèmes de latence prononcés dans certaines circonstances, désactivez-la si de tels problèmes surviennent.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Widget Boussole](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Widget Boussole](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+Les *modes d'orientation de la carte* vous permettent de choisir comment la carte est affichée sur l'écran de l'appareil. OsmAnd propose des modes tels que **Rotation manuelle**, **Direction du mouvement**, **Direction de la boussole** et **Le nord est en haut**. L'activation de chaque mode modifie la manière dont la carte est orientée selon l'option sélectionnée. Pour plus de détails, consultez l'article [Boutons de la carte](../widgets/map-buttons.md#compass).
+
+### Rotation par boussole {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Widget Boussole](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Widget Boussole](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+Le bouton de la boussole indique comment la [carte est orientée](#map-orientation-modes). La *flèche rouge* sur les icônes, ou la direction de la flèche en mode *Direction du mouvement*, indique le Nord. [L'icône sur le bouton de la boussole](../widgets/map-buttons.md#compass) indique le mode d'orientation actuel de la carte. Le widget du bouton de la boussole offre trois [options d'interaction](../widgets/map-buttons.md#compass-tapping-behavior) : un *appui simple* fait pivoter la carte vers le Nord, un *double appui* alterne entre tous les modes d'orientation de la carte, et un *appui long* ouvre la liste des modes.
+
+### Rotation de la carte par relèvement {#rotate-map-by-bearing}
+
+En mode **rotation de la carte par relèvement** ([Direction du mouvement](../widgets/map-buttons.md#compass)), la carte s'aligne automatiquement sur votre direction de mouvement, de sorte que la zone devant vous est affichée en haut de l'écran. Ce mode améliore la navigation en déplaçant légèrement le centre de la carte vers le bas, montrant ainsi une plus grande partie de l'itinéraire à venir. Si vous êtes à l'arrêt, la carte reste fixe.  
+
+Vous pouvez activer cette fonctionnalité via *Menu → Paramètres → Profils → Paramètres généraux → Apparence → Orientation de la carte* ou en appuyant deux fois sur le [bouton Boussole](../widgets/map-buttons.md#compass-tapping-behavior). Pour plus de détails sur le relèvement, voir [ici](../widgets/nav-widgets.md#bearing-widget).
+
+
+## Perspective de la carte {#map-perspective}
+
+### Inclinaison de la carte et horizon {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Inclinaison Android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Inclinaison Android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Inclinaison iOS 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Inclinaison iOS 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+Avec le nouveau [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine), vous pouvez changer l'[inclinaison de la caméra](../plugins/development.md#camera-tilt) de 90 (pas d'inclinaison) à 10 degrés. Approximativement à une inclinaison de carte inférieure à 20-22 degrés (ce paramètre dépend du niveau de zoom), la ligne d'horizon imaginaire devient visible. Contrairement à la réalité, l'horizon du programme est toujours droit.  
+
+Sous l'horizon, vous pouvez voir ce qu'on appelle de la *brume* ou du *brouillard*. Cette zone de la carte est remplie de couleur grise, seuls quelques détails de la carte peuvent être observés.  
+L'utilisation du brouillard est nécessaire car l'affichage d'objets éloignés sur la carte nécessite des ressources de calcul importantes et n'est pas toujours justifié en raison des [distorsions](../plugins/development.md#comparison-with-a-satellite-imagery) de la carte à de faibles angles de vue. Ainsi, la distance visible sur la carte OsmAnd est actuellement limitée à 35 tuiles.  
+
+:::info
+L'inclinaison de la carte peut être modifiée par un appui long sur l'écran avec deux doigts et en les déplaçant vers le haut/bas. Vous pouvez également changer l'inclinaison en appuyant sur l'icône [Ma position](#my-position-and-zoom) dans le coin inférieur droit de l'écran (seules les positions à 45 et 90 degrés sont disponibles).  
+Vous ne pouvez pas changer l'inclinaison de la caméra lorsque l'ancien [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) (version 1) est activé.
+:::
+
+### Loupe de carte {#map-magnifier}
+
+La *Loupe de carte* est un outil qui améliore la visibilité de la carte, similaire à une loupe utilisée avec des cartes papier. Elle vous permet de zoomer sur la carte pour voir le texte et les détails plus clairement ou d'ajuster le niveau de détail tout en conservant la même échelle. Pour plus d'informations, consultez l'article [Cartes vectorielles](../map/vector-maps.md#map-magnifier).
+
+### Vue globe {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![Vue Globe](@site/static/img/map/globe_view_1.png) ![Vue Globe](@site/static/img/map/globe_view_2.png)
+
+La **Vue globe** vous permet d'afficher la carte sous forme de Terre sphérique au lieu d'une projection plate. Ce mode change la géométrie de la surface de la carte et adapte l'interaction avec la carte à une navigation sphérique.  
+Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vue globale*
+
+La Vue globe est actuellement disponible uniquement lorsque :
+- Le [plugin Développement](../plugins/development.md) est activé.  
+Allez à : *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- Le [moteur de rendu de carte](../personal/global-settings.md#map-rendering-engine) est défini sur la Version 2 (OpenGL).  
+Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+Lorsque la Vue globe est activée, la carte tourne comme un globe. Les gestes de glissement font tourner la Terre, et le zoom change la distance de la caméra plutôt que d'agrandir une surface plate. Les éléments de la carte tels que les traces, les marqueurs, les symboles et les objets 3D sont rendus directement sur la surface sphérique et suivent sa courbure. Les objets disparaissent progressivement derrière l'horizon au fur et à mesure que le globe tourne.
+
+L'interaction près de l'horizon peut être limitée pour éviter des déplacements à grande distance non intentionnels. Le globe ne peut pas être retourné au-dessus des pôles. À des niveaux de zoom très bas, l'apparence visuelle des routes et des étiquettes reste cohérente pendant la rotation.
 
 
 ## Périphériques d'entrée externes {#external-input-devices}
@@ -259,7 +268,7 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 
 | Touche | Appareil | Action |
 |:---------|:---------------|:---------------|
-|**C**| *Clavier*   | Déplacer - [Vers Ma position](#my-location-and-zoom) |
+|**C**| *Clavier*   | Déplacer - [Vers Ma position](#my-position-and-zoom) |
 |**D**| *Clavier*   | Changer - [Orientation de la carte](#map-orientation-modes) |
 |**N**| *Clavier*   | Afficher / Masquer - Vue de navigation |
 |**S**| *Clavier*   | Afficher / Masquer - [Vue de recherche](../search/index.md) |
@@ -269,18 +278,17 @@ Pour accéder aux paramètres d'un périphérique d'entrée externe, vous devez 
 |**&#8595;**| *Clavier*   | Déplacer - Carte vers le bas  |
 |**&#8592;**| *Clavier*   | Déplacer - Carte vers la gauche  |
 |**&#8594;**| *Clavier*   | Déplacer - Carte vers la droite  |
-|**&#43;** **=**| *Clavier*  | Carte - [Zoom avant](#my-location-and-zoom) |
-|**&#8722;**| *Clavier*  | Carte - [Zoom arrière](#my-location-and-zoom) |
+|**&#43;** **=**| *Clavier*  | Carte - [Zoom avant](#my-position-and-zoom) |
+|**&#8722;**| *Clavier*  | Carte - [Zoom arrière](#my-position-and-zoom) |
 |**Appui sur Retour**| *Clavier*   | Naviguer – Écran précédent  |
-|**&#8595;**| *Wunderlinq*  | Carte - [Zoom arrière](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Carte - [Zoom avant](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | Carte - [Zoom arrière](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Carte - [Zoom avant](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | Ouvrir la grille de données WunderLINQ |
 | **M** | *Clavier*  | Afficher / Masquer - [Menu latéral](../start-with/main-menu.md#main-menu-side-menu) |
-| **Appui sur le joystick** <br/> (*Android hérité*) | *Clavier*  | Déplacer - [Vers Ma position](#my-location-and-zoom) |
+| **Appui sur le joystick** <br/> (*Android hérité*) | *Clavier*  | Déplacer - [Vers Ma position](#my-position-and-zoom) |
 | **Bouton Média** <br/> (*Android uniquement*)| *Clavier*  | Afficher / Masquer - [Notes AV](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*Android uniquement*)| *Parrot*  | Carte - [Zoom arrière](#my-location-and-zoom) |
-| **&#8594;** <br/> (*Android uniquement*) | *Parrot*  | Carte - [Zoom avant](#my-location-and-zoom) |
-
+| **&#8592;** <br/> (*Android uniquement*)| *Parrot*  | Carte - [Zoom arrière](#my-position-and-zoom) |
+| **&#8594;** <br/> (*Android uniquement*) | *Parrot*  | Carte - [Zoom avant](#my-position-and-zoom) |
 
 ### Type de périphérique d'entrée personnalisé {#custom-input-device-type}
 

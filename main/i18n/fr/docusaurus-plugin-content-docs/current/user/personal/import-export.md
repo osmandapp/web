@@ -1,5 +1,5 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
 title:  Importer / Exporter
 ---
@@ -34,7 +34,7 @@ Les fonctions *Importer* et *Exporter* vous permettent de sauvegarder des donné
 - **Mes lieux :**  
         [Favoris](../personal/favorites.md#export--import), &nbsp;[Traces](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notes OSM*, *Modifications OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notes A/V](../plugins/audio-video-notes.md), &nbsp;[Marqueurs de carte](../personal/markers.md), &nbsp;[Historique des marqueurs*, *Historique des recherches*, *Historique de navigation](../personal/global-settings.md#history), &nbsp;*Itinéraire*.
 - **Ressources :**  
-        [Style de rendu](../map/vector-maps.md#custom-map-style), &nbsp;[Calcul d'itinéraire](../navigation/routing/osmand-routing.md), &nbsp;[Moteurs de calcul d'itinéraire en ligne](../navigation/routing/online-routing.md), &nbsp;[Sources de carte*, *Cartes standard/hors ligne](../map/raster-maps.md), &nbsp;[Cartes Wikipedia et Voyage](../plan-route/travel-guides.md), &nbsp;[Cartes marines](../plugins/nautical-charts.md), &nbsp;[Cartes routières](../map/vector-maps.md#road-style), &nbsp;[Cartes topographiques](../plugins/topography.md), &nbsp;[Instructions vocales (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Instructions vocales (enregistrées)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Sauvegarde des favoris](../personal/favorites.md#automatic-favorites-backup).
+        [Style de rendu](../map/map-styles.md#custom-map-style), &nbsp;[Calcul d'itinéraire](../navigation/routing/osmand-routing.md), &nbsp;[Moteurs de calcul d'itinéraire en ligne](../navigation/routing/online-routing.md), &nbsp;[Sources de carte*, *Cartes standard/hors ligne](../map/raster-maps.md), &nbsp;[Cartes Wikipedia et Voyage](../plan-route/travel-guides.md), &nbsp;[Cartes marines](../plugins/nautical-charts.md), &nbsp;[Cartes routières](../map/vector-maps.md#road-style), &nbsp;[Cartes topographiques](../plugins/topography.md), &nbsp;[Instructions vocales (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Instructions vocales (enregistrées)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Sauvegarde des favoris](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Exporter {#export}

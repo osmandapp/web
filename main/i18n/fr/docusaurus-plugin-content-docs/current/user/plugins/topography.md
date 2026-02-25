@@ -1,5 +1,5 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
+source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
 sidebar_position: 14
 title: Topographie
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-:::info Fonctionnalité payante
-Le plugin Topographie est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
+:::tip Achat
+Le plugin Topographie est une [fonctionnalité payante](../purchases/index.md).  
 :::
 
 La topographie est une caractéristique importante de la cartographie qui fournit des informations pour évaluer visuellement le relief du terrain.
 Les informations topographiques comme les [Lignes de niveau](#contour-lines), le [Terrain](#terrain) (*Estompage* et *Pente*), et le [Relief 3D](#3d-relief) aident à évaluer visuellement la configuration du terrain en visualisant l'altitude, le relief, les extrêmes, l'inclinaison ou les points de même hauteur.
 
-Chaque fonctionnalité fournie par ce plugin est une couche de carte indépendante qui, lorsqu'elle est activée, peut être affichée au-dessus ou en dessous de la source de carte principale en fonction des [paramètres](../map/raster-maps.md#overlay-layer).  
+Chaque fonctionnalité fournie par ce plugin est une couche de carte indépendante qui, lorsqu'elle est activée, peut être affichée au-dessus ou en dessous de la source de carte principale en fonction des [paramètres](../map/raster-maps.md#overlay).  
 
 Le plugin Topographie donne accès aux types de cartes suivants :  
 
@@ -173,7 +173,7 @@ Lors de l'utilisation du [Moteur de rendu de la carte](../personal/global-settin
 **Paramètres d'apparence** :
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Activer ou désactiver les lignes de niveau.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Définir les [niveaux de zoom](../map/interact-with-map.md#my-location-and-zoom) auxquels les lignes de niveau sont visibles.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Définir les [niveaux de zoom](../map/interact-with-map.md#my-position-and-zoom) auxquels les lignes de niveau sont visibles.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Choisir la couleur d'affichage des lignes de niveau.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Ajuster la largeur des lignes de niveau.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Sélectionner la densité des lignes de niveau (Faible, Moyenne, Élevée). Des densités plus élevées peuvent affecter la vitesse de chargement.
@@ -247,8 +247,8 @@ Les cartes raster d'**Estompage**, de **Pente** et d'**Altitude** sont créées 
 
 ### Modifier le jeu de couleurs {#modify-color-scheme}
 
-:::info Fonctionnalité payante
-*[Modifier le jeu de couleurs](../../user/personal/color-palette-schemes.md#terrain)* est une fonctionnalité payante d'**OsmAnd Pro** pour [iOS](../purchases/ios.md#pro-features) et [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Fonctionnalité Pro
+*[Modifier le jeu de couleurs](../../user/personal/color-palette-schemes.md#terrain)* est une fonctionnalité payante d'**OsmAnd Pro** <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -287,7 +287,7 @@ La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres 
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-La fonction *Niveaux d'échelle* vous permet de définir les valeurs minimales et maximales des niveaux de zoom de la carte, allant de 4 à 19, auxquels les couches de carte Estompage ou Pente seront affichées.
+La fonction *Niveaux de zoom* vous permet de définir les valeurs minimales et maximales des niveaux de zoom de la carte, allant de 4 à 19, auxquels les couches de carte Estompage ou Pente seront affichées.
 
 ### Taille du cache {#cache-size}
 
@@ -298,7 +298,7 @@ La fonction *Niveaux d'échelle* vous permet de définir les valeurs minimales e
 
 ### Moteur de rendu (Android) {#rendering-engine-android}
 
-L'**Estompage** et la **Pente** sont affichés et ajustés dans n'importe quel [Moteur de rendu de la carte](../personal/global-settings.md#map-rendering-engine) sélectionné.
+**L'Estompage** et la **Pente** sont affichés et ajustés dans n'importe quel [Moteur de rendu de la carte](../personal/global-settings.md#map-rendering-engine) sélectionné.
 
 1. Si vous utilisez le **Moteur de rendu de la carte Version 1**, vous devez utiliser le [téléchargement](../start-with/download-maps.md) normal des cartes raster d'Estompage et de Pente.
 
@@ -346,7 +346,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 
 </Tabs>  
 
-La fonction Relief 3D produit un relief surélevé et fournit une représentation tridimensionnelle du paysage. Le Relief 3D fonctionne hors ligne et peut être utilisé avec les [cartes vectorielles OsmAnd](../map/vector-maps.md) ou n'importe quelles [cartes raster](../map/raster-maps.md#select-raster-maps) comme [Source de carte](../map/raster-maps.md#main) ou comme [Sous-couche/Sur-couche](../map/raster-maps.md#overlay-layer).
+La fonction Relief 3D produit un relief surélevé et fournit une représentation tridimensionnelle du paysage. Le Relief 3D fonctionne hors ligne et peut être utilisé avec les [cartes vectorielles OsmAnd](../map/vector-maps.md) ou n'importe quelles [cartes raster](../map/raster-maps.md#layers) comme [Source de carte](../map/raster-maps.md#main) ou comme [Sous-couche/Sur-couche](../map/raster-maps.md#overlay).
 
 ***Comment afficher le Relief 3D sur la carte.***
 

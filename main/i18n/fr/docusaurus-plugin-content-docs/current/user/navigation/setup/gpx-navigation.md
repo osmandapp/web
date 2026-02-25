@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Naviguer par trace
 ---
@@ -70,7 +70,7 @@ Avant d'utiliser l'option *Navigation par trace*, vous devez [afficher la trace 
 
 La navigation sur une trace peut être lancée à l'aide du bouton d'action rapide dans le [menu contextuel de la trace](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (ouvert en sélectionnant l'une des [traces mises en évidence](./route-navigation.md#history-of-previous-routes) sur la carte, ou en appuyant sur un fichier de trace dans la section [Mes lieux](../../personal/myplaces.md) du *Menu principal*) ou depuis le menu de navigation, qui s'ouvre en appuyant sur :
 
-- [*Bouton de navigation*](../../widgets/map-buttons.md#directions) sur l'écran de la carte.  
+- [*Bouton de navigation*](../../widgets/map-buttons.md#navigation) sur l'écran de la carte.  
 - *Section Navigation* dans le *Menu principal* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - Dans le [*Menu de navigation*](./route-navigation.md#navigation-menu), allez à *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
@@ -172,7 +172,7 @@ Un nouvel itinéraire optimisé est recalculé le long de la trace inversée en 
 
 <TabItem value="ios" label="iOS">
 
-![Attacher aux routes 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
+![Attacher aux routes 1 iOS](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
 
 </TabItem>
 

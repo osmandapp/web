@@ -1,5 +1,5 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Paramètres généraux
 ---
@@ -79,9 +79,9 @@ Cette fonctionnalité est disponible pour la version iOS de l'application OsmAnd
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![Profil CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Paramètres généraux Profil CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-Le [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) est utilisé lors de la connexion au [logiciel CarPlay](https://support.apple.com/fr-fr/HT205634) de votre véhicule et vous aide à tirer le meilleur parti de la version optimisée de l'application OsmAnd en utilisant les systèmes audio et vidéo pour afficher les données sur votre téléphone.
+Le [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) est utilisé lors de la connexion au [logiciel CarPlay](https://support.apple.com/en-gb/HT205634) de votre véhicule et vous aide à tirer le meilleur parti de la version optimisée de l'application OsmAnd en utilisant les systèmes audio et vidéo pour afficher les données sur votre téléphone.
 
 
 ### Dossier de stockage des données {#data-storage-folder}
@@ -116,7 +116,7 @@ Allez à : *Appareil iOS → Réglages → Général → Stockage de l'iPhone �
 
 ![Paramètres généraux stockage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-Les fichiers OsmAnd sont visibles dans l'application [*Fichiers*](https://apps.apple.com/fr/app/fichiers/id1232058109). Vous pouvez accéder à tous les fichiers OsmAnd : [traces](../personal/tracks/manage-tracks.md), [favoris](../personal/favorites.md), [cartes](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xml](../../technical/build-osmand/routing.md). Pour ce faire, suivez le chemin suivant :  
+Les fichiers OsmAnd sont visibles dans l'application [*Fichiers*](https://apps.apple.com/us/app/files/id1232058109). Vous pouvez accéder à tous les fichiers OsmAnd : [traces](../personal/tracks/manage-tracks.md), [favoris](../personal/favorites.md), [cartes](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xml](../../technical/build-osmand/routing.md). Pour ce faire, suivez le chemin suivant :  
 
 Allez à : *Fichiers → Sur mon iPhone → OsmAnd Maps*
 
@@ -147,10 +147,11 @@ Allez à : *Fichiers → Sur mon iPhone → OsmAnd Maps*
 | Mode 3D | Il est possible de visualiser la carte en 2D, et vous pouvez modifier l'angle de vue pour obtenir une [vue 3D](../widgets/map-buttons.md#3d-mode). | Vous pouvez visualiser la carte en 2D et en [3D](../widgets/map-buttons.md#3d-mode). |
 | Affichage de la carte | La carte entière est rendue comme un ensemble de tuiles, et les marqueurs, les lignes et le texte sont déjà à l'intérieur de ces tuiles. | D'abord, l'ensemble du paquet de tuiles est rendu, puis les symboles disponibles sont appliqués à la carte, [couche par couche](../../technical/algorithms/map-rendering-layers.md). |
 | Superposition / sous-couche de symboles transparents | Prend en charge tous les paramètres. | Ne prend pas en charge une couche raster au-dessus du texte vectoriel. |
-| [Terrain 3D](../map/raster-maps.md#3d-relief) | Non pris en charge. | Cette fonctionnalité visualise le terrain sur la carte en ajoutant des informations d'altitude à une carte 2D normale, ce qui crée un effet 3D et de profondeur. |
+| [Terrain 3D](../plugins/topography.md#3d-relief) | Non pris en charge. | Cette fonctionnalité visualise le terrain sur la carte en ajoutant des informations d'altitude à une carte 2D normale, ce qui crée un effet 3D et de profondeur. |
 | [Traces 3D](../map/tracks/appearance.md) | Non pris en charge. | Cette fonctionnalité vous permet d'afficher les traces par altitude au-dessus du niveau de la mer. |
 | [Carte en ligne](../plugins/online-map.md) | Ne prend pas en charge l'affichage des lignes de contour si la source de la carte est une carte en tuiles en ligne. | Lorsque la source de la carte est une carte en ligne, les cartes 3D sont également utilisées, et l'affichage des lignes de contour sur la carte est pris en charge. |
-| [Plugin Météo](../plugins/weather.md) | Vous ne pouvez pas utiliser ce plugin. | Pratique à utiliser avec le plugin. |  
+| [Plugin Météo](../plugins/weather.md) | Vous ne pouvez pas utiliser ce plugin. | Pratique à utiliser avec le plugin. |
+| [Vue globe](../map/interact-with-map.md#globe-view) | Non pris en charge. | Permet d'afficher la carte comme une Terre sphérique (globe) au lieu d'une projection plate. |  
 
 L'image pour la vue 3D de la carte est chargée tuile par tuile, puis tous les symboles. La vitesse de rendu de la carte dépend du nombre d'objets graphiques 2D et 3D qu'elle contient, et directement des performances de votre matériel. Par conséquent, la Version 2 (OpenGL) ne peut pas être utilisée sur des appareils peu performants.
 
@@ -274,7 +275,7 @@ L'application enregistre l'historique des données précédemment saisies (histo
 
 ![Paramètres généraux Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)
 
-Le paramètre **<Translate android="true" ids="proxy_pref_title"/>** vous permet de configurer un [proxy HTTP](https://fr.wikipedia.org/wiki/Serveur_proxy) pour toutes les requêtes réseau. Vous pouvez définir l'*Hôte du proxy* et le *Port du proxy*.  
+Le paramètre **<Translate android="true" ids="proxy_pref_title"/>** vous permet de configurer un [proxy HTTP](https://en.wikipedia.org/wiki/Proxy_server) pour toutes les requêtes réseau. Vous pouvez définir l'*Hôte du proxy* et le *Port du proxy*.  
 
 
 ## Autre {#other}

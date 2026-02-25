@@ -1,5 +1,5 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
+source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
 sidebar_position: 17
 title:  Météo
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Aperçu {#overview}
 
 :::info Fonctionnalité payante
- <ProFeature/> Le plugin Météo est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.  
+Le plugin Météo est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 Les couches de carte météo interactives de l'application OsmAnd vous permettent de suivre la température, la pression atmosphérique, la couverture nuageuse, la vitesse du vent et les précipitations dans votre ville ou tout autre lieu sur une carte mondiale interactive. Le plugin Météo fournit des prévisions météorologiques horaires pour les 7 jours à venir directement sur la carte OsmAnd. Les informations météorologiques peuvent également être téléchargées pour une utilisation hors ligne.  
@@ -60,7 +60,7 @@ Le plugin Météo n'est disponible qu'avec le moteur de rendu de carte [Version 
 
 Aller à : *Plugin activé → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Tableau de bord Météo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Tableau de bord Météo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -74,7 +74,9 @@ Aller à : *Plugin activé → <Translate ios="true" ids="shared_string_menu,sha
 
 </Tabs>
 
-Le menu latéral principal dispose d'un élément de menu **Météo** dédié qui offre un accès rapide à tous les outils météorologiques. L'écran *Prévisions météo* affiche des informations sur la *température*, la *pression atmosphérique*, la *vitesse du vent*, la *couverture nuageuse* et les *précipitations*.  
+Le menu latéral principal dispose d'un élément de menu **Météo** dédié qui offre un accès rapide à tous les outils météorologiques. L'écran *Prévisions météo* affiche des informations sur la *température*, la *pression atmosphérique*, la *vitesse du vent*, la *couverture nuageuse* et les *précipitations*. 
+
+Les valeurs des prévisions sont affichées pour le centre de la carte, marqué par un réticule (noir sur Android, rouge sur iOS). Déplacez la carte pour changer l'emplacement sélectionné — les données météorologiques se mettent à jour automatiquement pour le nouveau point.
 
 En bas de l'écran se trouve la *barre d'outils météo*. Vous pouvez utiliser les boutons de jour et le curseur de temps pour définir l'heure exacte à laquelle les prévisions météorologiques seront affichées.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title:  Boutons de la carte
 ---
@@ -18,10 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Les boutons de la carte, notamment *Zoom*, *Rechercher*, *Itinéraire*, *Boussole*, *Ma position*, *Mode 3D* et *Menu*, sont les principales commandes pour interagir avec la carte. Chaque bouton offre des fonctionnalités spécifiques pour améliorer votre expérience de navigation et d'utilisation de la carte.
+Les boutons de la carte, notamment *Zoom*, *Rechercher*, *Navigation*, *Boussole*, *Ma position*, *Mode 3D* et *Menu*, sont les principales commandes pour interagir avec la carte. Chaque bouton offre des fonctionnalités spécifiques pour améliorer votre expérience de navigation et d'utilisation de la carte.
 
 
-## Ma position et Zoom {#my-location-and-zoom}
+## Ma position et Zoom {#my-position-and-zoom}
 
 ![Menu de configuration de l'écran](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -29,14 +29,14 @@ Utilisez ces boutons pour contrôler l'affichage de la carte sur l'écran de vot
 
 - **Ma position**. Indique si le centre de la carte est synchronisé avec la géolocalisation actuelle de votre appareil.
 - **Zoom**. Permet d'ajuster le niveau de zoom de la carte pour afficher plus ou moins de détails.
-Pour plus d'informations sur l'utilisation de ces boutons, vous pouvez consulter l'article [Interagir avec la carte](../map/interact-with-map.md#my-location-and-zoom).
+Pour plus d'informations sur l'utilisation de ces boutons, vous pouvez consulter l'article [Interagir avec la carte](../map/interact-with-map.md#my-position-and-zoom).
 
 
-## Itinéraire {#directions}
+## Navigation {#navigation}
 
 ![Le bouton Itinéraire permet](@site/static/img/widgets/directions_button_allows.png)
 
-Le bouton **Itinéraire** est essentiel pour la planification d'itinéraire et la navigation :
+Le bouton **Navigation** est essentiel pour la planification d'itinéraire et la navigation :
 
 - [Construire un itinéraire](../navigation/index.md). Utilisez ce bouton pour créer un itinéraire.
 - [Démarrer la navigation](../navigation/index.md). Lancez la navigation virage par virage.
@@ -175,18 +175,41 @@ Le [widget d'action rapide](./quick-action.md) est un bouton configurable auquel
 
 ## Apparence des boutons de la carte {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Boutons par défaut | Boutons personnalisés |
 | :--- | :--- |
 | ![Apparence des boutons de la carte](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Apparence des boutons de la carte](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Les paramètres d'apparence des boutons de la carte sont disponibles via les menus suivants :
+**Allez à** (pour les Boutons personnalisés) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu à trois points → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Allez à** (pour tous les Boutons par défaut) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu à trois points → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Allez à** (pour un Bouton par défaut spécifique) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → sélectionnez un bouton → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Menu → Configurer l'écran → Boutons → Boutons par défaut*
-- *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → menu à trois points → Apparence*
+</TabItem>
 
-La personnalisation de l'apparence des boutons vous permet d'ajuster la taille, la forme, l'icône et l'opacité de l'arrière-plan pour les [Actions rapides (Boutons personnalisés)](../widgets/quick-action.md#button-appearance) et les [Boutons par défaut](../widgets/configure-screen.md#button-appearance). Cette flexibilité vous permet de personnaliser l'interface selon vos préférences et d'améliorer l'ergonomie.
+<TabItem value="ios" label="iOS">  
+
+| Boutons par défaut | Boutons personnalisés |
+| :--- | :--- |
+| ![Apparence des boutons de la carte](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Apparence des boutons de la carte](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Allez à** (pour les Boutons personnalisés) : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu à trois points → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Allez à** (pour un Bouton par défaut spécifique) : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → sélectionnez un bouton → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+La personnalisation de l'apparence des boutons vous permet d'ajuster la taille, la forme, l'icône et l'opacité de l'arrière-plan pour les [Actions rapides (Boutons personnalisés)](../widgets/quick-action.md#button-appearance) et les [Boutons par défaut](../widgets/configure-screen.md#button-appearance). Sur Android, les paramètres d'apparence peuvent être appliqués à tous les Boutons par défaut ou à un Bouton par défaut spécifique, tandis que sur iOS, ils sont disponibles uniquement pour les Boutons par défaut spécifiques.
+
+Les icônes des boutons peuvent être définies sur :
+- **Dynamique** – l'icône change en fonction de l'action ou de l'état actuel.
+- **Personnalisée** – choisissez une icône parmi vos actions ajoutées.
+- **Spécifique** – sélectionnez une icône fixe qui sera toujours affichée.
+
+L'écran Apparence inclut un aperçu, vous permettant de voir à quoi ressembleront vos modifications sur la carte avant de quitter les paramètres.
 
 
 ## Articles connexes {#related-articles}

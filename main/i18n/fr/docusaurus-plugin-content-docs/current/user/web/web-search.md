@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Recherche
 title: Recherche sur le site web
@@ -57,7 +57,7 @@ Ouvrez l'onglet Recherche pour accéder à Explorer — les résultats Explorer 
 
 ## Menu contextuel du POI {#poi-context-menu}
 
-Peu importe l'option de recherche utilisée (Barre de recherche, Catégories ou Explorer), sélectionner un POI sur la carte ou dans la liste de résultats ouvre le Menu contextuel du POI. Le menu contextuel est l'endroit principal pour consulter les informations POI et effectuer des actions courantes. Il combine les détails POI (tels que l'emplacement et les données associées) avec des actions rapides (par exemple, sauvegarder, partager ou démarrer la planification d'itinéraire et la navigation).
+Peu importe l'option de recherche utilisée (Barre de recherche, Catégories ou Explorer), sélectionner un POI sur la carte ou dans la liste de résultats ouvre le Menu contextuel du POI. Le menu contextuel est l'endroit principal pour consulter les informations POI et effectuer des actions courantes. Il combine les détails POI (tels que l'emplacement et les données associées) avec des actions rapides (par exemple, sauvegarder, partager ou démarrer la navigation).
 
 ### Détails du POI {#poi-details}
 
@@ -65,13 +65,14 @@ Le **Menu contextuel du POI** affiche les informations clés sur le lieu sélect
 - **Nom et icône** — affiche le nom du POI et son icône.
 - **Distance et direction** — affiche la distance et la direction vers le POI.
 - **Emplacement** — affiche les coordonnées du POI.
+- **Horaires d'ouverture** — affiche les horaires d'ouverture analysés à partir des [données OSM](https://wiki.openstreetmap.org/wiki/Key:opening_hours). Le statut actuel est affiché dynamiquement en fonction de l'heure actuelle (par exemple, *Ouvert maintenant*, *Fermé* ou *Ouvre à 10:00*), et l'horaire complet est affiché ci-dessous.
 - **Description** — fournit des informations supplémentaires sur le POI lorsque disponibles (par exemple, de Wikipedia).
 - **Photos en ligne** — affiche les photos Wikimedia relatives au POI lorsque disponibles. Sélectionnez Afficher tout pour ouvrir la Galerie de photos. Sélectionnez une photo pour l'ouvrir dans la galerie (mode Ouvrir photo).
 - **Données de l'objet** — informations supplémentaires sur le POI, incluant les balises OSM et d'autres détails tels que les contacts, les liens sociaux, les liens Wikipedia et Wikivoyage, les descriptions et les inscriptions (lorsque disponibles).
 - **ID OSM** — l'identifiant OpenStreetMap du POI.
 - **Coordonnées** — sélectionnez les coordonnées pour les copier.
 
-![Menu contextuel du POI](@site/static/img/web/poi_context_menu.png)
+![Menu contextuel du POI](@site/static/img/web/poi_context_menu_new.png)
 
 ### Actions du POI {#poi-actions}
 

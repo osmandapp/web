@@ -1,5 +1,5 @@
 ---
-source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
+source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-:::tip abonnez-vous  
-&nbsp;<ProFeature/> Pour accéder à toutes les fonctionnalités d'OsmAnd Cloud, abonnez-vous à **OsmAnd Pro** pour [Android](../purchases/android.md#prices) ou [iOS](../purchases/ios.md#prices).  
-:::  
+:::info Fonctionnalité Pro
+OsmAnd Cloud est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
+:::
 
-:::note multiplateforme  
+:::note cross-platform  
 OsmAnd Cloud est un service de stockage en nuage indépendant et n'est *pas lié* à une version spécifique de la plateforme Android, iOS ou web.  
 :::  
 
@@ -330,7 +330,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
-![Écran de sauvegarde des données iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
+![Écran de gestion du stockage iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
 
 </TabItem>
 

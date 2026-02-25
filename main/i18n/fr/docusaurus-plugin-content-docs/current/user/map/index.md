@@ -1,5 +1,5 @@
 ---
-source-hash: f6d36706a1e07d9988dbdc4b5e3c26c6daa9c50f6827a4937c300bd0a0b42708
+source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
 sidebar_position: 1
 ---
 
@@ -19,9 +19,13 @@ Le menu contextuel de la carte fournit des informations sur l'objet sélectionn�
 
 Le menu Configurer la carte est un élément important du *Menu principal* d'OsmAnd où vous pouvez personnaliser l'affichage de la carte en fonction de vos besoins. Vous pouvez mettre en évidence vos points favoris, les marqueurs de navigation ou les points d'intérêt spéciaux sur la carte ; afficher des itinéraires spécifiques ou des fichiers GPX tiers ; superposer des informations de terrain, des images satellite ou toute autre image bitmap disponible ; afficher des informations sur les transports en commun ; et modifier le style de la carte.
 
-## [Cartes vectorielles (Styles de carte)](./vector-maps.md) {#vector-maps-map-styles}
+## [Cartes vectorielles](./vector-maps.md) {#vector-maps}
 
 Les cartes vectorielles sont conçues pour être une source de données cartographiques par défaut pour OsmAnd, elles doivent donc être téléchargées sur l'appareil. Les cartes vectorielles prennent en charge une large gamme de styles de carte pour de nombreuses activités comme le cyclisme, la randonnée, la conduite en voiture ou en motoneige, etc. Chaque style de carte peut être réglé pour mettre en évidence ou masquer des objets spécifiques et basculer entre le mode jour et nuit. Les données vectorielles de la carte peuvent être augmentées par des données vectorielles et affichées avec le style de carte par défaut, par exemple, les informations sur les courbes de niveau. Vous pouvez créer votre propre style de carte OsmAnd pour afficher les informations requises.
+
+## [Styles de carte (Cartes vectorielles)](./map-styles.md) {#map-styles-vector-maps}
+
+Les styles de carte définissent comment les données de carte vectorielle sont rendues dans OsmAnd. Un style contrôle l'apparence visuelle des objets de la carte tels que les routes, les bâtiments, l'utilisation des sols, l'eau et les points d'intérêt, y compris les couleurs, les motifs de lignes et les étiquettes.
 
 ## [Cartes raster (En ligne / Hors ligne)](./raster-maps.md) {#raster-maps-online--offline}
 
@@ -43,10 +47,10 @@ Le menu contextuel des traces est un menu avec des actions et des données de tr
 
 Le menu contextuel des traces est un menu avec des actions et des données de trace GPX.
 
-## [Itinéraires](./routes.md) {#routes}
-
-OsmAnd possède de nombreuses fonctionnalités puissantes pour afficher divers itinéraires sur la carte.
-
 ## [Transports en commun](./public-transport.md) {#public-transport}
 
 Les transports en commun sont une couche supplémentaire qui vous permet d'afficher les itinéraires et les arrêts de transport sur la carte, de vérifier des informations détaillées à leur sujet et de naviguer.
+
+## [Itinéraires](./routes.md) {#routes}
+
+OsmAnd possède de nombreuses fonctionnalités puissantes pour afficher divers itinéraires sur la carte.

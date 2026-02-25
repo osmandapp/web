@@ -1,5 +1,5 @@
 ---
-source-hash: acec87397450d121c90aab13dab433cdd3d9e2ce9716bf61ccd71e41489aca96
+source-hash: 433c630536848b7031cc7094180ed08b5bcf9a316809b7e405f63ce39916101b
 sidebar_position: 7
 title:  Action rapide (Boutons personnalisés)
 ---
@@ -241,7 +241,7 @@ La grille s'adapte à l'interface environnante et repositionne les boutons si n�
 | Afficher / Masquer <br /> [**Transports en commun**](../map/vector-maps.md#transport) | Activer ou désactiver la couche de carte des transports en commun <br /> - *Type de transport*. Au premier appui, vous pouvez sélectionner un ou plusieurs types de transport, y compris *Arrêts de transport*, *Itinéraires de bus, trolleybus et navettes*, *Itinéraires de tram et de train*, *Itinéraires de métro*. |
 | Changer <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Créez une liste de sources de carte en tant que superposition de carte et parcourez-les. <br /> - *Note*. Pour changer les superpositions de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs superpositions de carte, soit créer plusieurs actions rapides distinctes, chacune pour une superposition de carte spécifique. |
 | Changer <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Créez une liste de sources de carte en tant que fond de carte et parcourez-les. <br /> - *Note*. Pour changer les fonds de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs fonds de carte, soit créer plusieurs actions rapides distinctes, chacune pour un fond de carte spécifique.  |
-| Changer <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Créez une liste de styles de carte pour les cartes vectorielles et parcourez-les. Vous pouvez afficher ou masquer la boîte de dialogue de sélection : <br /> - *Si la boîte de dialogue est affichée*, vous pouvez choisir n'importe quel style dans la liste. <br /> - *Si la boîte de dialogue est masquée*, l'action fonctionne comme un basculement en un appui (cycle uniquement). <br /> Lors du cycle, l'étiquette de l'action rapide avec une flèche (par exemple, > Nautique) affiche le prochain style de carte qui sera appliqué au prochain appui, et non celui actuellement actif. <br /> - *Note*. Pour changer les styles de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs styles de carte, soit créer plusieurs actions rapides distinctes, chacune pour un style de carte spécifique. |
+| Changer <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/map-styles.md#default-map-styles) | Créez une liste de styles de carte pour les cartes vectorielles et parcourez-les. Vous pouvez afficher ou masquer la boîte de dialogue de sélection : <br /> - *Si la boîte de dialogue est affichée*, vous pouvez choisir n'importe quel style dans la liste. <br /> - *Si la boîte de dialogue est masquée*, l'action fonctionne comme un basculement en un appui (cycle uniquement). <br /> Lors du cycle, l'étiquette de l'action rapide avec une flèche (par exemple, > Nautique) affiche le prochain style de carte qui sera appliqué au prochain appui, et non celui actuellement actif. <br /> - *Note*. Pour changer les styles de carte dans OsmAnd, vous pouvez soit configurer une seule action rapide qui vous permet de basculer entre plusieurs styles de carte, soit créer plusieurs actions rapides distinctes, chacune pour un style de carte spécifique. |
 | Afficher / Masquer <br/> [**Couche Mapillary**](../plugins/mapillary.md) | Permet de visualiser les couches de carte avec des images au niveau de la rue fournies par Mapillary. |
 | Afficher / Masquer <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | Vous pouvez choisir d'afficher ou de masquer toutes les notes OSM sur la carte d'un simple appui sur le bouton. |
 
@@ -268,7 +268,7 @@ La grille s'adapte à l'interface environnante et repositionne les boutons si n�
 | Déplacer <br/> [**Carte vers le haut**](../map/interact-with-map.md) | Lorsque vous appuyez, l'écran de la carte se déplace vers le haut. |
 | Déplacer <br/> [**Carte vers la gauche**](../map/interact-with-map.md) | Lorsque vous appuyez sur le bouton, l'écran de la carte se déplace vers la gauche. |
 | Déplacer <br/> [**Carte vers la droite**](../map/interact-with-map.md) | Avec un bouton d'action rapide, vous pouvez déplacer la carte vers la droite. |
-| Déplacer <br/> [**Vers Ma position**](../map/interact-with-map.md#my-location-and-zoom) | Déplace la carte vers la position *Ma position*. |
+| Déplacer <br/> [**Vers Ma position**](../map/interact-with-map.md#my-position-and-zoom) | Déplace la carte vers la position *Ma position*. |
 
 
 ### Mes lieux {#my-places}

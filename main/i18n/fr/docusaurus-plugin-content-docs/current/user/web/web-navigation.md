@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -27,6 +27,8 @@ Utilisez **Navigation sur le Web** pour créer un itinéraire sur la carte et pr
 Dans l'état vide, Navigation vous invite à ajouter des points d'itinéraire : *Cliquez sur la carte pour définir les points de Départ et de Destination*.
 
 Les points d'itinéraire peuvent être fournis depuis le panneau Itinéraire. Lorsque vous sélectionnez **Définir le point de départ** ou **Définir la destination**, le champ affiche des suggestions telles que *Emplacement actuel* et les points précédemment utilisés de l'historique. Vous pouvez supprimer les suggestions enregistrées en utilisant *Effacer l'historique*.
+
+Vous pouvez également saisir directement les coordonnées dans les champs des points d'itinéraire en utilisant le format latitude, longitude (par exemple, 48.23737, 24.40830). D'autres formats de coordonnées ou liens partagés ne sont pas toujours reconnus. Si un emplacement n'est pas analysé correctement, essayez de le convertir en lat,lon ou trouvez l'endroit en utilisant la recherche.
 
 Navigation suit un flux simple : le premier point devient le Départ, et le point suivant devient la Destination. Dès que les deux points sont définis, l'itinéraire est calculé et affiché sur la carte.
 
@@ -116,13 +118,15 @@ Quelle est la différence :
 - Les données complètes de la piste peuvent inclure des informations d'itinéraire/navigation en plus de la géométrie de la piste (utile si vous souhaitez conserver les instructions de navigation ou rééditer l'itinéraire dans OsmAnd).
 - La piste simplifiée exporte un GPX plus propre destiné à d'autres applications en supprimant les données d'itinéraire/navigation et en ne laissant que la forme de la piste. Les points de passage sont conservés lors de l'exportation d'une piste simplifiée.
 
-Vous pouvez enregistrer l'itinéraire sous forme de piste en utilisant *Enregistrer dans le Cloud / Téléverser vers OsmAnd Cloud*. Cela ouvre une boîte de dialogue où vous pouvez confirmer l'enregistrement dans les pistes cloud, modifier le Nom, choisir optionnellement un Dossier, puis Enregistrer ou Annuler.
+Vous pouvez enregistrer l'itinéraire sous forme de piste en utilisant *Enregistrer dans le Cloud / Téléverser vers OsmAnd Cloud*. Cela ouvre une boîte de dialogue où vous pouvez confirmer l'enregistrement dans les pistes cloud, modifier le Nom, choisir optionnellement un Dossier, puis Enregistrer ou Annuler. Si vous n'êtes pas connecté, *Enregistrer dans le Cloud / Téléverser vers OsmAnd Cloud* ouvre la page Tarification.
 
 ![Navigation Web](@site/static/img/web/download_options.png)
 
 ### Partager un itinéraire {#share-a-route}
 
 Pour partager l'itinéraire, copiez l'URL. Exemple : [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+Lorsque vous ouvrez un lien partagé, l'itinéraire est restauré sur la carte. Si nécessaire, vous pouvez modifier manuellement le [profil d'itinéraire](#routing-profile) dans le panneau Itinéraire.
 
 
 ## Articles connexes {#related-articles}

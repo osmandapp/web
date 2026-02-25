@@ -1,5 +1,5 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title:  Suivi des navires AIS
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Le plugin **Suivi des navires AIS** affiche les positions du [Système d'Identification Automatique (AIS)](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27identification_automatique) et des informations détaillées sur les navires à proximité. Les données AIS sont reçues via une connexion réseau depuis un récepteur AIS externe.
+Le plugin **Suivi des navires AIS** affiche les positions du [Système d'Identification Automatique (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) et des informations détaillées sur les navires à proximité. Les données AIS sont reçues via une connexion réseau depuis un récepteur AIS externe.
 
 :::caution AVERTISSEMENT
 **Ce plugin est un projet amateur et n'est pas conçu pour être fiable ou précis. NE PAS se fier à ce logiciel pour la navigation ou la sécurité des personnes.**
@@ -31,7 +31,7 @@ Le plugin **Suivi des navires AIS** affiche les positions du [Système d'Identif
 La capacité d'utiliser les cartes en ligne est automatiquement activée dans la version iOS d'OsmAnd. Pour afficher les cartes en ligne sur Android, vous devez effectuer les réglages suivants :
 
 1. [Activer](../plugins/index.md#enable--disable) le plugin **Suivi des navires AIS** dans le *Menu principal → Plugins → Suivi des navires AIS*.
-2. Configurer les [paramètres AIS](../map/raster-maps.md#select-raster-maps)
+2. Configurer les [paramètres AIS](../map/raster-maps.md#layers)
 3. Configurer une **connexion au serveur AIS** ou connecter un **récepteur AIS externe**.
 4. Vérifier que les navires sont affichés sur la carte OsmAnd.
 
@@ -111,13 +111,13 @@ Les navires AIS transmettent trois types de données :
 
 ### Symboles et légendes AIS {#ais-symbols-and-legends}
 
-[Directives pour la présentation des symboles AIS](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Symboles             | Description   |
 |---------------------|---------------|
 | | |
 | **Symboles des types de navires** |    |
-| *Triangle vert*    | Cargo    |
+| *Triangle vert*    | Navire de cargo    |
 | *Triangle bleu*     | Navire à passagers |
 | *Triangle noir*    | Bateau de pêche |
 | *Triangle jaune*   | Remorqueur       |
@@ -178,7 +178,7 @@ Le plugin *Suivi des navires AIS* offre divers paramètres pour personnaliser la
 | | | |
 | **Alertes du Point de Rapprochement le plus Proche (CPA)** | | |
 | Temps d'avertissement CPA | Le navire est marqué en rouge si le temps avant le CPA est inférieur à cette limite | `1 - 60 min / Désactivé` |
-| Distance d'avertissement CPA | Le navire est marqué en rouge si la distance au CPA est inférieure à cette limite | `0.02 - 2 milles marins` |
+| Distance d'avertissement CPA | Le navire est marqué en rouge si la distance au CPA est inférieure à cette limite | `0,02 - 2 milles marins` |
 
 
 ### Mode de simulation AIS {#ais-simulation-mode}

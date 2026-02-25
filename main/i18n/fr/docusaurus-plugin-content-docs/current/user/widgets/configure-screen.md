@@ -1,5 +1,5 @@
 ---
-source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
+source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
 sidebar_position: 1
 title:  Configurer l'écran
 ---
@@ -450,6 +450,53 @@ Vous pouvez réorganiser ou supprimer des widgets de l'écran de l'application e
 - Confirmez la suppression lorsque vous y êtes invité.
 
 
+## Mise en page de l'écran de la carte {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Mise en page de l'écran de la carte](@site/static/img/widgets/map_screen_layout_1.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/map_screen_layout_2.png)
+
+Le paramètre **Mise en page de l'écran de la carte** vous permet de contrôler la disposition des panneaux de widgets sur l'écran de la carte. Il aide à éviter le chevauchement des widgets et des boutons et améliore l'utilisation de l'espace d'écran, en particulier lors du passage entre les orientations portrait et paysage.
+
+Vous pouvez ouvrir les paramètres de mise en page de l'écran de la carte depuis le menu Configurer l'écran, directement depuis les actions de l'écran ou via le menu à trois points.
+
+### Mises en page unique et séparée {#single-and-separate-layouts}
+
+![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_single.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_separate.png)
+
+OsmAnd prend en charge deux modes de mise en page pour l'écran de la carte :
+- **Mise en page unique** – utilise la même disposition de widgets pour toutes les orientations d'écran. Cette option est sélectionnée par défaut.
+- **Mises en page séparées** – vous permet de configurer différentes dispositions de widgets pour les orientations Portrait et Paysage.
+
+Lorsque Mises en page séparées est activé, les modifications apportées dans une orientation n'affectent pas l'autre. Cela est utile si vous souhaitez optimiser l'écran de la carte différemment pour les utilisations portrait et paysage.
+
+### Onglets Portrait et Paysage {#portrait-and-landscape-tabs}
+
+![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_tabs.png)
+
+Lorsque Mises en page séparées est activé, deux onglets deviennent disponibles dans l'écran Configurer l'écran : **Portrait** et **Paysage**. Chaque onglet représente une mise en page indépendante pour l'orientation d'écran correspondante. Vous pouvez basculer entre les onglets en les appuyant.
+
+Vous pouvez copier la mise en page entre les orientations. Pour accéder à ces actions, appuyez sur le menu à trois points pour le panneau de widgets :
+- **Copier depuis Portrait** – copie la liste de widgets de la mise en page Portrait vers la mise en page Paysage.
+- **Copier depuis Paysage** – copie la liste de widgets de la mise en page Paysage vers la mise en page Portrait.
+
+Seule la liste de widgets est copiée, et l'opération s'applique au sein du même profil.
+
+![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_portrait.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Mise en page des panneaux {#panels-layout}
+
+![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_wide.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_compact.png)
+
+Le paramètre **Mise en page des panneaux** contrôle la façon dont les panneaux de widgets supérieur et inférieur sont affichés. Cette option est disponible uniquement lorsque Mises en page séparées est activé.
+
+Vous pouvez choisir entre deux modes :
+- **Large** – les panneaux supérieur et inférieur s'étendent sur toute la largeur de l'écran.
+- **Compact** – les panneaux supérieur et inférieur s'adaptent entre les panneaux latéraux et les boutons de la carte.
+
+La mise en page des panneaux peut être configurée indépendamment pour les orientations Portrait et Paysage, permettant une meilleure adaptation à différentes tailles et orientations d'écran.
+
+
 ## Boutons {#buttons}
 
 ### Boutons personnalisés {#custom-buttons}
@@ -484,7 +531,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Page de widget](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Page de widget](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -498,7 +545,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 </Tabs>
 
-1. Les **Boutons par défaut** vous permettent de personnaliser les boutons de carte prédéfinis qui sont visibles sur l'écran de la carte. Vous pouvez choisir de masquer ou d'afficher les boutons suivants :
+Les **Boutons par défaut** vous permettent de personnaliser les boutons de carte prédéfinis qui sont visibles sur l'écran de la carte. Chaque bouton dans la liste a un interrupteur On/Off à côté. Vous pouvez choisir de masquer ou d'afficher les boutons suivants :
 
     - [Mode 3D](../widgets/map-buttons.md#3d-mode). Pour iOS, le bouton est toujours disponible. Pour Android, il apparaît dans la liste et est disponible pour le réglage si le moteur de rendu de carte [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) est sélectionné.
 
@@ -509,27 +556,45 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
     - [Menu](../widgets/map-buttons.md#main-menu). Ouvre le menu principal de l'application pour accéder à toutes les fonctionnalités.
 
-    - [Ma position](../widgets/map-buttons.md#my-location-and-zoom). Centre la carte sur votre position actuelle.
+    - [Ma position](../widgets/map-buttons.md#my-position-and-zoom). Centre la carte sur votre position actuelle.
 
-    - [Navigation](../widgets/map-buttons.md#directions). Essentiel pour la planification d'itinéraire et le démarrage de la navigation.
+    - [Navigation](../widgets/map-buttons.md#navigation). Essentiel pour la planification d'itinéraire et le démarrage de la navigation.
 
     - [Rechercher](../widgets/map-buttons.md#search). Ouvre l'outil de recherche pour trouver des lieux.
 
-    - [Zoom avant / arrière](../widgets/map-buttons.md#my-location-and-zoom). Ajuste le niveau de zoom de la carte pour afficher plus ou moins de détails.
+    - [Zoom avant / arrière](../widgets/map-buttons.md#my-position-and-zoom). Ajuste le niveau de zoom de la carte pour afficher plus ou moins de détails.
 
-2. Le **menu à trois points** sur l'écran des boutons par défaut contient des actions telles que :
+Le **menu à trois points** sur l'écran des boutons par défaut contient des actions telles que :
 
     - *Réinitialiser par défaut*. Vous permet de ramener les paramètres des boutons à leur apparence d'origine.
-    - *Copier depuis un autre profil*. Sélectionnez dans la liste proposée le profil à partir duquel vous souhaitez copier les paramètres des boutons.
-
-3. **L'apparence du bouton par défaut** (*Android uniquement*) offre une variété d'options de personnalisation pour ce type de boutons. Pour modifier l'apparence d'un bouton, appuyez sur le bouton requis dans la liste et sélectionnez l'option [Apparence](#button-appearance).
+    - *Copier depuis un autre profil*. Sélectionnez un profil dans la liste pour copier la visibilité et l'apparence des boutons.
+    - *Apparence (Android uniquement)*. Offre une variété d'options de personnalisation pour ce type de boutons. Pour modifier l'apparence d'un bouton, appuyez sur le bouton requis dans la liste et sélectionnez l'option [Apparence](#button-appearance).
 
 
 ### Apparence du bouton {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Apparence du bouton](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+**Accéder à** (pour les Boutons personnalisés) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu à trois points → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Accéder à** (pour tous les Boutons par défaut) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu à trois points → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Accéder à** (pour un Bouton par défaut spécifique) : *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → sélectionner un bouton → *<Translate android="true" ids="shared_string_appearance"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Apparence du bouton](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Accéder à** (pour les Boutons personnalisés) : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu à trois points → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Accéder à** (pour un Bouton par défaut spécifique) : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → sélectionner un bouton → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
 
 La fonction *Apparence du bouton* vous permet de personnaliser entièrement l'aspect des boutons sur votre interface de carte. Ces options de personnalisation sont disponibles pour les *Actions rapides (Boutons personnalisés)* et les *Boutons par défaut*, offrant un contrôle complet sur l'apparence de l'interface de la carte et permettant des ajustements précis du design des boutons.
 
@@ -537,8 +602,8 @@ La fonction *Apparence du bouton* vous permet de personnaliser entièrement l'as
 
 - **Icône**. Sélectionnez parmi une liste d'icônes qui représentent les actions que vous avez déjà ajoutées, facilitant l'identification des fonctions en un coup d'œil.
 - **Rayon des coins**. Ajustez ce paramètre pour changer la forme du bouton, allant de coins carrés et nets à des bords lisses et arrondis.
-- **Taille**. Choisissez la taille de bouton qui convient le mieux à votre écran et qui se démarque selon les besoins. Pour les *Boutons par défaut*, les tailles sont prédéfinies et ne peuvent pas être ajustées.
-- **Opacité de l'arrière-plan**. Contrôlez la visibilité de l'arrière-plan du bouton. Vous pouvez le rendre entièrement visible ou partiellement transparent, ou n'afficher que l'ombre du cadre et l'icône.
+- **Taille**. Choisissez la taille de bouton qui convient le mieux à votre écran et qui se démarque selon les besoins. 
+- **Opacité de l'arrière-plan** (Android) / **Arrière-plan** (iOS) . Contrôlez la visibilité de l'arrière-plan du bouton. Vous pouvez le rendre entièrement visible ou partiellement transparent, ou n'afficher que l'ombre du cadre et l'icône.
 
 
 ## Autre {#other}
@@ -588,7 +653,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/
 
 > *Position de la localisation sur l'écran* est le nom de ce paramètre dans la version iOS d'OsmAnd.  
 
-Permet de définir le placement du curseur de *[Ma position](../map/interact-with-map.md#my-location-and-zoom)* sur la carte OsmAnd. Trois options sont disponibles :  
+Permet de définir le placement du curseur de *[Ma position](../map/interact-with-map.md#my-position-and-zoom)* sur la carte OsmAnd. Trois options sont disponibles :  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Le curseur est toujours positionné au centre de l'écran.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Ma position* est placée légèrement en dessous du centre de l'écran. Ce mode permet de voir plus d'informations sur la carte en avant de votre mouvement, ce qui est utile pendant la navigation.
