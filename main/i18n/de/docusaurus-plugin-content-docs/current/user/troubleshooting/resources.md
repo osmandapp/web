@@ -1,5 +1,5 @@
 ---
-source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
+source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
 sidebar_position: 9
 title: Ressourcen und Anpassungen
 ---
@@ -82,7 +82,7 @@ Das Folgende ist eine Liste von [benutzerdefinierten Plugins](../plugins/custom.
 
 | Name | Beschreibung | Plugin-Link |
 |--|--|--|
-| OsmAnd Rendering  | Das Plugin fügt die Kartenstile Enduro, CycloRoute und Wandern hinzu (weitere Informationen [hier](../map/vector-maps.md#default-map-styles)) sowie 5 neue [Profile](https://osmand.net/docs/user/personal/profiles) (Fußgänger, Fahrrad und drei Motorradprofile). Es bietet auch Online-Karten für Spanien, Frankreich, Norwegen, die Schweiz, Österreich, Belgien und Argentinien über das Menü [Karten & Ressourcen](../personal/maps-resources.md#extra-maps) im Ordner *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| OsmAnd Rendering  | Das Plugin fügt die Kartenstile Enduro, CycloRoute und Wandern hinzu (weitere Informationen [hier](../map/map-styles.md#default-map-styles)) sowie 5 neue [Profile](https://osmand.net/docs/user/personal/profiles) (Fußgänger, Fahrrad und drei Motorradprofile). Es bietet auch Online-Karten für Spanien, Frankreich, Norwegen, die Schweiz, Österreich, Belgien und Argentinien über das Menü [Karten & Ressourcen](../personal/maps-resources.md#extra-maps) im Ordner *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Rahal Team map of Saudi Arabia  | Eine professionelle Offline-Karte des Königreichs Saudi-Arabien, die topografische Merkmale, Straßen, Städte, Dörfer und Wasserquellen enthält. Perfekt für Wüstentouren. Besuchen Sie [Rahal Maps](https://rahalteam.com) für weitere Informationen. | [🇸🇦 Saudi Arabia maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D model  | Dieses Paket fügt eine 3D-Modelloption für Profile hinzu. Passen Sie das Aussehen über das Menü an: [*OsmAnd-Menü → Einstellungen → Profil → Profil-Aussehen → wählen Sie das 4.-5. Symbol des Positionssymbols*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS online maps collection | Eine Sammlung verschiedener Online-Kartenquellen, darunter Satelliten-, Touristen- und historische Karten.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
@@ -149,4 +149,4 @@ Wenn Sie Vorschläge für neue Kartenstile, Plugins haben oder vielleicht mit Ih
 
 - **Beitreten**: <LinksTelegram/>  
 
-- **Holen**: <AllStores/>
+- **Beziehen**: <AllStores/>

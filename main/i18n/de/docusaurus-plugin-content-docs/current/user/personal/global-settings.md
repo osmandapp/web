@@ -1,5 +1,5 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Globale Einstellungen
 ---
@@ -65,7 +65,7 @@ Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie die Auswah
 
 </Tabs>
 
-OsmAnd verwendet das Standardprofil *Karte durchsuchen* als erstes Profil für neue Benutzer. Wenn dieses Profil von Ihnen ausgewählt wurde, wird es bei jedem Neustart der Anwendung verwendet. Sie können jedes Profil aus der Standardliste auswählen, einschließlich *Zuletzt verwendet* und *Karte durchsuchen*.
+OsmAnd verwendet das Standardprofil *Karte durchsuchen* als erstes Profil für neue Benutzer, und wenn dieses Profil von Ihnen ausgewählt wurde, wird es bei jedem Neustart der Anwendung verwendet. Sie können jedes Profil aus der Standardliste auswählen, einschließlich *Zuletzt verwendet* und *Karte durchsuchen*.
 
 - **<Translate android="true" ids="shared_string_last_used"/>**. Ermöglicht die Auswahl des zuletzt verwendeten Profils.
 - **<Translate android="true" ids="settings_preset"/>**. Sie wählen das Profil aus, das beim Starten von OsmAnd verwendet werden soll. Es kann in den Anwendungs-[Einstellungen](../personal/profiles.md) geändert werden.  
@@ -81,7 +81,7 @@ Diese Funktion ist für die iOS-Version der OsmAnd-App verfügbar.
 
 ![Allgemeine Einstellungen CarPlay-Profil iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-Das [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) wird verwendet, wenn eine Verbindung zur [CarPlay-Software](https://support.apple.com/en-gb/HT205634) Ihres Fahrzeugs besteht. Es hilft Ihnen, die optimierte Version der OsmAnd-App optimal zu nutzen, indem es die Audio- und Videosysteme zur Anzeige von Daten auf Ihrem Telefon verwendet.
+Das [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) wird verwendet, wenn eine Verbindung zur [CarPlay-Software](https://support.apple.com/en-gb/HT205634) Ihres Fahrzeugs besteht, und hilft Ihnen, die optimierte Version der OsmAnd-App optimal zu nutzen, indem es die Audio- und Videosysteme zur Anzeige von Daten auf Ihrem Telefon verwendet.
 
 
 ### Datenspeicherordner {#data-storage-folder}
@@ -147,18 +147,19 @@ Gehe zu: *Dateien → Auf meinem iPhone → OsmAnd Maps*
 | 3D-Modus | Es ist möglich, die Karte in 2D anzuzeigen, und Sie können den Betrachtungswinkel ändern, um eine [3D-Ansicht](../widgets/map-buttons.md#3d-mode) zu erhalten. | Sie können die Karte in 2D und [3D](../widgets/map-buttons.md#3d-mode) anzeigen. |
 | Kartenanzeige | Die gesamte Karte wird als Satz von Kacheln gerendert, und Markierungen, Linien und Text befinden sich bereits innerhalb dieser Kacheln. | Zuerst wird das gesamte Kachelpaket gerendert, und dann werden die verfügbaren Symbole [Schicht für Schicht](../../technical/algorithms/map-rendering-layers.md) auf die Karte angewendet. |
 | Transparente Symbole über/unterlagern | Unterstützt alle Einstellungen. | Unterstützt keine Rasterebene über Vektortext. |
-| [3D-Gelände](../map/raster-maps.md#3d-relief) | Nicht unterstützt. | Diese Funktion visualisiert das Gelände auf der Karte, indem sie einer normalen 2D-Karte Höheninformationen hinzufügt, was einen 3D- und Tiefeneffekt erzeugt. |
+| [3D-Gelände](../plugins/topography.md#3d-relief) | Nicht unterstützt. | Diese Funktion visualisiert das Gelände auf der Karte, indem sie einer normalen 2D-Karte Höheninformationen hinzufügt, was einen 3D- und Tiefeneffekt erzeugt. |
 | [3D-Tracks](../map/tracks/appearance.md) | Nicht unterstützt. | Diese Funktion ermöglicht es Ihnen, Tracks nach Höhe über dem Meeresspiegel anzuzeigen. |
 | [Online-Karte](../plugins/online-map.md) | Unterstützt nicht die Anzeige von Höhenlinien, wenn die Kartenquelle eine beliebige Online-Kachelkarte ist. | Wenn die Kartenquelle eine Online-Karte ist, werden auch 3D-Karten verwendet, und die Anzeige von Höhenlinien auf der Karte wird unterstützt. |
-| [Wetter-Plugin](../plugins/weather.md) | Sie können dieses Plugin nicht verwenden. | Bequem mit dem Plugin zu verwenden. |  
+| [Wetter-Plugin](../plugins/weather.md) | Sie können dieses Plugin nicht verwenden. | Bequem mit dem Plugin zu verwenden. |
+| [Globus-Ansicht](../map/interact-with-map.md#globe-view) | Nicht unterstützt. | Ermöglicht die Anzeige der Karte als sphärische Erde (Globus) anstelle einer flachen Projektion. |   
 
 Das Bild für die 3D-Ansicht der Karte wird Kachel für Kachel geladen, dann alle Symbole. Die Rendergeschwindigkeit der Karte hängt von der Anzahl der 2D- und 3D-Grafikobjekte darauf und direkt von der Leistung Ihrer Hardware ab. Daher kann Version 2 (OpenGL) nicht auf leistungsschwachen Geräten verwendet werden.
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="Rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="Rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="Rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
     </tr>
 </table>
 

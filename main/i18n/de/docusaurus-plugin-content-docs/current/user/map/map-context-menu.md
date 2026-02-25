@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -143,7 +143,7 @@ Verfügbare Details umfassen:
 - [Nahegelegene POIs](#nearby-pois)
 - [Nahegelegene beliebte Orte](#nearby-popular-places)
 - [Reiseführer](#guides) (nur Android)
-- [ÖPNV-Routen](#public-transport-routes)
+- [ÖPNV-Routen für Haltestellen](#public-transport-routes)
 - [Favoriten / Trackpunkte aus derselben Gruppe](#favorites--track-points-from-the-group)
 - [OpenStreetMap-Link](#openstreetmap-link)
 - [Online-Fotos](#online-photos)
@@ -557,7 +557,7 @@ Verfügbare Optionen zum Teilen des Standorts:
 
 </Tabs>
 
-Um die Navigation oder Routenplanung zu starten, müssen Sie zuerst das Ziel mit [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions) auswählen. Falls Sie bereits einen Zielpunkt haben, schlägt das Menü vor, den Zielpunkt zu ersetzen oder ihn als weiteren Zwischen- oder Startpunkt einzufügen.
+Um die Navigation oder Routenplanung zu starten, müssen Sie zuerst das Ziel mit [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation) auswählen. Falls Sie bereits einen Zielpunkt haben, schlägt das Menü vor, den Zielpunkt zu ersetzen oder ihn als weiteren Zwischen- oder Startpunkt einzufügen.
 
 Es ist auch möglich, zuerst das *Von*-Ziel über das Kartenkontextmenü auszuwählen (<Translate android="true" ids="context_menu_item_directions_from"/>).
 

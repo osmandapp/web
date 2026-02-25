@@ -1,5 +1,5 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
 sidebar_position: 18
 title:  Plugins
 ---
@@ -64,7 +64,7 @@ Detaillierte Informationen zum Kauf der Anwendung finden Sie im Abschnitt [Kauf]
 
 ### Plugin-Funktionen {#plugin-features}
 
-OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**, **Aktionen im Kontextmenü**, **Aktionen im Hauptmenü**, **Kartenstil**, **Kartenquelle**, **Profil**.
+OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**, **Aktionen im Kontextmenü**, **Aktionen im Schubladenmenü**, **Kartenstil**, **Kartenquelle**, **Profil**.
 
 🤖 *- nur für die Android-Version von OsmAnd.*
 
@@ -79,14 +79,16 @@ OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**
 | [Seekartenansicht](#nautical-map-view) | [Kartenstil](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Skikartenansicht](#ski-map-view) | [Kartenstil](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
 |[Audio-/Videonotizen](#audiovideo-notes) 🤖  | [Kartenebene](../plugins/audio-video-notes.md#show-all-on-the-map), [Kontextmenü](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[OpenStreetMap-Bearbeitung](#openstreetmap-editing)| [Kartenebene](../plugins/osm-editing.md#authorization) |
 |[Parkposition](#parking-position) | [Kontextmenü](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
+|[OpenStreetMap-Bearbeitung](#openstreetmap-editing)| [Kartenebene](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Kartenebene](../plugins/mapillary.md#map-layer), [Kontextmenü](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Externe Sensoren](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Fahrzeugmetriken](#vehicle-metrics)  | [Benutzerdefinierte Einstellungen](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
+|[Sternenbeobachter](#star-watcher)  | [Bildschirm](../plugins/starwatcher.md#star-map-screen), [Kontextmenü](../plugins/starwatcher.md#celestial-object-info) |
 |[Bedienungshilfen](#accessibility) 🤖  | [Benutzerdefinierte Einstellungen](../plugins/accessibility.md#plugin-settings) |
-| [OsmAnd-Entwicklung](#osmand-development) | [Benutzerdefinierte Einstellungen](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Kartenebene](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Kontextmenü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [AIS-Schiffstracker](#ais-vessel-tracker) 🤖  |  [Benutzerdefinierte Einstellungen](../plugins/ais-tracker.md#plugin-settings) |
+|[OsmAnd-Entwicklung](#osmand-development) | [Benutzerdefinierte Einstellungen](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Kartenebene](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Kontextmenü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[AIS-Schiffstracker](#ais-vessel-tracker) 🤖  |  [Benutzerdefinierte Einstellungen](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin-Einstellungen {#plugin-settings}
@@ -140,7 +142,6 @@ Die folgenden Plugins bieten ihre eigenen Einstellungen:
 
 ## Liste der Plugins {#plugins-list}
 
-
 ### [Wikipedia](./wikipedia.md) {#wikipedia}
 
 Wikipedia auf Ihrer Reise hilft Ihnen, mehr über die Orte zu erfahren, die Sie besuchen. Es ist offline verfügbar und zeigt Wikipedia-Artikel zu den Points of Interest direkt auf der Karte an.
@@ -156,6 +157,10 @@ Um eine Geschichte darüber zu erzählen, wo Sie gewesen sind, können GPS-Daten
 ### [Topografie](./topography.md) {#topography}
 
 Topografische Informationen wie Höhenlinien, Schummerung, Neigung und 3D-Relief helfen bei der visuellen Beurteilung der Geländebeschaffenheit, indem sie Höhe, Relief, Extreme, Steilheit, Punkte gleicher Höhe usw. anzeigen.  
+
+### [Wetter](./weather.md) {#weather}
+
+Zeigt die stündliche Vorhersage für den aktuellen Tag und für 7 Tage im Voraus an. 
 
 ### [Seekartenansicht](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ Das OpenStreetMap-Bearbeitungs-Plugin ermöglicht es Ihnen, zu OpenStreetMap bei
 
 Sehen Sie sich Straßenansichten Ihrer Routen oder Sehenswürdigkeiten an, die von [Mapillary](https://www.mapillary.com/) bereitgestellt werden (eine Internetverbindung ist erforderlich).  
 
-### [Bedienungshilfen](./accessibility.md) {#accessibility}
-
-Das Bedienungshilfen-Plugin macht die Bedienungshilfen-Funktionen des Geräts direkt in OsmAnd verfügbar. Nur für Android.  
-
 ### [Externe Sensoren](./external-sensors.md) {#external-sensors}
 
 Verbinden Sie externe Sensoren, um deren Daten in OsmAnd anzuzeigen und die Informationen in Streckenaufzeichnungen zu speichern.  
@@ -193,9 +194,13 @@ Verbinden Sie externe Sensoren, um deren Daten in OsmAnd anzuzeigen und die Info
 
 Verbinden Sie einen OBD-II-Scanner, um Fahrzeugdaten in OsmAnd anzuzeigen und die Informationen in Streckenaufzeichnungen zu speichern.  
 
-### [Wetter](./weather.md) {#weather}
+### [Sternenbeobachter](./starwatcher.md) {#star-watcher}
 
-Zeigt die stündliche Vorhersage für den aktuellen Tag und für 7 Tage im Voraus an.  
+Sternenbeobachter zeigt eine interaktive Sternenhimmel-Überlagerung mit Sternen, Sternbildern, der Sonne, dem Mond und Planeten an. Es hilft Ihnen, Himmelskörper über Ihrem aktuellen Standort zu identifizieren, ihre Pfade für ein ausgewähltes Datum und eine Uhrzeit vorab anzusehen und Sternenbeobachtungssitzungen mit integrierten Zeitsteuerungen und Anzeigeoptionen zu planen.
+
+### [Bedienungshilfen](./accessibility.md) {#accessibility}
+
+Das Bedienungshilfen-Plugin macht die Bedienungshilfen-Funktionen des Geräts direkt in OsmAnd verfügbar. Nur für Android.  
 
 ### [OsmAnd-Entwicklung](./development.md) {#osmand-development}
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
+source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
 sidebar_position: 2
 title:  Reiseführer
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,17 +15,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Übersicht {#overview}
 
-:::info Kostenpflichtige Funktion
-Die Reiseführer sind eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.
+:::tip Kauf
+Die Reiseführer sind eine [kostenpflichtige Funktion](../purchases/index.md).  
 :::
 
 Virtuelle Reiseführer in OsmAnd bieten Nutzern wertvolle Informationen, Empfehlungen und Tipps. Sie ermöglichen es Reisenden auch, auf umfassende Navigationsinformationen über Sehenswürdigkeiten in der App zuzugreifen.
 
 Die OsmAnd-Reiseführer basieren auf Daten von [Wikivoyage](https://www.wikivoyage.org/), einem Gemeinschaftsprojekt ähnlich wie Wikipedia, bei dem freiwillige Autoren aktuelle Artikel erstellen.  
-Die Informationen von Wikivoyage umfassen die wichtigsten Fakten über einen Ort, Transportmittel, Sehenswürdigkeiten, Einkaufsmöglichkeiten und mehr.
+Die Informationen von Wikivoyage umfassen die wichtigsten Fakten über einen Ort, Transportmittel, Sehenswürdigkeiten, Einkaufsmöglichkeiten und mehr.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -46,7 +46,7 @@ Die Informationen von Wikivoyage umfassen die wichtigsten Fakten über einen Ort
 ## Wie man sie benutzt {#how-to-use}
 
 - [Herunterladen](#download-articles) von *Reiseführern*.
-- [Artikel](#browse-articles) über ein Land, eine Region, eine Stadt oder eine Sehenswürdigkeit durchsuchen.
+- Artikel über ein Land, eine Region, eine Stadt oder eine Sehenswürdigkeit [durchsuchen](#browse-articles).
     - Alternativ können Sie [Reiseführerartikel und/oder -punkte auf der Karte anzeigen](#travel-routes) lassen, indem Sie das Menü "Karte konfigurieren" verwenden.
     - Sehenswürdigkeiten auf der Karte durchsuchen und sie zu *[Kartenmarkierungen](../personal/markers.md#add--edit-markers)* oder *[Favoriten](../personal/favorites.md#favorite-group-actions)* hinzufügen.
     - Über die Schaltfläche *[Vollständig lesen](#manage-as-gpx-track)* zum *[Artikel](#travel-article)* in den *Reiseführern* wechseln.
@@ -92,7 +92,7 @@ Es gibt auch spezialisierte Führer, wie die Liste des UNESCO Global Geoparks Ne
 ## Artikel durchsuchen {#browse-articles}
 
 Der Bildschirm *Reiseführer* besteht aus zwei Hauptteilen: einem [*Suchfeld*](#search) und einer *Reiseführer*-Liste mit zwei Registerkarten: *[<Translate android="true" ids="shared_string_explore"/> und <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. Sie können durch einmaliges Tippen auf eine Registerkarte zwischen ihnen wechseln.
-Wenn Sie die *Reiseführer* öffnen (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), zeigt OsmAnd Ihnen Artikel über interessante Orte in der Nähe der geografischen Koordinaten des aktuellen Kartenzentrums an. Wenn Sie auf einen Eintrag in der Liste tippen, öffnet sich der [Reiseführerartikel](#travel-article). Am unteren Bildschirmrand befindet sich ein Schalter zur Registerkarte *Lesezeichen*.
+Wenn Sie die *Reiseführer* öffnen (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), zeigt OsmAnd Ihnen Artikel über interessante Orte in der Nähe der geografischen Koordinaten des aktuellen Kartenzentrums an. Wenn Sie auf einen Eintrag in der Liste tippen, öffnet sich der [Reiseführerartikel](#travel-article). Am unteren Bildschirmrand befindet sich ein Schalter zur Registerkarte *Lesezeichen*.  
 
 ### Erkunden und Lesezeichen setzen {#explore-and-bookmark}
 
@@ -204,7 +204,7 @@ Am unteren Bildschirmrand befinden sich Schaltflächen wie:
 
 - [Inhalt](#table-of-contents). Öffnet das Inhaltsverzeichnis des Artikels.
 - [Punkte](#points). Zeigt touristische Attraktionen, die mit dem Artikel in Verbindung stehen, auf einer Karte an.
-- [Lesezeichen](#explore-and-bookmark). Ermöglicht es Ihnen, einen Artikel zu den Lesezeichen für späteres Lesen hinzuzufügen.
+- [Lesezeichen](#explore-and-bookmark). Ermöglicht es Ihnen, einen Artikel zu den Lesezeichen für späteres Lesen hinzuzufügen.  
 
 
 ### Navigationsmenü {#navigation-menu}

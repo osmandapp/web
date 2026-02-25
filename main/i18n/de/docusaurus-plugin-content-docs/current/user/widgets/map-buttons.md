@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title:  Kartenschaltflächen
 ---
@@ -18,31 +18,31 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Kartenschaltflächen, einschließlich *Zoom*, *Suche*, *Richtungen*, *Kompass*, *Mein Standort*, *3D-Modus* und *Menü*, sind die Hauptsteuerelemente für die Interaktion mit der Karte. Jede Schaltfläche bietet spezifische Funktionen, um Ihr Navigations- und Kartennutzungserlebnis zu verbessern.
+Kartenschaltflächen, einschließlich *Zoom*, *Suche*, *Navigation*, *Kompass*, *Meine Position*, *3D-Modus* und *Menü*, sind die Hauptsteuerelemente für die Interaktion mit der Karte. Jede Schaltfläche bietet spezifische Funktionen, um Ihr Navigations- und Kartennutzungserlebnis zu verbessern.
 
 
-## Mein Standort und Zoom {#my-location-and-zoom}
+## Meine Position und Zoom {#my-position-and-zoom}
 
 ![Bildschirmkonfigurationsmenü](@site/static/img/widgets/location_zoom_buttons.png)
 
 Verwenden Sie diese Schaltflächen, um zu steuern, wie die Karte auf dem Bildschirm Ihres Geräts angezeigt wird:
 
-- **Mein Standort**. Zeigt an, ob die Kartenmitte mit der aktuellen Geolokalisierung Ihres Geräts synchronisiert ist.
+- **Meine Position**. Zeigt an, ob die Kartenmitte mit der aktuellen Geolokalisierung Ihres Geräts synchronisiert ist.
 - **Zoom**. Ermöglicht es Ihnen, die Zoomstufe der Karte anzupassen, um mehr oder weniger Details anzuzeigen.
-Wenn Sie weitere Informationen zur Verwendung dieser Schaltflächen wünschen, lesen Sie den Artikel [Mit der Karte interagieren](../map/interact-with-map.md#my-location-and-zoom).
+Wenn Sie weitere Informationen zur Verwendung dieser Schaltflächen wünschen, lesen Sie den Artikel [Mit der Karte interagieren](../map/interact-with-map.md#my-position-and-zoom).
 
 
-## Richtungen {#directions}
+## Navigation {#navigation}
 
 ![Richtungsschaltfläche ermöglicht](@site/static/img/widgets/directions_button_allows.png)
 
-Die Schaltfläche **Richtungen** ist für die Routenplanung und Navigation unerlässlich:
+Die **Navigationsschaltfläche** ist für die Routenplanung und Navigation unerlässlich:
 
 - [Eine Route erstellen](../navigation/index.md). Verwenden Sie diese Schaltfläche, um eine Route zu erstellen.
 - [Navigation starten](../navigation/index.md). Starten Sie die Turn-by-Turn-Navigation.
-- Im Navigationsmodus ist die Schaltfläche *Richtungen* standardmäßig nicht sichtbar, erscheint aber nach einem kurzen Tippen auf die Karte.
+- Im Navigationsmodus ist die *Richtungen*-Schaltfläche standardmäßig nicht sichtbar, erscheint aber nach einem kurzen Tippen auf die Karte.
 
-Anzeigestatus der Schaltfläche *Richtungen*:
+Anzeigestatus der *Richtungen*-Schaltfläche:
 
 - Das *graue Standardsymbol* zeigt an, dass die Route noch nicht erstellt wurde. Durch Tippen auf dieses Symbol wird die Funktion [Routeneinrichtung](../navigation/setup/route-navigation.md) geöffnet.
 - Das *blaue Standardsymbol* zeigt an, dass die Route erstellt, die Navigation aber noch nicht gestartet wurde. Durch Tippen auf dieses Symbol wird die Funktion [Routeneinrichtung](../navigation/setup/route-navigation.md#start--stop-navigation) geöffnet.
@@ -175,18 +175,41 @@ Das [Schnellaktions-Widget](./quick-action.md) ist eine konfigurierbare Schaltfl
 
 ## Erscheinungsbild der Kartenschaltfläche {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Standardschaltflächen | Benutzerdefinierte Schaltflächen |
 | :--- | :--- |
 | ![Erscheinungsbild der Kartenschaltfläche](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Erscheinungsbild der Kartenschaltfläche](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Einstellungen für das Erscheinungsbild der Kartenschaltflächen sind über die folgenden Menüs verfügbar:
+**Gehe zu** (für benutzerdefinierte Schaltflächen): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → Drei-Punkte-Menü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Gehe zu** (für alle Standardschaltflächen): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → Drei-Punkte-Menü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Gehe zu** (für eine spezifische Standardschaltfläche): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → Schaltfläche auswählen → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Menü → Bildschirm konfigurieren → Schaltflächen → Standardschaltflächen*
-- *Menü → Bildschirm konfigurieren → Benutzerdefinierte Schaltflächen → Schnellaktion → Drei-Punkte-Menü → Erscheinungsbild*
+</TabItem>
 
-Die Anpassung des Erscheinungsbilds von Schaltflächen ermöglicht es Ihnen, die Größe, Form, das Symbol und die Hintergrunddeckkraft sowohl für [Schnellaktion (Benutzerdefinierte Schaltflächen)](../widgets/quick-action.md#button-appearance) als auch für [Standardschaltflächen](../widgets/configure-screen.md#button-appearance) anzupassen. Diese Flexibilität ermöglicht es Ihnen, die Benutzeroberfläche an Ihre Vorlieben anzupassen und die Benutzerfreundlichkeit zu verbessern.
+<TabItem value="ios" label="iOS">  
+
+| Standardschaltflächen | Benutzerdefinierte Schaltflächen |
+| :--- | :--- |
+| ![Erscheinungsbild der Kartenschaltfläche](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Erscheinungsbild der Kartenschaltfläche](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Gehe zu** (für benutzerdefinierte Schaltflächen): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → Drei-Punkte-Menü → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Gehe zu** (für eine spezifische Standardschaltfläche): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → Schaltfläche auswählen → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+Die Anpassung des Erscheinungsbilds von Schaltflächen ermöglicht es Ihnen, die Größe, Form, das Symbol und die Hintergrunddeckkraft sowohl für [Schnellaktion (Benutzerdefinierte Schaltflächen)](../widgets/quick-action.md#button-appearance) als auch für [Standardschaltflächen](../widgets/configure-screen.md#button-appearance) anzupassen. Auf Android können Erscheinungseinstellungen auf alle Standardschaltflächen oder auf eine spezifische Standardschaltfläche angewendet werden, während sie auf iOS nur für spezifische Standardschaltflächen verfügbar sind.
+
+Schaltflächensymbole können auf folgendes eingestellt werden:
+- **Dynamisch** – das Symbol ändert sich basierend auf der aktuellen Aktion oder dem Zustand.
+- **Benutzerdefiniert** – wählen Sie ein Symbol aus Ihren hinzugefügten Aktionen aus.
+- **Spezifisch** – wählen Sie ein festes Symbol aus, das immer angezeigt wird.
+
+Der Erscheinungsbildschirm enthält eine Vorschau, mit der Sie sehen können, wie Ihre Änderungen auf der Karte aussehen, bevor Sie die Einstellungen verlassen.
 
 
 ## Verwandte Artikel {#related-articles}

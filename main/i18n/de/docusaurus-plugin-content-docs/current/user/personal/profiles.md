@@ -1,5 +1,5 @@
 ---
-source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
+source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
 sidebar_position: 4
 title:  Profiles (Settings)
 ---
@@ -21,7 +21,7 @@ OsmAnd bietet eine Vielzahl von Standardprofilen, die auf verschiedene Aktivitä
 
 - Bestimmte Profile, wie *Skifahren* und *Boot*, verfügen über **zusätzliche Funktionen**, die erst verfügbar werden, wenn die entsprechenden Plugins aktiviert sind.
 
-     - Plugins können durch Navigation zu *Menü → Plugins → Ski-Kartenansicht* oder *Nautische Kartenansicht* aktiviert werden.
+     - Plugins können durch Navigation zu *Menü → Plugins → Ski map view* oder *Nautical map view* aktiviert werden.
      - Die Aktivierung der Plugins stattet die Profile mit den wesentlichen Funktionen aus, um den spezifischen Anforderungen dieser Aktivitäten gerecht zu werden.
 
 - Es ist wichtig zu beachten, dass einige Profile, wie **LKW**, **Motorrad**, **Moped**, **Zug**, **Flugzeug**, **Boot** und **Reiten**, standardmäßig nicht aktiviert sind.
@@ -211,13 +211,13 @@ Im Abschnitt **Einheiten und Formate** können Sie Maßeinheiten und Formate an 
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0,62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0,62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0,62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>Einheiten für die Länge gelten für horizontale Entfernungswerte (z. B. Fahr-/Routenentfernungen und Manöverentfernungen in der Navigation).|
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>Länge gilt für horizontale Entfernungswerte (z. B. Fahr-/Routenentfernungen und Manöverentfernungen in der Navigation).|
 |  |  |  |
-| **Einheiten für die Höhe** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>Einheiten für die Höhe gelten für Höhen-/Höhenlagewerte und zugehörige Metriken (Bergauf/-ab, Höhenbereich) in Höhen-Widgets, Navigationsrouteninformationen und Track-Statistiken.<br/>Standardmäßig ist Einheiten für die Höhe mit Einheiten für die Länge synchronisiert und wird nur nach manueller Änderung durch den Benutzer unabhängig.|
+| **Höhe** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>Höhe gilt für Höhen-/Höhenlagewerte und zugehörige Metriken (Bergauf/-ab, Höhenbereich) in Höhen-Widgets, Navigationsrouteninformationen, Track-Statistiken und Berggipfel-Höhenbeschriftungen auf der Karte.<br/>Standardmäßig ist Höhe mit Länge synchronisiert und wird nur nach manueller Änderung durch den Benutzer unabhängig.|
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Beispiel: 50.12333° 19.93233° (Breite Länge) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Beispiel: 50°7.393′ 19°55.941′ (Breite Länge)  |
@@ -232,14 +232,14 @@ Im Abschnitt **Einheiten und Formate** können Sie Maßeinheiten und Formate an 
 |          | Grad 360° | Alle Winkelwerte haben Messwerte von 0° bis 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | Alle Winkelwerte haben einen [Milliradiant-Wert](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55,92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1,073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0,667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48,59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Asien, Lateinamerika, Kanada, Japan, Indien, Australien |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Asien, Lateinamerika, Kanada, Japan, Indien, Australien |
 |  | <Translate android="true" ids="imperial_gallons"/> | UK und ähnliche |
 |  | <Translate android="true" ids="us_gallons"/> | Vereinigte Staaten |
 |  |  |  |
@@ -277,13 +277,13 @@ Der Abschnitt **Sonstiges** bietet zusätzliche Profileinstellungen zur Anpassun
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Verbinden Sie externe Controller wie *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>* oder *<Translate android="true" ids="sett_parrot_ext_input"/>*, um OsmAnd mit physischen Tasten zu bedienen.
 
-- **<Translate android="true" ids="position_animation"/>** / **Eigene Position animieren** – Das [Positionssymbol](../map/interact-with-map.md#my-location-and-zoom) animiert sich mit jedem empfangenen GPS-Punkt (einmal pro Sekunde). Eine leichte Verzögerung in seiner Bewegung kann bemerkbar sein, besonders bei schneller Bewegung oder GPS-Signalschwankungen. Sie können diesen Effekt mit der Einstellung *Vorhersagezeit* (nur Android) anpassen: höhere Werte erhöhen die Glätte, fügen aber eine Verzögerung hinzu; niedrigere Werte reduzieren die Verzögerung, können aber die Bewegung weniger glatt machen.
+- **<Translate android="true" ids="position_animation"/>** / **Eigene Position animieren** – Das [Positions-](../map/interact-with-map.md#my-position-and-zoom)Symbol animiert sich mit jedem empfangenen GPS-Punkt (einmal pro Sekunde). Eine leichte Verzögerung in seiner Bewegung kann bemerkbar sein, besonders bei schneller Bewegung oder GPS-Signalschwankungen. Sie können diesen Effekt mit der Einstellung *Vorhersagezeit* (nur Android) anpassen: höhere Werte erhöhen die Glätte, fügen aber eine Verzögerung hinzu; niedrigere Werte reduzieren die Verzögerung, können aber die Bewegung weniger glatt machen.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Nur Android*) – Aktivieren oder deaktivieren Sie die Möglichkeit, die Lautstärketasten Ihres Geräts zum [Zoomen](../map/interact-with-map.md#my-location-and-zoom) auf der Karte zu verwenden.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Nur Android*) – Aktivieren oder deaktivieren Sie die Möglichkeit, die Lautstärketasten Ihres Geräts zum [Zoomen](../map/interact-with-map.md#my-position-and-zoom) auf der Karte zu verwenden.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Nur Android*) – Glättet die Kartenrotation mit [allmählicher Bewegung](https://en.wikipedia.org/wiki/Kalman_filter) und reduziert plötzliche Positionsverschiebungen. Dies führt zu einer kleinen Verzögerung (*weniger als 1 Sekunde*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*Nur Android*) – Glättet die Kartenrotation mit [allmählicher Bewegung](https://en.wikipedia.org/wiki/Kalman_filter) und reduziert plötzliche Positionsverschiebungen. Dies führt zu einer kleinen Verzögerung (*weniger als 1 Sekunde*).
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Nur Android*) – Tippen Sie auf einen leeren Bereich auf der Karte, um Steuerungsschaltflächen und Widgets auszublenden und die Kartensichtbarkeit zu maximieren.
 
@@ -371,7 +371,7 @@ Mit diesem Menü können Sie:
 
 - **Visualisierung des öffentlichen Nahverkehrs aktivieren**, um [Routen und Haltestellen](../map/public-transport.md) für eine bessere Reiseplanung anzuzeigen.
 
-- **Das Erscheinungsbild der Karte anpassen**, indem Sie einen anderen [Kartenstil](../map/vector-maps.md#default-map-styles) auswählen, der Ihren Bedürfnissen entspricht.
+- **Das Erscheinungsbild der Karte anpassen**, indem Sie einen anderen [Kartenstil](../map/map-styles.md) auswählen, der Ihren Bedürfnissen entspricht.
 
 
 ## Bildschirm konfigurieren {#configure-screen}
@@ -456,7 +456,7 @@ Verwenden Sie **Symbolgröße**, um die Größe des Mein-Standort-Positionsymbol
 
 ### Blickwinkel und Standortradius {#view-angle-and-location-radius}
 
-Sie können die visuellen Elemente, die sich auf Ihren Standort beziehen, anpassen und sie separat oder zusammen für die Positionen **Ruhend** und **Navigation** anwenden. Sowohl im 2D- als auch im 3D-Modus werden *Blickwinkel* und *Standortradius* in derselben Farbe angezeigt, die für das [Navigationsprofil](#profile-appearance) ausgewählt wurde, direkt unter dem Symbol [Mein Standort](../map/interact-with-map.md#my-location-and-zoom).
+Sie können die visuellen Elemente, die sich auf Ihren Standort beziehen, anpassen und sie separat oder zusammen für die Positionen **Ruhend** und **Navigation** anwenden. Sowohl im 2D- als auch im 3D-Modus werden *Blickwinkel* und *Standortradius* in derselben Farbe angezeigt, die für das [Navigationsprofil](#profile-appearance) ausgewählt wurde, direkt unter dem Symbol [Meine Position](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Zeigt einen **kegelförmigen** Bereich an, der die Richtung angibt, in die Sie gerade blicken.  
 - **<Translate android="true" ids="location_radius"/>** – Zeigt einen **kreisförmigen Bereich** um Ihr Symbol an, der die Genauigkeit Ihres aktuellen Standorts darstellt.
@@ -568,7 +568,7 @@ Plugins schalten zusätzliche Funktionen der Anwendung frei und können entweder
 
 - **Wetter**. Interaktive [Wetter](../plugins/weather.md#weather-settings)-Kartenebenen ermöglichen es Ihnen, Temperatur, Luftdruck, Wolkenbedeckung, Windgeschwindigkeit und Niederschlag in Ihrer Stadt oder an jedem anderen Ort auf einer globalen Karte zu überwachen.
 
-- **Audio-/Video-Notizen** (*Nur Android*). Dieser Punkt öffnet die [Einstellungen des Audio-Video-Plugins](../plugins/audio-video-notes.md#plugin-settings) für das ausgewählte Profil. Das *Audio-/Video-Notizen*-Plugin erweitert die Funktionalität von OsmAnd, indem es Ihnen ermöglicht, Ihre Notizen in verschiedenen Formaten wie Foto, Video oder Audio zu erstellen und sie mit einem geografischen Standort oder dem aktuellen Standort zu verknüpfen.  
+- **Audio / Video Notizen** (*Nur Android*). Dieser Punkt öffnet die [Einstellungen des Audio-Video-Plugins](../plugins/audio-video-notes.md#plugin-settings) für das ausgewählte Profil. Das *Audio-/Video-Notizen*-Plugin erweitert die Funktionalität von OsmAnd, indem es Ihnen ermöglicht, Ihre Notizen in verschiedenen Formaten wie Foto, Video oder Audio zu erstellen und sie mit einem geografischen Standort oder dem aktuellen Standort zu verknüpfen.  
 
 - **OpenStreetMap-Bearbeitung**. Dieser Punkt öffnet die [Einstellungen des OpenStreetMap-Bearbeitungsplugins](../plugins/osm-editing.md#settings) für das ausgewählte Profil. Mit OsmAnd und dem OSM-Bearbeitungsplugin können Sie zu OpenStreetMap.org beitragen, indem Sie POIs erstellen oder ändern, Notizen hinzufügen oder kommentieren und aufgezeichnete GPX-Tracks hochladen.
 

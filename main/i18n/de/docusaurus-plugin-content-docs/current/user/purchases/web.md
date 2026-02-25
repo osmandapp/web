@@ -1,5 +1,5 @@
 ---
-source-hash: 3970a0828bc6b80d9b68504c9d78e40d1226e1cf16d6f1fbc2fdcc5d6af480ec
+source-hash: 10e2341332ad6f362f02e8ca20670f75459fd950a7fe11cc51ec340380692495
 sidebar_position: 3
 title:  Web-Käufe
 ---
@@ -37,12 +37,12 @@ Alle über eine dieser Plattformen getätigten Käufe unterstützen den [**platt
 
 Nachfolgend finden Sie die Preise für OsmAnd-Produkte in den USA und der EU. Die Preise in anderen Regionen werden von der Zahlungsplattform automatisch in die lokale Währung umgerechnet.
 
+
 <!--
 
+:::danger February Sale
 
-:::danger Christmas sale
-
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -60,6 +60,7 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
+
 -->
 
 |    | OsmAnd Free   | **Maps+** Einmalkauf | **Maps+** Abonnement | **OsmAnd Pro** |**OsmAnd XV** |
@@ -68,6 +69,7 @@ Starting from the third year, the full price will apply.
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |**Einmalkauf** (15 Jahre Pro / Maps+ Lebenslang) |
 | **Preis (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
 | **Preis (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
+
 
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 54955c988c3df62ddc5b423281774611836946ef872c1c7dfae018ca6fc8bbe2
+source-hash: 9140bac9e9be1e187b70214ddb666d2191b3cfef30bcc06f8571ba22da005fb7
 sidebar_position: 15
 title:  Reiseaufzeichnung
 ---
@@ -356,7 +356,7 @@ Das App-Symbol-Badge erscheint neben dem OsmAnd-Symbol, wenn die Track-Aufzeichn
 
 ## Widgets {#widgets}
 
-Widgets ermöglichen es Ihnen, wichtige Informationen zur Track-Aufzeichnung direkt auf dem Bildschirm anzuzeigen, wie z. B. *Distanz*, *Dauer*, *Bergauf* und *Bergab*. Unter Android können Sie auch *Max. Geschwindigkeit* und *Durchschnittssteigung*-Widgets hinzufügen.
+Widgets ermöglichen es Ihnen, wichtige Informationen zur Track-Aufzeichnung direkt auf dem Bildschirm anzuzeigen, wie z. B. *Distanz*, *Dauer*, *Bergauf*, *Bergab*, *Max. Geschwindigkeit* und *Durchschnittssteigung*. Unter iOS können Sie auch ein *Bewegungszeit*-Widget hinzufügen.
 
 Um die *Reiseaufzeichnungs-Widgets* zu verwenden, müssen Sie alle folgenden Einstellungen vornehmen:
 
@@ -381,7 +381,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_conf
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Distanz/Start-Stopp-Widget in iOS hinzufügen](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![Distanz/Start-Stopp-Widget in iOS hinzufügen](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -413,13 +413,13 @@ Um Ihre Benutzeroberfläche anzupassen, können Sie das Reiseaufzeichnungs-Widge
 Einige Reiseaufzeichnungs-Widgets unterstützen mehrere Anzeigemodi. Modi ermöglichen es Ihnen, zwischen Gesamtwerten der Reise und Metriken für den zuletzt aufgenommenen Bergauf- oder Bergababschnitt der aktuell aufgezeichneten Reise zu wechseln.
 
 Die folgenden Modi können je nach Widget verfügbar sein.
-1. **Distanz (Start-Stopp)**:
-- Gesamtdistanz (Standard)
-- Letzter Bergauf
-- Letzter Bergab
+1. **Durchschnittssteigung**:
+- Letzter Bergab  
+- Letzter Bergauf  
 
-2. **Bergauf**:
-- Gesamt (Standard)
+2. **Distanz (Start-Stopp)**:
+- Gesamtdistanz (Standard)
+- Letzter Bergab
 - Letzter Bergauf
 
 3. **Bergab**:
@@ -428,15 +428,20 @@ Die folgenden Modi können je nach Widget verfügbar sein.
 
 4. **Max. Geschwindigkeit**:
 - Gesamt (Standard)
-- Letzter Bergauf
 - Letzter Bergab
+- Letzter Bergauf
 
-5. **Durchschnittssteigung**:
-- Letzter Bergauf  
-- Letzter Bergab 
+5. **Bewegungszeit** (*Nur iOS*)
+- Gesamt (Standard)
+- Letzter Bergab
+- Letzter Bergauf
+
+6. **Bergauf**:
+- Gesamt (Standard)
+- Letzter Bergauf
 
 Der Moduswechsel hängt vom Widget ab:
-- Bergauf / Bergab / Max. Geschwindigkeit / Durchschnittssteigung — Tippen Sie auf das Widget auf der Karte, um seinen Modus zu wechseln.
+- Bergauf / Bergab / Max. Geschwindigkeit / Durchschnittssteigung / Bewegungszeit — Tippen Sie auf das Widget auf der Karte, um seinen Modus zu wechseln.
 - Distanz (Start-Stopp) — Das Distanz-Widget unterstützt mehrere Anzeigemodi (wählen Sie sie in den Widget-Einstellungen aus), aber ein Tippen darauf öffnet immer den Reiseaufzeichnungsdialog, in dem Sie detaillierte Informationen zu Ihrem Track starten, stoppen und anzeigen können. 
 
 Wenn die aktuelle Aufzeichnung noch keinen Bergauf- oder Bergababschnitt enthält, zeigen Widgets im Modus Letzter Bergauf oder Letzter Bergab 0 oder — (keine Daten) an.
@@ -462,16 +467,18 @@ Unter Android unterstützt das Distanz-Widget mehrere Anzeigemodi:
 
 | |
 |------------|
-|**Dauer**. Zeigt die Gesamtzeit der aktuellen Reiseaufzeichnung in Stunden und Minuten an. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Bergauf**. Zeigt den gesamten Anstieg oder den letzten Anstiegsabschnitt an, abhängig vom ausgewählten Modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
-|**Bergab**. Zeigt den gesamten Abstieg oder den letzten Abstiegsabschnitt an, abhängig vom ausgewählten Modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
-|**Max. Geschwindigkeit**. Zeigt die maximale Geschwindigkeit für die aktuell aufgezeichnete Reise im ausgewählten Modus an. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Durchschnittssteigung**. Zeigt die durchschnittliche Steigung für den letzten Bergauf- oder Bergababschnitt der aktuellen Reise an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Bergab**. Zeigt den gesamten Abstieg oder den letzten Abstiegsabschnitt an, abhängig vom ausgewählten Modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Dauer**. Zeigt die Gesamtzeit der aktuellen Reiseaufzeichnung in Stunden und Minuten an. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|**Max. Geschwindigkeit**. Zeigt die maximale Geschwindigkeit für die aktuell aufgezeichnete Reise im ausgewählten Modus an. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Bewegungszeit** (*Nur iOS*). Zeigt die Bewegungszeit für die aktuell aufgezeichnete Reise oder die Zeit für den letzten Bergauf- und Bergababschnitt an, abhängig vom ausgewählten Modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**Bergauf**. Zeigt den gesamten Anstieg oder den letzten Anstiegsabschnitt an, abhängig vom ausgewählten Modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Wenn Sie mehrere Widgets ausgewählt haben – *Dauer*, *Bergauf* oder *Bergab* – können Sie für jedes auf dasselbe Dialogfeld zugreifen, ohne es wechseln oder schließen zu müssen. Diese einheitliche Benutzeroberfläche erleichtert die nahtlose Anzeige und Verwaltung aller zugehörigen Informationen.
 

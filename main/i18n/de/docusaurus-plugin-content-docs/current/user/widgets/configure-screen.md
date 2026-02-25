@@ -1,5 +1,5 @@
 ---
-source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
+source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -267,7 +267,7 @@ Der Modus ermöglicht es Ihnen, **mehr als ein Widget in einer einzigen Zeile** 
     - [Höhenprofil (*Nur Android*)](../widgets/nav-widgets#elevation-widget)
     - [Routenmanöver](../widgets/nav-widgets.md#next-turn)
 
-- **Einfache Widgets**. Mehrere einfache Widgets können zu einer einzigen Zeile hinzugefügt werden. Diese Widgets können *Name*, *Maßeinheiten*, *Wert* und *Symbol* anzeigen. Der Text in einfachen Widgets wird automatisch umrandet, um eine klare Lesbarkeit auf verschiedenen Kartenhintergründen im transparenten Leistenmodus zu gewährleisten.
+- **Einfache Widgets**. Mehrere einfache Widgets können zu einer einzigen Zeile hinzugefügt werden. Diese Widgets können *Name*, *Maßeinheiten*, *Wert* und *Symbol* anzeigen. 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -450,6 +450,53 @@ Sie können Widgets auf dem Anwendungsbildschirm im **Bearbeiten**-Modus neu ano
 - Bestätigen Sie das Löschen, wenn Sie dazu aufgefordert werden.
 
 
+## Kartenbildschirm-Layout {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/map_screen_layout_1.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/map_screen_layout_2.png)
+
+Die Einstellung **Kartenbildschirm-Layout** ermöglicht es Ihnen, zu steuern, wie Widget-Leisten auf dem Kartenbildschirm angeordnet sind. Sie hilft, Überlappungen von Widgets und Schaltflächen zu verhindern und verbessert die Nutzung des Bildschirmraums, insbesondere beim Wechsel zwischen Hoch- und Querformat.
+
+Sie können die Einstellungen für das Kartenbildschirm-Layout aus dem Menü "Bildschirm konfigurieren" öffnen, entweder direkt über die Bildschirmaktionen oder über das Drei-Punkte-Menü.
+
+### Einzelne und getrennte Layouts {#single-and-separate-layouts}
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_single.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_separate.png)
+
+OsmAnd unterstützt zwei Layout-Modi für den Kartenbildschirm:
+- **Einzelnes Layout** – verwendet das gleiche Widget-Layout für alle Bildschirmausrichtungen. Diese Option ist standardmäßig ausgewählt.
+- **Getrennte Layouts** – ermöglicht es Ihnen, unterschiedliche Widget-Layouts für Hoch- und Querformat zu konfigurieren.
+
+Wenn Getrennte Layouts aktiviert ist, wirken Änderungen in einer Ausrichtung nicht auf die andere. Dies ist nützlich, wenn Sie den Kartenbildschirm unterschiedlich für Hoch- und Querformat optimieren möchten.
+
+### Registerkarten Hochformat und Querformat {#portrait-and-landscape-tabs}
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_tabs.png)
+
+Wenn Getrennte Layouts aktiviert ist, werden zwei Registerkarten im Bildschirm "Konfigurieren" verfügbar: **Hochformat** und **Querformat**. Jede Registerkarte stellt ein unabhängiges Layout für die entsprechende Bildschirmausrichtung dar. Sie können zwischen den Registerkarten durch Tippen wechseln.
+
+Sie können das Layout zwischen den Ausrichtungen kopieren. Um diese Aktionen aufzurufen, tippen Sie auf das Drei-Punkte-Menü für die Widget-Leiste:
+- **Von Hochformat kopieren** – kopiert die Widget-Liste aus dem Hochformat-Layout in das Querformat-Layout.
+- **Von Querformat kopieren** – kopiert die Widget-Liste aus dem Querformat-Layout in das Hochformat-Layout.
+
+Nur die Widget-Liste wird kopiert, und die Operation gilt innerhalb desselben Profils.
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_portrait.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Leisten-Layout {#panels-layout}
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_wide.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_compact.png)
+
+Die Einstellung **Leisten-Layout** steuert, wie die oberen und unteren Widget-Leisten angezeigt werden. Diese Option ist nur verfügbar, wenn Getrennte Layouts aktiviert ist.
+
+Sie können zwischen zwei Modi wählen:
+- **Breit** – die oberen und unteren Leisten erstrecken sich über die volle Breite des Bildschirms.
+- **Kompakt** – die oberen und unteren Leisten passen zwischen die Seitenleisten und Karten-Schaltflächen.
+
+Das Leisten-Layout kann unabhängig für Hoch- und Querformat konfiguriert werden, was eine bessere Anpassung an unterschiedliche Bildschirmgrößen und -ausrichtungen ermöglicht.
+
+
 ## Schaltflächen {#buttons}
 
 ### Benutzerdefinierte Schaltflächen {#custom-buttons}
@@ -484,7 +531,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Standard-Schaltflächen](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -492,13 +539,13 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,layer_map_appea
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget-Seite](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
+![Standard-Schaltflächen](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-1. **Standard-Schaltflächen** ermöglichen es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
+1. **Standard-Schaltflächen** ermöglichen es Ihnen anzupassen, welche voreingestellten Kartenschaltflächen auf dem Kartenbildschirm sichtbar sind. Jede Schaltfläche in der Liste hat einen Ein/Aus-Schalter daneben. Sie können wählen, die folgenden Schaltflächen aus- oder einzublenden:
 
     - [3D-Modus](../widgets/map-buttons.md#3d-mode). Für iOS ist die Schaltfläche immer verfügbar. Für Android erscheint sie in der Liste und ist zur Einstellung verfügbar, wenn die Karten-Rendering-Engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) ausgewählt ist.
 
@@ -520,16 +567,34 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 2. Das **Drei-Punkte-Menü** auf dem Bildschirm der Standard-Schaltflächen enthält Aktionen wie:
 
     - *Auf Standard zurücksetzen*. Ermöglicht es Ihnen, die Schaltflächeneinstellungen auf ihre ursprüngliche Erscheinung zurückzusetzen.
-    - *Von einem anderen Profil kopieren*. Wählen Sie aus der angebotenen Liste aus, von welchem Profil Sie die Schaltflächeneinstellungen kopieren möchten.
-
-3. **Das Erscheinungsbild der Standard-Schaltfläche** (*Nur Android*) bietet eine Vielzahl von Anpassungsoptionen für diesen Schaltflächentyp. Um das Erscheinungsbild einer Schaltfläche zu ändern, tippen Sie auf die gewünschte Schaltfläche in der Liste und wählen Sie die Option [Erscheinungsbild](#button-appearance).
+    - *Von einem anderen Profil kopieren*. Wählen Sie ein Profil aus der Liste aus, um die Sichtbarkeit und Erscheinungseinstellungen der Schaltflächen zu kopieren.
+    - *Erscheinungsbild (Nur Android)*. Bietet eine Vielzahl von Anpassungsoptionen für diesen Schaltflächentyp. Um das Erscheinungsbild einer Schaltfläche zu ändern, tippen Sie auf die gewünschte Schaltfläche in der Liste und wählen Sie die Option [Erscheinungsbild](#button-appearance).
 
 
 ### Erscheinungsbild der Schaltfläche {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Erscheinungsbild der Schaltfläche](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+**Gehen Sie zu** (für benutzerdefinierte Schaltflächen): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → Drei-Punkte-Menü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Gehen Sie zu** (für alle Standard-Schaltflächen): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → Drei-Punkte-Menü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Gehen Sie zu** (für eine spezifische Standard-Schaltfläche): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → wählen Sie eine Schaltfläche aus → *<Translate android="true" ids="shared_string_appearance"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Erscheinungsbild der Schaltfläche](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Gehen Sie zu** (für benutzerdefinierte Schaltflächen): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → Drei-Punkte-Menü → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Gehen Sie zu** (für eine spezifische Standard-Schaltfläche): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → wählen Sie eine Schaltfläche aus → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
 
 Die Funktion *Erscheinungsbild der Schaltfläche* ermöglicht es Ihnen, das Aussehen von Schaltflächen auf Ihrer Kartenoberfläche vollständig anzupassen. Diese Anpassungsoptionen sind sowohl für *Schnellaktion (Benutzerdefinierte Schaltflächen)* als auch für *Standard-Schaltflächen* verfügbar und bieten eine umfassende Kontrolle über das Erscheinungsbild der Kartenoberfläche und ermöglichen präzise Anpassungen des Schaltflächendesigns.
 
@@ -537,8 +602,8 @@ Die Funktion *Erscheinungsbild der Schaltfläche* ermöglicht es Ihnen, das Auss
 
 - **Symbol**. Wählen Sie aus einer Liste von Symbolen, die bereits hinzugefügte Aktionen repräsentieren, um Funktionen auf einen Blick zu erkennen.
 - **Eckenradius**. Passen Sie diese Einstellung an, um die Form der Schaltfläche zu ändern, von scharfen, quadratischen Ecken bis hin zu glatten, abgerundeten Kanten.
-- **Größe**. Wählen Sie die Schaltflächengröße, die am besten zu Ihrem Bildschirm passt und bei Bedarf hervorsticht. Für *Standard-Schaltflächen* sind die Größen voreingestellt und können nicht angepasst werden.
-- **Hintergrunddeckkraft**. Steuern Sie die Sichtbarkeit des Schaltflächenhintergrunds. Sie können ihn vollständig sichtbar oder teilweise transparent einstellen oder nur den Rahmenschatten und das Symbol anzeigen.
+- **Größe**. Wählen Sie die Schaltflächengröße, die am besten zu Ihrem Bildschirm passt und bei Bedarf hervorsticht. 
+- **Hintergrunddeckkraft** (Android) / **Hintergrund** (iOS). Steuern Sie die Sichtbarkeit des Schaltflächenhintergrunds. Sie können ihn vollständig sichtbar oder teilweise transparent einstellen oder nur den Rahmenschatten und das Symbol anzeigen.
 
 
 ## Sonstiges {#other}

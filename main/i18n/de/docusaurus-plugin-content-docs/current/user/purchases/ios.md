@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  iOS-Käufe
 ---
@@ -53,6 +53,25 @@ Sie können die App über diesen Link herunterladen - [OsmAnd Maps im Apple App 
 
 In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für die Regionen USA und Europa. Für andere Regionen sind die Preise in den lokalen Währungen äquivalent.
 
+<!--
+
+:::danger February Sale
+
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+
+-->
 
 
 |    | OsmAnd Kostenlos   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
@@ -79,8 +98,8 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografiedaten](../plugins/topography.md#overview)<br/>(Höhenlinien und Gelände) | **-** | ✔ | ✔ |
-| [Koordinatenraster – Farbanpassung](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D-Track-Visualisierung](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Koordinatenraster – Farbanpassung](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D-Track-Visualisierung](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautische Tiefen](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Reiseführer (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Unterstützung für externe Sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -93,7 +112,7 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [Fahrzeugmetrik-Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 Widgets kostenlos**</summary><ul><li>*Fahrzeuggeschwindigkeit*</li><li>*Motordrehzahl*</li></ul></details> | <details><summary>**2 Widgets kostenlos**</summary><ul><li>*Fahrzeuggeschwindigkeit*</li><li>*Motordrehzahl*</li></ul></details> | ✔ |
 | [Kartenmarkierungswerkzeug](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online-Kartenquellen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb/mbtiles Kartenunterstützung](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [SQLitedb/mbtiles Kartenunterstützung](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favoritenpunkte](../map/point-layers-on-map.md)<br/>Lesezeichen und Wegpunkte | ✔ | ✔ | ✔ |
 | [Audio-/Bild-/Videopunkte](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -114,7 +133,7 @@ Derzeit umfasst das Pro-Abonnement die folgenden Funktionen:
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Sichern und Wiederherstellen Ihrer Daten, Synchronisieren von Daten mit dem [OsmAnd-Webportal](https://www.osmand.net/map). |
 | [3D-Relief](../plugins/topography.md#3d-relief) | Ermöglicht es Ihnen, ein maßstabsgetreues Modell Ihrer Nachbarschaft oder eines ganzen Kontinents zu betrachten. |
 | [Höhen-Widgets - Höhe: Kartenmitte](../widgets/info-widgets.md#elevation-map-center) | Ermöglicht es Ihnen, die Höhe der aktuellen Kartenmitte über dem Meeresspiegel zu ermitteln.  |
-| [Live](../personal/maps-resources.md#live-updates) | OsmAnd-Karten werden alle 15 Minuten nach einer Verbesserung auf [OpenStreetMap](https://www.openstreetmap.org/) aktualisiert. |
+| [Live-Updates](../personal/maps-resources.md#live-updates) | OsmAnd-Karten werden alle 15 Minuten nach einer Verbesserung auf [OpenStreetMap](https://www.openstreetmap.org/) aktualisiert. |
 | [Wetter-Plugin](../plugins/weather.md) | 24-stündige stündliche Vorhersage für 7 Tage im Voraus auf der Karte. |
 | [Fahrzeugmetrik-Plugin (OBD-II)](../plugins/vehicle-metrics.md) | Ermöglicht den Anschluss eines OBD-II-Scanners, um detaillierte Fahrzeugdaten in der OsmAnd-App anzuzeigen und die Informationen in Track-Aufzeichnungen zu speichern. Informationen zur Fahrzeuggeschwindigkeit und Motordrehzahl sind für OsmAnd kostenlos verfügbar.  |
 | [Routenlinie anpassen](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Ändern der Farbe und Breite der Routenlinie während der Navigation. |
@@ -135,7 +154,7 @@ or
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Weiter mit OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/pro_new.png)
 
 ### Maps+ Kauf {#maps-purchase}
 
@@ -143,7 +162,7 @@ or
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tippen Sie auf die Liste der Maps+-Funktionen → Weiter mit Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## Alte Abonnements (vor 4.0) {#legacy-subscriptions-prior-40}

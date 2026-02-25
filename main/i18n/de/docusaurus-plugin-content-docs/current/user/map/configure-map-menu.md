@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  Karte konfigurieren
 ---
@@ -27,7 +27,7 @@ Abschnitt **Anzeigen**:
 
 Abschnitt **Topografie**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_andr.png)  
+![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Abschnitt **OpenStreetMap**:  
 
@@ -43,27 +43,27 @@ Abschnitte **Routen und Kartenrendering**:
 
 Abschnitt **Auf der Karte anzeigen**:  
 
-![Karte konfigurieren iOS](@site/static/img/map/configure_map_show1_ios.png)  
+![Karte konfigurieren Android](@site/static/img/map/configure_map_show1_ios.png)  
 
 Abschnitt **Topografie**:  
 
-![Karte konfigurieren iOS](@site/static/img/map/configure_map_topography_ios.png)  
+![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_ios.png)  
 
 Abschnitt **OpenStreetMap**:  
 
-![Karte konfigurieren iOS](@site/static/img/map/configure_map_osm_ios.png)  
+![Karte konfigurieren Android](@site/static/img/map/configure_map_osm_ios.png)  
 
 Abschnitt **Routen**:  
 
-![Karte konfigurieren iOS](@site/static/img/map/configure_map_routes_new_ios.png)
+![Karte konfigurieren Android](@site/static/img/map/configure_map_routes_new_ios.png)
 
 Abschnitte **Kartentyp und Kartenstil**:  
 
-![Karte konfigurieren iOS](@site/static/img/map/configure_map_style_ios.png)
+![Karte konfigurieren Android](@site/static/img/map/configure_map_style_ios.png)
 
 Abschnitte **Überlagerung/Unterlagerung und Sprache**:  
 
-![Karte konfigurieren iOS](@site/static/img/map/configure_map_overlay_ios.png)
+![Karte konfigurieren Android](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -83,9 +83,10 @@ Das Menü **<Translate android="true" ids="configure_map"/>** ist in zwei Katego
 
 ## Kartenebenen {#map-layers}
 
-- [Vektorkartenebene](../map/vector-maps.md) - zeigt alle Vektorkarteninformationen an, einschließlich OpenStreetMap, Höhenlinien und nautische Daten.
-- [Karten-Rasterquellen](../map/raster-maps.md#select-raster-maps) - ermöglicht die Auswahl von Untergrund- / Hauptquellen- / Überlagerungskarten mit Transparenzstufen.
+- [Vektorkartenebene](../map/vector-maps.md) - zeigt alle Vektorkarteninformationen an, einschließlich OpenStreetMap, Konturlinien und nautische Daten.
+- [Karten-Rasterquellen](../map/raster-maps.md#layers) - ermöglicht die Auswahl von Untergrund- / Hauptquellen- / Überlagerungskarten mit Transparenzstufen.
 - [Gelände](../plugins/topography.md#hillshade-slope-and-altitude-layers) - zeigt Hang- / Schummerungsinformationen, 3D-Relief an.
+- [3D-Gebäude](../map/vector-maps.md#3d-buildings) - zeigt volumetrische Gebäudermodelle auf der Karte an.
 - [Grenzen der heruntergeladenen Karten](../map/vector-maps.md#show-borders) - zeigt alle Grenzen der heruntergeladenen Karten auf der Hauptkartenebene an.
 - [Koordinatennetz](../map/vector-maps.md#coordinates-grid) - steuert die Sichtbarkeit des Koordinatennetzes auf der Karte.
 
@@ -107,8 +108,9 @@ Das Menü **<Translate android="true" ids="configure_map"/>** ist in zwei Katego
 
 Die Einstellungen für den Kartenstil hängen vom angezeigten Hauptkartenstil ab. Mehr dazu können Sie im Artikel [Kartenstile](../map/vector-maps) lesen.
 
-   - [Kartenstil](../map/vector-maps.md#default-map-styles) - umfasst OsmAnd (Stadt), Topo, Nautisch und andere.
+   - [Kartenstil](../map/vector-maps.md#map-styles) - umfasst OsmAnd (Stadt), Topo, Nautisch und andere.
    - [Kartenmodus](../map/vector-maps.md#map-mode) - ermöglicht die Auswahl der Kartenansicht und Navigation je nach Tageszeit.
+   - [Globusansicht](../map/interact-with-map.md#globe-view) - schaltet die Karte zwischen der standardmäßigen flachen Ansicht und einer sphärischen Erdansicht um.
    - [Kartenvergrößerung](../map/vector-maps.md#map-magnifier) - ermöglicht die Änderung der Vergrößerung der Karte.
    - [Textgröße](../map/vector-maps.md#text-size) - ermöglicht das Vergrößern oder Verkleinern der Textgröße auf der Karte.
    - [Kartensprache](../map/vector-maps.md#map-language) - ermöglicht die Auswahl der bevorzugten Sprache, die auf der Karte angezeigt wird.
@@ -123,4 +125,4 @@ Für jedes ausgewählte Profil im Android-System können Sie die Reihenfolge der
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
-![Menüpunkte Karte konfigurieren](@site/static/img/settings/configure-screen-ui-customization.png)
+![Kartenkonfigurationspunkte](@site/static/img/settings/configure-screen-ui-customization.png)

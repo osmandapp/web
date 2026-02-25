@@ -1,5 +1,5 @@
 ---
-source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
+source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
 sidebar_position: 1
 title:  Android-Käufe
 ---
@@ -107,8 +107,9 @@ Die nachstehende Tabelle enthält Einzelheiten zu den Funktionen, die sowohl in 
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Unterstützung für externe Sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografische Daten](../plugins/topography.md#overview)<br/>(Höhenlinien und Gelände) | **-** | ✔ | ✔ |
-| [Koordinatenraster – Farbanpassung](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D-Track-Visualisierung](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Koordinatenraster – Farbanpassung](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D-Gebäude – Farbanpassung](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D-Track-Visualisierung](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautische Tiefen](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Beliebte Orte (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage - Reiseführer](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
@@ -121,7 +122,7 @@ Die nachstehende Tabelle enthält Einzelheiten zu den Funktionen, die sowohl in 
 | [Fahrzeugmetrik-Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 Widgets kostenlos**</summary><ul><li>*Fahrzeuggeschwindigkeit*</li><li>*Motordrehzahl*</li></ul></details> | <details><summary>**2 Widgets kostenlos**</summary><ul><li>*Fahrzeuggeschwindigkeit*</li><li>*Motordrehzahl*</li></ul></details> | ✔ |
 | [Kartenmarkierungswerkzeug](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online-Kartenquellen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb-Karte](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [SQLitedb-Karte](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favoritenpunkte](../map/point-layers-on-map.md)<br/>Lesezeichen und Wegpunkte | ✔ | ✔ | ✔ |
 | [Audio-/Bild-/Video-Punkte](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -170,7 +171,7 @@ oder
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Mit OsmAnd Pro fortfahren*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Maps+ Kauf {#maps-purchase}
 
@@ -178,7 +179,7 @@ oder
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tippen Sie auf die Liste der Maps+-Funktionen → Mit Maps+ fortfahren*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Ältere Abonnements (vor 4.0) {#legacy-subscriptions-prior-40}

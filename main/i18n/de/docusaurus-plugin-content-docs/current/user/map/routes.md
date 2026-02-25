@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title:  Routen
 ---
 
@@ -119,7 +119,7 @@ Einige Straßenabschnitte können Teil vieler Routen sein, aber sie können indi
 - _Skirouten_ im Kartenstil _OsmAnd Standard_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Skirouten sind eine spezielle Gruppe von [Routen](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typischerweise können diese Routen mit dem Kartenstil [Winter und Ski](../map/vector-maps.md#winter-and-ski) mit allen sichtbaren [Pisten](https://wiki.openstreetmap.org/wiki/Pistes) verwendet werden. Wenn ein anderer Kartenstil aktiv ist, wird ein Banner angezeigt, das einen Wechsel zu [Winter und Ski](../map/vector-maps.md#winter-and-ski) vorschlägt (*nur Android*) und nur Pisten angezeigt werden. Tippen Sie auf ***Wechseln***, um den Kartenstil zu ändern, ohne den aktuellen Bildschirm zu verlassen, oder ***Später***, um das Banner zu verstecken.
+Skirouten sind eine spezielle Gruppe von [Routen](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typischerweise können diese Routen mit dem Kartenstil [Winter und Ski](../map/map-styles.md#winter-and-ski) mit allen sichtbaren [Pisten](https://wiki.openstreetmap.org/wiki/Pistes) verwendet werden. Wenn ein anderer Kartenstil aktiv ist, wird ein Banner angezeigt, das einen Wechsel zu [Winter und Ski](../map/map-styles.md#winter-and-ski) vorschlägt (*nur Android*) und nur Pisten angezeigt werden. Tippen Sie auf ***Wechseln***, um den Kartenstil zu ändern, ohne den aktuellen Bildschirm zu verlassen, oder ***Später***, um das Banner zu verstecken.
 
 
 ### Schneemobil-Strecken {#snowmobile-trails}
@@ -140,7 +140,7 @@ Schneemobil-Strecken sind in [OpenStreetMap](https://wiki.openstreetmap.org/wiki
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Wildwasserrouten](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) werden zusammen mit Zugangssymbolen und Gefahrenzonen für den [Wildwassertourismus](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map) angezeigt.  
+[Wildwasserrouten](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) werden zusammen mit Zugangssymbolen und Gefahrenzonen für den [Wildwassertourismus](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map) angezeigt. Weitere Informationen zu [Wildwasser-Features](../map-legend/osmand.md#whitewater-features) in der Kartenlegende für Stromschnellengrade, Flussabschnittsgrade und verwandte Symbole.
 
 
 ### Laufstrecken {#running-routes}
@@ -180,7 +180,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,r
 
 - Um die gewünschten Routen auf der Karte anzuzeigen, aktivieren Sie sie in der *Routenliste* des Menüs [Karte konfigurieren](../map/configure-map-menu.md).
 - OsmAnd kann [in OpenStreetMap vorhandene Routen](https://wiki.openstreetmap.org/wiki/Relation:route) hervorheben. Sie können durch Tippen auf [das Symbol auf der Route](#save-as-a-track) ausgewählt werden, und wenn die sichtbare Menge an Routen korrekt konfiguriert ist, können Sie der Farbe und den Symbolen folgen.
-- Die Hauptroutentypen können auch nach Klassen und Unterklassen gefiltert werden, sodass Sie nur spezifische Gruppen innerhalb jedes Typs anzeigen können. Zum Beispiel können Sie Wanderrouten nach **OSMC-Symbolen** als Klassen und nach *internationalen, nationalen, regionalen* oder *lokalen Netzwerken* als Unterklassen anzeigen.
+- Die Hauptroutentypen können auch nach Klassen und Unterklassen gefiltert werden, sodass Sie nur spezifische Gruppen innerhalb jedes Typs anzeigen können. Zum Beispiel können Sie Wanderrouten nach **OSMC-Symbolen** als Klassen und nach *internationalen, nationalen, regionalen* oder *lokalen Netzwerken* als Unterklassen anzeigen, die derzeit verfügbar sind, wenn das [OsmAnd Development](../plugins/development.md)-Plugin aktiviert ist.
 - Sie können mit dem Werkzeug [Route planen](../plan-route/create-route.md) einen Track über den Routen erstellen.  
 - Wenn mehrere Routen entlang derselben Straße verlaufen, wird jede Route als separate halbtransparente Linie dargestellt, die über den anderen liegt. 
 - Wenn Sie auf einen Ort tippen, an dem mehrere Routen überlappen, wird ein Kontextmenü mit allen Routen angezeigt, die durch diesen Punkt verlaufen. 
@@ -395,6 +395,6 @@ Sie können Filter mit den Schaltern aktivieren oder deaktivieren, und einige Ab
 - [Kartenkontextmenü](./map-context-menu.md)
 - [Karte konfigurieren](./configure-map-menu.md)
 - [Tracks](./tracks/index.md)
-- [Track-Kontextmenü](./tracks/track-context-menu.md)
+- [Tracks Kontextmenü](./tracks/track-context-menu.md)
 - [Öffentlicher Nahverkehr](./public-transport.md)
 - [Erscheinungsbild der Navigationsroute](../navigation/guidance/map-during-navigation.md#route-line-appearance)

@@ -1,5 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -65,8 +65,8 @@ Auf einigen Android-Geräten kann die Höhe ungenau angezeigt werden. Um dieses 
 
 ### Höhe: Kartenzentrum {#elevation-map-center}
 
-:::info Kostenpflichtige Funktion
-&nbsp;<ProFeature/> Um Zugriff auf das Widget *Höhe: Kartenzentrum* zu erhalten, abonnieren Sie OsmAnd Pro für [Android](../purchases/android.md#pro-features) oder [iOS](../purchases/ios.md#pro-features).  
+:::info Pro-Funktion
+Das Widget *Höhe: Kartenzentrum* ist eine kostenpflichtige [**OsmAnd Pro**](../purchases/index.md)-Funktion <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -417,13 +417,13 @@ Das Radiuslineal-Widget zeigt die Entfernung zwischen Ihrem Standort und dem Mit
 
 <TabItem value="android" label="Android">
 
-![Tachometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Tachometer](@site/static/img/widgets/speedometer_2_andr.png)
+![Tachometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Tachometer](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Tachometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Tachometer](@site/static/img/widgets/speedometer_2_ios.png)
+![Tachometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Tachometer](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -431,8 +431,12 @@ Das Radiuslineal-Widget zeigt die Entfernung zwischen Ihrem Standort und dem Mit
 
 **Tachometer-Widget** ist eine grafische Anzeige der aktuellen Fahrzeuggeschwindigkeit basierend auf *vom GPS empfangenen Daten*. Es ermöglicht Ihnen, in Echtzeit die Übereinstimmung Ihrer Geschwindigkeit mit der zulässigen Geschwindigkeitsbegrenzung zu überwachen. Die zulässige Geschwindigkeitsbegrenzung wird durch [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Key:maxspeed) für einen bestimmten Straßenabschnitt und die OsmAnd-Einstellung [Geschwindigkeitsbegrenzungstoleranz](../navigation/guidance/voice-navigation.md#speed-limit) bereitgestellt.  
 
+Wenn Ihre aktuelle Geschwindigkeit der konfigurierten Geschwindigkeitsbegrenzungstoleranz nahekommt, ändert das Widget sein Aussehen, um eine frühe Warnung zu geben. Wenn die Geschwindigkeitsbegrenzung überschritten wird (unter Berücksichtigung der Toleranz), wechselt das Widget zu einer auffälligeren „Überschreitung“-Anzeige. Die Warn-/Überschreitungsanzeige wird durch Änderung der Widget-Farben (Hintergrund, Geschwindigkeitswert und Einheiten) angezeigt. Die Änderung des Aussehens kann animiert sein, um die Aufmerksamkeit zu erregen, wenn die Toleranz- oder Grenzschwelle überschritten wird.
+
+![Tachometer](@site/static/img/widgets/speed_alert.gif)
+
 - In den *Tachometer-Einstellungen* können Sie die Größe (**Höhe**) des Widgets auf dem Anwendungsbildschirm als *Klein*, *Mittel* oder *Groß* auswählen.
-- Sie können angeben, wann Sie eine **Warnung bei Geschwindigkeitsüberschreitung** erhalten möchten, indem Sie *Immer* oder *Bei Überschreitung* auswählen.
+- Sie können angeben, wann Sie eine **Warnung bei Geschwindigkeitsüberschreitung** erhalten möchten, indem Sie *Immer* oder *Bei Überschreitung* auswählen. Wenn die Geschwindigkeitsbegrenzungswarnung auf *Immer* eingestellt ist, kann das Widget sowohl die „Annäherung/Toleranz“- als auch die „Überschreitung“-Anzeige zeigen. Wenn die Geschwindigkeitsbegrenzungswarnung auf *Bei Überschreitung* eingestellt ist, wird die Anzeige nur angezeigt, nachdem Sie die Geschwindigkeitsbegrenzung überschritten haben.
 
 <table class="blogimage">
     <tr>
@@ -768,7 +772,7 @@ Die **Kamera-Widgets** ermöglichen es Ihnen, die Ausrichtung zwischen der OsmAn
 
 <InfoAndroidOnly />
 
-![Widget für verfügbaren RAM](@site/static/img/widgets/available_RAM_2_andr.png)
+![Widgets für Durchschnittsgeschwindigkeit](@site/static/img/widgets/available_RAM_2_andr.png)
 
 Das **Verfügbarer RAM**-Widget ist ein Werkzeug zur Überwachung der Speichernutzung Ihres Geräts in Bezug auf OsmAnd. Es liefert detaillierte Daten zur Optimierung der Anwendungsleistung.
 

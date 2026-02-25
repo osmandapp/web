@@ -1,5 +1,5 @@
 ---
-source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
+source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Übersicht {#overview}
+
+:::tip Kauf
+Android Auto ist eine [bezahlte Funktion](../purchases/index.md).  
+:::
 
 ![Android Auto-Bildschirm](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -59,8 +63,8 @@ Wenn Sie die Anwendung öffnen, wird eine Liste von Kategorien angezeigt. Zur ei
 - [OsmAnd-Menü](#destination-points). Enthält eine Liste der verfügbaren Optionen zur Festlegung eines Routenendpunkts oder für eine freie Fahrt.
 - [Einstellungen](#voice-prompts). Diese Schaltfläche ist verantwortlich für: 1. den Zugriff zum Ein-/Ausschalten von *Sprachansagen*, wenn Sie auf der ausgewählten Route navigieren; 2. die Anzeige von Routendetails (Zeit und Entfernung) für den nächsten Halt.
 - [Suche](#search). Durch Tippen auf die Schaltfläche wird ein Bildschirm mit Zugriff auf die Suchfunktionen geöffnet.
-- [Mein Standort](../widgets/map-buttons.md#my-location-and-zoom). Verschiebt den sichtbaren Teil der Karte, sodass Ihr aktueller Standort in der Mitte des Bildschirms liegt.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Ermöglicht das Vergrößern und Verkleinern des sichtbaren Teils der Karte. Die Pinch-to-Zoom-Geste ist für die Kartenvergrößerung verfügbar. Wenn sie vom Head Unit nicht unterstützt wird, erfolgt die Zoom-Anpassung durch Doppel-Tipp und Wischgeste.
+- [Mein Standort](../widgets/map-buttons.md#my-position-and-zoom). Verschiebt den sichtbaren Teil der Karte, sodass Ihr aktueller Standort in der Mitte des Bildschirms liegt.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Ermöglicht das Vergrößern und Verkleinern des sichtbaren Teils der Karte. Die Pinch-to-Zoom-Geste ist für die Kartenvergrößerung verfügbar. Wenn sie vom Head Unit nicht unterstützt wird, erfolgt die Zoom-Anpassung durch Doppel-Tipp und Wischgeste.
 - [Kompass](../widgets/map-buttons.md#compass). Zeigt an, welcher der vier verfügbaren Kartenausrichtungsmodi auf dem Bildschirm Ihres Geräts ausgewählt ist.
 
 
@@ -78,7 +82,7 @@ Damit OsmAnd in *Android Auto* funktioniert, müssen Sie Ihr Android-Gerät mit 
 
 - Sie müssen eine **kostenpflichtige Version** der App erwerben oder ein [Abonnement](../purchases/android.md#free-and-paid-features) abschließen. Überprüfen Sie Ihr aktuelles Abonnement hier: *Menü → Einstellungen → Käufe*.  
 
-- *Android Auto* verwendet das erste [OsmAnd-Fahrprofil](#profile-first) in der Profilliste für die Navigation. Setzen Sie das bevorzugte Profil an die erste Stelle, mit Ausnahme des Profils *Karte ansehen*, da dieses von *Android Auto* nicht gelesen wird. Gehen Sie dazu zu OsmAnd *Menü → Einstellungen → App-Profile → Profilliste bearbeiten* → verschieben Sie Ihr [**Fahrprofil**](#profile-first) an die erste Stelle oder nach dem Profil *Karte ansehen*.  
+- *Android Auto* verwendet das erste [OsmAnd-Fahrprofil](#profile-first) in der Profilliste für die Navigation. Setzen Sie das bevorzugte Profil an die erste Stelle, mit Ausnahme des Profils *Karte ansehen*, da dieses von *Android Auto* nicht gelesen wird. Gehen Sie dazu zu OsmAnd *Menü → Einstellungen → App-Profile → Profilliste bearbeiten* → verschieben Sie Ihr [**Fahren**](#profile-first) Profil an die erste Stelle oder nach dem Profil *Karte ansehen*.  
 
 - Es ist wichtig zu bedenken, dass *Android Auto* eine datenintensive Anwendung ist, einschließlich mobiler Daten, und die Qualität des Systems von der Qualität Ihrer Verbindung und der Geschwindigkeit Ihres Internetzugangs abhängen kann.
 
@@ -262,7 +266,7 @@ Dieses Informations-Widget kombiniert Warnungstypen wie **Fußgängerüberwege**
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-Das **Tachometer**-Widget ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* mithilfe von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd-Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Multimediabildschirm des Fahrzeugs anzeigt.
+Das **Tachometer**-Widget ist ein integriertes Oberflächenelement, das die *aktuelle Geschwindigkeit* mithilfe von GPS-Daten und die *Geschwindigkeitsbegrenzung* aus der [OSM-Datenbank](https://wiki.openstreetmap.org/wiki/Key:maxspeed) und den [OsmAnd-Einstellungen](../navigation/guidance/voice-navigation.md#speed-limit) auf dem Multimediabildschirm des Fahrzeugs anzeigt. Wenn Ihre aktuelle Geschwindigkeit der konfigurierten Toleranz für die Geschwindigkeitsbegrenzung nähert oder diese überschreitet, ändert das Widget sein Aussehen (Farben), um eine Warnung zu geben. Die Änderung des Aussehens kann animiert sein.
 
 - Das **Tachometer-Widget** ist [*profilabhängig*](../personal/profiles.md), d. h. wenn Sie die Einstellungen für ein Profil ändern, werden sie nicht auf ein anderes angewendet.
 - Es gibt keine Möglichkeit, die Anzeige des **Tachometer-Widgets** direkt in *Android Auto* anzupassen. Sie müssen es in der OsmAnd-App konfigurieren, bevor Sie die Navigation starten und Ihr Gerät mit dem Fahrzeug verbinden.
