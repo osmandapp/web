@@ -44,8 +44,15 @@
 }
 .tipsItem {
     display: flex !important;
+    align-items: flex-start !important;
     padding: 24px 16px !important;
     gap: 24px !important;
+}
+.tipsItemClickable {
+    cursor: pointer !important;
+}
+.tipsItemClickable:hover {
+    background-color: #E9F0FB !important;
 }
 .tipsIcon {
     fill: var(--svg-icon-color) !important;
