@@ -1,5 +1,5 @@
 import { ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
 import {
@@ -25,6 +25,35 @@ import { SHARE_TYPE } from '../share/shareConstants';
 export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
 };
+
+function FavInfo({ marker, currentLoc, unitsSettings }) {
+    const { t } = useTranslation();
+
+    const comma = marker.locDist > 0 && marker?.layer?.options?.address ? ', ' : '';
+    const address = marker?.layer?.options?.address ? `${comma}${marker.layer.options.address}` : '';
+
+    return (
+        <div style={{ display: 'flex', alignItems: 'centre' }}>
+            {marker.locDist > 0 && (
+                <ListItemIcon sx={{ mr: '-23px !important', fill: getColorLocation(currentLoc), mt: '2px' }}>
+                    <DirectionIcon />
+                </ListItemIcon>
+            )}
+            {marker.locDist > 0 && (
+                <Typography
+                    variant="body2"
+                    className={styles.favLocationInfo}
+                    sx={{ color: getColorLocation(currentLoc) }}
+                >
+                    {`${convertMeters(marker.locDist, unitsSettings.len, LARGE_UNIT).toFixed(0)} ${t(getLargeLengthUnit({ unitsSettings }))}`}
+                </Typography>
+            )}
+            <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
+                {address}
+            </Typography>
+        </div>
+    );
+}
 
 export function addFavoriteToMap({ group, marker, ctx, sharedFile = false, mapObj = false, openedFolder = undefined }) {
     const newSelectedGpxFile = {};
@@ -64,67 +93,44 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
     const ctx = useContext(AppContext);
     const [searchParams] = useSearchParams();
 
-    const { t } = useTranslation();
-
     const { ref, inView } = useInView();
 
     const [openActions, setOpenActions] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
     const anchorEl = useRef(null);
+    const menuItemRef = useRef(null);
 
     const favId = getFavoriteId(marker.layer);
 
-    function setHover(show) {
-        ctx.setSelectedWptId({
-            id: favId,
-            show,
-            type: FAVORITE_FILE_TYPE,
-            obj: show ? marker.layer : undefined,
-            markerOptions: show
-                ? {
-                      color: marker.layer.options?.color,
-                      background: marker.layer.options?.background,
-                      iconHtml: marker.layer.options?.icon?.options?.html,
-                  }
-                : undefined,
-        });
-        setIsHovered(show);
-    }
+    const setHover = useCallback(
+        (show) => {
+            ctx.setSelectedWptId({
+                id: favId,
+                show,
+                type: FAVORITE_FILE_TYPE,
+                obj: show ? marker.layer : undefined,
+                markerOptions: show
+                    ? {
+                          color: marker.layer.options?.color,
+                          background: marker.layer.options?.background,
+                          iconHtml: marker.layer.options?.icon?.options?.html,
+                      }
+                    : undefined,
+            });
+            if (menuItemRef.current) {
+                menuItemRef.current.classList.toggle(styles.itemHovered, show);
+            }
+        },
+        [favId, marker.layer]
+    );
 
     useEffect(() => {
-        setIsHovered(ctx.selectedWptId?.id === favId);
+        const hovered = ctx.selectedWptId?.id === favId;
+        if (menuItemRef.current) {
+            menuItemRef.current.classList.toggle(styles.itemHovered, hovered);
+        }
     }, [ctx.selectedWptId?.id]);
 
     const sharedFile = smartf?.type === SHARE_TYPE;
-
-    const FavInfo = () => {
-        return (
-            <div style={{ display: 'flex', alignItems: 'centre' }}>
-                {marker.locDist > 0 && (
-                    <ListItemIcon sx={{ mr: '-23px !important', fill: getColorLocation(currentLoc), mt: '2px' }}>
-                        <DirectionIcon />
-                    </ListItemIcon>
-                )}
-                {marker.locDist > 0 && (
-                    <Typography
-                        variant="body2"
-                        className={styles.favLocationInfo}
-                        sx={{ color: getColorLocation(currentLoc) }}
-                    >
-                        {`${convertMeters(marker.locDist, ctx.unitsSettings.len, LARGE_UNIT).toFixed(0)} ${t(getLargeLengthUnit(ctx))}`}
-                    </Typography>
-                )}
-                <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
-                    {getAddress()}
-                </Typography>
-            </div>
-        );
-    };
-
-    function getAddress() {
-        const comma = marker.locDist > 0 && marker?.layer?.options?.address ? ', ' : '';
-        return marker?.layer?.options?.address ? `${comma}${marker.layer.options.address}` : '';
-    }
 
     return useMemo(() => {
         return (
@@ -139,7 +145,8 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                     )}
                     {inView && (
                         <MenuItem
-                            className={`${styles.item} ${isHovered ? styles.itemHovered : ''}`}
+                            ref={menuItemRef}
+                            className={styles.item}
                             id={'se-fav-item-name-' + marker.name}
                             onMouseEnter={() => setHover(true)}
                             onMouseLeave={() => setHover(false)}
@@ -157,7 +164,7 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={marker.name} maxLines={1} />
-                                <FavInfo />
+                                <FavInfo marker={marker} currentLoc={currentLoc} unitsSettings={ctx.unitsSettings} />
                             </ListItemText>
                             {!share && !sharedFile && (
                                 <ThreeDotsButton
@@ -185,5 +192,5 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
                 </div>
             </>
         );
-    }, [inView, marker, marker.locDist, openActions, ctx.openedPopper, isHovered]);
+    }, [inView, marker, openActions, ctx.openedPopper]);
 }
