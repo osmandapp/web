@@ -1,5 +1,5 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title:  Cartes & Données
 ---
@@ -19,6 +19,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### Pourquoi OsmAnd ne propose-t-il pas l'accès à Google Maps ? {#why-does-osmand-not-offer-access-to-google-maps}
 
 OsmAnd est conçu pour prendre en charge OpenStreetMap (OSM) et privilégie cette voie autant que possible. De plus, des restrictions de licence ne permettent pas à OsmAnd d'être distribué avec les données de Google Maps.
+
+### Pourquoi les liens Google Maps ne s'ouvrent-ils pas dans OsmAnd ? {#why-google-maps-links-may-not-open-in-osmand}
+
+Les liens Google Maps comme `https://maps.app.goo.gl/...` ne s'ouvrent peut-être pas dans OsmAnd en un seul appui depuis les SMS ou les messageries. Même si OsmAnd peut analyser ces liens, Android 12+ impose les App Links vérifiés : les domaines principaux de Google (par exemple `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) sont réservés aux services système de Google, de sorte que les applications tierces ne peuvent pas les intercepter automatiquement. Par conséquent, le lien s'ouvrira généralement dans une application/service Google.
+
+**Solution de contournement :** *appui long sur le message → Partager → sélectionner OsmAnd*. Cela envoie le lien à OsmAnd, où il peut être analysé et ouvert en tant qu'emplacement.
 
 ### Chargement lent des cartes sur Android 11, 12 (carte SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
@@ -64,7 +70,7 @@ Un chemin correct ne provoquera aucune erreur d'autorisation d'écriture de la p
 
 ### Suppression des données cartographiques après la mise à jour de l'application (si « Stockage multi-utilisateurs 1 » est sélectionné) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
-Dans la version Android d'OsmAnd, la sélection de *Stockage multi-utilisateurs 1* comme emplacement de stockage peut entraîner la suppression de toutes les [cartes locales](../personal/maps-resources.md#local) chaque fois que l'application est mise à jour automatiquement, par exemple de la version 4.1.9 à 4.1.10, 4.1.11, ou ultérieure (**Android 11, 12**). Ce problème est documenté sur [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
+Dans la version Android d'OsmAnd, la sélection de *Stockage multi-utilisateurs 1* comme emplacement de stockage peut entraîner la suppression de toutes les [cartes locales](../personal/maps-resources.md#local-menu) chaque fois que l'application est mise à jour automatiquement, par exemple de la version 4.1.9 à 4.1.10, 4.1.11, ou ultérieure (**Android 11, 12**). Ce problème est documenté sur [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
 Pour éviter de perdre vos données cartographiques lors des mises à jour, envisagez ces solutions :
 
@@ -164,6 +170,6 @@ Vous pouvez laisser des notes et marquer des lieux sur la carte sous diverses fo
 
 - *[Notes OSM](../plugins/osm-editing.md#create--modify-osm-note)*. Ce sont des rapports que vous pouvez créer pour signaler des erreurs ou des informations manquantes sur OpenStreetMap. Activez le plugin d'édition OSM dans le *Menu OsmAnd → Plugins*. Pour ajouter une note OSM, faites un *appui long → Actions → Ajouter une note OSM*.
 
-- *[POI (Points d'Intérêt)](../map/point-layers-on-map.md#points-of-interest-pois)*. Ce sont des points prédéfinis provenant de la source de données d'OpenStreetMap, tels que des restaurants, des parcs ou des monuments. Vous pouvez afficher les POI en activant la couche POI dans le menu *Configurer la carte* ou en sélectionnant une catégorie.
+- *[POI (Points d'Intérêt)](../map/point-layers-on-map.md#points-of-interest-pois)*. Ce sont des points prédéfinis provenant de la source de données d'OpenStreetMap, tels que des restaurants, des parcs ou des monuments. Vous pouvez afficher les POI en activant la superposition POI dans le menu *Configurer la carte* ou en sélectionnant une catégorie.
 
 - *[Recherche](../search/index.md)*. Vous pouvez également utiliser la fonction de recherche pour trouver et marquer des lieux sur la carte.

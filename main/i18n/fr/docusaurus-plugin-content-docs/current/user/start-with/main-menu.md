@@ -1,5 +1,5 @@
 ---
-source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
+source-hash: f1a828f975c96bbfda684d9dc28a964129f8890ae914445426256bb589a6171f
 sidebar_position: 3
 title:  Menu principal
 ---
@@ -44,7 +44,7 @@ L'icône du [Menu principal](../widgets/map-buttons.md#main-menu) '&#8801;' est 
 - Les [Marqueurs de carte](../personal/markers.md) sont un outil qui permet de marquer un lieu sur la carte.
 - [Mes lieux](../personal/myplaces.md) est un menu qui inclut par défaut les Favoris et les traces et peut en plus inclure des [Notes A/V](../plugins/audio-video-notes.md) et des [Éditions OSM](../plugins/osm-editing.md) (si ces plugins sont activés).
 - La [Recherche](../search/index.md) (Android) est un outil qui vous permet de trouver le lieu ou l'objet qui existe sur la carte.
-- Le bouton [Itinéraire](../widgets/map-buttons.md#directions) permet de créer un itinéraire et de démarrer la navigation.
+- Le bouton [Itinéraire](../widgets/map-buttons.md#navigation) permet de créer un itinéraire et de démarrer la navigation.
 - [Configurer la carte](../map/configure-map-menu.md) est un menu qui permet de configurer l'affichage de la carte.
 - [Télécharger des cartes](../start-with/download-maps.md) est un menu qui contient tous les fichiers qui peuvent être téléchargés.
 - Les [Guides de voyage (Bêta)](../plan-route/travel-guides.md) (*Android*) sont un outil qui permet d'utiliser le guide Wikivoyage pour votre voyage.

@@ -1,5 +1,5 @@
 ---
-source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
+source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
 sidebar_position: 16
 title:  Métriques du véhicule
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Aperçu {#overview}
 
 :::info Fonctionnalité payante
-Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.
+Le plugin Métriques du véhicule est une [fonctionnalité payante](../purchases/index.md) de l[**OsmAnd Pro**] <ProFeature />. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles gratuitement avec OsmAnd.
 :::
 
 Le **plugin Métriques du véhicule** permet de surveiller en temps réel les données du véhicule via le [protocole OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Les utilisateurs peuvent suivre des métriques essentielles telles que les performances du moteur, l'efficacité du carburant et la vitesse, ce qui permet une maintenance préventive et un dépannage proactifs du véhicule.  

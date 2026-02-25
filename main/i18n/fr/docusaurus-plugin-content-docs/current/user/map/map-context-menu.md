@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -168,7 +168,7 @@ Au-delà des champs listés ci-dessus, OsmAnd peut également afficher des infor
 
 ![Liste de description](@site/static/img/map/description_list_new_android.png) ![Liste de description](@site/static/img/map/description_list_dialog.png)
 
-Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md#wikipedia-article), d'un [Favori](../personal/favorites.md) ou d'un Point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
+Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md#wikipedia-article), d'un [Favori](../personal/favorites.md) ou d'un point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
 
 Si le lieu sélectionné possède un article Wikipedia, un aperçu court est affiché dans cette section. Lorsque l'article complet n'est pas disponible hors ligne, le bouton *Lire sur Wikipedia* apparaît. En l'appuyant, une boîte de dialogue s'ouvre avec des options en fonction de l'accès de l'utilisateur : les utilisateurs avec un abonnement payant peuvent télécharger les données régionales Wikipedia ou ouvrir l'article dans un navigateur, tandis que les utilisateurs gratuits peuvent ouvrir l'article en ligne ou passer à l'écran qui propose un accès hors ligne.
 
@@ -178,7 +178,7 @@ Si le lieu sélectionné possède un article Wikipedia, un aperçu court est aff
 
 ![Liste de description](@site/static/img/map/description_list_new_ios.png)
 
-Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md), d'un [Favori](../personal/favorites.md) ou d'un Point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
+Cette partie contient un extrait de la description d'un [article Wikipedia](../plugins/wikipedia.md), d'un [Favori](../personal/favorites.md) ou d'un point de cheminement. En appuyant, vous pouvez ouvrir la description complète.
 
 </TabItem>
 
@@ -480,7 +480,7 @@ Dans le menu contextuel, il y a des options pour **ajouter** ou **modifier** le 
 
 <TabItem value="ios" label="iOS">  
 
-![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur Android](@site/static/img/map/action_restore_marker_android.png)
+![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur iOS](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 

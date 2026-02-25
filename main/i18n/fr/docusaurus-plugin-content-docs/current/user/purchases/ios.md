@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -55,9 +55,9 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 
 <!--
 
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -69,6 +69,7 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
 
 -->
 
@@ -97,8 +98,8 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Données topographiques](../plugins/topography.md#overview)<br/>(Courbes de niveau et Terrain) | **-** | ✔ | ✔ |
-| [Grille de coordonnées — Personnalisation de la couleur](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [Visualisation de trace 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Grille de coordonnées — Personnalisation de la couleur](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Visualisation de trace 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guides de voyage (Wikipédia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Prise en charge des capteurs externes](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -111,7 +112,7 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | [Widgets de métriques du véhicule](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratuits**</summary><ul><li>*Vitesse du véhicule*</li><li>*Régime moteur*</li></ul></details> | <details><summary>**2 widgets gratuits**</summary><ul><li>*Vitesse du véhicule*</li><li>*Régime moteur*</li></ul></details> | ✔ |
 | [Outil Marqueurs sur la carte](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Sources de cartes en ligne](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Prise en charge des cartes SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Prise en charge des cartes SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Points favoris](../map/point-layers-on-map.md)<br/>marque-pages et points de cheminement | ✔ | ✔ | ✔ |
 | [Points audio/photo/vidéo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [Suivi GPS en ligne OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -132,7 +133,7 @@ Pour le moment, l'abonnement Pro inclut les fonctionnalités suivantes :
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Sauvegardez et restaurez vos données, synchronisez les données avec le [portail web OsmAnd](https://www.osmand.net/map). |
 | [Relief 3D](../plugins/topography.md#3d-relief) | Vous permet d'avoir et d'observer un modèle réduit de votre quartier ou d'un continent entier. |
 | [Widgets d'altitude - Élévation : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Vous permet de connaître l'altitude du centre actuel de la carte par rapport au niveau de la mer.  |
-| [Live](../personal/maps-resources.md#live-updates) | Les cartes OsmAnd sont mises à jour toutes les 15 minutes après une amélioration sur [OpenStreetMap](https://www.openstreetmap.org/). |
+| [Mises à jour en direct](../personal/maps-resources.md#live-updates) | Les cartes OsmAnd sont mises à jour toutes les 15 minutes après une amélioration sur [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin Météo](../plugins/weather.md) | Prévisions horaires sur 24h pour les 7 prochains jours sur la carte. |
 | [Plugin Métriques du véhicule (OBD-II)](../plugins/vehicle-metrics.md) | Permet de connecter un scanner OBD-II pour afficher des données détaillées du véhicule dans l'application OsmAnd et de stocker les informations dans les enregistrements de trace. Les informations sur la vitesse du véhicule et le régime moteur sont disponibles pour OsmAnd gratuit.  |
 | [Personnaliser la ligne d'itinéraire](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Modification de la couleur et de la largeur de la ligne d'itinéraire pendant la navigation. |
@@ -153,7 +154,7 @@ ou
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuer avec OsmAnd Pro*
 
-![Formule Pro](@site/static/img/purchases/pro.png)
+![Formule Pro](@site/static/img/purchases/pro_new.png)
 
 ### Achat de Maps+ {#maps-purchase}
 
@@ -161,7 +162,7 @@ ou
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Appuyez sur la liste des fonctionnalités Maps+ → Continuer avec Maps+*
 
-![Formule Maps+](@site/static/img/purchases/maps.png)
+![Formule Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## Anciens abonnements (antérieurs à la version 4.0) {#legacy-subscriptions-prior-40}

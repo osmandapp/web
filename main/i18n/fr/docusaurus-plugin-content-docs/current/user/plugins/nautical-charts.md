@@ -1,5 +1,5 @@
 ---
-source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
+source-hash: 8bdbb1dbc653745d49be7527b86667e03d733d2fde2a36fca570fbd3b9b02442
 sidebar_position: 7
 title:  Vue Carte marine
 ---
@@ -17,8 +17,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Aperçu {#overview}
 
-:::info Fonctionnalité payante
-Le plugin Vue Carte marine est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
+:::tip Achat
+Le plugin Vue Carte marine est une [fonctionnalité payante](../purchases/index.md).  
 :::
 
 La Vue Carte marine est une représentation graphique détaillée des océans, des mers, des zones côtières et des rivières qui vous aide à naviguer sur l'eau et à connaître les routes populaires, les obstacles sur votre voie navigable, les ports les plus proches, les mouillages et autres points de repère importants.  
@@ -228,7 +228,7 @@ Cette option affiche le niveau d'informations pour les feux de navigation. Vous 
 
 <TabItem value="android" label="Android">  
 
-![Marine Android](@site/static/img/plugins/nautical-charts/marine_android.png)
+![Style Marine sur Android](@site/static/img/plugins/nautical-charts/marine_android.png)
 
 Allez à : *Menu* → *Configurer la carte* → *Style de carte* → *Marine*
 
@@ -236,7 +236,7 @@ Allez à : *Menu* → *Configurer la carte* → *Style de carte* → *Marine*
 
 <TabItem value="ios" label="iOS">
 
-![Marine iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
+![Style Marine sur iOS](@site/static/img/plugins/nautical-charts/marine_ios.png)
 
 Allez à : *Menu* → *Configurer la carte* → *Type de carte* → *Marine*
 
@@ -258,7 +258,7 @@ Pour afficher ces informations, le plugin Nautique doit être activé, et la car
 
 <TabItem value="android" label="Android">  
 
-![Attributs Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
+![Attributs sur Android](@site/static/img/plugins/nautical-charts/marine_details_android.png)
 
 Allez à : *Menu* → *Configurer la carte* → *Style de carte Marine* → *Autres attributs de carte*
 
@@ -266,7 +266,7 @@ Allez à : *Menu* → *Configurer la carte* → *Style de carte Marine* → *Aut
 
 <TabItem value="ios" label="iOS">
 
-![Attributs iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
+![Attributs sur iOS](@site/static/img/plugins/nautical-charts/marine_details_ios.png)
 
 Allez à : *Menu* → *Configurer la carte* → *Type de carte Marine* → *Détails* → *Détail des feux/Détail du fond marin*
 

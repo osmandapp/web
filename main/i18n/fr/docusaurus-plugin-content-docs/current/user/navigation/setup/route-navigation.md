@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title:  Préparation de l'itinéraire
 ---
@@ -68,7 +68,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
     - Attendez que l'itinéraire soit calculé. Ensuite, vous pourrez obtenir des informations supplémentaires sur votre itinéraire dans la section *[Détails](./route-details.md#overview)*.
     - Vous pouvez basculer entre différents [types d'itinéraires](./../routing/osmand-routing.md#routing-types) (profils) pour obtenir le meilleur résultat.
     - Ajoutez des [destinations intermédiaires](#intermediate-destinations) (facultatif).
-    - Vous pouvez également changer le point de départ de la [position actuelle](../../map/interact-with-map.md#my-location-and-zoom) à celui souhaité.
+    - Vous pouvez également changer le point de départ de la [position actuelle](../../map/interact-with-map.md#my-position-and-zoom) à celui souhaité.
 
 2. Des [*Paramètres de navigation*](#settings) supplémentaires peuvent être utilisés en fonction de vos objectifs (vous pouvez configurer les routes à éviter ou à préférer, économiser du carburant ou choisir l'itinéraire le plus rapide, etc.).
 
@@ -79,7 +79,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 
 :::note
 
-**L'itinéraire ne peut pas être construit lorsqu'une *[Carte en ligne](../../map/raster-maps.md#select-raster-maps)* est sélectionnée comme source de carte.**
+**L'itinéraire ne peut pas être construit lorsqu'une *[Carte en ligne](../../map/raster-maps.md#layers)* est sélectionnée comme source de carte.**
 
 :::
 
@@ -88,7 +88,7 @@ Avant d'utiliser la navigation hors ligne, assurez-vous que les [cartes requises
 
 Il y a 3 façons d'accéder au menu de navigation :
 
-- Le [*bouton Navigation*](../../widgets/map-buttons.md#directions) sur l'écran de la carte.  
+- Le [*bouton Navigation*](../../widgets/map-buttons.md#navigation) sur l'écran de la carte.  
 - *Itinéraire vers/depuis* dans un [*menu contextuel de la carte*](../../map/map-context-menu.md#directions-to--from).  
 - Section Navigation dans le [*Menu principal*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Il y a 3 façons d'accéder au menu de navigation :
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Définir le lieu de départ (par défaut : [*Ma position actuelle*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Définir le lieu de départ (par défaut : [*Ma position actuelle*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Utiliser pour [définir votre point de destination](#set-target-point).
 - **Ajouter** &nbsp;&#43; - Insérer des [points intermédiaires](../../widgets/nav-widgets.md#distance-to-intermediate) le long de l'itinéraire.
 - **Intervertir** &nbsp;&#8595;&#8593; - Inverser les points de *Départ* et d'*Arrivée*.
@@ -325,7 +325,7 @@ Cette option est disponible dans la version Android de l'application dans la *[L
 Pour reprendre la navigation :
 
 - Utilisez le message d'OsmAnd dans la barre de notification.
-- Utilisez le *Menu d'actions rapides* ou la boîte de dialogue qui apparaît lorsque vous appuyez sur le *[bouton Navigation](../../widgets/map-buttons.md#directions)* (voir capture d'écran).
+- Utilisez le *Menu d'actions rapides* ou la boîte de dialogue qui apparaît lorsque vous appuyez sur le *[bouton Navigation](../../widgets/map-buttons.md#navigation)* (voir capture d'écran).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

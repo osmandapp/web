@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  Configurer la carte
 ---
@@ -27,7 +27,7 @@ Section **Afficher** :
 
 Section **Topographie** :  
 
-![Configurer la carte android](@site/static/img/map/configure_map_topography_andr.png)  
+![Configurer la carte android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Section **OpenStreetMap** :  
 
@@ -77,15 +77,16 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
 
 **Remarques :**
 
-- Pour modifier les informations à l'écran (widgets, icônes), vous pouvez effectuer des réglages dans [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
+- Pour modifier les informations à l'écran (widgets, icônes), vous pouvez effectuer des réglages dans le [<Translate android="true" ids="layer_map_appearance"/>](../widgets/index.md).
 - Les paramètres de Configurer la carte dépendent de votre [profil](../personal/profiles.md).
 - Attention - le menu Configurer la carte **se ferme** lorsque vous touchez le champ de la carte.
 
 ## Couches de la carte {#map-layers}
 
 - [Couche de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de la carte vectorielle, y compris OpenStreetMap, les lignes de contour et les données nautiques.
-- [Sources de cartes raster](../map/raster-maps.md#select-raster-maps) - permet de sélectionner une carte de fond / source principale / de superposition avec des niveaux de transparence.
+- [Sources de cartes raster](../map/raster-maps.md#layers) - permet de sélectionner une carte de fond / source principale / de superposition avec des niveaux de transparence.
 - [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - affiche les informations de pente / d'ombrage, le relief 3D.
+- [Bâtiments 3D](../map/vector-maps.md#3d-buildings) - affiche les modèles de bâtiments volumétriques sur la carte.
 - [Bordures des cartes téléchargées](../map/vector-maps.md#show-borders) - affiche toutes les bordures des cartes téléchargées sur la couche de la carte principale.
 - [Grille de coordonnées](../map/vector-maps.md#coordinates-grid) - contrôle la visibilité de la grille de coordonnées sur la carte.
 
@@ -107,8 +108,9 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
 
 Les paramètres de style de carte dépendent du style de carte principal affiché. Vous pouvez en savoir plus à ce sujet dans l'article [Styles de carte](../map/vector-maps).
 
-   - [Style de carte](../map/vector-maps.md#default-map-styles) - inclut OsmAnd (Ville), Topo, Nautique, et autres.
+   - [Style de carte](../map/vector-maps.md#map-styles) - inclut OsmAnd (Ville), Topo, Nautique, et autres.
    - [Mode carte](../map/vector-maps.md#map-mode) - permet de sélectionner la vue de la carte et la navigation en fonction de l'heure de la journée.
+   - [Vue globe](../map/interact-with-map.md#globe-view) - bascule la carte entre la vue plate standard et une vue sphérique de la Terre.
    - [Loupe de carte](../map/vector-maps.md#map-magnifier) - permet de modifier l'agrandissement de la carte.
    - [Taille du texte](../map/vector-maps.md#text-size) - permet d'augmenter ou de diminuer la taille du texte sur la carte.
    - [Langue de la carte](../map/vector-maps.md#map-language) - permet de sélectionner la langue préférée affichée sur la carte.

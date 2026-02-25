@@ -1,5 +1,5 @@
 ---
-source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
+source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Dans la section **Cartes et ressources**, vous pouvez gérer les cartes *en ligne* et *hors ligne*, ainsi que d'autres ressources utilisées dans OsmAnd. Par exemple, vous pouvez télécharger, supprimer, renommer, vider le cache, mettre à jour et vérifier la taille, et effectuer différentes actions.
 
-OsmAnd fonctionne avec deux types de cartes : les [cartes vectorielles](../map/vector-maps.md) et les [cartes matricielles](../map/raster-maps.md). L'onglet [Local](#local-menu) stocke toutes les cartes et ressources. Les types de cartes disponibles peuvent être téléchargés depuis l'onglet [Téléchargements](#downloads-menu). Dans l'onglet [Mises à jour](#updates-menu), vous pouvez télécharger les cartes disponibles pour une mise à jour et utiliser les [mises à jour en direct](#live-updates). Vous pouvez également accéder à la fonctionnalité [Cartes supplémentaires](#extra-maps) pour créer vos propres types de cartes.
+OsmAnd fonctionne avec deux types de cartes : les [cartes vectorielles](../map/vector-maps.md) et les [cartes matricielles](../map/raster-maps.md). L'onglet [Local](#local-menu) stocke toutes les cartes et ressources. Les types de cartes disponibles peuvent être téléchargés depuis l'onglet [Téléchargements](#downloads-menu). Dans l'onglet [Mises à jour](#updates-menu), vous pouvez télécharger les cartes disponibles pour une mise à jour et utiliser les [mises à jour en direct](#live-updates). Vous pouvez également accéder à la fonctionnalité [Carte supplémentaire](#extra-maps) pour créer vos propres types de cartes.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -195,7 +195,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources
 L'onglet Local fournit un aperçu de l'utilisation du stockage pour toutes les données OsmAnd sur votre appareil. Les données sont divisées en trois sections codées par couleur pour plus de clarté, avec les éléments triés par taille du plus grand au plus petit. Chaque section n'affiche que les éléments avec des données téléchargées :
 
 - ***Ressources*** (*bleu*).  
-    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -318,7 +318,7 @@ Les **Actions** disponibles dépendent du type de données :
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -449,8 +449,8 @@ L'onglet **Mises à jour** comprend également une section Prévisions météo. 
 
 ## Mises à jour en direct {#live-updates}
 
-:::tip Achat
-Les mises à jour en direct sont une fonctionnalité payante.  
+:::info Fonctionnalité Pro
+Les mises à jour en direct sont une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 

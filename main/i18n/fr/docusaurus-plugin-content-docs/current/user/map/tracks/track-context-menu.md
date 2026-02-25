@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-En haut du panneau d'information, vous pouvez voir le nom de la trace et le symbole utilisé pour la marquer (*Android uniquement*). Le nom de la trace peut être modifié à l'aide de la fonction de renommage dans le [menu Options](#options). Certaines traces (principalement les *[Guides de voyage](../../plan-route/travel-guides.md#manage-as-gpx-track)*) peuvent avoir une courte *[description](#description-and-info)* et/ou une image sous le *Nom de la trace*. Une flèche indique la *Direction vers le point le plus proche de la trace* depuis [Ma position](../../map/interact-with-map.md#my-location-and-zoom).  
+En haut du panneau d'information, vous pouvez voir le nom de la trace et le symbole utilisé pour la marquer (*Android uniquement*). Le nom de la trace peut être modifié à l'aide de la fonction de renommage dans le [menu Options](#options). Certaines traces (principalement les *[Guides de voyage](../../plan-route/travel-guides.md#manage-as-gpx-track)*) peuvent avoir une courte *[description](#description-and-info)* et/ou une image sous le *Nom de la trace*. Une flèche indique la *Direction vers le point le plus proche de la trace* depuis [Ma position](../../map/interact-with-map.md#my-position-and-zoom).  
 
 Le panneau d'information fournit également des informations sur les éléments suivants :
 
@@ -129,7 +129,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Android uniquement*) – Fusionne les segments de trace pour combler les lacunes.
-- **<Translate android="true" ids="analyze_on_map"/>**. Ouvre l'outil [Analyser sur la carte](../tracks/index.md#analyze-track-on-map) pour inspecter l'altitude, la vitesse et la distance de la trace.
+- **<Translate android="true" ids="analyze_on_map"/>**. Ouvre l'outil [Analyser sur la carte](../tracks/index.md#analyze-track-on-map) pour inspecter l'altitude, la vitesse, la distance et toute donnée supplémentaire contenue dans la trace (telles que les données de capteurs externes ou de métriques de véhicule) de la trace.
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Android uniquement*) - Analyse la trace par [intervalles](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
@@ -364,11 +364,11 @@ S'il n'y a *aucune information d'altitude* sur l'itinéraire, vous pouvez l'ajou
 
 ### Calculer l'altitude manquante {#calculate-missing-elevation}
 
-:::note Abonnement OsmAnd Pro
-La fonctionnalité de calcul d'altitude hors ligne n'est disponible que pour les [**abonnés OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Fonctionnalité Pro
+[Calculer l'altitude hors ligne](../../plan-route/create-route.md#get-elevation-data) est une fonctionnalité payante [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
 
 [Cette fonctionnalité](../../plan-route/create-route.md#get-elevation-data) vous permet de calculer le profil d'altitude pour une trace GPX hors ligne pour n'importe quel terrain entre 70 degrés de latitude nord et 70 degrés de latitude sud, en se basant sur les [données des cartes de terrain](../../plugins/topography.md#download-maps). *Les cartes de terrain (3D) doivent être préalablement téléchargées*.
 
@@ -700,7 +700,7 @@ Cette option vous permet de visualiser les valeurs moyennes, minimales et maxima
 
 Ce filtre vous permet d'améliorer les statistiques de votre trace en excluant les données inutiles ou incorrectes. Vous pouvez filtrer les points de trace qui ne correspondent pas aux paramètres de votre trace et, par conséquent, obtenir un graphique et une ligne d'itinéraire visuelle plus précis, sans distorsion ni bruit d'enregistrement. Vous pouvez apporter des modifications avec des filtres tels que *Lissage*, *Vitesse*, *Altitude* et *Précision GPS*, qui masquent les points filtrés de la trace actuelle. De plus, dans le menu *Statistiques*, vous pouvez vérifier comment vos modifications sont affichées sur le graphique avant de les enregistrer. Vous pouvez également *Réinitialiser à l'original* et *Enregistrer comme une copie* de votre trace dans ce filtre sans enregistrer l'original.
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

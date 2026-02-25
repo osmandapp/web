@@ -1,5 +1,5 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title:  BRouter
 ---
@@ -26,9 +26,9 @@ L'algorithme de routage tiers BRouter n'est disponible que pour la version Andro
 
 [BRouter](http://brouter.de/) utilise les données d'OpenStreetMap pour créer un itinéraire, puis l'ajuste en fonction des paramètres spécifiés. Il utilise des itinéraires pré-calculés pour construire rapidement un itinéraire hors ligne. Il vous permet également de personnaliser les profils de routage, qui sont définis par un ensemble de paramètres pour tenir compte de divers facteurs dans la sélection de l'itinéraire. Le fichier [readme.txt de BRouter](http://brouter.de/brouter/readme.txt) explique plus en détail comment installer et utiliser le programme.
 
-OsmAnd vous offre la possibilité de sélectionner des itinéraires avec BRouter et de configurer des profils de routage pour mieux définir l'itinéraire en fonction de vos besoins.
+OsmAnd vous offre la possibilité de sélectionner des itinéraires avec BRouter et de configurer des profils de routage pour mieux définir l'itinéraire en fonction de vos besoins.  
 
-Pour plus d'informations, vous pouvez visiter le [site web officiel de Brouter](http://www.brouter.de/brouter/algorithm.html).
+Pour plus d'informations, vous pouvez visiter le [site web officiel de Brouter](http://www.brouter.de/brouter/algorithm.html).  
 
 L'intégration de BRouter dans OsmAnd a beaucoup changé durant l'été 2019. Ce guide suppose que vous utilisez l'application BRouter pour Android en version 1.5.0 ou supérieure ainsi qu'OsmAnd en version 3.4 ou supérieure.
 
@@ -47,10 +47,10 @@ L'algorithme de routage tiers BRouter n'est disponible que pour la version Andro
 
 ## Comment configurer {#how-to-configure}
 
-Suivez ce guide pour installer et configurer l'application tierce *BRouter Offline Navigation* pour une utilisation dans OsmAnd.
+Suivez ce guide pour installer et configurer l'application tierce *BRouter Offline Navigation* pour une utilisation dans OsmAnd.  
 
 **1.** Pour commencer, vous devez installer l'application BRouter sur votre appareil Android depuis [F-Droid](https://f-droid.org/packages/btools.routingapp) ou le [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) sur votre appareil.  
-**2.** Ensuite, pour naviguer en utilisant l'application OsmAnd le long d'itinéraires pré-calculés avec BRouter, vous devez :
+**2.** Ensuite, pour naviguer en utilisant l'application OsmAnd le long d'itinéraires pré-calculés avec BRouter, vous devez :  
 
 
   - Ouvrir l'application BRouter et appuyer sur *Gestionnaire de téléchargement*.
@@ -148,9 +148,9 @@ Si aucun profil n'est trouvé, le routage échouera avec "Impossible de calculer
 
 ## Comment l'utiliser {#how-to-use}
 
-Cette section décrit une comparaison de BRouter avec le routage interne de l'application OsmAnd.
+Cette section décrit une comparaison de BRouter avec le routage interne de l'application OsmAnd.  
 
-Lorsque BRouter est configuré, nous pouvons comparer la vitesse de pré-calcul des données de routage de BRouter avec le routage interne d'OsmAnd. Choisissons deux points au hasard aux Pays-Bas et commençons à calculer le trajet. Pour cela, nous définissons un style de conduite équilibré sans utiliser de données d'altitude pour le profil de base. Le temps de calcul pour ce trajet est de 14,5 s pour notre itinéraire interne OsmAnd. Le temps de calcul de l'itinéraire lors de l'utilisation du routage BRouter est inférieur à 1 seconde.
+Lorsque BRouter est configuré, nous pouvons comparer la vitesse de pré-calcul des données de routage de BRouter avec le routage interne d'OsmAnd. Choisissons deux points au hasard aux Pays-Bas et commençons à calculer le trajet. Pour cela, nous définissons un style de conduite équilibré sans utiliser de données d'altitude pour le profil de base. Le temps de calcul pour ce trajet est de 14,5 s pour notre itinéraire interne OsmAnd. Le temps de calcul de l'itinéraire lors de l'utilisation du routage BRouter est inférieur à 1 seconde.  
 
 <table class="blogimage">
     <tr>
@@ -168,7 +168,7 @@ Lorsque BRouter est configuré, nous pouvons comparer la vitesse de pré-calcul 
 
 | Paramètre | Description | Remarque |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | Dans la plupart des cas, l'itinéraire le plus court sera suggéré. Souvent, cet itinéraire peut prendre plus de temps que si le paramètre était désactivé. |
+| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | Dans la plupart des cas, l'itinéraire le plus court sera suggéré. Souvent, cet itinéraire peut prendre plus de temps que si le paramètre était désactivé |
 | *<Translate android="true" ids="temporary_conditional_routing"/>* |  Lisez à propos de l'option Tenir compte des limitations temporaires dans cet [article](../routing/osmand-routing.md#consider-temporary-limitations).   | L'algorithme de routage tient compte des contraintes de temps spécifiées dans OpenStreetMap. Notez que dans certains cas, les informations d'OSM peuvent être obsolètes.   |
 
 

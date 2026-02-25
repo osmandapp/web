@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Lieux populaires
 ---
@@ -19,6 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 ## Aperçu {#overview}
+
+:::tip Achat
+Les Lieux populaires est une [fonctionnalité payante](../purchases/index.md).  
+:::
 
 La fonctionnalité **Lieux populaires** d'OsmAnd met en évidence les points d'intérêt et attractions notables en utilisant des données structurées ouvertes de [Wikidata](https://www.wikidata.org) et [Wikipedia](https://www.wikipedia.org/). Elle aide les utilisateurs à explorer des destinations bien connues avec des descriptions multilingues et des photos.
 

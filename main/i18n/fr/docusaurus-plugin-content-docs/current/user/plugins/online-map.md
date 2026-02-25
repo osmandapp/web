@@ -1,5 +1,5 @@
 ---
-source-hash: 4cb7c9084c7789ea96d9afde0dedc4fd456fd2ec20405b46d983a36f733ea01e
+source-hash: 3e42829208c8917b36961ec73fb21e320c1dcf70572f1c674c9c940e72223a0e
 sidebar_position: 8
 title:  Cartes en ligne
 ---
@@ -24,7 +24,7 @@ Les cartes en ligne d'OsmAnd sont une extension considérable de la base de donn
 La possibilité d'utiliser les cartes en ligne est automatiquement activée dans la version iOS d'OsmAnd. Pour afficher les cartes en ligne sur Android, vous devez effectuer les réglages suivants :
 
 1. [Activer](../plugins/index.md#enable--disable) le plugin **Cartes en ligne** dans le *Menu principal → Plugins → Cartes en ligne*.
-2. Effectuer les réglages nécessaires dans la section [Source de la carte](../map/raster-maps.md#select-raster-maps) du menu Configurer la carte.
+2. Effectuer les réglages nécessaires dans la section [Source de la carte](../map/raster-maps.md#layers) du menu Configurer la carte.
 3. Définir la *Source de la carte*, la *Sur-couche* et la *Sous-couche* de la carte. Sélectionnez votre fournisseur de cartes satellites préféré.
 4. Télécharger la [carte en ligne](#how-to-prepare-raster-maps) sélectionnée si nécessaire.
 
@@ -33,16 +33,16 @@ La possibilité d'utiliser les cartes en ligne est automatiquement activée dans
 
 Vous trouverez des informations détaillées sur la visualisation et la personnalisation des cartes raster dans l'article [Cartes raster](../map/raster-maps.md). Comment les utiliser :
 
-1. [Sélectionner](../map/raster-maps.md#select-raster-maps) la carte raster comme couche *Principale*, *Sous-couche* ou *Sur-couche*.
-    - [Modifier](../map/raster-maps.md#how-to-use-raster-maps) les paramètres de la couche (transparence).
+1. [Sélectionner](../map/raster-maps.md#layers) la carte raster comme couche *Principale*, *Sous-couche* ou *Sur-couche*.
+    - [Modifier](../map/raster-maps.md#overlay) les paramètres de la couche (transparence).
 
-2. [Préparer / copier](../map/raster-maps.md#preparecopy-raster-maps-to-device) les cartes raster sur l'appareil.
-    - [Ajouter une nouvelle source de carte raster en ligne](../map/raster-maps.md#add-new-online-raster-map-source)
+2. [Préparer / copier](../map/raster-maps.md#preparecopy-maps) les cartes raster sur l'appareil.
+    - [Ajouter une nouvelle source de carte raster en ligne](../map/raster-maps.md#add-new-online-source)
     - [Ajouter une URL magique](../map/raster-maps.md#magic-url-to-install-map-source) pour installer la source de la carte.
 
-3. [Gérer](../map/raster-maps.md#manage-raster-maps) les cartes raster.
+3. [Gérer](../map/raster-maps.md#manage-map-data) les cartes raster.
     - [Télécharger / mettre à jour les tuiles](../map/raster-maps.md#download--update-tiles).
-    - [Modifier](../map/raster-maps.md#change-raster-map-parameters) les paramètres de la carte raster.
+    - [Modifier](../map/raster-maps.md#change-parameters) les paramètres de la carte raster.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -101,4 +101,4 @@ Les tuiles en ligne peuvent être utiles lorsque vous n'avez besoin que d'une pe
   
     - Vérifiez que le plugin Cartes en ligne est activé : *Menu → Plugins → Cartes en ligne*.  
     - Assurez-vous d'avoir une connexion Internet active pour accéder aux images satellite.  
-    - Vérifiez si la carte en ligne sélectionnée est téléchargée ou nécessite des [paramètres supplémentaires](../map/raster-maps.md#select-raster-maps).
+    - Vérifiez si la carte en ligne sélectionnée est téléchargée ou nécessite des [paramètres supplémentaires](../map/raster-maps.md#layers).

@@ -1,6 +1,6 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Points sur la carte
 ---
 
@@ -132,7 +132,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,configur
 
 </Tabs>
 
-À chaque type de POI dans OsmAnd est assigné une icône et une couleur spécifiques. Le [niveau de zoom](../map/vector-maps.md#details) et le design des POI peuvent être différents dans certains [styles de carte](../map/vector-maps.md#default-map-styles).  
+À chaque type de POI dans OsmAnd est assigné une icône et une couleur spécifiques. Le [niveau de zoom](../map/vector-maps.md#details) et le design des POI peuvent être différents dans certains [styles de carte](../map/map-styles.md).  
 
 [En savoir plus](../map/vector-maps.md#hide).
 
@@ -168,7 +168,7 @@ Vous pouvez en savoir plus sur l'apparence des marqueurs dans cet [article](../p
 
 ![Trace sur la carte](@site/static/img/map/track_point_on_map.png)
 
-Les points de trace (points de cheminement) font partie des fichiers de trace (GPX). Ces points sont affichés automatiquement si la trace est sur la carte. Leur apparence peut être configurée de la même manière que les [Favoris](#favorites) - icône, noms, couleur, forme. Pour savoir comment créer et ajouter un point de cheminement, lisez l'[article](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
+Les points de trace (points de cheminement) font partie des fichiers de trace (GPX). Ces points sont affichés automatiquement si la trace est sur la carte. Ils apparaissent et peuvent être configurés de manière similaire aux [Favoris](#favorites) - icône, noms, couleur, forme. Pour savoir comment créer et ajouter un point de cheminement, lisez l'[article](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).  
 
 [En savoir plus](../map/tracks/index.md) sur les traces sur la carte.
 
@@ -315,7 +315,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,configur
 
 </Tabs>
 
-Les notes OSM sont des POI créés par les utilisateurs pour signaler des problèmes avec les données cartographiques dans [OpenStreetMap](https://www.openstreetmap.org/). Les nouvelles notes (pas encore téléchargées sur OpenStreetMap) sont marquées en vert avec un **+**, les notes fermées sont marquées en vert avec un "V", et les notes ouvertes sont marquées en rouge. Vous pouvez personnaliser le niveau de zoom pour l'affichage des notes et choisir d'afficher ou de masquer les notes fermées.  
+Les notes OSM sont des POI créés par les utilisateurs pour signaler des problèmes avec les données cartographiques dans [OpenStreetMap](https://www.openstreetmap.org/). Les nouvelles notes (pas encore téléchargées sur OpenStreetMap) sont marquées en vert avec un **+**, les notes fermées sont marquées en vert avec un « V », et les notes ouvertes sont marquées en rouge. Vous pouvez personnaliser le niveau de zoom pour l'affichage des notes et choisir d'afficher ou de masquer les notes fermées.  
 
 Nécessite le [plugin de modification OSM](../plugins/osm-editing.md).
 
@@ -339,4 +339,4 @@ Tous ces types de points peuvent être enregistrés au format GPX pour vous four
 
 - [Menu Configurer la carte](../map/configure-map-menu.md)
 - [Cartes vectorielles (Styles de carte)](./vector-maps.md)
-- [Cartes raster (en ligne / hors ligne)](./raster-maps.md)
+- [Cartes raster (En ligne / Hors ligne)](./raster-maps.md)

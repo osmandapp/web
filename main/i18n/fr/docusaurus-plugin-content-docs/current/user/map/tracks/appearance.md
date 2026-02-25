@@ -1,5 +1,5 @@
 ---
-source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
+source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
 sidebar_position: 5
 title:  Apparence de la trace
 ---
@@ -134,8 +134,8 @@ Restaure tous les **paramètres d'apparence de la trace** à leurs valeurs par d
 
 ## Trace 3D {#3d-track}
 
-:::info Paid feature
-**Trace 3D** est une fonctionnalité payante d'**OsmAnd Pro** pour [iOS](../../purchases/ios.md#pro-features) et [Android](../../purchases/android.md#pro-features) <ProFeature />.
+:::tip Achat
+La visualisation de trace 3D est une [fonctionnalité payante](../../purchases/index.md).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

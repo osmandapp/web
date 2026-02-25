@@ -1,7 +1,7 @@
 ---
-source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
+source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
 sidebar_position: 5
-title:  Cartes vectorielles (Styles de carte)
+title:  Cartes vectorielles 
 ---
 
 import Tabs from '@theme/Tabs';
@@ -35,243 +35,13 @@ Très petits polygones peuvent être simplifiés ou déformés lors de la géné
 Les styles de carte personnalisables sont l'un des principaux avantages d'OsmAnd. Vous pouvez personnaliser l'affichage de la carte pour l'adapter à vos besoins et à vos loisirs, ajuster l'affichage ou le masquage de certains objets de la carte, les tailles et les couleurs de ces objets, et modifier l'échelle d'affichage de certains objets.
 
 
-## Styles de carte par défaut {#default-map-styles}
+## Rendu de carte {#map-rendering}
 
-OsmAnd vous propose par défaut de nombreux styles de carte et couches de données. Cette section décrit les principaux pour les modes jour et nuit.
+### Styles de carte {#map-styles}
 
-1. **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
+OsmAnd propose plusieurs styles de carte vectorielle intégrés optimisés pour différentes activités. En plus des styles par défaut, vous pouvez créer et installer votre propre style de carte personnalisé basé sur des règles de rendu.
 
-2. **iOS**. *<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*
-
-
-### OsmAnd {#osmand}
-
-![Style de carte OsmAnd](@site/static/img/map/map-style-osmand-with-routes.png)  
-
-Le style de rendu de carte standard d'OsmAnd équilibre les détails et la simplicité, le rendant idéal pour l'exploration urbaine et en plein air. Il détaille les caractéristiques de la ville telles que les rues, les bâtiments et les arrêts de transport tout en simplifiant le désordre visuel en rendant les cartes plus claires.  
-
-Les principaux avantages incluent la cartographie des itinéraires, la qualité du revêtement, les restrictions d'accès, la signalisation routière, le rendu des sentiers à l'échelle SAC, les installations sportives et les détails topographiques tels que les lignes de contour.
-
-
-### Vue Randonnée {#touring-view}
-
-![Style de carte Vue Randonnée](@site/static/img/map/map-style-touring.png)
-
-Style Randonnée avec un contraste élevé et un maximum de détails. Inclut toutes les options du style OsmAnd par défaut tout en affichant autant de détails que possible, en particulier les routes, les chemins et autres voies de déplacement. Distinction claire des types de routes dans un *atlas de randonnée*. Convient pour une utilisation de jour, de nuit et en extérieur.
-
-### UniRS et LightRS {#unirs-and-lightrs}
-
-<Translate android="true" ids="unirs_render_descr"/>
-
-Les styles UniRS et LightRS sont des styles d'auteur qui rendent les informations de base de la carte mais dans des schémas de couleurs différents.  
-
-- **Style UniRS**. Ce style est une version modifiée du style par défaut pour améliorer le contraste des chemins piétonniers et cyclables. Il conserve le schéma de couleurs classique de Mapnik.  
-
-    ![Style de carte LightRS](@site/static/img/map/map-style-lightrs.png)
-
-- **Style LightRS**. C'est un style de conduite simple qui propose un mode nuit doux. Il met en évidence les routes avec une couleur orange contrastée, atténue les objets secondaires de la carte et affiche des caractéristiques topographiques comme les lignes de contour.
-
-    ![Style de carte UniRS](@site/static/img/map/map-style-unirs.png)
-
-### Nautique {#nautical}
-
-![Style de carte Nautique](@site/static/img/map/map-style-nautical.png)
-
-C'est un style de navigation nautique qui présente les bouées, les phares, les routes fluviales, les voies maritimes, les amers, les ports et les marques nautiques. Pour en savoir plus, lisez la section [Style de carte nautique](../plugins/nautical-charts.md#nautical-map-style).
-
-### Marine {#marine}
-
-![Style de carte Marine](@site/static/img/map/map-style-marine.png)
-
-Ceci est un style de carte marine avancé avec des secteurs lumineux, les caractéristiques complètes des phares, et d'autres fonctionnalités maritimes détaillées pour une navigation marine réaliste et précise. Pour plus de détails, lisez la section [Style de carte Marine](../plugins/nautical-charts.md#marine-map-style).
-
-### Hiver et Ski {#winter-and-ski}
-
-![Style de carte Hiver & Ski](@site/static/img/map/map-style-winter-ski.png)
-
-C'est un style pour les sports de ski qui décrit les pistes, les remontées mécaniques et les pistes de ski de fond, tout en masquant les objets secondaires de la carte. Le **style Hiver et Ski** est conçu pour vous aider dans la navigation pour les sports d'hiver.  
-
-Vous pouvez voir les pistes de ski et d'autres détails tels que la difficulté des pistes et les marqueurs des remontées mécaniques. Les principaux avantages incluent l'affichage pratique des pistes, des remontées mécaniques et d'autres caractéristiques de ski. Moins d'objets secondaires distrayants sur la carte. Pour en savoir plus, consultez l'article [Cartes de ski](../plugins/ski-maps.md).
-
-### Topo {#topo}
-
-![Style de carte Topo](@site/static/img/map/map-style-topo.png)
-
-Ce style est conçu pour la randonnée, le camping et le cyclisme en pleine nature. Il présente des routes et des éléments naturels contrastés, différents types de sentiers, des options étendues de lignes de contour et des détails supplémentaires. Il est lisible en extérieur. Le paramètre *Intégrité de la surface* vous permet de distinguer la qualité de la route.
-
-### OSM-carto {#osm-carto}
-
-![Style de carte OSM-carto](@site/static/img/map/map-style-osm-carto.png)
-
-Ce style imite le [style web par défaut d'OpenStreetMap](https://www.openstreetmap.org/). Le code source de la version web est disponible sur [Github](https://github.com/gravitystorm/openstreetmap-carto), le code OsmAnd est disponible sur [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
-
-### Désert {#desert}
-
-![Style de carte Désert](@site/static/img/map/map-style-desert.png)
-
-Conçu pour les déserts et autres régions peu peuplées, offrant des informations cartographiques plus détaillées.
-
-### Tout-terrain {#offroad}
-
-![Style de carte Tout-terrain](@site/static/img/map/map-style-offroad.png)
-
-Conçu pour la navigation tout-terrain, ce style est basé sur la disposition de la carte [Topo](#topo) et fonctionne bien avec des images satellite en sous-couche. Il présente des routes principales plus fines pour mettre en évidence les chemins, les pistes, les itinéraires cyclables et autres sentiers tout-terrain, le rendant idéal pour explorer des routes non pavées dans des zones rurales ou isolées.
-
-### Motoneige {#snowmobile}
-
-![Style de carte Motoneige](@site/static/img/map/map-style-snowmobile.png)
-
-Adapté à la navigation en motoneige, ce style met en évidence les chemins, routes et pistes praticables en motoneige. Il met en lumière les sentiers spécialisés dans les régions enneigées, offrant une navigation claire sur des terrains couverts de neige où les routes standard peuvent ne pas être disponibles. 
-
-
-## Légende de la carte {#map-legend}
-
-La légende de la carte sert de clé pour comprendre les symboles utilisés dans les cartes OsmAnd. Elle explique la signification des divers symboles cartographiques, y compris les points, les lignes et les zones. Par exemple, des symboles comme des lignes sinueuses bleues indiquent des rivières, tandis que différentes couleurs et formes peuvent représenter des bâtiments, des chemins et des itinéraires.  
-
-La légende aide les utilisateurs à interpréter ce qu'ils voient sur la carte. Vous pouvez accéder à la légende complète de la carte OsmAnd [ici](../map-legend/index.md).
-
-
-## Polices de carte (Android) {#map-fonts-android}
-
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
-
-![Polices de carte version Android](@site/static/img/map/map_fonts.png) ![Version des polices de carte](@site/static/img/map/map_fonts_1.png)
-
-Pour les cartes en chinois simplifié/traditionnel, japonais et coréen, des caractères ou symboles incorrects (comme des carrés) peuvent apparaître si votre appareil ne dispose pas des polices nécessaires. Ce problème se produit lors du rendu des noms locaux et peut être résolu en téléchargeant les polices requises via OsmAnd.  
-
-Certains problèmes de polices connexes ont été documentés sur GitHub : [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
-
-
-## * Lignes de contour {#-contour-lines}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Style de carte Lignes de contour](@site/static/img/map/contour_lines.png)
-
-Les lignes de contour dans OsmAnd sont affichées comme des lignes d'altitude sur les cartes vectorielles. Pour les utiliser, vous devez d'abord activer le [plugin Topographie](../plugins/topography.md), télécharger les données régionales nécessaires et configurer l'affichage. Cette fonctionnalité n'est pas activée par défaut et nécessite un [achat](../purchases/index.md).  
-
-Les lignes de contour sont compatibles avec tous les styles de carte et peuvent être personnalisées via le [menu Lignes de contour](../plugins/topography.md#contour-lines). Pour plus de détails, consultez l'article sur le [plugin Topographie](../plugins/topography.md).
-
-
-## * Profondeur marine {#-nautical-depth}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Les isobathes de profondeur marine représentent des zones de profondeur égale, aidant à visualiser les changements de topographie sous-marine. Cette fonctionnalité est disponible pour tous les styles et modes de carte et peut être ajustée avec ou sans le plugin de vue Carte marine activé.  
-
-Pour plus de détails sur la vue Carte marine, visitez la [page du plugin Carte marine](../plugins/nautical-charts).
-
-
-## Afficher les frontières {#show-borders}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![afficher-frontières-android](@site/static/img/map/show-borders-andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![afficher-frontières-ios](@site/static/img/map/show-borders-ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Cette fonctionnalité vous permet d'activer ou de désactiver la visibilité des frontières des cartes précédemment téléchargées depuis la liste des cartes disponibles. Son objectif principal est d'aider à désencombrer la carte principale en masquant les contours des cartes téléchargées, ce qui est particulièrement utile si vous avez de nombreuses cartes installées.  
-
-Par défaut, les frontières des cartes apparaîtront lorsque vous zoomez au niveau 7 et disparaîtront au niveau de zoom 3 et inférieur.
-
-:::tip Couleur Afficher les frontières des cartes téléchargées
-Lorsque la fonctionnalité *Afficher les frontières des cartes téléchargées* est activée, les cartes téléchargées sont colorées en **Vert** dans les versions Android et iOS d'OsmAnd.  
-
-Sur Android, les cartes archivées sont affichées en **Orange**. Sur iOS, les cartes qui peuvent être mises à jour sont également marquées en **Orange**.
-:::
-
-
-## Grille de coordonnées {#coordinates-grid}
-
-
-Aller à : *Menu → Configurer la carte → Afficher → Grille de coordonnées*  
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_settings_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Paramètres grille de coordonnées iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-La fonctionnalité **Grille de coordonnées** superpose une grille de référence sur la carte, vous permettant de visualiser les lignes de latitude et de longitude basées sur différents systèmes de coordonnées. Cette fonctionnalité est utile pour une référence de localisation précise et la navigation géospatiale. 
-
-Vous pouvez configurer les options suivantes :
-- **Niveaux de zoom :** définir les niveaux de zoom minimum et maximum (2 - 22) auxquels la grille est visible.
-- **Position des étiquettes :** choisir entre *Bords* (par défaut) ou *Centre* pour les étiquettes de grille.
-- **Couleur de la grille :** disponible séparément pour les modes Jour/Nuit. La personnalisation de la couleur de la grille est une [fonctionnalité payante](https://osmand.net/docs/user/purchases/) disponible dans Maps+ (achat in-app ou abonnement) et OsmAnd+.
-- **Format de coordonnées :** sélectionner parmi plusieurs formats disponibles (voir liste ci-dessous).
-
-
-***Formats de coordonnées disponibles :***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrés, Minutes, Secondes)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Degrés décimaux - format par défaut WGS84)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrés, Minutes décimales)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - système de grille basé sur des zones). Le niveau de zoom minimum est de 9, une seule zone UTM est affichée à la fois, car les zones sont séparées par des méridiens tous les 6°
-- **MGRS** (Military Grid Reference System)
-
-Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats), mais vous pouvez le changer directement dans ce menu.
-
-[Action rapide](../widgets/quick-action.md#overview) : Vous pouvez également ajouter un basculement rapide *Afficher/Masquer la grille de coordonnées* au groupe [Configurer la carte](../widgets/quick-action.md#configure-map) pour un accès rapide.
-
-## Configurer le style de carte {#configure-map-style}
+Pour une description détaillée des styles disponibles et des instructions pour créer des styles personnalisés, consultez l'article [Styles de carte](../map/map-styles.md).
 
 ### Mode carte {#map-mode}
 
@@ -295,7 +65,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 </Tabs>
 
-La carte peut être affichée avec un thème clair ou sombre en fonction du mode sélectionné dans une liste d'options. Par défaut et pour tous les nouveaux utilisateurs, le [style de carte](#default-map-styles) s'aligne sur le thème choisi dans les paramètres système de votre appareil.
+La carte peut être affichée avec un thème clair ou sombre en fonction du mode sélectionné dans une liste d'options. Par défaut et pour tous les nouveaux utilisateurs, le [style de carte](#map-styles) s'aligne sur le thème choisi dans les paramètres système de votre appareil.
 
 - **<Translate android="true" ids="daynight_mode_day"/>**. Affiche toujours la carte avec un thème clair pour une visibilité optimale en journée.
 
@@ -305,8 +75,44 @@ La carte peut être affichée avec un thème clair ou sombre en fonction du mode
 
 - **<Translate android="true" ids="daynight_mode_sensor"/>** (*Android uniquement*). Utilise le capteur de lumière de l'appareil pour basculer automatiquement entre les thèmes clair et sombre en fonction des niveaux de lumière ambiante.
 
-- **<Translate android="true" ids="daynight_mode_app_theme"/>**. L'affichage de la carte s'adapte au thème général de l'application, affichant le mode jour avec le thème clair et le mode nuit avec le thème sombre.
+- **<Translate android="true" ids="daynight_mode_app_theme"/>**. L'affichage de la carte s'adapte au thème général de l'application, affichant le mode jour avec le thème clair et le mode nuit avec le thème sombre. 
 
+### Style de route {#road-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+Paramètres spéciaux pour les routes, où vous pouvez changer les couleurs pour correspondre à l'atlas routier ou ajouter des routes à contraste élevé ou des contours gras pour les routes.
+
+- **<Translate android="true" ids="rendering_value_default_name"/>**. Style par défaut pour les autoroutes. Regardez la [Légende de la carte](../map-legend/index.md).  
+![Style de route par défaut](@site/static/img/map/map-road-style-default.png)
+
+- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Style de l'atlas routier allemand.  
+![Style de route allemand](@site/static/img/map/map-road-style-german.png)
+
+- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Style de l'atlas routier américain.  
+![Style de route américain](@site/static/img/map/map-road-style-american.png)
+
+- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Le contraste élevé des routes.  
+![Style de route à contraste élevé](@site/static/img/map/map-road-style-high-contrast.png)
+- **Pâle**. Couleurs moins contrastées des routes.  
+![Style de route pâle](@site/static/img/map/map-road-style-pale.png)
+
+- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contour gras pour les routes.  
+![Style de route à contour gras](@site/static/img/map/map-road-style-bold-outline.png)
 
 ### Détails {#details}
 
@@ -359,44 +165,36 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_
 
     &nbsp;&nbsp;&nbsp;![Paramètre de carte - Réserve naturelle](@site/static/img/map/nature-reserve.png)
 
-
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->
-
-### Itinéraires {#routes}
+### Masquer {#hide}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-![Itinéraires carte - pistes cyclables](@site/static/img/map/map-routes-cycle-routes.png)  ![Itinéraires carte - réseau de randonnée](@site/static/img/map/map-routes-hiking-network.png)
+Pour améliorer la visibilité de la carte, vous pourriez avoir besoin de masquer certains objets. Par exemple, vous pouvez masquer l'eau lorsque vous utilisez les [cartes en ligne Satellite avec la couche de sous-couche](../map/raster-maps.md#layers).
 
-Un itinéraire est un chemin prédéterminé qui doit être suivi pour atteindre une destination spécifique. Un itinéraire peut être optimisé pour différents types de déplacement, tels que le cyclisme, la randonnée, la course à pied, les transports en commun, et autres. Vous pouvez en savoir plus sur les itinéraires et leurs types dans l'[article Itinéraires](../map/routes.md).
-
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Masque les frontières régionales à l'intérieur des pays, mais les frontières des États restent visibles.
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Masque tous les polygones d'objets naturels, fonction spéciale pour la [couche de sous-couche/sur-couche](../map/raster-maps.md#layers).
+- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Masque tous les polygones de bâtiments.
+- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Masque tous les polygones d'eau (mers, lacs, réservoirs, etc.)
+- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Masque les numéros de maison sur la carte.
+- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Masque les objets proposés - ces objets dont la construction est prévue mais qui n'ont qu'un projet (routes projetées, intersections, bâtiments, et autres).
+- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Masque les icônes de POI de la carte. Cependant, les étiquettes de ces POI apparaîtront toujours sur la carte.
+- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Masque les étiquettes de POI de la carte. Cependant, les icônes de POI apparaîtront toujours sur la carte.
+- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Masque tous les objets souterrains, comme les tunnels, les passages, les étages, etc. Spécial pour nettoyer les cartes des villes des objets inutiles.
+- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Masque tous les objets en surface. Spécial pour ne voir que les objets souterrains comme les tunnels, les passages, etc.
 
 ### Transports {#transport}
 
@@ -430,99 +228,8 @@ Lors de la navigation en ville, vous avez besoin d'une vue plus contrastée des 
 - **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Affiche les itinéraires souterrains.  
     ![Métro de transport sur la carte](@site/static/img/map/map-transport-subway.png)
 
-### Masquer {#hide}
 
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
-
-</TabItem>
-
-</Tabs>  
-
-Pour améliorer la visibilité de la carte, vous pourriez avoir besoin de masquer certains objets. Par exemple, vous pouvez masquer l'eau lorsque vous utilisez les [cartes en ligne Satellite avec la couche de sous-couche](../map/raster-maps.md#select-raster-maps).
-
-- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Masque les frontières régionales à l'intérieur des pays, mais les frontières des États restent visibles.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Masque tous les polygones d'objets naturels, fonction spéciale pour la [couche de sous-couche/sur-couche](../map/raster-maps.md#select-raster-maps).
-- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Masque tous les polygones de bâtiments.
-- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Masque tous les polygones d'eau (mers, lacs, réservoirs, etc.)
-- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Masque les numéros de maison sur la carte.
-- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Masque les objets proposés - ces objets dont la construction est prévue mais qui n'ont qu'un projet (routes projetées, intersections, bâtiments, et autres).
-- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Masque les icônes de POI de la carte. Cependant, les étiquettes de ces POI apparaîtront toujours sur la carte.
-- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Masque les étiquettes de POI de la carte. Cependant, les icônes de POI apparaîtront toujours sur la carte.
-- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Masque tous les objets souterrains, comme les tunnels, les passages, les étages, etc. Spécial pour nettoyer les cartes des villes des objets inutiles.
-- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Masque tous les objets en surface. Spécial pour ne voir que les objets souterrains comme les tunnels, les passages, etc.
-
-### Style de route {#road-style}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-Paramètres spéciaux pour les routes, où vous pouvez changer les couleurs pour correspondre à l'atlas routier ou ajouter des routes à contraste élevé ou des contours gras pour les routes.
-
-- **<Translate android="true" ids="rendering_value_default_name"/>**. Style par défaut pour les autoroutes. Regardez la [Légende de la carte](../map-legend/index.md).  
-![Style de route par défaut](@site/static/img/map/map-road-style-default.png)
-
-- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Style de l'atlas routier allemand.  
-![Style de route allemand](@site/static/img/map/map-road-style-german.png)
-
-- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Style de l'atlas routier américain.  
-![Style de route américain](@site/static/img/map/map-road-style-american.png)
-
-- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Le contraste élevé des routes.  
-![Style de route à contraste élevé](@site/static/img/map/map-road-style-high-contrast.png)
-- **Pâle**. Couleurs moins contrastées des routes.  
-![Style de route pâle](@site/static/img/map/map-road-style-pale.png)
-
-- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Contour gras pour les routes.  
-![Style de route à contour gras](@site/static/img/map/map-road-style-bold-outline.png)
-
-
-### Taille du texte {#text-size}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
-
-</TabItem>
-
-</Tabs>  
-
-- **100%**  
-    ![Taille du texte de la carte 100%](@site/static/img/map/map-text-size-100.png)
-
-- **200%**  
-    ![Taille du texte de la carte 200%](@site/static/img/map/map-text-size-200.png)
-
+## Rendu de texte {#text-rendering}
 
 ### Loupe de carte {#map-magnifier}
 
@@ -552,6 +259,29 @@ Ce paramètre aide à changer le grossissement de la carte. Il est applicable po
 - **200%**  
     ![Loupe de carte 200%](@site/static/img/map/map-magnifier-200.png)
 
+### Taille du texte {#text-size}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
+
+</TabItem>
+
+</Tabs>  
+
+- **100%**  
+    ![Taille du texte de la carte 100%](@site/static/img/map/map-text-size-100.png)
+
+- **200%**  
+    ![Taille du texte de la carte 200%](@site/static/img/map/map-text-size-200.png)
 
 ### Langue de la carte {#map-language}
 
@@ -565,15 +295,14 @@ Si les noms sur la carte ne sont pas traduits dans la langue requise par la comm
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
-- **Noms locaux**  
+- **Noms locaux**   
     ![Langue de la carte noms locaux](@site/static/img/map/map-language-local-names_2.png)
 
-- **Langue préférée** (ukrainien)
+- **Langue préférée** (ukrainien)   
     ![Langue de la carte ukrainien](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Utiliser le nom latin si manquant**  
+- **Utiliser le nom latin si manquant**   
     ![Langue de la carte translittération](@site/static/img/map/map-language-transliterate_2.png)
-
 
 </TabItem>
 
@@ -581,36 +310,232 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,map_
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
-- **Noms locaux**  
+- **Noms locaux**    
     ![Langue de la carte noms locaux](@site/static/img/map/map-language-local-names_2.png)
 
-- **Langue préférée** (ukrainien)
+- **Langue préférée** (ukrainien)  
     ![Langue de la carte ukrainien](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Afficher les noms locaux**  (ajoute une 2ème étiquette si le nom local est différent)
+- **Afficher les noms locaux**  (ajoute une 2ème étiquette si le nom local est différent)  
     ![Langue de la carte local](@site/static/img/map/map-language-show-local_2.png)
 
-- **Translittérer les noms**  
+- **Translittérer les noms**    
     ![Langue de la carte translittération](@site/static/img/map/map-language-transliterate_2.png)
-
-
 
 </TabItem>
 
 </Tabs>  
 
+### Polices de carte (Android) {#map-fonts-android}
+
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
+
+![Polices de carte version Android](@site/static/img/map/map_fonts.png) ![Version des polices de carte](@site/static/img/map/map_fonts_1.png)
+
+Pour les cartes en chinois simplifié/traditionnel, japonais et coréen, des caractères ou symboles incorrects (comme des carrés) peuvent apparaître si votre appareil ne dispose pas des polices nécessaires. Ce problème se produit lors du rendu des noms locaux et peut être résolu en téléchargeant les polices requises via OsmAnd.  
+
+Certains problèmes de polices connexes ont été documentés sur GitHub : [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
 
 
-## Style de carte personnalisé {#custom-map-style}
+## Rendu topographique {#topography-rendering}
 
-Si vous avez un style de carte personnalisé, personnel ou tiers, créé selon la [Spécification](../../technical/osmand-file-formats/osmand-rendering-style.md), vous pouvez l'installer sur votre appareil de ces manières :
+### * Lignes de contour {#-contour-lines}
 
-- Copiez le fichier `.render.xml` sur votre appareil et ouvrez-le avec OsmAnd.
-- Utilisez les [dialogues standard d'import/export](../personal/import-export.md) pour exporter ou importer des styles de rendu. Si vous créez un paquet `.osf`, il fonctionne comme un plugin que vous pouvez partager avec d'autres.
-- Après l'installation, vous pouvez sélectionner le style de carte depuis le menu.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Style de carte Lignes de contour](@site/static/img/map/contour_lines.png)
+
+Les lignes de contour dans OsmAnd sont affichées comme des lignes d'altitude sur les cartes vectorielles. Pour les utiliser, vous devez d'abord activer le [plugin Topographie](../plugins/topography.md), télécharger les données régionales nécessaires et configurer l'affichage. Cette fonctionnalité n'est pas activée par défaut et nécessite un [achat](../purchases/index.md).  
+
+Les lignes de contour sont compatibles avec tous les styles de carte et peuvent être personnalisées via le [menu Lignes de contour](../plugins/topography.md#contour-lines). Pour plus de détails, consultez l'article sur le [plugin Topographie](../plugins/topography.md).
+
+### * Profondeur marine {#-nautical-depth}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Les isobathes de profondeur marine représentent des zones de profondeur égale, aidant à visualiser les changements de topographie sous-marine. Cette fonctionnalité est disponible pour tous les styles et modes de carte et peut être ajustée avec ou sans le plugin de vue Carte marine activé.  
+
+Pour plus de détails sur la vue Carte marine, visitez la [page du plugin Carte marine](../plugins/nautical-charts).
+
+### Bâtiments 3D {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+![Bâtiments 3D](@site/static/img/map/3d_buildings_1_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_2.png) 
+
+La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés.  
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Bâtiments 3D*  
+Utilisez l'interrupteur principal pour activer ou désactiver le rendu 3D des bâtiments. Pour voir les bâtiments en 3D, inclinez la carte en plaçant deux doigts sur l'écran et en balayant vers le haut.
+
+Actuellement, cette option n'est disponible que lorsque le [plugin de développement OsmAnd](../plugins/development.md) est activé.  
+Aller à : *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+
+Les paramètres des bâtiments 3D sont divisés en deux groupes : **Apparence** et **Performance**.
+
+**Apparence : Couleur**. Contrôle la couleur des bâtiments 3D. Lorsque vous appuyez sur Couleur, OsmAnd ouvre un écran d'aperçu séparé où vous pouvez voir la carte tout en ajustant le paramètre.
+- **Style de carte** — utilise la couleur par défaut des bâtiments du style de carte actuellement sélectionné.
+- **Personnalisé** — vous permet de définir une couleur personnalisée pour les bâtiments séparément pour les modes Jour / Nuit.
+
+:::tip Achat
+La personnalisation de la couleur des bâtiments 3D est une [fonctionnalité payante](../purchases/index.md).  
+:::
+
+Si les couleurs personnalisées ne sont pas achetées, vous verrez un état vide avec une brève description et un bouton Obtenir. Si Personnalisé est disponible, vous pouvez basculer entre Jour et Nuit, choisir une couleur dans la palette (ou ouvrir Toutes les couleurs), puis appuyer sur Appliquer.
+
+**Apparence : Visibilité**. Contrôle l'opacité (transparence) des bâtiments 3D. Utilisez le curseur pour définir la visibilité en pourcentage. Des valeurs plus basses rendent les bâtiments plus transparents et aident les routes/étiquettes à rester lisibles. Des valeurs plus élevées rendent les bâtiments plus solides et visuellement dominants. Appuyer sur Visibilité ouvre également un écran d'aperçu séparé avec le curseur.
+
+Sur les écrans d'aperçu (Couleur / Visibilité), vous pouvez utiliser Réinitialiser aux valeurs par défaut depuis la barre d'application pour restaurer la valeur par défaut.
+
+**Performance : Niveau de détail**. Contrôle le niveau de détail de la géométrie des bâtiments 3D :
+- Faible (par défaut) — géométrie plus simple.
+- Élevé — géométrie plus détaillée.
+
+**Performance : Distance de vue**. Contrôle la distance par rapport à la caméra à laquelle les bâtiments 3D sont rendus :
+- Proche (par défaut) — rend les bâtiments plus près de vous.
+- Lointain — rend les bâtiments à une distance plus longue.
+
+Les deux options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D.
+
+
+## Paramètres supplémentaires {#additional-settings}
+
+### Afficher les frontières {#show-borders}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![afficher-frontières-android](@site/static/img/map/show-borders-andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![afficher-frontières-ios](@site/static/img/map/show-borders-ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Cette fonctionnalité vous permet d'activer ou de désactiver la visibilité des frontières des cartes précédemment téléchargées depuis la liste des cartes disponibles. Son objectif principal est d'aider à désencombrer la carte principale en masquant les contours des cartes téléchargées, ce qui est particulièrement utile si vous avez de nombreuses cartes installées.  
+
+Par défaut, les frontières des cartes apparaîtront lorsque vous zoomez au niveau 7 et disparaîtront au niveau de zoom 3 et inférieur.
+
+:::tip Couleur Afficher les frontières des cartes téléchargées
+Lorsque la fonctionnalité *Afficher les frontières des cartes téléchargées* est activée, les cartes téléchargées sont colorées en **Vert** dans les versions Android et iOS d'OsmAnd.  
+
+Sur Android, les cartes archivées sont affichées en **Orange**. Sur iOS, les cartes qui peuvent être mises à jour sont également marquées en **Orange**.
+:::
+
+### Grille de coordonnées {#coordinates-grid}
+
+:::tip Achat
+La personnalisation de la couleur de la grille de coordonnées est une [fonctionnalité payante](../purchases/index.md).  
+:::
+
+Aller à : *Menu → Configurer la carte → Afficher → Grille de coordonnées*  
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_settings_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Paramètres grille de coordonnées iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+La fonctionnalité **Grille de coordonnées** superpose une grille de référence sur la carte, vous permettant de visualiser les lignes de latitude et de longitude basées sur différents systèmes de coordonnées. Cette fonctionnalité est utile pour une référence de localisation précise et la navigation géospatiale. 
+
+Vous pouvez configurer les options suivantes :
+- **Niveaux de zoom :** définir les niveaux de zoom minimum et maximum (2 - 22) auxquels la grille est visible.
+- **Position des étiquettes :** choisir entre *Bords* (par défaut) ou *Centre* pour les étiquettes de grille.
+- **Couleur de la grille :** disponible séparément pour les modes Jour/Nuit. 
+- **Format de coordonnées :** sélectionner parmi plusieurs formats disponibles (voir liste ci-dessous).
+
+***Formats de coordonnées disponibles :***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrés, Minutes, Secondes)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Degrés décimaux - format par défaut WGS84)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrés, Minutes décimales)
+- **UTM** (EPSG:6387, Universal Transverse Mercator - système de grille basé sur des zones). Le niveau de zoom minimum est de 9, une seule zone UTM est affichée à la fois, car les zones sont séparées par des méridiens tous les 6°
+- **MGRS** (Military Grid Reference System)
+
+Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats), mais vous pouvez le changer directement dans ce menu.
+
+[Action rapide](../widgets/quick-action.md#overview) : Vous pouvez également ajouter un basculement rapide *Afficher/Masquer la grille de coordonnées* au groupe [Configurer la carte](../widgets/quick-action.md#configure-map) pour un accès rapide.
+
+
+## Itinéraires {#routes}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Itinéraires carte - pistes cyclables](@site/static/img/map/map-routes-cycle-routes.png)  ![Itinéraires carte - réseau de randonnée](@site/static/img/map/map-routes-hiking-network.png)
+
+Un itinéraire est un chemin prédéterminé qui doit être suivi pour atteindre une destination spécifique. Un itinéraire peut être optimisé pour différents types de déplacement, tels que le cyclisme, la randonnée, la course à pied, les transports en commun, et autres. Vous pouvez en savoir plus sur les itinéraires et leurs types dans l'[article Itinéraires](../map/routes.md).
 
 
 ## Articles connexes {#related-articles}
 
+- [Interagir avec la carte](../map/interact-with-map.md)
+- [Configurer la carte](../map/configure-map-menu.md)
+- [Styles de carte](../map/map-styles.md)
+- [Itinéraires](../map/routes.md)
 - [Importer / Exporter](../personal/import-export.md)
 - [Schémas de palette de couleurs](../personal/color-palette-schemes.md)

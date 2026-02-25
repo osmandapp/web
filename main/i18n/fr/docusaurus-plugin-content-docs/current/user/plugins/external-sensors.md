@@ -1,5 +1,5 @@
 ---
-source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
+source-hash: 852174395ea31db0d986b03a13dcefe0a7848d73cda99c210ec9424b8e571fd0
 sidebar_position: 5
 title:  Capteurs externes
 ---
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-:::info Fonctionnalité payante
-Le plugin Capteurs externes est une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.  
+:::tip Achat
+Le plugin Capteurs externes est une [fonctionnalité payante](../purchases/index.md).  
 :::
 
 Le **plugin Capteurs externes** vous permet de lire et d'enregistrer des données provenant de [capteurs externes sans fil](https://en.wikipedia.org/wiki/Wireless_sensor_network) fonctionnant avec les technologies [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) et [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) et d'afficher ces données à l'aide de [widgets](#widgets) dans l'application OsmAnd. Ce réseau géré est capable de collecter, transmettre et stocker les données des capteurs.

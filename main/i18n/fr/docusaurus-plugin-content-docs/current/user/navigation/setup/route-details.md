@@ -1,5 +1,5 @@
 ---
-source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
+source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
 sidebar_position: 4
 title:  Détails de l'itinéraire
 ---
@@ -223,7 +223,7 @@ Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](
 
 - [**Qualité du revêtement**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Applicable à tous les types de chemins et de zones, tels que les autoroutes, les parkings, les plages et les sentiers, et indique la praticabilité de l'itinéraire. Il vous donne des informations sur le fait que vous pouvez conduire sans risque significatif de dommages, comme le bas de caisse du véhicule, ou de blessures, comme une chute.  
 
-- [**Routes d'hiver et de glace**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Affiche le schéma de couleurs de l'itinéraire selon la classification des [routes d'hiver](../../map/vector-maps.md#winter-and-ski).  
+- [**Routes d'hiver et de glace**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Affiche le schéma de couleurs de l'itinéraire selon la classification des [routes d'hiver](../../map/map-styles.md#winter-and-ski).  
 
 - [**Difficulté des sentiers équestres**](https://wiki.openstreetmap.org/wiki/Riding). Cet attribut de route indique la difficulté de l'itinéraire lors d'une randonnée à cheval. Convient pour le [routage équestre](../../navigation/routing/horse-routing.md).  
 
@@ -240,7 +240,7 @@ Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](
 
 <TabItem value="ios" label="iOS">
 
-![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
 
 </TabItem>
 
@@ -263,7 +263,7 @@ Appuyez sur une section spécifique de l'itinéraire dans la liste pour afficher
 
 <TabItem value="ios" label="iOS">
 
-![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 

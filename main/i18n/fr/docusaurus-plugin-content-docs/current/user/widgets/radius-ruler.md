@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title:  Règle de rayon et Règle
 ---
@@ -102,7 +102,7 @@ Utilisez ce widget pour estimer la proximité de points d'intérêt ou planifier
 
 <TabItem value="android" label="Android">
 
-![Écran de la règle de rayon](@site/static/img/widgets/radius_ruler_widget.png)
+![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -110,9 +110,9 @@ Utilisez ce widget pour estimer la proximité de points d'intérêt ou planifier
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Règle de rayon"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Règle de rayon"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Règle de rayon"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
 </table>
 
@@ -173,7 +173,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,layer_map_appearan
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Autre → Position de la localisation sur l'écran*
 
-![Position d'affichage Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Règle de rayon vers le bas](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Position d'affichage iOS](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Règle de rayon vers le bas](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 
@@ -204,7 +204,7 @@ Pour plus d'informations sur *la position sur l'écran*, consultez l'article [Co
 
 Vous pouvez passer en **vue 3D** pour mieux visualiser les distances et le terrain environnant lors de l'utilisation de la Règle de rayon. Cette vue incline la carte et fournit un effet de perspective qui étend le rayon visible.
 
-- Touchez [le bouton de localisation](../map/interact-with-map.md#my-location-and-zoom) pour vous centrer sur votre position.
+- Touchez [le bouton de position](../map/interact-with-map.md#my-position-and-zoom) pour vous centrer sur votre position.
 - Utilisez un geste de [balayage vers le haut avec deux doigts](../map/interact-with-map.md#gestures) pour incliner la carte en mode 3D.
 
 Les cercles de rayon apparaîtront avec de la profondeur, ce qui est particulièrement utile pour la planification d'itinéraires dans des zones vallonnées ou des environnements urbains où le contexte vertical est important.

@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title:  Traces
 sidebar_position: 2
 ---
@@ -116,7 +116,7 @@ Lorsque vous sélectionnez une trace sur la carte ou ouvrez le [menu contextuel 
 
 Aller à : *Touchez la trace → Onglet Trace → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Menu de la trace analyser sur la carte Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Menu de la trace analyser sur la carte distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Menu de la trace analyser sur la carte Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Menu de la trace analyser sur la carte distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Aller à : *Touchez la trace → Onglet Trace → <Translate ios="true" ids="ana
 
 Cet outil fournit une analyse détaillée des données de la [trace](../../map/tracks/track-context-menu.md#options) à l'aide de graphiques et de cartes.
 
-- **Données du graphique (axe Y)** affiche : *Altitude*, *Pente*, *Vitesse*, [*Données de capteurs externes*](../../plugins/external-sensors.md), et des combinaisons de jusqu'à deux options si elles sont contenues dans les données de la trace.
+- **Données du graphique (axe Y)** affiche : *Altitude*, *Pente*, *Vitesse*, [*Données de capteurs externes*](../../plugins/external-sensors.md), et des combinaisons de jusqu'à deux options si elles sont contenues dans les données de la trace. ***Android uniquement :*** pour les traces automobiles enregistrées avec des données OBD-II, l'axe Y fournit en outre des métriques du véhicule, telles que la vitesse du moteur, la température du liquide de refroidissement, et plus encore.
 - **Dimension du graphique (axe X)** représente : *Distance*, *Temps*, et *Heure de la journée*.
 - **Interaction par appui/glissement**. Appuyez sur un graphique pour afficher des informations sur un point spécifique de la trace. Glisser sur le graphique met en évidence l'emplacement approprié sur la carte et affiche les détails dans la barre d'informations.
 - **Étiquette de distance**. Lors d'un appui ou d'un glissement le long du graphique, l'infobulle affiche également la distance exacte le long de la trace. La valeur suit les paramètres d'unité du profil actuel (<Translate android="true" ids="km"/> ou <Translate android="true" ids="mile"/>). Utilisez-la pour estimer rapidement la distance d'un point par rapport au début de la trace, ou pour calculer la distance entre deux positions en comparant leurs valeurs.

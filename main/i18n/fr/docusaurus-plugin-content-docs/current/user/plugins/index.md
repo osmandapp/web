@@ -1,5 +1,5 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
 sidebar_position: 18
 title:  Greffons
 ---
@@ -79,20 +79,22 @@ Les greffons OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Calque
 | [Vue carte marine](#nautical-map-view) | [Style de carte](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vue carte de ski](#ski-map-view) | [Style de carte](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
 |[Notes audio/vidéo](#audiovideo-notes) 🤖  | [Calque de carte](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu contextuel](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[Édition OpenStreetMap](#openstreetmap-editing)| [Calque de carte](../plugins/osm-editing.md#authorization) |
 |[Position de stationnement](#parking-position) | [Menu contextuel](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
+|[Édition OpenStreetMap](#openstreetmap-editing)| [Calque de carte](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Calque de carte](../plugins/mapillary.md#map-layer), [Menu contextuel](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Capteurs externes](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Métriques du véhicule](#vehicle-metrics)  | [Paramètres personnalisés](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
+|[Observateur d'étoiles](#star-watcher)  | [Écran](../plugins/starwatcher.md#star-map-screen), [Menu contextuel](../plugins/starwatcher.md#celestial-object-info) |
 |[Accessibilité](#accessibility) 🤖  | [Paramètres personnalisés](../plugins/accessibility.md#plugin-settings) |
-| [Développement OsmAnd](#osmand-development) | [Paramètres personnalisés](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Calque de carte](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contextuel](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [Suivi de navires AIS](#ais-vessel-tracker) 🤖  |  [Paramètres personnalisés](../plugins/ais-tracker.md#plugin-settings) |
+|[Développement OsmAnd](#osmand-development) | [Paramètres personnalisés](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Calque de carte](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contextuel](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[Suivi de navires AIS](#ais-vessel-tracker) 🤖  |  [Paramètres personnalisés](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Paramètres des greffons {#plugin-settings}
 
 :::caution NOTE
-Only the OsmAnd development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
+Seul le greffon de développement OsmAnd et le greffon d'édition OSM modifient les paramètres pour tous les profils. Les greffons restants sont configurés pour chaque profil séparément.  
 :::
 
 La plupart des greffons fournissent des paramètres de profil spécifiques ou des paramètres globaux, accessibles via :
@@ -140,7 +142,6 @@ Les greffons suivants fournissent leurs propres paramètres :
 
 ## Liste des greffons {#plugins-list}
 
-
 ### [Wikipédia](./wikipedia.md) {#wikipedia}
 
 Avoir Wikipédia pendant votre voyage vous aide à en apprendre davantage sur les lieux que vous visitez. Il est disponible hors ligne et affiche les articles Wikipédia liés aux points d'intérêt directement sur la carte.
@@ -156,6 +157,10 @@ Pour raconter l'histoire de vos déplacements, les données GPS, telles que la l
 ### [Topographie](./topography.md) {#topography}
 
 Les informations topographiques, telles que les courbes de niveau, l'ombrage, la pente, le relief 3D, aident à faire une évaluation visuelle de la configuration du terrain en voyant l'altitude, le relief, les extrêmes, l'inclinaison, les points de même hauteur, etc.  
+
+### [Météo](./weather.md) {#weather}
+
+Affiche les prévisions horaires pour la journée en cours et pour les 7 jours à venir. 
 
 ### [Vue carte marine](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ Le greffon d'édition OpenStreetMap vous permet de contribuer à OpenStreetMap, 
 
 Visualisez des vues au niveau de la rue de vos itinéraires ou de vos lieux d'intérêt, fournies par [Mapillary](https://www.mapillary.com/) (une connexion Internet est requise).  
 
-### [Accessibilité](./accessibility.md) {#accessibility}
-
-Le greffon Accessibilité rend les fonctionnalités d'accessibilité de l'appareil directement disponibles dans OsmAnd. Pour Android uniquement.  
-
 ### [Capteurs externes](./external-sensors.md) {#external-sensors}
 
 Connectez des capteurs externes pour afficher leurs données dans OsmAnd et stocker les informations dans les enregistrements de trajet.  
@@ -193,9 +194,13 @@ Connectez des capteurs externes pour afficher leurs données dans OsmAnd et stoc
 
 Connectez un scanner OBD-II pour afficher les données du véhicule dans OsmAnd et stocker les informations dans les enregistrements de trajet.  
 
-### [Météo](./weather.md) {#weather}
+### [Observateur d'étoiles](./starwatcher.md) {#star-watcher}
 
-Affiche les prévisions horaires pour la journée en cours et pour les 7 jours à venir.  
+L'Observateur d'étoiles affiche une superposition interactive du ciel étoilé avec des étoiles, des constellations, le Soleil, la Lune et les planètes. Il vous aide à identifier les objets célestes au-dessus de votre emplacement actuel, à prévisualiser leurs trajectoires pour une date et une heure sélectionnées, et à planifier des sessions d'observation des étoiles en utilisant les contrôles de temps intégrés et les options de visualisation.
+
+### [Accessibilité](./accessibility.md) {#accessibility}
+
+Le greffon Accessibilité rend les fonctionnalités d'accessibilité de l'appareil directement disponibles dans OsmAnd. Pour Android uniquement.  
 
 ### [Développement OsmAnd](./development.md) {#osmand-development}
 

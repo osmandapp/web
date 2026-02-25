@@ -1,5 +1,5 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
+source-hash: 31eaf050491744fda2c071f9b7f96835aefe6b7beef39ec37dbf6a225fba7c4c
 sidebar_position: 13
 title:  Vue Carte des pistes de ski
 ---
@@ -99,7 +99,7 @@ Le profil Ski est conçu pour être utilisé en combinaison avec les styles Hive
 
 </Tabs>
 
-La [carte vectorielle](../map/vector-maps.md) avec le [style de carte Hiver et ski](../map/vector-maps.md#winter-and-ski) inclus peut être complétée par les [Lignes de contour](../plugins/topography.md#contour-lines) et l'[Ombrage du relief](../plugins/topography.md#hillshade-slope-and-altitude-layers). Vous trouverez ci-dessous deux exemples. Les pistes sur la carte vectorielle par défaut sont affichées à gauche, et les pistes sur la carte vectorielle combinée avec les cartes raster *Lignes de contour* et *Ombrage du relief* sont affichées à droite. Dans le second cas, la carte affiche plus de données d'altitude pour aider à estimer la difficulté, le risque et la distance.  
+La [carte vectorielle](../map/vector-maps.md) avec le [style de carte Hiver et ski](../map/map-styles.md#winter-and-ski) inclus peut être complétée par les [Lignes de contour](../plugins/topography.md#contour-lines) et l'[Ombrage du relief](../plugins/topography.md#hillshade-slope-and-altitude-layers). Vous trouverez ci-dessous deux exemples. Les pistes sur la carte vectorielle par défaut sont affichées à gauche, et les pistes sur la carte vectorielle combinée avec les cartes raster *Lignes de contour* et *Ombrage du relief* sont affichées à droite. Dans le second cas, la carte affiche plus de données d'altitude pour aider à estimer la difficulté, le risque et la distance.  
 
 
 ### Désactiver le style de carte de ski {#disable-ski-map-style}
@@ -124,7 +124,7 @@ Le plugin Vue Carte des pistes de ski est une application distincte, et la désa
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Contours de profondeur nautique sur Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
+![Profil de ski sur Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
-![Contours de profondeur sur iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
+![Profil de ski sur iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
 </TabItem>
 
@@ -160,10 +160,10 @@ La carte de ski d'OsmAnd est construite comme l'un des styles de rendu, qui dét
 | Couleur | Description |
 | --- | --- |
 | ![Piste débutant](@site/static/img/plugins/ski-maps/1c_green_1.png) | Vert - Piste débutant |
-| ![ Pentes faciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Bleu - Pentes faciles |
+| ![Pentes faciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Bleu - Pentes faciles |
 | ![Pentes intermédiaires](@site/static/img/plugins/ski-maps/3c_red_1.png) | Rouge - Pentes intermédiaires |
 | ![Difficulté avancée](@site/static/img/plugins/ski-maps/4c_black_1.png) | Gris - Pentes de difficulté avancée |
-| ![Difficulté expert](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Jaune - Pentes de difficulté expert |
+| ![Difficulté experte](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Jaune - Pentes de difficulté experte |
 
 La difficulté des traces est généralement indiquée par des couleurs spécifiques. Les couleurs peuvent être différentes selon les pays et les stations. Vous trouverez ci-dessous quelques indications pratiques.
 
@@ -239,7 +239,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,renderin
 
 Pour savoir sur quelles pistes en dehors de la station de ski vous pouvez naviguer, vous devez activer l'option **Pistes et itinéraires de ski** dans la liste [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), ouverte depuis le menu [Configurer la carte](../map/configure-map-menu.md).  
 
-Avec le profil Ski, la navigation à ski et le [style de carte Hiver et ski](../map/vector-maps.md#winter-and-ski) activés, les [pistes et itinéraires de ski](../map/routes.md#ski-slopes-and-routes) montrent tous les types de pistes que la navigation à ski peut utiliser pour construire des itinéraires de navigation. Ces itinéraires de pistes de ski, s'ils sont activés, sont délimités par une couleur violette, principalement en dehors des limites de la station de ski.  
+Avec le profil Ski, la navigation à ski et le [style de carte Hiver et ski](../map/map-styles.md#winter-and-ski) activés, les [pistes et itinéraires de ski](../map/routes.md#ski-slopes-and-routes) montrent tous les types de pistes que la navigation à ski peut utiliser pour construire des itinéraires de navigation. Ces itinéraires de pistes de ski, s'ils sont activés, sont délimités par une couleur violette, principalement en dehors des limites de la station de ski.  
 Lors de l'activation de l'option [Pistes et itinéraires de ski](../map/routes.md#ski-slopes-and-routes) pour un style de carte autre que Hiver et ski, seules les pentes sont affichées. D'autres fonctionnalités liées au ski pourraient ne pas être affichées dans cette couche de style.  
 Les _pistes et itinéraires de ski_ [sont cliquables](../map/routes.md#actions-with-routes).
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
+source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
 sidebar_position: 2
 title:  Guides de voyage
 ---
@@ -17,8 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-:::info Fonctionnalité payante
-Les Guides de voyage sont une [fonctionnalité payante](../purchases/index.md) de l'application OsmAnd.
+:::tip Achat
+Les Guides de voyage sont une [fonctionnalité payante](../purchases/index.md).  
 :::
 
 Les guides de voyage virtuels dans OsmAnd offrent aux utilisateurs des informations précieuses, des recommandations et des conseils. Ils permettent également aux voyageurs d'accéder à des informations de navigation complètes sur les attractions dans l'application.
@@ -56,7 +56,7 @@ Les informations de Wikivoyage comprennent les faits principaux sur un lieu, les
 - [Construire un itinéraire](../navigation/setup/route-navigation.md#set-destinations) vers les attractions touristiques choisies ou une promenade libre entre les points.
 
 :::note
-Les articles des *Guides de voyage* sont stockés dans OsmAnd sous forme de traces GPX avec des points de cheminement. Après avoir ajouté ces traces à la carte (voir les sections *[Points](#points)* ou *[Itinéraires de voyage](#travel-routes)* de cet article), vous pouvez les gérer via le menu *[Mes lieux](../personal/myplaces.md)*.
+Les articles des *Guides de voyage* sont stockés dans OsmAnd sous forme de traces GPX avec des points de cheminement.  Après avoir ajouté ces traces à la carte (voir les sections *[Points](#points)* ou *[Itinéraires de voyage](#travel-routes)* de cet article), vous pouvez les gérer via le menu *[Mes lieux](../personal/myplaces.md)*.
 :::
 
 ### Télécharger les articles {#download-articles}

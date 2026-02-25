@@ -1,5 +1,5 @@
 ---
-source-hash: 61b0680b73157560322c9e1f518e6754f7621729463a0d13adc86d23430d9851
+source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
 sidebar_position: 3
 title:  Itinéraire vélo (VTT)
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-Le calcul d'itinéraire à vélo prend en compte des facteurs tels que la disponibilité de pistes cyclables, de sentiers et de routes qui sont sûrs et légaux pour les cyclistes. OsmAnd utilise toujours les données d'altitude pour calculer l'heure d'arrivée estimée (temps pour parcourir la distance) selon la [règle de Naismith](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). Par défaut, l'itinéraire le plus rapide est proposé.  
+Le calcul d'itinéraire à vélo prend en compte des facteurs tels que la disponibilité de pistes cyclables, de sentiers et de routes qui sont sûrs et légaux pour les cyclistes. OsmAnd utilise toujours les données d'altitude pour calculer l'heure d'arrivée estimée (temps pour parcourir la distance) selon la [règle de Naismith](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). Par défaut, l'itinéraire le plus rapide est proposé. Le calcul d'itinéraire à vélo prend également en compte des facteurs supplémentaires tels que la [largeur](../guidance/vehicle-parameters.md#limits) de votre vélo pour aider à éviter les pistes cyclables étroites.  
 Le calcul d'itinéraire à vélo peut également être utile pour le [VTT](#mtb-routing-particularities).  
 
 Vous pouvez configurer l'*Itinéraire vélo* dans la section [Paramètres d'itinéraire](../guidance/navigation-settings#route-parameters) des paramètres de Navigation.

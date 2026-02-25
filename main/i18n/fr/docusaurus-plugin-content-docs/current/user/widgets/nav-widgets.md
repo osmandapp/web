@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Widgets de navigation
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  Ce widget ne peut être utilisé qu'avec la fonctionnalité Pro pour les <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">abonnés OsmAnd Pro</a>.
-
+:::info Fonctionnalité Pro
+Le Widget d'altitude est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 Le widget d'altitude affiche un graphique avec l'altitude et la pente de votre itinéraire de navigation et votre position actuelle sur ce graphique avec l'altitude et la pente actuelles. Le graphique est tracé sur deux axes. L'axe des X représente la distance de votre itinéraire. L'axe des Y représente l'altitude, la valeur dépend du relief, et la pente est affichée en pourcentage.  
@@ -396,7 +394,7 @@ Le **widget d'alerte** combine plusieurs types d'alertes qui sont affichées dan
 
 - Vous avez la possibilité d'activer et de désactiver des alertes telles que *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* et *<Translate android="true" ids="show_tunnels"/>*. Les autres alertes sont actives par défaut si le widget est activé.  
 
-- Pour le type d'alerte *Limitation de vitesse*, vous pouvez ajuster la valeur de <Translate android="true" ids="speed_limit_exceed"/> dans les paramètres des instructions vocales pour mieux correspondre à la vitesse du véhicule et à la vitesse GPS.  
+- Pour le type d'alerte *Limitation de vitesse*, vous pouvez ajuster la valeur de <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) dans les paramètres des instructions vocales pour mieux correspondre à la vitesse du véhicule et à la vitesse GPS.  
 
 - La plupart des alertes sont affichées à l'écran et annoncées par une instruction vocale pendant 15 secondes, ainsi que le temps de déclenchement pour passer un point de cheminement, un point favori ou un POI. En savoir plus [ici](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 

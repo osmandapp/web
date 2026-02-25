@@ -1,5 +1,5 @@
 ---
-source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
+source-hash: 9140bac9e9be1e187b70214ddb666d2191b3cfef30bcc06f8571ba22da005fb7
 sidebar_position: 15
 title:  Enregistrement de trajet
 ---
@@ -356,7 +356,7 @@ Le badge de l'icône de l'application apparaît à côté de l'icône OsmAnd lor
 
 ## Widgets {#widgets}
 
-Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Distance*, la *Durée*, le *Dénivelé positif* et le *Dénivelé négatif*. Vous pouvez également ajouter des widgets *Vitesse max.* et *Pente moyenne*.
+Les widgets vous permettent d'afficher des informations clés sur l'enregistrement de la trace directement à l'écran, telles que la *Distance*, la *Durée*, le *Dénivelé positif*, le *Dénivelé négatif*, la *Vitesse max.* et la *Pente moyenne*. Sur iOS, vous pouvez également ajouter le widget *Temps en mouvement*.
 
 Pour commencer à utiliser les *widgets d'enregistrement de trajet*, vous devez effectuer tous les réglages suivants :
 
@@ -381,7 +381,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,map_widget_config,
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Choisissez un panneau → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Ajout du widget Distance/Démarrer-Arrêter sur iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![Ajout du widget Distance/Démarrer-Arrêter sur iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -413,13 +413,13 @@ Pour personnaliser votre interface, vous pouvez ajouter ou supprimer le widget d
 Certains widgets d'enregistrement de trajet prennent en charge plusieurs modes d'affichage. Les modes vous permettent de basculer entre les valeurs globales du trajet et les métriques pour la section la plus récente en montée ou en descente du trajet actuellement enregistré.
 
 Les modes suivants peuvent être disponibles en fonction du widget.
-1. **Distance (Démarrer-Arrêter)** :
-- Distance totale (par défaut)
-- Dernière montée
-- Dernière descente
+1. **Pente moyenne** :
+- Dernière descente  
+- Dernière montée  
 
-2. **Dénivelé positif** :
-- Total (par défaut)
+2. **Distance (Démarrer-Arrêter)** :
+- Distance totale (par défaut)
+- Dernière descente
 - Dernière montée
 
 3. **Dénivelé négatif** :
@@ -428,15 +428,20 @@ Les modes suivants peuvent être disponibles en fonction du widget.
 
 4. **Vitesse max.** :
 - Total (par défaut)
-- Dernière montée
 - Dernière descente
+- Dernière montée
 
-5. **Pente moyenne** :
-- Dernière montée  
-- Dernière descente 
+5. **Temps en mouvement** (*iOS uniquement*)
+- Total (par défaut)
+- Dernière descente
+- Dernière montée
+
+6. **Dénivelé positif** :
+- Total (par défaut)
+- Dernière montée
 
 Le basculement de mode dépend du widget :
-- Dénivelé positif / Dénivelé négatif / Vitesse max. / Pente moyenne — appuyez sur le widget sur la carte pour basculer son mode.
+- Dénivelé positif / Dénivelé négatif / Vitesse max. / Pente moyenne / Temps en mouvement — appuyez sur le widget sur la carte pour basculer son mode.
 - Distance (Démarrer-Arrêter) — le widget Distance prend en charge plusieurs modes d'affichage (sélectionnez-les dans les paramètres du widget), mais l'appui dessus ouvre toujours la boîte de dialogue d'enregistrement de trajet, où vous pouvez démarrer, arrêter et afficher des informations détaillées sur votre trace. 
 
 Si l'enregistrement actuel ne contient pas encore de section en montée ou en descente, les widgets en mode Dernière montée ou Dernière descente affichent 0 ou — (pas de données).
@@ -462,16 +467,18 @@ Le widget Distance prend en charge plusieurs modes d'affichage :
 
 | |
 |------------|
-|**Durée**. Affiche la durée totale de l'enregistrement du trajet en cours en heures et minutes. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Dénivelé positif**. Affiche le gain d'altitude total ou la section de montée la plus récente, en fonction du mode sélectionné. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
-|**Dénivelé négatif**. Indique la descente totale ou la section de descente la plus récente, en fonction du mode sélectionné. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
-|**Vitesse max.** . Affiche la vitesse maximale pour le trajet enregistré actuellement dans le mode sélectionné. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Pente moyenne**. Affiche la pente moyenne pour la dernière section de montée ou de descente du trajet actuel, en fonction du mode sélectionné. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Dénivelé négatif**. Indique la descente totale ou la section de descente la plus récente, en fonction du mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Durée**. Affiche la durée totale de l'enregistrement du trajet en cours en heures et minutes. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|**Vitesse max.** . Affiche la vitesse maximale pour le trajet enregistré actuellement dans le mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Temps en mouvement** (*iOS uniquement*). Affiche le temps en mouvement pour le trajet enregistré actuellement, ou le temps pour la dernière montée et descente, en fonction du mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**Dénivelé positif**. Affiche le gain d'altitude total ou la section de montée la plus récente, en fonction du mode sélectionné. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Si vous avez sélectionné plusieurs widgets — *Durée*, *Dénivelé positif* ou *Dénivelé négatif* — vous pouvez accéder à la même boîte de dialogue pour chacun sans avoir besoin de changer ou de la fermer. Cette interface unifiée facilite la visualisation et la gestion de toutes les informations connexes de manière transparente.
 

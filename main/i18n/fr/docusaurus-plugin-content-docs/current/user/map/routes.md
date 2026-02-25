@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title:  Itinéraires
 ---
 
@@ -119,7 +119,7 @@ Certains segments de chemin peuvent faire partie de nombreux itinéraires, mais 
 - _Pistes et itinéraires de ski_ dans le style de carte _OsmAnd par défaut_.  
 ![Itinéraires sur la carte - pistes de ski](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Les pistes et itinéraires de ski sont un groupe spécifique d'[itinéraires](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) dans OpenStreetMap. Typiquement, ces itinéraires peuvent être utilisés avec le style de carte [Hiver et ski](../map/vector-maps.md#winter-and-ski) avec toutes les [pistes](https://wiki.openstreetmap.org/wiki/Pistes) visibles. Si un autre style de carte est actif, une bannière s'affiche suggérant un passage à [Hiver et ski](../map/vector-maps.md#winter-and-ski) (*Android uniquement*) et seules les pistes sont affichées. Appuyez sur ***Changer*** pour modifier le style de carte sans quitter l'écran actuel, ou ***Plus tard*** pour masquer la bannière.
+Les pistes et itinéraires de ski sont un groupe spécifique d'[itinéraires](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) dans OpenStreetMap. Typiquement, ces itinéraires peuvent être utilisés avec le style de carte [Hiver et ski](../map/map-styles.md#winter-and-ski) avec toutes les [pistes](https://wiki.openstreetmap.org/wiki/Pistes) visibles. Si un autre style de carte est actif, une bannière s'affiche suggérant un passage à [Hiver et ski](../map/map-styles.md#winter-and-ski) (*Android uniquement*) et seules les pistes sont affichées. Appuyez sur ***Changer*** pour modifier le style de carte sans quitter l'écran actuel, ou ***Plus tard*** pour masquer la bannière.
 
 
 ### Pistes de motoneige {#snowmobile-trails}
@@ -140,7 +140,7 @@ Les [itinéraires équestres](https://wiki.openstreetmap.org/wiki/Tag:route%3Dho
 
 ![Itinéraires sur la carte - sports d'eaux vives](@site/static/img/map/map-routes-whitewater-sport.png)
 
-Les [itinéraires en eaux vives](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) sont affichés avec des icônes d'accès, des zones de danger pour le [tourisme en eaux vives](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+Les [itinéraires en eaux vives](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) sont affichés avec des icônes d'accès, des zones de danger et les rapides à proximité pour le [tourisme en eaux vives](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). Voir les [fonctionnalités en eaux vives](../map-legend/osmand.md#whitewater-features) dans la Légende de la carte pour les grades de rapides, les grades de sections de rivière et les symboles associés.
 
 
 ### Itinéraires de course à pied {#running-routes}
@@ -180,7 +180,7 @@ Allez dans : *<Translate android="true" ids="shared_string_menu,configure_map,re
 
 - Pour afficher les itinéraires requis sur la carte, activez-les dans la *liste des itinéraires* du menu [Configurer la carte](../map/configure-map-menu.md).
 - OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#save-as-a-track), et si l'ensemble visible d'itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
-- Les principaux types d'itinéraires peuvent également être filtrés par classes et sous-classes, vous permettant d'afficher uniquement des groupes spécifiques au sein de chaque type. Par exemple, vous pouvez afficher les itinéraires de randonnée par **symboles OSMC** en tant que classes, et par *réseaux internationaux, nationaux, régionaux* ou *locaux* en tant que sous-classes.
+- Les principaux types d'itinéraires peuvent également être filtrés par classes et sous-classes, vous permettant d'afficher uniquement des groupes spécifiques au sein de chaque type. Par exemple, vous pouvez afficher les itinéraires de randonnée par **symboles OSMC** en tant que classes, et par *réseaux internationaux, nationaux, régionaux* ou *locaux* en tant que sous-classes, qui sont actuellement disponibles lorsque le plugin [OsmAnd Development](../plugins/development.md) est activé.
 - Vous pouvez créer une trace par-dessus les itinéraires en utilisant l'outil [Planifier un itinéraire](../plan-route/create-route.md). 
 - Lorsque plusieurs itinéraires suivent la même route, chaque itinéraire est affiché comme une ligne semi-transparente séparée placée au-dessus des autres. 
 - Lorsque vous appuyez sur un emplacement où plusieurs itinéraires se chevauchent, un menu contextuel avec tous les itinéraires passant par ce point s'affiche. 

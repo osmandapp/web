@@ -1,5 +1,5 @@
 ---
-source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
+source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Aperçu {#overview}
+
+:::tip Achat
+Android Auto est une [fonction payante](../purchases/index.md).  
+:::
 
 ![Écran Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -59,8 +63,8 @@ Lorsque vous ouvrez l'application, une liste de catégories s'affiche. Pour faci
 - [Menu OsmAnd](#destination-points). Contient une liste d'options disponibles pour assigner un point d'arrivée d'itinéraire ou un trajet libre.
 - [Paramètres](#voice-prompts). Ce bouton est responsable de : 1. l'accès pour activer/désactiver les *instructions vocales* lorsque vous naviguez sur l'itinéraire sélectionné ; 2. afficher les détails de l'itinéraire (temps et distance) pour le prochain arrêt.
 - [Recherche](#search). Appuyer sur le bouton ouvre un écran avec accès aux fonctions de recherche.
-- [Ma position](../widgets/map-buttons.md#my-location-and-zoom). Déplace la partie visible de la carte pour que votre position actuelle soit au centre de l'écran.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Permet de zoomer en avant et en arrière sur la partie visible de la carte. Le geste de pincement pour zoomer est disponible pour l'échelle de la carte. Si cela n'est pas pris en charge par l'unité principale, le réglage du zoom s'effectue par un double-tap et un geste de balayage.
+- [Ma position](../widgets/map-buttons.md#my-position-and-zoom). Déplace la partie visible de la carte pour que votre position actuelle soit au centre de l'écran.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Permet de zoomer en avant et en arrière sur la partie visible de la carte. Le geste de pincement pour zoomer est disponible pour l'échelle de la carte. Si cela n'est pas pris en charge par l'unité principale, le réglage du zoom s'effectue par un double-tap et un geste de balayage.
 - [Boussole](../widgets/map-buttons.md#compass). Indique lequel des quatre modes d'orientation de la carte disponibles sur l'écran de votre appareil est sélectionné.
 
 
@@ -262,7 +266,7 @@ Ce widget d'information combine des types d'alertes tels que **Passages piétons
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-Le widget **Compteur de vitesse** est un élément d'interface intégré qui affiche la *vitesse actuelle* à l'aide des données GPS et la *limitation de vitesse* de la [base de données OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) et des [paramètres d'OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) sur l'écran du système multimédia du véhicule.
+Le widget **Compteur de vitesse** est un élément d'interface intégré qui affiche la *vitesse actuelle* à l'aide des données GPS et la *limitation de vitesse* de la [base de données OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) et des [paramètres d'OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) sur l'écran du système multimédia du véhicule. Lorsque votre vitesse actuelle approche la tolérance de limite de vitesse configurée ou dépasse la limite de vitesse, le widget change d'apparence (couleurs) pour fournir un avertissement. Le changement d'apparence peut être animé.
 
 - Le **widget Compteur de vitesse** est [*dépendant du profil*](../personal/profiles.md), donc si vous modifiez les paramètres pour un profil, ils ne seront pas appliqués à un autre.
 - Il n'y a pas d'option pour personnaliser l'affichage du **widget Compteur de vitesse** directement dans *Android Auto*, vous devez le configurer dans l'application OsmAnd avant de commencer la navigation et de connecter votre appareil au véhicule.
