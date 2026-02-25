@@ -1,6 +1,6 @@
 ---
-sidebar_position: 14
-title:  Star Watcher
+sidebar_position: 3
+title:  Astronomy
 unlistead: true
 ---
 
@@ -20,19 +20,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoAndroidOnly/>
 
 :::info
-**Star Watcher** is currently in **beta**.
+**Astronomy** is currently in **beta**.
 :::
 
 ## Overview {#overview}
 
-The Star Watcher plugin shows the star sky overlay on the map with stars, constellations, Sun, Moon and planets. The positions and paths of Sun, Moon, planets and major stars are shown on the map.
+The Astronomy plugin shows the star sky overlay on the map with stars, constellations, Sun, Moon and planets. The positions and paths of Sun, Moon, planets and major stars are shown on the map.
 
 
 ## Required Setup Parameters {#required-setup-parameters}
   
-The following settings are required to display Star Watcher overlay:
+The following settings are required to display Astronomy overlay:
 
-1. Enable [**Star Watcher** plugin](../plugins/index.md#enable--disable) from the *Plugins* section of the *Main Menu*
+1. Enable [**Astronomy** plugin](../plugins/index.md#enable--disable) from the *Plugins* section of the *Main Menu*
 2. Use **Menu → Star map** to open dedicated screen with star sky, settings and time controls.
 3. Select **time and date** using the controls on the Star map screen.
 4. Adjust what is shown on the Star map using [**Configure View**](#configure-view) — for example, toggle visible objects and rendering aids.
@@ -78,7 +78,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 **Go to:** *Enabled plugin → Menu → Star map → Camera button* 
 
-The **Star Watcher** layer works with your **device camera** to enable **Augmented Reality (AR) stargazing**. Point your phone camera at the real night sky and see stars, planets, constellations, Sun/Moon overlaid in real-time.
+The **Astronomy** layer works with your **device camera** to enable **Augmented Reality (AR) stargazing**. Point your phone camera at the real night sky and see stars, planets, constellations, Sun/Moon overlaid in real-time.
 
 **How AR Star Finding works:**
 - **Live camera view** shows real sky with transparent astronomical overlays aligned to horizon/compass
@@ -149,7 +149,7 @@ This section lets you choose which types of celestial objects are shown on the S
 
 
 <!-- 
-## Star Watcher Settings
+## Astronomy Settings
 
 *Main Menu → Plugins → Star map → ⚙️ button*
 
