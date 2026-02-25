@@ -29,6 +29,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     const [enableGroups, setEnableGroups] = useState([]);
     const [, height] = useWindowSize();
     const [markers, setMarkers] = useState([]);
+    const [mapMoveTick, setMapMoveTick] = useState(0);
     const currentLoc = useGeoLocation(ctx);
     const debouncerTimer = useRef(0);
 
@@ -41,6 +42,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
         debouncerTimer.current = setTimeout(() => {
             debouncerTimer.current = 0;
+            setMapMoveTick((n) => n + 1);
         }, 5000);
 
         return () => {
@@ -109,7 +111,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             const updatedMarkers = addLocDist({ location: getCenterMapLoc(hash), markers: refMarkers.current });
             setMarkers(updatedMarkers);
         }
-    }, [currentLoc?.lat, currentLoc?.lng, refMarkers.current]);
+    }, [currentLoc?.lat, currentLoc?.lng, refMarkers.current, mapMoveTick]);
 
     useEffect(() => {
         if (folder) {
