@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title:  Preparación de la ruta
 ---
@@ -65,10 +65,10 @@ Antes de usar la navegación sin conexión, asegúrese de que los [mapas requeri
 1. Abra el [*Menú de navegación*](#navigation-menu):
 
     - Especifique el [punto de destino](#set-target-point).
-    - Espere hasta que se calcule la ruta. Después de eso, podrá obtener información adicional sobre su ruta en la *[sección de Detalles](./route-details.md#overview)*.
+    - Espere hasta que se calcule la ruta. Después de eso, podrá obtener información adicional sobre su ruta en *[sección de Detalles](./route-details.md#overview)*.
     - Puede cambiar entre diferentes [tipos de enrutamiento](./../routing/osmand-routing.md#routing-types) (perfiles) para obtener el mejor resultado.
     - Añada [destinos intermedios](#intermediate-destinations) (opcional).
-    - También puede cambiar el punto de partida desde la [ubicación actual](../../map/interact-with-map.md#my-location-and-zoom) a la requerida.
+    - También puede cambiar el punto de partida desde la [posición actual](../../map/interact-with-map.md#my-position-and-zoom) a la requerida.
 
 2. Se pueden usar [*Ajustes de navegación*](#settings) adicionales según sus propósitos (puede configurar qué carreteras evitar o preferir, ahorrar combustible o elegir la ruta más rápida, etc.).
 
@@ -79,7 +79,7 @@ Antes de usar la navegación sin conexión, asegúrese de que los [mapas requeri
 
 :::note
 
-**La ruta no se puede construir cuando se selecciona *[Mapa en línea](../../map/raster-maps.md#select-raster-maps)* como fuente del mapa.**
+**La ruta no se puede construir cuando se selecciona *[Mapa en línea](../../map/raster-maps.md#layers)* como fuente del mapa.**
 
 :::
 
@@ -88,7 +88,7 @@ Antes de usar la navegación sin conexión, asegúrese de que los [mapas requeri
 
 Hay 3 formas de acceder al menú de navegación:
 
-- El [*botón de Navegación*](../../widgets/map-buttons.md#directions) en la pantalla del mapa.  
+- El [*botón de Navegación*](../../widgets/map-buttons.md#navigation) en la pantalla del mapa.  
 - *Dirección hacia/desde* en un [*menú contextual del mapa*](../../map/map-context-menu.md#directions-to--from).  
 - Sección de navegación en el [*Menú principal*](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Hay 3 formas de acceder al menú de navegación:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Establecer la ubicación de inicio (predeterminado: [*Mi ubicación actual*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Establecer la ubicación de inicio (predeterminado: [*Mi ubicación actual*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Usar para [establecer su punto de destino](#set-target-point).
 - **Añadir** &nbsp;&#43; - Insertar [puntos intermedios](../../widgets/nav-widgets.md#distance-to-intermediate) a lo largo de la ruta.
 - **Intercambiar** &nbsp;&#8595;&#8593; - Invertir los puntos de *Inicio* y *Fin*.
@@ -325,7 +325,7 @@ Esta opción está disponible en la versión de Android de la aplicación en la 
 Para reanudar la navegación:
 
 - Use el mensaje de OsmAnd en la barra de notificaciones.
-- Use el *menú de Acciones rápidas* o el diálogo que aparece cuando toca el *[botón de Navegación](../../widgets/map-buttons.md#directions)* (ver captura de pantalla).
+- Use el *menú de Acciones rápidas* o el diálogo que aparece cuando toca el *[botón de Navegación](../../widgets/map-buttons.md#navigation)* (ver captura de pantalla).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

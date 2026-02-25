@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Lugares populares
 ---
@@ -18,15 +18,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <InfoIncompleteArticle/>
 -->
 
-## Resumen {#overview}
+## Overview {#overview}
+
+:::tip Compra
+Lugares populares es una [función de pago](../purchases/index.md).  
+:::
 
 La función **Lugares populares** de OsmAnd destaca puntos de referencia y atracciones notables utilizando datos abiertos estructurados de [Wikidata](https://www.wikidata.org) y [Wikipedia](https://www.wikipedia.org/). Ayuda a los usuarios a explorar destinos conocidos con descripciones multilingües y fotos.
 
 Cada lugar incluido en esta función está vinculado a un **ID de Wikidata**, lo que permite a OsmAnd mostrar nombres verificados, imágenes de vista previa y enlaces a artículos de Wikipedia. Esta herramienta **no** muestra todos los puntos de OpenStreetMap (OSM). Se limita a los PDI con referencias de Wikidata.
 
 Actualmente, la base de datos seleccionada incluye aproximadamente **50.000 a 150.000 lugares mejor valorados** en todo el mundo, seleccionados entre más de **1 millón** de objetos de Wikidata + OSM.
-
-Las imágenes y otro contenido basado en Wikidata en Lugares populares se actualizan según un horario y pueden no aparecer inmediatamente después de los cambios en Wikidata o Wikimedia Commons. Frecuencia de actualización actual: dos veces al mes — el **10** y el **20**.
 
 :::note
 *Esta es la primera versión de la función Lugares populares. Los comentarios son bienvenidos en [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -43,9 +45,9 @@ Las imágenes y otro contenido basado en Wikidata en Lugares populares se actual
 </Tabs>
 
 
-## Fuentes de datos {#data-sources}
+## Data Sources {#data-sources}
 
-**Los Lugares populares** se basan en contenido estructurado de [Wikidata](https://www.wikidata.org) y [Wikipedia](https://www.wikipedia.org/).
+**Lugares populares** se basan en contenido estructurado de [Wikidata](https://www.wikidata.org) y [Wikipedia](https://www.wikipedia.org/).
 
 Solo se muestran los PDI con un **ID de Wikidata** vinculado. Estos ID conectan los objetos del mapa con nombres, descripciones e imágenes verificados.
 
@@ -53,10 +55,10 @@ Puede ver el enlace de Wikidata directamente en el [Menú contextual del mapa](.
 
 Las imágenes y otro contenido basado en Wikidata en Lugares populares se actualizan según un horario y pueden no aparecer inmediatamente después de los cambios en Wikidata o Wikimedia Commons. Frecuencia de actualización actual: dos veces al mes — el **10** y el **20**.
 
-Aprenda a encontrar un ID de Wikidata: [Wikipedia: Encontrar un ID de Wikidata](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
+Aprenda a encontrar un ID de Wikidata: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
 
-## Cómo usar {#how-to-use}
+## How to Use {#how-to-use}
 
 <InfoAndroidOnly/>
 
@@ -66,7 +68,8 @@ Hay dos formas principales de acceder a esta función:
 
 - **Versión gratuita**  
   Acceda a través de [Búsqueda](#explore-in-search) para explorar lugares cercanos en una vista de lista.  
-  *<Translate android="true" ids="android_button_seq"/>*. Ir a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*  
+  *<Translate android="true" ids="android_button_seq"/>*. Ir a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  
   Esta lista Explorar muestra lugares Wikipedia/Wikidata clasificados por popularidad cerca de usted y funciona en línea. Muestra hasta 50 lugares. Dado que los resultados de Explorar/Wikipedia están clasificados por calificación, el orden en estos resultados puede diferir de la búsqueda regular de PDI.
 
 - **Versiones de pago** *(Maps+ y OsmAnd Pro)*  
@@ -78,7 +81,7 @@ Hay dos formas principales de acceder a esta función:
   Puede cambiar entre fuentes de Wikipedia **en línea** y **fuera de línea** en la configuración de la superposición. Obtenga más información en [Activar capa](#enable-layer).
 
 
-## Explorar en Búsqueda {#explore-in-search}
+## Explore in Search {#explore-in-search}
 
 <InfoAndroidOnly/>
 
@@ -113,7 +116,7 @@ Para usarlo **fuera de línea**, necesita una suscripción a [Maps+ u OsmAnd Pro
 :::
 
 
-## Activar capa {#enable-layer}
+## Enable Layer {#enable-layer}
 
 <InfoAndroidOnly/>
 
@@ -136,7 +139,7 @@ Antes de usar esta función:
 - Asegúrese de que el [Plugin de Wikipedia](../plugins/wikipedia.md) esté activado.
 - Descargue los datos de Wikipedia para su región si desea usarlos sin conexión.
 
-### Opciones de capa {#layer-options}
+### Layer Options {#layer-options}
 
 Una vez activada, las siguientes opciones estarán disponibles:
 
@@ -153,7 +156,7 @@ Una vez activada, las siguientes opciones estarán disponibles:
 Al tocar un PDI en el mapa se abre el [menú contextual de PDI](./map-context-menu.md), donde puede ver [fotos en línea](#online-photos) y acceder a los [artículos de Wikipedia](../plugins/wikipedia.md) vinculados.
 
 
-## Fotos en línea {#online-photos}
+## Online Photos {#online-photos}
 
 *<Translate android="true" ids="help_article_map_map_context_menu_name,online_photos"/>*
 
@@ -200,7 +203,7 @@ In the Map Context menu How to access:
 
 -->
 
-### Galería {#gallery}
+### Gallery {#gallery}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -290,7 +293,7 @@ The **Details** screen provides full metadata for the selected photo, including:
 -->
 
 
-## Artículos relacionados {#related-articles}
+## Related Articles {#related-articles}
 
 - [Menú contextual del mapa](./map-context-menu.md)
 - [Configurar mapa](./configure-map-menu.md)

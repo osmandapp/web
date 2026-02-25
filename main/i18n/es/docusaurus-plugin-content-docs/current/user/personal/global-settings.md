@@ -1,5 +1,5 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Ajustes globales
 ---
@@ -79,7 +79,7 @@ Esta función está disponible para la versión de iOS de la aplicación OsmAnd.
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![Ajustes generales Perfil predeterminado iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Ajustes generales Perfil de CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
 El [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) se utiliza cuando se conecta al [software CarPlay](https://support.apple.com/en-gb/HT205634) de su vehículo y le ayuda a aprovechar al máximo la versión optimizada de la aplicación OsmAnd utilizando los sistemas de audio y video para mostrar datos en su teléfono.
 
@@ -147,10 +147,11 @@ Ir a: *Archivos → En mi iPhone → OsmAnd Maps*
 | Modo 3D | Es posible ver el mapa en 2D, y puede cambiar el ángulo de visión para obtener una [vista 3D](../widgets/map-buttons.md#3d-mode). | Puede ver el mapa en 2D y [3D](../widgets/map-buttons.md#3d-mode). |
 | Visualización del mapa | Todo el mapa se renderiza como un conjunto de teselas, y los marcadores, líneas y texto ya están dentro de estas teselas. | Primero, se renderiza todo el paquete de teselas, y luego los símbolos disponibles se aplican al mapa, [capa por capa](../../technical/algorithms/map-rendering-layers.md). |
 | Superposición / subyacencia de símbolos transparentes | Admite todos los ajustes. | No admite una capa ráster sobre texto vectorial. |
-| [Terreno 3D](../map/raster-maps.md#3d-relief) | No compatible. | Esta función visualiza el terreno en el mapa añadiendo información de elevación a un mapa 2D normal, lo que crea un efecto 3D y de profundidad. |
+| [Terreno 3D](../plugins/topography.md#3d-relief) | No compatible. | Esta función visualiza el terreno en el mapa añadiendo información de elevación a un mapa 2D normal, lo que crea un efecto 3D y de profundidad. |
 | [Tracks 3D](../map/tracks/appearance.md) | No compatible. | Esta función le permite mostrar tracks por altitud sobre el nivel del mar. |
 | [Mapa en línea](../plugins/online-map.md) | No admite la visualización de curvas de nivel si la fuente del mapa es cualquier mapa de teselas en línea. | Cuando la fuente del mapa es un mapa en línea, también se utilizan mapas 3D y se admite la visualización de curvas de nivel en el mapa. |
-| [Complemento del tiempo](../plugins/weather.md) | No puede utilizar este complemento. | Cómodo de usar con el complemento. |  
+| [Complemento del tiempo](../plugins/weather.md) | No puede utilizar este complemento. | Cómodo de usar con el complemento. |
+| [Vista de globo](../map/interact-with-map.md#globe-view) | No compatible. | Permite mostrar el mapa como una Tierra esférica (globo) en lugar de una proyección plana. |  
 
 La imagen para la vista 3D del mapa se carga tesela por tesela, y luego todos los símbolos. La velocidad de renderizado del mapa depende del número de objetos gráficos 2D y 3D que contenga, y directamente del rendimiento de su hardware. Por lo tanto, la Versión 2 (OpenGL) no se puede utilizar en dispositivos de bajo rendimiento.
 
@@ -346,10 +347,10 @@ OsmAnd le ofrece una selección de servicios para determinar su ubicación. Se r
 
 ## Legal {#legal}
 
-OsmAnd puede [advertirle sobre radares de tráfico](../navigation/guidance/navigation-settings.md#screen-alerts), pero solo si las leyes de su país lo permiten.
+OsmAnd puede [advertirle sobre radares de velocidad](../navigation/guidance/navigation-settings.md#screen-alerts), pero solo si las leyes de su país lo permiten.
 
 
-### Desinstalar radares de tráfico {#uninstall-speed-cameras}
+### Desinstalar radares de velocidad {#uninstall-speed-cameras}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -371,11 +372,11 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osma
 
 </Tabs>
 
-Este ajuste le permite activar o desactivar los PDI con radares de tráfico, necesita reiniciar la aplicación OsmAnd para que los cambios surtan efecto.
+Este ajuste le permite activar o desactivar los PDI con radares de velocidad, necesita reiniciar la aplicación OsmAnd para que los cambios surtan efecto.
   
-En algunos países o regiones, el uso de aplicaciones de advertencia de radares de tráfico es ilegal. Debe hacer una elección dependiendo de las leyes de su país. Seleccione **Mantener activo**, y recibirá alertas y notificaciones de radares de tráfico. Seleccione **Desinstalar** y todos los datos relacionados con los radares de tráfico, como advertencias, notificaciones y PDI, se eliminarán hasta que reinstale completamente OsmAnd.  
+En algunos países o regiones, el uso de aplicaciones de advertencia de radares de velocidad es ilegal. Debe hacer una elección dependiendo de las leyes de su país. Seleccione **Mantener activo**, y recibirá alertas y notificaciones de radares de velocidad. Seleccione **Desinstalar** y todos los datos relacionados con los radares de velocidad, como advertencias, notificaciones y PDI, se eliminarán hasta que reinstale completamente OsmAnd.  
 
-Lea sobre las alertas de radares de tráfico en su ruta en el artículo Widgets de navegación en la sección *[Widget de alertas](../widgets/nav-widgets.md#alert-widget)*.
+Lea sobre las alertas de radares de velocidad en su ruta en el artículo Widgets de navegación en la sección *[Widget de alertas](../widgets/nav-widgets.md#alert-widget)*.
 
 
 ## Artículos relacionados {#related-articles}

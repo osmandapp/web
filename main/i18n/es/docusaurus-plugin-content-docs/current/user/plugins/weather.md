@@ -1,5 +1,5 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
+source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
 sidebar_position: 17
 title:  Tiempo
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Resumen {#overview}
 
 :::info Función de pago
- <ProFeature/> El complemento del Tiempo es una [función de pago](../purchases/index.md) de la aplicación OsmAnd.  
+El complemento del Tiempo es una función de pago de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 Las capas interactivas del mapa meteorológico en la aplicación OsmAnd le permiten monitorear la temperatura, la presión atmosférica, la cobertura de nubes, la velocidad del viento y la precipitación en su ciudad o en cualquier otro lugar en un mapa global interactivo. El complemento del Tiempo proporciona pronósticos meteorológicos por hora para los próximos 7 días directamente en el mapa de OsmAnd. La información meteorológica también se puede descargar para su uso sin conexión.  
@@ -60,7 +60,7 @@ El complemento del Tiempo solo está disponible con el motor de renderizado de m
 
 Ir a: *Complemento activado → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Panel de Tiempo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Panel de Tiempo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -74,7 +74,9 @@ Ir a: *Complemento activado → <Translate ios="true" ids="shared_string_menu,sh
 
 </Tabs>
 
-El menú lateral principal tiene un elemento de menú dedicado al **Tiempo** que proporciona acceso rápido a todas las herramientas meteorológicas. La *pantalla de pronóstico del tiempo* muestra información sobre *temperatura*, *presión atmosférica*, *velocidad del viento*, *cobertura de nubes* y *precipitación*.  
+El menú lateral principal tiene un elemento de menú dedicado al **Tiempo** que proporciona acceso rápido a todas las herramientas meteorológicas. La *pantalla de pronóstico del tiempo* muestra información sobre *temperatura*, *presión atmosférica*, *velocidad del viento*, *cobertura de nubes* y *precipitación*. 
+
+Los valores del pronóstico se muestran para el centro del mapa, marcado por una mira (negra en Android, roja en iOS). Mueva el mapa para cambiar la ubicación seleccionada; los datos meteorológicos se actualizan automáticamente para el nuevo punto.
 
 En la parte inferior de la pantalla se encuentra la *barra de herramientas del tiempo*. Puede usar los botones de día y el control deslizante de tiempo para establecer la hora exacta en la que se mostrará el pronóstico del tiempo.
 

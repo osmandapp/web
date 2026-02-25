@@ -1,5 +1,5 @@
 ---
-source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
+source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
 sidebar_position: 1
 title:  Primeros Pasos
 ---
@@ -40,9 +40,9 @@ Explore cómo descargar mapas, cómo configurar la aplicación, cómo usar el ma
 
 ## Instalar OsmAnd {#install-osmand}
 
-OsmAnd es una aplicación móvil de Mapas y Navegación disponible para **Android** e **iOS**. Puede descargarla desde las tiendas de aplicaciones más populares.
+OsmAnd es una aplicación móvil para Mapas y Navegación disponible para **Android** e **iOS**. Puede descargarla de los mercados más populares.
 
-**Tiendas de Android**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) y [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+**Mercados de Android**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) y [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
 <AndroidStore/>
 
@@ -64,7 +64,7 @@ Nuestro objetivo es crear una aplicación orientada a mapas totalmente funcional
 - Enriquezca su viaje turístico con [Wikipedia](../plugins/wikipedia.md) y [Wikivoyage](../plan-route/travel-guides.md) sin conexión.
 - Personalice completamente cómo [se muestra el mapa](../map/configure-map-menu.md) y qué [widgets](../widgets/index.md) se muestran en él.
 - Navegar [por ruta](../navigation/setup/route-navigation.md), [por una traza dada](../navigation/setup/gpx-navigation.md), [en transporte público](../navigation/routing/public-transport-navigation.md) y [fuera de carretera](../navigation/setup/markers-navigation.md).
-- Todo funciona **sin conexión**.
+- Todo funciona **Sin conexión**.
 - Y no olvide contribuir a [OpenStreetMap](https://www.openstreetmap.org/) con el [Plugin de edición OSM](../plugins/osm-editing.md).
 
 
@@ -130,7 +130,7 @@ Aunque OsmAnd le permite descargar mapas para todas las regiones disponibles, no
 
 ### Cómo cambiar el idioma de la aplicación {#how-to-change-app-language}
 
-La opción *Idioma de visualización* se utiliza para cambiar el idioma de toda la aplicación, incluidas las ventanas emergentes, el texto interno, los mensajes y más. Hasta Android 12, OsmAnd le permite personalizar el idioma de visualización según sus preferencias directamente en la aplicación. A partir de Android 13 y en dispositivos iOS, el idioma de visualización solo se puede cambiar en la configuración del sistema (vea cómo cambiar las preferences de idioma por aplicación en [Android](https://developer.android.com/guide/topics/resources/app-languages) e [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
+La opción *Idioma de visualización* se utiliza para cambiar el idioma de toda la aplicación, incluidas las ventanas emergentes, el texto interno, los mensajes y más. Hasta Android 12, OsmAnd le permite personalizar el idioma de visualización según sus preferencias directamente en la aplicación. A partir de Android 13 y en dispositivos iOS, el idioma de visualización solo se puede cambiar en la configuración del sistema (vea cómo cambiar las preferencias de idioma por aplicación en [Android](https://developer.android.com/guide/topics/resources/app-languages) e [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -260,7 +260,7 @@ El mapa es un elemento central de OsmAnd, y es importante saber [cómo usarlo](.
 
 ### Cómo añadir datos personales a los mapas {#how-to-add-personal-data-to-maps}
 
-OsmAnd le permite hacer varias marcas en el Mapa para sus necesidades personales. Por ejemplo, [Puntos favoritos](../personal/favorites.md) - puntos personales con nombre, icono y categoría, [Marcadores](../personal/markers.md) - puntos añadidos rápidamente como objetivo, [Notas de audio/vídeo](../plugins/audio-video-notes.md) - notas multimedia grabadas en un punto específico, [Trazas](../personal/tracks/manage-tracks.md) - trazas y recorridos grabados e importados.
+OsmAnd le permite hacer varias marcas en el Mapa para sus necesidades personales. Por ejemplo, [Puntos favoritos](../personal/favorites.md) - puntos personales con nombre & icono & categoría, [Marcadores](../personal/markers.md) - puntos añadidos rápidamente como objetivo, [Notas de audio/vídeo](../plugins/audio-video-notes.md) - notas multimedia grabadas en un punto específico, [Trazas](../personal/tracks/manage-tracks.md) - trazas y recorridos grabados e importados.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -665,7 +665,7 @@ OsmAnd no tiene ningún permiso requerido en la versión de iOS / Android.
 **Esencial**:
 
 - **Internet**. Descarga inicial / actualización de mapas sin conexión. Además, podría ser necesario para acceder a funciones en línea como [Imágenes a nivel de calle](../map/point-layers-on-map.md#-street-level-imagery), [Fotos en línea](../map/map-context-menu.md#online-photos) o [Mapas en línea](../map/raster-maps.md).
-- **GPS** / **Red GSM**. Determinar su ubicación, seguirle en modo de navegación y grabar su viaje (opcional). Este permiso se solicita cuando hace clic en el [botón de mi ubicación](../widgets/map-buttons.md#my-location-and-zoom) o cuando [inicia la navegación](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **Red GSM**. Determinar su ubicación, seguirle en modo de navegación y grabar su viaje (opcional). Este permiso se solicita cuando hace clic en el [botón de mi ubicación](../widgets/map-buttons.md#my-position-and-zoom) o cuando [inicia la navegación](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Opcional**:
 

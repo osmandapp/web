@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Búsqueda
 title: Búsqueda en el sitio web
@@ -57,7 +57,7 @@ Abre la pestaña de Búsqueda para acceder a Explorar: los resultados de Explora
 
 ## Menú contextual de PDI {#poi-context-menu}
 
-No importa qué opción de búsqueda uses (Barra de búsqueda, Categorías o Explorar), seleccionar un PDI en el mapa o en la lista de resultados abre el Menú contextual de PDI. El menú contextual es el lugar principal para ver información de PDI y realizar acciones comunes. Combina detalles de PDI (como ubicación y datos relacionados) con acciones rápidas (por ejemplo, guardar, compartir o iniciar planificación de rutas y navegación).
+No importa qué opción de búsqueda uses (Barra de búsqueda, Categorías o Explorar), seleccionar un PDI en el mapa o en la lista de resultados abre el Menú contextual de PDI. El menú contextual es el lugar principal para ver información de PDI y realizar acciones comunes. Combina detalles de PDI (como ubicación y datos relacionados) con acciones rápidas (por ejemplo, guardar, compartir o iniciar navegación).
 
 ### Detalles de PDI {#poi-details}
 
@@ -65,13 +65,14 @@ El **Menú contextual de PDI** muestra información clave sobre el lugar selecci
 - **Nombre e icono** — muestra el nombre del PDI y su icono.
 - **Distancia y dirección** — muestra la distancia y la dirección al PDI.
 - **Ubicación** — muestra las coordenadas del PDI.
+- **Horario de apertura** — muestra las horas de apertura analizadas de [datos de OSM](https://wiki.openstreetmap.org/wiki/Key:opening_hours). El estado actual se muestra dinámicamente dependiendo de la hora actual (por ejemplo, *Abierto ahora*, *Cerrado* o *Abre a las 10:00*), y el horario completo se muestra a continuación.
 - **Descripción** — proporciona información adicional sobre el PDI cuando está disponible (por ejemplo, de Wikipedia).
 - **Fotos en línea** — muestra fotos de Wikimedia relacionadas con el PDI cuando están disponibles. Selecciona Mostrar todo para abrir la Galería de fotos. Selecciona una foto para abrirla en la galería (modo Abrir foto).
 - **Datos del objeto** — información adicional de PDI, incluyendo etiquetas de OSM y otros detalles como contactos, enlaces sociales, enlaces a Wikipedia y Wikivoyage, descripciones e inscripciones (cuando están disponibles).
 - **ID de OSM** — el identificador de OpenStreetMap del PDI.
 - **Coordenadas** — selecciona las coordenadas para copiarlas.
 
-![Menú contextual de PDI](@site/static/img/web/poi_context_menu.png)
+![Menú contextual de PDI](@site/static/img/web/poi_context_menu_new.png)
 
 ### Acciones de PDI {#poi-actions}
 

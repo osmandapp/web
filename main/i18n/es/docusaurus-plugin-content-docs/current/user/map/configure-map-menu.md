@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  Configurar mapa
 ---
@@ -27,7 +27,7 @@ Sección **Mostrar**:
 
 Sección **Topografía**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_topography_andr.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Sección **OpenStreetMap**:  
 
@@ -43,27 +43,27 @@ Secciones **Rutas y Renderizado de mapa**:
 
 Sección **Mostrar en el mapa**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_show1_ios.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_show1_ios.png)  
 
 Sección **Topografía**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_topography_ios.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_topography_ios.png)  
 
 Sección **OpenStreetMap**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_osm_ios.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_osm_ios.png)  
 
 Sección **Rutas**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_routes_new_ios.png)
+![Configurar mapa android](@site/static/img/map/configure_map_routes_new_ios.png)
 
 Secciones **Tipo de mapa y Estilo de mapa**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_style_ios.png)
+![Configurar mapa android](@site/static/img/map/configure_map_style_ios.png)
 
 Secciones **Superposición/Subcapa e Idioma**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_overlay_ios.png)
+![Configurar mapa android](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -84,8 +84,9 @@ El menú **<Translate android="true" ids="configure_map"/>** se divide en dos ca
 ## Capas del mapa {#map-layers}
 
 - [Capa de mapa vectorial](../map/vector-maps.md) - muestra toda la información del mapa vectorial, incluyendo OpenStreetMap, líneas de contorno y datos náuticos.
-- [Fuentes de mapa ráster](../map/raster-maps.md#select-raster-maps) - permite seleccionar un mapa de subcapa / fuente principal / superposición con niveles de transparencia.
+- [Fuentes de mapa ráster](../map/raster-maps.md#layers) - permite seleccionar una subcapa / fuente principal / superposición con niveles de transparencia.
 - [Terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers) - muestra información de pendiente / sombreado, relieve 3D.
+- [Edificios 3D](../map/vector-maps.md#3d-buildings) - muestra modelos volumétricos de edificios en el mapa.
 - [Límites de mapas descargados](../map/vector-maps.md#show-borders) - muestra todos los límites de los mapas descargados en la capa del mapa principal.
 - [Cuadrícula de coordenadas](../map/vector-maps.md#coordinates-grid) - controla la visibilidad de la cuadrícula de coordenadas en el mapa.
 
@@ -107,8 +108,9 @@ El menú **<Translate android="true" ids="configure_map"/>** se divide en dos ca
 
 Los ajustes de estilo de mapa dependen del estilo de mapa principal que se muestra. Puedes leer más sobre ello en el artículo [Estilos de mapa](../map/vector-maps).
 
-   - [Estilo de mapa](../map/vector-maps.md#default-map-styles) - incluye OsmAnd (Ciudad), Topo, Náutico y otros.
+   - [Estilo de mapa](../map/vector-maps.md#map-styles) - incluye OsmAnd (Ciudad), Topo, Náutico y otros.
    - [Modo de mapa](../map/vector-maps.md#map-mode) - te permite seleccionar la vista del mapa y la navegación dependiendo de la hora del día.
+   - [Vista de globo](../map/interact-with-map.md#globe-view) - cambia el mapa entre la vista plana estándar y una vista esférica de la Tierra.
    - [Lupa de mapa](../map/vector-maps.md#map-magnifier) - permite cambiar la ampliación del mapa.
    - [Tamaño del texto](../map/vector-maps.md#text-size) - permite aumentar o disminuir el tamaño del texto en el mapa.
    - [Idioma del mapa](../map/vector-maps.md#map-language) - permite seleccionar el idioma preferido que se muestra en el mapa.
@@ -123,4 +125,4 @@ Para cada perfil seleccionado en el sistema Android, puedes cambiar el orden de 
 
 Ve a: *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,configure_map"/>*  
 
-![Elementos de Configurar mapa](@site/static/img/settings/configure-screen-ui-customization.png)
+![Elementos de configurar mapa ](@site/static/img/settings/configure-screen-ui-customization.png)

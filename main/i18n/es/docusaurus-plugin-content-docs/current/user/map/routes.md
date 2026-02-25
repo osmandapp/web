@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title:  Rutas
 ---
 
@@ -119,7 +119,7 @@ Algunos segmentos de camino pueden formar parte de muchas rutas, pero pueden col
 - _Pistas y rutas de esquí_ en el estilo de mapa _OsmAnd predeterminado_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Las pistas y rutas de esquí son un grupo específico de [rutas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) en OpenStreetMap. Normalmente, estas rutas se pueden utilizar con el estilo de mapa [Invierno y Esquí](../map/vector-maps.md#winter-and-ski) con todas las [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visibles. Si está activo otro estilo de mapa, se muestra un banner que sugiere cambiar a [Invierno y Esquí](../map/vector-maps.md#winter-and-ski) (*solo Android*) y solo se muestran las Pistas. Toque ***Cambiar*** para cambiar el estilo de mapa sin salir de la pantalla actual, o ***Más tarde*** para ocultar el banner.
+Las pistas y rutas de esquí son un grupo específico de [rutas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) en OpenStreetMap. Normalmente, estas rutas se pueden utilizar con el estilo de mapa [Invierno y Esquí](../map/map-styles.md#winter-and-ski) con todas las [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visibles. Si está activo otro estilo de mapa, se muestra un banner que sugiere cambiar a [Invierno y Esquí](../map/map-styles.md#winter-and-ski) (*solo Android*) y solo se muestran las Pistas. Toque ***Cambiar*** para cambiar el estilo de mapa sin salir de la pantalla actual, o ***Más tarde*** para ocultar el banner.
 
 
 ### Senderos para motos de nieve {#snowmobile-trails}
@@ -140,7 +140,7 @@ Las [rutas ecuestres](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) se 
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-Las [rutas de aguas bravas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) se muestran junto con iconos de acceso, zonas de peligro para el [turismo de aguas bravas](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+Las [rutas de aguas bravas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) se muestran junto con iconos de acceso, zonas de peligro para el [turismo de aguas bravas](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). Consulte [Características de aguas bravas](../map-legend/osmand.md#whitewater-features) en la Leyenda del Mapa para grados de rápidos, grados de secciones de río y símbolos relacionados.  
 
 
 ### Rutas de carrera {#running-routes}
@@ -180,7 +180,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,renderi
 
 - Para mostrar las rutas deseadas en el mapa, actívelas en la *Lista de rutas* del menú [Configurar mapa](../map/configure-map-menu.md).
 - OsmAnd puede resaltar [rutas presentes en OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Se pueden seleccionar tocando [el símbolo en la ruta](#save-as-a-track), y si el conjunto visible de rutas está configurado correctamente, puede seguir el color y los iconos.
-- Los tipos de ruta principales también se pueden filtrar por clases y subclases, lo que le permite mostrar solo grupos específicos dentro de cada tipo. Por ejemplo, puede mostrar rutas de senderismo por **símbolos OSMC** como clases, y por *redes internacionales, nacionales, regionales* o *locales* como subclases.
+- Los tipos de ruta principales también se pueden filtrar por clases y subclases, lo que le permite mostrar solo grupos específicos dentro de cada tipo. Por ejemplo, puede mostrar rutas de senderismo por **símbolos OSMC** como clases, y por *redes internacionales, nacionales, regionales* o *locales* como subclases, que actualmente están disponibles cuando el plugin [OsmAnd Development](../plugins/development.md) está habilitado.
 - Puede crear una pista sobre las rutas utilizando la herramienta [Planificar una ruta](../plan-route/create-route.md). 
 - Cuando varias rutas discurren por la misma carretera, cada ruta se muestra como una línea semitransparente separada colocada sobre las demás. 
 - Al tocar una ubicación donde se superponen múltiples rutas, se muestra un menú contextual con todas las rutas que pasan por ese punto. 
@@ -385,7 +385,7 @@ Navegue a *<Translate android="true" ids="search_button,search_categories,poi_ro
 
 </Tabs>
 
-En los resultados de búsqueda de rutas, toque el botón **Filtros** en la esquina superior derecha para reducir la lista. La pantalla de Filtros incluye un campo **Filtrar por nombre**; un bloque **Tipo** con *Bureau*, *Post annex* y *Post partner*; y **criterios adicionales** que dependen de la categoría o actividad de ruta seleccionada, ya que cada categoría puede exponer sus propias características y valores de filtro.
+En los resultados de búsqueda de rutas, toque el botón **Filtros** en la esquina superior derecha para reducir la lista. La pantalla de Filtros incluye un campo **Filtrar por nombre**; un bloque **Tipo** con *Bureau*, *Anexo postal* y *Socio postal*; y **criterios adicionales** que dependen de la categoría o actividad de ruta seleccionada, ya que cada categoría puede exponer sus propias características y valores de filtro.
 
 Puede activar o desactivar filtros utilizando los interruptores, y algunas secciones incluyen *Mostrar todo* para mostrar valores adicionales.
 

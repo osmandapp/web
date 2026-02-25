@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -27,6 +27,8 @@ Utilice **Navigation on the Web** para crear una ruta en el mapa y obtener una v
 En el estado vacío, Navigation le invita a agregar puntos de ruta: *Haga clic en el mapa para establecer los puntos de Inicio y Destino*.
 
 Los puntos de ruta se pueden proporcionar desde el panel de Ruta. Cuando seleccione **Establecer punto de inicio** o **Establecer destino**, el campo muestra sugerencias como *Ubicación actual* y puntos usados anteriormente del historial. Puede eliminar las sugerencias guardadas utilizando *Borrar historial*.
+
+También puede ingresar coordenadas directamente en los campos de puntos de ruta utilizando el formato latitud, longitud (por ejemplo, 48.23737, 24.40830). Otros formatos de coordenadas o enlaces compartidos pueden no ser reconocidos siempre. Si una ubicación no se analiza correctamente, intente convertirla a lat,lon o busque el lugar utilizando la búsqueda.
 
 Navigation sigue un flujo simple: el primer punto se convierte en el Inicio, y el siguiente punto se convierte en el Destino. Tan pronto como se establecen ambos puntos, se calcula y muestra la ruta en el mapa.
 
@@ -116,13 +118,15 @@ Si planea abrir el GPX en aplicaciones de terceros, elija Pista simplificada par
 - Los datos completos de la pista pueden incluir información de ruta/navegación además de la geometría de la pista (útil si desea mantener las instrucciones de navegación o volver a editar la ruta en OsmAnd).
 - La pista simplificada exporta un GPX más limpio destinado a otras aplicaciones al eliminar los datos de ruta/navegación y dejar solo la forma de la pista. Los puntos de referencia se preservan al exportar una pista simplificada.
 
-Puede guardar la ruta como una pista utilizando *Guardar en la nube / Subir a OsmAnd Cloud*. Esto abre un diálogo donde puede confirmar el guardado en pistas de la nube, editar el Nombre, opcionalmente elegir una Carpeta, luego Guardar o Cancelar.
+Puede guardar la ruta como una pista utilizando *Guardar en la nube / Subir a OsmAnd Cloud*. Esto abre un diálogo donde puede confirmar el guardado en pistas de la nube, editar el Nombre, opcionalmente elegir una Carpeta, luego Guardar o Cancelar. Si no ha iniciado sesión, *Guardar en la nube / Subir a OsmAnd Cloud* abre la página de Precios.
 
 ![Navegación web](@site/static/img/web/download_options.png)
 
 ### Compartir una ruta {#share-a-route}
 
 Para compartir la ruta, copie la URL. Ejemplo: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+Al abrir un enlace compartido, la ruta se restaura en el mapa. Si es necesario, puede cambiar el [perfil de enrutamiento](#routing-profile) manualmente en el panel de Ruta.
 
 
 ## Artículos relacionados {#related-articles}

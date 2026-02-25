@@ -1,7 +1,7 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
-title:  Enrutamiento de Transporte Público
+title:  Enrutamiento de transporte público
 ---
 
 import Tabs from '@theme/Tabs';
@@ -29,13 +29,13 @@ El enrutamiento de transporte público está en fase de pruebas. Por ahora, pued
 
 <TabItem value="android" label="Android">
 
-![Navegación transporte público Android](@site/static/img/navigation/public/navigation_android.png)  
+![Navegación de transporte público Android](@site/static/img/navigation/public/navigation_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Navegación transporte público iOS](@site/static/img/navigation/public/navigation_ios.png)
+![Navegación de transporte público iOS](@site/static/img/navigation/public/navigation_ios.png)
 
 </TabItem>
 
@@ -44,9 +44,9 @@ El enrutamiento de transporte público está en fase de pruebas. Por ahora, pued
 
 ## How to Use {#how-to-use}
 
-Para comenzar a navegar por la ciudad en transporte público, use [el botón de navegación](../../widgets/map-buttons.md#directions) en la pantalla del mapa o seleccione la opción de navegación en el *Menú principal*.  
+Para comenzar a navegar por la ciudad en transporte público, use [el botón de navegación](../../widgets/map-buttons.md#navigation) en la pantalla del mapa o seleccione la opción de navegación en el *Menú principal*.  
 
-**1.** Debe elegir el *perfil de navegación de Transporte público*, los puntos de inicio y de destino.  
+**1.** Debe elegir el *perfil de navegación de transporte público*, los puntos de inicio y de destino.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -142,11 +142,11 @@ La interfaz de usuario muestra las rutas alternativas como insignias de color co
 
 ## Performance and Results {#performance-and-results}
 
-**Perfil de Transporte Público -> Configuración -> Configuración de navegación -> Parámetros de ruta**
+**Perfil de transporte público -> Configuración -> Configuración de navegación -> Parámetros de ruta**
 
 1. **Número máximo de cambios de transporte**.
 
-El rendimiento y el consumo de memoria del enrutador de Transporte Público dependen de la profundidad de búsqueda.
+El rendimiento y el consumo de memoria del enrutador de transporte público dependen de la profundidad de búsqueda.
 
 El parámetro más importante que afecta esta profundidad es el **Número máximo de cambios de transporte**.
 
@@ -171,8 +171,8 @@ Possible values: 0 (show all), 5, 10 (default), 15, 100
 
 ## Data and Guideline {#data-and-guideline}
 
-OsmAnd utiliza un nuevo esquema de transporte público, también llamado Public Transport Version 2 (PTv2) para el algoritmo de navegación de Transporte Público de OsmAnd.
+OsmAnd utiliza un nuevo esquema de transporte público, también llamado Public Transport Version 2 (PTv2) para el algoritmo de navegación de transporte público de OsmAnd.
 
 - Puede verificar su transporte público [aquí](http://tools.geofabrik.de/osmi/).
 - Una guía para construir o ajustar rutas de transporte público está disponible en nuestro [blog](https://osmand.net/blog/guideline-pt).
-- La presentación [2019: Navegación de Transporte Público usando OpenStreetMap por OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).
+- La presentación [2019: Navegación de transporte público usando OpenStreetMap por OsmAnd](https://www.youtube.com/watch?v=SPab09kaWPc&ab_channel=StateoftheMap).

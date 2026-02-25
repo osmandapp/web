@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: Menú contextual del mapa
 ---

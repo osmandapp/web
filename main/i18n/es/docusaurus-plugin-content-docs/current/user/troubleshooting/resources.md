@@ -1,5 +1,5 @@
 ---
-source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
+source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
 sidebar_position: 9
 title: Recursos y personalizaciones
 ---
@@ -82,7 +82,7 @@ La siguiente es una lista de [plugins personalizados](../plugins/custom.md) desa
 
 | Nombre | Descripción | Enlace del plugin |
 |--|--|--|
-| OsmAnd Rendering  | El plugin añade los estilos de mapa Enduro, CicloRuta y Senderismo (más información [aquí](../map/vector-maps.md#default-map-styles)) y 5 nuevos [perfiles](https://osmand.net/docs/user/personal/profiles) (Peatón, Bicicleta y tres perfiles de Motocicleta). También proporciona mapas en línea para España, Francia, Noruega, Suiza, Austria, Bélgica y Argentina a través del menú [Mapas y Recursos](../personal/maps-resources.md#extra-maps) en la carpeta *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| OsmAnd Rendering  | El plugin añade los estilos de mapa Enduro, CicloRuta y Senderismo (más información [aquí](../map/map-styles.md#default-map-styles)) y 5 nuevos [perfiles](https://osmand.net/docs/user/personal/profiles) (Peatón, Bicicleta y tres perfiles de Motocicleta). También proporciona mapas en línea para España, Francia, Suiza, Austria, Bélgica y Argentina a través del menú [Mapas y Recursos](../personal/maps-resources.md#extra-maps) en la carpeta *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Mapa de Arabia Saudita del equipo Rahal  | Un mapa profesional sin conexión del Reino de Arabia Saudita, que incluye características topográficas, carreteras, ciudades, pueblos y fuentes de agua. Perfecto para viajes por el desierto. Visita [Mapas Rahal](https://rahalteam.com) para más información. | [🇸🇦 Mapas de Arabia Saudita por Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | Modelo 3D  | Este paquete añade una opción de modelo 3D para los perfiles. Personaliza la apariencia a través del menú: [*Menú de OsmAnd → Ajustes → Perfil → Apariencia del perfil → elige los iconos 4º-5º del icono de Posición*](../personal/profiles.md#profile-appearance). | [Modelo 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | Colección de mapas en línea AnyGIS | Una colección de diversas fuentes de mapas en línea que incluyen mapas satelitales, turísticos e históricos, entre otros.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |

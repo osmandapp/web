@@ -1,5 +1,5 @@
 ---
-source-hash: f6d36706a1e07d9988dbdc4b5e3c26c6daa9c50f6827a4937c300bd0a0b42708
+source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
 sidebar_position: 1
 ---
 
@@ -19,11 +19,15 @@ El menú contextual del mapa proporciona información del objeto seleccionado en
 
 El menú Configurar mapa es un elemento importante en el *Menú principal* de OsmAnd donde puede personalizar la visualización del mapa para adaptarla a sus necesidades. Puede resaltar sus puntos favoritos, marcadores de navegación o puntos de interés especiales en el mapa; mostrar rutas específicas o archivos GPX de terceros; superponer información del terreno, imágenes satelitales o cualquier otra imagen de mapa de bits disponible; mostrar información de transporte público; y cambiar el estilo del mapa.
 
-## [Mapas vectoriales (Estilos de mapa)](./vector-maps.md) {#vector-maps-map-styles}
+## [Mapas vectoriales](./vector-maps.md) {#vector-maps}
 
 Los mapas vectoriales están diseñados para ser una fuente predeterminada de datos de mapas para OsmAnd, por lo que deben descargarse en el dispositivo. Los mapas vectoriales admiten una gran variedad de estilos de mapa para muchas actividades como ciclismo, senderismo, conducción en coche o moto de nieve, etc. Cada estilo de mapa se puede ajustar para resaltar u ocultar objetos específicos y cambiar entre el modo día y noche. Los datos vectoriales del mapa se pueden aumentar con datos vectoriales y mostrarse con el estilo de mapa predeterminado, por ejemplo, información de líneas de contorno. Puede crear su propio estilo de mapa de OsmAnd para mostrar la información requerida.
 
-## [Mapas ráster (en línea / sin conexión)](./raster-maps.md) {#raster-maps-online--offline}
+## [Estilos de mapa (Mapas vectoriales)](./map-styles.md) {#map-styles-vector-maps}
+
+Los estilos de mapa definen cómo se representa los datos de mapa vectorial en OsmAnd. Un estilo controla la apariencia visual de los objetos del mapa como carreteras, edificios, uso del suelo, agua y puntos de interés, incluyendo colores, patrones de líneas y etiquetas.
+
+## [Mapas ráster (En línea / Sin conexión)](./raster-maps.md) {#raster-maps-online--offline}
 
 Los mapas ráster son una extensa adición a los mapas vectoriales sin conexión de OpenStreetMap que la aplicación utiliza por defecto. Los mapas ráster permiten combinar diferentes fuentes de mapas con mapas vectoriales. Por ejemplo, la información útil de Hillshade / Slope podría mostrarse como una capa ráster. Puede mostrar una superposición de rutas de senderismo, mapas de lluvia en vivo, datos de tráfico en vivo y una capa inferior de imágenes satelitales mezcladas con un mapa vectorial base semitransparente. También puede cambiar los mapas predeterminados a mosaicos ráster web en línea.
 
@@ -43,10 +47,10 @@ El menú contextual de rutas es un menú con acciones y datos de la ruta GPX.
 
 El menú contextual de rutas es un menú con acciones y datos de la ruta GPX.
 
-## [Rutas](./routes.md) {#routes}
-
-OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa.
-
 ## [Transporte público](./public-transport.md) {#public-transport}
 
 El transporte público es una capa adicional que le permite mostrar rutas y paradas de transporte en el mapa, verificar información detallada sobre ellas y navegar.
+
+## [Rutas](./routes.md) {#routes}
+
+OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa.

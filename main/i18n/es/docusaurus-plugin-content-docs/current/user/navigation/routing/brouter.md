@@ -1,8 +1,9 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title:  BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -26,9 +26,9 @@ El algoritmo de enrutamiento de terceros BRouter solo está disponible para la v
 
 [BRouter](http://brouter.de/) utiliza datos de OpenStreetMap para crear una ruta y luego la ajusta según los parámetros especificados. Utiliza rutas precalculadas para construir rápidamente una ruta sin conexión. También le permite personalizar perfiles de enrutamiento, que se definen por un conjunto de parámetros para tener en cuenta diversos factores en la selección de la ruta. El archivo [readme.txt de BRouter](http://brouter.de/brouter/readme.txt) explica con más detalle cómo instalar y utilizar el programa.
 
-OsmAnd le brinda la capacidad de seleccionar rutas con BRouter y configurar perfiles de enrutamiento para definir mejor la ruta según sus necesidades.
+OsmAnd le brinda la capacidad de seleccionar rutas con BRouter y configurar perfiles de enrutamiento para definir mejor la ruta según sus necesidades.  
 
-Para más información puede visitar el [sitio web oficial de Brouter](http://www.brouter.de/brouter/algorithm.html).
+Para más información puede visitar el [sitio web oficial de Brouter](http://www.brouter.de/brouter/algorithm.html).  
 
 La integración de BRouter en OsmAnd cambió mucho durante el verano de 2019. Esta guía asume que está utilizando la aplicación BRouter para Android en la versión 1.5.0 o superior, así como OsmAnd en la versión 3.4 o superior.
 
@@ -47,10 +47,10 @@ El algoritmo de enrutamiento de terceros BRouter solo está disponible para la v
 
 ## Cómo configurar {#how-to-configure}
 
-Siga esta guía para instalar y configurar la aplicación de terceros *BRouter Offline Navigation* para su uso en OsmAnd.
+Siga esta guía para instalar y configurar la aplicación de terceros *BRouter Offline Navigation* para su uso en OsmAnd.  
 
-**1.** Para empezar, necesita instalar la aplicación BRouter en su dispositivo Android desde [F-Droid](https://f-droid.org/packages/btools.routingapp) o [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) en su dispositivo.
-**2.** Luego, para navegar usando la aplicación OsmAnd a lo largo de rutas precalculadas con BRouter, necesita:
+**1.** Para empezar, necesita instalar la aplicación BRouter en su dispositivo Android desde [F-Droid](https://f-droid.org/packages/btools.routingapp) o [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) en su dispositivo.  
+**2.** Luego, para navegar usando la aplicación OsmAnd a lo largo de rutas precalculadas con BRouter, necesita:  
 
 
   - Abrir la aplicación BRouter y tocar *Download Manager*.
@@ -80,7 +80,7 @@ Siga esta guía para instalar y configurar la aplicación de terceros *BRouter O
 **Nota** que tendrá que repetir este paso periódicamente, siempre que desee tener una versión actualizada de los datos de OSM utilizados para el enrutamiento.
 
 **3.** Una vez hecho esto, inicie de nuevo la aplicación BRouter y elija la entrada "BRouter App" en el *Menú Principal*. Elija un perfil de enrutamiento dependiendo de su modo de viaje. Podría ser ciclismo, ciclomotor, senderismo o trekking. Una lista de perfiles disponibles para descargar en formato *brf* se puede encontrar [aquí](http://brouter.de/brouter/profiles2/). O puede intentar usar el perfil de enrutamiento en [BRouter-online](http://brouter.de/brouter-web/).
-Haga clic en "Service-Mode". Luego, marque las casillas de los modos de enrutamiento para los que desea utilizar este perfil. Puede usar dos perfiles diferentes por modo de transporte, que se asignarán a los preajustes "más corto" y "más rápido" (estas son solo etiquetas) en OsmAnd.
+Haga clic en "Service-Mode". Luego, marque las casillas de los modos de enrutamiento para los que desea utilizar este perfil. Puede usar dos perfiles diferentes por modo de transporte, que se asignarán a los preajustes "shortest" y "fastest" (estas son solo etiquetas) en OsmAnd.
 
 <table class="blogimage">
     <tr>
@@ -138,7 +138,7 @@ Brouter[fastbike] se usará el perfil "fastbike" archivo: fastbike.brf
 
 Observación:
 Actualmente Osmand no comprueba el nombre definido (sensible a mayúsculas) para el perfil de Brouter (micadena).
-Si no se encuentra ningún perfil, el enrutamiento fallará con "No se pudo calcular la ruta...".
+Si no se encuentra ningún perfil, el enrutamiento fallará con "Could not calculate route..".
 
 <table class="blogimage">
     <tr>
@@ -148,9 +148,9 @@ Si no se encuentra ningún perfil, el enrutamiento fallará con "No se pudo calc
 
 ## Cómo usar {#how-to-use}
 
-Esta sección describe una comparación de BRouter con el enrutamiento interno de la aplicación OsmAnd.
+Esta sección describe una comparación de BRouter con el enrutamiento interno de la aplicación OsmAnd.  
 
-Cuando BRouter está configurado, podemos comparar la velocidad de pre-cálculo de los datos de enrutamiento de BRouter con el enrutamiento interno de OsmAnd. Elijamos dos puntos aleatorios en los Países Bajos y comencemos a calcular el viaje. Para esto, establecemos un estilo de conducción equilibrado sin usar datos de altitud para el perfil base. El tiempo de cálculo para este viaje es de 14.5 segundos para nuestra ruta interna de OsmAnd. El tiempo de cálculo de la ruta al usar el enrutamiento de BRouter es de menos de 1 segundo.
+Cuando BRouter está configurado, podemos comparar la velocidad de pre-cálculo de los datos de enrutamiento de BRouter con el enrutamiento interno de OsmAnd. Elijamos dos puntos aleatorios en los Países Bajos y comencemos a calcular el viaje. Para esto, establecemos un estilo de conducción equilibrado sin usar datos de altitud para el perfil base. El tiempo de cálculo para este viaje es de 14.5 segundos para nuestra ruta interna de OsmAnd. El tiempo de cálculo de la ruta al usar el enrutamiento de BRouter es de menos de 1 segundo.  
 
 <table class="blogimage">
     <tr>
@@ -168,13 +168,13 @@ Cuando BRouter está configurado, podemos comparar la velocidad de pre-cálculo 
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | En la mayoría de los casos, se sugerirá la ruta más corta. A menudo, esta ruta puede tardar más que si la configuración estuviera deshabilitada |
+| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | En la mayoría de los casos, se sugerirá la ruta más corta. A menudo esta ruta puede tardar más que si la configuración estuviera deshabilitada |
 | *<Translate android="true" ids="temporary_conditional_routing"/>* |  Lea sobre la opción Considerar limitaciones temporales en este [artículo](../routing/osmand-routing.md#consider-temporary-limitations).   | El algoritmo de enrutamiento considera las restricciones de tiempo especificadas en OpenStreetMap. Tenga en cuenta que, en algunos casos, la información de OSM puede estar desactualizada.   |
 
 
 ### Otros ajustes de enrutamiento {#other-routing-settings}
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navegación → Ajustes*, [imagen](../routing/online-routing.md#online-routing-setting)). Si esta opción está habilitada, OsmAnd agrega dos segmentos a la ruta calculada de Brouter: uno desde *[Mi ubicación](../../map/interact-with-map.md#my-location-and-zoom)* hasta el punto de inicio de la ruta y otro desde el final de la ruta hasta el punto final de su ruta. Esta opción está activa si la distancia hacia o desde la ruta excede los 60 metros.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navegación → Ajustes*, [imagen](../routing/online-routing.md#online-routing-setting)). Si esta opción está habilitada, OsmAnd agrega dos segmentos a la pista calculada de Brouter: uno desde *[Mi posición](../../map/interact-with-map.md#my-position-and-zoom)* hasta el punto de inicio de la pista y otro desde el final de la pista hasta el punto final de su ruta. Esta opción está activa si la distancia hacia o desde la pista excede los 60 metros.
 
 - En la [sección *Recalcular ruta*](../../navigation/guidance/navigation-settings.md#recalculate-route) de los *Parámetros de ruta*, puede habilitar y ajustar las opciones de recálculo de ruta.
 

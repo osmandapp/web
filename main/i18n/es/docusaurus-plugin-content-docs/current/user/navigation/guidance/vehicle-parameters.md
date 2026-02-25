@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  Vehicle parameters
 ---
@@ -32,7 +32,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Ajustes de Navegación iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Ajustes de Navegación iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -97,6 +97,10 @@ Los parámetros del vehículo afectan a la navegación y a la construcción de l
 
 ![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+En Android, este parámetro también está disponible para *[Perfiles de ciclismo](../../navigation/routing/bicycle-based-routing.md)* para ayudar a evitar caminos ciclistas estrechos.
+
+![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Límite de carga máxima por eje**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Proporcione la carga máxima por eje de su vehículo para evitar carreteras y puentes con restricciones de peso por eje. Este parámetro sólo está disponible en tipos de navegación como [*Camión*](../../navigation/routing/car-based-routing.md).  
 
@@ -135,7 +139,7 @@ Los límites de los parámetros del vehículo pueden ser importantes para la nav
 </Tabs>
 
 Si selecciona el tipo de motor en los parámetros del vehículo, los [***datos de la huella de CO2***](../../navigation/setup/route-details.md#elevation-info) se mostrarán encima del gráfico en [Detalles de la ruta](../setup/route-details.md).
-Disponibles seis tipos de combustible: ***Gasolina, Diésel, GLP, GNC, Eléctrico,*** e ***Híbrido***.  
+Hay seis tipos de combustible disponibles: ***Gasolina, Diésel, GLP, GNC, Eléctrico*** e ***Híbrido***.  
 
 **Aplicabilidad:**
 
@@ -154,7 +158,7 @@ El ajuste **Combustible utilizado por el motor** sólo está disponible en la na
 
 <TabItem value="ios" label="iOS">
 
-![Ajustes de Navegación Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Ajustes de Navegación iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

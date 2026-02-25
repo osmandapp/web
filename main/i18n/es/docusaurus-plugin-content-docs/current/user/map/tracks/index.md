@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title:  Pistas
 sidebar_position: 2
 ---
@@ -24,7 +24,7 @@ OsmAnd tiene muchas funciones potentes para mostrar varias rutas en el mapa. Las
 
 [Pistas (GPX)](#display-tracks-on-the-map) - viaje grabado o planificado guardado en [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Este tipo de ruta puede importarse desde una fuente externa, crearse en la aplicación o ser grabada por usted. Un GPX puede contener uno de los 3 tipos diferentes de datos, o todos ellos:
 
-- Pista como una línea (***Geometría***). El archivo tiene una matriz de puntos ```<trkpt>```, cada punto tiene la ubicación y opcionalmente tiempo, velocidad, altitud y otros atributos. Estas pistas se muestran en el mapa como líneas continuas.
+- Pista como una línea (***Geometría***). El archivo tiene una matriz de puntos ```<trkpt>```, cada punto tiene la ubicación y opcionalmente tiempo, velocidad, altitud y otros atributos. Estas pistas se muestran en el mapa como líneas sólidas.
 - Pista como una ruta (***Ruta***). El archivo tiene una matriz de puntos ```<rtept>```, cada punto descrito como un punto intermedio de la ruta. Depende de cómo se deban conectar los puntos dentro de una ruta, ya sea como pequeños segmentos de ruta o mediante una línea recta. Estas pistas se muestran en el mapa como líneas discontinuas.
 - Waypoints (***Puntos***). El archivo tiene puntos ```<wpt>``` con atributos. Los waypoints se muestran como puntos circulares en el mapa. Puede tocarlos para obtener información adicional.
 
@@ -116,7 +116,7 @@ Cuando selecciona una pista en el mapa o abre el [menú contextual de pista](./t
 
 Ir a: *Tocar la pista → Pestaña Pista → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Menú de pista analizar en el mapa Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Menú de pista analizar en el mapa distancia Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Menú de pista analizar en el mapa Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Menú de pista analizar en el mapa distancia Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,14 +132,14 @@ Ir a: *Tocar la pista → Pestaña Pista → <Translate ios="true" ids="analyze_
 
 Esta herramienta proporciona un análisis detallado de los datos de la [pista](../../map/tracks/track-context-menu.md#options) utilizando gráficos y mapas.
 
-- **Datos del gráfico (eje Y)** muestra: *Altitud*, *Pendiente*, *Velocidad*, [*Datos de sensores externos*](../../plugins/external-sensors.md), y combinaciones de hasta dos opciones si están contenidas en los datos de la pista.
+- **Datos del gráfico (eje Y)** muestra: *Altitud*, *Pendiente*, *Velocidad*, [*Datos de sensores externos*](../../plugins/external-sensors.md), y combinaciones de hasta dos opciones si están contenidas en los datos de la pista. ***Solo Android:*** para pistas de coche grabadas con datos OBD-II, el eje Y proporciona adicionalmente métricas del vehículo, como velocidad del motor, temperatura del refrigerante y más.
 - **Dimensión del gráfico (eje X)** representa: *Distancia*, *Tiempo* y *Hora del día*.
 - **Interacción de tocar/deslizar**. Toque un gráfico para mostrar información sobre un punto específico en la pista. Deslizar sobre el gráfico resalta la ubicación apropiada en el mapa y muestra detalles en la barra de información.
 - **Etiqueta de distancia**. Al tocar o deslizar a lo largo del gráfico, el tooltip también muestra la distancia exacta a lo largo de la pista. El valor sigue la configuración de unidades del perfil actual (<Translate android="true" ids="km"/> o <Translate android="true" ids="mile"/>). Úselo para estimar rápidamente qué tan lejos está un punto del inicio de la pista, o para calcular la distancia entre dos posiciones comparando sus valores.
 - **Escalado**. Use un [gesto con dos dedos](../../map/interact-with-map.md#gestures) para escalar el gráfico para una visualización más detallada.
 
 
-### Seguir Mi Ubicación {#follow-my-location}
+### Seguir Mi Posición {#follow-my-location}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -157,7 +157,7 @@ Esta herramienta proporciona un análisis detallado de los datos de la [pista](.
 
 </Tabs>
 
-Toque el botón [Mi Ubicación](../../map/interact-with-map.md#my-location-and-zoom) para sincronizar la vista del mapa y el gráfico con su ubicación.
+Toque el botón [Mi Posición](../../map/interact-with-map.md#my-position-and-zoom) para sincronizar la vista del mapa y el gráfico con su ubicación.
 
 - La **escala del gráfico** permanece igual, y la **información de la barra** se fija a 1/4 del lado izquierdo.
 - A medida que se mueve, el **gráfico se deslizará** de izquierda a derecha, mostrando información por delante de su pista.

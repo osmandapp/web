@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Navegar por Pista
 ---
@@ -70,7 +70,7 @@ Antes de utilizar la opción *Navegación por pista*, debe [mostrar la pista en 
 
 La navegación en una pista se puede iniciar utilizando el botón de acción rápida en el [menú contextual de la pista](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (se abre seleccionando una de las [pistas resaltadas](./route-navigation.md#history-of-previous-routes) en el mapa, o tocando un archivo de pista en la sección [Mis Lugares](../../personal/myplaces.md) del *Menú Principal*) o desde el menú de navegación, que se abre tocando:
 
-- [*Botón de Navegación*](../../widgets/map-buttons.md#directions) en la pantalla del mapa.  
+- [*Botón de Navegación*](../../widgets/map-buttons.md#navigation) en la pantalla del mapa.  
 - *Sección de Navegación* en el *Menú Principal* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - En el [*Menú de navegación*](./route-navigation.md#navigation-menu) vaya a *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
@@ -172,7 +172,7 @@ Se recalcula una nueva ruta optimizada a lo largo de la pista invertida teniendo
 
 <TabItem value="ios" label="iOS">
 
-![Ajustar a las carreteras 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
+![Ajustar a las carreteras 1 iOS](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
 
 </TabItem>
 

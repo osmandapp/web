@@ -1,5 +1,5 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
 sidebar_position: 18
 title:  Plugins
 ---
@@ -79,14 +79,16 @@ Los plugins de OsmAnd pueden aumentar estos grupos de características: **Capas*
 | [Vista de mapa náutico](#nautical-map-view) | [Estilo de mapa](../plugins/nautical-charts.md#nautical-map-style), [Perfil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vista de mapa de esquí](#ski-map-view) | [Estilo de mapa](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Perfil](../plugins/ski-maps.md#skiing-profile) |
 |[Notas de audio/vídeo](#audiovideo-notes) 🤖  | [Capa de mapa](../plugins/audio-video-notes.md#show-all-on-the-map), [Menú contextual](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[Edición de OpenStreetMap](#openstreetmap-editing)| [Capa de mapa](../plugins/osm-editing.md#authorization) |
 |[Posición de aparcamiento](#parking-position) | [Menú contextual](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
+|[Edición de OpenStreetMap](#openstreetmap-editing)| [Capa de mapa](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Capa de mapa](../plugins/mapillary.md#map-layer), [Menú contextual](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Sensores externos](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Métricas del vehículo](#vehicle-metrics)  | [Ajustes personalizados](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
+|[Observador de estrellas](#star-watcher)  | [Pantalla](../plugins/starwatcher.md#star-map-screen), [Menú contextual](../plugins/starwatcher.md#celestial-object-info) |
 |[Accesibilidad](#accessibility) 🤖  | [Ajustes personalizados](../plugins/accessibility.md#plugin-settings) |
-| [Desarrollo de OsmAnd](#osmand-development) | [Ajustes personalizados](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Capa de mapa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menú contextual](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [Rastreador de embarcaciones AIS](#ais-vessel-tracker) 🤖  |  [Ajustes personalizados](../plugins/ais-tracker.md#plugin-settings) |
+|[Desarrollo de OsmAnd](#osmand-development) | [Ajustes personalizados](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Capa de mapa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menú contextual](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[Rastreador de embarcaciones AIS](#ais-vessel-tracker) 🤖  |  [Ajustes personalizados](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Ajustes del plugin {#plugin-settings}
@@ -140,7 +142,6 @@ Los siguientes plugins proporcionan sus propios ajustes:
 
 ## Lista de plugins {#plugins-list}
 
-
 ### [Wikipedia](./wikipedia.md) {#wikipedia}
 
 Tener Wikipedia en su viaje le ayuda a aprender más sobre los lugares que visita. Está disponible sin conexión y muestra artículos de Wikipedia relacionados con los puntos de interés directamente en el mapa.
@@ -156,6 +157,10 @@ Para contar una historia de dónde ha estado, los datos GPS, como la latitud y l
 ### [Topografía](./topography.md) {#topography}
 
 La información topográfica, como las curvas de nivel, el sombreado de relieve, la pendiente y el relieve 3D, ayuda a realizar una evaluación visual del terreno al ver la elevación, el relieve, los extremos, la inclinación, los puntos de igual altura, etc.  
+
+### [Tiempo](./weather.md) {#weather}
+
+Muestra el pronóstico por hora para el día actual y para los 7 días siguientes. 
 
 ### [Vista de mapa náutico](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ El plugin de edición de OpenStreetMap le permite contribuir a OpenStreetMap, un
 
 Vea vistas a nivel de calle de sus rutas o lugares de interés, proporcionadas por [Mapillary](https://www.mapillary.com/) (se requiere una conexión a internet).  
 
-### [Accesibilidad](./accessibility.md) {#accessibility}
-
-El plugin de Accesibilidad hace que las características de accesibilidad del dispositivo estén directamente disponibles en OsmAnd. Solo para Android.  
-
 ### [Sensores externos](./external-sensors.md) {#external-sensors}
 
 Conecte sensores externos para mostrar sus datos en OsmAnd y almacenar la información en las grabaciones de viaje.  
@@ -193,9 +194,13 @@ Conecte sensores externos para mostrar sus datos en OsmAnd y almacenar la inform
 
 Conecte un escáner OBD-II para mostrar los datos del vehículo en OsmAnd y almacenar la información en las grabaciones de viaje.  
 
-### [Tiempo](./weather.md) {#weather}
+### [Observador de estrellas](./starwatcher.md) {#star-watcher}
 
-Muestra el pronóstico por hora para el día actual y para los 7 días siguientes.  
+Observador de estrellas muestra una superposición interactiva del cielo estrellado con estrellas, constelaciones, el Sol, la Luna y planetas. Le ayuda a identificar objetos celestes sobre su ubicación actual, previsualizar sus trayectorias para una fecha y hora seleccionadas, y planificar sesiones de observación de estrellas utilizando los controles de tiempo integrados y las opciones de visualización.
+
+### [Accesibilidad](./accessibility.md) {#accessibility}
+
+El plugin de Accesibilidad hace que las características de accesibilidad del dispositivo estén directamente disponibles en OsmAnd. Solo para Android.  
 
 ### [Desarrollo de OsmAnd](./development.md) {#osmand-development}
 

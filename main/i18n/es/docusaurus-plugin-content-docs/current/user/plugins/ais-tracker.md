@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title:  Rastreador de embarcaciones AIS
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 <InfoAndroidOnly />
@@ -31,7 +31,7 @@ El complemento **Rastreador de embarcaciones AIS** muestra las posiciones del [S
 La capacidad de usar mapas en línea se activa automáticamente en la versión de OsmAnd para iOS. Para mostrar mapas en línea en Android, debe realizar los siguientes ajustes:
 
 1. [Activar](../plugins/index.md#enable--disable) el complemento **Rastreador de embarcaciones AIS** en el *Menú principal → Complementos → Rastreador de embarcaciones AIS*.
-2. Configurar los [ajustes de AIS](../map/raster-maps.md#select-raster-maps)
+2. Configurar los [ajustes de AIS](../map/raster-maps.md#layers)
 3. Configurar una **conexión de servidor AIS** o conectar un **receptor AIS externo**.
 4. Comprobar que las embarcaciones se muestran en el mapa de OsmAnd.
 
@@ -59,7 +59,7 @@ El AIS opera en *frecuencias VHF* (161.975 MHz y 162.025 MHz) y tiene un alcance
 Cuando se configura correctamente, las posiciones de las embarcaciones aparecerán en el mapa. Características clave:
 
 - Las embarcaciones se mueven según la velocidad y el rumbo en tiempo real.
-- Nuevas embarcaciones entran y salen del área visible dinámicamente.
+- Nuevos buques entran y salen del área visible dinámicamente.
 - Al tocar una embarcación se abre información detallada.
 
 
@@ -85,7 +85,7 @@ Las embarcaciones AIS transmiten tres tipos de datos:
     - **MMSI (Identidad del Servicio Móvil Marítimo)** (*Identificador único de 9 dígitos de la embarcación*)
     - **Número IMO** (*si está disponible*)  
     - **Indicativo de llamada**  
-    - **Tipo de embarcación** (*p. ej., Carga, Pasajeros, Pesquero*)  
+    - **Tipo de embarcación** (*p. ej., Carga, Pasajeros, Embarcación pesquera*)  
     - **Dimensiones de la embarcación** (*Eslora y Manga*)  
     - **Posición de la antena AIS** (*Relativa al casco de la embarcación*)  
 
@@ -119,10 +119,10 @@ Las embarcaciones AIS transmiten tres tipos de datos:
 | **Símbolos de tipos de embarcación** |    |
 | *Triángulo verde*    | Buque de carga    |
 | *Triángulo azul*     | Buque de pasajeros |
-| *Triángulo negro*    | Pesquero |
+| *Triángulo negro*    | Embarcación pesquera |
 | *Triángulo amarillo*   | Remolcador       |
 | *Triángulo rojo*      | Buque cisterna        |
-| *Triángulo blanco*    | Buque militar |
+| *Triángulo blanco*    | Embarcación militar |
 | *Triángulo naranja*   | Embarcación especial (p. ej., práctico, rompehielos) |
 | *Triángulo rojo intermitente* | Embarcación en peligro |
 | | |

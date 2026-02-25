@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Puntos en el mapa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Resumen {#overview}
@@ -132,7 +132,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map
 
 </Tabs>
 
-A cada tipo de PDI en OsmAnd se le asigna un icono y un color específicos. El [nivel de zoom](../map/vector-maps.md#details) y el diseño de los PDI pueden ser diferentes en algunos [estilos de mapa](../map/vector-maps.md#default-map-styles).  
+A cada tipo de PDI en OsmAnd se le asigna un icono y un color específicos. El [nivel de zoom](../map/vector-maps.md#details) y el diseño de los PDI pueden ser diferentes en algunos [estilos de mapa](../map/map-styles.md).  
 
 [Leer más](../map/vector-maps.md#hide).
 
@@ -326,9 +326,9 @@ Waypoints, PDI, puntos Favoritos y notas de audio/vídeo se refieren al concepto
 
 Los [Waypoints](#track-waypoints) son puntos individuales en un mapa o ruta. Se pueden usar para marcar ciertos lugares que pueden ser importantes para navegar o registrar sus viajes. Por ejemplo, puede crear un waypoint en el mapa para indicar una intersección importante o un cambio de dirección.  
 
-Los [Puntos de interés (PDI)](#points-of-interest-pois) son lugares de especial interés para los usuarios. Estos pueden ser puntos de referencia, restaurantes, hoteles, gasolineras y otros lugares de interés que desee señalar o visitar.  
+[Los puntos de interés (PDI)](#points-of-interest-pois) son lugares de especial interés para los usuarios. Estos pueden ser puntos de referencia, restaurantes, hoteles, gasolineras y otros lugares de interés que desee señalar o visitar.  
 
-Los [puntos Favoritos](#favorites) son lugares que los usuarios consideran particularmente importantes o interesantes y que guardan en su lista de lugares favoritos. Los lugares pueden incluir cualquier ubicación que desee encontrar y a la que desee volver más tarde.
+[Los puntos Favoritos](#favorites) son lugares que los usuarios consideran particularmente importantes o interesantes y que guardan en su lista de lugares favoritos. Los lugares pueden incluir cualquier ubicación que desee encontrar y a la que desee volver más tarde.
 
 [Notas de audio/vídeo](#-audio--video-points-android). En formato GPX, puede guardar grabaciones de audio y vídeo como waypoints. Esto le permite asociar archivos multimedia a ubicaciones específicas en el mapa o la ruta.  
 
