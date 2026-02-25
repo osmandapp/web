@@ -1,5 +1,5 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title:  Mapas y Datos
 ---
@@ -19,6 +19,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### ¿Por qué OsmAnd no ofrece acceso a Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
 OsmAnd está diseñado para ser compatible con OpenStreetMap (OSM) y prioriza esta vía tanto como es posible. Además, existen restricciones de licencia que no permiten que OsmAnd se distribuya con datos de Google Maps.
+
+### ¿Por qué los enlaces de Google Maps no se abren en OsmAnd? {#why-google-maps-links-may-not-open-in-osmand}
+
+Los enlaces de Google Maps como `https://maps.app.goo.gl/...` no se abren en OsmAnd con un solo toque desde SMS o mensajeros. Aunque OsmAnd puede analizar estos enlaces, Android 12+ aplica Verified App Links: los dominios principales de Google (por ejemplo, `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) están reservados para los servicios del sistema de Google, por lo que las aplicaciones de terceros no pueden interceptarlos automáticamente. Como resultado, el enlace generalmente se abrirá en una aplicación/servicio de Google.
+
+**Solución alternativa:** *Mantenga presionado el mensaje → Compartir → seleccione OsmAnd*. Esto envía el enlace a OsmAnd, donde se puede analizar y abrir como una ubicación.
 
 ### Carga lenta de mapas en Android 11, 12 (tarjeta SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
+source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,9 +19,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-:::tip subscribe  
-&nbsp;<ProFeature/> Para acceder a todas las funciones de OsmAnd Cloud, suscríbase a **OsmAnd Pro** para [Android](../purchases/android.md#prices) o [iOS](../purchases/ios.md#prices).  
-:::  
+:::info Pro feature
+OsmAnd Cloud es una función de pago de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
+:::
 
 :::note cross-platform  
 OsmAnd Cloud es un servicio de almacenamiento en la nube independiente y *no está vinculado* a una versión específica de la plataforma Android, iOS o web.  

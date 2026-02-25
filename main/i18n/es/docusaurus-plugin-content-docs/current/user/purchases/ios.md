@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -53,13 +53,32 @@ Puedes descargar la aplicación a través de este enlace - [OsmAnd Maps en la Ap
 
 En la lista, hay información sobre los precios del producto OsmAnd para la región de EE.UU. y Europa. Para otras regiones, los precios son equivalentes en las monedas locales.
 
+<!--
+
+:::danger February Sale
+
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+
+-->
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
-| **Precio (EUR)** | €0 | €69.99 | €14.99 | €5.99 / €39.99 |
+| **Precio (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Precio (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 
@@ -79,8 +98,8 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
-| [Rejilla de coordenadas — Personalización de color](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [Visualización de tracks en 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Rejilla de coordenadas — Personalización de color](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Visualización de tracks en 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guías de viaje (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -93,7 +112,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [Widgets de métricas del vehículo](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratis**</summary><ul><li>*Velocidad del vehículo*</li><li>*Velocidad del motor*</li></ul></details> | <details><summary>**2 widgets gratis**</summary><ul><li>*Velocidad del vehículo*</li><li>*Velocidad del motor*</li></ul></details> | ✔ |
 | [Herramienta de marcadores de mapa](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Fuentes de mapas en línea](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Soporte de mapas SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Soporte de mapas SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Puntos favoritos](../map/point-layers-on-map.md)<br/>marcadores y waypoints | ✔ | ✔ | ✔ |
 | [Puntos de audio/foto/vídeo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -135,7 +154,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuar con OsmAnd Pro*
 
-![Plan Pro](@site/static/img/purchases/pro.png)
+![Plan Pro](@site/static/img/purchases/pro_new.png)
 
 ### Compra de Maps+ {#maps-purchase}
 
@@ -143,7 +162,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Toca la lista de funciones de Maps+ → Continuar con Maps+*
 
-![Plan Maps+](@site/static/img/purchases/maps.png)
+![Plan Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## Suscripciones heredadas (anteriores a la 4.0) {#legacy-subscriptions-prior-40}

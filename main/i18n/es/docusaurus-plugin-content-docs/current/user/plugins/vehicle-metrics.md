@@ -1,5 +1,5 @@
 ---
-source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
+source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
 sidebar_position: 16
 title:  Métricas del vehículo
 ---
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-:::info Función de pago
-El plugin Métricas del vehículo es una [función de pago](../purchases/index.md) de la aplicación OsmAnd. La información sobre la velocidad del vehículo y la velocidad del motor está disponible de forma gratuita en OsmAnd.
+:::info Función Pro
+El **plugin Métricas del vehículo** es una función de pago de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />. La información sobre la velocidad del vehículo y la velocidad del motor está disponible de forma gratuita en OsmAnd.
 :::
 
 El **plugin Métricas del vehículo** permite la monitorización de datos del vehículo en tiempo real a través del [protocolo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Los usuarios pueden rastrear métricas esenciales como el rendimiento del motor, la eficiencia del combustible y la velocidad, lo que permite un mantenimiento proactivo del vehículo y la resolución de problemas.  
@@ -119,7 +119,7 @@ Elija su dispositivo OBD-II de la lista y establezca la conexión.
 - **Renombrar**. Le permite asignar un nombre personalizado al sensor para una identificación más fácil.
 - **Olvidar**. Elimina el sensor OBD-II previamente emparejado de la lista, requiriendo un nuevo emparejamiento si se necesita más tarde.
 
-**Comportamiento de reconexión:** OsmAnd intenta automáticamente reconectarse al adaptador OBD-II cuando se inicia la aplicación, cuando se inicia la navegación o cuando se lanza Android Auto / CarPlay. Si no hay conexión disponible, los widgets de Métricas del vehículo muestran “–”. Un solo toque en cualquier widget de Métricas del vehículo intentará reconectarse al sensor. Si el sensor ya está conectado, el toque cambia los modos de visualización del widget como de costumbre.
+**Comportamiento de reconexión:** OsmAnd intenta automáticamente reconectarse al adaptador OBD-II cuando se inicia la aplicación, cuando se inicia la navegación o cuando se lanza Android Auto / Car Play. Si no hay conexión disponible, los widgets de Métricas del vehículo muestran “–”. Un solo toque en cualquier widget de Métricas del vehículo intentará reconectarse al sensor. Si el sensor ya está conectado, el toque cambia los modos de visualización del widget como de costumbre.
 
 
 ## Lista de métricas {#metrics-list}

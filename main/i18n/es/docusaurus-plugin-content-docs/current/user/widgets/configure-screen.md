@@ -1,5 +1,5 @@
 ---
-source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
+source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
 sidebar_position: 1
 title:  Configurar pantalla
 ---
@@ -450,6 +450,53 @@ Puede reorganizar o eliminar widgets de la pantalla de la aplicación utilizando
 - Confirme la eliminación cuando se le solicite.
 
 
+## Diseño de la pantalla del mapa {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Diseño de la pantalla del mapa](@site/static/img/widgets/map_screen_layout_1.png) ![Diseño de la pantalla del mapa](@site/static/img/widgets/map_screen_layout_2.png)
+
+La configuración de **Diseño de la pantalla del mapa** le permite controlar cómo se organizan los paneles de widgets en la pantalla del mapa. Ayuda a evitar que los widgets y botones se superpongan y mejora el uso del espacio en pantalla, especialmente al cambiar entre orientaciones vertical y horizontal.
+
+Puede abrir la configuración de Diseño de la pantalla del mapa desde el menú Configurar pantalla, ya sea directamente desde las acciones de la pantalla o a través del menú de tres puntos.
+
+### Diseños único y separado {#single-and-separate-layouts}
+
+![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_single.png) ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_separate.png)
+
+OsmAnd admite dos modos de diseño para la pantalla del mapa:
+- **Diseño único** – utiliza el mismo diseño de widgets para todas las orientaciones de pantalla. Esta opción está seleccionada por defecto.
+- **Diseños separados** – le permite configurar diseños de widgets diferentes para las orientaciones Vertical y Horizontal.
+
+Cuando se habilita Diseños separados, los cambios realizados en una orientación no afectan a la otra. Esto es útil si desea optimizar la pantalla del mapa de manera diferente para uso vertical y horizontal.
+
+### Pestañas Vertical y Horizontal {#portrait-and-landscape-tabs}
+
+![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_tabs.png)
+
+Cuando se habilita Diseños separados, se disponen dos pestañas en la pantalla Configurar: **Vertical** y **Horizontal**. Cada pestaña representa un diseño independiente para la orientación de pantalla correspondiente. Puede cambiar entre pestañas tocándolas.
+
+Puede copiar el diseño entre orientaciones. Para acceder a estas acciones, toque el menú de tres puntos para el panel de widgets:
+- **Copiar desde Vertical** – copia la lista de widgets del diseño Vertical al diseño Horizontal.
+- **Copiar desde Horizontal** – copia la lista de widgets del diseño Horizontal al diseño Vertical.
+
+Solo se copia la lista de widgets, y la operación se aplica dentro del mismo perfil.
+
+![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_portrait.png) ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Diseño de paneles {#panels-layout}
+
+![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_wide.png) ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_compact.png)
+
+La configuración de **Diseño de paneles** controla cómo se muestran los paneles de widgets superior e inferior. Esta opción solo está disponible cuando se habilita Diseños separados.
+
+Puede elegir entre dos modos:
+- **Ancho** – los paneles superior e inferior abarcan todo el ancho de la pantalla.
+- **Compacto** – los paneles superior e inferior se ajustan entre los paneles laterales y los botones del mapa.
+
+El diseño de paneles se puede configurar de manera independiente para las orientaciones Vertical y Horizontal, permitiendo una mejor adaptación a diferentes tamaños y orientaciones de pantalla.
+
+
 ## Botones {#buttons}
 
 ### Botones personalizados {#custom-buttons}
@@ -484,7 +531,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
 Ir a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Página de widget](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Página de widget](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -498,7 +545,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
 </Tabs>
 
-1. Los **Botones predeterminados** le permiten personalizar qué botones de mapa preestablecidos son visibles en la pantalla del mapa. Puede elegir ocultar o mostrar los siguientes botones:
+Los **Botones predeterminados** le permiten personalizar qué botones de mapa preestablecidos son visibles en la pantalla del mapa. Cada botón en la lista tiene un interruptor Encendido/Apagado junto a él. Puede elegir ocultar o mostrar los siguientes botones:
 
     - [Modo 3D](../widgets/map-buttons.md#3d-mode). Para iOS, el botón siempre está disponible. Para Android, aparece en la lista y está disponible para configurar si se selecciona el motor de renderizado de mapas [Versión 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 
@@ -509,27 +556,45 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
     - [Menú](../widgets/map-buttons.md#main-menu). Abre el menú principal de la aplicación para acceder a todas las funciones.
 
-    - [Mi ubicación](../widgets/map-buttons.md#my-location-and-zoom). Centra el mapa en su posición actual.
+    - [Mi ubicación](../widgets/map-buttons.md#my-position-and-zoom). Centra el mapa en su posición actual.
 
-    - [Navegación](../widgets/map-buttons.md#directions). Esencial para la planificación de rutas y el inicio de la navegación.
+    - [Navegación](../widgets/map-buttons.md#navigation). Esencial para la planificación de rutas y el inicio de la navegación.
 
     - [Buscar](../widgets/map-buttons.md#search). Abre la herramienta de búsqueda para encontrar ubicaciones.
 
-    - [Acercar / alejar](../widgets/map-buttons.md#my-location-and-zoom). Ajusta el nivel de zoom del mapa para mostrar más o menos detalles.
+    - [Acercar / alejar](../widgets/map-buttons.md#my-position-and-zoom). Ajusta el nivel de zoom del mapa para mostrar más o menos detalles.
 
-2. El **menú de tres puntos** en la pantalla de Botones predeterminados contiene acciones como:
+El **menú de tres puntos** en la pantalla de Botones predeterminados contiene acciones como:
 
     - *Restablecer a predeterminado*. Le permite devolver la configuración de los botones a su apariencia original.
-    - *Copiar desde otro perfil*. Seleccione de qué perfil de la lista ofrecida desea copiar la configuración de los botones.
-
-3. **La apariencia del botón predeterminado** (*Solo Android*) ofrece una variedad de opciones de personalización para este tipo de botones. Para modificar la apariencia de un botón, toque el botón requerido de la lista y seleccione la opción [Apariencia](#button-appearance).
+    - *Copiar desde otro perfil*. Seleccione un perfil de la lista para copiar la visibilidad y apariencia de los botones.
+    - *Apariencia (Solo Android)*. Ofrece una variedad de opciones de personalización para este tipo de botones. Para modificar la apariencia de un botón, toque el botón requerido de la lista y seleccione la opción [Apariencia](#button-appearance).
 
 
 ### Apariencia del botón {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Apariencia del botón](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+**Ir a** (para Botones personalizados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Ir a** (para todos los Botones predeterminados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menú de tres puntos → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Ir a** (para un Botón predeterminado específico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleccionar un botón → *<Translate android="true" ids="shared_string_appearance"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Apariencia del botón](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Ir a** (para Botones personalizados): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menú de tres puntos → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Ir a** (para un Botón predeterminado específico): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleccionar un botón → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
 
 La función *Apariencia del botón* le permite personalizar completamente el aspecto de los botones en la interfaz de su mapa. Estas opciones de personalización están disponibles tanto para *Acción rápida (Botones personalizados)* como para *Botones predeterminados*, proporcionando un control completo sobre la apariencia de la interfaz del mapa y permitiendo ajustes precisos en el diseño de los botones.
 
@@ -537,8 +602,8 @@ La función *Apariencia del botón* le permite personalizar completamente el asp
 
 - **Icono**. Seleccione de una lista de iconos que representan acciones que ya ha agregado, lo que facilita la identificación de funciones de un vistazo.
 - **Radio de esquina**. Ajuste esta configuración para cambiar la forma del botón, desde esquinas afiladas y cuadradas hasta bordes suaves y redondeados.
-- **Tamaño**. Elija el tamaño del botón que mejor se adapte a su pantalla y se destaque según sea necesario. Para los *Botones predeterminados*, los tamaños están preestablecidos y no se pueden ajustar.
-- **Opacidad del fondo**. Controle la visibilidad del fondo del botón. Puede configurarlo para que sea completamente visible o parcialmente transparente, o mostrar solo la sombra del marco y el icono.
+- **Tamaño**. Elija el tamaño del botón que mejor se adapte a su pantalla y se destaque según sea necesario. 
+- **Opacidad del fondo** (Android) / **Fondo** (iOS). Controle la visibilidad del fondo del botón. Puede configurarlo para que sea completamente visible o parcialmente transparente, o mostrar solo la sombra del marco y el icono.
 
 
 ## Otros {#other}
@@ -588,7 +653,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *�
 
 > *Posición de la ubicación en la pantalla* es el nombre de esta configuración en la versión de iOS de OsmAnd.  
 
-Le permite establecer la ubicación del cursor en *[Mi ubicación](../map/interact-with-map.md#my-location-and-zoom)* en el mapa de OsmAnd. Hay tres opciones disponibles:  
+Le permite establecer la ubicación del cursor en *[Mi ubicación](../map/interact-with-map.md#my-position-and-zoom)* en el mapa de OsmAnd. Hay tres opciones disponibles:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. El cursor siempre se posiciona en el centro de la pantalla.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Mi ubicación* se coloca ligeramente por debajo del centro de la pantalla. Este modo le permite ver más información del mapa por delante de su movimiento, lo cual es útil durante la navegación.

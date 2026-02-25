@@ -1,5 +1,5 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
+source-hash: 31eaf050491744fda2c071f9b7f96835aefe6b7beef39ec37dbf6a225fba7c4c
 sidebar_position: 13
 title:  Vista de mapa de esquí
 ---
@@ -99,7 +99,7 @@ El perfil de Esquí está diseñado para usarse en combinación con los estilos 
 
 </Tabs>
 
-El [mapa vectorial](../map/vector-maps.md) con el [estilo de mapa de Invierno y Esquí](../map/vector-maps.md#winter-and-ski) incluido se puede completar con [Líneas de contorno](../plugins/topography.md#contour-lines) y [Sombreado de relieve](../plugins/topography.md#hillshade-slope-and-altitude-layers). A continuación se muestran dos ejemplos. Las pistas en el mapa vectorial predeterminado se muestran a la izquierda, y las pistas en el mapa vectorial combinado con el mapa ráster de *Líneas de contorno* y *Sombreado de relieve* se muestran a la derecha. En el segundo caso, el mapa muestra más datos de elevación para ayudar a estimar la dificultad, el riesgo y la distancia.  
+El [mapa vectorial](../map/vector-maps.md) con el [estilo de mapa de Invierno y Esquí](../map/map-styles.md#winter-and-ski) incluido se puede completar con [Líneas de contorno](../plugins/topography.md#contour-lines) y [Sombreado de relieve](../plugins/topography.md#hillshade-slope-and-altitude-layers). A continuación se muestran dos ejemplos. Las pistas en el mapa vectorial predeterminado se muestran a la izquierda, y las pistas en el mapa vectorial combinado con el mapa ráster de *Líneas de contorno* y *Sombreado de relieve* se muestran a la derecha. En el segundo caso, el mapa muestra más datos de elevación para ayudar a estimar la dificultad, el riesgo y la distancia.  
 
 
 ### Desactivar el estilo de mapa de esquí {#disable-ski-map-style}
@@ -174,12 +174,12 @@ Para una guía más específica para cada tipo de dificultad de sendero, consult
 
 ### Pistas por tipo {#piste-by-types}
 
-Las pistas difieren por tipo. Un tipo representa diferentes características para una pista para cumplir con los requisitos de diferentes actividades relacionadas con el invierno: esquí alpino, patinaje clásico, snowboard, trineo, esquí de travesía, esquí de montaña, esquí de baches, esquí nocturno, etc. Comprender el [tipo de pista](https://wiki.openstreetmap.org/wiki/Key:piste:type) en el mapa ayuda a construir una ruta de navegación óptima.
+Las pistas difieren por tipo. Un tipo representa diferentes características para una pista para cumplir con los requisitos de diferentes actividades relacionadas con el invierno: esquí alpino, patinaje clásico, snowboard, trineo, esquí de fondo, esquí de travesía, esquí de baches, esquí nocturno, etc. Comprender el [tipo de pista](https://wiki.openstreetmap.org/wiki/Key:piste:type) en el mapa ayuda a construir una ruta de navegación óptima.
 
 - **Pista de esquí alpino/descenso.**  
 Utilizado para la navegación de esquí. Este [tipo de pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Ddownhill) tiene dirección y dificultad, y la mayoría de las veces está rodeado por los límites de la estación de esquí. Cuando se selecciona una pista de descenso para la navegación de esquí, se tiene en cuenta la dirección de la pista. Si los puntos de Salida y Destino se establecen en sentido contrario a la dirección de la pista, la navegación se realiza por la vía aérea más cercana.
 
-- **Pista de esquí nórdico/de travesía.**  
+- **Pista de esquí nórdico/de fondo.**  
 También se utiliza para la navegación de esquí. Este [tipo de pista](https://wiki.openstreetmap.org/wiki/Tag:piste:type%3Dnordic) no tiene dificultad, puede tener o no una dirección, y la mayoría de las veces va más allá de los límites de la estación de esquí. Al navegar por este tipo de pistas, los puntos de Salida y Destino a menudo se pueden intercambiar.
 
 - **Pista de esquí de travesía.**  
@@ -239,7 +239,7 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_c
 
 Para saber por qué pistas fuera de la estación de esquí puede navegar, debe habilitar la opción **Pistas y rutas de esquí** en la lista [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), abierta desde el menú [Configurar mapa](../map/configure-map-menu.md).  
 
-Con el perfil de Esquí, la navegación de esquí y el [estilo de mapa de Invierno y Esquí](../map/vector-maps.md#winter-and-ski) habilitados, las [Pistas y rutas de esquí](../map/routes.md#ski-slopes-and-routes) muestran todos los tipos de pistas que la navegación de esquí puede usar para construir rutas de navegación. Dichas rutas de pistas de esquí, si están habilitadas, se delinean con el color violeta principalmente fuera de los límites de la estación de esquí.  
+Con el perfil de Esquí, la navegación de esquí y el [estilo de mapa de Invierno y Esquí](../map/map-styles.md#winter-and-ski) habilitados, las [Pistas y rutas de esquí](../map/routes.md#ski-slopes-and-routes) muestran todos los tipos de pistas que la navegación de esquí puede usar para construir rutas de navegación. Dichas rutas de pistas de esquí, si están habilitadas, se delinean con el color violeta principalmente fuera de los límites de la estación de esquí.  
 Al habilitar la opción [Pistas y rutas de esquí](../map/routes.md#ski-slopes-and-routes) para un estilo de mapa diferente a Invierno y Esquí, solo se muestran las pistas. Otras características relacionadas con el esquí podrían no mostrarse en esta capa de estilo.  
 Las _Pistas y rutas de esquí_ [son clicables](../map/routes.md#actions-with-routes).
 

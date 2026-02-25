@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title:  Regla de radio y Regla
 ---
@@ -204,7 +204,7 @@ Para más información sobre *la posición en la pantalla*, consulta el artícul
 
 Puedes cambiar a la **vista 3D** para visualizar mejor las distancias y el terreno circundante cuando utilices la Regla de radio. Esta vista inclina el mapa y proporciona un efecto de perspectiva que amplía el radio visible.
 
-- Toca [el botón de ubicación](../map/interact-with-map.md#my-location-and-zoom) para centrarte en tu posición.
+- Toca [el botón de ubicación](../map/interact-with-map.md#my-position-and-zoom) para centrarte en tu posición.
 - Utiliza un gesto de [deslizar dos dedos hacia arriba](../map/interact-with-map.md#gestures) para inclinar el mapa al modo 3D.
 
 Los círculos de radio aparecerán con profundidad, lo que es particularmente útil para la planificación de rutas en zonas montañosas o entornos urbanos donde el contexto vertical es importante.

@@ -1,8 +1,9 @@
 ---
-source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
+source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
 sidebar_position: 4
 title:  Detalles de la ruta
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Resumen {#overview}
@@ -178,7 +178,7 @@ Si hay datos presentes, puede seleccionar uno de los siguientes tipos:
 
 - *Tocar y deslizar*. Toque el gráfico para mostrar información sobre el punto del track y el movimiento a lo largo de él. El gráfico resalta la ubicación del punto en el mapa y muestra información sobre él en la regla.
 - *Escalar*. Escale el gráfico mediante un [gesto con dos dedos](../../map/interact-with-map.md#gestures).
-- *Seguir mi ubicación* (*Solo Android*). Puede tocar [Mi ubicación](../../map/interact-with-map.md#my-location-and-zoom) para sincronizar la vista del mapa y el gráfico con su ubicación. A medida que se mueva, el gráfico se desplazará de izquierda a derecha, mostrando información por delante de su camino.  
+- *Seguir mi ubicación* (*Solo Android*). Puede tocar [Mi posición](../../map/interact-with-map.md#my-location-and-zoom) para sincronizar la vista del mapa y el gráfico con su ubicación. A medida que se mueva, el gráfico se desplazará de izquierda a derecha, mostrando información por delante de su camino.  
 
 
 ## Atributos de la carretera {#road-attributes}
@@ -205,7 +205,7 @@ Ir a: *pestaña <Translate ios="true" ids="shared_string_menu,shared_string_navi
 
 Los atributos de la carretera son accesibles en los [Detalles de la ruta](#how-to-access) y muestran información relacionada con el segmento de los datos de OpenStreetMap y de elevación. La indicación de color está relacionada con cómo se representan los atributos específicos en el mapa (consulte la [Leyenda del mapa](../../map-legend/osmand.md#surface-smoothness)). Los gráficos de barras también son interactivos, y es posible ver información en una ubicación específica tocando el gráfico.
 
-- [**Tipo de carretera**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). El tipo de carretera se determina en función de su propósito funcional y características, como el número de carriles, los límites de velocidad, la capacidad de carga, la presencia de carriles para peatones y bicicletas, arcenes y otros parámetros.  
+- [**Tipo de carretera**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). El tipo de carretera se determina en función de su propósito funcional y características, como el número de carriles, los límites de velocidad, la capacidad de carga, la presencia de carriles para peatones y bicicletas, arcenes y otros parámetros. Diferentes tipos de carreteras pueden tener diferentes restricciones y reglas de tráfico.  
 
    Por ejemplo, las [autopistas](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) principales suelen tener un límite de velocidad alto y pueden dividirse en carriles, y las [carreteras locales](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) pueden tener un límite de velocidad bajo y un carril en cada dirección.  
 
@@ -213,9 +213,9 @@ Los atributos de la carretera son accesibles en los [Detalles de la ruta](#how-t
 
    Por ejemplo, el pavimento de [asfalto](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) proporciona una buena tracción y aislamiento acústico, y el pavimento de [hormigón](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) es más duradero y tiene una mayor capacidad de carga. También se pueden utilizar otros materiales como grava, piedra triturada, tablas de madera y otros para crear una superficie de carretera.  
 
-- [**Inclinación**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). Esta es una medida del ángulo de la pendiente de la carretera, expresada como un porcentaje. Indica cuán empinada está la carretera hacia arriba o hacia abajo en relación con el horizonte, y se calcula midiendo el cambio vertical en la elevación de la carretera por la distancia horizontal y multiplicando el valor resultante por 100%.  
+- [**Empinada**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). Esta es una medida del ángulo de la pendiente de la carretera, expresada como un porcentaje. Indica cuán empinada está la carretera hacia arriba o hacia abajo en relación con el horizonte, y se calcula midiendo el cambio vertical en la elevación de la carretera por la distancia horizontal y multiplicando el valor resultante por 100%.  
 
-   Por ejemplo, si la inclinación de la carretera es del 10%, eso significa que por cada 100 metros de distancia horizontal a lo largo de la carretera, está subiendo o bajando 10 metros. La inclinación de la carretera puede afectar la velocidad de su vehículo, el frenado, el consumo de combustible y la seguridad al conducir, especialmente en carreteras resbaladizas en invierno.  
+   Por ejemplo, si la empinada de la carretera es del 10%, eso significa que por cada 100 metros de distancia horizontal a lo largo de la carretera, está subiendo o bajando 10 metros. La empinada de la carretera puede afectar la velocidad de su vehículo, el frenado, el consumo de combustible y la seguridad al conducir, especialmente en carreteras resbaladizas en invierno.  
 
 - [**Firmeza de la superficie**](https://wiki.openstreetmap.org/wiki/Key:tracktype). La superficie de la carretera puede recuperarse de la deformación o la carga. Cuanto mayor sea la firmeza de la superficie, menor será la posibilidad de dañar el vehículo y más cómoda será la carretera. La firmeza de la superficie también puede afectar la velocidad del vehículo y el consumo de combustible.  
 
@@ -223,7 +223,7 @@ Los atributos de la carretera son accesibles en los [Detalles de la ruta](#how-t
 
 - [**Lisura**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Aplicable a todo tipo de caminos y áreas, como autopistas, estacionamientos, playas y senderos, e indica la usabilidad de la ruta. Le brinda información de que puede conducir sin un riesgo significativo de daños, como en los bajos del vehículo, o lesiones, como una caída.  
 
-- [**Carreteras de invierno y hielo**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Muestra el esquema de color de la ruta según la clasificación de [carreteras de invierno](../../map/vector-maps.md#winter-and-ski).  
+- [**Carreteras de invierno y hielo**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Muestra el esquema de color de la ruta según la clasificación de [carreteras de invierno](../../map/map-styles.md#winter-and-ski).  
 
 - [**Dificultad de las rutas a caballo**](https://wiki.openstreetmap.org/wiki/Riding). Este atributo de la carretera indica la dificultad de la ruta mientras se monta a caballo. Adecuado para [rutas a caballo](../../navigation/routing/horse-routing.md).  
 

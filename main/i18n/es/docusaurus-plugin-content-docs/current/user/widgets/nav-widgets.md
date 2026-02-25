@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Widgets de navegación
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  Este widget solo se puede usar con la función Pro para <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">suscriptores de OsmAnd Pro</a>.
-
+:::info Característica Pro
+El Widget de Elevación es una característica de pago de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 El widget de Elevación muestra un gráfico con la elevación y la pendiente de su ruta de navegación y su ubicación actual en este gráfico con la altitud y pendiente actuales. El gráfico se traza en dos ejes. El eje X es la distancia de su ruta. El eje Y es la altitud, el valor depende del relieve, y la pendiente se muestra como un porcentaje.  
@@ -250,7 +248,7 @@ El widget muestra la *Hora de llegada* o el *Tiempo restante* hasta el primer pu
 | | |
 |:------------|:------------|
 | Activar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | Al tocar | Cambia entre *Hora de llegada* y *Tiempo restante* y viceversa. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +276,7 @@ El widget muestra la *Hora de llegada* o el *Tiempo restante* hasta el último p
 | | |
 |:------------|:------------|
 | Activar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
 | Al tocar | Cambia entre *Hora de llegada* y *Tiempo restante* y viceversa. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |  
 

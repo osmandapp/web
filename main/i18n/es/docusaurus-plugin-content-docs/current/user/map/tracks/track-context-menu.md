@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-En la parte superior del panel de información, puedes ver el nombre del track y el símbolo utilizado para marcarlo (*solo en Android*). El nombre del track se puede cambiar utilizando la función de renombrar en el [menú Opciones](#options). Algunos tracks (principalmente las *[Guías de viaje](../../plan-route/travel-guides.md#manage-as-gpx-track)*) pueden tener una breve *[descripción](#description-and-info)* y/o una imagen debajo del *Nombre del track*. Una flecha muestra la *Dirección al punto más cercano del track* desde [Mi ubicación](../../map/interact-with-map.md#my-location-and-zoom).  
+En la parte superior del panel de información, puedes ver el nombre del track y el símbolo utilizado para marcarlo (*solo en Android*). El nombre del track se puede cambiar utilizando la función de renombrar en el [menú Opciones](#options). Algunos tracks (principalmente las *[Guías de viaje](../../plan-route/travel-guides.md#manage-as-gpx-track)*) pueden tener una breve *[descripción](#description-and-info)* y/o una imagen debajo del *Nombre del track*. Una flecha muestra la *Dirección al punto más cercano del track* desde [Mi posición](../../map/interact-with-map.md#my-position-and-zoom).  
 
 El panel de información también proporciona información sobre lo siguiente:
 
@@ -129,7 +129,7 @@ El menú **Opciones** te permite gestionar y modificar el track seleccionado con
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Solo Android*) – Une segmentos del track para rellenar huecos.
-- **<Translate android="true" ids="analyze_on_map"/>**. Abre la herramienta [Analizar en el mapa](../tracks/index.md#analyze-track-on-map) para inspeccionar la elevación, velocidad y distancia del track.
+- **<Translate android="true" ids="analyze_on_map"/>**. Abre la herramienta [Analizar en el mapa](../tracks/index.md#analyze-track-on-map) para inspeccionar la elevación, velocidad, distancia y cualquier dato adicional contenido en el track (como datos de sensores externos o métricas de vehículos).
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Solo Android*) - Analiza el track por [intervalos](./track-context-menu.md#analyze-by-intervals) de tiempo o distancia.
 
 <br/>
@@ -364,11 +364,11 @@ Si no hay *información de elevación* en la ruta, puedes añadirla de las sigui
 
 ### Calcular elevación faltante {#calculate-missing-elevation}
 
-:::note Suscripción OsmAnd Pro
-La función de [calcular elevación sin conexión](../../plan-route/create-route.md#get-elevation-data) solo está disponible para los [**suscriptores de OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Función Pro
+[Calcular elevación sin conexión](../../plan-route/create-route.md#get-elevation-data) es una función de pago de [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
 
 [Esta función](../../plan-route/create-route.md#get-elevation-data) te permite calcular el perfil de elevación para un track GPX sin conexión para cualquier terreno entre 70 grados de latitud norte y 70 grados de latitud sur, basándose en los [datos del mapa de terreno](../../plugins/topography.md#download-maps). *Los mapas de terreno (3D) deben haber sido descargados previamente*.
 
@@ -663,7 +663,7 @@ Cuando tocas cualquier segmento en la lista, la vista del mapa muestra el track 
 
 ![Pestaña de división del track por tiempo](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Mapa de división del track por tiempo](@site/static/img/personal/tracks/split_by_3_map.png) 
 
-La opción **Dividir por tiempo** divide un track en intervalos de duración igual. Puedes elegir entre ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** y ***60 min***. La forma en que se muestran los intervalos, las estadísticas proporcionadas para cada segmento y cómo aparecen en el mapa son las mismas que en la sección [Dividir por distancia](#split-by-distance).
+La opción **Dividir por tiempo** divide un track en intervalos de duración igual. Puedes elegir entre ***1 min***, ***2 min***, ***2.5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** y ***60 min***. La forma en que se muestran los intervalos, las estadísticas proporcionadas para cada segmento y cómo aparecen en el mapa son las mismas que en la sección [Dividir por distancia](#split-by-distance).
 
 
 ### Dividir por subida/bajada {#split-by-uphill-downhill}
@@ -699,7 +699,7 @@ Esta opción te permite ver los valores promedio, mínimos y máximos de frecuen
 
 Este filtro te permite mejorar las estadísticas de tu track excluyendo datos innecesarios o incorrectos. Puedes filtrar los puntos del track que no se ajustan a los parámetros de tu track y, como resultado, obtener un gráfico más preciso y una línea de ruta visual sin distorsiones ni ruido de grabación. Puedes realizar cambios con filtros como *Suavizado*, *Velocidad*, *Altitud* y *Precisión GPS*, que ocultan los puntos filtrados del track actual. Además, en el menú *Estadísticas*, puedes comprobar cómo se muestran tus cambios en el gráfico antes de guardarlos. También puedes *Restablecer al original* y *Guardar como una copia* de tu track en este filtro sin guardar el original.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

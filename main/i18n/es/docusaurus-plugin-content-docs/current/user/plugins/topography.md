@@ -1,5 +1,5 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
+source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
 sidebar_position: 14
 title: Topografía
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Vista general {#overview}
 
-:::info Función de pago
-El complemento Topografía es una [función de pago](../purchases/index.md) de la aplicación OsmAnd.
+:::tip Compra
+El complemento Topografía es una [función de pago](../purchases/index.md).  
 :::
 
 La topografía es una característica importante de la cartografía que proporciona información para evaluar visualmente el relieve del terreno.
 La información topográfica como [Curvas de nivel](#contour-lines), [Terreno](#terrain) (*Sombreado de relieve* y *Pendiente*), y [Relieve 3D](#3d-relief) ayuda a realizar una evaluación visual de la disposición del terreno al ver la elevación, el relieve, los extremos, la inclinación o los puntos de igual altura.
 
-Cada función proporcionada por este complemento es una capa de mapa independiente que, cuando está habilitada, se puede mostrar por encima o por debajo de la fuente del mapa principal dependiendo de la [configuración](../map/raster-maps.md#overlay-layer).  
+Cada función proporcionada por este complemento es una capa de mapa independiente que, cuando está habilitada, se puede mostrar por encima o por debajo de la fuente del mapa principal dependiendo de la [configuración](../map/raster-maps.md#overlay).  
 
 El complemento Topografía proporciona acceso a los siguientes tipos de mapas:  
 
@@ -173,7 +173,7 @@ Al usar el [Motor de renderizado de mapas](../personal/global-settings.md#map-re
 **Configuración de apariencia**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Activa o desactiva las curvas de nivel.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Define los [niveles de zoom](../map/interact-with-map.md#my-location-and-zoom) en los que las curvas de nivel son visibles.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Define los [niveles de zoom](../map/interact-with-map.md#my-position-and-zoom) en los que las curvas de nivel son visibles.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Elige el color para mostrar las curvas de nivel.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Ajusta el ancho de las curvas de nivel.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selecciona la densidad de las curvas de nivel (Baja, Media, Alta). Las densidades más altas pueden afectar la velocidad de carga.
@@ -244,12 +244,10 @@ Los mapas raster de **Sombreado de relieve**, **Pendiente** y **Altitud** se cre
 
 - *Altitud*. El mapa de altitud colorea cada píxel según la altura calculada del mapa utilizando el gradiente de un esquema de color definido. Por lo general, los esquemas de altitud dependen mucho de la ubicación. En áreas montañosas, preferirás distribuir los colores en un rango de altitud más amplio y en áreas planas, seleccionarás un esquema de color con un rango pequeño entre la altitud mínima y máxima.
 
-> *Por favor, lee el artículo [Esquema de color](../personal/color-palette-schemes.md) para más información.*
-
 
 ### Modificar esquema de color {#modify-color-scheme}
 
-:::info Función de pago
+:::info Función Pro
 *[Modificar esquema de color](../../user/personal/color-palette-schemes.md#terrain)* es una función de pago de **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) y [Android](../purchases/android.md#pro-features) <ProFeature />.
 :::
 
@@ -348,7 +346,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_n
 
 </Tabs>  
 
-La función de Relieve 3D produce un relieve elevado y proporciona una representación tridimensional del paisaje. El Relieve 3D funciona sin conexión y se puede usar con [mapas vectoriales de OsmAnd](../map/vector-maps.md) o cualquier [mapa raster](../map/raster-maps.md#select-raster-maps) como [Fuente de mapa](../map/raster-maps.md#main) o como [Subcapa/Superposición](../map/raster-maps.md#overlay-layer).
+La función de Relieve 3D produce un relieve elevado y proporciona una representación tridimensional del paisaje. El Relieve 3D funciona sin conexión y se puede usar con [mapas vectoriales de OsmAnd](../map/vector-maps.md) o cualquier [mapa raster](../map/raster-maps.md#layers) como [Fuente de mapa](../map/raster-maps.md#main) o como [Subcapa/Superposición](../map/raster-maps.md#overlay).
 
 ***Cómo mostrar el Relieve 3D en el mapa.***
 

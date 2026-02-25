@@ -1,5 +1,5 @@
 ---
-source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
+source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,6 +17,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Descripción general {#overview}
+
+:::tip Purchase
+*CarPlay* es una [función de pago](../purchases/index.md).  
+:::
 
 Conducir un vehículo y usar su teléfono o tableta al mismo tiempo suele estar prohibido por ley por razones de seguridad. [***CarPlay***](https://www.apple.com/ios/carplay/) es un software que proporciona una versión adaptada y optimizada de la aplicación OsmAnd para un uso seguro mientras se conduce, haciendo más fácil y seguro el acceso a las funciones de navegación de la aplicación.
 
@@ -45,8 +49,8 @@ Mientras su dispositivo está conectado a *CarPlay*, el mapa en la pantalla de l
 
 *CarPlay* muestra la interfaz de OsmAnd adaptada a la pantalla del sistema multimedia del vehículo. La interacción con el mapa se limita a:  
 
-- [Mi ubicación](../widgets/map-buttons.md#my-location-and-zoom). Mueve la parte visible del mapa para que su ubicación actual esté en el centro de la pantalla.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Le permite acercar y alejar la parte visible del mapa.
+- [Mi ubicación](../widgets/map-buttons.md#my-position-and-zoom). Mueve la parte visible del mapa para que su ubicación actual esté en el centro de la pantalla.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Le permite acercar y alejar la parte visible del mapa.
 
 
 ## Parámetros de configuración requeridos {#required-setup-parameters}
@@ -224,7 +228,6 @@ La guía por voz para *CarPlay* es una de las características de navegación m�
 Para configurar las indicaciones de voz según el perfil seleccionado, debe hacerlo antes de iniciar una ruta en la aplicación OsmAnd en su dispositivo. Para ver los ajustes recomendados para *CarPlay*, vaya al artículo [Indicaciones de voz / Notificaciones](../navigation/guidance/voice-navigation.md).  
 
 
-
 ### Widget de alerta en pantalla {#screen-alert-widget}
 
 ![Pantalla de CarPlay](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
@@ -241,7 +244,7 @@ Este widget de información combina tipos de alerta como **Pasos de peatones** y
 
 ![Pantalla de CarPlay](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
-El widget **Velocímetro** es un elemento de interfaz integrado que muestra la *velocidad actual* utilizando datos GPS y el *límite de velocidad* de la [base de datos de OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) y los [ajustes de OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) en la pantalla del sistema multimedia del vehículo.
+El widget **Velocímetro** es un elemento de interfaz integrado que muestra la *velocidad actual* utilizando datos GPS y el *límite de velocidad* de la [base de datos de OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) y los [ajustes de OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) en la pantalla del sistema multimedia del vehículo. Cuando su velocidad actual se acerca a la tolerancia del límite de velocidad configurada o excede el límite de velocidad, el widget cambia su apariencia (colores) para proporcionar una advertencia. El cambio de apariencia puede ser animado.
 
 - El **widget Velocímetro** es [*dependiente del perfil*](../personal/profiles.md), por lo que si cambia los ajustes para un perfil, no se aplicarán a otro.
 - No hay opción para configurar la visualización del *Velocímetro* directamente en *CarPlay*. Debe configurarlo para el [perfil de navegación](#carplay-profile) seleccionado en la aplicación OsmAnd antes de iniciar la navegación y conectar su dispositivo al vehículo.
@@ -266,6 +269,23 @@ La aplicación OsmAnd se puede abrir y usar para navegar en *CarPlay* en la pant
 
 - Configuración del panel multifunción en un teléfono conectado a *CarPlay* o en la pantalla de su sistema de vehículo.
 - Encuentre el botón de Ventana múltiple y actívelo.
+
+
+### Finalizar navegación {#finish-navigation}
+
+![Finalizar navegación](@site/static/img/navigation/auto-car/finish_navigation_carplay_new.png)
+
+Cuando la navegación se completa en CarPlay, OsmAnd muestra un diálogo **“Ha llegado”** en la pantalla del vehículo. Este diálogo utiliza la misma lógica de detección de llegada que la aplicación móvil y proporciona acceso rápido a acciones comunes después de llegar a su destino.
+
+Acciones disponibles:
+- **Marcar como ubicación de estacionamiento**. Guarda su posición actual como una ubicación de estacionamiento y coloca un marcador de estacionamiento en el mapa.
+- **Buscar estacionamiento**. Abre la pantalla de Búsqueda con la categoría de Estacionamiento preseleccionada para ayudarle a encontrar opciones de estacionamiento cercanas.
+- **Recalcular ruta**. Construye una nueva ruta al destino original si desea continuar la navegación.
+- **Finalizar navegación**. Termina la ruta actual y devuelve OsmAnd al estado predeterminado del mapa.
+
+Si CarPlay se desconecta mientras la navegación está activa, OsmAnd aplica una lógica adicional en el iPhone:
+- Si la distancia al destino es menor a 100 m, la navegación se finaliza automáticamente y se restaura el perfil predeterminado. En este caso, la notificación “Ha llegado” no se muestra en la pantalla del teléfono.
+- Si la velocidad actual es inferior a 1 m/s (por ejemplo, al detenerse en una gasolinera), la navegación se pausa. La navegación se reanuda automáticamente cuando se vuelve a conectar CarPlay.
 
 ## Ajustes {#settings}
 

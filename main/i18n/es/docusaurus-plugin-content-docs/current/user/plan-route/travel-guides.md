@@ -1,8 +1,9 @@
 ---
-source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
+source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
 sidebar_position: 2
 title:  Guías de viaje
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,11 +15,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Resumen {#overview}
 
-:::info Función de pago
-Las Guías de viaje son una [función de pago](../purchases/index.md) de la aplicación OsmAnd.
+:::tip Función de pago
+Las Guías de viaje son una [función de pago](../purchases/index.md).  
 :::
 
 Las guías de viaje virtuales en OsmAnd ofrecen a los usuarios información valiosa, recomendaciones y consejos. También permiten a los viajeros acceder a información de navegación completa sobre las atracciones en la aplicación.

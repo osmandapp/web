@@ -1,5 +1,5 @@
 ---
-source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
+source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -107,8 +107,9 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
-| [Cuadrícula de coordenadas — Personalización de color](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [Visualización de tracks en 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Cuadrícula de coordenadas — Personalización de color](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Edificios en 3D — Personalización de color](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [Visualización de tracks en 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lugares populares (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage sin conexión - Guías de viaje](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
@@ -121,7 +122,7 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Widgets de métricas del vehículo](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratis**</summary><ul><li>*Velocidad del vehículo*</li><li>*Velocidad del motor*</li></ul></details> | <details><summary>**2 widgets gratis**</summary><ul><li>*Velocidad del vehículo*</li><li>*Velocidad del motor*</li></ul></details> | ✔ |
 | [Herramienta de marcadores de mapa](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Fuentes de mapas en línea](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Mapa SQLitedb](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Mapa SQLitedb](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Puntos favoritos](../map/point-layers-on-map.md)<br/>marcadores y waypoints | ✔ | ✔ | ✔ |
 | [Puntos de audio/foto/vídeo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [Rastreador GPS en línea de OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -170,7 +171,7 @@ o
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuar con OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Compra de Maps+ {#maps-purchase}
 
@@ -178,7 +179,7 @@ o
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Toca la lista de funciones de Maps+ → Continuar con Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Suscripciones heredadas (anteriores a la 4.0) {#legacy-subscriptions-prior-40}

@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
 sidebar_position: 2
 title: Map Screen During Navigation
 ---
@@ -49,11 +49,11 @@ Durante la navegación, la apariencia del mapa se ajusta según el perfil de nav
 
 | Parámetro | Descripción | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | El tiempo durante el cual la vista del mapa se sincroniza con la posición actual después de moverse. | *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 50 seg.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | El tiempo durante el cual la vista del mapa se sincroniza con la posición actual después de moverse.  |  *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 50 seg.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Escala automáticamente el mapa según su velocidad, siempre que el mapa esté sincronizado con su posición actual. | *Valor:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manual. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - el zoom es de 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - el zoom es de 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - el zoom es de 5 m. <br /> Los cambios de zoom automático pueden ser animados (Suave) o basados en pasos (Discreto), dependiendo de los [Ajustes de desarrollo](navigation-settings.md#development-settings). En el modo Suave, los cambios de zoom usan una animación controlada (alrededor de 0.1 zoom/segundo). El zoom automático no ajusta el zoom a velocidades muy bajas (por debajo de ~7 km/h). Si el cambio de zoom requerido tomaría menos de ~1.5 segundos, la animación no se inicia. <br /> El zoom automático busca mantener la maniobra próxima dentro de un área de enfoque estable en pantalla, por lo que la distancia visible hacia adelante permanece consistente mientras conduce.|
 | *Ángulo de zoom automático 3D* | Establece la inclinación del mapa al cambiar a vista 3D durante la navegación. Un ángulo más alto hace que el horizonte aparezca más lejos, proporcionando mayor visibilidad hacia adelante. |Se aplica solo cuando el Zoom automático está habilitado. Valores: 20°, 25°, 30°, 35°, 40°. Predeterminado: 25°. <br /> Al acercarse a una maniobra/intersección, la aplicación puede reducir gradualmente la inclinación 3D hacia una vista 2D para mantener legible la próxima vuelta. |
-| *Vista previa de la próxima vuelta* | Rota automáticamente el mapa ligeramente con antelación para mostrar la próxima vuelta o maniobra durante la navegación. Ayuda a anticipar las acciones próximas.  | Habilitado por defecto. Si exporta e importa nuevamente un perfil, asegúrese de verificar esta configuración, ya que en algunas versiones anteriores podría restablecerse a “habilitado.”   <br /> La rotación/vista previa se activa una vez que el punto de la próxima maniobra entra en el área de enfoque (por lo que el mapa comienza a “mirar” la vuelta cuando se vuelve relevante). |
-| *<Translate android="true" ids="snap_to_road"/>*  | El icono de la posición actual se asociará con la ruta de navegación actual. | Puede desactivar esta opción, pero todas las opciones relacionadas con la carretera, como la visualización de carriles, tampoco serán visibles durante la navegación.  |
+| *Vista previa de la próxima vuelta* | Rota automáticamente el mapa ligeramente con antelación para mostrar la próxima vuelta o maniobra durante la navegación. Ayuda a anticipar las acciones próximas.  | Habilitado por defecto. Si exporta e importa nuevamente un perfil, asegúrese de verificar esta configuración, ya que en algunas versiones anteriores podría restablecerse a “habilitado.”  <br /> La rotación/vista previa se activa una vez que el punto de la próxima maniobra entra en el área de enfoque (por lo que el mapa comienza a “mirar” la vuelta cuando se vuelve relevante). |
+| *<Translate android="true" ids="snap_to_road"/>*  | El icono de la posición actual se asociará con la ruta de navegación actual.  | Puede desactivar esta opción, pero todas las opciones relacionadas con la carretera, como la visualización de carriles, tampoco serán visibles durante la navegación.  |
 
 
 
@@ -161,6 +161,10 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 ## Route Line Appearance {#route-line-appearance}
 
+:::info Pro feature
+La personalización de la línea de ruta es una función de pago de [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -186,16 +190,11 @@ Puede seleccionar la apariencia de la línea de ruta por estilo o seleccionar ma
 **Avanzado**: el ajuste Personalizar línea de ruta le permite ajustar la apariencia de la línea de ruta para mostrar cambios de elevación, subidas o bajadas significativas, hielo en la carretera, carreteras sin pavimentar, autopistas y otros posibles obstáculos. También puede seleccionar o crear [esquemas de color](../../personal/color-palette-schemes.md#tracks-routes) personalizados para aplicar a la línea de ruta.
 
 
-:::note
- <ProFeature/> Algunos parámetros solo se pueden usar con la <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">suscripción a OsmAnd Pro</a>.
-:::
-
-
 ### Color {#color}
 
 El ajuste **Color** cambia los tonos de color de las líneas de ruta. Su color general cambia según el tipo seleccionado de la colección de OsmAnd y según la **Leyenda del mapa**. Alternativamente, su color se convierte en el color y la transparencia que establezca manualmente.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Se utiliza con los colores predeterminados. Para una descripción completa de los colores, vaya a [Estilos de mapa predeterminados](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Se utiliza con los colores predeterminados. Para una descripción completa de los colores, vaya a [Estilos de mapa predeterminados](../../map/map-styles.md#default-map-styles).  
     ![estilo de mapa](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Personalizado***. Le permite seleccionar una línea en cualquier color y transparencia preferidos. Puede seleccionar diferentes configuraciones para el mapa diurno y por separado para el mapa nocturno.  
@@ -216,7 +215,7 @@ El ajuste **Color** cambia los tonos de color de las líneas de ruta. Su color g
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Clasificación de la maniobrabilidad de la carretera o sendero para vehículos con ruedas, especialmente en lo que respecta a la regularidad y suavidad de la superficie. Una descripción detallada se puede encontrar en el artículo *Estilo de mapa de OsmAnd - [Suavidad](../../map-legend/osmand.md#surface-smoothness)* en la sección *Leyenda del mapa*.  
     ![Altitud](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colorea una ruta o línea de track según la *clasificación de carreteras de invierno*. Una descripción detallada se puede encontrar en el artículo *Mapas vectoriales*, sección [Carreteras de invierno y hielo](../../map/vector-maps.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colorea una ruta o línea de track según la *clasificación de carreteras de invierno*. Una descripción detallada se puede encontrar en el artículo *Estilos de mapa*, sección [Carreteras de invierno y hielo](../../map/map-styles.md#winter-and-ski).  
     ![Altitud](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Coloración de una ruta o línea de sendero por composición del pavimento. Típicamente, se usa cuando la red de carreteras está en gran parte sin pavimentar. Una descripción detallada se puede encontrar en el artículo *Estilo de mapa de OsmAnd - [Firmeza de la superficie](../../map-legend/osmand.md#surface-smoothness)* en la sección *Leyenda del mapa*.  
@@ -230,7 +229,7 @@ El ajuste **Color** cambia los tonos de color de las líneas de ruta. Su color g
 
 Puede ajustar el ancho de la línea de la ruta para alinearla con la carretera o el camino que se muestra en el mapa. Para una identificación visual más clara, puede aumentar o disminuir manualmente el ancho de la línea según sea necesario. Para más detalles, consulte el artículo *Tracks y Rutas — [Apariencia](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Se utiliza con el ancho predeterminado establecido por OsmAnd. Una descripción completa se puede encontrar en el artículo *Mapas vectoriales*, sección [Estilo de mapa](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Se utiliza con el ancho predeterminado establecido por OsmAnd. Una descripción completa se puede encontrar en el artículo *[Estilos de mapa](../../map/map-styles.md)*.  
     ![estilo de mapa](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Anchos Delgado, Medio y Grueso***. Puede seleccionar el ancho de la línea para que coincida con el ancho de la carretera, o enfatizar más fuertemente la línea de la ruta en el mapa.  
