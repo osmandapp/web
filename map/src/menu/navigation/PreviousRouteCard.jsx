@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH, ROUTE_POINTS_VIA } from '../../store/geoRouter/profileConstants';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
@@ -36,14 +37,15 @@ export function getRouteRecordFromNavObject(navObject) {
     return { points };
 }
 
-function formatRouteLabel(points) {
+function formatRouteLabel(points, t) {
     if (!points || points.length < 2) return null;
     const from = points[0]?.displayValue ?? '';
     const to = points[points.length - 1]?.displayValue ?? '';
     if (points.length === 2) {
         return (
             <>
-                From <strong>{from}</strong> to <strong>{to}</strong>
+                {t('web:previous_route_from')} <strong>{from}</strong> {t('web:previous_route_to')}{' '}
+                <strong>{to}</strong>
             </>
         );
     }
@@ -51,24 +53,28 @@ function formatRouteLabel(points) {
         const via = points[1]?.displayValue ?? '';
         return (
             <>
-                From <strong>{from}</strong> via <strong>{via}</strong> to <strong>{to}</strong>
+                {t('web:previous_route_from')} <strong>{from}</strong> {t('web:previous_route_via')}{' '}
+                <strong>{via}</strong> {t('web:previous_route_to')} <strong>{to}</strong>
             </>
         );
     }
-    const stopCount = points.length - 2;
+    const count = points.length - 2;
     return (
         <>
-            From <strong>{from}</strong> via <strong>{stopCount} stops</strong> to <strong>{to}</strong>
+            {t('web:previous_route_from')} <strong>{from}</strong> {t('web:previous_route_via')}{' '}
+            <strong>{t('web:previous_route_stops', { count })}</strong> {t('web:previous_route_to')}{' '}
+            <strong>{to}</strong>
         </>
     );
 }
 
 function getRouteIcon(points) {
-    if (points.length === 2) return <RouteDirectIcon />;
+    if (!points || points.length <= 2) return <RouteDirectIcon />;
     return <RouteViaIcon />;
 }
 
 export default function PreviousRouteCard() {
+    const { t } = useTranslation();
     const ctx = useContext(AppContext);
 
     const navObject = ctx.navigationObject;
@@ -102,7 +108,7 @@ export default function PreviousRouteCard() {
         navObject.resetRoute();
     }
 
-    const label = formatRouteLabel(points);
+    const label = formatRouteLabel(points, t);
     const icon = getRouteIcon(points);
 
     return (
