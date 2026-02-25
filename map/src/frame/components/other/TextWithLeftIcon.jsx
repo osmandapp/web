@@ -8,7 +8,7 @@ export default function TextWithLeftIcon({ icon, text, onClick }) {
             className={`${styles.tipsItem} ${onClick ? styles.tipsItemClickable : ''}`}
             disableRipple
             disableTouchRipple
-            onClick={onClick}
+            onClick={onClick ?? ((e) => e.preventDefault())}
         >
             <ListItemIcon className={styles.tipsIcon}>{icon}</ListItemIcon>
             <ListItemText className={styles.mainText}>
