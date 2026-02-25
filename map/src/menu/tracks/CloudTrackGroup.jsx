@@ -37,7 +37,10 @@ export default function CloudTrackGroup({ index, group }) {
     const handleClick = (e) => {
         if (e.target !== 'path') {
             if (group.type === SMART_TYPE) {
-                ctx.setOpenGroups((prevState) => [...prevState, { files: group.files, type: group.type, name: group.name }]);
+                ctx.setOpenGroups((prevState) => [
+                    ...prevState,
+                    { files: group.files, type: group.type, name: group.name },
+                ]);
             } else {
                 ctx.setOpenGroups((prevState) => [...prevState, group]);
             }
@@ -60,9 +63,7 @@ export default function CloudTrackGroup({ index, group }) {
                 id={'se-menu-cloud-' + group.name}
                 onClick={handleClick}
             >
-                <ListItemIcon className={styles.icon}>
-                    {getFolderIcon()}
-                </ListItemIcon>
+                <ListItemIcon className={styles.icon}>{getFolderIcon()}</ListItemIcon>
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>

@@ -132,16 +132,25 @@ export async function loadSmartFolders(setSmartFolders, listFiles) {
     const res = await getSmartFolders();
     const smartFolders = (res ?? []).map((smartFolder) => {
         const files = {};
+        let minMs = Infinity;
+        let minData = null;
+
         (smartFolder.userFilePaths ?? []).forEach((path) => {
-            const file = listFiles?.find(f => f.name === path);
+            const file = listFiles?.find((f) => f.name === path);
             if (file) {
                 files[file.name] = { ...file, smartFolder: true };
+                if (file.updatetimems < minMs) {
+                    minMs = file.updatetimems;
+                    minData = file.updatetime;
+                }
             }
         });
-        
+
         return {
             name: smartFolder.name,
-            files: files
+            files: files,
+            lastModifiedMs: minMs !== Infinity ? minMs : null,
+            lastModifiedData: minData,
         };
     });
 

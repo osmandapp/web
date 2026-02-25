@@ -337,7 +337,7 @@ export async function refreshGlobalFiles({
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
         const resJson = await respGetFiles.json();
         if (resJson && resJson.uniqueFiles) {
-            getFilesForUpdateDetails(resJson.uniqueFiles, ctx.setUpdateFiles,ctx.setSmartFolders);
+            getFilesForUpdateDetails(resJson.uniqueFiles, ctx.setUpdateFiles, ctx.setSmartFolders);
             ctx.setListFiles(resJson);
         }
         if (type === OBJECT_TYPE_FAVORITE) {

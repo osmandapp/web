@@ -65,19 +65,29 @@ export default function TracksMenu() {
             } else {
                 setDefaultGroup(defaultGroupWithFolders);
             }
+
+            const allGroups = [
+                ...(defaultGroupWithFolders.subfolders || []),
+                ...(ctx.smartFolders?.tracks || []).map((sf) => ({
+                    ...sf,
+                    type: SMART_TYPE,
+                    files: Array.isArray(sf.files) ? sf.files : Object.values(sf.files),
+                })),
+            ];
+
             doSort({
                 method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
                 setSortFiles,
                 setSortGroups,
                 files: defGroup ? defGroup.groupFiles : [],
-                groups: defaultGroupWithFolders.subfolders,
+                groups: allGroups,
             });
         } else {
             setDefaultGroup(defaultGroupWithFolders);
             setSortFiles([]);
             setSortGroups([]);
         }
-    }, [ctx.tracksGroups]);
+    }, [ctx.tracksGroups, ctx.smartFolders?.tracks, ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME]]);
 
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup?.groupFiles) {
@@ -162,25 +172,18 @@ export default function TracksMenu() {
                             {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
                                 <SmartFolder type={SHARE_TYPE} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
-                            {!isEmpty(ctx.smartFolders?.tracks) &&
-                                ctx.smartFolders?.tracks.map((track, index) => {
-                                    const filesArray = Array.isArray(track.files) 
-                                        ? track.files 
-                                        : Object.values(track.files);
-                                    return (
-                                        <CloudTrackGroup
-                                            key={track.name || `smart-folder-${index}`}
-                                            index={index + ctx.tracksGroups?.length}
-                                            group={{
-                                                name: track.name,
-                                                files: filesArray,
-                                                type: SMART_TYPE
-                                            }}
-                                        />
-                                    );
-                                })}
                             {ctx.tracksGroups &&
-                                (sortGroups && sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
+                                (sortGroups && sortGroups.length > 0
+                                    ? sortGroups
+                                    : [
+                                          ...(ctx.tracksGroups || []),
+                                          ...(ctx.smartFolders?.tracks || []).map((sf) => ({
+                                              ...sf,
+                                              type: SMART_TYPE,
+                                              files: Array.isArray(sf.files) ? sf.files : Object.values(sf.files),
+                                          })),
+                                      ]
+                                )
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)
                                     .map((group, index) => {
                                         return <CloudTrackGroup key={group.name} index={index} group={group} />;
