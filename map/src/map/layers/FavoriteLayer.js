@@ -6,6 +6,7 @@ import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
+import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import { clusterMarkers, addMarkerTooltip } from '../util/Clusterizer';
@@ -153,13 +154,15 @@ const FavoriteLayer = () => {
                 favoritesGroups.mapObjs = Object.keys(favoritesGroups.mapObjs).reduce((group, key) => {
                     const file = favoritesGroups.mapObjs[key];
                     if (!file.markers) {
-                        file.markers = TrackLayerProvider.createLayersByTrackData({
+                        const fullGroup = TrackLayerProvider.createLayersByTrackData({
                             data: file,
                             groupId: key,
                             ctx,
                             map,
                             type: FAVORITE_FILE_TYPE,
                         });
+                        const markerLayers = fullGroup ? fullGroup.getLayers().filter(isMarkerLayer) : [];
+                        file.markers = new L.FeatureGroup(markerLayers);
                         if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.id) {
                             updateSelectedFavoriteOnMap(file);
                         }
