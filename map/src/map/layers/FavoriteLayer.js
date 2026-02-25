@@ -5,7 +5,7 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { FAVORITE_FILE_TYPE, openFavoriteObj } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } from '../../manager/FavoritesManager';
 import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
@@ -176,9 +176,9 @@ const FavoriteLayer = () => {
         }
     }, [ctx.updateMarkers]);
 
-    function removeMarkersFromMap(file) {
+    function removeMarkersFromMap(file, fileId) {
         deleteMarkers(file);
-        deleteOldMarkers(file);
+        deleteOldMarkers(file, fileId);
     }
 
     function updateMarkers({ onlyOpened = false } = {}) {
@@ -193,25 +193,26 @@ const FavoriteLayer = () => {
             }
 
             if (!ctx.configureMapState.showFavorites && !openGroupId) {
-                removeMarkersFromMap(file);
+                removeMarkersFromMap(file, fileId);
                 continue;
             }
 
             if (file.url) {
                 if (openGroupId) {
-                    fileId === openGroupId ? addMarkersOnMap(file) : removeMarkersFromMap(file);
+                    fileId === openGroupId ? addMarkersOnMap(file, fileId) : removeMarkersFromMap(file, fileId);
                 } else {
-                    addMarkersOnMap(file);
+                    addMarkersOnMap(file, fileId);
                 }
-                deleteOldMarkers(file);
+                deleteOldMarkers(file, fileId);
             } else {
-                removeMarkersFromMap(file);
+                removeMarkersFromMap(file, fileId);
             }
         }
     }
 
-    function addMarkersOnMap(file) {
-        if (file.markers && file.hidden !== 'true') {
+    function addMarkersOnMap(file, fileId) {
+        const shouldShow = file.markers && (file.hidden !== HIDDEN_TRUE || fileId === openGroupId);
+        if (shouldShow) {
             if (file.markers) {
                 const mapBounds = map.getBounds();
 
@@ -413,12 +414,12 @@ const FavoriteLayer = () => {
         }
     }
 
-    function deleteOldMarkers(file) {
+    function deleteOldMarkers(file, fileId) {
         if (file?.oldMarkers) {
             map.removeLayer(file.oldMarkers);
             delete file.oldMarkers;
         }
-        if (file?.hidden === 'true' && file?.markersOnMap) {
+        if (file?.hidden === HIDDEN_TRUE && file?.markersOnMap && fileId !== openGroupId) {
             map.removeLayer(file.markersOnMap);
         }
     }
