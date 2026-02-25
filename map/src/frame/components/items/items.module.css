@@ -47,6 +47,10 @@
     align-items: flex-start !important;
     padding: 24px 16px !important;
     gap: 24px !important;
+    cursor: default !important;
+}
+.tipsItem:hover {
+    background-color: transparent !important;
 }
 .tipsItemClickable {
     cursor: pointer !important;

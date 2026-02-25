@@ -4,7 +4,12 @@ import React from 'react';
 
 export default function TextWithLeftIcon({ icon, text, onClick }) {
     return (
-        <MenuItem className={`${styles.tipsItem} ${onClick ? styles.tipsItemClickable : ''}`} onClick={onClick}>
+        <MenuItem
+            className={`${styles.tipsItem} ${onClick ? styles.tipsItemClickable : ''}`}
+            disableRipple
+            disableTouchRipple
+            onClick={onClick}
+        >
             <ListItemIcon className={styles.tipsIcon}>{icon}</ListItemIcon>
             <ListItemText className={styles.mainText}>
                 <Typography whiteSpace="normal">{text}</Typography>
