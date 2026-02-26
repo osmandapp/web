@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  Configure Map
 ---
@@ -11,6 +11,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
 
 ## Overzicht {#overview}
 
@@ -26,7 +27,7 @@ Sectie **Weergeven**:
 
 Sectie **Topografie**:  
 
-![Kaart configureren android](@site/static/img/map/configure_map_topography_andr.png)  
+![Kaart configureren android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Sectie **OpenStreetMap**:  
 
@@ -82,9 +83,10 @@ Het **<Translate android="true" ids="configure_map"/>** menu is verdeeld in twee
 
 ## Kaartlagen {#map-layers}
 
-- [Vector Kaartlaag](../map/vector-maps.md) - geeft alle vectorkaartinformatie weer, inclusief OpenStreetMap, contourlijnen en nautische gegevens.
-- [Rasterkaartbronnen](../map/raster-maps.md#select-raster-maps) - hiermee kunt u een onderlaag / hoofdbron / overlay-kaart selecteren met transparantieniveaus.
+- [Vector Kaartlaag](../map/vector-maps.md) - geeft alle vectorkaartinformatie weer, inclusief OpenStreetMap, Contourlijnen en Nautische gegevens.
+- [Rasterkaartbronnen](../map/raster-maps.md#layers) - hiermee kunt u een onderlaag / hoofdbron / overlay-kaart selecteren met transparantieniveaus.
 - [Terrein](../plugins/topography.md#hillshade-slope-and-altitude-layers) - geeft helling- / schaduwinformatie, 3D-reliëf weer.
+- [3D-gebouwen](../map/vector-maps.md#3d-buildings) - toont volumetrische gebouwmodellen op de kaart.
 - [Grenzen van gedownloade kaarten](../map/vector-maps.md#show-borders) - geeft alle grenzen van gedownloade kaarten weer op de hoofdkaartlaag.
 - [Coördinatenraster](../map/vector-maps.md#coordinates-grid) - regelt de zichtbaarheid van het coördinatenraster op de kaart.
 
@@ -99,15 +101,16 @@ Het **<Translate android="true" ids="configure_map"/>** menu is verdeeld in twee
    - [Beeldmateriaal op straatniveau](../plugins/mapillary.md#map-layer) - geeft punten weer met beschikbaar beeldmateriaal op straatniveau.
    - [Reisgidsen](../plan-route/travel-guides.md) - geeft reisgidsen weer op de kaart.
    - [Wikipedia](../plugins/wikipedia.md) - markeert Wikipedia-artikelen die aan de kaart zijn gekoppeld.
-   - [OSM-bewerking](../plugins/osm-editing.md#osm-editing-layer) - geeft OpenStreetMap-bewerkingen, notities en hulplagen gerelateerd aan kaarten weer.
+   - [OSM-bewerking](../plugins/osm-editing.md#osm-editing-layer) - geeft OpenStreetMap-bewerkingen, notities en hulplagen gerelateerd aan kaartenmapping weer.
    - [Andere plugin-lagen](../plugins/index.md#configure-plugin) - veel plugins voegen hun lagen toe met extra informatie.
 
 ## Kaartstijlparameters {#map-style-parameters}
 
-De instellingen voor de kaartstijl zijn afhankelijk van de weergegeven hoofdkaartstijl. U kunt hier meer over lezen in het artikel [Kaartstijlen](../map/vector-maps).
+De instellingen voor de kaartstijl zijn afhankelijk van de weergegeven hoofdkaartstijl. U kunt hier meer over lezen in het [Kaartstijlen-artikel](../map/vector-maps).
 
-   - [Kaartstijl](../map/vector-maps.md#default-map-styles) - omvat OsmAnd (Stad), Topo, Nautisch en andere.
+   - [Kaartstijl](../map/vector-maps.md#map-styles) - omvat OsmAnd (Stad), Topo, Nautisch en andere.
    - [Kaartmodus](../map/vector-maps.md#map-mode) - hiermee kunt u de kaartweergave en navigatie selecteren afhankelijk van het tijdstip van de dag.
+   - [Wereldbolweergave](../map/interact-with-map.md#globe-view) - schakelt de kaart tussen de standaard platte weergave en een bolvormige aardeweergave.
    - [Kaartvergroting](../map/vector-maps.md#map-magnifier) - hiermee kunt u de vergroting van de kaart wijzigen.
    - [Tekstgrootte](../map/vector-maps.md#text-size) - hiermee kunt u de tekstgrootte op de kaart vergroten of verkleinen.
    - [Kaarttaal](../map/vector-maps.md#map-language) - hiermee kunt u de voorkeurstaal selecteren die op de kaart wordt weergegeven.

@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title:  Routevoorbereiding
 ---
@@ -68,7 +68,7 @@ Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaar
     - Wacht tot de route is berekend. Daarna kunt u aanvullende informatie over uw route verkrijgen in de *[sectie Details](./route-details.md#overview)*.
     - U kunt schakelen tussen verschillende [routeringstypes](./../routing/osmand-routing.md#routing-types) (profielen) om het beste resultaat te krijgen.
     - Voeg [tussenliggende bestemmingen](#intermediate-destinations) toe (optioneel).
-    - U kunt ook het vertrekpunt wijzigen van de [huidige locatie](../../map/interact-with-map.md#my-location-and-zoom) naar de gewenste locatie.
+    - U kunt ook het vertrekpunt wijzigen van de [huidige positie](../../map/interact-with-map.md#my-position-and-zoom) naar de gewenste locatie.
 
 2. Aanvullende [*Navigatie-instellingen*](#settings) kunnen worden gebruikt, afhankelijk van uw doeleinden (u kunt configureren welke wegen u wilt vermijden of verkiezen, brandstof besparen of de snelste route kiezen, enz.).
 
@@ -79,7 +79,7 @@ Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaar
 
 :::note
 
-**Route kan niet worden gebouwd wanneer *[Online kaart](../../map/raster-maps.md#select-raster-maps)* is geselecteerd als kaartbron.**
+**Route kan niet worden gebouwd wanneer *[Online kaart](../../map/raster-maps.md#layers)* is geselecteerd als kaartbron.**
 
 :::
 
@@ -88,7 +88,7 @@ Voordat u offline navigatie gebruikt, moet u ervoor zorgen dat de vereiste [kaar
 
 Er zijn 3 manieren om het navigatiemenu te bereiken:
 
-- De [*Navigatieknop*](../../widgets/map-buttons.md#directions) op het kaartscherm.  
+- De [*Navigatieknop*](../../widgets/map-buttons.md#navigation) op het kaartscherm.  
 - *Richting naar/van* in een [*kaartcontextmenu*](../../map/map-context-menu.md#directions-to--from).  
 - Navigatiesectie in het [*Hoofdmenu*](../../start-with/main-menu.md) *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Er zijn 3 manieren om het navigatiemenu te bereiken:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Stel de startlocatie in (standaard: [*Mijn huidige locatie*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Stel de startlocatie in (standaard: [*Mijn huidige locatie*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Gebruik om [uw bestemmingspunt in te stellen](#set-target-point).
 - **Toevoegen** &nbsp;&#43; - Voeg [tussenliggende punten](../../widgets/nav-widgets.md#distance-to-intermediate) langs de route in.
 - **Wisselen** &nbsp;&#8595;&#8593; - Keer de *Start*- en *Eind*-punten om.
@@ -325,7 +325,7 @@ Deze optie is beschikbaar in de Android-versie van de app in de *[Notificatielij
 Om de navigatie te hervatten:
 
 - Gebruik het bericht van OsmAnd in de notificatiebalk.
-- Gebruik het *Snelle acties menu* of het dialoogvenster dat verschijnt wanneer u op de *[Navigatieknop](../../widgets/map-buttons.md#directions)* tikt (zie screenshot).
+- Gebruik het *Snelle acties menu* of het dialoogvenster dat verschijnt wanneer u op de *[Navigatieknop](../../widgets/map-buttons.md#navigation)* tikt (zie screenshot).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

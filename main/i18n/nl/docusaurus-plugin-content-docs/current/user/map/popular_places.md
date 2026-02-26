@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Populaire Plaatsen
 ---
@@ -19,6 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 ## Overzicht {#overview}
+
+:::tip Aankoop
+Populaire Plaatsen is een [betaalde functie](../purchases/index.md).  
+:::
 
 De functie **Populaire Plaatsen** in OsmAnd markeert opmerkelijke bezienswaardigheden en attracties met behulp van open gestructureerde gegevens van [Wikidata](https://www.wikidata.org) en [Wikipedia](https://www.wikipedia.org/). Het helpt gebruikers bekende bestemmingen te verkennen met meertalige beschrijvingen en foto's.
 

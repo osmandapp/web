@@ -1,5 +1,5 @@
 ---
-source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
+source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
 sidebar_position: 1
 title:  Eerste Stappen
 ---
@@ -153,7 +153,7 @@ Ga naar: *Instellingen → OsmAnd Kaarten → Taal*
 </Tabs>
 
 :::note Geen optie om app-talen in te stellen
-Op sommige Android-apparaten (Xiaomi met Muiu 14) is er geen optie om app-talen individueel in te stellen in de systeeminstellingen, dus de taal van OsmAnd kan alleen worden gewijzigd met de taal van het hele systeem. U kunt de discussie op [GitHub-discussie](https://github.com/osmandapp/OsmAnd/issues/16990) bekijken voor aanvullende informatie.
+Op sommige Android-apparaten (Xiaomi met MIUI 14) is er geen optie om app-talen individueel in te stellen in de systeeminstellingen, dus de taal van OsmAnd kan alleen worden gewijzigd met de taal van het hele systeem. U kunt de discussie op [GitHub-discussie](https://github.com/osmandapp/OsmAnd/issues/16990) bekijken voor aanvullende informatie.
 :::
 
 
@@ -434,7 +434,7 @@ Er zijn twee manieren om OsmAnd te sluiten.
 1. Sluit een app door deze omhoog van het scherm te vegen. Voor een verticale lijst met apps, veegt u naar links of rechts.  
 
 2. Mogelijk moet u de volgende stappen uitvoeren voordat u dit doet, anders blijft OsmAnd op de achtergrond draaien:
-    - [Navigatie afbreken](../navigation/setup/route-navigation.md#start--stop-navigation)
+    - [Navigatie annuleren](../navigation/setup/route-navigation.md#start--stop-navigation)
     - [Kaartdownload en -update stoppen](../start-with/download-maps.md)
     - [Reisopname stoppen](../plugins/trip-recording.md#new-track-recording)
     - [Audio-/video-opname stoppen](../plugins/audio-video-notes.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
+source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
 sidebar_position: 2
 title:  Interactie met de kaart
 ---
@@ -20,7 +20,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Dit artikel legt uit hoe u de kaart kunt aanpassen en ermee kunt interageren met behulp van verschillende knoppen en gebaren. Het behandelt hoe u de kaart kunt draaien, zoomen, de kijkhoek kunt aanpassen, en de kijkhoek van de kaart kunt wijzigen, handmatig of automatisch met het kompas, of volgens de peiling.
 
 
-## Gebaren {#gestures}
+## Kaartverplaatsing {#map-movement}
+
+### Gebaren {#gestures}
 
 Gebaren zijn essentieel om gemakkelijk en intuïtief op de kaart te navigeren.
 
@@ -35,26 +37,25 @@ Gebaren zijn essentieel om gemakkelijk en intuïtief op de kaart te navigeren.
 
 Glij-animaties kunnen worden uitgeschakeld in de instellingen met een [speciale optie](#remove-animations).
 
-
-## Mijn locatie en zoom {#my-location-and-zoom}
+### Mijn positie en zoom {#my-position-and-zoom}
 
 ![Schermmenu configureren](@site/static/img/widgets/location_zoom_buttons.png)
 
-**Mijn locatie**.  
-De knop *Mijn locatie* is een cirkelvormig pictogram dat aangeeft of het midden van de kaart gesynchroniseerd is met de huidige geolocatie van uw apparaat. Vaak de "Waar ben ik?"-knop genoemd, helpt het u snel uw locatie op de kaart te vinden. Tijdens het navigeren blijft de kaart doorgaans gesynchroniseerd met de locatie van het apparaat, dus de knop blijft verborgen. Hij wordt echter zichtbaar als de kaart en uw locatie niet meer synchroon lopen door interactie van de gebruiker. Door op de knop te tikken, wordt de kaart opnieuw gecentreerd op uw huidige locatie, en een dubbele tik schakelt over naar de 3D-modus.
+**Mijn positie**.  
+De knop *Mijn positie* is een cirkelvormig pictogram dat aangeeft of het midden van de kaart gesynchroniseerd is met de huidige geolocatie van uw apparaat. Vaak de "Waar ben ik?"-knop genoemd, helpt het u snel uw locatie op de kaart te vinden. Tijdens het navigeren blijft de kaart doorgaans gesynchroniseerd met de locatie van het apparaat, dus de knop blijft verborgen. Hij wordt echter zichtbaar als de kaart en uw locatie niet meer synchroon lopen door interactie van de gebruiker. Door op de knop te tikken, wordt de kaart opnieuw gecentreerd op uw huidige locatie, en een dubbele tik schakelt over naar de 3D-modus.
 
-- De knop *Mijn locatie* heeft de volgende statussen:
+- De knop *Mijn positie* heeft de volgende statussen:
   - *Volledig blauw pictogram*. De locatie is gevonden maar niet gesynchroniseerd met de kaart.
   - *Wit pictogram*. De locatie is gevonden en gesynchroniseerd met de kaart.
   - *Grijs pictogram*. De locatie is nog niet gevonden.
   - *Pijlpictogram*. 3D-modus is geactiveerd.
 
-- **Lang tikken** (*Android*) op de knop *Mijn locatie* opent het [contextmenu van de kaart](../map/map-context-menu.md), waarmee u uw locatie kunt delen.
+- **Lang tikken** (*Android*) op de knop *Mijn positie* opent het [contextmenu van de kaart](../map/map-context-menu.md), waarmee u uw locatie kunt delen.
 
 <br/>
 
 **Zoomknoppen**.  
-*Zoomknoppen* zijn altijd zichtbaar naast *Mijn locatie* en stellen u in staat het zoomniveau van de kaart te regelen.
+*Zoomknoppen* zijn altijd zichtbaar naast *Mijn positie* en stellen u in staat het zoomniveau van de kaart te regelen.
 
 - Het wijzigen van het zoomniveau heeft geen invloed op de synchronisatie van de kaart met uw locatie.
 - **Lang tikken** op de *Zoomknoppen* opent het dialoogvenster *Kaartvergrootglas*,waarmee u de detailniveaus van de kaart kunt aanpassen.
@@ -62,102 +63,12 @@ De knop *Mijn locatie* is een cirkelvormig pictogram dat aangeeft of het midden 
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### Uiterlijk van Mijn Locatie {#my-location-appearance}
-
-U kunt de pictogrammen van de knop **Mijn locatie** aanpassen via de instellingen voor het uiterlijk van het profiel. Lees [hier](../personal/profiles.md#profile-appearance) meer over hoe u dit kunt doen.
+U kunt de pictogrammen van de knop **Mijn positie** aanpassen via de instellingen voor het uiterlijk van het profiel. Lees [hier](../personal/profiles.md#profile-appearance) meer over hoe u dit kunt doen.
 
 
-## Kaartvergrootglas {#map-magnifier}
+## Kaartinteractie {#map-interaction}
 
-Het *Kaartvergrootglas* is een hulpmiddel dat de zichtbaarheid van de kaart verbetert, vergelijkbaar met een vergrootglas dat bij papieren kaarten wordt gebruikt. Hiermee kunt u inzoomen op de kaart om tekst en details duidelijker te zien of om het detailniveau aan te passen terwijl dezelfde schaal behouden blijft. Ga voor meer informatie naar het artikel [Vectorkaarten](../map/vector-maps.md#map-magnifier).
-
-
-## Kaartoriëntatiemodi {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Kompaswidget](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Kompaswidget](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-*Kaartoriëntatiemodi* stellen u in staat te kiezen hoe de kaart op het scherm van het apparaat wordt weergegeven. OsmAnd biedt modi zoals **Handmatig gedraaid**, **Bewegingsrichting**, **Kompasrichting** en **Noorden boven**. Het inschakelen van elke modus verandert de manier waarop de kaart wordt georiënteerd volgens de geselecteerde optie. Voor volledige details, zie het artikel [Kaartknoppen](../widgets/map-buttons.md#compass).
-
-
-## Kompas {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Kompaswidget](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Kompaswidget](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-De kompasknop toont hoe de [kaart is georiënteerd](#map-orientation-modes). De *rode pijl* op de pictogrammen, of de richting van de pijl in de modus *Bewegingsrichting*, geeft het noorden aan. [Het pictogram op de kompasknop](../widgets/map-buttons.md#compass) geeft de huidige kaartoriëntatiemodus aan. De kompasknopwidget biedt drie [interactieopties](../widgets/map-buttons.md#compass-tapping-behavior): *Enkele tik* draait de kaart naar het noorden, *Dubbele tik* wisselt tussen alle kaartoriëntatiemodi, en *Lange tik* opent de lijst met modi.
-
-
-## Kaart draaien op basis van peiling {#rotate-map-by-bearing}
-
-In de modus **kaart draaien op basis van peiling** ([Bewegingsrichting](../widgets/map-buttons.md#compass)), lijnt de kaart zich automatisch uit met uw bewegingsrichting, zodat het gebied voor u bovenaan het scherm wordt weergegeven. Deze modus verbetert de navigatie door het kaartcentrum iets naar beneden te verschuiven, waardoor meer van de route voor u zichtbaar wordt. Als u stilstaat, blijft de kaart vast.  
-
-U kunt deze functie activeren via *Menu → Instellingen → Profielen → Algemene instellingen → Uiterlijk → Kaartoriëntatie* of door te dubbeltikken op de [Kompasknop](../widgets/map-buttons.md#compass-tapping-behavior). Voor meer details over peiling, zie [hier](../widgets/nav-widgets.md#bearing-widget).
-
-
-## Kaart kantelen en horizon {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Kantelen android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Kantelen android 2](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Kantelen ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Kantelen ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
-</TabItem>
-
-</Tabs>  
-
-Met de nieuwe [kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) kunt u de [camerakanteling](../plugins/development.md#camera-tilt) wijzigen van 90 (geen kanteling) tot 10 graden. Ongeveer bij een kaartkanteling van minder dan 20-22 graden (deze parameter hangt af van het zoomniveau), wordt de denkbeeldige horizonlijn zichtbaar. In tegenstelling tot de echte horizon is de horizon van het programma altijd recht.  
-
-Onder de horizon kunt u zogenaamde *nevel* of *mist* zien. Dit gebied van de kaart is gevuld met een grijze kleur, slechts enkele kaartdetails zijn waarneembaar.  
-Het gebruik van mist is noodzakelijk omdat de weergave van verafgelegen objecten op de kaart aanzienlijke rekenkracht vereist en niet altijd gerechtvaardigd is vanwege [kaartvervormingen](../plugins/development.md#comparison-with-a-satellite-imagery) bij kleine kijkhoeken. De zichtbare afstand op de OsmAnd-kaart is momenteel beperkt tot 35 tegels.  
-
-:::info
-De kaartkanteling kan worden gewijzigd door lang met twee vingers op het scherm te tikken en ze omhoog/omlaag te bewegen. U kunt de kanteling ook wijzigen door op het pictogram [Mijn locatie](#my-location-and-zoom) in de rechterbenedenhoek van het scherm te tikken (alleen posities van 45 en 90 graden zijn beschikbaar).  
-U kunt de camerakanteling niet wijzigen wanneer de oude [kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) (versie 1) is ingeschakeld.
-:::
-
-
-## Aanraakschermvergrendeling {#touch-screen-lock}
+### Aanraakschermvergrendeling {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +98,12 @@ Tik op de knop op het scherm, of, als de vergrendeling is geactiveerd via een ex
 
 Duidelijke berichten op het scherm zullen u begeleiden bij het vergrendelen of ontgrendelen van het scherm.
 
+### Eigen positie animeren {#animate-own-position}
 
-## Instellingen {#settings}
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### Extra kompasinstellingen {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Vlakt de rotatie van de kaart af met een langzamere rotatieanimatie, hoewel dit een lichte vertraging introduceert, niet meer dan 1 seconde.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Vlakt de rotatie van de kaart af met een langzamere rotatieanimatie, hoewel dit een lichte vertraging introduceert, niet meer dan 1 seconde.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+Creëert een vloeiend kaart-pan-effect ten opzichte van het pictogram *[Mijn Positie](../personal/profiles/#profile-appearance)* wanneer u in beweging bent. Het effect introduceert een lichte vertraging ten opzichte van de werkelijke positie van ongeveer 1 seconde. Het inschakelen hiervan kan onder bepaalde omstandigheden merkbare vertragingsproblemen veroorzaken; schakel het uit als dergelijke problemen zich voordoen.
 
 ### Animaties verwijderen {#remove-animations}
 
@@ -206,12 +113,115 @@ U kunt alle kaartanimaties tijdens kaartinteracties, inclusief gebaren en knoppe
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Eigen positie animeren {#animate-own-position}
+## Kaartoriëntatie {#map-orientation}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
+### Kaartoriëntatiemodi {#map-orientation-modes}
 
-Creëert een vloeiend kaart-pan-effect ten opzichte van het pictogram *[Mijn Positie](../personal/profiles/#profile-appearance)* wanneer u in beweging bent. Het effect introduceert een lichte vertraging ten opzichte van de werkelijke positie van ongeveer 1 seconde. Het inschakelen hiervan kan onder bepaalde omstandigheden merkbare vertragingsproblemen veroorzaken; schakel het uit als dergelijke problemen zich voordoen.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Kompaswidget](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Kompaswidget](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+*Kaartoriëntatiemodi* stellen u in staat te kiezen hoe de kaart op het scherm van het apparaat wordt weergegeven. OsmAnd biedt modi zoals **Handmatig gedraaid**, **Bewegingsrichting**, **Kompasrichting** en **Noorden boven**. Het inschakelen van elke modus verandert de manier waarop de kaart wordt georiënteerd volgens de geselecteerde optie. Voor volledige details, zie het artikel [Kaartknoppen](../widgets/map-buttons.md#compass).
+
+### Draaien met kompas {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Kompaswidget](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Kompaswidget](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+De kompasknop toont hoe de [kaart is georiënteerd](#map-orientation-modes). De *rode pijl* op de pictogrammen, of de richting van de pijl in de modus *Bewegingsrichting*, geeft het noorden aan. [Het pictogram op de kompasknop](../widgets/map-buttons.md#compass) geeft de huidige kaartoriëntatiemodus aan. De kompasknopwidget biedt drie [interactieopties](../widgets/map-buttons.md#compass-tapping-behavior): *Enkele tik* draait de kaart naar het noorden, *Dubbele tik* wisselt tussen alle kaartoriëntatiemodi, en *Lange tik* opent de lijst met modi.
+
+### Kaart draaien op basis van peiling {#rotate-map-by-bearing}
+
+In de modus **kaart draaien op basis van peiling** ([Bewegingsrichting](../widgets/map-buttons.md#compass)), lijnt de kaart zich automatisch uit met uw bewegingsrichting, zodat het gebied voor u bovenaan het scherm wordt weergegeven. Deze modus verbetert de navigatie door het kaartcentrum iets naar beneden te verschuiven, waardoor meer van de route voor u zichtbaar wordt. Als u stilstaat, blijft de kaart vast.  
+
+U kunt deze functie activeren via *Menu → Instellingen → Profielen → Algemene instellingen → Uiterlijk → Kaartoriëntatie* of door te dubbeltikken op de [Kompasknop](../widgets/map-buttons.md#compass-tapping-behavior). Voor meer details over peiling, zie [hier](../widgets/nav-widgets.md#bearing-widget).
+
+
+## Kaartperspectief {#map-perspective}
+
+### Kaart kantelen en horizon {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Kantelen android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Kantelen android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kantelen ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Kantelen ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+Met de nieuwe [kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) kunt u de [camerakanteling](../plugins/development.md#camera-tilt) wijzigen van 90 (geen kanteling) tot 10 graden. Ongeveer bij een kaartkanteling van minder dan 20-22 graden (deze parameter hangt af van het zoomniveau), wordt de denkbeeldige horizonlijn zichtbaar. In tegenstelling tot de echte horizon is de horizon van het programma altijd recht.  
+
+Onder de horizon kunt u zogenaamde *nevel* of *mist* zien. Dit gebied van de kaart is gevuld met een grijze kleur, slechts enkele kaartdetails zijn waarneembaar.  
+Het gebruik van mist is noodzakelijk omdat de weergave van verafgelegen objecten op de kaart aanzienlijke rekenkracht vereist en niet altijd gerechtvaardigd is vanwege [kaartvervormingen](../plugins/development.md#comparison-with-a-satellite-imagery) bij kleine kijkhoeken. De zichtbare afstand op de OsmAnd-kaart is momenteel beperkt tot 35 tegels.  
+
+:::info
+De kaartkanteling kan worden gewijzigd door lang met twee vingers op het scherm te tikken en ze omhoog/omlaag te bewegen. U kunt de kanteling ook wijzigen door op het pictogram [Mijn positie](#my-position-and-zoom) in de rechterbenedenhoek van het scherm te tikken (alleen posities van 45 en 90 graden zijn beschikbaar).  
+U kunt de camerakanteling niet wijzigen wanneer de oude [kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) (versie 1) is ingeschakeld.
+:::
+
+
+### Kaartvergrootglas {#map-magnifier}
+
+Het *Kaartvergrootglas* is een hulpmiddel dat de zichtbaarheid van de kaart verbetert, vergelijkbaar met een vergrootglas dat bij papieren kaarten wordt gebruikt. Hiermee kunt u inzoomen op de kaart om tekst en details duidelijker te zien of om het detailniveau aan te passen terwijl dezelfde schaal behouden blijft. Ga voor meer informatie naar het artikel [Vectorkaarten](../map/vector-maps.md#map-magnifier).
+
+### Bolweergave {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![Bolweergave](@site/static/img/map/globe_view_1.png) ![Bolweergave](@site/static/img/map/globe_view_2.png)
+
+**Bolweergave** stelt u in staat de kaart weer te geven als een bolvormige aarde in plaats van een platte projectie. Deze modus verandert de geometrie van het kaaroppervlak en past de kaartinteractie aan op bolvormige navigatie.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
+
+Bolweergave is momenteel alleen beschikbaar wanneer:
+- De [Development plugin](../plugins/development.md) is ingeschakeld.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>* 
+- De [Kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) is ingesteld op Versie 2 (OpenGL).  
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+Wanneer Bolweergave is ingeschakeld, draait de kaart als een bol. Sleepgebaren draaien de aarde, en zoom verandert de camerafocus in plaats van een plat oppervlak te schalen. Kaartelementen zoals sporen, markeringen, symbolen en 3D-objecten worden direct op het bolvormige oppervlak weergegeven en volgen de kromming ervan. Objecten verdwijnen geleidelijk achter de horizon naarmate de bol draait.
+
+Interactie nabij de horizon kan beperkt zijn om onbedoelde grote-afstandsbewegingen te voorkomen. De bol kan niet over de polen worden omgedraaid. Bij zeer lage zoomniveaus blijft het visuele uiterlijk van wegen en labels consistent tijdens het draaien.
 
 
 ## Externe invoerapparaten {#external-input-devices}
@@ -259,7 +269,7 @@ Om toegang te krijgen tot de instellingen van een extern invoerapparaat, moet u 
 
 | Toets | Apparaat | Actie |
 |:---------|:---------------|:---------------|
-|**C**| *Toetsenbord*   | Verplaatsen - [Naar Mijn locatie](#my-location-and-zoom) |
+|**C**| *Toetsenbord*   | Verplaatsen - [Naar Mijn positie](#my-position-and-zoom) |
 |**D**| *Toetsenbord*   | Wijzigen - [Kaartoriëntatie](#map-orientation-modes) |
 |**N**| *Toetsenbord*   | Tonen / Verbergen - Navigatieweergave |
 |**S**| *Toetsenbord*   | Tonen / Verbergen - [Zoekweergave](../search/index.md) |
@@ -269,17 +279,17 @@ Om toegang te krijgen tot de instellingen van een extern invoerapparaat, moet u 
 |**&#8595;**| *Toetsenbord*   | Verplaatsen - Kaart omlaag  |
 |**&#8592;**| *Toetsenbord*   | Verplaatsen - Kaart naar links  |
 |**&#8594;**| *Toetsenbord*   | Verplaatsen - Kaart naar rechts  |
-|**&#43;** **=**| *Toetsenbord*  | Kaart - [Inzoomen](#my-location-and-zoom) |
-|**&#8722;**| *Toetsenbord*  | Kaart - [Uitzoomen](#my-location-and-zoom) |
+|**&#43;** **=**| *Toetsenbord*  | Kaart - [Inzoomen](#my-position-and-zoom) |
+|**&#8722;**| *Toetsenbord*  | Kaart - [Uitzoomen](#my-position-and-zoom) |
 |**Press back**| *Toetsenbord*   | Navigeren – Vorig scherm  |
-|**&#8595;**| *Wunderlinq*  | Kaart - [Uitzoomen](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Kaart - [Inzoomen](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | Kaart - [Uitzoomen](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Kaart - [Inzoomen](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
 | **M** | *Toetsenbord*  | Tonen / Verbergen - [Zijmenu](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick press** <br/> (*legacy Android*) | *Toetsenbord*  | Verplaatsen - [Naar Mijn locatie](#my-location-and-zoom) |
+| **Joystick press** <br/> (*legacy Android*) | *Toetsenbord*  | Verplaatsen - [Naar Mijn positie](#my-position-and-zoom) |
 | **Media button** <br/> (*alleen Android*)| *Toetsenbord*  | Tonen / Verbergen - [AV-notities](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*alleen Android*)| *Parrot*  | Kaart - [Uitzoomen](#my-location-and-zoom) |
-| **&#8594;** <br/> (*alleen Android*) | *Parrot*  | Kaart - [Inzoomen](#my-location-and-zoom) |
+| **&#8592;** <br/> (*alleen Android*)| *Parrot*  | Kaart - [Uitzoomen](#my-position-and-zoom) |
+| **&#8594;** <br/> (*alleen Android*) | *Parrot*  | Kaart - [Inzoomen](#my-position-and-zoom) |
 
 
 ### Aangepast type invoerapparaat {#custom-input-device-type}

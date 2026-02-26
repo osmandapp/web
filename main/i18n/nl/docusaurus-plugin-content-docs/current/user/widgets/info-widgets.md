@@ -1,5 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Informatieve widgets geven u snel toegang tot belangrijke gegevens. Dit kunnen gegevens zijn over snelheid, weer, parkeerpositie, gegevens van externe sensoren en nog veel meer. Widgets kunnen worden geconfigureerd volgens uw specifieke vereisten, waardoor ze zichtbaar kunnen worden op het applicatiescherm of indien nodig kunnen worden uitgeschakeld.
 
-![Informatieve widgets](@site/static/img/widgets/informational_widgets_all.png)
+![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
 ## Hoogtewidgets   {#altitude-widgets}
@@ -42,13 +42,13 @@ Op sommige Android-apparaten kan de hoogte onnauwkeurig worden weergegeven. Om d
 
 <TabItem value="android" label="Android">
 
-![Hoogtewidget Android](@site/static/img/widgets/altitude_widget_andr.png)  
+![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Hoogtewidget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
+![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
 
 </TabItem>
 
@@ -66,20 +66,20 @@ Op sommige Android-apparaten kan de hoogte onnauwkeurig worden weergegeven. Om d
 ### Hoogte: Kaartcentrum {#elevation-map-center}
 
 :::info Betaalde functie
-&nbsp;<ProFeature/> Om toegang te krijgen tot de widget *Hoogte: kaartcentrum*, abonneer u op OsmAnd Pro voor [Android](../purchases/android.md#pro-features) of [iOS](../purchases/ios.md#pro-features).  
+De *Hoogte: kaartcentrum* widget is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Hoogtewidget Android](@site/static/img/widgets/elevation_widget_andr.png)  
+![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Hoogtewidget iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
+![Elevation widget iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
 
 </TabItem>
 
@@ -98,7 +98,7 @@ U kunt de widget gebruiken om de hoogte van het huidige kaartcentrum boven zeeni
 
 ## Huidige Tijd {#current-time}
 
-![Huidige tijd widget](@site/static/img/widgets/current_time_widget.png)
+![Current time widget](@site/static/img/widgets/current_time_widget.png)
 
 Deze widget toont de huidige tijd van uw apparaat.  
 
@@ -113,7 +113,7 @@ Deze widget toont de huidige tijd van uw apparaat.
 
 ## Huidige Snelheid {#current-speed}
 
-![Snelheidswidget](@site/static/img/widgets/current_speed_widget.png)  
+![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
 
 De widget toont de huidige snelheid gedetecteerd door de GPS-sensor.  
 
@@ -132,13 +132,13 @@ De widget toont de huidige snelheid gedetecteerd door de GPS-sensor.
 
 <TabItem value="android" label="Android">
 
-![Gemiddelde snelheid widget Android](@site/static/img/widgets/average_speed_widget.png)
+![Average speed widget Android](@site/static/img/widgets/average_speed_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gemiddelde snelheid widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
+![Average speed widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
 
 </TabItem>
 
@@ -154,7 +154,7 @@ De **Gemiddelde Snelheid** widget berekent en toont uw gemiddelde snelheid over 
    - De gemiddelde snelheid wordt berekend op basis van het geselecteerde tijdsinterval, dat kan variëren van **15 seconden tot 60 minuten**.  
 
    - De berekening is gebaseerd op GPS-gegevens met de formule:  
-   `Gemiddelde Snelheid = GEMIDDELDE(GPS_LOCATIE.snelheid)`.
+   `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
 3. ***Rekening houden met stops.***
 
@@ -174,13 +174,13 @@ Na het resetten wordt de gemiddelde snelheid opnieuw berekend op basis van de ni
 
 <TabItem value="android" label="Android">
 
-![Gemiddelde snelheid](@site/static/img/widgets/average_speed_widget_4.png)  
+![Average speed](@site/static/img/widgets/average_speed_widget_4.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Gemiddelde snelheid widgets](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Gemiddelde snelheid widgets](@site/static/img/widgets/average_speed_widget_ios_3.png)
+![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_3.png)
 
 </TabItem>
 
@@ -200,17 +200,17 @@ Na het resetten wordt de gemiddelde snelheid opnieuw berekend op basis van de ni
 
 <TabItem value="android" label="Android">
 
-|Widgets| Widgets op het scherm|
+|Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glijgetal](@site/static/img/widgets/glide_ratio_3.png)|![Glijgetal](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-|Widgets| Widgets op het scherm|
+|Widgets| Widgets on the screen|
 |:--------|:---------|
-|![Glijgetal](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Glijgetal](@site/static/img/widgets/glide_ratio_widget_ios.png)|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_widget_ios.png)|
 
 
 </TabItem>
@@ -273,7 +273,7 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 
 ## Batterijniveau {#battery-level}
 
-![Batterijniveau widget](@site/static/img/widgets/battery_level_widget.png)  
+![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
 
 De **Batterijniveau** widget toont het batterijpercentage van uw apparaat direct op het kaartscherm en wordt minstens één keer per minuut automatisch bijgewerkt.
 
@@ -295,13 +295,13 @@ De **Batterijniveau** widget toont het batterijpercentage van uw apparaat direct
 
 <TabItem value="android" label="Android">
 
-![Coördinatenwidget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coördinatenwidget Android](@site/static/img/widgets/coordinates_widget_2.png)  
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Coördinatenwidget iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -346,13 +346,13 @@ U kunt de huidige GPS-cache resetten via:
 
 <TabItem value="android" label="Android">
 
-![Zonsondergang en zonsopgang widgets](@site/static/img/widgets/sun_position.png) ![Zonsondergang en zonsopgang widgets](@site/static/img/widgets/sun_position_1.png)
+![Sunset and sunrise widgets](@site/static/img/widgets/sun_position.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Zonsondergang en zonsopgang widgets](@site/static/img/widgets/sun_position_4_ios.png) ![Zonsondergang en zonsopgang widgets](@site/static/img/widgets/sun_position_3_ios.png)
+![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_4_ios.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_3_ios.png)
 
 </TabItem>
 
@@ -382,7 +382,7 @@ U kunt hier een meer gedetailleerde beschrijving lezen: **[Radiusliniaal en Lini
 
 <TabItem value="android" label="Android">
 
-![Radiusliniaal scherm](@site/static/img/widgets/radius_ruler_widget.png)
+![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -390,9 +390,9 @@ U kunt hier een meer gedetailleerde beschrijving lezen: **[Radiusliniaal en Lini
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radiusliniaal"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radiusliniaal"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radiusliniaal"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
 </table>
 
@@ -417,13 +417,13 @@ De Radiusliniaal-widget toont de afstand tussen uw locatie en het middelpunt van
 
 <TabItem value="android" label="Android">
 
-![Snelheidsmeter](@site/static/img/widgets/speedometer_1_andr.png)   ![Snelheidsmeter](@site/static/img/widgets/speedometer_2_andr.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Snelheidsmeter](@site/static/img/widgets/speedometer_1_ios.png)   ![Snelheidsmeter](@site/static/img/widgets/speedometer_2_ios.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -431,13 +431,17 @@ De Radiusliniaal-widget toont de afstand tussen uw locatie en het middelpunt van
 
 De **Snelheidsmeter-widget** is een grafische weergave van de huidige voertuigsnelheid op basis van *gegevens ontvangen van de GPS*. Hiermee kunt u in real-time controleren of uw snelheid overeenkomt met de toegestane snelheidslimiet. De toegestane snelheidslimiet wordt geleverd door [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Key:maxspeed) voor een bepaald weggedeelte en de OsmAnd-instelling [Snelheidslimiettolerantie](../navigation/guidance/voice-navigation.md#speed-limit).  
 
+Wanneer uw huidige snelheid de geconfigureerde Snelheidslimiettolerantie nadert, verandert de widget van uiterlijk om een vroege waarschuwing te geven. Wanneer de snelheidslimiet wordt overschreden (rekening houdend met de tolerantie), schakelt de widget over naar een prominentere 'overschrijding'-weergave. De waarschuwings-/overschrijdingsweergave wordt getoond door het wijzigen van de widgetkleuren (achtergrond, snelheidswaarde en eenheden). De uiterlijkverandering kan geanimeerd zijn om aandacht te trekken bij het overschrijden van de tolerantie- of limietdrempel.
+
+![Speedometer](@site/static/img/widgets/speed_alert.gif)
+
 - In de *Snelheidsmeterinstellingen* kunt u de grootte (**Hoogte**) van de widget op het applicatiescherm selecteren als *Klein*, *Medium* of *Groot*.
-- U kunt aangeven wanneer u een **Snelheidslimietwaarschuwing** wilt ontvangen, door *Altijd* of *Bij overschrijding* te selecteren.
+- U kunt aangeven wanneer u een **Snelheidslimietwaarschuwing** wilt ontvangen, door *Altijd* of *Bij overschrijding* te selecteren. Als Snelheidslimietwaarschuwing is ingesteld op Altijd, kan de widget zowel de 'naderend/tolerantie'- als de 'overschrijding'-weergave tonen. Als Snelheidslimietwaarschuwing is ingesteld op Bij overschrijding, wordt de weergave alleen getoond nadat u de snelheidslimiet hebt overschreden.
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/speedometer_4_andr.png').default} alt="Snelheidsmeter"/></td>
-        <td><img src={require('@site/static/img/widgets/speedometer_4_ios.png').default} alt="Snelheidsmeter"/></td>
+        <td><img src={require('@site/static/img/widgets/speedometer_4_andr.png').default} alt="Speedometer"/></td>
+        <td><img src={require('@site/static/img/widgets/speedometer_4_ios.png').default} alt="Speedometer"/></td>
     </tr>
 </table>
 
@@ -463,13 +467,13 @@ U kunt hier een meer gedetailleerde beschrijving lezen: **[<Translate android="t
 
 <TabItem value="android" label="Android">  
 
-![ritregistratie_widget](@site/static/img/widgets/wid_trip_rec.png)
+![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![ritregistratie_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
@@ -495,13 +499,13 @@ Om Externe Sensoren widgets aan het kaartscherm toe te voegen, schakelt u de Osm
 
 <TabItem value="android" label="Android">  
 
-![Externe sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png)
+![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Externe sensor widgets iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -543,13 +547,13 @@ Om Voertuigstatistieken Widgets aan het kaartscherm toe te voegen, schakelt u de
 
 <TabItem value="android" label="Android">  
 
-![Voertuigstatistieken widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
+![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Voertuigstatistieken widgets iOS](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
@@ -581,13 +585,13 @@ Om Weer-widgets aan het kaartscherm toe te voegen, schakelt u de OsmAnd [Weer-pl
 
 <TabItem value="android" label="Android">
 
-![Weer-widget Android](@site/static/img/widgets/weather_widgets_andr.png)
+![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Weer-widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
+![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
 
 </TabItem>
 
@@ -616,7 +620,7 @@ Weer-widgets tonen actuele weersinformatie voor een centraal punt op de kaart. Z
 Om Parkeerwidgets aan het kaartscherm toe te voegen, schakelt u de OsmAnd [Parkeerpositie-plugin](../plugins/parking.md) in.
 :::  
 
-![Parkeerwidget](@site/static/img/plugins/parking/parking_widget.png)  
+![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
 
 De Parkeer-plugin widget toont de afstand van het midden van het scherm tot de parkeerlocatie. Om een parkeerplek op de kaart in te stellen, zoomt u in tot het vereiste niveau en tikt u vervolgens lang op de plek op de kaart om het contextmenu te openen. Volg [deze instellingen](../plugins/parking.md#set-a-spot).  
 
@@ -657,7 +661,7 @@ Dit is een Mapillary-plugin widget die snelle toegang biedt tot de Mapillary-app
 Om Audio/Video Notities widgets aan het kaartscherm toe te voegen, schakelt u de OsmAnd [Audio/Video Notities plugin](../plugins/audio-video-notes.md) in.
 :::
 
-![Audio-video notities widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 Dit zijn Audio/video notities plugin widgets die snelle toegang bieden tot het starten/stoppen van het opnemen van audio-, video- of fotonotities.  
 
@@ -692,7 +696,7 @@ Deze OsmAnd Tracker-plugin widget wordt gebruikt om snel toegang te krijgen tot 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="tracker_item"/>* |
-| Door te tikken | Opent de OsmAnd Online GPS Tracker-app. |
+| Door te tikken | Opent OsmAnd Online GPS Tracker app. |
 
 
 ### Ontwikkelaarswidgets {#developer-widgets}
@@ -737,13 +741,13 @@ De [Kaartrendering FPS-widget](../plugins/development.md#map-rendering-fps-widge
 
 <TabItem value="android" label="Android">
 
-![Camerapositie widgets](@site/static/img/widgets/camera_position_widgets_andr.png)
+![Camera position widgets](@site/static/img/widgets/camera_position_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Camerapositie Widgets 2](@site/static/img/widgets/camera_position_widgets_2_ios.png)
+![Camera position Widgets 2](@site/static/img/widgets/camera_position_widgets_2_ios.png)
 
 </TabItem>
 
@@ -768,7 +772,7 @@ De **Camerawidgets** stellen u in staat om de uitlijning tussen de OsmAnd-kaart 
 
 <InfoAndroidOnly />
 
-![Beschikbaar RAM widget](@site/static/img/widgets/available_RAM_2_andr.png)
+![Average speed widgets](@site/static/img/widgets/available_RAM_2_andr.png)
 
 De **Beschikbaar RAM** widget is een hulpmiddel voor het monitoren van het geheugengebruik van uw apparaat in relatie tot OsmAnd. Het biedt gedetailleerde gegevens om de prestaties van de applicatie te optimaliseren.
 

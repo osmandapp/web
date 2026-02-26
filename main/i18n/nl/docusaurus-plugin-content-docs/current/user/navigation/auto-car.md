@@ -1,5 +1,5 @@
 ---
-source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
+source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Overzicht {#overview}
+
+:::tip Aankoop
+Android Auto is een [betaalde functie](../purchases/index.md).  
+:::
 
 ![Android Auto-scherm](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -59,8 +63,8 @@ Wanneer u de applicatie opent, wordt een lijst met categorieën weergegeven. Voo
 - [OsmAnd-menu](#destination-points). Bevat een lijst met beschikbare opties voor het toewijzen van een route-eindpunt of een vrije rit.
 - [Instellingen](#voice-prompts). Deze knop is verantwoordelijk voor: 1. toegang tot het in-/uitschakelen van *gesproken aanwijzingen* wanneer u de geselecteerde route navigeert; 2. routegegevens (tijd en afstand) voor de volgende stop weergeven.
 - [Zoeken](#search). Door op de knop te tikken, wordt een scherm geopend met toegang tot de zoekfuncties.
-- [Mijn locatie](../widgets/map-buttons.md#my-location-and-zoom). Verplaatst het zichtbare deel van de kaart zodat uw huidige locatie in het midden van het scherm staat.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Hiermee kunt u in- en uitzoomen op het zichtbare deel van de kaart. De pinch-to-zoom-gebaar is beschikbaar voor het schalen van de kaart. Als dit niet wordt ondersteund door de head unit, wordt de zoom-aanpassing uitgevoerd door een dubbel tikken en veeggebaar.
+- [Mijn locatie](../widgets/map-buttons.md#my-position-and-zoom). Verplaatst het zichtbare deel van de kaart zodat uw huidige locatie in het midden van het scherm staat.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Hiermee kunt u in- en uitzoomen op het zichtbare deel van de kaart. De pinch-to-zoom-gebaar is beschikbaar voor het schalen van de kaart. Als dit niet wordt ondersteund door de head unit, wordt de zoom-aanpassing uitgevoerd door een dubbel tikken en veeggebaar.
 - [Kompas](../widgets/map-buttons.md#compass). Toont welke van de vier beschikbare kaartoriëntatiemodi op het scherm van uw apparaat is geselecteerd.
 
 
@@ -262,7 +266,7 @@ Deze informatiewidget combineert waarschuwingstypes zoals **Zebrapaden** en **Sn
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-De **Snelheidsmeter**-widget is een geïntegreerd interface-element dat de *huidige snelheid* weergeeft met behulp van GPS-gegevens en de *snelheidslimiet* uit de [OSM-database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) en [OsmAnd-instellingen](../navigation/guidance/voice-navigation.md#speed-limit) op het multimediascherm van het voertuig.
+De **Snelheidsmeter**-widget is een geïntegreerd interface-element dat de *huidige snelheid* weergeeft met behulp van GPS-gegevens en de *snelheidslimiet* uit de [OSM-database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) en [OsmAnd-instellingen](../navigation/guidance/voice-navigation.md#speed-limit) op het multimediascherm van het voertuig. Wanneer uw huidige snelheid de geconfigureerde snelheidslimiettolerantie nadert of de snelheidslimiet overschrijdt, verandert de widget zijn uiterlijk (kleuren) om een waarschuwing te geven. De verandering in uiterlijk kan geanimeerd zijn.
 
 - De **Snelheidsmeter-widget** is [*profielafhankelijk*](../personal/profiles.md), dus als u de instellingen voor één profiel wijzigt, worden ze niet toegepast op een ander.
 - Er is geen optie om de weergave van de **Snelheidsmeter-widget** rechtstreeks in *Android Auto* aan te passen, u moet deze in de OsmAnd-app configureren voordat u de navigatie start en uw apparaat op het voertuig aansluit.

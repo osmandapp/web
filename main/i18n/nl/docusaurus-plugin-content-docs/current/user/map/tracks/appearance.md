@@ -1,5 +1,5 @@
 ---
-source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
+source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
 sidebar_position: 5
 title:  Uiterlijk van de track
 ---
@@ -134,8 +134,8 @@ Herstelt alle **instellingen voor het uiterlijk van de track** naar hun standaar
 
 ## 3D-track {#3d-track}
 
-:::info Betaalde functie
-**3D-track** is een betaalde **OsmAnd Pro**-functie voor [iOS](../../purchases/ios.md#pro-features) en [Android](../../purchases/android.md#pro-features) <ProFeature />.
+:::tip Aankoop
+3D-trackvisualisatie is een [betaalde functie](../../purchases/index.md).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -194,8 +194,8 @@ De 3D-trackfunctie is zeer nuttig voor activiteiten zoals paragliden, waar het v
 
     De 3D-reliëffunctie, die de hoogte overdrijft, werkt onafhankelijk van de 3D-trackweergave. Twee verticale overdrijvingsparameters kunnen worden aangepast om de correlatie tussen hartslag en terreinhoogte beter te begrijpen.
 
-3. **Visualiseer trackhoogte en hellingskleurlijn op een platte kaartweergave.**  
-    Bij het visualiseren van hoogtegegevens wordt aanbevolen een platte kaartweergave te gebruiken om problemen zoals GPS-fouten te voorkomen, die ertoe kunnen leiden dat delen van de track ondergronds lijken te liggen.  
+3. **Visualiseer trackhoogte en hellingskleurlijn op een platte aardeweergave.**  
+    Bij het visualiseren van hoogtegegevens wordt aanbevolen een platte aardeweergave te gebruiken om problemen zoals GPS-fouten te voorkomen, die ertoe kunnen leiden dat delen van de track ondergronds lijken te liggen.  
 
     In dit scenario kunnen hellingsveranderingen afzonderlijk langs de tracklijn worden gevisualiseerd, terwijl Muurkleur wordt gebruikt om de hoogte weer te geven. Deze methode zorgt ervoor dat u, zelfs met mogelijke onnauwkeurigheden in de gegevens, toch een duidelijke en nauwkeurige visualisatie van helling en hoogte krijgt.
 

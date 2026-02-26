@@ -1,8 +1,9 @@
 ---
-source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
+source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
 sidebar_position: 2
 title:  Reisgidsen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,11 +15,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
 :::info Betaalde functie
-De Reisgidsen is een [betaalde functie](../purchases/index.md) van de OsmAnd-app.
+De Reisgidsen is een [betaalde functie](../purchases/index.md).  
 :::
 
 Virtuele reisgidsen in OsmAnd bieden gebruikers waardevolle informatie, aanbevelingen en tips. Ze stellen reizigers ook in staat om in de app toegang te krijgen tot uitgebreide navigatie-informatie over bezienswaardigheden.
@@ -47,7 +47,7 @@ Wikivoyage-informatie omvat de belangrijkste feiten over een plaats, vervoer, be
 
 - [Download](#download-articles) *Reisgidsen*.
 - Blader door [artikelen](#browse-articles) over een land, regio, stad, bezienswaardigheid.
-    - Of [toon reisgidsartikelen en/of punten op de kaart](#travel-routes) via het menu Kaart configureren.
+    - Alternatief: [toon reisgidsartikelen en/of punten op de kaart](#travel-routes) via het menu Kaart configureren.
     - Blader door bezienswaardigheden op de kaart, voeg ze toe aan *[Kaartmarkeringen](../personal/markers.md#add--edit-markers)* of *[Favorieten](../personal/favorites.md#favorite-group-actions)*.
     - Gebruik de knop *[Volledig lezen](#manage-as-gpx-track)* om naar het *[artikel](#travel-article) in *Reisgidsen* te gaan.
 - [Bladwijzer](#explore-and-bookmark) artikelen om ze later te lezen.
@@ -91,7 +91,7 @@ Er zijn ook gespecialiseerde gidsen, zoals de lijst van het UNESCO Global Geopar
 
 ## Artikelen doorbladeren {#browse-articles}
 
-Het scherm *Reisgidsen* bestaat uit twee algemene delen: een [*zoekveld*](#search) en een lijst met *reisgidsen* met twee tabbladen: *[<Translate android="true" ids="shared_string_explore"/> en <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. U kunt tussen deze tabbladen wisselen met een enkele tik.
+Het scherm *Reisgidsen* bestaat uit twee algemene delen: een [*zoekveld*](#search) en een lijst met *reisgidsen* met twee tabbladen: *[<Translate android="true" ids="shared_string_explore"/> en <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. U kunt tussen deze tabbladen wisselen met een enkele tik op een tabblad.
 Wanneer u *Reisgidsen* opent (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), toont OsmAnd u artikelen over interessante plaatsen in de buurt van de geografische coördinaten van het huidige kaartcentrum. Wanneer u op het item in de lijst tikt, wordt het [Reisgidsartikel](#travel-article) geopend. Onderaan het scherm is een schakelaar naar het tabblad *Bladwijzers*.  
 
 ### Verkennen en bladwijzers maken {#explore-and-bookmark}

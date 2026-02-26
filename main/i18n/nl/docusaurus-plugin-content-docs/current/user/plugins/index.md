@@ -1,5 +1,5 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
 sidebar_position: 18
 title:  Plugins
 ---
@@ -79,14 +79,16 @@ OsmAnd Plugins kunnen deze functiegroepen uitbreiden: **Lagen**, **Widgets**, **
 | [Nautische kaartweergave](#nautical-map-view) | [Kaartstijl](../plugins/nautical-charts.md#nautical-map-style), [Profiel](../plugins/nautical-charts.md#nautical-profile)  |
 | [Skikaartweergave](#ski-map-view) | [Kaartstijl](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profiel](../plugins/ski-maps.md#skiing-profile) |
 |[Audio-/videonotities](#audiovideo-notes) 🤖  | [Kaartlaag](../plugins/audio-video-notes.md#show-all-on-the-map), [Contextmenu](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[OpenStreetMap bewerken](#openstreetmap-editing)| [Kaartlaag](../plugins/osm-editing.md#authorization) |
 |[Parkeerpositie](#parking-position) | [Contextmenu](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
+|[OpenStreetMap bewerken](#openstreetmap-editing)| [Kaartlaag](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Kaartlaag](../plugins/mapillary.md#map-layer), [Contextmenu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Externe sensoren](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Voertuigstatistieken](#vehicle-metrics)  | [Aangepaste instellingen](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
+|[Sterrenkijker](#star-watcher)  | [Scherm](../plugins/starwatcher.md#star-map-screen), [Contextmenu](../plugins/starwatcher.md#celestial-object-info) |
 |[Toegankelijkheid](#accessibility) 🤖  | [Aangepaste instellingen](../plugins/accessibility.md#plugin-settings) |
-| [OsmAnd ontwikkeling](#osmand-development) | [Aangepaste instellingen](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Kaartlaag](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Contextmenu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [AIS vaartuigtracker](#ais-vessel-tracker) 🤖  |  [Aangepaste instellingen](../plugins/ais-tracker.md#plugin-settings) |
+|[OsmAnd ontwikkeling](#osmand-development) | [Aangepaste instellingen](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Kaartlaag](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Contextmenu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[AIS vaartuigtracker](#ais-vessel-tracker) 🤖  |  [Aangepaste instellingen](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin-instellingen {#plugin-settings}
@@ -140,7 +142,6 @@ De volgende plugins bieden hun eigen instellingen:
 
 ## Lijst met plugins {#plugins-list}
 
-
 ### [Wikipedia](./wikipedia.md) {#wikipedia}
 
 Met Wikipedia tijdens uw reis leert u meer over de plaatsen die u bezoekt. Het is offline beschikbaar en toont Wikipedia-artikelen met betrekking tot de bezienswaardigheden direct op de kaart.
@@ -156,6 +157,10 @@ Om een verhaal te vertellen over waar u bent geweest, kunnen GPS-gegevens, zoals
 ### [Topografie](./topography.md) {#topography}
 
 Topografische informatie, zoals contourlijnen, schaduwreliëf, helling, 3D-reliëf, helpt bij het visueel beoordelen van het landschap door het zien van hoogte, reliëf, extremen, steilheid, punten van gelijke hoogte, enz.  
+
+### [Weer](./weather.md) {#weather}
+
+Toont de weersvoorspelling per uur voor de huidige dag en voor 7 dagen vooruit. 
 
 ### [Nautische kaartweergave](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ De OpenStreetMap bewerkingsplugin stelt u in staat bij te dragen aan OpenStreetM
 
 Bekijk straatbeelden van uw routes of interessante plaatsen, geleverd door [Mapillary](https://www.mapillary.com/) (een internetverbinding is vereist).  
 
-### [Toegankelijkheid](./accessibility.md) {#accessibility}
-
-De Toegankelijkheidsplugin maakt de toegankelijkheidsfuncties van het apparaat direct beschikbaar in OsmAnd. Alleen voor Android.  
-
 ### [Externe sensoren](./external-sensors.md) {#external-sensors}
 
 Verbind externe sensoren om hun gegevens in OsmAnd weer te geven en de informatie op te slaan in ritregistraties.  
@@ -193,9 +194,13 @@ Verbind externe sensoren om hun gegevens in OsmAnd weer te geven en de informati
 
 Verbind een OBD-II-scanner om voertuiggegevens in OsmAnd weer te geven en de informatie op te slaan in ritregistraties.  
 
-### [Weer](./weather.md) {#weather}
+### [Sterrenkijker](./starwatcher.md) {#star-watcher}
 
-Toont de weersvoorspelling per uur voor de huidige dag en voor 7 dagen vooruit.  
+Sterrenkijker toont een interactieve sterrenhemel-overlay met sterren, sterrenbeelden, de zon, de maan en planeten. Het helpt u hemellichamen boven uw huidige locatie te identificeren, hun banen te previewen voor een geselecteerde datum en tijd, en sterrenkijk-sessies te plannen met behulp van ingebouwde tijdregelaars en weergave-opties.
+
+### [Toegankelijkheid](./accessibility.md) {#accessibility}
+
+De Toegankelijkheidsplugin maakt de toegankelijkheidsfuncties van het apparaat direct beschikbaar in OsmAnd. Alleen voor Android.  
 
 ### [OsmAnd ontwikkeling](./development.md) {#osmand-development}
 

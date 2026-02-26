@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -34,7 +34,7 @@ U kunt de app downloaden via deze link - [OsmAnd Maps on Apple App Store](https:
 
 ### Verschil tussen aankopen (iOS) {#difference-between-purchases-ios}
 
-| Pakket | Beschrijving | Beschikbaarheid | Opmerkingen |
+| Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Een **gratis pakket** dat toegang geeft tot [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) voor *Favorieten*, *Instellingen* en *OSM-bewerkingen/notities*. | Beschikbaar voor alle gebruikers van de gratis versie van OsmAnd. | Beperkt tot basis cloudfuncties en **5MB** opslag. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Een **in-app aankoop** of **abonnement** dat geavanceerde functies voor de gratis OsmAnd-app ontgrendelt. | Beschikbaar in de [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Kan worden toegevoegd aan de [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
@@ -55,9 +55,9 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 
 <!--
 
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -69,6 +69,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
 
 -->
 
@@ -97,8 +98,8 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-reliëf](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografische gegevens](../plugins/topography.md#overview)<br/>(Hoogtelijnen en Terrein) | **-** | ✔ | ✔ |
-| [Coördinatenraster — Kleuraanpassing](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D-trackvisualisatie](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Coördinatenraster — Kleuraanpassing](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D-trackvisualisatie](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Reisgidsen (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Ondersteuning voor externe sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -111,7 +112,7 @@ In de lijst staat informatie over de prijzen van het OsmAnd-product voor de VS e
 | [Widgets voor voertuigstatistieken](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 gratis widgets**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | <details><summary>**2 gratis widgets**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | ✔ |
 | [Kaartmarkeringen](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online kaartbronnen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Ondersteuning voor SQLitedb/mbtiles-kaarten](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Ondersteuning voor SQLitedb/mbtiles-kaarten](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favoriete punten](../map/point-layers-on-map.md)<br/>bladwijzers en waypoints | ✔ | ✔ | ✔ |
 | [Audio/foto/video-punten](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -153,7 +154,7 @@ of
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Doorgaan met OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/pro_new.png)
 
 ### Maps+-aankoop {#maps-purchase}
 
@@ -161,7 +162,7 @@ of
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tik op de lijst met Maps+-functies → Doorgaan met Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## Oude abonnementen (vóór 4.0) {#legacy-subscriptions-prior-40}

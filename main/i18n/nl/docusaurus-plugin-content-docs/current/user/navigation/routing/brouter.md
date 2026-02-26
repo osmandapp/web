@@ -1,8 +1,9 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title:  BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -173,7 +173,7 @@ Wanneer BRouter is geconfigureerd, kunnen we de snelheid van de voorberekening v
 
 ### Andere routeringsinstellingen {#other-routing-settings}
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigatie → Instellingen*, [afbeelding](../routing/online-routing.md#online-routing-setting)). Als deze optie is ingeschakeld, voegt OsmAnd twee segmenten toe aan de berekende Brouter-track: één van *[Mijn locatie](../../map/interact-with-map.md#my-location-and-zoom)* naar het startpunt van de track en een andere van het einde van de track naar het eindpunt van uw route. Deze optie is actief als de afstand van of naar de track groter is dan 60 meter.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigatie → Instellingen*, [afbeelding](../routing/online-routing.md#online-routing-setting)). Als deze optie is ingeschakeld, voegt OsmAnd twee segmenten toe aan de berekende Brouter-track: één van *[Mijn positie](../../map/interact-with-map.md#my-position-and-zoom)* naar het startpunt van de track en een andere van het einde van de track naar het eindpunt van uw route. Deze optie is actief als de afstand van of naar de track groter is dan 60 meter.
 
 - In de sectie [*Route herberekenen*](../../navigation/guidance/navigation-settings.md#recalculate-route) van de *Routeparameters* kunt u opties voor het herberekenen van de route inschakelen en aanpassen.
 

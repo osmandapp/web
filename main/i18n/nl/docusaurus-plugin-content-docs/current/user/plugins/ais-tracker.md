@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title:  AIS Vaartuig Volgsysteem
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 <InfoAndroidOnly />
 
 ## Overzicht {#overview}
 
-De **AIS Vaartuig Volgsysteem** plugin toont [Automatisch Identificatie Systeem (AIS)](https://nl.wikipedia.org/wiki/Automatic_identification_system) posities en gedetailleerde informatie over nabijgelegen vaartuigen. De AIS-gegevens worden ontvangen via een netwerkverbinding van een externe AIS-ontvanger.
+De **AIS Vaartuig Volgsysteem** plugin toont [Automatisch Identificatie Systeem (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) posities en gedetailleerde informatie over nabijgelegen vaartuigen. De AIS-gegevens worden ontvangen via een netwerkverbinding van een externe AIS-ontvanger.
 
 :::caution DISCLAIMER
 **Deze plugin is een hobbyproject en is niet ontworpen voor betrouwbaarheid of nauwkeurigheid. VERTROUW NIET op deze software voor navigatie of levensveiligheid.**
@@ -31,7 +31,7 @@ De **AIS Vaartuig Volgsysteem** plugin toont [Automatisch Identificatie Systeem 
 De mogelijkheid om online kaarten te gebruiken is automatisch ingeschakeld in de iOS-versie van OsmAnd. Om online kaarten in Android weer te geven, moet u de volgende instellingen maken:
 
 1. [Schakel](../plugins/index.md#enable--disable) de **AIS vaartuig volgsysteem** plugin in via *Hoofdmenu → Plugins → AIS vaartuig volgsysteem*.
-2. Configureer de [AIS-instellingen](../map/raster-maps.md#select-raster-maps)
+2. Configureer de [AIS-instellingen](../map/raster-maps.md#layers)
 3. Configureer een **AIS-serververbinding** of sluit een **externe AIS-ontvanger** aan.
 4. Controleer of vaartuigen worden weergegeven op de OsmAnd-kaart.
 
@@ -111,7 +111,7 @@ AIS-vaartuigen zenden drie soorten gegevens uit:
 
 ### AIS Symbolen en Legenda {#ais-symbols-and-legends}
 
-[Richtlijnen voor de Presentatie van AIS-symbolen](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Guidelines for AIS Symbol Presentation](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Symbolen             | Beschrijving   |
 |---------------------|---------------|

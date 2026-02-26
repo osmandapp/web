@@ -1,5 +1,5 @@
 ---
-source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
+source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,6 +17,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Overzicht {#overview}
+
+:::tip Aankoop
+CarPlay is een [betaalde functie](../purchases/index.md).  
+:::
 
 Een voertuig besturen en tegelijkertijd uw telefoon of tablet gebruiken is om veiligheidsredenen meestal bij wet verboden. [***CarPlay***](https://www.apple.com/ios/carplay/) is software die een aangepaste en geoptimaliseerde versie van de OsmAnd-app biedt voor veilig gebruik tijdens het rijden, waardoor het gemakkelijker en veiliger wordt om toegang te krijgen tot de navigatiefuncties van de app.
 
@@ -45,8 +49,8 @@ Terwijl uw apparaat is verbonden met *CarPlay*, is de kaart op het app-scherm ve
 
 *CarPlay* toont de OsmAnd-interface aangepast aan het scherm van het multimediasysteem van het voertuig. Interactie met de kaart is beperkt tot:  
 
-- [Mijn Locatie](../widgets/map-buttons.md#my-location-and-zoom). Verplaatst het zichtbare deel van de kaart zodat uw huidige locatie in het midden van het scherm staat.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Hiermee kunt u in- en uitzoomen op het zichtbare deel van de kaart.
+- [Mijn Locatie](../widgets/map-buttons.md#my-position-and-zoom). Verplaatst het zichtbare deel van de kaart zodat uw huidige locatie in het midden van het scherm staat.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Hiermee kunt u in- en uitzoomen op het zichtbare deel van de kaart.
 
 
 ## Vereiste instellingsparameters {#required-setup-parameters}
@@ -241,7 +245,7 @@ Deze informatiewidget combineert waarschuwingstypes zoals **Voetgangersoversteek
 
 ![CarPlay-scherm](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
-De **Snelheidsmeter**-widget is een geïntegreerd interface-element dat de *huidige snelheid* weergeeft met behulp van GPS-gegevens en de *snelheidslimiet* uit de [OSM-database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) en [OsmAnd-instellingen](../navigation/guidance/voice-navigation.md#speed-limit) op het multimediasysteemscherm van het voertuig.
+De **Snelheidsmeter**-widget is een geïntegreerd interface-element dat de *huidige snelheid* weergeeft met behulp van GPS-gegevens en de *snelheidslimiet* uit de [OSM-database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) en [OsmAnd-instellingen](../navigation/guidance/voice-navigation.md#speed-limit) op het multimediasysteemscherm van het voertuig. Wanneer uw huidige snelheid de geconfigureerde snelheidslimiettolerantie nadert of de snelheidslimiet overschrijdt, verandert de widget van uiterlijk (kleuren) om een waarschuwing te geven. De verandering in uiterlijk kan geanimeerd zijn.
 
 - De **Snelheidsmeter-widget** is [*profielafhankelijk*](../personal/profiles.md), dus als u de instellingen voor één profiel wijzigt, worden ze niet toegepast op een ander.
 - Er is geen optie om de weergave van de *Snelheidsmeter* rechtstreeks in *CarPlay* in te stellen. U moet deze configureren voor het geselecteerde [navigatieprofiel](#carplay-profile) in de OsmAnd-applicatie voordat u de navigatie start en uw apparaat met het voertuig verbindt.
@@ -266,6 +270,22 @@ De OsmAnd-app kan worden geopend en gebruikt voor navigatie in *CarPlay* op het 
 
 - Het multifunctionele dashboard instellen op een telefoon die is verbonden met *CarPlay* of op het scherm in uw voertuigsysteem.
 - Zoek de knop Multi-venster en schakel deze in.
+
+### Navigatie beëindigen {#finish-navigation}
+
+![Navigatie beëindigen](@site/static/img/navigation/auto-car/finish_navigation_carplay_new.png)
+
+Wanneer de navigatie in CarPlay is voltooid, toont OsmAnd een dialoog **“U bent gearriveerd”** op het voertuigscherm. Deze dialoog gebruikt dezelfde logica voor aankomstdetectie als de mobiele app en biedt snelle toegang tot veelvoorkomende acties na het bereiken van uw bestemming.
+
+Beschikbare acties:
+- **Markeren als parkeerlocatie**. Slaat uw huidige positie op als parkeerlocatie en plaatst een parkeermarker op de kaart.
+- **Parkeerplaats vinden**. Opent het Zoekscherm met de categorie Parkeren vooraf geselecteerd om u te helpen nabijgelegen parkeeropties te vinden.
+- **Route herberekenen**. Bouwt een nieuwe route naar de oorspronkelijke bestemming als u de navigatie wilt voortzetten.
+- **Navigatie beëindigen**. Beëindigt de huidige route en brengt OsmAnd terug naar de standaardkaartstatus.
+
+Als CarPlay wordt losgekoppeld terwijl de navigatie actief is, past OsmAnd extra logica toe op de iPhone:
+- Als de afstand tot de bestemming minder dan 100 m is, wordt de navigatie automatisch beëindigd en wordt het standaardprofiel hersteld. In dit geval wordt de melding “U bent gearriveerd” niet weergegeven op het scherm van de telefoon.
+- Als de huidige snelheid onder de 1 m/s ligt (bijvoorbeeld bij het stoppen bij een benzinestation), wordt de navigatie gepauzeerd. De navigatie hervat automatisch wanneer CarPlay opnieuw wordt verbonden.
 
 ## Instellingen {#settings}
 

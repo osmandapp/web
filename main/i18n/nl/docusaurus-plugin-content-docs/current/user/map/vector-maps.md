@@ -1,7 +1,7 @@
 ---
-source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
+source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
 sidebar_position: 5
-title:  Vectorkaarten (Kaartstijlen)
+title:  Vectorkaarten 
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 Vectorkaarten zijn bedoeld om te worden gebruikt als de standaard databron voor kaarten in OsmAnd, dus **u moet ze downloaden naar uw apparaat**. Vectorkaarten ondersteunen een groot aantal kaartstijlen voor verschillende activiteiten zoals fietsen, wandelen, autorijden of sneeuwscooteren, en andere.  
 
-Elke kaartstijl kan worden aangepast om specifieke objecten te markeren of te verbergen, en om te schakelen tussen dag- en nachtmodus. Vectorkaartgegevens kunnen worden aangevuld met vectorgegevens en worden weergegeven in de standaard kaartstijl, zoals informatie over *Hoogtelijnen*. U kunt *uw eigen OsmAnd-kaartstijl creëren* om de vereiste informatie weer te geven.
+Elke kaartstijl kan worden aangepast om specifieke objecten te markeren of te verbergen, en om te schakelen tussen dag- en nachtmodus. Vectorkaartgegevens kunnen worden aangevuld met vectorgegevens en worden weergegeven in de standaard kaartstijl, zoals informatie over *hoogtelijnen*. U kunt *uw eigen OsmAnd-kaartstijl creëren* om de vereiste informatie weer te geven.
 
 Vectorkaarten vertegenwoordigen ruimtelijke gegevens, zoals wegen, gebouwen, punten en polygonen, met behulp van wiskundige geometrie die is opgeslagen in binair formaat. Elk element (knooppunt, lijn of polygoon) wordt gedefinieerd door coördinaten en dynamisch weergegeven volgens het zoomniveau en de kaartstijl.
 
@@ -35,243 +35,13 @@ Zeer kleine polygonen kunnen worden vereenvoudigd of vervormd tijdens de generat
 Aanpasbare kaartstijlen zijn een van de belangrijkste voordelen van OsmAnd. U kunt de kaartweergave aanpassen aan uzelf en uw hobby's, de weergave of het verbergen van bepaalde kaartobjecten aanpassen, de groottes en kleuren van deze objecten, en de schaal van de weergave van bepaalde objecten wijzigen.
 
 
-## Standaard Kaartstijlen {#default-map-styles}
+## Kaartweergave {#map-rendering}
 
-OsmAnd biedt u standaard vele kaartstijlen en datalagen. Deze sectie beschrijft de belangrijkste voor de dag- en nachtmodus.
+### Kaartstijlen {#map-styles}
 
-1. **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
+OsmAnd biedt verschillende ingebouwde vectorkaartstijlen die zijn geoptimaliseerd voor verschillende activiteiten. Naast de standaardstijlen kunt u uw eigen aangepaste kaartstijl maken en installeren op basis van weergaveregels.
 
-2. **iOS**. *<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*
-
-
-### OsmAnd {#osmand}
-
-![OsmAnd kaartstijl](@site/static/img/map/map-style-osmand-with-routes.png)  
-
-De standaard kaartweergavestijl van OsmAnd balanceert detail en eenvoud, waardoor het ideaal is voor stedelijke en buitenverkenning. Het geeft details van stedelijke kenmerken zoals straten, gebouwen en vervoershaltes weer, terwijl het visuele rommel vereenvoudigt door kaarten duidelijker te maken.  
-
-Belangrijke voordelen zijn routekaarten, wegdek kwaliteit, toegangsbeperkingen, verkeersborden, SAC-schaal padweergaven, sportfaciliteiten en topografische details zoals hoogtelijnen.
-
-
-### Touringweergave {#touring-view}
-
-![Touringweergave kaartstijl](@site/static/img/map/map-style-touring.png)
-
-Touringstijl met hoog contrast en maximale details. Bevat alle opties van de standaard OsmAnd-stijl, terwijl zoveel mogelijk details worden weergegeven, met name wegen, paden en andere manieren van reizen. Duidelijk onderscheid van wegtypen in een *touringatlas*. Geschikt voor dag-, nacht- en buitengebruik.
-
-### UniRS en LightRS {#unirs-and-lightrs}
-
-<Translate android="true" ids="unirs_render_descr"/>
-
-UniRS en LightRS zijn stijlen van auteurs die de basiskaartinformatie weergeven, maar in verschillende kleurenschema's.  
-
-- **UniRS-stijl**. Deze stijl is een aangepaste versie van de standaardstijl om het contrast voor voetgangers- en fietspaden te verbeteren. Het behoudt het klassieke Mapnik-kleurenschema.  
-
-    ![LightRS kaartstijl](@site/static/img/map/map-style-lightrs.png)
-
-- **LightRS-stijl**. Dit is een eenvoudige rijstijl met een zachte nachtmodus. Het markeert wegen in een contrasterende oranje kleur, dimt secundaire kaartobjecten en toont topografische kenmerken zoals hoogtelijnen.
-
-    ![UniRS kaartstijl](@site/static/img/map/map-style-unirs.png)
-
-### Nautisch {#nautical}
-
-![Nautische kaartstijl](@site/static/img/map/map-style-nautical.png)
-
-Dit is een stijl voor nautische navigatie met boeien, vuurtorens, rivierroutes, zeewegen, markeringen, havens en nautische markeringen. Lees meer in de sectie [Nautische Kaartstijl](../plugins/nautical-charts.md#nautical-map-style).
-
-### Marine {#marine}
-
-![Marine kaartstijl](@site/static/img/map/map-style-marine.png)
-
-Dit is een geavanceerde nautische kaartstijl met lichtsectoren, volledige vuurtorenkenmerken en andere gedetailleerde maritieme kenmerken voor realistisch en nauwkeurige mariene navigatie. Voor meer details lees sectie [Marine Kaartstijl](../plugins/nautical-charts.md#marine-map-style).
-
-### Winter en Ski {#winter-and-ski}
-
-![Winter & Ski kaartstijl](@site/static/img/map/map-style-winter-ski.png)
-
-Dit is een stijl voor skisporten die de pistes, liften en langlaufloipes beschrijft, en secundaire kaartobjecten verbergt. De **Winter en Ski-stijl** is ontworpen om u te helpen bij de navigatie tijdens wintersport.  
-
-U kunt de skipistes en andere details zien, zoals de moeilijkheidsgraad van de pistes en liftmarkeringen. Belangrijke voordelen zijn de handige weergave van pistes, liften en andere skifuncties. Minder afleidende secundaire objecten op de kaart. Lees meer in het artikel [Skikaarten](../plugins/ski-maps.md).
-
-### Topo {#topo}
-
-![Topo kaartstijl](@site/static/img/map/map-style-topo.png)
-
-Deze stijl is ontworpen voor wandelen, kamperen en fietsen in de natuur. Het beschikt over contrasterende wegen en natuurlijke kenmerken, verschillende soorten paden, uitgebreide opties voor hoogtelijnen en extra details. Het is goed leesbaar in de buitenlucht. De instelling *Wegdekintegriteit* stelt u in staat om de kwaliteit van de weg te onderscheiden.
-
-### OSM-carto {#osm-carto}
-
-![OSM-carto kaartstijl](@site/static/img/map/map-style-osm-carto.png)
-
-Deze stijl imiteert de standaard [OpenStreetMap webstijl](https://www.openstreetmap.org/). De broncode van de webversie is beschikbaar op [Github](https://github.com/gravitystorm/openstreetmap-carto), de OsmAnd-code is beschikbaar op [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
-
-### Woestijn {#desert}
-
-![Woestijn kaartstijl](@site/static/img/map/map-style-desert.png)
-
-Ontworpen voor woestijnen en andere dunbevolkte gebieden, met meer gedetailleerde kaartinformatie.
-
-### Offroad {#offroad}
-
-![Offroad kaartstijl](@site/static/img/map/map-style-offroad.png)
-
-Ontworpen voor off-road navigatie, is deze stijl gebaseerd op de [Topo](#topo) kaartlay-out en werkt goed met satellietbeelden als onderlaag. Het heeft dunnere hoofdwegen om paden, sporen, fietsroutes en andere off-road paden te benadrukken, waardoor het ideaal is voor het verkennen van onverharde routes in landelijke of afgelegen gebieden.
-
-### Sneeuwscooter {#snowmobile}
-
-![Sneeuwscooter kaartstijl](@site/static/img/map/map-style-snowmobile.png)
-
-Deze stijl is op maat gemaakt voor sneeuwscooternavigatie en markeert sneeuwscootervriendelijke paden, wegen en sporen. Het benadrukt gespecialiseerde paden in besneeuwde regio's en biedt duidelijke navigatie over met sneeuw bedekte terreinen waar standaardwegen mogelijk niet beschikbaar zijn. 
-
-
-## Kaartlegenda {#map-legend}
-
-De kaartlegenda dient als sleutel tot het begrijpen van de symbolen die op OsmAnd-kaarten worden gebruikt. Het legt de betekenis uit achter verschillende kaartsymbolen, inclusief punten, lijnen en gebieden. Bijvoorbeeld, symbolen zoals blauwe kronkelende lijnen duiden op rivieren, terwijl verschillende kleuren en vormen gebouwen, paden en routes kunnen vertegenwoordigen.  
-
-De legenda helpt gebruikers te interpreteren wat ze op de kaart zien. U kunt de volledige OsmAnd-kaartlegenda [hier](../map-legend/index.md) openen.
-
-
-## Kaartlettertypen (Android) {#map-fonts-android}
-
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
-
-![Kaartlettertypen Android-versie](@site/static/img/map/map_fonts.png) ![Kaartlettertypen versie](@site/static/img/map/map_fonts_1.png)
-
-Voor kaarten in vereenvoudigd/traditioneel Chinees, Japans en Koreaans kunnen onjuiste tekens of symbolen (zoals vierkanten) verschijnen als uw apparaat niet over de benodigde lettertypen beschikt. Dit probleem treedt op bij het weergeven van lokale namen en kan worden opgelost door de vereiste lettertypen via OsmAnd te downloaden.  
-
-Enkele gerelateerde lettertypeproblemen zijn gedocumenteerd op GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
-
-
-## * Hoogtelijnen {#-contour-lines}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Hoogtelijnen kaartstijl](@site/static/img/map/contour_lines.png)
-
-Hoogtelijnen in OsmAnd worden weergegeven als hoogtelijnen op vectorkaarten. Om ze te gebruiken, moet u eerst de [Topografie-plugin](../plugins/topography.md) inschakelen, de benodigde regionale gegevens downloaden en de weergave configureren. Deze functie is niet standaard ingeschakeld en vereist een [aankoop](../purchases/index.md).  
-
-Hoogtelijnen zijn compatibel met alle kaartstijlen en kunnen worden aangepast via het [Hoogtelijnen-menu](../plugins/topography.md#contour-lines). Voor meer details, bezoek het [Topografie-plugin](../plugins/topography.md) artikel.
-
-
-## * Nautische diepte {#-nautical-depth}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Nautische dieptecontouren vertegenwoordigen gebieden met gelijke diepte en helpen bij het visualiseren van veranderingen in de onderwatertopografie. Deze functie is beschikbaar in alle kaartstijlen en -modi en kan worden aangepast met of zonder de Nautische kaartweergave-plugin ingeschakeld.  
-
-Voor meer details over de Nautische kaartweergave, bezoek de [Nautische Kaart-plugin pagina](../plugins/nautical-charts).
-
-
-## Grenzen tonen {#show-borders}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![show-borders-ios](@site/static/img/map/show-borders-ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Met deze functie kunt u de zichtbaarheid van de grenzen van eerder gedownloade kaarten uit de lijst met beschikbare kaarten in- of uitschakelen. Het hoofddoel is om de hoofdkaart overzichtelijker te maken door de contouren van gedownloade kaarten te verbergen, wat vooral handig is als u veel kaarten hebt geïnstalleerd.  
-
-Standaard verschijnen de kaartgrenzen wanneer u inzoomt tot niveau 7 en verdwijnen ze bij zoomniveau 3 en lager.
-
-:::tip Kleur Grenzen van gedownloade kaarten tonen
-Wanneer de functie *Grenzen van gedownloade kaarten tonen* is ingeschakeld, worden gedownloade kaarten **Groen** gekleurd in zowel de Android- als iOS-versies van OsmAnd.  
-
-Op Android worden gearchiveerde kaarten in **Oranje** weergegeven. In iOS worden kaarten die kunnen worden bijgewerkt ook in **Oranje** gemarkeerd.
-:::
-
-
-## Coördinatenraster {#coordinates-grid}
-
-
-Ga naar: *Menu → Kaart configureren → Tonen → Coördinatenraster*  
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Coördinatenraster menu](@site/static/img/map/coordinates_grid_settings_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-De functie **Coördinatenraster** legt een referentieraster over de kaart, waardoor u breedte- en lengtegraadlijnen kunt visualiseren op basis van verschillende coördinatensystemen. Deze functie is handig voor nauwkeurige locatiereferentie en geospatiale navigatie. 
-
-U kunt de volgende opties configureren:
-- **Zoomniveaus:** stel het minimale en maximale zoomniveau in (2 - 22) waarop het raster zichtbaar is.
-- **Labelpositie:** kies tussen *Randen* (standaard) of *Midden* voor rasterlabels.
-- **Rasterkleur:** beschikbaar afzonderlijk voor Dag/Nacht-modus. Het aanpassen van de rasterkleur is een betaalde functie.
-- **Coördinaatformaat:** selecteer uit verschillende beschikbare formaten (zie lijst hieronder).
-
-
-***Beschikbare coördinaatformaten:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Graden, Minuten, Seconden)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimale Graden - WGS84 standaardformaat)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Graden, Decimale Minuten)
-- **UTM** (EPSG:6387, Universele Transversale Mercator - zone-gebaseerd rastersysteem). Het minimale zoomniveau is 9, er wordt slechts één UTM-zone tegelijk weergegeven, aangezien zones elke 6° door meridianen worden gescheiden
-- **MGRS** (Militair Raster Referentie Systeem)
-
-Standaard gebruikt de app het coördinaatformaat dat is geselecteerd in [Algemene instellingen](../personal/profiles.md#units--formats), maar u kunt het direct in dit menu wijzigen.
-
-[Snelle actie](../widgets/quick-action.md#overview): U kunt ook een snelle schakelaar *Coördinatenraster tonen/verbergen* toevoegen aan de groep [Kaart configureren](../widgets/quick-action.md#configure-map) voor snelle toegang.
-
-## Kaartstijl configureren {#configure-map-style}
+Voor een gedetailleerde beschrijving van beschikbare stijlen en instructies voor het maken van aangepaste stijlen, zie het artikel [Kaartstijlen](../map/map-styles.md).
 
 ### Kaartmodus {#map-mode}
 
@@ -295,7 +65,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget
 
 </Tabs>
 
-De kaart kan worden weergegeven in een licht of donker thema op basis van de modus die is geselecteerd uit een lijst met opties. Standaard en voor alle nieuwe gebruikers komt de [kaartstijl](#default-map-styles) overeen met het thema dat is gekozen in de systeeminstellingen van uw apparaat.
+De kaart kan worden weergegeven in een licht of donker thema op basis van de modus die is geselecteerd uit een lijst met opties. Standaard en voor alle nieuwe gebruikers komt de [kaartstijl](#map-styles) overeen met het thema dat is gekozen in de systeeminstellingen van uw apparaat.
 
 - **<Translate android="true" ids="daynight_mode_day"/>**. Toont de kaart altijd in een licht thema voor optimale zichtbaarheid overdag.
 
@@ -305,8 +75,44 @@ De kaart kan worden weergegeven in een licht of donker thema op basis van de mod
 
 - **<Translate android="true" ids="daynight_mode_sensor"/>** (*Alleen Android*). Gebruikt de lichtsensor van het apparaat om automatisch te schakelen tussen lichte en donkere thema's op basis van het omgevingslicht.
 
-- **<Translate android="true" ids="daynight_mode_app_theme"/>**. De kaartweergave past zich aan het algemene thema van de app aan, waarbij de dagmodus wordt weergegeven in het lichte thema en de nachtmodus in het donkere thema.
+- **<Translate android="true" ids="daynight_mode_app_theme"/>**. De kaartweergave past zich aan het algemene thema van de app aan, waarbij de dagmodus wordt weergegeven in het lichte thema en de nachtmodus in het donkere thema. 
 
+### Wegstijl {#road-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+Speciale instellingen voor wegen, waar u de kleuren kunt wijzigen om overeen te komen met de wegenatlas of wegen met hoog contrast of dikke contouren voor wegen kunt toevoegen.
+
+- **<Translate android="true" ids="rendering_value_default_name"/>**. Standaardstijl voor snelwegen. Kijk naar [Kaartlegenda](../map-legend/index.md).  
+![Kaart wegstijl standaard](@site/static/img/map/map-road-style-default.png)
+
+- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Stijl van de Duitse wegenatlas.  
+![Kaart wegstijl Duits](@site/static/img/map/map-road-style-german.png)
+
+- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Stijl van de Amerikaanse wegenatlas.  
+![Kaart wegstijl Amerikaans](@site/static/img/map/map-road-style-american.png)
+
+- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Het hoge contrast van wegen.  
+![Kaart wegstijl hoog contrast](@site/static/img/map/map-road-style-high-contrast.png)
+- **Bleek**. Minder contrasterende kleuren van wegen.  
+![Kaart wegstijl bleek](@site/static/img/map/map-road-style-pale.png)
+
+- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Dikke omtrek voor wegen.  
+![Kaart wegstijl dikke omtrek](@site/static/img/map/map-road-style-bold-outline.png)
 
 ### Details {#details}
 
@@ -359,44 +165,36 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_wi
 
     &nbsp;&nbsp;&nbsp;![Kaartparameter - Natuurreservaat](@site/static/img/map/nature-reserve.png)
 
-
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->
-
-### Routes {#routes}
+### Verbergen {#hide}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-![Kaartroutes - fietsroutes](@site/static/img/map/map-routes-cycle-routes.png)  ![Kaartroutes - wandelnetwerk](@site/static/img/map/map-routes-hiking-network.png)
+Om de zichtbaarheid van de kaart te verbeteren, moet u mogelijk bepaalde objecten verbergen. U kunt bijvoorbeeld water verbergen bij het gebruik van de [Satelliet online kaarten met de Onderlaag](../map/raster-maps.md#layers).
 
-Een route is een pad dat vooraf is bepaald en gevolgd moet worden om een specifieke bestemming te bereiken. Een route kan worden geoptimaliseerd voor verschillende soorten reizen, zoals fietsen, wandelen, hardlopen, openbaar vervoer en andere. U kunt meer lezen over routes en hun types in het [Routes artikel](../map/routes.md).
-
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Verberg regionale grenzen binnen landen, maar staatsgrenzen zijn zichtbaar.
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Verberg alle polygonen van natuurlijke objecten, speciale functie voor [Onderlaag/Bovenlaag](../map/raster-maps.md#layers).
+- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Verberg alle polygonen van gebouwen.
+- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Verberg alle polygonen van water (zeeën, meren, reservoirs, enz.)
+- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Verberg huisnummers op de kaart.
+- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Verberg voorgestelde objecten - objecten die gepland zijn voor de bouw maar alleen een project hebben (geprojecteerde wegen, kruispunten, gebouwen en andere).
+- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Verberg de POI-pictogrammen van de kaart. De labels van deze POI's zullen echter nog steeds op de kaart verschijnen.
+- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Verberg de POI-labels van de kaart. De POI-pictogrammen zullen echter nog steeds op de kaart verschijnen.
+- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Verberg alle ondergrondse objecten, zoals tunnels, doorgangen, verdiepingen, enz. Speciaal voor het opruimen van kaarten in steden van niet-nuttige objecten.
+- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Verberg alle bovengrondse objecten. Speciaal om alleen ondergrondse objecten zoals tunnels, doorgangen, enz. te zien.
 
 ### Transport {#transport}
 
@@ -430,99 +228,8 @@ Bij het navigeren door steden heeft u een meer contrasterende weergave van openb
 - **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Toont ondergrondse routes.  
     ![Kaart transport metro](@site/static/img/map/map-transport-subway.png)
 
-### Verbergen {#hide}
 
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
-
-</TabItem>
-
-</Tabs>  
-
-Om de zichtbaarheid van de kaart te verbeteren, moet u mogelijk bepaalde objecten verbergen. U kunt bijvoorbeeld water verbergen bij het gebruik van de [Satelliet online kaarten met de Onderlaag](../map/raster-maps.md#select-raster-maps).
-
-- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Verberg regionale grenzen binnen landen, maar staatsgrenzen zijn zichtbaar.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Verberg alle polygonen van natuurlijke objecten, speciale functie voor [Onderlaag/Bovenlaag](../map/raster-maps.md#select-raster-maps).
-- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Verberg alle polygonen van gebouwen.
-- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Verberg alle polygonen van water (zeeën, meren, reservoirs, enz.)
-- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Verberg huisnummers op de kaart.
-- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Verberg voorgestelde objecten - objecten die gepland zijn voor de bouw maar alleen een project hebben (geprojecteerde wegen, kruispunten, gebouwen en andere).
-- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Verberg de POI-pictogrammen van de kaart. De labels van deze POI's zullen echter nog steeds op de kaart verschijnen.
-- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Verberg de POI-labels van de kaart. De POI-pictogrammen zullen echter nog steeds op de kaart verschijnen.
-- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Verberg alle ondergrondse objecten, zoals tunnels, doorgangen, verdiepingen, enz. Speciaal voor het opruimen van kaarten in steden van niet-nuttige objecten.
-- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Verberg alle bovengrondse objecten. Speciaal om alleen ondergrondse objecten zoals tunnels, doorgangen, enz. te zien.
-
-### Wegstijl {#road-style}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-Speciale instellingen voor wegen, waar u de kleuren kunt wijzigen om overeen te komen met de wegenatlas of wegen met hoog contrast of dikke contouren voor wegen kunt toevoegen.
-
-- **<Translate android="true" ids="rendering_value_default_name"/>**. Standaardstijl voor snelwegen. Kijk naar [Kaartlegenda](../map-legend/index.md).  
-![Kaart wegstijl standaard](@site/static/img/map/map-road-style-default.png)
-
-- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Stijl van de Duitse wegenatlas.  
-![Kaart wegstijl Duits](@site/static/img/map/map-road-style-german.png)
-
-- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Stijl van de Amerikaanse wegenatlas.  
-![Kaart wegstijl Amerikaans](@site/static/img/map/map-road-style-american.png)
-
-- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Het hoge contrast van wegen.  
-![Kaart wegstijl hoog contrast](@site/static/img/map/map-road-style-high-contrast.png)
-- **Bleek**. Minder contrasterende kleuren van wegen.  
-![Kaart wegstijl bleek](@site/static/img/map/map-road-style-pale.png)
-
-- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Dikke omtrek voor wegen.  
-![Kaart wegstijl dikke omtrek](@site/static/img/map/map-road-style-bold-outline.png)
-
-
-### Tekstgrootte {#text-size}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
-
-</TabItem>
-
-</Tabs>  
-
-- **100%**  
-    ![Kaart tekstgrootte 100%](@site/static/img/map/map-text-size-100.png)
-
-- **200%**  
-    ![Kaart tekstgrootte 200%](@site/static/img/map/map-text-size-200.png)
-
+## Tekstweergave {#text-rendering}
 
 ### Kaartvergroter {#map-magnifier}
 
@@ -552,6 +259,29 @@ Deze instelling helpt om de vergroting van de kaart te wijzigen. Het is van toep
 - **200%**  
     ![Kaartvergroter 200%](@site/static/img/map/map-magnifier-200.png)
 
+### Tekstgrootte {#text-size}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
+
+</TabItem>
+
+</Tabs>  
+
+- **100%**  
+    ![Kaart tekstgrootte 100%](@site/static/img/map/map-text-size-100.png)
+
+- **200%**  
+    ![Kaart tekstgrootte 200%](@site/static/img/map/map-text-size-200.png)
 
 ### Kaarttaal {#map-language}
 
@@ -565,15 +295,14 @@ Als de namen op de kaart niet in de vereiste taal zijn vertaald door de OSM-geme
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_locale"/>*
 
-- **Lokale namen**  
+- **Lokale namen**   
     ![Kaarttaal lokale namen](@site/static/img/map/map-language-local-names_2.png)
 
-- **Voorkeurstaal** (oekraïens)
+- **Voorkeurstaal** (oekraïens)   
     ![Kaarttaal oekraïens](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Gebruik Latijnse naam indien ontbrekend**  
+- **Gebruik Latijnse naam indien ontbrekend**   
     ![Kaarttaal transliteratie](@site/static/img/map/map-language-transliterate_2.png)
-
 
 </TabItem>
 
@@ -581,36 +310,232 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,map_wi
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
-- **Lokale namen**  
+- **Lokale namen**    
     ![Kaarttaal lokale namen](@site/static/img/map/map-language-local-names_2.png)
 
-- **Voorkeurstaal** (oekraïens)
+- **Voorkeurstaal** (oekraïens)  
     ![Kaarttaal oekraïens](@site/static/img/map/map-language-urkanian_2.png)
 
-- **Toon lokale namen**  (voegt een 2e label toe als de lokale naam anders is)
+- **Toon lokale namen**  (voegt een 2e label toe als de lokale naam anders is)  
     ![Kaarttaal lokaal](@site/static/img/map/map-language-show-local_2.png)
 
-- **Translitereer namen**  
+- **Translitereer namen**    
     ![Kaarttaal transliteratie](@site/static/img/map/map-language-transliterate_2.png)
-
-
 
 </TabItem>
 
 </Tabs>  
 
+### Kaartlettertypen (Android) {#map-fonts-android}
+
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
+
+![Kaartlettertypen Android-versie](@site/static/img/map/map_fonts.png) ![Kaartlettertypen versie](@site/static/img/map/map_fonts_1.png)
+
+Voor kaarten in vereenvoudigd/traditioneel Chinees, Japans en Koreaans kunnen onjuiste tekens of symbolen (zoals vierkanten) verschijnen als uw apparaat niet over de benodigde lettertypen beschikt. Dit probleem treedt op bij het weergeven van lokale namen en kan worden opgelost door de vereiste lettertypen via OsmAnd te downloaden.  
+
+Enkele gerelateerde lettertypeproblemen zijn gedocumenteerd op GitHub: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
 
 
-## Aangepaste Kaartstijl {#custom-map-style}
+## Topografische Weergave {#topography-rendering}
 
-Als u een persoonlijke of door derden gemaakte aangepaste kaartstijl heeft die is gemaakt volgens de [Specificatie](../../technical/osmand-file-formats/osmand-rendering-style.md), kunt u deze op de volgende manieren op uw apparaat installeren:
+### * Hoogtelijnen {#-contour-lines}
 
-- Kopieer het `.render.xml` bestand naar uw apparaat en open het met OsmAnd.
-- Gebruik de [standaard import/export dialogen](../personal/import-export.md) om weergavestijlen te exporteren of importeren. Als u een `.osf` pakket maakt, werkt het als een plugin die u met anderen kunt delen.
-- Na installatie kunt u de kaartstijl selecteren in het menu.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Hoogtelijnen kaartstijl](@site/static/img/map/contour_lines.png)
+
+Hoogtelijnen in OsmAnd worden weergegeven als hoogtelijnen op vectorkaarten. Om ze te gebruiken, moet u eerst de [Topografie-plugin](../plugins/topography.md) inschakelen, de benodigde regionale gegevens downloaden en de weergave configureren. Deze functie is niet standaard ingeschakeld en vereist een [aankoop](../purchases/index.md).  
+
+Hoogtelijnen zijn compatibel met alle kaartstijlen en kunnen worden aangepast via het [Hoogtelijnen-menu](../plugins/topography.md#contour-lines). Voor meer details, bezoek het [Topografie-plugin](../plugins/topography.md) artikel.
+
+### * Nautische diepte {#-nautical-depth}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Nautische dieptecontouren vertegenwoordigen gebieden met gelijke diepte en helpen bij het visualiseren van veranderingen in de onderwatertopografie. Deze functie is beschikbaar in alle kaartstijlen en -modi en kan worden aangepast met of zonder de Nautische kaartweergave-plugin ingeschakeld.  
+
+Voor meer details over de Nautische kaartweergave, bezoek de [Nautische Kaart-plugin pagina](../plugins/nautical-charts).
+
+### 3D Gebouwen {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+![3D Gebouwen](@site/static/img/map/3d_buildings_1_new.png) ![3D Gebouwen](@site/static/img/map/3d_buildings_2.png) 
+
+De functie **3D Gebouwen** geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. 3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D gebouwen*  
+Gebruik de hoofdschakelaar om 3D-weergave van gebouwen in- of uit te schakelen. Om gebouwen in 3D te bekijken, kantel de kaart door twee vingers op het scherm te plaatsen en omhoog te vegen.
+
+Momenteel is deze optie alleen beschikbaar wanneer de [OsmAnd-ontwikkelingsplugin](../plugins/development.md) is ingeschakeld.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+
+De instellingen voor 3D-gebouwen zijn verdeeld in twee groepen: **Uiterlijk** en **Prestaties**.
+
+**Uiterlijk: Kleur**. Dit stuurt de kleur van 3D-gebouwen aan. Wanneer u op Kleur tikt, opent OsmAnd een apart voorbeeldscherm waarin u de kaart kunt zien terwijl u de instelling aanpast.
+- **Kaartstijl** — gebruikt de standaard gebouwkleur uit de momenteel geselecteerde kaartstijl.
+- **Aangepast** — laat u een aangepaste gebouwkleur instellen voor Dag / Nacht-modus.
+
+:::tip Aankoop
+KleurAanpassing van 3D Gebouwen is een [betaalde functie](../purchases/index.md).  
+:::
+
+Als aangepaste kleuren niet zijn gekocht, ziet u een lege toestand met een korte beschrijving en een Knop Ophalen. Als Aangepast beschikbaar is, kunt u schakelen tussen Dag en Nacht, een kleur kiezen uit het palet (of Alle kleuren openen), en vervolgens Toepassen tikken.
+
+**Uiterlijk: Zichtbaarheid**. Dit stuurt de dekking (transparantie) van 3D-gebouwen aan. Gebruik de schuifregelaar om de zichtbaarheid als percentage in te stellen. Lagere waarden maken gebouwen transparanter en helpen wegen/labels leesbaar te houden. Hogere waarden maken gebouwen solider en visueel dominant. Tikken op Zichtbaarheid opent ook een apart voorbeeldscherm met de schuifregelaar.
+
+Op de voorbeeldschermen (Kleur / Zichtbaarheid) kunt u Reset naar standaard gebruiken vanuit de app-balk om de standaardwaarde te herstellen.
+
+**Prestaties: Detailniveau**. Dit stuurt aan hoe gedetailleerd de 3D-gebouwgeometrie is:
+- Laag (standaard) — eenvoudigere geometrie.
+- Hoog — meer gedetailleerde geometrie.
+
+**Prestaties: Bezichtigingsafstand**. Dit stuurt aan hoe ver van de camera 3D-gebouwen worden weergegeven:
+- Dichtbij (standaard) — geeft gebouwen dichterbij weer.
+- Ver — geeft gebouwen vanaf een grotere afstand weer.
+
+Beide prestatie-opties gebruiken een tweepositieschakelaar direct op het 3D-gebouweninstelscherm.
+
+
+## Aanvullende Instellingen {#additional-settings}
+
+### Grenzen tonen {#show-borders}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![show-borders-ios](@site/static/img/map/show-borders-ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Met deze functie kunt u de zichtbaarheid van de grenzen van eerder gedownloade kaarten uit de lijst met beschikbare kaarten in- of uitschakelen. Het hoofddoel is om de hoofdkaart overzichtelijker te maken door de contouren van gedownloade kaarten te verbergen, wat vooral handig is als u veel kaarten hebt geïnstalleerd.  
+
+Standaard verschijnen de kaartgrenzen wanneer u inzoomt tot niveau 7 en verdwijnen ze bij zoomniveau 3 en lager.
+
+:::tip Kleur Grenzen van gedownloade kaarten tonen
+Wanneer de functie *Grenzen van gedownloade kaarten tonen* is ingeschakeld, worden gedownloade kaarten **Groen** gekleurd in zowel de Android- als iOS-versies van OsmAnd.  
+
+Op Android worden gearchiveerde kaarten in **Oranje** weergegeven. In iOS worden kaarten die kunnen worden bijgewerkt ook in **Oranje** gemarkeerd.
+:::
+
+### Coördinatenraster {#coordinates-grid}
+
+:::tip Aankoop
+KleurAanpassing van Coördinatenraster is een [betaalde functie](../purchases/index.md).  
+:::
+
+Ga naar: *Menu → Kaart configureren → Tonen → Coördinatenraster*  
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Coördinatenraster menu](@site/static/img/map/coordinates_grid_settings_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+De functie **Coördinatenraster** legt een referentieraster over de kaart, waardoor u breedte- en lengtegraadlijnen kunt visualiseren op basis van verschillende coördinatensystemen. Deze functie is handig voor nauwkeurige locatiereferentie en geospatiale navigatie. 
+
+U kunt de volgende opties configureren:
+- **Zoomniveaus:** stel het minimale en maximale zoomniveau in (2 - 22) waarop het raster zichtbaar is.
+- **Labelpositie:** kies tussen *Randen* (standaard) of *Midden* voor rasterlabels.
+- **Rasterkleur:** beschikbaar afzonderlijk voor Dag/Nacht-modus. 
+- **Coördinaatformaat:** selecteer uit verschillende beschikbare formaten (zie lijst hieronder).
+
+
+***Beschikbare coördinaatformaten:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Graden, Minuten, Seconden)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimale Graden - WGS84 standaardformaat)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Graden, Decimale Minuten)
+- **UTM** (EPSG:6387, Universele Transversale Mercator - zone-gebaseerd rastersysteem). Het minimale zoomniveau is 9, er wordt slechts één UTM-zone tegelijk weergegeven, aangezien zones elke 6° door meridianen worden gescheiden
+- **MGRS** (Militair Raster Referentie Systeem)
+
+Standaard gebruikt de app het coördinaatformaat dat is geselecteerd in [Algemene instellingen](../personal/profiles.md#units--formats), maar u kunt het direct in dit menu wijzigen.
+
+[Snelle actie](../widgets/quick-action.md#overview): U kunt ook een snelle schakelaar *Coördinatenraster tonen/verbergen* toevoegen aan de groep [Kaart configureren](../widgets/quick-action.md#configure-map) voor snelle toegang.
+
+## Routes {#routes}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Kaartroutes - fietsroutes](@site/static/img/map/map-routes-cycle-routes.png)  ![Kaartroutes - wandelnetwerk](@site/static/img/map/map-routes-hiking-network.png)
+
+Een route is een pad dat vooraf is bepaald en gevolgd moet worden om een specifieke bestemming te bereiken. Een route kan worden geoptimaliseerd voor verschillende soorten reizen, zoals fietsen, wandelen, hardlopen, openbaar vervoer en andere. U kunt meer lezen over routes en hun types in het [Routes artikel](../map/routes.md).
 
 
 ## Gerelateerde Artikelen {#related-articles}
 
+- [Omgaan met Kaart](../map/interact-with-map.md)
+- [Kaart configureren](../map/configure-map-menu.md)
+- [Kaartstijlen](../map/map-styles.md)
+- [Routes](../map/routes.md)
 - [Importeren / Exporteren](../personal/import-export.md)
 - [Kleurenpaletschema's](../personal/color-palette-schemes.md)

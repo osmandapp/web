@@ -1,5 +1,5 @@
 ---
-source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
+source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
 sidebar_position: 16
 title:  Voertuigstatistieken
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overzicht {#overview}
 
 :::info Betaalde functie
-De Voertuigstatistieken-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.
+De Voertuigstatistieken-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app <ProFeature />. Informatie over voertuigsnelheid en motortoerental is gratis beschikbaar in OsmAnd.
 :::
 
 De **Voertuigstatistieken-plugin** maakt real-time monitoring van voertuiggegevens mogelijk via het [OBD-II-protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gebruikers kunnen essentiële statistieken bijhouden, zoals motorprestaties, brandstofefficiëntie en snelheid, wat proactief voertuigonderhoud en probleemoplossing mogelijk maakt.  
@@ -52,7 +52,7 @@ Om gegevens van een OBD-II-scanner te gebruiken:
 3. **Schakel** Bluetooth **in** op uw apparaat.
 4. [Verbind](#pair-odb-ii-scanner) de OBD-II-scanner met de poort van uw voertuig.
 5. [Configureer](#scanner-settings) de **scannerinstellingen**.
-6. [Voeg](#widgets) **Voertuigstatistieken-widgets** toe voor gegevens op het scherm (optioneel).
+6. [Voeg](#widgets) **Voertuigstatistieken-widgets** toe om gegevens op het scherm weer te geven (optioneel).
 7. [Gebruik](#trip-recording) de **Ritregistratie-plugin** om voertuiggegevens op te nemen.
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title:  Kaartknoppen
 ---
@@ -18,31 +18,31 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Kaartknoppen, waaronder *Zoom*, *Zoeken*, *Route*, *Kompas*, *Mijn Locatie*, *3D-modus* en *Menu*, zijn de belangrijkste bedieningselementen voor interactie met de kaart. Elke knop biedt specifieke functionaliteiten om uw navigatie- en kaartgebruikservaring te verbeteren.
+Kaartknoppen, waaronder *Zoom*, *Zoeken*, *Navigatie*, *Kompas*, *Mijn Positie*, *3D-modus* en *Menu*, zijn de primaire bedieningselementen voor interactie met de kaart. Elke knop biedt specifieke functionaliteiten om uw navigatie- en kaartgebruikservaring te verbeteren.
 
 
-## Mijn Locatie en Zoom {#my-location-and-zoom}
+## Mijn Positie en Zoom {#my-position-and-zoom}
 
-![Configureer schermmenu](@site/static/img/widgets/location_zoom_buttons.png)
+![Schermmenu configureren](@site/static/img/widgets/location_zoom_buttons.png)
 
 Gebruik deze knoppen om te bepalen hoe de kaart op het scherm van uw apparaat wordt weergegeven:
 
-- **Mijn Locatie**. Toont of het midden van de kaart is gesynchroniseerd met de huidige geolocatie van uw apparaat.
+- **Mijn Positie**. Toont of het midden van de kaart is gesynchroniseerd met de huidige geolocatie van uw apparaat.
 - **Zoom**. Hiermee kunt u het zoomniveau van de kaart aanpassen om meer of minder details weer te geven.
-Als u meer informatie wilt over het gebruik van deze knoppen, kunt u het artikel [Interactie met de kaart](../map/interact-with-map.md#my-location-and-zoom) raadplegen.
+Als u meer informatie wilt over het gebruik van deze knoppen, kunt u het artikel [Interactie met de kaart](../map/interact-with-map.md#my-position-and-zoom) raadplegen.
 
 
-## Route {#directions}
+## Navigatie {#navigation}
 
-![Routeknop opties](@site/static/img/widgets/directions_button_allows.png)
+![Navigatieknop opties](@site/static/img/widgets/directions_button_allows.png)
 
-De **Route**-knop is essentieel voor routeplanning en navigatie:
+De **Navigatie**-knop is essentieel voor routeplanning en navigatie:
 
 - [Een route samenstellen](../navigation/index.md). Gebruik deze knop om een route te maken.
 - [Navigatie starten](../navigation/index.md). Start stapsgewijze navigatie.
-- In de navigatiemodus is de *Route*-knop standaard niet zichtbaar, maar verschijnt na een korte tik op de kaart.
+- In de navigatiemodus is de *Navigatie*-knop standaard niet zichtbaar, maar verschijnt na een korte tik op de kaart.
 
-Indicatieve statussen van de *Route*-knop:
+Indicatieve statussen van de *Navigatie*-knop:
 
 - Het *grijze standaardpictogram* geeft aan dat de route nog niet is gemaakt. Tikken op dit pictogram opent de functionaliteit voor [route-instellingen](../navigation/setup/route-navigation.md).
 - Het *blauwe standaardpictogram* geeft aan dat de route is samengesteld, maar de navigatie nog niet is gestart. Tikken op dit pictogram opent de functionaliteit voor [route-instellingen](../navigation/setup/route-navigation.md#start--stop-navigation).
@@ -51,7 +51,7 @@ Indicatieve statussen van de *Route*-knop:
 
 ## Kaart Configureren {#configure-map}
 
-![Kaart Configureren](@site/static/img/widgets/configure_map.png)
+![Kaart configureren](@site/static/img/widgets/configure_map.png)
 
 De knop **Kaart configureren** geeft toegang tot het menu [Kaart configureren](../map/configure-map-menu.md). Het pictogram weerspiegelt ook het [Huidige app-profiel](../personal/profiles.md), zodat u verschillende profielen kunt identificeren en ertussen kunt schakelen.
 
@@ -175,18 +175,41 @@ De [widget Snelle actie](./quick-action.md) is een configureerbare knop waaraan 
 
 ## Uiterlijk van kaartknoppen {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Standaardknoppen | Aangepaste knoppen |
 | :--- | :--- |
 | ![Uiterlijk van kaartknoppen](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Uiterlijk van kaartknoppen](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Instellingen voor het uiterlijk van de kaartknoppen zijn beschikbaar via de volgende menu's:
+**Ga naar** (voor Aangepaste knoppen): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu met drie stippen → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Ga naar** (voor alle Standaardknoppen): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu met drie stippen → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Ga naar** (voor een specifieke Standaardknop): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → selecteer een knop → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Menu → Scherm configureren → Knoppen → Standaardknoppen*
-- *Menu → Scherm configureren → Aangepaste knoppen → Snelle actie → menu met drie stippen → Uiterlijk*
+</TabItem>
 
-Het aanpassen van het uiterlijk van knoppen stelt u in staat om de grootte, vorm, het pictogram en de achtergronddekking aan te passen voor zowel [Snelle Actie (Aangepaste knoppen)](../widgets/quick-action.md#button-appearance) als [Standaardknoppen](../widgets/configure-screen.md#button-appearance). Deze flexibiliteit stelt u in staat de interface te personaliseren naar uw voorkeuren en de bruikbaarheid te verbeteren.
+<TabItem value="ios" label="iOS">  
+
+| Standaardknoppen | Aangepaste knoppen |
+| :--- | :--- |
+| ![Uiterlijk van kaartknoppen](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Uiterlijk van kaartknoppen](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Ga naar** (voor Aangepaste knoppen): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu met drie stippen → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Ga naar** (voor een specifieke Standaardknop): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → selecteer een knop → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+Het aanpassen van het uiterlijk van knoppen stelt u in staat om de grootte, vorm, het pictogram en de achtergronddekking aan te passen voor zowel [Snelle Actie (Aangepaste knoppen)](../widgets/quick-action.md#button-appearance) als [Standaardknoppen](../widgets/configure-screen.md#button-appearance). Op Android kunnen uiterlijkinstellingen worden toegepast op alle Standaardknoppen of op een specifieke Standaardknop, terwijl op iOS deze alleen beschikbaar zijn voor specifieke Standaardknoppen.
+
+Knop pictogrammen kunnen worden ingesteld op:
+- **Dynamisch** – het pictogram verandert op basis van de huidige actie of status.
+- **Aangepast** – kies een pictogram uit uw toegevoegde acties.
+- **Specifiek** – selecteer een vast pictogram dat altijd wordt weergegeven.
+
+Het Uiterlijk-scherm bevat een voorbeeld, zodat u kunt zien hoe uw wijzigingen eruitzien op de kaart voordat u de instellingen verlaat.
 
 
 ## Gerelateerde artikelen {#related-articles}

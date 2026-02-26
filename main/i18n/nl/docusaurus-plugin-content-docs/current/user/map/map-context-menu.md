@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Het kaartcontextmenu geeft informatie over het geselecteerde object op de kaart. U kunt het ook gebruiken om een route naar de geselecteerde locatie te maken. Om het contextmenu te openen, zoekt u eerst de gewenste locatie op de kaart en selecteert u vervolgens het object met een korte tik of een lange tik wanneer u een precies punt op de kaart selecteert.
 
 
-### Een object selecteren (enkele tik) {#select-an-object-single-tap}
+### Een object selecteren (Enkele tik) {#select-an-object-single-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -50,7 +50,7 @@ U kunt verschillende soorten kaartobjecten selecteren, zoals *POI's*, *favoriete
 
 
 
-### Een willekeurig punt selecteren (lang tikken) {#select-any-point-long-tap}
+### Een willekeurig punt selecteren (Lang tikken) {#select-any-point-long-tap}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -97,7 +97,7 @@ Door op een [GPX-track](../map/tracks/index.md) op de kaart te tikken, wordt het
 
 ![Skipistes en MTB-paden](@site/static/img/map/ski_mtb.png)  ![Skipistes en MTB-paden](@site/static/img/map/ski_mtb_2.png)
 
-U kunt op kaartelementen tikken zoals **skipistes**, **mountainbike (MTB) routes** en **crossmotorpaden** om hun contextmenu met gedetailleerde informatie te openen. Bekijk het [Routes-artikel](../map/routes.md#actions-with-routes) voor meer informatie.
+U kunt op kaartelementen tikken zoals **skipistes**, **mountainbike (MTB) routes** en **dirt bike-paden** om hun contextmenu met gedetailleerde informatie te openen. Bekijk het [Routes-artikel](../map/routes.md#actions-with-routes) voor meer informatie.
 
 
 
@@ -152,7 +152,7 @@ Daarnaast kan het paneel [OpenStreetMap Details](https://wiki.openstreetmap.org/
 
 - [Website](https://wiki.openstreetmap.org/wiki/Key:website)
 - [Telefoonnummer](https://wiki.openstreetmap.org/wiki/Key:contact)
-- [Openingstijden](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+- [Werktijden](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
 - [Kosten](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Toegankelijkheid](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Breedte](https://wiki.openstreetmap.org/wiki/Key:width) / [Hoogte](https://wiki.openstreetmap.org/wiki/Key:height) 
@@ -197,7 +197,7 @@ Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugi
 
 <TabItem value="ios" label="iOS">
 
-![Alternatieve namen iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatieve namen Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen Android](@site/static/img/map/alternative_names_2_ios.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ Kenmerken van de weergave van alternatieve namen:
 
 <TabItem value="ios" label="iOS">
 
-![Polygooninformatie iOS](@site/static/img/map/polygon_information_ios.png)
+![Polygooninformatie Android](@site/static/img/map/polygon_information_ios.png)
 
 </TabItem>
 
@@ -557,7 +557,7 @@ Beschikbare opties om de locatie te delen:
 
 </Tabs>
 
-Om de navigatie of routeplanning te starten, moet u eerst een bestemming selecteren met [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Als u al een bestemmingspunt heeft, zal het menu voorstellen om het bestemmingspunt te vervangen of om het als een ander tussenliggend of startpunt in te voegen.
+Om de navigatie of routeplanning te starten, moet u eerst een bestemming selecteren met [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation). Als u al een bestemmingspunt heeft, zal het menu voorstellen om het bestemmingspunt te vervangen of om het als een ander tussenliggend of startpunt in te voegen.
 
 Het is ook mogelijk om eerst een *Van*-bestemming te selecteren via het kaartcontextmenu (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
@@ -888,8 +888,8 @@ Beschikbare soorten acties:
 
 ## Gerelateerde artikelen {#related-articles}
 
-- [Vectorkaarten (kaartstijlen)](./vector-maps.md)
-- [Rasterkaarten (online / offline)](./raster-maps.md)
+- [Vectorkaarten (Kaartstijlen)](./vector-maps.md)
+- [Rasterkaarten (Online / Offline)](./raster-maps.md)
 - [Punten op de kaart](./point-layers-on-map.md)
 - [Contextmenu voor tracks](./tracks/track-context-menu.md)
 - [Openbaar vervoer](./public-transport.md)

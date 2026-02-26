@@ -1,5 +1,5 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
+source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
 sidebar_position: 17
 title:  Weer
 ---
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-:::info Betaalde functie
- <ProFeature/> De Weer-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app.  
+:::info Pro-functie
+De Weer-plugin is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />.
 :::
 
 Met de interactieve weerkaartlagen in de OsmAnd-app kunt u de temperatuur, atmosferische druk, bewolking, windsnelheid en neerslag in uw stad of op een andere locatie op een interactieve wereldkaart volgen. De Weer-plugin biedt uurlijkse weersvoorspellingen voor 7 dagen vooruit, rechtstreeks op de OsmAnd-kaart. Weersinformatie kan ook worden gedownload voor offline gebruik.  
@@ -60,7 +60,7 @@ De Weer-plugin is alleen beschikbaar met Kaart-renderingengine [Versie 2](../per
 
 Ga naar: *Ingeschakelde plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -74,7 +74,9 @@ Ga naar: *Ingeschakelde plugin → <Translate ios="true" ids="shared_string_menu
 
 </Tabs>
 
-Het hoofdmenu aan de zijkant heeft een speciaal menu-item **Weer** dat snelle toegang biedt tot alle weertools. Het *Weersvoorspellingsscherm* toont informatie over *temperatuur*, *atmosferische druk*, *windsnelheid*, *bewolking* en *neerslag*.  
+Het hoofdmenu aan de zijkant heeft een speciaal menu-item **Weer** dat snelle toegang biedt tot alle weertools. Het *Weersvoorspellingsscherm* toont informatie over *temperatuur*, *atmosferische druk*, *windsnelheid*, *bewolking* en *neerslag*. 
+
+De voorspellingswaarden worden weergegeven voor het midden van de kaart, gemarkeerd door een kruisvizier (zwart op Android, rood op iOS). Verplaats de kaart om de geselecteerde locatie te wijzigen — de weergegevens worden automatisch bijgewerkt voor het nieuwe punt.
 
 Onderaan het scherm bevindt zich de *weer-werkbalk*. U kunt de dagknoppen en de tijdschuifregelaar gebruiken om de exacte tijd in te stellen waarop de weersvoorspelling wordt weergegeven.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Bovenaan het informatiepaneel ziet u de naam van het spoor en het symbool dat wordt gebruikt om het te markeren (*alleen Android*). De naam van het spoor kan worden gewijzigd met de hernoemfunctie in het [Opties menu](#options). Sommige sporen (meestal de *[Reisgidsen](../../plan-route/travel-guides.md#manage-as-gpx-track)*) kunnen een korte *[beschrijving](#description-and-info)* en/of een afbeelding onder de *Spoornaam* hebben. Een pijl toont de *Richting naar het dichtstbijzijnde punt van het spoor* vanaf [Mijn locatie](../../map/interact-with-map.md#my-location-and-zoom).  
+Bovenaan het informatiepaneel ziet u de naam van het spoor en het symbool dat wordt gebruikt om het te markeren (*alleen Android*). De naam van het spoor kan worden gewijzigd met de hernoemfunctie in het [Opties menu](#options). Sommige sporen (meestal de *[Reisgidsen](../../plan-route/travel-guides.md#manage-as-gpx-track)*) kunnen een korte *[beschrijving](#description-and-info)* en/of een afbeelding onder de *Spoornaam* hebben. Een pijl toont de *Richting naar het dichtstbijzijnde punt van het spoor* vanaf [Mijn positie](../../map/interact-with-map.md#my-position-and-zoom).  
 
 Het infopaneel geeft ook informatie over het volgende:
 
@@ -129,7 +129,7 @@ Het menu **Opties** stelt u in staat om het geselecteerde spoor te beheren en aa
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Alleen Android*) – Voegt spoorsegmenten samen om gaten op te vullen.
-- **<Translate android="true" ids="analyze_on_map"/>**. Opent de [Analyseer op kaart](../tracks/index.md#analyze-track-on-map) tool om de hoogte, snelheid en afstand van het spoor te inspecteren.
+- **<Translate android="true" ids="analyze_on_map"/>**. Opent de [Analyseer op kaart](../tracks/index.md#analyze-track-on-map) tool om de hoogte, snelheid, afstand en eventuele aanvullende gegevens in het spoor te inspecteren (zoals gegevens van externe sensoren of voertuigmetrieken).
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Alleen Android*) - Analyseert het spoor op tijd- of afstands[intervallen](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
@@ -364,11 +364,11 @@ Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manie
 
 ### Bereken Ontbrekende Hoogte {#calculate-missing-elevation}
 
-:::note OsmAnd Pro abonnement
-[Hoogte offline berekenen](../../plan-route/create-route.md#get-elevation-data) functie is alleen beschikbaar voor [**OsmAnd Pro abonnees**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Pro-functie
+[Hoogte offline berekenen](../../plan-route/create-route.md#get-elevation-data) is een betaalde [**OsmAnd Pro**]-functie <ProFeature />.
+:::
 
 [Deze functie](../../plan-route/create-route.md#get-elevation-data) stelt u in staat om het hoogteprofiel voor een GPX-spoor offline te berekenen voor elk terrein tussen 70 graden noorderbreedte en 70 graden zuiderbreedte, gebaseerd op [Terreinkaartgegevens](../../plugins/topography.md#download-maps). *Terreinkaarten (3D) moeten vooraf gedownload zijn*.
 
@@ -699,7 +699,7 @@ Deze optie stelt u in staat om gemiddelde, minimale en maximale hartslagwaarden 
 
 Dit filter stelt u in staat om uw spoorstatistieken te verbeteren door onnodige of onjuiste gegevens uit te sluiten. U kunt spoorpunten filteren die niet passen bij uw spoorparameters, en als resultaat een nauwkeurigere grafiek en visuele routelijn krijgen zonder vervorming of opnameruis. U kunt wijzigingen aanbrengen met filters zoals *Afvlakking*, *Snelheid*, *Hoogte* en *GPS-precisie*, die gefilterde punten uit het huidige spoor verbergen. Bovendien kunt u in het *Statistieken*-menu controleren hoe uw wijzigingen op de grafiek worden weergegeven voordat u ze opslaat. U kunt ook *Terugzetten naar origineel* en *Opslaan als kopie* van uw spoor in dit filter zonder het origineel op te slaan.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

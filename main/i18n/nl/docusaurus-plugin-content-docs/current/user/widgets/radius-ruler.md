@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title:  Radiusliniaal en Liniaal
 ---
@@ -204,7 +204,7 @@ Voor meer informatie over *de positie op het scherm*, zie het artikel [Scherm co
 
 U kunt overschakelen naar de **3D-weergave** om afstanden en het omliggende terrein beter te visualiseren wanneer u de Radiusliniaal gebruikt. Deze weergave kantelt de kaart en zorgt voor een perspectiefeffect dat de zichtbare radius vergroot.
 
-- Tik op [de locatieknop](../map/interact-with-map.md#my-location-and-zoom) om op uw positie te focussen.
+- Tik op [de positiekknop](../map/interact-with-map.md#my-position-and-zoom) om op uw positie te focussen.
 - Gebruik een [veegbeweging met twee vingers omhoog](../map/interact-with-map.md#gestures) om de kaart in de 3D-modus te kantelen.
 
 De radiuscirkels verschijnen met diepte, wat bijzonder nuttig is voor routeplanning in heuvelachtige gebieden of stedelijke omgevingen waar verticale context van belang is.
