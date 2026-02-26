@@ -14,6 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
+
 ## Versione italiana
 
 **OsmAnd Pro per "Wanderer Biker"**
