@@ -14,11 +14,11 @@ import { ReactComponent as ShortDurationIcon } from '../../assets/icons/ic_actio
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
 import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
-import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
 import { getSelectedSort } from '../components/buttons/SortFilesButton';
 import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
+import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -256,14 +256,8 @@ const SortActions = forwardRef(
         const groups = () => {
             if (trackGroup) {
                 if (trackGroup.name === DEFAULT_GROUP_NAME || trackGroup.fullName === DEFAULT_GROUP_NAME) {
-                    return [
-                        ...(trackGroup.subfolders || []),
-                        ...(ctx.smartFolders?.tracks || []).map((sf) => ({
-                            ...sf,
-                            type: SMART_TYPE,
-                            files: Array.isArray(sf.files) ? sf.files : Object.values(sf.files),
-                        })),
-                    ];
+                    const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+                    return [...(trackGroup.subfolders || []), ...smartFolders];
                 }
                 return trackGroup.subfolders;
             } else if (favoriteGroup) {
@@ -292,7 +286,7 @@ const SortActions = forwardRef(
                     favoriteGroup,
                 });
             }
-        }, [files(), currentMethod, ctx.smartFolders?.tracks]);
+        }, [files(), currentMethod]);
 
         const handleChange = (event) => {
             const method = event.target.value;

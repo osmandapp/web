@@ -20,7 +20,7 @@ import anchorme from 'anchorme';
 import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
 import { getFileStorage, GPX } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
-import { SHARE_TYPE, SMART_TYPE } from '../../menu/share/shareConstants';
+import { SHARE_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
@@ -1573,8 +1573,6 @@ export function updateTracks(ctx, smartf, newTracks) {
                 ...ctx.shareWithMeFiles,
                 tracks: newTracks,
             });
-        } else if (smartf?.type === SMART_TYPE) {
-            ctx.setGpxFiles(newTracks);
         }
     } else {
         ctx.setGpxFiles(newTracks);
@@ -1587,12 +1585,8 @@ function showInfoBlock({ hasUrl, file, ctx, smartf, recentSaver }) {
     if (smartf?.type === SHARE_TYPE) {
         allFiles = ctx.shareWithMeFiles.tracks;
         ctx.setCurrentObjectType(OBJECT_TYPE_SHARE_FILE);
-    } else if (smartf?.type === SMART_TYPE) {
-        allFiles = ctx.gpxFiles;
-        if (ctx.currentObjectType !== OBJECT_TRACK_ANALYZER) {
-            ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
-        }
-    } else if (!smartf) {
+    }
+    if (!smartf) {
         //default case for cloud tracks
         allFiles = ctx.gpxFiles;
 

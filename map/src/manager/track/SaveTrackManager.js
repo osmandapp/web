@@ -26,6 +26,7 @@ import {
 import Utils from '../../util/Utils';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
+import { SMART_TYPE } from '../../menu/share/shareConstants';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
@@ -337,7 +338,7 @@ export async function refreshGlobalFiles({
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
         const resJson = await respGetFiles.json();
         if (resJson && resJson.uniqueFiles) {
-            getFilesForUpdateDetails(resJson.uniqueFiles, ctx.setUpdateFiles, ctx.setSmartFolders);
+            getFilesForUpdateDetails(resJson.uniqueFiles, ctx.setUpdateFiles, ctx.setTracksGroups);
             ctx.setListFiles(resJson);
         }
         if (type === OBJECT_TYPE_FAVORITE) {
@@ -404,9 +405,11 @@ function updateTrackGroups(listFiles, ctx) {
     if (!isEmpty(listFiles)) {
         const files = getGpxFiles(listFiles);
         const trackGroups = createTrackGroups({ files, ctx });
-        ctx.setTracksGroups(trackGroups);
+        const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+        ctx.setTracksGroups([...trackGroups, ...smartFolders]);
     } else {
-        ctx.setTracksGroups([]);
+        const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+        ctx.setTracksGroups(smartFolders);
     }
 }
 

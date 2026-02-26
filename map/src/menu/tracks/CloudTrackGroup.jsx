@@ -36,21 +36,13 @@ export default function CloudTrackGroup({ index, group }) {
 
     const handleClick = (e) => {
         if (e.target !== 'path') {
-            if (group.type === SMART_TYPE) {
-                ctx.setOpenGroups((prevState) => [
-                    ...prevState,
-                    { files: group.files, type: group.type, name: group.name },
-                ]);
-            } else {
-                ctx.setOpenGroups((prevState) => [...prevState, group]);
-            }
+            ctx.setOpenGroups((prevState) => [...prevState, group]);
         }
     };
 
     const getInfoText = () => {
         if (group.type === SMART_TYPE) {
-            const fileCount = Array.isArray(group.files) ? group.files.length : Object.values(group.files).length;
-            return `${fileCount} ${t('shared_string_gpx_files').toLowerCase()}`;
+            return `${group.realSize} ${t('shared_string_gpx_files').toLowerCase()}`;
         }
         return `${fmt.monthShortDay(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
     };
