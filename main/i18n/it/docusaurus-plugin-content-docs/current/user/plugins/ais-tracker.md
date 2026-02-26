@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title:  AIS Vessel Tracker
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -28,7 +29,7 @@ Il plugin **AIS Vessel Tracker** visualizza le posizioni dell'[Automatic Identif
 La possibilità di utilizzare le mappe online è abilitata automaticamente nella versione iOS di OsmAnd. Per visualizzare le mappe online su Android, è necessario effettuare le seguenti impostazioni:
 
 1. [Abilita](../plugins/index.md#enable--disable) il plugin **AIS vessel tracker** in *Menu principale → Plugin → AIS vessel tracker*.
-2. Configura le [impostazioni AIS](../map/raster-maps.md#select-raster-maps)
+2. Configura le [impostazioni AIS](../map/raster-maps.md#layers)
 3. Configura una **connessione al server AIS** o collega un **ricevitore AIS esterno**.
 4. Verifica che le imbarcazioni siano visualizzate sulla mappa di OsmAnd.
 
@@ -53,7 +54,7 @@ L'AIS opera su *frequenze VHF* (161.975 MHz e 162.025 MHz) e ha un raggio di seg
 
 </Tabs>
 
-Se configurato correttamente, le posizioni delle imbarcazioni appariranno sulla mappa. Caratteristiche principali:
+Se configurato correttamente, le posizione delle imbarcazioni appariranno sulla mappa. Caratteristiche principali:
 
 - Le imbarcazioni si muovono in base alla velocità e alla rotta in tempo reale.
 - Nuove navi entrano ed escono dinamicamente dall'area visibile.
@@ -81,7 +82,7 @@ Le imbarcazioni AIS trasmettono tre tipi di dati:
     - **MMSI (Maritime Mobile Service Identity)** (*Identificativo univoco della nave a 9 cifre*)
     - **Numero IMO** (*se disponibile*)  
     - **Nominativo Internazionale**  
-    - **Tipo di Nave** (*es. Cargo, Passeggeri, Peschereccio*)  
+    - **Tipo di Nave** (*es. Cargo, Passeggeri, Pesca*)  
     - **Dimensioni della Nave** (*Lunghezza e Larghezza*)  
     - **Posizione dell'Antenna AIS** (*Relativa allo scafo della nave*)  
 
@@ -115,7 +116,7 @@ Le imbarcazioni AIS trasmettono tre tipi di dati:
 | **Simboli dei Tipi di Imbarcazione** |    |
 | *Triangolo verde*    | Nave da carico    |
 | *Triangolo blu*     | Nave passeggeri |
-| *Triangolo nero*    | Peschereccio |
+| *Triangolo nero*    | Imbarcazione da pesca |
 | *Triangolo giallo*   | Rimorchiatore       |
 | *Triangolo rosso*      | Petroliera        |
 | *Triangolo bianco*    | Nave militare |
@@ -178,7 +179,7 @@ Il plugin *AIS vessel tracker* offre varie impostazioni per personalizzare la na
 
 ### Modalità di Simulazione AIS {#ais-simulation-mode}
 
-> *È possibile simulare le posizioni delle imbarcazioni AIS utilizzando il [plugin Sviluppo di OsmAnd](../plugins/development.md).*
+> *È possibile simulare le posizione delle imbarcazioni AIS utilizzando il [plugin Sviluppo di OsmAnd](../plugins/development.md).*
 
 1. **Scarica i file di testo dei dati AIS**:
 

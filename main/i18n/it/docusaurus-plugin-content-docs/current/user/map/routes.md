@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title:  Percorsi
 ---
 
@@ -77,7 +77,7 @@ I [percorsi escursionistici](https://wiki.openstreetmap.org/wiki/Walking_Routes)
 
 La funzione **Sentieri da Dirt Bike** consente di visualizzare sulla mappa percorsi specifici per dirt bike basati sul tag `dirtbike:scale`. Questa scala evidenzia i sentieri adatti al dirt biking, con una sovrapposizione colorata che mostra i livelli di difficoltà ([Legenda della mappa](../map-legend/osmand.md#routes)).  
 
-È possibile attivare questa funzione in *Menu → Configura mappa → Percorsi → Sentieri da dirt bike*. Il sistema funziona in modo simile alla scala MTB, offrendo una rappresentazione visiva dei percorsi su misura per il dirt biking — maggiori informazioni sul [tag `dirtbike` possono essere trovate qui](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+È possibile attivare questa funzione in *Menu → Configura mappa → Percorsi → Percorsi da dirt bike*. Il sistema funziona in modo simile alla scala MTB, offrendo una rappresentazione visiva dei percorsi su misura per il dirt biking — maggiori informazioni sul [tag `dirtbike` possono essere trovate qui](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
 
 ### Vie di arrampicata {#climbing-routes}
@@ -119,7 +119,7 @@ Alcuni segmenti di strada potrebbero far parte di molti percorsi, ma potrebbero 
 - _Piste da sci e percorsi_ nello stile di mappa _OsmAnd predefinito_.  
 ![Mappa percorsi - piste da sci](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Le piste da sci e i percorsi sono un gruppo specifico di [percorsi](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Tipicamente, questi percorsi possono essere utilizzati con lo stile di mappa [Invernale e Sci](../map/vector-maps.md#winter-and-ski) con tutte le [Piste](https://wiki.openstreetmap.org/wiki/Pistes) visibili. Se è attivo un altro stile di mappa, viene mostrato un banner che suggerisce di passare a [Invernale e Sci](../map/vector-maps.md#winter-and-ski) (*solo Android*) e vengono mostrate solo le Piste. Tocca ***Passa a*** per cambiare lo stile di mappa senza lasciare la schermata corrente, o ***Più tardi*** per nascondere il banner.
+Le piste da sci e i percorsi sono un gruppo specifico di [percorsi](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Tipicamente, questi percorsi possono essere utilizzati con lo stile di mappa [Invernale e Sci](../map/map-styles.md#winter-and-ski) con tutte le [Piste](https://wiki.openstreetmap.org/wiki/Pistes) visibili. Se è attivo un altro stile di mappa, viene mostrato un banner che suggerisce di passare a [Invernale e Sci](../map/map-styles.md#winter-and-ski) (*solo Android*) e vengono mostrate solo le Piste. Tocca ***Passa a*** per cambiare lo stile di mappa senza lasciare la schermata corrente, o ***Più tardi*** per nascondere il banner.
 
 
 ### Sentieri per motoslitta {#snowmobile-trails}
@@ -140,7 +140,7 @@ I [percorsi a cavallo](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) so
 
 ![Mappa percorsi - sport in acque bianche](@site/static/img/map/map-routes-whitewater-sport.png)
 
-I [percorsi per acque bianche](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) sono mostrati insieme a icone di accesso, zone di pericolo per il [turismo in acque bianche](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+I [percorsi per acque bianche](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) sono mostrati insieme a icone di accesso, zone di pericolo e rapide vicine per il [turismo in acque bianche](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). Vedere le [funzionalità per acque bianche](../map-legend/osmand.md#whitewater-features) nella Legenda della mappa per i gradi delle rapide, i gradi delle sezioni fluviali e i simboli correlati.
 
 
 ### Percorsi di corsa {#running-routes}
@@ -180,7 +180,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 - Per visualizzare i percorsi richiesti sulla mappa, abilitali nell'elenco *Percorsi* del menu [Configura mappa](../map/configure-map-menu.md).
 - OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
-- I tipi principali di percorso possono essere filtrati anche per classi e sottoclassi, consentendo di visualizzare solo gruppi specifici all'interno di ciascun tipo. Ad esempio, è possibile mostrare i percorsi escursionistici per **simboli OSMC** come classi e per *reti internazionali, nazionali, regionali* o *locali* come sottoclassi.
+- I tipi principali di percorso possono essere filtrati anche per classi e sottoclassi, consentendo di visualizzare solo gruppi specifici all'interno di ciascun tipo. Ad esempio, è possibile mostrare i percorsi escursionistici per **simboli OSMC** come classi e per *reti internazionali, nazionali, regionali* o *locali* come sottoclassi, che sono attualmente disponibili quando il plugin [OsmAnd Development](../plugins/development.md) è abilitato.
 - È possibile creare una traccia sopra i percorsi utilizzando lo strumento [Pianifica un percorso](../plan-route/create-route.md). 
 - Quando più percorsi corrono lungo la stessa strada, ogni percorso viene visualizzato come una linea semitrasparente separata posizionata sopra le altre. 
 - Quando si tocca una posizione in cui più percorsi si sovrappongono, viene mostrato un menu contestuale con tutti i percorsi che passano attraverso quel punto. 
@@ -194,7 +194,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Menu Percorsi iOS](@site/static/img/map/configure_map_routes_ios.png)
+![Menu tracce iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - Per visualizzare i percorsi richiesti sulla mappa, abilitali nell'elenco *Percorsi* del menu [Configura mappa](../map/configure-map-menu.md).
 - OsmAnd può evidenziare i [percorsi presenti su OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Possono essere selezionati toccando [il simbolo sul percorso](#save-as-a-track) e, se l'insieme visibile di percorsi è configurato correttamente, è possibile seguire il colore e le icone.
@@ -274,7 +274,7 @@ Le seguenti informazioni saranno visibili nel menu contestuale:
 - [Informazioni sull'altitudine](../navigation/setup/route-details.md#elevation-info). Mostra informazioni sui dati di altitudine del percorso.
 - [Analizza traccia sulla mappa](../map/tracks/index.md#analyze-track-on-map). Mostra un'analisi dettagliata dei dati della traccia utilizzando grafici e mappe.
 
-Per visualizzare il grafico dell'altitudine, della pendenza o i dettagli dell'altitudine per un percorso selezionato, è sufficiente toccare uno dei seguenti valori nel menu contestuale: **Distanza**, **Salita**, **Discesa** o **Altitudine**.
+Per visualizzare il grafico dell'altitudine, della pendenza o i dettagli dell'altitudine per un percorso selezionato, è sufficiente toccare uno dei seguenti valori nel menu contestuale: **Distanza**, **In salita**, **In discesa** o **Altitudine**.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -365,7 +365,7 @@ Trova i percorsi utilizzando la [funzione Cerca](../search/index.md) per nome o 
 
 Per cercare, vai al menu *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e inserisci la tua attività.
 
-Vai a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* per trovare i percorsi desiderati. I risultati della ricerca dei percorsi mostrano il nome del percorso, il tipo di attività, la lunghezza, la posizione, salita/discesa (su Android) e la distanza dal punto più vicino. 
+Vai a *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* per trovare i percorsi desiderati. I risultati della ricerca dei percorsi mostrano il nome del percorso, il tipo di attività, la lunghezza, la posizione, in salita/in discesa (su Android) e la distanza dal punto più vicino. 
 
 ### Filtri percorsi {#routes-filters}
 

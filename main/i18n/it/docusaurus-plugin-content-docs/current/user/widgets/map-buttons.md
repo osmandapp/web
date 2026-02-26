@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title:  Pulsanti della Mappa
 ---
@@ -18,10 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-I pulsanti della mappa, tra cui *Zoom*, *Cerca*, *Indicazioni*, *Bussola*, *La mia posizione*, *Modalità 3D* e *Menu*, sono i controlli principali per interagire con la mappa. Ogni pulsante offre funzionalità specifiche per migliorare la tua esperienza di navigazione e di utilizzo della mappa.
+I pulsanti della mappa, tra cui *Zoom*, *Cerca*, *Navigazione*, *Bussola*, *La mia posizione*, *Modalità 3D* e *Menu*, sono i controlli principali per interagire con la mappa. Ogni pulsante offre funzionalità specifiche per migliorare la tua esperienza di navigazione e di utilizzo della mappa.
 
 
-## La mia posizione e Zoom {#my-location-and-zoom}
+## La mia posizione e Zoom {#my-position-and-zoom}
 
 ![Menu schermata di configurazione](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -29,14 +29,14 @@ Utilizza questi pulsanti per controllare come la mappa viene visualizzata sullo 
 
 - **La mia posizione**. Mostra se il centro della mappa è sincronizzato con la geolocalizzazione attuale del tuo dispositivo.
 - **Zoom**. Ti permette di regolare il livello di zoom della mappa per fornire più o meno dettagli.
-Se desideri maggiori informazioni sull'utilizzo di questi pulsanti, puoi consultare l'articolo [Interagire con la mappa](../map/interact-with-map.md#my-location-and-zoom).
+Se desideri maggiori informazioni sull'utilizzo di questi pulsanti, puoi consultare l'articolo [Interagire con la mappa](../map/interact-with-map.md#my-position-and-zoom).
 
 
-## Indicazioni {#directions}
+## Navigazione {#navigation}
 
 ![Il pulsante Indicazioni permette](@site/static/img/widgets/directions_button_allows.png)
 
-Il pulsante **Indicazioni** è essenziale per la pianificazione del percorso e la navigazione:
+Il pulsante **Navigazione** è essenziale per la pianificazione del percorso e la navigazione:
 
 - [Costruire un percorso](../navigation/index.md). Utilizza questo pulsante per creare un percorso.
 - [Avviare la navigazione](../navigation/index.md). Avvia la navigazione turn-by-turn.
@@ -58,7 +58,7 @@ Il pulsante **Configura mappa** fornisce accesso al [menu Configura mappa](../ma
 
 ## Menu principale {#main-menu}
 
-![Pulsante Menu principale](@site/static/img/widgets/main_menu_button.png)
+![Pulsante menu principale](@site/static/img/widgets/main_menu_button.png)
 
 Il pulsante [**Menu principale**](../start-with/main-menu.md) apre il menu generale, garantendo l'accesso a [tutte le funzionalità dell'applicazione](../start-with/main-menu.md). In modalità navigazione, questo pulsante è nascosto di default e diventa visibile dopo un breve tocco sulla mappa.
 
@@ -93,9 +93,9 @@ Il pulsante Bussola indica l'orientamento della mappa sullo schermo del tuo disp
 
 Il pulsante della bussola offre molteplici azioni per controllare l'orientamento della mappa:
 
-- **Tocco singolo**. Un *tocco singolo* del [pulsante Bussola](../widgets/map-buttons.md#compass) (situato nell'angolo in alto a sinistra dello schermo quando [visibile](../widgets/map-buttons.md#display-options)) riorienta istantaneamente la mappa *verso il Nord* in tutte le modalità di orientamento della mappa. Anche se la mappa è in modalità *Direzione della bussola*, ruota comunque per un momento e poi torna all'orientamento dinamico di quella modalità.
+- **Tocco singolo**. Un *tocco singolo* del [pulsante Bussola](../widgets/map-buttons.md#compass) (situato nell'angolo in alto a sinistra dello schermo quando [visibile](../widgets/map-buttons.md#display-options)) riorienta istantaneamente l'orientamento della mappa *verso il Nord* in tutte le modalità di orientamento della mappa. Anche se la mappa è in modalità *Direzione della bussola*, ruota comunque per un momento e poi torna all'orientamento dinamico di quella modalità.
 
-- **Doppio tocco**. Per passare rapidamente da una modalità di orientamento della mappa all'altra, come seguire la direzione GPS oruotare con il dispositivo, *tocca due volte* il [pulsante Bussola](../widgets/map-buttons.md#compass) (quando [visibile](../widgets/map-buttons.md#display-options)).
+- **Doppio tocco**. Per passare rapidamente da una modalità di orientamento della mappa all'altra, come seguire la direzione GPS o ruotare con il dispositivo, *tocca due volte* il [pulsante Bussola](../widgets/map-buttons.md#compass) (quando [visibile](../widgets/map-buttons.md#display-options)).
 
 - **Tocco prolungato**. Con un *tocco prolungato* del [pulsante Bussola](../widgets/map-buttons.md#compass) (quando [visibile](../widgets/map-buttons.md#display-options)) puoi aprire un elenco di tutte le modalità di orientamento della mappa e selezionare quella desiderata. Questo elenco può essere aperto anche nelle [Impostazioni del profilo](../personal/profiles.md#appearance).
 
@@ -153,7 +153,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 - *<Translate android="true" ids="shared_string_hidden"/>*. Se questa modalità è selezionata per un pulsante, è necessario utilizzare un gesto per modificare la visualizzazione della mappa. Tocca la mappa con due dita e muovile su e giù per regolare l'inclinazione della mappa.  
 - *<Translate android="true" ids="shared_string_visible"/>*. Il pulsante è sempre visualizzato sulla schermata della mappa.
-- *<Translate android="true" ids="visible_in_3d_mode"/>*. Il pulsante viene visualizzato sulla schermata della mappa quando si modifica la visualizzazione della mappa con un gesto [*due dita e sposta*](../map/interact-with-map.md#gestures).  
+- *<Translate android="true" ids="visible_in_3d_mode"/>*. Il pulsante viene visualizzato sulla schermata della mappa quando modifichi la visualizzazione della mappa con un gesto [*due dita e sposta*](../map/interact-with-map.md#gestures).  
 
 ### Impostazioni aggiuntive {#additional-settings}
 
@@ -170,23 +170,46 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shar
 
 ## Pulsanti personalizzati {#custom-buttons}
 
-Il [Widget Azione rapida](./quick-action.md) è un pulsante configurabile a cui possono essere assegnati vari tipi di azione. È anche possibile avere più [Pulsanti personalizzati](./quick-action.md#custom-buttons).
+Il [widget Azione rapida](./quick-action.md) è un pulsante configurabile a cui possono essere assegnati vari tipi di azione. È anche possibile avere più [Pulsanti personalizzati](./quick-action.md#custom-buttons).
 
 
 ## Aspetto pulsante mappa {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Pulsanti predefiniti | Pulsanti personalizzati |
 | :--- | :--- |
 | ![Aspetto pulsante mappa](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Aspetto pulsante mappa](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Le impostazioni per l'aspetto dei pulsanti della mappa sono disponibili tramite i seguenti menu:
+**Vai a** (per Pulsanti personalizzati): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu a tre punti → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vai a** (per tutti i Pulsanti predefiniti): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu a tre punti → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vai a** (per un Pulsante predefinito specifico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleziona un pulsante → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Menu → Configura schermata → Pulsanti → Pulsanti predefiniti*
-- *Menu → Configura schermata → Pulsanti personalizzati → Azione rapida → menu a tre punti → Aspetto*
+</TabItem>
 
-La personalizzazione dell'aspetto dei pulsanti consente di regolare le dimensioni, la forma, l'icona e l'opacità dello sfondo sia per i pulsanti di [Azione rapida (Pulsanti personalizzati)](../widgets/quick-action.md#quick-action-button-appearance) che per i [Pulsanti predefiniti](../widgets/configure-screen.md#button-appearance). Questa flessibilità ti consente di personalizzare l'interfaccia in base alle tue preferenze e migliorare l'usabilità.
+<TabItem value="ios" label="iOS">  
+
+| Pulsanti predefiniti | Pulsanti personalizzati |
+| :--- | :--- |
+| ![Aspetto pulsante mappa](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Aspetto pulsante mappa](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Vai a** (per Pulsanti personalizzati): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu a tre punti → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Vai a** (per un Pulsante predefinito specifico): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleziona un pulsante → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+La personalizzazione dell'aspetto dei pulsanti consente di regolare le dimensioni, la forma, l'icona e l'opacità dello sfondo sia per [Azione rapida (Pulsanti personalizzati)](../widgets/quick-action.md#button-appearance) che per [Pulsanti predefiniti](../widgets/configure-screen.md#button-appearance). Su Android, le impostazioni di aspetto possono essere applicate a tutti i Pulsanti predefiniti o a un Pulsante predefinito specifico, mentre su iOS sono disponibili solo per Pulsanti predefiniti specifici.
+
+Le icone dei pulsanti possono essere impostate su:
+- **Dinamica** – l'icona cambia in base all'azione o allo stato corrente.
+- **Personalizzata** – scegli un'icona dalle tue azioni aggiunte.
+- **Specifica** – seleziona un'icona fissa che verrà sempre visualizzata.
+
+La schermata Aspetto include un'anteprima, che ti permette di vedere come appariranno le tue modifiche sulla mappa prima di uscire dalle impostazioni.
 
 
 ## Articoli correlati {#related-articles}

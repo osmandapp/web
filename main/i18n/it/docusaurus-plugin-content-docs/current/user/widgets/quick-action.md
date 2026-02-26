@@ -1,5 +1,5 @@
 ---
-source-hash: acec87397450d121c90aab13dab433cdd3d9e2ce9716bf61ccd71e41489aca96
+source-hash: 433c630536848b7031cc7094180ed08b5bcf9a316809b7e405f63ce39916101b
 sidebar_position: 7
 title:  Azione Rapida (Pulsanti personalizzati)
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Il widget Azione Rapida è un elemento interattivo dell'interfaccia utente che fornisce un accesso veloce a funzioni o azioni chiave senza aprire impostazioni aggiuntive. Questo widget è posizionato sulla schermata principale della mappa e consente di semplificare e velocizzare l'interazione con l'applicazione, rendendola più comoda ed efficiente.  
 
-![Widget Azione Rapida](@site/static/img/widgets/quick_action_widget.png)
+![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
 
 
 ## Widget Azione Rapida {#quick-action-widget}
@@ -32,7 +32,7 @@ Il widget Azione Rapida è un elemento interattivo dell'interfaccia utente che f
 
 Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
-![Widget Azione Rapida_android](@site/static/img/widgets/quick_action_widget_android.png)
+![Quick action widget_android](@site/static/img/widgets/quick_action_widget_android.png)
 
 </TabItem>
 
@@ -40,7 +40,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,c
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
-![Widget Azione Rapida_ios](@site/static/img/widgets/quick_action_widget_ios.png)
+![Quick action widget_ios](@site/static/img/widgets/quick_action_widget_ios.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Per utilizzare il pulsante Azione Rapida, è necessario prima abilitare questo w
 
 Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Tocca Elimina (icona Cestino nell'angolo in alto a destra) → Seleziona azioni*
 
-![Widget Azione Rapida_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Pulsante personalizzato Android](@site/static/img/widgets/add_action_screen_andr.png)
+![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,c
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tocca Modifica (icona Matita nell'angolo in alto a destra) → Seleziona azioni*
 
-![Widget Azione Rapida_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Pulsante personalizzato Android](@site/static/img/widgets/add_action_screen_ios.png)
+![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
@@ -97,13 +97,13 @@ Tutte le azioni sono organizzate nel menu **Aggiungi Azione** e raggruppate per 
 
 <TabItem value="android" label="Android">  
 
-![Widget Azione Rapida_android_ordine](@site/static/img/widgets/quick_action_widget_android_order.png)
+![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widget Azione Rapida_ios_ordine](@site/static/img/widgets/quick_action_widget_ios_order.png)
+![Quick action widget_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png)
 
 </TabItem>
 
@@ -143,7 +143,7 @@ Alcune azioni come *Sorgente mappa*, *Stile mappa*, *Sovrapposizione*, *Sottopos
 
 Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*  
 
-![Pulsante personalizzato Android](@site/static/img/widgets/custom_button_andr.png)  
+![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
 
 </TabItem>
 
@@ -151,7 +151,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
-![Pulsante personalizzato Android](@site/static/img/widgets/custom_button_ios.png)  
+![Custom button Android](@site/static/img/widgets/custom_button_ios.png)  
 
 </TabItem>
 
@@ -165,7 +165,7 @@ Tutte le [azioni](#action-types) disponibili sono identiche a quelle che possono
 
 <InfoAndroidOnly/>
 
-![Aspetto del pulsante di azione rapida](@site/static/img/widgets/qa_button_appearance_andr.png)
+![Quick action button appearance](@site/static/img/widgets/qa_button_appearance_andr.png)
 
 È possibile modificare l'aspetto dei pulsanti di Azione Rapida tramite: *Menu → Configura schermata → Pulsanti personalizzati → Azione rapida → menu a tre punti → Aspetto*. Questa impostazione offre opzioni per personalizzare le dimensioni, la forma, l'icona e l'opacità dello sfondo del pulsante, offrendo un maggiore controllo sull'aspetto dei pulsanti sullo schermo.  
 
@@ -177,19 +177,19 @@ Il widget *Azione Rapida* appare nell'angolo inferiore della schermata della map
 
 - **Aspetto iniziale**. Per impostazione predefinita, il widget di azione rapida è posizionato nell'angolo in basso a destra dell'interfaccia della mappa.
 
-    ![Widget Azione Rapida_visualizzazione](@site/static/img/widgets/quick_action_widget_view.png)
+    ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png)
 
 - **Spostare il widget**. Premendo a lungo e trascinando il widget, è possibile riposizionarlo sullo schermo, con allineamento automatico a colonne e righe.  
 
-    ![Widget Azione Rapida_tocco](@site/static/img/widgets/quick_action_widget_tap.png)
+    ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png)
 
 - **Nuovo posizionamento**. Una volta spostato, il widget rimarrà nella sua nuova posizione sulla schermata della mappa fino a quando non verrà nuovamente regolato manualmente.
 
-    ![Widget Azione Rapida_spostamento](@site/static/img/widgets/quick_action_widget_move.png)
+    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png)
 
 - **Multipli [Pulsanti personalizzati](#custom-buttons)**. È possibile aggiungere più pulsanti di azione rapida alla schermata della mappa. Questi pulsanti possono anche essere personalizzati e riposizionati individualmente utilizzando lo stesso metodo di trascinamento.
 
-    ![Widget Azione Rapida_spostamento](@site/static/img/widgets/quick_action_widget_multi.png)
+    ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png)
 
 ### Layout a Griglia per i Pulsanti {#grid-layout-for-buttons}
 
@@ -197,17 +197,17 @@ Il widget *Azione Rapida* appare nell'angolo inferiore della schermata della map
 
 <TabItem value="android" label="Android">  
 
-![Griglia per pulsanti_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
+![Grid for buttons_v_android](@site/static/img/widgets/grid_buttons_v_and.png) 
 
-![Griglia per pulsanti_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
+![Grid for buttons_h_android](@site/static/img/widgets/grid_buttons_h_1_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Griglia per pulsanti_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
+![Grid for buttons_v_ios](@site/static/img/widgets/grid_buttons_v_ios.png) 
 
-![Griglia per pulsanti_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
+![Grid for buttons_h_ios](@site/static/img/widgets/grid_buttons_h_1_ios.png)
 
 </TabItem>
 
@@ -241,7 +241,7 @@ I [profili importati](https://osmand.net/docs/user/personal/import-export#export
 | Mostra / Nascondi <br /> [**Trasporto pubblico**](../map/vector-maps.md#transport) | Abilita o disabilita il livello della mappa del trasporto pubblico <br /> - *Tipo di trasporto*. Al primo tocco, è possibile selezionare uno o più tipi di trasporto, tra cui *Fermate del trasporto*, *Linee di autobus, filobus e navette*, *Linee di tram e treni*, *Linee della metropolitana*. |
 | Cambia <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Crea un elenco di sorgenti mappa come sovrapposizione della mappa e scorrile ciclicamente. <br /> - *Nota*. Per cambiare le sovrapposizioni della mappa in OsmAnd, è possibile impostare una singola azione rapida che consente di passare tra più sovrapposizioni, oppure creare diverse azioni rapide separate, ognuna per una specifica sovrapposizione. |
 | Cambia <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Crea un elenco di sorgenti mappa come sottoposto della mappa e scorrile ciclicamente. <br /> - *Nota*. Per cambiare i sottoposti della mappa in OsmAnd, è possibile impostare una singola azione rapida che consente di passare tra più sottoposti, oppure creare diverse azioni rapide separate, ognuna per uno specifico sottoposto.  |
-| Cambia <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Crea un elenco di stili di mappa per le mappe vettoriali e scorrile ciclicamente. È possibile mostrare o nascondere la finestra di dialogo di selezione: <br /> - *Se la finestra di dialogo è mostrata*, è possibile selezionare qualsiasi stile dall'elenco. <br /> - *Se la finestra di dialogo è nascosta*, l'azione funziona come un interruttore a un tocco (ciclo solo). <br /> Durante il ciclo, l'etichetta dell'azione rapida con una freccia (ad es., > Nautico) mostra lo stile di mappa successivo che verrà applicato al tocco successivo, non quello attualmente attivo. <br /> - *Nota*. Per cambiare gli stili di mappa in OsmAnd, è possibile impostare una singola azione rapida che consente di passare tra più stili di mappa, oppure creare diverse azioni rapide separate, ognuna per uno specifico stile. |
+| Cambia <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/map-styles.md#default-map-styles) | Crea un elenco di stili di mappa per le mappe vettoriali e scorrile ciclicamente. È possibile mostrare o nascondere la finestra di dialogo di selezione: <br /> - *Se la finestra di dialogo è mostrata*, è possibile selezionare qualsiasi stile dall'elenco. <br /> - *Se la finestra di dialogo è nascosta*, l'azione funziona come un interruttore a un tocco (ciclo solo). <br /> Durante il ciclo, l'etichetta dell'azione rapida con una freccia (ad es., > Nautico) mostra lo stile di mappa successivo che verrà applicato al tocco successivo, non quello attualmente attivo. <br /> - *Nota*. Per cambiare gli stili di mappa in OsmAnd, è possibile impostare una singola azione rapida che consente di passare tra più stili di mappa, oppure creare diverse azioni rapide separate, ognuna per uno specifico stile. |
 | Mostra / Nascondi <br/> [**Livello Mapillary**](../plugins/mapillary.md) | Consente di visualizzare i livelli della mappa con immagini a livello stradale fornite da Mapillary. |
 | Mostra / Nascondi <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | È possibile scegliere di visualizzare o nascondere tutte le note OSM sulla mappa con un solo tocco del pulsante. |
 
@@ -268,7 +268,7 @@ I [profili importati](https://osmand.net/docs/user/personal/import-export#export
 | Sposta <br/> [**Mappa in alto**](../map/interact-with-map.md) | Quando viene toccato, la schermata della mappa si sposta verso l'alto. |
 | Sposta <br/> [**Mappa a sinistra**](../map/interact-with-map.md) | Quando si tocca il pulsante, la schermata della mappa si sposta a sinistra. |
 | Sposta <br/> [**Mappa a destra**](../map/interact-with-map.md) | Con un pulsante di azione rapida, è possibile spostare la mappa a destra. |
-| Sposta <br/> [**Alla mia posizione**](../map/interact-with-map.md#my-location-and-zoom) | Sposta la mappa sulla posizione *La mia posizione*. |
+| Sposta <br/> [**Alla mia posizione**](../map/interact-with-map.md#my-position-and-zoom) | Sposta la mappa sulla posizione *La mia posizione*. |
 
 
 ### I Miei Luoghi {#my-places}
@@ -324,7 +324,7 @@ I [profili importati](https://osmand.net/docs/user/personal/import-export#export
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
-![Dispositivi esterni](@site/static/img/map/external_custom_2_andr.png)
+![External devices](@site/static/img/map/external_custom_2_andr.png)
 
 </TabItem>
 
@@ -332,7 +332,7 @@ I [profili importati](https://osmand.net/docs/user/personal/import-export#export
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/> → Dispositivo → Aggiungi*
 
-![Dispositivi esterni](@site/static/img/map/external_custom_2_ios.png)
+![External devices](@site/static/img/map/external_custom_2_ios.png)
 
 </TabItem>
 

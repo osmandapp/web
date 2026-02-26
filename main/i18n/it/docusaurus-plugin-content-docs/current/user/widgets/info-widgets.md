@@ -1,6 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
-
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title: Widget informativi
 ---
@@ -67,7 +66,7 @@ Su alcuni dispositivi Android, l'altitudine potrebbe essere visualizzata in modo
 ### Elevazione: Centro mappa {#elevation-map-center}
 
 :::info Funzionalità a pagamento
-&nbsp;<ProFeature/> Per accedere all'uso del widget *Elevazione: centro mappa*, abbonati a OsmAnd Pro per [Android](../purchases/android.md#pro-features) o [iOS](../purchases/ios.md#pro-features).  
+Il widget *Elevazione: centro mappa* è una funzionalità a pagamento di [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -418,13 +417,13 @@ Il widget Righello radiale mostra la distanza tra la propria posizione e il punt
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -432,8 +431,12 @@ Il widget Righello radiale mostra la distanza tra la propria posizione e il punt
 
 Il **widget Tachimetro** è una visualizzazione grafica della velocità attuale del veicolo basata sui *dati ricevuti dal GPS*. Permette di monitorare in tempo reale la conformità tra la propria velocità e il limite di velocità consentito. Il limite di velocità consentito è fornito dai [dati di OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) per un particolare tratto di strada e dall'impostazione [Tolleranza limite di velocità](../navigation/guidance/voice-navigation.md#speed-limit) di OsmAnd.  
 
+Quando la velocità attuale si avvicina alla tolleranza del limite di velocità configurata, il widget cambia aspetto per fornire un avviso anticipato. Quando il limite di velocità viene superato (tenendo conto della tolleranza), il widget passa a un'indicazione di "superamento" più evidente. L'indicazione di avviso/superamento è mostrata modificando i colori del widget (sfondo, valore della velocità e unità). Il cambiamento di aspetto può essere animato per attirare l'attenzione quando si supera la soglia di tolleranza o di limite.
+
+![Speedometer](@site/static/img/widgets/speed_alert.gif)
+
 - Nelle *Impostazioni del tachimetro*, è possibile selezionare la dimensione (**Altezza**) del widget sulla schermata dell'applicazione come *Piccola*, *Media* o *Grande*.
-- È possibile specificare quando ricevere un **Avviso limite di velocità**, selezionando *Sempre* o *Quando superato*.
+- È possibile specificare quando ricevere un **Avviso limite di velocità**, selezionando *Sempre* o *Quando superato*. Se l'avviso limite di velocità è impostato su Sempre, il widget può mostrare sia l'indicazione “avvicinamento/tolleranza” che “superamento”. Se l'avviso limite di velocità è impostato su Quando superato, l'indicazione viene mostrata solo dopo aver superato il limite di velocità.
 
 <table class="blogimage">
     <tr>

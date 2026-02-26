@@ -1,5 +1,5 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
+source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
 sidebar_position: 14
 title: Topografia
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-:::info Funzionalità a pagamento
-Il plugin Topografia è una [funzionalità a pagamento](../purchases/index.md) dell'app OsmAnd.
+:::tip Acquisto
+Il plugin Topografia è una [funzionalità a pagamento](../purchases/index.md).  
 :::
 
 La topografia è una caratteristica importante della cartografia che fornisce informazioni per valutare visivamente il rilievo del terreno.
 Le informazioni topografiche come le [Curve di livello](#contour-lines), il [Terreno](#terrain) (*Ombreggiatura* e *Pendenza*), e il [Rilievo 3D](#3d-relief) aiutano a fare una valutazione visiva della conformazione del terreno vedendo l'elevazione, il rilievo, gli estremi, la ripidità o i punti di uguale altezza.
 
-Ogni funzionalità fornita da questo plugin è un livello mappa indipendente che, quando abilitato, può essere visualizzato sopra o sotto la fonte della mappa principale a seconda delle [impostazioni](../map/raster-maps.md#overlay-layer).  
+Ogni funzionalità fornita da questo plugin è un livello mappa indipendente che, quando abilitato, può essere visualizzato sopra o sotto la fonte della mappa principale a seconda delle [impostazioni](../map/raster-maps.md#overlay).  
 
 Il plugin Topografia fornisce l'accesso ai seguenti tipi di mappa:  
 
@@ -173,7 +173,7 @@ Quando si utilizza il [Motore di rendering della mappa](../personal/global-setti
 **Impostazioni di visualizzazione**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Attiva o disattiva le curve di livello.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Definisce i [livelli di zoom](../map/interact-with-map.md#my-location-and-zoom) a cui le curve di livello sono visibili.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Definisce i [livelli di zoom](../map/interact-with-map.md#my-position-and-zoom) a cui le curve di livello sono visibili.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Sceglie il colore per la visualizzazione delle curve di livello.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Regola la larghezza delle curve di livello.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Seleziona la densità delle curve di livello (Bassa, Media, Alta). Densità più elevate possono influire sulla velocità di caricamento.
@@ -215,7 +215,7 @@ Il menu **Terreno** include la selezione dello [schema di colori](#default-color
 
 | Ombreggiatura | Pendenza | Altitudine |
 | ------ | ------- | ------- |
-| ![Ombreggiatura](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) | ![Altitudine](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Ombreggiatura](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pendenza](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **L'ombreggiatura** si basa sulla simulazione dell'illuminazione della superficie utilizzando i dati del terreno. Questo metodo comporta la creazione di ombre e luci in base all'angolo della superficie rispetto alla fonte di luce. Di conseguenza, sulla mappa si vedono colline, valli e altri dettagli del terreno in modo naturale.  
 
@@ -244,13 +244,11 @@ Le mappe raster di **Ombreggiatura**, **Pendenza** e **Altitudine** sono create 
 
 - *Altitudine*. La mappa dell'altitudine colora ogni pixel in base all'altezza calcolata della mappa utilizzando il gradiente di uno schema di colori definito. Di solito, gli schemi di altitudine dipendono molto dalla posizione. Nelle aree montuose si preferisce distribuire i colori su un intervallo di altitudine più ampio, mentre nelle aree pianeggianti si seleziona uno schema di colori con un piccolo intervallo tra l'altitudine minima e massima.
 
-> *Si prega di leggere l'articolo [Schema di colori](../personal/color-palette-schemes.md) per maggiori informazioni.*
-
 
 ### Modifica schema di colori {#modify-color-scheme}
 
-:::info Funzionalità a pagamento
-*[Modifica schema di colori](../personal/color-palette-schemes.md#terrain)* è una funzionalità a pagamento di **OsmAnd Pro** per [iOS](../purchases/ios.md#pro-features) e [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Funzionalità Pro
+*[Modifica schema di colori](../../user/personal/color-palette-schemes.md#terrain)* è una funzionalità a pagamento di [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -314,7 +312,7 @@ La funzione *Livelli di scala* consente di impostare i valori minimo e massimo d
 
 ![Azione rapida per Terreno](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-È possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa per attivare/disattivare la visibilità dei livelli [Curve di livello](#contour-lines), [Terreno](#terrain) e dello [schema di colori del Terreno](../personal/color-palette-schemes.md#quick-actions). A seconda del livello selezionato nel menu Configura mappa, l'assegnazione di un'azione *Terreno* al pulsante visualizzerà *Ombreggiatura*, *Pendenza* o *Altitudine*.  
+È possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa per attivare/disattivare la visibilità dei livelli [Curve di livello](#contour-lines), [Terreno](#terrain) e dello [schema di colori del Terreno](../../user/personal/color-palette-schemes.md#quick-actions). A seconda del livello selezionato nel menu Configura mappa, l'assegnazione di un'azione *Terreno* al pulsante visualizzerà *Ombreggiatura*, *Pendenza* o *Altitudine*.  
 
 Le impostazioni principali per *Mostra o nascondi tipi di mappa* si trovano nella sezione Topografia del menu Configura mappa. Nell'articolo [Azione rapida](../widgets/quick-action.md#configure-map), è possibile trovare un elenco dei livelli disponibili per la visualizzazione. Se è necessario un accesso rapido a questa configurazione della mappa, utilizzare lo strumento *Pulsante personalizzato*.
 
@@ -348,7 +346,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </Tabs>  
 
-La funzione Rilievo 3D produce un rilievo innalzato e fornisce una rappresentazione tridimensionale del paesaggio. Il Rilievo 3D funziona offline e può essere utilizzato con le [mappe vettoriali di OsmAnd](../map/vector-maps.md) o qualsiasi [mappa raster](../map/raster-maps.md#select-raster-maps) come [Sorgente mappa](../map/raster-maps.md#main) o come [Sottolivello/Sovrapposizione](../map/raster-maps.md#overlay-layer).
+La funzione Rilievo 3D produce un rilievo innalzato e fornisce una rappresentazione tridimensionale del paesaggio. Il Rilievo 3D funziona offline e può essere utilizzato con le [mappe vettoriali di OsmAnd](../map/vector-maps.md) o qualsiasi [mappa raster](../map/raster-maps.md#layers) come [Sorgente mappa](../map/raster-maps.md#main) o come [Sottolivello/Sovrapposizione](../map/raster-maps.md#overlay).
 
 ***Come visualizzare il Rilievo 3D sulla mappa.***
 

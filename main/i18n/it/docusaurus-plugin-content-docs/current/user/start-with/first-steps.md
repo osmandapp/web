@@ -1,5 +1,5 @@
 ---
-source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
+source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
 sidebar_position: 1
 title:  Primi Passi
 ---
@@ -665,9 +665,8 @@ OsmAnd non ha permessi obbligatori nella versione iOS / Android.
 **Essenziali**:
 
 - **Internet**. Download iniziale / aggiornamento delle mappe offline. Potrebbe anche essere necessario per accedere a funzionalità online come [Immagini a livello stradale](../map/point-layers-on-map.md#-street-level-imagery), [Foto online](../map/map-context-menu.md#online-photos) o [Mappe online](../map/raster-maps.md).
-- **GPS** / **Rete GSM**. Determinare la propria posizione, seguirvi in modalità di navigazione e registrare il vostro viaggio (opzionale). Questo permesso viene richiesto quando si fa clic sul [pulsante della mia posizione](../widgets/map-buttons.md#my-location-and-zoom) o quando si [avvia la navigazione](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **Rete GSM**. Determinare la propria posizione, seguirvi in modalità di navigazione e registrare il vostro viaggio (opzionale). Questo permesso viene richiesto quando si fa clic sul [pulsante della mia posizione](../widgets/map-buttons.md#my-position-and-zoom) o quando si [avvia la navigazione](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Opzionali**:
 
 - **Fotocamera/Registrazione vocale** (*Android*). Utilizzato solo dalle [Note audio/video](../plugins/audio-video-notes.md). Questa funzione è confezionata come un plugin e disabilitata per impostazione predefinita. Consente di creare rapidamente note audio/video relative alla posizione durante un viaggio.
-

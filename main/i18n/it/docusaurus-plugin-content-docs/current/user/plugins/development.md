@@ -1,5 +1,5 @@
 ---
-source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
+source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
 sidebar_position: 10
 title:  Sviluppo OsmAnd
 ---
@@ -62,7 +62,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 ### Terreno {#terrain}
 
-- **Usa il formato raster [SQLIte](../../technical/osmand-file-formats/osmand-sqlite) per la mappa a rilievo e la pendenza** (*Android*). Quando si utilizza il motore di rendering V2, invece di calcolare l'ombreggiatura del rilievo o le pendenze dalla mappa del Terreno 3D, utilizza le mappe raster in formato precedente per questo scopo. Può accelerare significativamente il rendering.
+- **Usa il formato raster [SQLite format](../../technical/osmand-file-formats/osmand-sqlite) per la mappa a rilievo e la pendenza** (*Android*). Quando si utilizza il motore di rendering V2, invece di calcolare l'ombreggiatura del rilievo o le pendenze dalla mappa del Terreno 3D, utilizza le mappe raster in formato precedente per questo scopo. Può accelerare significativamente il rendering.
 
 
 ### Risoluzione dei problemi {#troubleshooting}

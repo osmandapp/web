@@ -1,5 +1,5 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
 title:  Percorsi con i trasporti pubblici
 ---
@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 La navigazione con i trasporti pubblici nell'app OsmAnd consente di elaborare i percorsi utilizzando i trasporti pubblici, il che vi aiuterà sicuramente a muovervi più velocemente nella "giungla di cemento".
 
-I dati sui percorsi del trasporto pubblico sono presi dal progetto [OpenStreetMap](http://openstreetmap.org/). OsmAnd utilizza lo [schema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) per la navigazione. OsmAnd supporta i seguenti percorsi OpenStreetMap per la navigazione: *autobus*, *filobus*, *taxi collettivo*, *funicolare*, *metropolitana*, *metropolitana leggera*, *monorotaia*, *treno*, *tram*, *traghetto*. La velocità predefinita per ogni tipo di veicolo è configurata nel file [Routing xml](../../../technical/build-osmand/routing.md) e viene utilizzata per trovare i percorsi più veloci.
+I dati sui percorsi del trasporto pubblico sono presi dal progetto [OpenStreetMap](http://openstreetmap.org/). OsmAnd utilizza lo [schema PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) per la navigazione. OsmAnd supporta i seguenti percorsi OpenStreetMap per la navigazione: *autobus*, *filobus*, *taxi collettivo*, *funicolare*, *metropolitana*, *metropolitana leggera*, *monorotaia*, *treno*, *tram*, *traghetto*. La velocità predefinita per ogni tipo di veicolo è configurata in [Routing xml](../../../technical/build-osmand/routing.md) e viene utilizzata per trovare i percorsi più veloci.
 
 :::note
 Il calcolo dei percorsi con i trasporti pubblici è in fase di test. Per ora è possibile creare e visualizzare il percorso senza la funzione di navigazione completa.
@@ -29,13 +29,13 @@ Il calcolo dei percorsi con i trasporti pubblici è in fase di test. Per ora è 
 
 <TabItem value="android" label="Android">
 
-![Navigazione trasporto pubblico Android](@site/static/img/navigation/public/navigation_android.png)  
+![Navigazione trasporti pubblici Android](@site/static/img/navigation/public/navigation_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Navigazione trasporto pubblico iOS](@site/static/img/navigation/public/navigation_ios.png)
+![Navigazione trasporti pubblici iOS](@site/static/img/navigation/public/navigation_ios.png)
 
 </TabItem>
 
@@ -44,7 +44,7 @@ Il calcolo dei percorsi con i trasporti pubblici è in fase di test. Per ora è 
 
 ## Come si usa {#how-to-use}
 
-Per iniziare a navigare in città con i mezzi pubblici, utilizzare [il pulsante di navigazione](../../widgets/map-buttons.md#directions) sulla schermata della mappa o selezionare l'opzione di navigazione nel *Menu principale*.  
+Per iniziare a navigare in città con i mezzi pubblici, utilizzare [il pulsante di navigazione](../../widgets/map-buttons.md#navigation) sulla schermata della mappa o selezionare l'opzione di navigazione nel *Menu principale*.  
 
 **1.** È necessario scegliere il *profilo di navigazione Trasporto pubblico*, i punti di partenza e di destinazione.  
 
@@ -52,13 +52,13 @@ Per iniziare a navigare in città con i mezzi pubblici, utilizzare [il pulsante 
 
 <TabItem value="android" label="Android">
 
-![Navigazione percorsi trasporto pubblico Android](@site/static/img/navigation/public/navigation_public_android.png)
+![Navigazione percorsi trasporti pubblici Android](@site/static/img/navigation/public/navigation_public_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Navigazione percorsi trasporto pubblico iOS](@site/static/img/navigation/public/navigation_public_ios.png)
+![Navigazione percorsi trasporti pubblici iOS](@site/static/img/navigation/public/navigation_public_ios.png)
 
 </TabItem>
 
@@ -70,13 +70,13 @@ Per iniziare a navigare in città con i mezzi pubblici, utilizzare [il pulsante 
 
 <TabItem value="android" label="Android">
 
-![Navigazione percorso trasporto pubblico Android](@site/static/img/navigation/public/navigation_way_android.png)
+![Navigazione percorso trasporti pubblici Android](@site/static/img/navigation/public/navigation_way_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Navigazione percorso trasporto pubblico iOS](@site/static/img/navigation/public/navigation_way_ios.png)
+![Navigazione percorso trasporti pubblici iOS](@site/static/img/navigation/public/navigation_way_ios.png)
 
 </TabItem>
 
@@ -88,13 +88,13 @@ Per iniziare a navigare in città con i mezzi pubblici, utilizzare [il pulsante 
 
 <TabItem value="android" label="Android">
 
-![Navigazione dettagli trasporto pubblico Android](@site/static/img/navigation/public/navigation_details_android.png)
+![Dettagli navigazione trasporti pubblici Android](@site/static/img/navigation/public/navigation_details_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Navigazione dettagli trasporto pubblico iOS](@site/static/img/navigation/public/navigation_details_ios.png)
+![Dettagli navigazione trasporti pubblici iOS](@site/static/img/navigation/public/navigation_details_ios.png)
 
 </TabItem>
 
@@ -107,13 +107,13 @@ Per iniziare a navigare in città con i mezzi pubblici, utilizzare [il pulsante 
 
 <TabItem value="android" label="Android">
 
-![Elenco fermate trasporto pubblico Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
+![Elenco fermate trasporti pubblici Android](@site/static/img/navigation/public/navigation_stops_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Elenco fermate trasporto pubblico iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
+![Elenco fermate trasporti pubblici iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
+source-hash: 9140bac9e9be1e187b70214ddb666d2191b3cfef30bcc06f8571ba22da005fb7
 sidebar_position: 15
 title:  Registrazione tracce
 ---
@@ -134,7 +134,7 @@ Per *Interrompi / Salva / Pausa*:
 
 - Per **Salvare, Mettere in pausa, Avviare** un nuovo segmento o **Terminare** la registrazione, utilizzare i pulsanti [Azione rapida](../widgets/quick-action.md#add-and-delete-actions). Andare su *Menu → Configura schermo → Pulsanti personalizzati → Azione rapida → Aggiungi azione → [Miei luoghi](../widgets/quick-action.md#my-places)* e aggiungere uno o più pulsanti di azione rapida.
 
-- (*Solo Android*) Per **Mettere in pausa** o **Salvare** una traccia in registrazione, utilizzare la [notifica](#notifications) di sistema nell'area di notifica del dispositivo.<br/><br/> ![interrompi-salva-pausa](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Solo Android*) Per **Mettere in pausa** o **Salvare** una traccia in registrazione, utilizzare la [notifica](#notifications) di sistema nell'area di notifica del dispositivo.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Schermata di panoramica {#overview-screen}
@@ -195,7 +195,7 @@ Per maggiori dettagli, potete esplorare il [**Menu contestuale delle tracce**](.
 
 <TabItem value="android" label="Android">
 
-![mostra_tr_sulla_mappa_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configura tracce mappa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configura tracce mappa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
@@ -356,7 +356,7 @@ Il badge dell'icona dell'app appare accanto all'icona di OsmAnd quando la regist
 
 ## Widget {#widgets}
 
-I widget consentono di visualizzare informazioni chiave sulla registrazione della traccia direttamente sullo schermo, come *Distanza*, *Durata*, *Salita* e *Discesa*. Su Android, è possibile anche aggiungere i widget *Velocità massima* e *Pendenza media*.
+I widget consentono di visualizzare informazioni chiave sulla registrazione della traccia direttamente sullo schermo, come *Distanza*, *Durata*, *Salita*, *Discesa*, *Velocità massima* e *Pendenza media*. Su iOS, è possibile anche aggiungere il widget *Tempo in movimento*.
 
 Per iniziare a utilizzare i *widget di Registrazione tracce*, è necessario effettuare tutte le seguenti impostazioni:
 
@@ -381,7 +381,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,map_widget_config,
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Scegli un pannello → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Aggiunta del widget Distanza/Avvio-Stop su iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![Aggiunta del widget Distanza/Avvio-Stop su iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -413,13 +413,13 @@ Per personalizzare l'interfaccia, è possibile aggiungere o rimuovere il widget 
 Alcuni widget di Registrazione tracce supportano più modalità di visualizzazione. Le modalità consentono di passare tra i valori complessivi del viaggio e le metriche per l'ultima sezione di salita o discesa del viaggio attualmente registrato.
 
 Le seguenti modalità possono essere disponibili a seconda del widget.
-1. **Distanza (Avvio-Stop)**:
-- Distanza totale (predefinita)
-- Ultima salita
-- Ultima discesa
+1. **Pendenza media**:
+- Ultima discesa 
+- Ultima salita  
 
-2. **Salita**:
-- Totale (predefinita)
+2. **Distanza (Avvio-Stop)**:
+- Distanza totale (predefinita)
+- Ultima discesa
 - Ultima salita
 
 3. **Discesa**:
@@ -428,15 +428,20 @@ Le seguenti modalità possono essere disponibili a seconda del widget.
 
 4. **Velocità massima**:
 - Totale (predefinita)
-- Ultima salita
 - Ultima discesa
+- Ultima salita
 
-5. **Pendenza media**:
-- Ultima salita  
-- Ultima discesa 
+5. **Tempo in movimento** (*Solo iOS*)
+- Totale (predefinita)
+- Ultima discesa
+- Ultima salita
+
+6. **Salita**:
+- Totale (predefinita)
+- Ultima salita
 
 Il passaggio di modalità dipende dal widget:
-- Salita / Discesa / Velocità massima / Pendenza media — toccare il widget sulla mappa per passare alla sua modalità.
+- Salita / Discesa / Velocità massima / Pendenza media / Tempo in movimento — toccare il widget sulla mappa per passare alla sua modalità.
 - Distanza (Avvio-Stop) — il widget Distanza supporta più modalità di visualizzazione (selezionarle nelle impostazioni del widget), ma toccandolo si apre sempre la finestra di dialogo Registrazione tracce, dove è possibile avviare, interrompere e visualizzare informazioni dettagliate sulla traccia. 
 
 Se la registrazione corrente non contiene ancora una sezione di salita o discesa, i widget in modalità Ultima salita o Ultima discesa mostrano 0 o — (nessun dato).
@@ -457,16 +462,18 @@ Se la registrazione corrente non contiene ancora una sezione di salita o discesa
 
 | |
 |------------|
-|**Durata**. Visualizza il tempo totale della registrazione del viaggio corrente in ore e minuti. |
-|![widget](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Salita**. Mostra la salita totale o l'ultima sezione di salita, a seconda della modalità selezionata. |
-|![widget](@site/static/img/widgets/tr_rec_wid_up_new.png)|
-|**Discesa**. Indica la discesa totale o l'ultima sezione di discesa, a seconda della modalità selezionata. |
-|![widget](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
-|**Velocità massima**. Mostra la velocità massima per il viaggio attualmente registrato nella modalità selezionata. |
-|![widget](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Pendenza media**. Visualizza la pendenza media per l'ultima sezione di salita o discesa del viaggio corrente, a seconda della modalità selezionata. |
 |![widget](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Discesa**. Indica la discesa totale o l'ultima sezione di discesa, a seconda della modalità selezionata. |
+|![widget](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Durata**. Visualizza il tempo totale della registrazione del viaggio corrente in ore e minuti. |
+|![widget](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|**Velocità massima**. Mostra la velocità massima per il viaggio attualmente registrato nella modalità selezionata. |
+|![widget](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Tempo in movimento** (*Solo iOS*). Mostra il tempo in movimento per il viaggio attualmente registrato, o il tempo per l'ultima salita e discesa, a seconda della modalità selezionata. |
+|![widget](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**Salita**. Mostra la salita totale o l'ultima sezione di salita, a seconda della modalità selezionata. |
+|![widget](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Se avete selezionato più widget — *Durata*, *Salita* o *Discesa* — potete accedere alla stessa finestra di dialogo per ciascuno senza doverla cambiare o chiudere. Questa interfaccia unificata facilita la visualizzazione e la gestione di tutte le informazioni correlate in modo fluido.
 

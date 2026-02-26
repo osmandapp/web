@@ -1,8 +1,9 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title:  BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -49,8 +49,8 @@ L'algoritmo di routing di terze parti BRouter è disponibile solo per la version
 
 Seguire questa guida per installare e configurare l'applicazione di terze parti *BRouter Offline Navigation* per l'uso in OsmAnd.
 
-**1.** Per iniziare, è necessario installare l'app BRouter sul proprio dispositivo Android da [F-Droid](https://f-droid.org/packages/btools.routingapp) o [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) sul proprio dispositivo.
-**2.** Quindi, per navigare con l'app OsmAnd lungo percorsi pre-calcolati con BRouter, è necessario:
+**1.** Per iniziare, è necessario installare l'app BRouter sul proprio dispositivo Android da [F-Droid](https://f-droid.org/packages/btools.routingapp) o [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) sul proprio dispositivo.  
+**2.** Quindi, per navigare con l'app OsmAnd lungo percorsi pre-calcolati con BRouter, è necessario:  
 
 
   - Aprire l'applicazione BRouter e toccare *Download Manager*.

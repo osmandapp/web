@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
 sidebar_position: 2
 title: Schermata della Mappa Durante la Navigazione
 ---
@@ -161,6 +161,10 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 ## Aspetto della Linea del Percorso {#route-line-appearance}
 
+:::info Funzionalità Pro
+La personalizzazione della Linea del Percorso è una funzionalità a pagamento di [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -186,16 +190,11 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 **Avanzate**: l'impostazione Personalizza linea del percorso consente di regolare l'aspetto della linea del percorso per visualizzare i cambiamenti di altitudine, salite o discese significative, ghiaccio sulla strada, strade non asfaltate, autostrade e altri possibili ostacoli. È inoltre possibile selezionare o creare [schemi di colori](../../personal/color-palette-schemes.md#tracks-routes) personalizzati da applicare alla linea del percorso.
 
 
-:::note
- <ProFeature/> Alcuni parametri possono essere utilizzati solo con l'abbonamento <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro</a>.
-:::
-
-
 ### Colore {#color}
 
 L'impostazione **Colore** modifica le tonalità di colore delle linee del percorso. Il loro colore generale cambia a seconda del tipo selezionato dalla collezione OsmAnd e in base alla **Legenda della mappa**. In alternativa, il loro colore diventa quello impostato manualmente per colore e trasparenza.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Utilizzato con i colori predefiniti. Per una descrizione completa dei colori, vai a [Stili di mappa predefiniti](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Utilizzato con i colori predefiniti. Per una descrizione completa dei colori, vai a [Stili di mappa predefiniti](../../map/map-styles.md#default-map-styles).  
     ![stile mappa](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Personalizzato***. Consente di selezionare una linea in qualsiasi colore e trasparenza preferiti. È possibile selezionare impostazioni diverse per la mappa diurna e separatamente per la mappa notturna.  
@@ -216,7 +215,7 @@ L'impostazione **Colore** modifica le tonalità di colore delle linee del percor
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Classificazione della manovrabilità di strade o sentieri per veicoli a ruote, in particolare per quanto riguarda la regolarità e la scorrevolezza della superficie. Una descrizione dettagliata si trova nell'articolo *Stile mappa OsmAnd - [Scorrevolezza](../../map-legend/osmand.md#surface-smoothness)* nella sezione *Legenda mappa*.  
     ![Altitudine](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colora una linea di percorso o traccia in base alla *classificazione delle strade invernali*. Una descrizione dettagliata si trova nell'articolo *Mappe vettoriali*, sezione [Strade invernali e ghiacciate](../../map/vector-maps.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colora una linea di percorso o traccia in base alla *classificazione delle strade invernali*. Una descrizione dettagliata si trova nell'articolo *Mappe vettoriali*, sezione [Strade invernali e ghiacciate](../../map/map-styles.md#winter-and-ski).  
     ![Altitudine](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Colorazione di una linea di percorso o sentiero in base alla composizione del fondo stradale. Tipicamente, utilizzato quando la rete stradale è in gran parte non asfaltata. Una descrizione dettagliata si trova nell'articolo *Stile mappa OsmAnd - [Consistenza della superficie](../../map-legend/osmand.md#surface-smoothness)* nella sezione *Legenda mappa*.  
@@ -230,7 +229,7 @@ L'impostazione **Colore** modifica le tonalità di colore delle linee del percor
 
 È possibile regolare la larghezza della linea del percorso per allinearla alla strada o al sentiero visualizzato sulla mappa. Per un'identificazione visiva più chiara, è possibile aumentare o diminuire manualmente la larghezza della linea secondo necessità. Per maggiori dettagli, fare riferimento all'articolo *Tracce e Percorsi — [Aspetto](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Viene utilizzato con la larghezza predefinita impostata da OsmAnd. Una descrizione completa si trova nell'articolo *Mappe vettoriali*, sezione [Stile mappa](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Viene utilizzato con la larghezza predefinita impostata da OsmAnd. Una descrizione completa si trova nell'articolo *[Stili mappa](../../map/map-styles.md)*.  
     ![stile mappa](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Larghezze Sottile, Media e Grassetto***. È possibile selezionare la larghezza della linea in modo che corrisponda alla larghezza della strada o enfatizzare maggiormente la linea del percorso sulla mappa.  
@@ -245,10 +244,10 @@ L'impostazione **Colore** modifica le tonalità di colore delle linee del percor
 L'impostazione Frecce di svolta consente di selezionare se le frecce di svolta vengono visualizzate sulla linea del percorso.  
 
 - ***Sulla mappa***  
-    ![Altitudine](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![frecce di svolta iOS mappa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Frecce di svolta sulla mappa](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![frecce di svolta iOS sulla mappa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***Nell'app***  
-    ![Altitudine](@site/static/img/navigation/route/turn_arr.png)   ![frecce di svolta iOS](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Frecce di svolta](@site/static/img/navigation/route/turn_arr.png)   ![frecce di svolta iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Articoli Correlati {#related-articles}

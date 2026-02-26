@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  Configura Mappa
 ---
@@ -23,19 +23,19 @@ Il menu **Configura mappa** è una voce importante del *Menu principale* di OsmA
 
 Sezione **Mostra**:  
 
-![Configura mappa android](@site/static/img/map/configure_map_show1_andr.png)  ![Configura mappa android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configura mappa Android](@site/static/img/map/configure_map_show1_andr.png)  ![Configura mappa Android](@site/static/img/map/configure_map_show2_andr.png)  
 
 Sezione **Topografia**:  
 
-![Configura mappa android](@site/static/img/map/configure_map_topography_andr.png)  
+![Configura mappa Android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Sezione **OpenStreetMap**:  
 
-![Configura mappa android](@site/static/img/map/configure_map_osm_andr.png)  
+![Configura mappa Android](@site/static/img/map/configure_map_osm_andr.png)  
 
 Sezioni **Percorsi e Rendering mappa**:  
 
-![Configura mappa android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
+![Configura mappa Android](@site/static/img/map/configure_map_routes&Map_rendering_andr.png)
 
 </TabItem>
 
@@ -43,27 +43,27 @@ Sezioni **Percorsi e Rendering mappa**:
 
 Sezione **Mostra sulla mappa**:  
 
-![Configura mappa ios](@site/static/img/map/configure_map_show1_ios.png)  
+![Configura mappa iOS](@site/static/img/map/configure_map_show1_ios.png)  
 
 Sezione **Topografia**:  
 
-![Configura mappa ios](@site/static/img/map/configure_map_topography_ios.png)  
+![Configura mappa iOS](@site/static/img/map/configure_map_topography_ios.png)  
 
 Sezione **OpenStreetMap**:  
 
-![Configura mappa ios](@site/static/img/map/configure_map_osm_ios.png)  
+![Configura mappa iOS](@site/static/img/map/configure_map_osm_ios.png)  
 
 Sezione **Percorsi**:  
 
-![Configura mappa ios](@site/static/img/map/configure_map_routes_new_ios.png)
+![Configura mappa iOS](@site/static/img/map/configure_map_routes_new_ios.png)
 
 Sezioni **Tipo mappa e Stile mappa**:  
 
-![Configura mappa ios](@site/static/img/map/configure_map_style_ios.png)
+![Configura mappa iOS](@site/static/img/map/configure_map_style_ios.png)
 
 Sezioni **Sovrapposizione/Sottofondo e Lingua**:  
 
-![Configura mappa ios](@site/static/img/map/configure_map_overlay_ios.png)
+![Configura mappa iOS](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -84,8 +84,9 @@ Il menu **<Translate android="true" ids="configure_map"/>** è suddiviso in due 
 ## Livelli Mappa {#map-layers}
 
 - [Livello mappa vettoriale](../map/vector-maps.md) - visualizza tutte le informazioni della mappa vettoriale, inclusi OpenStreetMap, linee di contorno e dati nautici.
-- [Sorgenti raster mappa](../map/raster-maps.md#select-raster-maps) - consente di selezionare la mappa di sottofondo / fonte principale / sovrapposizione con livelli di trasparenza.
+- [Sorgenti raster mappa](../map/raster-maps.md#layers) - consente di selezionare la mappa di sottofondo / fonte principale / sovrapposizione con livelli di trasparenza.
 - [Terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers) - visualizza informazioni su pendenza / ombreggiatura, Rilievo 3D.
+- [Edifici 3D](../map/vector-maps.md#3d-buildings) - visualizza modelli volumetrici degli edifici sulla mappa.
 - [Confini delle mappe scaricate](../map/vector-maps.md#show-borders) - visualizza tutti i confini delle mappe scaricate sul livello della mappa principale.
 - [Griglia di coordinate](../map/vector-maps.md#coordinates-grid) - controlla la visibilità della griglia di coordinate sulla mappa.
 
@@ -107,8 +108,9 @@ Il menu **<Translate android="true" ids="configure_map"/>** è suddiviso in due 
 
 Le impostazioni dello stile della mappa dipendono dallo stile della mappa principale visualizzato. Per saperne di più, consultare l'articolo [Articolo sugli stili mappa](../map/vector-maps).
 
-   - [Stile mappa](../map/vector-maps.md#default-map-styles) - include OsmAnd (Città), Topo, Nautico e altri.
+   - [Stile mappa](../map/vector-maps.md#map-styles) - include OsmAnd (Città), Topo, Nautico e altri.
    - [Modalità mappa](../map/vector-maps.md#map-mode) - consente di selezionare la visualizzazione della mappa e la navigazione a seconda dell'ora del giorno.
+   - [Vista Globo](../map/interact-with-map.md#globe-view) - passa la mappa tra la vista standard piana e una vista sferica della Terra.
    - [Lente d'ingrandimento mappa](../map/vector-maps.md#map-magnifier) - consente di modificare l'ingrandimento della mappa.
    - [Dimensione testo](../map/vector-maps.md#text-size) - consente di aumentare o diminuire la dimensione del testo sulla mappa.
    - [Lingua mappa](../map/vector-maps.md#map-language) - consente di selezionare la lingua preferita da visualizzare sulla mappa.

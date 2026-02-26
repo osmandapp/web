@@ -1,5 +1,5 @@
 ---
-source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
+source-hash: 852174395ea31db0d986b03a13dcefe0a7848d73cda99c210ec9424b8e571fd0
 sidebar_position: 5
 title:  Sensori esterni
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
-Il plugin Sensori esterni è una [funzionalità a pagamento](../purchases/index.md) dell'app OsmAnd.  
+Il plugin Sensori esterni è una [funzionalità a pagamento](../purchases/index.md).  
 :::
 
 Il **plugin Sensori esterni** consente di leggere e registrare i dati provenienti da [sensori esterni wireless](https://en.wikipedia.org/wiki/Wireless_sensor_network) che funzionano con le tecnologie [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) e [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) e di visualizzare questi dati utilizzando i [widget](#widgets) nell'applicazione OsmAnd. Questa rete gestita è in grado di raccogliere, trasmettere e memorizzare i dati dei sensori.

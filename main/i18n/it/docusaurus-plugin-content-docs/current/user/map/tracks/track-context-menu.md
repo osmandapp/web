@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
@@ -129,7 +129,7 @@ Il menu **Opzioni** consente di gestire e modificare la traccia selezionata con 
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Solo Android*) – Unisce i segmenti di traccia per riempire le lacune.
-- **<Translate android="true" ids="analyze_on_map"/>**. Apre lo strumento [Analizza sulla mappa](../tracks/index.md#analyze-track-on-map) per ispezionare l'altitudine, la velocità e la distanza della traccia.
+- **<Translate android="true" ids="analyze_on_map"/>**. Apre lo strumento [Analizza sulla mappa](../tracks/index.md#analyze-track-on-map) per ispezionare l'altitudine, la velocità, la distanza e qualsiasi dato aggiuntivo contenuto nella traccia (come dati di sensori esterni o metriche del veicolo) della traccia.
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Solo Android*) - Analizza la traccia per [intervalli](./track-context-menu.md#analyze-by-intervals) di tempo o distanza.
 
 <br/>
@@ -364,11 +364,11 @@ Se non ci sono *informazioni sull'altitudine* sul percorso, è possibile aggiung
 
 ### Calcola Altitudine Mancante {#calculate-missing-elevation}
 
-:::note Abbonamento OsmAnd Pro
-La funzione di calcolo dell'altitudine offline è disponibile solo per gli [**abbonati a OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Funzionalità Pro
+[Calcola altitudine offline](../../plan-route/create-route.md#get-elevation-data) è una funzionalità a pagamento di [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
 
 [Questa funzione](../../plan-route/create-route.md#get-elevation-data) consente di calcolare il profilo altimetrico per una traccia GPX offline per qualsiasi terreno tra 70 gradi di latitudine nord e 70 gradi di latitudine sud, basandosi sui [dati delle mappe del terreno](../../plugins/topography.md#download-maps). *Le mappe del terreno (3D) devono essere state scaricate in precedenza*.
 
@@ -699,7 +699,7 @@ Questa opzione consente di visualizzare i valori medi, minimi e massimi della fr
 
 Questo filtro consente di migliorare le statistiche della traccia escludendo dati non necessari o errati. È possibile filtrare i punti della traccia che non corrispondono ai parametri della traccia e, di conseguenza, ottenere un grafico più preciso e una linea del percorso visiva senza distorsioni o rumore di registrazione. È possibile apportare modifiche con filtri come *Smussatura*, *Velocità*, *Altitudine* e *Precisione GPS*, che nascondono i punti filtrati dalla traccia corrente. Inoltre, nel menu *Statistiche*, è possibile verificare come le modifiche vengono visualizzate sul grafico prima di salvarle. È anche possibile *Ripristinare l'originale* e *Salvare come copia* della traccia in questo filtro senza salvare quella originale.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

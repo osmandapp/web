@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -55,9 +55,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 
 <!--
 
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -69,6 +69,7 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
 
 -->
 
@@ -97,8 +98,8 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Rilievo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dati topografici](../plugins/topography.md#overview)<br/>(Curve di livello e Terreno) | **-** | ✔ | ✔ |
-| [Personalizzazione del colore della griglia delle coordinate](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [Visualizzazione traccia 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Personalizzazione del colore della griglia delle coordinate](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Visualizzazione traccia 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profondità nautiche](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guide di viaggio (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Supporto sensori esterni](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -111,7 +112,7 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | [Widget Metriche veicolo](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widget gratuiti**</summary><ul><li>*Velocità veicolo*</li><li>*Velocità motore*</li></ul></details> | <details><summary>**2 widget gratuiti**</summary><ul><li>*Velocità veicolo*</li><li>*Velocità motore*</li></ul></details> | ✔ |
 | [Strumento Segnalibri sulla mappa](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Fonti di mappe online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Supporto mappe SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Supporto mappe SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Punti preferiti](../map/point-layers-on-map.md)<br/>segnalibri e waypoint | ✔ | ✔ | ✔ |
 | [Punti audio/foto/video](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [Tracker GPS online di OsmAnd](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -153,7 +154,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continua con OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/pro_new.png)
 
 ### Acquisto di Maps+ {#maps-purchase}
 
@@ -161,7 +162,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocca l'elenco delle funzionalità di Maps+ → Continua con Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## Abbonamenti legacy (precedenti alla 4.0) {#legacy-subscriptions-prior-40}

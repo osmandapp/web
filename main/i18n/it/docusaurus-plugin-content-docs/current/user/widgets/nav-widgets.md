@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Widget di navigazione
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  Questo widget è utilizzabile solo con la funzionalità Pro dagli <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">abbonati a OsmAnd Pro</a>.
-
+:::info Funzionalità Pro
+Il Widget Altitudine è una funzionalità a pagamento di [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 Il widget Altitudine mostra un grafico con l'altitudine e la pendenza del percorso di navigazione e la posizione corrente su questo grafico con l'altitudine e la pendenza attuali. Il grafico è tracciato su due assi. L'asse X è la distanza del percorso. L'asse Y è l'altitudine, il cui valore dipende dal rilievo, e la pendenza è visualizzata in percentuale.  

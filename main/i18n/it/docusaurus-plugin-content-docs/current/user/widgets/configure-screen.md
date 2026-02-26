@@ -1,5 +1,5 @@
 ---
-source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
+source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -450,6 +450,53 @@ OsmAnd consente di aggiungere più istanze dello stesso widget a diversi pannell
 - Conferma l'eliminazione quando richiesto.
 
 
+## Layout Schermata Mappa {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Layout Schermata Mappa](@site/static/img/widgets/map_screen_layout_1.png) ![Layout Schermata Mappa](@site/static/img/widgets/map_screen_layout_2.png)
+
+L'impostazione **Layout schermata mappa** consente di controllare come i pannelli dei widget sono disposti sulla schermata della mappa. Aiuta a prevenire la sovrapposizione di widget e pulsanti e migliora l'utilizzo dello spazio sullo schermo, specialmente quando si passa tra orientamenti portrait e landscape.
+
+È possibile aprire le impostazioni del Layout schermata mappa dal menu Configura schermata, direttamente dalle azioni della schermata o tramite il menu a tre punti.
+
+### Layout Singolo e Separati {#single-and-separate-layouts}
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_single.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_separate.png)
+
+OsmAnd supporta due modalità di layout per la schermata della mappa:
+- **Layout singolo** – utilizza lo stesso layout dei widget per tutte le orientamenti dello schermo. Questa opzione è selezionata per impostazione predefinita.
+- **Layout separati** – consente di configurare layout dei widget diversi per orientamenti Portrait e Landscape.
+
+Quando Layout separati è abilitato, le modifiche apportate in un orientamento non influenzano l'altro. Questo è utile se si desidera ottimizzare la schermata della mappa in modo diverso per l'uso in portrait e landscape.
+
+### Schede Portrait e Landscape {#portrait-and-landscape-tabs}
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_tabs.png)
+
+Quando Layout separati è abilitato, due schede diventano disponibili nella schermata Configura: **Portrait** e **Landscape**. Ogni scheda rappresenta un layout indipendente per l'orientamento dello schermo corrispondente. È possibile passare tra le schede toccandole.
+
+È possibile copiare il layout tra gli orientamenti. Per accedere a queste azioni, tocca il menu a tre punti per il pannello dei widget:
+- **Copia da Portrait** – copia l'elenco dei widget dal layout Portrait al layout Landscape.
+- **Copia da Landscape** – copia l'elenco dei widget dal layout Landscape al layout Portrait.
+
+Viene copiato solo l'elenco dei widget e l'operazione si applica all'interno dello stesso profilo.
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_portrait.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Layout Pannelli {#panels-layout}
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_wide.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_compact.png)
+
+L'impostazione **Layout pannelli** controlla come i pannelli widget superiore e inferiore sono visualizzati. Questa opzione è disponibile solo quando Layout separati è abilitato.
+
+È possibile scegliere tra due modalità:
+- **Largo** – i pannelli superiore e inferiore si estendono per l'intera larghezza dello schermo.
+- **Compatto** – i pannelli superiore e inferiore si adattano tra i pannelli laterali e i pulsanti della mappa.
+
+Il Layout pannelli può essere configurato indipendentemente per orientamenti Portrait e Landscape, consentendo un migliore adattamento a diverse dimensioni e orientamenti dello schermo.
+
+
 ## Pulsanti {#buttons}
 
 ### Pulsanti Personalizzati {#custom-buttons}
@@ -484,7 +531,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Pagina widget](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Pagina widget](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -498,7 +545,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-1. I **Pulsanti predefiniti** consentono di personalizzare quali pulsanti mappa preimpostati sono visibili sulla schermata della mappa. È possibile scegliere di nascondere o mostrare i seguenti pulsanti:
+I **Pulsanti predefiniti** consentono di personalizzare quali pulsanti mappa preimpostati sono visibili sulla schermata della mappa. Ogni pulsante nell'elenco ha un interruttore On/Off accanto. È possibile scegliere di nascondere o mostrare i seguenti pulsanti:
 
     - [Modalità 3D](../widgets/map-buttons.md#3d-mode). Per iOS, il pulsante è sempre disponibile. Per Android, appare nell'elenco ed è disponibile per l'impostazione se è selezionato il motore di rendering della mappa [Versione 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 
@@ -509,27 +556,45 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
     - [Menu](../widgets/map-buttons.md#main-menu). Apre il menu principale dell'applicazione per accedere a tutte le funzionalità.
 
-    - [La mia posizione](../widgets/map-buttons.md#my-location-and-zoom). Centra la mappa sulla tua posizione attuale.
+    - [La mia posizione](../widgets/map-buttons.md#my-position-and-zoom). Centra la mappa sulla tua posizione attuale.
 
-    - [Navigazione](../widgets/map-buttons.md#directions). Essenziale per la pianificazione del percorso e l'avvio della navigazione.
+    - [Navigazione](../widgets/map-buttons.md#navigation). Essenziale per la pianificazione del percorso e l'avvio della navigazione.
 
     - [Cerca](../widgets/map-buttons.md#search). Apre lo strumento di ricerca per trovare posizione.
 
-    - [Zoom avanti / indietro](../widgets/map-buttons.md#my-location-and-zoom). Regola il livello di zoom della mappa per mostrare più o meno dettagli.
+    - [Zoom avanti / indietro](../widgets/map-buttons.md#my-position-and-zoom). Regola il livello di zoom della mappa per mostrare più o meno dettagli.
 
-2. Il **menu a tre punti** sulla schermata dei Pulsanti predefiniti contiene azioni come:
+Il **menu a tre punti** sulla schermata dei Pulsanti predefiniti contiene azioni come:
 
     - *Ripristina predefiniti*. Consente di riportare le impostazioni dei pulsanti al loro aspetto originale.
-    - *Copia da un altro profilo*. Seleziona da quale profilo dell'elenco offerto desideri copiare le impostazioni dei pulsanti.
-
-3. **L'aspetto del pulsante predefinito** (*Solo Android*) offre una varietà di opzioni di personalizzazione per questo tipo di pulsanti. Per modificare l'aspetto di un pulsante, tocca il pulsante richiesto dall'elenco e seleziona l'opzione [Aspetto](#button-appearance).
+    - *Copia da un altro profilo*. Seleziona un profilo dall'elenco per copiare le impostazioni di visibilità e aspetto dei pulsanti.
+    - *Aspetto (Solo Android)*. Offre una varietà di opzioni di personalizzazione per questo tipo di pulsanti. Per modificare l'aspetto di un pulsante, tocca il pulsante richiesto dall'elenco e seleziona l'opzione [Aspetto](#button-appearance).
 
 
 ### Aspetto del Pulsante {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Aspetto del Pulsante](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+**Vai a** (per Pulsanti personalizzati): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu a tre punti → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vai a** (per tutti i Pulsanti predefiniti): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu a tre punti → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vai a** (per un Pulsante predefinito specifico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleziona un pulsante → *<Translate android="true" ids="shared_string_appearance"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Aspetto del Pulsante](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Vai a** (per Pulsanti personalizzati): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu a tre punti → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Vai a** (per un Pulsante predefinito specifico): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → seleziona un pulsante → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
 
 La funzione *Aspetto del pulsante* consente di personalizzare completamente l'aspetto dei pulsanti sull'interfaccia della mappa. Queste opzioni di personalizzazione sono disponibili sia per *Azione Rapida (Pulsanti personalizzati)* che per *Pulsanti predefiniti*, fornendo un controllo completo sull'aspetto dell'interfaccia della mappa e consentendo regolazioni precise del design dei pulsanti.
 
@@ -537,8 +602,8 @@ La funzione *Aspetto del pulsante* consente di personalizzare completamente l'as
 
 - **Icona**. Seleziona da un elenco di icone che rappresentano le azioni che hai già aggiunto, rendendo facile identificare le funzioni a colpo d'occhio.
 - **Raggio dell'angolo**. Regola questa impostazione per cambiare la forma del pulsante, da angoli acuti e quadrati a bordi lisci e arrotondati.
-- **Dimensione**. Scegli la dimensione del pulsante che meglio si adatta al tuo schermo e che risalta secondo necessità. Per i *Pulsanti predefiniti*, le dimensioni sono preimpostate e non possono essere regolate.
-- **Opacità dello sfondo**. Controlla la visibilità dello sfondo del pulsante. Puoi impostarlo per essere completamente visibile o parzialmente trasparente, oppure visualizzare solo l'ombra della cornice e l'icona.
+- **Dimensione**. Scegli la dimensione del pulsante che meglio si adatta al tuo schermo e che risalta secondo necessità. 
+- **Opacità dello sfondo** (Android) / **Sfondo** (iOS). Controlla la visibilità dello sfondo del pulsante. Puoi impostarlo per essere completamente visibile o parzialmente trasparente, oppure visualizzare solo l'ombra della cornice e l'icona.
 
 
 ## Altro {#other}
@@ -588,7 +653,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 
 > *Posizione sulla schermata* è il nome di questa impostazione nella versione iOS di OsmAnd.  
 
-Consente di impostare il posizionamento del cursore su *[La mia posizione](../map/interact-with-map.md#my-location-and-zoom)* sulla mappa di OsmAnd. Sono disponibili tre opzioni:  
+Consente di impostare il posizionamento del cursore su *[La mia posizione](../map/interact-with-map.md#my-position-and-zoom)* sulla mappa di OsmAnd. Sono disponibili tre opzioni:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Il cursore è sempre posizionato al centro dello schermo.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *La mia posizione* è posizionata leggermente sotto il centro dello schermo. Questa modalità consente di vedere più informazioni sulla mappa davanti al proprio movimento, il che è utile durante la navigazione.

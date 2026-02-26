@@ -1,8 +1,9 @@
 ---
-source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
+source-hash: f1a828f975c96bbfda684d9dc28a964129f8890ae914445426256bb589a6171f
 sidebar_position: 3
 title:  Menu principale
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 
@@ -43,8 +43,8 @@ L'icona del [Menu principale](../widgets/map-buttons.md#main-menu) '&#8801;' si 
 
 - I [Segnalibri](../personal/markers.md) sono uno strumento che permette di contrassegnare un luogo sulla mappa.
 - [I miei luoghi](../personal/myplaces.md) è un menu che include per impostazione predefinita Preferiti e Tracce e in aggiunta può includere [Note A/V](../plugins/audio-video-notes.md) e [Modifiche OSM](../plugins/osm-editing.md) (se tali plugin sono attivati).
-- [Cerca](../search/index.md) (Android) è uno strumento che permette di trovare il luogo o l'oggetto che esiste sulla mappa.
-- Il pulsante [Indicazioni](../widgets/map-buttons.md#directions) permette di creare un percorso e avviare la navigazione.
+- [Cerca](../search/index.md) (Android) è uno strumento che permette di trovare il luogo o l'oggetto che esistono sulla mappa.
+- Il pulsante [Indicazioni](../widgets/map-buttons.md#navigation) permette di creare un percorso e avviare la navigazione.
 - [Configura mappa](../map/configure-map-menu.md) è un menu che permette di configurare la visualizzazione della mappa.
 - [Scarica mappe](../start-with/download-maps.md) è un menu che contiene tutti i file che possono essere scaricati.
 - [Guide di viaggio (Beta)](../plan-route/travel-guides.md) (*Android*) è uno strumento che permette di utilizzare la guida Wikivoyage per il proprio viaggio.
