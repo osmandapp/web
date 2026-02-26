@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Cerca
 title: Cerca sul sito web
@@ -29,7 +29,7 @@ Il **menu Cerca** è accessibile dal pannello laterale o dall'icona di ricerca �
 - [Sezione Categorie](#categories). Sfoglia le opzioni categorizzate per facilitare la ricerca di PDI.  
 - [Sezione Esplora](#explore). Visualizza PDI popolari per il centro della mappa attuale ed esplora luoghi con foto sulla mappa.
 
-![Menu Cerca](@site/static/img/web/search.png)
+![Menu di ricerca](@site/static/img/web/search.png)
 
 ## Opzioni di ricerca {#search-options}
 
@@ -65,13 +65,14 @@ Il **Menu contestuale PDI** visualizza informazioni chiave sul luogo selezionato
 - **Nome e icona** — mostra il nome del PDI e la sua icona.
 - **Distanza e direzione** — mostra la distanza e la direzione verso il PDI.
 - **Posizione** — visualizza le coordinate del PDI.
+- **Orari di apertura** — mostra gli orari di apertura analizzati dai [dati OSM](https://wiki.openstreetmap.org/wiki/Key:opening_hours). Lo stato attuale viene visualizzato dinamicamente in base all'ora corrente (ad esempio, *Aperto ora*, *Chiuso* o *Apre alle 10:00*), e l'orario completo è mostrato di seguito.
 - **Descrizione** — fornisce informazioni aggiuntive sul PDI quando disponibili (ad esempio, da Wikipedia).
 - **Foto online** — mostra foto Wikimedia relative al PDI quando disponibili. Seleziona Mostra tutto per aprire la Galleria fotografica. Seleziona una foto per aprirla nella galleria (modalità Apri foto).
 - **Dati oggetto** — informazioni aggiuntive sul PDI, inclusi tag OSM e altri dettagli come contatti, link social, link a Wikipedia e Wikivoyage, descrizioni e iscrizioni (quando disponibili).
 - **ID OSM** — l'identificatore OpenStreetMap del PDI.
 - **Coordinate** — seleziona le coordinate per copiarle.
 
-![Menu contestuale PDI](@site/static/img/web/poi_context_menu.png)
+![Menu contestuale PDI](@site/static/img/web/poi_context_menu_new.png)
 
 ### Azioni PDI {#poi-actions}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Il menu contestuale della mappa fornisce informazioni sull'oggetto selezionato sulla mappa. È anche possibile utilizzarlo per creare un percorso verso la posizione selezionata. Per aprire il menu contestuale, individuare prima la posizione desiderata sulla mappa, quindi selezionare l'oggetto con un tocco breve o un tocco lungo quando si seleziona un punto preciso sulla mappa.
+Il menu contestuale della mappa fornisce informazioni sull'oggetto selezionato sulla mappa. È anche possibile utilizzarlo per creare un percorso verso la posizione selezionata. Per aprire il menu contestuale, individuare prima la posizione richiesta sulla mappa, quindi selezionare l'oggetto con un tocco breve o un tocco lungo quando si seleziona un punto preciso sulla mappa.
 
 
 ### Selezionare un oggetto (Tocco singolo) {#select-an-object-single-tap}
@@ -556,7 +556,7 @@ Opzioni disponibili per condividere la posizione:
 
 </Tabs>
 
-Per avviare la navigazione o la pianificazione del percorso, è necessario selezionare prima la destinazione con [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Nel caso in cui si disponga già di un punto di destinazione, il menu suggerirà di sostituire il punto di destinazione o di inserirlo come un altro punto intermedio o di partenza.
+Per avviare la navigazione o la pianificazione del percorso, è necessario selezionare prima la destinazione con [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation). Nel caso in cui si disponga già di un punto di destinazione, il menu suggerirà di sostituire il punto di destinazione o di inserirlo come un altro punto intermedio o di partenza.
 
 È anche possibile selezionare prima la destinazione *Da* tramite il menu contestuale della mappa (<Translate android="true" ids="context_menu_item_directions_from"/>).
 

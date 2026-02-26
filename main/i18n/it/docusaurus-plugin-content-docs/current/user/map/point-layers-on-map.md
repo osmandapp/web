@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Punti sulla mappa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Panoramica {#overview}
@@ -132,7 +132,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,configure_map,configur
 
 </Tabs>
 
-A ogni tipo di PDI in OsmAnd è assegnata un'icona e un colore specifici. Il [livello di zoom](../map/vector-maps.md#details) e il design dei PDI possono essere diversi in alcuni [stili di mappa](../map/vector-maps.md#default-map-styles).  
+A ogni tipo di PDI in OsmAnd è assegnata un'icona e un colore specifici. Il [livello di zoom](../map/vector-maps.md#details) e il design dei PDI possono essere diversi in alcuni [stili di mappa](../map/map-styles.md).  
 
 [Leggi di più](../map/vector-maps.md#hide).
 
@@ -322,7 +322,7 @@ Richiede il [plugin Modifica OSM](../plugins/osm-editing.md).
 
 ## Punti lungo il percorso {#points-along-the-route}
 
-Waypoint, PDI, punti Preferiti e note audio/video si riferiscono tutti al concetto di salvataggio di posizioni e percorsi in formato [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). È possibile utilizzare [gli stessi tag](../map/tracks/track-context-menu.md#display-custom-gpx-tags) per descriverli e modificarli.  
+Waypoint, PDI, punti Preferiti e note audio/video si riferiscono tutti al concetto di salvataggio di posizione e percorsi in formato [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). È possibile utilizzare [gli stessi tag](../map/tracks/track-context-menu.md#display-custom-gpx-tags) per descriverli e modificarli.  
 
 I [Waypoint](#track-waypoints) sono punti individuali su una mappa o un percorso. Possono essere utilizzati per contrassegnare determinati luoghi che possono essere importanti per la navigazione o la registrazione dei propri viaggi. Ad esempio, è possibile creare un waypoint sulla mappa per indicare un incrocio importante o un cambio di direzione.  
 

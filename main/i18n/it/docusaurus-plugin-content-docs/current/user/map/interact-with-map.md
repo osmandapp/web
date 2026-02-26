@@ -1,5 +1,5 @@
 ---
-source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
+source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
 sidebar_position: 2
 title:  Interagire con la mappa
 ---
@@ -20,7 +20,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Questo articolo spiega come personalizzare e interagire con la mappa utilizzando vari pulsanti e gesti. Copre come ruotare, zoomare, regolare l'angolo di visualizzazione e cambiare l'angolo di visualizzazione della mappa, ruotarla manualmente o automaticamente usando la bussola, o in base all'azimut.
 
 
-## Gesti {#gestures}
+## Movimento della mappa {#map-movement}
+
+### Gesti {#gestures}
 
 I gesti sono essenziali per navigare sulla mappa in modo facile e intuitivo.
 
@@ -35,8 +37,7 @@ I gesti sono essenziali per navigare sulla mappa in modo facile e intuitivo.
 
 Le animazioni di scorrimento possono essere disattivate nelle impostazioni con un'[opzione speciale](#remove-animations).
 
-
-## La mia posizione e Zoom {#my-location-and-zoom}
+### La mia posizione e Zoom {#my-position-and-zoom}
 
 ![Menu Configura schermata](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -62,102 +63,12 @@ I *pulsanti Zoom* sono sempre visibili accanto a *La mia posizione* e ti permett
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### Aspetto de La mia posizione {#my-location-appearance}
-
 È possibile personalizzare le icone del pulsante **La mia posizione** utilizzando le impostazioni di aspetto del profilo. Per saperne di più su come fare, leggi [qui](../personal/profiles.md#profile-appearance).
 
 
-## Lente d'ingrandimento mappa {#map-magnifier}
+## Interazione con la mappa {#map-interaction}
 
-La *Lente d'ingrandimento mappa* è uno strumento che migliora la visibilità della mappa, simile a una lente d'ingrandimento usata con le mappe cartacee. Permette di ingrandire la mappa per visualizzare testo e dettagli più chiaramente o per regolare il livello di dettaglio mantenendo la stessa scala. Per maggiori informazioni, vai all'articolo [Mappe vettoriali](../map/vector-maps.md#map-magnifier).
-
-
-## Modalità di orientamento della mappa {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Widget Bussola](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Widget Bussola](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-Le *modalità di orientamento della mappa* ti permettono di scegliere come la mappa viene visualizzata sullo schermo del dispositivo. OsmAnd offre modalità come **Ruotata manualmente**, **Direzione del movimento**, **Direzione della bussola** e **Nord in alto**. L'attivazione di ciascuna modalità cambia il modo in cui la mappa è orientata secondo l'opzione selezionata. Per tutti i dettagli, consulta l'articolo [Pulsanti della mappa](../widgets/map-buttons.md#compass).
-
-
-## Bussola {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Widget Bussola](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Widget Bussola](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-Il pulsante della bussola mostra come la [mappa è orientata](#map-orientation-modes). La *freccia rossa* sulle icone, o la direzione della freccia in modalità *Direzione del movimento*, indica il Nord. [L'icona sul pulsante della bussola](../widgets/map-buttons.md#compass) indica la modalità di orientamento della mappa corrente. Il widget del pulsante della bussola offre tre [opzioni di interazione](../widgets/map-buttons.md#compass-tapping-behavior): un *tocco singolo* ruota la mappa verso il Nord, un *doppio tocco* alterna tra tutte le modalità di orientamento della mappa e un *tocco lungo* apre l'elenco delle modalità.
-
-
-## Ruota mappa per azimut {#rotate-map-by-bearing}
-
-Nella modalità **ruota mappa per azimut** ([Direzione del movimento](../widgets/map-buttons.md#compass)), la mappa si allinea automaticamente con la tua direzione di movimento, in modo che l'area di fronte a te sia visualizzata nella parte superiore dello schermo. Questa modalità migliora la navigazione spostando leggermente il centro della mappa verso il basso, mostrando una porzione maggiore del percorso davanti a te. Se sei fermo, la mappa rimane fissa.  
-
-Puoi attivare questa funzione tramite *Menu → Impostazioni → Profili → Impostazioni generali → Aspetto → Orientamento mappa* o toccando due volte il [pulsante Bussola](../widgets/map-buttons.md#compass-tapping-behavior). Per maggiori dettagli sull'azimut, vedi [qui](../widgets/nav-widgets.md#bearing-widget).
-
-
-## Inclinazione della mappa e orizzonte {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Inclinazione android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Inclinazione android 2](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Inclinazione ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Inclinazione ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
-</TabItem>
-
-</Tabs>  
-
-Con il nuovo [motore di rendering](../personal/global-settings.md#map-rendering-engine) della mappa è possibile modificare l'[inclinazione della telecamera](../plugins/development.md#camera-tilt) da 90 (nessuna inclinazione) a 10 gradi. Approssimativamente con un'inclinazione della mappa inferiore a 20-22 gradi (questo parametro dipende dal livello di zoom), la linea dell'orizzonte immaginaria diventa visibile. A differenza di quella reale, l'orizzonte del programma è sempre dritto.  
-
-Sotto l'orizzonte, si può vedere la cosiddetta *foschia* o *nebbia*. Quest'area della mappa è riempita di colore grigio, e si possono osservare solo pochi dettagli della mappa.  
-L'uso della nebbia è necessario poiché la visualizzazione di oggetti remoti sulla mappa richiede notevoli risorse di calcolo e non è sempre giustificata a causa delle [distorsioni](../plugins/development.md#comparison-with-a-satellite-imagery) della mappa a piccoli angoli di visualizzazione. Quindi la distanza visibile sulla mappa di OsmAnd è attualmente limitata a 35 tasselli.  
-
-:::info
-L'inclinazione della mappa può essere modificata con un tocco lungo sullo schermo con due dita e muovendole su/giù. È anche possibile modificare l'inclinazione toccando l'icona [La mia posizione](#my-location-and-zoom) nell'angolo in basso a destra dello schermo (sono disponibili solo le posizione a 45 e 90 gradi).  
-Non è possibile modificare l'inclinazione della telecamera quando è attivo il vecchio [motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) (versione 1).
-:::
-
-
-## Blocco del touch screen {#touch-screen-lock}
+### Blocco del touch screen {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +98,12 @@ Tocca il pulsante sullo schermo o, se il blocco è attivato tramite un pulsante 
 
 Messaggi chiari sullo schermo ti guideranno durante il blocco o lo sblocco dello schermo.
 
+### Anima la propria posizione {#animate-own-position}
 
-## Impostazioni {#settings}
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### Impostazioni extra della bussola {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Leviga la rotazione della mappa con un'animazione di rotazione più lenta, anche se questo introduce un leggero ritardo, non superiore a 1 secondo.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Leviga la rotazione della mappa con un'animazione di rotazione più lenta, anche se questo introduce un leggero ritardo, non superiore a 1 secondo.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+Crea un effetto di scorrimento fluido della mappa rispetto all'icona *[La mia posizione](../personal/profiles/#profile-appearance)* quando si è in movimento. L'effetto introduce un leggero ritardo rispetto alla posizione reale di circa 1 secondo. È stato segnalato che l'attivazione di questa opzione può creare alcuni problemi di lag pronunciati in alcune circostanze; disattivala se si verificano tali problemi.
 
 ### Rimuovi animazioni {#remove-animations}
 
@@ -206,12 +113,114 @@ Messaggi chiari sullo schermo ti guideranno durante il blocco o lo sblocco dello
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Anima la propria posizione {#animate-own-position}
+## Orientamento della mappa {#map-orientation}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
+### Modalità di orientamento della mappa {#map-orientation-modes}
 
-Crea un effetto di scorrimento fluido della mappa rispetto all'icona *[La mia posizione](../personal/profiles/#profile-appearance)* quando si è in movimento. L'effetto introduce un leggero ritardo rispetto alla posizione reale di circa 1 secondo. È stato segnalato che l'attivazione di questa opzione può creare alcuni problemi di lag pronunciati in alcune circostanze; disattivala se si verificano tali problemi.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Widget Bussola](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Widget Bussola](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+Le *modalità di orientamento della mappa* ti permettono di scegliere come la mappa viene visualizzata sullo schermo del dispositivo. OsmAnd offre modalità come **Ruotata manualmente**, **Direzione del movimento**, **Direzione della bussola** e **Nord in alto**. L'attivazione di ciascuna modalità cambia il modo in cui la mappa è orientata secondo l'opzione selezionata. Per tutti i dettagli, consulta l'articolo [Pulsanti della mappa](../widgets/map-buttons.md#compass).
+
+### Ruota per bussola {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Widget Bussola](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Widget Bussola](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+Il pulsante della bussola mostra come la [mappa è orientata](#map-orientation-modes). La *freccia rossa* sulle icone, o la direzione della freccia in modalità *Direzione del movimento*, indica il Nord. [L'icona sul pulsante della bussola](../widgets/map-buttons.md#compass) indica la modalità di orientamento della mappa corrente. Il widget del pulsante della bussola offre tre [opzioni di interazione](../widgets/map-buttons.md#compass-tapping-behavior): un *tocco singolo* ruota la mappa verso il Nord, un *doppio tocco* alterna tra tutte le modalità di orientamento della mappa e un *tocco lungo* apre l'elenco delle modalità.
+
+### Ruota mappa per azimut {#rotate-map-by-bearing}
+
+Nella modalità **ruota mappa per azimut** ([Direzione del movimento](../widgets/map-buttons.md#compass)), la mappa si allinea automaticamente con la tua direzione di movimento, in modo che l'area di fronte a te sia visualizzata nella parte superiore dello schermo. Questa modalità migliora la navigazione spostando leggermente il centro della mappa verso il basso, mostrando una porzione maggiore del percorso davanti a te. Se sei fermo, la mappa rimane fissa.  
+
+Puoi attivare questa funzione tramite *Menu → Impostazioni → Profili → Impostazioni generali → Aspetto → Orientamento mappa* o toccando due volte il [pulsante Bussola](../widgets/map-buttons.md#compass-tapping-behavior). Per maggiori dettagli sull'azimut, vedi [qui](../widgets/nav-widgets.md#bearing-widget).
+
+
+## Prospettiva della mappa {#map-perspective}
+
+### Inclinazione della mappa e orizzonte {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Inclinazione android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Inclinazione android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Inclinazione ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Inclinazione ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+Con il nuovo [motore di rendering](../personal/global-settings.md#map-rendering-engine) della mappa è possibile modificare l'[inclinazione della telecamera](../plugins/development.md#camera-tilt) da 90 (nessuna inclinazione) a 10 gradi. Approssimativamente con un'inclinazione della mappa inferiore a 20-22 gradi (questo parametro dipende dal livello di zoom), la linea dell'orizzonte immaginaria diventa visibile. A differenza di quella reale, l'orizzonte del programma è sempre dritto.  
+
+Sotto l'orizzonte, si può vedere la cosiddetta *foschia* o *nebbia*. Quest'area della mappa è riempita di colore grigio, e si possono osservare solo pochi dettagli della mappa.  
+L'uso della nebbia è necessario poiché la visualizzazione di oggetti remoti sulla mappa richiede notevoli risorse di calcolo e non è sempre giustificata a causa delle [distorsioni](../plugins/development.md#comparison-with-a-satellite-imagery) della mappa a piccoli angoli di visualizzazione. Quindi la distanza visibile sulla mappa di OsmAnd è attualmente limitata a 35 tasselli.  
+
+:::info
+L'inclinazione della mappa può essere modificata con un tocco lungo sullo schermo con due dita e muovendole su/giù. È anche possibile modificare l'inclinazione toccando l'icona [La mia posizione](#my-position-and-zoom) nell'angolo in basso a destra dello schermo (sono disponibili solo le posizione a 45 e 90 gradi).  
+Non è possibile modificare l'inclinazione della telecamera quando è attivo il vecchio [motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) (versione 1).
+:::
+
+### Lente d'ingrandimento mappa {#map-magnifier}
+
+La *Lente d'ingrandimento mappa* è uno strumento che migliora la visibilità della mappa, simile a una lente d'ingrandimento usata con le mappe cartacee. Permette di ingrandire la mappa per visualizzare testo e dettagli più chiaramente o per regolare il livello di dettaglio mantenendo la stessa scala. Per maggiori informazioni, vai all'articolo [Mappe vettoriali](../map/vector-maps.md#map-magnifier).
+
+### Vista globo {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![Vista globo](@site/static/img/map/globe_view_1.png) ![Vista globo](@site/static/img/map/globe_view_2.png)
+
+**Vista globo** ti permette di visualizzare la mappa come una Terra sferica invece di una proiezione piatta. Questa modalità cambia la geometria della superficie della mappa e adatta l'interazione con la mappa alla navigazione sferica.  
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vista globale*
+
+La Vista globo è attualmente disponibile solo quando:
+- Il [plugin Sviluppo](../plugins/development.md) è abilitato.  
+Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- Il [Motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) è impostato su Versione 2 (OpenGL).  
+Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+Quando la Vista globo è abilitata, la mappa ruota come un globo. I gesti di trascinamento ruotano la Terra, e lo zoom cambia la distanza della telecamera invece di scalare una superficie piatta. Gli elementi della mappa come tracce, marcatori, simboli e oggetti 3D sono resi direttamente sulla superficie sferica e seguono la sua curvatura. Gli oggetti scompaiono gradualmente dietro l'orizzonte man mano che il globo ruota.
+
+L'interazione vicino all'orizzonte potrebbe essere limitata per prevenire movimenti involontari a grande distanza. Il globo non può essere capovolto sui poli. A livelli di zoom molto bassi, l'aspetto visivo di strade ed etichette rimane coerente durante la rotazione.
 
 
 ## Dispositivi di input esterni {#external-input-devices}
@@ -259,7 +268,7 @@ Per accedere alle impostazioni di un dispositivo di input esterno, è necessario
 
 | Tasto | Dispositivo | Azione |
 |:---------|:---------------|:---------------|
-|**C**| *Tastiera*   | Sposta - [Alla mia posizione](#my-location-and-zoom) |
+|**C**| *Tastiera*   | Sposta - [Alla mia posizione](#my-position-and-zoom) |
 |**D**| *Tastiera*   | Cambia - [Orientamento mappa](#map-orientation-modes) |
 |**N**| *Tastiera*   | Mostra / Nascondi - Vista di navigazione |
 |**S**| *Tastiera*   | Mostra / Nascondi - [Vista di ricerca](../search/index.md) |
@@ -269,18 +278,17 @@ Per accedere alle impostazioni di un dispositivo di input esterno, è necessario
 |**&#8595;**| *Tastiera*   | Sposta - Mappa in giù  |
 |**&#8592;**| *Tastiera*   | Sposta - Mappa a sinistra  |
 |**&#8594;**| *Tastiera*   | Sposta - Mappa a destra  |
-|**&#43;** **=**| *Tastiera*  | Mappa - [Zoom avanti](#my-location-and-zoom) |
-|**&#8722;**| *Tastiera*  | Mappa - [Zoom indietro](#my-location-and-zoom) |
+|**&#43;** **=**| *Tastiera*  | Mappa - [Zoom avanti](#my-position-and-zoom) |
+|**&#8722;**| *Tastiera*  | Mappa - [Zoom indietro](#my-position-and-zoom) |
 |**Premi indietro**| *Tastiera*   | Naviga – Schermata precedente  |
-|**&#8595;**| *Wunderlinq*  | Mappa - [Zoom indietro](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Mappa - [Zoom avanti](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | Mappa - [Zoom indietro](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Mappa - [Zoom avanti](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | Apri WunderLINQ Datagrid |
 | **M** | *Tastiera*  | Mostra / Nascondi - [Menu laterale](../start-with/main-menu.md#main-menu-side-menu) |
-| **Premi joystick** <br/> (*Android legacy*) | *Tastiera*  | Sposta - [Alla mia posizione](#my-location-and-zoom) |
+| **Premi joystick** <br/> (*Android legacy*) | *Tastiera*  | Sposta - [Alla mia posizione](#my-position-and-zoom) |
 | **Pulsante Media** <br/> (*solo Android*)| *Tastiera*  | Mostra / Nascondi - [Note AV](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*solo Android*)| *Parrot*  | Mappa - [Zoom indietro](#my-location-and-zoom) |
-| **&#8594;** <br/> (*solo Android*) | *Parrot*  | Mappa - [Zoom avanti](#my-location-and-zoom) |
-
+| **&#8592;** <br/> (*solo Android*)| *Parrot*  | Mappa - [Zoom indietro](#my-position-and-zoom) |
+| **&#8594;** <br/> (*solo Android*) | *Parrot*  | Mappa - [Zoom avanti](#my-position-and-zoom) |
 
 ### Tipo di dispositivo di input personalizzato {#custom-input-device-type}
 

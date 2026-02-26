@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Luoghi Popolari
 ---
@@ -20,13 +20,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
+:::tip Acquisto
+Luoghi Popolari è una [funzionalità a pagamento](../purchases/index.md).  
+:::
+
 La funzione **Luoghi Popolari** di OsmAnd evidenzia punti di riferimento e attrazioni importanti utilizzando dati strutturati aperti da [Wikidata](https://www.wikidata.org) e [Wikipedia](https://www.wikipedia.org/). Aiuta gli utenti a esplorare destinazioni famose con descrizioni multilingue e foto.
 
-Ogni luogo incluso in questa funzione è collegato a un **ID Wikidata**, che consente a OsmAnd di visualizzare nomi verificati, immagini di anteprima e collegamenti ad articoli di Wikipedia. Questo strumento **non** mostra tutti i punti di OpenStreetMap (OSM). È limitato ai PDI con riferimenti a Wikidata.
+Ogni luogo incluso in questa funzione è collegato a un **ID Wikidata**, che consente a OsmAnd di visualizzare nomi verificati, immagini di anteprima e collegamenti ad articoli di Wikipedia. Questo strumento **non** mostra tutti i punti di OpenStreetMap (OSM). È limitato ai POI con riferimenti a Wikidata.
 
 Attualmente, il database curato include circa **50.000 a 150.000 luoghi tra i più votati** a livello globale, selezionati da oltre **1 milione** di oggetti Wikidata + OSM.
-
-Le immagini e altri contenuti basati su Wikidata nei Luoghi Popolari vengono aggiornati secondo una pianificazione e potrebbero non apparire immediatamente dopo le modifiche in Wikidata o Wikimedia Commons. Frequenza di aggiornamento attuale: due volte al mese — il **10** e il **20**.
 
 :::note
 *Questa è la prima versione della funzione Luoghi Popolari. I feedback sono benvenuti su [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -47,9 +49,11 @@ Le immagini e altri contenuti basati su Wikidata nei Luoghi Popolari vengono agg
 
 I **Luoghi Popolari** si basano su contenuti strutturati provenienti da [Wikidata](https://www.wikidata.org) e [Wikipedia](https://www.wikipedia.org/).
 
-Vengono visualizzati solo i PDI con un **ID Wikidata** collegato. Questi ID collegano gli oggetti della mappa a nomi, descrizioni e immagini verificate.
+Vengono visualizzati solo i POI con un **ID Wikidata** collegato. Questi ID collegano gli oggetti della mappa a nomi, descrizioni e immagini verificate.
 
 È possibile visualizzare il link di Wikidata direttamente nel [Menu Contestuale della Mappa](../map/map-context-menu.md). Toccando il tag Wikidata si apre la pagina completa dell'oggetto sul sito web di Wikidata.
+
+Le immagini e altri contenuti basati su Wikidata nei Luoghi Popolari vengono aggiornati secondo una pianificazione e potrebbero non apparire immediatamente dopo le modifiche in Wikidata o Wikimedia Commons. Frequenza di aggiornamento attuale: due volte al mese — il **10** e il **20**.
 
 Scopri come trovare un ID Wikidata: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -58,7 +62,7 @@ Scopri come trovare un ID Wikidata: [Wikipedia: Finding a Wikidata ID](https://e
 
 <InfoAndroidOnly/>
 
-La funzione **Luoghi Popolari** include sia un elenco curato di punti di riferimento nelle vicinanze, sia un livello di PDI basati su Wikipedia sulla mappa.
+La funzione **Luoghi Popolari** include sia un elenco curato di punti di riferimento nelle vicinanze, sia un livello di POI basati su Wikipedia sulla mappa.
 
 Ci sono due modi principali per accedere a questa funzione:
 
@@ -72,7 +76,7 @@ Ci sono due modi principali per accedere a questa funzione:
   Abilita la sovrapposizione visiva in [Configura Mappa](#enable-layer).  
   *<Translate android="true" ids="android_button_seq"/>*. Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
-  In questa modalità, i PDI popolari appaiono direttamente sulla mappa con anteprime in miniatura e contenuti di Wikipedia.
+  In questa modalità, i POI popolari appaiono direttamente sulla mappa con anteprime in miniatura e contenuti di Wikipedia.
 
   È possibile passare da una fonte Wikipedia **online** a una **offline** nelle impostazioni di sovrapposizione. Per saperne di più, consultare la sezione [Abilita Livello](#enable-layer).
 
@@ -98,13 +102,13 @@ La sezione **<Translate android="true" ids="popular_places_nearby"/>** mostra un
 
 - Nome del luogo.
 - Breve descrizione.
-- Tag della categoria PDI.
+- Tag della categoria POI.
 - Distanza e direzione.
 - Immagine in miniatura (se disponibile).
 
-Tocca **Mostra tutto** per visualizzare l'elenco completo, o **Mostra sulla mappa** per visualizzare tutti i PDI elencati sulla mappa.
+Tocca **Mostra tutto** per visualizzare l'elenco completo, o **Mostra sulla mappa** per visualizzare tutti i POI elencati sulla mappa.
 
-Toccando un luogo qualsiasi si apre il [menu contestuale del PDI](./map-context-menu.md), dove è possibile visualizzare in anteprima le foto e accedere ai relativi [contenuti di Wikipedia](../plugins/wikipedia.md).
+Toccando un luogo qualsiasi si apre il [menu contestuale del POI](./map-context-menu.md), dove è possibile visualizzare in anteprima le foto e accedere ai relativi [contenuti di Wikipedia](../plugins/wikipedia.md).
 
 :::tip
 La modalità Esplora basata sulla ricerca funziona **solo online** nella versione gratuita.  
@@ -128,7 +132,7 @@ Per utilizzarla **offline**, è necessario un abbonamento a [Maps+ o OsmAnd Pro]
 
 </Tabs>
 
-La funzione **Luoghi Popolari (Wikipedia)** è disponibile nel menu [Configura Mappa](./configure-map-menu.md). Per visualizzare i luoghi popolari direttamente sulla mappa, abilita il livello PDI con i dati di Wikipedia utilizzando le immagini di Wikidata.
+La funzione **Luoghi Popolari (Wikipedia)** è disponibile nel menu [Configura Mappa](./configure-map-menu.md). Per visualizzare i luoghi popolari direttamente sulla mappa, abilita il livello POI con i dati di Wikipedia utilizzando le immagini di Wikidata.
 
 Prima di utilizzare questa funzione:
 
@@ -139,7 +143,7 @@ Prima di utilizzare questa funzione:
 
 Una volta abilitate, diventano disponibili le seguenti opzioni:
 
-- **<Translate android="true" ids="poi_osmwiki"/>** – Attiva/disattiva i PDI di Wikipedia sulla mappa.
+- **<Translate android="true" ids="poi_osmwiki"/>** – Attiva/disattiva i POI di Wikipedia sulla mappa.
 
 - **Fonte POI** – Passa da:
   - Modalità *Solo Offline* — utilizza i dati della mappa Wikipedia scaricati per la tua regione. 
@@ -147,9 +151,9 @@ Una volta abilitate, diventano disponibili le seguenti opzioni:
 
 - **<Translate android="true" ids="shared_string_language"/>** – Seleziona la lingua per le descrizioni di Wikipedia.
 
-- **<Translate android="true" ids="show_image_previews"/>** – Mostra le anteprime delle immagini da Wikidata accanto ai PDI. Se le anteprime delle immagini sono disabilitate, i Luoghi Popolari vengono mostrati con icone invece di miniature sulla mappa. Le anteprime delle immagini utilizzano immagini collegate a Wikidata/Wikipedia: in modalità *Solo Offline* le anteprime dipendono dai dati Wikipedia scaricati, mentre in modalità *Solo Online* le anteprime vengono recuperate online.
+- **<Translate android="true" ids="show_image_previews"/>** – Mostra le anteprime delle immagini da Wikidata accanto ai POI. Se le anteprime delle immagini sono disabilitate, i Luoghi Popolari vengono mostrati con icone invece di miniature sulla mappa. Le anteprime delle immagini utilizzano immagini collegate a Wikidata/Wikipedia: in modalità *Solo Offline* le anteprime dipendono dai dati Wikipedia scaricati, mentre in modalità *Solo Online* le anteprime vengono recuperate online.
 
-Toccando un PDI sulla mappa si apre il [menu contestuale del PDI](./map-context-menu.md), dove è possibile visualizzare le [foto online](#online-photos) e accedere agli [articoli di Wikipedia](../plugins/wikipedia.md) collegati.
+Toccando un POI sulla mappa si apre il [menu contestuale del POI](./map-context-menu.md), dove è possibile visualizzare [foto online](#online-photos) e accedere agli [articoli di Wikipedia](../plugins/wikipedia.md) collegati.
 
 
 ## Foto online {#online-photos}
@@ -172,9 +176,9 @@ Toccando un PDI sulla mappa si apre il [menu contestuale del PDI](./map-context-
 
 </Tabs>
 
-Questa è una sezione all'interno del [menu contestuale del PDI](./map-context-menu.md) che mostra un'anteprima fotografica del Luogo Popolare (Wikipedia) selezionato. È possibile scorrere orizzontalmente per sfogliare le foto disponibili, o toccare una qualsiasi immagine per aprirla in [modalità a schermo intero](#gallery).
+Questa è una sezione all'interno del [menu contestuale del POI](./map-context-menu.md) che mostra un'anteprima fotografica del Luogo Popolare (Wikipedia) selezionato. È possibile scorrere orizzontalmente per sfogliare le foto disponibili, o toccare una qualsiasi immagine per aprirla in [modalità a schermo intero](#gallery).
 
-Le immagini visualizzate online vengono memorizzate automaticamente in cache per l'accesso offline. Le foto memorizzate in cache mostrano un piccolo badge offline nell'angolo. La griglia di anteprima si adatta alla dimensione dello schermo su iPadOS e macOS, garantendo un layout confortevole delle immagini su display più grandi. OsmAnd evita anche di attivare richieste di rete ripetute quando la sezione Foto Online viene chiusa e annulla le richieste precedenti quando si passa rapidamente tra diversi PDI.
+Le immagini visualizzate online vengono memorizzate automaticamente in cache per l'accesso offline. Le foto memorizzate in cache mostrano un piccolo badge offline nell'angolo. La griglia di anteprima si adatta alla dimensione dello schermo su iPadOS e macOS, garantendo un layout confortevole delle immagini su display più grandi. OsmAnd evita anche di attivare richieste di rete ripetute quando la sezione Foto Online viene chiusa e annulla le richieste precedenti quando si passa rapidamente tra diversi POI.
 
 <!-- 
 Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
@@ -219,7 +223,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. Per visualizzare queste immagini, tocca **Mostra tutto** (Android) / **Visualizza tutto** (iOS). È possibile scorrere tutte le foto disponibili. Toccando brevemente una foto si apre una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*.  
+Il **Menu Galleria** può visualizzare fino a **100 immagini** relative al punto di interesse selezionato. Per visualizzare queste immagini, tocca **Mostra tutto** (Android) / **Visualizza tutto** (iOS). È possibile scorrere tutte le foto disponibili. Toccando brevemente una foto si apre una vista dettagliata che mostra: *Nome*, *Data di aggiunta*, *Autore*, *Licenza*.
 
 Su iOS, iPadOS e macOS, è possibile navigare tra le foto utilizzando i tasti della tastiera (←/→ per spostarsi tra le immagini, Enter/Spazio per aprire).
 
@@ -292,7 +296,7 @@ The **Details** screen provides full metadata for the selected photo, including:
 
 - [Menu contestuale della mappa](./map-context-menu.md)
 - [Configura Mappa](./configure-map-menu.md)
-- [Ricerca PDI](../search/search-poi.md)
+- [Ricerca POI](../search/search-poi.md)
 - [Plugin Wikipedia](../plugins/wikipedia.md)
 
 

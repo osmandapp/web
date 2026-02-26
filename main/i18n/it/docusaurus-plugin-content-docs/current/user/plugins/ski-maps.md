@@ -1,5 +1,5 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
+source-hash: 31eaf050491744fda2c071f9b7f96835aefe6b7beef39ec37dbf6a225fba7c4c
 sidebar_position: 13
 title:  Visualizzazione Mappa Sci
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-Il plugin Visualizzazione Mappa Sci di OsmAnd mostra piste famose e popolari, aree sciistiche ufficialmente approvate e mappe dei sentieri della maggior parte delle stazioni sciistiche. Le mappe delle piste di [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) sono la fonte dei dati per le mappe sciistiche di OsmAnd. Combinando mappe vettoriali con mappe raster, la mappa sciistica di OsmAnd è molto accurata e sarà utile per istruttori, alpinisti e appassionati di sport invernali.
+Il plugin Visualizzazione Mappa Sci di OsmAnd mostra piste famose e popolari, aree sciistiche ufficialmente approvate e mappe dei sentieri della maggior parte delle stazioni sciistiche. Le mappe delle piste di [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) sono la fonte dei dati per le mappe sciistiche di OsmAnd. Combinando mappe vettoriali con mappe raster, la mappa sciistica di OsmAnd è molto accurata e sarà utile per istruttori, climbers e appassionati di sport invernali.
 
 La mappa sciistica di OsmAnd fa parte delle mappe vettoriali e non richiede download aggiuntivi. È disabilitata per impostazione predefinita. La Mappa Sci di OsmAnd è uno degli [Stili mappa](../map/vector-maps.md) che fornisce funzionalità aggiuntive evidenziando alcuni oggetti e rendendone altri meno visibili.  
 
@@ -99,7 +99,7 @@ Il profilo Sci è progettato per essere utilizzato in combinazione con gli stili
 
 </Tabs>
 
-La [mappa vettoriale](../map/vector-maps.md) con lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) incluso può essere completata con le [linee di contorno](../plugins/topography.md#contour-lines) e l'[ombreggiatura del rilievo](../plugins/topography.md#hillshade-slope-and-altitude-layers). Di seguito sono riportati due esempi. Le piste sulla mappa vettoriale predefinita sono mostrate a sinistra, e le piste sulla mappa vettoriale combinata con la mappa raster *Linee di contorno* e *Ombreggiatura del rilievo* sono mostrate a destra. Nel secondo caso, la mappa mostra più dati di elevazione per aiutare a stimare la difficoltà, il rischio e la distanza.  
+La [mappa vettoriale](../map/vector-maps.md) con lo [stile mappa Inverno e Sci](../map/map-styles.md#winter-and-ski) incluso può essere completata con le [linee di contorno](../plugins/topography.md#contour-lines) e l'[ombreggiatura del rilievo](../plugins/topography.md#hillshade-slope-and-altitude-layers). Di seguito sono riportati due esempi. Le piste sulla mappa vettoriale predefinita sono mostrate a sinistra, e le piste sulla mappa vettoriale combinata con la mappa raster *Linee di contorno* e *Ombreggiatura del rilievo* sono mostrate a destra. Nel secondo caso, la mappa mostra più dati di elevazione per aiutare a stimare la difficoltà, il rischio e la distanza.  
 
 
 ### Disabilitare lo stile Mappa Sci {#disable-ski-map-style}
@@ -160,7 +160,7 @@ La Mappa Sci di OsmAnd è costruita come uno degli stili di rendering, che deter
 | Colore | Descrizione |
 | --- | --- |
 | ![Pista per principianti](@site/static/img/plugins/ski-maps/1c_green_1.png) | Verde - Pista per principianti |
-| ![Piste facili](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Blu - Colline facili |
+| ![Colline facili](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Blu - Colline facili |
 | ![Pendenze intermedie](@site/static/img/plugins/ski-maps/3c_red_1.png) | Rosso - Pendenze intermedie |
 | ![Difficoltà avanzata](@site/static/img/plugins/ski-maps/4c_black_1.png) | Grigio - Pendenze di difficoltà avanzata |
 | ![Difficoltà per esperti](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Giallo - Pendenze di difficoltà per esperti |
@@ -239,7 +239,7 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 Per scoprire su quali piste al di fuori della stazione sciistica è possibile navigare, è necessario abilitare l'opzione **Piste da sci e percorsi** nell'elenco [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), aperto dal menu [Configura mappa](../map/configure-map-menu.md).  
 
-Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/vector-maps.md#winter-and-ski) abilitati, le [Piste da sci e percorsi](../map/routes.md#ski-slopes-and-routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.  
+Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/map-styles.md#winter-and-ski) abilitati, le [Piste da sci e percorsi](../map/routes.md#ski-slopes-and-routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.  
 Quando si abilita l'opzione [Piste da sci e percorsi](../map/routes.md#ski-slopes-and-routes) per uno stile mappa diverso da Inverno e Sci, vengono visualizzate solo le piste. Altre funzionalità relative allo sci potrebbero non essere mostrate in questo livello di stile.  
 _Le piste da sci e i percorsi_ [sono cliccabili](../map/routes.md#actions-with-routes).
 

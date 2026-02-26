@@ -1,5 +1,5 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
+source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
 sidebar_position: 17
 title:  Meteo
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
- <ProFeature/> Il plugin Meteo è una [funzionalità a pagamento](../purchases/index.md) dell'app OsmAnd.  
+Il plugin Meteo è una [funzionalità a pagamento](../purchases/index.md) di **OsmAnd Pro** <ProFeature />.
 :::
 
 I livelli interattivi della mappa meteo nell'app OsmAnd consentono di monitorare la temperatura, la pressione atmosferica, la copertura nuvolosa, la velocità del vento e le precipitazioni nella propria città o in qualsiasi altro luogo su una mappa globale interattiva. Il plugin Meteo fornisce previsioni meteorologiche orarie per i 7 giorni successivi direttamente sulla mappa di OsmAnd. Le informazioni meteorologiche possono anche essere scaricate per l'uso offline.  
@@ -60,7 +60,7 @@ Il plugin Meteo è disponibile solo con il motore di rendering della mappa [Vers
 
 Andare su: *Plugin abilitato → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -74,7 +74,9 @@ Andare su: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,s
 
 </Tabs>
 
-Il menu laterale principale ha una voce di menu dedicata **Meteo** che fornisce un accesso rapido a tutti gli strumenti meteorologici. La *schermata delle previsioni meteo* visualizza informazioni su *temperatura*, *pressione atmosferica*, *velocità del vento*, *copertura nuvolosa* e *precipitazioni*.  
+Il menu laterale principale ha una voce di menu dedicata **Meteo** che fornisce un accesso rapido a tutti gli strumenti meteorologici. La *schermata delle previsioni meteo* visualizza informazioni su *temperatura*, *pressione atmosferica*, *velocità del vento*, *copertura nuvolosa* e *precipitazioni*. 
+
+I valori delle previsioni sono mostrati per il centro della mappa, contrassegnato da un mirino (nero su Android, rosso su iOS). Spostare la mappa per cambiare la posizione selezionata: i dati meteo si aggiornano automaticamente per il nuovo punto.
 
 Nella parte inferiore dello schermo si trova la *barra degli strumenti meteo*. È possibile utilizzare i pulsanti dei giorni e il cursore del tempo per impostare l'ora esatta in cui verranno visualizzate le previsioni del tempo.
 
@@ -214,7 +216,7 @@ Per ottenere informazioni meteorologiche complete, è possibile utilizzare i liv
 
 ![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
-Per attivare o disattivare la visibilità dei livelli meteo, è possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa. Le impostazioni generali per mostrare o nascondere i livelli si trovano nella sezione [Meteo](#weather-forecast-screen) separata del *Menu principale*. Nell'articolo [Azione rapida](../widgets/quick-action.md#configure-map) troverete un elenco dei livelli disponibili per la visualizzazione. Se avete bisogno di un accesso rapido a questa configurazione della mappa, utilizzate lo strumento *Pulsante personalizzato*.
+Per passare la visibilità dei livelli meteo, è possibile utilizzare i pulsanti *Azione rapida* sulla schermata della mappa. Le impostazioni generali per mostrare o nascondere i livelli si trovano nella sezione [Meteo](#weather-forecast-screen) separata del *Menu principale*. Nell'articolo [Azione rapida](../widgets/quick-action.md#configure-map) troverete un elenco dei livelli disponibili per la visualizzazione. Se avete bisogno di un accesso rapido a questa configurazione della mappa, utilizzate lo strumento *Pulsante personalizzato*.
 
 - Andare su [Aggiungi azione](../widgets/quick-action.md#custom-buttons): *Menu → Configura schermata → Pulsanti personalizzati → Azione rapida → Aggiungi azione → Configura mappa*.
 - Aggiungere uno o più pulsanti di Azione rapida per modificare la visibilità di un particolare livello meteo.
@@ -291,7 +293,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 </Tabs>
 
-I [widget Meteo](../widgets/info-widgets.md#weather-widgets) come Temperatura, Pressione atmosferica, Vento, Nuvole e Precipitazioni mostrano i dati meteorologici attuali per il **punto centrale della mappa**.
+I [widget Meteo](../widgets/info-widgets.md#weather-widgets) come Temperatura, Pressione atmosferica, Vento, Copertura nuvolosa e Precipitazioni mostrano i dati meteorologici attuali per il **punto centrale della mappa**.
 
 - I widget Meteo vengono visualizzati solo quando la [schermata Meteo](#weather-forecast-screen) è attiva.
 - Per attivare i widget meteo, selezionare la voce di menu *Configura schermata*, il pannello su cui posizionarli e i widget richiesti dall'elenco.

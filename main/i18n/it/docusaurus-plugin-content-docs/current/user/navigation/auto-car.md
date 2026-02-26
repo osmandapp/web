@@ -1,5 +1,5 @@
 ---
-source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
+source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Panoramica {#overview}
+
+:::tip Acquisto
+Android Auto è una [funzionalità a pagamento](../purchases/index.md).  
+:::
 
 ![Schermata di Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -59,8 +63,8 @@ Quando si apre l'applicazione, viene visualizzato un elenco di categorie. Per fa
 - [Menu OsmAnd](#destination-points). Contiene un elenco di opzioni disponibili per assegnare un punto finale del percorso o una guida libera.
 - [Impostazioni](#voice-prompts). Questo pulsante è responsabile di: 1. accesso per attivare/disattivare i *suggerimenti vocali* durante la navigazione del percorso selezionato; 2. mostrare i dettagli del percorso (tempo e distanza) per la fermata successiva.
 - [Cerca](#search). Toccando il pulsante si apre una schermata con accesso alle funzioni di ricerca.
-- [La mia posizione](../widgets/map-buttons.md#my-location-and-zoom). Sposta la parte visibile della mappa in modo che la posizione corrente si trovi al centro dello schermo.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Consente di ingrandire e ridurre la parte visibile della mappa. Il gesto pinch-to-zoom è disponibile per ridimensionare la mappa. Se non supportato dall'unità principale, la regolazione dello zoom viene eseguita tramite gesto di doppio tocco e scorrimento.
+- [La mia posizione](../widgets/map-buttons.md#my-position-and-zoom). Sposta la parte visibile della mappa in modo che la posizione corrente si trovi al centro dello schermo.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Consente di ingrandire e ridurre la parte visibile della mappa. Il gesto pinch-to-zoom è disponibile per ridimensionare la mappa. Se non supportato dall'unità principale, la regolazione dello zoom viene eseguita tramite gesto di doppio tocco e scorrimento.
 - [Bussola](../widgets/map-buttons.md#compass). Mostra quale delle quattro modalità di orientamento della mappa disponibili sullo schermo del dispositivo è selezionata.
 
 
@@ -102,9 +106,9 @@ Se sul dispositivo non è selezionato alcun profilo *Guida* corrispondente al ti
 
 ![Schermata di Android Auto](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-È possibile selezionare [PDI](../map/point-layers-on-map.md#points-of-interest-pois), [Preferiti](../personal/favorites.md) o [Segnalibri](../personal/markers.md) precedentemente preimpostati e aggiunti come punto di destinazione. È anche possibile selezionare una [Traccia](../personal/tracks/manage-tracks.md) registrata o scaricata per il percorso, utilizzare la [Ricerca](../search/index.md), selezionare una destinazione dalla [Cronologia](../search/search-history.md) del percorso o fare una *Guida libera*.
+È possibile selezionare [POI](../map/point-layers-on-map.md#points-of-interest-pois) precedentemente preimpostati e aggiunti, [Preferiti](../personal/favorites.md) o [Segnalibri](../personal/markers.md) come punto di destinazione. È anche possibile selezionare una [Traccia](../personal/tracks/manage-tracks.md) registrata o scaricata per il percorso, utilizzare la [Ricerca](../search/index.md), selezionare una destinazione dalla [Cronologia](../search/search-history.md) del percorso o fare una *Guida libera*.
 
-1. Se si desidera una posizione particolare sulla mappa come punto finale, selezionare la categoria di punti appropriata dall'elenco, [PDI](#poi-categories), [Preferiti](#favorites) o [Segnalibri mappa](#map-markers).  
+1. Se si desidera una posizione particolare sulla mappa come punto finale, selezionare la categoria di punti appropriata dall'elenco, [POI](#poi-categories), [Preferiti](#favorites) o [Segnalibri mappa](#map-markers).  
   
     - Tutte le categorie non possono contenere più elementi di quelli previsti dal sistema multimediale del veicolo. Ciò significa che l'elenco in *Android Auto* potrebbe essere incompleto e tutte le altre cartelle sono disponibili solo nell'app OsmAnd sul dispositivo.
     - La cartella [Ultima modifica](#folder-last-modified) contiene un elenco delle destinazioni recenti, ordinate per data di aggiunta o modifica.
@@ -129,7 +133,7 @@ Durante la guida, i punti selezionati possono essere [annunciati](#voice-prompts
 Nella categoria Cronologia, è possibile selezionare una destinazione da un elenco di punti finali. Sono ordinati in base all'uso più recente, a partire dal più nuovo. Questo può essere comodo per un accesso rapido ai percorsi utilizzati di frequente. Per sapere come utilizzare o eliminare una destinazione, leggere l'articolo [Cronologia ricerche](../search/search-history.md).  
 
 
-### Categorie PDI {#poi-categories}
+### Categorie POI {#poi-categories}
 
 <table class="image">
     <tr>
@@ -138,12 +142,12 @@ Nella categoria Cronologia, è possibile selezionare una destinazione da un elen
     </tr>
 </table>
 
-I PDI (Punti di Interesse) sono un tipo di punti che identificano luoghi o oggetti sulla mappa importanti o di interesse per gli utenti. Sono evidenziati da icone speciali fornite nelle [impostazioni di OsmAnd](../map/point-layers-on-map.md#poi-types) e ordinate in gruppi.  
+I POI (Punti di Interesse) sono un tipo di punti che identificano luoghi o oggetti sulla mappa importanti o di interesse per gli utenti. Sono evidenziati da icone speciali fornite nelle [impostazioni di OsmAnd](../map/point-layers-on-map.md#poi-types) e ordinate in gruppi.  
 
-Per creare un percorso verso un PDI in *Android Auto*, seguire questi passaggi:
+Per creare un percorso verso un POI in *Android Auto*, seguire questi passaggi:
 
-1. Selezionare il PDI necessario dall'elenco delle categorie disponibili o inserire il nome del PDI utilizzando la [Ricerca](#search).
-2. Toccando una categoria si apre la schermata successiva con un elenco di PDI.
+1. Selezionare il POI necessario dall'elenco delle categorie disponibili o inserire il nome del POI utilizzando la [Ricerca](#search).
+2. Toccando una categoria si apre la schermata successiva con un elenco di POI.
 3. Toccando un elemento nell'elenco si apre la navigazione.
 4. OsmAnd calcola il percorso e lo visualizza sullo schermo di *Android Auto*. Toccare il pulsante **Avvia** per iniziare la navigazione verso quella posizione.
 5. A seconda delle [impostazioni](../navigation/guidance/navigation-settings.md) dell'app OsmAnd e del veicolo, è possibile ricevere [suggerimenti vocali](#voice-prompts) per guidare l'utente verso una destinazione.  
@@ -188,12 +192,12 @@ Le tracce possono anche essere selezionate direttamente sullo schermo del veicol
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
-Andare su Cerca offre un accesso rapido a un elenco della [cronologia delle destinazioni](#history) recenti. Analogamente al [menu Navigazione](../navigation/setup/route-navigation.md#navigation-menu), dove sono raccolti tutti i metodi di destinazione di OsmAnd come un indirizzo, PDI o coordinate.
+Andare su Cerca offre un accesso rapido a un elenco della [cronologia delle destinazioni](#history) recenti. Analogamente al [menu Navigazione](../navigation/setup/route-navigation.md#navigation-menu), dove sono raccolti tutti i metodi di destinazione di OsmAnd come un indirizzo, POI o coordinate.
 
 È possibile utilizzare lo strumento Cerca per trovare il luogo richiesto sulla mappa per la pianificazione del percorso da qualsiasi categoria di ricerca disponibile.
 
 - [Indirizzo](../search/search-address.md) - iniziare a digitare l'indirizzo nel campo di ricerca.
-- [PDI](../search/search-poi.md) e [PDI personalizzati](../search/search-poi.md) - l'elenco dei nomi simili nelle vicinanze visualizzerà anche i PDI o le loro categorie.
+- [POI](../search/search-poi.md) e [POI personalizzati](../search/search-poi.md) - l'elenco dei nomi simili nelle vicinanze visualizzerà anche i POI o le loro categorie.
 - [Ricerca coordinate](../search/search-address#coordinates-search) - inserire le coordinate per trovare il punto sulla mappa.  
 
 
@@ -262,7 +266,7 @@ Questo widget informativo combina tipi di avvisi come **Attraversamenti pedonali
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-Il widget **Tachimetro** è un elemento di interfaccia integrato che visualizza la *velocità attuale* utilizzando i dati GPS e il *limite di velocità* dal [database OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) e dalle [impostazioni di OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) sullo schermo del sistema multimediale del veicolo.
+Il widget **Tachimetro** è un elemento di interfaccia integrato che visualizza la *velocità attuale* utilizzando i dati GPS e il *limite di velocità* dal [database OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) e dalle [impostazioni di OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) sullo schermo del sistema multimediale del veicolo. Quando la velocità attuale si avvicina alla tolleranza del limite di velocità configurata o lo supera, il widget cambia aspetto (colori) per fornire un avviso. Il cambiamento di aspetto può essere animato.
 
 - Il **widget Tachimetro** è [*dipendente dal profilo*](../personal/profiles.md), quindi se si modificano le impostazioni per un profilo, queste non verranno applicate a un altro.
 - Non è possibile personalizzare la visualizzazione del **widget Tachimetro** direttamente in *Android Auto*, è necessario configurarlo nell'app OsmAnd prima di avviare la navigazione e collegare il dispositivo al veicolo.
@@ -356,10 +360,10 @@ L'app OsmAnd può essere aperta e utilizzata per la navigazione in *Android Auto
 Nelle impostazioni di Android Auto, è possibile modificare la posizione della barra delle applicazioni e il layout della schermata iniziale:
 
 - **Posizione della barra delle applicazioni:**  
-  Andare su *Impostazioni di Android Auto → Mostra controlli rapidi per le app* e disattivare l'interruttore. Questo sposterà la barra delle applicazioni dal basso al lato dello schermo.
+  Andare su *Impostazioni di Android Auto → Show quick controls for Apps* e disattivare l'interruttore. Questo sposterà la barra delle applicazioni dal basso al lato dello schermo.
 
 - **Layout della schermata iniziale:**  
-  Andare su *Impostazioni di Android Auto → Cambia layout → Cambia posizione del sedile del conducente* per regolare il layout in base alla posizione del sedile del conducente.
+  Andare su *Impostazioni di Android Auto → Change layout → Change Driver seat location* per regolare il layout in base alla posizione del sedile del conducente.
 
 
 ## Problemi comuni e soluzioni {#common-issues-and-solutions}

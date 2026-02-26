@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Navigazione tramite traccia
 ---
@@ -70,7 +70,7 @@ Prima di utilizzare l'opzione *Navigazione tramite traccia*, è necessario [visu
 
 La navigazione su una traccia può essere avviata utilizzando il pulsante di azione rapida nel [menu contestuale della traccia](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (aperto selezionando una delle [tracce evidenziate](./route-navigation.md#history-of-previous-routes) sulla mappa, o toccando un file di traccia nella sezione [I miei luoghi](../../personal/myplaces.md) del *Menu principale*) o dal menu di navigazione, che si apre toccando:
 
-- [*Pulsante Navigazione*](../../widgets/map-buttons.md#directions) sulla schermata della mappa.  
+- [*Pulsante Navigazione*](../../widgets/map-buttons.md#navigation) sulla schermata della mappa.  
 - *Sezione Navigazione* nel *Menu principale* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - Nel [*Menu di navigazione*](./route-navigation.md#navigation-menu) vai a *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 

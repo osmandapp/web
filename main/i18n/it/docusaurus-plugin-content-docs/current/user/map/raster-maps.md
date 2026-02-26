@@ -1,6 +1,6 @@
 ---
-source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
-sidebar_position: 6
+source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+sidebar_position: 7
 title:  Mappe Raster (Online / Offline)
 ---
 
@@ -14,20 +14,38 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Panoramica {#overview}
 
 Le mappe raster sono aggiunte significative e utili alle mappe vettoriali di OsmAnd. Permettono di combinare varie fonti di mappe con le mappe vettoriali. Ad esempio, le informazioni su colline e pendenze vengono visualizzate come un livello raster. È possibile visualizzare una sovrapposizione di sentieri escursionistici, mappe delle precipitazioni, dati sul traffico in tempo reale e una sovrapposizione di immagini satellitari su una mappa vettoriale di base traslucida. È anche possibile passare dalle mappe predefinite a tile raster sul web.
+
+Le mappe raster in OsmAnd sono tipicamente fornite come un insieme di piccole immagini (tile) disposte in una griglia. A differenza delle mappe vettoriali, che memorizzano oggetti come strade, punti e poligoni come dati, le tile raster sono immagini pre-renderizzate e possono apparire pixellate a livelli di zoom elevati perché ogni pixel ha un valore fisso.
+
+**Vantaggi:**
+- Poiché le mappe raster sono pre-renderizzate, si caricano più velocemente, eliminando la necessità per il dispositivo di elaborare e renderizzare i dati in tempo reale.
+- Le mappe raster possono essere caricate dinamicamente durante la navigazione.
+- È possibile creare una cache offline e scaricare solo le tile mancanti secondo necessità.
+- È possibile utilizzare un numero illimitato di fonti web esterne per le mappe raster, rendendole flessibili per diversi tipi di mappe, come viste satellitari o mappe specializzate.
+- I dati raster, come le informazioni sul traffico, possono essere aggiornati regolarmente dopo la scadenza (ad es. ogni 20-30 minuti, a seconda della configurazione).
+
+**Svantaggi:**
+- Le mappe raster occupano molto più spazio delle mappe vettoriali. Ad esempio, la mappa di una città potrebbe essere di 15 MB come mappa vettoriale, ma aumentare a 50 MB al livello di zoom 15, 200 MB al livello di zoom 16 e fino a 800 MB al livello di zoom 17.
+- Non è possibile toccare luoghi o oggetti specifici sulle mappe raster per ottenere maggiori informazioni.
+- Le mappe raster non possono essere stilizzate o modificate per escludere oggetti specifici.
+- Ingrandendo troppo l'immagine può apparire pixellata, specialmente se non sono disponibili tile ad alta risoluzione.
+- Non è possibile ruotare la mappa senza ruotare il testo, il che può rendere difficile la lettura delle etichette.
 
 
 ## Casi d'uso {#use-cases}
 
 Le mappe raster hanno una vasta gamma di utilizzi. Ecco alcuni dei più popolari:
 
-- Immagini satellitari come underlay (sottostrato).
+- Immagini satellitari come underlay.
 - Informazioni sul traffico in tempo reale.
-- Previsioni pioggia come overlay (sovrapposizione).
+- Previsioni pioggia come overlay.
 - Mappe topografiche con l'ombreggiatura di colline e pendenze.
 - Percorsi ciclabili e di corsa attivi come overlay.
 - Informazioni sulle imbarcazioni in tempo reale.
@@ -36,56 +54,33 @@ Le mappe raster hanno una vasta gamma di utilizzi. Ecco alcuni dei più popolari
 ![Panoramica delle mappe online](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
 :::tip
-È anche possibile cambiare la fonte principale delle mappe da mappe vettoriali a tile online.
+È anche possibile cambiare [la fonte principale](#main) delle mappe da mappe vettoriali a tile online.
 :::
 
 
-## Mappe Raster {#raster-maps}
-
-Le mappe online in OsmAnd sono composte da dati raster, che consistono in pixel (chiamati anche celle di una griglia) - essenzialmente un insieme di piccole immagini note come tile. A differenza delle mappe vettoriali, che rappresentano dati come strade, punti e poligoni utilizzando informazioni binarie, le tile delle mappe raster sono disposte in una griglia e possono apparire pixellate a livelli di zoom elevati perché ogni pixel ha un valore o una classe fissa.
-
-### Confronto con le mappe vettoriali predefinite {#comparison-to-default-vector-maps}
-
-**Vantaggi:**
-
-- Poiché le mappe raster sono pre-renderizzate, si caricano più velocemente, eliminando la necessità per il dispositivo di elaborare e renderizzare i dati in tempo reale.
-- Le mappe raster possono essere caricate dinamicamente durante la navigazione.
-- È possibile creare una cache offline e scaricare solo le tile mancanti secondo necessità.
-- È possibile utilizzare un numero illimitato di fonti web esterne per le mappe raster, rendendole flessibili per diversi tipi di mappe, come viste satellitari o mappe specializzate.
-- I dati raster, come le informazioni sul traffico, possono essere aggiornati regolarmente dopo la scadenza (ad es. ogni 20-30 minuti, a seconda della configurazione).
-
-**Svantaggi:**
-
-- Le mappe raster occupano molto più spazio delle mappe vettoriali. Ad esempio, la mappa di una città potrebbe essere di 15 MB come mappa vettoriale, ma aumentare a 50 MB al livello di zoom 15, 200 MB al livello di zoom 16 e fino a 800 MB al livello di zoom 17.
-- Non è possibile toccare luoghi o oggetti specifici sulle mappe raster per ottenere maggiori informazioni.
-- Le mappe raster non possono essere stilizzate o modificate per escludere oggetti specifici.
-- Ingrandendo troppo l'immagine può apparire pixellata, specialmente se non sono disponibili tile ad alta risoluzione.
-- Non è possibile ruotare la mappa senza ruotare il testo, il che può rendere difficile la lettura delle etichette.
-
-
-## Come usare le mappe raster {#how-to-use-raster-maps}
+## Per iniziare {#getting-started}
 
 **Abilita plugin**.
 
 - **iOS**. Per *iOS*, questa funzione funziona per impostazione predefinita.
 - **Android**. Per *Android*, per utilizzare le mappe raster in OsmAnd è necessario abilitare il [plugin Mappe online](../plugins/online-map.md). Seguire questi passaggi: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**Modifica i parametri del livello**. Per migliorare la visibilità e la combinazione dei livelli di mappe raster, è possibile regolare la trasparenza del livello utilizzando il cursore sullo schermo. Inoltre, è possibile modificare lo stile della mappa vettoriale nascondendo i poligoni, rendendo più visibili i livelli di underlay. Ciò è particolarmente utile quando si visualizzano immagini satellitari.
+**[Modifica i parametri del livello](#layers)**. Per migliorare la visibilità e la combinazione dei livelli di mappe raster, è possibile regolare la trasparenza del livello utilizzando il cursore sullo schermo. Inoltre, è possibile modificare lo stile della mappa vettoriale nascondendo i poligoni, rendendo più visibili i livelli di underlay. Ciò è particolarmente utile quando si visualizzano immagini satellitari.
 
 
-## Selezionare le mappe raster {#select-raster-maps}
+## Livelli {#layers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Mostra mappe](@site/static/img/plugins/online-maps/show-maps-andr.png)  
+![Mostra mappe](@site/static/img/plugins/online-maps/show-maps-andr_new.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Mostra mappe](@site/static/img/plugins/online-maps/show-maps-ios.png)  
+![Mostra mappe](@site/static/img/plugins/online-maps/show-maps-ios_new.png)  
 
 </TabItem>
 
@@ -93,10 +88,15 @@ Le mappe online in OsmAnd sono composte da dati raster, che consistono in pixel 
 
 In OsmAnd, le mappe raster possono fungere da fonte di mappa aggiuntiva accanto alle mappe vettoriali predefinite, ottimizzate per l'uso offline.  
 
-Si ha la flessibilità di aggiungere uno o due livelli di tile online per completare la mappa di base. Ciò consente di visualizzare fino a tre livelli di mappa contemporaneamente sullo schermo. Ad esempio, è possibile avere la mappa vettoriale offline di OsmAnd come base, sovrapporvi una vista satellitare e posizionare una mappa delle piste ciclabili come underlay per maggiori dettagli.  
+Si ha la flessibilità di aggiungere uno o due livelli di tile online per completare la mappa di base. Ciò consente di visualizzare fino a tre livelli di mappa contemporaneamente sullo schermo (più Terreno). Pensateli come una torta: [**Underlay**](#underlay) (base raster sottostante), [**Principale**](#main) (vettoriale* o raster core), [**Overlay**](#overlay) (raster sovrapposto), con l'ombreggiatura del [**Terreno**](#terrain) su tutto. Ad esempio, è possibile avere la mappa vettoriale offline di OsmAnd come base Principale, sovrapporvi una vista satellitare e posizionare una mappa delle piste ciclabili come Underlay per maggiori dettagli.
+
+>[Le mappe vettoriali](./vector-maps.md) sono disponibili **solo** nel livello [Principale](#main) (e sono quelle predefinite lì). Le mappe raster possono essere utilizzate in tutti e tre i livelli: Principale, Underlay e Overlay.
+
+
+
+Se si desidera passare più rapidamente tra questi livelli ([fonte mappa principale](#main), [Overlay](#overlay), [Underlay](#underlay) e [Terreno](#terrain)), è possibile aggiungere un [Quick Action (Pulsante personalizzato)](../widgets/quick-action.md) allo schermo della mappa e assegnargli le azioni mappa corrispondenti.
 
 È anche possibile regolare la trasparenza della mappa di base per fonderla con i livelli. Se necessario, è possibile abilitare un cursore di trasparenza sulla schermata principale per regolazioni rapide.
-
 
 ### Principale {#main}
 
@@ -104,26 +104,25 @@ Si ha la flessibilità di aggiungere uno o due livelli di tile online per comple
 
 <TabItem value="android" label="Android">  
 
-Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,gpx_add_track"/>*  
 
-![Mostra mappe](@site/static/img/plugins/online-maps/map_source.png)
+![Mostra mappe](@site/static/img/plugins/online-maps/map_source_1.png) ![Mostra mappe](@site/static/img/plugins/online-maps/map_source_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps"/>*  
+Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps,map_settings_install_more"/>*  
 
-![Mostra mappe](@site/static/img/plugins/online-maps/map_type.png)
+![Mostra mappe](@site/static/img/plugins/online-maps/map_type_new.png)
 
 </TabItem>
 
 </Tabs>
 
-È possibile scegliere uno stile di mappa dall'elenco o [aggiungerne](#add-new-online-raster-map-source) uno proprio.
+Per impostazione predefinita, la mappa principale è impostata su [Mappe vettoriali offline](./vector-maps.md) (mappe OsmAnd), ottimizzate per l'uso offline. È possibile scegliere una fonte di mappa diversa dall'elenco (_Aggiungi altro_(Android) o _Installa altro_ (iOS)) o [aggiungere](#add-new-online-source) la propria.
 
-
-### Livello di sovrapposizione (Overlay) {#overlay-layer}
+### Overlay {#overlay}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -145,16 +144,15 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 </Tabs>
 
-1. *Attiva/disattiva* la mappa Underlay.
+1. *Attiva/disattiva* il livello mappa Underlay.
 2. *Trasparenza overlay* (*Android*)/ *Trasparenza* della mappa Overlay (*iOS*).
 3. *Mostra cursore trasparenza* (*Android*) / *Mostra cursore sulla mappa* (*iOS*). Accesso rapido all'impostazione della trasparenza.
-4. *Fonte mappa overlay* (*Android*) / *Livelli disponibili* (*iOS*). È possibile scegliere una mappa a tile da installare o aggiornare.
+4. *Fonte mappa overlay* (*Android*) / *Livelli disponibili* (*iOS*). Selezionare una mappa a tile online dall'elenco per aggiungerla direttamente come livello Overlay.
 5. *Mostra simboli mappa* - come testo, segnali stradali e altro.  
-6. *Aggiungi fonte online* (*iOS*).
+6. *Aggiungi fonte online* (*iOS*). [Aggiungi nuova fonte online](#add-new-online-source).
 7. *Importa da documenti* (*iOS*).
 
-
-### Livello di base (Underlay) {#underlay-layer}
+### Underlay {#underlay}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -179,19 +177,40 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 1. *Attiva/disattiva* la mappa Underlay.
 2. *Trasparenza mappa di base*.
 3. *Mostra cursore trasparenza* (*Android*) / *Mostra cursore sulla mappa* (*iOS*). Accesso rapido all'impostazione della trasparenza.
-4. *Fonte mappa underlay* (*Android*) / *Livelli disponibili* (*iOS*). È possibile scegliere una mappa a tile da installare o aggiornare.
+4. *Fonte mappa underlay* (*Android*) / *Livelli disponibili* (*iOS*). Selezionare una mappa a tile online dall'elenco per aggiungerla direttamente come livello Underlay.
 5. *Mostra/Nascondi poligoni*.
-6. *Aggiungi fonte online* (*iOS*).
+6. *Aggiungi fonte online* (*iOS*). [Aggiungi nuova fonte online](#add-new-online-source).
 7. *Importa da documenti* (*iOS*).
 
+### Terreno {#terrain}
 
+![Livelli del terreno](@site/static/img/plugins/online-maps/terrain_two_layers.png)
+
+Nel contesto delle mappe raster, il [Terreno](../plugins/topography.md#terrain) si riferisce a un livello di ombreggiatura del rilievo che aiuta a visualizzare la forma del paesaggio su una mappa piana. Questo livello si basa su dati raster del terreno ed è visualizzato sopra la mappa di base per migliorare la percezione delle pendenze e delle forme del terreno.
+
+L'ombreggiatura del terreno è uno dei livelli raster disponibili in OsmAnd e rappresenta una visualizzazione colorata del rilievo derivata dai dati di elevazione. 
+
+Per utilizzare il livello Terreno è necessario:
+1. Acquistare il plugin Topografia:
+    - [Acquisti Android](../purchases/android.md)
+    - [Acquisti iOS](../purchases/ios.md)
+2. Abilitare il [plugin Topografia](../plugins/topography.md):  
+    *Menu → Plugin → ︙ → Abilita*
+3. Selezionare la regione richiesta e scaricare Ombreggiatura o Pendenze (per Maps+) o Mappa Terreno 3D (per Pro).
+4. Il processo di download potrebbe richiedere del tempo, a seconda delle dimensioni della regione selezionata e della velocità della connessione Internet.
+
+La visualizzazione del terreno può essere combinata con altri livelli raster e con la mappa vettoriale predefinita.
+
+Funzionalità più avanzate del terreno, inclusi il rilievo 3D (solo Pro) e opzioni aggiuntive relative al terreno, sono descritte nell'articolo [Topografia](../plugins/topography.md).
+
+<!--
 ## Ombreggiatura / Pendenza {#hillshade--slope}
 
 ![Livelli del terreno](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
 **Ombreggiatura** e **Pendenza** sono mappe raster offline che mostrano il rilievo del terreno. Vengono visualizzate come un livello di mappa speciale, una seconda sovrapposizione sulla mappa di base. Le mappe contengono informazioni aggiuntive sull'elevazione per aiutare a comprendere più accuratamente la pendenza e le ombre del paesaggio. Le informazioni di *Ombreggiatura* e *Pendenza* si basano su dati provenienti da un'unica fonte, il *file Global planet*, e sono suddivise per regioni.  
 
-Non è necessario passare da un livello all'altro di Ombreggiatura e Pendenza, poiché vengono uniti automaticamente. È possibile selezionare solo uno di questi livelli da visualizzare sulla mappa, ma si ha anche la possibilità di combinarli entrambi [come underlay o overlay](#select-raster-maps) su altri livelli per una rappresentazione più visiva del terreno.
+Non è necessario passare da un livello all'altro di Ombreggiatura e Pendenza, poiché vengono uniti automaticamente. È possibile selezionare solo uno di questi livelli da visualizzare sulla mappa, ma si ha anche la possibilità di combinarli entrambi [come underlay o overlay](#layers) su altri livelli per una rappresentazione più visiva del terreno.
 
 Per iniziare a usare Ombreggiatura e Pendenza è necessario:
 
@@ -247,7 +266,7 @@ Il [Rilievo 3D](../plugins/topography.md#3d-relief) è una funzione a pagamento 
 La funzione [**Rilievo 3D**](../plugins/topography.md#3d-relief) è una tecnologia di mappatura che consente la visualizzazione del terreno su una mappa utilizzando modelli tridimensionali. Questa funzione aggiunge informazioni sull'elevazione a una normale mappa bidimensionale, creando un effetto 3D e di profondità che permette di visualizzare meglio il terreno.  
 
 *Per iniziare a usare il Rilievo 3D*:  
-È necessario acquistare il [piano di acquisto OsmAnd Pro](../plugins/index.md#purchase), abilitare il [plugin Topografia](../plugins/topography.md) e attivare la voce [Rilievo 3D](../plugins/topography.md#3d-relief) in *Menu → Configura mappa*.
+È necessario acquistare il [piano di acquisto OsmAnd Pro](../plugins/index.md#purchase), abilitare il [plugin Topografia](../plugins/topography.md), e attivare la voce [Rilievo 3D](../plugins/topography.md#3d-relief) in *Menu →  Configura mappa*.
 
 
 *Come funziona la funzione Rilievo 3D*:  
@@ -255,9 +274,10 @@ La funzione [**Rilievo 3D**](../plugins/topography.md#3d-relief) è una tecnolog
 *2.* Sulla base dei dati di elevazione, viene creato un modello 3D per visualizzare montagne, colline, valli e altri elementi del terreno sulla mappa.  
 *3.* OsmAnd visualizza quindi questi modelli tridimensionali su una mappa piana. La mappa può essere ingrandita, rimpicciolita e ruotata per visualizzare il terreno da diverse angolazioni e prospettive.  
 *4.* La visualizzazione delle linee di contorno sulla mappa non dipende dal fatto che la fonte della mappa sia online o offline.
+-->
 
 
-## Preparare/Copiare le mappe raster sul dispositivo {#preparecopy-raster-maps-to-device}
+## Preparare/Copiare le mappe {#preparecopy-maps}
 
 Esistono diversi modi per aggiungere una nuova mappa raster, copiarla da un altro dispositivo, prepararla su un PC e pre-scaricare le tile per l'uso offline. Ad esempio, è possibile creare il proprio pacchetto di mappe su un PC utilizzando software speciali come [MOBAC, OsmAndMapCreator, ecc.](../../technical/map-creation/index.md). Tipicamente le mappe raster sono distribuite come file con estensione `.sqlitedb`.
 
@@ -269,13 +289,15 @@ Ecco i metodi principali per aggiungere una nuova fonte di mappa raster non anco
 - Preparare un URL magico con i parametri della fonte di mappa online e aprirlo con OsmAnd.
 
 
-### Aggiungere una nuova fonte di mappa raster online {#add-new-online-raster-map-source}
+### Aggiungi nuova fonte online {#add-new-online-source}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
+Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add_manually"/>*
+
+![Aggiungi fonte online](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 </TabItem>
 
@@ -283,11 +305,11 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
+![Aggiungi fonte online](@site/static/img/plugins/online-maps/add-online-source-2_ios.png)
+
 </TabItem>
 
 </Tabs>
-
-![Aggiungi fonte online](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 Per creare una fonte di mappa raster è necessario conoscere l'**URL di una tile**, che è un URL specifico che distribuisce le tile della mappa nella Proiezione di Mercatore. Ad esempio, un URL di una tile potrebbe assomigliare a questo: `https://tile.osmand.net/hd/6/55/25.png`, dove `tile.osmand.net/hd/` è l'URL di base.
 
@@ -317,10 +339,10 @@ Le mappe online possono essere aggiunte con un link speciale all'elenco delle ma
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|
 |[Livelli di zoom]|min_zoom=9 / max_zoom=15|
 
-Troverete la mappa online aggiunta nell'elenco del menu [livello Principale / Underlay / Overlay](#select-raster-maps).
+Troverete la mappa online aggiunta nell'elenco del menu [livello Principale / Underlay / Overlay](#layers).
 
 
-## Gestire le mappe raster {#manage-raster-maps}
+## Gestire i dati mappa {#manage-map-data}
 
 Le mappe raster possono occupare una quantità significativa di spazio su disco, quindi potrebbe essere necessario controllarlo regolarmente. Per grandi set di dati, si consiglia di utilizzare una *fonte raster SQLite* perché memorizzerà tutte le tile in un unico grande file (database SQLite).
 
@@ -329,30 +351,40 @@ Le mappe raster possono occupare una quantità significativa di spazio su disco,
 
 Per cambiare il formato delle tile, è possibile scegliere <Translate android="true" ids="storage_format"/> nel menu di modifica delle mappe online:
 
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → scegliere la mappa online →  
+- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → scegliere la mappa online →  
 &#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>*
 - **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,sqlite_db_file"/> / <Translate ios="true" ids="one_image_per_tile"/>*
 
 
-### Svuotare la cache delle mappe raster {#clear-raster-map-cache}
+### Svuotare la cache delle tile {#clear-tile-cache}
 
-![Elenco fonti online](@site/static/img/plugins/online-maps/online-sources-list.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Andare a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → scegliere la mappa online →  
+&#8942; → <Translate android="true" ids="clear_tile_data"/>*
+
+![Elenco fonti online](@site/static/img/plugins/online-maps/clear_cache_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Andare a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
+
+![Elenco fonti online](@site/static/img/plugins/online-maps/clear_cache_ios.png)
+</TabItem>
+
+</Tabs>
 
 Le tile vengono memorizzate nella cache quando si utilizzano mappe raster online come livello Principale / Overlay / Underlay. È possibile vedere la dimensione del file SQ Lite sotto il nome della mappa online nell'elenco. A volte è necessaria una pulizia regolare per accelerare la visualizzazione delle tile o per aggiornare i dati.  
-
-Per svuotare la cache delle tile della mappa, è necessario eseguire le seguenti operazioni:
-
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → scegliere la mappa online →  
-&#8942; → <Translate android="true" ids="clear_tile_data"/>*
-- **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
-
-
 
 ### Scaricare / Aggiornare le tile {#download--update-tiles}
 
 Se si desidera accedere alle mappe raster offline, potrebbe essere necessario pre-caricare le tile. Questo può essere fatto sul proprio dispositivo mobile, ma si tenga presente che alcuni servizi potrebbero bloccare il download di pacchetti di grandi dimensioni. È anche possibile utilizzare la stessa funzione per aggiornare le tile già scaricate per aree selezionate, altrimenti OsmAnd continuerà a visualizzare le tile già memorizzate nella cache.  
 
-Affinché le mappe aggiornino automaticamente le tile dopo un po' di tempo, è possibile impostare un [Tempo di scadenza](#add-new-online-raster-map-source), dopodiché OsmAnd ricaricherà le tile non appena verranno visualizzate.  
+Affinché le mappe aggiornino automaticamente le tile dopo un po' di tempo, è possibile impostare un [Tempo di scadenza](#add-new-online-source), dopodiché OsmAnd ricaricherà le tile non appena verranno visualizzate.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -384,20 +416,20 @@ Affinché le mappe aggiornino automaticamente le tile dopo un po' di tempo, è p
 
 </Tabs>
 
-- Per scaricare o aggiornare le tile raster, è necessario selezionare la fonte della mappa online come [Fonte mappa principale](#select-raster-maps) (**Android / iOS**). È anche possibile selezionare le tile online separatamente per la mappa [Overlay](#overlay-layer) o per l'[Underlay](#underlay-layer) (Solo per **Android**).
+- Per scaricare o aggiornare le tile raster, è necessario selezionare la fonte della mappa online come [fonte mappa principale](#layers) (**Android / iOS**). È anche possibile selezionare le tile online separatamente per la mappa [Overlay](#overlay) o per l'[Underlay](#underlay) (Solo per **Android**).
 
 - Per la versione **Android** dell'app OsmAnd, è necessario selezionare un'area in base alle dimensioni dello schermo del dispositivo e fare un tocco lungo sulla mappa. Quindi selezionare [*Azioni*](../map/map-context-menu.md#update--download-online-maps) nel menu contestuale della mappa e l'opzione *Scarica mappa* o *Aggiorna mappa*. Nella schermata Scarica mappa, apportare le modifiche alle impostazioni necessarie e toccare Scarica.  
 
-- Nella versione **iOS** dell'app OsmAnd, è necessario fare un tocco lungo sulla mappa, quindi selezionare [*Azioni*](../map/map-context-menu.md#update--download-online-maps) e l'opzione *Scarica mappa* o *Aggiorna mappa* dal menu contestuale della mappa. Nella schermata Scarica mappa, è possibile selezionare l'area richiesta e modificare le impostazioni necessarie. Dopo aver impostato tutti i parametri, è possibile vedere il numero di tile e la dimensione del download.
+- Nella versione **iOS** dell'app OsmAnd, è necessario fare un tocco lungo sulla mappa, quindi selezionare  [*Azioni*](../map/map-context-menu.md#update--download-online-maps) e l'opzione *Scarica mappa* o *Aggiorna mappa* dal menu contestuale della mappa. Nella schermata Scarica mappa, è possibile selezionare l'area richiesta e modificare le impostazioni necessarie. Dopo aver impostato tutti i parametri, è possibile vedere il numero di tile e la dimensione del download.
 
 
-### Modificare i parametri della mappa raster {#change-raster-map-parameters}
+### Modificare i parametri {#change-parameters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Andare a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → scegliere la mappa online →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+Andare a: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → scegliere la mappa online →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
@@ -409,10 +441,14 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_ta
 
 </Tabs>
 
-Le mappe raster possono essere utilizzate così come sono se le tile sono già mappate. Se le mappe raster sono fornite online, c'è sempre un URL di base che deve essere configurato. Ci sono alcuni altri parametri di base che possono essere modificati per le mappe raster, di cui si può leggere in [questa sezione](#add-new-online-raster-map-source) dell'articolo. Parametri più complessi sono codificati nei componenti interni del [formato SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
+Le mappe raster possono essere utilizzate così come sono se le tile sono già mappate. Se le mappe raster sono fornite online, c'è sempre un URL di base che deve essere configurato. Ci sono alcuni altri parametri di base che possono essere modificati per le mappe raster, di cui si può leggere in [questa sezione](#add-new-online-source) dell'articolo. Parametri più complessi sono codificati nei componenti interni del [formato SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 
 ## Articoli correlati {#related-articles}
 
 - [Importa / Esporta](../personal/import-export.md)
 - [Schemi di tavolozze di colori](../personal/color-palette-schemes.md)
+- [Quick Action (Pulsante personalizzato)](../widgets/quick-action.md)
+- [Mappe online](../plugins/online-map.md)
+- [Topografia](../plugins/topography.md)
+- [Crea Mappe Raster & Vettoriali Offline](technical/map-creation/create-offline-maps-yourself.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  Parametri del veicolo
 ---
@@ -98,6 +98,10 @@ I parametri del veicolo influenzano la navigazione e la costruzione del percorso
 ![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+Su Android, questo parametro è anche disponibile per i *[profili di ciclismo](../../navigation/routing/bicycle-based-routing.md)* per aiutare a evitare sentieri ciclabili stretti.
+
+![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+
 **5.** [**Limite di carico massimo per asse**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Fornire il carico massimo per asse del veicolo per evitare strade e ponti con restrizioni sul peso per asse. Questo parametro è disponibile solo nei tipi di navigazione come [*Camion*](../../navigation/routing/car-based-routing.md).  
 
 ![Impostazioni di navigazione Android](@site/static/img/navigation/max_axle_load.png)
@@ -134,7 +138,7 @@ I limiti sui parametri del veicolo possono essere importanti per la navigazione 
 
 </Tabs>
 
-Se si seleziona il tipo di motore nei parametri del veicolo, i dati sull'[***impronta di CO2***](../../navigation/setup/route-details.md#elevation-info) verranno visualizzati sopra il grafico nei [Dettagli del percorso](../setup/route-details.md).
+Se si seleziona il tipo di motore nei parametri del veicolo, i dati sull '[***impronta di CO2***](../../navigation/setup/route-details.md#elevation-info) verranno visualizzati sopra il grafico nei [Dettagli del percorso](../setup/route-details.md).
 Sono disponibili sei tipi di carburante: ***Benzina, Diesel, GPL, Metano, Elettrico,*** e ***Ibrido***.  
 
 **Applicabilità:**

@@ -1,5 +1,5 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title:  Mappe e Dati
 ---
@@ -19,6 +19,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### Perché OsmAnd non offre l'accesso a Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
 OsmAnd è progettato per supportare OpenStreetMap (OSM) e dà priorità a questo percorso il più possibile. Inoltre, ci sono restrizioni di licenza che non consentono a OsmAnd di essere distribuito con i dati di Google Maps.
+
+### Perché i link di Google Maps potrebbero non aprirsi in OsmAnd? {#why-google-maps-links-may-not-open-in-osmand}
+
+I link di Google Maps come `https://maps.app.goo.gl/...` potrebbero non aprirsi in OsmAnd con un singolo tocco da SMS o messaggistica. Anche se OsmAnd può analizzare questi link, Android 12+ impone Verified App Links: i domini principali di Google (ad esempio `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) sono riservati per i servizi di sistema Google, quindi le app di terze parti non possono intercettarli automaticamente. Di conseguenza, il link si aprirà solitamente in un'app/servizio Google.
+
+**Soluzione alternativa:** *tocco lungo sul messaggio → Condividi → seleziona OsmAnd*. Questo invia il link a OsmAnd, dove può essere analizzato e aperto come posizione.
 
 ### Caricamento lento delle mappe su Android 11, 12 (scheda SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
@@ -156,7 +162,7 @@ Se si sta tentando di cercare una località utilizzando la struttura *Città →
 
 - *[Preferiti](../personal/favorites.md)*. Questi sono punti permanenti sulla mappa a cui è possibile aggiungere descrizioni. Per creare un Preferito, fare un *tocco lungo → toccare Aggiungi*. I Preferiti sono ottimi per contrassegnare luoghi che si visitano frequentemente o che si desidera salvare per riferimento futuro.
 
-- *[Segnalibri](../personal/markers.md)*. I Segnalibri sono punti temporanei, spesso usati per la navigazione o la pianificazione. Possono mostrare la distanza dalla posizione corrente o da un altro punto e possono essere rimossi rapidamente quando non sono più necessari. Per aggiungere un Segnalibro, fare un *tocco lungo → toccare Segnalibro*.
+- *[Marcatori](../personal/markers.md)*. I Marcatori sono punti temporanei, spesso usati per la navigazione o la pianificazione. Possono mostrare la distanza dalla posizione corrente o da un altro punto e possono essere rimossi rapidamente quando non sono più necessari. Per aggiungere un Marcatori, fare un *tocco lungo → toccare Marcatori*.
 
 - *[Punti tappa](../map/tracks/index.md#types-of-tracks)*. I Punti tappa vengono posizionati lungo i percorsi creati, aiutando a contrassegnare fermate o luoghi specifici lungo il viaggio. È possibile aggiungere descrizioni anche a questi punti. Per aggiungere un punto tappa, fare un *tocco lungo sulla mappa → Indicazioni → aggiungi come punto intermedio*.
 

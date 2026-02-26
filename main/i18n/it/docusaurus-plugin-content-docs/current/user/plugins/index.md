@@ -1,5 +1,5 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
 sidebar_position: 18
 title:  Plugin
 ---
@@ -79,14 +79,16 @@ I plugin di OsmAnd possono arricchire questi gruppi di funzionalità: **Livelli*
 | [Vista mappa nautica](#nautical-map-view) | [Stile mappa](../plugins/nautical-charts.md#nautical-map-style), [Profilo](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vista mappa sci](#ski-map-view) | [Stile mappa](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profilo](../plugins/ski-maps.md#skiing-profile) |
 |[Note audio/video](#audiovideo-notes) 🤖  | [Livello mappa](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu contestuale](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[Modifica OpenStreetMap](#openstreetmap-editing)| [Livello mappa](../plugins/osm-editing.md#authorization) |
 |[Posizione parcheggio](#parking-position) | [Menu contestuale](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
+|[Modifica OpenStreetMap](#openstreetmap-editing)| [Livello mappa](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Livello mappa](../plugins/mapillary.md#map-layer), [Menu contestuale](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Sensori esterni](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Metriche del veicolo](#vehicle-metrics)  | [Impostazioni personalizzate](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
+|[Osservatore stelle](#star-watcher)  | [Schermata](../plugins/starwatcher.md#star-map-screen), [Menu contestuale](../plugins/starwatcher.md#celestial-object-info) |
 |[Accessibilità](#accessibility) 🤖  | [Impostazioni personalizzate](../plugins/accessibility.md#plugin-settings) |
-| [Sviluppo OsmAnd](#osmand-development) | [Impostazioni personalizzate](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Livello mappa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contestuale](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [Tracciatore di navi AIS](#ais-vessel-tracker) 🤖  |  [Impostazioni personalizzate](../plugins/ais-tracker.md#plugin-settings) |
+|[Sviluppo OsmAnd](#osmand-development) | [Impostazioni personalizzate](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Livello mappa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contestuale](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[Tracciatore di navi AIS](#ais-vessel-tracker) 🤖  |  [Impostazioni personalizzate](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Impostazioni dei plugin {#plugin-settings}
@@ -140,7 +142,6 @@ I seguenti plugin forniscono le proprie impostazioni:
 
 ## Elenco dei plugin {#plugins-list}
 
-
 ### [Wikipedia](./wikipedia.md) {#wikipedia}
 
 Avere Wikipedia durante il viaggio aiuta a conoscere meglio i luoghi che si visitano. È disponibile offline e mostra gli articoli di Wikipedia relativi ai punti di interesse direttamente sulla mappa.
@@ -156,6 +157,10 @@ Per raccontare la storia dei luoghi in cui si è stati, i dati GPS, come la lati
 ### [Topografia](./topography.md) {#topography}
 
 Le informazioni topografiche, come le curve di livello, l'ombreggiatura, la pendenza e il rilievo 3D, aiutano a fare una valutazione visiva della conformazione del terreno vedendo l'altitudine, il rilievo, gli estremi, la ripidità, i punti di uguale altezza, ecc.  
+
+### [Meteo](./weather.md) {#weather}
+
+Mostra le previsioni orarie per il giorno corrente e per i 7 giorni successivi. 
 
 ### [Vista mappa nautica](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ Il plugin di modifica di OpenStreetMap consente di contribuire a OpenStreetMap, 
 
 Visualizza le viste a livello stradale dei tuoi percorsi o luoghi di interesse, fornite da [Mapillary](https://www.mapillary.com/) (è necessaria una connessione a Internet).  
 
-### [Accessibilità](./accessibility.md) {#accessibility}
-
-Il plugin Accessibilità rende le funzioni di accessibilità del dispositivo direttamente disponibili in OsmAnd. Solo per Android.  
-
 ### [Sensori esterni](./external-sensors.md) {#external-sensors}
 
 Collega sensori esterni per visualizzare i loro dati in OsmAnd e memorizzare le informazioni nelle registrazioni delle tracce.  
@@ -193,9 +194,13 @@ Collega sensori esterni per visualizzare i loro dati in OsmAnd e memorizzare le 
 
 Collega lo scanner OBD-II per visualizzare i dati del veicolo in OsmAnd e memorizzare le informazioni nelle registrazioni delle tracce.  
 
-### [Meteo](./weather.md) {#weather}
+### [Osservatore stelle](./starwatcher.md) {#star-watcher}
 
-Mostra le previsioni orarie per il giorno corrente e per i 7 giorni successivi.  
+L'Osservatore stelle visualizza una sovrapposizione interattiva del cielo stellato con stelle, costellazioni, il Sole, la Luna e i pianeti. Ti aiuta a identificare gli oggetti celesti sopra la tua posizione attuale, a visualizzare in anteprima i loro percorsi per una data e un orario selezionati e a pianificare sessioni di osservazione delle stelle utilizzando i controlli del tempo integrati e le opzioni di visualizzazione.
+
+### [Accessibilità](./accessibility.md) {#accessibility}
+
+Il plugin Accessibilità rende le funzioni di accessibilità del dispositivo direttamente disponibili in OsmAnd. Solo per Android.  
 
 ### [Sviluppo OsmAnd](./development.md) {#osmand-development}
 
@@ -207,7 +212,7 @@ OsmAnd Tracker ti aiuta a vedere dove si trovano i tuoi contatti sulla mappa in 
 
 ### [Tracciatore di navi AIS](./ais-tracker.md) {#ais-vessel-tracker}
 
-Visualizza le posizioni AIS e le informazioni sulle navi circostanti. I dati AIS vengono ricevuti via rete da un ricevitore AIS esterno.
+Visualizza le posizione AIS e le informazioni sulle navi circostanti. I dati AIS vengono ricevuti via rete da un ricevitore AIS esterno.
 
 ## [Crea un plugin personalizzato](./custom.md) {#create-a-custom-plugin}
 

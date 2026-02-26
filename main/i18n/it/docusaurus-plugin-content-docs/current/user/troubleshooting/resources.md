@@ -1,7 +1,7 @@
 ---
-source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
+source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
 sidebar_position: 9
-title: Risorse e personalizzazioni
+title: Resources and Customizations
 ---
 
 import Tabs from '@theme/Tabs';
@@ -27,14 +27,14 @@ Per connetterti con altri utenti di OsmAnd, fare domande e condividere la tua es
 
 | Piattaforma | Nome del gruppo | Descrizione | Link |
 | :-- | :-- | :-- | :-- |
-| Facebook | Comunità utenti OsmAnd (*Inglese*)  |  Questo è un gruppo in cui gli utenti di OsmAnd possono aiutare altri utenti.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
-|  Facebook | Osmand-gebruikers (*Olandese*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
-|  Facebook | OSMAND+ Aide Partage et Astuces (*Francese*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
-|  Facebook | Gruppo utenti LC8 Rally OsmAnd (*Inglese*)  |  Per scambiare esperienze sull'uso di OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
-|  Facebook | Amici italiani di Osmand (*Italiano*)  |  Per scambiare esperienze sull'uso di OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
-|  Google Groups | Osmand (*Inglese*)  | Un gruppo in cui gli utenti condividono consigli, rispondono a domande e discutono delle funzionalità di OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
+| Facebook | Comunità utenti OsmAnd (*English*)  |  Questo è un gruppo in cui gli utenti di OsmAnd possono aiutare altri utenti.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+|  Facebook | Osmand-gebruikers (*Dutch*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+|  Facebook | OSMAND+ Aide Partage et Astuces (*French*)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
+|  Facebook | Gruppo utenti LC8 Rally OsmAnd (*English*)  |  Per scambiare esperienze sull'uso di OsmAnd. |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+|  Facebook | Amici italiani di Osmand (*Italian*)  |  Per scambiare esperienze sull'uso di OsmAnd. |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+|  Google Groups | Osmand (*English*)  | Un gruppo in cui gli utenti condividono consigli, rispondono a domande e discutono delle funzionalità di OsmAnd. | [Google Groups](https://groups.google.com/g/osmand)  |
 |  Reddit | OsmAnd - discussione e supporto  | La comunità Reddit per gli utenti di OsmAnd. Fai domande, condividi esperienze o mostra i tuoi stili di mappa personalizzati. |  [Reddit OsmAnd](https://www.reddit.com/r/osmand/) |
-|  Telegram | Canale notizie OsmAnd (*Inglese*)  | Il gruppo ufficiale di OsmAnd per annunci e aggiornamenti direttamente dagli sviluppatori. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
+|  Telegram | Canale notizie OsmAnd (*English*)  | Il gruppo ufficiale di OsmAnd per annunci e aggiornamenti direttamente dagli sviluppatori. |  [Telegram OsmAnd](https://t.me/OsmAnd_News) |
 |  X (Twitter) | Canale notizie OsmAnd  | Gruppo ufficiale di OsmAnd per discussioni dal vivo, annunci e aggiornamenti. | [X (Twitter) OsmAnd](https://x.com/osmandapp/) |
 |  Instagram | Canale notizie OsmAnd | Una comunità dove puoi chattare, condividere consigli e ricevere aiuto sulle funzionalità di OsmAnd. | [Instagram OsmAnd](https://www.instagram.com/osmand.map/) |
 
@@ -45,13 +45,13 @@ L'elenco seguente fornisce convertitori per vari tipi di dati supportati da OsmA
 
 | Tipo | Descrizione | Link |
 |-- | -- | --|
-| Da KMZ a GPX | Script Python per convertire file *KMZ* in formato *GPX*, incluse le icone. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| Da KML a GPX | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ to GPX | Script Python per convertire file *KMZ* in formato *GPX*, incluse le icone. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
+| KML to GPX | Script Python per convertire file *KML* in formato *GPX* con icone. Sono disponibili altri strumenti. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Strumento per convertire i file di Garmin Basecamp per OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
-| Da GeoPDF/Tiff, ozi a OsmAnd | Conversione dei formati di mappa geoPDF, geoTiff e ozi per OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| Da GPX a KML | Strumento per convertire file *GPX* di OsmAnd in formato *KML*, preservando le icone. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| Da iOverlander GPX a OsmAnd | Script Python per convertire i file *GPX* di iOverlander esportati per OsmAnd con le icone. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Mappa topografica in stampabile| Questo è [uno strumento](https://github.com/acui/osmand_topo_map_generator) per generare una mappa topografica stampabile utilizzando screenshot da OsmAnd (https://osmand.net). La mappa utilizza la griglia UTM e contiene informazioni sulla declinazione. Deve essere utilizzata con una bussola o un dispositivo GPS con coordinate UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GeoPDF/Tiff, ozi to OsmAnd | Conversione dei formati di mappa geoPDF, geoTiff e ozi per OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
+| GPX to KML | Strumento per convertire file *GPX* di OsmAnd in formato *KML*, preservando le icone. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX to OsmAnd | Script Python per convertire i file *GPX* di iOverlander esportati per OsmAnd con le icone. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| Topo map into printable| Questo è [uno strumento](https://github.com/acui/osmand_topo_map_generator) per generare una mappa topografica stampabile utilizzando screenshot da OsmAnd (https://osmand.net). La mappa utilizza la griglia UTM e contiene informazioni sulla declinazione. Deve essere utilizzata con una bussola o un dispositivo GPS con coordinate UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 
 ## Risorse personalizzate {#custom-resources}
 
@@ -82,7 +82,7 @@ Di seguito è riportato un elenco di [plugin personalizzati](../plugins/custom.m
 
 | Nome | Descrizione | Link del plugin |
 |--|--|--|
-| Rendering OsmAnd  | Il plugin aggiunge gli stili di mappa Enduro, CycloRoute e Hiking (maggiori informazioni [qui](../map/vector-maps.md#default-map-styles)) e 5 nuovi [profili](https://osmand.net/docs/user/personal/profiles) (Pedonale, Bicicletta e tre profili Moto). Fornisce inoltre mappe online per Spagna, Francia, Norvegia, Svizzera, Austria, Belgio e Argentina tramite il menu [Mappe e risorse](../personal/maps-resources.md#extra-maps) nella cartella *OsmAnd rendering online maps*. | [Rendering OsmAnd](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Rendering OsmAnd  | Il plugin aggiunge gli stili di mappa Enduro, CycloRoute e Hiking (maggiori informazioni [qui](../map/map-styles.md#default-map-styles)) e 5 nuovi [profili](https://osmand.net/docs/user/personal/profiles) (Pedonale, Bicicletta e tre profili Moto). Fornisce inoltre mappe online per Spagna, Francia, Norvegia, Svizzera, Austria, Belgio e Argentina tramite il menu [Mappe e risorse](../personal/maps-resources.md#extra-maps) nella cartella *OsmAnd rendering online maps*. | [Rendering OsmAnd](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Mappa dell'Arabia Saudita del Rahal Team  | Una mappa offline professionale del Regno dell'Arabia Saudita, che include caratteristiche topografiche, strade, città, villaggi e fonti d'acqua. Perfetta per i viaggi nel deserto. Visita [Rahal Maps](https://rahalteam.com) per maggiori informazioni. | [🇸🇦 Mappe dell'Arabia Saudita del Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | Modello 3D  | Questo pacchetto aggiunge un'opzione di modello 3D per i profili. Personalizza l'aspetto tramite il menu: [*Menu OsmAnd → Impostazioni → Profilo → Aspetto del profilo → scegli la 4a-5a icona di Icona posizione*](../personal/profiles.md#profile-appearance). | [Modello 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | Collezione di mappe online AnyGIS | Una raccolta di varie fonti di mappe online, tra cui mappe satellitari, turistiche e storiche.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |

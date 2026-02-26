@@ -1,5 +1,5 @@
 ---
-source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
+source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
 sidebar_position: 4
 title:  Profili (Impostazioni)
 ---
@@ -211,13 +211,13 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 mi / 3281 ft (1000 m) |
-|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 mi / 1000 m |
-|          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0.62 mi (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Le unità di lunghezza si applicano ai valori di distanza orizzontale (ad es. distanze di guida/percorso e distanze di manovra in navigazione).|
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
+|          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
+|          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
+|          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>La lunghezza si applica ai valori di distanza orizzontale (ad es. distanze di guida/percorso e distanze di manovra in navigazione).|
 |  |  |  |
-| **Unità di altitudine** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Le unità di altitudine si applicano ai valori di altitudine/elevazione e alle metriche correlate (salita/discesa, intervallo di altitudine) nei widget Altitudine, nelle informazioni sul percorso di navigazione e nelle statistiche delle tracce.<br/>Per impostazione predefinita, le unità di altitudine sono sincronizzate con le unità di lunghezza e diventano indipendenti solo dopo che l'utente le modifica manualmente. |
+| **Altitudine** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>L'altitudine si applica ai valori di altitudine/elevazione e alle metriche correlate (salita/discesa, intervallo di altitudine) nei widget Altitudine, nelle informazioni sul percorso di navigazione, nelle statistiche delle tracce e nelle etichette di elevazione delle cime montane sulla mappa.<br/>Per impostazione predefinita, l'Altitudine è sincronizzata con la Lunghezza e diventa indipendente solo dopo che l'utente la modifica manualmente. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Esempio: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Esempio: 50°7.393′ 19°55.941′ (Lat Long)  |
@@ -232,14 +232,14 @@ Nella sezione **Unità e formati**, è possibile regolare le unità di misura e 
 |          | Gradi 360° | Tutti i valori angolari hanno letture da 0° a 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | Tutti i valori angolari hanno [valore in milliradianti](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Asia, America Latina, Canada, Giappone, India, Australia |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Asia, America Latina, Canada, Giappone, India, Australia |
 |  | <Translate android="true" ids="imperial_gallons"/> | Regno Unito e simili |
 |  | <Translate android="true" ids="us_gallons"/> | Stati Uniti |
 |  |  |  |
@@ -277,13 +277,13 @@ La sezione **Altro** fornisce impostazioni di profilo aggiuntive per personalizz
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Collega controller esterni come *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, o *<Translate android="true" ids="sett_parrot_ext_input"/>* per operare OsmAnd utilizzando pulsanti fisici.
 
-- **<Translate android="true" ids="position_animation"/>** / **Animare la propria posizione** – L'icona della [posizione](../map/interact-with-map.md#my-location-and-zoom) si anima con ogni punto GPS ricevuto (una volta al secondo). Potrebbe essere evidente un leggero ritardo nel suo movimento, specialmente durante movimenti veloci o fluttuazioni del segnale GPS. È possibile regolare questo effetto utilizzando l'impostazione *Tempo di previsione* (solo Android): valori più alti aumentano la fluidità ma aggiungono ritardo, valori più bassi riducono il ritardo ma possono rendere il movimento meno fluido.
+- **<Translate android="true" ids="position_animation"/>** / **Animare la propria posizione** – L'icona della [posizione](../map/interact-with-map.md#my-position-and-zoom) si anima con ogni punto GPS ricevuto (una volta al secondo). Potrebbe essere evidente un leggero ritardo nel suo movimento, specialmente durante movimenti veloci o fluttuazioni del segnale GPS. È possibile regolare questo effetto utilizzando l'impostazione *Tempo di previsione* (solo Android): valori più alti aumentano la fluidità ma aggiungono ritardo, valori più bassi riducono il ritardo ma possono rendere il movimento meno fluido.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*solo Android*) – Abilita o disabilita la possibilità di utilizzare i pulsanti del volume del tuo dispositivo per [ingrandire](../map/interact-with-map.md#my-location-and-zoom) e rimpicciolire la mappa.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*solo Android*) – Abilita o disabilita la possibilità di utilizzare i pulsanti del volume del tuo dispositivo per [ingrandire](../map/interact-with-map.md#my-position-and-zoom) e rimpicciolire la mappa.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*solo Android*) – Smussa la rotazione della mappa con un [movimento graduale](https://en.wikipedia.org/wiki/Kalman_filter), riducendo gli spostamenti improvvisi di posizione. Questo introduce un piccolo ritardo (*meno di 1 secondo*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*solo Android*) – Smussa la rotazione della mappa con un [movimento graduale](https://en.wikipedia.org/wiki/Kalman_filter), riducendo gli spostamenti improvvisi di posizione. Questo introduce un piccolo ritardo (*meno di 1 secondo*).
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*solo Android*) – Utilizza il [sensore magnetico](https://en.wikipedia.org/wiki/Kalman_filter) del tuo dispositivo per stabilizzare la rotazione della mappa, riducendo i cambiamenti improvvisi. Anche questo introduce un leggero ritardo.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*solo Android*) – Tocca uno spazio vuoto sulla mappa per nascondere i pulsanti di controllo e i widget, massimizzando la visibilità della mappa.
 
@@ -371,7 +371,7 @@ Con questo menu, puoi:
 
 - **Abilitare la visualizzazione del trasporto pubblico**, mostrando [percorsi e fermate](../map/public-transport.md) per una migliore pianificazione del viaggio.
 
-- **Regolare l'aspetto della mappa** selezionando uno [stile mappa](../map/vector-maps.md#default-map-styles) diverso per soddisfare le tue esigenze.
+- **Regolare l'aspetto della mappa** selezionando uno [stile mappa](../map/map-styles.md) diverso per soddisfare le tue esigenze.
 
 
 ## Configura schermo {#configure-screen}
@@ -453,9 +453,10 @@ Utilizza **Dimensione icona** per regolare la dimensione dell'icona della posizi
 
 </Tabs>
 
+
 ### Angolo di visuale e Raggio di posizione {#view-angle-and-location-radius}
 
-È possibile personalizzare gli elementi visivi relativi alla propria posizione e applicarli separatamente o insieme per le posizioni di **Riposo** e **Navigazione**. Sia in modalità 2D che 3D, l'*Angolo di visuale* e il *Raggio di posizione* vengono visualizzati con lo stesso colore selezionato per il [profilo di navigazione](#profile-appearance), direttamente sotto l'icona [La mia posizione](../map/interact-with-map.md#my-location-and-zoom).
+È possibile personalizzare gli elementi visivi relativi alla propria posizione e applicarli separatamente o insieme per le posizioni di **Riposo** e **Navigazione**. Sia in modalità 2D che 3D, l'*Angolo di visuale* e il *Raggio di posizione* vengono visualizzati con lo stesso colore selezionato per il [profilo di navigazione](#profile-appearance), direttamente sotto l'icona [La mia posizione](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Visualizza un'area a **forma di cono** che indica la direzione in cui si sta guardando.  
 - **<Translate android="true" ids="location_radius"/>** – Mostra un'area **circolare** attorno alla tua icona, che rappresenta la precisione della tua posizione attuale.

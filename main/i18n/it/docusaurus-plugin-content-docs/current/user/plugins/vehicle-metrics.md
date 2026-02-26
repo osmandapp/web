@@ -1,5 +1,5 @@
 ---
-source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
+source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
 sidebar_position: 16
 title:  Metriche veicolo
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Panoramica {#overview}
 
 :::info Funzionalità a pagamento
-Il plugin Metriche veicolo è una [funzionalità a pagamento](../purchases/index.md) dell'app OsmAnd. Le informazioni sulla velocità del veicolo e sulla velocità del motore sono disponibili gratuitamente su OsmAnd.
+Il plugin Metriche veicolo è una [funzionalità a pagamento](../purchases/index.md) di **OsmAnd Pro** <ProFeature />. Le informazioni sulla velocità del veicolo e sulla velocità del motore sono disponibili gratuitamente su OsmAnd.
 :::
 
 Il **plugin Metriche veicolo** consente il monitoraggio in tempo reale dei dati del veicolo tramite il [protocollo OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Gli utenti possono tracciare metriche essenziali come le prestazioni del motore, l'efficienza del carburante e la velocità, consentendo una manutenzione proattiva del veicolo e la risoluzione dei problemi.  
@@ -53,10 +53,10 @@ Per utilizzare i dati di uno scanner OBD-II:
 4. [Collega](#pair-odb-ii-scanner) lo scanner OBD-II alla porta del tuo veicolo.
 5. [Configura](#scanner-settings) le **impostazioni dello scanner**.
 6. [Aggiungi](#widgets) i **widget Metriche veicolo** per i dati su schermo (opzionale).
-7. [Usa](#trip-recording)il **plugin Registrazione viaggio** per registrare i dati del veicolo.
+7. [Usa](#trip-recording) il **plugin Registrazione viaggio** per registrare i dati del veicolo.
 
 
-### Associa scanner ODB-II {#pair-odb-ii-scanner}
+### Associa scanner OBD-II {#pair-odb-ii-scanner}
 
 
 <Tabs groupId="operating-systems" queryString="current-os">

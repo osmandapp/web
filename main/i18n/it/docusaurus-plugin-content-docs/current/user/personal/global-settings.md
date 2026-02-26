@@ -1,5 +1,5 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Impostazioni globali
 ---
@@ -147,10 +147,11 @@ Vai a: *File → Sul mio iPhone → OsmAnd Maps*
 | Modalità 3D | È possibile visualizzare la mappa in 2D e modificare l'angolo di visualizzazione per ottenere una [vista 3D](../widgets/map-buttons.md#3d-mode). | È possibile visualizzare la mappa in 2D e [3D](../widgets/map-buttons.md#3d-mode). |
 | Visualizzazione mappa | L'intera mappa viene renderizzata come un insieme di tasselli e i marcatori, le linee e il testo sono già all'interno di questi tasselli. | Innanzitutto, viene renderizzato l'intero pacchetto di tasselli, quindi i simboli disponibili vengono applicati alla mappa, [strato per strato](../../technical/algorithms/map-rendering-layers.md). |
 | Sovrapposizione / Sottoposizione di simboli trasparenti | Supporta tutte le impostazioni. | Non supporta un livello raster sopra il testo vettoriale. |
-| [Terreno 3D](../map/raster-maps.md#3d-relief) | Non supportato. | Questa funzione visualizza il terreno sulla mappa aggiungendo informazioni sull'altitudine a una normale mappa 2D, creando un effetto 3D e di profondità. |
+| [Terreno 3D](../plugins/topography.md#3d-relief) | Non supportato. | Questa funzione visualizza il terreno sulla mappa aggiungendo informazioni sull'altitudine a una normale mappa 2D, creando un effetto 3D e di profondità. |
 | [Tracce 3D](../map/tracks/appearance.md) | Non supportato. | Questa funzione consente di visualizzare le tracce in base all'altitudine sul livello del mare. |
 | [Mappa online](../plugins/online-map.md) | Non supporta la visualizzazione delle curve di livello se la fonte della mappa è una qualsiasi mappa a tasselli online. | Quando la fonte della mappa è una mappa online, vengono utilizzate anche le mappe 3D ed è supportata la visualizzazione delle curve di livello sulla mappa. |
-| [Plugin Meteo](../plugins/weather.md) | Non è possibile utilizzare questo plugin. | Comodo da usare con il plugin. |  
+| [Plugin Meteo](../plugins/weather.md) | Non è possibile utilizzare questo plugin. | Comodo da usare con il plugin. |
+| [Vista Globo](../map/interact-with-map.md#globe-view) | Non supportato. | Consente di visualizzare la mappa come una Terra sferica (globo) invece di una proiezione piana. |  
 
 L'immagine per la visualizzazione 3D della mappa viene caricata tassello per tassello, quindi tutti i simboli. La velocità di rendering della mappa dipende dal numero di oggetti grafici 2D e 3D presenti su di essa e direttamente dalle prestazioni dell'hardware. Pertanto, la Versione 2 (OpenGL) non può essere utilizzata su dispositivi a basse prestazioni.
 

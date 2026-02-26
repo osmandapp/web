@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title:  Tracce
 sidebar_position: 2
 ---
@@ -84,7 +84,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 Nella scheda [I miei luoghi *→* Tracce](../../personal/tracks/manage-tracks.md#manage-tracks) per visualizzare la traccia sulla mappa, è necessario:
 
 - *Android* - toccare il *menu a tre punti* nel campo con la traccia richiesta.
-- *iOS* - toccare a lungo la traccia richiesta nell'elenco.
+- *iOS* - tocco lungo la traccia richiesta nell'elenco.
 
 
 ### Menu contestuale della traccia {#track-context-menu}
@@ -116,7 +116,7 @@ Quando si seleziona una traccia sulla mappa o si apre il [menu contestuale della
 
 Vai a: *Tocca la traccia → Scheda Traccia → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Menu traccia analizza sulla mappa Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Menu traccia analizza sulla mappa distanza Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Menu traccia analizza sulla mappa Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Menu traccia analizza sulla mappa distanza Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Vai a: *Tocca la traccia → Scheda Traccia → <Translate ios="true" ids="analy
 
 Questo strumento fornisce un'analisi dettagliata dei dati della [traccia](../../map/tracks/track-context-menu.md#options) utilizzando grafici e mappe.
 
-- **Dati del grafico (asse Y)** visualizza: *Altitudine*, *Pendenza*, *Velocità*, [*Dati sensore esterno*](../../plugins/external-sensors.md), e combinazioni di fino a due opzioni se contenute nei dati della traccia.
+- **Dati del grafico (asse Y)** visualizza: *Altitudine*, *Pendenza*, *Velocità*, [*Dati sensore esterno*](../../plugins/external-sensors.md), e combinazioni di fino a due opzioni se contenute nei dati della traccia. ***Solo Android:*** per le tracce auto registrate con dati OBD-II, l'asse Y fornisce inoltre metriche del veicolo, come giri del motore, temperatura del liquido di raffreddamento e altro.
 - **Dimensione del grafico (asse X)** rappresenta: *Distanza*, *Tempo* e *Ora del giorno*.
 - **Interazione tocco/scorrimento**. Tocca un grafico per visualizzare le informazioni su un punto specifico della traccia. Scorrendo sul grafico si evidenzia la posizione appropriata sulla mappa e si mostrano i dettagli nella barra delle informazioni.
 - **Etichetta distanza**. Quando si tocca o si scorre lungo il grafico, il tooltip visualizza anche la distanza esatta lungo la traccia. Il valore segue le impostazioni dell'unità del profilo corrente (<Translate android="true" ids="km"/> o <Translate android="true" ids="mile"/>). Utilizzalo per stimare rapidamente quanto è distante un punto dall'inizio della traccia, o per calcolare la distanza tra due posizioni confrontando i loro valori.
@@ -157,7 +157,7 @@ Questo strumento fornisce un'analisi dettagliata dei dati della [traccia](../../
 
 </Tabs>
 
-Tocca il pulsante [La mia posizione](../../map/interact-with-map.md#my-location-and-zoom) per sincronizzare la vista della mappa e il grafico con la tua posizione.
+Tocca il pulsante [La mia posizione](../../map/interact-with-map.md#my-position-and-zoom) per sincronizzare la vista della mappa e il grafico con la tua posizione.
 
 - La **scala del grafico** rimane la stessa e le **informazioni della barra** sono fissate a 1/4 sul lato sinistro.
 - Man mano che ti muovi, il **grafico scorrerà** da sinistra a destra, visualizzando le informazioni davanti alla tua traccia.

@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title:  Preparazione del percorso
 ---
@@ -68,7 +68,7 @@ Prima di utilizzare la navigazione offline, assicurarsi che le [mappe richieste 
     - Attendere il calcolo del percorso. Successivamente, sarà possibile ottenere informazioni aggiuntive sul percorso nella sezione *[Dettagli](./route-details.md#overview)*.
     - È possibile passare da un [tipo di percorso](./../routing/osmand-routing.md#routing-types) (profilo) all'altro per ottenere il risultato migliore.
     - Aggiungere [destinazioni intermedie](#intermediate-destinations) (opzionale).
-    - È anche possibile cambiare il punto di partenza dalla [posizione corrente](../../map/interact-with-map.md#my-location-and-zoom) a quella desiderata.
+    - È anche possibile cambiare il punto di partenza dalla [posizione corrente](../../map/interact-with-map.md#my-position-and-zoom) a quella desiderata.
 
 2. A seconda delle proprie esigenze, è possibile utilizzare [*Impostazioni di navigazione*](#settings) aggiuntive (è possibile configurare quali strade evitare o preferire, risparmiare carburante o scegliere il percorso più veloce, ecc.).
 
@@ -79,7 +79,7 @@ Prima di utilizzare la navigazione offline, assicurarsi che le [mappe richieste 
 
 :::note
 
-**Il percorso non può essere costruito quando *[Mappa online](../../map/raster-maps.md#select-raster-maps)* è selezionata come fonte della mappa.**
+**Il percorso non può essere costruito quando *[Mappa online](../../map/raster-maps.md#layers)* è selezionata come fonte della mappa.**
 
 :::
 
@@ -88,7 +88,7 @@ Prima di utilizzare la navigazione offline, assicurarsi che le [mappe richieste 
 
 Ci sono 3 modi per raggiungere il menu di navigazione:
 
-- Il [*pulsante Navigazione*](../../widgets/map-buttons.md#directions) sulla schermata della mappa.  
+- Il [*pulsante Navigazione*](../../widgets/map-buttons.md#navigation) sulla schermata della mappa.  
 - *Direzione da/a* in un [*menu contestuale della mappa*](../../map/map-context-menu.md#directions-to--from).  
 - Sezione Navigazione nel [*Menu principale*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Ci sono 3 modi per raggiungere il menu di navigazione:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Imposta la posizione di partenza (predefinita: [*La mia posizione attuale*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Imposta la posizione di partenza (predefinita: [*La mia posizione attuale*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Utilizzare per [impostare il punto di destinazione](#set-target-point).
 - **Aggiungi** &nbsp;&#43; - Inserisce [punti intermedi](../../widgets/nav-widgets.md#distance-to-intermediate) lungo il percorso.
 - **Scambia** &nbsp;&#8595;&#8593; - Inverte i punti di *Partenza* e *Arrivo*.
@@ -325,7 +325,7 @@ Questa opzione è disponibile nella versione Android dell'app nell'*[elenco dell
 Per riprendere la navigazione:
 
 - Utilizzare il messaggio di OsmAnd nella barra delle notifiche.
-- Utilizzare il menu *Azioni rapide* o la finestra di dialogo che appare quando si tocca il *[pulsante Navigazione](../../widgets/map-buttons.md#directions)* (vedi screenshot).
+- Utilizzare il menu *Azioni rapide* o la finestra di dialogo che appare quando si tocca il *[pulsante Navigazione](../../widgets/map-buttons.md#navigation)* (vedi screenshot).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title:  Righello del raggio e Righello
 ---
@@ -171,7 +171,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,s
 
 <TabItem value="ios" label="iOS">
 
-Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Altro → Posizione della posizione sulla schermata*
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Altro → Posizione della posizione sullo schermo*
 
 ![Mostra posizione Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Righello del raggio verso il basso](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
@@ -181,7 +181,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *
 
 Per aumentare il raggio visibile intorno alla tua posizione, puoi cambiare la posizione del Righello del raggio selezionando l'opzione *Centrale* o *Inferiore*.  
 
-Per maggiori informazioni sulla *posizione sulla schermata*, consulta l'articolo [Configura Schermata](../widgets/configure-screen.md#display-position-location-position-on-screen).
+Per maggiori informazioni sulla *posizione sullo schermo*, consulta l'articolo [Configura Schermata](../widgets/configure-screen.md#display-position-location-position-on-screen).
 
 
 ### Vista 3D {#3d-view}
@@ -204,7 +204,7 @@ Per maggiori informazioni sulla *posizione sulla schermata*, consulta l'articolo
 
 Puoi passare alla **vista 3D** per visualizzare meglio le distanze e il terreno circostante quando usi il Righello del raggio. Questa vista inclina la mappa e fornisce un effetto prospettico che espande il raggio visibile.
 
-- Tocca [il pulsante della posizione](../map/interact-with-map.md#my-location-and-zoom) per focalizzare la tua posizione.
+- Tocca [il pulsante della posizione](../map/interact-with-map.md#my-position-and-zoom) per focalizzare la tua posizione.
 - Usa un [gesto di scorrimento verso l'alto con due dita](../map/interact-with-map.md#gestures) per inclinare la mappa in modalità 3D.
 
 I cerchi del raggio appariranno con profondità, il che è particolarmente utile per la pianificazione di percorsi in aree collinari o ambienti urbani dove il contesto verticale è importante.

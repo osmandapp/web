@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -27,6 +27,8 @@ Utilizza **Navigation on the Web** per creare un percorso sulla mappa e visualiz
 Nello stato vuoto, Navigation ti invita ad aggiungere punti di percorso: *Clicca sulla mappa per impostare i punti di Partenza e Destinazione*.
 
 I punti di percorso possono essere forniti dal pannello Route. Quando selezioni **Imposta punto di partenza** o **Imposta destinazione**, il campo mostra suggerimenti come *Posizione attuale* e punti utilizzati in precedenza dalla cronologia. Puoi rimuovere i suggerimenti salvati utilizzando *Cancella cronologia*.
+
+Puoi anche inserire coordinate direttamente nei campi dei punti di percorso utilizzando il formato latitudine, longitudine (ad esempio, 48.23737, 24.40830). Altri formati di coordinate o link condivisi potrebbero non essere sempre riconosciuti. Se una posizione non viene analizzata correttamente, prova a convertirla in lat,lon o trova il luogo utilizzando la ricerca.
 
 Navigation segue un flusso semplice: il primo punto diventa la Partenza e il punto successivo diventa la Destinazione. Non appena entrambi i punti sono impostati, il percorso viene calcolato e visualizzato sulla mappa.
 
@@ -116,13 +118,15 @@ Qual è la differenza:
 - I dati traccia completa possono includere informazioni sul percorso/navigazione in aggiunta alla geometria della traccia (utile se desideri mantenere le istruzioni di navigazione o modificare nuovamente il percorso in OsmAnd).
 - La traccia semplificata esporta un GPX più pulito destinato ad altre app rimuovendo i dati sul percorso/navigazione e lasciando solo la forma della traccia. I waypoint sono preservati durante l'esportazione di una traccia semplificata.
 
-Puoi salvare il percorso come traccia utilizzando *Salva su Cloud / Carica su OsmAnd Cloud*. Questo apre una finestra di dialogo dove puoi confermare il salvataggio nelle tracce cloud, modificare il Nome, opzionalmente scegliere una Cartella, quindi Salva o Annulla.
+Puoi salvare il percorso come traccia utilizzando *Salva su Cloud / Carica su OsmAnd Cloud*. Questo apre una finestra di dialogo dove puoi confermare il salvataggio nelle tracce cloud, modificare il Nome, opzionalmente scegliere una Cartella, quindi Salva o Annulla. Se non sei connesso, *Salva su Cloud / Carica su OsmAnd Cloud* apre la pagina Pricing.
 
 ![Navigazione Web](@site/static/img/web/download_options.png)
 
 ### Condividi un Percorso {#share-a-route}
 
 Per condividere il percorso, copia l'URL. Esempio: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+Quando apri un link condiviso, il percorso viene ripristinato sulla mappa. Se necessario, puoi modificare manualmente il [profilo di routing](#routing-profile) nel pannello Route.
 
 
 ## Articoli Correlati {#related-articles}
