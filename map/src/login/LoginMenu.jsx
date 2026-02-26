@@ -1,5 +1,5 @@
 import headerStyles from '../menu/trackfavmenu.module.css';
-import { Alert, IconButton, Tooltip } from '@mui/material';
+import { Alert, IconButton, Tooltip, Box } from '@mui/material';
 import { closeHeader } from '../menu/actions/HeaderHelper';
 import AppContext from '../context/AppContext';
 import LoginContext from '../context/LoginContext';
@@ -35,6 +35,9 @@ import DeveloperArea from './DeveloperArea';
 import { getStatus } from './purchases/PurchaseManager';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 import { useResetApp } from '../App';
+import { useWindowSize } from '../util/hooks/useWindowSize';
+import { HEADER_SIZE } from '../manager/GlobalManager';
+import gStyles from '../menu/gstylesmenu.module.css';
 
 export function getAccountType({ account = null, name = null }) {
     if (account && account === FREE_ACCOUNT) {
@@ -61,6 +64,7 @@ export default function LoginMenu() {
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
     const [showDeveloperArea, setShowDeveloperArea] = useState(false);
     const [showGift, setShowGift] = useState(false);
+    const [, height] = useWindowSize();
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -115,7 +119,7 @@ export default function LoginMenu() {
             {openCloudInfo && <CloudInfo setOpenCloudInfo={setOpenCloudInfo} />}
             <Outlet />
             {ltx.loginState.default && !openCloudInfo && !outlet && (
-                <>
+                <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
                     <AppBarWithBtns
                         id={'login-menu'}
                         header={'OsmAnd ' + t('login_account')}
@@ -152,7 +156,7 @@ export default function LoginMenu() {
                     {!ltx.loginUser ? (
                         <EmptyLogin />
                     ) : (
-                        <>
+                        <Box className={gStyles.scrollActiveBlock}>
                             <DefaultItemWithActions
                                 id={'se-login-menu-user-item'}
                                 onClick={clickHandler}
@@ -210,14 +214,14 @@ export default function LoginMenu() {
                                 }}
                             />
                             <ColorBlock color={'#f0f0f0'} />
-                        </>
+                        </Box>
                     )}
                     {ltx.loginError && (
                         <Alert id="se-alert-login-info" severity="info">
                             {ltx.loginError}
                         </Alert>
                     )}
-                </>
+                </Box>
             )}
             {ltx.loginState.login && <Login />}
             {ltx.loginState.changePwd && <ChangeResetPwd />}
