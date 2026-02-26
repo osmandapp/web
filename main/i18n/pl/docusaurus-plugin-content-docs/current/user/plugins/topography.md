@@ -1,6 +1,6 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
-sidebar_position: 14
+source-hash: 68173c6333cbab1e4155aebd0de4f93a471b00f6d3ab7f48ef3872e2d8b54c54
+sidebar_position: 16
 title: Topografia
 ---
 
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-:::info Płatna funkcja
-Wtyczka Topografia jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd.
+:::tip Zakup
+Wtyczka Topografia jest [płatną funkcją](../purchases/index.md).  
 :::
 
 Topografia jest ważną cechą kartografii, która dostarcza informacji do wizualnej oceny rzeźby terenu.
 Informacje topograficzne, takie jak [Linie konturowe](#contour-lines), [Teren](#terrain) (*Cieniowanie wzgórz* i *Nachylenie*), oraz [Rzeźba 3D](#3d-relief), pomagają w wizualnej ocenie ukształtowania terenu poprzez pokazanie wysokości, rzeźby, skrajności, stromości lub punktów o tej samej wysokości.
 
-Każda funkcja udostępniana przez tę wtyczkę jest niezależną warstwą mapy, która po włączeniu może być wyświetlana nad lub pod głównym źródłem mapy, w zależności od [ustawień](../map/raster-maps.md#overlay-layer).  
+Każda funkcja udostępniana przez tę wtyczkę jest niezależną warstwą mapy, która po włączeniu może być wyświetlana nad lub pod głównym źródłem mapy, w zależności od [ustawień](../map/raster-maps.md#overlay).  
 
 Wtyczka Topografia zapewnia dostęp do następujących typów map:  
 
@@ -173,7 +173,7 @@ Podczas korzystania z [Silnika renderowania mapy](../personal/global-settings.md
 **Ustawienia wyglądu**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Włącz lub wyłącz linie konturowe.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Zdefiniuj [poziomy powiększenia](../map/interact-with-map.md#my-location-and-zoom), przy których widoczne są linie konturowe.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Zdefiniuj [poziomy powiększenia](../map/interact-with-map.md#my-position-and-zoom), przy których widoczne są linie konturowe.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Wybierz kolor wyświetlania linii konturowych.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Dostosuj szerokość linii konturowych.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wybierz gęstość linii konturowych (Niska, Średnia, Wysoka). Wyższa gęstość może wpłynąć na szybkość ładowania.
@@ -244,13 +244,11 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 
 - *Wysokość*. Mapa wysokości koloruje każdy piksel zgodnie z obliczoną wysokością mapy, używając gradientu z zdefiniowanego schematu kolorów. Zazwyczaj schematy wysokości są bardzo zależne od lokalizacji. W obszarach górskich preferowane jest rozłożenie kolorów na szerszy zakres wysokości, a na terenach płaskich wybiera się schemat kolorów z małym zakresem między minimalną a maksymalną wysokością.
 
-> *Więcej informacji można znaleźć w artykule [Schemat kolorów](../personal/color-palette-schemes.md).*
-
 
 ### Modyfikuj schemat kolorów {#modify-color-scheme}
 
-:::info Płatna funkcja
-*[Modyfikuj schemat kolorów](../../user/personal/color-palette-schemes.md#terrain)* to płatna funkcja **OsmAnd Pro** dla [iOS](../purchases/ios.md#pro-features) i [Androida](../purchases/android.md#pro-features) <ProFeature />.
+:::info Funkcja Pro
+*[Modyfikuj schemat kolorów](../../user/personal/color-palette-schemes.md#terrain)* to płatna funkcja [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -348,7 +346,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 </Tabs>  
 
-Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezentację krajobrazu. Rzeźba 3D działa w trybie offline i może być używana z [mapami wektorowymi OsmAnd](../map/vector-maps.md) lub dowolnymi [mapami rastrowymi](../map/raster-maps.md#select-raster-maps) jako [Źródło mapy](../map/raster-maps.md#main) lub jako [Podkład/Nakładka](../map/raster-maps.md#overlay-layer).
+Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezentację krajobrazu. Rzeźba 3D działa w trybie offline i może być używana z [mapami wektorowymi OsmAnd](../map/vector-maps.md) lub dowolnymi [mapami rastrowymi](../map/raster-maps.md#layers) jako [Źródło mapy](../map/raster-maps.md#main) lub jako [Podkład/Nakładka](../map/raster-maps.md#overlay).
 
 ***Jak wyświetlić Rzeźbę 3D na mapie.***
 

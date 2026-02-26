@@ -1,5 +1,5 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
 sidebar_position: 18
 title:  Wtyczki
 ---
@@ -79,14 +79,16 @@ Wtyczki OsmAnd mogą rozszerzać następujące grupy funkcji: **Warstwy**, **Wid
 | [Widok mapy morskiej](#nautical-map-view) | [Styl mapy](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Widok mapy narciarskiej](#ski-map-view) | [Styl mapy](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
 |[Notatki audio/wideo](#audiovideo-notes) 🤖  | [Warstwa mapy](../plugins/audio-video-notes.md#show-all-on-the-map), [Menu kontekstowe](../plugins/audio-video-notes.md#create-a-single-note), [Widżet](../plugins/audio-video-notes.md#recording-widget) |
-|[Edycja OpenStreetMap](#openstreetmap-editing)| [Warstwa mapy](../plugins/osm-editing.md#authorization) |
 |[Pozycja parkowania](#parking-position) | [Menu kontekstowe](../plugins/parking.md#set-a-spot), [Widżet](../plugins/parking.md#parking-widget) |
+|[Edycja OpenStreetMap](#openstreetmap-editing)| [Warstwa mapy](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Warstwa mapy](../plugins/mapillary.md#map-layer), [Menu kontekstowe](../plugins/mapillary.md#map-context-menu) , [Widżet](../plugins/mapillary.md#mapillary-widget)|
 |[Czujniki zewnętrzne](#external-sensors) 🤖  | [Widżet](../plugins/external-sensors.md#widgets) |
+|[Metryki pojazdu](#vehicle-metrics)  | [Ustawienia niestandardowe](../plugins/vehicle-metrics#scanner-settings), [Widżet](../plugins/vehicle-metrics#widgets) |
+|[Astronomia](#star-watcher)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Menu kontekstowe](../plugins/astronomy.md#celestial-object-info) |
 |[Dostępność](#accessibility) 🤖  | [Ustawienia niestandardowe](../plugins/accessibility.md#plugin-settings) |
-| [Rozwój OsmAnd](#osmand-development) | [Ustawienia niestandardowe](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Warstwa mapy](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widżet](../plugins/osmand-tracker.md#tracker-widget), [Menu kontekstowe](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [Śledzenie statków AIS](#ais-vessel-tracker) 🤖  |  [Ustawienia niestandardowe](../plugins/ais-tracker.md#plugin-settings) |
+|[Rozwój OsmAnd](#osmand-development) | [Ustawienia niestandardowe](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Warstwa mapy](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widżet](../plugins/osmand-tracker.md#tracker-widget), [Menu kontekstowe](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[Śledzenie statków AIS](#ais-vessel-tracker) 🤖  |  [Ustawienia niestandardowe](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Ustawienia wtyczki {#plugin-settings}
@@ -140,7 +142,6 @@ Następujące wtyczki zapewniają własne ustawienia:
 
 ## Lista wtyczek {#plugins-list}
 
-
 ### [Wikipedia](./wikipedia.md) {#wikipedia}
 
 Posiadanie Wikipedii podczas podróży pomaga dowiedzieć się więcej o odwiedzanych miejscach. Jest ona dostępna w trybie offline i pokazuje artykuły z Wikipedii związane z punktami POI bezpośrednio na mapie.
@@ -156,6 +157,10 @@ Aby opowiedzieć historię o tym, gdzie byłeś, dane GPS, takie jak szerokość
 ### [Topografia](./topography.md) {#topography}
 
 Informacje topograficzne, takie jak warstwice, cieniowanie wzgórz, nachylenie, rzeźba terenu 3D, pomagają w wizualnej ocenie ukształtowania terenu poprzez pokazanie wysokości, rzeźby, ekstremów, stromości, punktów o równej wysokości itp.  
+
+### [Pogoda](./weather.md) {#weather}
+
+Pokazuje prognozę godzinową na bieżący dzień i na 7 dni naprzód. 
 
 ### [Widok mapy morskiej](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ Wtyczka do edycji OpenStreetMap pozwala na wnoszenie wkładu w OpenStreetMap, gl
 
 Zobacz widoki na poziomie ulicy swoich tras lub interesujących miejsc, dostarczane przez [Mapillary](https://www.mapillary.com/) (wymagane jest połączenie z Internetem).  
 
-### [Dostępność](./accessibility.md) {#accessibility}
-
-Wtyczka Dostępność udostępnia funkcje dostępności urządzenia bezpośrednio w OsmAnd. Tylko dla Androida.  
-
 ### [Czujniki zewnętrzne](./external-sensors.md) {#external-sensors}
 
 Podłącz czujniki zewnętrzne, aby wyświetlać ich dane w OsmAnd i przechowywać informacje w nagraniach tras.  
@@ -193,9 +194,13 @@ Podłącz czujniki zewnętrzne, aby wyświetlać ich dane w OsmAnd i przechowywa
 
 Podłącz skaner OBD-II, aby wyświetlać dane pojazdu w OsmAnd i przechowywać informacje w nagraniach tras.  
 
-### [Pogoda](./weather.md) {#weather}
+### [Astronomia](./astronomy.md) {#astronomy}
 
-Pokazuje prognozę godzinową na bieżący dzień i na 7 dni naprzód.  
+Wtyczka Astronomia wyświetla interaktywną nakładkę nieba z gwiazdami, konstelacjami, Słońcem, Księżycem i planetami. Pomaga identyfikować obiekty niebieskie nad bieżącą lokalizacją, podglądać ich ścieżki na wybraną datę i godzinę oraz planować sesje obserwacji gwiazd za pomocą wbudowanych elementów sterujących czasem i opcji wyświetlania.
+
+### [Dostępność](./accessibility.md) {#accessibility}
+
+Wtyczka Dostępność udostępnia funkcje dostępności urządzenia bezpośrednio w OsmAnd. Tylko dla Androida.  
 
 ### [Rozwój OsmAnd](./development.md) {#osmand-development}
 

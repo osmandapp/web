@@ -1,5 +1,5 @@
 ---
-source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
+source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -107,7 +107,8 @@ Poniższa tabela szczegółowo opisuje funkcje zawarte zarówno w darmowych, jak
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Obsługa zewnętrznych czujników](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dane topograficzne](../plugins/topography.md#overview)<br/>(Poziomice i rzeźba terenu) | **-** | ✔ | ✔ |
-| [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
+| [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Budynki 3D — Dostosowanie kolorów](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Wizualizacja trasy 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popularne miejsca (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
@@ -121,7 +122,7 @@ Poniższa tabela szczegółowo opisuje funkcje zawarte zarówno w darmowych, jak
 | [Widżety metryk pojazdu](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | ✔ |
 | [Narzędzie znaczników mapy](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Źródła map online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Mapa SQLitedb](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Mapa SQLitedb](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Ulubione punkty](../map/point-layers-on-map.md)<br/>zakładki i punkty trasy | ✔ | ✔ | ✔ |
 | [Punkty audio/zdjęcie/wideo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -170,7 +171,7 @@ lub
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Kontynuuj z OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Zakup Maps+ {#maps-purchase}
 
@@ -178,7 +179,7 @@ lub
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Dotknij listy funkcji Maps+ → Kontynuuj z Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Starsze subskrypcje (sprzed wersji 4.0) {#legacy-subscriptions-prior-40}

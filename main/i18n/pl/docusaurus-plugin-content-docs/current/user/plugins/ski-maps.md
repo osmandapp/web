@@ -1,6 +1,6 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
-sidebar_position: 13
+source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+sidebar_position: 14
 title:  Widok mapy narciarskiej
 ---
 
@@ -99,7 +99,7 @@ Profil Narciarstwo jest przeznaczony do użytku w połączeniu ze stylami Zimowy
 
 </Tabs>
 
-[Mapa wektorowa](../map/vector-maps.md) z dołączonym [stylem mapy Zimowy i narciarski](../map/vector-maps.md#winter-and-ski) może być uzupełniona o [Poziomice](../plugins/topography.md#contour-lines) i [Cieniowanie wzgórz](../plugins/topography.md#hillshade-slope-and-altitude-layers). Poniżej znajdują się dwa przykłady. Trasy na domyślnej mapie wektorowej są pokazane po lewej stronie, a trasy na mapie wektorowej połączonej z mapą rastrową *Poziomice* i *Cieniowanie wzgórz* po prawej. W drugim przypadku mapa pokazuje więcej danych o wysokości, co pomaga oszacować trudność, ryzyko i odległość.  
+[Mapa wektorowa](../map/vector-maps.md) z dołączonym [stylem mapy Zimowy i narciarski](../map/map-styles.md#winter-and-ski) może być uzupełniona o [Poziomice](../plugins/topography.md#contour-lines) i [Cieniowanie wzgórz](../plugins/topography.md#hillshade-slope-and-altitude-layers). Poniżej znajdują się dwa przykłady. Trasy na domyślnej mapie wektorowej są pokazane po lewej stronie, a trasy na mapie wektorowej połączonej z mapą rastrową *Poziomice* i *Cieniowanie wzgórz* po prawej. W drugim przypadku mapa pokazuje więcej danych o wysokości, co pomaga oszacować trudność, ryzyko i odległość.  
 
 
 ### Wyłącz styl mapy narciarskiej {#disable-ski-map-style}
@@ -239,7 +239,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 Aby dowiedzieć się, po których trasach poza ośrodkiem narciarskim można nawigować, należy włączyć opcję **Stoki i trasy narciarskie** na liście [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).  
 
-Przy włączonym profilu Narciarstwo, nawigacji narciarskiej i [stylu mapy Zimowy i narciarski](../map/vector-maps.md#winter-and-ski), [stoki i trasy narciarskie](../map/routes.md#ski-slopes-and-routes) pokazują wszystkie typy tras, których nawigacja narciarska może użyć do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są zaznaczone fioletowym kolorem, głównie poza granicami ośrodka narciarskiego.  
+Przy włączonym profilu Narciarstwo, nawigacji narciarskiej i [stylu mapy Zimowy i narciarski](../map/map-styles.md#winter-and-ski), [stoki i trasy narciarskie](../map/routes.md#ski-slopes-and-routes) pokazują wszystkie typy tras, których nawigacja narciarska może użyć do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są zaznaczone fioletowym kolorem, głównie poza granicami ośrodka narciarskiego.  
 Gdy włączysz opcję [Stoki i trasy narciarskie](../map/routes.md#ski-slopes-and-routes) dla stylu mapy innego niż Zimowy i narciarski, wyświetlane są tylko stoki. Inne funkcje związane z narciarstwem mogą nie być pokazywane w tej warstwie stylizacji.  
 _Stoki i trasy narciarskie_ [są klikalne](../map/routes.md#actions-with-routes).
 

@@ -1,7 +1,7 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
-title:  Nawigacja transportem publicznym
+title:  Wyznaczanie tras transportem publicznym
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,9 +17,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Nawigacja transportem publicznym w aplikacji OsmAnd pozwala na wyznaczanie tras z wykorzystaniem transportu publicznego, co z pewnością pomoże w szybszym poruszaniu się po "betonowej dżungli".
+Nawigacja transportem publicznym w aplikacji OsmAnd pozwala na opracowywanie tras z wykorzystaniem transportu publicznego, co z pewnością pomoże ci szybciej poruszać się po "betonowej dżungli".
 
-Dane o trasach transportu publicznego pochodzą z projektu [OpenStreetMap](http://openstreetmap.org/). OsmAnd do nawigacji wykorzystuje schemat [PTv2](https://wiki.openstreetmap.org/wiki/Public_transport). OsmAnd obsługuje nawigację po trasach OpenStreetMap dla *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Domyślna prędkość dla każdego typu pojazdu jest skonfigurowana w [pliku XML routingu](../../../technical/build-osmand/routing.md) i jest używana do znajdowania najszybszych tras.
+Dane o trasach transportu publicznego pochodzą z projektu [OpenStreetMap](http://openstreetmap.org/). OsmAnd do nawigacji wykorzystuje schemat [PTv2](https://wiki.openstreetmap.org/wiki/Public_transport). OsmAnd obsługuje następujące trasy OpenStreetMap do nawigacji *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Domyślna prędkość dla każdego typu pojazdu jest skonfigurowana w [Routing xml](../../../technical/build-osmand/routing.md) i jest używana do znajdowania najszybszych tras.
 
 :::note
 Wyznaczanie tras transportem publicznym jest w fazie testów. Na razie można zbudować i wyświetlić trasę bez pełnej funkcji nawigacji.
@@ -44,7 +44,7 @@ Wyznaczanie tras transportem publicznym jest w fazie testów. Na razie można zb
 
 ## Jak używać {#how-to-use}
 
-Aby rozpocząć nawigację po mieście transportem publicznym, użyj [przycisku nawigacji](../../widgets/map-buttons.md#directions) na ekranie mapy lub wybierz opcję nawigacji w *Menu głównym*.  
+Aby rozpocząć nawigację po mieście transportem publicznym, użyj [przycisku nawigacji](../../widgets/map-buttons.md#navigation) na ekranie mapy lub wybierz opcję nawigacji w *Menu głównym*.  
 
 **1.** Musisz wybrać *profil nawigacji transportem publicznym*, punkt początkowy i docelowy.  
 

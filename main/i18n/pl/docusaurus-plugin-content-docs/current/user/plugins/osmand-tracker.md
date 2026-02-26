@@ -1,6 +1,6 @@
 ---
-source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
-sidebar_position: 11
+source-hash: c18b1cbd4a3355bf921f99ff1e1def88f8dbdf889803fd76e18173c7c599fcfe
+sidebar_position: 12
 title:  OsmAnd Tracker
 ---
 
@@ -167,7 +167,7 @@ Umożliwia śledzenie odległości, prędkości i kąta ruchu Twoich kontaktów 
 
 ## Ekran Oś czasu {#timeline-screen}
 
-To jest trzecia zakładka w aplikacji. Tutaj możesz wybrać dzień, aby wyświetlić historię lokalizacji udostępnionych Tobie. Wybranie dnia wyświetla kontakty, które pokazały swoją lokalizację tego dnia.  
+To jest trzecia zakładka w aplikacji. To jest trzecia zakładka w aplikacji. Tutaj możesz wybrać dzień, aby wyświetlić historię lokalizacji udostępnionych Tobie. Wybranie dnia wyświetla kontakty, które pokazały swoją lokalizację tego dnia.  
 
 Monitorowanie pozwala na zbieranie informacji w tle, gdy Twoje kontakty je udostępniają. Aby to zrobić, musisz je włączyć.
 

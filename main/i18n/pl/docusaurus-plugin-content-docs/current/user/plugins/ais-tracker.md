@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title:  Śledzenie statków AIS
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,12 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 <InfoAndroidOnly />
 
 ## Przegląd {#overview}
 
-Wtyczka **Śledzenie statków AIS** wyświetla pozycje [Systemu Automatycznej Identyfikacji (AIS)](https://pl.wikipedia.org/wiki/System_Automatycznej_Identyfikacji) oraz szczegółowe informacje o pobliskich jednostkach pływających. Dane AIS są odbierane przez połączenie sieciowe z zewnętrznego odbiornika AIS.
+Wtyczka **Śledzenie statków AIS** wyświetla pozycje [Systemu Automatycznej Identyfikacji (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) oraz szczegółowe informacje o pobliskich jednostkach pływających. Dane AIS są odbierane przez połączenie sieciowe z zewnętrznego odbiornika AIS.
 
 :::caution WYŁĄCZENIE ODPOWIEDZIALNOŚCI
 **Ta wtyczka jest projektem hobbystycznym i nie została zaprojektowana z myślą o niezawodności ani dokładności. NIE NALEŻY polegać na tym oprogramowaniu w kwestiach nawigacji lub bezpieczeństwa życia.**
@@ -31,7 +31,7 @@ Wtyczka **Śledzenie statków AIS** wyświetla pozycje [Systemu Automatycznej Id
 Możliwość korzystania z map online jest automatycznie włączona w wersji OsmAnd na iOS. Aby wyświetlić mapy online w systemie Android, należy dokonać następujących ustawień:
 
 1. [Włącz](../plugins/index.md#enable--disable) wtyczkę **Śledzenie statków AIS** w *Menu główne → Wtyczki → Śledzenie statków AIS*.
-2. Skonfiguruj [ustawienia AIS](../map/raster-maps.md#select-raster-maps).
+2. Skonfiguruj [ustawienia AIS](../map/raster-maps.md#layers).
 3. Skonfiguruj **połączenie z serwerem AIS** lub podłącz **zewnętrzny odbiornik AIS**.
 4. Sprawdź, czy statki są wyświetlane na mapie OsmAnd.
 
@@ -82,12 +82,12 @@ Statki AIS przesyłają trzy rodzaje danych:
     *Wysyłane co **6 minut** lub na żądanie.*
 
     - **Nazwa statku** (*jeśli ustawiona*)  
-    - **MMSI (Morski Identyfikator Radiowy)** (*Unikalny 9-cyfrowy identyfikator statku*)
+    - **MMSI (Morski Identyfikator Mobilny)** (*Unikalny 9-cyfrowy identyfikator statku*)
     - **Numer IMO** (*jeśli dostępny*)  
     - **Znak wywoławczy**  
     - **Typ statku** (*np. towarowy, pasażerski, rybacki*)  
-    - **Wymiary statku** (*długość i szerokość*)  
-    - **Pozycja anteny AIS** (*względem kadłuba statku*)  
+    - **Wymiary statku** (*Długość i szerokość*)  
+    - **Pozycja anteny AIS** (*Względem kadłuba statku*)  
 
 2. Informacje dynamiczne (dane w czasie rzeczywistym).  
     *Wysyłane w różnych odstępach czasu w zależności od prędkości i manewrowania.*
@@ -96,7 +96,7 @@ Statki AIS przesyłają trzy rodzaje danych:
     - **Kurs nad dnem (COG)**  
     - **Prędkość nad dnem (SOG)**  
     - **Kurs** (*kierunek, w którym skierowany jest dziób*)
-    - **Status statku** (*w drodze, na kotwicy, manewrujący itp.*)  
+    - **Status statku** (*W drodze, na kotwicy, manewrujący itp.*)  
     - **Prędkość zwrotu (ROT)** (*prędkość zmiany kursu*)  
     - **Czas ostatniej aktualizacji**  
 

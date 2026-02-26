@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -27,6 +27,8 @@ Użyj **Navigation on the Web**, aby utworzyć trasę na mapie i podglądać wsk
 W stanie pustym Nawigacja prosi o dodanie punktów trasy: *Kliknij na mapie, aby ustawić punkty Startu i Celu*.
 
 Punkty trasy można podać z panelu Trasy. Gdy wybierzesz **Ustaw punkt startowy** lub **Ustaw cel**, pole pokazuje sugestie, takie jak *Aktualna lokalizacja* i wcześniej używane punkty z historii. Możesz usunąć zapisane sugestie za pomocą *Wyczyść historię*.
+
+Możesz również wprowadzić współrzędne bezpośrednio w polach punktów trasy, używając formatu szerokość geograficzna, długość geograficzna (na przykład, 48.23737, 24.40830). Inne formaty współrzędnych lub udostępnione linki mogą nie zawsze być rozpoznawane. Jeśli lokalizacja nie zostanie poprawnie sparsowana, spróbuj przekonwertować ją na lat,lon lub znajdź miejsce za pomocą wyszukiwania.
 
 Nawigacja podąża za prostym przepływem: pierwszy punkt staje się Startem, a następny punkt staje się Cel. Jak tylko oba punkty zostaną ustawione, trasa jest obliczana i wyświetlana na mapie.
 
@@ -116,13 +118,15 @@ Czym się różnią:
 - Pełne dane śladu mogą zawierać informacje o trasie/nawigacji oprócz geometrii śladu (przydatne, jeśli chcesz zachować instrukcje nawigacyjne lub ponownie edytować trasę w OsmAnd).
 - Uproszczony ślad eksportuje czystszy GPX przeznaczony dla innych aplikacji, usuwając dane o trasie/nawigacji i pozostawiając tylko kształt śladu. Punkty trasy są zachowywane podczas eksportu uproszczonego śladu.
 
-Możesz zapisać trasę jako ślad za pomocą *Zapisz w chmurze / Prześlij do OsmAnd Cloud*. Otwiera to okno dialogowe, w którym możesz potwierdzić zapisanie w śladach chmurowych, edytować Nazwę, opcjonalnie wybrać Folder, a następnie Zapisz lub Anuluj.
+Możesz zapisać trasę jako ślad za pomocą *Zapisz w chmurze / Prześlij do OsmAnd Cloud*. Otwiera to okno dialogowe, w którym możesz potwierdzić zapisanie w śladach chmurowych, edytować Nazwę, opcjonalnie wybrać Folder, a następnie Zapisz lub Anuluj. Jeśli nie jesteś zalogowany, *Zapisz w chmurze / Prześlij do OsmAnd Cloud* otwiera stronę Cennik.
 
 ![Nawigacja w sieci](@site/static/img/web/download_options.png)
 
 ### Udostępnianie trasy {#share-a-route}
 
 Aby udostępnić trasę, skopiuj URL. Przykład: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+Po otwarciu udostępnionego linku trasa jest przywracana na mapie. Jeśli to konieczne, możesz ręcznie zmienić [profil routingu](#routing-profile) w panelu Trasy.
 
 
 ## Powiązane artykuły {#related-articles}

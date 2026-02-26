@@ -1,6 +1,6 @@
 ---
-source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
-sidebar_position: 5
+source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+sidebar_position: 6
 title:  Czujniki zewnętrzne
 ---
 
@@ -15,10 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## Przegląd {#overview}
 
-:::info Płatna funkcja
-Wtyczka Czujniki zewnętrzne to [płatna funkcja](../purchases/index.md) aplikacji OsmAnd.  
+:::tip Zakup
+Wtyczka Czujniki zewnętrzne to [płatna funkcja](../purchases/index.md).  
 :::
 
 Wtyczka **Czujniki zewnętrzne** umożliwia odczytywanie i zapisywanie danych z [bezprzewodowych czujników zewnętrznych](https://en.wikipedia.org/wiki/Wireless_sensor_network) działających w technologiach [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) i [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) oraz wyświetlanie tych danych za pomocą [widżetów](#widgets) w aplikacji OsmAnd. Ta zarządzana sieć jest w stanie zbierać, przesyłać i przechowywać dane z czujników.
@@ -36,6 +37,7 @@ Wtyczka **Czujniki zewnętrzne** uzyskuje dostęp do czujników zewnętrznych i 
 
 Aby korzystać z wtyczki, upewnij się, że Twoje urządzenie jest [kompatybilne](#pair-new-sensor), wtyczka jest [włączona](../plugins/#enable--disable), a czujniki zewnętrzne są podłączone przez Bluetooth (BLE).
 
+
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
 
 Aby rozpocząć korzystanie z danych z czujników zewnętrznych, wykonaj następujące kroki:
@@ -44,9 +46,10 @@ Aby rozpocząć korzystanie z danych z czujników zewnętrznych, wykonaj następ
 2. [Włącz](../plugins/#enable--disable) wtyczkę w *Menu → Wtyczki*.
 3. **Włącz Bluetooth** na swoim urządzeniu, aby umożliwić połączenie z **czujnikami BLE**.
 4. [Sparuj i skonfiguruj](#pair-new-sensor) czujniki zewnętrzne poprzez menu wtyczki.
-5. (Opcjonalnie) [Dodaj](#widgets) **widżety czujników zewnętrznych** do ekranu mapy, aby wyświetlać dane w czasie rzeczywistym, takie jak tętno, kadencja czy poziom naładowania baterii.
+5. (Opcjonalnie) [Dodaj](#widgets) **Widżety Czujników zewnętrznych** do ekranu mapy, aby wyświetlać dane w czasie rzeczywistym, takie jak tętno, kadencja czy poziom naładowania baterii.
 6. (Opcjonalnie) Użyj [wtyczki Nagrywanie trasy](../plugins/trip-recording.md), aby zapisywać dane z czujników w śladach GPX.
 7. (Opcjonalnie, tylko Android) Postępuj zgodnie z [tymi wskazówkami](https://www.thisisant.com/consumer/ant-101/ant-in-phones), aby podłączyć czujniki ANT+, jeśli Twoje urządzenie je obsługuje.
+
 
 ### Sparuj nowy czujnik {#pair-new-sensor}
 
@@ -72,7 +75,7 @@ Aby rozpocząć korzystanie z danych z czujników zewnętrznych, wykonaj następ
 
 Aby sparować nowy czujnik, wykonaj następujące kroki:
 
-1. Upewnij się, że na urządzeniu **włączony jest Bluetooth**.  
+1. Upewnij się, że **włączony jest Bluetooth** na urządzeniu.  
 2. Przejdź do *Menu → Wtyczki → Czujniki zewnętrzne → Ustawienia*.  
 3. Stuknij **Sparuj nowy czujnik**.
 4. OsmAnd przeskanuje w poszukiwaniu dostępnych czujników **Bluetooth LE** lub **ANT+** (w zależności od platformy).
@@ -86,6 +89,7 @@ Aby sparować nowy czujnik, wykonaj następujące kroki:
 - **Powiadomienie wyskakujące** pojawi się za każdym razem, gdy czujnik połączy się lub rozłączy.
 - **Czujniki mocy roweru** są dostępne tylko na Androidzie przez ANT+.
 
+
 ## Ustawienia czujnika {#sensor-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -94,8 +98,8 @@ Aby sparować nowy czujnik, wykonaj następujące kroki:
 
 Użyj jednej z następujących ścieżek, aby otworzyć ustawienia czujnika:
 
-- *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Dostępne urządzenie → Ustawienia*
-- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Dostępne urządzenie → Ustawienia*
+- *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Available device → Settings*
+- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Available device → Settings*
 
 ![Wtyczka Czujniki zewnętrzne](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)  
 
@@ -116,15 +120,16 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia czujnika:
 
 Każdy sparowany czujnik zewnętrzny wymieniony w OsmAnd ma własny ekran konfiguracji z następującymi opcjami:
 
-- **Połącz / Rozłącz** – przełącz stan połączenia.
-- **Zmień nazwę** – przypisz niestandardową nazwę do czujnika.
-- **Zapomnij czujnik** – usuń czujnik z listy (można go później ponownie sparować).
-- **Ustawienia** – otwórz ekran szczegółów czujnika (typ czujnika, wartości, poziom naładowania baterii, ustawienie obwodu koła).
+- **Connect / Disconnect** – toggle the connection state.
+- **Rename** – assign a custom name to the sensor.
+- **Forget sensor** – remove the sensor from the list (can be re-paired later).
+- **Settings** – open the sensor details screen (sensor type, values, battery level, wheel circumference setting).
 
 ***Uwagi:***
 
 - W systemie **iOS** można wyświetlić **poziom naładowania baterii** podłączonych czujników BLE bezpośrednio w [widżecie](#widgets) na mapie. Aby to włączyć, przejdź do: *Menu → Konfiguruj ekran → Wybierz panel → Dodaj widżet → Czujnik zewnętrzny → Ustawienia → Pokaż → Poziom baterii*
 - Powiadomienie wyskakujące pojawia się, gdy **poziom naładowania baterii sparowanego czujnika spadnie poniżej 15%**.
+
 
 ## Nagrywanie trasy {#trip-recording}
 
@@ -165,6 +170,7 @@ Aby rejestrować dane z czujników za pomocą [wtyczki Nagrywanie trasy](../plug
 OsmAnd używa [nagrywania śladu](../plugins/trip-recording.md#recorded-gpx-file) do osadzania danych z czujników w plikach GPX. Ten format jest kompatybilny z wieloma aplikacjami sportowymi i treningowymi (np. Strava, Runkeeper).
 :::
 
+
 ### Analiza danych {#data-analyze}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -191,9 +197,10 @@ Aby przeanalizować dane:
 2. Otwórz nagraną trasę z *Moje miejsca → Trasy* lub stuknij trasę na mapie.
 3. Wybierz *Opcje → Analizuj na mapie* z menu kontekstowego trasy.
 
-Spowoduje to wyświetlenie wykresów dla zarejestrowanych danych: *Tętno*, *Prędkość*, *Kadencja*, *Moc roweru* i *Temperatura*.
+Spowoduje to wyświetlenie wykresów dla zarejestrowanych danych: *Tętno*, *Prędkość*, *Kadencja*, *Moc roweru* i *Temperatura*
 
 > *Poziom baterii i Dystans nie są dostępne w funkcji [Analizuj na mapie](../map/tracks/index.md#analyze-track-on-map).*
+
 
 ## Widżety {#widgets}
 
@@ -236,6 +243,7 @@ Obsługiwane typy widżetów:
 
 **Uwaga:** Jeśli czujnik tymczasowo się rozłączy, stuknij jego widżet na mapie, aby natychmiast spróbować ponownego połączenia — nie trzeba otwierać menu Czujniki zewnętrzne.
 
+
 ### Ustawienia widżetu {#widget-settings}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -266,6 +274,7 @@ W systemie **iOS** możesz wybrać, jaka wartość ma być wyświetlana w widże
 - **Poziom baterii** – procent naładowania baterii wybranego czujnika w czasie rzeczywistym.
 
 > *Jest to przydatne, gdy chcesz monitorować poziom naładowania baterii podczas długich podróży, aby uniknąć rozłączeń.*
+
 
 ## Powiązane artykuły {#related-articles}
 

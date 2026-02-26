@@ -1,7 +1,7 @@
 ---
-source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
-sidebar_position: 10
-title:  Rozszerzenie OsmAnd
+source-hash: 89baba1fc250f5fae8be3a075cdb603e67a8fdc5619d13653d39e5efe07cabcd
+sidebar_position: 11
+title:  Wtyczka deweloperska OsmAnd
 ---
 
 import Tabs from '@theme/Tabs';
@@ -40,8 +40,8 @@ Ustawienia wtyczki deweloperskiej OsmAnd są globalne i dotyczą wszystkich prof
 
 Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:  
 
-- *Menu główne → Wtyczki → Rozszerzenie OsmAnd → Ustawienia*.
-- *Menu główne → [Ustawienia globalne](../personal/global-settings.md) → Profil → Ustawienia wtyczki Rozszerzenie OsmAnd*.  
+- *Menu główne → Wtyczki → Wtyczka deweloperska OsmAnd → Ustawienia*.
+- *Menu główne → [Ustawienia globalne](../personal/global-settings.md) → Profil → Ustawienia wtyczki Wtyczka deweloperska OsmAnd*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -81,7 +81,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 ### Testowanie aplikacji {#application-testing}
 
-:::caution Tylko Android
+:::caution Tylko dla Androida
 :::
 
 - **Symuluj pierwsze uruchomienie aplikacji**. Ustawia flagę wskazującą pierwsze uruchomienie aplikacji, pozostawiając wszystkie inne ustawienia bez zmian.  
@@ -94,7 +94,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 ### Algorytmy wewnętrzne {#internal-algorithms}
 
-:::caution Tylko Android
+:::caution Tylko dla Androida
 :::
 
 - **Tryb awaryjny**. Uruchom aplikację w (wolniejszym) trybie awaryjnym.  
@@ -102,7 +102,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 ### Ustawienia pamięci {#memory-settings}
 
-:::caution Tylko Android
+:::caution Tylko dla Androida
 :::  
 
 - Opcja **Pamięć przydzielona do wyznaczania tras** pozwala określić ilość pamięci przydzielonej do obliczania długich tras. Możesz użyć tej opcji, jeśli w *Ustawieniach nawigacji* wybrano [Standardowe wyznaczanie trasy A*](../navigation/guidance/navigation-settings.md#development-settings).
@@ -115,7 +115,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 ### Informacje i statystyki {#info-and-statistics}
 
-:::caution Tylko Android
+:::caution Tylko dla Androida
 :::  
 
 - **Przydzielona pamięć**. Wyświetla przydzieloną pamięć systemową dla aplikacji OsmAnd.  
@@ -323,7 +323,7 @@ Poniższa tabela zawiera informacje o nachyleniu kamery oraz odległości do cel
 Ten widżet został zaprojektowany specjalnie dla Ciebie podczas korzystania z OsmAnd, aby zapewnić wygodniejszą i bardziej informacyjną interakcję z dostępną pamięcią RAM na Twoim urządzeniu. Pozwala on łatwo i szybko monitorować dostępną pamięć RAM, co jest szczególnie przydatne podczas korzystania z OsmAnd do nawigacji. Przeczytaj więcej o widżecie w artykule [Widżety informacyjne](../widgets/info-widgets.md#available-ram).
 
 
-## Symulacja trasy GPX {#gpx-track-simulation}
+## Symulacja śladu GPX {#gpx-track-simulation}
 
 OsmAnd daje możliwość symulacji lokalizacji i ruchu urządzenia za pomocą śladu GPX. W tym celu użyj opcji *<Translate android="true" ids="simulate_location_by_gpx"/>* w [ustawieniach](#plugin-settings) wtyczki deweloperskiej OsmAnd:  
 
@@ -348,7 +348,7 @@ OsmAnd daje możliwość symulacji lokalizacji i ruchu urządzenia za pomocą ś
 
 </Tabs>  
 
-Po uruchomieniu symulacji zobaczysz na głównym ekranie aplikacji, że znacznik nawigacji porusza się zgodnie ze śladem GPX. Dotknij [przycisku mojej lokalizacji](../map/interact-with-map.md#my-location-and-zoom), aby zsynchronizować *Moją lokalizację* (symulowaną geolokalizację urządzenia) ze środkiem mapy.  
+Po uruchomieniu symulacji zobaczysz na głównym ekranie aplikacji, że znacznik nawigacji porusza się zgodnie ze śladem GPX. Dotknij [przycisku mojej pozycji](../map/interact-with-map.md#my-position-and-zoom), aby zsynchronizować *Moją lokalizację* (symulowaną geolokalizację urządzenia) ze środkiem mapy.  
 Aby zatrzymać symulację ruchu urządzenia, wróć do [ustawień](#plugin-settings) wtyczki deweloperskiej OsmAnd i dotknij **stop** w opcji **symuluj swoją pozycję**.
 
 - Dostęp do *<Translate android="true" ids="simulate_location_by_gpx"/>* można również uzyskać poprzez **[menu Szybkich akcji](../widgets/quick-action.md#navigation)**.

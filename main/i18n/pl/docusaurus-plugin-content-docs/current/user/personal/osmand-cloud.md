@@ -1,5 +1,5 @@
 ---
-source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
+source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
 sidebar_position: 11
 title:  Chmura OsmAnd
 ---
@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-:::tip subskrybuj  
-&nbsp;<ProFeature/> Aby uzyskać dostęp do wszystkich funkcji Chmury OsmAnd, zasubskrybuj **OsmAnd Pro** dla [Androida](../purchases/android.md#prices) lub [iOS](../purchases/ios.md#prices).  
-:::  
+:::info Pro feature
+Chmura OsmAnd to płatna funkcja [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
+:::
 
-:::note wieloplatformowość  
+:::note cross-platform  
 Chmura OsmAnd to niezależna usługa przechowywania w chmurze, która *nie jest powiązana* z konkretną wersją platformy Android, iOS ani internetową.  
 :::  
 
@@ -153,7 +153,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 Aby użyć OsmAnd Start, wykonaj następujące kroki:
 
-- **Zarejestruj konto w Chmurze OsmAnd** - Instrukcje znajdziesz w sekcji [Logowanie](#login).
+- **Zarejestruj konto w Chmurze OsmAnd** - Instrukcje znajdziesz w sekcji [Logowanie](#login)..
 - Otwórz *Menu → Ustawienia → Zakupy*.
 - Wybierz **OsmAnd Start** z dostępnych opcji.
 - **Utwórz kopię zapasową**, aby rozpocząć przechowywanie danych w Chmurze OsmAnd.

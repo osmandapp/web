@@ -1,6 +1,6 @@
 ---
-source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
-sidebar_position: 12
+source-hash: 91b548413957274ccf7ec40f7cd8e5166f5fd38e7fd27f83e8c250f277fd9820
+sidebar_position: 13
 title:  Pozycja parkowania
 ---
 

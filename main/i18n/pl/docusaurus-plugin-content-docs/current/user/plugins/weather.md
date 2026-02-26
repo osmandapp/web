@@ -1,6 +1,6 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
-sidebar_position: 17
+source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+sidebar_position: 19
 title:  Pogoda
 ---
 
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Przegląd {#overview}
 
 :::info Płatna funkcja
- <ProFeature/> Wtyczka Pogoda to [płatna funkcja](../purchases/index.md) aplikacji OsmAnd.  
+Wtyczka Pogoda to [płatna funkcja](../purchases/index.md) aplikacji OsmAnd. <ProFeature />
 :::
 
 Interaktywne warstwy mapy pogodowej w aplikacji OsmAnd pozwalają monitorować temperaturę, ciśnienie atmosferyczne, zachmurzenie, prędkość wiatru i opady w Twoim mieście lub dowolnej innej lokalizacji na interaktywnej mapie globalnej. Wtyczka Pogoda dostarcza cogodzinne prognozy pogody na 7 dni naprzód bezpośrednio na mapie OsmAnd. Informacje o pogodzie można również pobrać do użytku w trybie offline.  
@@ -60,7 +60,7 @@ Wtyczka Pogoda jest dostępna tylko z silnikiem renderowania mapy [Wersja 2](../
 
 Przejdź do: *Włączona wtyczka → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Panel pogody Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Panel pogody Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -74,7 +74,9 @@ Przejdź do: *Włączona wtyczka → <Translate ios="true" ids="shared_string_me
 
 </Tabs>
 
-Główne menu boczne ma dedykowaną pozycję **Pogoda**, która zapewnia szybki dostęp do wszystkich narzędzi pogodowych. *Ekran prognozy pogody* wyświetla informacje o *temperaturze*, *ciśnieniu atmosferycznym*, *prędkości wiatru*, *zachmurzeniu* i *opadach*.  
+Główne menu boczne ma dedykowaną pozycję **Pogoda**, która zapewnia szybki dostęp do wszystkich narzędzi pogodowych. *Ekran prognozy pogody* wyświetla informacje o *temperaturze*, *ciśnieniu atmosferycznym*, *prędkości wiatru*, *zachmurzeniu* i *opadach*. 
+
+Wartości prognozy są wyświetlane dla środka mapy, oznaczanego celownikiem (czarny na Androidzie, czerwony w iOS). Przesuń mapę, aby zmienić wybraną lokalizację — dane pogodowe aktualizują się automatycznie dla nowego punktu.
 
 Na dole ekranu znajduje się *pasek narzędzi pogody*. Możesz użyć przycisków dni i suwaka czasu, aby ustawić dokładny czas, w którym będzie wyświetlana prognoza pogody.
 

@@ -1,6 +1,6 @@
 ---
-source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
-sidebar_position: 9
+source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+sidebar_position: 10
 title:  Edycja OpenStreetMap
 ---
 
@@ -152,10 +152,9 @@ Możesz włączyć lub wyłączyć jako osobną warstwę wyświetlanie modyfikac
 
 Wtyczka do edycji OpenStreetMap umożliwia tworzenie na mapie nowych obiektów zwanych [punktami użyteczności publicznej lub POI](../map/point-layers-on-map.md#points-of-interest-pois). Możesz zmapować nowy sklep, ulubiony punkt orientacyjny, ławkę lub wiatę, aby ludzie mogli je znaleźć.  
 
-1. Dotknij mapy, aby umieścić nowy POI, lub dotknij POI, który nie został jeszcze załadowany.
-2. Dotknij [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-3. Wybierz [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) i dodaj jego nazwę oraz inne informacje, takie jak godziny otwarcia, strona internetowa itp. Po wybraniu nieprzesłanego POI, opcja *Utwórz POI* zmienia się na *Modyfikuj POI*.
-4. W zależności od ustawienia [Edycja offline](#settings), możesz zapisać dane lokalnie lub [przesłać je](../map/map-context-menu#-upload-poi--osm-note).
+1. Dotknij mapy, aby umieścić nowy POI, lub dotknij POI, który nie został jeszcze załadowany.2. Dotknij [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+2. Wybierz [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) i dodaj jego nazwę oraz inne informacje, takie jak godziny otwarcia, strona internetowa itp. Po wybraniu nieprzesłanego POI, opcja *Utwórz POI* zmienia się na *Modyfikuj POI*.
+3. W zależności od ustawienia [Edycja offline](#settings), możesz zapisać dane lokalnie lub [przesłać je](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### Dodaj tagi {#add-tags}
@@ -189,7 +188,7 @@ Jednym z przykładów nieobsługiwanych typów POI, które można dodać, jest *
 
 Aby dodać nieobsługiwane typy POI, wykonaj następujące kroki:
 
-1. Otwórz kartę *Zaawansowane*.
+1. Otwórz zakładkę *Zaawansowane*.
 2. Dotknij *Typ POI*.
 3. Wprowadź klucz *amenity* i wartość *freeshops* w odpowiednich polach.
 4. Wypełnij pozostałe wymagane dane dla tego POI.

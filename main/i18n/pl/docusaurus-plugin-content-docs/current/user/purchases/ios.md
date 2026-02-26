@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  Zakupy w iOS
 ---
@@ -55,9 +55,9 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 <!--
 
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -69,6 +69,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
 
 -->
 
@@ -97,8 +98,8 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Rzeźba terenu 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dane topograficzne](../plugins/topography.md#overview)<br/>(Poziomice i teren) | **-** | ✔ | ✔ |
-| [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [Wizualizacja trasy 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Siatka współrzędnych — Dostosowanie kolorów](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Wizualizacja trasy 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Głębokości morskie](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Przewodniki turystyczne (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Obsługa czujników zewnętrznych](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -111,7 +112,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | [Widżety metryk pojazdu](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | <details><summary>**2 widżety za darmo**</summary><ul><li>*Prędkość pojazdu*</li><li>*Prędkość obrotowa silnika*</li></ul></details> | ✔ |
 | [Narzędzie znaczników mapy](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Źródła map online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Obsługa map SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Obsługa map SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Punkty ulubione](../map/point-layers-on-map.md)<br/>zakładki i punkty trasy | ✔ | ✔ | ✔ |
 | [Punkty audio/wideo/zdjęcia](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -153,7 +154,7 @@ lub
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Kontynuuj z OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/pro_new.png)
 
 ### Zakup Maps+ {#maps-purchase}
 
@@ -161,7 +162,7 @@ lub
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Dotknij listy funkcji Maps+ → Kontynuuj z Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## Starsze subskrypcje (przed 4.0) {#legacy-subscriptions-prior-40}

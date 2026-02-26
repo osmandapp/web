@@ -1,8 +1,9 @@
 ---
-source-hash: 61b0680b73157560322c9e1f518e6754f7621729463a0d13adc86d23430d9851
+source-hash: 1d2c0901314a4d32b9e1f260f4ea9c0aa7ce27a957ff26f42308390f82c67b1c
 sidebar_position: 3
 title:  Wyznaczanie trasy dla roweru (MTB)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,10 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
-Wyznaczanie trasy dla roweru uwzględnia takie czynniki, jak dostępność ścieżek rowerowych, szlaków i dróg, które są bezpieczne i legalne dla rowerzystów. OsmAnd zawsze wykorzystuje dane o wysokości podczas obliczania szacowanego czasu przybycia (czasu potrzebnego na pokonanie dystansu) zgodnie z [regułą Naismitha](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). Domyślnie podawana jest najszybsza trasa.  
+Wyznaczanie trasy dla roweru uwzględnia takie czynniki, jak dostępność ścieżek rowerowych, szlaków i dróg, które są bezpieczne i legalne dla rowerzystów. OsmAnd zawsze wykorzystuje dane o wysokości podczas obliczania szacowanego czasu przybycia (czasu potrzebnego na pokonanie dystansu) zgodnie z [regułą Naismitha](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). Domyślnie podawana jest najszybsza trasa. Wyznaczanie trasy dla roweru uwzględnia również dodatkowe czynniki, takie jak [szerokość twojego roweru](../guidance/vehicle-parameters.md#limits), aby pomóc unikać wąskich ścieżek rowerowych.  
 Wyznaczanie trasy dla roweru może być również przydatne w przypadku [kolarstwa górskiego](#mtb-routing-particularities).  
 
 Możesz skonfigurować *Wyznaczanie trasy dla roweru* w sekcji [Parametry trasy](../guidance/navigation-settings#route-parameters) w ustawieniach Nawigacji.
@@ -25,7 +25,7 @@ Możesz skonfigurować *Wyznaczanie trasy dla roweru* w sekcji [Parametry trasy]
 
 ## Parametry trasy - Rower {#route-parameters---bicycle}
 
-Funkcje wyznaczania tras rowerowych w OsmAnd pozwalają rowerzystom wprowadzić punkt początkowy i końcowy, a następnie wygenerować trasę uwzględniającą ich preferencje i lokalną geografię.
+Funkcje wyznaczania tras rowerowych w OsmAnd pozwalają rowerzystom wprowadzić punkt początkowy i końcowy, a następnie wygenerować trasę uwzględniającą ich preferencje i lokalną geografię.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

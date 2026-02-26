@@ -1,8 +1,9 @@
 ---
-source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
+source-hash: f1a828f975c96bbfda684d9dc28a964129f8890ae914445426256bb589a6171f
 sidebar_position: 3
 title:  Menu główne
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 
@@ -42,25 +42,25 @@ Ikona [Menu głównego](../widgets/map-buttons.md#main-menu) „&#8801;” znajd
 ### Funkcje {#features}
 
 - [Znaczniki na mapie](../personal/markers.md) to narzędzie, które pozwala zaznaczyć miejsce na mapie.
-- [Moje miejsca](../personal/myplaces.md) to menu, które domyślnie zawiera Ulubione i trasy, a dodatkowo może zawierać [Notatki audio/wideo](../plugins/audio-video-notes.md) i [Edycje OSM](../plugins/osm-editing.md) (jeśli takie wtyczki są włączone).
+- [Moje miejsca](../personal/myplaces.md) to menu, które domyślnie zawiera Ulubione i ślady, a dodatkowo może zawierać [Notatki A/V](../plugins/audio-video-notes.md) i [Edycje OSM](../plugins/osm-editing.md) (jeśli takie wtyczki są włączone).
 - [Szukaj](../search/index.md) (Android) to narzędzie, które pozwala znaleźć miejsce lub obiekt istniejący na mapie.
-- Przycisk [Wskazówki](../widgets/map-buttons.md#directions) pozwala utworzyć trasę i rozpocząć nawigację.
+- Przycisk [Wskazówki](../widgets/map-buttons.md#navigation) pozwala utworzyć trasę i rozpocząć nawigację.
 - [Konfiguruj mapę](../map/configure-map-menu.md) to menu, które pozwala skonfigurować widok mapy.
 - [Pobierz mapy](../start-with/download-maps.md) to menu zawierające wszystkie pliki, które można pobrać.
 - [Przewodniki turystyczne (Beta)](../plan-route/travel-guides.md) (*Android*) to narzędzie, które pozwala na korzystanie z przewodnika Wikivoyage podczas podróży.
-- [Planuj trasę](../plan-route/create-route.md) to narzędzie, które pozwala mierzyć odległości na mapie, tworzyć trasy GPX lub dodawać nowe segmenty do już istniejących.
-- [* Nagrywanie podróży](../plugins/trip-recording.md) (*Android*) to narzędzie, które pozwala na zapisywanie wszystkich ruchów do śladu za pomocą GPS telefonu.
+- [Planuj trasę](../plan-route/create-route.md) to narzędzie, które pozwala mierzyć odległości na mapie, tworzyć ślady GPX lub dodawać nowe segmenty do istniejących.
+- [* Nagrywanie podróży](../plugins/trip-recording.md) (*Android*) to narzędzie, które pozwala zapisywać wszystkie ruchy do śladu za pomocą GPS telefonu.
 
 ### Ustawienia {#settings}
 
-- [Konfiguruj ekran](../widgets/configure-screen.md) to menu, które pozwala na konfigurację wyświetlania widżetów na mapie.
+- [Konfiguruj ekran](../widgets/configure-screen.md) to menu, które pozwala skonfigurować wyświetlanie widżetów na mapie.
 - [Wtyczki](../plugins/index.md#configure-plugin) to lista dodatkowych funkcjonalności i zaawansowanych ustawień.
-- [Ustawienia](../personal/global-settings.md) to menu, które pozwala na konfigurację głównych parametrów aplikacji.
+- [Ustawienia](../personal/global-settings.md) to menu, które pozwala skonfigurować główne parametry aplikacji.
 - [Pomoc](./first-steps.md#offline-help) zapewnia szybki dostęp do przewodnika, informacji o wersji aplikacji i pozwala na szybki kontakt z zespołem deweloperskim.
 
 ### Aktywny profil (Android) {#active-profile-android}
 
-*Menu główne* zapewnia szybki dostęp do przełączania i [dostosowywania profilu](../personal/profiles.md). Głównym celem profili jest posiadanie różnego wyglądu i działania aplikacji do nawigacji. Można ich jednak używać do dostosowywania ekranu i widżetów oraz przełączania profili dla różnych celów widoku. Wszystkie [ustawienia](../personal/profiles.md) są konfigurowane oddzielnie dla każdego profilu.
+*Menu główne* zapewnia szybki dostęp do przełączania i [dostosowywania profilu](../personal/profiles.md). Głównym celem profili jest posiadanie różnego wyglądu i odczuć aplikacji do nawigacji. Można ich jednak używać do dostosowywania ekranu i widżetów oraz przełączania profili dla różnych celów widoku. Wszystkie [ustawienia](../personal/profiles.md) są konfigurowane oddzielnie dla każdego profilu.
 
 ![profile_menu](@site/static/img/menu/profile_menu.png)
 
@@ -73,7 +73,7 @@ W tym menu można **przełączyć** aktywny profil, **skonfigurować** (zmienić
 
 ![Elementy menu Szuflady](@site/static/img/settings/drawer_menu_correct.png)  
 
-- To menu pozwala na zmianę kolejności, ukrywanie lub pokazywanie elementów z [Szuflady](../personal/profiles.md#drawer), kopiowanie listy elementów z innego profilu oraz resetowanie do ustawień domyślnych.  
+- To menu pozwala na zmianę kolejności, ukrywanie lub pokazywanie elementów z [Szuflady](../personal/profiles.md#drawer), kopiowanie listy elementów z innego profilu oraz resetowanie ustawień domyślnych.  
 
 - Przycisk *Minus* usuwa element z *Menu głównego* w szufladzie i przenosi go do sekcji *Ukryte*. Przycisk *Przesuń* zmienia pozycję wybranego elementu na liście.  
 

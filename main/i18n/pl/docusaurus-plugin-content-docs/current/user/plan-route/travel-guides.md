@@ -1,8 +1,9 @@
 ---
-source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
+source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
 sidebar_position: 2
 title:  Przewodniki turystyczne
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,17 +15,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Przegląd {#overview}
 
-:::info Płatna funkcja
-Przewodniki turystyczne to [płatna funkcja](../purchases/index.md) aplikacji OsmAnd.
+:::tip Zakup
+Przewodniki turystyczne to [płatna funkcja](../purchases/index.md).  
 :::
 
 Wirtualne przewodniki turystyczne w OsmAnd oferują użytkownikom cenne informacje, rekomendacje i wskazówki. Pozwalają również podróżnym na dostęp do kompleksowych informacji nawigacyjnych o atrakcjach w aplikacji.
 
 Przewodniki turystyczne OsmAnd opierają się na danych z [Wikivoyage](https://www.wikivoyage.org/), projektu społecznościowego podobnego do Wikipedii, w którym autorzy-wolontariusze tworzą aktualne artykuły.  
-Informacje z Wikivoyage obejmują główne fakty o danym miejscu, transporcie, atrakcjach, zakupach i wiele więcej.  
+Informacje z Wikivoyage obejmują główne fakty o danym miejscu, transport, atrakcje, zakupy i wiele więcej.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -56,7 +56,7 @@ Informacje z Wikivoyage obejmują główne fakty o danym miejscu, transporcie, a
 - [Zbuduj trasę](../navigation/setup/route-navigation.md#set-destinations) do wybranych atrakcji turystycznych lub swobodny spacer między punktami.
 
 :::note
-Artykuły *Przewodników turystycznych* są przechowywane w OsmAnd jako ślady GPX z punktami trasy. Po dodaniu tych śladów do mapy (zobacz sekcje *[Punkty](#points)* lub *[Trasy podróży](#travel-routes)* tego artykułu), możesz nimi zarządzać za pomocą menu *[Moje miejsca](../personal/myplaces.md)*.
+Artykuły *Przewodników turystycznych* są przechowywane w OsmAnd jako ślady GPX z punktami trasy.  Po dodaniu tych śladów do mapy (zobacz sekcje *[Punkty](#points)* lub *[Trasy podróży](#travel-routes)* tego artykułu), możesz nimi zarządzać za pomocą menu *[Moje miejsca](../personal/myplaces.md)*.
 :::
 
 ### Pobieranie artykułów {#download-articles}
@@ -304,7 +304,7 @@ Po włączeniu wyświetlania *Tras podróży* w menu *Konfiguruj mapę*, na mapi
 
 ### Niestandardowe przewodniki turystyczne {#custom-travel-guides}
 
-Zalecamy dodawanie nowych artykułów lub edycji do [Wikivoyage](https://en.wikivoyage.org/). Aktualizujemy Przewodniki turystyczne co około 6 miesięcy i można pobrać nowe artykuły. Możesz również stworzyć własny *Przewodnik turystyczny*. Jak to zrobić, opisano w dokumentacji technicznej (zobacz artykuł *[Tworzenie niestandardowego przewodnika turystycznego](../../technical/map-creation/create_travel_guide.md)*).
+Zalecamy dodawanie nowych artykułów lub edycji do [Wikivoyage](https://en.wikivoyage.org/). Aktualizujemy Przewodniki turystyczne co około 6 miesięcy i można pobrać nowe artykuły. Możesz również stworzyć własny *Przewodnik turystyczny*. Jak to zrobić, opisano w dokumentacji technicznej (zobacz artykuł *[Utwórz niestandardowy przewodnik turystyczny](../../technical/map-creation/create_travel_guide.md)*).
 
 <!--
 ### Collections of tracks {#collections-of-tracks}
@@ -347,7 +347,7 @@ W *[menu kontekstowym śladu](../map/tracks/track-context-menu.md)* pliku GPX mo
 
 </Tabs>
 
-W *Artykułach przewodników turystycznych* można znaleźć przydatne informacje o atrakcjach turystycznych (dane kontaktowe, linki internetowe, ceny itp.). Wiele artykułów ma przycisk *Wikipedia*, który pozwala otworzyć *[artykuł Wikipedii](../plugins/wikipedia.md)* (online lub offline) o danym miejscu.  
+W *Artykułach przewodników turystycznych* można znaleźć przydatne informacje o atrakcjach turystycznych (dane kontaktowe, linki internetowe, ceny i tak dalej). Wiele artykułów ma przycisk *Wikipedia*, który pozwala otworzyć *[artykuł Wikipedii](../plugins/wikipedia.md)* (online lub offline) o danym miejscu.  
 
 W niektórych przypadkach, *[zakładka Zakładki](#explore-and-bookmark)* OsmAnd zaproponuje pobranie [warstwy mapy Wikipedii](../plugins/wikipedia.md#download-wikipedia-packages), aby przeglądać powiązane artykuły w trybie offline.
 

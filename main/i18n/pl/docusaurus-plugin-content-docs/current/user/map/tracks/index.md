@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title:  Ślady
 sidebar_position: 2
 ---
@@ -116,7 +116,7 @@ Po wybraniu śladu na mapie lub otwarciu [menu kontekstowego śladu](./track-con
 
 Przejdź do: *Dotknij śladu → zakładka Ślad → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Menu śladu analiza na mapie Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Menu śladu analiza na mapie odległość Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Menu śladu analiza na mapie Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Menu śladu analiza na mapie odległość Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,14 +132,14 @@ Przejdź do: *Dotknij śladu → zakładka Ślad → <Translate ios="true" ids="
 
 To narzędzie zapewnia szczegółową analizę danych [śladu](../../map/tracks/track-context-menu.md#options) za pomocą wykresów i map.
 
-- **Dane wykresu (oś Y)** wyświetlają: *Wysokość*, *Nachylenie*, *Prędkość*, [*Dane z czujników zewnętrznych*](../../plugins/external-sensors.md) oraz kombinacje do dwóch opcji, jeśli są zawarte w danych śladu.
+- **Dane wykresu (oś Y)** wyświetlają: *Wysokość*, *Nachylenie*, *Prędkość*, [*Dane z czujników zewnętrznych*](../../plugins/external-sensors.md) oraz kombinacje do dwóch opcji, jeśli są zawarte w danych śladu. ***Tylko Android:*** dla śladów samochodowych nagranych z danymi OBD-II, oś Y dodatkowo udostępnia metryki pojazdu, takie jak obroty silnika, temperatura płynu chłodzącego i inne.
 - **Wymiar wykresu (oś X)** reprezentuje: *Odległość*, *Czas* i *Pora dnia*.
 - **Interakcja przez dotknięcie/przesunięcie**. Dotknij wykresu, aby wyświetlić informacje o konkretnym punkcie na śladzie. Przesuwanie po wykresie podświetla odpowiednią lokalizację na mapie i pokazuje szczegóły na pasku informacyjnym.
 - **Etykieta odległości**. Po dotknięciu lub przesunięciu wzdłuż wykresu w podpowiedzi wyświetlany jest również dokładny dystans wzdłuż śladu. Wartość podąża za bieżącymi ustawieniami jednostek profilu (<Translate android="true" ids="km"/> lub <Translate android="true" ids="mile"/>). Użyj jej, aby szybko oszacować, jak daleko punkt jest od początku śladu, lub aby obliczyć odległość między dwoma pozycjami, porównując ich wartości.
 - **Skalowanie**. Użyj [gestu dwoma palcami](../../map/interact-with-map.md#gestures), aby skalować wykres w celu bardziej szczegółowego widoku.
 
 
-### Podążaj za moją lokalizacją {#follow-my-location}
+### Podążaj za moją pozycją {#follow-my-location}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -157,10 +157,10 @@ To narzędzie zapewnia szczegółową analizę danych [śladu](../../map/tracks/
 
 </Tabs>
 
-Dotknij przycisku [Moja lokalizacja](../../map/interact-with-map.md#my-location-and-zoom), aby zsynchronizować widok mapy i wykres z Twoją lokalizacją.
+Dotknij przycisku [Moja pozycja](../../map/interact-with-map.md#my-position-and-zoom), aby zsynchronizować widok mapy i wykres z Twoją lokalizacją.
 
 - **Skala wykresu** pozostaje taka sama, a **pasek informacyjny** jest ustalony na 1/4 po lewej stronie.
-- W miarę poruszania się **wykres będzie się przesuwał** od lewej do prawej, wyświetlając informacje przed Tobą na śladzie.
+- W miarę poruszania się **wykres będzie się przesuwał** od lewej do prawej, wyświetlając informacje przed Tobą wzdłuż śladu.
 - Na tym ekranie nie są wyświetlane żadne inne widżety.
 - Ta funkcja jest przydatna podczas pieszych wędrówek i jazdy na rowerze podczas nawigacji po śladzie.  
 
@@ -170,7 +170,7 @@ Dotknij przycisku [Moja lokalizacja](../../map/interact-with-map.md#my-location-
 - [Wygląd śladu](./appearance.md)
 - [Menu kontekstowe śladu](./track-context-menu.md)
 - [Nawiguj po śladzie](../../navigation/setup/gpx-navigation.md)
-- [Artykuł na blogu: Trasy na mapie](https://docs.osmand.net/blog/routes)
+- [Trasy na mapie](https://docs.osmand.net/blog/routes) artykuł na blogu
 - [Konfiguruj mapę](../../map/configure-map-menu.md)  
 - [Ślady GPX](../../personal/tracks/index.md)  
 - [Planowanie trasy](../../plan-route/index.md)  

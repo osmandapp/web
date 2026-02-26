@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Menu Kontekstowe Śladu
 ---
@@ -25,13 +25,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Przegląd menu kontekstowego śladu Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
+![Overview track context menu Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Przegląd menu kontekstowego śladu iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
+![Overview track context menu iOS](@site/static/img/personal/tracks/track_context_overview_2_ios.png)
 
 </TabItem>
 
@@ -52,19 +52,19 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Przegląd panelu informacyjnego Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
+![Info panel overview Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Przegląd panelu informacyjnego iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
+![Info panel overview iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-W górnej części panelu informacyjnego widać nazwę śladu i symbol użyty do jego oznaczenia (*tylko Android*). Nazwę śladu można zmienić za pomocą funkcji zmiany nazwy w [menu Opcje](#options). Niektóre ślady (głównie *[Przewodniki turystyczne](../../plan-route/travel-guides.md#manage-as-gpx-track)*) mogą mieć krótki *[opis](#description-and-info)* i/lub zdjęcie pod *nazwą śladu*. Strzałka pokazuje *kierunek do najbliższego punktu śladu* z [Mojej lokalizacji](../../map/interact-with-map.md#my-location-and-zoom).  
+W górnej części panelu informacyjnego widać nazwę śladu i symbol użyty do jego oznaczenia (*tylko Android*). Nazwę śladu można zmienić za pomocą funkcji zmiany nazwy w [menu Opcje](#options). Niektóre ślady (głównie *[Przewodniki turystyczne](../../plan-route/travel-guides.md#manage-as-gpx-track)*) mogą mieć krótki *[opis](#description-and-info)* i/lub zdjęcie pod *nazwą śladu*. Strzałka pokazuje *kierunek do najbliższego punktu śladu* z [Mojej pozycji](../../map/interact-with-map.md#my-position-and-zoom).  
 
 Panel informacyjny zawiera również informacje o:
 
@@ -83,13 +83,13 @@ W przypadku, gdy ślad został utworzony w OsmAnd lub innej aplikacji do śledze
 
 <TabItem value="android" label="Android">
 
-![Przegląd menu kontekstowego śladu Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Przegląd menu kontekstowego śladu iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
 
 </TabItem>
 
@@ -108,13 +108,13 @@ W przypadku, gdy ślad został utworzony w OsmAnd lub innej aplikacji do śledze
 
 <TabItem value="android" label="Android">
 
-![Opcje menu śladu Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Opcje menu śladu iOS](@site/static/img/personal/tracks/track_menu_options_ios.png)  
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 </TabItem>
 
@@ -129,7 +129,7 @@ Menu **Opcje** pozwala zarządzać i modyfikować wybrany ślad za pomocą róż
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*tylko Android*) – Łączy segmenty śladu, aby wypełnić luki.
-- **<Translate android="true" ids="analyze_on_map"/>**. Otwiera narzędzie [Analizuj na mapie](../tracks/index.md#analyze-track-on-map) do sprawdzania wysokości, prędkości i odległości śladu.
+- **<Translate android="true" ids="analyze_on_map"/>**. Otwiera narzędzie [Analizuj na mapie](../tracks/index.md#analyze-track-on-map) do sprawdzania wysokości, prędkości, odległości śladu oraz wszelkich dodatkowych danych zawartych w śladzie (takich jak dane z zewnętrznych czujników lub dane metryczne pojazdu).
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*tylko Android*) - Analizuje ślad według [interwałów](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
@@ -161,13 +161,13 @@ Menu **Opcje** pozwala zarządzać i modyfikować wybrany ślad za pomocą róż
 
 <TabItem value="android" label="Android">
 
-![Opis i informacje Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Opis i informacje Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
+![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Opis śladu iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
+![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
 
 </TabItem>
 
@@ -190,7 +190,7 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 
 <details>
 
-<summary>Przykładowy kod XML pliku GPX</summary>
+<summary>Example XML code of GPX file</summary>
 
 ```xml
  <metadata>
@@ -233,13 +233,13 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 
 <TabItem value="android" label="Android">
 
-![Typ aktywności śladu](@site/static/img/personal/tracks/track_info_activity_andr.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Typ aktywności śladu](@site/static/img/personal/tracks/track_info_activity_ios.png)
+![Track Activity Type](@site/static/img/personal/tracks/track_info_activity_ios.png)
 
 </TabItem>
 
@@ -271,13 +271,13 @@ Interakcja z wykresem:
 
 <TabItem value="android" label="Android">
 
-![Wykresy menu kontekstowego śladu Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
+![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_new_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wykresy menu kontekstowego śladu iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
+![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_2_new_ios.png)
 
 </TabItem>
 
@@ -310,13 +310,13 @@ Ta karta jest widoczna tylko na zarejestrowanych śladach. Punkty na tego typu �
 
 <TabItem value="android" label="Android">
 
-![Wykres prędkości śladu Android](@site/static/img/personal/tracks/track_graph_speed_andr.png)
+![Track graph Speed Android](@site/static/img/personal/tracks/track_graph_speed_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wykres prędkości śladu iOS](@site/static/img/personal/tracks/track_graph_speed_3_ios.png)
+![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_3_ios.png)
 
 </TabItem>
 
@@ -336,13 +336,13 @@ Wykres **Prędkość** wyświetla takie metryki jak:
 
 <TabItem value="android" label="Android">
 
-![Wykres wysokości śladu Android](@site/static/img/personal/tracks/track_graph_altitude_andr.png)
+![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wykres wysokości śladu iOS](@site/static/img/personal/tracks/track_graph_altitude_2_ios.png)
+![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_2_ios.png)
 
 </TabItem>
 
@@ -364,24 +364,24 @@ Jeśli na trasie *nie ma informacji o wysokości*, można je dodać w następuj�
 
 ### Oblicz brakującą wysokość {#calculate-missing-elevation}
 
-:::note Subskrypcja OsmAnd Pro
-Funkcja [obliczania wysokości offline](../../plan-route/create-route.md#get-elevation-data) jest dostępna tylko dla [**subskrybentów OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Funkcja Pro
+[Obliczanie wysokości offline](../../plan-route/create-route.md#get-elevation-data) to płatna funkcja [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
 
 [Ta funkcja](../../plan-route/create-route.md#get-elevation-data) pozwala na obliczenie profilu wysokościowego dla śladu GPX w trybie offline dla dowolnego terenu między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej, na podstawie [danych mapy terenu](../../plugins/topography.md#download-maps). *Mapy terenu (3D) powinny być wcześniej pobrane*.
 
 1. Pobierz [Mapy terenu (3D)](../../plugins/topography.md#download-maps) dla wymaganego regionu.
 2. Jeśli ślad nie zawiera żadnych danych o wysokości, przejdź do menu kontekstowego śladu (*Menu kontekstowe śladu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), wybierz *Użyj map terenu*, a po obliczeniu otrzymasz wykres śladu oparty na danych terenu.  
 
-    ![Wykres wysokości śladu Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Wykres wysokości śladu Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Wykres wysokości śladu Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Wykres wysokości śladu Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
+    ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
 3. Jeśli tworzysz trasę za pomocą narzędzia [Planowanie trasy](../../plan-route/create-route.md#graph) metodą *Linia prosta* i na wykresie nie ma danych o wysokości, musisz:
     - Dotknąć *Uzyskaj dane o wysokości*, a następnie wybrać *Użyj map terenu*.
     - Po obliczeniu otrzymasz kompletny wykres wysokości/nachylenia trasy oparty na danych terenu.  
 
-  ![Wykres wysokości śladu Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Wykres wysokości śladu Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
 
 ## Punkty / Waypointy {#points--waypoints}
@@ -392,13 +392,13 @@ Waypointy to jeden z typów punktów dostępnych na mapie. Ogólnie rzecz biorą
 
 <TabItem value="android" label="Android">
 
-![Punkty menu kontekstowego śladu Android](@site/static/img/personal/tracks/track_context_points_android.png)
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Punkty menu kontekstowego śladu iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
 
 </TabItem>
 
@@ -429,13 +429,13 @@ Waypointy można dodawać do aktualnie nagrywanego śladu lub do dowolnego ślad
 
 <TabItem value="android" label="Android">
 
-![Dodaj waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png)  ![Dodaj waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
+![Add waypoint](@site/static/img/personal/tracks/add_waypoint_1_andr.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoint_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Dodaj waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Dodaj waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
+![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add_waypoints_2_ios.png)
 
 </TabItem>
 
@@ -465,13 +465,13 @@ Dotknij przycisku *Dodaj waypoint*, aby otworzyć ekran tworzenia waypointu (ten
 
 <TabItem value="android" label="Android">
 
-![Menu grupy menu śladu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
+![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu grupy menu śladu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Menu grupy menu śladu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
+![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_1.png) ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios_2.png)
 
 </TabItem>
 
@@ -496,13 +496,13 @@ Dotknij przycisku *Dodaj waypoint*, aby otworzyć ekran tworzenia waypointu (ten
 
 <TabItem value="android" label="Android">
 
-![Mapa grupy menu śladu Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Mapa grupy menu śladu Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mapa grupy menu śladu iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Mapa grupy menu śladu iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
 
 </TabItem>
 
@@ -518,13 +518,13 @@ Możesz włączać lub wyłączać waypointy grupy na mapie za pomocą przycisku
 
 <TabItem value="android" label="Android">
 
-![Punkty](@site/static/img/personal/tracks/waypoints_tag_info_android.png)
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Punkty](@site/static/img/personal/tracks/waypoints_tag_info_ios.png)
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_ios.png)
 
 </TabItem>
 
@@ -533,7 +533,7 @@ Możesz włączać lub wyłączać waypointy grupy na mapie za pomocą przycisku
 
 <details>
 
-<summary>Przykładowy kod XML tagów waypointu</summary>
+<summary>Example XML code of Waypoint tags</summary>
 
 ```xml
   <wpt lat="40.123456" lon="-73.987654">
@@ -562,7 +562,7 @@ Możesz włączać lub wyłączać waypointy grupy na mapie za pomocą przycisku
 
 <details>
 
-<summary>Przykładowy kod XML tagów punktu trasy</summary>
+<summary>Example XML code of Route point tags</summary>
 
 ```xml
   <rte>
@@ -634,7 +634,7 @@ Aby zmienić opis waypointu, można postąpić na jeden z następujących sposob
 
 <InfoAndroidOnly />
 
-![Podział śladu według Androida](@site/static/img/personal/tracks/split_by_1.png) 
+![Track split by Android](@site/static/img/personal/tracks/split_by_1.png) 
 
 Opcja **Analizuj według interwałów** pozwala podzielić ślad na sekcje i wyświetlić szczegółowe statystyki dla każdej części trasy. Ślady można podzielić według parametrów ***odległości***, ***czasu*** lub ***wzniesień/spadków***. 
 
@@ -644,7 +644,7 @@ Aby otworzyć tę opcję:
 
 ### Podziel według odległości {#split-by-distance}
 
-![Zakładka podziału śladu według odległości](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Mapa podziału śladu według odległości](@site/static/img/personal/tracks/split_by_2_map.png)  
+![Track split by distance tab](@site/static/img/personal/tracks/split_by_2_new_tab.png) ![Track split by distance map](@site/static/img/personal/tracks/split_by_2_map.png)  
 
 Ta opcja pozwala podzielić ślad na interwały o stałej odległości i analizować szczegółowe statystyki dla każdego segmentu. Dostępne interwały odległości to ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** i ***10 km***. Po wybraniu interwału odległości ślad jest wyświetlany jako lista segmentów. 
 
@@ -661,14 +661,14 @@ Po dotknięciu dowolnego segmentu na liście widok mapy pokazuje cały ślad z j
 
 ### Podziel według czasu {#split-by-time}
 
-![Zakładka podziału śladu według czasu](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Mapa podziału śladu według czasu](@site/static/img/personal/tracks/split_by_3_map.png) 
+![Track split by time tab](@site/static/img/personal/tracks/split_by_3_new_tab.png) ![Track split by time map](@site/static/img/personal/tracks/split_by_3_map.png) 
 
 Opcja **Podziel według czasu** dzieli ślad na interwały o równej długości. Możesz wybrać między ***1 min***, ***2 min***, ***2,5 min***, ***5 min***, ***10 min***, ***15 min***, ***30 min*** i ***60 min***. Sposób wyświetlania interwałów, statystyki podane dla każdego segmentu oraz sposób ich wyświetlania na mapie są takie same jak w sekcji [Podziel według odległości](#split-by-distance).
 
 
 ### Podziel według wzniesień/spadków {#split-by-uphill-downhill}
 
-![Zakładka podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Mapa podziału śladu według wzniesień/spadków](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
+![Track split by uphill/downhill tab](@site/static/img/personal/tracks/split_by_4_new_tab.png) ![Track split by uphill/downhill map](@site/static/img/personal/tracks/splip_by_4_map_new.png) 
 
 Ta opcja dzieli ślad na segmenty na podstawie zmian wysokości. Każdy interwał jest klasyfikowany jako ***wzniesienie***, ***spadek*** lub ***płasko***. Sposób wyświetlania interwałów, statystyki podane dla każdego segmentu oraz sposób ich wyświetlania na mapie są również takie same jak w sekcji [Podziel według odległości](#split-by-distance).
 
@@ -680,7 +680,7 @@ Na mapie segmenty są oznaczone kolorowymi etykietami na początku każdego inte
 
 ### Metryki tętna {#heart-rate-metrics}
 
-![Metryki tętna](@site/static/img/personal/tracks/heart_rate.png)
+![Heart Rate Metrics](@site/static/img/personal/tracks/heart_rate.png)
 
 Ta opcja pozwala wyświetlić średnie, minimalne i maksymalne wartości tętna (uderzenia na minutę, bpm) dla każdego interwału śladu. Dane o tętnie są pobierane z pliku GPX śladu lub rejestrowane bezpośrednio z podłączonego [zewnętrznego czujnika tętna](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Jeśli dane o tętnie nie są dostępne, ten wiersz jest ukryty w tabeli interwałów.
 
@@ -693,19 +693,19 @@ Ta opcja pozwala wyświetlić średnie, minimalne i maksymalne wartości tętna 
 
 *<Translate android="true" ids="shared_string_options,shared_string_gps_filter"/>*
 
-![Ekran filtra GPS Android](@site/static/img/personal/tracks/gps_filter_android.png)
+![GPS filter screen Android](@site/static/img/personal/tracks/gps_filter_android.png)
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
 Ten filtr pozwala poprawić statystyki śladu, wykluczając niepotrzebne lub nieprawidłowe dane. Możesz odfiltrować punkty śladu, które nie pasują do parametrów śladu, a w rezultacie uzyskać dokładniejszy wykres i wizualną linię trasy bez zniekształceń i szumów nagrania. Możesz wprowadzać zmiany za pomocą filtrów takich jak *Wygładzanie*, *Prędkość*, *Wysokość* i *Precyzja GPS*, które ukrywają odfiltrowane punkty z bieżącego śladu. Poza tym w menu *Statystyki* możesz sprawdzić, jak Twoje zmiany są wyświetlane na wykresie, zanim je zapiszesz. Możesz również *Przywrócić oryginał* i *Zapisać jako kopię* swojego śladu w tym filtrze bez zapisywania oryginału.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.
 - "My track location" button allows you to move the map to your track.-->
 
-Strona aplikacji Filtr GPS na Androida zawiera:
+Strona aplikacji Filtr GPS na Androida zawiera następujące elementy:  
 
 - Mapę z zapisanym śladem i dodatkowym przyciskiem *Lokalizacja mojego śladu* (wyrównuje ślad do środka mapy).
 - Przyciski *Odśwież* i *Menu* na górze (*Menu* otwiera pole *Akcja* na dole strony).
@@ -719,21 +719,21 @@ W tym menu można zmienić niektóre parametry śladu, takie jak *Wygładzanie*,
 | ***Punkty*** |
 |:------------|
 |Ta część pokazuje liczbę punktów po filtrowaniu i całkowitą liczbę punktów na wybranym śladzie przed użyciem filtrów.|
-|![Liczby punktów ekranu filtra GPS Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
+|![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Akcje*** |
 |*Wygładzanie*. Ustawia próg odległości między punktami. Punkty śladu, które są co najmniej w tej odległości od ostatniego widocznego punktu, są ukrywane. Wszystkie punkty na śladzie, które są w odległości od siebie mniejszej niż odległość wybrana przez filtr, zostaną ukryte. Punkty śladu są liczone od ostatniego widocznego punktu. Należy pamiętać, że wysokie progi mogą nadmiernie uprościć geometrię śladu.|
-|![Liczby wygładzania filtra GPS Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
+|![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
 |*Prędkość*. Na wykresie i mapie wyświetlane są tylko punkty śladu odpowiadające wybranemu przedziałowi prędkości, pozostałe są ukryte.|
-|![Liczby prędkości filtra GPS Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
+|![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |
 |*Wysokość*. Na wykresie i mapie wyświetlane są tylko punkty śladu odpowiadające wybranemu przedziałowi wysokości, pozostałe są ukryte.|
-|![Liczby wysokości filtra GPS Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
+|![GPS filter altitude numbers Android](@site/static/img/personal/tracks/gps_filter_altitude_android.png) |
 |*Precyzja GPS*. Ustawia maksymalną dopuszczalną wartość dla HDOP. Punkty o wyższej wartości są ukrywane.|
-|![Liczby precyzji filtra GPS Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
+|![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
 
 ### Statystyki {#statistics}
 
-![Wykres filtra GPS Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
+![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_statistics_new_andr.png)
 
 Zakładka Statystyki wyświetla informacje o **zmodyfikowanym** śladzie, czyli śladzie bez odfiltrowanych wartości. Jest to wyświetlane w blokach statystyk i danych wykresu.
   
@@ -742,7 +742,7 @@ Zakładka Statystyki wyświetla informacje o **zmodyfikowanym** śladzie, czyli 
 
 ### Akcje {#actions}
 
-![Akcja filtra GPS Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
+![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
 
 Lista akcji jest dostępna na dole zakładki **Filtr** lub **Statystyki**. OsmAnd stosuje wszystkie zmiany wprowadzone w śladzie bez aktualizacji pliku, ale można zapisać zmiany ręcznie.
 

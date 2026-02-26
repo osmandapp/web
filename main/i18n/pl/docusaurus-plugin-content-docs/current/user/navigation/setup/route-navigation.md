@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title:  Przygotowanie trasy
 ---
@@ -65,10 +65,10 @@ Przed rozpoczęciem korzystania z nawigacji offline upewnij się, że wymagane [
 1. Otwórz [*Menu nawigacji*](#navigation-menu):
 
     - Określ [punkt docelowy](#set-target-point).
-    - Poczekaj, aż trasa zostanie obliczona. Następnie będzie można uzyskać dodatkowe informacje o trasie w sekcji *[Szczegóły](./route-details.md#overview)*.
+    - Poczekaj, aż trasa zostanie obliczona. Następnie będzie można uzyskać dodatkowe informacje o trasie w sekcji *[Szczegóły](../setup/route-details.md#overview)*.
     - Możesz przełączać się między różnymi [typami tras](./../routing/osmand-routing.md#routing-types) (profilami), aby uzyskać najlepszy wynik.
     - Dodaj [pośrednie punkty docelowe](#intermediate-destinations) (opcjonalnie).
-    - Możesz także zmienić punkt początkowy z [bieżącej lokalizacji](../../map/interact-with-map.md#my-location-and-zoom) na wymagany.
+    - Możesz także zmienić punkt początkowy z [bieżącej pozycji](../../map/interact-with-map.md#my-position-and-zoom) na wymagany.
 
 2. Dodatkowe [*Ustawienia nawigacji*](#settings) mogą być używane w zależności od celów (można skonfigurować, które drogi unikać lub preferować, oszczędzać paliwo lub wybrać najszybszą trasę itp.).
 
@@ -79,7 +79,7 @@ Przed rozpoczęciem korzystania z nawigacji offline upewnij się, że wymagane [
 
 :::note
 
-**Trasa nie może zostać zbudowana, gdy jako źródło mapy wybrano *[Mapę online](../../map/raster-maps.md#select-raster-maps)*.**
+**Trasa nie może zostać zbudowana, gdy jako źródło mapy wybrano *[Mapę online](../../map/raster-maps.md#layers)*.**
 
 :::
 
@@ -88,7 +88,7 @@ Przed rozpoczęciem korzystania z nawigacji offline upewnij się, że wymagane [
 
 Istnieją 3 sposoby dotarcia do menu nawigacji:
 
-- [*Przycisk nawigacji*](../../widgets/map-buttons.md#directions) na ekranie mapy.  
+- [*Przycisk nawigacji*](../../widgets/map-buttons.md#navigation) na ekranie mapy.  
 - *Kierunek do/z* w [*menu kontekstowym mapy*](../../map/map-context-menu.md#directions-to--from).  
 - Sekcja Nawigacja w [*Menu głównym*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Istnieją 3 sposoby dotarcia do menu nawigacji:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Ustaw lokalizację początkową (domyślnie: [*Moja bieżąca lokalizacja*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Ustaw lokalizację początkową (domyślnie: [*Moja bieżąca lokalizacja*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Służy do [ustawienia punktu docelowego](#set-target-point).
 - **Dodaj** &nbsp;&#43; - Wstaw [punkty pośrednie](../../widgets/nav-widgets.md#distance-to-intermediate) wzdłuż trasy.
 - **Zamień** &nbsp;&#8595;&#8593; - Odwróć punkty *Start* i *Koniec*.
@@ -325,7 +325,7 @@ Ta opcja jest dostępna w wersji aplikacji na Androida na *[liście powiadomień
 Aby wznowić nawigację:
 
 - Użyj wiadomości od OsmAnd na pasku powiadomień.
-- Użyj *menu szybkich akcji* lub okna dialogowego, które pojawia się po dotknięciu *[przycisku Nawigacja](../../widgets/map-buttons.md#directions)* (patrz zrzut ekranu).
+- Użyj *menu szybkich akcji* lub okna dialogowego, które pojawia się po dotknięciu *[przycisku Nawigacja](../../widgets/map-buttons.md#navigation)* (patrz zrzut ekranu).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

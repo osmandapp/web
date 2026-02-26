@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  Parametry pojazdu
 ---
@@ -97,6 +97,10 @@ Parametry pojazdu wpływają na nawigację i budowanie trasy, ponieważ określa
 
 ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+Na Androidzie ten parametr jest również dostępny dla *[profili rowerowych](../../navigation/routing/bicycle-based-routing.md)*, aby pomóc unikać wąskich ścieżek rowerowych.
+
+![Ustawienia nawigacji Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Ograniczenie maksymalnego obciążenia osi**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Podaj maksymalne obciążenie osi Twojego pojazdu, aby unikać dróg i mostów z ograniczeniami obciążenia osi. Ten parametr jest dostępny tylko w typach nawigacji, takich jak [*Ciężarówka*](../../navigation/routing/car-based-routing.md).  
 
