@@ -69,9 +69,19 @@ export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFil
 }
 
 export function getPoiParentCategory(props, t) {
-    let type = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
-    if (type) {
-        const brandRes = parseTagWithLang(type);
+    const mainCategory = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
+    const addCategory = props[WEB_POI_ADDITIONAL_CATEGORY];
+    const filter = props[WEB_POI_FILTER_NAME];
+
+    // additional category
+    if (addCategory && !filter) {
+        const addCategoryName = capitalize(formattingPoiType(t(`poi_${addCategory}`)));
+        return getFirstSubstring(addCategoryName);
+    }
+
+    // main category + brand
+    if (mainCategory) {
+        const brandRes = parseTagWithLang(mainCategory);
         if (brandRes.key === SEARCH_BRAND) {
             let brandType = capitalize(formattingPoiType(t(`poi_${brandRes.key}`)));
             if (brandRes.lang) {
@@ -79,27 +89,25 @@ export function getPoiParentCategory(props, t) {
             }
             return brandType;
         }
-        type = capitalize(formattingPoiType(t(`poi_${type}`)));
-    } else {
-        const filter = props[WEB_POI_FILTER_NAME];
-        const addCategory = props[WEB_POI_ADDITIONAL_CATEGORY];
+        return capitalize(formattingPoiType(t(`poi_${mainCategory}`)));
+    }
+
+    // filter
+    if (filter) {
         let filterName;
         let addCategoryName;
-        if (filter) {
-            filterName = capitalize(formattingPoiType(t(`poi_${filter}`)));
-            filterName = getFirstSubstring(filterName);
-        }
+
+        filterName = capitalize(formattingPoiType(t(`poi_${filter}`)));
+        filterName = getFirstSubstring(filterName);
+
         if (addCategory) {
             addCategoryName = capitalize(formattingPoiType(t(`poi_${addCategory}`)));
             addCategoryName = getFirstSubstring(addCategoryName);
         }
-        if (filterName) {
-            type = `${filterName}${addCategoryName ? ' (' + addCategoryName + ')' : ''}`;
-        } else {
-            type = `${addCategoryName ? addCategoryName : ''}`;
-        }
+
+        return `${filterName}${addCategoryName ? ' (' + addCategoryName + ')' : ''}`;
     }
-    return type && type !== 'undefined' && type !== '' ? type : null;
+    return null;
 }
 
 export function parseTagWithLang(tag) {
