@@ -16,6 +16,7 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
   const HEIGHT_ATTR = 'height';
   const VIEW_BOX_ATTR = 'viewBox';
   const TRANSFORM_ATTR = 'transform';
+  const CLIP_PATH_ATTR = 'clip-path';
   const DEFS_SELECT = 'defs';
   const STYLE_SELECT = 'style';
   const COLUMN_COUNT = 3;
@@ -54,6 +55,10 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
       if (clonedGroupElement.hasAttribute(TRANSFORM_ATTR)) {
         clonedGroupElement.removeAttribute(TRANSFORM_ATTR);
       }
+      clonedGroupElement.removeAttribute(CLIP_PATH_ATTR);
+      clonedGroupElement
+        .querySelectorAll(`[${CLIP_PATH_ATTR}]`)
+        .forEach(el => el.removeAttribute(CLIP_PATH_ATTR));
       newSvg.appendChild(clonedGroupElement);
       const serializer = new XMLSerializer();
       let svgString = serializer.serializeToString(newSvg);
@@ -62,13 +67,13 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
       const height = groupBBox.height.toFixed(2);
       newSvg.setAttribute(WIDTH_ATTR, width);
       newSvg.setAttribute(HEIGHT_ATTR, height);
-      newSvg.setAttribute(VIEW_BOX_ATTR, `${groupBBox.x.toFixed(2)} ${groupBBox.y.toFixed(2)} ${width} ${height}`)
+      newSvg.setAttribute(VIEW_BOX_ATTR, `${groupBBox.x.toFixed(2)} ${groupBBox.y.toFixed(2)} ${width} ${height}`);
+
       svgString = serializer.serializeToString(newSvg);
       const title = svgPartsMap.get(groupElement.id)
       svgArray.push({ id: groupElement.id || `group-${svgArray.length}`, svgString, title });
     });
     return svgArray;
-
   }, []); 
 
   const { svgContent: svgContentDay, loading: loadingDay } = useSvgContent(svgPath + SVG_DAY_FILE_SUFFIX);
@@ -92,7 +97,7 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
     const isNightMode = mode === 'night';
     const hasRows = isNightMode ? rowsNight.length > 0 : rowsDay.length > 0;
     const isLoading = isNightMode ? loadingNight : loadingDay;
-    const hasContent = isNightMode ? !svgContentNight && !loadingNight : !svgContentDay && !loadingDay
+    const hasContent = isNightMode ? !svgContentNight && !loadingNight : !svgContentDay && !loadingDay;
     const legendStyle = isNightMode ? styles.legendNight : styles.legendDay;
 
     if (hasRows) {
@@ -126,13 +131,13 @@ export default function LegendItemWithProcessing({ svgPath, svgParts }) {
         </table>
       );
     } else {
-      DEBUG && !isLoading && <p>No groups found in the SVG (after processing).</p>
+      DEBUG && !isLoading && <p>No groups found in the SVG (after processing).</p>;
     }
     if (isLoading) {
-      return <p>Loading SVG...</p>
+      return <p>Loading SVG...</p>;
     }
     if (!hasContent) {
-      return <p>No SVG content to display.</p>
+      return <p>No SVG content to display.</p>;
     }
   };
 
