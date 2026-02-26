@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -27,6 +27,8 @@ Gebruik **Navigation on the Web** om een route op de kaart te bouwen en een voor
 In de lege toestand vraagt Navigatie je om routepunten toe te voegen: *Klik op de kaart om Start- en Bestemmingspunten in te stellen*.
 
 Routepunten kunnen worden opgegeven vanuit het Routepaneel. Wanneer je **Startpunt instellen** of **Bestemming instellen** selecteert, toont het veld suggesties zoals *Huidige locatie* en eerder gebruikte punten uit de geschiedenis. Je kunt opgeslagen suggesties verwijderen met *Geschiedenis wissen*.
+
+Je kunt ook coördinaten direct invoeren in de routepuntvelden met het formaat breedtegraad, lengtegraad (bijvoorbeeld 48.23737, 24.40830). Andere coördinaatformaten of gedeelde links worden niet altijd herkend. Als een locatie niet correct wordt geparseerd, probeer het dan om te zetten naar lat,lon of zoek de plaats met de zoekfunctie.
 
 Navigatie volgt een eenvoudige stroom: het eerste punt wordt de Start, en het volgende punt wordt de Bestemming. Zodra beide punten zijn ingesteld, wordt de route berekend en weergegeven op de kaart.
 
@@ -116,13 +118,15 @@ Wat is het verschil:
 - Volledige trackgegevens kan route/navigatie-informatie bevatten naast de trackgeometrie (handig als je navigatie-instructies wilt behouden of de route opnieuw wilt bewerken in OsmAnd).
 - Vereenvoudigde track exporteert een schonere GPX bedoeld voor andere apps door route/navigatiegegevens te verwijderen en alleen de tracks vorm achter te laten. Waypoints worden behouden bij het exporteren van een vereenvoudigde track.
 
-Je kunt de route opslaan als een track met *Opslaan in Cloud / Uploaden naar OsmAnd Cloud*. Dit opent een dialoog waar je het opslaan in cloud-tracks kunt bevestigen, de Naam kunt bewerken, optioneel een Map kunt kiezen, en dan Opslaan of Annuleren.
+Je kunt de route opslaan als een track met *Opslaan in Cloud / Uploaden naar OsmAnd Cloud*. Dit opent een dialoog waar je het opslaan in cloud-tracks kunt bevestigen, de Naam kunt bewerken, optioneel een Map kunt kiezen, en dan Opslaan of Annuleren. Als je niet bent ingelogd, opent *Opslaan in Cloud / Uploaden naar OsmAnd Cloud* de Prijslijstpagina.
 
 ![Web Navigatie](@site/static/img/web/download_options.png)
 
 ### Een Route Delen {#share-a-route}
 
 Om de route te delen, kopieer je de URL. Voorbeeld: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+Wanneer je een gedeelde link opent, wordt de route hersteld op de kaart. Indien nodig kun je het [routingprofiel](#routing-profile) handmatig wijzigen in het Routepaneel.
 
 
 ## Gerelateerde Artikelen {#related-articles}

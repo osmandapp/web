@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Zoeken
 title: Zoeken op de Website
@@ -57,7 +57,7 @@ Open het zoektabblad om Verkennen te openen — de Verkennen-resultaten worden a
 
 ## POI-contextmenu {#poi-context-menu}
 
-Ongeacht welke zoekoptie u gebruikt (Zoekbalk, Categorieën of Verkennen), opent het selecteren van een POI op de kaart of in de resultatenlijst het POI-contextmenu. Het contextmenu is de belangrijkste plek om POI-informatie te bekijken en veelvoorkomende acties uit te voeren. Het combineert POI-details (zoals locatie en gerelateerde gegevens) met snelle acties (bijvoorbeeld opslaan, delen of routeplanning en navigatie starten).
+Ongeacht welke zoekoptie u gebruikt (Zoekbalk, Categorieën of Verkennen), opent het selecteren van een POI op de kaart of in de resultatenlijst het POI-contextmenu. Het contextmenu is de belangrijkste plek om POI-informatie te bekijken en veelvoorkomende acties uit te voeren. Het combineert POI-details (zoals locatie en gerelateerde gegevens) met snelle acties (bijvoorbeeld opslaan, delen of navigatie starten).
 
 ### POI-details {#poi-details}
 
@@ -65,13 +65,14 @@ Het **POI-contextmenu** toont belangrijke informatie over de geselecteerde plaat
 - **Naam en pictogram** — toont de POI-naam en het pictogram ervan.
 - **Afstand en richting** — toont de afstand en richting naar de POI.
 - **Locatie** — toont de coördinaten van de POI.
+- **Openingstijden** — toont de geparste openingstijden uit [OSM-gegevens](https://wiki.openstreetmap.org/wiki/Key:opening_hours). De huidige status wordt dynamisch weergegeven afhankelijk van de huidige tijd (bijvoorbeeld *Nu geopend*, *Gesloten* of *Open om 10:00*), en het volledige schema wordt hieronder getoond.
 - **Beschrijving** — biedt aanvullende informatie over de POI indien beschikbaar (bijvoorbeeld van Wikipedia).
 - **Online foto's** — toont Wikimedia-foto's gerelateerd aan de POI indien beschikbaar. Selecteer Alles weergeven om de Fotogalerij te openen. Selecteer een foto om deze te openen in de galerij (Open fotoweergave).
 - **Objectgegevens** — aanvullende POI-informatie, inclusief OSM-tags en andere details zoals contacten, sociale koppelingen, Wikipedia- en Wikivoyage-koppelingen, beschrijvingen en inscripties (indien beschikbaar).
 - **OSM ID** — de OpenStreetMap-identifier van de POI.
 - **Coördinaten** — selecteer de coördinaten om ze te kopiëren.
 
-![POI Context Menu](@site/static/img/web/poi_context_menu.png)
+![POI Context Menu](@site/static/img/web/poi_context_menu_new.png)
 
 ### POI-acties {#poi-actions}
 

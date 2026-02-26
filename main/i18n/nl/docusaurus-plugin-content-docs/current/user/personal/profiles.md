@@ -1,5 +1,5 @@
 ---
-source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
+source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
@@ -84,7 +84,7 @@ Dit gedeelte bevat alle instellingen met betrekking tot uiterlijk, navigatieopti
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
-![Functies favorietenmap Android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+![Favorietenmapfuncties Android](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
 </TabItem>
 
@@ -211,13 +211,13 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0,62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0,62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0,62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>Eenheden van lengte zijn van toepassing op horizontale afstandswaarden (bijv. rij-/routeafstanden en manoeuvreafstanden in navigatie). |
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0,54 nmi / 3280,84 ft / 1000 m<br/>Lengte is van toepassing op horizontale afstandswaarden (bijv. rij-/routeafstanden en manoeuvreafstanden in navigatie). |
 |  |  |  |
-| **Eenheden van hoogte** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>Eenheden van hoogte zijn van toepassing op hoogte-/verhogingswaarden en gerelateerde metrieken (bergop/bergaf, hoogtebereik) in Hoogtewidgets, Navigatie-route-info en Trackstatistieken.<br/>Standaard is Eenheden van hoogte gesynchroniseerd met Eenheden van lengte en wordt onafhankelijk alleen nadat de gebruiker deze handmatig heeft gewijzigd. |
+| **Hoogte** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3,28 ft<br/>Hoogte is van toepassing op hoogte-/verhogingswaarden en gerelateerde metrieken (bergop/bergaf, hoogtebereik) in Hoogtewidgets, Navigatie-route-info, Trackstatistieken en berghoogte-etiketten op de kaart.<br/>Standaard is Hoogte gesynchroniseerd met Lengte en wordt onafhankelijk alleen nadat de gebruiker deze handmatig heeft gewijzigd. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Voorbeeld: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Voorbeeld: 50°7.393′ 19°55.941′ (Lat Long)  |
@@ -232,14 +232,14 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 |          | Graden 360° | Alle hoekwaarden hebben metingen van 0° tot 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | Alle hoekwaarden hebben een [milliradiaalwaarde](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Azië, Latijns-Amerika, Canada, Japan, India, Australië |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Azië, Latijns-Amerika, Canada, Japan, India, Australië |
 |  | <Translate android="true" ids="imperial_gallons"/> | VK en vergelijkbaar |
 |  | <Translate android="true" ids="us_gallons"/> | Verenigde Staten |
 |  |  |  |
@@ -277,13 +277,13 @@ Het gedeelte **Overig** biedt extra profielinstellingen om de interface en invoe
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Verbind externe controllers zoals *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, of *<Translate android="true" ids="sett_parrot_ext_input"/>* om OsmAnd te bedienen met fysieke knoppen.
 
-- **<Translate android="true" ids="position_animation"/>** / **Eigen positie animeren** – Het [positie](../map/interact-with-map.md#my-location-and-zoom)-icoon animeert met elk ontvangen GPS-punt (één keer per seconde). Een lichte vertraging in de beweging kan merkbaar zijn, vooral bij snelle bewegingen of fluctuaties in het GPS-signaal. U kunt dit effect aanpassen met de instelling *Voorspellingstijd* (alleen Android): hogere waarden verhogen de vloeiendheid maar voegen vertraging toe, lagere waarden verminderen de vertraging maar kunnen de beweging minder vloeiend maken.
+- **<Translate android="true" ids="position_animation"/>** / **Eigen positie animeren** – Het [positie](../map/interact-with-map.md#my-position-and-zoom)-icoon animeert met elk ontvangen GPS-punt (één keer per seconde). Een lichte vertraging in de beweging kan merkbaar zijn, vooral bij snelle bewegingen of fluctuaties in het GPS-signaal. U kunt dit effect aanpassen met de instelling *Voorspellingstijd* (alleen Android): hogere waarden verhogen de vloeiendheid maar voegen vertraging toe, lagere waarden verminderen de vertraging maar kunnen de beweging minder vloeiend maken.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Alleen Android*) – Schakel de mogelijkheid in of uit om de volumeknoppen van uw apparaat te gebruiken voor [in- en uitzoomen](../map/interact-with-map.md#my-location-and-zoom) op de kaart.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Alleen Android*) – Schakel de mogelijkheid in of uit om de volumeknoppen van uw apparaat te gebruiken voor [in- en uitzoomen](../map/interact-with-map.md#my-position-and-zoom) op de kaart.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Alleen Android*) – Vloeiende kaartrotatie met [geleidelijke beweging](https://en.wikipedia.org/wiki/Kalman_filter), waardoor plotselinge positieverschuivingen worden verminderd. Dit introduceert een kleine vertraging (*minder dan 1 seconde*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*Alleen Android*) – Vloeiende kaartrotatie met [geleidelijke beweging](https://en.wikipedia.org/wiki/Kalman_filter), waardoor plotselinge positieverschuivingen worden verminderd. Dit introduceert een kleine vertraging (*minder dan 1 seconde*).
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Alleen Android*) – Tik op een lege ruimte op de kaart om bedieningsknoppen en widgets te verbergen, waardoor de kaart maximaal zichtbaar wordt.
 
@@ -371,7 +371,7 @@ Met dit menu kunt u:
 
 - **Visualisatie van openbaar vervoer inschakelen**, waarbij [routes en haltes](../map/public-transport.md) worden getoond voor een betere reisplanning.
 
-- **Kaartuiterlijk aanpassen** door een andere [kaartstijl](../map/vector-maps.md#default-map-styles) te selecteren die aan uw behoeften voldoet.
+- **Kaartuiterlijk aanpassen** door een andere [kaartstijl](../map/map-styles.md) te selecteren die aan uw behoeften voldoet.
 
 
 ## Scherm configureren {#configure-screen}
@@ -456,7 +456,7 @@ Gebruik **Icoonafmeting** om de grootte van het Mijn Locatie-positie-icoon onafh
 
 ### Kijkhoek en Locatieradius {#view-angle-and-location-radius}
 
-U kunt de visuele elementen met betrekking tot uw locatie aanpassen en ze afzonderlijk of samen toepassen voor de posities **Rustend** en **Navigatie**. Voor zowel 2D- als 3D-modi worden *Kijkhoek* en *Locatieradius* weergegeven in dezelfde kleur die is geselecteerd voor het [navigatieprofiel](#profile-appearance), direct onder het icoon [Mijn Locatie](../map/interact-with-map.md#my-location-and-zoom).
+U kunt de visuele elementen met betrekking tot uw locatie aanpassen en ze afzonderlijk of samen toepassen voor de posities **Rustend** en **Navigatie**. Voor zowel 2D- als 3D-modi worden *Kijkhoek* en *Locatieradius* weergegeven in dezelfde kleur die is geselecteerd voor het [navigatieprofiel](#profile-appearance), direct onder het icoon [Mijn positie](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Toont een **kegelvormig** gebied dat de richting aangeeft waarin u momenteel kijkt.  
 - **<Translate android="true" ids="location_radius"/>** – Toont een **cirkelvormig gebied** rond uw icoon, dat de nauwkeurigheid van uw huidige locatie weergeeft.

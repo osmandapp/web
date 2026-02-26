@@ -1,5 +1,5 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
+source-hash: 31eaf050491744fda2c071f9b7f96835aefe6b7beef39ec37dbf6a225fba7c4c
 sidebar_position: 13
 title:  Skikaartweergave
 ---
@@ -99,7 +99,7 @@ Het Skiprofiel is ontworpen voor gebruik in combinatie met de Winter en Ski stij
 
 </Tabs>
 
-De [Vectorkaart](../map/vector-maps.md) met de [Winter en Ski kaartstijl](../map/vector-maps.md#winter-and-ski) kan worden aangevuld met [Hoogtelijnen](../plugins/topography.md#contour-lines) en [Schaduwreliëf](../plugins/topography.md#hillshade-slope-and-altitude-layers). Hieronder staan twee voorbeelden. De pistes op de standaard vectorkaart worden links getoond, en de pistes op de vectorkaart gecombineerd met de *Hoogtelijnen* en *Schaduwreliëf* rasterkaart rechts. In het tweede geval toont de kaart meer hoogtegegevens om de moeilijkheidsgraad, het risico en de afstand beter in te schatten.  
+De [Vectorkaart](../map/vector-maps.md) met de [Winter en Ski kaartstijl](../map/map-styles.md#winter-and-ski) kan worden aangevuld met [Hoogtelijnen](../plugins/topography.md#contour-lines) en [Schaduwreliëf](../plugins/topography.md#hillshade-slope-and-altitude-layers). Hieronder staan twee voorbeelden. De pistes op de standaard vectorkaart worden links getoond, en de pistes op de vectorkaart gecombineerd met de *Hoogtelijnen* en *Schaduwreliëf* rasterkaart rechts. In het tweede geval toont de kaart meer hoogtegegevens om de moeilijkheidsgraad, het risico en de afstand beter in te schatten.  
 
 
 ### Skikaartstijl uitschakelen {#disable-ski-map-style}
@@ -124,7 +124,7 @@ De Skikaartweergave plug-in is een aparte applicatie, en het uitschakelen van de
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Nautische dieptecontouren in Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
+![Skiprofiel in Android](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
-![Dieptecontouren in iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
+![Skiprofiel in iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
 </TabItem>
 
@@ -239,7 +239,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_
 
 Om te weten te komen over welke pistes buiten het skiresort u kunt navigeren, moet u de optie **Skipistes en routes** inschakelen in de [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md) lijst, die geopend wordt vanuit het menu [Kaart configureren](../map/configure-map-menu.md).  
 
-Met het Skiprofiel, de skinavigatie en de [Winter en Ski kaartstijl](../map/vector-maps.md#winter-and-ski) ingeschakeld, tonen de [Skipistes en routes](../map/routes.md#ski-slopes-and-routes) alle soorten pistes die de Skinavigatie kan gebruiken om navigatieroutes langs uit te stippelen. Dergelijke skipisteroutes worden, indien ingeschakeld, meestal buiten de grenzen van het skiresort met een violette kleur omlijnd.  
+Met het Skiprofiel, de skinavigatie en de [Winter en Ski kaartstijl](../map/map-styles.md#winter-and-ski) ingeschakeld, tonen de [Skipistes en routes](../map/routes.md#ski-slopes-and-routes) alle soorten pistes die de Skinavigatie kan gebruiken om navigatieroutes langs uit te stippelen. Dergelijke skipisteroutes worden, indien ingeschakeld, meestal buiten de grenzen van het skiresort met een violette kleur omlijnd.  
 Wanneer de optie [Skipistes en routes](../map/routes.md#ski-slopes-and-routes) wordt ingeschakeld voor een kaartstijl anders dan Winter en Ski, worden alleen de hellingen weergegeven. Andere ski-gerelateerde kenmerken worden mogelijk niet getoond in deze stijl-laag.  
 _Skipistes en routes_ [zijn klikbaar](../map/routes.md#actions-with-routes).
 

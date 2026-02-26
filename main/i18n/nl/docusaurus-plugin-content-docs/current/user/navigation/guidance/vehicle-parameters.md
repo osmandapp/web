@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  Voertuigparameters
 ---
@@ -32,7 +32,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,ro
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigatie-instellingen iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,ro
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Navigatie-instellingen iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -97,6 +97,10 @@ Voertuigparameters beïnvloeden de navigatie en routeconstructie omdat ze de bes
 
 ![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+Op Android is deze parameter ook beschikbaar voor *[Fietsprofielen](../../navigation/routing/bicycle-based-routing.md)* om smalle fietspaden te vermijden.
+
+![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Maximale aslast limiet**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Geef de maximale aslast van uw voertuig op om wegen en bruggen met asgewichtbeperkingen te vermijden. Deze parameter is alleen beschikbaar in navigatietypes zoals [*Vrachtwagen*](../../navigation/routing/car-based-routing.md).  
 
@@ -154,7 +158,7 @@ De instelling **Brandstof gebruikt door motor** is alleen beschikbaar in voertui
 
 <TabItem value="ios" label="iOS">
 
-![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Navigatie-instellingen iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
@@ -203,7 +207,7 @@ De **Standaardsnelheid** is de standaard bewegingssnelheid voor deze vervoersmod
 ![Navigatie-instellingen](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
 Voor sommige navigatietypes kan de minimaal en maximaal toegestane snelheid worden ingesteld. Als dit is ingesteld, gaat de routeberekeningsengine ervan uit dat het voertuig of de vervoersmodus niet sneller zal bewegen dan de limiet en niet langzamer dan de minimale snelheid. 
-Dit maakt het bijvoorbeeld mogelijk om een **brandstofefficiënte** route te creëren waarbij het brandstofverbruik optimaal is bij de ingestelde **maximumsnelheid** en de engine een kortere route zal vinden door langere maar snellere wegen te vermijden.
+Dit maakt het bijvoorbeeld mogelijk om een **brandstofefficiënte** route te creëren waarbij het brandstofverbruik optimaal is bij de ingestelde **maximumsnelheid** en de routeberekeningsengine een kortere route zal vinden door langere maar snellere wegen te vermijden.
 
 - **Minimumsnelheid**  
     De instelling stelt de minimale rijsnelheid in voor alle wegtypes op de route. Het verhoogt de prioriteit voor wegen met een aanbevolen snelheid die lager is dan de minimale snelheid.  

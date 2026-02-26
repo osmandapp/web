@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
 sidebar_position: 2
 title: Kaartscherm tijdens navigatie
 ---
@@ -49,7 +49,7 @@ Tijdens de navigatie past het uiterlijk van de kaart zich aan op basis van het g
 
 | Parameter | Beschrijving | Opmerking |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | De tijd waarvoor de kaartweergave wordt gesynchroniseerd met de huidige positie na verplaatsing. | *Waarde:* <br /> Nooit, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | De tijd waarvoor de kaartweergave wordt gesynchroniseerd met de huidige positie na verplaatsing.  | *Waarde:* <br /> Nooit, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Schaal de kaart automatisch op basis van uw snelheid, zolang de kaart is gesynchroniseerd met uw huidige positie. | *Waarde:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - handmatig zoomen. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. <br /> Autozoom-veranderingen kunnen geanimeerd (Vloeiend) of stapsgewijs (Discreet) zijn, afhankelijk van [Ontwikkelinstellingen](navigation-settings.md#development-settings). In de Vloeiende modus gebruiken zoomveranderingen een gecontroleerde animatie (ongeveer 0,1 zoom/seconde). Autozoom past de zoom niet aan bij zeer lage snelheden (onder ~7 km/u). Als de vereiste zoomverandering minder dan ~1,5 seconden zou duren, wordt de animatie niet gestart. <br /> Autozoom probeert de aankomende manoeuvre binnen een stabiel schermfocusgebied te houden, zodat de zichtbare afstand vooruit consistent blijft tijdens het rijden.|
 | *Auto zoom 3D-hoek* | Stelt de helling van de kaart in bij overschakelen naar de 3D-weergave tijdens de navigatie. Een hogere hoek maakt de horizon verder weg, wat meer zicht naar voren geeft. |Het wordt alleen toegepast wanneer Auto zoom is ingeschakeld. Waarden: 20°, 25°, 30°, 35°, 40°. Standaard: 25°. <br /> Bij het naderen van een manoeuvre/kruising kan de app de 3D-helling geleidelijk verminderen naar een 2D-weergave om de volgende bocht leesbaar te houden. |
 | *Volgende bocht voorspellen* | Draait de kaart automatisch iets vooruit om de volgende bocht of manoeuvre tijdens de navigatie te tonen. Helpt om aankomende acties te anticiperen.  | Standaard ingeschakeld. Als u een profiel exporteert en opnieuw importeert, controleer dan deze instelling, omdat deze in sommige eerdere versies kon terugvallen op “ingeschakeld”.   <br /> De rotatie/voorvertoning wordt geactiveerd zodra het volgende manoeuvrepunt in het focusgebied valt (zodat de kaart begint te “kijken” naar de bocht wanneer deze relevant wordt). |
@@ -160,6 +160,10 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 ## Uiterlijk van de routelijn {#route-line-appearance}
 
+:::info Pro-functie
+Aanpassen van de routelijn is een [**OsmAnd Pro**](../../purchases/index.md) betaalde functie <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -185,16 +189,11 @@ U kunt het uiterlijk van de routelijn selecteren op stijl of handmatig de kleur,
 **Geavanceerd**: de instelling Routelijn aanpassen stelt u in staat om het uiterlijk van de routelijn aan te passen om hoogteverschillen, aanzienlijke stijgingen of dalingen, ijs op de weg, onverharde wegen, snelwegen en andere mogelijke obstakels weer te geven. U kunt ook aangepaste [kleurenschema's](../../personal/color-palette-schemes.md#tracks-routes) selecteren of maken om op de routelijn toe te passen.
 
 
-:::note
- <ProFeature/> Sommige parameters kunt u alleen gebruiken met een <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro-abonnement</a>.
-:::
-
-
 ### Kleur {#color}
 
 De instelling **Kleur** verandert de kleurtinten van de routelijnen. Hun algehele kleur verandert afhankelijk van het geselecteerde type uit de OsmAnd-collectie, en volgens de **Kaartlegenda**. Als alternatief wordt hun kleur de kleur en transparantie die u handmatig instelt.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Gebruikt met de standaardkleuren. Voor een volledige beschrijving van de kleuren, ga naar [Standaard kaartstijlen](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Gebruikt met de standaardkleuren. Voor een volledige beschrijving van de kleuren, ga naar [Standaard kaartstijlen](../../map/map-styles.md#default-map-styles).  
     ![Kaartstijl](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Aangepast***. Hiermee kunt u een lijn selecteren in elke gewenste kleur en transparantie. U kunt verschillende instellingen selecteren voor de dagkaart en afzonderlijk voor de nachtkaart.  
@@ -215,7 +214,7 @@ De instelling **Kleur** verandert de kleurtinten van de routelijnen. Hun algehel
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Classificatie van de manoeuvreerbaarheid van wegen of paden voor voertuigen op wielen, met name wat betreft de regelmatigheid en gladheid van het oppervlak. Een gedetailleerde beschrijving is te vinden in het artikel *OsmAnd Kaartstijl - [Gladheid](../../map-legend/osmand.md#surface-smoothness)* in de sectie *Kaartlegenda*.  
     ![Hoogte](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Kleurt een route- of tracklijn volgens de *winterwegclassificatie*. Een gedetailleerde beschrijving is te vinden in het artikel *Vectorkaarten*, sectie [Winter- en ijswegen](../../map/vector-maps.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Kleurt een route- of tracklijn volgens de *winterwegclassificatie*. Een gedetailleerde beschrijving is te vinden in het artikel *Kaartstijlen*, sectie [Winter- en ijswegen](../../map/map-styles.md#winter-and-ski).  
     ![Hoogte](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Kleuring van een route- of padlijn op basis van de samenstelling van het wegdek. Typisch gebruikt wanneer het wegennet grotendeels onverhard is. Een gedetailleerde beschrijving is te vinden in het artikel *OsmAnd Kaartstijl - [Stevigheid van het wegdek](../../map-legend/osmand.md#surface-smoothness)* in de sectie *Kaartlegenda*.  
@@ -229,7 +228,7 @@ De instelling **Kleur** verandert de kleurtinten van de routelijnen. Hun algehel
 
 U kunt de breedte van de routelijn aanpassen aan de weg of het pad dat op de kaart wordt weergegeven. Voor een duidelijkere visuele identificatie kunt u de lijnbreedte naar wens handmatig vergroten of verkleinen. Voor meer details, zie het artikel *Tracks en Routes — [Uiterlijk](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Het wordt gebruikt met de standaardbreedte ingesteld door OsmAnd. Een volledige beschrijving is te vinden in het artikel *Vectorkaarten*, sectie [Kaartstijl](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Het wordt gebruikt met de standaardbreedte ingesteld door OsmAnd. Een volledige beschrijving is te vinden in het artikel *[Kaartstijlen](../../map/map-styles.md)*.  
     ![Kaartstijl](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Dunne, Medium en Dikke breedtes***. U kunt de breedte van de lijn selecteren om overeen te komen met de breedte van de weg, of de routelijn sterker benadrukken op de kaart.  

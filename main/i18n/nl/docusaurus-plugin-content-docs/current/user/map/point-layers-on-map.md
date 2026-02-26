@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Punten op de Kaart
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Overzicht {#overview}
 
-De kaart kan punten weergeven zoals [Favorieten](#favorites), [Nuttige Plaatsen (POI's)](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia), [Zoekresultaten](#search-results-poi), [Audio- en videonotities](#-audio--video-points-android), en [OSM-bewerkingen](#-osm-edit-points).
+De kaart kan punten weergeven zoals [Favorieten](#favorites), [Nuttige Plaatsen](#points-of-interest-pois), [Markers](#markers), [Wikipedia](#-wikipedia), [Zoekresultaten](#search-results-poi), [Audio- en videonotities](#-audio--video-points-android), en [OSM-bewerkingen](#-osm-edit-points).
 
 
 ## Favorieten {#favorites}
@@ -103,7 +103,7 @@ Gedetailleerde informatie over een nuttige plaats is te vinden in het [Contextme
 
 ### POI-types {#poi-types}
 
-![Enkele POI-selectie](@site/static/img/map/single_selection_android.png) ![Meerdere POI-selecties](@site/static/img/map/multiple_selection_android.png)
+![Enkele POI-selectie](@site/static/img/map/single_selection_android.png) ![Meerdere POI-selectie](@site/static/img/map/multiple_selection_android.png)
 
 U kunt één of meerdere standaard OsmAnd POI-types selecteren, of uw eigen [POI-filter](../search/search-poi.md) maken en selecteren om POI's op de kaart weer te geven.
 
@@ -132,7 +132,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_
 
 </Tabs>
 
-Elk POI-type in OsmAnd heeft een specifiek icoon en kleur toegewezen gekregen. Het [zoomniveau](../map/vector-maps.md#details) en het ontwerp van POI's kunnen verschillen in sommige [kaartstijlen](../map/vector-maps.md#default-map-styles).  
+Elk POI-type in OsmAnd heeft een specifiek icoon en kleur toegewezen gekregen. Het [zoomniveau](../map/vector-maps.md#details) en het ontwerp van POI's kunnen verschillen in sommige [kaartstijlen](../map/map-styles.md).  
 
 [Lees meer](../map/vector-maps.md#hide).
 
@@ -326,7 +326,7 @@ Routepunten, POI's, Favoriete punten en Audio-/videonotities verwijzen allemaal 
 
 [Routepunten](#track-waypoints) zijn individuele punten op een kaart of route. Ze kunnen worden gebruikt om bepaalde plaatsen te markeren die belangrijk kunnen zijn voor het navigeren of het vastleggen van uw reizen. U kunt bijvoorbeeld een routepunt op de kaart maken om een belangrijk kruispunt of een richtingsverandering aan te geven.  
 
-[Nuttige plaatsen (POI's)](#points-of-interest-pois) zijn plaatsen die van speciaal belang zijn voor gebruikers. Dit kunnen bezienswaardigheden, restaurants, hotels, benzinestations en andere interessante plaatsen zijn die u misschien wilt noteren of bezoeken.  
+[Nuttige plaatsen(POI's)](#points-of-interest-pois) zijn plaatsen die van speciaal belang zijn voor gebruikers. Dit kunnen bezienswaardigheden, restaurants, hotels, benzinestations en andere interessante plaatsen zijn die u misschien wilt noteren of bezoeken.  
 
 [Favoriete punten](#favorites) zijn plaatsen die gebruikers bijzonder belangrijk of interessant vinden en opslaan in hun lijst met favoriete plaatsen. Plaatsen kunnen elke locatie omvatten die u later misschien wilt vinden en terugkeren.
 

@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title:  Routes
 ---
 
@@ -119,7 +119,7 @@ Sommige wegsegmenten kunnen deel uitmaken van vele routes, maar ze kunnen indivi
 - _Skipistes en -routes_ in _OsmAnd standaard_ kaartstijl.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Skipistes en -routes zijn een specifieke groep [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typisch kunnen deze routes worden gebruikt met de kaartstijl [Winter en Ski](../map/vector-maps.md#winter-and-ski) met alle zichtbare [Pistes](https://wiki.openstreetmap.org/wiki/Pistes). Als een andere kaartstijl actief is, wordt een banner weergegeven die suggereert om over te schakelen naar [Winter en Ski](../map/vector-maps.md#winter-and-ski) (*Alleen Android*) en worden alleen de pistes weergegeven. Tik op ***Omschakelen*** om de kaartstijl te wijzigen zonder het huidige scherm te verlaten, of ***Later*** om de banner te verbergen.
+Skipistes en -routes zijn een specifieke groep [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typisch kunnen deze routes worden gebruikt met de kaartstijl [Winter en Ski](../map/map-styles.md#winter-and-ski) met alle zichtbare [Pistes](https://wiki.openstreetmap.org/wiki/Pistes). Als een andere kaartstijl actief is, wordt een banner weergegeven die suggereert om over te schakelen naar [Winter en Ski](../map/map-styles.md#winter-and-ski) (*Alleen Android*) en worden alleen de pistes weergegeven. Tik op ***Omschakelen*** om de kaartstijl te wijzigen zonder het huidige scherm te verlaten, of ***Later*** om de banner te verbergen.
 
 
 ### Sneeuwscooterpaden {#snowmobile-trails}
@@ -140,7 +140,7 @@ Sneeuwscooterpaden zijn gemapt in [OpenStreetMap](https://wiki.openstreetmap.org
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Wildwaterroutes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) worden getoond samen met toegangspictogrammen en gevarenzones voor [wildwatertoerisme](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+[Wildwaterroutes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) worden getoond samen met toegangspictogrammen en gevarenzones voor [wildwatertoerisme](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). Zie [Wildwaterfuncties](../map-legend/osmand.md#whitewater-features) in de Kaartlegenda voor rapidengraden, riviersectiegraden en gerelateerde symbolen.  
 
 
 ### Hardlooproutes {#running-routes}
@@ -180,7 +180,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,render
 
 - Om de gewenste routes op de kaart weer te geven, schakelt u ze in de *Lijst met routes* van het menu [Kaart configureren](../map/configure-map-menu.md) in.
 - OsmAnd kan [routes op OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) markeren. Ze kunnen worden geselecteerd door op [het symbool op de route](#save-as-a-track) te tikken, en als de zichtbare set routes correct is geconfigureerd, kunt u de kleur en pictogrammen volgen.
-- De belangrijkste routetypes kunnen ook worden gefilterd op klassen en subklassen, waardoor u alleen specifieke groepen binnen elk type kunt weergeven. Bijvoorbeeld, u kunt wandelroutes weergeven op basis van **OSMC-symbolen** als klassen, en op basis van *internationale, nationale, regionale* of *lokale netwerken* als subklassen.
+- De belangrijkste routetypes kunnen ook worden gefilterd op klassen en subklassen, waardoor u alleen specifieke groepen binnen elk type kunt weergeven. Bijvoorbeeld, u kunt wandelroutes weergeven op basis van **OSMC-symbolen** als klassen, en op basis van *internationale, nationale, regionale* of *lokale netwerken* als subklassen, die momenteel beschikbaar zijn wanneer de [OsmAnd Development](../plugins/development.md) plugin is ingeschakeld.
 - U kunt een track bovenop de routes maken met behulp van het hulpmiddel [Route plannen](../plan-route/create-route.md). 
 - Wanneer meerdere routes langs dezelfde weg lopen, wordt elke route weergegeven als een aparte semi-transparante lijn die boven de anderen is geplaatst. 
 - Wanneer u tikt op een locatie waar meerdere routes overlappen, wordt een contextmenu weergegeven met alle routes die door dit punt lopen. 

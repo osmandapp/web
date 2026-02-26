@@ -1,5 +1,5 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title:  Kaarten & Gegevens
 ---
@@ -19,6 +19,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### Waarom biedt OsmAnd geen toegang tot Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
 OsmAnd is ontworpen om OpenStreetMap (OSM) te ondersteunen en geeft zoveel mogelijk prioriteit aan dit pad. Daarnaast zijn er licentiebeperkingen die het niet toestaan dat OsmAnd wordt gedistribueerd met gegevens van Google Maps.
+
+### Waarom Google Maps-koppelingen mogelijk niet in OsmAnd openen? {#why-google-maps-links-may-not-open-in-osmand}
+
+Google Maps-koppelingen zoals `https://maps.app.goo.gl/...` openen mogelijk niet met één tik in OsmAnd vanuit SMS of chatapps. Zelfs als OsmAnd deze koppelingen kan parseren, handhaaft Android 12+ Geverifieerde App-koppelingen: kern Google-domeinen (bijvoorbeeld `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) zijn gereserveerd voor Google-systeemservices, waardoor apps van derden ze niet automatisch kunnen onderscheppen. Als gevolg hiervan opent de koppeling meestal in een Google-app/service.
+
+**Workaround:** *lang op het bericht tikken → Delen → OsmAnd selecteren*. Dit stuurt de koppeling naar OsmAnd, waar deze kan worden geparset en geopend als een locatie.
 
 ### Kaarten laden traag op Android 11, 12 (SD-kaart) {#maps-slowly-loading-on-android-11-12-sd-card}
 

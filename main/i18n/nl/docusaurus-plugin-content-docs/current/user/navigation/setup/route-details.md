@@ -1,8 +1,9 @@
 ---
-source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
+source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
 sidebar_position: 4
 title:  Routedetails
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-Met OsmAnd kunt u de beste route vinden en de details ervan bekijken. De app geeft gedetailleerde informatie over de route, zoals afstand, [reistijd](#distance--time--co2), [wegdektype](#road-attributes), [hoogteverschillen](#elevation-info), [CO2-voetafdrukgegevens](#distance--time--co2) en [afslaginformatie](#turn-by-turn-information). U kunt de route ook [analyseren op de kaart](#analyze-on-map), informatie vinden over tracksegmenten, het routeplan [afdrukken](#print), de route [opslaan](#share--export-actions) en delen met anderen. Met deze functionaliteit kent u altijd de routedetails en kunt u uw reis efficiënter plannen.  
+Met OsmAnd kunt u de beste route vinden en de details ervan bekijken. De app geeft gedetailleerde informatie over de route, zoals afstand, [reistijd](#distance--time--co2), [wegdektype](#road-attributes), [hoogteverschillen](#elevation-info), [CO2-voetafdrukgegevens](#distance--time--co2) en [afslaginformatie](#turn-by-turn-information). U kunt de route ook [analyseren](#analyze-on-map) op de kaart, informatie vinden over tracksegmenten, het routeplan [afdrukken](#print), de route [opslaan](#share--export-actions) en delen met anderen. Met deze functionaliteit kent u altijd de routedetails en kunt u uw reis efficiënter plannen.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -178,7 +178,7 @@ Als er gegevens aanwezig zijn, kunt u een van de volgende typen selecteren:
 
 - *Tikken en schuiven*. Tik op de grafiek om informatie over het trackpunt en de beweging erlangs weer te geven. De grafiek markeert de locatie van het punt op de kaart en geeft informatie erover weer op de liniaal.
 - *Schalen*. Schaal de grafiek met een [gebaar met twee vingers](../../map/interact-with-map.md#gestures).
-- *Volg Mijn locatie* (*alleen Android*). U kunt op [Mijn Locatie](../../map/interact-with-map.md#my-location-and-zoom) tikken om de kaartweergave en de grafiek te synchroniseren met uw locatie. Terwijl u beweegt, verschuift de grafiek van links naar rechts en wordt informatie voor u op uw pad weergegeven.  
+- *Volg Mijn locatie* (*alleen Android*). U kunt op [Mijn positie](../../map/interact-with-map.md#my-position-and-zoom) tikken om de kaartweergave en de grafiek te synchroniseren met uw locatie. Terwijl u beweegt, verschuift de grafiek van links naar rechts en wordt informatie voor u op uw pad weergegeven.  
 
 
 ## Wegkenmerken {#road-attributes}
@@ -223,7 +223,7 @@ Wegkenmerken zijn toegankelijk in de [Routedetails](#how-to-access) en geven seg
 
 - [**Gladheid**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Van toepassing op alle soorten paden en gebieden, zoals snelwegen, parkeerplaatsen, stranden en paden, en geeft de bruikbaarheid van de route aan. Het geeft u informatie dat u kunt rijden zonder significant risico op schade, zoals aan de onderkant van het voertuig, of letsel, zoals een val.  
 
-- [**Winter- en ijswegen**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Toont het kleurenschema van de route volgens de classificatie van [winterwegen](../../map/vector-maps.md#winter-and-ski).  
+- [**Winter- en ijswegen**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Toont het kleurenschema van de route volgens de classificatie van [winterwegen](../../map/map-styles.md#winter-and-ski).  
 
 - [**Moeilijkheidsgraad van paardenpaden**](https://wiki.openstreetmap.org/wiki/Riding). Dit wegkenmerk geeft de moeilijkheidsgraad van de route aan tijdens het paardrijden. Geschikt voor [Paardrij-routering](../../navigation/routing/horse-routing.md).  
 
@@ -240,7 +240,7 @@ Wegkenmerken zijn toegankelijk in de [Routedetails](#how-to-access) en geven seg
 
 <TabItem value="ios" label="iOS">
 
-![Navigatieroute Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
+![Navigatieroute iOS](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
 
 </TabItem>
 
@@ -263,7 +263,7 @@ Tik op een specifiek gedeelte van de route in de lijst om gedetailleerde informa
 
 <TabItem value="ios" label="iOS">
 
-![Navigatieroute Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Navigatieroute iOS](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Algemene instellingen
 ---
@@ -59,7 +59,7 @@ Deze sectie bevat de basisinstellingen van OsmAnd, zoals het selecteren van een 
 
 <TabItem value="ios" label="iOS">
 
-![Algemene Instellingen Standaardprofiel iOS](@site/static/img/personal/profiles/default_profile_ios.png)
+![Algemene Instellingen Standaardprofiel Android](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -147,10 +147,11 @@ Ga naar: *Bestanden → Op mijn iPhone → OsmAnd Kaarten*
 | 3D-modus | Het is mogelijk om de kaart in 2D te bekijken, en u kunt de kijkhoek wijzigen om een [3D-weergave](../widgets/map-buttons.md#3d-mode) te krijgen. | U kunt de kaart in 2D en [3D](../widgets/map-buttons.md#3d-mode) bekijken. |
 | Kaartweergave | De hele kaart wordt weergegeven als een set tegels, en markeringen, lijnen en tekst bevinden zich al in deze tegels. | Eerst wordt het hele tegelpakket weergegeven, en vervolgens worden de beschikbare symbolen [laag voor laag](../../technical/algorithms/map-rendering-layers.md) op de kaart toegepast. |
 | Transparante symbolen overlay / underlay | Ondersteunt alle instellingen. | Ondersteunt geen rasterlaag bovenop vectortekst. |
-| [3D-terrein](../map/raster-maps.md#3d-relief) | Niet ondersteund. | Deze functie visualiseert het terrein op de kaart door hoogte-informatie toe te voegen aan een normale 2D-kaart, wat een 3D- en diepte-effect creëert. |
+| [3D-terrein](../plugins/topography.md#3d-relief) | Niet ondersteund. | Deze functie visualiseert het terrein op de kaart door hoogte-informatie toe te voegen aan een normale 2D-kaart, wat een 3D- en diepte-effect creëert. |
 | [3D-tracks](../map/tracks/appearance.md) | Niet ondersteund. | Met deze functie kunt u tracks weergeven op basis van hoogte boven zeeniveau. |
 | [Online kaart](../plugins/online-map.md) | Het ondersteunt de weergave van contourlijnen niet als de kaartbron een online tegelkaart is. | Wanneer de kaartbron een online kaart is, worden ook 3D-kaarten gebruikt en wordt de weergave van contourlijnen op de kaart ondersteund. |
-| [Weer-plugin](../plugins/weather.md) | U kunt deze plugin niet gebruiken. | Handig in gebruik met de plugin. |  
+| [Weer-plugin](../plugins/weather.md) | U kunt deze plugin niet gebruiken. | Handig in gebruik met de plugin. |
+| [Globe-weergave](../map/interact-with-map.md#globe-view) | Niet ondersteund. | Hiermee kunt u de kaart weergeven als een bolvormige aarde (globe) in plaats van een platte projectie. |   
 
 De afbeelding voor de 3D-weergave van de kaart wordt tegel voor tegel geladen, daarna alle symbolen. De weergavesnelheid van de kaart hangt af van het aantal 2D- en 3D-grafische objecten erop, en rechtstreeks van de prestaties van uw hardware. Daarom kan Versie 2 (OpenGL) niet worden gebruikt op apparaten met lage prestaties.
 
@@ -231,7 +232,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios.png) ![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
+![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
 
 </TabItem>
 
@@ -256,7 +257,7 @@ De applicatie legt de geschiedenis van eerder ingevoerde gegevens (geschiedenis)
 
 <TabItem value="ios" label="iOS">  
 
-![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![Algemene Instellingen Geschiedenis iOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
+![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![Algemene Instellingen Geschiedenis IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
 
 </TabItem>
 
@@ -365,7 +366,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![Algemene Instellingen Flitsers iOS](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Algemene Instellingen Flitsers iOS](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![Algemene Instellingen Flitsers Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Algemene Instellingen Flitsers Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 

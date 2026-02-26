@@ -1,5 +1,5 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
 title:  Importeren / Exporteren
 ---
@@ -33,7 +33,7 @@ Met *Importeren* en *Exporteren* kunt u gegevens opslaan uit gegenereerde `.osf`
 - **Mijn Plaatsen:**  
         [Favorieten](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM-notities*, *OSM-bewerkingen](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V-notities](../plugins/audio-video-notes.md), &nbsp;[Kaartmarkeringen](../personal/markers.md), &nbsp;[Markeringsgeschiedenis*, *Zoekgeschiedenis*, *Navigatiegeschiedenis](../personal/global-settings.md#history), &nbsp;*Reisplan*.
 - **Bronnen:**  
-        [Renderstijl](../map/vector-maps.md#custom-map-style), &nbsp;[Routering](../navigation/routing/osmand-routing.md), &nbsp;[Online routeringsengines](../navigation/routing/online-routing.md), &nbsp;[Kaartbronnen*, *Standaard/Offline Kaarten](../map/raster-maps.md), &nbsp;[Wikipedia- en Reiskaarten](../plan-route/travel-guides.md), &nbsp;[Nautische kaarten](../plugins/nautical-charts.md), &nbsp;[Wegenkaarten](../map/vector-maps.md#road-style), &nbsp;[Topografische kaarten](../plugins/topography.md), &nbsp;[Stembegeleiding (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Stembegeleiding (opgenomen)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Back-up van favorieten](../personal/favorites.md#automatic-favorites-backup).
+        [Renderstijl](../map/map-styles.md#custom-map-style), &nbsp;[Routering](../navigation/routing/osmand-routing.md), &nbsp;[Online routeringsengines](../navigation/routing/online-routing.md), &nbsp;[Kaartbronnen*, *Standaard/Offline Kaarten](../map/raster-maps.md), &nbsp;[Wikipedia- en Reiskaarten](../plan-route/travel-guides.md), &nbsp;[Nautische kaarten](../plugins/nautical-charts.md), &nbsp;[Wegenkaarten](../map/vector-maps.md#road-style), &nbsp;[Topografische kaarten](../plugins/topography.md), &nbsp;[Stembegeleiding (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Stembegeleiding (opgenomen)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Back-up van favorieten](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Exporteren {#export}

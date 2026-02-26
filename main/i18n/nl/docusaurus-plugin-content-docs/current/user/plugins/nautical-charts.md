@@ -1,5 +1,5 @@
 ---
-source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
+source-hash: 8bdbb1dbc653745d49be7527b86667e03d733d2fde2a36fca570fbd3b9b02442
 sidebar_position: 7
 title:  Zeekaartweergave
 ---
@@ -14,17 +14,18 @@ import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Overzicht {#overview}
 
-:::info Betaalde functie
-De Zeekaartweergave-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app.
+:::tip Aankoop
+De Zeekaartweergave-plugin is een [betaalde functie](../purchases/index.md).  
 :::
 
-Zeekaartweergave is een gedetailleerde grafische weergave van oceanen, zeeën, kustgebieden en rivieren die u helpt bij het navigeren op het water en u informeert over populaire routes, obstakels in uw vaarwater, dichtstbijzijnde havens, ankerplaatsen en andere belangrijke oriëntatiepunten.
+Zeekaartweergave is een gedetailleerde grafische weergave van oceanen, zeeën, kustgebieden en rivieren die u helpt bij het navigeren op het water en u informeert over populaire routes, obstakels in uw vaarwater, dichtstbijzijnde havens, ankerplaatsen en andere belangrijke oriëntatiepunten.  
 
-Een zeekaart is een zeer gedetailleerde topografische kaart die schippers helpt een vaartuig op een gekozen koers op het water te navigeren. Het is vergelijkbaar met een wegenkaart voor wie met de auto reist. Vaak wordt het om historische redenen een *'Chart'* genoemd, het is een gedetailleerde grafische weergave van de oceanen, zeeën, kustgebieden en rivieren.
+Een zeekaart is een zeer gedetailleerde topografische kaart die schippers helpt een vaartuig op een gekozen koers op het water te navigeren. Het is vergelijkbaar met een wegenkaart voor wie met de auto reist. Vaak wordt het om historische redenen een *'Chart'* genoemd, het is een gedetailleerde grafische weergave van de oceanen, zeeën, kustgebieden en rivieren.  
 
-Zeekaarten zijn belangrijk voor professionele zeilers en amateurs die een boot huren om door de grachten van de stad te varen. De kaarten voorzien hen van diverse informatie zoals vaarroutes, navigatielichten, gevarenzones, zones waar het is toegestaan of verboden is om te varen of aan te meren, enz.
+Zeekaarten zijn belangrijk voor professionele zeilers en amateurs die een boot huren om door de grachten van de stad te varen. De kaarten voorzien hen van diverse informatie zoals vaarroutes, navigatielichten, gevarenzones, zones waar het is toegestaan of verboden is om te varen of aan te meren, enz.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -47,7 +48,7 @@ Zeekaarten zijn belangrijk voor professionele zeilers en amateurs die een boot h
 
 Alle professionele zeilers zijn verplicht om officiële zeekaarten aan boord van hun schepen te hebben. Deze kaarten worden uitgegeven door geautoriseerde instanties en zijn vrij duur. De instanties investeren veel in het up-to-date houden van de kaarten. Ze geven regelmatig updates uit voor de kaarten, maar omdat het tijd kost om de informatie te verifiëren en de updates te verwerken, zijn zeekaarten nooit volledig up-to-date.
 
-Gebaseerd op [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap)-gegevens, worden OsmAnd-zeekaarten gemaakt door de mensen die ze gebruiken. Elke kaartgebruiker kan bijdragen aan de kaart door informatie toe te voegen die hij belangrijk en nuttig voor zichzelf vindt, waardoor de kaart gedetailleerder en nauwkeuriger wordt, ideaal voor oriëntatie of routeplanning.
+Gebaseerd op [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap)-gegevens, worden OsmAnd-zeekaarten gemaakt door de mensen die ze gebruiken. Elke kaartgebruiker kan bijdragen aan de kaart door informatie toe te voegen die hij belangrijk en nuttig voor zichzelf vindt, waardoor de kaart gedetailleerder en nauwkeuriger wordt, ideaal voor oriëntatie of routeplanning.  
 
 
 ## Vereiste instellingen {#required-setup-parameters}
@@ -81,9 +82,9 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 </Tabs>
 
-Gebruik de [Kaartlegenda](../../user/map-legend/nautical-map.md) voor elke verwijzing naar wat er op de zeekaart wordt getoond. Het legt de symbolische elementen op een zeekaart uit en dient als referentie om u te helpen navigeren bij twijfel. Door de Zeekaartstijl in te stellen, krijgt u de beste weergave van de gedownloade en weergegeven nautische gegevens.
+Gebruik de [Kaartlegenda](../../user/map-legend/nautical-map.md) voor elke verwijzing naar wat er op de zeekaart wordt getoond. Het legt de symbolische elementen op een zeekaart uit en dient als referentie om u te helpen navigeren bij twijfel. Door de Zeekaartstijl in te stellen, krijgt u de beste weergave van de gedownloade en weergegeven nautische gegevens.  
 
-Om de huidige kaartstijl te wijzigen naar Zeekaart, moet u de volgende instellingen doen:
+Om de huidige kaartstijl te wijzigen naar Zeekaart, moet u de volgende instellingen doen:  
 
 1. Selecteer het vereiste [profiel](../personal/profiles.md).  
 2. Open [Kaart configureren](../map/configure-map-menu.md).  
@@ -112,9 +113,9 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nauti
 
 </Tabs>
 
-Voor een optimale presentatie kunnen kaarten worden aangepast aan de huidige behoeften: markeringen en symbolen kunnen worden toegevoegd met dieptepunten en, indien nodig, contouren. Aan de andere kant kunnen standaardkaarten met informatie over binnen-, kust- en nabijgelegen wateren voor een bepaalde regio een goede aanvulling zijn op de informatie over waterwegen op een zeekaart.
+Voor een optimale presentatie kunnen kaarten worden aangepast aan de huidige behoeften: markeringen en symbolen kunnen worden toegevoegd met dieptepunten en, indien nodig, contouren. Aan de andere kant kunnen standaardkaarten met informatie over binnen-, kust- en nabijgelegen wateren voor een bepaalde regio een goede aanvulling zijn op de informatie over waterwegen op een zeekaart.  
 
-Wanneer u een zeekaart [downloadt](../start-with/download-maps.md), verschijnen er meer details met betrekking tot *Boot*-navigatie op de kaart. Sommige soorten [Zeekaarten](../plugins/nautical-charts/#nautical-map-style) bevatten details zoals:
+Wanneer u een zeekaart [downloadt](../start-with/download-maps.md), verschijnen er meer details met betrekking tot *Boot*-navigatie op de kaart. Sommige soorten [Zeekaarten](../plugins/nautical-charts/#nautical-map-style) bevatten details zoals:  
 
 - **Nautische markeringen en symbolen.**  
     Markeringen en symbolen bevatten alle nautische navigatiemarkeringen voor zowel binnen- als kustnavigatie. Kennis van deze markeringen helpt u de locatie van rotsen, obstakels, ankerplaatsen, boeien, stromingen, diep en ondiep water, en zijkanten van het kanaal te voorspellen, ongeacht de richting, enz. Markeringen en symbolen worden eenmalig voor de hele wereld gedownload.
@@ -150,7 +151,7 @@ Het uitschakelen van de Zeekaart-plugin verwijdert geen geladen nautische gegeve
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Dieptecontouren zeekaart in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
+![Zeekaart dieptecontouren in Android](@site/static/img/plugins/nautical-charts/and_boat_profile-2.png)
 
 </TabItem>
 
@@ -164,12 +165,12 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 </Tabs>
 
-De zeekaart kan in elk profiel worden opgenomen. Het is echter het meest waardevol in het [Bootprofiel](../personal/profiles.md) en vooral bij [Bootnavigatie](../navigation/routing/boat-navigation.md).
+De zeekaart kan in elk profiel worden opgenomen. Het is echter het meest waardevol in het [Bootprofiel](../personal/profiles.md) en vooral bij [Bootnavigatie](../navigation/routing/boat-navigation.md).  
 
 
 ## Zeekaartstijl {#nautical-map-style}
 
-De Zeekaart-plugin in OsmAnd breidt de vectorlaag kaartstijlen uit met de Zeekaartstijl. Hiermee kunt u kaartgegevens weergeven volgens de regels van de zeekaart, bijvoorbeeld: gele gebieden voor land en ondiepten, lichtblauwe gebieden voor ondiep water, enz. Voor meer informatie, zie [Kaartlegenda](../../user/map-legend/nautical-map.md).
+De Zeekaart-plugin in OsmAnd breidt de vectorlaag kaartstijlen uit met de Zeekaartstijl. Hiermee kunt u kaartgegevens weergeven volgens de regels van de zeekaart, bijvoorbeeld: gele gebieden voor land en ondiepten, lichtblauwe gebieden voor ondiep water, enz. Voor meer informatie, zie [Kaartlegenda](../../user/map-legend/nautical-map.md).  
 
 
 ### Zeebodemdetail {#seabed-detail}
@@ -322,7 +323,7 @@ Dieptepunt[pakketten](../start-with/download-maps.md#overview) zijn beschikbaar 
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
-![Dieptecontouren zeekaart in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
+![Zeekaart dieptecontouren in Android](@site/static/img/plugins/nautical-charts/and_depth_contours-3.png)
 
 </TabItem>
 

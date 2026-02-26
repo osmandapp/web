@@ -1,5 +1,5 @@
 ---
-source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
+source-hash: 9140bac9e9be1e187b70214ddb666d2191b3cfef30bcc06f8571ba22da005fb7
 sidebar_position: 15
 title:  Ritten Registreren
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-De **plug-in Ritten Registreren** is een essentieel hulpmiddel voor het vastleggen van uw routes, bewegingen en trainingen. Met deze functie kunt u niet alleen uw ritten opnemen, maar kunt u uw tracks ook gemakkelijk hergebruiken, wijzigen, bijwerken en delen met anderen.  
+De **plug-in Ritten Registreren** is een essentieel hulpmiddel voor het vastleggen van uw routes, bewegingen en workouts. Met deze functie kunt u niet alleen uw ritten opnemen, maar kunt u uw tracks ook gemakkelijk hergebruiken, wijzigen, bijwerken en delen met anderen.  
 
 Met de *plug-in Ritten Registreren* kunt u nieuwe tracks aanmaken, opgenomen tracks direct op de kaart weergeven en bestaande records beheren. Het biedt waardevolle inzichten in uw ritten, zoals snelheid, hoogteverschillen, terreindetails en gegevens van externe sensoren. De plug-in registreert uw route, waardoor gedetailleerde analyse en delen na uw rit mogelijk is.
 
@@ -356,7 +356,7 @@ De app-pictogrambadge verschijnt naast het OsmAnd-pictogram wanneer de trackregi
 
 ## Widgets {#widgets}
 
-Widgets stellen u in staat om belangrijke informatie over de trackregistratie direct op het scherm weer te geven, zoals *Afstand*, *Duur*, *Stijgen* en *Dalen*. U kunt ook *Max Snelheid* en *Gemiddelde Helling* widgets toevoegen.
+Widgets stellen u in staat om belangrijke informatie over de trackregistratie direct op het scherm weer te geven, zoals *Afstand*, *Duur*, *Stijgen*, *Dalen*, *Max Snelheid* en *Gemiddelde Helling*. Op iOS kunt u ook de *Tijd in Beweging* widget toevoegen.
 
 Om *widgets voor Ritten Registreren* te gaan gebruiken, moet u alle volgende instellingen doen:
 
@@ -381,7 +381,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,sh
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Kies een paneel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Afstand/Start-Stop widget toevoegen in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![Afstand/Start-Stop widget toevoegen in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -413,13 +413,13 @@ Om uw interface aan te passen, kunt u de widget Ritten Registreren en [andere wi
 Sommige widgets voor Ritten Registreren ondersteunen meerdere weergavemodi. Modi laten u schakelen tussen algemene reiswaarden en metrieken voor het meest recente stijgings- of dalingssegment van de momenteel opgenomen rit.
 
 De volgende modi kunnen beschikbaar zijn afhankelijk van de widget.
-1. **Afstand (Start-Stop)**:
-- Totale afstand (standaard)
-- Laatste stijging
-- Laatste daling
+1. **Gemiddelde Helling**:
+- Laatste daling  
+- Laatste stijging  
 
-2. **Stijgen**:
-- Totaal (standaard)
+2. **Afstand (Start-Stop)**:
+- Totale afstand (standaard)
+- Laatste daling
 - Laatste stijging
 
 3. **Dalen**:
@@ -428,15 +428,20 @@ De volgende modi kunnen beschikbaar zijn afhankelijk van de widget.
 
 4. **Max Snelheid**:
 - Totaal (standaard)
-- Laatste stijging
 - Laatste daling
+- Laatste stijging
 
-5. **Gemiddelde Helling**:
-- Laatste stijging  
-- Laatste daling 
+5. **Tijd in Beweging** (*Alleen iOS*)
+- Totaal (standaard)
+- Laatste daling
+- Laatste stijging
+
+6. **Stijgen**:
+- Totaal (standaard)
+- Laatste stijging
 
 Moduswisseling hangt af van de widget:
-- Stijgen / Dalen / Max Snelheid / Gemiddelde Helling — tik op de widget op de kaart om de modus te wisselen.
+- Stijgen / Dalen / Max Snelheid / Gemiddelde Helling / Tijd in Beweging — tik op de widget op de kaart om de modus te wisselen.
 - Afstand (Start-Stop) — de Afstand-widget ondersteunt meerdere weergavemodi (selecteer ze in de widgetinstellingen), maar het tikken erop opent altijd het dialoogvenster Ritten Registreren, waar u kunt starten, stoppen en gedetailleerde informatie over uw track kunt bekijken. 
 
 Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets in Laatste stijging of Laatste daling modus 0 of — (geen gegevens).
@@ -457,16 +462,18 @@ Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets
 
 | |
 |------------|
-|**Duur**. Toont de totale tijd van de huidige ritregistratie in uren en minuten. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Stijgen**. Toont de totale stijging of het laatste stijgingssegment, afhankelijk van de geselecteerde modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
-|**Dalen**. Geeft de totale daling of het laatste dalingssegment aan, afhankelijk van de geselecteerde modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
-|**Max Snelheid**. Toont de maximale snelheid voor de momenteel opgenomen rit in de geselecteerde modus. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Gemiddelde Helling**. Toont de gemiddelde helling voor het laatste stijgings- of dalingssegment van de huidige rit, afhankelijk van de geselecteerde modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Dalen**. Geeft de totale daling of het laatste dalingssegment aan, afhankelijk van de geselecteerde modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Duur**. Toont de totale tijd van de huidige ritregistratie in uren en minuten. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|**Max Snelheid**. Toont de maximale snelheid voor de momenteel opgenomen rit in de geselecteerde modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Tijd in Beweging** (*Alleen iOS*). Toont de tijd in beweging voor de momenteel opgenomen rit, of de tijd voor de laatste stijging en daling, afhankelijk van de geselecteerde modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**Stijgen**. Toont de totale stijging of het laatste stijgingssegment, afhankelijk van de geselecteerde modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Als u meerdere widgets hebt geselecteerd, kunt u voor elk hetzelfde dialoogvenster openen zonder te hoeven schakelen of het te sluiten. Deze uniforme interface maakt het gemakkelijk om alle gerelateerde informatie naadloos te bekijken en te beheren.
 

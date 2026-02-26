@@ -1,5 +1,5 @@
 ---
-source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
+source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
 sidebar_position: 9
 title: Hulpbronnen en Aanpassingen
 ---
@@ -82,7 +82,7 @@ Hieronder volgt een lijst van [aangepaste plugins](../plugins/custom.md) die zij
 
 | Naam | Beschrijving | Link van de Plugin |
 |--|--|--|
-| OsmAnd Rendering  | De plugin voegt de kaartstijlen Enduro, CycloRoute en Hiking toe (meer info [hier](../map/vector-maps.md#default-map-styles)) en 5 nieuwe [profielen](https://osmand.net/docs/user/personal/profiles) (Voetganger, Fiets en drie Motorprofielen). Het biedt ook online kaarten voor Spanje, Frankrijk, Noorwegen, Zwitserland, Oostenrijk, België en Argentinië via het menu [Kaarten & Bronnen](../personal/maps-resources.md#extra-maps) in de map *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| OsmAnd Rendering  | De plugin voegt de kaartstijlen Enduro, CycloRoute en Hiking toe (meer info [hier](../map/map-styles.md#default-map-styles)) en 5 nieuwe [profielen](https://osmand.net/docs/user/personal/profiles) (Voetganger, Fiets en drie Motorprofielen). Het biedt ook online kaarten voor Spanje, Frankrijk, Zwitserland, Oostenrijk, België en Argentinië via het menu [Kaarten & Bronnen](../personal/maps-resources.md#extra-maps) in de map *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Rahal Team kaart van Saoedi-Arabië  | Een professionele offline kaart van het Koninkrijk Saoedi-Arabië, inclusief topografische kenmerken, wegen, steden, dorpen en waterbronnen. Perfect voor woestijntochten. Bezoek [Rahal Maps](https://rahalteam.com) voor meer informatie. | [🇸🇦 Kaarten van Saoedi-Arabië door Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D-model  | Dit pakket voegt een 3D-modeloptie toe voor profielen. Pas het uiterlijk aan via het menu: [*OsmAnd-menu → Instellingen → Profiel → Profielweergave → kies het 4e-5e pictogram van Positiepictogram*](../personal/profiles.md#profile-appearance). | [3D-model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS online kaartenverzameling | Een verzameling van verschillende online kaartbronnen, waaronder satelliet-, toeristische en historische kaarten.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |

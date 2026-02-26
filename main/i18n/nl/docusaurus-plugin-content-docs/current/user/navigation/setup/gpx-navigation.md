@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Navigeren op een track
 ---
@@ -70,7 +70,7 @@ Voordat u de optie *Navigeren op een track* gebruikt, moet u [de track op de kaa
 
 Navigatie op een track kan worden gestart met de snelle actieknop in het [contextmenu van de track](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (geopend door een van de [gemarkeerde tracks](./route-navigation.md#history-of-previous-routes) op de kaart te selecteren, of door op een trackbestand te tikken in de sectie [Mijn Plaatsen](../../personal/myplaces.md) van het *Hoofdmenu*) of vanuit het navigatiemenu, dat wordt geopend door te tikken op:
 
-- *[Navigatieknop](../../widgets/map-buttons.md#directions)* op het kaartscherm.  
+- *[Navigatieknop](../../widgets/map-buttons.md#navigation)* op het kaartscherm.  
 - *Navigatiesectie* in het *Hoofdmenu* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - Ga in het [*Navigatiemenu*](./route-navigation.md#navigation-menu) naar *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 

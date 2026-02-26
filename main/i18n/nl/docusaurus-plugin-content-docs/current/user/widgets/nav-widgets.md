@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Navigatiewidgets
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  Deze widget kunt u alleen gebruiken met de Pro-functie  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro-abonnees</a>.
-
+:::info Pro-functie
+De Hoogtewidget is een betaalde [**OsmAnd Pro**](../purchases/index.md)-functie <ProFeature />.
 :::
 
 De Hoogtewidget toont een grafiek met de hoogte en helling van uw navigatieroute en uw huidige locatie op deze grafiek met de huidige hoogte en helling. De grafiek wordt uitgezet op twee assen. De X-as is de afstand van uw route. De Y-as is de hoogte, de waarde hangt af van het reliëf, en de helling wordt weergegeven als een percentage.  
@@ -116,7 +114,7 @@ Wanneer u een route selecteert en op de **Start**-knop drukt, wordt de kaart geo
 
 ## Peilingwidget   {#bearing-widget}
   
-Peiling is de richting naar een doel buiten uw voertuig, zoals een bestemming of een vertrekpunt. Een peiling kan *Relatief* zijn (ten opzichte van uw koers) of *Magnetisch* (ten opzichte van het kompas). Bijvoorbeeld, een magnetische peiling van 180° is de richting naar het zuiden, en een relatieve peiling van 180° is recht achter u. De kardinale punten zijn de vier hoofdrichtingen van het kompas. Dit zijn Noord (*N* - 0° of 360°), Oost (*O* - 90°), Zuid (*Z* - 180°), en West (*W* - 270°).  
+Peiling is de richting naar een doel buiten uw voertuig, zoals een bestemming of een vertrekpunt. Een peiling kan *Relatief* zijn (ten opzichte van uw koers) of *Magnetisch* (ten opzichte van het kompas). Bijvoorbeeld, een magnetische peiling van 180° is de richting naar het zuiden, en een relatieve peiling van 180° is recht achter u. De kardinale punten zijn de vier hoofdrichtingen van het kompas. Dit zijn Noord (*N* - 0° of 360°), Oost (*E* - 90°), Zuid (*S* - 180°), en West (*W* - 270°).  
 
 ![Trip recording widget](@site/static/img/widgets/bearing.png)
 
@@ -188,7 +186,7 @@ De widget *Route-informatie* biedt realtime gegevens over de lopende navigatiero
 
 **Instellingenmenu**:
 
-- Selecteer een **Standaardweergave** om een van de volgende waarden prioriteit te geven: *Geschatte aankomsttijd*, *Resterende tijd*, *Afstand*.
+- Selecteer een **Standaardweergave** om een van de volgende waarden prioriteit te geven: *Geschatte aankomsttijd*, *Tijd tot vertrek*, *Afstand*.
 - Selecteer in **Weergaveprioriteit** tussen *Bestemming eerst (standaard)* of *Tussenpunt eerst* om de meest relevante route-informatie prioriteit te geven.
 
 > OPMERKING: De widget is alleen zichtbaar tijdens navigatie.
@@ -245,13 +243,13 @@ De widget toont de afstand tot het eerste tussenpunt langs de berekende route. N
 
 </Tabs>  
 
-De widget toont de *Aankomsttijd* of *Resterende tijd* tot het eerste tussenpunt. Tijdens de navigatie wordt de tijd constant bijgewerkt, en zodra een tussenpunt is gepasseerd, wordt de tijd bijgewerkt naar het volgende routepunt. Als u bijvoorbeeld de navigatie stopt, blijft de *Resterende tijd* ongewijzigd en is de *Aankomsttijd* gelijk aan de *Resterende tijd* plus de *Huidige Tijd*.
+De widget toont de *Aankomsttijd* of *Tijd tot vertrek* tot het eerste tussenpunt. Tijdens de navigatie wordt de tijd constant bijgewerkt, en zodra een tussenpunt is gepasseerd, wordt de tijd bijgewerkt naar het volgende routepunt. Als u bijvoorbeeld de navigatie stopt, blijft de *Tijd tot vertrek* ongewijzigd en is de *Aankomsttijd* gelijk aan de *Tijd tot vertrek* plus de *Huidige Tijd*.
 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| Door te tikken | Wisselt tussen *Aankomsttijd* en *Resterende tijd* en omgekeerd. |
+| Door te tikken | Wisselt tussen *Aankomsttijd* en *Tijd tot vertrek* en omgekeerd. |
 | Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -273,13 +271,13 @@ De widget toont de *Aankomsttijd* of *Resterende tijd* tot het eerste tussenpunt
 
 </Tabs>
 
-De widget toont de *Aankomsttijd* of *Resterende tijd* tot het laatste bestemmingspunt. De tijd wordt tijdens de navigatie constant bijgewerkt en is gelijk aan de routetijd vanaf uw huidige locatie.  
+De widget toont de *Aankomsttijd* of *Tijd tot vertrek* tot het laatste bestemmingspunt. De tijd wordt tijdens de navigatie constant bijgewerkt en is gelijk aan de routetijd vanaf uw huidige locatie.  
 
 | | |
 |:------------|:------------|
 | Inschakelen |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| Door te tikken | Wisselt tussen *Aankomsttijd* en *Resterende tijd* en omgekeerd. |
+| Door te tikken | Wisselt tussen *Aankomsttijd* en *Tijd tot vertrek* en omgekeerd. |
 | Lang indrukken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |  
 
 

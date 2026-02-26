@@ -1,5 +1,5 @@
 ---
-source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
+source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
 sidebar_position: 1
 title:  Android Aankopen
 ---
@@ -107,8 +107,9 @@ De onderstaande tabel geeft een overzicht van de functies in zowel de gratis als
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Ondersteuning voor externe sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografische gegevens](../plugins/topography.md#overview)<br/>(Contourlijnen en Terrein) | **-** | ✔ | ✔ |
-| [Coördinatenraster — Kleuraanpassing](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D-trackvisualisatie](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Coördinatenraster — Kleuraanpassing](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D-gebouwen — Kleuraanpassing](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D-trackvisualisatie](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Populaire plaatsen (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage - Reisgidsen](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
@@ -121,7 +122,7 @@ De onderstaande tabel geeft een overzicht van de functies in zowel de gratis als
 | [Voertuigstatistieken Widgets](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratis**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | <details><summary>**2 widgets gratis**</summary><ul><li>*Voertuigsnelheid*</li><li>*Motortoerental*</li></ul></details> | ✔ |
 | [Kaartmarkeringen](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Online kaartbronnen](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb-kaart](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [SQLitedb-kaart](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favoriete punten](../map/point-layers-on-map.md)<br/>bladwijzers en waypoints | ✔ | ✔ | ✔ |
 | [Audio/foto/video-punten](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -170,7 +171,7 @@ of
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Doorgaan met OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Maps+ aankoop {#maps-purchase}
 
@@ -178,7 +179,7 @@ of
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tik op de lijst met Maps+ functies → Doorgaan met Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Oude abonnementen (vóór 4.0) {#legacy-subscriptions-prior-40}

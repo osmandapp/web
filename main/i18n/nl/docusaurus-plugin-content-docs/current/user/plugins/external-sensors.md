@@ -1,5 +1,5 @@
 ---
-source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
+source-hash: 852174395ea31db0d986b03a13dcefe0a7848d73cda99c210ec9424b8e571fd0
 sidebar_position: 5
 title:  Externe Sensoren
 ---
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-:::info Betaalde functie
-De Externe Sensoren-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app.  
+:::tip Aankoop
+De Externe Sensoren-plugin is een [betaalde functie](../purchases/index.md).  
 :::
 
 De **Externe Sensoren-plugin** stelt u in staat om gegevens van [draadloze externe sensoren](https://en.wikipedia.org/wiki/Wireless_sensor_network) die werken op [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) en [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) technologieën te lezen en op te nemen, en deze gegevens weer te geven met behulp van [widgets](#widgets) in de OsmAnd-applicatie. Dit beheerde netwerk is in staat om sensorgegevens te verzamelen, verzenden en op te slaan.

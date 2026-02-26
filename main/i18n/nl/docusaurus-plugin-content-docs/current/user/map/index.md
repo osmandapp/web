@@ -1,5 +1,5 @@
 ---
-source-hash: f6d36706a1e07d9988dbdc4b5e3c26c6daa9c50f6827a4937c300bd0a0b42708
+source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
 sidebar_position: 1
 ---
 
@@ -19,9 +19,13 @@ Het kaartcontextmenu geeft informatie over het geselecteerde object op de kaart 
 
 Het menu Kaart configureren is een belangrijk onderdeel van het *Hoofdmenu* van OsmAnd, waar u de kaartweergave naar wens kunt aanpassen. U kunt uw favoriete punten, navigatiemarkeringen of speciale nuttige plaatsen op de kaart markeren; specifieke routes of GPX-bestanden van derden weergeven; terreininformatie, satellietbeelden of andere beschikbare bitmapafbeeldingen overlappen; informatie over openbaar vervoer weergeven; en de kaartstijl wijzigen.
 
-## [Vectorkaarten (kaartstijlen)](./vector-maps.md) {#vector-maps-map-styles}
+## [Vectorkaarten](./vector-maps.md) {#vector-maps}
 
-Vectorkaarten zijn ontworpen als standaardbron voor kaartgegevens voor OsmAnd, dus ze moeten naar het apparaat worden gedownload. Vectorkaarten ondersteunen een enorm scala aan kaartstijlen voor vele activiteiten zoals fietsen, wandelen, autorijden of sneeuwscooteren, enz. Elke kaartstijl kan worden afgestemd om specifieke objecten te markeren of te verbergen en te schakelen tussen dag- en nachtmodus. Kaartvectorgegevens kunnen worden aangevuld met vectorgegevens en worden weergegeven met de standaardkaartstijl, bijvoorbeeld contourlijninformatie. U kunt uw eigen kaartstijl OsmAnd maken om de vereiste informatie weer te geven.
+Vectorkaarten zijn ontworpen als standaardbron voor kaartgegevens voor OsmAnd, dus ze moeten naar het apparaat worden gedownload. Vectorkaarten ondersteunen een enorm scala aan kaartstijlen voor vele activiteiten zoals fietsen, wandelen, autorijden of sneeuwscooteren, enz. Elke kaartstijl kan worden afgestemd om specifieke objecten te markeren of te verbergen en te schakelen tussen dag- en nachtmodus. Kaartvectorgegevens kunnen worden aangevuld met vectorgegevens en worden weergegeven met de standaardkaartstijl, bijvoorbeeld contourlijninformatie. U kunt uw eigen kaartstijl voor OsmAnd maken om de vereiste informatie weer te geven.
+
+## [Kaartstijlen (Vectorkaarten)](./map-styles.md) {#map-styles-vector-maps}
+
+Kaartstijlen bepalen hoe vectorkaartgegevens worden weergegeven in OsmAnd. Een stijl stuurt de visuele weergave van kaartobjecten zoals wegen, gebouwen, grondgebruik, water en punten van belang, inclusief kleuren, lijnpatronen en labels.
 
 ## [Rasterkaarten (online / offline)](./raster-maps.md) {#raster-maps-online--offline}
 
@@ -43,10 +47,10 @@ Tracks contextmenu is een menu met acties en gegevens van GPX-track.
 
 Tracks contextmenu is een menu met acties en gegevens van GPX-track.
 
-## [Routes](./routes.md) {#routes}
-
-OsmAnd heeft veel krachtige functies om verschillende routes op de kaart weer te geven.
-
 ## [Openbaar vervoer](./public-transport.md) {#public-transport}
 
 Openbaar vervoer is een extra laag waarmee u transportroutes en haltes op de kaart kunt weergeven, gedetailleerde informatie erover kunt bekijken en kunt navigeren.
+
+## [Routes](./routes.md) {#routes}
+
+OsmAnd heeft veel krachtige functies om verschillende routes op de kaart weer te geven.

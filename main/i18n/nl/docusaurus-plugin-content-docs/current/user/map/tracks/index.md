@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title:  Tracks
 sidebar_position: 2
 ---
@@ -28,7 +28,7 @@ OsmAnd heeft veel krachtige functies om verschillende routes op de kaart weer te
 - Track als een route (***Route***). Het bestand heeft een ```<rtept>``` punten-array, waarbij elk punt wordt beschreven als een tussenpunt van de route. Het hangt ervan af hoe punten binnen een route moeten worden verbonden, hetzij als kleine routesegmenten of via een rechte lijn. Deze tracks worden op de kaart weergegeven als stippellijnen.
 - Waypoints (***Punten***). Het bestand heeft ```<wpt>``` punten met attributen. Waypoints worden weergegeven als ronde punten op de kaart. U kunt erop tikken voor extra informatie.
 
-OsmAnd kan tracks maken met 1–3 combinaties. [Route plannen](../../plan-route/create-route.md) maakt een track met ***Geometrie*** en ***Route***. Als u het opslaat als ***Vereenvoudigde Track***, wordt alleen de ***Geometrie*** bewaard. [Track opnemen](../../plugins/trip-recording.md#new-track-recording) maakt alleen ***Geometrie***, maar u kunt er ook ***Punten*** aan toevoegen via het contextmenu.
+OsmAnd kan tracks maken met 1–3 combinaties. [Route plannen](../../plan-route/create-route.md) maakt een track met ***Geometrie*** en ***Route***, als u het opslaat als ***Vereenvoudigde Track***, wordt alleen de ***Geometrie*** bewaard. [Track opnemen](../../plugins/trip-recording.md#new-track-recording) maakt alleen ***Geometrie***, maar u kunt er ook ***Punten*** aan toevoegen via het contextmenu.
 
 
 ## Tracks op de Kaart Weergeven {#display-tracks-on-the-map}
@@ -81,7 +81,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-In [Mijn Plaatsen *→* tabblad Tracks](../../personal/tracks/manage-tracks.md#manage-tracks) moet u het volgende doen om de track op de kaart weer te geven:
+In [Mijn Plaatsen *→* tabblad Tracks](../../personal/tracks/manage-tracks.md#manage-tracks) om de track op de kaart weer te geven, moet u het volgende doen:
 
 - *Android* - tik op het *drie-puntenmenu* in het veld met de gewenste track.
 - *iOS* - tik lang op de gewenste track in de lijst.
@@ -116,7 +116,7 @@ Wanneer u een track op de kaart selecteert of het [track contextmenu](./track-co
 
 Ga naar: *Tik op de track → Tabblad Track → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,14 +132,14 @@ Ga naar: *Tik op de track → Tabblad Track → <Translate ios="true" ids="analy
 
 Deze tool biedt een gedetailleerde analyse van [trackgegevens](../../map/tracks/track-context-menu.md#options) met behulp van grafieken en kaarten.
 
-- **Grafiekgegevens (Y-as)** toont: *Hoogte*, *Helling*, *Snelheid*, [*Externe sensorgegevens*](../../plugins/external-sensors.md), en combinaties van maximaal twee opties indien aanwezig in de trackgegevens.
+- **Grafiekgegevens (Y-as)** toont: *Hoogte*, *Helling*, *Snelheid*, [*Externe sensorgegevens*](../../plugins/external-sensors.md), en combinaties van maximaal twee opties indien aanwezig in de trackgegevens. ***Alleen Android:*** voor auto-tracks opgenomen met OBD-II-gegevens, biedt de Y-as additioneel voertuigmetrics, zoals motortoerental, koelvloeistoftemperatuur, en meer.
 - **Grafiekdimensie (X-as)** vertegenwoordigt: *Afstand*, *Tijd*, en *Tijdstip van de dag*.
 - **Tik/schuif-interactie**. Tik op een grafiek om informatie over een specifiek punt op de track weer te geven. Schuiven op de grafiek markeert de juiste locatie op de kaart en toont details in de informatiebalk.
 - **Afstandslabel**. Wanneer u tikt of schuift langs de grafiek, toont de tooltip ook de exacte afstand langs de track. De waarde volgt de huidige profiel eenheidsinstellingen (<Translate android="true" ids="km"/> of <Translate android="true" ids="mile"/>). Gebruik het om snel in te schatten hoe ver een punt van de start van de track is, of om de afstand tussen twee posities te berekenen door hun waarden te vergelijken.
 - **Schalen**. Gebruik een [tweevingergebaar](../../map/interact-with-map.md#gestures) om de grafiek te schalen voor een meer gedetailleerde weergave.
 
 
-### Volg Mijn Locatie {#follow-my-location}
+### Volg Mijn Positie {#follow-my-location}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -157,7 +157,7 @@ Deze tool biedt een gedetailleerde analyse van [trackgegevens](../../map/tracks/
 
 </Tabs>
 
-Tik op de knop [Mijn Locatie](../../map/interact-with-map.md#my-location-and-zoom) om de kaartweergave en de grafiek te synchroniseren met uw locatie.
+Tik op de knop [Mijn Positie](../../map/interact-with-map.md#my-position-and-zoom) om de kaartweergave en de grafiek te synchroniseren met uw locatie.
 
 - De **schaal van de grafiek** blijft hetzelfde en de **informatiebalk** staat vast op 1/4 aan de linkerkant.
 - Terwijl u beweegt, **schuift de grafiek** van links naar rechts en toont informatie vooruit op uw track.

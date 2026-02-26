@@ -1,5 +1,5 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
 title:  Routering openbaar vervoer
 ---
@@ -44,7 +44,7 @@ Routering met het openbaar vervoer bevindt zich in de testfase. Voorlopig kunt u
 
 ## Hoe te gebruiken {#how-to-use}
 
-Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [de navigatieknop](../../widgets/map-buttons.md#directions) op het kaartscherm of selecteert u de navigatieoptie in het *Hoofdmenu*.  
+Om te beginnen met navigeren door de stad met het openbaar vervoer, gebruikt u [de navigatieknop](../../widgets/map-buttons.md#navigation) op het kaartscherm of selecteert u de navigatieoptie in het *Hoofdmenu*.  
 
 **1.** U moet het *navigatieprofiel Openbaar vervoer*, het startpunt en de bestemming kiezen.  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
+source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
 sidebar_position: 10
 title:  OsmAnd Ontwikkeling
 ---
@@ -81,7 +81,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Applicatietesten {#application-testing}
 
-:::caution Alleen Android
+:::caution Android only
 :::
 
 - **Simuleer eerste app-start**. Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.
@@ -94,7 +94,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Interne Algoritmen {#internal-algorithms}
 
-:::caution Alleen Android
+:::caution Android only
 :::
 
 - **Veilige modus**. Voer de app uit in de (langzamere) veilige modus.
@@ -102,7 +102,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Geheugeninstellingen {#memory-settings}
 
-:::caution Alleen Android
+:::caution Android only
 :::
 
 - De optie **Geheugen toegewezen voor routering** stelt u in staat om de hoeveelheid geheugen te bepalen die wordt toegewezen voor het berekenen van lange routes. U kunt deze optie gebruiken als de [Standaard routering A*](../navigation/guidance/navigation-settings.md#development-settings) is geselecteerd in de *Navigatie-instellingen*.
@@ -115,7 +115,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Info en Statistieken {#info-and-statistics}
 
-:::caution Alleen Android
+:::caution Android only
 :::
 
 - **Toegewezen geheugen**. Toont het toegewezen systeemgeheugen voor de OsmAnd-applicatie.
@@ -134,7 +134,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ## Kaartweergave FPS-widget {#map-rendering-fps-widget}
 
-:::info Belangrijk
+:::info  Important
 OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.
 :::
 
@@ -163,7 +163,7 @@ De [FPS-widget](../widgets/info-widgets.md#map-rendering-fps) toont hoe snel de 
 
 ## Camerapositie-widgets {#camera-position-widgets}
 
-:::info Belangrijk
+:::info  Important
 OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.
 :::
 
@@ -348,7 +348,7 @@ OsmAnd biedt de mogelijkheid om de locatie en beweging van uw apparaat te simule
 
 </Tabs>
 
-Nadat u de simulatie hebt gestart, ziet u op het hoofdscherm van de app dat de navigatiemarkering beweegt volgens de GPX-track. Tik op de [mijn locatie-knop](../map/interact-with-map.md#my-location-and-zoom) om *Mijn Locatie* (gesimuleerde geolocatie van het apparaat) te synchroniseren met het midden van de kaart.
+Nadat u de simulatie hebt gestart, ziet u op het hoofdscherm van de app dat de navigatiemarkering beweegt volgens de GPX-track. Tik op de [mijn positie-knop](../map/interact-with-map.md#my-position-and-zoom) om *Mijn Locatie* (gesimuleerde geolocatie van het apparaat) te synchroniseren met het midden van de kaart.
 Om de simulatie van de beweging van uw apparaat te stoppen, gaat u terug naar de [instellingen](#plugin-settings) van de OsmAnd ontwikkelingsplugin en tikt u op **stop** in de optie **simuleer uw positie**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* is ook toegankelijk via het **[Snelle actie-menu](../widgets/quick-action.md#navigation)**.

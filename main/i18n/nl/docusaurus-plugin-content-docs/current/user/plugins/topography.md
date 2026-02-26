@@ -1,5 +1,5 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
+source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
 sidebar_position: 14
 title: Topografie
 ---
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-:::info Betaalde functie
-De Topografie-plugin is een [betaalde functie](../purchases/index.md) van de OsmAnd-app.
+:::tip Aankoop
+De Topografie-plugin is een [betaalde functie](../purchases/index.md).  
 :::
 
 Topografie is een belangrijk kenmerk van cartografie dat informatie verschaft om het reliëf van het terrein visueel te beoordelen.
 Topografische informatie zoals [Hoogtelijnen](#contour-lines), [Terrein](#terrain) (*Schaduwreliëf* en *Helling*), en [3D-reliëf](#3d-relief) helpt om een visuele inschatting te maken van de ligging van het land door hoogte, reliëf, extremen, steilheid of punten van gelijke hoogte te zien.
 
-Elke functie die door deze plugin wordt geleverd, is een onafhankelijke kaartlaag die, wanneer ingeschakeld, boven of onder de hoofdkaartbron kan worden weergegeven, afhankelijk van de [instellingen](../map/raster-maps.md#overlay-layer).  
+Elke functie die door deze plugin wordt geleverd, is een onafhankelijke kaartlaag die, wanneer ingeschakeld, boven of onder de hoofdkaartbron kan worden weergegeven, afhankelijk van de [instellingen](../map/raster-maps.md#overlay).  
 
 De Topografie-plugin biedt toegang tot de volgende kaarttypes:  
 
@@ -41,7 +41,7 @@ De Topografie-plugin biedt toegang tot de volgende kaarttypes:
 
 | Hoogtelijnen | Schaduwreliëf | Helling |
 |:---|:---|:---|
-| ![Hoogtelijnen_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Schaduwreliëf_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Hellingen_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ De Topografie-plugin biedt toegang tot de volgende kaarttypes:
 
 | Hoogtelijnen | Schaduwreliëf | Helling |
 |:---|:---|:---|
-| ![Hoogtelijnen_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Schaduwreliëf_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Hellingen_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -173,7 +173,7 @@ Bij gebruik van de [Kaartweergave-engine](../personal/global-settings.md#map-ren
 **Weergave-instellingen**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Schakel hoogtelijnen in of uit.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Definieer de [zoomniveaus](../map/interact-with-map.md#my-location-and-zoom) waarop hoogtelijnen zichtbaar zijn.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Definieer de [zoomniveaus](../map/interact-with-map.md#my-position-and-zoom) waarop hoogtelijnen zichtbaar zijn.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Kies de kleur voor het weergeven van hoogtelijnen.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Pas de breedte van de hoogtelijnen aan.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selecteer de dichtheid van de hoogtelijnen (Laag, Gemiddeld, Hoog). Hogere dichtheden kunnen de laadsnelheid beïnvloeden.
@@ -215,7 +215,7 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 
 | Schaduwreliëf | Helling | Hoogte |
 | ------ | ------- | ------- |
-| ![Schaduwreliëf](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Schaduwreliëf** is gebaseerd op het simuleren van oppervlakteverlichting met behulp van terreingegevens. Deze methode omvat het creëren van schaduwen en hooglichten op basis van de hoek van het oppervlak ten opzichte van de lichtbron. Als gevolg hiervan ziet u natuurlijke heuvels, valleien en andere terreindetails op de kaart.  
 
@@ -247,8 +247,8 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 
 ### Kleurenschema Wijzigen {#modify-color-scheme}
 
-:::info Betaalde functie
-*[Kleurenschema Wijzigen](../../user/personal/color-palette-schemes.md#terrain)* is een **OsmAnd Pro** betaalde functie voor [iOS](../purchases/ios.md#pro-features) en [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Pro-functie
+*[Kleurenschema Wijzigen](../../user/personal/color-palette-schemes.md#terrain)* is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -267,7 +267,7 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 
 </Tabs>
 
-De functie *Kleurenschema Wijzigen* stelt u in staat een kleurenschema te selecteren:
+De *Kleurenschema Wijzigen*-functie stelt u in staat een kleurenschema te selecteren:
 
 - Uit een [vooraf gedefinieerde lijst](#default-color-scheme).
 - Uit kleurenpaletbestanden die u op uw computer hebt gemaakt. Aangepaste bestanden kunnen aan OsmAnd worden toegevoegd met behulp van de [import/export tool](../personal/import-export.md).
@@ -346,7 +346,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 </Tabs>  
 
-De 3D-reliëffunctie produceert een verhoogd reliëf en biedt een driedimensionale weergave van het landschap. 3D-reliëf werkt offline en kan worden gebruikt met [OsmAnd-vectorkaarten](../map/vector-maps.md) of elke [rasterkaart](../map/raster-maps.md#select-raster-maps) als [Kaartbron](../map/raster-maps.md#main) of als [Onderlaag/Overlaag](../map/raster-maps.md#overlay-layer).
+De 3D-reliëffunctie produceert een verhoogd reliëf en biedt een driedimensionale weergave van het landschap. 3D-reliëf werkt offline en kan worden gebruikt met [OsmAnd-vectorkaarten](../map/vector-maps.md) of elke [rasterkaart](../map/raster-maps.md#layers) als [Kaartbron](../map/raster-maps.md#main) of als [Onderlaag/Overlaag](../map/raster-maps.md#overlay).
 
 ***Hoe 3D-reliëf op de kaart weer te geven.***
 
@@ -377,7 +377,6 @@ De 3D-reliëffunctie produceert een verhoogd reliëf en biedt een driedimensiona
 </TabItem>
 
 </Tabs>
-
 
 ### Verticale Overdrijving {#vertical-exaggeration}
 
