@@ -1,5 +1,5 @@
 ---
-source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
+source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
 sidebar_position: 1
 title:  Pierwsze kroki
 ---
@@ -665,7 +665,7 @@ OsmAnd nie ma żadnych wymaganych uprawnień w wersji na iOS / Androida.
 **Niezbędne**:
 
 - **Internet**. Początkowe pobieranie / aktualizacja map offline. Może być również potrzebny do uzyskania dostępu do funkcji online, takich jak [zdjęcia na poziomie ulicy](../map/point-layers-on-map.md#-street-level-imagery), [zdjęcia online](../map/map-context-menu.md#online-photos) lub [mapy online](../map/raster-maps.md).
-- **GPS** / **Sieć GSM**. Określanie Twojej lokalizacji, śledzenie Cię w trybie nawigacji i nagrywanie Twojej podróży (opcjonalnie). O to uprawnienie aplikacja prosi po kliknięciu [przycisku mojej lokalizacji](../widgets/map-buttons.md#my-location-and-zoom) lub po [rozpoczęciu nawigacji](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **Sieć GSM**. Określanie Twojej lokalizacji, śledzenie Cię w trybie nawigacji i nagrywanie Twojej podróży (opcjonalnie). O to uprawnienie aplikacja prosi po kliknięciu [przycisku mojej lokalizacji](../widgets/map-buttons.md#my-position-and-zoom) lub po [rozpoczęciu nawigacji](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Opcjonalne**:
 

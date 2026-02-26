@@ -1,5 +1,5 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Ustawienia globalne
 ---
@@ -147,10 +147,11 @@ Przejdź do: *Pliki → Na moim iPhonie → OsmAnd Maps*
 | Tryb 3D | Możliwe jest przeglądanie mapy w 2D, a także zmiana kąta widzenia w celu uzyskania [widoku 3D](../widgets/map-buttons.md#3d-mode). | Możesz przeglądać mapę w 2D i [3D](../widgets/map-buttons.md#3d-mode). |
 | Wyświetlanie mapy | Cała mapa jest renderowana jako zestaw kafelków, a znaczniki, linie i tekst znajdują się już w tych kafelkach. | Najpierw renderowany jest cały pakiet kafelków, a następnie dostępne symbole są nakładane na mapę, [warstwa po warstwie](../../technical/algorithms/map-rendering-layers.md). |
 | Przezroczyste symbole nakładki / podkładu | Obsługuje wszystkie ustawienia. | Nie obsługuje warstwy rastrowej na wierzchu tekstu wektorowego. |
-| [Teren 3D](../map/raster-maps.md#3d-relief) | Nieobsługiwane. | Ta funkcja wizualizuje rzeźbę terenu na mapie, dodając informacje o wysokości do normalnej mapy 2D, co tworzy efekt 3D i głębi. |
+| [Teren 3D](../plugins/topography.md#3d-relief) | Nieobsługiwane. | Ta funkcja wizualizuje rzeźbę terenu na mapie, dodając informacje o wysokości do normalnej mapy 2D, co tworzy efekt 3D i głębi. |
 | [Trasy 3D](../map/tracks/appearance.md) | Nieobsługiwane. | Ta funkcja umożliwia wyświetlanie tras według wysokości nad poziomem morza. |
 | [Mapa online](../plugins/online-map.md) | Nie obsługuje wyświetlania Linii konturowych, jeśli źródłem mapy jest dowolna mapa kafelkowa online. | Gdy źródłem mapy jest mapa online, używane są również mapy 3D i obsługiwane jest wyświetlanie Linii konturowych na mapie. |
-| [Wtyczka Pogoda](../plugins/weather.md) | Nie można używać tej wtyczki. | Wygodna w użyciu z wtyczką. |  
+| [Wtyczka Pogoda](../plugins/weather.md) | Nie można używać tej wtyczki. | Wygodna w użyciu z wtyczką. |
+| [Widok globu](../map/interact-with-map.md#globe-view) | Nieobsługiwane. | Umożliwia wyświetlanie mapy jako sferycznej Ziemi (globu) zamiast płaskiej projekcji. |  
 
 Obraz dla widoku 3D mapy jest ładowany kafelek po kafelku, a następnie wszystkie symbole. Szybkość renderowania mapy zależy od liczby obiektów graficznych 2D i 3D na niej oraz bezpośrednio od wydajności sprzętu. Dlatego wersja 2 (OpenGL) nie może być używana na urządzeniach o niskiej wydajności.
 
@@ -310,7 +311,7 @@ Ustawienie **<Translate android="true" ids="dialogs_and_notifications_title"/>**
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*tylko Android*)
 
-![Automatyczna kopia zapasowa](@site/static/img/personal/profiles/location_source_andr.png)
+![Źródło lokalizacji](@site/static/img/personal/profiles/location_source_andr.png)
 
 OsmAnd zapewnia wybór usług do określania lokalizacji. Zaleca się zapoznanie się z dodatkowymi informacjami na temat [Zezwolenia na dostęp do lokalizacji](../start-with/first-steps.md#permission-to-access-the-location) i [Rozwiązywania problemów](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) dla tej sekcji.
 
@@ -322,7 +323,7 @@ OsmAnd zapewnia wybór usług do określania lokalizacji. Zaleca się zapoznanie
 ***iOS***:
 
 - System iOS używa *iOS API* do określania lokalizacji.  
-- Wszystkie ustawienia lokalizacji OsmAnd można znaleźć w ustawieniach urządzenia iOS: *Ustawienia → OsmAnd Maps → Lokalizacja*  
+- Wszystkie ustawienia lokalizacji OsmAnd można znaleźć w ustawieniach urządzenia iOS: *Ustawienia → OsmAnd maps → Lokalizacja*  
 - Prywatność usług lokalizacyjnych: *Ustawienia → Prywatność → Usługi lokalizacyjne*
 
 

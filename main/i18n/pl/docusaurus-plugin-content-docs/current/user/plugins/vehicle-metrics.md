@@ -1,6 +1,6 @@
 ---
-source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
-sidebar_position: 16
+source-hash: fb9d0a1b3bb3e0499cac10a7bbb3d9f3635bd3a78cfbb6a9020ece0a88d07a13
+sidebar_position: 18
 title:  Metryki pojazdu
 ---
 
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Przegląd {#overview}
 
 :::info Płatna funkcja
-Wtyczka Metryki pojazdu jest [płatną funkcją](../purchases/index.md) aplikacji OsmAnd. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne za darmo w OsmAnd.
+Wtyczka Metryki pojazdu jest funkcją [**OsmAnd Pro**](../purchases/index.md) <ProFeature />. Informacje o prędkości pojazdu i prędkości obrotowej silnika są dostępne za darmo w OsmAnd.
 :::
 
 **Wtyczka Metryki pojazdu** umożliwia monitorowanie danych pojazdu w czasie rzeczywistym za pośrednictwem [protokołu OBD-II](https://en.wikipedia.org/wiki/OBD-II_PIDs). Użytkownicy mogą śledzić podstawowe wskaźniki, takie jak wydajność silnika, wydajność paliwową i prędkość, co pozwala na proaktywną konserwację i rozwiązywanie problemów z pojazdem.  

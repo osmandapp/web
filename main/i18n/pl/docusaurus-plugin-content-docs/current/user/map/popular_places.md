@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Popularne miejsca
 ---
@@ -19,6 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 ## Przegląd {#overview}
+
+:::tip Zakup
+Funkcja **Popularne miejsca** to [funkcja płatna](../purchases/index.md).  
+:::
 
 Funkcja **Popularne miejsca** w OsmAnd podświetla godne uwagi punkty orientacyjne i atrakcje, wykorzystując otwarte dane strukturalne z [Wikidata](https://www.wikidata.org) i [Wikipedii](https://www.wikipedia.org/). Pomaga użytkownikom odkrywać znane miejsca dzięki wielojęzycznym opisom i zdjęciom.
 
@@ -142,8 +146,8 @@ Po włączeniu dostępne stają się następujące opcje:
 - **<Translate android="true" ids="poi_osmwiki"/>** – Włącz/wyłącz POI z Wikipedii na mapie.
 
 - **Źródło POI** – Przełączaj między:
-  - *Tylko offline* — używa pobranych danych mapy Wikipedii dla Twojego regionu. 
-  - *Tylko online* — ładuje miejsca i podglądy obrazów online. Wyniki online mogą zależeć od ustawień wybranego języka.
+  - tryb *Tylko offline* — używa pobranych danych mapy Wikipedii dla Twojego regionu. 
+  - tryb *Tylko online* — ładuje miejsca i podglądy obrazów online. Wyniki online mogą zależeć od ustawień wybranego języka.
 
 - **<Translate android="true" ids="shared_string_language"/>** – Wybierz język opisów z Wikipedii.
 

@@ -1,8 +1,9 @@
 ---
-source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
+source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
 sidebar_position: 4
 title:  Szczegóły trasy
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -178,7 +178,7 @@ Jeśli dane są obecne, możesz wybrać jeden z następujących typów:
 
 - *Dotknij i przesuń*. Dotknij wykresu, aby wyświetlić informacje o punkcie śladu i ruchu wzdłuż niego. Wykres podświetla lokalizację punktu na mapie i wyświetla informacje o nim na linijce.
 - *Skaluj*. Skaluj wykres za pomocą [gestu dwoma palcami](../../map/interact-with-map.md#gestures).
-- *Śledź moją lokalizację* (*tylko Android*). Możesz dotknąć [Moja lokalizacja](../../map/interact-with-map.md#my-location-and-zoom), aby zsynchronizować widok mapy i wykres z Twoją lokalizacją. W miarę poruszania się wykres będzie przesuwał się od lewej do prawej, wyświetlając informacje przed Twoją ścieżką.  
+- *Śledź moją lokalizację* (*tylko Android*). Możesz dotknąć [Moja pozycja](../../map/interact-with-map.md#my-position-and-zoom), aby zsynchronizować widok mapy i wykres z Twoją lokalizacją. W miarę poruszania się wykres będzie przesuwał się od lewej do prawej, wyświetlając informacje przed Twoją ścieżką.  
 
 
 ## Atrybuty drogi {#road-attributes}
@@ -217,13 +217,13 @@ Atrybuty drogi są dostępne w [Szczegółach trasy](#how-to-access) i wyświetl
 
    Na przykład, jeśli stromość drogi wynosi 10%, oznacza to, że na każde 100 metrów odległości poziomej wzdłuż drogi, wznosisz się lub opadasz o 10 metrów. Stromość drogi może wpływać na prędkość pojazdu, hamowanie, zużycie paliwa i bezpieczeństwo jazdy, zwłaszcza na śliskich drogach zimą.  
 
-- [**Twardość nawierzchni**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Nawierzchnia drogi może odkształcać się pod wpływem obciążenia. Im wyższa twardość nawierzchni, tym mniejsze ryzyko uszkodzenia pojazdu i tym bardziej komfortowa będzie droga. Twardość nawierzchni może również wpływać na prędkość pojazdu i zużycie paliwa.  
+- [**Twardość nawierzchni**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Nawierzchnia drogi może odzyskiwać kształt po odkształceniu lub obciążeniu. Im wyższa twardość nawierzchni, tym mniejsze ryzyko uszkodzenia pojazdu i tym bardziej komfortowa będzie droga. Twardość nawierzchni może również wpływać na prędkość pojazdu i zużycie paliwa.  
 
 - [**Nachylenie**](https://wiki.openstreetmap.org/wiki/Key:incline). Wskazuje, jaki procent nachyleń występuje na Twojej trasie.
 
 - [**Gładkość**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Dotyczy wszystkich typów ścieżek i obszarów, takich jak autostrady, parkingi, plaże i szlaki, i wskazuje na użyteczność trasy. Daje informacje, że można jechać bez znacznego ryzyka uszkodzenia, takiego jak podwozie pojazdu, lub obrażeń, takich jak upadek.  
 
-- [**Drogi zimowe i lodowe**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Pokazuje schemat kolorów trasy zgodnie z klasyfikacją [dróg zimowych](../../map/vector-maps.md#winter-and-ski).  
+- [**Drogi zimowe i lodowe**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Pokazuje schemat kolorów trasy zgodnie z klasyfikacją [dróg zimowych](../../map/map-styles.md#winter-and-ski).  
 
 - [**Trudność szlaków konnych**](https://wiki.openstreetmap.org/wiki/Riding). Ten atrybut drogi wskazuje na trudność trasy podczas jazdy konnej. Odpowiednie dla [wyznaczania tras konnych](../../navigation/routing/horse-routing.md).  
 

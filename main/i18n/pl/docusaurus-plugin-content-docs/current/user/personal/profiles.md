@@ -1,5 +1,5 @@
 ---
-source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
+source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
 sidebar_position: 4
 title:  Profile (Ustawienia)
 ---
@@ -211,13 +211,13 @@ W sekcji **Jednostki i formaty** można dostosować jednostki miary i formaty, a
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Jednostki długości stosują się do wartości odległości poziomej (np. odległości jazdy/trasy i odległości manewrów w nawigacji).|
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Długość stosuje się do wartości odległości poziomej (np. odległości jazdy/trasy i odległości manewrów w nawigacji).|
 |  |  |  |
-| **Jednostki wysokości** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Jednostki wysokości stosują się do wartości wysokości/wzniesienia i powiązanych metryk (pod górę/w dół, zakres wysokości) w widżetach Wysokość, Informacjach o trasie nawigacyjnej i Statystykach śladu.<br/>Domyślnie Jednostki wysokości są synchronizowane z Jednostkami długości i stają się niezależne dopiero po ręcznej zmianie przez użytkownika. |
+| **Wysokość** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Wysokość stosuje się do wartości wysokości/wzniesienia i powiązanych metryk (pod górę/w dół, zakres wysokości) w widżetach Wysokość, Informacjach o trasie nawigacyjnej i Statystykach śladu oraz etykietach wysokości szczytów górskich na mapie.<br/>Domyślnie Wysokość jest synchronizowana z Długością i staje się niezależna dopiero po ręcznej zmianie przez użytkownika. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Przykład: 50.12333° 19.93233° (szer. dł.) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Przykład: 50°7.393′ 19°55.941′ (szer. dł.)  |
@@ -232,14 +232,14 @@ W sekcji **Jednostki i formaty** można dostosować jednostki miary i formaty, a
 |          | Stopnie 360° | Wszystkie wartości kątowe mają odczyty od 0° do 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | Wszystkie wartości kątowe mają [wartość w miliradianach](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Azja, Ameryka Łacińska, Kanada, Japonia, Indie, Australia |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Europa, Azja, Ameryka Łacińska, Kanada, Japonia, Indie, Australia |
 |  | <Translate android="true" ids="imperial_gallons"/> | Wielka Brytania i podobne |
 |  | <Translate android="true" ids="us_gallons"/> | Stany Zjednoczone |
 |  |  |  |
@@ -277,11 +277,13 @@ Sekcja **Inne** zawiera dodatkowe ustawienia profilu umożliwiające dostosowani
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Podłącz zewnętrzne kontrolery, takie jak *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>* lub *<Translate android="true" ids="sett_parrot_ext_input"/>*, aby obsługiwać OsmAnd za pomocą fizycznych przycisków.
 
-- **<Translate android="true" ids="position_animation"/>** / **Animuj własną pozycję** – Ikona [pozycji](../map/interact-with-map.md#my-location-and-zoom) animuje się z każdym otrzymanym punktem GPS (raz na sekundę). Może być zauważalne niewielkie opóźnienie w jej ruchu, zwłaszcza podczas szybkiego poruszania się lub wahań sygnału GPS. Możesz dostosować ten efekt za pomocą ustawienia *Czas predykcji* (tylko Android): wyższe wartości zwiększają płynność, ale dodają opóźnienie, niższe wartości zmniejszają opóźnienie, ale mogą sprawić, że ruch będzie mniej płynny.
+- **<Translate android="true" ids="position_animation"/>** / **Animuj własną pozycję** – Ikona [pozycji](../map/interact-with-map.md#my-position-and-zoom) animuje się z każdym otrzymanym punktem GPS (raz na sekundę). Może być zauważalne niewielkie opóźnienie w jej ruchu, zwłaszcza podczas szybkiego poruszania się lub wahań sygnału GPS. Możesz dostosować ten efekt za pomocą ustawienia *Czas predykcji* (tylko Android): wyższe wartości zwiększają płynność, ale dodają opóźnienie, niższe wartości zmniejszają opóźnienie, ale mogą sprawić, że ruch będzie mniej płynny.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*tylko Android*) – Włącz lub wyłącz możliwość używania przycisków głośności urządzenia do [przybliżania i oddalania](../map/interact-with-map.md#my-location-and-zoom) mapy.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*tylko Android*) – Włącz lub wyłącz możliwość używania przycisków głośności urządzenia do [przybliżania i oddalania](../map/interact-with-map.md#my-position-and-zoom) mapy.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*tylko Android*) – Wygładza obrót mapy za pomocą [płynnego ruchu](https://en.wikipedia.org/wiki/Kalman_filter), redukując nagłe zmiany pozycji. Wprowadza to niewielkie opóźnienie (*poniżej 1 sekundy*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*tylko Android*) – Wygładza obrót mapy za pomocą [płynnego ruchu](https://en.wikipedia.org/wiki/Kalman_filter), redukując nagłe zmiany pozycji. Wprowadza to niewielkie opóźnienie (*poniżej 1 sekundy*).
+
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*tylko Android*) – Dotknij pustego miejsca na mapie, aby ukryć przyciski sterujące i widżety, maksymalizując widoczność mapy.
 
@@ -369,7 +371,7 @@ Za pomocą tego menu można:
 
 - **Włączyć wizualizację transportu publicznego**, pokazując [trasy i przystanki](../map/public-transport.md) w celu lepszego planowania podróży.
 
-- **Dostosować wygląd mapy**, wybierając inny [styl mapy](../map/vector-maps.md#default-map-styles), aby dopasować go do swoich potrzeb.
+- **Dostosować wygląd mapy**, wybierając inny [styl mapy](../map/map-styles.md), aby dopasować go do swoich potrzeb.
 
 
 ## Konfiguruj ekran {#configure-screen}
@@ -420,10 +422,10 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Ustawienia **Wygląd profilu** pozwalają dostosować nazwę i wizualną reprezentację profilu. Można tu również zmodyfikować wygląd [Mojej lokalizacji](#my-location-appearance). Chociaż *nazwa profilu* musi być unikalna, *ikony* i *kolory* mogą być takie same w różnych profilach. Zmiany te zostaną zastosowane w różnych częściach aplikacji, takich jak menu [Przygotowanie trasy](../navigation/setup/route-navigation.md).
+Ustawienia **Wygląd profilu** pozwalają dostosować nazwę i wizualną reprezentację profilu. Można tu również zmodyfikować wygląd [Mojej pozycji](#my-location-appearance). Chociaż *nazwa profilu* musi być unikalna, *ikony* i *kolory* mogą być takie same w różnych profilach. Zmiany te zostaną zastosowane w różnych częściach aplikacji, takich jak menu [Przygotowanie trasy](../navigation/setup/route-navigation.md).
 
 
-## Wygląd mojej lokalizacji {#my-location-appearance}
+## Wygląd mojej pozycji {#my-location-appearance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -431,9 +433,9 @@ Ustawienia **Wygląd profilu** pozwalają dostosować nazwę i wizualną repreze
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Wygląd mojej lokalizacji](@site/static/img/personal/profiles/location_appearance_andr.png)
+![Wygląd mojej pozycji](@site/static/img/personal/profiles/location_appearance_andr.png)
 
-Ustawienia **Wygląd mojej lokalizacji** pozwalają dostosować sposób wyświetlania lokalizacji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
+Ustawienia **Wygląd mojej pozycji** pozwalają dostosować sposób wyświetlania pozycji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
 
 </TabItem>
 
@@ -441,30 +443,30 @@ Ustawienia **Wygląd mojej lokalizacji** pozwalają dostosować sposób wyświet
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Wygląd mojej lokalizacji](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+![Wygląd mojej pozycji](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
 
-Ustawienia **Wygląd mojej lokalizacji** pozwalają dostosować sposób wyświetlania lokalizacji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
+Ustawienia **Wygląd mojej pozycji** pozwalają dostosować sposób wyświetlania pozycji na mapie, zarówno w spoczynku (Odpoczynek), jak i w ruchu (Nawigacja). Ruch jest wykrywany przez system operacyjny, gdy prędkość urządzenia jest **większa od zera**.
 
-Użyj **Rozmiar ikony**, aby dostosować rozmiar ikony pozycji Moja lokalizacja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij Rozmiar ikony, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **Przywróć domyślne**, aby wrócić do 100%.
+Użyj **Rozmiar ikony**, aby dostosować rozmiar ikony pozycji Moja pozycja niezależnie od rozmiaru tekstu w aplikacji. Możesz ustawić różne rozmiary dla trybów Odpoczynek i Nawigacja. Rozmiar można dostosować od 50% do 300% (50, 75, 100, 125, 150, 200, 250, 300%). Domyślna wartość to 100%. Dotknij Rozmiar ikony, aby otworzyć ustawienia rozmiaru, a następnie użyj suwaka lub przycisków krokowych + / – do zmiany wartości. Użyj **Przywróć domyślne**, aby wrócić do 100%.
 
 </TabItem>
 
 </Tabs>
 
 
-### Kąt widzenia i promień lokalizacji {#view-angle-and-location-radius}
+### Kąt widzenia i promień pozycji {#view-angle-and-location-radius}
 
-Możesz dostosować elementy wizualne związane z Twoją lokalizacją i zastosować je osobno lub razem dla pozycji **Spoczynek** i **Nawigacja**. Zarówno w trybie 2D, jak i 3D, *Kąt widzenia* i *Promień lokalizacji* są wyświetlane w tym samym kolorze wybranym dla [profilu nawigacyjnego](#profile-appearance), bezpośrednio pod ikoną [Moja lokalizacja](../map/interact-with-map.md#my-location-and-zoom).
+Możesz dostosować elementy wizualne związane z Twoją pozycją i zastosować je osobno lub razem dla pozycji **Spoczynek** i **Nawigacja**. Zarówno w trybie 2D, jak i 3D, *Kąt widzenia* i *Promień pozycji* są wyświetlane w tym samym kolorze wybranym dla [profilu nawigacyjnego](#profile-appearance), bezpośrednio pod ikoną [Moja pozycja](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Wyświetla obszar w kształcie **stożka**, wskazujący kierunek, w którym jesteś obecnie zwrócony.  
-- **<Translate android="true" ids="location_radius"/>** – Pokazuje **okrągły obszar** wokół ikony, reprezentujący dokładność bieżącej lokalizacji.
+- **<Translate android="true" ids="location_radius"/>** – Pokazuje **okrągły obszar** wokół ikony, reprezentujący dokładność bieżącej pozycji.
 
 
 ### Niestandardowe ikony 3D {#custom-3d-icons}
 
 Aby uzyskać bardziej spersonalizowane wrażenia, możesz tworzyć i dodawać **niestandardowe ikony 3D** do OsmAnd.  
 
-***Jak dodać niestandardową ikonę lokalizacji 3D:***
+***Jak dodać niestandardową ikonę pozycji 3D:***
 
 1. **Utwórz model 3D**. Zaprojektuj swoją ikonę w formatach [MTL i OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
 
@@ -479,9 +481,9 @@ Aby uzyskać bardziej spersonalizowane wrażenia, możesz tworzyć i dodawać **
 
 ### Tryby orientacji mapy {#map-orientation-modes-my-location}
 
-Możesz kontrolować zachowanie ikony **Moja lokalizacja** za pomocą różnych [trybów orientacji mapy](../widgets/map-buttons.md#compass).  
+Możesz kontrolować zachowanie ikony **Moja pozycja** za pomocą różnych [trybów orientacji mapy](../widgets/map-buttons.md#compass).  
 
-- Jeśli ikona lokalizacji **drży lub obraca się** w spoczynku, przełącz się z **Trybu kierunku ruchu** ([Obróć mapę według namiaru](../map/interact-with-map.md#rotate-map-by-bearing)) na inny tryb.  
+- Jeśli ikona pozycji **drży lub obraca się** w spoczynku, przełącz się z **Trybu kierunku ruchu** ([Obróć mapę według namiaru](../map/interact-with-map.md#rotate-map-by-bearing)) na inny tryb.  
 - Dostosuj dodatkowe ustawienia w *Menu → Ustawienia → Profile aplikacji → Wygląd profilu → Opcje*.
 - Dowiedz się więcej o śledzeniu namiaru i kierunku w sekcji [Widżet namiaru](../widgets/nav-widgets#bearing-widget).  
 

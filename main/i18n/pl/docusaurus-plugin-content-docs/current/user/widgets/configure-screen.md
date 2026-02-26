@@ -1,5 +1,5 @@
 ---
-source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
+source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -450,6 +450,53 @@ Możesz zmieniać układ lub usuwać widżety z ekranu aplikacji za pomocą tryb
 - Potwierdź usunięcie po wyświetleniu monitu.
 
 
+## Układ ekranu mapy {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Układ ekranu mapy](@site/static/img/widgets/map_screen_layout_1.png) ![Układ ekranu mapy](@site/static/img/widgets/map_screen_layout_2.png)
+
+Ustawienie **Układ ekranu mapy** pozwala kontrolować, jak panele widżetów są rozmieszczone na ekranie mapy. Pomaga zapobiegać nakładaniu się widżetów i przycisków oraz poprawia wykorzystanie przestrzeni na ekranie, zwłaszcza podczas przełączania między orientacjami pionową a poziomą.
+
+Możesz otworzyć ustawienia układu ekranu mapy z menu Konfiguracja ekranu, bezpośrednio z akcji na ekranie lub za pośrednictwem menu z trzema kropkami.
+
+### Pojedynczy i oddzielne układy {#single-and-separate-layouts}
+
+![Układ ekranu mapy](@site/static/img/widgets/screen_layout_single.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_separate.png)
+
+OsmAnd obsługuje dwa tryby układu dla ekranu mapy:
+- **Pojedynczy układ** – używa tego samego układu widżetów dla wszystkich orientacji ekranu. Ta opcja jest wybrana domyślnie.
+- **Oddzielne układy** – pozwala skonfigurować różne układy widżetów dla orientacji pionowej i poziomej.
+
+Gdy włączone są oddzielne układy, zmiany wprowadzone w jednej orientacji nie wpływają na drugą. Jest to przydatne, jeśli chcesz zoptymalizować ekran mapy w różny sposób dla użytku w orientacji pionowej i poziomej.
+
+### Zakładki pionowa i pozioma {#portrait-and-landscape-tabs}
+
+![Układ ekranu mapy](@site/static/img/widgets/screen_layout_tabs.png)
+
+Gdy włączone są oddzielne układy, w menu Konfiguracja ekranu dostępne stają się dwie zakładki: **Pionowa** i **Pozioma**. Każda zakładka reprezentuje niezależny układ dla odpowiadającej orientacji ekranu. Możesz przełączać się między zakładkami, dotykając ich.
+
+Możesz kopizować układ między orientacjami. Aby uzyskać dostęp do tych akcji, dotknij menu z trzema kropkami dla panelu widżetów:
+- **Kopiuj z pionowej** – kopiuje listę widżetów z układu pionowego do układu poziomego.
+- **Kopiuj z poziomej** – kopiuje listę widżetów z układu poziomego do układu pionowego.
+
+Kopiowana jest tylko lista widżetów, a operacja dotyczy tego samego profilu.
+
+![Układ ekranu mapy](@site/static/img/widgets/screen_layout_portrait.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Układ paneli {#panels-layout}
+
+![Układ ekranu mapy](@site/static/img/widgets/screen_layout_wide.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_compact.png)
+
+Ustawienie **Układ paneli** kontroluje, jak wyświetlane są panele widżetów górny i dolny. Ta opcja jest dostępna tylko wtedy, gdy włączone są oddzielne układy.
+
+Możesz wybrać między dwoma trybami:
+- **Szeroki** – panele górny i dolny rozciągają się na całą szerokość ekranu.
+- **Kompaktowy** – panele górny i dolny mieszczą się między panelami bocznymi a przyciskami mapy.
+
+Układ paneli można skonfigurować niezależnie dla orientacji pionowej i poziomej, co pozwala na lepsze dostosowanie do różnych rozmiarów i orientacji ekranu.
+
+
 ## Przyciski {#buttons}
 
 ### Przyciski niestandardowe {#custom-buttons}
@@ -484,7 +531,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Strona widżetu](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Strona widżetu](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -498,7 +545,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-1. **Przyciski domyślne** pozwalają dostosować, które predefiniowane przyciski mapy są widoczne na ekranie mapy. Możesz ukryć lub pokazać następujące przyciski:
+**Przyciski domyślne** pozwalają dostosować, które predefiniowane przyciski mapy są widoczne na ekranie mapy. Każdy przycisk na liście ma obok siebie przełącznik Wł./Wył. Możesz ukryć lub pokazać następujące przyciski:
 
     - [Tryb 3D](../widgets/map-buttons.md#3d-mode). Dla iOS przycisk jest zawsze dostępny. Dla Androida pojawia się na liście i jest dostępny do ustawienia, jeśli wybrany jest silnik renderowania mapy [Wersja 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
 
@@ -509,27 +556,45 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
     - [Menu](../widgets/map-buttons.md#main-menu). Otwiera główne menu aplikacji, dając dostęp do wszystkich funkcji.
 
-    - [Moja lokalizacja](../widgets/map-buttons.md#my-location-and-zoom). Centruje mapę na Twojej bieżącej pozycji.
+    - [Moja lokalizacja](../widgets/map-buttons.md#my-position-and-zoom). Centruje mapę na Twojej bieżącej pozycji.
 
-    - [Nawigacja](../widgets/map-buttons.md#directions). Niezbędne do planowania trasy i rozpoczynania nawigacji.
+    - [Nawigacja](../widgets/map-buttons.md#navigation). Niezbędne do planowania trasy i rozpoczynania nawigacji.
 
     - [Szukaj](../widgets/map-buttons.md#search). Otwiera narzędzie wyszukiwania do znajdowania lokalizacji.
 
-    - [Powiększ / pomniejsz](../widgets/map-buttons.md#my-location-and-zoom). Dostosowuje poziom powiększenia mapy, aby pokazać więcej lub mniej szczegółów.
+    - [Powiększ / pomniejsz](../widgets/map-buttons.md#my-position-and-zoom). Dostosowuje poziom powiększenia mapy, aby pokazać więcej lub mniej szczegółów.
 
-2. **Menu z trzema kropkami** na ekranie Przycisków domyślnych zawiera takie akcje jak:
+Menu z **trzema kropkami** na ekranie Przycisków domyślnych zawiera takie akcje jak:
 
     - *Resetuj do domyślnych*. Pozwala przywrócić ustawienia przycisków do ich pierwotnego wyglądu.
-    - *Kopiuj z innego profilu*. Wybierz z oferowanej listy profil, z którego chcesz skopiować ustawienia przycisków.
-
-3. **Wygląd przycisku domyślnego** (*tylko Android*) oferuje różnorodne opcje dostosowywania tego typu przycisków. Aby zmodyfikować wygląd przycisku, dotknij wymaganego przycisku z listy i wybierz opcję [Wygląd](#button-appearance).
+    - *Kopiuj z innego profilu*. Wybierz profil z listy, aby skopiować ustawienia widoczności i wyglądu przycisków.
+    - *Wygląd (tylko Android)*. Oferuje różnorodne opcje dostosowywania tego typu przycisków. Aby zmodyfikować wygląd przycisku, dotknij wymaganego przycisku z listy i wybierz opcję [Wygląd](#button-appearance).
 
 
 ### Wygląd przycisku {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Wygląd przycisku](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+**Przejdź do** (dla przycisków niestandardowych): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu z trzema kropkami → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Przejdź do** (dla wszystkich przycisków domyślnych): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu z trzema kropkami → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Przejdź do** (dla konkretnego przycisku domyślnego): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → wybierz przycisk → *<Translate android="true" ids="shared_string_appearance"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Wygląd przycisku](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Przejdź do** (dla przycisków niestandardowych): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu z trzema kropkami → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Przejdź do** (dla konkretnego przycisku domyślnego): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → wybierz przycisk → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
 
 Funkcja *Wygląd przycisku* umożliwia pełne dostosowanie wyglądu przycisków w interfejsie mapy. Te opcje dostosowywania są dostępne zarówno dla *Szybkiej akcji (Przyciski niestandardowe)*, jak i *Przycisków domyślnych*, zapewniając kompleksową kontrolę nad wyglądem interfejsu mapy i umożliwiając precyzyjne dostosowanie projektu przycisków.
 
@@ -537,8 +602,8 @@ Funkcja *Wygląd przycisku* umożliwia pełne dostosowanie wyglądu przycisków 
 
 - **Ikona**. Wybierz z listy ikon, które reprezentują już dodane akcje, co ułatwia identyfikację funkcji na pierwszy rzut oka.
 - **Promień narożnika**. Dostosuj to ustawienie, aby zmienić kształt przycisku, od ostrych, kwadratowych narożników po gładkie, zaokrąglone krawędzie.
-- **Rozmiar**. Wybierz rozmiar przycisku, który najlepiej pasuje do Twojego ekranu i wyróżnia się w razie potrzeby. W przypadku *Przycisków domyślnych* rozmiary są predefiniowane i nie można ich dostosować.
-- **Przezroczystość tła**. Kontroluj widoczność tła przycisku. Możesz ustawić je jako w pełni widoczne lub częściowo przezroczyste, lub wyświetlić tylko cień ramki i ikonę.
+- **Rozmiar**. Wybierz rozmiar przycisku, który najlepiej pasuje do Twojego ekranu i wyróżnia się w razie potrzeby. 
+- **Przezroczystość tła** (Android) / **Tło** (iOS). Kontroluj widoczność tła przycisku. Możesz ustawić je jako w pełni widoczne lub częściowo przezroczyste, lub wyświetlić tylko cień ramki i ikonę.
 
 
 ## Inne {#other}
@@ -588,7 +653,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 > *Pozycja lokalizacji na ekranie* to nazwa tego ustawienia w wersji OsmAnd na iOS.  
 
-Pozwala ustawić umiejscowienie kursora *[Moja lokalizacja](../map/interact-with-map.md#my-location-and-zoom)* na mapie OsmAnd. Dostępne są trzy opcje:  
+Pozwala ustawić umiejscowienie kursora *[Moja lokalizacja](../map/interact-with-map.md#my-position-and-zoom)* na mapie OsmAnd. Dostępne są trzy opcje:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. Kursor jest zawsze umieszczony na środku ekranu.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Moja lokalizacja* jest umieszczona nieco poniżej środka ekranu. Ten tryb pozwala zobaczyć więcej informacji na mapie przed tobą, co jest przydatne podczas nawigacji.

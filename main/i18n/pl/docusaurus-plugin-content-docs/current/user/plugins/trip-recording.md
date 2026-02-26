@@ -1,6 +1,6 @@
 ---
-source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
-sidebar_position: 15
+source-hash: 7a4c572b27a72fe9f1b647eb877f540c2cdf3bec2eedcb4577e8fff99c5a07ee
+sidebar_position: 17
 title:  Nagrywanie trasy
 ---
 
@@ -50,7 +50,7 @@ Aby rozpocząć nagrywanie tras, należy dokonać następujących ustawień:
 
 ## Nagrywanie nowej trasy {#new-track-recording}
 
-![Widżet Dystans/Start-Stop w iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Widżet Dystans/Start-Stop w Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
+![Widżet Dystans/Start-Stop w Android](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Widżet Dystans/Start-Stop w iOS](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
 
 Dzięki wtyczce Nagrywanie trasy w OsmAnd można łatwo rozpocząć nagrywanie trasy, korzystając z różnych wygodnych opcji. Oto jak możesz rozpocząć swoją podróż:
 
@@ -175,7 +175,7 @@ Aby uzyskać bardziej szczegółowy widok, można **skalować wykres**:
 
 | |  
 | ------------- |
-|**Zakładka Przegląd** w iOS (dla Androida parametry osi Y to *Wysokość*, *Prędkość*, a parametr osi X to *Dystans*). Ta zakładka wyświetla wykres pokazujący zmiany prędkości i wysokości na całej długości trasy oraz kluczowe szczegóły trasy. Dane trasy dla iOS: *Dystans*, *Czas trwania*, *Czas rozpoczęcia* i *Czas zakończenia*. Poniżej można zobaczyć, jak jest to wyświetlane w wersjach na Androida i iOS. |
+|**Zakładka Przegląd** w iOS (dla Androida parametry osi Y to *Wysokość*, *Prędkość*, a parametr osi X to *Dystans*). Ta zakładka wyświetla wykres pokazujący zmiany prędkości i wysokości na całej długości trasy oraz kluczowe szczegóły trasy. Dane trasy dla iOS: *Dystans*, *Czas trwania*, *Czas rozpoczęcia* i *Czas zakończenia*. Wyświetlone. Poniżej można zobaczyć, jak jest to wyświetlane w wersjach na Androida i iOS. |
 | ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Zakładka Wysokość** w iOS (dla Androida parametry osi Y to *Wysokość*, *Nachylenie*, a parametr osi X to *Dystans*). Ta zakładka koncentruje się na profilu wysokościowym zarejestrowanej trasy, dostarczając informacji o zmianach wysokości i nachyleniu terenu. Kluczowe wskaźniki dla systemu iOS obejmują: *Średnia wysokość*, *Zakres wysokości*, *W górę* i *W dół*. Poniższe wykresy ilustrują różnice między interfejsami Androida i iOS. |
 | ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
@@ -307,7 +307,7 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 
 <InfoAndroidOnly />
 
-![Trasa na mapie iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Trasa na mapie iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
+![Trasa na mapie Android](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Trasa na mapie Android](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
 
 Ta funkcja pozwala zarządzać ustawieniami optymalizacji baterii dla OsmAnd, aby zapewnić nieprzerwany dostęp do lokalizacji, nawet gdy aplikacja działa w tle podczas nawigacji lub nagrywania trasy.
 
@@ -356,7 +356,7 @@ Plakietka ikony aplikacji pojawia się obok ikony OsmAnd, gdy nagrywanie trasy j
 
 ## Widżety {#widgets}
 
-Widżety pozwalają wyświetlać kluczowe informacje o nagrywaniu trasy bezpośrednio na ekranie, takie jak *Dystans*, *Czas trwania*, *W górę* i *W dół*. W systemie Android można również dodać widżety *Maks. prędkość* i *Średnie nachylenie*.
+Widżety pozwalają wyświetlać kluczowe informacje o nagrywaniu trasy bezpośrednio na ekranie, takie jak *Dystans*, *Czas trwania*, *W górę*, *W dół*, *Maks. prędkość* i *Średnie nachylenie*. W systemie iOS można również dodać widżet *Czas w ruchu*.
 
 Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, należy dokonać wszystkich następujących ustawień:
 
@@ -381,7 +381,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Dodawanie widżetu Dystans/Start-Stop w systemie iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![Dodawanie widżetu Dystans/Start-Stop w systemie iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -413,13 +413,13 @@ Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i
 Niektóre widżety Nagrywanie trasy obsługują wiele trybów wyświetlania. Tryby pozwalają przełączać się między ogólnymi wartościami podróży a metrykami dla najbardziej ostatniego odcinka podjazdu lub zjazdu aktualnie nagrywanej trasy.
 
 Poniższe tryby mogą być dostępne w zależności od widżetu.
-1. **Dystans (Start-Stop)**:
-- Całkowity dystans (domyślnie)
-- Ostatni podjazd
-- Ostatni zjazd
+1. **Średnie nachylenie**:
+- Ostatni zjazd 
+- Ostatni podjazd  
 
-2. **W górę**:
-- Całkowity (domyślnie)
+2. **Dystans (Start-Stop)**:
+- Całkowity dystans (domyślnie)
+- Ostatni zjazd
 - Ostatni podjazd
 
 3. **W dół**:
@@ -428,15 +428,20 @@ Poniższe tryby mogą być dostępne w zależności od widżetu.
 
 4. **Maks. prędkość**:
 - Całkowity (domyślnie)
-- Ostatni podjazd
 - Ostatni zjazd
+- Ostatni podjazd
 
-5. **Średnie nachylenie**:
-- Ostatni podjazd  
-- Ostatni zjazd 
+5. **Czas w ruchu** (*Tylko iOS*)
+- Całkowity (domyślnie)
+- Ostatni zjazd
+- Ostatni podjazd
+
+6. **W górę**:
+- Całkowity (domyślnie)
+- Ostatni podjazd
 
 Przełączanie trybów zależy od widżetu:
-- W górę / W dół / Maks. prędkość / Średnie nachylenie — stuknij widżet na mapie, aby przełączyć jego tryb.
+- W górę / W dół / Maks. prędkość / Średnie nachylenie / Czas w ruchu — stuknij widżet na mapie, aby przełączyć jego tryb.
 - Dystans (Start-Stop) — widżet Dystans obsługuje wiele trybów wyświetlania (wybierz je w ustawieniach widżetu), ale stuknięcie go zawsze otwiera okno dialogowe Nagrywanie trasy, w którym można rozpocząć, zatrzymać i wyświetlić szczegółowe informacje o trasie. 
 
 Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, widżety w trybie Ostatni podjazd lub Ostatni zjazd pokazują 0 lub — (brak danych).
@@ -457,16 +462,18 @@ Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, wid
 
 | |
 |------------|
-|**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_up_new.png)|
+|**Średnie nachylenie**. Wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnej trasy, w zależności od wybranego trybu. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 |**W dół**. Wskazuje całkowity spadek lub ostatni odcinek zejścia, w zależności od wybranego trybu. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Maks. prędkość**. Pokazuje maksymalną prędkość dla aktualnie nagrywanego wyjazdu w wybranym trybie. |
 |![widżety](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
-|**Średnie nachylenie**. Wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnego wyjazdu, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Czas w ruchu** (*Tylko iOS*). Pokazuje czas w ruchu dla aktualnie nagrywanego wyjazdu lub czas dla ostatniego podjazdu i zjazdu, w zależności od wybranego trybu. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
+|![widżety](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Jeśli wybrano wiele widżetów, można uzyskać dostęp do tego samego okna dialogowego dla każdego z nich bez konieczności przełączania lub zamykania go. Ten ujednolicony interfejs ułatwia płynne przeglądanie i zarządzanie wszystkimi powiązanymi informacjami.
 

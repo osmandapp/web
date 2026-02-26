@@ -1,6 +1,6 @@
 ---
-source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
-sidebar_position: 3
+source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+sidebar_position: 4
 title:  Notatki audio/wideo
 ---
 

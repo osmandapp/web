@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title:  Linijka promienia i Linijka
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Narzędzia **Linijek** w OsmAnd zostały zaprojektowane, aby pomóc w precyzyjnym mierzeniu odległości i zrozumieniu [skali mapy](https://en.wikipedia.org/wiki/Scale_(map)).
+Narzędzia **Linijki** w OsmAnd zostały zaprojektowane, aby pomóc w precyzyjnym mierzeniu odległości i zrozumieniu [skali mapy](https://en.wikipedia.org/wiki/Scale_(map)).
 
 - Narzędzie **Linijka** wyświetla dynamiczną skalę mapy w jednostkach takich jak metry lub stopy, pomagając wizualnie ocenić odległości między obiektami na ekranie.
 - **Linijka promienia** pozwala ustawić promień z dowolnego punktu na mapie, pokazując koncentryczne okręgi reprezentujące interwały odległości.
@@ -204,7 +204,7 @@ Więcej informacji na temat *pozycji na ekranie* można znaleźć w artykule [Ko
 
 Możesz przełączyć się na **widok 3D**, aby lepiej wizualizować odległości i otaczający teren podczas korzystania z Linijki promienia. Ten widok przechyla mapę i zapewnia efekt perspektywy, który rozszerza widoczny promień.
 
-- Dotknij [przycisku lokalizacji](../map/interact-with-map.md#my-location-and-zoom), aby skupić się na swojej pozycji.
+- Dotknij [przycisku pozycji](../map/interact-with-map.md#my-position-and-zoom), aby skupić się na swojej pozycji.
 - Użyj gestu [przesunięcia dwoma palcami w górę](../map/interact-with-map.md#gestures), aby przechylić mapę do trybu 3D.
 
 Okręgi promienia pojawią się z głębią, co jest szczególnie przydatne do planowania tras w pagórkowatych obszarach lub środowiskach miejskich, gdzie ważny jest kontekst pionowy.

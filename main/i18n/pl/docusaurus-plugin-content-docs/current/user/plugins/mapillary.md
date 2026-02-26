@@ -1,8 +1,9 @@
 ---
-source-hash: c1e40198b8d078b7e3678c0105a5dc91442a1ca2f47b65d03facbd7ca77df64a
-sidebar_position: 6
+source-hash: 38151318e8ffca078fdb264a4c0b0efa447c86b08d4a27dad17b80dd745bed3e
+sidebar_position: 7
 title:  Mapillary
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,12 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Przegląd {#overview}
 
 Aby szybciej się poruszać, w OsmAnd możesz korzystać z widoków ulicznych tras lub interesujących miejsc dostarczanych przez [Mapillary](https://www.mapillary.com/) (wymagane jest połączenie z internetem).  
 
-Warstwa Mapillary przenosi obrazy na poziomie ulicy prosto do aplikacji OsmAnd, dzięki czemu można łatwo przeglądać otoczenie dowolnego interesującego miejsca lub wzdłuż zaplanowanej trasy. Jeśli brakuje zdjęć, możesz je dodać samodzielnie, a inni będą mogli z nich korzystać. Ta funkcja powstała w wyniku naszej współpracy z [zespołem Mapillary](https://www.mapillary.com/about), łącząc zalety obu aplikacji.
+[Warstwa Mapillary](https://www.mapillary.com/) przenosi obrazy na poziomie ulicy prosto do aplikacji OsmAnd, dzięki czemu można łatwo przeglądać otoczenie dowolnego interesującego miejsca lub wzdłuż zaplanowanej trasy. Jeśli brakuje obrazów, możesz je dodać samodzielnie, a inni będą mogli z nich korzystać. Ta funkcja powstała w wyniku naszej współpracy z [zespołem Mapillary](https://www.mapillary.com/about), łącząc zalety obu aplikacji.
 
 
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
@@ -51,7 +51,7 @@ Warstwa mapy ze zdjęciami ulic jest wyświetlana na mapie OsmAnd jako rzędy po
 
 - Zdjęcia użytkowników Mapillary są dołączone do tych zielonych kropek.
 - Stuknij zieloną kropkę na mapie, aby otworzyć zdjęcie z widokiem ulicy. Zdjęcia można również wybrać z listy w [menu kontekstowym mapy](#map-context-menu), jeśli jest dostępna.
-- Po wybraniu ekran aplikacji jest podzielony na mapę OsmAnd i zdjęcia uliczne Mapillary.
+- Po wybraniu ekran aplikacji jest podzielony na mapę OsmAnd i zdjęcia uliczne na poziomie ulicy Mapillary.
 - Możesz zastosować [filtry](#data-filtering), aby wybrać zdjęcia, które chcesz wyświetlić na mapie.
 
 
@@ -75,7 +75,7 @@ Warstwa mapy ze zdjęciami ulic jest wyświetlana na mapie OsmAnd jako rzędy po
 
 Aby wyświetlić zdjęcia na poziomie ulicy Mapillary na mapie, należy włączyć tę warstwę w menu [Konfiguruj mapę](../map/configure-map-menu.md) w sekcji *Pokaż*.  
 
-*Dostęp: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
+*Do dostępu: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
 :::note Przeglądarka zdjęć Mapillary
 
@@ -104,7 +104,7 @@ Aby wyświetlić zdjęcia na poziomie ulicy Mapillary na mapie, należy włączy
 
 Możesz utworzyć filtr i wybrać, które zdjęcia mają być wyświetlane na mapie. Na przykład wybierz wyświetlanie tylko najnowszych zdjęć lub tylko zdjęć 360 stopni.  
 
-*Dostęp: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
+*Do dostępu: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
 :::note Pamięć podręczna kafelków
 Jeśli wybrane obrazy nie są wyświetlane, użyj opcji **Przeładuj** dla **Pamięci podręcznej kafelków**.

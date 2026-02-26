@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -537,7 +537,7 @@ Dostępne opcje udostępniania lokalizacji:
 - ***Save to files*** (*iOS*) - saves the map screenshot in iCloud Drive or storage of your device. -->
 
 
-### Wskazówki do / z {#directions-to--from}
+### Wskazówki do / od {#directions-to--from}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -559,12 +559,12 @@ Dostępne opcje udostępniania lokalizacji:
 
 Aby rozpocząć nawigację lub planowanie trasy, musisz najpierw wybrać cel za pomocą [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Jeśli masz już punkt docelowy, menu zasugeruje zastąpienie punktu docelowego lub wstawienie go jako kolejnego punktu pośredniego lub początkowego.
 
-Możliwe jest również wybranie najpierw celu *Z* za pomocą menu kontekstowego mapy (<Translate android="true" ids="context_menu_item_directions_from"/>).
+Możliwe jest również wybranie najpierw celu *Od* za pomocą menu kontekstowego mapy (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
 Przeczytaj więcej o [nawigacji tutaj](../navigation/setup/route-navigation.md).
 
 :::note Dotknij Rozpocznij nawigację
-Jeśli dotkniesz **Rozpocznij nawigację** - punkt *Z* zostanie odrzucony, ponieważ aplikacja przejdzie w tryb nawigacji. Aby zachować trasę, nie dotykaj *Rozpocznij nawigację* i [**przesuń w dół**](#hide-context-menu) menu *Przygotowanie trasy*.
+Jeśli dotkniesz **Rozpocznij nawigację** - punkt *Od* zostanie odrzucony, ponieważ aplikacja przejdzie w tryb nawigacji. Aby zachować trasę, nie dotykaj *Rozpocznij nawigację* i [**przesuń w dół**](#hide-context-menu) menu *Przygotowanie trasy*.
 :::
 
 

@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title:  Trasy
 ---
 
@@ -119,7 +119,7 @@ Niektóre odcinki dróg mogą być częścią wielu tras, ale mogą być indywid
 - _Stoki i trasy narciarskie_ w domyślnym stylu mapy _OsmAnd_.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Stoki i trasy narciarskie to specyficzna grupa [tras](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) w OpenStreetMap. Zazwyczaj trasy te mogą być używane ze stylem mapy [Zima i narty](../map/vector-maps.md#winter-and-ski) ze wszystkimi widocznymi [trasami zjazdowymi](https://wiki.openstreetmap.org/wiki/Pistes). Jeśli aktywny jest inny styl mapy, wyświetlany jest baner sugerujący przełączenie na [Zima i narty](../map/vector-maps.md#winter-and-ski) (*tylko Android*) i wyświetlane są tylko stoki. Dotknij ***Przełącz***, aby zmienić styl mapy bez opuszczania bieżącego ekranu, lub ***Później***, aby ukryć baner.
+Stoki i trasy narciarskie to specyficzna grupa [tras](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) w OpenStreetMap. Zazwyczaj trasy te mogą być używane ze stylem mapy [Zima i narty](../map/map-styles.md#winter-and-ski) ze wszystkimi widocznymi [trasami zjazdowymi](https://wiki.openstreetmap.org/wiki/Pistes). Jeśli aktywny jest inny styl mapy, wyświetlany jest baner sugerujący przełączenie na [Zima i narty](../map/map-styles.md#winter-and-ski) (*tylko Android*) i wyświetlane są tylko stoki. Dotknij ***Przełącz***, aby zmienić styl mapy bez opuszczania bieżącego ekranu, lub ***Później***, aby ukryć baner.
 
 
 ### Szlaki skuterów śnieżnych {#snowmobile-trails}
@@ -140,7 +140,7 @@ Szlaki skuterów śnieżnych są mapowane w [OpenStreetMap](https://wiki.openstr
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Trasy białego nurtu](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) są pokazywane wraz z ikonami dostępu, strefami zagrożenia dla [turystyki białego nurtu](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+[Trasy białego nurtu](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) są pokazywane wraz z ikonami dostępu, strefami zagrożenia i pobliskimi progami dla [turystyki białego nurtu](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). Zobacz [funkcje białego nurtu](../map-legend/osmand.md#whitewater-features) w Legendzie mapy dla stopni progów, stopni odcinków rzeki i powiązanych symboli.  
 
 
 ### Trasy biegowe {#running-routes}
@@ -180,7 +180,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,re
 
 - Aby wyświetlić wymagane trasy na mapie, włącz je na *liście tras* w menu [Konfiguracja mapy](../map/configure-map-menu.md).
 - OsmAnd może podświetlać [trasy obecne w OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Można je wybrać, dotykając [symbolu na trasie](#save-as-a-track), a jeśli widoczny zestaw tras jest poprawnie skonfigurowany, można podążać za kolorem i ikonami.
-- Główne typy tras można również filtrować według klas i podklas, co pozwala na wyświetlanie tylko określonych grup w ramach każdego typu. Na przykład, możesz wyświetlać szlaki piesze według **symboli OSMC** jako klasy, a według *międzynarodowych, krajowych, regionalnych* lub *lokalnych sieci* jako podklasy.
+- Główne typy tras można również filtrować według klas i podklas, co pozwala na wyświetlanie tylko określonych grup w ramach każdego typu. Na przykład, możesz wyświetlać szlaki piesze według **symboli OSMC** jako klasy, a według *międzynarodowych, krajowych, regionalnych* lub *lokalnych sieci* jako podklasy, które są obecnie dostępne po włączeniu wtyczki [OsmAnd Development](../plugins/development.md).
 - Możesz utworzyć ślad na podstawie tras za pomocą narzędzia [Planowanie trasy](../plan-route/create-route.md). 
 - Gdy kilka tras przebiega wzdłuż tej samej drogi, każda trasa jest wyświetlana jako oddzielna półprzezroczysta linia umieszczona nad innymi. 
 - Po dotknięciu lokalizacji, w której nakładają się wiele tras, wyświetlane jest menu kontekstowe ze wszystkimi trasami przechodzącymi przez ten punkt. 

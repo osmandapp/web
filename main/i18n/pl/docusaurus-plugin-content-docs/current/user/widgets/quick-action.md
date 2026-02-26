@@ -1,5 +1,5 @@
 ---
-source-hash: acec87397450d121c90aab13dab433cdd3d9e2ce9716bf61ccd71e41489aca96
+source-hash: 433c630536848b7031cc7094180ed08b5bcf9a316809b7e405f63ce39916101b
 sidebar_position: 7
 title:  Szybka akcja (przyciski niestandardowe)
 ---
@@ -61,7 +61,7 @@ Aby użyć przycisku Szybkiej akcji, należy najpierw włączyć ten widżet.
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Dotknij Usuń (ikona kosza w prawym górnym rogu) → Wybierz akcje*
 
-![Dodawanie do widżetu Szybkiej akcji Android](@site/static/img/widgets/quick_action_widget_andr.png)  ![Niestandardowy przycisk Android](@site/static/img/widgets/add_action_screen_andr.png)
+![Widżet Szybkiej akcji Android dodawanie](@site/static/img/widgets/quick_action_widget_andr.png)  ![Niestandardowy przycisk Android](@site/static/img/widgets/add_action_screen_andr.png)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appear
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Dotknij Edytuj (ikona ołówka w prawym górnym rogu) → Wybierz akcje*
 
-![Dodawanie do widżetu Szybkiej akcji iOS](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Niestandardowy przycisk iOS](@site/static/img/widgets/add_action_screen_ios.png)
+![Widżet Szybkiej akcji iOS dodawanie](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Niestandardowy przycisk Android](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
@@ -151,7 +151,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,layer_map_appear
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
-![Niestandardowy przycisk iOS](@site/static/img/widgets/custom_button_ios.png)  
+![Niestandardowy przycisk Android](@site/static/img/widgets/custom_button_ios.png)  
 
 </TabItem>
 
@@ -189,7 +189,7 @@ Widżet *Szybkiej akcji* pojawia się w dolnym rogu ekranu mapy po pierwszym wł
 
 - **Wiele [przycisków niestandardowych](#custom-buttons)**. Możesz dodać wiele przycisków szybkiej akcji do ekranu mapy. Te przyciski można również indywidualnie dostosowywać i zmieniać ich położenie za pomocą tej samej metody przeciągnij i upuść.
 
-    ![Wiele widżetów Szybkiej akcji](@site/static/img/widgets/quick_action_widget_multi.png)
+    ![Przesunięcie widżetu Szybkiej akcji](@site/static/img/widgets/quick_action_widget_multi.png)
 
 ### Układ siatki dla przycisków {#grid-layout-for-buttons}
 
@@ -241,7 +241,7 @@ Siatka dostosowuje się do otaczającego interfejsu i ponownie pozycjonuje przyc
 | Pokaż / Ukryj <br /> [**Transport publiczny**](../map/vector-maps.md#transport) | Włącz lub wyłącz warstwę mapy transportu publicznego <br /> - *Rodzaj transportu*. Przy pierwszym dotknięciu można wybrać jeden lub wiele rodzajów transportu, w tym *Przystanki transportu publicznego*, *Trasy autobusowe, trolejbusowe i minibusowe*, *Trasy tramwajowe i kolejowe*, *Trasy metra*. |
 | Zmień <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Utwórz listę źródeł map jako nakładkę mapy i przełączaj się między nimi. <br /> - *Uwaga*. Aby zmienić nakładki map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma nakładkami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonej nakładki mapy. |
 | Zmień <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Utwórz listę źródeł map jako podkład mapy i przełączaj się między nimi. <br /> - *Uwaga*. Aby zmienić podkłady map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma podkładami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonego podkładu mapy.  |
-| Zmień <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Utwórz listę stylów map dla map wektorowych i przełączaj się między nimi. Możesz pokazać lub ukryć okno dialogowe wyboru: <br /> - *Jeśli okno dialogowe jest pokazane*, możesz wybrać dowolny styl z listy. <br /> - *Jeśli okno dialogowe jest ukryte*, akcja działa jako przełącznik jednym dotknięciem (tylko cyklicznie). <br /> Podczas cyklicznego przełączania etykieta szybkiej akcji z strzałką (np. > Nautical) pokazuje następny styl mapy, który zostanie zastosowany przy następnym dotknięciu, a nie aktualnie aktywny. <br /> - *Uwaga*. Aby zmienić style map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma stylami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonego stylu mapy. |
+| Zmień <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/map-styles.md#default-map-styles) | Utwórz listę stylów map dla map wektorowych i przełączaj się między nimi. Możesz pokazać lub ukryć okno dialogowe wyboru: <br /> - *Jeśli okno dialogowe jest pokazane*, możesz wybrać dowolny styl z listy. <br /> - *Jeśli okno dialogowe jest ukryte*, akcja działa jako przełącznik jednym dotknięciem (tylko cyklicznie). <br /> Podczas cyklicznego przełączania etykieta szybkiej akcji z strzałką (np. > Nautical) pokazuje następny styl mapy, który zostanie zastosowany przy następnym dotknięciu, a nie aktualnie aktywny. <br /> - *Uwaga*. Aby zmienić style map w OsmAnd, możesz skonfigurować jedną szybką akcję, która pozwala przełączać się między wieloma nakładkami map, lub utworzyć kilka oddzielnych szybkich akcji, każdą dla określonego stylu mapy. |
 | Pokaż / Ukryj <br/> [**Warstwa Mapillary**](../plugins/mapillary.md) | Pozwala przeglądać warstwy mapy ze zdjęciami na poziomie ulicy dostarczanymi przez Mapillary. |
 | Pokaż / Ukryj <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | Możesz wybrać wyświetlanie lub ukrywanie wszystkich notatek OSM na mapie jednym dotknięciem przycisku. |
 
@@ -268,7 +268,7 @@ Siatka dostosowuje się do otaczającego interfejsu i ponownie pozycjonuje przyc
 | Przesuń <br/> [**Mapę w górę**](../map/interact-with-map.md) | Po dotknięciu ekran mapy przesuwa się w górę. |
 | Przesuń <br/> [**Mapę w lewo**](../map/interact-with-map.md) | Po dotknięciu przycisku ekran mapy przesuwa się w lewo. |
 | Przesuń <br/> [**Mapę w prawo**](../map/interact-with-map.md) | Za pomocą przycisku szybkiej akcji można przesunąć mapę w prawo. |
-| Przesuń <br/> [**Do Mojej lokalizacji**](../map/interact-with-map.md#my-location-and-zoom) | Przesuwa mapę do pozycji *Moja lokalizacja*. |
+| Przesuń <br/> [**Do Mojej pozycji**](../map/interact-with-map.md#my-position-and-zoom) | Przesuwa mapę do pozycji *Moja lokalizacja*. |
 
 
 ### Moje miejsca {#my-places}

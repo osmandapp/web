@@ -1,5 +1,5 @@
 ---
-source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
+source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,6 +17,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Przegląd {#overview}
+
+:::tip Zakup
+*CarPlay* to [płatna funkcja](../purchases/index.md).  
+:::
 
 Prowadzenie pojazdu i jednoczesne korzystanie z telefonu lub tabletu jest zwykle zabronione przez prawo ze względów bezpieczeństwa. [***CarPlay***](https://www.apple.com/ios/carplay/) to oprogramowanie, które zapewnia dostosowaną i zoptymalizowaną wersję aplikacji OsmAnd do bezpiecznego użytkowania podczas jazdy, ułatwiając i zwiększając bezpieczeństwo dostępu do funkcji nawigacyjnych aplikacji.
 
@@ -45,8 +49,8 @@ Gdy urządzenie jest podłączone do *CarPlay*, mapa na ekranie aplikacji jest z
 
 *CarPlay* wyświetla interfejs OsmAnd dostosowany do ekranu systemu multimedialnego pojazdu. Interakcja z mapą jest ograniczona do:  
 
-- [Moja lokalizacja](../widgets/map-buttons.md#my-location-and-zoom). Przesuwa widoczną część mapy tak, aby Twoja bieżąca lokalizacja znalazła się na środku ekranu.
-- [Powiększenie](../widgets/map-buttons.md#my-location-and-zoom). Umożliwia powiększanie i pomniejszanie widocznej części mapy.
+- [Moja lokalizacja](../widgets/map-buttons.md#my-position-and-zoom). Przesuwa widoczną część mapy tak, aby Twoja bieżąca lokalizacja znalazła się na środku ekranu.
+- [Powiększenie](../widgets/map-buttons.md#my-position-and-zoom). Umożliwia powiększanie i pomniejszanie widocznej części mapy.
 
 
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
@@ -241,7 +245,7 @@ Ten widżet informacyjny łączy typy alertów, takie jak **Przejścia dla piesz
 
 ![Ekran CarPlay](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
-Widżet **Prędkościomierz** to zintegrowany element interfejsu, który wyświetla *bieżącą prędkość* na podstawie danych GPS oraz *ograniczenie prędkości* z [bazy danych OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) i [ustawień OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) na ekranie systemu multimedialnego pojazdu.
+Widżet **Prędkościomierz** to zintegrowany element interfejsu, który wyświetla *bieżącą prędkość* na podstawie danych GPS oraz *ograniczenie prędkości* z [bazy danych OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) i [ustawień OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) na ekranie systemu multimedialnego pojazdu. Gdy Twoja bieżąca prędkość zbliża się do skonfigurowanej tolerancji ograniczenia prędkości lub przekracza ograniczenie prędkości, widżet zmienia swój wygląd (kolory), aby ostrzec. Zmiana wyglądu może być animowana.
 
 - **Widżet Prędkościomierz** jest [*zależny od profilu*](../personal/profiles.md), więc jeśli zmienisz ustawienia dla jednego profilu, nie zostaną one zastosowane do innego.
 - Nie ma możliwości ustawienia wyświetlania *Prędkościomierza* bezpośrednio w *CarPlay*. Należy go skonfigurować dla wybranego [profilu nawigacji](#carplay-profile) w aplikacji OsmAnd przed rozpoczęciem nawigacji i podłączeniem urządzenia do pojazdu.
@@ -266,6 +270,23 @@ Aplikacja OsmAnd może być otwierana i używana do nawigacji w *CarPlay* na ekr
 
 - Konfiguracja wielofunkcyjnego pulpitu na telefonie podłączonym do *CarPlay* lub na ekranie w systemie pojazdu.
 - Znajdź przycisk Wiele okien i przełącz go.
+
+
+### Zakończ nawigację {#finish-navigation}
+
+![Zakończ nawigację](@site/static/img/navigation/auto-car/finish_navigation_carplay_new.png)
+
+Gdy nawigacja zostanie zakończona w CarPlay, OsmAnd wyświetla na ekranie pojazdu okno dialogowe **„Dotarłeś na miejsce”**. To okno dialogowe wykorzystuje tę samą logikę wykrywania przybycia co aplikacja mobilna i zapewnia szybki dostęp do typowych czynności po dotarciu do celu.
+
+Dostępne czynności:
+- **Oznacz jako miejsce parkowania**. Zapisuje Twoją bieżącą pozycję jako miejsce parkowania i umieszcza znacznik parkowania na mapie.
+- **Znajdź parking**. Otwiera ekran Wyszukiwania z wstępnie wybraną kategorią Parking, aby pomóc znaleźć pobliskie opcje parkowania.
+- **Przelicz trasę**. Tworzy nową trasę do pierwotnego celu, jeśli chcesz kontynuować nawigację.
+- **Zakończ nawigację**. Kończy bieżącą trasę i przywraca OsmAnd do domyślnego stanu mapy.
+
+Jeśli CarPlay zostanie odłączony podczas aktywnej nawigacji, OsmAnd stosuje dodatkową logikę na iPhonie:
+- Jeśli odległość do celu jest mniejsza niż 100 m, nawigacja jest automatycznie kończona, a przywracany jest domyślny profil. W tym przypadku powiadomienie „Dotarłeś na miejsce” nie jest wyświetlane na ekranie telefonu.
+- Jeśli bieżąca prędkość jest poniżej 1 m/s (na przykład, podczas postoju na stacji benzynowej), nawigacja jest wstrzymywana. Nawigacja wznawia się automatycznie po ponownym podłączeniu CarPlay.
 
 ## Ustawienia {#settings}
 

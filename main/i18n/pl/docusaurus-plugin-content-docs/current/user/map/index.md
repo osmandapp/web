@@ -1,11 +1,11 @@
 ---
-source-hash: f6d36706a1e07d9988dbdc4b5e3c26c6daa9c50f6827a4937c300bd0a0b42708
+source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
 sidebar_position: 1
 ---
 
 # MAPA {#map}
 
-Mapa jest podstawowym elementem OsmAnd. W tej sekcji podręcznika użytkownika znajdziesz przydatne informacje na temat interakcji z mapą, dostosowywania widoku mapy do wędrówek, jazdy na rowerze lub nawigacji w terenie, konfigurowania dodatkowych warstw POI lub włączania obrazów na poziomie ulicy itp.
+Mapa jest podstawowym elementem OsmAnd. W tej sekcji podręcznika użytkownika znajdziesz przydatne informacje na temat interakcji z mapą, sposobu dostosowywania widoku mapy do wędrówek, jazdy na rowerze lub nawigacji w terenie, konfigurowania dodatkowych warstw POI lub włączania obrazów na poziomie ulicy itp.
 
 ## [Interakcja z mapą](./interact-with-map.md) {#interact-with-map}
 
@@ -19,9 +19,13 @@ Menu kontekstowe mapy zawiera informacje o wybranym obiekcie na mapie i umożliw
 
 Menu Konfiguruj mapę jest ważnym elementem *Menu Głównego* OsmAnd, w którym można dostosować wyświetlanie mapy do własnych potrzeb. Możesz wyróżnić swoje ulubione punkty, znaczniki nawigacyjne lub specjalne punkty zainteresowania na mapie; wyświetlić określone trasy lub pliki GPX innych firm; nałożyć informacje o terenie, obrazy satelitarne lub inne dostępne obrazy bitmapowe; wyświetlić informacje o transporcie publicznym; i zmienić styl mapy.
 
-## [Mapy wektorowe (style map)](./vector-maps.md) {#vector-maps-map-styles}
+## [Mapy wektorowe](./vector-maps.md) {#vector-maps}
 
-Mapy wektorowe są domyślnym źródłem danych map dla OsmAnd, dlatego muszą zostać pobrane na urządzenie. Mapy wektorowe obsługują szeroki zakres stylów map dla wielu aktywności, takich jak jazda na rowerze, wędrówki, jazda samochodem lub skuterem śnieżnym itp. Każdy styl mapy można dostosować, aby wyróżnić lub ukryć określone obiekty i przełączać się między trybem dziennym i nocnym. Dane wektorowe mapy można uzupełnić danymi wektorowymi i wyświetlić za pomocą domyślnego stylu mapy, na przykład informacji o liniach konturowych. Możesz stworzyć własny styl mapy OsmAnd, aby wyświetlić wymagane informacje.
+Mapy wektorowe są zaprojektowane jako domyślne źródło danych map dla OsmAnd, dlatego muszą zostać pobrane na urządzenie. Mapy wektorowe obsługują szeroki zakres stylów map dla wielu aktywności, takich jak jazda na rowerze, wędrówki, jazda samochodem lub skuterem śnieżnym itp. Każdy styl mapy można dostosować, aby wyróżnić lub ukryć określone obiekty i przełączać się między trybem dziennym i nocnym. Dane wektorowe mapy można uzupełnić danymi wektorowymi i wyświetlić za pomocą domyślnego stylu mapy, na przykład informacji o liniach konturowych. Możesz stworzyć własny styl mapy OsmAnd, aby wyświetlić wymagane informacje.
+
+## [Style map (mapy wektorowe)](./map-styles.md) {#map-styles-vector-maps}
+
+Style map określają, jak dane map wektorowych są renderowane w OsmAnd. Styl kontroluje wygląd wizualny obiektów mapy, takich jak drogi, budynki, użytkowanie terenu, woda i punkty zainteresowania, w tym kolory, wzory linii i etykiety.
 
 ## [Mapy rastrowe (online / offline)](./raster-maps.md) {#raster-maps-online--offline}
 
@@ -43,10 +47,10 @@ Menu kontekstowe śladów to menu z akcjami i danymi śladu GPX.
 
 Menu kontekstowe śladów to menu z akcjami i danymi śladu GPX.
 
-## [Trasy](./routes.md) {#routes}
-
-OsmAnd posiada wiele potężnych funkcji do wyświetlania różnych tras na mapie.
-
 ## [Transport publiczny](./public-transport.md) {#public-transport}
 
 Transport publiczny to dodatkowa warstwa, która umożliwia wyświetlanie tras i przystanków transportu na mapie, sprawdzanie szczegółowych informacji o nich i nawigację.
+
+## [Trasy](./routes.md) {#routes}
+
+OsmAnd posiada wiele potężnych funkcji do wyświetlania różnych tras na mapie.

@@ -1,5 +1,5 @@
 ---
-source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
+source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -82,7 +82,7 @@ Poniżej znajduje się lista [niestandardowych wtyczek](../plugins/custom.md) op
 
 | Nazwa | Opis | Link do wtyczki |
 |--|--|--|
-| Renderowanie OsmAnd  | Wtyczka dodaje style map Enduro, CycloRoute i Hiking (więcej informacji [tutaj](../map/vector-maps.md#default-map-styles)) oraz 5 nowych [profili](https://osmand.net/docs/user/personal/profiles) (Pieszy, Rower i trzy profile motocyklowe). Zapewnia również mapy online dla Hiszpanii, Francji, Norwegii, Szwajcarii, Austrii, Belgii i Argentyny za pośrednictwem menu [Mapy i zasoby](../personal/maps-resources.md#extra-maps) w folderze *OsmAnd rendering online maps*. | [Renderowanie OsmAnd](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Renderowanie OsmAnd  | Wtyczka dodaje style map Enduro, CycloRoute i Hiking (więcej informacji [tutaj](../map/map-styles.md#default-map-styles)) oraz 5 nowych [profili](https://osmand.net/docs/user/personal/profiles) (Pieszy, Rower i trzy profile motocyklowe). Zapewnia również mapy online dla Hiszpanii, Francji, Norwegii, Szwajcarii, Austrii, Belgii i Argentyny za pośrednictwem menu [Mapy i zasoby](../personal/maps-resources.md#extra-maps) w folderze *OsmAnd rendering online maps*. | [Renderowanie OsmAnd](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Mapa Arabii Saudyjskiej zespołu Rahal  | Profesjonalna mapa offline Królestwa Arabii Saudyjskiej, zawierająca cechy topograficzne, drogi, miasta, wioski i źródła wody. Idealna na wycieczki po pustyni. Odwiedź [Rahal Maps](https://rahalteam.com), aby uzyskać więcej informacji. | [🇸🇦 Mapy Arabii Saudyjskiej autorstwa Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | Model 3D  | Ten pakiet dodaje opcję modelu 3D dla profili. Dostosuj wygląd za pomocą menu: [*Menu OsmAnd → Ustawienia → Profil → Wygląd profilu → wybierz 4-5 ikonę ikony pozycji*](../personal/profiles.md#profile-appearance). | [Model 3D](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | Kolekcja map online AnyGIS | Kolekcja różnych źródeł map online, w tym map satelitarnych, turystycznych i historycznych.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |

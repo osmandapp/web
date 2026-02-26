@@ -1,5 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title:  Widżety informacyjne
 ---
@@ -42,13 +42,13 @@ Na niektórych urządzeniach z systemem Android wysokość może być wyświetla
 
 <TabItem value="android" label="Android">
 
-![Widżet wysokości Android](@site/static/img/widgets/altitude_widget_andr.png)  
+![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widżet wysokości iOS](@site/static/img/widgets/altitude_widget_ios.png)  
+![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
 
 </TabItem>
 
@@ -65,21 +65,21 @@ Na niektórych urządzeniach z systemem Android wysokość może być wyświetla
 
 ### Wysokość: środek mapy {#elevation-map-center}
 
-:::info Funkcja płatna
-&nbsp;<ProFeature/> Aby uzyskać dostęp do widżetu *Wysokość: środek mapy*, zasubskrybuj OsmAnd Pro dla [Androida](../purchases/android.md#pro-features) lub [iOS](../purchases/ios.md#pro-features).  
+:::info Funkcja Pro
+Widżet *Wysokość: środek mapy* to płatna funkcja [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Widżet wysokości Android](@site/static/img/widgets/elevation_widget_andr.png)  
+![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Widżet wysokości iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
+![Elevation widget iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
 
 </TabItem>
 
@@ -417,13 +417,13 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -431,8 +431,12 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 
 **Widżet prędkościomierza** to graficzne przedstawienie aktualnej prędkości pojazdu na podstawie *danych otrzymanych z GPS*. Pozwala on w czasie rzeczywistym monitorować zgodność prędkości z dopuszczalnym limitem prędkości. Dopuszczalny limit prędkości jest dostarczany przez [dane OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) dla danego odcinka drogi oraz ustawienie [Tolerancja limitu prędkości](../navigation/guidance/voice-navigation.md#speed-limit) w OsmAnd.  
 
+Gdy Twoja aktualna prędkość zbliża się do skonfigurowanej tolerancji limitu prędkości, widżet zmienia swój wygląd, aby zapewnić wczesne ostrzeżenie. Gdy limit prędkości zostanie przekroczony (z uwzględnieniem tolerancji), widżet przełącza się na bardziej wyraźne wskazanie „przekroczenia”. Wskazanie ostrzeżenia/przekroczenia jest pokazywane przez zmianę kolorów widżetu (tło, wartość prędkości i jednostki). Zmiana wyglądu może być animowana, aby przyciągnąć uwagę podczas przekraczania progu tolerancji lub limitu.
+
+![Speedometer](@site/static/img/widgets/speed_alert.gif)
+
 - W *ustawieniach prędkościomierza* można wybrać rozmiar (**Wysokość**) widżetu na ekranie aplikacji jako *Mały*, *Średni* lub *Duży*.
-- Można określić, kiedy otrzymywać **Ostrzeżenie o przekroczeniu prędkości**, wybierając *Zawsze* lub *Po przekroczeniu*.
+- Można określić, kiedy otrzymywać **Ostrzeżenie o przekroczeniu prędkości**, wybierając *Zawsze* lub *Po przekroczeniu*. Jeśli ostrzeżenie o limicie prędkości jest ustawione na Zawsze, widżet może pokazywać zarówno wskazanie „zbliżanie się/tolerancja”, jak i „przekroczenie”. Jeśli ostrzeżenie o limicie prędkości jest ustawione na Po przekroczeniu, wskazanie jest pokazywane tylko po przekroczeniu limitu prędkości.
 
 <table class="blogimage">
     <tr>
@@ -782,7 +786,7 @@ Widżet **Dostępna pamięć RAM** to narzędzie do monitorowania zużycia pami�
 
 | | |
 |:------------|:------------|
-| Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="developer_widgets"/> → *Available RAM* |
+| Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="developer_widgets"/> → *Dostępna pamięć RAM* |
 | Poprzez dotknięcie | Bez zmian |
 | Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 

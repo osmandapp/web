@@ -1,5 +1,5 @@
 ---
-source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
+source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Przegląd {#overview}
+
+:::tip Zakup
+Android Auto to [płatna funkcja](../purchases/index.md).  
+:::
 
 ![Ekran Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -59,8 +63,8 @@ Po otwarciu aplikacji wyświetlana jest lista kategorii. W celu łatwej nawigacj
 - [Menu OsmAnd](#destination-points). Zawiera listę dostępnych opcji przypisania punktu końcowego trasy lub swobodnej jazdy.
 - [Ustawienia](#voice-prompts). Ten przycisk odpowiada za: 1. dostęp do włączania/wyłączania *komunikatów głosowych* podczas nawigacji po wybranej trasie; 2. wyświetlanie szczegółów trasy (czas i odległość) do następnego przystanku.
 - [Szukaj](#search). Dotknięcie przycisku otwiera ekran z dostępem do funkcji wyszukiwania.
-- [Moja lokalizacja](../widgets/map-buttons.md#my-location-and-zoom). Przesuwa widoczną część mapy tak, aby bieżąca lokalizacja znajdowała się na środku ekranu.
-- [Powiększenie](../widgets/map-buttons.md#my-location-and-zoom). Umożliwia powiększanie i pomniejszanie widocznej części mapy. Gest szczypnięcia jest dostępny do skalowania mapy. Jeśli nie jest obsługiwany przez jednostkę główną, regulacja powiększenia jest wykonywana gestem podwójnego dotknięcia i przesunięcia.
+- [Moja lokalizacja](../widgets/map-buttons.md#my-position-and-zoom). Przesuwa widoczną część mapy tak, aby bieżąca lokalizacja znajdowała się na środku ekranu.
+- [Powiększenie](../widgets/map-buttons.md#my-position-and-zoom). Umożliwia powiększanie i pomniejszanie widocznej części mapy. Gest szczypnięcia jest dostępny do skalowania mapy. Jeśli nie jest obsługiwany przez jednostkę główną, regulacja powiększenia jest wykonywana gestem podwójnego dotknięcia i przesunięcia.
 - [Kompas](../widgets/map-buttons.md#compass). Pokazuje, który z czterech dostępnych trybów orientacji mapy na ekranie urządzenia jest wybrany.
 
 
@@ -262,7 +266,7 @@ Ten widżet informacyjny łączy typy alertów, takie jak **Przejścia dla piesz
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-Widżet **Prędkościomierz** to zintegrowany element interfejsu, który wyświetla *bieżącą prędkość* na podstawie danych GPS i *ograniczenie prędkości* z [bazy danych OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) oraz [ustawień OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) na ekranie systemu multimedialnego pojazdu.
+Widżet **Prędkościomierz** to zintegrowany element interfejsu, który wyświetla *bieżącą prędkość* na podstawie danych GPS i *ograniczenie prędkości* z [bazy danych OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) oraz [ustawień OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) na ekranie systemu multimedialnego pojazdu. Gdy bieżąca prędkość zbliża się do skonfigurowanej tolerancji limitu prędkości lub przekracza limit prędkości, widżet zmienia swój wygląd (kolory), aby ostrzec. Zmiana wyglądu może być animowana.
 
 - **Widżet Prędkościomierz** jest [*zależny od profilu*](../personal/profiles.md), więc jeśli zmienisz ustawienia dla jednego profilu, nie zostaną one zastosowane do innego.
 - Nie ma możliwości dostosowania wyświetlania **widżetu Prędkościomierz** bezpośrednio w *Android Auto*, należy go skonfigurować w aplikacji OsmAnd przed rozpoczęciem nawigacji i podłączeniem urządzenia do pojazdu.

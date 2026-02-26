@@ -1,5 +1,5 @@
 ---
-source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
+source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
 sidebar_position: 5
 title:  Wygląd trasy
 ---
@@ -134,8 +134,8 @@ Przywraca wszystkie **ustawienia wyglądu trasy** do ich wartości domyślnych.
 
 ## Trasa 3D {#3d-track}
 
-:::info Paid feature
-**Trasa 3D** to płatna funkcja **OsmAnd Pro** dla [iOS](../../purchases/ios.md#pro-features) i [Androida](../../purchases/android.md#pro-features) <ProFeature />.
+:::tip Purchase
+Wizualizacja trasy 3D to [płatna funkcja](../../purchases/index.md).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

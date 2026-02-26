@@ -1,5 +1,5 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
 title:  Import / Eksport
 ---
@@ -33,7 +33,7 @@ Narzędzia **Import** i **Eksport** w OsmAnd pozwalają na zarządzanie danymi. 
 - **Moje miejsca:**  
         [Ulubione](../personal/favorites.md#export--import), &nbsp;[Trasy](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notatki OSM*, *Edycje OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notatki A/V](../plugins/audio-video-notes.md), &nbsp;[Znaczniki na mapie](../personal/markers.md), &nbsp;[Historia znaczników*, *Historia wyszukiwania*, *Historia nawigacji](../personal/global-settings.md#history), &nbsp;*Plan podróży*.
 - **Zasoby:**  
-        [Styl renderowania](../map/vector-maps.md#custom-map-style), &nbsp;[Wyznaczanie trasy](../navigation/routing/osmand-routing.md), &nbsp;[Silniki routingu online](../navigation/routing/online-routing.md), &nbsp;[Źródła map*, *Standardowe/Mapy offline](../map/raster-maps.md), &nbsp;[Mapy Wikipedii i Podróży](../plan-route/travel-guides.md), &nbsp;[Mapy morskie](../plugins/nautical-charts.md), &nbsp;[Mapy drogowe](../map/vector-maps.md#road-style), &nbsp;[Mapy topograficzne](../plugins/topography.md), &nbsp;[Komunikaty głosowe (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Komunikaty głosowe (nagrane)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Kopia zapasowa ulubionych](../personal/favorites.md#automatic-favorites-backup).
+        [Styl renderowania](../map/map-styles.md#custom-map-style), &nbsp;[Wyznaczanie trasy](../navigation/routing/osmand-routing.md), &nbsp;[Silniki routingu online](../navigation/routing/online-routing.md), &nbsp;[Źródła map*, *Standardowe/Mapy offline](../map/raster-maps.md), &nbsp;[Mapy Wikipedii i Podróży](../plan-route/travel-guides.md), &nbsp;[Mapy morskie](../plugins/nautical-charts.md), &nbsp;[Mapy drogowe](../map/vector-maps.md#road-style), &nbsp;[Mapy topograficzne](../plugins/topography.md), &nbsp;[Komunikaty głosowe (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Komunikaty głosowe (nagrane)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Kopia zapasowa ulubionych](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Eksport {#export}
@@ -44,7 +44,7 @@ Narzędzia **Import** i **Eksport** w OsmAnd pozwalają na zarządzanie danymi. 
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
+![Eksport akcji profili Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Kopia zapasowa lokalna Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
 </TabItem>
 
@@ -52,7 +52,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
+![Eksport akcji profili iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Eksport akcji profili iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ Wszystkie skonfigurowane i utworzone dane można wyeksportować za pomocą ***me
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
-![Profiles Actions Import Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Profiles Actions Import 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
+![Import akcji profili Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Import akcji profili 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
 
 <!-- ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
 
@@ -80,7 +80,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
 
-![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Profiles Actions Import 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
+![Import akcji profili iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Import akcji profili 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
 <!--  ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
 
 </TabItem>

@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Punkty na mapie
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Przegląd {#overview}
 
-Mapa może wyświetlać punkty takie jak [Ulubione](#favorites), [Użyteczne Miejsca (POI)](#points-of-interest-pois), [Znaczniki](#markers), [Wikipedia](#-wikipedia), [Wyniki wyszukiwania](#search-results-poi), [Notatki audio i wideo](#-audio--video-points-android) oraz [edycje OSM](#-osm-edit-points).
+Mapa może wyświetlać punkty takie jak [Ulubione](#favorites), [Użyteczne miejsca (POI)](#points-of-interest-pois), [Znaczniki](#markers), [Wikipedia](#-wikipedia), [Wyniki wyszukiwania](#search-results-poi), [Notatki audio i wideo](#-audio--video-points-android) oraz [Edycja OSM](#-osm-edit-points).
 
 
 ## Ulubione {#favorites}
@@ -72,7 +72,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,layer_
 Domyślnie Ulubione i użyteczne miejsca (POI) są wyświetlane bez nazw, aby nie zaśmiecać mapy tekstem. Możesz włączyć nazwy w menu Konfiguruj mapę.  
 
 
-## Użyteczne Miejsca (POI) {#points-of-interest-pois}
+## Użyteczne miejsca (POI) {#points-of-interest-pois}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -94,7 +94,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_ov
 
 </Tabs>
 
-[Użyteczne miejsca (POI)](https://wiki.openstreetmap.org/wiki/Points_of_interest) to określone lokalizacje oznaczone symbolem na mapie. Wskazują interesujące lub użyteczne miejsca i obiekty i są częścią [map wektorowych](../map/vector-maps.md).  
+[Użyteczne miejsca (POI)](https://wiki.openstreetmap.org/wiki/Points_of_interest) to określone lokalizacje oznaczone symbolem na mapie. Wskazują interesujące lub użyteczne miejsca i obiekty i są częścią [Map wektorowych](../map/vector-maps.md).  
 
 Najważniejsze POI są wyświetlane na mapie automatycznie. Można jednak wybrać określony typ POI (np. *Restauracje*), a wszystkie z nich zostaną podświetlone na mapie **pomarańczowym kółkiem** (począwszy od poziomu powiększenia 9).  
 
@@ -132,7 +132,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,config
 
 </Tabs>
 
-Każdy typ POI w OsmAnd ma przypisaną określoną ikonę i kolor. [Poziom powiększenia](../map/vector-maps.md#details) i wygląd POI mogą się różnić w niektórych [stylach mapy](../map/vector-maps.md#default-map-styles).  
+Każdy typ POI w OsmAnd ma przypisaną określoną ikonę i kolor. [Poziom powiększenia](../map/vector-maps.md#details) i wygląd POI mogą się różnić w niektórych [stylach mapy](../map/map-styles.md).  
 
 [Czytaj więcej](../map/vector-maps.md#hide).
 

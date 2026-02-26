@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
 sidebar_position: 2
 title: Ekran mapy podczas nawigacji
 ---
@@ -160,6 +160,10 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settin
 
 ## Wygląd linii trasy {#route-line-appearance}
 
+:::info Pro feature
+Dostosowanie linii trasy to płatna funkcja [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -185,16 +189,11 @@ Możesz wybrać wygląd linii trasy według stylu lub ręcznie wybrać kolor, sz
 **Zaawansowane**: ustawienie Dostosuj linię trasy pozwala dostosować wygląd linii trasy, aby wyświetlać zmiany wysokości, znaczne podjazdy lub zjazdy, lód na drodze, drogi nieutwardzone, autostrady i inne możliwe przeszkody. Możesz także wybrać lub utworzyć niestandardowe [schematy kolorów](../../personal/color-palette-schemes.md#tracks-routes), które zostaną zastosowane do linii trasy.
 
 
-:::note
- <ProFeature/> Niektóre parametry można używać tylko z subskrypcją <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro</a>.
-:::
-
-
 ### Kolor {#color}
 
 Ustawienie **Kolor** zmienia odcienie kolorów linii trasy. Ich ogólny kolor zmienia się w zależności od wybranego typu z kolekcji OsmAnd i zgodnie z **Legendą mapy**. Alternatywnie, ich kolor staje się dowolnym kolorem i przezroczystością ustawioną ręcznie.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Używane z domyślnymi kolorami. Pełny opis kolorów znajduje się w [Domyślne style mapy](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Używane z domyślnymi kolorami. Pełny opis kolorów znajduje się w [Domyślne style mapy](../../map/map-styles.md#default-map-styles).  
     ![styl mapy](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Niestandardowy***. Pozwala wybrać linię w dowolnym preferowanym kolorze i przezroczystości. Możesz wybrać różne ustawienia dla mapy dziennej i osobno dla mapy nocnej.  
@@ -215,7 +214,7 @@ Ustawienie **Kolor** zmienia odcienie kolorów linii trasy. Ich ogólny kolor zm
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Klasyfikacja manewrowości drogi lub szlaku dla pojazdów kołowych, zwłaszcza w odniesieniu do regularności i gładkości nawierzchni. Szczegółowy opis można znaleźć w artykule *Styl mapy OsmAnd - [Gładkość](../../map-legend/osmand.md#surface-smoothness)* w sekcji *Legenda mapy*.  
     ![Wysokość](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Koloruje linię trasy lub śladu zgodnie z *klasyfikacją dróg zimowych*. Szczegółowy opis można znaleźć w artykule *Mapy wektorowe*, sekcja [Drogi zimowe i lodowe](../../map/vector-maps.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Koloruje linię trasy lub śladu zgodnie z *klasyfikacją dróg zimowych*. Szczegółowy opis można znaleźć w artykule *Style map*, sekcja [Drogi zimowe i lodowe](../../map/map-styles.md#winter-and-ski).  
     ![Wysokość](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Kolorowanie linii trasy lub szlaku według składu nawierzchni. Zazwyczaj używane, gdy sieć drogowa jest w dużej mierze nieutwardzona. Szczegółowy opis można znaleźć w artykule *Styl mapy OsmAnd - [Twardość nawierzchni](../../map-legend/osmand.md#surface-smoothness)* w sekcji *Legenda mapy*.  
@@ -229,7 +228,7 @@ Ustawienie **Kolor** zmienia odcienie kolorów linii trasy. Ich ogólny kolor zm
 
 Możesz dostosować szerokość linii trasy, aby dopasować ją do drogi lub ścieżki wyświetlanej na mapie. W celu wyraźniejszej identyfikacji wizualnej można w razie potrzeby ręcznie zwiększyć lub zmniejszyć szerokość linii. Więcej szczegółów można znaleźć w artykule *Ślady i trasy — [Wygląd](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Jest używany z domyślną szerokością ustawioną przez OsmAnd. Pełny opis można znaleźć w artykule *Mapy wektorowe*, sekcja [Styl mapy](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Jest używany z domyślną szerokością ustawioną przez OsmAnd. Pełny opis można znaleźć w artykule *[Style map](../../map/map-styles.md)*.  
     ![styl mapy](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Szerokości Cienka, Średnia i Gruba***. Możesz wybrać szerokość linii, aby dopasować ją do szerokości drogi lub mocniej podkreślić linię trasy na mapie.  

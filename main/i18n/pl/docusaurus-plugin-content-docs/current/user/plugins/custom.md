@@ -1,6 +1,6 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
-sidebar_position: 4
+source-hash: f7e42a121aebcff7943e8adafef1fbff3cfc1eee0eb911687d5bdc3b4002fa7a
+sidebar_position: 5
 title:  Pakiet niestandardowy
 ---
 
@@ -36,7 +36,7 @@ Możesz modyfikować pliki `.json` za pomocą pliku *items.json* OsmAnd, który 
 Może być konieczne przeczytanie:
 
 - O [formacie `.json`](https://en.wikipedia.org/wiki/JSON).
-- O [edytorach tekstu](https://en.wikipedia.org/wiki/List_of_text_editors), za pomocą których można otwierać i edytować pliki w formacie JSON.
+- O [edytorach txt](https://en.wikipedia.org/wiki/List_of_text_editors), za pomocą których można otwierać i edytować pliki w formacie JSON.
 - O [edytorze Sublime Text](https://en.wikipedia.org/wiki/Sublime_Text), który jest używany w OsmAnd jako odniesienie.
 - Możesz sprawdzić swój kod w [JSON Editor Online](https://jsoneditoronline.org/).
 

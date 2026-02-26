@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  Konfiguruj mapę
 ---
@@ -27,7 +27,7 @@ Sekcja **Pokaż**:
 
 Sekcja **Topografia**:  
 
-![Konfiguruj mapę android](@site/static/img/map/configure_map_topography_andr.png)  
+![Konfiguruj mapę android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Sekcja **OpenStreetMap**:  
 
@@ -84,8 +84,9 @@ Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie
 ## Warstwy mapy {#map-layers}
 
 - [Warstwa mapy wektorowej](../map/vector-maps.md) - wyświetla wszystkie informacje z mapy wektorowej, w tym OpenStreetMap, linie konturowe i dane nautyczne.
-- [Źródła map rastrowych](../map/raster-maps.md#select-raster-maps) - pozwala na wybór podkładu / głównego źródła / nakładki mapy z poziomami przezroczystości.
+- [Źródła map rastrowych](../map/raster-maps.md#layers) - pozwala na wybór podkładu / głównego źródła / nakładki mapy z poziomami przezroczystości.
 - [Teren](../plugins/topography.md#hillshade-slope-and-altitude-layers) - wyświetla informacje o nachyleniu / cieniowaniu wzgórz, rzeźbę 3D.
+- [Budynki 3D](../map/vector-maps.md#3d-buildings) - wyświetla modele budynków objętościowych na mapie.
 - [Granice pobranych map](../map/vector-maps.md#show-borders) - wyświetla wszystkie granice pobranych map na głównej warstwie mapy.
 - [Siatka współrzędnych](../map/vector-maps.md#coordinates-grid) - kontroluje widoczność siatki współrzędnych na mapie.
 
@@ -107,8 +108,9 @@ Menu **<Translate android="true" ids="configure_map"/>** jest podzielone na dwie
 
 Ustawienia stylu mapy zależą od wyświetlanego głównego stylu mapy. Więcej na ten temat można przeczytać w artykule [Style map](../map/vector-maps).
 
-   - [Styl mapy](../map/vector-maps.md#default-map-styles) - obejmuje OsmAnd (Miasto), Topo, Nautyczny i inne.
+   - [Styl mapy](../map/vector-maps.md#map-styles) - obejmuje OsmAnd (Miasto), Topo, Nautyczny i inne.
    - [Tryb mapy](../map/vector-maps.md#map-mode) - pozwala wybrać widok mapy i nawigację w zależności od pory dnia.
+   - [Widok globu](../map/interact-with-map.md#globe-view) - przełącza mapę między standardowym widokiem płaskim a sferycznym widokiem Ziemi.
    - [Powiększenie mapy](../map/vector-maps.md#map-magnifier) - pozwala zmienić powiększenie mapy.
    - [Rozmiar tekstu](../map/vector-maps.md#text-size) - pozwala zwiększyć lub zmniejszyć rozmiar tekstu na mapie.
    - [Język mapy](../map/vector-maps.md#map-language) - pozwala wybrać preferowany język wyświetlany na mapie.

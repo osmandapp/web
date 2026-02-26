@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Wyszukiwanie
 title: Wyszukiwanie na stronie internetowej
@@ -65,13 +65,14 @@ Bez względu na to, którą opcję wyszukiwania użyjesz (Pasek wyszukiwania, Ka
 - **Nazwa i ikona** — pokazuje nazwę POI i jego ikonę.
 - **Odległość i kierunek** — pokazuje odległość i kierunek do POI.
 - **Lokalizacja** — wyświetla współrzędne POI.
+- **Godziny otwarcia** — pokazuje sparsowane godziny otwarcia z [danych OSM](https://wiki.openstreetmap.org/wiki/Key:opening_hours). Aktualny status jest wyświetlany dynamicznie w zależności od bieżącego czasu (na przykład, *Otwarte teraz*, *Zamknięte* lub *Otwiera się o 10:00*), a pełny harmonogram jest pokazany poniżej.
 - **Opis** — dostarcza dodatkowych informacji o POI, jeśli są dostępne (na przykład z Wikipedii).
 - **Zdjęcia online** — pokazuje zdjęcia Wikimedia związane z POI, jeśli są dostępne. Wybierz Pokaż wszystko, aby otworzyć Galerię zdjęć. Wybierz zdjęcie, aby otworzyć je w galerii (tryb Otwórz zdjęcie).
 - **Dane obiektu** — dodatkowe informacje o POI, w tym tagi OSM i inne szczegóły, takie jak kontakty, linki społecznościowe, linki do Wikipedii i Wikivoyage, opisy i inskrypcje (jeśli są dostępne).
 - **OSM ID** — identyfikator OpenStreetMap POI.
 - **Współrzędne** — wybierz współrzędne, aby je skopiować.
 
-![POI Context Menu](@site/static/img/web/poi_context_menu.png)
+![POI Context Menu](@site/static/img/web/poi_context_menu_new.png)
 
 ### Akcje POI {#poi-actions}
 

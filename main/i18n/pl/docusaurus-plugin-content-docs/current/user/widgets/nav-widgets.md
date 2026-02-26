@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Widżety nawigacyjne
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  Z tego widżetu można korzystać tylko z funkcją Pro <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">subskrybenci OsmAnd Pro</a>.
-
+:::info Funkcja Pro
+Widżet profilu wysokości to funkcja płatna [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 Widżet profilu wysokości pokazuje wykres z wysokością i nachyleniem trasy nawigacyjnej oraz bieżącą lokalizację na tym wykresie z aktualną wysokością i nachyleniem. Wykres jest wykreślany na dwóch osiach. Oś X to odległość trasy. Oś Y to wysokość, której wartość zależy od rzeźby terenu, a nachylenie jest wyświetlane w procentach.  
@@ -250,7 +248,7 @@ Widżet pokazuje *Czas przybycia* lub *Pozostały czas* do pierwszego punktu po�
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | Po dotknięciu | Przełącza między *Czasem przybycia* a *Pozostałym czasem* i odwrotnie. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +276,7 @@ Widżet wyświetla *Czas przybycia* lub *Pozostały czas* do ostatniego punktu d
 | | |
 |:------------|:------------|
 | Włącz |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
 | Po dotknięciu | Przełącza między *Czasem przybycia* a *Pozostałym czasem* i odwrotnie. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -453,7 +451,7 @@ W **Ustawieniach** widżetu możesz wybrać, aby zawsze wyświetlać **nazwę bi
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate ios="true" ids="map_widget_top_text"/>* |
 | Ustawienia | Wybierz, aby zawsze wyświetlać **nazwę bieżącej ulicy** lub wyświetlać **nazwę następnej ulicy** podczas zbliżania się do manewru |
 | Po dotknięciu | Otwiera menu kontekstowe z ustawieniami (przełącz Informacje o następnym zakręcie WŁĄCZONE/WYŁĄCZONE) i Usuń |
 

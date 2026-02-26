@@ -1,8 +1,9 @@
 ---
-source-hash: 4cb7c9084c7789ea96d9afde0dedc4fd456fd2ec20405b46d983a36f733ea01e
-sidebar_position: 8
+source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+sidebar_position: 9
 title:  Mapy online
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -24,25 +24,25 @@ Mapy online OsmAnd to obszerne rozszerzenie bazy danych OpenStreetMap już obecn
 Możliwość korzystania z map online jest automatycznie włączona w wersji OsmAnd na iOS. Aby wyświetlić mapy online na Androidzie, należy dokonać następujących ustawień:
 
 1. [Włącz](../plugins/index.md#enable--disable) wtyczkę **Mapy online** w *Menu główne → Wtyczki → Mapy online*.
-2. Dokonaj niezbędnych ustawień w sekcji [Źródło mapy](../map/raster-maps.md#select-raster-maps) w menu Konfiguruj mapę.
+2. Dokonaj niezbędnych ustawień w sekcji [Źródło mapy](../map/raster-maps.md#layers) w menu Konfiguruj mapę.
 3. Ustaw mapę *Źródło mapy*, *Nakładka* i *Podkład*. Wybierz preferowanego dostawcę map satelitarnych.
-4. W razie potrzeby pobierz wybraną [Mapę online](#how-to-prepare-raster-maps).
+4. Pobierz wybraną [Mapę online](#how-to-prepare-raster-maps), jeśli jest to potrzebne.
 
 
 ## Używanie map rastrowych na urządzeniu {#use-raster-maps-on-device}
 
 Szczegółowe informacje na temat wizualizacji i dostosowywania map rastrowych można znaleźć w artykule [Mapy rastrowe](../map/raster-maps.md). Jak używać:
 
-1. [Wybierz](../map/raster-maps.md#select-raster-maps) mapę rastrową jako warstwę *Główną*, *Podkład* lub *Nakładkę*.
-    - [Zmień](../map/raster-maps.md#how-to-use-raster-maps) parametry warstwy (przezroczystość).
+1. [Wybierz](../map/raster-maps.md#layers) mapę rastrową jako warstwę *Główną*, *Podkład* lub *Nakładkę*.
+    - [Zmień](../map/raster-maps.md#overlay) parametry warstwy (przezroczystość).
 
-2. [Przygotuj / skopiuj](../map/raster-maps.md#preparecopy-raster-maps-to-device) mapy rastrowe na urządzenie.
-    - [Dodaj nowe źródło mapy rastrowej online](../map/raster-maps.md#add-new-online-raster-map-source)
+2. [Przygotuj / skopiuj](../map/raster-maps.md#preparecopy-maps) mapy rastrowe na urządzenie.
+    - [Dodaj nowe źródło mapy rastrowej online](../map/raster-maps.md#add-new-online-source)
     - [Dodaj Magiczny URL](../map/raster-maps.md#magic-url-to-install-map-source), aby zainstalować źródło mapy.
 
-3. [Zarządzaj](../map/raster-maps.md#manage-raster-maps) mapami rastrowymi.
+3. [Zarządzaj](../map/raster-maps.md#manage-map-data) mapami rastrowymi.
     - [Pobierz / zaktualizuj kafelki](../map/raster-maps.md#download--update-tiles).
-    - [Zmień](../map/raster-maps.md#change-raster-map-parameters) parametry mapy rastrowej.
+    - [Zmień](../map/raster-maps.md#change-parameters) parametry mapy rastrowej.
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -101,4 +101,4 @@ Kafelki online mogą być pomocne, gdy potrzebujesz tylko niewielkiego fragmentu
   
     - Sprawdź, czy wtyczka Mapy online jest włączona: *Menu → Wtyczki → Mapy online*.  
     - Upewnij się, że masz aktywne połączenie z internetem, aby uzyskać dostęp do zdjęć satelitarnych.  
-    - Sprawdź, czy wybrana mapa online jest pobrana lub wymaga [dodatkowych ustawień](../map/raster-maps.md#select-raster-maps).
+    - Sprawdź, czy wybrana mapa online jest pobrana lub wymaga [dodatkowych ustawień](../map/raster-maps.md#layers).

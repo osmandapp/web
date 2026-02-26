@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Nawiguj po śladzie
 ---
@@ -70,7 +70,7 @@ Przed użyciem opcji *Nawigacja po śladzie*, musisz [wyświetlić ślad na mapi
 
 Nawigację po śladzie można rozpocząć za pomocą przycisku szybkiej akcji w [menu kontekstowym śladu](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (otwieranym przez wybranie jednego z [podświetlonych śladów](./route-navigation.md#history-of-previous-routes) na mapie lub przez dotknięcie pliku śladu w sekcji [Moje miejsca](../../personal/myplaces.md) w *Menu głównym*) lub z menu nawigacji, które jest otwierane przez dotknięcie:
 
-- [*Przycisk nawigacji*](../../widgets/map-buttons.md#directions) na ekranie mapy.  
+- [*Przycisk nawigacji*](../../widgets/map-buttons.md#navigation) na ekranie mapy.  
 - *Sekcja Nawigacja* w *Menu głównym* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - W [*Menu nawigacji*](./route-navigation.md#navigation-menu) przejdź do *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
@@ -209,7 +209,7 @@ W [menu Podążaj za śladem](#follow-track-options) możesz wybrać, czy chcesz
 
 ### Punkty trasy {#waypoints}
 
-Jeśli ślad ma punkty trasy, możesz użyć opcji [Pokaż na trasie](../guidance/map-during-navigation.md#show-points-along-the-route) i [Wskazówki głosowe](../guidance/voice-navigation.md#voice-settings), aby otrzymywać powiadomienia o Użytecznych Miejscach (POI). Możesz dodawać **Punkty trasy** do istniejącego śladu za pomocą [Menu kontekstowego](../../map/map-context-menu.md#-add--edit-track-waypoint), ślad musi być widoczny na mapie.
+Jeśli ślad ma punkty trasy, możesz użyć [Pokaż na trasie](../guidance/map-during-navigation.md#show-points-along-the-route) i [Wskazówki głosowe](../guidance/voice-navigation.md#voice-settings), aby otrzymywać powiadomienia o Punktach zainteresowania. Możesz dodawać **Punkty trasy** do istniejącego śladu za pomocą [Menu kontekstowego](../../map/map-context-menu.md#-add--edit-track-waypoint), ślad musi być widoczny na mapie.
 
 ### Punkty pośrednie {#intermediate-points}
 
