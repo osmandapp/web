@@ -1006,7 +1006,7 @@ export default function MainMenu({
                 open={true}
                 hideBackdrop
             >
-                <Toolbar sx={{ mb: '-3px' }} />
+                <Toolbar sx={{ mb: '-4px' }} />
                 {(showDeleteOutlet || showShareOutlet) && outlet}
                 {aloneVisibleTracks && <VisibleTracks />}
                 {!isOpenSubMenu() && (

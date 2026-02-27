@@ -1,5 +1,7 @@
-import React, { useMemo, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { Box, Collapse, Divider } from '@mui/material';
+import AppContext from '../../../../context/AppContext';
+import TransportStopRouteDetails from './TransportStopRouteDetails';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as BusIcon } from '../../../../assets/icons/ic_action_transport_bus.svg';
@@ -111,6 +113,7 @@ export const ROUTE_TYPES = {
 };
 
 export default function TransportStopsRoutes({ routes = [], wpt = null }) {
+    const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const [open, setOpen] = useState(true);
     const [selectedType, setSelectedType] = useState(null);
@@ -157,6 +160,7 @@ export default function TransportStopsRoutes({ routes = [], wpt = null }) {
                     })}
                 </Box>
             </Collapse>
+            {ctx.selectedTransportRoute && <TransportStopRouteDetails />}
         </Box>
     );
 }

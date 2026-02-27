@@ -1,5 +1,4 @@
 import {
-    AppBar,
     Box,
     Button,
     CircularProgress,
@@ -10,7 +9,6 @@ import {
     ListItemIcon,
     ListItemText,
     MenuItem,
-    Toolbar,
     Dialog,
     Typography,
 } from '@mui/material';
@@ -24,9 +22,7 @@ import AppContext, {
     OBJECT_TYPE_SHARE_FILE,
     OBJECT_TYPE_STOP,
 } from '../../../context/AppContext';
-import headerStyles from '../../../menu/trackfavmenu.module.css';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
-import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
@@ -745,19 +741,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     const Header = () => {
         return (
-            <AppBar position="static" className={headerStyles.appbar}>
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
-                        id={wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details'}
-                        variant="contained"
-                        type="button"
-                        className={styles.closeIcon}
-                        onClick={() => closeDetails()}
-                    >
-                        {wpt?.mapObj ? <CloseIcon /> : <BackIcon />}
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+            <HeaderWithUnderline
+                onClose={() => closeDetails()}
+                showBackButton={!wpt?.mapObj}
+                appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
+            />
         );
     };
 
@@ -903,7 +891,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 >
                     <Header />
                     {wpt !== null && (
-                        <ListItemText id={getId()}>
+                        <ListItemText id={getId()} sx={{ mt: 0 }}>
                             <Box id={'se-wpt-details'} className={styles.topContainer}>
                                 <div>
                                     <MenuItemWithLines maxLines={3} className={styles.name}>

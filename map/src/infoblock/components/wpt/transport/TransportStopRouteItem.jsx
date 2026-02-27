@@ -30,6 +30,10 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
                 ctx.setSelectedTransportRoute({
                     ...response.data,
                     color,
+                    ref: route.ref,
+                    name: route.name,
+                    type: route.type,
+                    typeName,
                 });
             }
         } catch (error) {
