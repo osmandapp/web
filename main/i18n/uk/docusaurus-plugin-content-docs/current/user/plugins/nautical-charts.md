@@ -1,7 +1,7 @@
 ---
-source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
-sidebar_position: 7
-title:  Морські карти
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
+title:  Перегляд морських карт
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,10 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Огляд {#overview}
 
-:::info Платна функція
-Плагін "Перегляд морських карт" є [платною функцією](../purchases/index.md) застосунку OsmAnd.
+:::tip Покупка
+Плагін "Перегляд морських карт" є [платною функцією](../purchases/index.md).  
 :::
 
 Перегляд морських карт — це детальне графічне зображення океанів, морів, прибережних районів та річок, яке допомагає орієнтуватися на воді та знати популярні маршрути, перешкоди на водному шляху, найближчі гавані, якірні стоянки та інші важливі орієнтири.  

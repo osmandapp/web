@@ -1,6 +1,6 @@
 ---
-source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
-sidebar_position: 9
+source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+sidebar_position: 10
 title:  Редагування OpenStreetMap
 ---
 
@@ -152,9 +152,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Плагін редагування OpenStreetMap дозволяє створювати на карті нові об'єкти, що називаються [цікавими місцями або POI](../map/point-layers-on-map.md#points-of-interest-pois). Ви можете нанести на карту новий магазин, улюблену пам'ятку, лавку або укриття, щоб люди могли їх знайти.  
 
-1. Торкніться карти, щоб розмістити новий POI, або торкніться ще не завантаженого POI.2. Торкніться [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-2. Виберіть [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) та додайте його назву та іншу інформацію, таку як години роботи, веб-сайт тощо. Коли ви вибираєте ще не завантажений POI, *Створити POI* змінюється на *Змінити POI*.
-3. Залежно від налаштування [Офлайн редагування](#settings), ви можете зберегти дані локально або [завантажити їх](../map/map-context-menu#-upload-poi--osm-note).
+1. Торкніться карти, щоб розмістити новий POI, або торкніться POI, яке ще не завантажено.
+2. Торкніться [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+3. Виберіть [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) та додайте його назву та іншу інформацію, таку як години роботи, веб-сайт тощо. Коли ви вибираєте ще не завантажений POI, *Створити POI* змінюється на *Змінити POI*.
+4. Залежно від налаштування [Офлайн редагування](#settings), ви можете зберегти дані локально або [завантажити їх](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### Додавання тегів {#add-tags}

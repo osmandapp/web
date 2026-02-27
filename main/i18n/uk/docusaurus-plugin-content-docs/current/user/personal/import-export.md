@@ -1,5 +1,5 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
 title:  Import / Export
 ---
@@ -24,16 +24,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Export / Import data {#export--import-data}
 
-*Імпорт* та *Експорт* дозволяють зберігати дані з генерованих **файлів** `.osf` або використовувати [онлайн-джерела](../map/raster-maps.md), що дає змогу відновити інформацію після перевстановлення.
+*Імпорт* та *Експорт* дозволяють зберігати дані з генерованих `.osf` **файлів** або використовувати [онлайн-джерела](../map/raster-maps.md), що дає змогу відновити інформацію після перевстановлення.
 
 **Типи даних**, доступні для імпорту/експорту:
 
 - **Налаштування:**  
         [Профілі](../personal/profiles.md#actions), &nbsp;[OsmAnd/Загальні налаштування](../personal/global-settings.md), &nbsp;[Кольори](../personal/color-palette-schemes.md), &nbsp;[Швидка дія](../widgets/quick-action.md), &nbsp;[Тип POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Уникати дорогу](../map/map-context-menu.md#avoid-road).
 - **Мої місця:**  
-        [Обране](../personal/favorites.md#export--import), &nbsp;[Треки](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Нотатки OSM*, *Редагування OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Аудіо/відео нотатки](../plugins/audio-video-notes.md), &nbsp;[Маркери на карті](../personal/markers.md), &nbsp;[Історія маркерів*, *Історія пошуку*, *Історія навігації](../personal/global-settings.md#history), &nbsp;*Ітінерер*.
+        [Обране](../personal/favorites.md#export--import), &nbsp;[Треки](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Нотатки OSM*, *Редагування OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V нотатки](../plugins/audio-video-notes.md), &nbsp;[Маркери на карті](../personal/markers.md), &nbsp;[Історія маркерів*, *Історія пошуку*, *Історія навігації](../personal/global-settings.md#history), &nbsp;*Ітінерер*.
 - **Ресурси:**  
-        [Стиль візуалізації](../map/vector-maps.md#custom-map-style), &nbsp;[Маршрутизація](../navigation/routing/osmand-routing.md), &nbsp;[Двигуни онлайн-маршрутизації](../navigation/routing/online-routing.md), &nbsp;[Джерела карт*, *Стандартні/Офлайн карти](../map/raster-maps.md), &nbsp;[Карти Вікіпедії та Подорожей](../plan-route/travel-guides.md), &nbsp;[Морські карти](../plugins/nautical-charts.md), &nbsp;[Дорожні карти](../map/vector-maps.md#road-style), &nbsp;[Топографічні карти](../plugins/topography.md), &nbsp;[Голосові підказки (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Голосові підказки (записані)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Резервне копіювання Обраного](../personal/favorites.md#automatic-favorites-backup).
+        [Стиль візуалізації](../map/map-styles.md#custom-map-style), &nbsp;[Маршрутизація](../navigation/routing/osmand-routing.md), &nbsp;[Двигуни онлайн-маршрутизації](../navigation/routing/online-routing.md), &nbsp;[Джерела карт*, *Стандартні/Офлайн карти](../map/raster-maps.md), &nbsp;[Карти Вікіпедії та Подорожей](../plan-route/travel-guides.md), &nbsp;[Морські карти](../plugins/nautical-charts.md), &nbsp;[Дорожні карти](../map/vector-maps.md#road-style), &nbsp;[Топографічні карти](../plugins/topography.md), &nbsp;[Голосові підказки (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Голосові підказки (записані)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Резервне копіювання Обраного](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Export {#export}

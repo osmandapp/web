@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title:  Віджети навігації
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-Віджети навігації вмикаються під час навігації для відображення такої інформації, як відстань, час прибуття або час, що залишився, наступні повороти, азимут, назва поточної вулиці, інформація про смугу руху, максимальна швидкість, сповіщення про наближення, POI та проміжні точки.
+Віджети навігації вмикаються під час навігації для відображення такої інформації, як відстань, час прибуття або час, що залишився, наступні повороти, азимут, назва поточної вулиці, інформація про смуги руху, максимальна швидкість, сповіщення про наближення, POI та проміжні точки.
 
 ![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
 
@@ -38,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
   - Доступні всі **віджети навігації**.  
 
 - **Основні переваги:**  
-  - Надає **покрокові інструкції**, **вказівки по смугах** та **орієнтовний час прибуття**.
+  - Надає **покрокові інструкції**, **вказівки по смугах** та **ETA**.  
   - Забезпечує точні та динамічні оновлення під час поїздки.  
 
 #### Пасивна навігація {#passive-navigation}
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  Цей віджет можна використовувати лише з функцією Pro для <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">передплатників OsmAnd Pro</a>.
-
+:::info Функція Pro
+Віджет «Висота» є платною функцією [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 Віджет "Висота" показує графік з висотою та нахилом вашого маршруту навігації та ваше поточне місцезнаходження на цьому графіку з поточною висотою та нахилом. Графік будується на двох осях. Вісь X - це відстань вашого маршруту. Вісь Y - це висота, значення якої залежить від рельєфу, а нахил відображається у відсотках.  
@@ -196,7 +194,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Додати віджет →<Translate android="true" ids="map_widget_route_information"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Додати віджет  →Route information* |
+| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Додати віджет  →Інформація про маршрут* |
 | При дотику | Натисніть кнопку зі стрілкою, щоб відкрити [панель Старт/Стоп навігації](../navigation/setup/route-navigation.md#start--stop-navigation) |
 | Довгий дотик | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 | Формат | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
@@ -250,7 +248,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | При дотику | Перемикає між *Часом прибуття* та *Часом у дорозі* і навпаки. |
 | Довгий дотик | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +276,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
 | При дотику | Перемикає між *Часом прибуття* та *Часом у дорозі* і навпаки. |
 | Довгий дотик | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -319,10 +317,10 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 | | |
 |:------------|:------------|
-| Увімкнути      | **Android:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*  |
-|      | **iOS:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*   |
-| При дотику  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lane**: No changes. |
-| Довгий дотик    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lanes**: No changes. |
+| Увімкнути      | **Android:** *Меню → Налаштувати екран →  Ліва / Права / Верхня / Нижня панель → Вказівки по маршруту → Додати віджет → Смуга, Наступний поворот, Другий наступний поворот*  |
+|      | **iOS:** *Меню → Налаштувати екран →  Ліва / Права / Верхня / Нижня панель → Вказівки по маршруту → Додати віджет → Смуга, Наступний поворот, Другий наступний поворот*   |
+| При дотику  | **Наступний поворот**: Якщо [голосові підказки](../navigation/guidance/voice-navigation.md) увімкнено, наступний маневр та відстань до нього оголошуються. <br/> **Смуга**: Без змін. |
+| Довгий дотик    | **Наступний поворот**: Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) <br/> **Смуги**: Без змін. |
 
 
 ### Смуги {#lanes}
@@ -452,7 +450,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Додати віджет → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Додати віджет → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Додати віджет → <Translate ios="true" ids="map_widget_top_text"/>* |
 | Налаштування | Виберіть, щоб завжди відображати **назву поточної вулиці** або відображати **назву наступної вулиці** при наближенні до маневру |
 | При дотику | Відкриває контекстне меню з Налаштуваннями (перемикання Інформації про наступний поворот УВІМК/ВИМК) та Видалити |
 
@@ -487,7 +485,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Почати навігацію → кнопка олівця* |
 | При дотику | Без змін |
 
 

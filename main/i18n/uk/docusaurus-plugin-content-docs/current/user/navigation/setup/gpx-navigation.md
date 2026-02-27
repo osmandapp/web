@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Навігація за треком
 ---
@@ -211,7 +211,7 @@ OsmAnd автоматично прив'язує маршрути до доріг
 
 ### Шляхові точки {#waypoints}
 
-Якщо трек має шляхові точки, ви можете використовувати [Показувати вздовж маршруту](../guidance/map-during-navigation.md#show-points-along-the-route) та [Голосові підказки](../guidance/voice-navigation.md#voice-settings), щоб отримувати сповіщення про цікаві місця. Ви можете додати **Шляхові точки** до існуючого треку через [Контекстне меню](../../map/map-context-menu.md#-add--edit-track-waypoint), трек має бути видимим на карті.
+Якщо трек має шляхові точки, ви можете використовувати [Показувати вздовж маршруту](../guidance/map-during-navigation.md#show-points-along-the-route) та [Голосові підказки](../guidance/voice-navigation.md#voice-settings), щоб отримувати сповіщення про точки інтересу. Ви можете додати **Шляхові точки** до існуючого треку через [Контекстне меню](../../map/map-context-menu.md#-add--edit-track-waypoint), трек має бути видимим на карті.
 
 ### Проміжні точки {#intermediate-points}
 

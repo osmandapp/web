@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title:  Кнопки на мапі
 ---
@@ -18,10 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-Кнопки на мапі, зокрема *Масштаб*, *Пошук*, *Маршрут*, *Компас*, *Моє місцезнаходження*, *3D-режим* та *Меню*, є основними елементами керування для взаємодії з мапою. Кожна кнопка пропонує певні функції для покращення вашого досвіду навігації та роботи з мапою.
+Кнопки на мапі, зокрема *Масштаб*, *Пошук*, *Навігація*, *Компас*, *Моє місцезнаходження*, *3D-режим* та *Меню*, є основними елементами керування для взаємодії з мапою. Кожна кнопка пропонує певні функції для покращення вашого досвіду навігації та роботи з мапою.
 
 
-## Моє місцезнаходження та Масштаб {#my-location-and-zoom}
+## Моє місцезнаходження та Масштаб {#my-position-and-zoom}
 
 ![Меню налаштування екрана](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -29,14 +29,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Моє місцезнаходження**. Показує, чи синхронізовано центр мапи з поточним географічним розташуванням вашого пристрою.
 - **Масштаб**. Дозволяє регулювати рівень масштабування мапи, щоб відобразити більше або менше деталей.
-Якщо ви хочете отримати більше інформації про використання цих кнопок, ви можете переглянути статтю [Взаємодія з мапою](../map/interact-with-map.md#my-location-and-zoom).
+Якщо ви хочете отримати більше інформації про використання цих кнопок, ви можете переглянути статтю [Взаємодія з мапою](../map/interact-with-map.md#my-position-and-zoom).
 
 
-## Маршрут {#directions}
+## Навігація {#navigation}
 
 ![Кнопка Маршрут дозволяє](@site/static/img/widgets/directions_button_allows.png)
 
-Кнопка **Маршрут** є важливою для планування маршруту та навігації:
+Кнопка **Навігація** є важливою для планування маршруту та навігації:
 
 - [Побудувати маршрут](../navigation/index.md). Використовуйте цю кнопку для створення маршруту.
 - [Почати навігацію](../navigation/index.md). Запустіть покрокову навігацію.
@@ -93,7 +93,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Кнопка компаса надає кілька дій для керування орієнтацією мапи:
 
-- **Один дотик**. *Один дотик* до [кнопки Компас](../widgets/map-buttons.md#compass) (розташованої у верхньому лівому куті екрана, коли вона [видима](../widgets/map-buttons.md#display-options)) миттєво переорієнтовує мапу *на Північ* у всіх режимах орієнтації мапи. Навіть якщо мапа знаходиться в режимі *Напрямок за компасом*, вона все одно на мить обертається, а потім повертається до динамічної орієнтації цього режиму.
+- **Один дотик**. *Один дотик* до [кнопки Компас](../widgets/map-buttons.md#compass) (розташованої у верхньому лівому куті екрана, коли вона [видима](../widgets/map-buttons.md#display-options)) миттєво переорієнтовує орієнтацію мапи *на Північ* у всіх режимах орієнтації мапи. Навіть якщо мапа знаходиться в режимі *Напрямок за компасом*, вона все одно на мить обертається, а потім повертається до динамічної орієнтації цього режиму.
 
 - **Подвійний дотик**. Щоб швидко перемикатися між режимами орієнтації мапи, наприклад, слідувати за напрямком GPS або обертатися разом з пристроєм, *двічі торкніться* [кнопки Компас](../widgets/map-buttons.md#compass) (коли вона [видима](../widgets/map-buttons.md#display-options)).
 
@@ -175,18 +175,41 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Зовнішній вигляд кнопок мапи {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Кнопки за замовчуванням | Користувацькі кнопки |
 | :--- | :--- |
 | ![Зовнішній вигляд кнопок мапи](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Зовнішній вигляд кнопок мапи](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Налаштування зовнішнього вигляду кнопок мапи доступні через наступні меню:
+**Перейти до** (для Користувацьких кнопок): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → меню з трьома крапками → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Перейти до** (для всіх Кнопок за замовчуванням): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → меню з трьома крапками → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Перейти до** (для конкретної Кнопки за замовчуванням): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → виберіть кнопку → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Меню → Налаштувати екран → Кнопки → Кнопки за замовчуванням*
-- *Меню → Налаштувати екран → Користувацькі кнопки → Швидка дія → меню з трьома крапками → Зовнішній вигляд*
+</TabItem>
 
-Налаштування зовнішнього вигляду кнопок дозволяє регулювати розмір, форму, іконку та прозорість фону як для [Швидкої дії (Користувацькі кнопки)](../widgets/quick-action.md#button-appearance), так і для [Кнопок за замовчуванням](../widgets/configure-screen.md#button-appearance). Ця гнучкість дозволяє персоналізувати інтерфейс відповідно до ваших уподобань та покращити зручність використання.
+<TabItem value="ios" label="iOS">  
+
+| Кнопки за замовчуванням | Користувацькі кнопки |
+| :--- | :--- |
+| ![Зовнішній вигляд кнопок мапи](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Зовнішній вигляд кнопок мапи](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Перейти до** (для Користувацьких кнопок): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → меню з трьома крапками → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Перейти до** (для конкретної Кнопки за замовчуванням): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → виберіть кнопку → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+Налаштування зовнішнього вигляду кнопок дозволяє регулювати розмір, форму, іконку та прозорість фону як для [Швидкої дії (Користувацькі кнопки)](../widgets/quick-action.md#button-appearance), так і для [Кнопок за замовчуванням](../widgets/configure-screen.md#button-appearance). На Android налаштування зовнішнього вигляду можна застосовувати до всіх Кнопок за замовчуванням або до конкретної Кнопки за замовчуванням, тоді як на iOS вони доступні лише для конкретних Кнопок за замовчуванням.
+
+Іконки кнопок можна встановити на:
+- **Динамічна** – іконка змінюється залежно від поточної дії або стану.
+- **Користувацька** – виберіть іконку з ваших доданих дій.
+- **Специфічна** – виберіть фіксовану іконку, яка завжди відображатиметься.
+
+Екран Зовнішнього вигляду включає попередній перегляд, що дозволяє побачити, як виглядатимуть ваші зміни на мапі перед виходом з налаштувань.
 
 
 ## Пов'язані статті {#related-articles}

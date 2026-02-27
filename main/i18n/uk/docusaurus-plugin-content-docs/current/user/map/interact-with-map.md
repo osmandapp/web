@@ -1,5 +1,5 @@
 ---
-source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
+source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
 sidebar_position: 2
 title:  Взаємодія з мапою
 ---
@@ -17,26 +17,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-У цій статті пояснюється, як налаштовувати мапу та взаємодіяти з нею за допомогою різних кнопок і жестів. Вона охоплює обертання, масштабування, регулювання кута огляду, а також зміну кута огляду мапи, її обертання вручну або автоматично за допомогою компаса чи за азимутом.
+У цій статті пояснюється, як налаштовувати та взаємодіяти з мапою за допомогою різних кнопок і жестів. Вона охоплює обертання, масштабування, регулювання кута огляду, зміну кута огляду мапи, обертання її вручну або автоматично за допомогою компаса чи за азимутом.
 
 
-## Жести {#gestures}
+## Переміщення мапи {#map-movement}
+
+### Жести {#gestures}
 
 Жести необхідні для легкої та інтуїтивно зрозумілої навігації по мапі.
 
-| Дія на мапі | Жест |
+| Дія на мапі  | Жест  |
 |:------------|:-------------|
-| **Переміщення** | Торкніться та утримуйте мапу **одним** пальцем, а потім перетягніть для переміщення. |
-| **Проведення** | Проведіть по мапі **одним** пальцем. |
+| **Переміщення**    | Торкніться та утримуйте мапу **одним** пальцем, а потім перетягніть для переміщення. |
+| **Проведення**   | Проведіть по мапі **одним** пальцем. |
 | **Збільшення** | Двічі торкніться мапи **одним** пальцем. <br/> Двічі торкніться **одним** пальцем і проведіть вниз. <br/> Розведіть **два** пальці, щоб збільшити масштаб. |
 | **Зменшення**| Двічі торкніться **двома** пальцями. <br/> Двічі торкніться **одним** пальцем і проведіть вгору. <br/> Зведіть **два** пальці, щоб зменшити масштаб. |
-| **Обертання** | Торкніться мапи **двома** пальцями, а потім обертайте їх по колу. |
+| **Обертання**  | Торкніться мапи **двома** пальцями, а потім обертайте їх по колу. |
 | **Нахил (3D)** | Торкніться **двома** пальцями та рухайте ними вгору або вниз. <br/> Доступно лише з [Рушієм візуалізації мапи](../personal/global-settings.md#map-rendering-engine) версії 2 (OpenGL). |
 
 Анімацію ковзання можна вимкнути в налаштуваннях за допомогою [спеціальної опції](#remove-animations).
 
-
-## Моє місцезнаходження та Масштаб {#my-location-and-zoom}
+### Моє місцезнаходження та Масштаб {#my-position-and-zoom}
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -62,102 +63,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### Вигляд "Моє місцезнаходження" {#my-location-appearance}
-
 Ви можете налаштувати іконки кнопки **Моє місцезнаходження** за допомогою налаштувань вигляду профілю. Детальніше про те, як це зробити, читайте [тут](../personal/profiles.md#profile-appearance).
 
 
-## Лупа мапи {#map-magnifier}
+## Взаємодія з мапою {#map-interaction}
 
-*Лупа мапи* — це інструмент, який покращує видимість мапи, подібно до збільшувального скла, що використовується з паперовими мапами. Вона дозволяє збільшувати мапу для чіткішого перегляду тексту та деталей або регулювати рівень деталізації, зберігаючи той самий масштаб. Для отримання додаткової інформації перейдіть до статті [Векторні мапи](../map/vector-maps.md#map-magnifier).
-
-
-## Режими орієнтації мапи {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Compass widget](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-*Режими орієнтації мапи* дозволяють вибрати, як мапа відображатиметься на екрані пристрою. OsmAnd пропонує такі режими, як **Обертання вручну**, **Напрямок руху**, **Напрямок за компасом** та **Північ вгорі**. Увімкнення кожного режиму змінює спосіб орієнтації мапи відповідно до обраної опції. Для отримання повної інформації дивіться статтю [Кнопки мапи](../widgets/map-buttons.md#compass).
-
-
-## Компас {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Compass widget](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Compass widget](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-Кнопка компаса показує, як [орієнтована мапа](#map-orientation-modes). *Червона стрілка* на іконках або напрямок стрілки в режимі *Напрямок руху* вказує на Північ. [Іконка на кнопці компаса](../widgets/map-buttons.md#compass) вказує на поточний режим орієнтації мапи. Віджет кнопки компаса пропонує три [варіанти взаємодії](../widgets/map-buttons.md#compass-tapping-behavior): *Один дотик* повертає мапу на Північ, *Подвійний дотик* перемикає між усіма режимами орієнтації мапи, а *Довгий дотик* відкриває список режимів.
-
-
-## Обертання мапи за азимутом {#rotate-map-by-bearing}
-
-У режимі **обертання мапи за азимутом** ([Напрямок руху](../widgets/map-buttons.md#compass)) мапа автоматично вирівнюється за напрямком вашого руху, тому область попереду вас відображається у верхній частині екрана. Цей режим покращує навігацію, трохи зміщуючи центр мапи вниз, показуючи більше маршруту попереду. Якщо ви стоїте на місці, мапа залишається нерухомою.  
-
-Ви можете активувати цю функцію через *Меню → Налаштування → Профілі → Загальні налаштування → Вигляд → Орієнтація мапи* або подвійним натисканням на [кнопку Компас](../widgets/map-buttons.md#compass-tapping-behavior). Детальніше про азимут дивіться [тут](../widgets/nav-widgets.md#bearing-widget).
-
-
-## Нахил мапи та горизонт {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Tilt android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Tilt android 2](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Tilt ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Tilt ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
-</TabItem>
-
-</Tabs>  
-
-З новим [рушієм візуалізації](../personal/global-settings.md#map-rendering-engine) мапи ви можете змінювати [нахил камери](../plugins/development.md#camera-tilt) від 90 (без нахилу) до 10 градусів. Приблизно при нахилі мапи менше 20-22 градусів (цей параметр залежить від рівня масштабування) стає видимою уявна лінія горизонту. На відміну від реального, горизонт у програмі завжди прямий.  
-
-Під горизонтом можна побачити так звану *імлу* або *туман*. Ця область мапи заповнена сірим кольором, і в ній можна розгледіти лише кілька деталей мапи.  
-Використання туману необхідне, оскільки відображення віддалених об'єктів на мапі вимагає значних обчислювальних ресурсів і не завжди виправдане через [спотворення](../plugins/development.md#comparison-with-a-satellite-imagery) мапи при малих кутах огляду. Тому видима відстань на мапі OsmAnd наразі обмежена 35 тайлами.  
-
-:::info
-Нахил мапи можна змінити довгим натисканням на екран двома пальцями та рухом ними вгору/вниз. Ви також можете змінити нахил, натиснувши на іконку [Моє місцезнаходження](#my-location-and-zoom) у нижньому правому куті екрана (доступні лише положення 45 та 90 градусів).  
-Ви не можете змінити нахил камери, коли увімкнено старий [рушій візуалізації мапи](../personal/global-settings.md#map-rendering-engine) (версія 1).
-:::
-
-
-## Блокування екрана {#touch-screen-lock}
+### Блокування екрана {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +98,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Чіткі повідомлення на екрані будуть направляти вас під час блокування або розблокування екрана.
 
+### Анімація власної позиції {#animate-own-position}
 
-## Налаштування {#settings}
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### Додаткові налаштування компаса {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Згладжує обертання мапи за допомогою повільнішої анімації обертання, хоча це вносить невелику затримку, не більше 1 секунди.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Згладжує обертання мапи за допомогою повільнішої анімації обертання, хоча це вносить невелику затримку, не більше 1 секунди.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+Створює ефект плавного панорамування мапи на відміну від іконки *[Моє місцезнаходження](../personal/profiles/#profile-appearance)* під час руху. Ефект вносить невелику затримку порівняно з реальним положенням приблизно на 1 секунду. Повідомлялося, що ввімкнення цієї опції за деяких обставин може спричинити помітні проблеми із затримкою; вимкніть її, якщо такі проблеми виникають.
 
 ### Видалення анімацій {#remove-animations}
 
@@ -206,12 +113,115 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Анімація власної позиції {#animate-own-position}
+## Орієнтація мапи {#map-orientation}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
+### Режими орієнтації мапи {#map-orientation-modes}
 
-Створює ефект плавного панорамування мапи на відміну від іконки *[Моя позиція](../personal/profiles/#profile-appearance)* під час руху. Ефект вносить невелику затримку порівняно з реальним положенням приблизно на 1 секунду. Повідомлялося, що ввімкнення цієї опції за деяких обставин може спричинити помітні проблеми із затримкою; вимкніть її, якщо такі проблеми виникають.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Compass widget](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+*Режими орієнтації мапи* дозволяють вибрати, як мапа відображатиметься на екрані пристрою. OsmAnd пропонує такі режими, як **Обертання вручну**, **Напрямок руху**, **Напрямок за компасом** та **Північ вгорі**. Увімкнення кожного режиму змінює спосіб орієнтації мапи відповідно до обраної опції. Для отримання повної інформації дивіться статтю [Кнопки мапи](../widgets/map-buttons.md#compass).
+
+### Обертання за компасом {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Compass widget](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Compass widget](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+Кнопка компаса показує, як [орієнтована мапа](#map-orientation-modes). *Червона стрілка* на іконках або напрямок стрілки в режимі *Напрямок руху* вказує на Північ. [Іконка на кнопці компаса](../widgets/map-buttons.md#compass) вказує на поточний режим орієнтації мапи. Віджет кнопки компаса пропонує три [варіанти взаємодії](../widgets/map-buttons.md#compass-tapping-behavior): *Один дотик* повертає мапу на Північ, *Подвійний дотик* перемикає між усіма режимами орієнтації мапи, а *Довгий дотик* відкриває список режимів.
+
+### Обертання мапи за азимутом {#rotate-map-by-bearing}
+
+У режимі **обертання мапи за азимутом** ([Напрямок руху](../widgets/map-buttons.md#compass)) мапа автоматично вирівнюється за напрямком вашого руху, тому область попереду вас відображається у верхній частині екрана. Цей режим покращує навігацію, трохи зміщуючи центр мапи вниз, показуючи більше маршруту попереду. Якщо ви стоїте на місці, мапа залишається нерухомою.  
+
+Ви можете активувати цю функцію через *Меню → Налаштування → Профілі → Загальні налаштування → Вигляд → Орієнтація мапи* або подвійним натисканням на [кнопку Компас](../widgets/map-buttons.md#compass-tapping-behavior). Детальніше про азимут дивіться [тут](../widgets/nav-widgets.md#bearing-widget).
+
+
+## Перспектива мапи {#map-perspective}
+
+### Нахил мапи та горизонт {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Tilt android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Tilt android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Tilt ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Tilt ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+З новим [рушієм візуалізації](../personal/global-settings.md#map-rendering-engine) мапи ви можете змінювати [нахил камери](../plugins/development.md#camera-tilt) від 90 (без нахилу) до 10 градусів. Приблизно при нахилі мапи менше 20-22 градусів (цей параметр залежить від рівня масштабування) стає видимою уявна лінія горизонту. На відміну від реального, горизонт у програмі завжди прямий.  
+
+Під горизонтом можна побачити так звану *імлу* або *туман*. Ця область мапи заповнена сірим кольором, і в ній можна розгледіти лише кілька деталей мапи.  
+Використання туману необхідне, оскільки відображення віддалених об'єктів на мапі вимагає значних обчислювальних ресурсів і не завжди виправдане через [спотворення](../plugins/development.md#comparison-with-a-satellite-imagery) мапи при малих кутах огляду. Тому видима відстань на мапі OsmAnd наразі обмежена 35 тайлами.  
+
+:::info
+Нахил мапи можна змінити довгим натисканням на екран двома пальцями та рухом ними вгору/вниз. Ви також можете змінити нахил, натиснувши на іконку [Моє місцезнаходження](#my-position-and-zoom) у нижньому правому куті екрана (доступні лише положення 45 та 90 градусів).  
+Ви не можете змінити нахил камери, коли увімкнено старий [рушій візуалізації мапи](../personal/global-settings.md#map-rendering-engine) (версія 1).
+:::
+
+
+### Лупа мапи {#map-magnifier}
+
+*Лупа мапи* — це інструмент, який покращує видимість мапи, подібно до збільшувального скла, що використовується з паперовими мапами. Вона дозволяє збільшувати мапу для чіткішого перегляду тексту та деталей або регулювати рівень деталізації, зберігаючи той самий масштаб. Для отримання додаткової інформації перейдіть до статті [Векторні мапи](../map/vector-maps.md#map-magnifier).
+
+### Вигляд глобуса {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
+
+**Вигляд глобуса** дозволяє відображати мапу як сферичну Землю замість пласкої проєкції. Цей режим змінює геометрію поверхні мапи та адаптує взаємодію з мапою до сферичної навігації.  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Глобальний вигляд*
+
+Вигляд глобуса наразі доступний лише за таких умов:
+- Увімкнено [плагін Розробка](../plugins/development.md).  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>* 
+- [Рушій візуалізації мапи](../personal/global-settings.md#map-rendering-engine) встановлено на Версію 2 (OpenGL).  
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+Коли увімкнено Вигляд глобуса, мапа обертається як глобус. Жести перетягування обертають Землю, а масштабування змінює відстань камери, а не масштабування пласкої поверхні. Елементи мапи, такі як треки, маркери, символи та 3D-об'єкти, відображаються безпосередньо на сферичній поверхні та слідують її кривизні. Об'єкти поступово зникають за горизонтом під час обертання глобуса.
+
+Взаємодія поблизу горизонту може бути обмежена, щоб запобігти ненавмисному переміщенню на великі відстані. Глобус не можна перевернути через полюси. На дуже низьких рівнях масштабування візуальний вигляд доріг і міток залишається послідовним під час обертання.
 
 
 ## Зовнішні пристрої введення {#external-input-devices}
@@ -259,7 +269,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Клавіша | Пристрій | Дія |
 |:---------|:---------------|:---------------|
-|**C**| *Клавіатура*   | Перемістити - [До мого місцезнаходження](#my-location-and-zoom) |
+|**C**| *Клавіатура*   | Перемістити - [До мого місцезнаходження](#my-position-and-zoom) |
 |**D**| *Клавіатура*   | Змінити - [Орієнтацію мапи](#map-orientation-modes) |
 |**N**| *Клавіатура*   | Показати / Сховати - Вигляд навігації |
 |**S**| *Клавіатура*   | Показати / Сховати - [Вигляд пошуку](../search/index.md) |
@@ -269,17 +279,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |**&#8595;**| *Клавіатура*   | Перемістити - Мапу вниз  |
 |**&#8592;**| *Клавіатура*   | Перемістити - Мапу вліво  |
 |**&#8594;**| *Клавіатура*   | Перемістити - Мапу вправо  |
-|**&#43;** **=**| *Клавіатура*  | Мапа - [Збільшити](#my-location-and-zoom) |
-|**&#8722;**| *Клавіатура*  | Мапа - [Зменшити](#my-location-and-zoom) |
+|**&#43;** **=**| *Клавіатура*  | Мапа - [Збільшити](#my-position-and-zoom) |
+|**&#8722;**| *Клавіатура*  | Мапа - [Зменшити](#my-position-and-zoom) |
 |**Press back**| *Клавіатура*   | Навігація – Попередній екран  |
-|**&#8595;**| *Wunderlinq*  | Мапа - [Зменшити](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Мапа - [Збільшити](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | Мапа - [Зменшити](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Мапа - [Збільшити](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | Відкрити WunderLINQ Datagrid |
 | **M** | *Клавіатура*  | Показати / Сховати - [Бічне меню](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick press** <br/> (*legacy Android*) | *Клавіатура*  | Перемістити - [До мого місцезнаходження](#my-location-and-zoom) |
+| **Joystick press** <br/> (*legacy Android*) | *Клавіатура*  | Перемістити - [До мого місцезнаходження](#my-position-and-zoom) |
 | **Media button** <br/> (*Android only*)| *Клавіатура*  | Показати / Сховати - [AV-нотатки](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*Android only*)| *Parrot*  | Мапа - [Зменшити](#my-location-and-zoom) |
-| **&#8594;** <br/> (*Android only*) | *Parrot*  | Мапа - [Збільшити](#my-location-and-zoom) |
+| **&#8592;** <br/> (*Android only*)| *Parrot*  | Мапа - [Зменшити](#my-position-and-zoom) |
+| **&#8594;** <br/> (*Android only*) | *Parrot*  | Мапа - [Збільшити](#my-position-and-zoom) |
 
 
 ### Власний тип пристрою введення {#custom-input-device-type}
