@@ -17,7 +17,7 @@ import VisibleTracks, { getCountVisibleTracks } from '../visibletracks/VisibleTr
 import { useTranslation } from 'react-i18next';
 import SmartFolder from '../components/SmartFolder';
 import LoginContext from '../../context/LoginContext';
-import { SHARE_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
 import TrackGroupFolder from './TrackGroupFolder';
 import { MAIN_URL_WITH_SLASH, MENU_IDS, VISIBLE_TRACKS_URL } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -65,12 +65,15 @@ export default function TracksMenu() {
             } else {
                 setDefaultGroup(defaultGroupWithFolders);
             }
+
+            const allGroups = defaultGroupWithFolders.subfolders || [];
+
             doSort({
                 method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
                 setSortFiles,
                 setSortGroups,
                 files: defGroup ? defGroup.groupFiles : [],
-                groups: defaultGroupWithFolders.subfolders,
+                groups: allGroups,
             });
         } else {
             setDefaultGroup(defaultGroupWithFolders);
@@ -158,10 +161,10 @@ export default function TracksMenu() {
                                 </ListItemText>
                             </MenuItem>
                             {!isEmpty(ctx.shareWithMeFiles?.tracks) && (
-                                <SmartFolder type={'share'} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
+                                <SmartFolder type={SHARE_TYPE} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
                             {ctx.tracksGroups &&
-                                (sortGroups && sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
+                                (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)
                                     .map((group, index) => {
                                         return <CloudTrackGroup key={group.name} index={index} group={group} />;

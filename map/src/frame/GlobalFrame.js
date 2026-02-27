@@ -35,6 +35,7 @@ import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
+import { SMART_TYPE } from '../menu/share/shareConstants';
 
 const ENCODED_COMMA = '%2C';
 const ENCODED_COLON = '%3A';
@@ -365,9 +366,11 @@ const GlobalFrame = () => {
         if (!isEmpty(ctx.listFiles)) {
             const files = getGpxFiles(ctx.listFiles);
             const trackGroups = createTrackGroups({ files, ctx });
-            ctx.setTracksGroups(trackGroups);
+            const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+            ctx.setTracksGroups([...trackGroups, ...smartFolders]);
         } else {
-            ctx.setTracksGroups([]);
+            const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+            ctx.setTracksGroups(smartFolders);
         }
     }, [ctx.listFiles, ctx.selectedSort]);
 

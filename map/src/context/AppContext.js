@@ -32,6 +32,7 @@ import {
     SEARCH_RESULTS_KEY,
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
+import { SMART_TYPE } from '../menu/share/shareConstants';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -95,6 +96,7 @@ async function loadListFiles(
     setProcessingGroups,
     setVisibleTracks,
     setShareWithMeFiles,
+    setTracksGroups,
     setUpdateFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
@@ -111,8 +113,8 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
-                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
+                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles, setTracksGroups);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -127,7 +129,52 @@ async function loadListFiles(
     }
 }
 
-export function getFilesForUpdateDetails(files, setUpdateFiles) {
+export async function loadSmartFolders(setTracksGroups, listFiles) {
+    const res = await getSmartFolders();
+    const smartFolderGroups = (res ?? []).map((smartFolder) => {
+        const filesArray = [];
+        let minMs = Infinity;
+        let minData = null;
+
+        (smartFolder.userFilePaths ?? []).forEach((path) => {
+            const file = listFiles?.find((f) => f.name === path);
+            if (file) {
+                filesArray.push({ ...file, smartFolder: true });
+                if (file.updatetimems < minMs) {
+                    minMs = file.updatetimems;
+                    minData = file.updatetime;
+                }
+            }
+        });
+
+        return {
+            name: smartFolder.name,
+            fullName: smartFolder.name,
+            type: SMART_TYPE,
+            subfolders: [],
+            groupFiles: filesArray,
+            files: filesArray,
+            realSize: filesArray.length,
+            lastModifiedMs: minMs !== Infinity ? minMs : null,
+            lastModifiedData: minData,
+        };
+    });
+
+    setTracksGroups((prev) => {
+        const withoutSmartFolders = prev.filter((g) => g.type !== SMART_TYPE);
+        return [...withoutSmartFolders, ...smartFolderGroups];
+    });
+}
+
+async function getSmartFolders() {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
+    if (res.ok) {
+        return await res.json();
+    }
+    return null;
+}
+
+export async function getFilesForUpdateDetails(files, setUpdateFiles, setTracksGroups) {
     const filesToUpdate = files
         .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
         .map((f) => ({
@@ -138,6 +185,8 @@ export function getFilesForUpdateDetails(files, setUpdateFiles) {
         }));
     if (filesToUpdate.length > 0) {
         setUpdateFiles(filesToUpdate);
+    } else {
+        await loadSmartFolders(setTracksGroups, files);
     }
 }
 
@@ -659,9 +708,11 @@ export const AppContextProvider = (props) => {
             }
         };
 
-        update().then(() => {
+        (async () => {
+            await update();
             setUpdateFiles(null);
-        });
+            await loadSmartFolders(setTracksGroups, listFiles.uniqueFiles);
+        })();
     }, [updateFiles]);
 
     useEffect(() => {
@@ -678,6 +729,7 @@ export const AppContextProvider = (props) => {
                 setProcessingGroups,
                 setVisibleTracks,
                 setShareWithMeFiles,
+                setTracksGroups,
                 setUpdateFiles
             ).then(() => {
                 setGpxLoading(false);

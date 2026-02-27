@@ -2,6 +2,7 @@ import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material'
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
+import { ReactComponent as SmartIcon } from '../../assets/icons/ic_action_folder_smart.svg';
 import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
@@ -10,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { fmt } from '../../util/dateFmt';
+import { SMART_TYPE } from '../share/shareConstants';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -25,25 +27,39 @@ export default function CloudTrackGroup({ index, group }) {
         }
     }, [ctx.openedPopper]);
 
+    const getFolderIcon = () => {
+        if (group.type === SMART_TYPE) {
+            return <SmartIcon />;
+        }
+        return <FolderIcon />;
+    };
+
+    const handleClick = (e) => {
+        if (e.target !== 'path') {
+            ctx.setOpenGroups((prevState) => [...prevState, group]);
+        }
+    };
+
+    const getInfoText = () => {
+        if (group.type === SMART_TYPE) {
+            return `${group.realSize} ${t('shared_string_gpx_files').toLowerCase()}`;
+        }
+        return `${fmt.monthShortDay(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
+    };
+
     return (
         <>
             <MenuItem
                 className={styles.group}
                 key={'group' + group.name + index}
                 id={'se-menu-cloud-' + group.name}
-                onClick={(e) => {
-                    if (e.target !== 'path') {
-                        ctx.setOpenGroups((prevState) => [...prevState, group]);
-                    }
-                }}
+                onClick={handleClick}
             >
-                <ListItemIcon className={styles.icon}>
-                    <FolderIcon />
-                </ListItemIcon>
+                <ListItemIcon className={styles.icon}>{getFolderIcon()}</ListItemIcon>
                 <ListItemText>
                     <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${fmt.monthShortDay(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
+                        {getInfoText()}
                     </Typography>
                 </ListItemText>
                 <ThreeDotsButton
