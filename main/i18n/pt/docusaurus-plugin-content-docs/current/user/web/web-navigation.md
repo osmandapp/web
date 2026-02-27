@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -27,6 +27,8 @@ Use **Navegação na Web** para construir uma rota no mapa e visualizar a orient
 No estado vazio, a Navegação o convida a adicionar pontos de rota: *Clique no mapa para definir os pontos de Início e Destino*.
 
 Os pontos de rota podem ser fornecidos a partir do painel de Rota. Quando você seleciona **Definir ponto de início** ou **Definir destino**, o campo mostra sugestões como *Localização atual* e pontos usados anteriormente do histórico. Você pode remover as sugestões salvas usando *Limpar histórico*.
+
+Você também pode inserir coordenadas diretamente nos campos de pontos de rota usando o formato latitude, longitude (por exemplo, 48.23737, 24.40830). Outros formatos de coordenadas ou links compartilhados podem não ser sempre reconhecidos. Se uma localização não for analisada corretamente, tente convertê-la para lat,lon ou encontre o lugar usando a pesquisa.
 
 A Navegação segue um fluxo simples: o primeiro ponto se torna o Início, e o próximo ponto se torna o Destino. Assim que ambos os pontos são definidos, a rota é calculada e exibida no mapa.
 
@@ -116,13 +118,15 @@ Qual é a diferença:
 - Dados completos da trilha podem incluir informações de rota/navegação além da geometria da trilha (útil se você quiser manter instruções de navegação ou reeditar a rota no OsmAnd).
 - Trilha simplificada exporta um GPX mais limpo destinado a outros aplicativos, removendo dados de rota/navegação e deixando apenas o formato da trilha. Waypoints são preservados ao exportar uma trilha simplificada.
 
-Você pode salvar a rota como uma trilha usando *Salvar na Nuvem / Carregar para OsmAnd Cloud*. Isso abre uma caixa de diálogo onde você pode confirmar a salvação em trilhas na nuvem, editar o Nome, opcionalmente escolher uma Pasta, então Salvar ou Cancelar.
+Você pode salvar a rota como uma trilha usando *Salvar na Nuvem / Carregar para OsmAnd Cloud*. Isso abre uma caixa de diálogo onde você pode confirmar a salvação em trilhas na nuvem, editar o Nome, opcionalmente escolher uma Pasta, então Salvar ou Cancelar. Se você não estiver conectado, *Salvar na Nuvem / Carregar para OsmAnd Cloud* abre a página de Preços.
 
 ![Navegação na Web](@site/static/img/web/download_options.png)
 
 ### Compartilhar uma Rota {#share-a-route}
 
 Para compartilhar a rota, copie a URL. Exemplo: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+Ao abrir um link compartilhado, a rota é restaurada no mapa. Se necessário, você pode alterar o [perfil de roteamento](#routing-profile) manualmente no painel de Rota.
 
 
 ## Artigos Relacionados {#related-articles}

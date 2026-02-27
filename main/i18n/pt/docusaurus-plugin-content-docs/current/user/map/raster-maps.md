@@ -1,6 +1,6 @@
 ---
-source-hash: 920207bbfa1108e21a6ec98acd47b4e83730bee1cdc303a464524ab28654175f
-sidebar_position: 6
+source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+sidebar_position: 7
 title: Mapas Raster (Online / Offline)
 ---
 
@@ -14,11 +14,29 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 ## Visão geral {#overview}
 
 Os mapas raster são adições significativas e úteis aos mapas vetoriais do OsmAnd. Eles permitem combinar várias fontes de mapa com mapas vetoriais. Por exemplo, informações sobre colinas e encostas são exibidas como uma camada raster. Você pode exibir uma sobreposição de trilhas de caminhada, mapas de chuva, dados de tráfego em tempo real e uma sobreposição de imagens de satélite em um mapa vetorial base translúcido. Você também pode alternar os mapas padrão para blocos raster na web.
+
+Os mapas raster no OsmAnd são tipicamente entregues como um conjunto de pequenas imagens (blocos) organizadas em uma grade. Ao contrário dos mapas vetoriais, que armazenam objetos como estradas, pontos e polígonos como dados, os blocos raster são imagens pré-renderizadas e podem parecer pixelizados em altos níveis de zoom porque cada pixel tem um valor fixo.
+
+**Vantagens:**
+- Como os mapas raster são pré-renderizados, eles carregam mais rapidamente, eliminando a necessidade de o dispositivo processar e renderizar dados em tempo real.
+- Os mapas raster podem ser carregados dinamicamente durante a navegação.
+- Você pode criar um cache offline e baixar apenas os blocos ausentes conforme necessário.
+- Você pode usar um número ilimitado de fontes web externas para mapas raster, tornando-o flexível para diferentes tipos de mapas, como visualizações de satélite ou mapas especializados.
+- Dados raster, como informações de tráfego, podem ser atualizados regularmente após a expiração (por exemplo, a cada 20-30 minutos, dependendo da configuração).
+
+**Desvantagens:**
+- Os mapas raster ocupam significativamente mais espaço do que os mapas vetoriais. Por exemplo, um mapa de cidade pode ter 15 MB como mapa vetorial, mas aumentar para 50 MB no nível de zoom 15, 200 MB no nível de zoom 16 e até 800 MB no nível de zoom 17.
+- Você não pode tocar em locais ou objetos específicos em mapas raster para obter mais informações.
+- Os mapas raster não podem ser estilizados ou modificados para excluir objetos específicos.
+- O zoom excessivo pode fazer com que a imagem pareça pixelizada, especialmente se blocos de alta resolução não estiverem disponíveis.
+- Não é possível girar o mapa sem girar o texto, o que pode dificultar a leitura dos rótulos.
 
 
 ## Casos de uso {#use-cases}
@@ -36,56 +54,33 @@ Os mapas raster têm uma ampla gama de usos. Aqui estão alguns dos mais popular
 ![Visão geral de mapas online](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
 :::tip
-Você também pode alterar a fonte principal dos mapas de mapas vetoriais para blocos online.
+Você também pode alterar [a fonte principal](#main) dos mapas de mapas vetoriais para blocos online.
 :::
 
 
-## Mapas Raster {#raster-maps}
-
-Os mapas online no OsmAnd são compostos por dados raster, que consistem em pixels (também chamados de células de grade) - essencialmente um conjunto de pequenas imagens conhecidas como blocos. Ao contrário dos mapas vetoriais, que representam dados como estradas, pontos e polígonos usando informações binárias, os blocos de mapas raster são organizados em uma grade e podem parecer pixelizados em altos níveis de zoom porque cada pixel tem um valor ou classe fixa.
-
-### Comparação com mapas vetoriais padrão {#comparison-to-default-vector-maps}
-
-**Vantagens:**
-
-- Como os mapas raster são pré-renderizados, eles carregam mais rapidamente, eliminando a necessidade de o dispositivo processar e renderizar dados em tempo real.
-- Os mapas raster podem ser carregados dinamicamente durante a navegação.
-- Você pode criar um cache offline e baixar apenas os blocos ausentes conforme necessário.
-- Você pode usar um número ilimitado de fontes web externas para mapas raster, tornando-o flexível para diferentes tipos de mapas, como visualizações de satélite ou mapas especializados.
-- Dados raster, como informações de tráfego, podem ser atualizados regularmente após a expiração (por exemplo, a cada 20-30 minutos, dependendo da configuração).
-
-**Desvantagens:**
-
-- Os mapas raster ocupam significativamente mais espaço do que os mapas vetoriais. Por exemplo, um mapa de cidade pode ter 15 MB como mapa vetorial, mas aumentar para 50 MB no nível de zoom 15, 200 MB no nível de zoom 16 e até 800 MB no nível de zoom 17.
-- Você não pode tocar em locais ou objetos específicos em mapas raster para obter mais informações.
-- Os mapas raster não podem ser estilizados ou modificados para excluir objetos específicos.
-- O zoom excessivo pode fazer com que a imagem pareça pixelizada, especialmente se não houver blocos de alta resolução disponíveis.
-- Não é possível girar o mapa sem girar o texto, o que pode dificultar a leitura dos rótulos.
-
-
-## Como usar mapas raster {#how-to-use-raster-maps}
+## Primeiros passos {#getting-started}
 
 **Ativar plugin**.
 
 - **iOS**. Para *iOS*, este recurso funciona por padrão.
 - **Android**. Para *Android*, para usar mapas raster no OsmAnd, você precisa ativar o [plugin de mapas online](../plugins/online-map.md). Siga estes passos: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**Alterar parâmetros da camada**. Para melhorar a visibilidade e a mistura das camadas do mapa raster, você pode ajustar a transparência da camada usando o controle deslizante da tela. Além disso, você pode modificar o estilo do mapa vetorial ocultando polígonos, tornando as camadas de base mais visíveis. Isso é especialmente útil ao visualizar imagens de satélite.
+**[Alterar parâmetros da camada](#layers)**. Para melhorar a visibilidade e a mistura das camadas do mapa raster, você pode ajustar a transparência da camada usando o controle deslizante da tela. Além disso, você pode modificar o estilo do mapa vetorial ocultando polígonos, tornando as camadas de base mais visíveis. Isso é especialmente útil ao visualizar imagens de satélite.
 
 
-## Selecionar mapas raster {#select-raster-maps}
+## Camadas {#layers}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Mostrar mapas](@site/static/img/plugins/online-maps/show-maps-andr.png)  
+![Mostrar mapas](@site/static/img/plugins/online-maps/show-maps-andr_new.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Mostrar mapas](@site/static/img/plugins/online-maps/show-maps-ios.png)  
+![Mostrar mapas](@site/static/img/plugins/online-maps/show-maps-ios_new.png)  
 
 </TabItem>
 
@@ -93,10 +88,15 @@ Os mapas online no OsmAnd são compostos por dados raster, que consistem em pixe
 
 No OsmAnd, os mapas raster podem servir como uma fonte de mapa adicional ao lado dos mapas vetoriais padrão, que são otimizados para uso offline.  
 
-Você tem a flexibilidade de adicionar uma ou duas camadas de blocos online para complementar seu mapa base. Isso permite que você visualize até três camadas de mapa simultaneamente em sua tela. Por exemplo, você pode ter o mapa vetorial offline do OsmAnd como base, sobrepô-lo com uma vista de satélite e colocar um mapa de ciclovias como base para detalhes adicionais.  
+Você tem a flexibilidade de adicionar uma ou duas camadas de blocos online para complementar seu mapa base. Isso permite que você visualize até três camadas de mapa simultaneamente em sua tela (mais Terreno). Pense nelas como um bolo: [**Base**](#underlay) (base raster abaixo), [**Principal**](#main) (vetorial* ou raster central), [**Sobreposição**](#overlay) (raster acima), com [**Terreno**](#terrain) sombreando tudo. Por exemplo, você pode ter o mapa vetorial offline do OsmAnd como base Principal, sobrepô-lo com uma vista de satélite e colocar um mapa de ciclovias como Base para detalhes adicionais.
+
+>[Mapas vetoriais](./vector-maps.md) estão disponíveis **apenas** na camada [Principal](#main) (e são o padrão lá). Mapas raster podem ser usados em todas as três camadas: Principal, Base e Sobreposição.
+
+
+
+Se você quiser alternar essas camadas mais rapidamente ([fonte do mapa principal](#main), [Sobreposição](#overlay), [Base](#underlay) e [Terreno](#terrain)), você pode adicionar uma [Ação Rápida (botão personalizado)](../widgets/quick-action.md) à tela do mapa e atribuir as ações de mapa correspondentes a ela.
 
 Você também pode ajustar a transparência do mapa base para misturá-lo com suas camadas. Se necessário, você pode ativar um controle deslizante de transparência na tela principal para ajustes rápidos.
-
 
 ### Principal {#main}
 
@@ -104,26 +104,25 @@ Você também pode ajustar a transparência do mapa base para misturá-lo com su
 
 <TabItem value="android" label="Android">  
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map"/>*  
+Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,gpx_add_track"/>*  
 
-![Mostrar mapas](@site/static/img/plugins/online-maps/map_source.png)
+![Mostrar mapas](@site/static/img/plugins/online-maps/map_source_1.png) ![Mostrar mapas](@site/static/img/plugins/online-maps/map_source_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps"/>*  
+Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps,map_settings_install_more"/>*  
 
-![Mostrar mapas](@site/static/img/plugins/online-maps/map_type.png)
+![Mostrar mapas](@site/static/img/plugins/online-maps/map_type_new.png)
 
 </TabItem>
 
 </Tabs>
 
-Você pode escolher um estilo de mapa da lista ou [adicionar](#add-new-online-raster-map-source) o seu próprio.
+Por padrão, o mapa principal está definido para [Mapas vetoriais offline](./vector-maps.md) (mapas OsmAnd), otimizados para uso offline. Você pode escolher uma fonte de mapa diferente da lista (_Adicionar mais_(Android) ou _Instalar mais_ (iOS)) ou [adicionar](#add-new-online-source) a sua própria.
 
-
-### Camada de sobreposição {#overlay-layer}
+### Sobreposição {#overlay}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -145,16 +144,15 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 </Tabs>
 
-1. *Ligar/desligar* o mapa de base.
-2. *Transparência da sobreposição* (*Android*)/ *Transparência* do mapa de sobreposição (*iOS*).
+1. *Ligar/desligar* a camada de mapa de Sobreposição.
+2. *Transparência da sobreposição* (*Android*)/ *Transparência* do mapa de Sobreposição (*iOS*).
 3. *Mostrar controle deslizante de transparência* (*Android*) / *Mostrar controle deslizante no mapa* (*iOS*). Acesso rápido à configuração de transparência.
-4. *Fonte do mapa de sobreposição* (*Android*) / *Camadas disponíveis* (*iOS*). Você pode escolher um mapa de blocos para instalar ou atualizar.
+4. *Fonte do mapa de sobreposição* (*Android*) / *Camadas disponíveis* (*iOS*). Selecione um mapa de blocos online da lista para adicioná-lo diretamente como sua camada de Sobreposição.
 5. *Mostrar símbolos do mapa* - como texto, sinais de trânsito e outros.  
-6. *Adicionar fonte online* (*iOS*).
+6. *Adicionar fonte online* (*iOS*). [Adicionar nova fonte online](#add-new-online-source).
 7. *Importar de documentos* (*iOS*).
 
-
-### Camada de base {#underlay-layer}
+### Base {#underlay}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -176,22 +174,43 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 </Tabs>
 
-1. *Ligar/desligar* o mapa de base.
+1. *Ligar/desligar* o mapa de Base.
 2. *Transparência do mapa base*.
 3. *Mostrar controle deslizante de transparência* (*Android*) / *Mostrar controle deslizante no mapa* (*iOS*). Acesso rápido à configuração de transparência.
-4. *Fonte do mapa de base* (*Android*) / *Camadas disponíveis* (*iOS*). Você pode escolher um mapa de blocos para instalar ou atualizar.
+4. *Fonte do mapa de base* (*Android*) / *Camadas disponíveis* (*iOS*). Selecione um mapa de blocos online da lista para adicioná-lo diretamente como sua camada de Base.
 5. *Mostrar/Ocultar polígonos*.
-6. *Adicionar fonte online* (*iOS*).
+6. *Adicionar fonte online* (*iOS*). [Adicionar nova fonte online](#add-new-online-source).
 7. *Importar de documentos* (*iOS*).
 
+### Terreno {#terrain}
 
+![Camadas de terreno](@site/static/img/plugins/online-maps/terrain_two_layers.png)
+
+No contexto de mapas raster, [Terreno](../plugins/topography.md#terrain) refere-se a uma camada de sombreamento de relevo que ajuda a visualizar a forma da paisagem em um mapa plano. Esta camada é baseada em dados de terreno raster e é exibida sobre o mapa base para melhorar a percepção de inclinações e formas do terreno.
+
+O sombreamento de terreno é uma das camadas raster disponíveis no OsmAnd e representa uma visualização de relevo colorido derivada de dados de elevação. 
+
+Para usar a camada de Terreno, você precisa:
+1. Adquirir o plugin Topografia:
+    - [Compras Android](../purchases/android.md)
+    - [Compras iOS](../purchases/ios.md)
+2. Ativar o [plugin Topografia](../plugins/topography.md):  
+    *Menu → Plugins → ︙ → Ativar*
+3. Selecione a região desejada e baixe Hillshades ou Slopes (para Maps+) ou Mapa de Terreno 3D (para Pro).
+4. O processo de download pode levar algum tempo, dependendo do tamanho da região selecionada e da velocidade da sua conexão com a Internet.
+
+A visualização de terreno pode ser combinada com outras camadas raster e com o mapa vetorial padrão.
+
+Recursos de terreno mais avançados, incluindo relevo 3D (apenas Pro) e opções adicionais relacionadas ao terreno, são descritos no artigo [Topografia](../plugins/topography.md).
+
+<!--
 ## Relevo / Inclinação {#hillshade--slope}
 
 ![Camadas de terreno](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
 **Relevo** e **Inclinação** são mapas raster offline que mostram o relevo do terreno. Eles são exibidos como uma camada de mapa especial, uma segunda sobreposição no mapa base. Os mapas contêm informações adicionais de elevação para ajudar você a entender com mais precisão a inclinação e as sombras da paisagem. As informações de *Relevo* e *Inclinação* são baseadas em dados de uma única fonte, o *arquivo Global planet*, e são divididas em regiões.  
 
-Você não precisa alternar entre as camadas de Relevo e Inclinação, pois elas são mescladas automaticamente. Você pode selecionar apenas uma dessas camadas para exibir no mapa, mas também tem a opção de combiná-las [como uma base ou sobreposição](#select-raster-maps) em outras camadas para uma representação mais visual do terreno.
+Você não precisa alternar entre as camadas de Relevo e Inclinação, pois elas são mescladas automaticamente. Você pode selecionar apenas uma dessas camadas para exibir no mapa, mas também tem a opção de combiná-las [como uma base ou sobreposição](#layers) em outras camadas para uma representação mais visual do terreno.
 
 Para começar a usar Relevo e Inclinação, você precisa:
 
@@ -255,9 +274,10 @@ Você precisa adquirir o [plano de compra OsmAnd Pro](../plugins/index.md#purcha
 *2.* Com base nos dados de elevação, um modelo 3D é criado para exibir montanhas, colinas, vales e outros elementos do terreno no mapa.  
 *3.* O OsmAnd então exibe esses modelos tridimensionais em um mapa plano. O mapa pode ser ampliado, reduzido e girado para visualizar o terreno de diferentes ângulos e perspectivas.  
 *4.* A exibição das linhas de contorno no mapa não depende se a fonte do mapa é online ou offline.
+-->
 
 
-## Preparar/Copiar Mapas Raster para o Dispositivo {#preparecopy-raster-maps-to-device}
+## Preparar/Copiar Mapas {#preparecopy-maps}
 
 Existem várias maneiras de adicionar um novo mapa raster, copiá-lo de outro dispositivo, prepará-lo em um PC e pré-baixar blocos para serem usados offline. Por exemplo, você pode criar seu pacote de mapas em um PC usando software especial como [MOBAC, OsmAndMapCreator, etc](../../technical/map-creation/index.md). Normalmente, os mapas raster são distribuídos como arquivos com extensão `.sqlitedb`.
 
@@ -269,13 +289,15 @@ Aqui estão os principais métodos para adicionar uma nova fonte de mapa raster 
 - Prepare uma URL mágica com parâmetros de fonte de mapa online e abra-a com o OsmAnd.
 
 
-### Adicionar nova fonte de mapa raster online {#add-new-online-raster-map-source}
+### Adicionar Nova Fonte Online {#add-new-online-source}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add"/>*
+Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add_manually"/>*
+
+![Adicionar fonte online](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 </TabItem>
 
@@ -283,11 +305,11 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
+![Adicionar fonte online](@site/static/img/plugins/online-maps/add-online-source-2_ios.png)
+
 </TabItem>
 
 </Tabs>
-
-![Adicionar fonte online](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 Para criar uma fonte de mapa raster, você precisa saber a **URL de um bloco**, que é uma URL específica que distribui blocos de mapa na Projeção de Mercator. Por exemplo, uma URL de bloco pode ser assim: `https://tile.osmand.net/hd/6/55/25.png`, onde `tile.osmand.net/hd/` é a URL base.
 
@@ -317,10 +339,10 @@ Mapas online podem ser adicionados com um link especial à lista de mapas Raster
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|
 |[Níveis de zoom]|min_zoom=9 / max_zoom=15|
 
-Você encontrará um mapa online adicionado na lista do menu [Principal / Base / Sobreposição](#select-raster-maps).
+Você encontrará um mapa online adicionado na lista do menu [Principal / Base / Sobreposição](#layers).
 
 
-## Gerenciar Mapas Raster {#manage-raster-maps}
+## Gerenciar Dados do Mapa {#manage-map-data}
 
 Os mapas raster podem ocupar uma quantidade significativa de espaço em disco, então você pode precisar verificá-lo regularmente. Para grandes conjuntos de dados, é recomendado usar a *fonte raster SQLite* porque ela armazenará todos os blocos em 1 arquivo grande (banco de dados SQLite).
 
@@ -329,30 +351,40 @@ Os mapas raster podem ocupar uma quantidade significativa de espaço em disco, e
 
 Para alterar o formato do bloco, você pode escolher <Translate android="true" ids="storage_format"/> no menu de edição de mapas online:
 
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → escolher mapas online →  
+- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → escolher mapas online →  
 &#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>*
 - **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_edit,res_source_format,sqlite_db_file"/> / <Translate ios="true" ids="one_image_per_tile"/>*
 
 
-### Limpar cache de mapa raster {#clear-raster-map-cache}
+### Limpar Cache de Blocos {#clear-tile-cache}
 
-![Lista de fontes online](@site/static/img/plugins/online-maps/online-sources-list.png)
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → escolher mapas online →  
+&#8942; → <Translate android="true" ids="clear_tile_data"/>*
+
+![Lista de fontes online](@site/static/img/plugins/online-maps/clear_cache_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
+
+![Lista de fontes online](@site/static/img/plugins/online-maps/clear_cache_ios.png)
+</TabItem>
+
+</Tabs>
 
 Os blocos são armazenados em cache ao usar mapas raster online como camada Principal / Sobreposição / Base. Você pode ver o tamanho do seu arquivo SQ Lite sob o nome do seu mapa online na lista. Às vezes, a limpeza regular é necessária para acelerar a exibição dos blocos ou para atualizar os dados.  
-
-Para limpar o cache de blocos do mapa, você precisa fazer o seguinte:
-
-- **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → escolher mapas online →  
-&#8942; → <Translate android="true" ids="clear_tile_data"/>*
-- **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
-
-
 
 ### Baixar / Atualizar Blocos {#download--update-tiles}
 
 Se você deseja acessar mapas raster offline, pode ser necessário pré-carregar os blocos. Isso pode ser feito em seu dispositivo móvel, mas esteja ciente de que alguns serviços podem bloquear downloads de pacotes grandes. Você também pode usar o mesmo recurso para atualizar blocos já baixados para áreas selecionadas, caso contrário, o OsmAnd continuará a exibir os blocos que já estão armazenados no cache.  
 
-Para que os mapas atualizem automaticamente os blocos após um tempo, você pode definir um [Tempo de expiração](#add-new-online-raster-map-source), então o OsmAnd recarregará os blocos assim que forem exibidos.  
+Para que os mapas atualizem automaticamente os blocos após um tempo, você pode definir um [Tempo de expiração](#add-new-online-source), então o OsmAnd recarregará os blocos assim que forem exibidos.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -384,20 +416,20 @@ Para que os mapas atualizem automaticamente os blocos após um tempo, você pode
 
 </Tabs>
 
-- Para baixar ou atualizar blocos raster, você precisa selecionar a fonte do mapa online como a [fonte principal do mapa](#select-raster-maps) (**Android / iOS**). Você também pode selecionar blocos online separadamente para o mapa de [Sobreposição](#overlay-layer) ou para o de [Base](#underlay-layer) (apenas para **Android**).
+- Para baixar ou atualizar blocos raster, você precisa selecionar a fonte do mapa online como a [fonte principal do mapa](#layers) (**Android / iOS**). Você também pode selecionar blocos online separadamente para o mapa de [Sobreposição](#overlay) ou para o de [Base](#underlay) (apenas para **Android**).
 
 - Para a versão **Android** do aplicativo OsmAnd, você precisa selecionar uma área de acordo com o tamanho da tela do seu dispositivo e fazer um toque longo no mapa. Em seguida, selecione [*Ações*](../map/map-context-menu.md#update--download-online-maps) no menu de contexto do mapa e a opção *Baixar mapa* ou *Atualizar mapa*. Na tela Baixar Mapa, faça as alterações nas configurações necessárias e toque em Baixar.  
 
 - Na versão **iOS** do aplicativo OsmAnd, você precisa tocar e segurar o mapa, depois selecionar [*Ações*](../map/map-context-menu.md#update--download-online-maps) e a opção *Baixar mapa* ou *Atualizar mapa* no menu de contexto do mapa. Na tela Baixar Mapa, você pode selecionar a área desejada e modificar as configurações necessárias. Depois de definir todos os parâmetros, você pode ver o número de blocos e o tamanho do download.
 
 
-### Alterar parâmetros do mapa raster {#change-raster-map-parameters}
+### Alterar Parâmetros {#change-parameters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → escolher mapas online →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → escolher mapas online →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
@@ -409,10 +441,14 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_ta
 
 </Tabs>
 
-Os mapas raster podem ser usados como já existem se os blocos já estiverem mapeados. Se os mapas raster forem fornecidos online, sempre há uma URL base que precisa ser configurada. Existem alguns outros parâmetros básicos que podem ser alterados para mapas raster, você pode ler sobre isso nesta [seção](#add-new-online-raster-map-source) do artigo. Parâmetros mais complexos são codificados nos componentes internos do [formato SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
+Os mapas raster podem ser usados como já existem se os blocos já estiverem mapeados. Se os mapas raster forem fornecidos online, sempre há uma URL base que precisa ser configurada. Existem alguns outros parâmetros básicos que podem ser alterados para mapas raster, você pode ler sobre isso nesta [seção](#add-new-online-source) do artigo. Parâmetros mais complexos são codificados nos componentes internos do [formato SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 
 ## Artigos relacionados {#related-articles}
 
 - [Importar / Exportar](../personal/import-export.md)
 - [Esquemas de paleta de cores](../personal/color-palette-schemes.md)
+- [Ação Rápida (botão personalizado)](../widgets/quick-action.md)
+- [Mapas Online](../plugins/online-map.md)
+- [Topografia](../plugins/topography.md)
+- [Criar Mapas Raster & Vetoriais Offline](technical/map-creation/create-offline-maps-yourself.md)

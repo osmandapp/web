@@ -1,8 +1,9 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title: Mapas e Dados
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,20 +14,25 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Mapas {#maps}
 
 ### Por que o OsmAnd não oferece acesso ao Google Maps? {#why-does-osmand-not-offer-access-to-google-maps}
 
 O OsmAnd foi projetado para suportar o OpenStreetMap (OSM) e prioriza esse caminho o máximo possível. Além disso, existem restrições de licenciamento que não permitem que o OsmAnd seja distribuído com dados do Google Maps.
 
+### Por que links do Google Maps podem não abrir no OsmAnd? {#why-google-maps-links-may-not-open-in-osmand}
+
+Links do Google Maps como `https://maps.app.goo.gl/...` podem não abrir no OsmAnd com um toque único a partir de SMS ou mensageiros. Mesmo que o OsmAnd consiga analisar esses links, o Android 12+ impõe Links de Aplicativos Verificados: domínios principais do Google (por exemplo, `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) são reservados para serviços do sistema Google, então aplicativos de terceiros não podem interceptá-los automaticamente. Como resultado, o link geralmente será aberto em um aplicativo/serviço do Google.
+
+**Solução alternativa:** *toque longo na mensagem → Compartilhar → selecione OsmAnd*. Isso envia o link para o OsmAnd, onde ele pode ser analisado e aberto como um local.
+
 ### Mapas carregando lentamente no Android 11, 12 (cartão SD) {#maps-slowly-loading-on-android-11-12-sd-card}
 
-Devido às novas [regras de acesso ao armazenamento introduzidas no Android 11 e 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), os usuários podem experimentar um desempenho mais lento ao acessar mapas armazenados em cartões SD. Essas mudanças também podem causar restrições de visibilidade e acesso para arquivos em pastas do cartão SD. Mais discussões e informações técnicas podem ser encontradas nos seguintes links: [Discussão no Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+Devido às novas [regras de acesso ao armazenamento introduzidas no Android 11 e 12](https://www.androidauthority.com/android-12-privacy-features-1225859/), os usuários podem experimentar um desempenho mais lento ao acessar mapas armazenados em cartões SD. Essas mudanças também podem causar restrições de visibilidade e acesso para arquivos em pastas do cartão SD. Mais discussões e insights técnicos podem ser encontrados nos seguintes links: [Discussão no Reddit](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
 No momento, as seguintes soluções estão disponíveis:
 
-#### 1. Migrar a pasta de armazenamento de dados do OsmAnd para "Memória interna do aplicativo" {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
+#### 1. Migrar a pasta de armazenamento de dados do OsmAnd para “Memória interna do aplicativo” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
 - Você pode alterar a pasta de armazenamento selecionando a opção ***Memória interna do aplicativo*** em *Menu → Configurações → Configurações do OsmAnd → Pasta de armazenamento de dados*.
 
@@ -34,7 +40,7 @@ No momento, as seguintes soluções estão disponíveis:
 
 A equipe de desenvolvimento está procurando ativamente soluções mais eficientes para melhorar o desempenho do cartão SD sob as novas políticas de armazenamento do Android.
 
-#### 2. Usar a pasta "Download" do cartão SD {#2-use-the-sd-cards-download-folder}
+#### 2. Usar a pasta “Download” do cartão SD {#2-use-the-sd-cards-download-folder}
 
 Você pode tentar resolver o problema de carregamento lento do mapa especificando a pasta **Download** do cartão SD para armazenamento do OsmAnd em *Menu → Configurações → Configurações do OsmAnd → Pasta de armazenamento de dados → Especificado manualmente*. Os seguintes caminhos são possíveis:
 
@@ -46,11 +52,11 @@ Você pode tentar resolver o problema de carregamento lento do mapa especificand
 
 O "XXXX-XXXX" representa o número de identificação exclusivo do seu cartão SD, que às vezes pode ser encontrado no caminho da pasta em opções de *Armazenamento externo 2* ou localizado usando outros métodos. Mais pesquisas e detalhes sobre esta solução estão disponíveis [aqui](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
-#### 3. Opção de armazenamento "Mídia" {#3-media-storage-option}
+#### 3. Opção de armazenamento “Mídia” {#3-media-storage-option}
 
 Se as soluções anteriores não funcionarem ou parecerem limitadas, você pode tentar usar a opção de armazenamento "Mídia" para resolver o carregamento lento do mapa ou problemas de acesso ao armazenamento. Este método permite selecionar uma pasta que é acessível para o OsmAnd e outros aplicativos, particularmente útil para armazenamento externo ou removível.
 
-### Escolhendo uma pasta de armazenamento de dados do OsmAnd "Geralmente Acessível" usando o Armazenamento "Mídia" {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
+### Escolhendo uma pasta de armazenamento de dados do OsmAnd “Geralmente Acessível” usando o Armazenamento “Mídia” {#picking-a-generally-accessible-osmand-data-storage-folder-using-the-media-storage}
 
 O Android tornou-se mais rigoroso com as permissões de armazenamento, muitas vezes limitando o acesso a pastas específicas de aplicativos, especialmente com novas instalações ou atualizações do sistema. O armazenamento de dados padrão do OsmAnd pode ser restrito, tornando-o invisível para outros aplicativos ou até mesmo gerenciadores de arquivos. Muitos usuários desejam armazenar mapas e dados em armazenamento externo acessível para backup, sincronização ou gerenciamento manual de arquivos.
 
@@ -62,7 +68,7 @@ No entanto, o OsmAnd não possui a permissão de *Acesso a todos os arquivos* (d
 
 Um caminho correto não solicitará ao OsmAnd nenhum erro de permissão de gravação. Antes de fazer essas alterações, certifique-se de que o OsmAnd tenha as permissões de armazenamento apropriadas, incluindo a permissão de armazenamento "Mídia", nas configurações de **Aplicativos** do Android. Em versões mais recentes do Android, essas permissões podem estar localizadas em menus avançados ou ocultos.
 
-### Excluindo dados do mapa após a atualização do aplicativo (se "Armazenamento multiusuário 1" estiver selecionado) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
+### Excluindo dados do mapa após a atualização do aplicativo (se “Armazenamento multiusuário 1” estiver selecionado) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
 Na versão Android do OsmAnd, selecionar *Armazenamento multiusuário 1* como local de armazenamento pode levar à exclusão de todos os [mapas locais](../personal/maps-resources.md#local-menu) sempre que o aplicativo for atualizado automaticamente, como da versão 4.1.9 para 4.1.10, 4.1.11 ou posterior (**Android 11, 12**). Este problema está documentado no [Github](https://github.com/osmandapp/OsmAnd/issues/13404).
 
@@ -89,10 +95,10 @@ Para resolver este problema, mude para a renderização OpenGL:
 ### Resolvendo a renderização lenta do mapa no OsmAnd {#resolving-slow-map-rendering-in-osmand}
 
 <!--
-Outras variantes de cabeçalho:
+Other header variants:
 
-- Otimizando o desempenho do OsmAnd para mapas offline
-- Melhorando a velocidade de redesenho do mapa no OsmAnd
+- Optimizing OsmAnd performance for offline maps
+- Improving map redrawing speed in OsmAnd
 -->
 
 Para resolver o problema de renderização lenta do mapa, especialmente ao usar mapas vetoriais offline, as seguintes etapas devem ser tomadas:

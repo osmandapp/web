@@ -1,5 +1,5 @@
 ---
-source-hash: 365aa8fef41b3c12b8e9a9e61a129ba36b2a5eebb5e11b198c747eca901d0d34
+source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
 sidebar_position: 5
 title:  Aparência da Trilha
 ---
@@ -134,8 +134,8 @@ Restaura todas as **configurações de aparência da trilha** para seus valores 
 
 ## Trilha 3D {#3d-track}
 
-:::info Paid feature
-**Trilha 3D** é um recurso pago do **OsmAnd Pro** para [iOS](../../purchases/ios.md#pro-features) e [Android](../../purchases/android.md#pro-features) <ProFeature />.
+:::tip Purchase
+A Visualização de Trilha 3D é um [recurso pago](../../purchases/index.md).  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

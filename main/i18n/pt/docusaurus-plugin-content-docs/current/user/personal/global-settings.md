@@ -1,8 +1,9 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Configurações Globais
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -116,11 +116,11 @@ Vá para: *Dispositivo iOS → Ajustes → Geral → Armazenamento do iPhone →
 
 ![Armazenamento das configurações gerais iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-Os arquivos do OsmAnd são visíveis no aplicativo [*Arquivos*](https://apps.apple.com/us/app/files/id1232058109). Você pode acessar todos os arquivos do OsmAnd: [rotas](../personal/tracks/manage-tracks.md), [favoritos](../personal/favorites.md), [mapas](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Para fazer isso, siga o seguinte caminho:  
+Os arquivos do OsmAnd são visíveis no aplicativo [*Arquivos*](https://apps.apple.com/us/app/files/id1232058109). Você pode acessar todos os arquivos do OsmAnd: [trilhas](../personal/tracks/manage-tracks.md), [favoritos](../personal/favorites.md), [mapas](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Para fazer isso, siga o seguinte caminho:  
 
 Vá para: *Arquivos → No Meu Telefone → OsmAnd Maps*
 
-<!-- ![Aplicativo Arquivos iOS](@site/static/img/personal/storage/files_app_ios.png) ![Aplicativo Arquivos iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
+<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Armazenamento das configurações gerais iOS](@site/static/img/personal/profiles/files-1.png) ![Armazenamento das configurações gerais iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -147,18 +147,19 @@ Vá para: *Arquivos → No Meu Telefone → OsmAnd Maps*
 | Modo 3D | É possível visualizar o mapa em 2D, e você pode alterar o ângulo de visão para obter uma [visualização 3D](../widgets/map-buttons.md#3d-mode). | Você pode visualizar o mapa em 2D e [3D](../widgets/map-buttons.md#3d-mode). |
 | Exibição do mapa | O mapa inteiro é renderizado como um conjunto de blocos, e marcadores, linhas e texto já estão dentro desses blocos. | Primeiro, todo o pacote de blocos é renderizado, e então os símbolos disponíveis são aplicados ao mapa, [camada por camada](../../technical/algorithms/map-rendering-layers.md). |
 | Sobreposição / subposição de símbolos transparentes | Suporta todas as configurações. | Não suporta uma camada raster sobre texto vetorial. |
-| [Terreno 3D](../map/raster-maps.md#3d-relief) | Não suportado. | Este recurso visualiza o terreno no mapa adicionando informações de elevação a um mapa 2D normal, o que cria um efeito 3D e de profundidade. |
-| [Rotas 3D](../map/tracks/appearance.md) | Não suportado. | Este recurso permite exibir rotas por altitude acima do nível do mar. |
+| [Terreno 3D](../plugins/topography.md#3d-relief) | Não suportado. | Este recurso visualiza o terreno no mapa adicionando informações de elevação a um mapa 2D normal, o que cria um efeito 3D e de profundidade. |
+| [Trilhas 3D](../map/tracks/appearance.md) | Não suportado. | Este recurso permite exibir trilhas por altitude acima do nível do mar. |
 | [Mapa online](../plugins/online-map.md) | Não suporta a exibição de linhas de contorno se a fonte do mapa for qualquer mapa de blocos online. | Quando a fonte do mapa é um mapa online, mapas 3D também são usados, e a exibição de linhas de contorno no mapa é suportada. |
-| [Plugin de clima](../plugins/weather.md) | Você não pode usar este plugin. | Conveniente para usar com o plugin. |  
+| [Plugin de clima](../plugins/weather.md) | Você não pode usar este plugin. | Conveniente para usar com o plugin. |
+| [Visualização em Globo](../map/interact-with-map.md#globe-view) | Não suportado. | Permite exibir o mapa como uma Terra esférica (globo) em vez de uma projeção plana. |   
 
 A imagem para a visualização 3D do mapa é carregada bloco por bloco, depois todos os símbolos. A velocidade de renderização do mapa depende do número de objetos gráficos 2D e 3D nele, e diretamente do desempenho do seu hardware. Portanto, a Versão 2 (OpenGL) não pode ser usada em dispositivos de baixo desempenho.
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="renderização"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="renderização"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="renderização"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
     </tr>
 </table>
 
@@ -316,7 +317,7 @@ O OsmAnd oferece a você uma escolha de serviços para determinar sua localizaç
 
 ***Android***:
 
-- Você pode escolher quais serviços do *Google Play* ou *Android API* o OsmAnd usará para determinar sua localização. Isso pode ser útil para dispositivos sem *Google Play Services* ou em caso de localização ou dados de altitude imprecisos ao gravar rotas.
+- Você pode escolher quais serviços do *Google Play* ou *Android API* o OsmAnd usará para determinar sua localização. Isso pode ser útil para dispositivos sem *Google Play Services* ou em caso de localização ou dados de altitude imprecisos ao gravar trilhas.
 - O OsmAnd recebe dados dos recursos *Google Fused Location Providers* e *Android GPS e Network Providers*. Você pode alternar **<Translate android="true" id="location_source" />** em: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />*.
 
 ***iOS***:

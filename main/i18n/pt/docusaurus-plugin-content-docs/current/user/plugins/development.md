@@ -1,6 +1,6 @@
 ---
-source-hash: 0012b0b27dc9467a3efde4bc95e7f8d8af48788d2a65da16e21d49538ebd149b
-sidebar_position: 10
+source-hash: 89baba1fc250f5fae8be3a075cdb603e67a8fdc5619d13653d39e5efe07cabcd
+sidebar_position: 11
 title: Desenvolvimento do OsmAnd
 ---
 
@@ -70,7 +70,7 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 - **Simular sua posição** (*Android* / *iOS*). [Simule](#gpx-track-simulation) a localização e o movimento usando uma trilha GPX.
 - **Modo de economia de bateria** (*Android* / *iOS*). Esta configuração reduz [a taxa de atualização da tela](#map-rendering-fps-widget) em 20 quadros por segundo para ajudar a economizar energia da bateria ao usar aplicativos.
 - **Usar ícones de posição de localização 3D** (*iOS*). Permite selecionar um ícone 3D para o [ícone Minha Localização](../personal/profiles.md#my-location-appearance).
-- **Simular dados OBD** (*Android*). Permite a simulação do uso do [scanner OBD](./vehicle-metrics.md).
+- **Simular dados obd** (*Android*). Permite a simulação do uso do [scanner OBD](./vehicle-metrics.md).
 - **Informações de depuração de desempenho** (*Android*). Exibe o desempenho de renderização e navegação.
 - **Desativar camadas do mapa** (*Android*). Desativa todas as camadas do mapa sobre o mapa vetorial (requer reinício).
 - **Buffer Logcat** (*Android*). Verifica e compartilha logs detalhados do aplicativo.  
@@ -287,7 +287,7 @@ O widget possui duas visualizações que são alternadas ao tocar nele:
 O widget Distância da câmera ao alvo mostra a distância entre a câmera (visualizador) e o centro do mapa. Essa distância é exibida em metros / quilômetros.  
 
 
-### Comparação com Imagens de Satélite {#comparison-with-a-satellite-imagery}
+### Comparação com uma Imagem de Satélite {#comparison-with-a-satellite-imagery}
 
 ![Comparação](@site/static/img/plugins/development/comparison.png)
 
@@ -348,7 +348,7 @@ O OsmAnd oferece a oportunidade de simular a localização e o movimento do seu 
 
 </Tabs>  
 
-Após executar a simulação, você verá na tela principal do aplicativo que a marca de navegação está se movendo de acordo com a trilha GPX. Toque no [botão minha localização](../map/interact-with-map.md#my-location-and-zoom) para sincronizar *Minha Localização* (geolocalização simulada do dispositivo) com o centro do mapa.  
+Após executar a simulação, você verá na tela principal do aplicativo que a marca de navegação está se movendo de acordo com a trilha GPX. Toque no [botão minha posição](../map/interact-with-map.md#my-position-and-zoom) para sincronizar *Minha Localização* (geolocalização simulada do dispositivo) com o centro do mapa.  
 Para interromper a simulação do movimento do seu dispositivo, volte para as [configurações](#plugin-settings) de desenvolvimento do OsmAnd e toque em **parar** na opção **simular sua posição**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* também pode ser acessado através do **[Menu de ações rápidas](../widgets/quick-action.md#navigation)**.

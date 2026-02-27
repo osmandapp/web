@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title: Régua de Raio e Régua
 ---
@@ -102,7 +102,7 @@ Use este widget para estimar a proximidade de pontos de interesse ou planejar em
 
 <TabItem value="android" label="Android">
 
-![Tela da régua de raio](@site/static/img/widgets/radius_ruler_widget.png)
+![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -110,9 +110,9 @@ Use este widget para estimar a proximidade de pontos de interesse ou planejar em
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Régua de raio"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Régua de raio"/></td>
-        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Régua de raio"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
 </table>
 
@@ -204,7 +204,7 @@ Para mais informações sobre *a posição na tela*, consulte o artigo [Configur
 
 Você pode alternar para a **visualização 3D** para visualizar melhor as distâncias e o terreno circundante ao usar a Régua de Raio. Esta visualização inclina o mapa e fornece um efeito de perspectiva que expande o raio visível.
 
-- Toque no [botão de localização](../map/interact-with-map.md#my-location-and-zoom) para focar em sua posição.
+- Toque no [botão de localização](../map/interact-with-map.md#my-position-and-zoom) para focar em sua posição.
 - Use um gesto de [deslizar dois dedos para cima](../map/interact-with-map.md#gestures) para inclinar o mapa para o modo 3D.
 
 Os círculos de raio aparecerão com profundidade, o que é particularmente útil para o planejamento de rotas em áreas montanhosas ou ambientes urbanos onde o contexto vertical é importante.

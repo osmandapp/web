@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
 sidebar_position: 2
 title: Tela do Mapa Durante a Navegação
 ---
@@ -161,6 +161,10 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 ## Aparência da Linha da Rota {#route-line-appearance}
 
+:::info Pro feature
+A personalização da Linha da Rota é um recurso pago do [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -186,16 +190,11 @@ Você pode selecionar a aparência da linha da rota por estilo ou selecionar man
 **Avançado**: a configuração Personalizar linha da rota permite ajustar a aparência da linha da rota para exibir mudanças de elevação, subidas ou descidas significativas, gelo na estrada, estradas não pavimentadas, rodovias e outros possíveis obstáculos. Você também pode selecionar ou criar [esquemas de cores](../../personal/color-palette-schemes.md#tracks-routes) personalizados para aplicar à linha da rota.
 
 
-:::note
- <ProFeature/> Alguns parâmetros você pode usar apenas com a <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">assinatura OsmAnd Pro</a>.
-:::
-
-
 ### Cor {#color}
 
 A configuração **Cor** altera os tons de cor das linhas da rota. Sua cor geral muda dependendo do tipo selecionado da coleção OsmAnd e de acordo com a **Legenda do Mapa**. Alternativamente, sua cor se torna a cor e a transparência que você definiu manualmente.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Usado com as cores padrão. Para uma descrição completa das cores, vá para [Estilos de mapa padrão](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Usado com as cores padrão. Para uma descrição completa das cores, vá para [Estilos de mapa padrão](../../map/map-styles.md#default-map-styles).  
     ![estilo do mapa](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Personalizado***. Permite selecionar uma linha em qualquer cor e transparência preferidas. Você pode selecionar diferentes configurações para o mapa diurno e separadamente para o mapa noturno.  
@@ -216,7 +215,7 @@ A configuração **Cor** altera os tons de cor das linhas da rota. Sua cor geral
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Classificação da manobrabilidade da estrada ou trilha para veículos com rodas, especialmente em relação à regularidade e suavidade da superfície. Uma descrição detalhada pode ser encontrada no artigo *Estilo de Mapa OsmAnd - [Suavidade](../../map-legend/osmand.md#surface-smoothness)* na seção *Legenda do Mapa*.  
     ![Altitude](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colore uma linha de rota ou trilha de acordo com a *classificação da estrada de inverno*. Uma descrição detalhada pode ser encontrada no artigo *Mapas Vetoriais*, seção [Estradas de inverno e gelo](../../map/vector-maps.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colore uma linha de rota ou trilha de acordo com a *classificação da estrada de inverno*. Uma descrição detalhada pode ser encontrada no artigo *Estilos de Mapa*, seção [Estradas de inverno e gelo](../../map/map-styles.md#winter-and-ski).  
     ![Altitude](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Coloração de uma linha de rota ou trilha por composição do pavimento. Tipicamente, usado quando a rede rodoviária é em grande parte não pavimentada. Uma descrição detalhada pode ser encontrada no artigo *Estilo de Mapa OsmAnd - [Firmeza da superfície](../../map-legend/osmand.md#surface-smoothness)* na seção *Legenda do Mapa*.  
@@ -230,7 +229,7 @@ A configuração **Cor** altera os tons de cor das linhas da rota. Sua cor geral
 
 Você pode ajustar a largura da linha da rota para alinhá-la com a estrada ou caminho exibido no mapa. Para uma identificação visual mais clara, você pode aumentar ou diminuir manualmente a largura da linha conforme necessário. Para mais detalhes, consulte o artigo *Trilhas e Rotas — [Aparência](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. É usado com a largura padrão definida pelo OsmAnd. Uma descrição completa pode ser encontrada no artigo *Mapas Vetoriais*, seção [Estilo do mapa](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. É usado com a largura padrão definida pelo OsmAnd. Uma descrição completa pode ser encontrada no artigo *[Estilos de mapa](../../map/map-styles.md)*.  
     ![estilo do mapa](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Larguras Fina, Média e Negrito***. Você pode selecionar a largura da linha para corresponder à largura da estrada, ou enfatizar a linha da rota mais fortemente no mapa.  
@@ -245,10 +244,10 @@ Você pode ajustar a largura da linha da rota para alinhá-la com a estrada ou c
 A configuração Setas de Curva permite selecionar se as setas de curva são exibidas na linha da rota.  
 
 - ***No mapa***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![setas_de_curva_ios_mapa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![setas de curva no mapa iOS](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***No aplicativo***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![setas_de_curva_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![setas de curva iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Artigos Relacionados {#related-articles}

@@ -1,6 +1,6 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
-sidebar_position: 17
+source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+sidebar_position: 19
 title: Tempo
 ---
 
@@ -19,12 +19,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Visão geral {#overview}
 
 :::info Recurso pago
- <ProFeature/> O plugin Tempo é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd.
+O plugin Tempo é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd. <ProFeature />
 :::
 
-As camadas interativas do mapa meteorológico no aplicativo OsmAnd permitem monitorar a temperatura, a pressão atmosférica, a cobertura de nuvens, a velocidade do vento e a precipitação em sua cidade ou em qualquer outro local em um mapa global interativo. O plugin Tempo fornece previsões meteorológicas de hora em hora para 7 dias à frente diretamente no mapa do OsmAnd. As informações meteorológicas também podem ser baixadas para uso offline.
+As camadas interativas do mapa meteorológico no aplicativo OsmAnd permitem monitorar a temperatura, a pressão atmosférica, a cobertura de nuvens, a velocidade do vento e a precipitação em sua cidade ou em qualquer outro local em um mapa global interativo. O plugin Tempo fornece previsões meteorológicas de hora em hora para 7 dias à frente diretamente no mapa do OsmAnd. As informações meteorológicas também podem ser baixadas para uso offline.  
 
-A fonte de dados para o plugin Tempo é o [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) operado pelo Serviço Nacional de Meteorologia dos Estados Unidos (NWS) e o Centro Europeu de Previsões Meteorológicas de Médio Prazo ([ECMWF](https://www.ecmwf.int/)).
+A fonte de dados para o plugin Tempo é o [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) operado pelo Serviço Nacional de Meteorologia dos Estados Unidos (NWS) e o Centro Europeu de Previsões Meteorológicas de Médio Prazo ([ECMWF](https://www.ecmwf.int/)).  
 
 
 ## Parâmetros de configuração necessários {#required-setup-parameters}
@@ -43,10 +43,10 @@ As seguintes configurações são *necessárias* para exibir o Tempo no mapa do 
 
 **6.** [Baixe](#offline-forecast) a previsão do tempo se você planeja usá-la offline.
 
-**7.** [Ative os **widgets de Tempo**](#weather-widgets) se você quiser ver informações meteorológicas atualizadas diariamente.
+**7.** [Ative os **widgets de Tempo**](#weather-widgets) se você quiser ver informações meteorológicas atualizadas diariamente.  
 
 :::caution Renderização necessária
-O plugin Tempo está disponível apenas com o motor de renderização de mapa [Versão 2](../personal/global-settings/#map-rendering-engine) (OpenGL).
+O plugin Tempo está disponível apenas com o motor de renderização de mapa [Versão 2](../personal/global-settings/#map-rendering-engine) (OpenGL).  
 :::
 
 
@@ -54,15 +54,15 @@ O plugin Tempo está disponível apenas com o motor de renderização de mapa [V
 
 ### Tela de Previsão do Tempo {#weather-forecast-screen}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
 Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -70,29 +70,31 @@ Vá para: *Plugin ativado → <Translate ios="true" ids="shared_string_menu,shar
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
-</TabItem>
+</TabItem>  
 
 </Tabs>
 
-O menu lateral principal tem um item de menu dedicado **Tempo** que fornece acesso rápido a todas as ferramentas meteorológicas. A *tela de previsão do tempo* exibe informações sobre *temperatura*, *pressão atmosférica*, *velocidade do vento*, *cobertura de nuvens* e *precipitação*.
+O menu lateral principal tem um item de menu dedicado **Tempo** que fornece acesso rápido a todas as ferramentas meteorológicas. A *tela de previsão do tempo* exibe informações sobre *temperatura*, *pressão atmosférica*, *velocidade do vento*, *cobertura de nuvens* e *precipitação*. 
+
+Os valores da previsão são exibidos para o centro do mapa, marcado por uma mira (preta no Android, vermelha no iOS). Mova o mapa para alterar o local selecionado — os dados meteorológicos são atualizados automaticamente para o novo ponto.
 
 Na parte inferior da tela está a *barra de ferramentas do tempo*. Você pode usar os botões de dia e o controle deslizante de tempo para definir a hora exata em que a previsão do tempo será exibida.
 
 ### Fonte de Dados {#data-source}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
-![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)
+![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
 ![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
 
-</TabItem>
+</TabItem>  
 
 </Tabs>
 
@@ -115,15 +117,15 @@ Como a Fonte de Dados afeta a exibição do Tempo:
 
 ### Personalizar Camadas de Tempo {#customize-weather-layers}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<Tabs groupId="operating-systems" queryString="current-os">  
 
 <TabItem value="android" label="Android">
 
 Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
-</TabItem>
+</TabItem>  
 
 <TabItem value="ios" label="iOS">
 
@@ -131,11 +133,11 @@ Vá para: *Plugin ativado → <Translate ios="true" ids="shared_string_menu,conf
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
-</TabItem>
+</TabItem>  
 
 </Tabs>
 
-Para exibir camadas meteorológicas na tela do mapa do OsmAnd, você precisa usar o *menu Configurar Mapa*. Vá para o menu, encontre o item *Tempo* na lista (disponível apenas quando o plugin está ativado) e toque nele.
+Para exibir camadas meteorológicas na tela do mapa do OsmAnd, você precisa usar o *menu Configurar Mapa*. Vá para o menu, encontre o item *Tempo* na lista (disponível apenas quando o plugin está ativado) e toque nele.  
 
 Neste menu, você pode alterar a **visibilidade** e as [configurações](#weather-settings) para cada camada, selecionar o tipo de linhas de contorno e baixar a [previsão do tempo offline de 7 dias](#offline-forecast) (*disponível apenas para Android aqui*).
 
@@ -144,7 +146,7 @@ Neste menu, você pode alterar a **visibilidade** e as [configurações](#weathe
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 - *Menu Principal → Plugins → Tempo → Configurações*
 - *Menu Principal → Configurações → Perfil → Configurações do plugin → Tempo*
@@ -161,32 +163,32 @@ Neste menu, você pode alterar a **visibilidade** e as [configurações](#weathe
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-É importante decidir em quais unidades de medida é conveniente para você ver os [dados meteorológicos](#weather-layers) no mapa e na seção [Widgets de Tempo](#weather-widgets) da tela. Você pode escolher as unidades de medida apropriadas para cada parâmetro ou usar os valores padrão (*somente iOS*). Na versão iOS do aplicativo OsmAnd, você também pode ativar a opção de previsão offline para evitar o uso de dados móveis durante a viagem.
+É importante decidir em quais unidades de medida é conveniente para você ver os [dados meteorológicos](#weather-layers) no mapa e na seção [Widgets de Tempo](#weather-widgets) da tela. Você pode escolher as unidades de medida apropriadas para cada parâmetro ou usar os valores padrão (*somente iOS*). Na versão iOS do aplicativo OsmAnd, você também pode ativar a opção de previsão offline para evitar o uso de dados móveis durante a viagem.  
 
 :::note
-Na versão iOS do OsmAnd, você pode alterar as unidades de medida e o nível de transparência no menu que se abre após um toque longo no ícone da camada de mapa desejada.
+Na versão iOS do OsmAnd, você pode alterar as unidades de medida e o nível de transparência no menu que se abre após um toque longo no ícone da camada de mapa desejada.  
 :::
 
 ### Camadas de Tempo {#weather-layers}
 
 Todos os dados meteorológicos são apresentados como camadas de mapa separadas. Para ver as camadas meteorológicas no mapa, você precisa dar zoom para fora, elas estão disponíveis apenas em escalas de zoom de 2 a 12. As camadas meteorológicas usam [paletas de tempo](../personal/color-palette-schemes.md#weather) para colorir o mapa, essas paletas podem ser [alteradas](../personal/color-palette-schemes.md#palette-modify) se necessário.
 
-| |
-|------------|
-| A **camada de precipitação** exibe informações sobre eventos meteorológicos quando a água em diferentes estados agregados cai do céu para o solo. Precipitação é chuva, neve, neve derretida ou granizo. A escala de precipitação é graduada em milímetros (ou polegadas) de água que cai em 1 metro quadrado em 24 horas. 1 mm de chuva corresponde a 1 litro de água por 1 metro quadrado. |
-|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|
-| A **Temperatura** expressa a percepção quantitativa de quente e frio. É medida em graus. No OsmAnd, você pode escolher entre a escala Celsius e Fahrenheit. |
-|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|
-| O **Vento** é o movimento do ar causado pelo aquecimento desigual da Terra pelo sol e sua própria rotação. Os ventos podem variar de brisas leves a desastres naturais como furacões e tornados. No OsmAnd, a velocidade do vento pode ser exibida em metros por segundo (m/s), quilômetros por hora (km/h), milhas por hora (mph) e nós (kt). |
-|![Wind sheme](@site/static/img/plugins/weather/wind.png)|
-| A **cobertura de nuvens** é a fração média do céu coberta por nuvens quando observada de um local específico. É medida em %. |
-|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|
-| A **pressão atmosférica** é causada pelo peso do ar acima do ponto de medição. Diminui com o aumento da elevação. A pressão atmosférica pode ser exibida em hectopascais (hPa), milímetros de mercúrio (mmHg) e polegadas de mercúrio (inHg). |
-| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |
-| A **Animação do vento** inclui representações dinâmicas mostrando a direção e a velocidade do vento na região. |
-| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |
+| |  
+|------------|  
+| A **camada de precipitação** exibe informações sobre eventos meteorológicos quando a água em diferentes estados agregados cai do céu para o solo. Precipitação é chuva, neve, neve derretida ou granizo. A escala de precipitação é graduada em milímetros (ou polegadas) de água que cai em 1 metro quadrado em 24 horas. 1 mm de chuva corresponde a 1 litro de água por 1 metro quadrado. |  
+|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
+| A **Temperatura** expressa a percepção quantitativa de quente e frio. É medida em graus. No OsmAnd, você pode escolher entre a escala Celsius e Fahrenheit. |  
+|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
+| O **Vento** é o movimento do ar causado pelo aquecimento desigual da Terra pelo sol e sua própria rotação. Os ventos podem variar de brisas leves a desastres naturais como furacões e tornados. No OsmAnd, a velocidade do vento pode ser exibida em metros por segundo (m/s), quilômetros por hora (km/h), milhas por hora (mph) e nós (kt). |  
+|![Wind sheme](@site/static/img/plugins/weather/wind.png)|  
+| A **cobertura de nuvens** é a fração média do céu coberta por nuvens quando observada de um local específico. É medida em %. |  
+|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
+| A **pressão atmosférica** é causada pelo peso do ar acima do ponto de medição. Diminui com o aumento da elevação. A pressão atmosférica pode ser exibida em hectopascais (hPa), milímetros de mercúrio (mmHg) e polegadas de mercúrio (inHg). |  
+| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |  
+| A **Animação do vento** inclui representações dinâmicas mostrando a direção e a velocidade do vento na região. |  
+| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
 
 ### Combinar Mapas {#combine-maps}
@@ -201,7 +203,7 @@ Todos os dados meteorológicos são apresentados como camadas de mapa separadas.
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)
+![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
@@ -224,48 +226,48 @@ Para alternar a visibilidade das camadas meteorológicas, você pode usar os bot
 
 ### Cache {#cache}
 
-Quando a aba Tempo está aberta, a menos que especificado de outra forma, as informações meteorológicas necessárias são baixadas da rede. Você pode usar a [previsão do tempo](#download-forecast) pré-carregada em seus dispositivos. As informações meteorológicas são automaticamente armazenadas em cache após o download e podem ser usadas offline até que a previsão expire.
+Quando a aba Tempo está aberta, a menos que especificado de outra forma, as informações meteorológicas necessárias são baixadas da rede. Você pode usar a [previsão do tempo](#download-forecast) pré-carregada em seus dispositivos. As informações meteorológicas são automaticamente armazenadas em cache após o download e podem ser usadas offline até que a previsão expire.  
 
 :::tip
-Em dispositivos Android, você pode verificar quando os dados meteorológicos foram baixados tocando no *widget Tempo*. O plugin de Desenvolvimento do OsmAnd deve estar ativado.
-![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)
+Em dispositivos Android, você pode verificar quando os dados meteorológicos foram baixados tocando no *widget Tempo*. O plugin de Desenvolvimento do OsmAnd deve estar ativado.  
+![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Baixar Previsão {#download-forecast}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="Android">
+<TabItem value="android" label="Android">  
 
 ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Para cada país, você pode baixar a **Previsão Offline** (até 7 dias). Quanto mais próximo da data atual, mais precisa será. Se você quiser usar a previsão do tempo offline, deve baixar os dados meteorológicos com antecedência.
+Para cada país, você pode baixar a **Previsão Offline** (até 7 dias). Quanto mais próximo da data atual, mais precisa será. Se você quiser usar a previsão do tempo offline, deve baixar os dados meteorológicos com antecedência.  
 
-No menu de previsão de download, você pode obter informações e definir parâmetros para manter os dados meteorológicos atualizados.
-
-- **Criado** (*Android*) / **Atualizado** (*iOS*). Mostra quando a última atualização foi feita.
-- **Próxima atualização** (*iOS*). Quando a próxima atualização estará disponível.
-- **Tamanho** (*Android*) / **Tamanho das atualizações** (*iOS*). Mostra o tamanho de todas as atualizações.
-- Botão **Atualizar** (*Android*) / **Atualizar agora** (*iOS*). Quando ativo, permite atualizar os dados meteorológicos manualmente sem esperar por uma atualização automática.
-- **Frequência de atualização** (*iOS*). Pode ser definida para 12 horas, 24 horas ou semanalmente.
-- *Atualizar apenas via Wi-Fi* (*iOS*). Ative esta opção se não quiser usar dados móveis para downloads.
+No menu de previsão de download, você pode obter informações e definir parâmetros para manter os dados meteorológicos atualizados.  
+  
+- **Criado** (*Android*) / **Atualizado** (*iOS*). Mostra quando a última atualização foi feita.  
+- **Próxima atualização** (*iOS*). Quando a próxima atualização estará disponível.  
+- **Tamanho** (*Android*) / **Tamanho das atualizações** (*iOS*). Mostra o tamanho de todas as atualizações.  
+- Botão **Atualizar** (*Android*) / **Atualizar agora** (*iOS*). Quando ativo, permite atualizar os dados meteorológicos manualmente sem esperar por uma atualização automática.  
+- **Frequência de atualização** (*iOS*). Pode ser definida para 12 horas, 24 horas ou semanalmente.  
+- *Atualizar apenas via Wi-Fi* (*iOS*). Ative esta opção se não quiser usar dados móveis para downloads.  
 - Botão **Remover** *lixeira* (*Android*) / **Remover previsão** (*iOS*). Permite excluir todos os dados de previsão para esta região.
 - Botão **Editar** *lápis* (*Android*). Permite renomear o arquivo meteorológico.
 
 **Nota:** Alguns países, como os EUA e o Canadá, usam um único arquivo de Previsão Offline para todo o país. Isso reduz o número de downloads e simplifica o gerenciamento de dados meteorológicos.
 
-:::info
-Os dados meteorológicos são atualizados a cada 6 horas (todas as 4 atualizações do [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) e 3 do [ECMWF](https://www.ecmwf.int/)) e ficam disponíveis no OsmAnd com um pequeno atraso, pois o processo de cálculo leva várias horas antes do lançamento (geralmente por volta das 07:00 UTC).
+:::info  
+Os dados meteorológicos são atualizados a cada 6 horas (todas as 4 atualizações do [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) e 3 do [ECMWF](https://www.ecmwf.int/)) e ficam disponíveis no OsmAnd com um pequeno atraso, pois o processo de cálculo leva várias horas antes do lançamento (geralmente por volta das 07:00 UTC).  
 :::
 
 
@@ -277,7 +279,7 @@ Os dados meteorológicos são atualizados a cada 6 horas (todas as 4 atualizaç�
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="shared_string_weather"/>*
 
-![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)
+![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
@@ -285,7 +287,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Escolha um painel → <Translate ios="true" ids="shared_string_weather"/>*
 
-![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)
+![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 

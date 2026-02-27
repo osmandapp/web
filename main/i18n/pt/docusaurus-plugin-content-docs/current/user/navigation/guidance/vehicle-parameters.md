@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title: Parâmetros do veículo
 ---
@@ -32,7 +32,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Configurações de Navegação iOS](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,r
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Configurações de Navegação iOS](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -97,6 +97,10 @@ Os parâmetros do veículo afetam a navegação e a construção da rota porque 
 
 ![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+
+No Android, este parâmetro também está disponível para *[perfis de ciclismo](../../navigation/routing/bicycle-based-routing.md)* para ajudar a evitar caminhos de ciclismo estreitos.
+
+![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Limite de carga máxima por eixo**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Forneça a carga máxima por eixo do seu veículo para evitar estradas e pontes com restrições de peso por eixo. Este parâmetro está disponível apenas em tipos de navegação como [*Caminhão*](../../navigation/routing/car-based-routing.md).  
 
@@ -154,7 +158,7 @@ A configuração **Combustível usado pelo motor** está disponível apenas em n
 
 <TabItem value="ios" label="iOS">
 
-![Configurações de Navegação Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Configurações de Navegação iOS](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 

@@ -1,7 +1,7 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
-sidebar_position: 13
-title: Visualização de Mapa de Esqui
+source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+sidebar_position: 14
+title: Visualização do Mapa de Esqui
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão Geral {#overview}
 
-O plugin de visualização de Mapa de Esqui do OsmAnd mostra pistas famosas e populares, áreas de esqui oficialmente aprovadas e mapas de trilhas da maioria das estações de esqui. Os mapas de pistas do [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) são a fonte de dados para os mapas de esqui do OsmAnd. Combinando mapas vetoriais com mapas raster, o mapa de esqui do OsmAnd é muito preciso e será útil para instrutores, alpinistas e entusiastas de esportes de inverno.
+O plugin de visualização do Mapa de Esqui do OsmAnd mostra pistas famosas e populares, áreas de esqui oficialmente aprovadas e mapas de trilhas da maioria das estações de esqui. Os mapas de pistas do [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) são a fonte de dados para os mapas de esqui do OsmAnd. Combinando mapas vetoriais com mapas raster, o mapa de esqui do OsmAnd é muito preciso e será útil para instrutores, alpinistas e entusiastas de esportes de inverno.
 
 O mapa de esqui do OsmAnd faz parte dos mapas vetoriais e não requer downloads adicionais. Ele está desativado por padrão. O Mapa de Esqui do OsmAnd é um dos [Estilos de Mapa](../map/vector-maps.md) que oferece recursos adicionais ao destacar alguns objetos e tornar outros menos visíveis.  
 
@@ -43,7 +43,7 @@ Dois perfis são mostrados abaixo: o da esquerda é para esqui e o da direita é
 
 A seguinte configuração faz com que o Mapa de Esqui do OsmAnd apareça na tela:
 
-1. Ative o [plugin de visualização de Mapa de Esqui](../plugins/index.md#enable--disable).  
+1. Ative o [plugin de visualização do Mapa de Esqui](../plugins/index.md#enable--disable).  
 2. Defina o estilo de mapa [Inverno e Esqui](#set-winter-and-ski-map-style) para o [perfil](../personal/profiles.md) necessário.  
 3. Se necessário, [combine mapas](#combine-maps).  
   
@@ -56,7 +56,7 @@ A seguinte configuração faz com que o Mapa de Esqui do OsmAnd apareça na tela
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer,winter_and_ski_renderer"/>*  
 
-![Ativar estilo de inverno no Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Estilo de mapa do plugin de mapas de esqui Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
+![Ativar estilo de Inverno no Android](@site/static/img/plugins/ski-maps/and_map_styles-2.png) ![Estilo de mapa do plugin de mapas de esqui Android](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_android-2.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,map_w
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,map_settings_offline,plugin_popup_ski_title"/>*  
 
-![Ativar estilo de inverno no iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Estilo de mapa do plugin de mapas de esqui iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
+![Ativar estilo de Inverno no iOS](@site/static/img/plugins/ski-maps/ios_map_style_winter-2.png) ![Estilo de mapa do plugin de mapas de esqui iOS](@site/static/img/plugins/ski-maps/plugin_ski_maps_style_ios-2.png)
 
 </TabItem>
 
@@ -99,7 +99,7 @@ O perfil de Esqui é projetado para uso em combinação com os estilos de Invern
 
 </Tabs>
 
-O [Mapa vetorial](../map/vector-maps.md) com o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) incluído pode ser complementado com [Linhas de contorno](../plugins/topography.md#contour-lines) e [Relevo sombreado](../plugins/topography.md#hillshade-slope-and-altitude-layers). Abaixo estão dois exemplos. As trilhas no mapa vetorial padrão são mostradas à esquerda, e as trilhas no mapa vetorial combinado com o mapa raster *Linhas de Contorno* e *Relevo Sombreado* são mostradas à direita. No segundo caso, o mapa mostra mais dados de elevação para ajudar a estimar a dificuldade, o risco e a distância.  
+O [Mapa vetorial](../map/vector-maps.md) com o [estilo de mapa Inverno e Esqui](../map/map-styles.md#winter-and-ski) incluído pode ser complementado com [Linhas de contorno](../plugins/topography.md#contour-lines) e [Relevo sombreado](../plugins/topography.md#hillshade-slope-and-altitude-layers). Abaixo estão dois exemplos. As trilhas no mapa vetorial padrão são mostradas à esquerda, e as trilhas no mapa vetorial combinado com o mapa raster *Linhas de Contorno* e *Relevo Sombreado* são mostradas à direita. No segundo caso, o mapa mostra mais dados de elevação para ajudar a estimar a dificuldade, o risco e a distância.  
 
 
 ### Desativar Estilo de Mapa de Esqui {#disable-ski-map-style}
@@ -108,7 +108,7 @@ Se preferir remover trilhas e cores de inverno do mapa, ou se a temporada de esq
 
 - Desmarque o estilo de mapa [Inverno e Esqui](#set-winter-and-ski-map-style) para o perfil necessário.  
 - Mude o [perfil de Esqui](../personal/profiles.md) para qualquer outro perfil.
-- Desative o [plugin de visualização de Mapa de Esqui](../plugins/index.md#enable--disable).
+- Desative o [plugin de visualização do Mapa de Esqui](../plugins/index.md#enable--disable).
 
 
 :::info desinstalar plugin
@@ -239,7 +239,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 Para descobrir quais pistas fora da estação de esqui você pode navegar, você precisa ativar a opção **Pistas de esqui e rotas** na lista [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), aberta no menu [Configurar mapa](../map/configure-map-menu.md).  
 
-Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqui](../map/vector-maps.md#winter-and-ski) ativados, as [Pistas de esqui e rotas](../map/routes.md#ski-slopes-and-routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.  
+Com o perfil de Esqui, a navegação de esqui e o [estilo de mapa Inverno e Esqui](../map/map-styles.md#winter-and-ski) ativados, as [Pistas de esqui e rotas](../map/routes.md#ski-slopes-and-routes) mostram todos os tipos de pistas que a navegação de Esqui pode usar para construir rotas de navegação. Essas rotas de pistas de esqui, se ativadas, são delineadas com a cor violeta, principalmente fora dos limites da estação de esqui.  
 Ao ativar a opção [Pistas de esqui e rotas](../map/routes.md#ski-slopes-and-routes) para um estilo de mapa diferente de Inverno e Esqui, apenas as pistas são exibidas. Outros recursos relacionados ao esqui podem não ser mostrados nesta camada de estilo.  
 _Pistas de esqui e rotas_ [são clicáveis](../map/routes.md#actions-with-routes).
 
@@ -250,26 +250,26 @@ _Pistas de esqui e rotas_ [são clicáveis](../map/routes.md#actions-with-routes
 
 <TabItem value="android" label="Android">
 
-![Ativar modo noturno e iluminação no Android](@site/static/img/plugins/ski-maps/and_night_and_lighting1.png) ![Noite e iluminação no Android](@site/static/img/plugins/ski-maps/and_yes_lighting.png)
+![Ativar modo Noturno e Iluminação no Android](@site/static/img/plugins/ski-maps/and_night_and_lighting1.png) ![Noite e iluminação no Android](@site/static/img/plugins/ski-maps/and_yes_lighting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ativando modo noturno e iluminação no iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Noite e iluminação no iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)
+![Ativando modo Noturno e Iluminação no iOS](@site/static/img/plugins/ski-maps/ios_night_lighting1.png) ![Noite e Iluminação no iOS](@site/static/img/plugins/ski-maps/ios_yes_lighting.png)
 
 </TabItem>
 
 </Tabs>
 
-O estilo **Inverno e esqui** pode ser usado com o [modo Noturno ou Nascer/Pôr do Sol](../map/vector-maps.md#map-mode). Uma escolha confortável para quem prefere cores escuras, ou escurecer a tela à noite, bem como para quem pratica esqui noturno. Juntamente com o modo Noturno, os Mapas de Esqui do OsmAnd também podem mostrar quais pistas têm iluminação com a opção [Iluminação Pública](../map/vector-maps.md#details).  
+O estilo **Inverno e esqui** pode ser usado com o [modo Noturno ou Nascer/Pôr do Sol](../map/vector-maps.md#map-mode). Uma escolha confortável para quem prefere cores escuras, ou escurecer a tela à noite, bem como para quem pratica esqui noturno. Juntamente com o modo Noturno, os Mapas de Esqui do OsmAnd também podem mostrar quais pistas têm iluminação com a opção [Iluminação de Rua](../map/vector-maps.md#details).  
 
 Ambas as opções estão no menu [Configurar mapa](../map/configure-map-menu.md).  
 
 - Para ativar a opção ***Modo Noturno***, role a lista para baixo:  
 *<Translate android="true" ids="shared_string_menu,configure_map,map_mode"/>*  
 
-- Para ativar a opção ***Iluminação Pública***, abra a lista **<Translate android="true" ids="rendering_category_details"/>** e ative a opção:  
+- Para ativar a opção ***Iluminação de Rua***, abra a lista **<Translate android="true" ids="rendering_category_details"/>** e ative a opção:  
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_details,rendering_attr_streetLighting_name"/>*
 
 

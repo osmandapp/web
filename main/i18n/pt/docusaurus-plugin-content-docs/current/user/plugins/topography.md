@@ -1,6 +1,6 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
-sidebar_position: 14
+source-hash: 68173c6333cbab1e4155aebd0de4f93a471b00f6d3ab7f48ef3872e2d8b54c54
+sidebar_position: 16
 title: Topografia
 ---
 
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Visão geral {#overview}
 
 :::info Recurso pago
-O plugin Topografia é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd.
+O plugin Topografia é um [recurso pago](../purchases/index.md).  
 :::
 
 A topografia é uma característica importante da cartografia que fornece informações para avaliar visualmente o relevo do terreno.
 Informações topográficas como [Curvas de nível](#contour-lines), [Terreno](#terrain) (*Hillshade* e *Declive*), e [Relevo 3D](#3d-relief) ajudam a fazer uma avaliação visual da configuração do terreno, observando elevação, relevo, extremos, inclinação ou pontos de igual altura.
 
-Cada recurso fornecido por este plugin é uma camada de mapa independente que, quando ativada, pode ser exibida acima ou abaixo da fonte principal do mapa, dependendo das [configurações](../map/raster-maps.md#overlay-layer).  
+Cada recurso fornecido por este plugin é uma camada de mapa independente que, quando ativada, pode ser exibida acima ou abaixo da fonte principal do mapa, dependendo das [configurações](../map/raster-maps.md#overlay).  
 
 O plugin Topografia fornece acesso aos seguintes tipos de mapa:  
 
@@ -173,7 +173,7 @@ Ao usar o [motor de renderização de mapas](../personal/global-settings.md#map-
 **Configurações de aparência**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Ativa ou desativa as curvas de nível.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Define os [níveis de zoom](../map/interact-with-map.md#my-location-and-zoom) nos quais as curvas de nível são visíveis.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Define os [níveis de zoom](../map/interact-with-map.md#my-position-and-zoom) nos quais as curvas de nível são visíveis.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Escolha a cor para exibir as curvas de nível.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Ajusta a largura das curvas de nível.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Seleciona a densidade das curvas de nível (Baixa, Média, Alta). Densidades mais altas podem afetar a velocidade de carregamento.
@@ -247,8 +247,8 @@ Os mapas raster de **Hillshade**, **Declive** e **Altitude** são criados com ba
 
 ### Modificar Esquema de Cores {#modify-color-scheme}
 
-:::info Recurso pago
-*[Modificar Esquema de Cores](../../user/personal/color-palette-schemes.md#terrain)* é um recurso pago do **OsmAnd Pro** para [iOS](../purchases/ios.md#pro-features) e [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Recurso Pro
+*[Modificar Esquema de Cores](../../user/personal/color-palette-schemes.md#terrain)* é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -287,7 +287,7 @@ A função *Visibilidade* é usada para ajustar a transparência das sombras par
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-A função *Níveis de Zoom* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
+A função *Níveis de Escala* permite definir os valores mínimo e máximo dos níveis de zoom do mapa, variando de 4 a 19, nos quais as camadas do mapa Hillshade ou Declive serão exibidas.
 
 ### Tamanho do Cache {#cache-size}
 
@@ -346,7 +346,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 
 </Tabs>  
 
-O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridimensional da paisagem. O Relevo 3D funciona offline e pode ser usado com [mapas vetoriais OsmAnd](../map/vector-maps.md) ou quaisquer [mapas raster](../map/raster-maps.md#select-raster-maps) como [Fonte do Mapa](../map/raster-maps.md#main) ou como [Camada de Sobreposição/Subjacência](../map/raster-maps.md#overlay-layer).
+O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridimensional da paisagem. O Relevo 3D funciona offline e pode ser usado com [mapas vetoriais OsmAnd](../map/vector-maps.md) ou quaisquer [mapas raster](../map/raster-maps.md#layers) como [Fonte do Mapa](../map/raster-maps.md#main) ou como [Camada de Sobreposição/Subjacência](../map/raster-maps.md#overlay).
 
 ***Como exibir o Relevo 3D no mapa.***
 

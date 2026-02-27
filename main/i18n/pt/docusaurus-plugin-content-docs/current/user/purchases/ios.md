@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title: Compras iOS
 ---
@@ -38,7 +38,7 @@ Pode descarregar a aplicação através deste link - [OsmAnd Maps na Apple App S
 |------------|------------|------------|------------|
 | **OsmAnd Start** | Um **plano gratuito** que dá acesso ao [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) para *Favoritos*, *Definições* e *edição/notas OSM*. | Disponível para todos os utilizadores da versão gratuita do OsmAnd. | Limitado a funcionalidades básicas da nuvem e **5MB** de armazenamento. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Uma **compra na aplicação** ou **subscrição** que desbloqueia funcionalidades avançadas para a aplicação gratuita OsmAnd. | Disponível na [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Pode ser adicionado à [Partilha Familiar da Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Um **plano de subscrição** que desbloqueia funcionalidades adicionais avançadas e [pro](#pro-features). | Disponível na [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Fornece acesso total às funcionalidades do OsmAnd Cloud. |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Um **plano de subscrição** que desbloqueia funcionalidades adicionais avançadas e [funcionalidades pro](#pro-features). | Disponível na [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Fornece acesso total às funcionalidades do OsmAnd Cloud. |
 
 ### Notas Importantes {#important-notes}
 
@@ -79,8 +79,8 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relevo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dados de topografia](../plugins/topography.md#overview)<br/>(Curvas de nível e Terreno) | **-** | ✔ | ✔ |
-| [Grelha de Coordenadas — Personalização de Cor](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [Visualização de trilhos 3D](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Grelha de Coordenadas — Personalização de Cor](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [Visualização de trilhos 3D](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guias de viagem (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Suporte a sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -90,10 +90,10 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | [Exportar trilhos GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Importar trilhos GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Ferramenta de planeamento de rotas](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
-| [Widgets de Métricas do Veículo](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratuitos**</summary><ul><li>*Velocidade do veículo*</li><li>*Rotações do motor*</li></ul></details> | <details><summary>**2 widgets gratuitos**</summary><ul><li>*Velocidade do veículo*</li><li>*Rotações do motor*</li></ul></details> | ✔ |
+| [Widgets de Métricas do Veículo](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratuitos**</summary><ul><li>*Velocidade do veículo*</li><li>*Velocidade do motor*</li></ul></details> | <details><summary>**2 widgets gratuitos**</summary><ul><li>*Velocidade do veículo*</li><li>*Velocidade do motor*</li></ul></details> | ✔ |
 | [Ferramenta de marcadores de mapa](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Fontes de mapa online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Suporte a mapas SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Suporte a mapas SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Pontos favoritos](../map/point-layers-on-map.md)<br/>marcadores e pontos de passagem | ✔ | ✔ | ✔ |
 | [Pontos de áudio/imagem/vídeo](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -116,7 +116,7 @@ Atualmente, a subscrição Pro tem as seguintes funcionalidades:
 | [Widgets de Altitude - Elevação: Centro do Mapa](../widgets/info-widgets.md#elevation-map-center) | Permite saber a elevação do centro do mapa atual acima do nível do mar.  |
 | [Ao Vivo](../personal/maps-resources.md#live-updates) | As atualizações dos mapas OsmAnd a cada 15 minutos após a melhoria do [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin Meteorológico](../plugins/weather.md) | Previsão horária de 24h para 7 dias no mapa. |
-| [Plugin de Métricas do Veículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar um scanner OBD-II para exibir dados detalhados do veículo na aplicação OsmAnd e armazenar as informações em registos de trilhos. As informações de velocidade do veículo e rotações do motor estão disponíveis para o OsmAnd gratuito.  |
+| [Plugin de Métricas do Veículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar um scanner OBD-II para exibir dados detalhados do veículo na aplicação OsmAnd e armazenar as informações em registos de trilhos. As informações de velocidade do veículo e velocidade do motor estão disponíveis para o OsmAnd gratuito.  |
 | [Personalizar linha de rota](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Alterar a cor e a largura da linha de rota durante a navegação. |
 | [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Pode editar esquemas incorporados ou usar os seus próprios ficheiros de paleta para personalizar as cores do mapa e da rota. |
 
@@ -135,7 +135,7 @@ ou
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuar com OsmAnd Pro*
 
-![Plano Pro](@site/static/img/purchases/pro.png)
+![Plano Pro](@site/static/img/purchases/pro_new.png)
 
 ### Compra do Maps+ {#maps-purchase}
 
@@ -143,7 +143,7 @@ ou
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocar na lista de funcionalidades do Maps+ → Continuar com Maps+*
 
-![Plano Maps+](@site/static/img/purchases/maps.png)
+![Plano Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## Subscrições Legadas (anteriores a 4.0) {#legacy-subscriptions-prior-40}

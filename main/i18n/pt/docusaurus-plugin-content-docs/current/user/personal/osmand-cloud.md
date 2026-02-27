@@ -1,5 +1,5 @@
 ---
-source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
+source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
 sidebar_position: 11
 title: OsmAnd Cloud
 ---
@@ -19,12 +19,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-:::tip subscribe  
-&nbsp;<ProFeature/> Para acessar todos os recursos do OsmAnd Cloud, assine o **OsmAnd Pro** para [Android](../purchases/android.md#prices) ou [iOS](../purchases/ios.md#prices).  
-:::  
+:::info Pro feature
+O OsmAnd Cloud é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
+:::
 
 :::note cross-platform  
-OsmAnd Cloud é um serviço de armazenamento em nuvem independente e *não está vinculado* a uma versão específica da plataforma Android, iOS ou web.  
+O OsmAnd Cloud é um serviço de armazenamento em nuvem independente e *não está vinculado* a uma versão específica da plataforma Android, iOS ou web.  
 :::  
 
 O OsmAnd Cloud permite que você **armazene e sincronize configurações pessoais e dados de aplicativos** em vários dispositivos. Você pode acessar esses dados em qualquer dispositivo onde o OsmAnd esteja instalado, incluindo o aplicativo para desktop. Todas as alterações feitas no aplicativo podem ser **sincronizadas entre plataformas**, garantindo acesso contínuo aos seus dados salvos.

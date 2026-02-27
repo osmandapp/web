@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title: Navegar por Trajeto
 ---
@@ -40,14 +40,14 @@ A opção *Navegação por trajeto* também pode ser usada no dia a dia. Você p
 
 ## Selecionar o Trajeto {#select-the-track}
 
-Antes de usar a opção *Navegação por trajeto*, você precisa [exibir o trajeto no mapa](../../map/tracks/index.md#display-tracks-on-the-map). O OsmAnd suporta trajeto como uma linha (**Geometria**) e trajeto como uma rota (**Rota**) ou uma combinação delas (**OsmAnd** por [Planejar rota](../../plan-route/create-route.md)). Se você tiver um trajeto como uma coleção **Pontos de passagem**, você pode usar a [Navegação por marcadores](./markers-navigation.md).
+Antes de usar a opção *Navegação por trajeto*, você precisa [exibir o trajeto no mapa](../../map/tracks/index.md#display-tracks-on-the-map). O OsmAnd suporta trajeto como uma linha (**Geometry**) e trajeto como uma rota (**Route**) ou uma combinação delas (**OsmAnd** por [Planejar rota](../../plan-route/create-route.md)). Se você tiver um trajeto como uma coleção **Waypoints**, você pode usar a [Navegação por marcadores](./markers-navigation.md).
 
 
-- O trajeto **Geometria** terá uma navegação muito básica por padrão e não fornecerá curvas precisas, nomes de ruas e faixas de conversão. Para obter as informações que faltam, você precisa usar a ferramenta [Anexar às estradas](#attach-to-the-roads).
+- O trajeto **Geometry** terá uma navegação muito básica por padrão e não fornecerá curvas precisas, nomes de ruas e faixas de conversão. Para obter as informações que faltam, você precisa usar a ferramenta [Anexar às estradas](#attach-to-the-roads).
 
-- O trajeto **Rota** calculará a rota entre os pontos da rota pelo perfil selecionado. Basicamente, todos os pontos da rota serão considerados como pontos intermediários. Se sua rota consistir em > 50 pontos, é muito provável que seja um trajeto **Geometria** mal configurado.
+- O trajeto **Route** calculará a rota entre os pontos da rota pelo perfil selecionado. Basicamente, todos os pontos da rota serão considerados como pontos intermediários. Se sua rota consistir em > 50 pontos, é muito provável que seja um trajeto **Geometry** mal configurado.
 
-- O trajeto **OsmAnd** consiste em partes de geometria e rota, e é adequado para fornecer exatamente a mesma orientação que a navegação por padrão. Esses trajetos são produzidos por [Planejar rota](../../plan-route/create-route.md) ou [Versão web](../../web/index.md). É possível salvar novamente este trajeto para um trajeto somente **Geometria** como [**Simplificado**](../../plan-route/create-route.md#save-route) para ser usado em programas de terceiros.
+- O trajeto **OsmAnd** consiste em partes de geometria e rota, e é adequado para fornecer exatamente a mesma orientação que a navegação por padrão. Esses trajetos são produzidos por [Planejar rota](../../plan-route/create-route.md) ou [Versão web](../../web/index.md). É possível salvar novamente este trajeto para um trajeto somente **Geometry** como [**Simplificado**](../../plan-route/create-route.md#save-route) para ser usado em programas de terceiros.
 
 
 ### Iniciar Navegação GPX {#start-gpx-navigation}
@@ -70,9 +70,9 @@ Antes de usar a opção *Navegação por trajeto*, você precisa [exibir o traje
 
 A navegação em um trajeto pode ser iniciada usando o botão de ação rápida no [menu de contexto do trajeto](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (aberto selecionando um dos [trajetos destacados](./route-navigation.md#history-of-previous-routes) no mapa, ou tocando em um arquivo de trajeto na seção [Meus Lugares](../../personal/myplaces.md) do *Menu Principal*) ou no menu de navegação, que é aberto tocando:
 
-- [*Botão de Navegação*](../../widgets/map-buttons.md#directions) na tela do mapa.  
+- [*Navigation button*](../../widgets/map-buttons.md#navigation) na tela do mapa.  
 - *Seção de Navegação* no *Menu Principal* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
-- No [*menu de Navegação*](./route-navigation.md#navigation-menu) vá para *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
+- No [*Navigation menu*](./route-navigation.md#navigation-menu) vá para *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
 ### Escolher Segmentos {#choose-segments}
 
@@ -192,9 +192,9 @@ O recurso **Anexar às estradas** alinha seu trajeto com a estrada mais próxima
 
 O OsmAnd automaticamente alinha rotas às estradas ao usar a ferramenta **Planejar uma Rota**:
 
-- **Pontos de passagem** se alinham automaticamente com a estrada mais próxima disponível (*exceto para [Roteamento em Linha Reta](../../navigation/routing/straight-line-routing.md) e [Roteamento Direto ao Ponto](../../navigation/routing/direct-to-point-routing.md)*).
+- **Waypoints** se alinham automaticamente com a estrada mais próxima disponível (*exceto para [Roteamento em Linha Reta](../../navigation/routing/straight-line-routing.md) e [Roteamento Direto ao Ponto](../../navigation/routing/direct-to-point-routing.md)*).
 - Se nenhuma estrada for detectada (por exemplo, em ambientes off-road), a rota seguirá **segmentos em linha reta**.
-- Você pode **ajustar manualmente** a rota arrastando os pontos de passagem para diferentes locais.
+- Você pode **ajustar manualmente** a rota arrastando os waypoints para diferentes locais.
 
 Por padrão, o recurso **Anexar às estradas** é executado **automaticamente** quando um trajeto é selecionado para navegação. Você pode alterar essa configuração conforme necessário. Para mais detalhes, consulte [Orientação Detalhada do Trajeto](../guidance/navigation-settings.md#detailed-track-guidance) no artigo *Configurações de Navegação*.
 
@@ -209,7 +209,7 @@ No [menu Seguir trajeto](#follow-track-options), você pode escolher se deseja n
 
 ### Pontos de Passagem {#waypoints}
 
-Se o trajeto tiver pontos de passagem, você pode usar [Mostrar ao longo da rota](../guidance/map-during-navigation.md#show-points-along-the-route) e [Orientação por voz](../guidance/voice-navigation.md#voice-settings) para ser notificado sobre Pontos de Interesse. Você pode adicionar **Pontos de passagem** a um trajeto existente via [Menu de contexto](../../map/map-context-menu.md#-add--edit-track-waypoint), o trajeto precisa estar visível no mapa.
+Se o trajeto tiver pontos de passagem, você pode usar [Mostrar ao longo da rota](../guidance/map-during-navigation.md#show-points-along-the-route) e [Orientação por voz](../guidance/voice-navigation.md#voice-settings) para ser notificado sobre Pontos de Interesse. Você pode adicionar **Waypoints** a um trajeto existente via [Menu de contexto](../../map/map-context-menu.md#-add--edit-track-waypoint), o trajeto precisa estar visível no mapa.
 
 ### Pontos Intermediários {#intermediate-points}
 

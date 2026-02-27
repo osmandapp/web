@@ -1,5 +1,5 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
 title:  Rotas de transporte público
 ---
@@ -44,7 +44,7 @@ O roteamento de transporte público está em fase de testes. Por enquanto, você
 
 ## Como usar {#how-to-use}
 
-Para começar a navegar pela cidade de transporte público, use [o botão de navegação](../../widgets/map-buttons.md#directions) na tela do mapa ou selecione a opção de navegação no *Menu Principal*.  
+Para começar a navegar pela cidade de transporte público, use [o botão de navegação](../../widgets/map-buttons.md#navigation) na tela do mapa ou selecione a opção de navegação no *Menu Principal*.  
 
 **1.** Você precisa escolher o *perfil de navegação de transporte público*, os pontos de partida e destino.  
 

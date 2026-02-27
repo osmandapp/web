@@ -1,5 +1,5 @@
 ---
-source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
+source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
 sidebar_position: 1
 title: Primeiros Passos
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-Bem-vindo ao OsmAnd (OpenStreetMap Automated Navigation Directions)!
+Bem-vindo ao OsmAnd (OpenStreetMap Automated Navigation Directions)!  
 
 Explore como baixar mapas, como configurar o aplicativo, como usar o mapa e construir uma rota, como iniciar a navegação e como pesquisar pontos de interesse. Familiarize-se com os pontos-chave da política de privacidade do OsmAnd e as permissões necessárias.
 
@@ -665,7 +665,7 @@ O OsmAnd não possui permissões obrigatórias nas versões iOS / Android.
 **Essencial**:
 
 - **Internet**. Download inicial / atualização de mapas offline. Além disso, pode ser necessário para acessar recursos online, como [Imagens de Nível de Rua](../map/point-layers-on-map.md#-street-level-imagery), [Fotos Online](../map/map-context-menu.md#online-photos) ou [Mapas Online](../map/raster-maps.md).
-- **GPS** / **Rede GSM**. Determinar sua localização, segui-lo no modo de navegação e registrar sua viagem (opcional). Esta permissão é solicitada quando você clica no [botão minha localização](../widgets/map-buttons.md#my-location-and-zoom) ou quando você [inicia a navegação](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **Rede GSM**. Determinar sua localização, segui-lo no modo de navegação e registrar sua viagem (opcional). Esta permissão é solicitada quando você clica no [botão minha localização](../widgets/map-buttons.md#my-position-and-zoom) ou quando você [inicia a navegação](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Opcional**:
 

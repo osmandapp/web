@@ -1,8 +1,9 @@
 ---
-source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
+source-hash: f1a828f975c96bbfda684d9dc28a964129f8890ae914445426256bb589a6171f
 sidebar_position: 3
 title: Menu Principal
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 
@@ -44,7 +44,7 @@ O ícone do [Menu Principal](../widgets/map-buttons.md#main-menu) '&#8801;' est�
 - [Marcadores de mapa](../personal/markers.md) é uma ferramenta que permite marcar um local no mapa.
 - [Meus locais](../personal/myplaces.md) é um menu que inclui por padrão Favoritos e trilhas e, adicionalmente, pode incluir [Notas A/V](../plugins/audio-video-notes.md) e [Edições OSM](../plugins/osm-editing.md) (se esses plugins estiverem ativados).
 - [Pesquisar](../search/index.md) (Android) é uma ferramenta que permite encontrar o local ou objeto que existe no mapa.
-- O botão [Direções](../widgets/map-buttons.md#directions) permite criar uma rota e iniciar a navegação.
+- O botão [Direções](../widgets/map-buttons.md#navigation) permite criar uma rota e iniciar a navegação.
 - [Configurar mapa](../map/configure-map-menu.md) é um menu que permite configurar a visualização do mapa.
 - [Baixar mapas](../start-with/download-maps.md) é um menu que contém todos os arquivos que podem ser baixados.
 - [Guias de viagem (Beta)](../plan-route/travel-guides.md) (*Android*) é uma ferramenta que permite usar o guia Wikivoyage para sua viagem.
