@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Rota Bağlam Menüsü
 ---
@@ -129,7 +129,7 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Yalnızca Android*) – Boşlukları doldurmak için rota segmentlerini birleştirir.
-- **<Translate android="true" ids="analyze_on_map"/>**. Rotanın yüksekliğini, hızını ve mesafesini incelemek için [Haritada analiz et](../tracks/index.md#analyze-track-on-map) aracını açar.
+- **<Translate android="true" ids="analyze_on_map"/>**. Rotanın yüksekliğini, hızını, mesafesini ve rotada bulunan herhangi ek veriyi (örneğin, harici sensör veya araç metrikleri verisi) incelemek için [Haritada analiz et](../tracks/index.md#analyze-track-on-map) aracını açar.
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Yalnızca Android*) - Rotayı zaman veya mesafe [aralıklarına](./track-context-menu.md#analyze-by-intervals) göre analiz eder.
 
 <br/>
@@ -364,11 +364,11 @@ Rota üzerinde *yükseklik bilgisi yoksa*, aşağıdaki yollarla ekleyebilirsini
 
 ### Eksik Yüksekliği Hesapla {#calculate-missing-elevation}
 
-:::note OsmAnd Pro aboneliği
-[Yükseklik çevrimdışı hesapla](../../plan-route/create-route.md#get-elevation-data) özelliği yalnızca [**OsmAnd Pro aboneleri**](../../purchases/android.md#pro-features) <ProFeature /> için kullanılabilir.
-:::
-
 <InfoAndroidOnly />
+
+:::info Pro özelliği
+[Yükseklik çevrimdışı hesapla](../../plan-route/create-route.md#get-elevation-data), [**OsmAnd Pro**](../../purchases/index.md) ücretli bir özelliktir <ProFeature />.
+:::
 
 [Bu özellik](../../plan-route/create-route.md#get-elevation-data), 70 derece kuzey enlemi ile 70 derece güney enlemi arasındaki herhangi bir arazi için GPX rotasının yükseklik profilini çevrimdışı olarak hesaplamanıza olanak tanır, [Arazi haritası verilerine](../../plugins/topography.md#download-maps) dayanarak. *Arazi haritaları (3D) daha önce indirilmiş olmalıdır*.
 
@@ -697,7 +697,7 @@ Bu seçenek, rotanızın her aralığı için ortalama, minimum ve maksimum kalp
 
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
-Bu filtre, gereksiz veya yanlış verileri hariç tutarak rota istatistiklerinizi iyileştirmenize olanak tanır. Rota parametrelerinize uymayan rota noktalarını filtreleyebilir ve sonuç olarak bozulma veya kayıt gürültüsü olmadan daha doğru bir grafik ve görsel rota çizgisi elde edebilirsiniz. *Düzeltme*, *Hız*, *Yükseklik* ve *GPS Hassasiyeti* gibi filtrelerle değişiklikler yapabilirsiniz, bu filtreler filtrelenmiş noktaları mevcut rotadan gizler. Ayrıca, *İstatistikler* menüsünde, değişikliklerinizin grafikte nasıl görüntülendiğini kaydetmeden önce kontrol edebilirsiniz. Ayrıca, orijinalini kaydetmeden bu filtrede rotanızın *Orijinale sıfırla* ve *Kopya olarak kaydet* seçeneklerini de kullanabilirsiniz.  
+Bu filtre, gereksiz veya yanlış verileri hariç tutarak rota istatistiklerinizi iyileştirmenize olanak tanır. Rota parametrelerinize uymayan rota noktalarını filtreleyebilir ve sonuç olarak bozulma veya kayıt gürültüsü olmadan daha doğru bir grafik ve görsel rota çizgisi elde edebilirsiniz. *Yumuşatma*, *Hız*, *Yükseklik* ve *GPS Hassasiyeti* gibi filtrelerle değişiklikler yapabilirsiniz, bu filtreler filtrelenmiş noktaları mevcut rotadan gizler. Ayrıca, *İstatistikler* menüsünde, değişikliklerinizin grafikte nasıl görüntülendiğini kaydetmeden önce kontrol edebilirsiniz. Ayrıca, orijinalini kaydetmeden bu filtrede rotanızın *Orijinale sıfırla* ve *Kopya olarak kaydet* seçeneklerini de kullanabilirsiniz.  
 
 <!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
@@ -714,14 +714,14 @@ Android GPS Filtre uygulaması sayfası aşağıdakileri içerir:
 
 ### Filtre Menüsü {#filter-menu}
 
-Bu menüde, filtreleri kullanarak *Düzeltme*, *Hız*, *Yükseklik* veya *GPS hassasiyeti* gibi rotanızın bazı parametrelerini değiştirebilirsiniz. Menü bir *Noktalar kısmı* ve bir *Eylemler kısmı* olarak ikiye ayrılmıştır.
+Bu menüde, filtreleri kullanarak *Yumuşatma*, *Hız*, *Yükseklik* veya *GPS hassasiyeti* gibi rotanızın bazı parametrelerini değiştirebilirsiniz. Menü bir *Noktalar kısmı* ve bir *Eylemler kısmı* olarak ikiye ayrılmıştır.
 
 | ***Noktalar*** |
 |:------------|
 |Bu kısım, filtrelemeden sonraki nokta sayısını ve filtreler kullanılmadan önce seçilen rotadaki toplam nokta sayısını gösterir.|
 |![GPS filter screen points numbers Android](@site/static/img/personal/tracks/gps_filter_points_numbers_android.png) |
 | ***Eylemler*** |
-|*Düzeltme*. Noktalar arasındaki eşik mesafeyi ayarlar. Rota noktaları, son görünür noktadan en az bu mesafede olanlar gizlenir. Filtre tarafından seçilen mesafeden daha az mesafede olan rotadaki tüm noktalar gizlenecektir. Rota noktaları son görünür noktadan sayılır. Yüksek eşiklerin rota geometrisini aşırı basitleştirebileceğini unutmayın.|
+|*Yumuşatma*. Noktalar arasındaki eşik mesafeyi ayarlar. Rota noktaları, son görünür noktadan en az bu mesafede olanlar gizlenir. Filtre tarafından seçilen mesafeden daha az mesafede olan rotadaki tüm noktalar gizlenecektir. Rota noktaları son görünür noktadan sayılır. Yüksek eşiklerin rota geometrisini aşırı basitleştirebileceğini unutmayın.|
 |![GPS filter smoothing numbers Android](@site/static/img/personal/tracks/gps_filter_smoothing_android.png) |
 |*Hız*. Yalnızca seçilen hız aralığına karşılık gelen rota noktaları grafikte ve haritada görüntülenir, diğerleri gizlenir.|
 |![GPS filter speed numbers Android](@site/static/img/personal/tracks/gps_filter_speed_android.png) |

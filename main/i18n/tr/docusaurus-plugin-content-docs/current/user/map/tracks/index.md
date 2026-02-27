@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title:  İzler
 sidebar_position: 2
 ---
@@ -116,7 +116,7 @@ Haritada bir iz seçtiğinizde veya bir izi kaydettikten veya içe aktardıktan 
 
 Şuraya git: *İze dokunun → İz sekmesi → <Translate android="true" ids="analyze_on_map"/>*  
 
-![İz menüsü haritada analiz et Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![İz menüsü haritada mesafeyi analiz et Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![İz menüsü haritada analiz et Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![İz menüsü haritada mesafeyi analiz et Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Haritada bir iz seçtiğinizde veya bir izi kaydettikten veya içe aktardıktan 
 
 Bu araç, grafikler ve haritalar kullanarak [iz](../../map/tracks/track-context-menu.md#options) verilerinin ayrıntılı bir analizini sağlar.
 
-- **Grafik verileri (Y ekseni)** şunları gösterir: *Rakım*, *Eğim*, *Hız*, [*Harici sensör verileri*](../../plugins/external-sensors.md) ve iz verilerinde bulunuyorsa en fazla iki seçeneğin kombinasyonları.
+- **Grafik verileri (Y ekseni)** şunları gösterir: *Rakım*, *Eğim*, *Hız*, [*Harici sensör verileri*](../../plugins/external-sensors.md) ve iz verilerinde bulunuyorsa en fazla iki seçeneğin kombinasyonları. ***Yalnızca Android:*** OBD-II verileriyle kaydedilen araç izleri için, Y ekseni ayrıca motor devri, soğutma sıvısı sıcaklığı ve daha fazlası gibi Araç metriklerini sağlar.
 - **Grafik boyutu (X ekseni)** şunları temsil eder: *Mesafe*, *Zaman* ve *Günün saati*.
 - **Dokunma/kaydırma etkileşimi**. İz üzerindeki belirli bir nokta hakkında bilgi görüntülemek için bir grafiğe dokunun. Grafikte kaydırma, harita üzerindeki uygun konumu vurgular ve bilgi çubuğunda ayrıntıları gösterir.
 - **Mesafe etiketi**. Grafik boyunca dokunurken veya kaydırırken, araç ipucu iz boyunca tam mesafeyi de görüntüler. Değer, mevcut profil birim ayarlarını takip eder (<Translate android="true" ids="km"/> veya <Translate android="true" ids="mile"/>). Bir noktanın iz başlangıcından ne kadar uzakta olduğunu hızlıca tahmin etmek veya iki konum arasındaki mesafeyi değerlerini karşılaştırarak hesaplamak için kullanın.
@@ -157,7 +157,7 @@ Bu araç, grafikler ve haritalar kullanarak [iz](../../map/tracks/track-context-
 
 </Tabs>
 
-Harita görünümünü ve grafiği konumunuzla senkronize etmek için [Konumum](../../map/interact-with-map.md#my-location-and-zoom) düğmesine dokunun.
+Harita görünümünü ve grafiği konumunuzla senkronize etmek için [Konumum](../../map/interact-with-map.md#my-position-and-zoom) düğmesine dokunun.
 
 - **Grafiğin ölçeği** aynı kalır ve **çubuk bilgisi** sol tarafta 1/4 oranında sabitlenir.
 - Siz hareket ettikçe, **grafik soldan sağa kayar** ve izinizin önündeki bilgileri görüntüler.

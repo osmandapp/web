@@ -1,5 +1,5 @@
 ---
-source-hash: 968c55a6703f781dcb4e364777c66559a1152aa4d37ed84f16cefeb7a4b2eb6d
+source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,9 +19,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-:::tip subscribe  
-&nbsp;<ProFeature/> OsmAnd Cloud'un tüm özelliklerine erişmek için [Android](../purchases/android.md#prices) veya [iOS](../purchases/ios.md#prices) için **OsmAnd Pro**'ya abone olun.  
-:::  
+:::info Pro feature
+OsmAnd Cloud, [**OsmAnd Pro**](../purchases/index.md) ücretli bir özelliktir <ProFeature />.
+:::
 
 :::note cross-platform  
 OsmAnd Cloud bağımsız bir bulut depolama hizmetidir ve belirli bir Android, iOS veya web platformu sürümüne *bağlı değildir*.  

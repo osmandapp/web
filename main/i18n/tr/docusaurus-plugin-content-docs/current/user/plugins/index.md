@@ -1,8 +1,9 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
 sidebar_position: 18
 title: Eklentiler
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -34,7 +34,7 @@ Bir eklentinin işlevselliğine erişmek için öncelikle [etkinleştirilmesi](#
 
 <TabItem value="android" label="Android">
 
-Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugin_settings"/> → &#65049; → Etkinleştir*
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Etkinleştir*
 
 ![Eklentileri etkinleştir Android](@site/static/img/settings/plugins_enable_android.png) ![Eklenti örneği Android](@site/static/img/settings/plugin_example_android.png)
 
@@ -52,7 +52,7 @@ Bir eklentinin işlevselliğine erişmek için öncelikle [etkinleştirilmesi](#
 
 ### Satın Alma {#purchase}
 
-Çoğu eklenti ücretsiz olarak mevcuttur, yalnızca aşağıdaki listedeki eklentiler, kullanmak için bir [OsmAnd+ veya OsmAnd Pro](../purchases/index.md) lisansı satın almayı gerektirir:
+Çoğu eklenti ücretsiz olarak mevcuttur, yalnızca aşağıdaki listedeki eklentiler, kullanmak için bir [OsmAnd+ veya OsmAnd Pro](../purchases/index.md) lisansı satın almayı gerektirir:  
 
 - [Topografya](../plugins/topography.md)
 - [3D Rölyef](../plugins/topography.md#3d-relief) (Topografya eklentisinin bir özelliği)
@@ -68,37 +68,39 @@ OsmAnd Eklentileri şu Özellik gruplarını artırabilir: **Katmanlar**, **Widg
 
 🤖 *- yalnızca OsmAnd'ın Android sürümü için.*
 
-| Eklenti adı | Özellikler |
+| Eklenti adı |Özellikler |
 |:------------|:-------|
 | [Wikipedia](#wikipedia) | [Harita katmanı](../plugins/wikipedia.md#download-wikipedia-packages), [Bağlam menüsü](../plugins/wikipedia.md#wikipedia-settings) |
 | [Çevrimiçi haritalar](#online-maps) |[Harita katmanı](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Gezi kaydı](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profil](../plugins/trip-recording.md#recording-settings) |
 | [Topografya](#topography) | [Harita katmanı](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [3D Rölyef](#topography) 🤖 | [Harita katmanı](../plugins/topography.md#3d-relief) |
+| [3D Rölyef](#topography) 🤖  | [Harita katmanı](../plugins/topography.md#3d-relief) |
 | [Hava Durumu](../plugins/weather.md) | [Harita katmanı](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Ekran](../plugins/weather.md#weather-forecast-screen) |
-| [Deniz haritası görünümü](#nautical-map-view) | [Harita stili](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile) |
+| [Deniz haritası görünümü](#nautical-map-view) | [Harita stili](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Kayak haritası görünümü](#ski-map-view) | [Harita stili](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
-|[Ses/video notları](#audiovideo-notes) 🤖 | [Harita katmanı](../plugins/audio-video-notes.md#show-all-on-the-map), [Bağlam menüsü](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
-|[OpenStreetMap düzenleme](#openstreetmap-editing)| [Harita katmanı](../plugins/osm-editing.md#authorization) |
+|[Ses/video notları](#audiovideo-notes) 🤖  | [Harita katmanı](../plugins/audio-video-notes.md#show-all-on-the-map), [Bağlam menüsü](../plugins/audio-video-notes.md#create-a-single-note), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[Park konumu](#parking-position) | [Bağlam menüsü](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
+|[OpenStreetMap düzenleme](#openstreetmap-editing)| [Harita katmanı](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Harita katmanı](../plugins/mapillary.md#map-layer), [Bağlam menüsü](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[Harici Sensörler](#external-sensors) 🤖 | [Widget](../plugins/external-sensors.md#widgets) |
-|[Erişilebilirlik](#accessibility) 🤖 | [Özel Ayarlar](../plugins/accessibility.md#plugin-settings) |
-| [OsmAnd geliştirme](#osmand-development) | [Özel Ayarlar](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖 | [Harita Katmanı](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Bağlam Menüsü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [AIS gemi takipçisi](#ais-vessel-tracker) 🤖 | [Özel Ayarlar](../plugins/ais-tracker.md#plugin-settings) |
+|[Harici Sensörler](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Araç Metrikleri](#vehicle-metrics)  | [Özel Ayarlar](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
+|[Gökbilim](#star-watcher)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Bağlam Menüsü](../plugins/astronomy.md#celestial-object-info) |
+|[Erişilebilirlik](#accessibility) 🤖  | [Özel Ayarlar](../plugins/accessibility.md#plugin-settings) |
+|[OsmAnd geliştirme](#osmand-development) | [Özel Ayarlar](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Harita Katmanı](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Bağlam Menüsü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[AIS gemi takipçisi](#ais-vessel-tracker) 🤖  |  [Özel Ayarlar](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Eklenti Ayarları {#plugin-settings}
 
-:::caution NOT
-Yalnızca OsmAnd geliştirme eklentisi ve OSM düzenleme eklentisi tüm profillerin ayarlarını değiştirir. Kalan eklentiler her profil için ayrı ayrı yapılandırılır.
+:::caution NOTE
+Yalnızca OsmAnd geliştirme eklentisi ve OSM düzenleme eklentisi tüm profillerin ayarlarını değiştirir. Kalan eklentiler her profil için ayrı ayrı yapılandırılır.  
 :::
 
 Çoğu eklenti, şu yollarla erişilebilen belirli profil veya genel ayarlar sağlar:
 
-- *Ana Menü → Eklentiler → Eklenti adı → Ayarlar (iOS için &#x2699)* veya
-- *Ana Menü → Ayarlar → Profil → [Eklenti ayarları](../personal/profiles.md#plugin-settings)*.
+- *Ana Menü → Eklentiler → Eklenti adı → Ayarlar (ios için &#x2699)* veya  
+- *Ana Menü → Ayarlar → Profil → [Eklenti ayarları](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -124,22 +126,21 @@ Aşağıdaki eklentiler kendi ayarlarını sağlar:
 |:------------|:-------|
 | [Gezi kaydı](#trip-recording) | Gezi kaydı [çalışma modlarını](../plugins/trip-recording.md#required-setup-parameters) yapılandırın |
 | [Hava Durumu](#weather) | Hava olaylarını görüntülemek için ölçü birimlerini yapılandırın |
-|[Ses/video notları](#audiovideo-notes) 🤖 | [Video formatını, ne kadar süreyle saklanacağını vb.](../plugins/audio-video-notes.md#plugin-settings) seçin |
-|[OpenStreetMap düzenleme](#openstreetmap-editing)| Kullanıcı [girişini](../plugins/osm-editing.md#settings) belirtin |
-| [Harici Sensörler](#external-sensors) 🤖 | Harici cihaza bağlanın [Ayarlar](../plugins/external-sensors.md#required-setup-parameters) |
-| [Erişilebilirlik](#accessibility) 🤖 | [Ayarlar](../plugins/accessibility.md#plugin-settings) OsmAnd içinde Erişilebilirlik [Android özelliklerini](https://www.android.com/accessibility/) kullanmanıza olanak tanır. |
+|[Ses/video notları](#audiovideo-notes) 🤖  | [Video formatını, ne kadar süreyle saklanacağını vb.](../plugins/audio-video-notes.md#plugin-settings) seçin |
+|[OpenStreetMap düzenleme](#openstreetmap-editing)| Kullanıcı [girişini](../plugins/osm-editing.md#settings) belirtin  |
+|  [Harici Sensörler](#external-sensors) 🤖  | Harici cihaza bağlanın [Ayarlar](../plugins/external-sensors.md#required-setup-parameters) |
+|  [Erişilebilirlik](#accessibility) 🤖  | [Ayarlar](../plugins/accessibility.md#plugin-settings) OsmAnd içinde Erişilebilirlik [Android özelliklerini](https://www.android.com/accessibility/) kullanmanıza olanak tanır. |
 | [OsmAnd geliştirme](#osmand-development) | [Eklenti ayarları](../plugins/development.md#plugin-settings) geliştiriciler veya deneyimli kullanıcılar için özel özellikleri etkinleştirmenize olanak tanır |
-| [OsmAnd Tracker](#osmand-tracker) 🤖 | Tüm ayarlar ayrı bir uygulamada yapılandırılabilir |
+|  [OsmAnd Tracker](#osmand-tracker) 🤖  | Tüm ayarlar ayrı bir uygulamada yapılandırılabilir |
 | [AIS gemi takipçisi](#ais-vessel-tracker) | [Eklenti ayarları](../plugins/ais-tracker.md#plugin-settings) özel ayarları etkinleştirmenize olanak tanır |
 
 ### Eklenti Eylemleri {#plugin-actions}
 
-**<Translate android="true" ids="reset_plugin_to_default"/>** - *bu seçeneği kullanarak eklenti ayarları varsayılan değerlere sıfırlanabilir*.
+**<Translate android="true" ids="reset_plugin_to_default"/>** - *bu seçeneği kullanarak eklenti ayarları varsayılan değerlere sıfırlanabilir*.  
 **<Translate android="true" ids="copy_from_other_profile"/>** - *eklenti ayarları başka bir profilden kopyalanabilir*.
 
 
 ## Eklentiler listesi {#plugins-list}
-
 
 ### [Wikipedia](./wikipedia.md) {#wikipedia}
 
@@ -147,15 +148,19 @@ Seyahatinizde Wikipedia'ya sahip olmak, ziyaret ettiğiniz yerler hakkında daha
 
 ### [Çevrimiçi Haritalar](./online-map.md) {#online-maps}
 
-OsmAnd Çevrimiçi haritalar, uygulamada zaten bulunan OpenStreetMap veritabanına kapsamlı bir ektir. Bu eklentiyle, haritanıza çeşitli kaynaklardan gelen bilgilerle katmanlar ekleyebilirsiniz.
+OsmAnd Çevrimiçi haritalar, uygulamada zaten bulunan OpenStreetMap veritabanına kapsamlı bir ektir. Bu eklentiyle, haritanıza çeşitli kaynaklardan gelen bilgilerle katmanlar ekleyebilirsiniz.  
 
 ### [Gezi Kaydı](./trip-recording.md) {#trip-recording}
 
-Nereye gittiğinizi anlatmak için, konumunuzun enlem ve boylamı gibi GPS verileri kaydedilip bir dosyada saklanabilir ve daha sonra yeniden kullanılabilir, geliştirilebilir, ara noktalarla zenginleştirilebilir, navigasyon için sağlanabilir, arkadaşlarla paylaşılabilir vb.
+Nereye gittiğinizi anlatmak için, konumunuzun enlem ve boylamı gibi GPS verileri kaydedilip bir dosyada saklanabilir ve daha sonra yeniden kullanılabilir, geliştirilebilir, ara noktalarla zenginleştirilebilir, navigasyon için sağlanabilir, arkadaşlarla paylaşılabilir vb.  
 
 ### [Topografya](./topography.md) {#topography}
 
-Kontur çizgileri, Tepe Gölgesi, Eğim, 3D Rölyef gibi topografya bilgileri, yükseklik, rölyef, aşırılıklar, diklik, eşit yükseklikteki noktalar vb. görerek arazinin görsel bir değerlendirmesini yapmaya yardımcı olur.
+Kontur çizgileri, Tepe Gölgesi, Eğim, 3D Rölyef gibi topografya bilgileri, yükseklik, rölyef, aşırılıklar, diklik, eşit yükseklikteki noktalar vb. görerek arazinin görsel bir değerlendirmesini yapmaya yardımcı olur.  
+
+### [Hava Durumu](./weather.md) {#weather}
+
+Mevcut gün ve sonraki 7 gün için saatlik tahmini gösterir. 
 
 ### [Deniz Haritası Görünümü](./nautical-charts.md) {#nautical-map-view}
 
@@ -167,7 +172,7 @@ Kayak Haritası Görünümü, kış renklerini ve yokuş aşağı veya kros pist
 
 ### [Ses/Video Notları](./audio-video-notes.md) {#audiovideo-notes}
 
-Gelecekteki referans için ses/video notları oluşturun, örneğin bir olayı, sahneyi veya etkileşimi hatırlamak için. Oluşturulan ses/video notları *Yerlerim*'den ve harita üzerinde coğrafi konuma bağlı kullanıcı yapımı hikayelerin ve düşüncelerin ayrı bir katmanı olarak mevcuttur. Yalnızca Android için.
+Gelecekteki referans için ses/video notları oluşturun, örneğin bir olayı, sahneyi veya etkileşimi hatırlamak için. Oluşturulan ses/video notları *Yerlerim*'den ve harita üzerinde coğrafi konuma bağlı kullanıcı yapımı hikayelerin ve düşüncelerin ayrı bir katmanı olarak mevcuttur. Yalnızca Android için.  
 
 ### [Park Konumu](./parking.md) {#parking-position}
 
@@ -175,35 +180,35 @@ Aracınızın sokakta bırakıldığı harita üzerinde bir nokta belirleyin ve 
 
 ### [OpenStreetMap Düzenleme](./osm-editing.md) {#openstreetmap-editing}
 
-OpenStreetMap düzenleme eklentisi, dünyanın kapsamlı bir haritasını oluşturan ve halka açık güncel, açık kaynaklı veriler sağlayan küresel bir topluluk olan OpenStreetMap'e katkıda bulunmanızı sağlar.
+OpenStreetMap düzenleme eklentisi, dünyanın kapsamlı bir haritasını oluşturan ve halka açık güncel, açık kaynaklı veriler sağlayan küresel bir topluluk olan OpenStreetMap'e katkıda bulunmanızı sağlar.  
 
 ### [Mapillary](./mapillary.md) {#mapillary}
 
-[Mapillary](https://www.mapillary.com/) tarafından sağlanan rotalarınızın veya ilgi çekici yerlerinizin sokak düzeyindeki görünümlerini görün (internet bağlantısı gereklidir).
-
-### [Erişilebilirlik](./accessibility.md) {#accessibility}
-
-Erişilebilirlik eklentisi, cihazın erişilebilirlik özelliklerini doğrudan OsmAnd'da kullanılabilir hale getirir. Yalnızca Android için.
+[Mapillary](https://www.mapillary.com/) tarafından sağlanan rotalarınızın veya ilgi çekici yerlerinizin sokak düzeyindeki görünümlerini görün (internet bağlantısı gereklidir).  
 
 ### [Harici Sensörler](./external-sensors.md) {#external-sensors}
 
-Verilerini OsmAnd'da görüntülemek ve bilgileri iz kayıtlarda saklamak için harici sensörleri bağlayın.
+Verilerini OsmAnd'da görüntülemek ve bilgileri iz kayıtlarda saklamak için harici sensörleri bağlayın.  
 
 ### [Araç Metrikleri](./vehicle-metrics.md) {#vehicle-metrics}
 
-Araç verilerini OsmAnd'da görüntülemek ve bilgileri iz kayıtlarda saklamak için OBD-II tarayıcıyı bağlayın.
+Araç verilerini OsmAnd'da görüntülemek ve bilgileri iz kayıtlarda saklamak için OBD-II tarayıcıyı bağlayın.  
 
-### [Hava Durumu](./weather.md) {#weather}
+### [Gökbilim](./astronomy.md) {#astronomy}
 
-Mevcut gün ve sonraki 7 gün için saatlik tahmini gösterir.
+Gökbilim eklentisi, yıldızlar, takımyıldızlar, Güneş, Ay ve gezegenlerle etkileşimli bir yıldız gökyüzü katmanını görüntüler. Mevcut konumunuzun üzerindeki gök cisimlerini tanımlamanıza, seçilen tarih ve saat için yollarını önizlemenize ve yerleşik zaman kontrolleri ile görüntüleme seçeneklerini kullanarak yıldız gözlem seanslarını planlamanıza yardımcı olur.
+
+### [Erişilebilirlik](./accessibility.md) {#accessibility}
+
+Erişilebilirlik eklentisi, cihazın erişilebilirlik özelliklerini doğrudan OsmAnd'da kullanılabilir hale getirir. Yalnızca Android için.  
 
 ### [OsmAnd Geliştirme](./development.md) {#osmand-development}
 
-OsmAnd geliştirme eklentisi, geliştiricileri ve deneyimli kullanıcıları hedefler. Navigasyon rotalarını simüle etmenize, ekran oluşturma performansını kontrol etmenize vb. olanak tanır.
+OsmAnd geliştirme eklentisi, geliştiricileri ve deneyimli kullanıcıları hedefler. Navigasyon rotalarını simüle etmenize, ekran oluşturma performansını kontrol etmenize vb. olanak tanır.  
 
 ### [OsmAnd Tracker](./osmand-tracker.md) {#osmand-tracker}
 
-OsmAnd Tracker, kişilerinizi OsmAnd'daki harita üzerinde nerede olduklarını görmenize yardımcı olur. Yalnızca Android için.
+OsmAnd Tracker, kişilerinizi OsmAnd'daki harita üzerinde nerede olduklarını görmenize yardımcı olur. Yalnızca Android için.  
 
 ### [AIS Gemi Takipçisi](./ais-tracker.md) {#ais-vessel-tracker}
 

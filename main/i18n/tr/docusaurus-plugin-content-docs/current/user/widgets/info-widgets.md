@@ -1,5 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title:  Bilgi Widget'ları
 ---
@@ -66,7 +66,7 @@ Bazı Android cihazlarda rakım yanlış görüntülenebilir. Bu sorunu çözmek
 ### Yükseklik: Harita Merkezi {#elevation-map-center}
 
 :::info Ücretli özellik
-&nbsp;<ProFeature/> *Yükseklik: harita merkezi* widget'ını kullanmak için Android için [OsmAnd Pro](../purchases/android.md#pro-features) veya iOS için [OsmAnd Pro](../purchases/ios.md#pro-features) aboneliği edinin.  
+&nbsp;**OsmAnd Pro** *Yükseklik: harita merkezi* widget'ını kullanmak için [OsmAnd Pro](../purchases/index.md) aboneliği edinin <ProFeature />.  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -417,13 +417,13 @@ Yarıçap Cetveli widget'ı, konumunuz ile Yarıçap Cetveli'nin merkez noktası
 
 <TabItem value="android" label="Android">
 
-![Hız göstergesi](@site/static/img/widgets/speedometer_1_andr.png)   ![Hız göstergesi](@site/static/img/widgets/speedometer_2_andr.png)
+![Hız göstergesi](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Hız göstergesi](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Hız göstergesi](@site/static/img/widgets/speedometer_1_ios.png)   ![Hız göstergesi](@site/static/img/widgets/speedometer_2_ios.png)
+![Hız göstergesi](@site/static/img/widgets/speedometer_1_ios.png)   ![Hız göstergesi](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -431,8 +431,12 @@ Yarıçap Cetveli widget'ı, konumunuz ile Yarıçap Cetveli'nin merkez noktası
 
 **Hız göstergesi widget'ı**, *GPS'ten alınan verilere* dayalı olarak mevcut araç hızının grafiksel bir göstergesidir. Hızınız ile izin verilen hız sınırı arasındaki uyumu gerçek zamanlı olarak izlemenizi sağlar. İzin verilen hız sınırı, belirli bir yol bölümü için [OpenStreetMap verileri](https://wiki.openstreetmap.org/wiki/Key:maxspeed) ve OsmAnd [Hız Sınırı Toleransı](../navigation/guidance/voice-navigation.md#speed-limit) ayarı tarafından sağlanır.  
 
+Mevcut hızınız yapılandırılmış Hız sınırı toleransına yaklaştığında, widget görünümünü değiştirerek erken uyarı sağlar. Hız sınırı aşıldığında (toleransı dikkate alarak), widget daha belirgin bir “aşma” göstergesine geçer. Uyarı/aşma göstergesi, widget renklerini (arka plan, hız değeri ve birimler) değiştirerek gösterilir. Tolerans veya sınır eşiğini geçerken dikkat çekmek için görünüm değişikliği animasyonlu olabilir.
+
+![Hız göstergesi](@site/static/img/widgets/speed_alert.gif)
+
 - *Hız göstergesi ayarlarında*, widget'ın uygulama ekranındaki boyutunu (**Yükseklik**) *Küçük*, *Orta* veya *Büyük* olarak seçebilirsiniz.
-- *Her zaman* veya *Aşıldığında* seçerek **Hız sınırı uyarısını** ne zaman alacağınızı belirtebilirsiniz.
+- **Hız sınırı uyarısını** ne zaman alacağınızı belirlemek için *Her zaman* veya *Aşıldığında* seçebilirsiniz. Hız sınırı uyarısı Her zaman olarak ayarlanmışsa, widget hem “yaklaşma/tolerans” hem de “aşma” göstergesini gösterebilir. Hız sınırı uyarısı Aşıldığında olarak ayarlanmışsa, gösterge yalnızca hız sınırını aştıktan sonra gösterilir.
 
 <table class="blogimage">
     <tr>
@@ -463,13 +467,13 @@ Daha ayrıntılı bir açıklamayı burada okuyabilirsiniz: **[<Translate androi
 
 <TabItem value="android" label="Android">  
 
-![Yolculuk kayıt widget'ı](@site/static/img/widgets/wid_trip_rec.png)
+![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Yolculuk kayıt widget'ı](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 

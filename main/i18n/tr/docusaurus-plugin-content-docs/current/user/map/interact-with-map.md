@@ -1,5 +1,5 @@
 ---
-source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
+source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
 sidebar_position: 2
 title:  Harita ile Etkileşim
 ---
@@ -20,14 +20,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Bu makale, çeşitli düğmeleri ve hareketleri kullanarak haritayı nasıl özelleştireceğinizi ve haritayla nasıl etkileşim kuracağınızı açıklamaktadır. Haritayı döndürme, yakınlaştırma, görüş açısını ayarlama ve haritanın görüş açısını değiştirme, pusulayı kullanarak manuel veya otomatik olarak döndürme veya yönlendirmeye göre döndürme konularını kapsar.
 
 
-## Hareketler {#gestures}
+## Harita Hareketi {#map-movement}
+
+### Hareketler {#gestures}
 
 Hareketler, haritada kolay ve sezgisel gezinmek için çok önemlidir.
 
 | Harita Eylemi | Hareket |
 |:------------|:-------------|
-| **Taşı** | Haritaya **tek** parmağınızla dokunup basılı tutun, ardından etrafta gezinmek için sürükleyin. |
-| **Kaydır** | Haritayı **tek** parmağınızla kaydırın. |
+| **Taşı**    | Haritaya **tek** parmağınızla dokunup basılı tutun, ardından etrafta gezinmek için sürükleyin. |
+| **Kaydır**   | Haritayı **tek** parmağınızla kaydırın. |
 | **Yakınlaştır** | Haritaya **tek** parmağınızla iki kez dokunun. <br/> **Tek** parmağınızla iki kez dokunun ve aşağı kaydırın. <br/> Yakınlaştırmak için **iki** parmağınızla sıkıştırın. |
 | **Uzaklaştır**| **İki** parmağınızla iki kez dokunun. <br/> **Tek** parmağınızla iki kez dokunun ve yukarı kaydırın. <br/> Uzaklaştırmak için **iki** parmağınızla sıkıştırın. |
 | **Döndür**  | Haritaya **iki** parmağınızla dokunun, ardından parmaklarınızı dairesel bir hareketle döndürün. |
@@ -35,8 +37,7 @@ Hareketler, haritada kolay ve sezgisel gezinmek için çok önemlidir.
 
 Kaydırma animasyonları, ayarlarda [özel bir seçenek](#remove-animations) ile devre dışı bırakılabilir.
 
-
-## Konumum ve Yakınlaştırma {#my-location-and-zoom}
+### Konumum ve Yakınlaştırma {#my-position-and-zoom}
 
 ![Ekran menüsünü yapılandır](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -62,102 +63,12 @@ Kaydırma animasyonları, ayarlarda [özel bir seçenek](#remove-animations) ile
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### Konumum Görünümü {#my-location-appearance}
-
 Profil görünüm ayarlarını kullanarak **Konumum** düğme simgelerini özelleştirebilirsiniz. Bunu nasıl yapacağınız hakkında daha fazla bilgiyi [burada](../personal/profiles.md#profile-appearance) okuyun.
 
 
-## Harita Büyüteci {#map-magnifier}
+## Harita Etkileşimi {#map-interaction}
 
-*Harita Büyüteci*, kağıt haritalarla kullanılan bir büyüteç gibi haritanın görünürlüğünü artıran bir araçtır. Metni ve ayrıntıları daha net görmek veya aynı ölçeği korurken ayrıntı seviyesini ayarlamak için haritayı yakınlaştırmanıza olanak tanır. Daha fazla bilgi için [Vektör Haritalar](../map/vector-maps.md#map-magnifier) makalesine gidin.
-
-
-## Harita Yönlendirme Modları {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Pusula widget'ı](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Pusula widget'ı](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-*Harita yönlendirme modları*, haritanın cihaz ekranında nasıl görüntüleneceğini seçmenize olanak tanır. OsmAnd, **Manuel Olarak Döndürülmüş**, **Hareket Yönü**, **Pusula Yönü** ve **Kuzey Yukarıda** gibi modlar sunar. Her modu etkinleştirmek, haritanın seçilen seçeneğe göre yönlendirilme şeklini değiştirir. Tüm ayrıntılar için [Harita Düğmeleri](../widgets/map-buttons.md#compass) makalesine bakın.
-
-
-## Pusula {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Pusula widget'ı](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Pusula widget'ı](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-Pusula düğmesi, [haritanın nasıl yönlendirildiğini](#map-orientation-modes) gösterir. Simgelerdeki *kırmızı ok* veya *Hareket yönü* modundaki okun yönü Kuzeyi gösterir. [Pusula düğmesindeki simge](../widgets/map-buttons.md#compass) mevcut harita yönlendirme modunu gösterir. Pusula düğmesi widget'ı üç [etkileşim seçeneği](../widgets/map-buttons.md#compass-tapping-behavior) sunar: *Tek Dokunuş* haritayı Kuzeye döndürür, *Çift Dokunuş* tüm harita yönlendirme modları arasında geçiş yapar ve *Uzun Dokunuş* modlar listesini açar.
-
-
-## Haritayı Yönlendirmeye Göre Döndür {#rotate-map-by-bearing}
-
-**Haritayı yönlendirmeye göre döndür** modunda ([Hareket yönü](../widgets/map-buttons.md#compass)), harita otomatik olarak hareket yönünüzle hizalanır, böylece önünüzdeki alan ekranın üst kısmında görüntülenir. Bu mod, harita merkezini hafifçe aşağı kaydırarak navigasyonu geliştirir ve ilerideki rotanın daha fazlasını gösterir. Sabit duruyorsanız, harita sabit kalır.  
-
-Bu özelliği *Menü → Ayarlar → Profiller → Genel ayarlar → Görünüm → Harita yönlendirme* aracılığıyla veya [Pusula düğmesine](../widgets/map-buttons.md#compass-tapping-behavior) iki kez dokunarak etkinleştirebilirsiniz. Yönlendirme hakkında daha fazla bilgi için [buraya](../widgets/nav-widgets.md#bearing-widget) bakın.
-
-
-## Harita Eğimi ve Ufuk {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Eğim android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Eğim android 2](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Eğim ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Eğim ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
-</TabItem>
-
-</Tabs>  
-
-Yeni harita [oluşturma motoru](../personal/global-settings.md#map-rendering-engine) ile [kamera eğimini](../plugins/development.md#camera-tilt) 90 (eğimsiz) dereceden 10 dereceye kadar değiştirebilirsiniz. Yaklaşık olarak 20-22 dereceden daha az bir harita eğiminde (bu parametre yakınlaştırma seviyesine bağlıdır), hayali ufuk çizgisi görünür hale gelir. Gerçek olandan farklı olarak, program ufku her zaman düzdür.  
-
-Ufkun altında, sözde *pus* veya *sis* görebilirsiniz. Haritanın bu alanı gri renkle doldurulur, sadece birkaç harita detayı gözlemlenebilir.  
-Sis kullanımı gereklidir, çünkü haritadaki uzak nesnelerin gösterimi önemli hesaplama kaynakları gerektirir ve küçük görüş açılarında harita [bozulmaları](../plugins/development.md#comparison-with-a-satellite-imagery) nedeniyle her zaman haklı değildir. Bu nedenle OsmAnd haritasındaki görünür mesafe şu anda 35 döşeme ile sınırlıdır.  
-
-:::info
-Harita eğimi, ekrana iki parmakla uzun dokunup yukarı/aşağı hareket ettirilerek değiştirilebilir. Ayrıca ekranın sağ alt köşesindeki [Konumum](#my-location-and-zoom) simgesine dokunarak da eğimi değiştirebilirsiniz (yalnızca 45 ve 90 derecelik konumlar mevcuttur).  
-Eski [harita oluşturma motoru](../personal/global-settings.md#map-rendering-engine) (sürüm 1) açıkken Kamera eğimini değiştiremezsiniz.
-:::
-
-
-## Dokunmatik Ekran Kilidi {#touch-screen-lock}
+### Dokunmatik Ekran Kilidi {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +98,12 @@ Ekrandaki düğmeye dokunun veya kilit etkinleştirilmişse, harici bir düğme 
 
 Ekranı kilitlerken veya kilidini açarken net ekran mesajları size rehberlik edecektir.
 
+### Kendi Konumunu Canlandır {#animate-own-position}
 
-## Ayarlar {#settings}
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### Ek Pusula Ayarları {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Haritanın dönüşünü daha yavaş bir dönüş animasyonuyla yumuşatır, ancak bu 1 saniyeden fazla olmayan hafif bir gecikme yaratır.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Haritanın dönüşünü daha yavaş bir dönüş animasyonuyla yumuşatır, ancak bu 1 saniyeden fazla olmayan hafif bir gecikme yaratır.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+Hareket halindeyken *[Konumum](../personal/profiles/#profile-appearance)* simgesine göre yumuşak bir harita kaydırma efekti oluşturur. Efekt, gerçek zemine göre yaklaşık 1 saniyelik hafif bir gecikme yaratır. Bunun etkinleştirilmesinin bazı durumlarda belirgin gecikme sorunları yarattığı bildirilmiştir, bu tür sorunlar ortaya çıkarsa devre dışı bırakın.
 
 ### Animasyonları Kaldır {#remove-animations}
 
@@ -206,12 +113,115 @@ Hareketler ve düğmeler dahil olmak üzere harita etkileşimleri sırasında t�
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Kendi Konumunu Canlandır {#animate-own-position}
+## Harita Yönlendirme {#map-orientation}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
+### Harita Yönlendirme Modları {#map-orientation-modes}
 
-Hareket halindeyken *[Konumum](../personal/profiles/#profile-appearance)* simgesine göre yumuşak bir harita kaydırma efekti oluşturur. Efekt, gerçek zemine göre yaklaşık 1 saniyelik hafif bir gecikme yaratır. Bunun etkinleştirilmesinin bazı durumlarda belirgin gecikme sorunları yarattığı bildirilmiştir, bu tür sorunlar ortaya çıkarsa devre dışı bırakın.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Pusula widget'ı](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Pusula widget'ı](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+*Harita yönlendirme modları*, haritanın cihaz ekranında nasıl görüntüleneceğini seçmenize olanak tanır. OsmAnd, **Manuel Olarak Döndürülmüş**, **Hareket Yönü**, **Pusula Yönü** ve **Kuzey Yukarıda** gibi modlar sunar. Her modu etkinleştirmek, haritanın seçilen seçeneğe göre yönlendirilme şeklini değiştirir. Tüm ayrıntılar için [Harita Düğmeleri](../widgets/map-buttons.md#compass) makalesine bakın.
+
+### Pusula ile Döndür {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Pusula widget'ı](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Pusula widget'ı](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+Pusula düğmesi, [haritanın nasıl yönlendirildiğini](#map-orientation-modes) gösterir. Simgelerdeki *kırmızı ok* veya *Hareket yönü* modundaki okun yönü Kuzeyi gösterir. [Pusula düğmesindeki simge](../widgets/map-buttons.md#compass) mevcut harita yönlendirme modunu gösterir. Pusula düğmesi widget'ı üç [etkileşim seçeneği](../widgets/map-buttons.md#compass-tapping-behavior) sunar: *Tek Dokunuş* haritayı Kuzeye döndürür, *Çift Dokunuş* tüm harita yönlendirme modları arasında geçiş yapar ve *Uzun Dokunuş* modlar listesini açar.
+
+### Haritayı Yönlendirmeye Göre Döndür {#rotate-map-by-bearing}
+
+**Haritayı yönlendirmeye göre döndür** modunda ([Hareket yönü](../widgets/map-buttons.md#compass)), harita otomatik olarak hareket yönünüzle hizalanır, böylece önünüzdeki alan ekranın üst kısmında görüntülenir. Bu mod, harita merkezini hafifçe aşağı kaydırarak navigasyonu geliştirir ve ilerideki rotanın daha fazlasını gösterir. Sabit duruyorsanız, harita sabit kalır.  
+
+Bu özelliği *Menü → Ayarlar → Profiller → Genel ayarlar → Görünüm → Harita yönlendirme* aracılığıyla veya [Pusula düğmesine](../widgets/map-buttons.md#compass-tapping-behavior) iki kez dokunarak etkinleştirebilirsiniz. Yönlendirme hakkında daha fazla bilgi için [buraya](../widgets/nav-widgets.md#bearing-widget) bakın.
+
+
+## Harita Perspektifi {#map-perspective}
+
+### Harita Eğimi ve Ufuk {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Eğim android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Eğim android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Eğim ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Eğim ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+Yeni harita [oluşturma motoru](../personal/global-settings.md#map-rendering-engine) ile [kamera eğimini](../plugins/development.md#camera-tilt) 90 (eğimsiz) dereceden 10 dereceye kadar değiştirebilirsiniz. Yaklaşık olarak 20-22 dereceden daha az bir harita eğiminde (bu parametre yakınlaştırma seviyesine bağlıdır), hayali ufuk çizgisi görünür hale gelir. Gerçek olandan farklı olarak, program ufku her zaman düzdür.  
+
+Ufkun altında, sözde *pus* veya *sis* görebilirsiniz. Haritanın bu alanı gri renkle doldurulur, sadece birkaç harita detayı gözlemlenebilir.  
+Sis kullanımı gereklidir, çünkü haritadaki uzak nesnelerin gösterimi önemli hesaplama kaynakları gerektirir ve küçük görüş açılarında harita [bozulmaları](../plugins/development.md#comparison-with-a-satellite-imagery) nedeniyle her zaman haklı değildir. Bu nedenle OsmAnd haritasındaki görünür mesafe şu anda 35 döşeme ile sınırlıdır.  
+
+:::info
+Harita eğimi, ekrana iki parmakla uzun dokunup yukarı/aşağı hareket ettirilerek değiştirilebilir. Ayrıca ekranın sağ alt köşesindeki [Konumum](#my-position-and-zoom) simgesine dokunarak da eğimi değiştirebilirsiniz (yalnızca 45 ve 90 derecelik konumlar mevcuttur).  
+Eski [harita oluşturma motoru](../personal/global-settings.md#map-rendering-engine) (sürüm 1) açıkken Kamera eğimini değiştiremezsiniz.
+:::
+
+
+### Harita Büyüteci {#map-magnifier}
+
+*Harita Büyüteci*, kağıt haritalarla kullanılan bir büyüteç gibi haritanın görünürlüğünü artıran bir araçtır. Metni ve ayrıntıları daha net görmek veya aynı ölçeği korurken ayrıntı seviyesini ayarlamak için haritayı yakınlaştırmanıza olanak tanır. Daha fazla bilgi için [Vektör Haritalar](../map/vector-maps.md#map-magnifier) makalesine gidin.
+
+### Küresel Görünüm {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![Küresel Görünüm](@site/static/img/map/globe_view_1.png) ![Küresel Görünüm](@site/static/img/map/globe_view_2.png)
+
+**Küresel Görünüm**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harita etkileşimini küresel navigasyona uyarlar.  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Küresel Görünüm*
+
+Küresel Görünüm şu anda yalnızca şu durumlarda kullanılabilir:
+- [Geliştirme eklentisi](../plugins/development.md) etkinleştirildiğinde.  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*  
+- [Harita oluşturma motoru](../personal/global-settings.md#map-rendering-engine) Sürüm 2 (OpenGL) olarak ayarlandığında.  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+Küresel Görünüm etkinleştirildiğinde, harita bir küre olarak döner. Sürükleme hareketleri Dünya'yı döndürür ve yakınlaştırma, düz bir yüzeyi ölçeklendirmek yerine kamera mesafesini değiştirir. İzler, işaretçiler, semboller ve 3D nesneler gibi harita öğeleri, küresel yüzey üzerinde doğrudan işlenir ve eğriliğini takip eder. Küre döndükçe nesneler ufuk arkasında yavaş yavaş kaybolur.
+
+Ufuk yakınındaki etkileşim, istenmeyen uzun mesafeli hareketleri önlemek için sınırlı olabilir. Küre kutuplar üzerinden çevrilemez. Çok düşük yakınlaştırma seviyelerinde, yolların ve etiketlerin görsel görünümü dönerken tutarlı kalır.
 
 
 ## Harici Giriş Cihazları {#external-input-devices}
@@ -259,7 +269,7 @@ Harici bir giriş cihazının ayarlarına erişmek için bu özelliği etkinleş
 
 | Tuş | Cihaz | Eylem |
 |:---------|:---------------|:---------------|
-|**C**| *Klavye*   | Taşı - [Konumuma](#my-location-and-zoom) |
+|**C**| *Klavye*   | Taşı - [Konumuma](#my-position-and-zoom) |
 |**D**| *Klavye*   | Değiştir - [Harita yönlendirmesi](#map-orientation-modes) |
 |**N**| *Klavye*   | Göster / Gizle - Navigasyon görünümü |
 |**S**| *Klavye*   | Göster / Gizle - [Arama görünümü](../search/index.md) |
@@ -269,17 +279,17 @@ Harici bir giriş cihazının ayarlarına erişmek için bu özelliği etkinleş
 |**&#8595;**| *Klavye*   | Taşı - Haritayı aşağı  |
 |**&#8592;**| *Klavye*   | Taşı - Haritayı sola  |
 |**&#8594;**| *Klavye*   | Taşı - Haritayı sağa  |
-|**&#43;** **=**| *Klavye*  | Harita - [Yakınlaştır](#my-location-and-zoom) |
-|**&#8722;**| *Klavye*  | Harita - [Uzaklaştır](#my-location-and-zoom) |
+|**&#43;** **=**| *Klavye*  | Harita - [Yakınlaştır](#my-position-and-zoom) |
+|**&#8722;**| *Klavye*  | Harita - [Uzaklaştır](#my-position-and-zoom) |
 |**Geri tuşuna bas**| *Klavye*   | Gezin – Önceki ekran  |
-|**&#8595;**| *Wunderlinq*  | Harita - [Uzaklaştır](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Harita - [Yakınlaştır](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | Harita - [Uzaklaştır](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Harita - [Yakınlaştır](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | WunderLINQ Veri Izgarasını Aç |
 | **M** | *Klavye*  | Göster / Gizle - [Yan menü](../start-with/main-menu.md#main-menu-side-menu) |
-| **Joystick'e bas** <br/> (*legacy Android*) | *Klavye*  | Taşı - [Konumuma](#my-location-and-zoom) |
+| **Joystick'e bas** <br/> (*legacy Android*) | *Klavye*  | Taşı - [Konumuma](#my-position-and-zoom) |
 | **Medya düğmesi** <br/> (*yalnızca Android*)| *Klavye*  | Göster / Gizle - [AV notları](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*yalnızca Android*)| *Parrot*  | Harita - [Uzaklaştır](#my-location-and-zoom) |
-| **&#8594;** <br/> (*yalnızca Android*) | *Parrot*  | Harita - [Yakınlaştır](#my-location-and-zoom) |
+| **&#8592;** <br/> (*yalnızca Android*)| *Parrot*  | Harita - [Uzaklaştır](#my-position-and-zoom) |
+| **&#8594;** <br/> (*yalnızca Android*) | *Parrot*  | Harita - [Yakınlaştır](#my-position-and-zoom) |
 
 
 ### Özel Giriş Cihazı Türü {#custom-input-device-type}

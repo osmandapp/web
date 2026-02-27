@@ -1,8 +1,9 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title: BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -44,7 +45,7 @@ OsmAnd'daki BRouter entegrasyonu 2019 yazında çok değişti. Bu kılavuz, BRou
 
 OsmAnd'da kullanmak üzere üçüncü taraf *BRouter Çevrimdışı Navigasyon* uygulamasını yüklemek ve yapılandırmak için bu kılavuzu izleyin.
 
-**1.** Başlamak için, BRouter uygulamasını Android cihazınıza [F-Droid](https://f-droid.org/packages/btools.routingapp) veya [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) üzerinden yüklemeniz gerekir.
+**1.** Başlamak için, BRouter uygulamasını Android cihazınıza [F-Droid](https://f-droid.org/packages/btools.routingapp) veya [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) üzerinden yüklemeniz gerekir.  
 **2.** Ardından, BRouter ile önceden hesaplanmış rotalar boyunca OsmAnd uygulamasını kullanarak gezinmek için şunları yapmanız gerekir:
 
 - BRouter uygulamasını açın ve *İndirme Yöneticisi*'ne dokunun.
@@ -81,7 +82,7 @@ OsmAnd'da kullanmak üzere üçüncü taraf *BRouter Çevrimdışı Navigasyon* 
         <td><img src={require('@site/static/img/navigation/third/prof18.png').default} alt="BRouter"/></td>
         <td><img src={require('@site/static/img/navigation/third/prof18a.png').default} alt="BRouter"/></td>
     </tr>
-</table>
+</table>  
 
 **4.** Daha önce herhangi bir segment yüklediyseniz, bunlar BRouter haritasında görüntülenecektir. Segmentlerin dört durumu vardır:
 
@@ -112,16 +113,16 @@ Bu özel girişin OsmAnd'da görünmesi için BRouter uygulamasının OsmAnd'dan
 
 ## OsmAnd Sürüm 4.7.1 {#osmand-version-471}
 
-4.7.1 sürümünden itibaren Osmand, eşleme için profil parametresini destekler: Osmand sürüm 3'ten bu yana, Osmand'da birçok profil tanımlanabilir ve bu profiller arasında kolayca geçiş yapabilirsiniz. Örneğin, mevcut *Bisiklet* profilini kopyalayarak ve Brouter[hızlıbisiklet] formatında yeni bir ad vererek yeni bir profil oluşturulmalıdır. Cihazınızda yüklü olan mevcut BRouter profillerinden herhangi birini adında kullanabilirsiniz. Tüm profil dosyaları 'xxxxxxx.brf' adlandırma formatına sahiptir. Veya 'benimprofilim.brf' gibi kendi yeni profilinizi oluşturabilirsiniz.
+4.7.1 sürümünden itibaren OsmAnd, eşleme için profil parametresini destekler: OsmAnd sürüm 3'ten bu yana, OsmAnd'da birçok profil tanımlanabilir ve bu profiller arasında kolayca geçiş yapabilirsiniz. Örneğin, mevcut *Bisiklet* profilini kopyalayarak ve Brouter[fastbike] formatında yeni bir ad vererek yeni bir profil oluşturulmalıdır. Cihazınızda yüklü olan mevcut BRouter profillerinden herhangi birini adında kullanabilirsiniz. Tüm profil dosyaları 'xxxxxxx.brf' adlandırma formatına sahiptir. Veya 'myprofile.brf' gibi kendi yeni profilinizi oluşturabilirsiniz.
 
 OsmAnd profilindeki adlandırma kuralı önemlidir, çünkü o profile dahil edilen BRouter profili, OsmAnd ile BRouter arasında gerçek köprüyü kurar.
 
-- Osmand'da bir profilin navigasyon hizmeti olarak *BRouter* tanımlanmışsa
-- VE profil adı "Brouter[benimmetnim]" gibi görünüyorsa
+- OsmAnd'da bir profilin navigasyon hizmeti olarak *BRouter* tanımlanmışsa
+- VE profil adı "Brouter[mystring]" gibi görünüyorsa
 
-O zaman "benimmetnim" profili Brouter uygulamasında kullanılacaktır. Bu yeni eşleme, bu durumda yukarıda tanımlanan ve "serviceconfig.dat" dosyasına dayanan temel eşlemeyi değiştirir.
+O zaman "mystring" profili Brouter uygulamasında kullanılacaktır. Bu yeni eşleme, bu durumda yukarıda tanımlanan ve "serviceconfig.dat" dosyasına dayanan temel eşlemeyi değiştirir.
 
-### Örnekler: Osmand-profil adı Brouter-uygulaması {#examples-osmand-profile-name-brouter-app}
+### Örnekler: OsmAnd-profil adı Brouter-uygulaması {#examples-osmand-profile-name-brouter-app}
 
 ```xml
 Brouter[trekking] "trekking" profili kullanılacak dosya: trekking.brf
@@ -130,7 +131,7 @@ Brouter[fastbike] "fastbike" profili kullanılacak dosya: fastbike.brf
 ```
 
 Açıklama:
-Şu anda Osmand, Brouter-profili (benimmetnim) için tanımlanan adı (büyük/küçük harf duyarlı) kontrol etmiyor.
+Şu anda OsmAnd, Brouter-profili (mystring) için tanımlanan adı (büyük/küçük harf duyarlı) kontrol etmiyor.
 Profil bulunamazsa, yönlendirme "Rota hesaplanamadı.." hatasıyla başarısız olacaktır.
 
 <table class="blogimage">
@@ -154,18 +155,18 @@ BRouter yapılandırıldığında, BRouter yönlendirme verilerinin ön hesaplam
 
 ## Rota Parametreleri {#route-parameters}
 
-*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2,route_parameters"/>*  
 
 ![BRouter](@site/static/img/navigation/routing/BRouter_route_param.png)
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> <Translate android="true" ids="fast_route_mode_descr"/> | Çoğu durumda, en kısa rota önerilecektir. Genellikle bu rota, ayar devre dışı bırakılırsa daha uzun sürebilir |
-| *<Translate android="true" ids="temporary_conditional_routing"/>* | Bu [makalede](../routing/osmand-routing.md#consider-temporary-limitations) Geçici kısıtlamaları dikkate al seçeneği hakkında okuyun. | Yönlendirme algoritması, OpenStreetMap'te belirtilen zaman kısıtlamalarını dikkate alır. Bazı durumlarda OSM'den gelen bilgilerin güncel olmayabileceğini unutmayın. |
+| *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | Çoğu durumda, en kısa rota önerilecektir. Genellikle bu rota, ayar devre dışı bırakılırsa daha uzun sürebilir |
+| *<Translate android="true" ids="temporary_conditional_routing"/>* |  Bu [makalede](../routing/osmand-routing.md#consider-temporary-limitations) Geçici kısıtlamaları dikkate al seçeneği hakkında okuyun.   | Yönlendirme algoritması, OpenStreetMap'te belirtilen zaman kısıtlamalarını dikkate alır. Bazı durumlarda OSM'den gelen bilgilerin güncel olmayabileceğini unutmayın.   |
 
 ### Diğer Yönlendirme Ayarları {#other-routing-settings}
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigasyon → Ayarlar*, [resim](../routing/online-routing.md#online-routing-setting)). Bu seçenek etkinleştirilirse, OsmAnd hesaplanan Brouter parkuruna iki segment ekler: biri *[Konumumdan](../../map/interact-with-map.md#my-location-and-zoom)* parkurun başlangıç noktasına ve diğeri parkurun sonundan rotanızın bitiş noktasına. Bu seçenek, parkura olan veya parkurdan olan mesafe 60 metreyi aşarsa etkindir.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigasyon → Ayarlar*, [resim](../routing/online-routing.md#online-routing-setting)). Bu seçenek etkinleştirilirse, OsmAnd hesaplanan Brouter parkuruna iki segment ekler: biri *[Konumum](../../map/interact-with-map.md#my-position-and-zoom)* parkurun başlangıç noktasına ve diğeri parkurun sonundan rotanızın bitiş noktasına. Bu seçenek, parkura olan veya parkurdan olan mesafe 60 metreyi aşarsa etkindir.
 
 - *Rota parametreleri*'nin [*Rotayı yeniden hesapla bölümünde*](../../navigation/guidance/navigation-settings.md#recalculate-route), rota yeniden hesaplama seçeneklerini etkinleştirebilir ve ayarlayabilirsiniz.
 

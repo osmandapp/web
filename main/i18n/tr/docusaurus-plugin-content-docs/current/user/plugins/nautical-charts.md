@@ -1,6 +1,6 @@
 ---
-source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
-sidebar_position: 7
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
 title: Deniz Haritası Görünümü
 ---
 
@@ -17,8 +17,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Genel Bakış {#overview}
 
-:::info Ücretli özellik
-Deniz Haritası Görünümü eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).
+:::tip Satın Alma
+Deniz Haritası Görünümü eklentisi, [ücretli bir özelliktir](../purchases/index.md).  
 :::
 
 Deniz Haritası Görünümü, su üzerinde gezinmenize ve popüler rotaları, su yolunuzdaki engelleri, en yakın limanları, demirleme yerlerini ve diğer önemli yer işaretlerini öğrenmenize yardımcı olan okyanusların, denizlerin, kıyı bölgelerinin ve nehirlerin ayrıntılı bir grafik temsilidir.  

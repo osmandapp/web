@@ -1,8 +1,9 @@
 ---
-source-hash: 912ad78d69a9d46cc8391bc3f8411dc7ce9423498430a6854908948053c3f739
+source-hash: f1a828f975c96bbfda684d9dc28a964129f8890ae914445426256bb589a6171f
 sidebar_position: 3
 title: Ana Menü
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 
@@ -44,7 +44,7 @@ import Translate from '@site/src/components/Translate.js';
 - [Harita işaretleyicileri](../personal/markers.md), harita üzerinde yer işaretlemeye olanak tanıyan bir araçtır.
 - [Yerlerim](../personal/myplaces.md), varsayılan olarak Favoriler ve parkurları içeren ve ayrıca [A/V notları](../plugins/audio-video-notes.md) ve [OSM düzenlemeleri](../plugins/osm-editing.md) (bu eklentiler açıksa) içerebilen bir menüdür.
 - [Arama](../search/index.md) (Android), harita üzerinde bulunan yer veya nesneyi bulmanızı sağlayan bir araçtır.
-- [Yol Tarifleri](../widgets/map-buttons.md#directions) düğmesi, bir rota oluşturmanıza ve navigasyonu başlatmanıza olanak tanır.
+- [Yol Tarifleri](../widgets/map-buttons.md#navigation) düğmesi, bir rota oluşturmanıza ve navigasyonu başlatmanıza olanak tanır.
 - [Haritayı yapılandır](../map/configure-map-menu.md), harita görünümünü yapılandırmaya olanak tanıyan bir menüdür.
 - [Haritaları indir](../start-with/download-maps.md), indirilebilecek tüm dosyaları içeren bir menüdür.
 - [Seyahat rehberleri (Beta)](../plan-route/travel-guides.md) (*Android*), seyahatiniz için Wikivoyage rehberini kullanmanıza olanak tanıyan bir araçtır.

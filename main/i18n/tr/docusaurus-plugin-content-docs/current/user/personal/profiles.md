@@ -1,5 +1,5 @@
 ---
-source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
+source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
 sidebar_position: 4
 title:  Profiller (Ayarlar)
 ---
@@ -211,13 +211,13 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 mil / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 mil / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 yd / 0.62 mil (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m<br/>Uzunluk birimleri, yatay mesafe değerlerine (örneğin, sürüş/rota mesafeleri ve navigasyondaki manevra mesafeleri) uygulanır. |
 |  |  |  |
-| **Yükseklik Birimleri** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Yükseklik birimleri, Yükseklik widget'larında, Navigasyon rota bilgisinde ve Parkur istatistiklerinde yükseklik/yükselti değerlerine ve ilgili ölçütlere (yokuş yukarı/aşağı, yükseklik aralığı) uygulanır.<br/>Varsayılan olarak, Yükseklik Birimleri Uzunluk Birimleri ile senkronize edilir ve yalnızca kullanıcı manuel olarak değiştirdikten sonra bağımsız hale gelir. |
+| **Yükseklik** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 m / 3.28 ft<br/>Yükseklik birimleri, Yükseklik widget'larında, Navigasyon rota bilgisinde, Parkur istatistiklerinde ve haritadaki dağ zirvesi yükseklik etiketlerinde yükseklik/yükselti değerlerine ve ilgili ölçütlere (yokuş yukarı/aşağı, yükseklik aralığı) uygulanır.<br/>Varsayılan olarak, Yükseklik Uzunluk ile senkronize edilir ve yalnızca kullanıcı manuel olarak değiştirdikten sonra bağımsız hale gelir. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Örnek: 50.12333° 19.93233° (Enlem Boylam) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Örnek: 50°7.393′ 19°55.941′ (Enlem Boylam)  |
@@ -232,14 +232,14 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 |          | Derece 360° | Tüm açısal değerler 0° ila 360° arasında okumalara sahiptir.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | Tüm açısal değerler [miliradyan değerine](https://en.wikipedia.org/wiki/Milliradian) sahiptir.  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/sa  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 km/sa  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mil/sa  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 dak/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 dak/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Avrupa, Asya, Latin Amerika, Kanada, Japonya, Hindistan, Avustralya |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Avrupa, Asya, Latin Amerika, Kanada, Japonya, Hindistan, Avustralya |
 |  | <Translate android="true" ids="imperial_gallons"/> | Birleşik Krallık ve benzeri |
 |  | <Translate android="true" ids="us_gallons"/> | Amerika Birleşik Devletleri |
 |  |  |  |
@@ -277,13 +277,13 @@ Bu bölüm, uygulama teması ve pusula düğmesi, harita ve profil veri birimler
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – OsmAnd'ı fiziksel düğmelerle çalıştırmak için *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>* veya *<Translate android="true" ids="sett_parrot_ext_input"/>* gibi harici kontrol cihazlarını bağlayın.
 
-- **<Translate android="true" ids="position_animation"/>** / **Kendi konumunu canlandır** – [Konum](../map/interact-with-map.md#my-location-and-zoom) simgesi, alınan her GPS noktasıyla (saniyede bir kez) canlanır. Özellikle hızlı hareket veya GPS sinyal dalgalanmaları sırasında hareketinde hafif bir gecikme fark edilebilir. Bu efekti *Tahmin süresi* ayarını (yalnızca Android) kullanarak ayarlayabilirsiniz: daha yüksek değerler akıcılığı artırır ancak gecikme ekler, daha düşük değerler gecikmeyi azaltır ancak hareketi daha az akıcı hale getirebilir.
+- **<Translate android="true" ids="position_animation"/>** / **Kendi konumunu canlandır** – [Konum](../map/interact-with-map.md#my-position-and-zoom) simgesi, alınan her GPS noktasıyla (saniyede bir kez) canlanır. Özellikle hızlı hareket veya GPS sinyal dalgalanmaları sırasında hareketinde hafif bir gecikme fark edilebilir. Bu efekti *Tahmin süresi* ayarını (yalnızca Android) kullanarak ayarlayabilirsiniz: daha yüksek değerler akıcılığı artırır ancak gecikme ekler, daha düşük değerler gecikmeyi azaltır ancak hareketi daha az akıcı hale getirebilir.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Yalnızca Android*) – Cihazınızın ses düğmelerini haritada [yakınlaştırmak](../map/interact-with-map.md#my-location-and-zoom) ve uzaklaştırmak için kullanma özelliğini etkinleştirin veya devre dışı bırakın.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*Yalnızca Android*) – Cihazınızın ses düğmelerini haritada [yakınlaştırmak](../map/interact-with-map.md#my-position-and-zoom) ve uzaklaştırmak için kullanma özelliğini etkinleştirin veya devre dışı bırakın.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*Yalnızca Android*) – Harita dönüşünü [kademeli hareketle](https://en.wikipedia.org/wiki/Kalman_filter) yumuşatır, ani konum değişikliklerini azaltır. Bu, küçük bir gecikme (*1 saniyeden az*) yaratır.
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*Yalnızca Android*) – Harita dönüşünü [kademeli hareketle](https://en.wikipedia.org/wiki/Kalman_filter) yumuşatır, ani konum değişikliklerini azaltır. Bu, küçük bir gecikme (*1 saniyeden az*) yaratır.
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*Yalnızca Android*) – Kontrol düğmelerini ve widget'ları gizlemek için haritada boş bir alana dokunun, harita görünürlüğünü en üst düzeye çıkarın.
 
@@ -371,7 +371,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 - Daha iyi seyahat planlaması için [rotaları ve durakları](../map/public-transport.md) gösteren **toplu taşıma görselleştirmesini etkinleştirin**.
 
-- İhtiyaçlarınıza uygun farklı bir [harita stili](../map/vector-maps.md#default-map-styles) seçerek **harita görünümünü ayarlayın**.
+- İhtiyaçlarınıza uygun farklı bir [harita stili](../map/map-styles.md) seçerek **harita görünümünü ayarlayın**.
 
 
 ## Ekranı Yapılandır {#configure-screen}
@@ -435,7 +435,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
-**Konumum görünümü** ayarları, konumunuzun haritada hem sabitken hem de hareket halindeyken nasıl görüntülendiğini özelleştirmenize olanak tanır. Cihaz hızı **sıfırdan büyük** olduğunda hareket işletim sistemi tarafından algılanır.
+**Konumum görünümü** ayarları, konumunuzun haritada hem sabitken (Dinlenme) hem de hareket halindeyken (Navigasyon) nasıl görüntülendiğini özelleştirmenize olanak tanır. Cihaz hızı **sıfırdan büyük** olduğunda hareket işletim sistemi tarafından algılanır.
 
 </TabItem>
 
@@ -456,7 +456,7 @@ Bu menü ile şunları yapabilirsiniz:
 
 ### Görüş Açısı ve Konum Yarıçapı {#view-angle-and-location-radius}
 
-Konumunuzla ilgili görsel öğeleri özelleştirebilir ve bunları **Dinlenme** ve **Navigasyon** konumları için ayrı ayrı veya birlikte uygulayabilirsiniz. Hem 2B hem de 3B modları için, *Görüş Açısı* ve *Konum Yarıçapı*, [Konumum](../map/interact-with-map.md#my-location-and-zoom) simgesinin hemen altında, [navigasyon profili](#profile-appearance) için seçilen aynı renkte görüntülenir.
+Konumunuzla ilgili görsel öğeleri özelleştirebilir ve bunları **Dinlenme** ve **Navigasyon** konumları için ayrı ayrı veya birlikte uygulayabilirsiniz. Hem 2B hem de 3B modları için, *Görüş Açısı* ve *Konum Yarıçapı*, [navigasyon profili](#profile-appearance) için seçilen aynı renkte görüntülenir, [Konumum](../map/interact-with-map.md#my-position-and-zoom) simgesinin hemen altında.
 
 - **<Translate android="true" ids="view_angle"/>** – Şu anda baktığınız yönü gösteren **koni şeklinde** bir alan görüntüler.  
 - **<Translate android="true" ids="location_radius"/>** – Simgenizin etrafında, mevcut konumunuzun doğruluğunu temsil eden **dairesel bir alan** gösterir.

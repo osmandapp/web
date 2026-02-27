@@ -1,6 +1,6 @@
 ---
-source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
-sidebar_position: 15
+source-hash: 7a4c572b27a72fe9f1b647eb877f540c2cdf3bec2eedcb4577e8fff99c5a07ee
+sidebar_position: 17
 title:  Gezi Kaydı
 ---
 
@@ -356,7 +356,7 @@ Uygulama simgesi rozeti, parkur kaydı etkin olduğunda OsmAnd simgesinin yanın
 
 ## Widget'lar {#widgets}
 
-Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı* gibi parkur kaydıyla ilgili temel bilgileri doğrudan ekranda görüntülemenizi sağlar. Android'de ayrıca *Maksimum Hız* ve *Ortalama Eğim* widget'larını ekleyebilirsiniz.
+Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı*, *Yokuş aşağı*, *Maksimum Hız* ve *Ortalama Eğim* gibi parkur kaydıyla ilgili temel bilgileri doğrudan ekranda görüntülemenizi sağlar. iOS'ta ayrıca *Hareket Süresi* widget'ını ekleyebilirsiniz.
 
 *Gezi kaydı widget'larını* kullanmaya başlamak için aşağıdaki tüm ayarları yapmanız gerekir:
 
@@ -381,7 +381,7 @@ Widget'lar, *Mesafe*, *Süre*, *Yokuş yukarı* ve *Yokuş aşağı* gibi parkur
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![iOS'ta Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![iOS'ta Mesafe/Başlat-Durdur widget'ı ekleme](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -413,13 +413,13 @@ Arayüzünüzü özelleştirmek için Gezi Kaydı widget'ını ve [diğer widget
 Bazı Gezi Kaydı widget'ları birden fazla görüntüleme modunu destekler. Modlar, şu anda kaydedilen gezinin genel gezi değerleri ile en son yokuş yukarı veya yokuş aşağı bölümüne ait metrikler arasında geçiş yapmanızı sağlar.
 
 Widget'a bağlı olarak aşağıdaki modlar mevcut olabilir.
-1. **Mesafe (Başlat-Durdur)**:
-- Toplam mesafe (varsayılan)
-- Son yokuş yukarı
-- Son yokuş aşağı
+1. **Ortalama Eğim**:
+- Son yokuş aşağı  
+- Son yokuş yukarı  
 
-2. **Yokuş yukarı**:
-- Toplam (varsayılan)
+2. **Mesafe (Başlat-Durdur)**:
+- Toplam mesafe (varsayılan)
+- Son yokuş aşağı
 - Son yokuş yukarı
 
 3. **Yokuş aşağı**:
@@ -428,15 +428,20 @@ Widget'a bağlı olarak aşağıdaki modlar mevcut olabilir.
 
 4. **Maksimum Hız**:
 - Toplam (varsayılan)
-- Son yokuş yukarı
 - Son yokuş aşağı
+- Son yokuş yukarı
 
-5. **Ortalama Eğim**:
-- Son yokuş yukarı  
-- Son yokuş aşağı 
+5. **Hareket Süresi** (*Yalnızca iOS*)
+- Toplam (varsayılan)
+- Son yokuş aşağı
+- Son yokuş yukarı
+
+6. **Yokuş yukarı**:
+- Toplam (varsayılan)
+- Son yokuş yukarı
 
 Mod değiştirme widget'a bağlıdır:
-- Yokuş yukarı / Yokuş aşağı / Maksimum Hız / Ortalama Eğim — Haritada widget'a dokunarak modunu değiştirin.
+- Yokuş yukarı / Yokuş aşağı / Maksimum Hız / Ortalama Eğim / Hareket Süresi — Haritada widget'a dokunarak modunu değiştirin.
 - Mesafe (Başlat-Durdur) — Mesafe widget'ı birden fazla görüntüleme modunu destekler (widget ayarlarında seçin), ancak ona dokunmak her zaman Gezi Kaydı iletişim kutusunu açar, burada kaydı başlatabilir, durdurabilir ve parkurunuz hakkında ayrıntılı bilgi görüntüleyebilirsiniz. 
 
 Mevcut kayıt henüz bir yokuş yukarı veya yokuş aşağı bölümü içermiyorsa, Son yokuş yukarı veya Son yokuş aşağı modundaki widget'lar 0 veya — (veri yok) gösterir.
@@ -452,26 +457,23 @@ Mevcut kayıt henüz bir yokuş yukarı veya yokuş aşağı bölümü içermiyo
 | ![Gezi kaydı (REC) widget'ı](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Etkin olmayan bir widget'a dokunulduğunda [Gezi Kaydı iletişim kutusunu](#start-a-dialog) açmak için, Gezi Kaydı eklentisi ayarlarında *Başlangıç İletişim Kutusunu Göster* seçeneğini etkinleştirin. Seçenek devre dışı bırakılırsa, widget'a dokunulduktan hemen sonra iletişim kutusu açılmadan kayıt başlayacaktır.| 
 
-Android'de Mesafe widget'ı birden fazla görüntüleme modunu destekler:
-- **Toplam mesafe** – mevcut kaydın toplam mesafesi (varsayılan).
-- **Son yokuş yukarı** – en son yokuş yukarı bölümünün mesafesi.
-- **Son yokuş aşağı** – en son yokuş aşağı bölümünün mesafesi.
-
 
 ### Ek Widget'lar {#additional-widgets}
 
 | |
 |------------|
-|**Süre**. Mevcut gezi kaydının toplam süresini saat ve dakika cinsinden gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Yokuş yukarı**. Seçilen moda bağlı olarak toplam yokuş yukarı veya son yokuş yukarı bölümünü gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_up_new.png)|
-|**Yokuş aşağı**. Seçilen moda bağlı olarak toplam yokuş aşağı veya son yokuş aşağı bölümünü gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
-|**Maksimum Hız**. Seçilen modda şu anda kaydedilen gezi için maksimum hızı gösterir. |
-|![widget'lar](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Ortalama Eğim**. Seçilen moda bağlı olarak mevcut gezinin son yokuş yukarı veya yokuş aşağı bölümünün ortalama eğimini görüntüler. |
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Yokuş aşağı**. Seçilen moda bağlı olarak toplam yokuş aşağı veya son yokuş aşağı bölümünü gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Süre**. Mevcut gezi kaydının toplam süresini saat ve dakika cinsinden gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|**Maksimum Hız**. Seçilen modda şu anda kaydedilen gezi için maksimum hızı gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Hareket Süresi** (*Yalnızca iOS*). Seçilen moda bağlı olarak mevcut gezi kaydının hareket süresini veya son yokuş yukarı ve yokuş aşağı sürelerini gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**Yokuş yukarı**. Seçilen moda bağlı olarak toplam yokuş yukarı veya son yokuş yukarı bölümünü gösterir. |
+|![widget'lar](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Birden fazla widget seçtiyseniz — *Süre*, *Yokuş yukarı* veya *Yokuş aşağı* — her biri için aynı iletişim kutusuna geçiş yapmanıza veya kapatmanıza gerek kalmadan erişebilirsiniz. Bu birleşik arayüz, ilgili tüm bilgileri sorunsuz bir şekilde görüntülemeyi ve yönetmeyi kolaylaştırır.
 

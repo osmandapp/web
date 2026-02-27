@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -55,9 +55,9 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 <!--
 
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -69,6 +69,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
 
 -->
 
@@ -97,7 +98,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D Rölyef](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografya verileri](../plugins/topography.md#overview)<br/>(Kontur çizgileri ve Arazi) | **-** | ✔ | ✔ |
-| [Koordinat Izgara — Renk Özelleştirme](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
+| [Koordinat Izgara — Renk Özelleştirme](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D iz görselleştirme](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Deniz derinlikleri](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Seyahat rehberleri (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -111,7 +112,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Araç Metrikleri Widget'ları](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 ücretsiz widget**</summary><ul><li>*Araç hızı*</li><li>*Motor devri*</li></ul></details> | <details><summary>**2 ücretsiz widget**</summary><ul><li>*Araç hızı*</li><li>*Motor devri*</li></ul></details> | ✔ |
 | [Harita işaretleyicileri aracı](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Çevrimiçi harita kaynakları](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb/mbtiles Harita desteği](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [SQLitedb/mbtiles Harita desteği](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favori noktalar](../map/point-layers-on-map.md)<br/>yer imleri ve ara noktalar | ✔ | ✔ | ✔ |
 | [Sesli/resimli/videolu noktalar](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Çevrimiçi GPS Takipçisi](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -130,7 +131,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 |  Pro Özelliği  | Açıklama   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Verilerinizi yedekleyin ve geri yükleyin, verileri [OsmAnd web portalı](https://www.osmand.net/map) ile senkronize edin. |
-| [3D Rölyef](../plugins/topography.md#3d-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modeline sahip olmanızı ve gözlemlemenizi sağlar. |
+| [3D Rölyef](../plugins/topography.md#3D-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modeline sahip olmanızı ve gözlemlemenizi sağlar. |
 | [Yükseklik Widget'ları - Yükseklik: Harita Merkezi](../widgets/info-widgets.md#elevation-map-center) | Mevcut harita merkezinin deniz seviyesinden yüksekliğini öğrenmenizi sağlar.  |
 | [Canlı](../personal/maps-resources.md#live-updates) | OsmAnd haritaları, [OpenStreetMap](https://www.openstreetmap.org/) iyileştirmesinden sonra her 15 dakikada bir güncellenir. |
 | [Hava Durumu Eklentisi](../plugins/weather.md) | Harita üzerinde 24 saatlik saatlik tahmin, 7 gün önceden. |
@@ -153,7 +154,7 @@ veya
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → OsmAnd Pro ile Devam Et*
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/pro_new.png)
 
 ### Maps+ Satın Alma {#maps-purchase}
 
@@ -161,7 +162,7 @@ veya
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Maps+ özellik listesine dokunun → Maps+ ile Devam Et*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## Eski Abonelikler (4.0 öncesi) {#legacy-subscriptions-prior-40}
