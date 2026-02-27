@@ -1,5 +1,5 @@
 ---
-source-hash: cf566fbf4725e593ede70401c18b9dd79befb8e6c4e2a8f1fb000487ef2f0277
+source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
 sidebar_position: 18
 title:  Плагіни
 ---
@@ -79,14 +79,16 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | [Вигляд морської карти](#nautical-map-view) | [Стиль карти](../plugins/nautical-charts.md#nautical-map-style), [Профіль](../plugins/nautical-charts.md#nautical-profile)  |
 | [Вигляд лижної карти](#ski-map-view) | [Стиль карти](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Профіль](../plugins/ski-maps.md#skiing-profile) |
 |[Аудіо/відео нотатки](#audiovideo-notes) 🤖  | [Шар карти](../plugins/audio-video-notes.md#show-all-on-the-map), [Контекстне меню](../plugins/audio-video-notes.md#create-a-single-note), [Віджет](../plugins/audio-video-notes.md#recording-widget) |
-|[Редагування OpenStreetMap](#openstreetmap-editing)| [Шар карти](../plugins/osm-editing.md#authorization) |
 |[Місце паркування](#parking-position) | [Контекстне меню](../plugins/parking.md#set-a-spot), [Віджет](../plugins/parking.md#parking-widget) |
+|[Редагування OpenStreetMap](#openstreetmap-editing)| [Шар карти](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Шар карти](../plugins/mapillary.md#map-layer), [Контекстне меню](../plugins/mapillary.md#map-context-menu) , [Віджет](../plugins/mapillary.md#mapillary-widget)|
 |[Зовнішні датчики](#external-sensors) 🤖  | [Віджет](../plugins/external-sensors.md#widgets) |
+|[Показники автомобіля](#vehicle-metrics)  | [Користувацькі налаштування](../plugins/vehicle-metrics#scanner-settings), [Віджет](../plugins/vehicle-metrics#widgets) |
+|[Астрономія](#star-watcher)  | [Екран](../plugins/astronomy.md#star-map-screen), [Контекстне меню](../plugins/astronomy.md#celestial-object-info) |
 |[Доступність](#accessibility) 🤖  | [Користувацькі налаштування](../plugins/accessibility.md#plugin-settings) |
-| [Розробка OsmAnd](#osmand-development) | [Користувацькі налаштування](../plugins/development.md#plugin-settings) |
-| [OsmAnd Tracker](#osmand-tracker) 🤖  | [Шар карти](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Віджет](../plugins/osmand-tracker.md#tracker-widget), [Контекстне меню](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-| [Трекер суден AIS](#ais-vessel-tracker) 🤖  |  [Користувацькі налаштування](../plugins/ais-tracker.md#plugin-settings) |
+|[Розробка OsmAnd](#osmand-development) | [Користувацькі налаштування](../plugins/development.md#plugin-settings) |
+|[OsmAnd Tracker](#osmand-tracker) 🤖  | [Шар карти](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Віджет](../plugins/osmand-tracker.md#tracker-widget), [Контекстне меню](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
+|[Трекер суден AIS](#ais-vessel-tracker) 🤖  |  [Користувацькі налаштування](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Налаштування плагіна {#plugin-settings}
@@ -140,7 +142,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Список плагінів {#plugins-list}
 
-
 ### [Вікіпедія](./wikipedia.md) {#wikipedia}
 
 Наявність Вікіпедії у вашій подорожі допоможе вам дізнатися більше про місця, які ви відвідуєте. Вона доступна в автономному режимі та показує статті Вікіпедії, пов'язані з цікавими місцями, прямо на карті.
@@ -156,6 +157,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### [Топографія](./topography.md) {#topography}
 
 Топографічна інформація, така як контурні лінії, відтінення рельєфу, ухил, 3D-рельєф, допомагає візуально оцінити рельєф місцевості, бачачи висоту, рельєф, екстремуми, крутизну, точки однакової висоти тощо.  
+
+### [Погода](./weather.md) {#weather}
+
+Показує погодинний прогноз на поточний день та на 7 днів вперед. 
 
 ### [Вигляд морської карти](./nautical-charts.md) {#nautical-map-view}
 
@@ -181,10 +186,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Переглядайте панорами вулиць ваших маршрутів або цікавих місць, надані [Mapillary](https://www.mapillary.com/) (потрібне підключення до Інтернету).  
 
-### [Доступність](./accessibility.md) {#accessibility}
-
-Плагін "Доступність" робить функції доступності пристрою безпосередньо доступними в OsmAnd. Тільки для Android.  
-
 ### [Зовнішні датчики](./external-sensors.md) {#external-sensors}
 
 Підключайте зовнішні датчики для відображення їхніх даних в OsmAnd та зберігання інформації в записах треків.  
@@ -193,9 +194,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Підключіть сканер OBD-II для відображення даних автомобіля в OsmAnd та зберігання інформації в записах треків.  
 
-### [Погода](./weather.md) {#weather}
+### [Астрономія](./astronomy.md) {#astronomy}
 
-Показує погодинний прогноз на поточний день та на 7 днів вперед.  
+Плагін астрономії відображає інтерактивну накладку зоряного неба зі зірками, сузір'ями, Сонцем, Місяцем та планетами. Він допомагає вам ідентифікувати небесні об'єкти над вашим поточним місцезнаходженням, переглядати їхні траєкторії для обраної дати та часу, а також планувати сеанси спостереження за зірками за допомогою вбудованих елементів керування часом та опцій перегляду.
+
+### [Доступність](./accessibility.md) {#accessibility}
+
+Плагін "Доступність" робить функції доступності пристрою безпосередньо доступними в OsmAnd. Тільки для Android.  
 
 ### [Розробка OsmAnd](./development.md) {#osmand-development}
 

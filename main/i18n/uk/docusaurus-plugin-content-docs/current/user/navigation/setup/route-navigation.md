@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title:  Підготовка маршруту
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-Функція **Підготовка маршруту** в OsmAnd надає покрокові навігаційні вказівки для різних [типів маршрутів](./../routing/osmand-routing.md#routing-types), включаючи [водіння автомобіля](./../routing/car-based-routing.md), [піші прогулянки](./../routing/pedestrian-routing.md), їзду на велосипеді, [верхову їзду](./../routing/horse-routing.md) та [лижі](./../routing/ski-routing.md). Користувачі можуть налаштовувати параметри навігації, додавати пункти призначення та оптимізувати маршрути для підвищення ефективності.
+Функція **Підготовка маршруту** в OsmAnd надає покрокові навігаційні вказівки для різних [типів маршрутів](./../routing/osmand-routing.md#routing-types), включаючи [водіння](./../routing/car-based-routing.md), [піші прогулянки](./../routing/pedestrian-routing.md), їзду на велосипеді, [верхову їзду](./../routing/horse-routing.md) та [лижі](./../routing/ski-routing.md). Користувачі можуть налаштовувати параметри навігації, додавати пункти призначення та оптимізувати маршрути для підвищення ефективності.
 
 :::tip
 
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - Зачекайте, доки маршрут буде розраховано. Після цього ви зможете отримати додаткову інформацію про ваш маршрут у *[розділі Деталі](./route-details.md#overview)*.
     - Ви можете перемикатися між різними [типами маршрутизації](./../routing/osmand-routing.md#routing-types) (профілями), щоб отримати найкращий результат.
     - Додайте [проміжні пункти призначення](#intermediate-destinations) (необов'язково).
-    - Ви також можете змінити точку відправлення з [поточного місцезнаходження](../../map/interact-with-map.md#my-location-and-zoom) на потрібну.
+    - Ви також можете змінити точку відправлення з [поточного місцезнаходження](../../map/interact-with-map.md#my-position-and-zoom) на потрібну.
 
 2. Додаткові [*Налаштування навігації*](#settings) можна використовувати залежно від ваших цілей (ви можете налаштувати, яких доріг уникати або яким надавати перевагу, економити пальне або обирати найшвидший маршрут тощо).
 
@@ -79,7 +79,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::note
 
-**Маршрут не може бути побудований, якщо в якості джерела мапи вибрано *[Онлайн-мапу](../../map/raster-maps.md#select-raster-maps)***.
+**Маршрут не може бути побудований, якщо в якості джерела мапи вибрано *[Онлайн-мапу](../../map/raster-maps.md#layers)***.
 
 :::
 
@@ -88,7 +88,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Існує 3 способи потрапити в меню навігації:
 
-- [*Кнопка навігації*](../../widgets/map-buttons.md#directions) на екрані мапи.  
+- [*Кнопка навігації*](../../widgets/map-buttons.md#navigation) на екрані мапи.  
 - *Маршрут до/з* у [*контекстному меню мапи*](../../map/map-context-menu.md#directions-to--from).  
 - Розділ Навігація в [*Головному меню*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Встановити початкову точку (за замовчуванням: [*Моє поточне місцезнаходження*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Встановити початкову точку (за замовчуванням: [*Моє поточне місцезнаходження*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Використовуйте для [встановлення пункту призначення](#set-target-point).
 - **Додати** &nbsp;&#43; - Вставити [проміжні точки](../../widgets/nav-widgets.md#distance-to-intermediate) вздовж маршруту.
 - **Поміняти місцями** &nbsp;&#8595;&#8593; - Поміняти місцями точки *Старт* та *Фініш*.
@@ -325,7 +325,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Щоб відновити навігацію:
 
 - Використовуйте повідомлення від OsmAnd на панелі сповіщень.
-- Використовуйте *меню Швидких дій* або діалогове вікно, що з'являється при натисканні на *[кнопку Навігація](../../widgets/map-buttons.md#directions)* (див. скріншот).
+- Використовуйте *меню Швидких дій* або діалогове вікно, що з'являється при натисканні на *[кнопку Навігація](../../widgets/map-buttons.md#navigation)* (див. скріншот).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

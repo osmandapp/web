@@ -1,6 +1,6 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
-sidebar_position: 14
+source-hash: 68173c6333cbab1e4155aebd0de4f93a471b00f6d3ab7f48ef3872e2d8b54c54
+sidebar_position: 16
 title: Топографія
 ---
 
@@ -18,14 +18,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-:::info Платна функція
-Плагін "Топографія" — це [платна функція](../purchases/index.md) застосунку OsmAnd.
+:::tip Придбання
+Плагін "Топографія" — це [платна функція](../purchases/index.md).  
 :::
 
 Топографія — це важлива функція картографії, яка надає інформацію для візуальної оцінки рельєфу місцевості.
 Топографічна інформація, така як [лінії контуру](#contour-lines), [рельєф](#terrain) (*відтінення пагорбів* та *ухил*), а також [3D-рельєф](#3d-relief), допомагає візуально оцінити рельєф місцевості, бачачи висоту, рельєф, екстремуми, крутизну або точки однакової висоти.
 
-Кожна функція, що надається цим плагіном, є незалежним шаром карти, який, коли увімкнено, може відображатися над або під основним джерелом карти залежно від [налаштувань](../map/raster-maps.md#overlay-layer).  
+Кожна функція, що надається цим плагіном, є незалежним шаром карти, який, коли увімкнено, може відображатися над або під основним джерелом карти залежно від [налаштувань](../map/raster-maps.md#overlay).  
 
 Плагін "Топографія" надає доступ до наступних типів карт:  
 
@@ -173,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **Налаштування вигляду**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Увімкнути або вимкнути лінії контуру.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Визначте [рівні масштабування](../map/interact-with-map.md#my-location-and-zoom), на яких видно лінії контуру.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Визначте [рівні масштабування](../map/interact-with-map.md#my-position-and-zoom), на яких видно лінії контуру.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Виберіть колір для відображення ліній контуру.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Налаштуйте ширину ліній контуру.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Виберіть щільність ліній контуру (Низька, Середня, Висока). Вища щільність може вплинути на швидкість завантаження.
@@ -215,7 +215,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Відтінення пагорбів | Ухил | Висота |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Altitude](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Відтінення пагорбів** базується на симуляції освітлення поверхні з використанням даних про рельєф. Цей метод передбачає створення тіней та відблисків на основі кута нахилу поверхні відносно джерела світла. В результаті ви бачите на карті природні пагорби, долини та інші деталі рельєфу.  
 
@@ -247,8 +247,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Змінити колірну схему {#modify-color-scheme}
 
-:::info Платна функція
-*[Змінити колірну схему](../../user/personal/color-palette-schemes.md#terrain)* — це платна функція **OsmAnd Pro** для [iOS](../purchases/ios.md#pro-features) та [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::info Функція Pro
+*[Змінити колірну схему](../../user/personal/color-palette-schemes.md#terrain)* — це платна функція [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -285,7 +285,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Рівні масштабування {#zoom-levels}
 
-![Масштаб](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Масштабування](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 Функція *Рівні масштабування* дозволяє встановити мінімальне та максимальне значення рівнів масштабування карти, в діапазоні від 4 до 19, на яких будуть відображатися шари карти "Відтінення пагорбів" або "Ухил".
 
@@ -310,7 +310,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Швидкі дії {#quick-actions}
 
-![QA для рельєфу](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![ШД для рельєфу](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 Ви можете використовувати кнопки *Швидкої дії* на екрані карти для перемикання видимості шарів [Лінії контуру](#contour-lines), [Рельєф](#terrain) та [колірної схеми рельєфу](../../user/personal/color-palette-schemes.md#quick-actions). Залежно від шару, вибраного в меню "Налаштувати карту", призначення дії *Рельєф* кнопці відобразить *Відтінення пагорбів*, *Ухил* або *Висоту*.  
 
@@ -346,7 +346,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-Функція 3D-рельєфу створює об'ємний рельєф і забезпечує тривимірне представлення ландшафту. 3D-рельєф працює в автономному режимі і може використовуватися з [векторними картами OsmAnd](../map/vector-maps.md) або будь-якими [растровими картами](../map/raster-maps.md#select-raster-maps) як [джерело карти](../map/raster-maps.md#main) або як [підкладка/накладення](../map/raster-maps.md#overlay-layer).
+Функція 3D-рельєфу створює об'ємний рельєф і забезпечує тривимірне представлення ландшафту. 3D-рельєф працює в автономному режимі і може використовуватися з [векторними картами OsmAnd](../map/vector-maps.md) або будь-якими [растровими картами](../map/raster-maps.md#layers) як [джерело карти](../map/raster-maps.md#main) або як [підкладка/накладення](../map/raster-maps.md#overlay).
 
 ***Як відобразити 3D-рельєф на карті.***
 

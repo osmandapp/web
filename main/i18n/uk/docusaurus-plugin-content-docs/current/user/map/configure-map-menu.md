@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title:  Налаштувати карту
 ---
@@ -27,7 +27,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Розділ **Топографія**:  
 
-![Налаштувати карту android](@site/static/img/map/configure_map_topography_andr.png)  
+![Налаштувати карту android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Розділ **OpenStreetMap**:  
 
@@ -84,8 +84,9 @@ import Translate from '@site/src/components/Translate.js';
 ## Шари карти {#map-layers}
 
 - [Шар векторної карти](../map/vector-maps.md) - відображає всю інформацію векторної карти, включаючи OpenStreetMap, лінії контуру та морські дані.
-- [Джерела растрових карт](../map/raster-maps.md#select-raster-maps) - дозволяє вибирати підкладку / основне джерело / накладення карти з рівнями прозорості.
+- [Джерела растрових карт](../map/raster-maps.md#layers) - дозволяє вибирати підкладку / основне джерело / накладення карти з рівнями прозорості.
 - [Рельєф](../plugins/topography.md#hillshade-slope-and-altitude-layers) - відображає інформацію про схил / відтінення рельєфу, 3D-рельєф.
+- [3D-будівлі](../map/vector-maps.md#3d-buildings) - відображає об'ємні моделі будівель на карті.
 - [Межі завантажених карт](../map/vector-maps.md#show-borders) - відображає всі межі завантажених карт на основному шарі карти.
 - [Координатна сітка](../map/vector-maps.md#coordinates-grid) - керування видимістю координатної сітки на карті.
 
@@ -107,8 +108,9 @@ import Translate from '@site/src/components/Translate.js';
 
 Налаштування стилю карти залежать від відображуваного основного стилю карти. Детальніше про це можна прочитати у статті [Стилі карти](../map/vector-maps).
 
-   - [Стиль карти](../map/vector-maps.md#default-map-styles) - включає OsmAnd (Міський), Топо, Морський та інші.
+   - [Стиль карти](../map/vector-maps.md#map-styles) - включає OsmAnd (Міський), Топо, Морський та інші.
    - [Режим карти](../map/vector-maps.md#map-mode) - дозволяє вибрати вигляд карти та навігацію залежно від часу доби.
+   - [Глобусний перегляд](../map/interact-with-map.md#globe-view) - перемикає карту між стандартним плоским видом та сферичним видом Землі.
    - [Масштаб карти](../map/vector-maps.md#map-magnifier) - дозволяє змінювати збільшення карти.
    - [Розмір тексту](../map/vector-maps.md#text-size) - дозволяє збільшувати або зменшувати розмір тексту на карті.
    - [Мова карти](../map/vector-maps.md#map-language) - дозволяє вибрати бажану мову, що відображається на карті.

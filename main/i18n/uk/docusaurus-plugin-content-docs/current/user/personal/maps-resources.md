@@ -1,5 +1,5 @@
 ---
-source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
+source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
 sidebar_position: 2
 title:  Maps & Resources
 ---
@@ -195,7 +195,7 @@ OsmAnd підтримує передачу налаштувань та дани�
 Вкладка "Локальні" надає огляд використання сховища для всіх даних OsmAnd на вашому пристрої. Для наочності дані розділені на три секції з кольоровим кодуванням, а елементи відсортовані за розміром від найбільшого до найменшого. Кожна секція відображає лише елементи із завантаженими даними:
 
 - ***Ресурси*** (*синій*).  
-    Включає карти ([Стандартні](../map/vector-maps.md), &nbsp;[Морські](../plugins/nautical-charts.md), &nbsp;[Топографічні](../plugins/topography.md), &nbsp;[Погода](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) та [Путівники](../plan-route/travel-guides.md), &nbsp;[Live-оновлення](../personal/maps-resources.md#live-updates), &nbsp;**Лише дороги**,  &nbsp;[Джерела карт](../map/raster-maps.md), &nbsp;[Стилі відображення](../map/vector-maps.md#default-map-styles), &nbsp;**Шрифти карт, &nbsp;Голосові підказки (записані та TTS), &nbsp;Кеш**.  
+    Включає карти ([Стандартні](../map/vector-maps.md), &nbsp;[Морські](../plugins/nautical-charts.md), &nbsp;[Топографічні](../plugins/topography.md), &nbsp;[Погода](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) та [Путівники](../plan-route/travel-guides.md), &nbsp;[Live-оновлення](../personal/maps-resources.md#live-updates), &nbsp;**Лише дороги**,  &nbsp;[Джерела карт](../map/raster-maps.md), &nbsp;[Стилі відображення](../map/map-styles.md#default-map-styles), &nbsp;**Шрифти карт, &nbsp;Голосові підказки (записані та TTS), &nbsp;Кеш**.  
 
 - ***Мої місця*** (*жовтий*).  
     Включає [Обране](../personal/favorites.md), &nbsp;[Треки](../personal/tracks/manage-tracks.md), &nbsp;[Нотатки OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[Правки OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[Аудіо/відео нотатки](../plugins/audio-video-notes.md), &nbsp;[Маркери на карті](../personal/markers.md), &nbsp;[Історія](../personal/global-settings.md#history), &nbsp;*Маршрутний лист*.  
@@ -318,7 +318,7 @@ OsmAnd підтримує передачу налаштувань та дани�
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -449,8 +449,8 @@ Use sorting options to organize map data:
 
 ## Live-оновлення {#live-updates}
 
-:::tip Покупка
-Live-оновлення — це платна функція.  
+:::info Pro feature
+Live-оновлення — це платна функція [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 
