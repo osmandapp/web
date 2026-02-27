@@ -1,0 +1,14 @@
+.filterBar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    padding: 0 16px 10px !important;
+}
+
+.filterDivider {
+    width: 1px !important;
+    height: 24px !important;
+    background: #e6e6e6 !important;
+    flex-shrink: 0 !important;
+}

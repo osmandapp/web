@@ -1,3 +1,50 @@
+/* shared :active */
+.grayButton:active,
+.blueButton:active,
+.primaryButton:active,
+.blueButtonWithIcon:active {
+    border: 2px solid transparent !important;
+    border-radius: 3px !important;
+    background: #0f67eb !important;
+    color: #ffffff !important;
+}
+
+.squareTextBtn:active {
+    background: #0f67eb !important;
+    color: #ffffff !important;
+    border-color: #0f67eb !important;
+}
+
+/* shared :hover (light blue) */
+.blueButton:hover,
+.blueButtonWithIcon:hover,
+.squareTextBtn:hover {
+    background: #deebff !important;
+    color: var(--selected-color) !important;
+    border-color: #0f67eb !important;
+}
+
+.blueButton:hover,
+.blueButtonWithIcon:hover {
+    border-width: 2px !important;
+    border-style: solid !important;
+}
+
+/* shared :disabled */
+.grayButton:disabled,
+.blueButton:disabled,
+.primaryButton:disabled,
+.blueButtonWithIcon:disabled {
+    background-color: #f5f5f5 !important;
+    color: #666666 !important;
+}
+
+.squareTextBtn:disabled {
+    background-color: #f5f5f5 !important;
+    color: #666666 !important;
+    border-color: #f5f5f5 !important;
+}
+
 .grayButton {
     display: flex !important;
     padding: 6px 0px !important;
@@ -20,16 +67,6 @@
         background: #237bff !important;
         color: #ffffff !important;
     }
-    &:active {
-        border: 2px solid transparent !important;
-        border-radius: 3px !important;
-        background: #0f67eb !important;
-        color: #ffffff !important;
-    }
-    &:disabled {
-        background-color: #f5f5f5 !important;
-        color: #666666 !important;
-    }
 }
 .blueButton {
     display: flex !important;
@@ -51,21 +88,6 @@
     box-sizing: border-box !important;
     border: 2px solid transparent !important;
     max-height: 36px !important;
-    &:hover {
-        border: 2px solid #0f67eb !important;
-        background: #deebff !important;
-        color: #237bff !important;
-    }
-    &:active {
-        border: 2px solid transparent !important;
-        border-radius: 3px !important;
-        background: #0f67eb !important;
-        color: #ffffff !important;
-    }
-    &:disabled {
-        background-color: #f5f5f5 !important;
-        color: #666666 !important;
-    }
 }
 .primaryButton {
     display: flex !important;
@@ -93,16 +115,6 @@
         background: #237bff !important;
         color: #fff !important;
     }
-    &:active {
-        border: 2px solid transparent !important;
-        border-radius: 3px !important;
-        background: #0f67eb !important;
-        color: #ffffff !important;
-    }
-    &:disabled {
-        background-color: #f5f5f5 !important;
-        color: #666666 !important;
-    }
 }
 .blueButtonWithIcon {
     padding: 6px 12px !important;
@@ -123,21 +135,6 @@
     border: 2px solid transparent !important;
     max-height: 48px !important;
     min-height: 48px !important;
-    &:hover {
-        border: 2px solid #0f67eb !important;
-        background: #deebff !important;
-        color: #237bff !important;
-    }
-    &:active {
-        border: 2px solid transparent !important;
-        border-radius: 3px !important;
-        background: #0f67eb !important;
-        color: #ffffff !important;
-    }
-    &:disabled {
-        background-color: #f5f5f5 !important;
-        color: #666666 !important;
-    }
 }
 
 .squareIconBtn {
@@ -163,6 +160,42 @@
         border-radius: 40px !important;
         border-width: 2px !important;
         border-style: solid !important;
+    }
+}
+
+.squareTextBtn {
+    height: 36px !important;
+    min-width: 48px !important;
+    padding: 0 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    border-radius: 40px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #cccccc !important;
+    background: var(--background-color-menu) !important;
+    color: var(--selected-color) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    text-align: center !important;
+    text-transform: none !important;
+    box-sizing: border-box !important;
+
+    &.selected,
+    &.selected:hover {
+        background: var(--selected-color) !important;
+        color: #fff !important;
+    }
+
+    &.selected {
+        padding: 0 7px !important;
+        border-width: 2px !important;
+        border-color: var(--selected-color) !important;
     }
 }
 

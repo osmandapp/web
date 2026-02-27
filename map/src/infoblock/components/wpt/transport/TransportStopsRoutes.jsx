@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Box, Collapse, Divider } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,7 @@ import { ReactComponent as TramIcon } from '../../../../assets/icons/ic_action_t
 import { ReactComponent as TrolleybusIcon } from '../../../../assets/icons/ic_action_transport_trolleybus.svg';
 import { ReactComponent as SubwayIcon } from '../../../../assets/icons/ic_action_transport_subway.svg';
 import TransportStopRouteItem from './TransportStopRouteItem';
+import TransportTypeFilter from './TransportTypeFilter';
 import DividerWithMargin from '../../../../frame/components/dividers/DividerWithMargin';
 import SelectItemWithoutOptions from '../../../../frame/components/items/SelectItemWithoutOptions';
 import { TRANSPORT_STOP_SHIELD_COLOR } from '../../../../map/layers/TransportStopsLayer';
@@ -24,9 +25,9 @@ const getRouteColorFromStyleRules = (routeTypeKey) => {
     const defaultStyle = styleRulesResult['default.render.xml'];
 
     let colors = null;
-    if (publicTransportStyle && publicTransportStyle[routeTypeKey]) {
+    if (publicTransportStyle?.[routeTypeKey]) {
         colors = publicTransportStyle[routeTypeKey];
-    } else if (defaultStyle && defaultStyle[routeTypeKey]) {
+    } else if (defaultStyle?.[routeTypeKey]) {
         colors = defaultStyle[routeTypeKey];
     }
 
@@ -40,67 +41,84 @@ const getRouteColorFromStyleRules = (routeTypeKey) => {
 
 // android types
 // https://github.com/osmandapp/OsmAnd/blob/296672f798da6090e4b06764b3ce67d0cded8e64/OsmAnd/src/net/osmand/plus/transport/TransportStopType.java#L13
-const ROUTE_TYPES = {
+export const ROUTE_TYPES = {
     bus: {
+        order: 0,
         icon: BusIcon,
         name: 'route_type_bus',
         color: getRouteColorFromStyleRules('routeBusColor'),
     },
+    subway: {
+        order: 1,
+        icon: SubwayIcon,
+        name: 'route_type_subway',
+        color: getRouteColorFromStyleRules('routeTrainColor'),
+    },
+    trolleybus: {
+        order: 2,
+        icon: TrolleybusIcon,
+        name: 'route_type_trolleybus',
+        color: getRouteColorFromStyleRules('routeTrolleybusColor'),
+    },
     ferry: {
+        order: 3,
         icon: FerryIcon,
         name: 'route_type_ferry',
         color: getRouteColorFromStyleRules('routeFerryColor'),
     },
     funicular: {
+        order: 4,
         icon: FunicularIcon,
         name: 'route_type_funicular',
         color: getRouteColorFromStyleRules('routeFunicularColor'),
     },
     light_rail: {
+        order: 5,
         icon: LightRailIcon,
         name: 'route_type_light_rail',
         color: getRouteColorFromStyleRules('routeLightrailColor'),
     },
     monorail: {
+        order: 6,
         icon: MonorailIcon,
         name: 'route_type_monorail',
         color: getRouteColorFromStyleRules('routeLightrailColor'),
     },
     railway: {
+        order: 7,
         icon: RailwayIcon,
         name: 'route_type_railway',
         color: getRouteColorFromStyleRules('routeTrainColor'),
     },
     share_taxi: {
+        order: 8,
         icon: ShareTaxiIcon,
         name: 'route_type_share_taxi',
         color: getRouteColorFromStyleRules('routeShareTaxiColor'),
     },
     train: {
+        order: 9,
         icon: TrainIcon,
         name: 'route_type_train',
         color: getRouteColorFromStyleRules('routeTrainColor'),
     },
     tram: {
+        order: 10,
         icon: TramIcon,
         name: 'route_type_tram',
         color: getRouteColorFromStyleRules('routeTramColor'),
-    },
-    trolleybus: {
-        icon: TrolleybusIcon,
-        name: 'route_type_trolleybus',
-        color: getRouteColorFromStyleRules('routeTrolleybusColor'),
-    },
-    subway: {
-        icon: SubwayIcon,
-        name: 'route_type_subway',
-        color: getRouteColorFromStyleRules('routeTrainColor'),
     },
 };
 
 export default function TransportStopsRoutes({ routes = [], wpt = null }) {
     const { t } = useTranslation();
     const [open, setOpen] = useState(true);
+    const [selectedType, setSelectedType] = useState(null);
+
+    const filteredRoutes = useMemo(
+        () => (selectedType ? routes.filter((r) => r.type === selectedType) : routes),
+        [routes, selectedType]
+    );
 
     if (!routes || routes.length === 0) {
         return null;
@@ -117,7 +135,12 @@ export default function TransportStopsRoutes({ routes = [], wpt = null }) {
             />
             <Collapse in={open} timeout="auto">
                 <Box>
-                    {routes.map((route, index) => {
+                    <TransportTypeFilter
+                        routes={routes}
+                        selectedType={selectedType}
+                        setSelectedType={setSelectedType}
+                    />
+                    {filteredRoutes.map((route, index) => {
                         const routeType = ROUTE_TYPES[route.type];
                         return (
                             <React.Fragment key={route.id || index}>
@@ -128,7 +151,7 @@ export default function TransportStopsRoutes({ routes = [], wpt = null }) {
                                     typeName={t(`web:${routeType.name}`)}
                                     wpt={wpt}
                                 />
-                                {index < routes.length - 1 && <DividerWithMargin margin={'64px'} />}
+                                {index < filteredRoutes.length - 1 && <DividerWithMargin margin={'64px'} />}
                             </React.Fragment>
                         );
                     })}

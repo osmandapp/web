@@ -269,5 +269,6 @@
     "route_type_train": "Train",
     "route_type_tram": "Tram",
     "route_type_trolleybus": "Trolleybus",
-    "route_type_subway": "Subway"
+    "route_type_subway": "Subway",
+    "transport_filter_all": "All"
 }
