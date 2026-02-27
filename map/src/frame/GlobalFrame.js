@@ -63,7 +63,9 @@ const GlobalFrame = () => {
             ? `${MENU_INFO_OPEN_SIZE}px`
             : `${MENU_INFO_CLOSE_SIZE}px`;
     const NAVIGATION_SETTINGS_WIDTH = ctx.openNavigationSettings ? MENU_INFO_OPEN_SIZE : 0;
-    const TOTAL_MENU_INFO_WIDTH = Number(MENU_INFO_SIZE.replace('px', '')) + NAVIGATION_SETTINGS_WIDTH;
+    const TRANSPORT_ROUTE_DETAILS_WIDTH = ctx.selectedTransportRoute ? MENU_INFO_OPEN_SIZE : 0;
+    const TOTAL_MENU_INFO_WIDTH =
+        Number(MENU_INFO_SIZE.replace('px', '')) + NAVIGATION_SETTINGS_WIDTH + TRANSPORT_ROUTE_DETAILS_WIDTH;
 
     // check configure map state
     useEffect(() => {

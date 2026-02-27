@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext, useMemo, useRef } from 'react';
-import { Box, Collapse, Drawer, List, Tooltip } from '@mui/material';
+import { Box, Collapse, List, Tooltip } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
+import SecondaryMenuDrawer from '../../frame/components/other/SecondaryMenuDrawer';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -81,9 +81,6 @@ export default function NavigationSettings({
     const { t } = useTranslation();
 
     const useDevelFeatures = ctx.develFeatures;
-
-    const drawerWidth = MENU_INFO_OPEN_SIZE;
-    const drawerLeftOffset = MAIN_MENU_MIN_SIZE + drawerWidth;
 
     const [unfoldedSections, setUnfoldedSections] = useState({}); // all sections are folded by default
 
@@ -593,36 +590,7 @@ export default function NavigationSettings({
     };
 
     return (
-        <Drawer
-            anchor="left"
-            open={true}
-            onClose={handleCloseAccept}
-            hideBackdrop
-            ModalProps={{
-                keepMounted: true,
-                hideBackdrop: true,
-                disableEnforceFocus: true,
-                disableAutoFocus: true,
-                disableRestoreFocus: true,
-                style: { pointerEvents: 'none' },
-            }}
-            PaperProps={{
-                sx: {
-                    width: { xs: '100%', sm: `${drawerWidth}px` },
-                    maxWidth: {
-                        xs: '100%',
-                        sm: `${drawerWidth}px`,
-                    },
-                    ml: { xs: 0, sm: `${drawerLeftOffset}px` },
-                    borderLeft: { xs: 'none', sm: '1px solid #e0e0e0' },
-                    borderRight: 'none',
-                    top: `${HEADER_SIZE}px`,
-                    height: `calc(100% - ${HEADER_SIZE}px)`,
-                    boxShadow: 'none',
-                    pointerEvents: 'auto',
-                },
-            }}
-        >
+        <SecondaryMenuDrawer onClose={handleCloseAccept}>
             <HeaderWithUnderline
                 title={t('shared_string_settings')}
                 onClose={handleCloseAccept}
@@ -659,6 +627,6 @@ export default function NavigationSettings({
                 </Box>
                 <ColorBlock color={'#f0f0f0'} />
             </Box>
-        </Drawer>
+        </SecondaryMenuDrawer>
     );
 }
