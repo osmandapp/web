@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title: Configurar Mapa
 ---
@@ -27,7 +27,7 @@ Seção **Mostrar**:
 
 Seção **Topografia**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_topography_andr.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 Seção **OpenStreetMap**:  
 
@@ -84,8 +84,9 @@ O menu **<Translate android="true" ids="configure_map"/>** é dividido em duas c
 ## Camadas do mapa {#map-layers}
 
 - [Camada de mapa vetorial](../map/vector-maps.md) - exibe todas as informações do mapa vetorial, incluindo OpenStreetMap, linhas de contorno e dados náuticos.
-- [Fontes raster do mapa](../map/raster-maps.md#select-raster-maps) - permite selecionar subposição / fonte principal / sobreposição com níveis de transparência.
+- [Fontes raster do mapa](../map/raster-maps.md#layers) - permite selecionar subposição / fonte principal / sobreposição com níveis de transparência.
 - [Terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers) - exibe informações de inclinação / sombreamento de relevo, Relevo 3D.
+- [Edifícios 3D](../map/vector-maps.md#3d-buildings) - exibe modelos volumétricos de edifícios no mapa.
 - [Bordas de mapas baixados](../map/vector-maps.md#show-borders) - exibe todas as bordas de mapas baixados na camada principal do mapa.
 - [Grade de coordenadas](../map/vector-maps.md#coordinates-grid) - controla a visibilidade da grade de coordenadas no mapa.
 
@@ -107,8 +108,9 @@ O menu **<Translate android="true" ids="configure_map"/>** é dividido em duas c
 
 As configurações de estilo do mapa dependem do estilo principal do mapa exibido. Você pode ler mais sobre isso no artigo [Estilos de mapa](../map/vector-maps).
 
-   - [Estilo do mapa](../map/vector-maps.md#default-map-styles) - inclui OsmAnd (Cidade), Topo, Náutico e outros.
+   - [Estilo do mapa](../map/vector-maps.md#map-styles) - inclui OsmAnd (Cidade), Topo, Náutico e outros.
    - [Modo do mapa](../map/vector-maps.md#map-mode) - permite selecionar a visualização do mapa e a navegação dependendo da hora do dia.
+   - [Visualização em globo](../map/interact-with-map.md#globe-view) - alterna o mapa entre a visualização plana padrão e uma visualização esférica da Terra.
    - [Lupa do mapa](../map/vector-maps.md#map-magnifier) - permite alterar a ampliação do mapa.
    - [Tamanho do texto](../map/vector-maps.md#text-size) - permite aumentar ou diminuir o tamanho do texto no mapa.
    - [Idioma do mapa](../map/vector-maps.md#map-language) - permite selecionar o idioma preferido exibido no mapa.

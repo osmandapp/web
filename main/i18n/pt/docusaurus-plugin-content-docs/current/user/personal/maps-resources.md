@@ -1,5 +1,5 @@
 ---
-source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
+source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
 sidebar_position: 2
 title: Mapas e Recursos
 ---
@@ -55,7 +55,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="ios" label="iOS">
 
-![Menu de download de mapa iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapas regionais iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Menu de download de mapa iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapas regionais Android](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -195,7 +195,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,
 A aba Local fornece uma visão geral do uso de armazenamento para todos os dados do OsmAnd no seu dispositivo. Os dados são divididos em três seções codificadas por cores para maior clareza, com os itens classificados por tamanho do maior para o menor. Cada seção exibe apenas itens com dados baixados:
 
 - ***Recursos*** (*azul*).  
-    Inclui mapas ([Padrão](../map/vector-maps.md), &nbsp;[Náutico](../plugins/nautical-charts.md), &nbsp;[Topografia](../plugins/topography.md), &nbsp;[Clima](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) e [Guias de viagem](../plan-route/travel-guides.md), &nbsp;[Atualizações ao vivo](../personal/maps-resources.md#live-updates), &nbsp;**Somente estrada**,  &nbsp;[Fontes de mapa](../map/raster-maps.md), &nbsp;[Estilos de renderização](../map/vector-maps.md#default-map-styles), &nbsp;**Fontes de mapa, &nbsp;Comandos de voz (gravados e TTS), &nbsp;Cache**.  
+    Inclui mapas ([Padrão](../map/vector-maps.md), &nbsp;[Náutico](../plugins/nautical-charts.md), &nbsp;[Topografia](../plugins/topography.md), &nbsp;[Clima](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) e [Guias de viagem](../plan-route/travel-guides.md), &nbsp;[Atualizações ao vivo](../personal/maps-resources.md#live-updates), &nbsp;**Somente estrada**,  &nbsp;[Fontes de mapa](../map/raster-maps.md), &nbsp;[Estilos de renderização](../map/map-styles.md#default-map-styles), &nbsp;**Fontes de mapa, &nbsp;Comandos de voz (gravados e TTS), &nbsp;Cache**.  
 
 - ***Meus Lugares*** (*amarelo*).  
     Inclui [Favoritos](../personal/favorites.md), &nbsp;[Trilhas](../personal/tracks/manage-tracks.md), &nbsp;[Notas OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[Edições OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Histórico](../personal/global-settings.md#history), &nbsp;*Itinerário*.  
@@ -318,7 +318,7 @@ As **Ações** disponíveis dependem do tipo de dados:
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -449,8 +449,8 @@ A aba **Atualizações** também inclui uma seção de Previsão do tempo. Ela f
 
 ## Atualizações ao vivo {#live-updates}
 
-:::tip Compra
-Atualizações ao vivo é um recurso pago.  
+:::info Pro feature
+Atualizações ao vivo é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -480,7 +480,7 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 
 Principais recursos:
 
-- **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Atualizações ao vivo**. Gerencie através de um botão nas configurações.
+- **<Translate android="true" ids="shared_string_enabled"/> / <Translate android="true" ids="shared_string_disabled"/> Atualizações ao vivo**. Gerencie através de um alternador nas configurações.
 - Botão **&#8230; &#124;** (*Android*) / Botão **&#62;** (*iOS*). Abra as configurações de *Atualizações ao vivo*.
 - **Alternador**(*Android*) / Botão **&#43;** (*iOS*). Adicione mapas para *atualizações ao vivo*.
 - **<Translate android="true" ids="update_frequency"/>**. Selecione a frequência de atualização do mapa (horária, diária ou semanal).
@@ -537,6 +537,6 @@ Mantenha pelo menos [**30 edições**](https://github.com/osmandapp/OsmAnd/blob/
 
 ### Problemas Comuns e Soluções {#common-issues-and-solutions}
 
-- Navegação por voz. [(verificar)](../troubleshooting/navigation.md#voice-navigation)
-- Como excluir o histórico de pesquisa. [(verificar)](../troubleshooting/general.md#how-to-delete-search-history)
+- Navegação por voz. [(check)](../troubleshooting/navigation.md#voice-navigation)
+- Como excluir o histórico de pesquisa. [(check)](../troubleshooting/general.md#how-to-delete-search-history)
 - Para solução de problemas adicionais, visite: [Mapas e Dados](../troubleshooting/maps-data.md)

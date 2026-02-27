@@ -1,5 +1,5 @@
 ---
-source-hash: cb5ec3fcf89ddd9349138dcf000a198b861c74d1705424846707e60c2b060de0
+source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
 sidebar_position: 2
 title: Interagir com o Mapa
 ---
@@ -17,26 +17,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-Este artigo explica como personalizar e interagir com o mapa usando vários botões e gestos. Abrange como girar, ampliar, ajustar o ângulo de visão e alterar o ângulo de visão do mapa, girá-lo manual ou automaticamente usando a bússola, ou de acordo com a direção.
+Este artigo explica como personalizar e interagir com o mapa usando vários botões e gestos. Abrange como girar, ampliar, ajustar o ângulo de visão e alterar o ângulo de visão do mapa, girá-lo manual ou automaticamente usando a bússola, ou de acordo com o azimute.
 
 
-## Gestos {#gestures}
+## Movimento do Mapa {#map-movement}
+
+### Gestos {#gestures}
 
 Os gestos são essenciais para navegar no mapa de forma fácil e intuitiva.
 
-| Ação do Mapa | Gesto |
+| Ação do Mapa  | Gesto  |
 |:------------|:-------------|
-| **Mover** | Toque e segure o mapa com **um** dedo, depois arraste para mover-se. |
-| **Deslizar** | Deslize o mapa com **um** dedo. |
+| **Mover**    | Toque e segure o mapa com **um** dedo, depois arraste para mover-se. |
+| **Deslizar**   | Deslize o mapa com **um** dedo. |
 | **Aproximar** | Toque duas vezes no mapa com **um** dedo. <br/> Toque duas vezes com **um** dedo e deslize para baixo. <br/> Belisque com **dois** dedos para aproximar. |
-| **Afastar** | Toque duas vezes com **dois** dedos. <br/> Toque duas vezes com **um** dedo e deslize para cima. <br/> Belisque com **dois** dedos para afastar. |
-| **Girar** | Toque no mapa com **dois** dedos, depois gire os dedos em um movimento circular. |
+| **Afastar**| Toque duas vezes com **dois** dedos. <br/> Toque duas vezes com **um** dedo e deslize para cima. <br/> Belisque com **dois** dedos para afastar. |
+| **Girar**  | Toque no mapa com **dois** dedos, depois gire os dedos em um movimento circular. |
 | **Inclinar (3D)** | Toque com **dois** dedos e mova-os para cima ou para baixo. <br/> Disponível apenas com o [Motor de Renderização de Mapa](../personal/global-settings.md#map-rendering-engine) versão 2 (OpenGL). |
 
 As animações de deslizamento podem ser desativadas nas configurações com uma [opção especial](#remove-animations).
 
-
-## Minha Localização e Zoom {#my-location-and-zoom}
+### Minha Localização e Zoom {#my-position-and-zoom}
 
 ![Menu da tela de configuração](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -62,102 +63,12 @@ Os *botões de zoom* estão sempre visíveis ao lado de *Minha Localização* e 
    - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
    - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-### Aparência da Minha Localização {#my-location-appearance}
-
 Você pode personalizar os ícones do botão **Minha Localização** usando as configurações de aparência do perfil. Leia mais sobre como fazer isso [aqui](../personal/profiles.md#profile-appearance).
 
 
-## Lupa do Mapa {#map-magnifier}
+## Interação com o Mapa {#map-interaction}
 
-A *Lupa do Mapa* é uma ferramenta que melhora a visibilidade do mapa, semelhante a uma lupa usada com mapas de papel. Ela permite que você amplie o mapa para visualizar textos e detalhes com mais clareza ou para ajustar o nível de detalhe mantendo a mesma escala. Para mais informações, vá para o artigo [Mapas Vetoriais](../map/vector-maps.md#map-magnifier).
-
-
-## Modos de Orientação do Mapa {#map-orientation-modes}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Widget da bússola](@site/static/img/map/map_orientation_mode_2_andr.png)  
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
-
-![Widget da bússola](@site/static/img/map/map_orientation_mode_ios.png)  
-
-</TabItem>
-
-</Tabs>  
-
-Os *modos de orientação do mapa* permitem que você escolha como o mapa é exibido na tela do dispositivo. O OsmAnd oferece modos como **Rotação Manual**, **Direção do Movimento**, **Direção da Bússola** e **Norte para Cima**. Habilitar cada modo altera a forma como o mapa é orientado de acordo com a opção selecionada. Para detalhes completos, consulte o artigo [Botões do Mapa](../widgets/map-buttons.md#compass).
-
-
-## Bússola {#compass}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Widget da bússola](@site/static/img/widgets/compass_widget.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
-
-![Widget da bússola](@site/static/img/widgets/compass_widget.png)
-
-</TabItem>
-
-</Tabs>
-
-O botão da bússola mostra como o [mapa está orientado](#map-orientation-modes). A *seta vermelha* nos ícones, ou a direção da seta no modo *Direção do movimento*, indica o Norte. [O ícone no botão da bússola](../widgets/map-buttons.md#compass) indica o modo de orientação atual do mapa. O widget do botão da bússola oferece três [opções de interação](../widgets/map-buttons.md#compass-tapping-behavior): *Toque Único* gira o mapa para o Norte, *Toque Duplo* alterna entre todos os modos de orientação do mapa e *Toque Longo* abre a lista de modos.
-
-
-## Girar Mapa por Direção {#rotate-map-by-bearing}
-
-No modo **girar mapa por direção** ([Direção do movimento](../widgets/map-buttons.md#compass)), o mapa se alinha automaticamente com sua direção de movimento, de modo que a área à sua frente é exibida na parte superior da tela. Este modo aprimora a navegação, deslocando o centro do mapa ligeiramente para baixo, mostrando mais da rota à frente. Se você estiver parado, o mapa permanece fixo.  
-
-Você pode ativar este recurso através de *Menu → Configurações → Perfis → Configurações gerais → Aparência → Orientação do mapa* ou tocando duas vezes no [botão da Bússola](../widgets/map-buttons.md#compass-tapping-behavior). Para mais detalhes sobre direção, consulte [aqui](../widgets/nav-widgets.md#bearing-widget).
-
-
-## Inclinação do Mapa e Horizonte {#map-tilt-and-horizon}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Inclinação android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Inclinação android 2](@site/static/img/map/tilt_horizon_andr_2.png)
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Inclinação ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Inclinação ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
-</TabItem>
-
-</Tabs>  
-
-Com o novo [motor de renderização](../personal/global-settings.md#map-rendering-engine) do mapa, você pode alterar a [inclinação da câmera](../plugins/development.md#camera-tilt) de 90 (sem inclinação) para 10 graus. Aproximadamente com uma inclinação do mapa inferior a 20-22 graus (este parâmetro depende do nível de zoom), a linha imaginária do horizonte torna-se visível. Ao contrário do real, o horizonte do programa é sempre reto.  
-
-Abaixo do horizonte, você pode ver a chamada *névoa* ou *neblina*. Esta área do mapa é preenchida com cor cinza, apenas alguns detalhes do mapa podem ser observados.  
-O uso de névoa é necessário, pois a exibição de objetos remotos no mapa requer recursos computacionais significativos e nem sempre é justificada devido às [distorções](../plugins/development.md#comparison-with-a-satellite-imagery) do mapa em pequenos ângulos de visão. Assim, a distância visível no mapa OsmAnd está atualmente limitada a 35 blocos.  
-
-:::info
-A inclinação do mapa pode ser alterada com um toque longo na tela com dois dedos e movendo-os para cima/para baixo. Você também pode alterar a inclinação tocando no ícone [Minha localização](#my-location-and-zoom) no canto inferior direito da tela (apenas posições de 45 e 90 graus estão disponíveis).  
-Você não pode alterar a inclinação da câmera quando o antigo [motor de renderização do mapa](../personal/global-settings.md#map-rendering-engine) (versão 1) está ativado.
-:::
-
-
-## Bloqueio da Tela Sensível ao Toque {#touch-screen-lock}
+### Bloqueio da Tela Sensível ao Toque {#touch-screen-lock}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -187,16 +98,12 @@ Toque no botão na tela ou, se o bloqueio estiver ativado, através de um botão
 
 Mensagens claras na tela o guiarão ao bloquear ou desbloquear a tela.
 
+### Animar Posição Própria {#animate-own-position}
 
-## Configurações {#settings}
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 
-### Configurações Extras da Bússola {#extra-compass-settings}
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Suaviza a rotação do mapa com uma animação de rotação mais lenta, embora isso introduza um pequeno atraso, não mais que 1 segundo.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Suaviza a rotação do mapa com uma animação de rotação mais lenta, embora isso introduza um pequeno atraso, não mais que 1 segundo.  
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+Cria um efeito de panorâmica suave do mapa em relação ao ícone *[Minha Localização](../personal/profiles/#profile-appearance)* quando em movimento. O efeito introduz um pequeno atraso em relação à realidade de cerca de 1 segundo. A ativação disso tem sido relatada como causadora de alguns problemas de atraso pronunciados em algumas circunstâncias; desative-o se tais problemas surgirem.
 
 ### Remover Animações {#remove-animations}
 
@@ -206,12 +113,116 @@ Você pode desativar todas as animações do mapa durante as interações com o 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
-### Animar Posição Própria {#animate-own-position}
+## Orientação do Mapa {#map-orientation}
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,position_animation"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
+### Modos de Orientação do Mapa {#map-orientation-modes}
 
-Cria um efeito de panorâmica suave do mapa em relação ao ícone *[Minha Posição](../personal/profiles/#profile-appearance)* quando em movimento. O efeito introduz um pequeno atraso em relação à realidade de cerca de 1 segundo. A ativação disso tem sido relatada como causadora de alguns problemas de atraso pronunciados em algumas circunstâncias; desative-o se tais problemas surgirem.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Widget da bússola](@site/static/img/map/map_orientation_mode_2_andr.png)  
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
+
+![Widget da bússola](@site/static/img/map/map_orientation_mode_ios.png)  
+
+</TabItem>
+
+</Tabs>  
+
+Os *modos de orientação do mapa* permitem que você escolha como o mapa é exibido na tela do dispositivo. O OsmAnd oferece modos como **Rotação Manual**, **Direção do Movimento**, **Direção da Bússola** e **Norte para Cima**. Habilitar cada modo altera a forma como o mapa é orientado de acordo com a opção selecionada. Para detalhes completos, consulte o artigo [Botões do Mapa](../widgets/map-buttons.md#compass).
+
+### Girar pela Bússola {#rotate-by-compass}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Widget da bússola](@site/static/img/widgets/compass_widget.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
+
+![Widget da bússola](@site/static/img/widgets/compass_widget.png)
+
+</TabItem>
+
+</Tabs>
+
+O botão da bússola mostra como o [mapa está orientado](#map-orientation-modes). A *seta vermelha* nos ícones, ou a direção da seta no modo *Direção do movimento*, indica o Norte. [O ícone no botão da bússola](../widgets/map-buttons.md#compass) indica o modo de orientação atual do mapa. O widget do botão da bússola oferece três [opções de interação](../widgets/map-buttons.md#compass-tapping-behavior): *Toque Único* gira o mapa para o Norte, *Toque Duplo* alterna entre todos os modos de orientação do mapa e *Toque Longo* abre a lista de modos.
+
+### Girar Mapa por Azimute {#rotate-map-by-bearing}
+
+No modo **girar mapa por azimute** ([Direção do movimento](../widgets/map-buttons.md#compass)), o mapa se alinha automaticamente com sua direção de movimento, de modo que a área à sua frente é exibida na parte superior da tela. Este modo aprimora a navegação, deslocando o centro do mapa ligeiramente para baixo, mostrando mais da rota à frente. Se você estiver parado, o mapa permanece fixo.  
+
+Você pode ativar este recurso através de *Menu → Configurações → Perfis → Configurações gerais → Aparência → Orientação do mapa* ou tocando duas vezes no [botão da Bússola](../widgets/map-buttons.md#compass-tapping-behavior). Para mais detalhes sobre azimute, consulte [aqui](../widgets/nav-widgets.md#bearing-widget).
+
+
+## Perspectiva do Mapa {#map-perspective}
+
+### Inclinação do Mapa e Horizonte {#map-tilt-and-horizon}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Inclinação android 1](@site/static/img/map/tilt_horizon_andr_1.png)  ![Inclinação android 2](@site/static/img/map/tilt_horizon_andr_2.png)
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Inclinação ios 1](@site/static/img/map/tilt_horizon_ios_1.png) ![Inclinação ios 2](@site/static/img/map/tilt_horizon_ios_2.png)  
+</TabItem>
+
+</Tabs>  
+
+Com o novo [motor de renderização](../personal/global-settings.md#map-rendering-engine) do mapa, você pode alterar a [inclinação da câmera](../plugins/development.md#camera-tilt) de 90 (sem inclinação) para 10 graus. Aproximadamente com uma inclinação do mapa inferior a 20-22 graus (este parâmetro depende do nível de zoom), a linha imaginária do horizonte torna-se visível. Ao contrário do real, o horizonte do programa é sempre reto.  
+
+Abaixo do horizonte, você pode ver a chamada *névoa* ou *neblina*. Esta área do mapa é preenchida com cor cinza, apenas alguns detalhes do mapa podem ser observados.  
+O uso de névoa é necessário, pois a exibição de objetos remotos no mapa requer recursos computacionais significativos e nem sempre é justificada devido às [distorções](../plugins/development.md#comparison-with-a-satellite-imagery) do mapa em pequenos ângulos de visão. Assim, a distância visível no mapa OsmAnd está atualmente limitada a 35 blocos.  
+
+:::info
+A inclinação do mapa pode ser alterada com um toque longo na tela com dois dedos e movendo-os para cima/para baixo. Você também pode alterar a inclinação tocando no ícone [Minha localização](#my-position-and-zoom) no canto inferior direito da tela (apenas posições de 45 e 90 graus estão disponíveis).  
+Você não pode alterar a inclinação da câmera quando o antigo [motor de renderização do mapa](../personal/global-settings.md#map-rendering-engine) (versão 1) está ativado.
+:::
+
+
+### Lupa do Mapa {#map-magnifier}
+
+A *Lupa do Mapa* é uma ferramenta que melhora a visibilidade do mapa, semelhante a uma lupa usada com mapas de papel. Ela permite que você amplie o mapa para visualizar textos e detalhes com mais clareza ou para ajustar o nível de detalhe mantendo a mesma escala. Para mais informações, vá para o artigo [Mapas Vetoriais](../map/vector-maps.md#map-magnifier).
+
+
+### Visualização em Globo {#globe-view}
+
+<InfoAndroidOnly/> 
+
+![Visualização em Globo](@site/static/img/map/globe_view_1.png) ![Visualização em Globo](@site/static/img/map/globe_view_2.png)
+
+**Visualização em Globo** permite que você exiba o mapa como uma Terra esférica em vez de uma projeção plana. Este modo altera a geometria da superfície do mapa e adapta a interação do mapa à navegação esférica.  
+Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Visualização Global*
+
+A Visualização em Globo está atualmente disponível apenas quando:
+- O [plugin de Desenvolvimento](../plugins/development.md) está ativado.  
+Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- O [Motor de renderização do mapa](../personal/global-settings.md#map-rendering-engine) está definido para a Versão 2 (OpenGL).  
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
+
+Quando a Visualização em Globo está ativada, o mapa gira como um globo. Gestos de arrastar giram a Terra, e o zoom altera a distância da câmera em vez de escalar uma superfície plana. Elementos do mapa, como trilhas, marcadores, símbolos e objetos 3D, são renderizados diretamente na superfície esférica e seguem sua curvatura. Os objetos desaparecem gradualmente atrás do horizonte à medida que o globo gira.
+
+A interação perto do horizonte pode ser limitada para evitar movimentos de longa distância não intencionais. O globo não pode ser virado sobre os polos. Em níveis de zoom muito baixos, a aparência visual de estradas e rótulos permanece consistente durante a rotação.
 
 
 ## Dispositivos de Entrada Externos {#external-input-devices}
@@ -259,7 +270,7 @@ Para acessar as configurações de um dispositivo de entrada externo, você prec
 
 | Chave | Dispositivo | Ação |
 |:---------|:---------------|:---------------|
-|**C**| *Teclado*   | Mover - [Para Minha localização](#my-location-and-zoom) |
+|**C**| *Teclado*   | Mover - [Para Minha localização](#my-position-and-zoom) |
 |**D**| *Teclado*   | Alterar - [Orientação do mapa](#map-orientation-modes) |
 |**N**| *Teclado*   | Mostrar / Ocultar - Visualização de navegação |
 |**S**| *Teclado*   | Mostrar / Ocultar - [Visualização de pesquisa](../search/index.md) |
@@ -269,17 +280,17 @@ Para acessar as configurações de um dispositivo de entrada externo, você prec
 |**&#8595;**| *Teclado*   | Mover - Mapa para baixo  |
 |**&#8592;**| *Teclado*   | Mover - Mapa para a esquerda  |
 |**&#8594;**| *Teclado*   | Mover - Mapa para a direita  |
-|**&#43;** **=**| *Teclado*  | Mapa - [Aproximar](#my-location-and-zoom) |
-|**&#8722;**| *Teclado*  | Mapa - [Afastar](#my-location-and-zoom) |
+|**&#43;** **=**| *Teclado*  | Mapa - [Aproximar](#my-position-and-zoom) |
+|**&#8722;**| *Teclado*  | Mapa - [Afastar](#my-position-and-zoom) |
 |**Pressionar voltar**| *Teclado*   | Navegar – Tela anterior  |
-|**&#8595;**| *Wunderlinq*  | Mapa - [Afastar](#my-location-and-zoom) |
-|**&#8593;**| *Wunderlinq*  | Mapa - [Aproximar](#my-location-and-zoom) |
+|**&#8595;**| *Wunderlinq*  | Mapa - [Afastar](#my-position-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Mapa - [Aproximar](#my-position-and-zoom) |
 | **ESC** | *Wunderlinq*  | Abrir WunderLINQ Datagrid |
 | **M** | *Teclado*  | Mostrar / Ocultar - [Menu lateral](../start-with/main-menu.md#main-menu-side-menu) |
-| **Pressionar Joystick** <br/> (*Android legado*) | *Teclado*  | Mover - [Para Minha localização](#my-location-and-zoom) |
+| **Pressionar Joystick** <br/> (*Android legado*) | *Teclado*  | Mover - [Para Minha localização](#my-position-and-zoom) |
 | **Botão de mídia** <br/> (*somente Android*)| *Teclado*  | Mostrar / Ocultar - [Notas AV](../plugins/audio-video-notes.md#manage-a-single-note) |
-| **&#8592;** <br/> (*somente Android*)| *Parrot*  | Mapa - [Afastar](#my-location-and-zoom) |
-| **&#8594;** <br/> (*somente Android*) | *Parrot*  | Mapa - [Aproximar](#my-location-and-zoom) |
+| **&#8592;** <br/> (*somente Android*)| *Parrot*  | Mapa - [Afastar](#my-position-and-zoom) |
+| **&#8594;** <br/> (*somente Android*) | *Parrot*  | Mapa - [Aproximar](#my-position-and-zoom) |
 
 
 ### Tipo de Dispositivo de Entrada Personalizado {#custom-input-device-type}

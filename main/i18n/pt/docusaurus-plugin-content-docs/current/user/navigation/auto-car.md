@@ -1,5 +1,5 @@
 ---
-source-hash: a2a9e792ab8ee0f2ff158933800298acc210697912d8f514205a33fe11063fb8
+source-hash: 2249d1426facee9cb1b8a7c30abe3153181208cd15593ca711430ed1efdca9c6
 sidebar_position: 9
 title: Android Auto
 ios: false
@@ -18,6 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Visão Geral {#overview}
+
+:::tip Purchase
+O Android Auto é um [recurso pago](../purchases/index.md).  
+:::
 
 ![Tela do Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -59,8 +63,8 @@ O *Android Auto* exibe a interface do OsmAnd adaptada à tela do sistema multim�
 - [Menu OsmAnd](#destination-points). Contém uma lista de opções disponíveis para atribuir um ponto final de rota ou um passeio livre.
 - [Configurações](#voice-prompts). Este botão é responsável por: 1. acesso para ligar/desligar os *avisos de voz* ao navegar pela rota selecionada; 2. mostrar detalhes da rota (tempo e distância) para a próxima parada.
 - [Pesquisar](#search). Tocar no botão abre uma tela com acesso às funções de pesquisa.
-- [Minha Localização](../widgets/map-buttons.md#my-location-and-zoom). Move a parte visível do mapa para que sua localização atual fique no centro da tela.
-- [Zoom](../widgets/map-buttons.md#my-location-and-zoom). Permite aumentar e diminuir o zoom da parte visível do mapa. O gesto de zoom por pinça está disponível para escalar o mapa. Se não for suportado pela unidade principal, o ajuste de zoom é realizado por gesto de toque duplo e deslize.
+- [Minha Localização](../widgets/map-buttons.md#my-position-and-zoom). Move a parte visível do mapa para que sua localização atual fique no centro da tela.
+- [Zoom](../widgets/map-buttons.md#my-position-and-zoom). Permite aumentar e diminuir o zoom da parte visível do mapa. O gesto de zoom por pinça está disponível para escalar o mapa. Se não for suportado pela unidade principal, o ajuste de zoom é realizado por gesto de toque duplo e deslize.
 - [Bússola](../widgets/map-buttons.md#compass). Mostra qual dos quatro modos de orientação de mapa disponíveis na tela do seu dispositivo está selecionado.
 
 
@@ -262,7 +266,7 @@ Este widget de informação combina tipos de alerta como **Faixas de pedestres**
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-O widget **Velocímetro** é um elemento de interface integrado que exibe a *velocidade atual* usando dados de GPS e o *limite de velocidade* do [banco de dados OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) e das [configurações do OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) na tela do sistema multimídia do veículo.
+O widget **Velocímetro** é um elemento de interface integrado que exibe a *velocidade atual* usando dados de GPS e o *limite de velocidade* do [banco de dados OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) e das [configurações do OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) na tela do sistema multimídia do veículo. Quando sua velocidade atual se aproxima da tolerância configurada do Limite de velocidade ou excede o limite de velocidade, o widget altera sua aparência (cores) para fornecer um aviso. A alteração de aparência pode ser animada.
 
 - O **widget Velocímetro** é [*dependente do perfil*](../personal/profiles.md), então se você alterar as configurações para um perfil, elas não serão aplicadas a outro.
 - Não há opção para personalizar a exibição do **widget Velocímetro** diretamente no *Android Auto*, você precisa configurá-lo no aplicativo OsmAnd antes de iniciar a navegação e conectar seu dispositivo ao veículo.

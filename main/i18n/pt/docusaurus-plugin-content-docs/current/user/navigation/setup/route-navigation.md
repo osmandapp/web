@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title: Preparação de Rota
 ---
@@ -48,7 +48,7 @@ O recurso **Preparação de rota** no OsmAnd oferece orientação de navegação
 
 **Passo 1: Baixar mapas.**
 
-Antes de usar a navegação offline, certifique-se de que os [mapas necessários foram baixados](../../start-with/download-maps.md). Vá para *Menu → Mapas e Recursos → Baixar Mapas* para instalar mapas para sua região.
+Antes de usar a navegação offline, certifique-se de que os [mapas necessários foram baixados](../../start-with/download-maps.md). Vá para *Menu → Maps & Resources → Download Maps* para instalar mapas para sua região.
 
 **Passo 2: Configurar perfis de navegação.**
 
@@ -68,9 +68,9 @@ Antes de usar a navegação offline, certifique-se de que os [mapas necessários
     - Aguarde até que a rota seja calculada. Depois disso, você poderá obter informações adicionais sobre sua rota na *[seção Detalhes](./route-details.md#overview)*.
     - Você pode alternar entre diferentes [tipos de roteamento](./../routing/osmand-routing.md#routing-types) (perfis) para obter o melhor resultado.
     - Adicione [destinos intermediários](#intermediate-destinations) (opcional).
-    - Você também pode alterar o ponto de partida da [localização atual](../../map/interact-with-map.md#my-location-and-zoom) para a desejada.
+    - Você também pode alterar o ponto de partida da [posição atual](../../map/interact-with-map.md#my-position-and-zoom) para a desejada.
 
-2. [Configurações de Navegação](#settings) adicionais podem ser usadas dependendo de seus propósitos (você pode configurar quais estradas evitar ou preferir, economizar combustível ou escolher a rota mais rápida, etc.).
+2. Configurações de [*Navegação*](#settings) adicionais podem ser usadas dependendo de seus propósitos (você pode configurar quais estradas evitar ou preferir, economizar combustível ou escolher a rota mais rápida, etc.).
 
 3. [Inicie](#start--stop-navigation) a navegação ou primeiro [simule a navegação](#simulated-navigation) (com esta função você pode testar sua rota antes de realmente percorrê-la).
 
@@ -79,7 +79,7 @@ Antes de usar a navegação offline, certifique-se de que os [mapas necessários
 
 :::note
 
-**A rota não pode ser construída quando o *[Mapa online](../../map/raster-maps.md#select-raster-maps)* é selecionado como fonte do mapa.**
+**A rota não pode ser construída quando o *[Mapa online](../../map/raster-maps.md#layers)* é selecionado como fonte do mapa.**
 
 :::
 
@@ -88,7 +88,7 @@ Antes de usar a navegação offline, certifique-se de que os [mapas necessários
 
 Existem 3 maneiras de acessar o menu de navegação:
 
-- O [*botão Navegação*](../../widgets/map-buttons.md#directions) na tela do mapa.  
+- O [*botão de Navegação*](../../widgets/map-buttons.md#navigation) na tela do mapa.  
 - *Direção para/de* em um [*menu de contexto do mapa*](../../map/map-context-menu.md#directions-to--from).  
 - Seção de navegação no [*Menu Principal*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Existem 3 maneiras de acessar o menu de navegação:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Define a localização inicial (padrão: [*Minha Localização Atual*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Define a localização inicial (padrão: [*Minha localização atual*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - Usado para [definir seu ponto de destino](#set-target-point).
 - **Adicionar** &nbsp;&#43; - Insere [pontos intermediários](../../widgets/nav-widgets.md#distance-to-intermediate) ao longo da rota.
 - **Trocar** &nbsp;&#8595;&#8593; - Inverte os pontos de *Início* e *Fim*.
@@ -325,7 +325,7 @@ Esta opção está disponível na versão Android do aplicativo na *[lista de No
 Para retomar a navegação:
 
 - Use a mensagem do OsmAnd na barra de notificação.
-- Use o *menu de Ações rápidas* ou a caixa de diálogo que aparece ao tocar no *[botão Navegação](../../widgets/map-buttons.md#directions)* (veja a captura de tela).
+- Use o *menu de Ações rápidas* ou a caixa de diálogo que aparece ao tocar no *[botão de Navegação](../../widgets/map-buttons.md#navigation)* (veja a captura de tela).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -344,7 +344,7 @@ Para retomar a navegação:
 </Tabs>
 
 :::note
-Quando você **toca no botão Navegação** enquanto está em sua rota, a navegação **não para, e os avisos de voz continuam a ser emitidos**, embora as opções propostas Retomar ou Iniciar possam ser confusas.
+Quando você **toca no botão de Navegação** enquanto está em sua rota, a navegação **não para, e os avisos de voz continuam a ser emitidos**, embora as opções propostas Retomar ou Iniciar possam ser confusas.
 :::
 
 

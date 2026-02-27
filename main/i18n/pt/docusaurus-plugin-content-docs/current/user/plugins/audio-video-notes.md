@@ -1,6 +1,6 @@
 ---
-source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
-sidebar_position: 3
+source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+sidebar_position: 4
 title: Notas de Áudio / Vídeo
 ---
 
@@ -147,7 +147,7 @@ Para *notas de áudio e vídeo*, o gravador de áudio ou vídeo é exibido, resp
 
 É possível parar a gravação com um toque no widget <Translate android="true" ids="map_widget_av_notes"/>, independentemente de o Menu de Contexto ou o widget terem iniciado a gravação. Para *uma nota de foto*, a funcionalidade da câmera aparece, e você pode tirar uma foto, visualizar o resultado, aceitar e salvá-la, ou tirar uma nova foto.
 
-:::info nota
+:::info note
 Automaticamente, todos os registros de foto, áudio e vídeo são salvos em: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> guia.
 :::
 
@@ -387,7 +387,7 @@ Existem duas maneiras de criar um ponto de passagem: automaticamente e manualmen
     - Selecione a trilha à qual você pretende adicionar um ponto de passagem.
     - A caixa de diálogo *<Translate android="true" ids="quick_action_add_gpx"/>* é aberta e permite que você defina algumas propriedades, como o nome do ponto de passagem, um ícone, cor e outros. Depois de feito, toque em **Salvar**.
 
-:::info nota
+:::info note
 Você pode especificar nomes para cada ponto de passagem criado manualmente.
 :::
 

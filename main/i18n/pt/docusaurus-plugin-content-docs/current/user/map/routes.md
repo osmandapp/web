@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title: Rotas
 ---
 
@@ -119,7 +119,7 @@ Alguns segmentos de estrada podem fazer parte de muitas rotas, mas podem ser col
 - _Pistas e rotas de esqui_ no estilo de mapa _OsmAnd padrão_.  
 ![Rotas do mapa - pistas de esqui](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Pistas e rotas de esqui são um grupo específico de [rotas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) no OpenStreetMap. Tipicamente, essas rotas podem ser usadas com o estilo de mapa [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) com todas as [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visíveis. Se outro estilo de mapa estiver ativo, uma faixa é exibida sugerindo a troca para [Inverno e Esqui](../map/vector-maps.md#winter-and-ski) (*apenas Android*) e apenas as pistas são exibidas. Toque em ***Trocar*** para alterar o estilo de mapa sem sair da tela atual, ou ***Mais tarde*** para ocultar a faixa.
+Pistas e rotas de esqui são um grupo específico de [rotas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) no OpenStreetMap. Tipicamente, essas rotas podem ser usadas com o estilo de mapa [Inverno e Esqui](../map/map-styles.md#winter-and-ski) com todas as [Pistas](https://wiki.openstreetmap.org/wiki/Pistes) visíveis. Se outro estilo de mapa estiver ativo, uma faixa é exibida sugerindo a troca para [Inverno e Esqui](../map/map-styles.md#winter-and-ski) (*apenas Android*) e apenas as pistas são exibidas. Toque em ***Trocar*** para alterar o estilo de mapa sem sair da tela atual, ou ***Mais tarde*** para ocultar a faixa.
 
 
 ### Trilhas de moto de neve {#snowmobile-trails}
@@ -140,7 +140,7 @@ Trilhas de moto de neve são mapeadas no [OpenStreetMap](https://wiki.openstreet
 
 ![Rotas do mapa - esporte aquático](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Rotas de águas bravas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) são mostradas juntamente com ícones de acesso, zonas de perigo para [turismo de águas bravas](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+[Rotas de águas bravas](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) são mostradas juntamente com ícones de acesso, zonas de perigo e corredeiras próximas para [turismo de águas bravas](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). Veja [Recursos de Águas Bravas](../map-legend/osmand.md#whitewater-features) na Legenda do Mapa para graus de corredeiras, graus de seções de rio e símbolos relacionados.  
 
 
 ### Rotas de corrida {#running-routes}
@@ -180,7 +180,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,rende
 
 - Para exibir as rotas necessárias no mapa, habilite-as na *lista de Rotas* do menu [Configurar Mapa](../map/configure-map-menu.md).
 - O OsmAnd pode destacar [rotas presentes no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Elas podem ser selecionadas tocando [no símbolo da rota](#save-as-a-track), e se o conjunto visível de rotas estiver configurado corretamente, você pode seguir a cor e os ícones.
-- Os principais tipos de rota também podem ser filtrados por classes e subclasses, permitindo que você exiba apenas grupos específicos dentro de cada tipo. Por exemplo, você pode mostrar rotas de caminhada por **símbolos OSMC** como classes, e por *redes internacionais, nacionais, regionais* ou *locais* como subclasses.
+- Os principais tipos de rota também podem ser filtrados por classes e subclasses, permitindo que você exiba apenas grupos específicos dentro de cada tipo. Por exemplo, você pode mostrar rotas de caminhada por **símbolos OSMC** como classes, e por *redes internacionais, nacionais, regionais* ou *locais* como subclasses, que estão atualmente disponíveis quando o plugin [OsmAnd Development](../plugins/development.md) estiver ativado.
 - Você pode criar uma trilha sobre as rotas usando a ferramenta [Planejar uma Rota](../plan-route/create-route.md). 
 - Quando várias rotas correm ao longo da mesma estrada, cada rota é exibida como uma linha semi-transparente separada colocada acima das outras. 
 - Ao tocar em um local onde várias rotas se sobrepõem, um menu de contexto com todas as rotas passando por esse ponto é exibido. 
@@ -194,7 +194,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,rende
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Menu de trilhas iOS](@site/static/img/map/configure_map_routes_ios.png)
+![Menu de Rotas iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - Para exibir as rotas necessárias no mapa, habilite-as na *lista de Rotas* do menu [Configurar Mapa](../map/configure-map-menu.md).
 - O OsmAnd pode destacar [rotas presentes no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Elas podem ser selecionadas tocando [no símbolo da rota](#save-as-a-track), e se o conjunto visível de rotas estiver configurado corretamente, você pode seguir a cor e os ícones.

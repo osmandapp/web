@@ -1,5 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title:  Widgets Informativos
 ---
@@ -65,8 +65,8 @@ Em alguns dispositivos Android, a altitude pode ser exibida de forma imprecisa. 
 
 ### Elevação: Centro do Mapa {#elevation-map-center}
 
-:::info Recurso pago
-&nbsp;<ProFeature/> Para ter acesso ao widget *Elevação: centro do mapa*, assine o OsmAnd Pro para [Android](../purchases/android.md#pro-features) ou [iOS](../purchases/ios.md#pro-features).  
+:::info Recurso Pro
+O widget *Elevação: centro do mapa* é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -417,13 +417,13 @@ O widget Régua de Raio mostra a distância entre sua localização e o ponto ce
 
 <TabItem value="android" label="Android">
 
-![Velocímetro](@site/static/img/widgets/speedometer_1_andr.png)   ![Velocímetro](@site/static/img/widgets/speedometer_2_andr.png)
+![Velocímetro](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Velocímetro](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Velocímetro](@site/static/img/widgets/speedometer_1_ios.png)   ![Velocímetro](@site/static/img/widgets/speedometer_2_ios.png)
+![Velocímetro](@site/static/img/widgets/speedometer_1_ios.png)   ![Velocímetro](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -431,8 +431,12 @@ O widget Régua de Raio mostra a distância entre sua localização e o ponto ce
 
 O **widget Velocímetro** é uma exibição gráfica da velocidade atual do veículo com base em *dados recebidos do GPS*. Ele permite monitorar em tempo real a conformidade entre sua velocidade e o limite de velocidade permitido. O limite de velocidade permitido é fornecido pelos [dados do OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) para um determinado trecho da estrada e pela configuração de [Tolerância de Limite de Velocidade](../navigation/guidance/voice-navigation.md#speed-limit) do OsmAnd.  
 
+Quando sua velocidade atual se aproxima da tolerância de limite de velocidade configurada, o widget altera sua aparência para fornecer um aviso antecipado. Quando o limite de velocidade é excedido (considerando a tolerância), o widget muda para uma indicação de “excesso” mais proeminente. A indicação de aviso/excesso é mostrada alterando as cores do widget (fundo, valor da velocidade e unidades). A alteração de aparência pode ser animada para chamar a atenção ao cruzar o limiar de tolerância ou limite.
+
+![Velocímetro](@site/static/img/widgets/speed_alert.gif)
+
 - Nas *configurações do Velocímetro*, você pode selecionar o tamanho (**Altura**) do widget na tela do aplicativo como *Pequeno*, *Médio* ou *Grande*.
-- Você pode especificar quando receber um **Aviso de limite de velocidade**, selecionando *Sempre* ou *Quando excedido*.
+- Você pode especificar quando receber um **Aviso de limite de velocidade**, selecionando *Sempre* ou *Quando excedido*. Se o Aviso de limite de velocidade estiver definido como Sempre, o widget pode mostrar tanto a indicação de “aproximando/tolerância” quanto de “excesso”. Se o Aviso de limite de velocidade estiver definido como Quando excedido, a indicação é mostrada apenas após você exceder o limite de velocidade.
 
 <table class="blogimage">
     <tr>

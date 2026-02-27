@@ -1,6 +1,6 @@
 ---
-source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
-sidebar_position: 9
+source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+sidebar_position: 10
 title: Edição do OpenStreetMap
 ---
 
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão geral {#overview}
 
-[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) é uma comunidade global que visa criar um mapa geográfico detalhado e gratuito do mundo e fornecer dados de código aberto atualizados para cada utilizador. O plugin de edição do OpenStreetMap permite-lhe contribuir para a comunidade.  
+[OpenStreetMap](https://www.openstreetmap.org/about) (OSM) é uma comunidade global que visa criar um mapa geográfico detalhado e gratuito do mundo e fornecer dados de código aberto atualizados a todos os utilizadores. O plugin de edição do OpenStreetMap permite-lhe contribuir para a comunidade.  
 
 Com o OsmAnd e o plugin de edição do OSM, pode facilmente contribuir com as suas próprias informações para o OpenStreetMap.org, como criar ou modificar [POIs](#create--modify-poi), adicionar ou comentar [notas](#create--modify-osm-note) e carregar [trilhas](#upload-gps-track) GPX gravadas.
 
@@ -74,13 +74,13 @@ Se tiver uma subscrição [OsmAnd Pro](../purchases/android.md#pro-features), as
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_andr.png)
+![OsmAnd ao vivo para mapeadores](@site/static/img/personal/maps/osm_authorization_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_ios.png)
+![OsmAnd ao vivo para mapeadores](@site/static/img/personal/maps/osm_authorization_ios.png)
 
 </TabItem>
 
@@ -98,19 +98,19 @@ Faça login para contribuir com alterações e arquivos GPX.
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd ao vivo para mapeadores](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd ao vivo para mapeadores](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
+![OsmAnd ao vivo para mapeadores](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd ao vivo para mapeadores](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-A configuração <Translate android="true" ids="map_updates_for_mappers"/> permite ativar **[atualizações em tempo real](../personal/maps-resources.md#free-for-osm-mappers)** se for um contribuinte ativo do OpenStreetMap. Desta forma, pode desfrutar de atualizações de mapa gratuitas a cada hora, ao contrário das atualizações mensais padrão. Contribuintes ativos do OpenStreetMap.org podem ter direito a atualizações de mapa ilimitadas a cada hora. Faça login no OpenStreetMap para verificar a sua elegibilidade para atualizações de mapa mensais e horárias ilimitadas.
+A configuração <Translate android="true" ids="map_updates_for_mappers"/> permite ativar **[atualizações em tempo real](../personal/maps-resources.md#free-for-osm-mappers)** se for um contribuinte ativo do OpenStreetMap. Desta forma, pode desfrutar de atualizações de mapa gratuitas a cada hora, ao contrário das atualizações mensais padrão. Contribuintes ativos do OpenStreetMap.org podem ter direito a atualizações de mapa ilimitadas mensais e horárias. Faça login no OpenStreetMap para verificar a sua elegibilidade para atualizações de mapa mensais e horárias ilimitadas.
 
 
 ### Camada de edição OSM {#osm-editing-layer}

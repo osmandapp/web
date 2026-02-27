@@ -1,6 +1,6 @@
 ---
-source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
-sidebar_position: 12
+source-hash: 91b548413957274ccf7ec40f7cd8e5166f5fd38e7fd27f83e8c250f277fd9820
+sidebar_position: 13
 title: Posição de Estacionamento
 ---
 
@@ -11,6 +11,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
 
 ## Visão geral {#overview}
 
@@ -40,6 +41,7 @@ O marcador é temporário e fácil de remover quando não for mais necessário.
 </TabItem>
 
 </Tabs>
+
 
 ## Parâmetros de configuração necessários {#required-setup-parameters}
 

@@ -1,6 +1,6 @@
 ---
-source-hash: d816e7ab88fc7beeff15b0270458094541b462a37b2f127ab6e9d8142a591c2d
-sidebar_position: 15
+source-hash: 7a4c572b27a72fe9f1b647eb877f540c2cdf3bec2eedcb4577e8fff99c5a07ee
+sidebar_position: 17
 title: Gravação de Viagem
 ---
 
@@ -71,7 +71,7 @@ Com o plugin de Gravação de Viagem no OsmAnd, você pode facilmente iniciar a 
 
 - [Localização precisa](../start-with/first-steps.md#permission-to-access-the-location) — Para uma gravação de trilha precisa, certifique-se de que o OsmAnd tenha essa permissão.
 
-- [Solução de problemas](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) — **Dispositivos iOS** podem, às vezes, **suspender ou parar temporariamente aplicativos** em execução em segundo plano, o que pode interromper a gravação da trilha.
+- [Solução de problemas](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) — **Dispositivos iOS** podem, às vezes, **suspender ou parar aplicativos** em execução em segundo plano, o que pode interromper a gravação da trilha.
 
 - **Fonte de Localização** (*Somente Android*) — Ajuste as configurações no OsmAnd para escolher o provedor de GPS mais adequado para gravações precisas. [Saiba mais aqui](../personal/global-settings.md#location-source).
 
@@ -356,7 +356,7 @@ O distintivo do ícone do aplicativo aparece ao lado do ícone do OsmAnd quando 
 
 ## Widgets {#widgets}
 
-Os widgets permitem exibir informações chave sobre a gravação de trilhas diretamente na tela, como *Distância*, *Duração*, *Subida* e *Descida*. Você também pode adicionar widgets de *Velocidade Máxima* e *Inclinação Média*.
+Os widgets permitem exibir informações chave sobre a gravação de trilhas diretamente na tela, como *Distância*, *Duração*, *Subida*, *Descida*, *Velocidade Máxima* e *Inclinação Média*. No iOS, você também pode adicionar o widget *Tempo em Movimento*.
 
 Para começar a usar os *widgets de Gravação de Viagem*, você precisa fazer todas as seguintes configurações:
 
@@ -381,7 +381,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Adicionando widget Distância/Iniciar-Parar no iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_2_new.png)
+![Adicionando widget Distância/Iniciar-Parar no iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -413,13 +413,13 @@ Para personalizar sua interface, você pode adicionar ou remover o widget de Gra
 Alguns widgets de Gravação de Viagem suportam múltiplos modos de exibição. Os modos permitem alternar entre valores gerais da viagem e métricas para a seção mais recente de subida ou descida da viagem gravada atualmente.
 
 Os seguintes modos podem estar disponíveis dependendo do widget.
-1. **Distância (Iniciar-Parar)**:
-- Distância total (padrão)
-- Última subida
-- Última descida
+1. **Inclinação Média**:
+- Última descida 
+- Última subida  
 
-2. **Subida**:
-- Total (padrão)
+2. **Distância (Iniciar-Parar)**:
+- Distância total (padrão)
+- Última descida
 - Última subida
 
 3. **Descida**:
@@ -428,15 +428,20 @@ Os seguintes modos podem estar disponíveis dependendo do widget.
 
 4. **Velocidade Máxima**:
 - Total (padrão)
-- Última subida
 - Última descida
+- Última subida
 
-5. **Inclinação Média**:
-- Última subida  
-- Última descida 
+5. **Tempo em Movimento** (*Somente iOS*)
+- Total (padrão)
+- Última descida
+- Última subida
+
+6. **Subida**:
+- Total (padrão)
+- Última subida
 
 A alternância de modo depende do widget:
-- Subida / Descida / Velocidade Máxima / Inclinação Média — toque no widget no mapa para alternar seu modo.
+- Subida / Descida / Velocidade Máxima / Inclinação Média / Tempo em Movimento — toque no widget no mapa para alternar seu modo.
 - Distância (Iniciar-Parar) — o widget Distância suporta múltiplos modos de exibição (selecione-os nas configurações do widget), mas tocá-lo sempre abre o diálogo de Gravação de Viagem, onde você pode iniciar, parar e visualizar informações detalhadas sobre sua trilha. 
 
 Se a gravação atual ainda não contiver uma seção de subida ou descida, os widgets nos modos Última subida ou Última descida mostram 0 ou — (sem dados).
@@ -457,16 +462,18 @@ Se a gravação atual ainda não contiver uma seção de subida ou descida, os w
 
 | |
 |------------|
-|**Duração**. Exibe o tempo total da gravação da viagem atual em horas e minutos. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur.png)|  
-|**Subida**. Mostra a subida total ou a seção de subida mais recente, dependendo do modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
-|**Descida**. Indica a descida total ou a seção de descida mais recente, dependendo do modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
-|**Velocidade Máxima**. Mostra a velocidade máxima para a viagem gravada atualmente no modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Inclinação Média**. Exibe a inclinação média para a última seção de subida ou descida da viagem atual, dependendo do modo selecionado. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Descida**. Indica a descida total ou a seção de descida mais recente, dependendo do modo selecionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|**Duração**. Exibe o tempo total da gravação da viagem atual em horas e minutos. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|**Velocidade Máxima**. Mostra a velocidade máxima para a viagem gravada atualmente no modo selecionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|**Tempo em Movimento** (*Somente iOS*). Mostra o tempo em movimento para a viagem gravada atualmente, ou o tempo para a última subida e descida, dependendo do modo selecionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|**Subida**. Mostra a subida total ou a seção de subida mais recente, dependendo do modo selecionado. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Se você tiver vários widgets selecionados, você pode acessar a mesma caixa de diálogo para cada um sem precisar alternar ou fechá-la. Esta interface unificada facilita a visualização e o gerenciamento de todas as informações relacionadas de forma contínua.
 

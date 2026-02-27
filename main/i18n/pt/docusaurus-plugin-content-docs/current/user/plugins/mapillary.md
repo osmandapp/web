@@ -1,8 +1,9 @@
 ---
-source-hash: c1e40198b8d078b7e3678c0105a5dc91442a1ca2f47b65d03facbd7ca77df64a
-sidebar_position: 6
+source-hash: 38151318e8ffca078fdb264a4c0b0efa447c86b08d4a27dad17b80dd745bed3e
+sidebar_position: 7
 title: Mapillary
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Visão geral {#overview}
 
-Para se locomover mais rapidamente, no OsmAnd você pode usar visualizações de rua de suas rotas ou pontos de interesse fornecidas pelo [Mapillary](https://www.mapillary.com/) (é necessária uma conexão com a internet).
+Para se locomover mais rapidamente, no OsmAnd você pode usar visualizações de nível de rua de suas rotas ou pontos de interesse fornecidas pelo [Mapillary](https://www.mapillary.com/) (é necessária uma conexão com a internet).  
 
 [A camada Mapillary](https://www.mapillary.com/) traz imagens de nível de rua diretamente para o aplicativo OsmAnd, para que você possa visualizar facilmente os arredores de qualquer ponto de interesse ou ao longo da rota que você planejou. Se faltarem imagens, você mesmo pode adicioná-las, e outras pessoas podem usá-las. Este recurso surgiu de nossa colaboração com [a equipe Mapillary](https://www.mapillary.com/about), unindo os benefícios de ambos os aplicativos.
 
@@ -51,7 +51,7 @@ A camada do mapa com imagens de rua é exibida no mapa OsmAnd como linhas de pon
 
 - As fotos dos usuários do Mapillary são anexadas a esses pontos verdes.
 - Toque em um ponto verde no mapa para abrir uma foto da rua. As fotos também podem ser selecionadas em uma lista no [menu de contexto do mapa](#map-context-menu), se disponível.
-- Após a seleção, a tela do aplicativo é dividida em mapa OsmAnd e imagens de rua do Mapillary.
+- Após a seleção, a tela do aplicativo é dividida em mapa OsmAnd e imagens de nível de rua do Mapillary.
 - Você pode aplicar [filtros](#data-filtering) para selecionar as fotos que deseja exibir no mapa.
 
 
@@ -73,9 +73,9 @@ A camada do mapa com imagens de rua é exibida no mapa OsmAnd como linhas de pon
 
 </Tabs>
 
-Para exibir imagens de nível de rua do Mapillary no mapa, você precisa habilitar esta camada no [menu Configurar mapa](../map/configure-map-menu.md) na seção *Mostrar*.
+Para exibir imagens de nível de rua do Mapillary no mapa, você precisa habilitar esta camada no [menu Configurar mapa](../map/configure-map-menu.md) na seção *Mostrar*.  
 
-*Para acessar: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
+*Para acessar: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
 :::note Visualizador de fotos do Mapillary
 
@@ -102,7 +102,7 @@ Para exibir imagens de nível de rua do Mapillary no mapa, você precisa habilit
 
 </Tabs>
 
-Você pode criar um filtro e selecionar quais fotos exibir no mapa. Por exemplo, escolha visualizar apenas imagens recentes ou apenas imagens de 360 graus.
+Você pode criar um filtro e selecionar quais fotos exibir no mapa. Por exemplo, escolha visualizar apenas imagens recentes ou apenas imagens de 360 graus.  
 
 *Para acessar: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
@@ -161,7 +161,7 @@ Para adicionar fotos, você precisa se registrar no [aplicativo Mapillary](https
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="mapillary"/>*
 
-![Plugin Mapillary Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png) ![Menu de contexto do mapa do plugin Mapillary Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
+![Plugin Mapillary Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Menu de contexto do mapa do plugin Mapillary Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
 </TabItem>
 

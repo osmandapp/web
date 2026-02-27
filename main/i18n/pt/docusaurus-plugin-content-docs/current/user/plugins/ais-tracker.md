@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title: Rastreador de Embarcações AIS
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 <InfoAndroidOnly />
@@ -31,7 +31,7 @@ O plugin **Rastreador de Embarcações AIS** exibe posições do [Sistema de Ide
 A capacidade de usar mapas online é automaticamente ativada na versão iOS do OsmAnd. Para exibir mapas online no Android, você precisa fazer as seguintes configurações:
 
 1. [Ative](../plugins/index.md#enable--disable) o plugin **Rastreador de embarcações AIS** em *Menu Principal → Plugins → Rastreador de embarcações AIS*.
-2. Configure as [configurações AIS](../map/raster-maps.md#select-raster-maps)
+2. Configure as [configurações AIS](../map/raster-maps.md#layers)
 3. Configure uma **conexão de servidor AIS** ou conecte um **receptor AIS externo**.
 4. Verifique se as embarcações são exibidas no mapa do OsmAnd.
 
@@ -59,7 +59,7 @@ O AIS opera em *frequências VHF* (161,975 MHz e 162,025 MHz) e tem um alcance d
 Quando configurado corretamente, as posições das embarcações aparecerão no mapa. Principais características:
 
 - As embarcações se movem com base na velocidade e curso em tempo real.
-- Novas embarcações entram e saem da área visível dinamicamente.
+- Novos navios entram e saem da área visível dinamicamente.
 - Tocar em uma embarcação abre informações detalhadas.
 
 
@@ -163,18 +163,18 @@ As embarcações AIS transmitem três tipos de dados:
 
 O plugin *Rastreador de embarcações AIS* oferece várias configurações para personalizar a navegação e a interação para usuários com deficiência. Essas configurações são aplicadas a todos os [perfis](../personal/profiles.md) no OsmAnd.
 
-| Configuração | Descrição | Exemplo |
+| Configuração |  Descrição  | Exemplo  |
 |---------|---------------|----------|
 | | | |
 | **Configurações de endereço IP** | | |
-| Protocolo | Escolha o protocolo para receber dados AIS | `UDP/TCP` |
+| Protocolo   | Escolha o protocolo para receber dados AIS | `UDP/TCP` |
 | Endereço IP | Defina o IP da fonte de dados AIS (se TCP for usado) | `192.168.200.16` |
-| Porta TCP | Defina o número da porta TCP para dados AIS | `4001` |
-| Porta UDP | Defina a porta UDP para recepção AIS do OsmAnd | `10110` |
+| Porta TCP   | Defina o número da porta TCP para dados AIS | `4001` |
+| Porta UDP   | Defina a porta UDP para recepção AIS do OsmAnd  | `10110` |
 | | | |
-| **Tempo limite de recepção de sinal AIS** | | |
-| Tempo limite para objetos AIS perdidos | As embarcações desaparecem se nenhum sinal for recebido por um tempo definido | `3 - 20 min` |
-| Tempo limite para visibilidade da embarcação | Os ícones das embarcações mudarão de estado quando nenhum sinal for recebido | `2 - 15 min / Desativado` |
+| **Tempo limite de recepção de sinal AIS** | |  |
+| Tempo limite para objetos AIS perdidos     | As embarcações desaparecem se nenhum sinal for recebido por um tempo definido | `3 - 20 min` |
+| Tempo limite para visibilidade da embarcação      | Os ícones das embarcações mudarão de estado quando nenhum sinal for recebido | `2 - 15 min / Desativado` |
 | | | |
 | **Alertas de Ponto de Aproximação Mais Próximo (CPA)** | | |
 | Tempo de Aviso de CPA | A embarcação é marcada em vermelho se o tempo para o CPA estiver abaixo deste limite | `1 - 60 min / Desativado` |

@@ -1,6 +1,6 @@
 ---
-source-hash: 7ec189e5ebc7bca3eaaa66be6d97617ba61c06de602535da3e7881dac213769a
-sidebar_position: 7
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
 title: Vista de Mapa Náutico
 ---
 
@@ -17,13 +17,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão Geral {#overview}
 
-:::info Recurso pago
-O plugin Vista de Mapa Náutico é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd.
+:::tip Compra
+O plugin Vista de Mapa Náutico é um [recurso pago](../purchases/index.md).  
 :::
 
 A Vista de Mapa Náutico é uma representação gráfica detalhada de oceanos, mares, áreas costeiras e rios que ajuda você a navegar na água e a conhecer rotas populares, obstáculos em sua via navegável, portos mais próximos, ancoradouros e outros marcos importantes.  
 
-Um mapa náutico é um mapa topográfico altamente detalhado para ajudar os capitães a navegar uma embarcação em um curso selecionado na água. É semelhante a um mapa rodoviário para quem viaja de carro. Frequentemente chamado de *'Carta'* por razões históricas, é uma representação gráfica detalhada dos oceanos, mares, áreas costeiras e rios.  
+Um mapa náutico é um mapa topográfico altamente detalhado para ajudar capitães a navegar uma embarcação em um curso selecionado na água. É semelhante a um mapa rodoviário para quem viaja de carro. Frequentemente chamado de *'Carta'* por razões históricas, é uma representação gráfica detalhada dos oceanos, mares, áreas costeiras e rios.  
 
 Os mapas náuticos são importantes para marinheiros profissionais e amadores que alugam um barco para navegar pelos canais da cidade. Os mapas fornecem várias informações, como rotas de navegação, luzes de navegação, zonas de perigo, zonas onde é permitido ou proibido navegar ou atracar, etc.  
 

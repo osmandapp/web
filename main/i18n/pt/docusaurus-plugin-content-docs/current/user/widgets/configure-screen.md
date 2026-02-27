@@ -1,5 +1,5 @@
 ---
-source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
+source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -450,6 +450,53 @@ Você pode reorganizar ou remover widgets da tela do aplicativo usando o modo **
 - Confirme a exclusão quando solicitado.
 
 
+## Layout da Tela do Mapa {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Layout da Tela do Mapa](@site/static/img/widgets/map_screen_layout_1.png) ![Layout da Tela do Mapa](@site/static/img/widgets/map_screen_layout_2.png)
+
+A configuração **Layout da tela do mapa** permite controlar como os painéis de widgets são organizados na tela do mapa. Ela ajuda a evitar que widgets e botões se sobreponham e melhora o uso do espaço na tela, especialmente ao alternar entre orientações retrato e paisagem.
+
+Você pode abrir as configurações de Layout da tela do mapa a partir do menu Configurar tela, diretamente das ações da tela ou via o menu de três pontos.
+
+### Layouts Único e Separado {#single-and-separate-layouts}
+
+![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_single.png) ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_separate.png)
+
+O OsmAnd suporta dois modos de layout para a tela do mapa:
+- **Layout único** – usa o mesmo layout de widgets para todas as orientações de tela. Esta opção é selecionada por padrão.
+- **Layouts separados** – permite configurar layouts de widgets diferentes para orientações Retrato e Paisagem.
+
+Quando Layouts separados está ativado, as alterações feitas em uma orientação não afetam a outra. Isso é útil se você quiser otimizar a tela do mapa de forma diferente para uso em retrato e paisagem.
+
+### Abas Retrato e Paisagem {#portrait-and-landscape-tabs}
+
+![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_tabs.png)
+
+Quando Layouts separados está ativado, duas abas ficam disponíveis na tela Configurar: **Retrato** e **Paisagem**. Cada aba representa um layout independente para a orientação de tela correspondente. Você pode alternar entre as abas tocando nelas.
+
+Você pode copiar o layout entre as orientações. Para acessar essas ações, toque no menu de três pontos para o painel de widgets:
+- **Copiar do Retrato** – copia a lista de widgets do layout Retrato para o layout Paisagem.
+- **Copiar da Paisagem** – copia a lista de widgets do layout Paisagem para o layout Retrato.
+
+Apenas a lista de widgets é copiada, e a operação se aplica dentro do mesmo perfil.
+
+![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_portrait.png) ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Layout de Painéis {#panels-layout}
+
+![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_wide.png) ![Layout da Tela do Mapa](@site/static/img/widgets/screen_layout_compact.png)
+
+A configuração **Layout de painéis** controla como os painéis de widgets superior e inferior são exibidos. Esta opção está disponível apenas quando Layouts separados está ativado.
+
+Você pode escolher entre dois modos:
+- **Amplo** – os painéis superior e inferior se estendem pela largura total da tela.
+- **Compacto** – os painéis superior e inferior se ajustam entre os painéis laterais e os botões do mapa.
+
+O Layout de painéis pode ser configurado independentemente para orientações Retrato e Paisagem, permitindo uma melhor adaptação a diferentes tamanhos e orientações de tela.
+
+
 ## Botões {#buttons}
 
 ### Botões Personalizados {#custom-buttons}
@@ -484,7 +531,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
 Vá para: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Página do widget](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Página do widget](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -498,7 +545,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
 </Tabs>
 
-1. Os **botões padrão** permitem personalizar quais botões de mapa predefinidos são visíveis na tela do mapa. Você pode optar por ocultar ou mostrar os seguintes botões:
+Os **botões padrão** permitem personalizar quais botões de mapa predefinidos são visíveis na tela do mapa. Cada botão na lista tem um interruptor Liga/Desliga ao lado. Você pode optar por ocultar ou mostrar os seguintes botões:
 
     - [Modo 3D](../widgets/map-buttons.md#3d-mode). Para iOS, o botão está sempre disponível. Para Android, ele aparece na lista e está disponível para configuração se o motor de renderização do mapa [Versão 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) for selecionado.
 
@@ -517,19 +564,37 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sh
 
     - [Aumentar / diminuir zoom](../widgets/map-buttons.md#my-location-and-zoom). Ajusta o nível de zoom do mapa para mostrar mais ou menos detalhes.
 
-2. O **menu de três pontos** na tela de Botões Padrão contém ações como:
+O **menu de três pontos** na tela de Botões Padrão contém ações como:
 
     - *Redefinir para o padrão*. Permite retornar as configurações dos botões à sua aparência original.
-    - *Copiar de outro perfil*. Selecione de qual perfil da lista oferecida você deseja copiar as configurações dos botões.
-
-3. A **aparência do botão padrão** (*apenas Android*) oferece uma variedade de opções de personalização para esses tipos de botões. Para modificar a aparência de um botão, toque no botão desejado na lista e selecione a opção [Aparência](#button-appearance).
+    - *Copiar de outro perfil*. Selecione um perfil da lista para copiar as configurações de visibilidade e aparência dos botões.
+    - *Aparência (Apenas Android)*. Oferece uma variedade de opções de personalização para esses tipos de botões. Para modificar a aparência de um botão, toque no botão desejado na lista e selecione a opção [Aparência](#button-appearance).
 
 
 ### Aparência do Botão {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Aparência do Botão](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+**Vá para** (para Botões Personalizados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu de três pontos → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vá para** (para todos os Botões Padrão): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu de três pontos → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vá para** (para um Botão Padrão específico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → selecione um botão → *<Translate android="true" ids="shared_string_appearance"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Aparência do Botão](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Vá para** (para Botões Personalizados): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu de três pontos → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Vá para** (para um Botão Padrão específico): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → selecione um botão → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
 
 O recurso *Aparência do botão* permite personalizar totalmente a aparência dos botões na interface do seu mapa. Essas opções de personalização estão disponíveis para *Ação Rápida (Botões Personalizados)* e *Botões Padrão*, fornecendo controle abrangente sobre a aparência da interface do mapa e permitindo ajustes precisos no design do botão.
 
@@ -537,8 +602,8 @@ O recurso *Aparência do botão* permite personalizar totalmente a aparência do
 
 - **Ícone**. Selecione em uma lista de ícones que representam ações que você já adicionou, facilitando a identificação de funções rapidamente.
 - **Raio do canto**. Ajuste esta configuração para alterar a forma do botão, variando de cantos quadrados e nítidos a bordas suaves e arredondadas.
-- **Tamanho**. Escolha o tamanho do botão que melhor se adapta à sua tela e se destaca conforme necessário. Para *Botões Padrão*, os tamanhos são predefinidos e não podem ser ajustados.
-- **Opacidade do plano de fundo**. Controle a visibilidade do plano de fundo do botão. Você pode configurá-lo para ser totalmente visível ou parcialmente transparente, ou exibir apenas a sombra do quadro e o ícone.
+- **Tamanho**. Escolha o tamanho do botão que melhor se adapta à sua tela e se destaca conforme necessário. 
+- **Opacidade do plano de fundo** (Android) / **Plano de fundo** (iOS). Controle a visibilidade do plano de fundo do botão. Você pode configurá-lo para ser totalmente visível ou parcialmente transparente, ou exibir apenas a sombra do quadro e o ícone.
 
 
 ## Outros {#other}

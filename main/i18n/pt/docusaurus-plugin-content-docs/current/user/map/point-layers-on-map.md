@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Pontos no Mapa
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Visão Geral {#overview}
 
-O mapa pode exibir pontos como [Favoritos](#favorites), [Pontos de Interesse](#points-of-interest-pois), [Marcadores](#markers), [Wikipedia](#-wikipedia), [Resultados da Pesquisa](#search-results-poi), [Notas de Áudio e Vídeo](#-audio--video-points-android) e [Edição OSM](#-osm-edit-points).
+O mapa pode exibir pontos como [Favoritos](#favorites), [Pontos de Interesse](#points-of-interest-pois), [Marcadores](#markers), [Wikipedia](#-wikipedia), [Resultados da pesquisa](#search-results-poi), [Notas de áudio e vídeo](#-audio--video-points-android) e [Edição OSM](#-osm-edit-points).
 
 
 ## Favoritos {#favorites}
@@ -94,7 +94,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_overl
 
 </Tabs>
 
-[Pontos de interesse (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) são locais específicos marcados com um símbolo no mapa. Eles indicam lugares e objetos interessantes ou úteis e fazem parte dos [Mapas Vetoriais](../map/vector-maps.md).  
+[Points of interest (POIs)](https://wiki.openstreetmap.org/wiki/Points_of_interest) são locais específicos marcados com um símbolo no mapa. Eles indicam lugares e objetos interessantes ou úteis e fazem parte dos [Mapas Vetoriais](../map/vector-maps.md).  
 
 Os POIs mais notáveis são exibidos no mapa automaticamente. No entanto, você pode selecionar um tipo específico de POIs (por exemplo, *Restaurantes*) e todos eles serão destacados no mapa com um **círculo laranja** (a partir do nível de zoom 9).  
 
@@ -132,7 +132,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,configure
 
 </Tabs>
 
-Cada tipo de POI no OsmAnd recebe um ícone e uma cor específicos. O [nível de zoom](../map/vector-maps.md#details) e o design do POI podem ser diferentes em alguns [estilos de mapa](../map/vector-maps.md#default-map-styles).  
+Cada tipo de POI no OsmAnd recebe um ícone e uma cor específicos. O [nível de zoom](../map/vector-maps.md#details) e o design do POI podem ser diferentes em alguns [estilos de mapa](../map/map-styles.md).  
 
 [Leia mais](../map/vector-maps.md#hide).
 
@@ -326,7 +326,7 @@ Waypoints, POIs, pontos favoritos e notas de áudio/vídeo referem-se ao conceit
 
 [Waypoints](#track-waypoints) são pontos individuais em um mapa ou rota. Eles podem ser usados para marcar certos lugares que podem ser importantes para navegar ou registrar suas viagens. Por exemplo, você pode criar um waypoint no mapa para indicar um cruzamento importante ou uma mudança de direção.  
 
-[Pontos de interesse (POIs)](#points-of-interest-pois) são lugares de interesse especial para os usuários. Podem ser pontos de referência, restaurantes, hotéis, postos de gasolina e outros locais de interesse que você pode querer anotar ou visitar.  
+[Pontos de interesse(POIs)](#points-of-interest-pois) são lugares de interesse especial para os usuários. Podem ser pontos de referência, restaurantes, hotéis, postos de gasolina e outros locais de interesse que você pode querer anotar ou visitar.  
 
 [Pontos favoritos](#favorites) são lugares que os usuários consideram particularmente importantes ou interessantes e salvam em sua lista de lugares favoritos. Os lugares podem incluir qualquer local que você possa querer encontrar e retornar mais tarde.
 

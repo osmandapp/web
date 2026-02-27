@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title: Widgets de Navegação
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/> Este widget você só pode usar com o recurso Pro <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">assinantes do OsmAnd Pro</a>.
-
+:::info Pro feature
+O Widget de Elevação é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 O widget de Elevação mostra um gráfico com a elevação e a inclinação da sua rota de navegação e sua localização atual neste gráfico com altitude e inclinação atuais. O gráfico é plotado em dois eixos. O eixo X é a distância da sua rota. O eixo Y é a altitude, o valor depende do relevo, e a inclinação é exibida como uma porcentagem.  
@@ -250,7 +248,7 @@ O widget mostra o *Tempo de chegada* ou *Tempo para ir* até o primeiro ponto in
 | | |
 |:------------|:------------|
 | Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
 | Ao tocar | Alterna entre *Tempo de chegada* e *Tempo para ir* e vice-versa. |
 | Toque longo | Abre o [menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -278,7 +276,7 @@ O widget exibe o *Tempo de chegada* ou *Tempo para ir* até o último ponto de d
 | | |
 |:------------|:------------|
 | Habilitar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
 | Ao tocar | Alterna entre *Tempo de chegada* e *Tempo para ir* e vice-versa. |
 | Toque longo | Abre o [menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title: Botões do Mapa
 ---
@@ -18,25 +18,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão geral {#overview}
 
-Os botões do mapa, incluindo *Zoom*, *Pesquisar*, *Direções*, *Bússola*, *Minha Localização*, *Modo 3D* e *Menu*, são os principais controles para interagir com o mapa. Cada botão oferece funcionalidades específicas para aprimorar sua navegação e experiência de uso do mapa.
+Os botões do mapa, incluindo *Zoom*, *Pesquisar*, *Navegação*, *Bússola*, *Minha Posição*, *Modo 3D* e *Menu*, são os principais controles para interagir com o mapa. Cada botão oferece funcionalidades específicas para aprimorar sua navegação e experiência de uso do mapa.
 
 
-## Minha Localização e Zoom {#my-location-and-zoom}
+## Minha Posição e Zoom {#my-position-and-zoom}
 
 ![Menu de configuração da tela](@site/static/img/widgets/location_zoom_buttons.png)
 
 Use estes botões para controlar como o mapa é exibido na tela do seu dispositivo:
 
-- **Minha Localização**. Mostra se o centro do mapa está sincronizado com a geolocalização atual do seu dispositivo.
+- **Minha Posição**. Mostra se o centro do mapa está sincronizado com a geolocalização atual do seu dispositivo.
 - **Zoom**. Permite ajustar o nível de zoom do mapa para fornecer mais ou menos detalhes.
-Se você quiser mais informações sobre como usar esses botões, consulte o artigo [Interagir com o mapa](../map/interact-with-map.md#my-location-and-zoom).
+Se você quiser mais informações sobre como usar esses botões, consulte o artigo [Interagir com o mapa](../map/interact-with-map.md#my-position-and-zoom).
 
 
-## Direções {#directions}
+## Navegação {#navigation}
 
 ![O botão Direções permite](@site/static/img/widgets/directions_button_allows.png)
 
-O botão **Direções** é essencial para o planejamento de rotas e navegação:
+O botão **Navegação** é essencial para o planejamento de rotas e navegação:
 
 - [Construir uma rota](../navigation/index.md). Use este botão para criar uma rota.
 - [Iniciar navegação](../navigation/index.md). Inicie a navegação curva a curva.
@@ -175,18 +175,41 @@ O [widget de ação rápida](./quick-action.md) é um botão configurável com v
 
 ## Aparência do Botão do Mapa {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Botões padrão | Botões personalizados |
 | :--- | :--- |
 | ![Aparência do Botão do Mapa](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Aparência do Botão do Mapa](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-As configurações para a aparência do botão do mapa estão disponíveis através dos seguintes menus:
+**Vá para** (para Botões personalizados): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → menu de três pontos → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vá para** (para todos os Botões padrão): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → menu de três pontos → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Vá para** (para um Botão padrão específico): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → selecione um botão → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Menu → Configurar tela → Botões → Botões padrão*
-- *Menu → Configurar tela → Botões personalizados → Ação rápida → menu de três pontos → Aparência*
+</TabItem>
 
-A personalização da aparência dos botões permite ajustar o tamanho, a forma, o ícone e a opacidade do plano de fundo para [Ação Rápida (Botões personalizados)](../widgets/quick-action.md#button-appearance) e [Botões padrão](../widgets/configure-screen.md#button-appearance). Essa flexibilidade permite personalizar a interface para atender às suas preferências e melhorar a usabilidade.
+<TabItem value="ios" label="iOS">  
+
+| Botões padrão | Botões personalizados |
+| :--- | :--- |
+| ![Aparência do Botão do Mapa](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Aparência do Botão do Mapa](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Vá para** (para Botões personalizados): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → menu de três pontos → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Vá para** (para um Botão padrão específico): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → selecione um botão → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+A personalização da aparência dos botões permite ajustar o tamanho, a forma, o ícone e a opacidade do plano de fundo para [Ação Rápida (Botões personalizados)](../widgets/quick-action.md#button-appearance) e [Botões padrão](../widgets/configure-screen.md#button-appearance). No Android, as configurações de aparência podem ser aplicadas a todos os Botões padrão ou a um Botão padrão específico, enquanto no iOS elas estão disponíveis apenas para Botões padrão específicos.
+
+Os ícones dos botões podem ser definidos como:
+- **Dinâmico** – o ícone muda com base na ação ou estado atual.
+- **Personalizado** – escolha um ícone das ações adicionadas.
+- **Específico** – selecione um ícone fixo que sempre será exibido.
+
+A tela de Aparência inclui uma pré-visualização, permitindo que você veja como suas alterações aparecerão no mapa antes de sair das configurações.
 
 
 ## Artigos Relacionados {#related-articles}

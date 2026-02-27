@@ -1,5 +1,5 @@
 ---
-source-hash: 8451603f460c01b41bc40f56cd232e1cc6efc049123d01d861d14574636fb31b
+source-hash: f760ccb8f8b8871e9c8fea7d404b2b44f108845699746f29b9218a124587c7a3
 title: Trilhas
 sidebar_position: 2
 ---
@@ -17,12 +17,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Visão geral {#overview}
-OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa. As rotas podem ser construídas como parte da Navegação, criadas via Planejar Rota, importadas como trilhas GPX, gravadas via plugin de Gravação de Viagem, ou exploradas e selecionadas a partir de dados do OpenStreetMap.
+OsmAnd possui muitos recursos poderosos para exibir várias rotas no mapa. As rotas podem ser construídas como parte da Navegação, criadas via Planejar Rota, importadas como trilhas GPX, gravadas via plugin de Gravação de Viagem, ou navegadas e selecionadas a partir de dados do OpenStreetMap.
 
 
 ## Tipos de Trilhas {#types-of-tracks}
 
-[Trilhas (GPX)](#display-tracks-on-the-map) - viagem gravada ou planejada salva em [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Este tipo de rota pode ser importado de uma fonte externa, criado no aplicativo ou gravado por você. GPX pode conter um dos 3 tipos diferentes de dados, ou todos eles:
+[Trilhas (GPX)](#display-tracks-on-the-map) - viagem gravada ou planejada salva em [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Este tipo de rota pode ser importado de uma fonte externa, criado no aplicativo ou gravado por você. GPX pode conter um dos 3 tipos diferentes de dados, ou todos eles:
 
 - Trilha como uma linha (***Geometria***). O arquivo possui um array de pontos ```<trkpt>```, cada ponto tem a localização e tempo opcional, velocidade, altitude e outros atributos. Essas trilhas são exibidas no mapa como linhas sólidas.
 - Trilha como uma rota (***Rota***). O arquivo possui um array de pontos ```<rtept>```, cada ponto descrito como um ponto intermediário da rota. Depende de como os pontos dentro de uma rota devem ser conectados, seja como pequenos segmentos de rota ou via uma linha reta. Essas trilhas são exibidas no mapa como linhas tracejadas.
@@ -116,7 +116,7 @@ Ao selecionar uma trilha no mapa ou abrir o [menu de contexto da trilha](./track
 
 Vá para: *Toque na trilha → Aba Trilha → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Menu de trilha analisar no mapa Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Menu de trilha analisar na distância do mapa Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Menu de trilha analisar no mapa Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Menu de trilha analisar na distância do mapa Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -132,14 +132,14 @@ Vá para: *Toque na trilha → Aba Trilha → <Translate ios="true" ids="analyze
 
 Esta ferramenta fornece uma análise detalhada dos dados da [trilha](../../map/tracks/track-context-menu.md#options) usando gráficos e mapas.
 
-- Os **dados do gráfico (eixo Y)** exibem: *Altitude*, *Inclinação*, *Velocidade*, [*Dados do sensor externo*](../../plugins/external-sensors.md) e combinações de até duas opções, se contidas nos dados da trilha.
+- Os **dados do gráfico (eixo Y)** exibem: *Altitude*, *Inclinação*, *Velocidade*, [*Dados do sensor externo*](../../plugins/external-sensors.md) e combinações de até duas opções, se contidas nos dados da trilha. ***Apenas Android:*** para trilhas de carro gravadas com dados OBD-II, o eixo Y também fornece métricas do veículo, como velocidade do motor, temperatura do fluido de arrefecimento, e mais.
 - A **dimensão do gráfico (eixo X)** representa: *Distância*, *Tempo* e *Hora do dia*.
 - **Interação de toque/deslize**. Toque em um gráfico para exibir informações sobre um ponto específico na trilha. Deslizar no gráfico destaca o local apropriado no mapa e mostra detalhes na barra de informações.
 - **Rótulo de distância**. Ao tocar ou deslizar ao longo do gráfico, a dica de ferramenta também exibe a distância exata ao longo da trilha. O valor segue as configurações de unidade do perfil atual (<Translate android="true" ids="km"/> ou <Translate android="true" ids="mile"/>). Use-o para estimar rapidamente quão longe um ponto está do início da trilha, ou para calcular a distância entre duas posições comparando seus valores.
 - **Escala**. Use um [gesto de dois dedos](../../map/interact-with-map.md#gestures) para dimensionar o gráfico para uma visualização mais detalhada.
 
 
-### Seguir Minha Localização {#follow-my-location}
+### Seguir Minha Posição {#follow-my-location}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -157,7 +157,7 @@ Esta ferramenta fornece uma análise detalhada dos dados da [trilha](../../map/t
 
 </Tabs>
 
-Toque no botão [Minha Localização](../../map/interact-with-map.md#my-location-and-zoom) para sincronizar a visualização do mapa e o gráfico com sua localização.
+Toque no botão [Minha Posição](../../map/interact-with-map.md#my-position-and-zoom) para sincronizar a visualização do mapa e o gráfico com sua localização.
 
 - A **escala do gráfico** permanece a mesma, e a **informação da barra** é fixada 1/4 no lado esquerdo.
 - Conforme você se move, o **gráfico deslizará** da esquerda para a direita, exibindo informações à frente de sua trilha.

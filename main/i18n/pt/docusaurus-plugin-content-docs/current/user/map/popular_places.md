@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Locais Populares
 ---
@@ -20,13 +20,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
+:::tip Purchase
+Locais Populares é um [recurso pago](../purchases/index.md).  
+:::
+
 O recurso **Locais Populares** no OsmAnd destaca pontos de referência e atrações notáveis usando dados abertos estruturados do [Wikidata](https://www.wikidata.org) e da [Wikipedia](https://www.wikipedia.org/). Ele ajuda os usuários a explorar destinos conhecidos com descrições e fotos multilíngues.
 
 Cada local incluído neste recurso está vinculado a um **ID do Wikidata**, o que permite ao OsmAnd exibir nomes verificados, visualizar imagens e links para artigos da Wikipedia. Esta ferramenta **não** mostra todos os pontos do OpenStreetMap (OSM). Ela se limita a POIs com referências do Wikidata.
 
 Atualmente, o banco de dados curado inclui aproximadamente **50.000 a 150.000 locais de alta classificação** globalmente, selecionados de mais de **1 milhão** de objetos Wikidata + OSM.
-
-Imagens e outro conteúdo baseado no Wikidata nos Locais Populares são atualizados em um cronograma e podem não aparecer imediatamente após alterações no Wikidata ou no Wikimedia Commons. Frequência de atualização atual: duas vezes por mês — nos dias **10** e **20**.
 
 :::note
 *Esta é a primeira versão do recurso Locais Populares. O feedback é bem-vindo no [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -397,3 +399,6 @@ Buttons:
 The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
 
 -->
+:::tip Purchase
+Locais Populares é um [recurso pago](../purchases/index.md).  
+:::

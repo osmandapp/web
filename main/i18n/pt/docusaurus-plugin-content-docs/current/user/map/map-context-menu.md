@@ -1,5 +1,5 @@
 ---
-source-hash: 70cd92e79a54a5b3e2bbbf6b8aaddc5d2ee57d8620b8d8e7f67c3e64442e3160
+source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
 sidebar_position: 3
 title: Menu de Contexto do Mapa
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-O menu de contexto do mapa fornece informações sobre o objeto selecionado no mapa. Você também pode usá-lo para criar uma rota para o local selecionado. Para abrir o menu de contexto, primeiro, encontre o local desejado no mapa e, em seguida, selecione o objeto com um toque curto ou toque longo ao selecionar qualquer ponto preciso no mapa.
+O menu de contexto do mapa fornece informações sobre o objeto selecionado no mapa. Você também pode usá-lo para criar uma rota para o local selecionado. Para abrir o menu de contexto, primeiro, encontre o local necessário no mapa e, em seguida, selecione o objeto com um toque curto ou toque longo ao selecionar qualquer ponto preciso no mapa.
 
 
 ### Selecionar um Objeto (Toque Único) {#select-an-object-single-tap}
@@ -557,7 +557,7 @@ Opções disponíveis para compartilhar a localização:
 
 </Tabs>
 
-Para iniciar a navegação ou o planejamento de rotas, você precisa selecionar o destino primeiro com [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Caso você já tenha um ponto de destino, o menu sugerirá que você substitua o ponto de destino ou o insira como outro ponto intermediário ou inicial.
+Para iniciar a navegação ou o planejamento de rotas, você precisa selecionar o destino primeiro com [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation). Caso você já tenha um ponto de destino, o menu sugerirá que você substitua o ponto de destino ou o insira como outro ponto intermediário ou inicial.
 
 Também é possível selecionar *De* Destino primeiro através do menu de contexto do mapa (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
@@ -772,7 +772,7 @@ Você pode adicionar pontos de referência a uma trilha gravada ou à gravação
 ### * Criar / Modificar POI {#-create--modify-poi}
 
 :::note
-Para adicionar criar/modificar POIs, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
+Para criar/modificar POIs, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -800,7 +800,7 @@ Com o plugin de Edição OSM, você pode criar e modificar a maioria dos POIs pr
 ### * Abrir Nota OSM {#-open-osm-note}
 
 :::note
-Para abrir a nota OSM, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
+Para abrir nota OSM, ative o [**plugin de Edição OSM**](../plugins/osm-editing.md) do OsmAnd.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

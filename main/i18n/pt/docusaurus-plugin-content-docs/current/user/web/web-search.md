@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Search
 title: Pesquisar no Website
@@ -65,13 +65,14 @@ O **Menu de contexto do POI** exibe informações principais sobre o lugar selec
 - **Nome e ícone** — mostra o nome do POI e seu ícone.
 - **Distância e direção** — mostra a distância e a direção até o POI.
 - **Localização** — exibe as coordenadas do POI.
+- **Horário de funcionamento** — mostra os horários de funcionamento analisados a partir dos [dados OSM](https://wiki.openstreetmap.org/wiki/Key:opening_hours). O status atual é exibido dinamicamente dependendo do horário atual (por exemplo, *Aberto agora*, *Fechado* ou *Abre às 10:00*), e o cronograma completo é mostrado abaixo.
 - **Descrição** — fornece informações adicionais sobre o POI quando disponível (por exemplo, da Wikipedia).
 - **Fotos online** — mostra fotos do Wikimedia relacionadas ao POI quando disponível. Selecione Mostrar tudo para abrir a Galeria de fotos. Selecione uma foto para abri-la na galeria (modo Abrir foto).
 - **Dados do objeto** — informações adicionais do POI, incluindo tags OSM e outros detalhes como contatos, links sociais, links da Wikipedia e Wikivoyage, descrições e inscrições (quando disponíveis).
 - **ID OSM** — o identificador OpenStreetMap do POI.
 - **Coordenadas** — selecione as coordenadas para copiá-las.
 
-![Menu de contexto do POI](@site/static/img/web/poi_context_menu.png)
+![Menu de contexto do POI](@site/static/img/web/poi_context_menu_new.png)
 
 ### Ações do POI {#poi-actions}
 

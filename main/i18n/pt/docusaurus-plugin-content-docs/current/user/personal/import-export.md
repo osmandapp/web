@@ -1,7 +1,7 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
-title: Importar / Exportar
+title:  Importar / Exportar
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão Geral {#overview}
 
-As ferramentas de **Importação** e **Exportação** no OsmAnd permitem gerenciar seus dados. Você pode mover seus perfis, favoritos, trilhas e outras configurações usando um formato especial através dos aplicativos em seu dispositivo. Este processo simplifica o salvamento e a transferência de dados entre dispositivos e permite compartilhá-los com outros usuários do OsmAnd.
+As ferramentas de **Importar** e **Exportar** no OsmAnd permitem gerenciar seus dados. Você pode mover seus perfis, favoritos, trilhas e outras configurações usando um formato especial através dos aplicativos em seu dispositivo. Este processo simplifica o salvamento e a transferência de dados entre dispositivos e permite compartilhá-los com outros usuários do OsmAnd.
 
 :::note Tamanho grande
 *Se o tamanho dos dados selecionados for significativo, o aplicativo levará tempo para preparar o arquivo `.osf`.*
@@ -33,7 +33,7 @@ A *Importação* e *Exportação* permitem salvar dados de **arquivos** `.osf` g
 - **Meus Lugares:**  
         [Favoritos](../personal/favorites.md#export--import), &nbsp;[Trilhas](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notas OSM*, *Edições OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Histórico de marcadores*, *Histórico de pesquisa*, *Histórico de navegação](../personal/global-settings.md#history), &nbsp;*Itinerário*.
 - **Recursos:**  
-        [Estilo de renderização](../map/vector-maps.md#custom-map-style), &nbsp;[Roteamento](../navigation/routing/osmand-routing.md), &nbsp;[Mecanismos de roteamento online](../navigation/routing/online-routing.md), &nbsp;[Fontes de mapa*, *Mapas padrão/offline](../map/raster-maps.md), &nbsp;[Mapas da Wikipédia e de Viagem](../plan-route/travel-guides.md), &nbsp;[Mapas náuticos](../plugins/nautical-charts.md), &nbsp;[Mapas rodoviários](../map/vector-maps.md#road-style), &nbsp;[Mapas de topografia](../plugins/topography.md), &nbsp;[Comandos de voz (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Comandos de voz (gravados)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Backup de favoritos](../personal/favorites.md#automatic-favorites-backup).
+        [Estilo de renderização](../map/map-styles.md#custom-map-style), &nbsp;[Roteamento](../navigation/routing/osmand-routing.md), &nbsp;[Mecanismos de roteamento online](../navigation/routing/online-routing.md), &nbsp;[Fontes de mapa*, *Mapas padrão/offline](../map/raster-maps.md), &nbsp;[Mapas da Wikipédia e de Viagem](../plan-route/travel-guides.md), &nbsp;[Mapas náuticos](../plugins/nautical-charts.md), &nbsp;[Mapas rodoviários](../map/vector-maps.md#road-style), &nbsp;[Mapas de topografia](../plugins/topography.md), &nbsp;[Comandos de voz (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Comandos de voz (gravados)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Backup de favoritos](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Exportar {#export}
@@ -96,7 +96,7 @@ Tipos de arquivos de importação suportados:
 - [Trilhas, rotas](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoritos](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Arquivos KML e KMZ são importados com conversão para o formato GPX.
 - [Mapas vetoriais do OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
 - [Azulejos de mapas online](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
-- [Backups & perfis](#export): `.osf`.
+- [Backups e perfis](#export): `.osf`.
 - [Mapas de altura / dados 3D](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Outros](color-palette-schemes.md): `.txt`.
 

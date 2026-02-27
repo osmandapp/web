@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -64,7 +64,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-Na parte superior do painel de informações, você pode ver o nome da trilha e o símbolo usado para marcá-la (*somente Android*). O nome da trilha pode ser alterado usando a função de renomear no [menu Opções](#options). Algumas trilhas (principalmente os *[Guias de viagem](../../plan-route/travel-guides.md#manage-as-gpx-track)*) podem ter uma breve *[descrição](#description-and-info)* e (ou) uma imagem abaixo do *Nome da trilha*. Uma seta mostra a *Direção para o ponto mais próximo da trilha* a partir de [Minha localização](../../map/interact-with-map.md#my-location-and-zoom).  
+Na parte superior do painel de informações, você pode ver o nome da trilha e o símbolo usado para marcá-la (*somente Android*). O nome da trilha pode ser alterado usando a função de renomear no [menu Opções](#options). Algumas trilhas (principalmente os *[Guias de viagem](../../plan-route/travel-guides.md#manage-as-gpx-track)*) podem ter uma breve *[descrição](#description-and-info)* e (ou) uma imagem abaixo do *Nome da trilha*. Uma seta mostra a *Direção para o ponto mais próximo da trilha* a partir de [Minha posição](../../map/interact-with-map.md#my-position-and-zoom).  
 
 O painel de informações também fornece informações sobre o seguinte:
 
@@ -129,7 +129,7 @@ O menu **Opções** permite gerenciar e modificar a trilha selecionada com vári
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Somente Android*) – Mescla segmentos de trilha para preencher lacunas.
-- **<Translate android="true" ids="analyze_on_map"/>**. Abre a ferramenta [Analisar no mapa](../tracks/index.md#analyze-track-on-map) para inspecionar a elevação, velocidade e distância da trilha.
+- **<Translate android="true" ids="analyze_on_map"/>**. Abre a ferramenta [Analisar no mapa](../tracks/index.md#analyze-track-on-map) para inspecionar a elevação, velocidade, distância e quaisquer dados adicionais contidos na trilha (como dados de sensores externos ou métricas de veículos) da trilha.
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Somente Android*) - Analisa a trilha por [intervalos](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
@@ -364,11 +364,11 @@ Se não houver *informações de elevação* na rota, você pode adicioná-las d
 
 ### Calcular Elevação Faltante {#calculate-missing-elevation}
 
-:::note Assinatura OsmAnd Pro
-O recurso [Calcular elevação offline](../../plan-route/create-route.md#get-elevation-data) está disponível apenas para [**assinantes OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Recurso Pro
+[Calcular elevação offline](../../plan-route/create-route.md#get-elevation-data) é um recurso pago do [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
 
 [Este recurso](../../plan-route/create-route.md#get-elevation-data) permite calcular o perfil de elevação para trilhas GPX offline para qualquer terreno entre 70 graus de latitude norte e 70 graus de latitude sul, com base nos [dados do mapa de terreno](../../plugins/topography.md#download-maps). *Os mapas de terreno (3D) devem ter sido baixados previamente*.
 
@@ -412,7 +412,7 @@ Nesta aba *Pontos*:
 
 ### Adicionar Waypoint a uma Trilha {#add-waypoint-to-a-track}
 
-Waypoints podem ser adicionados à trilha atualmente gravada ou a qualquer trilha da [*Lista de trilhas em Meus Locais*](../../personal/tracks/manage-tracks.md):
+Waypoints podem ser adicionados à trilha atualmente gravada ou a qualquer trilha da [*Meus Locais → Lista de trilhas*](../../personal/tracks/manage-tracks.md):
 
 - Use o [menu de contexto do mapa](../../map/map-context-menu.md#-add--edit-track-waypoint).
   - Waypoints são exibidos automaticamente se a trilha selecionada estiver ativada no mapa.
@@ -650,12 +650,12 @@ Para abrir esta opção:
 Esta opção permite dividir uma trilha em intervalos de distância fixa e analisar estatísticas detalhadas para cada segmento. Os intervalos de distância disponíveis são ***20 m***, ***50 m***, ***100 m***, ***200 m***, ***500 m***, ***1 km***, ***2 km***, ***5 km*** e ***10 km***. Após escolher um intervalo de distância, a trilha é exibida como uma lista de segmentos. 
 
 Para cada segmento, você pode visualizar:
-- distância percorrida.
-- duração.
-- altitude média, mínima e máxima.
-- subida e descida.
-- tempo em movimento.
-- velocidade média e máxima.
+- Distância percorrida.
+- Duração.
+- Altitude média, mínima e máxima.
+- Subida e descida.
+- Tempo em movimento.
+- Velocidade média e máxima.
 
 Ao tocar em qualquer segmento na lista, a visualização do mapa mostra a trilha completa com seus intervalos e abre o menu de contexto para a trilha na parte inferior da tela. No mapa, os rótulos de intervalo suportam duas ações: toque para abrir o painel de visão geral da trilha e toque longo para abrir o menu de contexto da trilha.
 
@@ -700,7 +700,7 @@ Esta opção permite visualizar os valores de frequência cardíaca média, mín
 
 Este filtro permite melhorar as estatísticas da sua trilha, excluindo dados desnecessários ou incorretos. Você pode filtrar pontos da trilha que não se encaixam nos parâmetros da sua trilha e, como resultado, obter um gráfico e uma linha de rota visual mais precisos, sem distorção ou ruído de gravação. Você pode fazer alterações com filtros como *Suavização*, *Velocidade*, *Altitude* e *Precisão GPS*, que ocultam os pontos filtrados da trilha atual. Além disso, no menu *Estatísticas*, você pode verificar como suas alterações são exibidas no gráfico antes de salvá-las. Você também pode *Redefinir para o original* e *Salvar como cópia* da sua trilha neste filtro sem salvar o original.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.
