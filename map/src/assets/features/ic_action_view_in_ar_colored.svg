@@ -1,0 +1,23 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5Z" fill="url(#paint0_linear_2829_1995)"/>
+<circle cx="12" cy="12" r="5" fill="url(#paint1_radial_2829_1995)"/>
+<path opacity="0.2" d="M12 10.125C12 10.8154 11.4404 11.375 10.75 11.375C10.0596 11.375 9.5 10.8154 9.5 10.125C9.5 9.43464 10.0596 8.875 10.75 8.875C11.4404 8.875 12 9.43464 12 10.125Z" fill="#1D3547"/>
+<path opacity="0.4" d="M15.75 11.375C15.75 11.8928 15.3303 12.3125 14.8125 12.3125C14.2947 12.3125 13.875 11.8928 13.875 11.375C13.875 10.8572 14.2947 10.4375 14.8125 10.4375C15.3303 10.4375 15.75 10.8572 15.75 11.375Z" fill="#1D3547"/>
+<circle opacity="0.4" cx="13.875" cy="15.125" r="0.625" fill="#1D3547"/>
+<path d="M6 15V18H9V20H6C4.89543 20 4 19.1046 4 18V15H6Z" fill="#FEC14B"/>
+<path d="M20 15V18C20 19.1046 19.1046 20 18 20H15V18H18V15H20Z" fill="#FEC14B"/>
+<path d="M9 6H6V9H4V6C4 4.89543 4.89543 4 6 4H9V6Z" fill="#FEC14B"/>
+<path d="M18 4C19.1046 4 20 4.89543 20 6V9H18V6H15V4H18Z" fill="#FEC14B"/>
+<defs>
+<linearGradient id="paint0_linear_2829_1995" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+<stop offset="0.399675" stop-color="#25282D"/>
+<stop offset="1" stop-color="#5042EB"/>
+</linearGradient>
+<radialGradient id="paint1_radial_2829_1995" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(10.75 9.5) rotate(54.4623) scale(10.7529)">
+<stop stop-color="#FCFBFC"/>
+<stop offset="0.613598" stop-color="#BDCEDB"/>
+<stop offset="0.875" stop-color="#FCFBFC"/>
+<stop offset="0.980769" stop-color="#FCFBFC"/>
+</radialGradient>
+</defs>
+</svg>
