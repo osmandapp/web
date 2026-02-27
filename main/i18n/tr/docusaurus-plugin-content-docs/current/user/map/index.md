@@ -1,5 +1,5 @@
 ---
-source-hash: f6d36706a1e07d9988dbdc4b5e3c26c6daa9c50f6827a4937c300bd0a0b42708
+source-hash: f218919b7b07c7eb735b29b6e78fabb39aaf779efd30df074086b26bcd2822fd
 sidebar_position: 1
 ---
 
@@ -19,9 +19,13 @@ Harita bağlam menüsü, harita üzerinde seçilen nesne hakkında bilgi sağlar
 
 Haritayı Yapılandır menüsü, OsmAnd'ın *Ana Menüsü*'nde harita görüntüsünü ihtiyaçlarınıza göre özelleştirebileceğiniz önemli bir öğedir. Favori noktalarınızı, navigasyon işaretçilerinizi veya özel ilgi çekici noktalarınızı haritada vurgulayabilir; belirli rotaları veya üçüncü taraf GPX dosyalarını görüntüleyebilir; arazi bilgilerini, uydu görüntülerini veya diğer mevcut bitmap görüntülerini üst üste bindirebilir; toplu taşıma bilgilerini görüntüleyebilir; ve harita stilini değiştirebilirsiniz.
 
-## [Vektör Haritaları (Harita Stilleri)](./vector-maps.md) {#vector-maps-map-styles}
+## [Vektör Haritaları](./vector-maps.md) {#vector-maps}
 
 Vektör haritaları, OsmAnd için varsayılan harita veri kaynağı olarak tasarlanmıştır, bu nedenle cihaza indirilmesi gerekir. Vektör haritaları, bisiklet, yürüyüş, araba veya kar motosikleti ile sürüş gibi birçok etkinlik için çok çeşitli harita stillerini destekler. Her harita stili, belirli nesneleri vurgulamak veya gizlemek ve gündüz ve gece modu arasında geçiş yapmak için ayarlanabilir. Harita vektör verileri, vektör verileriyle artırılabilir ve varsayılan Harita stiliyle görüntülenebilir, örneğin, Kontur çizgisi bilgileri. Gerekli bilgileri görüntülemek için kendi harita stilinizi OsmAnd'da oluşturabilirsiniz.
+
+## [Harita Stilleri (Vektör Haritalar)](./map-styles.md) {#map-styles-vector-maps}
+
+Harita stilleri, OsmAnd'da vektör harita verilerinin nasıl oluşturulacağını tanımlar. Bir stil, yollar, binalar, arazi kullanımı, su ve ilgi çekici noktalar gibi harita nesnelerinin görsel görünümünü kontrol eder; renkler, çizgi desenleri ve etiketler dahil.
 
 ## [Raster Haritalar (Çevrimiçi / Çevrimdışı)](./raster-maps.md) {#raster-maps-online--offline}
 
@@ -43,10 +47,10 @@ Haritada Favoriler, POI'ler, İşaretleyiciler, Wikipedia, Arama sonuçları, Se
 
 İzler bağlam menüsü, GPX izinin eylemleri ve verileriyle ilgili menüdür.
 
-## [Rotalar](./routes.md) {#routes}
-
-OsmAnd, harita üzerinde çeşitli rotaları görüntülemek için birçok güçlü özelliğe sahiptir.
-
 ## [Toplu Taşıma](./public-transport.md) {#public-transport}
 
 Toplu taşıma, harita üzerinde ulaşım rotalarını ve duraklarını görüntülemenize, bunlar hakkında ayrıntılı bilgi kontrol etmenize ve navigasyon yapmanıza olanak tanıyan ek bir katmandır.
+
+## [Rotalar](./routes.md) {#routes}
+
+OsmAnd, harita üzerinde çeşitli rotaları görüntülemek için birçok güçlü özelliğe sahiptir.

@@ -1,5 +1,5 @@
 ---
-source-hash: 269c3e7c9891ca79298a9f601df07292acfcf07de77472f942a2e0e91ed2108c
+source-hash: 94b7fc03fd411976f69ee6fd9ea9cbcd3fed3d958494675812066531f344d5db
 sidebar_position: 1
 title: İlk Adımlar
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-OsmAnd'a (OpenStreetMap Otomatik Navigasyon Yönlendirmeleri) hoş geldiniz!
+OsmAnd'a (OpenStreetMap Otomatik Navigasyon Yönlendirmeleri) hoş geldiniz!  
 
 Haritaları nasıl indireceğinizi, uygulamayı nasıl yapılandıracağınızı, haritayı nasıl kullanacağınızı ve bir rota oluşturacağınızı, navigasyonu nasıl başlatacağınızı ve ilgi çekici noktaları nasıl arayacağınızı keşfedin. OsmAnd Gizlilik politikası ve gerekli İzinlerin temel noktaları hakkında bilgi edinin.
 
@@ -50,7 +50,7 @@ OsmAnd, **Android** ve **iOS** için kullanılabilen Haritalar ve Navigasyon iç
 
 <AppleStore/>
 
-OsmAnd sürümleri ve Satın Almalar hakkında [daha fazla bilgi edinin](../purchases/index.md).
+OsmAnd sürümleri ve Satın Almalar hakkında [daha fazla bilgi edinin](../purchases/index.md).  
 
 
 ## OsmAnd'a Hoş Geldiniz {#welcome-to-osmand}
@@ -88,7 +88,7 @@ OsmAnd sürümleri ve Satın Almalar hakkında [daha fazla bilgi edinin](../purc
 
 </Tabs>
 
-OsmAnd'a cihazınızın hassas konumu hakkında bilgi alma izni vermenizi öneririz. Özel bilgilerinizi toplamıyor, kullanmıyor veya paylaşmıyoruz, bu nedenle arama, navigasyon ve diğer OsmAnd işlevlerinin doğru çevrimdışı çalışması için hassas coğrafi konuma erişim gereklidir.
+OsmAnd'a cihazınızın hassas konumu hakkında bilgi alma izni vermenizi öneririz. Özel bilgilerinizi toplamıyor, kullanmıyor veya paylaşmıyoruz, bu nedenle arama, navigasyon ve diğer OsmAnd işlevlerinin doğru çevrimdışı çalışması için hassas coğrafi konuma erişim gereklidir.  
 
 
 ### Haritalar nasıl indirilir {#how-to-download-maps}
@@ -130,7 +130,7 @@ OsmAnd, mevcut tüm bölgeler için haritaları indirmenize izin verirken, tüm 
 
 ### Uygulama dili nasıl değiştirilir {#how-to-change-app-language}
 
-*Görüntüleme dili seçeneği*, açılır pencereler, dahili metin, mesajlar ve daha fazlası dahil olmak üzere tüm uygulamanın dilini değiştirmek için kullanılır. Android 12'ye kadar OsmAnd, görüntüleme dilini doğrudan uygulamada tercihlerinize göre özelleştirmenize olanak tanır. Android 13 ve iOS cihazlardan itibaren, görüntüleme dili yalnızca sistem ayarlarında değiştirilebilir (Android'de [uygulama başına dil tercihlerini](https://developer.android.com/guide/topics/resources/app-languages) ve iOS'ta [nasıl değiştireceğinizi](https://developer.apple.com/news/?id=u2cfuj88) görün).
+*Görüntüleme dili seçeneği*, açılır pencereler, dahili metin, mesajlar ve daha fazlası dahil olmak üzere tüm uygulamanın dilini değiştirmek için kullanılır. Android 12'ye kadar OsmAnd, görüntüleme dilini doğrudan uygulamada tercihlerinize göre özelleştirmenize olanak tanır. Android 13 ve iOS cihazlardan itibaren, görüntüleme dili yalnızca sistem ayarlarında değiştirilebilir (Android'de [uygulama başına dil tercihlerini](https://developer.android.com/guide/topics/resources/app-languages) ve iOS'ta [nasıl değiştireceğinizi](https://developer.apple.com/news/?id=u2cfuj88) görün).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -177,8 +177,8 @@ Uygulama ayarlarını [Ana Menü](../start-with/main-menu.md) aracılığıyla [
 
 </Tabs>
 
-[Genel ayarlar](../personal/global-settings.md) hakkında [daha fazla bilgi edinin](https://osmand.net/docs/user/settings/global-settings/).
-[Profil ayarları](../personal/profiles.md) hakkında [daha fazla bilgi edinin](https://osmand.net/docs/user/settings/profiles/).
+[Genel ayarlar](../personal/global-settings.md) hakkında [daha fazla bilgi edinin](../personal/global-settings.md).
+[Profil ayarları](../personal/profiles.md) hakkında [daha fazla bilgi edinin](../personal/profiles.md).
 
 
 ### Eklentiler nasıl yapılandırılır {#how-to-configure-plugins}
@@ -491,7 +491,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 </Tabs>
 
 *Yardım menüsünde* sitemizdeki [www.osmand.net/docs](https://osmand.net/docs/intro/) makalelerini bulabilirsiniz. İlk indirmeden sonra (İnternet bağlantısı gereklidir), yardım makaleleri çevrimdışı olarak kullanılabilir.  
-İlk alt bölüm olan *Çevrimdışı Yardım*, kullanıcılarımız arasında **En çok görüntülenen** (veya popüler) makaleleri içerir. Bu makaleler, uygulama için ayarlanan dilde görüntülenir, eğer bu dil belgemiz web sitesinde destekleniyorsa. Şu anda desteklenen diller: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>* ve *<Translate android="true" ids="lang_uk"/>*. Uygulama dilini değiştirdiğinizde, belgelerin seçilen dilde açılması için lütfen OsmAnd'ı yeniden başlatın. Bir çeviri mevcut olmadığında, sayfanın İngilizce sürümü otomatik olarak görüntülenir. **Kullanıcı kılavuzu** ve **Sorun giderme** bölümleri web sitesindekiyle aynı yapıya sahiptir.  
+İlk alt bölüm olan *Çevrimdışı Yardım*, kullanıcılarımız arasında **En çok görüntülenen** (veya popüler) makaleleri içerir. Bu makaleler, uygulama için ayarlanan dilde görüntülenir, eğer bu dil belgemiz web sitesinde destekleniyorsa. Şu anda desteklenen diller: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, ve *<Translate android="true" ids="lang_uk"/>*. Uygulama dilini değiştirdiğinizde, belgelerin seçilen dilde açılması için lütfen OsmAnd'ı yeniden başlatın. Bir çeviri mevcut olmadığında, sayfanın İngilizce sürümü otomatik olarak görüntülenir. **Kullanıcı kılavuzu** ve **Sorun giderme** bölümleri web sitesindekiyle aynı yapıya sahiptir.  
 *Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-logcat-logs) de gönderebilirsiniz.  
 
 ### Menü {#menu}
@@ -655,7 +655,7 @@ Yapı, OsmAnd Maps &lt;build&gt; formatında, &lt;date&gt; yayınlandı şeklind
 
 ## Gizlilik {#privacy}
 
-Bu, [açık kaynaklı](https://github.com/osmandapp/osmand), reklamsız/izleyici içermeyen, gizlilik odaklı bir uygulamadır. Maksimum gizliliği korumak için OsmAnd, çevrimdışı haritaları ilk sıraya koyar, böylece cihazınızdan hiçbir etkileşim veya coğrafi bilgi sızdırılmaz. Hangi verilerin toplandığına ve hangi verilerin ağ tarafından aktarıldığına çok dikkat ediyoruz, daha fazla bilgiyi [Gizlilik politikamızda](https://osmand.net/help-online/privacy-policy) okuyabilirsiniz.
+Bu, [açık kaynaklı](https://github.com/osmandapp/osmand), reklamsız/izleyici içermeyen, gizlilik odaklı bir uygulamadır. Maksimum gizliliği korumak için OsmAnd, çevrimdışı haritaları ilk sıraya koyar, böylece cihazınızdan hiçbir etkileşim veya coğrafi bilgi sızdırılmaz. Hangi verilerin toplandığına ve hangi verilerin ağ tarafından aktarıldığına çok dikkat ediyoruz, daha fazla bilgiyi [Gizlilik politikamızda](https://osmand.net/help-online/privacy-policy) okuyabilirsiniz.  
 
 
 ## İzinler {#permissions}
@@ -665,7 +665,7 @@ OsmAnd'ın iOS / Android sürümünde herhangi bir zorunlu izni yoktur.
 **Temel**:
 
 - **İnternet**. Çevrimdışı haritaları ilk indirme / güncelleme. Ayrıca, [Sokak Seviyesi Görüntüleri](../map/point-layers-on-map.md#-street-level-imagery), [Çevrimiçi fotoğraflar](../map/map-context-menu.md#online-photos) veya [Çevrimiçi haritalar](../map/raster-maps.md) gibi çevrimiçi özelliklere erişmek için de gerekebilir.
-- **GPS** / **GSM Ağı**. Konumunuzu belirleyin, navigasyon modunda sizi takip edin ve seyahatinizi kaydedin (isteğe bağlı). Bu izin, [konumum düğmesine](../widgets/map-buttons.md#my-location-and-zoom) tıkladığınızda veya [navigasyonu başlattığınızda](../navigation/setup/route-navigation.md#start--stop-navigation) istenir.
+- **GPS** / **GSM Ağı**. Konumunuzu belirleyin, navigasyon modunda sizi takip edin ve seyahatinizi kaydedin (isteğe bağlı). Bu izin, [konumum düğmesine](../widgets/map-buttons.md#my-position-and-zoom) tıkladığınızda veya [navigasyonu başlattığınızda](../navigation/setup/route-navigation.md#start--stop-navigation) istenir.
 
 **İsteğe Bağlı**:
 

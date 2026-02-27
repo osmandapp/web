@@ -1,8 +1,9 @@
 ---
-source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
+source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
 sidebar_position: 4
 title: Rota Detayları
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,17 +16,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
-OsmAnd, en iyi rotayı bulmanızı ve detaylarını keşfetmenizi sağlar. Uygulama, mesafe, [seyahat süresi](#distance--time--co2), [yüzey tipi](#road-attributes), [yükseklik farkları](#elevation-info), [CO2 ayak izi verileri](#distance--time--co2) ve [dönüş bilgileri](#turn-by-turn-information) gibi rota hakkında detaylı bilgi sağlar. Ayrıca rotayı harita üzerinde [analiz edebilir](#analyze-on-map), parkur segmentleri hakkında bilgi edinebilir, rota planını [yazdırabilir](#print), rotayı [kaydedebilir](#share--export-actions) ve başkalarıyla paylaşabilirsiniz. Bu işlevsellik sayesinde rota detaylarını her zaman bilecek ve seyahatinizi daha verimli planlayabileceksiniz.
+OsmAnd, en iyi rotayı bulmanızı ve detaylarını keşfetmenizi sağlar. Uygulama, mesafe, [seyahat süresi](#distance--time--co2), [yüzey tipi](#road-attributes), [yükseklik farkları](#elevation-info), [CO2 ayak izi verileri](#distance--time--co2) ve [dönüş bilgileri](#turn-by-turn-information) gibi rota hakkında detaylı bilgi sağlar. Ayrıca rotayı harita üzerinde [analiz edebilir](#analyze-on-map), parkur segmentleri hakkında bilgi edinebilir, rota planını [yazdırabilir](#print), rotayı [kaydedebilir](#share--export-actions) ve başkalarıyla paylaşabilirsiniz. Bu işlevsellik sayesinde rota detaylarını her zaman bilecek ve seyahatinizi daha verimli planlayabileceksiniz.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Rota detayları Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)
+![Rota detayları Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
 
 </TabItem>
 
@@ -40,12 +40,12 @@ OsmAnd, en iyi rotayı bulmanızı ve detaylarını keşfetmenizi sağlar. Uygul
 
 ### Nasıl Erişilir {#how-to-access}
 
-[Navigasyon menüsünde](./route-navigation.md#start--stop-navigation) bir rota hesapladıktan sonra, o rotanın "Detayları"na erişebilirsiniz. Bu bilgiler, rota planlamasını iyileştirmek için bir yolculuğa başlamadan önce veya sürüş sırasında ilerideki yol hakkında bilgi kontrol etmek için kullanışlıdır.
-*Rota Detayları menüsüne* erişmenin üç yolu vardır.
+[Navigasyon menüsünde](./route-navigation.md#start--stop-navigation) bir rota hesapladıktan sonra, o rotanın "Detayları"na erişebilirsiniz. Bu bilgiler, rota planlamasını iyileştirmek için bir yolculuğa başlamadan önce veya sürüş sırasında ilerideki yol hakkında bilgi kontrol etmek için kullanışlıdır.  
+*Rota Detayları menüsüne* erişmenin üç yolu vardır.  
 
 1. Ana *Menü → Navigasyon*'a gidin, rotayı ayarlayın ve *Detaylar* düğmesine dokunun.
 2. Harita ekranındaki *Navigasyon* simgesine dokunun, rotayı ayarlayın ve *Detaylar* düğmesine dokunun.
-3. *Yerlerim* menüsüne gidin, listedeki herhangi bir parkura dokunun *Menü → Yerlerim → Parkurlar*, *Genel Bakış*'taki parkur bağlam menüsünde *Navigasyon* simgesini seçin ve *Detaylar*'a dokunun.
+3. *Yerlerim* menüsüne gidin, listedeki herhangi bir parkura dokunun *Menü → Yerlerim → Parkurlar*, *Genel Bakış*'taki parkur bağlam menüsünde *Navigasyon* simgesini seçin ve *Detaylar*'a dokunun.  
 
 Seçilen [profil ayarlarına](../../personal/profiles.md) ve seçilen [rota türüne](../../navigation/routing/osmand-routing.md#routing-types) bağlı olarak, bazı rota detayları görüntülenmeyebilir. Ayrıca, rota detayları büyük ölçüde *OpenStreetMap veri kapsamına* bağlıdır.
 
@@ -70,7 +70,7 @@ Seçilen [profil ayarlarına](../../personal/profiles.md) ve seçilen [rota tür
 
 - ***Toplam mesafe***, seçilen [birimlerde](../../personal/profiles.md#units--formats) ara noktalar dahil olmak üzere tüm rota segmentleri arasında hesaplanır.
 
-- ***Tahmini seyahat süresi***, her segmentteki sürelerin ve belirli noktalardaki zaman cezalarının toplamı olarak hesaplanır. Her navigasyon profili, bir segmentteki hızı ve hangi cezaların dahil edilmesi gerektiğini hesaplamak için farklı kurallara sahiptir ([routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) içinde yapılandırılmıştır). Örneğin, araba ve bisiklet profilleri OpenStreetMap verilerinden segment başına ortalama hızı alır, ancak yaya, tekne ve uçak profilleri [Navigasyon Ayarları'ndan](../guidance/vehicle-parameters.md#default-speed) *varsayılan* hızı kullanır.
+- ***Tahmini seyahat süresi***, her segmentteki sürelerin ve belirli noktalardaki zaman cezalarının toplamı olarak hesaplanır. Her navigasyon profili, bir segmentteki hızı ve hangi cezaların dahil edilmesi gerektiğini hesaplamak için farklı kurallara sahiptir (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Örneğin, araba ve bisiklet profilleri OpenStreetMap verilerinden segment başına ortalama hızı alır, ancak yaya, tekne ve uçak profilleri [Navigasyon Ayarları'ndan](../guidance/vehicle-parameters.md#default-speed) *varsayılan* hızı kullanır.
 
 - ***Tahmini varış zamanı***, *Tahmini seyahat süresi* kullanılarak başlangıç noktasının yerel saatine göre şu andan itibaren bir zaman olarak hesaplanır.
 
@@ -102,7 +102,7 @@ Seçilen [profil ayarlarına](../../personal/profiles.md) ve seçilen [rota tür
 - *Yokuş yukarı / yokuş aşağı*. Yolun yataya oranını gösterir; sıfır yataylığı, derece sayısı ise daha yüksek veya daha dik bir eğimi gösterir. Eğim, konum noktanızdan görünür grafiğin sonuna kadar veya ekranda görünür konum noktası olmayan seçilen rota bölümü için maksimum yol eğimini yüzde olarak gösterir.
 
 
-***OsmAnd tarafından arazi tespiti için kullanılan DEM verileri için bir lisans***
+***OsmAnd tarafından arazi tespiti için kullanılan DEM verileri için bir lisans***  
 Haritadaki yükseklik verileri (70 derece kuzey enlemi ile 70 derece güney enlemi arasında), *Uzay Mekiği Radar Topografya Misyonu (SRTM)* kapsamında yapılan ölçümlerden elde edilmiştir. *NASA'nın Dünya Gözlem Sistemi*'ndeki birincil görüntüleme aracı olan *Gelişmiş Uzay Tabanlı Termal Emisyon ve Yansıma Radyometresi (ASTER)* kullanılmıştır. Tam bilgi için [Lisans](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146) bölümüne bakın.
 
 
@@ -134,11 +134,11 @@ Haritadaki yükseklik verileri (70 derece kuzey enlemi ile 70 derece güney enle
 
 </Tabs>
 
-[Grafikler](../../map/tracks/track-context-menu.md#altitude--speed-graphs), navigasyon rotanızın yüksekliği ve eğimi ile ilgili bilgileri ve bu grafikteki mevcut konumunuzu mevcut yükseklik ve eğimle görsel olarak gösterir. Grafik iki eksen üzerinde çizilir. X ekseni rotanızdaki mesafedir. Birinci Y ekseni deniz seviyesinden yüksekliktir, değeri araziye bağlıdır ve ikinci Y ekseni yaklaşık [eğimdir](https://en.wikipedia.org/wiki/Grade_(slope)). Tüm rota için veya sadece seçilen bir aralık için grafiği ölçeklendirerek yükseklik grafiğini görüntüleyebilirsiniz.
+[Grafikler](../../map/tracks/track-context-menu.md#altitude--speed-graphs), navigasyon rotanızın yüksekliği ve eğimi ile ilgili bilgileri ve bu grafikteki mevcut konumunuzu mevcut yükseklik ve eğimle görsel olarak gösterir. Grafik iki eksen üzerinde çizilir. X ekseni rotanızdaki mesafedir. Birinci Y ekseni deniz seviyesinden yüksekliktir, değeri araziye bağlıdır ve ikinci Y ekseni yaklaşık [eğimdir](https://en.wikipedia.org/wiki/Grade_(slope)). Tüm rota için veya sadece seçilen bir aralık için grafiği ölçeklendirerek yükseklik grafiğini görüntüleyebilirsiniz.  
 
-- ***Yakınlaştır/Uzaklaştır***. Varsayılan olarak, grafik mevcut konumdan hedef noktanıza kadar olan rotayı gösterir. Daha detaylı bir görünüm için [iki parmak hareketlerini](../../map/interact-with-map.md#gestures) kullanarak yakınlaştırıp uzaklaştırabilirsiniz. Ayrıca grafiği sağa, rotada ileriye ve mevcut konuma geriye doğru hareket ettirebilirsiniz. *Bu tür manipülasyonlar, [Yol Özellikleri](#road-attributes) bloğundaki görsel bilgi bloğunu da ifade eder.*
+- ***Yakınlaştır/Uzaklaştır***. Varsayılan olarak, grafik mevcut konumdan hedef noktanıza kadar olan rotayı gösterir. Daha detaylı bir görünüm için [iki parmak hareketlerini](../../map/interact-with-map.md#gestures) kullanarak yakınlaştırıp uzaklaştırabilirsiniz. Ayrıca grafiği sağa, rotada ileriye ve mevcut konuma geriye doğru hareket ettirebilirsiniz. *Bu tür manipülasyonlar, [Yol Özellikleri](#road-attributes) bloğundaki görsel bilgi bloğunu da ifade eder.*  
 
-- ***Konum Pimi***. Rotanızda ileride belirli bir noktadaki bilgiyi görmek isterseniz, grafiğin herhangi bir yerine dokunabilirsiniz ve yükseklik ve eğim yüzdesi ile bir işaretçi belirecektir.
+- ***Konum Pimi***. Rotanızda ileride belirli bir noktadaki bilgiyi görmek isterseniz, grafiğin herhangi bir yerine dokunabilirsiniz ve yükseklik ve eğim yüzdesi ile bir işaretçi belirecektir.  
 
 
 ## Haritada Analiz Et {#analyze-on-map}
@@ -147,7 +147,7 @@ Haritadaki yükseklik verileri (70 derece kuzey enlemi ile 70 derece güney enle
 
 <TabItem value="android" label="Android">
 
-![Rota detayları Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)
+![Rota detayları Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
 
 </TabItem>
 
@@ -157,7 +157,7 @@ Haritadaki yükseklik verileri (70 derece kuzey enlemi ile 70 derece güney enle
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
 **Haritada analiz et** aracı, harita üzerindeki [parkur detaylarını](../../map/tracks/index.md#analyze-track-on-map) görüntüleme aracına benzer. Çeşitli grafikleri görüntülemenizi ve görsel olarak etkileşim kurmanızı ve seçilen noktayı harita üzerinde görmenizi sağlar.
 
@@ -178,7 +178,7 @@ Veri mevcutsa, aşağıdaki türlerden birini seçebilirsiniz:
 
 - *Dokun ve Kaydır*. Parkur noktası ve üzerindeki hareket hakkında bilgi görüntülemek için grafiğe dokunun. Grafik, noktanın haritadaki konumunu vurgular ve cetvel üzerinde hakkında bilgi görüntüler.
 - *Ölçek*. [İki parmak hareketiyle](../../map/interact-with-map.md#gestures) grafiği ölçeklendirin.
-- *Konumumu Takip Et* (*Yalnızca Android*). Harita görünümünü ve grafiği konumunuzla senkronize etmek için [Konumum'a](../../map/interact-with-map.md#my-location-and-zoom) dokunabilirsiniz. Hareket ettikçe, grafik soldan sağa kayacak ve yolunuzun ilerisindeki bilgileri gösterecektir.
+- *Konumumu Takip Et* (*Yalnızca Android*). Harita görünümünü ve grafiği konumunuzla senkronize etmek için [Konumum'a](../../map/interact-with-map.md#my-location-and-zoom) dokunabilirsiniz. Hareket ettikçe, grafik soldan sağa kayacak ve yolunuzun ilerisindeki bilgileri gösterecektir.  
 
 
 ## Yol Özellikleri {#road-attributes}
@@ -205,27 +205,27 @@ Veri mevcutsa, aşağıdaki türlerden birini seçebilirsiniz:
 
 Yol özellikleri, [Rota Detayları](#how-to-access) bölümünde erişilebilir ve OpenStreetMap ve Yükseklik verilerinden segmentle ilgili bilgileri görüntüler. Renk göstergesi, belirli özelliklerin haritada nasıl işlendiğiyle ilgilidir ([Harita lejantı](../../map-legend/osmand.md#surface-smoothness) bölümüne bakın). Çubuk grafikler de etkileşimlidir ve grafiğe dokunarak belirli bir konumdaki bilgileri görmek mümkündür.
 
-- [**Yol tipi**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Yolun tipi, şerit sayısı, hız limitleri, taşıma kapasitesi, yaya ve bisiklet yollarının varlığı, yol kenarları ve diğer parametreler gibi işlevsel amacı ve özelliklerine göre belirlenir. Farklı yol tipleri farklı kısıtlamalara ve trafik kurallarına sahip olabilir.
+- [**Yol tipi**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). Yolun tipi, şerit sayısı, hız limitleri, taşıma kapasitesi, yaya ve bisiklet yollarının varlığı, yol kenarları ve diğer parametreler gibi işlevsel amacı ve özelliklerine göre belirlenir. Farklı yol tipleri farklı kısıtlamalara ve trafik kurallarına sahip olabilir.  
 
-   Örneğin, ana [otoyollar](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) genellikle yüksek hız limitine sahiptir ve şeritlere ayrılabilirken, [yerel yollar](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) düşük hız limitine ve her yönde tek şeride sahip olabilir.
+   Örneğin, ana [otoyollar](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) genellikle yüksek hız limitine sahiptir ve şeritlere ayrılabilirken, [yerel yollar](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) düşük hız limitine ve her yönde tek şeride sahip olabilir.  
 
-- [**Yüzey**](https://wiki.openstreetmap.org/wiki/Key:surface). Yol yüzeyleri, araç tekerlekleriyle temas eden kaplamanın üst katmanıdır. Özelliklerine ve işlevsel amacına bağlı olarak farklı tiplerde olabilirler.
+- [**Yüzey**](https://wiki.openstreetmap.org/wiki/Key:surface). Yol yüzeyleri, araç tekerlekleriyle temas eden kaplamanın üst katmanıdır. Özelliklerine ve işlevsel amacına bağlı olarak farklı tiplerde olabilirler.  
 
-   Örneğin, [asfalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) kaplama iyi çekiş ve gürültü yalıtımı sağlarken, [beton](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) kaplama daha dayanıklıdır ve daha yüksek taşıma kapasitesine sahiptir. Çakıl, kırma taş, ahşap levhalar ve diğer malzemeler de yol yüzeyi oluşturmak için kullanılabilir.
+   Örneğin, [asfalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) kaplama iyi çekiş ve gürültü yalıtımı sağlarken, [beton](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) kaplama daha dayanıklıdır ve daha yüksek taşıma kapasitesine sahiptir. Çakıl, kırma taş, ahşap levhalar ve diğer malzemeler de yol yüzeyi oluşturmak için kullanılabilir.  
 
-- [**Eğim**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). Yolun eğim açısının yüzde olarak ifadesidir. Yolun yataya göre ne kadar dik yukarı veya aşağı eğimli olduğunu gösterir ve yolun yükseklik değişiminin yatay mesafeye bölünmesi ve elde edilen değerin %100 ile çarpılmasıyla hesaplanır.
+- [**Diklik**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). Bu, yolun eğim açısının yüzde olarak ifadesidir. Yolun yataya göre ne kadar dik yukarı veya aşağı eğimli olduğunu gösterir ve yolun yükseklik değişiminin yatay mesafeye bölünmesi ve elde edilen değerin %100 ile çarpılmasıyla hesaplanır.  
 
-   Örneğin, yolun eğimi %10 ise, bu, yol boyunca her 100 metrelik yatay mesafe için 10 metre yukarı veya aşağı gittiğiniz anlamına gelir. Yolun eğimi, özellikle kışın kaygan yollarda aracınızın hızını, frenlemesini, yakıt tüketimini ve sürüş güvenliğini etkileyebilir.
+   Örneğin, yolun dikliği %10 ise, bu, yol boyunca her 100 metrelik yatay mesafe için 10 metre yukarı veya aşağı gittiğiniz anlamına gelir. Yolun dikliği, özellikle kışın kaygan yollarda aracınızın hızını, frenlemesini, yakıt tüketimini ve sürüş güvenliğini etkileyebilir.  
 
-- [**Yüzey sağlamlığı**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Yol yüzeyi deformasyondan veya yükten kurtulabilir. Yüzey sağlamlığı ne kadar yüksek olursa, araca zarar verme olasılığı o kadar az ve yol o kadar rahat olacaktır. Yüzey sağlamlığı araç hızını ve yakıt tüketimini de etkileyebilir.
+- [**Yüzey sağlamlığı**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Yol yüzeyi deformasyondan veya yükten kurtulabilir. Yüzey sağlamlığı ne kadar yüksek olursa, araca zarar verme olasılığı o kadar az ve yol o kadar rahat olacaktır. Yüzey sağlamlığı araç hızını ve yakıt tüketimini de etkileyebilir.  
 
-- [**Eğim**](https://wiki.openstreetmap.org/wiki/Key:incline). Rotanızda yüzde kaç eğim olduğunu gösterir.
+- [**Eğim**](https://wiki.openstreetmap.org/wiki/Key:incline).  Rotanızda yüzde kaç eğim olduğunu gösterir.
 
-- [**Pürüzsüzlük**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Otoyollar, otoparklar, plajlar ve patikalar gibi her türlü yol ve alan için geçerlidir ve rotanın kullanılabilirliğini gösterir. Araç alt takımına zarar verme veya düşme gibi önemli bir risk olmadan sürüş yapabileceğiniz bilgiyi verir.
+- [**Pürüzsüzlük**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Otoyollar, otoparklar, plajlar ve patikalar gibi her türlü yol ve alan için geçerlidir ve rotanın kullanılabilirliğini gösterir. Araç alt takımına zarar verme veya düşme gibi önemli bir risk olmadan sürüş yapabileceğiniz bilgiyi verir.  
 
-- [**Kış ve buz yolları**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). [Kış yolları](../../map/vector-maps.md#winter-and-ski) sınıflandırmasına göre rotanın renk şemasını gösterir.
+- [**Kış ve buz yolları**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). [Kış yolları](../../map/map-styles.md#winter-and-ski) sınıflandırmasına göre rotanın renk şemasını gösterir.  
 
-- [**At yollarının zorluğu**](https://wiki.openstreetmap.org/wiki/Riding). Bu yol özelliği, at sürerken rotanın zorluğunu gösterir. [Atlı rota oluşturma](../../navigation/routing/horse-routing.md) için uygundur.
+- [**At yollarının zorluğu**](https://wiki.openstreetmap.org/wiki/Riding). Bu yol özelliği, at sürerken rotanın zorluğunu gösterir. [Atlı rota oluşturma](../../navigation/routing/horse-routing.md) için uygundur.  
 
 
 ## Adım Adım Bilgiler {#turn-by-turn-information}
@@ -281,30 +281,30 @@ Talimatlar, rota boyunca hareket etme hakkında aşağıdaki bilgileri içerir:
 
 ### Yol Kenarı Göstergesi {#roadside-indicator}
 
-:::caution Yalnızca iOS
-Bu talimat türü şu anda OsmAnd uygulamasının *Android sürümü için mevcut değildir*.
+:::caution iOS only
+This type of instruction is currently *not available for the Android* version of the OsmAnd app.
 :::
 
 ![Yan gösterge](@site/static/img/navigation/route/side_indication.png)
 
-Talimat listesinde, **yol kenarı göstergesi**, mevcut konumunuzdan ve son noktanıza doğru hareket yönünüzden hedefinize hangi yönde olduğunu gösterir; bu sol, sağ ve düz olabilir.
+Talimat listesinde, **yol kenarı göstergesi**, mevcut konumunuzdan ve son noktanıza doğru hareket yönünüzden hedefinize hangi yönde olduğunu gösterir; bu sol, sağ ve düz olabilir.  
 
 Hedefiniz (*son noktadan [Kerteriz](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true)*) ile son segment (*rotanın son 2 noktasına olan Kerteriz*) arasındaki açı ölçülür, 120 derecelik 3 sektöre bölünür ve sonuç olarak hedefinizin hangi yönde olduğunu görebilirsiniz.
 
-- `-60 °` &nbsp; &nbsp; &nbsp; ila &nbsp; &nbsp;`60 °` &nbsp; &nbsp; &nbsp; - **düz ileri** olarak işaretlenmiştir.
-- `-180 °` &nbsp; &nbsp; ila &nbsp; &nbsp;`-60 °` &nbsp; &nbsp; - **sol** taraf olarak işaretlenmiştir.
-- `60 °` &nbsp; &nbsp; &nbsp; &nbsp; ila &nbsp; &nbsp;`180 °` &nbsp; &nbsp; - **sağ** taraf olarak işaretlenmiştir.
+- `-60 °`&nbsp; &nbsp; &nbsp; ila &nbsp; &nbsp;`60 °`&nbsp; &nbsp; &nbsp; - **düz ileri** olarak işaretlenmiştir.
+- `-180 °`&nbsp; &nbsp; ila &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; - **sol** taraf olarak işaretlenmiştir.
+- `60 °`&nbsp; &nbsp; &nbsp; &nbsp; ila &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - **sağ** taraf olarak işaretlenmiştir.
 
 
 ### Yazdır {#print}
 
 <InfoAndroidOnly/>
 
-![rota detayları](@site/static/img/navigation/route/route_details_print-2.png)
+![rota detayları](@site/static/img/navigation/route/route_details_print-2.png)  
 
 Adım adım rota açıklamasının **Yazdırma** özelliği, elektronik cihazlar yerine rota açıklamanızın fiziksel bir kopyasına sahip olmayı tercih ediyorsanız veya navigasyon uygulamalarına veya GPS navigatörlerine erişiminiz yoksa, İnternet erişiminiz yoksa veya sizinle seyahat eden diğer kişiler için bilgiye ihtiyacınız varsa faydalı olabilir.
 
-Yazdırılan bir rota açıklaması, bir sonraki dönüşe olan mesafe, sürüş yönü ve sokak veya patika adları ile mesafe ve seyahat süresi bilgileri dahil olmak üzere rotanızda nasıl gezineceğinize dair ayrıntılı *adım adım talimatlar* sağlar.
+Yazdırılan bir rota açıklaması, bir sonraki dönüşe olan mesafe, sürüş yönü ve sokak veya patika adları ile mesafe ve seyahat süresi bilgileri dahil olmak üzere rotanızda nasıl gezineceğinize dair ayrıntılı *adım adım talimatlar* sağlar.  
 
 Bu bilgiler, bir gezi planlarken ve rotadaki farklı noktalar arasındaki süreyi ve mesafeyi tahmin etmek ve tahmini varış zamanını belirlemek istediğinizde faydalı olabilir.
 
@@ -327,9 +327,9 @@ Adım adım bilgileri **PDF formatında yazdırma** veya **kaydetme** yeteneği,
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-Rota Detayları navigasyon bölümünde, rota bilgileriyle belirli eylemleri gerçekleştirmenizi sağlayan seçenekler bulunur.
+Rota Detayları navigasyon bölümünde, rota bilgileriyle belirli eylemleri gerçekleştirmenizi sağlayan seçenekler bulunur.  
 
 - [**Yazdır**](#print). Adım adım rota bilgilerini yazdırmanıza veya kaydetmenize olanak tanır.
 - **Dışa Aktar/Kaydet**. Rota bilgilerini daha sonra çevrimdışı kullanım için **yeni bir parkur olarak** kaydetmenize olanak tanır. Dışa aktarılan parkur, yol özellikleri ve dönüş talimatları hakkında tüm bilgileri içerir. Bu nedenle, [bu parkurla navigasyon](./gpx-navigation.md), rotayla navigasyon gibi tüm özellikleri sağlamalıdır.

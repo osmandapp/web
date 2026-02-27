@@ -1,5 +1,5 @@
 ---
-source-hash: 78210f205e67c24e3cb486f56f1f503a9a0c755622cff35824943b6150700ad5
+source-hash: 2e0a5fa2c857bd1f645b87829366ac406aa9c831ab1d5bfdb411493a1aafe1a3
 sidebar_position: 10
 sidebar_label:  Arama
 title: Web Sitesinde Arama
@@ -65,13 +65,14 @@ Hangi arama seçeneğini kullanırsanız kullanın (Arama Çubuğu, Kategoriler 
 - **Ad ve simge** — İÇN adını ve simgesini gösterir.
 - **Mesafe ve yön** — İÇN'ye olan mesafe ve yönü gösterir.
 - **Konum** — İÇN koordinatlarını görüntüler.
+- **Açılış saatleri** — [OSM verilerinden](https://wiki.openstreetmap.org/wiki/Key:opening_hours) ayrıştırılmış açılış saatlerini gösterir. Mevcut durum, mevcut zamana göre dinamik olarak görüntülenir (örneğin, *Şimdi açık*, *Kapalı* veya *10:00'de açılır*), ve tam program aşağıda gösterilir.
 - **Açıklama** — Mevcut olduğunda İÇN hakkında ek bilgi sağlar (örneğin, Wikipedia'dan).
 - **Çevrimiçi fotoğraflar** — Mevcut olduğunda İÇN ile ilgili Wikimedia fotoğraflarını gösterir. Fotoğraf Galerisini açmak için Tamamını göster'i seçin. Bir fotoğrafı galeride açmak için seçin (Fotoğrafı Aç modu).
 - **Nesne verileri** — Ek İÇN bilgileri, OSM etiketleri ve diğer ayrıntılar gibi bağlantılar, sosyal bağlantılar, Wikipedia ve Wikivoyage bağlantıları, açıklamalar ve yazıtlar (mevcut olduğunda) içerir.
 - **OSM Kimliği** — İÇN'nin OpenStreetMap tanımlayıcısı.
 - **Koordinatlar** — Koordinatları kopyalamak için seçin.
 
-![POI Context Menu](@site/static/img/web/poi_context_menu.png)
+![POI Context Menu](@site/static/img/web/poi_context_menu_new.png)
 
 ### İÇN Eylemleri {#poi-actions}
 

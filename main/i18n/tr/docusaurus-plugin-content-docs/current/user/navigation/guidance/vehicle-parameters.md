@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title: Araç parametreleri
 ---
@@ -98,6 +98,10 @@ Araç parametreleri, yolların, köprülerin, feribotların, barajların ve diğ
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+Android'de, bu parametre dar bisiklet yollarından kaçınmaya yardımcı olmak için *[Bisiklet profilleri](../../navigation/routing/bicycle-based-routing.md)* için de mevcuttur.
+
+![Navigasyon Ayarları Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+
 **5.** [**Maksimum aks yükü sınırı**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Araç aks ağırlığı kısıtlamalarına sahip yollar ve köprülerden kaçınmak için aracınızın maksimum aks yükünü belirtin. Bu parametre yalnızca [*Kamyon*](../../navigation/routing/car-based-routing.md) gibi navigasyon türlerinde mevcuttur.  
 
 ![Navigasyon Ayarları Android](@site/static/img/navigation/max_axle_load.png)
@@ -135,7 +139,7 @@ Araç parametrelerindeki sınırlar, navigasyon ve yol güvenliği için önemli
 </Tabs>
 
 Araç parametrelerinde motor tipini seçerseniz, [Rota Detayları](../setup/route-details.md) bölümündeki grafiğin üzerinde [***CO2 ayak izi verileri***](../../navigation/setup/route-details.md#elevation-info) görüntülenecektir.
-Altı yakıt tipi mevcuttur: ***Benzin, Dizel, LPG, CNG, Elektrik,*** ve ***Hibrit***.  
+Mevcut altı yakıt tipi: ***Benzin, Dizel, LPG, CNG, Elektrik,*** ve ***Hibrit***.  
 
 **Uygulanabilirlik:**
 

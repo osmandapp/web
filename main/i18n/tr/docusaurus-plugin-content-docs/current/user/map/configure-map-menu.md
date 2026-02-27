@@ -1,5 +1,5 @@
 ---
-source-hash: 37751eb7faea59cec520cd8d8ca456b80fef44964424340366c4b1999e2835d6
+source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
 sidebar_position: 4
 title: Haritayı Yapılandır
 ---
@@ -11,6 +11,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+
 
 ## Genel Bakış {#overview}
 
@@ -26,7 +27,7 @@ import Translate from '@site/src/components/Translate.js';
 
 **Topografya** bölümü:  
 
-![Haritayı yapılandır android](@site/static/img/map/configure_map_topography_andr.png)  
+![Haritayı yapılandır android](@site/static/img/map/configure_map_topography_andr_new.png)  
 
 **OpenStreetMap** bölümü:  
 
@@ -83,8 +84,9 @@ import Translate from '@site/src/components/Translate.js';
 ## Harita Katmanları {#map-layers}
 
 - [Vektör Harita Katmanı](../map/vector-maps.md) - OpenStreetMap, Kontur çizgileri ve Denizcilik verileri dahil tüm vektör harita bilgilerini görüntüler.
-- [Harita Raster kaynakları](../map/raster-maps.md#select-raster-maps) - şeffaflık seviyeleri ile alt katman / ana kaynak / üst katman haritası seçmenize olanak tanır.
+- [Harita Raster kaynakları](../map/raster-maps.md#layers) - şeffaflık seviyeleri ile alt katman / ana kaynak / üst katman haritası seçmenize olanak tanır.
 - [Arazi](../plugins/topography.md#hillshade-slope-and-altitude-layers) - eğim / gölgelendirme bilgilerini, 3D Rölyefi görüntüler.
+- [3D binalar](../map/vector-maps.md#3d-buildings) - haritada hacimli bina modellerini görüntüler.
 - [İndirilen haritaların sınırları](../map/vector-maps.md#show-borders) - indirilen tüm haritaların sınırlarını ana harita katmanında görüntüler.
 - [Koordinat ızgarası](../map/vector-maps.md#coordinates-grid) - harita üzerindeki koordinat ızgarasının görünürlüğünü kontrol eder.
 
@@ -106,8 +108,9 @@ import Translate from '@site/src/components/Translate.js';
 
 Harita stili ayarları, görüntülenen ana harita stiline bağlıdır. Bu konuda daha fazla bilgiyi [Harita Stilleri makalesinde](../map/vector-maps) okuyabilirsiniz.
 
-   - [Harita stili](../map/vector-maps.md#default-map-styles) - OsmAnd (Şehir), Topo, Denizcilik ve diğerlerini içerir.
+   - [Harita stili](../map/vector-maps.md#map-styles) - OsmAnd (Şehir), Topo, Denizcilik ve diğerlerini içerir.
    - [Harita modu](../map/vector-maps.md#map-mode) - günün saatine bağlı olarak harita görünümünü ve navigasyonu seçmenize olanak tanır.
+   - [Küresel Görünüm](../map/interact-with-map.md#globe-view) - haritayı standart düz görünüm ile küresel Dünya görünümü arasında değiştirir.
    - [Harita büyüteci](../map/vector-maps.md#map-magnifier) - haritanın büyütmesini değiştirmenize olanak tanır.
    - [Metin boyutu](../map/vector-maps.md#text-size) - harita üzerindeki metin boyutunu artırmanıza veya azaltmanıza olanak tanır.
    - [Harita dili](../map/vector-maps.md#map-language) - haritada görüntülenen tercih edilen dili seçmenize olanak tanır.

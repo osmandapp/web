@@ -1,6 +1,6 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
-sidebar_position: 17
+source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+sidebar_position: 19
 title: Hava Durumu
 ---
 
@@ -18,13 +18,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-:::info Ücretli özellik
- <ProFeature/> Hava Durumu eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).  
+:::info Pro özelliği
+Hava Durumu eklentisi, [**OsmAnd Pro**](../purchases/index.md) ücretli bir özelliktir <ProFeature />.
 :::
 
 OsmAnd uygulamasındaki etkileşimli hava durumu harita katmanları, şehrinizdeki veya etkileşimli bir küresel harita üzerindeki herhangi bir konumdaki sıcaklığı, atmosfer basıncını, bulutluluğu, rüzgar hızını ve yağışı izlemenizi sağlar. Hava Durumu eklentisi, doğrudan OsmAnd haritası üzerinde 7 gün öncesine kadar saatlik hava durumu tahminleri sunar. Hava durumu bilgileri çevrimdışı kullanım için de indirilebilir.  
 
-Hava Durumu eklentisinin veri kaynağı, Amerika Birleşik Devletleri Ulusal Hava Servisi (NWS) tarafından işletilen [Global Forecast System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) ve Avrupa Orta Vadeli Hava Tahminleri Merkezi ([ECMWF](https://www.ecmwf.int/))'dir.  
+Hava Durumu eklentisinin veri kaynağı, Amerika Birleşik Devletleri Ulusal Hava Servisi (NWS) tarafından işletilen [Global Forecasting System](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) ve Avrupa Orta Vadeli Hava Tahminleri Merkezi ([ECMWF](https://www.ecmwf.int/))'dir.  
 
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
@@ -60,7 +60,7 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 Şuraya git: *Etkin eklenti → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -74,7 +74,9 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 </Tabs>
 
-Ana yan menüde, tüm hava durumu araçlarına hızlı erişim sağlayan özel bir **Hava Durumu** menü öğesi bulunur. *Hava Durumu tahmin ekranı*, *sıcaklık*, *atmosfer basıncı*, *rüzgar hızı*, *bulutluluk* ve *yağış* hakkında bilgi görüntüler.  
+Ana yan menüde, tüm hava durumu araçlarına hızlı erişim sağlayan özel bir **Hava Durumu** menü öğesi bulunur. *Hava Durumu tahmin ekranı*, *sıcaklık*, *atmosfer basıncı*, *rüzgar hızı*, *bulutluluk* ve *yağış* hakkında bilgi görüntüler. 
+
+Tahmin değerleri, harita merkezinde gösterilir ve bir nişangah ile işaretlenir (Android'de siyah, iOS'ta kırmızı). Haritayı hareket ettirerek seçilen konumu değiştirin — hava durumu verileri yeni nokta için otomatik olarak güncellenir.
 
 Ekranın altında *hava durumu araç çubuğu* bulunur. Hava durumu tahmininin görüntüleneceği tam zamanı ayarlamak için gün düğmelerini ve zaman kaydırıcısını kullanabilirsiniz.
 

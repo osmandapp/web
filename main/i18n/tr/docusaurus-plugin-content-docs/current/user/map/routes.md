@@ -1,6 +1,6 @@
 ---
-source-hash: 9e03583dd3ff20fdb30ccfa5f5bd6a8b36b9a73b63db541020477f8582f0ab20
-sidebar_position: 10
+source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+sidebar_position: 11
 title: Rotalar
 ---
 
@@ -119,7 +119,7 @@ Bazı yol segmentleri birçok rotanın bir parçası olabilir, ancak dağlık al
 - _Kayak pistleri ve rotaları_ _OsmAnd varsayılan_ harita stili içinde.  
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes_1.png)
 
-Kayak pistleri ve rotaları, OpenStreetMap'teki belirli bir [rota](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) grubudur. Genellikle, bu rotalar tüm görünür [Pistlerle](https://wiki.openstreetmap.org/wiki/Pistes) birlikte [Kış ve Kayak](../map/vector-maps.md#winter-and-ski) harita stiliyle kullanılabilir. Başka bir harita stili etkinse, [Kış ve Kayak](../map/vector-maps.md#winter-and-ski) ('ye geçiş öneren bir afiş gösterilir (*yalnızca Android*) ve yalnızca Pistler gösterilir. Ekranı terk etmeden harita stilini değiştirmek için ***Değiştir***'e dokunun veya afişi gizlemek için ***Sonra***'ya dokunun.
+Kayak pistleri ve rotaları, OpenStreetMap'teki belirli bir [rota](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) grubudur. Genellikle, bu rotalar tüm görünür [Pistlerle](https://wiki.openstreetmap.org/wiki/Pistes) birlikte [Kış ve Kayak](../map/map-styles.md#winter-and-ski) harita stiliyle kullanılabilir. Başka bir harita stili etkinse, [Kış ve Kayak](../map/map-styles.md#winter-and-ski) ('ye geçiş öneren bir afiş gösterilir (*yalnızca Android*) ve yalnızca Pistler gösterilir. Ekranı terk etmeden harita stilini değiştirmek için ***Değiştir***'e dokunun veya afişi gizlemek için ***Sonra***'ya dokunun.
 
 
 ### Kar motosikleti parkurları {#snowmobile-trails}
@@ -140,7 +140,7 @@ Kar motosikleti parkurları [OpenStreetMap](https://wiki.openstreetmap.org/wiki/
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-[Akarsu rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe), erişim simgeleri ve [akarsu turizmi](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map) için tehlike bölgeleri ile birlikte gösterilir.  
+[Akarsu rotaları](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe), erişim simgeleri ve [akarsu turizmi](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map) için tehlike bölgeleri ile birlikte gösterilir. [Akarsu özellikleri](../map-legend/osmand.md#whitewater-features) için şelale dereceleri, nehir bölümü dereceleri ve ilgili sembolleri Harita Lejantı'nda görüntüleyin.
 
 
 ### Koşu rotaları {#running-routes}
@@ -180,7 +180,7 @@ Belirli ***Seyahat Kitaplarının*** ve ***iz türlerinin*** görüntülenmesini
 
 - Gerekli rotaları haritada görüntülemek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünün *Rotalar listesinde* bunları etkinleştirin.
 - OsmAnd, [OpenStreetMap'te bulunan rotaları](https://wiki.openstreetmap.org/wiki/Relation:route) vurgulayabilir. Bunlar, [rota üzerindeki sembole](#save-as-a-track) dokunularak seçilebilir ve görünür rota kümesi doğru yapılandırılmışsa, rengi ve simgeleri takip edebilirsiniz.
-- Ana rota türleri ayrıca sınıflar ve alt sınıflar ile filtrelenebilir, böylece her tür içinde yalnızca belirli grupları görüntüleyebilirsiniz. Örneğin, yürüyüş rotalarını **OSMC sembolleri** ile sınıflar olarak, *uluslararası, ulusal, bölgesel* veya *yerel ağlar* ile alt sınıflar olarak gösterebilirsiniz.
+- Ana rota türleri ayrıca sınıflar ve alt sınıflar ile filtrelenebilir, böylece her tür içinde yalnızca belirli grupları görüntüleyebilirsiniz. Örneğin, yürüyüş rotalarını **OSMC sembolleri** ile sınıflar olarak, *uluslararası, ulusal, bölgesel* veya *yerel ağlar* ile alt sınıflar olarak gösterebilirsiniz, bu şu anda [OsmAnd Development](../plugins/development.md) eklentisi etkinleştirildiğinde kullanılabilir.
 - [Rota Planla](../plan-route/create-route.md) aracını kullanarak rotaların üzerine bir iz oluşturabilirsiniz. 
 - Aynı yolda birden fazla rota geçtiğinde, her rota diğerlerinin üzerinde ayrı yarı saydam bir çizgi olarak görüntülenir. 
 - Birden fazla rotanın örtüştüğü bir konuma dokunduğunuzda, bu noktadan geçen tüm rotaları içeren bir bağlam menüsü gösterilir. 

@@ -1,5 +1,5 @@
 ---
-source-hash: 99c289e19388411cf3a86bbe7b3cecd5f8f392ccedb58924be5658acb3fd23f5
+source-hash: 793e8fee448180855fe99811c6ff4d0b3d3f55b42968ec98f8b1d35a049344d3
 sidebar_position: 5
 title: Yarıçap Cetveli ve Cetvel
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd'daki **Cetvel araçları**, mesafeleri ölçmenize ve [harita ölçeğini](https://en.wikipedia.org/wiki/Scale_(map)) hassasiyetle anlamanıza yardımcı olmak için tasarlanmıştır.
 
-- **Cetvel** aracı, ekran üzerindeki nesneler arasındaki mesafeleri görsel olarak değerlendirmenize yardımcı olan, metre veya fit gibi birimlerde dinamik bir harita ölçeği görüntüler.
+- **Cetvel** aracı, metre veya fit gibi birimlerde dinamik bir harita ölçeği görüntüler ve ekran üzerindeki nesneler arasındaki mesafeleri görsel olarak değerlendirmenize yardımcı olur.
 - **Yarıçap Cetveli**, harita üzerindeki herhangi bir noktadan bir yarıçap ayarlamanıza olanak tanır ve mesafe aralıklarını temsil eden eş merkezli daireler gösterir.
 - **Dokunarak Mesafe** aracı, haritaya dokunarak mesafeleri ölçmenizi sağlar — ister mevcut konumunuzdan ister herhangi iki konum arasında.
 
@@ -173,7 +173,7 @@ Bu katman, [harita yönünü](../map/interact-with-map.md#map-orientation-modes)
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Diğer → Ekrandaki konum konumu*
 
-![Görüntüleme konumu Android](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_downward_ios.png)
+![Görüntüleme konumu iOS](@site/static/img/widgets/radius_ruler_display_position_3_ios.png) ![Yarıçap cetveli aşağı doğru](@site/static/img/widgets/radius_ruler_downward_ios.png)
 
 </TabItem>
 
@@ -204,7 +204,7 @@ Konumunuz etrafındaki görünür yarıçapı artırmak için, Yarıçap Cetveli
 
 Yarıçap Cetveli'ni kullanırken mesafeleri ve çevredeki araziyi daha iyi görselleştirmek için **3B görünüme** geçebilirsiniz. Bu görünüm, haritayı eğerek görünür yarıçapı genişleten bir perspektif efekti sağlar.
 
-- Konumunuza odaklanmak için [konum düğmesine](../map/interact-with-map.md#my-location-and-zoom) dokunun.
+- Konumunuza odaklanmak için [konum düğmesine](../map/interact-with-map.md#my-position-and-zoom) dokunun.
 - Haritayı 3B moda eğmek için [iki parmakla yukarı kaydırma](../map/interact-with-map.md#gestures) hareketini kullanın.
 
 Yarıçap daireleri derinlikle görünecektir, bu özellikle engebeli alanlarda veya dikey bağlamın önemli olduğu kentsel ortamlarda rota planlaması için kullanışlıdır.

@@ -1,5 +1,5 @@
 ---
-source-hash: dd2639fc1b44624acf627624883d9e60be1531d43014a49d53e46d3f21efeda5
+source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -82,7 +82,7 @@ Aşağıda, OsmAnd ekibi ve kullanıcı topluluğu tarafından geliştirilen ve 
 
 | Ad | Açıklama | Eklenti Bağlantısı |
 |--|--|--|
-| OsmAnd Rendering  | Eklenti, Enduro, CycloRoute ve Yürüyüş harita stillerini (daha fazla bilgi [burada](../map/vector-maps.md#default-map-styles)) ve 5 yeni [profili](https://osmand.net/docs/user/personal/profiles) (Yaya, Bisiklet ve üç Motosiklet profili) ekler. Ayrıca, *OsmAnd rendering online maps* klasöründeki [Haritalar ve Kaynaklar](../personal/maps-resources.md#extra-maps) menüsü aracılığıyla İspanya, Fransa, Norveç, İsviçre, Avusturya, Belçika ve Arjantin için çevrimiçi haritalar sağlar. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| OsmAnd Rendering  | Eklenti, Enduro, CycloRoute ve Yürüyüş harita stillerini (daha fazla bilgi [burada](../map/map-styles.md#default-map-styles)) ve 5 yeni [profili](https://osmand.net/docs/user/personal/profiles) (Yaya, Bisiklet ve üç Motosiklet profili) ekler. Ayrıca, *OsmAnd rendering online maps* klasöründeki [Haritalar ve Kaynaklar](../personal/maps-resources.md#extra-maps) menüsü aracılığıyla İspanya, Fransa, Norveç, İsviçre, Avusturya, Belçika ve Arjantin için çevrimiçi haritalar sağlar. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Rahal Team Suudi Arabistan haritası  | Suudi Arabistan Krallığı'nın profesyonel bir çevrimdışı haritası; topografik özellikler, yollar, şehirler, köyler ve su kaynakları dahil. Çöl gezileri için mükemmel. Daha fazla bilgi için [Rahal Haritalar](https://rahalteam.com) adresini ziyaret edin. | [🇸🇦 Rahal Team tarafından Suudi Arabistan haritaları](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D model  | Bu paket, profiller için bir 3D model seçeneği ekler. Görünümü menüden özelleştirin: [*OsmAnd menüsü → Ayarlar → Profil → Profil görünümü → Konum simgesinin 4-5. simgelerini seçin*](../personal/profiles.md#profile-appearance). | [3D model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS online maps collection | Uydu, turistik ve tarihi haritalar dahil olmak üzere çeşitli çevrimiçi harita kaynaklarının bir koleksiyonu.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |

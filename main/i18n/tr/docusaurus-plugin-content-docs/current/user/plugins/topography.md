@@ -1,6 +1,6 @@
 ---
-source-hash: 6d26b1681e1931a3479eb74332a2f7f850665d9897e0adf66e0c9b317a16b9f3
-sidebar_position: 14
+source-hash: 68173c6333cbab1e4155aebd0de4f93a471b00f6d3ab7f48ef3872e2d8b54c54
+sidebar_position: 16
 title: Topografya
 ---
 
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Genel Bakış {#overview}
 
 :::info Ücretli özellik
-Topografya eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).
+Topografya eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).  
 :::
 
 Topografya, arazinin rölyefini görsel olarak değerlendirmek için bilgi sağlayan önemli bir haritacılık özelliğidir.
 Topografya bilgileri gibi [Eşyükselti eğrileri](#contour-lines), [Arazi](#terrain) (*Gölgelendirme* ve *Eğim*), ve [3B Rölyef](#3d-relief) yükseklik, rölyef, aşırılıklar, diklik veya eşit yükseklikteki noktaları görerek arazinin konumunu görsel olarak değerlendirmeye yardımcı olur.
 
-Bu eklenti tarafından sağlanan her özellik, etkinleştirildiğinde, [ayarlara](../map/raster-maps.md#overlay-layer) bağlı olarak ana harita kaynağının üstünde veya altında görüntülenebilen bağımsız bir harita katmanıdır.  
+Bu eklenti tarafından sağlanan her özellik, etkinleştirildiğinde, [ayarlara](../map/raster-maps.md#overlay) bağlı olarak ana harita kaynağının üstünde veya altında görüntülenebilen bağımsız bir harita katmanıdır.  
 
 Topografya eklentisi aşağıdaki harita türlerine erişim sağlar:  
 
@@ -63,7 +63,7 @@ Tam bilgi için [Lisans](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE
 
 <details>
 <summary>DEM (DSM) verileri</summary>
-   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Bu ürün için kullanılan orijinal veriler JAXA'nın AW3D'si tarafından sağlanmıştır.<br/>
+   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Bu ürün için kullanılan orijinal veriler JAXA’nın AW3D’si tarafından sağlanmıştır.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
 	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
@@ -173,7 +173,7 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 **Görünüm ayarları**:
 
 - *<Translate android="true" ids="download_srtm_maps"/>*. Eşyükselti eğrilerini açıp kapatın.
-- *<Translate android="true" ids="show_from_zoom_level"/>*. Eşyükselti eğrilerinin görünür olduğu [yakınlaştırma seviyelerini](../map/interact-with-map.md#my-location-and-zoom) tanımlayın.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Eşyükselti eğrilerinin görünür olduğu [yakınlaştırma seviyelerini](../map/interact-with-map.md#my-position-and-zoom) tanımlayın.
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Eşyükselti eğrilerini görüntülemek için rengi seçin.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Eşyükselti eğrilerinin genişliğini ayarlayın.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Eşyükselti eğrilerinin yoğunluğunu seçin (Düşük, Orta, Yüksek). Daha yüksek yoğunluklar yükleme hızını etkileyebilir.
@@ -247,8 +247,8 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 ### Renk Şemasını Değiştir {#modify-color-scheme}
 
-:::info Ücretli özellik
-*Renk Şemasını Değiştir* özelliği, [iOS](../purchases/ios.md#pro-features) ve [Android](../purchases/android.md#pro-features) için **OsmAnd Pro** ücretli bir özelliktir <ProFeature />.
+:::info Pro özellik
+*[Renk Şemasını Değiştir](../../user/personal/color-palette-schemes.md#terrain)*, [**OsmAnd Pro**](../purchases/index.md) ücretli bir özelliktir <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -312,7 +312,7 @@ Haritaların ve rotaların görünümünü kişiselleştirmek için [bu paletler
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-[Eşyükselti Eğrileri](#contour-lines), [Arazi](#terrain) katmanları ve [Arazi renk şeması](#default-color-scheme) görünürlüğünü değiştirmek için harita ekranındaki *Hızlı Eylem* düğmelerini kullanabilirsiniz. Haritayı Yapılandır menüsünde seçilen katmana bağlı olarak, bir *Arazi* eylemini düğmeye atamak *Gölgelendirme*, *Eğim* veya *Rakım*'ı görüntüleyecektir.  
+[Eşyükselti Eğrileri](#contour-lines), [Arazi](#terrain) katmanları ve [Arazi renk şeması](../../user/personal/color-palette-schemes.md#quick-actions) görünürlüğünü değiştirmek için harita ekranındaki *Hızlı Eylem* düğmelerini kullanabilirsiniz. Haritayı Yapılandır menüsünde seçilen katmana bağlı olarak, bir *Arazi* eylemini düğmeye atamak *Gölgelendirme*, *Eğim* veya *Rakım*'ı görüntüleyecektir.  
 
 *Harita türlerini Göster veya Gizle* için ana ayarlar, Haritayı Yapılandır menüsünün Topografya bölümündedir. [Hızlı Eylem](../widgets/quick-action.md#configure-map) makalesinde, görüntülenebilecek katmanların bir listesini bulabilirsiniz. Bu harita yapılandırmasına hızlı erişime ihtiyacınız varsa, *Özel Düğme* aracını kullanın.
 
@@ -346,7 +346,7 @@ Haritaların ve rotaların görünümünü kişiselleştirmek için [bu paletler
 
 </Tabs>  
 
-3B Rölyef özelliği, yükseltilmiş bir rölyef üretir ve manzaranın üç boyutlu bir temsilini sağlar. 3B Rölyef çevrimdışı çalışır ve [OsmAnd vektör haritaları](../map/vector-maps.md) veya herhangi bir [raster harita](../map/raster-maps.md#select-raster-maps) ile [Harita Kaynağı](../map/raster-maps.md#main) veya [Alt Katman/Üst Katman](../map/raster-maps.md#overlay-layer) olarak kullanılabilir.
+3B Rölyef özelliği, yükseltilmiş bir rölyef üretir ve manzaranın üç boyutlu bir temsilini sağlar. 3B Rölyef çevrimdışı çalışır ve [OsmAnd vektör haritaları](../map/vector-maps.md) veya herhangi bir [raster harita](../map/raster-maps.md#layers) ile [Harita Kaynağı](../map/raster-maps.md#main) veya [Alt Katman/Üst Katman](../map/raster-maps.md#overlay) olarak kullanılabilir.
 
 ***Haritada 3B Rölyef nasıl görüntülenir.***
 
