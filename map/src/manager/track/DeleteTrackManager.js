@@ -1,6 +1,6 @@
 import { isCloudTrack, isLocalTrack, loadShareFiles, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { apiGet, apiPost } from '../../util/HttpApi';
-import { findGroupByName, getAllVisibleFiles } from './TracksManager';
+import { findGroupByName, getAllVisibleFiles, openTrackOnMap } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -8,6 +8,7 @@ import { hideAllVisTracks, showAllVisTracks } from '../../menu/visibletracks/Vis
 import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
 import { deleteLocalTrack } from '../../context/LocalTrackStorage';
+import { SHARE_TYPE } from '../../menu/share/shareConstants';
 
 export async function deleteTrack({ file, ctx, ltx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ltx.loginUser) {
@@ -118,11 +119,11 @@ export function hideAllTracks(ctx) {
     }
 }
 
-function separateFilesBySource(files, ctx) {
+function separateFilesBySource(files, ctx, isVisible = false) {
     const cloudFiles = [];
     const sharedFiles = [];
     files.forEach((file) => {
-        if (file.url) {
+        if (file.url || isVisible) {
             if (file.sharedWithMe) {
                 sharedFiles.push(file);
             } else {
@@ -176,24 +177,39 @@ export function deleteTracksFromMap(ctx, files) {
     }
 }
 
-export function showAllVisibleTracks(ctx) {
+export async function showAllVisibleTracks(ctx) {
     const files = getAllVisibleFiles(ctx);
     if (!files || files.length === 0) return;
 
     showAllVisTracks();
 
-    const { cloudFiles, sharedFiles } = separateFilesBySource(files, ctx);
+    const promises = files.map((file) =>
+        openTrackOnMap({
+            file,
+            setProgressVisible: null,
+            showOnMap: true,
+            showInfo: false,
+            zoomToTrack: false,
+            smartf: file.sharedWithMe ? { type: SHARE_TYPE } : null,
+            ctx,
+            setError: null,
+            returnOneTrack: true,
+            recentSaver: null,
+        })
+    );
+
+    const results = await Promise.all(promises);
+
+    const allUpdatedFiles = results.reduce((acc, result) => ({ ...acc, ...result }), {});
+
+    const { cloudFiles, sharedFiles } = separateFilesBySource(files, ctx, true);
+
     if (cloudFiles.length > 0) {
         ctx.setGpxFiles((prevFiles) => ({
             ...prevFiles,
             ...cloudFiles.reduce((updatedFiles, file) => {
-                if (prevFiles[file.name]) {
-                    updatedFiles[file.name] = {
-                        ...prevFiles[file.name],
-                        showOnMap: true,
-                        visible: true,
-                        url: file.url,
-                    };
+                if (allUpdatedFiles[file.name]) {
+                    updatedFiles[file.name] = allUpdatedFiles[file.name];
                 }
                 return updatedFiles;
             }, {}),
@@ -206,13 +222,8 @@ export function showAllVisibleTracks(ctx) {
             tracks: {
                 ...prevFiles.tracks,
                 ...sharedFiles.reduce((updatedTracks, file) => {
-                    if (prevFiles.tracks[file.name]) {
-                        updatedTracks[file.name] = {
-                            ...prevFiles.tracks[file.name],
-                            showOnMap: true,
-                            visible: true,
-                            url: file.url,
-                        };
+                    if (allUpdatedFiles[file.name]) {
+                        updatedTracks[file.name] = allUpdatedFiles[file.name];
                     }
                     return updatedTracks;
                 }, {}),
