@@ -9,7 +9,7 @@ import gStyles from '../../../../menu/gstylesmenu.module.css';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
 
-function RouteInfo({ route, minimised }) {
+function RouteInfo({ route }) {
     const parts = [];
     if (route.typeName) parts.push(route.typeName);
     if (route.stops?.length) parts.push(`${route.stops.length} stops`);
@@ -19,7 +19,7 @@ function RouteInfo({ route, minimised }) {
     }
 
     return (
-        <Box className={minimised ? styles.routeDetailsType : styles.routeDetailsTypeDefault}>
+        <Box className={styles.routeDetailsType}>
             {parts.map((part, i) => (
                 <React.Fragment key={part}>
                     {i > 0 && <span>•</span>}
@@ -42,7 +42,7 @@ function RouteDetailsHeader({ route, minimised }) {
                         {route.name}
                     </Typography>
                 )}
-                <RouteInfo route={route} minimised={minimised} />
+                <RouteInfo route={route} />
             </Box>
             {route.ref && (
                 <Box
