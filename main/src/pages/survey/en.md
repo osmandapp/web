@@ -1,7 +1,5 @@
 ---
-slug: en-26
-title: User Survey
-authors: eugene
+title: Survey
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,13 +12,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-Hello everybody!
+**Hello everybody!**
 
 We are conducting a survey to understand how you use OsmAnd and what features you would like to see in the future. Your feedback is crucial for us to improve our app and make it more useful for you.
 
 Please take a few minutes to fill out this survey. Your responses will help us prioritize our development efforts and ensure that we are meeting your needs.
-
-<!-- truncate -->
 
 [Take the survey](https://docs.google.com/forms/d/e/1FAIpQLSd2CuGAyJTdtxXe5ClhOPtTDsYaYMvWq3SFbNezl8VsrbdRwQ/viewform?usp=dialog) or fill out the form below:
       
