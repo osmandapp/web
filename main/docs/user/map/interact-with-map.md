@@ -215,6 +215,8 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 Globe View is currently available only when:
 - The [Development plugin](../plugins/development.md) is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- The [Topography plugin](../plugins/topography.md) is enabled.  
+Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - The [Map rendering engine](../personal/global-settings.md#map-rendering-engine) is set to Version 2 (OpenGL).  
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 
