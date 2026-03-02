@@ -405,8 +405,7 @@ function updateTrackGroups(listFiles, ctx) {
     if (!isEmpty(listFiles)) {
         const files = getGpxFiles(listFiles);
         const trackGroups = createTrackGroups({ files, ctx });
-        const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
-        ctx.setTracksGroups([...trackGroups, ...smartFolders]);
+        ctx.setTracksGroups(trackGroups);
     } else {
         const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
         ctx.setTracksGroups(smartFolders);

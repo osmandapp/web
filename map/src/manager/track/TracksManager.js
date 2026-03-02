@@ -20,7 +20,7 @@ import anchorme from 'anchorme';
 import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
 import { getFileStorage, GPX } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
-import { SHARE_TYPE } from '../../menu/share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
@@ -610,6 +610,9 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
         defaultGroup.subfolders = trackGroups.filter((group) => group.name !== DEFAULT_GROUP_NAME);
         trackGroups.push(defaultGroup);
     }
+
+    const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+    trackGroups.push(...smartFolders);
 
     addFilesAndCalculateLastModified(trackGroups);
 

@@ -113,8 +113,8 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
-                        setListFiles(res);
                         getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles, setTracksGroups);
+                        setListFiles(res);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -169,7 +169,7 @@ export async function loadSmartFolders(setTracksGroups, listFiles) {
 async function getSmartFolders() {
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
     if (res.ok) {
-        return await res.json();
+        return res.json();
     }
     return null;
 }
@@ -702,6 +702,7 @@ export const AppContextProvider = (props) => {
                             uniqueFiles: updatedUniqueFiles,
                         };
                     });
+                    await loadSmartFolders(setTracksGroups, listFiles.uniqueFiles);
                 }
             }
         };
@@ -709,7 +710,6 @@ export const AppContextProvider = (props) => {
         (async () => {
             await update();
             setUpdateFiles(null);
-            await loadSmartFolders(setTracksGroups, listFiles.uniqueFiles);
         })();
     }, [updateFiles]);
 

@@ -65,15 +65,12 @@ export default function TracksMenu() {
             } else {
                 setDefaultGroup(defaultGroupWithFolders);
             }
-
-            const allGroups = defaultGroupWithFolders.subfolders || [];
-
             doSort({
                 method: ctx.selectedSort?.tracks?.[DEFAULT_GROUP_NAME] ?? DEFAULT_SORT_METHOD,
                 setSortFiles,
                 setSortGroups,
                 files: defGroup ? defGroup.groupFiles : [],
-                groups: allGroups,
+                groups: defaultGroupWithFolders.subfolders,
             });
         } else {
             setDefaultGroup(defaultGroupWithFolders);
