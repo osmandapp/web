@@ -204,17 +204,36 @@ export async function showAllVisibleTracks(ctx) {
     const sharedUpdates = {};
     const newVisibleList = [];
 
-    files.forEach((file) => {
+    const updateFile = (file) => {
         const updated = allUpdatedFiles[file.name];
         if (updated) {
-            newVisibleList.push(updated);
             if (file.sharedWithMe) {
                 sharedUpdates[file.name] = updated;
             } else {
                 cloudUpdates[file.name] = updated;
             }
+            return updated;
         }
-    });
+        return null;
+    };
+
+    if (!isEmpty(ctx.visibleTracks.new)) {
+        ctx.visibleTracks.new.forEach((file) => {
+            const updated = updateFile(file);
+            if (updated) {
+                newVisibleList.push(updated);
+            }
+        });
+    }
+
+    if (!isEmpty(ctx.visibleTracks.old)) {
+        ctx.visibleTracks.old.forEach((file) => {
+            const updated = updateFile(file);
+            if (updated) {
+                newVisibleList.push(updated);
+            }
+        });
+    }
 
     if (Object.keys(cloudUpdates).length > 0) {
         ctx.setGpxFiles((prevFiles) => ({
