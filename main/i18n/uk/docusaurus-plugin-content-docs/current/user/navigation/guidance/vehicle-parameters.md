@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  Параметри транспортного засобу
 ---
@@ -98,6 +98,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+На Android цей параметр також доступний для *[профілів для велосипедів](../../navigation/routing/bicycle-based-routing.md)*, щоб допомогти уникнути вузьких велосипедних доріжок.
+
+![Налаштування навігації Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+
 **5.** [**Обмеження максимального навантаження на вісь**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Вкажіть максимальне навантаження на вісь вашого транспортного засобу, щоб уникнути доріг та мостів з обмеженнями ваги на вісь. Цей параметр доступний лише для таких типів навігації, як [*Вантажівка*](../../navigation/routing/car-based-routing.md).  
 
 ![Налаштування навігації Android](@site/static/img/navigation/max_axle_load.png)
@@ -134,7 +138,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Якщо ви виберете тип двигуна в параметрах транспортного засобу, дані про [***вуглецевий слід CO2***](../../navigation/setup/route-details.md#elevation-info) будуть відображатися над графіком у [Деталях маршруту](../setup/route-details.md).
+Якщо ви виберете тип двигуна в параметрах транспортного засобу, [***дані про вуглецевий слід CO2***](../../navigation/setup/route-details.md#elevation-info) будуть відображатися над графіком у [Деталях маршруту](../setup/route-details.md).
 Доступні шість типів пального: ***Бензин, Дизель, ЗНГ (LPG), СПГ (CNG), Електрика,*** та ***Гібрид***.  
 
 **Застосовність:**
@@ -202,7 +206,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Налаштування навігації](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
 
-Для деяких типів навігації можна встановити мінімальну та максимальну допустиму швидкість. Якщо її встановлено, то рушій маршрутизації припускає, що транспортний засіб не буде рухатися швидше за обмеження і не буде рухатися повільніше за мінімальну швидкість. 
+Для деяких типів навігації мінімальну та максимальну допустиму швидкість можна встановити. Якщо її встановлено, то рушій маршрутизації припускає, що транспортний засіб не буде рухатися швидше за обмеження і не буде рухатися повільніше за мінімальну швидкість. 
 Наприклад, це дозволяє створити **паливно-ефективний** маршрут, де споживання пального є оптимальним при встановленій **максимальній швидкості**, і рушій знайде коротший маршрут, уникаючи довших, але швидших доріг.
 
 - **Мінімальна швидкість**  

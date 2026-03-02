@@ -1,7 +1,7 @@
 ---
-source-hash: d8248c5c722b00e6606d65117fa3c589fbac4e058e65a8fabb1c829d36001b28
+source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
 sidebar_position: 5
-title: Vektör Haritalar (Harita Stilleri)
+title: Vektör Haritalar
 ---
 
 import Tabs from '@theme/Tabs';
@@ -35,243 +35,13 @@ Vektör verileri sabit görüntüler olarak saklanmadığından, rengi, çizgi g
 Özelleştirilebilir harita stilleri, OsmAnd'ın ana avantajlarından biridir. Harita görüntüsünü kendinize ve hobilerinize göre özelleştirebilir, belirli harita nesnelerinin görüntülenmesini veya gizlenmesini, bu nesnelerin boyutlarını ve renklerini ayarlayabilir ve belirli nesnelerin görüntüleme ölçeğini değiştirebilirsiniz.
 
 
-## Varsayılan Harita Stilleri {#default-map-styles}
+## Harita İşleme {#map-rendering}
 
-OsmAnd size varsayılan olarak uyan birçok harita stili ve veri katmanı sunar. Bu bölüm, gündüz ve gece modları için ana olanları açıklar.
+### Harita Stilleri {#map-styles}
 
-1. **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
+OsmAnd, farklı aktiviteler için optimize edilmiş birkaç yerleşik vektör harita stili sağlar. Varsayılan stillerin yanı sıra, işleme kurallarına dayalı olarak kendi özel harita stilinizi oluşturabilir ve yükleyebilirsiniz.
 
-2. **iOS**. *<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*
-
-
-### OsmAnd {#osmand}
-
-![OsmAnd harita stili](@site/static/img/map/map-style-osmand-with-routes.png)  
-
-OsmAnd'ın standart harita oluşturma stili, detay ve sadelik arasında bir denge kurarak şehir ve dış mekan keşifleri için idealdir. Sokaklar, binalar ve ulaşım durakları gibi şehir özelliklerini detaylandırırken, haritaları daha net hale getirerek görsel karmaşayı basitleştirir.  
-
-Temel faydaları arasında rota haritalama, yüzey kalitesi, erişim kısıtlamaları, yol işaretleri, SAC ölçekli patika renderları, spor tesisleri ve kontur çizgileri gibi topografik detaylar bulunur.
-
-
-### Gezi Görünümü {#touring-view}
-
-![Gezi görünümü harita stili](@site/static/img/map/map-style-touring.png)
-
-Yüksek kontrastlı ve maksimum detaylı gezi stili. Varsayılan OsmAnd stilinin tüm seçeneklerini içerirken, mümkün olduğunca fazla detay, özellikle yollar, patikalar ve diğer seyahat yolları gösterir. Bir *gezi atlasında* yol türlerinin net ayrımı. Gündüz, gece ve dış mekan kullanımı için uygundur.
-
-### UniRS ve LightRS {#unirs-and-lightrs}
-
-<Translate android="true" ids="unirs_render_descr"/>
-
-UniRS ve LightRS stilleri, temel harita bilgilerini farklı renk şemalarında işleyen yazar stilleridir.  
-
-- **UniRS stili**. Bu stil, yaya ve bisiklet yolları için kontrastı artırmak amacıyla varsayılanın değiştirilmiş bir versiyonudur. Klasik Mapnik renk şemasını korur.  
-
-    ![LightRS harita stili](@site/static/img/map/map-style-lightrs.png)
-
-- **LightRS stili**. Bu, hafif bir gece moduna sahip basit bir sürüş stilidir. Yolları zıt turuncu renkte vurgular, ikincil harita nesnelerini karartır ve kontur çizgileri gibi topografik özellikleri gösterir.
-
-    ![UniRS harita stili](@site/static/img/map/map-style-unirs.png)
-
-### Denizcilik {#nautical}
-
-![Denizcilik harita stili](@site/static/img/map/map-style-nautical.png)
-
-Bu, şamandıralar, deniz fenerleri, nehir rotaları, deniz yolları, işaretler, limanlar ve denizcilik işaretleri içeren bir denizcilik navigasyon stilidir. Daha fazla bilgiyi [Denizcilik Harita Stili](../plugins/nautical-charts.md#nautical-map-style) bölümünde okuyun.
-
-### Deniz {#marine}
-
-![Deniz harita stili](@site/static/img/map/map-style-marine.png)
-
-Bu, ışık sektörleri, tam deniz feneri özellikleri ve gerçekçi ve doğru deniz navigasyonu için diğer detaylı denizcilik özelliklerine sahip gelişmiş bir denizcilik harita stili. Daha fazla detay için [Deniz Harita Stili](../plugins/nautical-charts.md#marine-map-style) bölümünü okuyun.
-
-### Kış ve Kayak {#winter-and-ski}
-
-![Kış & Kayak harita stili](@site/static/img/map/map-style-winter-ski.png)
-
-Bu, pistleri, asansörleri ve kros parkurlarını tanımlayan ve ikincil harita nesnelerini gizleyen bir kayak sporları stilidir. **Kış ve Kayak stili**, kış sporları navigasyonunda size yardımcı olmak için tasarlanmıştır.  
-
-Kayak pistlerini ve pistlerin zorluğu ve asansör işaretleri gibi diğer detayları görebilirsiniz. Temel faydaları arasında pistlerin, asansörlerin ve diğer kayak özelliklerinin rahat görüntülenmesi bulunur. Haritanın dikkat dağıtıcı ikincil nesneleri daha azdır. Daha fazla bilgiyi [Kayak Haritaları](../plugins/ski-maps.md) makalesinde okuyun.
-
-### Topo {#topo}
-
-![Topo harita stili](@site/static/img/map/map-style-topo.png)
-
-Bu stil, doğada yürüyüş, kamp ve bisiklet sürmek için tasarlanmıştır. Zıt yollar ve doğal özellikler, farklı patika türleri, genişletilmiş kontur çizgisi seçenekleri ve ek detaylar içerir. Dış mekanlarda okunabilir. *Yüzey Bütünlüğü* ayarı, yolun kalitesini ayırt etmenizi sağlar.
-
-### OSM-carto {#osm-carto}
-
-![OSM-carto harita stili](@site/static/img/map/map-style-osm-carto.png)
-
-Bu stil, varsayılan [OpenStreetMap web stilini](https://www.openstreetmap.org/) taklit eder. Web sürümünün kaynak kodu [Github](https://github.com/gravitystorm/openstreetmap-carto) adresinde, OsmAnd kodu ise [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml) adresinde mevcuttur.
-
-### Çöl {#desert}
-
-![Çöl harita stili](@site/static/img/map/map-style-desert.png)
-
-Çöller ve diğer seyrek nüfuslu bölgeler için tasarlanmış olup, daha detaylı harita bilgileri sunar.
-
-### Offroad {#offroad}
-
-![Offroad harita stili](@site/static/img/map/map-style-offroad.png)
-
-Off-road navigasyon için tasarlanan bu stil, [Topo](#topo) harita düzenine dayanır ve uydu görüntüleriyle alt katman olarak iyi çalışır. Patikaları, yolları, bisiklet rotalarını ve diğer off-road parkurlarını vurgulamak için daha ince ana yollara sahiptir, bu da kırsal veya uzak bölgelerdeki asfalt olmayan rotaları keşfetmek için idealdir.
-
-### Kar Motosikleti {#snowmobile}
-
-![Kar motosikleti harita stili](@site/static/img/map/map-style-snowmobile.png)
-
-Kar motosikleti navigasyonu için özel olarak tasarlanan bu stil, kar motosikleti dostu patikaları, yolları ve parkurları vurgular. Karlı bölgelerdeki özel yolları öne çıkararak, standart yolların bulunmadığı karla kaplı arazilerde net navigasyon sunar. 
-
-
-## Harita Lejantı {#map-legend}
-
-Harita lejantı, OsmAnd haritalarında kullanılan sembolleri anlamak için bir anahtar görevi görür. Çeşitli harita sembollerinin, noktalar, çizgiler ve alanlar dahil olmak üzere anlamlarını açıklar. Örneğin, mavi kıvrımlı çizgiler nehirleri gösterirken, farklı renkler ve şekiller binaları, patikaları ve rotaları temsil edebilir.  
-
-Lejant, kullanıcıların haritada gördüklerini yorumlamasına yardımcı olur. Tam OsmAnd harita lejantına [buradan](../map-legend/index.md) ulaşabilirsiniz.
-
-
-## Harita Yazı Tipleri (Android) {#map-fonts-android}
-
-*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
-
-![Harita yazı tipleri Android sürümü](@site/static/img/map/map_fonts.png) ![Harita yazı tipleri sürümü](@site/static/img/map/map_fonts_1.png)
-
-Basitleştirilmiş/geleneksel Çince, Japonca ve Korece haritalar için, cihazınızda gerekli yazı tipleri yoksa yanlış karakterler veya semboller (kareler gibi) görünebilir. Bu sorun, yerel adları işlerken ortaya çıkar ve gerekli yazı tiplerini OsmAnd aracılığıyla indirerek çözülebilir.  
-
-Bazı ilgili yazı tipi sorunları GitHub'da belgelenmiştir: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
-
-
-## * Kontur Çizgileri {#-contour-lines}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Kontur çizgileri harita stili](@site/static/img/map/contour_lines.png)
-
-OsmAnd'daki kontur çizgileri, vektör haritalarda yükseklik çizgileri olarak görüntülenir. Bunları kullanmak için önce [Topografya eklentisini](../plugins/topography.md) etkinleştirmeli, gerekli bölgesel verileri indirmeli ve ekranı yapılandırmalısınız. Bu özellik varsayılan olarak etkin değildir ve [satın alma](../purchases/index.md) gerektirir.  
-
-Kontur çizgileri tüm harita stilleriyle uyumludur ve [Kontur çizgileri menüsü](../plugins/topography.md#contour-lines) aracılığıyla özelleştirilebilir. Daha fazla ayrıntı için [Topografya eklentisi](../plugins/topography.md) makalesini ziyaret edin.
-
-
-## * Deniz Derinliği {#-nautical-depth}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Deniz derinliği kontur çizgileri, eşit derinlikteki alanları temsil ederek su altı topografyasındaki değişiklikleri görselleştirmeye yardımcı olur. Bu özellik, tüm harita stilleri ve modlarında mevcuttur ve Deniz haritası görünümü eklentisi etkin olsun veya olmasın ayarlanabilir.  
-
-Deniz haritası görünümü hakkında daha fazla ayrıntı için [Deniz Haritası eklentisi sayfasına](../plugins/nautical-charts) bakın.
-
-
-## Sınırları Göster {#show-borders}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
-
-![show-borders-ios](@site/static/img/map/show-borders-ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Bu özellik, indirilen haritaların sınırlarının görünürlüğünü, mevcut haritalar listesinden açıp kapatmanıza olanak tanır. Temel amacı, indirilen haritaların ana hatlarını gizleyerek ana haritayı düzenlemeye yardımcı olmaktır, bu da özellikle çok sayıda harita yüklü olduğunda kullanışlıdır.  
-
-Varsayılan olarak, harita sınırları 7. seviyeye yakınlaştırdığınızda görünür ve 3. seviye ve altında kaybolur.
-
-:::tip İndirilen haritaların sınırlarını renklendir
-*İndirilen haritaların sınırlarını göster* özelliği etkinleştirildiğinde, indirilen haritalar OsmAnd'ın hem Android hem de iOS sürümlerinde **Yeşil** renkte gösterilir.  
-
-Android'de arşivlenmiş haritalar **Turuncu** renkte gösterilir. iOS'ta güncellenebilecek haritalar da **Turuncu** renkte işaretlenir.
-:::
-
-
-## Koordinat Izgarası {#coordinates-grid}
-
-
-Şuraya git: *Menü → Haritayı Yapılandır → Göster → Koordinat Izgarası*  
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Koordinat ızgarası menüsü](@site/static/img/map/coordinates_grid_settings_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-
-**Koordinat Izgarası** özelliği, harita üzerine bir referans ızgarası yerleştirerek farklı koordinat sistemlerine dayalı enlem ve boylam çizgilerini görselleştirmenizi sağlar. Bu özellik, hassas konum referansı ve jeo-uzamsal navigasyon için kullanışlıdır. 
-
-Aşağıdaki seçenekleri yapılandırabilirsiniz:
-- **Yakınlaştırma seviyeleri:** ızgaranın görünür olduğu minimum ve maksimum yakınlaştırma seviyelerini (2 - 22) ayarlayın.
-- **Etiket konumu:** ızgara etiketleri için *Kenarlar* (varsayılan) veya *Merkez* arasında seçim yapın.
-- **Izgara rengi:** Gündüz/Gece modu için ayrı ayrı mevcuttur. Izgara rengini özelleştirmek [ücretli bir özelliktir](https://osmand.net/docs/user/purchases/) ve Maps+ (uygulama içi satın alma veya abonelik) ile OsmAnd+ 'ta kullanılabilir.
-- **Koordinat formatı:** mevcut birkaç formattan birini seçin (aşağıdaki listeye bakın).
-
-
-***Mevcut koordinat formatları:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Derece, Dakika, Saniye)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Ondalık Dereceler - WGS84 varsayılan formatı)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Derece, Ondalık Dakika)
-- **UTM** (EPSG:6387, Evrensel Enine Merkatör - bölge tabanlı ızgara sistemi). Minimum yakınlaştırma seviyesi 9'dur, her 6°'de bir meridyenlerle ayrıldığı için aynı anda yalnızca bir UTM bölgesi görüntülenir.
-- **MGRS** (Askeri Izgara Referans Sistemi)
-
-Varsayılan olarak, uygulama [Genel ayarlar](../personal/profiles.md#units--formats) bölümünde seçilen koordinat formatını kullanır, ancak bu menüde doğrudan değiştirebilirsiniz.
-
-[Hızlı eylem](../widgets/quick-action.md#overview): [Haritayı Yapılandır](../widgets/quick-action.md#configure-map) grubuna hızlı erişim için *Koordinat Izgarasını Göster/Gizle* hızlı geçişini de ekleyebilirsiniz.
-
-## Harita Stilini Yapılandır {#configure-map-style}
+Mevcut stillerin ayrıntılı açıklaması ve özel stiller oluşturma talimatları için [Harita Stilleri](../map/map-styles.md) makalesine bakın.
 
 ### Harita Modu {#map-mode}
 
@@ -295,7 +65,7 @@ Varsayılan olarak, uygulama [Genel ayarlar](../personal/profiles.md#units--form
 
 </Tabs>
 
-Harita, seçenekler listesinden seçilen moda göre açık veya koyu temada görüntülenebilir. Varsayılan olarak ve tüm yeni kullanıcılar için, [harita stili](#default-map-styles) cihazınızın sistem ayarlarında seçilen temayla uyumludur.
+Harita, seçenekler listesinden seçilen moda göre açık veya koyu temada görüntülenebilir. Varsayılan olarak ve tüm yeni kullanıcılar için, [harita stili](#map-styles) cihazınızın sistem ayarlarında seçilen temayla uyumludur.
 
 - **<Translate android="true" ids="daynight_mode_day"/>**. Haritayı her zaman gündüz görünürlüğü için en uygun açık temada görüntüler.
 
@@ -306,6 +76,43 @@ Harita, seçenekler listesinden seçilen moda göre açık veya koyu temada gör
 - **<Translate android="true" ids="daynight_mode_sensor"/>** (*Yalnızca Android*). Ortam ışık seviyelerine göre açık ve koyu temalar arasında otomatik geçiş yapmak için cihazın ışık sensörünü kullanır.
 
 - **<Translate android="true" ids="daynight_mode_app_theme"/>**. Harita görüntüsü, uygulamanın genel temasına uyum sağlar, açık temada gündüz modunu ve koyu temada gece modunu gösterir.
+
+### Yol Stili {#road-style}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+Yollar için özel ayarlar, yol atlasına uyması için renkleri değiştirebilir veya yollar için yüksek kontrastlı yollar veya kalın dış çizgiler ekleyebilirsiniz.
+
+- **<Translate android="true" ids="rendering_value_default_name"/>**. Otoyollar için varsayılan stil. [Harita lejantına](../map-legend/index.md) bakın.  
+![Harita yol stili varsayılan](@site/static/img/map/map-road-style-default.png)
+
+- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Alman yol atlası stili.  
+![Harita yol stili Almanca](@site/static/img/map/map-road-style-german.png)
+
+- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Amerikan yol atlası stili.  
+![Harita yol stili Amerikan](@site/static/img/map/map-road-style-american.png)
+
+- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Yolların yüksek kontrastı.  
+![Harita yol stili yüksek kontrast](@site/static/img/map/map-road-style-high-contrast.png)
+- **Soluk**. Yolların daha az kontrastlı renkleri.  
+![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-pale.png)
+
+- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Yollar için kalın dış çizgi.  
+![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-bold-outline.png)
 
 
 ### Detaylar {#details}
@@ -360,43 +167,36 @@ Harita, seçenekler listesinden seçilen moda göre açık veya koyu temada gör
     &nbsp;&nbsp;&nbsp;![Harita parametresi - Doğa rezervi](@site/static/img/map/nature-reserve.png)
 
 
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->
-
-### Rotalar {#routes}
+### Gizle {#hide}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
 
-![Harita rotaları - bisiklet rotaları](@site/static/img/map/map-routes-cycle-routes.png)  ![Harita rotaları - yürüyüş ağı](@site/static/img/map/map-routes-hiking-network.png)
+Harita görünürlüğünü artırmak için belirli nesneleri gizlemeniz gerekebilir. Örneğin, [Uydu çevrimiçi haritalarını Alt Katman ile](../map/raster-maps.md#layers) kullanırken suyu gizleyebilirsiniz.
 
-Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş bir yoldur. Bir rota, bisiklet, yürüyüş, koşu, toplu taşıma ve diğerleri gibi farklı seyahat türleri için optimize edilebilir. Rotalar ve türleri hakkında daha fazla bilgiyi [Rotalar makalesinde](../map/routes.md) okuyabilirsiniz.
-
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Ülkelerin içindeki bölgesel sınırları gizler, ancak eyalet sınırları görünürdür.
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Doğal nesnelerin tüm poligonlarını gizler, [Alt Katman/Üst Katman](../map/raster-maps.md#layers) için özel işlev.
+- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Binaların tüm poligonlarını gizler.
+- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Suyun tüm poligonlarını gizler (denizler, göller, rezervuarlar vb.)
+- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Haritadaki ev numaralarını gizler.
+- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Önerilen nesneleri gizler - inşaat için planlanan ancak yalnızca bir projesi olan nesneler (projelendirilmiş yollar, kavşaklar, binalar ve diğerleri).
+- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Haritadaki POI simgelerini gizler. Ancak, bu POI'lerin etiketleri haritada görünmeye devam edecektir.
+- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Haritadaki POI etiketlerini gizler. Ancak, POI simgeleri haritada görünmeye devam edecektir.
+- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Tüneller, geçitler, katlar vb. gibi tüm yeraltı nesnelerini gizler. Şehirlerdeki haritaları gereksiz nesnelerden temizlemek için özel.
+- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Tüm yer üstü nesnelerini gizler. Yalnızca tüneller, geçitler vb. gibi yeraltı nesnelerini görmek için özel.
 
 ### Ulaşım {#transport}
 
@@ -430,99 +230,8 @@ Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş 
 - **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Yeraltı rotalarını gösterir.  
     ![Harita toplu taşıma metro](@site/static/img/map/map-transport-subway.png)
 
-### Gizle {#hide}
 
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
-
-</TabItem>
-
-</Tabs>  
-
-Harita görünürlüğünü artırmak için belirli nesneleri gizlemeniz gerekebilir. Örneğin, [Uydu çevrimiçi haritalarını Alt Katman ile](../map/raster-maps.md#select-raster-maps) kullanırken suyu gizleyebilirsiniz.
-
-- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Ülkelerin içindeki bölgesel sınırları gizler, ancak eyalet sınırları görünürdür.
-- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Doğal nesnelerin tüm poligonlarını gizler, [Alt Katman/Üst Katman](../map/raster-maps.md#select-raster-maps) için özel işlev.
-- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Binaların tüm poligonlarını gizler.
-- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Suyun tüm poligonlarını gizler (denizler, göller, rezervuarlar vb.)
-- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Haritadaki ev numaralarını gizler.
-- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Önerilen nesneleri gizler - inşaat için planlanan ancak yalnızca bir projesi olan nesneler (projelendirilmiş yollar, kavşaklar, binalar ve diğerleri).
-- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Haritadaki POI simgelerini gizler. Ancak, bu POI'lerin etiketleri haritada görünmeye devam edecektir.
-- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Haritadaki POI etiketlerini gizler. Ancak, POI simgeleri haritada görünmeye devam edecektir.
-- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Tüneller, geçitler, katlar vb. gibi tüm yeraltı nesnelerini gizler. Şehirlerdeki haritaları gereksiz nesnelerden temizlemek için özel.
-- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Tüm yer üstü nesnelerini gizler. Yalnızca tüneller, geçitler vb. gibi yeraltı nesnelerini görmek için özel.
-
-### Yol Stili {#road-style}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_attr_roadStyle_name"/>*
-
-</TabItem>
-
-</Tabs>
-
-Yollar için özel ayarlar, yol atlasına uyması için renkleri değiştirebilir veya yollar için yüksek kontrastlı yollar veya kalın dış çizgiler ekleyebilirsiniz.
-
-- **<Translate android="true" ids="rendering_value_default_name"/>**. Otoyollar için varsayılan stil. [Harita lejantına](../map-legend/index.md) bakın.  
-![Harita yol stili varsayılan](@site/static/img/map/map-road-style-default.png)
-
-- **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Alman yol atlası stili.  
-![Harita yol stili Almanca](@site/static/img/map/map-road-style-german.png)
-
-- **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Amerikan yol atlası stili.  
-![Harita yol stili Amerikan](@site/static/img/map/map-road-style-american.png)
-
-- **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Yolların yüksek kontrastı.  
-![Harita yol stili yüksek kontrast](@site/static/img/map/map-road-style-high-contrast.png)
-- **Soluk**. Yolların daha az kontrastlı renkleri.  
-![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-pale.png)
-
-- **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Yollar için kalın dış çizgi.  
-![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-bold-outline.png)
-
-
-### Metin Boyutu {#text-size}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
-
-</TabItem>
-
-</Tabs>  
-
-- **100%**  
-    ![Harita metin boyutu 100%](@site/static/img/map/map-text-size-100.png)
-
-- **200%**  
-    ![Harita metin boyutu 200%](@site/static/img/map/map-text-size-200.png)
-
+## Metin İşleme {#text-rendering}
 
 ### Harita Büyüteci {#map-magnifier}
 
@@ -552,6 +261,29 @@ Bu ayar, haritanın büyütmesini değiştirmeye yardımcı olur. Raster ve vekt
 - **200%**  
     ![Harita büyüteci 200%](@site/static/img/map/map-magnifier-200.png)
 
+### Metin Boyutu {#text-size}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
+
+</TabItem>
+
+</Tabs>  
+
+- **100%**  
+    ![Harita metin boyutu 100%](@site/static/img/map/map-text-size-100.png)
+
+- **200%**  
+    ![Harita metin boyutu 200%](@site/static/img/map/map-text-size-200.png)
 
 ### Harita Dili {#map-language}
 
@@ -601,16 +333,218 @@ Haritadaki adlar OSM topluluğu tarafından gerekli dile çevrilmemişse, [trans
 
 
 
-## Özel Harita Stili {#custom-map-style}
+### Harita Yazı Tipleri (Android) {#map-fonts-android}
 
-[Şartnameye](../../technical/osmand-file-formats/osmand-rendering-style.md) göre oluşturulmuş kişisel veya üçüncü taraf özel bir harita stiliniz varsa, bunu cihazınıza şu yollarla yükleyebilirsiniz:
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
 
-- `.render.xml` dosyasını cihazınıza kopyalayın ve OsmAnd ile açın.
-- Oluşturma stillerini dışa veya içe aktarmak için [standart içe/dışa aktarma iletişim kutularını](../personal/import-export.md) kullanın. Bir `.osf` paketi oluşturursanız, başkalarıyla paylaşabileceğiniz bir eklenti olarak çalışır.
-- Kurulumdan sonra, menüden harita stilini seçebilirsiniz.
+![Harita yazı tipleri Android sürümü](@site/static/img/map/map_fonts.png) ![Harita yazı tipleri sürümü](@site/static/img/map/map_fonts_1.png)
+
+Basitleştirilmiş/geleneksel Çince, Japonca ve Korece haritalar için, cihazınızda gerekli yazı tipleri yoksa yanlış karakterler veya semboller (kareler gibi) görünebilir. Bu sorun, yerel adları işlerken ortaya çıkar ve gerekli yazı tiplerini OsmAnd aracılığıyla indirerek çözülebilir.  
+
+Bazı ilgili yazı tipi sorunları GitHub'da belgelenmiştir: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862).
+
+
+## Topografya İşleme {#topography-rendering}
+
+### * Kontur Çizgileri {#-contour-lines}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Kontur çizgileri harita stili](@site/static/img/map/contour_lines.png)
+
+OsmAnd'daki kontur çizgileri, vektör haritalarda yükseklik çizgileri olarak görüntülenir. Bunları kullanmak için önce [Topografya eklentisini](../plugins/topography.md) etkinleştirmeli, gerekli bölgesel verileri indirmeli ve ekranı yapılandırmalısınız. Bu özellik varsayılan olarak etkin değildir ve [satın alma](../purchases/index.md) gerektirir.  
+
+Kontur çizgileri tüm harita stilleriyle uyumludur ve [Kontur çizgileri menüsü](../plugins/topography.md#contour-lines) aracılığıyla özelleştirilebilir. Daha fazla ayrıntı için [Topografya eklentisi](../plugins/topography.md) makalesini ziyaret edin.
+
+### * Deniz Derinliği {#-nautical-depth}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Deniz derinliği kontur çizgileri, eşit derinlikteki alanları temsil ederek su altı topografyasındaki değişiklikleri görselleştirmeye yardımcı olur. Bu özellik, tüm harita stilleri ve modlarında mevcuttur ve Deniz haritası görünümü eklentisi etkin olsun veya olmasın ayarlanabilir.  
+
+Deniz haritası görünümü hakkında daha fazla ayrıntı için [Deniz Haritası eklentisi sayfasına](../plugins/nautical-charts) bakın.
+
+### 3D Binalar {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+![3D Binalar](@site/static/img/map/3d_buildings_1_new.png) ![3D Binalar](@site/static/img/map/3d_buildings_2.png) 
+
+**3D Binalar** özelliği, binaları düz şekiller yerine hacimli 3D modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. 3D binalar yalnızca daha yüksek yakınlaştırma seviyelerinde (şehir/sokak görünümü) gösterilir, burada bireysel binalar görüntülenebilir.  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D binalar*  
+Ana anahtarı kullanarak 3D bina işleme özelliğini etkinleştirebilir veya devre dışı bırakabilirsiniz. Binaları 3D olarak görüntülemek için, ekrana iki parmağınızı yerleştirin ve yukarı kaydırarak haritayı eğin.
+
+Şu anda bu seçenek yalnızca [OsmAnd geliştirme eklentisi](../plugins/development.md) etkinleştirildiğinde kullanılabilir.  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+
+3D binalar ayarları iki gruba ayrılır: **Görünüm** ve **Performans**.
+
+**Görünüm: Renk**. 3D binaların rengini kontrol eder. Renk'e dokunduğunuzda, OsmAnd ayarı ayarladığınız sırada haritayı görebileceğiniz ayrı bir önizleme ekranı açar.
+- **Harita stili** — şu anda seçili harita stilinden varsayılan bina rengini kullanır.
+- **Özel** — Gündüz / Gece modu için ayrı olarak özel bina rengi ayarlamanıza olanak tanır.
+
+:::tip Satın Alma
+3D Binaların Renk Özelleştirmesi [ücretli bir özelliktir](../purchases/index.md).  
+:::
+
+Özel renkler satın alınmamışsa, kısa bir açıklama ve Bir Al düğmesi ile boş bir durum göreceksiniz. Özel mevcutsa, Gündüz ve Gece arasında geçiş yapabilir, paletten bir renk seçebilir (veya Tüm renkleri açabilirsiniz), ardından Uygula'ya dokunabilirsiniz.
+
+**Görünüm: Görünürlük**. 3D binaların opaklığını (şeffaflığını) kontrol eder. Görünürlüğü yüzde olarak ayarlamak için kaydırıcıyı kullanın. Düşük değerler binaları daha şeffaf hale getirir ve yol/etiketlerin okunabilir kalmasına yardımcı olur. Yüksek değerler binaları daha katı ve görsel olarak baskın hale getirir. Görünürlük'e dokunmak da kaydırıcı ile ayrı bir önizleme ekranı açar.
+
+Önizleme ekranlarında (Renk / Görünürlük), varsayılan değeri geri yüklemek için uygulama çubuğundan Sıfırla varsayılana kullanabilirsiniz.
+
+**Performans: Detay seviyesi**. 3D bina geometrisinin ne kadar detaylı olduğunu kontrol eder:
+- Düşük (varsayılan) — daha basit geometri.
+- Yüksek — daha detaylı geometri.
+
+**Performans: Görüntü mesafesi**. 3D binaların kameradan ne kadar uzakta işleneceğini kontrol eder:
+- Yakın (varsayılan) — size daha yakın binaları işler.
+- Uzak — binaları daha uzun mesafeden işler.
+
+Her iki performans seçeneği de 3D binalar ayarları ekranında doğrudan iki konumlu bir anahtar kullanır.
+
+
+## Ek Ayarlar {#additional-settings}
+
+### Sınırları Göster {#show-borders}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
+
+![show-borders-ios](@site/static/img/map/show-borders-ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Bu özellik, indirilen haritaların sınırlarının görünürlüğünü, mevcut haritalar listesinden açıp kapatmanıza olanak tanır. Temel amacı, indirilen haritaların ana hatlarını gizleyerek ana haritayı düzenlemeye yardımcı olmaktır, bu da özellikle çok sayıda harita yüklü olduğunda kullanışlıdır.  
+
+Varsayılan olarak, harita sınırları 7. seviyeye yakınlaştırdığınızda görünür ve 3. seviye ve altında kaybolur.
+
+:::tip İndirilen haritaların sınırlarını renklendir
+*İndirilen haritaların sınırlarını göster* özelliği etkinleştirildiğinde, indirilen haritalar OsmAnd'ın hem Android hem de iOS sürümlerinde **Yeşil** renkte gösterilir.  
+
+Android'de arşivlenmiş haritalar **Turuncu** renkte gösterilir. iOS'ta güncellenebilecek haritalar da **Turuncu** renkte işaretlenir.
+:::
+
+### Koordinat Izgarası {#coordinates-grid}
+
+:::tip Satın Alma
+Koordinat Izgarasının Renk Özelleştirmesi [ücretli bir özelliktir](../purchases/index.md).  
+:::
+
+Şuraya git: *Menü → Haritayı Yapılandır → Göster → Koordinat Izgarası*  
+
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Koordinat ızgarası menüsü](@site/static/img/map/coordinates_grid_settings_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Koordinat Izgarası** özelliği, harita üzerine bir referans ızgarası yerleştirerek farklı koordinat sistemlerine dayalı enlem ve boylam çizgilerini görselleştirmenizi sağlar. Bu özellik, hassas konum referansı ve jeo-uzamsal navigasyon için kullanışlıdır. 
+
+Aşağıdaki seçenekleri yapılandırabilirsiniz:
+- **Yakınlaştırma seviyeleri:** ızgaranın görünür olduğu minimum ve maksimum yakınlaştırma seviyelerini (2 - 22) ayarlayın.
+- **Etiket konumu:** ızgara etiketleri için *Kenarlar* (varsayılan) veya *Merkez* arasında seçim yapın.
+- **Izgara rengi:** Gündüz/Gece modu için ayrı ayrı mevcuttur. 
+- **Koordinat formatı:** mevcut birkaç formattan birini seçin (aşağıdaki listeye bakın).
+
+
+***Mevcut koordinat formatları:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Derece, Dakika, Saniye)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Ondalık Dereceler - WGS84 varsayılan formatı)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Derece, Ondalık Dakika)
+- **UTM** (EPSG:6387, Evrensel Enine Merkatör - bölge tabanlı ızgara sistemi). Minimum yakınlaştırma seviyesi 9'dur, her 6°'de bir meridyenlerle ayrıldığı için aynı anda yalnızca bir UTM bölgesi görüntülenir.
+- **MGRS** (Askeri Izgara Referans Sistemi)
+
+Varsayılan olarak, uygulama [Genel ayarlar](../personal/profiles.md#units--formats) bölümünde seçilen koordinat formatını kullanır, ancak bu menüde doğrudan değiştirebilirsiniz.
+
+[Hızlı eylem](../widgets/quick-action.md#overview): [Haritayı Yapılandır](../widgets/quick-action.md#configure-map) grubuna hızlı erişim için *Koordinat Izgarasını Göster/Gizle* hızlı geçişini de ekleyebilirsiniz.
+
+
+## Rotalar {#routes}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Harita rotaları - bisiklet rotaları](@site/static/img/map/map-routes-cycle-routes.png)  ![Harita rotaları - yürüyüş ağı](@site/static/img/map/map-routes-hiking-network.png)
+
+Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş bir yoldur. Bir rota, bisiklet, yürüyüş, koşu, toplu taşıma ve diğerleri gibi farklı seyahat türleri için optimize edilebilir. Rotalar ve türleri hakkında daha fazla bilgiyi [Rotalar makalesinde](../map/routes.md) okuyabilirsiniz.
 
 
 ## İlgili Makaleler {#related-articles}
 
+- [Haritayla Etkileşim](../map/interact-with-map.md)
+- [Haritayı Yapılandır](../map/configure-map-menu.md)
+- [Harita Stilleri](../map/map-styles.md)
+- [Rotalar](../map/routes.md)
 - [İçe / Dışa Aktar](../personal/import-export.md)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: bf46a20c8013a736d11a6ff0a4dbe74f5f3b2726e424541dde730376aa61e292
+source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -55,7 +55,7 @@ OsmAnd iki tür harita ile çalışır: [Vektör haritaları](../map/vector-maps
 
 <TabItem value="ios" label="iOS">
 
-![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar iOS](@site/static/img/personal/maps/map_type_2_ios.png)  
+![Harita indirme menüsü iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Bölgesel haritalar Android](@site/static/img/personal/maps/map_type_2_ios.png)  
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Daha fazla bilgi için [**Özel paket**](../plugins/custom) makalesine bakın.
 
 <TabItem value="ios" label="iOS">
 
-![Genel iOS harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_ios.png) ![Seçimi kaldır menüsü iOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
+![Genel iOS harita indirme menüsü](@site/static/img/personal/maps/multiple_maps_ios.png) ![Seçimi kaldır menüsü IOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
 
 </TabItem>
 
@@ -195,10 +195,10 @@ Gruplanmış bir ülke öğesi açıldığında, o ülke için tam harita listes
 Yerel sekmesi, cihazınızdaki tüm OsmAnd verileri için depolama kullanımına genel bir bakış sağlar. Veriler, netlik için üç renk kodlu bölüme ayrılmıştır ve öğeler en büyükten en küçüğe doğru boyuta göre sıralanmıştır. Her bölüm yalnızca indirilen verilere sahip öğeleri görüntüler:
 
 - ***Kaynaklar*** (*mavi*).  
-    Haritalar ([Standart](../map/vector-maps.md), &nbsp;[Denizcilik](../plugins/nautical-charts.md), &nbsp;[Topografya](../plugins/topography.md), &nbsp;[Hava Durumu](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) ve [Seyahat rehberleri](../plan-route/travel-guides.md), &nbsp;[Canlı güncellemeler](../personal/maps-resources.md#live-updates), &nbsp;**Yalnızca yol**,  &nbsp;[Harita kaynakları](../map/raster-maps.md), &nbsp;[Oluşturma stilleri](../map/vector-maps.md#default-map-styles), &nbsp;**Harita yazı tipleri, &nbsp;Sesli komutlar (kaydedilmiş ve TTS), &nbsp;Önbellek** içerir.  
+    Haritalar ([Standart](../map/vector-maps.md), &nbsp;[Denizcilik](../plugins/nautical-charts.md), &nbsp;[Topografya](../plugins/topography.md), &nbsp;[Hava Durumu](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) ve [Seyahat rehberleri](../plan-route/travel-guides.md), &nbsp;[Canlı güncellemeler](../personal/maps-resources.md#live-updates), &nbsp;**Yalnızca yol**,  &nbsp;[Harita kaynakları](../map/raster-maps.md), &nbsp;[Oluşturma stilleri](../map/map-styles.md#default-map-styles), &nbsp;**Harita yazı tipleri, &nbsp;Sesli komutlar (kaydedilmiş ve TTS), &nbsp;Önbellek**.  
 
 - ***Yerlerim*** (*sarı*).  
-    [Favoriler](../personal/favorites.md), &nbsp;[İzler](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notları](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Düzenlemeleri](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notları](../plugins/audio-video-notes.md), &nbsp;[Harita işaretleyicileri](../personal/markers.md), &nbsp;[Geçmiş](../personal/global-settings.md#history), &nbsp;*Seyahat planı* içerir.  
+    [Favoriler](../personal/favorites.md), &nbsp;[İzler](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notları](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Düzenlemeleri](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notları](../plugins/audio-video-notes.md), &nbsp;[Harita işaretleyicileri](../personal/markers.md), &nbsp;[Geçmiş](../personal/global-settings.md#history), &nbsp;*Seyahat planı*.  
 
 - ***Ayarlar*** (*yeşil*).  
     [Profiller](../personal/profiles.md), &nbsp;[Renkler](../personal/color-palette-schemes.md) ve **Diğer** uygulama yapılandırmalarını içerir.
@@ -318,7 +318,7 @@ Mevcut **Eylemler** veri türüne bağlıdır:
 The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
 
 - ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/vector-maps.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
 
 - ***My Places*** (*yellow*).  
     Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
@@ -449,8 +449,8 @@ Tüm haritaları aynı anda güncellemek için *Tümünü güncelle* düğmesini
 
 ## Canlı Güncellemeler {#live-updates}
 
-:::tip Satın Alma
-Canlı güncellemeler ücretli bir özelliktir.  
+:::info Pro feature
+Canlı güncellemeler bir [**OsmAnd Pro**](../purchases/index.md) ücretli özelliktir <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -466,7 +466,7 @@ Canlı güncellemeler ücretli bir özelliktir.
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Haritalar menüsü OsmAnd canlı iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Haritalar menüsü OsmAnd canlı düzenle iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
+![Haritalar menüsü OsmAnd canlı  iOS](@site/static/img/personal/maps/maps_menu_osmand_live_ios.png) ![Haritalar menüsü OsmAnd canlı düzenle iOS](@site/static/img/personal/maps/maps_menu_osmand_live_edit_ios.png)
 
 </TabItem>
 
@@ -513,13 +513,13 @@ Silinen veya değiştirilen rota referansları hala yanlış görünebilir.
 
 <TabItem value="android" label="Android">
 
-![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Haritacılar için OsmAnd canlı](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
 
 </TabItem>
 

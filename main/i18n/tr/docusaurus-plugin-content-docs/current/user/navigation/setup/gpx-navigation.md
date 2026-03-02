@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Rota ile Navigasyon
 ---
@@ -70,7 +70,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Bir iz üzerinde navigasyon, [iz bağlam menüsündeki](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) (haritada [vurgulanan izlerden](./route-navigation.md#history-of-previous-routes) birini seçerek veya *Ana Menü*'nün [Yerlerim](../../personal/myplaces.md) bölümündeki bir iz dosyasına dokunarak açılır) hızlı eylem düğmesi kullanılarak veya şu yollardan açılan navigasyon menüsünden başlatılabilir:
 
-- Harita ekranındaki [*Navigasyon düğmesi*](../../widgets/map-buttons.md#directions).  
+- Harita ekranındaki [*Navigasyon düğmesi*](../../widgets/map-buttons.md#navigation).  
 - *Ana Menü*'deki *Navigasyon bölümü* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - [*Navigasyon menüsünde*](./route-navigation.md#navigation-menu) *<Translate android="true" ids="shared_string_settings,follow_track"/>* öğesine gidin.  
 

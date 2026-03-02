@@ -1,8 +1,9 @@
 ---
-source-hash: 4d1fd6f77d3485a33ced776546c65769d6a354be721ca6e2b421c4ef414bb7e8
+source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
 sidebar_position: 2
 title:  Туристичні путівники
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Огляд {#overview}
@@ -160,7 +160,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_options_ios.png)
+![Меню опцій туристичних путівників](@site/static/img/guides/travel_guides_options_ios.png)
 
 </TabItem>
 
@@ -185,7 +185,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_article_ios.png)
+![Стаття туристичного путівника](@site/static/img/guides/travel_guides_article_ios.png)
 
 </TabItem>
 
@@ -212,13 +212,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Меню змісту туристичних путівників](@site/static/img/guides/travel_guides_navigation_menu.png)
+![Меню навігації туристичних путівників](@site/static/img/guides/travel_guides_navigation_menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
+![Меню навігації туристичних путівників](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
 
 </TabItem>
 
@@ -240,7 +240,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_contents_menu_ios.png)
+![Меню змісту туристичних путівників](@site/static/img/guides/travel_guides_contents_menu_ios.png)
 
 </TabItem>
 
@@ -250,12 +250,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - &nbsp;*Зрозуміти*. Деталі про місцеву культуру та звичаї.
 - &nbsp;*Як дістатися*. Деталі про те, як дістатися до деяких місць і скільки коштуватиме цей маршрут.
-- &nbsp;*Побачити*. Список пам'яток (музеї, історичні місця тощо) з повним описом: ціни на квитки, години роботи, корисні посилання та номери телефонів.
-- &nbsp;*Розваги*. Місця для проведення часу.
+- &nbsp;*Подивитися*. Список пам'яток (музеї, історичні місця тощо) з повним описом: ціни на квитки, години роботи, корисні посилання та номери телефонів.
+- &nbsp;*Зробити*. Місця для проведення часу.
 - &nbsp;*Купити*. Місця для покупок.
-- &nbsp;*Їжа*. Заклади громадського харчування (розділені за бюджетом: бюджетні, середнього класу, дорогі).
-- &nbsp;*Напої*. Бари та кафе.
-- &nbsp;*Ночівля*. Житло розділене за бюджетом (бюджетне, середнього класу, дороге).
+- &nbsp;*Їсти*. Заклади громадського харчування (розділені за бюджетом: бюджетні, середнього класу, дорогі).
+- &nbsp;*Пити*. Бари та кафе.
+- &nbsp;*Спати*. Житло розділене за бюджетом (бюджетне, середнього класу, дороге).
 - &nbsp;*Далі*. Найближчі місця з Wikivoyage.
 
 ### Точки {#points}
@@ -270,7 +270,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
+![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
 
 </TabItem>
 
@@ -278,7 +278,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Статті туристичних путівників* часто містять туристичні пам'ятки, згруповані за темами. Одноразове натискання кнопки *Точки* внизу *[статті](#travel-article)* додасть на мапу всі пам'ятки, пов'язані з темою (місця харчування, варіанти розміщення, аеропорти, магазини, історичні пам'ятники тощо), і ними можна буде *[керувати як треком](#manage-as-gpx-track)*.  
 
-За замовчуванням групи пам'яток позначені певними іконками: категорії *Їжа та напої* — ножем і виделкою в червоному колі, *Розваги та пам'ятки* — камерою в зеленому колі та інші. Ви можете керувати групами точок за допомогою &#8942; як *[папкою точок маршруту](../map/tracks/track-context-menu.md#points--waypoints)*.  
+За замовчуванням групи пам'яток позначені певними іконками: категорії *Їжа та напої* — ножем і виделкою в червоному колі, *Зробити та подивитися* — камерою в зеленому колі та інші. Ви можете керувати групами точок за допомогою &#8942; як *[папкою точок маршруту](../map/tracks/track-context-menu.md#points--waypoints)*.  
 
 :::note
 Точки в *туристичних статтях* відповідають шляховим точкам на GPX-треку.  
@@ -292,12 +292,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Альтернативний спосіб перегляду *туристичних путівників* — відобразити їх на мапі за допомогою меню *Налаштувати мапу*. Ця функція не стосується можливості, яку надає OsmAnd для використання Wikivoyage, вона стосується лише треків. Детальніше ви можете прочитати в нашому [блозі](https://osmand.net/blog/routes#generated-travel-routes).
 
-![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_travel_routes_view.png)
+![Меню туристичних маршрутів](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Меню туристичних маршрутів](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
 ### Туристичні маршрути та статті на мапі {#travel-routes-and-articles-on-the-map}
 
-![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+![Статті та маршрути на мапі](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Контекстне меню туристичних маршрутів](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
 Після того, як ви увімкнете відображення *туристичних маршрутів* у меню *Налаштувати мапу*, на мапі з'являться кола різних кольорів. Помаранчеві позначають треки маршрутів, статті про маршрути та деякі шляхові точки. Торкніться певного маршруту, статті або точки, а потім натисніть кнопку *Завантажити* (&#9047;), і ви зможете [керувати ними як треком](#manage-as-gpx-track).
 
@@ -314,13 +314,13 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 ## Керування як GPX-треком {#manage-as-gpx-track}
 
-![Меню точок туристичних путівників 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Меню точок туристичних путівників 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
+![Точки туристичних путівників на мапі](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Точки туристичних путівників у моїх місцях](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
 Після додавання *туристичних путівників* на мапу, *туристичні статті* можна зберегти як GPX-трек і керувати ними через меню *[Мої місця](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). Їх можна відображати на мапі, ділитися ними, перейменовувати, переміщувати в іншу папку, експортувати або видаляти.  
 
 - &nbsp;У *[Огляді](../map/tracks/track-context-menu.md#overview)* ви можете прочитати короткий опис або відкрити [туристичну статтю](#travel-article), натиснувши кнопку *Читати повністю*. *Редагувати* дозволяє виправити статтю.
 - &nbsp;У розділі *[Трек](../map/tracks/track-context-menu.md#altitude--speed-graphs)* немає інформації, оскільки GPX-файли *туристичних путівників* містять лише шляхові точки.  
-- &nbsp;У розділі *[Точки](../map/tracks/track-context-menu.md#points--waypoints)* ви побачите папки з точками, згрупованими за назвою (Купити, Розваги, Напої тощо).
+- &nbsp;У розділі *[Точки](../map/tracks/track-context-menu.md#points--waypoints)* ви побачите папки з точками, згрупованими за назвою (Купити, Зробити, Пити тощо).
 - &nbsp;Кнопка *[Опції](../map/tracks/track-context-menu.md#options)* виконує ті ж функції, що і для звичайного треку.
 
 :::info
@@ -340,7 +340,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 <TabItem value="ios" label="iOS">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Поєднання туристичних путівників з Вікіпедією 1](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Поєднання туристичних путівників з Вікіпедією 2](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 

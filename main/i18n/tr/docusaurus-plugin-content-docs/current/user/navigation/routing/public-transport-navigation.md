@@ -1,7 +1,7 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
-title: Toplu Taşıma Rotası
+title: Toplu Taşıma Yönlendirme
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,10 +19,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 OsmAnd uygulamasındaki toplu taşıma navigasyonu, toplu taşıma araçlarını kullanarak rotaları belirlemenize olanak tanır ve bu da "beton ormanında" daha hızlı hareket etmenize kesinlikle yardımcı olacaktır.
 
-Toplu taşıma rotalarına ilişkin veriler [OpenStreetMap](http://openstreetmap.org/) projesinden alınmıştır. OsmAnd, navigasyon için [PTv2 şemasını](https://wiki.openstreetmap.org/wiki/Public_transport) kullanır. OsmAnd, navigasyon için aşağıdaki OpenStreetMap rotalarını destekler: *otobüs*, *troleybüs*, *paylaşımlı taksi*, *füniküler*, *metro*, *hafif raylı sistem*, *monoray*, *tren*, *tramvay*, *feribot*. Her araç tipi için varsayılan hız [Yönlendirme xml'inde](../../../technical/build-osmand/routing.md) yapılandırılmıştır ve en hızlı rotaları bulmak için kullanılır.
+Toplu taşıma rotalarına ilişkin veriler [OpenStreetMap](http://openstreetmap.org/) projesinden alınmıştır. OsmAnd, navigasyon için [PTv2 şemasını](https://wiki.openstreetmap.org/wiki/Public_transport) kullanır. OsmAnd, navigasyon için aşağıdaki OpenStreetMap rotalarını destekler: *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Her araç tipi için varsayılan hız [Yönlendirme xml'inde](../../../technical/build-osmand/routing.md) yapılandırılmıştır ve en hızlı rotaları bulmak için kullanılır.
 
 :::note
-Toplu taşıma rotası test aşamasındadır. Şimdilik, tam navigasyon işlevi olmadan rotanızı oluşturabilir ve görüntüleyebilirsiniz.
+Toplu taşıma yönlendirme test aşamasındadır. Şimdilik, tam navigasyon işlevi olmadan rotanızı oluşturabilir ve görüntüleyebilirsiniz.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -44,7 +44,7 @@ Toplu taşıma rotası test aşamasındadır. Şimdilik, tam navigasyon işlevi 
 
 ## Nasıl Kullanılır {#how-to-use}
 
-Şehirde toplu taşıma ile gezinmeye başlamak için harita ekranındaki [navigasyon düğmesini](../../widgets/map-buttons.md#directions) kullanın veya *Ana Menü*'den navigasyon seçeneğini seçin.  
+Şehirde toplu taşıma ile gezinmeye başlamak için harita ekranındaki [navigasyon düğmesini](../../widgets/map-buttons.md#navigation) kullanın veya *Ana Menü*'den navigasyon seçeneğini seçin.  
 
 **1.** *Toplu taşıma navigasyon profilini*, başlangıç ve varış noktalarını seçmeniz gerekir.  
 
@@ -64,7 +64,7 @@ Toplu taşıma rotası test aşamasındadır. Şimdilik, tam navigasyon işlevi 
 
 </Tabs>
 
-**2.** OsmAnd, yürüme süreleri ve toplu taşıma rotaları ile rota bilgileri (süre, mesafe, aktarma ve toplu taşıma rotaları) içeren rota seçenekleri sunar. Gerekli seçeneği belirlemek için navigasyon ekranında kaydırmanız gerekir.  
+**2.** OsmAnd, yürüme süreleri ve toplu taşıma rotaları ile rota bilgileri (süre, mesafe, aktarma ve toplu rotalar) içeren rota seçenekleri sunar. Gerekli seçeneği belirlemek için navigasyon ekranında kaydırmanız gerekir.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -142,7 +142,7 @@ Kullanıcı arayüzü, Alternatif Rotaları refs'leri ile renkli rozetler olarak
 
 ## Performans ve Sonuçlar {#performance-and-results}
 
-**Toplu Taşıma profili -> Ayarlar -> Navigasyon ayarları -> Rota parametreleri**
+**Toplu Taşıma profili -&gt; Ayarlar -&gt; Navigasyon ayarları -&gt; Rota parametreleri**
 
 1. **Maksimum ulaşım değişikliği sayısı**.
 

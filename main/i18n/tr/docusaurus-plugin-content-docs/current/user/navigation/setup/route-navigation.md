@@ -1,5 +1,5 @@
 ---
-source-hash: 691bcbb90edd834e73f1ffc6ba4260189199bb0919291ba488372bdec72e2792
+source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
 sidebar_position: 1
 title: Rota Hazırlığı
 ---
@@ -68,7 +68,7 @@ Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/prof
     - Rota hesaplanana kadar bekleyin. Bundan sonra, rotanız hakkında ek bilgileri *[Ayrıntılar bölümünde](./route-details.md#overview)* edinebileceksiniz.
     - En iyi sonucu elde etmek için farklı [rota türleri](./../routing/osmand-routing.md#routing-types) (profiller) arasında geçiş yapabilirsiniz.
     - [Ara varış noktaları](#intermediate-destinations) ekleyin (isteğe bağlı).
-    - Kalkış noktasını da [mevcut konumdan](../../map/interact-with-map.md#my-location-and-zoom) gerekli olana değiştirebilirsiniz.
+    - Kalkış noktasını da [mevcut konumdan](../../map/interact-with-map.md#my-position-and-zoom) gerekli olana değiştirebilirsiniz.
 
 2. Ek [*Navigasyon ayarları*](#settings) amaçlarınıza bağlı olarak kullanılabilir (hangi yollardan kaçınılacağını veya tercih edileceğini yapılandırabilir, yakıt tasarrufu yapabilir veya en hızlı rotayı seçebilirsiniz vb.).
 
@@ -79,7 +79,7 @@ Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/prof
 
 :::note
 
-**Harita kaynağı olarak *[Çevrimiçi harita](../../map/raster-maps.md#select-raster-maps)* seçildiğinde rota oluşturulamaz.**
+**Harita kaynağı olarak *[Çevrimiçi harita](../../map/raster-maps.md#layers)* seçildiğinde rota oluşturulamaz.**
 
 :::
 
@@ -88,7 +88,7 @@ Kullanmayı düşündüğünüz [profilleri yapılandırın](../../personal/prof
 
 Navigasyon menüsüne ulaşmanın 3 yolu vardır:
 
-- Harita ekranındaki [*Navigasyon düğmesi*](../../widgets/map-buttons.md#directions).  
+- Harita ekranındaki [*Navigasyon düğmesi*](../../widgets/map-buttons.md#navigation).  
 - Bir [*harita bağlam menüsünde*](../../map/map-context-menu.md#directions-to--from) *Yönlendirme/Yönlendirme*.  
 - [*Ana Menüdeki*](../../start-with/main-menu.md) Navigasyon bölümü *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
@@ -108,7 +108,7 @@ Navigasyon menüsüne ulaşmanın 3 yolu vardır:
 
 </Tabs>
 
-- **<Translate android="true" ids="shared_string_my_location"/>** – Başlangıç konumunu ayarla (varsayılan: [*Mevcut Konumum*](../../map/interact-with-map.md#my-location-and-zoom)).
+- **<Translate android="true" ids="shared_string_my_location"/>** – Başlangıç konumunu ayarla (varsayılan: [*Mevcut Konumum*](../../map/interact-with-map.md#my-position-and-zoom)).
 - **<Translate android="true" ids="add_destination_point"/>** - [Hedef noktanızı ayarlamak](#set-target-point) için kullanın.
 - **Ekle** &nbsp;&#43; - Rota boyunca [ara noktalar](../../widgets/nav-widgets.md#distance-to-intermediate) ekleyin.
 - **Değiştir** &nbsp;&#8595;&#8593; - *Başlangıç* ve *Bitiş* noktalarını tersine çevirin.
@@ -128,7 +128,7 @@ Navigasyon menüsünde hedefinizi kullanarak ayarlayın:
 
 <TabItem value="android" label="Android">
 
-![Haritada seç Android](@site/static/img/navigation/route/select_on_map.png)
+![Haritada seç](@site/static/img/navigation/route/select_on_map.png)
 
 Başlangıç noktası için mevcut konumunuzu, bir [Favori noktanın](../../map/point-layers-on-map.md#favorites) konumunu seçebilir, harita üzerinde bir nokta seçebilir veya [Ara](../../search/index.md) özelliğini kullanabilirsiniz. Harita üzerinde bir nokta seçtiğinizde bir iletişim kutusu açılır. Harita bir işaretçi ile merkezlenir, harita merkezinin koordinatları görüntülenir ve doğrudan bir noktaya dokunmak yerine işaretçinin altında haritayı hareket ettirirsiniz. Onaylamak için *Seç* düğmesine basın. Ayrıca [harita bağlam menüsünde](../../map/map-context-menu.md) [Yönlendirme'den](../../map/map-context-menu.md#directions-to--from) işlevini seçerek bir başlangıç noktası ayarlayabilirsiniz.  
 </TabItem>
@@ -325,7 +325,7 @@ Bu seçenek, uygulamanın Android sürümünde *[Bildirim listesi](../guidance/v
 Navigasyona devam etmek için:
 
 - Bildirim çubuğundaki OsmAnd mesajını kullanın.
-- *Hızlı eylemler menüsünü* veya *[Navigasyon düğmesine](../../widgets/map-buttons.md#directions)* dokunduğunuzda görünen iletişim kutusunu kullanın (ekran görüntüsüne bakın).
+- *Hızlı eylemler menüsünü* veya *[Navigasyon düğmesine](../../widgets/map-buttons.md#navigation)* dokunduğunuzda görünen iletişim kutusunu kullanın (ekran görüntüsüne bakın).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

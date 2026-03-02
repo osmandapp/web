@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Haritadaki Noktalar
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Genel Bakış {#overview}
@@ -26,7 +26,7 @@ Harita, [Favoriler](#favorites), [İlgi Çekici Noktalar](#points-of-interest-po
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
-![Favotires layer Android](@site/static/img/map/favorites_layer.png)  
+![Favoriler katmanı Android](@site/static/img/map/favorites_layer.png)  
 
 </TabItem>
 
@@ -34,7 +34,7 @@ Harita, [Favoriler](#favorites), [İlgi Çekici Noktalar](#points-of-interest-po
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_favorites"/>*
 
-![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)  
+![Favoriler katmanı iOS](@site/static/img/map/favorites_layer_ios.png)  
 
 </TabItem>
 
@@ -55,7 +55,7 @@ OsmAnd'in Android sürümünde, haritada ve arama sırasında yalnızca belirli 
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
-![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
+![Favori etiketleri katmanı](@site/static/img/map/favorite_labels_layer.png)  
 
 </TabItem>
 
@@ -63,7 +63,7 @@ OsmAnd'in Android sürümünde, haritada ve arama sırasında yalnızca belirli 
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,layer_amenity_label"/>*
 
-![Favotire labels layer](@site/static/img/map/favorite_labels_layer.png)  
+![Favori etiketleri katmanı](@site/static/img/map/favorite_labels_layer.png)  
 
 </TabItem>
 
@@ -80,7 +80,7 @@ Varsayılan olarak, Favoriler ve ilgi çekici noktalar (İÇN) adları olmadan g
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
 
-![POI overlay Android](@site/static/img/map/poi_overlay_android.png)
+![İÇN katmanı Android](@site/static/img/map/poi_overlay_android.png)
 
 </TabItem>
 
@@ -88,7 +88,7 @@ Varsayılan olarak, Favoriler ve ilgi çekici noktalar (İÇN) adları olmadan g
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*
 
-![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)  
+![İÇN katmanı iOS](@site/static/img/map/poi_overlay_ios.png)  
 
 </TabItem>
 
@@ -103,7 +103,7 @@ Bir ilgi çekici nokta hakkındaki ayrıntılı bilgiler, noktaya [dokunduğunuz
 
 ### İÇN Türleri {#poi-types}
 
-![Single POI Selection](@site/static/img/map/single_selection_android.png) ![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png)
+![Tek İÇN Seçimi](@site/static/img/map/single_selection_android.png) ![Çoklu İÇN Seçimi](@site/static/img/map/multiple_selection_android.png)
 
 Standart OsmAnd İÇN türlerinden birini veya çoğunu seçebilir veya kendi [İÇN filtrenizi](../search/search-poi.md) oluşturup İÇN'leri haritada görüntülemek için seçebilirsiniz.
 
@@ -118,7 +118,7 @@ Standart OsmAnd İÇN türlerinden birini veya çoğunu seçebilir veya kendi [�
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,shared_string_hide"/>*
 
-![POI on map style](@site/static/img/map/poi_layer.png)
+![Harita stili üzerinde İÇN](@site/static/img/map/poi_layer.png)
 
 </TabItem>
 
@@ -126,13 +126,13 @@ Standart OsmAnd İÇN türlerinden birini veya çoğunu seçebilir veya kendi [�
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,rendering_category_hide"/>*
 
-![POI on topo style](@site/static/img/map/poi_layer_topo_style.png)  
+![Topo stili üzerinde İÇN](@site/static/img/map/poi_layer_topo_style.png)  
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd'deki her İÇN türüne belirli bir simge ve renk atanmıştır. İÇN'nin [yakınlaştırma seviyesi](../map/vector-maps.md#details) ve tasarımı bazı [harita stillerinde](../map/vector-maps.md#default-map-styles) farklı olabilir.  
+OsmAnd'deki her İÇN türüne belirli bir simge ve renk atanmıştır. İÇN'nin [yakınlaştırma seviyesi](../map/vector-maps.md#details) ve tasarımı bazı [harita stillerinde](../map/map-styles.md) farklı olabilir.  
 
 Daha fazla bilgi için [okuyun](../map/vector-maps.md#hide).
 
@@ -145,7 +145,7 @@ Daha fazla bilgi için [okuyun](../map/vector-maps.md#hide).
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,map_markers_item"/>*
 
-![Map markers Android](@site/static/img/map/map_markers_android.png)
+![Harita işaretleyicileri Android](@site/static/img/map/map_markers_android.png)
 
 </TabItem>
 
@@ -153,7 +153,7 @@ Daha fazla bilgi için [okuyun](../map/vector-maps.md#hide).
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,map_markers"/>*
 
-![Map markers iOS](@site/static/img/map/map_markers_ios.png)  
+![Harita işaretleyicileri iOS](@site/static/img/map/map_markers_ios.png)  
 
 </TabItem>
 
@@ -166,7 +166,7 @@ Daha fazla bilgi için [okuyun](../map/vector-maps.md#hide).
 
 ## İz Noktaları {#track-waypoints}
 
-![Track on map](@site/static/img/map/track_point_on_map.png)
+![Haritadaki iz](@site/static/img/map/track_point_on_map.png)
 
 İz noktaları (ara noktalar) İz (GPX) dosyalarının bir parçasıdır. Bu noktalar, iz haritada ise otomatik olarak görüntülenir. [Favoriler](#favorites) gibi görünür ve yapılandırılabilirler - simge, adlar, renk, şekil. Ara nokta nasıl oluşturulur ve eklenir, [makalede](../map/tracks/track-context-menu.md#add-waypoint-to-a-track) okuyun.  
 
@@ -175,7 +175,7 @@ Haritadaki izler hakkında daha fazla bilgi için [okuyun](../map/tracks/index.m
 
 ## Arama Sonuçları (İÇN) {#search-results-poi}
 
-![POI search](@site/static/img/map/poi_search.png) ![POI search result](@site/static/img/map/poi_search_result.png)
+![İÇN araması](@site/static/img/map/poi_search.png) ![İÇN arama sonucu](@site/static/img/map/poi_search_result.png)
 
 Arama sonuçları, haritada özel bir İÇN katmanı olarak görüntülenebilir. Arama sırasında, İÇN'leri haritada görüntülemek için özel bir satıra (**<Translate android="true" ids="shared_string_show_on_map"/>**) dokunun.  
 
@@ -192,7 +192,7 @@ Arama sonuçları, haritada özel bir İÇN katmanı olarak görüntülenebilir.
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
-![Mapillary filter](@site/static/img/map/mapillary_filter.png)
+![Mapillary filtresi](@site/static/img/map/mapillary_filter.png)
 
 </TabItem>
 
@@ -200,7 +200,7 @@ Arama sonuçları, haritada özel bir İÇN katmanı olarak görüntülenebilir.
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
-![Mapillary street view](@site/static/img/map/mapillary_street-view.png)
+![Mapillary sokak görünümü](@site/static/img/map/mapillary_street-view.png)
 
 </TabItem>
 
@@ -213,7 +213,7 @@ Arama sonuçları, haritada özel bir İÇN katmanı olarak görüntülenebilir.
 
 ## * Park Noktası {#-parking-point}
 
-![Limited parking](@site/static/img/map/context_menu_limited_parking.png) ![Unlimited parking](@site/static/img/map/context_menu_unlimited_parking.png)
+![Sınırlı park](@site/static/img/map/context_menu_limited_parking.png) ![Sınırsız park](@site/static/img/map/context_menu_unlimited_parking.png)
 
 Bir [Park noktası](../plugins/parking.md), kullanıcılar tarafından haritada aracın tam konumu hakkında bilgi depolamak için işaretlenmiş bir noktadır. Sınırsız ve sınırlı park bölgelerine ayrılabilir.  
 
@@ -228,7 +228,7 @@ Bir [Park noktası](../plugins/parking.md), kullanıcılar tarafından haritada 
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Wikipedia on map](@site/static/img/map/map-wikipedia-on-map.png)
+![Haritadaki Wikipedia](@site/static/img/map/map-wikipedia-on-map.png)
 
 </TabItem>
 
@@ -236,7 +236,7 @@ Bir [Park noktası](../plugins/parking.md), kullanıcılar tarafından haritada 
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,download_wikipedia_maps"/>*
 
-![Wikipedia language - iOS](@site/static/img/map/map-wikipedia-language-ios.png)
+![Wikipedia dili - iOS](@site/static/img/map/map-wikipedia-language-ios.png)
 
 </TabItem>
 
@@ -255,7 +255,7 @@ Wikipedia özelliğini OsmAnd'de nasıl indireceğinizi ve kullanacağınızı [
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
-![AV POI](@site/static/img/map/av_poi.png)
+![S/G İÇN](@site/static/img/map/av_poi.png)
 
 </TabItem>
 
@@ -274,7 +274,7 @@ Sesli / Görüntülü notlar, kullanıcılar tarafından oluşturulan harita üz
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_edits"/>*
 
-![OSM edit POI](@site/static/img/map/osm_edit_poi.png)
+![OSM düzenleme İÇN](@site/static/img/map/osm_edit_poi.png)
 
 </TabItem>
 
@@ -282,7 +282,7 @@ Sesli / Görüntülü notlar, kullanıcılar tarafından oluşturulan harita üz
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_edits_title"/>*
 
-![OSM edit POI](@site/static/img/map/osm_edit_poi.png)
+![OSM düzenleme İÇN](@site/static/img/map/osm_edit_poi.png)
 
 </TabItem>
 
@@ -301,7 +301,7 @@ OSM düzenleme noktaları, [OpenStreetMap projesine](https://www.openstreetmap.o
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*
 
-![OSM notes](@site/static/img/map/osm_note.png)
+![OSM notları](@site/static/img/map/osm_note.png)
 
 </TabItem>
 
@@ -309,7 +309,7 @@ OSM düzenleme noktaları, [OpenStreetMap projesine](https://www.openstreetmap.o
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_map,osm_notes_online_layer"/>*
 
-![OSM notes](@site/static/img/map/osm_note.png)
+![OSM notları](@site/static/img/map/osm_note.png)
 
 </TabItem>
 

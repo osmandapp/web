@@ -1,5 +1,5 @@
 ---
-source-hash: 185b7c5e0a93b9b861468e61e8f217ab08bb36e12bb24b2b361b4275de34e673
+source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
 sidebar_position: 1
 title: Ekranı Yapılandır
 ---
@@ -450,6 +450,53 @@ OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara
 - İstendiğinde silmeyi onaylayın.
 
 
+## Harita Ekranı Düzeni {#map-screen-layout}
+
+<InfoAndroidOnly/>
+
+![Harita Ekranı Düzeni](@site/static/img/widgets/map_screen_layout_1.png) ![Harita Ekranı Düzeni](@site/static/img/widgets/map_screen_layout_2.png)
+
+**Harita ekranı düzeni** ayarı, widget panellerinin harita ekranında nasıl düzenleneceğini kontrol etmenize olanak tanır. Widget'ların ve düğmelerin üst üste binmesini önler ve ekran alanı kullanımını iyileştirir, özellikle portre ve yatay yönelimler arasında geçiş yaparken.
+
+Harita ekranı düzeni ayarlarını Ekranı Yapılandır menüsünden açabilirsiniz, doğrudan ekran eylemlerinden veya üç nokta menüsü aracılığıyla.
+
+### Tek ve Ayrı Düzenler {#single-and-separate-layouts}
+
+![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_single.png) ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_separate.png)
+
+OsmAnd, harita ekranı için iki düzen modu destekler:
+- **Tek düzen** – tüm ekran yönelimleri için aynı widget düzenini kullanır. Bu seçenek varsayılan olarak seçilidir.
+- **Ayrı düzenler** – Portre ve Yatay yönelimler için farklı widget düzenleri yapılandırmanıza olanak tanır.
+
+Ayrı düzenler etkinleştirildiğinde, bir yönelimde yapılan değişiklikler diğerini etkilemez. Bu, portre ve yatay kullanım için harita ekranını farklı optimize etmek istiyorsanız kullanışlıdır.
+
+### Portre ve Yatay Sekmeler {#portrait-and-landscape-tabs}
+
+![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_tabs.png)
+
+Ayrı düzenler etkinleştirildiğinde, Ekranı Yapılandır'da iki sekme kullanılabilir hale gelir: **Portre** ve **Yatay**. Her sekme, ilgili ekran yönelimi için bağımsız bir düzeni temsil eder. Sekmeler arasında geçiş yapmak için onlara dokunabilirsiniz.
+
+Düzenleri yönelimler arasında kopyalayabilirsiniz. Bu eylemlere erişmek için widget panelinin üç nokta menüsüne dokunun:
+- **Portreden kopyala** – Portre düzeninden widget listesini Yatay düzenine kopyalar.
+- **Yataydan kopyala** – Yatay düzeninden widget listesini Portre düzenine kopyalar.
+
+Yalnızca widget listesi kopyalanır ve işlem aynı profil içinde uygulanır.
+
+![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_portrait.png) ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_landscape.png)
+
+### Paneller Düzeni {#panels-layout}
+
+![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_wide.png) ![Harita Ekranı Düzeni](@site/static/img/widgets/screen_layout_compact.png)
+
+**Paneller düzeni** ayarı, üst ve alt widget panellerinin nasıl görüntüleneceğini kontrol eder. Bu seçenek yalnızca Ayrı düzenler etkinleştirildiğinde kullanılabilir.
+
+İki mod arasında seçim yapabilirsiniz:
+- **Geniş** – üst ve alt paneller ekranın tam genişliğini kaplar.
+- **Kompakt** – üst ve alt paneller yan paneller ve harita düğmeleri arasında sığar.
+
+Paneller düzeni, Portre ve Yatay yönelimler için bağımsız olarak yapılandırılabilir, farklı ekran boyutlarına ve yönelimlere daha iyi uyum sağlar.
+
+
 ## Düğmeler {#buttons}
 
 ### Özel Düğmeler {#custom-buttons}
@@ -484,7 +531,7 @@ OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget sayfası](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Widget sayfası](@site/static/img/widgets/conf_screen_buttons_3_andr_new.png)
 
 </TabItem>
 
@@ -498,7 +545,7 @@ OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara
 
 </Tabs>
 
-1. **Varsayılan düğmeler**, harita ekranında hangi önceden ayarlanmış harita düğmelerinin görünür olduğunu özelleştirmenize olanak tanır. Aşağıdaki düğmeleri gizlemeyi veya göstermeyi seçebilirsiniz:
+**Varsayılan düğmeler**, harita ekranında hangi önceden ayarlanmış harita düğmelerinin görünür olduğunu özelleştirmenize olanak tanır. Listede her düğmenin yanında bir Açık/Kapalı anahtarı vardır. Aşağıdaki düğmeleri gizlemeyi veya göstermeyi seçebilirsiniz:
 
     - [3B mod](../widgets/map-buttons.md#3d-mode). iOS için düğme her zaman kullanılabilir. Android için listede görünür ve harita oluşturma motoru [Sürüm 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) seçilirse ayar için kullanılabilir.
 
@@ -509,27 +556,45 @@ OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara
 
     - [Menü](../widgets/map-buttons.md#main-menu). Tüm özelliklere erişmek için ana uygulama menüsünü açar.
 
-    - [Konumum](../widgets/map-buttons.md#my-location-and-zoom). Haritayı mevcut konumunuza ortalar.
+    - [Konumum](../widgets/map-buttons.md#my-position-and-zoom). Haritayı mevcut konumunuza ortalar.
 
-    - [Navigasyon](../widgets/map-buttons.md#directions). Rota planlama ve navigasyonu başlatmak için gereklidir.
+    - [Navigasyon](../widgets/map-buttons.md#navigation). Rota planlama ve navigasyonu başlatmak için gereklidir.
 
     - [Ara](../widgets/map-buttons.md#search). Konumları bulmak için arama aracını açar.
 
-    - [Yakınlaştır / Uzaklaştır](../widgets/map-buttons.md#my-location-and-zoom). Haritanın yakınlaştırma seviyesini daha fazla veya daha az ayrıntı göstermek için ayarlar.
+    - [Yakınlaştır / Uzaklaştır](../widgets/map-buttons.md#my-position-and-zoom). Haritanın yakınlaştırma seviyesini daha fazla veya daha az ayrıntı göstermek için ayarlar.
 
-2. Varsayılan düğmeler ekranındaki **üç nokta menüsü** aşağıdaki eylemleri içerir:
+Varsayılan düğmeler ekranındaki **üç nokta menüsü** aşağıdaki eylemleri içerir:
 
     - *Varsayılana sıfırla*. Düğme ayarlarını orijinal görünümlerine döndürmenize olanak tanır.
-    - *Başka bir profilden kopyala*. Sunulan listeden hangi profilden düğme ayarlarını kopyalamak istediğinizi seçin.
-
-3. **Varsayılan düğme görünümü** (*Yalnızca Android*), bu tür düğmeler için çeşitli özelleştirme seçenekleri sunar. Bir düğmenin görünümünü değiştirmek için listeden gerekli düğmeye dokunun ve [Görünüm](#button-appearance) seçeneğini seçin.
+    - *Başka bir profilden kopyala*. Sunulan listeden hangi profilden düğme görünürlüğü ve görünüm ayarlarını kopyalamak istediğinizi seçin.
+    - *Görünüm (Yalnızca Android)*. Bu tür düğmeler için çeşitli özelleştirme seçenekleri sunar. Bir düğmenin görünümünü değiştirmek için listeden gerekli düğmeye dokunun ve [Görünüm](#button-appearance) seçeneğini seçin.
 
 
 ### Düğme Görünümü {#button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 ![Düğme Görünümü](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+**Şuraya gidin** (Özel düğmeler için): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → üç nokta menüsü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Şuraya gidin** (Tüm Varsayılan düğmeler için): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → üç nokta menüsü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Şuraya gidin** (Belirli bir Varsayılan düğme için): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → bir düğme seçin → *<Translate android="true" ids="shared_string_appearance"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Düğme Görünümü](@site/static/img/widgets/button_appearance_settings_ios.png)
+
+**Şuraya gidin** (Özel düğmeler için): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → üç nokta menüsü → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Şuraya gidin** (Belirli bir Varsayılan düğme için): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → bir düğme seçin → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
 
 *Düğme görünümü* özelliği, harita arayüzünüzdeki düğmelerin görünümünü tamamen özelleştirmenizi sağlar. Bu özelleştirme seçenekleri hem *Hızlı Eylem (Özel düğmeler)* hem de *Varsayılan düğmeler* için mevcuttur, harita arayüzünün görünümü üzerinde kapsamlı kontrol sağlar ve düğme tasarımında hassas ayarlamalar yapılmasına olanak tanır.
 
@@ -537,8 +602,8 @@ OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara
 
 - **Simge**. Önceden eklediğiniz eylemleri temsil eden simgeler listesinden seçim yapın, işlevleri bir bakışta tanımlamayı kolaylaştırın.
 - **Köşe yarıçapı**. Düğmenin şeklini değiştirmek için bu ayarı yapın, keskin, kare köşelerden pürüzsüz, yuvarlak kenarlara kadar.
-- **Boyut**. Ekranınıza en uygun ve gerektiği gibi öne çıkan düğme boyutunu seçin. *Varsayılan düğmeler* için boyutlar önceden ayarlanmıştır ve ayarlanamaz.
-- **Arka plan opaklığı**. Düğmenin arka planının görünürlüğünü kontrol edin. Tamamen görünür veya kısmen şeffaf olarak ayarlayabilir veya yalnızca çerçeve gölgesini ve simgeyi görüntüleyebilirsiniz.
+- **Boyut**. Ekranınıza en uygun ve gerektiği gibi öne çıkan düğme boyutunu seçin. 
+- **Arka plan opaklığı** (Android) / **Arka plan** (iOS). Düğmenin arka planının görünürlüğünü kontrol edin. Tamamen görünür veya kısmen şeffaf olarak ayarlayabilir veya yalnızca çerçeve gölgesini ve simgeyi görüntüleyebilirsiniz.
 
 
 ## Diğer {#other}
@@ -588,7 +653,7 @@ OsmAnd, aynı widget'ın birden çok örneğini farklı panellere veya sayfalara
 
 > *Ekrandaki konum konumu*, OsmAnd'ın iOS sürümündeki bu ayarın adıdır.  
 
-OsmAnd haritasında imlecin *[Konumum](../map/interact-with-map.md#my-location-and-zoom)* konumunu ayarlamanıza olanak tanır. Üç seçenek mevcuttur:  
+OsmAnd haritasında imlecin *[Konumum](../map/interact-with-map.md#my-position-and-zoom)* konumunu ayarlamanıza olanak tanır. Üç seçenek mevcuttur:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. İmleç her zaman ekranın ortasında konumlandırılır.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *Konumum* ekranın ortasının biraz altına yerleştirilir. Bu mod, hareketinizin önünde daha fazla harita bilgisi görmenizi sağlar, bu da navigasyon sırasında kullanışlıdır.

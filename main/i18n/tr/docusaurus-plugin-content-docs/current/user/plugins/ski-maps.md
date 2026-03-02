@@ -1,6 +1,6 @@
 ---
-source-hash: ae4b478f552d9b4b1bd34abc2bf94f8ebfe934dd85b14e03f1b60055718cc47a
-sidebar_position: 13
+source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+sidebar_position: 14
 title:  Kayak Haritası Görünümü
 ---
 
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Genel Bakış {#overview}
 
-OsmAnd Kayak Haritası görünümü eklentisi, ünlü ve popüler yamaçları, resmi olarak onaylanmış kayak alanlarını ve çoğu kayak merkezinin parkur haritalarını gösterir. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) pist haritaları, OsmAnd kayak haritaları için veri kaynağıdır. Raster haritalarla birleştirilmiş vektör haritalar, OsmAnd kayak haritası çok doğrudur ve eğitmenler, dağcılar ve kış sporları meraklıları için faydalı olacaktır.
+OsmAnd Kayak Haritası görünümü eklentisi, ünlü ve popüler yamaçları, resmi olarak onaylanmış kayak alanlarını ve çoğu kayak merkezinin parkur haritalarını gösterir. [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) pist haritaları, OsmAnd kayak haritaları için veri kaynağıdır. Raster haritalarla birleştirilmiş vektör haritalar, OsmAnd kayak haritası çok doğrudur ve eğitmenler, tırmanıcılar ve kış sporları meraklıları için faydalı olacaktır.
 
 OsmAnd kayak haritası, vektör haritalarının bir parçasıdır ve ek indirme gerektirmez. Varsayılan olarak devre dışıdır. OsmAnd Kayak Haritası, bazı nesneleri vurgulayarak ve diğerlerini daha az görünür hale getirerek ek özellikler sağlayan [Harita Stillerinden](../map/vector-maps.md) biridir.  
 
@@ -99,7 +99,7 @@ Kayak profili, Kış ve Kayak stilleriyle birlikte kullanılmak üzere tasarlanm
 
 </Tabs>
 
-[Kış ve Kayak harita stili](../map/vector-maps.md#winter-and-ski) içeren [Vektör haritası](../map/vector-maps.md), [Kontur çizgileri](../plugins/topography.md#contour-lines) ve [Gölgelendirme](../plugins/topography.md#hillshade-slope-and-altitude-layers) ile tamamlanabilir. Aşağıda iki örnek verilmiştir. Varsayılan vektör haritasındaki izler solda, *Kontur Çizgileri* ve *Gölgelendirme* raster haritasıyla birleştirilmiş vektör haritasındaki izler ise sağda gösterilmiştir. İkinci durumda, harita zorluğu, riski ve mesafeyi tahmin etmeye yardımcı olmak için daha fazla yükseklik verisi gösterir.  
+[Kış ve Kayak harita stili](../map/map-styles.md#winter-and-ski) içeren [Vektör haritası](../map/vector-maps.md), [Kontur çizgileri](../plugins/topography.md#contour-lines) ve [Gölgelendirme](../plugins/topography.md#hillshade-slope-and-altitude-layers) ile tamamlanabilir. Aşağıda iki örnek verilmiştir. Varsayılan vektör haritasındaki izler solda, *Kontur Çizgileri* ve *Gölgelendirme* raster haritasıyla birleştirilmiş vektör haritasındaki izler ise sağda gösterilmiştir. İkinci durumda, harita zorluğu, riski ve mesafeyi tahmin etmeye yardımcı olmak için daha fazla yükseklik verisi gösterir.  
 
 
 ### Kayak Haritası Stilini Devre Dışı Bırak {#disable-ski-map-style}
@@ -160,7 +160,7 @@ OsmAnd Kayak Haritası, haritada hangi nesnelerin gösterileceğini ve nesneleri
 | Renk | Açıklama |
 | --- | --- |
 | ![Başlangıç pisti](@site/static/img/plugins/ski-maps/1c_green_1.png) | Yeşil - Başlangıç pisti |
-| ![ Kolay tepeler](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Mavi - Kolay tepeler |
+| ![Kolay tepeler](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Mavi - Kolay tepeler |
 | ![Orta seviye yamaçlar](@site/static/img/plugins/ski-maps/3c_red_1.png) | Kırmızı - Orta seviye yamaçlar |
 | ![İleri seviye zorluk](@site/static/img/plugins/ski-maps/4c_black_1.png) | Gri - İleri seviye zorluktaki yamaçlar |
 | ![Uzman zorluk](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Sarı - Uzman zorluktaki yamaçlar |
@@ -168,7 +168,7 @@ OsmAnd Kayak Haritası, haritada hangi nesnelerin gösterileceğini ve nesneleri
 İzlerin zorluğu genellikle belirli renklerle belirtilir. Renkler farklı ülkelerde ve tatil köylerinde farklılık gösterebilir. Aşağıda bazı pratik yönergeler verilmiştir.
 
 :::tip rehberlik
-Her parkur zorluk türü için daha spesifik rehberlik için [OSM pist zorluk referansına](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) veya yamaçları, engelleri ve tehlikeleri de dikkate alan başka bir kaynağa bakın. Kış ve Kayak harita stili'nde, belirli haritalanmış tehlikeler (örneğin, hazard=avalanche olarak etiketlenmiş çığ riski olan alanlar) haritada tehlike POI'si olarak gösterilebilir ve pist zorluğu ile birlikte dikkate alınmalıdır.
+Her parkur zorluk türü için daha spesifik rehberlik için [OSM pist zorluk referansına](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) veya yamaçları, engelleri ve tehlikeleri de dikkate alan başka bir kaynağa bakın. Kış ve Kayak harita stili'nde, belirli haritalanmış tehlikeler (örneğin, hazard=avalanche olarak etiketlenmiş çığ riski olan alanlar) haritada tehlike POI'si olarak gösterilebilir ve pist zorluğu ile birlikte dikkate alınmalıdır. 
 :::
 
 
@@ -239,8 +239,8 @@ Haritada belirli bir pistin bakımlı olup olmadığını kontrol etmek için, [
 
 Kayak merkezi dışındaki hangi pistlerde gezinebileceğinizi öğrenmek için, [Haritayı Yapılandır](../map/configure-map-menu.md) menüsünden açılan [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md) listesindeki **Kayak yamaçları ve rotaları** seçeneğini etkinleştirmeniz gerekir.  
 
-Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/vector-maps.md#winter-and-ski) etkinleştirildiğinde, [Kayak yamaçları ve rotaları](../map/vector-maps.md#ski-slopes-and-routes), Kayak navigasyonunun navigasyon rotaları oluşturmak için kullanabileceği tüm pist türlerini gösterir. Bu tür kayak pisti rotaları, etkinleştirildiğinde, çoğunlukla kayak merkezi sınırları dışında mor renkle ana hatları çizilir.  
-Kış ve Kayak dışındaki bir harita stili için [Kayak yamaçları ve rotaları](../map/vector-maps.md#ski-slopes-and-routes) seçeneğini etkinleştirdiğinizde, yalnızca yamaçlar görüntülenir. Diğer kayakla ilgili özellikler bu stil katmanında gösterilmeyebilir.  
+Kayak profili, kayak navigasyonu ve [Kış ve Kayak harita stili](../map/map-styles.md#winter-and-ski) etkinleştirildiğinde, [Kayak yamaçları ve rotaları](../map/routes.md#ski-slopes-and-routes), Kayak navigasyonunun navigasyon rotaları oluşturmak için kullanabileceği tüm pist türlerini gösterir. Bu tür kayak pisti rotaları, etkinleştirildiğinde, çoğunlukla kayak merkezi sınırları dışında mor renkle ana hatları çizilir.  
+Kış ve Kayak dışındaki bir harita stili için [Kayak yamaçları ve rotaları](../map/routes.md#ski-slopes-and-routes) seçeneğini etkinleştirdiğinizde, yalnızca yamaçlar görüntülenir. Diğer kayakla ilgili özellikler bu stil katmanında gösterilmeyebilir.  
 _Kayak yamaçları ve rotaları_ [tıklanabilir](../map/routes.md#actions-with-routes).
 
 

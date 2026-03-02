@@ -1,5 +1,5 @@
 ---
-source-hash: 26d659737f32eb63c205d2c386c743a91ac8482f5798111a24e2d8417c29eae1
+source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
 sidebar_position: 1
 title: Android Satın Almaları
 ---
@@ -79,9 +79,9 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürününün fiyatları hakkında b
 
 
 <!--
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -126,8 +126,9 @@ Aşağıdaki tablo, OsmAnd'ın hem ücretsiz hem de ücretli paketlerinde buluna
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Harici sensör desteği](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografya verileri](../plugins/topography.md#overview)<br/>(Eşyükselti eğrileri ve Arazi) | **-** | ✔ | ✔ |
-| [Koordinat Izgara — Renk Özelleştirme](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D iz görselleştirme](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [Koordinat Izgara — Renk Özelleştirme](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
+| [3D Binalar — Renk Özelleştirme](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
+| [3D iz görselleştirme](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Deniz derinlikleri](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popüler Yerler (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Çevrimdışı Wikivoyage - Seyahat rehberleri](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
@@ -140,7 +141,7 @@ Aşağıdaki tablo, OsmAnd'ın hem ücretsiz hem de ücretli paketlerinde buluna
 | [Araç Metrikleri Widget'ları](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 ücretsiz widget**</summary><ul><li>*Araç hızı*</li><li>*Motor devri*</li></ul></details> | <details><summary>**2 ücretsiz widget**</summary><ul><li>*Araç hızı*</li><li>*Motor devri*</li></ul></details> | ✔ |
 | [Harita işaretleyicileri aracı](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Çevrimiçi harita kaynakları](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [SQLitedb Haritası](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [SQLitedb Haritası](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favori noktalar](../map/point-layers-on-map.md)<br/>yer imleri ve ara noktalar | ✔ | ✔ | ✔ |
 | [Ses/resim/video noktaları](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Çevrimiçi GPS Takipçisi](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -164,7 +165,7 @@ Pro Özellikleri [OsmAnd Pro aboneliği](#prices) için mevcuttur.
 |  Pro Özelliği  | Açıklama   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Verilerinizi yedekleyin ve geri yükleyin, verileri [OsmAnd web portalı](https://www.osmand.net/map) ile senkronize edin. |
-| [3D Rölyef](../plugins/topography.md#3D-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modelini görmenizi ve gözlemlemenizi sağlar. |
+| [3D Rölyef](../plugins/topography.md#3d-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modelini görmenizi ve gözlemlemenizi sağlar. |
 | [Canlı güncellemeler](../personal/maps-resources.md#live-updates) | OsmAnd haritaları [OpenStreetMap](https://www.openstreetmap.org/) iyileştirmesinden 15 dakika sonra güncellenir. |
 | [Hava Durumu Eklentisi](../plugins/weather.md) | Haritada 7 gün öncesine kadar 24 saatlik saatlik tahmin. |
 | [Araç Metrikleri Eklentisi (OBD-II)](../plugins/vehicle-metrics.md) | OsmAnd uygulamasında ayrıntılı araç verilerini görüntülemek ve bilgileri iz kayıtlarında saklamak için bir OBD-II tarayıcı bağlamanıza olanak tanır. Araç hızı ve Motor devri bilgisi OsmAnd ücretsiz için mevcuttur.  |
@@ -189,7 +190,7 @@ veya
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → OsmAnd Pro ile Devam Et*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Maps+ Satın Alma {#maps-purchase}
 
@@ -197,7 +198,7 @@ veya
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Maps+ özellik listesine dokunun → Maps+ ile Devam Et*
 
-![Maps+ Plan](@site/static/img/purchases/maps.png)
+![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Eski Abonelikler (4.0 öncesi) {#legacy-subscriptions-prior-40}

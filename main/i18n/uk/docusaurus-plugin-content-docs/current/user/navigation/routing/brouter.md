@@ -1,8 +1,9 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title:  BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -174,7 +174,7 @@ Brouter[fastbike] буде використано профіль "fastbike" фа
 
 ### Інші налаштування маршрутизації {#other-routing-settings}
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Навігація → Налаштування*, [зображення](../routing/online-routing.md#online-routing-setting)). Якщо ця опція увімкнена, OsmAnd додає два сегменти до розрахованого треку Brouter: один від *[Моє місцезнаходження](../../map/interact-with-map.md#my-location-and-zoom)* до початкової точки треку, а інший — від кінця треку до кінцевої точки вашого маршруту. Ця опція активна, якщо відстань до або від треку перевищує 60 метрів.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Навігація → Налаштування*, [зображення](../routing/online-routing.md#online-routing-setting)). Якщо ця опція увімкнена, OsmAnd додає два сегменти до розрахованого треку Brouter: один від *[Моє місцезнаходження](../../map/interact-with-map.md#my-position-and-zoom)* до початкової точки треку, а інший — від кінця треку до кінцевої точки вашого маршруту. Ця опція активна, якщо відстань до або від треку перевищує 60 метрів.
 
 - У розділі [*Перерахунок маршруту*](../../navigation/guidance/navigation-settings.md#recalculate-route) *Параметрів маршруту* ви можете увімкнути та налаштувати опції перерахунку маршруту.
 

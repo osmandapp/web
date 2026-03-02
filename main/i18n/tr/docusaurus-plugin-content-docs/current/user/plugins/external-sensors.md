@@ -1,6 +1,6 @@
 ---
-source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
-sidebar_position: 5
+source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+sidebar_position: 6
 title: Harici Sensörler
 ---
 
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-:::info Ücretli özellik
+:::tip Satın Alma
 Harici Sensörler eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).  
 :::
 
@@ -260,7 +260,7 @@ Desteklenen widget türleri:
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → Widget ekle → Harici sensör → Bir widget seçin → Ayarlar*
 
-![Harici sensörler widget'ları Ayarları Android](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
+![Harici sensörler widget'ları Ayarları iOS](@site/static/img/plugins/sensors/external-sensors-widget-settings-ios.png)
 
 </TabItem>
 

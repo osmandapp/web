@@ -1,8 +1,9 @@
 ---
-source-hash: a6e0323cbd4db8c2fd02e4930fceccaef76a54dd4ddb8b27261785baf14b6d7c
-sidebar_position: 7
+source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+sidebar_position: 8
 title:  Точки на карті
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Огляд {#overview}
@@ -69,7 +69,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-За замовчуванням улюблені місця та цікаві місця (POI) відображаються без назв, щоб не захаращувати карту текстом. Ви можете увімкнути назви в меню "Налаштувати карту".
+За замовчуванням улюблені місця та цікаві місця (POI) відображаються без назв, щоб не захаращувати карту текстом. Ви можете увімкнути назви в меню "Налаштувати карту".  
 
 
 ## Цікаві місця (POI) {#points-of-interest-pois}
@@ -98,7 +98,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Найбільш помітні POI відображаються на карті автоматично. Однак ви можете вибрати певний тип POI (наприклад, *Ресторани*), і всі вони будуть виділені на карті **помаранчевим колом** (починаючи з 9-го рівня масштабування).  
 
-Детальну інформацію про цікаве місце можна знайти в [Контекстному меню](../map/map-context-menu.md), яке з'являється, коли ви [торкаєтесь](../map/map-context-menu.md#select-an-object-single-tap) точки.
+Детальну інформацію про цікаве місце можна знайти в [Контекстному меню](../map/map-context-menu.md), яке з'являється, коли ви [торкаєтесь](../map/map-context-menu.md#select-an-object-single-tap) точки.  
 
 
 ### Типи POI {#poi-types}
@@ -132,7 +132,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-Кожному типу POI в OsmAnd присвоєно певний значок і колір. [Рівень масштабування](../map/vector-maps.md#details) та дизайн POI можуть відрізнятися в деяких [стилях карти](../map/vector-maps.md#default-map-styles).  
+Кожному типу POI в OsmAnd присвоєно певний значок і колір. [Рівень масштабування](../map/vector-maps.md#details) та дизайн POI можуть відрізнятися в деяких [стилях карти](../map/map-styles.md).  
 
 [Докладніше](../map/vector-maps.md#hide).
 

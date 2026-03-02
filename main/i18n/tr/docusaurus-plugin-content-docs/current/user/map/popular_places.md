@@ -1,5 +1,5 @@
 ---
-source-hash: 4ef49b31c6e39a6e616ea4ca53be88b94ec417f2fe83e471bd344baaf9664dfe
+source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
 sidebar_position: 8
 title: Popular Places
 ---
@@ -19,6 +19,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 ## Genel Bakış {#overview}
+
+:::tip Satın Alma
+Popüler Yerler, [ücretli bir özelliktir](../purchases/index.md).  
+:::
 
 OsmAnd'daki **Popüler Yerler** özelliği, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) kaynaklarındaki açık yapılandırılmış verileri kullanarak önemli yer işaretlerini ve çekici noktaları vurgular. Çok dilli açıklamalar ve fotoğraflarla kullanıcıların iyi bilinen destinasyonları keşfetmelerine yardımcı olur.
 
@@ -232,7 +236,7 @@ Her fotoğraf üzerinde aşağıdaki eylemleri de gerçekleştirebilirsiniz:
   Görüntü hakkında meta verileri gösteren ayrıntılı bir görünüm açın: *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans*, *Kaynak* ve *Doğrudan bağlantı*
 
 - **Tarayıcıda aç**  
-  Görüntünün kaynak sayfasını (genellikle [Wikimedia Commons](https://commons.wikimedia.org/) üzerinde) varsayılan tarayıcınızda başlatın. Bu, tam görüntüyü, lisans bilgilerini ve ilgili içeriği görüntülemenizi sağlar.
+  Görüntünün kaynak sayfasını (genellikle [Wikimedia Commons](https://commons.wikimedia.org/)) varsayılan tarayıcınızda başlatın. Bu, tam görüntüyü, lisans bilgilerini ve ilgili içeriği görüntülemenizi sağlar.
 
 - **İndir**  
   Görüntüyü cihazınızın depolama alanına kaydedin. İndirilen görüntü, cihazınızın varsayılan İndirilenler klasöründe bulunabilir ve çevrimdışı erişilebilir.

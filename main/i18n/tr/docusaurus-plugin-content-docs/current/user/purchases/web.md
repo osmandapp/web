@@ -1,5 +1,5 @@
 ---
-source-hash: 3970a0828bc6b80d9b68504c9d78e40d1226e1cf16d6f1fbc2fdcc5d6af480ec
+source-hash: 10e2341332ad6f362f02e8ca20670f75459fd950a7fe11cc51ec340380692495
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
@@ -39,10 +39,9 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 
 <!--
 
+:::danger February Sale
 
-:::danger Christmas sale
-
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -60,6 +59,7 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
+
 -->
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
@@ -68,6 +68,8 @@ Starting from the third year, the full price will apply.
 | **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |**Tek Seferlik Satın Alma** (15 Yıl Pro / Maps+ Ömür Boyu) |
 | **Fiyat (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |<s>€450</s> €299.00  |
 | **Fiyat (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |<s>$450</s> $299.00   |
+
+
 
 
 

@@ -1,6 +1,6 @@
 ---
-source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
-sidebar_position: 12
+source-hash: 91b548413957274ccf7ec40f7cd8e5166f5fd38e7fd27f83e8c250f277fd9820
+sidebar_position: 13
 title: Park Konumu
 ---
 
@@ -24,21 +24,19 @@ Bu eklenti ücretsizdir ve indirilen OsmAnd haritalarıyla çevrimdışı çalı
 - Bitiş zamanı, cihazınızın takviminde bir hatırlatıcıyı tetikleyebilir.
 - Park detayları daha sonra görüntülenebilir veya navigasyon için kullanılabilir.
 
-Park yerleri **Favori noktalar** olarak kaydedilir. Park işaretleyicisinin haritada görünür olduğundan emin olmak için [Favoriler](../personal/favorites.md) etkinleştirilmelidir.
-
 İşaretleyici geçicidir ve artık ihtiyaç duyulmadığında kolayca kaldırılabilir.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Park widget Android](@site/static/img/plugins/parking/parking_widget_android.png)
+![Android Park widget'ı](@site/static/img/plugins/parking/parking_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Park widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
+![iOS Park widget'ı](@site/static/img/plugins/parking/parking_widget_ios.png)
 
 </TabItem>
 
@@ -99,7 +97,7 @@ Başlangıç zamanı her zaman otomatik olarak ayarlanır. Bitiş zamanını de�
 
 <TabItem value="android" label="Android">
 
-![Park widget Android](@site/static/img/plugins/parking/parking_widget_android.png)
+![Android Park widget'ı](@site/static/img/plugins/parking/parking_widget_android.png)
 
 ![Android'de kalan süre](@site/static/img/plugins/parking/and_parking_info_left.png)
 
@@ -107,7 +105,7 @@ Başlangıç zamanı her zaman otomatik olarak ayarlanır. Bitiş zamanını de�
 
 <TabItem value="ios" label="iOS">
 
-![Park widget iOS](@site/static/img/plugins/parking/parking_widget_ios.png)
+![iOS Park widget'ı](@site/static/img/plugins/parking/parking_widget_ios.png)
 
 ![iOS'ta park bilgileri](@site/static/img/plugins/parking/ios_parking_info.png)
 

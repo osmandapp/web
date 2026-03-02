@@ -1,8 +1,9 @@
 ---
-source-hash: 03882f509a8ca4795f4ea6dfab66cd17c33b043531b8429ccab85994d6199aa2
+source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
 sidebar_position: 3
 title:  Küresel Ayarlar
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 
@@ -59,7 +59,7 @@ Bu bölüm, uygulama yüklendiğinde bir [profil](#default-profile) seçme, [har
 
 <TabItem value="ios" label="iOS">
 
-![Genel Ayarlar Varsayılan profil Android](@site/static/img/personal/profiles/default_profile_ios.png)
+![Genel Ayarlar Varsayılan profil iOS](@site/static/img/personal/profiles/default_profile_ios.png)
 
 </TabItem>
 
@@ -73,13 +73,13 @@ OsmAnd, yeni kullanıcılar için ilk profil olarak varsayılan profil olan *Har
 
 ### CarPlay Profili {#carplay-profile}
 
-:::caution YALNIZCA iOS
+:::caution iOS YALNIZCA
 Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
 :::
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
 
-![Genel Ayarlar Varsayılan profil Android](@site/static/img/personal/profiles/CarPlay_ios.png)  
+![Genel Ayarlar Varsayılan profil iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
 [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md), aracınızın [CarPlay yazılımına](https://support.apple.com/en-gb/HT205634) bağlandığında kullanılır ve telefonunuzdaki verileri görüntülemek için ses ve video sistemlerini kullanarak OsmAnd uygulamasının optimize edilmiş sürümünden en iyi şekilde yararlanmanıza yardımcı olur.
 
@@ -120,7 +120,7 @@ OsmAnd dosyaları [*Dosyalar*](https://apps.apple.com/us/app/files/id1232058109)
 
 Şuraya git: *Dosyalar → Telefonumda → OsmAnd Haritaları*
 
-<!-- ![Dosyalar uygulaması iOS](@site/static/img/personal/storage/files_app_ios.png) ![Dosyalar uygulaması iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
+<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Genel Ayarlar depolama iOS](@site/static/img/personal/profiles/files-1.png) ![Genel Ayarlar depolama iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -147,10 +147,11 @@ OsmAnd dosyaları [*Dosyalar*](https://apps.apple.com/us/app/files/id1232058109)
 | 3B mod | Haritayı 2B olarak görüntülemek mümkündür ve [3B görünüm](../widgets/map-buttons.md#3d-mode) elde etmek için görüntüleme açısını değiştirebilirsiniz. | Haritayı 2B ve [3B](../widgets/map-buttons.md#3d-mode) olarak görüntüleyebilirsiniz. |
 | Harita gösterimi | Tüm harita bir dizi döşeme olarak oluşturulur ve işaretleyiciler, çizgiler ve metin zaten bu döşemelerin içindedir. | İlk olarak, tüm döşeme paketi oluşturulur ve ardından mevcut semboller haritaya [katman katman](../../technical/algorithms/map-rendering-layers.md) uygulanır. |
 | Şeffaf semboller katmanı / alt katmanı | Tüm ayarları destekler. | Vektör metninin üzerinde bir raster katmanı desteklemez. |
-| [3B Arazi](../map/raster-maps.md#3d-relief) | Desteklenmiyor. | Bu özellik, normal bir 2B haritaya yükseklik bilgisi ekleyerek harita üzerindeki araziyi görselleştirir, bu da 3B ve derinlik efekti yaratır. |
+| [3B Arazi](../plugins/topography.md#3d-relief) | Desteklenmiyor. | Bu özellik, normal bir 2B haritaya yükseklik bilgisi ekleyerek harita üzerindeki araziyi görselleştirir, bu da 3B ve derinlik efekti yaratır. |
 | [3B İzler](../map/tracks/appearance.md) | Desteklenmiyor. | Bu özellik, izleri deniz seviyesinden yüksekliğe göre görüntülemenizi sağlar. |
 | [Çevrimiçi harita](../plugins/online-map.md) | Harita kaynağı herhangi bir çevrimiçi döşeme haritası ise Kontur çizgilerinin görüntülenmesini desteklemez. | Harita kaynağı çevrimiçi bir harita olduğunda, 3B haritalar da kullanılır ve harita üzerinde Kontur çizgilerinin görüntülenmesi desteklenir. |
-| [Hava Durumu eklentisi](../plugins/weather.md) | Bu eklentiyi kullanamazsınız. | Eklenti ile kullanımı kolaydır. |  
+| [Hava Durumu eklentisi](../plugins/weather.md) | Bu eklentiyi kullanamazsınız. | Eklenti ile kullanımı kolaydır. |
+| [Küresel Görünüm](../map/interact-with-map.md#globe-view) | Desteklenmiyor. | Haritayı düz bir projeksiyon yerine küresel Dünya (küre) olarak görüntülemenize olanak tanır. |  
 
 Haritanın 3B görünümü için görüntü döşeme döşeme yüklenir, ardından tüm semboller yüklenir. Haritanın oluşturma hızı, üzerindeki 2B ve 3B grafik nesnelerinin sayısına ve doğrudan donanımınızın performansına bağlıdır. Bu nedenle, Sürüm 2 (OpenGL) düşük performanslı cihazlarda kullanılamaz.
 
@@ -212,7 +213,7 @@ Her OsmAnd uygulama yüklemesi için bir **UUID** (*Benzersiz Kullanıcı Tanım
 - Sunucu kaynaklarının rasyonel kullanımını kontrol etmek, trafik kullanımını tahmin etmek ve harita indirmeleri hakkında genel aylık raporlar sağlamak için OsmAnd sunucularından çevrimdışı haritaları indirmek için rastgele bir UUID kullanılır.
 - UUID her 3 ayda bir değişir.  
 - OsmAnd sürüm 4.3'ten itibaren, OsmAnd uygulamasını kullanırken kullanıcı verilerinin toplanmasını devre dışı bırakabilirsiniz. O zaman UUID herhangi bir indirme isteğiyle gönderilmeyecektir.  
-- Daha fazla bilgiyi [Kullanım Koşulları (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier) bölümünde okuyabilirsiniz.
+- Daha fazla bilgiyi [Kullanım Koşulları (ToS)](../../legal/terms-of-use.md#6-unique-user-identifier) bölümünde okuyabilirsiniz.
 
 
 ### Geçmiş {#history}
@@ -231,7 +232,7 @@ Her OsmAnd uygulama yüklemesi için bir **UUID** (*Benzersiz Kullanıcı Tanım
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![Genel Ayarlar Geçmiş IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![Genel Ayarlar Geçmiş IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
+![Genel Ayarlar Geçmiş iOS](@site/static/img/personal/profiles/history_settings_ios.png) ![Genel Ayarlar Geçmiş iOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
 
 </TabItem>
 
@@ -256,7 +257,7 @@ Uygulama, daha önce girilen verilerin (geçmiş) geçmişini aşağıdaki kateg
 
 <TabItem value="ios" label="iOS">  
 
-![Genel Ayarlar Geçmiş IOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![Genel Ayarlar Geçmiş IOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
+![Genel Ayarlar Geçmiş iOS](@site/static/img/personal/profiles/history_settings_ios_2.png) ![Genel Ayarlar Geçmiş iOS](@site/static/img/personal/profiles/history_settings_ios_3.png)
 
 </TabItem>
 
@@ -279,7 +280,7 @@ Uygulama, daha önce girilen verilerin (geçmiş) geçmişini aşağıdaki kateg
 
 ## Diğer {#other}
 
-OsmAnd ayarlarının bu bölümünde, aldığınız bildirimleri, konum hizmetini ve uygulama ayarlarınızın nasıl kaydedileceğini yapılandırabilirsiniz.
+OsmAnd ayarlarının bu bölümünde, aldığınız bildirimleri, konum Hizmetini ve uygulama ayarlarınızın nasıl kaydedileceğini yapılandırabilirsiniz.
 
 ### Diyaloglar ve bildirimler {#dialogs-and-notifications}
 
@@ -323,7 +324,7 @@ OsmAnd, konumunuzu belirlemek için size hizmet seçenekleri sunar. Bu bölüm i
 
 - iOS sistemi, konumu belirlemek için *iOS API*'sini kullanır.  
 - OsmAnd Konum için tüm ayarlar iOS cihaz ayarlarında bulunabilir: *Ayarlar → OsmAnd haritaları → Konum*  
-- Konum hizmetlerinin gizliliği: *Ayarlar → Gizlilik → Konum Hizmetleri*
+- Konum Hizmetlerinin gizliliği: *Ayarlar → Gizlilik → Konum Hizmetleri*
 
 
 ### Otomatik Yedekleme {#auto-backup}
@@ -365,7 +366,7 @@ OsmAnd sizi [hız kameraları hakkında uyarabilir](../navigation/guidance/navig
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  
 
-![Genel Ayarlar Kameralar Android](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Genel Ayarlar Kameralar Android](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
+![Genel Ayarlar Kameralar iOS](@site/static/img/personal/profiles/uninstall_speed_camera_1_ios.png)   ![Genel Ayarlar Kameralar iOS](@site/static/img/personal/profiles/uninstall_speed_camera_2_ios.png)
 
 </TabItem>
 

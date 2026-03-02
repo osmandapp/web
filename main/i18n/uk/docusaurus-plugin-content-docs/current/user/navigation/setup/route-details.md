@@ -1,8 +1,9 @@
 ---
-source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
+source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
 sidebar_position: 4
 title:  Деталі маршруту
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Огляд {#overview}
 
-OsmAnd дозволяє знайти найкращий маршрут та дослідити його деталі. Застосунок надає детальну інформацію про маршрут, таку як відстань, [час у дорозі](#distance--time--co2), [тип покриття](#road-attributes), [перепади висот](#elevation-info), [дані про викиди CO2](#distance--time--co2) та [інформацію про повороти](#turn-by-turn-information). Ви також можете [аналізувати](#analyze-on-map) маршрут на мапі, дізнаватися інформацію про відрізки треку, [роздрукувати](#print) план маршруту, [зберегти](#share--export-actions) маршрут та поділитися ним з іншими. Завдяки цій функціональності ви завжди будете знати деталі маршруту і зможете планувати свою поїздку ефективніше.  
+OsmAnd дозволяє знайти найкращий маршрут та дослідити його деталі. Застосунок надає детальну інформацію про маршрут, таку як відстань, [час у дорозі](#distance--time--co2), [тип поверхні](#road-attributes), [перепади висот](#elevation-info), [дані про вуглецевий слід CO2](#distance--time--co2) та [інформацію про повороти](#turn-by-turn-information). Ви також можете [аналізувати](#analyze-on-map) маршрут на мапі, дізнаватися інформацію про відрізки треку, [роздрукувати](#print) план маршруту, [зберегти](#share--export-actions) маршрут та поділитися ним з іншими. Завдяки цій функціональності ви завжди будете знати деталі маршруту і зможете планувати свою поїздку ефективніше.  
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -74,7 +74,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 - ***Орієнтовний час прибуття*** розраховується як час від поточного моменту за місцевим часом пункту відправлення з використанням *Орієнтовного часу в дорозі*.
 
-- ***Дані про викиди CO2*** приблизно оцінюють, скільки CO2 буде вироблено під час руху за маршрутом. Вам потрібно налаштувати [Тип пального двигуна](../guidance/vehicle-parameters.md#fuel-used-by-motor) в Параметрах транспортного засобу, щоб отримати більш точне наближення.
+- ***Дані про вуглецевий слід CO2*** приблизно оцінюють, скільки CO2 буде вироблено під час руху за маршрутом. Вам потрібно налаштувати [Тип пального двигуна](../guidance/vehicle-parameters.md#fuel-used-by-motor) в Параметрах транспортного засобу, щоб отримати більш точне наближення.
 
 
 ## Інформація про висоту {#elevation-info}
@@ -107,8 +107,8 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
 
 <details>
-<summary>Дані DEM (DSM)</summary>
- - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Оригінальні дані, використані для цього продукту, були надані JAXA AW3D.<br/>
+<summary>DEM (DSM) data</summary>
+ - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
  - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
  - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
  - <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
@@ -209,7 +209,7 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
    Наприклад, головні [автомагістралі](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) зазвичай мають високе обмеження швидкості і можуть бути розділені на смуги, а [місцеві дороги](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) можуть мати низьке обмеження швидкості та одну смугу в кожному напрямку.  
 
-- [**Покриття**](https://wiki.openstreetmap.org/wiki/Key:surface). Дорожнє покриття — це верхній шар дорожнього одягу, який контактує з колесами транспортних засобів. Вони можуть бути різних типів залежно від їх властивостей та функціонального призначення.  
+- [**Поверхня**](https://wiki.openstreetmap.org/wiki/Key:surface). Дорожні поверхні — це верхній шар дорожнього покриття, який контактує з колесами транспортних засобів. Вони можуть бути різних типів залежно від їх властивостей та функціонального призначення.  
 
    Наприклад, [асфальтове](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) покриття забезпечує хороше зчеплення та шумоізоляцію, а [бетонне](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) покриття є більш довговічним і має більшу вантажопідйомність. Для створення дорожнього покриття також можуть використовуватися інші матеріали, такі як гравій, щебінь, дерев'яні дошки та інші.  
 
@@ -217,13 +217,13 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 
    Наприклад, якщо крутизна дороги становить 10%, це означає, що на кожні 100 метрів горизонтальної відстані вздовж дороги ви піднімаєтеся або опускаєтеся на 10 метрів. Крутизна дороги може впливати на швидкість вашого транспортного засобу, гальмування, споживання пального та безпеку водіння, особливо на слизьких дорогах взимку.  
 
-- [**Твердість покриття**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Дорожнє покриття може відновлюватися після деформації або навантаження. Чим вища твердість покриття, тим менша ймовірність пошкодження транспортного засобу і тим комфортнішою буде дорога. Твердість покриття також може впливати на швидкість транспортного засобу та споживання пального.  
+- [**Твердість поверхні**](https://wiki.openstreetmap.org/wiki/Key:tracktype). Дорожня поверхня може відновлюватися після деформації або навантаження. Чим вища твердість поверхні, тим менша ймовірність пошкодження транспортного засобу і тим комфортнішою буде дорога. Твердість поверхні також може впливати на швидкість транспортного засобу та споживання пального.  
 
 - [**Нахил**](https://wiki.openstreetmap.org/wiki/Key:incline).  Вказує, який відсоток схилів є на вашому маршруті.
 
 - [**Гладкість**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Застосовується для всіх типів шляхів та ділянок, таких як автомагістралі, парковки, пляжі та стежки, і вказує на придатність маршруту для використання. Це дає вам інформацію про те, що ви можете їхати без значного ризику пошкодження, наприклад, днища автомобіля, або травми, наприклад, падіння.  
 
-- [**Зимові та льодові дороги**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Показує колірну схему маршруту відповідно до класифікації [зимових доріг](../../map/vector-maps.md#winter-and-ski).  
+- [**Зимові та крижані дороги**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Показує колірну схему маршруту відповідно до класифікації [зимових доріг](../../map/map-styles.md#winter-and-ski).  
 
 - [**Складність кінних стежок**](https://wiki.openstreetmap.org/wiki/Riding). Цей атрибут дороги вказує на складність маршруту під час верхової їзди. Підходить для [маршрутизації для верхової їзди](../../navigation/routing/horse-routing.md).  
 
@@ -275,13 +275,13 @@ OsmAnd дозволяє знайти найкращий маршрут та до
 - *Відстань до маневру*.
 - Опис того, *що робити*, який включає *назву вулиці або стежки*.
 - *Загальна відстань* та *час маршруту*.
-- *Розташування [смуг](../../widgets/nav-widgets.md#lanes)* для поточної дороги.
+- *[Розташування смуг](../../widgets/nav-widgets.md#lanes)* для поточної дороги.
 - *[Індикатор сторони дороги*](#roadside-indicator) (*лише для iOS*).
 
 
 ### Індикатор сторони дороги {#roadside-indicator}
 
-:::caution Лише для iOS
+:::caution iOS only
 Цей тип інструкцій наразі *недоступний для Android* версії застосунку OsmAnd.
 :::
 

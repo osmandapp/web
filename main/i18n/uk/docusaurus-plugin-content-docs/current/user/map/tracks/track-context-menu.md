@@ -1,5 +1,5 @@
 ---
-source-hash: 931b74170b3fe5939a6bc091de62c4b469115ac27403509377131c6613ad75cf
+source-hash: a4c9f5216b1d13e4973b71aa2653debcce7c6c2647a954e987b97d32e506bf26
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
@@ -129,7 +129,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 <br/>
 
 - **<Translate android="true" ids="join_segments"/>** (*Лише для Android*) – Об'єднує сегменти треку для заповнення прогалин.
-- **<Translate android="true" ids="analyze_on_map"/>**. Відкриває інструмент [Аналіз на мапі](../tracks/index.md#analyze-track-on-map) для перевірки висоти, швидкості та відстані треку.
+- **<Translate android="true" ids="analyze_on_map"/>**. Відкриває інструмент [Аналіз на мапі](../tracks/index.md#analyze-track-on-map) для перевірки висоти, швидкості, відстані та будь-яких додаткових даних, що містяться в треку (наприклад, даних зовнішніх датчиків або метрик транспортного засобу).
 - **<Translate android="true" ids="analyze_by_intervals"/>** (*Лише для Android*) - Аналізує трек за [інтервалами](#analyze-by-intervals) часу або відстані.
 
 <br/>
@@ -364,11 +364,11 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Розрахунок відсутньої висоти {#calculate-missing-elevation}
 
-:::note Підписка OsmAnd Pro
-Функція [розрахунку висоти офлайн](../../plan-route/create-route.md#get-elevation-data) доступна лише для [**передплатників OsmAnd Pro**](../../purchases/android.md#pro-features) <ProFeature />.
-:::
-
 <InfoAndroidOnly />
+
+:::info Функція Pro
+[Розрахунок висоти офлайн](../../plan-route/create-route.md#get-elevation-data) є платною функцією [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
 
 [Ця функція](../../plan-route/create-route.md#get-elevation-data) дозволяє розрахувати профіль висот для GPX-треку в автономному режимі для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти на основі [даних Карти рельєфу](../../plugins/topography.md#download-maps). *Карти рельєфу (3D) повинні бути попередньо завантажені*.
 

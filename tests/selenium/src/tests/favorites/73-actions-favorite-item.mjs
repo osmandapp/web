@@ -38,6 +38,7 @@ export default async function test() {
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
     // edit favorite item
+    await waitBy(By.id(`se-actions-${wptName}`), { idle: true });
     await clickBy(By.id(`se-actions-${wptName}`));
     await waitBy(By.id('se-fav-item-actions'));
     await clickBy(By.id('se-edit-fav-item'));
@@ -57,6 +58,7 @@ export default async function test() {
     await matchTextBy(By.id('se-fav-item-address'), suffix);
     await waitBy(By.id(`se-${wptName}${suffix}`));
     // delete favorite
+    await waitBy(By.id(`se-actions-${wptName}${suffix}`), { idle: true });
     await clickBy(By.id(`se-actions-${wptName}${suffix}`));
     await waitBy(By.id('se-fav-item-actions'));
     await clickBy(By.id('se-delete-fav-item'));
@@ -65,6 +67,7 @@ export default async function test() {
     await waitByRemoved(By.id(`se-actions-${wptName}${suffix}`));
     await waitByRemoved(By.id(`se-fav-item-name-${wptName}${suffix}`));
 
+    await waitBy(By.id(`se-actions-${wptName2}`), { idle: true });
     await clickBy(By.id(`se-actions-${wptName2}`));
     await waitBy(By.id('se-fav-item-actions'));
     await clickBy(By.id('se-delete-fav-item'));

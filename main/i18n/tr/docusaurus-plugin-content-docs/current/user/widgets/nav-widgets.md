@@ -1,5 +1,5 @@
 ---
-source-hash: d919292bddbc80c1a1efb89edfade660870a675d2742aed4707122301de32aa4
+source-hash: b7547944f0e042de25a10253095fdd234dabf62218cc8295f52c975d04572032
 sidebar_position: 4
 title: Navigasyon Widget'ları
 ---
@@ -70,10 +70,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::note
-  
-<ProFeature/>  Bu widget'ı yalnızca Pro özelliği olan <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro aboneleri</a> kullanabilir.
-
+:::info Pro özelliği
+Yükseklik Widget'ı, [**OsmAnd Pro**](../purchases/index.md) ücretli bir özelliktir <ProFeature />.
 :::
 
 Yükseklik widget'ı, navigasyon rotanızın yüksekliğini ve eğimini gösteren bir grafik ile bu grafik üzerindeki mevcut konumunuzu, mevcut irtifa ve eğimle birlikte gösterir. Grafik iki eksen üzerinde çizilir. X ekseni rotanızın mesafesidir. Y ekseni irtifadır, değeri rölyefe bağlıdır ve eğim yüzde olarak gösterilir.  
@@ -250,7 +248,7 @@ Widget, ilk ara noktaya *Varış zamanını* veya *Gitme süresini* gösterir. N
 | | |
 |:------------|:------------|
 | Etkinleştir | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapar. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
 
@@ -278,7 +276,7 @@ Widget, son varış noktasına *Varış zamanını* veya *Gitme süresini* göst
 | | |
 |:------------|:------------|
 | Etkinleştir |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Bir panel seçin → Widget ekle → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | Dokunarak | *Varış zamanı* ile *Gitme süresi* arasında ve tersi yönde geçiş yapar. |
 | Uzun dokunuş | [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |  
 
@@ -415,8 +413,8 @@ Uyarı türleri, **<Translate android="true" ids="driving_region"/>**'a bağlı 
 | Ad | Açıklama | Simge |
 | *<Translate android="true" ids="show_traffic_warnings"/>* | [Trafik sakinleştirme](https://en.wikipedia.org/wiki/Traffic_calming), sürücüler, yayalar ve bisikletliler için güvenliği artırmak amacıyla fiziksel tasarım ve diğer önlemleri kullanır. | ![Uyarı trafik sakinleştirme widget'ları](@site/static/img/widgets/warnings_traffic_calming.png)  ![Uyarı trafik sakinleştirme ABD widget'ları](@site/static/img/widgets/warnings_traffic_calming_us.png)|
 | *<Translate android="true" ids="show_pedestrian_warnings"/>* | [Yaya geçidi](https://en.wikipedia.org/wiki/Pedestrian_crossing) (öncelikli olarak İngiliz İngilizcesi), yayaların bir yolu, sokağı veya caddeyi geçmeleri için belirlenmiş bir yerdir. OsmAnd, kontrolsüz yaya geçidi uyarısını gösterir.  | ![Uyarı trafik sakinleştirme widget'ları](@site/static/img/widgets/warnings_pedestrian.png)  ![Uyarı trafik sakinleştirme ABD widget'ları](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Çoğu ülkede, [Yol hız limitleri](https://en.wikipedia.org/wiki/Speed_limit), yol araçlarının belirli bir yol kesiminde seyahat edebileceği yasal maksimum, orta veya minimum hızı belirler. OsmAnd'da, hızı aştığınızda uyarı gösterilir. Hız aşımı parametrelerini (0, 5, 10.. km/s) ayarlayabilirsiniz. ![Uyarı aşırı hız widget'ları](@site/static/img/widgets/ex_warning_speed.png)  | ![Uyarı hız limiti widget'ları](@site/static/img/widgets/warnings_limit.png) ![Uyarı hız limiti CA widget'ları](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Uyarı hız limiti ABD widget'ları](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | Tünel, bir dağın, nehrin veya yoğun bir kentsel alanın altından geçen bir yeraltı geçididir. OsmAnd'da, *Tüneller* uyarısı tünel uzunluğu hakkında bilgiye sahiptir. Bir tüneldeyseniz, tünelin sonuna olan mesafeyi gösterir.   ![Uyarı aşırı tünel widget'ları](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Uyarı tünel widget'ları](@site/static/img/widgets/warnings_tunnel.png)  ![Uyarı tünel ABD widget'ları](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Çoğu ülkede, [Yol hız limitleri](https://en.wikipedia.org/wiki/Speed_limit), yol araçlarının belirli bir yol kesiminde seyahat edebileceği yasal maksimum, orta veya minimum hızı belirler. OsmAnd'da, hızı aştığınızda uyarı gösterilir. Hız aşımı parametrelerini (0, 5, 10.. km/s) ayarlayabilirsiniz. ![Uyarı ex_speed widget'ları](@site/static/img/widgets/ex_warning_speed.png)  | ![Uyarı hız limiti widget'ları](@site/static/img/widgets/warnings_limit.png) ![Uyarı hız limiti CA widget'ları](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Uyarı hız limiti ABD widget'ları](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | Tünel, bir dağın, nehrin veya yoğun bir kentsel alanın altından geçen bir yeraltı geçididir. OsmAnd'da, *Tüneller* uyarısı tünel uzunluğu hakkında bilgiye sahiptir. Bir tüneldeyseniz, tünelin sonuna olan mesafeyi gösterir.   ![Uyarı ex_tünel widget'ları](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Uyarı tünel widget'ları](@site/static/img/widgets/warnings_tunnel.png)  ![Uyarı tünel ABD widget'ları](@site/static/img/widgets/warnings_tunnel_us.png) |
 | *<Translate android="true" ids="show_cameras"/>* | [Trafik denetleme kameraları](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) ve [hız kameraları](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera), hız aşımı, kırmızı ışık ihlali ve diğer yasa dışı davranışlar dahil olmak üzere trafik ihlallerini kaydeder. <br />**NOT:** Hız kamerası uyarıları bazı ülkelerde yasaktır veya yasa dışıdır. Hız kameralarını OsmAnd'dan tamamen [kaldırmak](../personal/global-settings.md#legal) için ana *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>* bölümüne gidin.  | ![Uyarı trafik sakinleştirme widget'ları](@site/static/img/widgets/warnings_speed_camera.png)   |
 | *<Translate android="true" ids="traffic_warning_stop"/>* | [Dur işareti](https://en.wikipedia.org/wiki/Stop_sign), sürücüleri tamamen durmaları ve işaretten geçmeden önce kavşağın araçlardan ve yayalardan güvenli bir şekilde boş olduğundan emin olmaları gerektiğini bildirmek için tasarlanmış bir trafik işaretidir.  | ![Uyarı dur widget'ları](@site/static/img/widgets/warnings_stop.png) |
 | *<Translate android="true" ids="show_railway_warnings"/>* |Bu uyarı, ileride bir [demiryolu geçidi](https://en.wikipedia.org/wiki/Crossbuck) olduğunu gösterir. | ![Uyarı demiryolları widget'ları](@site/static/img/widgets/warnings_railways.png) ![Uyarı demiryolları CA widget'ları](@site/static/img/widgets/warnings_railways_ca.png)  ![Uyarı demiryolları ABD widget'ları](@site/static/img/widgets/warnings_railways_us.png)  |

@@ -103,32 +103,40 @@ export default function FavoriteItem({ marker, group, currentLoc, share = false,
 
     const setHover = useCallback(
         (show) => {
-            ctx.setSelectedWptId({
-                id: favId,
-                show,
-                type: FAVORITE_FILE_TYPE,
-                obj: show ? marker.layer : undefined,
-                markerOptions: show
-                    ? {
-                          color: marker.layer.options?.color,
-                          background: marker.layer.options?.background,
-                          iconHtml: marker.layer.options?.icon?.options?.html,
-                      }
-                    : undefined,
-            });
+            if (show) {
+                if (ctx.openedPopper) return;
+                ctx.setSelectedWptId({
+                    id: favId,
+                    show: true,
+                    type: FAVORITE_FILE_TYPE,
+                    obj: marker.layer,
+                    markerOptions: {
+                        color: marker.layer.options?.color,
+                        background: marker.layer.options?.background,
+                        iconHtml: marker.layer.options?.icon?.options?.html,
+                    },
+                });
+            } else {
+                ctx.setSelectedWptId((prev) =>
+                    prev?.id === favId && prev?.type === FAVORITE_FILE_TYPE ? { ...prev, show: false } : prev
+                );
+            }
             if (menuItemRef.current) {
                 menuItemRef.current.classList.toggle(styles.itemHovered, show);
             }
         },
-        [favId, marker.layer]
+        [favId, marker.layer, ctx.openedPopper]
     );
 
     useEffect(() => {
-        const hovered = ctx.selectedWptId?.id === favId;
+        const hovered =
+            ctx.selectedWptId?.id === favId &&
+            ctx.selectedWptId?.type === FAVORITE_FILE_TYPE &&
+            ctx.selectedWptId?.show !== false;
         if (menuItemRef.current) {
             menuItemRef.current.classList.toggle(styles.itemHovered, hovered);
         }
-    }, [ctx.selectedWptId?.id]);
+    }, [ctx.selectedWptId?.id, ctx.selectedWptId?.show, ctx.selectedWptId?.type, favId]);
 
     const sharedFile = smartf?.type === SHARE_TYPE;
 

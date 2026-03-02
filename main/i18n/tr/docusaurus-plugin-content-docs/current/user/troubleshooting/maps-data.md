@@ -1,8 +1,9 @@
 ---
-source-hash: 9b16ea12c0c7101ef5114041d96220299980dab0bb8a9a0697c20ff869c09d8b
+source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
 sidebar_position: 4
 title: Haritalar ve Veriler
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -17,6 +18,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ### OsmAnd neden Google Haritalar'a erişim sunmuyor? {#why-does-osmand-not-offer-access-to-google-maps}
 
 OsmAnd, OpenStreetMap'i (OSM) desteklemek üzere tasarlanmıştır ve bu yolu mümkün olduğunca önceliklendirir. Ayrıca, OsmAnd'ın Google Haritalar verileriyle dağıtılmasına izin vermeyen lisans kısıtlamaları bulunmaktadır.
+
+### Google Haritalar bağlantıları neden OsmAnd'da açılmayabilir? {#why-google-maps-links-may-not-open-in-osmand}
+
+`https://maps.app.goo.gl/...` gibi Google Haritalar bağlantıları, SMS veya mesajlaşma uygulamalarından tek dokunuşla OsmAnd'da açılmayabilir. OsmAnd bu bağlantıları ayrıştırabilse bile, Android 12+ Doğrulanmış Uygulama Bağlantılarını zorunlu kılar: temel Google alan adları (örneğin `maps.app.goo.gl`, `goo.gl`, `googleusercontent.com`) Google sistem hizmetleri için ayrılmıştır, bu nedenle üçüncü taraf uygulamalar bunları otomatik olarak yakalayamaz. Sonuç olarak, bağlantı genellikle bir Google uygulaması/hizmetinde açılır.
+
+**Geçici Çözüm:** *mesaja uzun dokunun → Paylaş → OsmAnd'ı seçin*. Bu, bağlantıyı OsmAnd'a gönderir ve burada ayrıştırılıp bir konum olarak açılabilir.
 
 ### Android 11, 12'de haritalar yavaş yükleniyor (SD kart) {#maps-slowly-loading-on-android-11-12-sd-card}
 
@@ -36,10 +43,10 @@ Geliştirme ekibi, yeni Android depolama politikaları altında SD kart performa
 
 Yavaş harita yükleme sorununu, OsmAnd depolaması için SD kartın **İndirilenler** klasörünü *Menü → Ayarlar → OsmAnd ayarları → Veri depolama klasörü → Manuel olarak belirtilen* altında belirterek çözmeyi deneyebilirsiniz. Aşağıdaki yollar mümkündür:
 
-- ***/storage/XXXX-XXXX/Download/osmand***
+- ***/storage/XXXX-XXXX/Download/osmand***  
    Bu yol, birden fazla dosyaya erişirken hatalara neden olabilir. Örneğin, Dünya Genel Bakış haritasını indirebilirsiniz, ancak diğer bölgeler görünmeyebilir.
 
-- ***/storage/XXXX-XXXX/Download***
+- ***/storage/XXXX-XXXX/Download***  
    Bu yol, haritaları ve diğer verileri indirmek için tutarlı bir şekilde çalışmalıdır. Ancak, OsmAnd'ın bu klasöre diğer uygulamalar veya programlar (örneğin, SasPlanet) tarafından yazılan dosyaları tanımayacağını unutmayın. Daha fazla ayrıntı için [bu kılavuza](../../technical/map-creation/create-offline-maps-yourself.md) bakın.
 
 "XXXX-XXXX", SD kartınızın benzersiz kimlik numarasını temsil eder ve bazen *Harici depolama 2* seçenekleri altındaki klasör yolunda bulunabilir veya başka yöntemlerle tespit edilebilir. Bu çözüm hakkında daha fazla araştırma ve ayrıntı [burada](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744) mevcuttur.
@@ -66,7 +73,7 @@ OsmAnd'ın Android sürümünde, depolama konumu olarak *Çoklu Kullanıcı Depo
 
 Güncellemeler sırasında harita verilerinizi kaybetmemek için şu çözümleri göz önünde bulundurun:
 
-1. *Dosyalarınızı Yedekleyin*. OsmAnd'ı güncellemeden önce, *..Android/obb/net.osmand* içinde depolanan haritaların bir [yedeklemesini](../personal/import-export.export.md) yapın. Güncelledikten sonra, güncellenmiş OsmAnd uygulamasını başlatmadan önce dosyaları geri yükleyin.
+1. *Dosyalarınızı Yedekleyin*. OsmAnd'ı güncellemeden önce, *..Android/obb/net.osmand* içinde depolanan haritaların bir [yedeklemesini](../personal/import-export.md) yapın. Güncelledikten sonra, güncellenmiş OsmAnd uygulamasını başlatmadan önce dosyaları geri yükleyin.
 
 2. *Depolama Yolunu Değiştirin*. OsmAnd klasörünü tüm uygulamalar tarafından yazılabilir bir konuma taşıyın (örneğin, Wi-Fi FTP sunucusu, X-plore veya bir USB kablosu aracılığıyla bir PC'ye). Klasör yolunu şuradan değiştirin:
    - /storage/emulated/0/Android/**obb**/net.osmand

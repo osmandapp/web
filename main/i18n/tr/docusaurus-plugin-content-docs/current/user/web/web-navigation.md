@@ -1,5 +1,5 @@
 ---
-source-hash: 96a4912ce6364851ae471066bc97e0832ee597a9c099381ce1fe3101ec12de99
+source-hash: a9c1197c17b28116cbb632b0f5ff60955b164b060b1645a7d57f3853b8646653
 sidebar_position: 8
 sidebar_label:  Navigation
 title: Navigation on the Web
@@ -28,7 +28,9 @@ Boş durumda, Navigasyon size rota noktaları eklemenizi ister: *Başlangıç ve
 
 Rota noktaları Rota panelinden sağlanabilir. **Başlangıç noktasını ayarla** veya **Hedef noktasını ayarla** seçtiğinizde, alan *Mevcut konum* gibi öneriler ve geçmişten daha önce kullanılan noktalar gösterir. Kaydedilmiş önerileri *Geçmişi Temizle* kullanarak kaldırabilirsiniz.
 
-Navigasyon basit bir akışı takip eder: ilk nokta Başlangıç olur ve sonraki nokta Hedef olur. Her iki nokta da ayarlanır ayarlanmaz, rota hesaplanır ve haritada görüntülenir.
+Ayrıca, rota noktası alanlarında enlem, boylam formatını kullanarak koordinatları doğrudan girebilirsiniz (örneğin, 48.23737, 24.40830). Diğer koordinat formatları veya paylaşılan bağlantılar her zaman tanınmayabilir. Bir konum doğru ayrıştırılmıyorsa, onu lat,lon'a dönüştürmeyi deneyin veya yeri arama kullanarak bulun.
+
+Navigasyon basit bir akışı takip eder: ilk nokta Başlangıç olur ve sonraki nokta Hedef olur. Her iki nokta da ayarlandığında, rota hesaplanır ve haritada görüntülenir.
 
 ![Web Navigation](@site/static/img/web/navigation_start.png)
 
@@ -100,7 +102,7 @@ Rotayı doğrudan harita üzerinde sürükleyerek rota işaretçilerini farklı 
 - OsmAnd Web rotayı yeni konumdan geçecek şekilde yeniden hesaplar.
 - Taşınan işaretçi yeni bir ara noktaya dönüştürülür.
 - Yeni ara nokta Rota panelinde Hedef'in üzerine eklenmiş ek bir nokta olarak görünür ve rota özeti buna göre güncellenir.
-- Eklenen geçiş noktasını diğer [ara noktalar](#manage-route-points) gibi yönetebilirsiniz.
+- Eklenen ara noktayı diğer [ara noktalar](#manage-route-points) gibi yönetebilirsiniz.
 
 ![Web Navigation](@site/static/img/web/navigation_on_map.png)
 
@@ -116,13 +118,15 @@ Fark nedir:
 - Tam iz verisi, iz geometrisine ek olarak rota/navigasyon bilgilerini içerebilir (navigasyon talimatlarını korumak veya OsmAnd'da rotayı yeniden düzenlemek istiyorsanız faydalıdır).
 - Basitleştirilmiş iz, rota/navigasyon verilerini kaldırarak yalnızca iz şeklini bırakarak diğer uygulamalar için daha temiz bir GPX dışa aktarır. Basitleştirilmiş iz dışa aktarılırken işaret noktaları korunur.
 
-Rotayı bir iz olarak kaydetmek için *Buluta Kaydet / OsmAnd Cloud'a Yükle*'yi kullanın. Bu, bulut izlerine kaydetmeyi onaylayabileceğiniz, Adı düzenleyebileceğiniz, isteğe bağlı olarak bir Klasör seçebileceğiniz, ardından Kaydet veya İptal edebileceğiniz bir diyaloğu açar.
+Rotayı bir iz olarak kaydetmek için *Buluta Kaydet / OsmAnd Cloud'a Yükle*'yi kullanın. Bu, bulut izlerine kaydetmeyi onaylayabileceğiniz, Adı düzenleyebileceğiniz, isteğe bağlı olarak bir Klasör seçebileceğiniz, ardından Kaydet veya İptal edebileceğiniz bir diyaloğu açar. Oturum açmadıysanız, *Buluta Kaydet / OsmAnd Cloud'a Yükle* Fiyatlandırma sayfasını açar.
 
 ![Web Navigation](@site/static/img/web/download_options.png)
 
 ### Bir Rota Paylaşın {#share-a-route}
 
 Rotayı paylaşmak için URL'yi kopyalayın. Örnek: [https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+Paylaşılan bir bağlantıyı açtığınızda, rota haritada geri yüklenir. Gerekirse, Rota panelinde [yönlendirme profili](#routing-profile)'ni manuel olarak değiştirebilirsiniz.
 
 
 ## İlgili Makaleler {#related-articles}

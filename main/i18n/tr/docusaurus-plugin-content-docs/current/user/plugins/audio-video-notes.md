@@ -1,6 +1,6 @@
 ---
-source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
-sidebar_position: 3
+source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+sidebar_position: 4
 title:  Sesli / Görüntülü Notlar
 ---
 
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-Ses ve video kayıtlarınız, nerede bulunduğunuzun anıları gibi gelecekte faydalı olabilir. [Yerlerim](../personal/myplaces.md) menüsünde mevcutturlar ve Sesli/Görüntülü Notlar eklentisi etkinleştirildiğinde görünürler.
+Ses ve video kayıtlarınız gelecekte faydalı olabilir, örneğin nerede olduğunuzun anıları gibi. [Yerlerim](../personal/myplaces.md) menüsünde mevcutturlar ve Sesli/Görüntülü Notlar eklentisi etkinleştirildiğinde görünürler.
 
 Sesli/Görüntülü Notlar eklentisi, fotoğraf, video veya ses gibi çeşitli formatlarda kendi notlarınızı oluşturmanıza ve bunları coğrafi konumunuzla veya mevcut konumunuzla ilişkilendirmenize olanak tanıyarak OsmAnd'ın işlevselliğini genişletir. Kayıtları yalnızca eklenti açıkken, [Sesli/Görüntülü Notlar widget'ını](../widgets/info-widgets.md#audiovideo-notes-widget) ve/veya [harita bağlam menüsünü](../map/map-context-menu.md#-audiovideo-note) kullanarak yapabilirsiniz. Alınan veriler otomatik olarak [Yerlerim](../personal/myplaces.md) bölümüne kaydedilir ve buradan kolayca yönetilebilir ve paylaşılabilir.  
 

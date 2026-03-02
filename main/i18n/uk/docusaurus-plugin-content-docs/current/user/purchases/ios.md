@@ -1,5 +1,5 @@
 ---
-source-hash: 424850809988a2470e1c1b95cdd8f521819a6e479d26a8e0a03ac2cf13406945
+source-hash: eda3cdf007ead3252ec80bace9470a60323b43ebecde3cdc3f01add5783e8999
 sidebar_position: 2
 title:  Покупки в iOS
 ---
@@ -55,9 +55,9 @@ import Translate from '@site/src/components/Translate.js';
 
 <!--
 
-:::danger Christmas sale
+:::danger February Sale
 
-*Hurry up! This offer is only available until* **December 28 (23:00 CET)**.
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
 
 :::
 
@@ -69,6 +69,7 @@ import Translate from '@site/src/components/Translate.js';
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
 | **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
 
 -->
 
@@ -98,7 +99,7 @@ import Translate from '@site/src/components/Translate.js';
 | [3D-рельєф](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Топографічні дані](../plugins/topography.md#overview)<br/>(Ізолінії та Рельєф) | **-** | ✔ | ✔ |
 | [Координатна сітка — Налаштування кольору](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
-| [3D-візуалізація треку](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [3D-візуалізація треку](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Морські глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Путівники (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Підтримка зовнішніх датчиків](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
@@ -111,7 +112,7 @@ import Translate from '@site/src/components/Translate.js';
 | [Віджети показників автомобіля](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 віджети безплатно**</summary><ul><li>*Швидкість автомобіля*</li><li>*Оберти двигуна*</li></ul></details> | <details><summary>**2 віджети безплатно**</summary><ul><li>*Швидкість автомобіля*</li><li>*Оберти двигуна*</li></ul></details> | ✔ |
 | [Інструмент "Маркери на мапі"](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Джерела онлайн-мап](../plugins/online-map.md) | ✔ | ✔ | ✔ |
-| [Підтримка мап SQLitedb/mbtiles](../map/raster-maps.md#manage-raster-maps) | ✔ | ✔ | ✔ |
+| [Підтримка мап SQLitedb/mbtiles](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Обрані точки](../map/point-layers-on-map.md)<br/>закладки та шляхові точки | ✔ | ✔ | ✔ |
 | [Аудіо/фото/відео точки](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
@@ -132,8 +133,8 @@ import Translate from '@site/src/components/Translate.js';
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [вебпорталом OsmAnd](https://www.osmand.net/map). |
 | [3D-рельєф](../plugins/topography.md#3d-relief) | Дозволяє мати та спостерігати масштабну модель вашого району або цілого континенту. |
 | [Віджети висоти - Висота: Центр мапи](../widgets/info-widgets.md#elevation-map-center) | Дозволяє дізнатися висоту поточного центру мапи над рівнем моря.  |
-| [Live](../personal/maps-resources.md#live-updates) | Мапи OsmAnd оновлюються кожні 15 хвилин після покращень в [OpenStreetMap](https://www.openstreetmap.org/). |
-| [Плагін "Погода"](../plugins/weather.md) | Погодинний прогноз на 24 години, 7 днів наперед на мапі. |
+| [Live-оновлення](../personal/maps-resources.md#live-updates) | Мапи OsmAnd оновлюються кожні 15 хвилин після покращень в [OpenStreetMap](https://www.openstreetmap.org/). |
+| [Плагін "Погода"](../plugins/weather.md) | Прогноз погодинно на 24 години, 7 днів наперед на мапі. |
 | [Плагін "Показники автомобіля" (OBD-II)](../plugins/vehicle-metrics.md) | Дозволяє під'єднати сканер OBD-II для відображення детальних даних про автомобіль у застосунку OsmAnd та зберігання інформації в записах треків. Інформація про швидкість автомобіля та оберти двигуна доступна для безплатної версії OsmAnd.  |
 | [Налаштування лінії маршруту](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Зміна кольору та ширини лінії маршруту під час навігації. |
 | [Зміна схеми кольорів](../../user/plugins/topography.md#modify-color-scheme) | Дозволяє налаштувати зовнішній вигляд мапи, обравши або імпортувавши палітри кольорів. Ви можете редагувати вбудовані схеми або використовувати власні файли палітр для персоналізації кольорів мапи та маршруту. |
@@ -153,7 +154,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Продовжити з OsmAnd Pro*
 
-![План Pro](@site/static/img/purchases/pro.png)
+![План Pro](@site/static/img/purchases/pro_new.png)
 
 ### Покупка Maps+ {#maps-purchase}
 
@@ -161,7 +162,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Торкніться списку функцій Maps+ → Продовжити з Maps+*
 
-![План Maps+](@site/static/img/purchases/maps.png)
+![План Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## Застарілі підписки (до версії 4.0) {#legacy-subscriptions-prior-40}

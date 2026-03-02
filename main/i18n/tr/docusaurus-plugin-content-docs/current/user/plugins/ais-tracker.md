@@ -1,8 +1,9 @@
 ---
-source-hash: e993c17565a6856353f05b6dabe09c469fb505cb96a56e920bca6326fc3eb2e1
+source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
 sidebar_position: 2
 title: AIS Gemi Takipçisi
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 <InfoAndroidOnly />
@@ -31,7 +31,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Çevrimiçi haritaları kullanma yeteneği, OsmAnd'ın iOS sürümünde otomatik olarak etkinleştirilir. Android'de Çevrimiçi haritaları görüntülemek için aşağıdaki ayarları yapmanız gerekir:
 
 1. *Ana Menü → Eklentiler → AIS gemi takipçisi* bölümünde **AIS gemi takipçisi** eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
-2. [AIS ayarlarını](../map/raster-maps.md#select-raster-maps) yapılandırın.
+2. [AIS ayarlarını](../map/raster-maps.md#layers) yapılandırın.
 3. Bir **AIS sunucu bağlantısı** yapılandırın veya **harici bir AIS alıcısı** bağlayın.
 4. Gemilerin OsmAnd haritasında görüntülendiğini kontrol edin.
 
@@ -163,18 +163,18 @@ AIS gemileri üç tür veri iletir:
 
 *AIS gemi takipçisi* eklentisi, engelli kullanıcılar için navigasyonu ve etkileşimi kişiselleştirmek üzere çeşitli ayarlar sunar. Bu ayarlar OsmAnd'daki tüm [profiller](../personal/profiles.md) için uygulanır.
 
-| Ayar | Açıklama | Örnek |
+| Ayar |  Açıklama  | Örnek  |
 |---------|---------------|----------|
 | | | |
 | **IP adresi ayarları** | | |
-| Protokol | AIS verilerini almak için protokol seçin | `UDP/TCP` |
+| Protokol   | AIS verilerini almak için protokol seçin | `UDP/TCP` |
 | IP adresi | AIS veri kaynağının IP'sini tanımlayın (TCP kullanılıyorsa) | `192.168.200.16` |
-| TCP bağlantı noktası | AIS verileri için TCP bağlantı noktası numarasını tanımlayın | `4001` |
-| UDP bağlantı noktası | OsmAnd AIS alımı için UDP bağlantı noktasını tanımlayın | `10110` |
+| TCP bağlantı noktası   | AIS verileri için TCP bağlantı noktası numarasını tanımlayın | `4001` |
+| UDP bağlantı noktası | OsmAnd AIS alımı için UDP bağlantı noktasını tanımlayın  | `10110` |
 | | | |
-| **AIS Sinyal alım zaman aşımı** | | |
-| Kayıp AIS nesneleri için zaman aşımı | Belirli bir süre boyunca sinyal alınmazsa gemiler kaybolur | `3 - 20 dk` |
-| Gemi görünürlüğü için zaman aşımı | Sinyal alınmadığında gemi simgeleri durum değiştirecektir | `2 - 15 dk / Devre Dışı` |
+| **AIS Sinyal alım zaman aşımı** | |  |
+| Kayıp AIS nesneleri için zaman aşımı     | Belirli bir süre boyunca sinyal alınmazsa gemiler kaybolur | `3 - 20 dk` |
+| Gemi görünürlüğü için zaman aşımı      | Sinyal alınmadığında gemi simgeleri durum değiştirecektir | `2 - 15 dk / Devre Dışı` |
 | | | |
 | **En Yakın Yaklaşma Noktası (CPA) Uyarıları** | | |
 | CPA Uyarı Süresi | CPA'ya kadar olan süre bu limitin altındaysa gemi kırmızı renkle işaretlenir | `1 - 60 dk / Devre Dışı` |

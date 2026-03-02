@@ -1,8 +1,9 @@
 ---
-source-hash: c1e40198b8d078b7e3678c0105a5dc91442a1ca2f47b65d03facbd7ca77df64a
-sidebar_position: 6
+source-hash: 38151318e8ffca078fdb264a4c0b0efa447c86b08d4a27dad17b80dd745bed3e
+sidebar_position: 7
 title:  Mapillary
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,20 +14,19 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Огляд {#overview}
 
-Щоб швидше орієнтуватися, в OsmAnd ви можете використовувати перегляд вулиць на ваших маршрутах або для цікавих місць, що надається [Mapillary](https://www.mapillary.com/) (потрібне підключення до Інтернету).  
+Щоб швидше орієнтуватися, в OsmAnd ви можете використовувати перегляд на рівні вулиць ваших маршрутів або цікавих місць, що надається [Mapillary](https://www.mapillary.com/) (потрібне підключення до Інтернету).  
 
-[Шар Mapillary](https://www.mapillary.com/) додає зображення вулиць безпосередньо в додаток OsmAnd, тож ви можете легко оглядати околиці будь-якого цікавого місця або вздовж запланованого маршруту. Якщо зображення відсутні, ви можете додати їх самостійно, і ними зможуть користуватися інші. Ця функція з'явилася завдяки нашій співпраці з [командою Mapillary](https://www.mapillary.com/about), об'єднавши переваги обох додатків.
+[Шар Mapillary](https://www.mapillary.com/) додає зображення на рівні вулиць безпосередньо в додаток OsmAnd, тож ви можете легко оглядати околиці будь-якого цікавого місця або вздовж запланованого маршруту. Якщо зображення відсутні, ви можете додати їх самостійно, і ними зможуть користуватися інші. Ця функція з'явилася завдяки нашій співпраці з [командою Mapillary](https://www.mapillary.com/about), об'єднавши переваги обох додатків.
 
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
 
-Щоб відобразити зображення вулиць на мапі OsmAnd, вам потрібно зробити наступні налаштування:
+Щоб відобразити зображення на рівні вулиць на мапі OsmAnd, вам потрібно зробити наступні налаштування:
 
 1. Увімкніть [плагін Mapillary](../plugins/#enable--disable) у розділі *Плагіни* *Головного меню*.
-2. Відобразіть [Зображення вулиць](#enable-layer) на мапі для потрібного профілю в меню Налаштувати мапу.
+2. Відобразіть [Зображення на рівні вулиць](#enable-layer) на мапі для потрібного профілю в меню Налаштувати мапу.
 
 
 ## Шар мапи {#map-layer}
@@ -51,7 +51,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 - Фотографії користувачів Mapillary прикріплені до цих зелених крапок.
 - Торкніться зеленої крапки на мапі, щоб відкрити фотографію з видом на вулицю. Фотографії також можна вибрати зі списку в [контекстному меню мапи](#map-context-menu), якщо вони доступні.
-- Після вибору екран програми розділяється на мапу OsmAnd та зображення вулиць Mapillary.
+- Після вибору екран програми розділяється на мапу OsmAnd та зображення вулиць Mapillary на рівні вулиць.
 - Ви можете застосувати [фільтри](#data-filtering), щоб вибрати фотографії, які ви хочете відображати на мапі.
 
 
@@ -73,7 +73,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-Щоб відобразити зображення вулиць Mapillary на мапі, вам потрібно увімкнути цей шар в меню [Налаштувати мапу](../map/configure-map-menu.md) у розділі *Показати*.  
+Щоб відобразити зображення на рівні вулиць Mapillary на мапі, вам потрібно увімкнути цей шар в меню [Налаштувати мапу](../map/configure-map-menu.md) у розділі *Показати*.  
 
 *Доступ: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 

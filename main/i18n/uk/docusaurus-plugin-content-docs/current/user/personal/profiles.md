@@ -1,5 +1,5 @@
 ---
-source-hash: 4579b7f2aeafef826052222dcf17cb982ddd82cab02812839ee34bc6773250f3
+source-hash: 79018f4a162250ba96a65adb7923a896a7681c7a7ee243fbffafe52e4ba8f6b9
 sidebar_position: 4
 title:  Профілі (Налаштування)
 ---
@@ -211,13 +211,13 @@ OsmAnd дозволяє вам [створювати резервні копії
 |            | <Translate android="true" ids="driving_region_india"/>   | <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <ul><li><Translate android="true" ids="left_side_navigation"/></li><li><Translate android="true" ids="si_km_m"/></li></ul>  |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 км / 1000 м |
+| **<Translate android="true" ids="routing_attr_length_name"/>** | <Translate android="true" ids="si_km_m"/> | 1 км / 1000 м |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 мл / 3281 фт (1000 м) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 мл / 1000 м |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 я / 0.62 мл (1000 м) |
-|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 морських миль / 3280.84 фт / 1000 м<br/>Одиниці довжини застосовуються до горизонтальних значень відстані (наприклад, відстані для водіння/маршруту та маневрів у навігації).|
+|          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 морських миль / 3280.84 фт / 1000 м<br/>Довжина застосовується до горизонтальних значень відстані (наприклад, відстані для водіння/маршруту та маневрів у навігації).|
 |  |  |  |
-| **Одиниці висоти** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 м / 3.28 фт<br/>Одиниці висоти застосовуються до значень висоти/підйому та пов'язаних метрик (підйом/спуск, діапазон висоти) у віджетах Висоти, інформації про маршрут навігації та статистиці треків.<br/>За замовчуванням одиниці висоти синхронізуються з одиницями довжини та стають незалежними лише після ручної зміни користувачем. |
+| **Висота** | <ul><li><Translate android="true" ids="shared_string_meters"/></li><li><Translate android="true" ids="shared_string_feet"/></li></ul> | 1 м / 3.28 фт<br/>Висота застосовується до значень висоти/підйому та пов'язаних метрик (підйом/спуск, діапазон висоти) у віджетах Висоти, інформації про маршрут навігації, статистиці треків та мітках висоти гірських вершин на мапі.<br/>За замовчуванням одиниці висоти синхронізуються з одиницями довжини та стають незалежними лише після ручної зміни користувачем. |
 |  |  |  |
 | **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Приклад: 50.12333° 19.93233° (Широта Довгота) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Приклад: 50°7.393′ 19°55.941′ (Широта Довгота)  |
@@ -232,14 +232,14 @@ OsmAnd дозволяє вам [створювати резервні копії
 |          | Градуси 360° | Усі кутові значення мають показання від 0° до 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | Усі кутові значення мають [значення в мілірадіанах](https://en.wikipedia.org/wiki/Milliradian).  |
 |  |  |  |
-| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 км/год  |
+| **<Translate android="true" ids="external_device_characteristic_speed"/>** | <Translate android="true" ids="si_kmh"/> | 90 км/год  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 миль/год  |
 |          | <Translate android="true" ids="si_m_s"/> | 25 м/с |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 хв/м |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 хв/км |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 вузлів |
 |  |  |  |
-| **<Translate android="true" ids="unit_of_volume"/>** | <Translate android="true" ids="litres"/> | Європа, Азія, Латинська Америка, Канада, Японія, Індія, Австралія |
+| **<Translate android="true" ids="shared_string_volume"/>** | <Translate android="true" ids="litres"/> | Європа, Азія, Латинська Америка, Канада, Японія, Індія, Австралія |
 |  | <Translate android="true" ids="imperial_gallons"/> | Великобританія та подібні |
 |  | <Translate android="true" ids="us_gallons"/> | Сполучені Штати |
 |  |  |  |
@@ -277,13 +277,13 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 - [<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-devices) – Підключайте зовнішні контролери, такі як *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*, *<Translate ios="true" ids="sett_generic_ext_input"/>*, або *<Translate android="true" ids="sett_parrot_ext_input"/>* для керування OsmAnd за допомогою фізичних кнопок.
 
-- **<Translate android="true" ids="position_animation"/>** / **Анімувати власну позицію** – Іконка [позиції](../map/interact-with-map.md#my-location-and-zoom) анімується з кожною отриманою точкою GPS (раз на секунду). Може бути помітна невелика затримка в її русі, особливо під час швидкого руху або коливань сигналу GPS. Ви можете налаштувати цей ефект за допомогою налаштування *Час прогнозування* (лише для Android): вищі значення збільшують плавність, але додають затримку, нижчі значення зменшують затримку, але можуть зробити рух менш плавним.
+- **<Translate android="true" ids="position_animation"/>** / **Анімувати власну позицію** – Іконка [позиції](../map/interact-with-map.md#my-position-and-zoom) анімується з кожною отриманою точкою GPS (раз на секунду). Може бути помітна невелика затримка в її русі, особливо під час швидкого руху або коливань сигналу GPS. Ви можете налаштувати цей ефект за допомогою налаштування *Час прогнозування* (лише для Android): вищі значення збільшують плавність, але додають затримку, нижчі значення зменшують затримку, але можуть зробити рух менш плавним.
 
-- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*лише Android*) – Увімкніть або вимкніть можливість використовувати кнопки гучності вашого пристрою для [масштабування](../map/interact-with-map.md#my-location-and-zoom) мапи.
+- **<Translate android="true" ids="use_volume_buttons_as_zoom"/>** (*лише Android*) – Увімкніть або вимкніть можливість використовувати кнопки гучності вашого пристрою для [масштабування](../map/interact-with-map.md#my-position-and-zoom) мапи.
 
-- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (*лише Android*) – Згладжує обертання мапи за допомогою [поступового руху](https://en.wikipedia.org/wiki/Kalman_filter), зменшуючи раптові зміни положення. Це вносить невелику затримку (*менше 1 секунди*).
+- [<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#rotate-by-compass) (*лише Android*) – Згладжує обертання мапи за допомогою [поступового руху](https://en.wikipedia.org/wiki/Kalman_filter), зменшуючи раптові зміни положення. Це вносить невелику затримку (*менше 1 секунди*).
 
-<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
+<!-- - [<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#rotate-by-compass) (*Android only*) – Uses your device’s [magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) to stabilize map rotation, reducing abrupt changes. This also introduces a slight delay.-->
 
 - **<Translate android="true" ids="tap_on_map_to_hide_interface"/>** (*лише Android*) – Торкніться порожнього місця на мапі, щоб приховати кнопки керування та віджети, максимізуючи видимість мапи.
 
@@ -371,7 +371,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 - **Увімкнути візуалізацію громадського транспорту**, показуючи [маршрути та зупинки](../map/public-transport.md) для кращого планування поїздки.
 
-- **Налаштувати вигляд мапи**, вибравши інший [стиль мапи](../map/vector-maps.md#default-map-styles) відповідно до ваших потреб.
+- **Налаштувати вигляд мапи**, вибравши інший [стиль мапи](../map/map-styles.md) відповідно до ваших потреб.
 
 
 ## Налаштувати екран {#configure-screen}
@@ -456,7 +456,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 ### Кут огляду та радіус місцезнаходження {#view-angle-and-location-radius}
 
-Ви можете налаштувати візуальні елементи, пов'язані з вашим місцезнаходженням, і застосовувати їх окремо або разом для позицій **Спокій** та **Навігація**. Для режимів 2D та 3D *Кут огляду* та *Радіус місцезнаходження* відображаються тим самим кольором, що й вибраний для [профілю навігації](#profile-appearance), безпосередньо під іконкою [Моє місцезнаходження](../map/interact-with-map.md#my-location-and-zoom).
+Ви можете налаштувати візуальні елементи, пов'язані з вашим місцезнаходженням, і застосовувати їх окремо або разом для позицій **Спокій** та **Навігація**. Для режимів 2D та 3D *Кут огляду* та *Радіус місцезнаходження* відображаються тим самим кольором, що й вибраний для [профілю навігації](#profile-appearance), безпосередньо під іконкою [Моя позиція](../map/interact-with-map.md#my-position-and-zoom).
 
 - **<Translate android="true" ids="view_angle"/>** – Відображає **конусоподібну** область, що вказує напрямок, у якому ви зараз дивитесь.  
 - **<Translate android="true" ids="location_radius"/>** – Показує **кругову область** навколо вашої іконки, що представляє точність вашого поточного місцезнаходження.

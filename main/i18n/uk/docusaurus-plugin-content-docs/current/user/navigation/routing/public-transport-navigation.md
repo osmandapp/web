@@ -1,5 +1,5 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
 sidebar_position: 5
 title:  Маршрути громадського транспорту
 ---
@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Навігація громадським транспортом у додатку OsmAnd дозволяє розробляти маршрути з використанням громадського транспорту, що, безумовно, допоможе вам швидше пересуватися "бетонними джунглями".
 
-Дані про маршрути громадського транспорту взяті з проєкту [OpenStreetMap](http://openstreetmap.org/). OsmAnd використовує схему [PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) для навігації. OsmAnd підтримує навігацію за маршрутами OpenStreetMap для *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Швидкість за замовчуванням для кожного типу транспортного засобу налаштовується в [Routing xml](../../../technical/build-osmand/routing.md) і використовується для пошуку найшвидших маршрутів.
+Дані про маршрути громадського транспорту взяті з проєкту [OpenStreetMap](http://openstreetmap.org/). OsmAnd використовує схему [PTv2](https://wiki.openstreetmap.org/wiki/Public_transport) для навігації. OsmAnd підтримує наступні маршрути OpenStreetMap для навігації *bus*, *trolleybus*, *share_taxi*, *funicular*, *subway*, *light_rail*, *monorail*, *train*, *tram*, *ferry*. Швидкість за замовчуванням для кожного типу транспортного засобу налаштовується в [Routing xml](../../../technical/build-osmand/routing.md) і використовується для пошуку найшвидших маршрутів.
 
 :::note
 Маршрутизація громадського транспорту знаходиться на етапі тестування. Наразі ви можете побудувати та переглянути свій маршрут без повноцінної функції навігації.
@@ -44,7 +44,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Як користуватися {#how-to-use}
 
-Щоб розпочати навігацію містом громадським транспортом, скористайтеся [кнопкою навігації](../../widgets/map-buttons.md#directions) на екрані мапи або виберіть опцію навігації в *Головному меню*.  
+Щоб розпочати навігацію містом громадським транспортом, скористайтеся [кнопкою навігації](../../widgets/map-buttons.md#navigation) на екрані мапи або виберіть опцію навігації в *Головному меню*.  
 
 **1.** Вам потрібно вибрати *профіль навігації Громадський транспорт*, початкову та кінцеву точки.  
 

@@ -1,8 +1,9 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
-sidebar_position: 4
+source-hash: f7e42a121aebcff7943e8adafef1fbff3cfc1eee0eb911687d5bdc3b4002fa7a
+sidebar_position: 5
 title:  Özel Paket
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStoreTracker from '@site/src/components/buttons/TrackerGooglePlay.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Genel Bakış {#overview}
@@ -29,7 +29,7 @@ OsmAnd uygulamasında birçok özelleştirme oluşturabilir ve bunları bir `.os
 
 ![Özel paket](@site/static/img/plugins/custom/1.jpg)
 
-`.osf` *dosyası*, `.json` dosyalarını ve klasörleri içeren yeniden adlandırılmış bir `.zip` *dosyasıdır*. Örnek olarak, hazırladığımız dosyaları [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) adresinden veya hazır bir eklentiyi bu [bağlantıdan](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe) indirebilirsiniz.
+`.osf` *dosyası*, `.json` dosyalarını ve klasörleri içeren yeniden adlandırılmış bir `.zip` *dosyasıdır*. Örnek olarak, hazırladığımız dosyaları [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) adresinden veya hazır bir eklentiyi bu [bağlantıdan](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe) indirebilirsiniz.  
 
 `.json` dosyalarını, `.json` dosyalarını, `.obf` dosyalarını, simgeleri ve daha fazlasını içe aktarmak için komutlar içeren OsmAnd'ın *items.json* dosyasını kullanarak değiştirebilirsiniz.
 
@@ -281,14 +281,14 @@ OsmAnd *items.JSON* dosyası için birçok içe aktarma türü vardır. Tüm tü
 
 ### Eklenti Açıklaması {#plugin-description}
 
-Başlamak için eklentinizi oluşturur ve *items.JSON*'a eklersiniz. İlk içe aktarma türü **"PLUGIN"**'dir.
-   *<u>NOT</u>*. Her tür için bu satırı oluşturmalı ve eklemelisiniz: **"pluginId":"test.plugin"**, burada *test.plugin* paketinizin adıdır.
+Başlamak için eklentinizi oluşturur ve *items.JSON*'a eklersiniz. İlk içe aktarma türü **"PLUGIN"**'dir.  
+   *<u>NOTE</u>*. Her tür için bu satırı oluşturmalı ve eklemelisiniz: **"pluginId":"test.plugin"**, burada *test.plugin* paketinizin adıdır.  
 
    ![Özel paket](@site/static/img/plugins/custom/2.jpg)
 
 ### Eklenti Resimleri {#plugin-images}
 
-Eklenti simge resimlerinizi OsmAnd'a aktarmak için, resim dosyalarının depolanacağı bir klasör (örneğimizde bu *"res"* klasörüdür) oluşturun. Bu türün adı **"RESOURCES"**'dir.
+Eklenti simge resimlerinizi OsmAnd'a aktarmak için, resim dosyalarının depolanacağı bir klasör (örneğimizde bu *"res"* klasörüdür) oluşturun. Bu türün adı **"RESOURCES"**'dir.  
 
    ![Özel paket](@site/static/img/plugins/custom/4.jpg)
 
@@ -296,26 +296,26 @@ Eklenti simge resimlerinizi OsmAnd'a aktarmak için, resim dosyalarının depola
 ### Profiller {#profiles}
 
 **"PROFILE"** türünü kullanarak eklentiniz için bir navigasyon profili ekleyebilirsiniz. Navigasyon profilinizle ilgili tüm bilgileri dışa aktarılan JSON dosyasında bulabilirsiniz; burada hangi *items.JSON* türlerinin eklendiğini (*"QUICK_ACTIONS", "POI_UI_FILTERS", "MAP_SOURCES"* veya diğerleri) okumak mümkündür.
-NOT: Tüm parametrelerle bir navigasyon profili oluşturmaya başlayın, bu amaçla navigasyon profillerini dışa aktarın ve gerekli öğeleri navigasyon *profiles.osf* (items.JSON) dosyasından *PLUGIN.osf* (items.JSON) dosyasına kopyalayın.
+NOTE: Tüm parametrelerle bir navigasyon profili oluşturmaya başlayın, bu amaçla navigasyon profillerini dışa aktarın ve gerekli öğeleri navigasyon *profiles.osf* (items.JSON) dosyasından *PLUGIN.osf* (items.JSON) dosyasına kopyalayın.  
 
    ![Özel paket](@site/static/img/plugins/custom/6.jpg)
 
 ### İndirmeler {#downloads}
 
-**"DOWNLOADS"** türünü kullanarak *SQLite, OBF veya yazı tipleri* gibi herhangi bir dosyayı indirmek için ekleyebilirsiniz. İndirilebilir dosyaların ana türleri [burada](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33) bulunabilir.
-   *<u>NOT</u>*. **"isHidden":"true"** etiketi (varsayılan olarak *false*'tur) harita verilerinizi OsmAnd'ın [Haritalar ve Kaynaklar](../personal/maps-resources.md#local-menu) bölümünden gizleyebilir. **"scope-id"** içinde dosyanızın URL'si, adı, açıklaması ve daha fazlası hakkında gerekli tüm bilgileri ekleyebilirsiniz.
+**"DOWNLOADS"** türünü kullanarak *SQLite, OBF veya yazı tipleri* gibi herhangi bir dosyayı indirmek için ekleyebilirsiniz. İndirilebilir dosyaların ana türleri [burada](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33) bulunabilir.  
+   *<u>NOTE</u>*. **"isHidden":"true"** etiketi (varsayılan olarak *false*'tur) harita verilerinizi OsmAnd'ın [Haritalar ve Kaynaklar](../personal/maps-resources.md#local-menu) bölümünden gizleyebilir.  **"scope-id"** içinde dosyanızın URL'si, adı, açıklaması ve daha fazlası hakkında gerekli tüm bilgileri ekleyebilirsiniz.  
 
    ![Özel paket](@site/static/img/plugins/custom/3.jpg)
 
 ### Önerilen İndirmeler {#suggested-downloads}
 
-**"SUGGESTED_DOWNLOADS"** türünde, yeni bir eklenti içe aktarırken OsmAnd'ın sunduğu haritaları indirebilirsiniz.
+**"SUGGESTED_DOWNLOADS"** türünde, yeni bir eklenti içe aktarırken OsmAnd'ın sunduğu haritaları indirebilirsiniz.  
 
    ![Özel paket](@site/static/img/plugins/custom/7.jpg)
 
 ### Dosyalar {#files}
 
-**"FILE"** türünde, eklenti klasörlerinizdeki dosyaları OsmAnd klasörlerine ekleyebilirsiniz; bunların "alt türü" [burada](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312) bulunabilir. Sağlanan örnekte, *routing.xml* ve *rendering.xml* dosyaları eklenmiştir. Bu dosyaların nasıl oluşturulacağı hakkında bilgiyi [burada](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) ve [burada](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles) bağlantılarında okuyabilirsiniz.
+ **"FILE"** türünde, eklenti klasörlerinizdeki dosyaları OsmAnd klasörlerine ekleyebilirsiniz; bunların "alt türü" [burada](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312) bulunabilir. Sağlanan örnekte, *routing.xml* ve *rendering.xml* dosyaları eklenmiştir. Bu dosyaların nasıl oluşturulacağı hakkında bilgiyi [burada](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) ve [burada](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles) bağlantılarında okuyabilirsiniz.  
 
    ![Özel paket](@site/static/img/plugins/custom/8.jpg)
 

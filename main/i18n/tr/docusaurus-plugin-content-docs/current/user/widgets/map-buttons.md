@@ -1,5 +1,5 @@
 ---
-source-hash: 1b7a37b9ddc3c512478528544917a389184c03cf7b063a7673001b8c00840fca
+source-hash: 5f49e7f4a7acdca8244f455851cf4e9787583b3fe4709b42885e86c6dbc08dc3
 sidebar_position: 2
 title: Harita Düğmeleri
 ---
@@ -15,25 +15,28 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## Genel Bakış {#overview}
 
-*Yakınlaştır*, *Ara*, *Yol Tarifi*, *Pusula*, *Konumum*, *3D Modu* ve *Menü* dahil olmak üzere harita düğmeleri, harita ile etkileşim için birincil kontrollerdir. Her düğme, navigasyonunuzu ve harita kullanım deneyiminizi geliştirmek için belirli işlevler sunar.
+*Yakınlaştır*, *Ara*, *Navigasyon*, *Pusula*, *Konumum*, *3D Modu* ve *Menü* dahil olmak üzere harita düğmeleri, harita ile etkileşim için birincil kontrollerdir. Her düğme, navigasyonunuzu ve harita kullanım deneyiminizi geliştirmek için belirli işlevler sunar.
 
-## Konumum ve Yakınlaştır {#my-location-and-zoom}
+
+## Konumum ve Yakınlaştır {#my-position-and-zoom}
 
 ![Ekran menüsünü yapılandır](@site/static/img/widgets/location_zoom_buttons.png)
 
-Haritanın cihazınızın ekranında nasıl görüntülendiğini kontrol etmek için bu düğmeleri kullanın:
+Bu düğmeleri, haritanın cihazınızın ekranında nasıl görüntülendiğini kontrol etmek için kullanın:
 
 - **Konumum**. Haritanın merkezinin cihazınızın mevcut coğrafi konumuyla senkronize olup olmadığını gösterir.
 - **Yakınlaştır**. Haritanın yakınlaştırma düzeyini ayarlayarak daha fazla veya daha az ayrıntı sağlamanıza olanak tanır.
-Bu düğmeleri kullanma hakkında daha fazla bilgi edinmek isterseniz, [Harita ile etkileşim kurma](../map/interact-with-map.md#my-location-and-zoom) makalesine bakabilirsiniz.
+Bu düğmeleri kullanma hakkında daha fazla bilgi edinmek isterseniz, [Harita ile etkileşim kurma](../map/interact-with-map.md#my-position-and-zoom) makalesine bakabilirsiniz.
 
-## Yol Tarifi {#directions}
+
+## Navigasyon {#navigation}
 
 ![Yol Tarifi düğmesi izin verir](@site/static/img/widgets/directions_button_allows.png)
 
-**Yol Tarifi** düğmesi, rota planlama ve navigasyon için çok önemlidir:
+**Navigasyon** düğmesi, rota planlama ve navigasyon için çok önemlidir:
 
 - [Rota oluştur](../navigation/index.md). Rota oluşturmak için bu düğmeyi kullanın.
 - [Navigasyonu başlat](../navigation/index.md). Adım adım navigasyonu başlatın.
@@ -45,11 +48,13 @@ Bu düğmeleri kullanma hakkında daha fazla bilgi edinmek isterseniz, [Harita i
 - *Mavi varsayılan simge*, rotanın oluşturulduğunu ancak navigasyonun henüz başlamadığını gösterir. Bu simgeye dokunmak [rota kurulumu](../navigation/setup/route-navigation.md#start--stop-navigation) işlevini açar.
 - *Mavi ok simgesi*, navigasyonun etkin olduğunu gösterir. Bu simgeye dokunmak [mevcut rotanın ayrıntılarını](../navigation/setup/route-details.md) açar.
 
+
 ## Haritayı Yapılandır {#configure-map}
 
 ![Haritayı Yapılandır](@site/static/img/widgets/configure_map.png)
 
 **Haritayı yapılandır** düğmesi, [Haritayı Yapılandır menüsüne](../map/configure-map-menu.md) erişim sağlar. Simge ayrıca [Mevcut uygulama profilini](../personal/profiles.md) yansıtır ve farklı profiller arasında geçiş yapmanızı sağlar.
+
 
 ## Ana Menü {#main-menu}
 
@@ -57,15 +62,18 @@ Bu düğmeleri kullanma hakkında daha fazla bilgi edinmek isterseniz, [Harita i
 
 [**Ana Menü**](../start-with/main-menu.md) düğmesi, [tüm uygulama özelliklerine](../start-with/main-menu.md) erişim sağlayan genel menüyü açar. Navigasyon modunda, bu düğme varsayılan olarak gizlidir ve haritaya kısa bir dokunuşla görünür hale gelir.
 
+
 ## Ara {#search}
 
 ![Ara düğmesi](@site/static/img/widgets/search_button.png)
 
 Ara düğmesi, [arama özelliklerine](../search/index.md) hızlı erişim sunarak doğrudan haritadan konumları, ilgi çekici yerleri ve diğer bilgileri bulmanızı sağlar.
 
+
 ## Pusula {#compass}
 
 Pusula düğmesi, haritanın cihaz ekranınızdaki yönünü gösterir. Ek bilgi için [Harita ile etkileşim kurma](../map/interact-with-map.md#map-orientation-modes) makalesine bakın.
+
 
 ### Harita Yönlendirme Modları {#map-orientation-modes}
 
@@ -90,6 +98,7 @@ Pusula düğmesi, harita yönünü kontrol etmek için birden fazla eylem sağla
 - **Çift dokunuş**. GPS yönünü takip etme veya cihazla döndürme gibi harita yönlendirme modları arasında hızlıca geçiş yapmak için [Pusula düğmesine](../widgets/map-buttons.md#compass) ( [görünür](../widgets/map-buttons.md#display-options) olduğunda) *çift dokunun*.
 
 - **Uzun dokunuş**. [Pusula düğmesine](../widgets/map-buttons.md#compass) ( [görünür](../widgets/map-buttons.md#display-options) olduğunda) *uzun dokunuşla* tüm harita yönlendirme modlarının bir listesini açabilir ve gerekli olanı seçebilirsiniz. Bu liste [Profil ayarlarında](../personal/profiles.md#appearance) da açılabilir.
+
 
 ### Görüntüleme Seçenekleri {#display-options}
 
@@ -117,7 +126,8 @@ Düğmedeki pusula simgesi her zaman Kuzey'i gösterir. Pusula düğmesinin ekra
 
 - **Her zaman görünür**. Düğme ekrandan kaybolmaz.
 - **Her zaman gizli**. Bu durumda, harita yönünü hızlıca değiştiremezsiniz, ancak düğme ekranda yer kaplamaz.
-- **Harita döndürülürse görünür**. Pusula cihazınızın üst kenarında Kuzey'i gösterirken düğme görünmez.
+- **Harita döndürülürse görünür**. Pusula cihazınızın üst kenarında Kuzey'i gösterirken düğme görünmez.  
+
 
 ## 3D Modu {#3d-mode}
 
@@ -143,7 +153,7 @@ Düğmedeki pusula simgesi her zaman Kuzey'i gösterir. Pusula düğmesinin ekra
 
 - *<Translate android="true" ids="shared_string_hidden"/>*. Bir düğme için bu mod seçilirse, harita görünümünü değiştirmek için bir hareket kullanmanız gerekir. Haritanın eğimini ayarlamak için haritaya iki parmağınızla dokunun ve yukarı ve aşağı hareket ettirin.  
 - *<Translate android="true" ids="shared_string_visible"/>*. Düğme her zaman harita ekranında görüntülenir.
-- *<Translate android="true" ids="visible_in_3d_mode"/>*. Düğme, harita görünümünü [*iki parmakla hareket ettirme*](../map/interact-with-map.md#gestures) hareketiyle değiştirdiğinizde harita ekranında görüntülenir.
+- *<Translate android="true" ids="visible_in_3d_mode"/>*. Düğme, harita görünümünü [*iki parmakla hareket ettirme*](../map/interact-with-map.md#gestures) hareketiyle değiştirdiğinizde harita ekranında görüntülenir.  
 
 ### Ek Ayarlar {#additional-settings}
 
@@ -157,24 +167,50 @@ Düğmedeki pusula simgesi her zaman Kuzey'i gösterir. Pusula düğmesinin ekra
 
 5. **Öneri**. Seçilen bölge için [Hillshade haritasını](../plugins/topography.md#hillshade-slope-and-altitude-layers) indirmeniz ve etkinleştirmeniz önerilir.
 
+
 ## Özel Düğmeler {#custom-buttons}
 
 [Hızlı eylem widget'ı](./quick-action.md), çeşitli eylem türlerinin atanabileceği yapılandırılabilir bir düğmedir. Ayrıca birden fazla [Özel düğme](./quick-action.md#custom-buttons) olması da mümkündür.
 
+
 ## Harita Düğmesi Görünümü {#map-button-appearance}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
 
 | Varsayılan düğmeler | Özel düğmeler |
 | :--- | :--- |
 | ![Harita Düğmesi Görünümü](@site/static/img/widgets/map_butt_appearance_default_andr.png) | ![Harita Düğmesi Görünümü](@site/static/img/widgets/map_butt_appearance_custom_andr.png) |
 
-Harita düğmesi görünümü ayarları aşağıdaki menüler aracılığıyla kullanılabilir:
+**Şuraya git** (Özel düğmeler için): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,quick_action_item"/>* → üç nokta menüsü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Şuraya git** (tüm Varsayılan düğmeler için): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → üç nokta menüsü → *<Translate android="true" ids="shared_string_appearance"/>*  
+**Şuraya git** (belirli bir Varsayılan düğme için): *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → bir düğme seçin → *<Translate android="true" ids="shared_string_appearance"/>*  
 
-- *Menü → Ekranı Yapılandır → Düğmeler → Varsayılan düğmeler*
-- *Menü → Ekranı Yapılandır → Özel düğmeler → Hızlı eylem → üç nokta menüsü → Görünüm*
+</TabItem>
 
-Düğmelerin görünümünü özelleştirmek, hem [Hızlı Eylem (Özel düğmeler)](../widgets/quick-action.md#quick-action-button-appearance) hem de [Varsayılan düğmeler](../widgets/configure-screen.md#button-appearance) için boyutu, şekli, simgeyi ve arka plan opaklığını ayarlamanıza olanak tanır. Bu esneklik, arayüzü tercihlerinize göre kişiselleştirmenize ve kullanılabilirliği artırmanıza olanak tanır.
+<TabItem value="ios" label="iOS">  
+
+| Varsayılan düğmeler | Özel düğmeler |
+| :--- | :--- |
+| ![Harita Düğmesi Görünümü](@site/static/img/widgets/map_butt_appearance_default_ios.png) | ![Harita Düğmesi Görünümü](@site/static/img/widgets/map_butt_appearance_custom_ios.png) |
+
+**Şuraya git** (Özel düğmeler için): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,shared_string_quick_actions"/>* → üç nokta menüsü → *<Translate ios="true" ids="shared_string_appearance"/>*
+**Şuraya git** (belirli bir Varsayılan düğme için): *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons"/>* → bir düğme seçin → *<Translate ios="true" ids="shared_string_appearance"/>*
+
+</TabItem>
+
+</Tabs>
+
+Düğmelerin görünümünü özelleştirmek, hem [Hızlı Eylem (Özel düğmeler)](../widgets/quick-action.md#button-appearance) hem de [Varsayılan düğmeler](../widgets/configure-screen.md#button-appearance) için boyutu, şekli, simgeyi ve arka plan opaklığını ayarlamanıza olanak tanır. Android'de, görünüm ayarları tüm Varsayılan düğmelere veya belirli bir Varsayılan düğmeye uygulanabilirken, iOS'ta yalnızca belirli Varsayılan düğmeler için kullanılabilir.
+
+Düğme simgeleri şu şekilde ayarlanabilir:
+- **Dinamik** – simge, mevcut eyleme veya duruma göre değişir.
+- **Özel** – eklediğiniz eylemlerden bir simge seçin.
+- **Belirli** – her zaman görüntülenecek sabit bir simge seçin.
+
+Görünüm ekranı, ayarları terk etmeden önce değişikliklerinizin haritada nasıl görüneceğini görmenizi sağlayan bir önizleme içerir.
+
 
 ## İlgili Makaleler {#related-articles}
 

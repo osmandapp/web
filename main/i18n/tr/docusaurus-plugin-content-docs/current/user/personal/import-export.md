@@ -1,5 +1,5 @@
 ---
-source-hash: 30d9f4266ee23c8fe8ca807b128433f5d3f472e346e8671246ace43ed3c0c128
+source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
 sidebar_position: 10
 title:  İçe / Dışa Aktar
 ---
@@ -26,14 +26,14 @@ OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları, verilerinizi yönetm
 
 *İçe Aktar* ve *Dışa Aktar*, oluşturulan `.osf` **dosyalarından** veri kaydetmenize veya [çevrimiçi kaynakları](../map/raster-maps.md) kullanmanıza olanak tanıyarak yeniden yüklemeden sonra bilgileri geri yüklemeyi mümkün kılar.
 
-İçe/dışa aktarım için kullanılabilen **veri türleri**:
+**Veri türleri** içe/dışa aktarım için kullanılabilen:
 
 - **Ayarlar:**  
         [Profiller](../personal/profiles.md#actions), &nbsp;[OsmAnd/Genel Ayarlar](../personal/global-settings.md), &nbsp;[Renkler](../personal/color-palette-schemes.md), &nbsp;[Hızlı eylem](../widgets/quick-action.md), &nbsp;[POI Türü](../map/point-layers-on-map.md#poi-types), &nbsp;[Yoldan kaçın](../map/map-context-menu.md#avoid-road).
 - **Yerlerim:**  
         [Favoriler](../personal/favorites.md#export--import), &nbsp;[Rotalar](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM notları*, *OSM düzenlemeleri](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V notları](../plugins/audio-video-notes.md), &nbsp;[Harita işaretleyicileri](../personal/markers.md), &nbsp;[İşaretleyici geçmişi*, *Arama geçmişi*, *Navigasyon geçmişi](../personal/global-settings.md#history), &nbsp;*Güzergah*.
 - **Kaynaklar:**  
-        [Render stili](../map/vector-maps.md#custom-map-style), &nbsp;[Rota oluşturma](../navigation/routing/osmand-routing.md), &nbsp;[Çevrimiçi rota oluşturma motorları](../navigation/routing/online-routing.md), &nbsp;[Harita kaynakları*, *Standart/Çevrimdışı Haritalar](../map/raster-maps.md), &nbsp;[Wikipedia ve Seyahat haritaları](../plan-route/travel-guides.md), &nbsp;[Deniz haritaları](../plugins/nautical-charts.md), &nbsp;[Yol haritaları](../map/vector-maps.md#road-style), &nbsp;[Topografya haritaları](../plugins/topography.md), &nbsp;[Sesli komutlar (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sesli komutlar (kaydedilmiş)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favori yedekleme](../personal/favorites.md#automatic-favorites-backup).
+        [Renderleme stili](../map/map-styles.md#custom-map-style), &nbsp;[Rota oluşturma](../navigation/routing/osmand-routing.md), &nbsp;[Çevrimiçi rota oluşturma motorları](../navigation/routing/online-routing.md), &nbsp;[Harita kaynakları*, *Standart/Çevrimdışı Haritalar](../map/raster-maps.md), &nbsp;[Wikipedia ve Seyahat haritaları](../plan-route/travel-guides.md), &nbsp;[Deniz haritaları](../plugins/nautical-charts.md), &nbsp;[Yol haritaları](../map/vector-maps.md#road-style), &nbsp;[Topografya haritaları](../plugins/topography.md), &nbsp;[Sesli komutlar (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sesli komutlar (kaydedilmiş)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favori yedekleme](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Dışa Aktar {#export}

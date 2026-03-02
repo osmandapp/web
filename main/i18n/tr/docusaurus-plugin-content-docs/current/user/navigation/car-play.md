@@ -1,5 +1,5 @@
 ---
-source-hash: b915069b34dcd017f60dd7f0eeb4ab768f5acfd29297019c7063d9b9a087bf33
+source-hash: 6313db4247de92bb7fe3d4bb64a761934b9707ca737bd2f2ae8d4bb3da5b8b70
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,6 +17,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Genel Bakış {#overview}
+
+:::tip Satın Alma
+CarPlay, [ücretli bir özelliktir](../purchases/index.md).  
+:::
 
 Araç kullanırken telefonunuzu veya tabletinizi aynı anda kullanmak, güvenlik nedenleriyle genellikle yasa dışıdır. [***CarPlay***](https://www.apple.com/ios/carplay/), sürüş sırasında güvenli kullanım için OsmAnd uygulamasının uyarlanmış ve optimize edilmiş bir sürümünü sağlayan, uygulamanın navigasyon işlevlerine erişimi daha kolay ve güvenli hâle getiren bir yazılımdır.
 
@@ -41,17 +45,17 @@ Cihazınız *CarPlay*'e bağlıyken, uygulama ekranındaki harita kilitlenir. Bu
 
 ### Harita ile Etkileşim {#interaction-with-the-map}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-Interaction(1).png)
 
 *CarPlay*, OsmAnd arayüzünü araç multimedya sistemi ekranına uyarlanmış şekilde görüntüler. Harita ile etkileşim şunlarla sınırlıdır:  
 
-- [Konumum](../widgets/map-buttons.md#my-location-and-zoom). Haritanın görünür kısmını, mevcut konumunuzun ekranın ortasında olacak şekilde hareket ettirir.
-- [Yakınlaştır](../widgets/map-buttons.md#my-location-and-zoom). Haritanın görünür kısmını yakınlaştırmanıza ve uzaklaştırmanıza olanak tanır.
+- [Konumum](../widgets/map-buttons.md#my-position-and-zoom). Haritanın görünür kısmını, mevcut konumunuzun ekranın ortasında olacak şekilde hareket ettirir.
+- [Yakınlaştır](../widgets/map-buttons.md#my-position-and-zoom). Haritanın görünür kısmını yakınlaştırmanıza ve uzaklaştırmanıza olanak tanır.
 
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
 - Öncelikle, *CarPlay*'e bağlanırken kullanılacak profili seçmeniz ve yapılandırmanız gerekir. Bir profili nasıl yapılandıracağınızı [Profiller (Ayarlar)](../personal/profiles) makalesinde okuyabilirsiniz.  
     - *CarPlay* kullanmak için uygun bir profil *Sürüş* olabilir ve rota türü [Araç rotası](../navigation/routing/car-based-routing.md) olabilir.
@@ -67,7 +71,7 @@ Cihazınız *CarPlay*'e bağlıyken, uygulama ekranındaki harita kilitlenir. Bu
 
 ### Navigasyonu Başlat {#start-navigation}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-start(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start(1).png)  
 
 *CarPlay*'de OsmAnd uygulamasının iOS sürümünü kullanmak için, uygulamanın [ücretli bir sürümünü satın almanız veya abone olmanız](../purchases/ios#free-and-paid-features) gerekir.  
 
@@ -75,7 +79,7 @@ Cihazınız *CarPlay*'e bağlıyken, uygulama ekranındaki harita kilitlenir. Bu
 2. Yol üzerindeki sorunlar hakkında yol tariflerini veya mesajları dinlemek için [sesli komutları](#voice-prompts) kullanabilirsiniz.  
 3. Bir konum seçtikten sonra, rotayı takip etmek için **Başlat**'a basın.
 4. Siz sürerken, araç ekranı mevcut konumunuzla ilgili OsmAnd bilgilerini haritada, sürüş talimatlarını, bir sonraki dönüşe olan mesafeyi, çizgileri, varış süresini ve hedefinize olan mesafeyi gösterecektir.
-    ![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_navmode.png)  
+    ![CarPlay screen](@site/static/img/navigation/auto-car/car_play_navmode.png)  
 5. Rotanızı değiştirmek veya farklı bir konum seçmek isterseniz, ekrandaki uygun düğmeye basabilirsiniz.
 6. Rotanızı tamamladıktan sonra, cihazı araç multimedya sisteminizden ayırarak *CarPlay*'i devre dışı bırakabilirsiniz.
 
@@ -121,7 +125,7 @@ Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde
 
 ### Geçmiş {#history}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_history.png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car_play_history.png)  
 
 **Geçmiş kategorisinde**, bitiş noktaları listesinden bir hedef seçebilirsiniz.
 
@@ -151,7 +155,7 @@ Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde
 
 ### Favoriler {#favorites}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-favorites(1).png)  
 
 **Favoriler**, OsmAnd'ın harita üzerinde bir tür not almanızı sağlayan özelliklerinden biridir.
 
@@ -162,7 +166,7 @@ Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde
 
 ### Harita İşaretleyicileri {#map-markers}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-markers(1).png)  
 
 - Son hedefinizi bir *Harita işaretleyicisi* olarak tanımlamak için, cihazı araç multimedya sistemine bağlamadan önce OsmAnd uygulamasında gerekli sayıda işaretleyici oluşturmanız gerekir.
 - *İşaretleyicilerin* *Menü → Harita işaretleyicisi* listesinde mevcut olması gerekir.
@@ -171,7 +175,7 @@ Sürüş sırasında, seçilen noktalar yaklaştığınızda veya geçtiğinizde
 
 ### İzler {#tracks}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-tracks(1).png)  
 
 Bir hedefe rota oluşturmak için, OsmAnd uygulamasında mevcut bir izi seçebilirsiniz. İz önceden [indirilebilir](../personal/tracks/manage-tracks.md#import), [kaydedilmiş](../plugins/trip-recording.md) olarak kullanılabilir veya [Rota planla](../plan-route/create-route.md) bölümünde oluşturulabilir.  
 
@@ -182,7 +186,7 @@ Bir hedefe rota oluşturmak için, OsmAnd uygulamasında mevcut bir izi seçebil
 
 ### Ara {#search}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-search(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-search(1).png)  
 
 **Ara**'ya gitmek, son [hedef geçmişi](#history) listesine hızlı erişim sağlar. Benzer şekilde, adres, İÇN'ler veya koordinatlar gibi tüm OsmAnd hedef yöntemlerinin toplandığı [Navigasyon menüsü](../navigation/setup/route-navigation.md#navigation-menu) ile de aynıdır.  
 
@@ -207,7 +211,7 @@ CarPlay arama özelliği, **adres ararken** sokaklara ve bina numaralarına önc
 
 ### Son Değiştirilen Klasör {#folder-last-modified}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car_play_last_modified.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/car_play_last_modified.png)
 
 *Favoriler* ve *İzler* kategorilerinde özel bir **Son Değiştirilen** klasörü bulunur. Bu kategorilerdeki liste, mevcut tüm favorilerinizi veya izlerinizi içerdiğinden çok büyük olabileceğinden, bu klasör en son hedeflerinize kolay ve hızlı erişim için gereklidir.
 
@@ -227,7 +231,7 @@ Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki O
 
 ### Ekran Uyarısı Widget'ı {#screen-alert-widget}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
+![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 Bu bilgi widget'ı **Yaya geçitleri** ve **Hız Sınırı** gibi uyarı türlerini birleştirir.
 
@@ -239,9 +243,9 @@ Bu bilgi widget'ı **Yaya geçitleri** ve **Hız Sınırı** gibi uyarı türler
 
 ### Hız Göstergesi {#speedometer}
 
-![CarPlay ekranı](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
+![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png)
 
-**Hız Göstergesi** widget'ı, aracın multimedya sistemi ekranında GPS verilerini kullanarak *mevcut hızı* ve [OSM veritabanından](https://wiki.openstreetmap.org/wiki/Key:maxspeed) ve [OsmAnd ayarlarından](../navigation/guidance/voice-navigation.md#speed-limit) *hız sınırını* gösteren entegre bir arayüz öğesidir.
+**Hız Göstergesi** widget'ı, aracın multimedya sistemi ekranında GPS verilerini kullanarak *mevcut hızı* ve [OSM veritabanından](https://wiki.openstreetmap.org/wiki/Key:maxspeed) ve [OsmAnd ayarlarından](../navigation/guidance/voice-navigation.md#speed-limit) *hız sınırını* gösteren entegre bir arayüz öğesidir. Mevcut hızınız yapılandırılmış Hız sınırı toleransına yaklaştığında veya hız sınırını aştığında, widget görünümünü (renkleri) değiştirerek uyarı sağlar. Görünüm değişikliği animasyonlu olabilir.
 
 - **Hız Göstergesi widget'ı** [*profile bağımlıdır*](../personal/profiles.md), bu nedenle bir profil için ayarları değiştirirseniz, bunlar başka bir profile uygulanmaz.
 - *Hız Göstergesi*'nin doğrudan *CarPlay*'de görüntülenmesini ayarlama seçeneği yoktur. Navigasyonu başlatmadan ve cihazınızı araca bağlamadan önce seçilen [navigasyon profili](#carplay-profile) için OsmAnd uygulamasında yapılandırmanız gerekir.
@@ -266,6 +270,23 @@ OsmAnd uygulaması, müzik, mesaj veya diğer bildirim uygulamalarıyla eş zama
 
 - *CarPlay*'e bağlı bir telefonda veya araç sisteminizdeki ekranda çok fonksiyonlu gösterge panelini ayarlama.
 - Çoklu pencere düğmesini bulun ve değiştirin.
+
+
+### Navigasyonu Bitir {#finish-navigation}
+
+![Finish Navigation](@site/static/img/navigation/auto-car/finish_navigation_carplay_new.png)
+
+CarPlay'de navigasyon tamamlandığında, OsmAnd araç ekranında bir **“Varış yaptınız”** diyaloğu görüntüler. Bu diyalog, mobil uygulamanın kullandığı aynı varış algılama mantığını kullanır ve varış noktanıza ulaştıktan sonra yaygın eylemlere hızlı erişim sağlar.
+
+Mevcut eylemler:
+- **Park yeri olarak işaretle**. Mevcut konumunuzu park yeri olarak kaydeder ve harita üzerinde bir park işaretleyicisi yerleştirir.
+- **Park yeri bul**. Yakındaki park seçeneklerini bulmanıza yardımcı olmak için Park kategorisi önceden seçilmiş olarak Arama ekranını açar.
+- **Rota yeniden hesapla**. Navigasyona devam etmek istiyorsanız orijinal hedefe yeni bir rota oluşturur.
+- **Navigasyonu bitir**. Mevcut rotayı sonlandırır ve OsmAnd'ı varsayılan harita durumuna döndürür.
+
+Navigasyon aktifken CarPlay bağlantısı kesilirse, OsmAnd iPhone'da ek mantık uygular:
+- Hedefe olan mesafe 100 m'den azsa, navigasyon otomatik olarak biter ve varsayılan profil geri yüklenir. Bu durumda, “Varış yaptınız” bildirimi telefon ekranında gösterilmez.
+- Mevcut hız 1 m/s'nin altındaysa (örneğin, benzin istasyonunda durduğunuzda), navigasyon duraklatılır. CarPlay yeniden bağlandığında navigasyon otomatik olarak devam eder.
 
 ## Ayarlar {#settings}
 

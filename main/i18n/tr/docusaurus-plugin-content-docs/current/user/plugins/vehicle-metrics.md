@@ -1,6 +1,6 @@
 ---
-source-hash: c693b6d101a1d27afa8ef4aae2115e4338730cd7c671f000edf63199372909f6
-sidebar_position: 16
+source-hash: fb9d0a1b3bb3e0499cac10a7bbb3d9f3635bd3a78cfbb6a9020ece0a88d07a13
+sidebar_position: 18
 title: Araç Metrikleri
 ---
 
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-:::info Ücretli özellik
-Araç Metrikleri eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md). Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümünde mevcuttur.
+:::info Pro feature
+Araç Metrikleri eklentisi, [**OsmAnd Pro**](../purchases/index.md) ücretli bir özelliktir <ProFeature />. Araç hızı ve Motor devri bilgileri OsmAnd ücretsiz sürümünde mevcuttur.
 :::
 
 **Araç Metrikleri eklentisi**, [OBD-II protokolü](https://en.wikipedia.org/wiki/OBD-II_PIDs) aracılığıyla gerçek zamanlı araç verilerini izlemeyi sağlar. Kullanıcılar, motor performansı, yakıt verimliliği ve hız gibi temel metrikleri takip ederek proaktif araç bakımı ve sorun giderme yapabilirler.  
@@ -30,13 +30,13 @@ Araç Metrikleri eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](
 
 <TabItem value="android" label="Android">
 
-![OBD ayarları](@site/static/img/plugins/obd/obd_overview_2.png)
+![OBD settings](@site/static/img/plugins/obd/obd_overview_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OBD ayarları](@site/static/img/plugins/obd/obd_overview_ios.png)
+![OBD settings](@site/static/img/plugins/obd/obd_overview_ios.png)
 
 </TabItem>
 
@@ -65,7 +65,7 @@ Bir OBD-II tarayıcısından veri kullanmak için:
 
 |  |  |
 |--|--|
-|![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect.png)|![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect_2.png)|
+|![OBD connection](@site/static/img/plugins/obd/obd_connect.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_2.png)|
 
 </TabItem>
 
@@ -73,7 +73,7 @@ Bir OBD-II tarayıcısından veri kullanmak için:
 
 |  |  |
 |--|--|
-|![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD bağlantısı](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
+|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_ios_2.png)|
 
 </TabItem>
 
@@ -97,7 +97,7 @@ Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 
 |  |  |
 |--|--|
-|![OBD ayarları](@site/static/img/plugins/obd/obd_settings.png)|![OBD ayarları](@site/static/img/plugins/obd/obd_settings_1.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
 
 
 </TabItem>
@@ -108,7 +108,7 @@ Listeden OBD-II cihazınızı seçin ve bağlantıyı kurun.
 
 |  |  |
 |--|--|
-|![OBD ayarları](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD ayarları](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_ios_1.png)|
 
 </TabItem>
 
@@ -165,7 +165,7 @@ Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu
 
 | | |
 |--|--|
-|![OBD kaydı](@site/static/img/plugins/obd/obd_recording.png)| ![OBD kaydı](@site/static/img/plugins/obd/obd_recording_1.png)|
+|![OBD recording](@site/static/img/plugins/obd/obd_recording.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_1.png)|
 
 
 </TabItem>
@@ -176,7 +176,7 @@ Metrikler netlik için kategorize edilmiştir. Gelişmiş teşhis araçları, bu
 
 | | |
 |--|--|
-|![OBD kaydı](@site/static/img/plugins/obd/obd_recording_ios.png)| ![OBD kaydı](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
+|![OBD recording](@site/static/img/plugins/obd/obd_recording_ios.png)| ![OBD recording](@site/static/img/plugins/obd/obd_recording_ios_1.png)|
 
 </TabItem>
 
@@ -207,7 +207,7 @@ Bu etiketler, kaydedilen GPX dosyasını incelerken belirli araç verilerini tan
 
 | | |
 |--|--|
-|![OBD ayarları](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD ayarları](@site/static/img/plugins/obd/obd_widget.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ Bu etiketler, kaydedilen GPX dosyasını incelerken belirli araç verilerini tan
 
 | | |
 |--|--|
-|![OBD ayarları](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![OBD ayarları](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

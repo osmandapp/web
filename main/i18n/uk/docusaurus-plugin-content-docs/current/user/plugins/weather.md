@@ -1,6 +1,6 @@
 ---
-source-hash: 324e501a808dcc30e7a1f57dfc9fcf5c51cf385bc0355fc18457063ae2653814
-sidebar_position: 17
+source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+sidebar_position: 19
 title:  Погода
 ---
 
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Огляд {#overview}
 
 :::info Платна функція
- <ProFeature/> Плагін "Погода" — це [платна функція](../purchases/index.md) застосунку OsmAnd.  
+Плагін "Погода" — це [платна функція **OsmAnd Pro**](../purchases/index.md) <ProFeature />.  
 :::
 
 Інтерактивні шари карти погоди в застосунку OsmAnd дозволяють відстежувати температуру, атмосферний тиск, хмарність, швидкість вітру та опади у вашому місті чи будь-якому іншому місці на інтерактивній глобальній карті. Плагін "Погода" надає погодинний прогноз погоди на 7 днів вперед безпосередньо на карті OsmAnd. Інформацію про погоду також можна завантажити для використання в режимі офлайн.  
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Увімкнений плагін → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Панель погоди Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_2.png)  
+![Панель погоди Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -74,7 +74,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-У головному бічному меню є спеціальний пункт **Погода**, який забезпечує швидкий доступ до всіх інструментів погоди. *Екран прогнозу погоди* відображає інформацію про *температуру*, *атмосферний тиск*, *швидкість вітру*, *хмарність* та *опади*.  
+У головному бічному меню є спеціальний пункт **Погода**, який забезпечує швидкий доступ до всіх інструментів погоди. *Екран прогнозу погоди* відображає інформацію про *температуру*, *атмосферний тиск*, *швидкість вітру*, *хмарність* та *опади*. 
+
+Значення прогнозу відображаються для центру карти, позначеного прицілом (чорним на Android, червоним на iOS). Перемістіть карту, щоб змінити обране місце — дані про погоду автоматично оновлюються для нової точки.
 
 У нижній частині екрана знаходиться *панель інструментів погоди*. Ви можете використовувати кнопки днів та повзунок часу, щоб встановити точний час, на який буде відображатися прогноз погоди.
 
@@ -121,7 +123,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Увімкнений плагін → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Налаштування погоди Android](@site/static/img/plugins/weather/weather_customize_andr.png)  
+![Панель погоди Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -129,7 +131,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Увімкнений плагін → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Налаштування погоди в iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![Панель погоди в iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
 </TabItem>  
 
@@ -171,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Шари погоди {#weather-layers}
 
-Усі дані про погоду представлені у вигляді окремих шарів карти. Щоб побачити шари погоди на карті, потрібно зменшити масштаб, вони доступні лише на масштабах 2-12. Шари погоди використовують [палітри погоди](../personal/color-palette-schemes.md#weather) для розфарбовування карти, ці палітри можна [змінити](../personal/color-palette-schemes.md#edit-palette-file) за потреби.
+Усі дані про погоду представлені у вигляді окремих шарів карти. Щоб побачити шари погоди на карті, потрібно зменшити масштаб, вони доступні лише на масштабах 2-12. Шари погоди використовують [палітри погоди](../personal/color-palette-schemes.md#weather) для розфарбовування карти, ці палітри можна [змінити](../personal/color-palette-schemes.md#palette-modify) за потреби.
 
 | |  
 |------------|  
@@ -182,7 +184,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | **Вітер** - це рух повітря, спричинений нерівномірним нагріванням Землі Сонцем та її власним обертанням. Вітер може варіюватися від легкого бризу до стихійних лих, таких як урагани та торнадо. В OsmAnd швидкість вітру може відображатися в метрах за секунду (м/с), кілометрах на годину (км/год), милях на годину (миль/год) та вузлах (кт). |  
 |![Схема вітру](@site/static/img/plugins/weather/wind.png)|  
 | **Хмарність** - це середня частка неба, вкрита хмарами, при спостереженні з певного місця. Вимірюється у %. |  
-|![Схема хмарності](@site/static/img/plugins/weather/clouds.png)|  
+|![Схема хмар](@site/static/img/plugins/weather/clouds.png)|  
 | **Атмосферний тиск** спричинений вагою повітря над точкою вимірювання. Він зменшується зі збільшенням висоти. Атмосферний тиск може відображатися в гектопаскалях (гПа), міліметрах ртутного стовпчика (мм рт. ст.) та дюймах ртутного стовпчика (дюйм рт. ст.). |  
 | ![Схема тиску](@site/static/img/plugins/weather/pressure.png) |  
 | **Анімація вітру** включає динамічні зображення, що показують напрямок та швидкість вітру в регіоні. |  
@@ -228,7 +230,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::tip
 На пристроях Android ви можете перевірити, коли були завантажені дані про погоду, торкнувшись *віджета "Погода"*. Плагін OsmAnd Development має бути увімкнений.  
-![Дата кешування погоди android](@site/static/img/plugins/weather/weather_cash_andr.png)  
+![Дата кешу погоди android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Завантаження прогнозу {#download-forecast}
@@ -291,7 +293,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-[Віджети погоди](../widgets/info-widgets.md#weather-widgets), такі як "Температура", "Тиск повітря", "Вітер", "Хмарність" та "Опади", показують поточні дані про погоду для **центральної точки на карті**.
+[Віджети погоди](../widgets/info-widgets.md#weather-widgets), такі як "Температура", "Тиск повітря", "Вітер", "Хмари" та "Опади", показують поточні дані про погоду для **центральної точки на карті**.
 
 - Віджети погоди відображаються лише тоді, коли увімкнено [екран "Погода"](#weather-forecast-screen).
 - Щоб активувати віджети погоди, виберіть пункт головного меню *Налаштувати екран*, панель, на якій їх розмістити, та потрібні віджети зі списку.

@@ -1,6 +1,6 @@
 ---
-source-hash: 98ef3def7d982e4b280e3c2f1201d4c80b83ec88f33f9ec1799e20750ea2d497
-sidebar_position: 5
+source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+sidebar_position: 6
 title:  Зовнішні датчики
 ---
 
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-:::info Платна функція
-Плагін "Зовнішні датчики" — це [платна функція](../purchases/index.md) застосунку OsmAnd.  
+:::tip Придбання
+Плагін "Зовнішні датчики" — це [платна функція](../purchases/index.md).  
 :::
 
 Плагін **"Зовнішні датчики"** дозволяє зчитувати та записувати дані з [бездротових зовнішніх датчиків](https://en.wikipedia.org/wiki/Wireless_sensor_network), що працюють за технологіями [ANT+](https://en.wikipedia.org/wiki/ANT_(network)) та [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy), і відображати ці дані за допомогою [віджетів](#widgets) у застосунку OsmAnd. Ця керована мережа здатна збирати, передавати та зберігати дані з датчиків.

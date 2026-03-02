@@ -1,5 +1,5 @@
 ---
-source-hash: a83174567ee9c9ddca7216cb3fded4259a6b5c4b5df92ef3626460419ca8dd74
+source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
 sidebar_position: 3
 title:  Інформаційні віджети
 ---
@@ -66,7 +66,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Висота: Центр карти {#elevation-map-center}
 
 :::info Платна функція
-&nbsp;<ProFeature/> Щоб отримати доступ до віджета *Висота: центр карти*, підпишіться на OsmAnd Pro для [Android](../purchases/android.md#pro-features) або [iOS](../purchases/ios.md#pro-features).  
+Віджет *Висота: центр карти* є платною функцією [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -417,13 +417,13 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="android" label="Android">
 
-![Спідометр](@site/static/img/widgets/speedometer_1_andr.png)   ![Спідометр](@site/static/img/widgets/speedometer_2_andr.png)
+![Спідометр](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Спідометр](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Спідометр](@site/static/img/widgets/speedometer_1_ios.png)   ![Спідометр](@site/static/img/widgets/speedometer_2_ios.png)
+![Спідометр](@site/static/img/widgets/speedometer_1_ios.png)   ![Спідометр](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -431,8 +431,12 @@ OsmAnd пропонує два типи віджетів координат:
 
 **Віджет Спідометр** — це графічне відображення поточної швидкості транспортного засобу на основі *даних, отриманих з GPS*. Він дозволяє в реальному часі контролювати відповідність вашої швидкості дозволеному обмеженню. Дозволене обмеження швидкості надається [даними OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:maxspeed) для певної ділянки дороги та налаштуванням OsmAnd [Допуск обмеження швидкості](../navigation/guidance/voice-navigation.md#speed-limit).  
 
+Коли ваша поточна швидкість наближається до налаштованого допуску обмеження швидкості, віджет змінює свій вигляд, щоб надати попередження заздалегідь. Коли обмеження швидкості перевищено (з урахуванням допуску), віджет переходить до більш помітного індикатора «перевищення». Попередження/індикатор перевищення показується шляхом зміни кольорів віджета (фону, значення швидкості та одиниць). Зміна вигляду може бути анімована, щоб привернути увагу при перетині порогу допуску або обмеження.
+
+![Спідометр](@site/static/img/widgets/speed_alert.gif)
+
 - У *Налаштуваннях спідометра* ви можете вибрати розмір (**Висота**) віджета на екрані програми як *Малий*, *Середній* або *Великий*.
-- Ви можете вказати, коли отримувати **Попередження про обмеження швидкості,** вибравши *Завжди* або *При перевищенні*.
+- Ви можете вказати, коли отримувати **Попередження про обмеження швидкості,** вибравши *Завжди* або *При перевищенні*. Якщо Попередження про обмеження швидкості встановлено на Завжди, віджет може показувати як «наближення/допуск», так і «перевищення». Якщо Попередження про обмеження швидкості встановлено на При перевищенні, індикатор показується лише після перевищення обмеження швидкості.
 
 <table class="blogimage">
     <tr>
@@ -613,7 +617,7 @@ OsmAnd пропонує два типи віджетів координат:
 ### Віджет паркування {#parking-widget}
 
 :::note
-Щоб додати віджети паркування на екран карти, увімкніть плагін OsmAnd [Місце паркування](../plugins/parking.md).
+Щоб додати віджети паркування на екран карти, увімкніть плагін OsmAnd [Положення паркування](../plugins/parking.md).
 :::  
 
 ![Віджет паркування](@site/static/img/plugins/parking/parking_widget.png)  

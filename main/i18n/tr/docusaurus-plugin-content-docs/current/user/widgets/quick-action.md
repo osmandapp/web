@@ -1,7 +1,7 @@
 ---
-source-hash: acec87397450d121c90aab13dab433cdd3d9e2ce9716bf61ccd71e41489aca96
+source-hash: 433c630536848b7031cc7094180ed08b5bcf9a316809b7e405f63ce39916101b
 sidebar_position: 7
-title:  Hızlı Eylem (Özel düğmeler)
+title:  Quick Action (Custom buttons)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -241,7 +241,7 @@ Başka bir cihazdan [içe aktarılan profiller](https://osmand.net/docs/user/per
 | Göster / Gizle <br /> [**Toplu taşıma**](../map/vector-maps.md#transport) | Toplu taşıma harita katmanını etkinleştirir veya devre dışı bırakır <br /> - *Ulaşım türü*. İlk dokunuşta, *Ulaşım durakları*, *Otobüs, troleybüs ve servis rotaları*, *Tramvay ve tren rotaları*, *Metro rotaları* dahil olmak üzere bir veya birden çok ulaşım türü seçebilirsiniz. |
 | Değiştir <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Harita katmanı olarak bir harita kaynakları listesi oluşturun ve bunlar arasında geçiş yapın. <br /> - *Not*. OsmAnd'da harita katmanlarını değiştirmek için, birden çok harita katmanı arasında geçiş yapmanızı sağlayan tek bir hızlı eylem ayarlayabilir veya her biri belirli bir harita katmanı için birkaç ayrı hızlı eylem oluşturabilirsiniz. |
 | Değiştir <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Harita alt katmanı olarak bir harita kaynakları listesi oluşturun ve bunlar arasında geçiş yapın. <br /> - *Not*. OsmAnd'da harita alt katmanlarını değiştirmek için, birden çok harita alt katmanı arasında geçiş yapmanızı sağlayan tek bir hızlı eylem ayarlayabilir veya her biri belirli bir harita alt katmanı için birkaç ayrı hızlı eylem oluşturabilirsiniz.  |
-| Değiştir <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Vektör haritaları için bir harita stili listesi oluşturun ve bunlar arasında geçiş yapın. Seçim diyalogunu gösterebilir veya gizleyebilirsiniz: <br /> - *Diyalog gösteriliyorsa*, listeden herhangi bir stili seçebilirsiniz. <br /> - *Diyalog gizliyse*, eylem tek dokunuşla geçiş (yalnızca döngü) olarak çalışır. <br /> Döngü sırasında, ok ile birlikte hızlı eylem etiketi (ör. > Nautical) bir sonraki dokunuşta uygulanacak bir sonraki harita stilini gösterir, şu anda etkin olanı değil. <br /> - *Not*. OsmAnd'da harita stillerini değiştirmek için, birden çok harita katmanı arasında geçiş yapmanızı sağlayan tek bir hızlı eylem ayarlayabilir veya her biri belirli bir harita stili için birkaç ayrı hızlı eylem oluşturabilirsiniz. |
+| Değiştir <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/map-styles.md#default-map-styles) | Vektör haritaları için bir harita stili listesi oluşturun ve bunlar arasında geçiş yapın. Seçim diyalogunu gösterebilir veya gizleyebilirsiniz: <br /> - *Diyalog gösteriliyorsa*, listeden herhangi bir stili seçebilirsiniz. <br /> - *Diyalog gizliyse*, eylem tek dokunuşla geçiş (yalnızca döngü) olarak çalışır. <br /> Döngü sırasında, ok ile birlikte hızlı eylem etiketi (ör. > Nautical) bir sonraki dokunuşta uygulanacak bir sonraki harita stilini gösterir, şu anda etkin olanı değil. <br /> - *Not*. OsmAnd'da harita stillerini değiştirmek için, birden çok harita katmanı arasında geçiş yapmanızı sağlayan tek bir hızlı eylem ayarlayabilir veya her biri belirli bir harita stili için birkaç ayrı hızlı eylem oluşturabilirsiniz. |
 | Göster / Gizle <br/> [**Mapillary katmanı**](../plugins/mapillary.md) | Mapillary tarafından sağlanan sokak seviyesi görüntüleri ile harita katmanlarını görüntülemenizi sağlar. |
 | Göster / Gizle <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | Tek bir düğmeye dokunarak haritadaki tüm OSM notlarını görüntülemeyi veya gizlemeyi seçebilirsiniz. |
 

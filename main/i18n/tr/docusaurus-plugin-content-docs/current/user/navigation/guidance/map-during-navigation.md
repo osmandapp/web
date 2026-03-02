@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
 sidebar_position: 2
 title: Navigasyon Sırasında Harita Ekranı
 ---
@@ -43,7 +43,7 @@ Bu makale, navigasyon sırasında haritanın görünümünü nasıl yapılandır
 
 </Tabs>
 
-Navigasyon sırasında harita, konumunuzu bulmak, hedefinizi belirlemek, rotanızı planlamak ve navigasyon rehberliğini görüntülemek için görsel bir araçtır. Bunu yapmak için yakınlaştırma kullanabilir ve haritayı gerektiği gibi sürükleyip döndürebilirsiniz. Harita ayrıca, rotanızı kolayca belirlemenize yardımcı olmak için yol bilgilerini, sokak adlarını, binaları ve diğer nesneleri de görüntüleyebilir.  
+Navigasyon sırasında, harita konumunuzu bulmak, hedefinizi belirlemek, rotanızı planlamak ve navigasyon rehberliğini görüntülemek için görsel bir araçtır. Bunu yapmak için yakınlaştırma kullanabilir ve haritayı gerektiği gibi sürükleyip döndürebilirsiniz. Harita ayrıca, rotanızı kolayca belirlemenize yardımcı olmak için yol bilgilerini, sokak adlarını, binaları ve diğer nesneleri de görüntüleyebilir.  
 
 Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline göre ayarlanır. Navigasyona başlamadan önce, haritanın görünümünün sürüş sırasında nasıl çalışması gerektiğine ilişkin tercihlerinize uygun olduğundan emin olun.
 
@@ -160,6 +160,10 @@ Liste, oluşturduğunuz rotanın yakınındaki daha önce eklenmiş tüm [Favori
 
 ## Rota Çizgisi Görünümü {#route-line-appearance}
 
+:::info Pro feature
+Rota Çizgisini Özelleştirme, [**OsmAnd Pro**](../../purchases/index.md) ücretli bir özelliktir <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -185,16 +189,11 @@ Rota çizgisi görünümünü stile göre seçebilir veya çizginin rengini, gen
 **Gelişmiş**: Rota çizgisini özelleştirme ayarı, rota çizgisinin görünümünü yükseklik değişikliklerini, önemli yokuş yukarı veya yokuş aşağı, yolda buz, asfaltlanmamış yollar, otoyollar ve diğer olası engelleri gösterecek şekilde ayarlamanıza olanak tanır. Rota çizgisine uygulanacak özel [renk şemalarını](../../personal/color-palette-schemes.md#tracks-routes) da seçebilir veya oluşturabilirsiniz.
 
 
-:::note
- <ProFeature/> Bazı parametreleri yalnızca <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro aboneliği</a> ile kullanabilirsiniz.
-:::
-
-
 ### Renk {#color}
 
 **Renk** ayarı, rota çizgilerinin renk tonlarını değiştirir. Genel renkleri, OsmAnd koleksiyonundan seçilen türe ve **Harita Lejantına** göre değişir. Alternatif olarak, renkleri manuel olarak ayarladığınız renk ve şeffaflık olur.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Varsayılan renklerle kullanılır. Renklerin tam açıklaması için [Varsayılan Harita stilleri](../../map/vector-maps.md#default-map-styles) bölümüne gidin.  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Varsayılan renklerle kullanılır. Renklerin tam açıklaması için [Varsayılan Harita stilleri](../../map/map-styles.md#default-map-styles) bölümüne gidin.  
     ![harita stili](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Özel***. İstediğiniz renkte ve şeffaflıkta bir çizgi seçmenizi sağlar. Gündüz haritası için farklı ayarlar ve gece haritası için ayrı ayrı ayarlar seçebilirsiniz.  
@@ -215,7 +214,7 @@ Rota çizgisi görünümünü stile göre seçebilir veya çizginin rengini, gen
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Tekerlekli araçlar için yol veya patika manevra kabiliyeti sınıflandırması, özellikle yüzeyin düzenliliği ve pürüzsüzlüğü ile ilgili. Ayrıntılı bir açıklama *Harita Lejantı* bölümündeki *OsmAnd Harita Stili - [Pürüzsüzlük](../../map-legend/osmand.md#surface-smoothness)* makalesinde bulunabilir.  
     ![Yükseklik](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Bir rotayı veya iz çizgisini *kış yolu sınıflandırmasına* göre renklendirir. Ayrıntılı bir açıklama *Vektör Haritalar* makalesinin [Kış ve buz yolları](../../map/vector-maps.md#winter-and-ski) bölümünde bulunabilir.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Bir rotayı veya iz çizgisini *kış yolu sınıflandırmasına* göre renklendirir. Ayrıntılı bir açıklama *Harita Stilleri* makalesinin [Kış ve buz yolları](../../map/map-styles.md#winter-and-ski) bölümünde bulunabilir.  
     ![Yükseklik](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Bir rotanın veya patika çizgisinin kaldırım bileşimine göre renklendirilmesi. Genellikle yol ağının büyük ölçüde asfaltlanmamış olduğu durumlarda kullanılır. Ayrıntılı bir açıklama *Harita Lejantı* bölümündeki *OsmAnd Harita Stili - [Yüzey sertliği](../../map-legend/osmand.md#surface-smoothness)* makalesinde bulunabilir.  
@@ -229,7 +228,7 @@ Rota çizgisi görünümünü stile göre seçebilir veya çizginin rengini, gen
 
 Rota çizgisinin genişliğini, haritada görüntülenen yol veya patika ile hizalamak için ayarlayabilirsiniz. Daha net görsel tanımlama için, gerektiğinde çizgi genişliğini manuel olarak artırabilir veya azaltabilirsiniz. Daha fazla ayrıntı için *İzler ve Rotalar — [Görünüm](../../map/tracks/appearance.md) makalesine* bakın.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. OsmAnd tarafından belirlenen varsayılan genişlikle kullanılır. Tam bir açıklama *Vektör Haritalar* makalesinin [Harita stili](../../map/vector-maps.md#default-map-styles) bölümünde bulunabilir.  
+- ***<Translate android="true" id="map_widget_renderer"/>***. OsmAnd tarafından belirlenen varsayılan genişlikle kullanılır. Tam bir açıklama *[Harita stilleri](../../map/map-styles.md)* makalesinde bulunabilir.  
     ![harita stili](@site/static/img/navigation/route/map_st_2.png)
 
 - ***İnce, Orta ve Kalın genişlikler***. Çizginin genişliğini yolun genişliğine uyacak şekilde seçebilir veya rota çizgisini haritada daha güçlü bir şekilde vurgulayabilirsiniz.  

@@ -1,7 +1,7 @@
 ---
-source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
-sidebar_position: 3
-title:  Аудіо/відеонотатки
+source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+sidebar_position: 4
+title:  Аудіо / Відеонотатки
 ---
 
 import Tabs from '@theme/Tabs';
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,audionotes_plugin_name,shared_string_settings"/>*  
 
-![Налаштування плагіна аудіо-відео Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
+![Налаштування плагіна аудіо/відеонотаток для фото Android](@site/static/img/plugins/audio-video-notes/settings_av_plugin.png)
 
 </TabItem>
 
@@ -92,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Віджет плагіна аудіо-відео Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
+![Віджет плагіна аудіо/відеонотаток Android](@site/static/img/plugins/audio-video-notes/audio_video_plugin_widget_choice_android.png)
 
 </TabItem>
 
@@ -109,7 +109,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Плагін аудіо-відео, контекстне меню, зробити нотатку](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
+![Плагін аудіо/відеонотаток, контекстне меню, зробити нотатку](@site/static/img/plugins/audio-video-notes/context-menu-take-note.png)
 
 </TabItem>
 
@@ -173,7 +173,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Меню "Мої місця" плагіна аудіо-відео](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
+![Меню "Мої місця" плагіна аудіо/відеонотаток](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu.png)
 
 </TabItem>
 
@@ -188,7 +188,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Контекстне меню "Мої місця" плагіна аудіо-відео](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
+![Контекстне меню "Мої місця" плагіна аудіо/відеонотаток](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_context.png)
 
 </TabItem>
 
@@ -203,8 +203,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Контекстне меню плагіна аудіо-відео](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)  
-![Дії в меню "Мої місця" плагіна аудіо-відео](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Контекстне меню плагіна аудіо/відеонотаток](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png)  
+![Дії в меню "Мої місця" плагіна аудіо/відеонотаток](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
@@ -224,7 +224,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Дії в меню "Мої місця" плагіна аудіо-відео](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+![Дії в меню "Мої місця" плагіна аудіо/відеонотаток](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 </TabItem>
 
@@ -292,7 +292,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Меню "Мої місця" плагіна аудіо-відео, три дії](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
+![Меню "Мої місця" плагіна аудіо/відеонотаток, три дії](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)
 
 </TabItem>
 
@@ -430,7 +430,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Експорт до JOSM {#export-to-josm}
 
-![Аудіо-відео нотатки в Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
+![Аудіо/відеонотатки в Josm](@site/static/img/plugins/audio-video-notes/josm-track-points.png)  
 
 Щоб переглянути все пізніше, ви можете експортувати трек разом з усіма медіафайлами та переглянути їх у [редакторі JOSM](https://josm.openstreetmap.de/). Зверніть увагу, що медіафайли повинні бути розміщені у відповідній папці. Ви можете дізнатися, в якій саме, натиснувши на відео. З'явиться сповіщення про те, що файл недоступний, і потрібно розмістити правильний файл у вказаній папці.  
 
