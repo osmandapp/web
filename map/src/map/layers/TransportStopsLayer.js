@@ -246,6 +246,12 @@ const TransportStopsLayer = () => {
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
+    useEffect(() => {
+        if (ctx.currentObjectType !== OBJECT_TYPE_STOP) {
+            ctx.setSelectedTransportRoute(null);
+        }
+    }, [ctx.currentObjectType]);
+
     async function createStopMarker(stopData) {
         const iconSvg = await getTransportStopIcon();
         if (!iconSvg) {

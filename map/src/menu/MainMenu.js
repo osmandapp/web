@@ -109,6 +109,7 @@ import { searchTypeMap } from '../map/layers/SearchLayer';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
+    ctx.setSelectedTransportRoute(null);
     if (wptDetails) {
         ctx.setSelectedWpt(null);
     }

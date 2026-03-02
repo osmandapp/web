@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import { Box, Typography } from '@mui/material';
 import AppContext from '../../../../context/AppContext';
+import { useWindowSize } from '../../../../util/hooks/useWindowSize';
+import { useHasVerticalScroll } from '../../../../util/hooks/useHasVerticalScroll';
+import { HEADER_SIZE } from '../../../../manager/GlobalManager';
 import styles from './transport.module.css';
+import gStyles from '../../../../menu/gstylesmenu.module.css';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
 
-function RouteInfo({ route }) {
+function RouteInfo({ route, minimised }) {
     const parts = [];
     if (route.typeName) parts.push(route.typeName);
     if (route.stops?.length) parts.push(`${route.stops.length} stops`);
@@ -15,13 +19,40 @@ function RouteInfo({ route }) {
     }
 
     return (
-        <Box className={styles.routeDetailsType}>
+        <Box className={minimised ? styles.routeDetailsType : styles.routeDetailsTypeDefault}>
             {parts.map((part, i) => (
-                <React.Fragment key={i}>
+                <React.Fragment key={part}>
                     {i > 0 && <span>•</span>}
                     <span>{part}</span>
                 </React.Fragment>
             ))}
+        </Box>
+    );
+}
+
+function RouteDetailsHeader({ route, minimised }) {
+    return (
+        <Box className={minimised ? styles.routeDetailsHeader : styles.routeDetailsHeaderDefault}>
+            <Box sx={{ overflow: 'hidden', flexGrow: 1 }}>
+                {route.name && (
+                    <Typography
+                        className={minimised ? styles.routeDetailsName : styles.routeDetailsNameDefault}
+                        sx={minimised ? undefined : { whiteSpace: 'normal' }}
+                    >
+                        {route.name}
+                    </Typography>
+                )}
+                <RouteInfo route={route} minimised={minimised} />
+            </Box>
+            {route.ref && (
+                <Box
+                    component="span"
+                    className={minimised ? styles.routeDetailsShield : styles.routeDetailsShieldDefault}
+                    sx={{ backgroundColor: route.color }}
+                >
+                    {route.ref}
+                </Box>
+            )}
         </Box>
     );
 }
@@ -31,29 +62,24 @@ export default function TransportStopRouteDetails() {
 
     const route = ctx.selectedTransportRoute;
 
+    const [scrollContentRef, hasVerticalScroll] = useHasVerticalScroll([route]);
+    const [, height] = useWindowSize();
+
     if (!route) {
         return null;
     }
-
     const handleClose = () => {
         ctx.setSelectedTransportRoute(null);
     };
 
     return (
         <SecondaryMenuDrawer onClose={handleClose}>
-            <HeaderWithUnderline onClose={handleClose} />
-            <Box className={styles.routeDetailsHeader}>
-                <Box sx={{ overflow: 'hidden', flexGrow: 1 }}>
-                    {route.name && <Typography className={styles.routeDetailsName}>{route.name}</Typography>}
-                    <RouteInfo route={route} />
+            <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
+                <HeaderWithUnderline onClose={handleClose} />
+                <Box ref={scrollContentRef} className={gStyles.scrollActiveBlock}>
+                    <RouteDetailsHeader route={route} minimised={hasVerticalScroll} />
                 </Box>
-                {route.ref && (
-                    <Box component="span" className={styles.routeDetailsShield} sx={{ backgroundColor: route.color }}>
-                        {route.ref}
-                    </Box>
-                )}
             </Box>
-            <Box sx={{ overflowY: 'auto', flexGrow: 1 }} />
         </SecondaryMenuDrawer>
     );
 }

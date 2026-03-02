@@ -12,6 +12,7 @@ export default function SecondaryMenuDrawer({ onClose, children }) {
             open={true}
             onClose={onClose}
             hideBackdrop
+            transitionDuration={0}
             ModalProps={{
                 keepMounted: true,
                 hideBackdrop: true,
