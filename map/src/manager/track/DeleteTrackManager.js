@@ -119,11 +119,11 @@ export function hideAllTracks(ctx) {
     }
 }
 
-function separateFilesBySource(files, ctx, isVisible = false) {
+function separateFilesBySource(files, ctx) {
     const cloudFiles = [];
     const sharedFiles = [];
     files.forEach((file) => {
-        if (file.url || isVisible) {
+        if (file.url) {
             if (file.sharedWithMe) {
                 sharedFiles.push(file);
             } else {
@@ -199,37 +199,44 @@ export async function showAllVisibleTracks(ctx) {
     );
 
     const results = await Promise.all(promises);
+    const allUpdatedFiles = Object.assign({}, ...results);
+    const cloudUpdates = {};
+    const sharedUpdates = {};
+    const newVisibleList = [];
 
-    const allUpdatedFiles = results.reduce((acc, result) => ({ ...acc, ...result }), {});
+    files.forEach((file) => {
+        const updated = allUpdatedFiles[file.name];
+        if (updated) {
+            newVisibleList.push(updated);
+            if (file.sharedWithMe) {
+                sharedUpdates[file.name] = updated;
+            } else {
+                cloudUpdates[file.name] = updated;
+            }
+        }
+    });
 
-    const { cloudFiles, sharedFiles } = separateFilesBySource(files, ctx, true);
-
-    if (cloudFiles.length > 0) {
+    if (Object.keys(cloudUpdates).length > 0) {
         ctx.setGpxFiles((prevFiles) => ({
             ...prevFiles,
-            ...cloudFiles.reduce((updatedFiles, file) => {
-                if (allUpdatedFiles[file.name]) {
-                    updatedFiles[file.name] = allUpdatedFiles[file.name];
-                }
-                return updatedFiles;
-            }, {}),
+            ...cloudUpdates,
         }));
     }
 
-    if (sharedFiles.length > 0) {
+    if (Object.keys(sharedUpdates).length > 0) {
         ctx.setShareWithMeFiles((prevFiles) => ({
             ...prevFiles,
             tracks: {
                 ...prevFiles.tracks,
-                ...sharedFiles.reduce((updatedTracks, file) => {
-                    if (allUpdatedFiles[file.name]) {
-                        updatedTracks[file.name] = allUpdatedFiles[file.name];
-                    }
-                    return updatedTracks;
-                }, {}),
+                ...sharedUpdates,
             },
         }));
     }
+
+    ctx.setVisibleTracks({
+        old: [],
+        new: newVisibleList,
+    });
 }
 
 function deleteTracksFromGroups(trackName, ctx) {
