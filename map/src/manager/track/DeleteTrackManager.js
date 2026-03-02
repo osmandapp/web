@@ -180,26 +180,33 @@ export function deleteTracksFromMap(ctx, files) {
 export async function showAllVisibleTracks(ctx) {
     const files = getAllVisibleFiles(ctx);
     if (!files || files.length === 0) return;
-
+    const BATCH_SIZE = 5;
+    ctx.setGpxLoading(true);
     showAllVisTracks();
+    const allResults = [];
+    for (let i = 0; i < files.length; i += BATCH_SIZE) {
+        const batch = files.slice(i, i + BATCH_SIZE);
+        const promises = batch.map((file) =>
+            openTrackOnMap({
+                file,
+                setProgressVisible: null,
+                showOnMap: true,
+                showInfo: false,
+                zoomToTrack: false,
+                smartf: file.sharedWithMe ? { type: SHARE_TYPE } : null,
+                ctx,
+                setError: null,
+                returnOneTrack: true,
+                recentSaver: null,
+            })
+        );
+        const results = await Promise.allSettled(promises);
+        allResults.push(...results);
+    }
 
-    const promises = files.map((file) =>
-        openTrackOnMap({
-            file,
-            setProgressVisible: null,
-            showOnMap: true,
-            showInfo: false,
-            zoomToTrack: false,
-            smartf: file.sharedWithMe ? { type: SHARE_TYPE } : null,
-            ctx,
-            setError: null,
-            returnOneTrack: true,
-            recentSaver: null,
-        })
-    );
+    const fulfilledValues = allResults.filter((result) => result.status === 'fulfilled').map((result) => result.value);
+    const allUpdatedFiles = Object.assign({}, ...fulfilledValues);
 
-    const results = await Promise.all(promises);
-    const allUpdatedFiles = Object.assign({}, ...results);
     const cloudUpdates = {};
     const sharedUpdates = {};
     const newVisibleList = [];
@@ -256,6 +263,7 @@ export async function showAllVisibleTracks(ctx) {
         old: [],
         new: newVisibleList,
     });
+    ctx.setGpxLoading(false);
 }
 
 function deleteTracksFromGroups(trackName, ctx) {
