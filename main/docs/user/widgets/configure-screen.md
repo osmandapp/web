@@ -332,10 +332,18 @@ Widgets in the right and left panels can be grouped into **Pages**. The **Pages 
     - Improves clarity and maximizes the space for important data.
     - Especially useful when displaying many widgets on the same **row**.
 
+3. **Widget text label visibility**
+
+    - Text label visibility depends on widget size and panel location. In Medium and Large sizes, labels are always displayed.
+    - In Small size, labels are not shown on the Left and Right panels. On the Top and Bottom panels, the label may be hidden automatically (when positioned on the right side) to keep numeric values fully visible.
+    - There is no separate option to turn text labels on or off.
+
+<!--
 3. **Hiding widget text labels**:
 
     - Automatically hides text labels to keep numeric information fully visible in compact layouts.
-    - Helps maintain a clean and readable widget arrangement when space is limited.   
+    - Helps maintain a clean and readable widget arrangement when space is limited.  
+--> 
 
 4. **Individual size for different rows** (*for all panels*):
 
