@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import styles from '../wptDetails.module.css';
+import styles from './transport.module.css';
 import itemsStyles from '../../../../frame/components/items/items.module.css';
 import MenuItemWithLines from '../../../../menu/components/MenuItemWithLines';
 import AppContext from '../../../../context/AppContext';
@@ -11,7 +11,7 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
     const IconComponent = icon;
 
     const handleRouteClick = async () => {
-        if (!wpt || !wpt.latlon || !wpt.id || !route.id) {
+        if (!wpt?.latlon || !wpt.id || !route.id) {
             return;
         }
 
@@ -42,7 +42,12 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
     };
 
     return (
-        <MenuItem id={`se-transport-route-${route.id}`} disableRipple className={styles.stopRouteItem} onClick={handleRouteClick}>
+        <MenuItem
+            id={`se-transport-route-${route.id}`}
+            disableRipple
+            className={`${styles.stopRouteItem} ${ctx.selectedTransportRoute?.id === route.id ? styles.selected : ''}`}
+            onClick={handleRouteClick}
+        >
             <ListItemIcon className={itemsStyles.icon} sx={{ alignItems: 'center' }}>
                 <IconComponent style={{ width: 24, height: 24 }} />
             </ListItemIcon>
