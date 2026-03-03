@@ -585,8 +585,8 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
                         name: folder,
                         subfolders: [],
                         groupFiles: [],
-                        lastModifiedMs: null,
-                        lastModifiedData: null,
+                        minModifiedMs: null,
+                        minModifiedDate: null,
                     };
                     currentGroups.push(existingGroup);
                 }
@@ -604,8 +604,8 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
             fullName: DEFAULT_GROUP_NAME,
             files: tracks,
             groupFiles: tracks,
-            lastModifiedMs: null,
-            lastModifiedData: null,
+            minModifiedMs: null,
+            minModifiedDate: null,
         };
         defaultGroup.subfolders = trackGroups.filter((group) => group.name !== DEFAULT_GROUP_NAME);
         trackGroups.push(defaultGroup);
@@ -657,8 +657,8 @@ function addFilesAndCalculateLastModified(groups) {
 
 function calculateLastModified(group) {
     if (!group.files || group.files.length === 0) {
-        group.lastModifiedMs = null;
-        group.lastModifiedData = null;
+        group.minModifiedMs = null;
+        group.minModifiedDate = null;
         return;
     }
 
@@ -670,8 +670,8 @@ function calculateLastModified(group) {
             minData = file.updatetime;
         }
     }
-    group.lastModifiedMs = minMs;
-    group.lastModifiedData = minData;
+    group.minModifiedMs = minMs;
+    group.minModifiedDate = minData;
 }
 
 export function findGroupByName(groups, groupName) {

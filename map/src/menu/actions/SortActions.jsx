@@ -33,8 +33,8 @@ function byAlpha(files, reverse) {
 export function byTime(files, reverse, isGroup = false) {
     if (isGroup) {
         return [...files].sort((a, b) => {
-            const A = a.lastModifiedMs;
-            const B = b.lastModifiedMs;
+            const A = a.minModifiedMs;
+            const B = b.minModifiedMs;
             if (A === B) {
                 return az(a.name, b.name);
             }

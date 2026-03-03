@@ -155,8 +155,8 @@ export async function loadSmartFolders(setTracksGroups, listFiles) {
             groupFiles: filesArray,
             files: filesArray,
             realSize: filesArray.length,
-            lastModifiedMs: minMs !== Infinity ? minMs : null,
-            lastModifiedData: minData,
+            minModifiedMs: minMs !== Infinity ? minMs : null,
+            minModifiedDate: minData,
         };
     });
 

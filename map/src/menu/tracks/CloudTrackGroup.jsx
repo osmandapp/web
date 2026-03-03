@@ -44,7 +44,7 @@ export default function CloudTrackGroup({ index, group }) {
         if (group.type === SMART_TYPE) {
             return `${group.realSize} ${t('shared_string_gpx_files').toLowerCase()}`;
         }
-        return `${fmt.monthShortDay(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
+        return `${fmt.monthShortDay(group.minModifiedDate)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
     };
 
     return (
