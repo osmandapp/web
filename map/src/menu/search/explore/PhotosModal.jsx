@@ -7,6 +7,7 @@ import { ReactComponent as BackForward } from '../../../assets/icons/ic_arrow_fo
 import headerStyles from '../../trackfavmenu.module.css';
 import styles from '../search.module.css';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
+import { ReactComponent as WikimediaIcon } from '../../../assets/features/ic_action_logo_wikimedia.svg';
 import AppContext from '../../../context/AppContext';
 import { useInView } from 'react-intersection-observer';
 import { getPhotoUrl } from './PhotoGallery';
@@ -221,71 +222,84 @@ export default function PhotosModal({ photos }) {
                 </Box>
                 {activePhoto !== null && activePhoto.imageTitle === photos[activeStep]?.imageTitle && showInfo && (
                     <AppBar position="static" className={styles.photoFooter} sx={{ backgroundColor: 'black' }}>
-                        {activePhoto.properties.date ? (
-                            <MenuItemWithLines
-                                id={'se-photo-date'}
-                                compName={t('shared_string_date')}
-                                className={`${styles.metadata} ${styles.metadatamulti}`}
-                                name={`${t('shared_string_date')}: ${formatDate(activePhoto.properties.date)}`}
-                                maxLines={1}
-                                showMore={needOpenMoreModal(formatDate(activePhoto.properties.date))}
-                            />
-                        ) : (
-                            <Typography className={styles.metadata}>{`${t('shared_string_date')}: -`}</Typography>
-                        )}
-
-                        {activePhoto.properties.author ? (
-                            <MenuItemWithLines
-                                id={'se-photo-author'}
-                                compName={t('shared_string_author')}
-                                className={`${styles.metadata} ${styles.metadatamulti}`}
-                                name={`${t('shared_string_author')}: ${activePhoto.properties.author}`}
-                                maxLines={1}
-                                showMore={needOpenMoreModal(activePhoto.properties.author)}
-                            />
-                        ) : (
-                            <Typography className={styles.metadata}>{`${t('shared_string_author')}: -`}</Typography>
-                        )}
-                        {activePhoto.properties.license ? (
-                            activePhoto.properties.license.startsWith('Q') ? (
-                                <Typography id={'se-photo-license'} className={styles.metadata}>
-                                    License:{' '}
-                                    <a
-                                        href={`https://www.wikidata.org/wiki/${activePhoto.properties.license}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                        <Box className={styles.photoFooterContent}>
+                            <WikimediaIcon className={styles.attributionIcon} />
+                            <Box className={styles.photoMetadataContainer}>
+                                {activePhoto.properties.date ? (
+                                    <MenuItemWithLines
+                                        id={'se-photo-date'}
+                                        compName={t('shared_string_date')}
+                                        className={`${styles.metadata} ${styles.metadatamulti}`}
+                                        name={`${t('shared_string_date')}: ${formatDate(activePhoto.properties.date)}`}
+                                        maxLines={1}
+                                        showMore={needOpenMoreModal(formatDate(activePhoto.properties.date))}
+                                    />
+                                ) : (
+                                    <Typography
                                         className={styles.metadata}
-                                    >
-                                        {activePhoto.properties.license}
-                                    </a>
-                                </Typography>
-                            ) : (
-                                <MenuItemWithLines
-                                    id={'se-photo-license'}
-                                    compName={t('shared_string_license')}
-                                    className={`${styles.metadata} ${styles.metadatamulti}`}
-                                    name={`${t('shared_string_license')}: ${activePhoto.properties.license}`}
-                                    maxLines={1}
-                                    showMore={needOpenMoreModal(activePhoto.properties.license)}
-                                />
-                            )
-                        ) : (
-                            <Typography className={styles.metadata}>{`${t('shared_string_license')}: -`}</Typography>
-                        )}
-                        {activePhoto.properties.description ? (
-                            <MenuItemWithLines
-                                id={'se-photo-description'}
-                                compName={t('shared_string_description')}
-                                className={`${styles.metadata} ${styles.metadatamulti}`}
-                                name={`${t('shared_string_description')}: ${parseDescription(activePhoto.properties.description).trimStart()}`}
-                                maxLines={1}
-                                showMore={needOpenMoreModal(parseDescription(activePhoto.properties.description))}
-                            />
-                        ) : (
-                            <Typography
-                                className={styles.metadata}
-                            >{`${t('shared_string_description')}: -`}</Typography>
-                        )}
+                                    >{`${t('shared_string_date')}: -`}</Typography>
+                                )}
+
+                                {activePhoto.properties.author ? (
+                                    <MenuItemWithLines
+                                        id={'se-photo-author'}
+                                        compName={t('shared_string_author')}
+                                        className={`${styles.metadata} ${styles.metadatamulti}`}
+                                        name={`${t('shared_string_author')}: ${activePhoto.properties.author}`}
+                                        maxLines={1}
+                                        showMore={needOpenMoreModal(activePhoto.properties.author)}
+                                    />
+                                ) : (
+                                    <Typography
+                                        className={styles.metadata}
+                                    >{`${t('shared_string_author')}: -`}</Typography>
+                                )}
+                                {activePhoto.properties.license ? (
+                                    activePhoto.properties.license.startsWith('Q') ? (
+                                        <Typography id={'se-photo-license'} className={styles.metadata}>
+                                            License:{' '}
+                                            <a
+                                                href={`https://www.wikidata.org/wiki/${activePhoto.properties.license}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={styles.metadata}
+                                            >
+                                                {activePhoto.properties.license}
+                                            </a>
+                                        </Typography>
+                                    ) : (
+                                        <MenuItemWithLines
+                                            id={'se-photo-license'}
+                                            compName={t('shared_string_license')}
+                                            className={`${styles.metadata} ${styles.metadatamulti}`}
+                                            name={`${t('shared_string_license')}: ${activePhoto.properties.license}`}
+                                            maxLines={1}
+                                            showMore={needOpenMoreModal(activePhoto.properties.license)}
+                                        />
+                                    )
+                                ) : (
+                                    <Typography
+                                        className={styles.metadata}
+                                    >{`${t('shared_string_license')}: -`}</Typography>
+                                )}
+                                {activePhoto.properties.description ? (
+                                    <MenuItemWithLines
+                                        id={'se-photo-description'}
+                                        compName={t('shared_string_description')}
+                                        className={`${styles.metadata} ${styles.metadatamulti}`}
+                                        name={`${t('shared_string_description')}: ${parseDescription(activePhoto.properties.description).trimStart()}`}
+                                        maxLines={1}
+                                        showMore={needOpenMoreModal(
+                                            parseDescription(activePhoto.properties.description)
+                                        )}
+                                    />
+                                ) : (
+                                    <Typography
+                                        className={styles.metadata}
+                                    >{`${t('shared_string_description')}: -`}</Typography>
+                                )}
+                            </Box>
+                        </Box>
                     </AppBar>
                 )}
             </Box>
