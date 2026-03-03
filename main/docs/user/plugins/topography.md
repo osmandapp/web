@@ -142,6 +142,10 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 ## Contour Lines {#contour-lines}
 
+:::tip Purchase
+Contour lines is a [paid feature](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -180,6 +184,10 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 
 
 ## Terrain {#terrain}
+
+:::tip Purchase
+Terrain is a [paid feature](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -317,6 +325,57 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 - Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
 - Add one or more QA buttons to change the visibility of a particular topography layer.
+
+## 3D Buildings {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings* 
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
+
+**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
+
+Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up.
+
+This option is available only when the Topography plugin is enabled.  
+Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+The 3D buildings settings are divided into two groups: **Appearance** and **Performance**.
+
+### Appearance {#appearance}
+
+![3D Buildings](@site/static/img/map/3d_buildings_color.png)
+
+The **Appearance** controls how 3D buildings look on the map. It includes two settings: Color and Visibility. 
+
+**Color** lets you change the building color. When you tap Color, OsmAnd opens a separate preview screen where you can see the map while adjusting the setting.
+- **Map style** — uses the default building color from the currently selected map style.
+- **Custom** — lets you set a custom building color separately for Day / Night mode.
+
+:::tip Purchase
+Color Customization of 3D Buildings is a [paid feature](../purchases/index.md).  
+:::
+
+If Custom colors are not purchased, you’ll see an empty state with a short description and a Get button. If Custom is available, you can switch between Day and Night, pick a color from the palette (or open All colors), then tap Apply.
+
+**Visibility** controls the opacity (transparency) of 3D buildings. Use the slider to set the visibility as a percentage. Lower values make buildings more transparent and help roads/labels stay readable. Higher values make buildings look more solid and visually dominant. Tapping Visibility also opens a separate preview screen with the slider.
+
+On the preview screens (Color / Visibility), you can use Reset to default from the app bar to restore the default value.
+
+### Performance {#performance}
+
+The **Performance** controls how 3D buildings are rendered. It includes two settings: Level of detail and View distance.
+
+**Level of detail** determines the complexity of the 3D building geometry:
+- Low (default) — simpler geometry.
+- High — more detailed geometry.
+
+**View distance** controls how far from the camera 3D buildings are rendered:
+- Near (default) — renders buildings closer to you.
+- Far — renders buildings from a longer distance.
+
+Both performance options use a two-position toggle right in the 3D buildings settings screen.
 
 
 ## 3D Relief {#3d-relief}
