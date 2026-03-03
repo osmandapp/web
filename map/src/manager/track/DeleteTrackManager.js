@@ -1,6 +1,6 @@
 import { isCloudTrack, isLocalTrack, loadShareFiles, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { apiGet, apiPost } from '../../util/HttpApi';
-import { findGroupByName, getAllVisibleFiles } from './TracksManager';
+import { findGroupByName, getAllVisibleFiles, openTrackOnMap } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -8,6 +8,7 @@ import { hideAllVisTracks, showAllVisTracks } from '../../menu/visibletracks/Vis
 import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
 import { deleteLocalTrack } from '../../context/LocalTrackStorage';
+import { SHARE_TYPE } from '../../menu/share/shareConstants';
 
 export async function deleteTrack({ file, ctx, ltx, shared = false, type = 'GPX' }) {
     if ((isCloudTrack(ctx) || file) && ltx.loginUser) {
@@ -176,49 +177,93 @@ export function deleteTracksFromMap(ctx, files) {
     }
 }
 
-export function showAllVisibleTracks(ctx) {
+export async function showAllVisibleTracks(ctx) {
     const files = getAllVisibleFiles(ctx);
     if (!files || files.length === 0) return;
-
+    const BATCH_SIZE = 5;
+    ctx.setGpxLoading(true);
     showAllVisTracks();
+    const allResults = [];
+    for (let i = 0; i < files.length; i += BATCH_SIZE) {
+        const batch = files.slice(i, i + BATCH_SIZE);
+        const promises = batch.map((file) =>
+            openTrackOnMap({
+                file,
+                setProgressVisible: null,
+                showOnMap: true,
+                showInfo: false,
+                zoomToTrack: false,
+                smartf: file.sharedWithMe ? { type: SHARE_TYPE } : null,
+                ctx,
+                setError: null,
+                returnOneTrack: true,
+                recentSaver: null,
+            })
+        );
+        const results = await Promise.allSettled(promises);
+        allResults.push(...results);
+    }
 
-    const { cloudFiles, sharedFiles } = separateFilesBySource(files, ctx);
-    if (cloudFiles.length > 0) {
+    const fulfilledValues = allResults.filter((result) => result.status === 'fulfilled').map((result) => result.value);
+    const allUpdatedFiles = Object.assign({}, ...fulfilledValues);
+
+    const cloudUpdates = {};
+    const sharedUpdates = {};
+    const newVisibleList = [];
+
+    const updateFile = (file) => {
+        const updated = allUpdatedFiles[file.name];
+        if (updated) {
+            if (file.sharedWithMe) {
+                sharedUpdates[file.name] = updated;
+            } else {
+                cloudUpdates[file.name] = updated;
+            }
+            return updated;
+        }
+        return null;
+    };
+
+    if (!isEmpty(ctx.visibleTracks.new)) {
+        ctx.visibleTracks.new.forEach((file) => {
+            const updated = updateFile(file);
+            if (updated) {
+                newVisibleList.push(updated);
+            }
+        });
+    }
+
+    if (!isEmpty(ctx.visibleTracks.old)) {
+        ctx.visibleTracks.old.forEach((file) => {
+            const updated = updateFile(file);
+            if (updated) {
+                newVisibleList.push(updated);
+            }
+        });
+    }
+
+    if (Object.keys(cloudUpdates).length > 0) {
         ctx.setGpxFiles((prevFiles) => ({
             ...prevFiles,
-            ...cloudFiles.reduce((updatedFiles, file) => {
-                if (prevFiles[file.name]) {
-                    updatedFiles[file.name] = {
-                        ...prevFiles[file.name],
-                        showOnMap: true,
-                        visible: true,
-                        url: file.url,
-                    };
-                }
-                return updatedFiles;
-            }, {}),
+            ...cloudUpdates,
         }));
     }
 
-    if (sharedFiles.length > 0) {
+    if (Object.keys(sharedUpdates).length > 0) {
         ctx.setShareWithMeFiles((prevFiles) => ({
             ...prevFiles,
             tracks: {
                 ...prevFiles.tracks,
-                ...sharedFiles.reduce((updatedTracks, file) => {
-                    if (prevFiles.tracks[file.name]) {
-                        updatedTracks[file.name] = {
-                            ...prevFiles.tracks[file.name],
-                            showOnMap: true,
-                            visible: true,
-                            url: file.url,
-                        };
-                    }
-                    return updatedTracks;
-                }, {}),
+                ...sharedUpdates,
             },
         }));
     }
+
+    ctx.setVisibleTracks({
+        old: [],
+        new: newVisibleList,
+    });
+    ctx.setGpxLoading(false);
 }
 
 function deleteTracksFromGroups(trackName, ctx) {

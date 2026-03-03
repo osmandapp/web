@@ -362,6 +362,30 @@ Contour lines in OsmAnd are displayed as elevation lines on vector maps. To use 
 
 Contour lines are compatible with all map styles and can be customized through the [Contour lines menu](../plugins/topography.md#contour-lines). For further details, visit [Topography plugin](../plugins/topography.md) article.
 
+### Terrain {#terrain}
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+
+The Terrain option allows you to customize three features such as Hillshade, Slope, and Altitude. For more details, refer to the [Topography](../plugins/topography.md#terrain) article.
+
+### 3D Buildings {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png) 
+
+**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
+
+This option is available only when the Topography plugin is enabled. See the [Topography plugin](../plugins/topography.md#3d-buildings) article for details.
+
+### 3D Relief {#3d-relief}
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+
+The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#layers) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay). More detailed information is available [here](../plugins/topography.md#3d-relief).
+
 ### * Nautical Depth {#-nautical-depth}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -388,44 +412,15 @@ Nautical depth contour lines represent areas of equal depth, helping visualize u
 
 For further details about the Nautical map view, visit the [Nautical Map plugin page](../plugins/nautical-charts).
 
-### 3D Buildings {#3d-buildings}
+### Globe View {#globe-view}
 
 <InfoAndroidOnly/> 
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2.png) 
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
-**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
-Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up.
+![Globe View](@site/static/img/map/globe_view_1.png) ![Globe View](@site/static/img/map/globe_view_2.png)
 
-Currently, this option is available only when the [OsmAnd development plugin](../plugins/development.md) is enabled.  
-Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
-
-The 3D buildings settings are divided into two groups: **Appearance** and **Performance**.
-
-**Appearance: Color**. It controls the color of 3D buildings. When you tap Color, OsmAnd opens a separate preview screen where you can see the map while adjusting the setting.
-- **Map style** — uses the default building color from the currently selected map style.
-- **Custom** — lets you set a custom building color separately for Day / Night mode.
-
-:::tip Purchase
-Color Customization of 3D Buildings is a [paid feature](../purchases/index.md).  
-:::
-
-If Custom colors are not purchased, you’ll see an empty state with a short description and a Get button. If Custom is available, you can switch between Day and Night, pick a color from the palette (or open All colors), then tap Apply.
-
-**Appearance: Visibility**. It controls the opacity (transparency) of 3D buildings. Use the slider to set the visibility as a percentage. Lower values make buildings more transparent and help roads/labels stay readable. Higher values make buildings look more solid and visually dominant. Tapping Visibility also opens a separate preview screen with the slider.
-
-On the preview screens (Color / Visibility), you can use Reset to default from the app bar to restore the default value.
-
-**Performance: Level of detail**. It controls how detailed the 3D building geometry is:
-- Low (default) — simpler geometry.
-- High — more detailed geometry.
-
-**Performance: View distance**. It controls how far from the camera 3D buildings are rendered:
-- Near (default) — renders buildings closer to you.
-- Far — renders buildings from a longer distance.
-
-Both performance options use a two-position toggle right in the 3D buildings settings screen.
+**Globe View** allows you to display the map as a spherical Earth instead of a flat projection. This mode changes the geometry of the map surface and adapts map interaction to spherical navigation. For more information, see the [Globe view section](../map/interact-with-map.md#globe-view) in the Interact with map article.
 
 <!--
 ## Map Legend {#map-legend}

@@ -70,6 +70,40 @@ On IOS the **Coloring list** opens as a context menu. Items can appear in three 
 
 For more details on route line appearance customization, see [Map screen during navigation](../../navigation/guidance/map-during-navigation.md#color) and on selecting and creating a custom color, see [Color schemes](../../personal/color-palette-schemes.md#tracks-routes).
 
+### Gradient Palettes {#gradient-palettes}
+
+<InfoAndroidOnly/> 
+
+![Gradient Palettes](@site/static/img/map/gradient_palettes_1.png)   ![Gradient Palettes](@site/static/img/map/gradient_palettes_2.png) 
+
+When coloring a track by Speed, Altitude, or Slope, OsmAnd uses gradient palettes to define how colors are applied along the track.
+
+The *All colors screen* displays available palettes. Tap the three-dot menu next to a palette to:
+- Rename.
+- Edit.
+- Duplicate.
+- Remove. Removing a palette requires confirmation.
+
+Tap the + button on the All colors screen. Two types of palettes are available:
+- **Relative** — colors scale automatically based on the track’s minimum and maximum values.
+- **Fixed Values** — colors are assigned to specific absolute numbers (for example, 50 km/h). Values can be edited manually. Units follow the [system settings](../../personal/profiles.md#units--formats). The gradient does not rescale automatically when applied to different tracks.
+
+:::info Pro feature
+Creating custom palettes is an [**OsmAnd Pro**](../../purchases/index.md) paid feature <ProFeature />.
+:::
+
+When creating or editing a palette, the editor screen includes:
+- A gradient preview at the top of the screen.
+- Selectable value buttons below the gradient (for example, 50, 100, 150, No data).
+- A + button to add a new step.
+- A Value field.
+- Color selection options.
+- A Remove step option for the selected value.
+- A Save button.
+
+Use the undo icon in the app bar to revert the last action. Tap Close to exit the editor. If changes were made, a confirmation dialog appears before closing.
+
+
 
 ### Width {#width}
 

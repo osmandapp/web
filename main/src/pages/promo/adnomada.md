@@ -15,18 +15,46 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
 
+## Versión en español
+
+**OsmAnd Pro para "ADNómada"**
+
+¡Hola, amantes de las dos ruedas!
+
+OsmAnd y ["ADNómada"](https://www.instagram.com/angel_ibanez_adnomada/) te presentan la suscripción a OsmAnd Pro por 1 año. Disfruta de todas las funciones de OsmAnd en [en todas las plataformas](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android y Web.
+
+
+**Tus pasos**:
+
+1. **Ingresa tu correo electrónico** para el registro:
+   
+<RegisterUserPromoBlock  promoKey='adnomada1'/>
+
+<p> </p>
+
+2. **El manual completo está** [AQUÍ](https://osmand.net/promo/manual#versión-en-español).
+
+OsmAnd no recopila ninguna información. Por favor, lee la [Política de privacidad](https://osmand.net/docs/legal/privacy-policy) y los [Términos de uso](https://osmand.net/docs/legal/terms-of-use) de OsmAnd.
+
+
+Enlaces de "ADNómada": [Instagram](https://www.instagram.com/angel_ibanez_adnomada/), [Youtube](https://www.youtube.com/hashtag/adnomada)
+
+______________________________
+
+## English version
+
 **OsmAnd Pro for ADNómada**
 
 Hello funs of two wheels!
 
-OsmAnd and ADNómada introduce and present you OsmAnd Pro subscriptions for 1 year. 
+OsmAnd and ["ADNómada"](https://www.instagram.com/angel_ibanez_adnomada/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
 
 **Your steps**:
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='adnomada'/>
+<RegisterUserPromoBlock  promoKey='adnomada1'/>
 
 <p> </p>
 
@@ -34,7 +62,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
-Enduro Rally link: [ADV24](https://www.endurorally24.pl/adv24)
+ADNómada link: [Instagram](https://www.instagram.com/angel_ibanez_adnomada/), [Youtube](https://www.youtube.com/hashtag/adnomada)
 ________________________________
 
 <SotmScreenshots />

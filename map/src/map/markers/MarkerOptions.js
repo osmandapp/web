@@ -52,10 +52,26 @@ const options = {
         iconSize: [13, 13],
         clickable: false,
     }),
-    trackStart: startPointIcon,
-    trackEnd: destinationPointIcon,
-    trackAnalyzerPointA: startPointIcon,
-    trackAnalyzerPointB: destinationPointIcon,
+    trackStart: L.icon({
+        iconUrl: '/map/images/map_icons/map_track_point_start.svg',
+        iconSize: [60, 60],
+        clickable: false,
+    }),
+    trackEnd: L.icon({
+        iconUrl: '/map/images/map_icons/map_track_point_finish.svg',
+        iconSize: [60, 60],
+        clickable: false,
+    }),
+    trackAnalyzerPointA: L.icon({
+        iconUrl: '/map/images/map_icons/ic_action_point_a_colored.svg',
+        iconSize: [30, 30],
+        clickable: false,
+    }),
+    trackAnalyzerPointB: L.icon({
+        iconUrl: '/map/images/map_icons/ic_action_point_b_colored.svg',
+        iconSize: [30, 30],
+        clickable: false,
+    }),
 };
 
 export function createPoiIcon({
