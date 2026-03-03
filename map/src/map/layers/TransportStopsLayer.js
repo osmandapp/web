@@ -131,7 +131,7 @@ async function createTransportStopsLayer({
     }
 
     const getStopColor = (stopId) => {
-        if (ctx.selectedTransportRoute && routeStopIds.length > 0 && stopId && routeStopIds.includes(stopId)) {
+        if (selectedRoute && routeStopIds.length > 0 && stopId && routeStopIds.includes(stopId)) {
             return routeColor;
         }
         return TRANSPORT_STOP_SHIELD_COLOR;

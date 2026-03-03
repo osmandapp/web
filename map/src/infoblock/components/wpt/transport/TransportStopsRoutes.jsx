@@ -160,7 +160,7 @@ export default function TransportStopsRoutes({ routes = [], wpt = null }) {
                     })}
                 </Box>
             </Collapse>
-            {ctx.selectedTransportRoute && <TransportStopRouteDetails />}
+            {ctx.selectedTransportRoute && !ctx.selectedTransportRoute.isPreview && <TransportStopRouteDetails />}
         </Box>
     );
 }

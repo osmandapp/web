@@ -6,36 +6,56 @@ import MenuItemWithLines from '../../../../menu/components/MenuItemWithLines';
 import AppContext from '../../../../context/AppContext';
 import { apiGet } from '../../../../util/HttpApi';
 
+async function fetchRouteData({ wpt, route, color, typeName }) {
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-route`, {
+        apiCache: true,
+        params: {
+            lat: wpt.latlon.lat,
+            lon: wpt.latlon.lon,
+            stopId: wpt.id,
+            routeId: route.id,
+        },
+    });
+    if (!response?.data) return null;
+    return {
+        ...response.data,
+        color,
+        ref: route.ref,
+        name: route.name,
+        type: route.type,
+        typeName,
+    };
+}
+
 export default function TransportStopRouteItem({ route, icon, color, typeName, wpt }) {
     const ctx = useContext(AppContext);
     const IconComponent = icon;
 
-    const handleRouteClick = async () => {
-        if (!wpt?.latlon || !wpt.id || !route.id) {
-            return;
-        }
-
+    const handleRouteMouseEnter = async () => {
+        if (!wpt?.latlon || !wpt.id || !route.id) return;
+        const current = ctx.selectedTransportRoute;
+        if (current && !current.isPreview) return;
         try {
-            const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-route`, {
-                apiCache: true,
-                params: {
-                    lat: wpt.latlon.lat,
-                    lon: wpt.latlon.lon,
-                    stopId: wpt.id,
-                    routeId: route.id,
-                },
-            });
+            const data = await fetchRouteData({ wpt, route, color, typeName });
+            if (data) ctx.setSelectedTransportRoute({ ...data, isPreview: true });
+        } catch (error) {
+            console.error('Failed to load transport route on hover:', error);
+        }
+    };
 
-            if (response?.data) {
-                ctx.setSelectedTransportRoute({
-                    ...response.data,
-                    color,
-                    ref: route.ref,
-                    name: route.name,
-                    type: route.type,
-                    typeName,
-                });
+    const handleRouteMouseLeave = () => {
+        if (ctx.selectedTransportRoute?.isPreview) ctx.setSelectedTransportRoute(null);
+    };
+
+    const handleRouteClick = async () => {
+        if (!wpt?.latlon || !wpt.id || !route.id) return;
+        try {
+            if (ctx.selectedTransportRoute?.id === route.id && ctx.selectedTransportRoute?.isPreview) {
+                ctx.setSelectedTransportRoute({ ...ctx.selectedTransportRoute, isPreview: false });
+                return;
             }
+            const data = await fetchRouteData({ wpt, route, color, typeName });
+            if (data) ctx.setSelectedTransportRoute({ ...data, isPreview: false });
         } catch (error) {
             console.error('Failed to load transport route:', error);
         }
@@ -47,6 +67,8 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
             disableRipple
             className={`${styles.stopRouteItem} ${ctx.selectedTransportRoute?.id === route.id ? styles.selected : ''}`}
             onClick={handleRouteClick}
+            onMouseEnter={handleRouteMouseEnter}
+            onMouseLeave={handleRouteMouseLeave}
         >
             <ListItemIcon className={itemsStyles.icon} sx={{ alignItems: 'center' }}>
                 <IconComponent style={{ width: 24, height: 24 }} />
