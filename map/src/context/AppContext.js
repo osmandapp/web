@@ -115,6 +115,7 @@ async function loadListFiles(
                         });
                         getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles, setTracksGroups);
                         setListFiles(res);
+                        loadSmartFolders(setTracksGroups);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -140,8 +141,8 @@ export async function loadSmartFolders(setTracksGroups) {
             groupFiles: [],
             files: [],
             realSize: smartFolder.userFilePaths?.length ?? 0,
-            minModifiedMs: null,
-            minModifiedDate: null,
+            lastModifiedMs: null,
+            lastModifiedDate: null,
             userFilePaths: smartFolder.userFilePaths ?? [],
         };
     });
@@ -154,16 +155,16 @@ export async function loadSmartFolders(setTracksGroups) {
 
 export function populateSmartFolderFiles(smartFolder, listFiles) {
     const filesArray = [];
-    let minMs = Infinity;
-    let minDate = null;
+    let maxMs = -Infinity;
+    let maxDate = null;
 
     (smartFolder.userFilePaths ?? []).forEach((path) => {
         const file = listFiles?.find((f) => f.name === path);
         if (file) {
             filesArray.push({ ...file, smartFolder: true });
-            if (file.updatetimems < minMs) {
-                minMs = file.updatetimems;
-                minDate = file.updatetime;
+            if (file.updatetimems > maxMs) {
+                maxMs = file.updatetimems;
+                maxDate = file.updatetime;
             }
         }
     });
@@ -173,8 +174,8 @@ export function populateSmartFolderFiles(smartFolder, listFiles) {
         groupFiles: filesArray,
         files: filesArray,
         realSize: filesArray.length,
-        minModifiedMs: minMs !== Infinity ? minMs : null,
-        minModifiedDate: minDate,
+        lastModifiedMs: maxMs,
+        lastModifiedDate: maxDate,
     };
 }
 
@@ -186,7 +187,7 @@ async function getSmartFolders() {
     return null;
 }
 
-export async function getFilesForUpdateDetails(files, setUpdateFiles, setTracksGroups) {
+export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
         .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
         .map((f) => ({
@@ -717,10 +718,9 @@ export const AppContextProvider = (props) => {
             }
         };
 
-        (async () => {
-            await update();
+        update().then(() => {
             setUpdateFiles(null);
-        })();
+        });
     }, [updateFiles]);
 
     useEffect(() => {

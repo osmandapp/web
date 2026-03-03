@@ -161,7 +161,7 @@ export default function TracksMenu() {
                                 <SmartFolder type={SHARE_TYPE} subtype={'track'} files={ctx.shareWithMeFiles?.tracks} />
                             )}
                             {ctx.tracksGroups &&
-                                (sortGroups?.length > 0 ? sortGroups : ctx.tracksGroups)
+                                (sortGroups && sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)
                                     .map((group, index) => {
                                         return <CloudTrackGroup key={group.name} index={index} group={group} />;

@@ -63,7 +63,7 @@ export default function CloudTrackGroup({ index, group }) {
             const filesCount = group.userFilePaths?.length ?? 0;
             return `${filesCount} ${t('shared_string_gpx_files').toLowerCase()}`;
         }
-        return `${fmt.monthShortDay(group.minModifiedDate)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
+        return `${fmt.monthShortDay(group.lastModifiedDate)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
     };
 
     return (
