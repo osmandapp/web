@@ -18,6 +18,7 @@ import { doSort } from '../actions/SortActions';
 import isEmpty from 'lodash-es/isEmpty';
 import { DEFAULT_SORT_METHOD } from './TracksMenu';
 import Loading from '../errors/Loading';
+import { SMART_TYPE } from '../share/shareConstants';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -30,7 +31,7 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
 
     // update group after changing or deleting inner tracks
     useEffect(() => {
-        if (ctx.tracksGroups && folder) {
+        if (ctx.tracksGroups && folder && folder.type !== SMART_TYPE) {
             let found = findGroupByName(ctx.tracksGroups, group.fullName);
             if (ctx.openGroups && ctx.openGroups.length > 0) {
                 const updatedOpenGroups = [...ctx.openGroups];

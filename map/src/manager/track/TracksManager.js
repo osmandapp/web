@@ -648,9 +648,14 @@ function addFilesAndCalculateLastModified(groups) {
                 group.files.push(file);
             }
         });
-        const directTracksCount = (group.groupFiles || []).filter((file) => !isPlaceholderFile(file)).length;
-        const subfoldersTracksCount = group.subfolders.reduce((acc, subfolder) => acc + (subfolder.realSize ?? 0), 0);
-        group.realSize = directTracksCount + subfoldersTracksCount;
+        
+        if (group.type === SMART_TYPE && group.userFilePaths && group.groupFiles.length === 0) {
+            group.realSize = group.userFilePaths.length;
+        } else {
+            const directTracksCount = (group.groupFiles || []).filter((file) => !isPlaceholderFile(file)).length;
+            const subfoldersTracksCount = group.subfolders.reduce((acc, subfolder) => acc + (subfolder.realSize ?? 0), 0);
+            group.realSize = directTracksCount + subfoldersTracksCount;
+        }
         calculateLastModified(group);
     });
 }
@@ -663,15 +668,15 @@ function calculateLastModified(group) {
     }
 
     let minMs = Infinity;
-    let minData = null;
+    let minDate = null;
     for (const file of group.files) {
         if (file.updatetimems < minMs) {
             minMs = file.updatetimems;
-            minData = file.updatetime;
+            minDate = file.updatetime;
         }
     }
     group.minModifiedMs = minMs;
-    group.minModifiedDate = minData;
+    group.minModifiedDate = minDate;
 }
 
 export function findGroupByName(groups, groupName) {

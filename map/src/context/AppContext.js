@@ -129,34 +129,20 @@ async function loadListFiles(
     }
 }
 
-export async function loadSmartFolders(setTracksGroups, listFiles) {
+export async function loadSmartFolders(setTracksGroups) {
     const res = await getSmartFolders();
     const smartFolderGroups = (res ?? []).map((smartFolder) => {
-        const filesArray = [];
-        let minMs = Infinity;
-        let minData = null;
-
-        (smartFolder.userFilePaths ?? []).forEach((path) => {
-            const file = listFiles?.find((f) => f.name === path);
-            if (file) {
-                filesArray.push({ ...file, smartFolder: true });
-                if (file.updatetimems < minMs) {
-                    minMs = file.updatetimems;
-                    minData = file.updatetime;
-                }
-            }
-        });
-
         return {
             name: smartFolder.name,
             fullName: smartFolder.name,
             type: SMART_TYPE,
             subfolders: [],
-            groupFiles: filesArray,
-            files: filesArray,
-            realSize: filesArray.length,
-            minModifiedMs: minMs !== Infinity ? minMs : null,
-            minModifiedDate: minData,
+            groupFiles: [],
+            files: [],
+            realSize: smartFolder.userFilePaths?.length ?? 0,
+            minModifiedMs: null,
+            minModifiedDate: null,
+            userFilePaths: smartFolder.userFilePaths ?? [],
         };
     });
 
@@ -164,6 +150,32 @@ export async function loadSmartFolders(setTracksGroups, listFiles) {
         const withoutSmartFolders = prev.filter((g) => g.type !== SMART_TYPE);
         return [...withoutSmartFolders, ...smartFolderGroups];
     });
+}
+
+export function populateSmartFolderFiles(smartFolder, listFiles) {
+    const filesArray = [];
+    let minMs = Infinity;
+    let minDate = null;
+
+    (smartFolder.userFilePaths ?? []).forEach((path) => {
+        const file = listFiles?.find((f) => f.name === path);
+        if (file) {
+            filesArray.push({ ...file, smartFolder: true });
+            if (file.updatetimems < minMs) {
+                minMs = file.updatetimems;
+                minDate = file.updatetime;
+            }
+        }
+    });
+
+    return {
+        ...smartFolder,
+        groupFiles: filesArray,
+        files: filesArray,
+        realSize: filesArray.length,
+        minModifiedMs: minMs !== Infinity ? minMs : null,
+        minModifiedDate: minDate,
+    };
 }
 
 async function getSmartFolders() {
@@ -186,7 +198,7 @@ export async function getFilesForUpdateDetails(files, setUpdateFiles, setTracksG
     if (filesToUpdate.length > 0) {
         setUpdateFiles(filesToUpdate);
     } else {
-        await loadSmartFolders(setTracksGroups, files);
+        await loadSmartFolders(setTracksGroups);
     }
 }
 
@@ -702,7 +714,7 @@ export const AppContextProvider = (props) => {
                             uniqueFiles: updatedUniqueFiles,
                         };
                     });
-                    await loadSmartFolders(setTracksGroups, listFiles.uniqueFiles);
+                    await loadSmartFolders(setTracksGroups);
                 }
             }
         };

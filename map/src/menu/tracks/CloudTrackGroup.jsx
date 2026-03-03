@@ -12,6 +12,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { fmt } from '../../util/dateFmt';
 import { SMART_TYPE } from '../share/shareConstants';
+import { populateSmartFolderFiles } from '../../context/AppContext';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -20,12 +21,23 @@ export default function CloudTrackGroup({ index, group }) {
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
     const anchorEl = useRef(null);
+    
+    const [populatedGroup, setPopulatedGroup] = useState(group);
 
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
             setOpenActions(false);
         }
     }, [ctx.openedPopper]);
+    
+    useEffect(() => {
+        if (group.type === SMART_TYPE && openActions && group.files?.length === 0) {
+            const populated = populateSmartFolderFiles(group, ctx.listFiles?.uniqueFiles);
+            setPopulatedGroup(populated);
+        } else {
+            setPopulatedGroup(group);
+        }
+    }, [openActions, group, ctx.listFiles?.uniqueFiles]);
 
     const getFolderIcon = () => {
         if (group.type === SMART_TYPE) {
@@ -36,13 +48,20 @@ export default function CloudTrackGroup({ index, group }) {
 
     const handleClick = (e) => {
         if (e.target !== 'path') {
-            ctx.setOpenGroups((prevState) => [...prevState, group]);
+            let groupToOpen = group;
+            
+            if (group.type === SMART_TYPE) {
+                groupToOpen = populateSmartFolderFiles(group, ctx.listFiles?.uniqueFiles);
+            }
+            
+            ctx.setOpenGroups((prevState) => [...prevState, groupToOpen]);
         }
     };
 
     const getInfoText = () => {
         if (group.type === SMART_TYPE) {
-            return `${group.realSize} ${t('shared_string_gpx_files').toLowerCase()}`;
+            const filesCount = group.userFilePaths?.length ?? 0;
+            return `${filesCount} ${t('shared_string_gpx_files').toLowerCase()}`;
         }
         return `${fmt.monthShortDay(group.minModifiedDate)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`;
     };
@@ -78,7 +97,7 @@ export default function CloudTrackGroup({ index, group }) {
                 anchorEl={anchorEl}
                 actions={
                     <GroupActions
-                        group={group}
+                        group={populatedGroup}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
                     />
