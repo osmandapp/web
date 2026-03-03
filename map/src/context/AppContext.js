@@ -197,8 +197,6 @@ export async function getFilesForUpdateDetails(files, setUpdateFiles, setTracksG
         }));
     if (filesToUpdate.length > 0) {
         setUpdateFiles(filesToUpdate);
-    } else {
-        await loadSmartFolders(setTracksGroups);
     }
 }
 

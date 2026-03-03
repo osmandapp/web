@@ -648,12 +648,15 @@ function addFilesAndCalculateLastModified(groups) {
                 group.files.push(file);
             }
         });
-        
+
         if (group.type === SMART_TYPE && group.userFilePaths && group.groupFiles.length === 0) {
             group.realSize = group.userFilePaths.length;
         } else {
             const directTracksCount = (group.groupFiles || []).filter((file) => !isPlaceholderFile(file)).length;
-            const subfoldersTracksCount = group.subfolders.reduce((acc, subfolder) => acc + (subfolder.realSize ?? 0), 0);
+            const subfoldersTracksCount = group.subfolders.reduce(
+                (acc, subfolder) => acc + (subfolder.realSize ?? 0),
+                0
+            );
             group.realSize = directTracksCount + subfoldersTracksCount;
         }
         calculateLastModified(group);

@@ -21,7 +21,7 @@ export default function CloudTrackGroup({ index, group }) {
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
     const anchorEl = useRef(null);
-    
+
     const [populatedGroup, setPopulatedGroup] = useState(group);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function CloudTrackGroup({ index, group }) {
             setOpenActions(false);
         }
     }, [ctx.openedPopper]);
-    
+
     useEffect(() => {
         if (group.type === SMART_TYPE && openActions && group.files?.length === 0) {
             const populated = populateSmartFolderFiles(group, ctx.listFiles?.uniqueFiles);
@@ -49,11 +49,11 @@ export default function CloudTrackGroup({ index, group }) {
     const handleClick = (e) => {
         if (e.target !== 'path') {
             let groupToOpen = group;
-            
+
             if (group.type === SMART_TYPE) {
                 groupToOpen = populateSmartFolderFiles(group, ctx.listFiles?.uniqueFiles);
             }
-            
+
             ctx.setOpenGroups((prevState) => [...prevState, groupToOpen]);
         }
     };
