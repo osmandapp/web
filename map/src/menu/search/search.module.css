@@ -287,6 +287,20 @@
     background-color: black !important;
     position: absolute !important;
 }
+.photoFooterContent {
+    display: flex !important;
+    gap: 10px !important;
+}
+.photoMetadataContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+}
+.attributionIcon {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+}
 .mainPhotoGallery {
     width: 148px !important;
     height: 148px !important;
