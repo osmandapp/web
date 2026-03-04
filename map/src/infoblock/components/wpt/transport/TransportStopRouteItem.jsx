@@ -37,7 +37,7 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
         if (current && !current.isPreview) return;
         try {
             const data = await fetchRouteData({ wpt, route, color, typeName });
-            if (data) ctx.setSelectedTransportRoute({ ...data, isPreview: true });
+            if (data) ctx.setSelectedTransportRoute({ ...data, currentStopId: wpt.id, isPreview: true });
         } catch (error) {
             console.error('Failed to load transport route on hover:', error);
         }
@@ -51,11 +51,15 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
         if (!wpt?.latlon || !wpt.id || !route.id) return;
         try {
             if (ctx.selectedTransportRoute?.id === route.id && ctx.selectedTransportRoute?.isPreview) {
-                ctx.setSelectedTransportRoute({ ...ctx.selectedTransportRoute, isPreview: false });
+                ctx.setSelectedTransportRoute({
+                    ...ctx.selectedTransportRoute,
+                    currentStopId: wpt.id,
+                    isPreview: false,
+                });
                 return;
             }
             const data = await fetchRouteData({ wpt, route, color, typeName });
-            if (data) ctx.setSelectedTransportRoute({ ...data, isPreview: false });
+            if (data) ctx.setSelectedTransportRoute({ ...data, currentStopId: wpt.id, isPreview: false });
         } catch (error) {
             console.error('Failed to load transport route:', error);
         }

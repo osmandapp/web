@@ -6031,5 +6031,6 @@
   "poi_craft_chimney_sweeper": "Chimney sweeper",
   "poi_hazard_yes": "Hazard",
     "shared_string_minute_lowercase": "min",
-    "shared_string_interval": "Interval"
+    "shared_string_interval": "Interval",
+    "transport_stops": "stops"
 }
