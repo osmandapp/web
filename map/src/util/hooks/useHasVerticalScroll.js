@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useWindowSize } from './useWindowSize';
 
 const DEBOUNCE_MS = 50;
@@ -16,17 +16,18 @@ export function useHasVerticalScroll(deps = []) {
     const [hasVerticalScroll, setHasVerticalScroll] = useState(false);
     const [, height] = useWindowSize();
 
-    useEffect(() => {
+    const recheck = useCallback(() => {
         const el = ref.current;
         if (!el) return;
+
+        if (timerRef.current !== null) {
+            clearTimeout(timerRef.current);
+            timerRef.current = null;
+        }
 
         const hasOverflow = el.scrollHeight > el.clientHeight;
 
         if (hasOverflow) {
-            if (timerRef.current !== null) {
-                clearTimeout(timerRef.current);
-                timerRef.current = null;
-            }
             setHasVerticalScroll(true);
             return;
         }
@@ -37,13 +38,16 @@ export function useHasVerticalScroll(deps = []) {
                 setHasVerticalScroll(false);
             }
         }, DEBOUNCE_MS);
+    }, []);
 
+    useEffect(() => {
+        recheck();
         return () => {
             if (timerRef.current !== null) {
                 clearTimeout(timerRef.current);
             }
         };
-    }, [height, ...deps]);
+    }, [height, recheck, ...deps]);
 
-    return [ref, hasVerticalScroll];
+    return [ref, hasVerticalScroll, recheck];
 }

@@ -135,7 +135,7 @@ export default function TransportStopRouteDetails() {
 
     const route = ctx.selectedTransportRoute;
 
-    const [scrollContentRef, hasVerticalScroll] = useHasVerticalScroll([route]);
+    const [scrollContentRef, hasVerticalScroll, recheckScroll] = useHasVerticalScroll([route]);
     const [, height] = useWindowSize();
 
     if (!route) {
@@ -183,7 +183,7 @@ export default function TransportStopRouteDetails() {
                                             showValue={false}
                                         />
                                     </CollapseRowWithDots>
-                                    <Collapse in={stopsBeforeOpen} timeout="auto">
+                                    <Collapse in={stopsBeforeOpen} timeout="auto" onEntered={recheckScroll} onExited={recheckScroll}>
                                         {LineAndIconWrapper(
                                             routeColor,
                                             stops.slice(0, currentStopIndex).map((stop, i) => (
