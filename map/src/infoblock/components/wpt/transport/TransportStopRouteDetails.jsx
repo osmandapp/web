@@ -111,7 +111,7 @@ function CollapseRowWithDots({ routeColor, children }) {
     );
 }
 
-function LineAndIconWrapper(routeColor, content, { lineNoRadiusTop, lineNoRadiusBottom } = {}) {
+function LineAndIconWrapper({ routeColor, lineNoRadiusTop, lineNoRadiusBottom, children }) {
     const lineClass = [
         styles.lineAndIconLine,
         lineNoRadiusTop && styles.lineAndIconLineNoRadiusTop,
@@ -123,8 +123,28 @@ function LineAndIconWrapper(routeColor, content, { lineNoRadiusTop, lineNoRadius
         <Box className={styles.lineAndIconWrapper}>
             <Box className={styles.lineAndIconContent}>
                 <Box className={lineClass} style={{ backgroundColor: routeColor }} />
-                {content}
+                {children}
             </Box>
+        </Box>
+    );
+}
+
+function StopItem({ stop, routeColor, isSelected = false }) {
+    return (
+        <Box
+            className={`${styles.stopItemWrapper} ${isSelected ? styles.stopItemWrapperSelected : ''}`}
+            style={{ '--route-color': routeColor }}
+        >
+            <DefaultItem
+                name={stop?.name}
+                rightText={formatTravelTime(stop?.travelTime)}
+                icon={
+                    <Box className={styles.stopIconCell}>
+                        <StopRowIcon routeColor={routeColor} isSelected={isSelected} />
+                        {!isSelected && <TransportStopActionIcon />}
+                    </Box>
+                }
+            />
         </Box>
     );
 }
@@ -147,13 +167,9 @@ export default function TransportStopRouteDetails() {
     };
 
     const stops = route.stops ?? [];
-
     const currentStopIndex = stops.findIndex((s) => s.stopId === route.currentStopId);
-    const stopsBeforeCount = currentStopIndex;
     const stopsAfterCurrent = stops.slice(currentStopIndex + 1);
-
     const routeColor = route.color;
-    const stopName = (stop) => stop?.name;
 
     return (
         <SecondaryMenuDrawer onClose={handleClose}>
@@ -162,7 +178,7 @@ export default function TransportStopRouteDetails() {
                 <Box ref={scrollContentRef} className={gStyles.scrollActiveBlock}>
                     <RouteDetailsHeader route={route} minimised={hasVerticalScroll} />
                     <Divider />
-                    {route.stops?.length > 0 && (
+                    {stops.length > 0 && (
                         <>
                             <Box className={styles.stopsListHeader}>
                                 <Typography className={styles.stopsListHeaderTitle}>
@@ -173,11 +189,11 @@ export default function TransportStopRouteDetails() {
                                 </Typography>
                             </Box>
                             {/* Stops before current (collapsible) */}
-                            {stopsBeforeCount > 0 && (
+                            {currentStopIndex > 0 && (
                                 <>
                                     <CollapseRowWithDots routeColor={routeColor}>
                                         <SelectItemWithoutOptions
-                                            title={`${stopsBeforeCount} stops before`}
+                                            title={`${currentStopIndex} stops before`}
                                             boldTitle={false}
                                             onClick={() => setStopsBeforeOpen(!stopsBeforeOpen)}
                                             endIcon={stopsBeforeOpen ? <ExpandLess /> : <ExpandMore />}
@@ -190,86 +206,34 @@ export default function TransportStopRouteDetails() {
                                         onEntered={recheckScroll}
                                         onExited={recheckScroll}
                                     >
-                                        {LineAndIconWrapper(
-                                            routeColor,
-                                            stops.slice(0, currentStopIndex).map((stop, i) => (
+                                        <LineAndIconWrapper routeColor={routeColor} lineNoRadiusBottom>
+                                            {stops.slice(0, currentStopIndex).map((stop, i) => (
                                                 <React.Fragment key={`before-${stop.stopId ?? i}`}>
-                                                    <Box
-                                                        className={styles.stopItemWrapper}
-                                                        style={{ '--route-color': routeColor }}
-                                                    >
-                                                        <DefaultItem
-                                                            name={stopName(stop)}
-                                                            rightText={formatTravelTime(stop.travelTime)}
-                                                            icon={
-                                                                <Box className={styles.stopIconCell}>
-                                                                    <StopRowIcon
-                                                                        routeColor={routeColor}
-                                                                        isSelected={false}
-                                                                    />
-                                                                    <TransportStopActionIcon />
-                                                                </Box>
-                                                            }
-                                                        />
-                                                    </Box>
+                                                    <StopItem stop={stop} routeColor={routeColor} />
                                                     {i < currentStopIndex - 1 && <DividerWithMargin margin={'50px'} />}
                                                 </React.Fragment>
-                                            )),
-                                            { lineNoRadiusBottom: true }
-                                        )}
+                                            ))}
+                                        </LineAndIconWrapper>
                                     </Collapse>
                                 </>
                             )}
                             {/* Current stop + stops after current */}
-                            {stops.length > 0 &&
-                                LineAndIconWrapper(
-                                    routeColor,
-                                    <Box>
-                                        {/* Current stop (selected) */}
-                                        <Box
-                                            className={`${styles.stopItemWrapper} ${styles.stopItemWrapperSelected}`}
-                                            style={{ '--route-color': routeColor }}
-                                        >
-                                            <DefaultItem
-                                                name={stopName(stops[currentStopIndex])}
-                                                rightText={formatTravelTime(stops[currentStopIndex]?.travelTime)}
-                                                icon={
-                                                    <Box className={styles.stopIconCell}>
-                                                        <StopRowIcon routeColor={routeColor} isSelected />
-                                                    </Box>
-                                                }
-                                            />
-                                        </Box>
-                                        {stopsAfterCurrent.length > 0 && <DividerWithMargin margin={'50px'} />}
-                                        {/* Stops after current */}
-                                        {stopsAfterCurrent.map((stop, i) => (
-                                            <React.Fragment key={`after-${stop.stopId ?? currentStopIndex + 1 + i}`}>
-                                                <Box
-                                                    className={styles.stopItemWrapper}
-                                                    style={{ '--route-color': routeColor }}
-                                                >
-                                                    <DefaultItem
-                                                        name={stopName(stop)}
-                                                        rightText={formatTravelTime(stop.travelTime)}
-                                                        icon={
-                                                            <Box className={styles.stopIconCell}>
-                                                                <StopRowIcon
-                                                                    routeColor={routeColor}
-                                                                    isSelected={false}
-                                                                />
-                                                                <TransportStopActionIcon />
-                                                            </Box>
-                                                        }
-                                                    />
-                                                </Box>
-                                                {i < stopsAfterCurrent.length - 1 && (
-                                                    <DividerWithMargin margin={'50px'} />
-                                                )}
-                                            </React.Fragment>
-                                        ))}
-                                    </Box>,
-                                    { lineNoRadiusTop: stopsBeforeOpen }
-                                )}
+                            <LineAndIconWrapper routeColor={routeColor} lineNoRadiusTop={stopsBeforeOpen}>
+                                <Box>
+                                    {/* Current stop (selected) */}
+                                    <StopItem stop={stops[currentStopIndex]} routeColor={routeColor} isSelected />
+                                    {stopsAfterCurrent.length > 0 && <DividerWithMargin margin={'50px'} />}
+                                    {/* Stops after current */}
+                                    {stopsAfterCurrent.map((stop, i) => (
+                                        <React.Fragment key={`after-${stop.stopId ?? currentStopIndex + 1 + i}`}>
+                                            <StopItem stop={stop} routeColor={routeColor} />
+                                            {i < stopsAfterCurrent.length - 1 && (
+                                                <DividerWithMargin margin={'50px'} />
+                                            )}
+                                        </React.Fragment>
+                                    ))}
+                                </Box>
+                            </LineAndIconWrapper>
                         </>
                     )}
                 </Box>
