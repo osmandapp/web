@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, Typography } from '@mui/material';
 import AppContext from '../../../../context/AppContext';
 import { useWindowSize } from '../../../../util/hooks/useWindowSize';
@@ -10,7 +11,12 @@ import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMen
 import HeaderWithUnderline from '../../../../frame/components/header/HeaderWithUnderline';
 
 function RouteInfo({ route }) {
+    const { t } = useTranslation();
     const parts = [];
+    if (route.intervalSeconds != null) {
+        const minutes = Math.round(route.intervalSeconds / 60);
+        parts.push(`${t('shared_string_interval')} ${minutes} ${t('shared_string_minute_lowercase')}`);
+    }
     if (route.typeName) parts.push(route.typeName);
     if (route.stops?.length) parts.push(`${route.stops.length} stops`);
 
