@@ -83,7 +83,7 @@ async function createTransportStopsLayer({
     }
 
     const selectedRoute = ctx.selectedTransportRoute;
-    const routeStopIds = selectedRoute?.stops || [];
+    const routeStopIds = selectedRoute?.stops?.map((s) => s.stopId) ?? [];
     const routeColor = selectedRoute?.color || TRANSPORT_STOP_SHIELD_COLOR;
 
     // Before clustering: collect all route stops from stopsList
@@ -372,8 +372,7 @@ const TransportStopsLayer = () => {
             // Check if clicked stop belongs to selected route
             if (ctx.selectedTransportRoute?.stops?.length > 0) {
                 const stopId = e.sourceTarget.options?.id;
-                const routeStopIds = ctx.selectedTransportRoute.stops;
-
+                const routeStopIds = ctx.selectedTransportRoute.stops.map((s) => s.stopId);
                 // If clicked stop is not in route stops, clear the route
                 if (!stopId || !routeStopIds.includes(stopId)) {
                     ctx.setSelectedTransportRoute(null);
