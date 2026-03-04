@@ -52,7 +52,7 @@ Use one of the following paths to open the plugin settings:
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -69,13 +69,14 @@ Use one of the following paths to open the plugin settings:
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
 - **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications.
 - **Use 3D location position icons** (*iOS*). Allows you to select a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
-- **Simulate obd data** (*Android*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
-- **Performance debug info** (*Android*). Displays rendering and navigation performance.
+- **Simulate obd data** (*Android* / *iOS*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
+- **Performance debug info** (*Android* / *iOS*). Displays rendering and navigation performance.
 - **Disable map layers** (*Android*). Disables all map layers over the vector map (restart required).
 - **Logcat buffer** (*Android*). Check and share detailed logs of the app.  
 - **Show toast about pressed key** (*Android*). Display a message about the key.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.
+- **Enable MSAA** (*Android*) / **Enable MSAA for CarPlay** (*iOS*). Enables multisample anti-aliasing to smooth map rendering. Improves visual quality of the [My Location icon](../personal/profiles.md#my-location-appearance) and route line by reducing pixelated edges. On Android, this option affects map rendering on the device and when using [Android Auto](../navigation/auto-car.md). On iOS, it applies to [CarPlay](../navigation/car-play.md) only.
 
 
 ### Application Testing {#application-testing}
