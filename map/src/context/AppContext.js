@@ -141,7 +141,7 @@ export async function loadSmartFolders(setTracksGroups) {
             groupFiles: [],
             files: [],
             realSize: smartFolder.userFilePaths?.length ?? 0,
-            lastModifiedMs: null,
+            lastModifiedMs: smartFolder.lastModifiedMs,
             lastModifiedDate: null,
             userFilePaths: smartFolder.userFilePaths ?? [],
         };
@@ -155,17 +155,10 @@ export async function loadSmartFolders(setTracksGroups) {
 
 export function populateSmartFolderFiles(smartFolder, listFiles) {
     const filesArray = [];
-    let maxMs = -Infinity;
-    let maxDate = null;
-
     (smartFolder.userFilePaths ?? []).forEach((path) => {
         const file = listFiles?.find((f) => f.name === path);
         if (file) {
             filesArray.push({ ...file, smartFolder: true });
-            if (file.updatetimems > maxMs) {
-                maxMs = file.updatetimems;
-                maxDate = file.updatetime;
-            }
         }
     });
 
@@ -174,15 +167,13 @@ export function populateSmartFolderFiles(smartFolder, listFiles) {
         groupFiles: filesArray,
         files: filesArray,
         realSize: filesArray.length,
-        lastModifiedMs: maxMs,
-        lastModifiedDate: maxDate,
     };
 }
 
 async function getSmartFolders() {
-    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
-    if (res.ok) {
-        return res.json();
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
+    if (response?.data) {
+        return response.data;
     }
     return null;
 }

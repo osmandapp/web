@@ -664,6 +664,9 @@ function addFilesAndCalculateLastModified(groups) {
 }
 
 function calculateLastModified(group) {
+    if (group.type === SMART_TYPE) {
+        return;
+    }
     if (!group.files || group.files.length === 0) {
         group.lastModifiedMs = null;
         group.lastModifiedDate = null;
