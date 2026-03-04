@@ -377,3 +377,19 @@
     position: relative !important;
     z-index: 2 !important;
 }
+
+.stopIconCell .stopRowIconWrapper {
+    display: flex !important;
+}
+
+.stopIconCell .stopActionIconWrapper {
+    display: none !important;
+}
+
+.stopItemWrapper:hover .stopRowIconWrapper {
+    display: none !important;
+}
+
+.stopItemWrapper:hover .stopActionIconWrapper {
+    display: flex !important;
+}

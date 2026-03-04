@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Box, Collapse, Divider, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Visibility } from '@mui/icons-material';
 import { ReactComponent as StopIcon } from '../../../../assets/icons/ic_action_transport_stop_list.svg';
+import TransportStopActionIcon from './TransportStopActionIcon';
 import AppContext from '../../../../context/AppContext';
 import { useWindowSize } from '../../../../util/hooks/useWindowSize';
 import { useHasVerticalScroll } from '../../../../util/hooks/useHasVerticalScroll';
@@ -183,7 +184,12 @@ export default function TransportStopRouteDetails() {
                                             showValue={false}
                                         />
                                     </CollapseRowWithDots>
-                                    <Collapse in={stopsBeforeOpen} timeout="auto" onEntered={recheckScroll} onExited={recheckScroll}>
+                                    <Collapse
+                                        in={stopsBeforeOpen}
+                                        timeout="auto"
+                                        onEntered={recheckScroll}
+                                        onExited={recheckScroll}
+                                    >
                                         {LineAndIconWrapper(
                                             routeColor,
                                             stops.slice(0, currentStopIndex).map((stop, i) => (
@@ -201,6 +207,7 @@ export default function TransportStopRouteDetails() {
                                                                         routeColor={routeColor}
                                                                         isSelected={false}
                                                                     />
+                                                                    <TransportStopActionIcon />
                                                                 </Box>
                                                             }
                                                         />
@@ -250,6 +257,7 @@ export default function TransportStopRouteDetails() {
                                                                     routeColor={routeColor}
                                                                     isSelected={false}
                                                                 />
+                                                                <TransportStopActionIcon />
                                                             </Box>
                                                         }
                                                     />
