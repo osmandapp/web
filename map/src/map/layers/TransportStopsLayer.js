@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import AppContext, { OBJECT_TYPE_STOP } from '../../context/AppContext';
@@ -10,6 +10,7 @@ import { clusterMarkers } from '../util/Clusterizer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { getObjIdSearch } from './SearchLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
+import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import debounce from 'lodash-es/debounce';
 import { MENU_INFO_OPEN_SIZE, MAIN_URL_WITH_SLASH, STOP_URL } from '../../manager/GlobalManager';
 
@@ -157,12 +158,33 @@ async function createTransportStopsLayer({
                 name: stopName,
                 icon,
                 svg: iconSvg,
+                color: stopColor,
+                background: TRANSPORT_STOP_BACKGROUND,
             });
 
             bindTooltipToMarker(marker, stopName, TRANSPORT_STOP_ICON_SIZE, true);
 
             if (onClick) {
                 marker.on('click', onClick);
+            }
+
+            const isRouteStop = selectedRoute && routeStopIds.length > 0 && routeStopIds.includes(stop.properties.id);
+            if (isRouteStop) {
+                marker.on('mouseover', () => {
+                    ctx.setSelectedWptId({
+                        id: stop.properties.id,
+                        show: true,
+                        type: TRANSPORT_STOPS_LAYER_ID,
+                        obj: marker,
+                    });
+                });
+                marker.on('mouseout', () => {
+                    ctx.setSelectedWptId((prev) =>
+                        prev?.type === TRANSPORT_STOPS_LAYER_ID && prev?.id === stop.properties.id
+                            ? { ...prev, show: false }
+                            : prev
+                    );
+                });
             }
 
             return marker;
@@ -243,6 +265,14 @@ const TransportStopsLayer = () => {
 
     const routeStopsMapRef = useRef(null);
     const selectedRouteIdRef = useRef(null);
+    const transportLayerRef = useRef(null);
+
+    useSelectMarkerOnMap({
+        ctx,
+        getLayers: useCallback(() => transportLayerRef.current?.getLayers() ?? null, []),
+        type: TRANSPORT_STOPS_LAYER_ID,
+        map,
+    });
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
@@ -518,6 +548,9 @@ const TransportStopsLayer = () => {
         if (existing) {
             map.removeLayer(existing);
         }
+
+        transportLayerRef.current = newLayer;
+
         if (newLayer && !map.hasLayer(newLayer)) {
             newLayer.addTo(map);
         }

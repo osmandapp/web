@@ -220,11 +220,13 @@
     margin-left: 16px !important;
 }
 
-.stopItemWrapper:hover > * {
+.stopItemWrapper:hover > *,
+.stopItemWrapperHovered > * {
     background-color: color-mix(in srgb, var(--route-color) 10%, transparent) !important;
 }
 
-.stopItemWrapper:hover:not(:has(.stopIconCell:hover)) .stopIconHover {
+.stopItemWrapper:hover:not(:has(.stopIconCell:hover)) .stopIconHover,
+.stopItemWrapperHovered:not(:has(.stopIconCell:hover)) .stopIconHover {
     background-color: color-mix(in srgb, var(--route-color) 10%, transparent) !important;
 }
 

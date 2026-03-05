@@ -8,6 +8,7 @@ import AppContext from '../../../../context/AppContext';
 import { useWindowSize } from '../../../../util/hooks/useWindowSize';
 import { useHasVerticalScroll } from '../../../../util/hooks/useHasVerticalScroll';
 import { HEADER_SIZE } from '../../../../manager/GlobalManager';
+import { TRANSPORT_STOPS_LAYER_ID } from '../../../../map/layers/TransportStopsLayer';
 import styles from './transport.module.css';
 import gStyles from '../../../../menu/gstylesmenu.module.css';
 import SecondaryMenuDrawer from '../../../../frame/components/other/SecondaryMenuDrawer';
@@ -130,10 +131,28 @@ function LineAndIconWrapper({ routeColor, lineNoRadiusTop, lineNoRadiusBottom, c
 }
 
 function StopItem({ stop, routeColor, isSelected = false }) {
+    const ctx = useContext(AppContext);
+
+    const stopId = stop?.stopId;
+
+    const isHoveredFromMap =
+        ctx.selectedWptId?.type === TRANSPORT_STOPS_LAYER_ID &&
+        ctx.selectedWptId?.id === stopId &&
+        ctx.selectedWptId?.show;
+
     return (
         <Box
-            className={`${styles.stopItemWrapper} ${isSelected ? styles.stopItemWrapperSelected : ''}`}
+            className={`${styles.stopItemWrapper} ${isSelected ? styles.stopItemWrapperSelected : ''} ${isHoveredFromMap ? styles.stopItemWrapperHovered : ''}`}
             style={{ '--route-color': routeColor }}
+            onMouseEnter={() =>
+                stopId != null &&
+                ctx.setSelectedWptId({ id: stopId, show: true, type: TRANSPORT_STOPS_LAYER_ID, obj: stop })
+            }
+            onMouseLeave={() =>
+                ctx.setSelectedWptId((prev) =>
+                    prev?.type === TRANSPORT_STOPS_LAYER_ID && prev?.id === stopId ? { ...prev, show: false } : prev
+                )
+            }
         >
             <DefaultItem
                 name={stop?.name}
@@ -163,6 +182,7 @@ export default function TransportStopRouteDetails() {
         return null;
     }
     const handleClose = () => {
+        ctx.setSelectedWptId((p) => (p?.type === TRANSPORT_STOPS_LAYER_ID ? null : p));
         ctx.setSelectedTransportRoute(null);
     };
 
@@ -227,9 +247,7 @@ export default function TransportStopRouteDetails() {
                                     {stopsAfterCurrent.map((stop, i) => (
                                         <React.Fragment key={`after-${stop.stopId ?? currentStopIndex + 1 + i}`}>
                                             <StopItem stop={stop} routeColor={routeColor} />
-                                            {i < stopsAfterCurrent.length - 1 && (
-                                                <DividerWithMargin margin={'50px'} />
-                                            )}
+                                            {i < stopsAfterCurrent.length - 1 && <DividerWithMargin margin={'50px'} />}
                                         </React.Fragment>
                                     ))}
                                 </Box>
