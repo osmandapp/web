@@ -97,6 +97,7 @@ async function loadListFiles(
     setVisibleTracks,
     setShareWithMeFiles,
     setTracksGroups,
+    setSmartFoldersCache,
     setUpdateFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
@@ -115,7 +116,7 @@ async function loadListFiles(
                         });
                         getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles, setTracksGroups);
                         setListFiles(res);
-                        loadSmartFolders(setTracksGroups);
+                        loadSmartFolders(setTracksGroups, setSmartFoldersCache);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -130,8 +131,11 @@ async function loadListFiles(
     }
 }
 
-export async function loadSmartFolders(setTracksGroups) {
+export async function loadSmartFolders(setTracksGroups, setSmartFoldersCache) {
     const res = await getSmartFolders();
+    if (setSmartFoldersCache) {
+        setSmartFoldersCache({});
+    }
     const smartFolderGroups = (res ?? []).map((smartFolder) => {
         return {
             name: smartFolder.name,
@@ -153,8 +157,12 @@ export async function loadSmartFolders(setTracksGroups) {
     });
 }
 
-export function populateSmartFolderFiles(smartFolder, listFiles) {
+export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCache, setSmartFoldersCache) {
     const filesArray = [];
+    const cached = smartFoldersCache?.[smartFolder.name];
+    if (cached) {
+        return cached;
+    }
     (smartFolder.userFilePaths ?? []).forEach((path) => {
         const file = listFiles?.find((f) => f.name === path);
         if (file) {
@@ -162,12 +170,18 @@ export function populateSmartFolderFiles(smartFolder, listFiles) {
         }
     });
 
-    return {
+    const populated = {
         ...smartFolder,
         groupFiles: filesArray,
         files: filesArray,
         realSize: filesArray.length,
     };
+
+    if (setSmartFoldersCache) {
+        setSmartFoldersCache((prev) => ({ ...prev, [smartFolder.name]: populated }));
+    }
+
+    return populated;
 }
 
 async function getSmartFolders() {
@@ -414,6 +428,8 @@ export const AppContextProvider = (props) => {
     const [shareFilesCache, setShareFilesCache] = useState({});
     const [shareWithMeFiles, setShareWithMeFiles] = useState(null);
     const [fitBoundsShareTracks, setFitBoundsShareTracks] = useState(null);
+
+    const [smartFoldersCache, setSmartFoldersCache] = useState(null);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -704,7 +720,7 @@ export const AppContextProvider = (props) => {
                             uniqueFiles: updatedUniqueFiles,
                         };
                     });
-                    await loadSmartFolders(setTracksGroups);
+                    await loadSmartFolders(setTracksGroups, setSmartFoldersCache);
                 }
             }
         };
@@ -729,6 +745,7 @@ export const AppContextProvider = (props) => {
                 setVisibleTracks,
                 setShareWithMeFiles,
                 setTracksGroups,
+                setSmartFoldersCache,
                 setUpdateFiles
             ).then(() => {
                 setGpxLoading(false);
@@ -929,6 +946,8 @@ export const AppContextProvider = (props) => {
                 setShareWithMeFiles,
                 fitBoundsShareTracks,
                 setFitBoundsShareTracks,
+                smartFoldersCache,
+                setSmartFoldersCache,
                 trackAnalyzer,
                 setTrackAnalyzer,
                 excludedSegments,

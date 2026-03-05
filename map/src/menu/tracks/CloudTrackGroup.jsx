@@ -32,7 +32,12 @@ export default function CloudTrackGroup({ index, group }) {
 
     useEffect(() => {
         if (group.type === SMART_TYPE && openActions && group.files?.length === 0) {
-            const populated = populateSmartFolderFiles(group, ctx.listFiles?.uniqueFiles);
+            const populated = populateSmartFolderFiles(
+                group,
+                ctx.listFiles?.uniqueFiles,
+                ctx.smartFoldersCache,
+                ctx.setSmartFoldersCache
+            );
             setPopulatedGroup(populated);
         } else {
             setPopulatedGroup(group);
@@ -51,7 +56,12 @@ export default function CloudTrackGroup({ index, group }) {
             let groupToOpen = group;
 
             if (group.type === SMART_TYPE) {
-                groupToOpen = populateSmartFolderFiles(group, ctx.listFiles?.uniqueFiles);
+                groupToOpen = populateSmartFolderFiles(
+                    group,
+                    ctx.listFiles?.uniqueFiles,
+                    ctx.smartFoldersCache,
+                    ctx.setSmartFoldersCache
+                );
             }
 
             ctx.setOpenGroups((prevState) => [...prevState, groupToOpen]);

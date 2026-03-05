@@ -85,7 +85,7 @@ async function deleteCloudFile(name, type, ctx) {
                 }
                 return { ...o };
             });
-            await loadSmartFolders(ctx.setTracksGroups);
+            await loadSmartFolders(ctx.setTracksGroups, ctx.setSmartFoldersCache);
         }
     }
 }
