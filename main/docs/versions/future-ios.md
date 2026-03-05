@@ -28,7 +28,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 ## What's new {#whats-new}
 
 - Last Uphill / Last Downhill mode for **[Trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, with switching between total and last ascent/descent.
-- Updated **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** with modes for total distance, last uphill distance and last downhill distance.
+- Updated **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** with modes for total distance, last uphill/downhill distance.
 - **[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing maximum speed for the whole trip or for the most recent uphill/downhill section.
 - **[Average Slope widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing the average slope of the latest ascent or descent.
 - *Show track on map* quick action added to the Trip recording widget group.
@@ -36,7 +36,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - Elevation graph widget for navigation, displaying a compact profile along routes or GPX tracks.
 - **[Popular places](https://osmand.net/docs/user/map/popular_places/)** layer updated with POI source selection and optional image previews on the map.
 - New Explore section in Search with “Popular places nearby” and improved offline/no-data states.
-- Enhanced POI search results with consistent city display, refined layout, optional thumbnails and clearer alternative names.
+- Enhanced POI search results with consistent city display, refined layout, and optional thumbnails.
 - Default appearance settings for track folders, allowing new tracks to inherit a unified folder style.
 
 

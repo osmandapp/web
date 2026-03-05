@@ -32,17 +32,17 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## What's new {#whats-new}
 
-- New experimental Starwatcher plugin with an astronomical overlay that shows the paths of the Sun, planets and stars on the map, with time and date selection and a dedicated activity screen.
-- Improved **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** section in Settings: backup data, version history and automatic backup settings are now grouped under a single “OsmAnd Cloud” block with clearer names, icons and storage usage information.
-- Updated **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)** options for routes and road attributes: a clearer legend, better filters for hiking, cycling and MTB networks, plus more control over which route types and icon overlays are visible on the map.
-- New and redesigned elevation and navigation widgets: elevation profiles for routes and GPX tracks, uphill/downhill metrics, average grade and more detailed elevation information for trips and navigation.
-- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** improvements, including extended widget support and better OBD II integration, so key vehicle metrics such as speed and fuel-related data are easier to see on the car screen.
-- More flexible layout for widgets and map buttons: improved placement in landscape mode, better control over visibility and appearance, and a layout that reduces overlaps between widgets, buttons and data fields.
-- Enhanced Favorites management in **[My Places](https://osmand.net/docs/user/personal/myplaces)**: more powerful folder handling and multiselection for favorites, plus groundwork for attaching media (photos, videos, audio notes) directly to favorite points.
-- Smarter track organization and statistics: Smart Folders can automatically group tracks by period, activity, distance, speed, location and other parameters, with clearer summary statistics for each group.
-- Advanced route and track analysis: new graphs for road type, surface, smoothness, steepness, lanes and maximum speed, together with an option to color tracks using a fixed speed palette.
-- Ongoing improvements to accessibility features, including more flexible audio and haptic navigation indications and a richer “look around” experience for visually impaired users.
-- Initial groundwork for smartwatch integration, preparing support for viewing navigation information and trip recording data on wearable devices.
+- New experimental **[Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy)** with an astronomical overlay showing the paths of the Sun, planets and stars.
+- Improved **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** section with clearer backup, version history and automatic backup settings.
+- Updated **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)** options with a clearer legend and improved filters for hiking, cycling and MTB routes.
+- New and redesigned elevation and navigation widgets with elevation profiles, uphill/downhill metrics and average grade.
+- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** improvements with extended widget support and better OBD II integration.
+- More flexible **[widget and map button layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especially in landscape mode.
+- Enhanced Favorites management in **[My Places](https://osmand.net/docs/user/personal/myplaces)**.
+- Smarter track organization with Smart Folders and clearer summary statistics.
+- Advanced route and track analysis.
+- Improved accessibility features, including more flexible audio and haptic navigation feedback.
+- Initial groundwork for smartwatch integration for navigation and trip recording data.
 
 
 ## Bug fixes {#bug-fixes}
