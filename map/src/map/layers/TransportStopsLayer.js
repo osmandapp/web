@@ -3,12 +3,18 @@ import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import AppContext, { OBJECT_TYPE_STOP } from '../../context/AppContext';
 import { apiGet } from '../../util/HttpApi';
-import { getVisibleBbox, findFeatureGroupById, bindTooltipToMarker } from '../util/MapManager';
+import {
+    getVisibleBbox,
+    findFeatureGroupById,
+    bindTooltipToMarker,
+    createTooltip,
+    TOOLTIP_MAX_LENGTH,
+} from '../util/MapManager';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
-import { clusterMarkers } from '../util/Clusterizer';
+import { clusterMarkers, removeTooltip } from '../util/Clusterizer';
+import Utils from '../../util/Utils';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
-import { getObjIdSearch } from './SearchLayer';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import debounce from 'lodash-es/debounce';
@@ -138,6 +144,30 @@ async function createTransportStopsLayer({
         return TRANSPORT_STOP_SHIELD_COLOR;
     };
 
+    function bindHoverToLayer(layer, stopId, stopName, latlng, mainStyle) {
+        const tooltipRef = ctx.searchTooltipRef;
+
+        const offset = mainStyle ? [5, TRANSPORT_STOP_ICON_SIZE * 0.8] : [0, TRANSPORT_STOP_ICON_SIZE * 0.8];
+
+        layer.on('mouseover', () => {
+            removeTooltip(map, tooltipRef);
+            if (stopName) {
+                tooltipRef.current = createTooltip(Utils.truncateText(stopName, TOOLTIP_MAX_LENGTH), latlng, {
+                    offset,
+                });
+                map.addLayer(tooltipRef.current);
+            }
+            ctx.setSelectedWptId({ id: stopId, show: true, type: TRANSPORT_STOPS_LAYER_ID, obj: layer });
+        });
+
+        layer.on('mouseout', () => {
+            removeTooltip(map, tooltipRef);
+            ctx.setSelectedWptId((prev) =>
+                prev?.type === TRANSPORT_STOPS_LAYER_ID && prev?.id === stopId ? { ...prev, show: false } : prev
+            );
+        });
+    }
+
     const mainMarkersLayers = await Promise.all(
         mainMarkers?.map(async (stop) => {
             const stopColor = getStopColor(stop.properties.id);
@@ -162,31 +192,11 @@ async function createTransportStopsLayer({
                 background: TRANSPORT_STOP_BACKGROUND,
             });
 
-            bindTooltipToMarker(marker, stopName, TRANSPORT_STOP_ICON_SIZE, true);
-
             if (onClick) {
                 marker.on('click', onClick);
             }
 
-            const isRouteStop = selectedRoute && routeStopIds.length > 0 && routeStopIds.includes(stop.properties.id);
-            if (isRouteStop) {
-                marker.on('mouseover', () => {
-                    ctx.setSelectedWptId({
-                        id: stop.properties.id,
-                        show: true,
-                        type: TRANSPORT_STOPS_LAYER_ID,
-                        obj: marker,
-                    });
-                });
-                marker.on('mouseout', () => {
-                    ctx.setSelectedWptId((prev) =>
-                        prev?.type === TRANSPORT_STOPS_LAYER_ID && prev?.id === stop.properties.id
-                            ? { ...prev, show: false }
-                            : prev
-                    );
-                });
-            }
-
+            bindHoverToLayer(marker, stop.properties.id, stopName, new L.LatLng(coord[1], coord[0]), true);
             return marker;
         })
     );
@@ -198,16 +208,18 @@ async function createTransportStopsLayer({
         const circle = new SimpleDotMarker(latlng, place, {
             ...place.properties,
             id: place.properties.id,
-            idObj: getObjIdSearch(place),
+            idObj: place.properties.id,
             simple: true,
             fillColor: TRANSPORT_STOP_SHIELD_COLOR,
+            svg: iconSvg,
+            color: TRANSPORT_STOP_SHIELD_COLOR,
+            background: TRANSPORT_STOP_BACKGROUND,
         }).build();
         if (circle) {
-            const stopName = place.properties.name;
-            bindTooltipToMarker(circle, stopName, TRANSPORT_STOP_ICON_SIZE, false);
             if (onClick) {
                 circle.on('click', onClick);
             }
+            bindHoverToLayer(circle, place.properties.id, place.properties.name, latlng, false);
             simpleMarkersArr.addLayer(circle);
         }
     }
@@ -224,7 +236,7 @@ async function createTransportStopsLayer({
 }
 
 export function navigateToStop(stop, navigate) {
-    if (!stop || !stop.options || !stop.latlng) return;
+    if (!stop?.options || !stop.latlng) return;
 
     const stopId = stop.options.id;
     const lat = stop.latlng.lat;
