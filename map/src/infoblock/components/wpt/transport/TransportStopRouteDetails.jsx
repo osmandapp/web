@@ -4,6 +4,7 @@ import { Box, Collapse, Divider, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Visibility } from '@mui/icons-material';
 import { ReactComponent as StopIcon } from '../../../../assets/icons/ic_action_transport_stop_list.svg';
 import TransportStopActionIcon from './TransportStopActionIcon';
+import TransportStopRouteNavButtons from './TransportStopRouteNavButtons';
 import AppContext from '../../../../context/AppContext';
 import { useWindowSize } from '../../../../util/hooks/useWindowSize';
 import { useHasVerticalScroll } from '../../../../util/hooks/useHasVerticalScroll';
@@ -138,7 +139,8 @@ function StopItem({ stop, routeColor, isSelected = false }) {
     const isHoveredFromMap =
         ctx.selectedWptId?.type === TRANSPORT_STOPS_LAYER_ID &&
         ctx.selectedWptId?.id === stopId &&
-        ctx.selectedWptId?.show;
+        ctx.selectedWptId?.show &&
+        !ctx.selectedWptId?.hideListHighlight;
 
     return (
         <Box
@@ -178,6 +180,9 @@ export default function TransportStopRouteDetails() {
     const [scrollContentRef, hasVerticalScroll, recheckScroll] = useHasVerticalScroll([route]);
     const [, height] = useWindowSize();
 
+    const stops = route?.stops ?? [];
+    const currentStopIndex = route ? stops.findIndex((s) => s.stopId === route.currentStopId) : -1;
+
     if (!route) {
         return null;
     }
@@ -186,8 +191,6 @@ export default function TransportStopRouteDetails() {
         ctx.setSelectedTransportRoute(null);
     };
 
-    const stops = route.stops ?? [];
-    const currentStopIndex = stops.findIndex((s) => s.stopId === route.currentStopId);
     const stopsAfterCurrent = stops.slice(currentStopIndex + 1);
     const routeColor = route.color;
 
@@ -208,6 +211,7 @@ export default function TransportStopRouteDetails() {
                                     {t('web:transport_travel_time')}
                                 </Typography>
                             </Box>
+                            <TransportStopRouteNavButtons route={route} stopsBeforeOpen={stopsBeforeOpen} />
                             {/* Stops before current (collapsible) */}
                             {currentStopIndex > 0 && (
                                 <>

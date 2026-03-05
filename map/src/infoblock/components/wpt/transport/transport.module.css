@@ -53,7 +53,6 @@
     font-feature-settings: 'liga' off !important;
     font-family: Roboto !important;
     font-size: 16px !important;
-    font-style: normal !important;
     font-weight: 500 !important;
     line-height: 120% !important;
     letter-spacing: 0.16px !important;
@@ -120,7 +119,6 @@
     font-feature-settings: 'liga' off !important;
     font-family: Roboto !important;
     font-size: 16px !important;
-    font-style: normal !important;
     font-weight: 400 !important;
     line-height: 150% !important;
     letter-spacing: 0.16px !important;
@@ -130,7 +128,6 @@
     color: #666 !important;
     font-family: Roboto !important;
     font-size: 14px !important;
-    font-style: normal !important;
     font-weight: 400 !important;
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
@@ -155,7 +152,6 @@
     color: white !important;
     font-family: Roboto !important;
     font-size: 14px !important;
-    font-style: normal !important;
     font-weight: 400 !important;
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
@@ -183,12 +179,62 @@
     gap: 6px !important;
 }
 
+.stopsNavButtons {
+    display: flex !important;
+    padding: 0 16px 16px 16px !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 16px !important;
+    align-self: stretch !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.stopsNavButton {
+    display: flex !important;
+    flex: 1 0 0 !important;
+    align-items: center !important;
+    padding: 0 12px !important;
+    gap: 12px !important;
+    min-height: 36px !important;
+    border-radius: 3px !important;
+    border: 1px solid #CCC !important;
+    background: #fff !important;
+    color: #237BFF !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+.stopsNavButtonPrev {
+    justify-content: flex-start !important;
+}
+
+.stopsNavButtonNext {
+    justify-content: flex-end !important;
+}
+
+.stopsNavButton:hover:not(:disabled) {
+    background: #deebff !important;
+    color: var(--selected-color) !important;
+    border-color: #0f67eb !important;
+}
+
+.stopsNavButton svg {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+    fill: currentColor !important;
+}
+
 .stopsListHeaderTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
     font-family: Roboto !important;
     font-size: 16px !important;
-    font-style: normal !important;
     font-weight: 500 !important;
     line-height: 150% !important;
     letter-spacing: 0.16px !important;
@@ -200,7 +246,6 @@
     font-feature-settings: 'liga' off !important;
     font-family: Roboto !important;
     font-size: 16px !important;
-    font-style: normal !important;
     font-weight: 400 !important;
     line-height: 150% !important;
     letter-spacing: 0.16px !important;

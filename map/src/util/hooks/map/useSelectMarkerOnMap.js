@@ -98,6 +98,8 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             const latlng = extractLatlng(ctx.selectedWptId, type);
             if (latlng) {
                 applyHoverPinFallback(latlng);
+            } else if (type === TRANSPORT_STOPS_LAYER_ID) {
+                resetSelectedPin({ ctx, map });
             }
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp]);

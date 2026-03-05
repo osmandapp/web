@@ -6032,5 +6032,7 @@
   "poi_hazard_yes": "Hazard",
     "shared_string_minute_lowercase": "min",
     "shared_string_interval": "Interval",
-    "transport_stops": "stops"
+    "transport_stops": "stops",
+    "shared_string_previous": "Previous",
+    "shared_string_next": "Next"
 }
