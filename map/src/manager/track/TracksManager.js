@@ -56,6 +56,14 @@ export function fitBoundsOptions(ctx) {
     };
 }
 
+export function filterSmartFolders(tracksGroups) {
+    return tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+}
+
+export function filterRegularFolders(tracksGroups) {
+    return tracksGroups?.filter((g) => g.type !== SMART_TYPE) || [];
+}
+
 export function prepareLocalTrack(track) {
     const prepareTrack = cloneDeep(track);
     return {
@@ -611,7 +619,7 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
         trackGroups.push(defaultGroup);
     }
 
-    const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+    const smartFolders = filterSmartFolders(ctx.tracksGroups);
     trackGroups.push(...smartFolders);
 
     addFilesAndCalculateLastModified(trackGroups);

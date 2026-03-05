@@ -3,6 +3,8 @@ import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, {
     getGpxFiles,
+    filterSmartFolders,
+    filterRegularFolders,
     GPX_FILE_EXT,
     preparedGpxFile,
     TRACK_VISIBLE_FLAG,
@@ -145,15 +147,15 @@ export async function loadSmartFolders(setTracksGroups, setSmartFoldersCache) {
             groupFiles: [],
             files: [],
             realSize: smartFolder.userFilePaths?.length ?? 0,
-            lastModifiedMs: smartFolder.lastModifiedMs,
+            lastModifiedMs: smartFolder.creationTime,
             lastModifiedDate: null,
             userFilePaths: smartFolder.userFilePaths ?? [],
         };
     });
 
     setTracksGroups((prev) => {
-        const withoutSmartFolders = prev.filter((g) => g.type !== SMART_TYPE);
-        return [...withoutSmartFolders, ...smartFolderGroups];
+        const regularFolders = filterRegularFolders(prev);
+        return [...regularFolders, ...smartFolderGroups];
     });
 }
 

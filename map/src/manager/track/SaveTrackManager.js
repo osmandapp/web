@@ -6,6 +6,7 @@ import TracksManager, {
     isTrackExists,
     isEmptyTrack,
     getGpxFiles,
+    filterSmartFolders,
     DEFAULT_GROUP_NAME,
     GPX_FILE_TYPE,
     getGpxFileFromTrackData,
@@ -407,7 +408,7 @@ function updateTrackGroups(listFiles, ctx) {
         const trackGroups = createTrackGroups({ files, ctx });
         ctx.setTracksGroups(trackGroups);
     } else {
-        const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+        const smartFolders = filterSmartFolders(ctx.tracksGroups);
         ctx.setTracksGroups(smartFolders);
     }
 }

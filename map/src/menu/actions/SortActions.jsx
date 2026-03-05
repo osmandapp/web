@@ -1,5 +1,5 @@
 import { Box, Divider, FormControl, FormControlLabel, Paper, Radio, RadioGroup } from '@mui/material';
-import { getAnalysisData, getGpxTime } from '../../manager/track/TracksManager';
+import { getAnalysisData, getGpxTime, filterSmartFolders } from '../../manager/track/TracksManager';
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
@@ -256,7 +256,7 @@ const SortActions = forwardRef(
         const groups = () => {
             if (trackGroup) {
                 if (trackGroup.name === DEFAULT_GROUP_NAME || trackGroup.fullName === DEFAULT_GROUP_NAME) {
-                    const smartFolders = ctx.tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+                    const smartFolders = filterSmartFolders(ctx.tracksGroups);
                     return [...(trackGroup.subfolders || []), ...smartFolders];
                 }
                 return trackGroup.subfolders;
