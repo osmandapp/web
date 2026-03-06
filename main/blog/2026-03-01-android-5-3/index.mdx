@@ -18,14 +18,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
-We’re excited to announce OsmAnd 5.3 for Android!
+OsmAnd 5.3 for Android drops: Stars align, Earth curves!
 
-This update brings extended Marine map style, detailed search results, improvements for travelers and drivers, and reliable cloud autosync for your data — plus lots of other enhancements to make navigation even easier.
+Discover the cosmos with the Astronomy plugin's interactive star overlays, rearrange widgets effortlessly with flexible map layouts, marvel at beta 3D buildings and Globe View's spherical Earth, plus smarter track folders, speedy trip widgets, gradient palettes, bike width routing, and bulletproof cloud sync—all to elevate your adventures.
 
 [🔄 **Update Now!**](https://play.google.com/store/apps/dev?id=8483587772816822023)
 
-Thanks for choosing OsmAnd as your mapping companion!
+Thanks for trusting OsmAnd on your epic journeys!
 
+![OsmAnd 5.3](./img/android_5-3.png)
 
 <!--truncate-->
 
@@ -41,7 +42,7 @@ Thanks for choosing OsmAnd as your mapping companion!
 - Introduced visual speeding indication to the [Speedometer widget](#speedometer-widget) with tolerance warning and limit-exceed states;
 - Added support for creating and editing custom [gradient palettes](#gradient-palettes) for track coloring;
 - Bicycle routing now takes [bicycle width](#bicycle-width-parameter) into account;
-<!--- Seaching place displays city name and street;-->
+- [Others improvements and optimizations](#improvements), including better route planning performance, improved map rendering quality, enhanced voice navigation prompts, extended widget customization options, smarter GPX track segmentation, and better search autocomplete;
 - [Bug fixes](#bug-fixes).
 
 <!--
@@ -57,59 +58,59 @@ l/downhill metrics, average grade and more detailed elevation information for tr
 - Initial groundwork for smartwatch integration, preparing support for viewing navigation information and trip recording data on wearable devices.
 -->
 
-## Astronomy Plugin {#astronomy-plugin}
+## Astronomy Plugin 
 
 [Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy) displays an interactive star sky overlay with stars, constellations, the Sun, the Moon, and planets. It helps you identify celestial objects above your current location, preview their paths for a selected date and time, and plan stargazing sessions using built-in time controls and viewing options.
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter.png)
 
-## Map Screen Layout {#map-screen-layout}
+## Map Screen Layout 
 
 The [Map screen layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout) setting allows you to control how widget panels are arranged on the map screen. It helps prevent widgets and buttons from overlapping and improves screen space usage, especially when switching between portrait and landscape orientations.
 
 ![Map Screen Layout](@site/static/img/widgets/screen_layout_single.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_separate.png)
 
-## 3D Buildings {#3d-buildings}
+## 3D Buildings 
 
 [3D Buildings](https://osmand.net/docs/user/plugins/topography#3d-buildings) feature displays buildings as volumetric 3D models instead of flat shapes. 
 
 ![3D Buildings](@site/static/img/map/3d_buildings_2.png) ![3D Buildings](@site/static/img/map/3d_buildings_colorful.png)
 
-## Globe View {#globe-view}
+## Globe View 
 
 [Globe View](https://osmand.net/docs/user/map/interact-with-map#globe-view) allows you to display the map as a spherical Earth instead of a flat projection. This mode changes the geometry of the map surface and adapts map interaction to spherical navigation. 
 
 ![Globe View](@site/static/img/map/globe_view_2.png)
 
-## New Trip Recording Widgets {#new-trip-recording-widgets}
+## New Trip Recording Widgets 
 
-### Multiple Display Modes {#multiple-display-modes}
+### Multiple Display Modes 
 
 Some Trip Recording widgets support multiple display modes. They let you switch between overall trip values and metrics for the most recent uphill or downhill section of the currently recorded trip. See the list of available modes [here](https://osmand.net/docs/user/plugins/trip-recording#display-modes).
 
-### Average Speed {#average-speed}
+### Average Speed 
 
 [Average Speed](https://osmand.net/docs/user/plugins/trip-recording#additional-widgets) widget shows the average speed for the currently recorded trip, or the average speed during the last uphill or downhill section, depending on the selected mode. 
 
 ![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)
 
-### Moving Time {#moving-time}
+### Moving Time 
 
 [Moving Time](https://osmand.net/docs/user/plugins/trip-recording#additional-widgets) widget shows the moving time for the currently recorded trip, or the time for the last uphill and downhill, depending on the selected mode. |
 
 ![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)
 
-## Speedometer Widget {#speedometer-widget}
+## Speedometer Widget 
 
 [Speedometer widget](https://osmand.net/docs/user/widgets/info-widgets#speedometer) now shows visual speeding alerts with color-coded tolerance and limit-exceed states, including animated transitions when crossing speed thresholds.
 
 ![Speedometer](@site/static/img/widgets/speed_alert.gif)
 
-## Gradient Palettes {#gradient-palettes}
+## Gradient Palettes 
 
 Tracks colored by Speed, Altitude, or Slope now support customizable [gradient palettes](https://osmand.net/docs/user/map/tracks/appearance#gradient-palettes). Users can create and edit Relative palettes (auto-scaled to track data) or Fixed value palettes (based on absolute numbers), define color steps, and set a separate color for missing data.
 
-## Bicycle Width Parameter {#bicycle-width-parameter}
+## Bicycle Width Parameter 
 Cycling profiles now support a [bicycle width parameter](https://osmand.net/docs/user/navigation/guidance/vehicle-parameters#limits). The router takes this value into account to help avoid narrow cycle paths that may not be suitable for wider bicycles.
 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
@@ -121,14 +122,48 @@ Cycling profiles now support a [bicycle width parameter](https://osmand.net/docs
 
 -->
 
-## Bug fixes {#bug-fixes} 
+## Improvements
 
-- Improved stability of **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** sync and backup, reducing conflicts and ensuring widgets and settings restore correctly across devices.
-- Fixed incorrect uphill/downhill values in elevation widgets and improved accuracy of ascent/descent calculations in route analysis.
-- Improved **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** navigation behaviour, including correct exit directions at roundabouts and proper placement of on-screen tools such as the radius ruler.
-- Fixed several issues related to **[Accessibility](https://osmand.net/docs/user/plugins/accessibility)** mode, including navigation announcements and interaction with certain map tools.
-- General interface and performance fixes across map rendering, widget display and configuration screens.
+* **Smart GPX Track Grouping ([#22631](https://github.com/osmandapp/OsmAnd/issues/22631))**
+    To help users manage large collections of recordings, a new "Smart Folder" system is proposed. This would automatically group tracks by day or month and provide helpful summaries like total distance and average speed for each time period.
 
+* **Enhanced Search Result Details ([#18668](https://github.com/osmandapp/OsmAnd/issues/18668))**
+    Searching for common locations will soon be much easier to navigate. By adding the city and street name directly to each search result, users can instantly distinguish between identical POI names without having to click into each one.
+
+* **Improved Track Waypoint Navigation ([#23931](https://github.com/osmandapp/OsmAnd/issues/23931))**
+    The development team is refining how we interact with waypoints within a track. A requested update will allow users to tap through a list of waypoints and center the map on each one sequentially without the list menu closing, streamlining the route-review process.
+
+* **Navigation & UI Refinements ([#23755](https://github.com/osmandapp/OsmAnd/issues/23755))**
+    Ongoing work in the 5.3 release cycle focuses on cleaning up the user interface and optimizing internal task management. These "under the hood" improvements ensure a more stable and responsive experience across both Android and iOS versions.
+
+* **New Activity Profiles: Running & More ([#22508](https://github.com/osmandapp/OsmAnd/issues/22508))**
+    To better cater to diverse outdoor enthusiasts, OsmAnd is looking to expand its profile icons. New dedicated icons for running, sailing, geocaching, and skateboarding are being considered to make profile switching more intuitive.
+
+* **Favorite Multi-Selection Support ([#16917](https://github.com/osmandapp/OsmAnd/issues/16917))**
+    Managing "My Places" is becoming much more efficient with the introduction of multi-selection for favorites. This feature will allow users to move, share, or delete multiple saved points at once, bringing favorites in line with the current track management system.
+
+* **Refining the Plugin Concept ([#24363](https://github.com/osmandapp/OsmAnd/issues/24363))**
+    The app is undergoing a strategic review of how plugins are presented to the user. The goal is to better distinguish between built-in core features and optional external extensions, making the app’s vast functionality less overwhelming for new users.
+
+- **Fixed GPX Start/Finish icon crashes** [https://github.com/osmandapp/OsmAnd-Issues/issues/3181](https://github.com/osmandapp/OsmAnd-Issues/issues/3181): Complex tracks (>10 points) now disable icons by default to prevent freezes/crashes; heavy tracks (>100 points) force-disable even if previously enabled.
+
+## Bug fixes 
+
+- Fixed [the ability to delete all downloaded maps by country at once](https://github.com/osmandapp/OsmAnd/issues/23641).
+- Enhanced [the Popular Places tool by resolving crashes during map zoom interactions](https://github.com/osmandapp/OsmAnd/issues/24287).
+- Improved [GPX database maintenance with a new light analysis mode](https://github.com/osmandapp/OsmAnd/issues/24213).
+- Corrected [the missing center-point crosshair on the Weather screen](https://github.com/osmandapp/OsmAnd/issues/24467).
+- Fixed [UI overlaps where the map scale bar covered the Plan-a-Route tool](https://github.com/osmandapp/OsmAnd/issues/24491).
+- Stabilized [Android Auto navigation starts when a destination is set via the phone](https://github.com/osmandapp/OsmAnd/issues/24409).
+- Improved [track filtering by fixing a bug where secondary edits to "To" values were ignored](https://github.com/osmandapp/OsmAnd/issues/24336).
+- Fixed [UI layout issues where the Plan-a-Route overlay slider was incorrectly centered](https://github.com/osmandapp/OsmAnd/issues/24512).
+- Corrected [button overlaps between "Search" and "Close" on tablet layouts](https://github.com/osmandapp/OsmAnd/issues/24503).
+- Enhanced [the route start process to reduce user interaction requirements for map inconsistencies](https://github.com/osmandapp/OsmAnd/issues/22987).
+- Improved [the "Analyze on map" feature to remember user-selected X and Y axis settings](https://github.com/osmandapp/OsmAnd/issues/23891).
+- Fixed [visual offsets occurring in Landscape Mode during route planning sessions](https://github.com/osmandapp/OsmAnd/issues/24433).
+- Resolved [empty detail views for generic or untagged buildings in the "Within" menu](https://github.com/osmandapp/OsmAnd/issues/24233).
+- Stabilized [application performance by addressing frequent crashes during route creation](https://github.com/osmandapp/OsmAnd/issues/24420).
+- Enhanced [Wikipedia integration by adding support for full-screen photo descriptions](https://github.com/osmandapp/OsmAnd/issues/24221).
 
 _______________________
 
