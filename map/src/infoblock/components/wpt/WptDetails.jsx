@@ -38,7 +38,7 @@ import FavoritesManager, {
     prepareIcon,
     navigateToFavoritesMenu,
 } from '../../../manager/FavoritesManager';
-import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
+import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
     filterTag,
@@ -83,7 +83,7 @@ import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
-import { fmt, localizeWeekTokens } from '../../../util/dateFmt';
+import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import {
     EXPLORE_URL,
@@ -328,8 +328,48 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     useEffect(() => {
         if (!newWpt || !ctx.selectedWpt) return;
 
+        const type = getWptType(ctx.selectedWpt);
+
+        if (type?.isStop) {
+            const controller = new AbortController();
+            setWpt({ ...newWpt });
+            setIsAddressAdded(false);
+            setIsPhotosAdded(false);
+            (async () => {
+                let tags = null;
+                let osmUrl;
+                const stop = ctx.selectedWpt.stop;
+                const lat = stop?.latlng?.lat;
+                const lon = stop?.latlng?.lng;
+                const name = stop?.options?.name ?? '';
+                if (lat != null && lon != null) {
+                    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
+                        params: {
+                            pin: `${Number(lat).toFixed(6)},${Number(lon).toFixed(6)}`,
+                            name,
+                            type: 'transportation',
+                        },
+                        apiCache: true,
+                        signal: controller.signal,
+                    });
+                    if (response?.data) {
+                        const options = response.data.properties ?? {};
+                        tags = await WptTagsProvider.getWptTags({ options }, { ...type, isPoi: true }, ctx);
+                        osmUrl = options[POI_OSM_URL];
+                    }
+                }
+                if (!controller.signal.aborted) {
+                    setWpt((prev) =>
+                        prev && prev.id === newWpt.id
+                            ? { ...prev, tags, ...(osmUrl !== undefined && { osmUrl }) }
+                            : prev
+                    );
+                }
+            })();
+            return () => controller.abort();
+        }
+
         const fetchTagsAndData = async () => {
-            const type = getWptType(ctx.selectedWpt);
             let tags;
             if (type?.isWpt) {
                 tags = await WptTagsProvider.getWptTags(ctx.selectedWpt, type, ctx);
@@ -354,8 +394,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     fallbackTags.push(wikidataTag);
                     tags = { res: fallbackTags };
                 }
-            } else if (type?.isStop) {
-                tags = null;
             }
             return tags;
         };
