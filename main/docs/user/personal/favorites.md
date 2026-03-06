@@ -266,15 +266,11 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Go to: *Three-dot menu → Change default appearance*
-
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
-
-Go to: *Long tap folder → Default appearance*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
 
@@ -296,19 +292,21 @@ Use the ***Three-dot menu*** (*Android*) next to each folder and ***long tap*** 
 
 - **<Translate android="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
 
-
-
 ### Change Group Appearance {#change-group-appearance}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Go to: *Three-dot menu → Change default appearance*
+
+![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Go to: *Long tap folder → Default appearance*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
