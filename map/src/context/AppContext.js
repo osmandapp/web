@@ -116,7 +116,7 @@ async function loadListFiles(
                         res.uniqueFiles.forEach((f) => {
                             res.totalUniqueZipSize += f.zipSize;
                         });
-                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles, setTracksGroups);
+                        getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
                         loadSmartFolders(setTracksGroups, setSmartFoldersCache);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
@@ -135,9 +135,7 @@ async function loadListFiles(
 
 export async function loadSmartFolders(setTracksGroups, setSmartFoldersCache) {
     const res = await getSmartFolders();
-    if (setSmartFoldersCache) {
-        setSmartFoldersCache({});
-    }
+    setSmartFoldersCache({});
     const smartFolderGroups = (res ?? []).map((smartFolder) => {
         return {
             name: smartFolder.name,
@@ -171,27 +169,19 @@ export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCac
             filesArray.push({ ...file, smartFolder: true });
         }
     });
-
     const populated = {
         ...smartFolder,
         groupFiles: filesArray,
         files: filesArray,
         realSize: filesArray.length,
     };
-
-    if (setSmartFoldersCache) {
-        setSmartFoldersCache((prev) => ({ ...prev, [smartFolder.name]: populated }));
-    }
-
+    setSmartFoldersCache((prev) => ({ ...prev, [smartFolder.name]: populated }));
     return populated;
 }
 
 async function getSmartFolders() {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
-    if (response?.data) {
-        return response.data;
-    }
-    return null;
+    return response?.data || null;
 }
 
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
