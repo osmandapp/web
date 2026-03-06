@@ -162,7 +162,7 @@ The *Personal folder* contains special points like **<Translate android="true" i
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![My places favorites android](@site/static/img/personal/my_places_android.png)
+![My places favorites android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![my_places_ios](@site/static/img/personal/my_places_ios.png)
+![my_places_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -179,7 +179,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my
 The **My Favorites** section lets you:
 
 - [Search](#order--sorting--search) for specific favorites or groups.
-- [Bulk operations](#bulk-edit--delete) — Rename, move, or delete multiple favorites at once.
+- [Bulk operations](#bulk-edit--delete) — Share, move, or delete multiple favorites at once.
 
 ### Order / Sorting / Search {#order--sorting--search}
 
