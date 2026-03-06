@@ -97,7 +97,7 @@ When creating or editing a palette, the editor screen includes:
 - Selectable value buttons below the gradient (for example, 50, 100, 150, No data).
 - A + button to add a new step.
 - A Value field.
-- Color selection options.
+- Color selection options. For more information about palette files, see [here](../../personal/color-palette-schemes.md#tracks-routes).
 - A Remove step option for the selected value.
 - A Save button.
 
