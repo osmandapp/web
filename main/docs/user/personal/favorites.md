@@ -205,14 +205,30 @@ The **My Favorites** section lets you:
 
 </Tabs>
 
-
 ### Bulk Edit / Delete {#bulk-edit--delete}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Favorites actions android](@site/static/img/personal/favorites_actions_android.png) ![Favorites action delete android](@site/static/img/personal/favorites_delete_android.png)
+![Favorites actions android](@site/static/img/personal/favorites_group_actions.png) ![Favorites action delete android](@site/static/img/personal/favorites_actions.png)
+
+To manage multiple favorites or folders, enter *Selection mode*. You can open Selection mode in two ways:
+- Tap the *three-dot menu* in the top-right corner and choose *Select*.
+- Long tap a favorite point or folder.
+
+When Selection mode is enabled, checkboxes appear next to items in the list. Select the required favorites or folders by tapping the checkboxes. To select all items in the list, tap the Select all icon in the top-right corner.
+
+The available actions depend on the selected item type. When folders are selected, the following actions are available:
+- **Share** — Export selected folders as a Favorites GPX file.
+- **Delete** — Remove the selected folders.
+
+When favorite points are selected, the following actions are available:
+- **Move** — Move selected favorites to another folder.
+- **Add to map markers** — Add selected points to the Map markers list.
+- **Add to track** — Add selected points to a track.
+- **Add to navigation** — Start navigation to the selected point.
+- **Delete** — Remove the selected favorites.
 
 </TabItem>
 
@@ -220,13 +236,13 @@ The **My Favorites** section lets you:
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
+- To manage multiple favorites, tap the **Edit** button (*pencil icon*).
+- Select individual favorites or entire folders for bulk operations.
+- **Options available** — *Share*, *Move to a Favorite Group*, *Change Color*, and *Delete*.
+
 </TabItem>
 
 </Tabs>
-
-1. To manage multiple favorites, tap the **Delete** icon (*bin icon on Android*) or the **Edit** button (*pencil icon on iOS*).
-2. Select individual favorites or entire folders for bulk operations.
-3. **Options available** — *Delete* for Android and iOS, *Move to a Favorite Group*, *Share*, and *Change Color* for iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
