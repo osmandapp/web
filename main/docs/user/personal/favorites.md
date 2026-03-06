@@ -187,19 +187,23 @@ The **My Favorites** section lets you:
 
 <TabItem value="android" label="Android">
 
-![Favorites folders android](@site/static/img/personal/favorites_folders_android.png)
+![Favorites folders android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Sorting** — Favorite folders and points can be sorted using the available sorting options in the list menu. The following options are available: *Name A – Z*, *Name Z – A*, *Last modified*, *Newest date first*, *Oldest date first*. By default, items are sorted by Name A – Z. Pinned folders are always displayed at the top of the list. They are visually separated from the rest of the folders by a divider. The [Personal folder](../personal/favorites.md#special-favorites-personal) is pinned by default. 
+- **Searching** — Use [Global search](../search/search-all.md) to find favorites by name. Favorites are sorted by distance from the map's center.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Favorites folders ios](@site/static/img/personal/favorites_folders_ios.png)
 
+- **Sorting** — Favorite folders and points are sorted alphabetically, with the [personal folder](../personal/favorites.md#special-favorites-personal) at the top.
+- **Searching** — Use [Global search](../search/search-all.md) to find favorites by name. Favorites are sorted by distance from the map's center.
+
 </TabItem>
 
 </Tabs>
-
-- **Sorting** — Favorite folders and points are sorted alphabetically, with the [personal folder](../personal/favorites.md#special-favorites-personal) at the top.
-- **Searching** — Use [Global search](../search/search-all.md) to find favorites by name. Favorites are sorted by distance from the map's center.
 
 
 ### Bulk Edit / Delete {#bulk-edit--delete}
