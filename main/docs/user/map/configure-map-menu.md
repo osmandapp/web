@@ -22,7 +22,7 @@ The **Configure map** menu is an important item in the OsmAnd *Main Menu*, where
 
 Section **Show**:  
 
-![Configure map android](@site/static/img/map/configure_map_show1_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configure map android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configure map android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Section **Topography**:  
 
@@ -42,7 +42,7 @@ Sections **Routes and Map rendering**:
 
 Section **Show on map**:  
 
-![Configure map android](@site/static/img/map/configure_map_show1_ios.png)  
+![Configure map android](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Section **Topography**:  
 
@@ -99,7 +99,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
    - [Tracks](../map/tracks/index.md) - displays imported, planned, or recorded tracks over the map.
    - [Street level imagery](../plugins/mapillary.md#map-layer) - displays points with available street-level imagery.
    - [Travel guides](../plan-route/travel-guides.md) - displays travel guides on the map.
-   - [Wikipedia](../plugins/wikipedia.md) - highlights Wikipedia articles linked to the map.
+   - [Popular places](../map/popular_places.md) - highlights popular places based on Wikipedia articles and displays them on the map.
    - [OSM editing](../plugins/osm-editing.md#osm-editing-layer) - displays OpenStreetMap edits, notes, and mapping-related helper layers.
    - [Other plugin layers](../plugins/index.md#configure-plugin) - many plugins add their layers with extra information.
 
