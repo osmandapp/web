@@ -11,11 +11,11 @@ import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import isEmpty from 'lodash-es/isEmpty';
 
 // distinct component
-const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible }) => {
+const WaypointGroup = ({ ctx, group, points, defaultOpen, defaultVisible = true, massOpen, massVisible }) => {
     const [open, setOpen] = useState(defaultOpen);
     const switchOpen = () => setOpen(!open);
 
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(defaultVisible);
     const switchVisible = (e) => {
         e.stopPropagation();
         setVisible(!visible);
@@ -317,6 +317,7 @@ export default function WaypointsTab() {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
         const trackName = ctx.selectedGpxFile.name;
+        const pointsGroups = ctx.selectedGpxFile.pointsGroups;
 
         setShowMass(keys.length > 1);
 
@@ -329,6 +330,7 @@ export default function WaypointsTab() {
                         group={g}
                         points={groups[g]}
                         defaultOpen={keys.length === 1}
+                        defaultVisible={pointsGroups[g]?.ext?.hidden !== true}
                         massVisible={massVisible}
                         massOpen={massOpen}
                     />
