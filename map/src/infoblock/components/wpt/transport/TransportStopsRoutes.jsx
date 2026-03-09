@@ -1,9 +1,10 @@
-import React, { useContext, useMemo, useState } from 'react';
-import { Box, Collapse, Divider } from '@mui/material';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import { Box, CircularProgress, Collapse, Divider } from '@mui/material';
 import AppContext from '../../../../context/AppContext';
 import TransportStopRouteDetails from './TransportStopRouteDetails';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import { apiGet } from '../../../../util/HttpApi';
 import { ReactComponent as BusIcon } from '../../../../assets/icons/ic_action_transport_bus.svg';
 import { ReactComponent as FerryIcon } from '../../../../assets/icons/ic_action_transport_ferry.svg';
 import { ReactComponent as FunicularIcon } from '../../../../assets/icons/ic_action_transport_funicular.svg';
@@ -112,55 +113,139 @@ export const ROUTE_TYPES = {
     },
 };
 
-export default function TransportStopsRoutes({ routes = [], wpt = null }) {
-    const ctx = useContext(AppContext);
+function RouteSection({
+    title,
+    defaultOpen,
+    routes,
+    isLoading,
+    showFilter,
+    filterRoutes,
+    selectedType,
+    setSelectedType,
+    wpt,
+}) {
     const { t } = useTranslation();
-    const [open, setOpen] = useState(true);
-    const [selectedType, setSelectedType] = useState(null);
-
+    const [open, setOpen] = useState(defaultOpen);
+    const routeList = routes ?? [];
     const filteredRoutes = useMemo(
-        () => (selectedType ? routes.filter((r) => r.type === selectedType) : routes),
-        [routes, selectedType]
+        () => (selectedType ? routeList.filter((r) => r.type === selectedType) : routeList),
+        [routeList, selectedType]
     );
 
-    if (!routes || routes.length === 0) {
-        return null;
-    }
-
     return (
-        <Box>
+        <Box sx={{ mb: '-16px' }}>
             <Divider sx={{ mt: '16px' }} />
             <SelectItemWithoutOptions
-                title={t('transport_Routes')}
+                title={title}
                 onClick={() => setOpen(!open)}
                 endIcon={open ? <ExpandLess /> : <ExpandMore />}
                 showValue={false}
             />
             <Collapse in={open} timeout="auto">
                 <Box>
-                    <TransportTypeFilter
-                        routes={routes}
-                        selectedType={selectedType}
-                        setSelectedType={setSelectedType}
-                    />
-                    {filteredRoutes.map((route, index) => {
-                        const routeType = ROUTE_TYPES[route.type];
-                        return (
-                            <React.Fragment key={route.id || index}>
-                                <TransportStopRouteItem
-                                    route={route}
-                                    icon={routeType.icon}
-                                    color={routeType.color}
-                                    typeName={t(`web:${routeType.name}`)}
-                                    wpt={wpt}
+                    {isLoading ? (
+                        <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
+                            <CircularProgress size={24} />
+                        </Box>
+                    ) : (
+                        <>
+                            {showFilter && filterRoutes.length && (
+                                <TransportTypeFilter
+                                    routes={filterRoutes}
+                                    selectedType={selectedType}
+                                    setSelectedType={setSelectedType}
                                 />
-                                {index < filteredRoutes.length - 1 && <DividerWithMargin margin={'64px'} />}
-                            </React.Fragment>
-                        );
-                    })}
+                            )}
+                            {filteredRoutes.map((route, index) => {
+                                const routeType = ROUTE_TYPES[route.type];
+                                return (
+                                    <React.Fragment key={route.id || index}>
+                                        <TransportStopRouteItem
+                                            route={route}
+                                            icon={routeType?.icon}
+                                            color={routeType?.color}
+                                            typeName={routeType ? t(`web:${routeType.name}`) : ''}
+                                            wpt={wpt}
+                                        />
+                                        {index < filteredRoutes.length - 1 && <DividerWithMargin margin={'64px'} />}
+                                    </React.Fragment>
+                                );
+                            })}
+                        </>
+                    )}
                 </Box>
             </Collapse>
-            {ctx.selectedTransportRoute && !ctx.selectedTransportRoute.isPreview && <TransportStopRouteDetails />}
         </Box>
+    );
+}
+
+export default function TransportStopsRoutes({ wpt }) {
+    const ctx = useContext(AppContext);
+    const { t } = useTranslation();
+    const [nearbyRoutes, setNearbyRoutes] = useState(null);
+    const [selectedRouteType, setSelectedRouteType] = useState(null);
+
+    useEffect(() => {
+        const lat = wpt?.latlon?.lat;
+        const lon = wpt?.latlon?.lon;
+        const stopId = wpt?.id;
+        if (lat == null || lon == null || stopId == null) {
+            setNearbyRoutes(null);
+            return;
+        }
+        setNearbyRoutes(null);
+        const controller = new AbortController();
+        apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-nearby-transport-stops`, {
+            params: { lat, lon, stopId },
+            apiCache: true,
+            signal: controller.signal,
+        })
+            .then((response) => {
+                const list = response?.data?.nearbyRoutes;
+                setNearbyRoutes(Array.isArray(list) ? list : []);
+            })
+            .catch(() => setNearbyRoutes([]));
+        return () => controller.abort();
+    }, [wpt?.id, wpt?.latlon?.lat, wpt?.latlon?.lon]);
+
+    const filterRoutes = useMemo(
+        () => [...(wpt?.routes ?? []), ...(nearbyRoutes ?? [])],
+        [wpt?.routes, nearbyRoutes]
+    );
+
+    if (!wpt) return null;
+
+    const routesList = wpt.routes ?? [];
+
+    return (
+        <>
+            {routesList.length > 0 && (
+                <RouteSection
+                    title={t('transport_Routes')}
+                    defaultOpen={true}
+                    routes={routesList}
+                    isLoading={false}
+                    showFilter={true}
+                    filterRoutes={filterRoutes}
+                    selectedType={selectedRouteType}
+                    setSelectedType={setSelectedRouteType}
+                    wpt={wpt}
+                />
+            )}
+            {nearbyRoutes?.length > 0 && (
+                <RouteSection
+                    title={t('web:transport_nearby_routes')}
+                    defaultOpen={false}
+                    routes={nearbyRoutes}
+                    isLoading={false}
+                    showFilter={false}
+                    filterRoutes={filterRoutes}
+                    selectedType={selectedRouteType}
+                    setSelectedType={setSelectedRouteType}
+                    wpt={wpt}
+                />
+            )}
+            {ctx.selectedTransportRoute && !ctx.selectedTransportRoute.isPreview && <TransportStopRouteDetails />}
+        </>
     );
 }

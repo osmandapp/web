@@ -976,9 +976,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                                 {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                                 {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
-                                {wpt?.type?.isStop && wpt?.routes && (
-                                    <TransportStopsRoutes routes={wpt.routes} wpt={wpt} />
-                                )}
+                                {wpt?.type?.isStop && <TransportStopsRoutes wpt={wpt} />}
                                 {wpt?.wikiDesc && (
                                     <>
                                         <Divider sx={{ mt: 2 }} />
