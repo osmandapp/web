@@ -10,9 +10,9 @@ async function fetchRouteData({ wpt, route, color, typeName }) {
     const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-route`, {
         apiCache: true,
         params: {
-            lat: wpt.latlon.lat,
-            lon: wpt.latlon.lon,
-            stopId: wpt.id,
+            lat: route.stop?.lat ?? wpt.latlon.lat,
+            lon: route.stop?.lon ?? wpt.latlon.lon,
+            stopId: route.stop?.id ?? wpt.id,
             routeId: route.id,
         },
     });
@@ -32,12 +32,13 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
     const IconComponent = icon;
 
     const handleRouteMouseEnter = async () => {
-        if (!wpt?.latlon || !wpt.id || !route.id) return;
-        const current = ctx.selectedTransportRoute;
-        if (current && !current.isPreview) return;
+        if (!route.id) return;
+        if (ctx.selectedTransportRoute && !ctx.selectedTransportRoute.isPreview) return;
         try {
             const data = await fetchRouteData({ wpt, route, color, typeName });
-            if (data) ctx.setSelectedTransportRoute({ ...data, currentStopId: wpt.id, isPreview: true });
+            if (data) {
+                ctx.setSelectedTransportRoute({ ...data, currentStopId: route.stop?.id ?? wpt?.id, isPreview: true });
+            }
         } catch (error) {
             console.error('Failed to load transport route on hover:', error);
         }
@@ -48,18 +49,21 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
     };
 
     const handleRouteClick = async () => {
-        if (!wpt?.latlon || !wpt.id || !route.id) return;
+        if (!route.id) return;
+        const currentStopId = route.stop?.id ?? wpt.id;
         try {
             if (ctx.selectedTransportRoute?.id === route.id && ctx.selectedTransportRoute?.isPreview) {
                 ctx.setSelectedTransportRoute({
                     ...ctx.selectedTransportRoute,
-                    currentStopId: wpt.id,
+                    currentStopId,
                     isPreview: false,
                 });
                 return;
             }
             const data = await fetchRouteData({ wpt, route, color, typeName });
-            if (data) ctx.setSelectedTransportRoute({ ...data, currentStopId: wpt.id, isPreview: false });
+            if (data) {
+                ctx.setSelectedTransportRoute({ ...data, currentStopId, isPreview: false });
+            }
         } catch (error) {
             console.error('Failed to load transport route:', error);
         }
