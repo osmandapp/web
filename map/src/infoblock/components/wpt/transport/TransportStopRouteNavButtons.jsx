@@ -15,10 +15,19 @@ export default function TransportStopRouteNavButtons({ route, stopsBeforeOpen })
     const currentStopIndex = route ? stops.findIndex((s) => s.stopId === route.currentStopId) : -1;
     const currentHoverIndex = stops.findIndex((s) => s.stopId === ctx.selectedWptId?.id);
 
+    // A stop of this route is currently highlighted (hover or click).
+    const hasHighlight =
+        ctx.selectedWptId?.type === TRANSPORT_STOPS_LAYER_ID &&
+        ctx.selectedWptId?.show !== false &&
+        currentHoverIndex >= 0;
+
+    // Index to use for Prev/Next: highlighted stop if any, otherwise current stop.
+    const effectiveIndex = hasHighlight ? currentHoverIndex : currentStopIndex;
+
     const goToPrevStop = () => {
-        if (currentHoverIndex <= 0) return;
-        const prevStop = stops[currentHoverIndex - 1];
-        const isInCollapsedClosed = currentHoverIndex - 1 < currentStopIndex && !stopsBeforeOpen;
+        if (effectiveIndex <= 0) return;
+        const prevStop = stops[effectiveIndex - 1];
+        const isInCollapsedClosed = effectiveIndex - 1 < currentStopIndex && !stopsBeforeOpen;
         ctx.setSelectedWptId({
             id: prevStop?.stopId,
             show: true,
@@ -29,9 +38,9 @@ export default function TransportStopRouteNavButtons({ route, stopsBeforeOpen })
     };
 
     const goToNextStop = () => {
-        if (currentHoverIndex < 0 || currentHoverIndex >= stops.length - 1) return;
-        const nextStop = stops[currentHoverIndex + 1];
-        const isInCollapsedClosed = currentHoverIndex + 1 < currentStopIndex && !stopsBeforeOpen;
+        if (effectiveIndex < 0 || effectiveIndex >= stops.length - 1) return;
+        const nextStop = stops[effectiveIndex + 1];
+        const isInCollapsedClosed = effectiveIndex + 1 < currentStopIndex && !stopsBeforeOpen;
         ctx.setSelectedWptId({
             id: nextStop?.stopId,
             show: true,
@@ -49,7 +58,7 @@ export default function TransportStopRouteNavButtons({ route, stopsBeforeOpen })
                 variant="text"
                 className={`${styles.stopsNavButton} ${styles.stopsNavButtonPrev}`}
                 onClick={goToPrevStop}
-                disabled={currentHoverIndex <= 0}
+                disabled={effectiveIndex <= 0}
                 aria-label={t('shared_string_previous')}
             >
                 <ActionBackIcon />
@@ -59,7 +68,7 @@ export default function TransportStopRouteNavButtons({ route, stopsBeforeOpen })
                 variant="text"
                 className={`${styles.stopsNavButton} ${styles.stopsNavButtonNext}`}
                 onClick={goToNextStop}
-                disabled={currentHoverIndex < 0 || currentHoverIndex >= stops.length - 1}
+                disabled={effectiveIndex < 0 || effectiveIndex >= stops.length - 1}
                 aria-label={t('shared_string_next')}
             >
                 {t('shared_string_next')}
