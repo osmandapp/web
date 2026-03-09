@@ -90,6 +90,11 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
+        if (type === TRANSPORT_STOPS_LAYER_ID && ctx.selectedWptId?.hoverFromMap) {
+            resetSelectedPin({ ctx, map });
+            return;
+        }
+
         const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
         if (found) {
             applyPinForLayer(found, false);

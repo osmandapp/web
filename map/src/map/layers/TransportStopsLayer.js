@@ -146,8 +146,14 @@ async function createTransportStopsLayer({
 
     function bindHoverToLayer(layer, stopId, stopName, latlng, mainStyle) {
         const tooltipRef = ctx.searchTooltipRef;
-
         const offset = mainStyle ? [5, TRANSPORT_STOP_ICON_SIZE * 0.8] : [0, TRANSPORT_STOP_ICON_SIZE * 0.8];
+
+        const isStopOutsideSelectedRoute = () => {
+            const route = ctx.selectedTransportRoute;
+            const routeMenuOpen = route && !route.isPreview;
+            const routeStopIds = route?.stops?.map((s) => s.stopId) ?? [];
+            return routeMenuOpen && !routeStopIds.includes(stopId);
+        };
 
         layer.on('mouseover', () => {
             removeTooltip(map, tooltipRef);
@@ -157,14 +163,24 @@ async function createTransportStopsLayer({
                 });
                 map.addLayer(tooltipRef.current);
             }
-            ctx.setSelectedWptId({ id: stopId, show: true, type: TRANSPORT_STOPS_LAYER_ID, obj: layer });
+            if (isStopOutsideSelectedRoute()) return;
+            ctx.setSelectedWptId({
+                id: stopId,
+                show: true,
+                type: TRANSPORT_STOPS_LAYER_ID,
+                obj: layer,
+                hoverFromMap: true,
+            });
         });
 
         layer.on('mouseout', () => {
             removeTooltip(map, tooltipRef);
-            ctx.setSelectedWptId((prev) =>
-                prev?.type === TRANSPORT_STOPS_LAYER_ID && prev?.id === stopId ? { ...prev, show: false } : prev
-            );
+            if (isStopOutsideSelectedRoute()) return;
+            ctx.setSelectedWptId((prev) => {
+                if (prev?.type !== TRANSPORT_STOPS_LAYER_ID || prev?.id !== stopId) return prev;
+                if (prev.fromClick) return prev;
+                return { ...prev, show: false };
+            });
         });
     }
 
@@ -405,6 +421,24 @@ const TransportStopsLayer = () => {
         const lon = e.latlng?.lng ?? e.sourceTarget?._latlng?.lng;
 
         if (lat && lon) {
+            const stopId = e.sourceTarget.options?.id ?? e.sourceTarget.options?.idObj;
+            const route = ctx.selectedTransportRoute;
+            const routeMenuOpen = route && !route.isPreview;
+            const routeStopIds = route?.stops?.map((s) => s.stopId) ?? [];
+
+            // Route menu open + click on a stop of this route → only highlight it in the list (same as hover, persistent until next click/hover)
+            if (routeMenuOpen && stopId && routeStopIds.includes(stopId)) {
+                ctx.setSelectedWptId({
+                    id: stopId,
+                    show: true,
+                    type: TRANSPORT_STOPS_LAYER_ID,
+                    obj: e.sourceTarget,
+                    hoverFromMap: true,
+                    fromClick: true,
+                });
+                return;
+            }
+
             const stop = {
                 mapObj: true,
                 options: e.sourceTarget.options,
@@ -412,10 +446,7 @@ const TransportStopsLayer = () => {
             };
 
             // Check if clicked stop belongs to selected route
-            if (ctx.selectedTransportRoute?.stops?.length > 0) {
-                const stopId = e.sourceTarget.options?.id;
-                const routeStopIds = ctx.selectedTransportRoute.stops.map((s) => s.stopId);
-                // If clicked stop is not in route stops, clear the route
+            if (route?.stops?.length > 0) {
                 if (!stopId || !routeStopIds.includes(stopId)) {
                     ctx.setSelectedTransportRoute(null);
                 }

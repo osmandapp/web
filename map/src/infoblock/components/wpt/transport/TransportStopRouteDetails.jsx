@@ -151,9 +151,21 @@ function StopItem({ stop, routeColor, isSelected = false }) {
                 ctx.setSelectedWptId({ id: stopId, show: true, type: TRANSPORT_STOPS_LAYER_ID, obj: stop })
             }
             onMouseLeave={() =>
-                ctx.setSelectedWptId((prev) =>
-                    prev?.type === TRANSPORT_STOPS_LAYER_ID && prev?.id === stopId ? { ...prev, show: false } : prev
-                )
+                ctx.setSelectedWptId((prev) => {
+                    if (prev?.type !== TRANSPORT_STOPS_LAYER_ID || prev?.id !== stopId) return prev;
+                    if (prev.fromClick) return prev;
+                    return { ...prev, show: false };
+                })
+            }
+            onClick={() =>
+                stopId != null &&
+                ctx.setSelectedWptId({
+                    id: stopId,
+                    show: true,
+                    type: TRANSPORT_STOPS_LAYER_ID,
+                    obj: stop,
+                    fromClick: true,
+                })
             }
         >
             <DefaultItem
