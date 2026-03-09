@@ -59,21 +59,19 @@ Learn how to find a Wikidata ID: [Wikipedia: Finding a Wikidata ID](https://en.w
 
 ## How to Use {#how-to-use}
 
-<InfoAndroidOnly/>
-
 The **Popular Places** feature includes both a curated list of nearby landmarks and a layer of Wikipedia-based POIs on the map.
 
 There are two main ways to access this feature:
 
 - **Free version**  
   Access via [Search](#explore-in-search) to explore nearby places in list view.  
-  *<Translate android="true" ids="android_button_seq"/>*. Go to: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  *<Translate android="true" ids="android_button_seq"/> only*. Go to: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
   
   This Explore list shows popularity-ranked Wikipedia/Wikidata places near you and works online. It displays up to 50 places. Because Explore/Wikipedia results are rating-ranked, the ordering in these results may differ from regular POI search.
 
 - **Paid versions** *(Maps+ and OsmAnd Pro)*  
   Enable the visual overlay in the [Configure Map](#enable-layer).  
-  *<Translate android="true" ids="android_button_seq"/>*. Go to: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
+  *<Translate android="true" ids="android_button_seq"/> & IOS*. Go to: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   In this mode, popular POIs appear directly on the map with thumbnail previews and Wikipedia content.
 
@@ -117,15 +115,21 @@ To use it **offline**, you need a [Maps+ or OsmAnd Pro](../purchases/android.md)
 
 ## Enable Layer {#enable-layer}
 
-<InfoAndroidOnly/>
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>**. Go to: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
 ![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Popular places (Wikipedia)*
+
+![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
