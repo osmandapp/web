@@ -272,5 +272,6 @@
     "route_type_subway": "Subway",
     "transport_filter_all": "All",
     "transport_travel_time": "Travel time",
-    "transport_nearby_routes": "Nearby Routes"
+    "transport_nearby_routes": "Nearby Routes",
+    "transport_stops_before": "{{count}} stops before"
 }

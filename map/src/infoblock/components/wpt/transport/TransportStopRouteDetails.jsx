@@ -45,7 +45,7 @@ function RouteInfo({ route }) {
     return (
         <Box className={styles.routeDetailsType}>
             {parts.map((part, i) => (
-                <React.Fragment key={part}>
+                <React.Fragment key={i}>
                     {i > 0 && <span>•</span>}
                     <span>{part}</span>
                 </React.Fragment>
@@ -232,7 +232,7 @@ export default function TransportStopRouteDetails() {
                                 <>
                                     <CollapseRowWithDots routeColor={routeColor}>
                                         <SelectItemWithoutOptions
-                                            title={`${currentStopIndex} stops before`}
+                                            title={t('web:transport_stops_before', { count: currentStopIndex })}
                                             boldTitle={false}
                                             onClick={() => setStopsBeforeOpen(!stopsBeforeOpen)}
                                             endIcon={stopsBeforeOpen ? <ExpandLess /> : <ExpandMore />}
