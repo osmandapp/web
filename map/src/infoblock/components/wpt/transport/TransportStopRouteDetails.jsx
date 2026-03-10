@@ -131,7 +131,7 @@ function LineAndIconWrapper({ routeColor, lineNoRadiusTop, lineNoRadiusBottom, c
     );
 }
 
-function StopItem({ stop, routeColor, isSelected = false }) {
+function StopItem({ stop, routeColor, isSelected = false, showTravelTime = true }) {
     const ctx = useContext(AppContext);
 
     const stopId = stop?.stopId;
@@ -170,7 +170,7 @@ function StopItem({ stop, routeColor, isSelected = false }) {
         >
             <DefaultItem
                 name={stop?.name}
-                rightText={formatTravelTime(stop?.travelTime)}
+                rightText={showTravelTime && stop?.travelTime != null ? formatTravelTime(stop.travelTime) : undefined}
                 icon={
                     <Box className={styles.stopIconCell}>
                         <StopRowIcon routeColor={routeColor} isSelected={isSelected} />
@@ -193,6 +193,7 @@ export default function TransportStopRouteDetails() {
     const [, height] = useWindowSize();
 
     const stops = route?.stops ?? [];
+    const hasTravelTime = stops.some((s) => s?.travelTime != null);
     const currentStopIndex = route ? stops.findIndex((s) => s.stopId === route.currentStopId) : -1;
 
     if (!route) {
@@ -219,9 +220,11 @@ export default function TransportStopRouteDetails() {
                                 <Typography className={styles.stopsListHeaderTitle}>
                                     {capitalize(t('transport_stops'))}
                                 </Typography>
-                                <Typography className={styles.stopsListHeaderTravelTime}>
-                                    {t('web:transport_travel_time')}
-                                </Typography>
+                                {hasTravelTime && (
+                                    <Typography className={styles.stopsListHeaderTravelTime}>
+                                        {t('web:transport_travel_time')}
+                                    </Typography>
+                                )}
                             </Box>
                             <TransportStopRouteNavButtons route={route} stopsBeforeOpen={stopsBeforeOpen} />
                             {/* Stops before current (collapsible) */}
