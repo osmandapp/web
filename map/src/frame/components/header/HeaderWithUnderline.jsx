@@ -1,21 +1,31 @@
 import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
+import styles from './header.module.css';
 import CloseIcon from '@mui/icons-material/Close';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import React from 'react';
 
 export default function HeaderWithUnderline({
     title,
     onClose,
+    showBackButton = false,
     rightContent = null,
     toolbarProps = {},
     appBarProps = {},
     titleId = undefined,
 }) {
+    const { id: buttonId, ...restAppBarProps } = appBarProps;
     return (
-        <AppBar position="static" className={headerStyles.appbar} {...appBarProps}>
+        <AppBar position="static" className={headerStyles.appbar} {...restAppBarProps}>
             <Toolbar className={headerStyles.toolbar} {...toolbarProps}>
-                <IconButton variant="contained" type="button" onClick={onClose}>
-                    <CloseIcon />
+                <IconButton
+                    id={buttonId}
+                    variant="contained"
+                    type="button"
+                    className={styles.closeBtn}
+                    onClick={onClose}
+                >
+                    {showBackButton ? <ArrowBackIcon /> : <CloseIcon />}
                 </IconButton>
                 <Typography component="div" className={headerStyles.title} sx={{ flexGrow: 1 }} id={titleId}>
                     {title}

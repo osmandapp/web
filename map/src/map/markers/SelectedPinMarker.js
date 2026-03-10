@@ -25,7 +25,7 @@ const SHAPES = {
         color: SquareColor,
         light: SquareLight,
         stroke: SquareStroke,
-        iconOffsetRatio: 0.04,
+        iconOffsetRatio: 0.085,
     },
     hexagon: {
         color: HexagonColor,

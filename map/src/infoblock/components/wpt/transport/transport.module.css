@@ -1,3 +1,92 @@
+/* Default (no scroll) — как в wpt-details */
+.routeDetailsHeaderDefault {
+    display: flex !important;
+    min-height: 64px !important;
+    padding: 12px 16px !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+    justify-content: space-between !important;
+}
+
+.routeDetailsNameDefault {
+    color: var(--text-primary) !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    white-space: normal !important;
+    margin-bottom: 6px !important;
+}
+
+.routeDetailsTypeDefault {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+.routeDetailsShieldDefault {
+    height: 35px !important;
+    min-width: 23px !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-family: Roboto !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    padding: 0 6px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Minimised (есть вертикальный скролл) */
+.routeDetailsHeader {
+    display: flex !important;
+    min-height: 64px !important;
+    padding: 16px 16px 12px 16px !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+    justify-content: space-between !important;
+}
+
+.routeDetailsName {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.16px !important;
+    white-space: normal !important;
+}
+
+.routeDetailsType {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    min-height: 20px !important;
+}
+
+.routeDetailsShield {
+    height: 20px !important;
+    min-width: 20px !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    padding: 0 6px !important;
+    flex-shrink: 0 !important;
+}
+
 .filterBar {
     display: flex !important;
     align-items: center !important;
@@ -11,4 +100,343 @@
     height: 24px !important;
     background: #e6e6e6 !important;
     flex-shrink: 0 !important;
+}
+
+.stopRouteItem {
+    display: flex !important;
+    padding: 12px 16px 16px 16px !important;
+    align-items: center !important;
+    gap: 24px !important;
+    align-self: stretch !important;
+}
+.stopRouteItem:hover,
+.stopRouteItem.selected {
+    background: #e9f0fb !important;
+}
+
+.stopRouteName {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+
+.stopRouteInfo {
+    color: #666 !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+}
+
+.stopRouteInfoRow {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-bottom: 3px !important;
+}
+
+.stopRouteShield {
+    height: 20px !important;
+    min-width: 20px !important;
+    border-radius: 3px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    padding: 0 6px !important;
+    gap: 6px !important;
+}
+
+/* Route details — stop list */
+.routeDetailsHeaderContent {
+    overflow: hidden !important;
+    flex-grow: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+}
+
+.stopsListHeader {
+    display: flex !important;
+    min-height: 48px !important;
+    padding: 0 16px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+}
+
+.stopsNavButtons {
+    display: flex !important;
+    padding: 0 16px 16px 16px !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 16px !important;
+    align-self: stretch !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.stopsNavButton {
+    display: flex !important;
+    flex: 1 0 0 !important;
+    align-items: center !important;
+    padding: 0 12px !important;
+    gap: 12px !important;
+    min-height: 36px !important;
+    border-radius: 3px !important;
+    border: 1px solid #CCC !important;
+    background: #fff !important;
+    color: #237BFF !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+.stopsNavButtonPrev {
+    justify-content: flex-start !important;
+}
+
+.stopsNavButtonNext {
+    justify-content: flex-end !important;
+}
+
+.stopsNavButton:hover:not(:disabled) {
+    background: #deebff !important;
+    color: var(--selected-color) !important;
+    border-color: #0f67eb !important;
+}
+
+.stopsNavButton svg {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+    fill: currentColor !important;
+}
+
+.stopsListHeaderTitle {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+
+.stopsListHeaderTravelTime {
+    color: var(--text-secondary) !important;
+    text-align: right !important;
+    font-feature-settings: 'liga' off !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.16px !important;
+}
+
+.stopItemWrapper {
+    margin-left: -16px !important;
+    padding-left: 0 !important;
+}
+
+.stopItemWrapper > * {
+    padding-left: 0 !important;
+    padding-right: 16px !important;
+}
+
+.stopItemWrapper > * > :first-child {
+    margin-left: 16px !important;
+}
+
+.stopItemWrapper:hover > *,
+.stopItemWrapperHovered > * {
+    background-color: color-mix(in srgb, var(--route-color) 10%, transparent) !important;
+}
+
+.stopItemWrapper:hover:not(:has(.stopIconCell:hover)) .stopIconHover,
+.stopItemWrapperHovered:not(:has(.stopIconCell:hover)) .stopIconHover {
+    background-color: color-mix(in srgb, var(--route-color) 10%, transparent) !important;
+}
+
+.stopItemWrapper :global(.icon):hover,
+.stopItemWrapper :global(.MuiListItemIcon-root):hover {
+    background-color: transparent !important;
+    fill: inherit !important;
+}
+
+.stopItemWrapperSelected {
+    position: relative !important;
+}
+
+.stopItemWrapperSelected::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-color: #e9f0fb !important;
+    z-index: 0 !important;
+}
+
+.stopItemWrapperSelected > * {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.stopRowIconSelected {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.stopRowIconWrapper {
+    width: 24px !important;
+    height: 24px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.stopIconCircle {
+    position: absolute !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    background-color: #fff !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 0 !important;
+}
+
+.stopIconHover {
+    position: absolute !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 0 !important;
+}
+
+.stopRowIconInner {
+    position: relative !important;
+    z-index: 1 !important;
+    line-height: 0 !important;
+}
+
+.collapseRowWithDots {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: -16px !important;
+    padding-left: 32px !important;
+    box-sizing: border-box !important;
+}
+
+.collapseDotsColumn {
+    width: 24px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    padding: 12px 0 !important;
+}
+
+.collapseDot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+}
+
+.collapseRowContent {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    margin-left: 6px !important;
+}
+
+.collapseRowContent .item {
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.lineAndIconWrapper {
+    position: relative !important;
+}
+
+.lineAndIconContent {
+    position: relative !important;
+    padding-left: 16px !important;
+    box-sizing: border-box !important;
+}
+
+.lineAndIconLine {
+    position: absolute !important;
+    left: 25px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 6px !important;
+    z-index: 1 !important;
+    border-radius: 3px !important;
+}
+
+.lineAndIconLineNoRadiusTop {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.lineAndIconLineNoRadiusBottom {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.stopIconCell {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.stopIconCell .stopRowIconWrapper {
+    display: flex !important;
+}
+
+.stopIconCell .stopActionIconWrapper {
+    display: none !important;
+}
+
+.stopItemWrapper:hover .stopRowIconWrapper {
+    display: none !important;
+}
+
+.stopItemWrapper:hover .stopActionIconWrapper {
+    display: flex !important;
 }
