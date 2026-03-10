@@ -14,10 +14,17 @@ export default function HeaderWithUnderline({
     appBarProps = {},
     titleId = undefined,
 }) {
+    const { id: buttonId, ...restAppBarProps } = appBarProps;
     return (
-        <AppBar position="static" className={headerStyles.appbar} {...appBarProps}>
+        <AppBar position="static" className={headerStyles.appbar} {...restAppBarProps}>
             <Toolbar className={headerStyles.toolbar} {...toolbarProps}>
-                <IconButton variant="contained" type="button" className={styles.closeBtn} onClick={onClose}>
+                <IconButton
+                    id={buttonId}
+                    variant="contained"
+                    type="button"
+                    className={styles.closeBtn}
+                    onClick={onClose}
+                >
                     {showBackButton ? <ArrowBackIcon /> : <CloseIcon />}
                 </IconButton>
                 <Typography component="div" className={headerStyles.title} sx={{ flexGrow: 1 }} id={titleId}>
