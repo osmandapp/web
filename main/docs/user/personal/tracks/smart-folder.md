@@ -165,7 +165,24 @@ The newly created **Smart Folder** will automatically update its contents with t
 
 ![My places Managing Smart Folders Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![My places Managing Smart Foldersn Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![My places Managing Smart Foldersn Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it to access the available actions:
+
+- **Details** — View the complete list of tracks contained in the folder.
+- **Show all tracks on the map** — Display all folder tracks on the map.  
+    *NOTE: Loading many tracks may affect performance.*
+- **Rename** — Change the folder name for easier identification.
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
+- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
+
+You can also open the folder and tap the *three-dot menu* in the *top-right corner* to access additional actions:
+
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+- **Organize by** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. For numeric parameters (such as distance, duration, speed, or altitude), a *Set step size* dialog is available. Use the slider to define value ranges for grouping.
 
 </TabItem>
 
@@ -173,12 +190,27 @@ The newly created **Smart Folder** will automatically update its contents with t
 
 ![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, *long tap* the folder name to access the available actions:
+
+- **Rename**— Change the folder name for easier identification.
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
+- **Move** — Allows you to move the folder to another existing folder or create a new one.
+- **Delete** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
+
+You can also open the folder and tap the icon in the *top-right corner* to access additional actions:
+
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
 
 </TabItem>
 
 </Tabs>
 
+<!--
 The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
 
 ***Available Actions:***
@@ -204,7 +236,7 @@ The **Smart folder** is displayed with a unique icon in the folder list in the T
 - **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
 
 - **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
-
+-->
 
 ## Related Articles {#related-articles}
 

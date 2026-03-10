@@ -26,7 +26,7 @@ import dialogStyles from '../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import isEmpty from 'lodash-es/isEmpty';
-import { createTrackGroups, getGpxFiles, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
+import { createTrackGroups, getGpxFiles, filterSmartFolders, TRACK_VISIBLE_FLAG } from '../manager/track/TracksManager';
 import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
@@ -35,6 +35,7 @@ import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import LoginContext from '../context/LoginContext';
 import { poiUrlParams } from '../manager/PoiManager';
 import { createUrlParams } from '../util/Utils';
+import { SMART_TYPE } from '../menu/share/shareConstants';
 
 const ENCODED_COMMA = '%2C';
 const ENCODED_COLON = '%3A';
@@ -370,7 +371,8 @@ const GlobalFrame = () => {
             const trackGroups = createTrackGroups({ files, ctx });
             ctx.setTracksGroups(trackGroups);
         } else {
-            ctx.setTracksGroups([]);
+            const smartFolders = filterSmartFolders(ctx.tracksGroups);
+            ctx.setTracksGroups(smartFolders);
         }
     }, [ctx.listFiles, ctx.selectedSort]);
 

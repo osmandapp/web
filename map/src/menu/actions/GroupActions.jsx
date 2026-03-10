@@ -10,6 +10,8 @@ import DeleteFolderDialog from '../../dialogs/tracks/DeleteFolderDialog';
 import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
+import { SMART_TYPE } from '../share/shareConstants';
+import { populateSmartFolderFiles } from '../../context/AppContext';
 
 const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
@@ -18,6 +20,19 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const { t } = useTranslation();
+
+    const getGroupFiles = () => {
+        if (group.type === SMART_TYPE && group.files?.length === 0) {
+            const populated = populateSmartFolderFiles(
+                group,
+                ctx.listFiles?.uniqueFiles,
+                ctx.smartFoldersCache,
+                ctx.setSmartFoldersCache
+            );
+            return populated.files;
+        }
+        return group.files;
+    };
 
     async function downloadFolderBackup() {
         setProcessDownload(true);
@@ -53,28 +68,30 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
         <>
             <Box ref={ref}>
                 <Paper id="se-folder-actions" className={styles.actions}>
+                    {group.type !== SMART_TYPE && (
+                        <MenuItem
+                            disabled={group.realSize === 0}
+                            className={styles.action}
+                            onClick={() => {
+                                downloadFolderBackup().then();
+                                setOpenActions(false);
+                            }}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <TimeIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    {t('web:download_as_osf')}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
                     <MenuItem
                         disabled={group.realSize === 0}
                         className={styles.action}
                         onClick={() => {
-                            downloadFolderBackup().then();
-                            setOpenActions(false);
-                        }}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <TimeIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('web:download_as_osf')}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                    <MenuItem
-                        disabled={group.realSize === 0}
-                        className={styles.action}
-                        onClick={() => {
-                            setNewCollection(group.files);
+                            setNewCollection(getGroupFiles);
                             setOpenActions(false);
                         }}
                     >
@@ -87,36 +104,40 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    <Divider className={styles.dividerActions} />
-                    <MenuItem
-                        id="se-folder-actions-rename"
-                        className={styles.action}
-                        onClick={() => setOpenRenameDialog(true)}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <RenameIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('shared_string_rename')}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                    <Divider className={styles.dividerActions} />
-                    <MenuItem
-                        id="se-folder-actions-delete"
-                        className={styles.action}
-                        onClick={() => setOpenDeleteDialog(true)}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <DeleteIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                {t('shared_string_delete')}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
+                    {group.type !== SMART_TYPE && (
+                        <>
+                            <Divider className={styles.dividerActions} />
+                            <MenuItem
+                                id="se-folder-actions-rename"
+                                className={styles.action}
+                                onClick={() => setOpenRenameDialog(true)}
+                            >
+                                <ListItemIcon className={styles.iconAction}>
+                                    <RenameIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                                        {t('shared_string_rename')}
+                                    </Typography>
+                                </ListItemText>
+                            </MenuItem>
+                            <Divider className={styles.dividerActions} />
+                            <MenuItem
+                                id="se-folder-actions-delete"
+                                className={styles.action}
+                                onClick={() => setOpenDeleteDialog(true)}
+                            >
+                                <ListItemIcon className={styles.iconAction}>
+                                    <DeleteIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                                        {t('shared_string_delete')}
+                                    </Typography>
+                                </ListItemText>
+                            </MenuItem>
+                        </>
+                    )}
                 </Paper>
             </Box>
             {newCollection.length > 0 && (
