@@ -149,7 +149,7 @@ function RouteSection({
                         </Box>
                     ) : (
                         <>
-                            {showFilter && filterRoutes.length && (
+                            {showFilter && filterRoutes.length > 0 && (
                                 <TransportTypeFilter
                                     routes={filterRoutes}
                                     selectedType={selectedType}
