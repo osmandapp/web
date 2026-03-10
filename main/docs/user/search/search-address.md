@@ -12,11 +12,11 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview {#overview}
 
-*OsmAnd Search by Address* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.  
+*OsmAnd Search by Address* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.
+
+Address search works offline using downloaded maps. Make sure the map for the region you are searching in is installed. Results depend on the address data available in OpenStreetMap.
 
 OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
 
@@ -25,7 +25,7 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 - When preparing to start a route, tap *Navigation → Set destination → Search field*.  
 
 
-## Full text search {#full-text-search}
+## Full Text Search {#full-text-search}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -43,6 +43,7 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 
 </Tabs>
 
+<!--
 Search by Address simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
 
 - **To use the Search Address function,** you have to [download a map](../start-with/download-maps.md) of the required area first.
@@ -63,7 +64,30 @@ Search query list:
 - Part of an address, postal number, or coordinate area.
 - Distance from your current location or from the city center.
 - Additional information, such as the city's district.
+-->
+OsmAnd supports full-text address search. This means you can type an address directly in the search field instead of selecting city → street → house number step by step. The search engine tries to recognise address components such as:
+- city;
+- street;
+- house number;
+- postcode;
+- place name.
 
+You do not need to enter them in a strict order. **Example queries**:
+
+`221B Baker Street London`  
+`Baker Street 221B`  
+`London Baker Street 221B`  
+`101 Main Street`  
+`Main Street 101`
+
+If the full address is not found, OsmAnd automatically tries simplified queries (for example by removing extra words) to improve the chances of finding the location.
+
+**NOTE:** Address search works only within downloaded maps. Search results are based on:
+- maps installed on your device;
+- the visible map area;
+- your current location. 
+
+If nothing is found, OsmAnd may suggest increasing the search radius.
 
 ### US Address Search and TIGER Data {#us-address-search-and-tiger-data}
 
@@ -73,10 +97,60 @@ OsmAnd supports address searches using OpenStreetMap data, but in the United Sta
 - **If an address is not found**, try searching *by street name* instead of a specific house number.
 - Use *alternative location identifiers*, such as nearby landmarks or ZIP codes, to refine your search results.  
 
+### Supported Formats {#supported-formats}
 
-### Supported formats {#supported-formats}
+OsmAnd supports several common address formats. You can enter addresses in different orders depending on how you know the address.
 
-See the [Search All](./search-all.md#basic-queries) article for a list of available queries and supported search formats.
+| Address format | Example queries |
+|---|---|
+| House number + street | 221B Baker Street<br />10 Downing Street |
+| Street + house number | Baker Street 221B<br />Main Street 101 |
+| City + street + house number | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
+| Street intersections | Broadway & Wall Street<br />Main Street and High Street |
+| City name | Berlin<br />Vienna<br />San Francisco |
+| Postal code + address | 10001 New York<br />75001 Paris Rue de Rivoli 10 |
+
+### Search Tips {#search-tips}
+
+Address search in OsmAnd is tolerant to different input formats. You can try:
+- changing the order of words;
+- removing extra information;
+- searching only by street name.
+
+The search engine also tolerates common variations in address formatting such as different word order, spelling differences, abbreviations, or house number formats. The table below shows typical search variations that may still return the same address.
+
+| Search variation | Example queries | Related discussion |
+|---|---|---|
+| Street name variations | Weberstrasse <br /> Weber strasse <br /> Weber-strasse | [Discussion](https://github.com/osmandapp/OsmAnd/issues/23709) |
+| House numbers with letter suffixes | 30B <br /> 30b <br /> 30-B <br /> 30-b | [Discussion](https://github.com/osmandapp/OsmAnd/issues/23320) |
+| Ignoring spaces in names | Hemauer Straße <br /> Hemauerstraße | [Discussion](https://github.com/osmandapp/OsmAnd/issues/13783) |
+| Street abbreviations | Blabla Straße <br /> Blabla Str. | [Discussion](https://github.com/osmandapp/OsmAnd/issues/4923) |
+| Full address vs simplified address | 221B Baker Street London United Kingdom <br /> 221B Baker Street <br /> Baker Street 221B | [Discussion](https://github.com/osmandapp/OsmAnd/issues/19004) |
+| US address format | 1500 E Main Ave Springfield <br /> 4600 Sugar Maple Lane Little Rock | [Discussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
+| US state abbreviations | Springfield, VA 22162 <br /> Manhattan Beach, CA 90266 <br /> Little Rock, AR 72212 | [Discussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
+
+<!--
+**Examples**: Instead of `221B Baker Street London United Kingdom` try `221B Baker Street` or `Baker Street 221B`.
+
+OsmAnd may also ignore additional information such as country or region if the address can already be identified.
+
+Postal addresses copied from websites may include additional information such as company names, ZIP codes, or apartment numbers. If search does not return results, try entering only the street name, house number, and city.
+
+Search is also tolerant to minor differences in spelling, such as spaces, hyphens, or common abbreviations in street names. **For example**:
+
+`Weberstrasse`  
+`Weber strasse`  
+`Weber-strasse`
+
+House numbers with letter suffixes can also be written in different formats:
+
+`30B`  
+`30b`  
+`30-B`  
+`30-b`
+
+These variations may still return the same address.
+-->
 
 
 ## Select City {#select-city}
@@ -108,11 +182,13 @@ This way of searching makes it easy to find specific locations within a selected
 - To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
 - Tapping the last item in the address, house number, or intersection name, opens the [map context menu](../map/map-context-menu.md#select-an-object-single-tap) of the object.  
 
+<!--
 **Searching by city offers the following benefits:**
 
 - *Convenience*. Allows you to quickly select the required city from the list, and specify a certain street, house or intersection in the selected city without having to enter the full address. This saves time and simplifies the process of finding the right place.
 - *Precision.* You can select a city and street from the available options, avoiding errors when manually entering an address.
-- *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.  
+- *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.
+--> 
 
 :::note Key & Value
 *City / Town / Village search* by [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  
@@ -174,11 +250,10 @@ Street search is performed in the locality where you are, or where you searched 
 - You can use the *Show *postcode number* on the map* feature. This opens a [map context menu](../map/map-context-menu.md#select-an-object-single-tap) with the selected postcode without any additional information about the location.
 - You can refine your search by this code by first selecting the required street from the list and then the number.
 
-**Searching by postcode can be useful in the following cases:**
+**Searching by postcode can be useful when:**
 
-- *Find addresses*. When you enter a postcode, OsmAnd identifies the corresponding area and suggests addresses in that area. This is especially useful if you know the postcode but do not know the exact address.
-- *Navigation precision*. In cases where the address is not certain, or where the street name may be repeated in different areas, using a postal code can provide the best route to a given address.
-- *Convenience and speed*. Searching by postcode allows you to find information quickly, especially if you know the postcode but are unsure of the address. Instead of entering the full address, you can enter just the code and get relevant results.  
+- The street name exists in several cities.
+- You know the postcode but not the exact address.
 
 :::note
 For more information, read the **[United Kingdom Postcode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.
