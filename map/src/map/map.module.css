@@ -83,12 +83,15 @@
     left: 69%;
     top: 49%;
     transform: translate(-50%, -50%);
-    font-weight: bold;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
     color: #fff;
-    font-size: 14px;
-    line-height: 1;
     pointer-events: none;
-    font-family: system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Moved icon shifts slightly on drag — offset number upward so it stays centered on the flag */
