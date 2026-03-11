@@ -9,6 +9,7 @@ import {
 import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
+import { iconPathMap } from '../../../map/util/MapManager';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 
 function extractLatlng(selectedWptId, type) {
@@ -25,7 +26,8 @@ function extractLatlng(selectedWptId, type) {
 
 function iconHtmlFromIconName(finalIconName) {
     if (!finalIconName) return null;
-    const url = getIconUrlByName('poi', finalIconName) || getIconUrlByName('map', finalIconName);
+    const url =
+        iconPathMap[finalIconName] || getIconUrlByName('poi', finalIconName) || getIconUrlByName('map', finalIconName);
     return url ? `<image href="${url}" />` : null;
 }
 
@@ -174,6 +176,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
                 color: markerOpts.color ?? DEFAULT_POI_COLOR,
                 background: markerOpts.background ?? DEFAULT_POI_SHAPE,
                 iconHtml,
+                iconColor: true,
             },
             isSelection: false,
         });
@@ -206,6 +209,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             color: (isSimpleDot ? layer.options?.fillColor : layer.options?.color) ?? DEFAULT_POI_COLOR,
             background: layer.options?.background ?? DEFAULT_POI_SHAPE,
             iconHtml,
+            iconColor: isSimpleDot,
         };
     }
 }
