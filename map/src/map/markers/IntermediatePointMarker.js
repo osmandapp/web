@@ -20,7 +20,7 @@ const ICON_SVG = createIconSvgMap(ICONS);
 
 export const intermediatePointIcon = createDivIcon(ICON_SVG[ICON_STATE_DEFAULT], INTERMEDIATE_POINT);
 
-export const getIntermediatePointIconSvg = (state, index) => {
+export const getIntermediatePointIconHtml = (state, index) => {
     const svgString = ICON_SVG[state] ?? ICON_SVG[ICON_STATE_DEFAULT];
     const number = index != null ? index + 1 : null;
     return createDivIconHtml(svgString, INTERMEDIATE_POINT, number);
