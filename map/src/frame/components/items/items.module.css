@@ -56,7 +56,7 @@
     cursor: pointer !important;
 }
 .tipsItemClickable:hover {
-    background-color: #E9F0FB !important;
+    background-color: #e9f0fb !important;
 }
 .tipsIcon {
     fill: var(--svg-icon-color) !important;

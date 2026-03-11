@@ -74,6 +74,28 @@
     margin-left: 4px !important;
     margin-top: 4px !important;
 }
+:global(.route-point-marker) {
+    position: relative;
+}
+
+:global(.route-point-marker__number) {
+    position: absolute;
+    left: 69%;
+    top: 49%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    pointer-events: none;
+    font-family: system-ui, sans-serif;
+}
+
+/* Moved icon shifts slightly on drag — offset number upward so it stays centered on the flag */
+:global(.route-point-marker--moved .route-point-marker__number) {
+    top: 20%;
+}
+
 .tooltip {
     border-radius: 33px !important;
     width: max-content !important;

@@ -38,7 +38,12 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
     };
 
     return (
-        <MenuItem id={`se-transport-route-${route.id}`} disableRipple className={styles.stopRouteItem} onClick={handleRouteClick}>
+        <MenuItem
+            id={`se-transport-route-${route.id}`}
+            disableRipple
+            className={styles.stopRouteItem}
+            onClick={handleRouteClick}
+        >
             <ListItemIcon className={itemsStyles.icon} sx={{ alignItems: 'center' }}>
                 <IconComponent style={{ width: 24, height: 24 }} />
             </ListItemIcon>
