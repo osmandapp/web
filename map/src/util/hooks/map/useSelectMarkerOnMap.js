@@ -166,6 +166,8 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
                         typeOsmValue: props?.[TYPE_OSM_VALUE],
                     })
             );
+        // Only apply white filter when icon came from URL (iconHtmlFromIconName), not when caller passed custom iconHtml (e.g. favorites)
+        const invertIcon = markerOpts.invertIcon ?? markerOpts.iconHtml == null;
 
         applySelectedPin({
             ctx,
@@ -176,7 +178,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
                 color: markerOpts.color ?? DEFAULT_POI_COLOR,
                 background: markerOpts.background ?? DEFAULT_POI_SHAPE,
                 iconHtml,
-                iconColor: true,
+                invertIcon,
             },
             isSelection: false,
         });
@@ -209,7 +211,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             color: (isSimpleDot ? layer.options?.fillColor : layer.options?.color) ?? DEFAULT_POI_COLOR,
             background: layer.options?.background ?? DEFAULT_POI_SHAPE,
             iconHtml,
-            iconColor: isSimpleDot,
+            invertIcon: isSimpleDot,
         };
     }
 }
