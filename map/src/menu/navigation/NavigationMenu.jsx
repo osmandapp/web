@@ -1,7 +1,11 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Tooltip, CircularProgress } from '@mui/material';
-import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_TRACK } from '../../context/AppContext';
+import AppContext, {
+    isRouteTrack,
+    OBJECT_TYPE_NAVIGATION_TRACK,
+    PREVIOUS_ROUTE_STORAGE_KEY,
+} from '../../context/AppContext';
 import styles from './routemenu.module.css';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
@@ -132,6 +136,7 @@ export default function NavigationMenu() {
         if (!routeRecord?.points || routeRecord.points.length < 2) return;
 
         ctx.setPreviousRoute(routeRecord);
+        localStorage.setItem(PREVIOUS_ROUTE_STORAGE_KEY, JSON.stringify(routeRecord));
     }, [navObject]);
 
     function openInfoBlock() {
