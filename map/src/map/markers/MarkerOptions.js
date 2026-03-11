@@ -344,14 +344,10 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
             shapeSize,
             oldShapeSize
         );
-        const fillPattern = /fill="([^"]*)"/;
-        const oldFillMatch = match.match(fillPattern);
-        const oldFill = oldFillMatch ? oldFillMatch[1] : '';
-
         nestedBHeight = realHeight;
         nestedBWidth = realWidth;
-
-        return `<path d="${newPathData}" fill="${oldFill}"/>`;
+        // Preserve all path attributes (fill-rule, clip-rule, fill, stroke, etc.), only replace d
+        return match.replace(/d="[^"]*"/, `d="${newPathData}"`);
     });
 
     svgHtml = svgHtml.replace(rectPattern, (match, prefix, width, middle, height, middle2, rx, suffix) => {
