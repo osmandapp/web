@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext, useCallback } from 'react';
+import React, { useEffect, useRef, useContext, useCallback, useMemo } from 'react';
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext, { isRouteTrack, OBJECT_TYPE_NAVIGATION_ALONE } from '../../context/AppContext';
@@ -188,6 +188,15 @@ const NavigationLayer = ({ geocodingData, region }) => {
     const finishPoint = routeObject.getOption(ROUTE_POINTS_FINISH);
     const viaPoints = routeObject.getOption(ROUTE_POINTS_VIA);
     const avoidRoads = routeObject.getOption(ROUTE_POINTS_AVOID_ROADS);
+
+    const viaPointIcons = useMemo(() => {
+        const count = viaPoints?.length ?? 0;
+        const icons = [];
+        for (let i = 0; i < count; i++) {
+            icons.push(getIntermediatePointIcon(i));
+        }
+        return icons;
+    }, [viaPoints?.length]);
 
     let timer = null;
     function debouncer(f) {
@@ -505,7 +514,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                         key={'mark-via' + ind + refreshKey}
                         data-index={ind}
                         position={it}
-                        icon={getIntermediatePointIcon(ind)}
+                        icon={viaPointIcons[ind]}
                         draggable={true}
                         eventHandlers={intermediateEventHandlers}
                         zIndexOffset={1000}
