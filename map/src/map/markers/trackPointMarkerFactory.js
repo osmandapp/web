@@ -28,9 +28,14 @@ export function createIconSvgMap(icons) {
     };
 }
 
-export function createDivIcon(svgString, modifier) {
+export function createDivIconHtml(svgString, modifier, number) {
+    const numberSpan = number != null ? `<span class="route-point-marker__number">${number}</span>` : '';
+    return `<div class="route-point-marker route-point-marker--${modifier}" style="width:${SIZE}px;height:${SIZE}px">${svgString}${numberSpan}</div>`;
+}
+
+export function createDivIcon(svgString, modifier, number) {
     return L.divIcon({
-        html: `<div class="route-point-marker route-point-marker--${modifier}" style="width:${SIZE}px;height:${SIZE}px;">${svgString}</div>`,
+        html: createDivIconHtml(svgString, modifier, number),
         className: '',
         iconSize: [SIZE, SIZE],
         iconAnchor: [SIZE / 2, SIZE],

@@ -74,6 +74,23 @@
     margin-left: 4px !important;
     margin-top: 4px !important;
 }
+:global(.route-point-marker) {
+    position: relative;
+}
+
+:global(.route-point-marker__number) {
+    position: absolute;
+    left: 29px;
+    top: 21px;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    pointer-events: none;
+    font-family: system-ui, sans-serif;
+}
+
 .tooltip {
     border-radius: 33px !important;
     width: max-content !important;
