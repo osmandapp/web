@@ -63,7 +63,8 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
         layersGroup.options.type = type;
-        layersGroup.options.pointsGroups = data?.pointsGroups;
+        const pointsGroups = data?.info?.pointsGroups ?? data?.pointsGroups;
+        layersGroup.options.pointsGroups = pointsGroups;
         return layersGroup;
     }
 }
@@ -488,7 +489,7 @@ function parseWpt({
         if (point.name) {
             opt.name = point.name;
         }
-        opt.category = point.category ? point.category : 'favorites';
+        opt.category = point.category ? point.category : '';
         opt.groupId = groupId;
         if (point.desc) {
             opt.desc = point.desc;

@@ -12,24 +12,29 @@ import isEmpty from 'lodash-es/isEmpty';
 import { debouncer } from '../../../context/TracksRoutingCache';
 import { saveInfoFile } from '../../../manager/track/SaveTrackManager';
 
-const SAVE_DEBOUNCE_MS = 1000;
-
 function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
-    const updatedPointsGroups = { ...ctx.selectedGpxFile.pointsGroups };
+    const prevFile = ctx.selectedGpxFile;
+    const updatedPointsGroups = { ...prevFile?.info?.pointsGroups };
+    const allGroupNames = groupNames || Object.keys(updatedPointsGroups || {});
 
-    groupNames.forEach((groupName) => {
+    allGroupNames.forEach((groupName) => {
+        const group = updatedPointsGroups[groupName] || {};
+
         updatedPointsGroups[groupName] = {
-            ...updatedPointsGroups[groupName],
+            ...group,
             ext: {
-                ...updatedPointsGroups[groupName]?.ext,
+                ...group.ext,
                 hidden,
             },
         };
     });
 
     const updatedFile = {
-        ...ctx.selectedGpxFile,
-        pointsGroups: updatedPointsGroups,
+        ...prevFile,
+        info: {
+            ...prevFile.info,
+            pointsGroups: updatedPointsGroups,
+        }
     };
 
     ctx.setSelectedGpxFile(updatedFile);
@@ -40,18 +45,17 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
                 saveInfoFile(updatedFile);
             },
             debouncerTimer,
-            SAVE_DEBOUNCE_MS
+            500
         );
     }
 }
 
 // distinct component
-const WaypointGroup = ({ ctx, group, points, defaultOpen, defaultVisible = true, massOpen, massVisible }) => {
+const WaypointGroup = ({ ctx, group, points, defaultOpen, defaultVisible = true, massOpen, massVisible, debouncerTimer }) => {
     const [open, setOpen] = useState(defaultOpen);
     const switchOpen = () => setOpen(!open);
 
     const [visible, setVisible] = useState(defaultVisible);
-    const debouncerTimer = useRef(null);
 
     const switchVisible = (e) => {
         e.stopPropagation();
@@ -362,7 +366,7 @@ export default function WaypointsTab() {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
         const trackName = ctx.selectedGpxFile.name;
-        const pointsGroups = ctx.selectedGpxFile.pointsGroups;
+        const pointsGroups = ctx.selectedGpxFile.info?.pointsGroups ?? ctx.selectedGpxFile.pointsGroups;
 
         setShowMass(keys.length > 1);
 
@@ -375,9 +379,10 @@ export default function WaypointsTab() {
                         group={g}
                         points={groups[g]}
                         defaultOpen={keys.length === 1}
-                        defaultVisible={pointsGroups[g]?.ext?.hidden !== true}
+                        defaultVisible={pointsGroups?.[g]?.ext?.hidden !== true}
                         massVisible={massVisible}
                         massOpen={massOpen}
+                        debouncerTimer={debouncerTimer}
                     />
                 ))}
             </Box>

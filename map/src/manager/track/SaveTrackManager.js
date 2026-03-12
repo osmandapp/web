@@ -327,9 +327,13 @@ export async function saveEmptyTrack(folderName, ctx) {
 }
 
 export async function saveInfoFile(selectedGpxFile) {
+    const pointsGroups = selectedGpxFile?.info?.pointsGroups;
+    if (!pointsGroups) {
+        return;
+    }
     const cleanedPointsGroups = {};
-    Object.keys(selectedGpxFile.pointsGroups).forEach((groupName) => {
-        const { points, ...groupWithoutPoints } = selectedGpxFile.pointsGroups[groupName];
+    Object.keys(pointsGroups).forEach((groupName) => {
+        const { points, ...groupWithoutPoints } = pointsGroups[groupName];
         if (groupWithoutPoints.ext?.points) {
             const { points: extPoints, ...extWithoutPoints } = groupWithoutPoints.ext;
             groupWithoutPoints.ext = extWithoutPoints;
