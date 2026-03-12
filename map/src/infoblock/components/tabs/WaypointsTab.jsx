@@ -10,7 +10,7 @@ import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import isEmpty from 'lodash-es/isEmpty';
 import { debouncer } from '../../../context/TracksRoutingCache';
-import { saveInfoFile } from '../../../manager/track/SaveTrackManager';
+import { saveInfoFile } from '../../../manager/track/TrackAppearanceManager';
 
 function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
     const prevFile = ctx.selectedGpxFile;
