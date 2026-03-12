@@ -17,6 +17,7 @@ import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { getImgByProps, updateMarkerZIndex } from '../layers/ExploreLayer';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
+import { MARKER_Z_INDEX_MAIN } from '../../manager/GlobalManager';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 export const SIMPLE_ICON_SIZE = 10;
@@ -445,7 +446,7 @@ export function addClusteredMarkersToMap({ map, markers, mainMarkers, secondaryM
     const secLayersGroup = new L.FeatureGroup(secondaryLayers);
     const res = new L.LayerGroup([secLayersGroup, mainLayersGroup]);
     res.addTo(map);
-    updateMarkerZIndex(mainLayersGroup, 2000);
+    updateMarkerZIndex(mainLayersGroup, MARKER_Z_INDEX_MAIN);
 
     return res;
 }

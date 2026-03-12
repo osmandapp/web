@@ -21,7 +21,7 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { updateMarkerZIndex } from './ExploreLayer';
 import { deleteAllFavoritesFromDB } from '../../context/FavoriteStorage';
 import LoginContext from '../../context/LoginContext';
-import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN, MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
 
 export function filterPointsInBounds(points, map) {
@@ -274,7 +274,7 @@ const FavoriteLayer = () => {
                 const secLayersGroup = new L.FeatureGroup(secondaryLayers);
                 const res = new L.LayerGroup([secLayersGroup, mainLayersGroup]);
                 res.addTo(map);
-                updateMarkerZIndex(mainLayersGroup, 2000);
+                updateMarkerZIndex(mainLayersGroup, MARKER_Z_INDEX_MAIN);
                 file.markersOnMap = res;
             }
         } else {
