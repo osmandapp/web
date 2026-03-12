@@ -23,14 +23,15 @@ Favorites in the Web Planner let you save and manage important places directly o
 
 ## Manage Favorites {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_new.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
 After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), your Favorites in the Web Planner are organized into folders. Each folder groups saved places and provides a set of actions available from the Favorites menu. 
 The following actions are available:
 
 - *Show on map* - show favorites points from the chosen folder on the map.
+- *Pin folder* - pin a folder to the top of the Favorites list for quick access. Pinned folders are separated from other folders. To remove a folder from the top section, select *Unpin folder*. The Personal folder is pinned by default.
 - *Rename* - name and description of favorite folder.
-- *Share* - opens sharing options. You can choose who can access this folder:
+- *Share* - opens sharing options. You can choose who can access this folder.
 - *Download* - download the chosen favorite folder.
 - *Delete* - delete the chosen favorite folder.
 
