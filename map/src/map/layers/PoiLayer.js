@@ -150,7 +150,12 @@ export async function getPoiIcon(poi, cache, finalIconName) {
                 background: DEFAULT_POI_SHAPE,
                 svgIcon: coloredSvg,
             }).options.html;
-            return L.divIcon({ html: iconHtml, svg: coloredSvg });
+            return L.divIcon({
+                html: iconHtml,
+                svg: coloredSvg,
+                iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                iconAnchor: [DEFAULT_ICON_SIZE / 2, DEFAULT_ICON_SIZE / 2],
+            });
         }
     }
 }

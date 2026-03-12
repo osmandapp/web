@@ -17,6 +17,7 @@ import {
     EXPLORE_BIG_ICON_SIZE,
     removeTooltip,
     SIMPLE_ICON_SIZE,
+    EXPLORE_BIG_REAL_ICON_SIZE,
 } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
@@ -406,6 +407,7 @@ export default function ExploreLayer() {
                         const icon = L.icon({
                             iconUrl: photoUrl,
                             iconSize: [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE],
+                            iconAnchor: [EXPLORE_BIG_REAL_ICON_SIZE / 2, EXPLORE_BIG_REAL_ICON_SIZE / 2],
                             className: `${styles.wikiIconLarge} ${styles.wikiIcon}`,
                         });
                         const marker = L.marker(latlng, {

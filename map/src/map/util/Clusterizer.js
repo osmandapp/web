@@ -20,6 +20,7 @@ import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { MARKER_Z_INDEX_MAIN } from '../../manager/GlobalManager';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
+export const EXPLORE_BIG_REAL_ICON_SIZE = 42;
 export const SIMPLE_ICON_SIZE = 10;
 
 // Cluster markers based on zoom and coordinates
