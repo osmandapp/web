@@ -14,25 +14,24 @@ export function getVisibleBbox(map, ctx) {
         return null;
     }
     const containerSize = map.getSize();
-    if (!containerSize || !containerSize.x || !containerSize.y) {
+    if (!containerSize?.x || !containerSize.y) {
         return null;
     }
-    const menuOffset = parseInt(ctx.infoBlockWidth, 10) + MAIN_MENU_MIN_SIZE + 20;
+    const menuOffset = Number.parseInt(ctx.infoBlockWidth, 10) + MAIN_MENU_MIN_SIZE + 20;
     const topPadding = HEADER_SIZE + 20;
     const bottomPadding = 50;
 
-    try {
-        const topLeft = map.containerPointToLatLng([menuOffset, topPadding]);
-        const bottomRight = map.containerPointToLatLng([containerSize.x, containerSize.y - bottomPadding]);
+    const topLeft = map.containerPointToLatLng([menuOffset, topPadding]);
+    const bottomRight = map.containerPointToLatLng([containerSize.x, containerSize.y - bottomPadding]);
 
-        if (!topLeft || !bottomRight) {
-            return null;
-        }
-
-        return L.latLngBounds(topLeft, bottomRight);
-    } catch (e) {
+    if (!topLeft || !bottomRight) {
         return null;
     }
+
+    const bounds = L.latLngBounds(topLeft, bottomRight);
+    const center = bounds.getCenter();
+
+    return { bounds, center: { lat: center.lat, lng: center.lng } };
 }
 
 export function addLayerToMap(map, layer, id) {

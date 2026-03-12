@@ -406,11 +406,11 @@ const TransportStopsLayer = () => {
         let controller = new AbortController();
 
         const debouncedGetTransportStops = debounce(async ({ controller, ignore, zoom, reqId }) => {
-            const bbox = getVisibleBbox(map, ctx);
-            if (!bbox) {
+            const visible = getVisibleBbox(map, ctx);
+            if (!visible) {
                 return;
             }
-
+            const bbox = visible.bounds;
             try {
                 const res = await getTransportStops(controller, bbox);
                 if (reqId !== reqIdRef.current || ignore) {

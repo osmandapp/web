@@ -161,10 +161,11 @@ export default function SearchLayer() {
 
     async function searchByWord(searchData) {
         const notifyTimeout = showProcessingNotification(ctx);
-        const bbox = getVisibleBbox(map, ctx);
-        if (!bbox) {
+        const visible = getVisibleBbox(map, ctx);
+        if (!visible) {
             return;
         }
+        const bbox = visible.bounds;
         const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search`, {
             apiCache: true,
             params: {

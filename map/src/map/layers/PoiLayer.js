@@ -461,11 +461,12 @@ export default function PoiLayer() {
                 reqId,
             }) => {
                 map.spin(true, { color: '#1976d2' });
-                const bbox = getVisibleBbox(map, ctx);
-                if (!bbox) {
+                const visible = getVisibleBbox(map, ctx);
+                if (!visible) {
                     map.spin(false);
                     return;
                 }
+                const bbox = visible.bounds;
                 const notifyTimeout = showProcessingNotification(ctx);
                 try {
                     const res = await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategories);
