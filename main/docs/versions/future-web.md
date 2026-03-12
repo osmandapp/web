@@ -14,7 +14,6 @@ Web 1.03 is the latest web version of OsmAnd, which includes new useful features
 - Track appearance settings (color & width)
 - Public transport stops
 - POI context menu improvements
-- Export GPX as simplified track
 
 
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
