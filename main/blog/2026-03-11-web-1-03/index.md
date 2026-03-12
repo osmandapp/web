@@ -80,6 +80,10 @@ The POI context menu has been enhanced to display more useful information about 
 
 ### Wikimedia Metadata {#wikimedia-metadata}
 
+Photos from Wikimedia sources now display additional information in the [POI photo gallery](https://osmand.net/docs/user/web/web-search#photo-gallery). When opening a photo, users can view details such as the date, author, license information, and a description of the image.
+
+![Photo Gallery](@site/static/img/web/photo_gallery.png)
+
 ### POI Category Search Behavior {#poi-category-search-behavior}
 
 ## Pinned Favorite Folders {#pinned-favorites-folders}
