@@ -147,7 +147,11 @@ export function createPoiIcon({
                    <image width="${isize}" height="${isize}" href="/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${DEFAULT_WPT_ICON}.svg" />
                    </svg>`;
     }
-    return L.divIcon({ html: html });
+    return L.divIcon({
+        html,
+        iconSize: [allIconSize, allIconSize],
+        iconAnchor: [allIconSize / 2, allIconSize / 2],
+    });
 }
 
 export function getPoiCategoryIcon({ icon, color, background }) {

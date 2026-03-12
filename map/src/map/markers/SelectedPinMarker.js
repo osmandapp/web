@@ -25,13 +25,13 @@ const SHAPES = {
         color: SquareColor,
         light: SquareLight,
         stroke: SquareStroke,
-        iconOffsetRatio: 0.04,
+        iconOffsetRatio: 0.085,
     },
     hexagon: {
         color: HexagonColor,
         light: HexagonLight,
         stroke: HexagonStroke,
-        iconOffsetRatio: 0.05,
+        iconOffsetRatio: 0.085,
     },
 };
 

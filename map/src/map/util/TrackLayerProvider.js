@@ -498,6 +498,7 @@ function parseWpt({
         opt.draggable = false;
         opt.wpt = true;
         opt.color = point.color;
+        opt.background = point.background;
         let markerLayer = new L.Marker(coords, opt);
         const marker = simplify ? getMarkerFromCluster(point, clusters, coords, opt, markerLayer) : markerLayer;
         if (!marker) {

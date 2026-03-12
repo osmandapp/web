@@ -60,6 +60,9 @@ export const MENU_IDS = {
     travel: 'se-show-menu-travel',
 };
 
+export const MARKER_Z_INDEX_MAIN = 2000;
+export const MARKER_Z_INDEX_SECONDARY = 500;
+
 export const isTravelPath = (pathname) => pathname?.includes(TRAVEL_URL);
 
 export function getUniqFileId(file) {
