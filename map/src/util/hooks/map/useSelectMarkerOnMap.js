@@ -12,6 +12,8 @@ import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
 
+const EXPLORE_MAIN_MARKER_PIN_BACKGROUND = '#ffffff';
+
 function extractLatlng(selectedWptId, type) {
     const obj = selectedWptId?.obj;
     if (!obj) return null;
@@ -135,7 +137,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
 
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
         const markerData = {
-            color: DEFAULT_POI_COLOR,
+            color: EXPLORE_MAIN_MARKER_PIN_BACKGROUND,
             iconHtml: `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`,
         };
         applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
