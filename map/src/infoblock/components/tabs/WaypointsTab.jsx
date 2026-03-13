@@ -10,7 +10,7 @@ import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import isEmpty from 'lodash-es/isEmpty';
 import { debouncer } from '../../../context/TracksRoutingCache';
-import { saveInfoFile } from '../../../manager/track/TrackAppearanceManager';
+import { updateInfoFile } from '../../../manager/track/TrackAppearanceManager';
 
 function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
     const prevFile = ctx.selectedGpxFile;
@@ -34,7 +34,7 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
         info: {
             ...prevFile.info,
             pointsGroups: updatedPointsGroups,
-        }
+        },
     };
 
     ctx.setSelectedGpxFile(updatedFile);
@@ -42,7 +42,10 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
     if (isCloudTrack(ctx)) {
         debouncer(
             () => {
-                saveInfoFile(updatedFile);
+                const diff = {
+                    pointsGroups: Object.fromEntries(allGroupNames.map((name) => [name, { ext: { hidden } }])),
+                };
+                updateInfoFile(updatedFile, diff);
             },
             debouncerTimer,
             500
@@ -51,7 +54,16 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
 }
 
 // distinct component
-const WaypointGroup = ({ ctx, group, points, defaultOpen, defaultVisible = true, massOpen, massVisible, debouncerTimer }) => {
+const WaypointGroup = ({
+    ctx,
+    group,
+    points,
+    defaultOpen,
+    defaultVisible = true,
+    massOpen,
+    massVisible,
+    debouncerTimer,
+}) => {
     const [open, setOpen] = useState(defaultOpen);
     const switchOpen = () => setOpen(!open);
 
