@@ -341,6 +341,7 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
         return `<circle ${prefix} cx="${newCx}" ${middle} cy="${newCy}" ${middle2} r="${newR}" ${suffix}/>`;
     });
 
+    const scaleFactor = shapeSize / oldShapeSize;
     svgHtml = svgHtml.replace(pathPattern, (match, pathData) => {
         // Update the sizes inside <path>
         const { newPathData, realWidth, realHeight } = replacePathDataAndCalculateSize(
@@ -352,6 +353,12 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
         nestedBWidth = realWidth;
         // Preserve all path attributes (fill-rule, clip-rule, fill, stroke, etc.), only replace d
         return match.replace(/d="[^"]*"/, `d="${newPathData}"`);
+    });
+
+    // Scale stroke-width so thick strokes (e.g. 33 in 580 viewBox) don't fill the whole icon in 36 viewBox
+    svgHtml = svgHtml.replace(/stroke-width="([\d.]+)"/g, (_, w) => {
+        const scaled = parseFloat(w) * scaleFactor;
+        return `stroke-width="${Math.max(0.5, Math.round(scaled * 100) / 100)}"`;
     });
 
     svgHtml = svgHtml.replace(rectPattern, (match, prefix, width, middle, height, middle2, rx, suffix) => {
