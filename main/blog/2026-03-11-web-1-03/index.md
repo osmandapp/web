@@ -29,8 +29,7 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 ## What's new
 
 - [Redesigned navigation interface](#navigation-ui-redesign) that improves map controls and overall usability of the Web Planner;
-- Added [Smart folders support](#smart-folders-support) for better organization of personal data such as tracks and favorites;
-- Introduced [track appearance settings](#track-appearance-settings) with adjustable color and width for easier track visualization on the map;
+- Added [Smart folders support](#smart-folders-support) for organizing tracks;
 - [Public transport stops](#public-transport-stops) are now displayed on the map to help locate nearby transit options;
 - Improved [POI context menu](#poi-context-menu-improvements) with richer information and a clearer layout;
 - Added the ability to [export GPX tracks as simplified files](#export-gpx-as-simplified-track) for easier sharing and smaller file size;
@@ -43,18 +42,16 @@ Enjoy a smoother and more intuitive OsmAnd Web experience.
 - Improved [POI gallery](#poi-gallery-improvements) to better display images associated with locations;
 - Improved [marker selection behavior](#marker-selection) to make map interaction more reliable;
 - Improved [POI category search behavior](#poi-category-search-behavior) to make finding places faster and more accurate;
-- [Expired purchases](#account-improvements) are now hidden on the account page to keep the purchase list cleaner.
+- [Expired purchases](#account-improvements) are now hidden on the account page to keep the purchase list cleaner;
 - [Bug fixes](#bug-fixes).
 
 ## Navigation UI Redesign {#navigation-ui-redesign}
 
 ## Smart Folders Support {#smart-folders-support}
 
-## Track Tools & Appearance {#track-tools-and-appearance}
+## Track Tools {#track-tools}
 
 Several improvements were introduced to make working with tracks easier and more flexible.
-
-### Track Appearance Settings {#track-appearance-settings}
 
 ### Export GPX as Simplified Track {#export-gpx-as-simplified-track}
 
