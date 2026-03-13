@@ -13,7 +13,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
+-->
 
 
 ## Overview {#overview}
@@ -38,13 +40,13 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_overlay_android.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -56,12 +58,12 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
     - Allows you to search:
        - For nearby points of interest (POI) or specific categories of POI.
        - For [OSM routes](../map/routes.md) by name and by ref number.
-       - For [Popular places (Wikipedia)](../map/map-context-menu.md#details).
+       - For [Popular places (Wikipedia)](../map/popular_places.md).
     - Filters and sorting results by category, distance, or rating are possible.
     
 - **Search POIs on the map** - Show on map:
-    1. You can select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configure map → Show POI overlay...* and search by icons in the expected location.
-    2. You can enter a search query first or can start searching for POIs in *Menu → Search → Categories* and then click **Show on map** .
+    - You can select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configure map → Show POI overlay...* and search by icons in the expected location.
+    - You can enter a search query first or can start searching for POIs in *Menu → Search → Categories* and then click **Show on map**.
 
 - **Brand search**:
     - Searching a business venue by brand name (such as Audi, Starbucks, or Aldi) is very similar to search different POIs by type the main difference is that brand list is provided inside the map and subject to changed during each updates. 
@@ -102,13 +104,13 @@ How it works:
 - *Applying Filters* - You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
 - *Displaying results* - After applying filters, the OsmAnd displays a list with brief information matching the category and characteristics set.
 
+<!--
 Benefits:
 
 - *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
 - *Refined results* - Filters help refine search results, making them more relevant and accurate.
 - *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
 
-<!--
 POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
 
 OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
@@ -142,7 +144,7 @@ With the **Filter** function, you can select the necessary characteristics and a
 
 ![Search POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
 
-A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are a total of *22 default categories*. Some of them are listed here:
+A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are a total of *21 default categories*. They are listed here:
 
  1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Accommodation](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) includes facilities that provide temporary lodging such as hotels, motels, hostels, guesthouses, and campgrounds. These places provide amenities and services for a comfortable stay while traveling.  
         Includes *9* types of filters: **Fridge** (has *2* values), **Heating** (has *7* values), **Internet access type** (has *3* values), **Mattress** (has *2* values), **Payment type** (more than *10* values), **Shower** (has *1* value), **Smoking** (has *6* values), **Star rating** (has *10* values), **Wheelchair accessibility** (has *4* values), Open now / Open 24/7.
@@ -189,29 +191,23 @@ A filter can consist of quite a number of items, the presence of which depends o
  15. **Popular places (Wikipedia)**. To search in this category, you need to download the [Wikipedia map](../plugins/wikipedia.md#overview) of the region you are interested in.  
         Does not contain any filters.
 
- 16. **Private access**.  
-        Includes *6* types of filters.
-
- 17. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
+ 16. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
         Includes *9* types of filters.
 
- 18. **Routes**. Includes [OSM routes](../map/routes.md) for various types of activities.  
+ 17. **Routes**. Includes [OSM routes](../map/routes.md) for various types of activities.  
         Includes *14* types of filters: **Checkpoint**, **Cycling network node**, **Hiking network node**, **Routes network (cycling)**, **Routes network (hiking)**, **Route point category**, **Air Sports**, **Cycling**, **Driving**, **Foot**, **Motorcycling**, **Other routes**, **Water sports**, **Winter sports**.
 
- 19. **Sightseeing**. It is an activity in which people visit interesting places or sites to familiarize themselves with them and enjoy their beauty, history or significance.  
+ 18. **Sightseeing**. It is an activity in which people visit interesting places or sites to familiarize themselves with them and enjoy their beauty, history or significance.  
         Includes *8* types of filters.
 
- 20. **Sport**. Includes areas for sports activities.  
+ 19. **Sport**. Includes areas for sports activities.  
         Includes *11* types of filters.
 
- 21. **Store**. [Store](https://wiki.openstreetmap.org/wiki/Key:shop) refers to a variety of establishments and businesses that offer various goods or services for sale, such as grocery stores, clothing stores, electronics stores, and others.  
+ 20. **Store**. [Store](https://wiki.openstreetmap.org/wiki/Key:shop) refers to a variety of establishments and businesses that offer various goods or services for sale, such as grocery stores, clothing stores, electronics stores, and others.  
         Includes *36* types of filters.
 
- 22. **Tourism**. [Tourism](https://wiki.openstreetmap.org/wiki/Key:tourism) includes places and things of specific interest to tourists including places to see, places to stay, and things and places providing information and support to tourists.  
+ 21. **Tourism**. [Tourism](https://wiki.openstreetmap.org/wiki/Key:tourism) includes places and things of specific interest to tourists including places to see, places to stay, and things and places providing information and support to tourists.  
         Includes *32* types of filters.
-
- 23. **Water**. Sources of [drinking water](https://wiki.openstreetmap.org/wiki/Key:drinking_water) created or arranged by man.  
-        Does not contain any filters.
 
 
 ### Rearrange Categories {#rearrange-categories}
@@ -278,7 +274,6 @@ To improve results, before using the Search tool, zoom in on the map to get clos
 You can find out information about Online Navigation in [Online routing](../navigation/routing/online-routing.md) article.
 
 
-
 ## Customize POI Search {#customize-poi-search}
 
 POI Search Customization is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, the Custom POI search provides the flexibility to select and combine different types of POIs.  
@@ -331,47 +326,53 @@ To create custom filters for finding places on the map, select relevant categori
 
 3. **<Translate android="true" ids="amenity_type_education"/>**. Includes 16 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
-4. **<Translate android="true" ids="amenity_type_emergency"/>**. Includes 14 types of filters.  
+4. **<Translate android="true" ids="amenity_type_emergency"/>**. Includes 26 types of filters.  
 
+<!--
 5. **Emergency infrastructure**. Includes 12 types of filters.  
+-->
 
-6. **<Translate android="true" ids="amenity_type_finance"/>**. Includes 12 types of filters.
+5. **<Translate android="true" ids="amenity_type_finance"/>**. Includes 12 types of filters.
 
-7. **Food**. Includes 12 types of filters.  
+6. **Food**. Includes 12 types of filters.  
 
-8. **Hazard**. Includes 5 types: *Avalanche hazard, Erosion hazard, Flood hazard, Nuclear hazard, Slippery road*. The Hazard category includes both POI with hazard=* tags on nodes and road or path segments (ways) marked with the same tag, if they are exported as searchable objects. For a visual overview of all hazard icons used on the map, see the [Hazard](https://osmand.net/docs/user/map-legend/osmand/#hazard) section.
+7. **Hazard**. Includes 5 types: *Avalanche hazard, Erosion hazard, Flood hazard, Nuclear hazard, Slippery road*. The Hazard category includes both POI with hazard=* tags on nodes and road or path segments (ways) marked with the same tag, if they are exported as searchable objects. For a visual overview of all hazard icons used on the map, see the [Hazard](https://osmand.net/docs/user/map-legend/osmand/#hazard) section.
 
-9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Includes 31 types of filters.
+8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Includes 31 types of filters.
 
-10. **<Translate android="true" ids="amenity_type_leisure"/>**. Includes 148 types of filters.  
+9. **<Translate android="true" ids="amenity_type_leisure"/>**. Includes 148 types of filters.  
 
-11. **<Translate android="true" ids="amenity_type_man_made"/>**. Includes 121 types of filters.  
+10. **<Translate android="true" ids="amenity_type_man_made"/>**. Includes 121 types of filters.  
 
-12. **<Translate android="true" ids="amenity_type_military"/>**. Includes 7 types: *Danger area, Military bunker, Military naval base, Military office, Military range, Military zone, Nuclear explosion site*.  
+11. **<Translate android="true" ids="amenity_type_military"/>**. Includes 7 types: *Danger area, Military bunker, Military naval base, Military office, Military range, Military zone, Nuclear explosion site*.  
 
-13. **<Translate android="true" ids="amenity_type_natural"/>**. Includes 50 types of filters.  
+12. **<Translate android="true" ids="amenity_type_natural"/>**. Includes 50 types of filters.  
 
-14. **Nautical**. Includes 41 types of filters.  
+13. **Nautical**. Includes 41 types of filters.  
 
-15. **<Translate android="true" ids="amenity_type_office"/>**. Includes 39 types of filters.
+14. **<Translate android="true" ids="amenity_type_office"/>**. Includes 39 types of filters.
 
-16. **Popular places (Wikipedia)**. Includes 1 type: *Wikipedia*.
+15. **Popular places (Wikipedia)**. Includes 1 type: *Wikipedia*.
 
+<!--
 17. **Private access**. Does not include any filters.
+-->
 
-18. **Routes**. Includes 15 types of filters.  
+16. **Routes**. Includes 15 types of filters.  
 
-19. **Service**. Includes 111 types of filters.
+17. **Service**. Includes 111 types of filters.
 
-20. **<Translate android="true" ids="amenity_type_sport"/>**. Includes 119 types of filters.  
+18. **<Translate android="true" ids="amenity_type_sport"/>**. Includes 119 types of filters.  
 
-21. **Store**. Includes 156 types of filters.  
+19. **Store**. Includes 156 types of filters.  
 
-22. **<Translate android="true" ids="amenity_type_tourism"/>**. Includes 103 types of filters.
+20. **<Translate android="true" ids="amenity_type_tourism"/>**. Includes 103 types of filters.
 
-23. **Transportation**. Includes 97 types of filters.  
+21. **Transportation**. Includes 97 types of filters. 
 
-24. **User defined**. Includes 1 type: *User Defined Other Postcode*.
+22. **Travel**. Includes 2 types of filters.
+
+23. **User defined**. Includes 1 type: *User Defined Other Postcode*.
 
 <!--
 :::note since OsmAnd 5.0 for Android

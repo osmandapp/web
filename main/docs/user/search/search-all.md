@@ -147,13 +147,13 @@ OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_overlay_android.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
