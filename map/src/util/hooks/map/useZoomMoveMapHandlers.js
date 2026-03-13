@@ -7,7 +7,7 @@ const useZoomMoveMapHandlers = (map, onZoomChange, onMapMove) => {
         };
 
         const handleDragEnd = () => {
-            onMapMove(true);
+            onMapMove(Date.now());
         };
 
         if (map) {

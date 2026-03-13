@@ -36,7 +36,7 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import { MENU_INFO_OPEN_SIZE, NAVIGATE_URL, showProcessingNotification } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
-import { getVisibleBbox, findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
+import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { MIN_SEARCH_ZOOM } from '../../menu/search/search/SearchResults';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
@@ -381,7 +381,7 @@ export default function PoiLayer() {
         }
     }
 
-    async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
+    async function getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
             return null;
         }
@@ -399,10 +399,11 @@ export default function PoiLayer() {
             }
         });
 
+        const { bounds, center } = visibleBboxInfo;
         const searchData = {
             categories: showPoiCategories,
-            northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
-            southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+            northWest: `${bounds.getNorthWest().lat},${bounds.getNorthWest().lng}`,
+            southEast: `${bounds.getSouthEast().lat},${bounds.getSouthEast().lng}`,
             savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,
             savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null,
             prevCategoriesCount: prevCategories ? prevCategories.length : 0,
@@ -412,8 +413,8 @@ export default function PoiLayer() {
         const response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi`, searchData, {
             params: {
                 locale: i18n.language,
-                lat: map.getCenter().lat,
-                lon: map.getCenter().lng,
+                lat: center.lat,
+                lon: center.lng,
                 baseSearch: map.getZoom() < MIN_SEARCH_ZOOM,
                 ...getCurrentTimeParams(),
             },
@@ -455,20 +456,20 @@ export default function PoiLayer() {
                 poiList,
                 showPoiCategories,
                 savedBbox,
-                prevCategories,
                 poiIconCache,
                 zoom,
                 reqId,
+                visibleBboxInfo,
             }) => {
                 map.spin(true, { color: '#1976d2' });
-                const bbox = getVisibleBbox(map, ctx);
-                if (!bbox) {
+                if (!visibleBboxInfo) {
                     map.spin(false);
                     return;
                 }
+                const bbox = visibleBboxInfo.bounds;
                 const notifyTimeout = showProcessingNotification(ctx);
                 try {
-                    const res = await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategories);
+                    const res = await getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox);
                     if (reqId !== reqIdRef.current || ignore) return;
                     if (res) {
                         if (!res.alreadyFound && res.features) {
@@ -546,10 +547,10 @@ export default function PoiLayer() {
                         poiList,
                         showPoiCategories: ctx.showPoiCategories,
                         savedBbox: bbox,
-                        prevCategories,
                         poiIconCache: ctx.poiIconCache,
                         zoom,
                         reqId: reqIdRef.current,
+                        visibleBboxInfo: ctx.visibleBboxInfo,
                     });
                 }
             } else {

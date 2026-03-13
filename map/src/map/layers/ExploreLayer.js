@@ -23,7 +23,8 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem';
-import { getVisibleBbox, panToIfNeeded } from '../util/MapManager';
+import { getVisibleBboxInfo } from './MapStateLayer';
+import { panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { getIconNameForPoiType, navigateToPoi } from '../../manager/PoiManager';
@@ -250,11 +251,12 @@ export default function ExploreLayer() {
                 return;
             }
             setLoadingContextMenu(true);
-            const bbox = getVisibleBbox(map, ctx);
-            if (!bbox) {
+            const visible = getVisibleBboxInfo(ctx, map);
+            if (!visible) {
                 setLoadingContextMenu(false);
                 return;
             }
+            const bbox = visible.bounds;
             const api = settings?.useWikiImages ? API_GET_IMGS : API_GET_OBJS;
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/${api}`, {
                 apiCache: true,
