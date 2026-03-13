@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
-import { HEADER_SIZE, MAIN_MENU_MIN_SIZE } from '../../manager/GlobalManager';
+import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 
@@ -24,6 +25,7 @@ const BOTTOM_PADDING = 50;
 export default function MapStateLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+    const { pathname } = useLocation();
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
@@ -49,7 +51,7 @@ export default function MapStateLayer() {
         return () => map.off('resize', update);
     }, [zoom, move, map, ctx.infoBlockWidth]);
 
-    if (!ctx.visibleBboxInfo?.center || !centerPositionPx) {
+    if (!pathname.includes(SEARCH_RESULT_URL) || !ctx.visibleBboxInfo?.center || !centerPositionPx) {
         return null;
     }
 
