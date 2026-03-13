@@ -17,7 +17,6 @@ import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { usePageTitle } from '../../../util/hooks/usePageTitle';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
-import { getCenterMapLoc } from '../../../manager/MapManager';
 import { getDistance, getBearing } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
@@ -34,7 +33,7 @@ import {
 import { getIconByType, parseTagWithLang, SEARCH_BRAND } from '../../../manager/SearchManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { useTranslation } from 'react-i18next';
-import { POI_URL, SEARCH_URL } from '../../../manager/GlobalManager';
+import { getMapCenter } from '../../../map/layers/MapStateLayer';
 
 export const ZOOM_ERROR = 'Please zoom in closer';
 export const MIN_SEARCH_ZOOM = 8;
@@ -254,11 +253,11 @@ export default function SearchResults() {
                 isUser = true;
                 loc = currentLoc;
             } else {
-                loc = getCenterMapLoc(hash);
+                loc = getMapCenter(ctx, hash);
             }
             setLocReady(true);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
-            loc = getCenterMapLoc(hash);
+            loc = getMapCenter(ctx, hash);
             setLocReady(true);
         }
         return { loc, isUser };

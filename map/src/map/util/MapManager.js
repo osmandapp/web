@@ -1,4 +1,3 @@
-import { HEADER_SIZE, MAIN_MENU_MIN_SIZE } from '../../manager/GlobalManager';
 import L from 'leaflet';
 import Utils from '../../util/Utils';
 import styles from '../map.module.css';
@@ -7,31 +6,6 @@ export const TOOLTIP_MAX_LENGTH = 50;
 
 export function formatTrackName(name) {
     return name ? name.replaceAll('/', ' · ') : name;
-}
-
-export function getVisibleBbox(map, ctx) {
-    if (!map?.getSize) {
-        return null;
-    }
-    const containerSize = map.getSize();
-    if (!containerSize?.x || !containerSize.y) {
-        return null;
-    }
-    const menuOffset = Number.parseInt(ctx.infoBlockWidth, 10) + MAIN_MENU_MIN_SIZE + 20;
-    const topPadding = HEADER_SIZE + 20;
-    const bottomPadding = 50;
-
-    const topLeft = map.containerPointToLatLng([menuOffset, topPadding]);
-    const bottomRight = map.containerPointToLatLng([containerSize.x, containerSize.y - bottomPadding]);
-
-    if (!topLeft || !bottomRight) {
-        return null;
-    }
-
-    const bounds = L.latLngBounds(topLeft, bottomRight);
-    const center = bounds.getCenter();
-
-    return { bounds, center: { lat: center.lat, lng: center.lng } };
 }
 
 export function addLayerToMap(map, layer, id) {

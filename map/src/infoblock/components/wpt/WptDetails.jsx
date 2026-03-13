@@ -87,14 +87,14 @@ import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
-import { fmt, localizeWeekTokens } from '../../../util/dateFmt';
+import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DistanceInfo from './DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
-import { getCenterMapLoc } from '../../../manager/MapManager';
+import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
@@ -202,7 +202,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
             return { distance: null, bearing: null };
         }
-        const mapCenter = getCenterMapLoc(hash);
+        const mapCenter = getMapCenter(ctx, hash);
         if (!mapCenter) {
             return { distance: null, bearing: null };
         }

@@ -31,7 +31,8 @@ import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap'
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { getIconByType } from '../../manager/SearchManager';
 import { showProcessingNotification } from '../../manager/GlobalManager';
-import { getVisibleBbox, findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
+import { getVisibleBboxInfo } from './MapStateLayer';
+import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentTimeParams } from '../../util/Utils';
@@ -161,7 +162,7 @@ export default function SearchLayer() {
 
     async function searchByWord(searchData) {
         const notifyTimeout = showProcessingNotification(ctx);
-        const visible = getVisibleBbox(map, ctx);
+        const visible = getVisibleBboxInfo(ctx, map);
         if (!visible) {
             return;
         }

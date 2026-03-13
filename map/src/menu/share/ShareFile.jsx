@@ -24,7 +24,7 @@ import NotAvailableError from './errors/NotAvailableError';
 import { getFavMenuListByLayers, LOCATION_UNAVAILABLE, extractBaseFavFileName } from '../../manager/FavoritesManager';
 import FavoriteItem from '../favorite/FavoriteItem';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
-import { getCenterMapLoc } from '../../manager/MapManager';
+import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
@@ -154,7 +154,7 @@ export default function ShareFile() {
     const favItems = useMemo(() => {
         const layers = ctx.shareFileMarkers?.getLayers();
         if (layers?.length > 0 && ctx.selectedGpxFile?.wpts) {
-            const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getCenterMapLoc(hash);
+            const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getMapCenter(ctx, hash);
             const markerList = getFavMenuListByLayers(layers, ctx.selectedGpxFile.wpts, loc);
             const items = [];
             markerList.map((m, index) => {

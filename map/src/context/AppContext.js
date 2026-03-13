@@ -403,6 +403,7 @@ export const AppContextProvider = (props) => {
     const [processingSearch, setProcessingSearch] = useState(false);
     const [moveToMapObj, setMoveToMapObj] = useState(null);
     const [visibleBounds, setVisibleBounds] = useState(null);
+    const [visibleBboxInfo, setVisibleBboxInfo] = useState(null);
     const [exploreMenu, setExploreMenu] = useState(false);
     const [poiCatMenu, setPoiCatMenu] = useState(false);
     const [poiByUrl, setPoiByUrl] = useState(null);
@@ -983,6 +984,8 @@ export const AppContextProvider = (props) => {
                 setSelectedCloudTrackObj,
                 visibleBounds,
                 setVisibleBounds,
+                visibleBboxInfo,
+                setVisibleBboxInfo,
                 exploreMenu,
                 setExploreMenu,
                 openTravel,

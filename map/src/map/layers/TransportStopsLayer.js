@@ -3,7 +3,8 @@ import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import AppContext, { OBJECT_TYPE_STOP } from '../../context/AppContext';
 import { apiGet } from '../../util/HttpApi';
-import { getVisibleBbox, findFeatureGroupById, bindTooltipToMarker } from '../util/MapManager';
+import { getVisibleBboxInfo } from './MapStateLayer';
+import { findFeatureGroupById, bindTooltipToMarker } from '../util/MapManager';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -405,12 +406,11 @@ const TransportStopsLayer = () => {
         let ignore = false;
         let controller = new AbortController();
 
-        const debouncedGetTransportStops = debounce(async ({ controller, ignore, zoom, reqId }) => {
-            const visible = getVisibleBbox(map, ctx);
-            if (!visible) {
+        const debouncedGetTransportStops = debounce(async ({ controller, ignore, zoom, reqId, visibleBboxInfo }) => {
+            if (!visibleBboxInfo) {
                 return;
             }
-            const bbox = visible.bounds;
+            const bbox = visibleBboxInfo.bounds;
             try {
                 const res = await getTransportStops(controller, bbox);
                 if (reqId !== reqIdRef.current || ignore) {
@@ -465,7 +465,8 @@ const TransportStopsLayer = () => {
                 setPrevZoom(zoom);
 
                 reqIdRef.current += 1;
-                debouncedGetTransportStops({ controller, ignore, zoom, reqId: reqIdRef.current });
+                const visibleBboxInfo = getVisibleBboxInfo(ctx, map);
+                debouncedGetTransportStops({ controller, ignore, zoom, reqId: reqIdRef.current, visibleBboxInfo });
             } else if (hasData) {
                 const layer = await createTransportStopsLayer({
                     stopsList: stopsData.listFeatures.features,
