@@ -1,5 +1,5 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
-import AppContext, { isLocalTrack } from '../../../context/AppContext';
+import { useContext, useEffect, useMemo, useState, useRef } from 'react';
+import AppContext, { isLocalTrack, isCloudTrack } from '../../../context/AppContext';
 import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import L from 'leaflet';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
@@ -9,16 +9,55 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import isEmpty from 'lodash-es/isEmpty';
+import { debouncer } from '../../../context/TracksRoutingCache';
+import { saveInfoFile } from '../../../manager/track/SaveTrackManager';
+
+const SAVE_DEBOUNCE_MS = 1000;
+
+function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
+    const updatedPointsGroups = { ...ctx.selectedGpxFile.pointsGroups };
+
+    groupNames.forEach((groupName) => {
+        updatedPointsGroups[groupName] = {
+            ...updatedPointsGroups[groupName],
+            ext: {
+                ...updatedPointsGroups[groupName]?.ext,
+                hidden,
+            },
+        };
+    });
+
+    const updatedFile = {
+        ...ctx.selectedGpxFile,
+        pointsGroups: updatedPointsGroups,
+    };
+
+    ctx.setSelectedGpxFile(updatedFile);
+
+    if (isCloudTrack(ctx)) {
+        debouncer(
+            () => {
+                saveInfoFile(updatedFile);
+            },
+            debouncerTimer,
+            SAVE_DEBOUNCE_MS
+        );
+    }
+}
 
 // distinct component
-const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible }) => {
+const WaypointGroup = ({ ctx, group, points, defaultOpen, defaultVisible = true, massOpen, massVisible }) => {
     const [open, setOpen] = useState(defaultOpen);
     const switchOpen = () => setOpen(!open);
 
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(defaultVisible);
+    const debouncerTimer = useRef(null);
+
     const switchVisible = (e) => {
         e.stopPropagation();
-        setVisible(!visible);
+        const newVisible = !visible;
+        setVisible(newVisible);
+        updateGroupsVisibility(ctx, [group], !newVisible, debouncerTimer);
     };
 
     const [mounted, setMounted] = useState(false);
@@ -302,9 +341,15 @@ export default function WaypointsTab() {
     const [showMass, setShowMass] = useState(false);
     const [massOpen, setMassOpen] = useState(false);
     const [massVisible, setMassVisible] = useState(true);
+    const debouncerTimer = useRef(null);
 
     const switchMassOpen = () => setMassOpen(!massOpen);
-    const switchMassVisible = () => setMassVisible(!massVisible);
+    const switchMassVisible = () => {
+        const newMassVisible = !massVisible;
+        setMassVisible(newMassVisible);
+        const groupNames = Object.keys(ctx.selectedGpxFile.pointsGroups || {});
+        updateGroupsVisibility(ctx, groupNames, !newMassVisible, debouncerTimer);
+    };
 
     const pointsChangedString = useMemo(() => {
         const name = ctx.selectedGpxFile.name;
@@ -317,6 +362,7 @@ export default function WaypointsTab() {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
         const trackName = ctx.selectedGpxFile.name;
+        const pointsGroups = ctx.selectedGpxFile.pointsGroups;
 
         setShowMass(keys.length > 1);
 
@@ -329,6 +375,7 @@ export default function WaypointsTab() {
                         group={g}
                         points={groups[g]}
                         defaultOpen={keys.length === 1}
+                        defaultVisible={pointsGroups[g]?.ext?.hidden !== true}
                         massVisible={massVisible}
                         massOpen={massOpen}
                     />

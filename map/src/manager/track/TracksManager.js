@@ -28,6 +28,7 @@ import { compressJSONToBlob } from '../../util/GzipCompression';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
+export const INFO_FILE_EXT = '.info';
 export const KMZ_FILE_EXT = '.kmz';
 export const EMPTY_FILE_NAME = '__folder__.info';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -1561,7 +1562,7 @@ export async function openTrackOnMap({
 export function preparedGpxFile({ file, sharedFile = false, oldFile = null }) {
     const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
     const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
-    const qsInfo = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name + '.info')}`;
+    const qsInfo = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name + INFO_FILE_EXT)}`;
     if (oldFile) {
         return {
             url: oldFile.url ? URL + qs : null,

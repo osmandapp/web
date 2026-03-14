@@ -63,6 +63,7 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
         layersGroup.options.type = type;
+        layersGroup.options.pointsGroups = data?.pointsGroups;
         return layersGroup;
     }
 }
@@ -721,10 +722,13 @@ function createEditableTempLPolyline(start, end, map, ctx) {
 
 export function redrawWptsOnLayer({ layer }) {
     if (layer) {
+        const pointsGroups = layer.options?.pointsGroups;
         layer.getLayers().forEach((l) => {
             if (l instanceof L.Marker && l.options?.wpt) {
                 if (l._icon?.style) {
-                    l._icon.style.display = null; // visible
+                     const category = l.options?.category || '';
+                     const isHidden = pointsGroups?.[category]?.ext?.hidden === true;
+                     l._icon.style.display = isHidden ? 'none' : null;
                 }
             }
         });
