@@ -302,7 +302,7 @@ Description and how to use:
 
 ### Online Search {#online-search}
 
-<InfoAndroidOnly />
+<InfoAndroidOnly/>
 
 ![Search POI Android](@site/static/img/search/search_online_2_andr_new.png)  
 
