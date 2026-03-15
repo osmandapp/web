@@ -59,15 +59,22 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
        - For nearby points of interest (POI) or specific categories of POI.
        - For [OSM routes](../map/routes.md) by name and by ref number.
        - For [Popular places (Wikipedia)](../map/popular_places.md).
+       - For places by combining a city name with a POI name or type (for example: Berlin airport, Bratislava Billa).
     - Filters and sorting results by category, distance, or rating are possible.
+
+The icon displayed in the search results corresponds to the icon used on the map and in the object context menu.
+
+Search results may include additional location information such as the city where the POI is located. This helps distinguish between places with the same name when searching for brands or popular places.
     
 - **Search POIs on the map** - Show on map:
     - You can select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-pois) in *Configure map → Show POI overlay...* and search by icons in the expected location.
     - You can enter a search query first or can start searching for POIs in *Menu → Search → Categories* and then click **Show on map**.
 
 - **Brand search**:
-    - Searching a business venue by brand name (such as Audi, Starbucks, or Aldi) is very similar to search different POIs by type the main difference is that brand list is provided inside the map and subject to changed during each updates. 
+    - Searching a business venue by brand name (such as Audi, Starbucks, or Aldi) is very similar to search different POIs by type the main difference is that brand list is provided inside the map and subject to change during each updates. 
     - Brand is defined by OSM tag [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) and OsmAnd collects limited types of brands per map with a maximum 1000 brands per map, however it makes sure that list of brands is aligned across the neighbor maps.
+    - Brand search is not case-sensitive. For example, entering `starbucks`, `Starbucks`, or `STARBUCKS` will return the same results.
+    - Only brands included in the map data index will appear in the search results.
 
 ![Search POI Android](@site/static/img/search/brand_search_andr.png) ![Search POI Android](@site/static/img/search/brand_search_2_andr.png)
 
@@ -76,6 +83,52 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you find nothing, OsmAnd proposes to increase the search radius.
 :::  
 
+### Search Tips {#search-tips}
+
+POI search in OsmAnd supports different input formats and combinations of place names, brands, and locations. If you cannot find the expected result, try the following approaches.
+
+**1. Search within a selected city**
+
+If many places have the same name, it may be easier to first search for the city and open it on the map, and then search for the place within that area.
+
+Example workflow:  
+- Search for **Vienna**.
+- Open the city on the map.
+- Search for **McDonald's**.
+
+This limits the results to the selected area and nearby objects.
+
+**2. Use more specific search queries**
+
+Very short queries or abbreviations may return many results because they match multiple object names.
+
+Example:  
+`St.`  
+→ many results
+
+`St. Volodymyr's Cathedral`  
+→ specific object
+
+**3. Search by alternative names**
+
+Some places in OpenStreetMap have additional name tags such as:  
+- `alt_name`
+- `short_name`
+
+OsmAnd search considers these names, so searching for different variants of a name may return the same object.
+
+**4. A place may appear in multiple search results**
+
+Some POIs have multiple attributes or categories.
+
+Example:  
+`Sport = soccer; beachvolleyball`
+
+This place may appear when searching for:  
+- soccer
+- beach volleyball
+- sports centre
+
 
 ## POI Search by Categories {#poi-search-by-categories}
 
@@ -83,7 +136,7 @@ To accomplish some of these tasks (locate addresses, POI) you will need to have 
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -95,7 +148,11 @@ To accomplish some of these tasks (locate addresses, POI) you will need to have 
 
 </Tabs>
 
-The **Search by Categories** tool allows you to quickly find objects, places, and routes classified into different categories. Each category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
+The **Search by Categories** tool allows you to quickly find objects, places, and routes classified into different categories. 
+
+POI categories in OsmAnd are based on OpenStreetMap tags. Some places may appear under a more general category if a more specific type is not available in the map data (for example, a church may appear under `Place of worship`).
+
+Each category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
 
 How it works:
 
@@ -247,7 +304,7 @@ Description and how to use:
 
 <InfoAndroidOnly />
 
-![Search POI Android](@site/static/img/search/search_online_2_andr.png)  
+![Search POI Android](@site/static/img/search/search_online_2_andr_new.png)  
 
 **Online Search** allows finding locations, addresses, and points of interest in real time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back.  
 

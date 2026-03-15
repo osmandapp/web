@@ -27,7 +27,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Search POI list Android](@site/static/img/search/poi_list_android.png)
+![Search POI list Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -223,7 +223,7 @@ You can use the **Search History** to search again for previously found places, 
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
