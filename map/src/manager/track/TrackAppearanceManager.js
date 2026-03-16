@@ -2,9 +2,9 @@ import { apiPost } from '../../util/HttpApi';
 import { INFO_FILE_EXT } from './TracksManager';
 
 /**
- * Update .info file with partial data (only changed fields).
+ * Update track appearance in .info file with partial data (only changed fields).
  *
- * @param {Object} updatedInfoFile - The GPX file object
+ * @param {Object} updatedInfoFile - The info file object
  * @param {Object} diff - Partial info object with only changed fields
  * @returns {Promise<boolean>} Success status
  */
