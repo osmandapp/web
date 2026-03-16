@@ -109,7 +109,7 @@ The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align
 
 **Configure View** allows you to control how the Star map is displayed by enabling or disabling visual modes, objects, and rendering aids.
 
-To open Configure View, tap the Configure View button in the bottom-right corner of the Star map screen. The button is represented by a layer-style icon (stacked shapes), indicating display and layer settings. Configure View opens in a *Half state*, showing the main display options. Swipe the panel upwards to expand it into *Full state* and access all available settings. To close Configure View, swipe the panel downwards once to return to the Half state, swipe downwards again to close it completely, or tap the Close (X) button in the top-right corner of the panel.
+To open Configure View, tap the Configure View button in the bottom-right corner of the Star map screen. The button is represented by a layer-style icon (stacked shapes), indicating display and layer settings. Configure View opens in a *Half state*, showing the main display options. Swipe the panel upwards to expand it into *Full state* and access all available settings. To close Configure View, swipe the panel downwards once to return to the Half state, swipe downwards again to close it completely, or tap anywhere on the map outside the panel. You also can tap the Close (X) button in the top-right corner of the panel.
 
 ### Modes and Actions {#modes-and-actions}
 
@@ -156,7 +156,8 @@ This section lets you choose which types of celestial objects are shown on the S
 | Meridian line | Displays the meridian line crossing the sky from north to south. |
 | Equatorial grid | Shows the celestial equatorial coordinate grid. |
 | Ecliptic line | Displays the ecliptic line representing the apparent path of the Sun. |
-| Galaxy equator | Shows the equatorial plane of the Milky Way galaxy. |
+| Equator line | Displays the Earth's equatorial projection on the celestial sphere, helping visualize the Earth's rotation relative to the sky. |
+| Galactic line | Shows the plane of the Milky Way galaxy across the sky, indicating the main direction of the galactic disk. |
 
 
 <!-- 
