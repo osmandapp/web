@@ -11,14 +11,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Overview {#overview}
 
-**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. Search [History](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
+**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. The [Explore](#search-explore) tab highlights popular places nearby and provides quick access to recently visited locations. Search [History](#search-history-ios) saves past searches. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
 
 
 ## How to Use {#how-to-use}
@@ -27,7 +28,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Search POI list Android](@site/static/img/search/poi_list_android.png)
+![Search POI list Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -88,13 +89,17 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Sorting Search Results {#sorting-search-results}
 
-OsmAnd automatically sorts search results by three main criteria:
+OsmAnd automatically sorts search results by several criteria:
 
 1. **Matching queries** — Results containing exact or partial matches to the words you entered are displayed higher.
 
-2. **Object type** - When sorting by name, cities, and streets are prioritized over POIs when displaying results.
+2. **Relevance** — Objects whose names closely match the search query are usually shown higher in the results.
 
-3. **Distance** - When results have similar matching criteria and object types, the results closest to the user's current location are shown first.
+3. **Object type** — Depending on the query, results may include different types of objects such as cities, streets, addresses, or POIs.
+
+4. **Distance** — When results have similar matching criteria and object types, the results closest to the user's current location are shown first.
+
+5. **Importance** — Well-known landmarks or frequently referenced places may appear higher in the results when they closely match the search query.
 
 ***For example***, a search query *post office* will show the nearest post offices first, even if there are other items with similar names at a greater distance.  
 
@@ -147,13 +152,13 @@ OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_overlay_android.png)
+![Search POI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -170,7 +175,7 @@ OsmAnd allows you to search for points displayed on a map on your device's scree
 
 ### Search Nearby {#search-nearby}
 
-![Search Android](@site/static/img/search/search_all_near_location_andr.png)
+![Search Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#full-text-search) or select it directly on the map. In the [map context menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
 
@@ -181,7 +186,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_2_andr.png)
+![Search Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
@@ -196,25 +201,23 @@ You can use the search in the vicinity of a specific location. To do this, selec
 **Search Address** uses OpenStreetMap data. This type of search allows you to find the location and direction to a specific address from a ready-sorted list. Read more in the [Search Address](./search-address.md) article.
 
 
-## Search History {#search-history}
+## Search Explore {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![Explore search](@site/static/img/search/explore_search_android.png)
 
-![History search](@site/static/img/search/history_search_android.png)
+The **Explore** tab in the Search tool helps you quickly discover places near your current location and access recently opened items. It contains two main sections:  
+- Popular places nearby – a scrollable list of well-known landmarks and attractions near your location. Each item may include the name of the place, its category, distance and direction, and a preview image if available. Tap *Show all* to open the full list or *Show on map* to display these places on the map.
+- Recently visited – a list of places, tracks, or other objects that you have recently opened. This allows you to quickly return to previously viewed locations.
 
-</TabItem>
+For more details, see [here](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## Search History (iOS) {#search-history-ios}
 
 ![History search](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
-You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again.. More details can be found in the [Search History](./search-history.md) article.
+You can use the **Search History** to search again for previously found places, addresses, or frequently visited places without entering the query again. More details can be found in the [Search History](./search-history.md) article.
 
 
 ## Search POI {#search-poi}
@@ -223,7 +226,7 @@ You can use the **Search History** to search again for previously found places, 
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -273,5 +276,6 @@ Coordinate search provides an accurate location. You can enter precise coordinat
 - [Search History](./search-history.md)
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
+- [Popular Places](../map/popular_places.md)
 
 
