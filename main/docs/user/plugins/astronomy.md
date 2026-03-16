@@ -63,6 +63,97 @@ The screen renders the full sky hemisphere above your location, aligned with the
 The Star map can also align with your device orientation when compass mode is enabled. In this mode, the sky rotates according to the device's accelerometer and compass sensors, allowing you to explore the sky by physically moving your phone.
 
 
+## Context Menu {#context-menu}
+
+![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+
+The **Context Menu** provides detailed information about celestial objects and tools for observing them. It opens when you tap a celestial object on the Star map.
+
+When an object is selected, it is highlighted on the Star map with a red circle marker. Its daily motion is also visualized by an hour ring (00–23), showing where the object will appear in the sky at each hour of the local day and the direction of its movement.
+
+The Context Menu appears at the bottom of the screen and contains object information, quick actions, and tabs for exploring the object's visibility and observation schedule.
+
+### Object Information {#object-information}
+
+![Object Information](@site/static/img/plugins/starwatcher/object_view.png)
+
+The top section of the Context Menu displays the object's name and classification. Below the name, the object type and its parent constellation or group are shown. For example:  
+- **Beta Ursae Minoris** — Star • Ursa Minor
+- **Jupiter** — Planet • Solar system
+- **Andromeda** — Galaxy • Deep sky
+
+Quick information blocks display key observational parameters:  
+- Rise – the time when the object rises above the horizon.
+- Set – the time when the object sets below the horizon.
+- Azimuth – the object's direction relative to north (0°–360°).
+- Altitude – the object's height above the horizon.
+- Magnitude – the brightness of the object as seen from Earth. 
+
+These values update dynamically based on the selected time and the user's location.
+
+Below the quick information blocks, the menu may also include additional information and resources about the object:  
+- Read on Wikipedia – Opens the object's Wikipedia article. If offline Wikipedia data is available, the article can be opened without an internet connection; otherwise the page opens in the browser.
+- Online photos – Displays available photos related to the selected celestial object.
+
+### Actions {#actions}
+
+Below the object information, the Context Menu provides several actions for interacting with the selected celestial object:
+- **Save** – Adds the object to your Favorites list for quick access.
+- **Locate** – Centers the selected object on the Star map.
+- **Direction** – Shows the direction to the object on the map, helping you orient yourself while observing the sky.
+- **Path** – Displays the object's daily trajectory across the sky, allowing you to see how it moves during the day.
+
+### Visibility Graph {#actions}
+
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility.png)
+
+The **Visibility** tab shows how the selected object moves across the sky during a 24-hour period.
+
+The graph displays the object's altitude above the horizon over time.
+
+- The horizontal axis represents time from 12:00 to 12:00 the next day.
+- The vertical axis represents altitude from −30° to +90°.
+
+The colored curve shows the object's altitude throughout the day.
+
+The background of the graph represents the state of the sky and changes depending on the Sun's position. This helps identify when observations are possible.
+
+The colors represent different sky conditions:  
+- light blue — daytime
+- darker blue — twilight
+- dark blue / black — night
+
+The color of the object's trajectory also reflects its altitude:  
+- yellow – high in the sky (best visibility)
+- orange – medium altitude
+- red – close to the horizon
+- purple – below the horizon (not visible)
+
+A movable indicator allows you to explore the object's position at different times. When the indicator is moved, the current time, altitude, and azimuth values are updated.
+
+Below the graph, important observation events are displayed: 
+- **Rise** – when the object rises above the horizon.
+- **Culmination** – when the object reaches its highest altitude.
+- **Set** – when the object sets below the horizon.
+
+The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph.
+
+### Observation Schedule {#actions}
+
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule.png)
+
+The **Schedule** tab displays the visibility of the selected object for the current week. Each row represents one day and includes:  
+- the day of the week
+- the date
+- rise time
+- set time
+- a small visibility graph for that day
+
+The mini graph shows when the object is visible during the day and how its altitude changes. The colored section of the bar represents the period when the object is above the horizon.
+
+You can navigate between weeks using the arrow buttons in the Schedule header. The calendar button allows you to return to the current week.
+
+<!--
 ## Celestial Object Info {#celestial-object-info}
 
 ![Object info popup](@site/static/img/plugins/starwatcher/object-info_new.png)
@@ -81,7 +172,7 @@ Tap any **star, planet, constellation, or Sun/Moon** on the **Star map screen** 
 **Long-press** celestial objects to **pin** them as map markers with live position updates, or **share** coordinates for group stargazing.
 
 This feature helps identify objects in real sky, plan observations, and learn astronomy facts directly from OsmAnd.
-
+-->
 
 ## AR Star Finding (Camera Mode) {#ar-star-finding}
 
