@@ -26,12 +26,10 @@ import {
     BLOCKED_ACCESS_TYPE,
     PENDING_ACCESS_TYPE,
 } from './shareConstants';
-import { useLocation } from 'react-router-dom';
 
 export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-    const location = useLocation();
 
     const shareTypes = {
         private: {
@@ -165,7 +163,7 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
     }
 
     function createLink(uuid) {
-        return `${location.origin}${MAIN_URL_WITH_SLASH}${SHARE_FILE_MAIN_URL}${uuid}`;
+        return `${globalThis.location.origin}${MAIN_URL_WITH_SLASH}${SHARE_FILE_MAIN_URL}${uuid}`;
     }
 
     async function generateNewLink() {
