@@ -25,7 +25,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-The Astronomy plugin shows the star sky overlay on the map with stars, constellations, Sun, Moon and planets. The positions and paths of Sun, Moon, planets and major stars are shown on the map.
+:::tip Purchase
+Astronomy plugin is a [paid feature](../purchases/index.md).  
+:::
+
+The Astronomy plugin displays a sky overlay with stars, constellations, the Sun, the Moon, and planets directly on the map. It uses an offline celestial catalog to calculate and display the current and future positions of celestial objects. The plugin also allows users to explore the night sky, identify objects, and plan observations by viewing their paths across the sky.
+
+The plugin works fully offline using built-in star catalogs, allowing sky exploration even without an internet connection.
 
 
 ## Required Setup Parameters {#required-setup-parameters}
@@ -44,14 +50,17 @@ The plugin works with both Map rendering engines but performs best in OpenGL mod
 
 **Go to:** *Enabled plugin → Menu → Star map* 
 
-![Star map screen](@site/static/img/plugins/starwatcher/view_new.png)
+![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: 
 - **Search** — opens a search panel with an input field where you can type an object name. Below the field, there is a list of suggested objects in alphabetical order. You can switch the sorting between A–Z and Z–A. 
 - **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
+- **Magnitude filter** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
 - [**Configure View**](#configure-view).
 
-The screen renders the full sky hemisphere above your location, aligned with compass direction. The Star map can be rotated manually. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
+The screen renders the full sky hemisphere above your location, aligned with the compass direction. The Star map can be rotated manually by dragging the screen. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
+
+The Star map can also align with your device orientation when compass mode is enabled. In this mode, the sky rotates according to the device's accelerometer and compass sensors, allowing you to explore the sky by physically moving your phone.
 
 
 ## Celestial Object Info {#celestial-object-info}
@@ -81,20 +90,22 @@ This feature helps identify objects in real sky, plan observations, and learn as
 The **Astronomy** layer works with your **device camera** to enable **Augmented Reality (AR) stargazing**. Point your phone camera at the real night sky and see stars, planets, constellations, Sun/Moon overlaid in real-time.
 
 **How AR Star Finding works:**
-- **Live camera view** shows real sky with transparent astronomical overlays aligned to horizon/compass
-- **Move camera** to scan sky — objects highlight when they appear in your field of view
-- **Tap highlighted objects** to see azimuth, altitude, magnitude, rise/set times, and Wikipedia link
-- **Compass calibration** required for accurate alignment (wave phone in figure-8 if needed)
+- **Live camera view** shows real sky with transparent astronomical overlays aligned to horizon/compass.
+- **Move camera** to scan sky — objects highlight when they appear in your field of view.
+- **Tap highlighted objects** to see azimuth, altitude, magnitude, rise/set times, and Wikipedia link.
+- **Compass calibration** required for accurate alignment (wave phone in figure-8 if needed).
+
+The AR mode uses device sensors (gyroscope, accelerometer, and compass) to align celestial objects with the real sky.
 
 **Perfect for:**
-- Identifying faint stars/planets invisible to naked eye
-- Locating constellations by moving phone across sky
-- Real-time sky navigation during hikes or camping
+- Identifying faint stars/planets invisible to naked eye.
+- Locating constellations by moving phone across sky.
+- Real-time sky navigation during hikes or camping.
 
 
 ## Configure View {#configure-view}
 
-![Configure View](@site/static/img/plugins/starwatcher/half_state.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
 
 **Configure View** allows you to control how the Star map is displayed by enabling or disabling visual modes, objects, and rendering aids.
 
@@ -102,12 +113,12 @@ To open Configure View, tap the Configure View button in the bottom-right corner
 
 ### Modes and Actions {#modes-and-actions}
 
-![Configure View](@site/static/img/plugins/starwatcher/view_with_map.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter.png)
+![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
 
 This section controls the main display modes of the Star map.
 
-- **2D / 3D**. Switches the Star map between a flat (2D) view and a globe-like (3D) view.
-- **Map**. Enables an additional Earth map view displayed below the Star map, helping you relate celestial objects to your geographic location.
+- **2D / 3D**. Switches between a celestial path view (2D), which shows the sky as a projected dome with object paths, and a globe-style sky view (3D) representing the celestial sphere.
+- **Map**. Enables an additional Earth map view displayed below the Star map, allowing you to relate celestial objects to your real geographic surroundings.
 - **Red filter**. Applies a red color filter to the entire screen to reduce light pollution and preserve night vision during dark-sky observations.
 
 ### Visible Objects {#visible-objects}
