@@ -29,6 +29,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
+import { getVisibleBboxInfo } from './MapStateLayer';
 import { getObjIdSearch, SEARCH_ICON_MAP_LOCATION, SEARCH_LAYER_ID, searchTypeMap } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
@@ -552,7 +553,7 @@ export default function PoiLayer() {
                         poiIconCache: ctx.poiIconCache,
                         zoom,
                         reqId: reqIdRef.current,
-                        visibleBboxInfo: ctx.visibleBboxInfo,
+                        visibleBboxInfo: getVisibleBboxInfo(ctx, map),
                     });
                 }
             } else {
