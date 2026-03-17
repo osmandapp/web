@@ -53,10 +53,10 @@ The plugin works with both Map rendering engines but performs best in OpenGL mod
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: 
-- **Search** — opens a search panel with an input field where you can type an object name. Below the field, there is a list of suggested objects in alphabetical order. You can switch the sorting between A–Z and Z–A. 
+- [**Search**](#search) — opens the Explore screen where you can search for celestial objects and browse sky catalogs and categories. 
 - **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
 - **Magnitude filter** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
-- [**Configure View**](#configure-view).
+- [**Configure View**](#configure-view) — opens display settings that control how objects, paths, and reference lines are shown on the Star map.
 
 The screen renders the full sky hemisphere above your location, aligned with the compass direction. The Star map can be rotated manually by dragging the screen. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
 
@@ -250,7 +250,6 @@ This section lets you choose which types of celestial objects are shown on the S
 | Equator line | Displays the Earth's equatorial projection on the celestial sphere, helping visualize the Earth's rotation relative to the sky. |
 | Galactic line | Shows the plane of the Milky Way galaxy across the sky, indicating the main direction of the galactic disk. |
 
-
 <!-- 
 ## Astronomy Settings
 
@@ -272,6 +271,65 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 -->
 
+## Search {#search}
+
+![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+
+The **Search** feature in the Astronomy plugin allows you to find celestial objects, explore sky categories, and access observation data. To open Search, tap the Search button on the Star map. This opens the Explore screen, which provides several sections for discovering and organizing celestial objects. The Explore screen includes the following sections:
+
+**1. Watch now**
+
+The Watch now section highlights celestial objects that are visible right now or tonight. This section acts as a recommendation tool, showing objects that are best suited for observation based on your current location and time.
+
+**2. Categories**
+
+The Categories section allows you to browse objects by type: Solar system, Constellations, Stars, Nebulas, Star clusters, and Deep sky. Each category opens a list of objects with key information: object name, type or constellation, magnitude (brightness), and rise or set time (if applicable).
+
+### Sorting and Filters {#sorting-and-filters}
+
+![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+
+Tap the search bar to open the full search interface. You can refine results using sorting and filtering options.
+
+You can sort objects by:  
+- Name (A–Z or Z–A)
+- Brightest first
+- Faintest first
+- Rises soonest
+- Sets soonest
+
+Filters help narrow down visible objects.
+
+**Visibility**  
+- Show all — displays all objects
+- Visible now — objects currently above the horizon
+- Visible tonight — objects visible between sunset and sunrise
+
+**Additional filters**  
+- Naked eye visible — shows only objects with magnitude ≤ 6
+
+**Categories**  
+You can filter results by object type. Selecting specific categories automatically disables the All option.
+
+### My Data {#my-data}
+
+![My Data](@site/static/img/plugins/starwatcher/my_data.png)
+
+The My Data section contains objects that the user has interacted with. This section includes three lists:
+
+- Favorites — objects saved from the context menu.
+- Daily Path — objects for which the daily motion path is enabled.
+- Directions — objects with an active direction indicator on the Star map.
+
+Selecting an item opens the object's context menu.
+
+### Catalogs {#catalogs}
+
+![Catalogs](@site/static/img/plugins/starwatcher/catalogs.png)
+
+The Catalogs section provides access to astronomical catalogs available in the Astronomy plugin.
+
+Catalogs contain large collections of celestial objects such as stars, galaxies, nebulae, and star clusters. Opening a catalog displays a list of objects included in that catalog.
 
 ## Related Articles {#related-articles}
 
