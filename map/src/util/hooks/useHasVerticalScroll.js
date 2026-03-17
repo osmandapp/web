@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useWindowSize } from './useWindowSize';
 
-const DEBOUNCE_MS = 50;
-
 /**
  * Returns a ref for the scroll container and a hasVerticalScroll flag.
  * Attach the ref to an element with overflow: auto/scroll.
@@ -12,6 +10,8 @@ const DEBOUNCE_MS = 50;
 export function useHasVerticalScroll(deps = []) {
     const ref = useRef(null);
     const timerRef = useRef(null);
+
+    const DEBOUNCE_MS = 50;
 
     const [hasVerticalScroll, setHasVerticalScroll] = useState(false);
     const [, height] = useWindowSize();
