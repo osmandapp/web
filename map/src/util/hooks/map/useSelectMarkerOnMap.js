@@ -11,6 +11,7 @@ import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { iconPathMap } from '../../../map/util/MapManager';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
+import { TRANSPORT_STOPS_LAYER_ID } from '../../../map/layers/TransportStopsLayer';
 
 const EXPLORE_MAIN_MARKER_PIN_BACKGROUND = '#ffffff';
 
@@ -19,6 +20,7 @@ function extractLatlng(selectedWptId, type) {
     if (!obj) return null;
 
     if (type === FAVORITE_FILE_TYPE) return obj.getLatLng() ?? null;
+    if (type === TRANSPORT_STOPS_LAYER_ID) return obj.getLatLng?.() ?? null;
 
     const coords = obj.geometry?.coordinates;
     if (coords?.length >= 2) return { lat: coords[1], lng: coords[0] };
@@ -92,6 +94,11 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
+        if (type === TRANSPORT_STOPS_LAYER_ID && ctx.selectedWptId?.hoverFromMap) {
+            resetSelectedPin({ ctx, map });
+            return;
+        }
+
         const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
         if (found) {
             applyPinForLayer(found, false);
@@ -100,6 +107,8 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             const latlng = extractLatlng(ctx.selectedWptId, type);
             if (latlng) {
                 applyHoverPinFallback(latlng);
+            } else if (type === TRANSPORT_STOPS_LAYER_ID) {
+                resetSelectedPin({ ctx, map });
             }
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp]);
@@ -192,6 +201,15 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         const iconFromLayer = layer.options?.icon?.options?.html;
 
         let iconHtml;
+
+        if (layerType === TRANSPORT_STOPS_LAYER_ID) {
+            return {
+                color: layer.options?.color,
+                background: layer.options?.background,
+                iconHtml: layer.options?.svg,
+            };
+        }
+
         if (isSimpleDot) {
             iconHtml = iconHtmlFromIconName(layer.options?.[FINAL_POI_ICON_NAME]) ?? '';
         } else if (isSelection) {

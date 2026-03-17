@@ -10,7 +10,7 @@
 .topContainer {
     display: flex !important;
     min-height: 64px !important;
-    padding: 12px 16px !important;
+    padding: 16px 16px 12px 16px !important;
     align-items: center !important;
     gap: 18px !important;
     justify-content: space-between !important;

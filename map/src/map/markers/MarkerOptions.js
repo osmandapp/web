@@ -275,11 +275,28 @@ function parseSvgSize(svgHtml) {
 }
 
 function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
-    // Scale all numbers in path by shapeSize/oldShapeSize; keep command structure (M,L,H,V etc.) unchanged
     const scaleFactor = shapeSize / oldShapeSize;
-    const newPathData = pathData.replaceAll(/[-+]?\d*\.?\d+/g, (num) =>
-        Math.round(Number.parseFloat(num) * scaleFactor)
-    );
+    let arcN = 0; // 1..7 inside A/a (4th and 5th are flags, must stay 0 or 1)
+    const newPathData = pathData.replace(/([Aa])|([MLHVCSQTZmlhvcsqtz])|([-+]?\d*\.?\d+)/g, (m, isArc, isCmd, num) => {
+        if (isArc) {
+            arcN = 1;
+            return m;
+        }
+        if (isCmd) {
+            arcN = 0;
+            return m;
+        }
+        if (num !== undefined) {
+            const n = Number.parseFloat(num);
+            if (arcN >= 4 && arcN <= 5 && (n === 0 || n === 1)) {
+                arcN = arcN === 5 ? 0 : arcN + 1;
+                return num;
+            }
+            if (arcN >= 1) arcN = arcN >= 7 ? 0 : arcN + 1;
+            return String(Math.round(n * scaleFactor));
+        }
+        return m;
+    });
     return { newPathData, realWidth: shapeSize, realHeight: shapeSize };
 }
 
@@ -343,7 +360,6 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
 
     const scaleFactor = shapeSize / oldShapeSize;
     svgHtml = svgHtml.replace(pathPattern, (match, pathData) => {
-        // Update the sizes inside <path>
         const { newPathData, realWidth, realHeight } = replacePathDataAndCalculateSize(
             pathData,
             shapeSize,
