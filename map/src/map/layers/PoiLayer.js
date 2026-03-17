@@ -381,7 +381,7 @@ export default function PoiLayer() {
         }
     }
 
-    async function getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox) {
+    async function getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox, prevCategories) {
         if (!showPoiCategories || showPoiCategories.length === 0) {
             return null;
         }
@@ -456,6 +456,7 @@ export default function PoiLayer() {
                 poiList,
                 showPoiCategories,
                 savedBbox,
+                prevCategories,
                 poiIconCache,
                 zoom,
                 reqId,
@@ -469,7 +470,7 @@ export default function PoiLayer() {
                 const bbox = visibleBboxInfo.bounds;
                 const notifyTimeout = showProcessingNotification(ctx);
                 try {
-                    const res = await getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox);
+                    const res = await getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox, prevCategories);
                     if (reqId !== reqIdRef.current || ignore) return;
                     if (res) {
                         if (!res.alreadyFound && res.features) {
@@ -547,6 +548,7 @@ export default function PoiLayer() {
                         poiList,
                         showPoiCategories: ctx.showPoiCategories,
                         savedBbox: bbox,
+                        prevCategories,
                         poiIconCache: ctx.poiIconCache,
                         zoom,
                         reqId: reqIdRef.current,
