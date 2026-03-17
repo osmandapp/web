@@ -618,7 +618,6 @@ export default function PoiLayer() {
                 hideMarkersNearPin(map, ctx);
             }
             addToSearchRes(poiList);
-            setMove(false);
         }
     }, [poiList, ctx.processingSearch]);
 

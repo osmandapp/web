@@ -12,12 +12,10 @@ const useZoomMoveMapHandlers = (map, onZoomChange, onMapMove) => {
 
         if (map) {
             map.on('zoomend', handleZoomEnd);
-            map.on('dragend', handleMapMoveEnd);
             map.on('moveend', handleMapMoveEnd);
 
             return () => {
                 map.off('zoomend', handleZoomEnd);
-                map.off('dragend', handleMapMoveEnd);
                 map.off('moveend', handleMapMoveEnd);
             };
         }
