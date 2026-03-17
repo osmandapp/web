@@ -196,7 +196,7 @@ This part contains a part of the description from [Wikipedia article](../plugins
 
 <TabItem value="ios" label="iOS">
 
-![Alternative names Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternative names Android](@site/static/img/map/alternative_names_2_ios.png)
+![Alternative names iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Alternative names iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -227,7 +227,7 @@ Features of alternative names display:
 
 <TabItem value="ios" label="iOS">
 
-![Polygon Information Android](@site/static/img/map/polygon_information_ios.png)
+![Polygon Information Android](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -359,7 +359,7 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Online Photos context menu iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
