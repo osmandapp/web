@@ -45,7 +45,7 @@ export default function InstallBanner({ showInstallBanner }) {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    fontFamily: isIos ? 'system-ui' : 'Roboto',
+                    fontFamily: isIos ? 'system-ui' : 'var(--font-family-primary)',
                     overflow: 'hidden',
                     px: 2,
                 }}

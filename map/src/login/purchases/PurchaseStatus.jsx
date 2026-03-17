@@ -60,7 +60,7 @@ export default function PurchaseStatus({ id, status }) {
                 boxShadow: 'none',
                 cursor: 'default',
                 textAlign: 'center',
-                fontFamily: 'Roboto',
+                fontFamily: 'var(--font-family-primary)',
                 fontSize: '14px',
                 fontStyle: 'normal',
                 fontWeight: 500,

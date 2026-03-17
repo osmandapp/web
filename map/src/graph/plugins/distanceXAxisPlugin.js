@@ -1,3 +1,4 @@
+import { getPrimaryFontFamily } from '../GraphManager';
 import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
 
 const TICK_TOLERANCE = 0.0001; // Tolerance for floating point comparison when checking duplicate ticks
@@ -155,7 +156,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
             }
 
             // Draw distance labels with proper alignment
-            ctx.font = '500 10px Roboto, sans-serif';
+            ctx.font = `500 10px ${getPrimaryFontFamily()}, sans-serif`;
             ctx.fillStyle = '#757575';
             ctx.letterSpacing = '0.1px';
 

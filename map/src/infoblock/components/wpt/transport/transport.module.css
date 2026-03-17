@@ -29,7 +29,6 @@
     align-items: center !important;
     justify-content: center !important;
     color: white !important;
-    font-family: Roboto !important;
     font-size: 20px !important;
     font-weight: 500 !important;
     line-height: 140% !important;
@@ -51,7 +50,6 @@
 .routeDetailsName {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-weight: 500 !important;
     line-height: 120% !important;
@@ -78,7 +76,6 @@
     align-items: center !important;
     justify-content: center !important;
     color: white !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 140% !important;
@@ -117,7 +114,6 @@
 .stopRouteName {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 150% !important;
@@ -126,7 +122,6 @@
 
 .stopRouteInfo {
     color: #666 !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 140% !important;
@@ -150,7 +145,6 @@
     align-items: center !important;
     justify-content: center !important;
     color: white !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 140% !important;
@@ -201,7 +195,6 @@
     border: 1px solid #CCC !important;
     background: #fff !important;
     color: #237BFF !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     text-transform: none !important;
@@ -233,7 +226,6 @@
 .stopsListHeaderTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-weight: 500 !important;
     line-height: 150% !important;
@@ -244,7 +236,6 @@
     color: var(--text-secondary) !important;
     text-align: right !important;
     font-feature-settings: 'liga' off !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 150% !important;

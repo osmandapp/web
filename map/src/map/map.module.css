@@ -83,7 +83,7 @@
     left: 69%;
     top: 49%;
     transform: translate(-50%, -50%);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-family-primary), system-ui, -apple-system, sans-serif;
     font-size: 10px;
     font-style: normal;
     font-weight: 700;
