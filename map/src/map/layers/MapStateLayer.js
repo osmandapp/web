@@ -6,6 +6,7 @@ import AppContext from '../../context/AppContext';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
+import { initialPosition, initialZoom } from '../components/LocationControl';
 
 export function getVisibleBboxInfo(ctx, map) {
     if (ctx.visibleBboxInfo) return ctx.visibleBboxInfo;
@@ -39,7 +40,7 @@ export default function MapStateLayer() {
             const { topLeft, bottomRight, centerPx } = calcVisibleBboxParamsPx(map, ctx) ?? {};
 
             const visible = calcVisibleBbox(topLeft, bottomRight);
-            if (visible) {
+            if (visible && !isInitialViewWithEmptyContext(visible, map, ctx.visibleBboxInfo)) {
                 ctx.setVisibleBboxInfo(visible);
             }
             setCenterPositionPx(centerPx);
@@ -68,6 +69,15 @@ export default function MapStateLayer() {
         >
             <CenterIcon width={CENTRE_ICON_SIZE} height={CENTRE_ICON_SIZE} />
         </div>
+    );
+}
+
+function isInitialViewWithEmptyContext(visible, map, visibleBboxInfo) {
+    return (
+        !visibleBboxInfo &&
+        map.getZoom() === initialZoom &&
+        Math.abs(visible.center.lat - initialPosition[0]) < 0.01 &&
+        Math.abs(visible.center.lng - initialPosition[1]) < 0.01
     );
 }
 
