@@ -496,7 +496,7 @@ export default function PoiLayer() {
                                 zoom,
                             });
                             const existing = findFeatureGroupById(map, POI_LAYER_ID);
-                            if (existing) {
+                            if (existing && !res.alreadyFound) {
                                 map.removeLayer(existing);
                             }
                             setPoiList({
