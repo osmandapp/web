@@ -245,6 +245,8 @@ const TransportStopsLayer = () => {
         }, []),
         type: TRANSPORT_STOPS_LAYER_ID,
         map,
+        zoom,
+        move,
     });
 
     useZoomMoveMapHandlers(map, setZoom, setMove);

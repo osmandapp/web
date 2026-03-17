@@ -202,6 +202,8 @@ export default function PoiLayer() {
         getLayers: getPoiLayers,
         type: POI_LAYER_ID,
         map,
+        zoom,
+        move,
     });
 
     useEffect(() => {
@@ -474,10 +476,21 @@ export default function PoiLayer() {
                     const res = await getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox, prevCategories);
                     if (reqId !== reqIdRef.current || ignore) return;
                     if (res) {
-                        if (!res.alreadyFound && res.features) {
+                        let features = null;
+                        let listFeatures = null;
+
+                        if (res.features?.features?.length > 0) {
+                            features = res.features.features;
+                            listFeatures = res.features;
+                        } else if (res.alreadyFound && poiList?.listFeatures?.features?.length > 0) {
+                            features = poiList.listFeatures.features;
+                            listFeatures = poiList.listFeatures;
+                        }
+
+                        if (features?.length && listFeatures) {
                             const layer = await createPoiLayer({
                                 ctx,
-                                poiList: res.features.features,
+                                poiList: features,
                                 globalPoiIconCache: poiIconCache,
                                 map,
                                 zoom,
@@ -486,15 +499,14 @@ export default function PoiLayer() {
                             if (existing) {
                                 map.removeLayer(existing);
                             }
-                            const newPoiList = {
+                            setPoiList({
                                 prevLayer: cloneDeep(poiList?.layer),
                                 layer,
-                                listFeatures: res.features,
-                            };
-                            setPoiList(newPoiList);
+                                listFeatures,
+                            });
                             setBbox(bbox);
                             setPrevCategories(showPoiCategories);
-                            setUseLimit(res.useLimit);
+                            setUseLimit(res.useLimit ?? false);
                         }
                     } else {
                         setPoiList(null);
@@ -608,7 +620,6 @@ export default function PoiLayer() {
                 hideMarkersNearPin(map, ctx);
             }
             addToSearchRes(poiList);
-            setMove(false);
         }
     }, [poiList, ctx.processingSearch]);
 

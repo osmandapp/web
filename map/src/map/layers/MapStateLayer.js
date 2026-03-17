@@ -50,7 +50,7 @@ export default function MapStateLayer() {
 
         map.on('resize', update);
         return () => map.off('resize', update);
-    }, [zoom, move, map, ctx.infoBlockWidth]);
+    }, [zoom, move, ctx.infoBlockWidth]);
 
     if (!pathname.includes(SEARCH_RESULT_URL) || !ctx.visibleBboxInfo?.center || !centerPositionPx) {
         return null;
