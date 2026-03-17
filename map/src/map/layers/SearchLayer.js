@@ -97,6 +97,8 @@ export default function SearchLayer() {
         getLayers: getSearchLayers,
         type: SEARCH_LAYER_ID,
         map,
+        zoom,
+        move,
     });
 
     useEffect(() => {

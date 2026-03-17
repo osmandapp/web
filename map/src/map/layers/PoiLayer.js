@@ -202,6 +202,8 @@ export default function PoiLayer() {
         getLayers: getPoiLayers,
         type: POI_LAYER_ID,
         map,
+        zoom,
+        move,
     });
 
     useEffect(() => {

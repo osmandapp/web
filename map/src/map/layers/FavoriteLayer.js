@@ -85,7 +85,7 @@ const FavoriteLayer = () => {
         [ctx.favorites]
     );
 
-    useSelectMarkerOnMap({ ctx, getLayers: getFavoriteLayers, type: FAVORITE_FILE_TYPE, map });
+    useSelectMarkerOnMap({ ctx, getLayers: getFavoriteLayers, type: FAVORITE_FILE_TYPE, map, zoom, move });
 
     const openGroupId = useMemo(() => {
         const folderName = searchParams.get(FAVORITES_URL_PARAM_FOLDER);

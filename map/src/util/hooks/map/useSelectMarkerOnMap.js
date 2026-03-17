@@ -53,7 +53,7 @@ function findLayerById(layers, id) {
     );
 }
 
-export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map }) {
+export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map, zoom, move }) {
     const selectedObjId = ctx.selectedWpt?.id ?? null;
 
     const hoverId =
@@ -63,6 +63,15 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         ctx.selectedWptId?.id != null
             ? ctx.selectedWptId.id
             : null;
+
+    useEffect(() => {
+        if (zoom === undefined || move === undefined) return;
+
+        if (ctx.selectedWpt?.id != null) return;
+        if (ctx.selectedWptId?.type !== type || ctx.selectedWptId?.show !== true) return;
+
+        ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
+    }, [type, zoom, move]);
 
     // ========== SELECTED PIN ==========
     useEffect(() => {
