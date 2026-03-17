@@ -53,7 +53,7 @@ The plugin works with both Map rendering engines but performs best in OpenGL mod
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 The dedicated **Star map screen** shows interactive celestial dome with stars, constellations, planets, Sun and Moon paths. At the bottom of the screen, you can access the following controls: 
-- [**Search**](#search) — opens the Explore screen where you can search for celestial objects and browse sky catalogs and categories. 
+- [**Search**](#search) — opens the Search screen where you can search for celestial objects and browse sky catalogs and categories. 
 - **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
 - **Magnitude filter** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
 - [**Configure View**](#configure-view) — opens display settings that control how objects, paths, and reference lines are shown on the Star map.
@@ -275,7 +275,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 ![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
 
-The **Search** feature in the Astronomy plugin allows you to find celestial objects, explore sky categories, and access observation data. To open Search, tap the Search button on the Star map. This opens the Explore screen, which provides several sections for discovering and organizing celestial objects. The Explore screen includes the following sections:
+The **Search** feature in the Astronomy plugin allows you to find celestial objects, explore sky categories, and access observation data. To open Search, tap the Search button on the Star map. This opens the Search screen, which provides several sections for discovering and organizing celestial objects. The Search screen includes the following sections:
 
 **1. Watch now**
 
