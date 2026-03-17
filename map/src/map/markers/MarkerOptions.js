@@ -293,7 +293,8 @@ function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
                 return num;
             }
             if (arcN >= 1) arcN = arcN >= 7 ? 0 : arcN + 1;
-            return String(Math.round(n * scaleFactor));
+            const scaled = n * scaleFactor;
+            return String(Math.round(scaled * 100) / 100);
         }
         return m;
     });
