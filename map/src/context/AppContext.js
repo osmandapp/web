@@ -56,6 +56,7 @@ export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
+export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
@@ -402,6 +403,7 @@ export const AppContextProvider = (props) => {
     const [processingSearch, setProcessingSearch] = useState(false);
     const [moveToMapObj, setMoveToMapObj] = useState(null);
     const [visibleBounds, setVisibleBounds] = useState(null);
+    const [visibleBboxInfo, setVisibleBboxInfo] = useState(null);
     const [exploreMenu, setExploreMenu] = useState(false);
     const [poiCatMenu, setPoiCatMenu] = useState(false);
     const [poiByUrl, setPoiByUrl] = useState(null);
@@ -525,7 +527,14 @@ export const AppContextProvider = (props) => {
     const [selectedWptId, setSelectedWptId] = useState(null);
 
     const [navigationHistory, setNavigationHistory] = useState([]);
-    const [previousRoute, setPreviousRoute] = useState(null);
+    const [previousRoute, setPreviousRoute] = useState(() => {
+        try {
+            const s = localStorage.getItem(PREVIOUS_ROUTE_STORAGE_KEY);
+            return s ? JSON.parse(s) : null;
+        } catch {
+            return null;
+        }
+    });
 
     routeObject.initSetter({ setter: setRouteObject });
     trackRouter.initSetter({ setter: setTrackRouter });
@@ -975,6 +984,8 @@ export const AppContextProvider = (props) => {
                 setSelectedCloudTrackObj,
                 visibleBounds,
                 setVisibleBounds,
+                visibleBboxInfo,
+                setVisibleBboxInfo,
                 exploreMenu,
                 setExploreMenu,
                 openTravel,

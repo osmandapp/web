@@ -17,12 +17,14 @@ import {
     EXPLORE_BIG_ICON_SIZE,
     removeTooltip,
     SIMPLE_ICON_SIZE,
+    EXPLORE_BIG_REAL_ICON_SIZE,
 } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import { hideMarkersNearPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem';
-import { getVisibleBbox, panToIfNeeded } from '../util/MapManager';
+import { getVisibleBboxInfo } from './MapStateLayer';
+import { panToIfNeeded } from '../util/MapManager';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { getIconNameForPoiType, navigateToPoi } from '../../manager/PoiManager';
@@ -33,7 +35,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
-import { NAVIGATE_URL } from '../../manager/GlobalManager';
+import { MARKER_Z_INDEX_MAIN, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
@@ -249,11 +251,12 @@ export default function ExploreLayer() {
                 return;
             }
             setLoadingContextMenu(true);
-            const bbox = getVisibleBbox(map, ctx);
-            if (!bbox) {
+            const visible = getVisibleBboxInfo(ctx, map);
+            if (!visible) {
                 setLoadingContextMenu(false);
                 return;
             }
+            const bbox = visible.bounds;
             const api = settings?.useWikiImages ? API_GET_IMGS : API_GET_OBJS;
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/${api}`, {
                 apiCache: true,
@@ -406,6 +409,7 @@ export default function ExploreLayer() {
                         const icon = L.icon({
                             iconUrl: photoUrl,
                             iconSize: [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE],
+                            iconAnchor: [EXPLORE_BIG_REAL_ICON_SIZE / 2, EXPLORE_BIG_REAL_ICON_SIZE / 2],
                             className: `${styles.wikiIconLarge} ${styles.wikiIcon}`,
                         });
                         const marker = L.marker(latlng, {
@@ -461,7 +465,7 @@ export default function ExploreLayer() {
                     if (ctx.exploreMenu || ctx.searchSettings.showExploreMarkers || ctx.searchSettings.useWikiImages) {
                         otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                         mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
-                        updateMarkerZIndex(mainIconsLayerRef.current, 2000);
+                        updateMarkerZIndex(mainIconsLayerRef.current, MARKER_Z_INDEX_MAIN);
                         map.fire('explore-layers-updated');
                         setOtherIconsLayer(otherIconsLayerRef.current);
                         setMainIconsLayer(mainIconsLayerRef.current);

@@ -501,15 +501,13 @@ Read more about [markers here](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-| Versions up to Android 14 | 14+ Android |
-|:------------|:---------------|
-| ![Share action Android](@site/static/img/map/action_share_1_andr.png) | ![Share action Android](@site/static/img/map/action_share_2_andr.png) |
+![Share action Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Share action iOS](@site/static/img/map/action_share_1_ios.png)
+![Share action iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -520,6 +518,8 @@ The OsmAnd app allows you to **<Translate android="true" ids="shared_string_shar
 Available options to share the location:
 
 - ***Send***. Sends text through apps available on your device. Includes all information about the location: My location name or the name of the selected POI, address, coordinates, and geolocation as a link.
+- ***Copy link***. Copies a link to the selected location to the clipboard.  
+Example: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Copy***. Copies all location information (My location name or name of the selected POI, address, coordinates, and geolocation as a link) to the clipboard.  
 - ***Copy address***. Copies only address information to the clipboard.
 - ***Copy POI name***. Copies only POI name or address if there is no name to the clipboard.

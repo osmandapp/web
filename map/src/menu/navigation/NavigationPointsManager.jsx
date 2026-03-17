@@ -13,7 +13,7 @@ import { MAIN_URL_WITH_SLASH, NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { apiGet } from '../../util/HttpApi';
 import { parseCoordinates } from '../analyzer/util/PointsManager';
-import { getCenterMapLoc } from '../../manager/MapManager';
+import { getMapCenter } from '../../map/layers/MapStateLayer';
 
 export function formatLatLon(pnt) {
     if (!pnt) {
@@ -75,7 +75,7 @@ export default function NavigationPointsManager() {
 
     const location = useLocation();
     const navObject = ctx.navigationObject;
-    const centrePoint = getCenterMapLoc(location.hash);
+    const centrePoint = getMapCenter(ctx, location.hash);
 
     const startPoint = navObject.getOption(ROUTE_POINTS_START);
     const finishPoint = navObject.getOption(ROUTE_POINTS_FINISH);

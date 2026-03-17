@@ -11,6 +11,7 @@ import {
     HEADER_SIZE,
     MAIN_URL_WITH_SLASH,
     POI_CATEGORIES_URL,
+    SEARCH_RESULT_URL,
     SEARCH_URL,
 } from '../../manager/GlobalManager';
 import { matchPath, useLocation, useNavigate } from 'react-router-dom';
@@ -44,19 +45,23 @@ export default function SearchMenu() {
 
     const [, height] = useWindowSize();
 
-    const { navigateToSearchResults, isSearchResultRoute } = useSearchNav();
+    const { navigateToSearchResults } = useSearchNav();
     const location = useLocation();
 
+    const isSearchResultRoute = matchPath(
+        { path: MAIN_URL_WITH_SLASH + SEARCH_URL + SEARCH_RESULT_URL + '*' },
+        globalThis.location.pathname
+    );
     const showExploreOutlet = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' },
-        location.pathname
+        globalThis.location.pathname
     );
 
-    const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + SEARCH_URL + '*' }, location.pathname);
+    const isMainMenu = matchPath({ path: MAIN_URL_WITH_SLASH + SEARCH_URL + '*' }, globalThis.location.pathname);
 
     const isPoiCategoriesRoute = matchPath(
         { path: MAIN_URL_WITH_SLASH + SEARCH_URL + POI_CATEGORIES_URL + '*' },
-        location.pathname
+        globalThis.location.pathname
     );
 
     const navigate = useNavigate();

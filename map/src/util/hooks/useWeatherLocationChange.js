@@ -7,7 +7,7 @@ import {
 } from '../../manager/WeatherManager';
 import { useEffect } from 'react';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
-import { getCenterMapLoc } from '../../manager/MapManager';
+import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { apiGet } from '../HttpApi';
 
 export const useWeatherLocationChange = ({
@@ -36,7 +36,7 @@ export const useWeatherLocationChange = ({
                 });
             }
         } else {
-            const center = getCenterMapLoc(delayedHash);
+            const center = getMapCenter(ctx, delayedHash);
             if (center) {
                 fetchAddress({ point: center, useMapBbox: true }).then((obj) => {
                     if (obj) {

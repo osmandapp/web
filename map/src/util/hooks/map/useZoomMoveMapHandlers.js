@@ -6,17 +6,19 @@ const useZoomMoveMapHandlers = (map, onZoomChange, onMapMove) => {
             onZoomChange(map.getZoom());
         };
 
-        const handleDragEnd = () => {
-            onMapMove(true);
+        const handleMapMoveEnd = () => {
+            onMapMove(Date.now());
         };
 
         if (map) {
             map.on('zoomend', handleZoomEnd);
-            map.on('dragend', handleDragEnd);
+            map.on('dragend', handleMapMoveEnd);
+            map.on('moveend', handleMapMoveEnd);
 
             return () => {
                 map.off('zoomend', handleZoomEnd);
-                map.off('dragend', handleDragEnd);
+                map.off('dragend', handleMapMoveEnd);
+                map.off('moveend', handleMapMoveEnd);
             };
         }
     }, []);

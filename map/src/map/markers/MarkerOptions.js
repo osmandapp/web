@@ -147,7 +147,11 @@ export function createPoiIcon({
                    <image width="${isize}" height="${isize}" href="/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${DEFAULT_WPT_ICON}.svg" />
                    </svg>`;
     }
-    return L.divIcon({ html: html });
+    return L.divIcon({
+        html,
+        iconSize: [allIconSize, allIconSize],
+        iconAnchor: [allIconSize / 2, allIconSize / 2],
+    });
 }
 
 export function getPoiCategoryIcon({ icon, color, background }) {
@@ -354,20 +358,23 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
         return `<circle ${prefix} cx="${newCx}" ${middle} cy="${newCy}" ${middle2} r="${newR}" ${suffix}/>`;
     });
 
+    const scaleFactor = shapeSize / oldShapeSize;
     svgHtml = svgHtml.replace(pathPattern, (match, pathData) => {
         const { newPathData, realWidth, realHeight } = replacePathDataAndCalculateSize(
             pathData,
             shapeSize,
             oldShapeSize
         );
-        const fillPattern = /fill="([^"]*)"/;
-        const oldFillMatch = match.match(fillPattern);
-        const oldFill = oldFillMatch ? oldFillMatch[1] : '';
-
         nestedBHeight = realHeight;
         nestedBWidth = realWidth;
+        // Preserve all path attributes (fill-rule, clip-rule, fill, stroke, etc.), only replace d
+        return match.replace(/d="[^"]*"/, `d="${newPathData}"`);
+    });
 
-        return `<path d="${newPathData}" fill="${oldFill}"/>`;
+    // Scale stroke-width so thick strokes (e.g. 33 in 580 viewBox) don't fill the whole icon in 36 viewBox
+    svgHtml = svgHtml.replace(/stroke-width="([\d.]+)"/g, (_, w) => {
+        const scaled = parseFloat(w) * scaleFactor;
+        return `stroke-width="${Math.max(0.5, Math.round(scaled * 100) / 100)}"`;
     });
 
     svgHtml = svgHtml.replace(rectPattern, (match, prefix, width, middle, height, middle2, rx, suffix) => {

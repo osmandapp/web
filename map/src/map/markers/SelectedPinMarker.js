@@ -31,7 +31,7 @@ const SHAPES = {
         color: HexagonColor,
         light: HexagonLight,
         stroke: HexagonStroke,
-        iconOffsetRatio: 0.05,
+        iconOffsetRatio: 0.085,
     },
 };
 
@@ -69,7 +69,7 @@ export function createLayeredPinIcon(options = {}) {
         shape: DEFAULT_POI_SHAPE,
         ...options,
     };
-    const { color, shape, size, iconSize, iconHtml, className, iconAnchor } = merged;
+    const { color, shape, size, iconSize, iconHtml, className, iconAnchor, invertIcon } = merged;
     const shapeAssets = SHAPES[shape] ?? SHAPES[DEFAULT_POI_SHAPE];
 
     const colorSvg = renderToStaticMarkup(React.createElement(shapeAssets.color));
@@ -97,7 +97,7 @@ export function createLayeredPinIcon(options = {}) {
             </div>
             ${
                 markerIconHtml
-                    ? `<div class="map-layered-pin__icon" style="position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) translateY(${translateY}px);width:${iconWrapperSize}px;height:${iconWrapperSize}px;display:flex;align-items:center;justify-content:center;">
+                    ? `<div class="map-layered-pin__icon" style="position:absolute;left:50%;top:50%;transform:translate(-50%, -50%) translateY(${translateY}px);width:${iconWrapperSize}px;height:${iconWrapperSize}px;display:flex;align-items:center;justify-content:center;${invertIcon ? 'filter:brightness(0) invert(1);' : ''}">
                             ${markerIconHtml}
                        </div>`
                     : ''

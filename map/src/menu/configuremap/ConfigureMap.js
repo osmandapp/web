@@ -132,7 +132,9 @@ export default function ConfigureMap() {
                                         setOpenPoiConfig(true);
                                     }}
                                 >
-                                    <ListItemIcon className={setIconStyles((ctx.configureMapState.pois?.length ?? 0) > 0)}>
+                                    <ListItemIcon
+                                        className={setIconStyles((ctx.configureMapState.pois?.length ?? 0) > 0)}
+                                    >
                                         <PoiIcon />
                                     </ListItemIcon>
                                     <ListItemText>
@@ -313,11 +315,7 @@ export default function ConfigureMap() {
                             >
                                 <CloseIcon />
                             </IconButton>
-                            <Typography
-                                id="se-configure-map-menu-name"
-                                component="div"
-                                className={headerStyles.title}
-                            >
+                            <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                                 {t('configure_map')}
                             </Typography>
                             {ltx.loginUser && (

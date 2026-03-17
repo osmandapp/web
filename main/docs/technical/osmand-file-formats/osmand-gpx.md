@@ -35,6 +35,12 @@ GPX files in OsmAnd organize data hierarchically into the following elements:
 - `<rte>` - represents routes, including waypoints and key points.
 - `<wpt>` - represents individual waypoints.
 
+#### GPX Import Behavior
+
+When importing a GPX file, OsmAnd creates a single track object based on the file:
+- The name of the imported track is derived from the GPX file name. The `<name>` element inside `<trk>` is not used as the primary track name during import.
+- If a GPX file contains multiple `<trk>` elements, OsmAnd imports them as segments of the same track. In this case, the `<name>` values may be used as labels for the corresponding segments within the track.
+
 
 ## Track Customization {#track-customization}
 

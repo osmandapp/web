@@ -98,7 +98,7 @@ import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearch
 import { useLocation, useNavigate } from 'react-router-dom';
 import DistanceInfo from './DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
-import { getCenterMapLoc } from '../../../manager/MapManager';
+import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
@@ -207,7 +207,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
             return { distance: null, bearing: null };
         }
-        const mapCenter = getCenterMapLoc(hash);
+        const mapCenter = getMapCenter(ctx, hash);
         if (!mapCenter) {
             return { distance: null, bearing: null };
         }

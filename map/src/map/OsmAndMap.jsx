@@ -19,6 +19,7 @@ import { useWindowSize } from '../util/hooks/useWindowSize';
 import CustomTileLayer from './layers/CustomTileLayer';
 import ExploreLayer from './layers/ExploreLayer';
 import SearchLayer from './layers/SearchLayer';
+import MapStateLayer from './layers/MapStateLayer';
 import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
@@ -210,6 +211,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <GraphLayer />
                 <PoiLayer />
                 <SearchLayer />
+                <MapStateLayer />
                 <ExploreLayer />
                 <TransportStopsLayer />
                 <CustomTileLayer
