@@ -143,7 +143,6 @@
 
 .sliderTitle {
     color: var(--text-primary) !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -151,7 +150,6 @@
 
 .sliderValue {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 13px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -165,7 +163,6 @@
 
 .sliderBoundValue {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 11px !important;
     font-style: normal !important;
     font-weight: 400 !important;

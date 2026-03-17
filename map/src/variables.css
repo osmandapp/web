@@ -1,4 +1,5 @@
 :root {
+    --font-family-primary: Inter;
     --selected-color: #237bff;
     --background-color-menu: #ffffff;
     --menu-button-height: 77px;

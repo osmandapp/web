@@ -47,7 +47,6 @@
     max-width: 350px !important;
 }
 .descText {
-    font-family: Roboto !important;
     color: var(--text-secondary) !important;
     font-size: 14px !important;
     font-style: normal !important;
@@ -62,7 +61,6 @@
 }
 .wptCategoryText {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
 }

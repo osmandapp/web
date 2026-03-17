@@ -18,7 +18,6 @@
     font-weight: 500 !important;
     line-height: 120% !important;
     letter-spacing: 0.16px !important;
-    font-family: Roboto, Helvetica, Arial, sans-serif !important;
 }
 .text {
     color: var(--text-secondary) !important;
@@ -28,7 +27,6 @@
     font-weight: 400 !important;
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
-    font-family: Roboto, Helvetica, Arial, sans-serif !important;
 }
 .button {
     display: flex !important;

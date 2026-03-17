@@ -1,3 +1,5 @@
+import { getPrimaryFontFamily } from '../GraphManager';
+
 const GRID_LINES_COUNT = 3; // Number of horizontal grid lines to draw (top, middle, bottom)
 
 /**
@@ -58,7 +60,7 @@ export function createCombinedYAxisLabelsPlugin(axes) {
 
             // Draw combined colored labels on the right side
             ctx.save();
-            ctx.font = '500 10px Roboto, sans-serif';
+            ctx.font = `500 10px ${getPrimaryFontFamily()}, sans-serif`;
             ctx.letterSpacing = '0.1px';
             ctx.textAlign = 'left';
 

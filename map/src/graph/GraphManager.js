@@ -6,6 +6,11 @@ import Utils from '../util/Utils';
 import { Interaction } from 'chart.js';
 import { getRelativePosition } from 'chart.js/helpers';
 
+export function getPrimaryFontFamily() {
+    if (typeof document === 'undefined') return 'Inter';
+    return getComputedStyle(document.documentElement).getPropertyValue('--font-family-primary').trim() || 'Inter';
+}
+
 //road attributes
 export const HIGHWAY = 'highway';
 export const SURFACE = 'surface';

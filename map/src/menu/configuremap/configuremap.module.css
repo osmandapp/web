@@ -74,14 +74,12 @@
 }
 .terrainSliderTitle {
     color: var(--text-primary) !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 400 !important;
 }
 .terrainSliderValue {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 400 !important;

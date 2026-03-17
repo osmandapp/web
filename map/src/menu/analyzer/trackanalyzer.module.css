@@ -94,7 +94,6 @@
 .errorTitle {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 500 !important;
@@ -104,7 +103,6 @@
 .errorText {
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 400 !important;
