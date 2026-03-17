@@ -102,7 +102,20 @@ function calcVisibleBbox(topLeft, bottomRight) {
     const bounds = L.latLngBounds(topLeft, bottomRight);
     const center = bounds.getCenter();
 
-    return { bounds, center: { lat: center.lat, lng: center.lng } };
+    return {
+        bounds: L.latLngBounds(
+            [roundTo(bounds.getSouth()), roundTo(bounds.getWest())],
+            [roundTo(bounds.getNorth()), roundTo(bounds.getEast())]
+        ),
+        center: {
+            lat: roundTo(center.lat),
+            lng: roundTo(center.lng),
+        },
+    };
+}
+
+function roundTo(num, precision = 6) {
+    return Number.parseFloat(Number(num).toFixed(precision));
 }
 
 function getCenterMapLocByHash(hash) {
