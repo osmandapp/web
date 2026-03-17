@@ -8,10 +8,10 @@ import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers'
 import { ReactComponent as CenterIcon } from '../../assets/icons/map_ruler_center_day.svg';
 import { initialPosition, initialZoom } from '../components/LocationControl';
 
+// In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
-    if (ctx.visibleBboxInfo) return ctx.visibleBboxInfo;
     const params = calcVisibleBboxParamsPx(map, ctx);
-    return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : null;
+    return params ? calcVisibleBbox(params.topLeft, params.bottomRight) : (ctx.visibleBboxInfo ?? null);
 }
 
 export function getMapCenter(ctx, hash) {
