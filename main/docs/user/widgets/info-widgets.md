@@ -559,7 +559,7 @@ To add Vehicle Metrics Widgets to the map screen, enable the OsmAnd [Vehicle Met
 </Tabs>
 
 
-The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view information from a connected OBD-II scanner, such as (*14 metrics*): **Intake Temperature**,&nbsp; **Ambient Temperature**,&nbsp; **Coolant Temperature**,&nbsp; **Engine Oil Temperature**,&nbsp; **Engine Speed** (*free*),&nbsp; **Engine Runtime**,&nbsp; **Calculated Engine Load**,&nbsp; **Fuel Pressure**,&nbsp; **Fuel Consumption**,&nbsp; **Remaining Fuel**,&nbsp; **Battery Level**,&nbsp; **Adapter Voltage**,&nbsp; **Vehicle Speed** (*free*), and **Throttle Position**.  
+The widgets belong to the [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view information from a connected OBD-II scanner, such as (*14 metrics*): **Adapter voltage** (*Android only*),&nbsp; **Ambient Temperature**,&nbsp; **Battery voltage**,&nbsp; **Calculated Engine Load**,&nbsp; **Coolant temperature**,&nbsp; **Engine Oil Temperature**,&nbsp; **Engine Runtime**,&nbsp; **Engine speed** (*free*),&nbsp; **Fuel consumption**,&nbsp; **Fuel pressure**,&nbsp; **Intake temperature**,&nbsp; **Remaining fuel**,&nbsp; **Throttle Position**, and **Vehicle speed** (*free*).  
 
 - To add vehicle metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **Vehicle Metrics plugin**.
 - You can add widgets even if no OBD-II scanner is connected.
