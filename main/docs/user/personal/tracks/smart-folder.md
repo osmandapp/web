@@ -182,7 +182,13 @@ The **Smart folder** is displayed with a unique icon in the folder list in the T
 You can also open the folder and tap the *three-dot menu* in the *top-right corner* to access additional actions:
 
 - **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
-- **Organize by** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. For numeric parameters (such as distance, duration, speed, or altitude), a *Set step size* dialog is available. Use the slider to define value ranges for grouping.
+- **Organize by** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
+
+Some grouping parameters are available only with an OsmAnd Pro subscription. Free parameters include *Activity*, *Year of creation*, and *Nearest city*. All other parameters are marked with a <ProFeature/> label.
+
+For numeric parameters (such as distance, duration, speed, or altitude), a *Set step size* dialog is available. Use the slider to define value ranges for grouping.
+
+For PRO parameters, you can preview the grouping setup (for example, open the step size selector and see how tracks are grouped), but applying these changes requires an active subscription. If you select a PRO parameter or tap the Unlock button, the Choose plan screen will open. Previously applied grouping remains visible even if the subscription expires, but editing or applying new PRO-based grouping requires an active subscription.
 
 </TabItem>
 
