@@ -2,20 +2,28 @@ import { apiPost } from '../../util/HttpApi';
 import { INFO_FILE_EXT } from './TracksManager';
 
 /**
- * Update track appearance in .info file with partial data (only changed fields).
+ * Update track appearance by sending the entire .info file.
  *
- * @param {Object} updatedInfoFile - The info file object
- * @param {Object} diff - Partial info object with only changed fields
+ * @param {Object} updatedGpxFile - The full info file object to save
  * @returns {Promise<boolean>} Success status
  */
-export async function updateInfoFile(updatedInfoFile, diff) {
-    if (!updatedInfoFile?.name || !diff || Object.keys(diff).length === 0) {
+export async function updateInfoFile(updatedGpxFile) {
+    if (!updatedGpxFile?.name) {
         return false;
     }
 
-    const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/update-info`, diff, {
+    const jsonString = JSON.stringify(updatedGpxFile.info);
+    const convertedData = new TextEncoder().encode(jsonString);
+    const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
+    const convertedZipped = zippedResult.buffer;
+    const oMyBlob = new Blob([convertedZipped], { type: 'application/json' });
+    const data = new FormData();
+    const infoFileName = updatedGpxFile.name + INFO_FILE_EXT;
+    data.append('file', oMyBlob, infoFileName);
+
+    const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/update-info`, data, {
         params: {
-            name: updatedInfoFile.name + INFO_FILE_EXT,
+            name: infoFileName,
         },
     });
 

@@ -29,7 +29,7 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
         };
     });
 
-    const updatedFile = {
+    const updatedGpxFile = {
         ...prevFile,
         info: {
             ...prevFile.info,
@@ -37,15 +37,12 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
         },
     };
 
-    ctx.setSelectedGpxFile(updatedFile);
+    ctx.setSelectedGpxFile(updatedGpxFile);
 
     if (isCloudTrack(ctx)) {
         debouncer(
             () => {
-                const diff = {
-                    pointsGroups: Object.fromEntries(allGroupNames.map((name) => [name, { ext: { hidden } }])),
-                };
-                updateInfoFile(updatedFile, diff);
+                updateInfoFile(updatedGpxFile);
             },
             debouncerTimer,
             500

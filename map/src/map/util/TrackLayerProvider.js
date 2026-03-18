@@ -726,9 +726,9 @@ export function redrawWptsOnLayer({ layer }) {
         layer.getLayers().forEach((l) => {
             if (l instanceof L.Marker && l.options?.wpt) {
                 if (l._icon?.style) {
-                     const category = l.options?.category || '';
-                     const isHidden = pointsGroups?.[category]?.ext?.hidden === true;
-                     l._icon.style.display = isHidden ? 'none' : null;
+                    const category = l.options?.category || '';
+                    const isHidden = pointsGroups?.[category]?.ext?.hidden === true;
+                    l._icon.style.display = isHidden ? 'none' : null;
                 }
             }
         });
