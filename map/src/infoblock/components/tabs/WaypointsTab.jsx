@@ -42,7 +42,7 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
     if (isCloudTrack(ctx)) {
         debouncer(
             () => {
-                updateInfoFile(updatedGpxFile);
+                updateInfoFile(ctx, updatedGpxFile);
             },
             debouncerTimer,
             500
