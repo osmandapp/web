@@ -3,7 +3,6 @@ import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppCon
 import { useMap } from 'react-leaflet';
 import debounce from 'lodash-es/debounce';
 import isEmpty from 'lodash-es/isEmpty';
-import cloneDeep from 'lodash-es/cloneDeep';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { applySelectedPin, hideMarkersNearPin } from '../util/MarkerSelectionService';
@@ -178,7 +177,6 @@ export default function PoiLayer() {
     const [move, setMove] = useState(false);
     const [poiList, setPoiList] = useState({
         layer: null,
-        prevLayer: null,
         listFeatures: null,
     });
 
@@ -451,8 +449,33 @@ export default function PoiLayer() {
         return false;
     }
 
-    const debouncedGetPoi = useRef(
-        debounce(
+    useEffect(() => {
+        let ignore = false;
+        let controller = new AbortController();
+
+        function updateLayerOnMap(poiListState) {
+            const layer = poiListState?.layer;
+            const hasMarkers = layer?.getLayers?.()?.length > 0;
+            const existing = findFeatureGroupById(map, POI_LAYER_ID);
+            if (!hasMarkers) {
+                if (existing) {
+                    map.removeLayer(existing);
+                }
+                return;
+            }
+            if (map.hasLayer(layer)) {
+                hideMarkersNearPin(map, ctx);
+                return;
+            }
+            if (existing) {
+                map.removeLayer(existing);
+            }
+            layer.addTo(map);
+            layer.on('click', onClick);
+            hideMarkersNearPin(map, ctx);
+        }
+
+        const debouncedGetPoi = debounce(
             async ({
                 controller,
                 ignore,
@@ -470,7 +493,7 @@ export default function PoiLayer() {
                     map.spin(false);
                     return;
                 }
-                const bbox = visibleBboxInfo.bounds;
+                const newBbox = visibleBboxInfo.bounds;
                 const notifyTimeout = showProcessingNotification(ctx);
                 try {
                     const res = await getPoi(controller, showPoiCategories, visibleBboxInfo, savedBbox, prevCategories);
@@ -488,27 +511,22 @@ export default function PoiLayer() {
                         }
 
                         if (features?.length && listFeatures) {
-                            const layer = await createPoiLayer({
+                            const newLayer = await createPoiLayer({
                                 ctx,
                                 poiList: features,
                                 globalPoiIconCache: poiIconCache,
                                 map,
                                 zoom,
                             });
-                            const existing = findFeatureGroupById(map, POI_LAYER_ID);
-                            if (existing && !res.alreadyFound) {
-                                map.removeLayer(existing);
-                            }
-                            setPoiList({
-                                prevLayer: cloneDeep(poiList?.layer),
-                                layer,
-                                listFeatures,
-                            });
-                            setBbox(bbox);
+                            const nextState = { layer: newLayer, listFeatures };
+                            updateLayerOnMap(nextState);
+                            setPoiList(nextState);
+                            setBbox(newBbox);
                             setPrevCategories(showPoiCategories);
                             setUseLimit(res.useLimit ?? false);
                         }
                     } else {
+                        updateLayerOnMap(null);
                         setPoiList(null);
                     }
                 } finally {
@@ -518,27 +536,7 @@ export default function PoiLayer() {
                 }
             },
             1000
-        )
-    ).current;
-
-    function addToSearchRes(poiList) {
-        if (ctx.searchQuery?.type) {
-            ctx.setSearchResult((prevResult) => {
-                return {
-                    ...prevResult,
-                    features: !poiList ? [] : poiList?.listFeatures?.features,
-                };
-            });
-        }
-    }
-
-    function allPoiFound(zoom, prevZoom) {
-        return prevZoom && zoom > prevZoom && !useLimit;
-    }
-
-    useEffect(() => {
-        let ignore = false;
-        let controller = new AbortController();
+        );
 
         hideMarkersNearPin(map, ctx);
 
@@ -552,7 +550,7 @@ export default function PoiLayer() {
                     prevController.abort();
                 }
                 setPrevController(controller);
-                setPrevZoom(cloneDeep(zoom));
+                setPrevZoom(zoom);
                 if (ctx.showPoiCategories.length > 0) {
                     reqIdRef.current += 1;
                     debouncedGetPoi({
@@ -570,28 +568,23 @@ export default function PoiLayer() {
                 }
             } else {
                 if (poiList?.layer && isEmpty(ctx.showPoiCategories)) {
-                    const newPoiList = {
-                        prevLayer: cloneDeep(poiList?.layer),
-                        layer: null,
+                    const emptyState = { layer: null, listFeatures: null };
+                    updateLayerOnMap(emptyState);
+                    setPoiList(emptyState);
+                } else if (poiList?.listFeatures?.features?.length > 0) {
+                    const newLayer = await createPoiLayer({
+                        ctx,
+                        poiList: poiList.listFeatures.features,
+                        globalPoiIconCache: ctx.poiIconCache,
+                        map,
+                        zoom,
+                    });
+                    const nextState = {
+                        layer: newLayer,
+                        listFeatures: poiList?.listFeatures,
                     };
-                    setPoiList(newPoiList);
-                } else {
-                    // poi list already found
-                    if (poiList?.listFeatures?.features?.length > 0) {
-                        const layer = await createPoiLayer({
-                            ctx,
-                            poiList: poiList.listFeatures.features,
-                            globalPoiIconCache: ctx.poiIconCache,
-                            map,
-                            zoom,
-                        });
-                        const newPoiList = {
-                            prevLayer: cloneDeep(poiList?.layer),
-                            layer: layer,
-                            listFeatures: poiList?.listFeatures,
-                        };
-                        setPoiList(newPoiList);
-                    }
+                    updateLayerOnMap(nextState);
+                    setPoiList(nextState);
                 }
             }
         }
@@ -602,23 +595,12 @@ export default function PoiLayer() {
         return () => {
             ignore = true;
             controller.abort?.();
+            debouncedGetPoi.cancel();
         };
     }, [zoom, move, ctx.showPoiCategories]);
 
-    // add search result to the map and to the left panel
     useEffect(() => {
         if (!ctx.processingSearch) {
-            const existing = findFeatureGroupById(map, POI_LAYER_ID);
-            if (existing) {
-                map.removeLayer(existing);
-            }
-            if (poiList?.prevLayer) {
-                map.removeLayer(poiList?.prevLayer);
-            }
-            if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
-                poiList?.layer.addTo(map).on('click', onClick);
-                hideMarkersNearPin(map, ctx);
-            }
             addToSearchRes(poiList);
         }
     }, [poiList, ctx.processingSearch]);
@@ -632,6 +614,21 @@ export default function PoiLayer() {
             prevController?.abort?.();
         };
     }, []);
+
+    function addToSearchRes(poiList) {
+        if (ctx.searchQuery?.type) {
+            ctx.setSearchResult((prevResult) => {
+                return {
+                    ...prevResult,
+                    features: !poiList ? [] : poiList?.listFeatures?.features,
+                };
+            });
+        }
+    }
+
+    function allPoiFound(zoom, prevZoom) {
+        return prevZoom && zoom > prevZoom && !useLimit;
+    }
 
     function onClick(e) {
         if (globalThis.location.pathname.includes(NAVIGATE_URL)) {
