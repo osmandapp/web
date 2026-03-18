@@ -118,13 +118,13 @@ function calcVisibleBbox(topLeft, bottomRight) {
             [roundTo(bounds.getNorth()), roundTo(bounds.getEast())]
         ),
         center: {
-            lat: roundTo(center.lat),
-            lng: roundTo(center.lng),
+            lat: roundTo(center.lat, 4),
+            lng: roundTo(center.lng, 4),
         },
     };
 }
 
-function roundTo(num, precision = 6) {
+function roundTo(num, precision = 3) {
     return Number.parseFloat(Number(num).toFixed(precision));
 }
 
