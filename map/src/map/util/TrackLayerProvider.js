@@ -518,6 +518,10 @@ function parseWpt({
                     };
                     ctx.setSelectedWpt(wpt);
                 });
+                marker.on('add', (e) => {
+                    const visible = data.info.pointsGroups[marker.options.category]?.ext?.hidden !== true;
+                    e.target._icon.style.display = visible ? '' : 'none';
+                });
             }
             addMarkerTooltip({
                 marker,
