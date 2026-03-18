@@ -121,13 +121,13 @@ The search engine also tolerates common variations in address formatting such as
 
 | Search variation | Example queries | Related discussion |
 |---|---|---|
-| Street name variations | Weberstrasse <br /> Weber strasse <br /> Weber-strasse | [Discussion](https://github.com/osmandapp/OsmAnd/issues/23709) |
-| House numbers with letter suffixes | 30B <br /> 30b <br /> 30-B <br /> 30-b | [Discussion](https://github.com/osmandapp/OsmAnd/issues/23320) |
-| Ignoring spaces in names | Hemauer Straße <br /> Hemauerstraße | [Discussion](https://github.com/osmandapp/OsmAnd/issues/13783) |
-| Street abbreviations | Blabla Straße <br /> Blabla Str. | [Discussion](https://github.com/osmandapp/OsmAnd/issues/4923) |
-| Full address vs simplified address | 221B Baker Street London United Kingdom <br /> 221B Baker Street <br /> Baker Street 221B | [Discussion](https://github.com/osmandapp/OsmAnd/issues/19004) |
-| US address format | 1500 E Main Ave Springfield <br /> 4600 Sugar Maple Lane Little Rock | [Discussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
-| US state abbreviations | Springfield, VA 22162 <br /> Manhattan Beach, CA 90266 <br /> Little Rock, AR 72212 | [Discussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
+| Street name variations | [Weberstraße](https://osmand.net/map?pin=51.853672,12.042003#13/51.8545/12.0386) <br /> Weberstrasse <br /> Weber-straße <br /> Weber-strasse | [Discussion](https://github.com/osmandapp/OsmAnd/issues/23709) |
+| Ignoring spaces in names | [Goethe Straße](https://osmand.net/map?pin=51.85358,12.064447#13/51.8545/12.0386) <br /> Goethestraße | [Discussion](https://github.com/osmandapp/OsmAnd/issues/13783) |
+| House numbers with letter suffixes | [30B Dragonder, Valkenswaard](https://osmand.net/map?pin=51.339645,5.4682517#19/51.3398/5.4681) <br /> 30b Dragonder, Valkenswaard <br /> 30-B Dragonder, Valkenswaard <br /> 30-b Dragonder, Valkenswaard | [Discussion](https://github.com/osmandapp/OsmAnd/issues/23320) |
+| Street abbreviations | [Straelener Straße](https://osmand.net/map?pin=51.443604,6.343231#19/51.4436/6.3432) <br /> Straelener Str. | [Discussion](https://github.com/osmandapp/OsmAnd/issues/4923) |
+| Full address vs simplified address | [221B Baker Street London United Kingdom](https://osmand.net/map/poi/?name=221B+Baker+Street&type=Tourist+attraction&pin=51.52339,-0.1582396) <br /> 221B Baker Street <br /> Baker Street 221B | [Discussion](https://github.com/osmandapp/OsmAnd/issues/19004) |
+| US address format | [1500 North Main Avenue, Springfield](https://osmand.net/map?pin=37.226315,-93.296524#11/37.1799/-93.3522) <br /> [4600 Sugar Maple Lane, Nashville](https://osmand.net/map?pin=36.051846,-86.95705#18/36.0516/-86.9561) | [Discussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
+| US state abbreviations | [Springfield, VA 22150](https://osmand.net/map?pin=36.51995,-86.86385#18/36.5199/-86.8635) <br /> [Manhattan Beach, CA 90266](https://osmand.net/map?pin=33.883938,-118.41048#20/33.8839/-118.4105) | [Discussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
 
 <!--
 **Examples**: Instead of `221B Baker Street London United Kingdom` try `221B Baker Street` or `Baker Street 221B`.
