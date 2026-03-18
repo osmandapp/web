@@ -13,41 +13,42 @@ import { debouncer } from '../../../context/TracksRoutingCache';
 import { updateInfoFile } from '../../../manager/track/TrackAppearanceManager';
 
 function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
-    const prevFile = ctx.selectedGpxFile;
-    const updatedPointsGroups = { ...(prevFile?.info?.pointsGroups || {}) };
-    const allGroupNames = groupNames || Object.keys(updatedPointsGroups || {});
+    ctx.setSelectedGpxFile((prevFile) => {
+        const updatedPointsGroups = { ...(prevFile?.info?.pointsGroups || {}) };
+        const allGroupNames = groupNames || Object.keys(updatedPointsGroups || {});
 
-    allGroupNames.forEach((groupName) => {
-        const group = updatedPointsGroups[groupName] || {};
+        allGroupNames.forEach((groupName) => {
+            const group = updatedPointsGroups[groupName] || {};
 
-        updatedPointsGroups[groupName] = {
-            ...group,
-            ext: {
-                ...group.ext,
-                hidden,
+            updatedPointsGroups[groupName] = {
+                ...group,
+                ext: {
+                    ...group.ext,
+                    hidden,
+                },
+            };
+        });
+
+        const updatedGpxFile = {
+            ...prevFile,
+            info: {
+                ...prevFile.info,
+                pointsGroups: updatedPointsGroups,
             },
         };
+
+        if (isCloudTrack(ctx)) {
+            debouncer(
+                () => {
+                    updateInfoFile(ctx, updatedGpxFile);
+                },
+                debouncerTimer,
+                500
+            );
+        }
+
+        return updatedGpxFile;
     });
-
-    const updatedGpxFile = {
-        ...prevFile,
-        info: {
-            ...prevFile.info,
-            pointsGroups: updatedPointsGroups,
-        },
-    };
-
-    ctx.setSelectedGpxFile(updatedGpxFile);
-
-    if (isCloudTrack(ctx)) {
-        debouncer(
-            () => {
-                updateInfoFile(ctx, updatedGpxFile);
-            },
-            debouncerTimer,
-            500
-        );
-    }
 }
 
 // distinct component
@@ -360,7 +361,9 @@ export default function WaypointsTab() {
     const switchMassVisible = () => {
         const newMassVisible = !massVisible;
         setMassVisible(newMassVisible);
-        const groupNames = Object.keys(ctx.selectedGpxFile.pointsGroups || {});
+        const groupNames = Object.keys(
+            ctx.selectedGpxFile.info?.pointsGroups || ctx.selectedGpxFile.pointsGroups || {}
+        );
         updateGroupsVisibility(ctx, groupNames, !newMassVisible, debouncerTimer);
     };
 
