@@ -519,8 +519,11 @@ function parseWpt({
                     ctx.setSelectedWpt(wpt);
                 });
                 marker.on('add', (e) => {
-                    const visible = data.info.pointsGroups[marker.options.category]?.ext?.hidden !== true;
-                    e.target._icon.style.display = visible ? '' : 'none';
+                    const pointsGroups = data?.info?.pointsGroups || data?.pointsGroups;
+                    const visible = pointsGroups[marker.options.category]?.ext?.hidden !== true;
+                    if (e.target?._icon?.style) {
+                        e.target._icon.style.display = visible ? '' : 'none';
+                    }
                 });
             }
             addMarkerTooltip({

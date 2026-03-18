@@ -31,6 +31,9 @@ export async function updateInfoFile(ctx, updatedGpxFile) {
         },
     });
 
-    infoFile.updatetimems = res?.data?.updatetime ?? infoUpdateTime;
-    return res?.data?.status === 'ok';
+    if (res?.data?.status === 'ok' && res.data.updatetime) {
+        infoFile.updatetimems = res.data.updatetime;
+        return true;
+    }
+    return false;
 }

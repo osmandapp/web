@@ -14,7 +14,7 @@ import { updateInfoFile } from '../../../manager/track/TrackAppearanceManager';
 
 function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
     ctx.setSelectedGpxFile((prevFile) => {
-        const updatedPointsGroups = { ...(prevFile?.info?.pointsGroups || {}) };
+        const updatedPointsGroups = { ...(prevFile?.info?.pointsGroups || prevFile?.pointsGroups || {}) };
         const allGroupNames = groupNames || Object.keys(updatedPointsGroups || {});
 
         allGroupNames.forEach((groupName) => {
@@ -28,6 +28,9 @@ function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
                 },
             };
         });
+        if (prevFile?.gpx?.options) {
+            prevFile.gpx.options.pointsGroups = updatedPointsGroups;
+        }
 
         const updatedGpxFile = {
             ...prevFile,
