@@ -252,13 +252,13 @@ In the **context menu**, you can:
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/route_info_1_andr.png)
+![Route info](@site/static/img/map/route_info_1_andr_new.png) ![Route info](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/route_info_1_ios.png)
+![Route info](@site/static/img/map/route_info_1_ios_new.png) ![Route info](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -266,7 +266,7 @@ In the **context menu**, you can:
 
 The following information will be visible in the context menu:
 
-- **Route info**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
+- **Route info**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Uphill/Downhill, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
 - **General**: Size, Location, Created on.
 - **Additional Info**. Displays type of activity.
 - action buttons: [Save as](#save-as-a-track) and [Start Navigation](#start-navigation).
@@ -275,6 +275,11 @@ The following information will be visible in the context menu:
 
 To view graph of the elevation, slope, or altitude details for a selected route, simply tap on any of the following values in the context menu: **Distance**, **Uphill**, **Downhill**, or **Altitude**.
 
+You can also open the *Track tab* and switch to the *Altitude view* to see the full elevation graph of the route.
+
+**Note:** Elevation data is generated automatically and may slightly differ depending on available data.
+
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -289,7 +294,8 @@ To view graph of the elevation, slope, or altitude details for a selected route,
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+--> 
 
 ### Save as a Track {#save-as-a-track}
 
