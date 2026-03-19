@@ -206,7 +206,7 @@ These tags make it easier to identify and utilize specific vehicle data when rev
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_widget_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -217,7 +217,7 @@ These tags make it easier to identify and utilize specific vehicle data when rev
 
 | | |
 |--|--|
-|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![OBD settings](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![OBD settings](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 
