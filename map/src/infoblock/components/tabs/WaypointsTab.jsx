@@ -318,7 +318,11 @@ export default function WaypointsTab() {
 
     const [showMass, setShowMass] = useState(false);
     const [massOpen, setMassOpen] = useState(false);
-    const [massVisible, setMassVisible] = useState(false);
+    const [massVisible, setMassVisible] = useState(() => {
+        const pointsGroups = getPointsGroupsForInfoFile(ctx.selectedGpxFile);
+        const groupKeys = Object.keys(pointsGroups || {});
+        return groupKeys.length > 0 && groupKeys.every((g) => pointsGroups?.[g]?.ext?.hidden !== true);
+    });
     const debouncerTimer = useRef(null);
 
     const switchMassOpen = () => setMassOpen(!massOpen);

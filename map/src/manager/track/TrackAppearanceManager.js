@@ -60,6 +60,15 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
             };
         });
 
+        // Mutate options to preserve instance methods on gpx and layers
+        if (prevFile?.gpx?.options) {
+            prevFile.gpx.options.pointsGroups = updatedPointsGroups;
+        }
+        
+        if (prevFile?.layers?.options) {
+            prevFile.layers.options.pointsGroups = updatedPointsGroups;
+        }
+
         const updatedGpxFile = {
             ...prevFile,
             info: {
