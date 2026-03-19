@@ -489,7 +489,7 @@ function parseWpt({
         if (point.name) {
             opt.name = point.name;
         }
-        opt.category = point.category ? point.category : '';
+        opt.category = point.category ?? '';
         opt.groupId = groupId;
         if (point.desc) {
             opt.desc = point.desc;
@@ -734,8 +734,9 @@ export function redrawWptsOnLayer({ layer }) {
             if (l instanceof L.Marker && l.options?.wpt) {
                 if (l._icon?.style) {
                     const category = l.options?.category || '';
-                    const isHidden = pointsGroups?.[category]?.ext?.hidden === true;
-                    l._icon.style.display = isHidden ? 'none' : null;
+                    const visible = pointsGroups?.[category]?.ext?.hidden !== true;
+                    // show Wpt on layer: visible - '' , hidden - 'none'
+                    l._icon.style.display = visible ? '' : 'none';
                 }
             }
         });

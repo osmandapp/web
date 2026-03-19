@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useState, useRef } from 'react';
-import AppContext, { isLocalTrack, isCloudTrack } from '../../../context/AppContext';
+import AppContext, { isLocalTrack } from '../../../context/AppContext';
 import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import L from 'leaflet';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
@@ -9,49 +9,10 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import isEmpty from 'lodash-es/isEmpty';
-import { debouncer } from '../../../context/TracksRoutingCache';
-import { updateInfoFile } from '../../../manager/track/TrackAppearanceManager';
+import { updateGroupsVisibility } from '../../../manager/track/TrackAppearanceManager';
 
-function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
-    ctx.setSelectedGpxFile((prevFile) => {
-        const updatedPointsGroups = { ...(prevFile?.info?.pointsGroups || prevFile?.pointsGroups || {}) };
-        const allGroupNames = groupNames || Object.keys(updatedPointsGroups || {});
-
-        allGroupNames.forEach((groupName) => {
-            const group = updatedPointsGroups[groupName] || {};
-
-            updatedPointsGroups[groupName] = {
-                ...group,
-                ext: {
-                    ...group.ext,
-                    hidden,
-                },
-            };
-        });
-        if (prevFile?.gpx?.options) {
-            prevFile.gpx.options.pointsGroups = updatedPointsGroups;
-        }
-
-        const updatedGpxFile = {
-            ...prevFile,
-            info: {
-                ...prevFile.info,
-                pointsGroups: updatedPointsGroups,
-            },
-        };
-
-        if (isCloudTrack(ctx)) {
-            debouncer(
-                () => {
-                    updateInfoFile(ctx, updatedGpxFile);
-                },
-                debouncerTimer,
-                500
-            );
-        }
-
-        return updatedGpxFile;
-    });
+function getPointsGroupsForInfoFile(gpxFile) {
+    return gpxFile.info?.pointsGroups ?? gpxFile.pointsGroups;
 }
 
 // distinct component
@@ -357,16 +318,14 @@ export default function WaypointsTab() {
 
     const [showMass, setShowMass] = useState(false);
     const [massOpen, setMassOpen] = useState(false);
-    const [massVisible, setMassVisible] = useState(true);
+    const [massVisible, setMassVisible] = useState(false);
     const debouncerTimer = useRef(null);
 
     const switchMassOpen = () => setMassOpen(!massOpen);
     const switchMassVisible = () => {
         const newMassVisible = !massVisible;
         setMassVisible(newMassVisible);
-        const groupNames = Object.keys(
-            ctx.selectedGpxFile.info?.pointsGroups || ctx.selectedGpxFile.pointsGroups || {}
-        );
+        const groupNames = Object.keys(getPointsGroupsForInfoFile(ctx.selectedGpxFile) || {});
         updateGroupsVisibility(ctx, groupNames, !newMassVisible, debouncerTimer);
     };
 
@@ -381,7 +340,7 @@ export default function WaypointsTab() {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
         const trackName = ctx.selectedGpxFile.name;
-        const pointsGroups = ctx.selectedGpxFile.info?.pointsGroups ?? ctx.selectedGpxFile.pointsGroups;
+        const pointsGroups = getPointsGroupsForInfoFile(ctx.selectedGpxFile);
 
         setShowMass(keys.length > 1);
 
