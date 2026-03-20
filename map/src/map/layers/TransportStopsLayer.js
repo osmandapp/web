@@ -3,12 +3,7 @@ import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import AppContext, { OBJECT_TYPE_STOP } from '../../context/AppContext';
 import { apiGet } from '../../util/HttpApi';
-import {
-    findFeatureGroupById,
-    bindTooltipToMarker,
-    createTooltip,
-    TOOLTIP_MAX_LENGTH,
-} from '../util/MapManager';
+import { findFeatureGroupById, bindTooltipToMarker, createTooltip, TOOLTIP_MAX_LENGTH } from '../util/MapManager';
 import { getVisibleBboxInfo } from './MapStateLayer';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';

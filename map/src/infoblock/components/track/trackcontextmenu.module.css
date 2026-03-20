@@ -1,0 +1,38 @@
+.nameBlock {
+    display: flex !important;
+    padding: 0 16px 12px 16px !important;
+    align-items: center !important;
+    gap: 18px !important;
+}
+
+.trackName {
+    overflow: hidden !important;
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    text-overflow: ellipsis !important;
+    font-size: 24px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    letter-spacing: 0.24px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+.trackIconBox {
+    display: flex !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    align-self: center !important;
+    background-color: #f0f0f0 !important;
+}
+
+.trackIconBox svg {
+    fill: var(--svg-icon-color) !important;
+}

@@ -18,7 +18,7 @@ export default async function test() {
     await leftClickBy(50.501308, 30.514183);
 
     await waitBy(By.className('leaflet-interactive'));
-    await waitBy(By.id('se-infoblock-all'));
+    await waitBy(By.id('se-track-context-menu'));
     await validateInfoBlockStrings(strings);
 
     await waitBy(By.id('se-main-graph'));
@@ -29,6 +29,6 @@ export default async function test() {
 
 async function validateInfoBlockStrings(strings) {
     for await (const match of strings) {
-        await matchTextBy(By.id('se-infoblock-all'), match);
+        await matchTextBy(By.id('se-track-context-menu'), match);
     }
 }
