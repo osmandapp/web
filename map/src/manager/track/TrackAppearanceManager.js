@@ -1,7 +1,6 @@
 import { apiPost } from '../../util/HttpApi';
 import { INFO_FILE_EXT } from './TracksManager';
 import { isCloudTrack } from '../../context/AppContext';
-import { debouncer } from '../../context/TracksRoutingCache';
 
 /**
  * Update or create track appearance by sending the entire .info file.
@@ -77,15 +76,6 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
             };
         });
 
-        // Mutate options to preserve instance methods on gpx and layers
-        if (prevFile?.gpx?.options) {
-            prevFile.gpx.options.pointsGroups = updatedPointsGroups;
-        }
-
-        if (prevFile?.layers?.options) {
-            prevFile.layers.options.pointsGroups = updatedPointsGroups;
-        }
-
         const updatedGpxFile = {
             ...prevFile,
             info: {
@@ -97,13 +87,37 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
         if (isCloudTrack(ctx)) {
             const infoFileName = updatedGpxFile.name + INFO_FILE_EXT;
             const infoFile = ctx.listFiles.uniqueFiles?.find((file) => file?.name === infoFileName);
-            debouncer(
-                () => {
-                    createOrUpdateInfoFile(updatedGpxFile, infoFileName, infoFile);
-                },
-                debouncerTimer,
-                500
-            );
+
+            if (debouncerTimer.current) {
+                clearTimeout(debouncerTimer.current);
+            }
+            debouncerTimer.current = setTimeout(async () => {
+                debouncerTimer.current = null;
+                const success = await createOrUpdateInfoFile(updatedGpxFile, infoFileName, infoFile);
+                if (success) {
+                    ctx.setSelectedGpxFile((cur) => {
+                        if (cur?.gpx?.options) {
+                            cur.gpx.options.pointsGroups = cur.info?.pointsGroups;
+                        }
+                        if (cur?.layers?.options) {
+                            cur.layers.options.pointsGroups = cur.info?.pointsGroups;
+                        }
+                        return { ...cur, cloudRedrawWpts: true };
+                    });
+                } else {
+                    ctx.setTrackErrorMsg({
+                        title: 'Visibility error',
+                        msg: 'Failed to save waypoint group visibility. Please try again.',
+                    });
+                }
+            }, 1000);
+        } else {
+            if (prevFile?.gpx?.options) {
+                prevFile.gpx.options.pointsGroups = updatedPointsGroups;
+            }
+            if (prevFile?.layers?.options) {
+                prevFile.layers.options.pointsGroups = updatedPointsGroups;
+            }
         }
 
         return updatedGpxFile;

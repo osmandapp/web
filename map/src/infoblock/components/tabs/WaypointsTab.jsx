@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useState, useRef } from 'react';
-import AppContext, { isLocalTrack } from '../../../context/AppContext';
+import AppContext, { isCloudTrack, isLocalTrack } from '../../../context/AppContext';
 import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import L from 'leaflet';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
@@ -43,12 +43,13 @@ const WaypointGroup = ({
 
     // visibility control
     useEffect(() => {
-        mounted &&
+        if (mounted && !isCloudTrack(ctx)) {
             points.forEach((p) => {
                 if (p.layer?._icon?.style) {
                     p.layer._icon.style.display = visible ? '' : 'none';
                 }
             });
+        }
     }, [visible]);
 
     useEffect(() => {
