@@ -43,9 +43,26 @@ export async function createOrUpdateInfoFile(updatedGpxFile, infoFileName, infoF
     return false;
 }
 
+function sanitizePointsGroups(pointsGroups = {}) {
+    const result = {};
+    Object.keys(pointsGroups).forEach((groupName) => {
+        const group = pointsGroups[groupName] || {};
+        const { points, ...groupWithoutPoints } = group;
+        const ext = groupWithoutPoints.ext || {};
+        const extWithoutPoints = { ...ext };
+        delete extWithoutPoints.points;
+        result[groupName] = {
+            ...groupWithoutPoints,
+            ext: extWithoutPoints,
+        };
+    });
+    return result;
+}
+
 export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) {
     ctx.setSelectedGpxFile((prevFile) => {
-        const updatedPointsGroups = { ...(prevFile?.info?.pointsGroups || prevFile?.pointsGroups || {}) };
+        const sourcePointsGroups = prevFile?.info?.pointsGroups || prevFile?.pointsGroups || {};
+        const updatedPointsGroups = sanitizePointsGroups(sourcePointsGroups);
         const allGroupNames = groupNames || Object.keys(updatedPointsGroups || {});
 
         allGroupNames.forEach((groupName) => {
