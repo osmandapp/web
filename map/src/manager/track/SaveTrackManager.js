@@ -27,12 +27,16 @@ import {
 import Utils from '../../util/Utils';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
-import { SMART_TYPE } from '../../menu/share/shareConstants';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
 
-    const originalName = track.name + GPX_FILE_EXT;
+    if (!track?.name) {
+        ctx.setRoutingErrorMsg('⚠️ Cannot save nameless local track.');
+        return;
+    }
+
+    const originalName = removeFileExtension(track.name) + GPX_FILE_EXT;
     let localName = TracksManager.prepareName(originalName, true);
 
     // find free name
