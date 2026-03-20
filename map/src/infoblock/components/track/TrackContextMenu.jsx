@@ -14,45 +14,41 @@ export default function TrackContextMenu({ trackName, onClose, tabsObj, showBack
     }
 
     return (
-        <>
-            {!ctx.processingTravelRouteByUrl && (
-                <Box
-                    sx={{
-                        height: '100vh',
-                        overflowX: 'hidden',
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}
-                >
-                    <div
-                        id="se-track-context-menu"
-                        style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
-                    >
-                        <HeaderNoUnderline title="" onClose={onClose} showBackButton={showBackButton} />
-                        {trackName && (
-                            <div className={styles.nameBlock}>
-                                <Typography id={'se-track-' + trackName} className={styles.trackName}>
-                                    {trackName}
-                                </Typography>
-                                <div className={styles.trackIconBox}>
-                                    <TracksIcon />
-                                </div>
-                            </div>
-                        )}
-                        {ctx.processingTravelRouteByUrl && <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />}
-                        <Box
-                            sx={{
-                                flex: 1,
-                                minHeight: 0,
-                                overflowY: 'auto',
-                                overflowX: 'hidden',
-                            }}
-                        >
-                            <TabPanels tabsObj={tabsObj} />
-                        </Box>
+        <Box
+            sx={{
+                height: '100vh',
+                overflowX: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+            }}
+        >
+            <div id="se-track-context-menu" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <HeaderNoUnderline title="" onClose={onClose} showBackButton={showBackButton} />
+                {trackName && (
+                    <div className={styles.nameBlock}>
+                        <Typography id={'se-track-' + trackName} className={styles.trackName}>
+                            {trackName}
+                        </Typography>
+                        <div className={styles.trackIconBox}>
+                            <TracksIcon />
+                        </div>
                     </div>
-                </Box>
-            )}
-        </>
+                )}
+                {ctx.processingTravelRouteByUrl ? (
+                    <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />
+                ) : (
+                    <Box
+                        sx={{
+                            flex: 1,
+                            minHeight: 0,
+                            overflowY: 'auto',
+                            overflowX: 'hidden',
+                        }}
+                    >
+                        <TabPanels tabsObj={tabsObj} />
+                    </Box>
+                )}
+            </div>
+        </Box>
     );
 }
