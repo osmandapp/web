@@ -82,6 +82,8 @@ Please note that monthly map updates are considered another map download and are
 - [Wikivoyage](../plan-route/travel-guides.md). It provides vector maps with virtual travel guides, offering users valuable information, recommendations, and tips.
 - [Weather forecast](../plugins/weather.md). Weather information on a map for easy route planning.
 
+Without an active subscription, these map types show a *Get* button instead of Download. Tap *Get* to open the subscription screen and choose a plan.
+
 
 ## Downloads Menu {#downloads-menu}
 

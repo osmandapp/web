@@ -3,6 +3,7 @@ import { ReactComponent as IconHover } from '../../assets/map/map_intermediate_p
 import { ReactComponent as IconMoved } from '../../assets/map/map_intermediate_point_moved.svg';
 import {
     createDivIcon,
+    createDivIconHtml,
     createIconSvgMap,
     ICON_STATE_DEFAULT,
     ICON_STATE_HOVER,
@@ -18,4 +19,12 @@ const ICONS = {
 const ICON_SVG = createIconSvgMap(ICONS);
 
 export const intermediatePointIcon = createDivIcon(ICON_SVG[ICON_STATE_DEFAULT], INTERMEDIATE_POINT);
-export const getIntermediatePointIconSvg = (state) => ICON_SVG[state] ?? ICON_SVG[ICON_STATE_DEFAULT];
+
+export const getIntermediatePointIconHtml = (state, index) => {
+    const svgString = ICON_SVG[state] ?? ICON_SVG[ICON_STATE_DEFAULT];
+    const number = index != null ? index + 1 : null;
+    return createDivIconHtml(svgString, INTERMEDIATE_POINT, number, state);
+};
+
+export const getIntermediatePointIcon = (index) =>
+    createDivIcon(ICON_SVG[ICON_STATE_DEFAULT], INTERMEDIATE_POINT, index != null ? index + 1 : null);

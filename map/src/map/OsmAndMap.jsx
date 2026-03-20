@@ -19,12 +19,25 @@ import { useWindowSize } from '../util/hooks/useWindowSize';
 import CustomTileLayer from './layers/CustomTileLayer';
 import ExploreLayer from './layers/ExploreLayer';
 import SearchLayer from './layers/SearchLayer';
+import MapStateLayer from './layers/MapStateLayer';
 import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { Box } from '@mui/material';
 import TransportStopsLayer from './layers/TransportStopsLayer';
+
+function getInitialViewFromHash() {
+    const hash = window.location.hash;
+    if (!hash || hash.length < 2) return null;
+    const [zoomStr, latStr, lngStr] = hash.slice(1).split('/');
+    const zoom = Number.parseInt(zoomStr, 10);
+    const lat = Number.parseFloat(latStr);
+    const lng = Number.parseFloat(lngStr);
+    if (Number.isNaN(zoom) || Number.isNaN(lat) || Number.isNaN(lng)) return null;
+
+    return { center: [lat, lng], zoom };
+}
 
 const updateMarker = ({ lat, lng, setHoverPoint, hoverPointRef, ctx }) => {
     if (lat) {
@@ -44,6 +57,11 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
+
+    const [initialView] = useState(() => {
+        const fromHash = getInitialViewFromHash();
+        return fromHash ?? { center: initialPosition, zoom: initialZoom };
+    });
 
     const [geocodingData, setGeocodingData] = useState(null);
     const [regionData, setRegionData] = useState(null);
@@ -187,8 +205,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             }}
         >
             <MapContainer
-                zoom={initialZoom}
-                center={initialPosition}
+                zoom={initialView.zoom}
+                center={initialView.center}
                 minZoom={1}
                 maxZoom={20}
                 zoomControl={false}
@@ -210,6 +228,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <GraphLayer />
                 <PoiLayer />
                 <SearchLayer />
+                <MapStateLayer />
                 <ExploreLayer />
                 <TransportStopsLayer />
                 <CustomTileLayer

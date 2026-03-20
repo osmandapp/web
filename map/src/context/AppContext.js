@@ -3,6 +3,8 @@ import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, {
     getGpxFiles,
+    filterSmartFolders,
+    filterRegularFolders,
     GPX_FILE_EXT,
     preparedGpxFile,
     TRACK_VISIBLE_FLAG,
@@ -32,6 +34,7 @@ import {
     SEARCH_RESULTS_KEY,
     TRACKS_KEY,
 } from '../util/hooks/menu/useRecentDataSaver';
+import { SMART_TYPE } from '../menu/share/shareConstants';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -53,6 +56,7 @@ export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
+export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
 export const OBJECT_TYPE_TRAVEL = 'travel';
 export const OBJECT_TYPE_SHARE_FILE = 'share_file';
 
@@ -95,6 +99,8 @@ async function loadListFiles(
     setProcessingGroups,
     setVisibleTracks,
     setShareWithMeFiles,
+    setTracksGroups,
+    setSmartFoldersCache,
     setUpdateFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
@@ -113,6 +119,7 @@ async function loadListFiles(
                         });
                         getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
+                        loadSmartFolders(setTracksGroups, setSmartFoldersCache);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -125,6 +132,57 @@ async function loadListFiles(
             }
         }
     }
+}
+
+export async function loadSmartFolders(setTracksGroups, setSmartFoldersCache) {
+    const res = await getSmartFolders();
+    setSmartFoldersCache({});
+    const smartFolderGroups = (res ?? []).map((smartFolder) => {
+        return {
+            name: smartFolder.name,
+            fullName: smartFolder.name,
+            type: SMART_TYPE,
+            subfolders: [],
+            groupFiles: [],
+            files: [],
+            realSize: smartFolder.userFilePaths?.length ?? 0,
+            lastModifiedMs: smartFolder.creationTime,
+            lastModifiedDate: null,
+            userFilePaths: smartFolder.userFilePaths ?? [],
+        };
+    });
+
+    setTracksGroups((prev) => {
+        const regularFolders = filterRegularFolders(prev);
+        return [...regularFolders, ...smartFolderGroups];
+    });
+}
+
+export function populateSmartFolderFiles(smartFolder, listFiles, smartFoldersCache, setSmartFoldersCache) {
+    const filesArray = [];
+    const cached = smartFoldersCache?.[smartFolder.name];
+    if (cached) {
+        return cached;
+    }
+    (smartFolder.userFilePaths ?? []).forEach((path) => {
+        const file = listFiles?.find((f) => f.name === path);
+        if (file) {
+            filesArray.push({ ...file, smartFolder: true });
+        }
+    });
+    const populated = {
+        ...smartFolder,
+        groupFiles: filesArray,
+        files: filesArray,
+        realSize: filesArray.length,
+    };
+    setSmartFoldersCache((prev) => ({ ...prev, [smartFolder.name]: populated }));
+    return populated;
+}
+
+async function getSmartFolders() {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/create-smart-folders`, {});
+    return response?.data || null;
 }
 
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
@@ -345,6 +403,7 @@ export const AppContextProvider = (props) => {
     const [processingSearch, setProcessingSearch] = useState(false);
     const [moveToMapObj, setMoveToMapObj] = useState(null);
     const [visibleBounds, setVisibleBounds] = useState(null);
+    const [visibleBboxInfo, setVisibleBboxInfo] = useState(null);
     const [exploreMenu, setExploreMenu] = useState(false);
     const [poiCatMenu, setPoiCatMenu] = useState(false);
     const [poiByUrl, setPoiByUrl] = useState(null);
@@ -364,6 +423,8 @@ export const AppContextProvider = (props) => {
     const [shareFilesCache, setShareFilesCache] = useState({});
     const [shareWithMeFiles, setShareWithMeFiles] = useState(null);
     const [fitBoundsShareTracks, setFitBoundsShareTracks] = useState(null);
+
+    const [smartFoldersCache, setSmartFoldersCache] = useState(null);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -466,7 +527,14 @@ export const AppContextProvider = (props) => {
     const [selectedWptId, setSelectedWptId] = useState(null);
 
     const [navigationHistory, setNavigationHistory] = useState([]);
-    const [previousRoute, setPreviousRoute] = useState(null);
+    const [previousRoute, setPreviousRoute] = useState(() => {
+        try {
+            const s = localStorage.getItem(PREVIOUS_ROUTE_STORAGE_KEY);
+            return s ? JSON.parse(s) : null;
+        } catch {
+            return null;
+        }
+    });
 
     routeObject.initSetter({ setter: setRouteObject });
     trackRouter.initSetter({ setter: setTrackRouter });
@@ -655,6 +723,7 @@ export const AppContextProvider = (props) => {
                             uniqueFiles: updatedUniqueFiles,
                         };
                     });
+                    await loadSmartFolders(setTracksGroups, setSmartFoldersCache);
                 }
             }
         };
@@ -678,6 +747,8 @@ export const AppContextProvider = (props) => {
                 setProcessingGroups,
                 setVisibleTracks,
                 setShareWithMeFiles,
+                setTracksGroups,
+                setSmartFoldersCache,
                 setUpdateFiles
             ).then(() => {
                 setGpxLoading(false);
@@ -881,6 +952,8 @@ export const AppContextProvider = (props) => {
                 setShareWithMeFiles,
                 fitBoundsShareTracks,
                 setFitBoundsShareTracks,
+                smartFoldersCache,
+                setSmartFoldersCache,
                 trackAnalyzer,
                 setTrackAnalyzer,
                 excludedSegments,
@@ -911,6 +984,8 @@ export const AppContextProvider = (props) => {
                 setSelectedCloudTrackObj,
                 visibleBounds,
                 setVisibleBounds,
+                visibleBboxInfo,
+                setVisibleBboxInfo,
                 exploreMenu,
                 setExploreMenu,
                 openTravel,

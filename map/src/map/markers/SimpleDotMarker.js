@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import { MARKER_Z_INDEX_SECONDARY } from '../../manager/GlobalManager';
 
 export class SimpleDotMarker {
     static defaultOptions = {
@@ -7,8 +8,8 @@ export class SimpleDotMarker {
         color: '#ffffff',
         fillColor: '#fe8800',
         weight: 1,
-        zIndex: 500,
-        zIndexOffset: 500,
+        zIndex: MARKER_Z_INDEX_SECONDARY,
+        zIndexOffset: MARKER_Z_INDEX_SECONDARY,
         simple: true,
     };
 
@@ -68,7 +69,7 @@ export class SimpleDotMarker {
             const paneName = 'poiSecondaryPane';
             const pane = map.getPane(paneName) || map.createPane(paneName);
 
-            pane.style.zIndex = '500';
+            pane.style.zIndex = `${MARKER_Z_INDEX_SECONDARY}`;
 
             const wrap = this.marker.getElement?.();
             if (wrap && wrap.parentNode !== pane) pane.appendChild(wrap);

@@ -246,7 +246,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
             text,
             color = 'black',
             fontSize = '12',
-            fontFamily = 'Roboto',
+            fontFamily = 'var(--font-family-primary)',
             textShadow = 0,
             textShadowColor,
             bold = false,

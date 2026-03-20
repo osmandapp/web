@@ -1,5 +1,5 @@
 import { Box, Divider, FormControl, FormControlLabel, Paper, Radio, RadioGroup } from '@mui/material';
-import { getAnalysisData, getGpxTime } from '../../manager/track/TracksManager';
+import { getAnalysisData, getGpxTime, filterSmartFolders } from '../../manager/track/TracksManager';
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
@@ -17,7 +17,8 @@ import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/Favorite
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
 import { getSelectedSort } from '../components/buttons/SortFilesButton';
-import { SHARE_TYPE } from '../share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
+import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -254,6 +255,10 @@ const SortActions = forwardRef(
 
         const groups = () => {
             if (trackGroup) {
+                if (trackGroup.name === DEFAULT_GROUP_NAME || trackGroup.fullName === DEFAULT_GROUP_NAME) {
+                    const smartFolders = filterSmartFolders(ctx.tracksGroups);
+                    return [...(trackGroup.subfolders || []), ...smartFolders];
+                }
                 return trackGroup.subfolders;
             } else if (favoriteGroup) {
                 if (smartf?.type === SHARE_TYPE) {

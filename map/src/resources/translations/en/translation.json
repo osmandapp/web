@@ -6029,5 +6029,10 @@
   "poi_yoga": "Yoga",
   "poi_memorial_type": "Memorial type",
   "poi_craft_chimney_sweeper": "Chimney sweeper",
-  "poi_hazard_yes": "Hazard"
+  "poi_hazard_yes": "Hazard",
+    "shared_string_minute_lowercase": "min",
+    "shared_string_interval": "Interval",
+    "transport_stops": "stops",
+    "shared_string_previous": "Previous",
+    "shared_string_next": "Next"
 }

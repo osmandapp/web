@@ -2,6 +2,7 @@ import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import { createLayeredPinIcon } from '../markers/SelectedPinMarker';
 import L from 'leaflet';
 import Utils from '../../util/Utils';
+import { updateMarkerZIndex } from '../layers/ExploreLayer';
 
 export const SELECTED_PIN_SIZE = 70;
 export const SELECTED_ICON_SIZE = 36;
@@ -91,6 +92,7 @@ function buildSelectedIcon(marker, layerOptions = {}) {
         shape: toShape(marker.background ?? layerOptions.background),
         color: toColor(marker.color ?? layerOptions.color),
         iconHtml: marker.iconHtml ?? '',
+        invertIcon: marker.invertIcon ?? false,
         size: SELECTED_PIN_SIZE,
         iconSize: SELECTED_ICON_SIZE,
     });
@@ -102,6 +104,17 @@ function applySelectedWithUpdateMarker(layer, marker) {
         layer.options.originalIcon = layer.options.icon;
     }
     layer.setIcon(buildSelectedIcon(marker, layer.options));
+
+    // After setIcon, custom 'add' handlers (e.g. SimpleDotMarker) moved the element into a lower-z-index pane (poiSecondaryPane).
+    // Re-parent it into base markerPane (z-index 600) so it renders above all map markers.
+    const el = layer.getElement();
+    const map = layer._map;
+    if (el && map) {
+        const markerPane = map.getPane('markerPane');
+        if (markerPane && el.parentNode !== markerPane) {
+            markerPane.appendChild(el);
+        }
+    }
 }
 
 // Creates a new pin marker and adds it directly to the map (used for selection)
@@ -187,8 +200,7 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         ctx.selectedCreatedLayerRef.current = selectedLayer;
     }
-
-    selectedLayer?.setZIndexOffset?.(SELECTED_MARKER_Z_INDEX);
+    updateMarkerZIndex(new L.FeatureGroup([selectedLayer]), SELECTED_MARKER_Z_INDEX);
 
     return selectedLayer;
 }

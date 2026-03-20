@@ -162,7 +162,7 @@ The *Personal folder* contains special points like **<Translate android="true" i
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![My places favorites android](@site/static/img/personal/my_places_android.png)
+![My places favorites android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![my_places_ios](@site/static/img/personal/my_places_ios.png)
+![my_places_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -179,7 +179,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my
 The **My Favorites** section lets you:
 
 - [Search](#order--sorting--search) for specific favorites or groups.
-- [Bulk operations](#bulk-edit--delete) — Rename, move, or delete multiple favorites at once.
+- [Bulk operations](#bulk-edit--delete) — Share, move, or delete multiple favorites at once.
 
 ### Order / Sorting / Search {#order--sorting--search}
 
@@ -187,20 +187,23 @@ The **My Favorites** section lets you:
 
 <TabItem value="android" label="Android">
 
-![Favorites folders android](@site/static/img/personal/favorites_folders_android.png)
+![Favorites folders android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Sorting** — Favorite folders and points can be sorted using the available sorting options in the list menu. The following options are available: *Name A – Z*, *Name Z – A*, *Last modified*, *Newest date first*, *Oldest date first*. By default, items are sorted by Name A – Z. Pinned folders are always displayed at the top of the list. They are visually separated from the rest of the folders by a divider. The [Personal folder](../personal/favorites.md#special-favorites-personal) is pinned by default. 
+- **Searching** — Use [Global search](../search/search-all.md) to find favorites by name. Favorites are sorted by distance from the map's center.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Favorites folders ios](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Sorting** — Favorite folders and points are sorted alphabetically, with the [personal folder](../personal/favorites.md#special-favorites-personal) at the top.
 - **Searching** — Use [Global search](../search/search-all.md) to find favorites by name. Favorites are sorted by distance from the map's center.
 
+</TabItem>
+
+</Tabs>
 
 ### Bulk Edit / Delete {#bulk-edit--delete}
 
@@ -208,7 +211,24 @@ The **My Favorites** section lets you:
 
 <TabItem value="android" label="Android">
 
-![Favorites actions android](@site/static/img/personal/favorites_actions_android.png) ![Favorites action delete android](@site/static/img/personal/favorites_delete_android.png)
+![Favorites actions android](@site/static/img/personal/favorites_group_actions.png) ![Favorites action delete android](@site/static/img/personal/favorites_actions.png)
+
+To manage multiple favorites or folders, enter *Selection mode*. You can open Selection mode in two ways:
+- Tap the *three-dot menu* in the top-right corner and choose *Select*.
+- Long tap a favorite point or folder.
+
+When Selection mode is enabled, checkboxes appear next to items in the list. Select the required favorites or folders by tapping the checkboxes. To select all items in the list, tap the Select all icon in the top-right corner.
+
+The available actions depend on the selected item type. When folders are selected, the following actions are available:
+- **Share** — Export selected folders as a Favorites GPX file.
+- **Delete** — Remove the selected folders.
+
+When favorite points are selected, the following actions are available:
+- **Move** — Move selected favorites to another folder.
+- **Add to map markers** — Add selected points to the Map markers list.
+- **Add to track** — Add selected points to a track.
+- **Add to navigation** — Start navigation to the selected point.
+- **Delete** — Remove the selected favorites.
 
 </TabItem>
 
@@ -216,13 +236,13 @@ The **My Favorites** section lets you:
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
+- To manage multiple favorites, tap the **Edit** button (*pencil icon*).
+- Select individual favorites or entire folders for bulk operations.
+- **Options available** — *Share*, *Move to a Favorite Group*, *Change Color*, and *Delete*.
+
 </TabItem>
 
 </Tabs>
-
-1. To manage multiple favorites, tap the **Delete** icon (*bin icon on Android*) or the **Edit** button (*pencil icon on iOS*).
-2. Select individual favorites or entire folders for bulk operations.
-3. **Options available** — *Delete* for Android and iOS, *Move to a Favorite Group*, *Share*, and *Change Color* for iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -246,37 +266,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Go to: *Three-dot menu → Change default appearance*
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Use the ***Three-dot menu*** next to each folder to manage groups of favorites:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
+- **Pin folder** — Pin the selected folder to keep it at the top of the favorites list for quicker access.
+- **<Translate android="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Remove from map markers** — Add all favorite points from the folder to the *Map markers list* or remove them as needed for easy reference.
+- **<Translate android="true" ids="add_to_a_track"/>** — Add all favorite points from the selected folder to a track. This opens the track selection screen where you can choose or create a track.
+- **<Translate android="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
+- **<Translate android="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *Long tap folder → Default appearance*
-
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Use the ***long tap*** the folder to manage groups of favorites:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
+- **<Translate ios="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
 
 </TabItem>
 
 </Tabs>
-
-Use the ***Three-dot menu*** (*Android*) next to each folder and ***long tap*** (*iOS*) the folder to manage groups of favorites:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Use this option to change the name of the selected folder.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** or **Hide on map** — Toggle this option to display or hide the favorite points from the folder on the map.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** or **Remove from map markers** (*Android only*) — Add all favorite points from the folder to the *Map markers list* or remove them as needed for easy reference.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Permanently delete the selected favorites folder and all the points within it.
-
-
 
 ### Change Group Appearance {#change-group-appearance}
 
@@ -284,11 +303,15 @@ Use the ***Three-dot menu*** (*Android*) next to each folder and ***long tap*** 
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Go to: *Three-dot menu → Change default appearance*
+
+![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Go to: *Long tap folder → Default appearance*
 
 ![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 

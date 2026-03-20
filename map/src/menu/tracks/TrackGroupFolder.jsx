@@ -18,6 +18,8 @@ import { doSort } from '../actions/SortActions';
 import isEmpty from 'lodash-es/isEmpty';
 import { DEFAULT_SORT_METHOD } from './TracksMenu';
 import Loading from '../errors/Loading';
+import { SMART_TYPE } from '../share/shareConstants';
+import { populateSmartFolderFiles } from '../../context/AppContext';
 
 export default function TrackGroupFolder({ folder = null, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -32,11 +34,21 @@ export default function TrackGroupFolder({ folder = null, smartf = null }) {
     useEffect(() => {
         if (ctx.tracksGroups && folder) {
             let found = findGroupByName(ctx.tracksGroups, group.fullName);
-            if (ctx.openGroups && ctx.openGroups.length > 0) {
-                const updatedOpenGroups = [...ctx.openGroups];
-                updatedOpenGroups[updatedOpenGroups.length - 1] = found;
-                ctx.setOpenGroups(updatedOpenGroups);
-                setGroup({ ...found });
+            if (found) {
+                if (found.type === SMART_TYPE) {
+                    found = populateSmartFolderFiles(
+                        found,
+                        ctx.listFiles?.uniqueFiles,
+                        ctx.smartFoldersCache,
+                        ctx.setSmartFoldersCache
+                    );
+                }
+                if (ctx.openGroups?.length > 0) {
+                    const updatedOpenGroups = [...ctx.openGroups];
+                    updatedOpenGroups[updatedOpenGroups.length - 1] = found;
+                    ctx.setOpenGroups(updatedOpenGroups);
+                    setGroup({ ...found });
+                }
             }
         }
     }, [ctx.tracksGroups]);

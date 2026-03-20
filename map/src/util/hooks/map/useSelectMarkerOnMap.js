@@ -9,13 +9,18 @@ import {
 import { EXPLORE_PHOTO_ICON_SIZE, applySelectedPin, resetSelectedPin } from '../../../map/util/MarkerSelectionService';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE, getIconNameForPoiType } from '../../../manager/PoiManager';
 import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
+import { iconPathMap } from '../../../map/util/MapManager';
 import { FAVORITE_FILE_TYPE } from '../../../manager/FavoritesManager';
+import { TRANSPORT_STOPS_LAYER_ID } from '../../../map/layers/TransportStopsLayer';
+
+const EXPLORE_MAIN_MARKER_PIN_BACKGROUND = '#ffffff';
 
 function extractLatlng(selectedWptId, type) {
     const obj = selectedWptId?.obj;
     if (!obj) return null;
 
     if (type === FAVORITE_FILE_TYPE) return obj.getLatLng() ?? null;
+    if (type === TRANSPORT_STOPS_LAYER_ID) return obj.getLatLng?.() ?? null;
 
     const coords = obj.geometry?.coordinates;
     if (coords?.length >= 2) return { lat: coords[1], lng: coords[0] };
@@ -25,7 +30,8 @@ function extractLatlng(selectedWptId, type) {
 
 function iconHtmlFromIconName(finalIconName) {
     if (!finalIconName) return null;
-    const url = getIconUrlByName('poi', finalIconName) || getIconUrlByName('map', finalIconName);
+    const url =
+        iconPathMap[finalIconName] || getIconUrlByName('poi', finalIconName) || getIconUrlByName('map', finalIconName);
     return url ? `<image href="${url}" />` : null;
 }
 
@@ -47,7 +53,7 @@ function findLayerById(layers, id) {
     );
 }
 
-export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map }) {
+export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type, map, zoom, move }) {
     const selectedObjId = ctx.selectedWpt?.id ?? null;
 
     const hoverId =
@@ -57,6 +63,15 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         ctx.selectedWptId?.id != null
             ? ctx.selectedWptId.id
             : null;
+
+    useEffect(() => {
+        if (zoom === undefined || move === undefined) return;
+
+        if (ctx.selectedWpt?.id != null) return;
+        if (ctx.selectedWptId?.type !== type || ctx.selectedWptId?.show !== true) return;
+
+        ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
+    }, [type, zoom, move]);
 
     // ========== SELECTED PIN ==========
     useEffect(() => {
@@ -88,6 +103,11 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
+        if (type === TRANSPORT_STOPS_LAYER_ID && ctx.selectedWptId?.hoverFromMap) {
+            resetSelectedPin({ ctx, map });
+            return;
+        }
+
         const found = findLayerById(resolveLayers(getLayers, layersProp), hoverId);
         if (found) {
             applyPinForLayer(found, false);
@@ -96,6 +116,8 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             const latlng = extractLatlng(ctx.selectedWptId, type);
             if (latlng) {
                 applyHoverPinFallback(latlng);
+            } else if (type === TRANSPORT_STOPS_LAYER_ID) {
+                resetSelectedPin({ ctx, map });
             }
         }
     }, [hoverId, selectedObjId, type, getLayers, layersProp]);
@@ -133,7 +155,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
 
     function applyPhotoPin(layer, latlng, photoUrl, isSelection) {
         const markerData = {
-            color: DEFAULT_POI_COLOR,
+            color: EXPLORE_MAIN_MARKER_PIN_BACKGROUND,
             iconHtml: `<img src="${photoUrl}" width="${EXPLORE_PHOTO_ICON_SIZE}" height="${EXPLORE_PHOTO_ICON_SIZE}" style="width:${EXPLORE_PHOTO_ICON_SIZE}px;height:${EXPLORE_PHOTO_ICON_SIZE}px;object-fit:cover;border-radius:50%;" />`,
         };
         applySelectedPin({ ctx, map, layer, latlng, markerData, isSelection });
@@ -164,6 +186,8 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
                         typeOsmValue: props?.[TYPE_OSM_VALUE],
                     })
             );
+        // Only apply white filter when icon came from URL (iconHtmlFromIconName), not when caller passed custom iconHtml (e.g. favorites)
+        const invertIcon = markerOpts.invertIcon ?? markerOpts.iconHtml == null;
 
         applySelectedPin({
             ctx,
@@ -174,6 +198,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
                 color: markerOpts.color ?? DEFAULT_POI_COLOR,
                 background: markerOpts.background ?? DEFAULT_POI_SHAPE,
                 iconHtml,
+                invertIcon,
             },
             isSelection: false,
         });
@@ -185,6 +210,15 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         const iconFromLayer = layer.options?.icon?.options?.html;
 
         let iconHtml;
+
+        if (layerType === TRANSPORT_STOPS_LAYER_ID) {
+            return {
+                color: layer.options?.color,
+                background: layer.options?.background,
+                iconHtml: layer.options?.svg,
+            };
+        }
+
         if (isSimpleDot) {
             iconHtml = iconHtmlFromIconName(layer.options?.[FINAL_POI_ICON_NAME]) ?? '';
         } else if (isSelection) {
@@ -206,6 +240,7 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             color: (isSimpleDot ? layer.options?.fillColor : layer.options?.color) ?? DEFAULT_POI_COLOR,
             background: layer.options?.background ?? DEFAULT_POI_SHAPE,
             iconHtml,
+            invertIcon: isSimpleDot,
         };
     }
 }

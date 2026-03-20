@@ -1,36 +1,68 @@
 import React, { useContext } from 'react';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import styles from '../wptDetails.module.css';
+import styles from './transport.module.css';
 import itemsStyles from '../../../../frame/components/items/items.module.css';
 import MenuItemWithLines from '../../../../menu/components/MenuItemWithLines';
 import AppContext from '../../../../context/AppContext';
 import { apiGet } from '../../../../util/HttpApi';
 
+async function fetchRouteData({ wpt, route, color, typeName }) {
+    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-route`, {
+        apiCache: true,
+        params: {
+            lat: route.stop?.lat ?? wpt.latlon.lat,
+            lon: route.stop?.lon ?? wpt.latlon.lon,
+            stopId: route.stop?.id ?? wpt.id,
+            routeId: route.id,
+        },
+    });
+    if (!response?.data) return null;
+    return {
+        ...response.data,
+        color,
+        ref: route.ref,
+        name: route.name,
+        type: route.type,
+        typeName,
+    };
+}
+
 export default function TransportStopRouteItem({ route, icon, color, typeName, wpt }) {
     const ctx = useContext(AppContext);
     const IconComponent = icon;
 
-    const handleRouteClick = async () => {
-        if (!wpt || !wpt.latlon || !wpt.id || !route.id) {
-            return;
-        }
-
+    const handleRouteMouseEnter = async () => {
+        if (!route.id) return;
+        if (ctx.selectedTransportRoute && !ctx.selectedTransportRoute.isPreview) return;
         try {
-            const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-transport-route`, {
-                apiCache: true,
-                params: {
-                    lat: wpt.latlon.lat,
-                    lon: wpt.latlon.lon,
-                    stopId: wpt.id,
-                    routeId: route.id,
-                },
-            });
+            const data = await fetchRouteData({ wpt, route, color, typeName });
+            if (data) {
+                ctx.setSelectedTransportRoute({ ...data, currentStopId: route.stop?.id ?? wpt?.id, isPreview: true });
+            }
+        } catch (error) {
+            console.error('Failed to load transport route on hover:', error);
+        }
+    };
 
-            if (response?.data) {
+    const handleRouteMouseLeave = () => {
+        if (ctx.selectedTransportRoute?.isPreview) ctx.setSelectedTransportRoute(null);
+    };
+
+    const handleRouteClick = async () => {
+        if (!route.id) return;
+        const currentStopId = route.stop?.id ?? wpt.id;
+        try {
+            if (ctx.selectedTransportRoute?.id === route.id && ctx.selectedTransportRoute?.isPreview) {
                 ctx.setSelectedTransportRoute({
-                    ...response.data,
-                    color,
+                    ...ctx.selectedTransportRoute,
+                    currentStopId,
+                    isPreview: false,
                 });
+                return;
+            }
+            const data = await fetchRouteData({ wpt, route, color, typeName });
+            if (data) {
+                ctx.setSelectedTransportRoute({ ...data, currentStopId, isPreview: false });
             }
         } catch (error) {
             console.error('Failed to load transport route:', error);
@@ -38,7 +70,14 @@ export default function TransportStopRouteItem({ route, icon, color, typeName, w
     };
 
     return (
-        <MenuItem id={`se-transport-route-${route.id}`} disableRipple className={styles.stopRouteItem} onClick={handleRouteClick}>
+        <MenuItem
+            id={`se-transport-route-${route.id}`}
+            disableRipple
+            className={`${styles.stopRouteItem} ${ctx.selectedTransportRoute?.id === route.id ? styles.selected : ''}`}
+            onClick={handleRouteClick}
+            onMouseEnter={handleRouteMouseEnter}
+            onMouseLeave={handleRouteMouseLeave}
+        >
             <ListItemIcon className={itemsStyles.icon} sx={{ alignItems: 'center' }}>
                 <IconComponent style={{ width: 24, height: 24 }} />
             </ListItemIcon>

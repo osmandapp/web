@@ -59,32 +59,27 @@
     transition: background-color 5000s ease-in-out 0s !important;
 }
 .placeTypes {
-    font-family: Roboto !important;
     color: var(--text-secondary) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
 }
 .placeDistance {
-    font-family: Roboto !important;
     color: #727272;
     font-size: 14px !important;
     font-weight: 400 !important;
 }
 .placeInfo {
-    font-family: Roboto !important;
     color: var(--text-secondary) !important;
     font-size: 12px !important;
     font-weight: 400 !important;
 }
 .explorePlaceTypes {
-    font-family: Roboto !important;
     color: var(--text-secondary) !important;
     font-size: 14px !important;
     font-weight: 400 !important;
 }
 .placeDesc {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -100,7 +95,6 @@
     fill: #c0c0c0 !important;
 }
 .titleText {
-    font-family: Roboto;
     color: var(--text-primary) !important;
     font-size: 16px !important;
     font-style: normal !important;
@@ -380,7 +374,6 @@
 }
 .metadata {
     color: white !important;
-    font-family: Roboto !important;
 }
 .metadatamulti {
     line-height: 1.5 !important;

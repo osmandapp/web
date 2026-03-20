@@ -14,7 +14,7 @@ import FavoriteItem from './FavoriteItem';
 import Loading from '../errors/Loading';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { byTime, doSort } from '../actions/SortActions';
-import { getCenterMapLoc } from '../../manager/MapManager';
+import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { FixedSizeList } from 'react-window';
 import FavoriteGroup from './FavoriteGroup';
 import { useLocation } from 'react-router-dom';
@@ -108,7 +108,10 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                 setMarkers(updatedMarkers);
             }
         } else if (refMarkers.current?.length > 0) {
-            const updatedMarkers = addLocDist({ location: getCenterMapLoc(hash), markers: refMarkers.current });
+            const updatedMarkers = addLocDist({
+                location: getMapCenter(ctx, hash),
+                markers: refMarkers.current,
+            });
             setMarkers(updatedMarkers);
         }
     }, [currentLoc?.lat, currentLoc?.lng, refMarkers.current, mapMoveTick]);

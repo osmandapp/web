@@ -1,5 +1,4 @@
 import {
-    AppBar,
     Box,
     Button,
     CircularProgress,
@@ -10,7 +9,6 @@ import {
     ListItemIcon,
     ListItemText,
     MenuItem,
-    Toolbar,
     Dialog,
     Typography,
 } from '@mui/material';
@@ -24,9 +22,7 @@ import AppContext, {
     OBJECT_TYPE_SHARE_FILE,
     OBJECT_TYPE_STOP,
 } from '../../../context/AppContext';
-import headerStyles from '../../../menu/trackfavmenu.module.css';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
-import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
@@ -42,7 +38,7 @@ import FavoritesManager, {
     prepareIcon,
     navigateToFavoritesMenu,
 } from '../../../manager/FavoritesManager';
-import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
+import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
     filterTag,
@@ -87,14 +83,22 @@ import capitalize from 'lodash-es/capitalize';
 import { getCategory } from '../../../menu/search/explore/WikiPlacesItem';
 import PoiActionsButtons from './actions/PoiActionsButtons';
 import TransportStopActionsButtons from './actions/TransportStopActionsButtons';
-import { fmt, localizeWeekTokens } from '../../../util/dateFmt';
+import { fmt } from '../../../util/dateFmt';
 import { FAVORITES_KEY, useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
-import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
+import {
+    EXPLORE_URL,
+    HEADER_SIZE,
+    MAIN_URL_WITH_SLASH,
+    SEARCH_RESULT_URL,
+    SEARCH_URL,
+} from '../../../manager/GlobalManager';
+import { useWindowSize } from '../../../util/hooks/useWindowSize';
+import gStyles from '../../../menu/gstylesmenu.module.css';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useLocation, useNavigate } from 'react-router-dom';
 import DistanceInfo from './DistanceInfo';
 import { getDistance, getBearing } from '../../../util/Utils';
-import { getCenterMapLoc } from '../../../manager/MapManager';
+import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
@@ -166,6 +170,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const navigate = useNavigate();
     const location = useLocation();
     const hash = location.hash;
+    const [, height] = useWindowSize();
 
     const recentSaver = useRecentDataSaver();
 
@@ -202,7 +207,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
             return { distance: null, bearing: null };
         }
-        const mapCenter = getCenterMapLoc(hash);
+        const mapCenter = getMapCenter(ctx, hash);
         if (!mapCenter) {
             return { distance: null, bearing: null };
         }
@@ -323,8 +328,48 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     useEffect(() => {
         if (!newWpt || !ctx.selectedWpt) return;
 
+        const type = getWptType(ctx.selectedWpt);
+
+        if (type?.isStop) {
+            const controller = new AbortController();
+            setWpt({ ...newWpt });
+            setIsAddressAdded(false);
+            setIsPhotosAdded(false);
+            (async () => {
+                let tags = null;
+                let osmUrl;
+                const stop = ctx.selectedWpt.stop;
+                const lat = stop?.latlng?.lat;
+                const lon = stop?.latlng?.lng;
+                const name = stop?.options?.name ?? '';
+                if (lat != null && lon != null) {
+                    const response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
+                        params: {
+                            pin: `${Number(lat).toFixed(6)},${Number(lon).toFixed(6)}`,
+                            name,
+                            type: 'transportation',
+                        },
+                        apiCache: true,
+                        signal: controller.signal,
+                    });
+                    if (response?.data) {
+                        const options = response.data.properties ?? {};
+                        tags = await WptTagsProvider.getWptTags({ options }, { ...type, isPoi: true }, ctx);
+                        osmUrl = options[POI_OSM_URL];
+                    }
+                }
+                if (!controller.signal.aborted) {
+                    setWpt((prev) =>
+                        prev && prev.id === newWpt.id
+                            ? { ...prev, tags, ...(osmUrl !== undefined && { osmUrl }) }
+                            : prev
+                    );
+                }
+            })();
+            return () => controller.abort();
+        }
+
         const fetchTagsAndData = async () => {
-            const type = getWptType(ctx.selectedWpt);
             let tags;
             if (type?.isWpt) {
                 tags = await WptTagsProvider.getWptTags(ctx.selectedWpt, type, ctx);
@@ -349,8 +394,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     fallbackTags.push(wikidataTag);
                     tags = { res: fallbackTags };
                 }
-            } else if (type?.isStop) {
-                tags = null;
             }
             return tags;
         };
@@ -745,19 +788,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     const Header = () => {
         return (
-            <AppBar position="static" className={headerStyles.appbar}>
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
-                        id={wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details'}
-                        variant="contained"
-                        type="button"
-                        className={styles.closeIcon}
-                        onClick={() => closeDetails()}
-                    >
-                        {wpt?.mapObj ? <CloseIcon /> : <BackIcon />}
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+            <HeaderWithUnderline
+                onClose={() => closeDetails()}
+                showBackButton={!wpt?.mapObj}
+                appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
+            />
         );
     };
 
@@ -897,157 +932,170 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 <Loading />
             ) : (
                 <Box
-                    minWidth={ctx.infoBlockWidth}
-                    maxWidth={ctx.infoBlockWidth}
-                    sx={{ height: 'auto', overflowX: 'hidden' }}
+                    sx={{
+                        height: `${height - HEADER_SIZE}px`,
+                        minWidth: ctx.infoBlockWidth,
+                        maxWidth: ctx.infoBlockWidth,
+                    }}
+                    className={gStyles.scrollMainBlock}
                 >
                     <Header />
-                    {wpt !== null && (
-                        <ListItemText id={getId()}>
-                            <Box id={'se-wpt-details'} className={styles.topContainer}>
-                                <div>
-                                    <MenuItemWithLines maxLines={3} className={styles.name}>
-                                        <WptName />
-                                    </MenuItemWithLines>
-                                    <MenuItemWithLines className={styles.type} name={getObjType(wpt, t)} maxLines={2} />
-                                </div>
-                                {wpt.icon && (
-                                    <WptIcon
-                                        wpt={wpt}
-                                        color={wpt.color}
-                                        background={wpt.background}
-                                        icon={wpt.icon}
-                                        iconSize={ICON_IMG_SIZE}
-                                        shieldSize={ICON_SHIELD_SIZE}
-                                        ctx={ctx}
+                    <Box className={gStyles.scrollActiveBlock}>
+                        {wpt !== null && (
+                            <ListItemText id={getId()} sx={{ mt: 0 }}>
+                                <Box id={'se-wpt-details'} className={styles.topContainer}>
+                                    <div>
+                                        <MenuItemWithLines maxLines={3} className={styles.name}>
+                                            <WptName />
+                                        </MenuItemWithLines>
+                                        <MenuItemWithLines
+                                            className={styles.type}
+                                            name={getObjType(wpt, t)}
+                                            maxLines={2}
+                                        />
+                                    </div>
+                                    {wpt.icon && (
+                                        <WptIcon
+                                            wpt={wpt}
+                                            color={wpt.color}
+                                            background={wpt.background}
+                                            icon={wpt.icon}
+                                            iconSize={ICON_IMG_SIZE}
+                                            shieldSize={ICON_SHIELD_SIZE}
+                                            ctx={ctx}
+                                        />
+                                    )}
+                                </Box>
+                                {wpt?.category && <WptCategory />}
+                                {wpt?.openingHours && <OpeningHoursInfo openingHours={wpt.openingHours} />}
+                                {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
+                                    <WptAddress />
+                                ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
+                                    <CircularProgress sx={{ ml: 2 }} size={19} />
+                                ) : null}
+                                {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
+                                {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
+                                {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
+                                {wpt?.type?.isStop && <TransportStopsRoutes wpt={wpt} />}
+                                {wpt?.wikiDesc && (
+                                    <>
+                                        <Divider sx={{ mt: 2 }} />
+                                        <MenuItem className={styles.descTitle}>
+                                            <ListItemText>
+                                                <Typography className={styles.descTitleText}>
+                                                    {t('shared_string_description')}
+                                                </Typography>
+                                            </ListItemText>
+                                        </MenuItem>
+                                        <div className={styles.descTextBlock}>
+                                            <Typography id={'se-wpt-desc'} className={styles.descText}>
+                                                {parse(cleanHtml(wpt?.wikiDesc || EMPTY_STRING))}
+                                            </Typography>
+                                        </div>
+                                        <Button
+                                            sx={{ ml: 1 }}
+                                            onClick={() =>
+                                                window.open(
+                                                    'https://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
+                                                    '_blank'
+                                                )
+                                            }
+                                        >
+                                            {t('shared_string_read_more')}
+                                        </Button>
+                                    </>
+                                )}
+                                <Divider sx={{ mt: '16px' }} />
+                                {wpt.photos && <PhotoGallery photos={wpt.photos} />}
+                                {wpt.elo && ctx.develFeatures && (
+                                    <WptTagInfo
+                                        key={'elo'}
+                                        baseTag={{
+                                            icon: <InfoIcon />,
+                                            name: 'Elo',
+                                            value: Number(wpt.elo).toFixed(0),
+                                        }}
                                     />
                                 )}
-                            </Box>
-                            {wpt?.category && <WptCategory />}
-                            {wpt?.openingHours && <OpeningHoursInfo openingHours={wpt.openingHours} />}
-                            {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                <WptAddress />
-                            ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                <CircularProgress sx={{ ml: 2 }} size={19} />
-                            ) : null}
-                            {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
-                            {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
-                            {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
-                            {wpt?.type?.isStop && wpt?.routes && <TransportStopsRoutes routes={wpt.routes} wpt={wpt} />}
-                            {wpt?.wikiDesc && (
-                                <>
-                                    <Divider sx={{ mt: 2 }} />
-                                    <MenuItem className={styles.descTitle}>
-                                        <ListItemText>
-                                            <Typography className={styles.descTitleText}>
-                                                {t('shared_string_description')}
-                                            </Typography>
-                                        </ListItemText>
-                                    </MenuItem>
-                                    <div className={styles.descTextBlock}>
-                                        <Typography id={'se-wpt-desc'} className={styles.descText}>
-                                            {parse(cleanHtml(wpt?.wikiDesc || EMPTY_STRING))}
-                                        </Typography>
-                                    </div>
-                                    <Button
-                                        sx={{ ml: 1 }}
-                                        onClick={() =>
-                                            window.open(
-                                                'https://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
-                                                '_blank'
-                                            )
-                                        }
-                                    >
-                                        {t('shared_string_read_more')}
-                                    </Button>
-                                </>
-                            )}
-                            <Divider sx={{ mt: '16px' }} />
-                            {wpt.photos && <PhotoGallery photos={wpt.photos} />}
-                            {wpt.elo && ctx.develFeatures && (
-                                <WptTagInfo
-                                    key={'elo'}
-                                    baseTag={{
-                                        icon: <InfoIcon />,
-                                        name: 'Elo',
-                                        value: Number(wpt.elo).toFixed(0),
-                                    }}
-                                />
-                            )}
-                            {wpt.wvLinks && <WikiVoyageLinks wvLinks={wpt.wvLinks} />}
-                            {wpt.desc && (
-                                <WptTagInfo
-                                    key={'desc'}
-                                    baseTag={{
-                                        icon: <DescriptionIcon />,
-                                        name: t('shared_string_description'),
-                                        value: wpt.desc,
-                                        isDesc: true,
-                                    }}
-                                />
-                            )}
-                            {wpt.time && (
-                                <WptTagInfo
-                                    key={'time'}
-                                    baseTag={{
-                                        icon: <TimeIcon />,
-                                        name: t('date_of_creation'),
-                                        value: formatTime(wpt.time),
-                                    }}
-                                />
-                            )}
-                            {wpt?.hidden === 'true' && (
-                                <WptTagInfo
-                                    key={'hidden'}
-                                    baseTag={{
-                                        icon: <InfoIcon />,
-                                        name: t('shared_string_hidden'),
-                                        value: t('shared_string_yes'),
-                                    }}
-                                />
-                            )}
-                            {wpt.category && (
-                                <WptTagInfo
-                                    key={'folder'}
-                                    baseTag={{
-                                        icon: <FolderIcon />,
-                                        name: t('folder'),
-                                        value: wpt.category,
-                                    }}
-                                />
-                            )}
-                            {renderedTags
-                                ?.filter((t) => filterTag(t))
-                                .map((t, index) => (
-                                    <WptTagInfo key={t?.key ?? index} tag={t} setDevWikiContent={setDevWikiContent} />
-                                ))}
-                            {wpt.osmUrl && (
-                                <WptTagInfo
-                                    key={'osm'}
-                                    baseTag={{
-                                        icon: <OsmIcon />,
-                                        name: 'OSM ID',
-                                        link: (
-                                            <Link href={wpt.osmUrl} target="_blank" rel="noopener noreferrer">
-                                                {getOsmIdFromOsmUrl(wpt.osmUrl)}
-                                            </Link>
-                                        ),
-                                    }}
-                                />
-                            )}
-                            {wpt.latlon?.lat != null && wpt.latlon?.lon != null && (
-                                <WptTagInfo
-                                    key={'latlon'}
-                                    copy={true}
-                                    baseTag={{
-                                        icon: <LocationIcon />,
-                                        name: t('coordinates'),
-                                        value: wpt.latlon.lat.toFixed(6) + ', ' + wpt.latlon.lon.toFixed(6),
-                                    }}
-                                />
-                            )}
-                        </ListItemText>
-                    )}
+                                {wpt.wvLinks && <WikiVoyageLinks wvLinks={wpt.wvLinks} />}
+                                {wpt.desc && (
+                                    <WptTagInfo
+                                        key={'desc'}
+                                        baseTag={{
+                                            icon: <DescriptionIcon />,
+                                            name: t('shared_string_description'),
+                                            value: wpt.desc,
+                                            isDesc: true,
+                                        }}
+                                    />
+                                )}
+                                {wpt.time && (
+                                    <WptTagInfo
+                                        key={'time'}
+                                        baseTag={{
+                                            icon: <TimeIcon />,
+                                            name: t('date_of_creation'),
+                                            value: formatTime(wpt.time),
+                                        }}
+                                    />
+                                )}
+                                {wpt?.hidden === 'true' && (
+                                    <WptTagInfo
+                                        key={'hidden'}
+                                        baseTag={{
+                                            icon: <InfoIcon />,
+                                            name: t('shared_string_hidden'),
+                                            value: t('shared_string_yes'),
+                                        }}
+                                    />
+                                )}
+                                {wpt.category && (
+                                    <WptTagInfo
+                                        key={'folder'}
+                                        baseTag={{
+                                            icon: <FolderIcon />,
+                                            name: t('folder'),
+                                            value: wpt.category,
+                                        }}
+                                    />
+                                )}
+                                {renderedTags
+                                    ?.filter((t) => filterTag(t))
+                                    .map((t, index) => (
+                                        <WptTagInfo
+                                            key={t?.key ?? index}
+                                            tag={t}
+                                            setDevWikiContent={setDevWikiContent}
+                                        />
+                                    ))}
+                                {wpt.osmUrl && (
+                                    <WptTagInfo
+                                        key={'osm'}
+                                        baseTag={{
+                                            icon: <OsmIcon />,
+                                            name: 'OSM ID',
+                                            link: (
+                                                <Link href={wpt.osmUrl} target="_blank" rel="noopener noreferrer">
+                                                    {getOsmIdFromOsmUrl(wpt.osmUrl)}
+                                                </Link>
+                                            ),
+                                        }}
+                                    />
+                                )}
+                                {wpt.latlon?.lat != null && wpt.latlon?.lon != null && (
+                                    <WptTagInfo
+                                        key={'latlon'}
+                                        copy={true}
+                                        baseTag={{
+                                            icon: <LocationIcon />,
+                                            name: t('coordinates'),
+                                            value: wpt.latlon.lat.toFixed(6) + ', ' + wpt.latlon.lon.toFixed(6),
+                                        }}
+                                    />
+                                )}
+                            </ListItemText>
+                        )}
+                    </Box>
                 </Box>
             )}
             {devWikiContent && (

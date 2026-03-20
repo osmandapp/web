@@ -2,6 +2,38 @@
 sidebar_position: 6
 ---
 
+# Web 1.03 {#web-103}
+
+Web 1.03 is the latest web version of OsmAnd, which includes new useful features and improvements. This article describes all the main updates of the [Web Planner](../user/web/index.md).
+
+
+## What's new {#whats-new}
+
+- Navigation UI redesign
+- Smart folders support
+- Track appearance settings (color & width)
+- Public transport stops
+- POI context menu improvements
+
+
+- [Optional updates](#optional-updates). Additional updates and refinements for the release.
+
+
+## Optional updates {#optional-updates}
+
+- [Export GPX as simplified track](https://github.com/osmandapp/web/issues/436)
+- [Opening hours displayed in POI context menu](https://github.com/osmandapp/web/issues/1277)
+- [Pinned favorite folders](https://github.com/osmandapp/web/issues/1193)
+- [Wikimedia metadata improvements](https://github.com/osmandapp/OsmAnd-Issues/issues/2959)
+- [Improved layer menu behavior](https://github.com/osmandapp/web/issues/918)
+- [Track tooltip on hover](https://github.com/osmandapp/web/issues/1305)
+- [Search improvements for personal data](https://github.com/osmandapp/web/issues/1065)
+- [POI gallery improvements](https://github.com/osmandapp/OsmAnd/issues/22671)
+- [Marker selection improvements](https://github.com/osmandapp/web/issues/1297)
+- [Improved POI category search behavior](https://github.com/osmandapp/web/issues/1126)
+- [Hide expired purchases in account page](https://github.com/osmandapp/web/issues/1328)
+
+<!--
 # Web 1.02 {#web-102}
 
 Web 1.02 is the latest web version of OsmAnd, which includes new useful features and improvements. This article describes all the main updates of the [Web Route Planner](../user/web/index.md).
@@ -33,3 +65,4 @@ Web 1.02 is the latest web version of OsmAnd, which includes new useful features
 - [Incorrect number of "Tracks on display".](https://github.com/osmandapp/web/issues/798)
 - [The Ecco brand is displayed as a category, although it is not on the visible maps.](https://github.com/osmandapp/web/issues/807)
 - [Track is created with two `rte` tags.](https://github.com/osmandapp/OsmAnd-iOS/issues/4466)
+-->

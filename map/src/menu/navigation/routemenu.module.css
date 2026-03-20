@@ -90,7 +90,6 @@
     color: var(--text-primary) !important;
     font-feature-settings: 'liga' off !important;
     text-overflow: ellipsis !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -205,7 +204,6 @@
 }
 .routeSummaryValue {
     color: #000 !important;
-    font-family: Roboto !important;
     font-size: 20px !important;
     font-style: normal !important;
     font-weight: 500 !important;
@@ -214,7 +212,6 @@
 }
 .routeSummaryUnit {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -222,7 +219,6 @@
 }
 .routeSummaryPoint {
     color: #bfbfbf;
-    font-family: Roboto !important;
     font-size: 20px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -230,7 +226,6 @@
 }
 .routeSummaryArrival {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 20px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -238,7 +233,6 @@
 }
 .routeSummaryCost {
     color: var(--text-secondary) !important;
-    font-family: Roboto !important;
     font-size: 10px !important;
     font-style: normal !important;
     font-weight: 500 !important;
@@ -247,7 +241,6 @@
 }
 .routeSummaryElevation {
     color: #727272 !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-style: normal !important;
     font-weight: 400 !important;

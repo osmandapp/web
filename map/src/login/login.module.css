@@ -61,7 +61,6 @@
 .purchaseName {
     color: #237bff !important;
     font-feature-settings: 'liga' off !important;
-    font-family: Roboto !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 500 !important;
@@ -70,7 +69,6 @@
 }
 .purchaseInfo {
     color: #666 !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-style: normal !important;
     font-weight: 400 !important;
@@ -107,7 +105,6 @@
 .loginDialogText {
     color: #212121 !important;
     font-feature-settings: 'liga' off !important;
-    font-family: Roboto !important;
     font-size: 20px !important;
     font-style: normal !important;
     font-weight: 500 !important;

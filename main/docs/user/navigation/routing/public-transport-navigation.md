@@ -141,19 +141,30 @@ The user interface displays Alternative Routes as colored badges with their refs
 
 ## Performance and Results {#performance-and-results}
 
-**Public Transport profile -&gt; Settings -&gt; Navigation settings -&gt; Route parameters**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Maximum number of transport changes**.
+<TabItem value="android" label="Android">
 
-The performance and memory consumption of the Public Transport Router depend on the search depth.
+![Maximum Number of Transport Changes](@site/static/img/navigation/public/maximum_number_android.png) 
 
-The most important parameter that affects this depth is the **Maximum number of transport changes**.
+</TabItem>
 
-We use **2** as the default value, which seems optimal for modern public transport networks.
+<TabItem value="ios" label="iOS">  
 
-If you encounter low performance or out-of-memory errors, try decreasing this value.
+![Maximum Number of Transport Changes](@site/static/img/navigation/public/maximum_number_ios.png)
 
-If you are in a small city or travel short routes, a value of **1** may work better.
+</TabItem>
+
+</Tabs>
+
+Go to: *<Translate android="true" ids="shared_string_settings"/>* *→ Public Transport profile →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Maximum number of transport changes*
+
+The performance and memory consumption of the Public Transport Router depend on the search depth. The most important parameter that affects this depth is the **Maximum number of transport changes**.
+
+This parameter also directly affects the availability and quality of routes. If the value is set too low (for example, 0), OsmAnd may fail to find suitable routes or suggest suboptimal options, even when better routes with transfers exist.
+
+We use **2** as the default value, which seems optimal for modern public transport networks. If you encounter low performance or out-of-memory errors, try decreasing this value. If you are in a small city or travel short routes, a value of **1** may work better.
+
 <!--
 There are two more parameters that help you choose the best routes.
 

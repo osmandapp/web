@@ -70,7 +70,7 @@ const MenuItemWithLines = forwardRef((props, ref) => {
                         onClick={handleExpandClick}
                         variant="inherit"
                         component="span"
-                        sx={{ fontFamily: 'Roboto', display: 'inline' }}
+                        sx={{ display: 'inline' }}
                         className={className ?? styles.groupName}
                     >
                         {name}

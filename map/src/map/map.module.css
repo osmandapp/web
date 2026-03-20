@@ -74,6 +74,31 @@
     margin-left: 4px !important;
     margin-top: 4px !important;
 }
+:global(.route-point-marker) {
+    position: relative;
+}
+
+:global(.route-point-marker__number) {
+    position: absolute;
+    left: 69%;
+    top: 49%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-family-primary), system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Moved icon shifts slightly on drag — offset number upward so it stays centered on the flag */
+:global(.route-point-marker--moved .route-point-marker__number) {
+    top: 20%;
+}
+
 .tooltip {
     border-radius: 33px !important;
     width: max-content !important;

@@ -20,7 +20,7 @@ import anchorme from 'anchorme';
 import { isVisibleTrack, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
 import { getFileStorage, GPX } from '../GlobalManager';
 import { closeTrack } from './DeleteTrackManager';
-import { SHARE_TYPE } from '../../menu/share/shareConstants';
+import { SHARE_TYPE, SMART_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
@@ -55,6 +55,14 @@ export function fitBoundsOptions(ctx) {
         paddingTopLeft: [ctx.fitBoundsPadding.left, ctx.fitBoundsPadding.top],
         paddingBottomRight: [ctx.fitBoundsPadding.right, ctx.fitBoundsPadding.bottom],
     };
+}
+
+export function filterSmartFolders(tracksGroups) {
+    return tracksGroups?.filter((g) => g.type === SMART_TYPE) || [];
+}
+
+export function filterRegularFolders(tracksGroups) {
+    return tracksGroups?.filter((g) => g.type !== SMART_TYPE) || [];
 }
 
 export function prepareLocalTrack(track) {
@@ -585,7 +593,7 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
                         subfolders: [],
                         groupFiles: [],
                         lastModifiedMs: null,
-                        lastModifiedData: null,
+                        lastModifiedDate: null,
                     };
                     currentGroups.push(existingGroup);
                 }
@@ -604,11 +612,14 @@ export function createTrackGroups({ files, isSmartf = false, ctx }) {
             files: tracks,
             groupFiles: tracks,
             lastModifiedMs: null,
-            lastModifiedData: null,
+            lastModifiedDate: null,
         };
         defaultGroup.subfolders = trackGroups.filter((group) => group.name !== DEFAULT_GROUP_NAME);
         trackGroups.push(defaultGroup);
     }
+
+    const smartFolders = filterSmartFolders(ctx.tracksGroups);
+    trackGroups.push(...smartFolders);
 
     addFilesAndCalculateLastModified(trackGroups);
 
@@ -644,30 +655,41 @@ function addFilesAndCalculateLastModified(groups) {
                 group.files.push(file);
             }
         });
-        const directTracksCount = (group.groupFiles || []).filter((file) => !isPlaceholderFile(file)).length;
-        const subfoldersTracksCount = group.subfolders.reduce((acc, subfolder) => acc + (subfolder.realSize ?? 0), 0);
-        group.realSize = directTracksCount + subfoldersTracksCount;
+
+        if (group.type === SMART_TYPE && group.userFilePaths && group.groupFiles.length === 0) {
+            group.realSize = group.userFilePaths.length;
+        } else {
+            const directTracksCount = (group.groupFiles || []).filter((file) => !isPlaceholderFile(file)).length;
+            const subfoldersTracksCount = group.subfolders.reduce(
+                (acc, subfolder) => acc + (subfolder.realSize ?? 0),
+                0
+            );
+            group.realSize = directTracksCount + subfoldersTracksCount;
+        }
         calculateLastModified(group);
     });
 }
 
 function calculateLastModified(group) {
+    if (group.type === SMART_TYPE) {
+        return;
+    }
     if (!group.files || group.files.length === 0) {
         group.lastModifiedMs = null;
-        group.lastModifiedData = null;
+        group.lastModifiedDate = null;
         return;
     }
 
-    let minMs = Infinity;
-    let minData = null;
+    let maxMs = -Infinity;
+    let maxDate = null;
     for (const file of group.files) {
-        if (file.updatetimems < minMs) {
-            minMs = file.updatetimems;
-            minData = file.updatetime;
+        if (file.updatetimems > maxMs) {
+            maxMs = file.updatetimems;
+            maxDate = file.updatetime;
         }
     }
-    group.lastModifiedMs = minMs;
-    group.lastModifiedData = minData;
+    group.lastModifiedMs = maxMs;
+    group.lastModifiedDate = maxDate;
 }
 
 export function findGroupByName(groups, groupName) {

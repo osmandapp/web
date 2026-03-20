@@ -147,7 +147,11 @@ export function createPoiIcon({
                    <image width="${isize}" height="${isize}" href="/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${DEFAULT_WPT_ICON}.svg" />
                    </svg>`;
     }
-    return L.divIcon({ html: html });
+    return L.divIcon({
+        html,
+        iconSize: [allIconSize, allIconSize],
+        iconAnchor: [allIconSize / 2, allIconSize / 2],
+    });
 }
 
 export function getPoiCategoryIcon({ icon, color, background }) {
@@ -271,11 +275,29 @@ function parseSvgSize(svgHtml) {
 }
 
 function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
-    // Scale all numbers in path by shapeSize/oldShapeSize; keep command structure (M,L,H,V etc.) unchanged
     const scaleFactor = shapeSize / oldShapeSize;
-    const newPathData = pathData.replaceAll(/[-+]?\d*\.?\d+/g, (num) =>
-        Math.round(Number.parseFloat(num) * scaleFactor)
-    );
+    let arcN = 0; // 1..7 inside A/a (4th and 5th are flags, must stay 0 or 1)
+    const newPathData = pathData.replace(/([Aa])|([MLHVCSQTZmlhvcsqtz])|([-+]?\d*\.?\d+)/g, (m, isArc, isCmd, num) => {
+        if (isArc) {
+            arcN = 1;
+            return m;
+        }
+        if (isCmd) {
+            arcN = 0;
+            return m;
+        }
+        if (num !== undefined) {
+            const n = Number.parseFloat(num);
+            if (arcN >= 4 && arcN <= 5 && (n === 0 || n === 1)) {
+                arcN = arcN === 5 ? 0 : arcN + 1;
+                return num;
+            }
+            if (arcN >= 1) arcN = arcN >= 7 ? 0 : arcN + 1;
+            const scaled = n * scaleFactor;
+            return String(Math.round(scaled * 100) / 100);
+        }
+        return m;
+    });
     return { newPathData, realWidth: shapeSize, realHeight: shapeSize };
 }
 
@@ -337,21 +359,23 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
         return `<circle ${prefix} cx="${newCx}" ${middle} cy="${newCy}" ${middle2} r="${newR}" ${suffix}/>`;
     });
 
+    const scaleFactor = shapeSize / oldShapeSize;
     svgHtml = svgHtml.replace(pathPattern, (match, pathData) => {
-        // Update the sizes inside <path>
         const { newPathData, realWidth, realHeight } = replacePathDataAndCalculateSize(
             pathData,
             shapeSize,
             oldShapeSize
         );
-        const fillPattern = /fill="([^"]*)"/;
-        const oldFillMatch = match.match(fillPattern);
-        const oldFill = oldFillMatch ? oldFillMatch[1] : '';
-
         nestedBHeight = realHeight;
         nestedBWidth = realWidth;
+        // Preserve all path attributes (fill-rule, clip-rule, fill, stroke, etc.), only replace d
+        return match.replace(/d="[^"]*"/, `d="${newPathData}"`);
+    });
 
-        return `<path d="${newPathData}" fill="${oldFill}"/>`;
+    // Scale stroke-width so thick strokes (e.g. 33 in 580 viewBox) don't fill the whole icon in 36 viewBox
+    svgHtml = svgHtml.replace(/stroke-width="([\d.]+)"/g, (_, w) => {
+        const scaled = parseFloat(w) * scaleFactor;
+        return `stroke-width="${Math.max(0.5, Math.round(scaled * 100) / 100)}"`;
     });
 
     svgHtml = svgHtml.replace(rectPattern, (match, prefix, width, middle, height, middle2, rx, suffix) => {
