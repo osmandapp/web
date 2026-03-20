@@ -334,7 +334,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 ![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
 
-**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. Roof shapes are applied only when this data is available and may be simplified. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
+**3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
 
 Use the main toggle to enable or disable 3D rendering of buildings. To view buildings in 3D, tilt the map by placing two fingers on the screen and swiping up. In this view, buildings may partially cover roads or map labels depending on the visibility setting.
 
