@@ -195,8 +195,8 @@ The **Color** setting changes the color tones of the route lines. Their overall 
 - ***<Translate android="true" id="map_widget_renderer"/>***. Used with the default colors. For a full description of the colors, go to [Default Map styles](../../map/map-styles.md#default-map-styles).  
     ![map stule](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Custom***. Allows you to select a line in any preferred color and transparency. You can select different settings for the day map and separately for the night map.  
-    ![custom](@site/static/img/navigation/route/custom.png)   ![custom](@site/static/img/navigation/route/custom_ios.png)
+- ***Custom***. Allows you to select a line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. The color palette includes quick access colors, an option to add a custom color (*+*), and a full list of available colors (*All colors*). 
+    ![custom](@site/static/img/navigation/route/custom_new.png)   ![custom](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. It shows the height of the route point as a **green-yellow-red** gradient. **Green** indicates the lowest point of the route, **yellow** indicates the average height of the point, and **red** is the highest. If the route altitude difference is < 100 meters, the gradient is partially applied or not applied, for example for a simple climb from 100 meters to 150 meters - the gradient will be **green-yellow**. Note that the color doesn't represent the absolute value of the altitude.  
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
