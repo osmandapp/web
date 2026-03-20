@@ -64,7 +64,7 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
         if (prevFile?.gpx?.options) {
             prevFile.gpx.options.pointsGroups = updatedPointsGroups;
         }
-        
+
         if (prevFile?.layers?.options) {
             prevFile.layers.options.pointsGroups = updatedPointsGroups;
         }

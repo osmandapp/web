@@ -394,7 +394,7 @@ export default function WaypointsTab() {
                     <Grid item xs={2}>
                         {showMass && (
                             <IconButton onClick={switchMassVisible}>
-                                <Switch id={"se-wpt-mass-visibility-switch"} checked={massVisible} />
+                                <Switch id={'se-wpt-mass-visibility-switch'} checked={massVisible} />
                             </IconButton>
                         )}
                     </Grid>

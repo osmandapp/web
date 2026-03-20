@@ -18,7 +18,7 @@ export default async function test() {
     await actionLogIn();
 
     const tracks = getFiles({ folder: 'gpx' });
-    const trackName = 'test-wpt-groups';
+    const trackName = 'test-track-wpt';
 
     for (const track of tracks) {
         await actionDeleteTracksByPattern(track.name);
@@ -51,15 +51,15 @@ export default async function test() {
     // Get initial marker count (find all visible waypoint markers on map)
     const initialMarkers = await getVisibleWaypointMarkers();
     const initialCount = initialMarkers.length;
-    await assert(initialCount === 4, `Track should have 4 waypoints, got ${initialCount}`);
+    await assert(initialCount === 9, `Track should have 9 waypoints, got ${initialCount}`);
     
     // Test: Toggle first group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
     await actionIdleWait({ idle: 1000 });
     const afterFirstHide = await getVisibleWaypointMarkers();
     await assert(
-        afterFirstHide.length === 2,
-        `First group should be hidden. Expected 2, got ${afterFirstHide.length}`
+        afterFirstHide.length === 6,
+        `First group should be hidden. Expected 6, got ${afterFirstHide.length}`
     );
 
     // log out and log in again
@@ -72,8 +72,8 @@ export default async function test() {
     await clickBy(By.id('se-cloud-track-' + trackName));
     const afterReload = await getVisibleWaypointMarkers();
     await assert(
-        afterReload.length === 2,
-        `First group should be hidden. Expected 2, got ${afterReload.length}`
+        afterReload.length === 6,
+        `First group should be hidden. Expected 6, got ${afterReload.length}`
     );
     await clickBy(By.css("[testid='se-tab-waypoints']"))
 
@@ -83,8 +83,8 @@ export default async function test() {
     
     const afterSecondHide = await getVisibleWaypointMarkers();
     await assert(
-        afterSecondHide.length === 0,
-        `Both groups should be hidden. Expected 0, got ${afterSecondHide.length}`
+        afterSecondHide.length === 1,
+        `Both groups should be hidden. Expected 1, got ${afterSecondHide.length}`
     );
     
     // Test: Toggle first group visibility ON
@@ -102,8 +102,8 @@ export default async function test() {
     
     const afterFirstShow = await getVisibleWaypointMarkers();
     await assert(
-        afterFirstShow.length === 2,
-        `First group should be visible again. Expected 2, got ${afterFirstShow.length}`
+        afterFirstShow.length === 4,
+        `First group should be visible again. Expected 4, got ${afterFirstShow.length}`
     );
     await clickBy(By.css("[testid='se-tab-waypoints']"))
 
@@ -113,8 +113,8 @@ export default async function test() {
     
     const afterBothShow = await getVisibleWaypointMarkers();
     await assert(
-        afterBothShow.length === 4,
-        `Both groups should be visible. Expected 4, got ${afterBothShow.length}`
+        afterBothShow.length === 9,
+        `Both groups should be visible. Expected 9, got ${afterBothShow.length}`
     );
     
     // Close track and cleanup
