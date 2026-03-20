@@ -376,11 +376,13 @@ const NavigationLayer = ({ geocodingData, region }) => {
             });
             layer.bindPopup(desc);
         }
-        layer.on('click', () => {
-            if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
-                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
-            }
-        });
+        if (id !== 'se-geojson-search') {
+            layer.on('click', () => {
+                if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+                    ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+                }
+            });
+        }
     };
 
     // filter features for GeoJSON
