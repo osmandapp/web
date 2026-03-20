@@ -106,7 +106,7 @@ const WaypointGroup = ({
                         </Button>
                     </Grid>
                     <Grid item xs={2}>
-                        <IconButton onClick={switchVisible}>
+                        <IconButton id={`se-wpt-group-visibility-${group || 'waypoints'}`} onClick={switchVisible}>
                             <Switch checked={visible} />
                         </IconButton>
                     </Grid>
@@ -369,7 +369,7 @@ export default function WaypointsTab() {
 
     return (
         <>
-            <MenuItem divider sx={{ px: 1, py: 1 }}>
+            <MenuItem id="se-waypoints-tab-content" divider sx={{ px: 1, py: 1 }}>
                 <Grid container alignItems="center">
                     <Grid item xs={7}>
                         {ctx.createTrack && ctx.selectedGpxFile?.wpts && !isEmpty(ctx.selectedGpxFile.wpts) && (
@@ -394,7 +394,7 @@ export default function WaypointsTab() {
                     <Grid item xs={2}>
                         {showMass && (
                             <IconButton onClick={switchMassVisible}>
-                                <Switch checked={massVisible} />
+                                <Switch id={"se-wpt-mass-visibility-switch"} checked={massVisible} />
                             </IconButton>
                         )}
                     </Grid>
