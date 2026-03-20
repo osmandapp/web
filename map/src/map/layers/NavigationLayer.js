@@ -377,7 +377,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             layer.bindPopup(desc);
         }
         layer.on('click', () => {
-            if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+            if (!globalThis.location.pathname.includes(NAVIGATE_URL) && feature.properties.roadId) {
                 ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
             }
         });
