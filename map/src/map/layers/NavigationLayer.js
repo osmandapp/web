@@ -350,7 +350,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
         fillOpacity: 0.8,
     };
 
-    const onEachFeature = ({ feature, layer, id = null, onClick = false }) => {
+    const onEachFeature = ({ feature, layer, id = null }) => {
         if (feature.properties?.description) {
             let desc = feature.properties.description;
             if (feature.properties.roadId) {
@@ -376,7 +376,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             });
             layer.bindPopup(desc);
         }
-        if (onClick) {
+        if (id !== 'se-geojson-search') {
             layer.on('click', () => {
                 if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
                     ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
@@ -486,7 +486,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     data={routeObject.getRoute()}
                     style={passStyle}
                     pointToLayer={pointToLayer}
-                    onEachFeature={(feature, layer) => onEachFeature({ feature, layer, onClick: true })}
+                    onEachFeature={(feature, layer) => onEachFeature({ feature, layer })}
                     filter={routeFilter}
                 />
             )}
