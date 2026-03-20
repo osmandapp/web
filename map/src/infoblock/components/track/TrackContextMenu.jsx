@@ -5,6 +5,8 @@ import TabPanels from '../tabs/TabPanels';
 import { ReactComponent as TracksIcon } from '../../../assets/menu/ic_action_track.svg';
 import styles from './trackcontextmenu.module.css';
 import AppContext from '../../../context/AppContext';
+import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
+import { getObjType } from '../wpt/WptDetails';
 
 export default function TrackContextMenu({ trackName, onClose, tabsObj, showBackButton = false }) {
     const ctx = useContext(AppContext);
@@ -26,9 +28,12 @@ export default function TrackContextMenu({ trackName, onClose, tabsObj, showBack
                 <HeaderNoUnderline title="" onClose={onClose} showBackButton={showBackButton} />
                 {trackName && (
                     <div className={styles.nameBlock}>
-                        <Typography id={'se-track-' + trackName} className={styles.trackName}>
-                            {trackName}
-                        </Typography>
+                        <MenuItemWithLines
+                            id={'se-track-' + trackName}
+                            className={styles.trackName}
+                            name={trackName}
+                            maxLines={3}
+                        />
                         <div className={styles.trackIconBox}>
                             <TracksIcon />
                         </div>
