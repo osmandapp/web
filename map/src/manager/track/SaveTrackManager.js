@@ -16,6 +16,7 @@ import TracksManager, {
     GPX_FILE_EXT,
     KMZ_FILE_EXT,
 } from './TracksManager';
+import { syncCloudTrackInfo } from './TrackAppearanceManager';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
 import {
@@ -136,7 +137,10 @@ export async function saveTrackToCloud({
             // close possibly loaded Cloud track (clean up layers)
             ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
             const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
-            if (res && res?.data?.status === 'ok') {
+            if (res?.data?.status === 'ok') {
+                if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
+                    await syncCloudTrackInfo(ctx, params.name);
+                }
                 // re-download gpx
                 const downloadFile = { ...currentFile, ...params };
                 if (open) {

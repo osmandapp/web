@@ -2,7 +2,12 @@ import L from 'leaflet';
 import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
-import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
+import TracksManager, {
+    getResolvedPointsGroups,
+    GPX_FILE_TYPE,
+    isProtectedSegment,
+    isWptGroupShown,
+} from '../../manager/track/TracksManager';
 import { getFavoriteId } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
@@ -24,7 +29,7 @@ export const DEFAULT_TRACK_LINE_WEIGHT = 7;
 
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
-    const emptyInfo = data?.info && data.info.width === '' && data.info.color === '#00000000';
+    const emptyInfo = data?.info?.width === '' && data.info.color === '#00000000';
     const trackAppearance =
         data?.info && !emptyInfo
             ? {
@@ -49,7 +54,18 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
             }
         }
     });
-    parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts, groupId, type });
+    const trackPointsGroups = getResolvedPointsGroups(data);
+    parseWpt({
+        points: data.wpts,
+        layers,
+        ctx,
+        data,
+        map,
+        simplify: simplifyWpts,
+        groupId,
+        type,
+        pointsGroups: trackPointsGroups,
+    });
 
     const trackName = data?.name;
     if (trackName) {
@@ -63,8 +79,6 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
         layersGroup.options.type = type;
-        const pointsGroups = data?.info?.pointsGroups ?? data?.pointsGroups;
-        layersGroup.options.pointsGroups = pointsGroups;
         return layersGroup;
     }
 }
@@ -451,6 +465,7 @@ function parseWpt({
     simplify = false,
     groupId = null,
     type = GPX_FILE_TYPE,
+    pointsGroups = null,
 }) {
     const zoom = map.getZoom();
     const lat = map.getCenter().lat;
@@ -463,6 +478,7 @@ function parseWpt({
               isFavorites: true,
           })
         : null;
+    const resolvedPointsGroups = pointsGroups ?? getResolvedPointsGroups(data);
     points?.forEach((point) => {
         let opt = {};
         const icon = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon });
@@ -507,6 +523,7 @@ function parseWpt({
             return;
         }
         marker.options.idObj = getFavoriteId(marker);
+        bindWptVisibilityOnAdd(marker, resolvedPointsGroups);
         if (ctx && map && data) {
             if (type === GPX_FILE_TYPE) {
                 marker.on('click', (e) => {
@@ -518,13 +535,6 @@ function parseWpt({
                         ...point,
                     };
                     ctx.setSelectedWpt(wpt);
-                });
-                marker.on('add', (e) => {
-                    const pointsGroups = data.info?.pointsGroups || data.pointsGroups;
-                    const visible = pointsGroups?.[marker.options.category]?.ext?.hidden !== true;
-                    if (e.target?._icon?.style) {
-                        e.target._icon.style.display = visible ? '' : 'none';
-                    }
                 });
             }
             addMarkerTooltip({
@@ -728,20 +738,31 @@ function createEditableTempLPolyline(start, end, map, ctx) {
     return polylineTemp;
 }
 
-export function redrawWptsOnLayer({ layer }) {
-    if (layer) {
-        const pointsGroups = layer.options?.pointsGroups;
-        layer.getLayers().forEach((l) => {
-            if (l instanceof L.Marker && l.options?.wpt) {
-                if (l._icon?.style) {
-                    const category = l.options?.category || '';
-                    const visible = pointsGroups?.[category]?.ext?.hidden !== true;
-                    // show Wpt on layer: visible - '' , hidden - 'none'
-                    l._icon.style.display = visible ? '' : 'none';
-                }
-            }
-        });
+// set visibility each time the marker is added to the map (Leaflet 'add' event)
+// visible - '' , hidden - 'none'
+export function bindWptVisibilityOnAdd(marker, pointsGroups) {
+    if (!marker?.options?.wpt || !pointsGroups) {
+        return;
     }
+    marker.on('add', (e) => {
+        const el = e.target?._icon;
+        if (!el?.style) {
+            return;
+        }
+        const category = e.target.options?.category ?? '';
+        el.style.display = isWptGroupShown(pointsGroups, category) ? '' : 'none';
+    });
+}
+
+// for updating markers
+export function redrawWptsOnLayer({ layer, pointsGroups }) {
+    if (!layer || !pointsGroups) return;
+    layer.getLayers().forEach((l) => {
+        if (l instanceof L.Marker && l.options?.wpt && l._icon?.style) {
+            const category = l.options.category || '';
+            l._icon.style.display = isWptGroupShown(pointsGroups, category) ? '' : 'none';
+        }
+    });
 }
 
 const TrackLayerProvider = {

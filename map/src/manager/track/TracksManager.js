@@ -34,6 +34,15 @@ export const EMPTY_FILE_NAME = `__folder__${INFO_FILE_EXT}`;
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
 export const PROFILE_LINE = 'line';
+
+export function getResolvedPointsGroups(file) {
+    return file?.info?.pointsGroups ?? file?.pointsGroups;
+}
+
+export function isWptGroupShown(pointsGroups, groupName) {
+    return pointsGroups?.[groupName]?.ext?.hidden !== true;
+}
+
 const PROFILE_CAR = 'car';
 const PROFILE_GAP = 'gap';
 export const NAN_MARKER = 99999;
@@ -75,6 +84,8 @@ export function prepareLocalTrack(track) {
         // tracks: prepareTrack.tracks, // tracks[] will be back
         wpts: prepareTrack.wpts,
         pointsGroups: prepareTrack.pointsGroups,
+        /** Cloud / .info payload (e.g. pointsGroups visibility); was omitted and lost on IndexedDB round-trip */
+        info: prepareTrack.info,
         ext: prepareTrack.ext,
         analysis: prepareAnalysis(prepareTrack.analysis),
         selected: false,

@@ -7,7 +7,11 @@ import TrackLayerProvider, {
     TEMP_LAYER_FLAG,
     WPT_SIMPLIFY_THRESHOLD,
 } from '../util/TrackLayerProvider';
-import TracksManager, { fitBoundsOptions, isEmptyTrack } from '../../manager/track/TracksManager';
+import TracksManager, {
+    fitBoundsOptions,
+    getResolvedPointsGroups,
+    isEmptyTrack,
+} from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import EditablePolyline from '../util/creator/EditablePolyline';
@@ -407,7 +411,8 @@ export default function LocalClientTrackLayer() {
     }
 
     function localRedrawWpts() {
-        redrawWptsOnLayer({ layer: ctxTrack.layers });
+        const pg = getResolvedPointsGroups(ctxTrack);
+        redrawWptsOnLayer({ layer: ctxTrack.layers, pointsGroups: pg });
         ctx.setSelectedGpxFile((o) => ({ ...o, localRedrawWpts: false }));
     }
 
