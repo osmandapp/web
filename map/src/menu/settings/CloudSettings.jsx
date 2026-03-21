@@ -5,6 +5,7 @@ import { apiGet } from '../../util/HttpApi';
 import devList from '../../resources/apple_device_model_list.json';
 import AppContext from '../../context/AppContext';
 import { fmt } from '../../util/dateFmt';
+import { INFO_FILE_EXT } from '../../manager/track/TracksManager';
 
 export default function CloudSettings({ setOpenCloudSettings }) {
     const ctx = useContext(AppContext);
@@ -23,7 +24,7 @@ export default function CloudSettings({ setOpenCloudSettings }) {
                 },
             });
             if (response.ok) {
-                const res = response.data.allFiles.filter((f) => !f.name.toLowerCase().endsWith('.info'));
+                const res = response.data.allFiles.filter((f) => !f.name.toLowerCase().endsWith(INFO_FILE_EXT));
                 setFilesLoading(false);
                 preparedDevices(res);
                 setAllFilesVersions(res);

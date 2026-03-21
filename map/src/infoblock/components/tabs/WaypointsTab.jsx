@@ -1,38 +1,40 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
+import { useContext, useEffect, useMemo, useState, useRef } from 'react';
 import AppContext, { isLocalTrack } from '../../../context/AppContext';
 import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
-import L from 'leaflet';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
 import PointManager from '../../../manager/PointManager';
-import TracksManager from '../../../manager/track/TracksManager';
+import TracksManager, { getResolvedPointsGroups, isWptGroupShown } from '../../../manager/track/TracksManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import isEmpty from 'lodash-es/isEmpty';
+import { updateGroupsVisibility } from '../../../manager/track/TrackAppearanceManager';
 
 // distinct component
-const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible }) => {
+const WaypointGroup = ({
+    ctx,
+    group,
+    points,
+    defaultOpen,
+    defaultVisible = true,
+    massOpen,
+    massVisible,
+    debouncerTimer,
+}) => {
     const [open, setOpen] = useState(defaultOpen);
     const switchOpen = () => setOpen(!open);
 
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(defaultVisible);
+
     const switchVisible = (e) => {
         e.stopPropagation();
-        setVisible(!visible);
+        const newVisible = !visible;
+        setVisible(newVisible);
+        updateGroupsVisibility(ctx, [group], !newVisible, debouncerTimer);
     };
 
     const [mounted, setMounted] = useState(false);
     useEffect(() => setMounted(true), []);
-
-    // visibility control
-    useEffect(() => {
-        mounted &&
-            points.forEach((p) => {
-                if (p.layer?._icon?.style) {
-                    p.layer._icon.style.display = visible ? '' : 'none';
-                }
-            });
-    }, [visible]);
 
     useEffect(() => {
         mounted && setOpen(massOpen);
@@ -89,7 +91,7 @@ const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible 
                         </Button>
                     </Grid>
                     <Grid item xs={2}>
-                        <IconButton onClick={switchVisible}>
+                        <IconButton id={`se-wpt-group-visibility-${group || 'waypoints'}`} onClick={switchVisible}>
                             <Switch checked={visible} />
                         </IconButton>
                     </Grid>
@@ -245,43 +247,11 @@ export default function WaypointsTab() {
     }
 
     function getSortedPoints() {
-        const wpts = [];
-
-        if (ctx.selectedGpxFile.wpts) {
-            const layers = getLayers();
-            const wptsMap = Object.fromEntries(
-                ctx.selectedGpxFile.wpts
-                    .filter((wpt) => wpt.lat != null && wpt.lon != null && !isNaN(wpt.lat) && !isNaN(wpt.lon))
-                    .map((wpt, index) => [
-                        parseFloat(wpt.lat).toFixed(6) + ',' + parseFloat(wpt.lon).toFixed(6),
-                        { wpt, index },
-                    ])
-            );
-
-            layers.forEach((layer) => {
-                if (layer instanceof L.Marker) {
-                    const coord = layer.getLatLng();
-                    const mapped = wptsMap[coord.lat.toFixed(6) + ',' + coord.lng.toFixed(6)];
-                    mapped && wpts.push({ wpt: mapped.wpt, index: mapped.index, layer });
-                }
-            });
-        }
-
         const az = (a, b) => (a > b) - (a < b);
-
-        return wpts.sort((a, b) => {
-            const aName = a.wpt.name;
-            const bName = b.wpt.name;
-
-            const aCat = a.wpt.category;
-            const bCat = b.wpt.category;
-
-            if (aCat !== bCat) {
-                return az(aCat, bCat);
-            }
-
-            return az(aName, bName);
-        });
+        return (ctx.selectedGpxFile.wpts || [])
+            .map((wpt, index) => ({ wpt, index }))
+            .filter(({ wpt }) => wpt.lat != null && wpt.lon != null && !Number.isNaN(wpt.lat) && !Number.isNaN(wpt.lon))
+            .sort((a, b) => az(a.wpt.category, b.wpt.category) || az(a.wpt.name, b.wpt.name));
     }
 
     function getSortedGroups() {
@@ -301,10 +271,20 @@ export default function WaypointsTab() {
 
     const [showMass, setShowMass] = useState(false);
     const [massOpen, setMassOpen] = useState(false);
-    const [massVisible, setMassVisible] = useState(true);
+    const [massVisible, setMassVisible] = useState(() => {
+        const pointsGroups = getResolvedPointsGroups(ctx.selectedGpxFile);
+        const groupKeys = Object.keys(pointsGroups || {});
+        return groupKeys.length > 0 && groupKeys.every((g) => isWptGroupShown(pointsGroups, g));
+    });
+    const debouncerTimer = useRef(null);
 
     const switchMassOpen = () => setMassOpen(!massOpen);
-    const switchMassVisible = () => setMassVisible(!massVisible);
+    const switchMassVisible = () => {
+        const newMassVisible = !massVisible;
+        setMassVisible(newMassVisible);
+        const groupNames = Object.keys(getResolvedPointsGroups(ctx.selectedGpxFile) || {});
+        updateGroupsVisibility(ctx, groupNames, !newMassVisible, debouncerTimer);
+    };
 
     const pointsChangedString = useMemo(() => {
         const name = ctx.selectedGpxFile.name;
@@ -317,6 +297,7 @@ export default function WaypointsTab() {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
         const trackName = ctx.selectedGpxFile.name;
+        const pointsGroups = getResolvedPointsGroups(ctx.selectedGpxFile);
 
         setShowMass(keys.length > 1);
 
@@ -329,8 +310,10 @@ export default function WaypointsTab() {
                         group={g}
                         points={groups[g]}
                         defaultOpen={keys.length === 1}
+                        defaultVisible={isWptGroupShown(pointsGroups, g)}
                         massVisible={massVisible}
                         massOpen={massOpen}
+                        debouncerTimer={debouncerTimer}
                     />
                 ))}
             </Box>
@@ -339,7 +322,7 @@ export default function WaypointsTab() {
 
     return (
         <>
-            <MenuItem divider sx={{ px: 1, py: 1 }}>
+            <MenuItem id="se-waypoints-tab-content" divider sx={{ px: 1, py: 1 }}>
                 <Grid container alignItems="center">
                     <Grid item xs={7}>
                         {ctx.createTrack && ctx.selectedGpxFile?.wpts && !isEmpty(ctx.selectedGpxFile.wpts) && (
@@ -364,7 +347,7 @@ export default function WaypointsTab() {
                     <Grid item xs={2}>
                         {showMass && (
                             <IconButton onClick={switchMassVisible}>
-                                <Switch checked={massVisible} />
+                                <Switch id={'se-wpt-mass-visibility-switch'} checked={massVisible} />
                             </IconButton>
                         )}
                     </Grid>

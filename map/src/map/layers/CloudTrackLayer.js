@@ -2,7 +2,11 @@ import { useContext, useEffect, useState } from 'react';
 import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
-import TracksManager, { fitBoundsOptions, getTracksArrBounds } from '../../manager/track/TracksManager';
+import TracksManager, {
+    fitBoundsOptions,
+    getResolvedPointsGroups,
+    getTracksArrBounds,
+} from '../../manager/track/TracksManager';
 import { encodeString, useMutator } from '../../util/Utils';
 import { INFO_MENU_URL, MAIN_URL_WITH_SLASH, MENU_INFO_OPEN_SIZE, TRACKS_URL } from '../../manager/GlobalManager';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -256,7 +260,8 @@ const CloudTrackLayer = () => {
             } else if (ctxTrack.cloudRedrawWpts) {
                 // skip processing if layer is removed
                 if (ctxTrack.gpx && map.hasLayer(ctxTrack.gpx)) {
-                    redrawWptsOnLayer({ layer: ctxTrack.gpx });
+                    const pg = getResolvedPointsGroups(ctxTrack);
+                    redrawWptsOnLayer({ layer: ctxTrack.gpx, pointsGroups: pg });
                     ctx.setSelectedGpxFile((o) => ({ ...o, cloudRedrawWpts: false }));
                 }
             } else if (ctxTrack.showPoint) {
