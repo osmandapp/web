@@ -28,14 +28,14 @@ export default async function test() {
     await waitBy(By.id('se-track-actions'));
     await clickBy(By.id('se-show-track-action'));
 
-    await waitByRemoved(By.id('se-infoblock-all'));
+    await waitByRemoved(By.id('se-track-context-menu'));
     await checkElementByCss('img[src*="point_finish"]');
 
     await clickBy(By.id(`se-actions-${trackName}`));
     await waitBy(By.id('se-track-actions'));
     await clickBy(By.id('se-hide-track-action'));
 
-    await waitByRemoved(By.id('se-infoblock-all'));
+    await waitByRemoved(By.id('se-track-context-menu'));
     await checkElementByCss('img[src*="point_finish"]', false);
 
     // check visible tracks

@@ -1,4 +1,4 @@
-import { AppBar, LinearProgress, Box, Typography, IconButton, CircularProgress } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 import AppContext, {
     isLocalTrack,
     OBJECT_TYPE_NAVIGATION_ALONE,
@@ -7,14 +7,13 @@ import AppContext, {
     isCloudTrack,
     isTrackAnalyzer,
     OBJECT_TYPE_STOP,
-    OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_TRAVEL,
     TRAVEL_ROUTE_ID_PARAM,
     FAVORITES_URL_PARAM_FOLDER,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
-import { TabContext, TabList } from '@mui/lab';
-import TrackTabList from './tabs/TrackTabList';
+import TrackTabList, { TRACK_TAB_IDS } from './tabs/TrackTabList';
+import TrackContextMenu from './track/TrackContextMenu';
 import isEmpty from 'lodash-es/isEmpty';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import {
@@ -27,9 +26,6 @@ import {
     SHARE_MENU_URL,
     TRACKS_URL,
 } from '../../manager/GlobalManager';
-import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WptDetails from './wpt/WptDetails';
 import WptPhotoList from './wpt/WptPhotoList';
@@ -37,25 +33,8 @@ import ShareFileMenu from '../../menu/share/ShareFileMenu';
 import ShareFile from '../../menu/share/ShareFile';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { createUrlParams, encodeString } from '../../util/Utils';
-import { navigateToFavoritesMenu } from '../../manager/FavoritesManager';
 import LoginContext from '../../context/LoginContext';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
-
-const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
-    const [mounted, setMounted] = useState(false);
-
-    if (tabId === selectedTabId || mounted) {
-        mounted || setMounted(true);
-        const hidden = tabId !== selectedTabId;
-        return (
-            <Typography hidden={hidden} component="span">
-                <Box sx={{ px: 3, pt: 3, pb: 8 }}>{children}</Box>
-            </Typography>
-        );
-    }
-
-    return null;
-};
 
 export default function InformationBlock({
     showInfoBlock,
@@ -73,7 +52,6 @@ export default function InformationBlock({
     const location = useLocation();
     const { updateQueryParam } = useUpdateQueryParam();
 
-    const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
     const [openWptDetails, setOpenWptDetails] = useState(false);
@@ -83,6 +61,8 @@ export default function InformationBlock({
     const [trackName, setTrackName] = useState(null);
     const [trackType, setTrackType] = useState(null);
     const [closeShareMenu, setCloseShareMenu] = useState(false);
+
+    const showTrackContextMenu = ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem;
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -216,7 +196,7 @@ export default function InformationBlock({
                 ctx.setUpdateInfoBlock(false);
                 if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
-                } else if (ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem) {
+                } else if (showTrackContextMenu) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
                     if (isCloudTrack(ctx)) {
@@ -230,7 +210,6 @@ export default function InformationBlock({
                     setShowInfoBlock(true);
                     clearStateIfObjChange();
                     setTabsObj(tObj);
-                    setValue(tObj.defaultTab);
                 }
             }
         }
@@ -280,12 +259,15 @@ export default function InformationBlock({
         }
     }, [ltx.loginUser]);
 
+    // Open TrackContextMenu after clicking a waypoint on the map.
     useEffect(() => {
         if (openWptTab) {
-            let tObj = new TrackTabList().create(ctx, setShowInfoBlock);
+            const tObj = new TrackTabList().create(ctx, setShowInfoBlock);
             clearStateIfObjChange();
+            tObj.defaultTab = TRACK_TAB_IDS.WAYPOINTS;
             setTabsObj(tObj);
-            setValue('waypoints');
+            setOpenWptDetails(false);
+            setOpenWptTab(false);
         }
     }, [openWptTab]);
 
@@ -342,148 +324,89 @@ export default function InformationBlock({
         }
     }
 
-    function hasOldTabs() {
-        return !openWptDetails && !openShareFileMenu;
-    }
-
     function isOpenMainFavShareFile() {
         const isCloseFavItemDetails = !ctx.selectedGpxFile?.markerCurrent;
         return openShareFileItem && isCloseFavItemDetails;
     }
 
+    function handleCloseTrackContextMenu() {
+        setShowInfoBlock(false);
+
+        if (!isTrackAnalyzer(ctx)) {
+            closeTrackAnalyzer();
+        }
+        if (ctx.selectedGpxFile.mapObj) {
+            closeMapObjectMenu();
+        } else if (isCloudTrack(ctx)) {
+            closeCloudTrack();
+        } else if (isLocalTrack(ctx)) {
+            if (!isEmpty(ctx.selectedGpxFile)) {
+                ctx.setSelectedGpxFile({});
+            }
+            ctx.setSelectedLocalTrackObj(null);
+        }
+    }
+
+    function closeMapObjectMenu() {
+        ctx.setCloseMapObj(true);
+        if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
+            ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].mapObj = null));
+        }
+    }
+
+    function closeTrackAnalyzer() {
+        // not change object type if track analyzer is active, because return to prev menu
+        if (ctx.currentObjectType === OBJECT_TYPE_STOP) {
+            ctx.setSelectedTransportRoute(null);
+        }
+        if (ctx.currentObjectType === OBJECT_TYPE_TRAVEL) {
+            ctx.setSelectedTravelRoute(null);
+            updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: null });
+        }
+        ctx.setCurrentObjectType(null);
+    }
+
+    function closeCloudTrack() {
+        hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
+        if (!isEmpty(ctx.selectedGpxFile)) {
+            ctx.setSelectedGpxFile({});
+        }
+        setTrackName(null);
+        setSavePrevState(true);
+        ctx.setSelectedCloudTrackObj(null);
+
+        navigate({
+            pathname: MAIN_URL_WITH_SLASH + trackType,
+            hash: location.hash,
+        });
+    }
+
     return (
         <>
-            {showInfoBlock && (
-                <>
-                    {openWptDetails &&
-                        (ctx.photoGallery ? (
-                            <WptPhotoList photos={ctx.photoGallery} />
-                        ) : (
-                            <WptDetails setOpenWptTab={setOpenWptTab} setShowInfoBlock={setShowInfoBlock} />
-                        ))}
-                    {openShareFileMenu && (
-                        <ShareFileMenu setShowInfoBlock={setShowInfoBlock} setCloseShareMenu={setCloseShareMenu} />
-                    )}
-                    {isOpenMainFavShareFile() && <ShareFile />}
-                    {hasOldTabs() && (
-                        <Box
-                            anchor={'right'}
-                            sx={{
-                                height: '100vh',
-                                overflowX: 'hidden',
-                                display: 'flex',
-                                flexDirection: 'column',
-                            }}
-                        >
-                            <div
-                                id="se-infoblock-all"
-                                style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
-                            >
-                                <Box>
-                                    {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
-                                    <IconButton
-                                        id={ctx.selectedGpxFile.mapObj ? 'se-button-close' : 'se-button-back'}
-                                        size="small"
-                                        edge="start"
-                                        color="inherit"
-                                        aria-label="menu"
-                                        className={styles.appBarIcon}
-                                        sx={{ mx: '11px', my: '11px' }}
-                                        onClick={() => {
-                                            setShowInfoBlock(false);
-
-                                            // not change object type if track analyzer is active, because return to prev menu
-                                            if (!isTrackAnalyzer(ctx)) {
-                                                if (ctx.currentObjectType === OBJECT_TYPE_STOP) {
-                                                    ctx.setSelectedTransportRoute(null);
-                                                }
-                                                if (ctx.currentObjectType === OBJECT_TYPE_TRAVEL) {
-                                                    ctx.setSelectedTravelRoute(null);
-                                                    updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: null });
-                                                }
-                                                ctx.setCurrentObjectType(null);
-                                            }
-                                            if (ctx.selectedGpxFile.mapObj) {
-                                                ctx.setCloseMapObj(true);
-                                                if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
-                                                    ctx.mutateGpxFiles(
-                                                        (o) => (o[ctx.selectedGpxFile.name].mapObj = null)
-                                                    );
-                                                }
-                                            } else if (isCloudTrack(ctx)) {
-                                                hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
-                                                if (!isEmpty(ctx.selectedGpxFile)) {
-                                                    ctx.setSelectedGpxFile({});
-                                                }
-                                                setTrackName(null);
-                                                setSavePrevState(true);
-                                                ctx.setSelectedCloudTrackObj(null);
-
-                                                navigate({
-                                                    pathname: MAIN_URL_WITH_SLASH + trackType,
-                                                    hash: location.hash,
-                                                });
-                                            } else if (isLocalTrack(ctx)) {
-                                                if (!isEmpty(ctx.selectedGpxFile)) {
-                                                    ctx.setSelectedGpxFile({});
-                                                }
-                                                ctx.setSelectedLocalTrackObj(null);
-                                            } else if (
-                                                ctx.currentObjectType === OBJECT_TYPE_FAVORITE &&
-                                                ctx.selectedGpxFile.file?.type === FAVOURITES
-                                            ) {
-                                                navigateToFavoritesMenu(navigate, ctx);
-                                                ctx.setSelectedGpxFile({});
-                                                ctx.setSelectedFavoriteObj(null);
-                                            }
-                                        }}
-                                    >
-                                        {ctx.selectedGpxFile.mapObj ? <CloseIcon /> : <BackIcon />}
-                                    </IconButton>
-                                </Box>
-                                {ctx.processingTravelRouteByUrl && (
-                                    <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />
-                                )}
-                                {tabsObj && tabsObj.tabList.length > 0 && !ctx.processingTravelRouteByUrl && (
-                                    <Box
-                                        sx={{
-                                            flex: 1,
-                                            minHeight: 0,
-                                            overflowY: 'auto',
-                                            overflowX: 'hidden',
-                                        }}
-                                    >
-                                        <TabContext value={value}>
-                                            <AppBar position="static" color="default">
-                                                <div>
-                                                    <TabList
-                                                        variant="scrollable"
-                                                        scrollButtons
-                                                        onChange={(e, newValue) => setValue(newValue)}
-                                                    >
-                                                        {tabsObj.tabList}
-                                                    </TabList>
-                                                </div>
-                                            </AppBar>
-                                            <div>
-                                                {Object.values(tabsObj.tabs).map((item) => (
-                                                    <PersistentTabPanel
-                                                        key={'tabpanel-desktop:' + item.key}
-                                                        selectedTabId={value}
-                                                        tabId={item.key}
-                                                    >
-                                                        {item}
-                                                    </PersistentTabPanel>
-                                                ))}
-                                            </div>
-                                        </TabContext>
-                                    </Box>
-                                )}
-                            </div>
-                        </Box>
-                    )}
-                </>
-            )}
+            {showInfoBlock &&
+                (openWptDetails ? (
+                    ctx.photoGallery ? (
+                        <WptPhotoList photos={ctx.photoGallery} />
+                    ) : (
+                        <WptDetails setOpenWptTab={setOpenWptTab} setShowInfoBlock={setShowInfoBlock} />
+                    )
+                ) : openShareFileMenu ? (
+                    <ShareFileMenu setShowInfoBlock={setShowInfoBlock} setCloseShareMenu={setCloseShareMenu} />
+                ) : isOpenMainFavShareFile() ? (
+                    <ShareFile />
+                ) : (
+                    <>
+                        {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
+                        {showTrackContextMenu && (
+                            <TrackContextMenu
+                                trackName={ctx.selectedGpxFile?.name}
+                                onClose={handleCloseTrackContextMenu}
+                                tabsObj={tabsObj}
+                                showBackButton={!ctx.selectedGpxFile?.mapObj}
+                            />
+                        )}
+                    </>
+                ))}
         </>
     );
 }

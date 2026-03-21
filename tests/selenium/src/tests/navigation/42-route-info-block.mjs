@@ -135,7 +135,7 @@ async function validateInfoBlockStrings(strings, hasAttributes) {
         if (mobile && match.toString().match(MOBILE_SKIP)) {
             continue;
         }
-        await matchInnerTextBy(By.id('se-infoblock-all'), match);
+        await matchInnerTextBy(By.id('se-track-context-menu'), match);
     }
 }
 

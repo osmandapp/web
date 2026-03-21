@@ -22,7 +22,13 @@ export default function HeaderNoUnderline({
             {...appBarProps}
         >
             <Toolbar className={headerStyles.toolbar} {...toolbarProps}>
-                <IconButton variant="contained" type="button" className={styles.closeBtn} onClick={onClose}>
+                <IconButton
+                    id={showBackButton ? 'se-button-back' : 'se-button-close'}
+                    variant="contained"
+                    type="button"
+                    className={styles.closeBtn}
+                    onClick={onClose}
+                >
                     {showBackButton ? <ArrowBackIcon /> : <CloseIcon />}
                 </IconButton>
                 <Typography component="div" className={headerStyles.title} sx={{ flexGrow: 1 }} id={titleId}>

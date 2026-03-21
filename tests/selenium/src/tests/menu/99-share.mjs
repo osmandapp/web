@@ -61,7 +61,7 @@ export default async function test() {
 
     await waitBy(By.id(`se-cloud-track-${trackName}`));
     await clickBy(By.id(`se-cloud-track-${trackName}`));
-    await waitBy(By.id('se-infoblock-all'));
+    await waitBy(By.id('se-track-context-menu'));
     await clickBy(By.id('se-button-back'));
     await waitBy(By.id(`se-cloud-track-${trackName}`));
 
