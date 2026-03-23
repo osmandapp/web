@@ -9,9 +9,8 @@ const VISIBILITY_DEBOUNCE_MS = 1000;
 export function sanitizePointsGroups(pointsGroups = {}) {
     const result = {};
     for (const [name, group] of Object.entries(pointsGroups)) {
-        const { points: _pts, ext, ...rest } = group || {};
-        const { points: _extPts, ...cleanExt } = ext || {};
-        result[name] = { ...rest, ext: cleanExt };
+        const { points: _pts, ext: _ext, ...rest } = group || {};
+        result[name] = rest;
     }
     return result;
 }
@@ -103,7 +102,7 @@ export function updateGroupsVisibility(ctx, groupNames, hidden, debouncerTimer) 
 
         (groupNames || Object.keys(updatedPointsGroups)).forEach((name) => {
             const group = updatedPointsGroups[name] || {};
-            updatedPointsGroups[name] = { ...group, ext: { ...group.ext, hidden } };
+            updatedPointsGroups[name] = { ...group, hidden };
         });
 
         const updatedGpxFile = {

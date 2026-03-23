@@ -40,7 +40,7 @@ export function getResolvedPointsGroups(file) {
 }
 
 export function isWptGroupShown(pointsGroups, groupName) {
-    return pointsGroups?.[groupName]?.ext?.hidden !== true;
+    return pointsGroups?.[groupName]?.hidden !== true;
 }
 
 const PROFILE_CAR = 'car';
