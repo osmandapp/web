@@ -10,7 +10,7 @@ import { findGroupByName, getAllVisibleFiles, openTrackOnMap } from './TracksMan
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
-import { hideAllVisTracks, showAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
+import { hideAllVisTracks, showAllVisTracks, updateVisibleCache } from '../../menu/visibletracks/VisibleTracks';
 import { deleteSharedWithMe } from '../ShareManager';
 import { GPX, updateFileStorage } from '../GlobalManager';
 import { deleteLocalTrack } from '../../context/LocalTrackStorage';
@@ -53,11 +53,23 @@ async function deleteCloudFile(name, type, ctx) {
         },
     });
     if (response.status === 200) {
+        updateVisibleCache({ visible: false, file: { name } });
+
         ctx.mutateGpxFiles((o) => {
             if (o[name]) {
                 o[name].url = null;
                 o[name].delete = true; // remove file
             }
+        });
+
+        // remove from visible tracks list
+        ctx.setVisibleTracks((prev) => {
+            if (!prev) return prev;
+            return {
+                ...prev,
+                new: prev.new?.filter((f) => f.name !== name) ?? [],
+                old: prev.old?.filter((f) => f.name !== name) ?? [],
+            };
         });
 
         if (type === FAVORITE_FILE_TYPE) {
@@ -80,12 +92,6 @@ async function deleteCloudFile(name, type, ctx) {
                 return { ...o };
             });
 
-            ctx.setGpxFiles((o) => {
-                if (o[name]) {
-                    delete o[name];
-                }
-                return { ...o };
-            });
             await loadSmartFolders(ctx.setTracksGroups, ctx.setSmartFoldersCache);
         }
     }
@@ -112,9 +118,6 @@ export async function deleteTrackFolder(folder, ctx) {
 export function closeTrack(ctx, file, smartf) {
     const newFile = { ...file, url: null };
     updateFileStorage({ ctx, smartf, type: GPX, file: newFile });
-    if (ctx.selectedGpxFile?.name === file.name) {
-        ctx.setCurrentObjectType(null);
-    }
 }
 
 export function hideAllTracks(ctx) {

@@ -84,9 +84,22 @@ export default function InformationBlock({
     useEffect(() => {
         if (closeShareMenu) {
             setCloseShareMenu(false);
-            setTrackName(null);
-            setSavePrevState(true);
-            navigate(MAIN_URL_WITH_SLASH + trackType);
+            if (showTrackContextMenu && trackName) {
+                navigate(
+                    {
+                        pathname:
+                            MAIN_URL_WITH_SLASH +
+                            TRACKS_URL +
+                            INFO_MENU_URL +
+                            encodeURIComponent(encodeString(trackName)),
+                        hash: window.location.hash,
+                    },
+                    { replace: true }
+                );
+            } else {
+                setTrackName(null);
+                navigate(MAIN_URL_WITH_SLASH + trackType);
+            }
         }
     }, [closeShareMenu]);
 
@@ -391,7 +404,11 @@ export default function InformationBlock({
                         <WptDetails setOpenWptTab={setOpenWptTab} setShowInfoBlock={setShowInfoBlock} />
                     )
                 ) : openShareFileMenu ? (
-                    <ShareFileMenu setShowInfoBlock={setShowInfoBlock} setCloseShareMenu={setCloseShareMenu} />
+                    <ShareFileMenu
+                        setShowInfoBlock={setShowInfoBlock}
+                        setCloseShareMenu={setCloseShareMenu}
+                        returnToTrack={showTrackContextMenu}
+                    />
                 ) : isOpenMainFavShareFile() ? (
                     <ShareFile />
                 ) : (
@@ -399,7 +416,7 @@ export default function InformationBlock({
                         {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                         {showTrackContextMenu && (
                             <TrackContextMenu
-                                trackName={ctx.selectedGpxFile?.name}
+                                track={ctx.selectedGpxFile}
                                 onClose={handleCloseTrackContextMenu}
                                 tabsObj={tabsObj}
                                 showBackButton={!ctx.selectedGpxFile?.mapObj}

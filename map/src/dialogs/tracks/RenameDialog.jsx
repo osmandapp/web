@@ -1,11 +1,11 @@
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
-import { Button, TextField, Dialog } from '@mui/material';
+import { Button, LinearProgress, TextField, Dialog } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { DEFAULT_GROUP_NAME, findGroupByName, prepareName } from '../../manager/track/TracksManager';
+import { DEFAULT_GROUP_NAME, findGroupByName, GPX_FILE_EXT, prepareName } from '../../manager/track/TracksManager';
 import { renameFolder, renameTrack } from '../../manager/track/SaveTrackManager';
 import { sanitizedFileName } from '../../util/Utils';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +15,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
     const { t } = useTranslation();
 
     const [nameError, setNameError] = useState('');
+    const [loading, setLoading] = useState(false);
     const [name, setName] = useState(track ? prepareName(track.name) : group.name);
 
     const groupByTrack = track && getTrackGroupByTrackName(track.name);
@@ -28,14 +29,21 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
     async function rename() {
         const newName = sanitizedFileName(name);
         if (validationName(newName)) {
+            setLoading(true);
             if (track) {
-                let folder = groupByTrack.fullName === DEFAULT_GROUP_NAME ? '' : groupByTrack.fullName + '/';
+                const folder = groupByTrack.fullName === DEFAULT_GROUP_NAME ? '' : groupByTrack.fullName + '/';
+                const newFileName = folder + newName + GPX_FILE_EXT;
                 await renameTrack(track.name, folder, newName, ctx);
+                if (ctx.selectedGpxFile?.name === track.name) {
+                    // update the name of the currently opened file to reflect the rename
+                    ctx.setSelectedGpxFile((prev) => ({ ...prev, name: newFileName }));
+                }
             } else if (group) {
                 await renameFolder(group, newName, ctx);
             } else {
                 ctx.setTrackErrorMsg(renameError);
             }
+            setLoading(false);
             if (setOpenActions) {
                 setOpenActions(false);
             }
@@ -127,6 +135,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
             onClose={() => setOpenDialog(false)}
             onClick={(e) => e.stopPropagation()}
         >
+            {loading && <LinearProgress />}
             <DialogTitle className={dialogStyles.title}>{t('shared_string_rename')}</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 <TextField

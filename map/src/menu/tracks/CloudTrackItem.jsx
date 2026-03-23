@@ -17,7 +17,6 @@ import {
     getShare,
     getTime,
     getWptPoints,
-    processDisplayTrack,
     setTrackIconStyles,
 } from '../../manager/track/TracksManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
@@ -27,12 +26,11 @@ import TrackActions from '../actions/TrackActions';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import FileShareIcon from '../share/FileShareIcon.jsx';
-import { getFileStorage, GPX } from '../../manager/GlobalManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import ActionsMenu from '../actions/ActionsMenu';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
-import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
+import { useTrackVisibility } from '../../util/hooks/menu/useTrackVisibility';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem, smartf = null }) {
     const ctx = useContext(AppContext);
@@ -40,18 +38,19 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [, , mobile] = useWindowSize();
 
     const { t } = useTranslation();
-    const recentSaver = useRecentDataSaver();
-
-    const [fileStorage, setFileStorage] = useState(null);
 
     const [loadingTrack, setLoadingTrack] = useState(false);
     const [error, setError] = useState('');
     const [openActions, setOpenActions] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
-    const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
     const anchorEl = useRef(null);
 
-    const [checkedSwitch, setCheckedSwitch] = useState(false);
+    const { toggleVisibility, fileStorage, checkedSwitch } = useTrackVisibility({
+        file,
+        smartf,
+        setLoading: setLoadingTrack,
+        setError,
+    });
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
     const updateDetails = file?.details?.update;
@@ -61,38 +60,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const time = getTime(file);
     const wptPoints = getWptPoints(file);
     const share = getShare(file, ctx);
-
-    useEffect(() => {
-        if (fileStorage?.[file.name]?.url) {
-            setCheckedSwitch(fileStorage[file.name].showOnMap);
-        } else {
-            setCheckedSwitch(false);
-        }
-    }, [fileStorage?.[file.name]]);
-
-    useEffect(() => {
-        const storage = getFileStorage({ ctx, smartf, type: GPX });
-        setFileStorage(storage);
-    }, [ctx, smartf]);
-
-    // Display track on map (visible or not), add to visible cache
-    useEffect(() => {
-        if (displayTrack === true || displayTrack === false) {
-            processDisplayTrack({
-                setLoading: setLoadingTrack,
-                showOnMap: displayTrack,
-                visible: displayTrack,
-                smartf,
-                file,
-                ctx,
-                setError,
-                fileStorage,
-                setFileStorage,
-                recentSaver,
-            }).then();
-            setDisplayTrack(null);
-        }
-    }, [displayTrack]);
 
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
@@ -115,22 +82,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                         <MenuItem
                             className={styles.item}
                             id={id ?? `se-cloud-track-${trackName}`}
-                            onClick={() => {
-                                processDisplayTrack({
-                                    setLoading: setLoadingTrack,
-                                    visible: true,
-                                    showOnMap: true,
-                                    showInfo: true,
-                                    zoomToTrack: true,
-                                    smartf,
-                                    file,
-                                    ctx,
-                                    setError,
-                                    fileStorage,
-                                    setFileStorage,
-                                    recentSaver,
-                                }).then();
-                            }}
+                            onClick={() => toggleVisibility(true, { showInfo: true, zoomToTrack: true })}
                             onMouseEnter={() => visible && setShowMenu(true)}
                             onMouseLeave={() => {
                                 if (visible && !ctx.openedPopper?.current) {
@@ -179,7 +131,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                     }}
                                     checked={checkedSwitch}
                                     onChange={(e) => {
-                                        !file.local && setDisplayTrack(e.target.checked);
+                                        !file.local && toggleVisibility(e.target.checked);
                                     }}
                                 />
                             )}
@@ -195,7 +147,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                     actions={
                         <TrackActions
                             track={file}
-                            setDisplayTrack={setDisplayTrack}
+                            setDisplayTrack={toggleVisibility}
                             setOpenActions={setOpenActions}
                             smartf={smartf}
                         />

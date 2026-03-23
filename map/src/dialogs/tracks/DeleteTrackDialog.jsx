@@ -45,6 +45,9 @@ export default function DeleteTrackDialog({
         if (setOpenActions) {
             setOpenActions(false);
         }
+        // close TrackContextMenu
+        ctx.setSelectedGpxFile({});
+        ctx.setCurrentObjectType(null);
     }
 
     function getName() {
