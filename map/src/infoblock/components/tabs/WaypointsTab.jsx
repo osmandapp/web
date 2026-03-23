@@ -18,7 +18,7 @@ const WaypointGroup = ({
     defaultOpen,
     defaultVisible = true,
     massOpen,
-    massCommand,
+    massVisible,
     debouncerTimer,
 }) => {
     const [open, setOpen] = useState(defaultOpen);
@@ -41,8 +41,8 @@ const WaypointGroup = ({
     }, [massOpen]);
 
     useEffect(() => {
-        mounted && setVisible(massCommand.value);
-    }, [massCommand.version]);
+        mounted && setVisible(massVisible);
+    }, [massVisible]);
 
     const point = points[0].wpt;
     const iconHTML = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon })
@@ -269,30 +269,19 @@ export default function WaypointsTab() {
         return groups;
     }
 
-    function isMassVisible() {
+    const [showMass, setShowMass] = useState(false);
+    const [massOpen, setMassOpen] = useState(false);
+    const [massVisible, setMassVisible] = useState(() => {
         const pointsGroups = getResolvedPointsGroups(ctx.selectedGpxFile);
         const groupKeys = Object.keys(pointsGroups || {});
         return groupKeys.length > 0 && groupKeys.every((g) => isWptGroupShown(pointsGroups, g));
-    }
-
-    const [showMass, setShowMass] = useState(false);
-    const [massOpen, setMassOpen] = useState(false);
-    const [massVisible, setMassVisible] = useState(isMassVisible());
+    });
     const debouncerTimer = useRef(null);
-    const [massCommand, setMassCommand] = useState({ version: 0, value: true });
-
-    useEffect(() => {
-        setMassVisible(isMassVisible());
-    }, [ctx.selectedGpxFile?.info?.pointsGroups]);
 
     const switchMassOpen = () => setMassOpen(!massOpen);
     const switchMassVisible = () => {
         const newMassVisible = !massVisible;
         setMassVisible(newMassVisible);
-        setMassCommand((prev) => ({
-            version: prev.version + 1,
-            value: newMassVisible,
-        }));
         const groupNames = Object.keys(getResolvedPointsGroups(ctx.selectedGpxFile) || {});
         updateGroupsVisibility(ctx, groupNames, !newMassVisible, debouncerTimer);
     };
@@ -322,7 +311,7 @@ export default function WaypointsTab() {
                         points={groups[g]}
                         defaultOpen={keys.length === 1}
                         defaultVisible={isWptGroupShown(pointsGroups, g)}
-                        massCommand={massCommand}
+                        massVisible={massVisible}
                         massOpen={massOpen}
                         debouncerTimer={debouncerTimer}
                     />
