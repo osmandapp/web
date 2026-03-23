@@ -440,8 +440,6 @@ OsmAnd allows you to add multiple instances of the same widget to different pane
 
 </Tabs>
 
-
-
 You can rearrange or remove widgets from the application screen using the **Edit** mode.  
 
 ***How to move a widget:***
@@ -471,6 +469,8 @@ You can open the Map screen layout settings from the Configure screen menu, eith
 
 ![Map Screen Layout](@site/static/img/widgets/screen_layout_single.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_separate.png)
 
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Map Screen Layout*
+
 OsmAnd supports two layout modes for the map screen:
 - **Single layout** – uses the same widget layout for all screen orientations. This option is selected by default.
 - **Separate layouts** – allows you to configure different widget layouts for Portrait and Landscape orientations.
@@ -495,7 +495,9 @@ Only the widget list is copied, and the operation applies within the same profil
 
 ![Map Screen Layout](@site/static/img/widgets/screen_layout_wide.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_compact.png)
 
-The **Panels layout** setting controls how the top and bottom widget panels are displayed. This option is available only when Separate layouts is enabled.
+The **Panels layout** setting controls how the top and bottom widget panels are displayed. 
+
+**Note:** This option is available only when [Separate layouts](#single-and-separate-layouts) is enabled.
 
 You can choose between two modes:
 - **Wide** – the top and bottom panels span the full width of the screen.

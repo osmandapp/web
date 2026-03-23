@@ -92,12 +92,14 @@ Tap the + button on the All colors screen. Two types of palettes are available:
 Creating custom palettes is an [**OsmAnd Pro**](../../purchases/index.md) paid feature <ProFeature />.
 :::
 
+To learn more about color palette schemes as a data format and their usage in tracks and routes, see the [Color palette schemes article](../../personal/color-palette-schemes.md#tracks-routes).
+
 When creating or editing a palette, the editor screen includes:
 - A gradient preview at the top of the screen.
 - Selectable value buttons below the gradient (for example, 50, 100, 150, No data).
 - A + button to add a new step.
 - A Value field.
-- Color selection options. For more information about palette files, see [here](../../personal/color-palette-schemes.md#tracks-routes).
+- Color selection options. For more information about palette files.
 - A Remove step option for the selected value.
 - A Save button.
 

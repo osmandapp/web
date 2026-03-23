@@ -201,16 +201,18 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                 >
                     <Box className={styles.contextMenu}>
                         {/* Where I am */}
-                        <MenuItem
-                            id={'se-where-i-am'}
-                            className={styles.contextMenuItem}
-                            onClick={() => handleMenuItemClick(whereAmI)}
-                        >
-                            <ListItemIcon className={styles.contextMenuIcon}>
-                                <MyLocationIcon />
-                            </ListItemIcon>
-                            <ListItemText className={styles.contextMenuItemText}>{t('where_am_i')}</ListItemText>
-                        </MenuItem>
+                        {ctx.develFeatures && (
+                            <MenuItem
+                                id={'se-where-i-am'}
+                                className={styles.contextMenuItem}
+                                onClick={() => handleMenuItemClick(whereAmI)}
+                            >
+                                <ListItemIcon className={styles.contextMenuIcon}>
+                                    <MyLocationIcon />
+                                </ListItemIcon>
+                                <ListItemText className={styles.contextMenuItemText}>{t('where_am_i')}</ListItemText>
+                            </MenuItem>
+                        )}
                         {/* Weather */}
                         <MenuItem
                             id={'se-open-weather-action'}
