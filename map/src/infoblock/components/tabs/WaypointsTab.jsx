@@ -41,8 +41,8 @@ const WaypointGroup = ({
     }, [massOpen]);
 
     useEffect(() => {
-        mounted && setVisible(massVisible);
-    }, [massVisible]);
+        setVisible(defaultVisible);
+    }, [defaultVisible, massVisible]);
 
     const point = points[0].wpt;
     const iconHTML = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon })
@@ -269,14 +269,20 @@ export default function WaypointsTab() {
         return groups;
     }
 
-    const [showMass, setShowMass] = useState(false);
-    const [massOpen, setMassOpen] = useState(false);
-    const [massVisible, setMassVisible] = useState(() => {
+    function isMassVisible() {
         const pointsGroups = getResolvedPointsGroups(ctx.selectedGpxFile);
         const groupKeys = Object.keys(pointsGroups || {});
-        return groupKeys.length > 0 && groupKeys.every((g) => isWptGroupShown(pointsGroups, g));
-    });
+        return groupKeys.length > 0 && groupKeys.some((g) => isWptGroupShown(pointsGroups, g));
+    }
+
+    const [showMass, setShowMass] = useState(false);
+    const [massOpen, setMassOpen] = useState(false);
+    const [massVisible, setMassVisible] = useState(isMassVisible());
     const debouncerTimer = useRef(null);
+
+    useEffect(() => {
+        setMassVisible(isMassVisible());
+    }, [ctx.selectedGpxFile?.info?.pointsGroups]);
 
     const switchMassOpen = () => setMassOpen(!massOpen);
     const switchMassVisible = () => {
