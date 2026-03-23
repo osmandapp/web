@@ -213,7 +213,7 @@ In the Map Context menu How to access:
 <TabItem value="android" label="Android">  
 
 ![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
@@ -226,7 +226,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-The **Gallery Menu** can display up to **100 images** related to the selected point of interest. To view these images, tap **Show All** (Android) / **View All** (iOS). You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Name*, *Date added*, *Author*, *License*.
+The **Gallery Menu** can display up to **100 images** related to the selected point of interest. To view these images, tap **Show All** (Android) / **View All** (iOS). You can swipe through all available photos. Tapping a photo briefly opens a detailed view showing: *Description (up to two lines, Android only)*, *Name*, *Date added*, *Author*, *License*.
 
 On iOS, iPadOS, and macOS, you can navigate photos using keyboard keys (←/→ to move between images, Enter/Space to open).
 
@@ -236,7 +236,9 @@ You can also perform the following actions on each photo:
   Share the selected image using any compatible app installed on your device (e.g., messaging, email, or social media). The shared content includes the image and its source link (if available).
 
 - **Details**  
-  Open a detailed view showing metadata about the image, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+  Open a detailed view showing metadata about the image, including: *Description (full text, Android only)*, *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+
+  **Note:** The description language depends on the display language of the application. If the description in the selected language is not available, OsmAnd shows the English version or the first available translation.
 
 - **Open in browser**  
   Launch the image’s source page (usually on [Wikimedia Commons](https://commons.wikimedia.org/)) in your default browser. This allows you to view the full image, licensing information, and related content.
