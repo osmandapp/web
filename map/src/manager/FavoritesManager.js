@@ -687,7 +687,7 @@ export function getFavMenuListByLayers(layers, wpts, currentLoc) {
         }).options.html;
         const marker = {
             name: value.options.name,
-            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
+            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, wpt.background),
             layer: value,
             color: wpt.color,
             background: wpt.background,
