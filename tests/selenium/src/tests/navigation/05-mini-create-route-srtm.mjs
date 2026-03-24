@@ -49,7 +49,7 @@ export default async function test() {
 
         await validateInfoBlockStrings(strings);
         await clickBy(By.id('se-link-srtm'));
-        let matched = await matchInnerTextBy(By.id('se-infoblock-all'), srtm, true);
+        let matched = await matchInnerTextBy(By.id('se-track-context-menu'), srtm, true);
         if (!matched) {
             console.warn(`SRTM elevation is not working (${profile}).`);
         }
@@ -61,6 +61,6 @@ export default async function test() {
 
 async function validateInfoBlockStrings(strings) {
     for (const match of strings) {
-        await matchInnerTextBy(By.id('se-infoblock-all'), match);
+        await matchInnerTextBy(By.id('se-track-context-menu'), match);
     }
 }

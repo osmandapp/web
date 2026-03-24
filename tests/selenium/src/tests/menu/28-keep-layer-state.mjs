@@ -112,7 +112,7 @@ export default async function test() {
 
     await actionAddOneTrack(trackName);
     await clickBy(By.id(`se-cloud-track-${trackName}`));
-    await waitBy(By.id('se-infoblock-all'));
+    await waitBy(By.id('se-track-context-menu'));
 
     // Step 11: Return to navigation and verify start point is still there
     await clickBy(By.id('se-show-menu-navigation'));
@@ -122,13 +122,13 @@ export default async function test() {
 
     // Step 12: Return to tracks and verify track infoblock is still open
     await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id('se-infoblock-all'));
+    await waitBy(By.id('se-track-context-menu'));
     url = await getUrl();
     await assert(url.includes(TRACKS_URL), `Step 12: URL should include ${TRACKS_URL}, got: ${url}`);
 
     // Cleanup tracks: Close track and delete it
     await clickBy(By.id('se-button-back'));
-    await waitByRemoved(By.id('se-infoblock-all'));
+    await waitByRemoved(By.id('se-track-context-menu'));
     await deleteTrack(trackName);
 
     // Step 13: Return to search and test layered context menus

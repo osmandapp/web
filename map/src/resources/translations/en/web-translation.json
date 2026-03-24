@@ -273,5 +273,12 @@
     "transport_filter_all": "All",
     "transport_travel_time": "Travel time",
     "transport_nearby_routes": "Nearby Routes",
-    "transport_stops_before": "{{count}} stops before"
+    "transport_stops_before": "{{count}} stops before",
+    "rename_error_title": "Rename error",
+    "rename_empty_track_name": "Empty track name.",
+    "rename_track_already_exists": "Track already exists.",
+    "rename_track_not_found": "Track not found.",
+    "rename_empty_folder_name": "Empty folder name.",
+    "rename_folder_already_exists": "Folder already exists.",
+    "rename_item_not_found": "Folder or track was not found."
 }

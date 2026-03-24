@@ -208,10 +208,7 @@ export default function TransportStopsRoutes({ wpt }) {
         return () => controller.abort();
     }, [wpt?.id, wpt?.latlon?.lat, wpt?.latlon?.lon]);
 
-    const filterRoutes = useMemo(
-        () => [...(wpt?.routes ?? []), ...(nearbyRoutes ?? [])],
-        [wpt?.routes, nearbyRoutes]
-    );
+    const filterRoutes = useMemo(() => [...(wpt?.routes ?? []), ...(nearbyRoutes ?? [])], [wpt?.routes, nearbyRoutes]);
 
     if (!wpt) return null;
 

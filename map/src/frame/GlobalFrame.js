@@ -283,7 +283,7 @@ const GlobalFrame = () => {
         savedVisible.old.forEach((name) => {
             const fileName = name.startsWith(prefix) ? name.slice(prefix.length) : name;
             const file = files[fileName];
-            if (file) {
+            if (file && !file.delete) {
                 oldFiles.push(file);
             }
         });
@@ -300,7 +300,7 @@ const GlobalFrame = () => {
         };
 
         Object.values(files).forEach((f) => {
-            if (!f || !f.name) {
+            if (!f?.name || f?.delete) {
                 return;
             }
             const fileName = `${prefix}${f.name}`;

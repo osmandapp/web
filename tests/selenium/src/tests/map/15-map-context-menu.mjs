@@ -26,7 +26,7 @@ export default async function test() {
     // Create new route
     await actionOpenContextMenu();
     await clickBy(By.id('se-create-route-action'));
-    await waitBy(By.id('se-infoblock-all'));
+    await waitBy(By.id('se-track-context-menu'));
     await clickBy(By.id('se-show-menu-planroute'));
 
     // Add favorite

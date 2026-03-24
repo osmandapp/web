@@ -27,7 +27,7 @@ import {
     PENDING_ACCESS_TYPE,
 } from './shareConstants';
 
-export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
+export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu, returnToTrack = false }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -152,6 +152,10 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
         }
     }, [forcedUpdate]);
 
+    if (!ctx.shareFile) {
+        return null;
+    }
+
     function initialShareType() {
         if (ctx.shareFile && !ctx.shareFile.sharedObj) {
             return shareTypes.private;
@@ -182,6 +186,9 @@ export default function ShareFileMenu({ setShowInfoBlock, setCloseShareMenu }) {
 
     function closeMenu() {
         ctx.setShareFile(null);
+        if (returnToTrack) {
+            return;
+        }
         setShowInfoBlock(false);
         setCloseShareMenu(true);
     }

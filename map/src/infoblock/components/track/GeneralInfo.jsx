@@ -6,20 +6,17 @@ import TracksManager, {
     applySrtmElevation,
     eligibleToApplySrtm,
     prepareDesc,
-    updateMetadata,
 } from '../../../manager/track/TracksManager';
-import { sanitizedFileName, toHHMMSS } from '../../../util/Utils';
+import { toHHMMSS } from '../../../util/Utils';
 import {
     Box,
     Button,
     CircularProgress,
     Divider,
-    IconButton,
     Link,
     ListItemIcon,
     ListItemText,
     MenuItem,
-    TextField,
     Tooltip,
     Typography,
 } from '@mui/material';
@@ -29,7 +26,6 @@ import {
     CloudUpload,
     Commit,
     Create,
-    Edit,
     ImportExport,
     RouteOutlined,
     Speed,
@@ -37,7 +33,6 @@ import {
 } from '@mui/icons-material';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
-import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import {
     convertMeters,
     convertSpeedMS,
@@ -80,9 +75,6 @@ export default function GeneralInfo({ width }) {
 
     const { t } = useTranslation();
 
-    const [enableEditName, setEnableEditName] = useState(false);
-    const [fileName, setFileName] = useState(ctx.selectedGpxFile?.name ?? '');
-    const [fileNameError, setFileNameError] = useState('');
     const [points, setPoints] = useState(0);
     const [pointsTotal, setPointsTotal] = useState(0);
     const [distance, setDistance] = useState(0);
@@ -95,7 +87,6 @@ export default function GeneralInfo({ width }) {
     const [loadingSrtm, setLoadingSrtm] = useState(false);
 
     const DESC_MAX_HEIGHT = 150;
-    const [descHeight, setDescHeight] = useState(0);
     const ref = useRef(null);
     const preparedDesc = prepareDesc(getDesc(ctx.selectedGpxFile));
 
@@ -108,12 +99,6 @@ export default function GeneralInfo({ width }) {
         }
         return null;
     }
-
-    useEffect(() => {
-        if (ref?.current) {
-            setDescHeight(ref.current.clientHeight);
-        }
-    }, [ctx.selectedGpxFile?.metaData?.desc]);
 
     // auto-srtm
     useEffect(() => {
@@ -129,7 +114,6 @@ export default function GeneralInfo({ width }) {
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             const info = ctx.selectedGpxFile?.analysis;
-            getName();
             getPoints();
             getPointsTotal();
             getTimeRange(info);
@@ -141,11 +125,6 @@ export default function GeneralInfo({ width }) {
             getSpeed(info);
         }
     }, [ctx.selectedGpxFile]);
-
-    function getName() {
-        setEnableEditName(false);
-        setFileName(ctx.selectedGpxFile.name);
-    }
 
     function getPoints() {
         const points = ctx.selectedGpxFile.points ?? TracksManager.getEditablePoints(ctx.selectedGpxFile);
@@ -273,53 +252,6 @@ export default function GeneralInfo({ width }) {
         }
     }
 
-    function changeFileName(e) {
-        if (e.key === 'Enter' || e.type === 'click') {
-            const oldName = ctx.selectedGpxFile.name;
-            const newName = sanitizedFileName(fileName) || oldName;
-
-            if (newName === '' || !newName) {
-                setFileNameError('Name cannot be empty');
-                return;
-            }
-
-            setFileName(newName); // update for next try
-
-            if (newName === oldName) {
-                setEnableEditName(false);
-                setFileNameError('');
-                return;
-            }
-
-            if (ctx.localTracks.find((t) => t?.name === newName)) {
-                setFileNameError('This name is already exists');
-                return;
-            }
-
-            const currentTrack = ctx.localTracks.find((t) => t?.name === oldName);
-
-            if (currentTrack) {
-                currentTrack.name = newName;
-                updateMetadata({ file: currentTrack, name: newName });
-            }
-
-            ctx.selectedGpxFile.name = newName;
-            updateMetadata({ file: ctx.selectedGpxFile, name: newName });
-
-            // track rename have to be finished correctly in the editor component
-            ctx.selectedGpxFile.oldName = oldName; // used by effect in LocalClientTrackLayer
-
-            saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
-
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-
-            ctx.setLocalTracks([...ctx.localTracks]);
-
-            setEnableEditName(false);
-            setFileNameError('');
-        }
-    }
-
     const Description = ({ desc }) => {
         const html = desc.replaceAll('target="_self"', 'target="_blank"');
         return (
@@ -347,131 +279,6 @@ export default function GeneralInfo({ width }) {
                     </Typography>
                 </Box>
             </ListItemText>
-        );
-    };
-
-    const EditName = () => {
-        const isLetterUpperCase = (l) => l === l.toUpperCase() && l.toLowerCase() !== l.toUpperCase();
-        const nUpperCaseLetters = fileName.split('').filter((c) => isLetterUpperCase(c)).length;
-        const inputLength = fileName.length + nUpperCaseLetters + 3; // add extra space
-        return (
-            <div id={'se-track-' + fileName} style={{ display: 'flex', maxWidth: '400px', flexWrap: 'wrap' }}>
-                {enableEditName && (
-                    <div style={{ display: 'inline-block' }}>
-                        <TextField
-                            multiline
-                            name="title"
-                            onChange={(e) => setFileName(e.target.value)}
-                            value={fileName}
-                            disabled={!enableEditName}
-                            onKeyUp={(e) => changeFileName(e)}
-                            autoFocus={true}
-                            size="small"
-                            error={!!fileNameError}
-                            helperText={fileNameError}
-                            sx={{
-                                minWidth: '200px',
-                                maxWidth: '400px',
-                                width: `${inputLength}ch`,
-                                resize: 'none',
-                                mb: '5px',
-                                fontSize: '16px',
-                                '&[disabled]': { border: 'none' },
-                                fontFamily: 'Arial',
-                                color: 'black',
-                                ml: '-2px',
-                                borderColor: '#bebdb4',
-                                backgroundColor: 'transparent',
-                                outlineColor: '#757575',
-                                cursor: 'pointer',
-                                pb: '8px',
-                                pt: '8px',
-                            }}
-                        />
-                    </div>
-                )}
-
-                {!enableEditName && (
-                    <div style={{ display: 'inline-block' }}>
-                        <Typography
-                            variant="inherit"
-                            sx={{
-                                fontFamily: 'Arial',
-                                fontSize: 20,
-                                color: '#666666',
-                                outline: 'none',
-                                letterSpacing: 'normal',
-                                pb: '2px',
-                                lineHeight: 'normal',
-                                overflowWrap: 'break-word',
-                                fontWeight: 'bold',
-                                maxWidth: '400px',
-                            }}
-                        >
-                            {'* ' + fileName}
-                            <IconButton
-                                variant="contained"
-                                type="button"
-                                sx={{ mb: '5px', maxHeight: 20 }}
-                                onClick={() => {
-                                    setEnableEditName(true);
-                                }}
-                            >
-                                <Edit fontSize="small" />
-                            </IconButton>
-                        </Typography>
-                    </div>
-                )}
-                <div style={{ display: 'inline-block', marginLeft: '10px', marginBottom: '3px' }}>
-                    <Box display="flex" justifyContent="flex-end">
-                        {enableEditName && (
-                            <Button
-                                variant="contained"
-                                style={{ backgroundColor: '#fbc73a' }}
-                                onClick={(e) => changeFileName(e)}
-                            >
-                                Save
-                            </Button>
-                        )}
-                        {enableEditName && (
-                            <Button
-                                sx={{ ml: 1 }}
-                                variant="contained"
-                                style={{ backgroundColor: '#aad3df' }}
-                                onClick={() => {
-                                    setFileName(ctx.selectedGpxFile.name);
-                                    setEnableEditName(false);
-                                    setFileNameError('');
-                                }}
-                            >
-                                Cancel
-                            </Button>
-                        )}
-                    </Box>
-                </div>
-            </div>
-        );
-    };
-
-    const NoEditName = () => {
-        return (
-            <Typography
-                variant="inherit"
-                sx={{
-                    fontFamily: 'Arial',
-                    fontSize: 20,
-                    color: '#666666',
-                    outline: 'none',
-                    letterSpacing: 'normal',
-                    pb: '2px',
-                    lineHeight: 'normal',
-                    overflowWrap: 'break-word',
-                    fontWeight: 'bold',
-                    mb: '3px',
-                }}
-            >
-                {ctx.selectedGpxFile?.name && TracksManager.prepareName(ctx.selectedGpxFile.name, false)}
-            </Typography>
         );
     };
 
@@ -570,7 +377,6 @@ export default function GeneralInfo({ width }) {
                         },
                     }}
                 >
-                    <div>{isLocalTrack(ctx) ? EditName() : NoEditName()}</div>
                     <div>{preparedDesc && Description({ desc: preparedDesc })}</div>
                     {ltx.loginUser &&
                         ltx.accountInfo?.account !== FREE_ACCOUNT &&

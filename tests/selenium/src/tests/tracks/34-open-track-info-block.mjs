@@ -23,11 +23,11 @@ export default async function test() {
     await actionAddOneTrack(trackName);
 
     await clickBy(By.id(`se-cloud-track-${trackName}`));
-    await waitBy(By.id('se-infoblock-all'));
+    await waitBy(By.id('se-track-context-menu'));
     await waitBy(By.className('leaflet-interactive'));
     await clickBy(By.id('se-button-back'));
     await checkElementByCss('img[src*="point_finish"]', false);
-    await waitByRemoved(By.id('se-infoblock-all'));
+    await waitByRemoved(By.id('se-track-context-menu'));
 
     await deleteTrack(trackName);
 

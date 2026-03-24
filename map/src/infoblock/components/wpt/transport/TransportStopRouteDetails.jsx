@@ -248,7 +248,11 @@ export default function TransportStopRouteDetails() {
                                         <LineAndIconWrapper routeColor={routeColor} lineNoRadiusBottom>
                                             {stops.slice(0, currentStopIndex).map((stop, i) => (
                                                 <React.Fragment key={`before-${stop.stopId ?? i}`}>
-                                                    <StopItem stop={stop} routeColor={routeColor} showTravelTime={hasTravelTime} />
+                                                    <StopItem
+                                                        stop={stop}
+                                                        routeColor={routeColor}
+                                                        showTravelTime={hasTravelTime}
+                                                    />
                                                     {i < currentStopIndex - 1 && <DividerWithMargin margin={'50px'} />}
                                                 </React.Fragment>
                                             ))}
@@ -260,12 +264,21 @@ export default function TransportStopRouteDetails() {
                             <LineAndIconWrapper routeColor={routeColor} lineNoRadiusTop={stopsBeforeOpen}>
                                 <Box>
                                     {/* Current stop (selected) */}
-                                    <StopItem stop={stops[currentStopIndex]} routeColor={routeColor} isSelected showTravelTime={hasTravelTime} />
+                                    <StopItem
+                                        stop={stops[currentStopIndex]}
+                                        routeColor={routeColor}
+                                        isSelected
+                                        showTravelTime={hasTravelTime}
+                                    />
                                     {stopsAfterCurrent.length > 0 && <DividerWithMargin margin={'50px'} />}
                                     {/* Stops after current */}
                                     {stopsAfterCurrent.map((stop, i) => (
                                         <React.Fragment key={`after-${stop.stopId ?? currentStopIndex + 1 + i}`}>
-                                            <StopItem stop={stop} routeColor={routeColor} showTravelTime={hasTravelTime} />
+                                            <StopItem
+                                                stop={stop}
+                                                routeColor={routeColor}
+                                                showTravelTime={hasTravelTime}
+                                            />
                                             {i < stopsAfterCurrent.length - 1 && <DividerWithMargin margin={'50px'} />}
                                         </React.Fragment>
                                     ))}
