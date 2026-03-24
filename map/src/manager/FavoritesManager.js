@@ -257,9 +257,9 @@ function createGroup(file) {
 function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
     groupName = normalizeFavoritePointsGroupName(groupName);
     let hidden = false;
-    if (pointsGroups && pointsGroups[groupName]) {
-        if (pointsGroups[groupName].ext.hidden !== undefined) {
-            hidden = pointsGroups[groupName].ext.hidden;
+    if (pointsGroups?.[groupName]) {
+        if (pointsGroups[groupName].hidden !== undefined) {
+            hidden = pointsGroups[groupName].hidden;
         } else {
             hidden = isHidden(pointsGroups, groupName);
         }
@@ -687,7 +687,7 @@ export function getFavMenuListByLayers(layers, wpts, currentLoc) {
         }).options.html;
         const marker = {
             name: value.options.name,
-            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
+            icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30, wpt.background),
             layer: value,
             color: wpt.color,
             background: wpt.background,

@@ -302,7 +302,7 @@ function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
 }
 
 // only for icons with image (with href)
-export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
+export function changeIconSizeWpt(svgHtml, iconSize, shapeSize, shape = null) {
     // Update the sizes inside viewBox and for <image>, <circle>, <path>, <rect>
     const viewBoxPattern = /viewBox="0 0 (\d+) (\d+)"/;
     const widthPattern = /width="(\d+)"/;
@@ -386,7 +386,12 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
         return `<rect ${prefix} width="${newWidth}" ${middle} height="${newHeight}" ${middle2} rx="${newRx}" ${suffix}/>`;
     });
 
-    svgHtml = svgHtml.replace(/<g transform="translate\((\d+\.?\d*), (\d+\.?\d*)\)">/g, () => {
+    svgHtml = svgHtml.replace(/<g transform="translate\(([-\d.]+),\s*([-\d.]+)\)">/g, (match, x, y) => {
+        if (shape === BACKGROUND_WPT_SHAPE_OCTAGON) {
+            const newX = Math.round(Number.parseFloat(x) * scaleFactor * 100) / 100;
+            const newY = Math.round(Number.parseFloat(y) * scaleFactor * 100) / 100;
+            return `<g transform="translate(${newX}, ${newY})">`;
+        }
         const offsetX = (shapeSize - nestedBWidth) / 2;
         const offsetY = (shapeSize - nestedBHeight) / 2;
         return `<g transform="translate(${offsetX}, ${offsetY})">`;

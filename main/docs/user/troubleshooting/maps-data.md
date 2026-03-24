@@ -116,6 +116,30 @@ To resolve the issue of slow map rendering, especially when using offline vector
 
 These changes should reduce the time it takes to render maps, especially during navigation. For more detailed configuration options, refer to the [Map Settings Guide](https://osmand.net/docs/user/map/interact-with-map.md#settings).
 
+### What does “Free updates (emergency)” mean? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Emergency Access Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Emergency Access iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Emergency map updates** may be enabled for certain regions during crisis or emergency situations. In these cases, maps are temporarily available with free and more frequent updates.
+
+When this feature is active, the map download screen may display the message *Free updates (emergency) / Free downloads*.
+
+This means that the map can receive updates more frequently than standard maps, sometimes once or several times per day, depending on the situation.
+
 
 ## Contour Lines {#contour-lines}
 

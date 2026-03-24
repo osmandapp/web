@@ -39,7 +39,14 @@ export default class TrackTabList {
         }
 
         list = list.concat(
-            Object.keys(tabs).map((item) => <Tab value={tabs[item].key + ''} label={item} key={'tab:' + item} />)
+            Object.keys(tabs).map((item) => (
+                <Tab
+                    testid={`se-tab-${item.toLowerCase()}`}
+                    value={tabs[item].key + ''}
+                    label={item}
+                    key={'tab:' + item}
+                />
+            ))
         );
 
         this.state.tabList = list;

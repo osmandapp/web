@@ -28,11 +28,21 @@ import { compressJSONToBlob } from '../../util/GzipCompression';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
+export const INFO_FILE_EXT = '.info';
 export const KMZ_FILE_EXT = '.kmz';
-export const EMPTY_FILE_NAME = '__folder__.info';
+export const EMPTY_FILE_NAME = `__folder__${INFO_FILE_EXT}`;
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
 export const PROFILE_LINE = 'line';
+
+export function getResolvedPointsGroups(file) {
+    return file?.info?.pointsGroups ?? file?.pointsGroups;
+}
+
+export function isWptGroupShown(pointsGroups, groupName) {
+    return pointsGroups?.[groupName]?.hidden !== true;
+}
+
 const PROFILE_CAR = 'car';
 const PROFILE_GAP = 'gap';
 export const NAN_MARKER = 99999;
@@ -74,6 +84,8 @@ export function prepareLocalTrack(track) {
         // tracks: prepareTrack.tracks, // tracks[] will be back
         wpts: prepareTrack.wpts,
         pointsGroups: prepareTrack.pointsGroups,
+        /** Cloud / .info payload (e.g. pointsGroups visibility); was omitted and lost on IndexedDB round-trip */
+        info: prepareTrack.info,
         ext: prepareTrack.ext,
         analysis: prepareAnalysis(prepareTrack.analysis),
         selected: false,
@@ -1561,7 +1573,7 @@ export async function openTrackOnMap({
 export function preparedGpxFile({ file, sharedFile = false, oldFile = null }) {
     const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
     const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}&shared=${sharedFile ? 'true' : 'false'}`;
-    const qsInfo = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name + '.info')}`;
+    const qsInfo = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name + INFO_FILE_EXT)}`;
     if (oldFile) {
         return {
             url: oldFile.url ? URL + qs : null,
