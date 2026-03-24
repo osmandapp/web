@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { Box, CircularProgress } from '@mui/material';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import TabPanels from '../tabs/TabPanels';
-import { ReactComponent as TracksIcon } from '../../../assets/menu/ic_action_track.svg';
+import { ReactComponent as TracksIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
 import styles from './trackcontextmenu.module.css';
 import AppContext, { isCloudTrack, isLocalTrack } from '../../../context/AppContext';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
