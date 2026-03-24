@@ -1,8 +1,8 @@
 import EditableMarker from './EditableMarker';
 import L from 'leaflet';
-import TrackLayerProvider, { TEMP_LAYER_FLAG, WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvider';
+import TrackLayerProvider, { redrawWptsOnLayer, TEMP_LAYER_FLAG, WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvider';
 import isEmpty from 'lodash-es/isEmpty';
-import TracksManager from '../../../manager/track/TracksManager';
+import TracksManager, { getResolvedPointsGroups } from '../../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
 import { LOCAL_TRACKS_LAYERS_ID } from '../../layers/LocalClientTrackLayer';
 import { addLayerToMap } from '../MapManager';
@@ -57,6 +57,7 @@ export function updateLayers({ map, ctx, localLayers, ctxTrack, points, wpts, tr
         if (points?.length > 0) {
             TrackLayerProvider.parsePoints({ map, ctx, points, layers, draggable: true });
         }
+        const trackPointsGroups = getResolvedPointsGroups(ctxTrack);
         if (wpts?.length > 0) {
             TrackLayerProvider.parseWpt({
                 points: wpts,
@@ -64,6 +65,7 @@ export function updateLayers({ map, ctx, localLayers, ctxTrack, points, wpts, tr
                 map,
                 ctx,
                 simplify: wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
+                pointsGroups: trackPointsGroups,
             });
         }
         layers = createEditableLayers(map, ctx, ctxTrack, layers);
@@ -97,6 +99,7 @@ export function updateLayers({ map, ctx, localLayers, ctxTrack, points, wpts, tr
         });
         trackLayers.options.type = LOCAL_TRACKS_LAYERS_ID;
         addLayerToMap(map, trackLayers, 'update-local-track-layers');
+        redrawWptsOnLayer({ layer: trackLayers, pointsGroups: trackPointsGroups });
 
         // add active tracks to map for visibility during editing
         if (!isEmpty(localLayers)) {
@@ -123,7 +126,9 @@ function createEditableLayers(map, ctx, ctxTrack, layers) {
     layers.forEach((layer) => {
         if (layer instanceof L.Marker) {
             const editableMarker = new EditableMarker(map, ctx, null, layer, ctxTrack).create();
-            res.push(editableMarker);
+            if (editableMarker) {
+                res.push(editableMarker);
+            }
         } else if (layer instanceof L.Polyline) {
             const editablePolyline = new EditablePolyline(map, ctx, null, layer, ctxTrack).create();
             res.push(editablePolyline);

@@ -257,9 +257,9 @@ function createGroup(file) {
 function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
     groupName = normalizeFavoritePointsGroupName(groupName);
     let hidden = false;
-    if (pointsGroups && pointsGroups[groupName]) {
-        if (pointsGroups[groupName].ext.hidden !== undefined) {
-            hidden = pointsGroups[groupName].ext.hidden;
+    if (pointsGroups?.[groupName]) {
+        if (pointsGroups[groupName].hidden !== undefined) {
+            hidden = pointsGroups[groupName].hidden;
         } else {
             hidden = isHidden(pointsGroups, groupName);
         }

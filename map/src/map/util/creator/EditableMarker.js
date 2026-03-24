@@ -3,7 +3,11 @@ import MarkerOptions from '../../markers/MarkerOptions';
 import TrackLayerProvider from '../TrackLayerProvider';
 import indexOf from 'lodash-es/indexOf';
 import cloneDeep from 'lodash-es/cloneDeep';
-import TracksManager, { isPointUnrouted } from '../../../manager/track/TracksManager';
+import TracksManager, {
+    getResolvedPointsGroups,
+    isPointUnrouted,
+    isWptGroupShown,
+} from '../../../manager/track/TracksManager';
 import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
 export default class EditableMarker {
@@ -25,6 +29,13 @@ export default class EditableMarker {
         let options;
         let point;
         if (marker) {
+            if (marker.options?.wpt) {
+                const pg = getResolvedPointsGroups(this.track);
+                const cat = marker.options.category ?? '';
+                if (!isWptGroupShown(pg, cat)) {
+                    return null;
+                }
+            }
             point = marker.getLatLng();
             options = marker.options;
         } else if (this.point) {
