@@ -300,7 +300,7 @@ const GlobalFrame = () => {
         };
 
         Object.values(files).forEach((f) => {
-            if (!f?.name || f.delete) {
+            if (!f?.name || f?.delete) {
                 return;
             }
             const fileName = `${prefix}${f.name}`;
