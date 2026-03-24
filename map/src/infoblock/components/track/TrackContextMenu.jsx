@@ -4,7 +4,7 @@ import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderlin
 import TabPanels from '../tabs/TabPanels';
 import { ReactComponent as TracksIcon } from '../../../assets/menu/ic_action_track.svg';
 import styles from './trackcontextmenu.module.css';
-import AppContext, { isCloudTrack } from '../../../context/AppContext';
+import AppContext, { isCloudTrack, isLocalTrack } from '../../../context/AppContext';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { getFileName } from '../../../manager/track/TracksManager';
 import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
@@ -41,7 +41,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                     onClose={onClose}
                     showBackButton={showBackButton}
                     rightContent={
-                        isCloudTrack(ctx) &&
+                        (isCloudTrack(ctx) || isLocalTrack(ctx)) &&
                         track?.name && (
                             <ThreeDotsButton
                                 name={'action_menu_track'}

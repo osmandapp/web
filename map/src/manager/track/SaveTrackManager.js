@@ -15,6 +15,8 @@ import TracksManager, {
     preparedGpxFile,
     GPX_FILE_EXT,
     KMZ_FILE_EXT,
+    prepareName,
+    updateMetadata,
 } from './TracksManager';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
@@ -24,10 +26,10 @@ import {
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
 } from '../../context/AppContext';
-import Utils from '../../util/Utils';
+import Utils, { sanitizedFileName } from '../../util/Utils';
+import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
-import { SMART_TYPE } from '../../menu/share/shareConstants';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
@@ -175,6 +177,43 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
     if (occupied) {
         throw new Error('TracksManager addTrack() too many same-tracks');
     }
+}
+
+/**
+ * Rename a browser-stored local track (IndexedDB + ctx.localTracks).
+ * Same sanitization as cloud rename (RenameDialog + renameTrack flow).
+ */
+export function renameLocalTrack(ctx, oldName, rawNewName) {
+    const newName = prepareName(sanitizedFileName(rawNewName), true);
+    if (!newName || newName.trim().length === 0) {
+        return { error: i18n.t('web:rename_empty_track_name') };
+    }
+    const idx = ctx.localTracks.findIndex((t) => t?.name === oldName);
+    if (idx === -1) {
+        return { error: i18n.t('web:rename_track_not_found') };
+    }
+    if (ctx.localTracks.some((t, i) => i !== idx && t?.name === newName)) {
+        return { error: i18n.t('web:rename_track_already_exists') };
+    }
+    if (newName === oldName) {
+        return { ok: true };
+    }
+    const track = ctx.localTracks[idx];
+    track.name = newName;
+    track.id = newName;
+    updateMetadata({ file: track, name: newName });
+
+    if (ctx.selectedGpxFile?.name === oldName) {
+        const prev = ctx.selectedGpxFile;
+        updateMetadata({ file: prev, name: newName });
+        ctx.setSelectedGpxFile({ ...prev, name: newName, id: newName, oldName });
+    }
+    if (ctx.selectedLocalTrackObj?.name === oldName) {
+        ctx.setSelectedLocalTrackObj((prev) => ({ ...prev, name: newName }));
+    }
+    ctx.setLocalTracks([...ctx.localTracks]);
+    saveTrackToLocalStorage({ ctx, track });
+    return { ok: true };
 }
 
 export async function renameTrack(oldName, folder, newName, ctx) {
