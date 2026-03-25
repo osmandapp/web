@@ -4,7 +4,7 @@ import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderlin
 import TabPanels from '../tabs/TabPanels';
 import { ReactComponent as TracksIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
 import styles from './trackcontextmenu.module.css';
-import AppContext, { isCloudTrack, isLocalTrack } from '../../../context/AppContext';
+import AppContext, { isCloudTrack, isLocalTrack, isRouteTrack } from '../../../context/AppContext';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { getFileName } from '../../../manager/track/TracksManager';
 import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
@@ -12,6 +12,7 @@ import ActionsMenu from '../../../menu/actions/ActionsMenu';
 import TrackActions from '../../../menu/actions/TrackActions';
 import { useTrackVisibility } from '../../../util/hooks/menu/useTrackVisibility';
 import CloudTrackActionsButtons from './CloudTrackActionsButtons';
+import RouteTrackActionsButtons from './RouteTrackActionsButtons';
 
 export default function TrackContextMenu({ track, onClose, tabsObj, showBackButton = false }) {
     const ctx = useContext(AppContext);
@@ -70,6 +71,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                             checkedSwitch={checkedSwitch}
                         />
                     )}
+                    {isRouteTrack(ctx) && track && <RouteTrackActionsButtons track={track} />}
                     <TabPanels tabsObj={tabsObj} />
                 </Box>
             )}
