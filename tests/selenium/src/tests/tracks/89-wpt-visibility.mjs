@@ -53,7 +53,6 @@ export default async function test() {
 
     // Test: Toggle first group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupA'));
-    await actionIdleWait({ idle: 1000 });
     const afterFirstHide = await getVisibleWaypointMarkers();
     await assert(afterFirstHide.length === 6, `First group should be hidden. Expected 6, got ${afterFirstHide.length}`);
 
@@ -67,12 +66,10 @@ export default async function test() {
     await clickBy(By.id('se-cloud-track-' + trackName));
     const afterReload = await getVisibleWaypointMarkers();
     await assert(afterReload.length === 6, `First group should be hidden. Expected 6, got ${afterReload.length}`);
-    await clickBy(By.css("[testid='se-tab-points]"));
+    await clickBy(By.css("[testid='se-tab-points']"));
 
     // Test: Toggle second group visibility OFF
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    await actionIdleWait({ idle: 1000 });
-
     const afterSecondHide = await getVisibleWaypointMarkers();
     await assert(
         afterSecondHide.length === 1,
@@ -101,8 +98,6 @@ export default async function test() {
 
     // Test: Toggle second group visibility ON
     await clickBy(By.id('se-wpt-group-visibility-groupB'));
-    await actionIdleWait({ idle: 1000 });
-
     const afterBothShow = await getVisibleWaypointMarkers();
     await assert(afterBothShow.length === 9, `Both groups should be visible. Expected 9, got ${afterBothShow.length}`);
 
@@ -113,6 +108,7 @@ export default async function test() {
 
 // Helper function to count visible waypoint markers on the map
 async function getVisibleWaypointMarkers() {
+    await actionIdleWait({ idle: 1000 });
     // Find all waypoint markers that are visible (display !== 'none')
     const markers = await driver.findElements(By.className('leaflet-marker-icon'));
 
