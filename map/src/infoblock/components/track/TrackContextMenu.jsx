@@ -73,8 +73,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                         sx={{
                             flex: 1,
                             minHeight: 0,
-                            overflowY: 'auto',
-                            overflowX: 'hidden',
+                            overflow: 'hidden',
                         }}
                     >
                         <TabPanels tabsObj={tabsObj} />

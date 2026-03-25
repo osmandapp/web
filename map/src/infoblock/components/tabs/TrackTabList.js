@@ -1,16 +1,18 @@
 import GeneralInfoTab from './GeneralInfoTab';
 import React from 'react';
 import { Tab } from '@mui/material';
+import i18n from 'i18next';
 import PointsTab from './PointsTab';
 import TurnsTab from './TurnsTab';
 import WaypointsTab from './WaypointsTab';
-import { isEmptyTrack, hasSegmentTurns } from '../../../manager/track/TracksManager';
-import { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
+import TrackInProgressTab from './TrackInProgressTab';
+import { hasSegmentTurns } from '../../../manager/track/TracksManager';
+import { isLocalTrack, isRouteTrack } from '../../../context/AppContext';
 
 export const TRACK_TAB_IDS = {
     GENERAL: 'general',
+    TRACK: 'track',
     POINTS: 'points',
-    WAYPOINTS: 'waypoints',
     TURNS: 'turns',
 };
 
@@ -24,15 +26,20 @@ export default class TrackTabList {
     create(ctx, setShowInfoBlock) {
         let tabs = {};
         let list = [];
+        const TAB_LABEL_KEYS = {
+            Info: 'shared_string_overview',
+            Track: 'shared_string_gpx_track',
+            Points: 'shared_string_gpx_points',
+        };
 
-        tabs.Info = <GeneralInfoTab key={TRACK_TAB_IDS.GENERAL} setShowInfoBlock={setShowInfoBlock} />;
-        if (isLocalTrack(ctx)) {
-            tabs.Track = <PointsTab key={TRACK_TAB_IDS.POINTS} />;
-        }
+        tabs.Overview = <GeneralInfoTab key={TRACK_TAB_IDS.GENERAL} setShowInfoBlock={setShowInfoBlock} />;
+        tabs.Track = isLocalTrack(ctx) ? (
+            <PointsTab key={TRACK_TAB_IDS.TRACK} />
+        ) : (
+            <TrackInProgressTab key={TRACK_TAB_IDS.TRACK} />
+        );
 
-        if ((isCloudTrack(ctx) && !isEmptyTrack(ctx.selectedGpxFile, true, false)) || isLocalTrack(ctx)) {
-            tabs.Waypoints = <WaypointsTab key={TRACK_TAB_IDS.WAYPOINTS} />;
-        }
+        tabs.Points = <WaypointsTab key={TRACK_TAB_IDS.POINTS} />;
 
         if (isRouteTrack(ctx) || hasSegmentTurns({ track: ctx.selectedGpxFile })) {
             tabs.Turns = <TurnsTab key={TRACK_TAB_IDS.TURNS} />;
@@ -43,7 +50,7 @@ export default class TrackTabList {
                 <Tab
                     testid={`se-tab-${item.toLowerCase()}`}
                     value={tabs[item].key + ''}
-                    label={item}
+                    label={TAB_LABEL_KEYS[item] ? i18n.t(TAB_LABEL_KEYS[item]) : item}
                     key={'tab:' + item}
                 />
             ))
