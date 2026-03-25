@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 import { mobile, ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
-import { enclose, clickBy, sendKeysBy, matchInnerTextBy, enumerateIds, waitBy } from '../../lib.mjs';
+import { clickBy, sendKeysBy, matchInnerTextBy, waitBy } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -51,13 +51,11 @@ const routes = [
 
 const MOBILE_SKIP = /(Track|Sand)/; // bye-bye mobile version
 
-const routeTrackPanelButtons = [
-    'se-panel-button-profile-icon',
-    'se-panel-button-edit-track',
-    'se-panel-button-download-gpx',
+const routeTrackInfoBlockButtons = [
+    'se-route-track-actions-edit',
+    'se-route-track-actions-save-to-cloud',
+    'se-route-track-actions-download',
 ];
-
-const routeTrackInfoBlockButtons = ['se-route-track-actions-edit', 'se-route-track-actions-download'];
 
 export default async function test() {
     await actionOpenMap();
@@ -80,7 +78,6 @@ export default async function test() {
 
         // Navigation InfoBlock is disabled by default
         await clickBy(By.id('se-route-more-information'));
-        await validatePanelButtons(routeTrackPanelButtons);
         await validateInfoBlockButtons(routeTrackInfoBlockButtons);
 
         await validateInfoBlockStrings(strings, hasAttributes);
@@ -106,17 +103,6 @@ async function validateInfoBlockButtons(ids) {
     for (const id of ids) {
         await waitBy(By.id(id));
     }
-}
-
-async function validatePanelButtons(ids) {
-    await enclose(
-        async () => {
-            const buttons = await enumerateIds('se-panel-button-');
-            return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
-        },
-        { tag: 'validatePanelButtons' }
-    );
-    //await clickBy(By.id('se-button-back'));
 }
 
 async function validateInfoBlockStrings(strings, hasAttributes) {

@@ -22,10 +22,10 @@ export default async function test({ mask = '*' } = {}) {
 
 export async function saveToCloud(name) {
     await clickBy(By.id('se-local-track-' + name));
-    await clickBy(By.id('se-panel-button-save-to-cloud'));
+    await clickBy(By.id('se-local-track-actions-save-to-cloud'));
     await clickBy(By.id('se-submit-save-to-cloud'));
     await clickBy(By.id('se-overwrite-cloud-track'), { optional: true });
-    await waitBy(By.id('se-panel-button-edit-track'));
+    await waitBy(By.id('se-track-actions-edit'));
 
     await clickBy(By.id('se-button-back'));
 
