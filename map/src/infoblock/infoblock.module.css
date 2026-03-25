@@ -86,6 +86,9 @@
 .wptActionButtonIcon {
     fill: #237bff !important;
 }
+.wptActionButtonIconDisabled {
+    fill: #666666 !important;
+}
 .location {
     display: flex !important;
     margin-right: 24px !important;

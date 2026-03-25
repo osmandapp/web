@@ -1,3 +1,19 @@
+.trackContextMenuShell {
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.trackTabsColumn {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .nameBlock {
     display: flex !important;
     padding: 0 16px 12px 16px !important;
@@ -8,7 +24,7 @@
 .trackName {
     overflow: hidden !important;
     color: var(--text-primary) !important;
-    font-feature-settings: 'liga' off !important;
+    font-feature-settings: 'liga' 0 !important;
     text-overflow: ellipsis !important;
     font-size: 24px !important;
     font-style: normal !important;

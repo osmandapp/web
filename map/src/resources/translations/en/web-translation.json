@@ -2,6 +2,8 @@
     "download_as_osf": "Download as OSF",
     "download_as_obf": "Download as OBF collection ",
     "hide_from_map": "Hide from map",
+    "hide_track": "Hide track",
+    "make_track_visible": "Make track visible",
     "import_favorite_groups": "Import favorite groups",
     "recently_visible": "Recently visible",
     "forecast_source": "Forecast source",
