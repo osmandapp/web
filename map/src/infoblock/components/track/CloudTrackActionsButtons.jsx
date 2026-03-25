@@ -8,7 +8,7 @@ import TracksManager from '../../../manager/track/TracksManager';
 import { getShareFileInfo } from '../../../manager/ShareManager';
 import DownloadTrackDialog from '../../../dialogs/tracks/DownloadTrackDialog';
 import { ReactComponent as HideTrackIcon } from '../../../assets/icons/ic_action_hide.svg';
-import { ReactComponent as ShowTrackIcon } from '../../../assets/icons/ic_action_show_outlined.svg';
+import { ReactComponent as ShowTrackIcon } from '../../../assets/icons/ic_action_show.svg';
 import { ReactComponent as AppearanceIcon } from '../../../assets/icons/ic_action_appearance.svg';
 import { ReactComponent as EditIcon } from '../../../assets/icons/ic_action_edit_track.svg';
 import { ReactComponent as ShareIcon } from '../../../assets/icons/ic_group.svg';
