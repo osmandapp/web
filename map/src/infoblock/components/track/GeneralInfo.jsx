@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
+import AppContext, { isRouteTrack } from '../../../context/AppContext';
 import TracksManager, {
     hasSegments,
-    isEmptyTrack,
     applySrtmElevation,
     eligibleToApplySrtm,
     prepareDesc,
@@ -10,7 +9,6 @@ import TracksManager, {
 import { toHHMMSS } from '../../../util/Utils';
 import {
     Box,
-    Button,
     CircularProgress,
     Divider,
     Link,
@@ -20,18 +18,8 @@ import {
     Tooltip,
     Typography,
 } from '@mui/material';
-import {
-    AccessTime,
-    AvTimer,
-    CloudUpload,
-    Commit,
-    ImportExport,
-    RouteOutlined,
-    Speed,
-    Terrain,
-} from '@mui/icons-material';
+import { AccessTime, AvTimer, Commit, ImportExport, RouteOutlined, Speed, Terrain } from '@mui/icons-material';
 import RouteIcon from '@mui/icons-material/Route';
-import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import {
     convertMeters,
     convertSpeedMS,
@@ -41,7 +29,6 @@ import {
     LARGE_UNIT,
 } from '../../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
-import LoginContext from '../../../context/LoginContext';
 import i18n from 'i18next';
 
 export function formatRouteInfo(props, ctx) {
@@ -70,7 +57,6 @@ export function formatRouteInfo(props, ctx) {
 
 export default function GeneralInfo({ width }) {
     const ctx = useContext(AppContext);
-    const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
 
@@ -377,51 +363,6 @@ export default function GeneralInfo({ width }) {
                     }}
                 >
                     <div>{preparedDesc && Description({ desc: preparedDesc })}</div>
-                    {ltx.loginUser &&
-                        ltx.accountInfo?.account !== FREE_ACCOUNT &&
-                        (isLocalTrack(ctx) || isRouteTrack(ctx)) &&
-                        isEmptyTrack(ctx.selectedGpxFile) === false && (
-                            <>
-                                <Button
-                                    id="se-infoblock-button-save-to-cloud"
-                                    variant="contained"
-                                    sx={{
-                                        ml: '-0.5px !important',
-                                        backgroundColor: '#fbc73a',
-                                        fontSize: '12px',
-                                        minWidth: '20px',
-                                        padding: '3px 5px',
-                                    }}
-                                    onClick={() => {
-                                        ctx.selectedGpxFile.save = true;
-                                        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                    }}
-                                >
-                                    <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                    Save to Cloud
-                                </Button>
-                                {ctx.createTrack?.cloudAutoSave && (
-                                    <Button
-                                        variant="contained"
-                                        sx={{
-                                            backgroundColor: '#fbc73a',
-                                            fontSize: '12px',
-                                            minWidth: '20px',
-                                            padding: '3px 5px',
-                                            ml: '5px',
-                                        }}
-                                        onClick={() => {
-                                            ctx.selectedGpxFile.save = true;
-                                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                            ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
-                                        }}
-                                    >
-                                        <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                        Save as
-                                    </Button>
-                                )}
-                            </>
-                        )}
                     {points !== 0 && (
                         <MenuItem sx={{ ml: -2 }}>
                             <ListItemIcon>

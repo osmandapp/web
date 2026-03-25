@@ -53,7 +53,7 @@ const TRACKS = [
 const MOBILE_SKIP = /(Path|Gravel|Street|Asphalt)/; // bye-bye mobile version
 
 const localTrackButtons = [
-    'se-infoblock-button-save-to-cloud',
+    'se-local-track-actions-save-to-cloud',
     'se-local-track-actions-download',
     'se-infoblock-button-close-track',
     'se-infoblock-button-delete-track',
