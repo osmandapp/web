@@ -4,7 +4,7 @@ import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderlin
 import TabPanels from '../tabs/TabPanels';
 import { ReactComponent as TracksIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
 import styles from './trackcontextmenu.module.css';
-import AppContext, { isCloudTrack, isLocalTrack, isRouteTrack } from '../../../context/AppContext';
+import AppContext, { isCloudTrack, isLocalTrack, isRouteTrack, isShareTrack } from '../../../context/AppContext';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { getFileName } from '../../../manager/track/TracksManager';
 import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
@@ -14,6 +14,7 @@ import { useTrackVisibility } from '../../../util/hooks/menu/useTrackVisibility'
 import CloudTrackActionsButtons from './CloudTrackActionsButtons';
 import RouteTrackActionsButtons from './RouteTrackActionsButtons';
 import LocalTrackActionsButtons from './LocalTrackActionsButtons';
+import ShareTrackActionsButtons from './ShareTrackActionsButtons';
 
 export default function TrackContextMenu({ track, onClose, tabsObj, showBackButton = false }) {
     const ctx = useContext(AppContext);
@@ -74,6 +75,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                     )}
                     {isLocalTrack(ctx) && track && <LocalTrackActionsButtons track={track} />}
                     {isRouteTrack(ctx) && track && <RouteTrackActionsButtons track={track} />}
+                    {isShareTrack(ctx) && track && <ShareTrackActionsButtons track={track} />}
                     <TabPanels tabsObj={tabsObj} />
                 </Box>
             )}
