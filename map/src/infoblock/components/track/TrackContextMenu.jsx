@@ -13,6 +13,7 @@ import TrackActions from '../../../menu/actions/TrackActions';
 import { useTrackVisibility } from '../../../util/hooks/menu/useTrackVisibility';
 import CloudTrackActionsButtons from './CloudTrackActionsButtons';
 import RouteTrackActionsButtons from './RouteTrackActionsButtons';
+import LocalTrackActionsButtons from './LocalTrackActionsButtons';
 
 export default function TrackContextMenu({ track, onClose, tabsObj, showBackButton = false }) {
     const ctx = useContext(AppContext);
@@ -71,6 +72,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                             checkedSwitch={checkedSwitch}
                         />
                     )}
+                    {isLocalTrack(ctx) && track && <LocalTrackActionsButtons track={track} />}
                     {isRouteTrack(ctx) && track && <RouteTrackActionsButtons track={track} />}
                     <TabPanels tabsObj={tabsObj} />
                 </Box>
