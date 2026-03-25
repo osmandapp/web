@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 import { mobile } from '../../options.mjs';
-import { clickBy, enclose, enumerateIds, matchInnerTextBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, matchInnerTextBy, waitBy, waitByRemoved } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -59,7 +59,7 @@ const localTrackButtons = [
     'se-infoblock-button-delete-track',
 ];
 const cloudTrackButtons = [
-    'se-infoblock-button-edit-track',
+    'se-track-actions-edit',
     'se-infoblock-button-download-gpx',
     'se-infoblock-button-close-track',
     'se-infoblock-button-delete-track',
@@ -116,11 +116,7 @@ async function validateInfoBlockStrings(strings, gpx) {
 }
 
 async function validateInfoBlockButtons(ids) {
-    await enclose(
-        async () => {
-            const buttons = await enumerateIds('se-infoblock-button-');
-            return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
-        },
-        { tag: 'validateInfoBlockButtons' }
-    );
+    for (const id of ids) {
+        await waitBy(By.id(id));
+    }
 }

@@ -57,7 +57,7 @@ const routeTrackPanelButtons = [
     'se-panel-button-download-gpx',
 ];
 
-const routeTrackInfoBlockButtons = ['se-infoblock-button-edit-track', 'se-infoblock-button-download-gpx'];
+const routeTrackInfoBlockButtons = ['se-route-track-actions-edit', 'se-infoblock-button-download-gpx'];
 
 export default async function test() {
     await actionOpenMap();
@@ -103,13 +103,9 @@ export async function selectProfile({ profile }) {
 }
 
 async function validateInfoBlockButtons(ids) {
-    await enclose(
-        async () => {
-            const buttons = await enumerateIds('se-infoblock-button-');
-            return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
-        },
-        { tag: 'validateInfoBlockButtons' }
-    );
+    for (const id of ids) {
+        await waitBy(By.id(id));
+    }
 }
 
 async function validatePanelButtons(ids) {

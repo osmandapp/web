@@ -25,7 +25,6 @@ import {
     AvTimer,
     CloudUpload,
     Commit,
-    Create,
     ImportExport,
     RouteOutlined,
     Speed,
@@ -423,27 +422,6 @@ export default function GeneralInfo({ width }) {
                                 )}
                             </>
                         )}
-                    {!ctx.createTrack && (isCloudTrack(ctx) || isRouteTrack(ctx)) && (
-                        <Box sx={{ mb: 2, ml: '-4px' }}>
-                            <Button
-                                id="se-infoblock-button-edit-track"
-                                variant="contained"
-                                sx={{
-                                    ml: isRouteTrack(ctx) ? 0 : '-0.5px !important',
-                                    backgroundColor: '#fbc73a',
-                                    fontSize: '12px',
-                                    minWidth: '20px',
-                                    padding: '3px 5px',
-                                    marginLeft: '5px',
-                                }}
-                                onClick={() => TracksManager.handleEditCloudTrack(ctx)}
-                            >
-                                <Create fontSize="small" sx={{ mr: '7px' }} />
-                                {isCloudTrack(ctx) ? 'Edit Track' : 'Edit as track'}
-                            </Button>
-                            {points !== 0 && <Divider sx={{ mt: 2, mb: 1 }} />}
-                        </Box>
-                    )}
                     {points !== 0 && (
                         <MenuItem sx={{ ml: -2 }}>
                             <ListItemIcon>
