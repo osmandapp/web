@@ -45,7 +45,6 @@ export default function CloudTrackActionsButtons({ track, toggleVisibility, chec
                     action={() => {}}
                     id="se-track-actions-appearance"
                     icon={<AppearanceIcon className={styles.wptActionButtonIconDisabled} />}
-                    tooltipTitle={t('shared_string_appearance')}
                     additionalStyle={flexBtn}
                     disabled
                 />
