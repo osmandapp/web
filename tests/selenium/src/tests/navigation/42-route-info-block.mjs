@@ -57,7 +57,7 @@ const routeTrackPanelButtons = [
     'se-panel-button-download-gpx',
 ];
 
-const routeTrackInfoBlockButtons = ['se-route-track-actions-edit', 'se-infoblock-button-download-gpx'];
+const routeTrackInfoBlockButtons = ['se-route-track-actions-edit', 'se-route-track-actions-download'];
 
 export default async function test() {
     await actionOpenMap();
