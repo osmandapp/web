@@ -3,6 +3,9 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
+import setView from '../../actions/setView.mjs';
+import { driver, IDLE_DELAY } from '../../options.mjs';
+import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap('#13/50.4587/30.4720');
@@ -34,6 +37,17 @@ export default async function test() {
     await waitBy(By.id('se-search-results'));
     await waitBy(By.id('se-search-result-Memorial'));
     await waitBy(By.id('se-search-result-Stolperstein'));
+
+    // 5. Move map to an area with no matching POIs — expect empty state (not stale results).
+    await clickBy(By.id('se-search-input-back'));
+    await waitBy(By.id('se-default-search-categories'));
+    await setView({ lat: 50.4989, lon: 30.5927, zoom: 17 });
+    await setView({ lat: 50.4989, lon: 30.5927, zoom: 16 });
+    await driver.actions().pause(IDLE_DELAY).perform();
+    await sendKeysBy(By.id('se-search-input'), 'Stolperstein' + '\n');
+    await waitByRemoved(By.id('se-loading-page'));
+    await clickBy(By.id('se-search-result-Stolperstein'));
+    await waitBy(By.id('se-empty-search'));
 
     await actionFinish();
 }
