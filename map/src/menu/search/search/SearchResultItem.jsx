@@ -109,7 +109,11 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null) {
     return { name, type, info, city };
 }
 
-export default function SearchResultItem({ item, typeItem }) {
+function safeCategoryTypeKey(type) {
+    return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
+}
+
+export default function SearchResultItem({ item, typeItem, index }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -160,10 +164,16 @@ export default function SearchResultItem({ item, typeItem }) {
         return { ...res, icon, distance, bearing, isUserLocation };
     }
 
-    const id =
-        item.properties[CATEGORY_TYPE] === searchTypeMap.POI_TYPE
-            ? `se-search-result-${item.properties[CATEGORY_NAME]}`
-            : 'se-search-result-item';
+    const id = (() => {
+        const qType = ctx.searchQuery?.type;
+        if (qType != null && qType !== '' && index != null) {
+            return `se-search-result-item-${safeCategoryTypeKey(qType)}-${index}`;
+        }
+        if (item.properties[CATEGORY_TYPE] === searchTypeMap.POI_TYPE) {
+            return `se-search-result-${item.properties[CATEGORY_NAME]}`;
+        }
+        return 'se-search-result-item';
+    })();
 
     async function clickHandler() {
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
