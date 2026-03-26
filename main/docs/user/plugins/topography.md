@@ -262,17 +262,30 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+*Modify Color Scheme feature* allows you to select a color scheme:
+
+- From a [predefined list](#default-color-scheme).
+- From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
+- From palettes created or edited directly in the app.
+
+Custom palettes are based on gradient ranges, where each color corresponds to a specific value of terrain data such as *Altitude* or *Slope*. 
+You can:
+
+- define value steps (altitude levels or slope percentages);
+- assign colors to each step;
+- add or remove steps to adjust the gradient.
+
+**Note:** Hillshade uses a fixed shading algorithm and does not support custom gradient palettes.
+
+For advanced palette customization using palette files, see [Color Schemes](../personal/color-palette-schemes.md#palette-modify) article.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 *Modify Color Scheme feature* allows you to select a color scheme:
 
@@ -281,6 +294,9 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 You can [edit these palettes](../personal/color-palette-schemes.md#palette-modify) to personalize the appearance of maps and routes.
 
+</TabItem>
+
+</Tabs>
 
 ### Visibility {#visibility}
 
