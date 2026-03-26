@@ -36,7 +36,7 @@ The **Route preparation** feature in OsmAnd provides step-by-step navigation gui
 
 <TabItem value="ios" label="iOS">
 
-![Navigation screen iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Navigation screen iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Navigation screen iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![Navigation screen iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -292,7 +292,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 <TabItem value="ios" label="iOS">
 
-![Navigation screen iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Navigation screen iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -472,7 +472,7 @@ To build a route all **necessary maps** need to be downloaded and have the same 
 
 <TabItem value="ios" label="iOS">
 
-![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>
