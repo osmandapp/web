@@ -39,7 +39,7 @@ Thanks for trusting OsmAnd on your epic journeys!
 - [Globe view](#globe-view);
 - Added new [Trip recording widgets](#new-trip-recording-widgets): [Average Speed](#average-speed) and [Moving Time](#moving-time);
 - Introduced visual speeding indication to the [Speedometer widget](#speedometer-widget) with tolerance warning and limit-exceed states;
-- Added support for creating and editing custom [gradient palettes](#gradient-palettes) for track coloring and terrain coloring;
+- Introduced a new [Palette Editor](#palette-editor-for-terrain--track-visualization) for creating and editing custom color schemes for tracks and terrain visualization;
 - Bicycle routing now takes [bicycle width](#bicycle-width-parameter);
 - [Other improvements and optimizations](#other-improvements), including smart GPX track grouping, enhanced search result details, improved track waypoint navigation, and new activity profiles;
 - [Bug fixes](#bug-fixes).
@@ -63,6 +63,11 @@ l/downhill metrics, average grade and more detailed elevation information for tr
 
 _Plugins → Astronomy_
 
+### Interactive Sky Search
+The plugin includes a dedicated **Search** tool specifically for celestial objects. You can browse through categories like the Solar System, Constellations, Stars, and Deep Sky objects. The "Watch now" section highlights objects currently visible from your location, while advanced filters allow you to sort by magnitude (brightness) or upcoming rise/set times.
+
+### Earth Map Integration
+To help you orient your observations, you can enable an **Earth Map** view directly beneath the Star map. This feature allows you to relate celestial positions to your real-world geographic surroundings. Additionally, the **AR Star Finding** (Camera mode) uses your device's sensors to overlay the astronomical data onto your live camera feed, making it easy to find exact stars and planets in the real sky.
 
 ![Star map screen](@site/static/img/plugins/starwatcher/view_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter.png)
 
@@ -84,7 +89,7 @@ _OsmAnd menu → Configure screen → Panels Layout_
 
 ## 3D Buildings 
 
-[3D Buildings](https://osmand.net/docs/user/plugins/topography#3d-buildings) feature displays buildings as volumetric 3D models instead of flat shapes. 
+[3D Buildings](https://osmand.net/docs/user/plugins/topography#3d-buildings) feature displays buildings as volumetric 3D models instead of flat shapes. You can now adjust Sun settings (Azimuth and Altitude) to realistically calculate and display shadows based on the sun's position.
 
 _Confgure map → Topography → 3D Buildings_
 
@@ -132,20 +137,28 @@ _Menu → Configure screen → Other → Speedometer_
 
 ![Speedometer](@site/static/img/widgets/speed_alert.gif)
 
-## Gradient Palettes 
+## Palette Editor for Terrain & Track Visualization
 
+We've introduced a powerful new palette editor that gives you full control over how data is visualized on your map. Whether you are analyzing a GPX track or viewing terrain relief, you can now customize the color transitions to suit your needs.
+
+
+
+### Step-by-Step vs. Gradient Modes
+The editor now supports two distinct ways to transition between colors:
+* **Gradient:** Creates a smooth, continuous transition between colors, providing a fluid visual representation of data changes.
+* **Step-by-step:** Allows you to define strict color boundaries. For example, you can set `0–15 km/h` to Yellow and `15.1–30 km/h` to Red. This mode eliminates the gradient, making it easier to identify specific data ranges at a glance.
 
 ### For GPX Tracks
 
-Tracks colored by Speed, Altitude, or Slope now support customizable [gradient palettes](https://osmand.net/docs/user/map/tracks/appearance#gradient-palettes). Users can create and edit Relative palettes (auto-scaled to track data) or Fixed value palettes (based on absolute numbers), define color steps, and set a separate color for missing data.
-
 _Tracks Context menu → Appearance → Colour → + or All colors_
+
+Tracks colored by Speed, Altitude, or Slope now support these customizable [gradient palettes](https://osmand.net/docs/user/map/tracks/appearance#gradient-palettes). You can create **Relative palettes** (auto-scaled to your specific track data) or **Fixed value palettes** (based on absolute numbers), define custom color steps, and even set a unique color for missing data points.
 
 ### For Terrain Coloring
 
-The same gradient palette system has been added to [terrain coloring options](https://osmand.net/docs/user/personal/color-palette-schemes#terrain), allowing you to create custom color schemes for altitude and slope.
+_Configure map → Terrain → Modify → + or All colors_
 
-_Configure map → Terrain (Slope, Altitude) → Modify → + or All colors_
+This same editor has been integrated into [terrain coloring options](https://osmand.net/docs/user/personal/color-palette-schemes#terrain). You can now create your own custom color schemes for Altitude and Slope layers, allowing for a more personalized and readable terrain relief.
 
 ![OsmAnd 5.3](./img/color_pal.png)
 
@@ -160,31 +173,32 @@ Cycling profiles now support a [bicycle width parameter](https://osmand.net/docs
 
 ## Other Improvements
 
-* [**Smart GPX Track Grouping**](https://osmand.net/docs/user/personal/tracks/smart-folder)
-    Managing large collections of recordings is now much simpler. A new "Smart Folder" system has been introduced to automatically group tracks by day or month. These folders provide helpful summaries, including total distance, duration, average speed for each specific time period, and etc. 
+* [**Auto-organize tracks by year, length, activity & more**](https://osmand.net/docs/user/personal/tracks/smart-folder): 
+    Managing large collections of recordings is now much simpler with our new "Smart Folder" system. Organize your tracks dynamically by year, activity, or distance to keep your history clean and accessible.   
+    The new grouping mechanism allows you to create dynamic groups with any granularity you want. For example, you can group your entire library by Year, then sub-group by Activity type, and finally by Distance (e.g., 0-10km, 10-50km) or Duration. These folders provide helpful summaries, including total distance, duration, and average speed for each specific filtered group.
 
-* [**Enhanced Search Result Details**](https://osmand.net/docs/user/search/search-all)
+* [**Enhanced Search Result Details**](https://osmand.net/docs/user/search/search-all):
     Navigating search results for common locations is now more intuitive. By displaying the city and street name directly in the results list, you can instantly distinguish between identical POI names without needing to open each one individually.
 
-* [**Improved Track Waypoint Navigation**](https://osmand.net/docs/user/map/tracks/track-context-menu#points--waypoints)
+* [**Improved Track Waypoint Navigation**](https://osmand.net/docs/user/map/tracks/track-context-menu#points--waypoints):
     We’ve refined how you interact with waypoints within a track. You can now tap through the waypoint list to center the map on each point sequentially. Crucially, the list remains open during this process, allowing for a much faster and more seamless route-review experience.
 
-* [**New POI Share Links**](https://osmand.net/docs/user/map/map-context-menu#share)
+* [**New POI Share Links**](https://osmand.net/docs/user/map/map-context-menu#share):
     Sharing specific locations has been upgraded to support a new link format (aligned with our Web version). This ensures that when you share a POI, the recipient sees the exact same point and context across different platforms and devices.
 
-* [**Expanded Activity Profile Icons**](https://osmand.net/docs/user/personal/profiles#profile-appearance)
+* [**Expanded Activity Profile Icons**](https://osmand.net/docs/user/personal/profiles#profile-appearance):
     To better support diverse outdoor activities, we are expanding our library of profile icons. Dedicated new icons for running, sailing, skateboarding, and etc are being added to make switching between your favorite activities more visually intuitive.
 
-* [**Multi-Selection for Favorites**](https://osmand.net/docs/user/personal/favorites#manage-favorites)
+* [**Multi-Selection for Favorites**](https://osmand.net/docs/user/personal/favorites#manage-favorites):
     Managing "My Places" is now more efficient with the addition of multi-selection support for Favorites. Just like with tracks, you can now select multiple saved points at once to move them to a different folder, share them, or delete them in bulk.
 
-* [**Refining Plugin Organization**](https://osmand.net/docs/user/troubleshooting/resources#plugins)
+* [**Refining Plugin Organization**](https://osmand.net/docs/user/troubleshooting/resources#plugins):
     We are restructuring how custom plugins are presented to help users distinguish between core built-in and custom plugins. This reorganization makes the app's extensive functionality more discoverable and less overwhelming for new users.
 
-* [**GPX Start/Finish Icon Optimization**](https://osmand.net/docs/user/map/tracks/appearance#start-and-finish-icons)
+* [**GPX Start/Finish Icon Optimization**](https://osmand.net/docs/user/map/tracks/appearance#start-and-finish-icons):
     To improve performance and prevent app freezes, we’ve updated how Start/Finish icons are handled for complex tracks. These icons are now disabled by default for tracks with more than 10 points and are force-disabled for very heavy tracks (over 100 points) to ensure a smooth map-viewing experience.
 
-* [**ODB-II Adapter Voltage Widget**](https://osmand.net/docs/user/plugins/vehicle-metrics#widgets)
+* [**ODB-II Adapter Voltage Widget**](https://osmand.net/docs/user/plugins/vehicle-metrics#widgets):
     For users with OBD2 integration, we've added a new dedicated widget to monitor "Adapter Voltage." This allows you to keep an eye on your vehicle's electrical health directly from the main navigation screen.
 
 
