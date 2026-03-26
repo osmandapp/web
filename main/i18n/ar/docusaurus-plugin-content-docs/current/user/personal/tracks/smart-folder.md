@@ -1,8 +1,9 @@
 ---
-source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
+source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
 sidebar_position: 3
 title: المجلد الذكي (فلتر)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -27,7 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> علامة تبويب*
 
@@ -62,7 +62,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
 
@@ -82,7 +82,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **وقت الحركة** — حدد النطاق الزمني الذي قضيته في الحركة أثناء التسجيل.
 - **الطول** — حدد نطاقًا معينًا بالكيلومترات أو الأميال للعثور على مسارات ذات طول معين.
 - **متوسط السرعة** — فلترة المسارات حسب [متوسط السرعة](../../widgets/info-widgets.md#average-speed).
-- **مجموعة بيانات المستشعر.**
+- **مجموعة بيانات المستشعر.**  
     طبق الفلاتر بناءً على بيانات المستشعرات الخارجية، بما في ذلك:
     - سرعة المستشعر، المتوسط.
     - سرعة المستشعر، القصوى.
@@ -111,7 +111,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
@@ -129,13 +129,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ***فوائد المجلدات الذكية:***
 
-1. **تنظيم آلي.**
+1. **تنظيم آلي.**  
     تضم تلقائيًا المسارات التي تطابق قواعد محددة مسبقًا، مثل تاريخ الإنشاء أو نطاق المدة.
-2. **الفلترة والبحث.**
+2. **الفلترة والبحث.**  
     تسمح بالبحث السريع داخل المسارات باستخدام فلاتر متقدمة وكلمات رئيسية.
-3. **تحديث ديناميكي.**
+3. **تحديث ديناميكي.**  
     تحدث المحتوى تلقائيًا لعرض أحدث المسارات التي تطابق المعايير.
-4. **تخصيص القواعد.**
+4. **تخصيص القواعد.**  
     أنشئ مجموعات مسارات مخصصة عن طريق تحديد قواعد فلترة مخصصة.
 
 
@@ -162,11 +162,34 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
-<TabItem value="android" label="أندرويد">
+<TabItem value="android" label="Android">
 
 ![My places Managing Smart Folders Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![My places Managing Smart Foldersn Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![My places Managing Smart Foldersn Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+
+يتم عرض **المجلد الذكي** بأيقونة فريدة في قائمة المجلدات في علامة تبويب المسارات. لإدارة المجلد، انقر على *قائمة الثلاث نقاط* بجواره للوصول إلى الإجراءات المتاحة:
+
+- **التفاصيل** — عرض القائمة الكاملة للمسارات الموجودة في المجلد.
+- **عرض جميع المسارات على الخريطة** — عرض جميع مسارات المجلد على الخريطة.  
+    *ملاحظة: قد يؤثر تحميل العديد من المسارات على الأداء.*
+- **إعادة تسمية** — تغيير اسم المجلد لتسهيل التعرف عليه.
+- **تحديث** — تحديث محتوى المجلد يدويًا للتأكد من أنه يتضمن أحدث المسارات.
+- **تعديل الفلتر** — تعديل إعدادات فلتر المسار للمجلد الذكي الحالي. انظر [فلتر البحث](#search-filter) لمزيد من التفاصيل.
+- **تصدير** — تصدير جميع المسارات في المجلد الذكي عبر ميزة [الاستيراد/التصدير](../../personal/import-export.md). سيتم إعادة توجيهك إلى *القائمة ← الإعدادات ← علامة تبويب الإجراءات*.
+- **حذف المجلد** — إزالة المجلد الذكي دون حذف مساراته.  
+    *تحذير: هذا الإجراء لا يمكن التراجع عنه وسيطلب رسالة تأكيد.*
+
+يمكنك أيضًا فتح المجلد وانقر على *قائمة الثلاث نقاط* في *الزاوية العلوية اليمنى* للوصول إلى إجراءات إضافية:
+
+- **تحديد** — استخدم [وضع التحديد](./manage-tracks.md#selection-mode) لإجراءات محددة على المسارات داخل المجلد.
+- **تنظيم حسب** — تنظيم المسارات في المجلد الذكي تلقائيًا إلى مجموعات بناءً على معلمة محددة. تشمل أنواع التجميع المتاحة *عام*، *التاريخ والوقت*، *الموقع*، *السرعة*، *الارتفاع والارتفاع*، و*بيانات المستشعر*. 
+
+بعض معلمات التجميع متاحة فقط مع اشتراك OsmAnd Pro. تشمل المعلمات المجانية *النشاط*، *سنة الإنشاء*، و*أقرب مدينة*. جميع المعلمات الأخرى تحمل علامة <ProFeature/>.
+
+بالنسبة للمعلمات الرقمية (مثل المسافة، المدة، السرعة، أو الارتفاع)، يتوفر حوار *تحديد حجم الخطوة*. استخدم الشريط المنزلق لتحديد نطاقات القيم للتجميع.
+
+بالنسبة لمعلمات PRO، يمكنك معاينة إعداد التجميع (على سبيل المثال، فتح محدد حجم الخطوة ومشاهدة كيفية تجميع المسارات)، لكن تطبيق هذه التغييرات يتطلب اشتراكًا نشطًا. إذا حددت معلمة PRO أو نقرت على زر فتح القفل، سيفتح شاشة اختيار الخطة. يظل التجميع المطبق سابقًا مرئيًا حتى لو انتهت الاشتراك، لكن تعديله أو تطبيق تجميع جديد قائم على PRO يتطلب اشتراكًا نشطًا.
 
 </TabItem>
 
@@ -174,38 +197,53 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+
+يتم عرض **المجلد الذكي** بأيقونة فريدة في قائمة المجلدات في علامة تبويب المسارات. لإدارة المجلد، *اضغط مطولاً* على اسم المجلد للوصول إلى الإجراءات المتاحة:
+
+- **إعادة تسمية**— تغيير اسم المجلد لتسهيل التعرف عليه.
+- **تصدير** — تصدير جميع المسارات في المجلد الذكي عبر ميزة [الاستيراد/التصدير](../../personal/import-export.md). سيتم إعادة توجيهك إلى *القائمة ← الإعدادات ← علامة تبويب الإجراءات*.
+- **نقل** — يسمح لك بنقل المجلد إلى مجلد آخر موجود أو إنشاء مجلد جديد.
+- **حذف** — إزالة المجلد الذكي دون حذف مساراته.  
+    *تحذير: هذا الإجراء لا يمكن التراجع عنه وسيطلب رسالة تأكيد.*
+
+يمكنك أيضًا فتح المجلد وانقر على الأيقونة في *الزاوية العلوية اليمنى* للوصول إلى إجراءات إضافية:
+
+- **تحديد** — استخدم [وضع التحديد](./manage-tracks.md#selection-mode) لإجراءات محددة على المسارات داخل المجلد.
+- **تحديث** — تحديث محتوى المجلد يدويًا للتأكد من أنه يتضمن أحدث المسارات.
+- **تعديل الفلتر** — تعديل إعدادات فلتر المسار للمجلد الذكي الحالي. انظر [فلتر البحث](#search-filter) لمزيد من التفاصيل.
 
 </TabItem>
 
 </Tabs>
 
-يتم عرض **المجلد الذكي** بأيقونة فريدة في قائمة المجلدات في علامة تبويب المسارات. لإدارة المجلد، انقر على *قائمة الثلاث نقاط* بجواره (*أندرويد*) و*النقر المطول* (*iOS*) أو افتح المجلد واستخدم الأيقونة في الزاوية العلوية اليمنى.
+<!--
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
 
-***الإجراءات المتاحة:***
+***Available Actions:***
 
-- **التفاصيل** — عرض القائمة الكاملة للمسارات الموجودة في المجلد.
+- **Details** — View the complete list of tracks contained in the folder.
 
-- **عرض كل المسارات على الخريطة** (*أندرويد فقط*) — عرض جميع مسارات المجلد على الخريطة.
-    *ملاحظة: قد يؤثر تحميل العديد من المسارات على الأداء.*
+- **Show all tracks on the map** (*Android only*) — Display all folder tracks on the map.  
+    *NOTE: Loading many tracks may affect performance.*
 
-- **تعديل الاسم** (*أندرويد*) / **إعادة تسمية** (*iOS*) — تغيير اسم المجلد لتسهيل التعرف عليه.
+- **Edit name** (*Android*) / **Rename** (*iOS*) — Change the folder name for easier identification.
 
-- **تحديث** — تحديث محتوى المجلد يدويًا للتأكد من أنه يتضمن أحدث المسارات.
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
 
-- **تغيير المظهر الافتراضي** (*أندرويد*) — يغير مظهر عرض جميع المسارات في المجلد.
+- **Change default appearance** (*Android*) — Changes the display appearance of all tracks in the folder.
 
-- **تعديل الفلتر** — تعديل إعدادات فلتر المسار للمجلد الذكي الحالي. انظر [فلتر البحث](#search-filter) لمزيد من التفاصيل.
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
 
-- **تصدير** — تصدير جميع المسارات في المجلد الذكي عبر ميزة [الاستيراد/التصدير](../../personal/import-export.md). سيتم إعادة توجيهك إلى *القائمة ← الإعدادات ← علامة تبويب الإجراءات*.
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
 
-- **حذف المجلد** — إزالة المجلد الذكي دون حذف مساراته.
-    *تحذير: هذا الإجراء لا يمكن التراجع عنه وسيطلب رسالة تأكيد.*
+- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
 
-- **نقل** (*iOS*) — يسمح لك بنقل المجلد إلى مجلد آخر موجود أو إنشاء مجلد جديد.
+- **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
 
-- **تحديد** — استخدم [وضع التحديد](./manage-tracks.md#selection-mode) لإجراءات محددة على المسارات داخل المجلد.
-
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+-->
 
 ## مقالات ذات صلة {#related-articles}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -27,13 +27,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة السياق في أندرويد](@site/static/img/map/map_context_menu_short_tap_android.png)
+![قائمة سياق أندرويد](@site/static/img/map/map_context_menu_short_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة السياق في iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
+![قائمة سياق iOS](@site/static/img/map/map_context_menu_short_tap_ios.png)
 
 </TabItem>
 
@@ -56,13 +56,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة السياق بنقرة طويلة في أندرويد](@site/static/img/map/map_context_menu_long_tap_android.png)
+![قائمة سياق نقرة_طويلة_أندرويد](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة السياق بنقرة طويلة في iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
+![قائمة سياق نقرة_طويلة_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
 </TabItem>
 
@@ -77,13 +77,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة سياق المسار في أندرويد](@site/static/img/map/context_track_menu_Android.png)
+![قائمة سياق المسار أندرويد](@site/static/img/map/context_track_menu_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![شاشة إحصائيات المسار في iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
+![شاشة إحصائيات المسار iOS](@site/static/img/personal/tracks/statistics_track_ios.png)
 
 </TabItem>
 
@@ -191,13 +191,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![الأسماء البديلة في أندرويد 1](@site/static/img/map/alternative_names_andr_1.png) ![الأسماء البديلة في أندرويد](@site/static/img/map/alternative_names_andr.png)
+![الأسماء البديلة أندرويد 1](@site/static/img/map/alternative_names_andr_1.png) ![الأسماء البديلة أندرويد](@site/static/img/map/alternative_names_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![الأسماء البديلة في iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![الأسماء البديلة في iOS](@site/static/img/map/alternative_names_2_ios.png)
+![الأسماء البديلة iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![الأسماء البديلة iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -222,13 +222,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![معلومات المضلع في أندرويد](@site/static/img/map/polygon_information_andr.png)
+![معلومات المضلع أندرويد](@site/static/img/map/polygon_information_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![معلومات المضلع في iOS](@site/static/img/map/polygon_information_ios.png)
+![معلومات المضلع iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -253,13 +253,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![نقاط الاهتمام القريبة في أندرويد](@site/static/img/map/nearby_poi_android.png)
+![نقاط الاهتمام القريبة أندرويد](@site/static/img/map/nearby_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![نقاط الاهتمام القريبة في iOS](@site/static/img/map/nearby_poi_ios.png)
+![نقاط الاهتمام القريبة iOS](@site/static/img/map/nearby_poi_ios.png)
 
 </TabItem>
 
@@ -276,7 +276,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![الأماكن القريبة في أندرويد](@site/static/img/map/nearby_places_android.png)
+![الأماكن القريبة أندرويد](@site/static/img/map/nearby_places_android.png)
 
 يبرز هذا القسم الأماكن الشائعة التي تساعدك على اكتشاف وجهات ومعالم مثيرة للاهتمام حول موقعك الحالي. استخدم *<Translate android="true" ids="shared_string_show_on_map"/>* و *<Translate android="true" ids="search_more"/>* لتصفح والبحث عن جميع الأماكن الشائعة. 
 
@@ -286,7 +286,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![الأماكن القريبة في iOS](@site/static/img/map/nearby_places_ios.png)
+![الأماكن القريبة iOS](@site/static/img/map/nearby_places_ios.png)
 
 يبرز هذا القسم الأماكن الشائعة التي تساعدك على اكتشاف وجهات ومعالم مثيرة للاهتمام حول موقعك الحالي. استخدم *<Translate android="true" ids="shared_string_show_on_map"/>* و *<Translate android="true" ids="search_more"/>* لتصفح والبحث عن جميع الأماكن الشائعة. 
 
@@ -302,7 +302,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-![الدلائل في أندرويد](@site/static/img/map/details_guides.png)
+![الدلائل أندرويد](@site/static/img/map/details_guides.png)
 
 يظهر قسم **الدلائل** في قائمة سياق الخريطة لبعض الأماكن ويوفر الوصول إلى **دلائل السفر (Wikivoyage)** المتعلقة بنقطة الاهتمام المحددة. يعرض قائمة بإدخالات الدليل (على سبيل المثال، بلد أو منطقة) التي تذكر المكان المحدد.
 
@@ -317,13 +317,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![مسارات النقل العام في أندرويد](@site/static/img/map/pt_routes_android.png)
+![مسارات النقل العام أندرويد](@site/static/img/map/pt_routes_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![مسارات النقل العام في iOS](@site/static/img/map/pt_routes_ios.png)
+![مسارات النقل العام iOS](@site/static/img/map/pt_routes_ios.png)
 
 </TabItem>
 
@@ -355,15 +355,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة سياق الصور عبر الإنترنت في أندرويد](@site/static/img/map/images_nearby_1_andr.png)
-![قائمة سياق الصور عبر الإنترنت في أندرويد](@site/static/img/map/gallery_menu_andr.png)
+![قائمة سياق الصور عبر الإنترنت أندرويد](@site/static/img/map/images_nearby_1_andr.png)
+![قائمة سياق الصور عبر الإنترنت أندرويد](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة سياق الصور عبر الإنترنت في iOS](@site/static/img/map/online_photo_ios.png)
-![قائمة سياق الصور عبر الإنترنت في iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![قائمة سياق الصور عبر الإنترنت iOS](@site/static/img/map/online_photo_ios_new.png)
+![قائمة سياق الصور عبر الإنترنت iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
@@ -388,13 +388,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![صور على مستوى الشارع في أندرويد](@site/static/img/map/street_level_imagery_andr.png)
+![صور على مستوى الشارع أندرويد](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![صور على مستوى الشارع في iOS](@site/static/img/map/street_level_imagery_ios.png)
+![صور على مستوى الشارع iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 
@@ -427,13 +427,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![قائمة الإجراءات في أندرويد](@site/static/img/map/actions_menu_android.png) ![قائمة الإجراءات الإضافية في أندرويد](@site/static/img/map/actions_additional_menu_android.png)
+![قائمة الإجراءات أندرويد](@site/static/img/map/actions_menu_android.png) ![قائمة الإجراءات الإضافية أندرويد](@site/static/img/map/actions_additional_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة الإجراءات في iOS](@site/static/img/map/actions_menu_ios.png)  ![قائمة الإجراءات الإضافية في iOS](@site/static/img/map/actions_additional_menu_ios.png)
+![قائمة الإجراءات iOS](@site/static/img/map/actions_menu_ios.png)  ![قائمة الإجراءات الإضافية iOS](@site/static/img/map/actions_additional_menu_ios.png)
 
 </TabItem>
 
@@ -448,13 +448,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء إضافة/تحرير المفضلة في أندرويد](@site/static/img/map/add_favorite_android.png)
+![إجراء إضافة تحرير المفضلة أندرويد](@site/static/img/map/add_favorite_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء إضافة/تحرير المفضلة في iOS](@site/static/img/map/add_favorite_ios.png)
+![إجراء إضافة تحرير المفضلة iOS](@site/static/img/map/add_favorite_ios.png)
 
 </TabItem>
 
@@ -475,12 +475,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء إضافة/تحرير علامة في أندرويد](@site/static/img/map/add_marker_android.png) ![إجراء تمرير علامة في أندرويد](@site/static/img/map/action_pass_marker_android.png)
+![إجراء إضافة تحرير علامة أندرويد](@site/static/img/map/add_marker_android.png) ![إجراء تمرير علامة أندرويد](@site/static/img/map/action_pass_marker_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء إضافة/تحرير علامة في iOS](@site/static/img/map/add_marker_ios.png)  ![إجراء استعادة علامة في iOS](@site/static/img/map/action_restore_marker_android.png)
+![إجراء إضافة تحرير علامة iOS](@site/static/img/map/add_marker_ios.png)  ![إجراء استعادة علامة أندرويد](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
@@ -504,15 +504,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-| إصدارات حتى أندرويد 14 | أندرويد 14+ |
-|:------------|:---------------|
-| ![إجراء المشاركة في أندرويد](@site/static/img/map/action_share_1_andr.png) | ![إجراء المشاركة في أندرويد](@site/static/img/map/action_share_2_andr.png) |
+![إجراء المشاركة أندرويد](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء المشاركة في iOS](@site/static/img/map/action_share_1_ios.png)
+![إجراء المشاركة iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -523,6 +521,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 الخيارات المتاحة لمشاركة الموقع:
 
 - ***إرسال***. يرسل نصًا عبر التطبيقات المتاحة على جهازك. يتضمن جميع المعلومات حول الموقع: اسم موقعي أو اسم نقطة الاهتمام المحددة، والعنوان، والإحداثيات، والموقع الجغرافي كرابط.
+- ***نسخ الرابط***. ينسخ رابطًا للموقع المحدد إلى الحافظة.  
+مثال: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***نسخ***. ينسخ جميع معلومات الموقع (اسم موقعي أو اسم نقطة الاهتمام المحددة، والعنوان، والإحداثيات، والموقع الجغرافي كرابط) إلى الحافظة.  
 - ***نسخ العنوان***. ينسخ معلومات العنوان فقط إلى الحافظة.
 - ***نسخ اسم نقطة الاهتمام***. ينسخ اسم نقطة الاهتمام فقط أو العنوان إذا لم يكن هناك اسم إلى الحافظة.
@@ -543,21 +543,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![الاتجاهات في أندرويد](@site/static/img/map/action_directions_android.png)
+![الاتجاهات أندرويد](@site/static/img/map/action_directions_android.png)
 
-![اتجاهات متعددة في أندرويد](@site/static/img/map/action_multiple_directions_android.png)
+![اتجاهات متعددة أندرويد](@site/static/img/map/action_multiple_directions_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![الاتجاهات في iOS](@site/static/img/map/action_directions_ios.png)
+![الاتجاهات iOS](@site/static/img/map/action_directions_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-لبدء الملاحة أو تخطيط المسار، تحتاج إلى تحديد الوجهة أولاً باستخدام [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). في حال كان لديك بالفعل نقطة وجهة، ستقترح عليك القائمة استبدال نقطة الوجهة أو إدراجها كنقطة انطلاق أو نقطة وسيطة أخرى.
+لبدء الملاحة أو تخطيط المسار، تحتاج إلى تحديد الوجهة أولاً باستخدام [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation). في حال كان لديك بالفعل نقطة وجهة، ستقترح عليك القائمة استبدال نقطة الوجهة أو إدراجها كنقطة انطلاق أو نقطة وسيطة أخرى.
 
 من الممكن أيضًا تحديد وجهة *من* أولاً عبر قائمة سياق الخريطة (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
@@ -574,13 +574,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء البحث في أندرويد](@site/static/img/map/action_search_android.png)
+![إجراء البحث أندرويد](@site/static/img/map/action_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء البحث في iOS](@site/static/img/map/action_search_ios.png)
+![إجراء البحث iOS](@site/static/img/map/action_search_ios.png)
 
 </TabItem>
 
@@ -597,13 +597,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![تجنب الطريق على الخريطة في أندرويد](@site/static/img/map/action_avoid_android.png) ![تجاهل الطريق المتجنب في أندرويد](@site/static/img/map/action_avoid_delete_android.png)
+![تجنب الطريق على الخريطة أندرويد](@site/static/img/map/action_avoid_android.png) ![تجاهل الطريق المتجنب أندرويد](@site/static/img/map/action_avoid_delete_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![تجنب الطريق على الخريطة في iOS](@site/static/img/map/avoid_route_ios_1.png) ![تجاهل الطريق المتجنب في iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
+![تجنب الطريق على الخريطة iOS](@site/static/img/map/avoid_route_ios_1.png) ![تجاهل الطريق المتجنب iOS](@site/static/img/map/dismiss_avoid_ios_1.png)
 
 </TabItem>
 
@@ -623,17 +623,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء تغيير الموضع في أندرويد](@site/static/img/map/action_change_position_android.png)
+![إجراء تغيير الموضع أندرويد](@site/static/img/map/action_change_position_android.png)
 
-![واجهة مستخدم إجراء تغيير الموضع في أندرويد](@site/static/img/map/action_change_position_ui_android.png)
+![واجهة مستخدم إجراء تغيير الموضع أندرويد](@site/static/img/map/action_change_position_ui_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء تغيير الموضع في iOS](@site/static/img/map/action_change_position_ios.png)
+![إجراء تغيير الموضع iOS](@site/static/img/map/action_change_position_ios.png)
 
-![واجهة مستخدم إجراء تغيير الموضع في iOS](@site/static/img/map/action_change_position_ui_iOS.png)
+![واجهة مستخدم إجراء تغيير الموضع iOS](@site/static/img/map/action_change_position_ui_iOS.png)
 
 </TabItem>
 
@@ -644,7 +644,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تخطيط مسار {#plan-a-route}
 
-![إجراء تخطيط مسار في أندرويد](@site/static/img/map/action_plan_route_android.png)
+![إجراء تخطيط مسار أندرويد](@site/static/img/map/action_plan_route_android.png)
 
 يمكنك بدء تخطيط مسار من نقطة محددة عبر قائمة سياق الكائن.
 
@@ -657,13 +657,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء تنزيل خريطة عبر الإنترنت في أندرويد](@site/static/img/map/action_load_online_map_and.png)
+![إجراء تنزيل خريطة عبر الإنترنت أندرويد](@site/static/img/map/action_load_online_map_and.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء تنزيل خريطة عبر الإنترنت في iOS](@site/static/img/map/action_download_online_map_ios.png)
+![إجراء تنزيل خريطة عبر الإنترنت iOS](@site/static/img/map/action_download_online_map_ios.png)
 
 </TabItem>
 
@@ -683,7 +683,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء تنزيل خريطة متجهة في أندرويد](@site/static/img/map/action_download_vector_map_android.png)
+![إجراء تنزيل خريطة متجهة أندرويد](@site/static/img/map/action_download_vector_map_android.png)
 
 ![تحديد خريطة متجهة عالمية على أندرويد](@site/static/img/map/download_region_map_via_worldmap.png)
 
@@ -691,7 +691,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء تنزيل خريطة متجهة في iOS](@site/static/img/map/action_download_vector_map_ios.png)
+![إجراء تنزيل خريطة متجهة iOS](@site/static/img/map/action_download_vector_map_ios.png)
 
 ![تحديد خريطة متجهة على iOS](@site/static/img/map/download_map_ios.png)
 
@@ -716,17 +716,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء وقوف السيارات في أندرويد](@site/static/img/map/action_parking_android.png)
+![إجراء وقوف السيارات أندرويد](@site/static/img/map/action_parking_android.png)
 
-![إجراء حذف وقوف السيارات في أندرويد](@site/static/img/map/context_menu_limited_parking.png)
+![إجراء حذف وقوف السيارات أندرويد](@site/static/img/map/context_menu_limited_parking.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء وقوف السيارات في iOS](@site/static/img/map/action_parking_ios.png)
+![إجراء وقوف السيارات iOS](@site/static/img/map/action_parking_ios.png)
 
-![إجراء حذف وقوف السيارات في iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
+![إجراء حذف وقوف السيارات iOS](@site/static/img/map/context_menu_limited_parking_ios.png)
 
 </TabItem>
 
@@ -745,15 +745,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![اختيار مسار لإضافة نقطة طريق في أندرويد](@site/static/img/map/tracks_tab_android.png) ![إضافة نقطة طريق المسار في أندرويد](@site/static/img/map/add_waypoint_android.png)
+![اختيار مسار لإضافة نقطة طريق أندرويد](@site/static/img/map/tracks_tab_android.png) ![إضافة نقطة طريق المسار أندرويد](@site/static/img/map/add_waypoint_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء نقطة الطريق في iOS](@site/static/img/map/action_waypoint_ios.png)
+![إجراء نقطة الطريق iOS](@site/static/img/map/action_waypoint_ios.png)
 
-![اختيار مسار لإضافة نقطة طريق في iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
+![اختيار مسار لإضافة نقطة طريق iOS](@site/static/img/map/action_select_track_to_add_waypoint_ios.png)
 
 </TabItem>
 
@@ -779,13 +779,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء نقطة الاهتمام في أندرويد](@site/static/img/map/action_poi_android.png)
+![إجراء نقطة الاهتمام أندرويد](@site/static/img/map/action_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء نقطة الاهتمام في iOS](@site/static/img/map/action_poi_ios.png)
+![إجراء نقطة الاهتمام iOS](@site/static/img/map/action_poi_ios.png)
 
 </TabItem>
 
@@ -807,17 +807,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![إجراء الملاحظة في أندرويد](@site/static/img/map/action_note_android.png)
+![إجراء الملاحظة أندرويد](@site/static/img/map/action_note_android.png)
 
-![إجراء إضافة ملاحظة في أندرويد](@site/static/img/map/action_add_osm_note_ui_android.png)
+![إجراء إضافة ملاحظة أندرويد](@site/static/img/map/action_add_osm_note_ui_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![إجراء الملاحظة في iOS](@site/static/img/map/action_note_ios.png)
+![إجراء الملاحظة iOS](@site/static/img/map/action_note_ios.png)
 
-![إجراء إضافة ملاحظة في iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
+![إجراء إضافة ملاحظة iOS](@site/static/img/map/action_add_osm_note_ui_ios.png)
 
 </TabItem>
 
@@ -832,7 +832,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 للتعليق/إغلاق ملاحظة OSM، قم بتمكين [**ملحق تحرير OSM**](../plugins/osm-editing.md) في OsmAnd.
 :::
 
-![التعليق على ملاحظة OSM في أندرويد](@site/static/img/map/action_comment_note_android.png) ![إعادة فتح ملاحظة OSM في أندرويد](@site/static/img/map/action_reopen_note_android.png)
+![التعليق على ملاحظة OSM أندرويد](@site/static/img/map/action_comment_note_android.png) ![إعادة فتح ملاحظة OSM أندرويد](@site/static/img/map/action_reopen_note_android.png)
 
 يمكنك [التعليق](https://wiki.openstreetmap.org/wiki/Notes#Adding_notes)، و[حل](https://wiki.openstreetmap.org/wiki/Notes#Resolving_notes) وإعادة فتح
 ملاحظات OpenStreetMap عبر قائمة سياق الكائن.
@@ -844,7 +844,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لرفع نقطة اهتمام / ملاحظة OSM، قم بتمكين [**ملحق تحرير OSM**](../plugins/osm-editing.md) في OsmAnd.
 :::
 
-![رفع نقطة اهتمام في أندرويد](@site/static/img/map/action_poi_upload_android.png) ![رفع ملاحظة OSM في أندرويد](@site/static/img/map/action_note_upload_android.png)
+![رفع نقطة اهتمام أندرويد](@site/static/img/map/action_poi_upload_android.png) ![رفع ملاحظة OSM أندرويد](@site/static/img/map/action_note_upload_android.png)
 
 في حال استخدامك *الوضع غير المتصل* لإضافة / تحرير نقطة اهتمام أو ملاحظة OSM، ستحتاج إلى رفع التغييرات إلى OpenStreetMap. بشكل افتراضي، يكون *الوضع غير المتصل* قيد التشغيل لتجنب التغييرات العرضية في قاعدة البيانات العامة. يمكنك رفع أو حذف التغيير عبر قائمة سياق الكائن الذي تم إنشاؤه.
 
@@ -857,7 +857,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لتسجيل ملاحظات صوتية/مرئية، قم بتمكين [**ملحق ملاحظات الصوت/الفيديو**](../plugins/audio-video-notes.md) في OsmAnd.
 :::
 
-![إجراء الصوت والفيديو في أندرويد](@site/static/img/map/action_av_note_android.png)
+![إجراء الصوت-الفيديو أندرويد](@site/static/img/map/action_av_note_android.png)
 
 يسجل أو يلتقط ملاحظة وسائط في نقطة محددة على الخريطة.
 

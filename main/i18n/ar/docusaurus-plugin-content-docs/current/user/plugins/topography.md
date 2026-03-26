@@ -1,6 +1,6 @@
 ---
-source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
-sidebar_position: 14
+source-hash: 6eba2390ad96e6adb371907334b58bd9527dd60a372e7da21b4fc6be530e6c15
+sidebar_position: 16
 title: التضاريس
 ---
 
@@ -75,11 +75,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لعرض بيانات **خطوط الكونتور** و**التضاريس (تظليل التلال، الميل)** على الخريطة:
 
-١. **الشراء**: [خطة شراء OsmAnd+ أو OsmAnd Maps+ أو OsmAnd Pro](../plugins/index.md#purchase)
-٢. [تفعيل](../plugins/index.md#enable--disable) إضافة التضاريس في قسم الإضافات من *القائمة الرئيسية*.
-٣. [تنزيل](#download-maps): خرائط خطوط الكونتور، تظليل التلال، الميل، أو خريطة التضاريس (ثلاثية الأبعاد).
-٤. **تفعيل وتعديل**: خطوط الكونتور، تظليل التلال، أو الميل لعرض الخريطة.
-٥. يمكنك أيضًا مشاهدة [الدرس التعليمي على يوتيوب](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
+1. **الشراء**: [خطة شراء OsmAnd+ أو OsmAnd Maps+ أو OsmAnd Pro](../plugins/index.md#purchase)
+2. [تفعيل](../plugins/index.md#enable--disable) إضافة التضاريس في قسم الإضافات من *القائمة الرئيسية*.
+3. [تنزيل](#download-maps): خرائط خطوط الكونتور، تظليل التلال، الميل، أو خريطة التضاريس (ثلاثية الأبعاد).
+4. **تفعيل وتعديل**: خطوط الكونتور، تظليل التلال، أو الميل لعرض الخريطة.
+5. يمكنك أيضًا مشاهدة [الدرس التعليمي على يوتيوب](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 لعرض [**التضاريس ثلاثية الأبعاد**](#3d-relief)، تحتاج إلى شراء خطة *OsmAnd Pro*، والتي تشمل الوصول إلى إضافة التضاريس.
 
@@ -143,6 +143,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## خطوط الكونتور {#contour-lines}
 
+:::tip الشراء
+خطوط الكونتور هي [ميزة مدفوعة](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -181,6 +185,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## التضاريس {#terrain}
+
+:::tip الشراء
+التضاريس هي [ميزة مدفوعة](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,25 +263,41 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+تسمح ميزة *تعديل نظام الألوان* لك باختيار نظام ألوان:
+
+- من [قائمة محددة مسبقًا](#default-color-scheme).
+- من ملفات لوحات الألوان التي أنشأتها على جهاز الكمبيوتر الخاص بك. يمكن إضافة الملفات المخصصة إلى OsmAnd باستخدام [أداة الاستيراد/التصدير](../personal/import-export.md).
+- من لوحات ألوان تم إنشاؤها أو تعديلها مباشرة داخل التطبيق.
+
+تعتمد اللوحات المخصصة على نطاقات التدرج، حيث يتوافق كل لون مع قيمة محددة لبيانات التضاريس مثل *الارتفاع* أو *الميل*. 
+يمكنك:
+
+- تحديد خطوات القيم (مستويات الارتفاع أو نسب مئوية للميل)؛
+- تعيين ألوان لكل خطوة؛
+- إضافة أو إزالة خطوات لضبط التدرج.
+
+**ملاحظة:** يستخدم تظليل التلال خوارزمية تظليل ثابتة ولا يدعم لوحات التدرج المخصصة.
+
+للتخصيص المتقدم للوحات باستخدام ملفات اللوحات، راجع مقال [أنظمة الألوان](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
+![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
-</TabItem>
-
-</Tabs>
-
-تسمح لك ميزة *تعديل نظام الألوان* باختيار نظام ألوان:
+تسمح ميزة *تعديل نظام الألوان* لك باختيار نظام ألوان:
 
 - من [قائمة محددة مسبقًا](#default-color-scheme).
 - من ملفات لوحات الألوان التي أنشأتها على جهاز الكمبيوتر الخاص بك. يمكن إضافة الملفات المخصصة إلى OsmAnd باستخدام [أداة الاستيراد/التصدير](../personal/import-export.md).
 
 يمكنك [تعديل هذه اللوحات](../personal/color-palette-schemes.md#palette-modify) لتخصيص مظهر الخرائط والمسارات.
 
+</TabItem>
+
+</Tabs>
 
 ### الرؤية {#visibility}
 
@@ -285,7 +309,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### مستويات التقريب {#zoom-levels}
 
-![تقريب](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![التقريب](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 تسمح لك وظيفة *مستويات المقياس* بتعيين القيم الدنيا والقصوى لمستويات تقريب الخريطة، والتي تتراوح من ٤ إلى ١٩، والتي سيتم عندها عرض طبقات خريطة تظليل التلال أو الميل.
 
@@ -318,6 +342,60 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - اذهب إلى [إضافة إجراء](../widgets/quick-action.md#custom-buttons): *القائمة ← تخصيص الشاشة ← الأزرار المخصصة ← الإجراء السريع ← إضافة إجراء ← تخصيص الخريطة*.
 - أضف زرًا واحدًا أو أكثر من أزرار الإجراءات السريعة لتغيير رؤية طبقة تضاريس معينة.
+
+
+## المباني ثلاثية الأبعاد {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings* 
+
+![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_1_new.png) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_2_new.png) 
+
+ميزة **المباني ثلاثية الأبعاد** تعرض المباني كنماذج ثلاثية الأبعاد حجمية بدلاً من الأشكال المسطحة. يتم إنشاء المباني من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings)، باستخدام معلومات الارتفاع من العلامات مثل `height` و`building:levels` عند توفرها. تُظهر المباني ثلاثية الأبعاد فقط عند مستويات تقريب أعلى (عرض المدينة/الشارع)، حيث يمكن عرض المباني الفردية.  
+
+استخدم المفتاح الرئيسي لتمكين أو تعطيل عرض المباني ثلاثية الأبعاد. لعرض المباني ثلاثية الأبعاد، قم بإمالة الخريطة بوضع إصبعين على الشاشة وسحبهما لأعلى. في هذا العرض، قد تغطي المباني جزئيًا الطرق أو تسميات الخريطة اعتمادًا على إعداد الرؤية.
+
+هذا الخيار متاح فقط عند تمكين إضافة التضاريس.  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+تنقسم إعدادات المباني ثلاثية الأبعاد إلى مجموعتين: **المظهر** و**الأداء**.
+
+### المظهر {#appearance}
+
+![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_color.png)
+
+تتحكم **المظهر** في كيفية ظهور المباني ثلاثية الأبعاد على الخريطة. وتشمل إعدادين: اللون والرؤية. 
+
+**اللون** يسمح لك بتغيير لون المبنى. عند النقر على اللون، يفتح OsmAnd شاشة معاينة منفصلة حيث يمكنك رؤية الخريطة أثناء ضبط الإعداد.
+- **نمط الخريطة** — يستخدم اللون الافتراضي للمبنى من نمط الخريطة المحدد حاليًا.
+- **مخصص** — يسمح لك بتعيين لون مبنى مخصص بشكل منفصل لـ / وضع الليل.
+
+:::tip الشراء
+تخصيص ألوان المباني ثلاثية الأبعاد هي [ميزة مدفوعة](../purchases/index.md).  
+:::
+
+إذا لم يتم شراء الألوان المخصصة، سترى حالة فارغة مع وصف قصير وزر الحصول. إذا كان المخصص متاحًا، يمكنك التبديل بين النهار والليل، اختيار لون من اللوحة (أو فتح جميع الألوان)، ثم النقر على تطبيق.
+
+**الرؤية** تتحكم في عدم الشفافية (الشفافية) للمباني ثلاثية الأبعاد. استخدم الشريط المنزلق لتعيين الرؤية كنسبة مئوية. القيم المنخفضة تجعل المباني أكثر شفافية وتساعد الطرق/التسميات على البقاء قابلة للقراءة. القيم الأعلى تجعل المباني تبدو أكثر صلابة ومهيمنة بصريًا. النقر على الرؤية يفتح أيضًا شاشة معاينة منفصلة مع الشريط المنزلق.
+
+في شاشات المعاينة (اللون / الرؤية)، يمكنك استخدام إعادة تعيين إلى الافتراضي من شريط التطبيق لاستعادة القيمة الافتراضية.
+
+### الأداء {#performance}
+
+تتحكم **الأداء** في كيفية عرض المباني ثلاثية الأبعاد. وتشمل إعدادين: مستوى التفاصيل ومسافة العرض.
+
+**مستوى التفاصيل** يحدد تعقيد هندسة المبنى ثلاثي الأبعاد:
+- منخفض (افتراضي) — هندسة أبسط.
+- عالي — هندسة أكثر تفصيلاً.
+
+**مسافة العرض** تتحكم في مدى بعد الكاميرا يتم عرض المباني ثلاثية الأبعاد:
+- قريب (افتراضي) — يعرض المباني أقرب إليك.
+- بعيد — يعرض المباني من مسافة أطول.
+
+كلا خياري الأداء يستخدمان مفتاح تبديل ذو موضعين مباشرة في شاشة إعدادات المباني ثلاثية الأبعاد.
+
+**ملاحظة:** استخدام *التفاصيل العالية* و*مسافة العرض البعيدة* يحسن المظهر البصري لكنه قد يؤثر على الأداء ويزيد من استهلاك البطارية.
 
 
 ## التضاريس ثلاثية الأبعاد {#3d-relief}
@@ -452,8 +530,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <!-- Troubleshooting Steps-->
 
-١. كيفية استعادة شراء إضافة التضاريس (خطوط الكونتور سابقًا). [(تحقق)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
-٢. خطوط الكونتور أو بيانات الارتفاع أو التضاريس ثلاثية الأبعاد لا تظهر. [(تحقق)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
-٣. تتحول الخريطة تلقائيًا إلى الوضع ثلاثي الأبعاد أثناء الملاحة:  
+1. كيفية استعادة شراء إضافة التضاريس (خطوط الكونتور سابقًا). [(تحقق)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
+2. خطوط الكونتور أو بيانات الارتفاع أو التضاريس ثلاثية الأبعاد لا تظهر. [(تحقق)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
+3. تتحول الخريطة تلقائيًا إلى الوضع ثلاثي الأبعاد أثناء الملاحة:  
     - تأكد من تعطيل زر **الوضع ثلاثي الأبعاد** في **القائمة ← تخصيص الشاشة ← الأزرار ← الأزرار الافتراضية**.  
     - تحقق مما إذا كانت أي من ميزات التضاريس ممكّنة في **القائمة ← تخصيص الخريطة ← التضاريس** والتي قد تؤدي إلى تفعيل تأثير ثلاثي الأبعاد.

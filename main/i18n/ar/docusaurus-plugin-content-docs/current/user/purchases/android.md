@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: f03e507400bc20695268af175cd4521086e021342f5905b49b0c9d9b09b9e7fc
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -109,10 +109,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
 | [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
 | [تخصيص ألوان المباني ثلاثية الأبعاد](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
-| [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
+| [عرض المسار ثلاثي الأبعاد](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [الأعماق البحرية](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [الأماكن المشهورة (ويكيبيديا)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [ويكي رحلات بدون اتصال - أدلة السفر](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [ملحق علم الفلك](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [الملاحة بدون اتصال وبالاتصال بالإنترنت](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
 | [بحث فوري بدون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
 | [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -155,6 +156,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [ويدجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر.  |
 | [تصحيح الارتفاع (بدون اتصال)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | يسمح لك بحساب رسم بياني للارتفاع لمسارك (تتطلب [خريطة التضاريس](../plugins/topography.md#download-maps) للمنطقة المختارة). |
 | [تعديل مخطط الألوان](../../user/plugins/topography.md#modify-color-scheme) | يسمح لك بتخصيص مظهر الخريطة من خلال اختيار أو استيراد لوحات ألوان. يمكنك تحرير المخططات المدمجة أو استخدام ملفات لوحة ألوان خاصة بك لتخصيص ألوان الخريطة والمسار. |
+| [إنشاء لوحات ألوان مخصصة](../../user/map/tracks/appearance.md#gradient-palettes) | يسمح لك بإنشاء وتحرير لوحات التدرج لتلوين المسار باستخدام قيم نسبية أو ثابتة. يمكنك تحديد خطوات الألوان، وتعيين القيم، وتخصيص كيفية عرض البيانات (مثل السرعة أو الارتفاع) على طول المسار. |
+| [مجلدات ذكية – تنظيم حسب](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | يسمح بتنظيم المسارات في مجلدات ذكية باستخدام معايير تجميع متقدمة مثل التاريخ والوقت، والمسافة، والمدة، والسرعة، والارتفاع والارتفاع، وبيانات المستشعر. تمكن هذه الخيارات من تصنيف المسارات بشكل أكثر تفصيلاً وتحليل مرن. |
 
 
 ## كيفية الشراء {#how-to-buy}
@@ -184,7 +187,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## الاشتراكات القديمة (قبل الإصدار ٤.٠) {#legacy-subscriptions-prior-40}
 
-تبدأ الاشتراكات الجديدة مع إصدار OsmAnd ٤.٠ (أغسطس ٢٠٢١). جميع الاشتراكات السابقة أصبحت قديمة وتساوي تقنيًا *اشتراك الخرائط*، على الرغم من أن الاشتراكات القديمة مؤهلة لتحديثات الخرائط كل ساعة. لا يمكن للمستخدمين شراء الاشتراكات القديمة، ولكن يتم تجديد الاشتراكات القديمة تلقائيًا حتى تقوم بإلغاء الاشتراك (قد يتغير السعر في المستقبل).
+تبدأ الاشتراكات الجديدة مع إصدار OsmAnd ٤.٠ (أغسطس ٢٠٢١). جميع الاشتراكات السابقة أصبحت قديمة وتساوي تقنيًا *اشتراك الخرائط*، على الرغم من أن الاشتراكات القديمة مؤهلة لتحديثات الخرائط كل ساعة. لا يمكن للمستخدمين شراء الاشتراكات القديمة، ولكن يتم تجديد الاشتراكات القديمة تلقائيًا حتى تقوم بالإلغاء (قد يتغير السعر في المستقبل).
 
 
 ## استعادة المشتريات {#restore-purchases}
@@ -207,7 +210,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | OsmAnd  | ✔  &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand) | ✔  &nbsp;&nbsp;[تثبيت](https://appgallery.huawei.com/#/app/C101486545) |
 | OsmAnd+  | ✔  &nbsp;&nbsp;[تثبيت](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** |
 
-### استعادة الاشتراك / الشراء داخل التطبيق {#restore-subscription--in-app}
+### استعادة الاشتراك / داخل التطبيق {#restore-subscription--in-app}
 
 **لاستعادة *عملية الشراء داخل التطبيق* أو *الاشتراك* ([Maps+، Pro، التحديثات الحية](#difference-between-purchases-android)).**
 

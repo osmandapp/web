@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  المفضلة
 ---
@@ -163,7 +163,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![أماكني المفضلة أندرويد](@site/static/img/personal/my_places_android.png)
+![أماكني المفضلة أندرويد](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![أماكني iOS](@site/static/img/personal/my_places_ios.png)
+![أماكني iOS](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يتيح لك قسم **مفضلتي**:
 
 - [البحث](#order--sorting--search) عن مفضلات أو مجموعات معينة.
-- [عمليات جماعية](#bulk-edit--delete) — إعادة تسمية أو نقل أو حذف عدة مفضلات دفعة واحدة.
+- [عمليات جماعية](#bulk-edit--delete) — مشاركة أو نقل أو حذف عدة مفضلات دفعة واحدة.
 
 ### الترتيب / الفرز / البحث {#order--sorting--search}
 
@@ -188,20 +188,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![مجلدات المفضلة أندرويد](@site/static/img/personal/favorites_folders_android.png)
+![مجلدات المفضلة أندرويد](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **الفرز** — يمكن فرز مجلدات ونقاط المفضلة باستخدام خيارات الفرز المتاحة في قائمة القائمة. الخيارات التالية متاحة: *الاسم أ – و*، *الاسم و – أ*، *آخر تعديل*، *أحدث تاريخ أولاً*، *أقدم تاريخ أولاً*. بشكل افتراضي، يتم فرز العناصر حسب الاسم أ – و. تُعرض المجلدات المثبتة دائمًا في أعلى قائمة المفضلة. وهي مفصولة بصريًا عن باقي المجلدات بواسطة فاصل. [المجلد الشخصي](../personal/favorites.md#special-favorites-personal) مثبت بشكل افتراضي. 
+- **البحث** — استخدم [البحث العام](../search/search-all.md) للعثور على المفضلة بالاسم. يتم فرز المفضلة حسب المسافة من مركز الخريطة.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![مجلدات المفضلة iOS](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **الفرز** — يتم فرز مجلدات ونقاط المفضلة أبجديًا، مع وجود [المجلد الشخصي](../personal/favorites.md#special-favorites-personal) في الأعلى.
 - **البحث** — استخدم [البحث العام](../search/search-all.md) للعثور على المفضلة بالاسم. يتم فرز المفضلة حسب المسافة من مركز الخريطة.
 
+</TabItem>
+
+</Tabs>
 
 ### تحرير / حذف جماعي {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![إجراءات المفضلة أندرويد](@site/static/img/personal/favorites_actions_android.png) ![حذف إجراء المفضلة أندرويد](@site/static/img/personal/favorites_delete_android.png)
+![إجراءات المفضلة أندرويد](@site/static/img/personal/favorites_group_actions.png) ![إجراء حذف المفضلة أندرويد](@site/static/img/personal/favorites_actions.png)
+
+لإدارة عدة مفضلات أو مجلدات، أدخل *وضع التحديد*. يمكنك فتح وضع التحديد بطريقتين:
+- انقر على *قائمة النقاط الثلاث* في الزاوية العلوية اليمنى واختر *تحديد*.
+- نقر طويل على نقطة مفضلة أو مجلد.
+
+عند تمكين وضع التحديد، تظهر مربعات الاختيار بجوار العناصر في القائمة. حدد المفضلات أو المجلدات المطلوبة بالنقر على مربعات الاختيار. لتحديد جميع العناصر في القائمة، انقر على أيقونة تحديد الكل في الزاوية العلوية اليمنى.
+
+تعتمد الإجراءات المتاحة على نوع العنصر المحدد. عند تحديد المجلدات، تكون الإجراءات التالية متاحة:
+- **مشاركة** — تصدير المجلدات المحددة كملف GPX للمفضلة.
+- **حذف** — إزالة المجلدات المحددة.
+
+عند تحديد نقاط المفضلة، تكون الإجراءات التالية متاحة:
+- **نقل** — نقل المفضلات المحددة إلى مجلد آخر.
+- **إضافة إلى علامات الخريطة** — إضافة النقاط المحددة إلى قائمة علامات الخريطة.
+- **إضافة إلى مسار** — إضافة النقاط المحددة إلى مسار.
+- **إضافة إلى الملاحة** — بدء الملاحة إلى النقطة المحددة.
+- **حذف** — إزالة المفضلات المحددة.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إجراءات المفضلة iOS](@site/static/img/personal/favorites_actions_ios.png)
 
+- لإدارة عدة مفضلات، انقر على زر **التحرير** (*أيقونة القلم*).
+- حدد مفضلات فردية أو مجلدات كاملة للعمليات الجماعية.
+- **الخيارات المتاحة** — *مشاركة*، *نقل إلى مجموعة مفضلة*، *تغيير اللون*، و *حذف*.
+
 </TabItem>
 
 </Tabs>
-
-1. لإدارة عدة مفضلات، انقر على أيقونة **الحذف** (*أيقونة سلة المهملات على أندرويد*) أو زر **التحرير** (*أيقونة القلم على iOS*).
-2. حدد مفضلات فردية أو مجلدات كاملة للعمليات الجماعية.
-3. **الخيارات المتاحة** — *حذف* لأندرويد و iOS، *نقل إلى مجموعة مفضلة*، *مشاركة*، و *تغيير اللون* لـ iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,39 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="أندرويد">
 
-اذهب إلى: *قائمة النقاط الثلاث ← تغيير المظهر الافتراضي*
+![وظائف مجلد المفضلة أندرويد](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![وظائف مجلد المفضلة أندرويد](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+استخدم ***قائمة النقاط الثلاث*** بجوار كل مجلد لإدارة مجموعات المفضلة:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **إخفاء من الخريطة** — قم بتبديل هذا الخيار لعرض أو إخفاء نقاط المفضلة من المجلد على الخريطة.
+- **تثبيت المجلد** — ثبت المجلد المحدد للحفاظ عليه في أعلى قائمة المفضلة للوصول إليه بشكل أسرع.
+- **<Translate android="true" ids="shared_string_rename"/>** — استخدم هذا الخيار لتغيير اسم المجلد المحدد.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — خصص كيفية ظهور نقاط المفضلة في المجلد على الخريطة عن طريق تغيير أيقوناتها أو ألوانها أو تسمياتها.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **إزالة من علامات الخريطة** — أضف جميع نقاط المفضلة من المجلد إلى *قائمة علامات الخريطة* أو أزلها حسب الحاجة لسهولة الرجوع إليها.
+- **<Translate android="true" ids="add_to_a_track"/>** — أضف جميع نقاط المفضلة من المجلد المحدد إلى مسار. يفتح هذا شاشة اختيار المسار حيث يمكنك اختيار أو إنشاء مسار.
+- **<Translate android="true" ids="shared_string_share"/>** — شارك نقاط المفضلة في المجلد عن طريق تصديرها كملف *Favorites.gpx*، مما يسهل نقل بياناتك أو نسخها احتياطيًا.
+- **<Translate android="true" ids="shared_string_delete"/>** — احذف مجلد المفضلة المحدد وجميع النقاط الموجودة بداخله بشكل دائم.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *نقر طويل على المجلد ← المظهر الافتراضي*
-
 ![إجراءات المفضلة iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+استخدم ***النقر الطويل*** على المجلد لإدارة مجموعات المفضلة:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **إخفاء من الخريطة** — قم بتبديل هذا الخيار لعرض أو إخفاء نقاط المفضلة من المجلد على الخريطة.
+- **<Translate ios="true" ids="shared_string_rename"/>** — استخدم هذا الخيار لتغيير اسم المجلد المحدد.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — خصص كيفية ظهور نقاط المفضلة في المجلد على الخريطة عن طريق تغيير أيقوناتها أو ألوانها أو تسمياتها.
+- **<Translate ios="true" ids="shared_string_share"/>** — شارك نقاط المفضلة في المجلد عن طريق تصديرها كملف *Favorites.gpx*، مما يسهل نقل بياناتك أو نسخها احتياطيًا.
+- **<Translate ios="true" ids="shared_string_delete"/>** — احذف مجلد المفضلة المحدد وجميع النقاط الموجودة بداخله بشكل دائم.
 
 </TabItem>
 
 </Tabs>
-
-استخدم ***قائمة النقاط الثلاث*** (*أندرويد*) بجوار كل مجلد و***النقر الطويل*** (*iOS*) على المجلد لإدارة مجموعات المفضلة:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — استخدم هذا الخيار لتغيير اسم المجلد المحدد.
-
-- **<Translate android="true" ids="change_default_appearance"/>** — خصص كيفية ظهور نقاط المفضلة في المجلد على الخريطة عن طريق تغيير أيقوناتها أو ألوانها أو تسمياتها.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** أو **إخفاء من الخريطة** — قم بتبديل هذا الخيار لعرض أو إخفاء نقاط المفضلة من المجلد على الخريطة.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** أو **إزالة من علامات الخريطة** (*أندرويد فقط*) — أضف جميع نقاط المفضلة من المجلد إلى *قائمة علامات الخريطة* أو أزلها حسب الحاجة لسهولة الرجوع إليها.
-
-- **<Translate android="true" ids="shared_string_share"/>** — شارك نقاط المفضلة في المجلد عن طريق تصديرها كملف *Favorites.gpx*، مما يسهل نقل بياناتك أو نسخها احتياطيًا.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — احذف مجلد المفضلة المحدد وجميع النقاط الموجودة بداخله بشكل دائم.
-
-مزيد من التفاصيل في مقال [أماكني](../personal/myplaces.md#favorites).
-
-
 
 ### تغيير مظهر المجموعة {#change-group-appearance}
 
@@ -287,11 +304,15 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="أندرويد">
 
-![وظائف مجلد المفضلة أندرويد](@site/static/img/personal/favorite_change_appearance_andr.png)
+اذهب إلى: *قائمة النقاط الثلاث → تغيير المظهر الافتراضي*
+
+![وظائف مجلد المفضلة أندرويد](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+اذهب إلى: *نقر طويل على المجلد → المظهر الافتراضي*
 
 ![إجراءات المفضلة iOS](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
@@ -362,7 +383,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![شراء النسخ الاحتياطي المجاني للمفضلة أندرويد](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![وظائف مجلد المفضلة أندرويد](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -370,7 +391,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![شراء النسخ الاحتياطي المجاني للمفضلة iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![إجراءات المفضلة iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 

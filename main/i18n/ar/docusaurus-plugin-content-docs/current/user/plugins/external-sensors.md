@@ -1,6 +1,6 @@
 ---
-source-hash: 852174395ea31db0d986b03a13dcefe0a7848d73cda99c210ec9424b8e571fd0
-sidebar_position: 5
+source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+sidebar_position: 6
 title:  المستشعرات الخارجية
 ---
 

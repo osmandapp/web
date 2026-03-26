@@ -1,6 +1,6 @@
 ---
-source-hash: e58c23ff221d0d1b35e56c8e2ad7b4b3dd6c387874a59c7fe2aaf38cb9e8ec9b
-sidebar_position: 13
+source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+sidebar_position: 14
 title: عرض خريطة التزلج
 ---
 
@@ -124,7 +124,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![ملف التزلج الشخصي في أندرويد](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
+![خطوط العمق البحري في أندرويد](@site/static/img/plugins/ski-maps/and_skiing_profile.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app_profiles"/>*
 
-![ملف التزلج الشخصي في iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
+![خطوط العمق في iOS](@site/static/img/plugins/ski-maps/ios_skiing_profile.png)
 
 </TabItem>
 
@@ -239,7 +239,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 لمعرفة أي مسارات خارج منتجع التزلج يمكنك التنقل فيها، تحتاج إلى تمكين خيار **منحدرات التزلج ومساراتها** في قائمة [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md)، التي يتم فتحها من قائمة [تكوين الخريطة](../map/configure-map-menu.md).  
 
-مع تمكين ملف التزلج الشخصي، وملاحة التزلج، و[نمط خريطة الشتاء والتزلج](../map/vector-maps.md#winter-and-ski)، تعرض [منحدرات التزلج ومساراتها](../map/routes.md#ski-slopes-and-routes) جميع أنواع المسارات التي يمكن لملاحة التزلج استخدامها لبناء مسارات الملاحة على طولها. يتم تحديد مسارات منحدرات التزلج هذه، إذا تم تمكينها، باللون البنفسجي في الغالب خارج حدود منتجع التزلج.  
+مع تمكين ملف التزلج الشخصي، وملاحة التزلج، و[نمط خريطة الشتاء والتزلج](../map/map-styles.md#winter-and-ski)، تعرض [منحدرات التزلج ومساراتها](../map/routes.md#ski-slopes-and-routes) جميع أنواع المسارات التي يمكن لملاحة التزلج استخدامها لبناء مسارات الملاحة على طولها. يتم تحديد مسارات منحدرات التزلج هذه، إذا تم تمكينها، باللون البنفسجي في الغالب خارج حدود منتجع التزلج.  
 عند تمكين الخيار [منحدرات التزلج ومساراتها](../map/routes.md#ski-slopes-and-routes) لنمط خريطة غير الشتاء والتزلج، يتم عرض المنحدرات فقط. قد لا تظهر الميزات الأخرى المتعلقة بالتزلج في طبقة التصميم هذه.  
 _[منحدرات التزلج ومساراتها](_Ski slopes and routes_) [قابلة للنقر](../map/routes.md#actions-with-routes).
 

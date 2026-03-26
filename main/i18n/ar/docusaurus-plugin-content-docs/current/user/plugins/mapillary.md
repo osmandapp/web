@@ -1,8 +1,9 @@
 ---
-source-hash: c1e40198b8d078b7e3678c0105a5dc91442a1ca2f47b65d03facbd7ca77df64a
-sidebar_position: 6
+source-hash: 38151318e8ffca078fdb264a4c0b0efa447c86b08d4a27dad17b80dd745bed3e
+sidebar_position: 7
 title:  مابيلاري
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## نظرة عامة {#overview}
 
-للتجول بشكل أسرع، يمكنك في أوسماند استخدام عروض مستوى الشارع لمساراتك أو الأماكن التي تهمك والتي يوفرها [مابيلاري](https://www.mapillary.com/) (يتطلب اتصالاً بالإنترنت).
+للتجول بشكل أسرع، يمكنك في أوسماند استخدام عروض مستوى الشارع لمساراتك أو الأماكن التي تهمك والتي يوفرها [مابيلاري](https://www.mapillary.com/) (يتطلب اتصالاً بالإنترنت).  
 
 تجلب طبقة [مابيلاري](https://www.mapillary.com/) صور مستوى الشارع مباشرة إلى تطبيق أوسماند، بحيث يمكنك بسهولة استعراض محيط أي مكان يهمك أو على طول المسار الذي خططت له. إذا كانت الصور مفقودة، يمكنك إضافتها بنفسك، ويمكن للآخرين استخدامها. نشأت هذه الميزة من تعاوننا مع [فريق مابيلاري](https://www.mapillary.com/about)، موحدةً فوائد كلا التطبيقين.
 
@@ -73,9 +73,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-لعرض صور مستوى الشارع من مابيلاري على الخريطة، تحتاج إلى تفعيل هذه الطبقة في قائمة [تهيئة الخريطة](../map/configure-map-menu.md) في قسم *إظهار*.
+لعرض صور مستوى الشارع من مابيلاري على الخريطة، تحتاج إلى تفعيل هذه الطبقة في قائمة [تهيئة الخريطة](../map/configure-map-menu.md) في قسم *إظهار*.  
 
-*للوصول: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
+*للوصول: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
 :::note عارض صور مابيلاري
 
@@ -102,7 +102,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-يمكنك إنشاء فلتر وتحديد الصور التي سيتم عرضها على الخريطة. على سبيل المثال، اختر عرض الصور الحديثة فقط أو الصور بزاوية 360 درجة فقط.
+يمكنك إنشاء فلتر وتحديد الصور التي سيتم عرضها على الخريطة. على سبيل المثال، اختر عرض الصور الحديثة فقط أو الصور بزاوية 360 درجة فقط.  
 
 *للوصول: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
@@ -159,7 +159,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="أندرويد">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> ← اختر لوحة ← <Translate android="true" ids="mapillary"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → اختر لوحة → <Translate android="true" ids="mapillary"/>*
 
 ![ملحق مابيلاري في أندرويد](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![قائمة سياق الخريطة لملحق مابيلاري في أندرويد](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
@@ -167,7 +167,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> ← اختر لوحة ← <Translate ios="true" ids="mapillary"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → اختر لوحة → <Translate ios="true" ids="mapillary"/>*
 
 ![قائمة سياق الخريطة لملحق مابيلاري في iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 

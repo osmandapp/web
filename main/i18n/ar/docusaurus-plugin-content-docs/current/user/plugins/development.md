@@ -1,6 +1,6 @@
 ---
-source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
-sidebar_position: 10
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+sidebar_position: 11
 title:  تطوير OsmAnd
 ---
 
@@ -53,7 +53,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![إعدادات التطوير iOS](@site/static/img/plugins/development/development_ios_1.png)
+![إعدادات التطوير iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **محاكاة موقعك** (*أندرويد* / *iOS*). [محاكاة](#gpx-track-simulation) الموقع والحركة باستخدام مسار GPX.
 - **وضع توفير البطارية** (*أندرويد* / *iOS*). يقلل هذا الإعداد من [معدل تحديث الشاشة](#map-rendering-fps-widget) بمقدار ٢٠ إطارًا في الثانية للمساعدة في توفير طاقة البطارية أثناء استخدام التطبيقات.
 - **استخدام أيقونات موقع ثلاثية الأبعاد** (*iOS*). يسمح لك بتحديد أيقونة ثلاثية الأبعاد لـ[أيقونة موقعي](../personal/profiles.md#my-location-appearance).
-- **محاكاة بيانات OBD** (*أندرويد*). يسمح بمحاكاة استخدام [ماسح OBD](./vehicle-metrics.md).
-- **معلومات تصحيح أخطاء الأداء** (*أندرويد*). يعرض أداء العرض والملاحة.
+- **محاكاة بيانات OBD** (*أندرويد* / *iOS*). يسمح بمحاكاة استخدام [ماسح OBD](./vehicle-metrics.md).
+- **معلومات تصحيح أخطاء الأداء** (*أندرويد* / *iOS*). يعرض أداء العرض والملاحة.
 - **تعطيل طبقات الخريطة** (*أندرويد*). يعطل جميع طبقات الخريطة فوق الخريطة المتجهية (يتطلب إعادة التشغيل).
 - **مخزن Logcat المؤقت** (*أندرويد*). تحقق وشارك سجلات مفصلة للتطبيق.
 - **إظهار رسالة منبثقة حول المفتاح المضغوط** (*أندرويد*). عرض رسالة حول المفتاح.
 - **<Translate android="true" ids="write_bearing"/>** (*أندرويد*). <Translate android="true" ids="write_bearing_description"/>. الاتجاه هو اتجاه البوصلة من موقعك الحالي إلى وجهتك المقصودة. يؤثر على *[تسجيل المسار](../plugins/trip-recording.md)*.
 - **<Translate android="true" ids="write_heading"/>** (*أندرويد*). <Translate android="true" ids="write_heading_description"/>. التوجيه هو اتجاه البوصلة من موقعك الحالي نحو الشمال الحقيقي. هذا الخيار ممكّن افتراضيًا. يؤثر على *[تسجيل المسار](../plugins/trip-recording.md)*.
+- **تمكين MSAA** (*أندرويد*) / **تمكين MSAA لـ CarPlay** (*iOS*). يُمكّن مضاد التجعيد متعدد العينات لتنعيم عرض الخريطة. يحسن جودة الصورة البصرية لـ[أيقونة موقعي](../personal/profiles.md#my-location-appearance) وخط المسار عن طريق تقليل الحواف المعرّجة. في أندرويد، يؤثر هذا الخيار على عرض الخريطة على الجهاز وعند استخدام [Android Auto](../navigation/auto-car.md). في iOS، ينطبق على [CarPlay](../navigation/car-play.md) فقط.
 
 
 ### اختبار التطبيق {#application-testing}

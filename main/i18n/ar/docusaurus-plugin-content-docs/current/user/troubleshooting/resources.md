@@ -1,5 +1,5 @@
 ---
-source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
+source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -27,16 +27,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 | المنصة | اسم المجموعة | الوصف | الرابط |
 | :-- | :-- | :-- | :-- |
-| فيسبوك | مجتمع مستخدمي OsmAnd (*إنجليزية*)  |  هذه مجموعة يمكن لمستخدمي OsmAnd فيها مساعدة المستخدمين الآخرين.  |  [فيسبوك](https://www.facebook.com/groups/osmandusers/) |
+| فيسبوك | مجتمع مستخدمي OsmAnd (*إنجليزية*)  |  This is a group where OsmAnd users can help other users.  |  [فيسبوك](https://www.facebook.com/groups/osmandusers/) |
 |  فيسبوك | Osmand-gebruikers (*هولندية*)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom.  |  [فيسبوك](https://www.facebook.com/groups/1734792863427411) |
 |  فيسبوك | OSMAND+ Aide Partage et Astuces (*فرنسية*)  |  Aide Partage et Astuces |  [فيسبوك](https://www.facebook.com/groups/584042065963135) |
-|  فيسبوك | مجموعة مستخدمي LC8 Rally OsmAnd (*إنجليزية*)  |  لتبادل الخبرات مع استخدام OsmAnd. |  [فيسبوك](https://www.facebook.com/groups/1848734328597008) |
-|  فيسبوك | أصدقاء Osmand الإيطاليون (*إيطالية*)  |  لتبادل الخبرات مع استخدام OsmAnd. |  [فيسبوك](https://www.facebook.com/groups/231397842534959/) |
-|  مجموعات جوجل | Osmand (*إنجليزية*)  | مجموعة يشارك فيها المستخدمون النصائح، ويجيبون على الأسئلة، ويناقشون وظائف OsmAnd. | [مجموعات جوجل](https://groups.google.com/g/osmand)  |
-|  ريديت | OsmAnd - مناقشة ودعم  | مجتمع ريديت لمستخدمي OsmAnd. اطرح الأسئلة، شارك الخبرات، أو اعرض أنماط خرائطك المخصصة. |  [ريديت OsmAnd](https://www.reddit.com/r/osmand/) |
-|  تيليجرام | قناة أخبار OsmAnd (*إنجليزية*)  | المجموعة الرسمية لـ OsmAnd للإعلانات والتحديثات مباشرة من المطورين. |  [تيليجرام OsmAnd](https://t.me/OsmAnd_News) |
-|  إكس (تويتر) | قناة أخبار OsmAnd  | مجموعة OsmAnd الرسمية للمناقشات الحية، والإعلانات، والتحديثات. | [إكس (تويتر) OsmAnd](https://x.com/osmandapp/) |
-|  انستغرام | قناة أخبار OsmAnd | مجتمع يمكنك فيه الدردشة، ومشاركة النصائح، والحصول على مساعدة في ميزات OsmAnd. | [انستغرام OsmAnd](https://www.instagram.com/osmand.map/) |
+|  فيسبوك | مجموعة مستخدمي LC8 Rally OsmAnd (*إنجليزية*)  |  To exchange experiences with the OsmAnd usage. |  [فيسبوك](https://www.facebook.com/groups/1848734328597008) |
+|  فيسبوك | أصدقاء Osmand الإيطاليون (*إيطالية*)  |  To exchange experiences with the OsmAnd usage. |  [فيسبوك](https://www.facebook.com/groups/231397842534959/) |
+|  مجموعات جوجل | Osmand (*إنجليزية*)  | A group where users share tips, answer questions, and discuss OsmAnd's functionalities. | [مجموعات جوجل](https://groups.google.com/g/osmand)  |
+|  ريديت | OsmAnd - مناقشة ودعم  | The Reddit community for OsmAnd users. Ask questions, share experiences, or show off your custom map styles. |  [ريديت OsmAnd](https://www.reddit.com/r/osmand/) |
+|  تيليجرام | قناة أخبار OsmAnd (*إنجليزية*)  | The official OsmAnd group for announcements and updates directly from the developers. |  [تيليجرام OsmAnd](https://t.me/OsmAnd_News) |
+|  إكس (تويتر) | قناة أخبار OsmAnd  | Official OsmAnd group for live discussions, announcements, and updates. | [إكس (تويتر) OsmAnd](https://x.com/osmandapp/) |
+|  انستغرام | قناة أخبار OsmAnd | A community where you can chat, share tips, and get help with OsmAnd features. | [انستغرام OsmAnd](https://www.instagram.com/osmand.map/) |
 
 
 ## المحولات {#converters}
@@ -82,13 +82,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 | الاسم | الوصف | رابط الإضافة |
 |--|--|--|
-| OsmAnd Rendering  | تضيف الإضافة أنماط خرائط Enduro و CycloRoute و Hiking (مزيد من المعلومات [هنا](../map/map-styles.md#default-map-styles)) و 5 [ملفات شخصية](https://osmand.net/docs/user/personal/profiles) جديدة (ملف للمشاة، وآخر للدراجات، وثلاثة للدراجات النارية). كما توفر خرائط عبر الإنترنت لإسبانيا وفرنسا والنرويج وسويسرا والنمسا وبلجيكا والأرجنتين عبر قائمة [الخرائط والموارد](../personal/maps-resources.md#extra-maps) في مجلد *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
-| خريطة فريق رحال للمملكة العربية السعودية  | خريطة احترافية غير متصلة بالإنترنت للمملكة العربية السعودية، تشمل المعالم الطبوغرافية والطرق والمدن والقرى ومصادر المياه. مثالية لرحلات الصحراء. قم بزيارة [خرائط رحال](https://rahalteam.com) لمزيد من المعلومات. | [🇸🇦 خرائط المملكة العربية السعودية من فريق رحال](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
-|  نموذج ثلاثي الأبعاد  | تضيف هذه الحزمة خيار نموذج ثلاثي الأبعاد للملفات الشخصية. قم بتخصيص المظهر من خلال القائمة: [*قائمة OsmAnd → الإعدادات → الملف الشخصي → مظهر الملف الشخصي → اختر الأيقونات الرابعة والخامسة من أيقونة الموضع*](../personal/profiles.md#profile-appearance). | [نموذج ثلاثي الأبعاد](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
-| مجموعة خرائط AnyGIS عبر الإنترنت | مجموعة من مصادر الخرائط المختلفة عبر الإنترنت بما في ذلك الخرائط الفضائية والسياحية والتاريخية وغيرها.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
-| مفتاح الخريطة  | تضيف هذه الحزمة مفتاح خريطة غير متصل بالإنترنت (الإصدار 1.01؛ 03-04-2024)، يمكن الوصول إليه عبر *القائمة → أماكني → المفضلة → مفتاح الخريطة*. مفتاح الخريطة متاح أيضًا في [هذا الموقع](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [مفتاح الخريطة](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 خرائط الولايات المتحدة | مجموعة من خرائط الولايات المتحدة المتخصصة، محولة إلى تنسيق OBF لـ OsmAnd، تشمل<ul><li>[الأراضي العامة والمحمية USGS (PAD-US 3.0)، حسب الولاية](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview)،</li><li>[مسارات وطرق USFS، على مستوى البلاد](https://www.fs.usda.gov/visit/maps)،</li><li>[طرق ومسارات BLM، على مستوى البلاد](https://www.blm.gov/maps)،</li><li>[نقاط اهتمام أنشطة الترفيه BLM، على مستوى البلاد](https://www.blm.gov/maps)،</li><li>[الأراضي الخاصة (بيانات الطرود)، لبعض الولايات](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>مزيد من المعلومات على [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [خرائط الولايات المتحدة](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱 خريطة UMP لبولندا | [UMP](https://ump.waw.pl/) تغطي معظم بولندا مع جهد تطوير مستمر. لفترة طويلة، تم استخدام اسم UMP-pcPL (mapą prawie całej Polski). | [خريطة UMP لبولندا](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| الملفات الشخصية والخرائط المتقدمة  | بيانات من [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). تضيف الإضافة أنماط خرائط Enduro و CycloRoute و Hiking (مزيد من المعلومات [هنا](../map/map-styles.md#default-map-styles)) و 5 [ملفات شخصية](https://osmand.net/docs/user/personal/profiles) جديدة (ملف للمشاة، وآخر للدراجات، وثلاثة ملفات للدراجات النارية). كما توفر خرائط عبر الإنترنت لإسبانيا وفرنسا والنرويج وسويسرا والنمسا وبلجيكا والأرجنتين عبر قائمة [الخرائط والموارد](../personal/maps-resources.md#extra-maps) في مجلد *Advanced Online Maps*. | [الملفات الشخصية والخرائط المتقدمة](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| 🇸🇦 خرائط الصحراء في المملكة العربية السعودية من فريق رحال  | خريطة احترافية غير متصلة بالإنترنت للمملكة العربية السعودية، تشمل المعالم الطبوغرافية والطرق والمدن والقرى ومصادر المياه. مثالية لرحلات الصحراء. قم بزيارة [خرائط رحال](https://rahalteam.com) لمزيد من المعلومات. | [🇸🇦 خرائط الصحراء في المملكة العربية السعودية من فريق رحال](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
+|  أيقونات الموضع ثلاثية الأبعاد  | تضيف هذه الحزمة خيار نموذج ثلاثي الأبعاد للملفات الشخصية (إنها مثال على كيفية إضافة أيقونة ثلاثية الأبعاد خاصة بك إلى OsmAnd). قم بتخصيص المظهر من خلال القائمة: [*قائمة OsmAnd → الإعدادات → الملف الشخصي → مظهر الملف الشخصي → اختر الأيقونات الرابعة والخامسة من أيقونة الموضع*](../personal/profiles.md#profile-appearance). | [أيقونات الموضع ثلاثية الأبعاد](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
+| مجموعة خرائط AnyGIS عبر الإنترنت | بيانات من [صفحة AnyGIS الإلكترونية](https://anygis.ru/index_en). مجموعة من مصادر الخرائط المختلفة عبر الإنترنت بما في ذلك الخرائط الفضائية والسياحية والتاريخية وغيرها.  | [مجموعة خرائط AnyGIS عبر الإنترنت](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
+| مفتاح الخريطة غير المتصل بالإنترنت | تضيف هذه الحزمة مفتاح خريطة غير متصل بالإنترنت (الإصدار 1.01؛ 03-04-2024)، يمكن الوصول إليه عبر *القائمة → أماكني → المفضلة → مفتاح الخريطة*. مفتاح الخريطة متاح أيضًا في [هذا الموقع](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [مفتاح الخريطة غير المتصل بالإنترنت](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
+| 🇺🇸 الأراضي والمسارات الأمريكية | مجموعة من خرائط الولايات المتحدة المتخصصة، محولة إلى تنسيق OBF لـ OsmAnd، تشمل<ul><li>[الأراضي العامة والمحمية USGS (PAD-US 3.0)، حسب الولاية](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview)،</li><li>[مسارات وطرق USFS، على مستوى البلاد](https://www.fs.usda.gov/visit/maps)،</li><li>[طرق ومسارات BLM، على مستوى البلاد](https://www.blm.gov/maps)،</li><li>[نقاط اهتمام أنشطة الترفيه BLM، على مستوى البلاد](https://www.blm.gov/maps)،</li><li>[الأراضي الخاصة (بيانات الطرود)، لبعض الولايات](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>مزيد من المعلومات على [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸 الأراضي والمسارات الأمريكية](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇵🇱 خريطة UMP لبولندا | [UMP](https://ump.waw.pl/) تغطي معظم بولندا مع جهد تطوير مستمر. لفترة طويلة، تم استخدام اسم UMP-pcPL (mapą prawie całej Polski). | [🇵🇱 خريطة UMP لبولندا](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  تتضمن هذه الإضافة نمط خريطة خفيف الوزن يحسن رؤية الطرق غير المعبدة والمسارات في OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
@@ -99,7 +99,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | اسم المصدر | الوصف | الرابط |
 | -- | -- | --|
 | Gravel Roads Seeker | نمط خريطة يقدم تصورًا أفضل لسطح الطريق، ويميز بين الطرق المعبدة وغير المعبدة (صفحة ويب باللغة *الفرنسية*). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
-| OsmAnd Rendering | مجموعة من الوصول إلى الخرائط عبر الإنترنت، والخرائط الطبوغرافية، والصور الجوية، والموارد الجغرافية الأخرى المتاحة من بعض المؤسسات الجغرافية الرئيسية في بلدان مختلفة. التحديثات مستمرة، ولكن إذا كانت أي ملفات قديمة، يتم تشجيع المستخدمين على الإبلاغ. | [خرائط عبر الإنترنت: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
+| OsmAnd Rendering GitHUB | مجموعة من الوصول إلى الخرائط عبر الإنترنت، والخرائط الطبوغرافية، والصور الجوية، والموارد الجغرافية الأخرى المتاحة من بعض المؤسسات الجغرافية الرئيسية في بلدان مختلفة. التحديثات مستمرة، ولكن إذا كانت أي ملفات قديمة، يتم تشجيع المستخدمين على الإبلاغ. | [خرائط عبر الإنترنت: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | خريطة طبوغرافية مع خيار *إخفاء كل المياه*، ساهم بها [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | تم تصميم المستودع لتوفير أنماط خرائط مخصصة أنشأها المستخدمون لمستخدمين آخرين. |[UniMap من GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | أنماط خرائط غير متصلة بالإنترنت تركز على السكك الحديدية، باستخدام نظام ألوان مشابه لـ [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
@@ -126,7 +126,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | الاسم | الوصف | الرابط|
 | -- | -- | --|
 | Gravel Roads Seeker | خريطة الطرق الحصوية (صفحة ويب باللغة *الفرنسية*). خريطة عبر الإنترنت يتم إنشاؤها في الوقت الفعلي من خوادم البلاط، مثل WMTS (Web Map Tile Service) أو WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
-| OsmAnd Rendering | مجموعة من الخرائط عبر الإنترنت، بما في ذلك الخرائط الطبوغرافية والصور الجوية وغيرها، متاحة من بعض المعاهد الجغرافية الرئيسية في بلدان مختلفة. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
+| OsmAnd Rendering GitHUB | مجموعة من الخرائط عبر الإنترنت، بما في ذلك الخرائط الطبوغرافية والصور الجوية وغيرها، متاحة من بعض المعاهد الجغرافية الرئيسية في بلدان مختلفة. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
 | RainViewer | خريطة [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) مع [مخططات ألوان](https://www.rainviewer.com/api/color-schemes.html) مختلفة |[بيانات RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | مجموعة خرائط النمسا المستندة إلى [basemap.at WMTS](https://basemap.at/en/) التي أنشأها mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | خرائط OsmAnd IGN (FR) | مجموعة الخرائط المقدمة من المعهد الجغرافي الفرنسي IGN. | [خرائط OsmAnd IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|

@@ -1,5 +1,5 @@
 ---
-source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
+source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
 sidebar_position: 2
 title:  Maps & Resources
 ---
@@ -82,6 +82,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [ويكيبيديا](../plugins/wikipedia.md). خريطة متجهة مع مقالات [ويكيبيديا](https://wikipedia.org/) الموضعية جغرافيًا حول المعالم أو معلومات إضافية عن الأماكن.
 - [ويكي فوياج](../plan-route/travel-guides.md). توفر خرائط متجهة مع دليل سفر افتراضي، تقدم للمستخدمين معلومات قيمة، وتوصيات، ونصائح.
 - [توقعات الطقس](../plugins/weather.md). معلومات الطقس على الخريطة لتخطيط المسار بسهولة.
+
+بدون اشتراك نشط، تظهر هذه أنواع الخرائط زر *الحصول عليها* بدلاً من التنزيل. اضغط على *الحصول عليها* لفتح شاشة الاشتراك واختيار خطة.
 
 
 ## قائمة التنزيلات {#downloads-menu}

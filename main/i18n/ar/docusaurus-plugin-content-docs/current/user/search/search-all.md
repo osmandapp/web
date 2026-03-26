@@ -1,5 +1,5 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
 sidebar_position: 1
 title:  البحث في الكل
 ---
@@ -12,13 +12,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## نظرة عامة {#overview}
 
-**البحث** أداة مفيدة للعثور بسرعة على المواقع. يمكنك استخدام البحث للعثور على موقع بعنوان، إحداثيات، نقاط اهتمام (POI)، أو عمليات بحث سابقة. يسمح البحث [العنوان](#search-address) لك بإدخال العنوان الذي تريد الحصول على موقع دقيق له. يعمل بحث [الإحداثيات](#search-coordinates) مع الإحداثيات الجغرافية مثل خط العرض وخط الطول. مع بحث [POI](#search-poi) يمكنك البحث عن أماكن قريبة في فئات محددة، مثل المقاهي، الفنادق، أو محطات الوقود. يحفظ تاريخ البحث [التاريخ](#search-history) عمليات البحث السابقة للوصول السريع إلى الأماكن الموجودة سابقًا. يجعل ميزة البحث تخطيط الرحلات، التنقل في التضاريس المجهولة، والعثور على POIs القريبة أمرًا سهلاً.
+**البحث** أداة مفيدة للعثور بسرعة على المواقع. يمكنك استخدام البحث للعثور على موقع بعنوان، إحداثيات، نقاط اهتمام (POI)، أو عمليات بحث سابقة. يسمح البحث [العنوان](#search-address) لك بإدخال العنوان الذي تريد الحصول على موقع دقيق له. يعمل بحث [الإحداثيات](#search-coordinates) مع الإحداثيات الجغرافية مثل خط العرض وخط الطول. مع بحث [POI](#search-poi) يمكنك البحث عن أماكن قريبة في فئات محددة، مثل المقاهي، الفنادق، أو محطات الوقود. تبرز علامة التبويب [الاستكشاف](#search-explore) الأماكن الشائعة القريبة وتوفر وصولاً سريعًا إلى المواقع المزارة مؤخرًا. يحفظ تاريخ البحث [التاريخ](#search-history-ios) عمليات البحث السابقة. يجعل ميزة البحث تخطيط الرحلات، التنقل في التضاريس المجهولة، والعثور على POIs القريبة أمرًا سهلاً.
 
 
 ## كيفية الاستخدام {#how-to-use}
@@ -27,7 +29,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![قائمة POI البحث أندرويد](@site/static/img/search/poi_list_android.png)
+![قائمة POI البحث أندرويد](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -88,13 +90,17 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### ترتيب نتائج البحث {#sorting-search-results}
 
-يُرتب OsmAnd نتائج البحث تلقائيًا حسب ثلاث معايير رئيسية:
+يُرتب OsmAnd نتائج البحث تلقائيًا حسب عدة معايير:
 
 1. **مطابقة الاستعلامات** — تُعرض النتائج التي تحتوي على تطابقات دقيقة أو جزئية للكلمات التي أدخلتها في مرتبة أعلى.
 
-2. **نوع الكائن** - عند الترتيب حسب الاسم، تُعطى الأولوية للمدن والشوارع على POIs عند عرض النتائج.
+2. **الصلة** — تُعرض الكائنات التي تطابق أسماؤها استعلام البحث ارتباطًا وثيقًا عادةً في مرتبة أعلى في النتائج.
 
-3. **المسافة** - عندما تكون لدى النتائج معايير تطابق مشابهة وأنواع كائنات مشابهة، تُعرض النتائج الأقرب إلى موقع المستخدم الحالي أولاً.
+3. **نوع الكائن** — اعتمادًا على الاستعلام، قد تشمل النتائج أنواعًا مختلفة من الكائنات مثل المدن، الشوارع، العناوين، أو POIs.
+
+4. **المسافة** — عندما تكون لدى النتائج معايير تطابق مشابهة وأنواع كائنات مشابهة، تُعرض النتائج الأقرب إلى موقع المستخدم الحالي أولاً.
+
+5. **الأهمية** — قد تظهر المعالم الشهيرة جيدًا أو الأماكن المشار إليها بشكل متكرر في مرتبة أعلى في النتائج عندما تطابق استعلام البحث ارتباطًا وثيقًا.
 
 ***على سبيل المثال***، سيُظهر استعلام بحث *مكتب بريد* أقرب مكاتب البريد أولاً، حتى لو كانت هناك عناصر أخرى بأسماء مشابهة على مسافة أكبر.  
 
@@ -147,13 +153,13 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 <TabItem value="android" label="Android">
 
-![البحث عن POI أندرويد](@site/static/img/search/poi_overlay_android.png)
+![البحث عن POI أندرويد](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![البحث عن POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![البحث عن POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -170,7 +176,7 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### البحث القريب {#search-nearby}
 
-![البحث أندرويد](@site/static/img/search/search_all_near_location_andr.png)
+![البحث أندرويد](@site/static/img/search/search_all_near_location_andr_new.png)
 
 يمكنك استخدام البحث في محيط موقع محدد. للقيام بذلك، حدد النقطة المطلوبة [من القائمة في قائمة البحث](#full-text-search) أو حددها مباشرة على الخريطة. في [قائمة السياق للخريطة](../map/map-context-menu.md#actions)، حدد *الإجراءات → البحث القريب*.
 
@@ -181,7 +187,7 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 <TabItem value="android" label="Android">
 
-![البحث أندرويد](@site/static/img/search/search_address_2_andr.png)
+![البحث أندرويد](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
@@ -196,23 +202,21 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 **البحث عن العنوان** يستخدم بيانات OpenStreetMap. يسمح هذا النوع من البحث لك بالعثور على الموقع والإشارة إلى عنوان محدد من قائمة جاهزة الترتيب. اقرأ المزيد في مقالة [البحث عن العنوان](./search-address.md).
 
 
-## تاريخ البحث {#search-history}
+## البحث عن الاستكشاف {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![البحث عن الاستكشاف](@site/static/img/search/explore_search_android.png)
 
-![البحث في التاريخ](@site/static/img/search/history_search_android.png)
+تساعد علامة التبويب **الاستكشاف** في أداة البحث على اكتشاف الأماكن القريبة من موقعك الحالي بسرعة ولوصول إلى العناصر المفتوحة مؤخرًا. وتحتوي على قسمين رئيسيين:  
+- الأماكن الشائعة القريبة – قائمة قابلة للتمرير بالمعالم والمعالم السياحية الشهيرة جيدًا بالقرب من موقعك. قد يشمل كل عنصر اسم المكان، فئته، المسافة والإشارة الاتجاهية، وصورة معاينة إذا كانت متوفرة. اضغط على *عرض الكل* لفتح القائمة الكاملة أو *عرض على الخريطة* لعرض هذه الأماكن على الخريطة.
+- المزارة مؤخرًا – قائمة بالأماكن، أو المسارات، أو كائنات أخرى قمت بفتحها مؤخرًا. يسمح هذا لك بالعودة بسرعة إلى المواقع المعروضة سابقًا.
 
-</TabItem>
+لمزيد من التفاصيل، انظر [هنا](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## تاريخ البحث (iOS) {#search-history-ios}
 
 ![البحث في التاريخ](@site/static/img/search/history_search_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 يمكنك استخدام **تاريخ البحث** للبحث مرة أخرى عن الأماكن الموجودة سابقًا، أو العناوين، أو الأماكن المزارة بشكل متكرر دون إدخال الاستعلام مرة أخرى. يمكن العثور على تفاصيل إضافية في مقالة [تاريخ البحث](./search-history.md).
 
@@ -223,7 +227,7 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 <TabItem value="android" label="Android">
 
-![البحث عن POI أندرويد](@site/static/img/search/search_poi_categoties_andr.png)
+![البحث عن POI أندرويد](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -273,3 +277,4 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 - [تاريخ البحث](./search-history.md)
 - [البحث عن POI](./search-poi.md)
 - [البحث عن الإحداثيات](./search-coordinates.md)
+- [الأماكن الشائعة](../map/popular_places.md)

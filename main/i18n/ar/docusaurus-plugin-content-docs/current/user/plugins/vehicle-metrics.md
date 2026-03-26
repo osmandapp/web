@@ -1,6 +1,6 @@
 ---
-source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
-sidebar_position: 16
+source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+sidebar_position: 18
 title:  مقاييس المركبة
 ---
 
@@ -207,7 +207,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |--|--|
-|![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![إعدادات OBD](@site/static/img/plugins/obd/obd_widget.png)|
+|![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![إعدادات OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | | |
 |--|--|
-|![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![إعدادات OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

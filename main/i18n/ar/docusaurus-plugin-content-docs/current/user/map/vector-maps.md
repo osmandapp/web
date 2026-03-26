@@ -1,5 +1,5 @@
 ---
-source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
+source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
 sidebar_position: 5
 title:  الخرائط المتجهة
 ---
@@ -109,10 +109,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. التباين العالي للطرق.  
 ![نمط طريق الخريطة عالي التباين](@site/static/img/map/map-road-style-high-contrast.png)
 - **باهت**. ألوان أقل تباينًا للطرق.  
-![نمط طريق الخريطة باهت](@site/static/img/map/map-road-style-pale.png)
+![خطوط عريضة لنمط طريق الخريطة](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. مخطط عريض للطرق.  
-![نمط طريق الخريطة بخط عريض](@site/static/img/map/map-road-style-bold-outline.png)
+![خطوط عريضة لنمط طريق الخريطة](@site/static/img/map/map-road-style-bold-outline.png)
 
 ### التفاصيل {#details}
 
@@ -363,6 +363,30 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 تتوافق خطوط الكفاف مع جميع أنماط الخرائط ويمكن تخصيصها من خلال [قائمة خطوط الكفاف](../plugins/topography.md#contour-lines). لمزيد من التفاصيل، قم بزيارة مقالة [ملحق الطبوغرافيا](../plugins/topography.md).
 
+### التضاريس {#terrain}
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+
+يسمح خيار التضاريس بتخصيص ثلاث ميزات مثل التلال المظللة، والميل، والارتفاع. لمزيد من التفاصيل، راجع مقالة [الطبوغرافيا](../plugins/topography.md#terrain).
+
+### المباني ثلاثية الأبعاد {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
+
+![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_1_new.png) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_2.png) 
+
+تعرض ميزة **المباني ثلاثية الأبعاد** المباني كنماذج ثلاثية الأبعاد حجمية بدلاً من الأشكال المسطحة. يتم توليد المباني من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings).
+
+هذا الخيار متاح فقط عند تمكين ملحق الطبوغرافيا. انظر مقالة [ملحق الطبوغرافيا](../plugins/topography.md#3d-buildings) للتفاصيل.
+
+### الارتفاع ثلاثي الأبعاد {#3d-relief}
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+
+تنتج ميزة الارتفاع ثلاثي الأبعاد ارتفاعًا مرتفعًا وتوفر تمثيلًا ثلاثي الأبعاد للمشهد الطبيعي. يعمل الارتفاع ثلاثي الأبعاد دون اتصال ويمكن استخدامه مع [خرائط OsmAnd المتجهة](../map/vector-maps.md) أو أي [خرائط نقطية](../map/raster-maps.md#layers) كـ [مصدر الخريطة](../map/raster-maps.md#main) أو كـ [طبقة سفلية/علوية](../map/raster-maps.md#overlay). معلومات أكثر تفصيلاً متاحة [هنا](../plugins/topography.md#3d-relief).
+
 ### * العمق البحري {#-nautical-depth}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -389,52 +413,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 لمزيد من التفاصيل حول عرض الخريطة البحرية، قم بزيارة [صفحة ملحق الخريطة البحرية](../plugins/nautical-charts).
 
-### المباني ثلاثية الأبعاد {#3d-buildings}
+### عرض الكرة الأرضية {#globe-view}
 
 <InfoAndroidOnly/> 
 
-![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_1_new.png) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_2.png) 
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Global View*
 
-تعرض ميزة **المباني ثلاثية الأبعاد** المباني كنماذج ثلاثية الأبعاد حجمية بدلاً من الأشكال المسطحة. يتم توليد المباني من [بيانات OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings)، باستخدام معلومات الارتفاع من الوسوم مثل `height` و`building:levels` عند توفرها. تُعرض المباني ثلاثية الأبعاد فقط عند مستويات التكبير الأعلى (رؤية المدينة/الشارع)، حيث يمكن عرض المباني الفردية.  
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings*  
-استخدم المفتاح الرئيسي لتمكين أو تعطيل عرض المباني ثلاثية الأبعاد. لعرض المباني ثلاثية الأبعاد، قم بإمالة الخريطة بوضع إصبعين على الشاشة وسحبهما لأعلى.
+![عرض الكرة الأرضية](@site/static/img/map/globe_view_1.png) ![عرض الكرة الأرضية](@site/static/img/map/globe_view_2.png)
 
-حاليًا، هذا الخيار متاح فقط عند تمكين [ملحق تطوير OsmAnd](../plugins/development.md).  
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
-
-تنقسم إعدادات المباني ثلاثية الأبعاد إلى مجموعتين: **المظهر** و**الأداء**.
-
-**المظهر: اللون**. يتحكم في لون المباني ثلاثية الأبعاد. عند النقر على اللون، يفتح OsmAnd شاشة معاينة منفصلة حيث يمكنك رؤية الخريطة أثناء تعديل الإعداد.
-- **نمط الخريطة** — يستخدم اللون الافتراضي للمباني من النمط المحدد حاليًا.
-- **مخصص** — يسمح لك بتعيين لون مخصص للمباني بشكل منفصل للوضع النهاري / الليلي.
-
-:::tip Purchase
-تخصيص ألوان المباني ثلاثية الأبعاد هو [ميزة مدفوعة](../purchases/index.md).  
-:::
-
-إذا لم يتم شراء الألوان المخصصة، سترى حالة فارغة مع وصف قصير وزر الحصول. إذا كان المخصص متاحًا، يمكنك التبديل بين النهار والليل، واختيار لون من اللوحة (أو فتح جميع الألوان)، ثم النقر على تطبيق.
-
-**المظهر: الرؤية**. يتحكم في عدم الشفافية (الشفافية) للمباني ثلاثية الأبعاد. استخدم الشريط المنزلق لتعيين الرؤية كنسبة مئوية. القيم المنخفضة تجعل المباني أكثر شفافية وتساعد الطرق/التسميات على البقاء قابلة للقراءة. القيم العالية تجعل المباني تبدو أكثر صلابة ومهيمنة بصريًا. النقر على الرؤية يفتح أيضًا شاشة معاينة منفصلة مع الشريط المنزلق.
-
-في شاشات المعاينة (اللون / الرؤية)، يمكنك استخدام إعادة تعيين إلى الافتراضي من شريط التطبيق لاستعادة القيمة الافتراضية.
-
-**الأداء: مستوى التفاصيل**. يتحكم في مدى تفصيل هندسة المبنى ثلاثي الأبعاد:
-- منخفض (افتراضي) — هندسة أبسط.
-- عالي — هندسة أكثر تفصيلاً.
-
-**الأداء: مسافة الرؤية**. يتحكم في مدى بعداً من الكاميرا يتم عرض المباني ثلاثية الأبعاد:
-- قريب (افتراضي) — يعرض المباني أقرب إليك.
-- بعيد — يعرض المباني من مسافة أطول.
-
-كلا خياري الأداء يستخدمان مفتاح تبديل ذو موضعين مباشرة في شاشة إعدادات المباني ثلاثية الأبعاد.
-
-<!--
-## Map Legend {#map-legend}
-
-The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
-
-The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
--->
+يسمح **عرض الكرة الأرضية** بعرض الخريطة ككرة أرضية كروية بدلاً من الإسقاط المسطح. يغير هذا الوضع هندسة سطح الخريطة ويعدل التفاعل مع الخريطة للتنقل الكروي. لمزيد من المعلومات، انظر قسم [عرض الكرة الأرضية](../map/interact-with-map.md#globe-view) في مقالة التفاعل مع الخريطة.
 
 
 ## إعدادات إضافية {#additional-settings}
@@ -489,7 +476,7 @@ The legend helps users interpret what they see on the map. You can access the fu
 
 <TabItem value="ios" label="iOS">  
 
-![إعدادات شبكة الإحداثيات iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
+![إظهار الحدود iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 </TabItem>
 
@@ -515,20 +502,6 @@ The legend helps users interpret what they see on the map. You can access the fu
 
 [الإجراء السريع](../widgets/quick-action.md#overview): يمكنك أيضًا إضافة مفتاح تبديل سريع *إظهار/إخفاء شبكة الإحداثيات* إلى مجموعة [تكوين الخريطة](../widgets/quick-action.md#configure-map) للوصول السريع.
 
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->
 
 ## المسارات {#routes}
 
@@ -548,7 +521,7 @@ The legend helps users interpret what they see on the map. You can access the fu
 
 </Tabs>
 
-![مسارات الخريطة - مسارات الدراجات](@site/static/img/map/map-routes-cycle-routes.png)  ![شبكة المشي مسارات الخريطة](@site/static/img/map/map-routes-hiking-network.png)
+![مسارات الخريطة - مسارات الدراجات](@site/static/img/map/map-routes-cycle-routes.png)  ![مسارات الخريطة - شبكة المشي](@site/static/img/map/map-routes-hiking-network.png)
 
 المسار هو طريق محدد مسبقًا يجب اتباعه للوصول إلى وجهة معينة. يمكن تحسين المسار لأنواع مختلفة من السفر، مثل ركوب الدراجات، والمشي لمسافات طويلة، والجري، والنقل العام، وغيرها. يمكنك قراءة المزيد عن المسارات وأنواعها في [مقالة المسارات](../map/routes.md).
 

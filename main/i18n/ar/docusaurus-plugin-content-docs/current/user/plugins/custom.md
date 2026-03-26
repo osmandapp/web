@@ -1,8 +1,9 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
-sidebar_position: 4
+source-hash: f7e42a121aebcff7943e8adafef1fbff3cfc1eee0eb911687d5bdc3b4002fa7a
+sidebar_position: 5
 title:  حزمة مخصصة
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStoreTracker from '@site/src/components/buttons/TrackerGooglePlay.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## نظرة عامة {#overview}
@@ -29,7 +29,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![حزمة مخصصة](@site/static/img/plugins/custom/1.jpg)
 
-ملف `.osf` هو ملف `.zip` تمت إعادة تسميته ويحتوي على ملفات ومجلدات `.json`. كمثال، يمكنك تنزيل ملفاتنا المعدة من [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) أو إضافة جاهزة من هذا [الرابط](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).
+ملف `.osf` *هو ملف* `.zip` تمت إعادة تسميته ويحتوي على ملفات ومجلدات `.json`. كمثال، يمكنك تنزيل ملفاتنا المعدة من [Google Drive](https://drive.google.com/drive/folders/1wDPGThkdRi9_3UrCKROgt49qi-1gM6jk?usp=sharing) أو إضافة جاهزة من هذا [الرابط](https://drive.google.com/open?id=1efZ01uAIL27aTQLLoTl8KYH-ts_WSRSe).  
 
 يمكنك تعديل ملفات `.json` باستخدام ملف *items.json* الخاص بـ OsmAnd، والذي يحتوي على أوامر لاستيراد ملفات `.json` وملفات `.obf` والأيقونات والمزيد.
 
@@ -44,7 +44,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### items.json {#itemsjson}
 
 <details>
-<summary> ملف <b>items.json</b> الخاص بـ OsmAnd. </summary>
+<summary> ملف <b>items.json</b> الخاص بـ OsmAnd. </summary> 
 
 ```
 {
@@ -281,14 +281,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### وصف الإضافة {#plugin-description}
 
-للبدء، تقوم بإنشاء وإضافة الإضافة الخاصة بك إلى *items.JSON*. النوع الأول من الاستيراد هو **"PLUGIN"**.
-*<u>ملاحظة</u>*. يجب عليك إنشاء وإضافة هذا السطر لكل نوع **"pluginId":"test.plugin"**، حيث *test.plugin* هو اسم الحزمة الخاصة بك.
+للبدء، تقوم بإنشاء وإضافة الإضافة الخاصة بك إلى *items.JSON*. النوع الأول من الاستيراد هو **"PLUGIN"**.  
+   *<u>ملاحظة</u>*. يجب عليك إنشاء وإضافة هذا السطر لكل نوع **"pluginId":"test.plugin"**، حيث *test.plugin* هو اسم الحزمة الخاصة بك.  
 
    ![حزمة مخصصة](@site/static/img/plugins/custom/2.jpg)
 
 ### صور الإضافة {#plugin-images}
 
-لاستيراد صور أيقونات الإضافة الخاصة بك إلى OsmAnd، قم بإنشاء مجلد (في مثالنا هو مجلد *"res"*) حيث سيتم تخزين ملفات الصور. اسم هذا النوع هو **"RESOURCES"**.
+لاستيراد صور أيقونات الإضافة الخاصة بك إلى OsmAnd، قم بإنشاء مجلد (في مثالنا هو مجلد *"res"* حيث سيتم تخزين ملفات الصور. اسم هذا النوع هو **"RESOURCES"**.  
 
    ![حزمة مخصصة](@site/static/img/plugins/custom/4.jpg)
 
@@ -302,20 +302,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### التنزيلات {#downloads}
 
-يمكنك إضافة أي ملفات مثل *SQLite أو OBF أو الخطوط* للتنزيل باستخدام نوع **"DOWNLOADS"**. يمكن العثور على الأنواع الرئيسية للملفات القابلة للتنزيل [هنا](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).
-*<u>ملاحظة</u>*. يمكن للوسم **"isHidden":"true"** (افتراضيًا هو *false*) إخفاء بيانات خريطتك من [الخرائط والموارد](../personal/maps-resources.md#local-menu) في OsmAnd. في **"scope-id"** يمكنك إضافة جميع المعلومات الضرورية حول عنوان URL لملفك واسمه ووصفه والمزيد.
+يمكنك إضافة أي ملفات مثل *SQLite أو OBF أو الخطوط* للتنزيل باستخدام نوع **"DOWNLOADS"**. يمكن العثور على الأنواع الرئيسية للملفات القابلة للتنزيل [هنا](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
+   *<u>ملاحظة</u>*. يمكن للوسم **"isHidden":"true"** (افتراضيًا هو *false*) إخفاء بيانات خريطتك من [الخرائط والموارد](../personal/maps-resources.md#local-menu) في OsmAnd. في **"scope-id"** يمكنك إضافة جميع المعلومات الضرورية حول عنوان URL لملفك واسمه ووصفه والمزيد.  
 
    ![حزمة مخصصة](@site/static/img/plugins/custom/3.jpg)
 
 ### التنزيلات المقترحة {#suggested-downloads}
 
-في نوع **"SUGGESTED_DOWNLOADS"**، يمكنك تنزيل الخرائط التي يقدمها OsmAnd عند استيراد إضافة جديدة.
+في نوع **"SUGGESTED_DOWNLOADS"**، يمكنك تنزيل الخرائط التي يقدمها OsmAnd عند استيراد إضافة جديدة.  
 
    ![حزمة مخصصة](@site/static/img/plugins/custom/7.jpg)
 
 ### الملفات {#files}
 
- في نوع **"FILE"**، يمكنك إضافة ملفات من مجلدات الإضافة الخاصة بك إلى مجلدات OsmAnd، والتي يمكن العثور على "النوع الفرعي" الخاص بها [هنا](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). في المثال المقدم، تمت إضافة ملفي *routing.xml* و *rendering.xml*. يمكنك القراءة عن كيفية إنشاء هذه الملفات من الروابط [هنا](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) و [هنا](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).
+ في نوع **"FILE"**، يمكنك إضافة ملفات من مجلدات الإضافة الخاصة بك إلى مجلدات OsmAnd، والتي يمكن العثور على "النوع الفرعي" الخاص بها [هنا](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). في المثال المقدم، تمت إضافة ملفي *routing.xml* و *rendering.xml*. يمكنك القراءة عن كيفية إنشاء هذه الملفات من الروابط [هنا](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) و [هنا](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).  
 
    ![حزمة مخصصة](@site/static/img/plugins/custom/8.jpg)
 
@@ -326,7 +326,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك إلقاء نظرة على بعض الإضافات التي صنعها مستخدمو OsmAnd بأنفسهم:
 
- - إضافة [خرائط الولايات المتحدة الأمريكية](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) المخصصة (بيانات PAD-US، مسارات وطرق USFS، استجمام USFS).
+ - إضافة [خرائط الولايات المتحدة](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) المخصصة (بيانات PAD-US، مسارات وطرق USFS، استجمام USFS).
  - إضافة [خرائط Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) المخصصة.
  - إضافة [مفتاح الخريطة](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) المخصصة.
  - [UMP-PL](https://ump.waw.pl/) بولندا [إضافة خريطة مخصصة](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).

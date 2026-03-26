@@ -1,5 +1,5 @@
 ---
-source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
+source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
 sidebar_position: 18
 title:  الإضافات
 ---
@@ -84,7 +84,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |[Mapillary](#mapillary) | [طبقة الخريطة](../plugins/mapillary.md#map-layer)، [قائمة السياق](../plugins/mapillary.md#map-context-menu) ، [أداة مصغرة (Widget)](../plugins/mapillary.md#mapillary-widget)|
 |[المستشعرات الخارجية](#external-sensors) 🤖  | [أداة مصغرة (Widget)](../plugins/external-sensors.md#widgets) |
 |[مقاييس المركبة](#vehicle-metrics)  | [إعدادات مخصصة](../plugins/vehicle-metrics#scanner-settings)، [أداة مصغرة (Widget)](../plugins/vehicle-metrics#widgets) |
-|[مراقب النجوم](#star-watcher)  | [شاشة](../plugins/starwatcher.md#star-map-screen)، [قائمة السياق](../plugins/starwatcher.md#celestial-object-info) |
+|[الفلك](#astronomy)  | [شاشة](../plugins/astronomy.md#star-map-screen)، [قائمة السياق](../plugins/astronomy.md#celestial-object-info) |
 |[إمكانية الوصول](#accessibility) 🤖  | [إعدادات مخصصة](../plugins/accessibility.md#plugin-settings) |
 |[تطوير OsmAnd](#osmand-development) | [إعدادات مخصصة](../plugins/development.md#plugin-settings) |
 |[متتبع OsmAnd](#osmand-tracker) 🤖  | [طبقة الخريطة](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map)، [أداة مصغرة (Widget)](../plugins/osmand-tracker.md#tracker-widget)، [قائمة السياق](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
@@ -194,9 +194,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 قم بتوصيل ماسح OBD-II لعرض بيانات السيارة في OsmAnd وتخزين المعلومات في تسجيلات المسار.
 
-### [مراقب النجوم](./starwatcher.md) {#star-watcher}
+### [الفلك](./astronomy.md) {#astronomy}
 
-يعرض مراقب النجوم طبقة تفاعلية لسماء النجوم مع النجوم، والكوكبات، والشمس، والقمر، والكواكب. يساعدك على تحديد الأجسام السماوية فوق موقعك الحالي، ومعاينة مساراتها لتاريخ وزمان محدد، وتخطيط جلسات مراقبة النجوم باستخدام عناصر التحكم في الوقت والخيارات المدمجة للعرض.
+يعرض إضافة الفلك طبقة تفاعلية لسماء النجوم مع النجوم، والكوكبات، والشمس، والقمر، والكواكب. يساعدك على تحديد الأجسام السماوية فوق موقعك الحالي، ومعاينة مساراتها لتاريخ وزمان محدد، وتخطيط جلسات مراقبة النجوم باستخدام عناصر التحكم في الوقت والخيارات المدمجة للعرض.
 
 ### [إمكانية الوصول](./accessibility.md) {#accessibility}
 

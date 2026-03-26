@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: شاشة الخريطة أثناء الملاحة
 ---
@@ -197,8 +197,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - ***<Translate android="true" id="map_widget_renderer"/>***. يستخدم مع الألوان الافتراضية. للحصول على وصف كامل للألوان، انتقل إلى [أنماط الخريطة الافتراضية](../../map/map-styles.md#default-map-styles).  
     ![نمط الخريطة](@site/static/img/navigation/route/map_st_2.png)
 
-- ***مخصص***. يسمح لك بتحديد خط بأي لون وشفافية مفضلة. يمكنك تحديد إعدادات مختلفة لخريطة النهار وبشكل منفصل لخريطة الليل.  
-    ![مخصص](@site/static/img/navigation/route/custom.png)   ![مخصص](@site/static/img/navigation/route/custom_ios.png)
+- ***مخصص***. يسمح لك بتحديد خط بأي لون وشفافية مفضلة. يمكنك تحديد إعدادات مختلفة لخريطة النهار وبشكل منفصل لخريطة الليل. تشمل لوحة الألوان ألوان الوصول السريع، وخيار إضافة لون مخصص (*+*)، وقائمة كاملة بالألوان المتاحة (*جميع الألوان*).            
+    ![مخصص](@site/static/img/navigation/route/custom_new.png)   ![مخصص](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. يظهر ارتفاع نقطة المسار كتدرج **أخضر-أصفر-أحمر**. يشير **الأخضر** إلى أدنى نقطة في المسار، ويشير **الأصفر** إلى متوسط ارتفاع النقطة، و**الأحمر** هو الأعلى. إذا كان فرق ارتفاع المسار أقل من ١٠٠ متر، يتم تطبيق التدرج جزئيًا أو لا يتم تطبيقه، على سبيل المثال لتسلق بسيط من ١٠٠ متر إلى ١٥٠ مترًا - سيكون التدرج **أخضر-أصفر**. لاحظ أن اللون لا يمثل القيمة المطلقة للارتفاع.  
     ![الارتفاع](@site/static/img/navigation/route/Altitude_rl.png)

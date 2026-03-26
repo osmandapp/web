@@ -1,5 +1,5 @@
 ---
-source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
 sidebar_position: 11
 title:  المسارات
 ---
@@ -253,13 +253,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![معلومات المسار](@site/static/img/map/route_info_1_andr.png)
+![معلومات المسار](@site/static/img/map/route_info_1_andr_new.png) ![معلومات المسار](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![معلومات المسار](@site/static/img/map/route_info_1_ios.png)
+![معلومات المسار](@site/static/img/map/route_info_1_ios_new.png) ![معلومات المسار](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -276,21 +276,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لعرض الرسم البياني للارتفاع أو الانحدار أو تفاصيل الارتفاع لمسار محدد، ما عليك سوى النقر على أي من القيم التالية في القائمة السياقية: **المسافة**، **الصعود**، **النزول**، أو **الارتفاع**.
 
+يمكنك أيضًا فتح علامة تبويب *المسار* والتبديل إلى عرض *الارتفاع* لرؤية الرسم البياني الكامل للارتفاع للمسار.
+
+**ملاحظة:** يتم إنشاء بيانات الارتفاع تلقائيًا وقد تختلف قليلاً اعتمادًا على البيانات المتاحة.
+
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![المسارات على الأرض](@site/static/img/map/routes_osm_2.png)
+![Routes on the ground](@site/static/img/map/routes_osm_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![المسارات على الأرض](@site/static/img/map/routes_osm_ios_2.png)
+![Routes on the ground](@site/static/img/map/routes_osm_ios_2.png)
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+--> 
 
 ### حفظ كمسار {#save-as-a-track}
 
