@@ -453,6 +453,11 @@ export default function PoiLayer() {
         let ignore = false;
         let controller = new AbortController();
 
+        function clearPoiList() {
+            updateLayerOnMap(null);
+            setPoiList(null);
+        }
+
         function updateLayerOnMap(poiListState) {
             const layer = poiListState?.layer;
             const hasMarkers = layer?.getLayers?.()?.length > 0;
@@ -524,10 +529,11 @@ export default function PoiLayer() {
                             setBbox(newBbox);
                             setPrevCategories(showPoiCategories);
                             setUseLimit(res.useLimit ?? false);
+                        } else {
+                            clearPoiList();
                         }
                     } else {
-                        updateLayerOnMap(null);
-                        setPoiList(null);
+                        clearPoiList();
                     }
                 } finally {
                     map.spin(false);
@@ -541,10 +547,15 @@ export default function PoiLayer() {
         hideMarkersNearPin(map, ctx);
 
         async function getPoiList() {
+            const isTypeChange = typesChanged();
+            const categoriesChanged =
+                !prevCategories ||
+                JSON.stringify(prevCategories.map((c) => c.category).sort()) !==
+                    JSON.stringify(ctx.showPoiCategories.map((c) => c.category).sort());
             if (
                 (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
                 move ||
-                typesChanged()
+                isTypeChange
             ) {
                 if (prevController) {
                     prevController.abort();
@@ -552,40 +563,46 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(zoom);
                 if (ctx.showPoiCategories.length > 0) {
+                    if (categoriesChanged) {
+                        setBbox(null);
+                        setPrevCategories(null);
+                    }
                     reqIdRef.current += 1;
                     debouncedGetPoi({
                         controller,
                         ignore,
-                        poiList,
+                        poiList: categoriesChanged ? null : poiList,
                         showPoiCategories: ctx.showPoiCategories,
-                        savedBbox: bbox,
-                        prevCategories,
+                        savedBbox: categoriesChanged ? null : bbox,
+                        prevCategories: categoriesChanged ? null : prevCategories,
                         poiIconCache: ctx.poiIconCache,
                         zoom,
                         reqId: reqIdRef.current,
                         visibleBboxInfo: getVisibleBboxInfo(ctx, map),
                     });
                 }
-            } else {
-                if (poiList?.layer && isEmpty(ctx.showPoiCategories)) {
-                    const emptyState = { layer: null, listFeatures: null };
-                    updateLayerOnMap(emptyState);
-                    setPoiList(emptyState);
-                } else if (poiList?.listFeatures?.features?.length > 0) {
-                    const newLayer = await createPoiLayer({
-                        ctx,
-                        poiList: poiList.listFeatures.features,
-                        globalPoiIconCache: ctx.poiIconCache,
-                        map,
-                        zoom,
-                    });
-                    const nextState = {
-                        layer: newLayer,
-                        listFeatures: poiList?.listFeatures,
-                    };
-                    updateLayerOnMap(nextState);
-                    setPoiList(nextState);
+            } else if (isEmpty(ctx.showPoiCategories)) {
+                // if categories are cleared, then clear the list and related states
+                setBbox(null);
+                setPrevCategories(null);
+                if (poiList) {
+                    clearPoiList();
                 }
+            } else if (poiList?.listFeatures?.features?.length > 0) {
+                // if categories are the same, but zoom level changed from low to high, then show all pois without requesting again
+                const newLayer = await createPoiLayer({
+                    ctx,
+                    poiList: poiList.listFeatures.features,
+                    globalPoiIconCache: ctx.poiIconCache,
+                    map,
+                    zoom,
+                });
+                const nextState = {
+                    layer: newLayer,
+                    listFeatures: poiList?.listFeatures,
+                };
+                updateLayerOnMap(nextState);
+                setPoiList(nextState);
             }
         }
 

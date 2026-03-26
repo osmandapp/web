@@ -88,6 +88,13 @@ export default function SearchResults() {
 
     const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute } = useSearchNav();
 
+    // Clear search results when search params change
+    useEffect(() => {
+        if (params.query || params.type) {
+            setResult(null);
+        }
+    }, [params.query, params.type]);
+
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebouncedLatLon({ lat, lon });
@@ -199,19 +206,26 @@ export default function SearchResults() {
     }, [currentLoc, ctx.searchResult, centerFromHash]);
 
     useEffect(() => {
+        if (ctx.processingSearch) return;
         if (!memoizedResult) return;
         if (memoizedResult === EMPTY_SEARCH_RESULT) {
             setResult(EMPTY_SEARCH_RESULT);
             return;
         }
+        let cancelled = false;
         const updateIcons = async () => {
             const resultWithIcons = [...memoizedResult];
             await calculateIcons(resultWithIcons, ctx);
-            setResult({ features: resultWithIcons });
+            if (!cancelled) {
+                setResult({ features: resultWithIcons });
+            }
         };
 
         updateIcons().then();
-    }, [memoizedResult]);
+        return () => {
+            cancelled = true;
+        };
+    }, [memoizedResult, ctx.processingSearch]);
 
     useEffect(() => {
         if (locReady) {
