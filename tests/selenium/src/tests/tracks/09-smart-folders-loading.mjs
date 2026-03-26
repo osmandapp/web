@@ -24,7 +24,7 @@ export default async function test() {
     await clickBy(By.id('se-sort-az'));
     await waitByRemoved(By.id('se-loading-page'), true);
     for (const folder of SMART_FOLDERS) {
-        const parent = await waitBy(By.id("se-menu-cloud-${folder.name}"));
+        const parent = await waitBy(By.id(`se-menu-cloud-${folder.name}`));
         const text = await parent.getText();
         await assert(text.includes(`${folder.size} tracks`), `${folder.name} has incorrect size`);
     }
