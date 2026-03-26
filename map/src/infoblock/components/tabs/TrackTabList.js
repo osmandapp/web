@@ -32,7 +32,7 @@ export default class TrackTabList {
             Points: 'shared_string_gpx_points',
         };
 
-        tabs.Overview = <GeneralInfoTab key={TRACK_TAB_IDS.GENERAL} setShowInfoBlock={setShowInfoBlock} />;
+        tabs.Overview = <GeneralInfoTab key={TRACK_TAB_IDS.GENERAL} />;
         tabs.Track = isLocalTrack(ctx) ? (
             <PointsTab key={TRACK_TAB_IDS.TRACK} />
         ) : (

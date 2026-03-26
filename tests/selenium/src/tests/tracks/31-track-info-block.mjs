@@ -52,17 +52,13 @@ const TRACKS = [
 
 const MOBILE_SKIP = /(Path|Gravel|Street|Asphalt)/; // bye-bye mobile version
 
-const localTrackButtons = [
-    'se-local-track-actions-save-to-cloud',
-    'se-local-track-actions-download',
-    'se-infoblock-button-close-track',
-    'se-infoblock-button-delete-track',
-];
+const localTrackButtons = ['se-local-track-actions-save-to-cloud', 'se-local-track-actions-download'];
 const cloudTrackButtons = [
+    'se-track-actions-visibility',
+    'se-track-actions-appearance',
     'se-track-actions-edit',
+    'se-track-actions-share',
     'se-track-actions-download',
-    'se-infoblock-button-close-track',
-    'se-infoblock-button-delete-track',
 ];
 
 const TRACK_WITH_SRTM_ELE = 'test-routed-osrm.gpx';
