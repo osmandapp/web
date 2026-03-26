@@ -548,6 +548,10 @@ export default function PoiLayer() {
 
         async function getPoiList() {
             const isTypeChange = typesChanged();
+            const categoriesChanged =
+                !prevCategories ||
+                JSON.stringify(prevCategories.map((c) => c.category).sort()) !==
+                    JSON.stringify(ctx.showPoiCategories.map((c) => c.category).sort());
             if (
                 (!isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
                 move ||
@@ -559,7 +563,7 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(zoom);
                 if (ctx.showPoiCategories.length > 0) {
-                    if (isTypeChange) {
+                    if (categoriesChanged) {
                         setBbox(null);
                         setPrevCategories(null);
                     }
@@ -567,10 +571,10 @@ export default function PoiLayer() {
                     debouncedGetPoi({
                         controller,
                         ignore,
-                        poiList: isTypeChange ? null : poiList,
+                        poiList: categoriesChanged ? null : poiList,
                         showPoiCategories: ctx.showPoiCategories,
-                        savedBbox: isTypeChange ? null : bbox,
-                        prevCategories: isTypeChange ? null : prevCategories,
+                        savedBbox: categoriesChanged ? null : bbox,
+                        prevCategories: categoriesChanged ? null : prevCategories,
                         poiIconCache: ctx.poiIconCache,
                         zoom,
                         reqId: reqIdRef.current,
