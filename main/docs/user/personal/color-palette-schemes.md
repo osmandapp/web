@@ -70,7 +70,7 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 
 Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example, *avalanche slope* is provided by default. See the [Topography](../plugins/topography.md#default-color-scheme) article for more details.
 
-On Android, palettes for *Slope* and *Altitude* color schemes can also be created or edited directly in the app using the [Gradient Palette editor](../plugins/topography.md#modify-color-scheme). This is a paid feature <ProFeature />.
+On Android, palettes for *Slope* and *Altitude* color schemes can also be created or edited directly in the app using the [Color Palette editor](../plugins/topography.md#modify-color-scheme). This is a paid feature <ProFeature />.
 
 ### Tracks & Routes {#tracks-routes}
 
@@ -95,7 +95,7 @@ Line gradient visualizations uses palette files (`route_<type_name>_<palette_nam
 - For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed (`route_speed_default.txt`), Slope (`route_slope_default.txt`),* and *Elevation (Altitude) (`route_elevation_default.txt`)*.
 - For [GPX Tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Speed, Slope, Max Speed (`route_maxspeed_default.txt`)*, and *Elevation (Altitude)*, or info from *External sensors*.
 
-On Android, palettes can also be created or edited directly in the app using the [Gradient Palette editor](../map/tracks/appearance.md#gradient-palettes). This is a paid feature <ProFeature />.
+On Android, palettes can also be created or edited directly in the app using the [Color Palette editor](../map/tracks/appearance.md#color-palette-editor). This is a paid feature <ProFeature />.
 
 ### Favorites & Waypoints {#favorites-waypoints}
 
