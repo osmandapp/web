@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 import { mobile } from '../../options.mjs';
-import { clickBy, enclose, enumerateIds, matchInnerTextBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, matchInnerTextBy, waitBy, waitByRemoved } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -52,17 +52,13 @@ const TRACKS = [
 
 const MOBILE_SKIP = /(Path|Gravel|Street|Asphalt)/; // bye-bye mobile version
 
-const localTrackButtons = [
-    'se-infoblock-button-save-to-cloud',
-    'se-infoblock-button-download-gpx',
-    'se-infoblock-button-close-track',
-    'se-infoblock-button-delete-track',
-];
+const localTrackButtons = ['se-local-track-actions-save-to-cloud', 'se-local-track-actions-download'];
 const cloudTrackButtons = [
-    'se-infoblock-button-edit-track',
-    'se-infoblock-button-download-gpx',
-    'se-infoblock-button-close-track',
-    'se-infoblock-button-delete-track',
+    'se-track-actions-visibility',
+    'se-track-actions-appearance',
+    'se-track-actions-edit',
+    'se-track-actions-share',
+    'se-track-actions-download',
 ];
 
 const TRACK_WITH_SRTM_ELE = 'test-routed-osrm.gpx';
@@ -118,9 +114,16 @@ async function validateInfoBlockStrings(strings, gpx) {
 async function validateInfoBlockButtons(ids) {
     await enclose(
         async () => {
-            const buttons = await enumerateIds('se-infoblock-button-');
-            return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
+            const prefix = ids[0]?.startsWith('se-local-track-actions-')
+                ? 'se-local-track-actions-'
+                : 'se-track-actions-';
+            const actual = [...new Set(await enumerateIds(prefix))].sort();
+            const expected = [...ids].sort();
+            return JSON.stringify(expected) === JSON.stringify(actual);
         },
         { tag: 'validateInfoBlockButtons' }
     );
+    for (const id of ids) {
+        await waitBy(By.id(id));
+    }
 }

@@ -24,20 +24,26 @@ const SHARE = 'share';
 const DOWNLOAD = 'download';
 const DELETE = 'delete';
 
-const LOCAL_ACTIONS = [RENAME];
+const TRACK_TYPES = {
+    LOCAL: 'local',
+    CLOUD: 'cloud',
+    SHARE: 'share',
+};
+
+const LOCAL_ACTIONS = [RENAME, DELETE];
 const CLOUD_ACTIONS = [MAKE_VISIBLE, RENAME, DUPLICATE, SHARE, DOWNLOAD, DELETE];
 const SHARE_ACTIONS = [MAKE_VISIBLE, DUPLICATE, DOWNLOAD, DELETE];
 
 const TRACK_ACTION_LISTS = {
-    local: LOCAL_ACTIONS,
-    cloud: CLOUD_ACTIONS,
-    share: SHARE_ACTIONS,
+    [TRACK_TYPES.LOCAL]: LOCAL_ACTIONS,
+    [TRACK_TYPES.CLOUD]: CLOUD_ACTIONS,
+    [TRACK_TYPES.SHARE]: SHARE_ACTIONS,
 };
 
 function getTrackType(smartf, ctx) {
-    if (smartf?.type === SHARE_TYPE) return 'share';
-    if (isLocalTrack(ctx)) return 'local';
-    return 'cloud';
+    if (smartf?.type === SHARE_TYPE) return TRACK_TYPES.SHARE;
+    if (isLocalTrack(ctx)) return TRACK_TYPES.LOCAL;
+    return TRACK_TYPES.CLOUD;
 }
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smartf = null }, ref) => {
@@ -50,7 +56,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
 
     const trackType = getTrackType(smartf, ctx);
     const actionList = TRACK_ACTION_LISTS[trackType];
-    const isShared = trackType === 'share';
+    const isShared = trackType === TRACK_TYPES.SHARE;
 
     async function createDuplicateTrack() {
         const parts = track.name.split('/');
@@ -174,7 +180,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                 <DeleteTrackDialog
                     dialogOpen={openDeleteDialog}
                     setDialogOpen={setOpenDeleteDialog}
-                    file={track}
+                    file={trackType === TRACK_TYPES.LOCAL ? null : track}
                     setOpenActions={setOpenActions}
                     shared={isShared}
                 />
@@ -184,7 +190,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions, smart
                     setOpenDialog={setOpenRenameDialog}
                     track={track}
                     setOpenActions={setOpenActions}
-                    isLocalTrack={trackType === 'local'}
+                    isLocalTrack={trackType === TRACK_TYPES.LOCAL}
                 />
             )}
             {openDownloadDialog && (
