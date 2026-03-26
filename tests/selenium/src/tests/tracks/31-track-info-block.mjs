@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 import { mobile } from '../../options.mjs';
-import { clickBy, matchInnerTextBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, matchInnerTextBy, waitBy, waitByRemoved } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -112,6 +112,17 @@ async function validateInfoBlockStrings(strings, gpx) {
 }
 
 async function validateInfoBlockButtons(ids) {
+    await enclose(
+        async () => {
+            const prefix = ids[0]?.startsWith('se-local-track-actions-')
+                ? 'se-local-track-actions-'
+                : 'se-track-actions-';
+            const actual = [...new Set(await enumerateIds(prefix))].sort();
+            const expected = [...ids].sort();
+            return JSON.stringify(expected) === JSON.stringify(actual);
+        },
+        { tag: 'validateInfoBlockButtons' }
+    );
     for (const id of ids) {
         await waitBy(By.id(id));
     }

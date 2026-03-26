@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 import { mobile, ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
-import { clickBy, sendKeysBy, matchInnerTextBy, waitBy } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, sendKeysBy, matchInnerTextBy, waitBy } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -100,6 +100,14 @@ export async function selectProfile({ profile }) {
 }
 
 async function validateInfoBlockButtons(ids) {
+    await enclose(
+        async () => {
+            const actual = [...new Set(await enumerateIds('se-route-track-actions-'))].sort();
+            const expected = [...ids].sort();
+            return JSON.stringify(expected) === JSON.stringify(actual);
+        },
+        { tag: 'validateInfoBlockButtons' }
+    );
     for (const id of ids) {
         await waitBy(By.id(id));
     }
