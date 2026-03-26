@@ -274,6 +274,14 @@ const FavoriteLayer = () => {
                 const secLayersGroup = new L.FeatureGroup(secondaryLayers);
                 const res = new L.LayerGroup([secLayersGroup, mainLayersGroup]);
                 res.addTo(map);
+                // When a hidden favorites group is opened explicitly, keep all its markers visible.
+                if (fileId === openGroupId) {
+                    [...mainLayers, ...secondaryLayers].forEach((marker) => {
+                        if (marker?._icon?.style) {
+                            marker._icon.style.display = '';
+                        }
+                    });
+                }
                 updateMarkerZIndex(mainLayersGroup, MARKER_Z_INDEX_MAIN);
                 file.markersOnMap = res;
             }
