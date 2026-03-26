@@ -156,7 +156,7 @@ Adds **arrow markers** along the track to indicate movement direction.
 
 ![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Allows you to select whether to show the **start and finish icons** for track segments.
+Allows you to select whether to show the **start and finish icons** for track segments. For tracks with a large number of segments, these icons may be automatically disabled to improve map rendering performance. In this case, you can enable them manually if needed.
 
 ### Join Gaps {#join-gaps}
 

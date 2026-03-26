@@ -11,11 +11,6 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    // Where I am
-    await actionOpenContextMenu();
-    await clickBy(By.id('se-where-i-am'));
-    await waitBy(By.id('se-geojson-search'));
-
     // Open weather
     await actionOpenContextMenu();
     await clickBy(By.id('se-open-weather-action'));

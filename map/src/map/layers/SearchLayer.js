@@ -11,7 +11,7 @@ import PoiManager, {
     parseBrandType,
 } from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
-import { getPoiIcon } from './PoiLayer';
+import { getPoiIcon, POI_LAYER_ID } from './PoiLayer';
 import L from 'leaflet';
 import {
     CATEGORY_NAME,
@@ -109,25 +109,24 @@ export default function SearchLayer() {
     }, [ctx.zoomToCoords]);
 
     useEffect(() => {
+        removeOldSearchLayer();
+        const oldPoiLayer = findFeatureGroupById(map, POI_LAYER_ID);
+        if (oldPoiLayer) {
+            map.removeLayer(oldPoiLayer);
+        }
         if (ctx.searchQuery) {
-            removeOldSearchLayer();
-            //remove old categories from search
             ctx.setShowPoiCategories([]);
             if (ctx.searchQuery.type) {
                 searchByCategory(ctx.searchQuery);
+            } else if (ctx.searchQuery.latlng) {
+                searchByWord(ctx.searchQuery).then();
             } else {
-                if (ctx.searchQuery.latlng) {
-                    searchByWord(ctx.searchQuery).then();
-                } else {
-                    console.debug('SearchLayer: search query without latlng');
-                }
+                console.debug('SearchLayer: search query without latlng');
             }
+        } else if (ctx.configureMapState.pois) {
+            ctx.setShowPoiCategories([...ctx.configureMapState.pois]);
         } else {
-            if (ctx.configureMapState.pois) {
-                ctx.setShowPoiCategories([...ctx.configureMapState.pois]);
-            } else {
-                ctx.setShowPoiCategories([]);
-            }
+            ctx.setShowPoiCategories([]);
         }
     }, [ctx.searchQuery]);
 

@@ -30,7 +30,7 @@ export default async function test() {
     await waitBy(By.id('se-default-search-categories'));
     await clickBy(By.id(`se-default-search-categories-item-${searchCategory}`));
     await waitBy(By.id('se-search-results'));
-    await waitBy(By.id('se-search-result-item'));
+    await waitBy(By.id('se-search-result-item-accomodation-0'));
     url = await getUrl();
     await assert(url.includes(SEARCH_URL), `Step 1: URL should include ${SEARCH_URL}, got: ${url}`);
 
@@ -48,12 +48,12 @@ export default async function test() {
     // Step 3: Return to search and verify results are still open
     await clickBy(By.id('se-show-menu-search'));
     await waitBy(By.id('se-search-results'));
-    await waitBy(By.id('se-search-result-item'));
+    await waitBy(By.id('se-search-result-item-accomodation-0'));
     url = await getUrl();
     await assert(url.includes(SEARCH_URL), `Step 3: URL should include ${SEARCH_URL}, got: ${url}`);
 
     // Step 4: Click on first search result and wait for waypoint details
-    await clickBy(By.id('se-search-result-item'));
+    await clickBy(By.id('se-search-result-item-accomodation-0'));
     await waitBy(By.id('se-wpt-details'));
 
     // Step 5: Open map context menu and set navigation start point
@@ -139,7 +139,7 @@ export default async function test() {
     await clickBy(By.id('se-back-wpt-details'));
     await waitByRemoved(By.id('se-wpt-details'));
     await waitBy(By.id('se-search-results'));
-    await waitBy(By.id('se-search-result-item'));
+    await waitBy(By.id('se-search-result-item-accomodation-0'));
 
     await actionFinish();
 }
