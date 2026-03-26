@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useCallback, useContext, useRef, useState } from 'react';
 import { Box, CircularProgress } from '@mui/material';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import TabPanels from '../tabs/TabPanels';
@@ -21,10 +21,18 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
 
     const anchorEl = useRef(null);
     const [openActions, setOpenActions] = useState(false);
+    const [isCompactHeader, setIsCompactHeader] = useState(false);
 
     const { toggleVisibility, checkedSwitch } = useTrackVisibility({ file: track });
 
     const trackName = track ? getFileName(track) : null;
+    const showActionsBtn = (isCloudTrack(ctx) || isLocalTrack(ctx)) && track?.name;
+    const compactToolbarProps = isCompactHeader ? { className: styles.compactHeaderToolbar } : undefined;
+
+    const handleContentScroll = useCallback((e) => {
+        const shouldBeCompact = e.currentTarget.scrollTop > 0;
+        setIsCompactHeader((prev) => (prev === shouldBeCompact ? prev : shouldBeCompact));
+    }, []);
 
     if (!tabsObj || tabsObj.tabList.length === 0) {
         return null;
@@ -33,12 +41,12 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
     return (
         <Box id="se-track-context-menu" className={styles.trackContextMenuShell}>
             <HeaderNoUnderline
-                title=""
+                title={isCompactHeader ? trackName : ''}
                 onClose={onClose}
                 showBackButton={showBackButton}
+                toolbarProps={compactToolbarProps}
                 rightContent={
-                    (isCloudTrack(ctx) || isLocalTrack(ctx)) &&
-                    track?.name && (
+                    showActionsBtn && (
                         <ThreeDotsButton
                             name={'action_menu_track'}
                             tip={'shared_string_menu'}
@@ -49,7 +57,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                     )
                 }
             />
-            {trackName && (
+            {trackName && !isCompactHeader && (
                 <Box className={styles.nameBlock}>
                     <MenuItemWithLines
                         id={'se-track-' + trackName}
@@ -66,17 +74,21 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                 <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />
             ) : (
                 <Box className={styles.trackTabsColumn}>
-                    {isCloudTrack(ctx) && track && (
-                        <CloudTrackActionsButtons
-                            track={track}
-                            toggleVisibility={toggleVisibility}
-                            checkedSwitch={checkedSwitch}
-                        />
+                    {!isCompactHeader && (
+                        <>
+                            {isCloudTrack(ctx) && (
+                                <CloudTrackActionsButtons
+                                    track={track}
+                                    toggleVisibility={toggleVisibility}
+                                    checkedSwitch={checkedSwitch}
+                                />
+                            )}
+                            {isLocalTrack(ctx) && <LocalTrackActionsButtons track={track} />}
+                            {isRouteTrack(ctx) && <RouteTrackActionsButtons track={track} />}
+                            {isShareTrack(ctx) && <ShareTrackActionsButtons track={track} />}
+                        </>
                     )}
-                    {isLocalTrack(ctx) && track && <LocalTrackActionsButtons track={track} />}
-                    {isRouteTrack(ctx) && track && <RouteTrackActionsButtons track={track} />}
-                    {isShareTrack(ctx) && track && <ShareTrackActionsButtons track={track} />}
-                    <TabPanels tabsObj={tabsObj} />
+                    <TabPanels tabsObj={tabsObj} onContentScroll={handleContentScroll} />
                 </Box>
             )}
             <ActionsMenu

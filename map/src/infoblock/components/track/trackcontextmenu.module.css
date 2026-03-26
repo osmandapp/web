@@ -52,3 +52,13 @@
 .trackIconBox svg {
     fill: var(--svg-icon-color) !important;
 }
+
+.compactHeaderToolbar :global(.MuiTypography-root) {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    letter-spacing: 0.18px !important;
+}

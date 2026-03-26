@@ -14,6 +14,9 @@ export default function HeaderNoUnderline({
     appBarProps = {},
     titleId = undefined,
 }) {
+    const { className: toolbarClassName, ...restToolbarProps } = toolbarProps;
+    const mergedToolbarClassName = [headerStyles.toolbar, toolbarClassName].filter(Boolean).join(' ');
+
     return (
         <AppBar
             position="static"
@@ -21,7 +24,7 @@ export default function HeaderNoUnderline({
             sx={{ boxShadow: 'none !important', borderBottom: 'none !important' }}
             {...appBarProps}
         >
-            <Toolbar className={headerStyles.toolbar} {...toolbarProps}>
+            <Toolbar className={mergedToolbarClassName} {...restToolbarProps}>
                 <IconButton
                     id={showBackButton ? 'se-button-back' : 'se-button-close'}
                     variant="contained"

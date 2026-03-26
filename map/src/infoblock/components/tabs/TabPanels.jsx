@@ -4,7 +4,7 @@ import PersistentTabPanel from './PersistentTabPanel';
 import styles from './tabpanels.module.css';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 
-export default function TabPanels({ tabsObj }) {
+export default function TabPanels({ tabsObj, onContentScroll }) {
     const [value, setValue] = useState(tabsObj?.defaultTab);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function TabPanels({ tabsObj }) {
                     {tabsObj.tabList}
                 </TabList>
                 <ThickDivider />
-                <div className={styles.contentScroller}>
+                <div className={styles.contentScroller} onScroll={onContentScroll}>
                     {Object.values(tabsObj.tabs).map((item) => (
                         <PersistentTabPanel key={'tabpanel-track:' + item.key} selectedTabId={value} tabId={item.key}>
                             {item}
