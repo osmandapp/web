@@ -1,5 +1,5 @@
 ---
-source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
+source-hash: 004b4b8d94eaf093dcc696c34a008dc61bd0e4e803c5402b096e6f3105ac6e4d
 sidebar_position: 8
 title: الأماكن المشهورة
 ---
@@ -28,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 كل مكان مدرج في هذه الميزة مرتبط بـ **معرّف ويكيداتا (Wikidata ID)**، مما يمكّن OsmAnd من عرض أسماء موثقة وصور معاينة وروابط لمقالات ويكيبيديا. هذه الأداة **لا** تعرض جميع نقاط خريطة الشارع المفتوحة (OSM). فهي تقتصر على نقاط الاهتمام التي لها مراجع في ويكيداتا.
 
-حاليًا، تتضمن قاعدة البيانات المنسقة ما يقرب من **٥٠٬٠٠٠ إلى ١٥٠٬٠٠٠ من الأماكن الأعلى تقييمًا** على مستوى العالم، تم اختيارها من بين أكثر من **مليون** كائن من ويكيداتا + خريطة الشارع المفتوحة.
+حاليًا، تتضمن قاعدة البيانات المنسقة ما يقرب من **٥٠٬٠٠٠ إلى ١٥٠٬٠٠٠ من الأماكن الأعلى تقييمًا** على مستوى العالم، تم اختيارها من بين أكثر من **١ مليون** كائن من ويكيداتا + خريطة الشارع المفتوحة.
 
 :::note
 *هذه هي النسخة الأولى من ميزة الأماكن المشهورة. نرحب بآرائكم وملاحظاتكم على [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -60,21 +60,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## كيفية الاستخدام {#how-to-use}
 
-<InfoAndroidOnly/>
-
 تتضمن ميزة **الأماكن المشهورة** قائمة منسقة بالمعالم القريبة وطبقة من نقاط الاهتمام المستندة إلى ويكيبيديا على الخريطة.
 
 هناك طريقتان رئيسيتان للوصول إلى هذه الميزة:
 
 - **النسخة المجانية**  
   يمكنك الوصول إليها عبر [البحث](#explore-in-search) لاستكشاف الأماكن القريبة في عرض القائمة.  
-  *<Translate android="true" ids="android_button_seq"/>*. اذهب إلى: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*  
+  *<Translate android="true" ids="android_button_seq"/> فقط*. اذهب إلى: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*  
   
   تعرض قائمة الاستكشاف هذه أماكن ويكيبيديا/ويكيداتا المرتبة حسب الشعبية بالقرب من موقعك وتعمل عبر الإنترنت. تعرض ما يصل إلى ٥٠ مكانًا. بما أن نتائج الاستكشاف/ويكيبيديا مرتبة حسب التقييم، فقد تختلف الترتيب في هذه النتائج عن بحث نقاط الاهتمام العادي.
 
 - **النسخ المدفوعة** *(Maps+ و OsmAnd Pro)*  
   قم بتمكين الطبقة المرئية في [تخصيص الخريطة](#enable-layer).  
-  *<Translate android="true" ids="android_button_seq"/>*. اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
+  *<Translate android="true" ids="android_button_seq"/> و iOS*. اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   في هذا الوضع، تظهر نقاط الاهتمام المشهورة مباشرة على الخريطة مع معاينات مصغرة ومحتوى من ويكيبيديا.
 
@@ -118,15 +116,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## تفعيل الطبقة {#enable-layer}
 
-<InfoAndroidOnly/>
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>**. اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
 ![قائمة الأماكن المشهورة](@site/static/img/map/popular_places/popular_places_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → الأماكن المشهورة (ويكيبيديا)*
+
+![قائمة الأماكن المشهورة](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -210,7 +214,7 @@ In the Map Context menu How to access:
 <TabItem value="android" label="Android">  
 
 ![قائمة المعرض – أندرويد](@site/static/img/map/gallery_menu_android.png)
-![قائمة المعرض – أندرويد](@site/static/img/map/gallery_menu_android_1.png)
+![قائمة المعرض – أندرويد](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
@@ -223,7 +227,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-يمكن لـ **قائمة المعرض** عرض ما يصل إلى **١٠٠ صورة** تتعلق بنقطة الاهتمام المحددة. لعرض هذه الصور، انقر على **عرض الكل** (أندرويد) / **عرض الكل** (iOS). يمكنك التمرير عبر جميع الصور المتاحة. يؤدي النقر لفترة وجيزة على صورة ما إلى فتح عرض تفصيلي يوضح: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*.
+يمكن لـ **قائمة المعرض** عرض ما يصل إلى **١٠٠ صورة** تتعلق بنقطة الاهتمام المحددة. لعرض هذه الصور، انقر على **عرض الكل** (أندرويد) / **عرض الكل** (iOS). يمكنك التمرير عبر جميع الصور المتاحة. يؤدي النقر لفترة وجيزة على صورة ما إلى فتح عرض تفصيلي يوضح: *الوصف (حتى سطرين، أندرويد فقط)*، *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*.
 
 على iOS وiPadOS وmacOS، يمكنك التنقل بين الصور باستخدام مفاتيح لوحة المفاتيح (←/→ للانتقال بين الصور، Enter/Space للفتح).
 
@@ -233,7 +237,9 @@ In the Map Context menu How to access:
   شارك الصورة المحددة باستخدام أي تطبيق متوافق مثبت على جهازك (مثل تطبيقات المراسلة أو البريد الإلكتروني أو وسائل التواصل الاجتماعي). يتضمن المحتوى المشترك الصورة ورابط مصدرها (إن وجد).
 
 - **تفاصيل**  
-  افتح عرضًا تفصيليًا يعرض البيانات الوصفية حول الصورة، بما في ذلك: *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*، *المصدر*، و*الرابط المباشر*
+  افتح عرضًا تفصيليًا يعرض البيانات الوصفية حول الصورة، بما في ذلك: *الوصف (النص الكامل، أندرويد فقط)*، *الاسم*، *تاريخ الإضافة*، *المؤلف*، *الترخيص*، *المصدر*، و*الرابط المباشر*
+
+  **ملاحظة:** يعتمد لغة الوصف على لغة عرض التطبيق. إذا لم يكن الوصف باللغة المحددة متاحًا، يعرض OsmAnd النسخة الإنجليزية أو الترجمة المتاحة الأولى.
 
 - **فتح في المتصفح**  
   شغّل صفحة مصدر الصورة (عادةً على [ويكيميديا كومنز](https://commons.wikimedia.org/)) في متصفحك الافتراضي. يتيح لك هذا عرض الصورة الكاملة ومعلومات الترخيص والمحتوى ذي الصلة.

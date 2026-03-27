@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  Public Transport routing
 ---
@@ -29,13 +29,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="أندرويد">
 
-![ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_android.png)  
+![ملاحة النقل العام أندرويد](@site/static/img/navigation/public/navigation_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_ios.png)
+![ملاحة النقل العام iOS](@site/static/img/navigation/public/navigation_ios.png)
 
 </TabItem>
 
@@ -52,13 +52,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="أندرويد">
 
-![مسارات ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_public_android.png)
+![مسارات ملاحة النقل العام أندرويد](@site/static/img/navigation/public/navigation_public_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![مسارات ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_public_ios.png)
+![مسارات ملاحة النقل العام iOS](@site/static/img/navigation/public/navigation_public_ios.png)
 
 </TabItem>
 
@@ -70,13 +70,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="أندرويد">
 
-![طريق ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_way_android.png)
+![طريق ملاحة النقل العام أندرويد](@site/static/img/navigation/public/navigation_way_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![طريق ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_way_ios.png)
+![طريق ملاحة النقل العام iOS](@site/static/img/navigation/public/navigation_way_ios.png)
 
 </TabItem>
 
@@ -88,13 +88,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="أندرويد">
 
-![تفاصيل ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_details_android.png)
+![تفاصيل ملاحة النقل العام أندرويد](@site/static/img/navigation/public/navigation_details_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![تفاصيل ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_details_ios.png)
+![تفاصيل ملاحة النقل العام iOS](@site/static/img/navigation/public/navigation_details_ios.png)
 
 </TabItem>
 
@@ -107,13 +107,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="أندرويد">
 
-![قائمة محطات ملاحة النقل العام على أندرويد](@site/static/img/navigation/public/navigation_stops_list_android.png)
+![قائمة محطات ملاحة النقل العام أندرويد](@site/static/img/navigation/public/navigation_stops_list_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![قائمة محطات ملاحة النقل العام على iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
+![قائمة محطات ملاحة النقل العام iOS](@site/static/img/navigation/public/navigation_stops_list_ios.png)
 
 </TabItem>
 
@@ -142,19 +142,29 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## الأداء والنتائج {#performance-and-results}
 
-**ملف تعريف النقل العام -&gt; الإعدادات -&gt; إعدادات الملاحة -&gt; معلمات المسار**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-١. **الحد الأقصى لعدد تغييرات النقل**.
+<TabItem value="android" label="أندرويد">
 
-يعتمد الأداء واستهلاك الذاكرة لراوتر النقل العام على عمق البحث.
+![الحد الأقصى لعدد تغييرات النقل](@site/static/img/navigation/public/maximum_number_android.png) 
 
-المعلمة الأكثر أهمية التي تؤثر على هذا العمق هي **الحد الأقصى لعدد تغييرات النقل**.
+</TabItem>
 
-نستخدم **٢** كقيمة افتراضية، والتي تبدو مثالية لشبكات النقل العام الحديثة.
+<TabItem value="ios" label="iOS">  
 
-إذا واجهت أداءً منخفضًا أو أخطاء نفاد الذاكرة، جرب تقليل هذه القيمة.
+![الحد الأقصى لعدد تغييرات النقل](@site/static/img/navigation/public/maximum_number_ios.png)
 
-إذا كنت في مدينة صغيرة أو تسافر مسارات قصيرة، قد تعمل قيمة **١** بشكل أفضل.
+</TabItem>
+
+</Tabs>
+
+اذهب إلى: *<Translate android="true" ids="shared_string_settings"/>* *→ ملف تعريف النقل العام →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ الحد الأقصى لعدد تغييرات النقل*
+
+يعتمد الأداء واستهلاك الذاكرة لراوتر النقل العام على عمق البحث. المعلمة الأكثر أهمية التي تؤثر على هذا العمق هي **الحد الأقصى لعدد تغييرات النقل**.
+
+تؤثر هذه المعلمة أيضًا مباشرة على توافر ونوعية المسارات. إذا تم تعيين القيمة منخفضة جدًا (على سبيل المثال، ٠)، قد يفشل OsmAnd في العثور على مسارات مناسبة أو اقتراح خيارات غير مثالية، حتى عند وجود مسارات أفضل مع تغييرات.
+
+نستخدم **٢** كقيمة افتراضية، والتي تبدو مثالية لشبكات النقل العام الحديثة. إذا واجهت أداءً منخفضًا أو أخطاء نفاد الذاكرة، جرب تقليل هذه القيمة. إذا كنت في مدينة صغيرة أو تسافر مسارات قصيرة، قد تعمل قيمة **١** بشكل أفضل.
 <!--
 There are two more parameters that help you choose the best routes.
 

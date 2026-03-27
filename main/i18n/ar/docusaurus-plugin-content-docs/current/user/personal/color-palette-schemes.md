@@ -1,5 +1,5 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: 16b194b28666864219e1a39a0b4b4f9c7a0fcb3e58705b90bbf617b0516a74f9
 sidebar_position: 5
 title: أنظمة الألوان
 ---
@@ -71,6 +71,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تُعرّف ملفات التضاريس (`height_altitude_<type_name>.txt`، `hillshade_color_<type_name>.txt`، `slope_<type_name>.txt`) ثلاثة أنواع من [تصورات التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers): *تظليل التلال، والانحدار*، و*الارتفاع*. لكل نوع، يمكنك الحصول على لوحات ألوان متعددة، على سبيل المثال، *انحدار الانهيار الجليدي* يتم توفيره بشكل افتراضي. انظر مقالة [التضاريس](../plugins/topography.md#default-color-scheme) للحصول على مزيد من التفاصيل.
 
+على أندرويد، يمكن أيضًا إنشاء أو تعديل لوحات الألوان لأنظمة ألوان *الانحدار* و*الارتفاع* مباشرة داخل التطبيق باستخدام [محرر لوحة التدرج](../plugins/topography.md#modify-color-scheme). هذه ميزة مدفوعة <ProFeature />.
+
 ### المسارات والطرق {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +95,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - بالنسبة [للطرق](../navigation/guidance/map-during-navigation.md#color): *السرعة (`route_speed_default.txt`)، والانحدار (`route_slope_default.txt`)*، و*الارتفاع (`route_elevation_default.txt`)*.
 - بالنسبة [لمسارات GPX](../map/tracks/appearance#track-colors-in-gpx-files): *السرعة، والانحدار، والسرعة القصوى (`route_maxspeed_default.txt`)*، و*الارتفاع*، أو معلومات من *أجهزة استشعار خارجية*.
+
+على أندرويد، يمكن أيضًا إنشاء أو تعديل اللوحات مباشرة داخل التطبيق باستخدام [محرر لوحة التدرج](../map/tracks/appearance.md#gradient-palettes). هذه ميزة مدفوعة <ProFeature />.
 
 ### المفضلات ونقاط الطريق {#favorites-waypoints}
 

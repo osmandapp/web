@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title:  الملاحة
 ---
@@ -86,14 +86,18 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## معلومات الطريق {#road-information}
 
-### يعرض OsmAnd بعض كاميرات السرعة فقط {#osmand-only-shows-some-speed-cams}
+### لماذا قد لا يتم تشغيل بعض تحذيرات كاميرات السرعة {#why-some-speed-camera-warnings-may-not-be-triggered}
 
-نظرًا للبيانات الجغرافية المأخوذة من مشروع OpenStreetMap، توجد حاليًا طريقتان لدمج كاميرات السرعة في بيانات OSM الأولية:
+نظرًا للبيانات الجغرافية المأخوذة من مشروع OpenStreetMap، هناك حاليًا طريقتان لدمج كاميرات السرعة في بيانات OSM الأولية:
 
-- يتم وسم نقطة (تسمى "عقدة" في مصطلحات OSM) لطريق بالوسم "highway=speed_camera"، انظر ويكي OSM على [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
-- يتم ضم مجموعة من عناصر بيانات OSM معًا في ما يسمى "علاقة" تحتوي على عناصر أكثر من عقدة واحدة لوصف الاتجاه الذي يغطيه فخ السرعة. انظر [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
+- يتم وسم نقطة (تُسمى "عقدة" في مصطلحات OSM) لطريق بالوسم `highway=speed_camera`، انظر ويكي OSM على [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- يتم ضم مجموعة من عناصر بيانات OSM معًا في ما يُسمى "علاقة" تحتوي على عناصر أكثر من عقدة واحدة لوصف الاتجاه الذي يغطيه فخ السرعة. انظر [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-حاليًا، يمكن لـ OsmAnd فقط الاستفادة من العناصر التي تتكون من عقدة واحدة. سيتم تحليل العلاقات في إصدار مستقبلي.
+يدعم OsmAnd كلا الطريقتين. قد يتم تشغيل تحذيرات كاميرات السرعة للكاميرات المرسومة بـ `highway=speed_camera` بالإضافة إلى الكاميرات المحددة من خلال علاقة `enforcement`.
+
+إذا تم وضع عقدة كاميرا السرعة مباشرة على الطريق، فإن وسم `highway=speed_camera` كافٍ لكي يكتشف OsmAnd ويعرض التحذيرات.
+
+إذا تم رسم الكاميرا بجانب الطريق بدلاً من عليه، فيجب ربطها بالطريق باستخدام علاقة `enforcement`. وإلا، قد لا يربط OsmAnd الكاميرا بالطريق وقد لا يتم تشغيل التحذير.
 
 
 ## الملاحة الصوتية {#voice-navigation}
