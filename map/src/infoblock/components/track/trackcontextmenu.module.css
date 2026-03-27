@@ -5,13 +5,23 @@
     flex-direction: column;
 }
 
+.collapsibleHeader {
+    flex-shrink: 0;
+    overflow: hidden;
+    max-height: 250px;
+    transition: max-height 200ms ease-out;
+}
+
+.collapsibleHeaderHidden {
+    max-height: 0;
+}
+
 .trackTabsColumn {
     flex: 1;
     min-height: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
 .nameBlock {

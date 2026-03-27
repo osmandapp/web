@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Box, CircularProgress } from '@mui/material';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import TabPanels from '../tabs/TabPanels';
@@ -11,6 +11,7 @@ import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
 import ActionsMenu from '../../../menu/actions/ActionsMenu';
 import TrackActions from '../../../menu/actions/TrackActions';
 import { useTrackVisibility } from '../../../util/hooks/menu/useTrackVisibility';
+import { useCompactOnScroll } from '../../../util/hooks/useCompactOnScroll';
 import CloudTrackActionsButtons from './CloudTrackActionsButtons';
 import RouteTrackActionsButtons from './RouteTrackActionsButtons';
 import LocalTrackActionsButtons from './LocalTrackActionsButtons';
@@ -21,18 +22,13 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
 
     const anchorEl = useRef(null);
     const [openActions, setOpenActions] = useState(false);
-    const [isCompactHeader, setIsCompactHeader] = useState(false);
+    const { compact, scrollAreaHandlers } = useCompactOnScroll();
 
     const { toggleVisibility, checkedSwitch } = useTrackVisibility({ file: track });
 
     const trackName = track ? getFileName(track) : null;
     const showActionsBtn = (isCloudTrack(ctx) || isLocalTrack(ctx)) && track?.name;
-    const compactToolbarProps = isCompactHeader ? { className: styles.compactHeaderToolbar } : undefined;
-
-    const handleContentScroll = useCallback((e) => {
-        const shouldBeCompact = e.currentTarget.scrollTop > 0;
-        setIsCompactHeader((prev) => (prev === shouldBeCompact ? prev : shouldBeCompact));
-    }, []);
+    const compactToolbarProps = compact ? { className: styles.compactHeaderToolbar } : undefined;
 
     if (!tabsObj || tabsObj.tabList.length === 0) {
         return null;
@@ -41,7 +37,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
     return (
         <Box id="se-track-context-menu" className={styles.trackContextMenuShell}>
             <HeaderNoUnderline
-                title={isCompactHeader ? trackName : ''}
+                title={compact ? trackName : ''}
                 onClose={onClose}
                 showBackButton={showBackButton}
                 toolbarProps={compactToolbarProps}
@@ -57,39 +53,39 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                     )
                 }
             />
-            {trackName && !isCompactHeader && (
-                <Box className={styles.nameBlock}>
-                    <MenuItemWithLines
-                        id={'se-track-' + trackName}
-                        className={styles.trackName}
-                        name={trackName}
-                        maxLines={3}
-                    />
-                    <Box className={styles.trackIconBox}>
-                        <TracksIcon />
-                    </Box>
-                </Box>
-            )}
             {ctx.processingTravelRouteByUrl ? (
                 <CircularProgress sx={{ mt: 10, ml: 20 }} size={36} />
             ) : (
-                <Box className={styles.trackTabsColumn}>
-                    {!isCompactHeader && (
-                        <>
-                            {isCloudTrack(ctx) && (
-                                <CloudTrackActionsButtons
-                                    track={track}
-                                    toggleVisibility={toggleVisibility}
-                                    checkedSwitch={checkedSwitch}
+                <>
+                    <Box className={`${styles.collapsibleHeader} ${compact ? styles.collapsibleHeaderHidden : ''}`}>
+                        {trackName && (
+                            <Box className={styles.nameBlock}>
+                                <MenuItemWithLines
+                                    id={'se-track-' + trackName}
+                                    className={styles.trackName}
+                                    name={trackName}
+                                    maxLines={3}
                                 />
-                            )}
-                            {isLocalTrack(ctx) && <LocalTrackActionsButtons track={track} />}
-                            {isRouteTrack(ctx) && <RouteTrackActionsButtons track={track} />}
-                            {isShareTrack(ctx) && <ShareTrackActionsButtons track={track} />}
-                        </>
-                    )}
-                    <TabPanels tabsObj={tabsObj} onContentScroll={handleContentScroll} />
-                </Box>
+                                <Box className={styles.trackIconBox}>
+                                    <TracksIcon />
+                                </Box>
+                            </Box>
+                        )}
+                        {isCloudTrack(ctx) && track && (
+                            <CloudTrackActionsButtons
+                                track={track}
+                                toggleVisibility={toggleVisibility}
+                                checkedSwitch={checkedSwitch}
+                            />
+                        )}
+                        {isLocalTrack(ctx) && track && <LocalTrackActionsButtons track={track} />}
+                        {isRouteTrack(ctx) && track && <RouteTrackActionsButtons track={track} />}
+                        {isShareTrack(ctx) && track && <ShareTrackActionsButtons track={track} />}
+                    </Box>
+                    <Box className={styles.trackTabsColumn}>
+                        <TabPanels tabsObj={tabsObj} scrollAreaHandlers={scrollAreaHandlers} />
+                    </Box>
+                </>
             )}
             <ActionsMenu
                 open={openActions}
