@@ -1,7 +1,6 @@
 import {
     Box,
     Button,
-    CircularProgress,
     Collapse,
     Divider,
     IconButton,
@@ -96,9 +95,7 @@ import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import gStyles from '../../../menu/gstylesmenu.module.css';
 import { buildSearchParamsFromQuery } from '../../../util/hooks/search/useSearchNav';
 import { useLocation, useNavigate } from 'react-router-dom';
-import DistanceInfo from './DistanceInfo';
-import { getDistance, getBearing } from '../../../util/Utils';
-import { getMapCenter } from '../../../map/layers/MapStateLayer';
+import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
@@ -202,19 +199,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
         return wikidataTag ? [...otherTags, wikidataTag] : otherTags;
     }, [wpt?.tags?.res]);
-
-    const distanceInfo = useMemo(() => {
-        if (!wpt?.latlon?.lat || !wpt?.latlon?.lon) {
-            return { distance: null, bearing: null };
-        }
-        const mapCenter = getMapCenter(ctx, hash);
-        if (!mapCenter) {
-            return { distance: null, bearing: null };
-        }
-        const distance = getDistance(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
-        const bearing = getBearing(mapCenter.lat, mapCenter.lng, wpt.latlon.lat, wpt.latlon.lon);
-        return { distance, bearing };
-    }, [hash, wpt?.latlon]);
 
     const [delayedHash, setDelayedHash] = useState(hash);
     const debouncerTimer = useRef(0);
@@ -830,26 +814,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         return groupStr;
     }
 
-    const WptAddress = () => {
-        return (
-            <Box className={styles.wptCategory}>
-                <ListItemText onClick={() => ctx.setZoomToCoords(wpt.latlon)} sx={{ cursor: 'pointer' }}>
-                    <Typography id={'se-wpt-address'} className={wptStyles.placeAddress}>
-                        {distanceInfo.distance && (
-                            <DistanceInfo
-                                distance={distanceInfo.distance}
-                                bearing={distanceInfo.bearing}
-                                isUserLocation={true}
-                            />
-                        )}
-                        {distanceInfo.distance && wpt?.address && <span className={wptStyles.placeDistance}> · </span>}
-                        {wpt.address}
-                    </Typography>
-                </ListItemText>
-            </Box>
-        );
-    };
-
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
 
@@ -968,11 +932,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 </Box>
                                 {wpt?.category && <WptCategory />}
                                 {wpt?.openingHours && <OpeningHoursInfo openingHours={wpt.openingHours} />}
-                                {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                    <WptAddress />
-                                ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
-                                    <CircularProgress sx={{ ml: 2 }} size={19} />
-                                ) : null}
+                                <LocationInfoLine wpt={wpt} />
                                 {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
                                 {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                                 {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}

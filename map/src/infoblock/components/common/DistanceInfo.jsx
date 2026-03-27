@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
-import styles from './wptDetails.module.css';
+import styles from '../wpt/wptDetails.module.css';
 import {
     convertMeters,
     getLargeLengthUnit,
