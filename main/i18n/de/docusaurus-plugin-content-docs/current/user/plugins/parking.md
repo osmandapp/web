@@ -1,6 +1,6 @@
 ---
-source-hash: c31f972d3a691c26a3a583de116eb13a83d2589b7e5d44d3162198717f9b326f
-sidebar_position: 12
+source-hash: 91b548413957274ccf7ec40f7cd8e5166f5fd38e7fd27f83e8c250f277fd9820
+sidebar_position: 13
 title:  Parkposition
 ---
 
@@ -25,8 +25,6 @@ Dieses Plugin ist kostenlos und funktioniert offline mit heruntergeladenen OsmAn
 - Parkdetails können später eingesehen oder für die Navigation verwendet werden.
 
 Die Markierung ist temporär und lässt sich leicht entfernen, wenn sie nicht mehr benötigt wird.
-
-Parkplätze werden als **Favoritenpunkte** gespeichert. Um sicherzustellen, dass die Parkmarkierung auf der Karte sichtbar ist, müssen [Favoriten](../personal/favorites.md) aktiviert sein.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -56,7 +54,7 @@ Um einen Parkplatz auf der Karte zu verwenden, müssen Sie die folgenden Einstel
 
 ## Parkplatz auf der Karte {#parking-spot-on-the-map}
 
-Wenn Sie einen Parkplatz markieren, speichert OsmAnd dessen geografische Koordinaten zusammen mit einem Zeitstempel. Bei Bedarf können auch ein Zeitlimit und eine Kalendererinnerung hinzugefügt werden.
+Wenn Sie einen Parkplatz markieren, speichert OsmAnd dessen geografische Koordinaten zusammen mit einem Zeitstempel. Bei Bedarf können auch ein Zeitlimit und eine Kalendererinnerung hinzugefügt werden. Parkplätze werden als **Favoritenpunkte** gespeichert. Um sicherzustellen, dass die Parkmarkierung auf der Karte sichtbar ist, müssen [Favoriten](../personal/favorites.md) aktiviert sein.
 
 
 ### Einen Parkplatz festlegen {#set-a-spot}

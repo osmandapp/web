@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -24,14 +24,15 @@ Favoriten im Web-Planer ermöglichen es Ihnen, wichtige Orte direkt auf der Kart
 
 ## Favoriten verwalten {#manage-favorites}
 
-![OsmAnd Web Cloud Favoriten bearbeiten](@site/static/img/web/favorites_new.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
 Nach der Registrierung für [**OsmAnd Pro**](../personal/osmand-cloud.md#login) und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) sind Ihre Favoriten im Web-Planer in Ordnern organisiert. Jeder Ordner gruppiert gespeicherte Orte und bietet eine Reihe von Aktionen, die über das Favoriten-Menü verfügbar sind. 
 Die folgenden Aktionen sind verfügbar:
 
 - *Auf Karte anzeigen* - Zeigt Favoritenpunkte aus dem ausgewählten Ordner auf der Karte an.
+- *Ordner anheften* - Heftet einen Ordner an die Oberseite der Favoritenliste für schnellen Zugriff an. Angeheftete Ordner sind von anderen Ordnern getrennt. Um einen Ordner aus dem oberen Bereich zu entfernen, wählen Sie *Ordner lösen*. Der Persönliche Ordner ist standardmäßig angeheftet.
 - *Umbenennen* - Name und Beschreibung des Favoritenordners.
-- *Teilen* - Öffnet Teileoptionen. Sie können wählen, wer Zugriff auf diesen Ordner haben kann:
+- *Teilen* - Öffnet Teileoptionen. Sie können wählen, wer Zugriff auf diesen Ordner haben kann.
 - *Herunterladen* - Lädt den ausgewählten Favoritenordner herunter.
 - *Löschen* - Löscht den ausgewählten Favoritenordner.
 
@@ -53,16 +54,16 @@ Während der Zugriffskonfiguration können die folgenden Dialoge erscheinen:
 - *Zugriff ändern*. Wird angezeigt, wenn der Ordner auf Privat umgeschaltet wird. Der Dialog warnt, dass aller bestehender Benutzerzugriff widerrufen wird, bevor die Änderung bestätigt wird.
 - *Zugriffsanfragen*. Wird angezeigt, wenn Benutzer in der Ausstehend-Liste verwaltet werden, um Zugriffsanfragen zu genehmigen oder abzulehnen.
 
-![OsmAnd Web Cloud Favoriten teilen](@site/static/img/web/favorites_share.png) ![OsmAnd Web Cloud Favoriten teilen](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
 
 
 ## Favoritendetails {#favorites-details} 
 
 Das Auswählen eines Favoriten öffnet das **Details**-Panel. Dieses Panel erscheint, wenn Sie einen Favoriten direkt auf der Karte anklicken oder ihn aus einem Favoritenordner auswählen.
 
-Die Detailansicht bietet Informationen, die mit dem ausgewählten Ort verbunden sind, und hängt von den für diesen spezifischen Favoriten verfügbaren Daten ab. Mindestens umfasst sie den Standort auf der Karte und seine geografischen Koordinaten. Für Orte, die mit OpenStreetMap-Objekten oder angereicherten Quellen verknüpft sind, können zusätzliche Metadaten angezeigt werden, wie Namen, Kategorien, Identifikatoren oder Referenzlinks (z. B. [Wikipedia](../plugins/wikipedia.md) oder Wikidata-Links). 
+Die Detailansicht bietet Informationen, die mit dem ausgewählten Ort verbunden sind, und hängt von den für diesen spezifischen Favoriten verfügbaren Daten ab. Mindestens umfasst sie den Standort auf der Karte und seine geografischen Koordinaten. Für Orte, die mit OpenStreetMap-Objekten oder angereicherten Quellen verknüpft sind, können zusätzliche Metadaten angezeigt werden, wie Namen, Kategorien, Identifikatoren oder Referenzlinks (z. B. Wikipedia- oder Wikidata-Links). 
 
-![Web Favoritendetails](@site/static/img/web/favorites_details.png)
+![Web Favorites Details](@site/static/img/web/favorites_details.png)
 
 
 ## Favoritenaktionen {#favorites-actions}
@@ -75,7 +76,7 @@ Um einen bestehenden Favoriten zu bearbeiten, klicken Sie auf den Favoritenpunkt
 
 Die Bearbeitungsoberfläche ermöglicht es Ihnen, die Haupteigenschaften des Favoriten zu modifizieren, wie seinen Namen, Icon, Farbe und Beschreibung. Das Layout und die verfügbaren Felder sind konsistent mit der Bearbeitungserfahrung in der [OsmAnd Mobil-App](../personal/favorites.md#create) und bieten einen vertrauten Workflow über Plattformen hinweg.
 
-![OsmAnd Web Favoriten hinzufügen](@site/static/img/web/web_favorites_add.png)
+![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
 
 
 ### Andere Aktionen {#other-actions}

@@ -1,8 +1,9 @@
 ---
-source-hash: 54f960139673d7e63928d90ee9d92e56a29e0041c46723da9fc302c0ac415a0a
+source-hash: 115196468386843f98f0fb29dad7b1620ba4c4b784cf60c0592f63773b26c1a5
 sidebar_position: 12
 title:  BRouter
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 
@@ -26,9 +26,9 @@ Der Routing-Algorithmus BRouter von Drittanbietern ist nur für die Android-Vers
 
 [BRouter](http://brouter.de/) verwendet OpenStreetMap-Daten, um eine Route zu erstellen, und passt sie dann basierend auf den angegebenen Parametern an. Er verwendet vorausberechnete Routen, um schnell eine Route offline zu erstellen. Er ermöglicht auch die Anpassung von Routing-Profilen, die durch eine Reihe von Parametern definiert sind, um verschiedene Faktoren bei der Routenauswahl zu berücksichtigen. Die [BRouter readme.txt](http://brouter.de/brouter/readme.txt) Datei erklärt detaillierter, wie das Programm installiert und verwendet wird.
 
-OsmAnd bietet Ihnen die Möglichkeit, Routen mit BRouter auszuwählen und Routing-Profile zu konfigurieren, um die Route besser an Ihre Bedürfnisse anzupassen.
+OsmAnd bietet Ihnen die Möglichkeit, Routen mit BRouter auszuwählen und Routing-Profile zu konfigurieren, um die Route besser an Ihre Bedürfnisse anzupassen.  
 
-Für weitere Informationen können Sie die offizielle [BRouter-Webseite](http://www.brouter.de/brouter/algorithm.html) besuchen.
+Für weitere Informationen können Sie die offizielle [Brouter-Webseite](http://www.brouter.de/brouter/algorithm.html) besuchen.  
 
 Die BRouter-Integration in OsmAnd hat sich im Sommer 2019 stark verändert. Diese Anleitung geht davon aus, dass Sie die BRouter Android-App in Version 1.5.0 oder höher sowie OsmAnd in Version 3.4 oder höher verwenden.
 
@@ -47,10 +47,10 @@ Der Routing-Algorithmus BRouter von Drittanbietern ist nur für die Android-Vers
 
 ## Wie man konfiguriert {#how-to-configure}
 
-Folgen Sie dieser Anleitung, um die Drittanbieter-Anwendung *BRouter Offline Navigation* für die Verwendung in OsmAnd zu installieren und zu konfigurieren.
+Folgen Sie dieser Anleitung, um die Drittanbieter-Anwendung *BRouter Offline Navigation* für die Verwendung in OsmAnd zu installieren und zu konfigurieren.  
 
-**1.** Zuerst müssen Sie die BRouter-App auf Ihrem Android-Gerät aus dem [F-Droid](https://f-droid.org/packages/btools.routingapp) oder dem [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) installieren.
-**2.** Um dann mit der OsmAnd-App entlang vorausberechneter Routen mit BRouter zu navigieren, müssen Sie:
+**1.** Zuerst müssen Sie die BRouter-App auf Ihrem Android-Gerät aus dem [F-Droid](https://f-droid.org/packages/btools.routingapp) oder dem [Google Play Store](https://play.google.com/store/apps/details?id=btools.routingapp) auf Ihrem Gerät installieren.  
+**2.** Um dann mit der OsmAnd-App entlang vorausberechneter Routen mit BRouter zu navigieren, müssen Sie:  
 
 
   - die BRouter-Anwendung öffnen und auf *Download-Manager* tippen.
@@ -77,7 +77,7 @@ Folgen Sie dieser Anleitung, um die Drittanbieter-Anwendung *BRouter Offline Nav
     </tr>
 </table>
 
-**Hinweis**: Sie müssen diesen Schritt regelmäßig wiederholen, wann immer Sie eine aktualisierte Version der OSM-Daten für das Routing verwenden möchten.
+**Hinweis**, dass Sie diesen Schritt regelmäßig wiederholen müssen, wann immer Sie eine aktualisierte Version der OSM-Daten für das Routing verwenden möchten.
 
 **3.** Sobald dies erledigt ist, starten Sie die BRouter-App erneut und wählen Sie den Eintrag „BRouter App“ im *Hauptmenü*. Wählen Sie ein Routing-Profil je nach Ihrer Fortbewegungsart. Dies kann Radfahren, Moped, Wandern oder Trekking sein. Eine Liste der verfügbaren Profile zum Herunterladen im *brf*-Format finden Sie [hier](http://brouter.de/brouter/profiles2/). Oder Sie können versuchen, das Routing-Profil in [BRouter-online](http://brouter.de/brouter-web/) zu verwenden.
 Klicken Sie auf „Service-Modus“. Aktivieren Sie dann die Kontrollkästchen für die Routing-Modi, für die Sie dieses Profil verwenden möchten. Sie können zwei verschiedene Profile pro Fortbewegungsart verwenden, die den Voreinstellungen „kürzeste“ und „schnellste“ (dies sind nur Bezeichnungen) in OsmAnd zugeordnet werden.
@@ -148,9 +148,9 @@ Wenn kein Profil gefunden wird, schlägt das Routing mit „Route konnte nicht b
 
 ## Wie man es benutzt {#how-to-use}
 
-Dieser Abschnitt beschreibt einen Vergleich von BRouter mit dem internen Routing der OsmAnd-Anwendung.
+Dieser Abschnitt beschreibt einen Vergleich von BRouter mit dem internen Routing der OsmAnd-Anwendung.  
 
-Wenn BRouter konfiguriert ist, können wir die Vorausberechnungsgeschwindigkeit der BRouter-Routingdaten mit dem internen OsmAnd-Routing vergleichen. Wählen wir zwei zufällige Punkte in den Niederlanden und starten die Berechnung der Fahrt. Dafür stellen wir einen ausgewogenen Fahrstil ohne Verwendung von Höhendaten für das Basisprofil ein. Die Berechnungszeit für diese Fahrt beträgt 14,5 Sekunden für unsere interne OsmAnd-Route. Die Routenberechnungszeit bei Verwendung des BRouter-Routings beträgt weniger als 1 Sekunde.
+Wenn BRouter konfiguriert ist, können wir die Vorausberechnungsgeschwindigkeit der BRouter-Routingdaten mit dem internen OsmAnd-Routing vergleichen. Wählen wir zwei zufällige Punkte in den Niederlanden und starten die Berechnung der Fahrt. Dafür stellen wir einen ausgewogenen Fahrstil ohne Verwendung von Höhendaten für das Basisprofil ein. Die Berechnungszeit für diese Fahrt beträgt 14,5 Sekunden für unsere interne OsmAnd-Route. Die Routenberechnungszeit bei Verwendung des BRouter-Routings beträgt weniger als 1 Sekunde.  
 
 <table class="blogimage">
     <tr>
@@ -174,7 +174,7 @@ Wenn BRouter konfiguriert ist, können wir die Vorausberechnungsgeschwindigkeit 
 
 ### Andere Routing-Einstellungen {#other-routing-settings}
 
-- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Einstellungen*, [Bild](../routing/online-routing.md#online-routing-setting)). Wenn diese Option aktiviert ist, fügt OsmAnd dem berechneten BRouter-Track zwei Segmente hinzu: eines von *[Mein Standort](../../map/interact-with-map.md#my-location-and-zoom)* zum Startpunkt des Tracks und ein weiteres vom Ende des Tracks zum Zielpunkt Ihrer Route. Diese Option ist aktiv, wenn die Entfernung zum oder vom Track 60 Meter überschreitet.
+- ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Einstellungen*, [Bild](../routing/online-routing.md#online-routing-setting)). Wenn diese Option aktiviert ist, fügt OsmAnd dem berechneten BRouter-Track zwei Segmente hinzu: eines von *[Mein Standort](../../map/interact-with-map.md#my-position-and-zoom)* zum Startpunkt des Tracks und ein weiteres vom Ende des Tracks zum Zielpunkt Ihrer Route. Diese Option ist aktiv, wenn die Entfernung zum oder vom Track 60 Meter überschreitet.
 
 - Im Abschnitt [*Route neu berechnen*](../../navigation/guidance/navigation-settings.md#recalculate-route) der *Routenparameter* können Sie die Optionen zur Routenneuberechnung aktivieren und anpassen.
 

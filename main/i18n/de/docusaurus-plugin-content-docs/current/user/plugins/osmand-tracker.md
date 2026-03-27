@@ -1,6 +1,6 @@
 ---
-source-hash: ed4b1b02f7f55c370674eabb71f00501510288e583e3135341a0905ed0b8ad69
-sidebar_position: 11
+source-hash: c18b1cbd4a3355bf921f99ff1e1def88f8dbdf889803fd76e18173c7c599fcfe
+sidebar_position: 12
 title:  OsmAnd Tracker
 ---
 
@@ -62,9 +62,9 @@ Es gibt mehrere Einstellungen, um die Häufigkeit der Standortfreigabe zu verwal
 
 So öffnen Sie das Menü *Einstellungen*:  
 
-*Bildschirm [Mein Standort](#my-location-screen) → Bildschirm nach unten schieben (Kontaktliste) → ⋮ → Einstellungen*  
+*[Mein Standort](#my-location-screen) Bildschirm → Bildschirm nach unten schieben (Kontaktliste) → ⋮ → Einstellungen*  
 oder  
-*Bildschirm [Jetzt live](#live-now-screen) → ⋮ → Einstellungen*  
+*[Jetzt live](#live-now-screen) Bildschirm → ⋮ → Einstellungen*  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_settings_1.png)
 

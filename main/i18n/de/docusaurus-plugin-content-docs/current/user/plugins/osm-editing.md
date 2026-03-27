@@ -1,6 +1,6 @@
 ---
-source-hash: fb4dfa3af12638db8d07636ca58d9e23de9542afc7c2cd66d965f36e2bc93826
-sidebar_position: 9
+source-hash: 5b597be7ba7a97b5fdb315e820fbdb6ec88b11d7dfd744bf5bbde1dbe7547e33
+sidebar_position: 10
 title:  OpenStreetMap Editing
 ---
 
@@ -152,9 +152,10 @@ Sie können die Anzeige von OSM-Änderungen als separate Ebene im Bereich [Karte
 
 Das OpenStreetMap-Bearbeitungs-Plugin ermöglicht es Ihnen, neue Objekte auf der Karte zu erstellen, die als [Points of Interest oder POI](../map/point-layers-on-map.md#points-of-interest-pois) bezeichnet werden. Sie können ein neues Geschäft, ein beliebtes Wahrzeichen, eine Bank oder einen Unterstand kartieren, damit andere sie finden können.  
 
-1. Tippen Sie auf die Karte, um einen neuen POI zu platzieren, oder tippen Sie auf einen noch nicht geladenen POI.2. Tippen Sie auf [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
-2. Wählen Sie [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) und fügen Sie den Namen und andere Informationen wie Öffnungszeiten, Website usw. hinzu. Wenn Sie einen nicht hochgeladenen POI auswählen, ändert sich *POI erstellen* in *POI ändern*.
-3. Abhängig von der Einstellung [Offline-Bearbeitung](#settings) können Sie die Daten lokal speichern oder [hochladen](../map/map-context-menu#-upload-poi--osm-note).
+1. Tippen Sie auf die Karte, um einen neuen POI zu platzieren, oder tippen Sie auf einen noch nicht geladenen POI.
+2. Tippen Sie auf [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+3. Wählen Sie [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi) und fügen Sie den Namen und andere Informationen wie Öffnungszeiten, Website usw. hinzu. Wenn Sie einen nicht hochgeladenen POI auswählen, ändert sich *POI erstellen* in *POI ändern*.
+4. Abhängig von der Einstellung [Offline-Bearbeitung](#settings) können Sie die Daten lokal speichern oder [hochladen](../map/map-context-menu#-upload-poi--osm-note).
 
 
 ### Tags hinzufügen {#add-tags}

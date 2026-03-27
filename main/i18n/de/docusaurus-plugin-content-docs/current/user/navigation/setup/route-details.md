@@ -1,8 +1,9 @@
 ---
-source-hash: e31e5212327dba32b41b4f464d67c7ab7f9725a2d4fbd06bb60453040bbfe587
+source-hash: cab56eba26756837f97f970df465d45eb9b66ea5eb3f72708cba2a24e9af59b6
 sidebar_position: 4
 title:  Routendetails
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Übersicht {#overview}
@@ -70,7 +70,7 @@ Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md
 
 - ***Gesamtentfernung*** wird zwischen allen Routensegmenten berechnet, einschließlich Zwischenpunkten in den ausgewählten [Einheiten](../../personal/profiles.md#units--formats).
 
-- ***Geschätzte Reisezeit*** wird als Summe der Zeiten auf jedem Segment und der Zeitstrafen an bestimmten Punkten berechnet. Jedes Navigationsprofil hat unterschiedliche Regeln für die Berechnung der Geschwindigkeit auf einem Segment und welche Strafen einbezogen werden sollen (konfiguriert in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Zum Beispiel übernehmen Auto- und Fahrradprofile die Durchschnittsgeschwindigkeit pro Segment aus OpenStreetMap-Daten, aber Fußgänger-, Boots- und Flugzeugprofile verwenden die *Standardgeschwindigkeit* aus den [Navigationseinstellungen](../guidance/vehicle-parameters.md#default-speed).
+- ***Geschätzte Reisezeit*** wird als Summe der Zeiten auf jedem Segment und der Zeitstrafen an bestimmten Punkten berechnet. Jedes Navigationsprofil hat unterschiedliche Regeln für die Berechnung der Geschwindigkeit auf einem Segment und welche Strafen einbezogen werden sollen (konfiguriert in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). Zum Beispiel übernehmen Auto- und Fahrradprofile die Durchschnittsgeschwindigkeit pro Segment aus OpenStreetMap-Daten, aber Fußgänger-, Boots- und Flugzeugprofile verwenden die *Standard-*Geschwindigkeit aus den [Navigationseinstellungen](../guidance/vehicle-parameters.md#default-speed).
 
 - ***Geschätzte Ankunftszeit*** wird als Zeit ab jetzt in der Ortszeit des Startpunkts unter Verwendung der *geschätzten Reisezeit* berechnet.
 
@@ -95,7 +95,7 @@ Abhängig von den ausgewählten [Profileinstellungen](../../personal/profiles.md
 
 </Tabs>
 
-**Höheninformationen** werden in allen Offline-Routenprofilen von OsmAnd bereitgestellt, außer bei Profilen, die die [Luftlinien-Navigation](../routing/straight-line-routing.md) verwenden. Die Höhendaten sind Teil der OsmAnd Offline-Karten und werden auf der Grundlage von [öffentlichen SRTM-Quellen](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) berechnet.
+**Höheninformationen** werden in allen OsmAnd Offline-Routenprofilen bereitgestellt, außer bei Profilen, die die [Luftlinien-Navigation](../routing/straight-line-routing.md) verwenden. Die Höhendaten sind Teil der OsmAnd Offline-Karten und werden auf der Grundlage von [öffentlichen SRTM-Quellen](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) berechnet.
 
 - *Höhenbereich*. Zeigt die minimale / maximale Höhe auf der Route an.
 - *Durchschnittliche Höhe*. Zeigt die gewichtete Durchschnittshöhe auf der Route an.
@@ -136,7 +136,7 @@ Die Höhendaten auf der Karte (zwischen 70 Grad nördlicher Breite und 70 Grad s
 
 Die [Diagramme](../../map/tracks/track-context-menu.md#altitude--speed-graphs) zeigen visuell Informationen über die Höhe und Neigung Ihrer Navigationsroute sowie Ihre aktuelle Position auf diesem Diagramm mit der aktuellen Höhe und Neigung. Das Diagramm wird auf zwei Achsen dargestellt. Die X-Achse ist die Entfernung auf Ihrer Route. Die erste Y-Achse ist die Höhe über dem Meeresspiegel, deren Wert vom Gelände abhängt, und die zweite Y-Achse ist die angenäherte [Neigung](https://en.wikipedia.org/wiki/Grade_(slope)). Sie können das Höhendiagramm für die gesamte Route oder nur für ein ausgewähltes Intervall durch Skalieren des Diagramms anzeigen.  
 
-- ***Vergrößern/Verkleinern***. Standardmäßig zeigt das Diagramm die Route vom aktuellen Standort zu Ihrem Zielpunkt. Sie können [Zwei-Finger-Gesten](../../map/interact-with-map.md#gestures) verwenden, um für eine detailliertere Ansicht hinein- und herauszuzoomen. Sie können das Diagramm auch nach rechts, auf der Route vorwärts und zum aktuellen Standort zurück bewegen. *Solche Manipulationen beziehen sich auch auf den visuellen Informationsblock im Block [Straßenattribute](#road-attributes).*  
+- ***Vergrößern/Verkleinern***. Standardmäßig zeigt das Diagramm die Route vom aktuellen Standort zu Ihrem Zielpunkt. Sie können [Zwei-Finger-Bewegungen](../../map/interact-with-map.md#gestures) verwenden, um für eine detailliertere Ansicht hinein- und herauszuzoomen. Sie können das Diagramm auch nach rechts, auf der Route vorwärts und zum aktuellen Standort zurück bewegen. *Solche Manipulationen beziehen sich auch auf den visuellen Informationsblock im Block [Straßenattribute](#road-attributes).*  
 
 - ***Standort-Pin***. Wenn Sie die Informationen an einem bestimmten Punkt vor Ihnen auf Ihrer Route sehen möchten, können Sie auf eine beliebige Stelle im Diagramm tippen, und ein Zeiger mit Höhe und Neigung in Prozent wird angezeigt.  
 
@@ -178,7 +178,7 @@ Wenn Daten vorhanden sind, können Sie einen der folgenden Typen auswählen:
 
 - *Tippen und Schieben*. Tippen Sie auf das Diagramm, um Informationen über den Trackpunkt und die Bewegung entlang des Tracks anzuzeigen. Das Diagramm hebt die Position des Punktes auf der Karte hervor und zeigt Informationen darüber auf dem Lineal an.
 - *Skalieren*. Skalieren Sie das Diagramm mit einer [Zwei-Finger-Geste](../../map/interact-with-map.md#gestures).
-- *Meinem Standort folgen* (*nur Android*). Sie können auf [Mein Standort](../../map/interact-with-map.md#my-location-and-zoom) tippen, um die Kartenansicht und das Diagramm mit Ihrem Standort zu synchronisieren. Während Sie sich bewegen, verschiebt sich das Diagramm von links nach rechts und zeigt Informationen vor Ihrem Weg an.  
+- *Meinem Standort folgen* (*nur Android*). Sie können auf [Meine Position](../../map/interact-with-map.md#my-location-and-zoom) tippen, um die Kartenansicht und das Diagramm mit Ihrem Standort zu synchronisieren. Während Sie sich bewegen, verschiebt sich das Diagramm von links nach rechts und zeigt Informationen vor Ihrem Weg an.  
 
 
 ## Straßenattribute {#road-attributes}
@@ -223,7 +223,7 @@ Straßenattribute sind in den [Routendetails](#how-to-access) zugänglich und ze
 
 - [**Glattheit**](https://wiki.openstreetmap.org/wiki/Key:smoothness). Gilt für alle Arten von Wegen und Flächen, wie Autobahnen, Parkplätze, Strände und Wanderwege, und gibt die Nutzbarkeit der Route an. Es gibt Ihnen Informationen, dass Sie ohne erhebliches Risiko von Schäden, wie z. B. am Fahrzeugunterboden, oder Verletzungen, wie z. B. einem Sturz, fahren können.  
 
-- [**Winter- und Eisstraßen**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Zeigt das Farbschema der Route gemäß der Klassifizierung von [Winterstraßen](../../map/vector-maps.md#winter-and-ski).  
+- [**Winter- und Eisstraßen**](https://wiki.openstreetmap.org/wiki/Proposed_features/Winter_roads). Zeigt das Farbschema der Route gemäß der Klassifizierung von [Winterstraßen](../../map/map-styles.md#winter-and-ski).  
 
 - [**Schwierigkeit von Reitwegen**](https://wiki.openstreetmap.org/wiki/Riding). Dieses Straßenattribut gibt die Schwierigkeit der Route beim Reiten an. Geeignet für das [Reit-Routing](../../navigation/routing/horse-routing.md).  
 

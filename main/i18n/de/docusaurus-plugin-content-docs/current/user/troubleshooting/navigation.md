@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title:  Navigation
 ---
@@ -31,7 +31,7 @@ Manchmal zeigt OsmAnd unerwartete Navigationsergebnisse an. Anstatt dem Straßen
 **Ursachen:**
 
 - Veraltete oder duplizierte Karten. Karten mit unterschiedlichen Aktualisierungsdaten oder Duplikate können die Konnektivität unterbrechen (insbesondere über Regionen/Grenzen hinweg).
-- Beschädigte Profileeinstellungen. Benutzerdefinierte/angepasste Profile (z. B. Fahrrad) können inkonsistentes Verhalten verursachen.
+- Beschädigte Profileinstellungen. Benutzerdefinierte/angepasste Profile (z. B. Fahrrad) können inkonsistentes Verhalten verursachen.
 - Routing-Engine-Mismatch: Verschiedene Engines (HH × Java vs. HH × C++) können dieselben Karten unterschiedlich handhaben.
 
 **Lösungen:**
@@ -86,21 +86,25 @@ Um Probleme mit falschen oder suboptimalen Routen zu verfolgen, eröffnen Sie bi
 
 ## Straßeninformationen {#road-information}
 
-### OsmAnd zeigt nur einige Blitzer an {#osmand-only-shows-some-speed-cams}
+### Warum einige Blitzer-Warnungen möglicherweise nicht ausgelöst werden {#why-some-speed-camera-warnings-may-not-be-triggered}
 
-Aufgrund der Geodaten aus dem OpenStreetMap-Projekt gibt es derzeit zwei Methoden, wie Blitzer in die OSM-Rohdaten integriert werden:
+Aufgrund der Geodaten aus dem OpenStreetMap-Projekt gibt es derzeit zwei Methoden, wie Blitzer in die rohen OSM-Daten integriert werden:
 
-- Ein Punkt (in der OSM-Terminologie "Knotenpunkt" genannt) eines Weges wird mit "highway=speed_camera" getaggt, siehe OSM-Wiki unter [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
-- Eine Gruppe von OSM-Datenelementen wird in einer sogenannten "Relation" zusammengefasst, die mehr Elemente als ein einzelner Knotenpunkt enthält, um die Richtung zu beschreiben, die von der Radarfalle abgedeckt wird. Siehe [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
+- Ein Punkt (in der OSM-Terminologie „Knoten“ genannt) eines Weges wird mit `highway=speed_camera` getaggt, siehe OSM-Wiki unter [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Eine Gruppe von OSM-Datenelementen wird in einer sogenannten „Relation“ zusammengefasst, die mehr Elemente als ein einzelner Knoten enthält, um die Richtung zu beschreiben, die von der Radarfalle abgedeckt wird. Siehe [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Derzeit kann OsmAnd nur die Elemente verwenden, die aus einem einzelnen Knotenpunkt bestehen. Die Analyse von Relationen wird in einer zukünftigen Version folgen.
+OsmAnd unterstützt beide Methoden. Blitzer-Warnungen können für Kameras ausgelöst werden, die mit `highway=speed_camera` kartiert sind, sowie für Kameras, die durch eine `enforcement`-Relation definiert sind.
+
+Wenn ein Blitzer-Knoten direkt auf der Straße platziert ist, reicht der Tag `highway=speed_camera` aus, damit OsmAnd ihn erkennt und Warnungen anzeigt.
+
+Wenn die Kamera neben der Straße und nicht direkt darauf kartiert ist, muss sie mit einer `enforcement`-Relation mit der Straße verbunden werden. Andernfalls kann OsmAnd die Kamera möglicherweise nicht der Straße zuordnen und die Warnung wird nicht ausgelöst.
 
 
 ## Sprachnavigation {#voice-navigation}
 
 ### Warum sollte ich eine TTS-Stimme anstelle einer aufgezeichneten Stimme verwenden? {#why-should-i-use-a-tts-voice-instead-of-a-recorded-voice}
 
-**Text-zu-Sprache (TTS)**-Stimmen erzeugen gesprochene Anweisungen dynamisch, sodass sie Straßennamen, Ortsnamen und Autobahnnummern aussprechen können. Im Gegensatz dazu sind **aufgezeichnete Stimmen** auf voraufgezeichnete Phrasen beschränkt und können keine spezifischen Namen oder Nummern aussprechen.
+**Text-zu-Sprache (TTS)**-Stimmen erzeugen gesprochene Hinweise dynamisch, sodass sie Straßennamen, Ortsnamen und Autobahnnummern aussprechen können. Im Gegensatz dazu sind **aufgezeichnete Stimmen** auf voraufgezeichnete Phrasen beschränkt und können keine spezifischen Namen oder Nummern aussprechen.
 
 *Vorteile von TTS gegenüber aufgezeichneten Stimmen:*
 

@@ -1,5 +1,5 @@
 ---
-source-hash: a712a44f73377cd525fd51b44694dfb5b3a2ded809dfa1224660e6d06215701e
+source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
 sidebar_position: 2
 title:  Navigation entlang eines Tracks
 ---
@@ -70,7 +70,7 @@ Bevor Sie die Option *Navigation entlang eines Tracks* verwenden können, müsse
 
 Die Navigation auf einem Track kann über die Schnellaktion im [Track-Kontextmenü](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track) gestartet werden (geöffnet durch Auswahl eines der [hervorgehobenen Tracks](./route-navigation.md#history-of-previous-routes) auf der Karte oder durch Antippen einer Track-Datei im Abschnitt [Meine Orte](../../personal/myplaces.md) des *Hauptmenüs*) oder aus dem Navigationsmenü, das durch Antippen geöffnet wird:
 
-- [*Navigations-Schaltfläche*](../../widgets/map-buttons.md#directions) auf dem Kartenbildschirm.  
+- [*Navigations-Schaltfläche*](../../widgets/map-buttons.md#navigation) auf dem Kartenbildschirm.  
 - *Navigationsbereich* im *Hauptmenü* *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - Im [*Navigationsmenü*](./route-navigation.md#navigation-menu) gehen Sie zu *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
@@ -191,7 +191,7 @@ Die Funktion **An Straßen anheften** richtet Ihren Track an der nächstgelegene
 
 OsmAnd heftet Routen automatisch an Straßen an, wenn das Werkzeug **Route planen** verwendet wird:
 
-- **Wegpunkte** werden automatisch an der nächstgelegenen verfügbaren Straße ausgerichtet (*außer bei [Luftlinien-Routing](../../navigation/routing/straight-line-routing.md) und [Direkt-zum-Punkt-Routing](../../navigation/routing/direct-to-point-routing.md)*).
+- **Wegpunkte** werden automatisch an der nächstgelegenen verfügbaren Straße ausgerichtet (*außer bei [Luftlinien-Routing](../routing/straight-line-routing.md) und [Direkt-zum-Punkt-Routing](../routing/direct-to-point-routing.md)*).
 - Wenn keine Straßen erkannt werden (z. B. in Offroad-Umgebungen), folgt die Route **geraden Liniensegmenten**.
 - Sie können die Route **manuell anpassen**, indem Sie Wegpunkte an andere Orte ziehen.
 
