@@ -71,4 +71,7 @@
     font-weight: 500 !important;
     line-height: normal !important;
     letter-spacing: 0.18px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
