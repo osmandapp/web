@@ -1,6 +1,6 @@
 ---
-source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
-sidebar_position: 10
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+sidebar_position: 11
 title:  Desarrollo de OsmAnd
 ---
 
@@ -53,7 +53,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 <TabItem value="ios" label="iOS">  
 
-![Ajustes de desarrollo iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Ajustes de desarrollo iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,18 +70,19 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 - **Simular tu posición** (*Android* / *iOS*). [Simular](#gpx-track-simulation) la ubicación y el movimiento usando una pista GPX.
 - **Modo de ahorro de batería** (*Android* / *iOS*). Este ajuste reduce [la tasa de refresco de la pantalla](#map-rendering-fps-widget) en 20 fotogramas por segundo para ayudar a ahorrar energía de la batería mientras se usan las aplicaciones.
 - **Usar iconos de posición de ubicación 3D** (*iOS*). Permite seleccionar un icono 3D para el [icono Mi Ubicación](../personal/profiles.md#my-location-appearance).
-- **Simular datos OBD** (*Android*). Permite la simulación del uso del [escáner OBD](./vehicle-metrics.md).
-- **Información de depuración de rendimiento** (*Android*). Muestra el rendimiento de renderizado y navegación.
+- **Simular datos OBD** (*Android* / *iOS*). Permite la simulación del uso del [escáner OBD](./vehicle-metrics.md).
+- **Información de depuración de rendimiento** (*Android* / *iOS*). Muestra el rendimiento de renderizado y navegación.
 - **Desactivar capas de mapa** (*Android*). Desactiva todas las capas de mapa sobre el mapa vectorial (se requiere reiniciar).
 - **Búfer de Logcat** (*Android*). Comprobar y compartir registros detallados de la aplicación.  
 - **Mostrar mensaje emergente sobre la tecla presionada** (*Android*). Muestra un mensaje sobre la tecla.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. El rumbo es la dirección de la brújula desde su posición actual hasta su destino previsto. Afecta a la *[grabación de pistas](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. La dirección es la dirección de la brújula desde su posición actual hacia el norte verdadero. Esta opción está habilitada por defecto. Afecta a la *[grabación de pistas](../plugins/trip-recording.md)*.
+- **Habilitar MSAA** (*Android*) / **Habilitar MSAA para CarPlay** (*iOS*). Habilita el antialiasing de múltiples muestras para suavizar el renderizado del mapa. Mejora la calidad visual del [icono Mi Ubicación](../personal/profiles.md#my-location-appearance) y la línea de ruta al reducir los bordes pixelados. En Android, esta opción afecta el renderizado del mapa en el dispositivo y al usar [Android Auto](../navigation/auto-car.md). En iOS, se aplica solo a [CarPlay](../navigation/car-play.md).
 
 
 ### Pruebas de aplicación {#application-testing}
 
-:::caution Solo Android
+:::caution Android only
 :::
 
 - **Simular el primer inicio de la aplicación**. Establece el indicador que señala el primer inicio de la aplicación, manteniendo todos los demás ajustes sin cambios.  
@@ -94,7 +95,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 ### Algoritmos internos {#internal-algorithms}
 
-:::caution Solo Android
+:::caution Android only
 :::
 
 - **Modo seguro**. Ejecutar la aplicación en modo seguro (más lento).  
@@ -102,7 +103,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 ### Ajustes de memoria {#memory-settings}
 
-:::caution Solo Android
+:::caution Android only
 :::  
 
 - La opción **Memoria asignada para el enrutamiento** le permite determinar la cantidad de memoria asignada para calcular rutas largas. Puede usar esta opción si se selecciona el [Enrutamiento estándar A*](../navigation/guidance/navigation-settings.md#development-settings) en los *Ajustes de navegación*.
@@ -115,7 +116,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 ### Información y estadísticas {#info-and-statistics}
 
-:::caution Solo Android
+:::caution Android only
 :::  
 
 - **Memoria asignada**. Muestra la memoria del sistema asignada para la aplicación OsmAnd.  
@@ -348,7 +349,7 @@ OsmAnd ofrece la oportunidad de simular la ubicación y el movimiento de su disp
 
 </Tabs>  
 
-Después de ejecutar la simulación, verá en la pantalla principal de la aplicación que la marca de navegación se mueve según la pista GPX. Toque el [botón mi ubicación](../map/interact-with-map.md#my-location-and-zoom) para sincronizar *Mi ubicación* (geolocalización simulada del dispositivo) con el centro del mapa.  
+Después de ejecutar la simulación, verá en la pantalla principal de la aplicación que la marca de navegación se mueve según la pista GPX. Toque el [botón mi posición](../map/interact-with-map.md#my-position-and-zoom) para sincronizar *Mi ubicación* (geolocalización simulada del dispositivo) con el centro del mapa.  
 Para detener la simulación del movimiento de su dispositivo, vuelva a los [ajustes](#plugin-settings) de desarrollo de OsmAnd y toque **detener** en la opción **simular tu posición**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* también se puede acceder a través del **[menú de acción rápida](../widgets/quick-action.md#navigation)**.

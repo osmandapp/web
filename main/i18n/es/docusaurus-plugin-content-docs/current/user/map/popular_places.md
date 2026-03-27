@@ -1,5 +1,5 @@
 ---
-source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
+source-hash: 004b4b8d94eaf093dcc696c34a008dc61bd0e4e803c5402b096e6f3105ac6e4d
 sidebar_position: 8
 title: Lugares populares
 ---
@@ -38,7 +38,7 @@ Actualmente, la base de datos seleccionada incluye aproximadamente **50.000 a 15
 
 <TabItem value="android" label="Android">
 
-![Lugares populares](@site/static/img/map/popular_places/popular_places.png) ![Lugares populares](@site/static/img/map/popular_places/popular_places_1.png)
+![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -60,21 +60,19 @@ Aprenda a encontrar un ID de Wikidata: [Wikipedia: Finding a Wikidata ID](https:
 
 ## How to Use {#how-to-use}
 
-<InfoAndroidOnly/>
-
 La función **Lugares populares** incluye tanto una lista seleccionada de puntos de referencia cercanos como una capa de PDI basados en Wikipedia en el mapa.
 
 Hay dos formas principales de acceder a esta función:
 
 - **Versión gratuita**  
   Acceda a través de [Búsqueda](#explore-in-search) para explorar lugares cercanos en una vista de lista.  
-  *<Translate android="true" ids="android_button_seq"/>*. Ir a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  *<Translate android="true" ids="android_button_seq"/> only*. Ir a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
   
   Esta lista Explorar muestra lugares Wikipedia/Wikidata clasificados por popularidad cerca de usted y funciona en línea. Muestra hasta 50 lugares. Dado que los resultados de Explorar/Wikipedia están clasificados por calificación, el orden en estos resultados puede diferir de la búsqueda regular de PDI.
 
 - **Versiones de pago** *(Maps+ y OsmAnd Pro)*  
   Active la superposición visual en [Configurar mapa](#enable-layer).  
-  *<Translate android="true" ids="android_button_seq"/>*. Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
+  *<Translate android="true" ids="android_button_seq"/> & IOS*. Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   En este modo, los PDI populares aparecen directamente en el mapa con vistas previas en miniatura y contenido de Wikipedia.
 
@@ -91,8 +89,8 @@ Hay dos formas principales de acceder a esta función:
 
 Ir a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Modo Explorar](@site/static/img/map/popular_places/popular_places_search.png)  
-![Modo Explorar](@site/static/img/map/popular_places/popular_places_search_2.png)
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png)  
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
 
 </TabItem>
 
@@ -118,15 +116,21 @@ Para usarlo **fuera de línea**, necesita una suscripción a [Maps+ u OsmAnd Pro
 
 ## Enable Layer {#enable-layer}
 
-<InfoAndroidOnly/>
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>**. Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Menú de lugares populares](@site/static/img/map/popular_places/popular_places_menu.png)
+![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Lugares populares (Wikipedia)*
+
+![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -164,13 +168,13 @@ Al tocar un PDI en el mapa se abre el [menú contextual de PDI](./map-context-me
 
 <TabItem value="android" label="Android">  
 
-![Menú contextual de Fotos en línea Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menú contextual de Fotos en línea iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
@@ -209,21 +213,21 @@ In the Map Context menu How to access:
 
 <TabItem value="android" label="Android">  
 
-![Menú de la galería – Android](@site/static/img/map/gallery_menu_android.png)
-![Menú de la galería – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
+![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menú de la galería – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Menú de la galería – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
 </Tabs>
 
-El **Menú de la galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Para ver estas imágenes, toque **Mostrar todo** (Android) / **Ver todo** (iOS). Puede deslizar a través de todas las fotos disponibles. Al tocar una foto se abre brevemente una vista detallada que muestra: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*.  
+El **Menú de la galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Para ver estas imágenes, toque **Mostrar todo** (Android) / **Ver todo** (iOS). Puede deslizar a través de todas las fotos disponibles. Al tocar una foto se abre brevemente una vista detallada que muestra: *Descripción (hasta dos líneas, solo Android)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*.  
 
 En iOS, iPadOS y macOS, puede navegar por las fotos utilizando las teclas del teclado (←/→ para moverse entre imágenes, Enter/Space para abrir).
 
@@ -233,7 +237,9 @@ También puede realizar las siguientes acciones en cada foto:
   Comparta la imagen seleccionada utilizando cualquier aplicación compatible instalada en su dispositivo (por ejemplo, mensajería, correo electrónico o redes sociales). El contenido compartido incluye la imagen y su enlace de origen (si está disponible).
 
 - **Detalles**  
-  Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*
+  Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Descripción (texto completo, solo Android)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*
+
+  **Nota:** El idioma de la descripción depende del idioma de visualización de la aplicación. Si la descripción en el idioma seleccionado no está disponible, OsmAnd muestra la versión en inglés o la primera traducción disponible.
 
 - **Abrir en el navegador**  
   Abre la página de origen de la imagen (generalmente en [Wikimedia Commons](https://commons.wikimedia.org/)) en su navegador predeterminado. Esto le permite ver la imagen completa, la información de licencia y el contenido relacionado.

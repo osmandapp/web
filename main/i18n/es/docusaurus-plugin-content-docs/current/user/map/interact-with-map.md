@@ -1,5 +1,5 @@
 ---
-source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
+source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
 sidebar_position: 2
 title:  Interactuar con el mapa
 ---
@@ -215,6 +215,8 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_pl
 La Vista de globo está disponible actualmente solo cuando:
 - El [plugin de Desarrollo](../plugins/development.md) está habilitado.  
 Vaya a: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- El [plugin de Topografía](../plugins/topography.md) está habilitado.  
+Vaya a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - El [Motor de renderizado de mapa](../personal/global-settings.md#map-rendering-engine) está configurado en Versión 2 (OpenGL).  
 Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 

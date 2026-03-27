@@ -1,5 +1,5 @@
 ---
-source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  Plugins
 ---
@@ -84,7 +84,7 @@ Los plugins de OsmAnd pueden aumentar estos grupos de características: **Capas*
 |[Mapillary](#mapillary) | [Capa de mapa](../plugins/mapillary.md#map-layer), [Menú contextual](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Sensores externos](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Métricas del vehículo](#vehicle-metrics)  | [Ajustes personalizados](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Observador de estrellas](#star-watcher)  | [Pantalla](../plugins/starwatcher.md#star-map-screen), [Menú contextual](../plugins/starwatcher.md#celestial-object-info) |
+|[Astronomía](#astronomy)  | [Pantalla](../plugins/astronomy.md#star-map-screen), [Menú contextual](../plugins/astronomy.md#context-menu) |
 |[Accesibilidad](#accessibility) 🤖  | [Ajustes personalizados](../plugins/accessibility.md#plugin-settings) |
 |[Desarrollo de OsmAnd](#osmand-development) | [Ajustes personalizados](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Capa de mapa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menú contextual](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
@@ -99,7 +99,7 @@ Solo el plugin de desarrollo de OsmAnd y el plugin de edición de OSM cambian lo
 
 La mayoría de los plugins proporcionan ajustes de perfil específicos o globales, a los que se puede acceder a través de:
 
-- *Menú principal → Plugins → Nombre del plugin → Ajustes (&#x2699 para iOS)* o  
+- *Menú principal → Plugins → Nombre del plugin → Ajustes (&#x2699 para ios)* o  
 - *Menú principal → Ajustes → Perfil → [Ajustes del plugin](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -127,7 +127,7 @@ Los siguientes plugins proporcionan sus propios ajustes:
 | [Grabación de viaje](#trip-recording) | Configurar los [modos de operación](../plugins/trip-recording.md#required-setup-parameters) de la grabación de viaje |
 | [Tiempo](#weather) | Configurar las unidades de medida para mostrar los eventos meteorológicos |
 |[Notas de audio/vídeo](#audiovideo-notes) 🤖  | Seleccionar [formato de vídeo, tiempo de almacenamiento, etc.](../plugins/audio-video-notes.md#plugin-settings) |
-|[Edición de OpenStreetMap](#openstreetmap-editing)| Especificar el [inicio de sesión](../plugins/osm-editing.md#settings) del usuario |
+|[Edición de OpenStreetMap](#openstreetmap-editing)| Especificar el [inicio de sesión](../plugins/osm-editing.md#settings) del usuario  |
 |  [Sensores externos](#external-sensors) 🤖  | Conectar a un dispositivo externo [Ajustes](../plugins/external-sensors.md#required-setup-parameters) |
 |  [Accesibilidad](#accessibility) 🤖  | Los [Ajustes](../plugins/accessibility.md#plugin-settings) le permiten usar las [características de accesibilidad de Android](https://www.android.com/accessibility/) dentro de OsmAnd. |
 | [Desarrollo de OsmAnd](#osmand-development) | Los [Ajustes del plugin](../plugins/development.md#plugin-settings) le permiten habilitar características especiales para desarrolladores o usuarios experimentados |
@@ -188,15 +188,15 @@ Vea vistas a nivel de calle de sus rutas o lugares de interés, proporcionadas p
 
 ### [Sensores externos](./external-sensors.md) {#external-sensors}
 
-Conecte sensores externos para mostrar sus datos en OsmAnd y almacenar la información en las grabaciones de viaje.  
+Conecte sensores externos para mostrar sus datos en OsmAnd y almacenar la información en las grabaciones de pistas.  
 
 ### [Métricas del vehículo](./vehicle-metrics.md) {#vehicle-metrics}
 
-Conecte un escáner OBD-II para mostrar los datos del vehículo en OsmAnd y almacenar la información en las grabaciones de viaje.  
+Conecte un escáner OBD-II para mostrar los datos del vehículo en OsmAnd y almacenar la información en las grabaciones de pistas.  
 
-### [Observador de estrellas](./starwatcher.md) {#star-watcher}
+### [Astronomía](./astronomy.md) {#astronomy}
 
-Observador de estrellas muestra una superposición interactiva del cielo estrellado con estrellas, constelaciones, el Sol, la Luna y planetas. Le ayuda a identificar objetos celestes sobre su ubicación actual, previsualizar sus trayectorias para una fecha y hora seleccionadas, y planificar sesiones de observación de estrellas utilizando los controles de tiempo integrados y las opciones de visualización.
+El plugin de Astronomía muestra una superposición interactiva del cielo estrellado con estrellas, constelaciones, el Sol, la Luna y planetas. Le ayuda a identificar objetos celestes sobre su ubicación actual, previsualizar sus trayectorias para una fecha y hora seleccionadas, y planificar sesiones de observación de estrellas utilizando los controles de tiempo integrados y las opciones de visualización.
 
 ### [Accesibilidad](./accessibility.md) {#accessibility}
 

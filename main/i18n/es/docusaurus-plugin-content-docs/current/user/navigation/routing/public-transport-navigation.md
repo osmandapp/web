@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  Enrutamiento de transporte público
 ---
@@ -142,19 +142,29 @@ La interfaz de usuario muestra las rutas alternativas como insignias de color co
 
 ## Performance and Results {#performance-and-results}
 
-**Perfil de transporte público -> Configuración -> Configuración de navegación -> Parámetros de ruta**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Número máximo de cambios de transporte**.
+<TabItem value="android" label="Android">
 
-El rendimiento y el consumo de memoria del enrutador de transporte público dependen de la profundidad de búsqueda.
+![Número máximo de cambios de transporte](@site/static/img/navigation/public/maximum_number_android.png) 
 
-El parámetro más importante que afecta esta profundidad es el **Número máximo de cambios de transporte**.
+</TabItem>
 
-Usamos **2** como valor predeterminado, que parece óptimo para las redes modernas de transporte público.
+<TabItem value="ios" label="iOS">  
 
-Si encuentra bajo rendimiento o errores de memoria insuficiente, pruebe disminuyendo este valor.
+![Número máximo de cambios de transporte](@site/static/img/navigation/public/maximum_number_ios.png)
 
-Si está en una ciudad pequeña o viaja rutas cortas, un valor de **1** puede funcionar mejor.
+</TabItem>
+
+</Tabs>
+
+Vaya a: *<Translate android="true" ids="shared_string_settings"/>* *→ perfil de transporte público →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Número máximo de cambios de transporte*
+
+El rendimiento y el consumo de memoria del Enrutador de Transporte Público dependen de la profundidad de búsqueda. El parámetro más importante que afecta esta profundidad es el **Número máximo de cambios de transporte**.
+
+Este parámetro también afecta directamente la disponibilidad y calidad de las rutas. Si el valor se establece demasiado bajo (por ejemplo, 0), OsmAnd puede no encontrar rutas adecuadas o sugerir opciones subóptimas, incluso cuando existen rutas mejores con transbordos.
+
+Usamos **2** como valor predeterminado, que parece óptimo para las redes modernas de transporte público. Si encuentra bajo rendimiento o errores de memoria insuficiente, pruebe disminuyendo este valor. Si está en una ciudad pequeña o viaja rutas cortas, un valor de **1** puede funcionar mejor.
 <!--
 There are two more parameters that help you choose the best routes.
 

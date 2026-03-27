@@ -1,5 +1,5 @@
 ---
-source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
+source-hash: 402ce29cb8352ebd02df5230b886dc88937640fd48f18229a66ec9689b4e036c
 sidebar_position: 2
 ---
 
@@ -35,6 +35,12 @@ Los archivos GPX en OsmAnd organizan los datos jerárquicamente en los siguiente
   - `<trkseg>` - segmentos de la traza, que se dividen a su vez en `<trkpt>` (puntos de la traza).
 - `<rte>` - representa rutas, incluyendo waypoints y puntos clave.
 - `<wpt>` - representa waypoints individuales.
+
+#### Comportamiento de importación de GPX
+
+Al importar un archivo GPX, OsmAnd crea un único objeto de traza basado en el archivo:
+- El nombre de la traza importada se deriva del nombre del archivo GPX. El elemento `<name>` dentro de `<trk>` no se utiliza como el nombre principal de la traza durante la importación.
+- Si un archivo GPX contiene múltiples elementos `<trk>`, OsmAnd los importa como segmentos de la misma traza. En este caso, los valores de `<name>` pueden usarse como etiquetas para los segmentos correspondientes dentro de la traza.
 
 
 ## Personalización de la traza {#track-customization}
@@ -369,7 +375,7 @@ Un archivo gpx puede contener varias rutas. Cada una de ellas está contenida en
       <trkpt lat="52.3636426" lon="4.8922902">
         <ele>0.963</ele>
       </trkpt>
-      <trkpt lat="52.356564" lon="4.8922607">
+      <trkpt lat="52.363564" lon="4.8922607">
         <ele>0.899</ele>
       </trkpt>
 

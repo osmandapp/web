@@ -1,6 +1,6 @@
 ---
-source-hash: 0da9468a34bb1f58ffcdee4cf02d919c141f8bacca983387300d9d34e59be80f
-sidebar_position: 16
+source-hash: c36ba724b244fdf5f4688d17c2ad5a5844f14f7143255510823e2619fd66d5ef
+sidebar_position: 18
 title:  Métricas del vehículo
 ---
 
@@ -52,7 +52,7 @@ Para usar los datos de un escáner OBD-II:
 3. **Active** el Bluetooth en su dispositivo.
 4. [Conecte](#pair-odb-ii-scanner) el escáner OBD-II al puerto de su vehículo.
 5. [Configure](#scanner-settings) los **ajustes del escáner**.
-6. [Añada](#widgets) **widgets de Métricas del vehículo** para datos en pantalla (opcional).
+6. [Añada](#widgets) **widgets de Métricas del vehículo** para mostrar datos en pantalla (opcional).
 7. [Use](#trip-recording)el **plugin de Grabación de viaje** para registrar los datos del vehículo.
 
 
@@ -207,7 +207,7 @@ Estas etiquetas facilitan la identificación y utilización de datos específico
 
 | | |
 |--|--|
-|![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_1.png)| ![Ajustes OBD](@site/static/img/plugins/obd/obd_widget.png)|
+|![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_1_new.png)| ![Ajustes OBD](@site/static/img/plugins/obd/obd_widget.png)|
 
 
 </TabItem>
@@ -218,7 +218,7 @@ Estas etiquetas facilitan la identificación y utilización de datos específico
 
 | | |
 |--|--|
-|![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios_1.png)| ![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
+|![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios_1_new.png)| ![Ajustes OBD](@site/static/img/plugins/obd/obd_widget_ios.png)|
 
 </TabItem>
 

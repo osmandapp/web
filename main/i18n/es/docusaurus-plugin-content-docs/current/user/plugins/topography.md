@@ -1,6 +1,6 @@
 ---
-source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
-sidebar_position: 14
+source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+sidebar_position: 16
 title: Topografía
 ---
 
@@ -143,6 +143,10 @@ Para las [**Curvas de nivel**](#contour-lines), necesitas determinar en qué [un
 
 ## Curvas de nivel {#contour-lines}
 
+:::tip Compra
+Las curvas de nivel son una [función de pago](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -181,6 +185,10 @@ Al usar el [Motor de renderizado de mapas](../personal/global-settings.md#map-re
 
 
 ## Terreno {#terrain}
+
+:::tip Compra
+Terreno es una [función de pago](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,17 +263,30 @@ Los mapas raster de **Sombreado de relieve**, **Pendiente** y **Altitud** se cre
 
 <TabItem value="android" label="Android">
 
-![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+La función *Modificar esquema de color* te permite seleccionar un esquema de color:
+
+- De una [lista predefinida](#default-color-scheme).
+- De archivos de paleta de colores que hayas creado en tu ordenador. Los archivos personalizados se pueden agregar a OsmAnd utilizando la [herramienta de importación/exportación](../personal/import-export.md).
+- De paletas creadas o editadas directamente en la aplicación.
+
+Las paletas personalizadas se basan en escalas de color, donde cada color corresponde a un valor específico de los datos del terreno como *Altitud* o *Pendiente*. 
+Puedes:
+
+- definir pasos de valor (niveles de altitud o porcentajes de pendiente);
+- asignar colores a cada paso;
+- agregar o eliminar pasos para ajustar las escalas de color.
+
+**Nota:** Sombreado de relieve utiliza un algoritmo de sombreado fijo y no admite paletas de colores personalizadas.
+
+Para una personalización avanzada de paletas utilizando archivos de paleta, consulta el artículo [Esquemas de color](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modificar esquema de color](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 La función *Modificar esquema de color* te permite seleccionar un esquema de color:
 
@@ -274,6 +295,9 @@ La función *Modificar esquema de color* te permite seleccionar un esquema de co
 
 Puedes [editar estas paletas](../personal/color-palette-schemes.md#palette-modify) para personalizar la apariencia de los mapas y las rutas.
 
+</TabItem>
+
+</Tabs>
 
 ### Visibilidad {#visibility}
 
@@ -318,6 +342,60 @@ La configuración principal para *Mostrar u ocultar tipos de mapa* se encuentra 
 
 - Ir a [Añadir acción](../widgets/quick-action.md#custom-buttons): *Menú → Configurar pantalla → Botones personalizados → Acción rápida → Añadir acción → Configurar mapa*.
 - Añade uno o más botones de Acción rápida para cambiar la visibilidad de una capa de topografía en particular.
+
+
+## Edificios 3D {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edificios 3D* 
+
+![Edificios 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edificios 3D](@site/static/img/map/3d_buildings_2_new.png) 
+
+La función **Edificios 3D** muestra los edificios como modelos volumétricos 3D en lugar de formas planas. Los edificios se generan a partir de [datos de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizando información de altura de etiquetas como `height` y `building:levels` cuando está disponible. Los edificios 3D solo se muestran en niveles de zoom más altos (vista de ciudad/calle), donde se pueden mostrar edificios individuales.  
+
+Usa el interruptor principal para habilitar o deshabilitar el renderizado 3D de edificios. Para ver los edificios en 3D, inclina el mapa colocando dos dedos en la pantalla y deslizando hacia arriba. En esta vista, los edificios pueden cubrir parcialmente las carreteras o las etiquetas del mapa dependiendo de la configuración de visibilidad.
+
+Esta opción solo está disponible cuando el complemento Topografía está habilitado.  
+Ir a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+La configuración de edificios 3D se divide en dos grupos: **Apariencia** y **Rendimiento**.
+
+### Apariencia {#appearance}
+
+![Edificios 3D](@site/static/img/map/3d_buildings_color.png)
+
+Los controles de **Apariencia** determinan cómo se ven los edificios 3D en el mapa. Incluye dos configuraciones: Color y Visibilidad. 
+
+**Color** te permite cambiar el color del edificio. Cuando tocas Color, OsmAnd abre una pantalla de vista previa separada donde puedes ver el mapa mientras ajustas la configuración.
+- **Estilo de mapa** — utiliza el color predeterminado del edificio del estilo de mapa seleccionado actualmente.
+- **Personalizado** — te permite establecer un color de edificio personalizado por separado para el modo Día / Noche.
+
+:::tip Compra
+La personalización de color de Edificios 3D es una [función de pago](../purchases/index.md).  
+:::
+
+Si no se han comprado colores personalizados, verás un estado vacío con una breve descripción y un botón Obtener. Si Personalizado está disponible, puedes cambiar entre Día y Noche, elegir un color de la paleta (o abrir Todos los colores), luego tocar Aplicar.
+
+**Visibilidad** controla la opacidad (transparencia) de los edificios 3D. Usa el control deslizante para establecer la visibilidad como un porcentaje. Los valores más bajos hacen que los edificios sean más transparentes y ayudan a que las carreteras/etiquetas sigan siendo legibles. Los valores más altos hacen que los edificios parezcan más sólidos y visualmente dominantes. Tocar Visibilidad también abre una pantalla de vista previa separada con el control deslizante.
+
+En las pantallas de vista previa (Color / Visibilidad), puedes usar Restablecer a predeterminado desde la barra de la aplicación para restaurar el valor predeterminado.
+
+### Rendimiento {#performance}
+
+Los controles de **Rendimiento** determinan cómo se renderizan los edificios 3D. Incluye dos configuraciones: Nivel de detalle y Distancia de vista.
+
+**Nivel de detalle** determina la complejidad de la geometría del edificio 3D:
+- Bajo (predeterminado) — geometría más simple.
+- Alto — geometría más detallada.
+
+**Distancia de vista** controla qué tan lejos de la cámara se renderizan los edificios 3D:
+- Cerca (predeterminado) — renderiza edificios más cerca de ti.
+- Lejos — renderiza edificios desde una distancia mayor.
+
+Ambas opciones de rendimiento usan un interruptor de dos posiciones directamente en la pantalla de configuración de edificios 3D.
+
+**Nota:** Usar *Alto detalle* y *Distancia de vista lejana* mejora la apariencia visual pero puede afectar el rendimiento e aumentar el consumo de batería.
 
 
 ## Relieve 3D {#3d-relief}
@@ -440,7 +518,7 @@ OsmAnd te permite combinar múltiples tipos de capas de mapa para una visualizac
 
 - La combinación de **Curvas de nivel** y **Sombreado de relieve** es óptima para estimar visual y numéricamente la inclinación de las pendientes montañosas.
 - La combinación de las capas de **Curvas de nivel** y **Pendiente** es la mejor para estimar la inclinación de la pendiente y encontrar puntos con la misma altura.
-- La combinación de las capas de **Relieve 3D** y **Sombreado de relieve** te permite obtener una representación más realista y visual del terreno, el relieve y los detalles del paisaje. Esta combinación es especialmente adecuada para terrenos montañosos y accidentados.
+- La combinación de las capas de **Relieve 3D** y **Sombreado de relieve** te permite obtener una representación más realista y visual del terreno, el relieve y los detalles del paisaje. Esta combinación es especialmente adecuada para terrenos montañosos y ondulados.
 
 
 ## Artículos relacionados {#related-articles}
@@ -453,8 +531,8 @@ OsmAnd te permite combinar múltiples tipos de capas de mapa para una visualizac
 
 <!-- Troubleshooting Steps-->
 
-1. Cómo restaurar la compra del complemento Topografía (anteriormente Curvas de nivel). [(verificar)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
-2. Las Curvas de nivel, los datos de Elevación o el Relieve 3D no se muestran. [(verificar)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
+1. Cómo restaurar la compra del complemento Topografía (anteriormente Curvas de nivel). [(check)](../troubleshooting/purchases_payments.md#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase).
+2. Las Curvas de nivel, los datos de Elevación o el Relieve 3D no se muestran. [(check)](../troubleshooting/maps-data#contour-lines-elevation-data-or-3d-relief-are-not-displayed)
 3. El mapa cambia automáticamente al modo 3D durante la navegación:  
     - Asegúrate de que el botón **Modo 3D** esté desactivado en **Menú → Configurar pantalla → Botones → Botones predeterminados**.  
     - Comprueba si alguna función de Terreno está habilitada en **Menú → Configurar mapa → Topografía** que pueda activar un efecto 3D.

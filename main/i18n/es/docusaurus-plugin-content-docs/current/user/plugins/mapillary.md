@@ -1,8 +1,9 @@
 ---
-source-hash: c1e40198b8d078b7e3678c0105a5dc91442a1ca2f47b65d03facbd7ca77df64a
-sidebar_position: 6
+source-hash: 38151318e8ffca078fdb264a4c0b0efa447c86b08d4a27dad17b80dd745bed3e
+sidebar_position: 7
 title:  Mapillary
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,10 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-
 ## Resumen {#overview}
 
-Para desplazarse más rápido, en OsmAnd puede utilizar las vistas a nivel de calle de sus rutas o puntos de interés proporcionadas por [Mapillary](https://www.mapillary.com/) (se requiere conexión a Internet).
+Para desplazarse más rápido, en OsmAnd puede utilizar las vistas a nivel de calle de sus rutas o puntos de interés proporcionadas por [Mapillary](https://www.mapillary.com/) (se requiere conexión a Internet).  
 
 [La capa de Mapillary](https://www.mapillary.com/) trae imágenes a nivel de calle directamente a la aplicación OsmAnd, para que pueda ver fácilmente los alrededores de cualquier punto de interés o a lo largo de la ruta que ha planeado. Si faltan imágenes, puede añadirlas usted mismo y otros podrán utilizarlas. Esta función ha surgido de nuestra colaboración con [el equipo de Mapillary](https://www.mapillary.com/about), uniendo las ventajas de ambas aplicaciones.
 
@@ -51,7 +51,7 @@ La capa del mapa con imágenes de calles se muestra en el mapa de OsmAnd como fi
 
 - Las fotos de los usuarios de Mapillary se adjuntan a estos puntos verdes.
 - Toque un punto verde en el mapa para abrir una foto de vista de calle. Las fotos también se pueden seleccionar de una lista en el [menú contextual del mapa](#map-context-menu), si está disponible.
-- Tras la selección, la pantalla de la aplicación se divide entre el mapa de OsmAnd y las imágenes de la calle a nivel de calle de Mapillary.
+- Tras la selección, la pantalla de la aplicación se divide entre el mapa de OsmAnd y las imágenes a nivel de calle de Mapillary.
 - Puede aplicar [filtros](#data-filtering) para seleccionar las fotos que desea mostrar en el mapa.
 
 
@@ -73,9 +73,9 @@ La capa del mapa con imágenes de calles se muestra en el mapa de OsmAnd como fi
 
 </Tabs>
 
-Para mostrar las imágenes a nivel de calle de Mapillary en el mapa, debe activar esta capa en el menú [Configurar mapa](../map/configure-map-menu.md) en la sección *Mostrar*.
+Para mostrar las imágenes a nivel de calle de Mapillary en el mapa, debe activar esta capa en el menú [Configurar mapa](../map/configure-map-menu.md) en la sección *Mostrar*.  
 
-*Para acceder: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.
+*Para acceder: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
 :::note Visor de fotos de Mapillary
 
@@ -102,7 +102,7 @@ Para mostrar las imágenes a nivel de calle de Mapillary en el mapa, debe activa
 
 </Tabs>
 
-Puede crear un filtro y seleccionar qué fotos mostrar en el mapa. Por ejemplo, elija ver solo imágenes recientes o solo imágenes de 360 grados.
+Puede crear un filtro y seleccionar qué fotos mostrar en el mapa. Por ejemplo, elija ver solo imágenes recientes o solo imágenes de 360 grados.  
 
 *Para acceder: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*
 
@@ -159,7 +159,7 @@ Para añadir fotos, debe registrarse en la [aplicación Mapillary](https://www.m
 
 <TabItem value="android" label="Android">
 
-Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elija un panel → <Translate android="true" ids="mapillary"/>*
+Vaya a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Elija un panel → <Translate android="true" ids="mapillary"/>*
 
 ![Complemento Mapillary Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Menú contextual del mapa del complemento Mapillary Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
@@ -167,7 +167,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,map_widget_config,share
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Elija un panel → <Translate ios="true" ids="mapillary"/>*
+Vaya a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Elija un panel → <Translate ios="true" ids="mapillary"/>*
 
 ![Menú contextual del mapa del complemento Mapillary iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 

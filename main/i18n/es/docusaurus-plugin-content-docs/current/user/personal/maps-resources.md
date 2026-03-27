@@ -1,5 +1,5 @@
 ---
-source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
+source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -82,6 +82,8 @@ Tenga en cuenta que las actualizaciones mensuales de mapas se consideran otra de
 - [Wikipedia](../plugins/wikipedia.md). Mapa vectorial con artículos de [Wikipedia](https://wikipedia.org/) geoposicionados sobre puntos de referencia o información adicional sobre lugares.
 - [Wikivoyage](../plan-route/travel-guides.md). Proporciona mapas vectoriales con guías de viaje virtuales, ofreciendo a los usuarios información valiosa, recomendaciones y consejos.
 - [Pronóstico del tiempo](../plugins/weather.md). Información meteorológica en un mapa para una fácil planificación de rutas.
+
+Sin una suscripción activa, estos tipos de mapa muestran un botón *Obtener* en lugar de Descargar. Toque *Obtener* para abrir la pantalla de suscripción y elegir un plan.
 
 
 ## Menú de descargas {#downloads-menu}

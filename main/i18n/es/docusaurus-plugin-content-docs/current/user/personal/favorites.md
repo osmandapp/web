@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Favoritos
 ---
@@ -163,7 +163,7 @@ La *carpeta Personal* contiene puntos especiales como **<Translate android="true
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Mis lugares favoritos android](@site/static/img/personal/my_places_android.png)
+![Mis lugares favoritos android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![mis_lugares_ios](@site/static/img/personal/my_places_ios.png)
+![mis_lugares_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_
 La sección **Mis Favoritos** le permite:
 
 - [Buscar](#order--sorting--search) favoritos o grupos específicos.
-- [Operaciones masivas](#bulk-edit--delete) — Renombrar, mover o eliminar múltiples favoritos a la vez.
+- [Operaciones masivas](#bulk-edit--delete) — Compartir, mover o eliminar múltiples favoritos a la vez.
 
 ### Orden / Clasificación / Búsqueda {#order--sorting--search}
 
@@ -188,20 +188,23 @@ La sección **Mis Favoritos** le permite:
 
 <TabItem value="android" label="Android">
 
-![Carpetas de favoritos android](@site/static/img/personal/favorites_folders_android.png)
+![Carpetas de favoritos android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Clasificación** — Las carpetas y puntos de favoritos se pueden ordenar utilizando las opciones de clasificación disponibles en el menú de la lista. Las siguientes opciones están disponibles: *Nombre A – Z*, *Nombre Z – A*, *Última modificación*, *Fecha más reciente primero*, *Fecha más antigua primero*. Por defecto, los elementos se ordenan por Nombre A – Z. Las carpetas fijadas siempre se muestran en la parte superior de la lista. Están separadas visualmente del resto de las carpetas por un divisor. La [carpeta Personal](../personal/favorites.md#special-favorites-personal) está fijada por defecto. 
+- **Búsqueda** — Utilice la [Búsqueda global](../search/search-all.md) para encontrar favoritos por nombre. Los favoritos se ordenan por distancia desde el centro del mapa.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Carpetas de favoritos ios](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Clasificación** — Las carpetas y puntos de favoritos se ordenan alfabéticamente, con la [carpeta personal](../personal/favorites.md#special-favorites-personal) en la parte superior.
 - **Búsqueda** — Utilice la [Búsqueda global](../search/search-all.md) para encontrar favoritos por nombre. Los favoritos se ordenan por distancia desde el centro del mapa.
 
+</TabItem>
+
+</Tabs>
 
 ### Edición / Eliminación Masiva {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ La sección **Mis Favoritos** le permite:
 
 <TabItem value="android" label="Android">
 
-![Acciones de favoritos android](@site/static/img/personal/favorites_actions_android.png) ![Acción de eliminar favoritos android](@site/static/img/personal/favorites_delete_android.png)
+![Acciones de favoritos android](@site/static/img/personal/favorites_group_actions.png) ![Acción de eliminar favoritos android](@site/static/img/personal/favorites_actions.png)
+
+Para gestionar múltiples favoritos o carpetas, active el *Modo de selección*. Puede abrir el Modo de selección de dos maneras:
+- Toque el *menú de tres puntos* en la esquina superior derecha y elija *Seleccionar*.
+- Haga un toque largo en un punto favorito o carpeta.
+
+Cuando el Modo de selección está activado, aparecen casillas de verificación junto a los elementos en la lista. Seleccione los favoritos o carpetas requeridos tocando las casillas de verificación. Para seleccionar todos los elementos en la lista, toque el icono Seleccionar todo en la esquina superior derecha.
+
+Las acciones disponibles dependen del tipo de elemento seleccionado. Cuando se seleccionan carpetas, están disponibles las siguientes acciones:
+- **Compartir** — Exportar las carpetas seleccionadas como un archivo GPX de Favoritos.
+- **Eliminar** — Eliminar las carpetas seleccionadas.
+
+Cuando se seleccionan puntos favoritos, están disponibles las siguientes acciones:
+- **Mover** — Mover los favoritos seleccionados a otra carpeta.
+- **Añadir a marcadores del mapa** — Añadir los puntos seleccionados a la lista de Marcadores del mapa.
+- **Añadir a pista** — Añadir los puntos seleccionados a una pista.
+- **Añadir a navegación** — Iniciar la navegación al punto seleccionado.
+- **Eliminar** — Eliminar los favoritos seleccionados.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ La sección **Mis Favoritos** le permite:
 
 ![Acciones de favoritos ios](@site/static/img/personal/favorites_actions_ios.png)
 
+- Para gestionar múltiples favoritos, toque el botón **Editar** (*icono de lápiz*).
+- Seleccione favoritos individuales o carpetas enteras para operaciones masivas.
+- **Opciones disponibles** — *Compartir*, *Mover a un Grupo de Favoritos*, *Cambiar Color* y *Eliminar*.
+
 </TabItem>
 
 </Tabs>
-
-1. Para gestionar múltiples favoritos, toque el icono **Eliminar** (*icono de papelera en Android*) o el botón **Editar** (*icono de lápiz en iOS*).
-2. Seleccione favoritos individuales o carpetas enteras para operaciones masivas.
-3. **Opciones disponibles** — *Eliminar* para Android e iOS, *Mover a un Grupo de Favoritos*, *Compartir* y *Cambiar Color* para iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Ir a: *Menú de tres puntos → Cambiar apariencia predeterminada*
+![Funciones de la carpeta de favoritos android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Funciones de la carpeta de favoritos android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Use el ***Menú de tres puntos*** junto a cada carpeta para gestionar grupos de favoritos:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ocultar en el mapa** — Active esta opción para mostrar u ocultar los puntos favoritos de la carpeta en el mapa.
+- **Fijar carpeta** — Fije la carpeta seleccionada para mantenerla en la parte superior de la lista de favoritos para un acceso más rápido.
+- **<Translate android="true" ids="shared_string_rename"/>** — Use esta opción para cambiar el nombre de la carpeta seleccionada.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalice cómo aparecen los puntos favoritos de la carpeta en el mapa cambiando sus iconos, colores o etiquetas.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Eliminar de los marcadores del mapa** — Añada todos los puntos favoritos de la carpeta a la *lista de Marcadores del mapa* o elimínelos según sea necesario para una fácil referencia.
+- **<Translate android="true" ids="add_to_a_track"/>** — Añada todos los puntos favoritos de la carpeta seleccionada a una pista. Esto abre la pantalla de selección de pistas donde puede elegir o crear una pista.
+- **<Translate android="true" ids="shared_string_share"/>** — Comparta los puntos favoritos de la carpeta exportándolos como un archivo *Favorites.gpx*, lo que facilita la transferencia o la copia de seguridad de sus datos.
+- **<Translate android="true" ids="shared_string_delete"/>** — Elimine permanentemente la carpeta de favoritos seleccionada y todos los puntos que contiene.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ir a: *Pulsación larga en la carpeta → Apariencia predeterminada*
-
 ![Acciones de favoritos ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Use la ***pulsación larga*** en la carpeta para gestionar grupos de favoritos:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Ocultar en el mapa** — Active esta opción para mostrar u ocultar los puntos favoritos de la carpeta en el mapa.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Use esta opción para cambiar el nombre de la carpeta seleccionada.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Personalice cómo aparecen los puntos favoritos de la carpeta en el mapa cambiando sus iconos, colores o etiquetas.
+- **<Translate ios="true" ids="shared_string_share"/>** — Comparta los puntos favoritos de la carpeta exportándolos como un archivo *Favorites.gpx*, lo que facilita la transferencia o la copia de seguridad de sus datos.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Elimine permanentemente la carpeta de favoritos seleccionada y todos los puntos que contiene.
 
 </TabItem>
 
 </Tabs>
-
-Use el ***Menú de tres puntos*** (*Android*) junto a cada carpeta y la ***pulsación larga*** (*iOS*) en la carpeta para gestionar grupos de favoritos:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Use esta opción para cambiar el nombre de la carpeta seleccionada.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalice cómo aparecen los puntos favoritos de la carpeta en el mapa cambiando sus iconos, colores o etiquetas.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** o **Ocultar en el mapa** — Active esta opción para mostrar u ocultar los puntos favoritos de la carpeta en el mapa.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** o **Eliminar de los marcadores del mapa** (*Solo Android*) — Añada todos los puntos favoritos de la carpeta a la *lista de Marcadores del mapa* o elimínelos según sea necesario para una fácil referencia.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Comparta los puntos favoritos de la carpeta exportándolos como un archivo *Favorites.gpx*, lo que facilita la transferencia o la copia de seguridad de sus datos.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Elimine permanentemente la carpeta de favoritos seleccionada y todos los puntos que contiene.
-
-
 
 ### Cambiar Apariencia del Grupo {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Use el ***Menú de tres puntos*** (*Android*) junto a cada carpeta y la ***pulsa
 
 <TabItem value="android" label="Android">
 
-![Funciones de la carpeta de favoritos android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Ir a: *Menú de tres puntos → Cambiar apariencia predeterminada*
+
+![Funciones de la carpeta de favoritos android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Ir a: *Pulsación larga en la carpeta → Apariencia predeterminada*
 
 ![Acciones de favoritos ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 

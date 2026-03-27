@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Map Screen During Navigation
 ---
@@ -197,8 +197,8 @@ El ajuste **Color** cambia los tonos de color de las líneas de ruta. Su color g
 - ***<Translate android="true" id="map_widget_renderer"/>***. Se utiliza con los colores predeterminados. Para una descripción completa de los colores, vaya a [Estilos de mapa predeterminados](../../map/map-styles.md#default-map-styles).  
     ![estilo de mapa](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Personalizado***. Le permite seleccionar una línea en cualquier color y transparencia preferidos. Puede seleccionar diferentes configuraciones para el mapa diurno y por separado para el mapa nocturno.  
-    ![personalizado](@site/static/img/navigation/route/custom.png)   ![personalizado](@site/static/img/navigation/route/custom_ios.png)
+- ***Personalizado***. Le permite seleccionar una línea en cualquier color y transparencia preferidos. Puede seleccionar diferentes configuraciones para el mapa diurno y por separado para el mapa nocturno. La paleta de colores incluye colores de acceso rápido, una opción para agregar un color personalizado (*+*), y una lista completa de colores disponibles (*Todos los colores*).            
+    ![personalizado](@site/static/img/navigation/route/custom_new.png)   ![personalizado](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. Muestra la altura del punto de la ruta como un gradiente **verde-amarillo-rojo**. El **verde** indica el punto más bajo de la ruta, el **amarillo** indica la altura promedio del punto y el **rojo** es el más alto. Si la diferencia de altitud de la ruta es < 100 metros, el gradiente se aplica parcialmente o no se aplica, por ejemplo, para una subida simple de 100 metros a 150 metros, el gradiente será **verde-amarillo**. Tenga en cuenta que el color no representa el valor absoluto de la altitud.  
     ![Altitud](@site/static/img/navigation/route/Altitude_rl.png)
@@ -244,10 +244,10 @@ Puede ajustar el ancho de la línea de la ruta para alinearla con la carretera o
 El ajuste Flechas de giro le permite seleccionar si se muestran flechas de giro en la línea de la ruta.  
 
 - ***En el mapa***  
-    ![Altitud](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![flechas_giro_ios_mapa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Flechas de giro en el mapa](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Flechas de giro en el mapa iOS](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***En la aplicación***  
-    ![Altitud](@site/static/img/navigation/route/turn_arr.png)   ![flechas_giro_ios](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Flechas de giro](@site/static/img/navigation/route/turn_arr.png)   ![Flechas de giro iOS](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Related Articles {#related-articles}

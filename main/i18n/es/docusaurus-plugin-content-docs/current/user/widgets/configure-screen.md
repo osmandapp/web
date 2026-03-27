@@ -1,5 +1,5 @@
 ---
-source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
+source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
 sidebar_position: 1
 title:  Configurar pantalla
 ---
@@ -310,7 +310,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_wi
 
 Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**. La función **Modo de páginas** le permite agregar 5 páginas a los paneles izquierdo y derecho.
 
-***Cómo configurar filas:***
+***Cómo configurar páginas:***
 
 - **Añadir una página**. Vaya a la configuración del panel izquierdo/derecho y toque *Editar → Añadir página*.
 - **Organizar widgets por página**. Esta función es útil cuando se necesitan diferentes conjuntos de widgets para diferentes tareas, como navegar en lugar de explorar el mapa.
@@ -333,10 +333,18 @@ Los widgets en los paneles derecho e izquierdo se pueden agrupar en **Páginas**
     - Mejora la claridad y maximiza el espacio para datos importantes.
     - Especialmente útil al mostrar muchos widgets en la misma **fila**.
 
-3. **Ocultar etiquetas de texto de widgets**:
+3. **Visibilidad de la etiqueta de texto del widget**
 
-    - Oculta automáticamente las etiquetas de texto para mantener la información numérica completamente visible en diseños compactos.
-    - Ayuda a mantener un arreglo de widgets limpio y legible cuando el espacio es limitado.   
+    - La visibilidad de la etiqueta de texto depende del tamaño del widget y la ubicación del panel. En los tamaños Mediano y Grande, las etiquetas siempre se muestran.
+    - En el tamaño Pequeño, las etiquetas no se muestran en los paneles Izquierdo y Derecho. En los paneles Superior e Inferior, la etiqueta puede ocultarse automáticamente (cuando se posiciona en el lado derecho) para mantener los valores numéricos completamente visibles.
+    - No hay una opción separada para activar o desactivar las etiquetas de texto.
+
+<!--
+3. **Hiding widget text labels**:
+
+    - Automatically hides text labels to keep numeric information fully visible in compact layouts.
+    - Helps maintain a clean and readable widget arrangement when space is limited.  
+--> 
 
 4. **Tamaño individual para diferentes filas** (*para todos los paneles*):
 
@@ -464,6 +472,8 @@ Puede abrir la configuración de Diseño de la pantalla del mapa desde el menú 
 
 ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_single.png) ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_separate.png)
 
+Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Diseño de la pantalla del mapa*
+
 OsmAnd admite dos modos de diseño para la pantalla del mapa:
 - **Diseño único** – utiliza el mismo diseño de widgets para todas las orientaciones de pantalla. Esta opción está seleccionada por defecto.
 - **Diseños separados** – le permite configurar diseños de widgets diferentes para las orientaciones Vertical y Horizontal.
@@ -488,7 +498,9 @@ Solo se copia la lista de widgets, y la operación se aplica dentro del mismo pe
 
 ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_wide.png) ![Diseño de la pantalla del mapa](@site/static/img/widgets/screen_layout_compact.png)
 
-La configuración de **Diseño de paneles** controla cómo se muestran los paneles de widgets superior e inferior. Esta opción solo está disponible cuando se habilita Diseños separados.
+La configuración de **Diseño de paneles** controla cómo se muestran los paneles de widgets superior e inferior. 
+
+**Nota:** Esta opción solo está disponible cuando se habilita [Diseños separados](#single-and-separate-layouts).
 
 Puede elegir entre dos modos:
 - **Ancho** – los paneles superior e inferior abarcan todo el ancho de la pantalla.
