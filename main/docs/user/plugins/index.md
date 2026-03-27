@@ -83,7 +83,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[External Sensors](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Vehicle Metrics](#vehicle-metrics)  | [Custom Settings](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Astronomy](#star-watcher)  | [Screen](../plugins/astronomy.md#star-map-screen), [Context Menu](../plugins/astronomy.md#celestial-object-info) |
+|[Astronomy](#astronomy)  | [Screen](../plugins/astronomy.md#star-map-screen), [Context Menu](../plugins/astronomy.md#context-menu) |
 |[Accessibility](#accessibility) 🤖  | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd development](#osmand-development) | [Custom Settings](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Map Layer](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Context Menu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |

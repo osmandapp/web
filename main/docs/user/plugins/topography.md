@@ -270,14 +270,14 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 - From color palette files that you have created on your computer. Custom files can be added to OsmAnd using the [import/export tool](../personal/import-export.md).
 - From palettes created or edited directly in the app.
 
-Custom palettes are based on gradient ranges, where each color corresponds to a specific value of terrain data such as *Altitude* or *Slope*. 
+Custom palettes are based on color scales, where each color corresponds to a specific value of terrain data such as *Altitude* or *Slope*. 
 You can:
 
 - define value steps (altitude levels or slope percentages);
 - assign colors to each step;
-- add or remove steps to adjust the gradient.
+- add or remove steps to adjust the color scales.
 
-**Note:** Hillshade uses a fixed shading algorithm and does not support custom gradient palettes.
+**Note:** Hillshade uses a fixed shading algorithm and does not support custom color palettes.
 
 For advanced palette customization using palette files, see [Color Schemes](../personal/color-palette-schemes.md#palette-modify) article.
 
