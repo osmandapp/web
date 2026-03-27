@@ -16,6 +16,7 @@ import CloudTrackActionsButtons from './CloudTrackActionsButtons';
 import RouteTrackActionsButtons from './RouteTrackActionsButtons';
 import LocalTrackActionsButtons from './LocalTrackActionsButtons';
 import ShareTrackActionsButtons from './ShareTrackActionsButtons';
+import LocationInfoLine from '../common/LocationInfoLine';
 
 export default function TrackContextMenu({ track, onClose, tabsObj, showBackButton = false }) {
     const ctx = useContext(AppContext);
@@ -71,6 +72,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                                 </Box>
                             </Box>
                         )}
+                        {track && <LocationInfoLine track={track} />}
                         {isCloudTrack(ctx) && track && (
                             <CloudTrackActionsButtons
                                 track={track}
