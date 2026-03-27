@@ -60,6 +60,7 @@ import WptTagsProvider, {
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
@@ -156,7 +157,7 @@ export function getObjType(wpt, t) {
     return capitalize(getFirstSubstring(type));
 }
 
-export const ADDRESS_NOT_FOUND = 'No data';
+export const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
 export const TYPE_NOT_FOUND = 'No type';
 export const EMPTY_STRING = '';
 
@@ -939,7 +940,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 {wpt?.type?.isStop && <TransportStopsRoutes wpt={wpt} />}
                                 {wpt?.wikiDesc && (
                                     <>
-                                        <Divider sx={{ mt: 2 }} />
+                                        <Divider />
                                         <MenuItem className={styles.descTitle}>
                                             <ListItemText>
                                                 <Typography className={styles.descTitleText}>
@@ -965,7 +966,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         </Button>
                                     </>
                                 )}
-                                <Divider sx={{ mt: '16px' }} />
+                                <Divider />
                                 {wpt.photos && <PhotoGallery photos={wpt.photos} />}
                                 {wpt.elo && ctx.develFeatures && (
                                     <WptTagInfo

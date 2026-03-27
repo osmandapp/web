@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow.svg';
+import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import styles from '../wpt/wptDetails.module.css';
 import {
     convertMeters,
@@ -29,7 +29,6 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
                 className={styles.directionIcon}
                 style={{
                     transform: `rotate(${bearing ?? 0}deg)`,
-                    transformOrigin: 'center',
                     fill: isUserLocation ? '#237bff' : '#727272',
                 }}
             />
