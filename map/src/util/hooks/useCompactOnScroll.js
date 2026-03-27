@@ -18,11 +18,18 @@ const initialState = { compact: false, expandPaused: false };
 export function useCompactOnScroll() {
     const [state, setState] = useState(initialState);
 
-    /** Align pause flag with DOM: if already scrolled, allow expand-at-top again. */
+    /** Align compact/pause flags with DOM position when layout changes without scroll events. */
     const syncExpandPauseFromScrollTop = useCallback((scrollTop) => {
-        if (scrollTop > 0) {
-            setState((s) => ({ ...s, expandPaused: false }));
-        }
+        setState((s) => {
+            if (scrollTop > 0) {
+                const nextState = { compact: true, expandPaused: false };
+                if (s.compact === nextState.compact && s.expandPaused === nextState.expandPaused) {
+                    return s;
+                }
+                return nextState;
+            }
+            return s;
+        });
     }, []);
 
     /** Call when scrollable content identity changes without a guaranteed `scroll` event. */
