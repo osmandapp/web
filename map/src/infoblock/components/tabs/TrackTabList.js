@@ -7,7 +7,7 @@ import TurnsTab from './TurnsTab';
 import WaypointsTab from './WaypointsTab';
 import TrackInProgressTab from './TrackInProgressTab';
 import { hasSegmentTurns } from '../../../manager/track/TracksManager';
-import { isLocalTrack, isRouteTrack } from '../../../context/AppContext';
+import { isCloudTrack, isLocalTrack, isRouteTrack } from '../../../context/AppContext';
 
 export const TRACK_TAB_IDS = {
     GENERAL: 'general',
@@ -41,7 +41,7 @@ export default class TrackTabList {
 
         tabs.Points = <WaypointsTab key={TRACK_TAB_IDS.POINTS} />;
 
-        if (isRouteTrack(ctx) || hasSegmentTurns({ track: ctx.selectedGpxFile })) {
+        if (!isCloudTrack(ctx) && (isRouteTrack(ctx) || hasSegmentTurns({ track: ctx.selectedGpxFile }))) {
             tabs.Turns = <TurnsTab key={TRACK_TAB_IDS.TURNS} />;
         }
 

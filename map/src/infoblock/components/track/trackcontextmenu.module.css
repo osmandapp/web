@@ -5,13 +5,23 @@
     flex-direction: column;
 }
 
+.collapsibleHeader {
+    flex-shrink: 0;
+    overflow: hidden;
+    max-height: 250px;
+    transition: max-height 200ms ease-out;
+}
+
+.collapsibleHeaderHidden {
+    max-height: 0;
+}
+
 .trackTabsColumn {
     flex: 1;
     min-height: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
 .nameBlock {
@@ -51,4 +61,17 @@
 
 .trackIconBox svg {
     fill: var(--svg-icon-color) !important;
+}
+
+.compactHeaderToolbar :global(.MuiTypography-root) {
+    color: var(--text-primary) !important;
+    font-feature-settings: 'liga' off !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    letter-spacing: 0.18px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
