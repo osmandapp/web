@@ -19,8 +19,8 @@ export default async function test() {
     await actionLogIn({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
     await clickBy(By.id('se-show-menu-tracks'));
     await waitBy(By.id('se-smart-folders-progress'), { optional: true });
-    await waitByRemoved(By.id('se-smart-folders-progress'), true);
     await waitByRemoved(By.id('se-loading-page'), true);
+    await waitByRemoved(By.id('se-smart-folders-progress'), true);
     await waitBy(By.id('se-sort-button-time-tracks'));
     await clickBy(By.id('se-sort-button-time-tracks'));
     await waitBy(By.id('se-sort-menu'));
