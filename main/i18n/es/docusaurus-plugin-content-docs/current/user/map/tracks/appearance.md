@@ -1,5 +1,5 @@
 ---
-source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
+source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
 sidebar_position: 5
 title:  Apariencia de la pista
 ---
@@ -71,6 +71,41 @@ En iOS, la lista de **Coloreado** se abre como un menú contextual. Los elemento
 
 Para más detalles sobre la personalización de la apariencia de la línea de ruta, consulte [Pantalla de mapa durante la navegación](../../navigation/guidance/map-during-navigation.md#color) y sobre la selección y creación de un color personalizado, consulte [Esquemas de color](../../personal/color-palette-schemes.md#tracks-routes).
 
+### Editor de paletas de color {#color-palette-editor}
+
+<InfoAndroidOnly/> 
+
+![Editor de paletas de color](@site/static/img/map/gradient_palettes_1.png) ![Editor de paletas de color ](@site/static/img/map/gradient_palettes_2.png) 
+
+Al colorear una pista por Velocidad, Altitud o Pendiente, puede usar paletas propias para definir cómo se aplican los colores a lo largo de la pista.
+
+La pantalla *Todos los colores* muestra las paletas disponibles. Toque el menú de tres puntos junto a una paleta para:
+- Renombrar.
+- Editar.
+- Duplicar.
+- Eliminar. Eliminar una paleta requiere confirmación.
+
+Toque el botón + en la pantalla Todos los colores. Hay dos tipos de paletas disponibles:
+- **Relativa** — los colores se escalan automáticamente en función de los valores mínimo y máximo de la pista.
+- **Valores fijos** — los colores se asignan a números absolutos específicos (por ejemplo, 50 km/h). Los valores se pueden editar manualmente. Las unidades siguen los [ajustes del sistema](../../personal/profiles.md#units--formats). La escala de colores no se reescala automáticamente al aplicarla a diferentes pistas.
+
+:::info Pro feature
+Crear paletas personalizadas es una función de pago de [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
+:::
+
+Para obtener más información sobre los esquemas de paletas de color como formato de datos y su uso en pistas y rutas, consulte el artículo [Esquemas de paletas de color](../../personal/color-palette-schemes.md#tracks-routes).
+
+Al crear o editar una paleta, la pantalla del editor incluye:
+- Una vista previa de la escala de colores en la parte superior de la pantalla.
+- Botones de valores seleccionables debajo de la escala de colores (por ejemplo, 50, 100, 150, Sin datos).
+- Un botón + para agregar un nuevo paso.
+- Un campo Valor.
+- Opciones de selección de color. Para obtener más información sobre los archivos de paleta.
+- Una opción Eliminar paso para el valor seleccionado.
+- Un botón Guardar.
+
+Use el icono de deshacer en la barra de aplicaciones para revertir la última acción. Toque Cerrar para salir del editor. Si se han realizado cambios, aparece un diálogo de confirmación antes de cerrar.
+
 
 ### Ancho {#width}
 
@@ -121,7 +156,7 @@ Añade **marcadores de flecha** a lo largo de la pista para indicar la direcció
 
 ![Menú de pista Apariencia iconos de inicio y fin Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Le permite seleccionar si desea mostrar los **iconos de inicio y fin** para los segmentos de la pista.
+Le permite seleccionar si desea mostrar los **iconos de inicio y fin** para los segmentos de la pista. Para pistas con un gran número de segmentos, estos iconos pueden desactivarse automáticamente para mejorar el rendimiento de renderizado del mapa. En este caso, puede activarlos manualmente si es necesario.
 
 ### Unir huecos {#join-gaps}
 
@@ -189,7 +224,7 @@ La función de pista 3D es muy beneficiosa para actividades como el parapente, d
 
     Con el Color de la pared basado en la Pendiente, puede observar cómo el terreno, particularmente las colinas e inclinaciones, afectaron su velocidad. Esta combinación de visualización de velocidad y pendiente proporciona una comprensión detallada del rendimiento a lo largo de la actividad.
 
-2. **Visualizar por sensor cardíaco con Relieve 3D**.  
+2. **Visualizar por sensor de frecuencia cardíaca con Relieve 3D**.  
     Otra aplicación interesante es combinar los datos del sensor de frecuencia cardíaca con mapas de relieve 3D. Esto le permite mapear las fluctuaciones de la frecuencia cardíaca directamente sobre el terreno, dándole una vista completa de cómo los cambios de altitud pueden haber influido en su esfuerzo físico.  
 
     La función de relieve 3D, que exagera la altitud, funciona independientemente de la vista de la pista 3D. Se pueden ajustar dos parámetros de exageración vertical para comprender mejor la correlación entre la frecuencia cardíaca y la elevación del terreno.
@@ -288,7 +323,7 @@ Para especificar un color para una pista, use el siguiente formato:
     - Estos ajustes de apariencia se almacenan en las **extensiones GPX de nivel superior**.
     - Si se **establece un color o ancho en el nivel superior** (ya sea en el archivo GPX o manualmente en OsmAnd), este ajuste tendrá prioridad sobre los colores asignados a los segmentos de pista individuales.
 
-**Solución para pistas multicolor:**
+**Solución alternativa para pistas multicolores:**
 
 - Para preservar los **colores individuales para múltiples pistas**, **importe las pistas por separado** en lugar de fusionarlas.
 

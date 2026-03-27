@@ -1,5 +1,5 @@
 ---
-source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
+source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
 sidebar_position: 3
 sidebar_label: Mapa
 title: Mapa global en el sitio web
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 El mapa web de OsmAnd es un mapa global basado en datos de [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Permite a los usuarios ver sus propios datos, como tracks y favoritos, crear rutas de navegación para cualquier perfil y acceder a funciones adicionales como el tiempo, tracks GPX públicos, PDI e imágenes de Wikimedia. Explora y personaliza tu experiencia con los datos directamente en tu navegador.
 
-![OsmAnd Web todo](@site/static/img/web/web_map_all.png)
+![Todo en OsmAnd Web](@site/static/img/web/web_map_all.png)
 
 
 ## Menú contextual del mapa {#map-context-menu}
@@ -67,9 +67,10 @@ El menú Configurar mapa te permite gestionar los ajustes de visualización de l
 - [Superposición de PDI...](#poi-overlay). Te permite elegir y mostrar las categorías de PDI necesarias en el mapa.
 - [Favoritos](#favorites). Activa o desactiva la visualización de favoritos en el mapa.
 - [Tracks](#tracks). Contiene los tracks GPX visibles en el mapa.  
+- [Paradas de transporte](#transport-stops). Activa o desactiva la visualización de paradas de transporte público en el mapa. 
 - [Terreno](#terrain). Activa o desactiva el esquema de color del terreno en el mapa.
 
-![Menú de PDI](@site/static/img/web/configure_map_web.png)
+![Menú de PDI](@site/static/img/web/configure_map_web_new.png)
 
 
 ### Superposición de PDI {#poi-overlay}
@@ -116,6 +117,33 @@ Cada track tiene un **Menú contextual** (accesible a través del botón ⋮) co
 
 ![Menú Configurar mapa Tracks](@site/static/img/web/configure_map_track.png)
 
+### Paradas de transporte {#transport-stops}
+
+La opción **Paradas de transporte** te permite mostrar paradas de transporte público directamente en el mapa. Cuando está habilitada, los marcadores de paradas aparecen en todo el mapa, representando ubicaciones donde se detienen las rutas de transporte público. Al seleccionar una parada de transporte, se abre un panel contextual con información sobre esa parada y las rutas de transporte que pasan por ella. El panel de la parada contiene varias secciones.
+
+**1. Información de la parada**
+
+La sección superior muestra información básica sobre la parada seleccionada, incluyendo su nombre y ubicación. Los botones de acción rápida te permiten: *Añadir la parada a Favoritos, Compartir un enlace a la parada, Iniciar navegación desde la parada, Establecer la parada como destino*.
+
+**2. Rutas**
+
+La sección de Rutas lista todas las rutas de transporte público que pasan por la parada seleccionada. Cada elemento muestra: el tipo de transporte, el número de ruta y el nombre de la ruta.
+
+Al seleccionar una ruta, se abre un panel de detalles de la ruta que muestra información adicional sobre esa ruta, incluyendo el número de paradas y el intervalo promedio entre vehículos (cuando esté disponible).
+
+El panel de detalles de la ruta también muestra la lista completa de paradas a lo largo de la ruta. La parada seleccionada actualmente está resaltada, y puedes seleccionar otra parada para ver su ubicación en el mapa. Las paradas anteriores a la parada seleccionada pueden colapsarse en un solo elemento (por ejemplo, “15 paradas antes”).
+
+Los botones de navegación te permiten moverte entre paradas a lo largo de la ruta usando los controles de *Anterior* y *Siguiente*. Cuando se selecciona una parada, su ubicación se resalta en el mapa. La ruta seleccionada y sus paradas también se muestran en el mapa para ayudar a visualizar la dirección de la ruta.
+
+**3. Filtro de tipo de transporte**
+
+Un filtro de tipo de transporte te permite filtrar las rutas mostradas en la lista. Por defecto, el filtro está establecido en *Todas* y muestra todas las rutas disponibles. Puedes seleccionar un tipo de transporte específico (por ejemplo, Autobús, Tranvía o Metro) para mostrar solo rutas de ese tipo. El filtro se restablece a *Todas* cada vez que se abre el panel de la parada.
+
+**4. Rutas cercanas**
+
+La sección de Rutas cercanas puede mostrar rutas adicionales ubicadas cerca de la parada seleccionada. Esto te ayuda a descubrir rápidamente opciones de transporte alternativas en el área circundante.
+
+![Paradas de transporte](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terreno {#terrain}
 
@@ -200,19 +228,19 @@ Estas URL se pueden copiar y compartir utilizando cualquier medio compatible con
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Crear Track](@site/static/img/plan-route/web_url_pin.png)
+  ![Crear track en OsmAnd Web](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL sin un marcador en el mapa:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Crear Track](@site/static/img/plan-route/web_url_without.png)
+  ![Crear track en OsmAnd Web](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL con navegación:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Crear Track](@site/static/img/plan-route/web_url_track.png)
+  ![Crear track en OsmAnd Web](@site/static/img/plan-route/web_url_track.png)
 
 Dependiendo de los parámetros especificados, las cadenas de URL pueden contener:
 

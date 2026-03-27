@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title:  Navegación
 ---
@@ -86,14 +86,18 @@ Para rastrear problemas con rutas erróneas o subóptimas, por favor abra una nu
 
 ## Información de la carretera {#road-information}
 
-### OsmAnd solo muestra algunos radares de velocidad {#osmand-only-shows-some-speed-cams}
+### ¿Por qué algunas advertencias de cámaras de velocidad no se activan? {#why-some-speed-camera-warnings-may-not-be-triggered}
 
-Debido a los geodatos tomados del proyecto OpenStreetMap, existen por ahora dos métodos de cómo se integran los radares de velocidad en los datos brutos de OSM:
+Debido a los geodatos tomados del proyecto OpenStreetMap, existen actualmente dos métodos de cómo se integran las cámaras de velocidad en los datos brutos de OSM:
 
-- Un punto (llamado "nodo" en la terminología de OSM) de una vía se etiqueta con "highway=speed_camera", véase la wiki de OSM en [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
-- Un grupo de elementos de datos de OSM se unen en una llamada "relación" que contiene más elementos que un solo nodo para describir la dirección que cubre el radar de velocidad. Véase [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
+- Un punto (llamado "nodo" en la terminología de OSM) de una vía se etiqueta con `highway=speed_camera`, véase la wiki de OSM en [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Un grupo de elementos de datos de OSM se unen en una llamada "relación" que contiene más elementos que un solo nodo para describir la dirección que cubre la trampa de velocidad. Véase [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Actualmente, OsmAnd solo puede hacer uso de los elementos que consisten en un único nodo. El análisis de las relaciones llegará en una futura versión.
+OsmAnd soporta ambos métodos. Las advertencias de cámaras de velocidad pueden activarse para cámaras mapeadas con `highway=speed_camera` así como para cámaras definidas a través de una relación `enforcement`.
+
+Si un nodo de cámara de velocidad se coloca directamente en la carretera, la etiqueta `highway=speed_camera` es suficiente para que OsmAnd lo detecte y muestre advertencias.
+
+Si la cámara se mapea al lado de la carretera en lugar de en ella, debe conectarse a la carretera usando una relación `enforcement`. De lo contrario, OsmAnd puede no asociar la cámara con la carretera y la advertencia no se activará.
 
 
 ## Navegación por voz {#voice-navigation}
@@ -154,4 +158,4 @@ Para más información sobre la solución de problemas, visite:
 
 ### La navegación se detiene cuando la pantalla está apagada {#navigation-stops-while-screen-is-off}
 
-- [El mismo problema](../troubleshooting/track-recording-issues.md#overview) con la grabación de rutas en segundo plano.
+- [El mismo problema](../troubleshooting/track-recording-issues.md#overview) con la grabación de pistas en segundo plano.

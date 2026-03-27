@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: f03e507400bc20695268af175cd4521086e021342f5905b49b0c9d9b09b9e7fc
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -113,6 +113,7 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lugares populares (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage sin conexión - Guías de viaje](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Plugin de astronomía](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Navegación con y sin conexión](../navigation/index.md)<br/>con indicaciones giro a giro | ✔ | ✔ | ✔ |
 | [Búsqueda instantánea sin conexión](../search/index.md) | ✔ | ✔ | ✔ |
 | [Grabación de viaje](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -155,6 +156,8 @@ La suscripción **Pro** tiene actualmente las siguientes características:
 | [Widgets de altitud - Elevación: Centro del mapa](../widgets/info-widgets.md#elevation-map-center) | Permite conocer la elevación del centro del mapa actual sobre el nivel del mar.  |
 | [Corrección de elevación (sin conexión)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permite calcular un gráfico de altitud para tu track (se requiere un [mapa de terreno](../plugins/topography.md#download-maps) para la región elegida). |
 | [Modificar esquema de color](../../user/plugins/topography.md#modify-color-scheme) | Te permite personalizar la apariencia del mapa seleccionando o importando paletas de colores. Puedes editar esquemas integrados o usar tus propios archivos de paleta para personalizar los colores del mapa y de la ruta. |
+| [Crear paletas personalizadas](../../user/map/tracks/appearance.md#gradient-palettes) | Te permite crear y editar paletas de gradiente para la coloración de tracks usando valores Relativos o Fijos. Puedes definir pasos de color, asignar valores y personalizar cómo se muestran los datos (como velocidad o altitud) a lo largo del track. |
+| [Carpetas inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar tracks en Carpetas inteligentes usando parámetros de agrupación avanzados como fecha y hora, distancia, duración, velocidad, altitud y elevación, y datos de sensores. Estas opciones permiten una categorización de tracks más detallada y un análisis flexible. |
 
 
 ## Cómo comprar {#how-to-buy}

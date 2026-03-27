@@ -1,5 +1,5 @@
 ---
-source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
+source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
 sidebar_position: 1
 title:  Preparación de la ruta
 ---
@@ -37,7 +37,7 @@ La función **Preparación de la ruta** en OsmAnd proporciona guía de navegaci�
 
 <TabItem value="ios" label="iOS">
 
-![Pantalla de navegación iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Pantalla de navegación iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Pantalla de navegación iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![Pantalla de navegación iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -65,7 +65,7 @@ Antes de usar la navegación sin conexión, asegúrese de que los [mapas requeri
 1. Abra el [*Menú de navegación*](#navigation-menu):
 
     - Especifique el [punto de destino](#set-target-point).
-    - Espere hasta que se calcule la ruta. Después de eso, podrá obtener información adicional sobre su ruta en *[sección de Detalles](./route-details.md#overview)*.
+    - Espere hasta que se calcule la ruta. Después de eso, podrá obtener información adicional sobre su ruta en *[sección de Detalles](../setup/route-details.md)*.
     - Puede cambiar entre diferentes [tipos de enrutamiento](./../routing/osmand-routing.md#routing-types) (perfiles) para obtener el mejor resultado.
     - Añada [destinos intermedios](#intermediate-destinations) (opcional).
     - También puede cambiar el punto de partida desde la [posición actual](../../map/interact-with-map.md#my-position-and-zoom) a la requerida.
@@ -293,7 +293,7 @@ Si el registro del [Historial de navegación](../../personal/global-settings.md#
 
 <TabItem value="ios" label="iOS">
 
-![Pantalla de navegación iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Pantalla de navegación iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -473,7 +473,7 @@ Para construir una ruta, todos los **mapas necesarios** deben estar descargados 
 
 <TabItem value="ios" label="iOS">
 
-![Mensaje de mapas faltantes al construir la navegación iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Mensaje de mapas faltantes al construir la navegación iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>

@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -24,14 +24,15 @@ Los favoritos en el Planificador Web te permiten guardar y gestionar lugares imp
 
 ## Gestionar favoritos {#manage-favorites}
 
-![Editar favoritos en la nube de OsmAnd Web](@site/static/img/web/favorites_new.png)
+![Editar favoritos en la nube de OsmAnd Web](@site/static/img/web/favorites_1_new.png)
 
 Después de registrarte en [**OsmAnd Pro**](../personal/osmand-cloud.md#login) y para [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), tus Favoritos en el Planificador Web están organizados en carpetas. Cada carpeta agrupa lugares guardados y proporciona un conjunto de acciones disponibles desde el menú de Favoritos. 
 Las siguientes acciones están disponibles:
 
 - *Mostrar en el mapa* - muestra los puntos de favoritos de la carpeta elegida en el mapa.
+- *Fijar carpeta* - fija una carpeta en la parte superior de la lista de Favoritos para un acceso rápido. Las carpetas fijadas están separadas de las otras carpetas. Para quitar una carpeta de la sección superior, selecciona *Quitar fijación de carpeta*. La carpeta Personal está fijada de forma predeterminada.
 - *Renombrar* - nombre y descripción de la carpeta de favoritos.
-- *Compartir* - abre las opciones de compartición. Puedes elegir quién puede acceder a esta carpeta:
+- *Compartir* - abre las opciones de compartición. Puedes elegir quién puede acceder a esta carpeta.
 - *Descargar* - descarga la carpeta de favoritos elegida.
 - *Eliminar* - elimina la carpeta de favoritos elegida.
 
@@ -53,14 +54,14 @@ Durante la configuración de acceso, pueden aparecer los siguientes diálogos:
 - *Cambiar acceso*. Se muestra al cambiar la carpeta a Privado. El diálogo advierte que se revocará el acceso de todos los usuarios existentes antes de confirmar el cambio.
 - *Solicitudes de acceso*. Se muestra al gestionar usuarios en la lista Pendiente, permitiendo aprobar o denegar las solicitudes de acceso.
 
-![Compartir favoritos en la nube de OsmAnd Web](@site/static/img/web/favorites_share.png) ![Compartir favoritos en la nube de OsmAnd Web](@site/static/img/web/favorites_share_2.png)
+![Editar favoritos en la nube de OsmAnd Web](@site/static/img/web/favorites_share.png) ![Editar favoritos en la nube de OsmAnd Web](@site/static/img/web/favorites_share_2.png)
 
 
 ## Detalles de favoritos {#favorites-details} 
 
 Al seleccionar un favorito se abre el panel **Detalles**. Este panel aparece cuando haces clic en un favorito directamente en el mapa o lo seleccionas de una carpeta de favoritos.
 
-La vista de Detalles proporciona información asociada con el lugar seleccionado y depende de los datos disponibles para ese favorito específico. Como mínimo, incluye la ubicación en el mapa y sus coordenadas geográficas. Para lugares vinculados a objetos de OpenStreetMap o fuentes enriquecidas, se pueden mostrar metadatos adicionales, como nombres, categorías, identificadores o enlaces de referencia (por ejemplo, [Wikipedia](../plugins/wikipedia.md) o enlaces de Wikidata). 
+La vista de Detalles proporciona información asociada con el lugar seleccionado y depende de los datos disponibles para ese favorito específico. Como mínimo, incluye la ubicación en el mapa y sus coordenadas geográficas. Para lugares vinculados a objetos de OpenStreetMap o fuentes enriquecidas, se pueden mostrar metadatos adicionales, como nombres, categorías, identificadores o enlaces de referencia (por ejemplo, Wikipedia o enlaces de Wikidata). 
 
 ![Detalles de favoritos web](@site/static/img/web/favorites_details.png)
 

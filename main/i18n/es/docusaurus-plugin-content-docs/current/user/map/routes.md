@@ -1,5 +1,5 @@
 ---
-source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
 sidebar_position: 11
 title:  Rutas
 ---
@@ -163,9 +163,9 @@ Un [sendero de fitness](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_
 
 ![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-Las rutas de viaje forman parte de los archivos personalizados de [Guías de viaje](../plan-route/travel-guides.md) (`travel.obf`), que pueden generarse a partir de las [rutas del usuario](https://osmand.net/blog/routes#generated-travel-routes) o formar parte de [plugins](../plugins/index.md) adicionales.  
+Las rutas de viaje forman parte de los archivos personalizados de [libros de viaje](../plan-route/travel-guides.md) (`travel.obf`), que pueden generarse a partir de las [rutas del usuario](https://osmand.net/blog/routes#generated-travel-routes) o formar parte de [plugins](../plugins/index.md) adicionales.  
 
-Puede personalizar la visualización de ciertas ***Guías de viaje*** y tipos de ***pistas***, mostrar pistas como puntos o ***Grupos de puntos*** (por ejemplo, para las guías de viaje de Wikivoyage). Obtenga más información sobre las [Guías de viaje aquí](../plan-route/travel-guides.md).
+Puede personalizar la visualización de ciertos ***Libros de viaje*** y tipos de ***pistas***, mostrar pistas como puntos o ***Grupos de puntos*** (por ejemplo, para los libros de viaje de Wikivoyage). Obtenga más información sobre las [guías de viaje aquí](../plan-route/travel-guides.md).
 
 
 ## Mostrar Rutas en el Mapa {#display-routes-on-the-map}
@@ -253,13 +253,13 @@ En el **menú contextual**, puede:
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/route_info_1_andr.png)
+![Route info](@site/static/img/map/route_info_1_andr_new.png) ![Route info](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/route_info_1_ios.png)
+![Route info](@site/static/img/map/route_info_1_ios_new.png) ![Route info](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -276,6 +276,11 @@ La siguiente información será visible en el menú contextual:
 
 Para ver el gráfico de los detalles de elevación, pendiente o altitud de una ruta seleccionada, simplemente toque cualquiera de los siguientes valores en el menú contextual: **Distancia**, **Subida**, **Bajada** o **Altitud**.
 
+También puede abrir la pestaña *Pista* y cambiar a la vista *Altitud* para ver el gráfico completo de elevación de la ruta.
+
+**Nota:** Los datos de elevación se generan automáticamente y pueden diferir ligeramente dependiendo de los datos disponibles.
+
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -290,7 +295,8 @@ Para ver el gráfico de los detalles de elevación, pendiente o altitud de una r
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+--> 
 
 ### Guardar como Pista {#save-as-a-track}
 
