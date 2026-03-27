@@ -1,5 +1,5 @@
 ---
-source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
+source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
 sidebar_position: 3
 sidebar_label: Karte
 title: Globale Karte auf der Webseite
@@ -67,9 +67,10 @@ Das Menü "Karte konfigurieren" ermöglicht es Ihnen, die Anzeigeeinstellungen f
 - [POI-Overlay...](#poi-overlay). Ermöglicht es Ihnen, die benötigten POI-Kategorien auszuwählen und auf der Karte anzuzeigen.
 - [Favoriten](#favorites). Schaltet die Anzeige von Favoriten auf der Karte um.
 - [Tracks](#tracks). Enthält GPX-Tracks, die auf der Karte sichtbar sind.  
+- [Haltestellen](#transport-stops). Schaltet die Anzeige von öffentlichen Verkehrshaltestellen auf der Karte um. 
 - [Gelände](#terrain). Aktiviert oder deaktiviert das Geländefarbschema auf der Karte.
 
-![POIs-Menü](@site/static/img/web/configure_map_web.png)
+![POIs-Menü](@site/static/img/web/configure_map_web_new.png)
 
 
 ### POI-Overlay {#poi-overlay}
@@ -116,6 +117,33 @@ Jeder Track hat ein **Kontextmenü** (zugänglich über die Schaltfläche ⋮) m
 
 ![Menü "Karte konfigurieren" Tracks](@site/static/img/web/configure_map_track.png)
 
+### Haltestellen {#transport-stops}
+
+Die Option **Haltestellen** ermöglicht es Ihnen, öffentliche Verkehrshaltestellen direkt auf der Karte anzuzeigen. Wenn aktiviert, erscheinen Haltestellenmarker auf der gesamten Karte, die Orte darstellen, an denen öffentliche Verkehrswege halten. Die Auswahl einer Verkehrshaltestelle öffnet ein Kontextpanel mit Informationen zu dieser Haltestelle und den Verkehrswegen, die hindurchführen. Das Haltestellenpanel enthält mehrere Abschnitte.
+
+**1. Haltestelleninformationen**
+
+Der obere Abschnitt zeigt grundlegende Informationen zur ausgewählten Haltestelle, einschließlich Name und Lage. Schnellaktionsschaltflächen ermöglichen es Ihnen: *Die Haltestelle zu Favoriten hinzuzufügen, Einen Link zur Haltestelle zu teilen, Navigation von der Haltestelle zu starten, Die Haltestelle als Ziel festzulegen*.
+
+**2. Routen**
+
+Der Abschnitt Routen listet alle öffentlichen Verkehrswege auf, die durch die ausgewählte Haltestelle führen. Jeder Eintrag zeigt: den Verkehrstyp, die Routennummer und den Routennamen.
+
+Die Auswahl einer Route öffnet ein Routendetailpanel, das zusätzliche Informationen zu dieser Route anzeigt, einschließlich der Anzahl der Haltestellen und des durchschnittlichen Intervalls zwischen Fahrzeugen (falls verfügbar).
+
+Das Routendetailpanel zeigt auch die vollständige Liste der Haltestellen entlang der Route. Die aktuell ausgewählte Haltestelle ist hervorgehoben, und Sie können eine andere Haltestelle auswählen, um ihren Standort auf der Karte anzuzeigen. Haltestellen vor der ausgewählten Haltestelle können zu einem einzigen Eintrag zusammengefasst werden (z. B. „15 Haltestellen davor“).
+
+Navigationsschaltflächen ermöglichen es Ihnen, zwischen den Haltestellen entlang der Route mit den Steuerelementen *Vorherige* und *Nächste* zu navigieren. Wenn eine Haltestelle ausgewählt ist, wird ihr Standort auf der Karte hervorgehoben. Die ausgewählte Route und ihre Haltestellen werden ebenfalls auf der Karte angezeigt, um die Routenrichtung zu visualisieren.
+
+**3. Filter nach Verkehrstyp**
+
+Ein Filter nach Verkehrstyp ermöglicht es Ihnen, die in der Liste angezeigten Routen zu filtern. Standardmäßig ist der Filter auf *Alle* eingestellt und zeigt alle verfügbaren Routen an. Sie können einen spezifischen Verkehrstyp (z. B. Bus, Straßenbahn oder U-Bahn) auswählen, um nur Routen dieses Typs anzuzeigen. Der Filter wird bei jedem Öffnen des Haltestellenpanels auf *Alle* zurückgesetzt.
+
+**4. Nahegelegene Routen**
+
+Der Abschnitt Nahegelegene Routen kann zusätzliche Routen anzeigen, die in der Nähe der ausgewählten Haltestelle liegen. Dies hilft Ihnen, alternative Verkehrsoptionen in der Umgebung schnell zu entdecken.
+
+![Haltestellen](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Gelände {#terrain}
 

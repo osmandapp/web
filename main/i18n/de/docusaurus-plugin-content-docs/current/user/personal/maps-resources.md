@@ -1,5 +1,5 @@
 ---
-source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
+source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -82,6 +82,8 @@ Bitte beachten Sie, dass monatliche Kartenaktualisierungen als weiterer Karten-D
 - [Wikipedia](../plugins/wikipedia.md). Vektorkarte mit georeferenzierten [Wikipedia](https://wikipedia.org/)-Artikeln über Sehenswürdigkeiten oder zusätzlichen Informationen zu Orten.
 - [Wikivoyage](../plan-route/travel-guides.md). Bietet Vektorkarten mit virtuellen Reiseführern, die den Nutzern wertvolle Informationen, Empfehlungen und Tipps geben.
 - [Wettervorhersage](../plugins/weather.md). Wetterinformationen auf einer Karte zur einfachen Routenplanung.
+
+Ohne ein aktives Abonnement zeigen diese Kartentypen anstelle von Herunterladen einen *HOLEN*-Button. Tippen Sie auf *HOLEN*, um den Abonnements-Bildschirm zu öffnen und einen Plan zu wählen.
 
 
 ## Downloads-Menü {#downloads-menu}

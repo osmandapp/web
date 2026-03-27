@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -97,7 +97,7 @@ Durch Antippen eines [GPX-Tracks](../map/tracks/index.md) auf der Karte wird das
 
 ![Skipisten und MTB-Wege](@site/static/img/map/ski_mtb.png)  ![Skipisten und MTB-Wege](@site/static/img/map/ski_mtb_2.png)
 
-Sie können Kartenelemente wie **Skipisten**, **Mountainbike (MTB)-Routen** und **Feldwege** antippen, um deren Kontextmenü mit detaillierten Informationen zu öffnen. Weitere Informationen finden Sie im Artikel [Routen](../map/routes.md#actions-with-routes).
+Sie können Kartenelemente wie **Skipisten**, **Mountainbike (MTB)-Routen** und **Dirt-Bike-Pfade** antippen, um deren Kontextmenü mit detaillierten Informationen zu öffnen. Weitere Informationen finden Sie im Artikel [Routen](../map/routes.md#actions-with-routes).
 
 
 
@@ -197,7 +197,7 @@ Dieser Teil enthält einen Teil der Beschreibung aus einem [Wikipedia-Artikel](.
 
 <TabItem value="ios" label="iOS">
 
-![Alternative Namen iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternative Namen iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Alternative Namen iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Alternative Namen iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ Merkmale der Anzeige alternativer Namen:
 
 <TabItem value="ios" label="iOS">
 
-![Polygon-Informationen iOS](@site/static/img/map/polygon_information_ios.png)
+![Polygon-Informationen iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -240,7 +240,7 @@ Die Funktion **Innerhalb von Gebieten** listet die **Gebiete** auf, in denen sic
 
 |Koordinatenformat| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Dezimalgrad)</li><li>DDD.DDDDD (N/S, E/W Komma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM-Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Schweizer Gitter CH1903 und CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Web-Link](https://osmand.net/map)</li><li>[OpenStreetMap Web-Link](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Koordinaten](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Einfache Dezimalgrade)</li><li>DDD.DDDDD (N/S, E/W Komma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM-Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Schweizer Gitter CH1903 und CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Web-Link](https://osmand.net/map)</li><li>[OpenStreetMap Web-Link](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Koordinaten](@site/static/img/map/map_context_menu_Coordinates.png) |
 
 Im Kontextmenü finden Sie [geografische Koordinaten](../search/search-coordinates.md#coordinate-format) eines Punktes in verschiedenen Formaten sowie teilbare OsmAnd- und [OpenStreetMap-Links](../map/map-context-menu.md#openstreetmap-link) (letztere Option ist nur verfügbar, wenn das [OpenStreetMap-Bearbeitungs-Plugin](../plugins/osm-editing.md) aktiviert ist). Wenn Sie den Koordinatenbereich erweitern und lange auf eine Zeile in der Liste tippen, werden deren Werte automatisch in die Zwischenablage kopiert (**Android**) oder die Option *Kopieren* wird in der Pop-up-Nachricht verfügbar (**iOS**).  
 
@@ -362,7 +362,7 @@ Der OpenStreetMap-Link bietet einen direkten Link zum OpenStreetMap-Objekt, wo S
 
 <TabItem value="ios" label="iOS">  
 
-![Online-Fotos Kontextmenü iOS](@site/static/img/map/online_photo_ios.png)
+![Online-Fotos Kontextmenü iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Online-Fotos Kontextmenü iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -504,15 +504,13 @@ Lesen Sie mehr über [Marker hier](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-| Versionen bis Android 14 | 14+ Android |
-|:------------|:---------------|
-| ![Aktion Teilen Android](@site/static/img/map/action_share_1_andr.png) | ![Aktion Teilen Android](@site/static/img/map/action_share_2_andr.png) |
+![Aktion Teilen Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Aktion Teilen iOS](@site/static/img/map/action_share_1_ios.png)
+![Aktion Teilen iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -523,6 +521,8 @@ Die OsmAnd-App ermöglicht es Ihnen, **<Translate android="true" ids="shared_str
 Verfügbare Optionen zum Teilen des Standorts:
 
 - ***Senden***. Sendet Text über auf Ihrem Gerät verfügbare Apps. Enthält alle Informationen über den Standort: Name meines Standorts oder Name des ausgewählten POI, Adresse, Koordinaten und Geolokalisierung als Link.
+- ***Link kopieren***. Kopiert einen Link zum ausgewählten Standort in die Zwischenablage.  
+Beispiel: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Kopieren***. Kopiert alle Standortinformationen (Name meines Standorts oder Name des ausgewählten POI, Adresse, Koordinaten und Geolokalisierung als Link) in die Zwischenablage.  
 - ***Adresse kopieren***. Kopiert nur die Adressinformationen in die Zwischenablage.
 - ***POI-Namen kopieren***. Kopiert nur den POI-Namen oder die Adresse, falls kein Name vorhanden ist, in die Zwischenablage.

@@ -1,5 +1,5 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
 sidebar_position: 1
 title:  Alles durchsuchen
 ---
@@ -12,14 +12,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Übersicht {#overview}
 
-Die **Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die gewünschte Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengrad. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z. B. Cafés, Hotels oder Tankstellen. Der [Suchverlauf](#search-history) speichert vergangene Suchen für einen schnellen Zugriff auf zuvor gefundene Orte. Die Suchfunktion erleichtert die Planung von Reisen, die Navigation in unbekanntem Gelände und das Finden von POIs in der Nähe.
+Die **Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die gewünschte Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengrad. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z. B. Cafés, Hotels oder Tankstellen. Der Reiter [Erkunden](#search-explore) hebt beliebte Orte in der Nähe hervor und bietet schnellen Zugriff auf kürzlich besuchte Standorte. Die [Suchverlauf](#search-history-ios) speichert vergangene Suchen. Die Suchfunktion erleichtert die Planung von Reisen, die Navigation in unbekanntem Gelände und das Finden von POIs in der Nähe.
 
 
 ## Wie zu verwenden {#how-to-use}
@@ -28,7 +29,7 @@ Die **Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie könn
 
 <TabItem value="android" label="Android">
 
-![POI-Suchliste Android](@site/static/img/search/poi_list_android.png)
+![POI-Suchliste Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -89,13 +90,17 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Sortieren der Suchergebnisse {#sorting-search-results}
 
-OsmAnd sortiert die Suchergebnisse automatisch nach drei Hauptkriterien:
+OsmAnd sortiert die Suchergebnisse automatisch nach mehreren Kriterien:
 
 1. **Übereinstimmende Abfragen** — Ergebnisse, die exakte oder teilweise Übereinstimmungen mit den von Ihnen eingegebenen Wörtern enthalten, werden höher angezeigt.
 
-2. **Objekttyp** - Bei der Sortierung nach Namen werden Städte und Straßen bei der Anzeige der Ergebnisse gegenüber POIs bevorzugt.
+2. **Relevanz** — Objekte, deren Namen eng mit der Suchanfrage übereinstimmen, werden in der Regel höher in den Ergebnissen angezeigt.
 
-3. **Entfernung** - Wenn Ergebnisse ähnliche Übereinstimmungskriterien und Objekttypen aufweisen, werden die Ergebnisse, die dem aktuellen Standort des Benutzers am nächsten liegen, zuerst angezeigt.
+3. **Objekttyp** — Je nach Abfrage können die Ergebnisse verschiedene Objekttypen wie Städte, Straßen, Adressen oder POIs umfassen.
+
+4. **Entfernung** — Wenn Ergebnisse ähnliche Übereinstimmungskriterien und Objekttypen aufweisen, werden die Ergebnisse, die dem aktuellen Standort des Benutzers am nächsten liegen, zuerst angezeigt.
+
+5. **Wichtigkeit** — Bekannte Wahrzeichen oder häufig referenzierte Orte können in den Ergebnissen höher erscheinen, wenn sie eng mit der Suchanfrage übereinstimmen.
 
 ***Zum Beispiel*** wird eine Suchanfrage *Postamt* zuerst die nächstgelegenen Postämter anzeigen, auch wenn es andere Elemente mit ähnlichen Namen in größerer Entfernung gibt.  
 
@@ -148,13 +153,13 @@ OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-iss
 
 <TabItem value="android" label="Android">
 
-![POI-Suche Android](@site/static/img/search/poi_overlay_android.png)
+![POI-Suche Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![POI-Suche iOS](@site/static/img/search/poi_overlay_ios.png)
+![POI-Suche iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -171,7 +176,7 @@ OsmAnd ermöglicht es Ihnen, nach Punkten zu suchen, die auf einer Karte auf dem
 
 ### In der Nähe suchen {#search-nearby}
 
-![Suche Android](@site/static/img/search/search_all_near_location_andr.png)
+![Suche Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie dazu den gewünschten Punkt [aus der Liste im Suchmenü](#full-text-search) oder wählen Sie ihn direkt auf der Karte aus. Wählen Sie im [Kartenkontextmenü](../map/map-context-menu.md#actions) *Aktionen → In der Nähe suchen*.
 
@@ -182,7 +187,7 @@ Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie
 
 <TabItem value="android" label="Android">
 
-![Suche Android](@site/static/img/search/search_address_2_andr.png)
+![Suche Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
@@ -197,23 +202,21 @@ Sie können die Suche in der Nähe eines bestimmten Ortes verwenden. Wählen Sie
 Die **Adresssuche** verwendet OpenStreetMap-Daten. Diese Art der Suche ermöglicht es Ihnen, den Standort und die Richtung zu einer bestimmten Adresse aus einer bereits sortierten Liste zu finden. Lesen Sie mehr im Artikel [Adresssuche](./search-address.md).
 
 
-## Suchverlauf {#search-history}
+## Erkunden-Suche {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![Erkunden-Suche](@site/static/img/search/explore_search_android.png)
 
-![Verlaufssuche](@site/static/img/search/history_search_android.png)
+Der Reiter **Erkunden** im Suchwerkzeug hilft Ihnen, Orte in der Nähe Ihres aktuellen Standorts schnell zu entdecken und auf kürzlich geöffnete Elemente zuzugreifen. Er enthält zwei Hauptbereiche:  
+- Beliebte Orte in der Nähe – eine scrollbare Liste bekannter Wahrzeichen und Attraktionen in der Nähe Ihres Standorts. Jedes Element kann den Namen des Ortes, seine Kategorie, Entfernung und Richtung sowie ein Vorschau-Bild enthalten, falls verfügbar. Tippen Sie auf *Alle anzeigen*, um die vollständige Liste zu öffnen, oder auf *Auf Karte anzeigen*, um diese Orte auf der Karte darzustellen.
+- Kürzlich besucht – eine Liste von Orten, Tracks oder anderen Objekten, die Sie kürzlich geöffnet haben. Dies ermöglicht es Ihnen, schnell zu zuvor angesehenen Standorten zurückzukehren.
 
-</TabItem>
+Weitere Details finden Sie [hier](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## Suchverlauf (iOS) {#search-history-ios}
 
 ![Verlaufssuche](@site/static/img/search/history_search_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 Sie können den **Suchverlauf** verwenden, um erneut nach zuvor gefundenen Orten, Adressen oder häufig besuchten Orten zu suchen, ohne die Anfrage erneut eingeben zu müssen. Weitere Details finden Sie im Artikel [Suchverlauf](./search-history.md).
 
@@ -224,7 +227,7 @@ Sie können den **Suchverlauf** verwenden, um erneut nach zuvor gefundenen Orten
 
 <TabItem value="android" label="Android">
 
-![POI-Suche Android](@site/static/img/search/search_poi_categoties_andr.png)
+![POI-Suche Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -274,3 +277,4 @@ Die Koordinatensuche liefert einen genauen Standort. Sie können präzise Koordi
 - [Suchverlauf](./search-history.md)
 - [POI-Suche](./search-poi.md)
 - [Koordinatensuche](./search-coordinates.md)
+- [Beliebte Orte](../map/popular_places.md)

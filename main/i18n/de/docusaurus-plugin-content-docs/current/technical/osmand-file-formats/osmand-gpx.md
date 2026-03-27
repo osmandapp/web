@@ -1,5 +1,5 @@
 ---
-source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
+source-hash: 402ce29cb8352ebd02df5230b886dc88937640fd48f18229a66ec9689b4e036c
 sidebar_position: 2
 ---
 
@@ -35,6 +35,12 @@ GPX-Dateien in OsmAnd organisieren Daten hierarchisch in den folgenden Elementen
   - `<trkseg>` - Segmente des Tracks, die weiter in `<trkpt>` (Trackpunkte) unterteilt sind.
 - `<rte>` - repräsentiert Routen, einschließlich Wegpunkten und Schlüsselpunkten.
 - `<wpt>` - repräsentiert einzelne Wegpunkte.
+
+#### GPX-Importverhalten
+
+Beim Importieren einer GPX-Datei erstellt OsmAnd ein einzelnes Track-Objekt basierend auf der Datei:
+- Der Name des importierten Tracks wird aus dem GPX-Dateinamen abgeleitet. Das `<name>`-Element innerhalb von `<trk>` wird während des Imports nicht als primärer Track-Name verwendet.
+- Wenn eine GPX-Datei mehrere `<trk>`-Elemente enthält, importiert OsmAnd diese als Segmente desselben Tracks. In diesem Fall können die `<name>`-Werte als Beschriftungen für die entsprechenden Segmente innerhalb des Tracks verwendet werden.
 
 
 ## Track-Anpassung {#track-customization}
@@ -285,7 +291,7 @@ Jeder `<trkpt>` (Trackpunkt) in der GPX-Datei kann zusätzliche Attribute enthal
 
 ## Berechnete Route(n) {#calculated-routes}
 
-In **OsmAnd** können Sie eine Route berechnen und alle Daten in einer GPX-Datei speichern, sodass später alle Navigationsfunktionen als GPX-Navigation verfügbar sind. Die **OsmAnd**-GPX-Datei enthält dann Routensegmente, Abbiegungen, Straßennamen, Straßentypen, Einschränkungen usw. Die Route kann vollständig wiederhergestellt werden, als wäre sie gerade erst erstellt worden, selbst wenn die entsprechenden Offline-Karten nicht vorhanden sind.
+In **OsmAnd** können Sie eine Route berechnen und alle Daten in einer GPX-Datei speichern, sodass später alle Navigationsfunktionen als GPX-Navigation verfügbar sind, sodass **OsmAnd** GPX Routensegmente, Abbiegungen, Straßennamen, Straßentypen, Einschränkungen usw. enthält. Die Route kann vollständig wiederhergestellt werden, als wäre sie gerade erst erstellt worden, selbst in Abwesenheit der jeweiligen Offline-Karten.
 
 Eine GPX-Datei kann mehrere Routen enthalten. Jede davon befindet sich in einem spezifischen Segment unter **trkseg** / **extensions**. Eine GPX-Datei wird in dieser Form gespeichert, wenn eine erstellte Route exportiert wird oder wenn ein Track, der aus mehreren separaten Segmenten besteht, über die Funktion [**Route planen**](../../user/plan-route/create-route.md) gespeichert wird.
 
@@ -369,7 +375,7 @@ Eine GPX-Datei kann mehrere Routen enthalten. Jede davon befindet sich in einem 
       <trkpt lat="52.3636426" lon="4.8922902">
         <ele>0.963</ele>
       </trkpt>
-      <trkpt lat="52.356996" lon="4.8912071">
+      <trkpt lat="52.363564" lon="4.8922607">
         <ele>0.899</ele>
       </trkpt>
 

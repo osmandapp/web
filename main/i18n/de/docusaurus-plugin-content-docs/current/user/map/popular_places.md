@@ -1,5 +1,5 @@
 ---
-source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
+source-hash: 004b4b8d94eaf093dcc696c34a008dc61bd0e4e803c5402b096e6f3105ac6e4d
 sidebar_position: 8
 title: Beliebte Orte
 ---
@@ -60,21 +60,19 @@ Erfahren Sie, wie Sie eine Wikidata-ID finden: [Wikipedia: Finding a Wikidata ID
 
 ## Anwendung {#how-to-use}
 
-<InfoAndroidOnly/>
-
 Die Funktion **Beliebte Orte** umfasst sowohl eine kuratierte Liste von Sehenswürdigkeiten in der Nähe als auch eine Ebene von Wikipedia-basierten POIs auf der Karte.
 
 Es gibt zwei Hauptwege, um auf diese Funktion zuzugreifen:
 
 - **Kostenlose Version**  
   Zugriff über die [Suche](#explore-in-search), um Orte in der Nähe in einer Listenansicht zu erkunden.  
-  *<Translate android="true" ids="android_button_seq"/>*. Gehe zu: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  *<Translate android="true" ids="android_button_seq"/> only*. Gehe zu: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
   
   Diese Erkundungsliste zeigt popularitätsbasierte Wikipedia/Wikidata-Orte in Ihrer Nähe an und funktioniert online. Sie zeigt bis zu 50 Orte an. Da Erkundungs-/Wikipedia-Ergebnisse nach Bewertungen sortiert sind, kann die Reihenfolge in diesen Ergebnissen von der regulären POI-Suche abweichen.
 
 - **Bezahlversionen** *(Maps+ und OsmAnd Pro)*  
   Aktivieren Sie die visuelle Überlagerung unter [Karte konfigurieren](#enable-layer).  
-  *<Translate android="true" ids="android_button_seq"/>*. Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
+  *<Translate android="true" ids="android_button_seq"/> & IOS*. Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   In diesem Modus erscheinen beliebte POIs direkt auf der Karte mit Miniaturvorschauen und Wikipedia-Inhalten.
 
@@ -118,15 +116,21 @@ Um ihn **offline** zu nutzen, benötigen Sie ein [Maps+ oder OsmAnd Pro](../purc
 
 ## Ebene aktivieren {#enable-layer}
 
-<InfoAndroidOnly/>
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>**. Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
 ![Menü Beliebte Orte](@site/static/img/map/popular_places/popular_places_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Beliebte Orte (Wikipedia)*
+
+![Menü Beliebte Orte](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -210,7 +214,7 @@ In the Map Context menu How to access:
 <TabItem value="android" label="Android">  
 
 ![Galerie-Menü – Android](@site/static/img/map/gallery_menu_android.png)
-![Galerie-Menü – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Galerie-Menü – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
@@ -223,7 +227,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-Das **Galerie-Menü** kann bis zu **100 Bilder** zum ausgewählten Point of Interest anzeigen. Um diese Bilder anzusehen, tippen Sie auf **Alle anzeigen** (Android) / **Alle anzeigen** (iOS). Sie können durch alle verfügbaren Fotos wischen. Ein kurzes Tippen auf ein Foto öffnet eine Detailansicht mit: *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*.
+Das **Galerie-Menü** kann bis zu **100 Bilder** zum ausgewählten Point of Interest anzeigen. Um diese Bilder anzusehen, tippen Sie auf **Alle anzeigen** (Android) / **Alle anzeigen** (iOS). Sie können durch alle verfügbaren Fotos wischen. Ein kurzes Tippen auf ein Foto öffnet eine Detailansicht mit: *Beschreibung (bis zu zwei Zeilen, nur Android)*, *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*.
 
 Auf iOS, iPadOS und macOS können Sie Fotos mit Tastaturtasten navigieren (←/→ zum Bewegen zwischen Bildern, Enter/Leertaste zum Öffnen).
 
@@ -233,7 +237,9 @@ Sie können auch die folgenden Aktionen für jedes Foto durchführen:
   Teilen Sie das ausgewählte Bild über eine beliebige kompatible App, die auf Ihrem Gerät installiert ist (z. B. Messaging, E-Mail oder soziale Medien). Der geteilte Inhalt enthält das Bild und seinen Quelllink (falls verfügbar).
 
 - **Details**  
-  Öffnet eine detaillierte Ansicht mit Metadaten zum Bild, einschließlich: *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*, *Quelle* und *Direkter Link*
+  Öffnet eine detaillierte Ansicht mit Metadaten zum Bild, einschließlich: *Beschreibung (vollständiger Text, nur Android)*, *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*, *Quelle* und *Direkter Link*
+
+  **Hinweis:** Die Sprache der Beschreibung hängt von der Anzeigesprache der Anwendung ab. Wenn die Beschreibung in der ausgewählten Sprache nicht verfügbar ist, zeigt OsmAnd die englische Version oder die erste verfügbare Übersetzung an.
 
 - **Im Browser öffnen**  
   Startet die Quellseite des Bildes (normalerweise auf [Wikimedia Commons](https://commons.wikimedia.org/)) in Ihrem Standardbrowser. Dies ermöglicht es Ihnen, das vollständige Bild, Lizenzinformationen und verwandte Inhalte anzuzeigen.

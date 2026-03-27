@@ -1,6 +1,6 @@
 ---
-source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
-sidebar_position: 18
+source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+sidebar_position: 20
 title:  Wikipedia
 ---
 
@@ -62,7 +62,7 @@ Sie können Wikipedia-Daten zum Herunterladen nach Regionen wie folgt öffnen:
 
 <TabItem value="android" label="Android">
 
-Um zu sehen, welche Daten bereits heruntergeladen wurden, gehen Sie zu *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
+Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
 
 ![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
@@ -70,7 +70,7 @@ Um zu sehen, welche Daten bereits heruntergeladen wurden, gehen Sie zu *<Transla
 
 <TabItem value="ios" label="iOS">
 
-Um zu sehen, welche Daten bereits heruntergeladen wurden, gehen Sie zu *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
+Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
 
 ![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
@@ -292,5 +292,5 @@ In der **iOS**-Version der App können Sie auch über die *Wikipedia-Plugin-Eins
 ## Verwandte Artikel {#related-articles}
 
 - [Mit der Karte interagieren](../../user/map/interact-with-map.md)
-- [Allgemeine Einstellungen](../../user/personal/global-settings.md)
+- [Globale Einstellungen](../../user/personal/global-settings.md)
 - [Vektorkarten (Kartenstile)](../../user/map/vector-maps.md)

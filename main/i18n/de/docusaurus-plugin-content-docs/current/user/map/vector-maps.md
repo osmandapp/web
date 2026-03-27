@@ -1,5 +1,5 @@
 ---
-source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
+source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
 sidebar_position: 5
 title:  Vektorkarten 
 ---
@@ -359,9 +359,59 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 ![Kartenstil Höhenlinien](@site/static/img/map/contour_lines.png)
 
-Höhenlinien werden in OsmAnd als Höhenlinien auf Vektorkarten angezeigt. Um sie zu verwenden, müssen Sie zuerst das [Topographie-Plugin](../plugins/topography.md) aktivieren, die erforderlichen regionalen Daten herunterladen und die Anzeige konfigurieren. Diese Funktion ist nicht standardmäßig aktiviert und erfordert einen [Kauf](../purchases/index.md).  
+Höhenlinien in OsmAnd werden als Höhenlinien auf Vektorkarten angezeigt. Um sie zu verwenden, müssen Sie zuerst das [Topographie-Plugin](../plugins/topography.md) aktivieren, die erforderlichen regionalen Daten herunterladen und die Anzeige konfigurieren. Diese Funktion ist nicht standardmäßig aktiviert und erfordert einen [Kauf](../purchases/index.md).  
 
 Höhenlinien sind mit allen Kartenstilen kompatibel und können über das [Höhenlinien-Menü](../plugins/topography.md#contour-lines) angepasst werden. Weitere Details finden Sie im Artikel zum [Topographie-Plugin](../plugins/topography.md).
+
+### Gelände {#terrain}
+
+Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+
+Die Gelände-Option ermöglicht es Ihnen, drei Funktionen wie Hillshade, Steigung und Höhe anzupassen. Für weitere Details siehe den [Topographie](../plugins/topography.md#terrain) Artikel.
+
+### 3D-Gebäude {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D-Gebäude*  
+
+![3D-Gebäude](@site/static/img/map/3d_buildings_1_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_2.png) 
+
+Die **3D-Gebäude**-Funktion zeigt Gebäude als volumetrische 3D-Modelle statt als flache Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert.
+
+Diese Option ist nur verfügbar, wenn das Topographie-Plugin aktiviert ist. Siehe den Artikel zum [Topographie-Plugin](../plugins/topography.md#3d-buildings) für Details.
+
+Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt: **Darstellung** und **Leistung**.
+
+**Darstellung: Farbe**. Sie steuert die Farbe der 3D-Gebäude. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschau-Bildschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen.
+- **Kartenstil** — verwendet die Standard-Gebäude-Farbe aus dem derzeit ausgewählten Kartenstil.
+- **Benutzerdefiniert** — ermöglicht es Ihnen, eine benutzerdefinierte Gebäude-Farbe separat für Tag-/Nachtmodus festzulegen.
+
+:::tip Kauf
+Die Farbanpassung von 3D-Gebäuden ist eine [kostenpflichtige Funktion](../purchases/index.md).  
+:::
+
+Wenn benutzerdefinierte Farben nicht gekauft wurden, sehen Sie einen leeren Zustand mit einer kurzen Beschreibung und einem Button „Erhalten“. Wenn Benutzerdefiniert verfügbar ist, können Sie zwischen Tag und Nacht wechseln, eine Farbe aus der Palette wählen (oder Alle Farben öffnen) und dann auf Anwenden tippen.
+
+**Darstellung: Sichtbarkeit**. Sie steuert die Opazität (Transparenz) der 3D-Gebäude. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz einzustellen. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Tippen auf Sichtbarkeit öffnet ebenfalls einen separaten Vorschau-Bildschirm mit dem Schieberegler.
+
+Auf den Vorschau-Bildschirmen (Farbe / Sichtbarkeit) können Sie Zurücksetzen auf Standard aus der App-Leiste verwenden, um den Standardwert wiederherzustellen.
+
+**Leistung: Detailgrad**. Sie steuert, wie detailliert die 3D-Gebäudengeometrie ist:
+- Niedrig (Standard) — einfachere Geometrie.
+- Hoch — detailliertere Geometrie.
+
+**Leistung: Sichtweite**. Sie steuert, wie weit von der Kamera aus 3D-Gebäude gerendert werden:
+- Nah (Standard) — rendert Gebäude näher bei Ihnen.
+- Fern — rendert Gebäude aus größerer Entfernung.
+
+Beide Leistungsoptionen verwenden einen Zweipositionsschalter direkt auf dem 3D-Gebäude-Einstellungsbildschirm.
+
+### 3D-Relief {#3d-relief}
+
+Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+
+Die 3D-Relief-Funktion erzeugt ein erhöhtes Relief und bietet eine dreidimensionale Darstellung der Landschaft. 3D Relief funktioniert offline und kann mit [OsmAnd Vektorkarten](../map/vector-maps.md) oder beliebigen [Rasterkarten](../map/raster-maps.md#layers) als [Kartenquelle](../map/raster-maps.md#main) oder als [Unterlage/Überlagerung](../map/raster-maps.md#overlay) verwendet werden. Detailliertere Informationen finden Sie [hier](../plugins/topography.md#3d-relief).
 
 ### * Nautische Tiefe {#-nautical-depth}
 
@@ -389,44 +439,23 @@ Nautische Tiefenlinien stellen Bereiche gleicher Tiefe dar und helfen, Veränder
 
 Weitere Details zur nautischen Kartenansicht finden Sie auf der [Seite des Nautik-Karten-Plugins](../plugins/nautical-charts).
 
-### 3D-Gebäude {#3d-buildings}
+### Globusansicht {#globe-view}
 
 <InfoAndroidOnly/> 
 
-![3D-Gebäude](@site/static/img/map/3d_buildings_1_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_2.png) 
+Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Globale Ansicht*
 
-Die **3D-Gebäude**-Funktion zeigt Gebäude als volumetrische 3D-Modelle statt als flache Formen an. Gebäude werden aus [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) generiert, unter Verwendung von Höheninformationen aus Tags wie `height` und `building:levels`, wenn verfügbar. 3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können.  
-Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D-Gebäude*  
-Verwenden Sie den Hauptschalter, um das 3D-Rendering von Gebäuden zu aktivieren oder zu deaktivieren. Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen.
+![Globusansicht](@site/static/img/map/globe_view_1.png) ![Globusansicht](@site/static/img/map/globe_view_2.png)
 
-Diese Option ist derzeit nur verfügbar, wenn das [OsmAnd-Entwicklungs-Plugin](../plugins/development.md) aktiviert ist.  
-Gehe zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+**Globusansicht** ermöglicht es Ihnen, die Karte als sphärische Erde anstelle einer flachen Projektion anzuzeigen. Dieser Modus ändert die Geometrie der Kartenoberfläche und passt die Karteninteraktion an die sphärische Navigation an. Für weitere Informationen siehe den [Globusansicht-Abschnitt](../map/interact-with-map.md#globe-view) im Artikel Mit der Karte interagieren.
 
-Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt: **Darstellung** und **Leistung**.
+<!--
+## Kartenlegende {#map-legend}
 
-**Darstellung: Farbe**. Sie steuert die Farbe der 3D-Gebäude. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschau-Bildschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen.
-- **Kartenstil** — verwendet die Standard-Gebäude-Farbe aus dem derzeit ausgewählten Kartenstil.
-- **Benutzerdefiniert** — ermöglicht es Ihnen, eine benutzerdefinierte Gebäude-Farbe separat für Tag-/Nachtmodus festzulegen.
+Die Kartenlegende dient als Schlüssel zum Verständnis der in OsmAnd-Karten verwendeten Symbole. Sie erklärt die Bedeutung verschiedener Kartensymbole, einschließlich Punkte, Linien und Flächen. Zum Beispiel deuten blaue wellenförmige Linien Flüsse an, während verschiedene Farben und Formen Gebäude, Pfade und Routen darstellen können.  
 
-:::tip Kauf
-Die Farbanpassung von 3D-Gebäuden ist eine [kostenpflichtige Funktion](../purchases/index.md).  
-:::
-
-Wenn benutzerdefinierte Farben nicht gekauft wurden, sehen Sie einen leeren Zustand mit einer kurzen Beschreibung und einem Button „Erhalten“. Wenn Benutzerdefiniert verfügbar ist, können Sie zwischen Tag und Nacht wechseln, eine Farbe aus der Palette wählen (oder Alle Farben öffnen) und dann auf Anwenden tippen.
-
-**Darstellung: Sichtbarkeit**. Sie steuert die Opazität (Transparenz) der 3D-Gebäude. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz einzustellen. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Tippen auf Sichtbarkeit öffnet ebenfalls einen separaten Vorschau-Bildschirm mit dem Schieberegler.
-
-Auf den Vorschau-Bildschirmen (Farbe / Sichtbarkeit) können Sie Zurücksetzen auf Standard aus der App-Leiste verwenden, um den Standardwert wiederherzustellen.
-
-**Leistung: Detailgrad**. Sie steuert, wie detailliert die 3D-Gebäudengeometrie ist:
-- Niedrig (Standard) — einfachere Geometrie.
-- Hoch — detailliertere Geometrie.
-
-**Leistung: Sichtweite**. Sie steuert, wie weit von der Kamera aus 3D-Gebäude gerendert werden:
-- Nah (Standard) — rendert Gebäude näher bei Ihnen.
-- Fern — rendert Gebäude aus größerer Entfernung.
-
-Beide Leistungsoptionen verwenden einen Zweipositionsschalter direkt auf dem 3D-Gebäude-Einstellungsbildschirm.
+Die Legende hilft Benutzern, zu interpretieren, was sie auf der Karte sehen. Sie können die vollständige OsmAnd-Kartenlegende [hier](../map-legend/index.md) aufrufen.
+-->
 
 
 ## Weitere Einstellungen {#additional-settings}

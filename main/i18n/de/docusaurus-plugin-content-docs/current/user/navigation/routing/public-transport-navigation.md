@@ -1,5 +1,5 @@
 ---
-source-hash: 4d9f5039ab11085fb01ba9a87295b0709bf9134ac4123b410ba74a735353f314
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  ÖPNV-Routenführung
 ---
@@ -44,7 +44,7 @@ Die ÖPNV-Routenführung befindet sich in der Testphase. Vorerst können Sie Ihr
 
 ## Wie man es benutzt {#how-to-use}
 
-Um die Navigation mit öffentlichen Verkehrsmitteln in der Stadt zu starten, verwenden Sie die [Schaltfläche "Navigation"](../../widgets/map-buttons.md#directions) auf dem Kartenbildschirm oder wählen Sie die Navigationsoption im *Hauptmenü*.  
+Um die Navigation mit öffentlichen Verkehrsmitteln in der Stadt zu starten, verwenden Sie die [Navigationsschaltfläche](../../widgets/map-buttons.md#navigation) auf dem Kartenbildschirm oder wählen Sie die Navigationsoption im *Hauptmenü*.  
 
 **1.** Sie müssen das *Navigationsprofil für öffentliche Verkehrsmittel*, den Start- und den Zielpunkt auswählen.  
 
@@ -64,7 +64,7 @@ Um die Navigation mit öffentlichen Verkehrsmitteln in der Stadt zu starten, ver
 
 </Tabs>
 
-**2.** OsmAnd bietet Routenoptionen mit Gehzeiten und Routen mit öffentlichen Verkehrsmitteln mit Routeninformationen: Zeit, Entfernung, Umstiege und öffentliche Routen. Sie müssen durch den Navigationsbildschirm scrollen, um die gewünschte Option auszuwählen.  
+**2.** OsmAnd bietet Routenoptionen mit Gehzeiten und Routen mit öffentlichen Verkehrsmitteln mit Routeninformationen: Zeit, Entfernung, Umstieg und öffentliche Routen. Sie müssen durch den Navigationsbildschirm scrollen, um die gewünschte Option auszuwählen.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -128,7 +128,7 @@ Sie können gut kuratierte ÖPNV-Routen nach Ihren Vorlieben suchen und wählen,
 - Züge vermeiden
 - Straßenbahnen vermeiden
 - Fähren vermeiden
-- Share Taxis vermeiden
+- Share Taxi vermeiden
 
 Standardmäßig sucht OsmAnd nach Routen, die alle unterstützten Typen des öffentlichen Verkehrs umfassen.
 
@@ -142,19 +142,29 @@ Die Benutzeroberfläche zeigt Alternative Routen als farbige Abzeichen mit ihren
 
 ## Leistung und Ergebnisse {#performance-and-results}
 
-**ÖPNV-Profil -> Einstellungen -> Navigations-Einstellungen -> Routenparameter**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Maximale Anzahl von Umstiegen**.
+<TabItem value="android" label="Android">
 
-Die Leistung und der Speicherverbrauch des ÖPNV-Routers hängen von der Suchtiefe ab.
+![Maximale Anzahl von Transportwechseln](@site/static/img/navigation/public/maximum_number_android.png) 
 
-Der wichtigste Parameter, der diese Tiefe beeinflusst, ist die **Maximale Anzahl von Umstiegen**.
+</TabItem>
 
-Wir verwenden **2** als Standardwert, der für moderne ÖPNV-Netzwerke optimal erscheint.
+<TabItem value="ios" label="iOS">  
 
-Wenn Sie auf niedrige Leistung oder Speichermangel-Fehler stoßen, versuchen Sie, diesen Wert zu verringern.
+![Maximale Anzahl von Transportwechseln](@site/static/img/navigation/public/maximum_number_ios.png)
 
-Wenn Sie in einer kleinen Stadt sind oder kurze Routen fahren, könnte ein Wert von **1** besser funktionieren.
+</TabItem>
+
+</Tabs>
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_settings"/>* *→ ÖPNV-Profil →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Maximale Anzahl von Transportwechseln*
+
+Die Leistung und der Speicherverbrauch des ÖPNV-Routers hängen von der Suchtiefe ab. Der wichtigste Parameter, der diese Tiefe beeinflusst, ist die **Maximale Anzahl von Transportwechseln**.
+
+Dieser Parameter beeinflusst auch direkt die Verfügbarkeit und Qualität der Routen. Wenn der Wert zu niedrig eingestellt ist (z. B. 0), kann OsmAnd möglicherweise keine geeigneten Routen finden oder suboptimalen Optionen vorschlagen, obwohl bessere Routen mit Umstiegen existieren.
+
+Wir verwenden **2** als Standardwert, der für moderne ÖPNV-Netzwerke optimal erscheint. Wenn Sie auf niedrige Leistung oder Speichermangel-Fehler stoßen, versuchen Sie, diesen Wert zu verringern. Wenn Sie in einer kleinen Stadt sind oder kurze Routen fahren, könnte ein Wert von **1** besser funktionieren.
 <!--
 There are two more parameters that help you choose the best routes.
 

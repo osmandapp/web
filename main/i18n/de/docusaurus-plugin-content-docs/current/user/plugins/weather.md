@@ -1,6 +1,6 @@
 ---
-source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
-sidebar_position: 17
+source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+sidebar_position: 19
 title:  Wetter
 ---
 
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-:::info Kostenpflichtige Funktion
+:::info Pro-Funktion
 The Weather plugin is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
 :::
 
@@ -173,7 +173,7 @@ In the iOS version of OsmAnd, you can change measurement units and transparency 
 
 ### Wetter-Ebenen {#weather-layers}
 
-Alle Wetterdaten werden als separate Kartenebenen dargestellt. Um die Wetter-Ebenen auf der Karte zu sehen, müssen Sie herauszoomen, sie sind nur auf den Zoomstufen 2-12 verfügbar. Wetter-Ebenen verwenden [Wetterpaletten](../personal/color-palette-schemes.md#weather), um die Karte einzufärben. Diese Paletten können bei Bedarf [geändert](../personal/color-palette-schemes.md#palette-modify) werden.
+Alle Wetterdaten werden als separate Kartenebenen dargestellt. Um die Wetter-Ebenen auf der Karte zu sehen, müssen Sie herauszoomen, sie sind nur auf den Zoomstufen 2-12 verfügbar. Wetter-Ebenen verwenden [Wetterpaletten](../personal/color-palette-schemes.md#weather), um die Karte einzufärben, diese Paletten können bei Bedarf [geändert](../personal/color-palette-schemes.md#palette-modify) werden.
 
 | |  
 |------------|  

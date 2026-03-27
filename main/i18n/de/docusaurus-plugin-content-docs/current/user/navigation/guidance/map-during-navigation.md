@@ -1,5 +1,5 @@
 ---
-source-hash: d352911375cd93e46013b1fe3cff771b1f43e4f2a1a6f38ce514dc4e498cb3ca
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Kartenansicht während der Navigation
 ---
@@ -49,11 +49,11 @@ Während der Navigation passt sich das Erscheinungsbild der Karte an das ausgew�
 
 | Parameter | Beschreibung | Hinweis |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | Die Zeit, für die die Kartenansicht nach einer Bewegung mit der aktuellen Position synchronisiert wird. | *Wert:* <br /> Nie, 5 Sek., 10 Sek., 15 Sek., 20 Sek., 25 Sek., 30 Sek., 45 Sek., 60 Sek., 50 Sek.|
-| *<Translate android="true" ids="auto_zoom_map"/>*  | Automatische Skalierung der Karte entsprechend Ihrer Geschwindigkeit, solange die Karte mit Ihrer aktuellen Position synchronisiert ist. | *Wert:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manueller Zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - Zoom ist 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - Zoom ist 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - Zoom ist 5 m. <br /> Auto-Zoom-Änderungen können animiert (Sanft) oder schrittweise (Diskret) sein, abhängig von den [Entwicklungseinstellungen](navigation-settings.md#development-settings). Im Sanft-Modus verwenden Zoom-Änderungen eine kontrollierte Animation (ca. 0,1 Zoom/Sekunde). Auto-Zoom passt den Zoom bei sehr niedrigen Geschwindigkeiten (unter ~7 km/h) nicht an. Wenn die erforderliche Zoom-Änderung weniger als ~1,5 Sekunden dauern würde, wird die Animation nicht gestartet. <br /> Auto-Zoom zielt darauf ab, das bevorstehende Manöver in einem stabilen Fokus-Bereich auf dem Bildschirm zu halten, sodass die sichtbare Distanz voraus während der Fahrt konsistent bleibt.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | Die Zeit, für die die Kartenansicht nach einer Bewegung mit der aktuellen Position synchronisiert wird.  |  *Wert:* <br /> Nie, 5 Sek., 10 Sek., 15 Sek., 20 Sek., 25 Sek., 30 Sek., 45 Sek., 60 Sek., 50 Sek.|
+| *<Translate android="true" ids="auto_zoom_map"/>*  |  Automatische Skalierung der Karte entsprechend Ihrer Geschwindigkeit, solange die Karte mit Ihrer aktuellen Position synchronisiert ist. | *Wert:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manueller Zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - Zoom ist 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - Zoom ist 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - Zoom ist 5 m. <br /> Auto-Zoom-Änderungen können animiert (Sanft) oder schrittweise (Diskret) sein, abhängig von den [Entwicklungseinstellungen](navigation-settings.md#development-settings). Im Sanft-Modus verwenden Zoom-Änderungen eine kontrollierte Animation (ca. 0,1 Zoom/Sekunde). Auto-Zoom passt den Zoom bei sehr niedrigen Geschwindigkeiten (unter ~7 km/h) nicht an. Wenn die erforderliche Zoom-Änderung weniger als ~1,5 Sekunden dauern würde, wird die Animation nicht gestartet. <br /> Auto-Zoom zielt darauf ab, das bevorstehende Manöver in einem stabilen Fokus-Bereich auf dem Bildschirm zu halten, sodass die sichtbare Distanz voraus während der Fahrt konsistent bleibt.|
 | *Auto-Zoom-3D-Winkel* | Legt den Neigungswinkel der Karte fest, wenn während der Navigation auf die 3D-Ansicht gewechselt wird. Ein höherer Winkel lässt den Horizont weiter entfernt erscheinen und bietet mehr Sicht nach vorn. |Wird nur angewendet, wenn Auto-Zoom aktiviert ist. Werte: 20°, 25°, 30°, 35°, 40°. Standard: 25°. <br /> Beim Annähern an ein Manöver/Kreuzung kann die App den 3D-Neigungswinkel schrittweise auf eine 2D-Ansicht reduzieren, um die nächste Abbiegung lesbar zu halten. |
 | *Nächste Abbiegung vorbereiten* | Rotiert die Karte automatisch etwas im Voraus, um die nächste Abbiegung oder das nächste Manöver während der Navigation anzuzeigen. Hilft, bevorstehende Aktionen zu antizipieren.  | Standardmäßig aktiviert. Wenn Sie ein Profil exportieren und erneut importieren, überprüfen Sie diese Einstellung, da sie in einigen früheren Versionen auf „aktiviert“ zurückgesetzt werden konnte.   <br /> Die Rotation/Vorschau wird ausgelöst, sobald der nächste Manöverpunkt in den Fokus-Bereich fällt (die Karte beginnt also, sich die Abbiegung anzusehen, wenn sie relevant wird). |
-| *<Translate android="true" ids="snap_to_road"/>*  | Das Symbol für die aktuelle Position wird mit der aktuellen Navigationsroute verknüpft. | Sie können diese Option deaktivieren, aber alle straßenbezogenen Optionen, wie z. B. die Spuranzeige, sind dann während der Navigation ebenfalls nicht sichtbar.  |
+| *<Translate android="true" ids="snap_to_road"/>*  | Das Symbol für die aktuelle Position wird mit der aktuellen Navigationsroute verknüpft.  | Sie können diese Option deaktivieren, aber alle straßenbezogenen Optionen, wie z. B. die Spuranzeige, sind dann während der Navigation ebenfalls nicht sichtbar.  |
 
 
 ## Punkte entlang der Route anzeigen {#show-points-along-the-route}
@@ -160,6 +160,10 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 ## Darstellung der Routenlinie {#route-line-appearance}
 
+:::info Pro-Funktion
+Die Anpassung der Routenlinie ist eine kostenpflichtige [**OsmAnd Pro**]-Funktion <ProFeature />.
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -185,20 +189,15 @@ Sie können das Aussehen der Routenlinie nach Stil auswählen oder die Farbe, Br
 **Erweitert**: Die Einstellung "Routenlinie anpassen" ermöglicht es Ihnen, das Aussehen der Routenlinie anzupassen, um Höhenänderungen, deutliche Steigungen oder Gefälle, Eis auf der Straße, unbefestigte Straßen, Autobahnen und andere mögliche Hindernisse anzuzeigen. Sie können auch benutzerdefinierte [Farbschemata](../../personal/color-palette-schemes.md#tracks-routes) auswählen oder erstellen, um sie auf die Routenlinie anzuwenden.
 
 
-:::note
- <ProFeature/> Einige Parameter können nur mit dem <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro-Abonnement</a> verwendet werden.
-:::
-
-
 ### Farbe {#color}
 
 Die Einstellung **Farbe** ändert die Farbtöne der Routenlinien. Ihre Gesamtfarbe ändert sich je nach dem aus der OsmAnd-Sammlung ausgewählten Typ und gemäß der **Kartenlegende**. Alternativ wird ihre Farbe zu der Farbe und Transparenz, die Sie manuell einstellen.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Wird mit den Standardfarben verwendet. Eine vollständige Beschreibung der Farben finden Sie unter [Standard-Kartenstile](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Wird mit den Standardfarben verwendet. Eine vollständige Beschreibung der Farben finden Sie unter [Standard-Kartenstile](../../map/map-styles.md#default-map-styles).  
     ![Kartenstil](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Benutzerdefiniert***. Ermöglicht die Auswahl einer Linie in jeder bevorzugten Farbe und Transparenz. Sie können unterschiedliche Einstellungen für die Tageskarte und separat für die Nachtkarte auswählen.  
-    ![Benutzerdefiniert](@site/static/img/navigation/route/custom.png)   ![Benutzerdefiniert](@site/static/img/navigation/route/custom_ios.png)
+- ***Benutzerdefiniert***. Ermöglicht die Auswahl einer Linie in jeder bevorzugten Farbe und Transparenz. Sie können unterschiedliche Einstellungen für die Tageskarte und separat für die Nachtkarte auswählen. Die Farbpalette umfasst Schnellzugriffsfarben, eine Option zum Hinzufügen einer benutzerdefinierten Farbe (*+*) und eine vollständige Liste verfügbarer Farben (*Alle Farben*).            
+    ![Benutzerdefiniert](@site/static/img/navigation/route/custom_new.png)   ![Benutzerdefiniert](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. Zeigt die Höhe des Routenpunktes als **grün-gelb-roten** Farbverlauf an. **Grün** kennzeichnet den niedrigsten Punkt der Route, **Gelb** die durchschnittliche Höhe des Punktes und **Rot** den höchsten. Wenn der Höhenunterschied der Route < 100 Meter beträgt, wird der Farbverlauf teilweise oder gar nicht angewendet, z. B. bei einem einfachen Anstieg von 100 auf 150 Meter - der Farbverlauf ist **grün-gelb**. Beachten Sie, dass die Farbe nicht den absoluten Höhenwert darstellt.  
     ![Höhe](@site/static/img/navigation/route/Altitude_rl.png)
@@ -215,7 +214,7 @@ Die Einstellung **Farbe** ändert die Farbtöne der Routenlinien. Ihre Gesamtfar
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Klassifizierung der Manövrierbarkeit von Straßen oder Wegen für Radfahrzeuge, insbesondere im Hinblick auf die Regelmäßigkeit und Glätte der Oberfläche. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Glätte](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
     ![Glätte](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Färbt eine Routen- oder Tracklinie entsprechend der *Winterstraßenklassifizierung*. Eine detaillierte Beschreibung finden Sie im Artikel *Vektorkarten*, Abschnitt [Winter- und Eisstraßen](../../map/vector-maps.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Färbt eine Routen- oder Tracklinie entsprechend der *Winterstraßenklassifizierung*. Eine detaillierte Beschreibung finden Sie im Artikel *Kartenstile*, Abschnitt [Winter- und Eisstraßen](../../map/map-styles.md#winter-and-ski).  
     ![Winter](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Färbung einer Routen- oder Wegelinie nach der Zusammensetzung des Belags. Wird typischerweise verwendet, wenn das Straßennetz größtenteils unbefestigt ist. Eine detaillierte Beschreibung finden Sie im Artikel *OsmAnd-Kartenstil - [Oberflächenfestigkeit](../../map-legend/osmand.md#surface-smoothness)* im Abschnitt *Kartenlegende*.  
@@ -229,7 +228,7 @@ Die Einstellung **Farbe** ändert die Farbtöne der Routenlinien. Ihre Gesamtfar
 
 Sie können die Breite der Routenlinie an die auf der Karte angezeigte Straße oder den Weg anpassen. Zur deutlicheren visuellen Erkennung können Sie die Linienbreite bei Bedarf manuell vergrößern oder verkleinern. Weitere Details finden Sie im Artikel *Tracks und Routen — [Darstellung](../../map/tracks/appearance.md)*.
 
-- ***<Translate android="true" id="map_widget_renderer"/>***. Es wird die von OsmAnd festgelegte Standardbreite verwendet. Eine vollständige Beschreibung finden Sie im Artikel *Vektorkarten*, Abschnitt [Kartenstil](../../map/vector-maps.md#default-map-styles).  
+- ***<Translate android="true" id="map_widget_renderer"/>***. Es wird die von OsmAnd festgelegte Standardbreite verwendet. Eine vollständige Beschreibung finden Sie im Artikel *[Kartenstile](../../map/map-styles.md)*.  
     ![Kartenstil](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Dünne, mittlere und dicke Breiten***. Sie können die Breite der Linie so wählen, dass sie der Breite der Straße entspricht, oder die Routenlinie auf der Karte stärker hervorheben.  

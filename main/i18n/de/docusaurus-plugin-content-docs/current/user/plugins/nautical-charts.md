@@ -1,6 +1,6 @@
 ---
-source-hash: 8bdbb1dbc653745d49be7527b86667e03d733d2fde2a36fca570fbd3b9b02442
-sidebar_position: 7
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
 title:  Ansicht Nautische Karte
 ---
 

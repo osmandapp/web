@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -560,7 +560,7 @@ Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das
 </Tabs>
 
 
-Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#widgets). Sie können sie verwenden, um Informationen von einem angeschlossenen OBD-II-Scanner anzuzeigen, wie z.B. (*14 Metriken*): **Ansaugtemperatur**,&nbsp; **Umgebungstemperatur**,&nbsp; **Kühlmitteltemperatur**,&nbsp; **Motoröltemperatur**,&nbsp; **Motordrehzahl** (*kostenlos*),&nbsp; **Motorlaufzeit**,&nbsp; **Berechnete Motorlast**,&nbsp; **Kraftstoffdruck**,&nbsp; **Kraftstoffverbrauch**,&nbsp; **Verbleibender Kraftstoff**,&nbsp; **Batteriestand**,&nbsp; **Adapter-Spannung**,&nbsp; **Fahrzeuggeschwindigkeit** (*kostenlos*), und **Drosselklappenstellung**.  
+Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#widgets). Sie können sie verwenden, um Informationen von einem angeschlossenen OBD-II-Scanner anzuzeigen, wie z.B. (*14 Metriken*): **Adapter-Spannung** (*nur Android*),&nbsp; **Umgebungstemperatur**,&nbsp; **Batteriespannung**,&nbsp; **Berechnete Motorlast**,&nbsp; **Kühlmitteltemperatur**,&nbsp; **Motoröltemperatur**,&nbsp; **Motorlaufzeit**,&nbsp; **Motordrehzahl** (*kostenlos*),&nbsp; **Kraftstoffverbrauch**,&nbsp; **Kraftstoffdruck**,&nbsp; **Ansaugtemperatur**,&nbsp; **Verbleibender Kraftstoff**,&nbsp; **Drosselklappenstellung**, und **Fahrzeuggeschwindigkeit** (*kostenlos*).  
 
 - Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, [aktivieren](../plugins/index.md#enable--disable) Sie das **Fahrzeugmetrik-Plugin**.
 - Sie können Widgets hinzufügen, auch wenn kein OBD-II-Scanner angeschlossen ist.
@@ -772,7 +772,7 @@ Die **Kamera-Widgets** ermöglichen es Ihnen, die Ausrichtung zwischen der OsmAn
 
 <InfoAndroidOnly />
 
-![Widgets für Durchschnittsgeschwindigkeit](@site/static/img/widgets/available_RAM_2_andr.png)
+![Verfügbarer RAM-Widget](@site/static/img/widgets/available_RAM_2_andr.png)
 
 Das **Verfügbarer RAM**-Widget ist ein Werkzeug zur Überwachung der Speichernutzung Ihres Geräts in Bezug auf OsmAnd. Es liefert detaillierte Daten zur Optimierung der Anwendungsleistung.
 

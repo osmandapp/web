@@ -1,5 +1,5 @@
 ---
-source-hash: 4e8a3309a2bf429582c639f9c175de6db52d66c53f5483573c9c43e9ddf5a4ad
+source-hash: 1fb6aaad8a02175f6d93e0105e59bdde32a05b5c2aa59cb49c11240a90d29a4b
 sidebar_position: 4
 title:  Fahrzeugparameter
 ---
@@ -41,7 +41,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 Für eine optimale Routenberechnung in OsmAnd sollten Sie die folgenden Fahrzeugparameter berücksichtigen:
 
 1. Stellen Sie die [*Standardgeschwindigkeit* oder *Straßengeschwindigkeiten*](#road-speeds) als [Mindest- und Höchstgeschwindigkeit](#road-speeds) des Fahrzeugs ein. Dies hilft der Anwendung, die für die Route benötigte Zeit zu ermitteln und die beste Route unter Berücksichtigung der Geschwindigkeitsbegrenzungen auf verschiedenen Straßenabschnitten auszuwählen.
-2. Geben Sie den [*Kraftstofftyp*](#fuel-used-by-motor) an, der vom Motor verwendet wird. Dies ermöglicht der App, die CO2-Emissionen abzuschätzen.
+2. Geben Sie den [*Typ*](#fuel-used-by-motor) des vom Motor verwendeten Kraftstoffs an. Dies ermöglicht der App, die CO2-Emissionen abzuschätzen.
 3. Geben Sie die [*Kapazität Ihres Tanks*](#fuel-tank-capacity) ein, um Ihren Kraftstoffstand und -verbrauch genau zu verfolgen.
 4. Definieren Sie die [*Größen- und Gewichtsparameter*](#size-parameters) Ihres Fahrzeugs, die der App helfen können, die optimale Route zu berechnen und Hindernisse auf der Straße aufgrund von Beschränkungen zu vermeiden.
 
@@ -98,6 +98,10 @@ Fahrzeugparameter beeinflussen die Navigation und den Routenverlauf, da sie die 
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
+Auf Android ist dieser Parameter auch für *[Fahrradprofile](../../navigation/routing/bicycle-based-routing.md)* verfügbar, um enge Radwege zu vermeiden.
+
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+
 **5.** [**Achslastgrenze**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Geben Sie die maximale Achslast Ihres Fahrzeugs an, um Straßen und Brücken mit Achsgewichtsbeschränkungen zu vermeiden. Dieser Parameter ist nur in Navigationstypen wie [*LKW*](../../navigation/routing/car-based-routing.md) verfügbar.  
 
 ![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
@@ -135,7 +139,7 @@ Beschränkungen der Fahrzeugparameter können für die Navigation und die Verkeh
 </Tabs>
 
 Wenn Sie den Motortyp in den Fahrzeugparametern auswählen, werden die [***CO2-Fußabdruckdaten***](../../navigation/setup/route-details.md#elevation-info) über dem Diagramm in den [Routendetails](../setup/route-details.md) angezeigt.
-Verfügbar sind sechs Kraftstoffarten: ***Benzin, Diesel, Autogas (LPG), Erdgas (CNG), Elektro*** und ***Hybrid***.  
+Verfügbar sind sechs Kraftstoffarten: ***Benzin, Diesel, LPG, CNG, Elektro*** und ***Hybrid***.  
 
 **Anwendbarkeit:**
 
@@ -188,7 +192,7 @@ Die Einstellung **Tankinhalt** ist nur in der fahrzeugbasierten Navigation verf�
 </Tabs>  
 
 Die **Standardgeschwindigkeit** ist die Standardbewegungsgeschwindigkeit für dieses Verkehrsmittel ([Standardgeschwindigkeitsbegrenzungen](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Für die Profile *Gehen*, *Reiten* und *Radfahren* in kleinen Schritten von 0,1 km/h (mph) ([Einheiten & Formate](https://osmand.net/docs/user/personal/profiles#units--formats)) und für die anderen Profile in Schritten von 1 km/h (1 mph). Sie wird verwendet:
-- Zur Schätzung der [Routenzeit](../../widgets/nav-widgets.md#time-to-intermediate), wenn die Geschwindigkeit nicht aus den Straßen bestimmt werden kann, wie bei der [GPX-Navigation](../setup/gpx-navigation.md), [Skirouten](../routing/ski-routing.md), [Bootsrouten](../routing/boat-navigation.md), [Fußgängerrouten](../routing/pedestrian-routing.md) und anderen ähnlichen Profilen.
+- Zur Schätzung der [Routenzeit](../../widgets/nav-widgets.md#time-to-intermediate), wenn die Geschwindigkeit nicht aus den Straßen bestimmt werden kann, wie bei der [GPX-Navigation](../setup/gpx-navigation.md), [Skirouten](../routing/ski-routing.md), [Bootsrouten](../routing/boat-navigation.md), [Fußgänger](../routing/pedestrian-routing.md) und anderen ähnlichen Profilen.
 - Um zu bestimmen, wann [Sprachansagen](../guidance/voice-navigation.md) aktiviert werden.
 - Zur Bestimmung der Ankunftszeit für Kartenmarkierungen durch eine Luftliniennavigation, wenn die Durchschnittsgeschwindigkeit noch nicht berechnet wurde.
 

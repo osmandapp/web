@@ -1,5 +1,5 @@
 ---
-source-hash: 6e3da3a892310ea06863788deeb421519395989e63957965d0a7324d251adb07
+source-hash: d92d4278c9c42171043846b2adf1a7a54cdcf0a3004b025b84507367d39e6a6e
 sidebar_position: 5
 ---
 
@@ -37,7 +37,7 @@ iOS-Beta-Builds (TestFlight) werden in der Regel wöchentlich (nach einer Team-S
 - Höhenprofil-Widget für die Navigation, das ein kompaktes Profil entlang von Routen oder GPX-Spuren anzeigt.
 - **[Beliebte Orte](https://osmand.net/docs/user/map/popular_places/)**-Ebene aktualisiert mit Auswahl der POI-Quelle und optionalen Bildvorschauen auf der Karte.
 - Neuer Bereich „Entdecken“ in der Suche mit „Beliebte Orte in der Nähe“ und verbesserten Offline-/Kein-Daten-Zuständen.
-- Erweiterte POI-Suchergebnisse mit einheitlicher Stadt-Anzeige, verfeinertem Layout, optionalen Vorschaubildern und klareren Alternativnamen.
+- Erweiterte POI-Suchergebnisse mit einheitlicher Stadt-Anzeige, verfeinertem Layout und optionalen Vorschaubildern.
 - Standard-Erscheinungseinstellungen für Spurordner, die neuen Spuren einen einheitlichen Ordnerstil ermöglichen.
 
 
@@ -45,5 +45,5 @@ iOS-Beta-Builds (TestFlight) werden in der Regel wöchentlich (nach einer Team-S
 
 - Schnelleres Öffnen von Kontextmenüs beim Tippen auf POIs, Favoriten, Spuren und Gebäude.
 - Korrekte Behandlung von relationenbasierten POIs auf Multipolygonen.
-- Behebung des Auftretens von „null“ statt eines Stadt名s in POI-Suchergebnissen und Verbesserung der Konsistenz des Nachtmodus-Hintergrunds.
+- Behebung des Auftretens von „null“ statt eines Stadtnamens in POI-Suchergebnissen und Verbesserung der Konsistenz des Nachtmodus-Hintergrunds.
 - Wiederherstellung des Tippsverhaltens für Fitness-, Lauf- und Kanu-Routen mit Schildern.

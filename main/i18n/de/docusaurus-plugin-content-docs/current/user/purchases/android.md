@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: f03e507400bc20695268af175cd4521086e021342f5905b49b0c9d9b09b9e7fc
 sidebar_position: 1
 title:  Android-Käufe
 ---
@@ -113,6 +113,7 @@ Die nachstehende Tabelle enthält Einzelheiten zu den Funktionen, die sowohl in 
 | [Nautische Tiefen](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Beliebte Orte (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage - Reiseführer](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Astronomie-Plugin](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Offline- und Online-Navigation](../navigation/index.md)<br/>mit Abbiegehinweisen | ✔ | ✔ | ✔ |
 | [Offline-Sofortsuche](../search/index.md) | ✔ | ✔ | ✔ |
 | [Routenaufzeichnung](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -155,6 +156,8 @@ Das **Pro**-Abonnement umfasst derzeit die folgenden Funktionen:
 | [Höhen-Widgets - Höhe: Kartenzentrum](../widgets/info-widgets.md#elevation-map-center) | Ermöglicht es Ihnen, die Höhe des aktuellen Kartenzentrums über dem Meeresspiegel zu ermitteln.  |
 | [Höhenkorrektur (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Ermöglicht die Berechnung eines Höhendiagramms für Ihren Track ([Geländekarte](../plugins/topography.md#download-maps) für die gewählte Region erforderlich). |
 | [Farbenschema anpassen](../../user/plugins/topography.md#modify-color-scheme) | Ermöglicht es Ihnen, das Kartenbild durch Auswählen oder Importieren von Farbpaletten anzupassen. Sie können integrierte Schemata bearbeiten oder eigene Paletten-Dateien verwenden, um Karten- und Routenfarben zu personalisieren. |
+| [Erstellen benutzerdefinierter Paletten](../../user/map/tracks/appearance.md#gradient-palettes) | Ermöglicht das Erstellen und Bearbeiten von Gradientenpaletten für die Track-Färbung mit relativen oder festen Werten. Sie können Farbschritte definieren, Werte zuweisen und anpassen, wie Daten (wie Geschwindigkeit oder Höhe) entlang des Tracks angezeigt werden. |
+| [Smart Folders – Organisieren nach](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Ermöglicht die Organisation von Tracks in Smart Folders mit erweiterten Gruppierungsparametern wie Datum & Uhrzeit, Distanz, Dauer, Geschwindigkeit, Höhe & Höhenunterschied und Sensordaten. Diese Optionen ermöglichen eine detailliertere Track-Kategorisierung und flexible Analyse. |
 
 
 ## Wie man kauft {#how-to-buy}

@@ -1,5 +1,5 @@
 ---
-source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
+source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
 sidebar_position: 18
 title:  Plugins
 ---
@@ -84,7 +84,7 @@ OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**
 |[Mapillary](#mapillary) | [Kartenebene](../plugins/mapillary.md#map-layer), [Kontextmenü](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Externe Sensoren](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Fahrzeugmetriken](#vehicle-metrics)  | [Benutzerdefinierte Einstellungen](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Sternenbeobachter](#star-watcher)  | [Bildschirm](../plugins/starwatcher.md#star-map-screen), [Kontextmenü](../plugins/starwatcher.md#celestial-object-info) |
+|[Astronomie](#star-watcher)  | [Bildschirm](../plugins/astronomy.md#star-map-screen), [Kontextmenü](../plugins/astronomy.md#celestial-object-info) |
 |[Bedienungshilfen](#accessibility) 🤖  | [Benutzerdefinierte Einstellungen](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd-Entwicklung](#osmand-development) | [Benutzerdefinierte Einstellungen](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Kartenebene](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Kontextmenü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
@@ -99,20 +99,20 @@ Nur das OsmAnd-Entwicklungs-Plugin und das OSM-Bearbeitungs-Plugin ändern die E
 
 Die meisten Plugins bieten spezifische profil- oder globale Einstellungen, auf die Sie zugreifen können über:
 
-- *Hauptmenü → Plugins → Plugin-Name → Einstellungen (&#x2699 für iOS)* oder  
+- *Hauptmenü → Plugins → Plugin-Name → Einstellungen (&#x2699 für ios)* oder  
 - *Hauptmenü → Einstellungen → Profil → [Plugin-Einstellungen](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Plugin-Einstellungen Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Plugin-Einstellungen Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)
+![Einstellungen Plugin Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Einstellungen Plugin Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plugin-Einstellungen iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Plugin-Einstellungen iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png)
+![Einstellungen Plugin iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Einstellungen Plugin iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png)
 
 </TabItem>
 
@@ -194,9 +194,9 @@ Verbinden Sie externe Sensoren, um deren Daten in OsmAnd anzuzeigen und die Info
 
 Verbinden Sie einen OBD-II-Scanner, um Fahrzeugdaten in OsmAnd anzuzeigen und die Informationen in Streckenaufzeichnungen zu speichern.  
 
-### [Sternenbeobachter](./starwatcher.md) {#star-watcher}
+### [Astronomie](./astronomy.md) {#astronomy}
 
-Sternenbeobachter zeigt eine interaktive Sternenhimmel-Überlagerung mit Sternen, Sternbildern, der Sonne, dem Mond und Planeten an. Es hilft Ihnen, Himmelskörper über Ihrem aktuellen Standort zu identifizieren, ihre Pfade für ein ausgewähltes Datum und eine Uhrzeit vorab anzusehen und Sternenbeobachtungssitzungen mit integrierten Zeitsteuerungen und Anzeigeoptionen zu planen.
+Das Astronomie-Plugin zeigt eine interaktive Sternenhimmel-Überlagerung mit Sternen, Sternbildern, der Sonne, dem Mond und Planeten an. Es hilft Ihnen, Himmelskörper über Ihrem aktuellen Standort zu identifizieren, ihre Pfade für ein ausgewähltes Datum und eine Uhrzeit vorab anzusehen und Sternenbeobachtungssitzungen mit integrierten Zeitsteuerungen und Anzeigeoptionen zu planen.
 
 ### [Bedienungshilfen](./accessibility.md) {#accessibility}
 

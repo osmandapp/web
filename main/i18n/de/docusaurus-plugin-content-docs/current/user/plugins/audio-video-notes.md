@@ -1,6 +1,6 @@
 ---
-source-hash: 6ac96adcb213d50bdd207133aa88655fcf7a8fd4cce381a9589ab72aee5ad2ce
-sidebar_position: 3
+source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+sidebar_position: 4
 title:  Audio-/Videonotizen
 ---
 
@@ -266,7 +266,7 @@ Das Hinzufügen eines Widgets zum Bildschirm ist notwendig, wenn Sie es vorziehe
 
     - **<Translate android="true" ids="av_def_action_choose"/>** - eine Auswahl von Optionen öffnen.
 
-    - **<Translate android="true" ids="av_def_action_audio"/>** - eine Audioaufnahme starten.
+    - **<Translate android="true" ids="av_def_action_audio"/>** - eine Audionachricht aufnehmen starten.
 
     - **<Translate android="true" ids="av_def_action_video"/>** - eine Videoaufnahme starten.
 

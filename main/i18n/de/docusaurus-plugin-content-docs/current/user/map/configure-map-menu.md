@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  Karte konfigurieren
 ---
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Übersicht {#overview}
 
-Das Menü **Karte konfigurieren** ist ein wichtiger Punkt im OsmAnd *Hauptmenü*, in dem Sie die Kartenanzeige an Ihre Bedürfnisse anpassen können. Sie können Favoriten, Navigationsmarkierungen oder spezielle Sonderziele auf der Karte hervorheben, bestimmte Routen oder GPX-Dateien von Drittanbietern anzeigen, Geländeinformationen, Satellitenbilder oder andere verfügbare Rasterbilder überlagern, Informationen zum öffentlichen Nahverkehr anzeigen und den Kartenstil ändern.  
+Das Menü **Karte konfigurieren** ist ein wichtiger Punkt im OsmAnd *Hauptmenü*, in dem Sie die Kartenanzeige an Ihre Bedürfnisse anpassen können. Sie können Favoritenpunkte, Navigationsmarkierungen oder spezielle Sonderziele auf der Karte hervorheben, bestimmte Routen oder GPX-Dateien von Drittanbietern anzeigen, Geländeinformationen, Satellitenbilder oder andere verfügbare Rasterbilder überlagern, Informationen zum öffentlichen Nahverkehr anzeigen und den Kartenstil ändern.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -23,7 +23,7 @@ Das Menü **Karte konfigurieren** ist ein wichtiger Punkt im OsmAnd *Hauptmenü*
 
 Abschnitt **Anzeigen**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_show1_andr.png)  ![Karte konfigurieren Android](@site/static/img/map/configure_map_show2_andr.png)  
+![Karte konfigurieren Android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Karte konfigurieren Android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Abschnitt **Topografie**:  
 
@@ -43,27 +43,27 @@ Abschnitte **Routen und Kartenrendering**:
 
 Abschnitt **Auf der Karte anzeigen**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_show1_ios.png)  
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Abschnitt **Topografie**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_ios.png)  
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_topography_ios.png)  
 
 Abschnitt **OpenStreetMap**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_osm_ios.png)  
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_osm_ios.png)  
 
 Abschnitt **Routen**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_routes_new_ios.png)
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_routes_new_ios.png)
 
 Abschnitte **Kartentyp und Kartenstil**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_style_ios.png)
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_style_ios.png)
 
 Abschnitte **Überlagerung/Unterlagerung und Sprache**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_overlay_ios.png)
+![Karte konfigurieren iOS](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -100,7 +100,7 @@ Das Menü **<Translate android="true" ids="configure_map"/>** ist in zwei Katego
    - [Tracks](../map/tracks/index.md) - zeigt importierte, geplante oder aufgezeichnete Tracks über der Karte an.
    - [Bilder auf Straßenebene](../plugins/mapillary.md#map-layer) - zeigt Punkte mit verfügbaren Bildern auf Straßenebene an.
    - [Reiseführer](../plan-route/travel-guides.md) - zeigt Reiseführer auf der Karte an.
-   - [Wikipedia](../plugins/wikipedia.md) - hebt Wikipedia-Artikel hervor, die mit der Karte verknüpft sind.
+   - [Beliebte Orte](../map/popular_places.md) - hebt beliebte Orte basierend auf Wikipedia-Artikeln hervor und zeigt sie auf der Karte an.
    - [OSM-Bearbeitung](../plugins/osm-editing.md#osm-editing-layer) - zeigt OpenStreetMap-Bearbeitungen, Notizen und zu Kartenerstellung gehörende Hilfsebenen an.
    - [Andere Plugin-Ebenen](../plugins/index.md#configure-plugin) - viele Plugins fügen ihre Ebenen mit zusätzlichen Informationen hinzu.
 

@@ -1,6 +1,6 @@
 ---
-source-hash: 9140bac9e9be1e187b70214ddb666d2191b3cfef30bcc06f8571ba22da005fb7
-sidebar_position: 15
+source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
+sidebar_position: 17
 title:  Reiseaufzeichnung
 ---
 
@@ -297,7 +297,7 @@ Bevor Sie mit der Aufzeichnung Ihrer Reisen beginnen, müssen Sie das **Reiseauf
 | **Fahrzeugmetriken** <br/> *Plugin muss aktiviert sein* | Daten von einem [OBD-II-Scanner](../plugins/vehicle-metrics.md#trip-recording) werden in der GPX-Datei protokolliert. Wird nur angezeigt, wenn das [Plugin für Fahrzeugmetriken](../plugins/vehicle-metrics.md) aktiviert ist.<br />*Hinweis*: Sie können aus der Liste auswählen, welche Metriken in der GPX-Datei aufgezeichnet werden sollen: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Speicherordner für Tracks** (*Android*) | Definiert, wo im Tab *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* aufgezeichnete Tracks gespeichert werden. Optionen umfassen das Speichern aller Tracks im Ordner "Rec" oder die Organisation nach Monat, wie z. B. "Rec/yyyyy-mm". |
 | **Benachrichtigung** | Steuert die Anzeige einer Systembenachrichtigung zur [Reiseaufzeichnung](#notifications) im Benachrichtigungsbereich des Geräts, mit der Sie die Aufzeichnung von Reisen starten können. |
-| **Online-Tracking** (*Android*) | Ermöglicht die Echtzeitverfolgung Ihres Standorts durch Senden aufgezeichneter Punkte an eine angegebene URL. Das Tracking-Intervall bestimmt, wie oft Punkte gesendet werden, und der Zeitpuffer speichert Punkte, wenn keine Internetverbindung besteht.<details><summary>*Anmerkung*</summary>Wenn diese Option aktiviert ist und die Track-Aufzeichnung läuft, wird das Distanz/Start-Stopp (REC)-Widget **grün** statt **rot**, was anzeigt, dass jeder aufgezeichnete Punkt an eine angegebene URL übertragen wird. Das Feld **Webadresse** ermöglicht die Eingabe der URL im folgenden Parameterformat:<ul><li>`lat={0}`: Breitengrad</li><li>`lon={1}`: Längengrad</li><li>`timestamp={2}`: Zeitstempel (Unix-Zeit)</li><li>`hdop={3}`: Horizontale Genauigkeitsverdünnung</li><li>`altitude={4}`: Höhe</li><li>`speed={5}`: Geschwindigkeit</li><li>`bearing={6}`: Peilung (Bewegungsrichtung)</li><li>`eta={7}`: Geschätzte Ankunftszeit (Unix-Zeit)</li><li>`etfa={8}`: Geschätzte Zeit bis zum ersten Zwischenpunkt oder Zielpunkt (Unix-Zeit)</li><li>`eda={9}`: Geschätzte Entfernung bis zur Ankunft oder einer Markierung (in Metern)</li><li>`edfa={10}`: Geschätzte Entfernung bis zum ersten Zwischenpunkt oder Zielpunkt (in Metern)</li></ul>Sie können das **Tracking-Intervall** festlegen, um anzugeben, wie oft Standortpunkte gesendet werden, mit Optionen von 0 Sekunden bis 5 Minuten. Zusätzlich bestimmt der Parameter **Zeitpuffer**, wie lange Standortpunkte gespeichert werden, wenn keine Internetverbindung besteht, um sicherzustellen, dass die Daten gespeichert und übertragen werden, wenn die Verbindung wiederhergestellt ist.<br />OsmAnd speichert die nicht gesendeten Standortpunkte nur im temporären Speicher der App, solange die Anwendung läuft. Das bedeutet, dass der Puffer nicht auf permanenten Speicher geschrieben wird. Wenn die App geschlossen, zwangsbeendet oder das Gerät neu gestartet wird, gehen alle gepufferten Punkte verloren.<br />Die Einstellung Zeitpuffer definiert nicht, wie lange Punkte im Speicher gehalten werden – sie wirkt nur als Filter zum Zeitpunkt des Hochladens. Wenn OsmAnd versucht, gepufferte Punkte zu senden, wird jeder Punkt gegen die Grenze des Zeitpuffers geprüft. Punkte, die älter als die ausgewählte Grenze (z. B. 24 Stunden) sind, werden entfernt, anstatt hochgeladen zu werden. Infolgedessen kann der Puffer vorübergehend Punkte älter als der gewählte Zeitpufferwert enthalten, aber diese Punkte werden während des Upload-Prozesses verworfen.</details> |
+| **Online-Tracking** (*Android*) | Ermöglicht die Echtzeitverfolgung Ihres Standorts durch Senden aufgezeichneter Punkte an eine angegebene URL. Das Tracking-Intervall bestimmt, wie oft Punkte gesendet werden, und der Zeitpuffer speichert Punkte, wenn keine Internetverbindung besteht.<details><summary>*Anmerkung*</summary>Wenn diese Option aktiviert ist und die Track-Aufzeichnung läuft, wird das Distanz/Start-Stopp (REC)-Widget **grün** statt **rot**, was anzeigt, dass jeder aufgezeichnete Punkt an eine angegebene URL übertragen wird. Das Feld **Webadresse** ermöglicht die Eingabe der URL im folgenden Parameterformat:<ul><li>`lat={0}`: Breitengrad</li><li>`lon={1}`: Längengrad</li><li>`timestamp={2}`: Zeitstempel (Unix-Zeit)</li><li>`hdop={3}`: Horizontale Genauigkeitsverdünnung</li><li>`altitude={4}`: Höhe</li><li>`speed={5}`: Geschwindigkeit</li><li>`bearing={6}`: Peilung (Bewegungsrichtung)</li><li>`eta={7}`: Geschätzte Ankunftszeit (Unix-Zeit)</li><li>`etfa={8}`: Geschätzte Zeit bis zum ersten Zwischenpunkt oder Zielpunkt (Unix-Zeit)</li><li>`eda={9}`: Geschätzte Entfernung bis zur Ankunft oder einer Markierung (in Metern)</li><li>`edfa={10}`: Geschätzte Entfernung bis zum ersten Zwischenpunkt oder Zielpunkt (in Metern)</li><li>`batproc={11}`: Geräte-Akkustand (Prozentsatz)</li></ul>Sie können das **Tracking-Intervall** festlegen, um anzugeben, wie oft Standortpunkte gesendet werden, mit Optionen von 0 Sekunden bis 5 Minuten. Zusätzlich bestimmt der Parameter **Zeitpuffer**, wie lange Standortpunkte gespeichert werden, wenn keine Internetverbindung besteht, um sicherzustellen, dass die Daten gespeichert und übertragen werden, wenn die Verbindung wiederhergestellt ist.<br />OsmAnd speichert die nicht gesendeten Standortpunkte nur im temporären Speicher der App, solange die Anwendung läuft. Das bedeutet, dass der Puffer nicht auf permanenten Speicher geschrieben wird. Wenn die App geschlossen, zwangsbeendet oder das Gerät neu gestartet wird, gehen alle gepufferten Punkte verloren.<br />Die Einstellung Zeitpuffer definiert nicht, wie lange Punkte im Speicher gehalten werden – sie wirkt nur als Filter zum Zeitpunkt des Hochladens. Wenn OsmAnd versucht, gepufferte Punkte zu senden, wird jeder Punkt gegen die Grenze des Zeitpuffers geprüft. Punkte, die älter als die ausgewählte Grenze (z. B. 24 Stunden) sind, werden entfernt, anstatt hochgeladen zu werden. Infolgedessen kann der Puffer vorübergehend Punkte älter als der gewählte Zeitpufferwert enthalten, aber diese Punkte werden während des Upload-Prozesses verworfen.</details> |
 | **Tracks** | Ein schneller Verweis auf den Ordner, in dem Tracks im Tab *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* gespeichert werden. |
 | **Plugin-Einstellungen auf Standard zurücksetzen** | Setzt alle Einstellungen für die Reiseaufzeichnung für das aktuelle Profil auf die Standardwerte zurück. |
 | **Von einem anderen Profil kopieren** (*Android*) | Kopiert die Einstellungen für die Reiseaufzeichnung von einem Profil in ein anderes. |
@@ -356,7 +356,7 @@ Das App-Symbol-Badge erscheint neben dem OsmAnd-Symbol, wenn die Track-Aufzeichn
 
 ## Widgets {#widgets}
 
-Widgets ermöglichen es Ihnen, wichtige Informationen zur Track-Aufzeichnung direkt auf dem Bildschirm anzuzeigen, wie z. B. *Distanz*, *Dauer*, *Bergauf*, *Bergab*, *Max. Geschwindigkeit* und *Durchschnittssteigung*. Unter iOS können Sie auch ein *Bewegungszeit*-Widget hinzufügen.
+Widgets ermöglichen es Ihnen, wichtige Informationen zur Track-Aufzeichnung direkt auf dem Bildschirm anzuzeigen, wie z. B. *Durchschnittssteigung*, *Distanz*, *Bergab*, *Dauer*, *Max. Geschwindigkeit*, *Bewegungszeit* und *Bergauf*. Unter Android können Sie auch ein *Durchschnittsgeschwindigkeit*-Widget hinzufügen.
 
 Um die *Reiseaufzeichnungs-Widgets* zu verwenden, müssen Sie alle folgenden Einstellungen vornehmen:
 
@@ -373,7 +373,7 @@ Um die *Reiseaufzeichnungs-Widgets* zu verwenden, müssen Sie alle folgenden Ein
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wählen Sie ein Panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Distanz/Start-Stopp-Widget in Android hinzufügen](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
+![Distanz/Start-Stopp-Widget in Android hinzufügen](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -412,36 +412,18 @@ Um Ihre Benutzeroberfläche anzupassen, können Sie das Reiseaufzeichnungs-Widge
 
 Einige Reiseaufzeichnungs-Widgets unterstützen mehrere Anzeigemodi. Modi ermöglichen es Ihnen, zwischen Gesamtwerten der Reise und Metriken für den zuletzt aufgenommenen Bergauf- oder Bergababschnitt der aktuell aufgezeichneten Reise zu wechseln.
 
-Die folgenden Modi können je nach Widget verfügbar sein.
-1. **Durchschnittssteigung**:
-- Letzter Bergab  
-- Letzter Bergauf  
-
-2. **Distanz (Start-Stopp)**:
-- Gesamtdistanz (Standard)
-- Letzter Bergab
-- Letzter Bergauf
-
-3. **Bergab**:
-- Gesamt (Standard)
-- Letzter Bergab
-
-4. **Max. Geschwindigkeit**:
-- Gesamt (Standard)
-- Letzter Bergab
-- Letzter Bergauf
-
-5. **Bewegungszeit** (*Nur iOS*)
-- Gesamt (Standard)
-- Letzter Bergab
-- Letzter Bergauf
-
-6. **Bergauf**:
-- Gesamt (Standard)
-- Letzter Bergauf
+| **Widget** | **Verfügbare Modi**  |
+|-------|-------------|
+| Durchschnittssteigung | Letzter Bergab; Letzter Bergauf |
+| Durchschnittsgeschwindigkeit (*Nur Android*) | Reise-Durchschnitt (Standard); Letzter Bergab; Letzter Bergauf |
+| Distanz (Start-Stopp) | Reise-Durchschnitt (Standard); Letzter Bergab; Letzter Bergauf |
+| Bergab | Gesamt (Standard); Letzter Bergab |
+| Max. Geschwindigkeit | Gesamt (Standard); Letzter Bergab; Letzter Bergauf |
+| Bewegungszeit | Gesamt (Standard); Letzter Bergab; Letzter Bergauf |
+| Bergauf | Gesamt (Standard); Letzter Bergauf |
 
 Der Moduswechsel hängt vom Widget ab:
-- Bergauf / Bergab / Max. Geschwindigkeit / Durchschnittssteigung / Bewegungszeit — Tippen Sie auf das Widget auf der Karte, um seinen Modus zu wechseln.
+- Bergauf / Bergab / Max. Geschwindigkeit / Durchschnittssteigung / Bewegungszeit / Durchschnittsgeschwindigkeit — Tippen Sie auf das Widget auf der Karte, um seinen Modus zu wechseln.
 - Distanz (Start-Stopp) — Das Distanz-Widget unterstützt mehrere Anzeigemodi (wählen Sie sie in den Widget-Einstellungen aus), aber ein Tippen darauf öffnet immer den Reiseaufzeichnungsdialog, in dem Sie detaillierte Informationen zu Ihrem Track starten, stoppen und anzeigen können. 
 
 Wenn die aktuelle Aufzeichnung noch keinen Bergauf- oder Bergababschnitt enthält, zeigen Widgets im Modus Letzter Bergauf oder Letzter Bergab 0 oder — (keine Daten) an.
@@ -469,13 +451,15 @@ Unter Android unterstützt das Distanz-Widget mehrere Anzeigemodi:
 |------------|
 |**Durchschnittssteigung**. Zeigt die durchschnittliche Steigung für den letzten Bergauf- oder Bergababschnitt der aktuellen Reise an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Durchschnittsgeschwindigkeit** (*Nur Android*). Zeigt die Durchschnittsgeschwindigkeit für die aktuell aufgezeichnete Reise oder die Durchschnittsgeschwindigkeit während des letzten Bergauf- oder Bergababschnitts an, abhängig vom ausgewählten Modus. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Bergab**. Zeigt den gesamten Abstieg oder den letzten Abstiegsabschnitt an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Dauer**. Zeigt die Gesamtzeit der aktuellen Reiseaufzeichnung in Stunden und Minuten an. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Max. Geschwindigkeit**. Zeigt die maximale Geschwindigkeit für die aktuell aufgezeichnete Reise im ausgewählten Modus an. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
-|**Bewegungszeit** (*Nur iOS*). Zeigt die Bewegungszeit für die aktuell aufgezeichnete Reise oder die Zeit für den letzten Bergauf- und Bergababschnitt an, abhängig vom ausgewählten Modus. |
+|**Bewegungszeit**. Zeigt die Bewegungszeit für die aktuell aufgezeichnete Reise oder die Zeit für den letzten Bergauf- und Bergababschnitt an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**Bergauf**. Zeigt den gesamten Anstieg oder den letzten Anstiegsabschnitt an, abhängig vom ausgewählten Modus. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
