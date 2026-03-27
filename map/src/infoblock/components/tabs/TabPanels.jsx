@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import PersistentTabPanel from './PersistentTabPanel';
 import styles from './tabpanels.module.css';
@@ -8,6 +8,7 @@ export default function TabPanels({ tabsObj, scrollAreaHandlers }) {
     const [value, setValue] = useState(tabsObj?.defaultTab);
 
     const contentScrollerRef = useRef(null);
+    const tabScrollTopByIdRef = useRef({});
     const { onContentScroll, onScrollAreaLayout, onScrollAreaContextChange } = scrollAreaHandlers;
 
     useEffect(() => {
@@ -19,9 +20,23 @@ export default function TabPanels({ tabsObj, scrollAreaHandlers }) {
     useLayoutEffect(() => {
         const el = contentScrollerRef.current;
         if (el) {
+            const savedScrollTop = tabScrollTopByIdRef.current[value] ?? 0;
+            if (el.scrollTop !== savedScrollTop) {
+                el.scrollTop = savedScrollTop;
+            }
             onScrollAreaLayout(el);
         }
     }, [value]);
+
+    const handleContentScroll = useCallback(
+        (event) => {
+            if (value) {
+                tabScrollTopByIdRef.current[value] = event.currentTarget.scrollTop;
+            }
+            onContentScroll(event);
+        },
+        [onContentScroll, value]
+    );
 
     if (!tabsObj || tabsObj.tabList.length === 0) {
         return null;
@@ -35,6 +50,10 @@ export default function TabPanels({ tabsObj, scrollAreaHandlers }) {
                     variant="scrollable"
                     scrollButtons="auto"
                     onChange={(e, newValue) => {
+                        const el = contentScrollerRef.current;
+                        if (el && value) {
+                            tabScrollTopByIdRef.current[value] = el.scrollTop;
+                        }
                         onScrollAreaContextChange();
                         setValue(newValue);
                     }}
@@ -42,7 +61,7 @@ export default function TabPanels({ tabsObj, scrollAreaHandlers }) {
                     {tabsObj.tabList}
                 </TabList>
                 <ThickDivider />
-                <div ref={contentScrollerRef} className={styles.contentScroller} onScroll={onContentScroll}>
+                <div ref={contentScrollerRef} className={styles.contentScroller} onScroll={handleContentScroll}>
                     {Object.values(tabsObj.tabs).map((item) => (
                         <PersistentTabPanel key={'tabpanel-track:' + item.key} selectedTabId={value} tabId={item.key}>
                             {item}
