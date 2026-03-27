@@ -781,7 +781,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         );
     };
 
-    const WptCategory = () => {
+    const WptGroup = () => {
         return (
             <Box className={styles.wptCategory}>
                 <ListItemIcon
@@ -931,7 +931,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         />
                                     )}
                                 </Box>
-                                {wpt?.category && <WptCategory />}
+                                {wpt?.category && <WptGroup />}
                                 {wpt?.openingHours && <OpeningHoursInfo openingHours={wpt.openingHours} />}
                                 <LocationInfoLine wpt={wpt} />
                                 {showFavoriteActions() && <FavoriteActionsButtons wpt={wpt} />}
