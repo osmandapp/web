@@ -89,7 +89,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         return () => {
             isCancelled = true;
         };
-    }, [track, coords, ctx.mapBbox]);
+    }, [track, coords]);
 
     const trackAddressText = useMemo(() => {
         if (!trackAddress) {
