@@ -1,5 +1,5 @@
 ---
-source-hash: a53454c8a0f9f2f19df1236a67ed3ac322f3c92ec0a7817bda579bd8c4c75a27
+source-hash: 91a31a428026d3f096ac2e5ae3c87ed7602a196858aeed773cb52ba0586c9450
 sidebar_position: 4
 ---
 
@@ -33,17 +33,17 @@ OsmAnd publie quotidiennement plusieurs constructions prêtes à l'emploi, ce qu
 
 ## Nouveautés {#whats-new}
 
-- Nouveau plugin expérimental Starwatcher avec une superposition astronomique qui affiche les trajectoires du Soleil, des planètes et des étoiles sur la carte, avec sélection de l'heure et de la date et un écran d'activité dédié.
-- Section **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** améliorée dans les Paramètres : les données de sauvegarde, l'historique des versions et les paramètres de sauvegarde automatique sont maintenant regroupés sous un seul bloc « OsmAnd Cloud » avec des noms plus clairs, des icônes et des informations sur l'utilisation du stockage.
-- Options **[Configurer la carte](https://osmand.net/docs/user/map/configure-map-menu)** mises à jour pour les itinéraires et les attributs routiers : une légende plus claire, de meilleurs filtres pour les réseaux de randonnée, de cyclisme et de VTT, plus un contrôle accru sur les types d'itinéraires et les superpositions d'icônes visibles sur la carte.
-- Nouveaux widgets d'altitude et de navigation redessinés : profils d'altitude pour les itinéraires et les traces GPX, métriques de montée/descente, pente moyenne et informations d'altitude plus détaillées pour les voyages et la navigation.
-- Améliorations **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**, incluant un support étendu des widgets et une meilleure intégration OBD II, pour que les métriques clés du véhicule telles que la vitesse et les données liées au carburant soient plus faciles à voir sur l'écran de la voiture.
-- Disposition plus flexible pour les widgets et les boutons de la carte : placement amélioré en mode paysage, meilleur contrôle de la visibilité et de l'apparence, et une disposition qui réduit les chevauchements entre les widgets, les boutons et les champs de données.
-- Gestion améliorée des Favoris dans **[Mes Lieux](https://osmand.net/docs/user/personal/myplaces)** : gestion plus puissante des dossiers et sélection multiple pour les favoris, plus les bases pour attacher des médias (photos, vidéos, notes audio) directement aux points de favoris.
-- Organisation et statistiques de traces plus intelligentes : les Dossiers intelligents peuvent regrouper automatiquement les traces par période, activité, distance, vitesse, emplacement et autres paramètres, avec des statistiques de résumé plus claires pour chaque groupe.
-- Analyse avancée des itinéraires et des traces : nouveaux graphiques pour le type de route, la surface, la douceur, la raideur, les voies et la vitesse maximale, avec une option pour colorer les traces en utilisant une palette de vitesse fixe.
-- Améliorations continues des fonctionnalités d'accessibilité, incluant des indications audio et haptiques de navigation plus flexibles et une expérience de « regard autour » plus riche pour les utilisateurs malvoyants.
-- Bases initiales pour l'intégration avec montres connectées, préparant le support pour visualiser les informations de navigation et les données d'enregistrement de voyage sur les appareils portables.
+- Nouveau plugin expérimental **[Astronomy](https://osmand.net/docs/user/plugins/astronomy)** avec une superposition astronomique affichant les trajectoires du Soleil, des planètes et des étoiles.
+- Section **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** améliorée avec des sauvegardes plus claires, l'historique des versions et les paramètres de sauvegarde automatique.
+- Options **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)** mises à jour avec une légende plus claire et des filtres améliorés pour les itinéraires de randonnée, de cyclisme et de VTT.
+- Nouveaux widgets d'altitude et de navigation redessinés avec des profils d'altitude, des métriques de montée/descente et une pente moyenne.
+- Améliorations **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** avec un support étendu des widgets et une meilleure intégration OBD II.
+- Disposition plus flexible des **[widgets et boutons de la carte](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, en particulier en mode paysage.
+- Gestion améliorée des Favoris dans **[My Places](https://osmand.net/docs/user/personal/myplaces)**.
+- Organisation plus intelligente des traces avec des Dossiers intelligents et des statistiques de résumé plus claires.
+- Analyse avancée des itinéraires et des traces.
+- Fonctionnalités d'accessibilité améliorées, incluant des retours audio et haptiques de navigation plus flexibles.
+- Bases initiales pour l'intégration avec montres connectées pour les informations de navigation et les données d'enregistrement de voyage.
 
 
 ## Corrections de bugs {#bug-fixes}
@@ -53,4 +53,3 @@ OsmAnd publie quotidiennement plusieurs constructions prêtes à l'emploi, ce qu
 - Comportement de navigation **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** amélioré, incluant les directions de sortie correctes aux ronds-points et le placement approprié des outils à l'écran tels que la règle de rayon.
 - Correction de plusieurs problèmes liés au mode **[Accessibilité](https://osmand.net/docs/user/plugins/accessibility)**, incluant les annonces de navigation et l'interaction avec certains outils de carte.
 - Corrections générales d'interface et de performance dans le rendu de la carte, l'affichage des widgets et les écrans de configuration.
-

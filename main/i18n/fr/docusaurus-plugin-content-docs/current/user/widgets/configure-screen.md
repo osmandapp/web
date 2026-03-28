@@ -1,5 +1,5 @@
 ---
-source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
+source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
 sidebar_position: 1
 title:  Configurer l'écran
 ---
@@ -333,10 +333,18 @@ Les widgets dans les panneaux droit et gauche peuvent être regroupés en **Page
     - Améliore la clarté et maximise l'espace pour les données importantes.
     - Particulièrement utile lors de l'affichage de nombreux widgets sur la même **ligne**.
 
+3. **Visibilité des étiquettes de texte des widgets**
+
+    - La visibilité des étiquettes de texte dépend de la taille du widget et de l'emplacement du panneau. Dans les tailles Moyenne et Grande, les étiquettes sont toujours affichées.
+    - Dans la taille Petite, les étiquettes ne sont pas affichées sur les panneaux Gauche et Droit. Sur les panneaux Supérieur et Inférieur, l'étiquette peut être masquée automatiquement (lorsqu'elle est positionnée sur le côté droit) pour garder les valeurs numériques entièrement visibles.
+    - Il n'y a pas d'option séparée pour activer ou désactiver les étiquettes de texte.
+
+<!--
 3. **Masquer les étiquettes de texte des widgets** :
 
     - Masque automatiquement les étiquettes de texte pour garder les informations numériques entièrement visibles dans les mises en page compactes.
-    - Aide à maintenir un agencement de widgets propre et lisible lorsque l'espace est limité.   
+    - Aide à maintenir un agencement de widgets propre et lisible lorsque l'espace est limité.  
+--> 
 
 4. **Taille individuelle pour différentes lignes** (*pour tous les panneaux*) :
 
@@ -433,8 +441,6 @@ OsmAnd vous permet d'ajouter plusieurs instances du même widget à différents 
 
 </Tabs>
 
-
-
 Vous pouvez réorganiser ou supprimer des widgets de l'écran de l'application en utilisant le mode **Modifier**.  
 
 ***Comment déplacer un widget :***
@@ -464,6 +470,8 @@ Vous pouvez ouvrir les paramètres de mise en page de l'écran de la carte depui
 
 ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_single.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_separate.png)
 
+Allez à : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Mise en page de l'écran de la carte*
+
 OsmAnd prend en charge deux modes de mise en page pour l'écran de la carte :
 - **Mise en page unique** – utilise la même disposition de widgets pour toutes les orientations d'écran. Cette option est sélectionnée par défaut.
 - **Mises en page séparées** – vous permet de configurer différentes dispositions de widgets pour les orientations Portrait et Paysage.
@@ -488,7 +496,9 @@ Seule la liste de widgets est copiée, et l'opération s'applique au sein du mê
 
 ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_wide.png) ![Mise en page de l'écran de la carte](@site/static/img/widgets/screen_layout_compact.png)
 
-Le paramètre **Mise en page des panneaux** contrôle la façon dont les panneaux de widgets supérieur et inférieur sont affichés. Cette option est disponible uniquement lorsque Mises en page séparées est activé.
+Le paramètre **Mise en page des panneaux** contrôle la façon dont les panneaux de widgets supérieur et inférieur sont affichés. 
+
+**Note :** Cette option est disponible uniquement lorsque [Mises en page séparées](#single-and-separate-layouts) est activé.
 
 Vous pouvez choisir entre deux modes :
 - **Large** – les panneaux supérieur et inférieur s'étendent sur toute la largeur de l'écran.

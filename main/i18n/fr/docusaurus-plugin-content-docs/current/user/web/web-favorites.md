@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -24,14 +24,15 @@ Les Favoris dans le Planificateur Web vous permettent d'enregistrer et de gérer
 
 ## Gérer les Favoris {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_new.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
 Après s'être inscrit à un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) et pour [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos Favoris dans le Planificateur Web sont organisés en dossiers. Chaque dossier regroupe les lieux enregistrés et propose un ensemble d'actions disponibles depuis le menu des Favoris. 
 Les actions suivantes sont disponibles :
 
 - *Afficher sur la carte* - afficher les points de favoris du dossier choisi sur la carte.
+- *Épingler le dossier* - épingler un dossier en haut de la liste des Favoris pour un accès rapide. Les dossiers épinglés sont séparés des autres dossiers. Pour retirer un dossier de la section supérieure, sélectionnez *Désépingler le dossier*. Le dossier Personnel est épinglé par défaut.
 - *Renommer* - nom et description du dossier de favoris.
-- *Partager* - ouvre les options de partage. Vous pouvez choisir qui peut accéder à ce dossier :
+- *Partager* - ouvre les options de partage. Vous pouvez choisir qui peut accéder à ce dossier.
 - *Télécharger* - télécharger le dossier de favoris choisi.
 - *Supprimer* - supprimer le dossier de favoris choisi.
 

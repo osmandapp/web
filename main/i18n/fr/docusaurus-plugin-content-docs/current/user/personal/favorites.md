@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Favoris
 ---
@@ -163,7 +163,7 @@ Le *dossier Personnel* contient des points spéciaux comme **<Translate android=
 
 Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Mes lieux favoris Android](@site/static/img/personal/my_places_android.png)
+![Mes lieux favoris Android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Mes lieux iOS](@site/static/img/personal/my_places_ios.png)
+![Mes lieux iOS](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 La section **Mes favoris** vous permet de :
 
 - [Rechercher](#order--sorting--search) des favoris ou des groupes spécifiques.
-- [Opérations en masse](#bulk-edit--delete) — Renommer, déplacer ou supprimer plusieurs favoris à la fois.
+- [Opérations en masse](#bulk-edit--delete) — Partager, déplacer ou supprimer plusieurs favoris à la fois.
 
 ### Ordre / Tri / Recherche {#order--sorting--search}
 
@@ -188,20 +188,23 @@ La section **Mes favoris** vous permet de :
 
 <TabItem value="android" label="Android">
 
-![Dossiers de favoris Android](@site/static/img/personal/favorites_folders_android.png)
+![Dossiers de favoris Android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Tri** — Les dossiers et points favoris peuvent être triés en utilisant les options de tri disponibles dans le menu de la liste. Les options suivantes sont disponibles : *Nom A – Z*, *Nom Z – A*, *Dernière modification*, *Date la plus récente en premier*, *Date la plus ancienne en premier*. Par défaut, les éléments sont triés par Nom A – Z. Les dossiers épinglés sont toujours affichés en haut de la liste. Ils sont visuellement séparés du reste des dossiers par un séparateur. Le [dossier personnel](../personal/favorites.md#special-favorites-personal) est épinglé par défaut. 
+- **Recherche** — Utilisez la [recherche globale](../search/search-all.md) pour trouver des favoris par nom. Les favoris sont triés par distance par rapport au centre de la carte.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Dossiers de favoris iOS](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Tri** — Les dossiers et points favoris sont triés par ordre alphabétique, avec le [dossier personnel](../personal/favorites.md#special-favorites-personal) en haut.
 - **Recherche** — Utilisez la [recherche globale](../search/search-all.md) pour trouver des favoris par nom. Les favoris sont triés par distance par rapport au centre de la carte.
 
+</TabItem>
+
+</Tabs>
 
 ### Modification / Suppression en masse {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ La section **Mes favoris** vous permet de :
 
 <TabItem value="android" label="Android">
 
-![Actions sur les favoris Android](@site/static/img/personal/favorites_actions_android.png) ![Action de suppression de favoris Android](@site/static/img/personal/favorites_delete_android.png)
+![Actions sur les favoris Android](@site/static/img/personal/favorites_group_actions.png) ![Action de suppression de favoris Android](@site/static/img/personal/favorites_actions.png)
+
+Pour gérer plusieurs favoris ou dossiers, entrez en *Mode de sélection*. Vous pouvez ouvrir le mode de sélection de deux façons :
+- Appuyez sur le *menu à trois points* dans le coin supérieur droit et choisissez *Sélectionner*.
+- Faites un appui long sur un point favori ou un dossier.
+
+Lorsque le mode de sélection est activé, des cases à cocher apparaissent à côté des éléments de la liste. Sélectionnez les favoris ou dossiers requis en appuyant sur les cases à cocher. Pour sélectionner tous les éléments de la liste, appuyez sur l'icône Sélectionner tout dans le coin supérieur droit.
+
+Les actions disponibles dépendent du type d'élément sélectionné. Lorsque des dossiers sont sélectionnés, les actions suivantes sont disponibles :
+- **Partager** — Exporter les dossiers sélectionnés sous forme de fichier GPX de favoris.
+- **Supprimer** — Supprimer les dossiers sélectionnés.
+
+Lorsque des points favoris sont sélectionnés, les actions suivantes sont disponibles :
+- **Déplacer** — Déplacer les favoris sélectionnés vers un autre dossier.
+- **Ajouter aux marqueurs de carte** — Ajouter les points sélectionnés à la liste des marqueurs de carte.
+- **Ajouter à une trace** — Ajouter les points sélectionnés à une trace.
+- **Ajouter à la navigation** — Démarrer la navigation vers le point sélectionné.
+- **Supprimer** — Supprimer les favoris sélectionnés.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ La section **Mes favoris** vous permet de :
 
 ![Actions sur les favoris iOS](@site/static/img/personal/favorites_actions_ios.png)
 
+- Pour gérer plusieurs favoris, appuyez sur le bouton **Modifier** (*icône de crayon*).
+- Sélectionnez des favoris individuels ou des dossiers entiers pour les opérations en masse.
+- **Options disponibles** — *Partager*, *Déplacer vers un groupe de favoris*, *Changer la couleur* et *Supprimer*.
+
 </TabItem>
 
 </Tabs>
-
-1. Pour gérer plusieurs favoris, appuyez sur l'icône **Supprimer** (*icône de corbeille sur Android*) ou sur le bouton **Modifier** (*icône de crayon sur iOS*).
-2. Sélectionnez des favoris individuels ou des dossiers entiers pour les opérations en masse.
-3. **Options disponibles** — *Supprimer* pour Android et iOS, *Déplacer vers un groupe de favoris*, *Partager* et *Changer la couleur* pour iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Aller à : *Menu à trois points → Modifier l'apparence par défaut*
+![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Fonctions du dossier de favoris Android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Utilisez le ***menu à trois points*** à côté de chaque dossier pour gérer les groupes de favoris :
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
+- **Épingler le dossier** — Épinglez le dossier sélectionné pour le garder en haut de la liste des favoris pour un accès plus rapide.
+- **<Translate android="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personnalisez l'apparence des points favoris du dossier sur la carte en modifiant leurs icônes, couleurs ou étiquettes.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Retirer des marqueurs de carte** — Ajoutez tous les points favoris du dossier à la *liste des marqueurs de carte* ou retirez-les selon vos besoins pour une référence facile.
+- **<Translate android="true" ids="add_to_a_track"/>** — Ajoutez tous les points favoris du dossier sélectionné à une trace. Cela ouvre l'écran de sélection de trace où vous pouvez choisir ou créer une trace.
+- **<Translate android="true" ids="shared_string_share"/>** — Partagez les points favoris du dossier en les exportant sous forme de fichier *Favorites.gpx*, ce qui facilite le transfert ou la sauvegarde de vos données.
+- **<Translate android="true" ids="shared_string_delete"/>** — Supprimez définitivement le dossier de favoris sélectionné et tous les points qu'il contient.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *Appui long sur le dossier → Apparence par défaut*
-
 ![Actions sur les favoris iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Utilisez l'***appui long*** sur le dossier pour gérer les groupes de favoris :
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Personnalisez l'apparence des points favoris du dossier sur la carte en modifiant leurs icônes, couleurs ou étiquettes.
+- **<Translate ios="true" ids="shared_string_share"/>** — Partagez les points favoris du dossier en les exportant sous forme de fichier *Favorites.gpx*, ce qui facilite le transfert ou la sauvegarde de vos données.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Supprimez définitivement le dossier de favoris sélectionné et tous les points qu'il contient.
 
 </TabItem>
 
 </Tabs>
-
-Utilisez le ***menu à trois points*** (*Android*) à côté de chaque dossier et l'***appui long*** (*iOS*) sur le dossier pour gérer les groupes de favoris :
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Utilisez cette option pour changer le nom du dossier sélectionné.
-
-- **[<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance)** — Personnalisez l'apparence des points favoris du dossier sur la carte en modifiant leurs icônes, couleurs ou étiquettes.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** ou **Masquer sur la carte** — Activez ou désactivez cette option pour afficher ou masquer les points favoris du dossier sur la carte.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** ou **Retirer des marqueurs de carte** (*Android uniquement*) — Ajoutez tous les points favoris du dossier à la *liste des marqueurs de carte* ou retirez-les selon vos besoins pour une référence facile.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Partagez les points favoris du dossier en les exportant sous forme de fichier *Favorites.gpx*, ce qui facilite le transfert ou la sauvegarde de vos données.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Supprimez définitivement le dossier de favoris sélectionné et tous les points qu'il contient.
-
-
 
 ### Modifier l'apparence du groupe {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Utilisez le ***menu à trois points*** (*Android*) à côté de chaque dossier e
 
 <TabItem value="android" label="Android">
 
-![Fonctions du dossier de favoris Android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Aller à : *Menu à trois points → Modifier l'apparence par défaut*
+
+![Fonctions du dossier de favoris Android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Aller à : *Appui long sur le dossier → Apparence par défaut*
 
 ![Actions sur les favoris iOS](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 

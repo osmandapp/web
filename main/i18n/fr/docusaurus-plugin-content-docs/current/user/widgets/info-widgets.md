@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -560,7 +560,7 @@ Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, act
 </Tabs>
 
 
-Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/vehicle-metrics.md#widgets). Vous pouvez les utiliser pour afficher des informations provenant d'un scanner OBD-II connecté, telles que (*14 métriques*) : **Température d'admission**,&nbsp; **Température ambiante**,&nbsp; **Température du liquide de refroidissement**,&nbsp; **Température de l'huile moteur**,&nbsp; **Régime moteur** (*gratuit*),&nbsp; **Durée de fonctionnement du moteur**,&nbsp; **Charge calculée du moteur**,&nbsp; **Pression du carburant**,&nbsp; **Consommation de carburant**,&nbsp; **Carburant restant**,&nbsp; **Niveau de la batterie**,&nbsp; **Tension de l'adaptateur**,&nbsp; **Vitesse du véhicule** (*gratuit*), et **Position de l'accélérateur**.  
+Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/vehicle-metrics.md#widgets). Vous pouvez les utiliser pour afficher des informations provenant d'un scanner OBD-II connecté, telles que (*14 métriques*) : **Tension de l'adaptateur** (*Android uniquement*),&nbsp; **Température ambiante**,&nbsp; **Tension de la batterie**,&nbsp; **Charge calculée du moteur**,&nbsp; **Température du liquide de refroidissement**,&nbsp; **Température de l'huile moteur**,&nbsp; **Durée de fonctionnement du moteur**,&nbsp; **Régime moteur** (*gratuit*),&nbsp; **Consommation de carburant**,&nbsp; **Pression du carburant**,&nbsp; **Température d'admission**,&nbsp; **Carburant restant**,&nbsp; **Position de l'accélérateur**, et **Vitesse du véhicule** (*gratuit*).  
 
 - Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, [activez](../plugins/index.md#enable--disable) l'**extension Métriques du véhicule**.
 - Vous pouvez ajouter des widgets même si aucun scanner OBD-II n'est connecté.

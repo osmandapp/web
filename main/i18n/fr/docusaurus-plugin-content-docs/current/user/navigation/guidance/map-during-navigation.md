@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Écran de la carte pendant la navigation
 ---
@@ -103,7 +103,7 @@ Les paramètres des POI dans [*<Translate android="true" ids="shared_string_menu
 
 Lorsque vous spécifiez l'affichage de certains POI sur la *Carte de configuration*, ils sont tous affichés sur les cartes que vous avez téléchargées, que vous ayez sélectionné des catégories ou, si la catégorie vous importe peu, que vous ayez sélectionné des POI à proximité.  
 
-- Le nombre et l'identification des POI dépendent de l'échelle.
+- Le nombre et l'identification des POI est *dépendant de l'échelle*.
 
 - Le paramètre *Afficher le long de l'itinéraire* affiche la même catégorie que dans la *Superposition de POI*, mais vous voyez la *liste complète* des POI sélectionnés en une seule fois, en partant du point de la position actuelle à la distance définie dans votre itinéraire.  
 
@@ -197,8 +197,8 @@ Le paramètre **Couleur** modifie les tons de couleur des lignes d'itinéraire. 
 - ***<Translate android="true" id="map_widget_renderer"/>***. Utilisé avec les couleurs par défaut. Pour une description complète des couleurs, allez à [Styles de carte par défaut](../../map/map-styles.md#default-map-styles).  
     ![style de carte](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Personnalisé***. Permet de sélectionner une ligne dans n'importe quelle couleur et transparence préférées. Vous pouvez sélectionner des paramètres différents pour la carte de jour et séparément pour la carte de nuit.  
-    ![personnalisé](@site/static/img/navigation/route/custom.png)   ![personnalisé](@site/static/img/navigation/route/custom_ios.png)
+- ***Personnalisé***. Permet de sélectionner une ligne dans n'importe quelle couleur et transparence préférées. Vous pouvez sélectionner des paramètres différents pour la carte de jour et séparément pour la carte de nuit. La palette de couleurs inclut des couleurs d'accès rapide, une option pour ajouter une couleur personnalisée (*+*), et une liste complète des couleurs disponibles (*Toutes les couleurs*).            
+    ![personnalisé](@site/static/img/navigation/route/custom_new.png)   ![personnalisé](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. Affiche l'altitude du point de l'itinéraire sous forme de gradient **vert-jaune-rouge**. Le **vert** indique le point le plus bas de l'itinéraire, le **jaune** indique l'altitude moyenne du point, et le **rouge** est le plus élevé. Si la différence d'altitude de l'itinéraire est < 100 mètres, le gradient est partiellement appliqué ou non appliqué, par exemple pour une simple montée de 100 mètres à 150 mètres - le gradient sera **vert-jaune**. Notez que la couleur ne représente pas la valeur absolue de l'altitude.  
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)

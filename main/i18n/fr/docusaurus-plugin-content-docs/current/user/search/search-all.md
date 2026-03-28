@@ -1,5 +1,5 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
 sidebar_position: 1
 title:  Recherche globale
 ---
@@ -12,14 +12,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Vue d'ensemble {#overview}
 
-La **Recherche** est un outil utile pour trouver rapidement des lieux. Vous pouvez utiliser la Recherche pour trouver un lieu par adresse, coordonnées, points d'intérêt (POI) ou recherches précédentes. La [Recherche d'adresse](#search-address) vous permet de saisir l'adresse souhaitée pour obtenir un emplacement exact. La recherche par [Coordonnées](#search-coordinates) fonctionne avec des coordonnées géographiques telles que la latitude et la longitude. Avec la recherche de [POI](#search-poi), vous pouvez rechercher des lieux à proximité dans des catégories spécifiques, comme les cafés, les hôtels ou les stations-service. La recherche dans l'[Historique](#search-history) enregistre les recherches passées pour un accès rapide aux lieux précédemment trouvés. La fonction de recherche facilite la planification de voyages, la navigation en terrain inconnu et la recherche de POI à proximité.
+La **Recherche** est un outil utile pour trouver rapidement des lieux. Vous pouvez utiliser la Recherche pour trouver un lieu par adresse, coordonnées, points d'intérêt (POI) ou recherches précédentes. La [Recherche d'adresse](#search-address) vous permet de saisir l'adresse souhaitée pour obtenir un emplacement exact. La recherche par [Coordonnées](#search-coordinates) fonctionne avec des coordonnées géographiques telles que la latitude et la longitude. Avec la recherche de [POI](#search-poi), vous pouvez rechercher des lieux à proximité dans des catégories spécifiques, comme les cafés, les hôtels ou les stations-service. L'onglet [Explorer](#search-explore) met en évidence les lieux populaires à proximité et fournit un accès rapide aux emplacements récemment visités. La recherche dans l'[Historique](#search-history-ios) enregistre les recherches passées. La fonction de recherche facilite la planification de voyages, la navigation en terrain inconnu et la recherche de POI à proximité.
 
 
 ## Comment utiliser {#how-to-use}
@@ -28,7 +29,7 @@ La **Recherche** est un outil utile pour trouver rapidement des lieux. Vous pouv
 
 <TabItem value="android" label="Android">
 
-![Liste de recherche de POI Android](@site/static/img/search/poi_list_android.png)
+![Liste de recherche de POI Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -89,13 +90,17 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Tri des résultats de recherche {#sorting-search-results}
 
-OsmAnd trie automatiquement les résultats de recherche selon trois critères principaux :
+OsmAnd trie automatiquement les résultats de recherche selon plusieurs critères :
 
 1. **Correspondance des requêtes** — Les résultats contenant des correspondances exactes ou partielles avec les mots que vous avez saisis sont affichés plus haut.
 
-2. **Type d'objet** - Lors du tri par nom, les villes et les rues sont prioritaires sur les POI dans l'affichage des résultats.
+2. **Pertinence** — Les objets dont les noms correspondent étroitement à la requête de recherche sont généralement affichés plus haut dans les résultats.
 
-3. **Distance** - Lorsque les résultats ont des critères de correspondance et des types d'objets similaires, les résultats les plus proches de l'emplacement actuel de l'utilisateur sont affichés en premier.
+3. **Type d'objet** — Selon la requête, les résultats peuvent inclure différents types d'objets tels que les villes, les rues, les adresses ou les POI.
+
+4. **Distance** — Lorsque les résultats ont des critères de correspondance et des types d'objets similaires, les résultats les plus proches de l'emplacement actuel de l'utilisateur sont affichés en premier.
+
+5. **Importance** — Les landmarks bien connus ou les lieux fréquemment référencés peuvent apparaître plus haut dans les résultats lorsqu'ils correspondent étroitement à la requête de recherche.
 
 ***Par exemple***, une requête de recherche *bureau de poste* affichera d'abord les bureaux de poste les plus proches, même s'il existe d'autres éléments avec des noms similaires à une plus grande distance.  
 
@@ -148,13 +153,13 @@ OsmAnd a intégré les [**données TIGER**](../../technical/algorithms/trace-add
 
 <TabItem value="android" label="Android">
 
-![Recherche de POI Android](@site/static/img/search/poi_overlay_android.png)
+![Recherche de POI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Recherche de POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Recherche de POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -171,7 +176,7 @@ OsmAnd vous permet de rechercher des points affichés sur une carte sur l'écran
 
 ### Recherche à proximité {#search-nearby}
 
-![Recherche Android](@site/static/img/search/search_all_near_location_andr.png)
+![Recherche Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 Vous pouvez utiliser la recherche à proximité d'un emplacement spécifique. Pour ce faire, sélectionnez le point requis [dans la liste du menu de recherche](#full-text-search) ou sélectionnez-le directement sur la carte. Dans le [menu contextuel de la carte](../map/map-context-menu.md#actions), sélectionnez *Actions → Rechercher à proximité*.
 
@@ -182,7 +187,7 @@ Vous pouvez utiliser la recherche à proximité d'un emplacement spécifique. Po
 
 <TabItem value="android" label="Android">
 
-![Recherche Android](@site/static/img/search/search_address_2_andr.png)
+![Recherche Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
@@ -197,25 +202,23 @@ Vous pouvez utiliser la recherche à proximité d'un emplacement spécifique. Po
 La **Recherche d'adresse** utilise les données d'OpenStreetMap. Ce type de recherche vous permet de trouver l'emplacement et la direction d'une adresse spécifique à partir d'une liste déjà triée. Pour en savoir plus, consultez l'article [Recherche d'adresse](./search-address.md).
 
 
-## Historique de recherche {#search-history}
+## Recherche Explorer {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![Recherche Explorer](@site/static/img/search/explore_search_android.png)
 
-![Historique de recherche](@site/static/img/search/history_search_android.png)
+L'onglet **Explorer** dans l'outil de Recherche vous aide à découvrir rapidement des lieux près de votre emplacement actuel et à accéder aux éléments récemment ouverts. Il contient deux sections principales :  
+- Lieux populaires à proximité – une liste défilante de landmarks et d'attractions bien connus près de votre emplacement. Chaque élément peut inclure le nom du lieu, sa catégorie, la distance et la direction, et une image d'aperçu si disponible. Appuyez sur *Afficher tout* pour ouvrir la liste complète ou *Afficher sur la carte* pour afficher ces lieux sur la carte.
+- Récemment visités – une liste de lieux, de traces ou d'autres objets que vous avez récemment ouverts. Cela vous permet de revenir rapidement aux emplacements précédemment consultés.
 
-</TabItem>
+Pour plus de détails, voir [ici](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## Historique de recherche (iOS) {#search-history-ios}
 
 ![Historique de recherche](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
-Vous pouvez utiliser l'**Historique de recherche** pour rechercher à nouveau des lieux, des adresses ou des endroits fréquemment visités précédemment trouvés sans avoir à saisir à nouveau la requête.. Plus de détails peuvent être trouvés dans l'article [Historique de recherche](./search-history.md).
+Vous pouvez utiliser l'**Historique de recherche** pour rechercher à nouveau des lieux, des adresses ou des endroits fréquemment visités précédemment trouvés sans avoir à saisir à nouveau la requête. Plus de détails peuvent être trouvés dans l'article [Historique de recherche](./search-history.md).
 
 
 ## Recherche de POI {#search-poi}
@@ -224,7 +227,7 @@ Vous pouvez utiliser l'**Historique de recherche** pour rechercher à nouveau de
 
 <TabItem value="android" label="Android">
 
-![Recherche de POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Recherche de POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -274,3 +277,4 @@ La recherche par coordonnées fournit un emplacement précis. Vous pouvez saisir
 - [Historique de recherche](./search-history.md)
 - [Recherche de POI](./search-poi.md)
 - [Recherche par coordonnées](./search-coordinates.md)
+- [Lieux populaires](../map/popular_places.md)

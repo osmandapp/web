@@ -1,5 +1,5 @@
 ---
-source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  Greffons
 ---
@@ -84,7 +84,7 @@ Les greffons OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Calque
 |[Mapillary](#mapillary) | [Calque de carte](../plugins/mapillary.md#map-layer), [Menu contextuel](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Capteurs externes](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Métriques du véhicule](#vehicle-metrics)  | [Paramètres personnalisés](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Observateur d'étoiles](#star-watcher)  | [Écran](../plugins/starwatcher.md#star-map-screen), [Menu contextuel](../plugins/starwatcher.md#celestial-object-info) |
+|[Astronomie](#astronomy)  | [Écran](../plugins/astronomy.md#star-map-screen), [Menu contextuel](../plugins/astronomy.md#context-menu) |
 |[Accessibilité](#accessibility) 🤖  | [Paramètres personnalisés](../plugins/accessibility.md#plugin-settings) |
 |[Développement OsmAnd](#osmand-development) | [Paramètres personnalisés](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Calque de carte](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contextuel](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
@@ -194,9 +194,9 @@ Connectez des capteurs externes pour afficher leurs données dans OsmAnd et stoc
 
 Connectez un scanner OBD-II pour afficher les données du véhicule dans OsmAnd et stocker les informations dans les enregistrements de trajet.  
 
-### [Observateur d'étoiles](./starwatcher.md) {#star-watcher}
+### [Astronomie](./astronomy.md) {#astronomy}
 
-L'Observateur d'étoiles affiche une superposition interactive du ciel étoilé avec des étoiles, des constellations, le Soleil, la Lune et les planètes. Il vous aide à identifier les objets célestes au-dessus de votre emplacement actuel, à prévisualiser leurs trajectoires pour une date et une heure sélectionnées, et à planifier des sessions d'observation des étoiles en utilisant les contrôles de temps intégrés et les options de visualisation.
+Le greffon Astronomie affiche une superposition interactive du ciel étoilé avec des étoiles, des constellations, le Soleil, la Lune et les planètes. Il vous aide à identifier les objets célestes au-dessus de votre emplacement actuel, à prévisualiser leurs trajectoires pour une date et une heure sélectionnées, et à planifier des sessions d'observation des étoiles en utilisant les contrôles de temps intégrés et les options de visualisation.
 
 ### [Accessibilité](./accessibility.md) {#accessibility}
 

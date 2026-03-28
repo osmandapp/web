@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  Itinéraire en transport en commun
 ---
@@ -142,19 +142,29 @@ L'interface utilisateur affiche les itinéraires alternatifs sous forme de badge
 
 ## Performances et résultats {#performance-and-results}
 
-**Profil Transport en commun -> Paramètres -> Paramètres de navigation -> Paramètres d'itinéraire**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Nombre maximum de changements de transport**.
+<TabItem value="android" label="Android">
 
-Les performances et la consommation de mémoire du routeur de transport en commun dépendent de la profondeur de recherche.
+![Nombre maximum de changements de transport](@site/static/img/navigation/public/maximum_number_android.png) 
 
-Le paramètre le plus important qui affecte cette profondeur est le **Nombre maximum de changements de transport**.
+</TabItem>
 
-Nous utilisons **2** comme valeur par défaut, qui semble optimale pour les réseaux de transport en commun modernes.
+<TabItem value="ios" label="iOS">  
 
-Si vous rencontrez des performances faibles ou des erreurs de mémoire insuffisante, essayez de diminuer cette valeur.
+![Nombre maximum de changements de transport](@site/static/img/navigation/public/maximum_number_ios.png)
 
-Si vous êtes dans une petite ville ou que vous effectuez de courts trajets, une valeur de **1** peut mieux convenir.
+</TabItem>
+
+</Tabs>
+
+Accédez à : *<Translate android="true" ids="shared_string_settings"/>* *→ Profil Transport en commun →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Nombre maximum de changements de transport*
+
+Les performances et la consommation de mémoire du routeur de transport en commun dépendent de la profondeur de recherche. Le paramètre le plus important qui affecte cette profondeur est le **Nombre maximum de changements de transport**.
+
+Ce paramètre affecte également directement la disponibilité et la qualité des itinéraires. Si la valeur est définie trop bas (par exemple, 0), OsmAnd peut ne pas trouver d'itinéraires adaptés ou suggérer des options sous-optimales, même lorsque de meilleurs itinéraires avec transferts existent.
+
+Nous utilisons **2** comme valeur par défaut, qui semble optimale pour les réseaux de transport en commun modernes. Si vous rencontrez des performances faibles ou des erreurs de mémoire insuffisante, essayez de diminuer cette valeur. Si vous êtes dans une petite ville ou que vous effectuez de courts trajets, une valeur de **1** peut mieux convenir.
 <!--
 There are two more parameters that help you choose the best routes.
 

@@ -1,6 +1,6 @@
 ---
-source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
-sidebar_position: 17
+source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+sidebar_position: 19
 title:  Météo
 ---
 
@@ -173,7 +173,7 @@ Dans la version iOS d'OsmAnd, vous pouvez modifier les unités de mesure et le n
 
 ### Couches météo {#weather-layers}
 
-Toutes les données météorologiques sont présentées sous forme de couches de carte distinctes. Pour voir les couches météo sur la carte, vous devez dézoomer, elles ne sont disponibles qu'aux échelles de zoom 2-12. Les couches météo utilisent des [palettes météo](../personal/color-palette-schemes.md#weather) pour coloriser la carte, ces palettes peuvent être [modifiées](../personal/color-palette-schemes.md#edit-palette-file) si nécessaire.
+Toutes les données météorologiques sont présentées sous forme de couches de carte distinctes. Pour voir les couches météo sur la carte, vous devez dézoomer, elles ne sont disponibles qu'aux échelles de zoom 2-12. Les couches météo utilisent des [palettes météo](../personal/color-palette-schemes.md#weather) pour coloriser la carte, ces palettes peuvent être [modifiées](../personal/color-palette-schemes.md#palette-modify) si nécessaire.
 
 | |  
 |------------|  

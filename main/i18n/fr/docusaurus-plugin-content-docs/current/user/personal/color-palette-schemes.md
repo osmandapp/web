@@ -1,5 +1,5 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title:  Schémas de couleurs
 ---
@@ -71,6 +71,8 @@ Allez à : *Menu → Cartes et ressources → Local → Couleurs*
 
 Les fichiers de terrain (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) définissent 3 [visualisations de terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) : *Ombrage, Pente* et *Altitude*. Pour chaque type, vous pouvez avoir plusieurs palettes, par exemple, la *pente d'avalanche* est fournie par défaut. Consultez l'article [Topographie](../plugins/topography.md#default-color-scheme) pour plus de détails.
 
+Sur Android, les palettes pour les schémas de couleurs *Pente* et *Altitude* peuvent également être créées ou modifiées directement dans l'application en utilisant l'[éditeur de palette de couleurs](../plugins/topography.md#modify-color-scheme). Il s'agit d'une fonctionnalité payante <ProFeature />.
+
 ### Traces et itinéraires {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +95,8 @@ Les visualisations de dégradé de ligne utilisent des fichiers de palette (`rou
 
 - Pour les [itinéraires](../navigation/guidance/map-during-navigation.md#color) : *Vitesse (`route_speed_default.txt`), Pente (`route_slope_default.txt`)* et *Élévation (Altitude) (`route_elevation_default.txt`)*.
 - Pour les [traces GPX](../map/tracks/appearance#track-colors-in-gpx-files) : *Vitesse, Pente, Vitesse max (`route_maxspeed_default.txt`)* et *Élévation (Altitude)*, ou informations provenant de *capteurs externes*.
+
+Sur Android, les palettes peuvent également être créées ou modifiées directement dans l'application en utilisant l'[éditeur de palette de couleurs](../map/tracks/appearance.md#color-palette-editor). Il s'agit d'une fonctionnalité payante <ProFeature />.
 
 ### Favoris et points de cheminement {#favorites-waypoints}
 
@@ -162,7 +166,7 @@ Si vous devez modifier un fichier de palette existant à l'intérieur d'OsmAnd (
 
 Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Exportation des actions de profil Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Sauvegarde locale Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Actions d'exportation de profils Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Sauvegarde locale Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -170,7 +174,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Exportation des actions de profil iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Exportation des actions de profil iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Actions d'exportation de profils iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Actions d'exportation de profils iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
+source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
 sidebar_position: 1
 title:  Préparation de l'itinéraire
 ---
@@ -37,7 +37,7 @@ La fonction **Préparation de l'itinéraire** d'OsmAnd fournit un guidage de nav
 
 <TabItem value="ios" label="iOS">
 
-![Écran de navigation iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Écran de navigation iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Écran de navigation iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![Écran de navigation iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -293,7 +293,7 @@ Si l'enregistrement de l'[Historique de navigation](../../personal/global-settin
 
 <TabItem value="ios" label="iOS">
 
-![Écran de navigation iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Écran de navigation iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -473,7 +473,7 @@ Pour construire un itinéraire, toutes les **cartes nécessaires** doivent être
 
 <TabItem value="ios" label="iOS">
 
-![Message pas de cartes lors de la construction de la navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Message pas de cartes lors de la construction de la navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>

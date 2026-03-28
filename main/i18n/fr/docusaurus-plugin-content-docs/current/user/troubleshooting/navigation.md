@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title:  Navigation
 ---
@@ -55,7 +55,7 @@ Parfois, OsmAnd peut afficher des résultats de navigation inattendus. Au lieu d
 
 ### Comment calculer des itinéraires de plus de 250 km ? {#how-to-calculate-routes-longer-than-250km}
 
-1. Si l'application n'affiche pas d'itinéraire après 7-8 minutes de calcul, envisagez de [placer des points de passage](../navigation/setup/route-navigation.md#route-recalculation) (choisissez par exemple des endroits sur les autoroutes). 3-4 points de passage suffiront pour calculer des itinéraires même de 1000 km.
+1. Si l'application n'affiche pas d'itinéraire après 7-8 minutes de temps de calcul, envisagez de [placer des points de passage](../navigation/setup/route-navigation.md#route-recalculation) (choisissez par exemple des endroits sur les autoroutes). 3-4 points de passage suffiront pour calculer des itinéraires même de 1000 km.
 
 2. Pour les appareils haut de gamme, vous pouvez augmenter la mémoire jusqu'à 512 Mo ou 1024 Mo - [Mémoire allouée aux appareils](../plugins/development.md#memory-settings).
 
@@ -74,7 +74,7 @@ Pour éviter les plantages avec des itinéraires de distances similaires, vous p
 
 ## L'itinéraire calculé ne semble pas correct {#the-calculated-route-does-not-seem-correct}
 
-Pour identifier les problèmes d'itinéraires incorrects ou sous-optimaux, veuillez ouvrir une nouvelle publication dans les [discussions Github](https://github.com/osmandapp/OsmAnd/discussions) ou un [ticket Github](https://github.com/osmandapp/Osmand/issues) et fournir les informations suivantes de la manière la plus détaillée possible :
+Pour identifier les problèmes d'itinéraires incorrects ou sous-optimaux, veuillez ouvrir une nouvelle publication dans les [discussions GitHub](https://github.com/osmandapp/OsmAnd/discussions) ou un [problème GitHub](https://github.com/osmandapp/Osmand/issues) et fournir les informations suivantes de la manière la plus détaillée possible :
 
 - Quelle version d'OsmAnd utilisez-vous, et sur quel appareil ?
 - Utilisez-vous les cartes hors ligne proposées au téléchargement dans l'application OsmAnd, ou des cartes en ligne (tuiles / raster) ?
@@ -82,18 +82,22 @@ Pour identifier les problèmes d'itinéraires incorrects ou sous-optimaux, veuil
 - Indiquez si vous avez utilisé le routage hors ligne intégré d'OsmAnd, ou un fournisseur de routage en ligne comme YOURS, OpenRouteService ou OSRM.
 - Quel profil de routage est choisi dans l'application OsmAnd (voiture, vélo ou piéton) ?
 - Veuillez spécifier aussi précisément que possible les points de départ et d'arrivée de votre itinéraire. Si possible, indiquez le nom de la ville et de la rue pour chacun. Un [Permalink](https://wiki.openstreetmap.org/wiki/Permalink) de openstreetmap.org peut également être utile.
-- Indiquez-nous l'itinéraire que vous attendiez et celui qu'OsmAnd a calculé.
+- Indiquez-nous l'itinéraire attendu et comment OsmAnd route.
 
 ## Informations routières {#road-information}
 
-### OsmAnd n'affiche que certains radars {#osmand-only-shows-some-speed-cams}
+### Pourquoi certains avertissements de radars ne sont-ils pas déclenchés ? {#why-some-speed-camera-warnings-may-not-be-triggered}
 
 En raison des géodonnées provenant du projet OpenStreetMap, il existe actuellement deux méthodes pour intégrer les radars dans les données brutes d'OSM :
 
-- Un point (appelé "nœud" dans la terminologie OSM) d'une voie est étiqueté avec "highway=speed_camera", voir le wiki OSM à [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Un point (appelé "nœud" dans la terminologie OSM) d'une voie est étiqueté avec `highway=speed_camera`, voir le wiki OSM à [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
 - Un groupe d'éléments de données OSM sont regroupés dans ce qu'on appelle une "relation" qui contient plus d'éléments qu'un simple nœud pour décrire la direction couverte par le radar. Voir [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Actuellement, OsmAnd ne peut utiliser que les éléments constitués d'un seul nœud. L'analyse des relations sera disponible dans une future version.
+OsmAnd prend en charge les deux méthodes. Les avertissements de radars peuvent être déclenchés pour les radars cartographiés avec `highway=speed_camera` ainsi que pour les radars définis par une relation `enforcement`.
+
+Si un nœud de radar est placé directement sur la route, l'étiquette `highway=speed_camera` est suffisante pour qu'OsmAnd le détecte et affiche les avertissements.
+
+Si le radar est cartographié à côté de la route plutôt que sur celle-ci, il doit être connecté à la route à l'aide d'une relation `enforcement`. Sinon, OsmAnd pourrait ne pas associer le radar à la route et l'avertissement ne sera pas déclenché.
 
 
 ## Guidage vocal {#voice-navigation}

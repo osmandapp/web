@@ -1,5 +1,5 @@
 ---
-source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
+source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
@@ -166,7 +166,30 @@ Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour so
 
 ![Gestion des Dossiers intelligents de Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Gestion des Dossiers intelligents de Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Gestion des Dossiers intelligents de Mes lieux Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+
+Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, appuyez sur le *menu à trois points* à côté de celui-ci pour accéder aux actions disponibles :
+
+- **Détails** — Affichez la liste complète des traces contenues dans le dossier.
+- **Afficher toutes les traces sur la carte** — Affichez toutes les traces du dossier sur la carte.  
+    *NOTE : Le chargement de nombreuses traces peut affecter les performances.*
+- **Renommer** — Changez le nom du dossier pour une identification plus facile.
+- **Actualiser** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
+- **Modifier le filtre** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
+- **Exporter** — Exportez toutes les traces du Dossier intelligent via la fonctionnalité [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → onglet Actions*.
+- **Supprimer le dossier** — Supprimez le Dossier intelligent sans supprimer ses traces.  
+    *AVERTISSEMENT : Cette action est irréversible et affichera un message de confirmation.*
+
+Vous pouvez également ouvrir le dossier et appuyer sur le *menu à trois points* dans le *coin supérieur droit* pour accéder à des actions supplémentaires :
+
+- **Sélectionner** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
+- **Organiser par** — Organisez automatiquement les traces dans le Dossier intelligent en groupes en fonction d'un paramètre sélectionné. Les types de regroupement disponibles incluent *Général*, *Date & heure*, *Emplacement*, *Vitesse*, *Altitude & élévation*, et *Données de capteur*. 
+
+Certains paramètres de regroupement ne sont disponibles qu'avec un abonnement OsmAnd Pro. Les paramètres gratuits incluent *Activité*, *Année de création*, et *Ville la plus proche*. Tous les autres paramètres sont marqués avec une étiquette <ProFeature/>.
+
+Pour les paramètres numériques (tels que la distance, la durée, la vitesse ou l'altitude), un dialogue *Définir la taille de l'étape* est disponible. Utilisez le curseur pour définir les plages de valeurs pour le regroupement.
+
+Pour les paramètres PRO, vous pouvez prévisualiser la configuration de regroupement (par exemple, ouvrir le sélecteur de taille d'étape et voir comment les traces sont regroupées), mais l'application de ces modifications nécessite un abonnement actif. Si vous sélectionnez un paramètre PRO ou appuyez sur le bouton Déverrouiller, l'écran Choisir un plan s'ouvrira. Le regroupement précédemment appliqué reste visible même si l'abonnement expire, mais la modification ou l'application d'un nouveau regroupement basé sur PRO nécessite un abonnement actif.
 
 </TabItem>
 
@@ -174,38 +197,53 @@ Le **Dossier intelligent** nouvellement créé mettra automatiquement à jour so
 
 ![Gestion des Dossiers intelligents de Mes lieux iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Gestion des Dossiers intelligents de Mes lieux iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Gestion des Dossiers intelligents de Mes lieux iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+
+Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, effectuez un *appui long* sur le nom du dossier pour accéder aux actions disponibles :
+
+- **Renommer** — Changez le nom du dossier pour une identification plus facile.
+- **Exporter** — Exportez toutes les traces du Dossier intelligent via la fonctionnalité [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → onglet Actions*.
+- **Déplacer** — Vous permet de déplacer le dossier vers un autre dossier existant ou d'en créer un nouveau.
+- **Supprimer** — Supprimez le Dossier intelligent sans supprimer ses traces.  
+    *AVERTISSEMENT : Cette action est irréversible et affichera un message de confirmation.*
+
+Vous pouvez également ouvrir le dossier et appuyer sur l'icône dans le *coin supérieur droit* pour accéder à des actions supplémentaires :
+
+- **Sélectionner** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
+- **Actualiser** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
+- **Modifier le filtre** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
 
 </TabItem>
 
 </Tabs>
 
-Le **Dossier intelligent** est affiché avec une icône unique dans la liste des dossiers de l'onglet Traces. Pour gérer le dossier, appuyez sur le *menu à trois points* à côté de celui-ci (*Android*) et faites un *appui long* (*iOS*) ou ouvrez le dossier et utilisez l'icône dans le coin supérieur droit.
+<!--
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
 
-***Actions disponibles :***
+***Available Actions:***
 
-- **Détails** — Affichez la liste complète des traces contenues dans le dossier.
+- **Details** — View the complete list of tracks contained in the folder.
 
-- **Afficher toutes les traces sur la carte** (*Android uniquement*) — Affichez toutes les traces du dossier sur la carte.  
-    *NOTE : Le chargement de nombreuses traces peut affecter les performances.*
+- **Show all tracks on the map** (*Android only*) — Display all folder tracks on the map.  
+    *NOTE: Loading many tracks may affect performance.*
 
-- **Modifier le nom** (*Android*) / **Renommer** (*iOS*) — Changez le nom du dossier pour une identification plus facile.
+- **Edit name** (*Android*) / **Rename** (*iOS*) — Change the folder name for easier identification.
 
-- **Actualiser** — Mettez à jour manuellement le contenu du dossier pour vous assurer qu'il inclut les dernières traces.
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
 
-- **Changer l'apparence par défaut** (*Android*) — Modifie l'apparence d'affichage de toutes les traces dans le dossier.
+- **Change default appearance** (*Android*) — Changes the display appearance of all tracks in the folder.
 
-- **Modifier le filtre** — Modifiez les paramètres de filtre de trace pour le Dossier intelligent actuel. Voir [Filtre de recherche](#search-filter) pour plus de détails.
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
 
-- **Exporter** — Exportez toutes les traces du Dossier intelligent via la fonctionnalité [Importer/Exporter](../../personal/import-export.md). Vous serez redirigé vers *Menu → Paramètres → onglet Actions*.
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
 
-- **Supprimer le dossier** — Supprimez le Dossier intelligent sans supprimer ses traces.  
-    *AVERTISSEMENT : Cette action est irréversible et affichera un message de confirmation.*
+- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
 
-- **Déplacer** (*iOS*) — Vous permet de déplacer le dossier vers un autre dossier existant ou d'en créer un nouveau.
+- **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
 
-- **Sélectionner** — Utilisez le [Mode de sélection](./manage-tracks.md#selection-mode) pour des actions spécifiques sur les traces dans le dossier.
-
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+-->
 
 ## Articles connexes {#related-articles}
 
