@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: Menu contextuel de la carte
 ---
@@ -197,7 +197,7 @@ Cette partie contient un extrait de la description d'un [article Wikipedia](../p
 
 <TabItem value="ios" label="iOS">
 
-![Noms alternatifs iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Noms alternatifs iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Noms alternatifs iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Noms alternatifs iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ Caractéristiques de l'affichage des noms alternatifs :
 
 <TabItem value="ios" label="iOS">
 
-![Informations sur le polygone iOS](@site/static/img/map/polygon_information_ios.png)
+![Informations sur le polygone iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -362,7 +362,7 @@ Le lien OpenStreetMap fournit un lien direct vers l'objet OpenStreetMap où vous
 
 <TabItem value="ios" label="iOS">  
 
-![Menu contextuel Photos en ligne iOS](@site/static/img/map/online_photo_ios.png)
+![Menu contextuel Photos en ligne iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Menu contextuel Photos en ligne iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -480,7 +480,7 @@ Dans le menu contextuel, il y a des options pour **ajouter** ou **modifier** le 
 
 <TabItem value="ios" label="iOS">  
 
-![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur iOS](@site/static/img/map/action_restore_marker_android.png)
+![Action Ajouter/Modifier un marqueur iOS](@site/static/img/map/add_marker_ios.png)  ![Action Restaurer le marqueur Android](@site/static/img/map/action_restore_marker_android.png)
 
 </TabItem>
 
@@ -504,15 +504,13 @@ En savoir plus sur les [marqueurs ici](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-| Versions jusqu'à Android 14 | Android 14+ |
-|:------------|:---------------|
-| ![Action de partage Android](@site/static/img/map/action_share_1_andr.png) | ![Action de partage Android](@site/static/img/map/action_share_2_andr.png) |
+![Action de partage Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Action de partage iOS](@site/static/img/map/action_share_1_ios.png)
+![Action de partage iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -523,6 +521,8 @@ L'application OsmAnd vous permet de **<Translate android="true" ids="shared_stri
 Options disponibles pour partager l'emplacement :
 
 - ***Envoyer***. Envoie du texte via les applications disponibles sur votre appareil. Inclut toutes les informations sur l'emplacement : le nom de Ma position ou le nom du POI sélectionné, l'adresse, les coordonnées et la géolocalisation sous forme de lien.
+- ***Copier le lien***. Copie un lien vers l'emplacement sélectionné dans le presse-papiers.  
+Exemple : `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Copier***. Copie toutes les informations de l'emplacement (nom de Ma position ou nom du POI sélectionné, adresse, coordonnées et géolocalisation sous forme de lien) dans le presse-papiers.  
 - ***Copier l'adresse***. Copie uniquement les informations d'adresse dans le presse-papiers.
 - ***Copier le nom du POI***. Copie uniquement le nom du POI ou l'adresse s'il n'y a pas de nom dans le presse-papiers.
@@ -557,7 +557,7 @@ Options disponibles pour partager l'emplacement :
 
 </Tabs>
 
-Pour démarrer la navigation ou la planification d'itinéraire, vous devez d'abord sélectionner la destination avec [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). Si vous avez déjà un point de destination, le menu vous proposera de remplacer le point de destination ou de l'insérer comme autre point intermédiaire ou de départ.
+Pour démarrer la navigation ou la planification d'itinéraire, vous devez d'abord sélectionner la destination avec [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation). Si vous avez déjà un point de destination, le menu vous proposera de remplacer le point de destination ou de l'insérer comme autre point intermédiaire ou de départ.
 
 Il est également possible de sélectionner d'abord la destination *Depuis* via le menu contextuel de la carte (<Translate android="true" ids="context_menu_item_directions_from"/>).
 

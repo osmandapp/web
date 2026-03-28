@@ -1,6 +1,6 @@
 ---
-source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
-sidebar_position: 18
+source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+sidebar_position: 20
 title:  Wikipédia
 ---
 
@@ -209,7 +209,7 @@ Vous pouvez [définir la ou les langues](#set-preferred-language) dans lesquelle
 Dans les versions **Android** et **iOS** de l'application OsmAnd, vous pouvez définir votre ou vos langues préférées pour l'affichage des articles Wikipédia en utilisant le menu *Configurer la carte*. Si vous sélectionnez plus d'une langue, les articles *Wikipédia* sur la carte seront affichés dans l'une d'entre elles. Allez à :
 
 1. *<Translate android="true" ids="shared_string_menu,configure_map"/>*.
-2. Sélectionnez le profil souhaité et dans la section *<Translate android="true" ids="shared_string_show"/>*, choisissez *<Translate android="true" ids="poi_osmwiki"/>* pour Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* pour iOS.  
+2. Sélectionnez le profil souhaité et dans la section *<Translate android="true" ids="shared_string_show"/>* , choisissez *<Translate android="true" ids="poi_osmwiki"/>* pour Android / *<Translate ios="true" ids="download_wikipedia_maps"/>* pour iOS.  
 3. Désactivez l'option *<Translate android="true" ids="shared_string_all_languages"/>*.  
 4. Sélectionnez une ou plusieurs langues spécifiques dans la liste qui s'ouvre.  
 

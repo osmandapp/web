@@ -1,6 +1,6 @@
 ---
-source-hash: 31eaf050491744fda2c071f9b7f96835aefe6b7beef39ec37dbf6a225fba7c4c
-sidebar_position: 13
+source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+sidebar_position: 14
 title:  Vue Carte des pistes de ski
 ---
 
@@ -160,7 +160,7 @@ La carte de ski d'OsmAnd est construite comme l'un des styles de rendu, qui dét
 | Couleur | Description |
 | --- | --- |
 | ![Piste débutant](@site/static/img/plugins/ski-maps/1c_green_1.png) | Vert - Piste débutant |
-| ![Pentes faciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Bleu - Pentes faciles |
+| ![ Pentes faciles](@site/static/img/plugins/ski-maps/2c_blue_1.png) | Bleu - Pentes faciles |
 | ![Pentes intermédiaires](@site/static/img/plugins/ski-maps/3c_red_1.png) | Rouge - Pentes intermédiaires |
 | ![Difficulté avancée](@site/static/img/plugins/ski-maps/4c_black_1.png) | Gris - Pentes de difficulté avancée |
 | ![Difficulté experte](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Jaune - Pentes de difficulté experte |

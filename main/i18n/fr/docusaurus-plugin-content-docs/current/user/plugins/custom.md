@@ -1,6 +1,6 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
-sidebar_position: 4
+source-hash: f7e42a121aebcff7943e8adafef1fbff3cfc1eee0eb911687d5bdc3b4002fa7a
+sidebar_position: 5
 title:  Paquet personnalisé
 ---
 
@@ -288,7 +288,7 @@ Pour commencer, vous créez et ajoutez votre plugin à *items.JSON*. Le premier 
 
 ### Images du plugin {#plugin-images}
 
-Pour importer les images d'icônes de votre plugin dans OsmAnd, créez un dossier (dans notre exemple c'est le dossier *"res"*) où les fichiers image seront stockés. Le nom de ce type est **"RESOURCES"**.  
+Pour importer les images d'icônes de votre plugin dans OsmAnd, créez un dossier (dans notre exemple c'est le dossier *"res"* ) où les fichiers image seront stockés. Le nom de ce type est **"RESOURCES"**.  
 
    ![Paquet personnalisé](@site/static/img/plugins/custom/4.jpg)
 
@@ -319,7 +319,7 @@ Dans le type **"SUGGESTED_DOWNLOADS"**, vous pouvez télécharger les cartes qu'
 
    ![Paquet personnalisé](@site/static/img/plugins/custom/8.jpg)
 
-Lorsque le fichier *items.JSON* et tous les fichiers du dossier sont prêts, vous pouvez les compresser dans un seul document. Après cela, le *fichier .zip* doit être renommé en *.os*f*, et alors votre *PLUGIN.osf* sera prêt à être ajouté à l'application OsmAnd.
+Lorsque le fichier *items.JSON* et tous les fichiers du dossier sont prêts, vous pouvez les compresser dans un seul document. Après cela, le *fichier .zip* doit être renommé en *.osf*, et alors votre *PLUGIN.osf* sera prêt à être ajouté à l'application OsmAnd.
 
 
 ## Exemples {#examples}

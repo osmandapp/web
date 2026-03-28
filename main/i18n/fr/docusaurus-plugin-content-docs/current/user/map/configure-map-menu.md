@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  Configurer la carte
 ---
@@ -23,7 +23,7 @@ Le menu **Configurer la carte** est un élément important du *Menu principal* d
 
 Section **Afficher** :  
 
-![Configurer la carte android](@site/static/img/map/configure_map_show1_andr.png)  ![Configurer la carte android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configurer la carte android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configurer la carte android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Section **Topographie** :  
 
@@ -43,7 +43,7 @@ Sections **Itinéraires et Rendu de la carte** :
 
 Section **Afficher sur la carte** :  
 
-![Configurer la carte iOS](@site/static/img/map/configure_map_show1_ios.png)  
+![Configurer la carte iOS](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Section **Topographie** :  
 
@@ -100,7 +100,7 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
    - [Traces](../map/tracks/index.md) - affiche les traces importées, planifiées ou enregistrées sur la carte.
    - [Images au niveau de la rue](../plugins/mapillary.md#map-layer) - affiche les points avec des images disponibles au niveau de la rue.
    - [Guides de voyage](../plan-route/travel-guides.md) - affiche les guides de voyage sur la carte.
-   - [Wikipedia](../plugins/wikipedia.md) - met en évidence les articles Wikipedia liés à la carte.
+   - [Lieux populaires](../map/popular_places.md) - met en évidence les lieux populaires en se basant sur les articles Wikipedia et les affiche sur la carte.
    - [Édition OSM](../plugins/osm-editing.md#osm-editing-layer) - affiche les modifications OpenStreetMap, les notes et les couches d'aide liées à la cartographie.
    - [Autres couches de plugins](../plugins/index.md#configure-plugin) - de nombreux plugins ajoutent leurs couches avec des informations supplémentaires.
 

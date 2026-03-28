@@ -1,5 +1,5 @@
 ---
-source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
+source-hash: 617808bd04a50ca91f92e993b7f4f4a78194978298793ff703a4b1e3c412ff5e
 sidebar_position: 5
 title:  Cartes vectorielles 
 ---
@@ -287,7 +287,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 L'option **Langue de la carte** configure l'orthographe des noms sur la carte OsmAnd pour les niveaux de zoom de 7 à 20 inclus. Pour les niveaux de zoom de 2 à 6, les noms sont affichés dans la langue définie pour OsmAnd dans le menu des paramètres système (voir la section *[Comment changer la langue de l'application](../start-with/first-steps.md#how-to-change-app-language)*).  
 
-Si les noms sur la carte ne sont pas traduits dans la langue requise par la communauté OSM, vous pouvez utiliser des [noms translittérés](https://fr.wikipedia.org/wiki/Translitt%C3%A9ration) : le sélecteur *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) ou *<Translate ios="true" ids="translit_names"/>* (iOS).  
+Si les noms sur la carte ne sont pas traduits dans la langue requise par la communauté OSM, vous pouvez utiliser des [noms translittérés](https://en.wikipedia.org/wiki/Transliteration) : le sélecteur *<Translate android="true" ids="use_latin_name_if_missing"/>* (Android) ou *<Translate ios="true" ids="translit_names"/>* (iOS).  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -363,31 +363,11 @@ Les lignes de contour dans OsmAnd sont affichées comme des lignes d'altitude su
 
 Les lignes de contour sont compatibles avec tous les styles de carte et peuvent être personnalisées via le [menu Lignes de contour](../plugins/topography.md#contour-lines). Pour plus de détails, consultez l'article sur le [plugin Topographie](../plugins/topography.md).
 
-### * Profondeur marine {#-nautical-depth}
+### Terrain {#terrain}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-<TabItem value="android" label="Android">  
-
-Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
-
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Les isobathes de profondeur marine représentent des zones de profondeur égale, aidant à visualiser les changements de topographie sous-marine. Cette fonctionnalité est disponible pour tous les styles et modes de carte et peut être ajustée avec ou sans le plugin de vue Carte marine activé.  
-
-Pour plus de détails sur la vue Carte marine, visitez la [page du plugin Carte marine](../plugins/nautical-charts).
+L'option Terrain vous permet de personnaliser trois fonctionnalités telles que l'ombrage des collines, la pente et l'altitude. Pour plus de détails, reportez-vous à l'article [Topographie](../plugins/topography.md#terrain).
 
 ### Bâtiments 3D {#3d-buildings}
 
@@ -427,6 +407,56 @@ Sur les écrans d'aperçu (Couleur / Visibilité), vous pouvez utiliser Réiniti
 - Lointain — rend les bâtiments à une distance plus longue.
 
 Les deux options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D.
+
+### Relief 3D {#3d-relief}
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+
+La fonctionnalité Relief 3D produit un relief surélevé et fournit une représentation tridimensionnelle du paysage. Le Relief 3D fonctionne hors ligne et peut être utilisé avec les [cartes vectorielles OsmAnd](../map/vector-maps.md) ou toute [carte raster](../map/raster-maps.md#layers) en tant que [Source de carte](../map/raster-maps.md#main) ou en tant que [Sous-couche/Sur-couche](../map/raster-maps.md#overlay). Des informations plus détaillées sont disponibles [ici](../plugins/topography.md#3d-relief).
+
+### * Profondeur marine {#-nautical-depth}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
+
+![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Les isobathes de profondeur marine représentent des zones de profondeur égale, aidant à visualiser les changements de topographie sous-marine. Cette fonctionnalité est disponible pour tous les styles et modes de carte et peut être ajustée avec ou sans le plugin de vue Carte marine activé.  
+
+Pour plus de détails sur la vue Carte marine, visitez la [page du plugin Carte marine](../plugins/nautical-charts).
+
+### Vue Globe {#globe-view}
+
+<InfoAndroidOnly/> 
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Vue globale*
+
+![Vue Globe](@site/static/img/map/globe_view_1.png) ![Vue Globe](@site/static/img/map/globe_view_2.png)
+
+La **Vue Globe** vous permet d'afficher la carte comme une Terre sphérique au lieu d'une projection plate. Ce mode change la géométrie de la surface de la carte et adapte l'interaction avec la carte à la navigation sphérique. Pour plus d'informations, consultez la section [Vue globe](../map/interact-with-map.md#globe-view) dans l'article Interagir avec la carte.
+
+<!--
+## Map Legend {#map-legend}
+
+The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
+
+The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
+-->
 
 
 ## Paramètres supplémentaires {#additional-settings}
@@ -507,6 +537,21 @@ Par défaut, l'application utilise le format de coordonnées sélectionné dans 
 
 [Action rapide](../widgets/quick-action.md#overview) : Vous pouvez également ajouter un basculement rapide *Afficher/Masquer la grille de coordonnées* au groupe [Configurer la carte](../widgets/quick-action.md#configure-map) pour un accès rapide.
 
+
+<!--
+| | | |
+|--------|--------|--------|
+|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
+|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
+|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
+|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
+|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
+|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
+-->
 
 ## Itinéraires {#routes}
 

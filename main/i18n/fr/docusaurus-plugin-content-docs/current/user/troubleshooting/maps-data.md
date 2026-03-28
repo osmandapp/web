@@ -1,5 +1,5 @@
 ---
-source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
+source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
 sidebar_position: 4
 title:  Cartes & Données
 ---
@@ -116,6 +116,30 @@ Pour résoudre le problème de rendu lent des cartes, en particulier lors de l'u
 6. **Utilisez uniquement les cartes hors ligne.** Les cartes en ligne, surtout lorsqu'elles ne sont pas téléchargées à l'avance, peuvent ralentir le chargement de la carte. Passez à l'utilisation exclusive de cartes hors ligne pour des performances plus fluides.
 
 Ces changements devraient réduire le temps nécessaire pour rendre les cartes, en particulier pendant la navigation. Pour des options de configuration plus détaillées, consultez le [Guide des paramètres de la carte](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+
+### Que signifie « Mises à jour gratuites (urgence) » ? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Accès d'urgence Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Accès d'urgence iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Les **mises à jour d'urgence des cartes** peuvent être activées pour certaines régions pendant des situations de crise ou d'urgence. Dans ces cas, les cartes sont temporairement disponibles avec des mises à jour gratuites et plus fréquentes.
+
+Lorsque cette fonctionnalité est active, l'écran de téléchargement de carte peut afficher le message *Mises à jour gratuites (urgence) / Téléchargements gratuits*.
+
+Cela signifie que la carte peut recevoir des mises à jour plus fréquemment que les cartes standard, parfois une ou plusieurs fois par jour, selon la situation.
 
 
 ## Lignes de contour {#contour-lines}

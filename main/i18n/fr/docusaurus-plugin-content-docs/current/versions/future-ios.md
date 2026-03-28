@@ -1,5 +1,5 @@
 ---
-source-hash: 6e3da3a892310ea06863788deeb421519395989e63957965d0a7324d251adb07
+source-hash: d92d4278c9c42171043846b2adf1a7a54cdcf0a3004b025b84507367d39e6a6e
 sidebar_position: 5
 ---
 
@@ -29,7 +29,7 @@ Les versions bêta d'iOS (TestFlight) sont généralement fournies chaque semain
 ## Quoi de neuf {#whats-new}
 
 - Mode Dernière montée / Dernière descente pour les **[widgets d'enregistrement de trajet](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, avec basculement entre le total et la dernière ascension/descente.
-- **[Widget Distance](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** mis à jour avec des modes pour la distance totale, la dernière distance en montée et la dernière distance en descente.
+- **[Widget Distance](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** mis à jour avec des modes pour la distance totale, la dernière distance en montée/descente.
 - **[Widget Vitesse max](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** affichant la vitesse maximale pour l'ensemble du trajet ou pour la section la plus récente en montée/descente.
 - **[Widget Pente moyenne](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** affichant la pente moyenne de la dernière ascension ou descente.
 - Action rapide *Afficher la trace sur la carte* ajoutée au groupe de widgets d'enregistrement de trajet.
@@ -37,7 +37,7 @@ Les versions bêta d'iOS (TestFlight) sont généralement fournies chaque semain
 - Widget graphique d'altitude pour la navigation, affichant un profil compact le long des itinéraires ou des traces GPX.
 - Couche **[Lieux populaires](https://osmand.net/docs/user/map/popular_places/)** mise à jour avec la sélection de source POI et des aperçus d'images optionnels sur la carte.
 - Nouvelle section Explorer dans la Recherche avec « Lieux populaires à proximité » et des états hors ligne/sans données améliorés.
-- Résultats de recherche POI améliorés avec un affichage cohérent de la ville, une mise en page affinée, des miniatures optionnelles et des noms alternatifs plus clairs.
+- Résultats de recherche POI améliorés avec un affichage cohérent de la ville, une mise en page affinée et des miniatures optionnelles.
 - Paramètres d'apparence par défaut pour les dossiers de traces, permettant aux nouvelles traces d'hériter d'un style de dossier unifié.
 
 
@@ -47,4 +47,3 @@ Les versions bêta d'iOS (TestFlight) sont généralement fournies chaque semain
 - Gestion correcte des POI basés sur des relations pour les multipolygones.
 - Correction de l'apparition de « null » à la place du nom d'une ville dans les résultats de recherche POI et amélioration de la cohérence du fond en mode nuit.
 - Restauration du comportement cliquable pour les itinéraires de fitness, de course et de canoë avec boucliers.
-

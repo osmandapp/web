@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
 sidebar_position: 1
 title:  Achats Android
 ---
@@ -113,6 +113,7 @@ Le tableau ci-dessous détaille les fonctionnalités incluses dans les forfaits 
 | [Profondeurs nautiques](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Lieux populaires (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage hors ligne - Guides de voyage](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Plugin Astronomie](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec instructions virage par virage | ✔ | ✔ | ✔ |
 | [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
 | [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -155,6 +156,8 @@ L'abonnement **Pro** inclut actuellement les fonctionnalités suivantes :
 | [Widgets d'altitude - Élévation : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Permet de connaître l'altitude du centre actuel de la carte au-dessus du niveau de la mer.  |
 | [Correction d'altitude (hors ligne)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permet de calculer un graphique d'altitude pour votre trace ([Carte de terrain](../plugins/topography.md#download-maps) requise pour la région choisie). |
 | [Modifier le schéma de couleurs](../../user/plugins/topography.md#modify-color-scheme) | Permet de personnaliser l'apparence de la carte en sélectionnant ou en important des palettes de couleurs. Vous pouvez modifier les schémas intégrés ou utiliser vos propres fichiers de palette pour personnaliser les couleurs de la carte et de l'itinéraire. |
+| [Créer des palettes personnalisées](../../user/map/tracks/appearance.md#color-palette-editor) | Permet de créer et de modifier des palettes dégradées pour la coloration des traces en utilisant des valeurs Relatives ou Fixes. Vous pouvez définir des étapes de couleur, attribuer des valeurs et personnaliser la façon dont les données (telles que la vitesse ou l'altitude) sont affichées le long de la trace. |
+| [Dossiers intelligents – Organiser par](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permet d'organiser les traces dans des Dossiers intelligents en utilisant des paramètres de regroupement avancés tels que la date et l'heure, la distance, la durée, la vitesse, l'altitude et l'élévation, et les données des capteurs. Ces options permettent une catégorisation plus détaillée des traces et une analyse flexible. |
 
 
 ## Comment acheter {#how-to-buy}

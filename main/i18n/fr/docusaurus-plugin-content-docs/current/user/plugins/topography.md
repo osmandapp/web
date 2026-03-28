@@ -1,6 +1,6 @@
 ---
-source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
-sidebar_position: 14
+source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+sidebar_position: 16
 title: Topographie
 ---
 
@@ -41,7 +41,7 @@ Le plugin Topographie donne accès aux types de cartes suivants :
 
 | Lignes de niveau | Estompage | Pente |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Lignes_de_niveau_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Estompage_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Pentes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ Le plugin Topographie donne accès aux types de cartes suivants :
 
 | Lignes de niveau | Estompage | Pente |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Lignes_de_niveau_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Estompages_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Pentes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -143,6 +143,10 @@ Pour les [**Lignes de niveau**](#contour-lines), vous devez déterminer dans que
 
 ## Lignes de niveau {#contour-lines}
 
+:::tip Achat
+Les lignes de niveau sont une [fonctionnalité payante](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -182,6 +186,10 @@ Lors de l'utilisation du [Moteur de rendu de la carte](../personal/global-settin
 
 ## Terrain {#terrain}
 
+:::tip Achat
+Le Terrain est une [fonctionnalité payante](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -215,7 +223,7 @@ Le menu **Terrain** inclut la sélection du [jeu de couleurs](#default-color-sch
 
 | Estompage | Pente | Altitude |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Estompage](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Pente](../../../blog/2023-08-28-terrain/img/slope.png) | ![Pente](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **L'estompage** est basé sur la simulation de l'éclairage de la surface à l'aide de données de terrain. Cette méthode consiste à créer des ombres et des rehauts en fonction de l'angle de la surface par rapport à la source de lumière. En conséquence, vous voyez des collines, des vallées et d'autres détails du terrain naturels sur la carte.  
 
@@ -255,17 +263,30 @@ Les cartes raster d'**Estompage**, de **Pente** et d'**Altitude** sont créées 
 
 <TabItem value="android" label="Android">
 
-![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un jeu de couleurs :
+
+- À partir d'une [liste prédéfinie](#default-color-scheme).
+- À partir de fichiers de palette de couleurs que vous avez créés sur votre ordinateur. Les fichiers personnalisés peuvent être ajoutés à OsmAnd en utilisant l'[outil d'import/export](../personal/import-export.md).
+- À partir de palettes créées ou modifiées directement dans l'application.
+
+Les palettes personnalisées sont basées sur des échelles de couleurs, où chaque couleur correspond à une valeur spécifique des données de terrain telles que l'*Altitude* ou la *Pente*. 
+Vous pouvez :
+
+- définir des étapes de valeur (niveaux d'altitude ou pourcentages de pente) ;
+- assigner des couleurs à chaque étape ;
+- ajouter ou supprimer des étapes pour ajuster les échelles de couleurs.
+
+**Note :** L'Estompage utilise un algorithme d'ombrage fixe et ne prend pas en charge les palettes de couleurs personnalisées.
+
+Pour une personnalisation avancée des palettes à l'aide de fichiers de palettes, consultez l'article [Jeux de couleurs](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un jeu de couleurs :
 
@@ -274,6 +295,9 @@ La fonctionnalité *Modifier le jeu de couleurs* vous permet de sélectionner un
 
 Vous pouvez [modifier ces palettes](../personal/color-palette-schemes.md#palette-modify) pour personnaliser l'apparence des cartes et des itinéraires.
 
+</TabItem>
+
+</Tabs>
 
 ### Visibilité {#visibility}
 
@@ -287,7 +311,7 @@ La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres 
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-La fonction *Niveaux de zoom* vous permet de définir les valeurs minimales et maximales des niveaux de zoom de la carte, allant de 4 à 19, auxquels les couches de carte Estompage ou Pente seront affichées.
+La fonction *Niveaux d'échelle* vous permet de définir les valeurs minimales et maximales des niveaux de zoom de la carte, allant de 4 à 19, auxquels les couches de carte Estompage ou Pente seront affichées.
 
 ### Taille du cache {#cache-size}
 
@@ -318,6 +342,60 @@ Les principaux paramètres pour *Afficher ou Masquer les types de carte* se trou
 
 - Allez à [Ajouter une action](../widgets/quick-action.md#custom-buttons) : *Menu → Configurer l'écran → Boutons personnalisés → Action rapide → Ajouter une action → Configurer la carte*.
 - Ajoutez un ou plusieurs boutons d'action rapide pour changer la visibilité d'une couche topographique particulière.
+
+
+## Bâtiments 3D {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Bâtiments 3D* 
+
+![Bâtiments 3D](@site/static/img/map/3d_buildings_1_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_2_new.png) 
+
+La fonctionnalité **Bâtiments 3D** affiche les bâtiments sous forme de modèles 3D volumétriques au lieu de formes plates. Les bâtiments sont générés à partir des [données OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), en utilisant les informations de hauteur des balises telles que `height` et `building:levels` lorsque disponibles. Les bâtiments 3D ne sont affichés qu'aux niveaux de zoom élevés (vue ville/rue), où les bâtiments individuels peuvent être affichés.  
+
+Utilisez l'interrupteur principal pour activer ou désactiver le rendu 3D des bâtiments. Pour voir les bâtiments en 3D, inclinez la carte en plaçant deux doigts sur l'écran et en balayant vers le haut. Dans cette vue, les bâtiments peuvent partiellement couvrir les routes ou les étiquettes de la carte en fonction du paramètre de visibilité.
+
+Cette option n'est disponible que lorsque le plugin Topographie est activé.  
+Aller à : *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+Les paramètres des bâtiments 3D sont divisés en deux groupes : **Apparence** et **Performance**.
+
+### Apparence {#appearance}
+
+![Bâtiments 3D](@site/static/img/map/3d_buildings_color.png)
+
+Les contrôles **Apparence** déterminent l'aspect des bâtiments 3D sur la carte. Ils incluent deux paramètres : Couleur et Visibilité. 
+
+**Couleur** vous permet de changer la couleur des bâtiments. Lorsque vous appuyez sur Couleur, OsmAnd ouvre un écran d'aperçu séparé où vous pouvez voir la carte tout en ajustant le paramètre.
+- **Style de carte** — utilise la couleur par défaut des bâtiments du style de carte actuellement sélectionné.
+- **Personnalisé** — vous permet de définir une couleur personnalisée pour les bâtiments séparément pour le mode Jour / Nuit.
+
+:::tip Achat
+La personnalisation de la couleur des bâtiments 3D est une [fonctionnalité payante](../purchases/index.md).  
+:::
+
+Si les couleurs personnalisées ne sont pas achetées, vous verrez un état vide avec une brève description et un bouton Obtenir. Si Personnalisé est disponible, vous pouvez basculer entre Jour et Nuit, choisir une couleur dans la palette (ou ouvrir Toutes les couleurs), puis appuyer sur Appliquer.
+
+**Visibilité** contrôle l'opacité (transparence) des bâtiments 3D. Utilisez le curseur pour définir la visibilité en pourcentage. Des valeurs plus basses rendent les bâtiments plus transparents et aident les routes/étiquettes à rester lisibles. Des valeurs plus élevées rendent les bâtiments plus solides et visuellement dominants. Appuyer sur Visibilité ouvre également un écran d'aperçu séparé avec le curseur.
+
+Sur les écrans d'aperçu (Couleur / Visibilité), vous pouvez utiliser Réinitialiser aux valeurs par défaut depuis la barre d'application pour restaurer la valeur par défaut.
+
+### Performance {#performance}
+
+Les contrôles **Performance** déterminent la façon dont les bâtiments 3D sont rendus. Ils incluent deux paramètres : Niveau de détail et Distance de vue.
+
+**Niveau de détail** détermine la complexité de la géométrie des bâtiments 3D :
+- Faible (par défaut) — géométrie plus simple.
+- Élevé — géométrie plus détaillée.
+
+**Distance de vue** contrôle la distance par rapport à la caméra à laquelle les bâtiments 3D sont rendus :
+- Proche (par défaut) — rend les bâtiments plus près de vous.
+- Lointaine — rend les bâtiments à une distance plus longue.
+
+Les deux options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D.
+
+**Note :** Utiliser *Détail élevé* et *Distance de vue lointaine* améliore l'apparence visuelle mais peut impacter les performances et augmenter la consommation de batterie.
 
 
 ## Relief 3D {#3d-relief}
