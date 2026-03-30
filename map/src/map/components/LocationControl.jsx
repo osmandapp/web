@@ -22,6 +22,7 @@ export const initialPosition = [50, 5]; // use != instead of !== to compare coor
 const XYZ_HASH_SYNC = 'hash'; // use Alt/Ctrl+click on LocationControl to save/restore map x/y/z
 
 export async function detectGeoByIp({ map, hash }) {
+    if (!map) return;
     if (hash) {
         const [zoom, lat, lon] = (hash.lastHash ?? window.location.hash ?? '').split('/');
         if (
@@ -44,7 +45,15 @@ export async function detectGeoByIp({ map, hash }) {
         } finally {
             if (lat && lon) {
                 // hash+flyTo requires a little delay after map-ready
-                setTimeout(() => map.flyTo([lat, lon], flyZoom), 100);
+                setTimeout(() => {
+                    if (!map?._loaded) return;
+                    if (!map.getContainer?.()?.isConnected) return;
+                    try {
+                        map.flyTo([lat, lon], flyZoom);
+                    } catch {
+                        // no-op: avoid hard crash on rare Leaflet animation edge cases
+                    }
+                }, 100);
                 // console.debug('location-defined-by-ip', flyZoom, lat, lon);
             }
         }
@@ -147,7 +156,14 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
             setMessage(e.latlng.lat + ', ' + e.latlng.lng);
             setTimeout(() => setMessage(''), 3000);
 
-            map.setView(e.latlng, locationZoom); // flyTo has buggy marker animation
+            // Leaflet can throw during animated panning on some timing edges; keep it crash-free.
+            if (map?._loaded && map.getContainer?.()?.isConnected) {
+                try {
+                    map.setView(e.latlng, locationZoom); // flyTo has buggy marker animation
+                } catch {
+                    // no-op
+                }
+            }
 
             setStatus('found');
         }
