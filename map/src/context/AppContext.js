@@ -3,9 +3,9 @@ import LoginContext from '../context/LoginContext';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, {
     getGpxFiles,
-    filterSmartFolders,
     filterRegularFolders,
     GPX_FILE_EXT,
+    INFO_FILE_EXT,
     preparedGpxFile,
     TRACK_VISIBLE_FLAG,
 } from '../manager/track/TracksManager';
@@ -187,7 +187,13 @@ async function getSmartFolders() {
 
 export function getFilesForUpdateDetails(files, setUpdateFiles) {
     const filesToUpdate = files
-        .filter((f) => f.details && f.details.update && f.type === GPX && f.name.toLowerCase().endsWith(GPX_FILE_EXT))
+        .filter(
+            (f) =>
+                f.details &&
+                f.details.update &&
+                f.type === GPX &&
+                (f.name.toLowerCase().endsWith(GPX_FILE_EXT) || f.name.toLowerCase().endsWith(INFO_FILE_EXT))
+        )
         .map((f) => ({
             name: f.name,
             type: f.type,
