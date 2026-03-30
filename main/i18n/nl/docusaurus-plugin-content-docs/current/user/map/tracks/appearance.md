@@ -1,5 +1,5 @@
 ---
-source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
+source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
 sidebar_position: 5
 title:  Uiterlijk van de track
 ---
@@ -24,13 +24,13 @@ De functie **Uiterlijk van de track** stelt gebruikers in staat om aan te passen
 
 <TabItem value="android" label="Android">  
 
-![Overzicht uiterlijk track Android](@site/static/img/map/track-appear-and-1.png)  ![Trackmenu Uiterlijk Android](@site/static/img/map/track_appearence_1_andr.png)  
+![Track Appearance overview Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Trackmenu Uiterlijk iOS](@site/static/img/map/track_appearence_1_ios.png) ![Trackmenu Uiterlijk iOS](@site/static/img/map/track_appearence_2_ios.png)  
+![Track menu Appearance iOS](@site/static/img/map/track_appearence_1_ios.png) ![Track menu Appearance iOS](@site/static/img/map/track_appearence_2_ios.png)  
 
 </TabItem>
 
@@ -55,7 +55,7 @@ U kunt het uiterlijk van de track op een van de volgende manieren wijzigen:
 Sommige instellingen kunt u alleen gebruiken met *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> en <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Gratis en betaalde functies.
 :::
 
-![Uiterlijk](@site/static/img/map/appearance_color_andr.png) ![Kleuringscontextmenu iOS](@site/static/img/map/colorisation_ios.png)
+![Appearance](@site/static/img/map/appearance_color_andr.png) ![Coloring Context Menu IOS](@site/static/img/map/colorisation_ios.png)
 
 U kunt de kleur van de track handmatig instellen of **kleurgebaseerde datavisualisatie** gebruiken (bijv. snelheid, hoogte, helling). Als een track bepaalde gegevens mist, geeft OsmAnd ontbrekende secties in grijs weer.
 
@@ -71,10 +71,45 @@ Op iOS opent de **lijst met kleuringsopties** als een contextmenu. Items kunnen 
 
 Voor meer details over het aanpassen van het uiterlijk van de routelijn, zie [Kaartscherm tijdens navigatie](../../navigation/guidance/map-during-navigation.md#color) en voor het selecteren en maken van een aangepaste kleur, zie [Kleurenschema's](../../personal/color-palette-schemes.md#tracks-routes).
 
+### Kleurenpalet-editor {#color-palette-editor}
+
+<InfoAndroidOnly/> 
+
+![Color Palettes Editor](@site/static/img/map/gradient_palettes_1.png) ![Color Palettes Editor ](@site/static/img/map/gradient_palettes_2.png) 
+
+Bij het kleuren van een track op basis van Snelheid, Hoogte of Helling, kunt u eigen paletten gebruiken om te definiëren hoe kleuren langs de track worden toegepast.
+
+Het scherm *Alle kleuren* toont beschikbare paletten. Tik op het menu met drie stippen naast een palet om te:
+- Hernoemen.
+- Bewerken.
+- Dupliceren.
+- Verwijderen. Het verwijderen van een palet vereist bevestiging.
+
+Tik op de + knop op het scherm Alle kleuren. Twee typen paletten zijn beschikbaar:
+- **Relatief** — kleuren schalen automatisch op basis van de minimum- en maximumwaarden van de track.
+- **Vaste waarden** — kleuren worden toegewezen aan specifieke absolute getallen (bijvoorbeeld 50 km/u). Waarden kunnen handmatig worden bewerkt. Eenheden volgen de [systeeminstellingen](../../personal/profiles.md#units--formats). De kleurenschaal schaalt niet automatisch opnieuw bij toepassing op verschillende tracks.
+
+:::info Pro-functie
+Het maken van aangepaste paletten is een [**OsmAnd Pro**](../../purchases/index.md) betaalde functie <ProFeature />.
+:::
+
+Om meer te leren over kleurenschema's als gegevensformaat en hun gebruik in tracks en routes, zie het artikel [Kleurenschema's](../../personal/color-palette-schemes.md#tracks-routes).
+
+Bij het maken of bewerken van een palet bevat het editorscherm:
+- Een voorbeeld van de kleurenschaal bovenaan het scherm.
+- Selecteerbare waarde knoppen onder de kleurenschaal (bijvoorbeeld 50, 100, 150, Geen gegevens).
+- Een + knop om een nieuwe stap toe te voegen.
+- Een Waarde veld.
+- Kleurselectie opties. Voor meer informatie over paletbestanden.
+- Een Verwijder stap optie voor de geselecteerde waarde.
+- Een Opslaan knop.
+
+Gebruik het ongedaan maken-pictogram in de app-balk om de laatste actie ongedaan te maken. Tik op Sluiten om de editor te verlaten. Als er wijzigingen zijn gemaakt, verschijnt er een bevestigingsdialoog voordat het sluiten.
+
 
 ### Breedte {#width}
 
-![Trackmenu Uiterlijk Trackdikte Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Uiterlijk van de track](@site/static/img/map/track_appearance_width_andr.png)  
+![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
 
 U kunt het uiterlijk van de track in verschillende menu's van de applicatie aanpassen:
 
@@ -97,12 +132,12 @@ Pas de breedte van de track aan om de zichtbaarheid op de kaart te verbeteren.
 
 <TabItem value="android" label="Android">
 
-![Trackmenu Uiterlijk Interval splitsen Android](@site/static/img/map/split_interval_android.png)  ![Interval splitsen Android](@site/static/img/map/split_interval_2_android.png)
+![Track menu Appearance Split interval Android](@site/static/img/map/split_interval_android.png)  ![Split interval Android](@site/static/img/map/split_interval_2_android.png)
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Trackmenu Uiterlijk Interval splitsen](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Interval splitsen](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
 </TabItem>
 
@@ -113,15 +148,15 @@ Selecteer of het interval op de track moet worden gesplitst **op afstand**, **ti
 
 ### Richtingpijlen {#direction-arrows}
 
-![Trackmenu Uiterlijk richtingpijlen Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
+![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)  
 
 Voegt **pijlmarkeringen** toe langs de track om de bewegingsrichting aan te geven.
 
 ### Start- en finishpictogrammen {#start-and-finish-icons}
 
-![Trackmenu Uiterlijk start- en finishpictogrammen Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-Hiermee kunt u selecteren of de **start- en finishpictogrammen** voor tracksegmenten moeten worden weergegeven.
+Hiermee kunt u selecteren of de **start- en finishpictogrammen** voor tracksegmenten moeten worden weergegeven. Voor tracks met een groot aantal segmenten kunnen deze pictogrammen automatisch worden uitgeschakeld om de prestaties van de kaartweergave te verbeteren. In dat geval kunt u ze handmatig inschakelen indien nodig.
 
 ### Gaten samenvoegen {#join-gaps}
 
@@ -142,13 +177,13 @@ Herstelt alle **instellingen voor het uiterlijk van de track** naar hun standaar
 
 <TabItem value="android" label="Android">
 
-![Trackmenu Uiterlijk 3D-visualisatie](@site/static/img/map/3d_track_appearance_android.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Trackmenu Uiterlijk 3D-visualisatie](@site/static/img/map/3d_track_appearance_ios.png)
+![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_ios.png)
 
 </TabItem>
 
@@ -174,7 +209,7 @@ Past de **kleur van de 3D-track** aan met behulp van verlopen of datagebaseerde 
 Opties zijn onder andere: *Geen*, &nbsp;*Effen*, &nbsp;*Aflopend verloop*, &nbsp;*Oplopend verloop*, &nbsp;*Hoogte*, &nbsp;*Helling*, &nbsp;*Snelheid*.
 
 **<Translate android="true" ids="track_line"/>**  
-Voegt een [gemarkeerde lijn](#color) toe aan de boven- of onderkant van de 3D-track.  
+Voegt een [gemarkeerde lijnlijn](#color) toe aan de boven- of onderkant van de 3D-track.  
 Opties zijn onder andere: *Boven*, &nbsp;*Onder*, &nbsp;*Boven en onder*.
 
 > **OPMERKING**: *De **Android-versie** van de app vereist dat de kaartweergave-engine [Versie 2 (OpenGL)](../../personal/global-settings.md#map-rendering-engine) is ingeschakeld om 3D-trackvisualisatie te gebruiken.*
@@ -205,13 +240,13 @@ De 3D-trackfunctie is zeer nuttig voor activiteiten zoals paragliden, waar het v
 
 <TabItem value="android" label="Android">
 
-![Uiterlijk Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Uiterlijk Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Uiterlijk wijzigen](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Uiterlijk wijzigen](@site/static/img/map/tracks_change_appear_2_ios.png)
+![Change Appearance](@site/static/img/map/tracks_change_appear_3_ios.png)  ![Change Appearance](@site/static/img/map/tracks_change_appear_2_ios.png)
 
 </TabItem>
 
@@ -258,7 +293,7 @@ Gebruik het volgende formaat om een kleur voor een track te specificeren:
 
 ```xml
 <trk>
-  <name>Voorbeeldtrack</name>
+  <name>Example Track</name>
   <extensions>
     <osmand:color>#FF0000</osmand:color>
   </extensions>

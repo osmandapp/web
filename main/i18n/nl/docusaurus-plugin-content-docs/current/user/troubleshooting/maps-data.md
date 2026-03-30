@@ -1,5 +1,5 @@
 ---
-source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
+source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
 sidebar_position: 4
 title:  Kaarten & Gegevens
 ---
@@ -116,6 +116,30 @@ Om het probleem van trage kaartweergave op te lossen, vooral bij het gebruik van
 6. **Gebruik alleen offline kaarten.** Online kaarten, vooral wanneer ze niet van tevoren zijn gedownload, kunnen het laden van de kaart vertragen. Schakel over naar het gebruik van alleen offline kaarten voor een soepelere prestatie.
 
 Deze wijzigingen zouden de tijd die nodig is om kaarten weer te geven moeten verminderen, vooral tijdens de navigatie. Voor meer gedetailleerde configuratie-opties, raadpleeg de [Gids voor Kaartinstellingen](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+
+### Wat betekent “Gratis updates (noodgeval)”? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Noodtoegang Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Noodtoegang iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Noodkaartupdates** kunnen worden ingeschakeld voor bepaalde regio's tijdens crisis- of noodtoestanden. In deze gevallen zijn kaarten tijdelijk beschikbaar met gratis en frequentere updates.
+
+Wanneer deze functie actief is, kan het downloadscherm voor kaarten de boodschap *Gratis updates (noodgeval) / Gratis downloads* weergeven.
+
+Dit betekent dat de kaart updates kan ontvangen vaker dan standaardkaarten, soms één of meerdere keren per dag, afhankelijk van de situatie.
 
 
 ## Contourlijnen {#contour-lines}

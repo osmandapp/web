@@ -1,5 +1,5 @@
 ---
-source-hash: 6e3da3a892310ea06863788deeb421519395989e63957965d0a7324d251adb07
+source-hash: d92d4278c9c42171043846b2adf1a7a54cdcf0a3004b025b84507367d39e6a6e
 sidebar_position: 5
 ---
 
@@ -29,15 +29,15 @@ iOS-bètaversies (TestFlight) worden meestal wekelijks geleverd (na een Team Spr
 ## Wat is er nieuw {#whats-new}
 
 - Laatste stijging / laatste daling modus voor **[Trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, met schakelen tussen totale en laatste stijging/daling.
-- Bijgewerkte **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** met modi voor totale afstand, laatste stijgende afstand en laatste dalende afstand.
+- Bijgewerkte **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** met modi voor totale afstand, laatste stijgende/dalende afstand.
 - **[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** die de maximale snelheid toont voor de hele trip of voor het meest recente stijgende/dalende gedeelte.
 - **[Average Slope widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** die de gemiddelde helling toont van de laatste stijging of daling.
 - *Track op kaart tonen* snelle actie toegevoegd aan de groep Trip recording widgets.
 - Verbeteringen in route selectie en hoogtegrafiekintegratie onder het bijgewerkte weergaveschema.
 - Hoogtegrafiek widget voor navigatie, die een compact profiel toont langs routes of GPX-tracks.
 - **[Popular places](https://osmand.net/docs/user/map/popular_places/)** laag bijgewerkt met POI-bronselectie en optionele afbeeldingsvoorbeelden op de kaart.
-- Nieuwe Explore-sectie in Zoeken met “Popular places nearby” en verbeterde offline/geen-gegevensstaten.
-- Verbeterde POI-zoekresultaten met consistente stadsweergave, verfijnde lay-out, optionele miniaturen en duidelijkere alternatieve namen.
+- Nieuwe Explore-sectie in Zoeken met “Populaire plaatsen in de buurt” en verbeterde offline/geen-gegevensstaten.
+- Verbeterde POI-zoekresultaten met consistente stadsweergave, verfijnde lay-out en optionele miniaturen.
 - Standaard uiterlijkinstellingen voor trackmappen, waardoor nieuwe tracks een uniforme mapstijl kunnen erven.
 
 

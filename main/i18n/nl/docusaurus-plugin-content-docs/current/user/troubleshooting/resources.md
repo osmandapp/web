@@ -1,5 +1,5 @@
 ---
-source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
+source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
 sidebar_position: 9
 title: Hulpbronnen en Aanpassingen
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Ontdek OsmAnd {#explore-osmand}
 
-OsmAnd is een krachtige app met een brede gebruikersbasis, en naast de officiële documentatie zijn er talloze bronnen die door de community zijn gemaakt.
+OsmAnd is een krachtige app met een brede gebruikersbasis, en naast de officiële documentatie zijn er talloze bronnen die door de community zijn gemaakt.  
 
 Dit artikel verzamelt links naar aangepaste gebruikershandleidingen, socialmediagroepen, plugins, kaartstijlen en meer. Verken deze bronnen om je kennis uit te breiden, je OsmAnd-ervaring aan te passen en in contact te komen met andere gebruikers.
 
@@ -57,7 +57,7 @@ De onderstaande lijst bevat converters voor verschillende gegevenstypen die door
 
 ### Handleidingen {#manuals}
 
-De officiële documentatie van OsmAnd is grondig, maar de community heeft ook een reeks aangepaste handleidingen geproduceerd om gebruikers te helpen met specifieke functies en gebruiksscenario's.
+De officiële documentatie van OsmAnd is grondig, maar de community heeft ook een reeks aangepaste handleidingen geproduceerd om gebruikers te helpen met specifieke functies en gebruiksscenario's.  
 
 Deze handleidingen, beschikbaar in meerdere talen, bieden vaak unieke inzichten, tips en trucs die mogelijk niet in de officiële gidsen worden behandeld. Deze bronnen zijn handige aanvullingen op de officiële [OsmAnd Gebruikersgids](https://osmand.net/docs/user/), en bieden meer informatie over de functies van de app.
 
@@ -82,13 +82,13 @@ Hieronder volgt een lijst van [aangepaste plugins](../plugins/custom.md) die zij
 
 | Naam | Beschrijving | Link van de Plugin |
 |--|--|--|
-| OsmAnd Rendering  | De plugin voegt de kaartstijlen Enduro, CycloRoute en Hiking toe (meer info [hier](../map/map-styles.md#default-map-styles)) en 5 nieuwe [profielen](https://osmand.net/docs/user/personal/profiles) (Voetganger, Fiets en drie Motorprofielen). Het biedt ook online kaarten voor Spanje, Frankrijk, Zwitserland, Oostenrijk, België en Argentinië via het menu [Kaarten & Bronnen](../personal/maps-resources.md#extra-maps) in de map *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
-| Rahal Team kaart van Saoedi-Arabië  | Een professionele offline kaart van het Koninkrijk Saoedi-Arabië, inclusief topografische kenmerken, wegen, steden, dorpen en waterbronnen. Perfect voor woestijntochten. Bezoek [Rahal Maps](https://rahalteam.com) voor meer informatie. | [🇸🇦 Kaarten van Saoedi-Arabië door Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
-| 3D-model  | Dit pakket voegt een 3D-modeloptie toe voor profielen. Pas het uiterlijk aan via het menu: [*OsmAnd-menu → Instellingen → Profiel → Profielweergave → kies het 4e-5e pictogram van Positiepictogram*](../personal/profiles.md#profile-appearance). | [3D-model](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
-| AnyGIS online kaartenverzameling | Een verzameling van verschillende online kaartbronnen, waaronder satelliet-, toeristische en historische kaarten.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
-| Kaartlegenda  | Dit pakket voegt een offline kaartlegenda toe (versie 1.01; 03-04-2024), toegankelijk via *Menu → Mijn Plaatsen → Favorieten → Kaartlegenda*. De kaartlegenda is ook beschikbaar op [deze locatie](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Kaartlegenda](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 De USA Kaarten | Een verzameling van gespecialiseerde Amerikaanse kaarten, geconverteerd naar OsmAnd OBF-formaat, met:<ul><li>[USGS Openbare gronden en beschermde gebieden (PAD-US 3.0), per staat](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[USFS Paden en Wegen, landelijk](https://www.fs.usda.gov/visit/maps),</li><li>[BLM Wegen en Paden, landelijk](https://www.blm.gov/maps),</li><li>[BLM Recreatieactiviteit POI's, landelijk](https://www.blm.gov/maps),</li><li>[Privégronden (perceelgegevens), voor sommige staten](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Meer info op [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [De USA kaarten](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱 UMP kaart van Polen | [UMP](https://ump.waw.pl/) dekt het grootste deel van Polen met een doorlopende ontwikkelingsinspanning. Lange tijd werd de naam UMP-pcPL (mapą prawie całej Polski) gebruikt. | [UMP kaart van Polen](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| Advanced Profiles & Maps  | Gegevens van [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). De plugin voegt de kaartstijlen Enduro, CycloRoute en Hiking toe (meer info [hier](../map/map-styles.md#default-map-styles)) en 5 nieuwe [profielen](https://osmand.net/docs/user/personal/profiles) (Voetganger, Fiets en drie Motorprofielen). Het biedt ook online kaarten voor Spanje, Frankrijk, Noorwegen, Zwitserland, Oostenrijk, België en Argentinië via het menu [Kaarten & Bronnen](../personal/maps-resources.md#extra-maps) in de map *Geavanceerde Online Kaarten*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Saudi Arabia Desert Maps by Rahal Team  | Een professionele offline kaart van het Koninkrijk Saoedi-Arabië, inclusief topografische kenmerken, wegen, steden, dorpen en waterbronnen. Perfect voor woestijntochten. Bezoek [Rahal Maps](https://rahalteam.com) voor meer informatie. | [🇸🇦 Saudi Arabia Desert Maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
+| 3D Position Icons  | Dit pakket voegt een 3D-modeloptie toe voor profielen (Het is een voorbeeld van hoe je je eigen 3D-pictogram aan OsmAnd kunt toevoegen). Pas het uiterlijk aan via het menu: [*OsmAnd-menu → Instellingen → Profiel → Profielweergave → kies het 4e-5e pictogram van Positiepictogram*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
+| AnyGIS Online Maps Collection | Gegevens van [AnyGIS web page](https://anygis.ru/index_en). Een verzameling van verschillende online kaartbronnen, waaronder satelliet-, toeristische en historische kaarten, onder andere.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
+| Offline Map Legend | Dit pakket voegt een offline kaartlegenda toe (versie 1.01; 03-04-2024), toegankelijk via *Menu → Mijn Plaatsen → Favorieten → Kaartlegenda*. De kaartlegenda is ook beschikbaar op [deze locatie](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Offline Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
+| 🇺🇸US Lands & Trails | Een verzameling van gespecialiseerde Amerikaanse kaarten, geconverteerd naar OsmAnd OBF-formaat, met:<ul><li>[USGS Openbare gronden en beschermde gebieden (PAD-US 3.0), per staat](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[USFS Paden en Wegen, landelijk](https://www.fs.usda.gov/visit/maps),</li><li>[BLM Wegen en Paden, landelijk](https://www.blm.gov/maps),</li><li>[BLM Recreatieactiviteit POI's, landelijk](https://www.blm.gov/maps),</li><li>[Privégronden (perceelgegevens), voor sommige staten](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Meer info op [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸US Lands & Trails](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) dekt het grootste deel van Polen met een doorlopende ontwikkelingsinspanning. Lange tijd werd de naam UMP-pcPL (mapą prawie całej Polski) gebruikt. | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Deze plugin bevat een lichtgewicht kaartstijl die de zichtbaarheid van onverharde wegen en paden in OsmAnd verbetert.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
@@ -99,7 +99,7 @@ Het standaard [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/ma
 | Bronnaam | Beschrijving | Link |
 | -- | -- | --|
 | Gravel Roads Seeker | Kaartstijl die een betere visualisatie van het wegdek biedt, waarbij onderscheid wordt gemaakt tussen verharde en onverharde wegen (*Franse* webpagina). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
-| OsmAnd Rendering | Een verzameling van toegang tot online kaarten, topografische kaarten, orthofoto's en andere geografische bronnen die beschikbaar zijn bij enkele van de belangrijkste geografische instituten in verschillende landen. Updates zijn doorlopend, maar als er bestanden verouderd zijn, worden gebruikers aangemoedigd dit te melden. | [Online Kaarten: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
+| OsmAnd Rendering GitHUB | Een verzameling van toegang tot online kaarten, topografische kaarten, orthofoto's en andere geografische bronnen die beschikbaar zijn bij enkele van de belangrijkste geografische instituten in verschillende landen. Updates zijn doorlopend, maar als er bestanden verouderd zijn, worden gebruikers aangemoedigd dit te melden. | [Online Kaarten: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | Een topografische kaart met een *Alle Water Verbergen* optie, bijgedragen door [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | De repository is ontworpen om aangepaste kaartstijlen te bieden die door gebruikers voor andere gebruikers zijn gemaakt. |[UniMap van GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | Offline kaartstijlen gericht op spoorwegen, met een kleurenschema vergelijkbaar met [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
@@ -126,7 +126,7 @@ De volgende tabel toont verschillende online kaartbronnen die door gebruikers zi
 | Naam | Beschrijving | Link|
 | -- | -- | --|
 | Gravel Roads Seeker | Onverharde wegenkaart (webpagina in het *Frans*). Een online kaart die in realtime wordt gegenereerd vanaf tegelservers, zoals WMTS (Web Map Tile Service) of WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
-| OsmAnd Rendering | Een verzameling van online kaarten, inclusief topo, orthofoto's en andere, beschikbaar bij enkele van de belangrijkste geografische instituten van verschillende landen. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
+| OsmAnd Rendering GitHUB | Een verzameling van online kaarten, inclusief topo, orthofoto's en andere, beschikbaar bij enkele van de belangrijkste geografische instituten van verschillende landen. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
 | RainViewer | [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) kaart met verschillende [kleurenschema's](https://www.rainviewer.com/api/color-schemes.html) |[RainViewer-osf data](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | De set kaarten van Oostenrijk gebaseerd op [basemap.at WMTS](https://basemap.at/en/) gemaakt door mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
 | OsmAnd kaarten IGN (FR) | De set kaarten aangeboden door het Franse geografische instituut IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|

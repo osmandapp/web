@@ -1,8 +1,9 @@
 ---
-source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
+source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
 sidebar_position: 3
 title: Slimme Map (Filter)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Overzicht {#overview}
 
-De functie **Slimme Map** biedt krachtige hulpmiddelen voor het organiseren en beheren van uw tracks. Een van de belangrijkste functies is de mogelijkheid om bestanden te filteren in het *Tracks-tabblad* van het *Mijn Plaatsen*-menu op basis van criteria zoals duur, lengte of snelheid.
+De functie **Slimme Map** biedt krachtige hulpmiddelen voor het organiseren en beheren van uw tracks. Een van de belangrijkste functies is de mogelijkheid om bestanden te filteren in het *Tracks-tabblad* van het *Mijn Plaatsen*-menu op basis van criteria zoals duur, lengte of snelheid.  
 
 Met deze functie kunt u snel specifieke tracks vinden die aan uw eisen voldoen. Gefilterde resultaten kunnen worden opgeslagen als een **Slimme Map**, wat handige toegang biedt tot dynamisch bijgewerkte trackcollecties.
 
@@ -82,7 +82,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 - **Tijd in beweging** — Specificeer het tijdsbereik dat in beweging is doorgebracht tijdens de opname.
 - **Lengte** — Stel een specifiek bereik in kilometers of mijlen in om tracks van een bepaalde lengte te vinden.
 - **Gemiddelde snelheid** — Filter tracks op [gemiddelde snelheid](../../widgets/info-widgets.md#average-speed).
-- **Sensorgegevensgroep.**
+- **Sensorgegevensgroep.**  
     Pas filters toe op basis van externe sensorgegevens, waaronder:
     - Sensorsnelheid, gemiddeld.
     - Sensorsnelheid, max.
@@ -125,17 +125,17 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-Een **Slimme Map** is een dynamische verzameling van tracks die automatisch wordt bijgewerkt op basis van specifieke filtercriteria. Het biedt geavanceerde hulpmiddelen voor het efficiënt organiseren, zoeken en beheren van tracks.
+Een **Slimme Map** is een dynamische verzameling van tracks die automatisch wordt bijgewerkt op basis van specifieke filtercriteria. Het biedt geavanceerde hulpmiddelen voor het efficiënt organiseren, zoeken en beheren van tracks.  
 
 ***Voordelen van Slimme Mappen:***
 
-1. **Geautomatiseerde organisatie.**
+1. **Geautomatiseerde organisatie.**  
     Neemt automatisch tracks op die voldoen aan vooraf gedefinieerde regels, zoals aanmaakdatum of duurbereik.
-2. **Filteren en zoeken.**
+2. **Filteren en zoeken.**  
     Maakt snelle zoekopdrachten binnen tracks mogelijk met behulp van geavanceerde filters en trefwoorden.
-3. **Dynamische vernieuwing.**
+3. **Dynamische vernieuwing.**  
     Vernieuwt automatisch de inhoud om de nieuwste tracks weer te geven die aan de criteria voldoen.
-4. **Regels aanpassen.**
+4. **Regels aanpassen.**  
     Creëer gepersonaliseerde trackcollecties door aangepaste filterregels te definiëren.
 
 
@@ -166,7 +166,30 @@ De nieuw aangemaakte **Slimme Map** zal zijn inhoud automatisch bijwerken met tr
 
 ![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+
+De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, tikt u op het *drie-puntjes menu* ernaast om toegang te krijgen tot de beschikbare acties:
+
+- **Details** — Bekijk de volledige lijst met tracks in de map.
+- **Toon alle tracks op de kaart** — Toon alle tracks uit de map op de kaart.  
+    *OPMERKING: Het laden van veel tracks kan de prestaties beïnvloeden.*
+- **Hernoemen** — Wijzig de naam van de map voor eenvoudigere identificatie.
+- **Vernieuwen** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
+- **Filter bewerken** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
+- **Exporteren** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
+- **Map verwijderen** — Verwijder de Slimme Map zonder de tracks te verwijderen.  
+    *WAARSCHUWING: Deze actie is onomkeerbaar en zal een bevestigingsbericht vragen.*
+
+U kunt ook de map openen en op het *drie-puntjes menu* in de *rechterbovenhoek* tikken om toegang te krijgen tot extra acties:
+
+- **Selecteren** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
+- **Organiseren op** — Organiseer tracks in de Slimme Map automatisch in groepen op basis van een geselecteerde parameter. Beschikbare groeperingstypen omvatten *Algemeen*, *Datum & tijd*, *Locatie*, *Snelheid*, *Hoogte & elevatie* en *Sensorgegevens*. 
+
+Sommige groeperingsparameters zijn alleen beschikbaar met een OsmAnd Pro-abonnement. Gratis parameters omvatten *Activiteit*, *Jaar van aanmaak* en *Dichtstbijzijnde stad*. Alle andere parameters zijn gemarkeerd met een <ProFeature/> label.
+
+Voor numerieke parameters (zoals afstand, duur, snelheid of hoogte) is er een *Stapgrootte instellen*-dialoog beschikbaar. Gebruik de schuifregelaar om waardebereiken voor groepering te definiëren.
+
+Voor PRO-parameters kunt u de groeperingsinstelling previewen (bijvoorbeeld de stapgrootte-selector openen en zien hoe tracks worden gegroepeerd), maar het toepassen van deze wijzigingen vereist een actief abonnement. Als u een PRO-parameter selecteert of op de Ontgrendel-knop tikt, opent het scherm Kies abonnement. Eerder toegepaste groepering blijft zichtbaar, zelfs als het abonnement verloopt, maar het bewerken of toepassen van nieuwe PRO-gebaseerde groepering vereist een actief abonnement.
 
 </TabItem>
 
@@ -174,38 +197,53 @@ De nieuw aangemaakte **Slimme Map** zal zijn inhoud automatisch bijwerken met tr
 
 ![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+
+De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, *lang tikken* op de mapnaam om toegang te krijgen tot de beschikbare acties:
+
+- **Hernoemen** — Wijzig de naam van de map voor eenvoudigere identificatie.
+- **Exporteren** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
+- **Verplaatsen** — Hiermee kunt u de map naar een andere bestaande map verplaatsen of een nieuwe aanmaken.
+- **Verwijderen** — Verwijder de Slimme Map zonder de tracks te verwijderen.  
+    *WAARSCHUWING: Deze actie is onomkeerbaar en zal een bevestigingsbericht vragen.*
+
+U kunt ook de map openen en op het icoon in de *rechterbovenhoek* tikken om toegang te krijgen tot extra acties:
+
+- **Selecteren** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
+- **Vernieuwen** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
+- **Filter bewerken** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
 
 </TabItem>
 
 </Tabs>
 
-De **Slimme map** wordt weergegeven met een uniek icoon in de mappenlijst in het Tracks-tabblad. Om de map te beheren, tikt u op het *drie-puntjes menu* ernaast (*Android*) en *lang tikken* (*iOS*) of opent u de map en gebruikt u het icoon in de rechterbovenhoek.
+<!--
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
 
-***Beschikbare Acties:***
+***Available Actions:***
 
-- **Details** — Bekijk de volledige lijst met tracks in de map.
+- **Details** — View the complete list of tracks contained in the folder.
 
-- **Toon alle tracks op de kaart** (*alleen Android*) — Toon alle tracks uit de map op de kaart.
-    *OPMERKING: Het laden van veel tracks kan de prestaties beïnvloeden.*
+- **Show all tracks on the map** (*Android only*) — Display all folder tracks on the map.  
+    *NOTE: Loading many tracks may affect performance.*
 
-- **Naam bewerken** (*Android*) / **Hernoemen** (*iOS*) — Wijzig de naam van de map voor eenvoudigere identificatie.
+- **Edit name** (*Android*) / **Rename** (*iOS*) — Change the folder name for easier identification.
 
-- **Vernieuwen** — Werk de inhoud van de map handmatig bij om ervoor te zorgen dat deze de nieuwste tracks bevat.
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
 
-- **Standaardweergave wijzigen** (*Android*) — Wijzigt de weergave van alle tracks in de map.
+- **Change default appearance** (*Android*) — Changes the display appearance of all tracks in the folder.
 
-- **Filter bewerken** — Wijzig de trackfilterinstellingen voor de huidige Slimme Map. Zie [Zoekfilter](#search-filter) voor details.
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
 
-- **Exporteren** — Exporteer alle tracks in de Slimme Map via de functie [Importeren/Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties tabblad*.
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
 
-- **Map verwijderen** — Verwijder de Slimme Map zonder de tracks te verwijderen.
-    *WAARSCHUWING: Deze actie is onomkeerbaar en zal een bevestigingsbericht vragen.*
+- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
 
-- **Verplaatsen** (*iOS*) — Hiermee kunt u de map naar een andere bestaande map verplaatsen of een nieuwe aanmaken.
+- **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
 
-- **Selecteren** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
-
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+-->
 
 ## Gerelateerde Artikelen {#related-articles}
 

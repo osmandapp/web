@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -24,14 +24,15 @@ Favorieten in de Web Planner laten je belangrijke plaatsen direct op de kaart op
 
 ## Favorieten beheren {#manage-favorites}
 
-![OsmAnd Web cloud Favorieten bewerken](@site/static/img/web/favorites_new.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
 Na registratie voor een [**OsmAnd Pro**](../personal/osmand-cloud.md#login) en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) zijn je Favorieten in de Web Planner georganiseerd in mappen. Elke map groepeert opgeslagen plaatsen en biedt een reeks acties die beschikbaar zijn via het Favorietenmenu. 
 De volgende acties zijn beschikbaar:
 
 - *Op kaart tonen* - toon favorietenpunten uit de gekozen map op de kaart.
+- *Map vastmaken* - zet een map bovenaan de Favorietenlijst voor snelle toegang. Vastgemaakte mappen worden gescheiden van andere mappen. Om een map uit de bovenste sectie te verwijderen, selecteer je *Map losmaken*. De Persoonlijke map is standaard vastgemaakt.
 - *Naam wijzigen* - naam en beschrijving van favorietenmap.
-- *Delen* - opent deelopties. Je kunt kiezen wie toegang heeft tot deze map:
+- *Delen* - opent deelopties. Je kunt kiezen wie toegang heeft tot deze map.
 - *Downloaden* - download de gekozen favorietenmap.
 - *Verwijderen* - verwijder de gekozen favorietenmap.
 
@@ -53,7 +54,7 @@ Tijdens de toegangconfiguratie kunnen de volgende dialogen verschijnen:
 - *Toegang wijzigen*. Wordt weergegeven bij het overschakelen van de map naar Privé. De dialoog waarschuwt dat alle bestaande gebruikers toegang wordt ingetrokken voordat de wijziging wordt bevestigd.
 - *Toegangsaanvragen*. Wordt weergegeven bij het beheren van gebruikers in de Lijst in afwachting, waarmee toegangsaanvragen kunnen worden goedgekeurd of geweigerd.
 
-![OsmAnd Web cloud Favorieten bewerken](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorieten bewerken](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
 
 
 ## Favorietendetails {#favorites-details} 
@@ -62,7 +63,7 @@ Het selecteren van een favoriet opent het **Details**-paneel. Dit paneel verschi
 
 De Details-weergave biedt informatie die is gekoppeld aan de geselecteerde plaats en hangt af van de beschikbare gegevens voor die specifieke favoriet. Op zijn minst bevat het de locatie op de kaart en de geografische coördinaten. Voor plaatsen die zijn gekoppeld aan OpenStreetMap-objecten of verrijkte bronnen, kunnen aanvullende metadata worden weergegeven, zoals namen, categorieën, identificatoren of referentielinks (bijvoorbeeld Wikipedia- of Wikidata-links). 
 
-![Web Favorietendetails](@site/static/img/web/favorites_details.png)
+![Web Favorites Details](@site/static/img/web/favorites_details.png)
 
 
 ## Favorietenacties {#favorites-actions}
@@ -75,7 +76,7 @@ Om een bestaande favoriet te bewerken, klik je op het favorietpunt direct op de 
 
 De bewerkingsinterface laat je de hoofdeigenschappen van de favoriet wijzigen, zoals de naam, het pictogram, de kleur en de beschrijving. De lay-out en beschikbare velden zijn consistent met de bewerkingservaring in de [OsmAnd mobiele app](../personal/favorites.md#create), en bieden een vertrouwde workflow over platforms.
 
-![OsmAnd Web Favorieten toevoegen](@site/static/img/web/web_favorites_add.png)
+![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
 
 
 ### Andere acties {#other-actions}

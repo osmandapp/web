@@ -1,5 +1,5 @@
 ---
-source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
 sidebar_position: 11
 title:  Routes
 ---
@@ -253,13 +253,13 @@ In het **contextmenu** kunt u:
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/route_info_1_andr.png)
+![Route info](@site/static/img/map/route_info_1_andr_new.png) ![Route info](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/route_info_1_ios.png)
+![Route info](@site/static/img/map/route_info_1_ios_new.png) ![Route info](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -276,6 +276,11 @@ De volgende informatie is zichtbaar in het contextmenu:
 
 Om de grafiek van de hoogte, helling of hoogtedetails voor een geselecteerde route te bekijken, tikt u eenvoudig op een van de volgende waarden in het contextmenu: **Afstand**, **Stijging**, **Daling** of **Hoogte**.
 
+U kunt ook het tabblad *Track* openen en overschakelen naar de weergave *Hoogte* om de volledige hoogtegraaf van de route te zien.
+
+**Opmerking:** Hoogtegegevens worden automatisch gegenereerd en kunnen enigszins verschillen afhankelijk van de beschikbare gegevens.
+
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -290,7 +295,8 @@ Om de grafiek van de hoogte, helling of hoogtedetails voor een geselecteerde rou
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+--> 
 
 ### Opslaan als track {#save-as-a-track}
 

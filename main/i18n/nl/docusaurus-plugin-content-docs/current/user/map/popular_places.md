@@ -1,5 +1,5 @@
 ---
-source-hash: e9993ea8b8d1473bd9bb8cb2710fc4752a83815a48b1a0393ca624a366172fe9
+source-hash: 004b4b8d94eaf093dcc696c34a008dc61bd0e4e803c5402b096e6f3105ac6e4d
 sidebar_position: 8
 title: Populaire Plaatsen
 ---
@@ -28,7 +28,7 @@ De functie **Populaire Plaatsen** in OsmAnd markeert opmerkelijke bezienswaardig
 
 Elke plaats in deze functie is gekoppeld aan een **Wikidata ID**, waarmee OsmAnd geverifieerde namen, voorbeeldafbeeldingen en links naar Wikipedia-artikelen kan weergeven. Deze tool toont **niet** alle OpenStreetMap (OSM) punten. Het is beperkt tot POI's met Wikidata-referenties.
 
-Momenteel bevat de samengestelde database wereldwijd ongeveer **50.000 tot 150.000 best beoordeelde plaatsen**, geselecteerd uit meer dan **1 miljoen** Wikidata + OSM-objecten.
+Momenteel bevat de samengestelde database wereldwijd ongeveer **50.000 tot 150.000 top beoordeelde plaatsen**, geselecteerd uit meer dan **1 miljoen** Wikidata + OSM-objecten.
 
 :::note
 *Dit is de eerste versie van de functie Populaire Plaatsen. Feedback is welkom op [GitHub](https://github.com/osmandapp/OsmAnd)*.
@@ -60,21 +60,19 @@ Leer hoe u een Wikidata ID kunt vinden: [Wikipedia: Finding a Wikidata ID](https
 
 ## Hoe te gebruiken {#how-to-use}
 
-<InfoAndroidOnly/>
-
 De functie **Populaire Plaatsen** omvat zowel een samengestelde lijst van nabijgelegen bezienswaardigheden als een laag van op Wikipedia gebaseerde POI's op de kaart.
 
 Er zijn twee hoofdzakelijke manieren om toegang te krijgen tot deze functie:
 
 - **Gratis versie**  
   Toegang via [Zoeken](#explore-in-search) om nabijgelegen plaatsen in een lijstweergave te verkennen.  
-  *<Translate android="true" ids="android_button_seq"/>*. Ga naar: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  *<Translate android="true" ids="android_button_seq"/> alleen*. Ga naar: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
   
   Deze Verkenlijst toont populariteitsgerangschikte Wikipedia/Wikidata-plaatsen in de buurt van uw locatie en werkt online. Het toont maximaal 50 plaatsen. Omdat Verken-/Wikipedia-resultaten op basis van beoordelingen zijn gerangschikt, kan de volgorde in deze resultaten verschillen van reguliere POI-zoekopdrachten.
 
 - **Betaalde versies** *(Maps+ en OsmAnd Pro)*  
   Schakel de visuele laag in via [Kaart configureren](#enable-layer).  
-  *<Translate android="true" ids="android_button_seq"/>*. Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
+  *<Translate android="true" ids="android_button_seq"/> en iOS*. Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   In deze modus verschijnen populaire POI's direct op de kaart met miniatuurvoorbeelden en Wikipedia-inhoud.
 
@@ -98,7 +96,7 @@ Ga naar: *<Translate android="true" ids="map_widget_search,shared_string_explore
 
 </Tabs>
 
-Het gedeelte **<Translate android="true" ids="popular_places_nearby"/>** toont een scrollbare lijst van best beoordeelde bezienswaardigheden in de buurt van uw huidige locatie. Elk item bevat:
+Het gedeelte **<Translate android="true" ids="popular_places_nearby"/>** toont een scrollbare lijst van top beoordeelde bezienswaardigheden in de buurt van uw huidige locatie. Elk item bevat:
 
 - Naam van de plaats.
 - Korte beschrijving.
@@ -118,15 +116,21 @@ Om het **offline** te gebruiken, heeft u een [Maps+ of OsmAnd Pro](../purchases/
 
 ## Laag inschakelen {#enable-layer}
 
-<InfoAndroidOnly/>
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-**<Translate android="true" ids="android_button_seq"/>**. Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
 ![Menu Populaire plaatsen](@site/static/img/map/popular_places/popular_places_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Populaire plaatsen (Wikipedia)*
+
+![Menu Populaire plaatsen](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -210,7 +214,7 @@ In the Map Context menu How to access:
 <TabItem value="android" label="Android">  
 
 ![Galerijmenu – Android](@site/static/img/map/gallery_menu_android.png)
-![Galerijmenu – Android](@site/static/img/map/gallery_menu_android_1.png)
+![Galerijmenu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
@@ -223,7 +227,7 @@ In the Map Context menu How to access:
 
 </Tabs>
 
-Het **Galerijmenu** kan tot **100 afbeeldingen** weergeven die gerelateerd zijn aan het geselecteerde nuttige punt. Om deze afbeeldingen te bekijken, tikt u op **Alles tonen** (Android) / **Bekijk alles** (iOS). U kunt door alle beschikbare foto's vegen. Door kort op een foto te tikken, wordt een gedetailleerde weergave geopend met: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*.  
+Het **Galerijmenu** kan tot **100 afbeeldingen** weergeven die gerelateerd zijn aan het geselecteerde nuttige punt. Om deze afbeeldingen te bekijken, tikt u op **Alles tonen** (Android) / **Bekijk alles** (iOS). U kunt door alle beschikbare foto's vegen. Door kort op een foto te tikken, wordt een gedetailleerde weergave geopend met: *Beschrijving (tot twee regels, alleen Android)*, *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*.  
 
 Op iOS, iPadOS en macOS kunt u foto's navigeren met toetsenbordinstellingen (←/→ om tussen afbeeldingen te verplaatsen, Enter/Space om te openen).
 
@@ -233,7 +237,9 @@ U kunt ook de volgende acties uitvoeren op elke foto:
   Deel de geselecteerde afbeelding via een compatibele app die op uw apparaat is geïnstalleerd (bijv. berichten, e-mail of sociale media). De gedeelde inhoud bevat de afbeelding en de bronlink (indien beschikbaar).
 
 - **Details**  
-  Open een gedetailleerde weergave met metadata over de afbeelding, waaronder: *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*
+  Open een gedetailleerde weergave met metadata over de afbeelding, waaronder: *Beschrijving (volledige tekst, alleen Android)*, *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*
+
+  **Opmerking:** De beschrijvingstaal hangt af van de weergavetaal van de toepassing. Als de beschrijving in de geselecteerde taal niet beschikbaar is, toont OsmAnd de Engelse versie of de eerste beschikbare vertaling.
 
 - **Openen in browser**  
   Open de bronpagina van de afbeelding (meestal op [Wikimedia Commons](https://commons.wikimedia.org/)) in uw standaardbrowser. Hiermee kunt u de volledige afbeelding, licentie-informatie en gerelateerde inhoud bekijken.

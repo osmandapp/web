@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: Kaart Contextmenu
 ---
@@ -197,7 +197,7 @@ Dit deel bevat een deel van de beschrijving uit een [Wikipedia-artikel](../plugi
 
 <TabItem value="ios" label="iOS">
 
-![Alternatieve namen Android 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatieve namen Android](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatieve namen iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Alternatieve namen iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ Kenmerken van de weergave van alternatieve namen:
 
 <TabItem value="ios" label="iOS">
 
-![Polygooninformatie Android](@site/static/img/map/polygon_information_ios.png)
+![Polygooninformatie iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -362,7 +362,7 @@ De OpenStreetMap-link biedt een directe link naar het OpenStreetMap-object waar 
 
 <TabItem value="ios" label="iOS">  
 
-![Online foto's contextmenu iOS](@site/static/img/map/online_photo_ios.png)
+![Online foto's contextmenu iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Online foto's contextmenu iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -504,15 +504,13 @@ Lees hier meer over [markeringen](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-| Versies tot Android 14 | 14+ Android |
-|:------------|:---------------|
-| ![Actie delen Android](@site/static/img/map/action_share_1_andr.png) | ![Actie delen Android](@site/static/img/map/action_share_2_andr.png) |
+![Actie delen Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Actie delen iOS](@site/static/img/map/action_share_1_ios.png)
+![Actie delen iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -523,6 +521,8 @@ De OsmAnd-app stelt u in staat om **<Translate android="true" ids="shared_string
 Beschikbare opties om de locatie te delen:
 
 - ***Verzenden***. Verzendt tekst via apps die beschikbaar zijn op uw apparaat. Bevat alle informatie over de locatie: de naam van Mijn locatie of de naam van de geselecteerde POI, adres, coördinaten en geolocatie als een link.
+- ***Link kopiëren***. Kopieert een link naar de geselecteerde locatie naar het klembord.  
+Voorbeeld: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Kopiëren***. Kopieert alle locatie-informatie (naam van Mijn locatie of naam van de geselecteerde POI, adres, coördinaten en geolocatie als een link) naar het klembord.  
 - ***Adres kopiëren***. Kopieert alleen adresinformatie naar het klembord.
 - ***POI-naam kopiëren***. Kopieert alleen de POI-naam of het adres als er geen naam is naar het klembord.

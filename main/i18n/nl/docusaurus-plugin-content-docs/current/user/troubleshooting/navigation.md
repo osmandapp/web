@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title:  Navigatie
 ---
@@ -47,7 +47,7 @@ Soms kan OsmAnd onverwachte navigatieresultaten weergeven. In plaats van het weg
 
 3. Schakel routeberekeningsengine om.
 - Schakel de plugin in: *Menu* → *Plugins* → *OsmAnd ontwikkeling*.
-- Open vervolgens *Menu* → *Instellingen* → *App-profiel* → *Navigatie-instellingen* → *Routeparameters* → *Ontwikkeling* → *Routetype* en schakel *HH × C++* ↔ *HH × Java* om (u kunt ook A* classic of A* 2-fase proberen).
+- Open vervolgens *Menu* → *Instellingen* → *App-profiel* → *Navigatie-instellingen* → *Routeparameters* → *Ontwikkeling* → *Routing type* en schakel *HH × C++* ↔ *HH × Java* om (u kunt ook A* classic of A* 2-fase proberen).
 
 4. Als laatste redmiddel.
 - Herinstalleer de app en download kaarten opnieuw (helpt bij aanhoudende verborgen conflicten).
@@ -86,14 +86,18 @@ Om problemen met verkeerde of suboptimale routes op te sporen, kunt u een nieuw 
 
 ## Weginformatie {#road-information}
 
-### OsmAnd toont slechts enkele flitspalen {#osmand-only-shows-some-speed-cams}
+### Waarom worden sommige flitspaalwaarschuwingen niet geactiveerd {#why-some-speed-camera-warnings-may-not-be-triggered}
 
 Vanwege de geodata afkomstig van het OpenStreetMap-project zijn er momenteel twee methoden waarop flitspalen in de ruwe OSM-data zijn geïntegreerd:
 
-- Een punt (in OSM-terminologie een "node" genoemd) van een weg is getagd met "highway=speed_camera", zie OSM wiki op [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Een punt (in OSM-terminologie een "node" genoemd) van een weg is getagd met `highway=speed_camera`, zie OSM wiki op [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
 - Een groep OSM-data-elementen wordt samengevoegd in een zogenaamde "relation" die meer elementen bevat dan een enkele node om de richting te beschrijven die door de flitspaal wordt gedekt. Zie [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Momenteel kan OsmAnd alleen gebruikmaken van de elementen die uit een enkele node bestaan. Het analyseren van relaties komt in een toekomstige release.
+OsmAnd ondersteunt beide methoden. Flitspaalwaarschuwingen kunnen worden geactiveerd voor camera's die zijn gemapt met `highway=speed_camera` evenals voor camera's die zijn gedefinieerd via een `enforcement` relation.
+
+Als een flitspaalnode direct op de weg is geplaatst, is de tag `highway=speed_camera` voldoende voor OsmAnd om deze te detecteren en waarschuwingen weer te geven.
+
+Als de camera naast de weg is gemapt in plaats van erop, moet deze worden verbonden met de weg met behulp van een `enforcement` relation. Anders kan OsmAnd de camera mogelijk niet associëren met de weg en wordt de waarschuwing niet geactiveerd.
 
 
 ## Spraaknavigatie {#voice-navigation}

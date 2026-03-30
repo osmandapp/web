@@ -1,5 +1,5 @@
 ---
-source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  Plugins
 ---
@@ -84,7 +84,7 @@ OsmAnd Plugins kunnen deze functiegroepen uitbreiden: **Lagen**, **Widgets**, **
 |[Mapillary](#mapillary) | [Kaartlaag](../plugins/mapillary.md#map-layer), [Contextmenu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Externe sensoren](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Voertuigstatistieken](#vehicle-metrics)  | [Aangepaste instellingen](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Sterrenkijker](#star-watcher)  | [Scherm](../plugins/starwatcher.md#star-map-screen), [Contextmenu](../plugins/starwatcher.md#celestial-object-info) |
+|[Astronomie](#astronomy)  | [Scherm](../plugins/astronomy.md#star-map-screen), [Contextmenu](../plugins/astronomy.md#context-menu) |
 |[Toegankelijkheid](#accessibility) 🤖  | [Aangepaste instellingen](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd ontwikkeling](#osmand-development) | [Aangepaste instellingen](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Kaartlaag](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Contextmenu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
@@ -194,9 +194,9 @@ Verbind externe sensoren om hun gegevens in OsmAnd weer te geven en de informati
 
 Verbind een OBD-II-scanner om voertuiggegevens in OsmAnd weer te geven en de informatie op te slaan in ritregistraties.  
 
-### [Sterrenkijker](./starwatcher.md) {#star-watcher}
+### [Astronomie](./astronomy.md) {#astronomy}
 
-Sterrenkijker toont een interactieve sterrenhemel-overlay met sterren, sterrenbeelden, de zon, de maan en planeten. Het helpt u hemellichamen boven uw huidige locatie te identificeren, hun banen te previewen voor een geselecteerde datum en tijd, en sterrenkijk-sessies te plannen met behulp van ingebouwde tijdregelaars en weergave-opties.
+De Astronomie-plugin toont een interactieve sterrenhemel-overlay met sterren, sterrenbeelden, de zon, de maan en planeten. Het helpt u hemellichamen boven uw huidige locatie te identificeren, hun banen te previewen voor een geselecteerde datum en tijd, en sterrenkijk-sessies te plannen met behulp van ingebouwde tijdregelaars en weergave-opties.
 
 ### [Toegankelijkheid](./accessibility.md) {#accessibility}
 

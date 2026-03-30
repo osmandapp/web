@@ -1,6 +1,6 @@
 ---
-source-hash: 3e42829208c8917b36961ec73fb21e320c1dcf70572f1c674c9c940e72223a0e
-sidebar_position: 8
+source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+sidebar_position: 9
 title:  Online Maps
 ---
 
@@ -69,7 +69,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 ## Hoe Rasterkaarten Voor te Bereiden {#how-to-prepare-raster-maps}
 
 :::info
-Hoofdartikel over het voorbereiden van kaarten [leest u hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Hoofdartikel over het voorbereiden van kaarten [lees hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
 Ondanks dat de plugin *Online Maps* heet, kunt u de kaarten ook zonder internetverbinding gebruiken. U hoeft alleen de delen van de kaarten (vaak tegels genoemd) op te slaan om ze later te gebruiken. Om dat te doen, downloadt u een specifieke [Map Creator tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ontwikkeld door het OsmAnd-team.
@@ -97,8 +97,8 @@ Online tegels kunnen handig zijn wanneer u slechts een klein deel van de kaart o
 
 ### Common Issues and Solutions {#common-issues-and-solutions}
 
-1. Online Maps do not appear in the Map Source menu:  
+1. Online Maps verschijnen niet in het Kaartbron-menu:  
   
-    - Verify that the Online Maps plugin is enabled: *Menu → Plugins → Online Maps*.  
-    - Ensure you have an active internet connection to access satellite imagery.  
-    - Check if the selected Online Map is downloaded or requires [additional settings](../map/raster-maps.md#layers).
+    - Controleer of de Online Maps-plugin is ingeschakeld: *Menu → Plugins → Online Maps*.  
+    - Zorg ervoor dat u een actieve internetverbinding hebt om satellietbeelden te kunnen benaderen.  
+    - Controleer of de geselecteerde Online Map is gedownload of [aanvullende instellingen](../map/raster-maps.md#layers) vereist.
