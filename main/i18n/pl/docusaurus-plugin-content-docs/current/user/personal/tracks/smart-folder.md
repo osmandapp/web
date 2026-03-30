@@ -1,8 +1,9 @@
 ---
-source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
+source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
 sidebar_position: 3
 title: Inteligentny folder (Filtr)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 ## Przegląd {#overview}
@@ -89,7 +89,7 @@ Przejdź do: *zakładka <Translate ios="true" ids="shared_string_menu,shared_str
     - Tętno, średnie.
     - Tętno, maks.
     - Kadencja rowerowa, średnia.
-    - Kadencja rowerowa, maks.
+    - Kadencja rowerowa, maks
     - Moc rowerowa, średnia.
     - Moc rowerowa, maks.
     - Temperatura, średnia.
@@ -164,48 +164,86 @@ Nowo utworzony **Inteligentny folder** automatycznie zaktualizuje swoją zawarto
 
 <TabItem value="android" label="Android">
 
-![Zarządzanie inteligentnymi folderami w Moich miejscach na Androidzie](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
+![Moje miejsca Zarządzanie inteligentnymi folderami Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Zarządzanie inteligentnymi folderami w Moich miejscach na Androidzie](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Moje miejsca Zarządzanie inteligentnymi folderami na Androidzie](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+
+**Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Trasy. Aby zarządzać folderem, dotknij ikony *menu z trzema kropkami* obok niego, aby uzyskać dostęp do dostępnych działań:
+
+- **Szczegóły** — Wyświetl pełną listę tras zawartych w folderze.
+- **Pokaż wszystkie trasy na mapie** — Wyświetl wszystkie trasy z folderu na mapie.  
+    *UWAGA: Ładowanie wielu tras może wpłynąć na wydajność.*
+- **Zmień nazwę** — Zmień nazwę folderu w celu łatwiejszej identyfikacji.
+- **Odśwież** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze trasy.
+- **Edytuj filtr** — Zmodyfikuj ustawienia filtra tras dla bieżącego inteligentnego folderu. Zobacz [Filtr wyszukiwania](#search-filter), aby uzyskać szczegółowe informacje.
+- **Eksportuj** — Eksportuj wszystkie trasy z inteligentnego folderu za pomocą funkcji [Import/Eksport](../../personal/import-export.md). Zostaniesz przekierowany do *Menu → Ustawienia → zakładka Działania*.
+- **Usuń folder** — Usuń inteligentny folder bez usuwania jego tras.  
+    *OSTRZEŻENIE: Ta czynność jest nieodwracalna i spowoduje wyświetlenie komunikatu z prośbą o potwierdzenie.*
+
+Możesz również otworzyć folder i dotknąć ikony *menu z trzema kropkami* w prawym górnym rogu, aby uzyskać dostęp do dodatkowych działań:
+
+- **Wybierz** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
+- **Organizuj według** — Automatycznie organizuj trasy w inteligentnym folderze w grupy na podstawie wybranego parametru. Dostępne typy grupowania obejmują *Ogólne*, *Data i czas*, *Lokalizacja*, *Prędkość*, *Wysokość i elewacja* oraz *Dane z czujników*. 
+
+Niektóre parametry grupowania są dostępne tylko z subskrypcją OsmAnd Pro. Darmowe parametry obejmują *Aktywność*, *Rok utworzenia* i *Najbliższe miasto*. Wszystkie inne parametry są oznaczone etykietą <ProFeature/>.
+
+Dla parametrów numerycznych (takich jak dystans, czas trwania, prędkość lub wysokość) dostępny jest dialog *Ustaw rozmiar kroku*. Użyj suwaka, aby zdefiniować zakresy wartości dla grupowania.
+
+Dla parametrów PRO możesz podglądać konfigurację grupowania (na przykład, otworzyć selektor rozmiaru kroku i zobaczyć, jak trasy są grupowane), ale zastosowanie tych zmian wymaga aktywnej subskrypcji. Jeśli wybierzesz parametr PRO lub dotkniesz przycisku Odblokuj, otworzy się ekran Wybierz plan. Wcześniej zastosowane grupowanie pozostaje widoczne nawet po wygaśnięciu subskrypcji, ale edycja lub zastosowanie nowego grupowania opartego na PRO wymaga aktywnej subskrypcji.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Zarządzanie inteligentnymi folderami w Moich miejscach na iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Moje miejsca Zarządzanie inteligentnymi folderami iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Zarządzanie inteligentnymi folderami w Moich miejscach na iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Moje miejsca Zarządzanie inteligentnymi folderami na iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+
+**Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Trasy. Aby zarządzać folderem, wykonaj *długie dotknięcie* nazwy folderu, aby uzyskać dostęp do dostępnych działań:
+
+- **Zmień nazwę**— Zmień nazwę folderu w celu łatwiejszej identyfikacji.
+- **Eksportuj** — Eksportuj wszystkie trasy z inteligentnego folderu za pomocą funkcji [Import/Eksport](../../personal/import-export.md). Zostaniesz przekierowany do *Menu → Ustawienia → zakładka Działania*.
+- **Przenieś** — Umożliwia przeniesienie folderu do innego istniejącego folderu lub utworzenie nowego.
+- **Usuń** — Usuń inteligentny folder bez usuwania jego tras.  
+    *OSTRZEŻENIE: Ta czynność jest nieodwracalna i spowoduje wyświetlenie komunikatu z prośbą o potwierdzenie.*
+
+Możesz również otworzyć folder i dotknąć ikony w prawym górnym rogu, aby uzyskać dostęp do dodatkowych działań:
+
+- **Wybierz** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
+- **Odśwież** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze trasy.
+- **Edytuj filtr** — Zmodyfikuj ustawienia filtra tras dla bieżącego inteligentnego folderu. Zobacz [Filtr wyszukiwania](#search-filter), aby uzyskać szczegółowe informacje.
 
 </TabItem>
 
 </Tabs>
 
-**Inteligentny folder** jest wyświetlany z unikalną ikoną na liście folderów w zakładce Trasy. Aby zarządzać folderem, dotknij *menu z trzema kropkami* obok niego (*Android*) i wykonaj *długie dotknięcie* (*iOS*) lub otwórz folder i użyj ikony w prawym górnym rogu.
+<!--
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
 
-***Dostępne działania:***
+***Available Actions:***
 
-- **Szczegóły** — Wyświetl pełną listę tras zawartych w folderze.
+- **Details** — View the complete list of tracks contained in the folder.
 
-- **Pokaż wszystkie trasy na mapie** (*tylko Android*) — Wyświetl wszystkie trasy z folderu na mapie.  
-    *UWAGA: Ładowanie wielu tras może wpłynąć na wydajność.*
+- **Show all tracks on the map** (*Android only*) — Display all folder tracks on the map.  
+    *NOTE: Loading many tracks may affect performance.*
 
-- **Edytuj nazwę** (*Android*) / **Zmień nazwę** (*iOS*) — Zmień nazwę folderu w celu łatwiejszej identyfikacji.
+- **Edit name** (*Android*) / **Rename** (*iOS*) — Change the folder name for easier identification.
 
-- **Odśwież** — Ręcznie zaktualizuj zawartość folderu, aby upewnić się, że zawiera najnowsze trasy.
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
 
-- **Zmień domyślny wygląd** (*Android*) — Zmienia wygląd wyświetlania wszystkich tras w folderze.
+- **Change default appearance** (*Android*) — Changes the display appearance of all tracks in the folder.
 
-- **Edytuj filtr** — Zmodyfikuj ustawienia filtra tras dla bieżącego inteligentnego folderu. Zobacz [Filtr wyszukiwania](#search-filter), aby uzyskać szczegółowe informacje.
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
 
-- **Eksportuj** — Eksportuj wszystkie trasy z inteligentnego folderu za pomocą funkcji [Import/Eksport](../../personal/import-export.md). Zostaniesz przekierowany do *Menu → Ustawienia → zakładka Działania*.
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
 
-- **Usuń folder** — Usuń inteligentny folder bez usuwania jego tras.  
-    *OSTRZEŻENIE: Ta czynność jest nieodwracalna i spowoduje wyświetlenie komunikatu z prośbą o potwierdzenie.*
+- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
 
-- **Przenieś** (*iOS*) — Umożliwia przeniesienie folderu do innego istniejącego folderu lub utworzenie nowego.
+- **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
 
-- **Wybierz** — Użyj [Trybu wyboru](./manage-tracks.md#selection-mode) do wykonania określonych działań na trasach w folderze.
-
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+-->
 
 ## Powiązane artykuły {#related-articles}
 

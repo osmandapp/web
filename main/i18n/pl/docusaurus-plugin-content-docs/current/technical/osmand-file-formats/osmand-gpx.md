@@ -1,5 +1,5 @@
 ---
-source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
+source-hash: 402ce29cb8352ebd02df5230b886dc88937640fd48f18229a66ec9689b4e036c
 sidebar_position: 2
 ---
 
@@ -36,6 +36,11 @@ Pliki GPX w OsmAnd organizują dane hierarchicznie w następujące elementy:
 - `<rte>` - reprezentuje trasy, w tym punkty trasy i punkty kluczowe.
 - `<wpt>` - reprezentuje pojedyncze punkty trasy.
 
+#### Zachowanie importu GPX
+
+Podczas importowania pliku GPX OsmAnd tworzy pojedynczy obiekt śladu na podstawie pliku:
+- Nazwa importowanego śladu jest pobierana z nazwy pliku GPX. Element `<name>` wewnątrz `<trk>` nie jest używany jako główna nazwa śladu podczas importu.
+- Jeśli plik GPX zawiera wiele elementów `<trk>`, OsmAnd importuje je jako segmenty tego samego śladu. W takim przypadku wartości `<name>` mogą być używane jako etykiety dla odpowiednich segmentów w obrębie śladu.
 
 ## Dostosowywanie śladu {#track-customization}
 
@@ -46,10 +51,10 @@ W tej sekcji opisano, jak OsmAnd wyświetla ślady na mapie oraz dostępne opcje
 | Nazwa tagu | Opis / Wartości |
 |:----------------------------------------|:---------|
 | `<color>`                                 | - Definiuje kolor linii śladu na mapie.  <br/>  - *Ciąg znaków:* Kod koloru HEX `#RRGGBB` lub `#AARRGGBB` |
-| `<width>`                                 | - Określa szerokość linii śladu. <br/>  - *Ciąg znaków:* „thin” (cienka), „medium" (średnia), „bold” (pogrubiona) (zdefiniowane przez atrybut „currentTrackWidth”) lub liczba całkowita (1-24) |
+| `<width>`                                 | - Określa szerokość linii śladu. <br/>  - *Ciąg znaków:* `„thin”`, `„medium"`, `„bold”` (zdefiniowane przez atrybut „currentTrackWidth”) lub liczba całkowita (1-24) |
 | `<show_arrows>`                           | - Włącza lub wyłącza strzałki kierunku wzdłuż śladu. <br/> - *Wartość logiczna:* `"true"` / `"false"` |
 | `<show_start_finish>`                     | - Pokazuje lub ukrywa znaczniki początku i końca śladu. <br/> - *Wartość logiczna:* `"true"` / `"false"` |
-| `<split_type>`                            | - Określa typ segmentacji śladu. <br/> - *Ciąg znaków:* `"no_split"` (bez podziału), `"distance"` (odległość), `"time"` (czas) |
+| `<split_type>`                            | - Określa typ segmentacji śladu. <br/> - *Ciąg znaków:* `"no_split"`, `"distance"`, `"time"` |
 | `<split_interval>`                        | - Ustawia interwał segmentacji śladu w oparciu o wybrany typ. <br/> - *Liczba zmiennoprzecinkowa:* Liczba całkowita (metry dla `"distance"`, sekundy dla `"time"`) |
 | `<line_3d_visualization_by_type>`         | - Określa typ wizualizacji 3D dla śladu. <br/> - *Ciąg znaków:* `"none"`, `"altitude"`, `"shared_string_speed"`, `"map_widget_ant_heart_rate"`, `"map_widget_ant_bicycle_cadence"`, `"map_widget_ant_bicycle_power"`, `"shared_string_temperature"`, `"shared_string_speed"`, `"fixed_height"` |
 | `<line_3d_visualization_wall_color_type>` | - Definiuje typ koloru ściany dla wizualizacji 3D. <br/> - *Ciąg znaków:* `"none"`, `"solid"`, `"downward_gradient"`, `"upward_gradient"`, `"altitude"`, `"slope"`, `"speed"` |
@@ -106,8 +111,8 @@ Poniższe tagi kontrolują wygląd ikon punktów trasy w OsmAnd:
 | Tag GPX | Domyślnie | Cel |
 |:-------------|:----------|:-----------|
 | `<icon>`       | *(brak)*    | Określa ikonę dla punktu trasy (np. `historic_castle`). |
-| `<color>`      | `"czerwony"`     | Ustawia kolor ikony za pomocą kodu HEX (np. `#FF0000`) lub nazwy koloru (np. `"blue"`). |
-| `<background>` | `"koło"`  | Definiuje kształt tła ikony. Możliwe wartości: `"circle"`, `"square"`, `"octagon"`. |
+| `<color>`      | `"red"`     | Ustawia kolor ikony za pomocą kodu HEX (np. `#FF0000`) lub nazwy koloru (np. `"blue"`). |
+| `<background>` | `"circle"`  | Definiuje kształt tła ikony. Możliwe wartości: `"circle"`, `"square"`, `"octagon"`. |
 
 ***Przykład:***
 
@@ -285,7 +290,7 @@ Każdy `<trkpt>` (punkt śladu) w pliku GPX może zawierać dodatkowe atrybuty d
 
 ## Obliczona trasa (trasy) {#calculated-routes}
 
-W **OsmAnd** możesz obliczyć trasę i zapisać wszystkie dane w pliku GPX, dzięki czemu później wszystkie funkcje nawigacji będą dostępne jako nawigacja po trasie GPX. Plik GPX w **OsmAnd** będzie zawierał segmenty trasy, zakręty, nazwy dróg, typy dróg, ograniczenia itp. Trasę można całkowicie przywrócić, tak jakby została właśnie zbudowana, nawet w przypadku braku odpowiednich map offline.
+W **OsmAnd** możesz obliczyć trasę i zapisać wszystkie dane w pliku GPX, dzięki czemu później wszystkie funkcje nawigacji będą dostępne jako nawigacja po trasie GPX, więc GPX w **OsmAnd** będzie zawierał segmenty trasy, zakręty, nazwy dróg, typy dróg, ograniczenia itp. Trasę można całkowicie przywrócić, tak jakby została właśnie zbudowana, nawet w przypadku braku odpowiednich map offline.
 
 Plik GPX może zawierać kilka tras. Każda z nich znajduje się w określonym segmencie pod **trkseg** / **extensions**. Plik GPX jest zapisywany w tej formie podczas eksportowania zbudowanej trasy lub podczas zapisywania śladu składającego się z kilku oddzielnych segmentów za pomocą funkcji [**Planowanie trasy**](../../user/plan-route/create-route.md).
 
@@ -442,11 +447,11 @@ Dostosuj linie śladu za pomocą następujących tagów:
 | Tag GPX | Domyślnie | Cel |
 |:--------------------------|:--------|:---------|
 | `<name>`                  | *(brak)*  | Nazwa wyświetlana nad linią śladu.  |
-| `color`                   | `czerwony`   | Główny kolor (HEX lub tekst). |
+| `color`                   | `red`   | Główny kolor (HEX lub tekst). |
 | `colour`, `displaycolor`  | *(brak)*  | Alternatywne sposoby nadpisania `color`. |
 | `shield_waycolor`         | *(brak)*  | Nadpisanie dla koloru `color` linii śladu z tarczą. |
-| `translucent_line_colors` | `nie`    | Ustaw na `tak` dla półprzezroczystych kolorów. |
-| `width`                   | `cienka`  | Szerokość linii: `"thin"`, `"medium"`, `"bold"`, `"1-24"` lub `"roadstyle"` |
+| `translucent_line_colors` | `no`    | Ustaw na `yes` dla półprzezroczystych kolorów. |
+| `width`                   | `thin`  | Szerokość linii: `"thin"`, `"medium"`, `"bold"`, `"1-24"` lub `"roadstyle"` |
 
 **Obsługiwane kolory:** black, blue, brown, darkyellow, gray, green, lightblue, lightgreen, orange, purple, red, white, yellow.
 
@@ -516,8 +521,8 @@ Ikony punktów trasy można dostosować za pomocą następujących tagów:
 | Tag GPX | Domyślnie | Cel |
 |:-------------|:---------|:---------------------------------------------------|
 | `icon`       | *(brak)*   | Określa ikonę dla punktu trasy (używa standardowych ikon edytora punktów trasy OsmAnd). |
-| `color`      | `czerwony`    | Ustawia kolor ikony za pomocą kodu HEX (np. `#ffaa00`) lub obsługiwanej nazwy koloru (ograniczone opcje). |
-| `background` | `koło` | Definiuje kształt ikony. Obsługiwane wartości: `circle`, `square`, `octagon`. |
+| `color`      | `red`    | Ustawia kolor ikony za pomocą kodu HEX (np. `#ffaa00`) lub obsługiwanej nazwy koloru (ograniczone opcje). |
+| `background` | `circle` | Definiuje kształt ikony. Obsługiwane wartości: `circle`, `square`, `octagon`. |
 
 ***Zachowanie kształtów `background`:***
 

@@ -1,5 +1,5 @@
 ---
-source-hash: ac27ed1ce718e910c791764234a29a22c012f442f43e7c2bb3d7ccc596d6b155
+source-hash: 7d55a7e9844bd79e9d12cfb1aab50fcc8c983eb6d5d946739c9c37b589b2c88e
 sidebar_position: 1
 title:  Konfiguracja ekranu
 ---
@@ -333,10 +333,11 @@ Widżety w prawym i lewym panelu można grupować w **Strony**. Funkcja **Tryb s
     - Poprawia czytelność i maksymalizuje przestrzeń na ważne dane.
     - Szczególnie przydatne przy wyświetlaniu wielu widżetów w tym samym **wierszu**.
 
-3. **Ukrywanie etykiet tekstowych widżetów**:
+3. **Widoczność etykiet tekstowych widżetów**
 
-    - Automatycznie ukrywa etykiety tekstowe, aby zachować pełną widoczność informacji liczbowych w kompaktowych układach.
-    - Pomaga utrzymać czysty i czytelny układ widżetów, gdy przestrzeń jest ograniczona.   
+    - Widoczność etykiet tekstowych zależy od rozmiaru widżetu i lokalizacji panelu. W rozmiarach Średni i Duży etykiety są zawsze wyświetlane.
+    - W rozmiarze Mały etykiety nie są pokazywane w panelach Lewy i Prawy. W panelach Górny i Dolny etykieta może być automatycznie ukryta (gdy jest umieszczona po prawej stronie), aby zachować pełną widoczność wartości liczbowych.
+    - Nie ma oddzielnej opcji do włączania lub wyłączania etykiet tekstowych.
 
 4. **Indywidualny rozmiar dla różnych wierszy** (*dla wszystkich paneli*):
 
@@ -464,6 +465,8 @@ Możesz otworzyć ustawienia układu ekranu mapy z menu Konfiguracja ekranu, bez
 
 ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_single.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_separate.png)
 
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → Układ ekranu mapy*
+
 OsmAnd obsługuje dwa tryby układu dla ekranu mapy:
 - **Pojedynczy układ** – używa tego samego układu widżetów dla wszystkich orientacji ekranu. Ta opcja jest wybrana domyślnie.
 - **Oddzielne układy** – pozwala skonfigurować różne układy widżetów dla orientacji pionowej i poziomej.
@@ -488,7 +491,9 @@ Kopiowana jest tylko lista widżetów, a operacja dotyczy tego samego profilu.
 
 ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_wide.png) ![Układ ekranu mapy](@site/static/img/widgets/screen_layout_compact.png)
 
-Ustawienie **Układ paneli** kontroluje, jak wyświetlane są panele widżetów górny i dolny. Ta opcja jest dostępna tylko wtedy, gdy włączone są oddzielne układy.
+Ustawienie **Układ paneli** kontroluje, jak wyświetlane są panele widżetów górny i dolny. 
+
+**Uwaga:** Ta opcja jest dostępna tylko wtedy, gdy włączone są [Oddzielne układy](#single-and-separate-layouts).
 
 Możesz wybrać między dwoma trybami:
 - **Szeroki** – panele górny i dolny rozciągają się na całą szerokość ekranu.

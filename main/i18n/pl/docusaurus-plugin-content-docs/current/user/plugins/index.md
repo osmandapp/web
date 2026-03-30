@@ -1,5 +1,5 @@
 ---
-source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  Wtyczki
 ---
@@ -84,7 +84,7 @@ Wtyczki OsmAnd mogą rozszerzać następujące grupy funkcji: **Warstwy**, **Wid
 |[Mapillary](#mapillary) | [Warstwa mapy](../plugins/mapillary.md#map-layer), [Menu kontekstowe](../plugins/mapillary.md#map-context-menu) , [Widżet](../plugins/mapillary.md#mapillary-widget)|
 |[Czujniki zewnętrzne](#external-sensors) 🤖  | [Widżet](../plugins/external-sensors.md#widgets) |
 |[Metryki pojazdu](#vehicle-metrics)  | [Ustawienia niestandardowe](../plugins/vehicle-metrics#scanner-settings), [Widżet](../plugins/vehicle-metrics#widgets) |
-|[Astronomia](#star-watcher)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Menu kontekstowe](../plugins/astronomy.md#celestial-object-info) |
+|[Astronomia](#astronomy)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Menu kontekstowe](../plugins/astronomy.md#context-menu) |
 |[Dostępność](#accessibility) 🤖  | [Ustawienia niestandardowe](../plugins/accessibility.md#plugin-settings) |
 |[Rozwój OsmAnd](#osmand-development) | [Ustawienia niestandardowe](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Warstwa mapy](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widżet](../plugins/osmand-tracker.md#tracker-widget), [Menu kontekstowe](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |

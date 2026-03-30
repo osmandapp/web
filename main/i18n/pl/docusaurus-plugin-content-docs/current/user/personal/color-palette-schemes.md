@@ -1,5 +1,5 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title:  Schematy kolorów
 ---
@@ -71,6 +71,8 @@ Przejdź do: *Menu → Mapy i zasoby → Lokalne → Kolory*
 
 Pliki terenu (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiują 3 [wizualizacje terenu](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Cieniowanie wzgórz, Nachylenie* i *Wysokość*. Dla każdego typu można mieć wiele palet, na przykład domyślnie dostępna jest paleta *nachylenia lawinowego*. Zobacz artykuł [Topografia](../plugins/topography.md#default-color-scheme) po więcej szczegółów.
 
+Na Androidzie, palety dla schematów kolorów *Nachylenia* i *Wysokości* można również tworzyć lub edytować bezpośrednio w aplikacji za pomocą [edytora palety kolorów](../plugins/topography.md#modify-color-scheme). Jest to funkcja płatna <ProFeature />.
+
 ### Ślady i trasy {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +95,8 @@ Wizualizacje gradientu linii wykorzystują pliki palet (`route_<type_name>_<pale
 
 - Dla [tras](../navigation/guidance/map-during-navigation.md#color): *Prędkość (`route_speed_default.txt`), Nachylenie (`route_slope_default.txt`),* i *Wysokość (altitude) (`route_elevation_default.txt`)*.
 - Dla [śladów GPX](../map/tracks/appearance#track-colors-in-gpx-files): *Prędkość, Nachylenie, Maks. prędkość (`route_maxspeed_default.txt`)* i *Wysokość (altitude)*, lub informacje z *czujników zewnętrznych*.
+
+Na Androidzie, palety można również tworzyć lub edytować bezpośrednio w aplikacji za pomocą [edytora palety kolorów](../map/tracks/appearance.md#color-palette-editor). Jest to funkcja płatna <ProFeature />.
 
 ### Ulubione i punkty trasy {#favorites-waypoints}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
+source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
 sidebar_position: 2
 title:  Interakcja z mapą
 ---
@@ -17,8 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-W tym artykule wyjaśniono, jak dostosowywać mapę i wchodzić z nią w interakcje za pomocą różnych przycisków i gestów. Opisano w nim, jak obracać, powiększać, dostosowywać kąt widzenia i zmieniać kąt widzenia mapy, obracać ją ręcznie lub automatycznie za pomocą kompasu lub zgodnie z namiarem.
-
+W tym artykule wyjaśniono, jak dostosowywać mapę i wchodzić z nią w interakcje za pomocą różnych przycisków i gestów. Opisano w nim, jak obracać, powiększać, dostosowywać kąt widzenia i zmieniać kąt widzenia mapy, obracać ją ręcznie lub automatycznie za pomocą kompasu lub zgodnie z namiar.
 
 ## Map Movement {#map-movement}
 
@@ -216,6 +215,8 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 Globe View is currently available only when:
 - The [Development plugin](../plugins/development.md) is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+- The [Topography plugin](../plugins/topography.md) is enabled.  
+Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - The [Map rendering engine](../personal/global-settings.md#map-rendering-engine) is set to Version 2 (OpenGL).  
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 

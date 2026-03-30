@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: Menu kontekstowe mapy
 ---
@@ -197,7 +197,7 @@ Ta część zawiera fragment opisu z [artykułu Wikipedii](../plugins/wikipedia.
 
 <TabItem value="ios" label="iOS">
 
-![Alternatywne nazwy iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatywne nazwy iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatywne nazwy iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Alternatywne nazwy iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ Cechy wyświetlania alternatywnych nazw:
 
 <TabItem value="ios" label="iOS">
 
-![Informacje o poligonie iOS](@site/static/img/map/polygon_information_ios.png)
+![Informacje o poligonie iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -362,7 +362,7 @@ Link OpenStreetMap zapewnia bezpośredni link do obiektu OpenStreetMap, gdzie mo
 
 <TabItem value="ios" label="iOS">  
 
-![Menu kontekstowe Zdjęcia online iOS](@site/static/img/map/online_photo_ios.png)
+![Menu kontekstowe Zdjęcia online iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Menu kontekstowe Zdjęcia online iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -504,15 +504,13 @@ Przeczytaj więcej o [znacznikach tutaj](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-| Wersje do Androida 14 | Android 14+ |
-|:------------|:---------------|
-| ![Akcja Udostępnij Android](@site/static/img/map/action_share_1_andr.png) | ![Akcja Udostępnij Android](@site/static/img/map/action_share_2_andr.png) |
+![Akcja Udostępnij Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Akcja Udostępnij iOS](@site/static/img/map/action_share_1_ios.png)
+![Akcja Udostępnij iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -523,6 +521,8 @@ Aplikacja OsmAnd pozwala na **<Translate android="true" ids="shared_string_share
 Dostępne opcje udostępniania lokalizacji:
 
 - ***Wyślij***. Wysyła tekst za pośrednictwem aplikacji dostępnych na Twoim urządzeniu. Zawiera wszystkie informacje o lokalizacji: nazwę Mojej lokalizacji lub nazwę wybranego POI, adres, współrzędne i geolokalizację jako link.
+- ***Kopiuj link***. Kopiuje link do wybranej lokalizacji do schowka.  
+Przykład: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Kopiuj***. Kopiuje wszystkie informacje o lokalizacji (nazwę Mojej lokalizacji lub nazwę wybranego POI, adres, współrzędne i geolokalizację jako link) do schowka.  
 - ***Kopiuj adres***. Kopiuje tylko informacje o adresie do schowka.
 - ***Kopiuj nazwę POI***. Kopiuje tylko nazwę POI lub adres, jeśli nie ma nazwy, do schowka.

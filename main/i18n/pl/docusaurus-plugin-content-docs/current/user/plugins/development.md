@@ -1,5 +1,5 @@
 ---
-source-hash: 89baba1fc250f5fae8be3a075cdb603e67a8fdc5619d13653d39e5efe07cabcd
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
 sidebar_position: 11
 title:  Wtyczka deweloperska OsmAnd
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Funkcje testowe aplikacji są zebrane we wtyczce deweloperskiej OsmAnd. Używaj ich na własne ryzyko.
 
-Wtyczka deweloperska OsmAnd pozwala wypróbować nowe funkcje aplikacji lub skonfigurować OsmAnd do celów testowych: symulować trasy nawigacyjne, sprawdzać wydajność renderowania ekranu itp. Wtyczka jest przeznaczona dla *deweloperów i doświadczonych użytkowników* i nie jest wymagana do codziennego korzystania z aplikacji.
+Wtyczka deweloperska OsmAnd pozwala wypróbować nowe funkcje aplikacji lub skonfigurować OsmAnd do celów testowych: symulować trasy nawigacyjne, sprawdzać wydajność renderowania ekranu itp. Wtyczka jest przeznaczona dla *deweloperów i doświadczonych użytkowników* i nie jest wymagana do codziennego korzystania z aplikacji.  
 
 
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
@@ -53,7 +53,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 <TabItem value="ios" label="iOS">  
 
-![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Ustawienia deweloperskie iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 - **Symuluj swoją pozycję** (*Android* / *iOS*). [Symuluje](#gpx-track-simulation) lokalizację i ruch przy użyciu śladu GPX.
 - **Tryb oszczędzania baterii** (*Android* / *iOS*). To ustawienie zmniejsza [częstotliwość odświeżania ekranu](#map-rendering-fps-widget) o 20 klatek na sekundę, aby pomóc oszczędzać energię baterii podczas korzystania z aplikacji.
 - **Użyj ikon pozycji lokalizacji 3D** (*iOS*). Pozwala wybrać ikonę 3D dla [ikony Moja lokalizacja](../personal/profiles.md#my-location-appearance).
-- **Symuluj dane OBD** (*Android*). Umożliwia symulację użycia [skanera OBD](./vehicle-metrics.md).
-- **Informacje debugowania wydajności** (*Android*). Wyświetla wydajność renderowania i nawigacji.
+- **Symuluj dane OBD** (*Android* / *iOS*). Umożliwia symulację użycia [skanera OBD](./vehicle-metrics.md).
+- **Informacje debugowania wydajności** (*Android* / *iOS*). Wyświetla wydajność renderowania i nawigacji.
 - **Wyłącz warstwy mapy** (*Android*). Wyłącza wszystkie warstwy mapy nad mapą wektorową (wymagany restart).
 - **Bufor Logcat** (*Android*). Sprawdzaj i udostępniaj szczegółowe logi aplikacji.  
 - **Pokaż komunikat o naciśniętym klawiszu** (*Android*). Wyświetla komunikat o klawiszu.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Namiar to kierunek kompasu od bieżącej pozycji do zamierzonego celu. Wpływa na *[nagrywanie trasy](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Kurs to kierunek kompasu od bieżącej pozycji w stronę północy geograficznej. Ta opcja jest domyślnie włączona. Wpływa na *[nagrywanie trasy](../plugins/trip-recording.md)*.
+- **Włącz MSAA** (*Android*) / **Włącz MSAA dla CarPlay** (*iOS*). Włącza wielopróbkowe wygładzanie krawędzi w celu wygładzenia renderowania mapy. Poprawia jakość wizualną [ikony Moja lokalizacja](../personal/profiles.md#my-location-appearance) i linii trasy poprzez redukcję postrzępionych krawędzi. Na Androidzie ta opcja wpływa na renderowanie mapy na urządzeniu oraz podczas używania [Android Auto](../navigation/auto-car.md). Na iOS dotyczy tylko [CarPlay](../navigation/car-play.md).
 
 
 ### Testowanie aplikacji {#application-testing}

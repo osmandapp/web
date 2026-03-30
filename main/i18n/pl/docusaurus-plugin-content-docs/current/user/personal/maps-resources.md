@@ -1,5 +1,5 @@
 ---
-source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
+source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
 sidebar_position: 2
 title:  Mapy i zasoby
 ---
@@ -82,6 +82,8 @@ Należy pamiętać, że comiesięczne aktualizacje map są traktowane jako kolej
 - [Wikipedia](../plugins/wikipedia.md). Mapa wektorowa z artykułami [Wikipedii](https://wikipedia.org/) oznaczonymi geograficznie, dotyczącymi punktów orientacyjnych lub dodatkowymi informacjami o miejscach.
 - [Wikivoyage](../plan-route/travel-guides.md). Dostarcza mapy wektorowe z wirtualnymi przewodnikami turystycznymi, oferując użytkownikom cenne informacje, rekomendacje i wskazówki.
 - [Prognoza pogody](../plugins/weather.md). Informacje o pogodzie na mapie ułatwiające planowanie trasy.
+
+Bez aktywnej subskrypcji te typy map pokazują przycisk *Pobierz* zamiast Pobierz. Dotknij *Pobierz*, aby otworzyć ekran subskrypcji i wybrać plan.
 
 
 ## Menu Pobrane {#downloads-menu}

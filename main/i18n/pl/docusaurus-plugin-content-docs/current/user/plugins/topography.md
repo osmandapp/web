@@ -1,5 +1,5 @@
 ---
-source-hash: 68173c6333cbab1e4155aebd0de4f93a471b00f6d3ab7f48ef3872e2d8b54c54
+source-hash: db5100e593e959bddd7c050a00a3702808a3d2eb1673ab3d7afe8c6151f814cc
 sidebar_position: 16
 title: Topografia
 ---
@@ -143,6 +143,10 @@ W przypadku [**Linii konturowych**](#contour-lines) należy określić, w jakich
 
 ## Linie konturowe {#contour-lines}
 
+:::tip Zakup
+Linie konturowe to [płatna funkcja](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -181,6 +185,10 @@ Podczas korzystania z [Silnika renderowania mapy](../personal/global-settings.md
 
 
 ## Teren {#terrain}
+
+:::tip Zakup
+Teren to [płatna funkcja](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,17 +263,30 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 
 <TabItem value="android" label="Android">
 
-![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
+
+- Z [predefiniowanej listy](#default-color-scheme).
+- Z plików palet kolorów utworzonych na komputerze. Niestandardowe pliki można dodać do OsmAnd za pomocą [narzędzia importu/eksportu](../personal/import-export.md).
+- Z palet utworzonych lub edytowanych bezpośrednio w aplikacji.
+
+Niestandardowe palety opierają się na skalach kolorów, gdzie każdy kolor odpowiada konkretnej wartości danych terenowych, takiej jak *Wysokość* lub *Nachylenie*.  
+Możesz:
+
+- zdefiniować kroki wartości (poziomy wysokości lub procenty nachylenia);
+- przypisać kolory do każdego kroku;
+- dodać lub usunąć kroki, aby dostosować skale kolorów.
+
+**Uwaga:** Cieniowanie wzgórz wykorzystuje stały algorytm cieniowania i nie obsługuje niestandardowych palet kolorów.
+
+Aby uzyskać zaawansowaną personalizację palet za pomocą plików palet, zobacz artykuł [Schematy kolorów](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modyfikuj schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 
@@ -274,6 +295,9 @@ Funkcja *Modyfikuj schemat kolorów* pozwala wybrać schemat kolorów:
 
 Możesz [edytować te palety](../personal/color-palette-schemes.md#palette-modify), aby spersonalizować wygląd map i tras.
 
+</TabItem>
+
+</Tabs>
 
 ### Widoczność {#visibility}
 
@@ -318,6 +342,71 @@ Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topograf
 
 - Przejdź do [Dodaj akcję](../widgets/quick-action.md#custom-buttons): *Menu → Konfiguruj ekran → Przyciski niestandardowe → Szybka akcja → Dodaj akcję → Konfiguruj mapę*.
 - Dodaj jeden lub więcej przycisków Szybkiej akcji, aby zmienić widoczność określonej warstwy topograficznej.
+
+
+## Budynki 3D {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Budynki 3D* 
+
+![Budynki 3D](@site/static/img/map/3d_buildings_1_new_2.png) ![Budynki 3D](@site/static/img/map/3d_buildings_2_new.png) 
+
+Funkcja **Budynki 3D** wyświetla budynki jako objętościowe modele 3D zamiast płaskich kształtów. Budynki są generowane z [danych OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), wykorzystując informacje o wysokości z tagów takich jak `height` i `building:levels`, jeśli są dostępne. Budynki 3D są pokazywane tylko na wyższych poziomach powiększenia (widok miasta/ulicy), gdzie można wyświetlić poszczególne budynki.  
+
+Użyj głównego przełącznika, aby włączyć lub wyłączyć renderowanie 3D budynków. Po włączeniu ustawienie wyświetla również bieżący [Poziom szczegółowości](#performance) (Niski lub Wysoki) pod głównym przełącznikiem. Aby zobaczyć budynki w 3D, przechyl mapę, umieszczając dwa palce na ekranie i przesuwając w górę. W tym widoku budynki mogą częściowo zasłaniać drogi lub etykiety mapy w zależności od ustawienia widoczności.
+
+Ta opcja jest dostępna tylko wtedy, gdy wtyczka Topografia jest włączona.  
+Przejdź do: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+Ustawienia budynków 3D zawierają elementy sterujące, które wpływają na wygląd, wydajność i oświetlenie budynków 3D.
+
+### Wygląd {#appearance}
+
+![Budynki 3D](@site/static/img/map/3d_buildings_color.png)
+
+Elementy sterujące **Wygląd** określają, jak budynki 3D wyglądają na mapie. Obejmują one dwa ustawienia: Kolor i Widoczność. 
+
+**Kolor** pozwala zmienić kolor budynku. Po dotknięciu Koloru OsmAnd otwiera oddzielny ekran podglądu, na którym możesz zobaczyć mapę podczas dostosowywania ustawienia. Ekran podglądu pokazuje żywą mapę, dzięki czemu możesz natychmiast zobaczyć, jak wybrany kolor wpływa na budynki.
+- **Styl mapy** — używa domyślnego koloru budynku z aktualnie wybranego stylu mapy.
+- **Niestandardowy** — pozwala ustawić niestandardowy kolor budynku oddzielnie dla trybu Dzień / Noc.
+
+:::tip Zakup
+Personalizacja kolorów budynków 3D to [płatna funkcja](../purchases/index.md).  
+:::
+
+Jeśli niestandardowe kolory nie zostały zakupione, zobaczysz stan pusty z krótkim opisem i przyciskiem Pobierz. Jeśli opcja Niestandardowy jest dostępna, możesz przełączać między Dniem i Nocą, wybrać kolor z palety (lub otworzyć Wszystkie kolory), a następnie dotknąć Zastosuj.
+
+**Widoczność** kontroluje przezroczystość (przezroczystość) budynków 3D. Użyj suwaka, aby ustawić widoczność jako procent. Suwak pozwala na wartości od 10% do 100%, z domyślnym 50%. Niższe wartości sprawiają, że budynki są bardziej przezroczyste i pomagają w czytelności dróg/etykiet. Wyższe wartości sprawiają, że budynki wyglądają bardziej solidnie i wizualnie dominują. Dotknięcie Widoczności otwiera również oddzielny ekran podglądu z suwakiem.
+
+Na ekranach podglądu (Kolor / Widoczność) możesz użyć Resetuj do domyślnych z paska aplikacji, aby przywrócić wartość domyślną.
+
+### Wydajność {#performance}
+
+Elementy sterujące **Wydajność** określają, jak renderowane są budynki 3D. Obejmują one dwa ustawienia: Poziom szczegółowości i Odległość widoku.
+
+**Poziom szczegółowości** określa złożoność geometrii budynku 3D:
+- Niski (domyślny) — prostsza geometria.
+- Wysoki — bardziej szczegółowa geometria.
+
+**Odległość widoku** kontroluje, jak daleko od kamery renderowane są budynki 3D:
+- Blisko (domyślny) — renderuje budynki bliżej Ciebie.
+- Daleko — renderuje budynki z większej odległości.
+
+Obie opcje wydajności używają dwupozycyjnego przełącznika bezpośrednio na ekranie ustawień budynków 3D.
+
+**Uwaga:** Używanie *Wysokiego szczegółu* i *Dalekiej odległości widoku* poprawia wygląd wizualny, ale może wpłynąć na wydajność i zwiększyć zużycie baterii.
+
+### Słońce {#sun}
+
+![Budynki 3D](@site/static/img/map/sun_setting.png)
+
+Ustawienie **Słońce** kontroluje kierunek oświetlenia używany do renderowania budynków 3D. Wpływa na to, jak światło i cienie pojawiają się na budynkach w widoku 3D. Po dotknięciu Słońca OsmAnd otwiera ekran podglądu, na którym możesz dostosować oświetlenie za pomocą dwóch suwaków:
+
+- Azymut — kontroluje poziomy kierunek źródła światła (kierunek kompasu słońca).
+- Wysokość — kontroluje wysokość słońca nad horyzontem.
+
+Zmiana tych parametrów modyfikuje, jak cienie padają na budynki i może poprawić percepcję wizualną kształtów budynków w widoku 3D. Dotknij Zastosuj, aby potwierdzić wybrane parametry oświetlenia.
 
 
 ## Rzeźba 3D {#3d-relief}
