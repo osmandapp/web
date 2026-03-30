@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Schermata della Mappa Durante la Navigazione
 ---
@@ -197,8 +197,8 @@ L'impostazione **Colore** modifica le tonalità di colore delle linee del percor
 - ***<Translate android="true" id="map_widget_renderer"/>***. Utilizzato con i colori predefiniti. Per una descrizione completa dei colori, vai a [Stili di mappa predefiniti](../../map/map-styles.md#default-map-styles).  
     ![stile mappa](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Personalizzato***. Consente di selezionare una linea in qualsiasi colore e trasparenza preferiti. È possibile selezionare impostazioni diverse per la mappa diurna e separatamente per la mappa notturna.  
-    ![personalizzato](@site/static/img/navigation/route/custom.png)   ![personalizzato](@site/static/img/navigation/route/custom_ios.png)
+- ***Personalizzato***. Consente di selezionare una linea in qualsiasi colore e trasparenza preferiti. È possibile selezionare impostazioni diverse per la mappa diurna e separatamente per la mappa notturna. La palette dei colori include colori di accesso rapido, un'opzione per aggiungere un colore personalizzato (*+*), e un elenco completo dei colori disponibili (*Tutti i colori*).            
+    ![personalizzato](@site/static/img/navigation/route/custom_new.png)   ![personalizzato](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. Mostra l'altezza del punto del percorso come un gradiente **verde-giallo-rosso**. Il **verde** indica il punto più basso del percorso, il **giallo** indica l'altezza media del punto e il **rosso** è il più alto. Se la differenza di altitudine del percorso è < 100 metri, il gradiente viene applicato parzialmente o non viene applicato, ad esempio per una semplice salita da 100 metri a 150 metri - il gradiente sarà **verde-giallo**. Si noti che il colore non rappresenta il valore assoluto dell'altitudine.  
     ![Altitudine](@site/static/img/navigation/route/Altitude_rl.png)
@@ -215,7 +215,7 @@ L'impostazione **Colore** modifica le tonalità di colore delle linee del percor
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Classificazione della manovrabilità di strade o sentieri per veicoli a ruote, in particolare per quanto riguarda la regolarità e la scorrevolezza della superficie. Una descrizione dettagliata si trova nell'articolo *Stile mappa OsmAnd - [Scorrevolezza](../../map-legend/osmand.md#surface-smoothness)* nella sezione *Legenda mappa*.  
     ![Altitudine](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colora una linea di percorso o traccia in base alla *classificazione delle strade invernali*. Una descrizione dettagliata si trova nell'articolo *Mappe vettoriali*, sezione [Strade invernali e ghiacciate](../../map/map-styles.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Colora una linea di percorso o traccia in base alla *classificazione delle strade invernali*. Una descrizione dettagliata si trova nell'articolo *Stili mappa*, sezione [Strade invernali e ghiacciate](../../map/map-styles.md#winter-and-ski).  
     ![Altitudine](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Colorazione di una linea di percorso o sentiero in base alla composizione del fondo stradale. Tipicamente, utilizzato quando la rete stradale è in gran parte non asfaltata. Una descrizione dettagliata si trova nell'articolo *Stile mappa OsmAnd - [Consistenza della superficie](../../map-legend/osmand.md#surface-smoothness)* nella sezione *Legenda mappa*.  

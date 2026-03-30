@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  Percorsi con i trasporti pubblici
 ---
@@ -142,19 +142,31 @@ L'interfaccia utente visualizza i Percorsi Alternativi come badge colorati con i
 
 ## Prestazioni e risultati {#performance-and-results}
 
-**Profilo Trasporto pubblico -> Impostazioni -> Impostazioni di navigazione -> Parametri del percorso**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Numero massimo di cambi di trasporto**.
+<TabItem value="android" label="Android">
+
+![Numero massimo di cambi di trasporto](@site/static/img/navigation/public/maximum_number_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Numero massimo di cambi di trasporto](@site/static/img/navigation/public/maximum_number_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Vai a: *<Translate android="true" ids="shared_string_settings"/>* *→ Profilo Trasporto pubblico →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Numero massimo di cambi di trasporto*
 
 Le prestazioni e il consumo di memoria del Router per i Trasporti Pubblici dipendono dalla profondità di ricerca.
 
 Il parametro più importante che influisce su questa profondità è il **Numero massimo di cambi di trasporto**.
 
-Utilizziamo **2** come valore predefinito, che sembra ottimale per le reti di trasporti pubblici moderne.
+Questo parametro influisce anche direttamente sulla disponibilità e sulla qualità dei percorsi. Se il valore è impostato troppo basso (ad esempio, 0), OsmAnd potrebbe non riuscire a trovare percorsi adatti o suggerire opzioni non ottimali, anche quando esistono percorsi migliori con trasferimenti.
 
-Se si verificano prestazioni basse o errori di memoria insufficiente, provate a diminuire questo valore.
-
-Se ci si trova in una piccola città o si percorrono brevi tratti, un valore di **1** potrebbe funzionare meglio.
+Utilizziamo **2** come valore predefinito, che sembra ottimale per le reti di trasporti pubblici moderne. Se si verificano prestazioni basse o errori di memoria insufficiente, provate a diminuire questo valore. Se ci si trova in una piccola città o si percorrono brevi tratti, un valore di **1** potrebbe funzionare meglio.
 <!--
 There are two more parameters that help you choose the best routes.
 

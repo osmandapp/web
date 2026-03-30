@@ -1,6 +1,6 @@
 ---
-source-hash: dfa236df73681e471e3c208b26be8fd48653e14fab8e0a6a7dd62c51436d4c77
-sidebar_position: 17
+source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+sidebar_position: 19
 title:  Meteo
 ---
 
@@ -264,7 +264,7 @@ Nel menu di download delle previsioni, è possibile ottenere informazioni e impo
 - Pulsante **Rimuovi** *cestino* (*Android*) / **Rimuovi previsioni** (*iOS*). Consente di eliminare tutti i dati delle previsioni per questa regione.
 - Pulsante **Modifica** *matita* (*Android*). Consente di rinominare il file meteo.
 
-**Nota:** Alcuni paesi, come gli Stati Uniti e il Canada, utilizzano un unico file di Previsioni offline per l'intero paese. Questo riduce il numero di download e semplifica la gestione dei dati meteorologici.
+**Nota:** Alcuni paesi, come gli USA e il Canada, utilizzano un unico file di Previsioni offline per l'intero paese. Questo riduce il numero di download e semplifica la gestione dei dati meteorologici.
 
 :::info  
 I dati meteorologici vengono aggiornati ogni 6 ore (tutti e 4 gli aggiornamenti da [GFS](https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast) e 3 da [ECMWF](https://www.ecmwf.int/)) e diventano disponibili in OsmAnd con un breve ritardo, poiché il processo di calcolo richiede diverse ore prima del rilascio (di solito intorno alle 07:00 UTC).  

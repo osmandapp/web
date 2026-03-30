@@ -1,6 +1,6 @@
 ---
-source-hash: 3e42829208c8917b36961ec73fb21e320c1dcf70572f1c674c9c940e72223a0e
-sidebar_position: 8
+source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+sidebar_position: 9
 title:  Mappe Online
 ---
 
@@ -69,7 +69,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 ## Come Preparare le Mappe Raster {#how-to-prepare-raster-maps}
 
 :::info
-L'articolo principale per preparare le mappe [leggilo qui](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Articolo principale per preparare le mappe [leggilo qui](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
 Nonostante il plugin si chiami *Mappe Online*, è possibile utilizzare le mappe anche senza connessione a internet. È sufficiente salvare le parti delle mappe (spesso chiamate tasselli) per utilizzarle in seguito. Per farlo, scarica uno specifico [strumento per la creazione di mappe](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) sviluppato dal team di OsmAnd.

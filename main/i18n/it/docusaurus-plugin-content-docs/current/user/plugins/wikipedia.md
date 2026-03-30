@@ -1,6 +1,6 @@
 ---
-source-hash: 7d67934d45ebb7643ba52ee95d1baff1f7670e11a70a93f7bacdd0b795953fd8
-sidebar_position: 18
+source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+sidebar_position: 20
 title:  Wikipedia
 ---
 
@@ -48,7 +48,7 @@ Per visualizzare i dati di Wikipedia sulla mappa, è necessario effettuare le se
 
 ## Scaricare i pacchetti Wikipedia {#download-wikipedia-packages}
 
-I dati di Wikipedia sono disponibili per ogni regione geografica. Se i dati sono caricati per una regione e non per un'altra, nel primo caso è possibile lavorare con le informazioni di Wikipedia visualizzando la regione su una mappa, mentre nel secondo caso la regione non avrà alcuna informazione di Wikipedia. Una volta caricati, i dati di Wikipedia diventano disponibili in generale, anche offline.
+I dati di Wikipedia sono disponibili per ogni regione geografica. Se sono caricati per una regione e non per un'altra, nel primo caso è possibile lavorare con le informazioni di Wikipedia visualizzando la regione su una mappa, mentre nel secondo caso la regione non avrà alcuna informazione di Wikipedia. Una volta caricati, i dati di Wikipedia diventano disponibili in generale, anche offline.
 
 Per scaricare i dati di Wikipedia per una regione, andare ai [pacchetti disponibili per il download nel *Menu principale*](../start-with/download-maps.md#downloading-maps), trovare la regione desiderata e aprirla. I dati di Wikipedia si troveranno tra gli altri pacchetti.
 

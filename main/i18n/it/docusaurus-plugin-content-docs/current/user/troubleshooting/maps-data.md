@@ -1,5 +1,5 @@
 ---
-source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
+source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
 sidebar_position: 4
 title:  Mappe e Dati
 ---
@@ -116,6 +116,30 @@ Per risolvere il problema del rendering lento delle mappe, specialmente quando s
 6. **Usare solo mappe offline.** Le mappe online, specialmente se non scaricate in anticipo, possono rallentare il caricamento della mappa. Passare all'uso esclusivo di mappe offline per prestazioni più fluide.
 
 Queste modifiche dovrebbero ridurre il tempo necessario per il rendering delle mappe, specialmente durante la navigazione. Per opzioni di configurazione più dettagliate, fare riferimento alla [Guida alle Impostazioni della Mappa](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+
+### Cosa significa “Aggiornamenti gratuiti (emergenza)”? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Emergency Access Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Emergency Access iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Gli **aggiornamenti delle mappe di emergenza** possono essere abilitati per determinate regioni durante situazioni di crisi o emergenza. In questi casi, le mappe sono temporaneamente disponibili con aggiornamenti gratuiti e più frequenti.
+
+Quando questa funzionalità è attiva, la schermata di download della mappa potrebbe visualizzare il messaggio *Free updates (emergency) / Free downloads*.
+
+Questo significa che la mappa può ricevere aggiornamenti più frequentemente rispetto alle mappe standard, a volte una o più volte al giorno, a seconda della situazione.
 
 
 ## Curve di livello {#contour-lines}

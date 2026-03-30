@@ -1,6 +1,6 @@
 ---
-source-hash: 31eaf050491744fda2c071f9b7f96835aefe6b7beef39ec37dbf6a225fba7c4c
-sidebar_position: 13
+source-hash: 39ea081aedfccbfbbbdc581b4d44fdff72636f40466f87d7f622d87380936840
+sidebar_position: 14
 title:  Visualizzazione Mappa Sci
 ---
 
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-Il plugin Visualizzazione Mappa Sci di OsmAnd mostra piste famose e popolari, aree sciistiche ufficialmente approvate e mappe dei sentieri della maggior parte delle stazioni sciistiche. Le mappe delle piste di [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) sono la fonte dei dati per le mappe sciistiche di OsmAnd. Combinando mappe vettoriali con mappe raster, la mappa sciistica di OsmAnd è molto accurata e sarà utile per istruttori, climbers e appassionati di sport invernali.
+Il plugin Visualizzazione Mappa Sci di OsmAnd mostra piste famose e popolari, aree sciistiche ufficialmente approvate e mappe dei sentieri della maggior parte delle stazioni sciistiche. Le mappe delle piste di [OpenStreetMap](https://www.openstreetmap.org/#map=16/51.5110/0.0550) sono la fonte dei dati per le mappe sciistiche di OsmAnd. Combinando mappe vettoriali con mappe raster, la mappa sciistica di OsmAnd è molto accurata e sarà utile per istruttori, alpinisti e appassionati di sport invernali.
 
 La mappa sciistica di OsmAnd fa parte delle mappe vettoriali e non richiede download aggiuntivi. È disabilitata per impostazione predefinita. La Mappa Sci di OsmAnd è uno degli [Stili mappa](../map/vector-maps.md) che fornisce funzionalità aggiuntive evidenziando alcuni oggetti e rendendone altri meno visibili.  
 
@@ -165,7 +165,7 @@ La Mappa Sci di OsmAnd è costruita come uno degli stili di rendering, che deter
 | ![Difficoltà avanzata](@site/static/img/plugins/ski-maps/4c_black_1.png) | Grigio - Pendenze di difficoltà avanzata |
 | ![Difficoltà per esperti](@site/static/img/plugins/ski-maps/5c_yellow_1.png) | Giallo - Pendenze di difficoltà per esperti |
 
-La difficoltà delle tracce è solitamente indicata da colori specifici. I colori possono essere diversi in diversi paesi e resort. Di seguito sono riportate alcune linee guida pratiche.
+La difficoltà delle piste è solitamente indicata da colori specifici. I colori possono essere diversi in diversi paesi e resort. Di seguito sono riportate alcune linee guida pratiche.
 
 :::tip guida
 Per una guida più specifica per ogni tipo di difficoltà di pista, consultare il [riferimento difficoltà piste OSM](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) o qualsiasi altra fonte che consideri anche pendenze, ostacoli e pericoli. Nello stile mappa Inverno e Sci, determinati pericoli mappati (ad esempio aree soggette a valanghe taggate come hazard=avalanche) possono essere mostrati come POI di pericolo sulla mappa e devono essere tenuti in considerazione insieme alla difficoltà della pista.  

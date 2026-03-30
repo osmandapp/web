@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Preferiti
 ---
@@ -64,13 +64,13 @@ I preferiti fanno parte di un livello mappa speciale, ed è possibile [mostrarli
 
 <TabItem value="android" label="Android">
 
-![Aggiungi descrizione Preferito Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Gruppo Preferiti Android](@site/static/img/personal/favorite_group_android.png)
+![Aggiungi descrizione Preferito Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Gruppo Preferito Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Aggiungi descrizione Preferito iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Gruppo Preferiti iOS](@site/static/img/personal/favorite_group_ios.png)
+![Aggiungi descrizione Preferito iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Gruppo Preferito iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -163,7 +163,7 @@ La *cartella Personale* contiene punti speciali come **<Translate android="true"
 
 Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![I miei luoghi preferiti Android](@site/static/img/personal/my_places_android.png)
+![I miei luoghi preferiti Android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![i_miei_luoghi_ios](@site/static/img/personal/my_places_ios.png)
+![i_miei_luoghi_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 La sezione **I miei Preferiti** consente di:
 
 - [Cercare](#order--sorting--search) preferiti o gruppi specifici.
-- [Operazioni massive](#bulk-edit--delete) — Rinominare, spostare o eliminare più preferiti contemporaneamente.
+- [Operazioni massive](#bulk-edit--delete) — Condividere, spostare o eliminare più preferiti contemporaneamente.
 
 ### Ordine / Ordinamento / Ricerca {#order--sorting--search}
 
@@ -188,20 +188,23 @@ La sezione **I miei Preferiti** consente di:
 
 <TabItem value="android" label="Android">
 
-![Cartelle Preferiti Android](@site/static/img/personal/favorites_folders_android.png)
+![Cartelle Preferiti Android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Ordinamento** — Le cartelle e i punti preferiti possono essere ordinati utilizzando le opzioni di ordinamento disponibili nel menu dell'elenco. Le opzioni disponibili sono: *Nome A – Z*, *Nome Z – A*, *Ultima modifica*, *Data più recente prima*, *Data più antica prima*. Per impostazione predefinita, gli elementi sono ordinati per Nome A – Z. Le cartelle pinnate sono sempre visualizzate in cima all'elenco. Sono visivamente separate dal resto delle cartelle da un divisore. La [cartella personale](../personal/favorites.md#special-favorites-personal) è pinnata per impostazione predefinita. 
+- **Ricerca** — Utilizzare la [Ricerca globale](../search/search-all.md) per trovare i preferiti per nome. I preferiti sono ordinati per distanza dal centro della mappa.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Cartelle Preferiti iOS](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Ordinamento** — Le cartelle e i punti preferiti sono ordinati alfabeticamente, con la [cartella personale](../personal/favorites.md#special-favorites-personal) in cima.
 - **Ricerca** — Utilizzare la [Ricerca globale](../search/search-all.md) per trovare i preferiti per nome. I preferiti sono ordinati per distanza dal centro della mappa.
 
+</TabItem>
+
+</Tabs>
 
 ### Modifica / Eliminazione massiva {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ La sezione **I miei Preferiti** consente di:
 
 <TabItem value="android" label="Android">
 
-![Azioni Preferiti Android](@site/static/img/personal/favorites_actions_android.png) ![Azione elimina Preferiti Android](@site/static/img/personal/favorites_delete_android.png)
+![Azioni Preferiti Android](@site/static/img/personal/favorites_group_actions.png) ![Azione elimina Preferiti Android](@site/static/img/personal/favorites_actions.png)
+
+Per gestire più preferiti o cartelle, attivare la *Modalità Selezione*. È possibile aprire la Modalità Selezione in due modi:
+- Toccare il *menu a tre punti* nell'angolo in alto a destra e scegliere *Seleziona*.
+- Tocco lungo su un punto preferito o una cartella.
+
+Quando la Modalità Selezione è abilitata, accanto agli elementi nell'elenco appaiono caselle di selezione. Selezionare i preferiti o le cartelle richiesti toccando le caselle di selezione. Per selezionare tutti gli elementi nell'elenco, toccare l'icona Seleziona tutto nell'angolo in alto a destra.
+
+Le azioni disponibili dipendono dal tipo di elemento selezionato. Quando sono selezionate le cartelle, le azioni disponibili sono:
+- **Condividi** — Esporta le cartelle selezionate come file GPX Preferiti.
+- **Elimina** — Rimuove le cartelle selezionate.
+
+Quando sono selezionati i punti preferiti, le azioni disponibili sono:
+- **Sposta** — Sposta i preferiti selezionati in un'altra cartella.
+- **Aggiungi ai segnaposto mappa** — Aggiunge i punti selezionati all'elenco Segnaposto mappa.
+- **Aggiungi alla traccia** — Aggiunge i punti selezionati a una traccia.
+- **Aggiungi alla navigazione** — Avvia la navigazione verso il punto selezionato.
+- **Elimina** — Rimuove i preferiti selezionati.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ La sezione **I miei Preferiti** consente di:
 
 ![Azioni Preferiti iOS](@site/static/img/personal/favorites_actions_ios.png)
 
+- Per gestire più preferiti, toccare il pulsante **Modifica** (*icona matita*).
+- Selezionare singoli preferiti o intere cartelle per operazioni massive.
+- **Opzioni disponibili** — *Condividi*, *Sposta in un Gruppo Preferiti*, *Cambia Colore* e *Elimina*.
+
 </TabItem>
 
 </Tabs>
-
-1. Per gestire più preferiti, toccare l'icona **Elimina** (*icona del cestino su Android*) o il pulsante **Modifica** (*icona della matita su iOS*).
-2. Selezionare singoli preferiti o intere cartelle per operazioni massive.
-3. **Opzioni disponibili** — *Elimina* per Android e iOS, *Sposta in un gruppo di preferiti*, *Condividi* e *Cambia colore* per iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Andare su: *Menu a tre punti → Cambia aspetto predefinito*
+![Funzioni cartella Preferiti Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Funzioni cartella Preferiti Android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Utilizzare il ***menu a tre punti*** accanto a ogni cartella per gestire i gruppi di preferiti:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Nascondi sulla mappa** — Attivare/disattivare questa opzione per visualizzare o nascondere i punti preferiti della cartella sulla mappa.
+- **Pin cartella** — Pinna la cartella selezionata per mantenerla in cima all'elenco dei preferiti per un accesso più rapido.
+- **<Translate android="true" ids="shared_string_rename"/>** — Utilizzare questa opzione per cambiare il nome della cartella selezionata.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalizzare l'aspetto dei punti preferiti nella cartella sulla mappa, modificandone icone, colori o etichette.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Rimuovi dai segnaposto mappa** — Aggiungere tutti i punti preferiti della cartella all'*elenco Segnaposto mappa* o rimuoverli secondo necessità per una facile consultazione.
+- **<Translate android="true" ids="add_to_a_track"/>** — Aggiungere tutti i punti preferiti della cartella selezionata a una traccia. Questo apre la schermata di selezione della traccia dove è possibile scegliere o creare una traccia.
+- **<Translate android="true" ids="shared_string_share"/>** — Condividere i punti preferiti nella cartella esportandoli come file *Favorites.gpx*, per facilitare il trasferimento o il backup dei dati.
+- **<Translate android="true" ids="shared_string_delete"/>** — Eliminare definitivamente la cartella dei preferiti selezionata e tutti i punti in essa contenuti.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Andare su: *Tocco lungo cartella → Aspetto predefinito*
-
 ![Azioni Preferiti iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Utilizzare il ***tocco lungo*** sulla cartella per gestire i gruppi di preferiti:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Nascondi sulla mappa** — Attivare/disattivare questa opzione per visualizzare o nascondere i punti preferiti della cartella sulla mappa.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Utilizzare questa opzione per cambiare il nome della cartella selezionata.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Personalizzare l'aspetto dei punti preferiti nella cartella sulla mappa, modificandone icone, colori o etichette.
+- **<Translate ios="true" ids="shared_string_share"/>** — Condividere i punti preferiti nella cartella esportandoli come file *Favorites.gpx*, per facilitare il trasferimento o il backup dei dati.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Eliminare definitivamente la cartella dei preferiti selezionata e tutti i punti in essa contenuti.
 
 </TabItem>
 
 </Tabs>
-
-Utilizzare il ***menu a tre punti*** (*Android*) accanto a ogni cartella e il ***tocco lungo*** (*iOS*) sulla cartella per gestire i gruppi di preferiti:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Utilizzare questa opzione per cambiare il nome della cartella selezionata.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalizzare l'aspetto dei punti preferiti nella cartella sulla mappa, modificandone icone, colori o etichette.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** o **Nascondi sulla mappa** — Attivare/disattivare questa opzione per visualizzare o nascondere i punti preferiti della cartella sulla mappa.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** o **Rimuovi dai segnaposto mappa** (*solo Android*) — Aggiungere tutti i punti preferiti della cartella all'*elenco Segnaposto mappa* o rimuoverli secondo necessità per una facile consultazione.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Condividere i punti preferiti nella cartella esportandoli come file *Favorites.gpx*, per facilitare il trasferimento o il backup dei dati.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Eliminare definitivamente la cartella dei preferiti selezionata e tutti i punti in essa contenuti.
-
-
 
 ### Modificare l'aspetto del gruppo {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Utilizzare il ***menu a tre punti*** (*Android*) accanto a ogni cartella e il **
 
 <TabItem value="android" label="Android">
 
-![Funzioni cartella Preferiti Android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Andare su: *Menu a tre punti → Cambia aspetto predefinito*
+
+![Funzioni cartella Preferiti Android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Andare su: *Tocco lungo cartella → Aspetto predefinito*
 
 ![Azioni Preferiti iOS](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
