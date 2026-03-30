@@ -1,5 +1,5 @@
 ---
-source-hash: a332927006d713da523b6757b567f542d3c937b22678ad5819003da4c2069108
+source-hash: 066e000cf6c7a4b724ded8305f75e833c5c8b6545ae224ceac0bd036e4e50d43
 sidebar_position: 4
 title:  Mapy i dane
 ---
@@ -116,6 +116,30 @@ Aby rozwiązać problem powolnego renderowania map, zwłaszcza podczas korzystan
 6. **Używaj tylko map offline.** Mapy online, zwłaszcza gdy nie są pobrane z wyprzedzeniem, mogą spowolnić ładowanie mapy. Przełącz się na używanie tylko map offline, aby uzyskać płynniejszą wydajność.
 
 Zmiany te powinny skrócić czas potrzebny na renderowanie map, zwłaszcza podczas nawigacji. Aby uzyskać bardziej szczegółowe opcje konfiguracji, zapoznaj się z [Przewodnikiem po ustawieniach mapy](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+
+### Co oznacza „Darmowe aktualizacje (awaryjne)”? {#what-does-free-updates-emergency-mean}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Dostęp awaryjny Android](@site/static/img/troubleshooting/emergency_access_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dostęp awaryjny iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**Awaryjne aktualizacje map** mogą być włączone dla niektórych regionów podczas sytuacji kryzysowych lub awaryjnych. W takich przypadkach mapy są tymczasowo dostępne z darmowymi i częstszymi aktualizacjami.
+
+Gdy ta funkcja jest aktywna, ekran pobierania map może wyświetlać komunikat *Darmowe aktualizacje (awaryjne) / Darmowe pobieranie*.
+
+Oznacza to, że mapa może otrzymywać aktualizacje częściej niż standardowe mapy, czasem raz lub kilka razy dziennie, w zależności od sytuacji.
 
 
 ## Linie konturowe {#contour-lines}

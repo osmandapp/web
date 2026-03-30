@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -24,14 +24,15 @@ Ulubione w Planerze WWW pozwalają zapisywać i zarządzać ważnymi miejscami b
 
 ## Zarządzanie Ulubionymi {#manage-favorites}
 
-![Edycja ulubionych w chmurze OsmAnd Web](@site/static/img/web/favorites_new.png)
+![Edycja ulubionych w chmurze OsmAnd Web](@site/static/img/web/favorites_1_new.png)
 
 Po zarejestrowaniu [**OsmAnd Pro**](../personal/osmand-cloud.md#login) i dla [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), Twoje Ulubione w Planerze WWW są zorganizowane w foldery. Każdy folder grupuje zapisane miejsca i zapewnia zestaw czynności dostępnych z menu Ulubione. 
 Dostępne są następujące czynności:
 
 - *Pokaż na mapie* - pokaż punkty ulubionych z wybranego folderu na mapie.
+- *Przypnij folder* - przypnij folder na górze listy Ulubione dla szybkiego dostępu. Przypięte foldery są oddzielone od innych folderów. Aby usunąć folder z górnej sekcji, wybierz *Odpnij folder*. Folder Osobisty jest przypięty domyślnie.
 - *Zmień nazwę* - nazwa i opis folderu ulubionych.
-- *Udostępnij* - otwiera opcje udostępniania. Możesz wybrać, kto może uzyskać dostęp do tego folderu:
+- *Udostępnij* - otwiera opcje udostępniania. Możesz wybrać, kto może uzyskać dostęp do tego folderu.
 - *Pobierz* - pobierz wybrany folder ulubionych.
 - *Usuń* - usuń wybrany folder ulubionych.
 

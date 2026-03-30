@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Ulubione
 ---
@@ -163,7 +163,7 @@ Folder *Osobiste* zawiera specjalne punkty, takie jak **<Translate android="true
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Moje miejsca ulubione android](@site/static/img/personal/my_places_android.png)
+![Moje miejsca ulubione android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![moje_miejsca_ios](@site/static/img/personal/my_places_ios.png)
+![moje_miejsca_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 Sekcja **Moje ulubione** pozwala na:
 
 - [Wyszukiwanie](#order--sorting--search) określonych ulubionych lub grup.
-- [Operacje zbiorcze](#bulk-edit--delete) — Zmiana nazwy, przenoszenie lub usuwanie wielu ulubionych naraz.
+- [Operacje zbiorcze](#bulk-edit--delete) — Udostępnianie, przenoszenie lub usuwanie wielu ulubionych naraz.
 
 ### Kolejność / Sortowanie / Wyszukiwanie {#order--sorting--search}
 
@@ -188,20 +188,23 @@ Sekcja **Moje ulubione** pozwala na:
 
 <TabItem value="android" label="Android">
 
-![Foldery ulubionych android](@site/static/img/personal/favorites_folders_android.png)
+![Foldery ulubionych android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Sortowanie** — Foldery i punkty ulubione można sortować za pomocą dostępnych opcji sortowania w menu listy. Dostępne są następujące opcje: *Nazwa A – Z*, *Nazwa Z – A*, *Ostatnio zmodyfikowane*, *Najnowsza data jako pierwsza*, *Najstarsza data jako pierwsza*. Domyślnie elementy są sortowane według Nazwa A – Z. Przypięte foldery są zawsze wyświetlane na górze listy. Są one wizualnie oddzielone od reszty folderów separatorami. [Folder osobisty](../personal/favorites.md#special-favorites-personal) jest przypięty domyślnie. 
+- **Wyszukiwanie** — Użyj [Wyszukiwania globalnego](../search/search-all.md), aby znaleźć ulubione według nazwy. Ulubione są sortowane według odległości od środka mapy.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Foldery ulubionych ios](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Sortowanie** — Foldery i punkty ulubione są sortowane alfabetycznie, z [folderem osobistym](../personal/favorites.md#special-favorites-personal) na górze.
 - **Wyszukiwanie** — Użyj [Wyszukiwania globalnego](../search/search-all.md), aby znaleźć ulubione według nazwy. Ulubione są sortowane według odległości od środka mapy.
 
+</TabItem>
+
+</Tabs>
 
 ### Edycja zbiorcza / Usuwanie {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ Sekcja **Moje ulubione** pozwala na:
 
 <TabItem value="android" label="Android">
 
-![Akcje ulubionych android](@site/static/img/personal/favorites_actions_android.png) ![Akcja usuwania ulubionych android](@site/static/img/personal/favorites_delete_android.png)
+![Akcje ulubionych android](@site/static/img/personal/favorites_group_actions.png) ![Akcja usuwania ulubionych android](@site/static/img/personal/favorites_actions.png)
+
+Aby zarządzać wieloma ulubionymi lub folderami, wejdź w tryb *Wybierania*. Tryb Wybierania można otworzyć na dwa sposoby:
+- Dotknij *menu z trzema kropkami* w prawym górnym rogu i wybierz *Wybierz*.
+- Długo dotknij punkt ulubiony lub folder.
+
+Po włączeniu trybu Wybierania obok elementów na liście pojawiają się pola wyboru. Wybierz wymagane ulubione lub foldery, dotykając pól wyboru. Aby wybrać wszystkie elementy na liście, dotknij ikony Wybierz wszystko w prawym górnym rogu.
+
+Dostępne akcje zależą od typu wybranego elementu. Gdy wybrane są foldery, dostępne są następujące akcje:
+- **Udostępnij** — Eksportuj wybrane foldery jako plik GPX Ulubionych.
+- **Usuń** — Usuń wybrane foldery.
+
+Gdy wybrane są punkty ulubione, dostępne są następujące akcje:
+- **Przenieś** — Przenieś wybrane ulubione do innego folderu.
+- **Dodaj do znaczników mapy** — Dodaj wybrane punkty do listy znaczników mapy.
+- **Dodaj do śladu** — Dodaj wybrane punkty do śladu.
+- **Dodaj do nawigacji** — Rozpocznij nawigację do wybranego punktu.
+- **Usuń** — Usuń wybrane ulubione.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ Sekcja **Moje ulubione** pozwala na:
 
 ![Akcje ulubionych ios](@site/static/img/personal/favorites_actions_ios.png)
 
+- Aby zarządzać wieloma ulubionymi, dotknij przycisku **Edytuj** (*ikona ołówka*).
+- Wybierz poszczególne ulubione lub całe foldery do operacji zbiorczych.
+- **Dostępne opcje** — *Udostępnij*, *Przenieś do grupy ulubionych*, *Zmień kolor* i *Usuń*.
+
 </TabItem>
 
 </Tabs>
-
-1. Aby zarządzać wieloma ulubionymi, dotknij ikony **Usuń** (*ikona kosza w systemie Android*) lub przycisku **Edytuj** (*ikona ołówka w systemie iOS*).
-2. Wybierz poszczególne ulubione lub całe foldery do operacji zbiorczych.
-3. **Dostępne opcje** — *Usuń* dla Androida i iOS, *Przenieś do grupy ulubionych*, *Udostępnij* i *Zmień kolor* dla iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *Menu z trzema kropkami → Zmień domyślny wygląd*
+![Funkcje folderu ulubionych android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Funkcje folderu ulubionych android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Użyj ***menu z trzema kropkami*** obok każdego folderu, aby zarządzać grupami ulubionych:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć punkty ulubione z folderu na mapie.
+- **Przypnij folder** — Przypnij wybrany folder, aby utrzymać go na górze listy ulubionych dla szybszego dostępu.
+- **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Dostosuj wygląd punktów ulubionych w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Usuń ze znaczników mapy** — Dodaj wszystkie punkty ulubione z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby, aby ułatwić sobie odniesienie.
+- **<Translate android="true" ids="add_to_a_track"/>** — Dodaj wszystkie punkty ulubione z wybranego folderu do śladu. Otwiera to ekran wyboru śladu, w którym możesz wybrać lub utworzyć ślad.
+- **<Translate android="true" ids="shared_string_share"/>** — Udostępnij punkty ulubione w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowej danych.
+- **<Translate android="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie punkty w nim zawarte.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *Długie dotknięcie folderu → Domyślny wygląd*
-
 ![Akcje ulubionych ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Użyj ***długiego dotknięcia*** folderu, aby zarządzać grupami ulubionych:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć punkty ulubione z folderu na mapie.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Dostosuj wygląd punktów ulubionych w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
+- **<Translate ios="true" ids="shared_string_share"/>** — Udostępnij punkty ulubione w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowej danych.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie punkty w nim zawarte.
 
 </TabItem>
 
 </Tabs>
-
-Użyj ***Menu z trzema kropkami*** (*Android*) obok każdego folderu i ***długiego dotknięcia*** (*iOS*) folderu, aby zarządzać grupami ulubionych:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Dostosuj wygląd ulubionych punktów w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** lub **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć ulubione punkty z folderu na mapie.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** lub **Usuń ze znaczników mapy** (*tylko Android*) — Dodaj wszystkie ulubione punkty z folderu do *listy znaczników mapy* lub usuń je w razie potrzeby, aby ułatwić sobie odniesienie.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Udostępnij ulubione punkty w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowej danych.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Trwale usuń wybrany folder ulubionych i wszystkie punkty w nim zawarte.
-
-
 
 ### Zmień wygląd grupy {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Użyj ***Menu z trzema kropkami*** (*Android*) obok każdego folderu i ***długi
 
 <TabItem value="android" label="Android">
 
-![Funkcje folderu ulubionych android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Przejdź do: *Menu z trzema kropkami → Zmień domyślny wygląd*
+
+![Funkcje folderu ulubionych android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Przejdź do: *Długie dotknięcie folderu → Domyślny wygląd*
 
 ![Akcje ulubionych ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
@@ -374,12 +397,12 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-Do korzystania z funkcji *Darmowa kopia zapasowa ustawień* potrzebne jest konto OsmAnd Cloud. Jeśli masz konto w *OsmAnd Pro* lub aktywne konto w *OsmAnd Cloud*, nie zobaczysz banera promocyjnego.  
+Do korzystania z funkcji *Darmowa kopia zapasowa ulubionych* potrzebne jest konto OsmAnd Cloud. Jeśli masz konto w *OsmAnd Pro* lub aktywne konto w *OsmAnd Cloud*, nie zobaczysz banera promocyjnego.  
 
 - *Baner Darmowa kopia zapasowa ulubionych*. Dotknij tego banera, aby rozpocząć proces tworzenia kopii zapasowej.
 - *Ukończ krok rejestracji*, jeśli nie masz konta OsmAnd Cloud, postępując zgodnie z instrukcjami w [przewodniku rejestracji](../personal/osmand-cloud.md#login).
 - *Przejdź do menu Zakupy OsmAnd* (*Menu → Ustawienia → Zakupy*).
-- *[Pakiet OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Wybierz tę opcję, aby uzyskać dostęp do funkcji Darmowa kopia zapasowa ustawień.
+- *[Pakiet OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Wybierz tę opcję, aby uzyskać dostęp do funkcji Darmowa kopia zapasowa ulubionych.
 - *Utwórz kopię zapasową* swoich ustawień.
 
 

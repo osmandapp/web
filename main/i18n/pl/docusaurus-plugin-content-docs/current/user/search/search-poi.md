@@ -1,5 +1,5 @@
 ---
-source-hash: f030adaf04100e4f0054a1731b744c1e0da563d8249c4753b4176a96ec81468d
+source-hash: 9094d9848d4a4189984a09b06b25dcf3292a6305d128b1bafa1f8794438d04b3
 sidebar_position: 4
 title:  Wyszukiwanie POI
 ---
@@ -13,9 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<InfoIncompleteArticle/>
-
 
 ## Przegląd {#overview}
 
@@ -39,13 +36,13 @@ OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym z
 
 <TabItem value="android" label="Android">
 
-![Wyszukiwanie POI Android](@site/static/img/search/poi_overlay_android.png)
+![Wyszukiwanie POI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Wyszukiwanie POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Wyszukiwanie POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -57,8 +54,13 @@ OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym z
     - Umożliwia wyszukiwanie:
        - Pobliskich punktów użyteczności (POI) lub określonych kategorii POI.
        - [Tras OSM](../map/routes.md) według nazwy i numeru referencyjnego.
-       - [Popularnych miejsc (Wikipedia)](../map/map-context-menu.md#details).
+       - [Popularnych miejsc (Wikipedia)](../map/popular_places.md).
+       - Miejsc poprzez połączenie nazwy miasta z nazwą POI lub typem (na przykład: Berlin airport, Bratislava Billa).
     - Możliwe jest filtrowanie i sortowanie wyników według kategorii, odległości lub oceny.
+
+Ikona wyświetlona w wynikach wyszukiwania odpowiada ikonie używanej na mapie i w menu kontekstowym obiektu.
+
+Wyniki wyszukiwania mogą zawierać dodatkowe informacje o lokalizacji, takie jak miasto, w którym znajduje się POI. Pomaga to odróżnić miejsca o tej samej nazwie podczas wyszukiwania marek lub popularnych miejsc.
     
 - **Wyszukaj POI na mapie** - Pokaż na mapie:
     1. Możesz wybrać wymagane kategorie z [**listy**](../map/point-layers-on-map.md#points-of-interest-pois) w *Konfiguruj mapę → Pokaż warstwę POI...* i wyszukiwać według ikon w oczekiwanej lokalizacji.
@@ -67,6 +69,8 @@ OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym z
 - **Wyszukiwanie według marki**:
     - Wyszukiwanie obiektu biznesowego według nazwy marki (takiej jak Audi, Starbucks czy Aldi) jest bardzo podobne do wyszukiwania różnych POI według typu, główną różnicą jest to, że lista marek jest dostarczana wewnątrz mapy i może ulec zmianie podczas każdej aktualizacji. 
     - Marka jest definiowana przez tag OSM [***brand*** *nazwa*](https://wiki.openstreetmap.org/wiki/Key:brand), a OsmAnd zbiera ograniczone typy marek na mapę, z maksymalnie 1000 marek na mapę, jednak zapewnia, że lista marek jest spójna na sąsiednich mapach.
+    - Wyszukiwanie według marki nie jest wrażliwe na wielkość liter. Na przykład, wpisanie `starbucks`, `Starbucks` lub `STARBUCKS` zwróci te same wyniki.
+    - Tylko marki uwzględnione w indeksie danych mapy pojawią się w wynikach wyszukiwania.
 
 ![Wyszukiwanie POI Android](@site/static/img/search/brand_search_andr.png) ![Wyszukiwanie POI Android](@site/static/img/search/brand_search_2_andr.png)
 
@@ -75,6 +79,52 @@ OsmAnd zapewnia kilka sposobów dotarcia do narzędzia Wyszukiwania, w którym z
 Aby wykonać niektóre z tych zadań (zlokalizować adresy, POI), będziesz potrzebować pliku mapy wektorowej offline. Początkowo wyszukiwanie opiera się na danych znajdujących się na mapie w widocznym obszarze ekranu urządzenia. Jeśli nic nie znajdziesz, OsmAnd proponuje zwiększyć promień wyszukiwania.
 :::  
 
+### Wskazówki dotyczące wyszukiwania {#search-tips}
+
+Wyszukiwanie POI w OsmAnd obsługuje różne formaty wprowadzania i kombinacje nazw miejsc, marek oraz lokalizacji. Jeśli nie możesz znaleźć oczekiwanego wyniku, spróbuj następujących podejść.
+
+**1. Wyszukiwanie w wybranym mieście**
+
+Jeśli wiele miejsc ma tę samą nazwę, może być łatwiej najpierw wyszukać miasto i otworzyć je na mapie, a następnie wyszukać miejsce w tym obszarze.
+
+Przykładowy przebieg:  
+- Wyszukaj **Vienna**.
+- Otwórz miasto na mapie.
+- Wyszukaj **McDonald's**.
+
+To ogranicza wyniki do wybranego obszaru i pobliskich obiektów.
+
+**2. Używaj bardziej szczegółowych zapytań wyszukiwania**
+
+Bardzo krótkie zapytania lub skróty mogą zwracać wiele wyników, ponieważ pasują do wielu nazw obiektów.
+
+Przykład:  
+`St.`  
+→ wiele wyników
+
+`St. Volodymyr's Cathedral`  
+→ konkretny obiekt
+
+**3. Wyszukiwanie według alternatywnych nazw**
+
+Niektóre miejsca w OpenStreetMap mają dodatkowe tagi nazw, takie jak:  
+- `alt_name`
+- `short_name`
+
+Wyszukiwanie w OsmAnd uwzględnia te nazwy, więc wyszukiwanie różnych wariantów nazwy może zwrócić ten sam obiekt.
+
+**4. Miejsce może pojawić się w wielu wynikach wyszukiwania**
+
+Niektóre POI mają wiele atrybutów lub kategorii.
+
+Przykład:  
+`Sport = soccer; beachvolleyball`
+
+To miejsce może pojawić się podczas wyszukiwania:  
+- soccer
+- beach volleyball
+- sports centre
+
 
 ## Wyszukiwanie POI według kategorii {#poi-search-by-categories}
 
@@ -82,7 +132,7 @@ Aby wykonać niektóre z tych zadań (zlokalizować adresy, POI), będziesz potr
 
 <TabItem value="android" label="Android">
 
-![Wyszukiwanie POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Wyszukiwanie POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -94,7 +144,11 @@ Aby wykonać niektóre z tych zadań (zlokalizować adresy, POI), będziesz potr
 
 </Tabs>
 
-Narzędzie **Wyszukiwania według kategorii** pozwala szybko znaleźć obiekty, miejsca i trasy sklasyfikowane w różnych kategoriach. Każda kategoria ma unikalny zestaw cech, a to narzędzie posiada filtry, które pozwalają zawęzić wyniki wyszukiwania poprzez wybór różnych wartości dla dodatkowych cech.
+Narzędzie **Wyszukiwania według kategorii** pozwala szybko znaleźć obiekty, miejsca i trasy sklasyfikowane w różnych kategoriach. 
+
+Kategorie POI w OsmAnd opierają się na tagach OpenStreetMap. Niektóre miejsca mogą pojawić się pod bardziej ogólną kategorią, jeśli bardziej szczegółowy typ nie jest dostępny w danych mapy (na przykład, kościół może pojawić się pod `Place of worship`).
+
+Każda kategoria ma unikalny zestaw cech, a to narzędzie posiada filtry, które pozwalają zawęzić wyniki wyszukiwania poprzez wybór różnych wartości dla dodatkowych cech.
 
 Jak to działa:
 
@@ -102,20 +156,6 @@ Jak to działa:
 - *Filtry cech* - Po wybraniu kategorii aplikacja pokazuje dodatkowe cechy, które można wykorzystać do zawężenia wyszukiwania. Na przykład dla kategorii Restauracje można wybrać filtry takie jak rodzaj kuchni (włoska, chińska itp.), przedział cenowy, ocena i dostępność parkingu.
 - *Stosowanie filtrów* - Wybierasz wymagane wartości w filtrach, a następnie aplikacja stosuje te filtry do wyników wyszukiwania, aby pokazać tylko te właściwości, które pasują do określonych cech.
 - *Wyświetlanie wyników* - Po zastosowaniu filtrów OsmAnd wyświetla listę z krótkimi informacjami pasującymi do ustawionej kategorii i cech.
-
-Korzyści:
-
-- *Dostosowanie przez użytkownika* - Filtry funkcji pozwalają dostosować wyszukiwanie do konkretnych potrzeb i preferencji użytkownika.
-- *Udoskonalone wyniki* - Filtry pomagają zawęzić wyniki wyszukiwania, czyniąc je bardziej trafnymi i dokładnymi.
-- *Wiele kategorii* - Baza danych OpenStreetMap posiada obszerny zestaw kategorii POI, co pozwala na znajdowanie miejsc różnego typu i kategorii.
-
-<!--
-POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
-
-OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
-
-Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
--->
 
 ### Typy filtrów {#types-of-filters}
 
@@ -143,7 +183,7 @@ Dzięki funkcji **Filtruj** możesz wybrać niezbędne cechy i w rezultacie otrz
 
 ![Wyszukiwanie POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
 
-Filtr może składać się z dość dużej liczby pozycji, których obecność zależy od wybranej kategorii. Każda kategoria ma szereg specyficznych dla niej filtrów, uporządkowanych w folderach według typu. W sumie istnieją *22 domyślne kategorie*. Niektóre z nich są wymienione tutaj:
+Filtr może składać się z dość dużej liczby pozycji, których obecność zależy od wybranej kategorii. Każda kategoria ma szereg specyficznych dla niej filtrów, uporządkowanych w folderach według typu. W sumie istnieją *21 domyślne kategorie*. Są one wymienione tutaj:
 
  1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Zakwaterowanie](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) obejmuje obiekty zapewniające tymczasowe zakwaterowanie, takie jak hotele, motele, hostele, pensjonaty i kempingi. Miejsca te zapewniają udogodnienia i usługi zapewniające komfortowy pobyt podczas podróży.  
         Obejmuje *9* typów filtrów: **Lodówka** (ma *2* wartości), **Ogrzewanie** (ma *7* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Materac** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Prysznic** (ma *1* wartość), **Palenie** (ma *6* wartości), **Ocena w gwiazdkach** (ma *10* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
@@ -152,7 +192,7 @@ Filtr może składać się z dość dużej liczby pozycji, których obecność z
         Obejmuje *16* typów filtrów: **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Kuchnia** (ponad *10* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Danie** (ponad *10* wartości), **Napełnianie wody pitnej** (ma *1* wartość), **Drive-in** (ma *1* wartość), **Typ dostępu do internetu** (ma *3* wartości), **Minibrowar** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Miejsca na zewnątrz** (ma *1* wartość), **Typ płatności** (ponad *10* wartości), **Palenie** (ma *6* wartości), **Na wynos** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
 
  3. **Stacja ładowania**. [Stacja ładowania](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) to obiekt infrastruktury, w którym właściciele pojazdów elektrycznych mogą ładować swoje samochody, motocykle lub inne pojazdy elektryczne. Punkty te zapewniają ładowarki i odpowiednie złącza do dostarczania energii do akumulatorów pojazdów.
-        Obejmuje *35* typów filtrów: **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *1* wartość), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Dostęp dla skuterów** (ma *1* wartość), **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Wymagana autoryzacja** (ma *1* wartość), **Autoryzacja przez połączenie telefoniczne** (ma *1* wartość), **Autoryzacja przez SMS** (ma *1* wartość), **Opłata** (ma *2* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7 i inne.  
+        Obejmuje *35* typów filtrów: **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *1* wartość), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Dostęp dla skuterów** (ma *1* wartość), **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Wymagana autoryzacja** (ma *1* wartość), **Autoryzacja przez połączenie telefoniczne** (ma *1* wartość) **Autoryzacja przez SMS** (ma *1* wartość), **Opłata** (ma *2* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7 i inne.  
 
  4. **Sklep ogólnospożywczy i supermarket**. [Sklep ogólnospożywczy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) i [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) reprezentują obiekty handlu detalicznego.
         Obejmuje *13* typów filtrów: **Zakup hurtowy** (ma *2* wartości), **Wypłata gotówki** (ma *5* wartości), **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Lody** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Filtr rzeczy używanych** (ma *2* wartości), **Kasa samoobsługowa** (ma *2* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
@@ -161,7 +201,7 @@ Filtr może składać się z dość dużej liczby pozycji, których obecność z
         Nie zawiera żadnych filtrów.
 
  6. **Stacja paliw**. [Stacja paliw](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), znana również jako stacja benzynowa. Jest to obiekt handlu detalicznego, w którym można tankować pojazdy silnikowe.  
-        Obejmuje *13* typów filtrów: **Myjnia samochodowa** (ma *2* wartości), **Wypłata gotówki** (ma *5* wartości), **Sprężone powietrze** (ma *1* wartość), **Rodzaj paliwa (lotnicze)** (ponad *20* wartości), **Karty paliwowe** (ma *5* wartości), **Typ płatności** (ponad *20* wartości), **Kasa samoobsługowa** (ma *2* wartości), **Dostęp dla skuterów śnieżnych** (ma *3* wartości), **Toaleta** (ponad *1* wartość), **Odkurzacz** (ma *1* wartość), **Automatyczny dystrybutor paliwa** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.  
+        Obejmuje *13* typów filtrów: **Myjnia samochodowa** (ma *2* wartości), **Wypłata gotówki** (ma *5* wartości), **Sprężone powietrze** (ma *1* wartość), **Rodzaj paliwa (lotnicze)** (ponad *20* wartości), **Karty paliwowe** (ma *5* wartości), **Typ płatności** (ponad *20* wartości), **Kasa samoobsługowa** (ma *2* wartość), **Dostęp dla skuterów śnieżnych** (ma *3* wartości), **Toaleta** (ponad *1* wartość), **Odkurzacz** (ma *1* wartość), **Automatyczny dystrybutor paliwa** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.  
 
  7. **Finanse**. [Finanse](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) używane dla biur firm z sektora finansowego.  
         Obejmuje *5* typów filtrów.  
@@ -190,29 +230,23 @@ Filtr może składać się z dość dużej liczby pozycji, których obecność z
  15. **Popularne miejsca (Wikipedia)**. Aby wyszukiwać w tej kategorii, musisz pobrać [mapę Wikipedii](../plugins/wikipedia.md#overview) interesującego Cię regionu.  
         Nie zawiera żadnych filtrów.
 
- 16. **Dostęp prywatny**.  
-        Obejmuje *6* typów filtrów.
-
- 17. **<Translate android="true" ids="poi_filter_public_transport"/>**. Jest to system transportu przeznaczony do przewozu osób w celach publicznych, dostępny dla wszystkich mieszkańców i gości miasta lub regionu.  
+ 16. **<Translate android="true" ids="poi_filter_public_transport"/>**. Jest to system transportu przeznaczony do przewozu osób w celach publicznych, dostępny dla wszystkich mieszkańców i gości miasta lub regionu.  
         Obejmuje *9* typów filtrów.
 
- 18. **Trasy**. Obejmuje [Trasy OSM](../map/routes.md) dla różnych rodzajów aktywności.  
-        Obejmuje *15* typów filtrów: **Punkt kontrolny**, **Węzeł sieci rowerowej**, **Węzeł sieci pieszej**, **Sieć tras (rowerowych)**, **Sieć tras (pieszych)**, **Kategoria punktu trasy**, **Sporty lotnicze**, **Kolarstwo**, **Jazda samochodem**, **Pieszo**, **Motocyklem**, **Inne trasy**, **Sporty wodne**, **Sporty zimowe**.
+ 17. **Trasy**. Obejmuje [Trasy OSM](../map/routes.md) dla różnych rodzajów aktywności.  
+        Obejmuje *14* typów filtrów: **Punkt kontrolny**, **Węzeł sieci rowerowej**, **Węzeł sieci pieszej**, **Sieć tras (rowerowych)**, **Sieć tras (pieszych)**, **Kategoria punktu trasy**, **Sporty lotnicze**, **Kolarstwo**, **Jazda samochodem**, **Pieszo**, **Motocyklem**, **Inne trasy**, **Sporty wodne**, **Sporty zimowe**.
 
- 19. **Zwiedzanie**. Jest to działalność, w której ludzie odwiedzają interesujące miejsca, aby zapoznać się z nimi i cieszyć się ich pięknem, historią lub znaczeniem.  
+ 18. **Zwiedzanie**. Jest to działalność, w której ludzie odwiedzają interesujące miejsca, aby zapoznać się z nimi i cieszyć się ich pięknem, historią lub znaczeniem.  
         Obejmuje *8* typów filtrów.
 
- 20. **Sport**. Obejmuje obszary do uprawiania sportu.  
+ 19. **Sport**. Obejmuje obszary do uprawiania sportu.  
         Obejmuje *11* typów filtrów.
 
- 21. **Sklep**. [Sklep](https://wiki.openstreetmap.org/wiki/Key:shop) odnosi się do różnych placówek i firm, które oferują różne towary lub usługi na sprzedaż, takie jak sklepy spożywcze, odzieżowe, elektroniczne i inne.  
+ 20. **Sklep**. [Sklep](https://wiki.openstreetmap.org/wiki/Key:shop) odnosi się do różnych placówek i firm, które oferują różne towary lub usługi na sprzedaż, takie jak sklepy spożywcze, odzieżowe, elektroniczne i inne.  
         Obejmuje *36* typów filtrów.
 
- 22. **Turystyka**. [Turystyka](https://wiki.openstreetmap.org/wiki/Key:tourism) obejmuje miejsca i rzeczy o szczególnym znaczeniu dla turystów, w tym miejsca do zobaczenia, miejsca do pobytu oraz rzeczy i miejsca zapewniające informacje i wsparcie dla turystów.  
+ 21. **Turystyka**. [Turystyka](https://wiki.openstreetmap.org/wiki/Key:tourism) obejmuje miejsca i rzeczy o szczególnym znaczeniu dla turystów, w tym miejsca do zobaczenia, miejsca do pobytu oraz rzeczy i miejsca zapewniające informacje i wsparcie dla turystów.  
         Obejmuje *32* typy filtrów.
-
- 23. **Woda**. Źródła [wody pitnej](https://wiki.openstreetmap.org/wiki/Key:drinking_water) stworzone lub zaaranżowane przez człowieka.  
-        Nie zawiera żadnych filtrów.
 
 
 ### Zmień kolejność kategorii {#rearrange-categories}
@@ -252,7 +286,7 @@ Opis i sposób użycia:
 
 <InfoAndroidOnly />
 
-![Wyszukiwanie POI Android](@site/static/img/search/search_online_2_andr.png)  
+![Wyszukiwanie POI Android](@site/static/img/search/search_online_2_andr_new.png)  
 
 **Wyszukiwanie online** pozwala na znajdowanie lokalizacji, adresów i użytecznych miejsc w czasie rzeczywistym. OsmAnd używa [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), geokodera online opracowanego przez OpenStreetMap, który tłumaczy zapytania tekstowe użytkowników na współrzędne geograficzne i z powrotem.  
 
@@ -332,56 +366,45 @@ Aby utworzyć niestandardowe filtry do znajdowania miejsc na mapie, wybierz odpo
 
 3. **<Translate android="true" ids="amenity_type_education"/>**. Obejmuje 16 typów: *Działki, Atol, Dzielnica, Miasto, Kwartał miejski, Kraj, Sąd, Urząd celny, Placówka dyplomatyczna, Gospodarstwo, Rząd, Przysiółek, Wyspa, Wysepka, Odosobnione domostwo, Miejscowość, Sąsiedztwo, Policja, Więzienie, Dzielnica, Obszar mieszkalny, Przedmieście, Miasteczko, Ratusz, Wieś*.  
 
-4. **<Translate android="true" ids="amenity_type_emergency"/>**. Obejmuje 14 typów filtrów.  
+4. **<Translate android="true" ids="amenity_type_emergency"/>**. Obejmuje 26 typów filtrów.  
 
-5. **Infrastruktura ratunkowa**. Obejmuje 12 typów filtrów.  
+5. **<Translate android="true" ids="amenity_type_finance"/>**. Obejmuje 12 typów filtrów.
 
-6. **<Translate android="true" ids="amenity_type_finance"/>**. Obejmuje 12 typów filtrów.
+6. **Żywność**. Obejmuje 12 typów filtrów.  
 
-7. **Żywność**. Obejmuje 12 typów filtrów.  
+7. **Zagrożenie**. Obejmuje 5 typów: *Zagrożenie lawinowe, Zagrożenie erozją, Zagrożenie powodziowe, Zagrożenie jądrowe, Śliska droga*. Kategoria Zagrożenie obejmuje zarówno POI z tagami hazard=*, jak i segmenty dróg lub ścieżek (ways) oznaczone tym samym tagiem, jeśli są eksportowane jako wyszukiwalne obiekty. Dla wizualnego przeglądu wszystkich ikon zagrożeń używanych na mapie, zobacz sekcję [Zagrożenie](https://osmand.net/docs/user/map-legend/osmand/#hazard).
 
-8. **Zagrożenie**. Obejmuje 5 typów: *Zagrożenie lawinowe, Zagrożenie erozją, Zagrożenie powodziowe, Zagrożenie jądrowe, Śliska droga*. Kategoria Zagrożenie obejmuje zarówno POI z tagami hazard=*, jak i segmenty dróg lub ścieżek (ways) oznaczone tym samym tagiem, jeśli są eksportowane jako wyszukiwalne obiekty. Dla wizualnego przeglądu wszystkich ikon zagrożeń używanych na mapie, zobacz sekcję [Zagrożenie](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Obejmuje 31 typów filtrów.
 
-9. **<Translate android="true" ids="amenity_type_healthcare"/>**. Obejmuje 31 typów filtrów.
+9. **<Translate android="true" ids="amenity_type_leisure"/>**. Obejmuje 148 typów filtrów.  
 
-10. **<Translate android="true" ids="amenity_type_leisure"/>**. Obejmuje 148 typów filtrów.  
+10. **<Translate android="true" ids="amenity_type_man_made"/>**. Obejmuje 121 typów filtrów.  
 
-11. **<Translate android="true" ids="amenity_type_man_made"/>**. Obejmuje 121 typów filtrów.  
+11. **<Translate android="true" ids="amenity_type_military"/>**. Obejmuje 7 typów: *Strefa niebezpieczna, Bunkier wojskowy, Baza marynarki wojennej, Biuro wojskowe, Poligon wojskowy, Strefa wojskowa, Miejsce wybuchu jądrowego*.  
 
-12. **<Translate android="true" ids="amenity_type_military"/>**. Obejmuje 7 typów: *Strefa niebezpieczna, Bunkier wojskowy, Baza marynarki wojennej, Biuro wojskowe, Poligon wojskowy, Strefa wojskowa, Miejsce wybuchu jądrowego*.  
+12. **<Translate android="true" ids="amenity_type_natural"/>**. Obejmuje 50 typów filtrów.  
 
-13. **<Translate android="true" ids="amenity_type_natural"/>**. Obejmuje 50 typów filtrów.  
+13. **Żegluga**. Obejmuje 41 typów filtrów.  
 
-14. **Żegluga**. Obejmuje 41 typów filtrów.  
+14. **<Translate android="true" ids="amenity_type_office"/>**. Obejmuje 39 typów filtrów.
 
-15. **<Translate android="true" ids="amenity_type_office"/>**. Obejmuje 39 typów filtrów.
+15. **Popularne miejsca (Wikipedia)**. Obejmuje 1 typ: *Wikipedia*.
 
-16. **Popularne miejsca (Wikipedia)**. Obejmuje 1 typ: *Wikipedia*.
+16. **Trasy**. Obejmuje 15 typów filtrów.  
 
-17. **Dostęp prywatny**. Nie obejmuje żadnych filtrów.
+17. **Usługi**. Obejmuje 111 typów filtrów.
 
-18. **Trasy**. Obejmuje 15 typów filtrów.  
+18. **<Translate android="true" ids="amenity_type_sport"/>**. Obejmuje 119 typów filtrów.  
 
-19. **Usługi**. Obejmuje 111 typów filtrów.
+19. **Sklep**. Obejmuje 156 typów filtrów.  
 
-20. **<Translate android="true" ids="amenity_type_sport"/>**. Obejmuje 119 typów filtrów.  
+20. **<Translate android="true" ids="amenity_type_tourism"/>**. Obejmuje 103 typy filtrów.
 
-21. **Sklep**. Obejmuje 156 typów filtrów.  
+21. **Transport**. Obejmuje 97 typów filtrów. 
 
-22. **<Translate android="true" ids="amenity_type_tourism"/>**. Obejmuje 103 typy filtrów.
+22. **Podróże**. Obejmuje 2 typy filtrów.
 
-23. **Transport**. Obejmuje 97 typów filtrów.  
-
-24. **Zdefiniowane przez użytkownika**. Obejmuje 1 typ: *Zdefiniowany przez użytkownika Inny kod pocztowy*.
-
-<!--
-:::note since OsmAnd 5.0 for Android
-Available for search:
-
-- Religious POIs based on the `amenity=place_of_worship` tag are divided into religious-specific locations such as churches, mosques, or synagogues.
-- Minor amenities such as “bench”, "youth bench" (`amenity=bench`) are available in the category list.
-:::
--->
+23. **Zdefiniowane przez użytkownika**. Obejmuje 1 typ: *Zdefiniowany przez użytkownika Inny kod pocztowy*.
 
 ### Zapisz nowe filtry niestandardowe {#save-new-custom-filters}
 
