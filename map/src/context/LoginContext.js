@@ -5,6 +5,32 @@ import useCookie from 'react-use-cookie';
 
 const LoginContext = React.createContext();
 
+async function syncSessionFromServer({ setLoginUser, setLoginRoles, setEmailCookie, setAccountInfo }) {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
+        method: 'GET',
+    });
+    if (response.data) {
+        const user = await response.json();
+        const newUser = user?.username;
+        const roles = user?.roles || null;
+
+        if (newUser) {
+            await getAccountInfo(setAccountInfo);
+        }
+
+        if (INIT_LOGIN_STATE !== newUser) {
+            if (newUser) {
+                setEmailCookie(newUser, { days: 30, SameSite: 'Strict' });
+            }
+            setLoginUser(newUser);
+            setLoginRoles(roles);
+        }
+    } else {
+        setLoginUser(null);
+        setLoginRoles(null);
+    }
+}
+
 export const LoginContextProvider = ({ children }) => {
     const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
     const [loginRoles, setLoginRoles] = useState(null);
@@ -22,8 +48,13 @@ export const LoginContextProvider = ({ children }) => {
     const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
 
     useEffect(() => {
-        checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo).then();
-    }, [loginUser]);
+        syncSessionFromServer({
+            setLoginUser,
+            setLoginRoles,
+            setEmailCookie,
+            setAccountInfo,
+        }).then();
+    }, []);
 
     useEffect(() => {
         if (wantDeleteAcc) {
@@ -32,31 +63,6 @@ export const LoginContextProvider = ({ children }) => {
             setLoginError(null);
         }
     }, [wantDeleteAcc]);
-
-    async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo) {
-        const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
-            method: 'GET',
-        });
-        if (response.data) {
-            if (loginUser !== INIT_LOGIN_STATE) {
-                await getAccountInfo(setAccountInfo);
-            }
-            const user = await response.json();
-            const newUser = user?.username;
-            const roles = user?.roles || null;
-
-            if (loginUser !== newUser) {
-                if (newUser) {
-                    setEmailCookie(newUser, { days: 30, SameSite: 'Strict' });
-                }
-                setLoginUser(newUser);
-                setLoginRoles(roles);
-            }
-        } else {
-            setLoginUser(null);
-            setLoginRoles(null);
-        }
-    }
 
     return (
         <LoginContext.Provider
