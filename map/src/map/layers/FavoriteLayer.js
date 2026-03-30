@@ -25,9 +25,13 @@ import { MARKER_Z_INDEX_MAIN, MENU_INFO_OPEN_SIZE, NAVIGATE_URL } from '../../ma
 import { NAVIGATION_OBJECT_TYPE_FAVORITE } from '../../manager/NavigationManager';
 
 export function filterPointsInBounds(points, map) {
+    if (!map) return [];
+    if (!Array.isArray(points) || points.length === 0) return [];
+
     const mapBounds = map.getBounds();
 
     return points.filter((point) => {
+        if (point == null) return false;
         const pointLatLng = L.latLng(point.lat, point.lon);
         return mapBounds.contains(pointLatLng);
     });
