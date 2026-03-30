@@ -1,5 +1,5 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
 sidebar_position: 1
 title:  Alles Zoeken
 ---
@@ -12,14 +12,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Overzicht {#overview}
 
-**Zoeken** is een handig hulpmiddel om snel locaties te vinden. U kunt Zoeken gebruiken om een locatie te vinden op adres, coördinaten, nuttige plaatsen (POI) of via eerdere zoekopdrachten. Met [Adres zoeken](#search-address) kunt u het gewenste adres invoeren om een exacte locatie te krijgen. [Coördinaten](#search-coordinates) zoeken werkt met geografische coördinaten zoals lengte- en breedtegraad. Met [POI](#search-poi) zoeken kunt u zoeken naar nabijgelegen plaatsen in specifieke categorieën, zoals cafés, hotels of benzinestations. Zoek [Geschiedenis](#search-history) slaat eerdere zoekopdrachten op voor snelle toegang tot eerder gevonden plaatsen. De zoekfunctie maakt het gemakkelijk om reizen te plannen, door onbekend terrein te navigeren en POI's in de buurt te vinden.
+**Zoeken** is een handig hulpmiddel om snel locaties te vinden. U kunt Zoeken gebruiken om een locatie te vinden op adres, coördinaten, nuttige plaatsen (POI) of via eerdere zoekopdrachten. Met [Adres zoeken](#search-address) kunt u het gewenste adres invoeren om een exacte locatie te krijgen. [Coördinaten](#search-coordinates) zoeken werkt met geografische coördinaten zoals lengte- en breedtegraad. Met [POI](#search-poi) zoeken kunt u zoeken naar nabijgelegen plaatsen in specifieke categorieën, zoals cafés, hotels of benzinestations. Het [Verkennen](#search-explore) tabblad benadrukt populaire plaatsen in de buurt en biedt snelle toegang tot recent bezochte locaties. Zoek [Geschiedenis](#search-history-ios) slaat eerdere zoekopdrachten op. De zoekfunctie maakt het gemakkelijk om reizen te plannen, door onbekend terrein te navigeren en POI's in de buurt te vinden.
 
 
 ## Hoe te gebruiken {#how-to-use}
@@ -28,7 +29,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Zoek POI lijst Android](@site/static/img/search/poi_list_android.png)
+![Zoek POI lijst Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -89,13 +90,17 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Zoekresultaten sorteren {#sorting-search-results}
 
-OsmAnd sorteert zoekresultaten automatisch op drie hoofdcriteria:
+OsmAnd sorteert zoekresultaten automatisch op verschillende criteria:
 
 1. **Overeenkomende zoekopdrachten** — Resultaten die exacte of gedeeltelijke overeenkomsten bevatten met de woorden die u hebt ingevoerd, worden hoger weergegeven.
 
-2. **Objecttype** - Bij het sorteren op naam krijgen steden en straten voorrang op POI's bij het weergeven van resultaten.
+2. **Relevantie** — Objecten waarvan de namen nauw aansluiten bij de zoekopdracht worden meestal hoger in de resultaten weergegeven.
 
-3. **Afstand** - Wanneer resultaten vergelijkbare overeenkomstcriteria en objecttypes hebben, worden de resultaten die het dichtst bij de huidige locatie van de gebruiker liggen als eerste getoond.
+3. **Objecttype** — Afhankelijk van de zoekopdracht kunnen resultaten verschillende typen objecten bevatten, zoals steden, straten, adressen of POI's.
+
+4. **Afstand** — Wanneer resultaten vergelijkbare overeenkomstcriteria en objecttypes hebben, worden de resultaten die het dichtst bij de huidige locatie van de gebruiker liggen als eerste getoond.
+
+5. **Belang** — Bekende bezienswaardigheden of vaak genoemde plaatsen kunnen hoger in de resultaten verschijnen wanneer ze nauw aansluiten bij de zoekopdracht.
 
 ***Bijvoorbeeld***, een zoekopdracht *postkantoor* zal eerst de dichtstbijzijnde postkantoren tonen, zelfs als er andere items met vergelijkbare namen op grotere afstand zijn.  
 
@@ -148,13 +153,13 @@ OsmAnd heeft [**TIGER-data**](../../technical/algorithms/trace-address-search-is
 
 <TabItem value="android" label="Android">
 
-![Zoek POI Android](@site/static/img/search/poi_overlay_android.png)
+![Zoek POI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Zoek POI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Zoek POI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -171,7 +176,7 @@ Met OsmAnd kunt u zoeken naar punten die op een kaart op het scherm van uw appar
 
 ### Zoeken in de buurt {#search-nearby}
 
-![Zoeken Android](@site/static/img/search/search_all_near_location_andr.png)
+![Zoeken Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 U kunt de zoekfunctie gebruiken in de buurt van een specifieke locatie. Selecteer hiervoor het gewenste punt [uit de lijst in het zoekmenu](#full-text-search) of selecteer het direct op de kaart. Selecteer in het [kaartcontextmenu](../map/map-context-menu.md#actions) *Acties → Zoeken in de buurt*.
 
@@ -182,7 +187,7 @@ U kunt de zoekfunctie gebruiken in de buurt van een specifieke locatie. Selectee
 
 <TabItem value="android" label="Android">
 
-![Zoeken Android](@site/static/img/search/search_address_2_andr.png)
+![Zoeken Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
@@ -197,25 +202,23 @@ U kunt de zoekfunctie gebruiken in de buurt van een specifieke locatie. Selectee
 **Adres zoeken** maakt gebruik van OpenStreetMap-data. Met dit type zoekopdracht kunt u de locatie en de richting naar een specifiek adres vinden uit een reeds gesorteerde lijst. Lees meer in het artikel [Adres zoeken](./search-address.md).
 
 
-## Zoekgeschiedenis {#search-history}
+## Verkennen zoeken {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![Verkennen zoeken](@site/static/img/search/explore_search_android.png)
 
-![Geschiedenis zoeken](@site/static/img/search/history_search_android.png)
+Het **Verkennen**-tabblad in de Zoektool helpt u snel plaatsen te ontdekken in de buurt van uw huidige locatie en toegang te krijgen tot recent geopende items. Het bevat twee hoofddelen:  
+- Populaire plaatsen in de buurt – een doorrolbare lijst met bekende bezienswaardigheden en attracties in de buurt van uw locatie. Elk item kan de naam van de plaats, de categorie, afstand en richting en een voorbeeldafbeelding bevatten indien beschikbaar. Tik op *Alles tonen* om de volledige lijst te openen of op *Toon op kaart* om deze plaatsen op de kaart weer te geven.
+- Recent bezocht – een lijst met plaatsen, tracks of andere objecten die u recent hebt geopend. Hiermee kunt u snel terugkeren naar eerder bekeken locaties.
 
-</TabItem>
+Voor meer details, zie [hier](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## Zoekgeschiedenis (iOS) {#search-history-ios}
 
 ![Geschiedenis zoeken](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
-U kunt de **Zoekgeschiedenis** gebruiken om opnieuw te zoeken naar eerder gevonden plaatsen, adressen of vaak bezochte plaatsen zonder de zoekopdracht opnieuw in te voeren.. Meer details vindt u in het artikel [Zoekgeschiedenis](./search-history.md).
+U kunt de **Zoekgeschiedenis** gebruiken om opnieuw te zoeken naar eerder gevonden plaatsen, adressen of vaak bezochte plaatsen zonder de zoekopdracht opnieuw in te voeren. Meer details vindt u in het artikel [Zoekgeschiedenis](./search-history.md).
 
 
 ## POI zoeken {#search-poi}
@@ -224,7 +227,7 @@ U kunt de **Zoekgeschiedenis** gebruiken om opnieuw te zoeken naar eerder gevond
 
 <TabItem value="android" label="Android">
 
-![Zoek POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Zoek POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -274,3 +277,4 @@ Coördinaten zoeken biedt een nauwkeurige locatie. U kunt precieze coördinaten 
 - [Zoekgeschiedenis](./search-history.md)
 - [POI zoeken](./search-poi.md)
 - [Coördinaten zoeken](./search-coordinates.md)
+- [Populaire plaatsen](../map/popular_places.md)

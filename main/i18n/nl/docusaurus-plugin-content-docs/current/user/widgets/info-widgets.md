@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -26,7 +26,7 @@ Informatieve widgets geven u snel toegang tot belangrijke gegevens. Dit kunnen g
 
 ## Hoogtewidgets   {#altitude-widgets}
 
-Hoogtewidgets tonen de hoogte boven zeeniveau van de huidige geolocatie en de hoogte van het kaartcentrum.  
+Hoogtewidgets tonen de hoogte boven zeeniveau van de huidige geolocatie en de verhoging van het kaartcentrum.  
 
 
 ### Hoogte: Huidige Locatie   {#altitude-current-location}
@@ -63,10 +63,10 @@ Op sommige Android-apparaten kan de hoogte onnauwkeurig worden weergegeven. Om d
 | Formaat | *Menu → Instellingen → App-profielen → Algemene instellingen → Eenheden & formaten → Lengte-eenheden* |  
 
 
-### Hoogte: Kaartcentrum {#elevation-map-center}
+### Verhoging: Kaartcentrum {#elevation-map-center}
 
 :::info Betaalde functie
-De *Hoogte: kaartcentrum* widget is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />.
+De *Verhoging: kaartcentrum* widget is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -85,7 +85,7 @@ De *Hoogte: kaartcentrum* widget is een [**OsmAnd Pro**](../purchases/index.md) 
 
 </Tabs>
 
-U kunt de widget gebruiken om de hoogte van het huidige kaartcentrum boven zeeniveau te achterhalen. Een [Terreinkaart (Schaduwreliëf en Helling)](../plugins/topography.md#download-maps) van het vereiste gebied is nodig om informatie weer te geven in de **Hoogte: kaartcentrum widget**.  
+U kunt de widget gebruiken om de verhoging van het huidige kaartcentrum boven zeeniveau te achterhalen. Een [Terreinkaart (Schaduwreliëf en Helling)](../plugins/topography.md#download-maps) van het vereiste gebied is nodig om informatie weer te geven in de **Verhoging: kaartcentrum widget**.  
 
 | | |
 |:------------|:------------|
@@ -217,16 +217,16 @@ Na het resetten wordt de gemiddelde snelheid opnieuw berekend op basis van de ni
 
 </Tabs>  
 
-De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widgets bieden waardevolle informatie over het glijgetal om weloverwogen beslissingen te nemen bij het plannen van luchtwegen. De *Glijgetal* widget in OsmAnd helpt u de efficiëntie van uw daling of stijging te evalueren bij het navigeren naar een specifieke locatie ([markeringspositie](../personal/markers.md) op de kaart). Het berekent het glijgetal als de verhouding tussen de afstand en het hoogteverschil tussen uw huidige positie en uw beoogde bestemming. U kunt hier meer over lezen op [Wikipedia](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widgets bieden waardevolle informatie over het glijgetal om weloverwogen beslissingen te nemen bij het plannen van luchtwegen. De *Glijgetal* widget in OsmAnd helpt u de efficiëntie van uw daling of stijging te evalueren bij het navigeren naar een specifieke locatie ([markering](../personal/markers.md) positie op de kaart). Het berekent het glijgetal als de verhouding tussen de afstand en het hoogteverschil tussen uw huidige positie en uw beoogde bestemming. U kunt hier meer over lezen op [Wikipedia](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 
 **Gebruik van widgets:**
 
-- *Plannen van zweefvliegvluchten.* Voor zweefvliegpiloten wordt de widget *Glijgetal naar het doel* een onmisbaar hulpmiddel bij het plannen en uitvoeren van zweefvliegvluchten. Piloten kunnen inschatten hoe ver ze naar hun doel kunnen vliegen, gegeven de huidige omstandigheden en het vereiste glijgetal.
+- *Plannen van zweefvliegvluchten.* Voor zweefvliegpiloten wordt de *Glijgetal naar het doel* widget een onmisbaar hulpmiddel bij het plannen en uitvoeren van zweefvliegvluchten. Piloten kunnen inschatten hoe ver ze naar hun doel kunnen vliegen, gegeven de huidige omstandigheden en het vereiste glijgetal.
 - *Optimaliseren van stijgingen en dalingen.* Het gemiddelde glijgetal stelt piloten in staat om stijgingen en dalingen te optimaliseren op basis van de huidige omstandigheden. Piloten kunnen het optimale moment kiezen voor stijgingen om de vliegtijd te maximaliseren, of voor dalingen om een doelpunt te bereiken.
 - *Reageren op veranderende omstandigheden.* De widget biedt continue updates van het glijgetal, waardoor piloten direct kunnen reageren op veranderingen in atmosferische omstandigheden of routes. Ze kunnen hun vluchtplan aanpassen om de veiligheid en efficiëntie te waarborgen.
 - *Maximaal gebruik van horizontale afstand.* Het kennen van het glijgetal stelt piloten in staat om de horizontale afstand maximaal te benutten om naar het doel te bewegen, wat vooral belangrijk is bij het plannen van lange vluchten.
-- *Risicovermindering*. De widget *Glijgetal naar het doel* helpt piloten situaties te vermijden waarin het bereiken van het doel onmogelijk wordt door een onvoldoende glijgetal. Dit helpt om risico's te verminderen en de vliegveiligheid te verbeteren.
+- *Risicovermindering*. De *Glijgetal naar het doel* widget helpt piloten situaties te vermijden waarin het bereiken van het doel onmogelijk wordt door een onvoldoende glijgetal. Dit helpt om risico's te verminderen en de vliegveiligheid te verbeteren.
 
 
 **Positieve en Negatieve Waarden:**
@@ -248,13 +248,13 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 ### Glijgetal naar Doel {#glide-ratio-to-target}
 
 - **Glijgetal naar doel** toont het exacte glijgetal dat nodig is om het doelpunt te bereiken.
-- **Hoogte doel** toont de hoogte van het doelpunt. De [Kaartmarkering](../personal/markers.md) moet als doelpunt worden gebruikt.
+- **Doelverhoging** toont de verhoging van het doelpunt. De [Kaartmarkering](../personal/markers.md) moet als doelpunt worden gebruikt.
 
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
-| Door te tikken | Wijzigt *Glijgetal naar doel* of *Hoogte doel*  |
+| Door te tikken | Wijzigt *Glijgetal naar doel* of *Doelverhoging*  |
 | Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
@@ -319,7 +319,7 @@ Coördinatenwidgets worden bovenaan het scherm weergegeven. Pictogrammen met een
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | Door te tikken | Kopieert de coördinaten naar het klembord. |
-| Formaat | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) of <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| Formaat | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
 ## GPS Info   {#gps-info}
@@ -560,7 +560,7 @@ Om Voertuigstatistieken Widgets aan het kaartscherm toe te voegen, schakelt u de
 </Tabs>
 
 
-De widgets behoren tot de [Voertuigstatistieken plugin](../plugins/vehicle-metrics.md#widgets). U kunt ze gebruiken om informatie van een aangesloten OBD-II scanner te bekijken, zoals (*14 statistieken*): **Inlaattemperatuur**,&nbsp; **Omgevingstemperatuur**,&nbsp; **Koelvloeistoftemperatuur**,&nbsp; **Motorolietemperatuur**,&nbsp; **Motortoerental** (*gratis*),&nbsp; **Motorlooptijd**,&nbsp; **Berekende motorbelasting**,&nbsp; **Brandstofdruk**,&nbsp; **Brandstofverbruik**,&nbsp; **Resterende brandstof**,&nbsp; **Batterijniveau**,&nbsp; **Adapterspanning**,&nbsp; **Voertuigsnelheid** (*gratis*), en **Gaskleppositie**.  
+De widgets behoren tot de [Voertuigstatistieken plugin](../plugins/vehicle-metrics.md#widgets). U kunt ze gebruiken om informatie van een aangesloten OBD-II scanner te bekijken, zoals (*14 statistieken*): **Adapterspanning** (*alleen Android*),&nbsp; **Omgevingstemperatuur**,&nbsp; **Batterijspanning**,&nbsp; **Berekende motorbelasting**,&nbsp; **Koelvloeistoftemperatuur**,&nbsp; **Motorolietemperatuur**,&nbsp; **Motorlooptijd**,&nbsp; **Motortoerental** (*gratis*),&nbsp; **Brandstofverbruik**,&nbsp; **Brandstofdruk**,&nbsp; **Inlaattemperatuur**,&nbsp; **Resterende brandstof**,&nbsp; **Gaskleppositie**, en **Voertuigsnelheid** (*gratis*).  
 
 - Om voertuigstatistieken widgets aan het kaartscherm toe te voegen, [schakel](../plugins/index.md#enable--disable) de **Voertuigstatistieken plugin** in.
 - U kunt widgets toevoegen, zelfs als er geen OBD-II scanner is aangesloten.

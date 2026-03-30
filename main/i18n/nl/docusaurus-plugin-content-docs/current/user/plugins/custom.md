@@ -1,6 +1,6 @@
 ---
-source-hash: 902bef4fdd0d54f22291ab4b5aaec0a1b3cb8cc76cda1964e3fb3c36d2adb6fb
-sidebar_position: 4
+source-hash: f7e42a121aebcff7943e8adafef1fbff3cfc1eee0eb911687d5bdc3b4002fa7a
+sidebar_position: 5
 title:  Aangepast Pakket
 ---
 
@@ -36,7 +36,7 @@ U kunt `.json`-bestanden aanpassen met behulp van OsmAnd's *items.json*-bestand,
 Mogelijk moet u lezen:
 
 - Over het [`.json`-formaat](https://en.wikipedia.org/wiki/JSON).
-- Over [text editors](https://en.wikipedia.org/wiki/List_of_text_editors), waarmee u bestanden in JSON-formaat kunt openen en bewerken.
+- Over [teksteditors](https://en.wikipedia.org/wiki/List_of_text_editors), waarmee u bestanden in JSON-formaat kunt openen en bewerken.
 - Over de [Sublime Text-editor](https://en.wikipedia.org/wiki/Sublime_Text), die in OsmAnd als referentie wordt gebruikt.
 - U kunt uw code controleren in [JSON Editor Online](https://jsoneditoronline.org/).
 
@@ -44,7 +44,7 @@ Mogelijk moet u lezen:
 ### items.json {#itemsjson}
 
 <details>
-<summary> OsmAnd's <b>items.json</b>-bestand. </summary> 
+<summary> OsmAnd's <b>items.json</b> file. </summary> 
 
 ```
 {

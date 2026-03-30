@@ -1,6 +1,6 @@
 ---
-source-hash: 8bdbb1dbc653745d49be7527b86667e03d733d2fde2a36fca570fbd3b9b02442
-sidebar_position: 7
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
 title:  Zeekaartweergave
 ---
 
@@ -21,7 +21,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 De Zeekaartweergave-plugin is een [betaalde functie](../purchases/index.md).  
 :::
 
-Zeekaartweergave is een gedetailleerde grafische weergave van oceanen, zeeën, kustgebieden en rivieren die u helpt bij het navigeren op het water en u informeert over populaire routes, obstakels in uw vaarwater, dichtstbijzijnde havens, ankerplaatsen en andere belangrijke oriëntatiepunten.  
+Zeekaartweergave is een gedetailleerde grafische weergave van oceanen, zeeën, kustgebieden en rivieren die u helpt bij het navigeren op het water en populaire routes, obstakels in uw vaarwater, dichtstbijzijnde havens, ankerplaatsen en andere belangrijke oriëntatiepunten te kennen.  
 
 Een zeekaart is een zeer gedetailleerde topografische kaart die schippers helpt een vaartuig op een gekozen koers op het water te navigeren. Het is vergelijkbaar met een wegenkaart voor wie met de auto reist. Vaak wordt het om historische redenen een *'Chart'* genoemd, het is een gedetailleerde grafische weergave van de oceanen, zeeën, kustgebieden en rivieren.  
 

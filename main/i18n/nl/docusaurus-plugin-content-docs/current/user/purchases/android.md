@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
 sidebar_position: 1
 title:  Android Aankopen
 ---
@@ -76,7 +76,25 @@ Voor Android-apparaten kunt u de **Gratis** en **Betaalde** versies van de appli
 
 In de lijst staat informatie over de prijzen van het OsmAnd-product voor de regio's VS en Europa. Voor andere regio's zijn de prijzen equivalent in lokale valuta.
 
+<!--
 
+:::danger February Sale
+
+*Hurry up! This offer is only available until* **February 22 (23:00 CET)**.
+
+:::
+
+
+
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | <s>€39.99</s> **€19.99** | <s>€9.99</s> **€4.99** | €2.99 / <s>€29.99</s> **€14.99** |
+| **Price (USD)** | $0 | <s>$39.99</s> **$19.99** | <s>$9.99</s> **$4.99** | $2.99 / <s>$29.99</s> **$14.99**|
+
+
+-->
 
 |    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -113,6 +131,7 @@ De onderstaande tabel geeft een overzicht van de functies in zowel de gratis als
 | [Nautische diepten](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Populaire plaatsen (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage - Reisgidsen](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Astronomie-plugin](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Offline en online navigatie](../navigation/index.md)<br/>met stapsgewijze aanwijzingen | ✔ | ✔ | ✔ |
 | [Offline direct zoeken](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip opnemen](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -155,6 +174,8 @@ Het **Pro**-abonnement heeft momenteel de volgende functies:
 | [Hoogtewidgets - Hoogte: Kaartcentrum](../widgets/info-widgets.md#elevation-map-center) | Hiermee kunt u de hoogte van het huidige kaartcentrum boven zeeniveau achterhalen.  |
 | [Hoogtecorrectie (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Hiermee kunt u een hoogtegrafiek voor uw track berekenen ([Terreinkaart](../plugins/topography.md#download-maps) vereist voor de gekozen regio). |
 | [Kleurenschema aanpassen](../../user/plugins/topography.md#modify-color-scheme) | Hiermee kunt u het kaaruiterlijk aanpassen door kleurpaletten te selecteren of te importeren. U kunt ingebouwde schema's bewerken of uw eigen paletbestanden gebruiken om kaarten- en routekleuren te personaliseren. |
+| [Aangepaste paletten maken](../../user/map/tracks/appearance.md#color-palette-editor) | Hiermee kunt u gradiëntpaletten voor trackkleuring maken en bewerken met Relatieve of Vaste waarden. U kunt kleurstapjes definiëren, waarden toewijzen en aanpassen hoe gegevens (zoals snelheid of hoogte) langs de track worden weergegeven. |
+| [Slimme mappen – Organiseren op](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Hiermee kunt u tracks in Slimme Mappen organiseren met geavanceerde groeperingsparameters zoals datum & tijd, afstand, duur, snelheid, hoogte & elevatie, en sensorgegevens. Deze opties maken een gedetailleerdere trackcategorisering en flexibele analyse mogelijk. |
 
 
 ## Hoe te kopen {#how-to-buy}

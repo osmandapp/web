@@ -1,6 +1,6 @@
 ---
-source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
-sidebar_position: 14
+source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+sidebar_position: 16
 title: Topografie
 ---
 
@@ -41,7 +41,7 @@ De Topografie-plugin biedt toegang tot de volgende kaarttypes:
 
 | Hoogtelijnen | Schaduwreliëf | Helling |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Hoogtelijnen_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Schaduwreliëf_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Hellingen_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ De Topografie-plugin biedt toegang tot de volgende kaarttypes:
 
 | Hoogtelijnen | Schaduwreliëf | Helling |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Hoogtelijnen_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Schaduwreliëf_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Hellingen_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -143,6 +143,10 @@ Voor [**Hoogtelijnen**](#contour-lines) moet u bepalen in welke [eenheden](../pe
 
 ## Hoogtelijnen {#contour-lines}
 
+:::tip Aankoop
+Hoogtelijnen is een [betaalde functie](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -182,6 +186,10 @@ Bij gebruik van de [Kaartweergave-engine](../personal/global-settings.md#map-ren
 
 ## Terrein {#terrain}
 
+:::tip Aankoop
+Terrein is een [betaalde functie](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -215,7 +223,7 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 
 | Schaduwreliëf | Helling | Hoogte |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Schaduwreliëf](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) | ![Helling](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Schaduwreliëf** is gebaseerd op het simuleren van oppervlakteverlichting met behulp van terreingegevens. Deze methode omvat het creëren van schaduwen en hooglichten op basis van de hoek van het oppervlak ten opzichte van de lichtbron. Als gevolg hiervan ziet u natuurlijke heuvels, valleien en andere terreindetails op de kaart.  
 
@@ -255,25 +263,41 @@ Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-sc
 
 <TabItem value="android" label="Android">
 
-![Kleurenschema Wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Kleurenschema Wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+*De Kleurenschema Wijzigen-functie* stelt u in staat een kleurenschema te selecteren:
+
+- Uit een [vooraf gedefinieerde lijst](#default-color-scheme).
+- Uit kleurenpaletbestanden die u op uw computer hebt gemaakt. Aangepaste bestanden kunnen aan OsmAnd worden toegevoegd met behulp van de [import/export tool](../personal/import-export.md).
+- Uit paletten die direct in de app zijn gemaakt of bewerkt.
+
+Aangepaste paletten zijn gebaseerd op kleurschalen, waarbij elke kleur overeenkomt met een specifieke waarde van terreingegevens zoals *Hoogte* of *Helling*. 
+U kunt:
+
+- waardestappen definiëren (hoogteniveaus of hellingspercentages);
+- kleuren toewijzen aan elke stap;
+- stappen toevoegen of verwijderen om de kleurschalen aan te passen.
+
+**Opmerking:** Schaduwreliëf gebruikt een vaste schaduwalgoritme en ondersteunt geen aangepaste kleurenpaletten.
+
+Voor geavanceerde palet-aanpassing met behulp van paletbestanden, zie het artikel [Kleurenschema's](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Kleurenschema Wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Kleurenschema Wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
+![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
-</TabItem>
-
-</Tabs>
-
-De *Kleurenschema Wijzigen*-functie stelt u in staat een kleurenschema te selecteren:
+*De Kleurenschema Wijzigen-functie* stelt u in staat een kleurenschema te selecteren:
 
 - Uit een [vooraf gedefinieerde lijst](#default-color-scheme).
 - Uit kleurenpaletbestanden die u op uw computer hebt gemaakt. Aangepaste bestanden kunnen aan OsmAnd worden toegevoegd met behulp van de [import/export tool](../personal/import-export.md).
 
 U kunt [deze paletten bewerken](../personal/color-palette-schemes.md#palette-modify) om het uiterlijk van kaarten en routes te personaliseren.
 
+</TabItem>
+
+</Tabs>
 
 ### Zichtbaarheid {#visibility}
 
@@ -285,9 +309,9 @@ De functie *Zichtbaarheid* wordt gebruikt om de transparantie van de schaduwen v
 
 ### Zoomniveaus {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Zoomniveaus](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de kaartzoomniveaus in te stellen, variërend van 4 tot 19, waarop de Schaduwreliëf- of Helling-kaartlagen worden weergegeven.
+De functie *Zoomniveaus* stelt u in staat de minimum- en maximumwaarden van de kaartzoomniveaus in te stellen, variërend van 4 tot 19, waarop de Schaduwreliëf- of Helling-kaartlagen worden weergegeven.
 
 ### Cachegrootte {#cache-size}
 
@@ -310,7 +334,7 @@ De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de
 
 ### Snelle Acties {#quick-actions}
 
-![QA voor Terrein](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![Snelle acties voor Terrein](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 U kunt de *Snelle Actie*-knoppen op het kaartscherm gebruiken om de zichtbaarheid van [Hoogtelijnen](#contour-lines), [Terrein](#terrain)-lagen en [Terrein kleurenschema](../../user/personal/color-palette-schemes.md#quick-actions) te wisselen. Afhankelijk van de laag die is geselecteerd in het menu Kaart configureren, zal het toewijzen van een *Terrein*-actie aan de knop *Schaduwreliëf*, *Helling* of *Hoogte* weergeven.  
 
@@ -318,6 +342,59 @@ De hoofdinstellingen voor *Toon of Verberg kaarttypes* bevinden zich in de secti
 
 - Ga naar [Actie toevoegen](../widgets/quick-action.md#custom-buttons): *Menu → Scherm configureren → Aangepaste knoppen → Snelle actie → Actie toevoegen → Kaart configureren*.
 - Voeg een of meer QA-knoppen toe om de zichtbaarheid van een bepaalde topografielaag te wijzigen.
+
+## 3D-gebouwen {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D-gebouwen* 
+
+![3D-gebouwen](@site/static/img/map/3d_buildings_1_new.png) ![3D-gebouwen](@site/static/img/map/3d_buildings_2_new.png) 
+
+**3D-gebouwen** functie geeft gebouwen weer als volumetrische 3D-modellen in plaats van platte vormen. Gebouwen worden gegenereerd uit [OpenStreetMap-gegevens](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), met gebruik van hoogte-informatie uit tags zoals `height` en `building:levels` wanneer beschikbaar. 3D-gebouwen worden alleen weergegeven bij hogere zoomniveaus (stad/straatweergave), waar individuele gebouwen kunnen worden weergegeven.  
+
+Gebruik de hoofdschakelaar om 3D-weergave van gebouwen in- of uit te schakelen. Om gebouwen in 3D te bekijken, kantel de kaart door twee vingers op het scherm te plaatsen en omhoog te vegen. In deze weergave kunnen gebouwen gedeeltelijk wegen of kaartlabels bedekken, afhankelijk van de zichtbaarheid-instelling.
+
+Deze optie is alleen beschikbaar wanneer de Topografie-plugin is ingeschakeld.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+De 3D-gebouwen-instellingen zijn verdeeld in twee groepen: **Uiterlijk** en **Prestaties**.
+
+### Uiterlijk {#appearance}
+
+![3D-gebouwen](@site/static/img/map/3d_buildings_color.png)
+
+De **Uiterlijk**-instellingen bepalen hoe 3D-gebouwen eruitzien op de kaart. Het omvat twee instellingen: Kleur en Zichtbaarheid. 
+
+**Kleur** laat u de gebouwkleur wijzigen. Wanneer u op Kleur tikt, opent OsmAnd een apart voorbeeldscherm waar u de kaart kunt zien terwijl u de instelling aanpast.
+- **Kaartstijl** — gebruikt de standaard gebouwkleur uit de momenteel geselecteerde kaartstijl.
+- **Aangepast** — laat u een aangepaste gebouwkleur instellen voor Dag / Nacht-modus.
+
+:::tip Aankoop
+KleurAanpassing van 3D-gebouwen is een [betaalde functie](../purchases/index.md).  
+:::
+
+Als aangepaste kleuren niet zijn aangeschaft, ziet u een lege toestand met een korte beschrijving en een Knop Kopen. Als Aangepast beschikbaar is, kunt u schakelen tussen Dag en Nacht, een kleur kiezen uit het palet (of Alle kleuren openen), en vervolgens Toepassen tikken.
+
+**Zichtbaarheid** stuurt de opacity (transparantie) van 3D-gebouwen aan. Gebruik de schuifregelaar om de zichtbaarheid als percentage in te stellen. Lagere waarden maken gebouwen transparanter en helpen wegen/labels leesbaar te houden. Hogere waarden maken gebouwen solider en visueel dominanter. Op Zichtbaarheid tikken opent ook een apart voorbeeldscherm met de schuifregelaar.
+
+Op de voorbeeldschermen (Kleur / Zichtbaarheid) kunt u Reset naar standaard gebruiken vanuit de app-balk om de standaardwaarde te herstellen.
+
+### Prestaties {#performance}
+
+De **Prestaties**-instellingen bepalen hoe 3D-gebouwen worden gerenderd. Het omvat twee instellingen: Detailniveau en Bezichtigingsafstand.
+
+**Detailniveau** bepaalt de complexiteit van de 3D-gebouwgeometrie:
+- Laag (standaard) — eenvoudigere geometrie.
+- Hoog — gedetailleerdere geometrie.
+
+**Bezichtigingsafstand** stuurt hoe ver van de camera 3D-gebouwen worden gerenderd:
+- Dichtbij (standaard) — rendert gebouwen dichter bij u.
+- Ver — rendert gebouwen vanaf een grotere afstand.
+
+Beide prestatie-opties gebruiken een tweeposities schakelaar direct in het 3D-gebouwen-instellingen-scherm.
+
+**Opmerking:** Het gebruik van *Hoog detail* en *Verre bezichtigingsafstand* verbetert het visuele uiterlijk maar kan de prestaties beïnvloeden en het batterijverbruik verhogen.
 
 
 ## 3D-reliëf {#3d-relief}

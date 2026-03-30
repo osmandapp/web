@@ -1,5 +1,5 @@
 ---
-source-hash: d14fcef24951bbd85eb606632ce2c9718e63928e51e8d57c71415b092804239c
+source-hash: 96084cbd66c18c14bdd09bfd6b912f930221f3e1c8bd4b5409b286eea7f7e3b7
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -82,6 +82,8 @@ Houd er rekening mee dat maandelijkse kaartupdates worden beschouwd als een nieu
 - [Wikipedia](../plugins/wikipedia.md). Vectorkaart met geo-gepositioneerde [Wikipedia](https://wikipedia.org/)-artikelen over bezienswaardigheden of aanvullende informatie over plaatsen.
 - [Wikivoyage](../plan-route/travel-guides.md). Het biedt vectorkaarten met virtuele reisgidsen, die gebruikers waardevolle informatie, aanbevelingen en tips bieden.
 - [Weersvoorspelling](../plugins/weather.md). Weerinformatie op een kaart voor eenvoudige routeplanning.
+
+Zonder een actief abonnement tonen deze kaarttypes een knop *Koop* in plaats van Downloaden. Tik op *Koop* om het abonnementsscherm te openen en een plan te kiezen.
 
 
 ## Downloadmenu {#downloads-menu}

@@ -1,6 +1,6 @@
 ---
-source-hash: 55d8cccafd2e1f134ded6b99380cd56303bdc464678808eaea0ff7a569f44379
-sidebar_position: 10
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
+sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
 
@@ -53,7 +53,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 <TabItem value="ios" label="iOS">
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 - **Simuleer uw positie** (*Android* / *iOS*). [Simuleer](#gpx-track-simulation) de locatie en beweging met behulp van een GPX-track.
 - **Batterijbesparingsmodus** (*Android* / *iOS*). Deze instelling verlaagt [de verversingssnelheid van het scherm](#map-rendering-fps-widget) met 20 frames per seconde om de batterij te sparen tijdens het gebruik van applicaties.
 - **Gebruik 3D-locatiepositiepictogrammen** (*iOS*). Hiermee kunt u een 3D-pictogram selecteren voor het [Mijn Locatie-pictogram](../personal/profiles.md#my-location-appearance).
-- **Simuleer obd-gegevens** (*Android*). Maakt simulatie van het gebruik van een [OBD-scanner](./vehicle-metrics.md) mogelijk.
-- **Prestatie-debug-info** (*Android*). Toont weergave- en navigatieprestaties.
+- **Simuleer obd-gegevens** (*Android* / *iOS*). Maakt simulatie van het gebruik van een [OBD-scanner](./vehicle-metrics.md) mogelijk.
+- **Prestatie-debug-info** (*Android* / *iOS*). Toont weergave- en navigatieprestaties.
 - **Kaartlagen uitschakelen** (*Android*). Schakelt alle kaartlagen over de vectorkaart uit (herstart vereist).
 - **Logcat-buffer** (*Android*). Controleer en deel gedetailleerde logboeken van de app.
 - **Toon toast over ingedrukte toets** (*Android*). Toon een bericht over de toets.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Peiling is de kompasrichting van uw huidige positie naar uw beoogde bestemming. Beïnvloedt *[trackopname](../plugins/trip-recording.md)*.
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Koers is de kompasrichting van uw huidige positie naar het ware noorden. Deze optie is standaard ingeschakeld. Beïnvloedt *[trackopname](../plugins/trip-recording.md)*.
+- **MSAA inschakelen** (*Android*) / **MSAA inschakelen voor CarPlay** (*iOS*). Schakelt multisample anti-aliasing in om de kaartweergave te verzachten. Verbetert de visuele kwaliteit van het [Mijn Locatie-pictogram](../personal/profiles.md#my-location-appearance) en de routelijn door pixelige randen te verminderen. Op Android beïnvloedt deze optie de kaartweergave op het apparaat en bij gebruik van [Android Auto](../navigation/auto-car.md). Op iOS is het alleen van toepassing op [CarPlay](../navigation/car-play.md).
 
 
 ### Applicatietesten {#application-testing}

@@ -1,5 +1,5 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
 title:  Kleurenschema's
 ---
@@ -71,6 +71,8 @@ Ga naar: *Menu → Kaarten & Bronnen → Lokaal → Kleuren*
 
 Terreinbestanden (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) definiëren 3 [terreinvisualisaties](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Schaduwreliëf, Helling,* en *Hoogte*. Voor elk type kunt u meerdere paletten hebben, bijvoorbeeld *lawinehelling* wordt standaard meegeleverd. Raadpleeg het artikel [Topografie](../plugins/topography.md#default-color-scheme) voor meer details.
 
+Op Android kunnen paletten voor *Helling* en *Hoogte* kleurenschema's ook direct in de app worden gemaakt of bewerkt met behulp van de [Kleurenpalet-editor](../plugins/topography.md#modify-color-scheme). Dit is een betaalde functie <ProFeature />.
+
 ### Tracks & Routes {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -93,6 +95,8 @@ Visualisaties met lijngradiënt gebruiken paletbestanden (`route_<type_name>_<pa
 
 - Voor [Routes](../navigation/guidance/map-during-navigation.md#color): *Snelheid (`route_speed_default.txt`), Helling (`route_slope_default.txt`),* en *Hoogte (Altitude) (`route_elevation_default.txt`)*.
 - Voor [GPX-tracks](../map/tracks/appearance#track-colors-in-gpx-files): *Snelheid, Helling, Max Snelheid (`route_maxspeed_default.txt`)*, en *Hoogte (Altitude)*, of info van *Externe sensoren*.
+
+Op Android kunnen paletten ook direct in de app worden gemaakt of bewerkt met behulp van de [Kleurenpalet-editor](../map/tracks/appearance.md#color-palette-editor). Dit is een betaalde functie <ProFeature />.
 
 ### Favorieten & Waypoints {#favorites-waypoints}
 

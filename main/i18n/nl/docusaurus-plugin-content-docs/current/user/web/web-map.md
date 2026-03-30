@@ -1,5 +1,5 @@
 ---
-source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
+source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
 sidebar_position: 3
 sidebar_label: Kaart
 title: Wereldkaart op de Website
@@ -67,9 +67,10 @@ Het menu Kaart configureren stelt u in staat om de weergave-instellingen voor ka
 - [POI-overlay...](#poi-overlay). Hiermee kunt u de benodigde POI-categorieën kiezen en op de kaart weergeven.
 - [Favorieten](#favorites). Schakel de weergave van favorieten op de kaart in of uit.
 - [Tracks](#tracks). Bevat GPX-tracks die zichtbaar zijn op de kaart.  
+- [Vervoersstops](#transport-stops). Schakel de weergave van openbare vervoersstops op de kaart in of uit. 
 - [Terrein](#terrain). Schakel het terrein-kleurenschema op de kaart in of uit.
 
-![POI's menu](@site/static/img/web/configure_map_web.png)
+![POI's menu](@site/static/img/web/configure_map_web_new.png)
 
 
 ### POI-overlay {#poi-overlay}
@@ -116,6 +117,33 @@ Elke track heeft een **Contextmenu** (toegankelijk via de ⋮ knop) met de volge
 
 ![Menu Kaart configureren Tracks](@site/static/img/web/configure_map_track.png)
 
+### Vervoersstops {#transport-stops}
+
+De optie **Vervoersstops** stelt u in staat om openbare vervoersstops direct op de kaart weer te geven. Wanneer ingeschakeld, verschijnen stopmarkeringen over de hele kaart, die locaties vertegenwoordigen waar openbare vervoersroutes stoppen. Het selecteren van een vervoersstop opent een contextpaneel met informatie over die stop en de vervoersroutes die erdoorheen gaan. Het stoppaneel bevat verschillende secties.
+
+**1. Stopinformatie**
+
+De bovenste sectie toont basisinformatie over de geselecteerde stop, inclusief de naam en locatie. Snelle actieknoppen stellen u in staat om: *De stop aan Favorieten toe te voegen, Een link naar de stop te delen, Navigatie vanaf de stop te starten, De stop als bestemming in te stellen*.
+
+**2. Routes**
+
+De sectie Routes somt alle openbare vervoersroutes op die door de geselecteerde stop gaan. Elk item toont: het vervoerstype, het routenummer en de routenaam.
+
+Het selecteren van een route opent een routagedetailpaneel met aanvullende informatie over die route, inclusief het aantal stops en het gemiddelde interval tussen voertuigen (indien beschikbaar).
+
+Het routagedetailpaneel toont ook de volledige lijst van stops langs de route. De momenteel geselecteerde stop is gemarkeerd, en u kunt een andere stop selecteren om de locatie op de kaart te bekijken. Stops vóór de geselecteerde stop kunnen worden samengevouwen tot één item (bijvoorbeeld “15 stops ervoor”).
+
+Navigatieknoppen stellen u in staat om tussen stops langs de route te navigeren met de bedieningen *Vorige* en *Volgende*. Wanneer een stop is geselecteerd, wordt de locatie op de kaart gemarkeerd. De geselecteerde route en de stops ervan worden ook op de kaart weergegeven om de routirichtingen te visualiseren.
+
+**3. Vervoerstypefilter**
+
+Een vervoerstypefilter stelt u in staat om de routes in de lijst te filteren. Standaard is de filter ingesteld op *Alles* en worden alle beschikbare routes weergegeven. U kunt een specifiek vervoerstype selecteren (bijvoorbeeld Bus, Tram of Metro) om alleen routes van dat type te tonen. De filter wordt elke keer dat het stoppaneel wordt geopend teruggezet naar *Alles*.
+
+**4. Nabijgelegen routes**
+
+De sectie Nabijgelegen routes kan aanvullende routes tonen die zich dicht bij de geselecteerde stop bevinden. Dit helpt u om snel alternatieve vervoersopties in de omliggende omgeving te ontdekken.
+
+![Vervoersstops](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terrein {#terrain}
 
