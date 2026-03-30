@@ -1,6 +1,6 @@
 ---
-source-hash: 8bdbb1dbc653745d49be7527b86667e03d733d2fde2a36fca570fbd3b9b02442
-sidebar_position: 7
+source-hash: 80fa0b9922e21511de1501ed4715436500d1c2068f0f99c28cd458f4ad51092e
+sidebar_position: 8
 title:  Visualizzazione Mappa Nautica
 ---
 
@@ -17,11 +17,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-:::info Funzionalità a pagamento
+:::tip Acquisto
 Il plugin Visualizzazione Mappa Nautica è una [funzionalità a pagamento](../purchases/index.md).  
 :::
 
-La Visualizzazione Mappa Nautica è una rappresentazione grafica dettagliata di oceani, mari, aree costiere e fiumi che aiuta a navigare in acqua e a conoscere le rotte popolari, gli ostacoli sulla via navigabile, i porti più vicini, gli ancoraggi e altri punti di riferimento importanti.  
+La Visualizzazione Mappa Nautica è una rappresentazione grafica dettagliata di oceani, mari, aree costiere e fiumi che ti aiuta a navigare in acqua e a conoscere le rotte popolari, gli ostacoli sulla tua via navigabile, i porti più vicini, gli ancoraggi e altri punti di riferimento importanti.  
 
 Una mappa nautica è una mappa topografica molto dettagliata per aiutare gli skipper a navigare un'imbarcazione su una rotta selezionata in acqua. È simile a una mappa stradale per chi viaggia in auto. Spesso chiamata *'Carta'* per ragioni storiche, è una rappresentazione grafica dettagliata di oceani, mari, aree costiere e fiumi.  
 
@@ -113,7 +113,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,region_nautica
 
 </Tabs>
 
-Per una presentazione ottimale, le mappe possono essere adattate alle esigenze attuali: possono essere aggiunti segni e simboli con punti di profondità e, se necessario, curve di livello. D'altra parte, le mappe standard con informazioni sulle acque interne, costiere e vicine alla costa per una particolare regione possono essere un buon complemento alle informazioni sulle vie navigabili su una mappa nautica.  
+Per una presentazione ottimale, le mappe possono essere adattate alle esigenze attuali: possono essere aggiunti segni e simboli con punti di profondità e, se necessario, curve di livello. D'altra parte, le mappe standard con informazioni sulle acque interne, onshore e nearshore per una particolare regione possono essere un buon complemento alle informazioni sulle vie navigabili su una mappa nautica.  
 
 Quando [scarichi](../start-with/download-maps.md) una mappa nautica, sulla mappa compaiono maggiori dettagli relativi alla navigazione *Barca*. Alcuni tipi di [mappe nautiche](../plugins/nautical-charts/#nautical-map-style) contengono dettagli come:  
 
@@ -278,7 +278,7 @@ Vai a: *Menu* → *Configura mappa* → *Tipo mappa Marino* → Scegli altre opz
 
 Dopo aver abilitato lo stile mappa Marino, puoi affinare ulteriormente gli elementi visivi aggiuntivi. Queste opzioni ti permettono di controllare come appaiono gli ausili alla navigazione, le curve di profondità, i dettagli del fondale marino e i colori sulla mappa.
 
-- **[Dettaglio luci](../plugins/nautical-charts/#light-detail)**. Definisce come vengono visualizzate le informazioni sulle luci dei segnali marittimi. Opzioni: **Predefinito* (nome completo con caratteristiche luminose), *Piccolo* (formato compatto), *Solo nome* (solo nome della luce), o *Omettere* (nascondi etichette).
+- **[Dettaglio luci](../plugins/nautical-charts/#light-detail)**. Definisce come vengono visualizzate le informazioni sulle luci dei segnali marittimi. Opzioni: **Predefinito** (nome completo con caratteristiche luminose), *Piccolo* (formato compatto), *Solo nome* (solo nome della luce), o *Omettere* (nascondi etichette).
 - **[Dettaglio fondale marino](../plugins/nautical-charts/#seabed-detail)**. Controlla il livello di informazioni testuali sul fondale marino. Opzioni: Semplice (info di base), Categoria (tipo di superficie), Tutti (dati completi), o Omettere (nessun testo).
 - **Colore acqua**. Imposta il colore di base per le aree d'acqua. Opzioni: *Predefinito, Blu, Bianco*, o *Grigio* — utile per regolare visibilità e contrasto in diverse modalità di illuminazione.
 - **Colore via di mezzo**. Cambia il colore delle vie di navigazione e dei canali. Opzioni: *Bianco, Più bianco, Grigio, Verde*, o *Giallo* per migliorare la leggibilità in base allo sfondo della carta.

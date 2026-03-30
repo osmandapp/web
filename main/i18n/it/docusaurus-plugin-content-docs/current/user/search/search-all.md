@@ -1,5 +1,5 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
 sidebar_position: 1
 title:  Cerca Tutto
 ---
@@ -12,14 +12,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Panoramica {#overview}
 
-**La Ricerca** è uno strumento utile per trovare rapidamente luoghi. È possibile utilizzare la Ricerca per trovare una località tramite indirizzo, coordinate, punti di interesse (PDI) o ricerche precedenti. La [Ricerca Indirizzo](#search-address) consente di inserire l'indirizzo desiderato per ottenere una posizione esatta. La ricerca tramite [Coordinate](#search-coordinates) funziona con coordinate geografiche come latitudine e longitudine. Con la ricerca [PDI](#search-poi) è possibile cercare luoghi vicini in categorie specifiche, come caffè, hotel o stazioni di servizio. La [Cronologia Ricerche](#search-history) salva le ricerche passate per un rapido accesso ai luoghi trovati in precedenza. La funzione di ricerca facilita la pianificazione di viaggi, la navigazione in terreni sconosciuti e la ricerca di PDI nelle vicinanze.
+**La Ricerca** è uno strumento utile per trovare rapidamente luoghi. È possibile utilizzare la Ricerca per trovare una località tramite indirizzo, coordinate, punti di interesse (PDI), o ricerche precedenti. La [Ricerca Indirizzo](#search-address) consente di inserire l'indirizzo desiderato per ottenere una posizione esatta. La ricerca tramite [Coordinate](#search-coordinates) funziona con coordinate geografiche come latitudine e longitudine. Con la ricerca [PDI](#search-poi) è possibile cercare luoghi vicini in categorie specifiche, come caffè, hotel o stazioni di servizio. La scheda [Esplora](#search-explore) evidenzia luoghi popolari nelle vicinanze e fornisce un rapido accesso alle località visitate di recente. La [Cronologia](#search-history-ios) salva le ricerche passate. La funzione di ricerca facilita la pianificazione di viaggi, la navigazione in terreni sconosciuti e la ricerca di PDI nelle vicinanze.
 
 
 ## Come si usa {#how-to-use}
@@ -28,7 +29,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![Elenco PDI ricerca Android](@site/static/img/search/poi_list_android.png)
+![Elenco PDI ricerca Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
@@ -89,20 +90,24 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 
 ### Ordinamento dei risultati di ricerca {#sorting-search-results}
 
-OsmAnd ordina automaticamente i risultati della ricerca in base a tre criteri principali:
+OsmAnd ordina automaticamente i risultati della ricerca in base a diversi criteri:
 
 1. **Corrispondenza con le query** — I risultati che contengono corrispondenze esatte o parziali con le parole inserite vengono visualizzati più in alto.
 
-2. **Tipo di oggetto** - Quando si ordina per nome, le città e le strade hanno la priorità sui PDI nella visualizzazione dei risultati.
+2. **Rilevanza** — Gli oggetti il cui nome corrisponde strettamente alla query di ricerca vengono solitamente mostrati più in alto nei risultati.
 
-3. **Distanza** - Quando i risultati hanno criteri di corrispondenza e tipi di oggetto simili, vengono mostrati per primi i risultati più vicini alla posizione attuale dell'utente.
+3. **Tipo di oggetto** — A seconda della query, i risultati possono includere diversi tipi di oggetti come città, strade, indirizzi o PDI.
+
+4. **Distanza** — Quando i risultati hanno criteri di corrispondenza e tipi di oggetto simili, vengono mostrati per primi i risultati più vicini alla posizione attuale dell'utente.
+
+5. **Importanza** — Luoghi noti o frequentemente citati possono apparire più in alto nei risultati quando corrispondono strettamente alla query di ricerca.
 
 ***Ad esempio***, una query di ricerca *ufficio postale* mostrerà prima gli uffici postali più vicini, anche se ci sono altri elementi con nomi simili a una distanza maggiore.  
 
 ***Limitazioni attuali:***
 
 - Non esiste un'impostazione manuale per modificare l'ordine di ordinamento dei risultati della ricerca.
-- Il processo di ordinamento è **gestito automaticamente** da OsmAnd, in base ai criteri sopra elencati.
+- Il processo di ordinamento è **gestito automaticamente** da OsmAnd, in base ai criteri elencati sopra.
 - Nei casi in cui i risultati della ricerca sono troppo ampi, OsmAnd può **limitare i risultati visualizzati** a quelli con la maggiore accuratezza di corrispondenza delle parole.
 
 
@@ -148,13 +153,13 @@ OsmAnd ha integrato i [**dati TIGER**](../../technical/algorithms/trace-address-
 
 <TabItem value="android" label="Android">
 
-![Ricerca PDI Android](@site/static/img/search/poi_overlay_android.png)
+![Ricerca PDI Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Ricerca PDI iOS](@site/static/img/search/poi_overlay_ios.png)
+![Ricerca PDI iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -171,7 +176,7 @@ OsmAnd consente di cercare i punti visualizzati su una mappa sullo schermo del d
 
 ### Cerca nelle vicinanze {#search-nearby}
 
-![Ricerca Android](@site/static/img/search/search_all_near_location_andr.png)
+![Ricerca Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 È possibile utilizzare la ricerca nelle vicinanze di una posizione specifica. Per fare ciò, selezionare il punto richiesto [dall'elenco nel menu di ricerca](#full-text-search) o selezionarlo direttamente sulla mappa. Nel [menu contestuale della mappa](../map/map-context-menu.md#actions), selezionare *Azioni → Cerca nelle vicinanze*.
 
@@ -182,7 +187,7 @@ OsmAnd consente di cercare i punti visualizzati su una mappa sullo schermo del d
 
 <TabItem value="android" label="Android">
 
-![Ricerca Android](@site/static/img/search/search_address_2_andr.png)
+![Ricerca Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
@@ -197,25 +202,23 @@ OsmAnd consente di cercare i punti visualizzati su una mappa sullo schermo del d
 **Ricerca Indirizzo** utilizza i dati di OpenStreetMap. Questo tipo di ricerca consente di trovare la posizione e la direzione verso un indirizzo specifico da un elenco già ordinato. Per saperne di più, consultare l'articolo [Ricerca Indirizzo](./search-address.md).
 
 
-## Cronologia Ricerche {#search-history}
+## Ricerca Esplora {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![Ricerca Esplora](@site/static/img/search/explore_search_android.png)
 
-![Cronologia ricerche](@site/static/img/search/history_search_android.png)
+La scheda **Esplora** nello strumento di Ricerca aiuta a scoprire rapidamente luoghi vicino alla posizione attuale e ad accedere agli elementi aperti di recente. Contiene due sezioni principali:  
+- Luoghi popolari nelle vicinanze – un elenco scorrevole di luoghi noti e attrazioni vicino alla posizione. Ogni elemento può includere il nome del luogo, la sua categoria, distanza e direzione, e un'immagine di anteprima se disponibile. Toccare *Mostra tutto* per aprire l'elenco completo o *Mostra sulla mappa* per visualizzare questi luoghi sulla mappa.
+- Visitati di recente – un elenco di luoghi, tracce o altri oggetti aperti di recente. Questo consente di tornare rapidamente alle località visualizzate in precedenza.
 
-</TabItem>
+Per maggiori dettagli, vedere [qui](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## Cronologia Ricerca (iOS) {#search-history-ios}
 
-![Cronologia ricerche](@site/static/img/search/history_search_ios.png)
+![Ricerca cronologia](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
-È possibile utilizzare la **Cronologia Ricerche** per cercare di nuovo luoghi, indirizzi o luoghi visitati di frequente trovati in precedenza senza dover inserire nuovamente la query. Maggiori dettagli si possono trovare nell'articolo [Cronologia Ricerche](./search-history.md).
+È possibile utilizzare la **Cronologia Ricerca** per cercare di nuovo luoghi, indirizzi o luoghi visitati di frequente trovati in precedenza senza dover inserire nuovamente la query. Maggiori dettagli si possono trovare nell'articolo [Cronologia Ricerca](./search-history.md).
 
 
 ## Ricerca PDI {#search-poi}
@@ -224,7 +227,7 @@ OsmAnd consente di cercare i punti visualizzati su una mappa sullo schermo del d
 
 <TabItem value="android" label="Android">
 
-![Ricerca PDI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Ricerca PDI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -271,6 +274,7 @@ La ricerca per coordinate fornisce una posizione precisa. È possibile inserire 
 ## Articoli correlati {#related-articles}
 
 - [Ricerca Indirizzo](./search-address.md)
-- [Cronologia Ricerche](./search-history.md)
+- [Cronologia Ricerca](./search-history.md)
 - [Ricerca PDI](./search-poi.md)
 - [Ricerca Coordinate](./search-coordinates.md)
+- [Luoghi Popolari](../map/popular_places.md)

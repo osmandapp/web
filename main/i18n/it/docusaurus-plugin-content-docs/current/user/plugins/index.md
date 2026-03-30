@@ -1,5 +1,5 @@
 ---
-source-hash: f5a0cdd358490fd52e728a8b5008d04c1a6228c6614a709ee1353cc04e0d9fdc
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  Plugin
 ---
@@ -84,7 +84,7 @@ I plugin di OsmAnd possono arricchire questi gruppi di funzionalità: **Livelli*
 |[Mapillary](#mapillary) | [Livello mappa](../plugins/mapillary.md#map-layer), [Menu contestuale](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Sensori esterni](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Metriche del veicolo](#vehicle-metrics)  | [Impostazioni personalizzate](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Osservatore stelle](#star-watcher)  | [Schermata](../plugins/starwatcher.md#star-map-screen), [Menu contestuale](../plugins/starwatcher.md#celestial-object-info) |
+|[Astronomia](#astronomy)  | [Schermata](../plugins/astronomy.md#star-map-screen), [Menu contestuale](../plugins/astronomy.md#context-menu) |
 |[Accessibilità](#accessibility) 🤖  | [Impostazioni personalizzate](../plugins/accessibility.md#plugin-settings) |
 |[Sviluppo OsmAnd](#osmand-development) | [Impostazioni personalizzate](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Livello mappa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contestuale](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
@@ -194,9 +194,9 @@ Collega sensori esterni per visualizzare i loro dati in OsmAnd e memorizzare le 
 
 Collega lo scanner OBD-II per visualizzare i dati del veicolo in OsmAnd e memorizzare le informazioni nelle registrazioni delle tracce.  
 
-### [Osservatore stelle](./starwatcher.md) {#star-watcher}
+### [Astronomia](./astronomy.md) {#astronomy}
 
-L'Osservatore stelle visualizza una sovrapposizione interattiva del cielo stellato con stelle, costellazioni, il Sole, la Luna e i pianeti. Ti aiuta a identificare gli oggetti celesti sopra la tua posizione attuale, a visualizzare in anteprima i loro percorsi per una data e un orario selezionati e a pianificare sessioni di osservazione delle stelle utilizzando i controlli del tempo integrati e le opzioni di visualizzazione.
+Il plugin Astronomia visualizza una sovrapposizione interattiva del cielo stellato con stelle, costellazioni, il Sole, la Luna e i pianeti. Ti aiuta a identificare gli oggetti celesti sopra la tua posizione attuale, a visualizzare in anteprima i loro percorsi per una data e un orario selezionati e a pianificare sessioni di osservazione delle stelle utilizzando i controlli del tempo integrati e le opzioni di visualizzazione.
 
 ### [Accessibilità](./accessibility.md) {#accessibility}
 
@@ -212,7 +212,7 @@ OsmAnd Tracker ti aiuta a vedere dove si trovano i tuoi contatti sulla mappa in 
 
 ### [Tracciatore di navi AIS](./ais-tracker.md) {#ais-vessel-tracker}
 
-Visualizza le posizione AIS e le informazioni sulle navi circostanti. I dati AIS vengono ricevuti via rete da un ricevitore AIS esterno.
+Visualizza le posizioni AIS e le informazioni sulle navi circostanti. I dati AIS vengono ricevuti via rete da un ricevitore AIS esterno.
 
 ## [Crea un plugin personalizzato](./custom.md) {#create-a-custom-plugin}
 

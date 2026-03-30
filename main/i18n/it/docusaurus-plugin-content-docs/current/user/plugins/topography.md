@@ -1,6 +1,6 @@
 ---
-source-hash: f02b73edac4f32726ec823a57f5f15b57229e5cf61081104e8cb9d3831b34978
-sidebar_position: 14
+source-hash: 58653a353b7f766ae4fd8564796b48499c5d11ff13be13a0a4e66f74ce9d6379
+sidebar_position: 16
 title: Topografia
 ---
 
@@ -143,6 +143,10 @@ Per le [**Curve di livello**](#contour-lines), è necessario determinare in qual
 
 ## Curve di livello {#contour-lines}
 
+:::tip Acquisto
+Le curve di livello sono una [funzionalità a pagamento](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -181,6 +185,10 @@ Quando si utilizza il [Motore di rendering della mappa](../personal/global-setti
 
 
 ## Terreno {#terrain}
+
+:::tip Acquisto
+Il Terreno è una [funzionalità a pagamento](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,17 +263,30 @@ Le mappe raster di **Ombreggiatura**, **Pendenza** e **Altitudine** sono create 
 
 <TabItem value="android" label="Android">
 
-![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+La funzione *Modifica schema di colori* consente di selezionare uno schema di colori:
+
+- Da un [elenco predefinito](#default-color-scheme).
+- Da file di tavolozze di colori che hai creato sul tuo computer. I file personalizzati possono essere aggiunti a OsmAnd utilizzando lo strumento di [importazione/esportazione](../personal/import-export.md).
+- Da tavolozze create o modificate direttamente nell'app.
+
+Le tavolozze personalizzate si basano su scale di colori, in cui ogni colore corrisponde a un valore specifico dei dati del terreno come *Altitudine* o *Pendenza*. 
+Puoi:
+
+- definire passaggi di valore (livelli di altitudine o percentuali di pendenza);
+- assegnare colori a ciascun passaggio;
+- aggiungere o rimuovere passaggi per regolare le scale di colori.
+
+**Nota:** L'ombreggiatura utilizza un algoritmo di ombreggiatura fisso e non supporta tavolozze di colori personalizzate.
+
+Per una personalizzazione avanzata delle tavolozze utilizzando file di tavolozze, consulta l'articolo [Schemi di colori](../personal/color-palette-schemes.md#palette-modify).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modifica schema di colori](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 La funzione *Modifica schema di colori* consente di selezionare uno schema di colori:
 
@@ -274,6 +295,9 @@ La funzione *Modifica schema di colori* consente di selezionare uno schema di co
 
 È possibile [modificare queste tavolozze](../personal/color-palette-schemes.md#palette-modify) per personalizzare l'aspetto di mappe e percorsi.
 
+</TabItem>
+
+</Tabs>
 
 ### Visibilità {#visibility}
 
@@ -318,6 +342,60 @@ Le impostazioni principali per *Mostra o nascondi tipi di mappa* si trovano nell
 
 - Vai a [Aggiungi azione](../widgets/quick-action.md#custom-buttons): *Menu → Configura schermata → Pulsanti personalizzati → Azione rapida → Aggiungi azione → Configura mappa*.
 - Aggiungi uno o più pulsanti di Azione Rapida per cambiare la visibilità di un particolare livello topografico.
+
+
+## Edifici 3D {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Edifici 3D* 
+
+![Edifici 3D](@site/static/img/map/3d_buildings_1_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_2_new.png) 
+
+La funzionalità **Edifici 3D** visualizza gli edifici come modelli volumetrici 3D invece che come forme piatte. Gli edifici sono generati da [dati OpenStreetMap](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), utilizzando le informazioni sull'altezza dai tag come `height` e `building:levels` quando disponibili. Gli edifici 3D vengono mostrati solo a livelli di zoom più alti (vista città/strada), dove gli edifici individuali possono essere visualizzati.  
+
+Utilizza l'interruttore principale per abilitare o disabilitare il rendering 3D degli edifici. Per visualizzare gli edifici in 3D, inclina la mappa posizionando due dita sullo schermo e scorrendo verso l'alto. In questa vista, gli edifici potrebbero coprire parzialmente le strade o le etichette della mappa a seconda dell'impostazione di visibilità.
+
+Questa opzione è disponibile solo quando il plugin Topografia è abilitato.  
+Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+Le impostazioni per gli edifici 3D sono divise in due gruppi: **Aspetto** e **Prestazioni**.
+
+### Aspetto {#appearance}
+
+![Edifici 3D](@site/static/img/map/3d_buildings_color.png)
+
+I controlli **Aspetto** determinano l'aspetto degli edifici 3D sulla mappa. Include due impostazioni: Colore e Visibilità. 
+
+**Colore** ti permette di cambiare il colore degli edifici. Quando tocchi Colore, OsmAnd apre una schermata di anteprima separata dove puoi vedere la mappa mentre regoli l'impostazione.
+- **Stile mappa** — utilizza il colore predefinito degli edifici dallo stile mappa attualmente selezionato.
+- **Personalizzato** — ti permette di impostare un colore personalizzato per gli edifici separatamente per la modalità Giorno / Notte.
+
+:::tip Acquisto
+La personalizzazione del colore degli Edifici 3D è una [funzionalità a pagamento](../purchases/index.md).  
+:::
+
+Se i colori personalizzati non sono acquistati, vedrai uno stato vuoto con una breve descrizione e un pulsante Acquista. Se Personalizzato è disponibile, puoi passare tra Giorno e Notte, scegliere un colore dalla palette (o aprire Tutti i colori), quindi toccare Applica.
+
+**Visibilità** controlla l'opacità (trasparenza) degli edifici 3D. Utilizza il cursore per impostare la visibilità come percentuale. Valori più bassi rendono gli edifici più trasparenti e aiutano le strade/etichette a rimanere leggibili. Valori più alti rendono gli edifici più solidi e visivamente dominanti. Tocca Visibilità per aprire anche una schermata di anteprima separata con il cursore.
+
+Nelle schermate di anteprima (Colore / Visibilità), puoi utilizzare Ripristina predefinito dalla barra delle applicazioni per ripristinare il valore predefinito.
+
+### Prestazioni {#performance}
+
+I controlli **Prestazioni** determinano come vengono renderizzati gli edifici 3D. Include due impostazioni: Livello di dettaglio e Distanza di visualizzazione.
+
+**Livello di dettaglio** determina la complessità della geometria degli edifici 3D:
+- Basso (predefinito) — geometria più semplice.
+- Alto — geometria più dettagliata.
+
+**Distanza di visualizzazione** controlla quanto lontano dalla fotocamera vengono renderizzati gli edifici 3D:
+- Vicino (predefinito) — renderizza gli edifici più vicini a te.
+- Lontano — renderizza gli edifici da una distanza maggiore.
+
+Entrambe le opzioni di prestazioni utilizzano un interruttore a due posizioni direttamente nella schermata delle impostazioni degli edifici 3D.
+
+**Nota:** Utilizzare *Dettaglio alto* e *Distanza di visualizzazione lontana* migliora l'aspetto visivo ma potrebbe influire sulle prestazioni e aumentare il consumo della batteria.
 
 
 ## Rilievo 3D {#3d-relief}

@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -24,14 +24,15 @@ I Preferiti nel Pianificatore Web ti permettono di salvare e gestire luoghi impo
 
 ## Gestire i Preferiti {#manage-favorites}
 
-![Modifica Preferiti cloud Web OsmAnd](@site/static/img/web/favorites_new.png)
+![Modifica Preferiti cloud Web OsmAnd](@site/static/img/web/favorites_1_new.png)
 
 Dopo aver registrato un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) e per [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), i tuoi Preferiti nel Pianificatore Web sono organizzati in cartelle. Ogni cartella raggruppa i luoghi salvati e fornisce un set di azioni disponibili dal menu Preferiti. 
 Le seguenti azioni sono disponibili:
 
 - *Mostra sulla mappa* - mostra i punti preferiti dalla cartella scelta sulla mappa.
+- *Fissa cartella* - fissa una cartella in cima all'elenco dei Preferiti per un accesso rapido. Le cartelle fissate sono separate dalle altre cartelle. Per rimuovere una cartella dalla sezione superiore, seleziona *Annulla fissaggio cartella*. La cartella Personale è fissata per impostazione predefinita.
 - *Rinomina* - nome e descrizione della cartella preferiti.
-- *Condividi* - apre le opzioni di condivisione. Puoi scegliere chi può accedere a questa cartella:
+- *Condividi* - apre le opzioni di condivisione. Puoi scegliere chi può accedere a questa cartella.
 - *Scarica* - scarica la cartella preferiti scelta.
 - *Elimina* - elimina la cartella preferiti scelta.
 

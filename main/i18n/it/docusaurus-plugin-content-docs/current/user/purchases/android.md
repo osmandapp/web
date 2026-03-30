@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -131,6 +131,7 @@ La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti
 | [Profondità nautiche](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Luoghi popolari (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage offline - Guide di viaggio](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Plugin Astronomia](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Navigazione offline e online](../navigation/index.md)<br/>con indicazioni svolta per svolta | ✔ | ✔ | ✔ |
 | [Ricerca istantanea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Registrazione del viaggio](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -173,6 +174,8 @@ L'abbonamento **Pro** include attualmente le seguenti funzionalità:
 | [Widget Altitudine - Altitudine: Centro Mappa](../widgets/info-widgets.md#elevation-map-center) | Consente di conoscere l'altitudine del centro mappa corrente rispetto al livello del mare.  |
 | [Correzione altitudine (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Consente di calcolare un grafico dell'altitudine per la propria traccia (è richiesta la [Mappa del terreno](../plugins/topography.md#download-maps) per la regione scelta). |
 | [Modifica schema colori](../../user/plugins/topography.md#modify-color-scheme) | Consente di personalizzare l'aspetto della mappa selezionando o importando palette di colori. È possibile modificare gli schemi integrati o utilizzare i propri file di palette per personalizzare i colori della mappa e del percorso. |
+| [Creazione di palette personalizzate](../../user/map/tracks/appearance.md#color-palette-editor) | Consente di creare e modificare palette gradienti per la colorazione delle tracce utilizzando valori Relativi o Fissi. È possibile definire passaggi di colore, assegnare valori e personalizzare il modo in cui i dati (come velocità o altitudine) vengono visualizzati lungo la traccia. |
+| [Cartelle Smart – Organizza per](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Consente di organizzare le tracce in Cartelle Smart utilizzando parametri di raggruppamento avanzati come data e ora, distanza, durata, velocità, altitudine e elevazione, e dati dei sensori. Queste opzioni consentono una categorizzazione più dettagliata delle tracce e un'analisi flessibile. |
 
 
 ## Come acquistare {#how-to-buy}

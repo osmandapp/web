@@ -1,6 +1,6 @@
 ---
-source-hash: 852174395ea31db0d986b03a13dcefe0a7848d73cda99c210ec9424b8e571fd0
-sidebar_position: 5
+source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+sidebar_position: 6
 title:  Sensori esterni
 ---
 
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-:::info Funzionalità a pagamento
+:::tip Acquisto
 Il plugin Sensori esterni è una [funzionalità a pagamento](../purchases/index.md).  
 :::
 
@@ -233,10 +233,10 @@ Prima di iniziare il tuo viaggio:
 
 Tipi di widget supportati:
 
-1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – visualizza la frequenza cardiaca in tempo reale da un cardiofrequenzimetro associato.
+1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – visualizza la frequenza cardiaca in tempo reale da un monitor associato.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*solo Android*) – mostra la potenza di pedalata corrente in watt.
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – mostra il numero di giri del pedale al minuto.
-4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – velocità di pedalata corrente.
+4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – velocità di ciclismo corrente.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – distanza totale misurata dal sensore.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – temperatura ambiente attuale.
 7. **Livello batteria** – percentuale di batteria rimanente in un sensore BLE connesso, attivalo in **Impostazioni sensore**.
