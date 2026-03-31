@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Favorites
 ---
@@ -163,7 +163,7 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Yerlerim favoriler android](@site/static/img/personal/my_places_android.png)
+![Yerlerim favoriler android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![yerlerim_ios](@site/static/img/personal/my_places_ios.png)
+![yerlerim_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 **Favorilerim** bölümü şunları yapmanızı sağlar:
 
 - Belirli favorileri veya grupları [arama](#order--sorting--search).
-- [Toplu işlemler](#bulk-edit--delete) — Birden fazla favoriyi aynı anda yeniden adlandırma, taşıma veya silme.
+- [Toplu işlemler](#bulk-edit--delete) — Paylaşma, taşıma veya birden fazla favoriyi aynı anda silme.
 
 ### Sıralama / Arama {#order--sorting--search}
 
@@ -188,20 +188,24 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 <TabItem value="android" label="Android">
 
-![Favoriler klasörleri android](@site/static/img/personal/favorites_folders_android.png)
+![Favoriler klasörleri android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Sıralama** — Favori klasörleri ve noktaları, liste menüsündeki mevcut sıralama seçeneklerini kullanarak sıralanabilir. Mevcut seçenekler şunlardır: *Ad A – Z*, *Ad Z – A*, *Son değiştirilme*, *En yeni tarih önce*, *En eski tarih önce*. Varsayılan olarak, öğeler Ad A – Z'ye göre sıralanır. Sabitlenmiş klasörler her zaman listenin en üstünde görüntülenir. Diğer klasörlerden görsel olarak bir ayırıcı ile ayrılırlar. [Kişisel klasör](../personal/favorites.md#special-favorites-personal) varsayılan olarak sabitlenmiştir. 
+- **Arama** — Favorileri ada göre bulmak için [Küresel arama](../search/search-all.md) kullanın. Favoriler, haritanın merkezine olan uzaklığa göre sıralanır.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Favoriler klasörleri ios](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Sıralama** — Favori klasörleri ve noktaları alfabetik olarak sıralanır, [kişisel klasör](../personal/favorites.md#special-favorites-personal) en üsttedir.
 - **Arama** — Favorileri ada göre bulmak için [Küresel arama](../search/search-all.md) kullanın. Favoriler, haritanın merkezine olan uzaklığa göre sıralanır.
 
+
+</TabItem>
+
+</Tabs>
 
 ### Toplu Düzenle / Sil {#bulk-edit--delete}
 
@@ -209,7 +213,24 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 <TabItem value="android" label="Android">
 
-![Favoriler eylemleri android](@site/static/img/personal/favorites_actions_android.png) ![Favoriler eylemi sil android](@site/static/img/personal/favorites_delete_android.png)
+![Favoriler eylemleri android](@site/static/img/personal/favorites_group_actions.png) ![Favoriler eylemi sil android](@site/static/img/personal/favorites_actions.png)
+
+Birden fazla favori veya klasörü yönetmek için *Seçim modu*na girin. Seçim modunu iki şekilde açabilirsiniz:
+- Sağ üst köşedeki *üç nokta menüsüne* dokunun ve *Seç* seçeneğini seçin.
+- Bir favori noktasına veya klasöre uzun dokunun.
+
+Seçim modu etkinleştirildiğinde, listedeki öğelerin yanında onay kutuları görünür. Gerekli favorileri veya klasörleri onay kutularına dokunarak seçin. Listede tüm öğeleri seçmek için sağ üst köşedeki Tümünü seç simgesine dokunun.
+
+Mevcut eylemler, seçilen öğe türüne bağlıdır. Klasörler seçildiğinde, aşağıdaki eylemler mevcuttur:
+- **Paylaş** — Seçilen klasörleri Favorites GPX dosyası olarak dışa aktarın.
+- **Sil** — Seçilen klasörleri kaldırın.
+
+Favori noktalar seçildiğinde, aşağıdaki eylemler mevcuttur:
+- **Taşı** — Seçilen favorileri başka bir klasöre taşıyın.
+- **Harita işaretçilerine ekle** — Seçilen noktaları Harita işaretçileri listesine ekleyin.
+- **İze ekle** — Seçilen noktaları bir ize ekleyin.
+- **Navigasyona ekle** — Seçilen noktaya navigasyonu başlatın.
+- **Sil** — Seçilen favorileri kaldırın.
 
 </TabItem>
 
@@ -217,13 +238,13 @@ OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. 
 
 ![Favoriler eylemleri ios](@site/static/img/personal/favorites_actions_ios.png)
 
+- Birden fazla favoriyi yönetmek için **Düzenle** düğmesine (*kalem simgesi*) dokunun.
+- Toplu işlemler için tek tek favorileri veya tüm klasörleri seçin.
+- **Mevcut seçenekler** — *Paylaş*, *Favori Grubuna Taşı*, *Rengi Değiştir* ve *Sil*.
+
 </TabItem>
 
 </Tabs>
-
-1. Birden fazla favoriyi yönetmek için **Sil** simgesine (*Android'de çöp kutusu simgesi*) veya **Düzenle** düğmesine (*iOS'ta kalem simgesi*) dokunun.
-2. Toplu işlemler için tek tek favorileri veya tüm klasörleri seçin.
-3. **Mevcut seçenekler** — Android ve iOS için *Sil*, *Favori Grubuna Taşı*, *Paylaş* ve iOS için *Rengi Değiştir*.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +268,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *Üç nokta menüsü → Varsayılan görünümü değiştir*
+![Favoriler klasör işlevleri android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Favoriler klasör işlevleri android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Her klasörün yanındaki ***Üç nokta menüsünü*** kullanarak favori gruplarını yönetin:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
+- **Klasörü sabitle** — Seçilen klasörü favoriler listesinin en üstünde tutmak için sabitleyin, daha hızlı erişim için.
+- **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Harita işaretçilerinden kaldır** — Klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın, kolay başvuru için.
+- **<Translate android="true" ids="add_to_a_track"/>** — Seçilen klasördeki tüm favori noktaları bir ize ekleyin. Bu, iz seçme ekranını açar burada bir iz seçebilir veya oluşturabilirsiniz.
+- **<Translate android="true" ids="shared_string_share"/>** — Klasördeki favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak paylaşın, böylece verilerinizi aktarmak veya yedeklemek kolaylaşır.
+- **<Translate android="true" ids="shared_string_delete"/>** — Seçilen favoriler klasörünü ve içindeki tüm noktaları kalıcı olarak silin.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *Klasöre uzun dokunun → Varsayılan görünüm*
-
 ![Favoriler eylemleri ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Favori gruplarını yönetmek için klasöre ***uzun dokunun***:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
+- **<Translate ios="true" ids="shared_string_share"/>** — Klasördeki favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak paylaşın, böylece verilerinizi aktarmak veya yedeklemek kolaylaşır.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Seçilen favoriler klasörünü ve içindeki tüm noktaları kalıcı olarak silin.
 
 </TabItem>
 
 </Tabs>
-
-Her klasörün yanındaki ***Üç nokta menüsünü*** (*Android*) ve klasöre ***uzun dokunmayı*** (*iOS*) kullanarak favori gruplarını yönetin:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** veya **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** veya **Harita işaretçilerinden kaldır** (*Yalnızca Android*) — Kolay başvuru için klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Klasördeki favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak paylaşın, böylece verilerinizi aktarmak veya yedeklemek kolaylaşır.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Seçilen favoriler klasörünü ve içindeki tüm noktaları kalıcı olarak silin.
-
-
 
 ### Grup Görünümünü Değiştir {#change-group-appearance}
 
@@ -285,11 +305,15 @@ Her klasörün yanındaki ***Üç nokta menüsünü*** (*Android*) ve klasöre *
 
 <TabItem value="android" label="Android">
 
-![Favoriler klasör işlevleri android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Şuraya git: *Üç nokta menüsü → Varsayılan görünümü değiştir*
+
+![Favoriler klasör işlevleri android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Şuraya git: *Klasöre uzun dokunun → Varsayılan görünüm*
 
 ![Favoriler eylemleri ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 
@@ -374,12 +398,12 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 </Tabs>
 
-*Ücretsiz Ayarlar Yedekleme* özelliğini kullanmak için bir OsmAnd Cloud hesabına ihtiyacınız var. *OsmAnd Pro* hesabınız veya aktif bir *OsmAnd Cloud hesabı* varsa, tanıtım banner'ını görmezsiniz.  
+*Ücretsiz Favoriler Yedekleme* özelliğini kullanmak için bir OsmAnd Cloud hesabına ihtiyacınız var. *OsmAnd Pro* hesabınız veya aktif bir *OsmAnd Cloud hesabı* varsa, tanıtım banner'ını görmezsiniz.  
 
 - *Ücretsiz Favoriler Yedekleme banner'ı*. Yedekleme işlemini başlatmak için bu banner'a dokunun.
 - Bir OsmAnd Cloud hesabınız yoksa [kayıt kılavuzundaki](../personal/osmand-cloud.md#login) talimatları izleyerek *kayıt adımını tamamlayın*.
 - *OsmAnd Satın Almalar* menüsüne gidin (*Menü → Ayarlar → Satın Almalar*).
-- *[OsmAnd Start paketi](../personal/osmand-cloud.md#osmand-start)*. Ücretsiz Ayarlar Yedekleme özelliğine erişmek için bu seçeneği seçin.
+- *[OsmAnd Start paketi](../personal/osmand-cloud.md#osmand-start)*. Ücretsiz Favoriler Yedekleme özelliğine erişmek için bu seçeneği seçin.
 - Ayarlarınızın *bir yedeğini oluşturun*.
 
 

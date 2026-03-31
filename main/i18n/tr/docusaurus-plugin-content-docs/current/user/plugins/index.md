@@ -1,5 +1,5 @@
 ---
-source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title: Eklentiler
 ---
@@ -84,7 +84,7 @@ OsmAnd Eklentileri şu Özellik gruplarını artırabilir: **Katmanlar**, **Widg
 |[Mapillary](#mapillary) | [Harita katmanı](../plugins/mapillary.md#map-layer), [Bağlam menüsü](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Harici Sensörler](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Araç Metrikleri](#vehicle-metrics)  | [Özel Ayarlar](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Gökbilim](#star-watcher)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Bağlam Menüsü](../plugins/astronomy.md#celestial-object-info) |
+|[Gökbilim](#astronomy)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Bağlam Menüsü](../plugins/astronomy.md#context-menu) |
 |[Erişilebilirlik](#accessibility) 🤖  | [Özel Ayarlar](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd geliştirme](#osmand-development) | [Özel Ayarlar](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Harita Katmanı](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Bağlam Menüsü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |

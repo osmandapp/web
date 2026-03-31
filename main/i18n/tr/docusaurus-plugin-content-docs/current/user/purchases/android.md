@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
 sidebar_position: 1
 title: Android Satın Almaları
 ---
@@ -132,6 +132,7 @@ Aşağıdaki tablo, OsmAnd'ın hem ücretsiz hem de ücretli paketlerinde buluna
 | [Deniz derinlikleri](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popüler Yerler (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Çevrimdışı Wikivoyage - Seyahat rehberleri](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Astronomi eklentisi](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Çevrimdışı ve çevrimiçi navigasyon](../navigation/index.md)<br/>adım adım yol tarifleriyle | ✔ | ✔ | ✔ |
 | [Çevrimdışı anında arama](../search/index.md) | ✔ | ✔ | ✔ |
 | [Yolculuk kaydı](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -174,6 +175,8 @@ Pro Özellikleri [OsmAnd Pro aboneliği](#prices) için mevcuttur.
 | [Yükseklik Widget'ları - Yükseklik: Harita Merkezi](../widgets/info-widgets.md#elevation-map-center) | Mevcut harita merkezinin deniz seviyesinden yüksekliğini öğrenmenizi sağlar.  |
 | [Yükseklik düzeltmesi (çevrimdışı)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | İziniz için bir yükseklik grafiği hesaplamanıza olanak tanır (seçilen bölge için [Arazi haritası](../plugins/topography.md#download-maps) gereklidir). |
 | [Renk Şemasını Değiştir](../../user/plugins/topography.md#modify-color-scheme) | Harita görünümünü seçerek veya içe aktararak renk paletlerini özelleştirmenize olanak tanır. Yerleşik şemaları düzenleyebilir veya harita ve rota renklerini kişiselleştirmek için kendi palet dosyalarınızı kullanabilirsiniz. |
+| [Özel paletler oluşturma](../../user/map/tracks/appearance.md#color-palette-editor) | İz renklendirmesi için Göreceli veya Sabit değerler kullanarak gradyan paletler oluşturmanıza ve düzenlemenize olanak tanır. Renk adımlarını tanımlayabilir, değerler atayabilir ve (hız veya yükseklik gibi) verilerin iz boyunca nasıl görüntüleneceğini özelleştirebilirsiniz. |
+| [Akıllı Klasörler – Kategorize Etme ile Düzenleme](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Tarih & saat, mesafe, süre, hız, yükseklik & rakım ve sensör verileri gibi gelişmiş gruplama parametrelerini kullanarak izleri Akıllı Klasörlerde organize etmenize olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. |
 
 
 ## Nasıl Satın Alınır {#how-to-buy}

@@ -1,5 +1,5 @@
 ---
-source-hash: 89baba1fc250f5fae8be3a075cdb603e67a8fdc5619d13653d39e5efe07cabcd
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
 sidebar_position: 11
 title:  OsmAnd Geliştirme
 ---
@@ -53,7 +53,7 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -70,13 +70,14 @@ Eklenti ayarlarını açmak için aşağıdaki yollardan birini kullanın:
 - **Konumunuzu simüle edin** (*Android* / *iOS*). Bir GPX parkuru kullanarak konumu ve hareketi [simüle edin](#gpx-track-simulation).
 - **Pil tasarrufu modu** (*Android* / *iOS*). Bu ayar, uygulamaları kullanırken pil gücünden tasarruf etmeye yardımcı olmak için [ekran yenileme hızını](#map-rendering-fps-widget) saniyede 20 kare azaltır.
 - **3B konum konum simgelerini kullan** (*iOS*). [Konumum simgesi](../personal/profiles.md#my-location-appearance) için 3B bir simge seçmenize olanak tanır.
-- **obd verilerini simüle et** (*Android*). [OBD tarayıcı](./vehicle-metrics.md) kullanımının simülasyonuna olanak tanır.
-- **Performans hata ayıklama bilgisi** (*Android*). Oluşturma ve navigasyon performansını görüntüler.
+- **obd verilerini simüle et** (*Android* / *iOS*). [OBD tarayıcı](./vehicle-metrics.md) kullanımının simülasyonuna olanak tanır.
+- **Performans hata ayıklama bilgisi** (*Android* / *iOS*). Oluşturma ve navigasyon performansını görüntüler.
 - **Harita katmanlarını devre dışı bırak** (*Android*). Vektör haritası üzerindeki tüm harita katmanlarını devre dışı bırakır (yeniden başlatma gereklidir).
 - **Logcat arabelleği** (*Android*). Uygulamanın ayrıntılı günlüklerini kontrol edin ve paylaşın.  
 - **Basılan tuş hakkında bildirim göster** (*Android*). Tuş hakkında bir mesaj görüntüler.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Kerteriz, mevcut konumunuzdan hedefinize olan pusula yönüdür. *[Parkur kaydını](../plugins/trip-recording.md)* etkiler.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Başlık, mevcut konumunuzdan gerçek kuzeye doğru olan pusula yönüdür. Bu seçenek varsayılan olarak etkindir. *[Parkur kaydını](../plugins/trip-recording.md)* etkiler.
+- **MSAA'yı etkinleştir** (*Android*) / **CarPlay için MSAA'yı etkinleştir** (*iOS*). Harita oluşturmayı yumuşatmak için çoklu örnekleme kenar yumuşatma özelliğini etkinleştirir. Pikselli kenarları azaltarak [Konumum simgesi](../personal/profiles.md#my-location-appearance) ve rota çizgisinin görsel kalitesini iyileştirir. Android'de, bu seçenek cihazda harita oluşturmayı ve [Android Auto](../navigation/auto-car.md) kullanımını etkiler. iOS'ta, yalnızca [CarPlay](../navigation/car-play.md) için geçerlidir.
 
 
 ### Uygulama Testi {#application-testing}
@@ -320,7 +321,7 @@ Aşağıdaki tablo, kamera eğimi ve hedefe olan mesafe ile OsmAnd harita bozulm
 
 ## Kullanılabilir RAM Widget'ı {#available-ram-widget}
 
-Bu widget, OsmAnd'ı kullanırken cihazınızdaki kullanılabilir RAM ile daha rahat ve bilgilendirici bir etkileşim sağlamak için özel olarak tasarlanmıştır. Özellikle OsmAnd'ı navigasyon için kullanırken, kullanılabilir RAM'i kolayca ve hızlı bir şekilde izlemenizi sağlar. Widget hakkında daha fazla bilgiyi [Bilgi widget'ları](../widgets/info-widgets.md#available-ram) makalesinde okuyun.
+Bu widget, OsmAnd'ı kullanırken cihazınızdaki kullanılabilir RAM ile daha rahat ve bilgilendirici bir etkileşim sağlamak için özel olarak tasarlanmıştır. OsmAnd'ı navigasyon için kullanırken kullanılabilir RAM'i kolayca ve hızlı bir şekilde izlemenizi sağlar; bu özellikle faydalıdır. Widget hakkında daha fazla bilgiyi [Bilgi widget'ları](../widgets/info-widgets.md#available-ram) makalesinde okuyun.
 
 
 ## GPX-Parkur Simülasyonu {#gpx-track-simulation}

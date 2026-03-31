@@ -1,5 +1,5 @@
 ---
-source-hash: 0b1f1d22fb2dec28951c23c451feca6e88ee0d99c1c52efe8157ca8a2cb28eef
+source-hash: 75a5e337931156cc3988cd34a141d4fe6b3a0f5ea8c6596d16739eac3b793429
 sidebar_position: 5
 title:  İz Görünümü
 ---
@@ -71,6 +71,41 @@ iOS'ta **Renklandırma listesi** bir bağlam menüsü olarak açılır. Öğeler
 
 Rota çizgisi görünümünü özelleştirme hakkında daha fazla bilgi için [Navigasyon sırasında harita ekranı](../../navigation/guidance/map-during-navigation.md#color) ve özel bir renk seçme ve oluşturma hakkında bilgi için [Renk şemaları](../../personal/color-palette-schemes.md#tracks-routes) bölümüne bakın.
 
+### Renk Paleti Düzenleyici {#color-palette-editor}
+
+<InfoAndroidOnly/> 
+
+![Renk Paletleri Düzenleyici](@site/static/img/map/gradient_palettes_1.png) ![Renk Paletleri Düzenleyici ](@site/static/img/map/gradient_palettes_2.png) 
+
+Hız, Rakım veya Eğim'e göre bir iz renklendirirken, renklerin iz boyunca nasıl uygulandığını tanımlamak için kendi paletlerinizi kullanabilirsiniz.
+
+*Tüm renkler ekranı* mevcut paletleri görüntüler. Bir paletin yanındaki üç nokta menüsüne dokunarak:
+- Yeniden adlandırın.
+- Düzenleyin.
+- Kopyalayın.
+- Kaldırın. Bir paleti kaldırmak onay gerektirir.
+
+Tüm renkler ekranındaki + düğmesine dokunun. İki tür palet mevcuttur:
+- **Göreceli** — renkler izin minimum ve maksimum değerlerine göre otomatik olarak ölçeklenir.
+- **Sabit Değerler** — renkler belirli mutlak sayılara atanır (örneğin, 50 km/s). Değerler manuel olarak düzenlenebilir. Birimler [sistem ayarlarını](../../personal/profiles.md#units--formats) takip eder. Renk ölçeği farklı izlere uygulandığında otomatik olarak yeniden ölçeklenmez.
+
+:::info Pro feature
+Özel paletler oluşturmak bir [**OsmAnd Pro**](../../purchases/index.md) ücretli özelliktir <ProFeature />.
+:::
+
+Renk paleti şemaları hakkında veri formatı ve izlerde ve rotalarda kullanımı hakkında daha fazla bilgi için [Renk paleti şemaları makalesine](../../personal/color-palette-schemes.md#tracks-routes) bakın.
+
+Bir palet oluştururken veya düzenlerken, düzenleyici ekranı şunları içerir:
+- Ekranın üst kısmında bir renk ölçeği önizlemesi.
+- Renk ölçeğinin altında seçilebilir değer düğmeleri (örneğin, 50, 100, 150, Veri yok).
+- Yeni bir adım eklemek için bir + düğmesi.
+- Bir Değer alanı.
+- Renk seçim seçenekleri. Palet dosyaları hakkında daha fazla bilgi için.
+- Seçilen değer için bir Adımı Kaldır seçeneği.
+- Bir Kaydet düğmesi.
+
+Uygulama çubuğundaki geri alma simgesini kullanarak son eylemi geri alabilirsiniz. Düzenleyiciyi kapatmak için Kapat'a dokunun. Değişiklikler yapılmışsa, kapatmadan önce bir onay diyaloğu görünür.
+
 
 ### Genişlik {#width}
 
@@ -80,7 +115,7 @@ Uygulamanın çeşitli menülerinde izin görünümünü özelleştirebilirsiniz
 
 - [*İz → Görünüm*](../../personal/tracks/manage-tracks.md#track-folder).
 - [*Navigasyon ayarları → Rota çizgisini özelleştir*](../../navigation/guidance/navigation-settings.md#customize-route-line).
-- [*Yerlerim → İzler sekmesi → herhangi bir klasör → Varsayılan görünüm*](../../personal/tracks/manage-tracks.md#track-folder).
+- [*Yerlerim → İzler sekmesi → herhangi bir klasör → Varsayılan görünüm*](../../personal/tracks/manage-tracks/md#track-folder).
 
 Haritada görünürlüğü artırmak için iz genişliğini ayarlayın.
 
@@ -121,7 +156,7 @@ Hareket yönünü belirtmek için iz boyunca **ok işaretleri** ekler.
 
 ![İz menüsü Görünüm başlangıç ve bitiş simgeleri Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-İz segmentleri için **başlangıç ve bitiş simgelerinin** gösterilip gösterilmeyeceğini seçmenizi sağlar.
+İz segmentleri için **başlangıç ve bitiş simgelerinin** gösterilip gösterilmeyeceğini seçmenizi sağlar. Çok sayıda segment içeren izler için bu simgeler harita oluşturma performansını iyileştirmek amacıyla otomatik olarak devre dışı bırakılabilir. Bu durumda gerekirse manuel olarak etkinleştirebilirsiniz.
 
 ### Boşlukları Birleştir {#join-gaps}
 

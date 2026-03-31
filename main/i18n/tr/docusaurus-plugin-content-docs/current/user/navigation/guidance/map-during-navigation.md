@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Navigasyon Sırasında Harita Ekranı
 ---
@@ -196,10 +196,10 @@ Rota çizgisi görünümünü stile göre seçebilir veya çizginin rengini, gen
 - ***<Translate android="true" id="map_widget_renderer"/>***. Varsayılan renklerle kullanılır. Renklerin tam açıklaması için [Varsayılan Harita stilleri](../../map/map-styles.md#default-map-styles) bölümüne gidin.  
     ![harita stili](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Özel***. İstediğiniz renkte ve şeffaflıkta bir çizgi seçmenizi sağlar. Gündüz haritası için farklı ayarlar ve gece haritası için ayrı ayrı ayarlar seçebilirsiniz.  
-    ![özel](@site/static/img/navigation/route/custom.png)   ![özel](@site/static/img/navigation/route/custom_ios.png)
+- ***Özel***. İstediğiniz renkte ve şeffaflıkta bir çizgi seçmenizi sağlar. Gündüz haritası için farklı ayarlar ve gece haritası için ayrı ayrı ayarlar seçebilirsiniz. Renk paleti, hızlı erişim renklerini, özel renk ekleme seçeneğini (*+*) ve mevcut renklerin tam listesini (*Tüm renkler*) içerir.            
+    ![özel](@site/static/img/navigation/route/custom_new.png)   ![özel](@site/static/img/navigation/route/custom_ios_new.png)
 
-- ***<Translate android="true" id="altitude"/>***. Rota noktasının yüksekliğini **yeşil-sarı-kırmızı** gradyan olarak gösterir. **Yeşil** rotanın en alçak noktasını, **sarı** noktanın ortalama yüksekliğini ve **kırmızı** en yüksek noktayı gösterir. Rota yükseklik farkı < 100 metreden azsa, gradyan kısmen uygulanır veya uygulanmaz, örneğin 100 metreden 150 metreye basit bir tırmanış için - gradyan **yeşil-sarı** olacaktır. Rengin yüksekliğin mutlak değerini temsil etmediğini unutmayın.  
+- ***<Translate android="true" id="altitude"/>***. Rota noktasının yüksekliğini **yeşil-sarı-kırmızı** gradyan olarak gösterir. **Yeşil** rotanın en alçak noktasını, **sarı** noktanın ortalama yüksekliğini ve **kırmızı** en yüksek noktayı gösterir. Rota yükseklik farkı < 100 metreden azsa, gradyan kısmen uygulanır veya uygulanmaz, örneğin 100 metreden 150 metreye basit bir tırmanış için - gradyan **yeşil-sarı** olacaktır. Renin yüksekliğin mutlak değerini temsil etmediğini unutmayın.  
     ![Yükseklik](@site/static/img/navigation/route/Altitude_rl.png)
 
 - ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. Rota çizgisi, rotanın yükseklik profiline bağlı olarak farklı renklerde renklendirilir. Ayrıntılı bir açıklama *Topografi eklentisi* makalesinin [Eğim](../../plugins/topography.md#hillshade-slope-and-altitude-layers) bölümündedir.  
@@ -243,7 +243,7 @@ Rota çizgisinin genişliğini, haritada görüntülenen yol veya patika ile hiz
 Dönüş Okları ayarı, rota çizgisinde dönüş oklarının görüntülenip görüntülenmeyeceğini seçmenizi sağlar.  
 
 - ***Haritada***  
-    ![Haritada dönüş okları](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![iOS haritasında dönüş okları](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Haritada dönüş okları](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Haritada iOS dönüş okları](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***Uygulamada***  
     ![Uygulamada dönüş okları](@site/static/img/navigation/route/turn_arr.png)   ![iOS'ta dönüş okları](@site/static/img/navigation/route/turn_arr_ios.png)

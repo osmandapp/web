@@ -1,8 +1,9 @@
 ---
-source-hash: a9d6c55caec580740721f4ad417db391b7f67918878d30233d0b4b89bc3ee9d5
+source-hash: cbed8959bdf8985ec20e474f00773eeda1334dfea7ce3c5a54eb702f18fa6ee2
 sidebar_position: 3
 title: Akıllı Klasör (Filtre)
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -15,10 +16,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 ## Genel Bakış {#overview}
 
-**Akıllı Klasör** özelliği, parkurlarınızı düzenlemek ve yönetmek için güçlü araçlar sunar. Temel özelliklerden biri, *Yerlerim* menüsünün *Parkurlar sekmesindeki* dosyaları süre, uzunluk veya hız gibi kriterlere göre filtreleme yeteneğidir.
+**Akıllı Klasör** özelliği, parkurlarınızı düzenlemek ve yönetmek için güçlü araçlar sunar. Temel özelliklerden biri, *Yerlerim* menüsünün *Parkurlar sekmesindeki* dosyaları süre, uzunluk veya hız gibi kriterlere göre filtreleme yeteneğidir.  
 
 Bu özellik, gereksinimlerinize uygun belirli parkurları hızlı bir şekilde bulmanızı sağlar. Filtrelenmiş sonuçlar, dinamik olarak güncellenen parkur koleksiyonlarına kolay erişim sağlayan bir **Akıllı Klasör** olarak kaydedilebilir.
 
@@ -53,7 +53,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızlı bir şekilde b
 
 - Filtrelenmiş sonuçları görmek için sağ alt köşedeki **Göster** öğesine dokunun. Eşleşen parkur sayısı parantez içinde görünür.
 
-- Tüm etkin filtreleri **temizlemek için** **Tümünü sıfırla** öğesine dokunun.
+- **Tüm etkin filtreleri temizlemek için** **Tümünü sıfırla** öğesine dokunun.
 
 - Geçerli filtre setini yeni bir **Akıllı Klasör** olarak **kaydetmek için** ekranın sağ üst köşesindeki kaydet simgesine dokunun.
 
@@ -82,7 +82,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızlı bir şekilde b
 - **Hareket süresi** — Kayıt sırasında hareket halinde geçirilen zaman aralığını belirtin.
 - **Uzunluk** — Belirli bir uzunluktaki parkurları bulmak için kilometre veya mil cinsinden belirli bir aralık ayarlayın.
 - **Ortalama hız** — Parkurları [ortalama hıza](../../widgets/info-widgets.md#average-speed) göre filtreleyin.
-- **Sensör veri grubu.**
+- **Sensör veri grubu.**  
     Aşağıdakiler dahil olmak üzere harici sensör verilerine göre filtreler uygulayın:
     - Sensör hızı, ortalama.
     - Sensör hızı, maksimum.
@@ -125,17 +125,17 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızlı bir şekilde b
 
 </Tabs>
 
-**Akıllı Klasör**, belirli filtre kriterlerine göre otomatik olarak güncellenen dinamik bir parkur koleksiyonudur. Parkurları verimli bir şekilde düzenlemek, aramak ve yönetmek için gelişmiş araçlar sunar.
+**Akıllı Klasör**, belirli filtre kriterlerine göre otomatik olarak güncellenen dinamik bir parkur koleksiyonudur. Parkurları verimli bir şekilde düzenlemek, aramak ve yönetmek için gelişmiş araçlar sunar.  
 
 ***Akıllı Klasörlerin Faydaları:***
 
-1. **Otomatik düzenleme.**
+1. **Otomatik düzenleme.**  
     Oluşturma tarihi veya süre aralığı gibi önceden tanımlanmış kurallara uyan parkurları otomatik olarak içerir.
-2. **Filtreleme ve arama.**
+2. **Filtreleme ve arama.**  
     Gelişmiş filtreler ve anahtar kelimeler kullanarak parkurlar içinde hızlı aramalar yapılmasına olanak tanır.
-3. **Dinamik yenileme.**
+3. **Dinamik yenileme.**  
     Kriterlere uyan en son parkurları görüntülemek için içeriği otomatik olarak yeniler.
-4. **Kuralları özelleştirin.**
+4. **Kuralları özelleştirin.**  
     Özel filtre kuralları tanımlayarak kişiselleştirilmiş parkur koleksiyonları oluşturun.
 
 
@@ -153,7 +153,7 @@ Bir **Akıllı Klasör** oluşturmak için şu adımları izleyin:
 
 4. Ayarları **kaydedin**.
     - Parkurları önizlemek için **Göster** öğesine dokunun.
-    - *Akıllı Klasörü* sonlandırmak için **Kaydet** düğmesini seçin.
+    - *Akıllı Klasörü* tamamlamak için **Kaydet** düğmesini seçin.
 
 Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla içeriğini otomatik olarak güncelleyecektir.
 
@@ -166,7 +166,30 @@ Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla iç
 
 ![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_2-1_andr.png)
 
-![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)
+![Yerlerim Akıllı Klasörleri Yönetme Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr_new.png)
+
+**Akıllı klasör**, Parkurlar sekmesindeki klasör listesinde benzersiz bir simgeyle görüntülenir. Klasörü yönetmek için yanındaki *üç nokta menü* simgesine dokunun ve mevcut eylemlere erişin:
+
+- **Ayrıntılar** — Klasörde bulunan parkurların tam listesini görüntüleyin.
+- **Tüm parkurları haritada göster** — Tüm klasör parkurlarını haritada görüntüleyin.  
+    *NOT: Çok sayıda parkur yüklemek performansı etkileyebilir.*
+- **Yeniden adlandır** — Daha kolay tanımlama için klasör adını değiştirin.
+- **Yenile** — En son parkurları içerdiğinden emin olmak için klasörün içeriğini manuel olarak güncelleyin.
+- **Filtreyi düzenle** — Geçerli Akıllı Klasör için parkur filtre ayarlarını değiştirin. Ayrıntılar için [Arama Filtresi](#search-filter) bölümüne bakın.
+- **Dışa aktar** — Akıllı Klasördeki tüm parkurları [İçe/Dışa Aktar](../../personal/import-export.md) özelliği aracılığıyla dışa aktarın. *Menü → Ayarlar → Eylemler sekmesine* yönlendirileceksiniz.
+- **Klasörü sil** — Parkurlarını silmeden Akıllı Klasörü kaldırın.  
+    *UYARI: Bu eylem geri alınamaz ve bir onay mesajı isteyecektir.*
+
+Klasörü ayrıca açabilir ve *sağ üst köşedeki* *üç nokta menü* simgesine dokunarak ek eylemlere erişebilirsiniz:
+
+- **Seç** — Klasör içindeki belirli parkur eylemleri için [Seçim Modunu](./manage-tracks.md#selection-mode) kullanın.
+- **Şuna göre düzenle** — Seçilen bir parametreye göre Akıllı Klasördeki parkurları otomatik olarak gruplara ayırın. Mevcut gruplama türleri *Genel*, *Tarih ve saat*, *Konum*, *Hız*, *Rakım ve yükseklik* ve *Sensör verisi* içerir. 
+
+Bazı gruplama parametreleri yalnızca OsmAnd Pro aboneliği ile kullanılabilir. Ücretsiz parametreler *Etkinlik*, *Oluşturma yılı* ve *En yakın şehir* içerir. Diğer tüm parametreler <ProFeature/> etiketiyle işaretlenmiştir.
+
+Sayısal parametreler (örneğin mesafe, süre, hız veya rakım) için *Adım boyutu ayarla* diyaloğu kullanılabilir. Gruplama için değer aralıklarını tanımlamak üzere kaydırıcıyı kullanın.
+
+PRO parametreleri için, gruplama kurulumunu önizleyebilirsiniz (örneğin, adım boyutu seçiciyi açın ve parkurların nasıl gruplandığını görün), ancak bu değişiklikleri uygulamak için aktif bir abonelik gereklidir. Bir PRO parametresi seçerseniz veya Kilidi aç düğmesine dokunursanız, Plan seç ekranı açılır. Önceden uygulanan gruplama, abonelik sona erse bile görünür kalır, ancak düzenleme veya yeni PRO tabanlı gruplama uygulamak için aktif bir abonelik gereklidir.
 
 </TabItem>
 
@@ -174,38 +197,53 @@ Yeni oluşturulan **Akıllı Klasör**, seçilen kriterlere uyan parkurlarla iç
 
 ![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
-![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios.png)
+![Yerlerim Akıllı Klasörleri Yönetme iOS](@site/static/img/personal/tracks/my_places_smart_folder_2_ios_new.png)
+
+**Akıllı klasör**, Parkurlar sekmesindeki klasör listesinde benzersiz bir simgeyle görüntülenir. Klasörü yönetmek için klasör adına *uzun dokunun* ve mevcut eylemlere erişin:
+
+- **Yeniden adlandır** — Daha kolay tanımlama için klasör adını değiştirin.
+- **Dışa aktar** — Akıllı Klasördeki tüm parkurları [İçe/Dışa Aktar](../../personal/import-export.md) özelliği aracılığıyla dışa aktarın. *Menü → Ayarlar → Eylemler sekmesine* yönlendirileceksiniz.
+- **Taşı** — Klasörü başka bir mevcut klasöre taşımanıza veya yeni bir klasör oluşturmanıza olanak tanır.
+- **Sil** — Parkurlarını silmeden Akıllı Klasörü kaldırın.  
+    *UYARI: Bu eylem geri alınamaz ve bir onay mesajı isteyecektir.*
+
+Klasörü ayrıca açabilir ve *sağ üst köşedeki* simgeye dokunarak ek eylemlere erişebilirsiniz:
+
+- **Seç** — Klasör içindeki belirli parkur eylemleri için [Seçim Modunu](./manage-tracks.md#selection-mode) kullanın.
+- **Yenile** — En son parkurları içerdiğinden emin olmak için klasörün içeriğini manuel olarak güncelleyin.
+- **Filtreyi düzenle** — Geçerli Akıllı Klasör için parkur filtre ayarlarını değiştirin. Ayrıntılar için [Arama Filtresi](#search-filter) bölümüne bakın.
 
 </TabItem>
 
 </Tabs>
 
-**Akıllı klasör**, Parkurlar sekmesindeki klasör listesinde benzersiz bir simgeyle görüntülenir. Klasörü yönetmek için yanındaki *üç nokta menü* simgesine (*Android*) dokunun ve *uzun dokunun* (*iOS*) veya klasörü açın ve sağ üst köşedeki simgeyi kullanın.
+<!--
+The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it (*Android*) and *long tap* (*iOS*) or open the folder and use the icon in the top-right corner.
 
-***Mevcut Eylemler:***
+***Available Actions:***
 
-- **Ayrıntılar** — Klasörde bulunan parkurların tam listesini görüntüleyin.
+- **Details** — View the complete list of tracks contained in the folder.
 
-- **Tüm parkurları haritada göster** (*Yalnızca Android*) — Tüm klasör parkurlarını haritada görüntüleyin.
-    *NOT: Çok sayıda parkur yüklemek performansı etkileyebilir.*
+- **Show all tracks on the map** (*Android only*) — Display all folder tracks on the map.  
+    *NOTE: Loading many tracks may affect performance.*
 
-- **Adı düzenle** (*Android*) / **Yeniden adlandır** (*iOS*) — Daha kolay tanımlama için klasör adını değiştirin.
+- **Edit name** (*Android*) / **Rename** (*iOS*) — Change the folder name for easier identification.
 
-- **Yenile** — En son parkurları içerdiğinden emin olmak için klasörün içeriğini manuel olarak güncelleyin.
+- **Refresh** — Manually update the folder's content to ensure it includes the latest tracks.
 
-- **Varsayılan görünümü değiştir** (*Android*) — Klasördeki tüm parkurların görüntü görünümünü değiştirir.
+- **Change default appearance** (*Android*) — Changes the display appearance of all tracks in the folder.
 
-- **Filtreyi düzenle** — Geçerli Akıllı Klasör için parkur filtre ayarlarını değiştirin. Ayrıntılar için [Arama Filtresi](#search-filter) bölümüne bakın.
+- **Edit filter** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
 
-- **Dışa aktar** — Akıllı Klasördeki tüm parkurları [İçe/Dışa Aktar](../../personal/import-export.md) özelliği aracılığıyla dışa aktarın. *Menü → Ayarlar → Eylemler sekmesine* yönlendirileceksiniz.
+- **Export** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
 
-- **Klasörü sil** — Parkurlarını silmeden Akıllı Klasörü kaldırın.
-    *UYARI: Bu eylem geri alınamaz ve bir onay mesajı isteyecektir.*
+- **Delete folder** — Remove the Smart Folder without deleting its tracks.  
+    *WARNING: This action is irreversible and will prompt a confirmation message.*
 
-- **Taşı** (*iOS*) — Klasörü başka bir mevcut klasöre taşımanıza veya yeni bir klasör oluşturmanıza olanak tanır.
+- **Move** (*iOS*) — Allows you to move the folder to another existing folder or create a new one.
 
-- **Seç** — Klasör içindeki belirli parkur eylemleri için [Seçim Modunu](./manage-tracks.md#selection-mode) kullanın.
-
+- **Select** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
+-->
 
 ## İlgili Makaleler {#related-articles}
 

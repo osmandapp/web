@@ -1,5 +1,5 @@
 ---
-source-hash: 26ecc10e593a10b425e7d1bc880124a223b29d77fca08040a2c47952e03d4203
+source-hash: 0b9fec9a92cbab58480cefaa92e29f493c2277360a9b9044570e4cc41a94d83d
 sidebar_position: 5
 title: Vektör Haritalar
 ---
@@ -101,7 +101,7 @@ Yollar için özel ayarlar, yol atlasına uyması için renkleri değiştirebili
 ![Harita yol stili varsayılan](@site/static/img/map/map-road-style-default.png)
 
 - **<Translate android="true" ids="rendering_value_germanRoadAtlas_name"/>**. Alman yol atlası stili.  
-![Harita yol stili Almanca](@site/static/img/map/map-road-style-german.png)
+![Harita yol stili Alman](@site/static/img/map/map-road-style-german.png)
 
 - **<Translate android="true" ids="rendering_value_americanRoadAtlas_name"/>**. Amerikan yol atlası stili.  
 ![Harita yol stili Amerikan](@site/static/img/map/map-road-style-american.png)
@@ -109,7 +109,7 @@ Yollar için özel ayarlar, yol atlasına uyması için renkleri değiştirebili
 - **<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. Yolların yüksek kontrastı.  
 ![Harita yol stili yüksek kontrast](@site/static/img/map/map-road-style-high-contrast.png)
 - **Soluk**. Yolların daha az kontrastlı renkleri.  
-![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-pale.png)
+![Harita yol stili soluk](@site/static/img/map/map-road-style-pale.png)
 
 - **<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Yollar için kalın dış çizgi.  
 ![Harita yol stili kalın dış çizgi](@site/static/img/map/map-road-style-bold-outline.png)
@@ -239,14 +239,14 @@ Harita görünürlüğünü artırmak için belirli nesneleri gizlemeniz gerekeb
 
 <TabItem value="android" label="Android">  
 
-Bu ayarı ekrandaki "+" veya "-" düğmesine uzun basarak seçebilirsiniz veya:  
+Ekrandaki "+" veya "-" düğmesine uzun basarak bu ayarı seçebilirsiniz veya:  
 *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_magnifier"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Bu ayarı ekrandaki "+" veya "-" düğmesine uzun basarak seçebilirsiniz veya:  
+Ekrandaki "+" veya "-" düğmesine uzun basarak bu ayarı seçebilirsiniz veya:  
 *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>*
 
 </TabItem>
@@ -370,6 +370,30 @@ OsmAnd'daki kontur çizgileri, vektör haritalarda yükseklik çizgileri olarak 
 
 Kontur çizgileri tüm harita stilleriyle uyumludur ve [Kontur çizgileri menüsü](../plugins/topography.md#contour-lines) aracılığıyla özelleştirilebilir. Daha fazla ayrıntı için [Topografya eklentisi](../plugins/topography.md) makalesini ziyaret edin.
 
+### Arazi {#terrain}
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
+
+Arazi seçeneği, Hillshade, Slope ve Altitude gibi üç özelliği özelleştirmenize olanak tanır. Daha fazla ayrıntı için [Topografya](../plugins/topography.md#terrain) makalesine bakın.
+
+### 3D Binalar {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D binalar*  
+
+![3D Binalar](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Binalar](@site/static/img/map/3d_buildings_2.png) 
+
+**3D Binalar** özelliği, binaları düz şekiller yerine hacimli 3D modeller olarak görüntüler. Binalar, [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur.
+
+Bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kullanılabilir. Ayrıntılar için [Topografya eklentisi](../plugins/topography.md#3d-buildings) makalesine bakın.
+
+### 3D Kabartma {#3d-relief}
+
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
+
+3D Kabartma özelliği, kabartmalı bir kabartma üretir ve manzaranın üç boyutlu bir temsilini sağlar. 3D Kabartma çevrimdışı çalışır ve [OsmAnd vektör haritaları](../map/vector-maps.md) ile veya herhangi bir [raster harita](../map/raster-maps.md#layers) ile [Harita Kaynağı](../map/raster-maps.md#main) olarak veya [Alt/Üst Katman](../map/raster-maps.md#overlay) olarak kullanılabilir. Daha ayrıntılı bilgi [burada](../plugins/topography.md#3d-relief) mevcuttur.
+
 ### * Deniz Derinliği {#-nautical-depth}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -396,44 +420,23 @@ Deniz derinliği kontur çizgileri, eşit derinlikteki alanları temsil ederek s
 
 Deniz haritası görünümü hakkında daha fazla ayrıntı için [Deniz Haritası eklentisi sayfasına](../plugins/nautical-charts) bakın.
 
-### 3D Binalar {#3d-buildings}
+### Küre Görünümü {#globe-view}
 
 <InfoAndroidOnly/> 
 
-![3D Binalar](@site/static/img/map/3d_buildings_1_new.png) ![3D Binalar](@site/static/img/map/3d_buildings_2.png) 
+Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Küresel Görünüm*
 
-**3D Binalar** özelliği, binaları düz şekiller yerine hacimli 3D modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. 3D binalar yalnızca daha yüksek yakınlaştırma seviyelerinde (şehir/sokak görünümü) gösterilir, burada bireysel binalar görüntülenebilir.  
-Şuraya git: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D binalar*  
-Ana anahtarı kullanarak 3D bina işleme özelliğini etkinleştirebilir veya devre dışı bırakabilirsiniz. Binaları 3D olarak görüntülemek için, ekrana iki parmağınızı yerleştirin ve yukarı kaydırarak haritayı eğin.
+![Küre Görünümü](@site/static/img/map/globe_view_1.png) ![Küre Görünümü](@site/static/img/map/globe_view_2.png)
 
-Şu anda bu seçenek yalnızca [OsmAnd geliştirme eklentisi](../plugins/development.md) etkinleştirildiğinde kullanılabilir.  
-Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
+**Küre Görünümü**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harita etkileşimini küresel navigasyona uyarlar. Daha fazla bilgi için, Haritayla Etkileşim makalesindeki [Küre görünümü bölümü](../map/interact-with-map.md#globe-view)ne bakın.
 
-3D binalar ayarları iki gruba ayrılır: **Görünüm** ve **Performans**.
+<!--
+## Map Legend {#map-legend}
 
-**Görünüm: Renk**. 3D binaların rengini kontrol eder. Renk'e dokunduğunuzda, OsmAnd ayarı ayarladığınız sırada haritayı görebileceğiniz ayrı bir önizleme ekranı açar.
-- **Harita stili** — şu anda seçili harita stilinden varsayılan bina rengini kullanır.
-- **Özel** — Gündüz / Gece modu için ayrı olarak özel bina rengi ayarlamanıza olanak tanır.
+The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
 
-:::tip Satın Alma
-3D Binaların Renk Özelleştirmesi [ücretli bir özelliktir](../purchases/index.md).  
-:::
-
-Özel renkler satın alınmamışsa, kısa bir açıklama ve Bir Al düğmesi ile boş bir durum göreceksiniz. Özel mevcutsa, Gündüz ve Gece arasında geçiş yapabilir, paletten bir renk seçebilir (veya Tüm renkleri açabilirsiniz), ardından Uygula'ya dokunabilirsiniz.
-
-**Görünüm: Görünürlük**. 3D binaların opaklığını (şeffaflığını) kontrol eder. Görünürlüğü yüzde olarak ayarlamak için kaydırıcıyı kullanın. Düşük değerler binaları daha şeffaf hale getirir ve yol/etiketlerin okunabilir kalmasına yardımcı olur. Yüksek değerler binaları daha katı ve görsel olarak baskın hale getirir. Görünürlük'e dokunmak da kaydırıcı ile ayrı bir önizleme ekranı açar.
-
-Önizleme ekranlarında (Renk / Görünürlük), varsayılan değeri geri yüklemek için uygulama çubuğundan Sıfırla varsayılana kullanabilirsiniz.
-
-**Performans: Detay seviyesi**. 3D bina geometrisinin ne kadar detaylı olduğunu kontrol eder:
-- Düşük (varsayılan) — daha basit geometri.
-- Yüksek — daha detaylı geometri.
-
-**Performans: Görüntü mesafesi**. 3D binaların kameradan ne kadar uzakta işleneceğini kontrol eder:
-- Yakın (varsayılan) — size daha yakın binaları işler.
-- Uzak — binaları daha uzun mesafeden işler.
-
-Her iki performans seçeneği de 3D binalar ayarları ekranında doğrudan iki konumlu bir anahtar kullanır.
+The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
+-->
 
 
 ## Ek Ayarlar {#additional-settings}
