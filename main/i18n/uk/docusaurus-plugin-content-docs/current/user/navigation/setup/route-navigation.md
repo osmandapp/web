@@ -1,5 +1,5 @@
 ---
-source-hash: 8bb59902cf937c86fa102c6c8438ee9e87e7ca4ca6169b91d4a49ff9e438a58b
+source-hash: 907ceedb8dfc62552542bf1acba9e1dd6d090ec5fa672fc82f493ba5c0a410d1
 sidebar_position: 1
 title:  Підготовка маршруту
 ---
@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Екран навігації iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1.png) ![Екран навігації iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3.png)
+![Екран навігації iOS 1](@site/static/img/navigation/route/navigation_by_route_ios_1_new.png) ![Екран навігації iOS 3](@site/static/img/navigation/route/navigation_by_route_ios_3_new.png)
 
 </TabItem>
 
@@ -293,7 +293,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Екран навігації iOS](@site/static/img/navigation/route/navigation_start_ios.png)
+![Екран навігації iOS](@site/static/img/navigation/route/navigation_start_ios_new.png)
 
 </TabItem>
 
@@ -473,7 +473,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Повідомлення про відсутність мап при побудові навігації iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png)
+![Повідомлення про відсутність мап при побудові навігації iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios_new.png)
 </TabItem>
 
 </Tabs>

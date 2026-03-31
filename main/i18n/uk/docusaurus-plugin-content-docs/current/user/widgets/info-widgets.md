@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title:  Інформаційні віджети
 ---
@@ -154,7 +154,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
    - Середня швидкість розраховується на основі обраного проміжку часу, який може становити від **15 секунд до 60 хвилин**.  
 
    - Розрахунок базується на даних GPS за формулою:  
-   `Середня швидкість = AVERAGE(GPS_LOCATION.speed)`.
+   `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
 3. ***Враховувати зупинки.***
 
@@ -301,7 +301,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Віджет координат iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Віджет координат Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -467,13 +467,13 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="android" label="Android">  
 
-![віджет_запису_поїздки](@site/static/img/widgets/wid_trip_rec.png)
+![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![віджет_запису_поїздки](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
@@ -505,7 +505,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="ios" label="iOS">
 
-![Віджети зовнішніх датчиків iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -553,14 +553,14 @@ OsmAnd пропонує два типи віджетів координат:
 
 <TabItem value="ios" label="iOS">
 
-![Віджети показників транспортного засобу iOS](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Віджети показників транспортного засобу Android](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 
-Віджети належать до [плагіна Показники транспортного засобу](../plugins/vehicle-metrics.md#widgets). Ви можете використовувати їх для перегляду інформації з підключеного сканера OBD-II, наприклад (*14 показників*): **Температура на впуску**,&nbsp; **Температура навколишнього середовища**,&nbsp; **Температура охолоджувальної рідини**,&nbsp; **Температура мастила**,&nbsp; **Оберти двигуна** (*безкоштовно*),&nbsp; **Час роботи двигуна**,&nbsp; **Розрахункове навантаження на двигун**,&nbsp; **Тиск пального**,&nbsp; **Споживання пального**,&nbsp; **Залишок пального**,&nbsp; **Рівень заряду акумулятора**,&nbsp; **Напруга адаптера**,&nbsp; **Швидкість транспортного засобу** (*безкоштовно*), та **Положення дросельної заслінки**.  
+Віджети належать до [плагіна Показники транспортного засобу](../plugins/vehicle-metrics.md#widgets). Ви можете використовувати їх для перегляду інформації з підключеного сканера OBD-II, наприклад (*14 показників*): **Напруга адаптера** (*лише Android*),&nbsp; **Температура навколишнього середовища**,&nbsp; **Напруга акумулятора**,&nbsp; **Розрахункове навантаження на двигун**,&nbsp; **Температура охолоджувальної рідини**,&nbsp; **Температура мастила двигуна**,&nbsp; **Час роботи двигуна**,&nbsp; **Оберти двигуна** (*безкоштовно*),&nbsp; **Споживання пального**,&nbsp; **Тиск пального**,&nbsp; **Температура на впуску**,&nbsp; **Залишок пального**,&nbsp; **Положення дросельної заслінки**, та **Швидкість транспортного засобу** (*безкоштовно*).  
 
 - Щоб додати віджети показників транспортного засобу на екран карти, [увімкніть](../plugins/index.md#enable--disable) **плагін Показники транспортного засобу**.
 - Ви можете додавати віджети, навіть якщо сканер OBD-II не підключений.
@@ -772,7 +772,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 <InfoAndroidOnly />
 
-![Віджет доступної оперативної пам'яті](@site/static/img/widgets/available_RAM_2_andr.png)
+![Віджети середньої швидкості](@site/static/img/widgets/available_RAM_2_andr.png)
 
 Віджет **Доступна оперативна пам'ять** — це інструмент для моніторингу використання пам'яті вашого пристрою у зв'язку з OsmAnd. Він надає детальні дані для оптимізації продуктивності програми.
 

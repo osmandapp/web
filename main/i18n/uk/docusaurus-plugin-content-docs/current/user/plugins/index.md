@@ -1,5 +1,5 @@
 ---
-source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  Плагіни
 ---
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 🤖 *- тільки для Android версії OsmAnd.*
 
-| Назва плагіна | Функції |
+| Назва плагіна |Функції |
 |:------------|:-------|
 | [Вікіпедія](#wikipedia) | [Шар карти](../plugins/wikipedia.md#download-wikipedia-packages), [Контекстне меню](../plugins/wikipedia.md#wikipedia-settings) |
 | [Онлайн-карти](#online-maps) |[Шар карти](../plugins/online-map.md#how-to-prepare-raster-maps) |
@@ -84,7 +84,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |[Mapillary](#mapillary) | [Шар карти](../plugins/mapillary.md#map-layer), [Контекстне меню](../plugins/mapillary.md#map-context-menu) , [Віджет](../plugins/mapillary.md#mapillary-widget)|
 |[Зовнішні датчики](#external-sensors) 🤖  | [Віджет](../plugins/external-sensors.md#widgets) |
 |[Показники автомобіля](#vehicle-metrics)  | [Користувацькі налаштування](../plugins/vehicle-metrics#scanner-settings), [Віджет](../plugins/vehicle-metrics#widgets) |
-|[Астрономія](#star-watcher)  | [Екран](../plugins/astronomy.md#star-map-screen), [Контекстне меню](../plugins/astronomy.md#celestial-object-info) |
+|[Астрономія](#astronomy)  | [Екран](../plugins/astronomy.md#star-map-screen), [Контекстне меню](../plugins/astronomy.md#context-menu) |
 |[Доступність](#accessibility) 🤖  | [Користувацькі налаштування](../plugins/accessibility.md#plugin-settings) |
 |[Розробка OsmAnd](#osmand-development) | [Користувацькі налаштування](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Шар карти](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Віджет](../plugins/osmand-tracker.md#tracker-widget), [Контекстне меню](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |

@@ -1,5 +1,5 @@
 ---
-source-hash: e2844a7925d70404994c291590137c7d5d17ee74b276757939cd17b02a79f6a4
+source-hash: 60a235c8ccc59d6c76a3294bc5e7f383d03bb68fb86ac418c8ba35347a55ac84
 sidebar_position: 11
 title:  Routes
 ---
@@ -179,7 +179,7 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.png)
 
 - Щоб відобразити потрібні маршрути на карті, увімкніть їх у *Списку маршрутів* меню [Налаштувати карту](../map/configure-map-menu.md).
-- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідувати за кольором та іконками.
+- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідкувати за кольором та іконками.
 - Основні типи маршрутів також можна фільтрувати за класами та підкласами, що дозволяє відображати лише певні групи в межах кожного типу. Наприклад, ви можете показувати пішохідні маршрути за **символами OSMC** як класи, а за *міжнародними, національними, регіональними* або *місцевими мережами* як підкласи, які наразі доступні, коли увімкнено плагін [OsmAnd Development](../plugins/development.md).
 - Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md). 
 - Коли кілька маршрутів пролягають вздовж однієї дороги, кожен маршрут відображається як окрема напівпрозора лінія, розміщена над іншими. 
@@ -197,7 +197,7 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - Щоб відобразити потрібні маршрути на карті, увімкніть їх у *Списку маршрутів* меню [Налаштувати карту](../map/configure-map-menu.md).
-- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідувати за кольором та іконками.
+- OsmAnd може виділяти [маршрути, наявні в OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Їх можна вибрати, торкнувшись [символу на маршруті](#save-as-a-track), і якщо видимий набір маршрутів налаштований правильно, ви можете слідкувати за кольором та іконками.
 - Ви можете створити трек поверх маршрутів за допомогою інструменту [Планування маршруту](../plan-route/create-route.md). 
 - Коли кілька маршрутів пролягають вздовж однієї дороги, кожен маршрут відображається як окрема напівпрозора лінія, розміщена над іншими.   
 
@@ -253,13 +253,13 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/route_info_1_andr.png)
+![Route info](@site/static/img/map/route_info_1_andr_new.png) ![Route info](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/route_info_1_ios.png)
+![Route info](@site/static/img/map/route_info_1_ios_new.png) ![Route info](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -276,6 +276,11 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 Щоб переглянути графік висоти, нахилу або деталі висот для вибраного маршруту, просто торкніться будь-якого з наступних значень у контекстному меню: **Відстань**, **Підйом**, **Спуск** або **Висота**.
 
+Ви також можете відкрити вкладку *Трек* і переключитися на *Вигляд висоти*, щоб побачити повний графік висот маршруту.
+
+**Примітка:** Дані висот генеруються автоматично і можуть дещо відрізнятися залежно від доступних даних.
+
+<!--
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -290,7 +295,8 @@ OsmAnd підтримує *скелелазні зони* (`climbing=area`) та
 
 </TabItem>
 
-</Tabs>  
+</Tabs> 
+--> 
 
 ### Зберегти як трек {#save-as-a-track}
 

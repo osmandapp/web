@@ -1,5 +1,5 @@
 ---
-source-hash: 7a4c572b27a72fe9f1b647eb877f540c2cdf3bec2eedcb4577e8fff99c5a07ee
+source-hash: 129bc75fff34397e04181ed095fb7b3ecfd58314aaefd053a0afc379847a31b2
 sidebar_position: 17
 title:  Запис поїздки
 ---
@@ -25,13 +25,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Записана поїздка в Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_3.png)
+![Recorded trip in Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Записана поїздка в iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios_2.png)
+![Recorded trip in iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios_2.png)
 
 </TabItem>
 
@@ -50,7 +50,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Запис нового треку {#new-track-recording}
 
-![Віджет Відстань/Старт-Стоп в iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Віджет Відстань/Старт-Стоп в Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
+![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
 
 За допомогою плагіна "Запис поїздки" в OsmAnd ви можете легко почати запис треку, використовуючи різноманітні зручні опції. Ось як ви можете розпочати свою подорож:
 
@@ -84,7 +84,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Діалогове вікно запуску відкривається, якщо в розділі налаштувань діалогового вікна запуску увімкнено опцію **<Translate android="true" ids="show_start_dialog"/>**.
 
-![Запуск запису в Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
+![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
 </TabItem>
 
@@ -92,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Діалогове вікно запуску відкривається, якщо опція **<Translate ios="true" ids="track_interval_remember"/>** не увімкнена.
 
-![Запуск запису в iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png)
+![Start recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png)
 
 </TabItem>
 
@@ -109,7 +109,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Launcher (Android) {#launcher-android}
 
-![Контекстне меню іконки](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Іконка "Почати запис"](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
+![Icon's context menu](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
 Ви можете швидко розпочати запис нового треку безпосередньо з екрана вашого пристрою Android за допомогою контекстного меню іконки програми OsmAnd.
 
@@ -149,7 +149,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Завершення запису в iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Завершення запису в iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
+![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finish recording in iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -175,7 +175,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | |  
 | ------------- |
-|Вкладка **Огляд** для iOS (для Android параметри осі Y — *Висота*, *Швидкість*, а параметр осі X — *Відстань*). На цій вкладці відображається графік, що показує зміни швидкості та висоти вздовж треку, а також ключові деталі треку. Дані треку для iOS: *Відстань*, *Тривалість*, *Час початку* та *Час завершення*. Відображається. Ви можете побачити, як це відображається у версіях для Android та iOS нижче. |
+|Вкладка **Огляд** для iOS (для Android параметри осі Y — *Висота*, *Швидкість*, а параметр осі X — *Відстань*). На цій вкладці відображається графік, що показує зміни швидкості та висоти вздовж треку, а також ключові деталі треку. Дані треку для iOS: *Відстань*, *Тривалість*, *Час початку* та *Час завершення*. DispYou can see how this is displayed in the Android and iOS versions below. |
 | ![data](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | Вкладка **Висота** для iOS (для Android параметри осі Y — *Висота*, *Нахил*, а параметр осі X — *Відстань*). Ця вкладка зосереджена на профілі висот вашого записаного треку, надаючи інформацію про зміни висоти та ухили рельєфу. Ключові показники для iOS включають: *Середня висота*, *Діапазон висот*, *Набір висоти* та *Спуск*. Графіки нижче ілюструють відмінності між інтерфейсами Android та iOS. |
 | ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
@@ -195,13 +195,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Налаштування треків на мапі Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Налаштування треків на мапі iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -268,13 +268,13 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 <TabItem value="android" label="Android">  
 
-![Налаштування запису поїздки в Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Налаштування запису поїздки в Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
+![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Налаштування запису поїздки в iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Налаштування запису поїздки в iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
+![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
 
 </TabItem>
 
@@ -297,7 +297,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 | **Показники автомобіля** <br/> *Потрібно увімкнути плагін* | Дані з [сканера OBD-II](../plugins/vehicle-metrics.md#trip-recording) записуються у GPX-файл. Відображається лише тоді, коли увімкнено [плагін "Показники автомобіля"](../plugins/vehicle-metrics.md).<br />*Примітка*: Ви можете додати, які показники записувати у GPX-файл, зі списку: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Папка для зберігання треків** (*Android*) | Визначає, де у вкладці *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* зберігаються записані треки. Опції включають зберігання всіх треків у папці Rec або організацію їх за місяцями, наприклад, Rec/yyyyy-mm. |
 | **Сповіщення** | Керує відображенням системного [сповіщення про запис поїздки](#notifications) в області сповіщень пристрою, що дозволяє розпочати запис поїздок. |
-| **Онлайн-відстеження** (*Android*) | Дозволяє відстежувати ваше місцезнаходження в реальному часі, надсилаючи записані точки на вказану URL-адресу. Інтервал відстеження визначає, як часто надсилаються точки, а часовий буфер зберігає точки за відсутності інтернет-з'єднання.<details><summary>*Примітка*</summary>Якщо ця опція увімкнена, і запис треку триває, віджет Відстань/Старт-Стоп (REC) стає **зеленим** замість **червоного**, вказуючи, що кожна записана точка передається на вказану URL-адресу. Поле **Веб-адреса** дозволяє ввести URL-адресу, використовуючи наступний формат параметрів:<ul><li>`lat={0}`: Широта</li><li>`lon={1}`: Довгота</li><li>`timestamp={2}`: Часова мітка (час Unix)</li><li>`hdop={3}`: Горизонтальне погіршення точності</li><li>`altitude={4}`: Висота</li><li>`speed={5}`: Швидкість</li><li>`bearing={6}`: Азимут (напрямок руху)</li><li>`eta={7}`: Орієнтовний час прибуття (час Unix)</li><li>`etfa={8}`: Орієнтовний час до першої проміжної точки або точки фінішу (час Unix)</li><li>`eda={9}`: Орієнтовна відстань до прибуття або маркера (в метрах)</li><li>`edfa={10}`: Орієнтовна відстань до першої проміжної точки або точки фінішу (в метрах)</li></ul>Ви можете встановити **Інтервал відстеження**, щоб вказати, як часто надсилаються точки місцезнаходження, з опціями від 0 секунд до 5 хвилин. Крім того, параметр **Часовий буфер** визначає, як довго зберігаються точки місцезнаходження за відсутності інтернет-з'єднання, забезпечуючи збереження та передачу даних, коли з'єднання відновлюється.</details><br />OsmAnd зберігає ненадіслані точки місцезнаходження лише в тимчасовій пам'яті програми під час роботи додатка. Це означає, що буфер не записується в постійне сховище. Якщо додаток закрито, примусово зупинено або пристрій перезавантажено, усі буферизовані точки втрачаються.<br />Налаштування Часовий буфер не визначає, як довго точки зберігаються в пам'яті — воно працює лише як фільтр під час завантаження. Коли OsmAnd намагається надіслати буферизовані точки, кожна точка перевіряється на відповідність лімітові Часового буфера. Точки, старші за вибраний ліміт (наприклад, 24 години), видаляються замість завантаження. У результаті буфер може тимчасово містити точки, старші за вибране значення Часового буфера, але ці точки будуть відкинуті під час процесу завантаження. |
+| **Онлайн-відстеження** (*Android*) | Дозволяє відстежувати ваше місцезнаходження в реальному часі, надсилаючи записані точки на вказану URL-адресу. Інтервал відстеження визначає, як часто надсилаються точки, а часовий буфер зберігає точки за відсутності інтернет-з'єднання.<details><summary>*Примітка*</summary>Якщо ця опція увімкнена, і запис треку триває, віджет Відстань/Старт-Стоп (REC) стає **зеленим** замість **червоного**, вказуючи, що кожна записана точка передається на вказану URL-адресу. Поле **Веб-адреса** дозволяє ввести URL-адресу, використовуючи наступний формат параметрів:<ul><li>`lat={0}`: Широта</li><li>`lon={1}`: Довгота</li><li>`timestamp={2}`: Часова мітка (час Unix)</li><li>`hdop={3}`: Горизонтальне погіршення точності</li><li>`altitude={4}`: Висота</li><li>`speed={5}`: Швидкість</li><li>`bearing={6}`: Азимут (напрямок руху)</li><li>`eta={7}`: Орієнтовний час прибуття (час Unix)</li><li>`etfa={8}`: Орієнтовний час до першої проміжної точки або точки фінішу (час Unix)</li><li>`eda={9}`: Орієнтовна відстань до прибуття або маркера (в метрах)</li><li>`edfa={10}`: Орієнтовна відстань до першої проміжної точки або точки фінішу (в метрах)</li><li>`batproc={11}`: Рівень заряду батареї пристрою (у відсотках)</li></ul>Ви можете встановити **Інтервал відстеження**, щоб вказати, як часто надсилаються точки місцезнаходження, з опціями від 0 секунд до 5 хвилин. Крім того, параметр **Часовий буфер** визначає, як довго зберігаються точки місцезнаходження за відсутності інтернет-з'єднання, забезпечуючи збереження та передачу даних, коли з'єднання відновлюється.</details><br />OsmAnd зберігає ненадіслані точки місцезнаходження лише в тимчасовій пам'яті програми під час роботи додатка. Це означає, що буфер не записується в постійне сховище. Якщо додаток закрито, примусово зупинено або пристрій перезавантажено, усі буферизовані точки втрачаються.<br />Налаштування Часовий буфер не визначає, як довго точки зберігаються в пам'яті — воно працює лише як фільтр під час завантаження. Коли OsmAnd намагається надіслати буферизовані точки, кожна точка перевіряється на відповідність лімітові Часового буфера. Точки, старші за вибраний ліміт (наприклад, 24 години), видаляються замість завантаження. У результаті буфер може тимчасово містити точки, старші за вибране значення Часового буфера, але ці точки будуть відкинуті під час процесу завантаження. |
 | **Треки** | Швидке посилання на папку, де зберігаються треки, у вкладці *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Скинути налаштування плагіна до стандартних** | Скидає всі налаштування запису поїздки для поточного профілю до стандартних. |
 | **Копіювати з іншого профілю** (*Android*) | Копіює налаштування запису поїздки з одного профілю в інший. |
@@ -307,7 +307,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 <InfoAndroidOnly />
 
-![Трек на мапі iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Трек на мапі iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
+![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
 
 Ця функція дозволяє керувати налаштуваннями оптимізації батареї для OsmAnd, щоб забезпечити безперебійний доступ до вашого місцезнаходження, навіть коли програма працює у фоновому режимі під час навігації або запису треку.
 
@@ -318,7 +318,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 ### Сповіщення {#notifications}
 
-![Сповіщення запису поїздки](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
 Якщо в налаштуваннях плагіна увімкнено [Сповіщення](#recording-settings), сповіщення про запис поїздки завжди відображатимуться в системній області сповіщень, коли запис активний. Це сповіщення гарантує, що процес запису не буде перервано системою, і його не можна вимкнути під час активного запису.
 
@@ -334,7 +334,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 **Додаткові опції Android**.
 
-![Сповіщення запису поїздки](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
 
 - У ***Налаштуваннях Android → Сповіщення та рядок стану → Сповіщення на екрані блокування*** ви можете видалити OsmAnd зі списку програм, щоб запобігти появі сповіщень на екрані блокування, уникаючи випадкової активації екрана. Це не вплине на запис треку. Сповіщення все одно з'являтимуться у звичайній області сповіщень.
 - **OsmAnd** також може з'являтися в розділі ***Конфіденційність → Спеціальні дозволи → Вмикати екран***. Якщо ви хочете запобігти вмиканню екрана при появі сповіщення, спробуйте видалити OsmAnd з цього списку.
@@ -345,7 +345,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 **Значок сповіщення**.
 
-![Сповіщення запису поїздки](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
 
 Значок на іконці програми з'являється поруч з іконкою OsmAnd, коли запис треку активний.
 
@@ -356,7 +356,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 ## Віджети {#widgets}
 
-Віджети дозволяють відображати ключову інформацію про запис треку безпосередньо на екрані, таку як *Відстань*, *Тривалість*, *Набір висоти*, *Спуск*, *Макс. швидкість* та *Середній нахил*. На iOS ви також можете додати віджет *Час у русі*.
+Віджети дозволяють відображати ключову інформацію про запис треку безпосередньо на екрані, таку як *Середній нахил*, *Відстань*, *Спуск*, *Тривалість*, *Макс. швидкість*, *Час у русі* та *Набір висоти*. На Android ви також можете додати віджет *Середня швидкість*.
 
 Щоб почати використовувати *віджети запису поїздки*, вам потрібно виконати всі наступні налаштування:
 
@@ -373,7 +373,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Оберіть панель → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Додавання віджета Відстань/Старт-Стоп в Android](@site/static/img/plugins/trip-recording/add_widg_andr_2.png)
+![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Оберіть панель → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Додавання віджета Відстань/Старт-Стоп в iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -398,13 +398,13 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 <TabItem value="android" label="Android">
 
-![Режими відображення](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Режими відображення](@site/static/img/plugins/trip-recording/average_slope_mode.png)
+![Display Modes](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Display Modes](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Режими відображення](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Режими відображення](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
+![Display Modes](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Display Modes](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
@@ -412,36 +412,18 @@ OsmAnd фіксує вашу подорож у структурованому [G
 
 Деякі віджети запису поїздки підтримують кілька режимів відображення. Режими дозволяють перемикатися між загальними значеннями поїздки та метриками для останнього підйому або спуску поточно записаної поїздки.
 
-Наступні режими можуть бути доступні залежно від віджета.
-1. **Середній нахил**:
-- Останній спуск 
-- Останній підйом  
-
-2. **Відстань (Старт-Стоп)**:
-- Загальна відстань (за замовчуванням)
-- Останній спуск
-- Останній підйом
-
-3. **Спуск**:
-- Загальний (за замовчуванням)
-- Останній спуск
-
-4. **Макс. швидкість**:
-- Загальна (за замовчуванням)
-- Останній спуск
-- Останній підйом
-
-5. **Час у русі** (*лише для iOS*)
-- Загальний (за замовчуванням)
-- Останній спуск
-- Останній підйом
-
-6. **Набір висоти**:
-- Загальний (за замовчуванням)
-- Останній підйом
+| **Віджет** | **Доступні режими**  |
+|-------|-------------|
+| Середній нахил | Останній спуск; Останній підйом |
+| Середня швидкість *(лише для Android)* | Середня поїздки (за замовчуванням); Останній спуск; Останній підйом |
+| Відстань (Старт-Стоп) | Середня поїздки (за замовчуванням); Останній спуск; Останній підйом |
+| Спуск | Загальний (за замовчуванням); Останній спуск |
+| Макс. швидкість | Загальна (за замовчуванням); Останній спуск; Останній підйом |
+| Час у русі | Загальний (за замовчуванням); Останній спуск; Останній підйом |
+| Набір висоти | Загальний (за замовчуванням); Останній підйом |
 
 Перемикання режимів залежить від віджета:
-- Набір висоти / Спуск / Макс. швидкість / Середній нахил / Час у русі — натисніть віджет на мапі, щоб переключити його режим.
+- Набір висоти / Спуск / Макс. швидкість / Середній нахил / Час у русі / Середня швидкість — натисніть віджет на мапі, щоб переключити його режим.
 - Відстань (Старт-Стоп) — віджет Відстань підтримує кілька режимів відображення (виберіть їх у налаштуваннях віджета), але натискання на нього завжди відкриває діалогове вікно Запис поїздки, де ви можете розпочати, зупинити та переглянути детальну інформацію про ваш трек. 
 
 Якщо поточний запис ще не містить підйому або спуску, віджети в режимах Останній підйом або Останній спуск показують 0 або — (немає даних).
@@ -454,7 +436,7 @@ OsmAnd фіксує вашу подорож у структурованому [G
 | |
 |-----------|
 | **Відстань/Старт-Стоп**. Цей віджет відображає відстань вашої поточної поїздки. Він автоматично додається, коли увімкнено плагін "Запис поїздки", але ви можете приховати його через меню "Налаштувати екран". Віджет має три різні стани: *Запис*, *Пауза* та *Неактивний*, кожен з яких вказує на поточний стан запису вашої поїздки. |
-| ![Віджет запису поїздки (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
+| ![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Щоб відкрити [діалогове вікно Запис поїздки](#start-a-dialog) при натисканні на неактивний віджет, увімкніть опцію *Показувати стартовий діалог* у налаштуваннях плагіна "Запис поїздки". Якщо опція вимкнена, запис розпочнеться одразу після натискання на віджет без відкриття діалогового вікна.| 
 
 Віджет Відстань підтримує кілька режимів відображення:
@@ -469,13 +451,15 @@ OsmAnd фіксує вашу подорож у структурованому [G
 |------------|
 |**Середній нахил**. Відображає середній нахил для останнього підйому або спуску поточної поїздки, залежно від вибраного режиму. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|**Середня швидкість** *(лише для Android)*. Показує середню швидкість для поточно записаної поїздки або середню швидкість під час останнього підйому або спуску, залежно від вибраного режиму. |
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Спуск**. Вказує загальний спуск або останній спуск, залежно від вибраного режиму. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Тривалість**. Відображає загальний час поточної поїздки в годинах та хвилинах. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Макс. швидкість**. Показує максимальну швидкість для поточно записаної поїздки в вибраному режимі. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
-|**Час у русі** (*лише для iOS*). Показує час у русі для поточно записаної поїздки або час для останнього підйому та спуску, залежно від вибраного режиму. |
+|**Час у русі**. Показує час у русі для поточно записаної поїздки або час для останнього підйому та спуску, залежно від вибраного режиму. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**Набір висоти**. Показує сукупний набір висоти або останній підйом, залежно від вибраного режиму. |
 |![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|

@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
 sidebar_position: 1
 title:  Покупки в Android
 ---
@@ -56,7 +56,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 | Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | Безкоштовний план, який надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Улюблених*, *Налаштувань* та *редагування/notатки OSM*. | Доступний усім користувачам безкоштовної версії OsmAnd. | Обмежено базовими хмарними функціями та сховищем **5MB**. |
+| **OsmAnd Start** | **Безкоштовний план**, який надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Улюблених*, *Налаштувань* та *редагування/notатки OSM*. | Доступний усім користувачам безкоштовної версії OsmAnd. | Обмежено базовими хмарними функціями та сховищем **5MB**. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | **Окрема платна програма**, яка включає розширені функції. | Доступна в [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Можна додати до [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Внутрішня покупка** або **підписка** для безкоштовної програми OsmAnd, яка розблоковує ті самі функції, що й OsmAnd+. | Доступна в [Google Play](https://play.google.com/store/apps/details?id=net.osmand) та [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Ідентична за функціями та цінами до OsmAnd+. |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **План підписки**, який розблоковує додаткові розширені та [pro-функції](#pro-features). | Доступна в [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) та [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Надає повний доступ до функцій OsmAnd Cloud. |
@@ -125,12 +125,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Підтримка зовнішніх датчиків](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Дані топографії](../plugins/topography.md#overview)<br/>(Лінії контуру та рельєф) | **-** | ✔ | ✔ |
-| [Сітка координат — налаштування кольору](../map/vector-maps/#coordinates-grid)| **-** | ✔ | ✔ |
+| [Сітка координат — налаштування кольору](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
 | [3D будівлі — налаштування кольору](../map/vector-maps.md#3d-buildings)| **-** | ✔ | ✔ |
 | [Візуалізація 3D треку](../map/tracks/appearance.md#3d-track) | **-** | ✔ | ✔ |
 | [Невіртуальні глибини](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Популярні місця (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Офлайн Wikivoyage — туристичні путівники](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Плагін астрономії](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Офлайн та онлайн навігація](../navigation/index.md)<br/>з поворот-за-поротом напрямками | ✔ | ✔ | ✔ |
 | [Офлайн миттєвий пошук](../search/index.md) | ✔ | ✔ | ✔ |
 | [Запис поїздки](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -173,6 +174,8 @@ Pro функції доступні для [підписки OsmAnd Pro](#prices
 | [Віджети висоти - Висота: центр карти](../widgets/info-widgets.md#elevation-map-center) | Дозволяє дізнатися висоту поточного центру карти над рівнем моря.  |
 | [Корекція висоти (офлайн)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Дозволяє розрахувати графік висоти для вашого треку (потрібна [карта рельєфу](../plugins/topography.md#download-maps) для обраного регіону). |
 | [Зміна схеми кольорів](../../user/plugins/topography.md#modify-color-scheme) | Дозволяє налаштувати зовнішній вигляд карти шляхом вибору або імпорту палітр кольорів. Ви можете редагувати вбудовані схеми або використовувати власні файли палітр для персоналізації кольорів карти та маршруту. |
+| [Створення власних палітр](../../user/map/tracks/appearance.md#color-palette-editor) | Дозволяє створювати та редагувати градієнтні палітри для забарвлення треків за допомогою відносних або фіксованих значень. Ви можете визначати кроки кольорів, призначати значення та налаштовувати спосіб відображення даних (наприклад, швидкості чи висоти) вздовж треку. |
+| [Розумні папки – Організувати за](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Дозволяє організовувати треки в розумних папках за допомогою розширених параметрів групування, таких як дата та час, відстань, тривалість, швидкість, висота та підйом, а також дані датчиків. Ці опції дозволяють детальнішу категоризацію треків та гнучкий аналіз. |
 
 
 ## Як купити {#how-to-buy}
@@ -255,7 +258,7 @@ or
 -->
 
 
-## Підарковані картки {#giftcards}
+## Подарункові картки {#giftcards}
 
 [Детальний посібник з покупки подарункових карт Google Play](https://support.google.com/googleplay/answer/3422734?hl=en).
 
