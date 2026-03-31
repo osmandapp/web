@@ -348,7 +348,7 @@ The main settings for *Show or Hide map types* are in the Topography section of 
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3D buildings* 
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
+![3D Buildings](@site/static/img/map/3d_buildings_1_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
 
 **3D Buildings** feature displays buildings as volumetric 3D models instead of flat shapes. Buildings are generated from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings), using height information from tags such as `height` and `building:levels` when available. 3D buildings are shown only at higher zoom levels (city/street view), where individual buildings can be displayed.  
 
@@ -357,7 +357,7 @@ Use the main toggle to enable or disable 3D rendering of buildings. When enabled
 This option is available only when the Topography plugin is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-The 3D buildings settings include controls that affect appearance, performance, and lighting of 3D buildings.
+The 3D buildings settings are divided into two groups: **Appearance** and **Performance**.
 
 ### Appearance {#appearance}
 
@@ -395,6 +395,7 @@ Both performance options use a two-position toggle right in the 3D buildings set
 
 **Note:** Using *High detail* and *Far view distance* improves visual appearance but may impact performance and increase battery usage.
 
+<!--
 ### Sun {#sun}
 
 ![3D Buildings](@site/static/img/map/sun_setting.png)
@@ -405,6 +406,7 @@ The **Sun** setting controls the lighting direction used for rendering 3D buildi
 - Altitude — controls the height of the sun above the horizon.
 
 Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+-->
 
 
 ## 3D Relief {#3d-relief}
