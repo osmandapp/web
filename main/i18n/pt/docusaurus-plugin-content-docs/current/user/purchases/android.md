@@ -1,5 +1,5 @@
 ---
-source-hash: 9425cb16a8b3b4024e0592c3fc9780d9307b38f4311744581cc53418d76d9315
+source-hash: 49ca17514e9e6991077f3202d3ed99d6bec4712a015abd3084fe3725e0a9a139
 sidebar_position: 1
 title: Compras Android
 ---
@@ -113,6 +113,7 @@ A tabela abaixo detalha as funcionalidades incluídas nos pacotes gratuito e pag
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Locais Populares (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Wikivoyage Offline - Guias de Viagem](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
+| [Plugin de Astronomia](../plugins/astronomy.md)| **-** | ✔ | ✔ |
 | [Navegação offline e online](../navigation/index.md)<br/>com instruções passo a passo | ✔ | ✔ | ✔ |
 | [Pesquisa instantânea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Gravação de viagem](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -155,6 +156,8 @@ A assinatura **Pro** atualmente tem as seguintes funcionalidades:
 | [Widgets de Altitude - Elevação: Centro do Mapa](../widgets/info-widgets.md#elevation-map-center) | Permite descobrir a elevação do centro do mapa atual acima do nível do mar.  |
 | [Correção de elevação (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Permite calcular um gráfico de altitude para o seu trilho ([mapa de Terreno](../plugins/topography.md#download-maps) necessário para a região escolhida). |
 | [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Pode editar esquemas incorporados ou usar os seus próprios ficheiros de paleta para personalizar cores de mapa e rota. |
+| [Criar paletas personalizadas](../../user/map/tracks/appearance.md#color-palette-editor) | Permite criar e editar paletas de gradiente para a coloração de trilhos usando valores Relativos ou Fixos. Pode definir passos de cor, atribuir valores e personalizar como os dados (como velocidade ou altitude) são exibidos ao longo do trilho. |
+| [Pastas Inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar trilhos em Pastas Inteligentes usando parâmetros de agrupamento avançados, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização de trilhos mais detalhada e uma análise flexível. |
 
 
 ## Como Comprar {#how-to-buy}

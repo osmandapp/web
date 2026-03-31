@@ -1,5 +1,5 @@
 ---
-source-hash: 4cf7729f062bc1d61132f96ed7892d92a408038fedae26f67d49c81f8de8dcc1
+source-hash: 69c57529a75f3a6c493feeeb441d156b685c193b38ec773217c97b31628968d9
 sidebar_position: 5
 title:  Rotas de transporte público
 ---
@@ -142,19 +142,29 @@ A interface do usuário exibe Rotas Alternativas como distintivos coloridos com 
 
 ## Desempenho e resultados {#performance-and-results}
 
-**Perfil de transporte público -> Configurações -> Configurações de navegação -> Parâmetros de rota**
+<Tabs groupId="operating-systems" queryString="current-os">
 
-1. **Número máximo de trocas de transporte**.
+<TabItem value="android" label="Android">
 
-O desempenho e o consumo de memória do Roteador de Transporte Público dependem da profundidade da pesquisa.
+![Número máximo de trocas de transporte](@site/static/img/navigation/public/maximum_number_android.png) 
 
-O parâmetro mais importante que afeta essa profundidade é o **Número máximo de trocas de transporte**.
+</TabItem>
 
-Usamos **2** como valor padrão, que parece ótimo para redes modernas de transporte público.
+<TabItem value="ios" label="iOS">  
 
-Se você encontrar baixo desempenho ou erros de falta de memória, tente diminuir esse valor.
+![Número máximo de trocas de transporte](@site/static/img/navigation/public/maximum_number_ios.png)
 
-Se você estiver em uma cidade pequena ou viajar rotas curtas, um valor de **1** pode funcionar melhor.
+</TabItem>
+
+</Tabs>
+
+Vá para: *<Translate android="true" ids="shared_string_settings"/>* *→ Perfil de Transporte Público →* *<Translate android="true" ids="routing_settings_2,help_article_navigation_routing_name"/>* *→ Número máximo de trocas de transporte*
+
+O desempenho e o consumo de memória do Roteador de Transporte Público dependem da profundidade da pesquisa. O parâmetro mais importante que afeta essa profundidade é o **Número máximo de trocas de transporte**.
+
+Esse parâmetro também afeta diretamente a disponibilidade e a qualidade das rotas. Se o valor for definido muito baixo (por exemplo, 0), o OsmAnd pode falhar em encontrar rotas adequadas ou sugerir opções subótimas, mesmo quando rotas melhores com baldeações existirem.
+
+Usamos **2** como valor padrão, que parece ótimo para redes modernas de transporte público. Se você encontrar baixo desempenho ou erros de falta de memória, tente diminuir esse valor. Se você estiver em uma cidade pequena ou viajar rotas curtas, um valor de **1** pode funcionar melhor.
 <!--
 Existem mais dois parâmetros que ajudam você a escolher as melhores rotas.
 

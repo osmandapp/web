@@ -1,5 +1,5 @@
 ---
-source-hash: 848546295eb67d895bd6bd5a48afe6f2f110a62b992de04aa47e91eee03c9082
+source-hash: 42ff05646c95b3b895f63bb0b08b6e96cad7f2f20ea27a354e9c56ca6c77cb65
 sidebar_position: 3
 title: Navigation
 ---
@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Android*. O OsmAnd usa dois **mecanismos de roteamento offline** diferentes: um *mecanismo baseado em Java* e um *mecanismo Nativo (C++)*.
 
-- O *mecanismo baseado em Java* é usado no [Modo de Segurança](../plugins/development.md#overview), mas é aproximadamente 10 vezes mais lento que o mecanismo nativo. Ele também tem limitações de memória rigorosas, o que pode levar a erros como *Memória insuficiente para calcular*. Se você encontrar esse problema, navegue até *Plugins → Desenvolvimento do OsmAnd → Configurações →* [*Modo de Segurança*](../plugins/development.md#overview) e certifique-se de que esta opção esteja desativada.
+- O *mecanismo baseado em Java* é usado no [Modo de Segurança](../plugins/development.md#overview), mas é aproximadamente 10 vezes mais lento que o mecanismo nativo. Ele também tem limitações de memória rigorosas, o que pode levar a erros como *Memória insuficiente para calcular*. Se você encontrar esse problema, navegue até *Plugins → OsmAnd development → Settings →* [*Safe Mode*](../plugins/development.md#overview) e certifique-se de que esta opção esteja desativada.
 - O *mecanismo Nativo (C++)* oferece melhor desempenho, mas sua eficiência depende da memória e da capacidade do processador do seu dispositivo. Geralmente, o roteamento nativo funciona bem para rotas com menos de 300 km, com tempos de cálculo de rota variando de 15 segundos a 4 minutos. Se o processo demorar mais de 4 minutos, é aconselhável parar, pois o aplicativo pode travar.
 
 ### Rotas incorretas ou quebradas {#incorrect-or-broken-routes}
@@ -35,17 +35,17 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 **Soluções:**
 
 1. Redefina seu perfil.
-- Abra *Menu* → *Configurações* → *Perfil do aplicativo (Perfil de Navegação)*.
-- Selecione *Redefinir para o padrão*.
+- Abra *Menu* → *Settings* → *App profile (Navigation Profile)*.
+- Selecione *Reset to default*.
 
 2. Remova e reinstale os mapas.
-- Abra *Menu* → *Mapas & Recursos* → *Local* e exclua todos os mapas para a(s) região(ões) afetada(s).
-- Em seguida, vá para *Menu* → *Mapas & Recursos* → *Downloads* e baixe os mapas novamente.
-- Opcionalmente, verifique *Menu* → *Mapas & Recursos* → *Atualizações* para garantir que todas as regiões compartilhem a mesma data de atualização.
+- Abra *Menu* → *Maps & Resources* → *Local* e exclua todos os mapas para a(s) região(ões) afetada(s).
+- Em seguida, vá para *Menu* → *Maps & Resources* → *Downloads* e baixe os mapas novamente.
+- Opcionalmente, verifique *Menu* → *Maps & Resources* → *Updates* para garantir que todas as regiões compartilhem a mesma data de atualização.
 
 3. Altere o mecanismo de roteamento.
-- Ative o plugin: *Menu* → *Plugins* → *Desenvolvimento do OsmAnd*.
-- Em seguida, abra *Menu* → *Configurações* → *Perfil do aplicativo* → *Configurações de navegação* → *Parâmetros de rota* → *Desenvolvimento* → *Tipo de roteamento* e alterne *HH × C++* ↔ *HH × Java* (você também pode tentar A* clássico ou A* em duas fases).
+- Ative o plugin: *Menu* → *Plugins* → *OsmAnd development*.
+- Em seguida, abra *Menu* → *Settings* → *App profile* → *Navigation settings* → *Route parameters* → *Development* → *Routing type* e alterne *HH × C++* ↔ *HH × Java* (você também pode tentar A* clássico ou A* em duas fases).
 
 4. Como último recurso.
 - Reinstale o aplicativo e baixe os mapas novamente (ajuda quando conflitos ocultos persistem).
@@ -82,14 +82,18 @@ Para rastrear problemas com rotas erradas ou subótimas, abra uma nova postagem 
 
 ## Informações da estrada {#road-information}
 
-### O OsmAnd mostra apenas alguns radares de velocidade {#osmand-only-shows-some-speed-cams}
+### Por que alguns avisos de radar de velocidade podem não ser acionados {#why-some-speed-camera-warnings-may-not-be-triggered}
 
 Devido aos geodados retirados do projeto OpenStreetMap, existem atualmente dois métodos de integração de radares de velocidade nos dados brutos do OSM:
 
-- Um ponto (chamado "nó" na terminologia OSM) de uma via é marcado com "highway=speed_camera", veja a wiki OSM em [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
+- Um ponto (chamado "nó" na terminologia OSM) de uma via é marcado com `highway=speed_camera`, veja a wiki OSM em [highway=speed_camera](https://wiki.openstreetmap.org/wiki/Tag%3Ahighway%3Dspeed_camera)
 - Um grupo de elementos de dados OSM é unido em uma chamada "relação" que contém mais elementos do que um único nó para descrever a direção coberta pelo radar de velocidade. Veja [Relation:enforcement](https://wiki.openstreetmap.org/wiki/Relation:enforcement).
 
-Atualmente, o OsmAnd só pode usar os elementos que consistem em um único nó. A análise de relações será implementada em uma versão futura.
+O OsmAnd suporta ambos os métodos. Avisos de radar de velocidade podem ser acionados para câmeras mapeadas com `highway=speed_camera`, bem como para câmeras definidas por meio de uma relação `enforcement`.
+
+Se um nó de radar de velocidade for colocado diretamente na estrada, a tag `highway=speed_camera` é suficiente para o OsmAnd detectá-lo e exibir avisos.
+
+Se a câmera for mapeada ao lado da estrada em vez de sobre ela, ela deve ser conectada à estrada usando uma relação `enforcement`. Caso contrário, o OsmAnd pode não associar a câmera à estrada e o aviso não será acionado.
 
 ## Navegação por voz {#voice-navigation}
 
@@ -113,31 +117,31 @@ Problemas com **Text-to-Speech (TTS)** geralmente estão relacionados às **conf
 
 1. Certifique-se de que um mecanismo TTS esteja instalado.
 
-    - Abra *Configurações do dispositivo → Idioma e entrada → Opções de texto para fala*.
+    - Abra *Device Settings → Language & Input → Text-to-Speech Options*.
     - Verifique se um **mecanismo TTS** está instalado (por exemplo, Google TTS, Samsung TTS, Pico).
-    - Se nenhum mecanismo estiver instalado, selecione *"Instalar mais..."* e baixe um compatível.
+    - Se nenhum mecanismo estiver instalado, selecione *“Install more…”* e baixe um compatível.
     - [Lista de mecanismos e idiomas TTS suportados.](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
 
 2. Verifique as configurações de idioma do TTS.
 
-    - Selecione o idioma que deseja usar em *Configurações do Android → Opções de texto para fala*.
-    - Toque em *"Ouvir um exemplo"* para testar se o mecanismo TTS está funcionando.
+    - Selecione o idioma que deseja usar em *Android Settings → Text-to-Speech Options*.
+    - Toque em *“Listen to an example”* para testar se o mecanismo TTS está funcionando.
     - Se você não ouvir nada, atualize ou reinstale o mecanismo TTS.
 
 3. Ajuste as configurações de navegação por voz do OsmAnd.
 
-    - Abra *OsmAnd → Menu → Configurar perfil → Configurações de navegação → Avisos de voz*.
-    - Selecione um *Idioma → TTS* compatível.
-    - Teste os avisos de voz navegando até *Menu → Plugins → Ativar desenvolvimento do OsmAnd → Configurações → Testar avisos de voz*.
+    - Abra *OsmAnd → Menu → Configure Profile → Navigation Settings → Voice Prompts*.
+    - Selecione um *Language → TTS* compatível.
+    - Teste os avisos de voz navegando até *Menu → Plugins → Enable OsmAnd Development → Settings → Test Voice Prompts*.
 
 #### Etapas adicionais {#additional-steps}
 
 - *Atualizar Google TTS*. Abra a Google Play Store, procure por **Google Text-to-Speech** e atualize-o.  
-- *Simular Navegação*. Toque no *botão Navegação → Configurações → Simular Navegação* para verificar se a orientação por voz é reproduzida.  
+- *Simular Navegação*. Toque no *Navigation button → Settings → Simulate Navigation* para verificar se a orientação por voz é reproduzida.  
 - *Reinstalar OsmAnd*:  
-   - **Fazer backup das configurações:** *Menu → Configurações → Exportar para arquivo*.  
+   - **Fazer backup das configurações:** *Menu → Settings → Export to File*.  
    - Desinstale o OsmAnd e reinstale-o da loja de aplicativos.  
-   - Restaurar configurações: *Menu → Configurações → Importar arquivo*.
+   - Restaurar configurações: *Menu → Settings → Import File*.
 
 Para solução de problemas adicionais, visite:
 

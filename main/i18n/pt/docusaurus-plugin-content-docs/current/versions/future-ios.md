@@ -1,5 +1,5 @@
 ---
-source-hash: 6e3da3a892310ea06863788deeb421519395989e63957965d0a7324d251adb07
+source-hash: d92d4278c9c42171043846b2adf1a7a54cdcf0a3004b025b84507367d39e6a6e
 sidebar_position: 5
 ---
 
@@ -29,7 +29,7 @@ As compilações beta do iOS (TestFlight) geralmente são fornecidas semanalment
 ## Novidades {#whats-new}
 
 - Modo Última Subida / Última Descida para **[Widgets de gravação de viagem](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, com alternância entre total e última ascensão/descida.
-- **[Widget de Distância](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** atualizado com modos para distância total, última distância de subida e última distância de descida.
+- **[Widget de Distância](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** atualizado com modos para distância total, última distância de subida/descida.
 - **[Widget de Velocidade Máxima](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** mostrando a velocidade máxima para toda a viagem ou para a seção mais recente de subida/descida.
 - **[Widget de Inclinação Média](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** mostrando a inclinação média da última ascensão ou descida.
 - Ação rápida *Mostrar trilha no mapa* adicionada ao grupo de widgets de Gravação de Viagem.
@@ -37,7 +37,7 @@ As compilações beta do iOS (TestFlight) geralmente são fornecidas semanalment
 - Widget de gráfico de elevação para navegação, exibindo um perfil compacto ao longo de rotas ou trilhas GPX.
 - Camada **[Locais populares](https://osmand.net/docs/user/map/popular_places/)** atualizada com seleção de fonte de POI e visualizações prévias de imagens opcionais no mapa.
 - Nova seção Explorar na Pesquisa com “Locais populares próximos” e estados offline/sem dados aprimorados.
-- Resultados de pesquisa de POI aprimorados com exibição consistente de cidade, layout refinado, miniaturas opcionais e nomes alternativos mais claros.
+- Resultados de pesquisa de POI aprimorados com exibição consistente de cidade, layout refinado e miniaturas opcionais.
 - Configurações de aparência padrão para pastas de trilhas, permitindo que novas trilhas herdem um estilo de pasta unificado.
 
 
@@ -47,4 +47,3 @@ As compilações beta do iOS (TestFlight) geralmente são fornecidas semanalment
 - Manipulação correta de POIs baseados em relações em multipoligonos.
 - Corrigido o “null” aparecendo no lugar do nome da cidade nos resultados de pesquisa de POI e consistência aprimorada do fundo no modo noturno.
 - Comportamento de toque restaurado para rotas de fitness, corrida e canoa com escudos.
-

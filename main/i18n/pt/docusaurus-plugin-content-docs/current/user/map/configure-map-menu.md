@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title: Configurar Mapa
 ---
@@ -23,7 +23,7 @@ O menu **Configurar mapa** é um item importante no *Menu Principal* do OsmAnd, 
 
 Seção **Mostrar**:  
 
-![Configurar mapa android](@site/static/img/map/configure_map_show1_andr.png)  ![Configurar mapa android](@site/static/img/map/configure_map_show2_andr.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Configurar mapa android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Seção **Topografia**:  
 
@@ -43,27 +43,27 @@ Seções **Rotas e Renderização do mapa**:
 
 Seção **Mostrar no mapa**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_show1_ios.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Seção **Topografia**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_topography_ios.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_topography_ios.png)  
 
 Seção **OpenStreetMap**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_osm_ios.png)  
+![Configurar mapa android](@site/static/img/map/configure_map_osm_ios.png)  
 
 Seção **Rotas**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_routes_new_ios.png)
+![Configurar mapa android](@site/static/img/map/configure_map_routes_new_ios.png)
 
 Seções **Tipo de mapa e Estilo do mapa**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_style_ios.png)
+![Configurar mapa android](@site/static/img/map/configure_map_style_ios.png)
 
 Seções **Sobreposição/Subposição e Idioma**:  
 
-![Configurar mapa ios](@site/static/img/map/configure_map_overlay_ios.png)
+![Configurar mapa android](@site/static/img/map/configure_map_overlay_ios.png)
 
 </TabItem>
 
@@ -100,13 +100,13 @@ O menu **<Translate android="true" ids="configure_map"/>** é dividido em duas c
    - [Trilhas](../map/tracks/index.md) - exibe trilhas importadas, planejadas ou gravadas sobre o mapa.
    - [Imagens de nível de rua](../plugins/mapillary.md#map-layer) - exibe pontos com imagens de nível de rua disponíveis.
    - [Guias de viagem](../plan-route/travel-guides.md) - exibe guias de viagem no mapa.
-   - [Wikipedia](../plugins/wikipedia.md) - destaca artigos da Wikipedia vinculados ao mapa.
+   - [Locais populares](../map/popular_places.md) - destaca locais populares com base em artigos da Wikipedia e os exibe no mapa.
    - [Edição OSM](../plugins/osm-editing.md#osm-editing-layer) - exibe edições do OpenStreetMap, notas e camadas auxiliares relacionadas ao mapeamento.
    - [Outras camadas de plug-in](../plugins/index.md#configure-plugin) - muitos plug-ins adicionam suas camadas com informações extras.
 
 ## Parâmetros de estilo do mapa {#map-style-parameters}
 
-As configurações de estilo do mapa dependem do estilo principal do mapa exibido. Você pode ler mais sobre isso no artigo [Estilos de mapa](../map/vector-maps).
+As configurações de estilo do mapa dependem do estilo principal do mapa exibido. Você pode ler mais sobre isso no [artigo sobre Estilos de Mapa](../map/vector-maps).
 
    - [Estilo do mapa](../map/vector-maps.md#map-styles) - inclui OsmAnd (Cidade), Topo, Náutico e outros.
    - [Modo do mapa](../map/vector-maps.md#map-mode) - permite selecionar a visualização do mapa e a navegação dependendo da hora do dia.

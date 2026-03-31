@@ -1,5 +1,5 @@
 ---
-source-hash: cd85b9f943b1bca0b2953a02a698885ade5850557c59dcce8a6611b292a2962a
+source-hash: 402ce29cb8352ebd02df5230b886dc88937640fd48f18229a66ec9689b4e036c
 sidebar_position: 2
 ---
 
@@ -36,6 +36,11 @@ Os arquivos GPX no OsmAnd organizam os dados hierarquicamente nos seguintes elem
 - `<rte>` - representa rotas, incluindo pontos de passagem e pontos-chave.
 - `<wpt>` - representa pontos de passagem individuais.
 
+#### Comportamento de Importação GPX
+
+Ao importar um arquivo GPX, o OsmAnd cria um único objeto de trilha com base no arquivo:
+- O nome da trilha importada é derivado do nome do arquivo GPX. O elemento `<name>` dentro de `<trk>` não é usado como o nome principal da trilha durante a importação.
+- Se um arquivo GPX contiver múltiplos elementos `<trk>`, o OsmAnd os importa como segmentos da mesma trilha. Nesse caso, os valores de `<name>` podem ser usados como rótulos para os segmentos correspondentes dentro da trilha.
 
 ## Personalização de trilhas {#track-customization}
 
@@ -190,12 +195,12 @@ Para evitar conflitos com a sintaxe XML, substitua os caracteres especiais da se
 <metadata>
   <desc>
     &lt;p&gt;
-        O primeiro parágrafo será exibido como descrição &lt;b&gt;breve&lt;/b&gt;.
-        As tags HTML são removidas em descrições breves.
+        The first paragraph will be displayed as &lt;b&gt;brief&lt;/b&gt; description.
+        HTML tags are stripped in brief descriptions.
     &lt;/p&gt;
     &lt;p&gt;
-      &lt;h3&gt;Segundo parágrafo&lt;/h3&gt;
-        &lt;b&gt;Olá, mundo!&lt;/b&gt;&lt;br/&gt;
+      &lt;h3&gt;Second paragraph&lt;/h3&gt;
+        &lt;b&gt;Hello, world!&lt;/b&gt;&lt;br/&gt;
         &lt;img src="..."/&gt;&lt;br/&gt;
         &lt;a href="..."&gt;url&lt;/a&gt;&lt;br/&gt;
         &lt;table&gt; ... &lt;/table&gt;
@@ -219,7 +224,7 @@ Use a tag `<link>` para associar URLs a metadados, informações do autor ou pon
 ```xml
 <metadata>
   <link href="https://osmand.net/img/logo.png">
-    <text>Logotipo do OsmAnd</text>
+    <text>OsmAnd Logo</text>
   </link>
 </metadata>
 ```
@@ -296,16 +301,16 @@ Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um seg
 ```xml
 <trk>
   <trkseg>
-    // Lista de pontos de segmento. A ordem dos pontos corresponde à ordem e comprimento dos segmentos da rota (<route><segment length="x" ... />).
-    // O valor do atributo "length" corresponde ao número de pontos neste segmento da rota.
+    // List of segment points. The order of the points corresponds to the order and length of the route segments (<route><segment length="x" ... />).
+    // The value of the "length" attribute corresponds to the number of points in this segment of the route.
     <trkpt ... ></trkpt>
     <extensions>
-      // Lista de segmentos de rota
+      // List of route segments
       <route>
         <segment ... />
       </route>
-      // Propriedades dos segmentos incluídos na rota.
-      // Esses dados são retirados de mapas offline durante a construção inicial de uma rota.
+      // Properties of segments included in the route.
+      // This data is taken from offline maps during the initial construction of a route.
       <types>
         <type ... />
       </types>
@@ -313,16 +318,16 @@ Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um seg
   </trkseg>
 </trk>
 
-// Lista de pontos de rota intermediários. Se houver várias rotas, a ordem da lista rte corresponde à ordem dos segmentos da rota.
+// List of intermediate route points. If there are multiple routes, the order of the rte list matches the order of the route segments.
 <rte>
   <rtept ... />
-    // Para rotas construídas com o "Planejar rota", os parâmetros dos pontos-chave são salvos.
-    // Se rtept não for o primeiro e o último, antes dele (com o mesmo idx) trkpt estará com os mesmos dados.
+    // For routes built with the "Plan route", the parameters of key points are saved.
+    // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
     <extensions>
-      // Tipo de perfil de rota para o próximo segmento (carro, bicicleta, pedestre, etc.).
+      // Route profile type for next segment (car, bicycle, pedestrian, etc.).
       <profile>...</profile>
-      // O índice do ponto no segmento gpx que corresponde ao primeiro ponto da rota calculada para este segmento.
-      // Se rtept não for o primeiro e o último, antes dele (com o mesmo idx) trkpt estará com os mesmos dados.
+      // The index of the point in the gpx segment that corresponds to the first point of the calculated route for this segment.
+      // If rtept is not first and last, before it (with the same idx) trkpt will be with the same data.
       <trkpt_idx>...</trkpt_idx>
     </extensions>
   </rtept>
@@ -352,10 +357,10 @@ Um arquivo gpx pode conter várias rotas. Cada uma delas está contida em um seg
 ```xml
 <gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Sex 06 Nov 2020</name>
+    <name>Fri 06 Nov 2020</name>
   </metadata>
   <trk>
-    <name>Sex 06 Nov 2020</name>
+    <name>Fri 06 Nov 2020</name>
     <trkseg>
       <trkpt lat="52.3639849" lon="4.8900533">
         <ele>0.801</ele>
@@ -430,7 +435,7 @@ O OsmAnd permite converter vários arquivos GPX em um único arquivo OBF. Isso p
 
 Etapas para converter GPX para OBF:
 
-- Faça login no [Mapa Web do OsmAnd](https://osmand.net/map) *→ Trilhas → Selecione uma pasta → *Menu* (⋮) *→ Baixar como coleção OBF*
+- Faça login no [Mapa Web do OsmAnd](https://osmand.net/map) *→ Tracks → Selecione uma pasta → *Menu* (⋮) *→ Baixar como coleção OBF*
 
 - O arquivo `<.obf>` resultante pode ser importado para o OsmAnd (requer OsmAnd Android 5.0+).
 
@@ -456,7 +461,7 @@ Personalize as linhas da trilha com as seguintes tags:
 <gpx>
   <metadata>
     <name>
-      Nome da trilha localizado em Metadados
+      Track name located in Metadata
     </name>
   </metadata>
   <trk>
@@ -497,7 +502,7 @@ Se nenhuma propriedade de escudo for definida, o OsmAnd usa um escudo amarelo de
 ```xml
 <gpx>
   <trk>
-    <name>Exemplo de Rota</name>
+    <name>Sample Route</name>
   </trk>
   <extensions>
     <osmand:shield_text>ABC</osmand:shield_text>
@@ -563,7 +568,7 @@ Trilhas e pontos de passagem podem ser localizados usando uma variedade de tags 
 ```xml
 <gpx>
   <metadata>
-    <name>Trilha do Patrimônio de Xemxija</name>
+    <name>Xemxija Heritage Trail</name>
   </metadata>
   <extensions>
     <osmand:ref>XHT</osmand:ref>
@@ -571,7 +576,7 @@ Trilhas e pontos de passagem podem ser localizados usando uma variedade de tags 
   <wpt lat="35.948477" lon="14.3806796">
     <name>Il-Mighba Rumana</name>
     <extensions>
-      <osmand:name_-_en>O Apiário Romano</osmand:name_-_en>
+      <osmand:name_-_en>The Roman Apiary</osmand:name_-_en>
     </extensions>
   </wpt>
 </gpx>
