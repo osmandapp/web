@@ -1,5 +1,5 @@
 ---
-source-hash: 657115f7338761d7f40ebea0959b65b8310b2b53d6e64db6a468936510269841
+source-hash: 370e7c626b667d0d9b5b49dffa7f180c04e7ecae2f3b22608c956eabd82b828f
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -19,19 +19,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-Favoritos no Planejador Web permitem que você salve e gerencie lugares importantes diretamente no mapa. Eles podem ser usados para marcar locais aos quais você deseja acesso rápido, organizá-los em pastas e reutilizá-los para navegação ou planejamento de rotas. A interface web fornece ferramentas convenientes para visualizar, editar e trabalhar com favoritos enquanto explora o mapa, com todas as atualizações sincronizadas perfeitamente em todo o seu [OsmAnd Cloud](../personal/osmand-cloud.md).
+Favoritos no Planejador Web permitem que você salve e gerencie lugares importantes diretamente no mapa. Eles podem ser usados para marcar locais aos quais você deseja acesso rápido, organizá-los em pastas e reutilizá-los para navegação ou planejamento de rotas. A interface web fornece ferramentas convenientes para visualizar, editar e trabalhar com favoritos enquanto explora o mapa, com todas as atualizações sincronizadas de forma perfeita em todo o seu [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 
 ## Gerenciar Favoritos {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_new.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
 Após registrar um [**OsmAnd Pro**](../personal/osmand-cloud.md#login) e para [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), seus Favoritos no Planejador Web são organizados em pastas. Cada pasta agrupa lugares salvos e fornece um conjunto de ações disponíveis no menu de Favoritos. 
 As seguintes ações estão disponíveis:
 
 - *Mostrar no mapa* - mostra os pontos de favoritos da pasta escolhida no mapa.
+- *Fixar pasta* - fixa uma pasta no topo da lista de Favoritos para acesso rápido. Pastas fixadas são separadas das outras pastas. Para remover uma pasta da seção superior, selecione *Desfixar pasta*. A pasta Pessoal está fixada por padrão.
 - *Renomear* - nome e descrição da pasta de favoritos.
-- *Compartilhar* - abre opções de compartilhamento. Você pode escolher quem pode acessar esta pasta:
+- *Compartilhar* - abre opções de compartilhamento. Você pode escolher quem pode acessar esta pasta.
 - *Baixar* - baixa a pasta de favoritos escolhida.
 - *Excluir* - exclui a pasta de favoritos escolhida.
 

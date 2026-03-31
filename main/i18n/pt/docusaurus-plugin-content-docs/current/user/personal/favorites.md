@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title: Favoritos
 ---
@@ -163,7 +163,7 @@ A *pasta Pessoal* contém pontos especiais como **<Translate android="true" ids=
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Meus lugares favoritos Android](@site/static/img/personal/my_places_android.png)
+![Meus lugares favoritos Android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pl
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![meus_lugares_ios](@site/static/img/personal/my_places_ios.png)
+![meus_lugares_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 A seção **Meus Favoritos** permite:
 
 - [Pesquisar](#order--sorting--search) por favoritos ou grupos específicos.
-- [Operações em massa](#bulk-edit--delete) — Renomear, mover ou excluir vários favoritos de uma vez.
+- [Operações em massa](#bulk-edit--delete) — Compartilhar, mover ou excluir vários favoritos de uma vez.
 
 ### Ordem / Classificação / Pesquisa {#order--sorting--search}
 
@@ -188,20 +188,23 @@ A seção **Meus Favoritos** permite:
 
 <TabItem value="android" label="Android">
 
-![Pastas de favoritos Android](@site/static/img/personal/favorites_folders_android.png)
+![Pastas de favoritos Android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Classificação** — Pastas e pontos favoritos podem ser classificados usando as opções de classificação disponíveis no menu da lista. As seguintes opções estão disponíveis: *Nome A – Z*, *Nome Z – A*, *Última modificação*, *Data mais recente primeiro*, *Data mais antiga primeiro*. Por padrão, os itens são classificados por Nome A – Z. Pastas fixadas são sempre exibidas no topo da lista. Elas são visualmente separadas do restante das pastas por um divisor. A [pasta Pessoal](../personal/favorites.md#special-favorites-personal) está fixada por padrão. 
+- **Pesquisa** — Use a [Pesquisa Global](../search/search-all.md) para encontrar favoritos por nome. Os favoritos são classificados por distância do centro do mapa.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Pastas de favoritos iOS](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Classificação** — Pastas e pontos favoritos são classificados em ordem alfabética, com a [pasta pessoal](../personal/favorites.md#special-favorites-personal) no topo.
 - **Pesquisa** — Use a [Pesquisa Global](../search/search-all.md) para encontrar favoritos por nome. Os favoritos são classificados por distância do centro do mapa.
 
+</TabItem>
+
+</Tabs>
 
 ### Edição / Exclusão em Massa {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ A seção **Meus Favoritos** permite:
 
 <TabItem value="android" label="Android">
 
-![Ações de favoritos Android](@site/static/img/personal/favorites_actions_android.png) ![Ação de exclusão de favoritos Android](@site/static/img/personal/favorites_delete_android.png)
+![Ações de favoritos Android](@site/static/img/personal/favorites_group_actions.png) ![Ação de exclusão de favoritos Android](@site/static/img/personal/favorites_actions.png)
+
+Para gerenciar vários favoritos ou pastas, entre no *Modo de Seleção*. Você pode abrir o Modo de Seleção de duas maneiras:
+- Toque no *menu de três pontos* no canto superior direito e escolha *Selecionar*.
+- Toque longo em um ponto favorito ou pasta.
+
+Quando o Modo de Seleção está ativado, caixas de seleção aparecem ao lado dos itens na lista. Selecione os favoritos ou pastas necessários tocando nas caixas de seleção. Para selecionar todos os itens na lista, toque no ícone Selecionar tudo no canto superior direito.
+
+As ações disponíveis dependem do tipo de item selecionado. Quando pastas são selecionadas, as seguintes ações estão disponíveis:
+- **Compartilhar** — Exportar pastas selecionadas como um arquivo GPX de Favoritos.
+- **Excluir** — Remover as pastas selecionadas.
+
+Quando pontos favoritos são selecionados, as seguintes ações estão disponíveis:
+- **Mover** — Mover favoritos selecionados para outra pasta.
+- **Adicionar aos marcadores do mapa** — Adicionar pontos selecionados à lista de Marcadores do Mapa.
+- **Adicionar à trilha** — Adicionar pontos selecionados a uma trilha.
+- **Adicionar à navegação** — Iniciar navegação para o ponto selecionado.
+- **Excluir** — Remover os favoritos selecionados.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ A seção **Meus Favoritos** permite:
 
 ![Ações de favoritos iOS](@site/static/img/personal/favorites_actions_ios.png)
 
+- Para gerenciar vários favoritos, toque no botão **Editar** (*ícone de lápis*).
+- Selecione favoritos individuais ou pastas inteiras para operações em massa.
+- **Opções disponíveis** — *Compartilhar*, *Mover para um Grupo de Favoritos*, *Alterar Cor* e *Excluir*.
+
 </TabItem>
 
 </Tabs>
-
-1. Para gerenciar vários favoritos, toque no ícone **Excluir** (*ícone de lixeira no Android*) ou no botão **Editar** (*ícone de lápis no iOS*).
-2. Selecione favoritos individuais ou pastas inteiras para operações em massa.
-3. **Opções disponíveis** — *Excluir* para Android e iOS, *Mover para um Grupo de Favoritos*, *Compartilhar* e *Alterar Cor* para iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Vá para: *Menu de três pontos → Alterar aparência padrão*
+![Funções da pasta de favoritos Android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Funções da pasta de favoritos Android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Use o ***Menu de três pontos*** ao lado de cada pasta para gerenciar grupos de favoritos:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ocultar no mapa** — Alterne esta opção para exibir ou ocultar os pontos favoritos da pasta no mapa.
+- **Fixar pasta** — Fixe a pasta selecionada para mantê-la no topo da lista de favoritos para acesso mais rápido.
+- **<Translate android="true" ids="shared_string_rename"/>** — Use esta opção para alterar o nome da pasta selecionada.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalize como os pontos favoritos na pasta aparecem no mapa, alterando seus ícones, cores ou rótulos.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Remover dos marcadores do mapa** — Adicione todos os pontos favoritos da pasta à *lista de marcadores do mapa* ou remova-os conforme necessário para fácil referência.
+- **<Translate android="true" ids="add_to_a_track"/>** — Adicione todos os pontos favoritos da pasta selecionada a uma trilha. Isso abre a tela de seleção de trilhas onde você pode escolher ou criar uma trilha.
+- **<Translate android="true" ids="shared_string_share"/>** — Compartilhe os pontos favoritos na pasta exportando-os como um arquivo *Favorites.gpx*, facilitando a transferência ou o backup de seus dados.
+- **<Translate android="true" ids="shared_string_delete"/>** — Exclua permanentemente a pasta de favoritos selecionada e todos os pontos dentro dela.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Vá para: *Toque longo na pasta → Aparência padrão*
-
 ![Ações de favoritos iOS](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Use o ***toque longo*** na pasta para gerenciar grupos de favoritos:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Ocultar no mapa** — Alterne esta opção para exibir ou ocultar os pontos favoritos da pasta no mapa.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Use esta opção para alterar o nome da pasta selecionada.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Personalize como os pontos favoritos na pasta aparecem no mapa, alterando seus ícones, cores ou rótulos.
+- **<Translate ios="true" ids="shared_string_share"/>** — Compartilhe os pontos favoritos na pasta exportando-os como um arquivo *Favorites.gpx*, facilitando a transferência ou o backup de seus dados.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Exclua permanentemente a pasta de favoritos selecionada e todos os pontos dentro dela.
 
 </TabItem>
 
 </Tabs>
-
-Use o ***Menu de três pontos*** (*Android*) ao lado de cada pasta e ***toque longo*** (*iOS*) na pasta para gerenciar grupos de favoritos:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Use esta opção para alterar o nome da pasta selecionada.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Personalize como os pontos favoritos na pasta aparecem no mapa, alterando seus ícones, cores ou rótulos.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** ou **Ocultar no mapa** — Alterne esta opção para exibir ou ocultar os pontos favoritos da pasta no mapa.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** ou **Remover dos marcadores do mapa** (*somente Android*) — Adicione todos os pontos favoritos da pasta à *lista de marcadores do mapa* ou remova-os conforme necessário para fácil referência.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Compartilhe os pontos favoritos na pasta exportando-os como um arquivo *Favorites.gpx*, facilitando a transferência ou o backup de seus dados.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Exclua permanentemente a pasta de favoritos selecionada e todos os pontos dentro dela.
-
-
 
 ### Alterar Aparência do Grupo {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Use o ***Menu de três pontos*** (*Android*) ao lado de cada pasta e ***toque lo
 
 <TabItem value="android" label="Android">
 
-![Funções da pasta de favoritos Android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Vá para: *Menu de três pontos → Alterar aparência padrão*
+
+![Funções da pasta de favoritos Android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Vá para: *Toque longo na pasta → Aparência padrão*
 
 ![Ações de favoritos iOS](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 

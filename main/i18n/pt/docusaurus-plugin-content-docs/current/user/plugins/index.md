@@ -1,5 +1,5 @@
 ---
-source-hash: be742f68ef2cf4f1c1882c64eeb0f7f01eae8cee4fda985a0ff5a22115f9f3cf
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title:  Plugins
 ---
@@ -84,7 +84,7 @@ Os Plugins do OsmAnd podem aumentar esses grupos de Recursos: **Camadas**, **Wid
 |[Mapillary](#mapillary) | [Camada de mapa](../plugins/mapillary.md#map-layer), [Menu de contexto](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |[Sensores externos](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Métricas do veículo](#vehicle-metrics)  | [Configurações personalizadas](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
-|[Astronomia](#star-watcher)  | [Tela](../plugins/astronomy.md#star-map-screen), [Menu de Contexto](../plugins/astronomy.md#celestial-object-info) |
+|[Astronomia](#astronomy)  | [Tela](../plugins/astronomy.md#star-map-screen), [Menu de Contexto](../plugins/astronomy.md#context-menu) |
 |[Acessibilidade](#accessibility) 🤖  | [Configurações personalizadas](../plugins/accessibility.md#plugin-settings) |
 |[Desenvolvimento OsmAnd](#osmand-development) | [Configurações personalizadas](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Camada de mapa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu de contexto](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |

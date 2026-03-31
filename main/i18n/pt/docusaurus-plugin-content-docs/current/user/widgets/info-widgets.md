@@ -1,5 +1,5 @@
 ---
-source-hash: ff984b61f63150ff4b1bfbe5a048a41849449ae36615004da45359be5a13785f
+source-hash: 5bd44ada5a2170f1fabc811712711c0a5d5be58d3cad90df7678a34ae47c399e
 sidebar_position: 3
 title:  Widgets Informativos
 ---
@@ -560,7 +560,7 @@ Para adicionar Widgets de Métricas do Veículo à tela do mapa, ative o plugin 
 </Tabs>
 
 
-Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*14 métricas*): **Temperatura de Admissão**,&nbsp; **Temperatura Ambiente**,&nbsp; **Temperatura do Líquido de Arrefecimento**,&nbsp; **Temperatura do Óleo do Motor**,&nbsp; **Rotação do Motor** (*grátis*),&nbsp; **Tempo de Funcionamento do Motor**,&nbsp; **Carga Calculada do Motor**,&nbsp; **Pressão do Combustível**,&nbsp; **Consumo de Combustível**,&nbsp; **Combustível Restante**,&nbsp; **Nível da Bateria**,&nbsp; **Voltagem do Adaptador**,&nbsp; **Velocidade do Veículo** (*grátis*), e **Posição do Acelerador**.  
+Os widgets pertencem ao [plugin Métricas do Veículo](../plugins/vehicle-metrics.md#widgets). Você pode usá-los para visualizar informações de um scanner OBD-II conectado, como (*14 métricas*): **Voltagem do adaptador** (*somente Android*),&nbsp; **Temperatura ambiente**,&nbsp; **Voltagem da bateria**,&nbsp; **Carga calculada do motor**,&nbsp; **Temperatura do líquido de arrefecimento**,&nbsp; **Temperatura do óleo do motor**,&nbsp; **Tempo de funcionamento do motor**,&nbsp; **Rotação do motor** (*grátis*),&nbsp; **Consumo de combustível**,&nbsp; **Pressão do combustível**,&nbsp; **Temperatura de admissão**,&nbsp; **Combustível restante**,&nbsp; **Posição do acelerador**, e **Velocidade do veículo** (*grátis*).  
 
 - Para adicionar widgets de métricas do veículo à tela do mapa, [ative](../plugins/index.md#enable--disable) o **plugin Métricas do Veículo**.
 - Você pode adicionar widgets mesmo que nenhum scanner OBD-II esteja conectado.

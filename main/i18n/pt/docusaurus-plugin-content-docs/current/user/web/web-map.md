@@ -1,5 +1,5 @@
 ---
-source-hash: 7240f1d3f624be283cdc0462f66096bfe38200e790781d606f833a98ecafc440
+source-hash: 71cb3042f5146fb03bdb773e76baf663020358c6d367176f549faed15f5a5fe9
 sidebar_position: 3
 sidebar_label: Map
 title: Global Map on the Website
@@ -43,8 +43,8 @@ Para abri-lo, clique com o botão direito em qualquer lugar do mapa. Este menu i
 - **Onde estou** – Encontre rapidamente sua localização atual no mapa. Este recurso exibe os endereços mais próximos ao ponto selecionado no mapa.
 - **Abrir clima** – Acesse o [menu Clima](../web/web-weather.md) para ver os detalhes do clima.
 - **Criar nova rota** – Abre a ferramenta [*Planejar uma rota*](../web/web-navigation.md) com o local selecionado como ponto de partida ou destino.
-- **Adicionar Favorito** – Permite criar e salvar um [favorito](../web/web-favorites.md#add--edit-favorite) em qualquer ponto do mapa para fácil acesso.
-- **Rotas de** – Define o ponto selecionado como o [local de partida](../web/web-navigation.md#start-a-route) para navegação.
+- **Adicionar Favorito** –  Permite criar e salvar um [favorito](../web/web-favorites.md#add--edit-favorite) em qualquer ponto do mapa para fácil acesso.
+- **Rotas de** –  Define o ponto selecionado como o [local de partida](../web/web-navigation.md#start-a-route) para navegação.
 - **Rotas para** – Define o ponto selecionado como o [destino para navegação](../web/web-navigation.md#start-a-route).
 - **Copiar coordenadas** – Copia as coordenadas do ponto selecionado para uso externo.
 - **Mostrar regiões** – Exibe as regiões associadas ao local selecionado.
@@ -67,9 +67,10 @@ O menu Configurar Mapa permite gerenciar as configurações de exibição para d
 - [Sobreposição de POI...](#poi-overlay). Permite escolher e mostrar as categorias de POI necessárias no mapa.
 - [Favoritos](#favorites). Alterna a exibição de favoritos no mapa.
 - [Trilhas](#tracks). Contém trilhas GPX visíveis no mapa.  
+- [Paradas de transporte](#transport-stops). Alterna a exibição de paradas de transporte público no mapa. 
 - [Terreno](#terrain). Ativa ou desativa o esquema de cores do terreno no mapa.
 
-![POIs menu](@site/static/img/web/configure_map_web.png)
+![POIs menu](@site/static/img/web/configure_map_web_new.png)
 
 
 ### Sobreposição de POI {#poi-overlay}
@@ -116,6 +117,33 @@ Cada trilha possui um **Menu de Contexto** (acessível através do botão ⋮) c
 
 ![Configure map menu Tracks](@site/static/img/web/configure_map_track.png)
 
+### Paradas de transporte {#transport-stops}
+
+A opção **Paradas de transporte** permite exibir paradas de transporte público diretamente no mapa. Quando ativada, os marcadores de paradas aparecem em todo o mapa, representando locais onde as rotas de transporte público param. Selecionar uma parada de transporte abre um painel de contexto com informações sobre essa parada e as rotas de transporte que passam por ela. O painel da parada contém várias seções.
+
+**1. Informações da parada**
+
+A seção superior mostra informações básicas sobre a parada selecionada, incluindo seu nome e localização. Botões de ação rápida permitem: *Adicionar a parada aos Favoritos, Compartilhar um link para a parada, Iniciar navegação a partir da parada, Definir a parada como destino*.
+
+**2. Rotas**
+
+A seção Rotas lista todas as rotas de transporte público que passam pela parada selecionada. Cada item exibe: o tipo de transporte, o número da rota e o nome da rota.
+
+Selecionar uma rota abre um painel de detalhes da rota mostrando informações adicionais sobre essa rota, incluindo o número de paradas e o intervalo médio entre veículos (quando disponível).
+
+O painel de detalhes da rota também exibe a lista completa de paradas ao longo da rota. A parada atualmente selecionada é destacada, e você pode selecionar outra parada para visualizar sua localização no mapa. Paradas antes da parada selecionada podem ser colapsadas em um único item (por exemplo, “15 paradas antes”).
+
+Botões de navegação permitem mover-se entre paradas ao longo da rota usando os controles *Anterior* e *Próxima*. Quando uma parada é selecionada, sua localização é destacada no mapa. A rota selecionada e suas paradas também são exibidas no mapa para ajudar a visualizar a direção da rota.
+
+**3. Filtro de tipo de transporte**
+
+Um filtro de tipo de transporte permite filtrar as rotas mostradas na lista. Por padrão, o filtro está definido como *Todas* e exibe todas as rotas disponíveis. Você pode selecionar um tipo de transporte específico (por exemplo, Ônibus, Bonde ou Metrô) para mostrar apenas rotas desse tipo. O filtro é redefinido para *Todas* toda vez que o painel da parada é aberto.
+
+**4. Rotas próximas**
+
+A seção Rotas próximas pode exibir rotas adicionais localizadas próximas à parada selecionada. Isso ajuda você a descobrir rapidamente opções alternativas de transporte na área ao redor.
+
+![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terreno {#terrain}
 
@@ -124,7 +152,7 @@ A seção **Terreno** é um recurso pago <ProFeature/>. Para usar este recurso, 
 Nesta seção, você pode:
 
 - Escolher um **esquema de cores** para o terreno:
-  - **Relevo**
+  - **Relevo sombreado**
   - **Inclinação**
   - **Altura**
 - Ajustar a visibilidade da camada de terreno selecionada de **0% a 100%**.

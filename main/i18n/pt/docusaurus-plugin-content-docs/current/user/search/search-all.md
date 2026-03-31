@@ -1,8 +1,9 @@
 ---
-source-hash: f302135b5464569dccff1ff6830993eddf7ac34c3c389eaa1f26348d90713c54
+source-hash: 69c1d2be2f285262958a4bf0b6a3a213aea2bb370e81719084db8dc1847bb1c0
 sidebar_position: 1
 title: Pesquisar Tudo
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,15 +12,15 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-
+<!--
 <InfoIncompleteArticle/>
-
+-->
 
 ## Visão geral {#overview}
 
-A **Pesquisa** é uma ferramenta útil para encontrar rapidamente locais. Você pode usar a Pesquisa para encontrar um local por endereço, coordenadas, pontos de interesse (POI) ou pesquisas anteriores. A [Pesquisa de Endereço](#search-address) permite que você insira o endereço para obter um local exato. A pesquisa de [Coordenadas](#search-coordinates) funciona com coordenadas geográficas, como latitude e longitude. Com a pesquisa de [POI](#search-poi), você pode pesquisar locais próximos em categorias específicas, como cafés, hotéis ou postos de gasolina. O [Histórico de Pesquisa](#search-history) salva pesquisas anteriores para acesso rápido a locais encontrados anteriormente. O recurso de pesquisa facilita o planejamento de viagens, a navegação em terrenos desconhecidos e a localização de POIs próximos.
+A **Pesquisa** é uma ferramenta útil para encontrar rapidamente locais. Você pode usar a Pesquisa para encontrar um local por endereço, coordenadas, pontos de interesse (POI) ou pesquisas anteriores. A [Pesquisa de Endereço](#search-address) permite que você insira o endereço para obter um local exato. A pesquisa de [Coordenadas](#search-coordinates) funciona com coordenadas geográficas, como latitude e longitude. Com a pesquisa de [POI](#search-poi), você pode pesquisar locais próximos em categorias específicas, como cafés, hotéis ou postos de gasolina. A aba [Explorar](#search-explore) destaca locais populares próximos e fornece acesso rápido a locais visitados recentemente. O [Histórico de Pesquisa](#search-history-ios) salva pesquisas anteriores. O recurso de pesquisa facilita o planejamento de viagens, a navegação em terrenos desconhecidos e a localização de POIs próximos.
 
 
 ## Como usar {#how-to-use}
@@ -28,13 +29,13 @@ A **Pesquisa** é uma ferramenta útil para encontrar rapidamente locais. Você 
 
 <TabItem value="android" label="Android">
 
-![Lista de POIs de pesquisa Android](@site/static/img/search/poi_list_android.png)
+![Lista de POIs de pesquisa Android](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Lista de POIs de pesquisa iOS](@site/static/img/search/poi_list_1_ios.png)
+![Lista de POIs de pesquisa iOS](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
@@ -46,18 +47,18 @@ Você precisa seguir um dos passos para iniciar sua pesquisa:
 
 - Vá para o *Menu principal → Pesquisar → insira sua consulta de pesquisa*.
 
-- Ao se preparar para iniciar uma rota, toque em [*Navegação → Definir destino → Campo de pesquisa*](../navigation/setup/route-navigation.md#set-target-point) *→ consulta de pesquisa*.
+- Ao se preparar para iniciar uma rota, toque em [*Navegação → Definir destino → Campo de pesquisa*](../navigation/setup/route-navigation.md#set-target-point) *→ consulta de pesquisa*.  
 
 
 Informações importantes:
 
 - ***Mapas vetoriais offline baixados são necessários para pesquisar com o OsmAnd***.
 
-- Inicialmente, **a pesquisa é baseada nos dados localizados no mapa na área visível da tela do dispositivo**, mas se nada for encontrado lá, o OsmAnd oferece para aumentar o raio de pesquisa.
+- Inicialmente, **a pesquisa é baseada nos dados localizados no mapa na área visível da tela do dispositivo**, mas se nada for encontrado lá, o OsmAnd oferece para aumentar o raio de pesquisa.  
 
 ### Consultas básicas {#basic-queries}
 
-***Lista de consultas***:
+***Lista de consultas*:**
 
 - Coordenadas em todos os formatos disponíveis.
 - Endereço:
@@ -80,24 +81,28 @@ Informações importantes:
 - Histórico de Pesquisa.
 
 <!--
-***Formatos suportados*:**
+***Formatos suportados*:**  
 
 ***Tags*** podem ser usadas como uma consulta de pesquisa. Elas consistem em ***uma chave e um valor***, por exemplo:
-*addr:street=StreetName*.
-Para evitar confusão, às vezes a chave ou o valor são cercados por aspas: **key="value" ou "key"="value"**. As aspas e o sinal de igual não fazem parte do conteúdo da tag.
+*addr:street=StreetName*.  
+Para evitar confusão, às vezes a chave ou o valor são cercados por aspas: **key="value" or "key"="value"**. As aspas e o sinal de igual não fazem parte do conteúdo da tag.
 -->
 
 ### Classificando os resultados da pesquisa {#sorting-search-results}
 
-O OsmAnd classifica automaticamente os resultados da pesquisa por três critérios principais:
+O OsmAnd classifica automaticamente os resultados da pesquisa por vários critérios:
 
 1. **Consultas correspondentes** — Resultados que contêm correspondências exatas ou parciais com as palavras que você digitou são exibidos mais acima.
 
-2. **Tipo de objeto** - Ao classificar por nome, cidades e ruas são priorizadas em relação aos POIs ao exibir os resultados.
+2. **Relevância** — Objetos cujos nomes correspondem de perto à consulta de pesquisa são geralmente exibidos mais acima nos resultados.
 
-3. **Distância** - Quando os resultados têm critérios de correspondência e tipos de objeto semelhantes, os resultados mais próximos da localização atual do usuário são mostrados primeiro.
+3. **Tipo de objeto** — Dependendo da consulta, os resultados podem incluir diferentes tipos de objetos, como cidades, ruas, endereços ou POIs.
 
-***Por exemplo***, uma consulta de pesquisa *correios* mostrará os correios mais próximos primeiro, mesmo que haja outros itens com nomes semelhantes a uma distância maior.
+4. **Distância** — Quando os resultados têm critérios de correspondência semelhantes e tipos de objeto, os resultados mais próximos da localização atual do usuário são mostrados primeiro.
+
+5. **Importância** — Marcos bem conhecidos ou locais frequentemente referenciados podem aparecer mais acima nos resultados quando correspondem de perto à consulta de pesquisa.
+
+***Por exemplo***, uma consulta de pesquisa *correios* mostrará os correios mais próximos primeiro, mesmo que haja outros itens com nomes semelhantes a uma distância maior.  
 
 ***Limitações atuais:***
 
@@ -118,7 +123,7 @@ O OsmAnd classifica automaticamente os resultados da pesquisa por três critéri
 
 <TabItem value="ios" label="iOS">
 
-![Pesquisa de favoritos iOS](@site/static/img/search/favorite_search_ios.png)
+![Pesquisa de favoritos iOS](@site/static/img/search/favorite_search_ios.png)  
 
 </TabItem>
 
@@ -148,13 +153,13 @@ O OsmAnd integrou os [**dados TIGER**](../../technical/algorithms/trace-address-
 
 <TabItem value="android" label="Android">
 
-![POI de pesquisa Android](@site/static/img/search/poi_overlay_android.png)
+![POI de pesquisa Android](@site/static/img/search/poi_overlay_android_new.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
-![POI de pesquisa iOS](@site/static/img/search/poi_overlay_ios.png)
+![POI de pesquisa iOS](@site/static/img/search/poi_overlay_ios_new.png)
 
 </TabItem>
 
@@ -171,7 +176,7 @@ O OsmAnd permite que você pesquise pontos exibidos em um mapa na tela do seu di
 
 ### Pesquisar nas proximidades {#search-nearby}
 
-![Pesquisar Android](@site/static/img/search/search_all_near_location_andr.png)
+![Pesquisar Android](@site/static/img/search/search_all_near_location_andr_new.png)
 
 Você pode usar a pesquisa nas proximidades de um local específico. Para fazer isso, selecione o ponto desejado [na lista no menu de pesquisa](#full-text-search) ou selecione-o diretamente no mapa. No [menu de contexto do mapa](../map/map-context-menu.md#actions), selecione *Ações → Pesquisar nas proximidades*.
 
@@ -182,13 +187,13 @@ Você pode usar a pesquisa nas proximidades de um local específico. Para fazer 
 
 <TabItem value="android" label="Android">
 
-![Pesquisar Android](@site/static/img/search/search_address_2_andr.png)
+![Pesquisar Android](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pesquisar iOS](@site/static/img/search/street_search_ios.png)
+![Pesquisar iOS](@site/static/img/search/street_search_ios.png)  
 
 </TabItem>
 
@@ -197,23 +202,21 @@ Você pode usar a pesquisa nas proximidades de um local específico. Para fazer 
 A **Pesquisa de Endereço** usa dados do OpenStreetMap. Este tipo de pesquisa permite que você encontre a localização e a direção para um endereço específico a partir de uma lista já classificada. Leia mais no artigo [Pesquisar Endereço](./search-address.md).
 
 
-## Histórico de pesquisa {#search-history}
+## Pesquisar Explorar {#search-explore}
 
-<Tabs groupId="operating-systems" queryString="current-os">
+<InfoAndroidOnly/>
 
-<TabItem value="android" label="Android">
+![Pesquisa Explorar](@site/static/img/search/explore_search_android.png)
 
-![Pesquisa de histórico](@site/static/img/search/history_search_android.png)
+A aba **Explorar** na ferramenta de Pesquisa ajuda você a descobrir rapidamente locais perto da sua localização atual e acessar itens abertos recentemente. Ela contém duas seções principais:  
+- Locais populares próximos – uma lista rolável de marcos bem conhecidos e atrações perto da sua localização. Cada item pode incluir o nome do local, sua categoria, distância e direção, e uma imagem de visualização se disponível. Toque em *Mostrar tudo* para abrir a lista completa ou *Mostrar no mapa* para exibir esses locais no mapa.
+- Visitados recentemente – uma lista de locais, trilhas ou outros objetos que você abriu recentemente. Isso permite que você retorne rapidamente a locais visualizados anteriormente.
 
-</TabItem>
+Para mais detalhes, consulte [aqui](../map/popular_places.md#explore-in-search).
 
-<TabItem value="ios" label="iOS">
+## Histórico de pesquisa (iOS) {#search-history-ios}
 
 ![Pesquisa de histórico](@site/static/img/search/history_search_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 Você pode usar o **Histórico de Pesquisa** para pesquisar novamente locais, endereços ou lugares frequentemente visitados anteriormente, sem precisar digitar a consulta novamente. Mais detalhes podem ser encontrados no artigo [Histórico de Pesquisa](./search-history.md).
 
@@ -224,7 +227,7 @@ Você pode usar o **Histórico de Pesquisa** para pesquisar novamente locais, en
 
 <TabItem value="android" label="Android">
 
-![Pesquisar POI Android](@site/static/img/search/search_poi_categoties_andr.png)
+![Pesquisar POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
@@ -238,10 +241,10 @@ Você pode usar o **Histórico de Pesquisa** para pesquisar novamente locais, en
 
 A **Pesquisa de POI** é uma lista, classificada por categoria, com a qual você pode facilmente encontrar lugares e serviços perto de sua localização atual ou de uma área selecionada no mapa.
 
-- A [pesquisa de POI personalizada](./search-poi.md#customize-poi-search) permite combinar diferentes categorias de POI para simplificar e personalizar sua pesquisa.
+- A [pesquisa de POI personalizada](./search-poi.md#customize-poi-search) permite combinar diferentes categorias de POI para simplificar e personalizar sua pesquisa.  
 Por exemplo, se você precisar encontrar vários tipos de serviços em uma determinada área ou em uma determinada seção de uma rota.
 
-- O OsmAnd oferece uma [pesquisa online](./search-poi.md#online-search) que funciona em tempo real, dando a você acesso rápido aos resultados da pesquisa.
+- O OsmAnd oferece uma [pesquisa online](./search-poi.md#online-search) que funciona em tempo real, dando a você acesso rápido aos resultados da pesquisa.  
 É conveniente usar quando os mapas da região não estão disponíveis, mas é necessária uma conexão constante e estável com a Internet.
 
 - Leia o artigo [Pesquisar POI](./search-poi.md) para obter mais informações.
@@ -274,3 +277,4 @@ A pesquisa de coordenadas fornece uma localização precisa. Você pode inserir 
 - [Histórico de Pesquisa](./search-history.md)
 - [Pesquisar POI](./search-poi.md)
 - [Pesquisar Coordenadas](./search-coordinates.md)
+- [Locais Populares](../map/popular_places.md)

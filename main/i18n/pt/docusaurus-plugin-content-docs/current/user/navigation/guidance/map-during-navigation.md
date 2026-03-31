@@ -1,5 +1,5 @@
 ---
-source-hash: a44f210746fd90eb6f72aecff0f6de90b083fa68225b26c66be912275165c4fd
+source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
 sidebar_position: 2
 title: Tela do Mapa Durante a Navegação
 ---
@@ -197,8 +197,8 @@ A configuração **Cor** altera os tons de cor das linhas da rota. Sua cor geral
 - ***<Translate android="true" id="map_widget_renderer"/>***. Usado com as cores padrão. Para uma descrição completa das cores, vá para [Estilos de mapa padrão](../../map/map-styles.md#default-map-styles).  
     ![estilo do mapa](@site/static/img/navigation/route/map_st_2.png)
 
-- ***Personalizado***. Permite selecionar uma linha em qualquer cor e transparência preferidas. Você pode selecionar diferentes configurações para o mapa diurno e separadamente para o mapa noturno.  
-    ![personalizado](@site/static/img/navigation/route/custom.png)   ![personalizado](@site/static/img/navigation/route/custom_ios.png)
+- ***Personalizado***. Permite selecionar uma linha em qualquer cor e transparência preferidas. Você pode selecionar diferentes configurações para o mapa diurno e separadamente para o mapa noturno. A paleta de cores inclui cores de acesso rápido, uma opção para adicionar uma cor personalizada (*+*) e uma lista completa de cores disponíveis (*Todas as cores*).            
+    ![personalizado](@site/static/img/navigation/route/custom_new.png)   ![personalizado](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. Mostra a altura do ponto da rota como um gradiente **verde-amarelo-vermelho**. **Verde** indica o ponto mais baixo da rota, **amarelo** indica a altura média do ponto e **vermelho** é o mais alto. Se a diferença de altitude da rota for < 100 metros, o gradiente é parcialmente aplicado ou não aplicado, por exemplo, para uma simples subida de 100 metros para 150 metros - o gradiente será **verde-amarelo**. Observe que a cor não representa o valor absoluto da altitude.  
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
@@ -244,7 +244,7 @@ Você pode ajustar a largura da linha da rota para alinhá-la com a estrada ou c
 A configuração Setas de Curva permite selecionar se as setas de curva são exibidas na linha da rota.  
 
 - ***No mapa***  
-    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![setas de curva no mapa iOS](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![setas de curva iOS no mapa](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***No aplicativo***  
     ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![setas de curva iOS](@site/static/img/navigation/route/turn_arr_ios.png)

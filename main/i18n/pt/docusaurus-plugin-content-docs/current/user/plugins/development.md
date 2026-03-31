@@ -1,5 +1,5 @@
 ---
-source-hash: 89baba1fc250f5fae8be3a075cdb603e67a8fdc5619d13653d39e5efe07cabcd
+source-hash: 624702a15df837a372ba4bbfd9215855307002c01eaa5f445cca83146d175227
 sidebar_position: 11
 title: Desenvolvimento do OsmAnd
 ---
@@ -53,7 +53,7 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 
 <TabItem value="ios" label="iOS">  
 
-![Configurações de Desenvolvimento iOS](@site/static/img/plugins/development/development_ios_1.png)
+![Configurações de Desenvolvimento iOS](@site/static/img/plugins/development/development_ios_1_new.png)
 
 </TabItem>
 
@@ -62,7 +62,7 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 
 ### Terreno {#terrain}
 
-- **Usar formato raster [SQLIte](../../technical/osmand-file-formats/osmand-sqlite) para relevo sombreado e inclinação** (*Android*). Ao usar o mecanismo de renderização V2, em vez de calcular o sombreamento de colinas ou inclinações a partir do mapa de Terreno 3D, use os mapas raster de formato antigo para esse propósito. Pode acelerar significativamente a renderização.
+- **Usar formato raster [SQLite](../../technical/osmand-file-formats/osmand-sqlite) para hillshade e inclinação** (*Android*). Ao usar o mecanismo de renderização V2, em vez de calcular o hillshading ou inclinações a partir do mapa de Terreno 3D, use os mapas raster de formato antigo para esse propósito. Pode acelerar significativamente a renderização.
 
 
 ### Solução de problemas {#troubleshooting}
@@ -70,13 +70,14 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 - **Simular sua posição** (*Android* / *iOS*). [Simule](#gpx-track-simulation) a localização e o movimento usando uma trilha GPX.
 - **Modo de economia de bateria** (*Android* / *iOS*). Esta configuração reduz [a taxa de atualização da tela](#map-rendering-fps-widget) em 20 quadros por segundo para ajudar a economizar energia da bateria ao usar aplicativos.
 - **Usar ícones de posição de localização 3D** (*iOS*). Permite selecionar um ícone 3D para o [ícone Minha Localização](../personal/profiles.md#my-location-appearance).
-- **Simular dados obd** (*Android*). Permite a simulação do uso do [scanner OBD](./vehicle-metrics.md).
-- **Informações de depuração de desempenho** (*Android*). Exibe o desempenho de renderização e navegação.
+- **Simular dados obd** (*Android* / *iOS*). Permite a simulação do uso do [scanner OBD](./vehicle-metrics.md).
+- **Informações de depuração de desempenho** (*Android* / *iOS*). Exibe o desempenho de renderização e navegação.
 - **Desativar camadas do mapa** (*Android*). Desativa todas as camadas do mapa sobre o mapa vetorial (requer reinício).
 - **Buffer Logcat** (*Android*). Verifica e compartilha logs detalhados do aplicativo.  
 - **Mostrar notificação sobre tecla pressionada** (*Android*). Exibe uma mensagem sobre a tecla.
 - **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. O rumo é a direção da bússola da sua posição atual para o seu destino pretendido. Afeta a *[gravação de trilhas](../plugins/trip-recording.md)*.  
 - **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. A direção é a direção da bússola da sua posição atual em relação ao norte verdadeiro. Esta opção está ativada por padrão. Afeta a *[gravação de trilhas](../plugins/trip-recording.md)*.
+- **Ativar MSAA** (*Android*) / **Ativar MSAA para CarPlay** (*iOS*). Ativa o anti-aliasing multisample para suavizar a renderização do mapa. Melhora a qualidade visual do [ícone Minha Localização](../personal/profiles.md#my-location-appearance) e da linha de rota reduzindo as bordas pixeladas. No Android, esta opção afeta a renderização do mapa no dispositivo e ao usar [Android Auto](../navigation/auto-car.md). No iOS, aplica-se apenas ao [CarPlay](../navigation/car-play.md).
 
 
 ### Teste de aplicativo {#application-testing}
