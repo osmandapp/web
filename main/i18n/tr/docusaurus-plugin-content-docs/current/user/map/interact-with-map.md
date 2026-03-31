@@ -1,5 +1,5 @@
 ---
-source-hash: 03e7029ed54c48eb315daeba4a60cfe373d1904acc8dc97cd146fa5c3bc2a0ce
+source-hash: 23dc05657223dd5f90ae691334125317676c7282cff5e29920e2d416c8f59955
 sidebar_position: 2
 title:  Harita ile Etkileşim
 ---
@@ -216,6 +216,8 @@ Eski [harita oluşturma motoru](../personal/global-settings.md#map-rendering-eng
 Küresel Görünüm şu anda yalnızca şu durumlarda kullanılabilir:
 - [Geliştirme eklentisi](../plugins/development.md) etkinleştirildiğinde.  
 Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*  
+- [Topografi eklentisi](../plugins/topography.md) etkinleştirildiğinde.  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*  
 - [Harita oluşturma motoru](../personal/global-settings.md#map-rendering-engine) Sürüm 2 (OpenGL) olarak ayarlandığında.  
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 

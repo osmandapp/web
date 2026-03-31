@@ -1,5 +1,5 @@
 ---
-source-hash: a53454c8a0f9f2f19df1236a67ed3ac322f3c92ec0a7817bda579bd8c4c75a27
+source-hash: 91a31a428026d3f096ac2e5ae3c87ed7602a196858aeed773cb52ba0586c9450
 sidebar_position: 4
 ---
 
@@ -33,24 +33,23 @@ OsmAnd her gün çeşitli Kullanıma Hazır yapılar yayınlayarak yeni özellik
 
 ## Yenilikler {#whats-new}
 
-- Güneş, gezegenler ve yıldızların yollarını haritada gösteren astronomik katman içeren yeni deneysel Starwatcher eklentisi; zaman ve tarih seçimi ile özel bir etkinlik ekranı.
-- Ayarlar'daki **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** bölümünde iyileştirmeler: yedekleme verileri, sürüm geçmişi ve otomatik yedekleme ayarları artık daha net isimler, simgeler ve depolama kullanım bilgileriyle tek bir “OsmAnd Cloud” bloğu altında gruplanmış.
-- Rotalar ve yol özellikleri için **[Haritayı Yapılandır](https://osmand.net/docs/user/map/configure-map-menu)** seçenekleri güncellendi: daha net bir legend, yürüyüş, bisiklet ve MTB ağları için daha iyi filtreler, ayrıca haritada hangi rota türlerinin ve simge katmanlarının görüneceği konusunda daha fazla kontrol.
-- Yeni ve yeniden tasarlanmış yükseklik ve navigasyon widget'ları: rotalar ve GPX izleri için yükseklik profilleri, yokuş yukarı/yokuş aşağı metrikleri, ortalama eğim ve geziler ile navigasyon için daha ayrıntılı yükseklik bilgileri.
-- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** iyileştirmeleri; genişletilmiş widget desteği ve daha iyi OBD II entegrasyonu dahil, hız ve yakıtla ilgili ana araç metriklerinin araç ekranında daha kolay görüntülenmesini sağlayan.
-- Widget'lar ve harita düğmeleri için daha esnek düzen: yatay modda iyileştirilmiş yerleştirme, görünürlük ve görünüm üzerinde daha iyi kontrol ve widget'lar, düğmeler ile veri alanları arasındaki örtüşmeleri azaltan bir düzen.
-- **[Yerlerim](https://osmand.net/docs/user/personal/myplaces)** içindeki Favoriler yönetiminde geliştirme: favoriler için daha güçlü klasör işleme ve çoklu seçim, ayrıca favori noktalara doğrudan medya (fotoğraflar, videolar, sesli notlar) ekleme için temel altyapı.
-- Akıllı iz organizasyonu ve istatistikleri: Akıllı Klasörler izleri dönem, aktivite, mesafe, hız, konum ve diğer parametrelere göre otomatik olarak gruplandırabilir; her grup için daha net özet istatistikleri.
-- Gelişmiş rota ve iz analizi: yol tipi, yüzey, pürüzlülük, diklik, şeritler ve maksimum hız için yeni grafikler; izleri sabit hız paleti kullanarak renklendirme seçeneği ile birlikte.
-- Erişilebilirlik özelliklerinde devam eden iyileştirmeler; daha esnek sesli ve dokunsal navigasyon göstergeleri ve görme engelli kullanıcılar için daha zengin “etrafına bak” deneyimi dahil.
-- Akıllı saat entegrasyonu için ilk temel altyapı; giyilebilir cihazlarda navigasyon bilgileri ve gezi kayıt verilerini görüntüleme desteği hazırlığı.
+- Güneş, gezegenler ve yıldızların yollarını gösteren astronomik bir katman içeren yeni deneysel **[Astronomi eklentisi](https://osmand.net/docs/user/plugins/astronomy)**.
+- Daha net yedekleme, sürüm geçmişi ve otomatik yedekleme ayarlarıyla geliştirilmiş **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** bölümü.
+- Daha net bir legend ve yürüyüş, bisiklet ve MTB rotaları için geliştirilmiş filtrelerle güncellenmiş **[Haritayı Yapılandır](https://osmand.net/docs/user/map/configure-map-menu)** seçenekleri.
+- Yükseklik profilleri, yokuş yukarı/yokuş aşağı metrikleri ve ortalama eğim içeren yeni ve yeniden tasarlanmış yükseklik ve navigasyon widget'ları.
+- Genişletilmiş widget desteği ve daha iyi OBD II entegrasyonu ile **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** iyileştirmeleri.
+- Özellikle yatay modda daha esnek **[widget ve harita düğmesi düzeni](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**.
+- **[Yerlerim](https://osmand.net/docs/user/personal/myplaces)** içindeki Favoriler yönetiminde geliştirme.
+- Akıllı Klasörler ve daha net özet istatistikleri ile daha akıllı iz organizasyonu.
+- Gelişmiş rota ve iz analizi.
+- Daha esnek sesli ve dokunsal navigasyon geri bildirimi dahil geliştirilmiş erişilebilirlik özellikleri.
+- Navigasyon ve gezi kayıt verileri için akıllı saat entegrasyonu için ilk temel altyapı.
 
 
 ## Hata düzeltmeleri {#bug-fixes}
 
-- **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** senkronizasyonu ve yedeklemesinin kararlılığında iyileştirmeler; çakışmaları azaltma ve widget'lar ile ayarların cihazlar arasında doğru şekilde geri yüklenmesini sağlama.
+- **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** senkronizasyonu ve yedeklemesinin kararlılığında iyileştirmeler, çakışmaları azaltma ve widget'lar ile ayarların cihazlar arasında doğru şekilde geri yüklenmesini sağlama.
 - Yükseklik widget'larındaki yanlış yokuş yukarı/yokuş aşağı değerlerini düzeltme ve rota analizinde yükselme/alçalma hesaplamalarının doğruluğunu iyileştirme.
-- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** navigasyon davranışında iyileştirmeler; kavşaklardaki doğru çıkış yönleri ve ekran üzerindeki araçların (yarıçap cetveli gibi) doğru yerleştirilmesi dahil.
-- **[Erişilebilirlik](https://osmand.net/docs/user/plugins/accessibility)** moduyla ilgili birkaç sorunu düzeltme; navigasyon duyuruları ve belirli harita araçlarıyla etkileşim dahil.
+- Yuvarlak kavşaklardaki doğru çıkış yönleri ve yarıçap cetveli gibi ekran araçlarının doğru yerleştirilmesi dahil **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** navigasyon davranışında iyileştirmeler.
+- Navigasyon duyuruları ve belirli harita araçlarıyla etkileşim dahil **[Erişilebilirlik](https://osmand.net/docs/user/plugins/accessibility)** moduyla ilgili birkaç sorunu düzeltme.
 - Harita oluşturma, widget görüntüleme ve yapılandırma ekranlarında genel arayüz ve performans düzeltmeleri.
-

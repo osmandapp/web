@@ -1,5 +1,5 @@
 ---
-source-hash: 0e675a044bd036830410fff32cdcc722ec087794556f5bf8964937544c6217ee
+source-hash: bd0627caa02c401942bbaf404c54277e425184f8af2c51f6686f5db309a4b6d7
 sidebar_position: 3
 title: Harita Bağlam Menüsü
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-Harita bağlam menüsü, harita üzerinde seçilen nesne hakkında bilgi sağlar. Ayrıca seçilen konuma bir rota oluşturmak için de kullanabilirsiniz. Bağlam menüsünü açmak için önce harita üzerinde gerekli konumu bulun, ardından harita üzerinde herhangi bir hassas noktayı seçerken kısa bir dokunuşla veya uzun bir dokunuşla nesneyi seçin.
+Harita bağlam menüsü, harita üzerindeki seçilen nesne hakkında bilgi sağlar. Ayrıca seçilen konuma bir rota oluşturmak için de kullanabilirsiniz. Bağlam menüsünü açmak için önce harita üzerinde gerekli konumu bulun, ardından harita üzerinde herhangi bir hassas noktayı seçerken kısa bir dokunuşla veya uzun bir dokunuşla nesneyi seçin.
 
 
 ### Bir Nesne Seçin (Tek Dokunuş) {#select-an-object-single-tap}
@@ -197,7 +197,7 @@ Bu bölüm, [Wikipedia makalesinden](../plugins/wikipedia.md), [Favori](../perso
 
 <TabItem value="ios" label="iOS">
 
-![Alternatif adlar iOS 1](@site/static/img/map/alternative_names_1_ios.png) ![Alternatif adlar iOS](@site/static/img/map/alternative_names_2_ios.png)
+![Alternatif adlar iOS](@site/static/img/map/alternative_names_1_ios_new.png) ![Alternatif adlar iOS](@site/static/img/map/alternative_names_2_ios_new.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ Alternatif adların görüntülenme özellikleri:
 
 <TabItem value="ios" label="iOS">
 
-![Çokgen Bilgisi iOS](@site/static/img/map/polygon_information_ios.png)
+![Çokgen Bilgisi iOS](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -363,7 +363,7 @@ OpenStreetMap bağlantısı, hakkında tam bilgi bulabileceğiniz OpenStreetMap 
 
 <TabItem value="ios" label="iOS">  
 
-![Çevrimiçi Fotoğraflar bağlam menüsü iOS](@site/static/img/map/online_photo_ios.png)
+![Çevrimiçi Fotoğraflar bağlam menüsü iOS](@site/static/img/map/online_photo_ios_new.png)
 ![Çevrimiçi Fotoğraflar bağlam menüsü iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
@@ -505,15 +505,13 @@ Eylemler:
 
 <TabItem value="android" label="Android">  
 
-| Android 14'e kadar olan sürümler | 14+ Android |
-|:------------|:---------------|
-| ![Paylaş eylemi Android](@site/static/img/map/action_share_1_andr.png) | ![Paylaş eylemi Android](@site/static/img/map/action_share_2_andr.png) |
+![Paylaş eylemi Android](@site/static/img/map/action_share_2_andr_new.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Paylaş eylemi iOS](@site/static/img/map/action_share_1_ios.png)
+![Paylaş eylemi iOS](@site/static/img/map/action_share_1_ios_new.png)
 
 </TabItem>
 
@@ -524,6 +522,8 @@ OsmAnd uygulaması, *Konumum*'u veya harita üzerindeki herhangi bir seçili kon
 Konumu paylaşmak için mevcut seçenekler:
 
 - ***Gönder***. Cihazınızda bulunan uygulamalar aracılığıyla metin gönderir. Konum hakkındaki tüm bilgileri içerir: Konumum adı veya seçilen İÇN'nin adı, adres, koordinatlar ve bir bağlantı olarak coğrafi konum.
+- ***Bağlantıyı kopyala***. Seçilen konuma bir bağlantıyı panoya kopyalar.  
+Örnek: `https://osmand.net/map/poi/?name=Tour+Eiffel&type=Tourism&pin=48.85826,2.29449`
 - ***Kopyala***. Tüm konum bilgilerini (Konumum adı veya seçilen İÇN'nin adı, adres, koordinatlar ve bir bağlantı olarak coğrafi konum) panoya kopyalar.
 - ***Adresi kopyala***. Yalnızca adres bilgilerini panoya kopyalar.
 - ***İÇN adını kopyala***. Yalnızca İÇN adını veya adı yoksa adresi panoya kopyalar.
@@ -558,7 +558,7 @@ Konumu paylaşmak için mevcut seçenekler:
 
 </Tabs>
 
-Navigasyonu veya rota planlamayı başlatmak için önce [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions) ile hedefi seçmeniz gerekir. Zaten bir hedef noktanız varsa, menü size hedef noktayı değiştirmeyi veya başka bir ara veya başlangıç noktası olarak eklemeyi önerecektir.
+Navigasyonu veya rota planlamayı başlatmak için önce [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#navigation) ile hedefi seçmeniz gerekir. Zaten bir hedef noktanız varsa, menü size hedef noktayı değiştirmeyi veya başka bir ara veya başlangıç noktası olarak eklemeyi önerecektir.
 
 Harita bağlam menüsü aracılığıyla önce *Hedeften* seçeneğini seçmek de mümkündür (<Translate android="true" ids="context_menu_item_directions_from"/>).
 

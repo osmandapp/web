@@ -1,5 +1,5 @@
 ---
-source-hash: 68173c6333cbab1e4155aebd0de4f93a471b00f6d3ab7f48ef3872e2d8b54c54
+source-hash: db5100e593e959bddd7c050a00a3702808a3d2eb1673ab3d7afe8c6151f814cc
 sidebar_position: 16
 title: Topografya
 ---
@@ -18,8 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-:::info Ücretli özellik
-Topografya eklentisi, OsmAnd uygulamasının [ücretli bir özelliğidir](../purchases/index.md).  
+:::tip Satın alma
+Topografya eklentisi, [ücretli bir özelliktir](../purchases/index.md).  
 :::
 
 Topografya, arazinin rölyefini görsel olarak değerlendirmek için bilgi sağlayan önemli bir haritacılık özelliğidir.
@@ -143,6 +143,10 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 ## Eşyükselti Eğrileri {#contour-lines}
 
+:::tip Satın alma
+Eşyükselti eğrileri, [ücretli bir özelliktir](../purchases/index.md).  
+:::
+
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
@@ -181,6 +185,10 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 
 ## Arazi {#terrain}
+
+:::tip Satın alma
+Arazi, [ücretli bir özelliktir](../purchases/index.md).  
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -255,17 +263,30 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+
+*Renk Şemasını Değiştir özelliği* bir renk şeması seçmenize olanak tanır:
+
+- [Önceden tanımlanmış bir listeden](#default-color-scheme).
+- Bilgisayarınızda oluşturduğunuz renk paleti dosyalarından. Özel dosyalar, [içe/dışa aktarma aracı](../personal/import-export.md) kullanılarak OsmAnd'a eklenebilir.
+- Uygulamada doğrudan oluşturulan veya düzenlenen paletlerden.
+
+Özel paletler, *Rakım* veya *Eğim* gibi arazi verilerinin belirli bir değerine karşılık gelen renk ölçeklerine dayanır.  
+Yapabileceğiniz işlemler:
+
+- değer adımlarını (rakım seviyeleri veya eğim yüzdeleri) tanımlayın;
+- her adıma renkler atayın;
+- renk ölçeklerini ayarlamak için adımları ekleyin veya kaldırın.
+
+**Not:** Gölgelendirme, sabit bir gölgelendirme algoritması kullanır ve özel renk paletlerini desteklemez.
+
+Palet dosyalarını kullanarak gelişmiş palet özelleştirmesi için [Renk Şemaları](../personal/color-palette-schemes.md#palette-modify) makalesine bakın.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios_new.png)
 
 *Renk Şemasını Değiştir özelliği* bir renk şeması seçmenize olanak tanır:
 
@@ -274,6 +295,10 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 Haritaların ve rotaların görünümünü kişiselleştirmek için [bu paletleri düzenleyebilirsiniz](../personal/color-palette-schemes.md#palette-modify).
 
+
+</TabItem>
+
+</Tabs>
 
 ### Görünürlük {#visibility}
 
@@ -318,6 +343,71 @@ Haritaların ve rotaların görünümünü kişiselleştirmek için [bu paletler
 
 - [Eylem ekle](../widgets/quick-action.md#custom-buttons) bölümüne gidin: *Menü → Ekranı yapılandır → Özel düğmeler → Hızlı eylem → Eylem ekle → Haritayı yapılandır*.
 - Belirli bir topografya katmanının görünürlüğünü değiştirmek için bir veya daha fazla QA düğmesi ekleyin.
+
+
+## 3B Binalar {#3d-buildings}
+
+<InfoAndroidOnly/> 
+
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → 3B binalar* 
+
+![3D Buildings](@site/static/img/map/3d_buildings_1_new_2.png) ![3D Buildings](@site/static/img/map/3d_buildings_2_new.png) 
+
+**3B Binalar** özelliği, binaları düz şekiller yerine hacimli 3B modeller olarak görüntüler. Binalar, mevcut olduğunda `height` ve `building:levels` gibi etiketlerden yükseklik bilgilerini kullanarak [OpenStreetMap verilerinden](https://wiki.openstreetmap.org/wiki/Simple_3D_Buildings) oluşturulur. 3B binalar yalnızca daha yüksek yakınlaştırma seviyelerinde (şehir/sokak görünümü) gösterilir, burada bireysel binalar görüntülenebilir.  
+
+3B binaların oluşturma işlemini etkinleştirmek veya devre dışı bırakmak için ana geçişi kullanın. Etkinleştirildiğinde, ayar ayrıca ana geçişin altında mevcut [Detay seviyesi](#performance) (Düşük veya Yüksek) değerini de görüntüler. Binaları 3B olarak görüntülemek için, ekrana iki parmağınızı yerleştirin ve yukarı doğru kaydırarak haritayı eğin. Bu görünümde, binalar görünürlük ayarına bağlı olarak yolları veya harita etiketlerini kısmen kaplayabilir.
+
+Bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kullanılabilir.  
+Şuraya gidin: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
+
+3B binalar ayarları, 3B binaların görünümünü, performansını ve aydınlatmasını etkileyen kontrolleri içerir.
+
+### Görünüm {#appearance}
+
+![3D Buildings](@site/static/img/map/3d_buildings_color.png)
+
+**Görünüm**, 3B binaların haritada nasıl göründüğünü kontrol eder. Renk ve Görünürlük olmak üzere iki ayarı içerir. 
+
+**Renk**, bina rengini değiştirmenize olanak tanır. Renk'e dokunduğunuzda, OsmAnd ayarınızı düzenlerken haritayı görebileceğiniz ayrı bir önizleme ekranı açar. Önizleme ekranı, seçilen rengin binaları nasıl etkilediğini hemen görebileceğiniz canlı bir harita gösterir.
+- **Harita stili** — şu anda seçili harita stilinden varsayılan bina rengini kullanır.
+- **Özel** — Gündüz / Gece modu için ayrı olarak özel bir bina rengi ayarlamanıza olanak tanır.
+
+:::tip Satın alma
+3B Binaların Renk Özelleştirmesi, [ücretli bir özelliktir](../purchases/index.md).  
+:::
+
+Özel renkler satın alınmamışsa, kısa bir açıklama ve Al butonu ile boş bir durum görürsünüz. Özel mevcutsa, Gündüz ve Gece arasında geçiş yapabilir, paletten bir renk seçebilir (veya Tüm renkleri açabilirsiniz), ardından Uygula'ya dokunabilirsiniz.
+
+**Görünürlük**, 3B binaların opaklığını (şeffaflığını) kontrol eder. Görünürlüğü yüzde olarak ayarlamak için kaydırıcıyı kullanın. Kaydırıcı %10 ile %100 arasında değerlere izin verir, varsayılan olarak %50 kullanılır. Daha düşük değerler binaları daha şeffaf hale getirir ve yolların/etiketlerin okunabilir kalmasına yardımcı olur. Daha yüksek değerler binaları daha katı ve görsel olarak baskın hale getirir. Görünürlük'e dokunmak da kaydırıcı ile birlikte ayrı bir önizleme ekranını açar.
+
+Önizleme ekranlarında (Renk / Görünürlük), varsayılan değeri geri yüklemek için uygulama çubuğundan Sıfırla varsayılana kullanabilirsiniz.
+
+### Performans {#performance}
+
+**Performans**, 3B binaların nasıl oluşturulduğunu kontrol eder. Detay seviyesi ve Görünüm mesafesi olmak üzere iki ayarı içerir.
+
+**Detay seviyesi**, 3B bina geometrisinin karmaşıklığını belirler:
+- Düşük (varsayılan) — daha basit geometri.
+- Yüksek — daha detaylı geometri.
+
+**Görünüm mesafesi**, 3B binaların kameradan ne kadar uzakta oluşturulduğunu kontrol eder:
+- Yakın (varsayılan) — size daha yakın binaları oluşturur.
+- Uzak — binaları daha uzun mesafeden oluşturur.
+
+Her iki performans seçeneği de 3B binalar ayar ekranında doğrudan iki konumlu bir geçiş kullanır.
+
+**Not:** *Yüksek detay* ve *Uzak görünüm mesafesi* kullanmak görsel görünümü iyileştirir ancak performansı etkileyebilir ve pil kullanımını artırabilir.
+
+### Güneş {#sun}
+
+![3D Buildings](@site/static/img/map/sun_setting.png)
+
+**Güneş** ayarı, 3B binaların oluşturma işlemi için kullanılan aydınlatma yönünü kontrol eder. 3B görünümde binalar üzerindeki ışık ve gölgelerin nasıl göründüğünü etkiler. Güneş'e dokunduğunuzda, iki kaydırıcı kullanarak aydınlatmayı ayarlayabileceğiniz bir önizleme ekranı açar:
+
+- Azimut — ışık kaynağının yatay yönünü kontrol eder (güneşin pusula yönü).
+- İrtifa — ufuk çizgisi üzerindeki güneş yüksekliğini kontrol eder.
+
+Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştüğünü değiştirir ve 3B görünümde bina şekillerinin görsel algısını iyileştirebilir. Seçilen aydınlatma parametrelerini onaylamak için Uygula'ya dokunun.
 
 
 ## 3B Rölyef {#3d-relief}
