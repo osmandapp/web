@@ -1,7 +1,7 @@
 ---
-source-hash: 1de4c25d0b27ee47bb08a2b296acc58908656314e50dc9de490d26167117efe8
+source-hash: ac07b52c842a9b6b1e92ad1dde2940a52e6582ce98a7475327c56220ad31fbce
 sidebar_position: 5
-title:  Колірні схеми
+title:  Color Schemes
 ---
 
 import Tabs from '@theme/Tabs';
@@ -34,7 +34,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Меню → Maps & Resources → Локальні → Кольори*
 
-![Палітри](@site/static/img/personal/color-schemes/colors.png)
+![Palettes](@site/static/img/personal/color-schemes/colors.png)
 
 </TabItem>
 
@@ -42,7 +42,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *Меню → Maps & Resources → Локальні → Кольори*
 
-![Колірна палітра](@site/static/img/personal/color-schemes/color_palette_ios.png)
+![Color palette](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
 </TabItem>
 
@@ -57,13 +57,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Палітри](@site/static/img/personal/color-schemes/palette_new.png) ![Палітри](@site/static/img/personal/color-schemes/palette_new_2.png)
+![Palettes](@site/static/img/personal/color-schemes/palette_new.png) ![Palettes](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Колірна палітра](@site/static/img/personal/color-schemes/palette_ios.png) ![Колірна палітра](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Color palette](@site/static/img/personal/color-schemes/palette_ios.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 
@@ -71,19 +71,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Файли рельєфу (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) визначають 3 [візуалізації рельєфу](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Відтінення рельєфу, Ухил* та *Висота*. Для кожного типу можна мати кілька палітр, наприклад, *лавинний схил* надається за замовчуванням. Докладніше дивіться в статті [Топографія](../plugins/topography.md#default-color-scheme).
 
+На Android палітри для колірних схем *Ухилу* та *Висоти* також можна створювати або редагувати безпосередньо в додатку за допомогою [редактора колірної палітри](../plugins/topography.md#modify-color-scheme). Це платна функція <ProFeature />.
+
 ### Треки та маршрути {#tracks-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Палітри](@site/static/img/personal/color-schemes/track_palette_android.png) 
+![Palettes](@site/static/img/personal/color-schemes/track_palette_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Колірна палітра](@site/static/img/personal/color-schemes/track_palette_ios.png) 
+![Color palette](@site/static/img/personal/color-schemes/track_palette_ios.png) 
 
 </TabItem>
 
@@ -94,19 +96,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Для [маршрутів](../navigation/guidance/map-during-navigation.md#color): *Швидкість (`route_speed_default.txt`), Ухил (`route_slope_default.txt`)* та *Висота (альтитуда) (`route_elevation_default.txt`)*.
 - Для [GPX-треків](../map/tracks/appearance#track-colors-in-gpx-files): *Швидкість, Ухил, Максимальна швидкість (`route_maxspeed_default.txt`)* та *Висота (альтитуда)*, або інформація із *зовнішніх датчиків*.
 
+На Android палітри також можна створювати або редагувати безпосередньо в додатку за допомогою [редактора колірної палітри](../map/tracks/appearance.md#color-palette-editor). Це платна функція <ProFeature />.
+
 ### Обрані та контрольні точки {#favorites-waypoints}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Палітри](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Палітри](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
+![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Колірна палітра](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
+![Color palette](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
 
 </TabItem>
 
@@ -162,7 +166,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Дії профілю: Експорт Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Локальне резервне копіювання Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -170,7 +174,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Дії профілю: Експорт iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Дії профілю: Експорт iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -188,9 +192,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="колір"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="колір"/></td>
-        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="колір"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_1.png').default} alt="color"/></td>
+        <td><img src={require('@site/static/img/personal/color-schemes/legend_2.png').default} alt="color"/></td>
     </tr>
 </table>
 
@@ -207,7 +211,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Додати дію → <Translate ios="true" ids="configure_map"/> → Змінити колірну схему рельєфу*
 
-![Колірна схема](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Колірна схема](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
+![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
 
 </TabItem>
 
@@ -215,7 +219,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Додати дію → <Translate ios="true" ids="configure_map"/> → Змінити колірну схему рельєфу*
 
-![Колірна палітра](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Колірна палітра](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
+![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: fc828e9601027c67139bd9fd07610902270cc7e486320f369678d29a5fa75fbf
+source-hash: 17b85a11e9ed6597def6da09bf287cff1795439492f4cc1932758cb3f0b24f10
 sidebar_position: 4
 title:  Налаштувати карту
 ---
@@ -23,7 +23,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Розділ **Показати**:  
 
-![Налаштувати карту android](@site/static/img/map/configure_map_show1_andr.png)  ![Налаштувати карту android](@site/static/img/map/configure_map_show2_andr.png)  
+![Налаштувати карту android](@site/static/img/map/configure_map_show1_new_andr.png)  ![Налаштувати карту android](@site/static/img/map/configure_map_show2_new_andr.png)  
 
 Розділ **Топографія**:  
 
@@ -43,7 +43,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Розділ **Показати на карті**:  
 
-![Налаштувати карту android](@site/static/img/map/configure_map_show1_ios.png)  
+![Налаштувати карту android](@site/static/img/map/configure_map_show1_ios_new.png)  
 
 Розділ **Топографія**:  
 
@@ -81,7 +81,7 @@ import Translate from '@site/src/components/Translate.js';
 - Налаштування меню "Налаштувати карту" залежать від вашого [профілю](../personal/profiles.md).
 - Зверніть увагу - меню "Налаштувати карту" **закривається**, коли ви торкаєтеся поля карти.
 
-## Шари карти {#map-layers}
+## Map Layers {#map-layers}
 
 - [Шар векторної карти](../map/vector-maps.md) - відображає всю інформацію векторної карти, включаючи OpenStreetMap, лінії контуру та морські дані.
 - [Джерела растрових карт](../map/raster-maps.md#layers) - дозволяє вибирати підкладку / основне джерело / накладення карти з рівнями прозорості.
@@ -90,7 +90,7 @@ import Translate from '@site/src/components/Translate.js';
 - [Межі завантажених карт](../map/vector-maps.md#show-borders) - відображає всі межі завантажених карт на основному шарі карти.
 - [Координатна сітка](../map/vector-maps.md#coordinates-grid) - керування видимістю координатної сітки на карті.
 
-## Шари даних карти {#map-data-layers}
+## Map Data Layers {#map-data-layers}
 
    - [Обране](../map/point-layers-on-map.md) - відображає точки з обраного.
    - [POI](../map/point-layers-on-map.md) - відображає точки інтересу вибраних категорій.
@@ -100,11 +100,11 @@ import Translate from '@site/src/components/Translate.js';
    - [Треки](../map/tracks/index.md) - відображає імпортовані, заплановані або записані треки поверх карти.
    - [Зображення з рівня вулиць](../plugins/mapillary.md#map-layer) - відображає точки з доступними зображеннями з рівня вулиць.
    - [Путівники](../plan-route/travel-guides.md) - відображає путівники на карті.
-   - [Вікіпедія](../plugins/wikipedia.md) - виділяє статті з Вікіпедії, пов'язані з картою.
+   - [Популярні місця](../map/popular_places.md) - виділяє популярні місця на основі статей Вікіпедії та відображає їх на карті.
    - [Редагування OSM](../plugins/osm-editing.md#osm-editing-layer) - відображає редагування OpenStreetMap, нотатки та допоміжні шари, пов'язані з картографуванням.
    - [Шари інших плагінів](../plugins/index.md#configure-plugin) - багато плагінів додають свої шари з додатковою інформацією.
 
-## Параметри стилю карти {#map-style-parameters}
+## Map style parameters {#map-style-parameters}
 
 Налаштування стилю карти залежать від відображуваного основного стилю карти. Детальніше про це можна прочитати у статті [Стилі карти](../map/vector-maps).
 
@@ -119,7 +119,7 @@ import Translate from '@site/src/components/Translate.js';
    - [Маршрути](../map/vector-maps.md#routes) - дозволяє виділяти маршрути та їхні символи.  
 
 
-## Налаштування інтерфейсу (Android) {#ui-customization-android}
+## UI Customization (Android) {#ui-customization-android}
 
 Для кожного вибраного профілю в системі Android ви можете змінити порядок пунктів меню <Translate android="true" ids="configure_map"/>, приховати пункти, скинути налаштування за замовчуванням або скопіювати їх з іншого профілю. Це допоможе покращити вашу взаємодію з додатком OsmAnd.  
 

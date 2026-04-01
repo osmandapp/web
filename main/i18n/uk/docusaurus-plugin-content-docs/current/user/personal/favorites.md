@@ -1,5 +1,5 @@
 ---
-source-hash: 19713da2b0354d323720a857d9f86caae23fbfef3095429babefe88906a51697
+source-hash: fab52fe27db8016862c2644efc7d09e8fefedd93296efd1eab5de77e1864309c
 sidebar_position: 7
 title:  Обране
 ---
@@ -163,7 +163,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Мої місця Обране android](@site/static/img/personal/my_places_android.png)
+![Мої місця Обране android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![мої_місця_ios](@site/static/img/personal/my_places_ios.png)
+![мої_місця_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -180,7 +180,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Розділ **Мої обрані місця** дозволяє:
 
 - [Шукати](#order--sorting--search) конкретні обрані точки або групи.
-- [Групові операції](#bulk-edit--delete) — перейменовувати, переміщувати або видаляти кілька обраних точок одночасно.
+- [Групові операції](#bulk-edit--delete) — Поділитися, перемістити або видалити кілька обраних точок одночасно.
 
 ### Порядок / Сортування / Пошук {#order--sorting--search}
 
@@ -188,20 +188,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Папки Обраного android](@site/static/img/personal/favorites_folders_android.png)
+![Папки Обраного android](@site/static/img/personal/favorites_folders_sorting.png)
+
+- **Сортування** — Папки та точки "Обране" можна сортувати за допомогою доступних опцій сортування в меню списку. Доступні такі опції: *Назва A – Z*, *Назва Z – A*, *Останні зміни*, *Спочатку новіша дата*, *Спочатку старіша дата*. За замовчуванням елементи сортуються за Назва A – Z. Закріплені папки завжди відображаються вгорі списку. Вони візуально відокремлені від решти папок горизонтальною лінією. [Особиста папка](../personal/favorites.md#special-favorites-personal) закріплена за замовчуванням. 
+- **Пошук** — Використовуйте [Глобальний пошук](../search/search-all.md), щоб знайти обрані точки за назвою. Обрані точки сортуються за відстанню від центру мапи.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Папки Обраного ios](@site/static/img/personal/favorites_folders_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 - **Сортування** — Папки та точки "Обране" сортуються за алфавітом, причому [особиста папка](../personal/favorites.md#special-favorites-personal) знаходиться вгорі.
 - **Пошук** — Використовуйте [Глобальний пошук](../search/search-all.md), щоб знайти обрані точки за назвою. Обрані точки сортуються за відстанню від центру мапи.
 
+</TabItem>
+
+</Tabs>
 
 ### Групове редагування / видалення {#bulk-edit--delete}
 
@@ -209,7 +212,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Дії з Обраним android](@site/static/img/personal/favorites_actions_android.png) ![Дія видалення Обраного android](@site/static/img/personal/favorites_delete_android.png)
+![Дії з Обраним android](@site/static/img/personal/favorites_group_actions.png) ![Дія видалення Обраного android](@site/static/img/personal/favorites_actions.png)
+
+Щоб керувати кількома обраними точками або папками, увійдіть у *Режим вибору*. Режим вибору можна відкрити двома способами:
+- Торкніться *меню з трьома крапками* у правому верхньому куті та виберіть *Вибрати*.
+- Довго торкніться обраної точки або папки.
+
+Коли режим вибору активовано, поруч з елементами списку з'являються прапорці. Виберіть необхідні обрані точки або папки, торкнувшись прапорців. Щоб вибрати всі елементи в списку, торкніться іконки "Вибрати все" у правому верхньому куті.
+
+Доступні дії залежать від типу вибраного елемента. Коли вибрано папки, доступні такі дії:
+- **Поділитися** — Експортувати вибрані папки як файл GPX Обраного.
+- **Видалити** — Видалити вибрані папки.
+
+Коли вибрано точки "Обране", доступні такі дії:
+- **Перемістити** — Перемістити вибрані обрані точки до іншої папки.
+- **Додати до маркерів на мапі** — Додати вибрані точки до списку маркерів на мапі.
+- **Додати до треку** — Додати вибрані точки до треку.
+- **Додати до навігації** — Почати навігацію до вибраної точки.
+- **Видалити** — Видалити вибрані обрані точки.
 
 </TabItem>
 
@@ -217,13 +237,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Дії з Обраним ios](@site/static/img/personal/favorites_actions_ios.png)
 
+- Щоб керувати кількома обраними точками, торкніться кнопки **Редагувати** (*іконка олівця*).
+- Виберіть окремі обрані точки або цілі папки для групових операцій.
+- **Доступні опції** — *Поділитися*, *Перемістити до групи Обраного*, *Змінити колір* та *Видалити*.
+
 </TabItem>
 
 </Tabs>
-
-1. Щоб керувати кількома обраними точками, торкніться іконки **Видалити** (*іконка кошика на Android*) або кнопки **Редагувати** (*іконка олівця на iOS*).
-2. Виберіть окремі обрані точки або цілі папки для групових операцій.
-3. **Доступні опції** — *Видалити* для Android та iOS, *Перемістити до групи Обраного*, *Поділитися* та *Змінити колір* для iOS.
 
 <!--
 ### Add Favorites to Map Markers {#add-favorites-to-map-markers}
@@ -247,37 +267,36 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *Меню з трьома крапками → Змінити вигляд за замовчуванням*
+![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions_new_andr.png)
 
-![Функції папки Обраного android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+Використовуйте ***меню з трьома крапками*** поруч з кожною папкою, щоб керувати групами обраних точок:
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>** / **Приховати на мапі** — Перемикайте цю опцію, щоб відобразити або приховати обрані точки з папки на мапі.
+- **Закріпити папку** — Закріпіть вибрану папку, щоб вона залишалася вгорі списку обраного для швидшого доступу.
+- **<Translate android="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Видалити з маркерів на мапі** — Додайте всі обрані точки з папки до *Списку маркерів на мапі* або видаліть їх за потреби для зручності.
+- **<Translate android="true" ids="add_to_a_track"/>** — Додайте всі обрані точки з вибраної папки до треку. Це відкриває екран вибору треку, де ви можете вибрати або створити трек.
+- **<Translate android="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
+- **<Translate android="true" ids="shared_string_delete"/>** — Назавжди видалити вибрану папку обраних точок та всі точки в ній.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *Довгий дотик до папки → Вигляд за замовчуванням*
-
 ![Дії з Обраним ios](@site/static/img/personal/favorite_add_new_group_2_ios.png)
+
+Використовуйте ***довгий дотик*** до папки, щоб керувати групами обраних точок:
+
+- **<Translate ios="true" ids="shared_string_show_on_map"/>** / **Приховати на мапі** — Перемикайте цю опцію, щоб відобразити або приховати обрані точки з папки на мапі.
+- **<Translate ios="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
+- [<Translate ios="true" ids="default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
+- **<Translate ios="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Назавжди видалити вибрану папку обраних точок та всі точки в ній.
 
 </TabItem>
 
 </Tabs>
-
-Використовуйте ***меню з трьома крапками*** (*Android*) поруч з кожною папкою та ***довгий дотик*** (*iOS*) до папки, щоб керувати групами обраних точок:
-
-- **<Translate android="true" ids="shared_string_rename"/>** — Використовуйте цю опцію, щоб змінити назву вибраної папки.
-
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Налаштуйте вигляд обраних точок у папці на мапі, змінивши їхні іконки, кольори або мітки.
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>** або **Приховати на мапі** — Перемикайте цю опцію, щоб відобразити або приховати обрані точки з папки на мапі.
-
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** або **Видалити з маркерів на мапі** (*лише для Android*) — Додайте всі обрані точки з папки до *Списку маркерів на мапі* або видаліть їх за потреби для зручності.
-
-- **<Translate android="true" ids="shared_string_share"/>** — Поділіться обраними точками в папці, експортувавши їх у файл *Favorites.gpx*, що полегшує передачу або резервне копіювання ваших даних.
-
-- **<Translate android="true" ids="shared_string_delete"/>** — Назавжди видалити вибрану папку обраних точок та всі точки в ній.
-
-
 
 ### Змінити вигляд групи {#change-group-appearance}
 
@@ -285,11 +304,15 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 <TabItem value="android" label="Android">
 
-![Функції папки Обраного android](@site/static/img/personal/favorite_change_appearance_andr.png)
+Перейдіть до: *Меню з трьома крапками → Змінити вигляд за замовчуванням*
+
+![Функції папки Обраного android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+Перейдіть до: *Довгий дотик до папки → Вигляд за замовчуванням*
 
 ![Дії з Обраним ios](@site/static/img/personal/favorite_add_new_group_3_ios.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: a9a72d0fd1ff6a2fccea0ee1592161979927eeb02ffd977ef88832f3094fe927
+source-hash: 45a48eceb7c22c3c33e19fb0b5d1398bf86ab65d7648315cb114676bebe536aa
 sidebar_position: 9
 title: Ресурси та налаштування
 ---
@@ -82,13 +82,13 @@ OsmAnd — це потужний застосунок із широкою баз
 
 | Назва | Опис | Посилання на плагін |
 |--|--|--|
-| OsmAnd Rendering  | Плагін додає стилі карт Enduro, CycloRoute та Hiking (більше інформації [тут](../map/map-styles.md#default-map-styles)) та 5 нових [профілів](https://osmand.net/docs/user/personal/profiles) (пішохідний, велосипедний та три мотоциклетних). Він також надає онлайн-карти для Іспанії, Франції, Норвегії, Швейцарії, Австрії, Бельгії та Аргентини через меню [Карти та ресурси](../personal/maps-resources.md#extra-maps) у папці *OsmAnd rendering online maps*. | [OsmAnd Rendering](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
-| Карта Саудівської Аравії від Rahal Team  | Професійна офлайн-карта Королівства Саудівська Аравія, що включає топографічні об'єкти, дороги, міста, села та джерела води. Ідеально підходить для подорожей пустелею. Відвідайте [Rahal Maps](https://rahalteam.com) для отримання додаткової інформації. | [🇸🇦 Карти Саудівської Аравії від Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
-| 3D-модель  | Цей пакет додає опцію 3D-моделі для профілів. Налаштуйте зовнішній вигляд через меню: [*Меню OsmAnd → Налаштування → Профіль → Зовнішній вигляд профілю → виберіть 4-5-ту іконку іконки місцезнаходження*](../personal/profiles.md#profile-appearance). | [3D-модель](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
-| Колекція онлайн-карт AnyGIS | Колекція різноманітних джерел онлайн-карт, включаючи супутникові, туристичні та історичні карти тощо.  | [Anygis](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
-| Легенда карти  | Цей пакет додає офлайн-легенду карти (версія 1.01; 03-04-2024), доступну через *Меню → Мої місця → Улюблені → Легенда карти*. Легенда карти також доступна за [цим посиланням](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Легенда карти](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸 Карти США | Колекція спеціалізованих карт США, конвертованих у формат OBF для OsmAnd, що включає<ul><li>[Громадські землі та охоронювані території USGS (PAD-US 3.0), за штатами](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Стежки та дороги USFS, по всій країні](https://www.fs.usda.gov/visit/maps),</li><li>[Дороги та стежки BLM, по всій країні](https://www.blm.gov/maps),</li><li>[POI рекреаційних активностей BLM, по всій країні](https://www.blm.gov/maps),</li><li>[Приватні землі (дані про ділянки), для деяких штатів](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Більше інформації на [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [Карти США](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱 Карта Польщі UMP | [UMP](https://ump.waw.pl/) охоплює більшу частину Польщі та постійно розробляється. Довгий час використовувалася назва UMP-pcPL (mapą prawie całej Polski). | [Карта Польщі UMP](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| Advanced Profiles & Maps  | Дані з [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). Плагін додає стилі карт Enduro, CycloRoute та Hiking (більше інформації [тут](../map/map-styles.md#default-map-styles)) та 5 нових [профілів](https://osmand.net/docs/user/personal/profiles) (пішохідний, велосипедний та три мотоциклетних). Він також надає онлайн-карти для Іспанії, Франції, Норвегії, Швейцарії, Австрії, Бельгії та Аргентини через меню [Карти та ресурси](../personal/maps-resources.md#extra-maps) у папці *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Saudi Arabia Desert Maps by Rahal Team  | Професійна офлайн-карта Королівства Саудівська Аравія, що включає топографічні об'єкти, дороги, міста, села та джерела води. Ідеально підходить для подорожей пустелею. Відвідайте [Rahal Maps](https://rahalteam.com) для отримання додаткової інформації. | [🇸🇦 Saudi Arabia Desert Maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
+| 3D Position Icons  | Цей пакет додає опцію 3D-моделі для профілів (Це приклад, як додати власну 3D-іконку до OsmAnd). Налаштуйте зовнішній вигляд через меню: [*Меню OsmAnd → Налаштування → Профіль → Зовнішній вигляд профілю → виберіть 4-5-ту іконку іконки місцезнаходження*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
+| AnyGIS Online Maps Collection | Дані з [вебсторінки AnyGIS](https://anygis.ru/index_en). Колекція різноманітних джерел онлайн-карт, включаючи супутникові, туристичні та історичні карти тощо.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
+| Offline Map Legend | Цей пакет додає офлайн-легенду карти (версія 1.01; 03-04-2024), доступну через *Меню → Мої місця → Улюблені → Легенда карти*. Легенда карти також доступна за [цим посиланням](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Offline Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
+| 🇺🇸US Lands & Trails | Колекція спеціалізованих карт США, конвертованих у формат OBF для OsmAnd, що включає<ul><li>[Громадські землі та охоронювані території USGS (PAD-US 3.0), за штатами](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Стежки та дороги USFS, по всій країні](https://www.fs.usda.gov/visit/maps),</li><li>[Дороги та стежки BLM, по всій країні](https://www.blm.gov/maps),</li><li>[POI рекреаційних активностей BLM, по всій країні](https://www.blm.gov/maps),</li><li>[Приватні землі (дані про ділянки), для деяких штатів](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Більше інформації на [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸US Lands & Trails](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) охоплює більшу частину Польщі та постійно розробляється. Довгий час використовувалася назва UMP-pcPL (mapą prawie całej Polski). | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
 | Outdoor Explorer  |  Цей плагін містить полегшений стиль карти, який покращує видимість ґрунтових доріг та стежок в OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
@@ -99,15 +99,15 @@ OsmAnd — це потужний застосунок із широкою баз
 | Назва джерела | Опис | Посилання |
 | -- | -- | --|
 | Gravel Roads Seeker | Стиль карти, що пропонує кращу візуалізацію дорожнього покриття, розрізняючи асфальтовані та неасфальтовані дороги (вебсторінка *французькою*). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
-| OsmAnd Rendering | Колекція доступу до онлайн-карт, топографічних карт, ортофотопланів та інших географічних ресурсів, доступних від деяких основних географічних установ у різних країнах. Оновлення тривають, але якщо якісь файли застаріли, користувачам пропонується повідомити про це. | [Онлайн-карти: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
+| OsmAnd Rendering GitHUB | Колекція доступу до онлайн-карт, топографічних карт, ортофотопланів та інших географічних ресурсів, доступних від деяких основних географічних установ у різних країнах. Оновлення тривають, але якщо якісь файли застаріли, користувачам пропонується повідомити про це. | [Онлайн-карти: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | Топографічна карта з опцією *Приховати всю воду*, надана [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
 | UniMap | Репозиторій призначений для надання користувацьких стилів карт, створених користувачами для інших користувачів. |[UniMap з GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | Офлайн-стилі карт, орієнтовані на залізниці, з використанням колірної схеми, подібної до [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
-| Виділені адміністративні межі | Стиль рендерингу карти заснований на стандартному стилі OsmAnd, з більш виділеними адміністративними межами для кращої видимості. |[Виділені адміністративні межі](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
-| Карта Open Fiets | [Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) — це стиль карти, орієнтований на велосипедистів, що виділяє велосипедні доріжки (червоним), велосипедні маршрути (синім пунктиром), велосипедні стежки (червоним пунктиром) та дороги з обмеженим рухом транспортних засобів, такі як велосипедні вулиці (суцільні червоні межі).  |[Стиль OpenFietsMap на GitHub](https://github.com/ligfietser/OFM_Osmand)|
-| Стиль карти "Вибір" | ["Стиль карти 'Вибір'"](https://groups.google.com/g/osmand/c/DS7WywdgsDA) — це стиль карти від Holder Tamm, який дозволяє вам обирати, приховувати певні об'єкти чи ні.  |["Стиль карти 'Вибір'"](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
-| ExplorerRS | [Стиль рендерингу ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) переважно базується на UniMap та routes.addon.render.xml  |["Стиль карти 'ExplorerRS'"](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
-| Storm Chasing | [Це стиль рендерингу OsmAnd, оптимізований для полювання за штормами](https://github.com/pqo/stormchasing-rendering-style)  |[Стиль рендерингу Stormchasing](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
+| Highlighted Admin Boundaries | Стиль рендерингу карти заснований на стандартному стилі OsmAnd, з більш виділеними адміністративними межами для кращої видимості. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
+| Open Fiets map | [Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) — це стиль карти, орієнтований на велосипедистів, що виділяє велосипедні доріжки (червоним), велосипедні маршрути (синім пунктиром), велосипедні стежки (червоним пунктиром) та дороги з обмеженим рухом транспортних засобів, такі як велосипедні вулиці (суцільні червоні межі).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
+| Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) — це стиль карти від Holder Tamm, який дозволяє вам обирати, приховувати певні об'єкти чи ні.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
+| ExplorerRS | [Стиль рендерингу ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) переважно базується на UniMap та routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
+| Storm Chasing | [Це стиль рендерингу OsmAnd, оптимізований для полювання за штормами](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
 
 ### Офлайн-карти {#offline-maps}
 
@@ -116,7 +116,7 @@ OsmAnd — це потужний застосунок із широкою баз
 | Назва джерела | Опис | Посилання|
 | -- | -- | --|
 | OpenSuperMaps | Карти, створені [pnoll1](https://github.com/pnoll1), що пропонують детальні векторні карти. |[OpenSuperMap](https://opensupermaps.com/)|
-| UMP PL | [UMP-pcPL](https://ump.waw.pl/) - альтернативна карта Польщі. |[Плагін UMP-PL](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
+| UMP PL | [UMP-pcPL](https://ump.waw.pl/) - альтернативна карта Польщі. |[UMP-PL plugin](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
 
 
 ### Колекція онлайн-карт {#online-maps-collection}
@@ -126,11 +126,11 @@ OsmAnd — це потужний застосунок із широкою баз
 | Назва | Опис | Посилання|
 | -- | -- | --|
 | Gravel Roads Seeker | Карта гравійних доріг (вебсторінка *французькою*). Онлайн-карта, що генерується в реальному часі з тайлових серверів, таких як WMTS (Web Map Tile Service) або WMS (Web Map Service). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/cartes-hors-route/cartes-online?authuser=0) |
-| OsmAnd Rendering | Колекція онлайн-карт, включаючи топографічні, ортофотоплани та інші, доступні від деяких основних географічних інститутів різних країн. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
+| OsmAnd Rendering GitHUB | Колекція онлайн-карт, включаючи топографічні, ортофотоплани та інші, доступні від деяких основних географічних інститутів різних країн. | [OsmAnd Rendering GitHub](https://osmand-rendering.github.io/Online-Maps/index_EN.html) |
 | RainViewer | Карта [RainViewer](https://www.rainviewer.com/api/weather-maps-api.html) з різними [колірними схемами](https://www.rainviewer.com/api/color-schemes.html) |[Дані RainViewer-osf](https://github.com/mariush444/Osmand-tools/raw/main/RainViewer.osf) |
 | Basemap AT WMTS | Набір карт Австрії на основі [basemap.at WMTS](https://basemap.at/en/) створений mariush444 |[Austria-basemap.osf](https://github.com/mariush444/Osmand-tools/raw/main/%F0%9F%87%A6%F0%9F%87%B9%20Austria-basemap.osf)|
-| Карти OsmAnd IGN (FR) | Набір карт, наданий французьким географічним інститутом IGN. | [Карти OsmAnd IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
-| Колекція карт AnyGis | Сайт надає колекцію карт для заміського відпочинку, включаючи туристичні, гірські, морські та багато інших. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
+| OsmAnd maps IGN (FR) | Набір карт, наданий французьким географічним інститутом IGN. | [OsmAnd maps IGN (FR) - GitHub](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
+| AnyGis maps collection | Сайт надає колекцію карт для заміського відпочинку, включаючи туристичні, гірські, морські та багато інших. | [AnyGis](http://anygis.ru/Web/Html/Osmand_en)|
 
 
 <!-- Hardware
@@ -145,8 +145,8 @@ OsmAnd — це потужний застосунок із широкою баз
 
 Якщо у вас є пропозиції щодо нових стилів карт, плагінів, або, можливо, ви хотіли б зробити свій внесок своїми власними творіннями, щоб розширити ресурси спільноти OsmAnd, будь ласка, зв'яжіться з нами. Ми цінуємо та вітаємо ваш внесок у подальший розвиток бази даних OsmAnd.
 
-- **Слідкуйте**: <LinksSocial/>  
+- **Follow**: <LinksSocial/>  
 
-- **Приєднуйтесь**: <LinksTelegram/>  
+- **Join**: <LinksTelegram/>  
 
-- **Отримуйте**: <AllStores/>
+- **Get**: <AllStores/>
