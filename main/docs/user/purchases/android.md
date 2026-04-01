@@ -130,7 +130,9 @@ The table below details the features included in both the free and paid packages
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Popular Places (Wikipedia)](../map/popular_places.md) | **-** | ✔ | ✔ |
 | [Offline Wikivoyage — Travel guides](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
-| [Astronomy plugin](../plugins/astronomy.md)| **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Observation Planning](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Interactive AR Mode](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
+| [Astronomy plugin](../plugins/astronomy.md) — [Offline Sky Map](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
