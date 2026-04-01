@@ -101,8 +101,7 @@ async function loadListFiles(
     setShareWithMeFiles,
     setTracksGroups,
     setSmartFoldersCache,
-    setUpdateFiles,
-    setSmartFoldersLoading
+    setUpdateFiles
 ) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -120,14 +119,7 @@ async function loadListFiles(
                         });
                         getFilesForUpdateDetails(res.uniqueFiles, setUpdateFiles);
                         setListFiles(res);
-                        setSmartFoldersLoading(true);
-                        loadSmartFolders(setTracksGroups, setSmartFoldersCache)
-                            .then(() => {
-                                setSmartFoldersLoading(false);
-                            })
-                            .catch(() => {
-                                setSmartFoldersLoading(false);
-                            });
+                        loadSmartFolders(setTracksGroups, setSmartFoldersCache);
                         const favFiles = await loadShareFiles(setShareWithMeFiles);
                         const ownFavorites = TracksManager.getFavoriteGroups(res);
                         const allFavorites = [...ownFavorites, ...favFiles];
@@ -391,7 +383,6 @@ export const AppContextProvider = (props) => {
     const [mapBbox, setMapBbox] = useState(null);
 
     const [gpxLoading, setGpxLoading] = useState(false);
-    const [smartFoldersLoading, setSmartFoldersLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // files
     const [listFiles, setListFiles] = useState({});
@@ -732,14 +723,7 @@ export const AppContextProvider = (props) => {
                             uniqueFiles: updatedUniqueFiles,
                         };
                     });
-                    setSmartFoldersLoading(true);
-                    loadSmartFolders(setTracksGroups, setSmartFoldersCache)
-                        .then(() => {
-                            setSmartFoldersLoading(false);
-                        })
-                        .catch(() => {
-                            setSmartFoldersLoading(false);
-                        });
+                    await loadSmartFolders(setTracksGroups, setSmartFoldersCache);
                 }
             }
         };
@@ -765,8 +749,7 @@ export const AppContextProvider = (props) => {
                 setShareWithMeFiles,
                 setTracksGroups,
                 setSmartFoldersCache,
-                setUpdateFiles,
-                setSmartFoldersLoading
+                setUpdateFiles
             ).then(() => {
                 setGpxLoading(false);
             });
@@ -795,8 +778,6 @@ export const AppContextProvider = (props) => {
                 mutateGpxFiles,
                 gpxLoading,
                 setGpxLoading,
-                smartFoldersLoading,
-                setSmartFoldersLoading,
                 selectedGpxFile,
                 setSelectedGpxFile,
                 unverifiedGpxFile,
